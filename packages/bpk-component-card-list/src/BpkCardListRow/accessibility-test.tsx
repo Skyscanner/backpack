@@ -25,7 +25,13 @@ import BpkCardListRow from './BpkCardListRow';
 describe('BpkCardListRow accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkCardListRow accessory="pagination" numberOfCardsToShow={3}>
+      <BpkCardListRow
+        ariaLabelIndicator="Go to page"
+        ariaLabelNext="Next"
+        ariaLabelPrev="Previous"
+        accessory="pagination"
+        numberOfCardsToShow={3}
+      >
         {mockCards(12)}
       </BpkCardListRow>,
     );

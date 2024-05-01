@@ -28,6 +28,9 @@ describe('BpkCardList accessibility tests', () => {
         layoutDesktop="row"
         layoutMobile="rail"
         title="Card List Component"
+        ariaLabelIndicator="Go to page"
+        ariaLabelNext="Next"
+        ariaLabelPrev="Previous"
       />,
     );
     const results = await axe(container);

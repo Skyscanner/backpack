@@ -42,8 +42,8 @@ describe('BpkCardList', () => {
         layoutDesktop="grid"
         layoutMobile="stack"
         initiallyShownCards={2}
-        accessory='expand'
-        expandText='Expand'
+        accessory="expand"
+        expandText="Expand"
         onButtonClick={jest.fn()}
       />,
     );
@@ -59,10 +59,10 @@ describe('BpkCardList', () => {
         layoutDesktop="grid"
         layoutMobile="stack"
         initiallyShownCards={2}
-        accessory='button'
-        buttonText='Button'
+        accessory="button"
+        buttonText="Button"
         onButtonClick={jest.fn()}
-        href='https://www.skyscanner.net'
+        href="https://www.skyscanner.net"
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -90,8 +90,8 @@ describe('BpkCardList', () => {
         layoutDesktop="grid"
         layoutMobile="rail"
         initiallyShownCards={2}
-        accessory='expand'
-        expandText='Expand'
+        accessory="expand"
+        expandText="Expand"
         onButtonClick={jest.fn()}
       />,
     );
@@ -107,10 +107,10 @@ describe('BpkCardList', () => {
         layoutDesktop="grid"
         layoutMobile="rail"
         initiallyShownCards={2}
-        accessory='button'
-        buttonText='Button'
+        accessory="button"
+        buttonText="Button"
         onButtonClick={jest.fn()}
-        href='https://www.skyscanner.net'
+        href="https://www.skyscanner.net"
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -124,6 +124,9 @@ describe('BpkCardList', () => {
         cardList={[<div>Card 1</div>, <div>Card 2</div>]}
         layoutDesktop="row"
         layoutMobile="stack"
+        ariaLabelIndicator="Go to page"
+        ariaLabelNext="Next"
+        ariaLabelPrev="Previous"
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -137,7 +140,10 @@ describe('BpkCardList', () => {
         cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
         layoutDesktop="row"
         layoutMobile="rail"
-        accessory='pagination'
+        accessory="pagination"
+        ariaLabelIndicator="Go to page"
+        ariaLabelNext="Next"
+        ariaLabelPrev="Previous"
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -151,6 +157,9 @@ describe('BpkCardList', () => {
         cardList={[<div>Card 1</div>, <div>Card 2</div>]}
         layoutDesktop="row"
         layoutMobile="rail"
+        ariaLabelIndicator="Go to page"
+        ariaLabelNext="Next"
+        ariaLabelPrev="Previous"
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -163,13 +172,13 @@ describe('BpkCardList', () => {
         description="Description"
         buttonText="Button"
         onButtonClick={jest.fn()}
-        href='https://www.skyscanner.net'
+        href="https://www.skyscanner.net"
         cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
         layoutDesktop="grid"
         layoutMobile="stack"
         initiallyShownCards={2}
-        accessory='expand'
-        expandText='Expand'
+        accessory="expand"
+        expandText="Expand"
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -182,7 +191,7 @@ describe('BpkCardList', () => {
         description="Description"
         buttonText="Button"
         onButtonClick={jest.fn()}
-        href='https://www.skyscanner.net'
+        href="https://www.skyscanner.net"
         cardList={[<div>Card 1</div>, <div>Card 2</div>]}
         layoutDesktop="grid"
         layoutMobile="stack"
@@ -198,13 +207,13 @@ describe('BpkCardList', () => {
         description="Description"
         buttonText="Button"
         onButtonClick={jest.fn()}
-        href='https://www.skyscanner.net'
+        href="https://www.skyscanner.net"
         cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
         layoutDesktop="grid"
         layoutMobile="rail"
         initiallyShownCards={2}
-        accessory='expand'
-        expandText='Expand'
+        accessory="expand"
+        expandText="Expand"
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -217,7 +226,7 @@ describe('BpkCardList', () => {
         description="Description"
         buttonText="Button"
         onButtonClick={jest.fn()}
-        href='https://www.skyscanner.net'
+        href="https://www.skyscanner.net"
         cardList={[<div>Card 1</div>, <div>Card 2</div>]}
         layoutDesktop="grid"
         layoutMobile="rail"
@@ -233,10 +242,13 @@ describe('BpkCardList', () => {
         description="Description"
         buttonText="Button"
         onButtonClick={jest.fn()}
-        href='https://www.skyscanner.net'
+        href="https://www.skyscanner.net"
         cardList={[<div>Card 1</div>, <div>Card 2</div>]}
         layoutDesktop="row"
         layoutMobile="stack"
+        ariaLabelIndicator="Go to page"
+        ariaLabelNext="Next"
+        ariaLabelPrev="Previous"
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -249,11 +261,14 @@ describe('BpkCardList', () => {
         description="Description"
         buttonText="Button"
         onButtonClick={jest.fn()}
-        href='https://www.skyscanner.net'
+        href="https://www.skyscanner.net"
         cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
         layoutDesktop="row"
         layoutMobile="rail"
-        accessory='pagination'
+        accessory="pagination"
+        ariaLabelIndicator="Go to page"
+        ariaLabelNext="Next"
+        ariaLabelPrev="Previous"
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -266,10 +281,13 @@ describe('BpkCardList', () => {
         description="Description"
         buttonText="Button"
         onButtonClick={jest.fn()}
-        href='https://www.skyscanner.net'
+        href="https://www.skyscanner.net"
         cardList={[<div>Card 1</div>, <div>Card 2</div>]}
         layoutDesktop="row"
         layoutMobile="rail"
+        ariaLabelIndicator="Go to page"
+        ariaLabelNext="Next"
+        ariaLabelPrev="Previous"
       />,
     );
     expect(asFragment()).toMatchSnapshot();
