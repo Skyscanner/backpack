@@ -15,19 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { fireEvent, render } from '@testing-library/react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkIconHeart from '../../bpk-component-icon/sm/heart';
-import { cssModules } from '../../bpk-react-utils';
 
 import BpkFloatingNotification from './BpkFloatingNotification';
-
-import STYLES from './BpkFloatingNotification.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const props = {
   text: 'Saved',
@@ -73,10 +66,9 @@ describe('BpkFloatingNotification', () => {
       <BpkFloatingNotification ctaText="View" onClick={onClick} {...props} />,
     );
 
-    const cta = document.getElementsByClassName(
-      getClassName('bpk-floating-notification__button'),
-    )[0];
-    fireEvent.click(cta);
+    const cta = document.getElementsByTagName("button").item(0);
+    expect(cta).toBeDefined();
+    fireEvent.click(cta as HTMLButtonElement);
 
     expect(onClick).toHaveBeenCalledTimes(1);
   });

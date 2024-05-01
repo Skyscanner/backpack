@@ -2,9 +2,7 @@
 
 exports[`BpkDatepicker "readOnly" can be overriden in "inputProps" 1`] = `
 <DocumentFragment>
-  <div
-    class="bpk-datepicker__input"
-  >
+  <div>
     <input
       aria-atomic="true"
       aria-invalid="false"
@@ -23,9 +21,7 @@ exports[`BpkDatepicker "readOnly" can be overriden in "inputProps" 1`] = `
 
 exports[`BpkDatepicker should render correctly 1`] = `
 <DocumentFragment>
-  <div
-    class="bpk-datepicker__input"
-  >
+  <div>
     <input
       aria-atomic="true"
       aria-invalid="false"
@@ -44,9 +40,7 @@ exports[`BpkDatepicker should render correctly 1`] = `
 
 exports[`BpkDatepicker should render correctly when not valid 1`] = `
 <DocumentFragment>
-  <div
-    class="bpk-datepicker__input"
-  >
+  <div>
     <input
       aria-atomic="true"
       aria-invalid="true"
@@ -65,9 +59,7 @@ exports[`BpkDatepicker should render correctly when not valid 1`] = `
 
 exports[`BpkDatepicker should render range correctly 1`] = `
 <DocumentFragment>
-  <div
-    class="bpk-datepicker__input"
-  >
+  <div>
     <input
       aria-atomic="true"
       aria-invalid="false"

@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import type { ReactNode} from 'react';
 import { useState } from 'react';
 
 import BpkSelectableChip, {
@@ -69,7 +70,7 @@ const StatefulDropdownChip = (props: StatefulSelectableChipProps) => {
 };
 
 
-const StatefulIconChip = (props: StatefulSelectableChipProps) => {
+const StatefulIconChip = (props: StatefulSelectableChipProps & {leadingAccessoryView: ReactNode}) => {
   const [selected, setSelected] = useState(props.selected);
 
   const toggleSelected = () => setSelected(!selected);
@@ -116,12 +117,14 @@ const StatefulDismissibleChipsExample = (props: StatefulSelectableChipProps) => 
         ))}
       </div>
       <AriaLiveDemo visible>
+        <>
         {updates.map((u) => (
           <>
             {u}
             <br />
           </>
         ))}
+        </>
       </AriaLiveDemo>
     </div>
   );
@@ -130,7 +133,7 @@ const StatefulDismissibleChipsExample = (props: StatefulSelectableChipProps) => 
 
 const StatefulRadioGroupChipsExample = (props: StatefulSelectableChipProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [chips, setChips] = useState(['Cheapest flights', 'Direct flights', 'Most popular']);
+  const [chips] = useState(['Cheapest flights', 'Direct flights', 'Most popular']);
   const [updates, setUpdates] = useState<string[]>([]);
 
 
@@ -173,19 +176,21 @@ const StatefulRadioGroupChipsExample = (props: StatefulSelectableChipProps) => {
         className={getClassName('bpk-banner-alert-examples__component')}
         visible
       >
+        <>
         {updates.map((update) => (
           <>
             {update}
             <br />
           </>
         ))}
+        </>
       </AriaLiveDemo>
     </div>
   );
 };
 
 
-const StatefulSelectableChips = ({ ...rest }: {}) => (
+const StatefulSelectableChips = ({ ...rest }) => (
   <div className={getClassName(`bpk-chip-examples__${rest.type}`)}>
     <StatefulSelectableChip {...rest}>Cheapest flights</StatefulSelectableChip>
     <StatefulSelectableChip {...rest} selected>
@@ -197,8 +202,8 @@ const StatefulSelectableChips = ({ ...rest }: {}) => (
   </div>
 );
 
-
-const StatefulIconChips = ({ ...rest }: {}) => (
+type ValueOf<T> = T[keyof T];
+const StatefulIconChips = ({ ...rest }: {type: ValueOf<typeof CHIP_TYPES>, leadingAccessoryView: ReactNode}) => (
   <div className={getClassName(`bpk-chip-examples__${rest.type}`)}>
     <StatefulIconChip {...rest} />
     <StatefulIconChip {...rest} selected />
@@ -207,7 +212,7 @@ const StatefulIconChips = ({ ...rest }: {}) => (
 );
 
 
-const StatefulDropdownChips = ({ ...rest }: {}) => (
+const StatefulDropdownChips = ({ ...rest }) => (
   <div className={getClassName(`bpk-chip-examples__${rest.type}`)}>
     <StatefulDropdownChip {...rest}>Car type</StatefulDropdownChip>
     <StatefulDropdownChip {...rest} selected>
@@ -225,7 +230,7 @@ const RadioGroupChipsExample = () => (
 
 const AllSelectableChipsExample = () => (
   <div>
-    {Object.keys(CHIP_TYPES).map((chipType) => (
+    {(Object.keys(CHIP_TYPES) as Array<keyof typeof CHIP_TYPES>).map((chipType) => (
       <>
         <div className={getClassName(`bpk-chip-examples__container`)}>
           <BpkText textStyle={TEXT_STYLES.heading3}>{chipType}</BpkText>
@@ -247,7 +252,7 @@ const AllSelectableChipsExample = () => (
 
 const AllIconChipsExample = () => (
   <div>
-    {Object.keys(CHIP_TYPES).map((chipType) => (
+    {(Object.keys(CHIP_TYPES) as Array<keyof typeof CHIP_TYPES>).map((chipType) => (
       <div className={getClassName(`bpk-chip-examples__container`)}>
         <BpkText textStyle={TEXT_STYLES.heading3}>{chipType}</BpkText>
         <StatefulIconChips type={CHIP_TYPES[chipType]} leadingAccessoryView={<FilterIconSm />} />
@@ -258,7 +263,7 @@ const AllIconChipsExample = () => (
 
 const AllDropdownChipsExample = () => (
   <div>
-    {Object.keys(CHIP_TYPES).map((chipType) => (
+    {(Object.keys(CHIP_TYPES) as Array<keyof typeof CHIP_TYPES>).map((chipType) => (
       <div className={getClassName(`bpk-chip-examples__container`)}>
         <BpkText textStyle={TEXT_STYLES.heading3}>{chipType}</BpkText>
         <StatefulDropdownChips type={CHIP_TYPES[chipType]} />
@@ -269,7 +274,7 @@ const AllDropdownChipsExample = () => (
 
 const AllDismissibleChipsExample = () => (
   <div>
-    {Object.keys(CHIP_TYPES).map((chipType) => (
+    {(Object.keys(CHIP_TYPES) as Array<keyof typeof CHIP_TYPES>).map((chipType) => (
       <div className={getClassName(`bpk-chip-examples__container`)}>
         <BpkText textStyle={TEXT_STYLES.heading3}>{chipType}</BpkText>
         <StatefulDismissibleChipsExample type={CHIP_TYPES[chipType]} />

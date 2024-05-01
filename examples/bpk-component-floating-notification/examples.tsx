@@ -16,29 +16,30 @@
  * limitations under the License.
  */
 
-import { cloneElement, useState, Node } from 'react';
+import type { ReactElement} from 'react';
+import { cloneElement, useState } from 'react';
 
-import BpkButton from '../../packages/bpk-component-button';
+import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import BpkFloatingNotification from '../../packages/bpk-component-floating-notification';
 import BpkIconHeart from '../../packages/bpk-component-icon/sm/heart';
 import BpkIconInformationCircle from '../../packages/bpk-component-icon/sm/information-circle';
 
 type Props = {
-  children: Node,
+  children: ReactElement<{onExit: Function}, string>,
 };
 
-const AlertContainer = ({ children }: Props): Node => {
+const AlertContainer = ({ children }: Props) => {
   const [showAlert, setShowAlert] = useState(false);
 
   return (
     <>
-      <BpkButton
+      <BpkButtonV2
         onClick={() => {
           setShowAlert(true);
         }}
       >
         Trigger alert
-      </BpkButton>
+      </BpkButtonV2>
       {showAlert &&
         cloneElement(children, { onExit: () => setShowAlert(false) })}
     </>
@@ -74,16 +75,15 @@ const CtaIconLongTextExample = () => (
 );
 
 const VisualTestExample = () => (
-  <AlertContainer>
-    <BpkFloatingNotification
+  <BpkFloatingNotification
       animateOnEnter
       animateOnExit
       ctaText="View"
-      hideAfter={5000}
+      // @ts-expect-error hideAfter isn't meant to take null, however, we override as we'd like to not hide it in visual testing
+      hideAfter={null} // don't hide the visual test example
       icon={BpkIconInformationCircle}
       text="Killer Combo saved to New York and Miami 🎉"
-    />
-  </AlertContainer>
+  />
 );
 
 export {
