@@ -54,8 +54,8 @@ const BpkNavigationBar = (props: Props) => {
     leadingButton,
     sticky = false,
     title,
-    titleTagName,
-    titleTextStyle,
+    titleTagName = "span",
+    titleTextStyle = TEXT_STYLES.heading5,
     trailingButton,
     ...rest
   } = props;
@@ -93,7 +93,7 @@ const BpkNavigationBar = (props: Props) => {
         )}>
           <BpkText
             id={titleId}
-            textStyle={titleTextStyle ?? TEXT_STYLES.heading5}
+            textStyle={titleTextStyle}
             tagName={titleTagName}
           >
             {title}
