@@ -168,8 +168,6 @@ const RailChipGroup = ({
     `bpk-sticky-chip-container--${chipStyle}`,
   );
 
-  const scrollContainerIndicator = getClassName('bpk-chip-group-scroller-indicator');
-
   return (
     <>
       <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
@@ -191,8 +189,6 @@ const RailChipGroup = ({
       }
       <BpkMobileScrollContainer
         scrollerRef={(el: HTMLElement) => { scrollContainerRef.current = el }}
-        leadingIndicatorClassName={scrollContainerIndicator}
-        trailingIndicatorClassName={scrollContainerIndicator}
       >
         <ChipGroupContent ariaLabel={ariaLabel}
           ariaMultiselectable={ariaMultiselectable}
