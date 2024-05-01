@@ -77,14 +77,6 @@ const BpkConfigurableNudger = ({
   const maxButtonDisabled = compareValues(value, max) >= 0;
   const minButtonDisabled = compareValues(value, min) <= 0;
 
-  const minusIconClassNames = getClassName(
-    'bpk-nudger__icon',
-    minButtonDisabled && 'bpk-nudger__icon--disabled',
-  );
-  const plusIconClassNames = getClassName(
-    'bpk-nudger__icon',
-    maxButtonDisabled && 'bpk-nudger__icon--disabled',
-  );
   const inputStyles = getClassName(
     'bpk-nudger__input',
     inputClassName && inputClassName,
@@ -100,15 +92,8 @@ const BpkConfigurableNudger = ({
         disabled={minButtonDisabled}
         title={decreaseButtonLabel}
         aria-controls={id}
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={getClassName('bpk-nudger__button')}
-      >
-        
-        <AlignedMinusIcon 
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={minusIconClassNames} />
+      >        
+        <AlignedMinusIcon />
       </BpkButtonV2>
       <input
         type="text"
@@ -127,14 +112,8 @@ const BpkConfigurableNudger = ({
         disabled={maxButtonDisabled}
         title={increaseButtonLabel}
         aria-controls={id}
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={getClassName('bpk-nudger__button')}
       >
-        <AlignedPlusIcon 
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={plusIconClassNames} />
+        <AlignedPlusIcon />
       </BpkButtonV2>
     </div>
   );
