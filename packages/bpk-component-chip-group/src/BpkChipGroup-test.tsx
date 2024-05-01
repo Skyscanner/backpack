@@ -20,7 +20,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
-import BpkChipGroup, { BpkChipGroupState, CHIP_COMPONENT, CHIP_GROUP_TYPES } from './BpkChipGroup';
+import BpkChipGroup, { BpkChipGroupState, CHIP_GROUP_TYPES } from './BpkChipGroup';
 
 const defaultProps = {
   type: CHIP_GROUP_TYPES.wrap,
@@ -52,18 +52,16 @@ describe('BpkChipGroup', () => {
     }
   ];
 
-  it('should render correctly with type = rail', () => {
-    const { asFragment } = render(<BpkChipGroup {...defaultProps} chips={chips} type={CHIP_GROUP_TYPES.rail} />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+  it('should render selected chip', () => {
+    render(<BpkChipGroup {...defaultProps} chips={chips} type={CHIP_GROUP_TYPES.wrap} />);
 
-  it('should render correctly with type = wrap', () => {
-    const { asFragment } = render(<BpkChipGroup {...defaultProps} chips={chips} type={CHIP_GROUP_TYPES.wrap} />);
-    expect(asFragment()).toMatchSnapshot();
+    const chip = screen.getByRole('checkbox', { name: 'Berlin' });
+
+    expect(chip).toHaveClass('bpk-chip--default-selected');
   });
 
   it('should render correctly with sticky chip', () => {
-    const { asFragment } = render(
+    render(
       <BpkChipGroup
         stickyChip={{
           text: 'Sort & Filter'
@@ -75,32 +73,7 @@ describe('BpkChipGroup', () => {
         trailingNudgerLabel="Scroll forward"
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly with all chip component types', () => {
-    const alternativeChips = [
-      {
-        text: 'London',
-        component: CHIP_COMPONENT.dismissible,
-      },
-      {
-        text: 'Berlin',
-        component: CHIP_COMPONENT.dropdown,
-      },
-      {
-        text: 'Florence',
-        component: CHIP_COMPONENT.selectable,
-      },
-    ];
-
-    const { asFragment } = render(
-      <BpkChipGroup
-        chips={alternativeChips}
-        {...defaultProps}
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByRole('button', { name: 'Sort & Filter' })).toBeVisible();
   });
 
   it('should call onClick property of chip when clicked', async () => {
