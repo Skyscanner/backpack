@@ -18,7 +18,8 @@
 
 import type { MutableRefObject } from 'react';
 
-import { render } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { CHIP_TYPES } from '../../bpk-component-chip';
 
@@ -32,18 +33,19 @@ jest.mock('../../bpk-react-utils/index', () => ({
   isRTL: () => mockIsRtl(),
 }));
 
-const mockScrollContainerRef = {
+const createMockScrollContainerRef = (isRtl: boolean): MutableRefObject<HTMLElement> => ({
   current: {
     scrollBy: jest.fn() as (options?: any) => void,
-    offsetWidth: 70,
-    scrollLeft: 10,
-    scrollWidth: 100,
+    offsetWidth: 100,
+    scrollLeft: isRtl ? -150 : 150,
+    scrollWidth: 500,
   },
-} as MutableRefObject<HTMLElement>;
+} as MutableRefObject<HTMLElement>);
 
 describe('Nudger', () => {
   beforeEach(() => {
     jest.resetAllMocks();
+    jest.useFakeTimers();
   });
 
   it.each([
@@ -51,17 +53,30 @@ describe('Nudger', () => {
     [true, false],
     [false, true],
     [true, true],
-  ])('should render correctly when leading=%s and isRtl=%s', (leading, isRtl) => {
+  ])('should call scrollBy when leading=%s and isRtl=%s', async (leading, isRtl) => {
+    const user = userEvent.setup({ delay: null });
+    const mockScrollContainerRef = createMockScrollContainerRef(isRtl);
     mockIsRtl.mockReturnValue(isRtl);
 
-    const { asFragment } = render(<Nudger ariaLabel="nudge" scrollContainerRef={mockScrollContainerRef} leading={leading} />);
+    render(<Nudger ariaLabel="nudge" scrollContainerRef={mockScrollContainerRef} leading={leading} />);
 
-    expect(asFragment()).toMatchSnapshot();
+    act(() => {
+      jest.advanceTimersByTime(100);
+    });
+
+    await user.click(screen.getByRole('button'));
+
+    const isLeft = (leading && !isRtl) || (!leading && isRtl);
+    expect(mockScrollContainerRef.current.scrollBy).toHaveBeenCalledTimes(1);
+    expect(mockScrollContainerRef.current.scrollBy).toHaveBeenCalledWith({
+      left: isLeft ? -150 : 150,
+      behavior: 'smooth',
+    });
   });
 
-  it('should render correctly for onDark chip style', () => {
-    const { asFragment } = render(<Nudger ariaLabel="scroll" scrollContainerRef={mockScrollContainerRef} chipStyle={CHIP_TYPES.onDark} />);
+  it('should render button style matching chips',  () => {
+    render(<Nudger ariaLabel="scroll" scrollContainerRef={createMockScrollContainerRef(false)} chipStyle={CHIP_TYPES.onDark} />);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByRole('button')).toHaveClass('bpk-button--secondary-on-dark');
   });
 });
