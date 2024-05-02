@@ -34,8 +34,8 @@ gulp.task('copy', () =>
 
 gulp.task('clean', () =>
   Promise.all([
-    rm('./packages/bpk-component-icon/sm', { recursive: true }),
-    rm('./packages/bpk-component-icon/lg', { recursive: true }),
+    rm('./packages/bpk-component-icon/sm', { force: true, recursive: true }),
+    rm('./packages/bpk-component-icon/lg', { force: true, recursive: true }),
   ]),
 );
 gulp.task('generateIcons', gulp.series('clean', 'copy'));
