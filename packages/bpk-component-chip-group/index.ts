@@ -30,6 +30,18 @@ import BpkChipGroupSingleSelect, {
   BpkChipGroupSingleSelectState,
 } from './src/BpkChipGroupSingleSelect';
 
-export type { ChipGroupProps, SingleSelectProps, SingleSelectStateProps, ChipItem, SingleSelectChipItem };
-export { BpkChipGroupState, CHIP_COMPONENT, CHIP_GROUP_TYPES, BpkChipGroupSingleSelect, BpkChipGroupSingleSelectState};
+export type {
+  ChipGroupProps,
+  SingleSelectProps,
+  SingleSelectStateProps,
+  ChipItem,
+  SingleSelectChipItem
+};
+export {
+  BpkChipGroupState,
+  BpkChipGroupSingleSelect,
+  BpkChipGroupSingleSelectState,
+  CHIP_GROUP_TYPES,
+  CHIP_COMPONENT,
+};
 export default BpkChipGroup;
