@@ -16,9 +16,20 @@
  * limitations under the License.
  */
 
-import type { ComponentProps } from 'react';
-interface Props extends ComponentProps<'button'> {
-    label: string;
+import type { ComponentProps, MouseEvent, ReactNode } from 'react';
+import { BpkButtonLink } from '../../bpk-component-link';
+import { type BarStyle } from './BpkNavigationBar';
+export interface Props extends ComponentProps<BpkButtonLink> {
+  children: ReactNode;
+  onClick: (event: MouseEvent<HTMLElement>) => void;
+  className?: string;
+  barStyle?: BarStyle;
+  [rest: string]: any;
 }
-declare const BpkClearButton: ({ className, label, onClick, ...rest }: Props) => JSX.Element;
-export default BpkClearButton;
+declare const BpkNavigationBarButtonLink: ({
+  barStyle,
+  children,
+  className,
+  ...rest
+}: Props) => JSX.Element;
+export default BpkNavigationBarButtonLink;

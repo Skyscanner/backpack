@@ -16,12 +16,16 @@ exports[`BpkModalInner should render correctly 1`] = `
         aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-navigation-bar bpk-navigation-bar--justified bpk-navigation-bar--default"
       >
-        <h2
-          class="bpk-modal__heading"
-          id="bpk-modal-heading-my-modal"
+        <div
+          class="bpk-navigation-bar__title-container"
         >
-          Modal title
-        </h2>
+          <h2
+            class="bpk-modal__heading"
+            id="bpk-modal-heading-my-modal"
+          >
+            Modal title
+          </h2>
+        </div>
         <div
           class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
@@ -75,12 +79,16 @@ exports[`BpkModalInner should render correctly when is iPhone 1`] = `
         aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-navigation-bar bpk-navigation-bar--justified bpk-navigation-bar--default"
       >
-        <h2
-          class="bpk-modal__heading"
-          id="bpk-modal-heading-my-modal"
+        <div
+          class="bpk-navigation-bar__title-container"
         >
-          Modal title
-        </h2>
+          <h2
+            class="bpk-modal__heading"
+            id="bpk-modal-heading-my-modal"
+          >
+            Modal title
+          </h2>
+        </div>
         <div
           class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
@@ -134,12 +142,16 @@ exports[`BpkModalInner should render correctly when it does not fills the screen
         aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-navigation-bar bpk-navigation-bar--justified bpk-navigation-bar--default"
       >
-        <h2
-          class="bpk-modal__heading"
-          id="bpk-modal-heading-my-modal"
+        <div
+          class="bpk-navigation-bar__title-container"
         >
-          Modal title
-        </h2>
+          <h2
+            class="bpk-modal__heading"
+            id="bpk-modal-heading-my-modal"
+          >
+            Modal title
+          </h2>
+        </div>
         <div
           class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
@@ -193,12 +205,16 @@ exports[`BpkModalInner should render correctly when it has a className 1`] = `
         aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-navigation-bar bpk-navigation-bar--justified bpk-navigation-bar--default"
       >
-        <h2
-          class="bpk-modal__heading"
-          id="bpk-modal-heading-my-modal"
+        <div
+          class="bpk-navigation-bar__title-container"
         >
-          Modal title
-        </h2>
+          <h2
+            class="bpk-modal__heading"
+            id="bpk-modal-heading-my-modal"
+          >
+            Modal title
+          </h2>
+        </div>
         <div
           class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
@@ -252,12 +268,16 @@ exports[`BpkModalInner should render correctly when it is fullscreen 1`] = `
         aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-navigation-bar bpk-navigation-bar--justified bpk-navigation-bar--default"
       >
-        <h2
-          class="bpk-modal__heading"
-          id="bpk-modal-heading-my-modal"
+        <div
+          class="bpk-navigation-bar__title-container"
         >
-          Modal title
-        </h2>
+          <h2
+            class="bpk-modal__heading"
+            id="bpk-modal-heading-my-modal"
+          >
+            Modal title
+          </h2>
+        </div>
         <div
           class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
@@ -311,12 +331,16 @@ exports[`BpkModalInner should render correctly with a custom content classname 1
         aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-navigation-bar bpk-navigation-bar--justified bpk-navigation-bar--default"
       >
-        <h2
-          class="bpk-modal__heading"
-          id="bpk-modal-heading-my-modal"
+        <div
+          class="bpk-navigation-bar__title-container"
         >
-          Modal title
-        </h2>
+          <h2
+            class="bpk-modal__heading"
+            id="bpk-modal-heading-my-modal"
+          >
+            Modal title
+          </h2>
+        </div>
         <div
           class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
@@ -391,12 +415,16 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
             </span>
           </span>
         </div>
-        <h2
-          class="bpk-modal__heading"
-          id="bpk-modal-heading-my-modal"
+        <div
+          class="bpk-navigation-bar__title-container"
         >
-          Modal title
-        </h2>
+          <h2
+            class="bpk-modal__heading"
+            id="bpk-modal-heading-my-modal"
+          >
+            Modal title
+          </h2>
+        </div>
         <div
           class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
@@ -450,12 +478,16 @@ exports[`BpkModalInner should render correctly with closeText prop 1`] = `
         aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-navigation-bar bpk-navigation-bar--justified bpk-navigation-bar--default"
       >
-        <h2
-          class="bpk-modal__heading"
-          id="bpk-modal-heading-my-modal"
+        <div
+          class="bpk-navigation-bar__title-container"
         >
-          Modal title
-        </h2>
+          <h2
+            class="bpk-modal__heading"
+            id="bpk-modal-heading-my-modal"
+          >
+            Modal title
+          </h2>
+        </div>
         <div
           class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
@@ -493,12 +525,16 @@ exports[`BpkModalInner should render correctly with no padding 1`] = `
         aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-navigation-bar bpk-navigation-bar--justified bpk-navigation-bar--default"
       >
-        <h2
-          class="bpk-modal__heading"
-          id="bpk-modal-heading-my-modal"
+        <div
+          class="bpk-navigation-bar__title-container"
         >
-          Modal title
-        </h2>
+          <h2
+            class="bpk-modal__heading"
+            id="bpk-modal-heading-my-modal"
+          >
+            Modal title
+          </h2>
+        </div>
         <div
           class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
@@ -552,12 +588,16 @@ exports[`BpkModalInner should render correctly with wide prop 1`] = `
         aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-navigation-bar bpk-navigation-bar--justified bpk-navigation-bar--default"
       >
-        <h2
-          class="bpk-modal__heading"
-          id="bpk-modal-heading-my-modal"
+        <div
+          class="bpk-navigation-bar__title-container"
         >
-          Modal title
-        </h2>
+          <h2
+            class="bpk-modal__heading"
+            id="bpk-modal-heading-my-modal"
+          >
+            Modal title
+          </h2>
+        </div>
         <div
           class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >

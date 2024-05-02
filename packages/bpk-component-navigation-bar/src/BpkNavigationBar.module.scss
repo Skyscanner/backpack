@@ -23,12 +23,19 @@
 
 .bpk-navigation-bar {
   position: relative;
-  display: flex;
+  display: grid;
   min-height: tokens.bpk-spacing-xl() + tokens.bpk-spacing-lg();
   padding: tokens.bpk-spacing-base();
-  flex-direction: row;
-  justify-content: center;
+  grid-template-rows: auto;
+
+  // 3 columns allowing for buttons at either side and a title then taking the available space in between
+  // min sizes to preserve margins when buttons omitted and ensure some text still shown under extreme zoom
+  grid-template-columns:
+    minmax(tokens.bpk-spacing-lg(), auto) minmax(tokens.bpk-spacing-base(), 1fr)
+    minmax(tokens.bpk-spacing-lg(), auto);
+  justify-content: space-between;
   align-items: center;
+  gap: tokens.bpk-spacing-base();
 
   @include utils.bpk-themeable-property(
     background-color,
@@ -45,40 +52,45 @@
   }
 
   &__title {
+    grid-column: 2;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
     @include utils.bpk-themeable-property(
       color,
       --bpk-navigation-bar-title-color,
       tokens.$bpk-text-primary-day
     );
 
+    // ensure we still apply ellipsis overflow when a custom title element is specified e.g. h2
+    :first-child {
+      display: inline;
+    }
+
     &--on-dark {
       color: tokens.$bpk-text-primary-inverse-day;
     }
   }
 
+  &__title-container {
+    justify-self: center;
+  }
+
   &__leading-item,
   &__trailing-item {
-    position: absolute;
-
     @include typography.bpk-label-2;
   }
 
   &__leading-item {
-    left: tokens.bpk-spacing-base();
-
-    @include utils.bpk-rtl {
-      right: tokens.bpk-spacing-base();
-      left: auto;
-    }
+    grid-column: 1;
+    justify-self: start;
   }
 
   &__trailing-item {
-    right: tokens.bpk-spacing-base();
-
-    @include utils.bpk-rtl {
-      right: auto;
-      left: tokens.bpk-spacing-base();
-    }
+    grid-column: 3;
+    justify-self: end;
   }
 
   &__sticky {
