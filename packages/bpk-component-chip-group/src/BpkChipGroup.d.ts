@@ -19,42 +19,56 @@
 import type { ReactNode } from 'react';
 import { CHIP_TYPES } from '../../bpk-component-chip';
 export declare const CHIP_GROUP_TYPES: {
-    rail: string;
-    wrap: string;
+  rail: string;
+  wrap: string;
 };
 export declare const CHIP_COMPONENT: {
-    selectable: string;
-    dismissible: string;
-    dropdown: string;
-    icon: string;
+  selectable: string;
+  dismissible: string;
+  dropdown: string;
+  icon: string;
 };
-export type ChipGroupType = (typeof CHIP_GROUP_TYPES)[keyof typeof CHIP_GROUP_TYPES];
+export type ChipGroupType =
+  (typeof CHIP_GROUP_TYPES)[keyof typeof CHIP_GROUP_TYPES];
 export type ChipStyleType = (typeof CHIP_TYPES)[keyof typeof CHIP_TYPES];
-export type ChipComponentType = (typeof CHIP_COMPONENT)[keyof typeof CHIP_COMPONENT];
+export type ChipComponentType =
+  (typeof CHIP_COMPONENT)[keyof typeof CHIP_COMPONENT];
 export type SingleSelectChipItem = {
-    text: string;
-    accessibilityLabel?: string;
-    leadingAccessoryView?: ReactNode;
-    [rest: string]: any;
+  text: string;
+  accessibilityLabel?: string;
+  leadingAccessoryView?: ReactNode;
+  [rest: string]: any;
 };
 export type ChipItem = {
-    component?: ChipComponentType;
-    onClick?: (selected: boolean, index: number) => void;
-    selected?: boolean;
-    hidden?: boolean;
+  component?: ChipComponentType;
+  onClick?: (selected: boolean, index: number) => void;
+  selected?: boolean;
+  hidden?: boolean;
 } & SingleSelectChipItem;
 export type CommonProps = {
-    ariaLabel?: string;
-    type?: ChipGroupType;
-    chipStyle?: ChipStyleType;
-    leadingNudgerLabel?: string;
-    trailingNudgerLabel?: string;
+  ariaLabel?: string;
+  type?: ChipGroupType;
+  chipStyle?: ChipStyleType;
+  leadingNudgerLabel: string;
+  trailingNudgerLabel: string;
 };
 export type ChipGroupProps = {
-    chips: ChipItem[];
-    stickyChip?: ChipItem;
-    ariaMultiselectable?: boolean;
+  chips: ChipItem[];
+  stickyChip?: ChipItem;
+  ariaMultiselectable?: boolean;
 } & CommonProps;
-declare const BpkChipGroup: ({ ariaLabel, ariaMultiselectable, chipStyle, chips, leadingNudgerLabel, stickyChip, trailingNudgerLabel, type, }: ChipGroupProps) => JSX.Element;
-export declare const BpkChipGroupState: ({ chips, ...rest }: ChipGroupProps) => JSX.Element;
+declare const BpkChipGroup: ({
+  ariaLabel,
+  ariaMultiselectable,
+  chipStyle,
+  chips,
+  leadingNudgerLabel,
+  stickyChip,
+  trailingNudgerLabel,
+  type,
+}: ChipGroupProps) => JSX.Element;
+export declare const BpkChipGroupState: ({
+  chips,
+  ...rest
+}: ChipGroupProps) => JSX.Element;
 export default BpkChipGroup;
