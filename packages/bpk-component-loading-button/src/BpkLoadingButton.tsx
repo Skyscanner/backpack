@@ -16,12 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import PropTypes from 'prop-types';
-import type { Node, Element } from 'react';
+import type { ReactElement } from 'react';
 
-import BpkButton from '../../bpk-component-button';
+import { BUTTON_TYPES, BpkButtonV2, SIZE_TYPES } from '../../bpk-component-button';
 import {
   withButtonAlignment,
   withLargeButtonAlignment,
@@ -29,6 +27,7 @@ import {
 } from '../../bpk-component-icon';
 import ArrowIconLg from '../../bpk-component-icon/lg/long-arrow-right';
 import ArrowIconSm from '../../bpk-component-icon/sm/long-arrow-right';
+// @ts-expect-error spinner isn't typed yet
 import { BpkSpinner, BpkLargeSpinner } from '../../bpk-component-spinner';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -41,7 +40,7 @@ export const ICON_POSITION = {
   TRAILING: 'trailing',
 };
 
-const getPropsIcon = (props) => {
+const getPropsIcon = (props: LoadingProps) => {
   const { disabled, icon, iconDisabled } = props;
 
   if (disabled) {
@@ -60,15 +59,19 @@ const getEnabledIcon = (large: boolean) => {
   return <AlignedIcon />;
 };
 
-const getLoadingIcon = (props) => {
+const getLoadingIcon = (props: LoadingProps) => {
   const { iconLoading, large } = props;
 
   return iconLoading || getSpinner(large);
 };
 
 type LoadingProps = {
+  featured: boolean;
+  secondaryOnDark: boolean;
+  primaryOnLight: boolean;
+  primaryOnDark: boolean;
   children: Node,
-  className: ?string,
+  className?: string,
   disabled: boolean,
   secondary: boolean,
   destructive: boolean,
@@ -77,16 +80,15 @@ type LoadingProps = {
   linkOnDark: boolean,
   loading: boolean,
   iconOnly: boolean,
-  icon: ?Element<any>,
+  icon?: ReactElement<any>,
   iconPosition: string,
-  iconDisabled: ?Element<any>,
-  iconLoading: ?Element<any>,
+  iconDisabled?: ReactElement<any>,
+  iconLoading?: ReactElement<any>,
 };
 
 const BpkLoadingButton = (props: LoadingProps) => {
   const {
     children,
-    className,
     disabled,
     icon,
     iconDisabled,
@@ -94,8 +96,6 @@ const BpkLoadingButton = (props: LoadingProps) => {
     iconOnly,
     iconPosition,
     large,
-    link,
-    linkOnDark,
     loading,
     ...rest
   } = props;
@@ -112,40 +112,38 @@ const BpkLoadingButton = (props: LoadingProps) => {
 
   const loadingIcon = getLoadingIcon(props);
 
-  const classNames = getClassName(
-    loading && 'bpk-loading-button',
-    loading && (link || linkOnDark) && 'bpk-loading-button--link',
-    className,
-  );
-
   const iconClassNames = getClassName(
     'bpk-loading-button__icon',
-    large && 'bpk-loading-button__icon--large',
-    iconOnly &&
-      (large
-        ? 'bpk-loading-button__icon--large-icon-only'
-        : 'bpk-loading-button__icon--icon-only'),
-    (link || linkOnDark) && 'bpk-loading-button__icon--link',
   );
 
+  type ButtonType = typeof BUTTON_TYPES[keyof typeof BUTTON_TYPES]
+  let type: ButtonType = BUTTON_TYPES.primary;
+  if(props.link) {type = BUTTON_TYPES.link}
+  if(props.linkOnDark) {type = BUTTON_TYPES.linkOnDark}
+  if(props.featured) {type = BUTTON_TYPES.featured}
+  if(props.destructive) {type = BUTTON_TYPES.destructive}
+  if(props.secondaryOnDark) {type = BUTTON_TYPES.secondaryOnDark}
+  if(props.secondary) {type = BUTTON_TYPES.secondary}
+  if(props.primaryOnLight) {type = BUTTON_TYPES.primaryOnLight}
+  if(props.primaryOnDark) {type = BUTTON_TYPES.primaryOnDark}
+
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <BpkButton
+    <BpkButtonV2
       iconOnly={iconOnly}
       disabled={showBtnDisabled}
-      large={large}
-      // TODO: className to be removed
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      className={classNames}
-      link={link}
-      linkOnDark={linkOnDark}
+      size={large ? SIZE_TYPES.large : SIZE_TYPES.small}
+      type={type}
       {...rest}
     >
-      {loading && <span className={iconClassNames}>{loadingIcon}</span>}
-      {child0}
-      {child1}
-      {child2}
-    </BpkButton>
+      <div className={getClassName('bpk-loading-button__container')}>
+        {loading && <span className={iconClassNames}>{loadingIcon}</span>}
+        <div className={getClassName(loading ? "bpk-loading-button--hidden": "bpk-loading-button--visible")}>
+          {child0}
+          {child1}
+          {child2}
+        </div>
+      </div>
+    </BpkButtonV2>
   );
 };
 
