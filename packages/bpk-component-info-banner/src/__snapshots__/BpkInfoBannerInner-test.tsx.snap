@@ -549,7 +549,7 @@ exports[`BpkInfoBannerInner should render correctly with a element based message
                 class="bpk-info-banner__message"
               >
                 <p>
-                  All
+                  All 
                   <span>
                     good
                   </span>

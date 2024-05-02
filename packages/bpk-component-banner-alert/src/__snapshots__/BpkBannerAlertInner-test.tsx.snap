@@ -522,7 +522,7 @@ exports[`BpkBannerAlertInner should render correctly with a element based messag
                 class="bpk-banner-alert__message"
               >
                 <p>
-                  All
+                  All 
                   <span>
                     good
                   </span>
