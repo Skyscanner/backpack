@@ -186,9 +186,25 @@
   right: bpk-spacing-md();
   height: $bpk-input-height;
 
+  // remove any default button styling
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  color: tokens.$bpk-text-secondary-day;
+  cursor: pointer;
+  appearance: none; // hidden by default
+
   @include bpk-rtl {
     right: inherit;
     left: bpk-spacing-md();
+  }
+
+  @include utils.bpk-hover {
+    color: tokens.$bpk-text-primary-day;
+  }
+
+  &:active {
+    color: tokens.$bpk-text-primary-day;
   }
 
   &--large {
