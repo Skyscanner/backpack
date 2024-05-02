@@ -122,9 +122,13 @@ exports[`BpkNavigationBar should render correctly with an element for the title 
     aria-labelledby="test"
     class="bpk-navigation-bar bpk-navigation-bar--default"
   >
-    <span>
-      test
-    </span>
+    <div
+      class="bpk-navigation-bar__title-container"
+    >
+      <span>
+        test
+      </span>
+    </div>
     <div
       class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
     >

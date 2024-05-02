@@ -21,6 +21,8 @@ import type { ReactElement, ReactNode } from 'react';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
+import type { Tag, TextStyle } from '../../bpk-component-text/src/BpkText';
+
 import STYLES from './BpkNavigationBar.module.scss';
 
 const getClassNames = cssModules(STYLES);
@@ -34,6 +36,8 @@ export type BarStyle = (typeof BAR_STYLES)[keyof typeof BAR_STYLES];
 export type Props = {
   id: string;
   title: ReactNode;
+  titleTextStyle?: TextStyle;
+  titleTagName?: Tag;
   className?: string;
   leadingButton?: ReactElement | null;
   trailingButton?: ReactElement | null;
@@ -50,6 +54,8 @@ const BpkNavigationBar = (props: Props) => {
     leadingButton,
     sticky = false,
     title,
+    titleTagName = "span",
+    titleTextStyle = TEXT_STYLES.heading5,
     trailingButton,
     ...rest
   } = props;
@@ -87,13 +93,14 @@ const BpkNavigationBar = (props: Props) => {
         )}>
           <BpkText
             id={titleId}
-            textStyle={TEXT_STYLES.heading5}
+            textStyle={titleTextStyle}
+            tagName={titleTagName}
           >
             {title}
           </BpkText>
         </span>
       ) : (
-        title
+        <div className={getClassNames('bpk-navigation-bar__title-container')}>{title}</div>
       )}
       {trailingButton && (
         <div
