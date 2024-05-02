@@ -19,17 +19,18 @@
 import type { ReactElement } from 'react';
 import { useState } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
-import BpkSectionHeader from '../../bpk-component-section-header';
-import { BpkButtonV2 } from '../../bpk-component-button';
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
+import { BpkButtonV2 } from '../../bpk-component-button';
+import BpkSectionHeader from '../../bpk-component-section-header';
+import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkCardList.module.scss';
 import BpkCardListGrid from './BpkCardListGrid';
 import BpkCardListRail from './BpkCardListRail';
 import BpkCardListRow from './BpkCardListRow';
 import BpkCardListStack from './BpkCardListStack';
 import { BpkAccessoryTypes, type BpkCardListProps } from './common-types';
+
+import STYLES from './BpkCardList.module.scss';
 
 const getClassName = cssModules(STYLES);
 const MAX_ITEMS = 12; // MAX should be 12 for Desktop Grid and Mobile Stack
@@ -48,7 +49,6 @@ const BpkCardList = (props: BpkCardListProps) => {
   } = props;
   const allCards = cardList.slice(0, MAX_ITEMS);
 
-  // TODO: might be worth putting them under a HOC
   const [visibleCards, setVisibleCards] = useState(
     cardList.slice(0, initiallyShownCards),
   );
