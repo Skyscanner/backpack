@@ -16,26 +16,21 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/utils';
-
-.bpk-clear-button {
-  padding: 0;
-  border: 0;
-  background-color: transparent;
-  color: tokens.$bpk-text-secondary-day;
-  cursor: pointer;
-  appearance: none;
-
-  @include utils.bpk-hover {
-    color: tokens.$bpk-text-primary-day;
-  }
-
-  &:active {
-    color: tokens.$bpk-text-primary-day;
-  }
-
-  &__icon {
-    fill: currentcolor;
-  }
-}
+import type { ComponentType, MouseEvent, ReactNode } from 'react';
+import { type BarStyle } from './BpkNavigationBar';
+export type Props = {
+  icon: ComponentType<any>;
+  label: string;
+  onClick: (event: MouseEvent<HTMLElement>) => void;
+  className?: string;
+  barStyle?: BarStyle;
+  children?: ReactNode;
+  [rest: string]: any;
+};
+declare const BpkNavigationBarIconButton: ({
+  barStyle,
+  className,
+  icon,
+  ...rest
+}: Props) => JSX.Element;
+export default BpkNavigationBarIconButton;
