@@ -16,17 +16,26 @@
  * limitations under the License.
  */
 
+const fs = require('fs');
+
 const gulp = require('gulp');
-const { rimraf } = require("rimraf");
 
 const ICONS_FOLDER_PATH = './node_modules/@skyscanner/bpk-svgs/dist/js/icons';
 
+const rm = (path, options) =>
+  new Promise((resolve, reject) =>
+    fs.rm(path, options, (err, ...d) => (err ? reject(err) : resolve(...d))),
+  );
 gulp.task('copy', () =>
   gulp
     .src(`${ICONS_FOLDER_PATH}/**/*`)
     .pipe(gulp.dest('./packages/bpk-component-icon')),
 );
 
-gulp.task('clean', () => Promise.all([rimraf('./packages/bpk-component-icon/sm'),
-  rimraf('./packages/bpk-component-icon/lg')]))
+gulp.task('clean', () =>
+  Promise.all([
+    rm('./packages/bpk-component-icon/sm', { recursive: true }),
+    rm('./packages/bpk-component-icon/lg', { recursive: true }),
+  ]),
+);
 gulp.task('generateIcons', gulp.series('clean', 'copy'));
