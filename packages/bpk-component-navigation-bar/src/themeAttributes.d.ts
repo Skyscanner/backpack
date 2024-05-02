@@ -16,26 +16,5 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
-
-import BpkClearButton from './BpkClearButton';
-
-describe('BpkClearButton', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(
-      <BpkClearButton label="Clear" onClick={() => null} />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly with a custom class', () => {
-    const { asFragment } = render(
-      <BpkClearButton
-        label="Clear"
-        onClick={() => null}
-        className="foo-class"
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-});
+declare const _default: string[];
+export default _default;
