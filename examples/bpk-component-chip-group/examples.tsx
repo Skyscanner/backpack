@@ -75,38 +75,38 @@ const chips = [
 
 
 export const BpkChipGroupWrapping = () => (
-    <div className={getClassName('bpk-chip-group-examples__fixed-width')}>
-      <BpkChipGroupState
-        type={CHIP_GROUP_TYPES.wrap}
-        chips={chips}
-        ariaLabel="Select cities"
-       />
-    </div>
-  );
+  <div className={getClassName('bpk-chip-group-examples__fixed-width')}>
+    <BpkChipGroupState
+      type={CHIP_GROUP_TYPES.wrap}
+      chips={chips}
+      ariaLabel="Select cities"
+    />
+  </div>
+);
 
 export const BpkSingleChipGroupWrapping = () => (
-    <div>
-      <BpkChipGroupSingleSelectState
-        type={CHIP_GROUP_TYPES.wrap}
-        chips={chips}
-        initiallySelectedIndex={0}
-        ariaLabel="Select a city"
-       />
-    </div>
-  );
+  <div>
+    <BpkChipGroupSingleSelectState
+      type={CHIP_GROUP_TYPES.wrap}
+      chips={chips}
+      initiallySelectedIndex={0}
+      ariaLabel="Select a city"
+    />
+  </div>
+);
 
 
 export const BpkChipGroupRail = () => (
-    <div>
-      <BpkChipGroupState
-        type={CHIP_GROUP_TYPES.rail}
-        chips={chips}
-        ariaLabel="Select cities"
-        leadingNudgerLabel="Scroll back"
-        trailingNudgerLabel="Scroll forward"
-      />
-    </div>
-  );
+  <div>
+    <BpkChipGroupState
+      type={CHIP_GROUP_TYPES.rail}
+      chips={chips}
+      ariaLabel="Select cities"
+      leadingNudgerLabel="Scroll back"
+      trailingNudgerLabel="Scroll forward"
+    />
+  </div>
+);
 
 
 export const BpkChipGroupSticky = () => {
@@ -190,16 +190,18 @@ export const OnImageChipGroup = () => {
 };
 
 export const BpkChipGroupWithLabel = () => (
-     <div className={getClassName('bpk-chip-group-examples__with-label')}>
-       <BpkChipGroupState
-         type={CHIP_GROUP_TYPES.rail}
-         chips={chips}
-         chipStyle={CHIP_TYPES.default}
-         label='Filter'
-         ariaLabel="Select cities to filter by"
-       />
-     </div>
-   );
+  <div className={getClassName('bpk-chip-group-examples__with-label')}>
+    <BpkChipGroupState
+      type={CHIP_GROUP_TYPES.rail}
+      chips={chips}
+      chipStyle={CHIP_TYPES.default}
+      label='Filter'
+      ariaLabel="Select cities to filter by"
+      leadingNudgerLabel="Scroll back"
+      trailingNudgerLabel="Scroll forward"
+    />
+  </div>
+);
 
 export const AllChipTypesGroup = () => {
   const [dismissed, setDismissed] = useState(false);

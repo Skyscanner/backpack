@@ -83,8 +83,8 @@ export type CommonProps = {
 
 export type RailChipGroupProps = {
   stickyChip?: ChipItem;
-  leadingNudgerLabel?: string;
-  trailingNudgerLabel?: string;
+  leadingNudgerLabel: string;
+  trailingNudgerLabel: string;
 } & CommonProps;
 
 export type WrapChipGroupProps = {
@@ -218,16 +218,16 @@ const WrapChipGroup = ({
     chips={chips}
     label={label} />;
 
-const BpkChipGroup = ({ label, type, ...rest }: ChipGroupProps) => {
+const BpkChipGroup = (props: ChipGroupProps) => {
+  const { type } = props;
   const containerClassnames = getClassName('bpk-chip-group-container')
   const chipGroupClassNames = getClassName(
     'bpk-chip-group',
     `bpk-chip-group--${type}`,
-    label && 'bpk-chip-group--with-label'
   );
 
   return <div className={containerClassnames}>
-    {type === CHIP_GROUP_TYPES.rail ? <RailChipGroup chipGroupClassNames={chipGroupClassNames} label={label} {...rest} /> : <WrapChipGroup chipGroupClassNames={chipGroupClassNames} label={label} {...rest} />}
+    {props.type === CHIP_GROUP_TYPES.rail ? <RailChipGroup chipGroupClassNames={chipGroupClassNames} {...props} /> : <WrapChipGroup chipGroupClassNames={chipGroupClassNames} {...props} />}
   </div>
 }
 
