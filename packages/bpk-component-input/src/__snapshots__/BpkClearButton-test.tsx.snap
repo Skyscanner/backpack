@@ -1,57 +1,222 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkClearButton should render correctly 1`] = `
+exports[`BpkInput should render correctly 1`] = `
 <DocumentFragment>
-  <button
-    aria-label="Clear"
-    class="bpk-clear-button"
-    title="Clear"
-    type="button"
-  >
-    <span
-      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-    >
-      <svg
-        aria-hidden="true"
-        class="bpk-clear-button__icon"
-        focusable="false"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M12 22.5A10.5 10.5 0 101.5 12 10.5 10.5 0 0012 22.5zM7.938 7.94h.002a1.5 1.5 0 012.12 0L12 9.878l1.94-1.94a1.5 1.5 0 012.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 01-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 01-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 010-2.12z"
-        />
-      </svg>
-    </span>
-  </button>
+  <input
+    aria-invalid="false"
+    class="bpk-input"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
 </DocumentFragment>
 `;
 
-exports[`BpkClearButton should render correctly with a custom class 1`] = `
+exports[`BpkInput should render correctly with "clearButtonLabel" attribute 1`] = `
 <DocumentFragment>
-  <button
-    aria-label="Clear"
-    class="bpk-clear-button foo-class"
-    title="Clear"
-    type="button"
+  <input
+    aria-invalid="false"
+    class="bpk-input"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInput should render correctly with "clearButtonMode=always" attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-input__container"
   >
-    <span
-      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-    >
-      <svg
-        aria-hidden="true"
-        class="bpk-clear-button__icon"
-        focusable="false"
-        style="width: 1rem; height: 1rem;"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M12 22.5A10.5 10.5 0 101.5 12 10.5 10.5 0 0012 22.5zM7.938 7.94h.002a1.5 1.5 0 012.12 0L12 9.878l1.94-1.94a1.5 1.5 0 012.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 01-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 01-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 010-2.12z"
-        />
-      </svg>
-    </span>
-  </button>
+    <input
+      aria-invalid="false"
+      class="bpk-input bpk-input--clearable bpk-input--persistent-clearable"
+      id="test"
+      name="test"
+      type="text"
+      value=""
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkInput should render correctly with "clearButtonMode=whileEditing" attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-input__container"
+  >
+    <input
+      aria-invalid="false"
+      class="bpk-input bpk-input--clearable"
+      id="test"
+      name="test"
+      type="text"
+      value=""
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkInput should render correctly with "clearable", "onClear" and "clearButtonLabel" attributes 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-input__container"
+  >
+    <input
+      aria-invalid="false"
+      class="bpk-input bpk-input--clearable"
+      id="test"
+      name="test"
+      type="text"
+      value=""
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkInput should render correctly with "docked" attribute 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input bpk-input--docked"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInput should render correctly with "dockedFirst" attribute 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input bpk-input--docked-first"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInput should render correctly with "dockedLast" attribute 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input bpk-input--docked-last"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInput should render correctly with "dockedMiddle" attribute 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input bpk-input--docked-middle"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInput should render correctly with "large" attribute 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input bpk-input--large"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInput should render correctly with "onClear" attribute 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInput should render correctly with additional props 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input"
+    id="test"
+    name="test"
+    placeholder="Enter a country, city or airport"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInput should render correctly with type attribute 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input"
+    id="test"
+    name="test"
+    type="password"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInput should render correctly with valid attribute set to "false" 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="true"
+    class="bpk-input bpk-input--invalid"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInput should render correctly with valid attribute set to "true" 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input bpk-input--valid"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInput should render correctly with value 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input"
+    id="test"
+    name="test"
+    type="text"
+    value="My value"
+  />
 </DocumentFragment>
 `;
