@@ -28,7 +28,7 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
           >
             <nav
               aria-labelledby="bpk-modal-heading-my-modal"
-              class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
+              class="bpk-navigation-bar bpk-navigation-bar--justified bpk-navigation-bar--default"
             >
               <h2
                 class="bpk-modal__heading"
@@ -41,7 +41,7 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
               >
                 <button
                   aria-label="Close"
-                  class="bpk-close-button__default bpk-modal__close-button bpk-modal__close-button-style--default"
+                  class="bpk-close-button__default"
                   title="Close"
                   type="button"
                 >

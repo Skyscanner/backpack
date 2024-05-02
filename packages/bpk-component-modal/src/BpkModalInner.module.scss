@@ -94,34 +94,9 @@
     @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
   }
 
-  &__navigation {
-    display: flex;
-    justify-content: space-between;
-  }
-
   &__heading {
     @include typography.bpk-text;
     @include typography.bpk-label-1;
-  }
-
-  &__close-button {
-    position: relative; // Override position: absolute coming from BpkNavigationBar
-    right: auto;
-
-    @include margins.bpk-margin-leading(tokens.bpk-spacing-base());
-
-    @include utils.bpk-rtl {
-      left: auto;
-    }
-
-    &-style--surface-contrast {
-      background-color: tokens.$bpk-surface-contrast-day;
-      color: tokens.$bpk-text-primary-dark-color;
-
-      @include utils.bpk-hover {
-        color: tokens.$bpk-text-primary-dark-color;
-      }
-    }
   }
 
   &__accessory-view {

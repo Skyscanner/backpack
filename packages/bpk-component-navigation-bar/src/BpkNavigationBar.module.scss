@@ -36,6 +36,10 @@
     tokens.$bpk-surface-default-day
   );
 
+  &--justified {
+    justify-content: space-between;
+  }
+
   &--on-dark {
     background-color: tokens.$bpk-surface-contrast-day;
   }

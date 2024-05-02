@@ -37,6 +37,7 @@ export type Props = {
   className?: string;
   leadingButton?: ReactElement | null;
   trailingButton?: ReactElement | null;
+  justified?: boolean;
   sticky?: boolean;
   barStyle?: BarStyle;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
@@ -47,6 +48,7 @@ const BpkNavigationBar = (props: Props) => {
     barStyle = BAR_STYLES.default,
     className,
     id,
+    justified = false,
     leadingButton,
     sticky = false,
     title,
@@ -64,6 +66,7 @@ const BpkNavigationBar = (props: Props) => {
       aria-labelledby={titleId}
       className={getClassNames(
         'bpk-navigation-bar',
+        justified && 'bpk-navigation-bar--justified',
         `bpk-navigation-bar--${barStyle}`,
         sticky && 'bpk-navigation-bar__sticky',
         className,
