@@ -26,10 +26,6 @@
     flex-direction: row-reverse;
   }
 
-  &__button {
-    position: relative;
-  }
-
   &__input {
     display: inline-block;
     padding: tokens.bpk-spacing-md() 0;
