@@ -17,6 +17,7 @@
  */
 
 const gulp = require('gulp');
+const { rimraf } = require("rimraf");
 
 const ICONS_FOLDER_PATH = './node_modules/@skyscanner/bpk-svgs/dist/js/icons';
 
@@ -26,4 +27,6 @@ gulp.task('copy', () =>
     .pipe(gulp.dest('./packages/bpk-component-icon')),
 );
 
-gulp.task('generateIcons', gulp.series('copy'));
+gulp.task('clean', () => Promise.all([rimraf('./packages/bpk-component-icon/sm'),
+  rimraf('./packages/bpk-component-icon/lg')]))
+gulp.task('generateIcons', gulp.series('clean', 'copy'));
