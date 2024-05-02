@@ -59,6 +59,29 @@ const DefaultExample = () => (
   </div>
 );
 
+const LongTitleTextExample = () => (
+  <div className={getClassNames('bpk-navigation-bar-story')}>
+    <BpkNavigationBar
+      id="test"
+      title="Backpack navigation bar long title example"
+      leadingButton={
+        <BpkNavigationBarIconButton
+          onClick={action('back clicked')}
+          icon={ArrowIconWithRtl}
+          label="back"
+        />
+      }
+      trailingButton={
+        <BpkNavigationBarIconButton
+          onClick={action('close clicked')}
+          icon={CloseIcon}
+          label="close"
+        />
+      }
+    />
+  </div>
+);
+
 const OnDarkExample = () => (
   <div className={getClassNames('bpk-navigation-bar-story')}>
     <BpkNavigationBar
@@ -241,10 +264,11 @@ const VisualTestExample = () => (
     <OnDarkExample />
     <WithLinksOnDarkExample />
   </div>
-)
+);
 
 export {
   DefaultExample,
+  LongTitleTextExample,
   OnDarkExample,
   LeadingIconOnlyExample,
   TrailingIconOnlyExample,
@@ -252,5 +276,5 @@ export {
   WithLogoExample,
   WithLinksOnDarkExample,
   StickyExample,
-  VisualTestExample
+  VisualTestExample,
 };
