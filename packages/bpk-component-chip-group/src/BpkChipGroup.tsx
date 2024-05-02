@@ -223,7 +223,6 @@ const BpkChipGroup = ({ label, type, ...rest }: ChipGroupProps) => {
   const chipGroupClassNames = getClassName(
     'bpk-chip-group',
     `bpk-chip-group--${type}`,
-    label && 'bpk-chip-group--with-label'
   );
 
   return <div className={containerClassnames}>
