@@ -1,3 +1,4 @@
+
 /*
  * Backpack - Skyscanner's Design System
  *
@@ -16,19 +17,25 @@
  * limitations under the License.
  */
 
-const { Glob } = require('glob');
-
-const { compile } = require('./style-compiler');
-
-const DIR_GLOB = './{packages,examples}/bpk-*/**/[!_]*.scss';
-
-const files = new Glob(DIR_GLOB, {});
-
-try {
-  for (const file of files) {
-    compile(file);
-  }
-} catch (err) {
-  // eslint-disable-next-line no-console
-  console.error(err);
-}
+/// <reference types="react" />
+import PropTypes from 'prop-types';
+import SPINNER_TYPES from './spinnerTypes';
+type Props = {
+    type: keyof typeof SPINNER_TYPES;
+    className?: string;
+    alignToButton: boolean;
+};
+declare const BpkLargeSpinner: {
+    (props: Props): JSX.Element;
+    propTypes: {
+        type: PropTypes.Requireable<string>;
+        className: PropTypes.Requireable<string>;
+        alignToButton: PropTypes.Requireable<boolean>;
+    };
+    defaultProps: {
+        type: string;
+        className: null;
+        alignToButton: boolean;
+    };
+};
+export default BpkLargeSpinner;

@@ -16,19 +16,16 @@
  * limitations under the License.
  */
 
-const { Glob } = require('glob');
+import BpkExtraLargeSpinner from './src/BpkExtraLargeSpinner';
+import BpkLargeSpinner from './src/BpkLargeSpinner';
+import BpkSpinner from './src/BpkSpinner';
+import SPINNER_TYPES from './src/spinnerTypes';
+import themeAttributes from './src/themeAttributes';
 
-const { compile } = require('./style-compiler');
-
-const DIR_GLOB = './{packages,examples}/bpk-*/**/[!_]*.scss';
-
-const files = new Glob(DIR_GLOB, {});
-
-try {
-  for (const file of files) {
-    compile(file);
-  }
-} catch (err) {
-  // eslint-disable-next-line no-console
-  console.error(err);
-}
+export {
+  BpkSpinner,
+  BpkLargeSpinner,
+  BpkExtraLargeSpinner,
+  SPINNER_TYPES,
+  themeAttributes,
+};

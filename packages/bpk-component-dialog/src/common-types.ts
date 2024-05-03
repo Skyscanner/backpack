@@ -26,11 +26,12 @@ export const HEADER_ICON_TYPES = {
 
 export type DialogInnerProps = {
   ariaLabel: string;
+  ariaModal: boolean;
   id: string;
   children: ReactNode;
   dialogRef: (ref: HTMLElement | null | undefined) => void;
   /**
-   * Because this component uses a modal on mobile viewports, you need to let it know what 
+   * Because this component uses a modal on mobile viewports, you need to let it know what
    * the root element of your application is by returning its DOM node via this prop
    * This is to "hide" your application from screen readers whilst the dialog is open.
    * The "pagewrap" element id is a convention we use internally at Skyscanner. In most cases it should "just work".
