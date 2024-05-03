@@ -1,3 +1,4 @@
+
 /*
  * Backpack - Skyscanner's Design System
  *
@@ -16,19 +17,25 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/utils';
-
-.bpk-pagination-nudger {
-  display: flex;
-  width: tokens.bpk-spacing-xl() + tokens.bpk-spacing-sm();
-  height: tokens.bpk-spacing-xl() + tokens.bpk-spacing-sm();
-  justify-content: center;
-  align-content: center;
-
-  &__text {
-    &--hidden {
-      @include utils.bpk-visually-hidden;
-    }
-  }
-}
+/// <reference types="react" />
+import PropTypes from 'prop-types';
+import SPINNER_TYPES from './spinnerTypes';
+type Props = {
+    type: keyof typeof SPINNER_TYPES;
+    className?: string;
+    alignToButton: boolean;
+};
+declare const BpkLargeSpinner: {
+    (props: Props): JSX.Element;
+    propTypes: {
+        type: PropTypes.Requireable<string>;
+        className: PropTypes.Requireable<string>;
+        alignToButton: PropTypes.Requireable<boolean>;
+    };
+    defaultProps: {
+        type: string;
+        className: null;
+        alignToButton: boolean;
+    };
+};
+export default BpkLargeSpinner;

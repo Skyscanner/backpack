@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import PropTypes from 'prop-types';
 
 import XlSpinner from '@skyscanner/bpk-svgs/dist/js/spinners/xl';
@@ -31,8 +29,8 @@ import STYLES from './BpkSpinner.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  type: $Keys<typeof SPINNER_TYPES>,
-  className: ?string,
+  type: keyof typeof SPINNER_TYPES,
+  className?: string,
 };
 
 const BpkExtraLargeSpinner = (props: Props) => {
@@ -47,7 +45,6 @@ const BpkExtraLargeSpinner = (props: Props) => {
   return (
     <span className={classNames}>
       <XlSpinner
-        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
         {...rest}
       />
     </span>

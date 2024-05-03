@@ -16,19 +16,16 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/utils';
+import BpkExtraLargeSpinner from './src/BpkExtraLargeSpinner';
+import BpkLargeSpinner from './src/BpkLargeSpinner';
+import BpkSpinner from './src/BpkSpinner';
+import SPINNER_TYPES from './src/spinnerTypes';
+import themeAttributes from './src/themeAttributes';
 
-.bpk-pagination-nudger {
-  display: flex;
-  width: tokens.bpk-spacing-xl() + tokens.bpk-spacing-sm();
-  height: tokens.bpk-spacing-xl() + tokens.bpk-spacing-sm();
-  justify-content: center;
-  align-content: center;
-
-  &__text {
-    &--hidden {
-      @include utils.bpk-visually-hidden;
-    }
-  }
-}
+export {
+  BpkSpinner,
+  BpkLargeSpinner,
+  BpkExtraLargeSpinner,
+  SPINNER_TYPES,
+  themeAttributes,
+};
