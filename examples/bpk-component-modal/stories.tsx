@@ -32,7 +32,6 @@ import {
   NoPaddingExample,
   WithAccessoryViewExample,
   ContrastExample,
-  VisualTestExample,
 } from './examples';
 
 export default {
@@ -60,23 +59,23 @@ export const NoPadding = NoPaddingExample;
 
 export const WithAccessoryView = WithAccessoryViewExample;
 export const Contrast = ContrastExample;
-export const VisualTestDefault = VisualTestExample;
+export const VisualTestDefault = () => Default(true);
 export const VisualTestDefaultWithZoom = {
-  render: VisualTestDefault,
+  render: () => Default(true),
   args: {
     zoomEnabled: true
   }
 }
-export const VisualTestContrast = Contrast;
+export const VisualTestContrast = () => Contrast(true);
 export const VisualTestContrastWithZoom = {
-  render: Contrast,
+  render: () => Contrast(true),
   args: {
     zoomEnabled: true
   }
 }
-export const VisualTestWithAccessoryView = WithAccessoryView;
+export const VisualTestWithAccessoryView = () => WithAccessoryView(true);
 export const VisualTestWithAccessoryViewAndZoom = {
-  render: WithAccessoryView,
+  render: () => WithAccessoryView(true),
   args: {
     zoomEnabled: true
   }
