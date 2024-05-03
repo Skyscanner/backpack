@@ -52,7 +52,7 @@
     "percy-test": "percy storybook ./dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'",
     "ts-migrate": "ts-migrate",
     "transpile": "npm run build && run-s transpile:*",
-    "transpile:clean": "rimraf ./dist",
+    "transpile:clean": "rm -rf ./dist",
     "transpile:js": "BABEL_ENV=dev babel packages --ignore ./packages/bpk-stylesheets --out-dir dist --extensions \".ts,.tsx,.js,.jsx\" --config-file ./babel.config.js",
     "transpile:imports": "node scripts/transpilation/transform-js-scss-css-imports.js",
     "transpile:copy-css": "node scripts/transpilation/copy-css.js",
