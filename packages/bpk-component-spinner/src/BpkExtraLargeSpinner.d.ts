@@ -1,3 +1,4 @@
+
 /*
  * Backpack - Skyscanner's Design System
  *
@@ -16,18 +17,22 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import BpkExtraLargeSpinner from './src/BpkExtraLargeSpinner';
-import BpkLargeSpinner from './src/BpkLargeSpinner';
-import BpkSpinner from './src/BpkSpinner';
-import SPINNER_TYPES from './src/spinnerTypes';
-import themeAttributes from './src/themeAttributes';
-
-export {
-  BpkSpinner,
-  BpkLargeSpinner,
-  BpkExtraLargeSpinner,
-  SPINNER_TYPES,
-  themeAttributes,
+/// <reference types="react" />
+import PropTypes from 'prop-types';
+import SPINNER_TYPES from './spinnerTypes';
+type Props = {
+    type: keyof typeof SPINNER_TYPES;
+    className?: string;
 };
+declare const BpkExtraLargeSpinner: {
+    (props: Props): JSX.Element;
+    propTypes: {
+        type: PropTypes.Requireable<string>;
+        className: PropTypes.Requireable<string>;
+    };
+    defaultProps: {
+        type: string;
+        className: null;
+    };
+};
+export default BpkExtraLargeSpinner;
