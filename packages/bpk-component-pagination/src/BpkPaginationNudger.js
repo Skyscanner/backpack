@@ -19,7 +19,7 @@
 import PropTypes from 'prop-types';
 
 import {BpkButtonV2, BUTTON_TYPES} from '../../bpk-component-button';
-import { withRtlSupport } from '../../bpk-component-icon';
+import { withRtlSupport, withButtonAlignment } from '../../bpk-component-icon';
 import ArrowLeftIcon from '../../bpk-component-icon/sm/arrow-left';
 import ArrowRightIcon from '../../bpk-component-icon/sm/arrow-right';
 import { cssModules } from '../../bpk-react-utils';
@@ -27,41 +27,28 @@ import { cssModules } from '../../bpk-react-utils';
 import STYLES from './BpkPaginationNudger.module.scss';
 
 const getClassName = cssModules(STYLES);
-const AlignedArrowLeftIcon = withRtlSupport(ArrowLeftIcon);
-const AlignedArrowRightIcon = withRtlSupport(ArrowRightIcon);
+const AlignedArrowLeftIcon = withRtlSupport(withButtonAlignment(ArrowLeftIcon));
+const AlignedArrowRightIcon = withRtlSupport(withButtonAlignment(ArrowRightIcon));
 
 const nudgerIcon = (forward) =>
-  forward ? (
-    <AlignedArrowRightIcon
-      // TODO: className to be removed
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      className={getClassName('bpk-pagination-nudger__icon')}
-    />
-  ) : (
-    <AlignedArrowLeftIcon
-      // TODO: className to be removed
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      className={getClassName('bpk-pagination-nudger__icon')}
-    />
-  );
+  forward ? (<AlignedArrowRightIcon/>) : (<AlignedArrowLeftIcon/>);
 
 const BpkPaginationNudger = (props) => {
   const { disabled, forward, label, onNudge } = props;
 
   return (
-    <BpkButtonV2
-      type={BUTTON_TYPES.link}
-      onClick={onNudge}
-      disabled={disabled}
-      // TODO: className to be removed
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      className={getClassName('bpk-pagination-nudger')}
-    >
-      {nudgerIcon(forward)}
-      <span className={getClassName('bpk-pagination-nudger__text--hidden')}>
-        {label}
-      </span>
-    </BpkButtonV2>
+    <div className={getClassName('bpk-pagination-nudger')}>
+      <BpkButtonV2
+        type={BUTTON_TYPES.link}
+        onClick={onNudge}
+        disabled={disabled}
+      >
+        {nudgerIcon(forward)}
+        <span className={getClassName('bpk-pagination-nudger__text--hidden')}>
+          {label}
+        </span>
+      </BpkButtonV2>
+    </div>
   );
 };
 

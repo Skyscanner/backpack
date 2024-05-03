@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2022 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,30 +16,25 @@
  * limitations under the License.
  */
 
-import BpkFloatingNotification from '../../packages/bpk-component-floating-notification/src/BpkFloatingNotification';
+import BpkSkeleton from '../../packages/bpk-component-skeleton';
 
 import {
-  CtaIconLongTextExample,
-  CtaExample,
-  DefaultExample,
-  IconExample,
-  VisualTestExample,
+  ImageSkeletonExample,
+  BodyTextSkeletonExample,
+  CircleSkeletonExample,
+  HeadlineSkeletonExample,
+  CombinedComponentExample,
 } from './examples';
 
 export default {
-  title: 'bpk-component-floating-notification',
-  component: BpkFloatingNotification,
+  title: 'bpk-component-skeleton',
+  component: BpkSkeleton,
 };
 
-export const Default = DefaultExample;
-export const WithIcon = IconExample;
 
-export const WithCta = CtaExample;
+export const ImageSkeleton = ImageSkeletonExample;
+export const BodyTextSkeleton = BodyTextSkeletonExample;
+export const CircleSkeleton = CircleSkeletonExample;
+export const HeadlineSkeleton = HeadlineSkeletonExample;
 
-export const WithCtaIconAndLongText = CtaIconLongTextExample;
-
-export const VisualTest = VisualTestExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
-};
+export const CombinedComponent = CombinedComponentExample;

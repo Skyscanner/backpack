@@ -23,7 +23,8 @@
   display: flex;
   width: tokens.bpk-spacing-xl() + tokens.bpk-spacing-sm();
   height: tokens.bpk-spacing-xl() + tokens.bpk-spacing-sm();
-  padding: tokens.$bpk-one-pixel-rem * 10;
+  justify-content: center;
+  align-content: center;
 
   &__text {
     &--hidden {

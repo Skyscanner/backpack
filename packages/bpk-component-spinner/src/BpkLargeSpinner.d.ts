@@ -1,3 +1,4 @@
+
 /*
  * Backpack - Skyscanner's Design System
  *
@@ -16,13 +17,25 @@
  * limitations under the License.
  */
 
-.bpk-datepicker {
-  &__calendar {
-    margin: 0 auto;
-  }
-
-  &__input {
-    display: inline-block;
-    width: 100%;
-  }
-}
+/// <reference types="react" />
+import PropTypes from 'prop-types';
+import SPINNER_TYPES from './spinnerTypes';
+type Props = {
+    type: keyof typeof SPINNER_TYPES;
+    className?: string;
+    alignToButton: boolean;
+};
+declare const BpkLargeSpinner: {
+    (props: Props): JSX.Element;
+    propTypes: {
+        type: PropTypes.Requireable<string>;
+        className: PropTypes.Requireable<string>;
+        alignToButton: PropTypes.Requireable<boolean>;
+    };
+    defaultProps: {
+        type: string;
+        className: null;
+        alignToButton: boolean;
+    };
+};
+export default BpkLargeSpinner;

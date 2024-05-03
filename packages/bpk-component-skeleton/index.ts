@@ -16,26 +16,7 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import BpkSkeleton from "./src/BpkSkeleton";
 
-import BpkClearButton from './BpkClearButton';
-
-describe('BpkClearButton', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(
-      <BpkClearButton label="Clear" onClick={() => null} />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly with a custom class', () => {
-    const { asFragment } = render(
-      <BpkClearButton
-        label="Clear"
-        onClick={() => null}
-        className="foo-class"
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-});
+export { SIZE_TYPES, SKELETON_TYPES, IMAGE_SKELETON_STYLE } from './src/common-types';
+export default BpkSkeleton;

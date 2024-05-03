@@ -25,9 +25,4 @@ describe('BpkRtlToggle', () => {
     const { asFragment } = render(<BpkRtlToggle />);
     expect(asFragment()).toMatchSnapshot();
   });
-
-  it('should render correctly with the className prop', () => {
-    const { asFragment } = render(<BpkRtlToggle className="foo" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
 });

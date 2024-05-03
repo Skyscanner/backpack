@@ -16,18 +16,18 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { render } from '@testing-library/react';
 
-import BpkExtraLargeSpinner from './src/BpkExtraLargeSpinner';
-import BpkLargeSpinner from './src/BpkLargeSpinner';
-import BpkSpinner from './src/BpkSpinner';
-import SPINNER_TYPES from './src/spinnerTypes';
-import themeAttributes from './src/themeAttributes';
+import BpkBreakpoint, { BREAKPOINTS } from "./BpkBreakpoint";
 
-export {
-  BpkSpinner,
-  BpkLargeSpinner,
-  BpkExtraLargeSpinner,
-  SPINNER_TYPES,
-  themeAttributes,
-};
+
+describe('BpkBreakpoint', () => {
+  it('should not render when breakpoint is not mocked within tests', () => {
+    const { asFragment } = render(
+      <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+        <div>doesnt match</div>
+      </BpkBreakpoint>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+})

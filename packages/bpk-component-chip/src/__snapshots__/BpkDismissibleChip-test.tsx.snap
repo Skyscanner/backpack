@@ -3,7 +3,7 @@
 exports[`BpkDismissibleChip should ignore setting a trailing accessory view, resulting in a close icon 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -18,13 +18,14 @@ exports[`BpkDismissibleChip should ignore setting a trailing accessory view, res
     >
       <svg
         aria-hidden="true"
-        class="bpk-chip--default-dismissible__trailing-accessory-view"
-        style="width: 1rem; height: 1rem;"
+        fill="rgba(255, 255, 255, 0.5)"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 22.5A10.5 10.5 0 101.5 12 10.5 10.5 0 0012 22.5zM7.938 7.94h.002a1.5 1.5 0 012.12 0L12 9.878l1.94-1.94a1.5 1.5 0 012.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 01-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 01-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 010-2.12z"
+          d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5M7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12"
         />
       </svg>
     </span>
@@ -35,7 +36,7 @@ exports[`BpkDismissibleChip should ignore setting a trailing accessory view, res
 exports[`BpkDismissibleChip should override setting selected={true}, resulting in selected={false} 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -50,13 +51,14 @@ exports[`BpkDismissibleChip should override setting selected={true}, resulting i
     >
       <svg
         aria-hidden="true"
-        class="bpk-chip--default-dismissible__trailing-accessory-view"
-        style="width: 1rem; height: 1rem;"
+        fill="rgba(255, 255, 255, 0.5)"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 22.5A10.5 10.5 0 101.5 12 10.5 10.5 0 0012 22.5zM7.938 7.94h.002a1.5 1.5 0 012.12 0L12 9.878l1.94-1.94a1.5 1.5 0 012.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 01-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 01-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 010-2.12z"
+          d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5M7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12"
         />
       </svg>
     </span>
@@ -67,7 +69,7 @@ exports[`BpkDismissibleChip should override setting selected={true}, resulting i
 exports[`BpkDismissibleChip should render correctly 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -82,13 +84,14 @@ exports[`BpkDismissibleChip should render correctly 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="bpk-chip--default-dismissible__trailing-accessory-view"
-        style="width: 1rem; height: 1rem;"
+        fill="rgba(255, 255, 255, 0.5)"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 22.5A10.5 10.5 0 101.5 12 10.5 10.5 0 0012 22.5zM7.938 7.94h.002a1.5 1.5 0 012.12 0L12 9.878l1.94-1.94a1.5 1.5 0 012.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 01-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 01-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 010-2.12z"
+          d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5M7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12"
         />
       </svg>
     </span>
@@ -99,7 +102,7 @@ exports[`BpkDismissibleChip should render correctly 1`] = `
 exports[`BpkDismissibleChip should render correctly with a "className" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible custom-class"
+    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible custom-class"
     role="button"
     title="Dismiss"
     type="button"
@@ -114,13 +117,14 @@ exports[`BpkDismissibleChip should render correctly with a "className" attribute
     >
       <svg
         aria-hidden="true"
-        class="bpk-chip--default-dismissible__trailing-accessory-view"
-        style="width: 1rem; height: 1rem;"
+        fill="rgba(255, 255, 255, 0.5)"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 22.5A10.5 10.5 0 101.5 12 10.5 10.5 0 0012 22.5zM7.938 7.94h.002a1.5 1.5 0 012.12 0L12 9.878l1.94-1.94a1.5 1.5 0 012.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 01-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 01-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 010-2.12z"
+          d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5M7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12"
         />
       </svg>
     </span>
@@ -131,7 +135,7 @@ exports[`BpkDismissibleChip should render correctly with a "className" attribute
 exports[`BpkDismissibleChip should render correctly with type="default" 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -146,13 +150,14 @@ exports[`BpkDismissibleChip should render correctly with type="default" 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="bpk-chip--default-dismissible__trailing-accessory-view"
-        style="width: 1rem; height: 1rem;"
+        fill="rgba(255, 255, 255, 0.5)"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 22.5A10.5 10.5 0 101.5 12 10.5 10.5 0 0012 22.5zM7.938 7.94h.002a1.5 1.5 0 012.12 0L12 9.878l1.94-1.94a1.5 1.5 0 012.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 01-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 01-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 010-2.12z"
+          d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5M7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12"
         />
       </svg>
     </span>
@@ -163,7 +168,7 @@ exports[`BpkDismissibleChip should render correctly with type="default" 1`] = `
 exports[`BpkDismissibleChip should render correctly with type="default" and a leading accessory view 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -185,13 +190,14 @@ exports[`BpkDismissibleChip should render correctly with type="default" and a le
     >
       <svg
         aria-hidden="true"
-        class="bpk-chip--default-dismissible__trailing-accessory-view"
-        style="width: 1rem; height: 1rem;"
+        fill="rgba(255, 255, 255, 0.5)"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 22.5A10.5 10.5 0 101.5 12 10.5 10.5 0 0012 22.5zM7.938 7.94h.002a1.5 1.5 0 012.12 0L12 9.878l1.94-1.94a1.5 1.5 0 012.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 01-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 01-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 010-2.12z"
+          d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5M7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12"
         />
       </svg>
     </span>
@@ -202,7 +208,7 @@ exports[`BpkDismissibleChip should render correctly with type="default" and a le
 exports[`BpkDismissibleChip should render correctly with type="default" and disabled 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible"
+    class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -217,13 +223,14 @@ exports[`BpkDismissibleChip should render correctly with type="default" and disa
     >
       <svg
         aria-hidden="true"
-        class="bpk-chip--default-dismissible__trailing-accessory-view"
-        style="width: 1rem; height: 1rem;"
+        fill="rgba(255, 255, 255, 0.5)"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 22.5A10.5 10.5 0 101.5 12 10.5 10.5 0 0012 22.5zM7.938 7.94h.002a1.5 1.5 0 012.12 0L12 9.878l1.94-1.94a1.5 1.5 0 012.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 01-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 01-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 010-2.12z"
+          d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5M7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12"
         />
       </svg>
     </span>
@@ -234,7 +241,7 @@ exports[`BpkDismissibleChip should render correctly with type="default" and disa
 exports[`BpkDismissibleChip should render correctly with type="on-dark" 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible bpk-chip--on-dark-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -249,13 +256,14 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="bpk-chip--on-dark-dismissible__trailing-accessory-view"
-        style="width: 1rem; height: 1rem;"
+        fill="rgb(98, 105, 113)"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 22.5A10.5 10.5 0 101.5 12 10.5 10.5 0 0012 22.5zM7.938 7.94h.002a1.5 1.5 0 012.12 0L12 9.878l1.94-1.94a1.5 1.5 0 012.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 01-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 01-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 010-2.12z"
+          d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5M7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12"
         />
       </svg>
     </span>
@@ -266,7 +274,7 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" 1`] = `
 exports[`BpkDismissibleChip should render correctly with type="on-dark" and a leading accessory view 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible bpk-chip--on-dark-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -288,13 +296,14 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" and a le
     >
       <svg
         aria-hidden="true"
-        class="bpk-chip--on-dark-dismissible__trailing-accessory-view"
-        style="width: 1rem; height: 1rem;"
+        fill="rgb(98, 105, 113)"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 22.5A10.5 10.5 0 101.5 12 10.5 10.5 0 0012 22.5zM7.938 7.94h.002a1.5 1.5 0 012.12 0L12 9.878l1.94-1.94a1.5 1.5 0 012.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 01-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 01-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 010-2.12z"
+          d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5M7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12"
         />
       </svg>
     </span>
@@ -305,7 +314,7 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" and a le
 exports[`BpkDismissibleChip should render correctly with type="on-dark" and disabled 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible"
+    class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible bpk-chip--on-dark-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -320,13 +329,14 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" and disa
     >
       <svg
         aria-hidden="true"
-        class="bpk-chip--on-dark-dismissible__trailing-accessory-view"
-        style="width: 1rem; height: 1rem;"
+        fill="rgb(98, 105, 113)"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 22.5A10.5 10.5 0 101.5 12 10.5 10.5 0 0012 22.5zM7.938 7.94h.002a1.5 1.5 0 012.12 0L12 9.878l1.94-1.94a1.5 1.5 0 012.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 01-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 01-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 010-2.12z"
+          d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5M7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12"
         />
       </svg>
     </span>
@@ -337,7 +347,7 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" and disa
 exports[`BpkDismissibleChip should render correctly with type="on-image" 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible"
+    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible bpk-chip--on-image-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -352,13 +362,14 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="bpk-chip--on-image-dismissible__trailing-accessory-view"
-        style="width: 1rem; height: 1rem;"
+        fill="rgba(255, 255, 255, 0.5)"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 22.5A10.5 10.5 0 101.5 12 10.5 10.5 0 0012 22.5zM7.938 7.94h.002a1.5 1.5 0 012.12 0L12 9.878l1.94-1.94a1.5 1.5 0 012.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 01-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 01-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 010-2.12z"
+          d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5M7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12"
         />
       </svg>
     </span>
@@ -369,7 +380,7 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" 1`] = `
 exports[`BpkDismissibleChip should render correctly with type="on-image" and a leading accessory view 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible"
+    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible bpk-chip--on-image-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -391,13 +402,14 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" and a l
     >
       <svg
         aria-hidden="true"
-        class="bpk-chip--on-image-dismissible__trailing-accessory-view"
-        style="width: 1rem; height: 1rem;"
+        fill="rgba(255, 255, 255, 0.5)"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 22.5A10.5 10.5 0 101.5 12 10.5 10.5 0 0012 22.5zM7.938 7.94h.002a1.5 1.5 0 012.12 0L12 9.878l1.94-1.94a1.5 1.5 0 012.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 01-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 01-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 010-2.12z"
+          d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5M7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12"
         />
       </svg>
     </span>
@@ -408,7 +420,7 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" and a l
 exports[`BpkDismissibleChip should render correctly with type="on-image" and disabled 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible"
+    class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible bpk-chip--on-image-dismissible"
     role="button"
     title="Dismiss"
     type="button"
@@ -423,13 +435,14 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" and dis
     >
       <svg
         aria-hidden="true"
-        class="bpk-chip--on-image-dismissible__trailing-accessory-view"
-        style="width: 1rem; height: 1rem;"
+        fill="rgba(255, 255, 255, 0.5)"
+        height="1rem"
         viewBox="0 0 24 24"
+        width="1rem"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M12 22.5A10.5 10.5 0 101.5 12 10.5 10.5 0 0012 22.5zM7.938 7.94h.002a1.5 1.5 0 012.12 0L12 9.878l1.94-1.94a1.5 1.5 0 012.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 01-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 01-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 010-2.12z"
+          d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5M7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12"
         />
       </svg>
     </span>
