@@ -54,10 +54,9 @@
     "transpile": "npm run build && run-s transpile:*",
     "transpile:clean": "rimraf ./dist",
     "transpile:js": "BABEL_ENV=dev babel packages --ignore ./packages/bpk-stylesheets --out-dir dist --extensions \".ts,.tsx,.js,.jsx\" --config-file ./babel.config.js",
-    "transpile:dts": "tsc --project tsconfig.declaration.json && node scripts/transpilation/dts-copyright.js",
+    "transpile:dts": "tsc --project tsconfig.declaration.json",
     "transpile:imports": "node scripts/transpilation/transform-js-scss-css-imports.js",
     "transpile:copy-css": "node scripts/transpilation/copy-css.js",
-    "transpile:copy-types": "node scripts/transpilation/copy-types.js",
     "transpile:copy-utils": "node scripts/transpilation/copy-utils.js",
     "transpile:copy-package-json": "cp ./packages/package.json ./dist/",
     "transpile:copy-readme": "cp packages/README.md ./dist/"
