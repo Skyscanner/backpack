@@ -59,7 +59,6 @@ const BpkNavigationBar = (props: Props) => {
     titleTagName = "span",
     titleTextStyle = TEXT_STYLES.heading5,
     trailingButton,
-
     ...rest
   } = props;
 
