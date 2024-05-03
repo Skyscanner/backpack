@@ -89,8 +89,14 @@
   }
 
   &__trailing-item {
+    display: flex;
     grid-column: 3;
     justify-self: end;
+    justify-content: center;
+
+    &--icon {
+      width: tokens.bpk-spacing-lg();
+    }
   }
 
   &__sticky {

@@ -59,6 +59,7 @@ const BpkNavigationBar = (props: Props) => {
     titleTagName = "span",
     titleTextStyle = TEXT_STYLES.heading5,
     trailingButton,
+
     ...rest
   } = props;
 
@@ -110,7 +111,10 @@ const BpkNavigationBar = (props: Props) => {
           className={getClassNames(
             'bpk-navigation-bar__trailing-item',
             `bpk-navigation-bar__trailing-item-${barStyle}`,
+            // if the Button has children safe to assume it's not an icon
+            !trailingButton.props?.children && 'bpk-navigation-bar__trailing-item--icon'
           )}
+          
         >
           {trailingButton}
         </div>
