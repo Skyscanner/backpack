@@ -57,6 +57,7 @@
   }
 
   &__price {
+    display: contents;
     color: tokens.$bpk-text-primary-day;
     word-break: break-all;
   }
