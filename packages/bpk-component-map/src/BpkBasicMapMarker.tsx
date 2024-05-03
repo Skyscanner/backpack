@@ -16,16 +16,16 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkOverlayView from './BpkOverlayView';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { LatLongPropType, type LatLong } from './common-types';
 
 type Props = {
-  children: Node,
+  children: ReactNode,
   position: LatLong,
 };
 
@@ -38,7 +38,6 @@ const BpkBasicMapMarker = (props: Props) => {
   const { children, position, ...rest } = props;
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <BpkOverlayView
       position={position}
       getPixelPositionOffset={getPixelPositionOffset}
