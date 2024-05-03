@@ -16,9 +16,13 @@
  * limitations under the License.
  */
 
-import BpkCard from './src/BpkCard';
-import BpkCardWrapper from './src/BpkCardWrapper';
-import BpkDividedCard, { ORIENTATION } from './src/BpkDividedCard';
-
-export { ORIENTATION, BpkDividedCard, BpkCardWrapper };
-export default BpkCard;
+export {
+  buttonThemeAttributes,
+  primaryThemeAttributes,
+  primaryOnDarkThemeAttributes,
+  primaryOnLightThemeAttributes,
+  secondaryThemeAttributes,
+  secondaryOnDarkThemeAttributes,
+  featuredThemeAttributes,
+  destructiveThemeAttributes,
+} from './src/themeAttributes';
