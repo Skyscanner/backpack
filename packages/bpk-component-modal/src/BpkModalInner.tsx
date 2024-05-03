@@ -148,11 +148,7 @@ const BpkModalInner = ({
               leadingButton={accessoryViewFinal}
               trailingButton={
                 closeText ? (
-                  <BpkButtonLink
-                    onClick={onClose}
-                  >
-                    {closeText}
-                  </BpkButtonLink>
+                  <BpkButtonLink onClick={onClose}>{closeText}</BpkButtonLink>
                 ) : (
                   <BpkCloseButton
                     onDark={modalStyle === MODAL_STYLING.surfaceContrast}
