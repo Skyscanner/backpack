@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 export {
   buttonThemeAttributes,
   primaryThemeAttributes,
