@@ -22,6 +22,10 @@
 .bpk-input {
   @include forms.bpk-input;
 
+  &[data-openable] {
+    cursor: pointer;
+  }
+
   &__container {
     @include forms.bpk-input__container;
   }
@@ -77,9 +81,5 @@
     &-last {
       @include forms.bpk-input--docked-last-child;
     }
-  }
-
-  &--with-open-events {
-    cursor: pointer;
   }
 }

@@ -16,19 +16,13 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/utils';
-
-.bpk-pagination-nudger {
-  display: flex;
-  width: tokens.bpk-spacing-xl() + tokens.bpk-spacing-sm();
-  height: tokens.bpk-spacing-xl() + tokens.bpk-spacing-sm();
-  justify-content: center;
-  align-content: center;
-
-  &__text {
-    &--hidden {
-      @include utils.bpk-visually-hidden;
-    }
-  }
-}
+export {
+  buttonThemeAttributes,
+  primaryThemeAttributes,
+  primaryOnDarkThemeAttributes,
+  primaryOnLightThemeAttributes,
+  secondaryThemeAttributes,
+  secondaryOnDarkThemeAttributes,
+  featuredThemeAttributes,
+  destructiveThemeAttributes,
+} from './src/themeAttributes';
