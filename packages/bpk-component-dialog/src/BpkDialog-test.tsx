@@ -33,6 +33,7 @@ describe('BpkDialog', () => {
       <BpkDialog
         id="my-modal"
         ariaLabel="example dialog to showcase component"
+        ariaModal
         onClose={jest.fn()}
         closeLabel="Close"
         dialogRef={jest.fn()}
@@ -54,6 +55,7 @@ describe('BpkDialog', () => {
       <BpkDialog
         id="my-modal"
         ariaLabel="example dialog to showcase component"
+        ariaModal
         onClose={jest.fn()}
         dialogRef={jest.fn()}
         getApplicationElement={jest.fn()}
@@ -75,6 +77,7 @@ describe('BpkDialog', () => {
       <BpkDialog
         id="my-modal"
         ariaLabel="example dialog to showcase component"
+        ariaModal
         onClose={jest.fn()}
         dialogRef={jest.fn()}
         getApplicationElement={jest.fn()}
@@ -97,6 +100,7 @@ describe('BpkDialog', () => {
       <BpkDialog
         id="my-modal"
         ariaLabel="example dialog to showcase component"
+        ariaModal
         onClose={jest.fn()}
         dialogRef={jest.fn()}
         getApplicationElement={jest.fn()}
@@ -120,6 +124,7 @@ describe('BpkDialog', () => {
       <BpkDialog
         id="my-modal"
         ariaLabel="example dialog to showcase component"
+        ariaModal
         onClose={jest.fn()}
         dialogRef={jest.fn()}
         getApplicationElement={jest.fn()}
@@ -143,6 +148,7 @@ describe('BpkDialog', () => {
       <BpkDialog
         id="my-modal"
         ariaLabel="example dialog to showcase component"
+        ariaModal
         onClose={jest.fn()}
         dialogRef={jest.fn()}
         getApplicationElement={jest.fn()}
@@ -164,6 +170,7 @@ describe('BpkDialog', () => {
       <BpkDialog
         id="my-modal"
         ariaLabel="example dialog to showcase component"
+        ariaModal
         onClose={jest.fn()}
         dialogRef={jest.fn()}
         getApplicationElement={jest.fn()}
