@@ -16,17 +16,25 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import BpkButton from './src/BpkButton'; // eslint-disable-line import/no-cycle
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkButton from './src/BpkButton'; // eslint-disable-line import/no-named-as-default, import/no-named-as-default-member
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkButtonDestructive from './src/BpkButtonDestructive';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkButtonFeatured from './src/BpkButtonFeatured';
-import BpkButtonLink from './src/BpkButtonLink';
-import BpkButtonLinkOnDark from './src/BpkButtonLinkOnDark';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkButtonLink from './src/BpkButtonLink'; // eslint-disable-line import/no-named-as-default, import/no-named-as-default-member
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkButtonLinkOnDark from './src/BpkButtonLinkOnDark'; // eslint-disable-line import/no-named-as-default, import/no-named-as-default-member
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkButtonPrimary from './src/BpkButtonPrimary';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkButtonPrimaryOnDark from './src/BpkButtonPrimaryOnDark';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkButtonPrimaryOnLight from './src/BpkButtonPrimaryOnLight';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkButtonSecondary from './src/BpkButtonSecondary';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkButtonSecondaryOnDark from './src/BpkButtonSecondaryOnDark';
 import { BpkButtonV2 } from './src/BpkButtonV2/BpkButton';
 
