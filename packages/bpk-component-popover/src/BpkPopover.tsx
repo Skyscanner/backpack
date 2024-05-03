@@ -54,6 +54,9 @@ const EVENT_SOURCES = {
   CLOSE_LINK: 'CLOSE_LINK',
 };
 
+// The stroke width is used to set the border width of the arrow.
+const strokeWidth = 0.0625;
+
 const bindEventSource =
   (source: string, callback: any, event: SyntheticEvent<HTMLButtonElement>) => {
     if (event.persist) {
@@ -173,7 +176,7 @@ const BpkPopover = ({
                     className={getClassName('bpk-popover__arrow')}
                     role="presentation"
                     stroke={surfaceHighlightDay}
-                    strokeWidth={0.0625}
+                    strokeWidth={strokeWidth}
                   />
                 )}
                 {labelAsTitle ? (

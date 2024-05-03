@@ -64,24 +64,6 @@ describe('BpkPopover', () => {
     expect(screen.getByText('My popover content')).toBeVisible();
   });
 
-  // it('should render to the left', () => {
-  //   const target = (<button type="button">My target</button>);
-  //   const { asFragment } = render(
-  //     <BpkPopover
-  //       id="my-popover"
-  //       onClose={() => null}
-  //       label="My popover"
-  //       closeButtonText="Close"
-  //       target={target}
-  //       isOpen
-  //       placement='left'
-  //     >
-  //       My popover content
-  //     </BpkPopover>,
-  //   );
-  //   expect(asFragment()).toMatchSnapshot();
-  // });
-
   it('should render correctly with "closeButtonProps" provided', () => {
     const {container} = render(
       <BpkPopover
