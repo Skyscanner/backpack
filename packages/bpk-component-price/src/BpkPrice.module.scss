@@ -42,10 +42,12 @@
   }
 
   &__previous-price {
+    display: contents;
     text-decoration-line: line-through;
   }
 
   &__separator {
+    display: contents;
     margin: 0 tokens.bpk-spacing-sm();
   }
 
@@ -70,6 +72,7 @@
   }
 
   &__trailing {
+    display: contents;
     white-space: nowrap;
   }
 }

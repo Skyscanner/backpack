@@ -115,20 +115,20 @@ const BpkPrice = (props: Props) => {
       <div
         className={getClassName(isAlignRight && 'bpk-price__column-container')}
       >
-        <span className={getClassName('bpk-price__price', !isAlignRight && 'bpk-price__spacing')}>
+        {/* <span className={getClassName('bpk-price__price', !isAlignRight && 'bpk-price__spacing')}> */}
           <BpkText
             textStyle={isSmall ? TEXT_STYLES.heading4 : TEXT_STYLES.xxl}
             // TODO: className to be removed
               // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-            // className={getClassName(
-            //   'bpk-price__price',
-            //   !isAlignRight && 'bpk-price__spacing',
-            // )}
+            className={getClassName(
+              'bpk-price__price',
+              !isAlignRight && 'bpk-price__spacing',
+            )}
             tagName="span"
           >
             {price}
           </BpkText>
-        </span>
+        {/* </span> */}
         {trailingText && (
           <span className={getClassName('bpk-price__trailing')}>
             <BpkText
