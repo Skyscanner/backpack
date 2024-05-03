@@ -29,6 +29,7 @@ describe('BpkDialog accessibility tests', () => {
       <BpkDialog
         id="my-modal"
         ariaLabel="example dialog to showcase component"
+        ariaModal
         onClose={jest.fn()}
         closeLabel="Close"
         dialogRef={jest.fn()}
