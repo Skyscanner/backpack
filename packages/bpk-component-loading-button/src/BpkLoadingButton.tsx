@@ -27,7 +27,6 @@ import {
 } from '../../bpk-component-icon';
 import ArrowIconLg from '../../bpk-component-icon/lg/long-arrow-right';
 import ArrowIconSm from '../../bpk-component-icon/sm/long-arrow-right';
-// @ts-expect-error spinner isn't typed yet
 import { BpkSpinner, BpkLargeSpinner } from '../../bpk-component-spinner';
 import { cssModules } from '../../bpk-react-utils';
 
