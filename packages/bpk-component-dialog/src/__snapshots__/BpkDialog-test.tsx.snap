@@ -18,6 +18,7 @@ exports[`BpkDialog should render correctly in the given target if renderTarget i
         />
         <section
           aria-label="example dialog to showcase component"
+          aria-modal="true"
           class="bpk-dialog-inner"
           id="my-modal"
           role="dialog"
@@ -79,6 +80,7 @@ exports[`BpkDialog should render correctly when it is not dismissible 2`] = `
         />
         <section
           aria-label="example dialog to showcase component"
+          aria-modal="true"
           class="bpk-dialog-inner"
           id="my-modal"
           role="dialog"
@@ -114,6 +116,7 @@ exports[`BpkDialog should render default icon dialog correctly 2`] = `
         />
         <section
           aria-label="example dialog to showcase component"
+          aria-modal="true"
           class="bpk-dialog-inner"
           id="my-modal"
           role="dialog"
@@ -164,6 +167,7 @@ exports[`BpkDialog should render destructive icon dialog correctly 2`] = `
         />
         <section
           aria-label="example dialog to showcase component"
+          aria-modal="true"
           class="bpk-dialog-inner"
           id="my-modal"
           role="dialog"
@@ -214,6 +218,7 @@ exports[`BpkDialog should render warning icon dialog correctly 2`] = `
         />
         <section
           aria-label="example dialog to showcase component"
+          aria-modal="true"
           class="bpk-dialog-inner"
           id="my-modal"
           role="dialog"
@@ -264,6 +269,7 @@ exports[`BpkDialog should render with flare dialog 2`] = `
         />
         <section
           aria-label="example dialog to showcase component"
+          aria-modal="true"
           class="bpk-dialog-inner"
           id="my-modal"
           role="dialog"
@@ -369,6 +375,7 @@ exports[`BpkDialog should render with flare dialog with flareClassName 2`] = `
         />
         <section
           aria-label="example dialog to showcase component"
+          aria-modal="true"
           class="bpk-dialog-inner"
           id="my-modal"
           role="dialog"

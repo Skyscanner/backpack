@@ -24,6 +24,7 @@ export declare const HEADER_ICON_TYPES: {
 };
 export type DialogInnerProps = {
     ariaLabel: string;
+    ariaModal: boolean;
     id: string;
     children: ReactNode;
     dialogRef: (ref: HTMLElement | null | undefined) => void;
