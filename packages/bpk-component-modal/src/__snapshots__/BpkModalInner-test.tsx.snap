@@ -27,7 +27,7 @@ exports[`BpkModalInner should render correctly 1`] = `
           </h2>
         </div>
         <div
-          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default bpk-navigation-bar__trailing-item--icon"
         >
           <button
             aria-label="Close"
@@ -90,7 +90,7 @@ exports[`BpkModalInner should render correctly when is iPhone 1`] = `
           </h2>
         </div>
         <div
-          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default bpk-navigation-bar__trailing-item--icon"
         >
           <button
             aria-label="Close"
@@ -153,7 +153,7 @@ exports[`BpkModalInner should render correctly when it does not fills the screen
           </h2>
         </div>
         <div
-          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default bpk-navigation-bar__trailing-item--icon"
         >
           <button
             aria-label="Close"
@@ -216,7 +216,7 @@ exports[`BpkModalInner should render correctly when it has a className 1`] = `
           </h2>
         </div>
         <div
-          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default bpk-navigation-bar__trailing-item--icon"
         >
           <button
             aria-label="Close"
@@ -279,7 +279,7 @@ exports[`BpkModalInner should render correctly when it is fullscreen 1`] = `
           </h2>
         </div>
         <div
-          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default bpk-navigation-bar__trailing-item--icon"
         >
           <button
             aria-label="Close"
@@ -342,7 +342,7 @@ exports[`BpkModalInner should render correctly with a custom content classname 1
           </h2>
         </div>
         <div
-          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default bpk-navigation-bar__trailing-item--icon"
         >
           <button
             aria-label="Close"
@@ -426,7 +426,7 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
           </h2>
         </div>
         <div
-          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default bpk-navigation-bar__trailing-item--icon"
         >
           <button
             aria-label="Close"
@@ -536,7 +536,7 @@ exports[`BpkModalInner should render correctly with no padding 1`] = `
           </h2>
         </div>
         <div
-          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default bpk-navigation-bar__trailing-item--icon"
         >
           <button
             aria-label="Close"
@@ -599,7 +599,7 @@ exports[`BpkModalInner should render correctly with wide prop 1`] = `
           </h2>
         </div>
         <div
-          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
+          class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default bpk-navigation-bar__trailing-item--icon"
         >
           <button
             aria-label="Close"

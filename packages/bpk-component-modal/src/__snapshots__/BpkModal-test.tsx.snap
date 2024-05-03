@@ -41,7 +41,7 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
                 </h2>
               </div>
               <div
-                class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
+                class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default bpk-navigation-bar__trailing-item--icon"
               >
                 <button
                   aria-label="Close"
