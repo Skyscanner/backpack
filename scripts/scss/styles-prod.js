@@ -16,17 +16,19 @@
  * limitations under the License.
  */
 
-const glob = require('glob');
+const { Glob } = require('glob');
 
 const { compile } = require('./style-compiler');
 
 const DIR_GLOB = './{packages,examples}/bpk-*/**/[!_]*.scss';
 
-glob(DIR_GLOB, {}, (err, files) => {
-  if (err) {
-    // eslint-disable-next-line no-console
-    console.error(err);
-  }
+const files = new Glob(DIR_GLOB, {});
 
-  files.forEach(compile);
-});
+try {
+  for (const file of files) {
+    compile(file);
+  }
+} catch (err) {
+  // eslint-disable-next-line no-console
+  console.error(err);
+}
