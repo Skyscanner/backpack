@@ -17,7 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
-import type { ReactElement } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import { BUTTON_TYPES, BpkButtonV2, SIZE_TYPES } from '../../bpk-component-button';
 import {
@@ -48,10 +48,10 @@ const getPropsIcon = (props: LoadingProps) => {
   return icon;
 };
 
-const getSpinner = (large: boolean) =>
+const getSpinner = (large: boolean | undefined) =>
   large ? <BpkLargeSpinner alignToButton /> : <BpkSpinner alignToButton />;
 
-const getEnabledIcon = (large: boolean) => {
+const getEnabledIcon = (large: boolean | undefined) => {
   const AlignedIcon = large
     ? withLargeButtonAlignment(withRtlSupport(ArrowIconLg))
     : withButtonAlignment(withRtlSupport(ArrowIconSm));
@@ -65,18 +65,18 @@ const getLoadingIcon = (props: LoadingProps) => {
 };
 
 type LoadingProps = {
-  featured: boolean;
-  secondaryOnDark: boolean;
-  primaryOnLight: boolean;
-  primaryOnDark: boolean;
-  children: Node,
+  featured?: boolean;
+  secondaryOnDark?: boolean;
+  primaryOnLight?: boolean;
+  primaryOnDark?: boolean;
+  children: ReactNode,
   className?: string,
-  disabled: boolean,
-  secondary: boolean,
-  destructive: boolean,
-  large: boolean,
-  link: boolean,
-  linkOnDark: boolean,
+  disabled?: boolean,
+  secondary?: boolean,
+  destructive?: boolean,
+  large?: boolean,
+  link?: boolean,
+  linkOnDark?: boolean,
   loading: boolean,
   iconOnly: boolean,
   icon?: ReactElement<any>,
