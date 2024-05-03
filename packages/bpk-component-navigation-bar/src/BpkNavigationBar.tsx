@@ -84,6 +84,8 @@ const BpkNavigationBar = (props: Props) => {
           className={getClassNames(
             'bpk-navigation-bar__leading-item',
             `bpk-navigation-bar__leading-item--${barStyle}`,
+            // if the Button has children safe to assume it's not an icon
+            !leadingButton.props?.children && 'bpk-navigation-bar__leading-item--icon'
           )}
         >
           {leadingButton}

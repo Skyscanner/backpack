@@ -80,7 +80,14 @@
 
   &__leading-item,
   &__trailing-item {
+    display: flex;
+    justify-content: center;
+
     @include typography.bpk-label-2;
+
+    &--icon {
+      width: tokens.bpk-spacing-lg();
+    }
   }
 
   &__leading-item {
@@ -89,14 +96,8 @@
   }
 
   &__trailing-item {
-    display: flex;
     grid-column: 3;
     justify-self: end;
-    justify-content: center;
-
-    &--icon {
-      width: tokens.bpk-spacing-lg();
-    }
   }
 
   &__sticky {

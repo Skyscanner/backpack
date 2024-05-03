@@ -146,11 +146,9 @@ const WithLinksExample = () => (
       id="test"
       title="Backpack"
       leadingButton={
-        <BpkNavigationBarIconButton
-          onClick={action('back clicked')}
-          icon={ArrowIconWithRtl}
-          label="back"
-        />
+        <BpkNavigationBarButtonLink onClick={action('back clicked')}>
+          Back
+        </BpkNavigationBarButtonLink>
       }
       trailingButton={
         <BpkNavigationBarButtonLink onClick={action('done clicked')}>
@@ -189,12 +187,12 @@ const WithLinksOnDarkExample = () => (
       title="Backpack"
       barStyle={BAR_STYLES.onDark}
       leadingButton={
-        <BpkNavigationBarIconButton
-          onClick={action('back clicked')}
-          icon={ArrowIconWithRtl}
-          label="back"
+        <BpkNavigationBarButtonLink 
           barStyle={BAR_STYLES.onDark}
-        />
+          onClick={action('back clicked')}
+        >
+          Back
+      </BpkNavigationBarButtonLink>
       }
       trailingButton={
         <BpkNavigationBarButtonLink

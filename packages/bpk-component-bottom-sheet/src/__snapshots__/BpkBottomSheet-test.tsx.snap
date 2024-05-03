@@ -23,7 +23,7 @@ exports[`BpkBottomSheet renders correctly with action props 1`] = `
             class="bpk-navigation-bar bpk-navigation-bar--default"
           >
             <div
-              class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+              class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default bpk-navigation-bar__leading-item--icon"
             >
               <button
                 aria-label=""
@@ -102,7 +102,7 @@ exports[`BpkBottomSheet renders correctly with minimum prop 1`] = `
             class="bpk-navigation-bar bpk-navigation-bar--default"
           >
             <div
-              class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+              class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default bpk-navigation-bar__leading-item--icon"
             >
               <button
                 aria-label=""
@@ -171,7 +171,7 @@ exports[`BpkBottomSheet renders correctly with wide prop 1`] = `
             class="bpk-navigation-bar bpk-navigation-bar--default"
           >
             <div
-              class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+              class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default bpk-navigation-bar__leading-item--icon"
             >
               <button
                 aria-label=""
