@@ -59,24 +59,43 @@ export const NoPadding = NoPaddingExample;
 
 export const WithAccessoryView = WithAccessoryViewExample;
 export const Contrast = ContrastExample;
-export const VisualTestDefault = () => Default(true);
+
+const visualWrapper = (id: string) => (
+  <div style={{'height': '640px', width: '100%'}}>
+    <iframe
+      title={`Embedded Storybook ${id}`}
+      src={`/iframe.html?args=&id=${id}&viewMode=story&isOpen=true&padded=false`}
+      loading="lazy"
+      aria-label="Embedded Storybook"
+      referrerPolicy="origin"
+      style={{'height': '100%', width: '100%', border: 0}}
+    />
+  </div>
+);
+export const VisualTestDefault = {
+  render: () => <>
+    {visualWrapper("bpk-component-modal--default")}
+    {visualWrapper("bpk-component-modal--contrast")}
+    {visualWrapper("bpk-component-modal--full-screen")}
+    {visualWrapper("bpk-component-modal--with-accessory-view")}
+    {visualWrapper("bpk-component-modal--no-padding")}
+  </>,
+  parameters: {
+    layout: 'fullscreen',
+  },
+};
 export const VisualTestDefaultWithZoom = {
-  render: () => Default(true),
+  render: () => <>
+  {visualWrapper("bpk-component-modal--default")}
+  {visualWrapper("bpk-component-modal--contrast")}
+  {visualWrapper("bpk-component-modal--full-screen")}
+  {visualWrapper("bpk-component-modal--with-accessory-view")}
+  {visualWrapper("bpk-component-modal--no-padding")}
+</>,
+parameters: {
+  layout: 'fullscreen',
+},
   args: {
-    zoomEnabled: true
-  }
-}
-export const VisualTestContrast = () => Contrast(true);
-export const VisualTestContrastWithZoom = {
-  render: () => Contrast(true),
-  args: {
-    zoomEnabled: true
-  }
-}
-export const VisualTestWithAccessoryView = () => WithAccessoryView(true);
-export const VisualTestWithAccessoryViewAndZoom = {
-  render: () => WithAccessoryView(true),
-  args: {
-    zoomEnabled: true
-  }
-}
+    zoomEnabled: true,
+  },
+};
