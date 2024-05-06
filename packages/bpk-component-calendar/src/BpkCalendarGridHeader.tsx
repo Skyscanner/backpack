@@ -67,6 +67,8 @@ const WeekDayComponent = ({
   weekDayKey = 'nameAbbr',
 }: WeekDayProps) => (
   <Element
+    // TODO: className to be removed
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
     className={getClassName('bpk-calendar-header__weekday')}
     title={weekDay.name}
   >

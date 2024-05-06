@@ -41,9 +41,7 @@ type State = {
   direction: string;
 };
 
-type Props = {
-  className?: string | null;
-};
+type Props = {};
 
 type InteractionEvents = KeyboardEvent | MouseEvent | TouchEvent;
 
@@ -82,14 +80,12 @@ class BpkRtlToggle extends Component<Props, State> {
   };
 
   render() {
-    const { className } = this.props;
     const onOrOff = this.state.direction === DIRECTIONS.RTL ? 'off' : 'on';
 
     return (
       <BpkButtonLink
         title="Keyboard Shortcut: ctrl + cmd + r"
         onClick={this.toggleRtl}
-        className={className}
       >
         RTL {onOrOff}
       </BpkButtonLink>

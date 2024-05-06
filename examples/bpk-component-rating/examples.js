@@ -21,6 +21,7 @@ import BpkRating, {
   RATING_SIZES,
   RATING_SCALES,
 } from '../../packages/bpk-component-rating';
+import BpkStarRating from '../../packages/bpk-component-star-rating';
 import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
@@ -56,6 +57,15 @@ const LargeImageTitle = (
   />
 );
 
+const ThreeStars = (
+  <BpkStarRating
+    rating={3}
+    ratingLabel={(rating: number, maxRating: number) =>
+      `Rated ${rating} out of ${maxRating} stars`
+    }
+  />
+);
+
 const LargeTripImageTitle = (
   <img
     alt="rating 4.5"
@@ -86,6 +96,13 @@ const DefaultExample = () => (
       value={4.5}
       title={TripImageTitle}
       subtitle="818 reviews"
+    />
+    <br />
+    <BpkRating
+      ariaLabel="3 Average 1,230 reviews"
+      value={3}
+      title={ThreeStars}
+      subtitle="1,230 reviews"
     />
     <br />
   </div>
@@ -124,6 +141,14 @@ const LargeSizeExample = () => (
       title={LargeTripImageTitle}
       subtitle="6,170 reviews"
       size={RATING_SIZES.large}
+    />
+    <br />
+    <BpkRating
+      ariaLabel="3 Average 1,230 reviews"
+      value={3}
+      size={RATING_SIZES.large}
+      title={ThreeStars}
+      subtitle="1,230 reviews"
     />
     <br />
   </div>
@@ -273,6 +298,21 @@ const MixedExample = () => (
       title={LargeTripImageTitle}
       subtitle="6,170 reviews"
       size={RATING_SIZES.large}
+    />
+    <br />
+    <BpkRating
+      ariaLabel="3 Average 1,230 reviews"
+      value={3}
+      title={ThreeStars}
+      subtitle="1,230 reviews"
+    />
+    <br />
+    <BpkRating
+      ariaLabel="3 Average 1,230 reviews"
+      value={3}
+      size={RATING_SIZES.large}
+      title={ThreeStars}
+      subtitle="1,230 reviews"
     />
     <br />
     <BpkRating ariaLabel="2.3 Bad" title="Bad" value={2.3} />

@@ -213,6 +213,8 @@ class BpkTooltipPortal extends Component<Props, State> {
             onClose={this.closeTooltip}
             style={portalStyle}
             renderTarget={renderTarget}
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
             className={classNames.join(' ')}
           >
             <BpkTooltip padded={padded} {...rest}>

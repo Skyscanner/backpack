@@ -18,9 +18,10 @@
 
 import { Component } from 'react';
 
+import { withButtonAlignment } from '../../bpk-component-icon';
+import ClearIcon from '../../bpk-component-icon/sm/close-circle';
 import { cssModules } from '../../bpk-react-utils';
 
-import BpkClearButton from './BpkClearButton';
 import { CLEAR_BUTTON_MODES, defaultProps } from './common-types';
 
 import type { Props } from './common-types';
@@ -33,6 +34,7 @@ type State = {
 
 const getClassName = cssModules(STYLES);
 
+const ClearButtonIcon = withButtonAlignment(ClearIcon);
 class BpkInput extends Component<Props, State> {
   static defaultProps = defaultProps;
 
@@ -145,9 +147,11 @@ class BpkInput extends Component<Props, State> {
       <div className={containerClassNames.join(' ')}>
         {renderedInput}
         {value.length > 0 && (
-          <BpkClearButton
+          <button
+            type="button"
+            title={clearButtonLabel || ''}
+            aria-label={clearButtonLabel || ''}
             tabIndex={-1}
-            label={clearButtonLabel || ''}
             onMouseDown={onMouseDown}
             onClick={(e) => {
               if (ref) {
@@ -163,7 +167,12 @@ class BpkInput extends Component<Props, State> {
               }
             }}
             className={clearButtonClassNames.join(' ')}
+          >
+          <ClearButtonIcon
+            focusable="false" // prevents focus on IE11
+            fill="currentcolor"
           />
+        </button>
         )}
       </div>
     ) : (

@@ -22,7 +22,6 @@
 
 import type { ReactNode, FunctionComponent, SVGProps } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -30,11 +29,8 @@ import BpkAnimateHeight from '../../bpk-animate-height';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
 import { withButtonAlignment } from '../../bpk-component-icon';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ChevronDownIcon from '../../bpk-component-icon/lg/chevron-down';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -84,6 +80,8 @@ const getIconForType = (
   const Icon = CustomIcon || componentMap[type];
   const AlignedIcon = withButtonAlignment(Icon);
 
+  // TODO: className to be removed
+  // eslint-disable-next-line @skyscanner/rules/forbid-component-props
   return <AlignedIcon className={className} />;
 };
 
@@ -106,7 +104,10 @@ const ToggleButton = (props: ToggleButtonProps) => {
       aria-expanded={props.expanded}
       title={props.label}
     >
-      <ExpandIcon className={classNames.join(' ')} />
+      <ExpandIcon 
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+      className={classNames.join(' ')} />
     </button>
   );
 };

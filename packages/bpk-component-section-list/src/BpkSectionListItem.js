@@ -63,9 +63,9 @@ const BpkSectionListItem = (props: Props) => {
         {...rest}
       >
         {children}
-        <BpkLargeChevronRightIconWithRtlSupport
-          className={getClassName('bpk-section-list-item__chevron')}
-        />
+        <span className={getClassName('bpk-section-list-item__chevron')}>
+          <BpkLargeChevronRightIconWithRtlSupport/>
+        </span>
       </a>
     );
   }
@@ -80,9 +80,9 @@ const BpkSectionListItem = (props: Props) => {
         {...rest}
       >
         {children}
-        <BpkLargeChevronRightIconWithRtlSupport
-          className={getClassName('bpk-section-list-item__chevron')}
-        />
+        <span className={getClassName('bpk-section-list-item__chevron')}>
+          <BpkLargeChevronRightIconWithRtlSupport/>
+        </span>
       </button>
     );
   }

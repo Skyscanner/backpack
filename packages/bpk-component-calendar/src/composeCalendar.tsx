@@ -200,6 +200,8 @@ const composeCalendar = (
             daysOfWeek={daysOfWeek}
             weekStartsOn={weekStartsOn}
             weekDayKey={weekDayKey}
+            // TODO: className to be removed
+            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
             className={headerClasses.join(' ')}
             {...headerProps}
           />
@@ -220,6 +222,8 @@ const composeCalendar = (
           focusedDate={focusedDate}
           markToday={markToday}
           markOutsideDays={markOutsideDays}
+          // TODO: className to be removed
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={gridClasses.join(' ')}
           dateProps={dateProps}
           selectionConfiguration={selectionConfiguration}

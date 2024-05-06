@@ -25,6 +25,7 @@
   bottom: tokens.bpk-spacing-xl();
   left: 0;
   display: flex;
+  z-index: 2;
   max-width: tokens.bpk-spacing-xxl() * 10;
   margin: auto;
   padding: tokens.bpk-spacing-lg();
@@ -63,14 +64,6 @@
       transform: translateY(0);
       opacity: 1;
     }
-  }
-
-  &__button {
-    min-height: 0;
-    padding: 0;
-    color: tokens.$bpk-text-on-dark-day;
-    margin-inline-start: auto;
-    word-break: keep-all;
   }
 
   &__icon {
