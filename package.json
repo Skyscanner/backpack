@@ -175,7 +175,7 @@
     "react-svg-loader": "^3.0.1",
     "sass-embedded": "^1.71.1",
     "sass-loader": "^14.1.1",
-    "sass-migrator": "^1.8.0",
+    "sass-migrator": "^2.0.3",
     "sassdoc": "^2.7.0",
     "storybook": "^7.6.17",
     "style-loader": "^4.0.0",
