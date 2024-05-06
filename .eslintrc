@@ -146,9 +146,12 @@
               "ListElements",  // allowed for a prop that is passed down in BpkList to the conditional list elements
               "Pointer", // allowed for a prop that is passed down in the BpkFlareBar to a generated element and necessary to continue supporting svgClassName
               "ScrimBpkModalInner", // allowed for a prop that is passed in BpkModal down to a scrim wrapped BpkModalInner component.
-              "Slider", // allowed for a prop that is passed in BpkSlider down to the react-slider component.
               "TransitionComponent", // allowed for a prop that is passed in BpkCalendarGridTransition down to a "transition" component prop.
-              "WithOpenEventsInputComponent" // allowed for a prop as consumer className is passed in
+              "WithOpenEventsInputComponent", // allowed for a prop as consumer className is passed in
+              "Slider.Root", // allowed for styling to be passed to radix-ui component
+              "Slider.Track", // allowed for styling to be passed to radix-ui component
+              "Slider.Range", // allowed for styling to be passed to radix-ui component
+              "Slider.Thumb" // allowed for styling to be passed to radix-ui component
             ]
           }
         ]

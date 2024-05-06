@@ -1,4 +1,3 @@
-/* eslint-disable @skyscanner/rules/forbid-component-props */
 /*
  * Backpack - Skyscanner's Design System
  *
