@@ -21,8 +21,8 @@ import PropTypes from 'prop-types';
 import { Component, Children, cloneElement } from 'react';
 import type { Node } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkHorizontalNav.module.scss';
 
@@ -166,24 +166,25 @@ class BpkHorizontalNav extends Component<Props> {
 
     return (
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-      <BpkMobileScrollContainer
-        ariaLabel={ariaLabel}
-        innerContainerTagName="nav"
-        className={classNames}
-        leadingIndicatorClassName={leadingScrollIndicatorClassName}
-        trailingIndicatorClassName={trailingScrollIndicatorClassName}
-        scrollerRef={(ref) => {
-          this.scrollRef = ref;
-        }}
-        {...rest}
-      >
-        <div
-          className={getClassName('bpk-horizontal-nav__list')}
-          role="tablist"
+      <div className={classNames}>
+        <BpkMobileScrollContainer
+          ariaLabel={ariaLabel}
+          innerContainerTagName="nav"
+          leadingIndicatorClassName={leadingScrollIndicatorClassName}
+          trailingIndicatorClassName={trailingScrollIndicatorClassName}
+          scrollerRef={(ref) => {
+            this.scrollRef = ref;
+          }}
+          {...rest}
         >
-          {children}
-        </div>
-      </BpkMobileScrollContainer>
+          <div
+            className={getClassName('bpk-horizontal-nav__list')}
+            role="tablist"
+          >
+            {children}
+          </div>
+        </BpkMobileScrollContainer>
+      </div>
     );
   }
 }

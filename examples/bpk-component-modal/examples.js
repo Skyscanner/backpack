@@ -21,21 +21,22 @@
 import PropTypes from 'prop-types';
 import { Component, Children } from 'react';
 import type { Node, Element } from 'react';
+
 import {
   lineHeightBase,
   iconSizeSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 import BpkButton from '../../packages/bpk-component-button';
-import { BpkNavigationBarButtonLink } from '../../packages/bpk-component-navigation-bar';
 import {
   withAlignment,
   withRtlSupport,
 } from '../../packages/bpk-component-icon';
 import ArrowIcon from '../../packages/bpk-component-icon/sm/long-arrow-left';
+import BpkModal, { MODAL_STYLING } from '../../packages/bpk-component-modal';
+import { BpkNavigationBarButtonLink } from '../../packages/bpk-component-navigation-bar';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import BpkModal from '../../packages/bpk-component-modal';
+import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 
@@ -187,6 +188,16 @@ const DefaultExample = () => (
   </ModalContainer>
 );
 
+const ContrastExample = () => (
+  <ModalContainer
+    title="Modal title"
+    closeLabel="Close modal"
+    modalStyle={MODAL_STYLING.surfaceContrast}
+  >
+    This is a contrast modal. You can put anything you want in here.
+  </ModalContainer>
+);
+
 const WideExample = () => (
   <ModalContainer title="Modal title" closeLabel="Close modal" wide>
     This is a wide modal.
@@ -305,4 +316,5 @@ export {
   NoHeaderExample,
   NoPaddingExample,
   WithAccessoryViewExample,
+  ContrastExample,
 };

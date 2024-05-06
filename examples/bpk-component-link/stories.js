@@ -17,8 +17,8 @@
  */
 
 
-import BpkLink from '../../packages/bpk-component-link/src/BpkLink';
 import BpkButtonLink from '../../packages/bpk-component-link/src/BpkButtonLink';
+import BpkLink from '../../packages/bpk-component-link/src/BpkLink';
 
 import {
   LinkExample,

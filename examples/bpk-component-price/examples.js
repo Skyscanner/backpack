@@ -103,7 +103,7 @@ const LargeWithPreviousPriceLeadingTextExample = () => (
 );
 
 const LargeLongPriceExample = () => (
-  // eslint-disable-next-line backpack/use-tokens
+   
   <div style={{ width: 184 }}>
     <BpkPrice
       size={SIZES.large}

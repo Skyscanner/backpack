@@ -17,10 +17,11 @@
  */
 
 import type { ReactElement, ReactNode } from 'react';
-import { cloneElement } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
+
+import type { Tag, TextStyle } from '../../bpk-component-text/src/BpkText';
 
 import STYLES from './BpkNavigationBar.module.scss';
 
@@ -35,6 +36,8 @@ export type BarStyle = (typeof BAR_STYLES)[keyof typeof BAR_STYLES];
 export type Props = {
   id: string;
   title: ReactNode;
+  titleTextStyle?: TextStyle;
+  titleTagName?: Tag;
   className?: string;
   leadingButton?: ReactElement | null;
   trailingButton?: ReactElement | null;
@@ -51,6 +54,8 @@ const BpkNavigationBar = (props: Props) => {
     leadingButton,
     sticky = false,
     title,
+    titleTagName = "span",
+    titleTextStyle = TEXT_STYLES.heading5,
     trailingButton,
     ...rest
   } = props;
@@ -82,18 +87,20 @@ const BpkNavigationBar = (props: Props) => {
         </div>
       )}
       {typeof title === 'string' ? (
-        <BpkText
-          id={titleId}
-          textStyle={TEXT_STYLES.heading5}
-          className={getClassNames(
-            'bpk-navigation-bar__title',
-            `bpk-navigation-bar__title--${barStyle}`,
-          )}
-        >
-          {title}
-        </BpkText>
+        <span className={getClassNames(
+          'bpk-navigation-bar__title',
+          `bpk-navigation-bar__title--${barStyle}`,
+        )}>
+          <BpkText
+            id={titleId}
+            textStyle={titleTextStyle}
+            tagName={titleTagName}
+          >
+            {title}
+          </BpkText>
+        </span>
       ) : (
-        title
+        <div className={getClassNames('bpk-navigation-bar__title-container')}>{title}</div>
       )}
       {trailingButton && (
         <div

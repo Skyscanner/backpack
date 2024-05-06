@@ -17,10 +17,11 @@
  */
 
 import PropTypes from 'prop-types';
-import { isWeekend } from 'date-fns/isWeekend';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
 import { render } from '@testing-library/react';
+import { isWeekend } from 'date-fns/isWeekend';
+
+import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { DateUtils } from '../../bpk-component-calendar';
 import { formatDateFull, formatMonth } from '../test-utils';
@@ -99,7 +100,7 @@ describe('BpkCalendarScrollGridList', () => {
   it('should render correctly with a custom date component', () => {
     const MyCustomDate = (props: any) => {
       const cx = {
-        backgroundColor: colorPanjin,
+        backgroundColor: (colorPanjin as string),
         width: '50%',
         height: '50%',
         borderRadius: '5rem',

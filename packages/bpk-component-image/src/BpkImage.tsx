@@ -17,17 +17,18 @@
  */
 
 import { Component } from 'react';
+
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CSSTransition from 'react-transition-group/CSSTransition';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { cssModules } from '../../bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkSpinner } from '../../bpk-component-spinner';
+import { cssModules } from '../../bpk-react-utils';
+
+import BORDER_RADIUS_STYLES from './BpkImageBorderRadiusStyles';
 
 import STYLES from './BpkImage.module.scss';
-import BORDER_RADIUS_STYLES from './BpkImageBorderRadiusStyles';
 
 const getClassName = cssModules(STYLES);
 

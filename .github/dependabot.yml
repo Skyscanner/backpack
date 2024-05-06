@@ -7,8 +7,25 @@ updates:
     time: "10:00"
   open-pull-requests-limit: 10
   versioning-strategy: increase
+  ignore:
+    - dependency-name: '*'
+      update-types: ['version-update:semver-patch']
   allow:
     - dependency-type: "direct"
+  groups:
+    babel:
+      patterns:
+        - "@babel*"
+        - "babel*"
+    storybook:
+      patterns:
+        - "@storybook*"
+        - "storybook*"
+    testing-library:
+      patterns:
+        - "@testing-library*"
+        - "testing-library*"
+        - "jest*"
 - package-ecosystem: github-actions
   directory: "/"
   schedule:

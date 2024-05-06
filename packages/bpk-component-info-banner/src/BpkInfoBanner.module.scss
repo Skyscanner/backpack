@@ -82,10 +82,6 @@
 
   &__expand-icon {
     fill: tokens.$bpk-text-secondary-day;
-
-    &--flipped {
-      transform: scaleY(-1);
-    }
   }
 
   &__children-container {
@@ -100,9 +96,5 @@
     &--no-action {
       padding: tokens.bpk-spacing-sm() 0 tokens.bpk-spacing-md();
     }
-  }
-
-  &__expandable-action {
-    padding-bottom: tokens.bpk-spacing-sm();
   }
 }

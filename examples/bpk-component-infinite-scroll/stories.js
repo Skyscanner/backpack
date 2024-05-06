@@ -17,7 +17,6 @@
  */
 
 
-import { WithInfiniteScrollMock as withInfiniteScroll } from './stories-utils';
 import {
   DefaultExample,
   StoppingAfterScrollsExample,
@@ -30,6 +29,7 @@ import {
   ForceUpdateDataExampleFromNonEmptyToEmptyExample,
   InferDatasourceWhenLessThanRequestElementsExample,
 } from './examples';
+import { WithInfiniteScrollMock as withInfiniteScroll } from './stories-utils';
 
 /*
  * Scrolls back to the top before rendering the story.

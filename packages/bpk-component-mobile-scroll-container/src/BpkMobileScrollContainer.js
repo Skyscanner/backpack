@@ -19,9 +19,10 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import debounce from 'lodash.debounce';
 import type { Node } from 'react';
 import { Component } from 'react';
+
+import debounce from 'lodash.debounce';
 
 import { cssModules, isRTL } from '../../bpk-react-utils';
 
@@ -57,19 +58,7 @@ const computeScrollIndicatorClassName = (
   const scrollValue = rtl ? -Math.floor(scrollLeft) : Math.ceil(scrollLeft);
   const showLeadingIndicator = scrollValue > 0;
   const showTrailingIndicator = scrollValue < scrollWidth - offsetWidth;
-  const showLeftIndicator = rtl ? showTrailingIndicator : showLeadingIndicator;
-  const showRightIndicator = rtl ? showLeadingIndicator : showTrailingIndicator;
 
-  if (showLeftIndicator) {
-    classNames.push(
-      getClassName('bpk-mobile-scroll-container--left-indicator'),
-    );
-  }
-  if (showRightIndicator) {
-    classNames.push(
-      getClassName('bpk-mobile-scroll-container--right-indicator'),
-    );
-  }
   if (showLeadingIndicator && leadingIndicatorClassName) {
     classNames.push(leadingIndicatorClassName);
   }

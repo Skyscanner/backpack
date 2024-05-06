@@ -26,17 +26,17 @@ import {
   surfaceContrastDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkCheckbox from '../../packages/bpk-component-checkbox';
-import BpkText from '../../packages/bpk-component-text';
-import { withAlignment } from '../../packages/bpk-component-icon';
-import StopsIcon from '../../packages/bpk-component-icon/sm/stops';
-import TimeIcon from '../../packages/bpk-component-icon/sm/time';
 import {
   BpkAccordion,
   withSingleItemAccordionState,
   BpkAccordionItem,
   withAccordionItemState,
 } from '../../packages/bpk-component-accordion';
+import BpkCheckbox from '../../packages/bpk-component-checkbox';
+import { withAlignment } from '../../packages/bpk-component-icon';
+import StopsIcon from '../../packages/bpk-component-icon/sm/stops';
+import TimeIcon from '../../packages/bpk-component-icon/sm/time';
+import BpkText from '../../packages/bpk-component-text';
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
 const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);

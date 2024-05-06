@@ -17,8 +17,8 @@
  */
 /* @flow strict */
 
-import { action } from './src/BpkStorybookUtils';
 import BpkDarkExampleWrapper from './src/BpkDarkExampleWrapper';
+import { action } from './src/BpkStorybookUtils';
 
 export default { action, BpkDarkExampleWrapper };
 export { action, BpkDarkExampleWrapper };

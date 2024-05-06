@@ -22,9 +22,10 @@ import BpkLabel from '../../bpk-component-label';
 import BpkSelect from '../../bpk-component-select';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkThemeToggle.module.scss';
 import bpkCustomThemes from './theming';
 import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
+
+import STYLES from './BpkThemeToggle.module.scss';
 
 const inputId = 'theme-select';
 const getClassName = cssModules(STYLES);
@@ -83,12 +84,9 @@ class BpkThemeToggle extends Component {
     const { ...rest } = this.props;
     return (
       <div {...rest}>
-        <BpkLabel
-          className={getClassName('bpk-theme-toggle__label')}
-          htmlFor={inputId}
-        >
-          Change theme
-        </BpkLabel>
+        <span className={getClassName('bpk-theme-toggle__label')}>
+          <BpkLabel htmlFor={inputId}>Change theme</BpkLabel>
+        </span>
         <BpkSelect
           id={inputId}
           name={inputId}

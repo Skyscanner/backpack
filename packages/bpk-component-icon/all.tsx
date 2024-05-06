@@ -22,15 +22,15 @@ function requireAll(requireContext: any) {
   const hash: any = {};
 
   requireContext.keys().forEach((key: string) => {
-    const moduleName: any = key.replace('./', '').replace('.js', '');
+    const moduleName: any = key.replace('./', '').replace('.jsx', '');
     hash[moduleName] = requireContext(key).default;
   });
 
   return hash;
 }
 
-const sm = requireAll(require.context('./sm', false, /\.js$/));
-const lg = requireAll(require.context('./lg', false, /\.js$/));
+const sm = requireAll(require.context('./sm', false, /\.jsx$/));
+const lg = requireAll(require.context('./lg', false, /\.jsx$/));
 
 export default sm;
 export { sm, lg };

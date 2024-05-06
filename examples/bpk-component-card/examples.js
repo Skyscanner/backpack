@@ -18,18 +18,19 @@
 /* @flow strict */
 
 import { Fragment } from 'react';
+
 import {
   coreAccentDay,
   surfaceHighlightDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { cssModules } from '../../packages/bpk-react-utils';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkCard, {
   BpkDividedCard,
   BpkCardWrapper,
   ORIENTATION,
 } from '../../packages/bpk-component-card';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 
@@ -109,7 +110,7 @@ const DefaultDividedCardExample = () => (
 );
 
 const VerticalDividedCardExample = () => (
-  // eslint-disable-next-line backpack/use-tokens
+   
   <div style={{ width: 343 }}>
     <BpkDividedCard
       primaryContent={longMessage}
@@ -127,7 +128,7 @@ const WithHrefDividedCardExample = () => (
 );
 
 const NonElevatedDividedCardExample = () => (
-  // eslint-disable-next-line backpack/use-tokens
+   
   <div style={{ width: 343 }}>
     <BpkDividedCard
       primaryContent={longMessage}

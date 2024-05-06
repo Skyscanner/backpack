@@ -21,10 +21,10 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 import BpkButton from '../../packages/bpk-component-button';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkDrawer from '../../packages/bpk-component-drawer';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 

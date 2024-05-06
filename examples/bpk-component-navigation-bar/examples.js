@@ -18,19 +18,20 @@
 
 /* @flow strict */
 
-import { action } from '../bpk-storybook-utils';
 import { withRtlSupport } from '../../packages/bpk-component-icon';
-import ArrowIcon from '../../packages/bpk-component-icon/sm/long-arrow-left';
 import CloseIcon from '../../packages/bpk-component-icon/sm/close';
-import { cssModules } from '../../packages/bpk-react-utils';
+import ArrowIcon from '../../packages/bpk-component-icon/sm/long-arrow-left';
 import BpkNavigationBar, {
   BpkNavigationBarButtonLink,
   BpkNavigationBarIconButton,
   BAR_STYLES,
 } from '../../packages/bpk-component-navigation-bar';
+import { cssModules } from '../../packages/bpk-react-utils';
+import { action } from '../bpk-storybook-utils';
+
+import AirlineLogo from './AirlineLogo';
 
 import STYLES from './examples.module.scss';
-import AirlineLogo from './AirlineLogo';
 
 const getClassNames = cssModules(STYLES);
 const ArrowIconWithRtl = withRtlSupport(ArrowIcon);
@@ -40,6 +41,29 @@ const DefaultExample = () => (
     <BpkNavigationBar
       id="test"
       title="Backpack"
+      leadingButton={
+        <BpkNavigationBarIconButton
+          onClick={action('back clicked')}
+          icon={ArrowIconWithRtl}
+          label="back"
+        />
+      }
+      trailingButton={
+        <BpkNavigationBarIconButton
+          onClick={action('close clicked')}
+          icon={CloseIcon}
+          label="close"
+        />
+      }
+    />
+  </div>
+);
+
+const LongTitleTextExample = () => (
+  <div className={getClassNames('bpk-navigation-bar-story')}>
+    <BpkNavigationBar
+      id="test"
+      title="Backpack navigation bar long title example"
       leadingButton={
         <BpkNavigationBarIconButton
           onClick={action('back clicked')}
@@ -240,10 +264,11 @@ const VisualTestExample = () => (
     <OnDarkExample />
     <WithLinksOnDarkExample />
   </div>
-)
+);
 
 export {
   DefaultExample,
+  LongTitleTextExample,
   OnDarkExample,
   LeadingIconOnlyExample,
   TrailingIconOnlyExample,
@@ -251,5 +276,5 @@ export {
   WithLogoExample,
   WithLinksOnDarkExample,
   StickyExample,
-  VisualTestExample
+  VisualTestExample,
 };

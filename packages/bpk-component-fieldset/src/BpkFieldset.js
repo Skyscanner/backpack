@@ -21,8 +21,8 @@ import PropTypes from 'prop-types';
 import type { Element } from 'react';
 import { cloneElement } from 'react';
 
-import BpkLabel from '../../bpk-component-label';
 import BpkFormValidation from '../../bpk-component-form-validation';
+import BpkLabel from '../../bpk-component-label';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkFieldset.module.scss';
@@ -116,16 +116,17 @@ const BpkFieldset = (props: Props) => {
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <fieldset className={classNames.join(' ')} {...rest}>
       {!isCheckbox && (
-        <BpkLabel
-          className={getClassName('bpk-fieldset__label')}
-          htmlFor={childId}
-          required={required}
-          disabled={disabled}
-          valid={isValid}
-        >
-          {/* $FlowIgnore[incompatible-type] - As this prop is only required when isCheckbox is false our labelPropType handles checking this is null or not. */}
-          {label}
-        </BpkLabel>
+        <div className={getClassName('bpk-fieldset__label')}>
+          <BpkLabel
+            htmlFor={childId}
+            required={required}
+            disabled={disabled}
+            valid={isValid}
+          >
+            {/* $FlowIgnore[incompatible-type] - As this prop is only required when isCheckbox is false our labelPropType handles checking this is null or not. */}
+            {label}
+          </BpkLabel>
+        </div>
       )}
       {clonedChildren}
       {description && (

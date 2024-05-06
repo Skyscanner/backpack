@@ -18,12 +18,13 @@
 
 /* @flow strict */
 
+import BpkButtonBase, { cssModules } from './BpkButtonBase';
 import {
   type Props as CommonProps,
   defaultProps,
   propTypes,
 } from './common-types';
-import BpkButtonBase, { cssModules } from './BpkButtonBase';
+
 import STYLES from './BpkButtonLink.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -46,8 +47,12 @@ const BpkButtonLink = (props: Props) => {
   const classNamesFinal = classNames.join(' ');
 
   return (
+    <BpkButtonBase 
+    // TODO: className to be removed
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+    className={classNamesFinal} large={large} 
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <BpkButtonBase className={classNamesFinal} large={large} {...rest} />
+    {...rest} />
   );
 };
 

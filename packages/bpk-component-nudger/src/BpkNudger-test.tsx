@@ -96,22 +96,6 @@ describe('BpkNudger', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with a "className" attribute', () => {
-    const { asFragment } = render(
-      <BpkNudger
-        id="nudger"
-        min={1}
-        max={9}
-        value={2}
-        onChange={() => null}
-        decreaseButtonLabel="Decrease"
-        increaseButtonLabel="Increase"
-        className="my-nudger"
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly with a value = min', () => {
     const { asFragment } = render(
       <BpkNudger

@@ -1,33 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkBreakpoint SSR mode should not render on SSR until hydrated when matchSSR=false: hydrated 1`] = `
-<DocumentFragment>
-  <div
-    data-reactroot=""
-  >
-    matches
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkBreakpoint SSR mode should not render on SSR until hydrated when matchSSR=false: server rendered 1`] = `"<div data-reactroot="">does not match</div>"`;
-
-exports[`BpkBreakpoint SSR mode should not render when matchSSR is not defined 1`] = `"<div data-reactroot="">does not match</div>"`;
-
-exports[`BpkBreakpoint SSR mode should render when matchSSR=true 1`] = `"<div data-reactroot="">matches</div>"`;
-
-exports[`BpkBreakpoint should render if the breakpoint is matched 1`] = `
-<DocumentFragment>
-  <div>
-    matches
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkBreakpoint should render if the breakpoint is not matched 1`] = `
+exports[`BpkBreakpoint children as a callback function should call function with matches=false if the breakpoint is not matched 1`] = `
 <DocumentFragment>
   <div>
     does not match
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkBreakpoint children as a callback function should call function with matches=true if the breakpoint is matched 1`] = `
+<DocumentFragment>
+  <div>
+    matches
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkBreakpoint children as component should not render when breakpoint does not match 1`] = `<DocumentFragment />`;
+
+exports[`BpkBreakpoint children as component should render when breakpoint matches 1`] = `
+<DocumentFragment>
+  <div>
+    matches
   </div>
 </DocumentFragment>
 `;

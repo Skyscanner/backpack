@@ -17,16 +17,16 @@
  */
 
 
-import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
 import { ArgsTable } from '@storybook/addon-docs';
+import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
 
 import BpkScrim from '../../packages/bpk-scrim-utils/src/BpkScrim';
 
-import { withScrimMock, withScrimmedPortalMock } from './stories.utils';
 import {
   WithPortalScrimExample,
   WithCustomElementAndPortalScrimExample
  } from './examples';
+import { withScrimMock, withScrimmedPortalMock } from './stories.utils';
 
 export default {
   title: 'bpk-scrim-utils',

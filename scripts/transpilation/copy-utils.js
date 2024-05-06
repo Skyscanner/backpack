@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-const fs = require("fs");
 const { execSync } = require('child_process');
+const fs = require("fs");
 
 // eslint-disable-next-line no-console
 console.log('Copying bpk-mixins...');

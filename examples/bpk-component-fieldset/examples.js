@@ -20,29 +20,29 @@
 import PropTypes from 'prop-types';
 import { cloneElement, Component } from 'react';
 
-import { action } from '../bpk-storybook-utils';
-import BpkSelect from '../../packages/bpk-component-select';
-import BpkCheckbox from '../../packages/bpk-component-checkbox';
-import BpkInput, { INPUT_TYPES } from '../../packages/bpk-component-input';
-import BpkButton from '../../packages/bpk-component-button';
-import BpkDatepicker from '../../packages/bpk-component-datepicker';
-import BpkSplitInput from '../../packages/bpk-component-split-input';
-import BpkTextarea from '../../packages/bpk-component-textarea';
 import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
 } from '../../packages/bpk-component-autosuggest';
+import BpkButton from '../../packages/bpk-component-button';
+import { format } from '../../packages/bpk-component-calendar/src/date-utils';
 import {
   weekDays,
   formatMonth,
   formatDateFull,
 } from '../../packages/bpk-component-calendar/test-utils';
-import { format } from '../../packages/bpk-component-calendar/src/date-utils';
-import { cssModules } from '../../packages/bpk-react-utils';
+import BpkCheckbox from '../../packages/bpk-component-checkbox';
+import BpkDatepicker from '../../packages/bpk-component-datepicker';
 import BpkFieldset, {
   type BpkFieldsetProps,
   propTypes,
   defaultProps,
 } from '../../packages/bpk-component-fieldset';
+import BpkInput, { INPUT_TYPES } from '../../packages/bpk-component-input';
+import BpkSelect from '../../packages/bpk-component-select';
+import BpkSplitInput from '../../packages/bpk-component-split-input';
+import BpkTextarea from '../../packages/bpk-component-textarea';
+import { cssModules } from '../../packages/bpk-react-utils';
+import { action } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 

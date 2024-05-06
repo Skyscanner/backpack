@@ -21,25 +21,25 @@
  */
 
 import type { ReactNode, FunctionComponent, SVGProps } from 'react';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { withButtonAlignment } from '../../bpk-component-icon';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkLink from '../../bpk-component-link';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkAnimateHeight from '../../bpk-animate-height';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { withButtonAlignment } from '../../bpk-component-icon';
+import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
+import ChevronUpIcon from '../../bpk-component-icon/sm/chevron-up';
+import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
+import BpkLink from '../../bpk-component-link';
 import { cssModules } from '../../bpk-react-utils';
 
 import AnimateAndFade from './AnimateAndFade';
+import { ALERT_TYPES, STYLE_TYPES } from './common-types';
+
 import type {
   AlertTypeValue,
   CommonProps,
@@ -47,12 +47,13 @@ import type {
   OnExpandToggleHandler,
   ExpandableBannerAction,
 } from './common-types';
-import { ALERT_TYPES, STYLE_TYPES } from './common-types';
+
 import STYLES from './BpkInfoBanner.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 const ExpandIcon = withButtonAlignment(ChevronDownIcon);
+const CollapseIcon = withButtonAlignment(ChevronUpIcon);
 
 export const CONFIGURATION = {
   NONE: 'none',
@@ -82,7 +83,7 @@ const getIconForType = (
   const Icon = CustomIcon || componentMap[type];
   const AlignedIcon = withButtonAlignment(Icon);
 
-  return <AlignedIcon className={className} />;
+  return <div className={className}><AlignedIcon/></div>;
 };
 
 type ToggleButtonProps = {
@@ -91,10 +92,7 @@ type ToggleButtonProps = {
 };
 
 const ToggleButton = (props: ToggleButtonProps) => {
-  const classNames = getClassName(
-    'bpk-info-banner__expand-icon',
-    props.expanded && 'bpk-info-banner__expand-icon--flipped'
-  );
+  const classNames = getClassName('bpk-info-banner__expand-icon');
 
   return (
     <button
@@ -104,7 +102,9 @@ const ToggleButton = (props: ToggleButtonProps) => {
       aria-expanded={props.expanded}
       title={props.label}
     >
-      <ExpandIcon className={classNames} />
+      <div className={classNames}>
+        {props.expanded ? <CollapseIcon/> : <ExpandIcon/> }
+      </div>
     </button>
   );
 };
@@ -208,7 +208,6 @@ const BpkInfoBannerInner = ({
           {dismissable && (
             <span className={getClassName('bpk-info-banner__toggle')}>
               <BpkCloseButton
-                className={getClassName('bpk-info-banner__toggle-button')}
                 onClick={onBannerDismiss}
                 aria-label={dismissButtonLabel}
                 label={dismissButtonLabel}
@@ -225,7 +224,6 @@ const BpkInfoBannerInner = ({
           </div>
           {isExpandable && action && (
             <BpkLink
-              className={getClassName('bpk-info-banner__expandable-action')}
               onClick={action.callback}
             >
               {action.title}

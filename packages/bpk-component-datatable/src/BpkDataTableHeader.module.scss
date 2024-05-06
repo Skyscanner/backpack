@@ -21,6 +21,7 @@
 @use '../../unstable__bpk-mixins/utils';
 
 $bpk-margin-size-sort-icons: tokens.bpk-spacing-sm() + tokens.bpk-spacing-md();
+$icon-height: tokens.$bpk-line-height-xs / 2;
 
 .bpk-data-table-column__header {
   display: flex;
@@ -47,6 +48,7 @@ $bpk-margin-size-sort-icons: tokens.bpk-spacing-sm() + tokens.bpk-spacing-md();
 
 .bpk-data-table-column__sort-icon {
   display: block;
+  line-height: $icon-height;
   fill: tokens.$bpk-line-day;
 
   &:hover {

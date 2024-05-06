@@ -18,9 +18,10 @@
 
 import type { ElementType } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { BpkCalendarGrid } from '../../bpk-component-calendar';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
+
 import type { BpkCalendarGridProps } from '../../bpk-component-calendar';
 
 import STYLES from './BpkScrollableCalendarGrid.module.scss';
@@ -46,6 +47,8 @@ const BpkScrollableCalendarGrid = ({
   return (
     <div className={classNames}>
       <BpkText
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={getClassName('bpk-scrollable-calendar-grid__title')}
         tagName="h1"
         textStyle={TEXT_STYLES.heading4}

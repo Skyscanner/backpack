@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import type { ReactElement, ReactNode } from 'react';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+
 import { breakpoints } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import useMediaQuery from './useMediaQuery';
@@ -35,7 +35,6 @@ const BREAKPOINTS = {
   ABOVE_DESKTOP: breakpoints.breakpointQueryAboveDesktop,
   DESKTOP_ONLY: breakpoints.breakpointQueryDesktopOnly,
 } as const;
-
 type Props = {
   /**
    * The content to render when the breakpoint matches.
@@ -52,33 +51,33 @@ const BpkBreakpoint = ({
   matchSSR = false,
   query,
 }: Props) => {
+  /**
+   * The useEffect and useState combination forces BpkBreakpoint to re-render.
+   * Consumers of BpkBreakpoint have become reliant on this behaviour particularly when using BpkBreakpoint within a SSR'd application.
+   * This shouldn't be removed without a breaking change & understanding how to migrate consumers away from this reliance.
+   */
   const [isClient, setIsClient] = useState(false);
-  const matches = useMediaQuery(query);
-
   useEffect(() => {
     setIsClient(true);
   }, []);
-
+  const matches = useMediaQuery(query, matchSSR);
   if (isClient) {
+    // @ts-expect-error invariant check. query: string matching limited BREAKPOINTS string values
     if (!legacy && !Object.values(BREAKPOINTS).includes(query)) {
       console.warn(
         `Invalid query ${query}. Use one of the supported queries or pass the legacy prop.`,
       );
     }
-
     if (typeof children === 'function') {
       return children(matches) as ReactElement;
     }
     return matches ? (children as ReactElement) : null;
   }
 
-  // Below code is executed when running in SSR mode
-
   if (typeof children === 'function') {
-    return children(matchSSR);
+    return children(matchSSR) as ReactElement;
   }
-  return matchSSR ? children : null;
+  return matchSSR ? (children as ReactElement) : null;
 };
-
 export { BREAKPOINTS };
 export default BpkBreakpoint;

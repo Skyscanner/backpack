@@ -20,15 +20,11 @@ import type { MouseEvent } from 'react';
 import { useState } from 'react';
 
 import { BpkButtonV2 } from '../../bpk-component-button';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkHeartIcon from '../../bpk-component-icon/lg/heart';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkHeartOutlineIcon from '../../bpk-component-icon/lg/heart--outline';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkHeartIconSm from '../../bpk-component-icon/sm/heart';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkHeartOutlineIconSm from '../../bpk-component-icon/sm/heart--outline';
 import { withLargeButtonAlignment } from '../../bpk-component-icon';
+import BpkHeartIcon from '../../bpk-component-icon/lg/heart';
+import BpkHeartOutlineIcon from '../../bpk-component-icon/lg/heart--outline';
+import BpkHeartIconSm from '../../bpk-component-icon/sm/heart';
+import BpkHeartOutlineIconSm from '../../bpk-component-icon/sm/heart--outline';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkSaveButton.module.scss';
@@ -81,6 +77,8 @@ const BpkSaveButton = ({
   return (
     <BpkButtonV2
       aria-label={accessibilityLabel}
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={getClassName(
         'bpk-save-button',
         smallSize && 'bpk-save-button__small',
@@ -95,6 +93,8 @@ const BpkSaveButton = ({
       iconOnly
     >
       <HeartIcon
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={getClassName(
           'bpk-save-button__icon',
           'bpk-save-button__heartIcon',
@@ -104,6 +104,8 @@ const BpkSaveButton = ({
         )}
       />
       <HeartOutLineIcon
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={getClassName(
           'bpk-save-button__icon',
           'bpk-save-button__heartOutlineIcon',

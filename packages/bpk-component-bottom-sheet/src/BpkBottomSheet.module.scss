@@ -30,8 +30,6 @@
   animation-timing-function: ease-in-out;
 }
 
-$close-button-width: tokens.bpk-spacing-lg() * 2;
-
 .bpk-bottom-sheet {
   z-index: tokens.$bpk-zindex-modal;
   width: 100%;
@@ -114,8 +112,13 @@ $close-button-width: tokens.bpk-spacing-lg() * 2;
     position: sticky;
     top: 0;
     z-index: tokens.$bpk-zindex-tooltip - 1;
+    padding: tokens.bpk-spacing-sm() 0;
 
-    @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
+    @include utils.bpk-themeable-property(
+      background-color,
+      --bpk-navigation-bar-background-color,
+      tokens.$bpk-surface-default-day
+    );
   }
 
   @keyframes slide-up {

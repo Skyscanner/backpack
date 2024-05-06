@@ -16,12 +16,11 @@
  * limitations under the License.
  */
 
-import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
 import { ArgsTable } from '@storybook/addon-docs';
+import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
 
 import BpkInput from '../../packages/bpk-component-input/src/BpkInput';
 
-import { WithOpenEventsMock } from './stories-utils';
 import {
   TextExample,
   PlaceholderExample,
@@ -38,6 +37,7 @@ import {
   ManuallyDockedExample,
   MixedExample,
 } from './examples';
+import { WithOpenEventsMock } from './stories-utils';
 
 export default {
   title: 'bpk-component-input',

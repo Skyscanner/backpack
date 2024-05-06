@@ -18,9 +18,8 @@
 
 import { useState } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import SwapVertical from '../../bpk-component-icon/sm/swap--vertical';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkSwapButton.module.scss';
 

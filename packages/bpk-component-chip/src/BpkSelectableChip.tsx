@@ -18,16 +18,19 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
+
+import { CHIP_TYPES } from './commonTypes';
+
+import type { CommonProps } from './commonTypes';
 
 import STYLES from './BpkSelectableChip.module.scss';
-import type { CommonProps } from './commonTypes';
-import { CHIP_TYPES } from './commonTypes';
 
 const getClassName = cssModules(STYLES);
 
 export interface Props extends CommonProps {
+  dismissible?: boolean;
   role?: string;
   trailingAccessoryView?: ReactNode;
 }
@@ -37,6 +40,7 @@ const BpkSelectableChip = ({
   children,
   className,
   disabled = false,
+  dismissible = false,
   leadingAccessoryView = null,
   role = 'checkbox',
   selected = false,
@@ -49,8 +53,10 @@ const BpkSelectableChip = ({
     `bpk-chip--${type}`,
     disabled && 'bpk-chip--disabled',
     disabled && `bpk-chip--${type}-disabled`,
+    !children && 'bpk-chip--icon-only',
     !disabled && selected && `bpk-chip--${type}-selected`,
-    className,
+    dismissible && `bpk-chip--${type}-dismissible`,
+    className
   );
 
   return (
@@ -64,7 +70,12 @@ const BpkSelectableChip = ({
       {...rest}
     >
       {leadingAccessoryView && (
-        <span className={getClassName('bpk-chip__leading-accessory-view')}>
+        <span
+          className={getClassName(
+            'bpk-chip__leading-accessory-view',
+            !children && 'bpk-chip--icon-only__leading-accessory-view'
+          )}
+        >
           {leadingAccessoryView}
         </span>
       )}

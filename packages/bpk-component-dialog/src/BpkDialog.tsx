@@ -16,13 +16,15 @@
  * limitations under the License.
  */
 
-import { cssModules, Portal } from '../../bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
+import { cssModules, Portal } from '../../bpk-react-utils';
 
 import BpkDialogInner from './BpkDialogInner';
-import type { Props } from './common-types';
 import { HEADER_ICON_TYPES } from './common-types';
+
+import type { Props } from './common-types';
+
 import STYLES from './BpkDialog.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -44,9 +46,11 @@ const BpkDialog = ({
   );
   const closeButtonClassNames = getClassName('bpk-dialog__close-button');
 
-  if(!onClose && dismissible === true) {
+  if (!onClose && dismissible === true) {
     // eslint-disable-next-line no-console
-    console.warn('BpkDialog: dismissible is true but no onClose prop was provided. Dialog will not be dismissible.');
+    console.warn(
+      'BpkDialog: dismissible is true but no onClose prop was provided. Dialog will not be dismissible.',
+    );
   }
 
   return (
@@ -67,11 +71,9 @@ const BpkDialog = ({
       >
         {headerIcon && <div className={headerIconClassNames}>{headerIcon}</div>}
         {dismissible && (
-          <BpkCloseButton
-            className={closeButtonClassNames}
-            label={closeLabel}
-            onClick={onClose}
-          />
+          <span className={closeButtonClassNames}>
+            <BpkCloseButton label={closeLabel} onClick={onClose} />
+          </span>
         )}
         {children}
       </BpkDialogInner>

@@ -17,18 +17,19 @@
  */
 
 import { Fragment } from 'react';
+
 import {
   onePixelRem,
   colorSkyGrayTint06,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { cssModules } from '../../packages/bpk-react-utils';
-import BpkText from '../../packages/bpk-component-text';
-import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,
   HORIZONTAL_NAV_TYPES,
 } from '../../packages/bpk-component-horizontal-nav';
+import BpkText from '../../packages/bpk-component-text';
+import { cssModules } from '../../packages/bpk-react-utils';
+import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 

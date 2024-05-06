@@ -21,9 +21,9 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkSpinner from './BpkSpinner';
-import BpkLargeSpinner from './BpkLargeSpinner';
 import BpkExtraLargeSpinner from './BpkExtraLargeSpinner';
+import BpkLargeSpinner from './BpkLargeSpinner';
+import BpkSpinner from './BpkSpinner';
 
 describe('BpkSpinner accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
