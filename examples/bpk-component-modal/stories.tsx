@@ -106,4 +106,7 @@ export const VisualTestDefaultWithZoom = {
   parameters: {
     layout: 'fullscreen',
   },
+  args: {
+    zoomEnabled: true
+  },
 };
