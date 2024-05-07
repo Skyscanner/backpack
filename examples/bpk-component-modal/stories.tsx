@@ -79,11 +79,8 @@ export const VisualTestDefault = {
     <>
       {visualWrapper('bpk-component-modal--default')}
       {visualWrapper('bpk-component-modal--contrast')}
-      {visualWrapper('bpk-component-modal--full-screen')}
       {visualWrapper('bpk-component-modal--long-title')}
       {visualWrapper('bpk-component-modal--with-accessory-view')}
-      {visualWrapper('bpk-component-modal--no-padding')}
-      {visualWrapper('bpk-component-modal--no-header')}
     </>
   ),
   parameters: {
@@ -98,11 +95,8 @@ export const VisualTestDefaultWithZoom = {
     <>
       {visualWrapper('bpk-component-modal--default', true)}
       {visualWrapper('bpk-component-modal--contrast', true)}
-      {visualWrapper('bpk-component-modal--full-screen', true)}
       {visualWrapper('bpk-component-modal--long-title', true)}
       {visualWrapper('bpk-component-modal--with-accessory-view', true)}
-      {visualWrapper('bpk-component-modal--no-padding', true)}
-      {visualWrapper('bpk-component-modal--no-header', true)}
     </>
   ),
   parameters: {
