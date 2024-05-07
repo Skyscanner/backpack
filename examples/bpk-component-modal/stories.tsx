@@ -67,7 +67,6 @@ const visualWrapper = (id: string, zoomEnabled: boolean = false) => (
     <iframe
       title={`Embedded Storybook ${id}`}
       src={`/iframe.html?id=${id}&viewMode=story&args=zoomEnabled:${zoomEnabled}`}
-      loading="lazy"
       aria-label="Embedded Storybook"
       referrerPolicy="origin"
       style={{ height: '100%', width: '100%', border: 0 }}
