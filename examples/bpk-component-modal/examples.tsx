@@ -15,12 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-/* @flow strict */
-
-import { Component, Children, useState } from 'react';
-
-import { isObject } from 'lodash';
+import { Children, useState } from 'react';
 
 import {
   lineHeightBase,
@@ -130,7 +125,6 @@ const ModalContainer = (props: ContainerProps) => {
         <BpkButton onClick={() => setIsOpen(true)}>
           {buttonLabel || 'Open modal'}
         </BpkButton>
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkModal
           id="my-modal"
           className="my-classname"
