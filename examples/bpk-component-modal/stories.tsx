@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import BpkModal from '../../packages/bpk-component-modal/src/BpkModal';
 
 import {
@@ -59,3 +58,56 @@ export const NoPadding = NoPaddingExample;
 
 export const WithAccessoryView = WithAccessoryViewExample;
 export const Contrast = ContrastExample;
+
+// Due to how iframes work we can pass a local url to load the stories above.
+// Attempted to use a Custom Iframe component with a react portal and ref to
+// render components but it didn't have the desired effect.
+const visualWrapper = (id: string, zoomEnabled: boolean = false) => (
+  <div style={{ height: '640px', width: '100%' }}>
+    <iframe
+      title={`Embedded Storybook ${id}`}
+      src={`/iframe.html?id=${id}&viewMode=story&args=zoomEnabled:${zoomEnabled}`}
+      aria-label="Embedded Storybook"
+      referrerPolicy="origin"
+      style={{ height: '100%', width: '100%', border: 0 }}
+    />
+  </div>
+);
+
+// Note that these stories won't work when published to https://backpack.github.io/storybook/
+// due to the publicPath containing `/storybook` and the iframe src not including it.
+export const VisualTestDefault = {
+  render: () => (
+    <>
+      {visualWrapper('bpk-component-modal--default')}
+      {visualWrapper('bpk-component-modal--contrast')}
+      {visualWrapper('bpk-component-modal--long-title')}
+      {visualWrapper('bpk-component-modal--with-accessory-view')}
+    </>
+  ),
+  parameters: {
+    layout: 'fullscreen',
+    percy: {
+      waitForTimeout: 10000,
+    },
+  },
+};
+export const VisualTestDefaultWithZoom = {
+  render: () => (
+    <>
+      {visualWrapper('bpk-component-modal--default', true)}
+      {visualWrapper('bpk-component-modal--contrast', true)}
+      {visualWrapper('bpk-component-modal--long-title', true)}
+      {visualWrapper('bpk-component-modal--with-accessory-view', true)}
+    </>
+  ),
+  parameters: {
+    layout: 'fullscreen',
+    percy: {
+      waitForTimeout: 10000,
+    },
+  },
+  args: {
+    zoomEnabled: true
+  },
+};
