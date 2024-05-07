@@ -74,6 +74,8 @@ const visualWrapper = (id: string, zoomEnabled: boolean = false) => (
   </div>
 );
 
+// Note that these stories won't work when published to https://backpack.github.io/storybook/
+// due to the publicPath containing `/storybook` and the iframe src not including it.
 export const VisualTestDefault = {
   render: () => (
     <>
