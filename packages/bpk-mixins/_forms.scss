@@ -190,7 +190,7 @@
   padding: 0;
   border: 0;
   background-color: transparent;
-  color: tokens.$bpk-text-secondary-day;
+  color: $bpk-text-secondary-day;
   cursor: pointer;
   appearance: none; // hidden by default
 
@@ -200,11 +200,11 @@
   }
 
   @include utils.bpk-hover {
-    color: tokens.$bpk-text-primary-day;
+    color: $bpk-text-primary-day;
   }
 
   &:active {
-    color: tokens.$bpk-text-primary-day;
+    color: $bpk-text-primary-day;
   }
 
   &--large {
