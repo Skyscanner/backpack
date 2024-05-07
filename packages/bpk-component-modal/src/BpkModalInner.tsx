@@ -136,7 +136,6 @@ const BpkModalInner = ({
                   : BAR_STYLES.default
               }
               id={headingId}
-              justified
               title={
                 <h2
                   id={headingId}
