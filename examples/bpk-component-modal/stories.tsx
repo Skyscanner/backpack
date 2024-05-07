@@ -89,6 +89,9 @@ export const VisualTestDefault = {
   ),
   parameters: {
     layout: 'fullscreen',
+    percy: {
+      waitForTimeout: 10000,
+    },
   },
 };
 export const VisualTestDefaultWithZoom = {
@@ -105,6 +108,9 @@ export const VisualTestDefaultWithZoom = {
   ),
   parameters: {
     layout: 'fullscreen',
+    percy: {
+      waitForTimeout: 10000,
+    },
   },
   args: {
     zoomEnabled: true
