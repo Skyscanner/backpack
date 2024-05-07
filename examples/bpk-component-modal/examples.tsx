@@ -15,12 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import { Component, Children } from 'react';
-import type { Node, Element } from 'react';
+import { Children, useState } from 'react';
 
 import {
   lineHeightBase,
@@ -33,7 +28,10 @@ import {
   withRtlSupport,
 } from '../../packages/bpk-component-icon';
 import ArrowIcon from '../../packages/bpk-component-icon/sm/long-arrow-left';
-import BpkModal, { MODAL_STYLING } from '../../packages/bpk-component-modal';
+import BpkModal, {
+  MODAL_STYLING,
+  type BpkModalProps,
+} from '../../packages/bpk-component-modal';
 import { BpkNavigationBarButtonLink } from '../../packages/bpk-component-navigation-bar';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
@@ -108,147 +106,112 @@ const content = [
     pulvinar erat dignissim vitae.
   </Paragraph>,
 ];
+type ContainerProps =  {
+  title?: string;
+  buttonLabel?: string;
+  id?: string;
+  wrapperProps?: Object;
+  isOpen?: boolean;
+} & Omit<BpkModalProps, 'getApplicationElement'| 'id' | 'isOpen'>;
 
-class ModalContainer extends Component<
-  {
-    children: Node,
-    accessoryView: ?Element<any>,
-    buttonLabel: ?string,
-    wrapperProps: ?Object,
-  },
-  {
-    isOpen: boolean,
-  },
-> {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    accessoryView: PropTypes.func,
-    buttonLabel: PropTypes.string,
-    wrapperProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  };
+const ModalContainer = (props: ContainerProps) => {
+  const [isOpen, setIsOpen] = useState(props.isOpen || false);
 
-  static defaultProps = {
-    accessoryView: null,
-    buttonLabel: null,
-    wrapperProps: null,
-  };
+  const { accessoryView, buttonLabel, children, wrapperProps, ...rest } = props;
 
-  constructor() {
-    super();
-
-    this.state = {
-      isOpen: false,
-    };
-  }
-
-  onOpen = () => {
-    this.setState({
-      isOpen: true,
-    });
-  };
-
-  onClose = () => {
-    this.setState({
-      isOpen: false,
-    });
-  };
-
-  render() {
-    const { accessoryView, buttonLabel, children, wrapperProps, ...rest } =
-      this.props;
-
-    return (
-      <div id="modal-container" {...wrapperProps}>
-        <div id="pagewrap">
-          <BpkButton onClick={this.onOpen}>
-            {buttonLabel || 'Open modal'}
-          </BpkButton>
-          {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-          <BpkModal
-            id="my-modal"
-            className="my-classname"
-            isOpen={this.state.isOpen}
-            onClose={this.onClose}
-            getApplicationElement={() => document.getElementById('pagewrap')}
-            renderTarget={() => document.getElementById('modal-container')}
-            accessoryView={accessoryView}
-            {...rest}
-          >
-            {children}
-          </BpkModal>
-        </div>
+  return (
+    <div id="modal-container" {...wrapperProps}>
+      <div id="pagewrap">
+        <BpkButton onClick={() => setIsOpen(true)}>
+          {buttonLabel || 'Open modal'}
+        </BpkButton>
+        <BpkModal
+          id="my-modal"
+          className="my-classname"
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          getApplicationElement={() => document.getElementById('pagewrap')}
+          renderTarget={() => document.getElementById('modal-container')}
+          accessoryView={accessoryView}
+          {...rest}
+        >
+          {children}
+        </BpkModal>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
-const DefaultExample = () => (
-  <ModalContainer title="Modal title" closeLabel="Close modal">
+const DefaultExample = (isOpen: boolean) => (
+  <ModalContainer title="Modal title" closeLabel="Close modal" isOpen={isOpen} >
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const ContrastExample = () => (
+const ContrastExample = (isOpen: boolean) => (
   <ModalContainer
     title="Modal title"
     closeLabel="Close modal"
     modalStyle={MODAL_STYLING.surfaceContrast}
+    isOpen={isOpen}
   >
     This is a contrast modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const WideExample = () => (
-  <ModalContainer title="Modal title" closeLabel="Close modal" wide>
+const WideExample = (isOpen: boolean) => (
+  <ModalContainer title="Modal title" closeLabel="Close modal" isOpen={isOpen} wide>
     This is a wide modal.
   </ModalContainer>
 );
 
-const OverflowingExample = () => (
-  <ModalContainer title="Modal title" closeLabel="Close modal">
+const OverflowingExample = (isOpen: boolean) => (
+  <ModalContainer title="Modal title" closeLabel="Close modal" isOpen={isOpen}>
     {Children.toArray(content)}
   </ModalContainer>
 );
 
-const CloseButtonTextExample = () => (
-  <ModalContainer title="Modal title" closeText="Done">
+const CloseButtonTextExample = (isOpen: boolean) => (
+  <ModalContainer title="Modal title" closeText="Done" isOpen={isOpen}>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const LongTitleExample = () => (
+const LongTitleExample = (isOpen: boolean) => (
   <ModalContainer
     title="We have to remember what's important in life: friends, waffles, and work. Or waffles, friends, work. But work has to come third."
     closeText="Done"
+    isOpen={isOpen}
   >
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const NotFullScreenOnMobileExample = () => (
+const NotFullScreenOnMobileExample = (isOpen: boolean) => (
   <ModalContainer
     title="Modal title"
     closeLabel="Close modal"
     fullScreenOnMobile={false}
+    isOpen={isOpen}
   >
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const FullScreenExample = () => (
-  <ModalContainer title="Modal title" closeLabel="Close modal" fullScreen>
+const FullScreenExample = (isOpen: boolean) => (
+  <ModalContainer title="Modal title" closeLabel="Close modal" fullScreen isOpen={isOpen}>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const FullScreenOverflowingExample = () => (
-  <ModalContainer title="Modal title" closeLabel="Close modal" fullScreen>
+const FullScreenOverflowingExample = (isOpen: boolean) => (
+  <ModalContainer title="Modal title" closeLabel="Close modal" fullScreen isOpen={isOpen}>
     {Children.toArray(content)}
   </ModalContainer>
 );
 
-const NestedExample = () => (
-  <ModalContainer title="Modal title" closeLabel="Close modal" fullScreen>
+const NestedExample = (isOpen: boolean) => (
+  <ModalContainer title="Modal title" closeLabel="Close modal" fullScreen isOpen={isOpen}>
     This is a full-screen modal. You can put anything you want in here,
     including other modals!
     <ModalContainer
@@ -257,6 +220,7 @@ const NestedExample = () => (
       wrapperProps={{ id: 'inner-modal-container' }}
       buttonLabel="Open another modal from this modal"
       id="inner-modal"
+      isOpen={isOpen}
       renderTarget={() => document.getElementById('inner-modal-container')}
     >
       This is a default modal. You can put anything you want in here.
@@ -264,23 +228,24 @@ const NestedExample = () => (
   </ModalContainer>
 );
 
-const NoHeaderExample = () => (
+const NoHeaderExample = (isOpen: boolean) => (
   <ModalContainer
     title="Modal title"
     closeLabel="Close modal"
     showHeader={false}
+    isOpen={isOpen}
   >
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const NoPaddingExample = () => (
-  <ModalContainer title="Modal title" closeLabel="Close modal" padded={false}>
+const NoPaddingExample = (isOpen: boolean) => (
+  <ModalContainer title="Modal title" closeLabel="Close modal" padded={false} isOpen={isOpen}>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const WithAccessoryViewExample = () => (
+const WithAccessoryViewExample = (isOpen: boolean) => (
   <ModalContainer
     title="Modal title"
     closeLabel="Close modal"
@@ -297,6 +262,7 @@ const WithAccessoryViewExample = () => (
         </div>
       </BpkNavigationBarButtonLink>
     }
+    isOpen={isOpen}
   >
     The left hand button is intentally not functional. You can put anything you
     want in here.

@@ -37,15 +37,18 @@
     flex-direction: row;
 
     &--right {
+      display: flex;
       flex-direction: row-reverse;
     }
   }
 
   &__previous-price {
+    display: flex;
     text-decoration-line: line-through;
   }
 
   &__separator {
+    display: flex;
     margin: 0 tokens.bpk-spacing-sm();
   }
 
@@ -55,6 +58,7 @@
   }
 
   &__price {
+    display: contents;
     color: tokens.$bpk-text-primary-day;
     word-break: break-all;
   }
@@ -70,6 +74,7 @@
   }
 
   &__trailing {
+    display: contents;
     white-space: nowrap;
   }
 }
