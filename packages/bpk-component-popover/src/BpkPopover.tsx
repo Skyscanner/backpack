@@ -56,14 +56,17 @@ const EVENT_SOURCES = {
 // The stroke width is used to set the border width of the arrow.
 const strokeWidth = 0.0625;
 
-const bindEventSource =
-  (source: string, callback: any, event: SyntheticEvent<HTMLButtonElement>) => {
-    if (event.persist) {
-      event.persist();
-    }
+const bindEventSource = (
+  source: string,
+  callback: any,
+  event: SyntheticEvent<HTMLButtonElement>,
+) => {
+  if (event.persist) {
+    event.persist();
+  }
 
-    callback(event, { source });
-  };
+  callback(event, { source });
+};
 
 export type Props = {
   children: ReactNode;
@@ -171,7 +174,6 @@ const BpkPopover = ({
                     ref={arrowRef}
                     context={context}
                     id={ARROW_ID}
-                    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
                     className={getClassName('bpk-popover__arrow')}
                     role="presentation"
                     stroke={surfaceHighlightDay}
@@ -192,7 +194,11 @@ const BpkPopover = ({
                       <BpkCloseButton
                         label={closeButtonText}
                         onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
-                          bindEventSource(EVENT_SOURCES.CLOSE_BUTTON, onClose, event);
+                          bindEventSource(
+                            EVENT_SOURCES.CLOSE_BUTTON,
+                            onClose,
+                            event,
+                          );
                           setIsOpenState(false);
                         }}
                         {...closeButtonProps}
@@ -200,7 +206,11 @@ const BpkPopover = ({
                     ) : (
                       <BpkButtonLink
                         onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
-                          bindEventSource(EVENT_SOURCES.CLOSE_LINK, onClose, event);
+                          bindEventSource(
+                            EVENT_SOURCES.CLOSE_LINK,
+                            onClose,
+                            event,
+                          );
                           setIsOpenState(false);
                         }}
                         {...closeButtonProps}
@@ -222,7 +232,11 @@ const BpkPopover = ({
                   <footer className={getClassName('bpk-popover__footer')}>
                     <BpkButtonLink
                       onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
-                        bindEventSource(EVENT_SOURCES.CLOSE_LINK, onClose, event);
+                        bindEventSource(
+                          EVENT_SOURCES.CLOSE_LINK,
+                          onClose,
+                          event,
+                        );
                         setIsOpenState(false);
                       }}
                       {...closeButtonProps}

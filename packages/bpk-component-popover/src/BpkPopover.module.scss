@@ -19,7 +19,8 @@
 @use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/borders';
 @use '../../unstable__bpk-mixins/breakpoints';
-@use '../../unstable__bpk-mixins/layers';
+@use '../../unstable__bpk-mixins/radii';
+@use '../../unstable__bpk-mixins/shadows';
 @use '../../unstable__bpk-mixins/utils';
 
 $arrow-size: tokens.bpk-spacing-lg();
@@ -36,9 +37,11 @@ $arrow-size: tokens.bpk-spacing-lg();
 .bpk-popover {
   transition: opacity tokens.$bpk-duration-sm ease-in-out;
   outline: 0;
+  background-color: tokens.$bpk-color-white;
   opacity: 1;
 
-  @include layers.bpk-layer;
+  @include radii.bpk-border-radius-sm;
+  @include shadows.bpk-box-shadow-lg;
 
   @include breakpoints.bpk-breakpoint-above-mobile {
     max-width: tokens.$bpk-breakpoint-mobile;
