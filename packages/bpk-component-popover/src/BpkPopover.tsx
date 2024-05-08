@@ -33,6 +33,7 @@ import {
   shift,
 } from '@floating-ui/react';
 
+
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -43,6 +44,8 @@ import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
 import { ARROW_ID } from './constants';
+
+import type { Placement } from '@floating-ui/react';
 
 import STYLES from './BpkPopover.module.scss';
 
@@ -83,7 +86,7 @@ export type Props = {
   isOpen?: boolean;
   labelAsTitle?: boolean;
   padded?: boolean;
-  placement?: 'top' | 'right' | 'bottom' | 'left';
+  placement?: Placement;
   showArrow?: Boolean;
   target: ReactElement<any>;
 };

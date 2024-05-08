@@ -17,6 +17,7 @@
  */
 
 import type { SyntheticEvent, ReactNode, ReactElement } from 'react';
+import type { Placement } from '@floating-ui/react';
 declare const EVENT_SOURCES: {
     CLOSE_BUTTON: string;
     CLOSE_LINK: string;
@@ -35,7 +36,7 @@ export type Props = {
     isOpen?: boolean;
     labelAsTitle?: boolean;
     padded?: boolean;
-    placement?: 'top' | 'right' | 'bottom' | 'left';
+    placement?: Placement;
     showArrow?: Boolean;
     target: ReactElement<any>;
 };
