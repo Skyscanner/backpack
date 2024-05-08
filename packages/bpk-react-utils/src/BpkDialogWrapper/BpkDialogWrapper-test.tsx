@@ -17,8 +17,9 @@
  */
 
 import { renderToString } from 'react-dom/server';
+import '@testing-library/jest-dom';
 
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { type BpkDialogWrapper as WrapperType } from './BpkDialogWrapper';
 
@@ -55,7 +56,7 @@ describe('BpkDialogWrapper', () => {
             appearActive: "active-class",
             exit: "exit-class"
           }}
-          timeout={{appear: 0, exit: 0}}
+          timeout={{ appear: 0, exit: 0 }}
           {...props}
         >
           Dialog content
@@ -100,6 +101,30 @@ describe('BpkDialogWrapper', () => {
       );
       expect(asFragment()).toMatchSnapshot();
     });
+    it('renders correctly with ariaLabelledBy prop', () => {
+      const { container } = render(
+        <BpkDialogWrapper
+          {...props}
+          ariaLabelledby='my-title-id'
+        >
+          Dialog content
+        </BpkDialogWrapper>
+      );
+
+      expect(container.querySelector('dialog[aria-labelledby="my-title-id"]')).toBeInTheDocument();
+    });
+    it('renders correctly with ariaLabel prop', () => {
+      const { container } = render(
+        <BpkDialogWrapper
+          {...props}
+          ariaLabel='my a11y title'
+        >
+          Dialog content
+        </BpkDialogWrapper>
+      );
+
+      expect(container.querySelector('dialog[aria-label="my a11y title"]')).toBeInTheDocument();
+    });
     it('renders correctly with animation props', () => {
       const { asFragment } = render(
         <BpkDialogWrapper
@@ -109,7 +134,7 @@ describe('BpkDialogWrapper', () => {
             appearActive: "active-class",
             exit: "exit-class"
           }}
-          timeout={{appear: 0, exit: 0}}
+          timeout={{ appear: 0, exit: 0 }}
           {...props}
         >
           Dialog content
@@ -147,7 +172,7 @@ describe('BpkDialogWrapper', () => {
             appearActive: "active-class",
             exit: "exit-class"
           }}
-          timeout={{appear: 0, exit: 0}}
+          timeout={{ appear: 0, exit: 0 }}
           {...props}
         >
           Dialog content
@@ -216,7 +241,7 @@ describe('BpkDialogWrapper', () => {
             appearActive: "active-class",
             exit: "exit-class"
           }}
-          timeout={{appear: 0, exit: 0}}
+          timeout={{ appear: 0, exit: 0 }}
           {...props}
         >
           Dialog content

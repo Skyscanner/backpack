@@ -22,18 +22,35 @@ import { axe } from 'jest-axe';
 import { BpkDialogWrapper } from './BpkDialogWrapper';
 
 describe('BpkDialogWrapper accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
+  const props = {
+    closeOnEscPressed: true,
+    closeOnScrimClick: true,
+    dialogClassName: 'test-class',
+    id: "dialog-wrapper",
+    isOpen: true,
+    onClose: jest.fn(),
+    transitionClassNames: { appear: "appear-class", appearActive: "active-class", exit: "exit-class" },
+    timeout: { appear: 0, exit: 0 }
+  }
+
+  it('should not have programmatically-detectable accessibility issues using ariaLabelledby', async () => {
     const { container } = render(
       <BpkDialogWrapper
+        {...props}
         ariaLabelledby='dialog-wrapper'
-        closeOnEscPressed
-        closeOnScrimClick
-        dialogClassName='test-class'
-        id="dialog-wrapper"
-        isOpen
-        onClose={jest.fn()}
-        transitionClassNames={{appear: "appear-class", appearActive: "active-class", exit: "exit-class"}}
-        timeout={{appear: 0, exit: 0}}
+      >
+        Dialog content
+      </BpkDialogWrapper>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have programmatically-detectable accessibility issues using airaLabel', async () => {
+    const { container } = render(
+      <BpkDialogWrapper
+        {...props}
+        ariaLabel='dialog wrapper'
       >
         Dialog content
       </BpkDialogWrapper>,
