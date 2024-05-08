@@ -20,9 +20,7 @@ import {
   withButtonAlignment,
   withRtlSupport,
 } from '../../../bpk-component-icon';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ChevronDown from '../../../bpk-component-icon/sm/chevron-down';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ChevronUp from '../../../bpk-component-icon/sm/chevron-up';
 
 import type { BpkExpandProps } from '../common-types';
