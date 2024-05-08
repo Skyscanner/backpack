@@ -16,24 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
-type Props = {
-  accessory?: ['expand', 'button', 'pagination'];
-  buttonText?: string;
-  cardList: any[];
-  description?: string;
-  expandText?: string;
-  initiallyShownCards?: number;
-  layoutDesktop: ['row', 'grid'];
-  layoutMobile: ['rail', 'stack'];
-  onButtonClick?: Function;
-  title: string;
-};
-
-declare const BpkCardList: ({
-  cardList,
-  layoutDesktop,
-  layoutMobile,
-  title,
-}: Props) => JSX.Element;
+import BpkCardList from './BpkCardList';
+import { BpkCardListProps } from "./common-types";
+export { type BpkCardListProps };
 export default BpkCardList;
