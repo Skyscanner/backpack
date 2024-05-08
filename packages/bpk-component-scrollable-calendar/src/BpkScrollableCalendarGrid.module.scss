@@ -24,6 +24,7 @@
   border-spacing: 0;
 
   &__title {
+    display: block;
     margin-top: tokens.bpk-spacing-lg();
   }
 }
