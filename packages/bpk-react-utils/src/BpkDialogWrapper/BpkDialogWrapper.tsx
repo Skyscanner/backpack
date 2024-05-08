@@ -27,8 +27,7 @@ import STYLES from './BpkDialogWrapper.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export interface Props {
-  ariaLabelledby: string;
+interface CommonProps {
   children: ReactNode;
   closeOnEscPressed?: boolean;
   closeOnScrimClick?: boolean;
@@ -40,15 +39,17 @@ export interface Props {
     arg1?: {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
     },
-) => void | null;
+  ) => void | null;
   exiting?: boolean;
   transitionClassNames?: {
     appear?: string,
     appearActive?: string,
     exit?: string
   };
-  timeout?: {appear?: number, exit?: number};
+  timeout?: { appear?: number, exit?: number };
 };
+
+export type Props = CommonProps & ({ ariaLabelledby: string } | { ariaLabel: string; });;
 
 type DialogProps = {
   isDialogOpen: boolean;
@@ -68,7 +69,6 @@ const setPageProperties = ({ isDialogOpen }: DialogProps) => {
 
 export const BpkDialogWrapper = (props: Props) => {
   const {
-    ariaLabelledby,
     children,
     closeOnEscPressed = false,
     closeOnScrimClick = false,
@@ -77,7 +77,7 @@ export const BpkDialogWrapper = (props: Props) => {
     id,
     isOpen,
     onClose,
-    timeout = {appear: 0, exit: 0},
+    timeout = { appear: 0, exit: 0 },
     transitionClassNames = {}
   } = props;
 
@@ -94,7 +94,7 @@ export const BpkDialogWrapper = (props: Props) => {
           const { target } = event;
 
           if (target === modal) {
-            onClose(event, {source: "DOCUMENT_CLICK"});
+            onClose(event, { source: "DOCUMENT_CLICK" });
             event.stopPropagation();
           }
         });
@@ -105,7 +105,7 @@ export const BpkDialogWrapper = (props: Props) => {
       if (closeOnEscPressed
         && event.key === 'Escape'
         && (!dialogWithPolyfill || event.target === dialogWithPolyfill)) {
-        onClose(event, {source: "ESCAPE"});
+        onClose(event, { source: "ESCAPE" });
       }
       event.stopPropagation();
     };
@@ -135,6 +135,11 @@ export const BpkDialogWrapper = (props: Props) => {
     };
   }, [id, isOpen, onClose, closeOnEscPressed, closeOnScrimClick]);
 
+  const ariaProps = {
+    ...("ariaLabelledby" in props ? { "aria-labelledby": props.ariaLabelledby } : undefined),
+    ...("ariaLabel" in props ? { "aria-label": props.ariaLabel } : undefined),
+  };
+
   return isOpen ? (
     <div
       className={getClassName(
@@ -157,15 +162,15 @@ export const BpkDialogWrapper = (props: Props) => {
         timeout={timeout}
       >
         <dialog
+          {...ariaProps}
           id={id}
           className={getClassName('bpk-dialog-wrapper--container', dialogClassName)}
           onCancel={(e) => {
             e.preventDefault();
             if (closeOnEscPressed && (!dialogTarget || e.target === dialogTarget)) {
-              onClose(e, {source: 'ESCAPE'})
+              onClose(e, { source: 'ESCAPE' })
             }
           }}
-          aria-labelledby={ariaLabelledby}
           data-open={isOpen}
           ref={ref}
         >
@@ -177,6 +182,6 @@ export const BpkDialogWrapper = (props: Props) => {
           </div>
         </dialog>
       </CSSTransition>
-    </div>
+    </div >
   ) : null;
 }
