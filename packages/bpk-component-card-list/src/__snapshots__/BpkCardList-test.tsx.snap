@@ -12,14 +12,18 @@ exports[`BpkCardList should render correctly with grid, rail and button accessor
         class="bpk-section-header__title-description bpk-section-header__title-description--default"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-section-header__title"
+          class="bpk-section-header__title"
         >
           Title
         </h2>
         <span
-          class="bpk-text bpk-text--body-default bpk-section-header__description"
+          class="bpk-section-header__description"
         >
-          Description
+          <span
+            class="bpk-text bpk-text--body-default"
+          >
+            Description
+          </span>
         </span>
       </div>
       <button
@@ -65,14 +69,18 @@ exports[`BpkCardList should render correctly with grid, rail and expand accessor
         class="bpk-section-header__title-description bpk-section-header__title-description--default"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-section-header__title"
+          class="bpk-section-header__title"
         >
           Title
         </h2>
         <span
-          class="bpk-text bpk-text--body-default bpk-section-header__description"
+          class="bpk-section-header__description"
         >
-          Description
+          <span
+            class="bpk-text bpk-text--body-default"
+          >
+            Description
+          </span>
         </span>
       </div>
     </div>
@@ -128,14 +136,18 @@ exports[`BpkCardList should render correctly with grid, rail and no accessory 1`
         class="bpk-section-header__title-description bpk-section-header__title-description--default"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-section-header__title"
+          class="bpk-section-header__title"
         >
           Title
         </h2>
         <span
-          class="bpk-text bpk-text--body-default bpk-section-header__description"
+          class="bpk-section-header__description"
         >
-          Description
+          <span
+            class="bpk-text bpk-text--body-default"
+          >
+            Description
+          </span>
         </span>
       </div>
     </div>
@@ -169,14 +181,18 @@ exports[`BpkCardList should render correctly with grid, stack and button accesso
         class="bpk-section-header__title-description bpk-section-header__title-description--default"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-section-header__title"
+          class="bpk-section-header__title"
         >
           Title
         </h2>
         <span
-          class="bpk-text bpk-text--body-default bpk-section-header__description"
+          class="bpk-section-header__description"
         >
-          Description
+          <span
+            class="bpk-text bpk-text--body-default"
+          >
+            Description
+          </span>
         </span>
       </div>
       <button
@@ -222,14 +238,18 @@ exports[`BpkCardList should render correctly with grid, stack and expand accesso
         class="bpk-section-header__title-description bpk-section-header__title-description--default"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-section-header__title"
+          class="bpk-section-header__title"
         >
           Title
         </h2>
         <span
-          class="bpk-text bpk-text--body-default bpk-section-header__description"
+          class="bpk-section-header__description"
         >
-          Description
+          <span
+            class="bpk-text bpk-text--body-default"
+          >
+            Description
+          </span>
         </span>
       </div>
     </div>
@@ -285,14 +305,18 @@ exports[`BpkCardList should render correctly with grid, stack and no accessory 1
         class="bpk-section-header__title-description bpk-section-header__title-description--default"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-section-header__title"
+          class="bpk-section-header__title"
         >
           Title
         </h2>
         <span
-          class="bpk-text bpk-text--body-default bpk-section-header__description"
+          class="bpk-section-header__description"
         >
-          Description
+          <span
+            class="bpk-text bpk-text--body-default"
+          >
+            Description
+          </span>
         </span>
       </div>
     </div>
@@ -326,14 +350,18 @@ exports[`BpkCardList should render correctly with header, grid, rail and expand 
         class="bpk-section-header__title-description bpk-section-header__title-description--default"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-section-header__title"
+          class="bpk-section-header__title"
         >
           Title
         </h2>
         <span
-          class="bpk-text bpk-text--body-default bpk-section-header__description"
+          class="bpk-section-header__description"
         >
-          Description
+          <span
+            class="bpk-text bpk-text--body-default"
+          >
+            Description
+          </span>
         </span>
       </div>
       <button
@@ -395,14 +423,18 @@ exports[`BpkCardList should render correctly with header, grid, rail and no acce
         class="bpk-section-header__title-description bpk-section-header__title-description--default"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-section-header__title"
+          class="bpk-section-header__title"
         >
           Title
         </h2>
         <span
-          class="bpk-text bpk-text--body-default bpk-section-header__description"
+          class="bpk-section-header__description"
         >
-          Description
+          <span
+            class="bpk-text bpk-text--body-default"
+          >
+            Description
+          </span>
         </span>
       </div>
       <button
@@ -442,14 +474,18 @@ exports[`BpkCardList should render correctly with header, grid, stack and expand
         class="bpk-section-header__title-description bpk-section-header__title-description--default"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-section-header__title"
+          class="bpk-section-header__title"
         >
           Title
         </h2>
         <span
-          class="bpk-text bpk-text--body-default bpk-section-header__description"
+          class="bpk-section-header__description"
         >
-          Description
+          <span
+            class="bpk-text bpk-text--body-default"
+          >
+            Description
+          </span>
         </span>
       </div>
       <button
@@ -511,14 +547,18 @@ exports[`BpkCardList should render correctly with header, grid, stack and no acc
         class="bpk-section-header__title-description bpk-section-header__title-description--default"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-section-header__title"
+          class="bpk-section-header__title"
         >
           Title
         </h2>
         <span
-          class="bpk-text bpk-text--body-default bpk-section-header__description"
+          class="bpk-section-header__description"
         >
-          Description
+          <span
+            class="bpk-text bpk-text--body-default"
+          >
+            Description
+          </span>
         </span>
       </div>
       <button
@@ -558,14 +598,18 @@ exports[`BpkCardList should render correctly with header, row, rail and no acces
         class="bpk-section-header__title-description bpk-section-header__title-description--default"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-section-header__title"
+          class="bpk-section-header__title"
         >
           Title
         </h2>
         <span
-          class="bpk-text bpk-text--body-default bpk-section-header__description"
+          class="bpk-section-header__description"
         >
-          Description
+          <span
+            class="bpk-text bpk-text--body-default"
+          >
+            Description
+          </span>
         </span>
       </div>
       <button
@@ -620,14 +664,18 @@ exports[`BpkCardList should render correctly with header, row, rail and paginati
         class="bpk-section-header__title-description bpk-section-header__title-description--default"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-section-header__title"
+          class="bpk-section-header__title"
         >
           Title
         </h2>
         <span
-          class="bpk-text bpk-text--body-default bpk-section-header__description"
+          class="bpk-section-header__description"
         >
-          Description
+          <span
+            class="bpk-text bpk-text--body-default"
+          >
+            Description
+          </span>
         </span>
       </div>
       <button
@@ -690,14 +738,18 @@ exports[`BpkCardList should render correctly with header, row, stack and no acce
         class="bpk-section-header__title-description bpk-section-header__title-description--default"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-section-header__title"
+          class="bpk-section-header__title"
         >
           Title
         </h2>
         <span
-          class="bpk-text bpk-text--body-default bpk-section-header__description"
+          class="bpk-section-header__description"
         >
-          Description
+          <span
+            class="bpk-text bpk-text--body-default"
+          >
+            Description
+          </span>
         </span>
       </div>
       <button
@@ -752,14 +804,18 @@ exports[`BpkCardList should render correctly with row, rail and no accessory 1`]
         class="bpk-section-header__title-description bpk-section-header__title-description--default"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-section-header__title"
+          class="bpk-section-header__title"
         >
           Title
         </h2>
         <span
-          class="bpk-text bpk-text--body-default bpk-section-header__description"
+          class="bpk-section-header__description"
         >
-          Description
+          <span
+            class="bpk-text bpk-text--body-default"
+          >
+            Description
+          </span>
         </span>
       </div>
     </div>
@@ -808,14 +864,18 @@ exports[`BpkCardList should render correctly with row, rail and pagination acces
         class="bpk-section-header__title-description bpk-section-header__title-description--default"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-section-header__title"
+          class="bpk-section-header__title"
         >
           Title
         </h2>
         <span
-          class="bpk-text bpk-text--body-default bpk-section-header__description"
+          class="bpk-section-header__description"
         >
-          Description
+          <span
+            class="bpk-text bpk-text--body-default"
+          >
+            Description
+          </span>
         </span>
       </div>
     </div>
@@ -872,14 +932,18 @@ exports[`BpkCardList should render correctly with row, stack and no accessory 1`
         class="bpk-section-header__title-description bpk-section-header__title-description--default"
       >
         <h2
-          class="bpk-text bpk-text--body-default bpk-section-header__title"
+          class="bpk-section-header__title"
         >
           Title
         </h2>
         <span
-          class="bpk-text bpk-text--body-default bpk-section-header__description"
+          class="bpk-section-header__description"
         >
-          Description
+          <span
+            class="bpk-text bpk-text--body-default"
+          >
+            Description
+          </span>
         </span>
       </div>
     </div>
