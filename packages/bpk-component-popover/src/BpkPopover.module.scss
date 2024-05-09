@@ -19,11 +19,11 @@
 @use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/borders';
 @use '../../unstable__bpk-mixins/breakpoints';
-@use '../../unstable__bpk-mixins/layers';
+@use '../../unstable__bpk-mixins/radii';
+@use '../../unstable__bpk-mixins/shadows';
 @use '../../unstable__bpk-mixins/utils';
 
 $arrow-size: tokens.bpk-spacing-lg();
-$arrow-inset-margin: -1 * (tokens.$bpk-one-pixel-rem * 11);
 
 .bpk-popover-portal {
   z-index: tokens.$bpk-zindex-popover;
@@ -37,9 +37,11 @@ $arrow-inset-margin: -1 * (tokens.$bpk-one-pixel-rem * 11);
 .bpk-popover {
   transition: opacity tokens.$bpk-duration-sm ease-in-out;
   outline: 0;
+  background-color: tokens.$bpk-color-white;
   opacity: 1;
 
-  @include layers.bpk-layer;
+  @include radii.bpk-border-radius-sm;
+  @include shadows.bpk-box-shadow-lg;
 
   @include breakpoints.bpk-breakpoint-above-mobile {
     max-width: tokens.$bpk-breakpoint-mobile;
@@ -55,36 +57,9 @@ $arrow-inset-margin: -1 * (tokens.$bpk-one-pixel-rem * 11);
   }
 
   &__arrow {
-    position: absolute;
     width: $arrow-size;
     height: $arrow-size;
-    transform: rotate(45deg);
-    border: tokens.$bpk-one-pixel-rem solid transparent;
-    background: inherit;
-
-    .bpk-popover-portal[data-popper-placement='top'] & {
-      bottom: $arrow-inset-margin;
-      border-right-color: tokens.$bpk-surface-highlight-day;
-      border-bottom-color: tokens.$bpk-surface-highlight-day;
-    }
-
-    .bpk-popover-portal[data-popper-placement='right'] & {
-      left: $arrow-inset-margin;
-      border-bottom-color: tokens.$bpk-surface-highlight-day;
-      border-left-color: tokens.$bpk-surface-highlight-day;
-    }
-
-    .bpk-popover-portal[data-popper-placement='bottom'] & {
-      top: $arrow-inset-margin;
-      border-top-color: tokens.$bpk-surface-highlight-day;
-      border-left-color: tokens.$bpk-surface-highlight-day;
-    }
-
-    .bpk-popover-portal[data-popper-placement='left'] & {
-      right: $arrow-inset-margin;
-      border-top-color: tokens.$bpk-surface-highlight-day;
-      border-right-color: tokens.$bpk-surface-highlight-day;
-    }
+    fill: tokens.$bpk-surface-default-day;
 
     &[data-hide] {
       visibility: hidden;
@@ -107,14 +82,6 @@ $arrow-inset-margin: -1 * (tokens.$bpk-one-pixel-rem * 11);
 
   &__label {
     @include utils.bpk-visually-hidden;
-  }
-
-  &__close-button {
-    float: right;
-
-    @include utils.bpk-rtl {
-      float: left;
-    }
   }
 
   &__footer {
