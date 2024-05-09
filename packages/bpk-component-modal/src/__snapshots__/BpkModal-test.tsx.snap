@@ -45,7 +45,7 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
               >
                 <button
                   aria-label="Close"
-                  class="bpk-close-button__default bpk-modal__close-button bpk-modal__close-button-style--default"
+                  class="bpk-close-button__default bpk-modal__close-button"
                   title="Close"
                   type="button"
                 >
