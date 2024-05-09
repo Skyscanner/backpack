@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import BpkCardList from '../../packages/bpk-component-card-list/src/BpkCardList';
 
@@ -40,3 +39,16 @@ export const RowToRail = RowToRailExample;
 export const RowToRailWithHeaderButton =
   RowToRailWith4InitiallyShownCardsExmaple;
 export const RowToStack = RowToStackExample;
+
+export const VisualTest = GridToRail;
+export const VisualTestVariant = RowToStack;
+
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true,
+};
+
+export const VisualTestVariantWithZoom = VisualTestVariant.bind({});
+VisualTestVariantWithZoom.args = {
+  zoomEnabled: true,
+};

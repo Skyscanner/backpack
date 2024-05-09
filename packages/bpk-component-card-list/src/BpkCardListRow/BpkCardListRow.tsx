@@ -23,10 +23,12 @@ import {
   type MouseEvent,
   type ReactElement,
 } from 'react';
+
 import debounce from 'lodash/debounce';
 
 import BpkPageIndicator from '../../../bpk-component-page-indicator';
 import { cssModules, isRTL } from '../../../bpk-react-utils';
+
 import type { BpkAccessoryTypes } from '../common-types';
 
 import STYLES from './BpkCardListRow.module.scss';

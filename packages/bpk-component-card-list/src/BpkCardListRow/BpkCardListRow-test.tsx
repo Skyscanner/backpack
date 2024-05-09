@@ -17,14 +17,16 @@
  */
 /* eslint-disable no-underscore-dangle */
 import { useRef } from 'react';
+
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import type { BpkAccessoryTypes } from '../common-types';
 import mockCards from '../../testMocks';
 
 import BpkCardListRow from './BpkCardListRow';
+
+import type { BpkAccessoryTypes } from '../common-types';
 
 jest.mock('../../../bpk-react-utils', () => ({
   ...jest.requireActual('../../../bpk-react-utils'),
@@ -120,7 +122,9 @@ describe('BpkCardListRow', () => {
       expect(
         container.getElementsByClassName('bpk-page-indicator__indicator'),
       ).toHaveLength(4);
-      expect(screen.getByRole('button', { name: 'Previous' })).toBeInTheDocument();
+      expect(
+        screen.getByRole('button', { name: 'Previous' }),
+      ).toBeInTheDocument();
       expect(screen.getByRole('button', { name: 'Next' })).toBeInTheDocument();
       expect(
         screen.getByRole('button', { name: 'Go to slide 1' }),

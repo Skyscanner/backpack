@@ -19,11 +19,11 @@
 
 import { useState } from 'react';
 
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkCard from '../../packages/bpk-component-card';
-import BpkImage from '../../packages/bpk-component-image';
 import BpkCardList from '../../packages/bpk-component-card-list';
+import BpkImage from '../../packages/bpk-component-image';
 import BpkLink from '../../packages/bpk-component-link';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 
 import STYLES from './examples.module.scss';
 
