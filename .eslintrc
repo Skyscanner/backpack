@@ -142,6 +142,7 @@
               "BpkSelectableChip", // allowed for prop that is part of the classnames applied to the BpkSelectableChip
               "CornerRadius", // allowed for a prop that is passed down in the BpkContentBubble as partof BpkFlare to a generated element and necessary to continue supporting svgClassName
               "DateContainer", // allowed for a prop that is passed down in the BpkCalendarWeek to the DateContainer
+              "FloatingArrow", // allowed for a prop that is passed down to a generated element
               "InnerContainer", // allowed for a prop that is passed down in the BpkMobileScrollContainer to a generated element
               "ListElements",  // allowed for a prop that is passed down in BpkList to the conditional list elements
               "Pointer", // allowed for a prop that is passed down in the BpkFlareBar to a generated element and necessary to continue supporting svgClassName

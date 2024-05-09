@@ -16,14 +16,15 @@
  * limitations under the License.
  */
 
-import { themeAttributes as calendarAttributes } from '../../bpk-component-calendar';
-import { themeAttributes as modalAttributes } from '../../bpk-component-modal';
-import { themeAttributes as popoverAttributes } from '../../bpk-component-popover';
+import themeAttributes from './themeAttributes';
 
-export default [
-  ...calendarAttributes,
-  ...popoverAttributes,
-  ...modalAttributes,
-].filter(
-  (attribute, index, attributes) => attributes.indexOf(attribute) === index,
-);
+describe('themeAttributes', () => {
+  it('should export the correct theme attributes', () => {
+    expect(themeAttributes).toEqual([
+      'linkColor',
+      'linkHoverColor',
+      'linkActiveColor',
+      'linkVisitedColor',
+    ]);
+  });
+});

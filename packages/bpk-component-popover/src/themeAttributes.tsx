@@ -16,19 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { themeAttributes as linkAttributes } from '../../bpk-component-link';
 
-import BpkPopoverPortal, {
-  propTypes as bpkPopoverPortalPropTypes,
-  defaultProps as bpkPopoverPortalDefaultProps,
-  type Props,
-} from './src/BpkPopoverPortal';
-import themeAttributes from './src/themeAttributes';
-
-export type BpkPopoverProps = Props;
-export {
-  themeAttributes,
-  bpkPopoverPortalPropTypes,
-  bpkPopoverPortalDefaultProps,
-};
-export default BpkPopoverPortal;
+export default [...linkAttributes];
