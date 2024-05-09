@@ -52,20 +52,20 @@ interface CommonProps {
 
 export type Props = CommonProps & ({ ariaLabelledby: string } | { ariaLabel: string; });
 
-const BpkBottomSheet = (props: Props) => {
-  const {
-    actionText = '',
-    children,
-    closeLabel = '',
-    closeOnEscPressed = false,
-    closeOnScrimClick = false,
-    id,
-    isOpen,
-    onAction = () => null,
-    onClose,
-    title = '',
-    wide = false
-  } = props;
+const BpkBottomSheet = ({
+  actionText = '',
+  children,
+  closeLabel = '',
+  closeOnEscPressed = false,
+  closeOnScrimClick = false,
+  id,
+  isOpen,
+  onAction = () => null,
+  onClose,
+  title = '',
+  wide = false,
+  ...ariaProps
+}: Props) => {
   const [exiting, setExiting] = useState(false);
 
   const animationTimeout = 240;
@@ -93,7 +93,7 @@ const BpkBottomSheet = (props: Props) => {
   return <BpkBreakpoint query={BREAKPOINTS.ABOVE_MOBILE}>
     {(isAboveMobile: boolean) =>
       <BpkDialogWrapper
-        {...props}
+        {...ariaProps}
         dialogClassName={dialogClassName}
         id={id}
         isOpen={isOpen}

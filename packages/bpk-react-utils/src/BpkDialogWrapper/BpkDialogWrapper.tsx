@@ -49,7 +49,7 @@ interface CommonProps {
   timeout?: { appear?: number, exit?: number };
 };
 
-export type Props = CommonProps & ({ ariaLabelledby: string } | { ariaLabel: string; });;
+export type Props = CommonProps & ({ ariaLabelledby: string } | { ariaLabel: string; });
 
 type DialogProps = {
   isDialogOpen: boolean;
@@ -67,19 +67,19 @@ const setPageProperties = ({ isDialogOpen }: DialogProps) => {
   }
 };
 
-export const BpkDialogWrapper = (props: Props) => {
-  const {
-    children,
-    closeOnEscPressed = false,
-    closeOnScrimClick = false,
-    dialogClassName = '',
-    exiting = false,
-    id,
-    isOpen,
-    onClose,
-    timeout = { appear: 0, exit: 0 },
-    transitionClassNames = {}
-  } = props;
+export const BpkDialogWrapper = ({
+  children,
+  closeOnEscPressed = false,
+  closeOnScrimClick = false,
+  dialogClassName = '',
+  exiting = false,
+  id,
+  isOpen,
+  onClose,
+  timeout = { appear: 0, exit: 0 },
+  transitionClassNames = {},
+  ...ariaProps
+}: Props) => {
 
   const ref = useRef<HTMLDialogElement>(null);
   const [dialogTarget, setDialogTarget] = useState<HTMLElement | null>(null);
@@ -135,9 +135,9 @@ export const BpkDialogWrapper = (props: Props) => {
     };
   }, [id, isOpen, onClose, closeOnEscPressed, closeOnScrimClick]);
 
-  const ariaProps = {
-    ...("ariaLabelledby" in props ? { "aria-labelledby": props.ariaLabelledby } : undefined),
-    ...("ariaLabel" in props ? { "aria-label": props.ariaLabel } : undefined),
+  const aria = {
+    ...("ariaLabelledby" in ariaProps ? { "aria-labelledby": ariaProps.ariaLabelledby } : undefined),
+    ...("ariaLabel" in ariaProps ? { "aria-label": ariaProps.ariaLabel } : undefined),
   };
 
   return isOpen ? (
@@ -162,7 +162,7 @@ export const BpkDialogWrapper = (props: Props) => {
         timeout={timeout}
       >
         <dialog
-          {...ariaProps}
+          {...aria}
           id={id}
           className={getClassName('bpk-dialog-wrapper--container', dialogClassName)}
           onCancel={(e) => {
@@ -182,6 +182,6 @@ export const BpkDialogWrapper = (props: Props) => {
           </div>
         </dialog>
       </CSSTransition>
-    </div >
+    </div>
   ) : null;
 }
