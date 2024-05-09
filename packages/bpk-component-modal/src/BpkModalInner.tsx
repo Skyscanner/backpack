@@ -81,7 +81,6 @@ const BpkModalInner = ({
 }: Props) => {
   const classNames = [getClassName('bpk-modal')];
   const contentClassNames = [getClassName('bpk-modal__content')];
-  const navigationStyles = [getClassName('bpk-modal__navigation')];
 
   classNames.push(getClassName(`bpk-modal__modal-style--${modalStyle}`));
 
@@ -137,9 +136,6 @@ const BpkModalInner = ({
                   : BAR_STYLES.default
               }
               id={headingId}
-              // TODO: className to be removed
-              // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-              className={navigationStyles.join(' ')}
               title={
                 <h2
                   id={headingId}
@@ -152,14 +148,7 @@ const BpkModalInner = ({
               trailingButton={
                 closeText ? (
                   <BpkButtonLink
-                    // TODO: className to be removed
-                    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-                    className={[
-                      getClassName('bpk-modal__close-button'),
-                      getClassName(
-                        `bpk-modal__close-button-style--${modalStyle}`,
-                      ),
-                    ].join(' ')}
+                    onDark={modalStyle === MODAL_STYLING.surfaceContrast}
                     onClick={onClose}
                   >
                     {closeText}
