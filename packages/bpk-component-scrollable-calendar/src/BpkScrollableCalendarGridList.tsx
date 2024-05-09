@@ -123,7 +123,7 @@ const BpkScrollableCalendarGridList = (props: Props) => {
     monthItemHeights[index] || estimatedMonthItemHeight;
 
   const rowRenderer = ({ index, style }: { index: number; style: {} }) => (
-    <div style={style}>
+    <div className={getClassName('bpk-scrollable-calendar-grid-list__item')} style={style}>
       <BpkScrollableCalendarGrid
         onDateClick={rest.onDateClick}
         {...rest}
@@ -133,9 +133,6 @@ const BpkScrollableCalendarGridList = (props: Props) => {
         focusedDate={focusedDate}
         preventKeyboardFocus={rest.preventKeyboardFocus}
         aria-hidden={index !== 1}
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={getClassName('bpk-scrollable-calendar-grid-list__item')}
       />
     </div>
   );
