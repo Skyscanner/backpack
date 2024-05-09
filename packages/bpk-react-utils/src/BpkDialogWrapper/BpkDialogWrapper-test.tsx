@@ -19,7 +19,7 @@
 import { renderToString } from 'react-dom/server';
 import '@testing-library/jest-dom';
 
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { type BpkDialogWrapper as WrapperType } from './BpkDialogWrapper';
 
