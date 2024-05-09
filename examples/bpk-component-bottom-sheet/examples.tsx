@@ -184,6 +184,26 @@ const OverflowingExample = () => (
   </BottomSheetContainer>
 );
 
+const LongHeaderTextExample = () => (
+  <BottomSheetContainer
+    title="Bottom Sheet title which is long"
+    closeLabel="Close Bottom Sheet"
+  >
+    This is a default bottom sheet. You can put anything you want in here.
+  </BottomSheetContainer>
+);
+
+const LongHeaderTextWithActionButtonExample = () => (
+  <BottomSheetContainer
+    title="Bottom Sheet title which is long"
+    closeLabel="Close Bottom Sheet"
+    actionText="Action"
+    onAction={action('Action clicked')}
+  >
+    This is a default bottom sheet. You can put anything you want in here.
+  </BottomSheetContainer>
+);
+
 const NoHeaderExample = () => (
   <BottomSheetContainer
     closeLabel="Close Bottom Sheet"
@@ -219,8 +239,8 @@ const NestedExample = () => (
     wide
     closeOnEscPressed
     closeOnScrimClick
-    >
-      Outer Bottom Sheet
+  >
+    Outer Bottom Sheet
     <BottomSheetContainer
       title="Inner Bottom Sheet"
       closeLabel="Close Inner Bottom Sheet"
@@ -274,6 +294,8 @@ export {
   BackdropClickCloseExample,
   EscapeCloseExample,
   OverflowingExample,
+  LongHeaderTextExample,
+  LongHeaderTextWithActionButtonExample,
   NoHeaderExample,
   NoHeaderWithActionButtonExample,
   ActionButtonExample,

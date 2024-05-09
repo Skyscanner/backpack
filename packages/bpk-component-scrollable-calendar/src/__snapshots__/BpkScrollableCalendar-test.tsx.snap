@@ -88,11 +88,15 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
               <div
                 class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
               >
-                <h1
-                  class="bpk-text bpk-text--heading-4 bpk-scrollable-calendar-grid__title"
+                <span
+                  class="bpk-scrollable-calendar-grid__title"
                 >
-                  February 2010
-                </h1>
+                  <h1
+                    class="bpk-text bpk-text--heading-4"
+                  >
+                    February 2010
+                  </h1>
+                </span>
                 <div
                   aria-hidden="false"
                   class="bpk-calendar-grid"
@@ -669,11 +673,15 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
               <div
                 class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
               >
-                <h1
-                  class="bpk-text bpk-text--heading-4 bpk-scrollable-calendar-grid__title"
+                <span
+                  class="bpk-scrollable-calendar-grid__title"
                 >
-                  March 2010
-                </h1>
+                  <h1
+                    class="bpk-text bpk-text--heading-4"
+                  >
+                    March 2010
+                  </h1>
+                </span>
                 <div
                   aria-hidden="false"
                   class="bpk-calendar-grid"
@@ -1418,11 +1426,15 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
               <div
                 class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
               >
-                <h1
-                  class="bpk-text bpk-text--heading-4 bpk-scrollable-calendar-grid__title"
+                <span
+                  class="bpk-scrollable-calendar-grid__title"
                 >
-                  February 2010
-                </h1>
+                  <h1
+                    class="bpk-text bpk-text--heading-4"
+                  >
+                    February 2010
+                  </h1>
+                </span>
                 <div
                   aria-hidden="false"
                   class="bpk-calendar-grid"
@@ -1999,11 +2011,15 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
               <div
                 class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
               >
-                <h1
-                  class="bpk-text bpk-text--heading-4 bpk-scrollable-calendar-grid__title"
+                <span
+                  class="bpk-scrollable-calendar-grid__title"
                 >
-                  March 2010
-                </h1>
+                  <h1
+                    class="bpk-text bpk-text--heading-4"
+                  >
+                    March 2010
+                  </h1>
+                </span>
                 <div
                   aria-hidden="false"
                   class="bpk-calendar-grid"
@@ -2748,11 +2764,15 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
               <div
                 class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
               >
-                <h1
-                  class="bpk-text bpk-text--heading-4 bpk-scrollable-calendar-grid__title"
+                <span
+                  class="bpk-scrollable-calendar-grid__title"
                 >
-                  February 2010
-                </h1>
+                  <h1
+                    class="bpk-text bpk-text--heading-4"
+                  >
+                    February 2010
+                  </h1>
+                </span>
                 <div
                   aria-hidden="false"
                   class="bpk-calendar-grid"
@@ -3329,11 +3349,15 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
               <div
                 class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
               >
-                <h1
-                  class="bpk-text bpk-text--heading-4 bpk-scrollable-calendar-grid__title"
+                <span
+                  class="bpk-scrollable-calendar-grid__title"
                 >
-                  March 2010
-                </h1>
+                  <h1
+                    class="bpk-text bpk-text--heading-4"
+                  >
+                    March 2010
+                  </h1>
+                </span>
                 <div
                   aria-hidden="false"
                   class="bpk-calendar-grid"
@@ -4078,11 +4102,15 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
               <div
                 class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
               >
-                <h1
-                  class="bpk-text bpk-text--heading-4 bpk-scrollable-calendar-grid__title"
+                <span
+                  class="bpk-scrollable-calendar-grid__title"
                 >
-                  February 2010
-                </h1>
+                  <h1
+                    class="bpk-text bpk-text--heading-4"
+                  >
+                    February 2010
+                  </h1>
+                </span>
                 <div
                   aria-hidden="false"
                   class="bpk-calendar-grid"
@@ -4659,11 +4687,15 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
               <div
                 class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
               >
-                <h1
-                  class="bpk-text bpk-text--heading-4 bpk-scrollable-calendar-grid__title"
+                <span
+                  class="bpk-scrollable-calendar-grid__title"
                 >
-                  March 2010
-                </h1>
+                  <h1
+                    class="bpk-text bpk-text--heading-4"
+                  >
+                    March 2010
+                  </h1>
+                </span>
                 <div
                   aria-hidden="false"
                   class="bpk-calendar-grid"
