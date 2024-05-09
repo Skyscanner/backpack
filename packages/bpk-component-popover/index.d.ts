@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import { themeAttributes as linkAttributes } from '../../bpk-component-link';
-
-export default [...linkAttributes];
+import BpkPopover, { type Props } from './src/BpkPopover';
+import themeAttributes from './src/themeAttributes';
+export type BpkPopoverProps = Props;
+export { themeAttributes, };
+export default BpkPopover;

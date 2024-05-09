@@ -2,175 +2,200 @@
 
 exports[`BpkSlider should render correctly 1`] = `
 <DocumentFragment>
-  <div
+  <span
+    aria-disabled="false"
     class="bpk-slider"
-    style="position: relative;"
+    data-orientation="horizontal"
+    dir="ltr"
+    style="--radix-slider-thumb-transform: translateX(-50%);"
   >
-    <div
-      class="bpk-slider__bar bpk-slider__bar-0"
-      style="position: absolute; left: 0px; right: 0px;"
-    />
-    <div
-      class="bpk-slider__bar bpk-slider__bar-1"
-      style="position: absolute; left: 0px; right: 0px;"
-    />
-    <div
-      aria-disabled="false"
-      aria-orientation="horizontal"
-      aria-valuemax="100"
-      aria-valuemin="0"
-      aria-valuenow="25"
-      class="bpk-slider__handle bpk-slider__handle-0 "
-      role="slider"
-      style="position: absolute; z-index: 1; left: 0px;"
-      tabindex="0"
-    />
-  </div>
-</DocumentFragment>
-`;
-
-exports[`BpkSlider should render correctly with a "className" attribute 1`] = `
-<DocumentFragment>
-  <div
-    class="bpk-slider my-slider"
-    style="position: relative;"
-  >
-    <div
-      class="bpk-slider__bar bpk-slider__bar-0"
-      style="position: absolute; left: 0px; right: 0px;"
-    />
-    <div
-      class="bpk-slider__bar bpk-slider__bar-1"
-      style="position: absolute; left: 0px; right: 0px;"
-    />
-    <div
-      aria-disabled="false"
-      aria-orientation="horizontal"
-      aria-valuemax="100"
-      aria-valuemin="0"
-      aria-valuenow="25"
-      class="bpk-slider__handle bpk-slider__handle-0 "
-      role="slider"
-      style="position: absolute; z-index: 1; left: 0px;"
-      tabindex="0"
-    />
-  </div>
+    <span
+      class="bpk-slider__track"
+      data-orientation="horizontal"
+    >
+      <span
+        class="bpk-slider__range"
+        data-orientation="horizontal"
+        style="left: 0%; right: 75%;"
+      />
+    </span>
+    <span
+      style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(25% + 0px);"
+    >
+      <span
+        aria-label="min"
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="25"
+        aria-valuetext="0"
+        class="bpk-slider__thumb"
+        data-orientation="horizontal"
+        data-radix-collection-item=""
+        role="slider"
+        style=""
+        tabindex="0"
+      />
+    </span>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`BpkSlider should render correctly with a "step" attribute 1`] = `
 <DocumentFragment>
-  <div
+  <span
+    aria-disabled="false"
     class="bpk-slider"
-    style="position: relative;"
+    data-orientation="horizontal"
+    dir="ltr"
+    style="--radix-slider-thumb-transform: translateX(-50%);"
   >
-    <div
-      class="bpk-slider__bar bpk-slider__bar-0"
-      style="position: absolute; left: 0px; right: 0px;"
-    />
-    <div
-      class="bpk-slider__bar bpk-slider__bar-1"
-      style="position: absolute; left: 0px; right: 0px;"
-    />
-    <div
-      aria-disabled="false"
-      aria-orientation="horizontal"
-      aria-valuemax="100"
-      aria-valuemin="0"
-      aria-valuenow="0"
-      class="bpk-slider__handle bpk-slider__handle-0 "
-      role="slider"
-      style="position: absolute; z-index: 1; left: 0px;"
-      tabindex="0"
-    />
-  </div>
+    <span
+      class="bpk-slider__track"
+      data-orientation="horizontal"
+    >
+      <span
+        class="bpk-slider__range"
+        data-orientation="horizontal"
+        style="left: 0%; right: 75%;"
+      />
+    </span>
+    <span
+      style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(25% + 0px);"
+    >
+      <span
+        aria-label="min"
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="25"
+        aria-valuetext="0"
+        class="bpk-slider__thumb"
+        data-orientation="horizontal"
+        data-radix-collection-item=""
+        role="slider"
+        style=""
+        tabindex="0"
+      />
+    </span>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`BpkSlider should render correctly with a minimum distance between controls 1`] = `
 <DocumentFragment>
-  <div
-    class="bpk-slider bpk-slider--range"
-    style="position: relative;"
+  <span
+    aria-disabled="false"
+    class="bpk-slider"
+    data-orientation="horizontal"
+    dir="ltr"
+    style="--radix-slider-thumb-transform: translateX(-50%);"
   >
-    <div
-      class="bpk-slider__bar bpk-slider__bar-0"
-      style="position: absolute; left: 0px; right: 0px;"
-    />
-    <div
-      class="bpk-slider__bar bpk-slider__bar-1"
-      style="position: absolute; left: 0px; right: 0px;"
-    />
-    <div
-      class="bpk-slider__bar bpk-slider__bar-2"
-      style="position: absolute; left: 0px; right: 0px;"
-    />
-    <div
-      aria-disabled="false"
-      aria-orientation="horizontal"
-      aria-valuemax="100"
-      aria-valuemin="0"
-      aria-valuenow="10"
-      class="bpk-slider__handle bpk-slider__handle-0 "
-      role="slider"
-      style="position: absolute; z-index: 1; left: 0px;"
-      tabindex="0"
-    />
-    <div
-      aria-disabled="false"
-      aria-orientation="horizontal"
-      aria-valuemax="100"
-      aria-valuemin="0"
-      aria-valuenow="90"
-      class="bpk-slider__handle bpk-slider__handle-1 "
-      role="slider"
-      style="position: absolute; z-index: 2; left: 0px;"
-      tabindex="0"
-    />
-  </div>
+    <span
+      class="bpk-slider__track"
+      data-orientation="horizontal"
+    >
+      <span
+        class="bpk-slider__range"
+        data-orientation="horizontal"
+        style="left: 10%; right: 10%;"
+      />
+    </span>
+    <span
+      style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(10% + 0px);"
+    >
+      <span
+        aria-label="min"
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="10"
+        aria-valuetext="0"
+        class="bpk-slider__thumb"
+        data-orientation="horizontal"
+        data-radix-collection-item=""
+        role="slider"
+        style=""
+        tabindex="0"
+      />
+    </span>
+    <span
+      style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(90% + 0px);"
+    >
+      <span
+        aria-label="max"
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="90"
+        aria-valuetext="80"
+        class="bpk-slider__thumb"
+        data-orientation="horizontal"
+        data-radix-collection-item=""
+        role="slider"
+        style=""
+        tabindex="0"
+      />
+    </span>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`BpkSlider should render correctly with a range of values 1`] = `
 <DocumentFragment>
-  <div
-    class="bpk-slider bpk-slider--range"
-    style="position: relative;"
+  <span
+    aria-disabled="false"
+    class="bpk-slider"
+    data-orientation="horizontal"
+    dir="ltr"
+    style="--radix-slider-thumb-transform: translateX(-50%);"
   >
-    <div
-      class="bpk-slider__bar bpk-slider__bar-0"
-      style="position: absolute; left: 0px; right: 0px;"
-    />
-    <div
-      class="bpk-slider__bar bpk-slider__bar-1"
-      style="position: absolute; left: 0px; right: 0px;"
-    />
-    <div
-      class="bpk-slider__bar bpk-slider__bar-2"
-      style="position: absolute; left: 0px; right: 0px;"
-    />
-    <div
-      aria-disabled="false"
-      aria-orientation="horizontal"
-      aria-valuemax="100"
-      aria-valuemin="0"
-      aria-valuenow="10"
-      class="bpk-slider__handle bpk-slider__handle-0 "
-      role="slider"
-      style="position: absolute; z-index: 1; left: 0px;"
-      tabindex="0"
-    />
-    <div
-      aria-disabled="false"
-      aria-orientation="horizontal"
-      aria-valuemax="100"
-      aria-valuemin="0"
-      aria-valuenow="90"
-      class="bpk-slider__handle bpk-slider__handle-1 "
-      role="slider"
-      style="position: absolute; z-index: 2; left: 0px;"
-      tabindex="0"
-    />
-  </div>
+    <span
+      class="bpk-slider__track"
+      data-orientation="horizontal"
+    >
+      <span
+        class="bpk-slider__range"
+        data-orientation="horizontal"
+        style="left: 10%; right: 10%;"
+      />
+    </span>
+    <span
+      style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(10% + 0px);"
+    >
+      <span
+        aria-label="min"
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="10"
+        aria-valuetext="0"
+        class="bpk-slider__thumb"
+        data-orientation="horizontal"
+        data-radix-collection-item=""
+        role="slider"
+        style=""
+        tabindex="0"
+      />
+    </span>
+    <span
+      style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(90% + 0px);"
+    >
+      <span
+        aria-label="max"
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="90"
+        aria-valuetext="80"
+        class="bpk-slider__thumb"
+        data-orientation="horizontal"
+        data-radix-collection-item=""
+        role="slider"
+        style=""
+        tabindex="0"
+      />
+    </span>
+  </span>
 </DocumentFragment>
 `;
