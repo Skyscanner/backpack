@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-export const ARROW_ID = 'js-bpk-popover-arrow';
-
-export default { ARROW_ID };
+export declare const ARROW_ID = "js-bpk-popover-arrow";
+declare const _default: {
+    ARROW_ID: string;
+};
+export default _default;
