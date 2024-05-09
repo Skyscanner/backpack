@@ -16,10 +16,7 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import Slider from 'react-slider';
+import * as Slider from '@radix-ui/react-slider';
 
 import { cssModules, isRTL } from '../../bpk-react-utils';
 
@@ -27,47 +24,79 @@ import STYLES from './BpkSlider.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  className?: string | null;
+export type Props = {
+  max: number;
+  min: number;
+  minDistance?: number;
+  step?: number;
+  onChange: (value: number[] | number) => void;
+  onAfterChange?: (value: number[] | number) => void;
+  value: number[] | number;
+  ariaLabel: string[];
+  ariaValuetext?: string[];
   [rest: string]: any;
-}
+};
 
-const BpkSlider = (props: Props) => {
-  const { className, ...rest } = props;
+const BpkSlider = ({
+  ariaLabel,
+  ariaValuetext,
+  max,
+  min,
+  minDistance,
+  onAfterChange,
+  onChange,
+  step,
+  value,
+  ...rest
+}: Props) => {
   const invert = isRTL();
-  const classNames = [getClassName('bpk-slider')];
-  const thumbClassNames = [getClassName('bpk-slider__handle')];
-  const trackClassNames = [getClassName('bpk-slider__bar')];
+  const currentValue = Array.isArray(value) ? value : [value];
 
-  const isRange = (rest.value || rest.defaultValue || []).length > 1;
+  const processSliderValues = (
+    sliderValues: number[],
+    callback?: (val: number | number[]) => void,
+  ) => {
+    const val = sliderValues.length === 1 ? sliderValues[0] : sliderValues;
+    if (callback) {
+      callback(val);
+    }
+  };
 
-  if (isRange) {
-    classNames.push(getClassName('bpk-slider--range'));
-  }
-  if (className) {
-    classNames.push(getClassName(className));
-  }
+  const handleOnChange = (sliderValues: number[]) => {
+    processSliderValues(sliderValues, onChange);
+  };
+
+  const handleOnAfterChange = (sliderValues: number[]) => {
+    processSliderValues(sliderValues, onAfterChange);
+  };
 
   return (
-    <Slider
+    <Slider.Root
+      className={getClassName('bpk-slider')}
+      defaultValue={currentValue}
+      min={min}
+      max={max}
+      step={step || 1}
+      onValueChange={handleOnChange}
+      onValueCommit={handleOnAfterChange}
+      inverted={invert}
+      minStepsBetweenThumbs={minDistance}
       {...rest}
-      withTracks
-      snapDragDisabled={false}
-      invert={invert}
-      className={classNames.join(' ')}
-      thumbClassName={thumbClassNames.join(' ')}
-      thumbActiveClassName={getClassName('bpk-slider__handle--active')}
-      trackClassName={trackClassNames.join(' ')}
-    />
+    >
+      <Slider.Track className={getClassName('bpk-slider__track')}>
+        <Slider.Range className={getClassName('bpk-slider__range')} />
+      </Slider.Track>
+      {currentValue.map((val, index) => (
+        <Slider.Thumb
+          key={ariaLabel[index]}
+          aria-label={ariaLabel[index]}
+          aria-valuetext={ariaValuetext ? ariaValuetext[index] : val.toString()}
+          className={getClassName('bpk-slider__thumb')}
+          aria-valuenow={currentValue[index]}
+        />
+      ))}
+    </Slider.Root>
   );
-};
-
-BpkSlider.propTypes = {
-  className: PropTypes.string,
-};
-
-BpkSlider.defaultProps = {
-  className: null,
 };
 
 export default BpkSlider;
