@@ -64,12 +64,11 @@ class SliderContainer extends Component {
           min={min}
           max={time ? 59 : 100}
           step={1}
-          className="bpk-slider"
           onChange={this.handleChange}
           {...this.props}
           value={this.state.value}
           ariaLabel={['minimum', 'maximum']}
-          ariaValuetext={time ? (s) => this.valueTimeFormatter(s.value) : null}
+          ariaValuetext={[this.state.value[0], this.state.value[1]]}
         />
         <br />
       </div>
