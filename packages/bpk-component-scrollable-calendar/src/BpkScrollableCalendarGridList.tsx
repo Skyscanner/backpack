@@ -123,7 +123,7 @@ const BpkScrollableCalendarGridList = (props: Props) => {
     monthItemHeights[index] || estimatedMonthItemHeight;
 
   const rowRenderer = ({ index, style }: { index: number; style: {} }) => (
-    <div className={getClassName('bpk-scrollable-calendar-grid-list__item')} style={style}>
+    <div style={style}>
       <BpkScrollableCalendarGrid
         onDateClick={rest.onDateClick}
         {...rest}
