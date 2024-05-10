@@ -1,0 +1,21 @@
+name: 'Download artifacts'
+description: 'Sets up repeated steps to download artifacts'
+
+inputs:
+  name:
+    description: 'Artifact name'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Download artifacts
+      uses: actions/download-artifact@v3.0.2
+      with:
+        name: ${{ inputs.name }}
+
+    - name: Untar and decompress artifacts
+      shell: bash
+      run: |
+        brotli -d ${{ inputs.name }}.tar.br
+        tar -xf ${{ inputs.name }}.tar
