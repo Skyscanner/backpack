@@ -25,12 +25,18 @@ import BaggageIcon from '../../bpk-component-icon/sm/baggage';
 
 import BpkLoadingButton, { ICON_POSITION } from './BpkLoadingButton';
 
+const error = jest.spyOn(console, "error").mockImplementation(() => {});
+
 describe('BpkLoadingButton', () => {
+  beforeEach(() => {
+    error.mockReset();
+  })
   it('should render correctly', () => {
     const { asFragment } = render(
       <BpkLoadingButton>My button</BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a "href" attribute', () => {
@@ -38,6 +44,7 @@ describe('BpkLoadingButton', () => {
       <BpkLoadingButton href="#">My button</BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a "primaryOnDark" attribute', () => {
@@ -45,6 +52,7 @@ describe('BpkLoadingButton', () => {
       <BpkLoadingButton primaryOnDark>My button</BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a "primaryOnLight" attribute', () => {
@@ -52,6 +60,7 @@ describe('BpkLoadingButton', () => {
       <BpkLoadingButton primaryOnLight>My button</BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a "secondary" attribute', () => {
@@ -59,6 +68,7 @@ describe('BpkLoadingButton', () => {
       <BpkLoadingButton secondary>My button</BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a "secondaryOnDark" attribute', () => {
@@ -66,6 +76,7 @@ describe('BpkLoadingButton', () => {
       <BpkLoadingButton secondaryOnDark>My button</BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a "destructive" attribute', () => {
@@ -73,6 +84,7 @@ describe('BpkLoadingButton', () => {
       <BpkLoadingButton destructive>My button</BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a "link" attribute', () => {
@@ -80,6 +92,7 @@ describe('BpkLoadingButton', () => {
       <BpkLoadingButton link>My button</BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a "linkOnDark" attribute', () => {
@@ -87,6 +100,7 @@ describe('BpkLoadingButton', () => {
       <BpkLoadingButton linkOnDark>My button</BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a "featured" attribute', () => {
@@ -94,6 +108,7 @@ describe('BpkLoadingButton', () => {
       <BpkLoadingButton featured>My button</BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a "iconPosition=leading" attribute', () => {
@@ -103,6 +118,7 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a "iconOnly" attribute', () => {
@@ -112,6 +128,7 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a "disabled" attribute', () => {
@@ -119,6 +136,7 @@ describe('BpkLoadingButton', () => {
       <BpkLoadingButton disabled>My button</BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a "loading" attribute', () => {
@@ -126,6 +144,7 @@ describe('BpkLoadingButton', () => {
       <BpkLoadingButton loading>My button</BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a "large" attribute', () => {
@@ -133,6 +152,7 @@ describe('BpkLoadingButton', () => {
       <BpkLoadingButton large>My button</BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "secondary" attributes', () => {
@@ -142,6 +162,7 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "secondaryOnDark" attributes', () => {
@@ -151,6 +172,7 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "primaryOnDark" attributes', () => {
@@ -160,6 +182,7 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "primaryOnLight" attributes', () => {
@@ -169,6 +192,7 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "destructive" attributes', () => {
@@ -178,6 +202,7 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "link" attributes', () => {
@@ -187,6 +212,7 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "linkOnDark" attributes', () => {
@@ -196,6 +222,7 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "featured" attributes', () => {
@@ -205,6 +232,7 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "iconOnly" attributes', () => {
@@ -214,6 +242,7 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "disabled" attributes', () => {
@@ -223,6 +252,7 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "loading" attributes', () => {
@@ -232,6 +262,7 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a "icon" attribute', () => {
@@ -241,6 +272,7 @@ describe('BpkLoadingButton', () => {
       <BpkLoadingButton icon={icon}>My button</BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a "iconDisabled" attribute', () => {
@@ -252,6 +284,7 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a "iconLoading" attribute', () => {
@@ -263,6 +296,7 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should respect the class names entered as a string', () => {
@@ -276,6 +310,7 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should add only bpk specific classes if className prop is set to empty string', () => {
@@ -285,5 +320,7 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
+
 });
