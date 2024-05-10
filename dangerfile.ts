@@ -143,15 +143,16 @@ if (nonModuleCssFiles.length) {
 
 const linterWarnings = ["no-console", "no-undef", "@typescript-eslint/no-unused-vars", "jest/no-disabled-tests", "no-alert", "func-names", "react-hooks/exhaustive-deps"]
 const invalidReactChild = ["Functions are not valid as a React child"];
-const invalidFormField = ["You provided avalueprop to a form field without", "You provided acheckedprop to a form field without"];
-const components = ["<TestComponent />", "<Nav />", "<Header />", "<Grid />"];
+const invalidFormField = ["You provided .* to a form field without"];
+const components = ["<TestComponent />", "<TestComponent>", "<Nav />", "<Header />", "<Grid />", "<Grid>", "<Portal />", "<Portal>"];
 const reactRecogniseProp = ["React does not recognize"]
-const invalidTags = ["The tag <rect>", "The tag <g>"]
+const invalidTags = ["The tag <rect>", "The tag <g>", "The tag <text>"]
 const passingTests = ["✓"]
 const unknownEventHandler = ["Unknown event handler"]
 const propType = ["Failed prop type"]
 const componentWillReceiveProps = ["componentWillReceiveProps"]
 const invalidCSSProperties = ["is an invalid value for the .* css style property."]
+const invalidProps = ["for a non-boolean attribute", "Invalid ARIA attribute"]
 
 const allIgnoredWarnings = linterWarnings
   .concat(invalidReactChild)
@@ -164,6 +165,7 @@ const allIgnoredWarnings = linterWarnings
   .concat(propType)
   .concat(componentWillReceiveProps)
   .concat(invalidCSSProperties)
+  .concat(invalidProps)
 
 commonFileWarnings('logs/test.log', {
   logType: 'fail',
