@@ -36,6 +36,9 @@ jobs:
             packages/node_modules/
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
+      - name: Setup logs directory
+        run: mkdir logs
+
       - name: Build Backpack
         run: npm run build
 
