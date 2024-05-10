@@ -165,9 +165,6 @@ const allIgnoredWarnings = linterWarnings
   .concat(componentWillReceiveProps)
   .concat(invalidCSSProperties)
 
-
-
-
 commonFileWarnings('logs/test.log', {
   logType: 'fail',
   ignoreRegex: new RegExp(allIgnoredWarnings.join("|"))
