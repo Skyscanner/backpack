@@ -23,6 +23,7 @@
 import * as fs from 'fs';
 
 import { danger, fail, markdown, warn } from 'danger';
+import { commonFileWarnings } from 'danger-plugin-toolbox';
 
 // Applies to js, css, scss and sh files that are not located in the dist folder.
 const shouldContainLicensingInformation = (filePath: string) =>
@@ -139,3 +140,34 @@ if (nonModuleCssFiles.length) {
     )}`,
   );
 }
+
+const linterWarnings = ["no-console", "no-undef", "@typescript-eslint/no-unused-vars", "jest/no-disabled-tests", "no-alert", "func-names", "react-hooks/exhaustive-deps"]
+const invalidReactChild = ["Functions are not valid as a React child"];
+const invalidFormField = ["You provided .* to a form field without"];
+const components = ["<TestComponent />", "<TestComponent>", "<Nav />", "<Header />", "<Grid />", "<Grid>", "<Portal />", "<Portal>"];
+const reactRecogniseProp = ["React does not recognize"]
+const invalidTags = ["The tag <rect>", "The tag <g>", "The tag <text>"]
+const passingTests = ["✓"]
+const unknownEventHandler = ["Unknown event handler"]
+const propType = ["Failed prop type"]
+const componentWillReceiveProps = ["componentWillReceiveProps"]
+const invalidCSSProperties = ["is an invalid value for the .* css style property."]
+const invalidProps = ["for a non-boolean attribute", "Invalid ARIA attribute"]
+
+const allIgnoredWarnings = linterWarnings
+  .concat(invalidReactChild)
+  .concat(invalidFormField)
+  .concat(components)
+  .concat(reactRecogniseProp)
+  .concat(invalidTags)
+  .concat(passingTests)
+  .concat(unknownEventHandler)
+  .concat(propType)
+  .concat(componentWillReceiveProps)
+  .concat(invalidCSSProperties)
+  .concat(invalidProps)
+
+commonFileWarnings('logs/test.log', {
+  logType: 'fail',
+  ignoreRegex: new RegExp(allIgnoredWarnings.join("|"))
+});

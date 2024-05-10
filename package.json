@@ -152,6 +152,7 @@
     "css-loader": "^6.10.0",
     "d3-scale": "^4.0.2",
     "danger": "^11.2.0",
+    "danger-plugin-toolbox": "^2.0.1",
     "date-fns": "^3.6.0",
     "eslint_d": "^13.0.0",
     "glob": "^10.3.12",
