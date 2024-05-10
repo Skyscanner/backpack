@@ -24,12 +24,18 @@ import CustomCloseIcon from '../../bpk-component-icon/sm/close-circle';
 
 import BpkCloseButton from './BpkCloseButton';
 
+const error = jest.spyOn(console, "error").mockImplementation(() => {});
+
 describe('BpkCloseButton', () => {
+  beforeEach(() => {
+    error.mockReset();
+  })
   it('should render correctly', () => {
     const { asFragment } = render(
       <BpkCloseButton label="Close" onClick={() => null} />,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a custom icon', () => {
@@ -41,6 +47,7 @@ describe('BpkCloseButton', () => {
       />,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a custom className', () => {
@@ -52,5 +59,6 @@ describe('BpkCloseButton', () => {
       />,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 });
