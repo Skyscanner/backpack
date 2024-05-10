@@ -156,9 +156,6 @@ const BpkModalInner = ({
                 ) : (
                   <BpkCloseButton
                     onDark={modalStyle === MODAL_STYLING.surfaceContrast}
-                    // TODO: className to be removed
-                    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-                    className={getClassName('bpk-modal__close-button')}
                     label={closeLabel}
                     onClick={onClose}
                   />

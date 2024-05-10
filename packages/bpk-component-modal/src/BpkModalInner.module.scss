@@ -99,17 +99,6 @@
     @include typography.bpk-label-1;
   }
 
-  &__close-button {
-    position: relative; // Override position: absolute coming from BpkNavigationBar
-    right: auto;
-
-    @include margins.bpk-margin-leading(tokens.bpk-spacing-base());
-
-    @include utils.bpk-rtl {
-      left: auto;
-    }
-  }
-
   &__accessory-view {
     position: relative; // Override position: absolute coming from BpkNavigationBar
     left: auto;
