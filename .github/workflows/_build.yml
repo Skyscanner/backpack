@@ -45,7 +45,7 @@ jobs:
         run: npm run typecheck
 
       - name: Run tests
-        run: npm test
+        run: bash -c "set -o pipefail;npm run test |& tee 'logs/test.log'"
 
   PercyTests: 
     runs-on: ubuntu-latest
