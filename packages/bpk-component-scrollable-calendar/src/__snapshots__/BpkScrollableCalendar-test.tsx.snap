@@ -86,7 +86,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
               style="position: absolute; left: 0px; top: 0px; height: 306px; width: 100%;"
             >
               <div
-                class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
+                class="bpk-scrollable-calendar-grid"
               >
                 <span
                   class="bpk-scrollable-calendar-grid__title"
@@ -671,7 +671,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
               style="position: absolute; left: 0px; top: 306px; height: 350px; width: 100%;"
             >
               <div
-                class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
+                class="bpk-scrollable-calendar-grid"
               >
                 <span
                   class="bpk-scrollable-calendar-grid__title"
@@ -1424,7 +1424,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
               style="position: absolute; left: 0px; top: 0px; height: 306px; width: 100%;"
             >
               <div
-                class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
+                class="bpk-scrollable-calendar-grid"
               >
                 <span
                   class="bpk-scrollable-calendar-grid__title"
@@ -2009,7 +2009,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
               style="position: absolute; left: 0px; top: 306px; height: 350px; width: 100%;"
             >
               <div
-                class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
+                class="bpk-scrollable-calendar-grid"
               >
                 <span
                   class="bpk-scrollable-calendar-grid__title"
@@ -2762,7 +2762,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
               style="position: absolute; left: 0px; top: 0px; height: 306px; width: 100%;"
             >
               <div
-                class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
+                class="bpk-scrollable-calendar-grid"
               >
                 <span
                   class="bpk-scrollable-calendar-grid__title"
@@ -3347,7 +3347,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
               style="position: absolute; left: 0px; top: 306px; height: 350px; width: 100%;"
             >
               <div
-                class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
+                class="bpk-scrollable-calendar-grid"
               >
                 <span
                   class="bpk-scrollable-calendar-grid__title"
@@ -4100,7 +4100,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
               style="position: absolute; left: 0px; top: 0px; height: 306px; width: 100%;"
             >
               <div
-                class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
+                class="bpk-scrollable-calendar-grid"
               >
                 <span
                   class="bpk-scrollable-calendar-grid__title"
@@ -4685,7 +4685,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
               style="position: absolute; left: 0px; top: 306px; height: 350px; width: 100%;"
             >
               <div
-                class="bpk-scrollable-calendar-grid bpk-scrollable-calendar-grid-list__item"
+                class="bpk-scrollable-calendar-grid"
               >
                 <span
                   class="bpk-scrollable-calendar-grid__title"
