@@ -67,7 +67,7 @@ BpkCloseButton.propTypes = {
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string,
   customIcon: PropTypes.func,
-  onDark: PropTypes.Boolean,
+  onDark: PropTypes.bool,
 };
 
 BpkCloseButton.defaultProps = {
