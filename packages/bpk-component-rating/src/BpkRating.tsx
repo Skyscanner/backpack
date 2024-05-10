@@ -83,11 +83,9 @@ const BpkRating = (props: Props) => {
   );
   const titleStyles = getClassName(
     subtitle && 'bpk-rating__title--with-subtitle',
-    size === RATING_SIZES.large && 'bpk-rating__title--large',
   );
   const subtitleStyles = getClassName(
     'bpk-rating__subtitle',
-    size === RATING_SIZES.large && 'bpk-rating__subtitle--large',
   );
 
   let valueTextSize: ValueOf<typeof TEXT_STYLES> = TEXT_STYLES.label1;
@@ -115,23 +113,26 @@ const BpkRating = (props: Props) => {
 
   return (
     <div className={classNames} aria-label={ariaLabel} role="figure" {...rest}>
-      <BpkText
-        textStyle={valueTextSize}
-        tagName="span"        
-        aria-hidden="true"
-      >
-        <span className={valueStyles}>{adjustedValue}</span>
+      <div className={valueStyles}>
+        <BpkText
+          textStyle={valueTextSize}
+          tagName="span"
+          aria-hidden="true"
+        >
+          {adjustedValue}
 
-        {showScale && (
-          <BpkText
-            textStyle={scaleTextSize}
-            tagName="span"
-            aria-hidden="true"
-          >
-            <span className={scaleStyles}>/{maxValue}</span>
-          </BpkText>
-        )}
-      </BpkText>
+          {showScale && (
+            <BpkText
+              textStyle={scaleTextSize}
+              tagName="span"
+              aria-hidden="true"
+            >
+              <span className={scaleStyles}>/{maxValue}</span>
+            </BpkText>
+          )}
+        </BpkText>
+
+      </div>
 
       <div className={textWrapperStyles}>
         {title && (
