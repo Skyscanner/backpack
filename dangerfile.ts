@@ -23,6 +23,7 @@
 import * as fs from 'fs';
 
 import { danger, fail, markdown, warn } from 'danger';
+import { commonFileWarnings } from 'danger-plugin-toolbox';
 
 // Applies to js, css, scss and sh files that are not located in the dist folder.
 const shouldContainLicensingInformation = (filePath: string) =>
@@ -139,3 +140,7 @@ if (nonModuleCssFiles.length) {
     )}`,
   );
 }
+
+commonFileWarnings('logs/test.log', {
+  logType: 'fail',
+});
