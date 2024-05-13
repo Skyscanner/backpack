@@ -507,6 +507,7 @@
 
 @mixin bpk-editorial-1 {
   font-family: $bpk-font-family-larken;
+  font-weight: 300;
 
   @include _bpk-text-factory($bpk-font-size-xxxxl, $bpk-line-height-xxxxl);
 }
@@ -520,6 +521,7 @@
 
 @mixin bpk-editorial-2 {
   font-family: $bpk-font-family-larken;
+  font-weight: 300;
 
   @include _bpk-text-factory($bpk-font-size-xxl, $bpk-line-height-xxl);
 }
@@ -534,7 +536,11 @@
 @mixin bpk-editorial-3 {
   font-family: $bpk-font-family-larken;
 
-  @include _bpk-text-factory($bpk-font-size-lg, $bpk-line-height-lg);
+  @include _bpk-text-factory(
+    $bpk-font-size-lg,
+    $bpk-line-height-lg,
+    $bpk-font-weight-book
+  );
 }
 
 /// Hero 1 text style
