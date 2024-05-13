@@ -17,82 +17,83 @@
  */
 
 import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import BpkText from './BpkText';
 
-import type { TextStyle } from './BpkText';
+import type { Tag, TextStyle } from './BpkText';
 
 describe('BpkText', () => {
+  const text =
+    'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.';
+
   it('should render correctly', () => {
-    const { asFragment } = render(
-      <BpkText>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.
-      </BpkText>,
-    );
-    expect(asFragment()).toMatchSnapshot();
+    const { getByText } = render(<BpkText>{text}</BpkText>);
+
+    expect(getByText(text)).toHaveClass('bpk-text bpk-text--body-default');
   });
 
-  it('should render correctly with tageName="h1", textStyle="xxl"', () => {
-    const { asFragment } = render(
-      <BpkText textStyle="xxl" tagName="h1">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.
-      </BpkText>,
-    );
-    expect(asFragment()).toMatchSnapshot();
+  ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].forEach((tagName) => {
+    it(`should render correctly with tagName="${tagName}"`, () => {
+      const { getByRole } = render(
+        <BpkText tagName={tagName as Tag} textStyle="xxl">
+          {text}
+        </BpkText>,
+      );
+
+      expect(getByRole('heading')).toHaveClass('bpk-text bpk-text--xxl');
+    });
   });
 
-  it('should render correctly with tageName="text"', () => {
-    const { asFragment } = render(
-      <BpkText tagName="text">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.
-      </BpkText>,
-    );
-    expect(asFragment()).toMatchSnapshot();
+  it('should render correctly with tagName="text"', () => {
+    const { getByText } = render(<BpkText tagName="text">{text}</BpkText>);
+
+    expect(getByText(text)).toHaveClass('bpk-text bpk-text--body-default');
+  });
+
+  it('should render correctly with tagName="span"', () => {
+    const { getByText } = render(<BpkText tagName="span">{text}</BpkText>);
+
+    expect(getByText(text)).toHaveClass('bpk-text bpk-text--body-default');
+    expect(getByText(text)).toBeInstanceOf(HTMLSpanElement);
+  });
+
+  it('should render correctly with tagName="p"', () => {
+    const { getByText } = render(<BpkText tagName="p">{text}</BpkText>);
+
+    expect(getByText(text)).toHaveClass('bpk-text bpk-text--body-default');
+    expect(getByText(text)).toBeInstanceOf(HTMLParagraphElement);
   });
 
   it('should pass down unknown props', () => {
-    const { asFragment } = render(
+    const { getByText } = render(
       // eslint-disable-next-line backpack/use-tokens
-      <BpkText style={{ color: 'red' }}>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.
-      </BpkText>,
+      <BpkText style={{ color: 'red' }}>{text}</BpkText>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(getByText(text)).toHaveClass('bpk-text bpk-text--body-default');
+    expect(getByText(text)).toHaveAttribute('style', 'color: red;');
   });
 
   ['xs', 'sm', 'base', 'lg', 'xl', 'xxl', 'xxxl', 'xxxxl', 'xxxxxl'].forEach(
     (textStyle) => {
       it(`should render correctly with textStyle="${textStyle}"`, () => {
-        const { asFragment } = render(
-          <BpkText textStyle={textStyle as TextStyle}>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-          </BpkText>,
+        const { getByText } = render(
+          <BpkText textStyle={textStyle as TextStyle}>{text}</BpkText>,
         );
-        expect(asFragment()).toMatchSnapshot();
+
+        expect(getByText(text)).toHaveClass(`bpk-text bpk-text--${textStyle}`);
       });
     },
   );
 
   ['editorial1', 'editorial2', 'editorial3'].forEach((textStyle) => {
     it(`should render correctly with textStyle="${textStyle}"`, () => {
-      const { asFragment } = render(
-        <BpkText textStyle={textStyle as TextStyle}>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkText>,
+      const { getByText } = render(
+        <BpkText textStyle={textStyle as TextStyle}>{text}</BpkText>,
       );
-      expect(asFragment()).toMatchSnapshot();
+
+      expect(getByText(text)).toHaveClass(`bpk-text bpk-text--${textStyle}`);
     });
   });
 });
