@@ -29,17 +29,7 @@
   }
 
   &__value {
-    display: flex;
-    padding-right: tokens.bpk-spacing-md();
-    justify-content: center;
-    align-items: baseline;
-    color: tokens.$bpk-text-primary-day;
-
-    @include utils.bpk-rtl {
-      padding-right: 0;
-      padding-left: tokens.bpk-spacing-md();
-      direction: ltr;
-    }
+    padding-inline-end: tokens.bpk-spacing-md();
   }
 
   &__text-wrapper {
@@ -49,6 +39,7 @@
     white-space: nowrap;
 
     &--large {
+      padding-top: tokens.$bpk-one-pixel-rem;
       flex-direction: column;
       align-items: flex-start;
     }
@@ -67,17 +58,9 @@
         padding-left: tokens.bpk-spacing-md();
       }
     }
-
-    &--large {
-      padding-top: tokens.$bpk-one-pixel-rem;
-    }
   }
 
   &__subtitle {
     color: tokens.$bpk-text-secondary-day;
-
-    &--large {
-      // padding-top: $bpk-one-pixel-rem;
-    }
   }
 }

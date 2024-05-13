@@ -16,11 +16,22 @@
  * limitations under the License.
  */
 
-/* @flow */
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-export const RATING_SIZES = { base: 'base', large: 'large' };
+import BpkRating from '../index';
 
-export const RATING_SCALES = {
-  zeroToFive: 'zeroToFive',
-  zeroToTen: 'zeroToTen',
-};
+describe('BpkRating accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkRating
+        ariaLabel="3.6 Average might recommend"
+        title="Average"
+        subtitle="Might recommend"
+        value={3.6}
+      />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
