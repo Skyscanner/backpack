@@ -16,22 +16,23 @@
  * limitations under the License.
  */
 
+import PropTypes from 'prop-types';
 import type { ReactChildren, SyntheticEvent } from 'react';
 
 export type Props = {
-  children: ReactChildren,
-  href?: string,
-  className?: string,
-  disabled: boolean,
-  onClick?: (event: SyntheticEvent) => unknown,
-  submit: boolean,
-  large: boolean,
-  iconOnly: boolean,
-  blank: boolean,
-  rel?: string,
+  children: ReactChildren;
+  href?: string;
+  className?: string;
+  disabled: boolean;
+  onClick?: (event: SyntheticEvent) => unknown;
+  submit: boolean;
+  large: boolean;
+  iconOnly: boolean;
+  blank: boolean;
+  rel?: string;
 };
 
-const defaultProps = {
+export const defaultProps = {
   href: null,
   className: null,
   disabled: false,
@@ -43,4 +44,15 @@ const defaultProps = {
   rel: null,
 };
 
-export { defaultProps };
+export const propTypes = {
+  children: PropTypes.node.isRequired,
+  href: PropTypes.string,
+  className: PropTypes.string,
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func,
+  submit: PropTypes.bool,
+  large: PropTypes.bool,
+  iconOnly: PropTypes.bool,
+  blank: PropTypes.bool,
+  rel: PropTypes.string,
+};

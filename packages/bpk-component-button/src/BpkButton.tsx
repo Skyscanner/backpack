@@ -15,12 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import PropTypes from 'prop-types';
 
 import BpkButtonBase from './BpkButtonBase';
 import { BUTTON_TYPES } from './BpkButtonV2/common-types';
-import { defaultProps } from './common-types';
-
-import type { Props as CommonProps } from './common-types';
+import {
+  type Props as CommonProps,
+  propTypes,
+  defaultProps,
+} from './common-types';
 
 export type Props = CommonProps & {
   primaryOnDark?: boolean;
@@ -85,6 +88,18 @@ BpkButton.defaultProps = {
   featured: false,
   link: false,
   linkOnDark: false,
+};
+
+BpkButton.propTypes = {
+  ...propTypes,
+  primaryOnDark: PropTypes.bool,
+  primaryOnLight: PropTypes.bool,
+  secondary: PropTypes.bool,
+  secondaryOnDark: PropTypes.bool,
+  destructive: PropTypes.bool,
+  featured: PropTypes.bool,
+  link: PropTypes.bool,
+  linkOnDark: PropTypes.bool,
 };
 
 export default BpkButton;
