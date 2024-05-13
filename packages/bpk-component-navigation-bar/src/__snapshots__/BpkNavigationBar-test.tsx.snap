@@ -6,6 +6,9 @@ exports[`BpkNavigationBar should render correctly 1`] = `
     aria-labelledby="test-bpk-navigation-bar-title"
     class="bpk-navigation-bar bpk-navigation-bar--default"
   >
+    <div
+      class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+    />
     <span
       class="bpk-navigation-bar__title bpk-navigation-bar__title--default"
     >
@@ -26,6 +29,9 @@ exports[`BpkNavigationBar should render correctly when sticky 1`] = `
     aria-labelledby="test-bpk-navigation-bar-title"
     class="bpk-navigation-bar bpk-navigation-bar--default bpk-navigation-bar__sticky"
   >
+    <div
+      class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+    />
     <span
       class="bpk-navigation-bar__title bpk-navigation-bar__title--default"
     >
@@ -84,6 +90,9 @@ exports[`BpkNavigationBar should render correctly with a "traillingButton" attri
     aria-labelledby="test-bpk-navigation-bar-title"
     class="bpk-navigation-bar bpk-navigation-bar--default"
   >
+    <div
+      class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+    />
     <span
       class="bpk-navigation-bar__title bpk-navigation-bar__title--default"
     >
@@ -123,6 +132,9 @@ exports[`BpkNavigationBar should render correctly with an element for the title 
     class="bpk-navigation-bar bpk-navigation-bar--default"
   >
     <div
+      class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+    />
+    <div
       class="bpk-navigation-bar__title-container"
     >
       <span>
@@ -158,6 +170,9 @@ exports[`BpkNavigationBar should render correctly with arbitrary props 1`] = `
     class="bpk-navigation-bar bpk-navigation-bar--default"
     testid="arbitrary value"
   >
+    <div
+      class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+    />
     <span
       class="bpk-navigation-bar__title bpk-navigation-bar__title--default"
     >
@@ -178,6 +193,9 @@ exports[`BpkNavigationBar should render correctly with custom class 1`] = `
     aria-labelledby="test-bpk-navigation-bar-title"
     class="bpk-navigation-bar bpk-navigation-bar--default my-custom-class"
   >
+    <div
+      class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+    />
     <span
       class="bpk-navigation-bar__title bpk-navigation-bar__title--default"
     >
@@ -198,6 +216,9 @@ exports[`BpkNavigationBar should render correctly with on-dark style 1`] = `
     aria-labelledby="test-bpk-navigation-bar-title"
     class="bpk-navigation-bar bpk-navigation-bar--on-dark"
   >
+    <div
+      class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--on-dark"
+    />
     <span
       class="bpk-navigation-bar__title bpk-navigation-bar__title--on-dark"
     >

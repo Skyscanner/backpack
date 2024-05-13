@@ -17,6 +17,9 @@ exports[`BpkModalInner should render correctly 1`] = `
         class="bpk-navigation-bar bpk-navigation-bar--default"
       >
         <div
+          class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+        />
+        <div
           class="bpk-navigation-bar__title-container"
         >
           <h2
@@ -79,6 +82,9 @@ exports[`BpkModalInner should render correctly when is iPhone 1`] = `
         aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-navigation-bar bpk-navigation-bar--default"
       >
+        <div
+          class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+        />
         <div
           class="bpk-navigation-bar__title-container"
         >
@@ -143,6 +149,9 @@ exports[`BpkModalInner should render correctly when it does not fills the screen
         class="bpk-navigation-bar bpk-navigation-bar--default"
       >
         <div
+          class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+        />
+        <div
           class="bpk-navigation-bar__title-container"
         >
           <h2
@@ -205,6 +214,9 @@ exports[`BpkModalInner should render correctly when it has a className 1`] = `
         aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-navigation-bar bpk-navigation-bar--default"
       >
+        <div
+          class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+        />
         <div
           class="bpk-navigation-bar__title-container"
         >
@@ -269,6 +281,9 @@ exports[`BpkModalInner should render correctly when it is fullscreen 1`] = `
         class="bpk-navigation-bar bpk-navigation-bar--default"
       >
         <div
+          class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+        />
+        <div
           class="bpk-navigation-bar__title-container"
         >
           <h2
@@ -331,6 +346,9 @@ exports[`BpkModalInner should render correctly with a custom content classname 1
         aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-navigation-bar bpk-navigation-bar--default"
       >
+        <div
+          class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+        />
         <div
           class="bpk-navigation-bar__title-container"
         >
@@ -479,6 +497,9 @@ exports[`BpkModalInner should render correctly with closeText prop 1`] = `
         class="bpk-navigation-bar bpk-navigation-bar--default"
       >
         <div
+          class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+        />
+        <div
           class="bpk-navigation-bar__title-container"
         >
           <h2
@@ -525,6 +546,9 @@ exports[`BpkModalInner should render correctly with no padding 1`] = `
         aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-navigation-bar bpk-navigation-bar--default"
       >
+        <div
+          class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+        />
         <div
           class="bpk-navigation-bar__title-container"
         >
@@ -588,6 +612,9 @@ exports[`BpkModalInner should render correctly with wide prop 1`] = `
         aria-labelledby="bpk-modal-heading-my-modal"
         class="bpk-navigation-bar bpk-navigation-bar--default"
       >
+        <div
+          class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+        />
         <div
           class="bpk-navigation-bar__title-container"
         >

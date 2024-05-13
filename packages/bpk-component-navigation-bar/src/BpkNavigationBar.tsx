@@ -54,7 +54,7 @@ const BpkNavigationBar = (props: Props) => {
     leadingButton,
     sticky = false,
     title,
-    titleTagName = "span",
+    titleTagName = 'span',
     titleTextStyle = TEXT_STYLES.heading5,
     trailingButton,
     ...rest
@@ -76,21 +76,21 @@ const BpkNavigationBar = (props: Props) => {
       )}
       {...rest}
     >
-      {leadingButton && (
-        <div
+      <div
+        className={getClassNames(
+          'bpk-navigation-bar__leading-item',
+          `bpk-navigation-bar__leading-item--${barStyle}`,
+        )}
+      >
+        {leadingButton && leadingButton}
+      </div>
+      {typeof title === 'string' ? (
+        <span
           className={getClassNames(
-            'bpk-navigation-bar__leading-item',
-            `bpk-navigation-bar__leading-item--${barStyle}`,
+            'bpk-navigation-bar__title',
+            `bpk-navigation-bar__title--${barStyle}`,
           )}
         >
-          {leadingButton}
-        </div>
-      )}
-      {typeof title === 'string' ? (
-        <span className={getClassNames(
-          'bpk-navigation-bar__title',
-          `bpk-navigation-bar__title--${barStyle}`,
-        )}>
           <BpkText
             id={titleId}
             textStyle={titleTextStyle}
@@ -100,7 +100,9 @@ const BpkNavigationBar = (props: Props) => {
           </BpkText>
         </span>
       ) : (
-        <div className={getClassNames('bpk-navigation-bar__title-container')}>{title}</div>
+        <div className={getClassNames('bpk-navigation-bar__title-container')}>
+          {title}
+        </div>
       )}
       {trailingButton && (
         <div

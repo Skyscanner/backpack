@@ -31,6 +31,9 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
               class="bpk-navigation-bar bpk-navigation-bar--default"
             >
               <div
+                class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
+              />
+              <div
                 class="bpk-navigation-bar__title-container"
               >
                 <h2
