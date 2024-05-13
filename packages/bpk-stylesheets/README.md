@@ -20,6 +20,14 @@ By default font rendering is not included if you need to include Skyscanner Rela
 import '@skyscanner/backpack-web/bpk-stylesheets/font';
 ```
 
+### Larken font
+
+For Editorial text, the Larken fonr will also need to be imported:
+
+```js
+import '@skyscanner/backpack-web/bpk-stylesheets/larken';
+```
+
 ## Contributing
 
 Don't forget to rebuild and commit `base.js` after you make changes to this package.

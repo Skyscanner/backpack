@@ -52,6 +52,9 @@ export const TEXT_STYLES = {
   hero3: 'hero-3',
   hero4: 'hero-4',
   hero5: 'hero-5',
+  editorial1: 'editorial-1',
+  editorial2: 'editorial-2',
+  editorial3: 'editorial-3',
 } as const;
 
 export type TextStyle = (typeof TEXT_STYLES)[keyof typeof TEXT_STYLES];

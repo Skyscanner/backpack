@@ -144,6 +144,20 @@ const LabelStylesExample = () => (
   </div>
 );
 
+const LarkenStylesExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.editorial1} tagName="p">
+      Editorial 1
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.editorial2} tagName="p">
+      Editorial 2
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.editorial3} tagName="p">
+      Editorial 3
+    </BpkText>
+  </div>
+);
+
 const MixedExample = () => (
   <div>
     <HeroStylesExample />
@@ -162,5 +176,6 @@ export {
   HeroStylesExample,
   BodyStylesExample,
   LabelStylesExample,
+  LarkenStylesExample,
   MixedExample,
 };
