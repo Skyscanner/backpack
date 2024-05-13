@@ -16,10 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactElement } from 'react';
 import { Children } from 'react';
 
 import { SPINNER_TYPES } from '../../packages/bpk-component-spinner';
@@ -30,7 +28,7 @@ import STYLES from './SpinnerLayout.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  children: Node,
+  children: Array<ReactElement<any, any>> | ReactElement<any, any> // Expect a single or array of React elements
 };
 
 const SpinnerLayout = (props: Props) => {
