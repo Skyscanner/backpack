@@ -75,7 +75,6 @@ const BpkDividedCard = ({
         >
           {secondaryContent}
         </div>
-
       </div>
     </BpkCard>
   );

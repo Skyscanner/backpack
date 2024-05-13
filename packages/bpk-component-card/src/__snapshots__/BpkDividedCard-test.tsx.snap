@@ -3,23 +3,27 @@
 exports[`BpkDividedCard should render correctly 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-card bpk-card--atomic-button bpk-divided-card bpk-divided-card--horizontal"
+    class="bpk-card bpk-card--atomic-button"
     type="button"
   >
     <div
-      class="bpk-divided-card__primary--horizontal"
+      class="bpk-divided-card bpk-divided-card--horizontal"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
+      <div
+        class="bpk-divided-card__primary--horizontal"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
 blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
 nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at. Mauris
 porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper
 sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
 ante in, vestibulum nulla.
-    </div>
-    <div
-      class="bpk-divided-card__secondary--horizontal"
-    >
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      </div>
+      <div
+        class="bpk-divided-card__secondary--horizontal"
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      </div>
     </div>
   </button>
 </DocumentFragment>
@@ -28,23 +32,27 @@ ante in, vestibulum nulla.
 exports[`BpkDividedCard should render correctly with href prop 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-card bpk-divided-card bpk-divided-card--horizontal"
+    class="bpk-card"
     href="http://www.skyscanner.net/"
   >
     <div
-      class="bpk-divided-card__primary--horizontal"
+      class="bpk-divided-card bpk-divided-card--horizontal"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
+      <div
+        class="bpk-divided-card__primary--horizontal"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
 blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
 nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at. Mauris
 porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper
 sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
 ante in, vestibulum nulla.
-    </div>
-    <div
-      class="bpk-divided-card__secondary--horizontal"
-    >
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      </div>
+      <div
+        class="bpk-divided-card__secondary--horizontal"
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      </div>
     </div>
   </a>
 </DocumentFragment>
@@ -53,23 +61,27 @@ ante in, vestibulum nulla.
 exports[`BpkDividedCard should render correctly with isElevated prop 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-card bpk-card--atomic-button bpk-divided-card bpk-divided-card--horizontal bpk-divided-card--no-elevation"
+    class="bpk-card bpk-card--atomic-button"
     type="button"
   >
     <div
-      class="bpk-divided-card__primary--horizontal"
+      class="bpk-divided-card bpk-divided-card--horizontal bpk-divided-card--no-elevation"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
+      <div
+        class="bpk-divided-card__primary--horizontal"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
 blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
 nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at. Mauris
 porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper
 sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
 ante in, vestibulum nulla.
-    </div>
-    <div
-      class="bpk-divided-card__secondary--horizontal"
-    >
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      </div>
+      <div
+        class="bpk-divided-card__secondary--horizontal"
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      </div>
     </div>
   </button>
 </DocumentFragment>
@@ -78,23 +90,27 @@ ante in, vestibulum nulla.
 exports[`BpkDividedCard should render correctly with vertical orientation 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-card bpk-card--atomic-button bpk-divided-card bpk-divided-card--vertical"
+    class="bpk-card bpk-card--atomic-button"
     type="button"
   >
     <div
-      class=""
+      class="bpk-divided-card bpk-divided-card--vertical"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
+      <div
+        class=""
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
 blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
 nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at. Mauris
 porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper
 sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
 ante in, vestibulum nulla.
-    </div>
-    <div
-      class="bpk-divided-card__secondary--vertical"
-    >
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      </div>
+      <div
+        class="bpk-divided-card__secondary--vertical"
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      </div>
     </div>
   </button>
 </DocumentFragment>
@@ -103,24 +119,28 @@ ante in, vestibulum nulla.
 exports[`BpkDividedCard should support arbitrary props 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-card bpk-card--atomic-button bpk-divided-card bpk-divided-card--horizontal"
+    class="bpk-card bpk-card--atomic-button"
     testid="123"
     type="button"
   >
     <div
-      class="bpk-divided-card__primary--horizontal"
+      class="bpk-divided-card bpk-divided-card--horizontal"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
+      <div
+        class="bpk-divided-card__primary--horizontal"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
 blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
 nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at. Mauris
 porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper
 sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
 ante in, vestibulum nulla.
-    </div>
-    <div
-      class="bpk-divided-card__secondary--horizontal"
-    >
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      </div>
+      <div
+        class="bpk-divided-card__secondary--horizontal"
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      </div>
     </div>
   </button>
 </DocumentFragment>
@@ -129,23 +149,27 @@ ante in, vestibulum nulla.
 exports[`BpkDividedCard should support custom class names 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-card bpk-card--atomic-button bpk-divided-card bpk-divided-card--horizontal custom-classname"
+    class="bpk-card bpk-card--atomic-button custom-classname"
     type="button"
   >
     <div
-      class="bpk-divided-card__primary--horizontal"
+      class="bpk-divided-card bpk-divided-card--horizontal"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
+      <div
+        class="bpk-divided-card__primary--horizontal"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
 blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
 nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at. Mauris
 porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper
 sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
 ante in, vestibulum nulla.
-    </div>
-    <div
-      class="bpk-divided-card__secondary--horizontal"
-    >
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      </div>
+      <div
+        class="bpk-divided-card__secondary--horizontal"
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      </div>
     </div>
   </button>
 </DocumentFragment>
