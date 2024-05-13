@@ -15,16 +15,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { cssModules } from '../../bpk-react-utils';
 
-
-import { BUTTON_TYPES } from './BpkButtonV2/common-types';
-
-import type { Props } from './common-types';
+import { type Props, propTypes, defaultProps } from './common-types';
 
 import COMMON_STYLES from './BpkButtonBase.module.scss';
 
+const getClassName = cssModules(COMMON_STYLES);
+
+// This is a duplicate of BpkButtonV2
+// Better to duplicate rather than prematurely align the abstraction between Button and ButtonV2
+export const BUTTON_TYPES = {
+  primary: 'primary',
+  primaryOnDark: 'primary-on-dark',
+  primaryOnLight: 'primary-on-light',
+  secondary: 'secondary',
+  secondaryOnDark: 'secondary-on-dark',
+  destructive: 'destructive',
+  featured: 'featured',
+  link: 'link',
+  linkOnDark: 'link-on-dark',
+} as const;
+
 type ValueOf<T> = T[keyof T];
-const BpkButton = (props: Props & {type?: ValueOf<typeof BUTTON_TYPES>}) => {
+const BpkButtonBase = (
+  props: Props & { type?: ValueOf<typeof BUTTON_TYPES> },
+) => {
   const {
     blank,
     children,
@@ -41,49 +57,48 @@ const BpkButton = (props: Props & {type?: ValueOf<typeof BUTTON_TYPES>}) => {
   } = props;
 
   const classNames = [];
-  if(type === undefined){
-    classNames.push(COMMON_STYLES['bpk-button']);
-
+  if (type === undefined) {
+    classNames.push('bpk-button');
   }
-  if(type === BUTTON_TYPES.featured){
-    classNames.push(COMMON_STYLES.featured);
+  if (type === BUTTON_TYPES.featured) {
+    classNames.push('bpk-button--featured');
   }
-  if(type === BUTTON_TYPES.destructive){
-    classNames.push(COMMON_STYLES.destructive);
+  if (type === BUTTON_TYPES.destructive) {
+    classNames.push('bpk-button--destructive');
   }
-  if(type === BUTTON_TYPES.link){
-    classNames.push(COMMON_STYLES.link);
+  if (type === BUTTON_TYPES.link) {
+    classNames.push('bpk-button--link');
   }
-  if(type === BUTTON_TYPES.linkOnDark){
-    classNames.push(COMMON_STYLES.linkOnDark);
+  if (type === BUTTON_TYPES.linkOnDark) {
+    classNames.push('bpk-button--linkOnDark');
   }
-  if(type === BUTTON_TYPES.primaryOnDark){
-    classNames.push(COMMON_STYLES.primaryOnDark);
+  if (type === BUTTON_TYPES.primaryOnDark) {
+    classNames.push('bpk-button--primaryOnDark');
   }
-  if(type === BUTTON_TYPES.primaryOnLight){
-    classNames.push(COMMON_STYLES.primaryOnDark);
+  if (type === BUTTON_TYPES.primaryOnLight) {
+    classNames.push('bpk-button--primaryOnLight');
   }
-  if(type === BUTTON_TYPES.secondary){
-    classNames.push(COMMON_STYLES.secondary);
+  if (type === BUTTON_TYPES.secondary) {
+    classNames.push('bpk-button--secondary');
   }
-  if(type === BUTTON_TYPES.secondaryOnDark){
-    classNames.push(COMMON_STYLES.secondaryOnDark);
+  if (type === BUTTON_TYPES.secondaryOnDark) {
+    classNames.push('bpk-button--secondaryOnDark');
   }
 
   if (large) {
-    classNames.push(COMMON_STYLES['bpk-button--large']);
+    classNames.push('bpk-button--large');
   }
 
   if (iconOnly) {
     classNames.push(
-      COMMON_STYLES[large ? 'bpk-button--large-icon-only' : 'bpk-button--icon-only'],
+      large ? 'bpk-button--large-icon-only' : 'bpk-button--icon-only',
     );
   }
   if (className) {
     classNames.push(className);
   }
 
-  const classNameFinal = classNames.join(' ');
+  const classNameFinal = getClassName(...classNames);
 
   const target = blank ? '_blank' : null;
   const rel = blank ? propRel || 'noopener noreferrer' : propRel;
@@ -105,7 +120,6 @@ const BpkButton = (props: Props & {type?: ValueOf<typeof BUTTON_TYPES>}) => {
 
   const buttonType = submit ? 'submit' : 'button';
 
-
   return (
     <button
       // eslint-disable-next-line react/button-has-type
@@ -118,7 +132,9 @@ const BpkButton = (props: Props & {type?: ValueOf<typeof BUTTON_TYPES>}) => {
       {children}
     </button>
   );
-
 };
 
-export default BpkButton;
+BpkButtonBase.propTypes = { ...propTypes };
+BpkButtonBase.defaultProps = { ...defaultProps };
+
+export default BpkButtonBase;

@@ -17,10 +17,10 @@
  */
 
 import PropTypes from 'prop-types';
-import type { ReactChildren, SyntheticEvent } from 'react';
+import type { ReactNode, SyntheticEvent } from 'react';
 
 export type Props = {
-  children: ReactChildren;
+  children: ReactNode;
   href?: string;
   className?: string;
   disabled: boolean;

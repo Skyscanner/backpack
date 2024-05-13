@@ -28,9 +28,11 @@ import {
 } from '../../packages/bpk-component-icon';
 import LargeLongArrowRightIcon from '../../packages/bpk-component-icon/lg/long-arrow-right';
 import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
+import { cssModules } from '../../packages/bpk-react-utils';
 import {
   action,
   BpkDarkExampleWrapper,
+  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from '../bpk-storybook-utils';
 
 import STYLES from './BpkButtonStory.module.scss';
@@ -42,21 +44,14 @@ const AlignedLargeLongArrowRightIcon = withLargeButtonAlignment(
   withRtlSupport(LargeLongArrowRightIcon),
 );
 
-const cssModules =
-  (styles = {}) =>
-  (className) =>
-    styles[className] ? styles[className] : className;
-
 const getClassName = cssModules(STYLES);
 
-const ButtonStory = ({
-  className,
-  wrapped,
-  ...rest
-}: {
-  className: ?string,
-  wrapped: Object,
-}) => {
+type StoryProps = Omit<Parameters<typeof BpkButtonV2>[0], 'children'> & {
+  className?: string;
+  wrapped: typeof BpkButtonV2;
+};
+
+const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
   const Wrapped = wrapped;
   return (
     <div
@@ -121,10 +116,10 @@ const ButtonStory = ({
 
 ButtonStory.defaultProps = { className: null };
 
-const PrimaryExample = (props: {}) => (
+const PrimaryExample = (props: any) => (
   <ButtonStory wrapped={BpkButtonV2} {...props} />
 );
-const PrimaryOnDarkExample = (props: {}) => (
+const PrimaryOnDarkExample = (props: any) => (
   <BpkDarkExampleWrapper>
     <ButtonStory
       type={BUTTON_TYPES.primaryOnDark}
@@ -133,17 +128,17 @@ const PrimaryOnDarkExample = (props: {}) => (
     />
   </BpkDarkExampleWrapper>
 );
-const PrimaryOnLightExample = (props: {}) => (
+const PrimaryOnLightExample = (props: any) => (
   <ButtonStory
     type={BUTTON_TYPES.primaryOnLight}
     wrapped={BpkButtonV2}
     {...props}
   />
 );
-const SecondaryExample = (props: {}) => (
+const SecondaryExample = (props: any) => (
   <ButtonStory type={BUTTON_TYPES.secondary} wrapped={BpkButtonV2} {...props} />
 );
-const SecondaryOnDarkExample = (props: {}) => (
+const SecondaryOnDarkExample = (props: any) => (
   <BpkDarkExampleWrapper>
     <ButtonStory
       type={BUTTON_TYPES.secondaryOnDark}
@@ -152,20 +147,20 @@ const SecondaryOnDarkExample = (props: {}) => (
     />
   </BpkDarkExampleWrapper>
 );
-const DestructiveExample = (props: {}) => (
+const DestructiveExample = (props: any) => (
   <ButtonStory
     type={BUTTON_TYPES.destructive}
     wrapped={BpkButtonV2}
     {...props}
   />
 );
-const FeaturedExample = (props: {}) => (
+const FeaturedExample = (props: any) => (
   <ButtonStory type={BUTTON_TYPES.featured} wrapped={BpkButtonV2} {...props} />
 );
-const LinkExample = (props: {}) => (
+const LinkExample = (props: any) => (
   <ButtonStory type={BUTTON_TYPES.link} wrapped={BpkButtonV2} {...props} />
 );
-const LinkOnDarkExample = (props: {}) => (
+const LinkOnDarkExample = (props: any) => (
   <BpkDarkExampleWrapper>
     <ButtonStory
       type={BUTTON_TYPES.linkOnDark}
@@ -175,8 +170,10 @@ const LinkOnDarkExample = (props: {}) => (
   </BpkDarkExampleWrapper>
 );
 
-const FullWidthExample = (props: {}) => (
-  <BpkButtonV2 fullWidth {...props}>Full Width Button</BpkButtonV2>
+const FullWidthExample = (props: any) => (
+  <BpkButtonV2 fullWidth {...props}>
+    Full Width Button
+  </BpkButtonV2>
 );
 
 const MixedExample = () => (

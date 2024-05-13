@@ -48,39 +48,50 @@
   }
 }
 
-.featured {
+.bpk-button--featured {
   composes: bpk-button;
+
   @include buttons.bpk-button--featured;
 }
 
-.destructive {
+.bpk-button--destructive {
   composes: bpk-button;
+
   @include buttons.bpk-button--destructive;
 }
 
-.link {
+.bpk-button--link {
   composes: bpk-button;
+
   @include buttons.bpk-button--link;
 }
 
-.linkOnDark {
+.bpk-button--linkOnDark {
   composes: bpk-button;
+
   @include buttons.bpk-button--link-on-dark;
 }
 
-.primaryOnDark {
+.bpk-button--primaryOnDark {
   composes: bpk-button;
+
   @include buttons.bpk-button--primary-on-dark;
 }
-.primaryOnLight {
+
+.bpk-button--primaryOnLight {
   composes: bpk-button;
+
   @include buttons.bpk-button--primary-on-light;
 }
-.secondary {
+
+.bpk-button--secondary {
   composes: bpk-button;
+
   @include buttons.bpk-button--secondary;
 }
-.secondaryOnDark {
+
+.bpk-button--secondaryOnDark {
   composes: bpk-button;
+
   @include buttons.bpk-button--secondary-on-dark;
 }

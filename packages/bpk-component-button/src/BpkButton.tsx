@@ -17,8 +17,7 @@
  */
 import PropTypes from 'prop-types';
 
-import BpkButtonBase from './BpkButtonBase';
-import { BUTTON_TYPES } from './BpkButtonV2/common-types';
+import BpkButtonBase, { BUTTON_TYPES } from './BpkButtonBase';
 import {
   type Props as CommonProps,
   propTypes,
@@ -54,7 +53,7 @@ const BpkButton = (props: Props) => {
   }
 
   if (primaryOnLight) {
-    return <BpkButtonBase type={BUTTON_TYPES.primaryOnDark} {...rest} />;
+    return <BpkButtonBase type={BUTTON_TYPES.primaryOnLight} {...rest} />;
   }
 
   if (secondary) {
