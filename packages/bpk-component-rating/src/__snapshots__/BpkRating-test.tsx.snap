@@ -15,15 +15,15 @@ exports[`BpkRating should correctly handling values higher than 5 when rating sc
         class="bpk-text bpk-text--label-1"
       >
         5
+      </span>
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--caption"
+      >
         <span
-          aria-hidden="true"
-          class="bpk-text bpk-text--caption"
+          class="bpk-rating__scale"
         >
-          <span
-            class="bpk-rating__scale"
-          >
-            /5
-          </span>
+          /5
         </span>
       </span>
     </div>
@@ -70,15 +70,15 @@ exports[`BpkRating should correctly handling values higher than 10 when rating s
         class="bpk-text bpk-text--label-1"
       >
         10
+      </span>
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--caption"
+      >
         <span
-          aria-hidden="true"
-          class="bpk-text bpk-text--caption"
+          class="bpk-rating__scale"
         >
-          <span
-            class="bpk-rating__scale"
-          >
-            /10
-          </span>
+          /10
         </span>
       </span>
     </div>
@@ -125,15 +125,15 @@ exports[`BpkRating should correctly handling values lower than 0 1`] = `
         class="bpk-text bpk-text--label-1"
       >
         0
+      </span>
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--caption"
+      >
         <span
-          aria-hidden="true"
-          class="bpk-text bpk-text--caption"
+          class="bpk-rating__scale"
         >
-          <span
-            class="bpk-rating__scale"
-          >
-            /5
-          </span>
+          /5
         </span>
       </span>
     </div>
@@ -180,15 +180,15 @@ exports[`BpkRating should correctly when value is string type 1`] = `
         class="bpk-text bpk-text--label-1"
       >
         4,6
+      </span>
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--caption"
+      >
         <span
-          aria-hidden="true"
-          class="bpk-text bpk-text--caption"
+          class="bpk-rating__scale"
         >
-          <span
-            class="bpk-rating__scale"
-          >
-            /5
-          </span>
+          /5
         </span>
       </span>
     </div>
@@ -280,15 +280,15 @@ exports[`BpkRating should render correctly 1`] = `
         class="bpk-text bpk-text--label-1"
       >
         4.6
+      </span>
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--caption"
+      >
         <span
-          aria-hidden="true"
-          class="bpk-text bpk-text--caption"
+          class="bpk-rating__scale"
         >
-          <span
-            class="bpk-rating__scale"
-          >
-            /5
-          </span>
+          /5
         </span>
       </span>
     </div>
@@ -335,15 +335,15 @@ exports[`BpkRating should render large size correctly 1`] = `
         class="bpk-text bpk-text--hero-5"
       >
         4.6
+      </span>
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--body-default"
+      >
         <span
-          aria-hidden="true"
-          class="bpk-text bpk-text--body-default"
+          class="bpk-rating__scale"
         >
-          <span
-            class="bpk-rating__scale"
-          >
-            /5
-          </span>
+          /5
         </span>
       </span>
     </div>
@@ -390,15 +390,15 @@ exports[`BpkRating should render large title only correctly 1`] = `
         class="bpk-text bpk-text--hero-5"
       >
         5
+      </span>
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--body-default"
+      >
         <span
-          aria-hidden="true"
-          class="bpk-text bpk-text--body-default"
+          class="bpk-rating__scale"
         >
-          <span
-            class="bpk-rating__scale"
-          >
-            /5
-          </span>
+          /5
         </span>
       </span>
     </div>
@@ -435,15 +435,15 @@ exports[`BpkRating should render showScale rating correctly 1`] = `
         class="bpk-text bpk-text--label-1"
       >
         5
+      </span>
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--caption"
+      >
         <span
-          aria-hidden="true"
-          class="bpk-text bpk-text--caption"
+          class="bpk-rating__scale"
         >
-          <span
-            class="bpk-rating__scale"
-          >
-            /5
-          </span>
+          /5
         </span>
       </span>
     </div>
@@ -490,15 +490,15 @@ exports[`BpkRating should render title only correctly 1`] = `
         class="bpk-text bpk-text--label-1"
       >
         5
+      </span>
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--caption"
+      >
         <span
-          aria-hidden="true"
-          class="bpk-text bpk-text--caption"
+          class="bpk-rating__scale"
         >
-          <span
-            class="bpk-rating__scale"
-          >
-            /5
-          </span>
+          /5
         </span>
       </span>
     </div>
@@ -535,15 +535,15 @@ exports[`BpkRating should render zero to ten scale rating correctly 1`] = `
         class="bpk-text bpk-text--label-1"
       >
         8.2
+      </span>
+      <span
+        aria-hidden="true"
+        class="bpk-text bpk-text--caption"
+      >
         <span
-          aria-hidden="true"
-          class="bpk-text bpk-text--caption"
+          class="bpk-rating__scale"
         >
-          <span
-            class="bpk-rating__scale"
-          >
-            /10
-          </span>
+          /10
         </span>
       </span>
     </div>
