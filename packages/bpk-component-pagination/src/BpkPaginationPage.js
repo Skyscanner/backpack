@@ -37,6 +37,8 @@ const BpkPaginationPage = (props) => {
     <BpkButtonV2
       type={!isSelected ? BUTTON_TYPES.primaryOnDark : BUTTON_TYPES.primary}
       onClick={onSelect}
+      // TODO: className to be removed
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={classNames.join(' ')}
       aria-label={pageLabel(page, isSelected)}
       aria-current={isSelected}

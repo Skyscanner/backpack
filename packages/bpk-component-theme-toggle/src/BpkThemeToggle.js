@@ -84,12 +84,9 @@ class BpkThemeToggle extends Component {
     const { ...rest } = this.props;
     return (
       <div {...rest}>
-        <BpkLabel
-          className={getClassName('bpk-theme-toggle__label')}
-          htmlFor={inputId}
-        >
-          Change theme
-        </BpkLabel>
+        <span className={getClassName('bpk-theme-toggle__label')}>
+          <BpkLabel htmlFor={inputId}>Change theme</BpkLabel>
+        </span>
         <BpkSelect
           id={inputId}
           name={inputId}

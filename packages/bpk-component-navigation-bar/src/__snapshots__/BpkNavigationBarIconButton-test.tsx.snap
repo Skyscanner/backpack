@@ -2,17 +2,21 @@
 
 exports[`BpkNavigationIconButton should render correctly 1`] = `
 <DocumentFragment>
-  <button
-    aria-label="test"
-    class="bpk-close-button bpk-navigation-bar-icon-button bpk-navigation-bar-icon-button--default some-class"
-    title="test"
-    type="button"
+  <span
+    class="some-class"
   >
-    <span
-      class="bpk-close-button__icon"
+    <button
+      aria-label="test"
+      class="bpk-close-button__default"
+      title="test"
+      type="button"
     >
-      <span />
-    </span>
-  </button>
+      <span
+        class="bpk-close-button-icon"
+      >
+        <span />
+      </span>
+    </button>
+  </span>
 </DocumentFragment>
 `;

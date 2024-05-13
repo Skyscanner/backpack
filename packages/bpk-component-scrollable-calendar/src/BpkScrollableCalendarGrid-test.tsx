@@ -22,7 +22,6 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { addMonths, isWeekend } from 'date-fns';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { formatDateFull, formatMonth } from '../test-utils';
@@ -83,7 +82,7 @@ describe('BpkCalendarScrollGrid', () => {
   it('should render correctly with a custom date component', () => {
     const MyCustomDate = (props: any) => {
       const cx = {
-        backgroundColor: colorPanjin,
+        backgroundColor: (colorPanjin as string),
         width: '50%',
         height: '50%',
         borderRadius: '5rem',

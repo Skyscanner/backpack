@@ -32,19 +32,13 @@ import {
 } from '../../bpk-component-calendar';
 import BpkInput, { withOpenEvents } from '../../bpk-component-input';
 import BpkModal from '../../bpk-component-modal';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPopover from '../../bpk-component-popover';
-import { cssModules } from '../../bpk-react-utils';
 
 import type {
   DaysOfWeek,
   ReactComponent,
   SelectionConfiguration,
 } from '../../bpk-component-calendar';
-
-import STYLES from './BpkDatepicker.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const Input = withOpenEvents(BpkInput);
 
@@ -318,10 +312,7 @@ class BpkDatepicker extends Component<Props, State> {
     delete rest.isOpen;
 
     const input = inputComponent || (
-      <div
-        className={getClassName('bpk-datepicker__input')}
-        ref={this.inputRef}
-      >
+      <div ref={this.inputRef} >
         <Input
           id={id}
           name={`${id}_input`}
@@ -340,7 +331,6 @@ class BpkDatepicker extends Component<Props, State> {
 
     const calendarProps = {
       id: `${id}-calendar`,
-      className: getClassName('bpk-datepicker__calendar'),
       changeMonthLabel,
       dateModifiers,
       daysOfWeek,
@@ -381,12 +371,10 @@ class BpkDatepicker extends Component<Props, State> {
             <BpkPopover
               id={`${id}-popover`}
               target={input}
-              renderTarget={renderTarget}
               onClose={this.props.onClose || this.onClose}
               isOpen={this.state.isOpen}
               label={title}
               closeButtonText={closeButtonText}
-              tabIndex={0}
               {...rest}
             >
               <Calendar {...calendarProps} fixedWidth={fixedWidth} />

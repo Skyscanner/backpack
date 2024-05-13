@@ -16,13 +16,17 @@
  * limitations under the License.
  */
 
-/* eslint-disable react/prop-types */
-
 import {
   BpkDataTable,
 } from '../../packages/bpk-component-datatable';
 
-const rows = [
+type Person = {
+  name: string;
+  description: string;
+  location: string;
+  numericValue: number;
+}
+const rows: Person[] = [
   {
     name: 'Abikso',
     description:
@@ -51,7 +55,15 @@ const rows = [
   },
 ];
 
-const complexRows = [
+type Employee = {
+  name: string;
+  description: string;
+  seat: {
+    office: string;
+    desk: number;
+  }
+}
+const complexRows: Employee[] = [
   {
     name: 'Jose',
     description: 'Software Engineer',
@@ -70,9 +82,9 @@ const complexRows = [
 ];
 
 // eslint-disable-next-line no-alert
-const onRowClick = (row) => alert(JSON.stringify(row));
+const onRowClick = (row: {}) => alert(JSON.stringify(row));
 
-const sortFunc = (rowA, rowB) => {
+const sortFunc = (rowA: Employee, rowB: Employee) => {
   const deskA = rowA.seat.desk;
   const deskB = rowB.seat.desk;
 
@@ -82,9 +94,9 @@ const sortFunc = (rowA, rowB) => {
   return deskA > deskB ? 1 : -1;
 };
 
-const LabelComponent = ({ label }) => <div> This is a {label} </div>;
+const LabelComponent = ({ label }: {label: string}) => <div> This is a {label} </div>;
 
-const CellRenderer = ({ cellData, rowData }) => {
+const CellRenderer = ({ cellData, rowData }: {cellData: Employee["seat"], rowData: Employee}) => {
   if (rowData.name === 'Jose') {
     return <div> Remote </div>;
   }
@@ -177,7 +189,7 @@ const DisabledSortExample = () => (
       accessor: 'description',
       width: '6.25rem',
       flexGrow: 1,
-      disableSort,
+      disableSortBy: true,
     },
     {
       label: 'Location',
@@ -240,7 +252,7 @@ const HeaderRendererExample = () => (
       label: 'Numeric value',
       accessor: 'numericValue',
       width: '6.25rem',
-      headerRenderer: LabelComponent,
+      Header: LabelComponent,
     }
   ]} />
 );

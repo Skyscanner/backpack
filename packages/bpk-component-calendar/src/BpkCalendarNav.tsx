@@ -18,10 +18,12 @@
 
 import type { ChangeEvent, MouseEvent } from 'react';
 
+import {
+  textColors,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
 import BpkAriaLive from '../../bpk-component-aria-live';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ArrowLeftIcon from '../../bpk-component-icon/lg/arrow-left';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ArrowRightIcon from '../../bpk-component-icon/lg/arrow-right';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../bpk-component-select';
@@ -127,7 +129,14 @@ const BpkCalendarNav = ({
               disabled || !isWithinRange(prevMonth, { start: min, end: max })
             }
           >
-            <ArrowLeftIcon className={getClassName('bpk-calendar-nav__icon')} />
+            <ArrowLeftIcon
+              className={getClassName('bpk-calendar-nav__icon')}
+              fill={
+                disabled || !isWithinRange(prevMonth, { start: min, end: max })
+                  ? textColors.textDisabledDay
+                  : 'currentcolor'
+              }
+            />
             <span className={getClassName('bpk-calendar-nav__text--hidden')}>
               {previousMonthLabel}
             </span>
@@ -180,6 +189,11 @@ const BpkCalendarNav = ({
           >
             <ArrowRightIcon
               className={getClassName('bpk-calendar-nav__icon')}
+              fill={
+                disabled || !isWithinRange(addMonths(baseMonth, 1), { start: min, end: max })
+                ? textColors.textDisabledDay
+                : 'currentcolor'
+              }
             />
             <span className={getClassName('bpk-calendar-nav__text--hidden')}>
               {nextMonthLabel}

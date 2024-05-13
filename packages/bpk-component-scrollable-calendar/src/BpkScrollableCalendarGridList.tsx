@@ -133,7 +133,6 @@ const BpkScrollableCalendarGridList = (props: Props) => {
         focusedDate={focusedDate}
         preventKeyboardFocus={rest.preventKeyboardFocus}
         aria-hidden={index !== 1}
-        className={getClassName('bpk-scrollable-calendar-grid-list__item')}
       />
     </div>
   );

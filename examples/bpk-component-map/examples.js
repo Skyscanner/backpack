@@ -210,7 +210,6 @@ class StatefulBpkPriceMarkerV2 extends Component<
         center={{ latitude: 55.944665, longitude: -3.1964903 }}
       >
         {venues
-          .filter((venue) => venue.disabled === false)
           .map((venue) => (
             <BpkPriceMarkerV2
               id={venue.id}
