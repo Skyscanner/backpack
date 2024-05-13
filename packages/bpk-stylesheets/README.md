@@ -22,7 +22,7 @@ import '@skyscanner/backpack-web/bpk-stylesheets/font';
 
 ### Larken font
 
-For Editorial text, the Larken fonr will also need to be imported:
+For Editorial text, the Larken font will also need to be imported:
 
 ```js
 import '@skyscanner/backpack-web/bpk-stylesheets/larken';
