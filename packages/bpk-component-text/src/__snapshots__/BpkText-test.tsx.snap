@@ -51,6 +51,36 @@ exports[`BpkText should render correctly with textStyle="base" 1`] = `
 </DocumentFragment>
 `;
 
+exports[`BpkText should render correctly with textStyle="editorial1" 1`] = `
+<DocumentFragment>
+  <span
+    class="bpk-text bpk-text--editorial1"
+  >
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </span>
+</DocumentFragment>
+`;
+
+exports[`BpkText should render correctly with textStyle="editorial2" 1`] = `
+<DocumentFragment>
+  <span
+    class="bpk-text bpk-text--editorial2"
+  >
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </span>
+</DocumentFragment>
+`;
+
+exports[`BpkText should render correctly with textStyle="editorial3" 1`] = `
+<DocumentFragment>
+  <span
+    class="bpk-text bpk-text--editorial3"
+  >
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </span>
+</DocumentFragment>
+`;
+
 exports[`BpkText should render correctly with textStyle="lg" 1`] = `
 <DocumentFragment>
   <span

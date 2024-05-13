@@ -82,4 +82,17 @@ describe('BpkText', () => {
       });
     },
   );
+
+  ['editorial1', 'editorial2', 'editorial3'].forEach((textStyle) => {
+    it(`should render correctly with textStyle="${textStyle}"`, () => {
+      const { asFragment } = render(
+        <BpkText textStyle={textStyle as TextStyle}>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkText>,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+  });
 });

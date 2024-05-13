@@ -164,6 +164,7 @@ const MixedExample = () => (
     <HeadingStylesExample />
     <BodyStylesExample />
     <LabelStylesExample />
+    <LarkenStylesExample />
   </div>
 );
 
