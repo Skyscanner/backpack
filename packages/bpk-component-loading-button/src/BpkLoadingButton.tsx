@@ -88,14 +88,22 @@ type LoadingProps = {
 const BpkLoadingButton = (props: LoadingProps) => {
   const {
     children,
+    destructive,
     disabled,
+    featured,
     icon,
     iconDisabled,
     iconLoading,
     iconOnly,
     iconPosition,
     large,
+    link,
+    linkOnDark,
     loading,
+    primaryOnDark,
+    primaryOnLight,
+    secondary,
+    secondaryOnDark,
     ...rest
   } = props;
 
@@ -117,14 +125,14 @@ const BpkLoadingButton = (props: LoadingProps) => {
 
   type ButtonType = typeof BUTTON_TYPES[keyof typeof BUTTON_TYPES]
   let type: ButtonType = BUTTON_TYPES.primary;
-  if(props.link) {type = BUTTON_TYPES.link}
-  if(props.linkOnDark) {type = BUTTON_TYPES.linkOnDark}
-  if(props.featured) {type = BUTTON_TYPES.featured}
-  if(props.destructive) {type = BUTTON_TYPES.destructive}
-  if(props.secondaryOnDark) {type = BUTTON_TYPES.secondaryOnDark}
-  if(props.secondary) {type = BUTTON_TYPES.secondary}
-  if(props.primaryOnLight) {type = BUTTON_TYPES.primaryOnLight}
-  if(props.primaryOnDark) {type = BUTTON_TYPES.primaryOnDark}
+  if(link) {type = BUTTON_TYPES.link}
+  if(linkOnDark) {type = BUTTON_TYPES.linkOnDark}
+  if(featured) {type = BUTTON_TYPES.featured}
+  if(destructive) {type = BUTTON_TYPES.destructive}
+  if(secondaryOnDark) {type = BUTTON_TYPES.secondaryOnDark}
+  if(secondary) {type = BUTTON_TYPES.secondary}
+  if(primaryOnLight) {type = BUTTON_TYPES.primaryOnLight}
+  if(primaryOnDark) {type = BUTTON_TYPES.primaryOnDark}
 
   return (
     <BpkButtonV2
