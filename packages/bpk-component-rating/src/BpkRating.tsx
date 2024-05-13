@@ -120,18 +120,16 @@ const BpkRating = (props: Props) => {
           aria-hidden="true"
         >
           {adjustedValue}
-
-          {showScale && (
-            <BpkText
-              textStyle={scaleTextSize}
-              tagName="span"
-              aria-hidden="true"
-            >
-              <span className={scaleStyles}>/{maxValue}</span>
-            </BpkText>
-          )}
         </BpkText>
-
+        {showScale && (
+          <BpkText
+            textStyle={scaleTextSize}
+            tagName="span"
+            aria-hidden="true"
+          >
+            <span className={scaleStyles}>/{maxValue}</span>
+          </BpkText>
+        )}
       </div>
 
       <div className={textWrapperStyles}>
