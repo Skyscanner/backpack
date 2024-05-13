@@ -16,10 +16,12 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-export default {
+const SPINNER_TYPES = {
   primary: 'primary',
   light: 'light',
   dark: 'dark',
-};
+} as const;
+
+export default SPINNER_TYPES;
+
+export type SpinnerTypes = (typeof SPINNER_TYPES)[keyof typeof SPINNER_TYPES];

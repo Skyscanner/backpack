@@ -24,12 +24,14 @@ import { cssModules } from '../../bpk-react-utils';
 
 import SPINNER_TYPES from './spinnerTypes';
 
+import type { SpinnerTypes } from './spinnerTypes';
+
 import STYLES from './BpkSpinner.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  type: keyof typeof SPINNER_TYPES,
+  type: SpinnerTypes,
   className?: string,
   alignToButton: boolean,
 };
