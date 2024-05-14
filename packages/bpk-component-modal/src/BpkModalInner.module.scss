@@ -94,14 +94,7 @@
     @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
   }
 
-  &__navigation {
-    // display: flex;
-    // justify-content: space-between;
-  }
-
   &__heading {
-    grid-column: 1;
-
     @include typography.bpk-text;
     @include typography.bpk-label-1;
   }
