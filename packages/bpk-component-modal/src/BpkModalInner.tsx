@@ -81,6 +81,7 @@ const BpkModalInner = ({
 }: Props) => {
   const classNames = [getClassName('bpk-modal')];
   const contentClassNames = [getClassName('bpk-modal__content')];
+  const titleContainersClassName = [getClassName('bpk-modal__heading-container')];
 
   classNames.push(getClassName(`bpk-modal__modal-style--${modalStyle}`));
 
@@ -103,6 +104,9 @@ const BpkModalInner = ({
 
   if (contentClassName) {
     contentClassNames.push(contentClassName);
+  }
+  if (accessoryView) {
+    titleContainersClassName.push(getClassName('bpk-modal__heading-container--centered'));
   }
 
   const headingId = `bpk-modal-heading-${id}`;
@@ -137,12 +141,14 @@ const BpkModalInner = ({
               }
               id={headingId}
               title={
-                <h2
-                  id={headingId}
-                  className={getClassName('bpk-modal__heading')}
-                >
-                  {title}
-                </h2>
+                <div className={titleContainersClassName.join(' ')}>
+                  <h2
+                    id={headingId}
+                    className={getClassName('bpk-modal__heading')}
+                  >
+                    {title}
+                  </h2>
+                </div>
               }
               leadingButton={accessoryViewFinal}
               trailingButton={

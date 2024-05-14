@@ -94,6 +94,14 @@
     @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
   }
 
+  &___heading-container {
+    grid-column: 1;
+
+    &--centered {
+      grid-column: 2;
+    }
+  }
+
   &__heading {
     @include typography.bpk-text;
     @include typography.bpk-label-1;
