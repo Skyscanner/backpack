@@ -90,7 +90,7 @@ export const VisualTest: Story = {
     
     // Simulate typing into the input field
     const input = canvas.getByPlaceholderText('Enter an office name');
-    await userEvent.type(input, 'Lon', { delay: 50 });
+    await userEvent.type(input, 'Lon', { delay: 100 });
 
     // Optionally wait for the suggestions to appear
     await expect(canvas.findByText('London (Any)')).toBeInTheDocument();
@@ -98,7 +98,7 @@ export const VisualTest: Story = {
     input.classList.add('percy-selector-placeholder'); // Add placeholder to trigger Precy snapshot
   }
 };
-VisualTest.parameters = { percy: { waitForSelector: '.percy-selector-placeholder' } };
+VisualTest.parameters = { percy: { waitForSelector: '.percy-seleTESTctor-placeholder' } };
 
 // export const VisualTestWithZoom = VisualTest.bind({});
 // VisualTestWithZoom.args = {
