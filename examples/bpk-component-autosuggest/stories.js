@@ -94,5 +94,13 @@ export const VisualTest: Story = {
 
     // Optionally wait for the suggestions to appear
     await expect(canvas.findByText('London (Any)')).toBeInTheDocument();
-  },
+
+    input.classList.add('percy-selector-placeholder'); // Add placeholder to trigger Precy snapshot
+  }
 };
+VisualTest.parameters = { percy: { waitForSelector: '.percy-selector-placeholder' } };
+
+// export const VisualTestWithZoom = VisualTest.bind({});
+// VisualTestWithZoom.args = {
+//   zoomEnabled: true
+// };
