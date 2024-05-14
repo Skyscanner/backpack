@@ -84,7 +84,6 @@ export const SmallInput = () => (
 type Story = StoryObj<typeof AutosuggestExample>;
 
 export const VisualTest: Story = {
-  parameters: { percy: { waitForSelector: '.percy-selector-placeholder' } },
   render: () => <AutosuggestExample />,
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -99,3 +98,4 @@ export const VisualTest: Story = {
     input.classList.add('percy-selector-placeholder'); // Add placeholder to trigger Percy snapshot
   }
 };
+VisualTest.parameters = { percy: { waitForSelector: '.percy-selector-placeholder' } };
