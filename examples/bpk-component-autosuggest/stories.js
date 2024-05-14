@@ -18,7 +18,7 @@
 
 import { ArgsTable } from '@storybook/addon-docs';
 import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
-import { userEvent, within, expect } from '@storybook/testing-library';
+import { userEvent, within } from '@storybook/testing-library';
 
 import BpkAutosuggest from '../../packages/bpk-component-autosuggest/src/BpkAutosuggest';
 import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
@@ -94,8 +94,8 @@ export const VisualTest: Story = {
     await userEvent.type(input, 'Lon', { delay: 100 });
 
     // Optionally wait for the suggestions to appear
-    await expect(canvas.findByText('London (Any)')).toBeInTheDocument();
+    await canvas.findByText('London (Any)');
 
-    input.classList.add('percy-selector-placeholder'); // Add placeholder to trigger Precy snapshot
+    input.classList.add('percy-selector-placeholder'); // Add placeholder to trigger Percy snapshot
   }
 };
