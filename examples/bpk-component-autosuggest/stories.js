@@ -18,11 +18,14 @@
 
 import { ArgsTable } from '@storybook/addon-docs';
 import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
+import { userEvent, within, expect } from '@storybook/testing-library';
 
 import BpkAutosuggest from '../../packages/bpk-component-autosuggest/src/BpkAutosuggest';
 import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
 
 import AutosuggestExample from './examples';
+
+import type { StoryObj } from '@storybook/react';
 
 export default {
   title: 'bpk-component-autosuggest',
@@ -77,3 +80,19 @@ export const SmallInput = () => (
     <AutosuggestExample />
   </div>
 );
+
+type Story = StoryObj<typeof AutosuggestExample>;
+
+export const SimulatedTyping: Story = {
+  render: () => <AutosuggestExample />,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    
+    // Simulate typing into the input field
+    const input = canvas.getByPlaceholderText('Enter an office name');
+    await userEvent.type(input, 'Lon', { delay: 50 });
+
+    // Optionally wait for the suggestions to appear
+    await expect(canvas.findByText('London (Any)')).toBeInTheDocument();
+  },
+};
