@@ -27,8 +27,8 @@ $button-padding: tokens.bpk-spacing-sm() * 0.5;
 
   // The margin here is used to ensure that the icon is aligned to
   // the leading or trailing edge of its parent container
-  margin-right: -1 * $button-padding;
-  margin-left: -1 * $button-padding;
+  // margin-right: -1 * $button-padding;
+  // margin-left: -1 * $button-padding;
   padding: 0;
   border: 0;
   background-color: transparent;

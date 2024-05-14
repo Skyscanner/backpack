@@ -100,6 +100,8 @@
   }
 
   &__heading {
+    grid-column: 1;
+
     @include typography.bpk-text;
     @include typography.bpk-label-1;
   }
@@ -108,7 +110,7 @@
     position: relative; // Override position: absolute coming from BpkNavigationBar
     right: auto;
 
-    @include margins.bpk-margin-leading(tokens.bpk-spacing-base());
+    // @include margins.bpk-margin-leading(tokens.bpk-spacing-base());
 
     @include utils.bpk-rtl {
       left: auto;
