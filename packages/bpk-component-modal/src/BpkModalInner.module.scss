@@ -94,11 +94,12 @@
     @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
   }
 
-  &___heading-container {
+  &__heading-container {
     grid-column: 1;
 
     &--centered {
       grid-column: 2;
+      justify-self: center;
     }
   }
 
