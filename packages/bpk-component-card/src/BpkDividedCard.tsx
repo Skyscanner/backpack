@@ -51,33 +51,40 @@ const BpkDividedCard = ({
   ...rest
 }: Props) => {
   const isVertical = orientation === ORIENTATION.vertical;
-  const classNames = getClassName(
-    'bpk-divided-card',
-    isVertical ? 'bpk-divided-card--vertical' : 'bpk-divided-card--horizontal',
+
+  const containerClassName = getClassName(
+    isVertical
+      ? 'bpk-divided-card--vertical-container'
+      : 'bpk-divided-card--horizontal-container',
+  );
+
+  const contentClassName = getClassName(
+    'bpk-divided-card--content',
+    isVertical && 'bpk-divided-card--vertical-content',
+  );
+
+  const secondaryContentClassName = getClassName(
+    isVertical
+      ? 'bpk-divided-card__secondary--vertical'
+      : 'bpk-divided-card__secondary--horizontal',
   );
 
   return (
     <CardContext.Provider value={{ elevated: isElevated }}>
-      <BpkCard href={href} padded={false} {...rest}>
-        <div className={classNames}>
-          <div
-            className={getClassName(
-              !isVertical && 'bpk-divided-card__primary--horizontal',
-            )}
-          >
-            {primaryContent}
+      <div className={containerClassName}>
+        <BpkCard href={href} padded={false} {...rest}>
+          <div className={contentClassName}>
+            <div
+              className={getClassName(
+                !isVertical && 'bpk-divided-card__primary--horizontal',
+              )}
+            >
+              {primaryContent}
+            </div>
+            <div className={secondaryContentClassName}>{secondaryContent}</div>
           </div>
-          <div
-            className={getClassName(
-              isVertical
-                ? 'bpk-divided-card__secondary--vertical'
-                : 'bpk-divided-card__secondary--horizontal',
-            )}
-          >
-            {secondaryContent}
-          </div>
-        </div>
-      </BpkCard>
+        </BpkCard>
+      </div>
     </CardContext.Provider>
   );
 };
