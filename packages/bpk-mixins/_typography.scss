@@ -508,7 +508,11 @@
 @mixin bpk-editorial-1 {
   font-family: $bpk-font-family-larken;
 
-  @include _bpk-text-factory($bpk-font-size-xxxxl, $bpk-line-height-xxxxl, 300);
+  @include _bpk-text-factory(
+    $bpk-font-size-xxxxl,
+    $bpk-line-height-xxxxl,
+    $bpk-font-weight-light
+  );
 }
 
 /// Editorial 2 text style
@@ -521,7 +525,11 @@
 @mixin bpk-editorial-2 {
   font-family: $bpk-font-family-larken;
 
-  @include _bpk-text-factory($bpk-font-size-xxl, $bpk-line-height-xxl, 300);
+  @include _bpk-text-factory(
+    $bpk-font-size-xxl,
+    $bpk-line-height-xxl,
+    $bpk-font-weight-light
+  );
 }
 
 /// Editorial 3 text style
