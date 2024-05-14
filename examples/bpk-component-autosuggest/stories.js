@@ -83,7 +83,7 @@ export const SmallInput = () => (
 
 type Story = StoryObj<typeof AutosuggestExample>;
 
-export const SimulatedTyping: Story = {
+export const VisualTest: Story = {
   render: () => <AutosuggestExample />,
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
