@@ -21,6 +21,7 @@ import type { ReactNode } from 'react';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkCard from './BpkCard';
+import { CardContext } from './CardContext';
 
 import STYLES from './BpkDividedCard.module.scss';
 
@@ -53,30 +54,31 @@ const BpkDividedCard = ({
   const classNames = getClassName(
     'bpk-divided-card',
     isVertical ? 'bpk-divided-card--vertical' : 'bpk-divided-card--horizontal',
-    !isElevated && 'bpk-divided-card--no-elevation',
   );
 
   return (
-    <BpkCard href={href} padded={false} {...rest}>
-      <div className={classNames}>
-        <div
-          className={getClassName(
-            !isVertical && 'bpk-divided-card__primary--horizontal',
-          )}
-        >
-          {primaryContent}
+    <CardContext.Provider value={{ elevated: isElevated }}>
+      <BpkCard href={href} padded={false} {...rest}>
+        <div className={classNames}>
+          <div
+            className={getClassName(
+              !isVertical && 'bpk-divided-card__primary--horizontal',
+            )}
+          >
+            {primaryContent}
+          </div>
+          <div
+            className={getClassName(
+              isVertical
+                ? 'bpk-divided-card__secondary--vertical'
+                : 'bpk-divided-card__secondary--horizontal',
+            )}
+          >
+            {secondaryContent}
+          </div>
         </div>
-        <div
-          className={getClassName(
-            isVertical
-              ? 'bpk-divided-card__secondary--vertical'
-              : 'bpk-divided-card__secondary--horizontal',
-          )}
-        >
-          {secondaryContent}
-        </div>
-      </div>
-    </BpkCard>
+      </BpkCard>
+    </CardContext.Provider>
   );
 };
 
