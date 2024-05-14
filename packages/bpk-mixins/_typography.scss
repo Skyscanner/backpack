@@ -498,6 +498,57 @@
   );
 }
 
+/// Editorial 1 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-editorial-1;
+///   }
+
+@mixin bpk-editorial-1 {
+  font-family: $bpk-font-family-larken;
+
+  @include _bpk-text-factory(
+    $bpk-font-size-xxxxl,
+    $bpk-line-height-xxxxl,
+    $bpk-font-weight-light
+  );
+}
+
+/// Editorial 2 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-editorial-2;
+///   }
+
+@mixin bpk-editorial-2 {
+  font-family: $bpk-font-family-larken;
+
+  @include _bpk-text-factory(
+    $bpk-font-size-xxl,
+    $bpk-line-height-xxl,
+    $bpk-font-weight-light
+  );
+}
+
+/// Editorial 3 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-editorial-3;
+///   }
+
+@mixin bpk-editorial-3 {
+  font-family: $bpk-font-family-larken;
+
+  @include _bpk-text-factory(
+    $bpk-font-size-lg,
+    $bpk-line-height-lg,
+    $bpk-font-weight-book
+  );
+}
+
 /// Hero 1 text style
 ///
 /// @example scss
