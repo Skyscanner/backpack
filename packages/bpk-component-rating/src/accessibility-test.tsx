@@ -1,4 +1,3 @@
-
 /*
  * Backpack - Skyscanner's Design System
  *
@@ -17,22 +16,22 @@
  * limitations under the License.
  */
 
-/// <reference types="react" />
-import PropTypes from 'prop-types';
-import SPINNER_TYPES from './spinnerTypes';
-type Props = {
-    type: keyof typeof SPINNER_TYPES;
-    className?: string;
-};
-declare const BpkExtraLargeSpinner: {
-    (props: Props): JSX.Element;
-    propTypes: {
-        type: PropTypes.Requireable<string>;
-        className: PropTypes.Requireable<string>;
-    };
-    defaultProps: {
-        type: string;
-        className: null;
-    };
-};
-export default BpkExtraLargeSpinner;
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
+
+import BpkRating from '../index';
+
+describe('BpkRating accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkRating
+        ariaLabel="3.6 Average might recommend"
+        title="Average"
+        subtitle="Might recommend"
+        value={3.6}
+      />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

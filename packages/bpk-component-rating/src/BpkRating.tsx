@@ -15,10 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode } from 'react';
 
 import clamp from 'lodash.clamp';
 
@@ -37,7 +36,8 @@ const getMinValue = () =>
   // different values based on the rating scale.
   0;
 
-const getMaxValue = (ratingScale) => {
+type ValueOf<T> = T[keyof T];
+const getMaxValue = (ratingScale: ValueOf<typeof RATING_SCALES>) => {
   switch (ratingScale) {
     case RATING_SCALES.zeroToFive:
       return 5;
@@ -48,12 +48,12 @@ const getMaxValue = (ratingScale) => {
 
 type Props = {
   ariaLabel: string,
-  className: ?string,
-  ratingScale: $Values<typeof RATING_SCALES>,
-  showScale: ?boolean,
-  size: $Values<typeof RATING_SIZES>,
-  subtitle: ?string,
-  title: ?string | Node,
+  className?: string,
+  ratingScale: ValueOf<typeof RATING_SCALES>,
+  showScale?: boolean,
+  size: ValueOf<typeof RATING_SIZES>,
+  subtitle?: string,
+  title?: string | ReactNode,
   value: string | number,
 };
 
@@ -83,17 +83,15 @@ const BpkRating = (props: Props) => {
   );
   const titleStyles = getClassName(
     subtitle && 'bpk-rating__title--with-subtitle',
-    size === RATING_SIZES.large && 'bpk-rating__title--large',
   );
   const subtitleStyles = getClassName(
     'bpk-rating__subtitle',
-    size === RATING_SIZES.large && 'bpk-rating__subtitle--large',
   );
 
-  let valueTextSize = TEXT_STYLES.label1;
-  let scaleTextSize = TEXT_STYLES.caption;
-  let titleTextSize = TEXT_STYLES.label1;
-  let subtitleTextSize = TEXT_STYLES.caption;
+  let valueTextSize: ValueOf<typeof TEXT_STYLES> = TEXT_STYLES.label1;
+  let scaleTextSize: ValueOf<typeof TEXT_STYLES> = TEXT_STYLES.caption;
+  let titleTextSize: ValueOf<typeof TEXT_STYLES> = TEXT_STYLES.label1;
+  let subtitleTextSize: ValueOf<typeof TEXT_STYLES> = TEXT_STYLES.caption;
 
   if (size === RATING_SIZES.large) {
     valueTextSize = TEXT_STYLES.hero5;
@@ -107,61 +105,51 @@ const BpkRating = (props: Props) => {
 
   let adjustedValue = value;
 
-  if (adjustedValue >= maxValue || adjustedValue <= minValue) {
-    adjustedValue = clamp(adjustedValue, minValue, maxValue);
+  if(typeof adjustedValue === "number") {
+    if (adjustedValue >= maxValue || adjustedValue <= minValue) {
+      adjustedValue = clamp(adjustedValue, minValue, maxValue);
+    }
   }
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <div className={classNames} aria-label={ariaLabel} role="figure" {...rest}>
-      <BpkText
-        textStyle={valueTextSize}
-        tagName="span"
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={valueStyles}
-        aria-hidden="true"
-      >
-        {adjustedValue}
-
+      <div className={valueStyles}>
+        <BpkText
+          textStyle={valueTextSize}
+          tagName="span"
+          aria-hidden="true"
+        >
+          {adjustedValue}
+        </BpkText>
         {showScale && (
           <BpkText
             textStyle={scaleTextSize}
-            // TODO: className to be removed
-            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-            className={scaleStyles}
             tagName="span"
             aria-hidden="true"
           >
-            /{maxValue}
+            <span className={scaleStyles}>/{maxValue}</span>
           </BpkText>
         )}
-      </BpkText>
+      </div>
 
       <div className={textWrapperStyles}>
         {title && (
           <BpkText
             textStyle={titleTextSize}
-            // TODO: className to be removed
-            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-            className={titleStyles}
             tagName="span"
             aria-hidden="true"
           >
-            {title}
+            <span className={titleStyles}>{title}</span>
           </BpkText>
         )}
 
         {subtitle && (
           <BpkText
-            // TODO: className to be removed
-            // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-            className={subtitleStyles}
             textStyle={subtitleTextSize}
             tagName="span"
             aria-hidden="true"
           >
-            {subtitle}
+            <span className={subtitleStyles}>{subtitle}</span>
           </BpkText>
         )}
       </div>
