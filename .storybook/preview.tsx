@@ -21,6 +21,7 @@ import { Title, PRIMARY_STORY } from '@storybook/blocks';
 
 import '../packages/bpk-stylesheets';
 import '../packages/bpk-stylesheets/font';
+import '../packages/bpk-stylesheets/larken';
 
 import BpkRtlToggle from '../packages/bpk-component-rtl-toggle';
 import BpkThemeToggle, {
