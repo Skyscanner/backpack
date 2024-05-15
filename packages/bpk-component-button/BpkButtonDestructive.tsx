@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkButton, {type Props} from './src/BpkButton';
 
-export { default } from './src/BpkButtonLink';
+const BpkButtonDestructive = (props: Props) => <BpkButton {...props} destructive />
+export default BpkButtonDestructive;
