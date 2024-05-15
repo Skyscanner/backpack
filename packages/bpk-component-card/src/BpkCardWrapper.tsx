@@ -20,6 +20,8 @@ import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
+import { CardContext } from './CardContext';
+
 import STYLES from './BpkCardWrapper.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -40,16 +42,18 @@ const BpkCardWrapper = ({
   const classNames = getClassName('bpk-card-wrapper', className);
 
   return (
-    <div
-      className={classNames}
-      style={{
-        // @ts-expect-error TS is reporting this incorrectly as --background-color is valid
-        '--background-color': backgroundColor,
-      }}
-    >
-      <div className={getClassName('bpk-card-wrapper--header')}>{header}</div>
-      <div className={getClassName('bpk-card-wrapper--content')}>{card}</div>
-    </div>
+    <CardContext.Provider value={{ elevated: false }}>
+      <div
+        className={classNames}
+        style={{
+          // @ts-expect-error TS is reporting this incorrectly as --background-color is valid
+          '--background-color': backgroundColor,
+        }}
+      >
+        <div className={getClassName('bpk-card-wrapper--header')}>{header}</div>
+        <div className={getClassName('bpk-card-wrapper--content')}>{card}</div>
+      </div>
+    </CardContext.Provider>
   );
 };
 
