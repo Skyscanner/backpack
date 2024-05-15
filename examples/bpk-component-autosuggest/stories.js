@@ -88,9 +88,9 @@ export const VisualTest: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     
-    // Simulate typing into the input field
-    const input = canvas.getByPlaceholderText('Enter an office name');
-    await userEvent.type(input, 'Lon', { delay: 100 });
+    const input = canvas.getByPlaceholderText('Enter an office name'); // Find the input field
+    await userEvent.click(input); // Click it to ensure focus
+    await userEvent.type(input, 'Lon', { delay: 100 }); // Simulate typing into the input field
 
     // Wait for the suggestions to appear
     await canvas.findByText('London (Any)');
