@@ -94,12 +94,9 @@ export const VisualTest: Story = {
 
     // Wait for the suggestions to appear
     await canvas.findByText('London (Any)');
-
-    input.classList.add('percy-selector-placeholder'); // Add placeholder to trigger Percy snapshot
   },
   parameters: {
     percy: {
-      waitForSelector: '.percy-selector-placeholder',
       additionalSnapshots: [{
         suffix: ' after delay',
         delay: 2000
