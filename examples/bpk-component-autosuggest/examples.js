@@ -142,7 +142,7 @@ class AutosuggestExample extends Component<Props, State> {
 
     this.state = {
       value: '',
-      suggestions: [],
+      suggestions: offices,
     };
   }
 
@@ -179,6 +179,7 @@ class AutosuggestExample extends Component<Props, State> {
 
     return (
       <BpkAutosuggest
+        alwaysRenderSuggestions
         suggestions={suggestions}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
