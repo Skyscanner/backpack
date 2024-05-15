@@ -92,10 +92,10 @@ export const VisualTest: Story = {
     const input = canvas.getByPlaceholderText('Enter an office name');
     await userEvent.type(input, 'Lon', { delay: 100 });
 
-    // Optionally wait for the suggestions to appear
+    // Wait for the suggestions to appear
     await canvas.findByText('London (Any)');
 
     input.classList.add('percy-selector-placeholder'); // Add placeholder to trigger Percy snapshot
   }
 };
-VisualTest.parameters = { percy: { waitForSelector: '.percy-selector-placeholder' } };
+VisualTest.parameters = { percy: { waitForSelector: 'percy-selector-placeholder' } };
