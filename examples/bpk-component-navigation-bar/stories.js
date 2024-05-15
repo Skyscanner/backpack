@@ -23,6 +23,7 @@ import BpkNavigationBarIconButton from '../../packages/bpk-component-navigation-
 import {
   DefaultExample,
   LongTitleTextExample,
+  CustomTitleExample,
   LeadingIconOnlyExample,
   TrailingIconOnlyExample,
   WithLinksExample,
@@ -44,6 +45,7 @@ export default {
 
 export const Default = DefaultExample;
 export const LongTitleText = LongTitleTextExample;
+export const CustomTitle = CustomTitleExample;
 export const OnDark = OnDarkExample;
 export const LeadingIconOnly = LeadingIconOnlyExample;
 
