@@ -28,7 +28,7 @@ export default {
   title: 'bpk-component-autosuggest',
   component: BpkAutosuggest,
   subcomponents: {
-    BpkAutosuggestSuggestion
+    BpkAutosuggestSuggestion,
   },
   parameters: {
     docs: {
@@ -37,16 +37,14 @@ export default {
           <Title />
           <ArgsTable of={PRIMARY_STORY} />
           <Markdown>
-            {
-            `**BpkAutosuggest:**
+            {`**BpkAutosuggest:**
             Please refer to react-autosuggest's
             documentation for a full list of [props](https://github.com/moroshko/react-autosuggest#props).
             **Note:** The \`inputProps\` object is passed directly to a
-            [BpkInput](../bpk-component-input/README.md#props) component, so its prop types apply also.`
-            }
+            [BpkInput](../bpk-component-input/README.md#props) component, so its prop types apply also.`}
           </Markdown>
         </>
-      )
+      ),
     },
   },
 };
@@ -69,7 +67,12 @@ export const Hanzi = () => (
 );
 
 export const All = () => (
-  <AutosuggestExample includeSubheading includeTertiaryLabel includeIcon />
+  <AutosuggestExample
+    includeSubheading
+    includeTertiaryLabel
+    includeIcon
+    alwaysRenderSuggestions
+  />
 );
 
 export const SmallInput = () => (
