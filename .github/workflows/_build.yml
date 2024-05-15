@@ -61,42 +61,6 @@ jobs:
           name: ${{env.BUILD_LOGS}}
           path: ${{env.BUILD_LOGS}}.tar.br
 
-  PercyTests:
-    runs-on: ubuntu-latest
-    permissions:
-      statuses: write
-      pull-requests: write
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Restore Cache
-        uses: actions/cache/restore@v4.0.2
-        id: npm-cache
-        with:
-          path: |
-            node_modules/
-            packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
-
-      - name: Restore Cache
-        uses: actions/cache/restore@v4.0.2
-        id: storybook-dist-cache
-        with:
-          path: dist-storybook/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
-
-      - name: Percy Test
-        run: npm run percy-test
-        if: ( github.ref == 'refs/heads/main' || github.repository == github.event.pull_request.head.repo.full_name) && github.actor != 'dependabot[bot]'
-        env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-
   Danger:
     runs-on: ubuntu-latest
     needs: Build
@@ -137,3 +101,40 @@ jobs:
         if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  PercyTests:
+    runs-on: ubuntu-latest
+    needs: Danger
+    permissions:
+      statuses: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Restore Cache
+        uses: actions/cache/restore@v4.0.2
+        id: npm-cache
+        with:
+          path: |
+            node_modules/
+            packages/node_modules/
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+
+      - name: Restore Cache
+        uses: actions/cache/restore@v4.0.2
+        id: storybook-dist-cache
+        with:
+          path: dist-storybook/
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
+
+      - name: Percy Test
+        run: npm run percy-test
+        if: ( github.ref == 'refs/heads/main' || github.repository == github.event.pull_request.head.repo.full_name) && github.actor != 'dependabot[bot]'
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
