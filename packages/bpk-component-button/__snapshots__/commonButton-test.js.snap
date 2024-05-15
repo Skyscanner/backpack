@@ -3,7 +3,7 @@
 exports[`BpkButtonDestructive should add only bpk specific classes if className prop is set to empty string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--destructive"
+    class="bpk-button--destructive bpk-button--large"
     type="button"
   >
     My button
@@ -14,7 +14,7 @@ exports[`BpkButtonDestructive should add only bpk specific classes if className 
 exports[`BpkButtonDestructive should render correctly 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--destructive"
+    class="bpk-button--destructive"
     type="button"
   >
     My button
@@ -25,7 +25,7 @@ exports[`BpkButtonDestructive should render correctly 1`] = `
 exports[`BpkButtonDestructive should render correctly with "blank" and "rel" attributes 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--destructive"
+    class="bpk-button--destructive"
     href="#"
     rel="rel-overwrite"
     target="_blank"
@@ -38,7 +38,7 @@ exports[`BpkButtonDestructive should render correctly with "blank" and "rel" att
 exports[`BpkButtonDestructive should render correctly with "blank" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--destructive"
+    class="bpk-button--destructive"
     href="#"
     rel="noopener noreferrer"
     target="_blank"
@@ -51,7 +51,7 @@ exports[`BpkButtonDestructive should render correctly with "blank" attribute 1`]
 exports[`BpkButtonDestructive should render correctly with "disabled" and "href" attributes 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--destructive"
+    class="bpk-button--destructive"
     disabled=""
     type="button"
   >
@@ -63,7 +63,7 @@ exports[`BpkButtonDestructive should render correctly with "disabled" and "href"
 exports[`BpkButtonDestructive should render correctly with "rel" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--destructive"
+    class="bpk-button--destructive"
     href="#"
     rel="rel-attr"
   >
@@ -75,7 +75,7 @@ exports[`BpkButtonDestructive should render correctly with "rel" attribute 1`] =
 exports[`BpkButtonDestructive should render correctly with a "disabled" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--destructive"
+    class="bpk-button--destructive"
     disabled=""
     type="button"
   >
@@ -87,7 +87,7 @@ exports[`BpkButtonDestructive should render correctly with a "disabled" attribut
 exports[`BpkButtonDestructive should render correctly with a "href" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--destructive"
+    class="bpk-button--destructive"
     href="#"
   >
     My button
@@ -98,7 +98,7 @@ exports[`BpkButtonDestructive should render correctly with a "href" attribute 1`
 exports[`BpkButtonDestructive should render correctly with a "large" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--destructive"
+    class="bpk-button--destructive bpk-button--large"
     type="button"
   >
     My button
@@ -109,7 +109,7 @@ exports[`BpkButtonDestructive should render correctly with a "large" attribute 1
 exports[`BpkButtonDestructive should render correctly with an "iconOnly" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--icon-only bpk-button--destructive"
+    class="bpk-button--destructive bpk-button--icon-only"
     type="button"
   >
     My button
@@ -120,7 +120,7 @@ exports[`BpkButtonDestructive should render correctly with an "iconOnly" attribu
 exports[`BpkButtonDestructive should respect the class names entered as a string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--destructive custom-class-1 custom-class-2"
+    class="bpk-button--destructive bpk-button--large custom-class-1 custom-class-2"
     type="button"
   >
     My button
@@ -131,7 +131,7 @@ exports[`BpkButtonDestructive should respect the class names entered as a string
 exports[`BpkButtonFeatured should add only bpk specific classes if className prop is set to empty string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--featured"
+    class="bpk-button--featured bpk-button--large"
     type="button"
   >
     My button
@@ -142,7 +142,7 @@ exports[`BpkButtonFeatured should add only bpk specific classes if className pro
 exports[`BpkButtonFeatured should render correctly 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--featured"
+    class="bpk-button--featured"
     type="button"
   >
     My button
@@ -153,7 +153,7 @@ exports[`BpkButtonFeatured should render correctly 1`] = `
 exports[`BpkButtonFeatured should render correctly with "blank" and "rel" attributes 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--featured"
+    class="bpk-button--featured"
     href="#"
     rel="rel-overwrite"
     target="_blank"
@@ -166,7 +166,7 @@ exports[`BpkButtonFeatured should render correctly with "blank" and "rel" attrib
 exports[`BpkButtonFeatured should render correctly with "blank" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--featured"
+    class="bpk-button--featured"
     href="#"
     rel="noopener noreferrer"
     target="_blank"
@@ -179,7 +179,7 @@ exports[`BpkButtonFeatured should render correctly with "blank" attribute 1`] = 
 exports[`BpkButtonFeatured should render correctly with "disabled" and "href" attributes 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--featured"
+    class="bpk-button--featured"
     disabled=""
     type="button"
   >
@@ -191,7 +191,7 @@ exports[`BpkButtonFeatured should render correctly with "disabled" and "href" at
 exports[`BpkButtonFeatured should render correctly with "rel" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--featured"
+    class="bpk-button--featured"
     href="#"
     rel="rel-attr"
   >
@@ -203,7 +203,7 @@ exports[`BpkButtonFeatured should render correctly with "rel" attribute 1`] = `
 exports[`BpkButtonFeatured should render correctly with a "disabled" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--featured"
+    class="bpk-button--featured"
     disabled=""
     type="button"
   >
@@ -215,7 +215,7 @@ exports[`BpkButtonFeatured should render correctly with a "disabled" attribute 1
 exports[`BpkButtonFeatured should render correctly with a "href" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--featured"
+    class="bpk-button--featured"
     href="#"
   >
     My button
@@ -226,7 +226,7 @@ exports[`BpkButtonFeatured should render correctly with a "href" attribute 1`] =
 exports[`BpkButtonFeatured should render correctly with a "large" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--featured"
+    class="bpk-button--featured bpk-button--large"
     type="button"
   >
     My button
@@ -237,7 +237,7 @@ exports[`BpkButtonFeatured should render correctly with a "large" attribute 1`] 
 exports[`BpkButtonFeatured should render correctly with an "iconOnly" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--icon-only bpk-button--featured"
+    class="bpk-button--featured bpk-button--icon-only"
     type="button"
   >
     My button
@@ -248,7 +248,7 @@ exports[`BpkButtonFeatured should render correctly with an "iconOnly" attribute 
 exports[`BpkButtonFeatured should respect the class names entered as a string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--featured custom-class-1 custom-class-2"
+    class="bpk-button--featured bpk-button--large custom-class-1 custom-class-2"
     type="button"
   >
     My button
@@ -259,7 +259,7 @@ exports[`BpkButtonFeatured should respect the class names entered as a string 1`
 exports[`BpkButtonLink should add only bpk specific classes if className prop is set to empty string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--link bpk-button--link-large"
+    class="bpk-button--link bpk-button--large"
     type="button"
   >
     My button
@@ -270,7 +270,7 @@ exports[`BpkButtonLink should add only bpk specific classes if className prop is
 exports[`BpkButtonLink should render correctly 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--link"
+    class="bpk-button--link"
     type="button"
   >
     My button
@@ -281,7 +281,7 @@ exports[`BpkButtonLink should render correctly 1`] = `
 exports[`BpkButtonLink should render correctly with "blank" and "rel" attributes 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--link"
+    class="bpk-button--link"
     href="#"
     rel="rel-overwrite"
     target="_blank"
@@ -294,7 +294,7 @@ exports[`BpkButtonLink should render correctly with "blank" and "rel" attributes
 exports[`BpkButtonLink should render correctly with "blank" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--link"
+    class="bpk-button--link"
     href="#"
     rel="noopener noreferrer"
     target="_blank"
@@ -307,7 +307,7 @@ exports[`BpkButtonLink should render correctly with "blank" attribute 1`] = `
 exports[`BpkButtonLink should render correctly with "disabled" and "href" attributes 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--link"
+    class="bpk-button--link"
     disabled=""
     type="button"
   >
@@ -319,7 +319,7 @@ exports[`BpkButtonLink should render correctly with "disabled" and "href" attrib
 exports[`BpkButtonLink should render correctly with "rel" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--link"
+    class="bpk-button--link"
     href="#"
     rel="rel-attr"
   >
@@ -331,7 +331,7 @@ exports[`BpkButtonLink should render correctly with "rel" attribute 1`] = `
 exports[`BpkButtonLink should render correctly with a "disabled" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--link"
+    class="bpk-button--link"
     disabled=""
     type="button"
   >
@@ -343,7 +343,7 @@ exports[`BpkButtonLink should render correctly with a "disabled" attribute 1`] =
 exports[`BpkButtonLink should render correctly with a "href" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--link"
+    class="bpk-button--link"
     href="#"
   >
     My button
@@ -354,7 +354,7 @@ exports[`BpkButtonLink should render correctly with a "href" attribute 1`] = `
 exports[`BpkButtonLink should render correctly with a "large" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--link bpk-button--link-large"
+    class="bpk-button--link bpk-button--large"
     type="button"
   >
     My button
@@ -365,7 +365,7 @@ exports[`BpkButtonLink should render correctly with a "large" attribute 1`] = `
 exports[`BpkButtonLink should render correctly with an "iconOnly" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--icon-only bpk-button--link"
+    class="bpk-button--link bpk-button--icon-only"
     type="button"
   >
     My button
@@ -376,7 +376,7 @@ exports[`BpkButtonLink should render correctly with an "iconOnly" attribute 1`] 
 exports[`BpkButtonLink should respect the class names entered as a string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--link bpk-button--link-large custom-class-1 custom-class-2"
+    class="bpk-button--link bpk-button--large custom-class-1 custom-class-2"
     type="button"
   >
     My button
@@ -387,7 +387,7 @@ exports[`BpkButtonLink should respect the class names entered as a string 1`] = 
 exports[`BpkButtonLinkOnDark should add only bpk specific classes if className prop is set to empty string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--link-on-dark bpk-button--link-on-dark-large"
+    class="bpk-button--linkOnDark bpk-button--large"
     type="button"
   >
     My button
@@ -398,7 +398,7 @@ exports[`BpkButtonLinkOnDark should add only bpk specific classes if className p
 exports[`BpkButtonLinkOnDark should render correctly 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--link-on-dark"
+    class="bpk-button--linkOnDark"
     type="button"
   >
     My button
@@ -409,7 +409,7 @@ exports[`BpkButtonLinkOnDark should render correctly 1`] = `
 exports[`BpkButtonLinkOnDark should render correctly with "blank" and "rel" attributes 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--link-on-dark"
+    class="bpk-button--linkOnDark"
     href="#"
     rel="rel-overwrite"
     target="_blank"
@@ -422,7 +422,7 @@ exports[`BpkButtonLinkOnDark should render correctly with "blank" and "rel" attr
 exports[`BpkButtonLinkOnDark should render correctly with "blank" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--link-on-dark"
+    class="bpk-button--linkOnDark"
     href="#"
     rel="noopener noreferrer"
     target="_blank"
@@ -435,7 +435,7 @@ exports[`BpkButtonLinkOnDark should render correctly with "blank" attribute 1`] 
 exports[`BpkButtonLinkOnDark should render correctly with "disabled" and "href" attributes 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--link-on-dark"
+    class="bpk-button--linkOnDark"
     disabled=""
     type="button"
   >
@@ -447,7 +447,7 @@ exports[`BpkButtonLinkOnDark should render correctly with "disabled" and "href" 
 exports[`BpkButtonLinkOnDark should render correctly with "rel" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--link-on-dark"
+    class="bpk-button--linkOnDark"
     href="#"
     rel="rel-attr"
   >
@@ -459,7 +459,7 @@ exports[`BpkButtonLinkOnDark should render correctly with "rel" attribute 1`] = 
 exports[`BpkButtonLinkOnDark should render correctly with a "disabled" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--link-on-dark"
+    class="bpk-button--linkOnDark"
     disabled=""
     type="button"
   >
@@ -471,7 +471,7 @@ exports[`BpkButtonLinkOnDark should render correctly with a "disabled" attribute
 exports[`BpkButtonLinkOnDark should render correctly with a "href" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--link-on-dark"
+    class="bpk-button--linkOnDark"
     href="#"
   >
     My button
@@ -482,7 +482,7 @@ exports[`BpkButtonLinkOnDark should render correctly with a "href" attribute 1`]
 exports[`BpkButtonLinkOnDark should render correctly with a "large" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--link-on-dark bpk-button--link-on-dark-large"
+    class="bpk-button--linkOnDark bpk-button--large"
     type="button"
   >
     My button
@@ -493,7 +493,7 @@ exports[`BpkButtonLinkOnDark should render correctly with a "large" attribute 1`
 exports[`BpkButtonLinkOnDark should render correctly with an "iconOnly" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--icon-only bpk-button--link-on-dark"
+    class="bpk-button--linkOnDark bpk-button--icon-only"
     type="button"
   >
     My button
@@ -504,7 +504,7 @@ exports[`BpkButtonLinkOnDark should render correctly with an "iconOnly" attribut
 exports[`BpkButtonLinkOnDark should respect the class names entered as a string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--link-on-dark bpk-button--link-on-dark-large custom-class-1 custom-class-2"
+    class="bpk-button--linkOnDark bpk-button--large custom-class-1 custom-class-2"
     type="button"
   >
     My button
@@ -643,7 +643,7 @@ exports[`BpkButtonPrimary should respect the class names entered as a string 1`]
 exports[`BpkButtonPrimaryOnDark should add only bpk specific classes if className prop is set to empty string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--primary-on-dark"
+    class="bpk-button--primaryOnDark bpk-button--large"
     type="button"
   >
     My button
@@ -654,7 +654,7 @@ exports[`BpkButtonPrimaryOnDark should add only bpk specific classes if classNam
 exports[`BpkButtonPrimaryOnDark should render correctly 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--primary-on-dark"
+    class="bpk-button--primaryOnDark"
     type="button"
   >
     My button
@@ -665,7 +665,7 @@ exports[`BpkButtonPrimaryOnDark should render correctly 1`] = `
 exports[`BpkButtonPrimaryOnDark should render correctly with "blank" and "rel" attributes 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--primary-on-dark"
+    class="bpk-button--primaryOnDark"
     href="#"
     rel="rel-overwrite"
     target="_blank"
@@ -678,7 +678,7 @@ exports[`BpkButtonPrimaryOnDark should render correctly with "blank" and "rel" a
 exports[`BpkButtonPrimaryOnDark should render correctly with "blank" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--primary-on-dark"
+    class="bpk-button--primaryOnDark"
     href="#"
     rel="noopener noreferrer"
     target="_blank"
@@ -691,7 +691,7 @@ exports[`BpkButtonPrimaryOnDark should render correctly with "blank" attribute 1
 exports[`BpkButtonPrimaryOnDark should render correctly with "disabled" and "href" attributes 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--primary-on-dark"
+    class="bpk-button--primaryOnDark"
     disabled=""
     type="button"
   >
@@ -703,7 +703,7 @@ exports[`BpkButtonPrimaryOnDark should render correctly with "disabled" and "hre
 exports[`BpkButtonPrimaryOnDark should render correctly with "rel" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--primary-on-dark"
+    class="bpk-button--primaryOnDark"
     href="#"
     rel="rel-attr"
   >
@@ -715,7 +715,7 @@ exports[`BpkButtonPrimaryOnDark should render correctly with "rel" attribute 1`]
 exports[`BpkButtonPrimaryOnDark should render correctly with a "disabled" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--primary-on-dark"
+    class="bpk-button--primaryOnDark"
     disabled=""
     type="button"
   >
@@ -727,7 +727,7 @@ exports[`BpkButtonPrimaryOnDark should render correctly with a "disabled" attrib
 exports[`BpkButtonPrimaryOnDark should render correctly with a "href" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--primary-on-dark"
+    class="bpk-button--primaryOnDark"
     href="#"
   >
     My button
@@ -738,7 +738,7 @@ exports[`BpkButtonPrimaryOnDark should render correctly with a "href" attribute 
 exports[`BpkButtonPrimaryOnDark should render correctly with a "large" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--primary-on-dark"
+    class="bpk-button--primaryOnDark bpk-button--large"
     type="button"
   >
     My button
@@ -749,7 +749,7 @@ exports[`BpkButtonPrimaryOnDark should render correctly with a "large" attribute
 exports[`BpkButtonPrimaryOnDark should render correctly with an "iconOnly" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--icon-only bpk-button--primary-on-dark"
+    class="bpk-button--primaryOnDark bpk-button--icon-only"
     type="button"
   >
     My button
@@ -760,7 +760,7 @@ exports[`BpkButtonPrimaryOnDark should render correctly with an "iconOnly" attri
 exports[`BpkButtonPrimaryOnDark should respect the class names entered as a string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--primary-on-dark custom-class-1 custom-class-2"
+    class="bpk-button--primaryOnDark bpk-button--large custom-class-1 custom-class-2"
     type="button"
   >
     My button
@@ -771,7 +771,7 @@ exports[`BpkButtonPrimaryOnDark should respect the class names entered as a stri
 exports[`BpkButtonPrimaryOnLight should add only bpk specific classes if className prop is set to empty string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--primary-on-light"
+    class="bpk-button--primaryOnLight bpk-button--large"
     type="button"
   >
     My button
@@ -782,7 +782,7 @@ exports[`BpkButtonPrimaryOnLight should add only bpk specific classes if classNa
 exports[`BpkButtonPrimaryOnLight should render correctly 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--primary-on-light"
+    class="bpk-button--primaryOnLight"
     type="button"
   >
     My button
@@ -793,7 +793,7 @@ exports[`BpkButtonPrimaryOnLight should render correctly 1`] = `
 exports[`BpkButtonPrimaryOnLight should render correctly with "blank" and "rel" attributes 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--primary-on-light"
+    class="bpk-button--primaryOnLight"
     href="#"
     rel="rel-overwrite"
     target="_blank"
@@ -806,7 +806,7 @@ exports[`BpkButtonPrimaryOnLight should render correctly with "blank" and "rel" 
 exports[`BpkButtonPrimaryOnLight should render correctly with "blank" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--primary-on-light"
+    class="bpk-button--primaryOnLight"
     href="#"
     rel="noopener noreferrer"
     target="_blank"
@@ -819,7 +819,7 @@ exports[`BpkButtonPrimaryOnLight should render correctly with "blank" attribute 
 exports[`BpkButtonPrimaryOnLight should render correctly with "disabled" and "href" attributes 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--primary-on-light"
+    class="bpk-button--primaryOnLight"
     disabled=""
     type="button"
   >
@@ -831,7 +831,7 @@ exports[`BpkButtonPrimaryOnLight should render correctly with "disabled" and "hr
 exports[`BpkButtonPrimaryOnLight should render correctly with "rel" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--primary-on-light"
+    class="bpk-button--primaryOnLight"
     href="#"
     rel="rel-attr"
   >
@@ -843,7 +843,7 @@ exports[`BpkButtonPrimaryOnLight should render correctly with "rel" attribute 1`
 exports[`BpkButtonPrimaryOnLight should render correctly with a "disabled" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--primary-on-light"
+    class="bpk-button--primaryOnLight"
     disabled=""
     type="button"
   >
@@ -855,7 +855,7 @@ exports[`BpkButtonPrimaryOnLight should render correctly with a "disabled" attri
 exports[`BpkButtonPrimaryOnLight should render correctly with a "href" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--primary-on-light"
+    class="bpk-button--primaryOnLight"
     href="#"
   >
     My button
@@ -866,7 +866,7 @@ exports[`BpkButtonPrimaryOnLight should render correctly with a "href" attribute
 exports[`BpkButtonPrimaryOnLight should render correctly with a "large" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--primary-on-light"
+    class="bpk-button--primaryOnLight bpk-button--large"
     type="button"
   >
     My button
@@ -877,7 +877,7 @@ exports[`BpkButtonPrimaryOnLight should render correctly with a "large" attribut
 exports[`BpkButtonPrimaryOnLight should render correctly with an "iconOnly" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--icon-only bpk-button--primary-on-light"
+    class="bpk-button--primaryOnLight bpk-button--icon-only"
     type="button"
   >
     My button
@@ -888,7 +888,7 @@ exports[`BpkButtonPrimaryOnLight should render correctly with an "iconOnly" attr
 exports[`BpkButtonPrimaryOnLight should respect the class names entered as a string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--primary-on-light custom-class-1 custom-class-2"
+    class="bpk-button--primaryOnLight bpk-button--large custom-class-1 custom-class-2"
     type="button"
   >
     My button
@@ -899,7 +899,7 @@ exports[`BpkButtonPrimaryOnLight should respect the class names entered as a str
 exports[`BpkButtonSecondary should add only bpk specific classes if className prop is set to empty string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--secondary"
+    class="bpk-button--secondary bpk-button--large"
     type="button"
   >
     My button
@@ -910,7 +910,7 @@ exports[`BpkButtonSecondary should add only bpk specific classes if className pr
 exports[`BpkButtonSecondary should render correctly 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--secondary"
+    class="bpk-button--secondary"
     type="button"
   >
     My button
@@ -921,7 +921,7 @@ exports[`BpkButtonSecondary should render correctly 1`] = `
 exports[`BpkButtonSecondary should render correctly with "blank" and "rel" attributes 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--secondary"
+    class="bpk-button--secondary"
     href="#"
     rel="rel-overwrite"
     target="_blank"
@@ -934,7 +934,7 @@ exports[`BpkButtonSecondary should render correctly with "blank" and "rel" attri
 exports[`BpkButtonSecondary should render correctly with "blank" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--secondary"
+    class="bpk-button--secondary"
     href="#"
     rel="noopener noreferrer"
     target="_blank"
@@ -947,7 +947,7 @@ exports[`BpkButtonSecondary should render correctly with "blank" attribute 1`] =
 exports[`BpkButtonSecondary should render correctly with "disabled" and "href" attributes 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--secondary"
+    class="bpk-button--secondary"
     disabled=""
     type="button"
   >
@@ -959,7 +959,7 @@ exports[`BpkButtonSecondary should render correctly with "disabled" and "href" a
 exports[`BpkButtonSecondary should render correctly with "rel" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--secondary"
+    class="bpk-button--secondary"
     href="#"
     rel="rel-attr"
   >
@@ -971,7 +971,7 @@ exports[`BpkButtonSecondary should render correctly with "rel" attribute 1`] = `
 exports[`BpkButtonSecondary should render correctly with a "disabled" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--secondary"
+    class="bpk-button--secondary"
     disabled=""
     type="button"
   >
@@ -983,7 +983,7 @@ exports[`BpkButtonSecondary should render correctly with a "disabled" attribute 
 exports[`BpkButtonSecondary should render correctly with a "href" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--secondary"
+    class="bpk-button--secondary"
     href="#"
   >
     My button
@@ -994,7 +994,7 @@ exports[`BpkButtonSecondary should render correctly with a "href" attribute 1`] 
 exports[`BpkButtonSecondary should render correctly with a "large" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--secondary"
+    class="bpk-button--secondary bpk-button--large"
     type="button"
   >
     My button
@@ -1005,7 +1005,7 @@ exports[`BpkButtonSecondary should render correctly with a "large" attribute 1`]
 exports[`BpkButtonSecondary should render correctly with an "iconOnly" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--icon-only bpk-button--secondary"
+    class="bpk-button--secondary bpk-button--icon-only"
     type="button"
   >
     My button
@@ -1016,7 +1016,7 @@ exports[`BpkButtonSecondary should render correctly with an "iconOnly" attribute
 exports[`BpkButtonSecondary should respect the class names entered as a string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--secondary custom-class-1 custom-class-2"
+    class="bpk-button--secondary bpk-button--large custom-class-1 custom-class-2"
     type="button"
   >
     My button
@@ -1027,7 +1027,7 @@ exports[`BpkButtonSecondary should respect the class names entered as a string 1
 exports[`BpkButtonSecondaryOnDark should add only bpk specific classes if className prop is set to empty string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--secondary-on-dark"
+    class="bpk-button--secondaryOnDark bpk-button--large"
     type="button"
   >
     My button
@@ -1038,7 +1038,7 @@ exports[`BpkButtonSecondaryOnDark should add only bpk specific classes if classN
 exports[`BpkButtonSecondaryOnDark should render correctly 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--secondary-on-dark"
+    class="bpk-button--secondaryOnDark"
     type="button"
   >
     My button
@@ -1049,7 +1049,7 @@ exports[`BpkButtonSecondaryOnDark should render correctly 1`] = `
 exports[`BpkButtonSecondaryOnDark should render correctly with "blank" and "rel" attributes 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--secondary-on-dark"
+    class="bpk-button--secondaryOnDark"
     href="#"
     rel="rel-overwrite"
     target="_blank"
@@ -1062,7 +1062,7 @@ exports[`BpkButtonSecondaryOnDark should render correctly with "blank" and "rel"
 exports[`BpkButtonSecondaryOnDark should render correctly with "blank" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--secondary-on-dark"
+    class="bpk-button--secondaryOnDark"
     href="#"
     rel="noopener noreferrer"
     target="_blank"
@@ -1075,7 +1075,7 @@ exports[`BpkButtonSecondaryOnDark should render correctly with "blank" attribute
 exports[`BpkButtonSecondaryOnDark should render correctly with "disabled" and "href" attributes 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--secondary-on-dark"
+    class="bpk-button--secondaryOnDark"
     disabled=""
     type="button"
   >
@@ -1087,7 +1087,7 @@ exports[`BpkButtonSecondaryOnDark should render correctly with "disabled" and "h
 exports[`BpkButtonSecondaryOnDark should render correctly with "rel" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--secondary-on-dark"
+    class="bpk-button--secondaryOnDark"
     href="#"
     rel="rel-attr"
   >
@@ -1099,7 +1099,7 @@ exports[`BpkButtonSecondaryOnDark should render correctly with "rel" attribute 1
 exports[`BpkButtonSecondaryOnDark should render correctly with a "disabled" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--secondary-on-dark"
+    class="bpk-button--secondaryOnDark"
     disabled=""
     type="button"
   >
@@ -1111,7 +1111,7 @@ exports[`BpkButtonSecondaryOnDark should render correctly with a "disabled" attr
 exports[`BpkButtonSecondaryOnDark should render correctly with a "href" attribute 1`] = `
 <DocumentFragment>
   <a
-    class="bpk-button bpk-button--secondary-on-dark"
+    class="bpk-button--secondaryOnDark"
     href="#"
   >
     My button
@@ -1122,7 +1122,7 @@ exports[`BpkButtonSecondaryOnDark should render correctly with a "href" attribut
 exports[`BpkButtonSecondaryOnDark should render correctly with a "large" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--secondary-on-dark"
+    class="bpk-button--secondaryOnDark bpk-button--large"
     type="button"
   >
     My button
@@ -1133,7 +1133,7 @@ exports[`BpkButtonSecondaryOnDark should render correctly with a "large" attribu
 exports[`BpkButtonSecondaryOnDark should render correctly with an "iconOnly" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--icon-only bpk-button--secondary-on-dark"
+    class="bpk-button--secondaryOnDark bpk-button--icon-only"
     type="button"
   >
     My button
@@ -1144,7 +1144,7 @@ exports[`BpkButtonSecondaryOnDark should render correctly with an "iconOnly" att
 exports[`BpkButtonSecondaryOnDark should respect the class names entered as a string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--secondary-on-dark custom-class-1 custom-class-2"
+    class="bpk-button--secondaryOnDark bpk-button--large custom-class-1 custom-class-2"
     type="button"
   >
     My button
