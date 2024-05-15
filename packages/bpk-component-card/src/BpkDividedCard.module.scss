@@ -26,16 +26,24 @@ $min-horizontal-height: 292;
 $fixed-secondary-width: 216;
 
 .bpk-divided-card {
-  display: flex;
-  align-items: stretch;
+  &--content {
+    display: flex;
+    height: 100%;
+    align-items: stretch;
+  }
 
-  &--vertical {
-    min-width: tokens.$bpk-one-pixel-rem * $min-vertical-width;
-    max-width: tokens.$bpk-one-pixel-rem * $max-vertical-width;
+  &--vertical-content {
     flex-direction: column;
   }
 
-  &--horizontal {
+  &--vertical-container {
+    display: flex;
+    min-width: tokens.$bpk-one-pixel-rem * $min-vertical-width;
+    max-width: tokens.$bpk-one-pixel-rem * $max-vertical-width;
+  }
+
+  &--horizontal-container {
+    display: flex;
     min-width: tokens.$bpk-one-pixel-rem * $min-horizontal-width;
     min-height: tokens.$bpk-one-pixel-rem * $min-horizontal-height;
   }
@@ -59,14 +67,6 @@ $fixed-secondary-width: 216;
         border-right: tokens.$bpk-input-border;
         border-left: unset;
       }
-    }
-  }
-
-  &--no-elevation {
-    box-shadow: none;
-
-    &::after {
-      box-shadow: none;
     }
   }
 }
