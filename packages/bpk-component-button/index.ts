@@ -16,26 +16,16 @@
  * limitations under the License.
  */
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkButton from './src/BpkButton'; // eslint-disable-line import/no-named-as-default, import/no-named-as-default-member
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkButtonDestructive from './src/BpkButtonDestructive';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkButtonFeatured from './src/BpkButtonFeatured';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkButtonLink from './src/BpkButtonLink'; // eslint-disable-line import/no-named-as-default, import/no-named-as-default-member
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkButtonLinkOnDark from './src/BpkButtonLinkOnDark'; // eslint-disable-line import/no-named-as-default, import/no-named-as-default-member
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkButtonPrimary from './src/BpkButtonPrimary';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkButtonPrimaryOnDark from './src/BpkButtonPrimaryOnDark';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkButtonPrimaryOnLight from './src/BpkButtonPrimaryOnLight';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkButtonSecondary from './src/BpkButtonSecondary';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkButtonSecondaryOnDark from './src/BpkButtonSecondaryOnDark';
+import BpkButtonDestructive from './BpkButtonDestructive';
+import BpkButtonFeatured from './BpkButtonFeatured';
+import BpkButtonLink from './BpkButtonLink';
+import BpkButtonLinkOnDark from './BpkButtonLinkOnDark';
+import BpkButtonPrimary from './BpkButtonPrimary';
+import BpkButtonPrimaryOnDark from './BpkButtonPrimaryOnDark';
+import BpkButtonPrimaryOnLight from './BpkButtonPrimaryOnLight';
+import BpkButtonSecondary from './BpkButtonSecondary';
+import BpkButtonSecondaryOnDark from './BpkButtonSecondaryOnDark';
+import BpkButton from './src/BpkButton';
 import { BpkButtonV2 } from './src/BpkButtonV2/BpkButton';
 
 export { BUTTON_TYPES, SIZE_TYPES } from './src/BpkButtonV2/common-types';
