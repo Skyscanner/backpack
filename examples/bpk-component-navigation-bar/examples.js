@@ -26,6 +26,7 @@ import BpkNavigationBar, {
   BpkNavigationBarIconButton,
   BAR_STYLES,
 } from '../../packages/bpk-component-navigation-bar';
+import BpkText from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 import { action } from '../bpk-storybook-utils';
 
@@ -64,6 +65,29 @@ const LongTitleTextExample = () => (
     <BpkNavigationBar
       id="test"
       title="Backpack navigation bar long title example"
+      leadingButton={
+        <BpkNavigationBarIconButton
+          onClick={action('back clicked')}
+          icon={ArrowIconWithRtl}
+          label="back"
+        />
+      }
+      trailingButton={
+        <BpkNavigationBarIconButton
+          onClick={action('close clicked')}
+          icon={CloseIcon}
+          label="close"
+        />
+      }
+    />
+  </div>
+);
+
+const CustomTitleExample = () => (
+  <div className={getClassNames('bpk-navigation-bar-story')}>
+    <BpkNavigationBar
+      id="test"
+      title={<BpkText tagName='h3' textStyle='xl' >Backpack navigation custom title</BpkText>}
       leadingButton={
         <BpkNavigationBarIconButton
           onClick={action('back clicked')}
@@ -263,12 +287,14 @@ const VisualTestExample = () => (
     <DefaultExample />
     <OnDarkExample />
     <WithLinksOnDarkExample />
+    <CustomTitleExample />
   </div>
 );
 
 export {
   DefaultExample,
   LongTitleTextExample,
+  CustomTitleExample,
   OnDarkExample,
   LeadingIconOnlyExample,
   TrailingIconOnlyExample,
