@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/buttons';
+import BpkButton, {type Props} from './src/BpkButton';
 
-.bpk-button--featured {
-  @include buttons.bpk-button--featured;
-}
+const BpkButtonSecondary = (props: Props) => <BpkButton {...props} secondary />
+export default BpkButtonSecondary;

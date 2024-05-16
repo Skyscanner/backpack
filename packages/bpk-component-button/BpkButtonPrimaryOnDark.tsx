@@ -1,4 +1,3 @@
-
 /*
  * Backpack - Skyscanner's Design System
  *
@@ -17,22 +16,7 @@
  * limitations under the License.
  */
 
-/// <reference types="react" />
-import PropTypes from 'prop-types';
-import SPINNER_TYPES from './spinnerTypes';
-type Props = {
-    type: keyof typeof SPINNER_TYPES;
-    className?: string;
-};
-declare const BpkExtraLargeSpinner: {
-    (props: Props): JSX.Element;
-    propTypes: {
-        type: PropTypes.Requireable<string>;
-        className: PropTypes.Requireable<string>;
-    };
-    defaultProps: {
-        type: string;
-        className: null;
-    };
-};
-export default BpkExtraLargeSpinner;
+import BpkButton, {type Props} from './src/BpkButton';
+
+const BpkButtonPrimaryOnDark = (props: Props) => <BpkButton {...props} primaryOnDark />
+export default BpkButtonPrimaryOnDark;

@@ -16,38 +16,23 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import PropTypes from 'prop-types';
-import { type Node } from 'react';
+import type { ReactNode, SyntheticEvent } from 'react';
 
 export type Props = {
-  children: Node,
-  href: ?string,
-  className: ?string,
-  disabled: boolean,
-  onClick: ?(event: SyntheticEvent<>) => mixed,
-  submit: boolean,
-  large: boolean,
-  iconOnly: boolean,
-  blank: boolean,
-  rel: ?string,
+  children: ReactNode;
+  href?: string;
+  className?: string;
+  disabled: boolean;
+  onClick?: (event: SyntheticEvent) => unknown;
+  submit: boolean;
+  large: boolean;
+  iconOnly: boolean;
+  blank: boolean;
+  rel?: string;
 };
 
-const propTypes = {
-  children: PropTypes.node.isRequired,
-  href: PropTypes.string,
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  onClick: PropTypes.func,
-  submit: PropTypes.bool,
-  large: PropTypes.bool,
-  iconOnly: PropTypes.bool,
-  blank: PropTypes.bool,
-  rel: PropTypes.string,
-};
-
-const defaultProps = {
+export const defaultProps = {
   href: null,
   className: null,
   disabled: false,
@@ -59,4 +44,15 @@ const defaultProps = {
   rel: null,
 };
 
-export { propTypes, defaultProps };
+export const propTypes = {
+  children: PropTypes.node.isRequired,
+  href: PropTypes.string,
+  className: PropTypes.string,
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func,
+  submit: PropTypes.bool,
+  large: PropTypes.bool,
+  iconOnly: PropTypes.bool,
+  blank: PropTypes.bool,
+  rel: PropTypes.string,
+};

@@ -32,6 +32,7 @@ import {
   AnchorTagsExample,
   FullWidthExample,
 } from './examples';
+import { MixedExample as MixedExampleV1 } from './examplesv1';
 
 export default {
   title: 'bpk-component-button',
@@ -60,9 +61,19 @@ export const Mixture = () => <MixedExample />;
 export const AnchorTags = () => <AnchorTagsExample />;
 
 export const VisualTest = () => <MixedExample />;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true,
+  },
+};
+
+export const VisualTestV1 = () => <MixedExampleV1 />;
+export const VisualTestV1WithZoom = {
+  render: VisualTestV1,
+  args: {
+    zoomEnabled: true,
+  },
 };
 
 export const FullWidth = () => <FullWidthExample />;
