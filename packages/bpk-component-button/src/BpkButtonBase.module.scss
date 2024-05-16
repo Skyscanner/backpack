@@ -47,3 +47,51 @@
     fill: currentcolor;
   }
 }
+
+.bpk-button--featured {
+  composes: bpk-button;
+
+  @include buttons.bpk-button--featured;
+}
+
+.bpk-button--destructive {
+  composes: bpk-button;
+
+  @include buttons.bpk-button--destructive;
+}
+
+.bpk-button--link {
+  composes: bpk-button;
+
+  @include buttons.bpk-button--link;
+}
+
+.bpk-button--linkOnDark {
+  composes: bpk-button;
+
+  @include buttons.bpk-button--link-on-dark;
+}
+
+.bpk-button--primaryOnDark {
+  composes: bpk-button;
+
+  @include buttons.bpk-button--primary-on-dark;
+}
+
+.bpk-button--primaryOnLight {
+  composes: bpk-button;
+
+  @include buttons.bpk-button--primary-on-light;
+}
+
+.bpk-button--secondary {
+  composes: bpk-button;
+
+  @include buttons.bpk-button--secondary;
+}
+
+.bpk-button--secondaryOnDark {
+  composes: bpk-button;
+
+  @include buttons.bpk-button--secondary-on-dark;
+}
