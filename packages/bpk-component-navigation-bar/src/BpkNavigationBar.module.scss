@@ -70,6 +70,10 @@
     }
   }
 
+  &__title-container {
+    justify-self: center;
+  }
+
   &__leading-item,
   &__trailing-item {
     @include typography.bpk-label-2;
@@ -77,10 +81,12 @@
 
   &__leading-item {
     grid-column: 1;
+    justify-self: start;
   }
 
   &__trailing-item {
     grid-column: 3;
+    justify-self: end;
   }
 
   &__sticky {

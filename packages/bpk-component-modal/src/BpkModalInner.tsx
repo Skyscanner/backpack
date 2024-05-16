@@ -19,6 +19,8 @@
 import type { ReactNode } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { modals } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
 import BpkCloseButton from '../../bpk-component-close-button';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
@@ -81,7 +83,7 @@ const BpkModalInner = ({
 }: Props) => {
   const classNames = [getClassName('bpk-modal')];
   const contentClassNames = [getClassName('bpk-modal__content')];
-  const titleContainersClassName = [getClassName('bpk-modal__heading-container')];
+  const navigationStyles = [getClassName('bpk-modal__navigation')];
 
   classNames.push(getClassName(`bpk-modal__modal-style--${modalStyle}`));
 
@@ -104,9 +106,6 @@ const BpkModalInner = ({
 
   if (contentClassName) {
     contentClassNames.push(contentClassName);
-  }
-  if (accessoryView) {
-    titleContainersClassName.push(getClassName('bpk-modal__heading-container--centered'));
   }
 
   const headingId = `bpk-modal-heading-${id}`;
@@ -140,30 +139,29 @@ const BpkModalInner = ({
                   : BAR_STYLES.default
               }
               id={headingId}
+              className={navigationStyles.join(' ')}
               title={
-                <div className={titleContainersClassName.join(' ')}>
-                  <h2
-                    id={headingId}
-                    className={getClassName('bpk-modal__heading')}
-                  >
-                    {title}
-                  </h2>
-                </div>
+                <h2
+                  id={headingId}
+                  className={getClassName('bpk-modal__heading')}
+                >
+                  {title}
+                </h2>
               }
               leadingButton={accessoryViewFinal}
               trailingButton={
                 closeText ? (
                   <BpkButtonLink
-                    onDark={modalStyle === MODAL_STYLING.surfaceContrast}
                     onClick={onClose}
+                    onDark={modalStyle === MODAL_STYLING.surfaceContrast}
                   >
                     {closeText}
                   </BpkButtonLink>
                 ) : (
                   <BpkCloseButton
-                    onDark={modalStyle === MODAL_STYLING.surfaceContrast}
                     label={closeLabel}
                     onClick={onClose}
+                    onDark={modalStyle === MODAL_STYLING.surfaceContrast}
                   />
                 )
               }
