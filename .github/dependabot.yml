@@ -32,3 +32,8 @@ updates:
     interval: weekly
     time: "10:00"
   open-pull-requests-limit: 10
+  groups:
+    artifacts-actions:
+      patterns:
+        - "actions/download-artifact"
+        - "actions/upload-artifact"
