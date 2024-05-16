@@ -15,9 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import BpkButton, {type Props} from './src/BpkButton';
 
-@use '../../unstable__bpk-mixins/buttons';
-
-.bpk-button--secondary-on-dark {
-  @include buttons.bpk-button--secondary-on-dark;
-}
+const BpkButtonLinkOnDark = (props: Props) => <BpkButton {...props} linkOnDark />
+export default BpkButtonLinkOnDark;

@@ -65,10 +65,7 @@ const BpkDialogInner = (props: Props) => {
         className={classNames}
         ref={dialogRef}
       >
-        {flare && <BpkContentBubble
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={flareClassNames} />}
+        {flare && <div className={flareClassNames}><BpkContentBubble/></div>}
         <div className={contentClassNames}>{children}</div>
       </section>
     </TransitionInitialMount>

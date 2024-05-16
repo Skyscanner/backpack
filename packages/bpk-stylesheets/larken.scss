@@ -16,6 +16,22 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+$base-url: 'https://js.skyscnr.com/sttc/bpk-fonts';
 
-export { default } from './src/BpkButtonFeatured';
+@font-face {
+  font-family: Larken;
+  font-style: normal;
+  font-weight: 300;
+  src:
+    url('#{$base-url}/Larken-Light-8371ea16.woff2') format('woff2'),
+    url('#{$base-url}/Larken-Light-39e53c9a.woff') format('woff');
+}
+
+@font-face {
+  font-family: Larken;
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url('#{$base-url}/Larken-Regular-3d9dfe29.woff2') format('woff2'),
+    url('#{$base-url}/Larken-Regular-626ee28c.woff') format('woff');
+}
