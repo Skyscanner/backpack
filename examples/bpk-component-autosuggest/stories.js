@@ -93,8 +93,9 @@ export const VisualTest: Story = {
     await userEvent.type(input, 'Lon', { delay: 100 }); // Simulate typing into the input field
 
     await canvas.findByText('London (Any)'); // Wait for the suggestions to appear
+    const dropdown = canvas.getByText('London (Any)'); // Find the dropdown field
 
-    input.classList.add('percy-selector-placeholder'); // Add placeholder to trigger Percy snapshot
+    dropdown.classList.add('percy-selector-placeholder'); // Add placeholder to trigger Percy snapshot
   },
   parameters: {
     percy: {
