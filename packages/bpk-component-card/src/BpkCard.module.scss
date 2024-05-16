@@ -35,4 +35,12 @@
   &--padded {
     @include cards.bpk-card--padded;
   }
+
+  &--no-elevation {
+    box-shadow: none;
+
+    &::after {
+      box-shadow: none;
+    }
+  }
 }

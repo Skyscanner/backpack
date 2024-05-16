@@ -15,40 +15,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-/* @flow strict */
-
 import PropTypes from 'prop-types';
 
-// eslint-disable-next-line import/no-cycle
-import {
-  BpkButtonPrimary,
-  BpkButtonPrimaryOnDark,
-  BpkButtonPrimaryOnLight,
-  BpkButtonSecondary,
-  BpkButtonSecondaryOnDark,
-  BpkButtonDestructive,
-  BpkButtonLink,
-  BpkButtonLinkOnDark,
-  BpkButtonFeatured,
-} from '../index';
-
+import BpkButtonBase, { BUTTON_TYPES } from './BpkButtonBase';
 import {
   type Props as CommonProps,
   propTypes,
   defaultProps,
 } from './common-types';
 
-type Props = {
-  ...CommonProps,
-  primaryOnDark: boolean,
-  primaryOnLight: boolean,
-  secondary: boolean,
-  secondaryOnDark: boolean,
-  destructive: boolean,
-  featured: boolean,
-  link: boolean,
-  linkOnDark: boolean,
+export type Props = CommonProps & {
+  primaryOnDark?: boolean;
+  primaryOnLight?: boolean;
+  secondary?: boolean;
+  secondaryOnDark?: boolean;
+  destructive?: boolean;
+  featured?: boolean;
+  link?: boolean;
+  linkOnDark?: boolean;
 };
 
 const BpkButton = (props: Props) => {
@@ -65,44 +49,32 @@ const BpkButton = (props: Props) => {
   } = props;
 
   if (primaryOnDark) {
-    return <BpkButtonPrimaryOnDark {...rest} />;
+    return <BpkButtonBase type={BUTTON_TYPES.primaryOnDark} {...rest} />;
   }
 
   if (primaryOnLight) {
-    return <BpkButtonPrimaryOnLight {...rest} />;
+    return <BpkButtonBase type={BUTTON_TYPES.primaryOnLight} {...rest} />;
   }
 
   if (secondary) {
-    return <BpkButtonSecondary {...rest} />;
+    return <BpkButtonBase type={BUTTON_TYPES.secondary} {...rest} />;
   }
   if (secondaryOnDark) {
-    return <BpkButtonSecondaryOnDark {...rest} />;
+    return <BpkButtonBase type={BUTTON_TYPES.secondaryOnDark} {...rest} />;
   }
   if (destructive) {
-    return <BpkButtonDestructive {...rest} />;
+    return <BpkButtonBase type={BUTTON_TYPES.destructive} {...rest} />;
   }
   if (featured) {
-    return <BpkButtonFeatured {...rest} />;
+    return <BpkButtonBase type={BUTTON_TYPES.featured} {...rest} />;
   }
   if (link) {
-    return <BpkButtonLink {...rest} />;
+    return <BpkButtonBase type={BUTTON_TYPES.link} {...rest} />;
   }
   if (linkOnDark) {
-    return <BpkButtonLinkOnDark {...rest} />;
+    return <BpkButtonBase type={BUTTON_TYPES.linkOnDark} {...rest} />;
   }
-  return <BpkButtonPrimary {...rest} />;
-};
-
-BpkButton.propTypes = {
-  ...propTypes,
-  primaryOnDark: PropTypes.bool,
-  primaryOnLight: PropTypes.bool,
-  secondary: PropTypes.bool,
-  secondaryOnDark: PropTypes.bool,
-  destructive: PropTypes.bool,
-  featured: PropTypes.bool,
-  link: PropTypes.bool,
-  linkOnDark: PropTypes.bool,
+  return <BpkButtonBase {...rest} />;
 };
 
 BpkButton.defaultProps = {
@@ -115,6 +87,18 @@ BpkButton.defaultProps = {
   featured: false,
   link: false,
   linkOnDark: false,
+};
+
+BpkButton.propTypes = {
+  ...propTypes,
+  primaryOnDark: PropTypes.bool,
+  primaryOnLight: PropTypes.bool,
+  secondary: PropTypes.bool,
+  secondaryOnDark: PropTypes.bool,
+  destructive: PropTypes.bool,
+  featured: PropTypes.bool,
+  link: PropTypes.bool,
+  linkOnDark: PropTypes.bool,
 };
 
 export default BpkButton;

@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkButton, {type Props} from './src/BpkButton';
 
-export { default } from './src/BpkButtonPrimaryOnDark';
+const BpkButtonSecondaryOnDark = (props: Props) => <BpkButton {...props} secondaryOnDark />
+export default BpkButtonSecondaryOnDark;

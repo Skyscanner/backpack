@@ -21,6 +21,7 @@ import type { ReactNode } from 'react';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkCard from './BpkCard';
+import { CardContext } from './CardContext';
 
 import STYLES from './BpkDividedCard.module.scss';
 
@@ -42,7 +43,6 @@ export type Props = {
 };
 
 const BpkDividedCard = ({
-  className = null,
   href = null,
   isElevated = true,
   orientation = ORIENTATION.horizontal,
@@ -51,34 +51,41 @@ const BpkDividedCard = ({
   ...rest
 }: Props) => {
   const isVertical = orientation === ORIENTATION.vertical;
-  const classNames = getClassName(
-    'bpk-divided-card',
-    isVertical ? 'bpk-divided-card--vertical' : 'bpk-divided-card--horizontal',
-    !isElevated && 'bpk-divided-card--no-elevation',
-    className,
+
+  const containerClassName = getClassName(
+    isVertical
+      ? 'bpk-divided-card--vertical-container'
+      : 'bpk-divided-card--horizontal-container',
+  );
+
+  const contentClassName = getClassName(
+    'bpk-divided-card--content',
+    isVertical && 'bpk-divided-card--vertical-content',
+  );
+
+  const secondaryContentClassName = getClassName(
+    isVertical
+      ? 'bpk-divided-card__secondary--vertical'
+      : 'bpk-divided-card__secondary--horizontal',
   );
 
   return (
-    // TODO: className to be removed
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <BpkCard className={classNames} href={href} padded={false} {...rest}>
-      <div
-        className={getClassName(
-          !isVertical && 'bpk-divided-card__primary--horizontal',
-        )}
-      >
-        {primaryContent}
+    <CardContext.Provider value={{ elevated: isElevated }}>
+      <div className={containerClassName}>
+        <BpkCard href={href} padded={false} {...rest}>
+          <div className={contentClassName}>
+            <div
+              className={getClassName(
+                !isVertical && 'bpk-divided-card__primary--horizontal',
+              )}
+            >
+              {primaryContent}
+            </div>
+            <div className={secondaryContentClassName}>{secondaryContent}</div>
+          </div>
+        </BpkCard>
       </div>
-      <div
-        className={getClassName(
-          isVertical
-            ? 'bpk-divided-card__secondary--vertical'
-            : 'bpk-divided-card__secondary--horizontal',
-        )}
-      >
-        {secondaryContent}
-      </div>
-    </BpkCard>
+    </CardContext.Provider>
   );
 };
 

@@ -3,7 +3,7 @@
 exports[`BpkButton should add only bpk specific classes if className prop is set to empty string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--secondary"
+    class="bpk-button--secondary bpk-button--large"
     type="button"
   >
     My button
@@ -63,7 +63,7 @@ exports[`BpkButton should render correctly with "disabled" and "href" attributes
 exports[`BpkButton should render correctly with "large" and "secondary" attributes 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--secondary"
+    class="bpk-button--secondary bpk-button--large"
     type="button"
   >
     My button
@@ -86,7 +86,7 @@ exports[`BpkButton should render correctly with "rel" attribute 1`] = `
 exports[`BpkButton should render correctly with a "destructive" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--destructive"
+    class="bpk-button--destructive"
     type="button"
   >
     My button
@@ -131,7 +131,7 @@ exports[`BpkButton should render correctly with a "large" attribute 1`] = `
 exports[`BpkButton should render correctly with a "link" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--link"
+    class="bpk-button--link"
     type="button"
   >
     My button
@@ -142,7 +142,7 @@ exports[`BpkButton should render correctly with a "link" attribute 1`] = `
 exports[`BpkButton should render correctly with a "secondary" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--secondary"
+    class="bpk-button--secondary"
     type="button"
   >
     My button
@@ -164,7 +164,7 @@ exports[`BpkButton should render correctly with an "iconOnly" attribute 1`] = `
 exports[`BpkButton should respect the class names entered as a string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--secondary custom-class-1 custom-class-2"
+    class="bpk-button--secondary bpk-button--large custom-class-1 custom-class-2"
     type="button"
   >
     My button

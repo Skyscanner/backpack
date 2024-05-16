@@ -16,8 +16,4 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/buttons';
-
-.bpk-button--primary-on-dark {
-  @include buttons.bpk-button--primary-on-dark;
-}
+import './larken.scss';
