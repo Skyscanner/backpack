@@ -84,7 +84,7 @@ export const SmallInput = () => (
 type Story = StoryObj<typeof AutosuggestExample>;
 
 export const VisualTest: Story = {
-  render: () => <AutosuggestExample />,
+  render: () => <AutosuggestExample alwaysRenderSuggestions />,
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     
