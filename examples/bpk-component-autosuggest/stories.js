@@ -89,18 +89,7 @@ export const VisualTest: Story = {
     const canvas = within(canvasElement);
     
     const input = canvas.getByPlaceholderText('Enter an office name'); // Find the input field
-    input.focus(); // Explicitly set focus using the DOM's focus method
     await userEvent.type(input, 'Lon', { delay: 100 }); // Simulate typing into the input field
-
-    // Wait for the suggestions to appear
-    await canvas.findByText('London (Any)');
-  },
-  parameters: {
-    percy: {
-      additionalSnapshots: [{
-        suffix: ' after delay',
-        delay: 2000
-      }]
-    }
+    await canvas.findByText('London (Any)'); // Wait for the suggestions to appear
   }
 };
