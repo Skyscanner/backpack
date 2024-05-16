@@ -89,7 +89,16 @@ export const VisualTest: Story = {
     const canvas = within(canvasElement);
     
     const input = canvas.getByPlaceholderText('Enter an office name'); // Find the input field
+    input.focus(); // Explicitly set focus using the DOM's focus method
     await userEvent.type(input, 'Lon', { delay: 100 }); // Simulate typing into the input field
+
     await canvas.findByText('London (Any)'); // Wait for the suggestions to appear
+
+    input.classList.add('percy-selector-placeholder'); // Add placeholder to trigger Percy snapshot
+  },
+  parameters: {
+    percy: {
+      waitForSelector: '.percy-selector-placeholder', // Wait for the input to have this class before taking the snapshot
+    }
   }
 };
