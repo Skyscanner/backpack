@@ -31,7 +31,7 @@ export default {
   title: 'bpk-component-autosuggest',
   component: BpkAutosuggest,
   subcomponents: {
-    BpkAutosuggestSuggestion
+    BpkAutosuggestSuggestion,
   },
   parameters: {
     docs: {
@@ -72,7 +72,7 @@ export const Hanzi = () => (
 );
 
 export const All = () => (
-  <AutosuggestExample includeSubheading includeTertiaryLabel includeIcon />
+  <AutosuggestExample includeSubheading includeTertiaryLabel includeIcon alwaysRenderSuggestions />
 );
 
 export const SmallInput = () => (

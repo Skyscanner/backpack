@@ -127,6 +127,7 @@ type Props = {
   includeIcon: boolean,
   includeSubheading: boolean,
   includeTertiaryLabel: boolean,
+  alwaysRenderSuggestions: boolean,
 };
 
 class AutosuggestExample extends Component<Props, State> {
@@ -135,6 +136,7 @@ class AutosuggestExample extends Component<Props, State> {
     includeIcon: false,
     includeSubheading: false,
     includeTertiaryLabel: false,
+    alwaysRenderSuggestions: false,
   };
 
   constructor() {
@@ -158,12 +160,6 @@ class AutosuggestExample extends Component<Props, State> {
     });
   };
 
-  onSuggestionsClearRequested = () => {
-    this.setState({
-      suggestions: [],
-    });
-  };
-
   render() {
     const { suggestions, value } = this.state;
 
@@ -179,7 +175,7 @@ class AutosuggestExample extends Component<Props, State> {
 
     return (
       <BpkAutosuggest
-        alwaysRenderSuggestions
+        alwaysRenderSuggestions={this.props.alwaysRenderSuggestions}
         suggestions={suggestions}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
