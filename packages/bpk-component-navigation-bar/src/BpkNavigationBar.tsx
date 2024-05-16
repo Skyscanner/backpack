@@ -100,7 +100,7 @@ const BpkNavigationBar = (props: Props) => {
           </BpkText>
         </span>
       ) : (
-        title
+        <div className={getClassNames('bpk-navigation-bar__title-container')}>{title}</div>
       )}
       {trailingButton && (
         <div

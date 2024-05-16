@@ -30,12 +30,16 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
               aria-labelledby="bpk-modal-heading-my-modal"
               class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
             >
-              <h2
-                class="bpk-modal__heading"
-                id="bpk-modal-heading-my-modal"
+              <div
+                class="bpk-navigation-bar__title-container"
               >
-                Modal title
-              </h2>
+                <h2
+                  class="bpk-modal__heading"
+                  id="bpk-modal-heading-my-modal"
+                >
+                  Modal title
+                </h2>
+              </div>
               <div
                 class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
               >
