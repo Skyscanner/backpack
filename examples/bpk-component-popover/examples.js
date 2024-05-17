@@ -116,10 +116,11 @@ class PopoverContainer extends Component<Props, State> {
     return (
       <div id="popover-container">
         <BpkPopover
-          closeButtonText="Close"
+          closeButtonLabel="Close"
           id={`my-popover-${id}`}
           isOpen={this.state.isOpen}
           label="My popover"
+          labelAsTitle
           onClose={this.closePopover}
           target={target}
           showArrow={displayArrow}
@@ -155,7 +156,7 @@ const WithLabelAsTitleExample = () => (
   </Spacer>
 );
 
-const WithLabelAsTitleAndTextCloseButtonExample = () => (
+const WithNoCloseButtonIconExample = () => (
   <Spacer>
     <PopoverContainer id="my-popover" labelAsTitle closeButtonIcon={false} />
   </Spacer>
@@ -173,11 +174,18 @@ const InputTriggerExample = () => (
   </Spacer>
 );
 
+const WithActionButtonExample = () => (
+  <Spacer>
+    <PopoverContainer id="my-popover" actionText="Action" onAction={() => {}} />
+  </Spacer>
+);
+
 export {
   DefaultExample,
   WithoutArrowExample,
   WithLabelAsTitleExample,
-  WithLabelAsTitleAndTextCloseButtonExample,
+  WithNoCloseButtonIconExample,
   OnTheSideExample,
   InputTriggerExample,
+  WithActionButtonExample,
 };
