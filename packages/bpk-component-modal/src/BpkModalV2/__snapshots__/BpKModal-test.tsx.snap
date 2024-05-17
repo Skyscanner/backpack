@@ -78,28 +78,32 @@ exports[`BpkModalV2 is supported should render correctly with content 1`] = `
             Modal with dialog element
           </h2>
         </div>
-        <button
-          aria-label="bpk-modal-button-close"
-          class="bpk-close-button__default bpk-modal__close-button-style--default"
-          title="bpk-modal-button-close"
-          type="button"
+        <span
+          class="bpk-modal__close-button-style--default"
         >
-          <span
-            class="bpk-close-button-icon"
+          <button
+            aria-label="bpk-modal-button-close"
+            class="bpk-close-button__default"
+            title="bpk-modal-button-close"
+            type="button"
           >
-            <svg
-              aria-hidden="true"
-              height="1rem"
-              viewBox="0 0 24 24"
-              width="1rem"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              class="bpk-close-button-icon"
             >
-              <path
-                d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
-              />
-            </svg>
-          </span>
-        </button>
+              <svg
+                aria-hidden="true"
+                height="1rem"
+                viewBox="0 0 24 24"
+                width="1rem"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+                />
+              </svg>
+            </span>
+          </button>
+        </span>
       </div>
       <div
         class="bpk-modal__container"
