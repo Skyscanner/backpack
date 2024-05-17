@@ -108,7 +108,7 @@ $arrow-size: tokens.bpk-spacing-sm() * 3;
     }
 
     &-icon {
-      display: table-cell;
+      display: flex;
       margin-right: tokens.bpk-spacing-md();
       vertical-align: top;
       fill: tokens.$bpk-text-secondary-day;
