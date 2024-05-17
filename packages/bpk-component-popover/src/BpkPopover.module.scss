@@ -25,13 +25,8 @@
 
 $arrow-size: tokens.bpk-spacing-lg();
 
-.bpk-popover-portal {
+.bpk-popover-container {
   z-index: tokens.$bpk-zindex-popover;
-
-  @include breakpoints.bpk-breakpoint-mobile {
-    margin-right: tokens.bpk-spacing-base();
-    margin-left: tokens.bpk-spacing-base();
-  }
 }
 
 .bpk-popover {
