@@ -41,7 +41,6 @@ $button-padding: tokens.bpk-spacing-sm() * 0.5;
   @include utils.bpk-touch-tappable;
 
   &__default {
-    display: block;
     color: tokens.$bpk-text-primary-day;
     composes: bpk-close-button;
 
