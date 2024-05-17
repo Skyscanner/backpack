@@ -155,6 +155,7 @@ const BpkPopover = ({
       {isOpenState && (
         <FloatingFocusManager context={context} modal={false}>
           <div
+            className={getClassName('bpk-popover--container')}
             ref={refs.setFloating}
             style={floatingStyles}
             {...getFloatingProps()}
