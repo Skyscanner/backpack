@@ -116,6 +116,7 @@ jobs:
   SupernovaPublish:
     runs-on: ubuntu-latest
     environment: Publishing
+    needs: [Build]
     steps:
       - name: Update Supernova docs
         run: npx @supernovaio/cli publish-documentation --apiKey=$SUPERNOVA_API_KEY --designSystemId=$DESIGN_SYSTEM_ID
