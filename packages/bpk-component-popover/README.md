@@ -55,7 +55,7 @@ class App extends Component {
           onClose={this.closePopover}
           isOpen={this.state.isOpen}
           label="My popover"
-          closeButtonText="Close"
+          closeButtonLabel="Close"
           closeButtonProps={{
             tabIndex: 0,
           }}

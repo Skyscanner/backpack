@@ -71,9 +71,19 @@ const bindEventSource = (
   callback(event, { source });
 };
 
-export type Props = {
+type CloseButtonProps = (
+  {
+ /**
+  * @deprecated close button text is deprecated. Instead, please use `closeButtonIcon`, or you may opt not to render a close button at all.
+  */
+    closeButtonText: string;
+  } | {
+    closeButtonText?: never;
+  }
+);
+
+export type Props = CloseButtonProps & {
   children: ReactNode;
-  closeButtonText: string;
   id: string;
   label: string;
   onClose: (
@@ -89,18 +99,24 @@ export type Props = {
   placement?: Placement;
   showArrow?: Boolean;
   target: ReactElement<any>;
+  closeButtonLabel?: string;
+  actionText?: string;
+  onAction?: () => void;
 };
 
 const BpkPopover = ({
+  actionText,
   children,
   className = null,
   closeButtonIcon = true,
+  closeButtonLabel,
   closeButtonProps = {},
   closeButtonText,
   id,
   isOpen = false,
   label,
   labelAsTitle = false,
+  onAction,
   onClose,
   padded = true,
   placement = 'bottom',
@@ -196,7 +212,7 @@ const BpkPopover = ({
                     &nbsp;
                     {closeButtonIcon ? (
                       <BpkCloseButton
-                        label={closeButtonText}
+                        label={closeButtonText || closeButtonLabel}
                         onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
                           bindEventSource(
                             EVENT_SOURCES.CLOSE_BUTTON,
@@ -208,19 +224,21 @@ const BpkPopover = ({
                         {...closeButtonProps}
                       />
                     ) : (
-                      <BpkButtonLink
-                        onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
-                          bindEventSource(
-                            EVENT_SOURCES.CLOSE_LINK,
-                            onClose,
-                            event,
-                          );
-                          setIsOpenState(false);
-                        }}
-                        {...closeButtonProps}
-                      >
-                        {closeButtonText}
-                      </BpkButtonLink>
+                      closeButtonText && (
+                        <BpkButtonLink
+                          onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
+                            bindEventSource(
+                              EVENT_SOURCES.CLOSE_LINK,
+                              onClose,
+                              event,
+                            );
+                            setIsOpenState(false);
+                          }}
+                          {...closeButtonProps}
+                        >
+                          {closeButtonText}
+                        </BpkButtonLink>
+                      )
                     )}
                   </header>
                 ) : (
@@ -232,7 +250,16 @@ const BpkPopover = ({
                   </span>
                 )}
                 <div className={bodyClassNames}>{children}</div>
-                {!labelAsTitle && (
+                {actionText && onAction && (
+                  <div className={getClassName('bpk-popover__action')}>
+                    <BpkButtonLink
+                      onClick={onAction}
+                    >
+                      {actionText}
+                    </BpkButtonLink>
+                </div>
+                )}
+                {!labelAsTitle && closeButtonText && (
                   <footer className={getClassName('bpk-popover__footer')}>
                     <BpkButtonLink
                       onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
