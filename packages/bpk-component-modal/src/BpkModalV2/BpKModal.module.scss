@@ -144,6 +144,7 @@
   }
 
   &__header-title {
+    line-height: tokens.$bpk-line-height-xs;
     padding: tokens.bpk-spacing-base();
 
     @include header;
