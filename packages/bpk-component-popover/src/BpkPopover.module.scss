@@ -64,15 +64,23 @@ $arrow-size: tokens.bpk-spacing-lg();
   &__body {
     &--padded {
       padding: tokens.bpk-spacing-base();
+
+      // If followed by action button (which is a div element), we want to remove the spacing between the body and the action button
+      &:not(:last-of-type) {
+        padding-bottom: 0;
+      }
     }
   }
 
   &__header {
     display: flex;
-    padding: tokens.bpk-spacing-base();
+    padding: tokens.bpk-spacing-base() tokens.bpk-spacing-base() 0;
     justify-content: space-between;
 
-    @include borders.bpk-border-bottom-sm(tokens.$bpk-surface-highlight-day);
+    // If the popover has a title, we want the space in between the title and body to be bpk-spacing-md()
+    ~ .bpk-popover__body--padded {
+      padding-top: tokens.bpk-spacing-md();
+    }
   }
 
   &__label {
@@ -83,10 +91,13 @@ $arrow-size: tokens.bpk-spacing-lg();
     padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
     text-align: right;
 
-    @include borders.bpk-border-top-sm(tokens.$bpk-surface-highlight-day);
-
     @include utils.bpk-rtl {
       text-align: left;
     }
+  }
+
+  &__action {
+    padding: 0 tokens.bpk-spacing-base() tokens.bpk-spacing-base()
+      tokens.bpk-spacing-base();
   }
 }

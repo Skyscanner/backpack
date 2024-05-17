@@ -23,9 +23,10 @@ import {
   DefaultExample,
   WithoutArrowExample,
   WithLabelAsTitleExample,
-  WithLabelAsTitleAndTextCloseButtonExample,
   OnTheSideExample,
   InputTriggerExample,
+  WithActionButtonExample,
+  WithNoCloseButtonIconExample,
 } from './examples';
 
 export default {
@@ -36,7 +37,8 @@ export default {
 export const Default = DefaultExample;
 export const WithoutArrow = WithoutArrowExample;
 export const WithLabelAsTitle = WithLabelAsTitleExample;
-export const WithLabelAsTitleButCloseButtonText =
-  WithLabelAsTitleAndTextCloseButtonExample;
+export const WithNoCloseButtonIcon =
+WithNoCloseButtonIconExample;
 export const OnTheSide = OnTheSideExample;
 export const TriggeredByInput = InputTriggerExample;
+export const WithActionButton = WithActionButtonExample;
