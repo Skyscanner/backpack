@@ -158,6 +158,24 @@ const LarkenStylesExample = () => (
   </div>
 );
 
+const LarkenFallbackStylesExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.editorial2} tagName="p" id="korean">
+      다람쥐 헌 쳇바퀴에 타고파
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.editorial2} tagName="p" id="thai">
+      นายสังฆภัณฑ์ เฮงพิทักษ์ฝั่ง ผู้เฒ่าซึ่งมีอาชีพเป็นฅนขายฃวด
+      ถูกตำรวจปฏิบัติการจับฟ้องศาล ฐานลักนาฬิกาคุณหญิงฉัตรชฎา ฌานสมาธิ
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.editorial2} tagName="p" id="cyrillic">
+      Съешь же ещё этих мягких французских булок да выпей чаю
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.editorial2} tagName="p" id="hebrew">
+      עטלף אבק נס דרך מזגן שהתפוצץ כי חם
+    </BpkText>
+  </div>
+);
+
 const MixedExample = () => (
   <div>
     <HeroStylesExample />
@@ -165,6 +183,7 @@ const MixedExample = () => (
     <BodyStylesExample />
     <LabelStylesExample />
     <LarkenStylesExample />
+    <LarkenFallbackStylesExample />
   </div>
 );
 
@@ -178,5 +197,6 @@ export {
   BodyStylesExample,
   LabelStylesExample,
   LarkenStylesExample,
+  LarkenFallbackStylesExample,
   MixedExample,
 };
