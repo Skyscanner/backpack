@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { ReactElement, ReactNode } from 'react';
 
 import { breakpoints } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
@@ -45,6 +45,18 @@ type Props = {
   matchSSR?: boolean;
 };
 
+const useLegacyWarning = (query: string, legacy: boolean, isClient: boolean) =>
+  useMemo(() => {
+    if (isClient) {
+      // @ts-expect-error invariant check. query: string matching limited BREAKPOINTS string values
+      if (!legacy && !Object.values(BREAKPOINTS).includes(query)) {
+        console.warn(
+          `Invalid query ${query}. Use one of the supported queries or pass the legacy prop.`,
+        );
+      }
+    }
+  }, [isClient, legacy, query]);
+
 const BpkBreakpoint = ({
   children,
   legacy = false,
@@ -56,18 +68,14 @@ const BpkBreakpoint = ({
    * Consumers of BpkBreakpoint have become reliant on this behaviour particularly when using BpkBreakpoint within a SSR'd application.
    * This shouldn't be removed without a breaking change & understanding how to migrate consumers away from this reliance.
    */
-  const [isClient, setIsClient] = useState(false);
+  const [, updateState] = useState({});
   useEffect(() => {
-    setIsClient(true);
+    updateState({}); // force re-render when on client
   }, []);
   const matches = useMediaQuery(query, matchSSR);
+  const isClient = typeof window !== 'undefined';
+  useLegacyWarning(query, legacy, isClient);
   if (isClient) {
-    // @ts-expect-error invariant check. query: string matching limited BREAKPOINTS string values
-    if (!legacy && !Object.values(BREAKPOINTS).includes(query)) {
-      console.warn(
-        `Invalid query ${query}. Use one of the supported queries or pass the legacy prop.`,
-      );
-    }
     if (typeof children === 'function') {
       return children(matches) as ReactElement;
     }
