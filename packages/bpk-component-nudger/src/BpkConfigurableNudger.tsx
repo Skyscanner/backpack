@@ -102,7 +102,6 @@ const BpkConfigurableNudger = ({
         value={formatValue(value)}
         id={id}
         className={inputStyles}
-        tabIndex={-1}
         {...rest}
       />
       <BpkButtonV2
