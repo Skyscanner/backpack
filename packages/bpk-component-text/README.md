@@ -24,25 +24,32 @@ When using the same style in many places repeating the `textStyle` and `tagName`
 import BpkText from '@skyscanner/backpack-web/bpk-component-text';
 import { withDefaultProps } from '@skyscanner/backpack-web/bpk-react-utils';
 
-const LargeParagraph = withDefaultProps(BpkText, { textStyle: 'bodyLongform', tagName: 'p' });
-const TinySpan = withDefaultProps(BpkText, { textStyle: 'caption', tagName: 'span' });
+const LargeParagraph = withDefaultProps(BpkText, {
+  textStyle: 'bodyLongform',
+  tagName: 'p',
+});
+const TinySpan = withDefaultProps(BpkText, {
+  textStyle: 'caption',
+  tagName: 'span',
+});
 
 export default () => (
   <div>
     <LargeParagraph>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Pellentesque imperdiet lobortis tellus, non rhoncus erat tincidunt id.
-      Pellentesque consectetur, dolor nec vulputate vehicula, ex metus mattis ante,
-      non dictum mi ante eu arcu.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+      imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
+      consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non
+      dictum mi ante eu arcu.
     </LargeParagraph>
     <LargeParagraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Pellentesque imperdiet lobortis tellus, non rhoncus erat tincidunt id.
-        Pellentesque consectetur, dolor nec vulputate vehicula, ex metus mattis ante,
-        non dictum mi ante eu arcu.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+      imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
+      consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non
+      dictum mi ante eu arcu.
     </LargeParagraph>
     <TinySpan>
-      Side effects of Backpack include euphoria, happiness, and increased develpoment velocity.
+      Side effects of Backpack include euphoria, happiness, and increased
+      develpoment velocity.
     </TinySpan>
   </div>
 );
@@ -58,6 +65,22 @@ export default () => (
   <BpkText tagName="h2" textStyle={TEXT_STYLES.subheading}>My subhheading</BpkText>
 );
 ```
+
+### Editorial Text
+
+For use cases where the new Editorial Larken font is required, there are 3 textStyles available to apply this styling.
+
+```javascript
+import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
+
+export default () => (
+  <BpkText tagName="h1" textStyle={TEXT_STYLES.editorial1}>Editorial 1</BpkText>
+  <BpkText tagName="h2" textStyle={TEXT_STYLES.editorial2}>Editorial 2</BpkText>
+  <BpkText tagName="p" textStyle={TEXT_STYLES.editorial3}>Editorial 3</BpkText>
+);
+```
+
+For certain langauges/characters that are not supported by Larken, the fonts will use the Noto Sans/Serif fonts defined [here](https://www.skyscanner.design/latest/foundations/product-typography/fallback-fonts-Fx8gulTr)
 
 ## Props
 
