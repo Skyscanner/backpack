@@ -35,7 +35,7 @@ describe('BpkPopover', () => {
         id="my-popover"
         onClose={() => null}
         label="My popover"
-        closeButtonText="Close"
+        closeButtonLabel="Close"
         target={target}
         isOpen
       >
@@ -53,7 +53,7 @@ describe('BpkPopover', () => {
         id="my-popover"
         onClose={() => null}
         label="My popover"
-        closeButtonText="Close"
+        closeButtonLabel="Close"
         target={target}
         isOpen
         showArrow={false}
@@ -70,7 +70,7 @@ describe('BpkPopover', () => {
         id="my-popover"
         onClose={() => null}
         label="My popover"
-        closeButtonText="Close"
+        closeButtonLabel="Close"
         target={<button type="button">My target</button>}
         closeButtonProps={{ tabIndex: 0 }}
         isOpen
@@ -88,7 +88,7 @@ describe('BpkPopover', () => {
         id="my-popover"
         onClose={() => null}
         label="My popover"
-        closeButtonText="Close"
+        closeButtonLabel="Close"
         padded={false}
         target={<button type="button">My target</button>}
         isOpen
@@ -107,7 +107,7 @@ describe('BpkPopover', () => {
         id="my-popover"
         onClose={() => null}
         label="My popover"
-        closeButtonText="Close"
+        closeButtonLabel="Close"
         labelAsTitle
         target={<button type="button">My target</button>}
         isOpen
@@ -120,13 +120,34 @@ describe('BpkPopover', () => {
     expect(heading).toBeTruthy();
   });
 
+  it('should render correctly with "actionText" and "onAction" attributes', () => {
+    const { container } = render(
+      <BpkPopover
+        id="my-popover"
+        onClose={() => null}
+        label="My popover"
+        closeButtonLabel="Close"
+        actionText="Action"
+        onAction={() => null}
+        target={<button type="button">My target</button>}
+        isOpen
+      >
+        My popover content
+      </BpkPopover>,
+    );
+
+    const actionButton = container.querySelector('.bpk-popover__action');
+    expect(actionButton).toBeTruthy();
+    expect(screen.getByText('Action')).toBeVisible();
+  });
+
   it('should propagate the click event to the onClose handler when clicking on the closing button', async () => {
     render(
       <BpkPopover
         id="my-popover"
         onClose={onCloseSpy}
         label="My popover"
-        closeButtonText="Close"
+        closeButtonLabel="Close"
         labelAsTitle
         closeButtonIcon
         target={<button type="button">My target</button>}
@@ -143,59 +164,4 @@ describe('BpkPopover', () => {
     
     expect(onCloseSpy).toHaveBeenCalled();
   });
-
-  it(
-    'should propagate the click event to the onClose handler when clicking on the closing link' +
-      'when using label as a title',
-    async () => {
-      render(
-        <BpkPopover
-          id="my-popover"
-          onClose={onCloseSpy}
-          label="My popover"
-          closeButtonText="Close"
-          labelAsTitle
-          closeButtonIcon={false}
-          target={<button type="button">My target</button>}
-          isOpen
-        >
-          My popover content
-        </BpkPopover>,
-      );
-
-      expect(onCloseSpy).not.toHaveBeenCalled();
-
-      const linkButton = screen.getByRole('button', { name: 'Close' });
-      await fireEvent.click(linkButton);
-
-      expect(onCloseSpy).toHaveBeenCalled();
-    },
-  );
-
-  it(
-    'should propagate the click event to the onClose handler when clicking on the closing link' +
-      'when not using label as a title',
-    async () => {
-      render(
-        <BpkPopover
-          id="my-popover"
-          onClose={onCloseSpy}
-          label="My popover"
-          closeButtonText="Close"
-          labelAsTitle={false}
-          target={<button type="button">My target</button>}
-          isOpen
-        >
-          My popover content
-        </BpkPopover>,
-      );
-
-      expect(onCloseSpy).not.toHaveBeenCalled();
-
-      const linkButton = screen.getByRole('button', { name: 'Close' });
-      await fireEvent.click(linkButton);
-
-      expect(onCloseSpy).toHaveBeenCalled();
-    },
-  );
 });
