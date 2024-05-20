@@ -76,6 +76,7 @@ const Header = ({
           <BpkCloseButton
             label={closeLabel}
             onClick={onClose}
+            onDark={modalStyle === MODAL_STYLING.surfaceContrast}
           />
         </span>
       </div>

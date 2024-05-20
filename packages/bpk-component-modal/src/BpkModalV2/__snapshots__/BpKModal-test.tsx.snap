@@ -21,7 +21,7 @@ exports[`BpkModalV2 is not supported should render correctly with polyfill and c
       >
         <button
           aria-label="bpk-modal-button-close"
-          class="bpk-close-button__default bpk-modal__close-button-style--default"
+          class="bpk-close-button__default"
           title="bpk-modal-button-close"
           type="button"
         >
