@@ -4,15 +4,15 @@ exports[`BpkSaveButton should render correctly 1`] = `
 <DocumentFragment>
   <button
     aria-label="Click to save"
-    class="bpk-button bpk-button--icon-only bpk-button--primary bpk-save-button bpk-save-button__default"
+    class="bpk-save-button bpk-save-button__default"
     type="button"
   >
-    <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+    <div
+      class="bpk-save-button__heartIcon bpk-save-button__heartIcon--default"
+      data-show="false"
     >
       <svg
         aria-hidden="true"
-        class="bpk-save-button__icon bpk-save-button__heartIcon bpk-save-button__heartIcon--hide bpk-save-button__heartIcon--default"
         height="1.5rem"
         viewBox="0 0 24 24"
         width="1.5rem"
@@ -22,13 +22,14 @@ exports[`BpkSaveButton should render correctly 1`] = `
           d="M10.23 4.072a4.77 4.77 0 0 0-6.62.577 5.51 5.51 0 0 0-1.39 5.408c.855 3.72 5.28 7.895 8.62 10.537a1.86 1.86 0 0 0 2.32 0c3.34-2.642 7.765-6.816 8.62-10.537a5.52 5.52 0 0 0-1.389-5.408 4.77 4.77 0 0 0-6.62-.577l-1.126.95a1 1 0 0 1-1.29 0z"
         />
       </svg>
-    </span>
-    <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+    </div>
+    <div
+      class="bpk-save-button__heartOutlineIcon"
+      data-show="true"
     >
       <svg
         aria-hidden="true"
-        class="bpk-save-button__icon bpk-save-button__heartOutlineIcon bpk-save-button__heartOutlineIcon--show bpk-save-button__heartOutlineIcon--default"
+        fill="rgb(1, 9, 19)"
         height="1.5rem"
         viewBox="0 0 24 24"
         width="1.5rem"
@@ -38,7 +39,7 @@ exports[`BpkSaveButton should render correctly 1`] = `
           d="M20.391 4.649a4.77 4.77 0 0 0-6.62-.577l-1.136.959a.98.98 0 0 1-1.27 0l-1.135-.96a4.77 4.77 0 0 0-6.62.578 5.51 5.51 0 0 0-1.39 5.408c.855 3.72 5.28 7.895 8.62 10.537a1.86 1.86 0 0 0 2.32 0c3.34-2.642 7.765-6.816 8.62-10.537a5.52 5.52 0 0 0-1.389-5.408m-.519 4.79-.022.073-.017.073a13.3 13.3 0 0 1-3.475 5.38 40 40 0 0 1-3.75 3.464.95.95 0 0 1-1.216 0 40 40 0 0 1-3.75-3.464 13.3 13.3 0 0 1-3.475-5.38l-.017-.073-.022-.072a3.42 3.42 0 0 1 .88-3.323v-.001a3.26 3.26 0 0 1 1.943-1.05 3.05 3.05 0 0 1 2.074.647l1.704 1.44a1.96 1.96 0 0 0 2.542 0l1.705-1.44a3.04 3.04 0 0 1 2.073-.646 3.24 3.24 0 0 1 1.943 1.05 3.42 3.42 0 0 1 .88 3.323z"
         />
       </svg>
-    </span>
+    </div>
   </button>
 </DocumentFragment>
 `;
@@ -47,15 +48,15 @@ exports[`BpkSaveButton should render correctly with "checked" is true 1`] = `
 <DocumentFragment>
   <button
     aria-label="Click to remove save"
-    class="bpk-button bpk-button--icon-only bpk-button--primary bpk-save-button bpk-save-button__default"
+    class="bpk-save-button bpk-save-button__default"
     type="button"
   >
-    <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+    <div
+      class="bpk-save-button__heartIcon bpk-save-button__heartIcon--default"
+      data-show="true"
     >
       <svg
         aria-hidden="true"
-        class="bpk-save-button__icon bpk-save-button__heartIcon bpk-save-button__heartIcon--show bpk-save-button__heartIcon--default"
         height="1.5rem"
         viewBox="0 0 24 24"
         width="1.5rem"
@@ -65,13 +66,14 @@ exports[`BpkSaveButton should render correctly with "checked" is true 1`] = `
           d="M10.23 4.072a4.77 4.77 0 0 0-6.62.577 5.51 5.51 0 0 0-1.39 5.408c.855 3.72 5.28 7.895 8.62 10.537a1.86 1.86 0 0 0 2.32 0c3.34-2.642 7.765-6.816 8.62-10.537a5.52 5.52 0 0 0-1.389-5.408 4.77 4.77 0 0 0-6.62-.577l-1.126.95a1 1 0 0 1-1.29 0z"
         />
       </svg>
-    </span>
-    <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+    </div>
+    <div
+      class="bpk-save-button__heartOutlineIcon"
+      data-show="false"
     >
       <svg
         aria-hidden="true"
-        class="bpk-save-button__icon bpk-save-button__heartOutlineIcon bpk-save-button__heartOutlineIcon--hide bpk-save-button__heartOutlineIcon--default"
+        fill="rgb(1, 9, 19)"
         height="1.5rem"
         viewBox="0 0 24 24"
         width="1.5rem"
@@ -81,7 +83,7 @@ exports[`BpkSaveButton should render correctly with "checked" is true 1`] = `
           d="M20.391 4.649a4.77 4.77 0 0 0-6.62-.577l-1.136.959a.98.98 0 0 1-1.27 0l-1.135-.96a4.77 4.77 0 0 0-6.62.578 5.51 5.51 0 0 0-1.39 5.408c.855 3.72 5.28 7.895 8.62 10.537a1.86 1.86 0 0 0 2.32 0c3.34-2.642 7.765-6.816 8.62-10.537a5.52 5.52 0 0 0-1.389-5.408m-.519 4.79-.022.073-.017.073a13.3 13.3 0 0 1-3.475 5.38 40 40 0 0 1-3.75 3.464.95.95 0 0 1-1.216 0 40 40 0 0 1-3.75-3.464 13.3 13.3 0 0 1-3.475-5.38l-.017-.073-.022-.072a3.42 3.42 0 0 1 .88-3.323v-.001a3.26 3.26 0 0 1 1.943-1.05 3.05 3.05 0 0 1 2.074.647l1.704 1.44a1.96 1.96 0 0 0 2.542 0l1.705-1.44a3.04 3.04 0 0 1 2.073-.646 3.24 3.24 0 0 1 1.943 1.05 3.42 3.42 0 0 1 .88 3.323z"
         />
       </svg>
-    </span>
+    </div>
   </button>
 </DocumentFragment>
 `;
@@ -90,15 +92,15 @@ exports[`BpkSaveButton should render correctly with a "size" prop 1`] = `
 <DocumentFragment>
   <button
     aria-label="Click to save"
-    class="bpk-button bpk-button--icon-only bpk-button--primary bpk-save-button bpk-save-button__small bpk-save-button__default"
+    class="bpk-save-button bpk-save-button__small bpk-save-button__default"
     type="button"
   >
-    <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+    <div
+      class="bpk-save-button__heartIcon bpk-save-button__heartIcon--default"
+      data-show="false"
     >
       <svg
         aria-hidden="true"
-        class="bpk-save-button__icon bpk-save-button__heartIcon bpk-save-button__heartIcon--hide bpk-save-button__heartIcon--default"
         height="1rem"
         viewBox="0 0 24 24"
         width="1rem"
@@ -108,13 +110,14 @@ exports[`BpkSaveButton should render correctly with a "size" prop 1`] = `
           d="M10.141 3.41a4.904 4.904 0 0 0-6.952.626 6.11 6.11 0 0 0-1.458 5.859c.898 4.03 5.543 8.553 9.051 11.415a1.905 1.905 0 0 0 2.436 0c3.508-2.862 8.153-7.384 9.05-11.415a6.1 6.1 0 0 0-1.457-5.86 4.904 4.904 0 0 0-6.952-.624l-1.18 1.03a1.025 1.025 0 0 1-1.357 0l-1.18-1.03z"
         />
       </svg>
-    </span>
-    <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+    </div>
+    <div
+      class="bpk-save-button__heartOutlineIcon"
+      data-show="true"
     >
       <svg
         aria-hidden="true"
-        class="bpk-save-button__icon bpk-save-button__heartOutlineIcon bpk-save-button__heartOutlineIcon--show bpk-save-button__heartOutlineIcon--default"
+        fill="rgb(1, 9, 19)"
         height="1rem"
         viewBox="0 0 24 24"
         width="1rem"
@@ -124,7 +127,7 @@ exports[`BpkSaveButton should render correctly with a "size" prop 1`] = `
           d="M20.811 4.036a4.904 4.904 0 0 0-6.952-.625l-1.18 1.03a1.025 1.025 0 0 1-1.357 0l-1.18-1.03a4.904 4.904 0 0 0-6.953.625 6.11 6.11 0 0 0-1.458 5.859c.898 4.03 5.543 8.553 9.051 11.415a1.905 1.905 0 0 0 2.436 0c3.508-2.862 8.153-7.384 9.05-11.415a6.1 6.1 0 0 0-1.457-5.86zM19.393 9.04l-.03.1-.022.1a12.56 12.56 0 0 1-2.894 4.845A40 40 0 0 1 12 18.422a40 40 0 0 1-4.447-4.336A12.55 12.55 0 0 1 4.66 9.242l-.022-.101-.03-.1a3.11 3.11 0 0 1 .742-2.922 2.47 2.47 0 0 1 1.458-.861 2.14 2.14 0 0 1 1.464.503l1.08.94a4.025 4.025 0 0 0 5.298 0l1.08-.94a2.14 2.14 0 0 1 1.464-.503 2.47 2.47 0 0 1 1.458.86 3.11 3.11 0 0 1 .742 2.923z"
         />
       </svg>
-    </span>
+    </div>
   </button>
 </DocumentFragment>
 `;
@@ -133,15 +136,15 @@ exports[`BpkSaveButton should render correctly with a "style" prop 1`] = `
 <DocumentFragment>
   <button
     aria-label="Click to save"
-    class="bpk-button bpk-button--icon-only bpk-button--primary bpk-save-button bpk-save-button__contained"
+    class="bpk-save-button bpk-save-button__contained"
     type="button"
   >
-    <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+    <div
+      class="bpk-save-button__heartIcon bpk-save-button__heartIcon--contained"
+      data-show="false"
     >
       <svg
         aria-hidden="true"
-        class="bpk-save-button__icon bpk-save-button__heartIcon bpk-save-button__heartIcon--hide bpk-save-button__heartIcon--contained"
         height="1.5rem"
         viewBox="0 0 24 24"
         width="1.5rem"
@@ -151,13 +154,14 @@ exports[`BpkSaveButton should render correctly with a "style" prop 1`] = `
           d="M10.23 4.072a4.77 4.77 0 0 0-6.62.577 5.51 5.51 0 0 0-1.39 5.408c.855 3.72 5.28 7.895 8.62 10.537a1.86 1.86 0 0 0 2.32 0c3.34-2.642 7.765-6.816 8.62-10.537a5.52 5.52 0 0 0-1.389-5.408 4.77 4.77 0 0 0-6.62-.577l-1.126.95a1 1 0 0 1-1.29 0z"
         />
       </svg>
-    </span>
-    <span
-      style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+    </div>
+    <div
+      class="bpk-save-button__heartOutlineIcon"
+      data-show="true"
     >
       <svg
         aria-hidden="true"
-        class="bpk-save-button__icon bpk-save-button__heartOutlineIcon bpk-save-button__heartOutlineIcon--show bpk-save-button__heartOutlineIcon--contained"
+        fill="rgb(1, 9, 19)"
         height="1.5rem"
         viewBox="0 0 24 24"
         width="1.5rem"
@@ -167,7 +171,7 @@ exports[`BpkSaveButton should render correctly with a "style" prop 1`] = `
           d="M20.391 4.649a4.77 4.77 0 0 0-6.62-.577l-1.136.959a.98.98 0 0 1-1.27 0l-1.135-.96a4.77 4.77 0 0 0-6.62.578 5.51 5.51 0 0 0-1.39 5.408c.855 3.72 5.28 7.895 8.62 10.537a1.86 1.86 0 0 0 2.32 0c3.34-2.642 7.765-6.816 8.62-10.537a5.52 5.52 0 0 0-1.389-5.408m-.519 4.79-.022.073-.017.073a13.3 13.3 0 0 1-3.475 5.38 40 40 0 0 1-3.75 3.464.95.95 0 0 1-1.216 0 40 40 0 0 1-3.75-3.464 13.3 13.3 0 0 1-3.475-5.38l-.017-.073-.022-.072a3.42 3.42 0 0 1 .88-3.323v-.001a3.26 3.26 0 0 1 1.943-1.05 3.05 3.05 0 0 1 2.074.647l1.704 1.44a1.96 1.96 0 0 0 2.542 0l1.705-1.44a3.04 3.04 0 0 1 2.073-.646 3.24 3.24 0 0 1 1.943 1.05 3.42 3.42 0 0 1 .88 3.323z"
         />
       </svg>
-    </span>
+    </div>
   </button>
 </DocumentFragment>
 `;
