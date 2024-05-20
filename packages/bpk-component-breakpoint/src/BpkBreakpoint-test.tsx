@@ -100,7 +100,9 @@ describe('BpkBreakpoint', () => {
       const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
 
       ReactDOMServer.renderToString(
-        <BpkBreakpoint query={BREAKPOINTS.MOBILE} matchSSR >rendered</BpkBreakpoint>,
+        <BpkBreakpoint query={BREAKPOINTS.MOBILE} matchSSR>
+          rendered
+        </BpkBreakpoint>,
       );
 
       expect(mockUseMediaQuery).toHaveBeenCalledWith(BREAKPOINTS.MOBILE, true);
