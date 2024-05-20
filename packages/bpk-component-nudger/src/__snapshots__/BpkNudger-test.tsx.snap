@@ -32,7 +32,6 @@ exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
       class="bpk-nudger__input"
       id="nudger"
       readonly=""
-      tabindex="-1"
       type="text"
       value="premium"
     />
@@ -97,7 +96,6 @@ exports[`BpkNudger should render as an on dark nudger correctly 1`] = `
         class="bpk-nudger__input bpk-nudger__input--numeric bpk-nudger__input--secondary-on-dark"
         id="nudger"
         readonly=""
-        tabindex="-1"
         type="text"
         value="2"
       />
@@ -163,7 +161,6 @@ exports[`BpkNudger should render correctly 1`] = `
         class="bpk-nudger__input bpk-nudger__input--numeric"
         id="nudger"
         readonly=""
-        tabindex="-1"
         type="text"
         value="2"
       />
@@ -230,7 +227,6 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
         class="bpk-nudger__input bpk-nudger__input--numeric"
         id="nudger"
         readonly=""
-        tabindex="-1"
         type="text"
         value="0"
       />
@@ -296,7 +292,6 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
         class="bpk-nudger__input bpk-nudger__input--numeric"
         id="nudger"
         readonly=""
-        tabindex="-1"
         type="text"
         value="9"
       />
@@ -364,7 +359,6 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
         class="bpk-nudger__input bpk-nudger__input--numeric"
         id="nudger"
         readonly=""
-        tabindex="-1"
         type="text"
         value="1"
       />
@@ -430,7 +424,6 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
         class="bpk-nudger__input bpk-nudger__input--numeric"
         id="nudger"
         readonly=""
-        tabindex="-1"
         type="text"
         value="10"
       />
