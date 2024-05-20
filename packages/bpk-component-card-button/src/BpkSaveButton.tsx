@@ -19,8 +19,11 @@
 import type { MouseEvent } from 'react';
 import { useState } from 'react';
 
-import { BpkButtonV2 } from '../../bpk-component-button';
-import { withLargeButtonAlignment } from '../../bpk-component-icon';
+import {
+  colorBlack,
+  colorWhite,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
 import BpkHeartIcon from '../../bpk-component-icon/lg/heart';
 import BpkHeartOutlineIcon from '../../bpk-component-icon/lg/heart--outline';
 import BpkHeartIconSm from '../../bpk-component-icon/sm/heart';
@@ -54,12 +57,10 @@ type Props = {
   style?: StyleType;
 };
 
-const AlignedHeartIcon = withLargeButtonAlignment(BpkHeartIcon);
-const AlignedHeartOutlineIcon = withLargeButtonAlignment(BpkHeartOutlineIcon);
-const AlignedHeartIconSm = withLargeButtonAlignment(BpkHeartIconSm);
-const AlignedHeartOutlineIconSm = withLargeButtonAlignment(
-  BpkHeartOutlineIconSm,
-);
+const AlignedHeartIcon = BpkHeartIcon;
+const AlignedHeartOutlineIcon = BpkHeartOutlineIcon;
+const AlignedHeartIconSm = BpkHeartIconSm;
+const AlignedHeartOutlineIconSm = BpkHeartOutlineIconSm;
 
 const BpkSaveButton = ({
   accessibilityLabel,
@@ -68,17 +69,16 @@ const BpkSaveButton = ({
   size = SIZE_TYPES.default,
   style = STYLE_TYPES.default,
 }: Props) => {
-  const [toggle, setToggle] = useState(false);
+  const [shouldPlayAnim, setPlayAnim] = useState(false);
   const smallSize = size === SIZE_TYPES.small;
   const HeartIcon = smallSize ? AlignedHeartIconSm : AlignedHeartIcon;
   const HeartOutLineIcon = smallSize
     ? AlignedHeartOutlineIconSm
     : AlignedHeartOutlineIcon;
   return (
-    <BpkButtonV2
+    <button
+      type="button"
       aria-label={accessibilityLabel}
-      // TODO: className to be removed
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={getClassName(
         'bpk-save-button',
         smallSize && 'bpk-save-button__small',
@@ -87,33 +87,29 @@ const BpkSaveButton = ({
       onClick={(e: MouseEvent) => {
         onCheckedChange(e);
         if (!checked) {
-          setToggle(true);
+          setPlayAnim(true);
         }
       }}
-      iconOnly
     >
-      <HeartIcon
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+      <div
         className={getClassName(
-          'bpk-save-button__icon',
-          'bpk-save-button__heartIcon',
-          toggle && checked && 'bpk-save-button__heartIcon--toggle',
-          `bpk-save-button__heartIcon--${checked ? 'show' : 'hide'}`,
+          `bpk-save-button__heartIcon`,
+          checked && shouldPlayAnim && `bpk-save-button__heartIcon--clicked`,
           `bpk-save-button__heartIcon--${style}`,
         )}
-      />
-      <HeartOutLineIcon
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={getClassName(
-          'bpk-save-button__icon',
-          'bpk-save-button__heartOutlineIcon',
-          `bpk-save-button__heartOutlineIcon--${checked ? 'hide' : 'show'}`,
-          `bpk-save-button__heartOutlineIcon--${style}`,
-        )}
-      />
-    </BpkButtonV2>
+        data-show={checked}
+      >
+        <HeartIcon />
+      </div>
+      <div
+        className={getClassName(`bpk-save-button__heartOutlineIcon`)}
+        data-show={!checked}
+      >
+        <HeartOutLineIcon
+          fill={style === STYLE_TYPES.onDark ? colorWhite : colorBlack}
+        />
+      </div>
+    </button>
   );
 };
 
