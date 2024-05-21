@@ -58,3 +58,56 @@ export const NoFullScreenOnMobileNoTitle = NoFullScreenOnMobileNoTitleExample;
 export const NoHeader = NoHeaderExample;
 export const MultipleModals = MultipleModalsExample;
 export const Contrast = ContrastExample;
+
+// Due to how iframes work we can pass a local url to load the stories above.
+// Attempted to use a Custom Iframe component with a react portal and ref to
+// render components but it didn't have the desired effect.
+const VisualWrapper = ({id, zoomEnabled = false}: {id: string, zoomEnabled?: boolean}) => (
+  <div style={{ height: '640px', width: '100%' }}>
+    <iframe
+      title={`Embedded Storybook ${id}`}
+      src={`/iframe.html?id=${id}&viewMode=story&args=zoomEnabled:${zoomEnabled}`}
+      aria-label="Embedded Storybook"
+      referrerPolicy="origin"
+      style={{ height: '100%', width: '100%', border: 0 }}
+    />
+  </div>
+);
+
+// Note that these stories won't work when published to https://backpack.github.io/storybook/
+// due to the publicPath containing `/storybook` and the iframe src not including it.
+export const VisualTestDefault = {
+  render: () => (
+    <>
+      <VisualWrapper id="bpk-component-modal-v2--default" />
+      <VisualWrapper id="bpk-component-modal-v2--contrast" />
+      <VisualWrapper id="bpk-component-modal-v2--long-title" />
+      <VisualWrapper id="bpk-component-modal-v2--no-title" />
+    </>
+  ),
+  parameters: {
+    layout: 'fullscreen',
+    percy: {
+      waitForTimeout: 10000,
+    },
+  },
+};
+export const VisualTestDefaultWithZoom = {
+  render: () => (
+    <>
+      <VisualWrapper id="bpk-component-modal-v2--default" zoomEnabled />
+      <VisualWrapper id="bpk-component-modal-v2--contrast" zoomEnabled />
+      <VisualWrapper id="bpk-component-modal-v2--long-title" zoomEnabled />
+      <VisualWrapper id="bpk-component-modal-v2--no-title" zoomEnabled />
+    </>
+  ),
+  parameters: {
+    layout: 'fullscreen',
+    percy: {
+      waitForTimeout: 10000,
+    },
+  },
+  args: {
+    zoomEnabled: true,
+  },
+};
