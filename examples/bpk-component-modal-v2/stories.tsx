@@ -62,7 +62,7 @@ export const Contrast = ContrastExample;
 // Due to how iframes work we can pass a local url to load the stories above.
 // Attempted to use a Custom Iframe component with a react portal and ref to
 // render components but it didn't have the desired effect.
-const visualWrapper = (id: string, zoomEnabled: boolean = false) => (
+const VisualWrapper = ({id, zoomEnabled = false}: {id: string, zoomEnabled?: boolean}) => (
   <div style={{ height: '640px', width: '100%' }}>
     <iframe
       title={`Embedded Storybook ${id}`}
@@ -79,10 +79,10 @@ const visualWrapper = (id: string, zoomEnabled: boolean = false) => (
 export const VisualTestDefault = {
   render: () => (
     <>
-      {visualWrapper('bpk-component-modal-v2--default')}
-      {visualWrapper('bpk-component-modal-v2--contrast')}
-      {visualWrapper('bpk-component-modal-v2--long-title')}
-      {visualWrapper('bpk-component-modal-v2--no-title')}
+      <VisualWrapper id="bpk-component-modal-v2--default" />
+      <VisualWrapper id="bpk-component-modal-v2--contrast" />
+      <VisualWrapper id="bpk-component-modal-v2--long-title" />
+      <VisualWrapper id="bpk-component-modal-v2--no-title" />
     </>
   ),
   parameters: {
@@ -95,10 +95,10 @@ export const VisualTestDefault = {
 export const VisualTestDefaultWithZoom = {
   render: () => (
     <>
-      {visualWrapper('bpk-component-modal-v2--default', true)}
-      {visualWrapper('bpk-component-modal-v2--contrast', true)}
-      {visualWrapper('bpk-component-modal-v2--long-title', true)}
-      {visualWrapper('bpk-component-modal-v2--no-title', true)}
+      <VisualWrapper id="bpk-component-modal-v2--default" zoomEnabled />
+      <VisualWrapper id="bpk-component-modal-v2--contrast" zoomEnabled />
+      <VisualWrapper id="bpk-component-modal-v2--long-title" zoomEnabled />
+      <VisualWrapper id="bpk-component-modal-v2--no-title" zoomEnabled />
     </>
   ),
   parameters: {
