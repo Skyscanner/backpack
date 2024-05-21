@@ -38,7 +38,7 @@ import {
 } from './examples';
 
 export default {
-  title: 'bpk-component-modal-v2-v2',
+  title: 'bpk-component-modal-v2',
   component: BpkModalV2,
 };
 
