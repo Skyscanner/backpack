@@ -16,6 +16,17 @@
  * limitations under the License.
  */
 
-import buildComponent from './ComponentFactory';
+import { cssModules } from '../../bpk-react-utils';
 
-export default buildComponent('dt', 'bpk-description-list__term');
+import STYLES from './BpkDescriptionList.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+export default ({ children, className, rest }) => {
+  <dl
+    className={[getClassName('bpk-description-list__term'), className].join(' ')}
+    {...rest}
+  >
+    {children}
+  </dl>;
+};
