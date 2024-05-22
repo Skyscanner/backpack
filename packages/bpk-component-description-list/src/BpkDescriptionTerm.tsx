@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { type ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -22,11 +23,19 @@ import STYLES from './BpkDescriptionList.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export default ({ children, className, rest }) => {
+type Props = {
+  children: ReactNode | string;
+  className?: string;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
+};
+
+export default ({ children, className, ...rest }: Props) => (
   <dl
-    className={[getClassName('bpk-description-list__term'), className].join(' ')}
+    className={[getClassName('bpk-description-list__term'), className].join(
+      ' ',
+    )}
     {...rest}
   >
     {children}
-  </dl>;
-};
+  </dl>
+);
