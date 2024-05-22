@@ -30,12 +30,12 @@ type Props = {
 };
 
 export default ({ children, className, ...rest }: Props) => (
-  <dl
-    className={[getClassName('bpk-description-list__term'), className].join(
-      ' ',
-    )}
+  <dt
+    className={[getClassName('bpk-description-list__term'), className]
+      .filter((x) => x) // inline drops the className if undefined
+      .join(' ')}
     {...rest}
   >
     {children}
-  </dl>
+  </dt>
 );

@@ -31,9 +31,9 @@ type Props = {
 
 export default ({ children, className, ...rest }: Props) => (
   <dd
-    className={[getClassName('bpk-description-list__details'), className].join(
-      ' ',
-    )}
+    className={[getClassName('bpk-description-list__details'), className]
+      .filter((x) => x) // inline drops the className if undefined
+      .join(' ')}
     {...rest}
   >
     {children}

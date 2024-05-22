@@ -3,7 +3,7 @@
 exports[`BpkDescriptionDetails should render correctly 1`] = `
 <DocumentFragment>
   <dd
-    class="bpk-description-list__details "
+    class="bpk-description-list__details"
   >
     Description
   </dd>
@@ -23,7 +23,7 @@ exports[`BpkDescriptionDetails should render correctly with a "className" attrib
 exports[`BpkDescriptionDetails should render correctly with other attributes 1`] = `
 <DocumentFragment>
   <dd
-    class="bpk-description-list__details "
+    class="bpk-description-list__details"
     title="this is the description"
   >
     Description

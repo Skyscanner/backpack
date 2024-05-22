@@ -2,31 +2,31 @@
 
 exports[`BpkDescriptionTerm should render correctly 1`] = `
 <DocumentFragment>
-  <dl
-    class="bpk-description-list__term "
+  <dt
+    class="bpk-description-list__term"
   >
     Term
-  </dl>
+  </dt>
 </DocumentFragment>
 `;
 
 exports[`BpkDescriptionTerm should render correctly with a "className" attribute 1`] = `
 <DocumentFragment>
-  <dl
+  <dt
     class="bpk-description-list__term test-term"
   >
     Term
-  </dl>
+  </dt>
 </DocumentFragment>
 `;
 
 exports[`BpkDescriptionTerm should render correctly with a other attributes 1`] = `
 <DocumentFragment>
-  <dl
-    class="bpk-description-list__term "
+  <dt
+    class="bpk-description-list__term"
     title="this is a term"
   >
     Term
-  </dl>
+  </dt>
 </DocumentFragment>
 `;

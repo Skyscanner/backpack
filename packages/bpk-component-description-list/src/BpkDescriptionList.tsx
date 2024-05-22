@@ -31,7 +31,9 @@ type Props = {
 
 export default ({ children, className, ...rest }: Props) => (
   <dl
-    className={[getClassName('bpk-description-list'), className].join(' ')}
+    className={[getClassName('bpk-description-list'), className]
+      .filter((x) => x) // inline drops the className if undefined
+      .join(' ')}
     {...rest}
   >
     {children}
