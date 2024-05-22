@@ -16,73 +16,48 @@
  * limitations under the License.
  */
 
-import type { ReactElement} from 'react';
-import { cloneElement, useState } from 'react';
-
-import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import BpkFloatingNotification from '../../packages/bpk-component-floating-notification';
 import BpkIconHeart from '../../packages/bpk-component-icon/sm/heart';
 import BpkIconInformationCircle from '../../packages/bpk-component-icon/sm/information-circle';
 
-type Props = {
-  children: ReactElement<{onExit: Function}, string>,
-};
-
-const AlertContainer = ({ children }: Props) => {
-  const [showAlert, setShowAlert] = useState(false);
-
-  return (
-    <>
-      <BpkButtonV2
-        onClick={() => {
-          setShowAlert(true);
-        }}
-      >
-        Trigger alert
-      </BpkButtonV2>
-      {showAlert &&
-        cloneElement(children, { onExit: () => setShowAlert(false) })}
-    </>
-  );
+const hideAfterHack = {
+  // Apply a exceptionally large number to hideAfter to effectively keep the UI around forever
+  hideAfter: 2_147_483_647, // largest 32 bit signed integer, maximum value for setTimeout. Around 28 days. :)
 };
 
 const DefaultExample = () => (
-  <AlertContainer>
-    <BpkFloatingNotification text="Saved" />
-  </AlertContainer>
+  <BpkFloatingNotification text="Saved" {...hideAfterHack} />
 );
 
 const IconExample = () => (
-  <AlertContainer>
-    <BpkFloatingNotification icon={BpkIconHeart} text="Saved" />
-  </AlertContainer>
+  <BpkFloatingNotification
+    icon={BpkIconHeart}
+    text="Saved"
+    {...hideAfterHack}
+  />
 );
 
 const CtaExample = () => (
-  <AlertContainer>
-    <BpkFloatingNotification ctaText="View" text="Saved" />
-  </AlertContainer>
+  <BpkFloatingNotification ctaText="View" text="Saved" {...hideAfterHack} />
 );
 
 const CtaIconLongTextExample = () => (
-  <AlertContainer>
-    <BpkFloatingNotification
-      ctaText="View"
-      icon={BpkIconHeart}
-      text="Killer Combo saved to New York and Miami 🎉"
-    />
-  </AlertContainer>
+  <BpkFloatingNotification
+    ctaText="View"
+    icon={BpkIconHeart}
+    text="Killer Combo saved to New York and Miami 🎉"
+    {...hideAfterHack}
+  />
 );
 
 const VisualTestExample = () => (
   <BpkFloatingNotification
-      animateOnEnter
-      animateOnExit
-      ctaText="View"
-      // @ts-expect-error hideAfter isn't meant to take null, however, we override as we'd like to not hide it in visual testing
-      hideAfter={null} // don't hide the visual test example
-      icon={BpkIconInformationCircle}
-      text="Killer Combo saved to New York and Miami 🎉"
+    animateOnEnter
+    animateOnExit
+    ctaText="View"
+    {...hideAfterHack}
+    icon={BpkIconInformationCircle}
+    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   />
 );
 
