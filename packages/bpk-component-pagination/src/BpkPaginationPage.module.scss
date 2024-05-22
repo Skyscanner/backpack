@@ -33,7 +33,9 @@
 
   &--not-selected {
     @include buttons.bpk-button--primary-on-dark;
-    @include borders.bpk-border-sm(tokens.$bpk-line-day);
+    @include borders.bpk-border-sm(
+      var(--bpk-pagination-selected-background-color, tokens.$bpk-line-day)
+    );
 
     @include utils.bpk-hover {
       background-color: transparent;
