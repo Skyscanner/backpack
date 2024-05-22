@@ -18,7 +18,6 @@
 
 import PropTypes from 'prop-types';
 
-import {BpkButtonV2, BUTTON_TYPES} from '../../bpk-component-button';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkPaginationPage.module.scss';
@@ -29,22 +28,21 @@ const BpkPaginationPage = (props) => {
   const classNames = [getClassName('bpk-pagination-page')];
   const { isSelected, onSelect, page, pageLabel } = props;
 
-  if (isSelected) {
-    classNames.push(getClassName('bpk-pagination-page--selected'));
+  if (!isSelected) {
+    // reverse class type so we can always load `buttons.bpk-button` as a base style for overridding.
+    classNames.push(getClassName('bpk-pagination-page--not-selected'));
   }
 
   return (
-    <BpkButtonV2
-      type={!isSelected ? BUTTON_TYPES.primaryOnDark : BUTTON_TYPES.primary}
+    <button
       onClick={onSelect}
-      // TODO: className to be removed
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+      type="button"
       className={classNames.join(' ')}
       aria-label={pageLabel(page, isSelected)}
       aria-current={isSelected}
     >
       <span>{page}</span>
-    </BpkButtonV2>
+    </button>
   );
 };
 
