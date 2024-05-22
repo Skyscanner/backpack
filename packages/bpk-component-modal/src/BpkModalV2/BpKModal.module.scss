@@ -145,20 +145,11 @@
 
   &__header-title {
     padding: tokens.bpk-spacing-base();
-    line-height: tokens.$bpk-line-height-xs;
 
     @include header;
 
     &-style--surface-contrast {
       background-color: tokens.$bpk-surface-contrast-day;
-      color: tokens.$bpk-text-primary-dark-color;
-    }
-  }
-
-  &__close-button-style--surface-contrast {
-    color: tokens.$bpk-text-primary-dark-color;
-
-    @include utils.bpk-hover {
       color: tokens.$bpk-text-primary-dark-color;
     }
   }

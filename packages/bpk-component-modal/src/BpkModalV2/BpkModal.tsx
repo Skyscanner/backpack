@@ -72,13 +72,11 @@ const Header = ({
         <div className={getClassName('bpk-modal__header-title-container')}>
           <Heading>{title}</Heading>
         </div>
-        <span className={getClassName(`bpk-modal__close-button-style--${modalStyle}`)}>
-          <BpkCloseButton
-            label={closeLabel}
-            onClick={onClose}
-            onDark={modalStyle === MODAL_STYLING.surfaceContrast}
-          />
-        </span>
+        <BpkCloseButton
+          label={closeLabel}
+          onClick={onClose}
+          onDark={modalStyle === MODAL_STYLING.surfaceContrast}
+        />
       </div>
     );
   }
