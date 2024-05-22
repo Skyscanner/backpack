@@ -19,11 +19,20 @@
 import { renderToString } from 'react-dom/server';
 
 import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import BpkBottomSheet from './BpkBottomSheet';
 // mock breakpoint to always match
 jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () => jest.fn(() => true));
 describe('BpkBottomSheet', () => {
+
+  const props = {
+    ariaLabelledby: 'bottom-sheet',
+    id: "my-bottom-sheet",
+    isOpen: true,
+    onClose: jest.fn(),
+  }
+
   it('renders without crashing with all props', () => {
     expect(() => renderToString(
       <BpkBottomSheet
@@ -71,10 +80,7 @@ describe('BpkBottomSheet', () => {
   it('renders correctly with wide prop', () => {
     const { asFragment } = render(
       <BpkBottomSheet
-        ariaLabelledby='bottom-sheet'
-        id="my-bottom-sheet"
-        isOpen
-        onClose={jest.fn()}
+        {...props}
         wide
       >
         Bottom Sheet content
@@ -85,17 +91,39 @@ describe('BpkBottomSheet', () => {
   it('renders correctly with action props', () => {
     const { asFragment } = render(
       <BpkBottomSheet
-        ariaLabelledby='bottom-sheet'
+        {...props}
         actionText='Action'
-        id="my-bottom-sheet"
-        isOpen
         onAction={jest.fn()}
-        onClose={jest.fn()}
         wide
       >
         Bottom Sheet content
       </BpkBottomSheet>
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+  it('renders correctly with ariaLabelledBy prop', () => {
+    const { container } = render(
+      <BpkBottomSheet
+        {...props}
+        ariaLabelledby='my-bottomsheet-title-id'
+      >
+        Bottom Sheet content
+      </BpkBottomSheet>
+    );
+
+    expect(container.querySelector('dialog[aria-labelledby="my-bottomsheet-title-id"]')).toBeInTheDocument();
+  });
+  it('renders correctly with ariaLabel prop', () => {
+    const { container } = render(
+      <BpkBottomSheet
+        {...props}
+        ariaLabel='my a11y title'
+      >
+        Bottom Sheet content
+      </BpkBottomSheet>
+
+    );
+
+    expect(container.querySelector('dialog[aria-label="my a11y title"]')).toBeInTheDocument();
   });
 });

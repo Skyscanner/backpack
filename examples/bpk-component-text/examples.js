@@ -144,12 +144,46 @@ const LabelStylesExample = () => (
   </div>
 );
 
+const LarkenStylesExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.editorial1} tagName="p">
+      Editorial 1
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.editorial2} tagName="p">
+      Editorial 2
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.editorial3} tagName="p">
+      Editorial 3
+    </BpkText>
+  </div>
+);
+
+const LarkenFallbackStylesExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.editorial2} tagName="p" id="korean">
+      다람쥐 헌 쳇바퀴에 타고파
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.editorial2} tagName="p" id="thai">
+      นายสังฆภัณฑ์ เฮงพิทักษ์ฝั่ง ผู้เฒ่าซึ่งมีอาชีพเป็นฅนขายฃวด
+      ถูกตำรวจปฏิบัติการจับฟ้องศาล ฐานลักนาฬิกาคุณหญิงฉัตรชฎา ฌานสมาธิ
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.editorial2} tagName="p" id="cyrillic">
+      Съешь же ещё этих мягких французских булок да выпей чаю
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.editorial2} tagName="p" id="hebrew">
+      עטלף אבק נס דרך מזגן שהתפוצץ כי חם
+    </BpkText>
+  </div>
+);
+
 const MixedExample = () => (
   <div>
     <HeroStylesExample />
     <HeadingStylesExample />
     <BodyStylesExample />
     <LabelStylesExample />
+    <LarkenStylesExample />
+    <LarkenFallbackStylesExample />
   </div>
 );
 
@@ -162,5 +196,7 @@ export {
   HeroStylesExample,
   BodyStylesExample,
   LabelStylesExample,
+  LarkenStylesExample,
+  LarkenFallbackStylesExample,
   MixedExample,
 };

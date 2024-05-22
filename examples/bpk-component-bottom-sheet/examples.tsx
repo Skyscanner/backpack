@@ -98,10 +98,10 @@ type BottomSheetContainerProps = {
   children: ReactNode,
   isComponentOpen?: boolean,
   id?: string,
-} & Omit<BpkBottomSheetProps, "ariaLabelledby" | "id"| "isOpen" | "onClose" >
+} & Omit<BpkBottomSheetProps, "ariaLabelledby" | "ariaLabel" | "id" | "isOpen" | "onClose">
 
 class BottomSheetContainer extends Component<
-BottomSheetContainerProps,
+  BottomSheetContainerProps,
   {
     isOpen: boolean,
   }
@@ -146,7 +146,7 @@ BottomSheetContainerProps,
             Open bottom sheet
           </BpkButtonV2>
           <BpkBottomSheet
-            ariaLabelledby='test'
+            ariaLabel='test accessible title'
             id={id || "my-bottom-sheet"}
             {...rest}
             onClose={this.onClose}

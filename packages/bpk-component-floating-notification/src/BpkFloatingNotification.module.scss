@@ -29,6 +29,7 @@
   max-width: tokens.bpk-spacing-xxl() * 10;
   margin: auto;
   padding: tokens.bpk-spacing-lg();
+  align-items: center;
   transition:
     opacity tokens.$bpk-duration-base ease-in-out,
     transform tokens.$bpk-duration-base ease-in-out;
@@ -77,5 +78,9 @@
 
   &__text {
     margin-inline-end: tokens.bpk-spacing-md();
+  }
+
+  &__cta {
+    margin-inline-start: auto;
   }
 }

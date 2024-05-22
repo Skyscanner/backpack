@@ -98,20 +98,18 @@ const BpkFloatingNotification = (props: Props) => {
             <Icon aria-hidden />
           </div>
         )}
-        <BpkText
-          tagName="p"
-          textStyle={TEXT_STYLES.bodyDefault}
-        >
-          <span className={getClassName('bpk-floating-notification__text')}>{text}</span>
-        </BpkText>
+        <span className={getClassName('bpk-floating-notification__text')}>
+          <BpkText tagName="p" textStyle={TEXT_STYLES.bodyDefault}>
+            {text}
+          </BpkText>
+        </span>
         <BpkAriaLive aria-hidden>{text}</BpkAriaLive>
         {ctaText && (
-          <BpkButtonV2
-            type={BUTTON_TYPES.linkOnDark}
-            onClick={onClick}
-          >
-            {ctaText}
-          </BpkButtonV2>
+          <div className={getClassName('bpk-floating-notification__cta')}>
+            <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} onClick={onClick}>
+              {ctaText}
+            </BpkButtonV2>
+          </div>
         )}
       </div>
     </CSSTransition>
