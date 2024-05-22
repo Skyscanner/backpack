@@ -18,7 +18,7 @@
 
 import { Children, useState } from 'react';
 
-import {BpkButtonV2} from '../../packages/bpk-component-button';
+import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import { BpkModalV2, MODAL_STYLING } from '../../packages/bpk-component-modal';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
@@ -91,8 +91,13 @@ const content = [
   </Paragraph>,
 ];
 
-const ModalContainer = (props: Omit<BpkModalProps, "id" | "isOpen" | "ariaLabelledby" | "closeLabel" | "onClose">) => {
-  const [isOpen, setOpen] = useState(false);
+const ModalContainer = (
+  props: Omit<
+    BpkModalProps,
+    'id' | 'isOpen' | 'ariaLabelledby' | 'closeLabel' | 'onClose'
+  > & { initiallyOpen: boolean },
+) => {
+  const [isOpen, setOpen] = useState(props.initiallyOpen || false);
 
   return (
     <div id="modal-container">
@@ -103,19 +108,18 @@ const ModalContainer = (props: Omit<BpkModalProps, "id" | "isOpen" | "ariaLabell
         id="bpk-modal"
         ariaLabelledby="bpk-modal-label-my-dialog"
         closeLabel="Close modal"
-        isOpen={isOpen}
         onClose={() => setOpen(false)}
+        isOpen={isOpen}
         {...props}
       >
         {props.children}
       </BpkModalV2>
     </div>
   );
+};
 
-}
-
-const DefaultExample = () => (
-  <ModalContainer title="Modal Title">
+const DefaultExample = (initiallyOpen: boolean) => (
+  <ModalContainer title="Modal Title" initiallyOpen={initiallyOpen}>
     <Paragraph>
       This is a default modal using the HTML dialog element. You can put
       anything you want in here.
@@ -123,17 +127,21 @@ const DefaultExample = () => (
   </ModalContainer>
 );
 
-const ContrastExample = () => (
+const ContrastExample = (initiallyOpen: boolean) => (
   <ModalContainer
     title="Modal title"
     modalStyle={MODAL_STYLING.surfaceContrast}
+    initiallyOpen={initiallyOpen}
   >
     This is a contrast modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const LongTitleExample = () => (
-  <ModalContainer title="We have to remember what's important in life: friends, waffles, and work. Or waffles, friends, work. But work has to come third.">
+const LongTitleExample = (initiallyOpen: boolean) => (
+  <ModalContainer
+    title="We have to remember what's important in life: friends, waffles, and work. Or waffles, friends, work. But work has to come third."
+    initiallyOpen={initiallyOpen}
+  >
     <Paragraph>
       This is a default modal using the HTML dialog element. You can put
       anything you want in here.
@@ -141,8 +149,8 @@ const LongTitleExample = () => (
   </ModalContainer>
 );
 
-const HeaderNoTitleExample = () => (
-  <ModalContainer>
+const HeaderNoTitleExample = (initiallyOpen: boolean) => (
+  <ModalContainer initiallyOpen={initiallyOpen}>
     <Paragraph>
       This is a modal using the HTML dialog element without a header. You can
       put anything you want in here.
@@ -150,93 +158,102 @@ const HeaderNoTitleExample = () => (
   </ModalContainer>
 );
 
-const OverflowingExample = () => (
-  <ModalContainer title="Modal Title">
+const OverflowingExample = (initiallyOpen: boolean) => (
+  <ModalContainer title="Modal Title" initiallyOpen={initiallyOpen}>
+    {' '}
     <Paragraph>{Children.toArray(content)}</Paragraph>
   </ModalContainer>
 );
 
-const OverflowingNoTitleExample = () => (
-  <ModalContainer>
+const OverflowingNoTitleExample = (initiallyOpen: boolean) => (
+  <ModalContainer initiallyOpen={initiallyOpen}>
     <Paragraph>{Children.toArray(content)}</Paragraph>
   </ModalContainer>
 );
 
-const WideExample = () => (
-  <ModalContainer title="Modal title" wide>
+const WideExample = (initiallyOpen: boolean) => (
+  <ModalContainer title="Modal title" wide initiallyOpen={initiallyOpen}>
     This is a wide modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const WideNoTitleExample = () => (
-  <ModalContainer wide>
+const WideNoTitleExample = (initiallyOpen: boolean) => (
+  <ModalContainer wide initiallyOpen={initiallyOpen}>
     This is a wide modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const NoPaddingExample = () => (
-  <ModalContainer title="Modal title" padded>
+const NoPaddingExample = (initiallyOpen: boolean) => (
+  <ModalContainer title="Modal title" padded initiallyOpen={initiallyOpen}>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const NoPaddingNoTitleExample = () => (
-  <ModalContainer padded>
+const NoPaddingNoTitleExample = (initiallyOpen: boolean) => (
+  <ModalContainer padded initiallyOpen={initiallyOpen}>
     This is a modal without padding. You can put anything you want in here.
   </ModalContainer>
 );
 
-const FullScreenOnDesktopExample = () => (
-  <ModalContainer title="Modal title" fullScreenOnDesktop>
+const FullScreenOnDesktopExample = (initiallyOpen: boolean) => (
+  <ModalContainer
+    title="Modal title"
+    fullScreenOnDesktop
+    initiallyOpen={initiallyOpen}
+  >
     This is a full screen modal for desktop. You can put anything you want in
     here.
   </ModalContainer>
 );
 
-const FullScreenOnDesktopNoTitleExample = () => (
-  <ModalContainer fullScreenOnDesktop>
+const FullScreenOnDesktopNoTitleExample = (initiallyOpen: boolean) => (
+  <ModalContainer fullScreenOnDesktop initiallyOpen={initiallyOpen}>
     This is a full screen modal for mobile without title. You can put anything
     you want in here.
   </ModalContainer>
 );
 
-const NoFullScreenOnMobileExample = () => (
-  <ModalContainer title="Modal title" noFullScreenOnMobile>
+const NoFullScreenOnMobileExample = (initiallyOpen: boolean) => (
+  <ModalContainer
+    title="Modal title"
+    noFullScreenOnMobile
+    initiallyOpen={initiallyOpen}
+  >
     This is a no full screen modal for mobile. You can put anything you want in
     here.
   </ModalContainer>
 );
 
-const NoFullScreenOnMobileNoTitleExample = () => (
-  <ModalContainer noFullScreenOnMobile>
+const NoFullScreenOnMobileNoTitleExample = (initiallyOpen: boolean) => (
+  <ModalContainer noFullScreenOnMobile initiallyOpen={initiallyOpen}>
     This is a no full screen modal for mobile without title. You can put
     anything you want in here.
   </ModalContainer>
 );
 
-const NoHeaderExample = () => (
-  <ModalContainer showHeader={false}>
+const NoHeaderExample = (initiallyOpen: boolean) => (
+  <ModalContainer showHeader={false} initiallyOpen={initiallyOpen}>
     This is a modal without header. You can put anything you want in here.
   </ModalContainer>
 );
 
-const MultipleModalsExample = () => (
+const MultipleModalsExample = (initiallyOpen: boolean) => (
   <>
-    <ModalContainer title="Modal Title 1">
+    <ModalContainer title="Modal Title 1" initiallyOpen={initiallyOpen}>
       <Paragraph>
         Modal 1: This is a default modal using the HTML dialog element. You can
         put anything you want in here.
       </Paragraph>
     </ModalContainer>
     <br />
-    <ModalContainer title="Modal Title 2">
+    <ModalContainer title="Modal Title 2" initiallyOpen={initiallyOpen}>
       <Paragraph>
         Modal 2: This is a default modal using the HTML dialog element. You can
         put anything you want in here.
       </Paragraph>
     </ModalContainer>
     <br />
-    <ModalContainer title="Modal Title 3">
+    <ModalContainer title="Modal Title 3" initiallyOpen={initiallyOpen}>
       <Paragraph>
         Modal 3: This is a default modal using the HTML dialog element. You can
         put anything you want in here.
