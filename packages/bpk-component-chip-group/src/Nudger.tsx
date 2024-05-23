@@ -25,7 +25,7 @@ import ArrowLeft from '../../bpk-component-icon/sm/long-arrow-left';
 import ArrowRight from '../../bpk-component-icon/sm/long-arrow-right';
 import { cssModules, isRTL } from '../../bpk-react-utils/index';
 
-import type { ChipStyleType } from './BpkChipGroup';
+import type { ChipStyleType } from './BpkMultiSelectChipGroup';
 
 import STYLES from './Nudger.module.scss';
 

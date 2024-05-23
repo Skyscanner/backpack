@@ -20,9 +20,9 @@
 import { useState } from 'react';
 
 import { CHIP_TYPES } from '../../packages/bpk-component-chip';
-import BpkChipGroup, {
-  BpkChipGroupState,
-  BpkChipGroupSingleSelectState,
+import BpkMultiSelectChipGroup, {
+  BpkMultiSelectChipGroupState,
+  BpkSingleSelectChipGroupState,
   CHIP_GROUP_TYPES,
   CHIP_COMPONENT,
 } from '../../packages/bpk-component-chip-group';
@@ -76,7 +76,7 @@ const chips = [
 
 export const BpkChipGroupWrapping = () => (
   <div className={getClassName('bpk-chip-group-examples__fixed-width')}>
-    <BpkChipGroupState
+    <BpkMultiSelectChipGroupState
       type={CHIP_GROUP_TYPES.wrap}
       chips={chips}
       ariaLabel="Select cities"
@@ -86,7 +86,7 @@ export const BpkChipGroupWrapping = () => (
 
 export const BpkSingleChipGroupWrapping = () => (
   <div>
-    <BpkChipGroupSingleSelectState
+    <BpkSingleSelectChipGroupState
       type={CHIP_GROUP_TYPES.wrap}
       chips={chips}
       initiallySelectedIndex={0}
@@ -98,7 +98,7 @@ export const BpkSingleChipGroupWrapping = () => (
 
 export const BpkChipGroupRail = () => (
   <div>
-    <BpkChipGroupState
+    <BpkMultiSelectChipGroupState
       type={CHIP_GROUP_TYPES.rail}
       chips={chips}
       ariaLabel="Select cities"
@@ -116,7 +116,7 @@ export const BpkChipGroupSticky = () => {
 
   return (
     <div>
-      <BpkChipGroupState
+      <BpkMultiSelectChipGroupState
         type={CHIP_GROUP_TYPES.rail}
         chips={chips}
         stickyChip={stickyChip}
@@ -135,7 +135,7 @@ export const OnContrastChipGroup = () => {
 
   return (
     <div className={getClassName('bpk-chip-group-examples__contrast')}>
-      <BpkChipGroupState
+      <BpkMultiSelectChipGroupState
         type={CHIP_GROUP_TYPES.rail}
         chips={chips}
         stickyChip={stickyChip}
@@ -156,7 +156,7 @@ export const OnDarkChipGroup = () => {
 
   return (
     <div className={getClassName('bpk-chip-group-examples__dark')}>
-      <BpkChipGroupState
+      <BpkMultiSelectChipGroupState
         type={CHIP_GROUP_TYPES.rail}
         chips={chips}
         stickyChip={stickyChip}
@@ -176,7 +176,7 @@ export const OnImageChipGroup = () => {
 
   return (
     <div className={getClassName('bpk-chip-group-examples__image')}>
-      <BpkChipGroupState
+      <BpkMultiSelectChipGroupState
         type={CHIP_GROUP_TYPES.rail}
         chips={chips}
         stickyChip={stickyChip}
@@ -191,7 +191,7 @@ export const OnImageChipGroup = () => {
 
 export const BpkChipGroupWithLabel = () => (
   <div className={getClassName('bpk-chip-group-examples__with-label')}>
-    <BpkChipGroupState
+    <BpkMultiSelectChipGroupState
       type={CHIP_GROUP_TYPES.rail}
       chips={chips}
       chipStyle={CHIP_TYPES.default}
@@ -231,7 +231,7 @@ export const AllChipTypesGroup = () => {
   ];
 
   return (
-    <BpkChipGroupState
+    <BpkMultiSelectChipGroupState
       chips={allChips}
       type={CHIP_GROUP_TYPES.wrap}
       ariaLabel="Select chips"
@@ -244,7 +244,7 @@ export const StateManagement = () => {
   const [route, setRoute] = useState('flights');
 
   return (
-    <BpkChipGroup
+    <BpkMultiSelectChipGroup
       type={CHIP_GROUP_TYPES.rail}
       ariaLabel="Filter your search"
       ariaMultiselectable={false}

@@ -8,12 +8,12 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ## Usage
 
-### BpkChipGroup
+### BpkMultiSelectChipGroup
 
 This is a multiselectable chip group without any built in state management. State of chips must be managed by the consumer as passed in through the `chips` prop, using the `onClick` property of each chip to detect interaction.
 
 ```tsx
-import BpkChipGroup, {
+import BpkMultiSelectChipGroup, {
   BpkChipGroupState,
   BpkChipGroupSingleSelectState,
   CHIP_GROUP_TYPES,
@@ -23,7 +23,7 @@ import { CHIP_TYPES } from '@skyscanner/backpack-web/bpk-component-chip';
 import { useState } from 'react';
 
 const MainExample = () => (
-  <BpkChipGroup
+  <BpkMultiSelectChipGroup
     type={CHIP_GROUP_TYPES.wrap}
     ariaLabel="Filter cities"
     chips={[{
@@ -44,7 +44,7 @@ const VerticalsExample = () => {
   const [route, setRoute] = useState('flights');
 
   return (
-    <BpkChipGroup
+    <BpkMultiSelectChipGroup
       type={CHIP_GROUP_TYPES.rail}
       ariaLabel="Filter your search"
       ariaMultiselectable={false}
@@ -77,13 +77,13 @@ const VerticalsExample = () => {
 };
 ```
 
-### BpkChipGroupState
+### BpkMultiSelectChipGroupState
 
 Like a `BpkChipGroup` (multi-selectable) but with basic state management similar to above built in. The `selected` property of each `ChipItem` will affect **only the first render** as the state is managed within the component afterwards.
 
 ```tsx
 const StatefulExample = () => (
-  <BpkChipGroupState
+  <BpkMultiSelectChipGroupState
     type={CHIP_GROUP_TYPES.rail}
     ariaLabel="Filter cities"
     leadingNudgerLabel="Scroll back"
@@ -100,13 +100,13 @@ const StatefulExample = () => (
 );
 ```
 
-### BpkChipGroupSingleSelect
+### BpkSingleSelectChipGroup
 
 This is a wrapper around a `BpkChipGroup` that only allows a single chip to be `selected`, determined by the `selectedIndex` prop. If no chips should appear selected, this should be `undefined`.
 
 ```tsx
 const SingleSelectExample = () => (
-  <BpkChipGroupSingleSelect
+  <BpkSingleSelectChipGroup
     chips={[
       {
         text: 'London',
@@ -124,13 +124,13 @@ const SingleSelectExample = () => (
 );
 ```
 
-### BpkChipGroupSingleSelectState
+### BpkSingleSelectChipGroupState
 
-A wrapper around `BpkChipGroupSingleSelect` that provides basic state management for selecting/deselecting a single chip in the group. The `initiallySelectedIndex` prop controls the chip that will be selected on **first render only**.
+A wrapper around `BpkSingleSelectChipGroup` that provides basic state management for selecting/deselecting a single chip in the group. The `initiallySelectedIndex` prop controls the chip that will be selected on **first render only**.
 
 ```tsx
 const SingleSelectStateExample = () => (
-  <BpkChipGroupSingleSelectState
+  <BpkSingleSelectChipGroupState
     chips={[
       {
         text: 'London',

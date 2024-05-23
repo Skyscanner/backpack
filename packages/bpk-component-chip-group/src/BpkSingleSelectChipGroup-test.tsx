@@ -19,15 +19,15 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { CHIP_GROUP_TYPES } from './BpkChipGroup';
-import BpkChipGroupSingleSelect, { BpkChipGroupSingleSelectState } from './BpkChipGroupSingleSelect';
+import { CHIP_GROUP_TYPES } from './BpkMultiSelectChipGroup';
+import BpkSingleSelectChipGroup, { BpkSingleSelectChipGroupState } from './BpkSingleSelectChipGroup';
 
 const defaultProps = {
   type: CHIP_GROUP_TYPES.wrap,
   ariaLabel: 'a11y label',
 }
 
-describe('BpkChipGroupSingleSelect', () => {
+describe('BpkSingleSelectChipGroup', () => {
   beforeEach(() => {
     window.matchMedia = jest.fn().mockImplementation(() => ({
       matches: true,
@@ -57,7 +57,7 @@ describe('BpkChipGroupSingleSelect', () => {
     const onItemClick = jest.fn();
 
     render(
-      <BpkChipGroupSingleSelect
+      <BpkSingleSelectChipGroup
         chips={chips}
         onItemClick={onItemClick}
         {...defaultProps}
@@ -87,7 +87,7 @@ describe('BpkChipGroupSingleSelect', () => {
     ];
 
     render(
-      <BpkChipGroupSingleSelect
+      <BpkSingleSelectChipGroup
         chips={chipsWithSelected}
         selectedIndex={1}
         {...defaultProps}
@@ -100,7 +100,7 @@ describe('BpkChipGroupSingleSelect', () => {
   });
 });
 
-describe('BpkChipGroupSingleSelectState', () => {
+describe('BpkSingleSelectChipGroupState', () => {
   const chips = [
     {
       text: 'London',
@@ -117,7 +117,7 @@ describe('BpkChipGroupSingleSelectState', () => {
     const user = userEvent.setup();
 
     render(
-      <BpkChipGroupSingleSelectState
+      <BpkSingleSelectChipGroupState
         chips={chips}
         {...defaultProps}
       />,
@@ -134,7 +134,7 @@ describe('BpkChipGroupSingleSelectState', () => {
     const user = userEvent.setup();
 
     render(
-      <BpkChipGroupSingleSelectState
+      <BpkSingleSelectChipGroupState
         chips={chips}
         {...defaultProps}
       />,
@@ -158,7 +158,7 @@ describe('BpkChipGroupSingleSelectState', () => {
     const user = userEvent.setup();
 
     render(
-      <BpkChipGroupSingleSelectState
+      <BpkSingleSelectChipGroupState
         chips={chips}
         {...defaultProps}
       />,
@@ -181,7 +181,7 @@ describe('BpkChipGroupSingleSelectState', () => {
     const onItemClick = jest.fn();
 
     render(
-      <BpkChipGroupSingleSelectState
+      <BpkSingleSelectChipGroupState
         chips={chips}
         onItemClick={onItemClick}
         {...defaultProps}
@@ -196,7 +196,7 @@ describe('BpkChipGroupSingleSelectState', () => {
 
   it('should have initiallySelectedIndex selected before interaction', () => {
     render(
-      <BpkChipGroupSingleSelectState
+      <BpkSingleSelectChipGroupState
         chips={chips}
         initiallySelectedIndex={1}
         {...defaultProps}

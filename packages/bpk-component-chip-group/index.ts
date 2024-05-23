@@ -16,19 +16,19 @@
  * limitations under the License.
  */
 
-import BpkChipGroup, {
+import BpkMultiSelectChipGroup, {
   type ChipGroupProps,
-  BpkChipGroupState,
+  BpkMultiSelectChipGroupState,
   CHIP_GROUP_TYPES,
   type ChipItem,
   type SingleSelectChipItem,
   CHIP_COMPONENT,
-} from './src/BpkChipGroup';
-import BpkChipGroupSingleSelect, {
+} from './src/BpkMultiSelectChipGroup';
+import BpkSingleSelectChipGroup, {
   type SingleSelectProps,
   type SingleSelectStateProps,
-  BpkChipGroupSingleSelectState,
-} from './src/BpkChipGroupSingleSelect';
+  BpkSingleSelectChipGroupState,
+} from './src/BpkSingleSelectChipGroup';
 
 export type {
   ChipGroupProps,
@@ -38,10 +38,10 @@ export type {
   SingleSelectChipItem
 };
 export {
-  BpkChipGroupState,
-  BpkChipGroupSingleSelect,
-  BpkChipGroupSingleSelectState,
+  BpkMultiSelectChipGroupState,
+  BpkSingleSelectChipGroup,
+  BpkSingleSelectChipGroupState,
   CHIP_GROUP_TYPES,
   CHIP_COMPONENT,
 };
-export default BpkChipGroup;
+export default BpkMultiSelectChipGroup;

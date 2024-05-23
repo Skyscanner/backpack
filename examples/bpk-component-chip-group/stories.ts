@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-import BpkChipGroup, {
-  BpkChipGroupSingleSelect,
-  BpkChipGroupState,
-  BpkChipGroupSingleSelectState,
+import BpkMultiSelectChipGroup, {
+  BpkSingleSelectChipGroup,
+  BpkMultiSelectChipGroupState,
+  BpkSingleSelectChipGroupState,
 } from '../../packages/bpk-component-chip-group';
 
 import {
@@ -38,11 +38,11 @@ import {
 
 export default {
   title: 'bpk-component-chip-group',
-  component: BpkChipGroup,
+  component: BpkMultiSelectChipGroup,
   subcomponents: {
-    BpkChipGroupSingleSelect,
-    BpkChipGroupState,
-    BpkChipGroupSingleSelectState,
+    BpkChipGroupSingleSelect: BpkSingleSelectChipGroup,
+    BpkChipGroupState: BpkMultiSelectChipGroupState,
+    BpkChipGroupSingleSelectState: BpkSingleSelectChipGroupState,
     // TODO: can we show the shape of ChipItem here?
   },
 };

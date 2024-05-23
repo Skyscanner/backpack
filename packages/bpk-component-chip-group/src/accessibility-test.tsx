@@ -19,8 +19,8 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkChipGroup, { CHIP_GROUP_TYPES } from './BpkChipGroup';
-import BpkChipGroupSingleSelect from './BpkChipGroupSingleSelect';
+import BpkMultiSelectChipGroup, { CHIP_GROUP_TYPES } from './BpkMultiSelectChipGroup';
+import BpkSingleSelectChipGroup from './BpkSingleSelectChipGroup';
 
 const chips = [
   {
@@ -50,7 +50,7 @@ describe('BpkChipGroup accessibility tests', () => {
 
   it('should not have programmatically-detectable accessibility issues when type = rail', async () => {
     const { container } = render(
-      <BpkChipGroup
+      <BpkMultiSelectChipGroup
         chips={chips}
         stickyChip={{
           text: 'Sort & Filter'
@@ -67,7 +67,7 @@ describe('BpkChipGroup accessibility tests', () => {
 
   it('should not have programmatically-detectable accessibility issues when type = wrap', async () => {
     const { container } = render(
-      <BpkChipGroup
+      <BpkMultiSelectChipGroup
         chips={chips}
         type={CHIP_GROUP_TYPES.wrap}
         ariaLabel="Select cities"
@@ -81,7 +81,7 @@ describe('BpkChipGroup accessibility tests', () => {
 describe('BpkChipGroupSingleSelect accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues when type = rail', async () => {
     const { container } = render(
-      <BpkChipGroupSingleSelect
+      <BpkSingleSelectChipGroup
         chips={chips}
         type={CHIP_GROUP_TYPES.rail}
         selectedIndex={1}
@@ -96,7 +96,7 @@ describe('BpkChipGroupSingleSelect accessibility tests', () => {
 
   it('should not have programmatically-detectable accessibility issues when type = wrap', async () => {
     const { container } = render(
-      <BpkChipGroupSingleSelect
+      <BpkSingleSelectChipGroup
         chips={chips}
         type={CHIP_GROUP_TYPES.wrap}
         selectedIndex={1}

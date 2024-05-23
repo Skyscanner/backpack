@@ -18,7 +18,7 @@
 
 import { useState } from 'react';
 
-import BpkChipGroup, { type ChipItem, type SingleSelectChipItem, type ChipGroupProps } from './BpkChipGroup';
+import BpkMultiSelectChipGroup, { type ChipItem, type SingleSelectChipItem, type ChipGroupProps } from './BpkMultiSelectChipGroup';
 
 type CommonSingleSelectProps = {
   chips: SingleSelectChipItem[];
@@ -29,7 +29,7 @@ export type SingleSelectProps = {
   selectedIndex?: number;
 } & CommonSingleSelectProps;
 
-const BpkChipGroupSingleSelect = ({ chips, onItemClick, selectedIndex, ...rest }: SingleSelectProps) => {
+const BpkSingleSelectChipGroup = ({ chips, onItemClick, selectedIndex, ...rest }: SingleSelectProps) => {
   const chipsWithSelection = chips.map((chip, index) => chip && ({
     ...chip,
     selected: index === selectedIndex,
@@ -41,7 +41,7 @@ const BpkChipGroupSingleSelect = ({ chips, onItemClick, selectedIndex, ...rest }
   }));
 
   return (
-    <BpkChipGroup chips={chipsWithSelection} ariaMultiselectable={false} {...rest} />
+    <BpkMultiSelectChipGroup chips={chipsWithSelection} ariaMultiselectable={false} {...rest} />
   );
 };
 
@@ -49,7 +49,7 @@ export type SingleSelectStateProps = {
   initiallySelectedIndex?: number;
 } & CommonSingleSelectProps
 
-export const BpkChipGroupSingleSelectState = ({ initiallySelectedIndex = -1, onItemClick, ...rest }: SingleSelectStateProps) => {
+export const BpkSingleSelectChipGroupState = ({ initiallySelectedIndex = -1, onItemClick, ...rest }: SingleSelectStateProps) => {
   const [selectedIndex, setSelectedIndex] = useState(initiallySelectedIndex);
 
   const onItemClickWithState = (item: ChipItem, selected: boolean, index: number) => {
@@ -59,8 +59,8 @@ export const BpkChipGroupSingleSelectState = ({ initiallySelectedIndex = -1, onI
     setSelectedIndex(selected ? index : -1);
   }
 
-  return <BpkChipGroupSingleSelect selectedIndex={selectedIndex} onItemClick={onItemClickWithState} {...rest} />
+  return <BpkSingleSelectChipGroup selectedIndex={selectedIndex} onItemClick={onItemClickWithState} {...rest} />
 };
 
 
-export default BpkChipGroupSingleSelect;
+export default BpkSingleSelectChipGroup;

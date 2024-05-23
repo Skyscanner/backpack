@@ -20,14 +20,14 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
-import BpkChipGroup, { BpkChipGroupState, CHIP_GROUP_TYPES } from './BpkChipGroup';
+import BpkMultiSelectChipGroup, { BpkMultiSelectChipGroupState, CHIP_GROUP_TYPES } from './BpkMultiSelectChipGroup';
 
 const defaultProps = {
   type: CHIP_GROUP_TYPES.wrap,
   ariaLabel: 'a11y label',
 }
 
-describe('BpkChipGroup', () => {
+describe('BpkMultiSelectChipGroup', () => {
   beforeEach(() => {
     window.matchMedia = jest.fn().mockImplementation(() => ({
       matches: true,
@@ -53,7 +53,7 @@ describe('BpkChipGroup', () => {
   ];
 
   it('should render selected chip', () => {
-    render(<BpkChipGroup {...defaultProps} chips={chips} type={CHIP_GROUP_TYPES.wrap} />);
+    render(<BpkMultiSelectChipGroup {...defaultProps} chips={chips} type={CHIP_GROUP_TYPES.wrap} />);
 
     const chip = screen.getByRole('checkbox', { name: 'Berlin' });
 
@@ -62,7 +62,7 @@ describe('BpkChipGroup', () => {
 
   it('should render correctly with sticky chip', () => {
     render(
-      <BpkChipGroup
+      <BpkMultiSelectChipGroup
         stickyChip={{
           text: 'Sort & Filter'
         }}
@@ -82,7 +82,7 @@ describe('BpkChipGroup', () => {
     const onClick = jest.fn();
 
     render(
-      <BpkChipGroup
+      <BpkMultiSelectChipGroup
         chips={[
           {
             text: 'London',
@@ -104,7 +104,7 @@ describe('BpkChipGroup', () => {
   });
 });
 
-describe('BpkChipGroupState', () => {
+describe('BpkMultiSelectChipGroupState', () => {
   const chips = [
     {
       text: 'London',
@@ -127,7 +127,7 @@ describe('BpkChipGroupState', () => {
     const user = userEvent.setup();
 
     render(
-      <BpkChipGroupState
+      <BpkMultiSelectChipGroupState
         chips={chips}
         {...defaultProps}
       />,
@@ -143,7 +143,7 @@ describe('BpkChipGroupState', () => {
     const user = userEvent.setup();
 
     render(
-      <BpkChipGroupState
+      <BpkMultiSelectChipGroupState
         chips={chips}
         {...defaultProps}
       />,
@@ -163,7 +163,7 @@ describe('BpkChipGroupState', () => {
     const user = userEvent.setup();
 
     render(
-      <BpkChipGroupState
+      <BpkMultiSelectChipGroupState
         chips={chips}
         {...defaultProps}
       />,
@@ -183,7 +183,7 @@ describe('BpkChipGroupState', () => {
     const user = userEvent.setup();
 
     render(
-      <BpkChipGroupState
+      <BpkMultiSelectChipGroupState
         chips={chips}
         {...defaultProps}
       />,
@@ -199,7 +199,7 @@ describe('BpkChipGroupState', () => {
 
   it('should allow chips to be selected initially when passed in chips array', () => {
     render(
-      <BpkChipGroupState
+      <BpkMultiSelectChipGroupState
         chips={[{
           text: 'London',
           onClick: jest.fn(),
