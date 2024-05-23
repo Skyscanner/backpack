@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import { ArgsTable } from '@storybook/addon-docs';
-import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
+import { ArgTypes } from '@storybook/addon-docs';
+import { Title, Markdown } from '@storybook/blocks';
 
 import BpkInput from '../../packages/bpk-component-input/src/BpkInput';
 
@@ -50,14 +50,12 @@ export default {
       page: () => (
         <>
           <Title />
-          <ArgsTable of={PRIMARY_STORY} />
+          <ArgTypes />
           <Markdown>
-            {
-            `**Note:** Additionally, all native \`input\` attributes such as \`placeholder\` and \`onChange\` are supported.`
-            }
+            {`**Note:** Additionally, all native \`input\` attributes such as \`placeholder\` and \`onChange\` are supported.`}
           </Markdown>
         </>
-      )
+      ),
     },
   },
 };
@@ -80,5 +78,5 @@ export const ManuallyDocked = ManuallyDockedExample;
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

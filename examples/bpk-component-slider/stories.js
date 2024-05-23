@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import { ArgsTable } from '@storybook/addon-docs';
-import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
+import { ArgTypes } from '@storybook/addon-docs';
+import { Title, Markdown } from '@storybook/blocks';
 
 import BpkSlider from '../../packages/bpk-component-slider/src/BpkSlider';
 
@@ -38,7 +38,7 @@ export default {
       page: () => (
         <>
           <Title />
-          <ArgsTable of={PRIMARY_STORY} />
+          <ArgTypes />
           <Markdown>
             {`**Note**: The aria props are the values that will be passed to the thumb of the slider. If your slider is for times for instance you would likely pass something like the following to ensure the value of the thumb is read out in a formatted state rather than just the value of where the thumb is on the track. If no \`ariaValuetext\` is passed to the component the screen reader will read just the value of the thumb
 
@@ -46,10 +46,9 @@ export default {
     ariaValuetext={[getSliderTime(finalSliderStart), getSliderTime(finalSliderEnd)]}
 
           `}
-
           </Markdown>
         </>
-      )
+      ),
     },
   },
 };
@@ -68,5 +67,5 @@ export const RangeSliderWithMinimumDistance =
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

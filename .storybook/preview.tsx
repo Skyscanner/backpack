@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import { ArgsTable } from '@storybook/addon-docs';
-import { Title, PRIMARY_STORY } from '@storybook/blocks';
+import { ArgTypes } from '@storybook/addon-docs';
+import { Title } from '@storybook/blocks';
 
 import '../packages/bpk-stylesheets';
 import '../packages/bpk-stylesheets/font';
@@ -47,7 +47,7 @@ const preview: Preview = {
       try {
         root = document?.querySelector(':root');
         (root as HTMLElement).style.setProperty('font-size', fontSize);
-      } catch(e) {
+      } catch (e) {
         console.error(e);
       }
       return (
@@ -62,7 +62,8 @@ const preview: Preview = {
             <BpkThemeToggle />
           </div>
         </div>
-    )},
+      );
+    },
   ],
   parameters: {
     docs: {
@@ -72,14 +73,14 @@ const preview: Preview = {
       page: () => (
         <>
           <Title />
-          <ArgsTable story={PRIMARY_STORY} />
+          <ArgTypes />
         </>
-      )
+      ),
     },
   },
   args: {
     zoomEnabled: false,
-  }
+  },
 };
 
 export default preview;
