@@ -23,7 +23,7 @@ import userEvent from '@testing-library/user-event';
 
 import { CHIP_TYPES } from '../../bpk-component-chip';
 
-import Nudger from './Nudger';
+import Nudger, { POSITION } from './Nudger';
 
 
 const mockIsRtl = jest.fn(() => false);
@@ -49,22 +49,23 @@ describe('Nudger', () => {
   });
 
   it.each([
-    [false, false],
-    [true, false],
-    [false, true],
-    [true, true],
-  ])('should call scrollBy when leading=%s and isRtl=%s', async (leading, isRtl) => {
+    [POSITION.trailing, false],
+    [POSITION.leading, false],
+    [POSITION.trailing, true],
+    [POSITION.leading, true],
+  ])('should call scrollBy when leading=%s and isRtl=%s', async (position, isRtl) => {
     const user = userEvent.setup({ delay: null });
     const mockScrollContainerRef = createMockScrollContainerRef(isRtl);
     mockIsRtl.mockReturnValue(isRtl);
 
-    render(<Nudger ariaLabel="nudge" scrollContainerRef={mockScrollContainerRef} leading={leading} />);
+    render(<Nudger ariaLabel="nudge" scrollContainerRef={mockScrollContainerRef} position={position} />);
 
     await act(async () => {
       jest.advanceTimersByTime(100);
       await user.click(screen.getByRole('button'));
     });
 
+    const leading = position === POSITION.leading;
     const isLeft = (leading && !isRtl) || (!leading && isRtl);
     expect(mockScrollContainerRef.current.scrollBy).toHaveBeenCalledTimes(1);
     expect(mockScrollContainerRef.current.scrollBy).toHaveBeenCalledWith({
@@ -74,7 +75,7 @@ describe('Nudger', () => {
   });
 
   it('should render button style matching chips',  () => {
-    render(<Nudger ariaLabel="scroll" scrollContainerRef={createMockScrollContainerRef(false)} chipStyle={CHIP_TYPES.onDark} />);
+    render(<Nudger position={POSITION.leading} ariaLabel="scroll" scrollContainerRef={createMockScrollContainerRef(false)} chipStyle={CHIP_TYPES.onDark} />);
 
     expect(screen.getByRole('button')).toHaveClass('bpk-button--secondary-on-dark');
   });

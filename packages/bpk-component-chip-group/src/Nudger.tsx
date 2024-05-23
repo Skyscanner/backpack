@@ -38,14 +38,17 @@ const CHIP_STYLE_TO_BUTTON_STYLE = {
   [CHIP_TYPES.onImage]: BUTTON_TYPES.primaryOnDark,
 }
 
+export const POSITION = {
+  leading: 'leading',
+  trailing: 'trailing',
+} as const;
 
 type Props = {
   ariaLabel: string;
   chipStyle?: ChipStyleType;
   scrollContainerRef: MutableRefObject<HTMLElement | null>;
-  leading?: boolean;
+  position: (typeof POSITION)[keyof typeof POSITION];
 }
-
 
 const AlignedLeftArrowIcon = withButtonAlignment(ArrowLeft);
 const AlignedRightArrowIcon = withButtonAlignment(ArrowRight);
@@ -56,12 +59,13 @@ const SCROLL_DISTANCE = 150;
 const Nudger = ({
   ariaLabel,
   chipStyle = CHIP_TYPES.default,
-  leading = false,
+  position,
   scrollContainerRef
 }: Props) => {
   const [show, setShow] = useState(false);
   const [enabled, setEnabled] = useState(true);
 
+  const leading = position === POSITION.leading;
   const rtl = isRTL();
   const isLeft = (leading && !rtl) || (!leading && rtl);
 

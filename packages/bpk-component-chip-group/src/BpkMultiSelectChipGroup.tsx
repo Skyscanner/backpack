@@ -26,7 +26,7 @@ import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-containe
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 
-import Nudger from './Nudger';
+import Nudger, { POSITION } from './Nudger';
 
 import STYLES from './BpkChipGroup.module.scss';
 
@@ -170,7 +170,7 @@ const RailChipGroup = ({
   return (
     <>
       <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
-        <Nudger leading ariaLabel={leadingNudgerLabel} chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} />
+        <Nudger position={POSITION.leading} ariaLabel={leadingNudgerLabel} chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} />
       </BpkBreakpoint>
       {stickyChip &&
         <div className={stickyChipContainerClassnames}>
@@ -197,7 +197,7 @@ const RailChipGroup = ({
           label={label} />
       </BpkMobileScrollContainer>
       <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
-        <Nudger ariaLabel={trailingNudgerLabel} chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} />
+        <Nudger position={POSITION.trailing} ariaLabel={trailingNudgerLabel} chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} />
       </BpkBreakpoint>
     </>
   );
