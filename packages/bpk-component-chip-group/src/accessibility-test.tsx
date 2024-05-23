@@ -39,7 +39,7 @@ const chips = [
   }
 ];
 
-describe('BpkChipGroup accessibility tests', () => {
+describe('BpkMultiSelectChipGroup accessibility tests', () => {
   beforeEach(() => {
     window.matchMedia = jest.fn().mockImplementation(() => ({
       matches: true,
@@ -78,7 +78,7 @@ describe('BpkChipGroup accessibility tests', () => {
   });
 });
 
-describe('BpkChipGroupSingleSelect accessibility tests', () => {
+describe('BpkSingleSelectChipGroup accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues when type = rail', async () => {
     const { container } = render(
       <BpkSingleSelectChipGroup
