@@ -60,11 +60,10 @@ describe('Nudger', () => {
 
     render(<Nudger ariaLabel="nudge" scrollContainerRef={mockScrollContainerRef} leading={leading} />);
 
-    act(() => {
+    await act(async () => {
       jest.advanceTimersByTime(100);
+      await user.click(screen.getByRole('button'));
     });
-
-    await user.click(screen.getByRole('button'));
 
     const isLeft = (leading && !isRtl) || (!leading && isRtl);
     expect(mockScrollContainerRef.current.scrollBy).toHaveBeenCalledTimes(1);

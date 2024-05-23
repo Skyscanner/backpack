@@ -156,9 +156,9 @@ const RailChipGroup = ({
   chipStyle = CHIP_TYPES.default,
   chips,
   label,
-  leadingNudgerLabel = '',
+  leadingNudgerLabel,
   stickyChip,
-  trailingNudgerLabel = '',
+  trailingNudgerLabel,
 }: RailChipGroupProps & InternalProps) => {
   const scrollContainerRef = useRef<HTMLElement | null>(null);
 
