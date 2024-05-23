@@ -17,20 +17,16 @@
  */
 
 
-import BpkPopover from '../../packages/bpk-component-popover/src/BpkPopoverPortal';
+import BpkPopover from '../../packages/bpk-component-popover';
 
 import {
   DefaultExample,
+  WithoutArrowExample,
   WithLabelAsTitleExample,
-  AlongsideInputExample,
-  CloseProgrammaticallyExample,
-  WithLabelAsTitleAndTextCloseButtonExample,
   OnTheSideExample,
-  AttachToExternalExample,
-  NoRenderWhenNoExternalElementExample,
-  RepositioningExample,
-  PopperModifiersExample,
   InputTriggerExample,
+  WithActionButtonExample,
+  WithNoCloseButtonIconExample,
 } from './examples';
 
 export default {
@@ -39,23 +35,10 @@ export default {
 };
 
 export const Default = DefaultExample;
+export const WithoutArrow = WithoutArrowExample;
 export const WithLabelAsTitle = WithLabelAsTitleExample;
-
-export const AlongsideInput = AlongsideInputExample;
-
-export const CloseProgrammatically = CloseProgrammaticallyExample;
-
-export const WithLabelAsTitleButCloseButtonText =
-  WithLabelAsTitleAndTextCloseButtonExample;
-
+export const WithNoCloseButtonIcon =
+WithNoCloseButtonIconExample;
 export const OnTheSide = OnTheSideExample;
-
-export const AttachToExternalElement = AttachToExternalExample;
-
-export const NotRenderingIfExternalElementDoesNotExist =
-  NoRenderWhenNoExternalElementExample;
-
-export const Repositioning = RepositioningExample;
-export const PopperModifiers = PopperModifiersExample;
-
 export const TriggeredByInput = InputTriggerExample;
+export const WithActionButton = WithActionButtonExample;

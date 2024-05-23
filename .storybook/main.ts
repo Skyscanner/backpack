@@ -25,8 +25,9 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-actions',
-    '@storybook/addon-viewport',
     '@storybook/addon-docs',
+    '@storybook/addon-interactions',
+    '@storybook/addon-viewport',
   ],
   framework: {
     name: '@storybook/react-webpack5',

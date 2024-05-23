@@ -42,33 +42,24 @@ const Paragraph = withDefaultProps(BpkText, {
 
 type Props = {
   id: string,
-  changeProps: boolean,
-  closeProgrammatically: boolean,
   inputTrigger: boolean,
-  targetFunction: ?() => ?HTMLElement,
+  displayArrow: boolean,
 };
 
 type State = {
   isOpen: boolean,
-  changedTarget: ?() => ?HTMLElement,
 };
 
 class PopoverContainer extends Component<Props, State> {
   static propTypes = {
-    className: PropTypes.string,
     id: PropTypes.string.isRequired,
-    changeProps: PropTypes.bool,
-    closeProgrammatically: PropTypes.bool,
     inputTrigger: PropTypes.bool,
-    targetFunction: PropTypes.func,
+    displayArrow: PropTypes.bool,
   };
 
   static defaultProps = {
-    className: null,
-    changeProps: false,
-    closeProgrammatically: false,
     inputTrigger: false,
-    targetFunction: null,
+    displayArrow: true,
   };
 
   constructor() {
@@ -77,7 +68,6 @@ class PopoverContainer extends Component<Props, State> {
     this.ref = createRef();
     this.state = {
       isOpen: false,
-      changedTarget: null,
     };
   }
 
@@ -85,11 +75,6 @@ class PopoverContainer extends Component<Props, State> {
     this.setState({
       isOpen: true,
     });
-    if (this.props.closeProgrammatically) {
-      setTimeout(() => {
-        this.closePopover();
-      }, 2000);
-    }
   };
 
   closePopover = () => {
@@ -98,15 +83,8 @@ class PopoverContainer extends Component<Props, State> {
     });
   };
 
-  changeTarget = () => {
-    const changedTarget = (): ?HTMLElement =>
-      document.getElementById('reposition-alt-target');
-
-    this.setState({ changedTarget });
-  };
-
   render() {
-    const { changeProps, id, inputTrigger, targetFunction, ...rest } =
+    const { displayArrow, id, inputTrigger, ...rest } =
       this.props;
     let target = null;
 
@@ -129,38 +107,27 @@ class PopoverContainer extends Component<Props, State> {
       </div>
     );
 
-    if (targetFunction != null) {
-      target = targetFunction;
-    } else if (this.state.changedTarget) {
-      target = this.state.changedTarget;
-    } else if (inputTrigger) {
+    if (inputTrigger) {
       target = inputField;
     } else {
       target = openButton;
     }
 
-    const renderTarget: ?Function = (): ?HTMLElement =>
-      document.getElementById('popover-container');
-
     return (
       <div id="popover-container">
-        {typeof target === 'function' ? openButton : null}
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkPopover
-          closeButtonText="Close"
+          closeButtonLabel="Close"
           id={`my-popover-${id}`}
           isOpen={this.state.isOpen}
           label="My popover"
+          labelAsTitle
           onClose={this.closePopover}
-          renderTarget={renderTarget}
           target={target}
+          showArrow={displayArrow}
           {...rest}
         >
           <Paragraph>My popover content.</Paragraph>
           <Paragraph>Some more popover content.</Paragraph>
-          {changeProps ? (
-            <BpkButton onClick={this.changeTarget}>Change target</BpkButton>
-          ) : null}
         </BpkPopover>
       </div>
     );
@@ -177,26 +144,19 @@ const DefaultExample = () => (
   </Spacer>
 );
 
+const WithoutArrowExample = () => (
+  <Spacer>
+    <PopoverContainer id="my-popover-2" displayArrow={false} />
+  </Spacer>
+);
+
 const WithLabelAsTitleExample = () => (
   <Spacer>
     <PopoverContainer id="my-popover" labelAsTitle />
   </Spacer>
 );
 
-const AlongsideInputExample = () => (
-  <Spacer>
-    <PopoverContainer id="my-popover" labelAsTitle />
-    <input name="input" />
-  </Spacer>
-);
-
-const CloseProgrammaticallyExample = () => (
-  <Spacer>
-    <PopoverContainer id="my-popover" labelAsTitle closeProgrammatically />
-  </Spacer>
-);
-
-const WithLabelAsTitleAndTextCloseButtonExample = () => (
+const WithNoCloseButtonIconExample = () => (
   <Spacer>
     <PopoverContainer id="my-popover" labelAsTitle closeButtonIcon={false} />
   </Spacer>
@@ -208,68 +168,24 @@ const OnTheSideExample = () => (
   </Spacer>
 );
 
-const AttachToExternalExample = () => (
-  <Spacer>
-    <div id="attachElement">Pop over attached here</div>
-    <p>&nbsp; </p>
-    <PopoverContainer
-      id="my-popover"
-      targetFunction={() => document.getElementById('attachElement')}
-    />
-  </Spacer>
-);
-
-const NoRenderWhenNoExternalElementExample = () => (
-  <Spacer>
-    <div id="attachElement">Popover does not open</div>
-    <p>&nbsp; </p>
-    <PopoverContainer
-      id="my-popover"
-      targetFunction={() => document.getElementById('doesNotExist')}
-    />
-  </Spacer>
-);
-
-const RepositioningExample = () => (
-  // This story demonstrates the popover repositioning itself when props change (including children).
-  <Spacer>
-    <Paragraph id="reposition-alt-target" style={{ float: 'right' }}>
-      Different target
-    </Paragraph>
-    <PopoverContainer id="my-popover" changeProps />
-  </Spacer>
-);
-
-const PopperModifiersExample = () => (
-  <Spacer>
-    <PopoverContainer
-      id="my-popover"
-      popperModifiers={[
-        {
-          name: 'flip',
-          options: { enabled: false },
-        },
-      ]}
-    />
-  </Spacer>
-);
-
 const InputTriggerExample = () => (
   <Spacer>
     <PopoverContainer id="my-popover-1" inputTrigger />
   </Spacer>
 );
 
+const WithActionButtonExample = () => (
+  <Spacer>
+    <PopoverContainer id="my-popover" actionText="Action" onAction={() => {}} />
+  </Spacer>
+);
+
 export {
   DefaultExample,
+  WithoutArrowExample,
   WithLabelAsTitleExample,
-  AlongsideInputExample,
-  CloseProgrammaticallyExample,
-  WithLabelAsTitleAndTextCloseButtonExample,
+  WithNoCloseButtonIconExample,
   OnTheSideExample,
-  AttachToExternalExample,
-  NoRenderWhenNoExternalElementExample,
-  RepositioningExample,
-  PopperModifiersExample,
   InputTriggerExample,
+  WithActionButtonExample,
 };

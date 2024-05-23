@@ -55,10 +55,7 @@ class App extends Component {
           onClose={this.closePopover}
           isOpen={this.state.isOpen}
           label="My popover"
-          closeButtonText="Close"
-          renderTarget={() =>
-            document.getElementById('popover-container')
-          }
+          closeButtonLabel="Close"
           closeButtonProps={{
             tabIndex: 0,
           }}

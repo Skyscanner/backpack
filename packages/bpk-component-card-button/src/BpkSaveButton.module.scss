@@ -51,80 +51,74 @@
   width: tokens.bpk-spacing-xxl();
   height: tokens.bpk-spacing-xxl();
   padding: tokens.bpk-spacing-md();
+  border: 0;
   border-radius: 50%;
   background-color: transparent;
-
-  @include utils.bpk-hover {
-    background-color: transparent;
-  }
-
-  &:active {
-    background-color: transparent;
-  }
 
   &__icon {
     position: absolute;
     top: 50%;
     left: 50%;
+    display: flex;
     transform: translate(-50%, -50%);
-    color: tokens.$bpk-text-on-light-day;
-
-    @include utils.bpk-hover {
-      color: tokens.$bpk-text-on-light-day;
-    }
   }
 
   &__heartOutlineIcon {
     z-index: 1;
     opacity: 1;
+    composes: bpk-save-button__icon;
 
-    &--show {
+    &[data-show='true'] {
       @include utils.bpk-hover {
         transition: opacity tokens.$bpk-duration-sm ease-in-out;
         opacity: 0;
       }
     }
 
-    &--hide {
+    &[data-show='false'] {
       opacity: 0;
-    }
-
-    &--onDark {
-      color: tokens.$bpk-text-on-dark-day;
     }
   }
 
   &__heartIcon {
     z-index: 2;
-    color: tokens.$bpk-core-accent-day;
     opacity: 0;
+    composes: bpk-save-button__icon;
 
-    &--toggle {
-      animation: heart-beat 1s 0s 1 ease-out;
-      animation-fill-mode: forwards;
-    }
-
-    &--show {
+    &[data-show='true'] {
       opacity: 1;
-
-      @include utils.bpk-hover {
-        color: tokens.$bpk-core-accent-day;
-      }
     }
 
-    &--hide {
+    &[data-show='false'] {
       @include utils.bpk-hover {
         transition: opacity tokens.$bpk-duration-sm ease-in-out;
-        color: tokens.$bpk-text-on-light-day;
         opacity: 1;
       }
     }
 
+    &--clicked {
+      animation: heart-beat 1s 0s 1 ease-out;
+      animation-fill-mode: forwards;
+    }
+
     &--onDark {
-      color: tokens.$bpk-text-on-dark-day;
+      fill: tokens.$bpk-text-on-dark-day;
 
       @include utils.bpk-hover {
-        color: tokens.$bpk-text-on-dark-day;
+        fill: tokens.$bpk-text-on-dark-day;
+      }
+    }
+
+    &--default,
+    &--contained {
+      fill: tokens.$bpk-core-accent-day;
+
+      @include utils.bpk-hover {
+        fill: tokens.$bpk-text-on-light-day;
+
+        &[data-show='true'] {
+          fill: tokens.$bpk-core-accent-day;
+        }
       }
     }
   }
@@ -137,13 +131,5 @@
 
   &__contained {
     background-color: tokens.$bpk-private-card-button-contained-color;
-
-    @include utils.bpk-hover {
-      background-color: tokens.$bpk-private-card-button-contained-color;
-    }
-
-    &:active {
-      background-color: tokens.$bpk-private-card-button-contained-color;
-    }
   }
 }

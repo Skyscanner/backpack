@@ -5,15 +5,15 @@ exports[`BpkFloatingNotification should render correctly 1`] = `
   <div
     class="bpk-floating-notification bpk-floating-notification--appear bpk-floating-notification--appear-active"
   >
-    <p
-      class="bpk-text bpk-text--body-default"
+    <span
+      class="bpk-floating-notification__text"
     >
-      <span
-        class="bpk-floating-notification__text"
+      <p
+        class="bpk-text bpk-text--body-default"
       >
         Saved
-      </span>
-    </p>
+      </p>
+    </span>
     <div
       aria-hidden="true"
       aria-live="polite"
@@ -30,15 +30,15 @@ exports[`BpkFloatingNotification should render correctly with CTA text 1`] = `
   <div
     class="bpk-floating-notification bpk-floating-notification--appear bpk-floating-notification--appear-active"
   >
-    <p
-      class="bpk-text bpk-text--body-default"
+    <span
+      class="bpk-floating-notification__text"
     >
-      <span
-        class="bpk-floating-notification__text"
+      <p
+        class="bpk-text bpk-text--body-default"
       >
         Saved
-      </span>
-    </p>
+      </p>
+    </span>
     <div
       aria-hidden="true"
       aria-live="polite"
@@ -46,12 +46,16 @@ exports[`BpkFloatingNotification should render correctly with CTA text 1`] = `
     >
       Saved
     </div>
-    <button
-      class="bpk-button bpk-button--link-on-dark"
-      type="button"
+    <div
+      class="bpk-floating-notification__cta"
     >
-      View
-    </button>
+      <button
+        class="bpk-button bpk-button--link-on-dark"
+        type="button"
+      >
+        View
+      </button>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -76,15 +80,15 @@ exports[`BpkFloatingNotification should render correctly with icon prop 1`] = `
         />
       </svg>
     </div>
-    <p
-      class="bpk-text bpk-text--body-default"
+    <span
+      class="bpk-floating-notification__text"
     >
-      <span
-        class="bpk-floating-notification__text"
+      <p
+        class="bpk-text bpk-text--body-default"
       >
         Saved
-      </span>
-    </p>
+      </p>
+    </span>
     <div
       aria-hidden="true"
       aria-live="polite"
@@ -102,15 +106,15 @@ exports[`BpkFloatingNotification should support arbitrary props 1`] = `
     class="bpk-floating-notification bpk-floating-notification--appear bpk-floating-notification--appear-active"
     testid="123"
   >
-    <p
-      class="bpk-text bpk-text--body-default"
+    <span
+      class="bpk-floating-notification__text"
     >
-      <span
-        class="bpk-floating-notification__text"
+      <p
+        class="bpk-text bpk-text--body-default"
       >
         Saved
-      </span>
-    </p>
+      </p>
+    </span>
     <div
       aria-hidden="true"
       aria-live="polite"
@@ -127,15 +131,15 @@ exports[`BpkFloatingNotification should support custom class names 1`] = `
   <div
     class="bpk-floating-notification custom-classname bpk-floating-notification--appear bpk-floating-notification--appear-active"
   >
-    <p
-      class="bpk-text bpk-text--body-default"
+    <span
+      class="bpk-floating-notification__text"
     >
-      <span
-        class="bpk-floating-notification__text"
+      <p
+        class="bpk-text bpk-text--body-default"
       >
         Saved
-      </span>
-    </p>
+      </p>
+    </span>
     <div
       aria-hidden="true"
       aria-live="polite"

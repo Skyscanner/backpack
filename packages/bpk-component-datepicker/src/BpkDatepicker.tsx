@@ -32,7 +32,6 @@ import {
 } from '../../bpk-component-calendar';
 import BpkInput, { withOpenEvents } from '../../bpk-component-input';
 import BpkModal from '../../bpk-component-modal';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPopover from '../../bpk-component-popover';
 
 import type {
@@ -372,12 +371,10 @@ class BpkDatepicker extends Component<Props, State> {
             <BpkPopover
               id={`${id}-popover`}
               target={input}
-              renderTarget={renderTarget}
               onClose={this.props.onClose || this.onClose}
               isOpen={this.state.isOpen}
               label={title}
               closeButtonText={closeButtonText}
-              tabIndex={0}
               {...rest}
             >
               <Calendar {...calendarProps} fixedWidth={fixedWidth} />

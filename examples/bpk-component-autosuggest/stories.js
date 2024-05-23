@@ -18,17 +18,20 @@
 
 import { ArgsTable } from '@storybook/addon-docs';
 import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
+import { userEvent, within } from '@storybook/testing-library';
 
 import BpkAutosuggest from '../../packages/bpk-component-autosuggest/src/BpkAutosuggest';
 import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
 
 import AutosuggestExample from './examples';
 
+import type { StoryObj } from '@storybook/react';
+
 export default {
   title: 'bpk-component-autosuggest',
   component: BpkAutosuggest,
   subcomponents: {
-    BpkAutosuggestSuggestion
+    BpkAutosuggestSuggestion,
   },
   parameters: {
     docs: {
@@ -69,7 +72,7 @@ export const Hanzi = () => (
 );
 
 export const All = () => (
-  <AutosuggestExample includeSubheading includeTertiaryLabel includeIcon />
+  <AutosuggestExample includeSubheading includeTertiaryLabel includeIcon alwaysRenderSuggestions />
 );
 
 export const SmallInput = () => (
@@ -77,3 +80,26 @@ export const SmallInput = () => (
     <AutosuggestExample />
   </div>
 );
+
+type Story = StoryObj<typeof AutosuggestExample>;
+
+export const VisualTest: Story = {
+  render: () => <AutosuggestExample alwaysRenderSuggestions />,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    
+    const input = canvas.getByPlaceholderText('Enter an office name'); // Find the input field
+    input.focus(); // Explicitly set focus using the DOM's focus method
+    await userEvent.type(input, 'Lon', { delay: 100 }); // Simulate typing into the input field
+
+    await canvas.findByText('London (Any)'); // Wait for the suggestions to appear
+    const dropdown = canvas.getByText('London (Any)'); // Find the dropdown field
+
+    dropdown.classList.add('percy-selector-placeholder'); // Add placeholder to trigger Percy snapshot
+  },
+  parameters: {
+    percy: {
+      waitForSelector: '.percy-selector-placeholder', // Wait for the input to have this class before taking the snapshot
+    }
+  }
+};

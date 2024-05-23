@@ -56,6 +56,7 @@
   }
 
   &__flare {
+    display: flex;
     height: tokens.bpk-spacing-lg() * 10;
 
     // We inherit radius from the outer modal so they match and align correctly to the container.

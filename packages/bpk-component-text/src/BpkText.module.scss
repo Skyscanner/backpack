@@ -128,4 +128,16 @@
   &--hero-5 {
     @include typography.bpk-hero-5;
   }
+
+  &--editorial-1 {
+    @include typography.bpk-editorial-1;
+  }
+
+  &--editorial-2 {
+    @include typography.bpk-editorial-2;
+  }
+
+  &--editorial-3 {
+    @include typography.bpk-editorial-3;
+  }
 }

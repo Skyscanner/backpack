@@ -139,15 +139,22 @@
             "allowedFor": [
               "ArrowLeftIcon", // allowed for icon to continue supporting RTL with css
               "ArrowRightIcon", // allowed for icon to continue supporting RTL with css
+              "BpkNavigationBar", // Major release required to resolve this impacting consumers risk is quite large.
               "BpkSelectableChip", // allowed for prop that is part of the classnames applied to the BpkSelectableChip
+              "ComposedComponent", // allowed for wrapper needed for withRTLSupport HOC. Possibly not needed after icon refactor.
               "CornerRadius", // allowed for a prop that is passed down in the BpkContentBubble as partof BpkFlare to a generated element and necessary to continue supporting svgClassName
               "DateContainer", // allowed for a prop that is passed down in the BpkCalendarWeek to the DateContainer
+              "FloatingArrow", // allowed for a prop that is passed down to a generated element
               "InnerContainer", // allowed for a prop that is passed down in the BpkMobileScrollContainer to a generated element
               "ListElements",  // allowed for a prop that is passed down in BpkList to the conditional list elements
               "Pointer", // allowed for a prop that is passed down in the BpkFlareBar to a generated element and necessary to continue supporting svgClassName
               "ScrimBpkModalInner", // allowed for a prop that is passed in BpkModal down to a scrim wrapped BpkModalInner component.
-              "Slider", // allowed for a prop that is passed in BpkSlider down to the react-slider component.
-              "TransitionComponent" // allowed for a prop that is passed in BpkCalendarGridTransition down to a "transition" component prop.
+              "TransitionComponent", // allowed for a prop that is passed in BpkCalendarGridTransition down to a "transition" component prop.
+              "WithOpenEventsInputComponent", // allowed for a prop as consumer className is passed in
+              "Slider.Root", // allowed for styling to be passed to radix-ui component
+              "Slider.Track", // allowed for styling to be passed to radix-ui component
+              "Slider.Range", // allowed for styling to be passed to radix-ui component
+              "Slider.Thumb" // allowed for styling to be passed to radix-ui component
             ]
           }
         ]

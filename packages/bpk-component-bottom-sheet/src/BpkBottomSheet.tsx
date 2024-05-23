@@ -31,9 +31,8 @@ import STYLES from './BpkBottomSheet.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
+interface CommonProps {
   actionText?: string;
-  ariaLabelledby: string;
   children: ReactNode;
   closeLabel?: string;
   closeOnEscPressed?: boolean;
@@ -51,9 +50,10 @@ export type Props = {
   isOpen: boolean;
 }
 
+export type Props = CommonProps & ({ ariaLabelledby: string } | { ariaLabel: string; });
+
 const BpkBottomSheet = ({
   actionText = '',
-  ariaLabelledby,
   children,
   closeLabel = '',
   closeOnEscPressed = false,
@@ -63,7 +63,8 @@ const BpkBottomSheet = ({
   onAction = () => null,
   onClose,
   title = '',
-  wide = false
+  wide = false,
+  ...ariaProps
 }: Props) => {
   const [exiting, setExiting] = useState(false);
 
@@ -92,7 +93,7 @@ const BpkBottomSheet = ({
   return <BpkBreakpoint query={BREAKPOINTS.ABOVE_MOBILE}>
     {(isAboveMobile: boolean) =>
       <BpkDialogWrapper
-        ariaLabelledby={ariaLabelledby}
+        {...ariaProps}
         dialogClassName={dialogClassName}
         id={id}
         isOpen={isOpen}

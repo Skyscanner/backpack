@@ -16,9 +16,11 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import { useContext, type ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
+
+import { CardContext } from './CardContext';
 
 import STYLES from './BpkCard.module.scss';
 
@@ -43,10 +45,12 @@ const BpkCard = ({
   padded = true,
   ...rest
 }: Props) => {
+  const cardContext = useContext(CardContext);
   const classNames = getClassName(
     'bpk-card',
     atomic && !href && 'bpk-card--atomic-button',
     padded && 'bpk-card--padded',
+    !cardContext.elevated && 'bpk-card--no-elevation',
     className,
   );
 

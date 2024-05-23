@@ -27,6 +27,8 @@ import {
   HeroStylesExample,
   BodyStylesExample,
   LabelStylesExample,
+  LarkenStylesExample,
+  LarkenFallbackStylesExample,
   MixedExample,
 } from './examples';
 
@@ -45,9 +47,11 @@ export const HeroStyles = HeroStylesExample;
 export const HeadingStyles = HeadingStylesExample;
 export const BodyStyles = BodyStylesExample;
 export const LabelStyles = LabelStylesExample;
+export const LarkenStyles = LarkenStylesExample;
+export const LarkenFallbackStyles = LarkenFallbackStylesExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

@@ -7,7 +7,7 @@ exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
   >
     <button
       aria-controls="nudger"
-      class="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
+      class="bpk-button bpk-button--icon-only bpk-button--secondary"
       title="Decrease"
       type="button"
     >
@@ -16,7 +16,6 @@ exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="bpk-nudger__icon"
           height="1rem"
           viewBox="0 0 24 24"
           width="1rem"
@@ -33,13 +32,12 @@ exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
       class="bpk-nudger__input"
       id="nudger"
       readonly=""
-      tabindex="-1"
       type="text"
       value="premium"
     />
     <button
       aria-controls="nudger"
-      class="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
+      class="bpk-button bpk-button--icon-only bpk-button--secondary"
       title="Increase"
       type="button"
     >
@@ -48,7 +46,6 @@ exports[`BpkNudger should render as a configurable nudger correctly 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="bpk-nudger__icon"
           height="1rem"
           viewBox="0 0 24 24"
           width="1rem"
@@ -74,7 +71,7 @@ exports[`BpkNudger should render as an on dark nudger correctly 1`] = `
     >
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary-on-dark bpk-nudger__button"
+        class="bpk-button bpk-button--icon-only bpk-button--secondary-on-dark"
         title="Decrease"
         type="button"
       >
@@ -83,7 +80,6 @@ exports[`BpkNudger should render as an on dark nudger correctly 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="bpk-nudger__icon"
             height="1rem"
             viewBox="0 0 24 24"
             width="1rem"
@@ -100,13 +96,12 @@ exports[`BpkNudger should render as an on dark nudger correctly 1`] = `
         class="bpk-nudger__input bpk-nudger__input--numeric bpk-nudger__input--secondary-on-dark"
         id="nudger"
         readonly=""
-        tabindex="-1"
         type="text"
         value="2"
       />
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary-on-dark bpk-nudger__button"
+        class="bpk-button bpk-button--icon-only bpk-button--secondary-on-dark"
         title="Increase"
         type="button"
       >
@@ -115,7 +110,6 @@ exports[`BpkNudger should render as an on dark nudger correctly 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="bpk-nudger__icon"
             height="1rem"
             viewBox="0 0 24 24"
             width="1rem"
@@ -142,7 +136,7 @@ exports[`BpkNudger should render correctly 1`] = `
     >
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
+        class="bpk-button bpk-button--icon-only bpk-button--secondary"
         title="Decrease"
         type="button"
       >
@@ -151,7 +145,6 @@ exports[`BpkNudger should render correctly 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="bpk-nudger__icon"
             height="1rem"
             viewBox="0 0 24 24"
             width="1rem"
@@ -168,13 +161,12 @@ exports[`BpkNudger should render correctly 1`] = `
         class="bpk-nudger__input bpk-nudger__input--numeric"
         id="nudger"
         readonly=""
-        tabindex="-1"
         type="text"
         value="2"
       />
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
+        class="bpk-button bpk-button--icon-only bpk-button--secondary"
         title="Increase"
         type="button"
       >
@@ -183,7 +175,6 @@ exports[`BpkNudger should render correctly 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="bpk-nudger__icon"
             height="1rem"
             viewBox="0 0 24 24"
             width="1rem"
@@ -210,7 +201,7 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
     >
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
+        class="bpk-button bpk-button--icon-only bpk-button--secondary"
         disabled=""
         title="Decrease"
         type="button"
@@ -220,7 +211,6 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="bpk-nudger__icon bpk-nudger__icon--disabled"
             height="1rem"
             viewBox="0 0 24 24"
             width="1rem"
@@ -237,13 +227,12 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
         class="bpk-nudger__input bpk-nudger__input--numeric"
         id="nudger"
         readonly=""
-        tabindex="-1"
         type="text"
         value="0"
       />
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
+        class="bpk-button bpk-button--icon-only bpk-button--secondary"
         title="Increase"
         type="button"
       >
@@ -252,7 +241,6 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="bpk-nudger__icon"
             height="1rem"
             viewBox="0 0 24 24"
             width="1rem"
@@ -279,7 +267,7 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
     >
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
+        class="bpk-button bpk-button--icon-only bpk-button--secondary"
         title="Decrease"
         type="button"
       >
@@ -288,7 +276,6 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="bpk-nudger__icon"
             height="1rem"
             viewBox="0 0 24 24"
             width="1rem"
@@ -305,13 +292,12 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
         class="bpk-nudger__input bpk-nudger__input--numeric"
         id="nudger"
         readonly=""
-        tabindex="-1"
         type="text"
         value="9"
       />
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
+        class="bpk-button bpk-button--icon-only bpk-button--secondary"
         disabled=""
         title="Increase"
         type="button"
@@ -321,7 +307,6 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="bpk-nudger__icon bpk-nudger__icon--disabled"
             height="1rem"
             viewBox="0 0 24 24"
             width="1rem"
@@ -348,7 +333,7 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
     >
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
+        class="bpk-button bpk-button--icon-only bpk-button--secondary"
         disabled=""
         title="Decrease"
         type="button"
@@ -358,7 +343,6 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="bpk-nudger__icon bpk-nudger__icon--disabled"
             height="1rem"
             viewBox="0 0 24 24"
             width="1rem"
@@ -375,13 +359,12 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
         class="bpk-nudger__input bpk-nudger__input--numeric"
         id="nudger"
         readonly=""
-        tabindex="-1"
         type="text"
         value="1"
       />
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
+        class="bpk-button bpk-button--icon-only bpk-button--secondary"
         title="Increase"
         type="button"
       >
@@ -390,7 +373,6 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="bpk-nudger__icon"
             height="1rem"
             viewBox="0 0 24 24"
             width="1rem"
@@ -417,7 +399,7 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
     >
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
+        class="bpk-button bpk-button--icon-only bpk-button--secondary"
         title="Decrease"
         type="button"
       >
@@ -426,7 +408,6 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="bpk-nudger__icon"
             height="1rem"
             viewBox="0 0 24 24"
             width="1rem"
@@ -443,13 +424,12 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
         class="bpk-nudger__input bpk-nudger__input--numeric"
         id="nudger"
         readonly=""
-        tabindex="-1"
         type="text"
         value="10"
       />
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary bpk-nudger__button"
+        class="bpk-button bpk-button--icon-only bpk-button--secondary"
         disabled=""
         title="Increase"
         type="button"
@@ -459,7 +439,6 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="bpk-nudger__icon bpk-nudger__icon--disabled"
             height="1rem"
             viewBox="0 0 24 24"
             width="1rem"

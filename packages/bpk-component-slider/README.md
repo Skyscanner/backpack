@@ -18,8 +18,8 @@ const Slider = () => (
     max={100}
     value={[20, 80]}
     step={10}
-    className={'my-class-name'}
     onChange={(value) => alert('Actual value: ' + value)}
+    ariaLabel={['min', 'max']}
   />
 );
 

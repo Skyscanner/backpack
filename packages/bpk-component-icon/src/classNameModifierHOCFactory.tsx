@@ -35,8 +35,6 @@ export default (displayName: string, classNamesToAdd: string[] = []) =>
         ? classNames.concat(classNamesToAdd)
         : classNames;
 
-      // TODO: className to be removed
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       return <ComposedComponent className={classNames.join(' ')} {...rest} />;
     };
 
