@@ -16,12 +16,17 @@
  * limitations under the License.
  */
 
-import { ArgsTable } from '@storybook/addon-docs';
-import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
+import { ArgTypes } from '@storybook/addon-docs';
+import { Title, Markdown } from '@storybook/blocks';
 
 import BpkSwitch from '../../packages/bpk-component-switch/src/BpkSwitch';
 
-import { DefaultExample, SmallExample, MixedExample, ReducedSpaceExample } from './examples';
+import {
+  DefaultExample,
+  SmallExample,
+  MixedExample,
+  ReducedSpaceExample,
+} from './examples';
 
 export default {
   title: 'bpk-component-switch',
@@ -31,14 +36,12 @@ export default {
       page: () => (
         <>
           <Title />
-          <ArgsTable of={PRIMARY_STORY} />
+          <ArgTypes />
           <Markdown>
-            {
-              `This component uses a hidden [\`input type=checkbox\`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox), so it supports all the same properties as it (for example \`checked\`).`
-            }
+            {`This component uses a hidden [\`input type=checkbox\`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox), so it supports all the same properties as it (for example \`checked\`).`}
           </Markdown>
         </>
-      )
+      ),
     },
   },
 };
@@ -50,5 +53,5 @@ export const ReducedSpace = ReducedSpaceExample;
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

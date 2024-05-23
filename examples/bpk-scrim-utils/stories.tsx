@@ -16,16 +16,15 @@
  * limitations under the License.
  */
 
-
-import { ArgsTable } from '@storybook/addon-docs';
-import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
+import { ArgTypes } from '@storybook/addon-docs';
+import { Title, Markdown } from '@storybook/blocks';
 
 import BpkScrim from '../../packages/bpk-scrim-utils/src/BpkScrim';
 
 import {
   WithPortalScrimExample,
-  WithCustomElementAndPortalScrimExample
- } from './examples';
+  WithCustomElementAndPortalScrimExample,
+} from './examples';
 import { withScrimMock, withScrimmedPortalMock } from './stories.utils';
 
 export default {
@@ -37,16 +36,17 @@ export default {
       page: () => (
         <>
           <Title />
-          <ArgsTable of={PRIMARY_STORY} />
+          <ArgTypes />
           <Markdown>
-          {`\`withScrim\` sends all props it receives down to the component, except \`getApplicationElement\` and \`padded\`. It also adds some props that are used for a11y and closing the modal:
+            {`\`withScrim\` sends all props it receives down to the component, except \`getApplicationElement\` and \`padded\`. It also adds some props that are used for a11y and closing the modal:
           \`dialogRef\` should be set as the ref on the visible container on top of the scrim; it is used to set focus, \`onClose\` , \`isIphone\``}
           </Markdown>
         </>
-      )
-    }
-  }
+      ),
+    },
+  },
 };
 
 export const Example = WithPortalScrimExample;
-export const ExampleWithCustomRenderTarget = WithCustomElementAndPortalScrimExample;
+export const ExampleWithCustomRenderTarget =
+  WithCustomElementAndPortalScrimExample;
