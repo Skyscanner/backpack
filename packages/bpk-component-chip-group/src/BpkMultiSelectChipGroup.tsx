@@ -219,13 +219,12 @@ const WrapChipGroup = ({
     chips={chips}
     label={label} />;
 
-const BpkMultiSelectChipGroup = (props: ChipGroupProps) => {
-  const containerClassnames = getClassName('bpk-chip-group-container')
-
-  return <div className={containerClassnames}>
+const BpkMultiSelectChipGroup = (props: ChipGroupProps) => (
+  <div className={getClassName('bpk-chip-group-container')}>
     {props.type === CHIP_GROUP_TYPES.rail ? <RailChipGroup {...props} /> : <WrapChipGroup {...props} />}
   </div>
-}
+);
+
 
 export const BpkMultiSelectChipGroupState = ({ chips, ...rest }: ChipGroupProps) => {
   const [selectedChips, setSelectedChips] = useState(chips.map(c => Boolean(c.selected)));
@@ -238,7 +237,7 @@ export const BpkMultiSelectChipGroupState = ({ chips, ...rest }: ChipGroupProps)
         chip.onClick(selected, selectedIndex);
       }
 
-      const nextSelectedChips = [...selectedChips]
+      const nextSelectedChips = [...selectedChips];
       nextSelectedChips[selectedIndex] = selected;
       setSelectedChips(nextSelectedChips);
     },
