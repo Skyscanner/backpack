@@ -17,7 +17,7 @@
  */
 
 import BpkMultiSelectChipGroup, {
-  type ChipGroupProps,
+  type MultiSelectChipGroupProps,
   BpkMultiSelectChipGroupState,
   CHIP_GROUP_TYPES,
   type ChipItem,
@@ -31,7 +31,7 @@ import BpkSingleSelectChipGroup, {
 } from './src/BpkSingleSelectChipGroup';
 
 export type {
-  ChipGroupProps,
+  MultiSelectChipGroupProps,
   SingleSelectProps,
   SingleSelectStateProps,
   ChipItem,

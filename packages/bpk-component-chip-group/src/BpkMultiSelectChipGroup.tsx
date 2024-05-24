@@ -69,7 +69,7 @@ export type ChipItem = {
   hidden?: boolean;
 } & SingleSelectChipItem;
 
-export type CommonProps = {
+type CommonProps = {
   label?: string;
   ariaLabel?: string;
   chipStyle?: ChipStyleType;
@@ -77,18 +77,28 @@ export type CommonProps = {
   ariaMultiselectable?: boolean;
 };
 
-export type RailChipGroupProps = {
+type RailChipGroupProps = {
   stickyChip?: ChipItem;
   leadingNudgerLabel: string;
   trailingNudgerLabel: string;
 } & CommonProps;
 
-export type WrapChipGroupProps = {
+type WrapChipGroupProps = {
 } & CommonProps;
 
-export type ChipGroupProps = (RailChipGroupProps & { type: typeof CHIP_GROUP_TYPES.rail } | WrapChipGroupProps & { type: typeof CHIP_GROUP_TYPES.wrap });
+export type MultiSelectChipGroupProps = (RailChipGroupProps & { type: typeof CHIP_GROUP_TYPES.rail } | WrapChipGroupProps & { type: typeof CHIP_GROUP_TYPES.wrap });
 
-const Chip = ({ ariaMultiselectable, chipIndex, chipItem, chipStyle }: { chipIndex: number, chipItem: ChipItem, chipStyle: ChipStyleType, ariaMultiselectable: boolean }) => {
+const Chip = (
+  { ariaMultiselectable,
+    chipIndex,
+    chipItem,
+    chipStyle }:
+    {
+      chipIndex: number,
+      chipItem: ChipItem,
+      chipStyle: ChipStyleType,
+      ariaMultiselectable: boolean,
+    }) => {
   const {
     accessibilityLabel,
     component = CHIP_COMPONENT.selectable,
@@ -133,7 +143,7 @@ const ChipGroupContent = (
       ariaLabel?: string,
       label?: string,
       chips: ChipItem[],
-      chipStyle: ChipStyleType
+      chipStyle: ChipStyleType,
     }) => (
   <fieldset
     className={chipGroupClassNames}
@@ -219,14 +229,14 @@ const WrapChipGroup = ({
     chips={chips}
     label={label} />;
 
-const BpkMultiSelectChipGroup = (props: ChipGroupProps) => (
+const BpkMultiSelectChipGroup = (props: MultiSelectChipGroupProps) => (
   <div className={getClassName('bpk-chip-group-container')}>
     {props.type === CHIP_GROUP_TYPES.rail ? <RailChipGroup {...props} /> : <WrapChipGroup {...props} />}
   </div>
 );
 
 
-export const BpkMultiSelectChipGroupState = ({ chips, ...rest }: ChipGroupProps) => {
+export const BpkMultiSelectChipGroupState = ({ chips, ...rest }: MultiSelectChipGroupProps) => {
   const [selectedChips, setSelectedChips] = useState(chips.map(c => Boolean(c.selected)));
 
   const statefulChips = chips.map((chip, index) => chip && ({
