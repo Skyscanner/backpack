@@ -73,13 +73,9 @@ const Header = ({
           <Heading>{title}</Heading>
         </div>
         <BpkCloseButton
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-          className={getClassName(
-            `bpk-modal__close-button-style--${modalStyle}`,
-          )}
           label={closeLabel}
           onClick={onClose}
+          onDark={modalStyle === MODAL_STYLING.surfaceContrast}
         />
       </div>
     );
@@ -92,9 +88,7 @@ const Header = ({
       ].join(' ')}
     >
       <BpkCloseButton
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={getClassName(`bpk-modal__close-button-style--${modalStyle}`)}
+        onDark={modalStyle === MODAL_STYLING.surfaceContrast}
         label={closeLabel}
         onClick={onClose}
       />

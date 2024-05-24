@@ -15,8 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import PropTypes from 'prop-types';
+import { type ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -24,33 +23,19 @@ import STYLES from './BpkDescriptionList.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const buildComponent = (TagName, baseClassName) => {
-  const Component = ({ children, className, ...rest }) => {
-    const classNames = [getClassName(baseClassName)];
-
-    if (className) {
-      classNames.push(className);
-    }
-
-    return (
-      // TODO: className to be removed
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      <TagName className={classNames.join(' ')} {...rest}>
-        {children}
-      </TagName>
-    );
-  };
-
-  Component.propTypes = {
-    children: PropTypes.node.isRequired,
-    className: PropTypes.string,
-  };
-
-  Component.defaultProps = {
-    className: null,
-  };
-
-  return Component;
+type Props = {
+  children: ReactNode | string;
+  className?: string;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
-export default buildComponent;
+export default ({ children, className, ...rest }: Props) => (
+  <dl
+    className={[getClassName('bpk-description-list'), className]
+      .filter((x) => x) // inline drops the className if undefined
+      .join(' ')}
+    {...rest}
+  >
+    {children}
+  </dl>
+);
