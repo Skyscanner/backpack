@@ -21,17 +21,58 @@ import { useState } from 'react';
 
 import { CHIP_TYPES } from '../../packages/bpk-component-chip';
 import BpkMultiSelectChipGroup, {
-  BpkMultiSelectChipGroupState,
-  BpkSingleSelectChipGroupState,
+  BpkSingleSelectChipGroup,
   CHIP_GROUP_TYPES,
   CHIP_COMPONENT,
 } from '../../packages/bpk-component-chip-group';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text/index';
 import { cssModules } from '../../packages/bpk-react-utils/index';
 
+import type {
+  MultiSelectProps,
+  ChipItem,
+} from '../../packages/bpk-component-chip-group';
+
 import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
+
+const BpkMultiSelectChipGroupState = ({ chips, ...rest }: MultiSelectProps) => {
+  const [selectedChips, setSelectedChips] = useState(chips.map(c => Boolean(c.selected)));
+
+  const statefulChips = chips.map((chip, index) => chip && ({
+    ...chip,
+    selected: selectedChips[index],
+    onClick: (selected: boolean, selectedIndex: number) => {
+      if (chip.onClick) {
+        chip.onClick(selected, selectedIndex);
+      }
+
+      const nextSelectedChips = [...selectedChips];
+      nextSelectedChips[selectedIndex] = selected;
+      setSelectedChips(nextSelectedChips);
+    },
+  }));
+
+  return <BpkMultiSelectChipGroup chips={statefulChips} {...rest} />;
+};
+
+const BpkSingleSelectChipGroupState = ({
+                                         onItemClick,
+                                         selectedIndex: initiallySelectedIndex = -1,
+                                         ...rest
+                                       }: SingleSelectStateProps) => {
+  const [selectedIndex, setSelectedIndex] = useState(initiallySelectedIndex);
+
+  const onItemClickWithState = (item: ChipItem, selected: boolean, index: number) => {
+    if (onItemClick) {
+      onItemClick(item, selected, index);
+    }
+    setSelectedIndex(selected ? index : -1);
+  };
+
+  return <BpkSingleSelectChipGroup selectedIndex={selectedIndex} onItemClick={onItemClickWithState} {...rest} />;
+};
 
 const chips = [
   {
@@ -79,7 +120,7 @@ export const BpkChipGroupWrapping = () => (
     <BpkMultiSelectChipGroupState
       type={CHIP_GROUP_TYPES.wrap}
       chips={chips}
-      ariaLabel="Select cities"
+      ariaLabel='Select cities'
     />
   </div>
 );
@@ -89,8 +130,8 @@ export const BpkSingleChipGroupWrapping = () => (
     <BpkSingleSelectChipGroupState
       type={CHIP_GROUP_TYPES.wrap}
       chips={chips}
-      initiallySelectedIndex={0}
-      ariaLabel="Select a city"
+      selectedIndex={0}
+      ariaLabel='Select a city'
     />
   </div>
 );
@@ -101,9 +142,9 @@ export const BpkChipGroupRail = () => (
     <BpkMultiSelectChipGroupState
       type={CHIP_GROUP_TYPES.rail}
       chips={chips}
-      ariaLabel="Select cities"
-      leadingNudgerLabel="Scroll back"
-      trailingNudgerLabel="Scroll forward"
+      ariaLabel='Select cities'
+      leadingNudgerLabel='Scroll back'
+      trailingNudgerLabel='Scroll forward'
     />
   </div>
 );
@@ -112,7 +153,7 @@ export const BpkChipGroupRail = () => (
 export const BpkChipGroupSticky = () => {
   const stickyChip = {
     text: 'Sort & Filter',
-  }
+  };
 
   return (
     <div>
@@ -120,9 +161,9 @@ export const BpkChipGroupSticky = () => {
         type={CHIP_GROUP_TYPES.rail}
         chips={chips}
         stickyChip={stickyChip}
-        ariaLabel="Select cities"
-        leadingNudgerLabel="Scroll back"
-        trailingNudgerLabel="Scroll forward"
+        ariaLabel='Select cities'
+        leadingNudgerLabel='Scroll back'
+        trailingNudgerLabel='Scroll forward'
       />
     </div>
   );
@@ -131,7 +172,7 @@ export const BpkChipGroupSticky = () => {
 export const OnContrastChipGroup = () => {
   const stickyChip = {
     text: 'Sort & Filter',
-  }
+  };
 
   return (
     <div className={getClassName('bpk-chip-group-examples__contrast')}>
@@ -140,9 +181,9 @@ export const OnContrastChipGroup = () => {
         chips={chips}
         stickyChip={stickyChip}
         chipStyle={CHIP_TYPES.default}
-        ariaLabel="Select cities"
-        leadingNudgerLabel="Scroll back"
-        trailingNudgerLabel="Scroll forward"
+        ariaLabel='Select cities'
+        leadingNudgerLabel='Scroll back'
+        trailingNudgerLabel='Scroll forward'
       />
     </div>
   );
@@ -152,7 +193,7 @@ export const OnContrastChipGroup = () => {
 export const OnDarkChipGroup = () => {
   const stickyChip = {
     text: 'Sort & Filter',
-  }
+  };
 
   return (
     <div className={getClassName('bpk-chip-group-examples__dark')}>
@@ -161,9 +202,9 @@ export const OnDarkChipGroup = () => {
         chips={chips}
         stickyChip={stickyChip}
         chipStyle={CHIP_TYPES.onDark}
-        ariaLabel="Select cities"
-        leadingNudgerLabel="Scroll back"
-        trailingNudgerLabel="Scroll forward"
+        ariaLabel='Select cities'
+        leadingNudgerLabel='Scroll back'
+        trailingNudgerLabel='Scroll forward'
       />
     </div>
   );
@@ -172,7 +213,7 @@ export const OnDarkChipGroup = () => {
 export const OnImageChipGroup = () => {
   const stickyChip = {
     text: 'Sort & Filter',
-  }
+  };
 
   return (
     <div className={getClassName('bpk-chip-group-examples__image')}>
@@ -181,9 +222,9 @@ export const OnImageChipGroup = () => {
         chips={chips}
         stickyChip={stickyChip}
         chipStyle={CHIP_TYPES.onImage}
-        ariaLabel="Select cities"
-        leadingNudgerLabel="Scroll back"
-        trailingNudgerLabel="Scroll forward"
+        ariaLabel='Select cities'
+        leadingNudgerLabel='Scroll back'
+        trailingNudgerLabel='Scroll forward'
       />
     </div>
   );
@@ -196,9 +237,9 @@ export const BpkChipGroupWithLabel = () => (
       chips={chips}
       chipStyle={CHIP_TYPES.default}
       label='Filter'
-      ariaLabel="Select cities to filter by"
-      leadingNudgerLabel="Scroll back"
-      trailingNudgerLabel="Scroll forward"
+      ariaLabel='Select cities to filter by'
+      leadingNudgerLabel='Scroll back'
+      trailingNudgerLabel='Scroll forward'
     />
   </div>
 );
@@ -234,7 +275,7 @@ export const AllChipTypesGroup = () => {
     <BpkMultiSelectChipGroupState
       chips={allChips}
       type={CHIP_GROUP_TYPES.wrap}
-      ariaLabel="Select chips"
+      ariaLabel='Select chips'
     />
   );
 };
@@ -279,46 +320,46 @@ export const StateManagement = () => {
 
 export const MixedExample = () => (
   <div className={getClassName('bpk-chip-group-examples__mixed-container')}>
-    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName='h2'>
       Rail
     </BpkText>
     <BpkChipGroupRail />
-    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName='h2'>
       Rail with sticky chip
     </BpkText>
     <BpkChipGroupSticky />
-    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName='h2'>
       On Contrast
     </BpkText>
     <OnContrastChipGroup />
-    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName='h2'>
       On Dark
     </BpkText>
     <OnDarkChipGroup />
-    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName='h2'>
       On Image
     </BpkText>
     <OnImageChipGroup />
-    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName='h2'>
       With Label
     </BpkText>
     <BpkChipGroupWithLabel />
-    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName='h2'>
       Wrapped
     </BpkText>
     <BpkChipGroupWrapping />
-    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName='h2'>
       All chip types
     </BpkText>
     <AllChipTypesGroup />
-    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName='h2'>
       Single Select Group
     </BpkText>
     <BpkSingleChipGroupWrapping />
-    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName='h2'>
       State example
     </BpkText>
     <StateManagement />
     <br />
   </div>
-)
+);

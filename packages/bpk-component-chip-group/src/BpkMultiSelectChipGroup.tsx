@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 import type { ReactNode } from 'react';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import BpkSelectableChip, { BpkDismissibleChip, BpkIconChip, BpkDropdownChip, CHIP_TYPES } from '../../bpk-component-chip';
@@ -86,7 +86,7 @@ type RailChipGroupProps = {
 type WrapChipGroupProps = {
 } & CommonProps;
 
-export type MultiSelectChipGroupProps = (RailChipGroupProps & { type: typeof CHIP_GROUP_TYPES.rail } | WrapChipGroupProps & { type: typeof CHIP_GROUP_TYPES.wrap });
+export type MultiSelectProps = (RailChipGroupProps & { type: typeof CHIP_GROUP_TYPES.rail } | WrapChipGroupProps & { type: typeof CHIP_GROUP_TYPES.wrap });
 
 const Chip = (
   { ariaMultiselectable,
@@ -229,31 +229,10 @@ const WrapChipGroup = ({
     chips={chips}
     label={label} />;
 
-const BpkMultiSelectChipGroup = (props: MultiSelectChipGroupProps) => (
+const BpkMultiSelectChipGroup = (props: MultiSelectProps) => (
   <div className={getClassName('bpk-chip-group-container')}>
     {props.type === CHIP_GROUP_TYPES.rail ? <RailChipGroup {...props} /> : <WrapChipGroup {...props} />}
   </div>
 );
-
-
-export const BpkMultiSelectChipGroupState = ({ chips, ...rest }: MultiSelectChipGroupProps) => {
-  const [selectedChips, setSelectedChips] = useState(chips.map(c => Boolean(c.selected)));
-
-  const statefulChips = chips.map((chip, index) => chip && ({
-    ...chip,
-    selected: selectedChips[index],
-    onClick: (selected: boolean, selectedIndex: number) => {
-      if (chip.onClick) {
-        chip.onClick(selected, selectedIndex);
-      }
-
-      const nextSelectedChips = [...selectedChips];
-      nextSelectedChips[selectedIndex] = selected;
-      setSelectedChips(nextSelectedChips);
-    },
-  }));
-
-  return <BpkMultiSelectChipGroup chips={statefulChips} {...rest} />
-};
 
 export default BpkMultiSelectChipGroup;

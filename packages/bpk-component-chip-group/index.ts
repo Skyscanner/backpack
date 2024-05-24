@@ -17,30 +17,24 @@
  */
 
 import BpkMultiSelectChipGroup, {
-  type MultiSelectChipGroupProps,
-  BpkMultiSelectChipGroupState,
-  CHIP_GROUP_TYPES,
+  type MultiSelectProps,
   type ChipItem,
   type SingleSelectChipItem,
   CHIP_COMPONENT,
+  CHIP_GROUP_TYPES,
 } from './src/BpkMultiSelectChipGroup';
 import BpkSingleSelectChipGroup, {
   type SingleSelectProps,
-  type SingleSelectStateProps,
-  BpkSingleSelectChipGroupState,
 } from './src/BpkSingleSelectChipGroup';
 
 export type {
-  MultiSelectChipGroupProps,
-  SingleSelectProps,
-  SingleSelectStateProps,
   ChipItem,
-  SingleSelectChipItem
+  MultiSelectProps,
+  SingleSelectProps,
+  SingleSelectChipItem,
 };
 export {
-  BpkMultiSelectChipGroupState,
   BpkSingleSelectChipGroup,
-  BpkSingleSelectChipGroupState,
   CHIP_GROUP_TYPES,
   CHIP_COMPONENT,
 };

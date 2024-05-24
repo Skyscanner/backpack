@@ -16,18 +16,13 @@
  * limitations under the License.
  */
 
-import { useState } from 'react';
-
-import BpkMultiSelectChipGroup, { type ChipItem, type SingleSelectChipItem, type MultiSelectChipGroupProps } from './BpkMultiSelectChipGroup';
-
-type CommonSingleSelectProps = {
-  chips: SingleSelectChipItem[];
-  onItemClick?: (item: SingleSelectChipItem, selected: boolean, index: number) => void,
-} & MultiSelectChipGroupProps;
+import BpkMultiSelectChipGroup, { type SingleSelectChipItem, type MultiSelectProps } from './BpkMultiSelectChipGroup';
 
 export type SingleSelectProps = {
+  chips: SingleSelectChipItem[];
+  onItemClick?: (item: SingleSelectChipItem, selected: boolean, index: number) => void,
   selectedIndex?: number;
-} & CommonSingleSelectProps;
+} & MultiSelectProps;
 
 const BpkSingleSelectChipGroup = ({ chips, onItemClick, selectedIndex, ...rest }: SingleSelectProps) => {
   const chipsWithSelection = chips.map((chip, index) => chip && ({
@@ -42,23 +37,5 @@ const BpkSingleSelectChipGroup = ({ chips, onItemClick, selectedIndex, ...rest }
 
   return <BpkMultiSelectChipGroup chips={chipsWithSelection} ariaMultiselectable={false} {...rest} />;
 };
-
-export type SingleSelectStateProps = {
-  initiallySelectedIndex?: number;
-} & CommonSingleSelectProps;
-
-export const BpkSingleSelectChipGroupState = ({ initiallySelectedIndex = -1, onItemClick, ...rest }: SingleSelectStateProps) => {
-  const [selectedIndex, setSelectedIndex] = useState(initiallySelectedIndex);
-
-  const onItemClickWithState = (item: ChipItem, selected: boolean, index: number) => {
-    if (onItemClick) {
-      onItemClick(item, selected, index);
-    }
-    setSelectedIndex(selected ? index : -1);
-  }
-
-  return <BpkSingleSelectChipGroup selectedIndex={selectedIndex} onItemClick={onItemClickWithState} {...rest} />;
-};
-
 
 export default BpkSingleSelectChipGroup;
