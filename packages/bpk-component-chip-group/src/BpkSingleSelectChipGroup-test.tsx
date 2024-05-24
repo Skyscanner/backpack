@@ -20,7 +20,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { CHIP_GROUP_TYPES } from './BpkMultiSelectChipGroup';
-import BpkSingleSelectChipGroup, { BpkSingleSelectChipGroupState } from './BpkSingleSelectChipGroup';
+import BpkSingleSelectChipGroup from './BpkSingleSelectChipGroup';
 
 const defaultProps = {
   type: CHIP_GROUP_TYPES.wrap,

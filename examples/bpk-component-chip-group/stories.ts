@@ -18,8 +18,6 @@
 
 import BpkMultiSelectChipGroup, {
   BpkSingleSelectChipGroup,
-  BpkMultiSelectChipGroupState,
-  BpkSingleSelectChipGroupState,
 } from '../../packages/bpk-component-chip-group';
 
 import {
@@ -41,8 +39,6 @@ export default {
   component: BpkMultiSelectChipGroup,
   subcomponents: {
     BpkChipGroupSingleSelect: BpkSingleSelectChipGroup,
-    BpkChipGroupState: BpkMultiSelectChipGroupState,
-    BpkChipGroupSingleSelectState: BpkSingleSelectChipGroupState,
     // TODO: can we show the shape of ChipItem here?
   },
 };
@@ -58,7 +54,9 @@ export const WithLabel = BpkChipGroupWithLabel;
 export const AllChipTypes = AllChipTypesGroup;
 export const ExampleStateManagement = StateManagement;
 export const VisualTest = MixedExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true
+  },
 };

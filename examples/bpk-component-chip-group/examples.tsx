@@ -23,7 +23,7 @@ import { CHIP_TYPES } from '../../packages/bpk-component-chip';
 import BpkMultiSelectChipGroup, {
   BpkSingleSelectChipGroup,
   CHIP_GROUP_TYPES,
-  CHIP_COMPONENT,
+  CHIP_COMPONENT
 } from '../../packages/bpk-component-chip-group';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text/index';
 import { cssModules } from '../../packages/bpk-react-utils/index';
@@ -31,7 +31,7 @@ import { cssModules } from '../../packages/bpk-react-utils/index';
 import type {
   MultiSelectProps,
   ChipItem,
-} from '../../packages/bpk-component-chip-group';
+ SingleSelectProps} from '../../packages/bpk-component-chip-group';
 
 import STYLES from './examples.module.scss';
 
@@ -61,7 +61,7 @@ const BpkSingleSelectChipGroupState = ({
                                          onItemClick,
                                          selectedIndex: initiallySelectedIndex = -1,
                                          ...rest
-                                       }: SingleSelectStateProps) => {
+                                       }: SingleSelectProps) => {
   const [selectedIndex, setSelectedIndex] = useState(initiallySelectedIndex);
 
   const onItemClickWithState = (item: ChipItem, selected: boolean, index: number) => {

@@ -20,7 +20,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
-import BpkMultiSelectChipGroup, { BpkMultiSelectChipGroupState, CHIP_GROUP_TYPES } from './BpkMultiSelectChipGroup';
+import BpkMultiSelectChipGroup, { CHIP_GROUP_TYPES } from './BpkMultiSelectChipGroup';
 
 const defaultProps = {
   type: CHIP_GROUP_TYPES.wrap,
