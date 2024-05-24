@@ -112,7 +112,6 @@ const Chip = (
   const Component = CHIP_COMPONENT_MAP[component];
   return hidden ? null : (
     <Component
-      key={text}
       selected={selected ?? false}
       type={chipStyle}
       accessibilityLabel={accessibilityLabel || text}
@@ -151,7 +150,7 @@ const ChipGroupContent = (
   >
     {ariaLabel && <legend className='visually-hidden'>{ariaLabel}</legend>}
     {label && <BpkText textStyle={TEXT_STYLES.footnote} aria-hidden>{label}</BpkText>}
-    {chips.map((chip, index) => <Chip chipItem={chip} chipStyle={chipStyle} ariaMultiselectable={ariaMultiselectable} chipIndex={index} />)}
+    {chips.map((chip, index) => <Chip key={chip.text} chipItem={chip} chipStyle={chipStyle} ariaMultiselectable={ariaMultiselectable} chipIndex={index} />)}
   </fieldset>
 );
 
