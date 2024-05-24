@@ -69,10 +69,6 @@ export type ChipItem = {
   hidden?: boolean;
 } & SingleSelectChipItem;
 
-export type InternalProps = {
-  chipGroupClassNames: string
-};
-
 export type CommonProps = {
   label?: string;
   ariaLabel?: string;
@@ -152,19 +148,22 @@ const ChipGroupContent = (
 const RailChipGroup = ({
   ariaLabel,
   ariaMultiselectable = true,
-  chipGroupClassNames,
   chipStyle = CHIP_TYPES.default,
   chips,
   label,
   leadingNudgerLabel,
   stickyChip,
   trailingNudgerLabel,
-}: RailChipGroupProps & InternalProps) => {
+}: RailChipGroupProps) => {
   const scrollContainerRef = useRef<HTMLElement | null>(null);
 
   const stickyChipContainerClassnames = getClassName(
     'bpk-sticky-chip-container',
     `bpk-sticky-chip-container--${chipStyle}`,
+  );
+  const chipGroupClassNames = getClassName(
+    'bpk-chip-group',
+    'bpk-chip-group--rail',
   );
 
   return (
@@ -206,28 +205,25 @@ const RailChipGroup = ({
 const WrapChipGroup = ({
   ariaLabel,
   ariaMultiselectable = true,
-  chipGroupClassNames,
   chipStyle = CHIP_TYPES.default,
   chips,
   label,
-}: WrapChipGroupProps & InternalProps) =>
+}: WrapChipGroupProps) =>
   <ChipGroupContent ariaLabel={ariaLabel}
     ariaMultiselectable={ariaMultiselectable}
-    chipGroupClassNames={chipGroupClassNames}
+    chipGroupClassNames={getClassName(
+      'bpk-chip-group',
+      'bpk-chip-group--wrap',
+    )}
     chipStyle={chipStyle}
     chips={chips}
     label={label} />;
 
 const BpkMultiSelectChipGroup = (props: ChipGroupProps) => {
-  const { type } = props;
   const containerClassnames = getClassName('bpk-chip-group-container')
-  const chipGroupClassNames = getClassName(
-    'bpk-chip-group',
-    `bpk-chip-group--${type}`,
-  );
 
   return <div className={containerClassnames}>
-    {props.type === CHIP_GROUP_TYPES.rail ? <RailChipGroup chipGroupClassNames={chipGroupClassNames} {...props} /> : <WrapChipGroup chipGroupClassNames={chipGroupClassNames} {...props} />}
+    {props.type === CHIP_GROUP_TYPES.rail ? <RailChipGroup {...props} /> : <WrapChipGroup {...props} />}
   </div>
 }
 
