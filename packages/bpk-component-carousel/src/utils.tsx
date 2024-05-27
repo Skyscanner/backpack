@@ -58,9 +58,10 @@ export function useIntersectionObserver(
         }
         const { index } = (shownEntry.target as HTMLElement).dataset;
         if (index) {
-          callbackRef.current(parseInt(index, 10));
+          const currentIndex = parseInt(index, 10);
+          callbackRef.current(currentIndex);
           if (onImageChanged) {
-            onImageChanged()
+            onImageChanged(currentIndex)
           }
         }
       },

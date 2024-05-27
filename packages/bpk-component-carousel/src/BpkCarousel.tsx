@@ -31,13 +31,15 @@ const getClassName = cssModules(STYLES);
 
 const BpkCarousel = ({
   images,
+  indicatorClassName,
+  indicatorLabel = 'go to slide',
   initialImageIndex = 0,
   onImageChanged = null,
 }: Props) => {
   const [shownImageIndex, updateShownImageIndex] = useState(initialImageIndex);
   const imagesRef = useRef<Array<HTMLElement | null>>([]);
 
-  useScrollToInitialImage(initialImageIndex, imagesRef);
+  useScrollToInitialImage(initialImageIndex!, imagesRef);
 
   return (
     <>
@@ -50,8 +52,11 @@ const BpkCarousel = ({
       <BpkPageIndicator
         currentIndex={shownImageIndex}
         totalIndicators={images.length}
-        className={getClassName('bpk-carousel-slides-indicator')}
+        className={getClassName('bpk-carousel-slides-indicator', indicatorClassName)}
         variant={VARIANT.overImage}
+        indicatorLabel={indicatorLabel}
+        prevNavLabel="Previous slide"
+        nextNavLabel="Next slide"
       />
     </>
   );
