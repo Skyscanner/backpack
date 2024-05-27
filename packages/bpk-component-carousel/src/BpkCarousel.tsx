@@ -22,9 +22,11 @@ import { useRef, useState } from 'react';
 import BpkPageIndicator, { VARIANT } from '../../bpk-component-page-indicator';
 import { cssModules } from '../../bpk-react-utils';
 
-import { useScrollToInitialImage } from './utils';
 import BpkCarouselContainer from './BpkCarouselContainer';
+import { useScrollToInitialImage } from './utils';
+
 import type { Props } from './types';
+
 import STYLES from './BpkCarousel.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -52,6 +54,7 @@ const BpkCarousel = ({
       <BpkPageIndicator
         currentIndex={shownImageIndex}
         totalIndicators={images.length}
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={getClassName('bpk-carousel-slides-indicator', indicatorClassName)}
         variant={VARIANT.overImage}
         indicatorLabel={indicatorLabel}

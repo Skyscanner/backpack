@@ -21,10 +21,12 @@ import { memo, useState } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import { useIntersectionObserver } from './utils';
-import STYLES from './BpkCarouselContainer.module.scss';
 import BpkCarouselImage from './BpkCarouselImage';
+import { useIntersectionObserver } from './utils';
+
 import type { OnImageChangedHandler } from './types';
+
+import STYLES from './BpkCarouselContainer.module.scss';
 
 const getClassName = cssModules(STYLES);
 

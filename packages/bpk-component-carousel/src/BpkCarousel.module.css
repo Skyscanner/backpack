@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-carousel-slides-indicator{position:relative;right:0;bottom:1.5rem;left:0;display:flex;margin:auto 1rem;overflow:hidden;overflow:clip}
+@keyframes bpk-keyframe-spin{100%{transform:rotate(1turn)}}.bpk-carousel-slides-indicator{position:relative;right:0;bottom:1.5rem;left:0;display:flex;margin:auto bpk-spacing-base();overflow:hidden;overflow:clip}

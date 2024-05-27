@@ -92,31 +92,31 @@ exports[`BpkCarousel should render correctly 1`] = `
         >
           <button
             aria-current="true"
-            aria-label="undefined 1"
+            aria-label="go to slide 1"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--overImage bpk-page-indicator__indicator--active-overImage"
             type="button"
           />
           <button
             aria-current="false"
-            aria-label="undefined 2"
+            aria-label="go to slide 2"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--overImage"
             type="button"
           />
           <button
             aria-current="false"
-            aria-label="undefined 3"
+            aria-label="go to slide 3"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--overImage"
             type="button"
           />
           <button
             aria-current="false"
-            aria-label="undefined 4"
+            aria-label="go to slide 4"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--overImage"
             type="button"
           />
           <button
             aria-current="false"
-            aria-label="undefined 5"
+            aria-label="go to slide 5"
             class="bpk-page-indicator__indicator bpk-page-indicator__indicator--overImage"
             type="button"
           />
