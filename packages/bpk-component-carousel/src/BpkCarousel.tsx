@@ -22,22 +22,26 @@ import { useRef, useState } from 'react';
 import BpkPageIndicator, { VARIANT } from '../../bpk-component-page-indicator';
 import { cssModules } from '../../bpk-react-utils';
 
-import { useScrollToInitialImage } from './utils';
 import BpkCarouselContainer from './BpkCarouselContainer';
+import { useScrollToInitialImage } from './utils';
+
 import type { Props } from './types';
+
 import STYLES from './BpkCarousel.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 const BpkCarousel = ({
   images,
+  indicatorClassName,
+  indicatorLabel = "go to slide",
   initialImageIndex = 0,
   onImageChanged = null,
 }: Props) => {
   const [shownImageIndex, updateShownImageIndex] = useState(initialImageIndex);
   const imagesRef = useRef<Array<HTMLElement | null>>([]);
 
-  useScrollToInitialImage(initialImageIndex, imagesRef);
+  useScrollToInitialImage(initialImageIndex!, imagesRef);
 
   return (
     <>
@@ -50,8 +54,12 @@ const BpkCarousel = ({
       <BpkPageIndicator
         currentIndex={shownImageIndex}
         totalIndicators={images.length}
-        className={getClassName('bpk-carousel-slides-indicator')}
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={getClassName('bpk-carousel-slides-indicator', indicatorClassName)}
         variant={VARIANT.overImage}
+        indicatorLabel={indicatorLabel}
+        prevNavLabel="Previous slide"
+        nextNavLabel="Next slide"
       />
     </>
   );

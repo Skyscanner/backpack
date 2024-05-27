@@ -60,7 +60,7 @@ export function useIntersectionObserver(
         if (index) {
           callbackRef.current(parseInt(index, 10));
           if (onImageChanged) {
-            onImageChanged()
+            onImageChanged(parseInt(index, 10));
           }
         }
       },
