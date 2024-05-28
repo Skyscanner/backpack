@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
-const BpkSegmentedControl = () => {
-  let something;
-  return <div> Hi</div>;
-};
-export default BpkSegmentedControl;
+import BpkSegmentedControl from '../../packages/bpk-component-segmented-control';
+
+const DefaultExample = () => <BpkSegmentedControl />;
+
+const AnotherState = () => <BpkSegmentedControl />;
+
+export { DefaultExample, AnotherState };
