@@ -26,7 +26,6 @@ export const HEADER_ICON_TYPES = {
 
 export type DialogInnerProps = {
   ariaLabel: string;
-  ariaModal: boolean;
   id: string;
   children: ReactNode;
   dialogRef: (ref: HTMLElement | null | undefined) => void;
@@ -37,6 +36,7 @@ export type DialogInnerProps = {
    * The "pagewrap" element id is a convention we use internally at Skyscanner. In most cases it should "just work".
    */
   getApplicationElement: () => HTMLElement | null;
+  ariaModal?: boolean;
   className?: string;
   contentClassName?: string;
   flare?: boolean;
