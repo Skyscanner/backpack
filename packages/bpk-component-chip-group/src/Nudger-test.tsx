@@ -63,6 +63,7 @@ describe('Nudger', () => {
     await act(async () => {
       jest.advanceTimersByTime(100);
       await user.click(screen.getByRole('button'));
+      jest.runAllTimers();
     });
 
     const leading = position === POSITION.leading;
