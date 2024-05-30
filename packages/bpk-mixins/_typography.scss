@@ -560,7 +560,7 @@
   @include _bpk-text-factory(
     $bpk-font-size-8-xl,
     $bpk-line-height-8-xl,
-    $bpk-font-weight-bold,
+    $bpk-font-weight-black,
     $bpk-letter-spacing-tight
   );
 }
@@ -576,7 +576,7 @@
   @include _bpk-text-factory(
     $bpk-font-size-7-xl,
     $bpk-line-height-7-xl,
-    $bpk-font-weight-bold,
+    $bpk-font-weight-black,
     $bpk-letter-spacing-tight
   );
 }
@@ -591,8 +591,8 @@
 @mixin bpk-hero-3 {
   @include _bpk-text-factory(
     $bpk-font-size-6-xl,
-    $bpk-line-height-6-xl,
-    $bpk-font-weight-bold,
+    $bpk-line-height-6-xl, // TODO: Update this
+    $bpk-font-weight-black,
     $bpk-letter-spacing-tight
   );
 }
@@ -607,8 +607,8 @@
 @mixin bpk-hero-4 {
   @include _bpk-text-factory(
     $bpk-font-size-xxxxxl,
-    $bpk-line-height-xxxxxl,
-    $bpk-font-weight-bold,
+    $bpk-line-height-xxxxxl, // TODO: Update this
+    $bpk-font-weight-black,
     $bpk-letter-spacing-tight
   );
 }
@@ -623,8 +623,24 @@
 @mixin bpk-hero-5 {
   @include _bpk-text-factory(
     $bpk-font-size-xxxxl,
-    $bpk-line-height-xxxxl,
-    $bpk-font-weight-bold,
+    $bpk-line-height-xxxxl, // TODO: Update this
+    $bpk-font-weight-black,
+    $bpk-letter-spacing-tight
+  );
+}
+
+/// Hero 6 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hero-6;
+///   }
+
+@mixin bpk-hero-6 {
+  @include _bpk-text-factory(
+    $bpk-font-size-xxxl,
+    $bpk-line-height-xxl,
+    $bpk-font-weight-black,
     $bpk-letter-spacing-tight
   );
 }
