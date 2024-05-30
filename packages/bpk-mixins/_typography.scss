@@ -607,7 +607,7 @@
 @mixin bpk-hero-4 {
   @include _bpk-text-factory(
     $bpk-font-size-xxxxxl,
-    $bpk-line-height-xxxxxl-tight,
+    $bpk-line-height-xxxxxl,
     $bpk-font-weight-black,
     $bpk-letter-spacing-tight
   );
