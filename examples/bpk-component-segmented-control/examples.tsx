@@ -18,8 +18,28 @@
 
 import BpkSegmentedControl from '../../packages/bpk-component-segmented-control';
 
-const DefaultExample = () => <BpkSegmentedControl />;
+const DefaultTwoSegments = () => (
+  <BpkSegmentedControl
+    buttonContents={['one', 'two']}
+    onItemClick={() => {}}
+    selectedIndex={2}
+  />
+);
 
-const AnotherState = () => <BpkSegmentedControl />;
+const DefaultThreeSegments = () => (
+  <BpkSegmentedControl
+    buttonContents={['one', 'two', 'three']}
+    onItemClick={() => {}}
+    selectedIndex={2}
+  />
+);
 
-export { DefaultExample, AnotherState };
+const DefaultFourSegments = () => (
+  <BpkSegmentedControl
+    buttonContents={['one', 'two', 'three', 'four']}
+    onItemClick={() => {}}
+    selectedIndex={2}
+  />
+);
+
+export { DefaultTwoSegments, DefaultThreeSegments, DefaultFourSegments };

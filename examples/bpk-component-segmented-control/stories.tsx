@@ -18,11 +18,17 @@
 
 import BpkSegmentedControl from '../../packages/bpk-component-segmented-control';
 
-import { DefaultExample } from './examples';
+import {
+  DefaultTwoSegments,
+  DefaultThreeSegments,
+  DefaultFourSegments,
+} from './examples';
 
 export default {
   title: 'bpk-component-segmented-control',
   component: BpkSegmentedControl,
 };
 
-export const Default = DefaultExample;
+export const TwoSegments = DefaultTwoSegments;
+export const ThreeSegments = DefaultThreeSegments;
+export const FourSegments = DefaultFourSegments;
