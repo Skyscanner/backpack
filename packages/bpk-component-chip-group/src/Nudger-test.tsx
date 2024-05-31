@@ -45,6 +45,7 @@ const createMockScrollContainerRef = (isRtl: boolean): MutableRefObject<HTMLElem
 describe('Nudger', () => {
   beforeEach(() => {
     jest.resetAllMocks();
+    jest.useFakeTimers();
   });
 
   it.each([
@@ -52,24 +53,22 @@ describe('Nudger', () => {
     [POSITION.leading, false],
     [POSITION.trailing, true],
     [POSITION.leading, true],
-  ])('should call scrollBy when leading=%s and isRtl=%s', (position, isRtl) => {
-    // const user = userEvent.setup();
+  ])('should call scrollBy when leading=%s and isRtl=%s', async (position, isRtl) => {
+    const user = userEvent.setup({ delay: null });
     const mockScrollContainerRef = createMockScrollContainerRef(isRtl);
     mockIsRtl.mockReturnValue(isRtl);
-    render(<Nudger ariaLabel="nudge" scrollContainerRef={mockScrollContainerRef} position={position} />);
-
-    // await act(async () => {
-    //   await user.click(screen.getByRole('button'));
-    // });
+    await act(async () => {
+      render(<Nudger ariaLabel="nudge" scrollContainerRef={mockScrollContainerRef} position={position} />);
+      await user.click(screen.getByRole('button'));
+    })
 
     const leading = position === POSITION.leading;
     const isLeft = (leading && !isRtl) || (!leading && isRtl);
-    expect(true).toBeTruthy();
-    // expect(mockScrollContainerRef.current.scrollBy).toHaveBeenCalledTimes(1);
-    // expect(mockScrollContainerRef.current.scrollBy).toHaveBeenCalledWith({
-    //   left: isLeft ? -150 : 150,
-    //   behavior: 'smooth',
-    // });
+    expect(mockScrollContainerRef.current.scrollBy).toHaveBeenCalledTimes(1);
+    expect(mockScrollContainerRef.current.scrollBy).toHaveBeenCalledWith({
+      left: isLeft ? -150 : 150,
+      behavior: 'smooth',
+    });
   });
 
   it('should render button style matching chips',  () => {
