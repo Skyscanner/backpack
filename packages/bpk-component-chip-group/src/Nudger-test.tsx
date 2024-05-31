@@ -52,7 +52,7 @@ describe('Nudger', () => {
     [POSITION.leading, false],
     [POSITION.trailing, true],
     [POSITION.leading, true],
-  ])('should call scrollBy when leading=%s and isRtl=%s', async (position, isRtl) => {
+  ])('should call scrollBy when leading=%s and isRtl=%s', (position, isRtl) => {
     // const user = userEvent.setup();
     const mockScrollContainerRef = createMockScrollContainerRef(isRtl);
     mockIsRtl.mockReturnValue(isRtl);
