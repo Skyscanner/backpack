@@ -18,7 +18,7 @@
 
 import type { MutableRefObject } from 'react';
 
-import { act, render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { CHIP_TYPES } from '../../bpk-component-chip';
@@ -60,9 +60,10 @@ describe('Nudger', () => {
 
     render(<Nudger ariaLabel="nudge" scrollContainerRef={mockScrollContainerRef} position={position} />);
 
-    act(() => {
-      jest.advanceTimersByTime(100);
+    await waitFor(() => {
+      expect(screen.getByRole('button')).not.toHaveAttribute('disabled');
     });
+
     await user.click(screen.getByRole('button'));
 
     const leading = position === POSITION.leading;
