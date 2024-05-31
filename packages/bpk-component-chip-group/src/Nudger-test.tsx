@@ -59,7 +59,9 @@ describe('Nudger', () => {
     mockIsRtl.mockReturnValue(isRtl);
     render(<Nudger ariaLabel="nudge" scrollContainerRef={mockScrollContainerRef} position={position} />);
 
-    await user.click(screen.getByRole('button'));
+    await act(async () => {
+      await user.click(screen.getByRole('button'));
+    });
 
     const leading = position === POSITION.leading;
     const isLeft = (leading && !isRtl) || (!leading && isRtl);
