@@ -18,7 +18,7 @@
 
 import type { MutableRefObject } from 'react';
 
-import { render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { CHIP_TYPES } from '../../bpk-component-chip';
@@ -57,12 +57,7 @@ describe('Nudger', () => {
     const user = userEvent.setup({ delay: null });
     const mockScrollContainerRef = createMockScrollContainerRef(isRtl);
     mockIsRtl.mockReturnValue(isRtl);
-
     render(<Nudger ariaLabel="nudge" scrollContainerRef={mockScrollContainerRef} position={position} />);
-
-    await waitFor(() => {
-      expect(screen.getByRole('button')).not.toHaveAttribute('disabled');
-    });
 
     await user.click(screen.getByRole('button'));
 

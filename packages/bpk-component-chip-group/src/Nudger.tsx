@@ -98,7 +98,7 @@ const Nudger = ({
         title={ariaLabel}
         type={CHIP_STYLE_TO_BUTTON_STYLE[chipStyle]}
         iconOnly
-        disabled={!show || !enabled}
+        disabled={!enabled}
         onClick={() => {
           if (scrollContainerRef.current) {
             scrollContainerRef.current.scrollBy({
