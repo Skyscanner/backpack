@@ -18,7 +18,7 @@
 
 import type { MutableRefObject } from 'react';
 
-import { act, render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { CHIP_TYPES } from '../../bpk-component-chip';
@@ -45,7 +45,6 @@ const createMockScrollContainerRef = (isRtl: boolean): MutableRefObject<HTMLElem
 describe('Nudger', () => {
   beforeEach(() => {
     jest.resetAllMocks();
-    jest.useFakeTimers();
   });
 
   it.each([
@@ -54,7 +53,7 @@ describe('Nudger', () => {
     [POSITION.trailing, true],
     [POSITION.leading, true],
   ])('should call scrollBy when leading=%s and isRtl=%s', async (position, isRtl) => {
-    const user = userEvent.setup({ delay: null });
+    const user = userEvent.setup();
     const mockScrollContainerRef = createMockScrollContainerRef(isRtl);
     mockIsRtl.mockReturnValue(isRtl);
     render(<Nudger ariaLabel="nudge" scrollContainerRef={mockScrollContainerRef} position={position} />);
