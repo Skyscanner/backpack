@@ -21,7 +21,7 @@ import SEGMENT_TYPES from '../../packages/bpk-component-segmented-control/src/se
 
 const TwoSegmentsDefault = () => (
   <BpkSegmentedControl
-    buttonContents={['one', 'two']}
+    buttonContents={['Value1', 'Value2',]}
     onItemClick={() => {}}
     selectedIndex={2}
     type = {SEGMENT_TYPES.CanvasDefault}
@@ -30,7 +30,7 @@ const TwoSegmentsDefault = () => (
 
 const ThreeSegmentsCanvasConstrast = () => (
   <BpkSegmentedControl
-    buttonContents={['one', 'two', 'three']}
+    buttonContents={['Value1', 'Value2', 'Value 3']}
     onItemClick={() => {}}
     selectedIndex={2}
     type = {SEGMENT_TYPES.CanvasContrast}
@@ -39,7 +39,7 @@ const ThreeSegmentsCanvasConstrast = () => (
 
 const FourSegmentsSurfaceDefault = () => (
   <BpkSegmentedControl
-    buttonContents={['one', 'two', 'three', 'four']}
+    buttonContents={['Value1', 'Value2', 'Value 3', 'Value4']}
     onItemClick={() => {}}
     selectedIndex={2}
     type = {SEGMENT_TYPES.SurfaceDefault}
@@ -48,7 +48,7 @@ const FourSegmentsSurfaceDefault = () => (
 
 const FourSegmentsSurfaceContrast = () => (
   <BpkSegmentedControl
-    buttonContents={['one', 'two', 'three', 'four']}
+    buttonContents={['Value1', 'Value2', 'Value 3', 'Value4']}
     onItemClick={() => {}}
     selectedIndex={2}
     type = {SEGMENT_TYPES.SurfaceContrast}
