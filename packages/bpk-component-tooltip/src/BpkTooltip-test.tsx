@@ -16,47 +16,48 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import BpkTooltip from './BpkTooltip';
 import { TOOLTIP_TYPES } from './constants';
 
 describe('BpkTooltip', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(
-      <BpkTooltip id="my-popover">My tooltip content</BpkTooltip>,
+    const target = (<span>My tooltip target</span>);
+
+    render(
+      <BpkTooltip id="my-popover" target={target} ariaLabel="My tooltip content" isOpen>My tooltip content</BpkTooltip>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByText('My tooltip content')).toBeVisible();
   });
 
   it('should render correctly with type=dark', () => {
-    const { asFragment } = render(
-      <BpkTooltip type={TOOLTIP_TYPES.dark} id="my-popover">
+    const target = (<span>My tooltip target</span>);
+
+    const { container } = render(
+      <BpkTooltip id="my-popover" type={TOOLTIP_TYPES.dark} ariaLabel="My tooltip content" target={target} isOpen>
         My tooltip content
       </BpkTooltip>,
     );
-
-    expect(asFragment()).toMatchSnapshot();
+    
+    expect(screen.getByText('My tooltip content')).toBeVisible();
+    expect(container.querySelector('.bpk-tooltip__inner--dark')).not.toBeNull();
+    expect(container.querySelector('.bpk-tooltip__arrow--dark')).not.toBeNull();
   });
 
   it('should render correctly with "padded" attribute equal to false', () => {
-    const { asFragment } = render(
-      <BpkTooltip id="my-tooltip" padded={false}>
+    const target = (<span>My tooltip target</span>);
+
+    const { container } =  render(
+      <BpkTooltip id="my-popover" ariaLabel="My tooltip content" target={target} padded={false} isOpen>
         My tooltip content
       </BpkTooltip>,
     );
-
-    expect(asFragment()).toMatchSnapshot();
+    
+    expect(screen.getByText('My tooltip content')).toBeVisible();
+    expect(container.querySelector('.bpk-tooltip__inner--padded')).toBeNull();
   });
 
-  it('should render correctly with "className" attribute', () => {
-    const { asFragment } = render(
-      <BpkTooltip id="my-tooltip" className="my-custom-class">
-        My tooltip content
-      </BpkTooltip>,
-    );
-
-    expect(asFragment()).toMatchSnapshot();
-  });
 });

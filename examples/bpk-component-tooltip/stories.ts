@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-
-import BpkTooltip from '../../packages/bpk-component-tooltip/src/BpkTooltipPortal';
+import BpkTooltip from '../../packages/bpk-component-tooltip/src/BpkTooltip';
 
 import {
   DefaultExample,
@@ -25,7 +24,6 @@ import {
   SideExample,
   NoPaddingExample,
   LinkExample,
-  PopperModifiersExample,
   FocusExample,
 } from './examples';
 
@@ -41,7 +39,5 @@ export const OnTheSide = SideExample;
 export const WithoutPadding = NoPaddingExample;
 
 export const OnALink = LinkExample;
-
-export const PopperModifiers = PopperModifiersExample;
 
 export const Focus = FocusExample;

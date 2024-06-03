@@ -22,33 +22,104 @@ This is the component for the tooltip that is displayed to users.
 The actual component that developers create (i.e. the default export from this package) is BpkTooltipPortal.
 */
 
-import type { ReactNode } from 'react';
+import type { ReactNode, ReactElement } from 'react';
+import { cloneElement, useRef , useState } from 'react';
+
+import {
+  arrow,
+  flip,
+  FloatingArrow,
+  offset,
+  shift,
+  useFloating,
+  useHover,
+  useInteractions,
+} from '@floating-ui/react';
+
+import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
 import { ARROW_ID, TOOLTIP_TYPES } from './constants';
 
+import type { Placement } from '@floating-ui/react';
+
+
+
 import STYLES from './BpkTooltip.module.scss';
+
 
 const getClassName = cssModules(STYLES);
 
-export type TooltipProps = {
+// The stroke width is used to set the border width of the arrow.
+const strokeWidth = 1;
+
+export type Props = {
   id: string;
   children: ReactNode | string;
   type?: (typeof TOOLTIP_TYPES)[keyof typeof TOOLTIP_TYPES];
   padded?: boolean;
-  className?: string | null;
+  target: ReactElement<any>;
+  ariaLabel: string;
+  hideOnTouchDevices?: boolean;
+  placement?: Placement;
+  isOpen?: boolean;
+};
+
+// This function is to ensure the arrow alignment when used on the top and bottom
+// doesn't look clipped away from the tooltip. This is due to our use of box-shadows that makes it look floating away,
+// so we need to compensate slightly to make it look as one.
+const getArrowAlignment = (placement: Placement) => {
+  if (placement.includes('bottom')) {
+    return { bottom: '98%' };
+  } if (placement.includes('top')) {
+    return { top: '98%' };
+  } 
+    return undefined;
+  
 };
 
 const BpkTooltip = ({
+  ariaLabel,
   children,
-  className = null,
+  hideOnTouchDevices = true,
   id,
+  isOpen = false,
   padded = true,
+  placement = 'bottom',
+  target,
   type = TOOLTIP_TYPES.light,
   ...rest
-}: TooltipProps) => {
-  const classNames = getClassName('bpk-tooltip', className);
+}: Props) => {
+  const [isOpenState, setIsOpenState] = useState(isOpen);
+  const arrowRef = useRef(null);
+
+  const { context, floatingStyles, refs } = useFloating({
+    open: isOpenState,
+    onOpenChange: setIsOpenState,
+    placement,
+    middleware: [
+      offset(8),
+      flip({ crossAxis: true }),
+      shift(),
+      arrow({ element: arrowRef }),
+    ],
+  });
+
+  const hover = useHover(context, {
+    mouseOnly: true,
+  });
+
+  const { getFloatingProps, getReferenceProps } = useInteractions([hover]);
+
+  const targetWithAccessibilityProps = cloneElement(target, {
+    ...getReferenceProps(),
+    ref: refs.setReference,
+    tabIndex: '0',
+    'aria-label': ariaLabel,
+  });
+
+  const classNames = getClassName('bpk-tooltip');
 
   const innerClassNames = getClassName(
     'bpk-tooltip__inner',
@@ -62,27 +133,44 @@ const BpkTooltip = ({
   );
 
   return (
-    <TransitionInitialMount
-      appearClassName={getClassName('bpk-tooltip--appear')}
-      appearActiveClassName={getClassName('bpk-tooltip--appear-active')}
-      transitionTimeout={200}
-    >
-      <section
-        id={id}
-        tabIndex={-1}
-        role="dialog"
-        className={classNames}
-        {...rest}
-      >
-        <span
-          id={ARROW_ID}
-          data-popper-arrow
-          className={arrowClassNames}
-          role="presentation"
-        />
-        <div className={innerClassNames}>{children}</div>
-      </section>
-    </TransitionInitialMount>
+    <>
+      {targetWithAccessibilityProps}
+      {isOpenState && (
+        <div
+          className={getClassName('bpk-tooltip--container')}
+          ref={refs.setFloating}
+          style={floatingStyles}
+          {...getFloatingProps()}
+        >
+          <TransitionInitialMount
+            appearClassName={getClassName('bpk-tooltip--appear')}
+            appearActiveClassName={getClassName('bpk-tooltip--appear-active')}
+            transitionTimeout={200}
+          >
+            <section
+              id={id}
+              tabIndex={-1}
+              role="dialog"
+              className={classNames}
+              aria-label={ariaLabel}
+              {...rest}
+            >
+              <FloatingArrow
+                ref={arrowRef}
+                context={context}
+                id={ARROW_ID}
+                className={arrowClassNames}
+                role="presentation"
+                stroke={surfaceHighlightDay}
+                strokeWidth={strokeWidth}
+                style={getArrowAlignment(context.placement)}
+              />
+              <div className={innerClassNames}>{children}</div>
+            </section>
+          </TransitionInitialMount>
+        </div>
+      )}
+    </>
   );
 };
 

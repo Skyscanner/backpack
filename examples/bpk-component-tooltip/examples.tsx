@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { useRef, forwardRef } from 'react';
 
 import {
@@ -41,7 +39,7 @@ const Heading = withDefaultProps(BpkText, {
   tagName: 'h4',
 });
 
-const HeadingComponent = forwardRef((props: { children: Node }, ref) => (
+const HeadingComponent = forwardRef<HTMLDivElement, {children: Node | string}>((props, ref) => (
   <div ref={ref}>
     <Heading>{props.children}</Heading>
   </div>
@@ -148,28 +146,6 @@ const LinkExample = () => {
   );
 };
 
-const PopperModifiersExample = () => {
-  const target = useRef(null);
-
-  return (
-    <div style={wrapperStyle}>
-      <BpkTooltip
-        ariaLabel="Berlin Brandenburg Airport"
-        id="my-tooltip"
-        target={<HeadingComponent ref={target}>BER</HeadingComponent>}
-        popperModifiers={[
-          {
-            name: 'flip',
-            options: { enabled: false },
-          },
-        ]}
-      >
-        Berlin Brandenburg Airport
-      </BpkTooltip>
-    </div>
-  );
-};
-
 const FocusExample = () => {
   const targetRef1 = useRef(null);
   const targetRef2 = useRef(null);
@@ -219,6 +195,5 @@ export {
   SideExample,
   NoPaddingExample,
   LinkExample,
-  PopperModifiersExample,
   FocusExample,
 };
