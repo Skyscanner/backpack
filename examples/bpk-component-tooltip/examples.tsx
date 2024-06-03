@@ -16,11 +16,7 @@
  * limitations under the License.
  */
 
-import { useRef, forwardRef } from 'react';
-
-import {
-  colorMonteverde,
-} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { useRef } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkTooltip, {
@@ -39,11 +35,6 @@ const Heading = withDefaultProps(BpkText, {
   tagName: 'h4',
 });
 
-const HeadingComponent = forwardRef<HTMLDivElement, {children: Node | string}>((props, ref) => (
-  <div ref={ref}>
-    <Heading>{props.children}</Heading>
-  </div>
-));
 
 const DefaultExample = () => {
   const target = useRef(null);
@@ -53,7 +44,7 @@ const DefaultExample = () => {
       <BpkTooltip
         ariaLabel="Montréal-Trudeau International Airport"
         id="my-tooltip"
-        target={<HeadingComponent ref={target}>YUL</HeadingComponent>}
+        target={<Heading ref={target}>YUL</Heading>}
       >
         Montréal-Trudeau International Airport
       </BpkTooltip>
@@ -70,7 +61,7 @@ const DarkExample = () => {
         ariaLabel="Edinburgh Airport"
         type={TOOLTIP_TYPES.dark}
         id="my-tooltip"
-        target={<HeadingComponent ref={target}>EDI</HeadingComponent>}
+        target={<Heading ref={target}>EDI</Heading>}
       >
         Edinburgh Airport
       </BpkTooltip>
@@ -86,7 +77,7 @@ const SideExample = () => {
       <BpkTooltip
         ariaLabel="Julius Nyerere International Airport, Dar es Salaam"
         id="my-tooltip"
-        target={<HeadingComponent ref={target}>DAR</HeadingComponent>}
+        target={<Heading ref={target}>DAR</Heading>}
         placement="right"
       >
         Julius Nyerere International Airport, Dar es Salaam
@@ -103,13 +94,12 @@ const NoPaddingExample = () => {
       <BpkTooltip
         ariaLabel="Singapore Changi Airport"
         id="my-tooltip"
-        target={<HeadingComponent ref={target}>SIN</HeadingComponent>}
+        target={<Heading ref={target}>SIN</Heading>}
         padded={false}
       >
         <div
           style={{
             borderBottomWidth: '5px',
-            borderBottomColor: colorMonteverde,
             borderBottomStyle: 'solid',
             padding: '.25rem',
           }}
@@ -157,21 +147,21 @@ const FocusExample = () => {
       <BpkTooltip
         ariaLabel="Should be focused on first"
         id="my-tooltip"
-        target={<HeadingComponent ref={targetRef1}>One</HeadingComponent>}
+        target={<Heading ref={targetRef1}>One</Heading>}
       >
         Should be focused on first
       </BpkTooltip>
       <BpkTooltip
         ariaLabel="Should be focused on second"
         id="my-tooltip"
-        target={<HeadingComponent ref={targetRef2}>Two</HeadingComponent>}
+        target={<Heading ref={targetRef2}>Two</Heading>}
       >
         Should be focused on second
       </BpkTooltip>
       <BpkTooltip
         ariaLabel="Should be focused on third"
         id="my-tooltip"
-        target={<HeadingComponent ref={targetRef3}>Three</HeadingComponent>}
+        target={<Heading ref={targetRef3}>Three</Heading>}
       >
         Should be focused on third
       </BpkTooltip>
@@ -181,7 +171,7 @@ const FocusExample = () => {
       <BpkTooltip
         ariaLabel="Should be focused on fifth"
         id="my-tooltip"
-        target={<HeadingComponent ref={targetRef5}>Five</HeadingComponent>}
+        target={<Heading ref={targetRef5}>Five</Heading>}
       >
         Should be focused on fifth
       </BpkTooltip>
@@ -197,7 +187,7 @@ const VisualTestExample = () => {
       <BpkTooltip
         ariaLabel="Montréal-Trudeau International Airport"
         id="my-tooltip"
-        target={<HeadingComponent ref={target}>YUL</HeadingComponent>}
+        target={<Heading ref={target}>YUL</Heading>}
         isOpen
       >
         Montréal-Trudeau International Airport
@@ -206,7 +196,6 @@ const VisualTestExample = () => {
   );
 };
 
-
 export {
   DefaultExample,
   DarkExample,
@@ -214,5 +203,5 @@ export {
   NoPaddingExample,
   LinkExample,
   FocusExample,
-  VisualTestExample
+  VisualTestExample,
 };

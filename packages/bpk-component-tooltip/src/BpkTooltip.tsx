@@ -163,7 +163,6 @@ const BpkTooltip = ({
               tabIndex={-1}
               role="dialog"
               className={classNames}
-              aria-label={ariaLabel}
               {...rest}
             >
               <FloatingArrow

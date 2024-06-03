@@ -28,7 +28,6 @@ describe('BpkTooltip accessibility tests', () => {
         id="my-popover"
         ariaLabel="Tooltip"
         target={<p>My tooltip target</p>}
-        isOpen
       >
         My tooltip content
       </BpkTooltip>,
