@@ -189,6 +189,24 @@ const FocusExample = () => {
   );
 };
 
+const VisualTestExample = () => {
+  const target = useRef(null);
+
+  return (
+    <div style={wrapperStyle}>
+      <BpkTooltip
+        ariaLabel="Montréal-Trudeau International Airport"
+        id="my-tooltip"
+        target={<HeadingComponent ref={target}>YUL</HeadingComponent>}
+        isOpen
+      >
+        Montréal-Trudeau International Airport
+      </BpkTooltip>
+    </div>
+  );
+};
+
+
 export {
   DefaultExample,
   DarkExample,
@@ -196,4 +214,5 @@ export {
   NoPaddingExample,
   LinkExample,
   FocusExample,
+  VisualTestExample
 };

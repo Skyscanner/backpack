@@ -23,7 +23,7 @@ The actual component that developers create (i.e. the default export from this p
 */
 
 import type { ReactNode, ReactElement } from 'react';
-import { cloneElement, useRef , useState } from 'react';
+import { cloneElement, useRef, useState } from 'react';
 
 import {
   arrow,
@@ -44,10 +44,7 @@ import { ARROW_ID, TOOLTIP_TYPES } from './constants';
 
 import type { Placement } from '@floating-ui/react';
 
-
-
 import STYLES from './BpkTooltip.module.scss';
-
 
 const getClassName = cssModules(STYLES);
 
@@ -72,11 +69,11 @@ export type Props = {
 const getArrowAlignment = (placement: Placement) => {
   if (placement.includes('bottom')) {
     return { bottom: '98%' };
-  } if (placement.includes('top')) {
+  }
+  if (placement.includes('top')) {
     return { top: '98%' };
-  } 
-    return undefined;
-  
+  }
+  return undefined;
 };
 
 const BpkTooltip = ({

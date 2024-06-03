@@ -24,40 +24,58 @@ import { TOOLTIP_TYPES } from './constants';
 
 describe('BpkTooltip', () => {
   it('should render correctly', () => {
-    const target = (<span>My tooltip target</span>);
+    const target = <span>My tooltip target</span>;
 
     render(
-      <BpkTooltip id="my-popover" target={target} ariaLabel="My tooltip content" isOpen>My tooltip content</BpkTooltip>,
+      <BpkTooltip
+        id="my-popover"
+        target={target}
+        ariaLabel="My tooltip content"
+        isOpen
+      >
+        My tooltip content
+      </BpkTooltip>,
     );
 
     expect(screen.getByText('My tooltip content')).toBeVisible();
   });
 
   it('should render correctly with type=dark', () => {
-    const target = (<span>My tooltip target</span>);
+    const target = <span>My tooltip target</span>;
 
     const { container } = render(
-      <BpkTooltip id="my-popover" type={TOOLTIP_TYPES.dark} ariaLabel="My tooltip content" target={target} isOpen>
+      <BpkTooltip
+        id="my-popover"
+        type={TOOLTIP_TYPES.dark}
+        ariaLabel="My tooltip content"
+        target={target}
+        isOpen
+      >
         My tooltip content
       </BpkTooltip>,
     );
-    
+
     expect(screen.getByText('My tooltip content')).toBeVisible();
     expect(container.querySelector('.bpk-tooltip__inner--dark')).not.toBeNull();
     expect(container.querySelector('.bpk-tooltip__arrow--dark')).not.toBeNull();
   });
 
   it('should render correctly with "padded" attribute equal to false', () => {
-    const target = (<span>My tooltip target</span>);
+    const target = <span>My tooltip target</span>;
 
-    const { container } =  render(
-      <BpkTooltip id="my-popover" ariaLabel="My tooltip content" target={target} padded={false} isOpen>
+    const { container } = render(
+      <BpkTooltip
+        id="my-popover"
+        ariaLabel="My tooltip content"
+        target={target}
+        padded={false}
+        isOpen
+      >
         My tooltip content
       </BpkTooltip>,
     );
-    
+
     expect(screen.getByText('My tooltip content')).toBeVisible();
     expect(container.querySelector('.bpk-tooltip__inner--padded')).toBeNull();
   });
-
 });

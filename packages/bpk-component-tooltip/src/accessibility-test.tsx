@@ -24,14 +24,18 @@ import BpkTooltip from './BpkTooltip';
 describe('BpkTooltip accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkTooltip id="my-popover" ariaLabel="Tooltip" target={<p>My tooltip target</p>} isOpen>
+      <BpkTooltip
+        id="my-popover"
+        ariaLabel="Tooltip"
+        target={<p>My tooltip target</p>}
+        isOpen
+      >
         My tooltip content
       </BpkTooltip>,
     );
     await waitFor(async () => {
       const results = await axe(container);
       expect(results).toHaveNoViolations();
-    })
-    
+    });
   });
 });
