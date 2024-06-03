@@ -21,12 +21,13 @@
 .bpk-card-list--rail {
   &_container {
     display: flex;
+    padding: tokens.bpk-spacing-base();
+    gap: tokens.bpk-spacing-base();
   }
 
   &_card {
     display: flex;
     min-width: 100%;
-    padding: tokens.bpk-spacing-base();
     justify-content: center;
     align-items: center;
     text-wrap: wrap;
