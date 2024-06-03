@@ -17,29 +17,42 @@
  */
 
 import BpkSegmentedControl from '../../packages/bpk-component-segmented-control';
+import SEGMENT_TYPES from '../../packages/bpk-component-segmented-control/src/segmentTypes';
 
-const DefaultTwoSegments = () => (
+const TwoSegmentsDefault = () => (
   <BpkSegmentedControl
     buttonContents={['one', 'two']}
     onItemClick={() => {}}
     selectedIndex={2}
+    type = {SEGMENT_TYPES.CanvasDefault}
   />
 );
 
-const DefaultThreeSegments = () => (
+const ThreeSegmentsCanvasConstrast = () => (
   <BpkSegmentedControl
     buttonContents={['one', 'two', 'three']}
     onItemClick={() => {}}
     selectedIndex={2}
+    type = {SEGMENT_TYPES.CanvasContrast}
   />
 );
 
-const DefaultFourSegments = () => (
+const FourSegmentsSurfaceDefault = () => (
   <BpkSegmentedControl
     buttonContents={['one', 'two', 'three', 'four']}
     onItemClick={() => {}}
     selectedIndex={2}
+    type = {SEGMENT_TYPES.SurfaceDefault}
   />
 );
 
-export { DefaultTwoSegments, DefaultThreeSegments, DefaultFourSegments };
+const FourSegmentsSurfaceContrast = () => (
+  <BpkSegmentedControl
+    buttonContents={['one', 'two', 'three', 'four']}
+    onItemClick={() => {}}
+    selectedIndex={2}
+    type = {SEGMENT_TYPES.SurfaceContrast}
+  />
+);
+
+export { TwoSegmentsDefault, ThreeSegmentsCanvasConstrast, FourSegmentsSurfaceDefault, FourSegmentsSurfaceContrast };
