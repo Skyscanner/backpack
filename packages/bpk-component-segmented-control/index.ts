@@ -17,6 +17,9 @@
  */
 /* @flow strict */
 
-import BpkSegmentedControl from './src/BpkSegmentedControl';
+import BpkSegmentedControl, {
+  type Props as BpkSegmentControlProps,
+} from './src/BpkSegmentedControl';
 
+export type { BpkSegmentControlProps };
 export default BpkSegmentedControl;
