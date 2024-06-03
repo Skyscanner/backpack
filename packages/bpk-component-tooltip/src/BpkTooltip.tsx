@@ -52,12 +52,20 @@ const getClassName = cssModules(STYLES);
 const strokeWidth = 1;
 
 export type Props = {
+  /** 
+   * Tooltips are invisible to assistive technologies such as screen readers.
+   * To improve accessibility, `ariaLabel` is required to describe the content of the tooltip to assistive technologies.
+   * The label will be used on the `target` element, so any existing `aria-label` attached to `target` will be overridden.
+   */
+  ariaLabel: string;
+  /**
+   * "target" should be a DOM element with a "ref" attached to it.
+   */
+  target: ReactElement<any>;
   id: string;
   children: ReactNode | string;
   type?: (typeof TOOLTIP_TYPES)[keyof typeof TOOLTIP_TYPES];
   padded?: boolean;
-  target: ReactElement<any>;
-  ariaLabel: string;
   hideOnTouchDevices?: boolean;
   placement?: Placement;
   isOpen?: boolean;
