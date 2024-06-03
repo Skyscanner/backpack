@@ -1,0 +1,67 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/radii';
+
+.bpk-segmented-control-group {
+  display: inline-block;
+  overflow: hidden;
+
+  @include radii.bpk-border-radius-sm;
+}
+
+.bpk-segmented-control {
+  min-width: tokens.bpk-spacing-xl();
+  max-width: 11rem; // pondering if we need this
+  padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-base();
+  border: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  @include typography.bpk-label-2;
+
+  &--canvas-default {
+    background-color: tokens.$bpk-private-segmented-control-canvas-default-day;
+    color: tokens.$bpk-text-primary-day;
+  }
+
+  &--canvas-contrast {
+    background-color: tokens.$bpk-private-segmented-control-surface-contrast-day;
+    color: tokens.$bpk-text-primary-day;
+  }
+
+  &--surface-default {
+    background-color: tokens.$bpk-private-segmented-control-surface-contrast-day;
+    color: tokens.$bpk-text-primary-day;
+  }
+
+  &--surface-contrast {
+    background-color: tokens.$bpk-private-segmented-control-surface-contrast-on-day;
+    color: tokens.$bpk-text-on-dark-day;
+  }
+}
+
+.bpk-segmented-control:not(:first-of-type) {
+  border-inline-start: solid tokens.$bpk-line-day;
+}
+
+// different border colour for surface contrast
+
+// add selected state
