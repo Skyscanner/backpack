@@ -15,9 +15,67 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import PropTypes from 'prop-types';
 
-const BpkSegmentedControl = () => {
-  let something;
-  return <div> Hi</div>;
+import { cssModules } from '../../bpk-react-utils';
+
+import SEGMENT_TYPES from './segmentTypes';
+
+import type { SegmentTypes } from './segmentTypes';
+
+import STYLES from './BpkSegmentedControl.module.scss';
+
+
+const getClassName = cssModules(STYLES);
+
+export type Props = {
+  buttonContents: string[];
+  type?: SegmentTypes;
+  onItemClick: () => void; // no parameters and no return value here yet
+  selectedIndex: number;
+  shadow?: boolean;
 };
+
+const BpkSegmentedControl = ({
+  buttonContents,
+  onItemClick, // default value for type
+  selectedIndex,
+  shadow,
+  type = SEGMENT_TYPES.CanvasDefault,
+}: Props) => {
+  const classNames = getClassName(
+    'bpk-segmented-control-group',
+    // `bpk-segmented-control-group--${type}`,
+    'bpk-segmented-control',
+    `bpk-segmented-control--${type}`,
+  );
+
+  return (
+    <>
+        {/*  double check group role is the best one to use */}
+      <div role='group' className={classNames}>
+      {buttonContents.map((content) => (
+        <button
+          type="button"
+          onClick={onItemClick}
+          className={classNames}
+        >
+          {content}
+          </button>
+      ))}
+      </div>
+    </>
+  );
+};
+
+// TBC if this needed
+// BpkSegmentedControl.propTypes = {
+//   type: PropTypes.oneOf(Object.keys(SEGMENT_TYPES)),
+//   className: PropTypes.string,
+// }
+
+// BpkSegmentedControl.defaultProps = {
+//   type: SEGMENT_TYPES.CanvasDefault,
+//   className: null,
+// }
 export default BpkSegmentedControl;
