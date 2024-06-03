@@ -52,7 +52,7 @@ const getClassName = cssModules(STYLES);
 const strokeWidth = 1;
 
 export type Props = {
-  /** 
+  /**
    * Tooltips are invisible to assistive technologies such as screen readers.
    * To improve accessibility, `ariaLabel` is required to describe the content of the tooltip to assistive technologies.
    * The label will be used on the `target` element, so any existing `aria-label` attached to `target` will be overridden.
@@ -84,6 +84,12 @@ const getArrowAlignment = (placement: Placement) => {
   return undefined;
 };
 
+const hasTouchSupport = () =>
+  !!(
+    typeof window !== 'undefined' &&
+    ('ontouchstart' in window || navigator.maxTouchPoints > 0)
+  );
+
 const BpkTooltip = ({
   ariaLabel,
   children,
@@ -112,7 +118,7 @@ const BpkTooltip = ({
   });
 
   const hover = useHover(context, {
-    mouseOnly: true,
+    mouseOnly: !hasTouchSupport() || !hideOnTouchDevices,
   });
 
   const { getFloatingProps, getReferenceProps } = useInteractions([hover]);

@@ -25,7 +25,7 @@ import {
   NoPaddingExample,
   LinkExample,
   FocusExample,
-  VisualTestExample
+  VisualTestExample,
 } from './examples';
 
 export default {
@@ -40,7 +40,9 @@ export const WithoutPadding = NoPaddingExample;
 export const OnALink = LinkExample;
 export const Focus = FocusExample;
 export const VisualTest = VisualTestExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true,
+  },
 };
