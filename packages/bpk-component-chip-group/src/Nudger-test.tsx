@@ -54,13 +54,13 @@ describe('Nudger', () => {
     [POSITION.trailing, true],
     [POSITION.leading, true],
   ])('should call scrollBy when leading=%s and isRtl=%s', async (position, isRtl) => {
-    const user = userEvent.setup({ delay: null });
+    const user = userEvent.setup({advanceTimers: jest.advanceTimersByTime});
     const mockScrollContainerRef = createMockScrollContainerRef(isRtl);
     mockIsRtl.mockReturnValue(isRtl);
     await act(async () => {
       render(<Nudger ariaLabel="nudge" scrollContainerRef={mockScrollContainerRef} position={position} />);
       await user.click(screen.getByRole('button'));
-    })
+    });
 
     const leading = position === POSITION.leading;
     const isLeft = (leading && !isRtl) || (!leading && isRtl);
