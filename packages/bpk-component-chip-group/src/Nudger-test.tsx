@@ -69,6 +69,7 @@ describe('Nudger', () => {
       left: isLeft ? -150 : 150,
       behavior: 'smooth',
     });
+    jest.clearAllTimers();
   });
 
   it('should render button style matching chips',  () => {
