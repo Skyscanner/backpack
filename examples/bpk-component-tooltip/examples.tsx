@@ -44,7 +44,7 @@ const DefaultExample = () => {
       <BpkTooltip
         ariaLabel="Montréal-Trudeau International Airport"
         id="my-tooltip"
-        target={<Heading ref={target}>YUL</Heading>}
+        target={<div ref={target}><Heading>YUL</Heading></div>}
       >
         Montréal-Trudeau International Airport
       </BpkTooltip>
@@ -61,7 +61,7 @@ const DarkExample = () => {
         ariaLabel="Edinburgh Airport"
         type={TOOLTIP_TYPES.dark}
         id="my-tooltip"
-        target={<Heading ref={target}>EDI</Heading>}
+        target={<div ref={target}><Heading>EDI</Heading></div>}
       >
         Edinburgh Airport
       </BpkTooltip>
@@ -77,7 +77,7 @@ const SideExample = () => {
       <BpkTooltip
         ariaLabel="Julius Nyerere International Airport, Dar es Salaam"
         id="my-tooltip"
-        target={<Heading ref={target}>DAR</Heading>}
+        target={<div ref={target}><Heading>DAR</Heading></div>}
         placement="right"
       >
         Julius Nyerere International Airport, Dar es Salaam
@@ -94,7 +94,7 @@ const NoPaddingExample = () => {
       <BpkTooltip
         ariaLabel="Singapore Changi Airport"
         id="my-tooltip"
-        target={<Heading ref={target}>SIN</Heading>}
+        target={<div ref={target}><Heading>SIN</Heading></div>}
         padded={false}
       >
         <div
@@ -136,48 +136,6 @@ const LinkExample = () => {
   );
 };
 
-const FocusExample = () => {
-  const targetRef1 = useRef(null);
-  const targetRef2 = useRef(null);
-  const targetRef3 = useRef(null);
-  const targetRef5 = useRef(null);
-
-  return (
-    <div style={wrapperStyle}>
-      <BpkTooltip
-        ariaLabel="Should be focused on first"
-        id="my-tooltip"
-        target={<Heading ref={targetRef1}>One</Heading>}
-      >
-        Should be focused on first
-      </BpkTooltip>
-      <BpkTooltip
-        ariaLabel="Should be focused on second"
-        id="my-tooltip"
-        target={<Heading ref={targetRef2}>Two</Heading>}
-      >
-        Should be focused on second
-      </BpkTooltip>
-      <BpkTooltip
-        ariaLabel="Should be focused on third"
-        id="my-tooltip"
-        target={<Heading ref={targetRef3}>Three</Heading>}
-      >
-        Should be focused on third
-      </BpkTooltip>
-      <button type="button" onClick={() => {}}>
-        Four
-      </button>
-      <BpkTooltip
-        ariaLabel="Should be focused on fifth"
-        id="my-tooltip"
-        target={<Heading ref={targetRef5}>Five</Heading>}
-      >
-        Should be focused on fifth
-      </BpkTooltip>
-    </div>
-  );
-};
 
 const VisualTestExample = () => {
   const target = useRef(null);
@@ -187,7 +145,7 @@ const VisualTestExample = () => {
       <BpkTooltip
         ariaLabel="Montréal-Trudeau International Airport"
         id="my-tooltip"
-        target={<Heading ref={target}>YUL</Heading>}
+        target={<div ref={target}><Heading>YUL</Heading></div>}
         isOpen
       >
         Montréal-Trudeau International Airport
@@ -202,6 +160,5 @@ export {
   SideExample,
   NoPaddingExample,
   LinkExample,
-  FocusExample,
   VisualTestExample,
 };

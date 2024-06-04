@@ -24,7 +24,6 @@ import {
   SideExample,
   NoPaddingExample,
   LinkExample,
-  FocusExample,
   VisualTestExample,
 } from './examples';
 
@@ -38,7 +37,6 @@ export const Dark = DarkExample;
 export const OnTheSide = SideExample;
 export const WithoutPadding = NoPaddingExample;
 export const OnALink = LinkExample;
-export const Focus = FocusExample;
 
 const VisualExample = VisualTestExample;
 export const VisualTest = {

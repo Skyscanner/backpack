@@ -34,6 +34,7 @@ import {
   useFloating,
   useHover,
   useInteractions,
+  useRole,
 } from '@floating-ui/react';
 
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
@@ -120,14 +121,19 @@ const BpkTooltip = ({
   const hover = useHover(context, {
     mouseOnly: !hasTouchSupport() || !hideOnTouchDevices,
   });
+  const role = useRole(context, { role: 'tooltip' });
 
-  const { getFloatingProps, getReferenceProps } = useInteractions([hover]);
+  const { getFloatingProps, getReferenceProps } = useInteractions([
+    hover,
+    role,
+  ]);
 
   const targetWithAccessibilityProps = cloneElement(target, {
-    ...getReferenceProps(),
-    ref: refs.setReference,
     tabIndex: '0',
     'aria-label': ariaLabel,
+    role: 'tooltip',
+    ref: refs.setReference,
+    ...getReferenceProps(),
   });
 
   const classNames = getClassName('bpk-tooltip');
