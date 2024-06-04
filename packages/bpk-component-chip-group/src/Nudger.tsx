@@ -63,7 +63,7 @@ const Nudger = ({
   scrollContainerRef
 }: Props) => {
   const [show, setShow] = useState(false);
-  const [enabled, setEnabled] = useState(true);
+  const [enabled, setEnabled] = useState(false);
 
   const leading = position === POSITION.leading;
   const rtl = isRTL();
@@ -80,8 +80,8 @@ const Nudger = ({
       const showLeading = scrollValue > 0;
       const showTrailing = scrollValue < scrollWidth - offsetWidth;
 
-      setEnabled((leading && showLeading) || (!leading && showTrailing))
       setShow(showLeading || showTrailing);
+      setEnabled((leading && showLeading) || (!leading && showTrailing))
     }, 100);
     return () => clearInterval(interval);
   }, [leading, rtl, scrollContainerRef]);
