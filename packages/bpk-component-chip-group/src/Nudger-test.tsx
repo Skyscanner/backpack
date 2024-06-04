@@ -38,7 +38,7 @@ const createMockScrollContainerRef = (isRtl: boolean): MutableRefObject<HTMLElem
     scrollBy: jest.fn() as (options?: any) => void,
     offsetWidth: 100,
     scrollLeft: isRtl ? -150 : 150,
-    scrollWidth: 500,
+    scrollWidth: 150,
   },
 } as MutableRefObject<HTMLElement>);
 
