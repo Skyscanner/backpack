@@ -39,10 +39,24 @@ export const OnTheSide = SideExample;
 export const WithoutPadding = NoPaddingExample;
 export const OnALink = LinkExample;
 export const Focus = FocusExample;
-export const VisualTest = VisualTestExample;
+
+const VisualExample = VisualTestExample;
+export const VisualTest = {
+  render: VisualExample,
+  parameters: {
+    percy: {
+      waitForTimeout: 10000
+    }
+  }
+};
 export const VisualTestWithZoom = {
-  render: VisualTest,
+  render: VisualExample,
   args: {
     zoomEnabled: true,
   },
+  parameters: {
+    percy: {
+      waitForTimeout: 10000
+    }
+  }
 };
