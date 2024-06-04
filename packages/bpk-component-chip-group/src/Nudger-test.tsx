@@ -36,9 +36,9 @@ jest.mock('../../bpk-react-utils/index', () => ({
 const createMockScrollContainerRef = (isRtl: boolean): MutableRefObject<HTMLElement> => ({
   current: {
     scrollBy: jest.fn() as (options?: any) => void,
-    offsetWidth: 100,
-    scrollLeft: isRtl ? -150 : 150,
-    scrollWidth: 150,
+    offsetWidth: 0,
+    scrollLeft: 0,
+    scrollWidth: 0,
   },
 } as MutableRefObject<HTMLElement>);
 
