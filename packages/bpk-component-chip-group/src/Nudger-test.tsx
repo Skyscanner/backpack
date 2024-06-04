@@ -59,7 +59,7 @@ describe('Nudger', () => {
     mockIsRtl.mockReturnValue(isRtl);
     render(<Nudger ariaLabel="nudge" scrollContainerRef={mockScrollContainerRef} position={position} />);
     await waitFor(() => {
-      expect(screen.getByRole('button')).not.toHaveAttribute('disabled', '');
+      expect(screen.getByRole('button')).not.toHaveAttribute('disabled');
     });
 
     await user.click(screen.getByRole('button'));
