@@ -16,15 +16,15 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/index.scss';
+@use '../../unstable__bpk-mixins/tokens';
 
 .bpk-carousel-slides-indicator {
   position: relative;
   right: 0;
-  bottom: 1.5rem;
+  bottom: tokens.bpk-spacing-lg();
   left: 0;
   display: flex;
-  margin: auto bpk-spacing-base();
+  margin: auto tokens.bpk-spacing-base();
   overflow: hidden;
   overflow: clip;
 }

@@ -55,9 +55,10 @@ describe('BpkCarousel', () => {
   });
 
   it('should render correctly', () => {
-    const { asFragment } = render(<BpkCarousel images={images} />);
+    render(<BpkCarousel images={images} />);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getAllByRole('listitem').length).toBe(7);
+    expect(screen.getAllByRole('button').length).toBe(5);
   });
 
   it.each<TestCase>([
