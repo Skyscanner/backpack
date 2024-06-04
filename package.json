@@ -118,7 +118,7 @@
     "@babel/preset-env": "^7.24.3",
     "@babel/preset-react": "^7.24.1",
     "@babel/preset-typescript": "^7.24.1",
-    "@babel/register": "^7.23.7",
+    "@babel/register": "^7.24.6",
     "@percy/cli": "^1.28.2",
     "@percy/storybook": "^5.0.1",
     "@skyscanner/bpk-foundations-web": "^18.1.0",
