@@ -22,6 +22,7 @@
 
 .bpk-chip-group-container {
   display: flex;
+  margin: 0 (-4 * tokens.$bpk-one-pixel-rem);
   align-items: center;
   white-space: nowrap;
 }
@@ -29,25 +30,24 @@
 .bpk-chip-group {
   display: flex;
   margin: 0;
-  padding: 0;
+  padding: 4 * tokens.$bpk-one-pixel-rem;
   align-items: baseline;
   border: none;
   gap: tokens.bpk-spacing-md();
 
-  &--rail {
-    padding-top: 4 * tokens.$bpk-one-pixel-rem;
-    padding-bottom: 4 * tokens.$bpk-one-pixel-rem;
-    flex-wrap: nowrap;
-    padding-inline-end: 4 * tokens.$bpk-one-pixel-rem;
-  }
-
   &--wrap {
+    padding-top: 0;
+    padding-bottom: 0;
     flex-wrap: wrap;
   }
 }
 
+.bpk-sticky-chip-container:first-child {
+  margin-inline-start: 4 * tokens.$bpk-one-pixel-rem;
+}
+
 .bpk-sticky-chip-container {
-  margin-inline-end: tokens.bpk-spacing-md();
+  margin-inline-end: tokens.bpk-spacing-sm();
   padding-inline-end: tokens.bpk-spacing-md();
 
   @include borders.bpk-border-right-sm(tokens.$bpk-line-day);
