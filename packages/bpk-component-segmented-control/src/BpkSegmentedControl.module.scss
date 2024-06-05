@@ -23,15 +23,15 @@
 @use '../../packages/unstable__bpk-mixins/shadows';
 
 .bpk-segmented-control-group {
-  display: inline-block;
+  display: flex;
+  flex-wrap: nowrap;
   overflow: hidden;
 
   @include radii.bpk-border-radius-sm;
 }
 
 .bpk-segmented-control {
-  min-width: tokens.bpk-spacing-xl();
-  max-width: 11rem; // pondering if we need this
+  flex: 1;
   padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-base();
   border: none;
   text-overflow: ellipsis;
@@ -55,7 +55,7 @@
   }
 
   &--surface-contrast {
-    background-color: tokens.$bpk-private-segmented-control-surface-contrast-on-night;
+    background-color: tokens.$bpk-private-segmented-control-surface-contrast-day;
     color: tokens.$bpk-text-on-dark-day;
 
     .bpk-segmented-control:not(:first-of-type) {
@@ -64,7 +64,7 @@
 
     // background - color token TBC
     &-selected {
-      background-color: tokens.$bpk-private-segmented-control-surface-contrast-day;
+      background-color: tokens.$bpk-private-segmented-control-surface-contrast-on-day;
       color: tokens.$bpk-text-on-dark-day;
     }
   }
@@ -84,5 +84,4 @@
   @include borders.bpk-border-left-sm(tokens.$bpk-line-day);
 }
 
-// add selected state
 // Add bpk animation

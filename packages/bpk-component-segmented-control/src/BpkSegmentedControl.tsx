@@ -23,54 +23,68 @@ import SEGMENT_TYPES from './segmentTypes';
 import type { SegmentTypes } from './segmentTypes';
 
 import STYLES from './BpkSegmentedControl.module.scss';
+import { useState } from 'react';
 
 const getClassName = cssModules(STYLES);
 
 export type Props = {
   buttonContents: string[];
   type?: SegmentTypes;
-  onItemClick: () => void; // no parameters and no return value here yet
+  onItemClick: (id: number) => void; // index param to track which one is clicked
   selectedIndex: number;
-  selected: boolean;
-  shadow?: boolean; // add styling for this too
+  shadow?: boolean;
 };
 
 const BpkSegmentedControl = ({
   buttonContents,
-  onItemClick, // default value for type
-  selected,
+  onItemClick,
   selectedIndex,
   shadow,
   type = SEGMENT_TYPES.CanvasDefault,
 }: Props) => {
+  const [selectedButton, setSelectedButton] = useState(selectedIndex);
+
   const containerStyling = getClassName('bpk-segmented-control-group');
-  const buttonStyling = getClassName(
-    'bpk-segmented-control',
-    `bpk-segmented-control--${type}`,
-    selected && `bpk-segmented-control--${type}-selected`,
-    shadow && `bpk-segmented-control--${type}-shadow`,
-    shadow && `bpk-segmented-control--${type}-selected-shadow`
-  );
+
+  // onClick - the button is selected, the state of the button changes and styling of button changes
+  const handleButtonClick = (id: number) => {
+   if (id !== selectedButton) {
+      setSelectedButton(id);
+      onItemClick(id);
+    }
+  }
 
   return (
-    <>
-        {/*  double check group role is the best one to use */}
-      <div role="radiogroup" className={containerStyling}>
-      {buttonContents.map((content) => (
-        <button
-          type="button"
-          onClick={onItemClick}
-          className={buttonStyling}
-          aria-pressed={selected}
-          aria-label="TBC if this is needed?"
-        >
-          {content}
+    <div role="radiogroup" className={containerStyling}>
+      {buttonContents.map((content, index) => {
+        const isSelected = selectedButton;
+        const buttonStyling = getClassName(
+          'bpk-segmented-control',
+          `bpk-segmented-control--${type}`,
+          {
+            [`bpk-segmented-control--${type}-selected`]: isSelected,
+            [`bpk-segmented-control--${type}-shadow`]: shadow,
+            [`bpk-segmented-control--${type}-selected-shadow`]: shadow && isSelected,
+          }
+        );
+
+        return (
+          <button
+            id={index}
+            type="button"
+            onClick={() => handleButtonClick(index)}
+            className={buttonStyling}
+            aria-pressed={isSelected}
+            aria-label={content}
+          >
+            {content}
           </button>
-      ))}
-      </div>
-    </>
+        );
+      })}
+    </div>
   );
 };
+
 export default BpkSegmentedControl;
 
 // Q for design
