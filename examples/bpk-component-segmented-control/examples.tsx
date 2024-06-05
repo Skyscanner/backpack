@@ -18,14 +18,18 @@
 
 import BpkSegmentedControl from '../../packages/bpk-component-segmented-control';
 import SEGMENT_TYPES from '../../packages/bpk-component-segmented-control/src/segmentTypes';
+import {
+  action,
+  BpkDarkExampleWrapper,
+} from '../bpk-storybook-utils';
 
 const TwoSegmentsDefault = () => (
   <BpkSegmentedControl
     buttonContents={['Value1', 'Value2',]}
     onItemClick={() => {}}
-    selectedIndex={2}
+    selectedIndex={0}
     type = {SEGMENT_TYPES.CanvasDefault}
-  />
+    />
 );
 
 const ThreeSegmentsCanvasConstrast = () => (
@@ -43,16 +47,18 @@ const FourSegmentsSurfaceDefault = () => (
     onItemClick={() => {}}
     selectedIndex={2}
     type = {SEGMENT_TYPES.SurfaceDefault}
-  />
+    />
 );
 
 const FourSegmentsSurfaceContrast = () => (
+  <BpkDarkExampleWrapper padded>
   <BpkSegmentedControl
-    buttonContents={['Value1', 'Value2', 'Value 3', 'Value4']}
+    buttonContents={['Very Long Value1', 'Very Long Value2', ' Very Long Value 3', 'Very Long Value4']}
     onItemClick={() => {}}
     selectedIndex={2}
     type = {SEGMENT_TYPES.SurfaceContrast}
-  />
+    />
+   </BpkDarkExampleWrapper>
 );
 
 export { TwoSegmentsDefault, ThreeSegmentsCanvasConstrast, FourSegmentsSurfaceDefault, FourSegmentsSurfaceContrast };

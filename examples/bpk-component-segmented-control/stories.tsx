@@ -27,7 +27,7 @@ export default {
   component: BpkSegmentedControl,
 };
 
-export const TwoDefault = TwoSegmentsDefault;
+export const CanvasDefault = TwoSegmentsDefault;
 export const CanvasConstrast = ThreeSegmentsCanvasConstrast;
 export const SurfaceDefault = FourSegmentsSurfaceDefault;
 export const SurfaceContrast = FourSegmentsSurfaceContrast;
