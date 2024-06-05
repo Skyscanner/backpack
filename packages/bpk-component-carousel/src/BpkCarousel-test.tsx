@@ -58,7 +58,9 @@ describe('BpkCarousel', () => {
     render(<BpkCarousel images={images} />);
 
     expect(screen.getAllByRole('listitem').length).toBe(7);
-    expect(screen.getAllByRole('button').length).toBe(5);
+    expect(document.querySelectorAll('.bpk-page-indicator__indicator').length).toBe(
+      5,
+    );
   });
 
   it.each<TestCase>([

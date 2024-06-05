@@ -31,6 +31,7 @@ describe('BpkPageIndicator', () => {
       indicatorLabel: 'Go to slide',
       prevNavLabel: 'Previous slide',
       nextNavLabel: 'Next slide',
+      onClick: jest.fn(),
     };
   });
 

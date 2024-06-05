@@ -70,6 +70,7 @@ const BpkScrollContainer = memo(({ images, imagesRef, onImageChanged, onVisible 
       ref={setRoot}
       data-testid="image-gallery-scroll-container"
       role="list"
+      title="hotel images"
     >
       <BpkCarouselImage
         image={images[images.length - 1]}

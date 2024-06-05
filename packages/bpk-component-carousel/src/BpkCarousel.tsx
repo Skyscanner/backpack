@@ -20,20 +20,15 @@ import { useRef, useState } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPageIndicator, { VARIANT } from '../../bpk-component-page-indicator';
-import { cssModules } from '../../bpk-react-utils';
 
 import BpkCarouselContainer from './BpkCarouselContainer';
 import { useScrollToInitialImage } from './utils';
 
 import type { Props } from './types';
 
-import STYLES from './BpkCarousel.module.scss';
-
-const getClassName = cssModules(STYLES);
-
 const BpkCarousel = ({
+  bottom,
   images,
-  indicatorClassName,
   indicatorLabel = 'go to slide',
   initialImageIndex = 0,
   onImageChanged = null,
@@ -54,12 +49,11 @@ const BpkCarousel = ({
       <BpkPageIndicator
         currentIndex={shownImageIndex}
         totalIndicators={images.length}
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={getClassName('bpk-carousel-slides-indicator', indicatorClassName)}
         variant={VARIANT.overImage}
         indicatorLabel={indicatorLabel}
         prevNavLabel="Previous slide"
         nextNavLabel="Next slide"
+        bottom={bottom}
       />
     </>
   );

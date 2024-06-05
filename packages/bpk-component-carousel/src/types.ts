@@ -26,4 +26,5 @@ export type Props = {
   onImageChanged?: OnImageChangedHandler
   indicatorLabel?: string;
   indicatorClassName?: string;
+  bottom?: number;
 };
