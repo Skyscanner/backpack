@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { useState } from 'react';
+
 import { cssModules } from '../../bpk-react-utils';
 
 import SEGMENT_TYPES from './segmentTypes';
@@ -23,7 +25,6 @@ import SEGMENT_TYPES from './segmentTypes';
 import type { SegmentTypes } from './segmentTypes';
 
 import STYLES from './BpkSegmentedControl.module.scss';
-import { useState } from 'react';
 
 const getClassName = cssModules(STYLES);
 
@@ -74,7 +75,7 @@ const BpkSegmentedControl = ({
             type="button"
             onClick={() => handleButtonClick(index)}
             className={buttonStyling}
-            aria-pressed={isSelected}
+            aria-pressed={!!isSelected}
             aria-label={content}
           >
             {content}
