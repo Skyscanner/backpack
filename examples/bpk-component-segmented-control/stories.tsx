@@ -31,3 +31,5 @@ export const TwoDefault = TwoSegmentsDefault;
 export const CanvasConstrast = ThreeSegmentsCanvasConstrast;
 export const SurfaceDefault = FourSegmentsSurfaceDefault;
 export const SurfaceContrast = FourSegmentsSurfaceContrast;
+
+// Create additional storries for the more complex Segmented Control
