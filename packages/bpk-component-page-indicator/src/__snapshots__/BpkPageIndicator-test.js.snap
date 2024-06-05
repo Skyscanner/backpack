@@ -63,48 +63,6 @@ exports[`BpkPageIndicator should render correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkPageIndicator should render correctly without onClick 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="true"
-  >
-    <div
-      class="bpk-page-indicator"
-    >
-      <div
-        class="bpk-page-indicator__container"
-      >
-        <div
-          class="bpk-page-indicator__indicators-container"
-        >
-          <div
-            class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default bpk-page-indicator__indicator--active-default"
-          />
-          <div
-            class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
-          />
-          <div
-            class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
-          />
-          <div
-            class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
-          />
-          <div
-            class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
-          />
-          <div
-            class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
-          />
-          <div
-            class="bpk-page-indicator__indicator bpk-page-indicator__indicator--default"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`BpkPageIndicator should support custom class names 1`] = `
 <DocumentFragment>
   <div
