@@ -35,8 +35,10 @@
   gap: tokens.bpk-spacing-md();
 
   &--rail {
-    padding: 4 * tokens.$bpk-one-pixel-rem 0;
+    padding-top: 4 * tokens.$bpk-one-pixel-rem;
+    padding-bottom: 4 * tokens.$bpk-one-pixel-rem;
     flex-wrap: nowrap;
+    padding-inline-end: 4 * tokens.$bpk-one-pixel-rem;
   }
 
   &--wrap {
