@@ -89,10 +89,9 @@ const Nudger = ({
   const classNames = getClassName(
     'bpk-chip-group-nudger',
     `bpk-chip-group-nudger--${leading ? "leading" : "trailing"}`,
-    !show && `bpk-chip-group-nudger--hidden`,
   )
 
-  return (
+  return show ? (
     <div className={classNames}>
       <BpkButtonV2
         title={ariaLabel}
@@ -111,7 +110,7 @@ const Nudger = ({
         {isLeft ? <AlignedLeftArrowIcon /> : <AlignedRightArrowIcon />}
       </BpkButtonV2>
     </div>
-  );
+  ) : null;
 }
 
 export default Nudger;

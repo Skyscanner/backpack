@@ -59,7 +59,7 @@ describe('Nudger', () => {
     mockIsRtl.mockReturnValue(isRtl);
     render(<Nudger ariaLabel="nudge" scrollContainerRef={mockScrollContainerRef} position={position} />);
     await waitFor(() => {
-      expect(screen.getByRole('button')).not.toHaveAttribute('disabled');
+      expect(screen.queryByRole('button')).not.toHaveAttribute('disabled');
     });
 
     await user.click(screen.getByRole('button'));
@@ -73,8 +73,11 @@ describe('Nudger', () => {
     });
   });
 
-  it('should render button style matching chips',  () => {
+  it('should render button style matching chips',  async () => {
     render(<Nudger position={POSITION.leading} ariaLabel="scroll" scrollContainerRef={createMockScrollContainerRef(false)} chipStyle={CHIP_TYPES.onDark} />);
+    await waitFor(() => {
+      expect(screen.queryByRole('button')).toBeVisible();
+    });
 
     expect(screen.getByRole('button')).toHaveClass('bpk-button--secondary-on-dark');
   });
