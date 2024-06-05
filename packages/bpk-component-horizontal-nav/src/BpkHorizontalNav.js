@@ -65,7 +65,9 @@ class BpkHorizontalNav extends Component<Props> {
   }
 
   componentDidMount() {
-    this.scrollSelectedIntoView(false);
+    requestAnimationFrame(() => {
+      this.scrollSelectedIntoView(false);
+    })
   }
 
   componentDidUpdate() {
