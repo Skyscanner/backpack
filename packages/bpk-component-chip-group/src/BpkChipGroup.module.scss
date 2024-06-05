@@ -22,7 +22,7 @@
 
 .bpk-chip-group-container {
   display: flex;
-  margin: 0 (-4 * tokens.$bpk-one-pixel-rem);
+  margin: 0 -(tokens.bpk-spacing-sm());
   align-items: center;
   white-space: nowrap;
 }
@@ -30,7 +30,7 @@
 .bpk-chip-group {
   display: flex;
   margin: 0;
-  padding: 4 * tokens.$bpk-one-pixel-rem;
+  padding: tokens.bpk-spacing-sm();
   align-items: baseline;
   border: none;
   gap: tokens.bpk-spacing-md();
@@ -43,7 +43,7 @@
 }
 
 .bpk-sticky-chip-container:first-child {
-  margin-inline-start: 4 * tokens.$bpk-one-pixel-rem;
+  margin-inline-start: tokens.bpk-spacing-sm();
 }
 
 .bpk-sticky-chip-container {
