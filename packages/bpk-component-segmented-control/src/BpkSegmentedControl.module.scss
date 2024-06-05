@@ -19,6 +19,8 @@
 @use '../../unstable__bpk-mixins/utils';
 @use '../../unstable__bpk-mixins/typography';
 @use '../../unstable__bpk-mixins/radii';
+@use '../../unstable__bpk-mixins/borders';
+@use '../../packages/unstable__bpk-mixins/shadows';
 
 .bpk-segmented-control-group {
   display: inline-block;
@@ -53,15 +55,34 @@
   }
 
   &--surface-contrast {
-    background-color: tokens.$bpk-private-segmented-control-surface-contrast-on-day;
+    background-color: tokens.$bpk-private-segmented-control-surface-contrast-on-night;
     color: tokens.$bpk-text-on-dark-day;
+
+    .bpk-segmented-control:not(:first-of-type) {
+      @include borders.bpk-border-left-sm(tokens.$bpk-line-on-dark-day);
+    }
+
+    // background - color token TBC
+    &-selected {
+      background-color: tokens.$bpk-private-segmented-control-surface-contrast-day;
+      color: tokens.$bpk-text-on-dark-day;
+    }
+  }
+
+  &-selected {
+    background-color: tokens.$bpk-core-primary-day;
+    color: tokens.$bpk-text-on-dark-day;
+  }
+
+  // double check this shows correctly only on larger
+  &-shadow {
+    @include shadows.bpk-box-shadow-sm;
   }
 }
 
 .bpk-segmented-control:not(:first-of-type) {
-  border-inline-start: solid tokens.$bpk-line-day;
+  @include borders.bpk-border-left-sm(tokens.$bpk-line-day);
 }
 
-// different border colour for surface contrast
-
 // add selected state
+// Add bpk animation

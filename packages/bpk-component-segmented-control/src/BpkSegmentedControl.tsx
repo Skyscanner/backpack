@@ -24,7 +24,6 @@ import type { SegmentTypes } from './segmentTypes';
 
 import STYLES from './BpkSegmentedControl.module.scss';
 
-
 const getClassName = cssModules(STYLES);
 
 export type Props = {
@@ -32,12 +31,14 @@ export type Props = {
   type?: SegmentTypes;
   onItemClick: () => void; // no parameters and no return value here yet
   selectedIndex: number;
-  shadow?: boolean;
+  selected: boolean;
+  shadow?: boolean; // add styling for this too
 };
 
 const BpkSegmentedControl = ({
   buttonContents,
   onItemClick, // default value for type
+  selected,
   selectedIndex,
   shadow,
   type = SEGMENT_TYPES.CanvasDefault,
@@ -46,17 +47,22 @@ const BpkSegmentedControl = ({
   const buttonStyling = getClassName(
     'bpk-segmented-control',
     `bpk-segmented-control--${type}`,
+    selected && `bpk-segmented-control--${type}-selected`,
+    shadow && `bpk-segmented-control--${type}-shadow`,
+    shadow && `bpk-segmented-control--${type}-selected-shadow`
   );
 
   return (
     <>
         {/*  double check group role is the best one to use */}
-      <div role='group' className={containerStyling}>
+      <div role="radiogroup" className={containerStyling}>
       {buttonContents.map((content) => (
         <button
           type="button"
           onClick={onItemClick}
           className={buttonStyling}
+          aria-pressed={selected}
+          aria-label="TBC if this is needed?"
         >
           {content}
           </button>
@@ -66,3 +72,6 @@ const BpkSegmentedControl = ({
   );
 };
 export default BpkSegmentedControl;
+
+// Q for design
+// want the ability for it to specify which one is be selected on load?
