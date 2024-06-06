@@ -42,14 +42,6 @@ describe('BpkPageIndicator', () => {
     expect(screen.getAllByRole('button').length).toBe(7);
   });
 
-  it('should support custom style', () => {
-    render(
-      <BpkPageIndicator {...props} style={{ bottom: '48px'}} />,
-    );
-
-    expect(screen.getByTestId('indicator-container')).toHaveStyle({bottom: '48px'});
-  });
-
   it('should support showNav attribute', () => {
     render(<BpkPageIndicator {...props} showNav />);
 
@@ -58,8 +50,9 @@ describe('BpkPageIndicator', () => {
   });
 
   it('should render correctly when over image', () => {
-    render(<BpkPageIndicator {...props} variant={VARIANT.overImage} />);
+    render(<BpkPageIndicator {...props} variant={VARIANT.overImage}  bottom={48} />);
 
+    expect(screen.getByTestId('indicator-container')).toHaveStyle({bottom: '48px'});
     expect(document.querySelector('.bpk-page-indicator__over-image')).toBeTruthy();
   });
 });

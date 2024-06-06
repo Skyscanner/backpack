@@ -44,17 +44,17 @@ export type Props = {
   prevNavLabel: ?string,
   nextNavLabel: ?string,
   variant: ?$Keys<typeof VARIANT>,
-  style: ?{},
+  bottom: ?number,
 };
 
 const BpkPageIndicator = ({
+  bottom,
   currentIndex,
   indicatorLabel,
   nextNavLabel,
   onClick,
   prevNavLabel,
   showNav,
-  style,
   totalIndicators,
   variant,
 }: Props) => {
@@ -65,7 +65,9 @@ const BpkPageIndicator = ({
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <div
       className={isOverImage ? getClassName('bpk-page-indicator__over-image') : null}
-      style={style}
+      style={isOverImage && bottom ? {
+        bottom
+      } : undefined}
       aria-hidden={isInteractive ? 'false': 'true'}
       data-testid="indicator-container"
     >
@@ -147,21 +149,22 @@ const BpkPageIndicator = ({
 };
 
 BpkPageIndicator.propTypes = {
-  indicatorLabel: PropTypes.string.isRequired,
-  prevNavLabel: PropTypes.string.isRequired,
-  nextNavLabel: PropTypes.string.isRequired,
+  indicatorLabel: PropTypes.string,
+  prevNavLabel: PropTypes.string,
+  nextNavLabel: PropTypes.string,
   currentIndex: PropTypes.number.isRequired,
   totalIndicators: PropTypes.number.isRequired,
   variant: PropTypes.oneOf(Object.keys(VARIANT)),
   onClick: PropTypes.func,
   showNav: PropTypes.bool,
+  bottom: PropTypes.number,
 };
 
 BpkPageIndicator.defaultProps = {
   onClick: null,
   showNav: false,
   variant: VARIANT.default,
-  style: {},
+  bottom: null,
 };
 
 export default BpkPageIndicator;

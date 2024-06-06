@@ -32,10 +32,10 @@ import STYLES from './BpkCarousel.module.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkCarousel = ({
+  bottom,
   images,
   initialImageIndex = 0,
   onImageChanged = null,
-  style,
 }: Props) => {
   const [shownImageIndex, updateShownImageIndex] = useState(initialImageIndex);
   const imagesRef = useRef<Array<HTMLElement | null>>([]);
@@ -54,7 +54,7 @@ const BpkCarousel = ({
         currentIndex={shownImageIndex}
         totalIndicators={images.length}
         variant={VARIANT.overImage}
-        style={style}
+        bottom={bottom}
       />
     </div>
   );

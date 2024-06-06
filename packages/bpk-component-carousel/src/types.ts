@@ -24,5 +24,5 @@ export type Props = {
   images: ReactNode[]
   initialImageIndex?: number;
   onImageChanged?: OnImageChangedHandler
-  style?: {};
+  bottom?: number;
 };
