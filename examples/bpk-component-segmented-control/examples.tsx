@@ -19,7 +19,6 @@
 import BpkSegmentedControl from '../../packages/bpk-component-segmented-control';
 import SEGMENT_TYPES from '../../packages/bpk-component-segmented-control/src/segmentTypes';
 import {
-  action,
   BpkDarkExampleWrapper,
 } from '../bpk-storybook-utils';
 
@@ -61,4 +60,39 @@ const FourSegmentsSurfaceContrast = () => (
    </BpkDarkExampleWrapper>
 );
 
-export { TwoSegmentsDefault, ThreeSegmentsCanvasConstrast, FourSegmentsSurfaceDefault, FourSegmentsSurfaceContrast };
+const complexButtonContent = [[
+  <>
+  <div>"Best"</div>
+  <div>'£84'</div>
+  <div>"2h 18 average"</div>
+</>
+],
+[
+  <>
+  <div>"Cheapest"</div>
+  <div>'£34'</div>
+  <div>"10h 18 average"</div>
+  </>
+  ],
+[
+  <>
+  <div>"Fastest"</div>
+  <div>'£100'</div>
+  <div>"2h average"</div>
+  </>
+],
+]
+
+const ComplexFourSegmentsSurfaceContrast = () => (
+  <BpkDarkExampleWrapper padded >
+  <BpkSegmentedControl
+    buttonContents={[flattenedButtonContents]}
+    onItemClick={() => {}}
+    selectedIndex={2}
+    type={SEGMENT_TYPES.SurfaceContrast}
+    shadow
+    />
+   </BpkDarkExampleWrapper>
+);
+
+export { TwoSegmentsDefault, ThreeSegmentsCanvasConstrast, FourSegmentsSurfaceDefault, FourSegmentsSurfaceContrast, ComplexFourSegmentsSurfaceContrast };

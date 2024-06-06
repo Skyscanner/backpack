@@ -19,7 +19,7 @@
 import BpkSegmentedControl from '../../packages/bpk-component-segmented-control';
 
 import {
- TwoSegmentsDefault, ThreeSegmentsCanvasConstrast, FourSegmentsSurfaceDefault, FourSegmentsSurfaceContrast,
+ TwoSegmentsDefault, ThreeSegmentsCanvasConstrast, FourSegmentsSurfaceDefault, FourSegmentsSurfaceContrast, ComplexFourSegmentsSurfaceContrast
 } from './examples';
 
 export default {
@@ -31,5 +31,4 @@ export const CanvasDefault = TwoSegmentsDefault;
 export const CanvasConstrast = ThreeSegmentsCanvasConstrast;
 export const SurfaceDefault = FourSegmentsSurfaceDefault;
 export const SurfaceContrast = FourSegmentsSurfaceContrast;
-
-// Create additional storries for the more complex Segmented Control
+export const ComplexSurface = ComplexFourSegmentsSurfaceContrast;
