@@ -22,6 +22,12 @@
 @use '../../unstable__bpk-mixins/borders';
 @use '../../packages/unstable__bpk-mixins/shadows';
 
+// Look into implementing animation
+// @mixin animation {
+// animation-duration: tokens.$bpk-duration-sm;
+// animation-timing-function: ease-in-out;
+// }
+
 .bpk-segmented-control-group {
   display: flex;
   flex-wrap: nowrap;
@@ -87,6 +93,6 @@
 
 .bpk-segmented-control:not(:first-of-type) {
   @include borders.bpk-border-left-sm(tokens.$bpk-line-day);
-}
 
-// Add bpk animation
+  // ok to apply, solution does not work when button is selected and both borders expected to dissapear
+}
