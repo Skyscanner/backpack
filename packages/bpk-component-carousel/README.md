@@ -3,7 +3,7 @@
 > Backpack carousel component.
 
 ## Description
-This component is used to display images in the form of a carousel, Users can browse through images by swipe. It only works on mobile.
+This component is used to display images in the form of a carousel, users can browse through images by swipe. It only works on mobile.
 
 ## Installation
 
