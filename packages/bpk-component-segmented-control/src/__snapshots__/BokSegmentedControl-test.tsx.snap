@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkSegmentedControl should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-segmented-control-group"
+    role="radiogroup"
+  >
+    <button
+      aria-pressed="false"
+      class="bpk-segmented-control bpk-segmented-control--canvas-default"
+      id="0"
+      type="button"
+    >
+      one
+    </button>
+    <button
+      aria-pressed="true"
+      class="bpk-segmented-control bpk-segmented-control--canvas-default bpk-segmented-control--canvas-default-selected"
+      id="1"
+      type="button"
+    >
+      two
+    </button>
+  </div>
+</DocumentFragment>
+`;
