@@ -17,7 +17,7 @@
  */
 
 import type { SyntheticEvent, ReactNode, ReactElement } from 'react';
-import { useState, useRef, cloneElement, isValidElement } from 'react';
+import { useState, useEffect, useRef, cloneElement, isValidElement } from 'react';
 
 import {
   useFloating,
@@ -125,6 +125,13 @@ const BpkPopover = ({
   ...rest
 }: Props) => {
   const [isOpenState, setIsOpenState] = useState(isOpen);
+
+  useEffect(() => {
+    if (!isOpen) {
+      setIsOpenState(false)
+    }
+  }, [isOpen]);
+
   const arrowRef = useRef(null);
 
   const { context, floatingStyles, refs } = useFloating({
