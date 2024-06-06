@@ -46,6 +46,29 @@ describe('BpkPopover', () => {
     expect(screen.getByText('My popover content')).toBeVisible();
   });
 
+  it('should rerender correctly with "isOpen" provided', () => {
+    const props = {
+      id: 'my-popover',
+      onClose: () => null,
+      label: 'My popover',
+      closeButtonLabel: 'Close',
+      target: <button type="button">My target</button>,
+    };
+    const { rerender } = render(
+      <BpkPopover {...props} isOpen>
+        My popover content
+      </BpkPopover>,
+    );
+
+    rerender(
+      <BpkPopover {...props} isOpen={false}>
+        My popover content
+      </BpkPopover>,
+    );
+
+    expect(screen.queryByRole('My popover content')).not.toBeInTheDocument();
+  });
+
   it('should render without an arrow', () => {
     const target = (<button type="button">My target</button>);
     render(
