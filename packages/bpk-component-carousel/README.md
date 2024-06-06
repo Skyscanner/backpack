@@ -2,6 +2,9 @@
 
 > Backpack carousel component.
 
+## Description
+This component is used to display images in the form of a carousel, Users can browse through images by swipe. It only works on mobile.
+
 ## Installation
 
 Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
