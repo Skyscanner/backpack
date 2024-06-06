@@ -16,13 +16,6 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from "react";
-
-export type OnImageChangedHandler = ((shownImageIndex: number) => void) | null | undefined;
-
-export type Props = {
-  images: ReactNode[]
-  initialImageIndex?: number;
-  onImageChanged?: OnImageChangedHandler
-  style?: {};
-};
+.bpk-carousel {
+  position: relative;
+}

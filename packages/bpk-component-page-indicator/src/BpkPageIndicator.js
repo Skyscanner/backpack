@@ -36,43 +36,38 @@ export const VARIANT = {
 };
 
 export type Props = {
-  className: ?string,
   showNav: ?boolean,
   currentIndex: number,
   totalIndicators: number,
   onClick: ?() => void,
-  indicatorLabel: string,
-  prevNavLabel: string,
-  nextNavLabel: string,
+  indicatorLabel: ?string,
+  prevNavLabel: ?string,
+  nextNavLabel: ?string,
   variant: ?$Keys<typeof VARIANT>,
-  bottom:? number,
+  style: ?{},
 };
 
 const BpkPageIndicator = ({
-  bottom,
-  className,
   currentIndex,
   indicatorLabel,
   nextNavLabel,
   onClick,
   prevNavLabel,
   showNav,
+  style,
   totalIndicators,
   variant,
 }: Props) => {
-  const overImageClassName = variant === VARIANT.overImage ? getClassName('bpk-page-indicator__over-image') : null;
-  const indicatorClassName = className || overImageClassName;
-
+  const isOverImage = variant === VARIANT.overImage;
   const isInteractive = !!onClick;
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <div
-      className={indicatorClassName}
-      style={variant === VARIANT.overImage && bottom ? {
-        bottom
-      } : undefined}
+      className={isOverImage ? getClassName('bpk-page-indicator__over-image') : null}
+      style={style}
       aria-hidden={isInteractive ? 'false': 'true'}
+      data-testid="indicator-container"
     >
       <div
         className={getClassName(
@@ -131,8 +126,6 @@ const BpkPageIndicator = ({
                   index === currentIndex &&
                   `bpk-page-indicator__indicator--active-${variant}`,
                 )}
-                // aria-label={`${indicatorLabel} ${index + 1}`}
-                // aria-current={currentIndex === index ? 'true' : 'false'}
                 // eslint-disable-next-line react/no-array-index-key
                 key={`indicator-${index}`}
               />
@@ -161,15 +154,14 @@ BpkPageIndicator.propTypes = {
   totalIndicators: PropTypes.number.isRequired,
   variant: PropTypes.oneOf(Object.keys(VARIANT)),
   onClick: PropTypes.func,
-  className: PropTypes.string,
   showNav: PropTypes.bool,
 };
 
 BpkPageIndicator.defaultProps = {
   onClick: null,
-  className: null,
   showNav: false,
   variant: VARIANT.default,
+  style: {},
 };
 
 export default BpkPageIndicator;

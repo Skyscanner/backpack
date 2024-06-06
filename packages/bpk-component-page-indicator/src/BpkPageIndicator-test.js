@@ -17,7 +17,8 @@
  */
 /* @flow strict */
 
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import BpkPageIndicator, { VARIANT } from './BpkPageIndicator';
 
@@ -36,26 +37,29 @@ describe('BpkPageIndicator', () => {
   });
 
   it('should render correctly', () => {
-    const { asFragment } = render(<BpkPageIndicator {...props} />);
-    expect(asFragment()).toMatchSnapshot();
+    render(<BpkPageIndicator {...props} />);
+
+    expect(screen.getAllByRole('button').length).toBe(7);
   });
 
-  it('should support custom class names', () => {
-    const { asFragment } = render(
-      <BpkPageIndicator {...props} className="custom-classname" />,
+  it('should support custom style', () => {
+    render(
+      <BpkPageIndicator {...props} style={{ bottom: '48px'}} />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByTestId('indicator-container')).toHaveStyle({bottom: '48px'});
   });
 
   it('should support showNav attribute', () => {
-    const { asFragment } = render(<BpkPageIndicator {...props} showNav />);
-    expect(asFragment()).toMatchSnapshot();
+    render(<BpkPageIndicator {...props} showNav />);
+
+    expect(screen.getByLabelText('Previous slide')).toBeTruthy();
+    expect(screen.getByLabelText('Next slide')).toBeTruthy();
   });
 
-  it('should support style attribute', () => {
-    const { asFragment } = render(
-      <BpkPageIndicator {...props} variant={VARIANT.overImage} />,
-    );
-    expect(asFragment()).toMatchSnapshot();
+  it('should render correctly when over image', () => {
+    render(<BpkPageIndicator {...props} variant={VARIANT.overImage} />);
+
+    expect(document.querySelector('.bpk-page-indicator__over-image')).toBeTruthy();
   });
 });

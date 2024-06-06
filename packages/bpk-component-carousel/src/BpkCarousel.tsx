@@ -20,18 +20,22 @@ import { useRef, useState } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPageIndicator, { VARIANT } from '../../bpk-component-page-indicator';
+import { cssModules } from '../../bpk-react-utils';
 
 import BpkCarouselContainer from './BpkCarouselContainer';
 import { useScrollToInitialImage } from './utils';
 
 import type { Props } from './types';
 
+import STYLES from './BpkCarousel.module.scss';
+
+const getClassName = cssModules(STYLES);
+
 const BpkCarousel = ({
-  bottom,
   images,
-  indicatorLabel = 'go to slide',
   initialImageIndex = 0,
   onImageChanged = null,
+  style,
 }: Props) => {
   const [shownImageIndex, updateShownImageIndex] = useState(initialImageIndex);
   const imagesRef = useRef<Array<HTMLElement | null>>([]);
@@ -39,7 +43,7 @@ const BpkCarousel = ({
   useScrollToInitialImage(initialImageIndex!, imagesRef);
 
   return (
-    <>
+    <div className={getClassName('bpk-carousel')}>
       <BpkCarouselContainer
         images={images}
         onVisible={updateShownImageIndex}
@@ -50,12 +54,9 @@ const BpkCarousel = ({
         currentIndex={shownImageIndex}
         totalIndicators={images.length}
         variant={VARIANT.overImage}
-        indicatorLabel={indicatorLabel}
-        prevNavLabel="Previous slide"
-        nextNavLabel="Next slide"
-        bottom={bottom}
+        style={style}
       />
-    </>
+    </div>
   );
 };
 
