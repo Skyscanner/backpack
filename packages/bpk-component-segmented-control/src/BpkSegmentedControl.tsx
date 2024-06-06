@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import type { ReactNode} from 'react';
 import { useState } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -29,7 +30,7 @@ import STYLES from './BpkSegmentedControl.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  buttonContents: string[];
+  buttonContents: string[] |  ReactNode[];
   type?: SegmentTypes;
   onItemClick: (id: number) => void; // index param to track which one is clicked
   selectedIndex: number;
@@ -44,49 +45,40 @@ const BpkSegmentedControl = ({
   type = SEGMENT_TYPES.CanvasDefault,
 }: Props) => {
   const [selectedButton, setSelectedButton] = useState(selectedIndex);
-
-  const containerStyling = getClassName('bpk-segmented-control-group');
-
-  // onClick - the button is selected, the state of the button changes and styling of button changes
   const handleButtonClick = (id: number) => {
    if (id !== selectedButton) {
       setSelectedButton(id);
-      onItemClick(id);
+     onItemClick(id);
     }
   }
+  const containerStyling = getClassName('bpk-segmented-control-group');
 
   return (
     <div role="radiogroup" className={containerStyling}>
       {buttonContents.map((content, index) => {
-        const isSelected = selectedButton;
+        const isSelected = index === selectedButton;
         const buttonStyling = getClassName(
           'bpk-segmented-control',
           `bpk-segmented-control--${type}`,
-          {
-            [`bpk-segmented-control--${type}-selected`]: isSelected,
-            [`bpk-segmented-control--${type}-shadow`]: shadow,
-            [`bpk-segmented-control--${type}-selected-shadow`]: shadow && isSelected,
-          }
+          isSelected && `bpk-segmented-control--${type}-selected`,
+          shadow && `bpk-segmented-control--${type}-shadow`,
+          shadow && isSelected && `bpk-segmented-control--${type}-selected-shadow`
         );
 
-        return (
-          <button
-            id={index}
-            type="button"
-            onClick={() => handleButtonClick(index)}
-            className={buttonStyling}
-            aria-pressed={!!isSelected}
-            aria-label={content}
-          >
-            {content}
-          </button>
-        );
+    return (
+      <button
+        id={index.toString()}
+        type="button"
+        onClick={() => handleButtonClick(index)}
+        className={buttonStyling}
+        aria-pressed={!!isSelected}
+      >
+        {content}
+      </button>
+    );
       })}
     </div>
   );
 };
 
 export default BpkSegmentedControl;
-
-// Q for design
-// want the ability for it to specify which one is be selected on load?
