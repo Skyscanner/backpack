@@ -52,6 +52,7 @@ export const TEXT_STYLES = {
   hero3: 'hero-3',
   hero4: 'hero-4',
   hero5: 'hero-5',
+  hero6: 'hero-6',
   editorial1: 'editorial-1',
   editorial2: 'editorial-2',
   editorial3: 'editorial-3',

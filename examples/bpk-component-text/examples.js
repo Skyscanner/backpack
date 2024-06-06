@@ -87,6 +87,9 @@ const HeroStylesExample = () => (
     <BpkText textStyle={TEXT_STYLES.hero5} tagName="h5">
       Hero 5
     </BpkText>
+    <BpkText textStyle={TEXT_STYLES.hero6} tagName="h6">
+      Hero 6
+    </BpkText>
   </div>
 );
 
