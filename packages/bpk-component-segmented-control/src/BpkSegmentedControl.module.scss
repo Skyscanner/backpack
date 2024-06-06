@@ -31,8 +31,8 @@
 }
 
 .bpk-segmented-control {
-  flex: 1;
   padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-base();
+  flex: 1;
   border: none;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -42,39 +42,44 @@
   &--canvas-default {
     background-color: tokens.$bpk-private-segmented-control-canvas-default-day;
     color: tokens.$bpk-text-primary-day;
+
+    &-selected {
+      background-color: tokens.$bpk-core-primary-day;
+      color: tokens.$bpk-text-on-dark-day;
+    }
   }
 
   &--canvas-contrast {
     background-color: tokens.$bpk-private-segmented-control-surface-contrast-day;
     color: tokens.$bpk-text-primary-day;
+
+    &-selected {
+      background-color: tokens.$bpk-core-primary-day;
+      color: tokens.$bpk-text-on-dark-day;
+    }
   }
 
   &--surface-default {
     background-color: tokens.$bpk-private-segmented-control-surface-contrast-day;
     color: tokens.$bpk-text-primary-day;
+
+    &-selected {
+      background-color: tokens.$bpk-core-primary-day;
+      color: tokens.$bpk-text-on-dark-day;
+    }
   }
 
   &--surface-contrast {
     background-color: tokens.$bpk-private-segmented-control-surface-contrast-day;
     color: tokens.$bpk-text-on-dark-day;
 
-    .bpk-segmented-control:not(:first-of-type) {
-      @include borders.bpk-border-left-sm(tokens.$bpk-line-on-dark-day);
-    }
-
-    // background - color token TBC
     &-selected {
       background-color: tokens.$bpk-private-segmented-control-surface-contrast-on-day;
       color: tokens.$bpk-text-on-dark-day;
     }
   }
 
-  &-selected {
-    background-color: tokens.$bpk-core-primary-day;
-    color: tokens.$bpk-text-on-dark-day;
-  }
-
-  // double check this shows correctly only on larger
+  // Not mocked this yet, double check this shows correctly only on larger
   &-shadow {
     @include shadows.bpk-box-shadow-sm;
   }
