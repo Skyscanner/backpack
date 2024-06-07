@@ -15,20 +15,88 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {  render } from '@testing-library/react';
+import {  render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import BpkSegmentedControl from './BpkSegmentedControl';
+import SEGMENT_TYPES from './segmentTypes';
 
-const props = {
+const mockOnItemClick = jest.fn();
+
+const defaultProps = {
   buttonContents: ['one', 'two'],
-  onItemClick: (id: number) => {},
+  onItemClick: mockOnItemClick,
   selectedIndex: 1,
-}
+  shadow: false,
+  type: SEGMENT_TYPES.CanvasContrast,
+};
 
 describe('BpkSegmentedControl', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(<BpkSegmentedControl {...props} />);
-    expect(asFragment()).toMatchSnapshot();
+  beforeEach(() => {
+    mockOnItemClick.mockClear();
+  });
 
-  })
-})
+  it('should render component correctly', () => {
+    const { asFragment } = render(<BpkSegmentedControl {...defaultProps} />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render ReactNode contents correctly', () => {
+    const propsWithReactNodes = {
+      ...defaultProps,
+      buttonContents: [<div>one</div>, <div>two</div>, <div>three</div>],
+    };
+    const { getByText } = render(<BpkSegmentedControl {...propsWithReactNodes} />);
+
+    expect(getByText('one')).toBeInTheDocument();
+    expect(getByText('two')).toBeInTheDocument();
+    expect(getByText('three')).toBeInTheDocument();
+  });
+
+  it('should render button contents correctly', () => {
+    const { getByText } = render(<BpkSegmentedControl {...defaultProps} />);
+
+    expect(getByText('one')).toBeInTheDocument();
+    expect(getByText('two')).toBeInTheDocument();
+  });
+
+  it('should call onItemClick with the correct index when a button is clicked', () => {
+    const { getByText } = render(<BpkSegmentedControl {...defaultProps} />);
+    const firstButton = getByText('one');
+    fireEvent.click(firstButton);
+
+    expect(mockOnItemClick).toHaveBeenCalledWith(0);
+  });
+
+  it('should update the selected button when a button is clicked', () => {
+    const { getByText} = render(<BpkSegmentedControl {...defaultProps} />);
+    const buttonOne = getByText('one');
+    fireEvent.click(buttonOne);
+
+    expect(screen.getByText('one')).toHaveAttribute('aria-pressed', 'true');
+    expect(screen.getByText('two')).toHaveAttribute('aria-pressed', 'false');
+  });
+
+  it('should render with the correct type class', () => {
+    const { container } = render(<BpkSegmentedControl {...defaultProps} />);
+    const button = container.querySelector('.bpk-segmented-control--canvas-contrast');
+
+    expect(button).toBeInTheDocument();
+  });
+
+  it('should apply shadow class when shadow prop is true', () => {
+    const props = { ...defaultProps, shadow: true };
+    const { container } = render(<BpkSegmentedControl {...props} />);
+
+    expect(container.firstChild).toHaveClass('bpk-segmented-control-group-shadow');
+  });
+
+  it('should apply the correct class when button is selected and shadow is true', () => {
+    const props = { ...defaultProps, shadow: true };
+    const { container } = render(<BpkSegmentedControl {...props} />);
+    const selectedButton = container.querySelector('.bpk-segmented-control--canvas-contrast-selected-shadow');
+
+    expect(selectedButton).toBeInTheDocument();
+  });
+});

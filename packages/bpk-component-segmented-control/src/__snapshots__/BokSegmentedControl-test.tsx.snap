@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkSegmentedControl should render correctly 1`] = `
+exports[`BpkSegmentedControl should render component correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-segmented-control-group"
@@ -8,7 +8,7 @@ exports[`BpkSegmentedControl should render correctly 1`] = `
   >
     <button
       aria-pressed="false"
-      class="bpk-segmented-control bpk-segmented-control--canvas-default"
+      class="bpk-segmented-control bpk-segmented-control--canvas-contrast"
       id="0"
       type="button"
     >
@@ -16,7 +16,7 @@ exports[`BpkSegmentedControl should render correctly 1`] = `
     </button>
     <button
       aria-pressed="true"
-      class="bpk-segmented-control bpk-segmented-control--canvas-default bpk-segmented-control--canvas-default-selected"
+      class="bpk-segmented-control bpk-segmented-control--canvas-contrast bpk-segmented-control--canvas-contrast-selected"
       id="1"
       type="button"
     >
