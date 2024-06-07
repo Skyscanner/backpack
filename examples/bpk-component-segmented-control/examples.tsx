@@ -22,6 +22,11 @@ import {
   BpkDarkExampleWrapper,
 } from '../bpk-storybook-utils';
 
+const wrapperStyle = {
+  display: 'flex',
+  maxWidth: '500px',
+};
+
 // Simple Segmented Control
 const SimpleDefault = () => (
   <BpkSegmentedControl
@@ -79,7 +84,7 @@ const complexButtonContentCheapest = [
 const complexButtonContentFastest = [
   <>
     <div>Fastest</div>
-    <div>£100</div>
+    <div>£90</div>
     <div>1h average</div>
   </>
 ];
@@ -87,7 +92,7 @@ const complexButtonContentFastest = [
 const allButtonContent = [complexButtonContentBest, complexButtonContentCheapest, complexButtonContentFastest];
 
 const ComplexSurfaceContrast = () => (
-  <BpkDarkExampleWrapper padded style={{ display: 'flex' }}>
+  <BpkDarkExampleWrapper padded style={{display: 'flex'}}>
       <BpkSegmentedControl
         buttonContents={allButtonContent}
         onItemClick={() => {}}
@@ -99,6 +104,7 @@ const ComplexSurfaceContrast = () => (
 );
 
 const ComplexSurfaceDefault = () => (
+  <div style={wrapperStyle}>
   <BpkSegmentedControl
         buttonContents={allButtonContent}
         onItemClick={() => {}}
@@ -106,6 +112,7 @@ const ComplexSurfaceDefault = () => (
         type={SEGMENT_TYPES.SurfaceDefault}
         shadow
     />
+  </div>
 );
 
 export { SimpleDefault, SimpleCanvasConstrast, SimpleSurfaceDefault, SimpleSurfaceContrast, ComplexSurfaceContrast, ComplexSurfaceDefault};
