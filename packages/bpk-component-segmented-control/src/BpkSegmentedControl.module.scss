@@ -22,9 +22,10 @@
 @use '../../unstable__bpk-mixins/borders';
 @use '../../packages/unstable__bpk-mixins/shadows';
 
-// Look into implementing animation
+// Animation values from figma, not implemented
 // @mixin animation {
 // animation-duration: tokens.$bpk-duration-sm;
+// animation-name: slide-side;
 // animation-timing-function: ease-in-out;
 // }
 
@@ -34,6 +35,10 @@
   overflow: hidden;
 
   @include radii.bpk-border-radius-sm;
+
+  &-shadow {
+    @include shadows.bpk-box-shadow-sm;
+  }
 }
 
 .bpk-segmented-control {
@@ -86,13 +91,12 @@
   }
 
   // Not mocked this yet, double check this shows correctly only on larger
-  &-shadow {
-    @include shadows.bpk-box-shadow-sm;
-  }
+  // &-shadow {
+  // // @include shadows.bpk-box-shadow-sm;
+  // box-shadow: 0px 1px 3px 0px rgba(37, 32, 31, 0.30);
+  // }
 }
 
 .bpk-segmented-control:not(:first-of-type) {
   @include borders.bpk-border-left-sm(tokens.$bpk-line-day);
-
-  // ok to apply, solution does not work when button is selected and both borders expected to dissapear
 }

@@ -51,7 +51,7 @@ const BpkSegmentedControl = ({
      onItemClick(id);
     }
   }
-  const containerStyling = getClassName('bpk-segmented-control-group');
+  const containerStyling = getClassName('bpk-segmented-control-group',  shadow && 'bpk-segmented-control-group-shadow');
 
   return (
     <div role="radiogroup" className={containerStyling}>
@@ -61,7 +61,6 @@ const BpkSegmentedControl = ({
           'bpk-segmented-control',
           `bpk-segmented-control--${type}`,
           isSelected && `bpk-segmented-control--${type}-selected`,
-          shadow && `bpk-segmented-control--${type}-shadow`,
           shadow && isSelected && `bpk-segmented-control--${type}-selected-shadow`
         );
 
