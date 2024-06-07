@@ -16,6 +16,19 @@
  * limitations under the License.
  */
 
+@use '../../unstable__bpk-mixins/tokens';
+
 .bpk-carousel {
   position: relative;
+
+  &__page-indicator-over-image {
+    position: absolute;
+    right: 0;
+    bottom: tokens.bpk-spacing-sm();
+    left: 0;
+    display: flex;
+    margin: auto tokens.bpk-spacing-base();
+    justify-content: center;
+    overflow: clip;
+  }
 }

@@ -18,6 +18,7 @@
 
 import type { ReactNode } from 'react';
 
+import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
 import BpkCarousel from './BpkCarousel';
@@ -61,6 +62,7 @@ describe('BpkCarousel', () => {
     expect(document.querySelectorAll('.bpk-page-indicator__indicator').length).toBe(
       5,
     );
+    expect(document.querySelector('.bpk-carousel__page-indicator-over-image')).toBeTruthy();
   });
 
   it.each<TestCase>([
@@ -81,5 +83,11 @@ describe('BpkCarousel', () => {
     render(<BpkCarousel images={[images[0]]} />);
 
     expect(screen.getByTestId('image-gallery-scroll-container').childElementCount).toBe(1);
+  });
+
+  it('should render costom bottom', async () => {
+    render(<BpkCarousel images={images} bottom={48} />);
+
+    expect(screen.getByTestId('carousel-page-indicator-container')).toHaveStyle({bottom: '48px'});
   });
 });

@@ -51,12 +51,22 @@ const BpkCarousel = ({
         imagesRef={imagesRef}
         onImageChanged={onImageChanged}
       />
-      <BpkPageIndicator
-        currentIndex={shownImageIndex}
-        totalIndicators={images.length}
-        variant={VARIANT.overImage}
-        bottom={bottom}
-      />
+      <div
+        className={getClassName('bpk-carousel__page-indicator-over-image')}
+        style={bottom ? {
+          bottom
+        } : undefined}
+        data-testid="carousel-page-indicator-container"
+      >
+        <BpkPageIndicator
+          currentIndex={shownImageIndex}
+          totalIndicators={images.length}
+          variant={VARIANT.overImage}
+          indicatorLabel="Go to slide"
+          prevNavLabel="Previous slide"
+          nextNavLabel="Next slide"
+        />
+      </div>
     </div>
   );
 };

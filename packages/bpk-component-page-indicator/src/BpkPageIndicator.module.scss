@@ -32,16 +32,6 @@ $container-width: $dot-size * $displayed-total + $dot-margin * $displayed-total 
   justify-content: center;
   align-items: center;
 
-  &__over-image {
-    position: absolute;
-    right: 0;
-    bottom: tokens.bpk-spacing-md();
-    left: 0;
-    display: flex;
-    margin: auto tokens.bpk-spacing-base();
-    overflow: clip;
-  }
-
   &__showNav {
     justify-content: space-between;
   }

@@ -36,19 +36,19 @@ export const VARIANT = {
 };
 
 export type Props = {
+  className: ?string,
   showNav: ?boolean,
   currentIndex: number,
   totalIndicators: number,
   onClick: ?() => void,
-  indicatorLabel: ?string,
-  prevNavLabel: ?string,
-  nextNavLabel: ?string,
+  indicatorLabel: string,
+  prevNavLabel: string,
+  nextNavLabel: string,
   variant: ?$Keys<typeof VARIANT>,
-  bottom: ?number,
 };
 
 const BpkPageIndicator = ({
-  bottom,
+  className,
   currentIndex,
   indicatorLabel,
   nextNavLabel,
@@ -58,16 +58,17 @@ const BpkPageIndicator = ({
   totalIndicators,
   variant,
 }: Props) => {
-  const isOverImage = variant === VARIANT.overImage;
+  /**
+   * This validation is used to fix an a11y issue when onClick isn't available.
+   * In this case, we can set aria-hidden = true to let screen reader skip reading page indicator dots.
+   * and render the dot as div rather than button to align with aria-hidden = true.
+  */
   const isInteractive = !!onClick;
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <div
-      className={isOverImage ? getClassName('bpk-page-indicator__over-image') : null}
-      style={isOverImage && bottom ? {
-        bottom
-      } : undefined}
+      className={className}
       aria-hidden={isInteractive ? 'false': 'true'}
       data-testid="indicator-container"
     >
@@ -156,15 +157,15 @@ BpkPageIndicator.propTypes = {
   totalIndicators: PropTypes.number.isRequired,
   variant: PropTypes.oneOf(Object.keys(VARIANT)),
   onClick: PropTypes.func,
+  className: PropTypes.string,
   showNav: PropTypes.bool,
-  bottom: PropTypes.number,
 };
 
 BpkPageIndicator.defaultProps = {
   onClick: null,
+  className: null,
   showNav: false,
   variant: VARIANT.default,
-  bottom: null,
 };
 
 export default BpkPageIndicator;

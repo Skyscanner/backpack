@@ -28,7 +28,7 @@ const imageUrls = [
 const imagesList = imageUrls.map(url => <img src={url} alt='hotel bedroom' />)
 
 const DefaultExample = () => (
-  <BpkCarousel images={imagesList} initialImageIndex={1}/>
+  <BpkCarousel images={imagesList} initialImageIndex={0}/>
 );
 
 export default DefaultExample

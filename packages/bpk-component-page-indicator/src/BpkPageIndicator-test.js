@@ -20,7 +20,7 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import BpkPageIndicator, { VARIANT } from './BpkPageIndicator';
+import BpkPageIndicator from './BpkPageIndicator';
 
 let props;
 
@@ -42,17 +42,18 @@ describe('BpkPageIndicator', () => {
     expect(screen.getAllByRole('button').length).toBe(7);
   });
 
+  it('should support custom class names', () => {
+    render(
+      <BpkPageIndicator {...props} className="custom-classname" />,
+    );
+
+    expect(document.querySelector('.custom-classname')).toBeTruthy();
+  });
+
   it('should support showNav attribute', () => {
     render(<BpkPageIndicator {...props} showNav />);
 
     expect(screen.getByLabelText('Previous slide')).toBeTruthy();
     expect(screen.getByLabelText('Next slide')).toBeTruthy();
-  });
-
-  it('should render correctly when over image', () => {
-    render(<BpkPageIndicator {...props} variant={VARIANT.overImage}  bottom={48} />);
-
-    expect(screen.getByTestId('indicator-container')).toHaveStyle({bottom: '48px'});
-    expect(document.querySelector('.bpk-page-indicator__over-image')).toBeTruthy();
   });
 });
