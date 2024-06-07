@@ -30,18 +30,20 @@ type BpkCardListRailProps = {
 };
 
 const BpkCardListRail = ({ children }: BpkCardListRailProps) => (
-  <BpkMobileScrollContainer>
-    <div className={getClassName('bpk-card-list--rail_container')}>
-      {children.map((item: JSX.Element) => (
-        <div
-          key={item.key}
-          className={getClassName('bpk-card-list--rail_card')}
-        >
-          {item}
-        </div>
-      ))}
-    </div>
-  </BpkMobileScrollContainer>
+  <div className={getClassName('bpk-card-list--rail_scrollContainer')}>
+    <BpkMobileScrollContainer>
+      <div className={getClassName('bpk-card-list--rail_container')}>
+        {children.map((item: JSX.Element) => (
+          <div
+            key={item.key}
+            className={getClassName('bpk-card-list--rail_card')}
+          >
+            {item}
+          </div>
+        ))}
+      </div>
+    </BpkMobileScrollContainer>
+  </div>
 );
 
 export default BpkCardListRail;

@@ -25,6 +25,10 @@
     gap: tokens.bpk-spacing-base();
   }
 
+  &_scrollContainer {
+    margin-inline: -(tokens.bpk-spacing-base());
+  }
+
   &_card {
     display: flex;
     min-width: 100%;
