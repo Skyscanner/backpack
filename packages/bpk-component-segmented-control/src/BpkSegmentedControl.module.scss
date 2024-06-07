@@ -89,12 +89,6 @@
       color: tokens.$bpk-text-on-dark-day;
     }
   }
-
-  // Not mocked this yet, double check this shows correctly only on larger
-  // &-shadow {
-  // // @include shadows.bpk-box-shadow-sm;
-  // box-shadow: 0px 1px 3px 0px rgba(37, 32, 31, 0.30);
-  // }
 }
 
 .bpk-segmented-control:not(:first-of-type) {
