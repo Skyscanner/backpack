@@ -25,6 +25,8 @@ import {
 const wrapperStyle = {
   display: 'flex',
   maxWidth: '500px',
+  backgroundColor: "#EFF3F8",
+  padding: '2rem',
 };
 
 // Simple Segmented Control
@@ -43,16 +45,19 @@ const SimpleCanvasConstrast = () => (
     onItemClick={() => {}}
     selectedIndex={2}
     type = {SEGMENT_TYPES.CanvasContrast}
-  />
+    />
 );
 
 const SimpleSurfaceDefault = () => (
+  <div style={wrapperStyle}>
   <BpkSegmentedControl
     buttonContents={['Value', 'Value', 'Value', 'Value']}
     onItemClick={() => {}}
     selectedIndex={2}
     type = {SEGMENT_TYPES.SurfaceDefault}
     />
+  </div>
+
 );
 
 const SimpleSurfaceContrast = () => (
