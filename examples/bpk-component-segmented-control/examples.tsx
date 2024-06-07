@@ -22,34 +22,35 @@ import {
   BpkDarkExampleWrapper,
 } from '../bpk-storybook-utils';
 
-const TwoSegmentsDefault = () => (
+// Simple Segmented Control
+const SimpleDefault = () => (
   <BpkSegmentedControl
-    buttonContents={['Value1', 'Value2',]}
+    buttonContents={['Value', 'Value',]}
     onItemClick={() => {}}
     selectedIndex={0}
     type = {SEGMENT_TYPES.CanvasDefault}
     />
 );
 
-const ThreeSegmentsCanvasConstrast = () => (
+const SimpleCanvasConstrast = () => (
   <BpkSegmentedControl
-    buttonContents={['Value1', 'Value2', 'Value 3']}
+    buttonContents={['Value', 'Value', 'Value']}
     onItemClick={() => {}}
     selectedIndex={2}
     type = {SEGMENT_TYPES.CanvasContrast}
   />
 );
 
-const FourSegmentsSurfaceDefault = () => (
+const SimpleSurfaceDefault = () => (
   <BpkSegmentedControl
-    buttonContents={['Value1', 'Value2', 'Value 3', 'Value4']}
+    buttonContents={['Value', 'Value', 'Value', 'Value']}
     onItemClick={() => {}}
     selectedIndex={2}
     type = {SEGMENT_TYPES.SurfaceDefault}
     />
 );
 
-const FourSegmentsSurfaceContrast = () => (
+const SimpleSurfaceContrast = () => (
   <BpkDarkExampleWrapper padded>
   <BpkSegmentedControl
     buttonContents={['Very Long Value1', 'Very Long Value2', ' Very Long Value 3', 'Very Long Value4']}
@@ -60,39 +61,51 @@ const FourSegmentsSurfaceContrast = () => (
    </BpkDarkExampleWrapper>
 );
 
-const complexButtonContent = [[
+// // Complex Segmented Control
+const complexButtonContentBest = [
   <>
-  <div>"Best"</div>
-  <div>'£84'</div>
-  <div>"2h 18 average"</div>
-</>
-],
-[
-  <>
-  <div>"Cheapest"</div>
-  <div>'£34'</div>
-  <div>"10h 18 average"</div>
+    <div>Best</div>
+    <div>£84</div>
+    <div>2h average</div>
   </>
-  ],
-[
+];
+const complexButtonContentCheapest = [
   <>
-  <div>"Fastest"</div>
-  <div>'£100'</div>
-  <div>"2h average"</div>
+    <div>Cheapest</div>
+    <div>£34</div>
+    <div>9h average</div>
   </>
-],
-]
+];
+const complexButtonContentFastest = [
+  <>
+    <div>Fastest</div>
+    <div>£100</div>
+    <div>1h average</div>
+  </>
+];
 
-const ComplexFourSegmentsSurfaceContrast = () => (
-  <BpkDarkExampleWrapper padded >
-  <BpkSegmentedControl
-    buttonContents={[flattenedButtonContents]}
-    onItemClick={() => {}}
-    selectedIndex={2}
-    type={SEGMENT_TYPES.SurfaceContrast}
-    shadow
-    />
-   </BpkDarkExampleWrapper>
+const allButtonContent = [complexButtonContentBest, complexButtonContentCheapest, complexButtonContentFastest];
+
+const ComplexSurfaceContrast = () => (
+  <BpkDarkExampleWrapper padded style={{ display: 'flex' }}>
+      <BpkSegmentedControl
+        buttonContents={allButtonContent}
+        onItemClick={() => {}}
+        selectedIndex={1}
+        type={SEGMENT_TYPES.SurfaceContrast}
+        shadow
+      />
+  </BpkDarkExampleWrapper>
 );
 
-export { TwoSegmentsDefault, ThreeSegmentsCanvasConstrast, FourSegmentsSurfaceDefault, FourSegmentsSurfaceContrast, ComplexFourSegmentsSurfaceContrast };
+const ComplexSurfaceDefault = () => (
+  <BpkSegmentedControl
+        buttonContents={allButtonContent}
+        onItemClick={() => {}}
+        selectedIndex={1}
+        type={SEGMENT_TYPES.SurfaceDefault}
+        shadow
+    />
+);
+
+export { SimpleDefault, SimpleCanvasConstrast, SimpleSurfaceDefault, SimpleSurfaceContrast, ComplexSurfaceContrast, ComplexSurfaceDefault};
