@@ -45,7 +45,9 @@ export default {
             ariaLabels={['From', 'To']}
     ariaValuetext={[getSliderTime(finalSliderStart), getSliderTime(finalSliderEnd)]}
 
+            **Note**: minDistance and step props are multiplied to calculate the minimum distance allowed between thumbs
           `}
+
 
           </Markdown>
         </>
