@@ -27,6 +27,7 @@ import {
   InputTriggerExample,
   WithActionButtonExample,
   WithNoCloseButtonIconExample,
+  VisualExample
 } from './examples';
 
 export default {
@@ -42,3 +43,8 @@ WithNoCloseButtonIconExample;
 export const OnTheSide = OnTheSideExample;
 export const TriggeredByInput = InputTriggerExample;
 export const WithActionButton = WithActionButtonExample;
+export const VisualTest = VisualExample;
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};

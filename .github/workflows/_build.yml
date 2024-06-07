@@ -39,6 +39,8 @@ jobs:
         run: echo "requires_visual_tests=${{ steps.changed-files.outputs.examples_any_changed == 'true' || steps.changed-files.outputs.components_any_changed == 'true'}}" >> "$GITHUB_OUTPUT"
 
       - name: Report percy/backpack to pass
+        # Only run on pull_requests and when specific changes to files have occurred.
+        if: ${{ github.event_name == 'pull_request' && steps.changed-files.outputs.examples_any_changed != 'true' || steps.changed-files.outputs.components_any_changed != 'true' }}
         run: |
           curl --request POST \
           --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.event.pull_request.head.sha }} \
