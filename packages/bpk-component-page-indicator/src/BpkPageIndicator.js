@@ -59,7 +59,7 @@ const BpkPageIndicator = ({
   variant,
 }: Props) => {
   /**
-   * This validation is used to fix an a11y issue when onClick isn't available.
+   * This validation is used to avoid an a11y issue when onClick isn't available.
    * In this case, we can set aria-hidden = true to let screen reader skip reading page indicator dots.
    * and render the dot as div rather than button to align with aria-hidden = true.
   */

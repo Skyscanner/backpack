@@ -54,21 +54,22 @@ const DefaultExample = () => <PageIndicatorContainer totalIndicators={7} />;
 const ThreePagesExample = () => <PageIndicatorContainer totalIndicators={3} />;
 
 const OverImageExample = () => (
-<div className={getClassName('bpk-page-indicator-examples__container')}>
   <BpkBackgroundImage
     aspectRatio={imageWidth / imageHeight}
+    style={{ width: imageWidth, height: imageHeight }}
     imageStyle={{
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: '50% 50%',
     }}
     src={image}
-  />
-  <PageIndicatorContainer
-    totalIndicators={3}
-    variant={VARIANT.overImage}
-  />
-</div>
+  >
+    <PageIndicatorContainer
+      totalIndicators={3}
+      variant={VARIANT.overImage}
+      className={getClassName('bpk-page-indicator-examples__container')}
+    />
+  </BpkBackgroundImage>
 );
 
 const WithNavExample = () => (

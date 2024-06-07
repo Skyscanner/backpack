@@ -31,7 +31,6 @@ import STYLES from './BpkCarousel.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-// This carousel is only for mobile
 const BpkCarousel = ({
   bottom,
   images,
