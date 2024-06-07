@@ -29,7 +29,6 @@ import {
   FloatingFocusManager,
   arrow,
   FloatingArrow,
-  flip,
   shift,
 } from '@floating-ui/react';
 
@@ -140,7 +139,6 @@ const BpkPopover = ({
     placement,
     middleware: [
       showArrow && offset(17),
-      flip({ crossAxis: true }),
       shift(),
       showArrow && arrow({ element: arrowRef }),
     ],
