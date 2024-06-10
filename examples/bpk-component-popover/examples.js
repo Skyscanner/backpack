@@ -180,6 +180,12 @@ const WithActionButtonExample = () => (
   </Spacer>
 );
 
+const VisualExample = () => (
+  <Spacer>
+    <PopoverContainer id="my-popover-1" isOpen />
+  </Spacer>
+);
+
 export {
   DefaultExample,
   WithoutArrowExample,
@@ -188,4 +194,5 @@ export {
   OnTheSideExample,
   InputTriggerExample,
   WithActionButtonExample,
+  VisualExample
 };
