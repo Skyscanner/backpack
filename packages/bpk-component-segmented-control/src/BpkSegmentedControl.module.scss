@@ -93,4 +93,5 @@
 
 .bpk-segmented-control:not(:first-of-type) {
   @include borders.bpk-border-left-sm(tokens.$bpk-line-day);
+  // not working currently
 }
