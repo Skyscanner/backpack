@@ -91,8 +91,12 @@
   }
 }
 
-.bpk-segmented-control:not(:first-of-type) {
-  @include borders.bpk-border-left-sm(tokens.$bpk-line-day);
+// not first, and not selected
+.bpk-segmented-control:not(:first-of-type, [class*='selected']) {
+  border-left: tokens.$bpk-one-pixel-rem solid tokens.$bpk-line-day;
+}
 
-  // not working currently
+// handle buttons adjacent to the selected
+.bpk-segmented-control[class*='rightOfOption'] {
+  border-left: none;
 }
