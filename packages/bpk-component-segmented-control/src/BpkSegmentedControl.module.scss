@@ -20,7 +20,7 @@
 @use '../../unstable__bpk-mixins/typography';
 @use '../../unstable__bpk-mixins/radii';
 @use '../../unstable__bpk-mixins/borders';
-@use '../../packages/unstable__bpk-mixins/shadows';
+@use '../../unstable__bpk-mixins/shadows';
 
 // Animation values from figma, not implemented
 // @mixin animation {
@@ -93,5 +93,6 @@
 
 .bpk-segmented-control:not(:first-of-type) {
   @include borders.bpk-border-left-sm(tokens.$bpk-line-day);
+
   // not working currently
 }
