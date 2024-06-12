@@ -43,7 +43,7 @@ const SimpleDefault = () => (
     />
 );
 
-const SimpleCanvasConstrast = () => (
+const SimpleCanvasContrast = () => (
   <BpkSegmentedControl
     buttonContents={['Value', 'Value', 'Value']}
     onItemClick={() => {}}
@@ -124,4 +124,4 @@ const ComplexSurfaceDefault = () => (
   </div>
 );
 
-export { SimpleDefault, SimpleCanvasConstrast, SimpleSurfaceDefault, SimpleSurfaceContrast, ComplexSurfaceContrast, ComplexSurfaceDefault};
+export { SimpleDefault, SimpleCanvasContrast, SimpleSurfaceDefault, SimpleSurfaceContrast, ComplexSurfaceContrast, ComplexSurfaceDefault};

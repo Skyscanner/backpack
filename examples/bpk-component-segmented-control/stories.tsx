@@ -19,7 +19,7 @@
 import BpkSegmentedControl from '../../packages/bpk-component-segmented-control';
 
 import {
- SimpleDefault, SimpleCanvasConstrast, SimpleSurfaceDefault, SimpleSurfaceContrast, ComplexSurfaceContrast, ComplexSurfaceDefault
+ SimpleDefault, SimpleCanvasContrast, SimpleSurfaceDefault, SimpleSurfaceContrast, ComplexSurfaceContrast, ComplexSurfaceDefault
 } from './examples';
 
 export default {
@@ -28,7 +28,7 @@ export default {
 };
 
 export const SimpleTwoSegmentsCanvasDefault = SimpleDefault;
-export const SimpleThreeSegmentsCanvasConstrast = SimpleCanvasConstrast;
+export const SimpleThreeSegmentsCanvasContrast = SimpleCanvasContrast;
 export const SimpleFourSegmentsSurfaceDefault = SimpleSurfaceDefault;
 export const SimpleFourSegmentsSurfaceContrast = SimpleSurfaceContrast;
 export const ComplexThreeSegmentsSurfaceContrast = ComplexSurfaceContrast;
