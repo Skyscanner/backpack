@@ -68,6 +68,7 @@ const BpkSegmentedControl = ({
 
     return (
       <button
+        key={`index-${index.toString()}`}
         id={index.toString()}
         type="button"
         onClick={() => handleButtonClick(index)}
