@@ -33,4 +33,4 @@ export const SimpleFourSegmentsSurfaceDefault = SimpleSurfaceDefault;
 export const SimpleFourSegmentsSurfaceContrast = SimpleSurfaceContrast;
 export const ComplexThreeSegmentsSurfaceContrast = ComplexSurfaceContrast;
 export const ComplexThreeSegmentsSurfaceDefault = ComplexSurfaceDefault;
-export const VisualTest = SimpleDefault;
+export const VisualTest = ComplexSurfaceDefault;
