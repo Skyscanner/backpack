@@ -93,23 +93,3 @@
 .bpk-segmented-control[class*='rightOfOption'] {
   border-left: none;
 }
-
-// handle animation
-
-// Animation values from figma,
-// @mixin animation {
-// animation-duration: tokens.$bpk-duration-sm;
-// animation-timing-function: ease-in-out;
-// }
-
-@keyframes slide-in {
-  to {
-    transform: translateX(50%);
-  }
-}
-
-.bpk-segmented-control[class*='selected'] {
-  animation-duration: tokens.$bpk-duration-sm;
-  animation-name: slide-in;
-  animation-timing-function: ease-in-out;
-}
