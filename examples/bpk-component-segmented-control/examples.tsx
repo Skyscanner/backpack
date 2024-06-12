@@ -16,16 +16,20 @@
  * limitations under the License.
  */
 
+import {
+  privateSegmentedControlCanvasDefaultDay,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
 import BpkSegmentedControl from '../../packages/bpk-component-segmented-control';
 import SEGMENT_TYPES from '../../packages/bpk-component-segmented-control/src/segmentTypes';
-import {
-  BpkDarkExampleWrapper,
-} from '../bpk-storybook-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
+
 
 const wrapperStyle = {
   display: 'flex',
   maxWidth: '500px',
-  backgroundColor: "#EFF3F8",
+  backgroundColor: privateSegmentedControlCanvasDefaultDay,
   padding: '2rem',
 };
 
