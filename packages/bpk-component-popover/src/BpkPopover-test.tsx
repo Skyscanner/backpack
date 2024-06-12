@@ -191,4 +191,50 @@ describe('BpkPopover', () => {
       expect(onCloseSpy).toHaveBeenCalled();
     });
   });
+
+  it('should call target onClick handler', () => {
+    const handleClick = jest.fn();
+    render(
+      <BpkPopover
+        id="my-popover"
+        onClose={onCloseSpy}
+        label="My popover"
+        closeButtonLabel="Close"
+        labelAsTitle
+        closeButtonIcon
+        target={<button onClick={handleClick} type="button">My target</button>}
+        isOpen
+      >
+        My popover content
+      </BpkPopover>,
+    );
+
+    const button = screen.getByRole('button', { name: 'My target' });
+    fireEvent.click(button);
+
+    expect(handleClick).toHaveBeenCalled();
+  });
+
+  it('should call target onKeyDown handler', () => {
+    const handleKeyDown = jest.fn();
+    render(
+      <BpkPopover
+        id="my-popover"
+        onClose={onCloseSpy}
+        label="My popover"
+        closeButtonLabel="Close"
+        labelAsTitle
+        closeButtonIcon
+        target={<button onKeyDown={handleKeyDown} type="button">My target</button>}
+        isOpen
+      >
+        My popover content
+      </BpkPopover>,
+    );
+
+    const button = screen.getByRole('button', { name: 'My target' });
+    fireEvent.keyDown(button, { key: 'Enter', code: 'Enter' });
+
+    expect(handleKeyDown).toHaveBeenCalled();
+  });
 });
