@@ -154,25 +154,26 @@ const BpkPopover = ({
     dismiss,
   ]);
 
-  const targetProps = target.props;
+  const targetClick = target.props.onClick;
+  const referenceProps = getReferenceProps(
+    {
+      onClick: (event) => {
+        if (targetClick) {
+          event.stopPropagation();
+          targetClick(event);
+        }
+      },
+    }
+  )
 
   const targetElement = isValidElement(target) ? (
-    cloneElement(target, {
-      ...getReferenceProps(
-        {
-          onClick: (event) => {
-            if (targetProps.onClick) {
-              event.stopPropagation();
-              targetProps.onClick(event);
-            }
-          },
-        }
-      ),
+    cloneElement(target as ReactElement, {
+      ...referenceProps,
       // @ts-ignore - we're adding a popover ref to the target element so we can position the popover relative to it
       ref: refs.setReference,
     })
   ) : (
-    <div ref={refs.setReference} {...getReferenceProps()}>
+    <div ref={refs.setReference} {...referenceProps}>
       {target}
     </div>
   );
