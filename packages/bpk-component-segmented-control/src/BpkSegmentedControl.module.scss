@@ -35,6 +35,7 @@
 }
 
 .bpk-segmented-control {
+  min-height: tokens.bpk-spacing-xl();
   padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-base();
   flex: 1;
   border: none;
