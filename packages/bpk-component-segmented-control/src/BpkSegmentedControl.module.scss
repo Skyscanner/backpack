@@ -85,12 +85,18 @@
   }
 }
 
-// not first, and not selected
+// Handle border lines between buttons
 .bpk-segmented-control:not(:first-of-type, [class*='selected']) {
   border-left: tokens.$bpk-one-pixel-rem solid tokens.$bpk-line-day;
 }
 
-// handle buttons adjacent to the selected
+.bpk-segmented-control--surface-contrast:not(
+    :first-of-type,
+    [class*='selected']
+  ) {
+  border-left: tokens.$bpk-one-pixel-rem solid tokens.$bpk-line-on-dark-day;
+}
+
 .bpk-segmented-control[class*='rightOfOption'] {
   border-left: none;
 }
