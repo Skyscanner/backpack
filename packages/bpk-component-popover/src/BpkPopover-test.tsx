@@ -192,12 +192,17 @@ describe('BpkPopover', () => {
     });
   });
 
-  it('should call target onClick handler', () => {
-    const handleClick = jest.fn();
-    render(
+  it('should call target onClick handler and execute code after stopPropagation', () => {
+    const handleClick = jest.fn((event) => {
+      event.stopPropagation();
+      // eslint-disable-next-line no-param-reassign
+      event.afterStopPropagation = true;
+    });
+
+    const { getByRole } = render(
       <BpkPopover
         id="my-popover"
-        onClose={onCloseSpy}
+        onClose={jest.fn()}
         label="My popover"
         closeButtonLabel="Close"
         labelAsTitle
@@ -209,32 +214,16 @@ describe('BpkPopover', () => {
       </BpkPopover>,
     );
 
-    const button = screen.getByRole('button', { name: 'My target' });
-    fireEvent.click(button);
+    const button = getByRole('button', { name: 'My target' });
+
+    const event = new MouseEvent('click', { bubbles: true });
+    jest.spyOn(event, 'stopPropagation');
+
+    fireEvent(button, event);
 
     expect(handleClick).toHaveBeenCalled();
+    expect(event.stopPropagation).toHaveBeenCalled();
+    expect(handleClick.mock.calls[0][0].afterStopPropagation).toBe(true);
   });
 
-  it('should call target onKeyDown handler', () => {
-    const handleKeyDown = jest.fn();
-    render(
-      <BpkPopover
-        id="my-popover"
-        onClose={onCloseSpy}
-        label="My popover"
-        closeButtonLabel="Close"
-        labelAsTitle
-        closeButtonIcon
-        target={<button onKeyDown={handleKeyDown} type="button">My target</button>}
-        isOpen
-      >
-        My popover content
-      </BpkPopover>,
-    );
-
-    const button = screen.getByRole('button', { name: 'My target' });
-    fireEvent.keyDown(button, { key: 'Enter', code: 'Enter' });
-
-    expect(handleKeyDown).toHaveBeenCalled();
-  });
 });

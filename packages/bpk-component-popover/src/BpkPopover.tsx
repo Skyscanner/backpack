@@ -156,25 +156,18 @@ const BpkPopover = ({
 
   const targetProps = target.props;
 
-  const targetEventHandlers = Object.keys(targetProps).reduce((acc, key) => {
-    if (key.startsWith('on')) {
-      acc[key] = (event: Event) => {
-        if (typeof targetProps[key] === 'function') {
-          targetProps[key](event);
-        }
-        const referenceProps = getReferenceProps();
-        if (typeof referenceProps[key] === 'function') {
-          referenceProps[key](event);
-        }
-      };
-    }
-    return acc;
-  }, {} as { [key: string]: (event: Event) => void });
-
   const targetElement = isValidElement(target) ? (
     cloneElement(target, {
-      ...getReferenceProps(),
-      ...targetEventHandlers,
+      ...getReferenceProps(
+        {
+          onClick: (event) => {
+            if (targetProps.onClick) {
+              event.stopPropagation();
+              targetProps.onClick(event);
+            }
+          },
+        }
+      ),
       // @ts-ignore - we're adding a popover ref to the target element so we can position the popover relative to it
       ref: refs.setReference,
     })
