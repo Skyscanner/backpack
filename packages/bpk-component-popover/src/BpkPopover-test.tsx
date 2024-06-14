@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import BpkPopover from './BpkPopover';
@@ -219,7 +219,9 @@ describe('BpkPopover', () => {
     const event = new MouseEvent('click', { bubbles: true });
     jest.spyOn(event, 'stopPropagation');
 
-    fireEvent(button, event);
+    act(() => {
+      fireEvent(button, event);
+    });
 
     expect(handleClick).toHaveBeenCalled();
     expect(event.stopPropagation).toHaveBeenCalled();
