@@ -17,7 +17,13 @@
  */
 
 import type { SyntheticEvent, ReactNode, ReactElement } from 'react';
-import { useState, useEffect, useRef, cloneElement, isValidElement } from 'react';
+import {
+  useState,
+  useEffect,
+  useRef,
+  cloneElement,
+  isValidElement,
+} from 'react';
 
 import {
   useFloating,
@@ -27,11 +33,11 @@ import {
   useDismiss,
   useInteractions,
   FloatingFocusManager,
+  FloatingPortal,
   arrow,
   FloatingArrow,
   shift,
 } from '@floating-ui/react';
-
 
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -70,16 +76,16 @@ const bindEventSource = (
   callback(event, { source });
 };
 
-type CloseButtonProps = (
-  {
- /**
-  * @deprecated close button text is deprecated. Instead, please use `closeButtonIcon`, or you may opt not to render a close button at all.
-  */
-    closeButtonText: string;
-  } | {
-    closeButtonText?: never;
-  }
-);
+type CloseButtonProps =
+  | {
+      /**
+       * @deprecated close button text is deprecated. Instead, please use `closeButtonIcon`, or you may opt not to render a close button at all.
+       */
+      closeButtonText: string;
+    }
+  | {
+      closeButtonText?: never;
+    };
 
 export type Props = CloseButtonProps & {
   children: ReactNode;
@@ -127,7 +133,7 @@ const BpkPopover = ({
 
   useEffect(() => {
     if (!isOpen) {
-      setIsOpenState(false)
+      setIsOpenState(false);
     }
   }, [isOpen]);
 
@@ -187,117 +193,123 @@ const BpkPopover = ({
     <>
       {targetElement}
       {isOpenState && (
-        <FloatingFocusManager context={context} modal={false}>
-          <div
-            className={getClassName('bpk-popover--container')}
-            ref={refs.setFloating}
-            style={floatingStyles}
-            {...getFloatingProps()}
-          >
-            <TransitionInitialMount
-              appearClassName={getClassName('bpk-popover--appear')}
-              appearActiveClassName={getClassName('bpk-popover--appear-active')}
-              transitionTimeout={200}
+        <FloatingPortal>
+          <FloatingFocusManager context={context} modal={false}>
+            <div
+              className={getClassName('bpk-popover--container')}
+              ref={refs.setFloating}
+              style={floatingStyles}
+              {...getFloatingProps()}
             >
-              <section
-                id={id}
-                tabIndex={-1}
-                role="dialog"
-                aria-labelledby={labelId}
-                className={classNames}
-                {...rest}
-              >
-                {showArrow && (
-                  <FloatingArrow
-                    ref={arrowRef}
-                    context={context}
-                    id={ARROW_ID}
-                    className={getClassName('bpk-popover__arrow')}
-                    role="presentation"
-                    stroke={surfaceHighlightDay}
-                    strokeWidth={strokeWidth}
-                  />
+              <TransitionInitialMount
+                appearClassName={getClassName('bpk-popover--appear')}
+                appearActiveClassName={getClassName(
+                  'bpk-popover--appear-active',
                 )}
-                {labelAsTitle ? (
-                  <header className={getClassName('bpk-popover__header')}>
-                    <BpkText
-                      tagName="h2"
-                      id={labelId}
-                      textStyle={TEXT_STYLES.label1}
-                    >
-                      {label}
-                    </BpkText>
-                    &nbsp;
-                    {closeButtonIcon ? (
-                      <BpkCloseButton
-                        label={closeButtonText || closeButtonLabel}
-                        onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
-                          bindEventSource(
-                            EVENT_SOURCES.CLOSE_BUTTON,
-                            onClose,
-                            event,
-                          );
-                          setIsOpenState(false);
-                        }}
-                        {...closeButtonProps}
-                      />
-                    ) : (
-                      closeButtonText && (
-                        <BpkButtonLink
-                          onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
+                transitionTimeout={200}
+              >
+                <section
+                  id={id}
+                  tabIndex={-1}
+                  role="dialog"
+                  aria-labelledby={labelId}
+                  className={classNames}
+                  {...rest}
+                >
+                  {showArrow && (
+                    <FloatingArrow
+                      ref={arrowRef}
+                      context={context}
+                      id={ARROW_ID}
+                      className={getClassName('bpk-popover__arrow')}
+                      role="presentation"
+                      stroke={surfaceHighlightDay}
+                      strokeWidth={strokeWidth}
+                    />
+                  )}
+                  {labelAsTitle ? (
+                    <header className={getClassName('bpk-popover__header')}>
+                      <BpkText
+                        tagName="h2"
+                        id={labelId}
+                        textStyle={TEXT_STYLES.label1}
+                      >
+                        {label}
+                      </BpkText>
+                      &nbsp;
+                      {closeButtonIcon ? (
+                        <BpkCloseButton
+                          label={closeButtonText || closeButtonLabel}
+                          onClick={(
+                            event: SyntheticEvent<HTMLButtonElement>,
+                          ) => {
                             bindEventSource(
-                              EVENT_SOURCES.CLOSE_LINK,
+                              EVENT_SOURCES.CLOSE_BUTTON,
                               onClose,
                               event,
                             );
                             setIsOpenState(false);
                           }}
                           {...closeButtonProps}
-                        >
-                          {closeButtonText}
-                        </BpkButtonLink>
-                      )
-                    )}
-                  </header>
-                ) : (
-                  <span
-                    id={labelId}
-                    className={getClassName('bpk-popover__label')}
-                  >
-                    {label}
-                  </span>
-                )}
-                <div className={bodyClassNames}>{children}</div>
-                {actionText && onAction && (
-                  <div className={getClassName('bpk-popover__action')}>
-                    <BpkButtonLink
-                      onClick={onAction}
+                        />
+                      ) : (
+                        closeButtonText && (
+                          <BpkButtonLink
+                            onClick={(
+                              event: SyntheticEvent<HTMLButtonElement>,
+                            ) => {
+                              bindEventSource(
+                                EVENT_SOURCES.CLOSE_LINK,
+                                onClose,
+                                event,
+                              );
+                              setIsOpenState(false);
+                            }}
+                            {...closeButtonProps}
+                          >
+                            {closeButtonText}
+                          </BpkButtonLink>
+                        )
+                      )}
+                    </header>
+                  ) : (
+                    <span
+                      id={labelId}
+                      className={getClassName('bpk-popover__label')}
                     >
-                      {actionText}
-                    </BpkButtonLink>
-                </div>
-                )}
-                {!labelAsTitle && closeButtonText && (
-                  <footer className={getClassName('bpk-popover__footer')}>
-                    <BpkButtonLink
-                      onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
-                        bindEventSource(
-                          EVENT_SOURCES.CLOSE_LINK,
-                          onClose,
-                          event,
-                        );
-                        setIsOpenState(false);
-                      }}
-                      {...closeButtonProps}
-                    >
-                      {closeButtonText}
-                    </BpkButtonLink>
-                  </footer>
-                )}
-              </section>
-            </TransitionInitialMount>
-          </div>
-        </FloatingFocusManager>
+                      {label}
+                    </span>
+                  )}
+                  <div className={bodyClassNames}>{children}</div>
+                  {actionText && onAction && (
+                    <div className={getClassName('bpk-popover__action')}>
+                      <BpkButtonLink onClick={onAction}>
+                        {actionText}
+                      </BpkButtonLink>
+                    </div>
+                  )}
+                  {!labelAsTitle && closeButtonText && (
+                    <footer className={getClassName('bpk-popover__footer')}>
+                      <BpkButtonLink
+                        onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
+                          bindEventSource(
+                            EVENT_SOURCES.CLOSE_LINK,
+                            onClose,
+                            event,
+                          );
+                          setIsOpenState(false);
+                        }}
+                        {...closeButtonProps}
+                      >
+                        {closeButtonText}
+                      </BpkButtonLink>
+                    </footer>
+                  )}
+                </section>
+              </TransitionInitialMount>
+            </div>
+          </FloatingFocusManager>
+        </FloatingPortal>
       )}
     </>
   );

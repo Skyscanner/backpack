@@ -142,7 +142,7 @@ describe('BpkPopover', () => {
       </BpkPopover>,
     );
 
-    const heading = container.querySelector('.bpk-popover__header');
+    const heading = container.getElementsByClassName('.bpk-popover__header');
     expect(heading).toBeTruthy();
   });
 
@@ -162,7 +162,7 @@ describe('BpkPopover', () => {
       </BpkPopover>,
     );
 
-    const actionButton = container.querySelector('.bpk-popover__action');
+    const actionButton = container.getElementsByClassName('.bpk-popover__action');
     expect(actionButton).toBeTruthy();
     expect(screen.getByText('Action')).toBeVisible();
   });
