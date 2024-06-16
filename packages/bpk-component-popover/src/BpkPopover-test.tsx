@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import BpkPopover from './BpkPopover';
@@ -46,7 +46,31 @@ describe('BpkPopover', () => {
     expect(screen.getByText('My popover content')).toBeVisible();
   });
 
-  it('should render without an arrow', () => {
+  it('should rerender correctly with "isOpen" provided', async () => {
+    const props = {
+      id: 'my-popover',
+      onClose: () => null,
+      label: 'My popover',
+      closeButtonLabel: 'Close',
+      target: <button type="button">My target</button>,
+    };
+    const { rerender } = render(
+      <BpkPopover {...props} isOpen>
+        My popover content
+      </BpkPopover>,
+    );
+
+    await waitFor(async () => {
+      rerender(
+        <BpkPopover {...props} isOpen={false}>
+          My popover content
+        </BpkPopover>,
+      );
+    })
+    expect(screen.queryByRole('My popover content')).not.toBeInTheDocument();
+  });
+
+  it('should render without an arrow', async () => {
     const target = (<button type="button">My target</button>);
     render(
       <BpkPopover
@@ -61,7 +85,9 @@ describe('BpkPopover', () => {
         My popover content
       </BpkPopover>,
     );
-    expect(screen.getByText('My popover content')).toBeVisible();
+    await waitFor(async () => {
+      expect(screen.getByText('My popover content')).toBeVisible();
+    })
   });
 
   it('should render correctly with "closeButtonProps" provided', () => {
@@ -159,9 +185,10 @@ describe('BpkPopover', () => {
 
     expect(onCloseSpy).not.toHaveBeenCalled();
 
-    const closeButton = screen.getByRole('button', { name: 'Close' });
-    await fireEvent.click(closeButton);
-    
-    expect(onCloseSpy).toHaveBeenCalled();
+    await waitFor(async () => {
+      const closeButton = await screen.getByRole('button', { name: 'Close' });
+      await fireEvent.click(closeButton);
+      expect(onCloseSpy).toHaveBeenCalled();
+    });
   });
 });
