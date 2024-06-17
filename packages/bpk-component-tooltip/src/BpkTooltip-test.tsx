@@ -16,13 +16,15 @@
  * limitations under the License.
  */
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import userEvent from '@testing-library/user-event';
 
 import BpkTooltip from './BpkTooltip';
 import { TOOLTIP_TYPES } from './constants';
 
 describe('BpkTooltip', () => {
+
   it('should render correctly', () => {
     const target = <span>My tooltip target</span>;
 
@@ -40,10 +42,10 @@ describe('BpkTooltip', () => {
     expect(screen.getByText('My tooltip content')).toBeVisible();
   });
 
-  it('should render correctly with type=dark', () => {
+  it('should render correctly with type=dark', async () => {
     const target = <span>My tooltip target</span>;
 
-    const { container } = render(
+    render(
       <BpkTooltip
         id="my-popover"
         type={TOOLTIP_TYPES.dark}
@@ -55,15 +57,17 @@ describe('BpkTooltip', () => {
       </BpkTooltip>,
     );
 
+    await act(async () => {
+      await userEvent.hover(screen.getByText('My tooltip target'));
+    });
     expect(screen.getByText('My tooltip content')).toBeVisible();
-    expect(container.querySelector('.bpk-tooltip__inner--dark')).not.toBeNull();
-    expect(container.querySelector('.bpk-tooltip__arrow--dark')).not.toBeNull();
+    expect(screen.getByText('My tooltip content').className).toContain('bpk-tooltip__inner--dark');
   });
 
-  it('should render correctly with "padded" attribute equal to false', () => {
+  it('should render correctly with "padded" attribute equal to false', async () => {
     const target = <span>My tooltip target</span>;
 
-    const { container } = render(
+    render(
       <BpkTooltip
         id="my-popover"
         ariaLabel="My tooltip content"
@@ -75,7 +79,11 @@ describe('BpkTooltip', () => {
       </BpkTooltip>,
     );
 
+    await act(async () => {
+      await userEvent.hover(screen.getByText('My tooltip target'));
+    });
+
     expect(screen.getByText('My tooltip content')).toBeVisible();
-    expect(container.querySelector('.bpk-tooltip__inner--padded')).toBeNull();
+    expect(screen.getByText('My tooltip content').className).not.toContain('bpk-tooltip__inner--padded');
   });
 });

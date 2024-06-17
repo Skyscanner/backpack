@@ -29,6 +29,7 @@ import {
   arrow,
   flip,
   FloatingArrow,
+  FloatingPortal,
   offset,
   shift,
   useFloating,
@@ -153,38 +154,40 @@ const BpkTooltip = ({
     <>
       {targetWithAccessibilityProps}
       {isOpenState && (
-        <div
-          className={getClassName('bpk-tooltip--container')}
-          ref={refs.setFloating}
-          style={floatingStyles}
-          {...getFloatingProps()}
-        >
-          <TransitionInitialMount
-            appearClassName={getClassName('bpk-tooltip--appear')}
-            appearActiveClassName={getClassName('bpk-tooltip--appear-active')}
-            transitionTimeout={200}
+        <FloatingPortal>
+          <div
+            className={getClassName('bpk-tooltip--container')}
+            ref={refs.setFloating}
+            style={floatingStyles}
+            {...getFloatingProps()}
           >
-            <section
-              id={id}
-              tabIndex={-1}
-              role="dialog"
-              className={classNames}
-              {...rest}
+            <TransitionInitialMount
+              appearClassName={getClassName('bpk-tooltip--appear')}
+              appearActiveClassName={getClassName('bpk-tooltip--appear-active')}
+              transitionTimeout={200}
             >
-              <FloatingArrow
-                ref={arrowRef}
-                context={context}
-                id={ARROW_ID}
-                className={arrowClassNames}
-                role="presentation"
-                stroke={surfaceHighlightDay}
-                strokeWidth={strokeWidth}
-                style={getArrowAlignment(context.placement)}
-              />
-              <div className={innerClassNames}>{children}</div>
-            </section>
-          </TransitionInitialMount>
-        </div>
+              <section
+                id={id}
+                tabIndex={-1}
+                role="dialog"
+                className={classNames}
+                {...rest}
+              >
+                <FloatingArrow
+                  ref={arrowRef}
+                  context={context}
+                  id={ARROW_ID}
+                  className={arrowClassNames}
+                  role="presentation"
+                  stroke={surfaceHighlightDay}
+                  strokeWidth={strokeWidth}
+                  style={getArrowAlignment(context.placement)}
+                />
+                <div className={innerClassNames}>{children}</div>
+              </section>
+            </TransitionInitialMount>
+          </div>
+        </FloatingPortal>
       )}
     </>
   );
