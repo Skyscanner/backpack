@@ -192,7 +192,7 @@ describe('BpkPopover', () => {
     });
   });
 
-  it('should call target onClick handler and execute code after stopPropagation', () => {
+  it('should call target onClick handler and execute code after stopPropagation', async () => {
     const handleClick = jest.fn((event) => {
       event.stopPropagation();
       // eslint-disable-next-line no-param-reassign
@@ -219,7 +219,7 @@ describe('BpkPopover', () => {
     const event = new MouseEvent('click', { bubbles: true });
     jest.spyOn(event, 'stopPropagation');
 
-    act(() => {
+    await waitFor(async () => {
       fireEvent(button, event);
     });
 
