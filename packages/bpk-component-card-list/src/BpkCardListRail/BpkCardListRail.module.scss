@@ -21,6 +21,7 @@
 .bpk-card-list--rail {
   &_container {
     display: flex;
+    max-width: 90%;
     padding: tokens.bpk-spacing-base();
     gap: tokens.bpk-spacing-base();
   }
@@ -38,6 +39,10 @@
 
     > * {
       width: 100%;
+    }
+
+    &:last-child {
+      padding-right: tokens.bpk-spacing-base();
     }
   }
 }
