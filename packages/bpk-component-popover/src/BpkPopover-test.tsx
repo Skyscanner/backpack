@@ -220,12 +220,11 @@ describe('BpkPopover', () => {
     jest.spyOn(event, 'stopPropagation');
 
     await waitFor(async () => {
-      fireEvent(button, event);
+      await fireEvent(button, event);
+      expect(handleClick).toHaveBeenCalled();
+      expect(event.stopPropagation).toHaveBeenCalled();
+      expect(handleClick.mock.calls[0][0].afterStopPropagation).toBe(true);
     });
-
-    expect(handleClick).toHaveBeenCalled();
-    expect(event.stopPropagation).toHaveBeenCalled();
-    expect(handleClick.mock.calls[0][0].afterStopPropagation).toBe(true);
   });
 
 });
