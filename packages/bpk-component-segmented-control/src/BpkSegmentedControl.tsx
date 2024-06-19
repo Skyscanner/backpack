@@ -16,23 +16,30 @@
  * limitations under the License.
  */
 
-import type { ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
-
-import SEGMENT_TYPES from './segmentTypes';
-
-import type { SegmentTypes } from './segmentTypes';
 
 import STYLES from './BpkSegmentedControl.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+const SEGMENT_TYPES = {
+  CanvasDefault: 'canvas-default',
+  CanvasContrast: 'canvas-contrast',
+  SurfaceDefault: 'surface-default',
+  SurfaceContrast: 'surface-contrast',
+} as const;
+export type SegmentTypes = (typeof SEGMENT_TYPES)[keyof typeof SEGMENT_TYPES];
+
 export type Props = {
-  buttonContents: string[] |  ReactNode[];
+  buttonContents: string[] | ReactNode[];
   type?: SegmentTypes;
-  onItemClick: (id: number) => void; // index param to track which one is clicked
+  /*
+   * Index parameter to track which is clicked
+   */
+  onItemClick: (id: number) => void;
   selectedIndex: number;
   shadow?: boolean;
 };
@@ -41,43 +48,48 @@ const BpkSegmentedControl = ({
   buttonContents,
   onItemClick,
   selectedIndex,
-  shadow,
+  shadow = false,
   type = SEGMENT_TYPES.CanvasDefault,
 }: Props) => {
   const [selectedButton, setSelectedButton] = useState(selectedIndex);
   const handleButtonClick = (id: number) => {
-   if (id !== selectedButton) {
+    if (id !== selectedButton) {
       setSelectedButton(id);
-     onItemClick(id);
+      onItemClick(id);
     }
-  }
-  const containerStyling = getClassName('bpk-segmented-control-group',  shadow && 'bpk-segmented-control-group-shadow');
+  };
+  const containerStyling = getClassName(
+    'bpk-segmented-control-group',
+    shadow && 'bpk-segmented-control-group-shadow',
+  );
 
   return (
     <div role="radiogroup" className={containerStyling}>
       {buttonContents.map((content, index) => {
         const isSelected = index === selectedButton;
-        const rightOfOption = index === selectedButton + 1
+        const rightOfOption = index === selectedButton + 1;
         const buttonStyling = getClassName(
           'bpk-segmented-control',
           `bpk-segmented-control--${type}`,
           isSelected && `bpk-segmented-control--${type}-selected`,
           rightOfOption && `bpk-segmented-control--${type}-rightOfOption`,
-          shadow && isSelected && `bpk-segmented-control--${type}-selected-shadow`
+          shadow &&
+            isSelected &&
+            `bpk-segmented-control--${type}-selected-shadow`,
         );
 
-    return (
-      <button
-        key={`index-${index.toString()}`}
-        id={index.toString()}
-        type="button"
-        onClick={() => handleButtonClick(index)}
-        className={buttonStyling}
-        aria-pressed={!!isSelected}
-      >
-        {content}
-      </button>
-    );
+        return (
+          <button
+            key={`index-${index.toString()}`}
+            id={index.toString()}
+            type="button"
+            onClick={() => handleButtonClick(index)}
+            className={buttonStyling}
+            aria-pressed={!!isSelected}
+          >
+            {content}
+          </button>
+        );
       })}
     </div>
   );
