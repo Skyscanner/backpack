@@ -17,7 +17,7 @@
  */
 
 import {
-  privateSegmentedControlCanvasDefaultDay,
+  privateSegmentedControlCanvasDefaultDay, privateSegmentedControlSurfaceContrastDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkSegmentedControl from '../../packages/bpk-component-segmented-control';
@@ -26,10 +26,17 @@ import SEGMENT_TYPES from '../../packages/bpk-component-segmented-control/src/se
 import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
 
-const wrapperStyle = {
+const canvasDefaultWrapperStyle = {
   display: 'flex',
   maxWidth: '500px',
   backgroundColor: privateSegmentedControlCanvasDefaultDay,
+  padding: '2rem',
+};
+
+const surfaceContrastWrapperStyle = {
+  display: 'flex',
+  maxWidth: '500px',
+  backgroundColor: privateSegmentedControlSurfaceContrastDay,
   padding: '2rem',
 };
 
@@ -44,16 +51,18 @@ const SimpleDefault = () => (
 );
 
 const SimpleCanvasContrast = () => (
+  <div style={canvasDefaultWrapperStyle}>
   <BpkSegmentedControl
     buttonContents={['Value', 'Value', 'Value']}
     onItemClick={() => {}}
     selectedIndex={2}
     type = {SEGMENT_TYPES.CanvasContrast}
     />
+  </div>
 );
 
 const SimpleSurfaceDefault = () => (
-  <div style={wrapperStyle}>
+  <div style={surfaceContrastWrapperStyle}>
   <BpkSegmentedControl
     buttonContents={['Value', 'Value', 'Value', 'Value']}
     onItemClick={() => {}}
@@ -113,7 +122,6 @@ const ComplexSurfaceContrast = () => (
 );
 
 const ComplexSurfaceDefault = () => (
-  <div style={wrapperStyle}>
   <BpkSegmentedControl
         buttonContents={allButtonContent}
         onItemClick={() => {}}
@@ -121,7 +129,15 @@ const ComplexSurfaceDefault = () => (
         type={SEGMENT_TYPES.SurfaceDefault}
         shadow
     />
-  </div>
 );
 
-export { SimpleDefault, SimpleCanvasContrast, SimpleSurfaceDefault, SimpleSurfaceContrast, ComplexSurfaceContrast, ComplexSurfaceDefault};
+const ComplexSurfaceDefaultNoShadow = () => (
+  <BpkSegmentedControl
+    buttonContents={allButtonContent}
+    onItemClick={() => {}}
+    selectedIndex={1}
+    type={SEGMENT_TYPES.SurfaceDefault}
+  />
+);
+
+export { SimpleDefault, SimpleCanvasContrast, SimpleSurfaceDefault, SimpleSurfaceContrast, ComplexSurfaceContrast, ComplexSurfaceDefault, ComplexSurfaceDefaultNoShadow};
