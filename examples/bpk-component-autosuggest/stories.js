@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-import { ArgsTable } from '@storybook/addon-docs';
-import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
-import { userEvent, within } from '@storybook/testing-library';
+import { ArgTypes } from '@storybook/addon-docs';
+import { Title, Markdown } from '@storybook/blocks';
+import { userEvent, within } from '@storybook/test';
 
 import BpkAutosuggest from '../../packages/bpk-component-autosuggest/src/BpkAutosuggest';
 import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
@@ -38,7 +38,7 @@ export default {
       page: () => (
         <>
           <Title />
-          <ArgsTable of={PRIMARY_STORY} />
+          <ArgTypes exclude={['zoomEnabled']} />
           <Markdown>
             {
             `**BpkAutosuggest:**

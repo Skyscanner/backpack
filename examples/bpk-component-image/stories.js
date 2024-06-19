@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import { ArgsTable } from '@storybook/addon-docs';
-import { Title, PRIMARY_STORY, Markdown } from '@storybook/blocks';
+import { ArgTypes } from '@storybook/addon-docs';
+import { Title, Markdown } from '@storybook/blocks';
 
 import BpkBackgroundImage from '../../packages/bpk-component-image/src/BpkBackgroundImage';
 import BpkImage from '../../packages/bpk-component-image/src/BpkImage';
@@ -44,7 +44,7 @@ export default {
       page: () => (
         <>
           <Title />
-          <ArgsTable of={PRIMARY_STORY} />
+          <ArgTypes exclude={['zoomEnabled']} />
           <Markdown>
             {`**Note:** All [standard img attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#Attributes) including \`srcSet\` are also supported.`}
           </Markdown>

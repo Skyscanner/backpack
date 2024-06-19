@@ -28,16 +28,17 @@ const config: StorybookConfig = {
     '@storybook/addon-docs',
     '@storybook/addon-interactions',
     '@storybook/addon-viewport',
+    '@storybook/addon-webpack5-compiler-babel'
   ],
   framework: {
     name: '@storybook/react-webpack5',
     options: {},
   },
   docs: {
-    autodocs: true,
-    defaultName: 'Documentation',
+    defaultName: 'Documentation'
   },
   typescript: {
+    reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
       shouldIncludePropTagMap: true,
       propFilter: (prop) => {        
@@ -47,9 +48,6 @@ const config: StorybookConfig = {
         return !isHTMLElementProp
       },
     },
-  },
-  features: {
-    storyStoreV7: false, // TODO: Remove this. Temporarily opt out of on-demand story loading as it blocks Percy from running tests
   },
 };
 export default config;
