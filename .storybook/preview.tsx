@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import { ArgsTable } from '@storybook/addon-docs';
-import { Title, PRIMARY_STORY } from '@storybook/blocks';
+import { ArgTypes } from '@storybook/addon-docs';
+import { Title } from '@storybook/blocks';
 
 import '../packages/bpk-stylesheets';
 import '../packages/bpk-stylesheets/font';
@@ -64,6 +64,7 @@ const preview: Preview = {
         </div>
     )},
   ],
+
   parameters: {
     docs: {
       source: {
@@ -72,14 +73,17 @@ const preview: Preview = {
       page: () => (
         <>
           <Title />
-          <ArgsTable story={PRIMARY_STORY} />
+          <ArgTypes exclude={['zoomEnabled']}/>
         </>
       )
     },
   },
+
   args: {
     zoomEnabled: false,
-  }
+  },
+
+  tags: ['autodocs']
 };
 
 export default preview;
