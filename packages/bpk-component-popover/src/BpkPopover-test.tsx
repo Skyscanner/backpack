@@ -91,12 +91,14 @@ describe('BpkPopover', () => {
   });
 
   it('should render correctly with "closeButtonProps" provided', () => {
-    const {container} = render(
+    render(
       <BpkPopover
         id="my-popover"
         onClose={() => null}
         label="My popover"
+        labelAsTitle
         closeButtonLabel="Close"
+        closeButtonIcon
         target={<button type="button">My target</button>}
         closeButtonProps={{ tabIndex: 0 }}
         isOpen
@@ -105,7 +107,7 @@ describe('BpkPopover', () => {
       </BpkPopover>,
     );
 
-    expect(container.querySelector('[tabindex="0"]')).toBeVisible();
+    expect(screen.getByRole('button', { name: /Close/i, })).toHaveAttribute('tabindex');
   });
 
   it('should render correctly with "padded" attribute equal to false', () => {
