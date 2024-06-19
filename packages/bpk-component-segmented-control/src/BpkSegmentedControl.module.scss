@@ -36,7 +36,7 @@
 
 .bpk-segmented-control {
   min-height: tokens.bpk-spacing-xl();
-  padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-base();
+  padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
   flex: 1;
   border: none;
   text-overflow: ellipsis;
@@ -55,7 +55,7 @@
   }
 
   &--canvas-contrast {
-    background-color: tokens.$bpk-private-segmented-control-surface-contrast-day;
+    background-color: tokens.$bpk-surface-default-day;
     color: tokens.$bpk-text-primary-day;
 
     &-selected {
