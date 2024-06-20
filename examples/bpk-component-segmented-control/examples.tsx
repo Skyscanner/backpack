@@ -17,14 +17,14 @@
  */
 
 import {
-  privateSegmentedControlCanvasDefaultDay, privateSegmentedControlSurfaceContrastDay,
+  privateSegmentedControlCanvasDefaultDay,
+  privateSegmentedControlSurfaceContrastDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkSegmentedControl from '../../packages/bpk-component-segmented-control';
-import SEGMENT_TYPES from '../../packages/bpk-component-segmented-control/src/segmentTypes';
+import { SEGMENT_TYPES } from '../../packages/bpk-component-segmented-control/src/BpkSegmentedControl';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
-
 
 const canvasDefaultWrapperStyle = {
   display: 'flex',
@@ -43,45 +43,49 @@ const surfaceContrastWrapperStyle = {
 // Simple Segmented Control
 const SimpleDefault = () => (
   <BpkSegmentedControl
-    buttonContents={['Value', 'Value',]}
+    buttonContents={['Value', 'Value']}
     onItemClick={() => {}}
     selectedIndex={0}
-    type = {SEGMENT_TYPES.CanvasDefault}
-    />
+    type={SEGMENT_TYPES.CanvasDefault}
+  />
 );
 
 const SimpleCanvasContrast = () => (
   <div style={canvasDefaultWrapperStyle}>
-  <BpkSegmentedControl
-    buttonContents={['Value', 'Value', 'Value']}
-    onItemClick={() => {}}
-    selectedIndex={2}
-    type = {SEGMENT_TYPES.CanvasContrast}
+    <BpkSegmentedControl
+      buttonContents={['Value', 'Value', 'Value']}
+      onItemClick={() => {}}
+      selectedIndex={2}
+      type={SEGMENT_TYPES.CanvasContrast}
     />
   </div>
 );
 
 const SimpleSurfaceDefault = () => (
   <div style={surfaceContrastWrapperStyle}>
-  <BpkSegmentedControl
-    buttonContents={['Value', 'Value', 'Value', 'Value']}
-    onItemClick={() => {}}
-    selectedIndex={2}
-    type = {SEGMENT_TYPES.SurfaceDefault}
+    <BpkSegmentedControl
+      buttonContents={['Value', 'Value', 'Value', 'Value']}
+      onItemClick={() => {}}
+      selectedIndex={2}
+      type={SEGMENT_TYPES.SurfaceDefault}
     />
   </div>
-
 );
 
 const SimpleSurfaceContrast = () => (
   <BpkDarkExampleWrapper padded>
-  <BpkSegmentedControl
-    buttonContents={['Very Long Value1', 'Very Long Value2', ' Very Long Value 3', 'Very Long Value4']}
-    onItemClick={() => {}}
-    selectedIndex={2}
-    type = {SEGMENT_TYPES.SurfaceContrast}
+    <BpkSegmentedControl
+      buttonContents={[
+        'Very Long Value1',
+        'Very Long Value2',
+        'Very Long Value3',
+        'Very Long Value4',
+      ]}
+      onItemClick={() => {}}
+      selectedIndex={2}
+      type={SEGMENT_TYPES.SurfaceContrast}
     />
-   </BpkDarkExampleWrapper>
+  </BpkDarkExampleWrapper>
 );
 
 // // Complex Segmented Control
@@ -90,45 +94,49 @@ const complexButtonContentBest = [
     <div>Best</div>
     <div>£84</div>
     <div>2h average</div>
-  </>
+  </>,
 ];
 const complexButtonContentCheapest = [
   <>
     <div>Cheapest</div>
     <div>£34</div>
     <div>9h average</div>
-  </>
+  </>,
 ];
 const complexButtonContentFastest = [
   <>
     <div>Fastest</div>
     <div>£90</div>
     <div>1h average</div>
-  </>
+  </>,
 ];
 
-const allButtonContent = [complexButtonContentBest, complexButtonContentCheapest, complexButtonContentFastest];
+const allButtonContent = [
+  complexButtonContentBest,
+  complexButtonContentCheapest,
+  complexButtonContentFastest,
+];
 
 const ComplexSurfaceContrast = () => (
-  <BpkDarkExampleWrapper padded style={{display: 'flex'}}>
-      <BpkSegmentedControl
-        buttonContents={allButtonContent}
-        onItemClick={() => {}}
-        selectedIndex={1}
-        type={SEGMENT_TYPES.SurfaceContrast}
-        shadow
-      />
+  <BpkDarkExampleWrapper padded style={{ display: 'flex' }}>
+    <BpkSegmentedControl
+      buttonContents={allButtonContent}
+      onItemClick={() => {}}
+      selectedIndex={1}
+      type={SEGMENT_TYPES.SurfaceContrast}
+      shadow
+    />
   </BpkDarkExampleWrapper>
 );
 
 const ComplexSurfaceDefault = () => (
   <BpkSegmentedControl
-        buttonContents={allButtonContent}
-        onItemClick={() => {}}
-        selectedIndex={1}
-        type={SEGMENT_TYPES.SurfaceDefault}
-        shadow
-    />
+    buttonContents={allButtonContent}
+    onItemClick={() => {}}
+    selectedIndex={1}
+    type={SEGMENT_TYPES.SurfaceDefault}
+    shadow
+  />
 );
 
 const ComplexSurfaceDefaultNoShadow = () => (
@@ -140,4 +148,12 @@ const ComplexSurfaceDefaultNoShadow = () => (
   />
 );
 
-export { SimpleDefault, SimpleCanvasContrast, SimpleSurfaceDefault, SimpleSurfaceContrast, ComplexSurfaceContrast, ComplexSurfaceDefault, ComplexSurfaceDefaultNoShadow};
+export {
+  SimpleDefault,
+  SimpleCanvasContrast,
+  SimpleSurfaceDefault,
+  SimpleSurfaceContrast,
+  ComplexSurfaceContrast,
+  ComplexSurfaceDefault,
+  ComplexSurfaceDefaultNoShadow,
+};
