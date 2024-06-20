@@ -51,10 +51,8 @@ const BpkSegmentedControl = ({
   shadow = false,
   type = SEGMENT_TYPES.CanvasDefault,
 }: Props) => {
-  const [selectedButton, setSelectedButton] = useState(selectedIndex);
   const handleButtonClick = (id: number) => {
-    if (id !== selectedButton) {
-      setSelectedButton(id);
+    if (id !== selectedIndex) {
       onItemClick(id);
     }
   };
@@ -66,8 +64,8 @@ const BpkSegmentedControl = ({
   return (
     <div role="radiogroup" className={containerStyling}>
       {buttonContents.map((content, index) => {
-        const isSelected = index === selectedButton;
-        const rightOfOption = index === selectedButton + 1;
+        const isSelected = index === selectedIndex;
+        const rightOfOption = index === selectedIndex + 1;
         const buttonStyling = getClassName(
           'bpk-segmented-control',
           `bpk-segmented-control--${type}`,
