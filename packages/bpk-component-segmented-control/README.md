@@ -20,5 +20,4 @@ export default () => (
 
 
 ## Props
-// doc link to be added
-Check out the full list of props on Skyscanner's [design system documentation website]().
+Check out the full list of props on Skyscanner's [design system documentation website]( https://github.com/Skyscanner/backpack/blob/main/packages/bpk-component-segmented-control/README.md).

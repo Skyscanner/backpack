@@ -40,6 +40,7 @@
   flex: 1;
   border: none;
   text-overflow: ellipsis;
+  cursor: pointer;
   overflow: hidden;
 
   @include typography.bpk-label-2;

@@ -39,5 +39,12 @@ export const SimpleFourSegmentsSurfaceDefault = SimpleSurfaceDefault;
 export const SimpleFourSegmentsSurfaceContrast = SimpleSurfaceContrast;
 export const ComplexThreeSegmentsSurfaceContrast = ComplexSurfaceContrast;
 export const ComplexThreeSegmentsSurfaceDefault = ComplexSurfaceDefault;
-export const ComplexThreeSegmentsSurfaceDefaultNoShadow = ComplexSurfaceDefaultNoShadow;
+export const ComplexThreeSegmentsSurfaceDefaultNoShadow =
+  ComplexSurfaceDefaultNoShadow;
 export const VisualTest = ComplexSurfaceDefault;
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true,
+  },
+};

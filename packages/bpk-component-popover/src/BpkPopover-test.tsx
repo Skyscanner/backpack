@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import BpkPopover from './BpkPopover';
@@ -191,4 +191,40 @@ describe('BpkPopover', () => {
       expect(onCloseSpy).toHaveBeenCalled();
     });
   });
+
+  it('should call target onClick handler and execute code after stopPropagation', async () => {
+    const handleClick = jest.fn((event) => {
+      event.stopPropagation();
+      // eslint-disable-next-line no-param-reassign
+      event.afterStopPropagation = true;
+    });
+
+    const { getByRole } = render(
+      <BpkPopover
+        id="my-popover"
+        onClose={jest.fn()}
+        label="My popover"
+        closeButtonLabel="Close"
+        labelAsTitle
+        closeButtonIcon
+        target={<button onClick={handleClick} type="button">My target</button>}
+        isOpen
+      >
+        My popover content
+      </BpkPopover>,
+    );
+
+    const button = getByRole('button', { name: 'My target' });
+
+    const event = new MouseEvent('click', { bubbles: true });
+    jest.spyOn(event, 'stopPropagation');
+
+    await waitFor(async () => {
+      await fireEvent(button, event);
+      expect(handleClick).toHaveBeenCalled();
+      expect(event.stopPropagation).toHaveBeenCalled();
+      expect(handleClick.mock.calls[0][0].afterStopPropagation).toBe(true);
+    });
+  });
+
 });
