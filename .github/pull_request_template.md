@@ -14,5 +14,12 @@ Remember to include the following changes:
 - [ ] `README.md` (If you have created a new component)
 - [ ] Component `README.md`
 - [ ] Tests
+- [ ] Accessibility tests
+    - The following checks were performed:
+        - [ ] Ability to navigate using a [keyboard only](https://webaim.org/techniques/keyboard/)
+        - [ ] Zoom functionality ([Deque University explanation](https://dequeuniversity.com/checklists/web/text)):
+            - [ ] The page SHOULD be functional AND readable when only the text is magnified to 200% of its initial size
+            - [ ] Pages must reflow as zoom increases up to 400% so that content continues to be presented in only one column i.e. Content MUST NOT require scrolling in two directions (both vertically and horizontally)
+        - [ ] Ability to navigate using a [screen reader only](https://webaim.org/articles/screenreader_testing/)
 - [ ] Storybook examples created/updated
 - [ ] For breaking changes or deprecating components/properties, migration guides added to the description of the PR. If the guide has large changes, consider creating a new Markdown page inside the component's docs folder and link it here
