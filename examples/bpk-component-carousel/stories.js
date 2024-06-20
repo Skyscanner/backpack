@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016 Skyscanner Ltd
+ * Copyright 2022 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,34 +16,19 @@
  * limitations under the License.
  */
 
+import BpkCarousel from '../../packages/bpk-component-carousel'
 
-import BpkPopover from '../../packages/bpk-component-popover';
-
-import {
-  DefaultExample,
-  WithoutArrowExample,
-  WithLabelAsTitleExample,
-  OnTheSideExample,
-  InputTriggerExample,
-  WithActionButtonExample,
-  WithNoCloseButtonIconExample,
-  VisualExample
-} from './examples';
+import DefaultExample from './example'
 
 export default {
-  title: 'bpk-component-popover',
-  component: BpkPopover,
+  title: 'bpk-component-carousel',
+  component: BpkCarousel,
 };
 
+
 export const Default = DefaultExample;
-export const WithoutArrow = WithoutArrowExample;
-export const WithLabelAsTitle = WithLabelAsTitleExample;
-export const WithNoCloseButtonIcon =
-WithNoCloseButtonIconExample;
-export const OnTheSide = OnTheSideExample;
-export const TriggeredByInput = InputTriggerExample;
-export const WithActionButton = WithActionButtonExample;
-export const VisualTest = VisualExample;
+
+export const VisualTest = DefaultExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
   zoomEnabled: true
