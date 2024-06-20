@@ -15,11 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {  render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import BpkSegmentedControl from './BpkSegmentedControl';
-import SEGMENT_TYPES from './segmentTypes';
+import BpkSegmentedControl, { SEGMENT_TYPES } from './BpkSegmentedControl';
 
 const mockOnItemClick = jest.fn();
 
@@ -47,7 +46,9 @@ describe('BpkSegmentedControl', () => {
       ...defaultProps,
       buttonContents: [<div>one</div>, <div>two</div>, <div>three</div>],
     };
-    const { getByText } = render(<BpkSegmentedControl {...propsWithReactNodes} />);
+    const { getByText } = render(
+      <BpkSegmentedControl {...propsWithReactNodes} />,
+    );
 
     expect(getByText('one')).toBeInTheDocument();
     expect(getByText('two')).toBeInTheDocument();
@@ -70,7 +71,7 @@ describe('BpkSegmentedControl', () => {
   });
 
   it('should update the selected button when a button is clicked', () => {
-    const { getByText} = render(<BpkSegmentedControl {...defaultProps} />);
+    const { getByText } = render(<BpkSegmentedControl {...defaultProps} />);
     const buttonOne = getByText('one');
     fireEvent.click(buttonOne);
 
@@ -80,7 +81,9 @@ describe('BpkSegmentedControl', () => {
 
   it('should render with the correct type class', () => {
     const { container } = render(<BpkSegmentedControl {...defaultProps} />);
-    const button = container.querySelector('.bpk-segmented-control--canvas-contrast');
+    const button = container.querySelector(
+      '.bpk-segmented-control--canvas-contrast',
+    );
 
     expect(button).toBeInTheDocument();
   });
@@ -89,13 +92,17 @@ describe('BpkSegmentedControl', () => {
     const props = { ...defaultProps, shadow: true };
     const { container } = render(<BpkSegmentedControl {...props} />);
 
-    expect(container.firstChild).toHaveClass('bpk-segmented-control-group-shadow');
+    expect(container.firstChild).toHaveClass(
+      'bpk-segmented-control-group-shadow',
+    );
   });
 
   it('should apply the correct class when button is selected and shadow is true', () => {
     const props = { ...defaultProps, shadow: true };
     const { container } = render(<BpkSegmentedControl {...props} />);
-    const selectedButton = container.querySelector('.bpk-segmented-control--canvas-contrast-selected-shadow');
+    const selectedButton = container.querySelector(
+      '.bpk-segmented-control--canvas-contrast-selected-shadow',
+    );
 
     expect(selectedButton).toBeInTheDocument();
   });

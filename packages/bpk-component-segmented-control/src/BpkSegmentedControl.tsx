@@ -25,12 +25,12 @@ import STYLES from './BpkSegmentedControl.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const SEGMENT_TYPES = {
+export const SEGMENT_TYPES = {
   CanvasDefault: 'canvas-default',
   CanvasContrast: 'canvas-contrast',
   SurfaceDefault: 'surface-default',
   SurfaceContrast: 'surface-contrast',
-} as const;
+};
 export type SegmentTypes = (typeof SEGMENT_TYPES)[keyof typeof SEGMENT_TYPES];
 
 export type Props = {
