@@ -14,6 +14,7 @@ Remember to include the following changes:
 - [ ] `README.md` (If you have created a new component)
 - [ ] Component `README.md`
 - [ ] Tests
+- [ ] Accessibility tests
     - The following checks were performed:
         - [ ] Ability to navigate using a [keyboard only](https://webaim.org/techniques/keyboard/)
         - [ ] Zoom functionality ([Deque University explanation](https://dequeuniversity.com/checklists/web/text)):
