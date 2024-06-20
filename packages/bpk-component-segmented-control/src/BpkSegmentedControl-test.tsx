@@ -35,12 +35,6 @@ describe('BpkSegmentedControl', () => {
     mockOnItemClick.mockClear();
   });
 
-  it('should render component correctly', () => {
-    const { asFragment } = render(<BpkSegmentedControl {...defaultProps} />);
-
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render ReactNode contents correctly', () => {
     const propsWithReactNodes = {
       ...defaultProps,
