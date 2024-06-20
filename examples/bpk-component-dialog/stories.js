@@ -39,3 +39,8 @@ export const NotDismissible = NotDismissibleExample;
 export const WithFlare = WithFlareExample;
 
 export const VisualTest = DefaultExample;
+
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};
