@@ -21,7 +21,6 @@ import BpkDialog from '../../packages/bpk-component-dialog/src/BpkDialog';
 
 import {
   DefaultExample,
-  StartOpenExample,
   WithIconExample,
   NotDismissibleExample,
   WithFlareExample,
@@ -33,11 +32,10 @@ export default {
 };
 
 export const Default = DefaultExample;
-export const DefaultStartOpen = StartOpenExample;
 export const WithAnIcon = WithIconExample;
 
 export const NotDismissible = NotDismissibleExample;
 
 export const WithFlare = WithFlareExample;
 
-export const VisualTest = StartOpenExample;
+export const VisualTest = DefaultExample;

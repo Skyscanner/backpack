@@ -46,7 +46,7 @@ type Props = {
   children: Node,
   dismissible: boolean,
   headerIcon: ?Node,
-  startOpen: ?boolean,
+  initiallyOpen: ?boolean,
 };
 
 type State = {
@@ -68,7 +68,7 @@ class DialogContainer extends Component<Props, State> {
     super();
 
     this.state = {
-      isOpen: props.startOpen || false,
+      isOpen: props.initiallyOpen || false,
     };
   }
 
@@ -112,15 +112,7 @@ class DialogContainer extends Component<Props, State> {
 }
 
 const DefaultExample = () => (
-  <DialogContainer>
-    <Paragraph>
-      This is a default dialog. You can put anything you want in here.
-    </Paragraph>
-  </DialogContainer>
-);
-
-const StartOpenExample = () => (
-  <DialogContainer startOpen>
+  <DialogContainer initiallyOpen>
     <Paragraph>
       This is a default dialog. You can put anything you want in here.
     </Paragraph>
@@ -131,7 +123,7 @@ const WithIconExample = () => (
   <div>
     <div>
       <span>Default Icon Dialog</span>
-      <DialogContainer headerIcon={<TickIcon />} dismissible={false}>
+      <DialogContainer initiallyOpen headerIcon={<TickIcon />} dismissible={false}>
         <Paragraph>
           This is a default dialog with an icon. You can put anything you want
           in here.
@@ -170,7 +162,7 @@ const WithIconExample = () => (
 );
 
 const NotDismissibleExample = () => (
-  <DialogContainer dismissible={false}>
+  <DialogContainer initiallyOpen dismissible={false}>
     <Paragraph>
       This is not dismissible. To close it you must bind the `onClose` function
       to a component inside the dialog, like the button below.
@@ -179,7 +171,7 @@ const NotDismissibleExample = () => (
 );
 
 const WithFlareExample = () => (
-  <DialogContainer flare dismissible={false}>
+  <DialogContainer initiallyOpen flare dismissible={false}>
     <Paragraph>
       This is a dialog with a flare view added as the header.
     </Paragraph>
@@ -188,7 +180,6 @@ const WithFlareExample = () => (
 
 export {
   DefaultExample,
-  StartOpenExample,
   WithIconExample,
   NotDismissibleExample,
   WithFlareExample,
