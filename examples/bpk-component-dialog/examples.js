@@ -46,6 +46,7 @@ type Props = {
   children: Node,
   dismissible: boolean,
   headerIcon: ?Node,
+  startOpen: ?boolean,
 };
 
 type State = {
@@ -63,11 +64,11 @@ class DialogContainer extends Component<Props, State> {
     headerIcon: null,
   };
 
-  constructor() {
+  constructor(props: Props) {
     super();
 
     this.state = {
-      isOpen: false,
+      isOpen: props.startOpen || false,
     };
   }
 
@@ -112,6 +113,14 @@ class DialogContainer extends Component<Props, State> {
 
 const DefaultExample = () => (
   <DialogContainer>
+    <Paragraph>
+      This is a default dialog. You can put anything you want in here.
+    </Paragraph>
+  </DialogContainer>
+);
+
+const StartOpenExample = () => (
+  <DialogContainer startOpen>
     <Paragraph>
       This is a default dialog. You can put anything you want in here.
     </Paragraph>
@@ -179,6 +188,7 @@ const WithFlareExample = () => (
 
 export {
   DefaultExample,
+  StartOpenExample,
   WithIconExample,
   NotDismissibleExample,
   WithFlareExample,
