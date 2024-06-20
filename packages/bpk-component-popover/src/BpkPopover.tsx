@@ -17,7 +17,7 @@
  */
 
 import type { SyntheticEvent, ReactNode, ReactElement } from 'react';
-import { useState, useRef, cloneElement, isValidElement } from 'react';
+import { useState, useEffect, useRef, cloneElement, isValidElement } from 'react';
 
 import {
   useFloating,
@@ -29,7 +29,6 @@ import {
   FloatingFocusManager,
   arrow,
   FloatingArrow,
-  flip,
   shift,
 } from '@floating-ui/react';
 
@@ -125,6 +124,13 @@ const BpkPopover = ({
   ...rest
 }: Props) => {
   const [isOpenState, setIsOpenState] = useState(isOpen);
+
+  useEffect(() => {
+    if (!isOpen) {
+      setIsOpenState(false)
+    }
+  }, [isOpen]);
+
   const arrowRef = useRef(null);
 
   const { context, floatingStyles, refs } = useFloating({
@@ -133,7 +139,6 @@ const BpkPopover = ({
     placement,
     middleware: [
       showArrow && offset(17),
-      flip({ crossAxis: true }),
       shift(),
       showArrow && arrow({ element: arrowRef }),
     ],
@@ -149,17 +154,30 @@ const BpkPopover = ({
     dismiss,
   ]);
 
+  const targetClick = target.props.onClick;
+  const referenceProps = getReferenceProps(
+    {
+      onClick: (event) => {
+        if (targetClick) {
+          event.stopPropagation();
+          targetClick(event);
+        }
+      },
+    }
+  )
+
   const targetElement = isValidElement(target) ? (
     cloneElement(target, {
-      ...getReferenceProps(),
+      ...referenceProps,
       // @ts-ignore - we're adding a popover ref to the target element so we can position the popover relative to it
       ref: refs.setReference,
     })
   ) : (
-    <div ref={refs.setReference} {...getReferenceProps()}>
+    <div ref={refs.setReference} {...referenceProps}>
       {target}
     </div>
   );
+
   const classNames = getClassName('bpk-popover', className);
   const bodyClassNames = getClassName(padded && 'bpk-popover__body--padded');
 
