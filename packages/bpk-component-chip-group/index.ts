@@ -16,19 +16,26 @@
  * limitations under the License.
  */
 
-import 'jest-axe/extend-expect';
-import '@testing-library/jest-dom';
-import 'raf/polyfill';
-import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
+import BpkMultiSelectChipGroup, {
+  type MultiSelectProps,
+  type ChipItem,
+  type SingleSelectChipItem,
+  CHIP_COMPONENT,
+  CHIP_GROUP_TYPES,
+} from './src/BpkMultiSelectChipGroup';
+import BpkSingleSelectChipGroup, {
+  type SingleSelectProps,
+} from './src/BpkSingleSelectChipGroup';
 
-// The below is a workaround to the problem were calling resetModules causes react to be required twice.
-// further details can be found here: https://github.com/jestjs/jest/issues/8987#issuecomment-584898030
-let mockActualReact;
-jest.doMock('react', () => {
-  if (!mockActualReact) {
-    mockActualReact = jest.requireActual('react');
-  }
-  return mockActualReact;
-});
-
-registerRequireContextHook();
+export type {
+  ChipItem,
+  MultiSelectProps,
+  SingleSelectProps,
+  SingleSelectChipItem,
+};
+export {
+  BpkSingleSelectChipGroup,
+  CHIP_GROUP_TYPES,
+  CHIP_COMPONENT,
+};
+export default BpkMultiSelectChipGroup;
