@@ -17,8 +17,8 @@
  */
 
 import {
-  privateSegmentedControlCanvasDefaultDay,
-  privateSegmentedControlSurfaceContrastDay,
+  canvasContrastDay,
+  surfaceContrastDay
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkSegmentedControl from '../../packages/bpk-component-segmented-control';
@@ -27,16 +27,12 @@ import { SEGMENT_TYPES } from '../../packages/bpk-component-segmented-control/sr
 import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
 const canvasDefaultWrapperStyle = {
-  display: 'flex',
-  maxWidth: '500px',
-  backgroundColor: privateSegmentedControlCanvasDefaultDay,
+  backgroundColor: canvasContrastDay,
   padding: '2rem',
 };
 
 const surfaceContrastWrapperStyle = {
-  display: 'flex',
-  maxWidth: '500px',
-  backgroundColor: privateSegmentedControlSurfaceContrastDay,
+  backgroundColor: surfaceContrastDay,
   padding: '2rem',
 };
 
@@ -118,7 +114,7 @@ const allButtonContent = [
 ];
 
 const ComplexSurfaceContrast = () => (
-  <BpkDarkExampleWrapper padded style={{ display: 'flex' }}>
+  <BpkDarkExampleWrapper padded>
     <BpkSegmentedControl
       buttonContents={allButtonContent}
       onItemClick={() => {}}
@@ -139,6 +135,31 @@ const ComplexSurfaceDefault = () => (
   />
 );
 
+const ComplexCanvasContrast = () => (
+  <BpkDarkExampleWrapper
+    padded
+    style={{ backgroundColor: canvasContrastDay }}
+  >
+    <BpkSegmentedControl
+      buttonContents={allButtonContent}
+      onItemClick={() => {}}
+      selectedIndex={1}
+      type={SEGMENT_TYPES.CanvasContrast}
+      shadow
+    />
+  </BpkDarkExampleWrapper>
+);
+
+const ComplexCanvasDefault = () => (
+  <BpkSegmentedControl
+    buttonContents={allButtonContent}
+    onItemClick={() => {}}
+    selectedIndex={1}
+    type={SEGMENT_TYPES.CanvasDefault}
+    shadow
+  />
+);
+
 const ComplexSurfaceDefaultNoShadow = () => (
   <BpkSegmentedControl
     buttonContents={allButtonContent}
@@ -148,6 +169,18 @@ const ComplexSurfaceDefaultNoShadow = () => (
   />
 );
 
+const VisualExample = () => (
+  <>
+    <ComplexCanvasDefault />
+    <br />
+    <ComplexCanvasContrast />
+    <br />
+    <ComplexSurfaceDefault />
+    <br />
+    <ComplexSurfaceContrast />
+  </>
+);
+
 export {
   SimpleDefault,
   SimpleCanvasContrast,
@@ -155,5 +188,8 @@ export {
   SimpleSurfaceContrast,
   ComplexSurfaceContrast,
   ComplexSurfaceDefault,
+  ComplexCanvasContrast,
+  ComplexCanvasDefault,
   ComplexSurfaceDefaultNoShadow,
+  VisualExample,
 };

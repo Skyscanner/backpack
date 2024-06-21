@@ -25,7 +25,10 @@ import {
   SimpleSurfaceContrast,
   ComplexSurfaceContrast,
   ComplexSurfaceDefault,
+  ComplexCanvasContrast,
+  ComplexCanvasDefault,
   ComplexSurfaceDefaultNoShadow,
+  VisualExample
 } from './examples';
 
 export default {
@@ -39,9 +42,11 @@ export const SimpleFourSegmentsSurfaceDefault = SimpleSurfaceDefault;
 export const SimpleFourSegmentsSurfaceContrast = SimpleSurfaceContrast;
 export const ComplexThreeSegmentsSurfaceContrast = ComplexSurfaceContrast;
 export const ComplexThreeSegmentsSurfaceDefault = ComplexSurfaceDefault;
+export const ComplexThreeSegmentsCanvasContrast = ComplexCanvasContrast;
+export const ComplexThreeSegmentsCanvasDefault = ComplexCanvasDefault;
 export const ComplexThreeSegmentsSurfaceDefaultNoShadow =
   ComplexSurfaceDefaultNoShadow;
-export const VisualTest = ComplexSurfaceDefault;
+export const VisualTest = VisualExample;
 export const VisualTestWithZoom = {
   render: VisualTest,
   args: {
