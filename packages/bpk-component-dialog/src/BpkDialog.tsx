@@ -16,9 +16,11 @@
  * limitations under the License.
  */
 
+import { useEffect } from 'react';
+
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-import { cssModules, Portal } from '../../bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 
 import BpkDialogInner from './BpkDialogInner';
 import { HEADER_ICON_TYPES } from './common-types';
@@ -53,31 +55,44 @@ const BpkDialog = ({
     );
   }
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && dismissible && onClose) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose, dismissible]);
+
   return (
-    <Portal
-      isOpen={isOpen}
-      onClose={onClose}
-      renderTarget={renderTarget}
-      closeOnEscPressed={dismissible}
-    >
-      <BpkDialogInner
-        onClose={onClose}
-        closeOnScrimClick={dismissible}
-        containerClassName={getClassName('bpk-dialog__container')}
-        contentClassName={
-          headerIcon ? getClassName('bpk-dialog--with-icon') : undefined
-        }
-        {...rest}
-      >
-        {headerIcon && <div className={headerIconClassNames}>{headerIcon}</div>}
-        {dismissible && (
-          <span className={closeButtonClassNames}>
-            <BpkCloseButton label={closeLabel} onClick={onClose} />
-          </span>
-        )}
-        {children}
-      </BpkDialogInner>
-    </Portal>
+    <>
+      {isOpen && (
+        <BpkDialogInner
+          onClose={onClose}
+          closeOnScrimClick={dismissible}
+          containerClassName={getClassName('bpk-dialog__container')}
+          contentClassName={
+            headerIcon ? getClassName('bpk-dialog--with-icon') : undefined
+          }
+          {...rest}
+        >
+          {headerIcon && <div className={headerIconClassNames}>{headerIcon}</div>}
+          {dismissible && (
+            <span className={closeButtonClassNames}>
+              <BpkCloseButton label={closeLabel} onClick={onClose} />
+            </span>
+          )}
+          {children}
+        </BpkDialogInner>
+      )}
+    </>
   );
 };
 

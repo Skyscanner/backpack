@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import InfoIcon from '../../bpk-component-icon/lg/information-circle';
 import TickIcon from '../../bpk-component-icon/lg/tick';
@@ -26,32 +26,29 @@ import BpkDialog from './BpkDialog';
 import { HEADER_ICON_TYPES } from './common-types';
 
 describe('BpkDialog', () => {
-  it('should render correctly in the given target if renderTarget is supplied', () => {
+  it('should render correctly', () => {
     const customRenderTarget = document.createElement('div');
-
-    const { asFragment } = render(
+    render(
       <BpkDialog
         id="my-modal"
         ariaLabel="example dialog to showcase component"
         ariaModal
         onClose={jest.fn()}
         closeLabel="Close"
-        dialogRef={jest.fn()}
         getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
       >
-        Dialog content inside a custom target
+        Dialog content
       </BpkDialog>,
     );
-    expect(asFragment()).toMatchSnapshot();
-    expect(customRenderTarget).toMatchSnapshot();
+    expect(screen.getByText('Dialog content')).toBeVisible();
   });
 
   it('should render correctly when it is not dismissible', () => {
     const customRenderTarget = document.createElement('div');
 
-    const { asFragment } = render(
+    const { asFragment, container } = render(
       <BpkDialog
         id="my-modal"
         ariaLabel="example dialog to showcase component"
@@ -66,14 +63,16 @@ describe('BpkDialog', () => {
         Dialog content inside a custom target
       </BpkDialog>,
     );
-    expect(asFragment()).toMatchSnapshot();
-    expect(customRenderTarget).toMatchSnapshot();
+
+    expect(
+      container.getElementsByClassName('bpk-dialog__close-button'),
+    ).toHaveLength(0);
   });
 
   it('should render default icon dialog correctly', () => {
     const customRenderTarget = document.createElement('div');
 
-    const { asFragment } = render(
+    const { container } = render(
       <BpkDialog
         id="my-modal"
         ariaLabel="example dialog to showcase component"
@@ -89,14 +88,17 @@ describe('BpkDialog', () => {
         Dialog content inside a custom target
       </BpkDialog>,
     );
-    expect(asFragment()).toMatchSnapshot();
-    expect(customRenderTarget).toMatchSnapshot();
+    expect(
+      container.getElementsByClassName(
+        'bpk-dialog__icon bpk-dialog__icon--primary',
+      )[0],
+    ).toBeInTheDocument();
   });
 
   it('should render warning icon dialog correctly', () => {
     const customRenderTarget = document.createElement('div');
 
-    const { asFragment } = render(
+    const { container } = render(
       <BpkDialog
         id="my-modal"
         ariaLabel="example dialog to showcase component"
@@ -107,20 +109,23 @@ describe('BpkDialog', () => {
         isOpen
         renderTarget={() => customRenderTarget}
         dismissible={false}
-        headerIcon={<InfoIcon />}
+        headerIcon={<TickIcon />}
         headerIconType={HEADER_ICON_TYPES.warning}
       >
         Dialog content inside a custom target
       </BpkDialog>,
     );
-    expect(asFragment()).toMatchSnapshot();
-    expect(customRenderTarget).toMatchSnapshot();
+    expect(
+      container.getElementsByClassName(
+        'bpk-dialog__icon bpk-dialog__icon--warning',
+      )[0],
+    ).toBeInTheDocument();
   });
 
   it('should render destructive icon dialog correctly', () => {
     const customRenderTarget = document.createElement('div');
 
-    const { asFragment } = render(
+    const { container } = render(
       <BpkDialog
         id="my-modal"
         ariaLabel="example dialog to showcase component"
@@ -131,20 +136,23 @@ describe('BpkDialog', () => {
         isOpen
         renderTarget={() => customRenderTarget}
         dismissible={false}
-        headerIcon={<TrashIcon />}
+        headerIcon={<TickIcon />}
         headerIconType={HEADER_ICON_TYPES.destructive}
       >
         Dialog content inside a custom target
       </BpkDialog>,
     );
-    expect(asFragment()).toMatchSnapshot();
-    expect(customRenderTarget).toMatchSnapshot();
+    expect(
+      container.getElementsByClassName(
+        'bpk-dialog__icon bpk-dialog__icon--destructive',
+      )[0],
+    ).toBeInTheDocument();
   });
 
   it('should render with flare dialog', () => {
     const customRenderTarget = document.createElement('div');
 
-    const { asFragment } = render(
+    const { container } = render(
       <BpkDialog
         id="my-modal"
         ariaLabel="example dialog to showcase component"
@@ -159,14 +167,16 @@ describe('BpkDialog', () => {
         Dialog content inside a custom target
       </BpkDialog>,
     );
-    expect(asFragment()).toMatchSnapshot();
-    expect(customRenderTarget).toMatchSnapshot();
+
+    expect(
+      container.getElementsByClassName('bpk-dialog-inner__flare')[0],
+    ).toBeInTheDocument();
   });
 
   it('should render with flare dialog with flareClassName', () => {
     const customRenderTarget = document.createElement('div');
 
-    const { asFragment } = render(
+    const { container } = render(
       <BpkDialog
         id="my-modal"
         ariaLabel="example dialog to showcase component"
@@ -182,7 +192,10 @@ describe('BpkDialog', () => {
         Dialog content inside a custom target
       </BpkDialog>,
     );
-    expect(asFragment()).toMatchSnapshot();
-    expect(customRenderTarget).toMatchSnapshot();
+    expect(
+      container.getElementsByClassName(
+        'bpk-dialog-inner__flare my-className',
+      )[0],
+    ).toBeInTheDocument();
   });
 });
