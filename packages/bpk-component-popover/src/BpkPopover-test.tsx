@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import BpkPopover from './BpkPopover';
@@ -201,7 +201,7 @@ describe('BpkPopover', () => {
       event.afterStopPropagation = true;
     });
 
-    const { getByRole } = render(
+    render(
       <BpkPopover
         id="my-popover"
         onClose={jest.fn()}
@@ -210,13 +210,12 @@ describe('BpkPopover', () => {
         labelAsTitle
         closeButtonIcon
         target={<button onClick={handleClick} type="button">My target</button>}
-        isOpen
       >
         My popover content
       </BpkPopover>,
     );
 
-    const button = getByRole('button', { name: 'My target' });
+    const button = screen.getByRole('button', { name: 'My target' });
 
     const event = new MouseEvent('click', { bubbles: true });
     jest.spyOn(event, 'stopPropagation');
@@ -226,6 +225,7 @@ describe('BpkPopover', () => {
       expect(handleClick).toHaveBeenCalled();
       expect(event.stopPropagation).toHaveBeenCalled();
       expect(handleClick.mock.calls[0][0].afterStopPropagation).toBe(true);
+      expect(screen.getByText('My popover content')).toBeVisible();
     });
   });
 
