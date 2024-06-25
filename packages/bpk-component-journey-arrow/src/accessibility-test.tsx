@@ -22,8 +22,14 @@ import { axe } from 'jest-axe';
 import BpkJourneyArrow from './BpkJourneyArrow';
 
 describe('BpkJourneyArrow accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
+  it('should not have programmatically-detectable accessibility issues with no stops', async () => {
     const { container } = render(<BpkJourneyArrow />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have programmatically-detectable accessibility issues with stops', async () => {
+    const { container } = render(<BpkJourneyArrow stops={2} />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

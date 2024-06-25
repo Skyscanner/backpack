@@ -18,20 +18,25 @@
 
 
 import JourneyArrow from '../../packages/bpk-component-journey-arrow';
-import BpkText from '../../packages/bpk-component-text';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 
-import type { Props } from '../../packages/bpk-component-journey-arrow/src/BpkJourneyArrow';
-
-const JourneyArrowExample = ({stops}: Props) => {
+const JourneyArrowExample = () => {
   const widths = ["25%", "50%", "100%"]
   return (<>
+      <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">Direct, different widths</BpkText>
       {widths.map((width) =>
-        <div style={{display: "flex", alignItems: 'center', width}}>
+          <div style={{display: 'flex', alignItems: 'center', width}}>
         <BpkText>Origin</BpkText>
-        <JourneyArrow stops={stops} />
+        <JourneyArrow />
         <BpkText>Destination</BpkText>
       </div>
     )}
+      <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">With stops</BpkText>
+    <div style={{display: 'flex', alignItems: 'center', width: '50%' }}>
+      <JourneyArrow stops={1} />
+      <JourneyArrow stops={2} />
+      <JourneyArrow stops={3} />
+    </div>
     </>
   )
 };

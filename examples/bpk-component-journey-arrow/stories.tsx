@@ -20,27 +20,17 @@ import BpkComponentJourneyArrow from '../../packages/bpk-component-journey-arrow
 
 import JourneyArrowExample from './example'
 
-import type { BpkJourneyArrowProps } from '../../packages/bpk-component-journey-arrow';
-import type { Meta } from '@storybook/react';
-
-const defaultProps = { stops: 1 };
-
 export default {
   title: 'bpk-component-journey-arrow',
   component: BpkComponentJourneyArrow,
 };
 
-export const VisualTest = {
-  title: 'Journey Arrow',
-  component: BpkComponentJourneyArrow,
-  render: (args: BpkJourneyArrowProps) => <JourneyArrowExample {...args} />,
-  args: { ...defaultProps }
-};
+export const VisualTest = JourneyArrowExample;
 
 
 export const VisualTestWithZoom = {
-  title: 'bpk-component-journey-arrow-zoom',
-  component: BpkComponentJourneyArrow,
-  render: (args: BpkJourneyArrowProps) => <JourneyArrowExample {...args} />,
-  args: { zoomEnabled: true, ...defaultProps }
+  render: VisualTest,
+  args: {
+    zoomEnabled: true,
+  }
 };

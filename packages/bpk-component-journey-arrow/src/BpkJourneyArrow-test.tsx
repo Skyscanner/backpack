@@ -21,14 +21,19 @@ import { render } from '@testing-library/react';
 import BpkJourneyArrow from './BpkJourneyArrow';
 
 describe('BpkJourneyArrow', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(<BpkJourneyArrow />);
-    expect(asFragment()).toMatchSnapshot();
+  it('should have no children if stops is zero', () => {
+    const { container } = render(<BpkJourneyArrow />);
+    expect(container.querySelectorAll(".bpk-journey-arrow__stop").length).toBe(0);
   });
 
-  it('should render with stops', () => {
-    const { asFragment } = render(<BpkJourneyArrow stops={3} />);
-    expect(asFragment()).toMatchSnapshot();
+  it('should render with the correct number of stop spots', () => {
+    const { container } = render(<BpkJourneyArrow stops={2} />);
+    expect(container.querySelectorAll(".bpk-journey-arrow__stop").length).toBe(2);
+  });
+
+  it('should render with capped spot count', () => {
+    const { container } = render(<BpkJourneyArrow stops={37} />);
+    expect(container.querySelectorAll(".bpk-journey-arrow__stop").length).toBe(3);
   });
 
   it('should not support custom class names', () => {

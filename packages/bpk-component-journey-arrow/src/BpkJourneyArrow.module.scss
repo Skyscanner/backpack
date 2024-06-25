@@ -36,9 +36,8 @@
   &__stop {
     width: tokens.bpk-spacing-md();
     height: tokens.bpk-spacing-md();
-    border: 2 * tokens.$bpk-one-pixel-rem solid
-      tokens.$bpk-background-light-color;
+    border: 2 * tokens.$bpk-one-pixel-rem solid tokens.$bpk-surface-default-day;
     border-radius: tokens.bpk-spacing-sm();
-    background-color: tokens.$bpk-color-system-red;
+    background-color: tokens.$bpk-status-danger-spot-day;
   }
 }
