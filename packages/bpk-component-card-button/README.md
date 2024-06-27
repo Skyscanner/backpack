@@ -20,7 +20,7 @@ import {
 export default () =>
   <BpkSaveButton
     checked={false}
-    accessibilityLabel="Save flight option 1"
+    accessibilityLabel="Save cosy Amsterdam hotel"
     onCheckedChange={() => {
       console.log('save status changed!');
     }}
@@ -36,7 +36,15 @@ on the page. we need to ensure there is enough context to understand what the bu
 Therefore, the accessibility label of the button should be short and unique.
 Usually it will take the form of `{verb} {unique name}`.
 
-**Example:** `Save flight option 1`
+When the related item has a unique title, you can use this as a unique name.
+
+**Example:** `Save cosy Amsterdam hostel`
+
+If the title of your related item is not
+unique, you can fall back to a more generic 'option' identifier,
+as long as this identifier is part of the item title as well.
+
+**Example:** `Save option 1`
 
 > [!TIP]
 > Avoid adding punctuation to the label, this causes the screen reader to pause unnecessarily.
