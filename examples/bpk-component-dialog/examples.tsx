@@ -64,7 +64,6 @@ const DialogContainer = (props: Props) => {
       <div id="pagewrap">
         <BpkButton onClick={onOpen}>Open dialog</BpkButton>
       </div>
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <BpkDialog
         closeLabel="Close dialog"
         id="my-dialog"
