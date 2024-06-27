@@ -42,9 +42,9 @@ Usually it will take the form of `{verb} {unique name}`.
 > Avoid adding punctuation to the label, this causes the screen reader to pause unnecessarily.
 
 > [!CAUTION]
-> Do not adjust the accesibility label based on the state of the button. This can be disruptive or
+> Do not adjust the accessibility label based on the state of the button. This can be disruptive or
 > cause confusion for people using a screen reader.
-> The button will anounced 'selected' or 'toggle button' based on the state on its own.
+> The button will announce 'selected' or 'toggle button' based on the state on its own.
 
 ## Props
 
