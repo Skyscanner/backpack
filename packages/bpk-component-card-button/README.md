@@ -20,7 +20,7 @@ import {
 export default () =>
   <BpkSaveButton
     checked={false}
-    accessibilityLabel="Save cosy Amsterdam hotel"
+    accessibilityLabel="Save Amsterdam hotel"
     onCheckedChange={() => {
       console.log('save status changed!');
     }}
@@ -38,7 +38,7 @@ Usually it will take the form of `{verb} {unique name}`.
 
 When the related item has a unique title, you can use this as a unique name.
 
-**Example:** `Save cosy Amsterdam hostel`
+**Example:** `Save Amsterdam hostel`
 
 If the title of your related item is not
 unique, you can fall back to a more generic 'option' identifier,

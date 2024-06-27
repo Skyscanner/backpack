@@ -60,7 +60,7 @@ const SaveButtonContainer = ({
   return (
     <BpkSaveButton
       checked={checkedStatus}
-      accessibilityLabel="Save cosy Amsterdam hostel"
+      accessibilityLabel="Save Amsterdam hostel"
       onCheckedChange={asyncWithError ? onSyncCheckedChange : onCheckedChange}
       size={size}
       style={style}
