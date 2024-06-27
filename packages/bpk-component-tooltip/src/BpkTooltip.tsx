@@ -23,11 +23,10 @@ The actual component that developers create (i.e. the default export from this p
 */
 
 import type { ReactNode, ReactElement } from 'react';
-import { cloneElement, useRef, useState } from 'react';
+import { cloneElement, useRef, useState, useEffect } from 'react';
 
 import {
   arrow,
-  flip,
   FloatingArrow,
   FloatingPortal,
   offset,
@@ -107,16 +106,17 @@ const BpkTooltip = ({
   const [isOpenState, setIsOpenState] = useState(isOpen);
   const arrowRef = useRef(null);
 
+  useEffect(() => {
+    if (!isOpen) {
+      setIsOpenState(false);
+    }
+  }, [isOpen]);
+
   const { context, floatingStyles, refs } = useFloating({
     open: isOpenState,
     onOpenChange: setIsOpenState,
     placement,
-    middleware: [
-      offset(8),
-      flip({ crossAxis: true }),
-      shift(),
-      arrow({ element: arrowRef }),
-    ],
+    middleware: [offset(8), shift(), arrow({ element: arrowRef })],
   });
 
   const hover = useHover(context, {
