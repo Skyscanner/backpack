@@ -20,7 +20,7 @@ import {
 export default () =>
   <BpkSaveButton
     checked={false}
-    accessibilityLabel="Save Amsterdam hotel"
+    accessibilityLabel="Save Amsterdam hostel"
     onCheckedChange={() => {
       console.log('save status changed!');
     }}
