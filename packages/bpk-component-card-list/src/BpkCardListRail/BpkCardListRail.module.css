@@ -15,4 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-.bpk-card-list--rail_container{display:flex;padding:1rem;gap:1rem}.bpk-card-list--rail_scrollContainer{margin-inline:-1rem}.bpk-card-list--rail_card{display:flex;min-width:100%;justify-content:center;align-items:center;text-wrap:wrap}.bpk-card-list--rail_card>*{width:100%}
+.bpk-card-list--rail_container{display:flex;max-width:90%;padding:1rem;gap:1rem}.bpk-card-list--rail_scrollContainer{margin-inline:-1rem}.bpk-card-list--rail_card{display:flex;min-width:100%;justify-content:center;align-items:center;text-wrap:wrap}.bpk-card-list--rail_card>*{width:100%}.bpk-card-list--rail_card:last-child{padding-right:1rem}

@@ -87,7 +87,7 @@ const BpkCardList = (props: BpkCardListProps) => {
           {(isActive) => {
             if (isActive) {
               if (layoutMobile === 'rail') {
-                return <BpkCardListRail>{allCards}</BpkCardListRail>;
+                return <BpkCardListRail>{cardList}</BpkCardListRail>;
               }
               const { accessory } = props;
 
@@ -128,7 +128,7 @@ const BpkCardList = (props: BpkCardListProps) => {
                   ariaLabelPrev={props.ariaLabelPrev}
                   ariaLabelIndicator={props.ariaLabelIndicator}
                 >
-                  {allCards}
+                  {cardList}
                 </BpkCardListRow>
               );
             }
