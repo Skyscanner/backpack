@@ -51,13 +51,11 @@ describe('BpkInsetBanner', () => {
       />,
     );
 
-    expect(queryByRole('button')).toHaveClass(
-      'bpk-inset-banner--cta-container',
-    );
+    expect(queryByRole('button')).toHaveClass('bpk-inset-banner--cta-button');
   });
 
   it('should render body if provided', () => {
-    const { container } = render(
+    const { getByText } = render(
       <BpkInsetBanner
         title="Lorem ipsum"
         subheadline="Lorem ipsum dolor sit amet"
@@ -72,6 +70,8 @@ describe('BpkInsetBanner', () => {
       />,
     );
 
-    expect(container).toHaveClass('bpk-inset-banner-body-container');
+    expect(getByText('More information')).toHaveClass(
+      'bpk-inset-banner-body-container--link-text',
+    );
   });
 });
