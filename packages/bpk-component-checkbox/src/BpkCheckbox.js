@@ -82,13 +82,6 @@ const BpkCheckbox = (props: Props) => {
     indeterminate && 'bpk-checkbox__input-indeterminate',
   );
 
-  const ariaLabelToUse = () => {
-    if (ariaLabel) {
-      return ariaLabel;
-    }
-    return label;
-  }
-
   return (
     <label className={classNames}>
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
@@ -97,7 +90,7 @@ const BpkCheckbox = (props: Props) => {
         className={inputClasses}
         name={name}
         disabled={disabled}
-        aria-label={ariaLabelToUse()}
+        aria-label={ariaLabel || label}
         aria-invalid={isInvalid}
         data-indeterminate={indeterminate}
         ref={(e) => {
