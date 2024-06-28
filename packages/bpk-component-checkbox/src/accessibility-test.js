@@ -32,13 +32,13 @@ describe('BpkCheckbox accessibility tests', () => {
 
   it('should render using label as aria-label if no ariaLabel prop provided', async () => {
     render(<BpkCheckbox name="checkbox" label="Prefer directs" />);
-    const checkbox = screen.getByLabelText('Prefer directs');
-    expect(checkbox).toBeInTheDocument();
+    const label = screen.getByLabelText('Prefer directs');
+    expect(label).toBeInTheDocument();
   });
 
   it('should render using ariaLabel prop as aria-label if prop provided', async () => {
     render(<BpkCheckbox name="checkbox" label="Prefer directs" ariaLabel="aria label test string"/>);
-    const checkbox = screen.getByLabelText('aria label test string');
-    expect(checkbox).toBeInTheDocument();
+    const ariaLabel = screen.getByLabelText('aria label test string');
+    expect(ariaLabel).toBeInTheDocument();
   });
 });

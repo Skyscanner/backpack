@@ -182,6 +182,13 @@ const MixedExample = () => (
   </div>
 );
 
+const AriaLabelExample = () => (
+  <div>
+    <StatefulCheckbox id="abisko" name="abisko" label="Abisko" isChecked aria-label="checkbox 1"/>
+    <StatefulCheckbox id="bunol" name="bunol" label="Buñol" aria-label="checkbox 2"/>
+  </div>
+);
+
 export {
   DefaultExample,
   IndeterminateExample,
@@ -194,4 +201,5 @@ export {
   SmallLabelRequiredExample,
   SmallLabelInvalidExample,
   MixedExample,
+  AriaLabelExample,
 };
