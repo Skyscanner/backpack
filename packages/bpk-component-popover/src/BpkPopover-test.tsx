@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import BpkPopover from './BpkPopover';
@@ -91,12 +91,14 @@ describe('BpkPopover', () => {
   });
 
   it('should render correctly with "closeButtonProps" provided', () => {
-    const {container} = render(
+    render(
       <BpkPopover
         id="my-popover"
         onClose={() => null}
         label="My popover"
+        labelAsTitle
         closeButtonLabel="Close"
+        closeButtonIcon
         target={<button type="button">My target</button>}
         closeButtonProps={{ tabIndex: 0 }}
         isOpen
@@ -105,7 +107,7 @@ describe('BpkPopover', () => {
       </BpkPopover>,
     );
 
-    expect(container.querySelector('[tabindex="0"]')).toBeVisible();
+    expect(screen.getByRole('button', { name: /Close/i, })).toHaveAttribute('tabindex');
   });
 
   it('should render correctly with "padded" attribute equal to false', () => {
@@ -142,7 +144,7 @@ describe('BpkPopover', () => {
       </BpkPopover>,
     );
 
-    const heading = container.querySelector('.bpk-popover__header');
+    const heading = container.getElementsByClassName('.bpk-popover__header');
     expect(heading).toBeTruthy();
   });
 
@@ -162,7 +164,7 @@ describe('BpkPopover', () => {
       </BpkPopover>,
     );
 
-    const actionButton = container.querySelector('.bpk-popover__action');
+    const actionButton = container.getElementsByClassName('.bpk-popover__action');
     expect(actionButton).toBeTruthy();
     expect(screen.getByText('Action')).toBeVisible();
   });
@@ -199,7 +201,7 @@ describe('BpkPopover', () => {
       event.afterStopPropagation = true;
     });
 
-    const { getByRole } = render(
+    render(
       <BpkPopover
         id="my-popover"
         onClose={jest.fn()}
@@ -208,13 +210,12 @@ describe('BpkPopover', () => {
         labelAsTitle
         closeButtonIcon
         target={<button onClick={handleClick} type="button">My target</button>}
-        isOpen
       >
         My popover content
       </BpkPopover>,
     );
 
-    const button = getByRole('button', { name: 'My target' });
+    const button = screen.getByRole('button', { name: 'My target' });
 
     const event = new MouseEvent('click', { bubbles: true });
     jest.spyOn(event, 'stopPropagation');
@@ -224,6 +225,7 @@ describe('BpkPopover', () => {
       expect(handleClick).toHaveBeenCalled();
       expect(event.stopPropagation).toHaveBeenCalled();
       expect(handleClick.mock.calls[0][0].afterStopPropagation).toBe(true);
+      expect(screen.getByText('My popover content')).toBeVisible();
     });
   });
 
