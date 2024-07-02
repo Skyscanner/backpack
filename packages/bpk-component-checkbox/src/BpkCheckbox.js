@@ -37,6 +37,7 @@ type Props = {
   smallLabel: boolean,
   valid: ?boolean,
   checked: boolean,
+  ariaLabel: ?string,
   /**
    * The indeterminate prop is only a visual clue, it does not affect the checked state of the checkbox. If `indeterminate` is flagged then the checkbox will be displayed with a minus sign in the box.  This is used when there is a checkbox group and the parent displays this state when not all child checkboxes are selected.
    */
@@ -45,6 +46,7 @@ type Props = {
 
 const BpkCheckbox = (props: Props) => {
   const {
+    ariaLabel,
     checked,
     className,
     disabled,
@@ -88,7 +90,7 @@ const BpkCheckbox = (props: Props) => {
         className={inputClasses}
         name={name}
         disabled={disabled}
-        aria-label={label}
+        aria-label={ariaLabel || label}
         aria-invalid={isInvalid}
         data-indeterminate={indeterminate}
         ref={(e) => {
@@ -113,6 +115,7 @@ const BpkCheckbox = (props: Props) => {
 BpkCheckbox.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.node.isRequired,
+  ariaLabel: PropTypes.string,
   required: PropTypes.bool,
   disabled: PropTypes.bool,
   white: PropTypes.bool,

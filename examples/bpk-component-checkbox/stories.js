@@ -29,6 +29,7 @@ import {
   RequiredExample,
   SmallLabelExample,
   MixedExample,
+  AriaLabelExample,
 } from './examples';
 
 export default {
@@ -44,6 +45,7 @@ export const White = WhiteExample;
 export const Disabled = DisabledExample;
 export const Required = RequiredExample;
 export const SmallLabel = SmallLabelExample;
+export const AriaLabel = AriaLabelExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
