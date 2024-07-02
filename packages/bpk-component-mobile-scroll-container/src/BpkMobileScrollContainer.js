@@ -140,35 +140,38 @@ class BpkMobileScrollContainer extends Component<Props, State> {
   }, 100);
 
   setScrollIndicatorClassName = () => {
-    const classNames = computeScrollIndicatorClassName(
-      this.scrollerEl,
-      this.props.leadingIndicatorClassName,
-      this.props.trailingIndicatorClassName,
-    );
+    requestAnimationFrame(() => {
+      const classNames = computeScrollIndicatorClassName(
+        this.scrollerEl,
+        this.props.leadingIndicatorClassName,
+        this.props.trailingIndicatorClassName,
+      );
 
-    if (!classNames) {
-      return;
-    }
+      if (!classNames) {
+        return;
+      }
 
-    this.setState(() => ({
-      scrollIndicatorClassName: classNames.join(' '),
-    }));
+      this.setState(() => ({
+        scrollIndicatorClassName: classNames.join(' '),
+      }));
+    });
   };
 
   setScrollBarAwareHeight = () => {
     if (this.props.showScrollbar) {
       return;
     }
-    const computedHeight = computeScrollBarAwareHeight(
-      this.scrollerEl,
-      this.innerEl,
-    );
+    requestAnimationFrame(() => {
+      const computedHeight = computeScrollBarAwareHeight(
+        this.scrollerEl,
+        this.innerEl,
+      );
 
-    if (!computedHeight) {
-      return;
-    }
-
-    this.setState(() => ({ computedHeight }));
+      if (!computedHeight) {
+        return;
+      }
+      this.setState(() => ({ computedHeight }));
+    });
   };
 
   render() {
