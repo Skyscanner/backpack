@@ -25,15 +25,27 @@ export function useScrollToInitialImage(
   initialImageIndex: number,
   imagesRef: MutableRefObject<Array<HTMLElement | null>>,
 ) {
-  useEffect(() => {
-    const element = imagesRef.current[initialImageIndex];
+  const handleIntersecting = (index: number) => {
+    const element = imagesRef.current[index];
     if (element) {
       element.scrollIntoView({
         block: 'nearest',
         inline: 'start',
       });
     }
-  }, [initialImageIndex, imagesRef]);
+  };
+
+  const observe = useIntersectionObserver(handleIntersecting, {
+    root: null,
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    const element = imagesRef.current[initialImageIndex];
+    if (element) {
+      observe(element);
+    }
+  }, [initialImageIndex, imagesRef, observe]);
 }
 
 export function useIntersectionObserver(
