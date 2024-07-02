@@ -3,47 +3,51 @@
 exports[`BpkCardListRail should render cards correctly in the MobileScrollContainer 1`] = `
 <div>
   <div
-    class="bpk-mobile-scroll-container"
-    style="height: auto;"
+    class="bpk-card-list--rail_scrollContainer"
   >
     <div
-      class="bpk-mobile-scroll-container__scroller"
+      class="bpk-mobile-scroll-container"
+      style="height: auto;"
     >
       <div
-        class="bpk-mobile-scroll-container__inner"
+        class="bpk-mobile-scroll-container__scroller"
       >
         <div
-          class="bpk-card-list--rail_container"
+          class="bpk-mobile-scroll-container__inner"
         >
           <div
-            class="bpk-card-list--rail_card"
+            class="bpk-card-list--rail_container"
           >
-            <button
-              class="bpk-card bpk-card--atomic-button bpk-card--padded"
-              type="button"
+            <div
+              class="bpk-card-list--rail_card"
             >
-              Card 0
-            </button>
-          </div>
-          <div
-            class="bpk-card-list--rail_card"
-          >
-            <button
-              class="bpk-card bpk-card--atomic-button bpk-card--padded"
-              type="button"
+              <button
+                class="bpk-card bpk-card--atomic-button bpk-card--padded"
+                type="button"
+              >
+                Card 0
+              </button>
+            </div>
+            <div
+              class="bpk-card-list--rail_card"
             >
-              Card 1
-            </button>
-          </div>
-          <div
-            class="bpk-card-list--rail_card"
-          >
-            <button
-              class="bpk-card bpk-card--atomic-button bpk-card--padded"
-              type="button"
+              <button
+                class="bpk-card bpk-card--atomic-button bpk-card--padded"
+                type="button"
+              >
+                Card 1
+              </button>
+            </div>
+            <div
+              class="bpk-card-list--rail_card"
             >
-              Card 2
-            </button>
+              <button
+                class="bpk-card bpk-card--atomic-button bpk-card--padded"
+                type="button"
+              >
+                Card 2
+              </button>
+            </div>
           </div>
         </div>
       </div>

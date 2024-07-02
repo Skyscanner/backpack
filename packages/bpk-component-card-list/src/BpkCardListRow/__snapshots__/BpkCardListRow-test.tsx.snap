@@ -87,7 +87,10 @@ exports[`BpkCardListRow should render cards and accessory correctly for 7 cards 
         </button>
       </div>
     </div>
-    <div>
+    <div
+      aria-hidden="false"
+      data-testid="indicator-container"
+    >
       <div
         class="bpk-page-indicator bpk-page-indicator__showNav"
       >
