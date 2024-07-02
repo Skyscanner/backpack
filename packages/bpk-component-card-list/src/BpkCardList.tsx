@@ -47,19 +47,14 @@ const BpkCardList = (props: BpkCardListProps) => {
     onButtonClick,
     title,
   } = props;
-  const allCards = cardList.slice(0, MAX_ITEMS);
 
   const [visibleCards, setVisibleCards] = useState(
     cardList.slice(0, initiallyShownCards),
   );
   const [collapsed, setCollapsed] = useState(true);
 
-  const cards = visibleCards.map((card: ReactElement) => (
-    <div className={getClassName('bpk-card-list--card-list--card')}>{card}</div>
-  ));
-
   const showContent = () => {
-    setVisibleCards(cardList);
+    setVisibleCards(cardList.slice(0, MAX_ITEMS));
 
     onButtonClick?.();
   };
@@ -113,7 +108,7 @@ const BpkCardList = (props: BpkCardListProps) => {
                   setCollapsed={setCollapsed}
                   {...modeProps}
                 >
-                  {cards}
+                  {visibleCards}
                 </BpkCardListStack>
               );
             }

@@ -38,11 +38,5 @@
     &--stack {
       flex-direction: column;
     }
-
-    &--card {
-      min-width: tokens.$bpk-one-pixel-rem * 281;
-      flex-grow: 1;
-      scroll-snap-align: start;
-    }
   }
 }
