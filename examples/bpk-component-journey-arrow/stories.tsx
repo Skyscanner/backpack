@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016 Skyscanner Ltd
+ * Copyright 2022 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,31 +16,21 @@
  * limitations under the License.
  */
 
+import BpkComponentJourneyArrow from '../../packages/bpk-component-journey-arrow';
 
-import BpkDialog from '../../packages/bpk-component-dialog/src/BpkDialog';
-
-import {
-  DefaultExample,
-  WithIconExample,
-  NotDismissibleExample,
-  WithFlareExample,
-} from './examples';
+import JourneyArrowExample from './example'
 
 export default {
-  title: 'bpk-component-dialog',
-  component: BpkDialog,
+  title: 'bpk-component-journey-arrow',
+  component: BpkComponentJourneyArrow,
 };
 
-export const Default = DefaultExample;
-export const WithAnIcon = WithIconExample;
+export const VisualTest = JourneyArrowExample;
 
-export const NotDismissible = NotDismissibleExample;
 
-export const WithFlare = WithFlareExample;
-
-export const VisualTest = DefaultExample;
-
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true,
+  }
 };

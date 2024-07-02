@@ -7,6 +7,7 @@ You want to help us enable Skyscanner to create beautiful, coherent products at 
 * [Prerequisites](#prerequisites)
 * [Getting started](#getting-started)
 * [Write your code](#write-your-code)
+* [Accessibility DoD](#accessibility-dod)
 * [Design documentation](#design-documentation)
 * [Experimenting with Backpack components](#experimenting-with-backpack-components)
 * [How to](#how-to)
@@ -156,6 +157,15 @@ If you are unsure of the impact or scale of your change, reach out to Koala team
 Any visual CSS parameters of the component, such as *color, margins, paddings* etc. should not live as magic numbers in the component code, but as **tokens** in the [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-foundations-web) package.
 
 All of our tokens, Sass mixins, and icons live in the [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-foundations-web) repository. Head over to the [`@skyscanner/bpk-foundations-web` contribution guidelines](https://github.com/Skyscanner/backpack-foundations/blob/main/CONTRIBUTING.md) if you'd like to contribute any changes to a foundation element.
+
+## Accessibility DoD
+
+- Any changes to the components should be checked for:
+    - Ability to navigate using a [keyboard only](https://webaim.org/techniques/keyboard/)
+    - Zoom functionality ([Deque University explanation](https://dequeuniversity.com/checklists/web/text)):
+      - The page SHOULD be functional AND readable when only the text is magnified to 200% of its initial size
+      - Pages must reflow as zoom increases up to 400% so that content continues to be presented in only one column i.e. Content MUST NOT require scrolling in two directions (both vertically and horizontally)
+    - Ability to navigate using a [screen reader only](https://webaim.org/articles/screenreader_testing/)
 
 ## Design documentation
 
