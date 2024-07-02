@@ -26,19 +26,24 @@ describe('BpkDialog accessibility tests', () => {
     const customRenderTarget = document.createElement('div');
 
     const { container } = render(
-      <BpkDialog
-        id="my-modal"
-        ariaLabel="example dialog to showcase component"
-        ariaModal
-        onClose={jest.fn()}
-        closeLabel="Close"
-        dialogRef={jest.fn()}
-        getApplicationElement={jest.fn()}
-        isOpen
-        renderTarget={() => customRenderTarget}
-      >
-        Dialog content inside a custom target
-      </BpkDialog>,
+      <>
+        <div id="pagewrap">
+          <button type="button">Open dialog</button>
+        </div>
+        <BpkDialog
+          id="my-modal"
+          ariaLabel="example dialog to showcase component"
+          ariaModal
+          onClose={jest.fn()}
+          closeLabel="Close"
+          dialogRef={jest.fn()}
+          getApplicationElement={jest.fn()}
+          isOpen
+          renderTarget={() => customRenderTarget}
+        >
+          Dialog content inside a custom target
+        </BpkDialog>
+      </>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
