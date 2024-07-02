@@ -23,14 +23,12 @@ import STYLES from './BpkJourneyArrow.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  stopClassName?: string,
   /** the number of dot stops to display */
   stops?: number,
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 
 };
 const BpkJourneyArrow = ({
-   stopClassName,
    stops = 0,
     ...rest
 }: Props) => {
@@ -40,7 +38,7 @@ const BpkJourneyArrow = ({
   return (
       <div className={getClassName("bpk-journey-arrow")} {...rest} >
         {Array.from({ length: dotCount }).map((_, i) => (
-          <div key={i} className={getClassName("bpk-journey-arrow__stop", stopClassName)} /> // eslint-disable-line react/no-array-index-key
+          <div key={i} className={getClassName("bpk-journey-arrow__stop")} /> // eslint-disable-line react/no-array-index-key
         ))
         }
     </div>
