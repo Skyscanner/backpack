@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-
-import BpkTooltip from '../../packages/bpk-component-tooltip/src/BpkTooltipPortal';
+import BpkTooltip from '../../packages/bpk-component-tooltip/src/BpkTooltip';
 
 import {
   DefaultExample,
@@ -25,8 +24,7 @@ import {
   SideExample,
   NoPaddingExample,
   LinkExample,
-  PopperModifiersExample,
-  FocusExample,
+  VisualTestExample,
 } from './examples';
 
 export default {
@@ -37,11 +35,26 @@ export default {
 export const Default = DefaultExample;
 export const Dark = DarkExample;
 export const OnTheSide = SideExample;
-
 export const WithoutPadding = NoPaddingExample;
-
 export const OnALink = LinkExample;
 
-export const PopperModifiers = PopperModifiersExample;
-
-export const Focus = FocusExample;
+const VisualExample = VisualTestExample;
+export const VisualTest = {
+  render: VisualExample,
+  parameters: {
+    percy: {
+      waitForTimeout: 10000
+    }
+  }
+};
+export const VisualTestWithZoom = {
+  render: VisualExample,
+  args: {
+    zoomEnabled: true,
+  },
+  parameters: {
+    percy: {
+      waitForTimeout: 10000
+    }
+  }
+};

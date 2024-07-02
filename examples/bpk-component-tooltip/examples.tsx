@@ -16,13 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import { useRef, forwardRef } from 'react';
-
-import {
-  colorMonteverde,
-} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { useRef } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkTooltip, {
@@ -41,11 +35,6 @@ const Heading = withDefaultProps(BpkText, {
   tagName: 'h4',
 });
 
-const HeadingComponent = forwardRef((props: { children: Node }, ref) => (
-  <div ref={ref}>
-    <Heading>{props.children}</Heading>
-  </div>
-));
 
 const DefaultExample = () => {
   const target = useRef(null);
@@ -55,7 +44,7 @@ const DefaultExample = () => {
       <BpkTooltip
         ariaLabel="Montréal-Trudeau International Airport"
         id="my-tooltip"
-        target={<HeadingComponent ref={target}>YUL</HeadingComponent>}
+        target={<div ref={target}><Heading>YUL</Heading></div>}
       >
         Montréal-Trudeau International Airport
       </BpkTooltip>
@@ -72,7 +61,7 @@ const DarkExample = () => {
         ariaLabel="Edinburgh Airport"
         type={TOOLTIP_TYPES.dark}
         id="my-tooltip"
-        target={<HeadingComponent ref={target}>EDI</HeadingComponent>}
+        target={<div ref={target}><Heading>EDI</Heading></div>}
       >
         Edinburgh Airport
       </BpkTooltip>
@@ -88,7 +77,7 @@ const SideExample = () => {
       <BpkTooltip
         ariaLabel="Julius Nyerere International Airport, Dar es Salaam"
         id="my-tooltip"
-        target={<HeadingComponent ref={target}>DAR</HeadingComponent>}
+        target={<div ref={target}><Heading>DAR</Heading></div>}
         placement="right"
       >
         Julius Nyerere International Airport, Dar es Salaam
@@ -105,13 +94,12 @@ const NoPaddingExample = () => {
       <BpkTooltip
         ariaLabel="Singapore Changi Airport"
         id="my-tooltip"
-        target={<HeadingComponent ref={target}>SIN</HeadingComponent>}
+        target={<div ref={target}><Heading>SIN</Heading></div>}
         padded={false}
       >
         <div
           style={{
             borderBottomWidth: '5px',
-            borderBottomColor: colorMonteverde,
             borderBottomStyle: 'solid',
             padding: '.25rem',
           }}
@@ -148,66 +136,19 @@ const LinkExample = () => {
   );
 };
 
-const PopperModifiersExample = () => {
+
+const VisualTestExample = () => {
   const target = useRef(null);
 
   return (
     <div style={wrapperStyle}>
       <BpkTooltip
-        ariaLabel="Berlin Brandenburg Airport"
+        ariaLabel="Montréal-Trudeau International Airport"
         id="my-tooltip"
-        target={<HeadingComponent ref={target}>BER</HeadingComponent>}
-        popperModifiers={[
-          {
-            name: 'flip',
-            options: { enabled: false },
-          },
-        ]}
+        target={<div ref={target}><Heading>YUL</Heading></div>}
+        isOpen
       >
-        Berlin Brandenburg Airport
-      </BpkTooltip>
-    </div>
-  );
-};
-
-const FocusExample = () => {
-  const targetRef1 = useRef(null);
-  const targetRef2 = useRef(null);
-  const targetRef3 = useRef(null);
-  const targetRef5 = useRef(null);
-
-  return (
-    <div style={wrapperStyle}>
-      <BpkTooltip
-        ariaLabel="Should be focused on first"
-        id="my-tooltip"
-        target={<HeadingComponent ref={targetRef1}>One</HeadingComponent>}
-      >
-        Should be focused on first
-      </BpkTooltip>
-      <BpkTooltip
-        ariaLabel="Should be focused on second"
-        id="my-tooltip"
-        target={<HeadingComponent ref={targetRef2}>Two</HeadingComponent>}
-      >
-        Should be focused on second
-      </BpkTooltip>
-      <BpkTooltip
-        ariaLabel="Should be focused on third"
-        id="my-tooltip"
-        target={<HeadingComponent ref={targetRef3}>Three</HeadingComponent>}
-      >
-        Should be focused on third
-      </BpkTooltip>
-      <button type="button" onClick={() => {}}>
-        Four
-      </button>
-      <BpkTooltip
-        ariaLabel="Should be focused on fifth"
-        id="my-tooltip"
-        target={<HeadingComponent ref={targetRef5}>Five</HeadingComponent>}
-      >
-        Should be focused on fifth
+        Montréal-Trudeau International Airport
       </BpkTooltip>
     </div>
   );
@@ -219,6 +160,5 @@ export {
   SideExample,
   NoPaddingExample,
   LinkExample,
-  PopperModifiersExample,
-  FocusExample,
+  VisualTestExample,
 };

@@ -16,12 +16,12 @@
  * limitations under the License.
  */
 
-import BpkTooltipPortal from './src/BpkTooltipPortal';
+import BpkTooltip from './src/BpkTooltip';
 import { TOOLTIP_TYPES } from './src/constants';
 
-import type { Props } from './src/BpkTooltipPortal';
+import type { Props } from './src/BpkTooltip';
 
-export type BpkTooltipPortalProps = Props;
+export type BpkTooltipProps = Props;
 
-export default BpkTooltipPortal;
+export default BpkTooltip;
 export { TOOLTIP_TYPES };
