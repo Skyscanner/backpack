@@ -92,18 +92,6 @@
   &--cta-text {
     @include typography.bpk-caption;
   }
-
-  &--cta-icon {
-    display: flex;
-    margin-inline-start: tokens.bpk-spacing-md();
-  }
-
-  &--cta-button {
-    display: flex;
-    align-items: center;
-
-    @include unstyled-button;
-  }
 }
 
 .bpk-inset-banner-body-container {
