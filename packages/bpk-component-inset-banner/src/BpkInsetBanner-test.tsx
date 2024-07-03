@@ -35,8 +35,8 @@ describe('BpkInsetBanner', () => {
     expect(getByText('Lorem ipsum')).toHaveClass('bpk-inset-banner--title');
   });
 
-  it('should render call to action if provided', () => {
-    const { queryByRole } = render(
+  it('should render call to action text if provided', () => {
+    const { getByText } = render(
       <BpkInsetBanner
         title="Lorem ipsum"
         subheadline="Lorem ipsum dolor sit amet"
@@ -44,14 +44,12 @@ describe('BpkInsetBanner', () => {
         backgroundColor="#F55D42"
         callToAction={{
           text: 'Sponsored',
-          showIcon: true,
-          onClick: () => null,
         }}
         variant="onDark"
       />,
     );
 
-    expect(queryByRole('button')).toHaveClass('bpk-inset-banner--cta-button');
+    expect(getByText('Sponsored')).toHaveClass('bpk-inset-banner--cta-text');
   });
 
   it('should render body if provided', () => {
