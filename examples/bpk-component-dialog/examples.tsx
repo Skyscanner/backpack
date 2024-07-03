@@ -60,8 +60,8 @@ const DialogContainer = (props: Props) => {
   };
 
   return (
-    <div id="dialog-container">
-      <div id="pagewrap">
+    <div id="pagewrap">
+      <div>
         <BpkButton onClick={onOpen}>Open dialog</BpkButton>
       </div>
       <BpkDialog
