@@ -22,7 +22,6 @@ import {
   DefaultExampleTitleOnly,
   DefaultExampleTitleAndSubheadline,
   WithLogoAndCtaTextExampleLight,
-  WithLogoCtaTextAndIconExampleDark,
   WithBodyTextExampleLight,
   WithBodyTextAndLinkExampleDark,
 } from './examples';
@@ -35,6 +34,5 @@ export default {
 export const DefaultWithTitle = DefaultExampleTitleOnly;
 export const DefaultWithTitleAndSubheadline = DefaultExampleTitleAndSubheadline;
 export const WithLogoAndCtaTextLight = WithLogoAndCtaTextExampleLight;
-export const WithLogoCtaTextAndIconDark = WithLogoCtaTextAndIconExampleDark;
 export const WithBodyTextLight = WithBodyTextExampleLight;
 export const WithBodyTextAndLinkDark = WithBodyTextAndLinkExampleDark;

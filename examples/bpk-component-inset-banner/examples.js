@@ -21,7 +21,7 @@ import BpkInsetBanner from '../../packages/bpk-component-inset-banner';
 const DefaultExampleTitleOnly = () => (
   <BpkInsetBanner
     title="Lorem ipsum"
-    backgroundColor="#F55D42"
+    backgroundColor="#054184"
     variant="onDark"
   />
 );
@@ -30,7 +30,7 @@ const DefaultExampleTitleAndSubheadline = () => (
   <BpkInsetBanner
     title="Lorem ipsum"
     subheadline="Lorem ipsum dolor sit amet"
-    backgroundColor="#F55D42"
+    backgroundColor="#054184"
     variant="onDark"
   />
 );
@@ -42,25 +42,9 @@ const WithLogoAndCtaTextExampleLight = () => (
     logo="https://content.skyscnr.com/m/23c24b7080cfe18a/Medium-Skyscanner-Vertical-Blue.png"
     callToAction={{
       text: 'Sponsored',
-      showIcon: false,
     }}
-    backgroundColor="#FCE4DE"
+    backgroundColor="#94C3FF"
     variant="onLight"
-  />
-);
-
-const WithLogoCtaTextAndIconExampleDark = () => (
-  <BpkInsetBanner
-    title="Lorem ipsum"
-    subheadline="Lorem ipsum dolor sit amet"
-    logo="https://content.skyscnr.com/m/7950ed6f30581485/Medium-Skyscanner-Vertical-White.png"
-    backgroundColor="#F55D42"
-    callToAction={{
-      text: 'Sponsored',
-      showIcon: true,
-      onClick: () => null,
-    }}
-    variant="onDark"
   />
 );
 
@@ -69,11 +53,9 @@ const WithBodyTextExampleLight = () => (
     title="Lorem ipsum"
     subheadline="Lorem ipsum dolor sit amet"
     logo="https://content.skyscnr.com/m/23c24b7080cfe18a/Medium-Skyscanner-Vertical-Blue.png"
-    backgroundColor="#FCE4DE"
+    backgroundColor="#94C3FF"
     callToAction={{
       text: 'Sponsored',
-      showIcon: true,
-      onClick: () => null,
     }}
     body={{
       text: 'You can change your destination, date of travel, or both, with no change fee. Valid for all new bookings made up to 31 May for travel between now and 31 December 2020.',
@@ -87,11 +69,9 @@ const WithBodyTextAndLinkExampleDark = () => (
     title="Lorem ipsum"
     subheadline="Lorem ipsum dolor sit amet"
     logo="https://content.skyscnr.com/m/7950ed6f30581485/Medium-Skyscanner-Vertical-White.png"
-    backgroundColor="#F55D42"
+    backgroundColor="#054184"
     callToAction={{
       text: 'Sponsored',
-      showIcon: true,
-      onClick: () => null,
     }}
     body={{
       text: 'You can change your destination, date of travel, or both, with no change fee. Valid for all new bookings made up to 31 May for travel between now and 31 December 2020.',
@@ -106,7 +86,6 @@ export {
   DefaultExampleTitleOnly,
   DefaultExampleTitleAndSubheadline,
   WithLogoAndCtaTextExampleLight,
-  WithLogoCtaTextAndIconExampleDark,
   WithBodyTextExampleLight,
   WithBodyTextAndLinkExampleDark,
 };

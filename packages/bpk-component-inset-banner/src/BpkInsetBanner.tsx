@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import type { SyntheticEvent } from 'react';
-
-import InfoIcon from '../../bpk-component-icon/sm/information-circle';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkInsetBanner.module.scss';
@@ -36,11 +32,9 @@ type Props = {
     link?: string;
     linkText?: string;
   };
+  // [TO-DO] In future iteration we will add a button to CTA section with popover functionality
   callToAction?: {
     text: string;
-    accessibilityLabel?: string;
-    showIcon: boolean;
-    onClick?: (event: SyntheticEvent) => unknown;
   };
 };
 
@@ -69,8 +63,7 @@ const BpkInsetBanner = ({
       <div
         className={getClassName('bpk-inset-banner', ...classNames)}
         style={{
-          // @ts-expect-error TS is reporting this incorrectly as --background-color is valid
-          'background-color': backgroundColor,
+          backgroundColor,
         }}
       >
         <div className={getClassName('bpk-inset-banner--content-container')}>
@@ -92,22 +85,7 @@ const BpkInsetBanner = ({
           </div>
         </div>
         <div className={getClassName('bpk-inset-banner--cta-container')}>
-          {callToAction && callToAction.showIcon ? (
-            <button
-              onClick={callToAction.onClick}
-              className={getClassName('bpk-inset-banner--cta-button')}
-              type="button"
-              aria-label={callToAction.accessibilityLabel}
-            >
-              <div className={getClassName('bpk-inset-banner--cta-text')}>
-                {callToAction.text}
-              </div>
-              <div className={getClassName('bpk-inset-banner--cta-icon')}>
-                <InfoIcon />
-              </div>
-            </button>
-          ) : null}
-          {callToAction && !callToAction.showIcon ? (
+          {callToAction ? (
             <div className={getClassName('bpk-inset-banner--cta-text')}>
               {callToAction.text}
             </div>
