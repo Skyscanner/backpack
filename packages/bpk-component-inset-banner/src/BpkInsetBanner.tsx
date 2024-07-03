@@ -34,7 +34,7 @@ type Props = {
   };
   // [TO-DO] In future iteration we will add a button to CTA section with popover functionality
   callToAction?: {
-    text: string;
+    text?: string;
   };
 };
 
@@ -85,7 +85,7 @@ const BpkInsetBanner = ({
           </div>
         </div>
         <div className={getClassName('bpk-inset-banner--cta-container')}>
-          {callToAction ? (
+          {callToAction?.text ? (
             <div className={getClassName('bpk-inset-banner--cta-text')}>
               {callToAction.text}
             </div>

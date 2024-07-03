@@ -20,8 +20,6 @@ export default () => (
     backgroundColor="#F55D42"
     callToAction={{
       text: 'Sponsored',
-      showIcon: true,
-      onClick: () => console.log('click'),
     }}
     body={{
       text: 'My body text',
