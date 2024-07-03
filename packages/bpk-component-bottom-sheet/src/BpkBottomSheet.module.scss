@@ -30,6 +30,12 @@
   animation-timing-function: ease-in-out;
 }
 
+@mixin animation-slide-down {
+  animation-duration: tokens.$bpk-duration-sm;
+  animation-name: slide-down;
+  animation-timing-function: ease-in-out;
+}
+
 .bpk-bottom-sheet {
   z-index: tokens.$bpk-zindex-modal;
   width: 100%;
@@ -87,9 +93,9 @@
   }
 
   &--exit {
-    animation-direction: reverse;
+    animation-fill-mode: forwards;
 
-    @include animation-slide-up;
+    @include animation-slide-down;
 
     @include breakpoints.bpk-breakpoint-above-mobile {
       animation: none;
@@ -128,6 +134,16 @@
 
     100% {
       transform: translateY(0%);
+    }
+  }
+
+  @keyframes slide-down {
+    0% {
+      transform: translateY(0%);
+    }
+
+    100% {
+      transform: translateY(100%); /* Adjust this value as needed */
     }
   }
 }

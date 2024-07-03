@@ -65,7 +65,6 @@ type InputProps = ComponentProps<'input'> &
 
 const handleKeyEvent = (callback?: () => void) => (e: KeyboardEvent) => {
   if (e.code === KEYCODES.ENTER || e.code === KEYCODES.SPACEBAR) {
-    e.preventDefault();
     if (callback) {
       callback();
     }
