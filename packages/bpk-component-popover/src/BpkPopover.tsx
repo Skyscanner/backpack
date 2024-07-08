@@ -160,17 +160,15 @@ const BpkPopover = ({
     dismiss,
   ]);
 
-  const targetClick = target.props.onClick;
-  const referenceProps = getReferenceProps(
-    {
-      onClick: (event) => {
-        if (targetClick) {
-          event.stopPropagation();
-          targetClick(event);
-        }
-      },
+  const targetClick = target?.props?.onClick;
+  const referenceProps = targetClick ? getReferenceProps({
+    onClick: event => {
+      if (targetClick) {
+        event.stopPropagation();
+        targetClick(event);
+      }
     }
-  )
+}) : getReferenceProps();
 
   const targetElement = isValidElement(target) ? (
     cloneElement(target, {
