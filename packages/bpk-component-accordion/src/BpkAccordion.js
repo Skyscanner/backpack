@@ -35,9 +35,9 @@ const BpkAccordion = (props: Props) => {
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-    <dl className={classNames} {...rest}>
+    <div className={classNames} {...rest}>
       {children}
-    </dl>
+    </div>
   );
 };
 
