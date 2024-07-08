@@ -2,20 +2,20 @@
 
 exports[`BpkAccordion should render correctly 1`] = `
 <DocumentFragment>
-  <dl
+  <div
     class="bpk-accordion"
   >
     Accordion child
-  </dl>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`BpkAccordion should render correctly with custom "className" prop 1`] = `
 <DocumentFragment>
-  <dl
+  <div
     class="bpk-accordion my-custom-class"
   >
     Accordion child
-  </dl>
+  </div>
 </DocumentFragment>
 `;

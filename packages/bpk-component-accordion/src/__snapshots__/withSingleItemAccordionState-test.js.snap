@@ -2,7 +2,7 @@
 
 exports[`withSingleItemAccordionState(BpkAccordion) should render correctly 1`] = `
 <DocumentFragment>
-  <dl
+  <div
     class="bpk-accordion"
   >
     <div>
@@ -14,13 +14,13 @@ exports[`withSingleItemAccordionState(BpkAccordion) should render correctly 1`] 
     <div>
       Accordion Item 3
     </div>
-  </dl>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`withSingleItemAccordionState(BpkAccordion) should render correctly even when multiple items are marked as initially expanded 1`] = `
 <DocumentFragment>
-  <dl
+  <div
     class="bpk-accordion"
   >
     <div>
@@ -32,13 +32,13 @@ exports[`withSingleItemAccordionState(BpkAccordion) should render correctly even
     <div>
       Accordion Item 3
     </div>
-  </dl>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`withSingleItemAccordionState(BpkAccordion) should render correctly with arbitrary props 1`] = `
 <DocumentFragment>
-  <dl
+  <div
     class="bpk-accordion someClass"
     foo="bar"
   >
@@ -51,13 +51,13 @@ exports[`withSingleItemAccordionState(BpkAccordion) should render correctly with
     <div>
       Accordion Item 3
     </div>
-  </dl>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`withSingleItemAccordionState(BpkAccordion) should render correctly with custom initially expanded item 1`] = `
 <DocumentFragment>
-  <dl
+  <div
     class="bpk-accordion"
   >
     <div>
@@ -69,6 +69,6 @@ exports[`withSingleItemAccordionState(BpkAccordion) should render correctly with
     <div>
       Accordion Item 3
     </div>
-  </dl>
+  </div>
 </DocumentFragment>
 `;
