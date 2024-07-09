@@ -19,13 +19,15 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import React, { type Node, type Element } from 'react';
-import AnimateHeight from 'bpk-animate-height';
-import { withButtonAlignment } from 'bpk-component-icon';
-import ChevronDownIcon from 'bpk-component-icon/sm/chevron-down';
-import BpkText, { TEXT_STYLES } from 'bpk-component-text';
-import { cssModules } from 'bpk-react-utils';
+import { Node, Element, useContext, cloneElement } from 'react';
 
+import AnimateHeight from '../../bpk-animate-height';
+import { withButtonAlignment } from '../../bpk-component-icon';
+import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
+
+import { BpkAccordionContext } from './BpkAccordion';
 import STYLES from './BpkAccordionItem.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -44,7 +46,11 @@ type Props = {
 };
 
 const BpkAccordionItem = (props: Props) => {
+  const { divider, onDark } = useContext(BpkAccordionContext);
   const iconClassNames = [getClassName('bpk-accordion__item-expand-icon')];
+  const titleTextClassNames = [getClassName('bpk-accordion__title-text')];
+  const titleClassNames = [getClassName('bpk-accordion__title')];
+  const contentClassNames = [getClassName('bpk-accordion__content-container')];
   const {
     children,
     expanded,
@@ -63,15 +69,55 @@ const BpkAccordionItem = (props: Props) => {
   // $FlowFixMe[prop-missing] - see above
   delete rest.initiallyExpanded;
 
-  if (expanded) {
+  if (expanded && !onDark) {
     iconClassNames.push(
       getClassName('bpk-accordion__item-expand-icon--flipped'),
     );
+    if (divider) {
+      contentClassNames.push(
+        getClassName('bpk-accordion__content-container--expanded'),
+      );
+    }
+  }
+
+  if (expanded && onDark) {
+    iconClassNames.push(
+      getClassName('bpk-accordion__item-expand-icon--flipped'),
+    );
+    iconClassNames.push(
+      getClassName('bpk-accordion__item-expand-icon--on-dark'),
+    );
+    if (divider) {
+      contentClassNames.push(
+        getClassName('bpk-accordion__content-container--expanded-on-dark'),
+      );
+    }
+    titleTextClassNames.push(
+      getClassName('bpk-accordion__title-text--on-dark'),
+    );
+  }
+
+  if (!expanded && onDark) {
+    iconClassNames.push(
+      getClassName('bpk-accordion__item-expand-icon--on-dark'),
+    );
+    if (divider) {
+      titleClassNames.push(
+        getClassName('bpk-accordion__title--collapsed-on-dark'),
+      );
+    }
+    titleTextClassNames.push(
+      getClassName('bpk-accordion__title-text--on-dark'),
+    );
+  }
+
+  if (!expanded && !onDark && divider) {
+    titleClassNames.push(getClassName('bpk-accordion__title--collapsed'));
   }
 
   const contentId = `${id}_content`;
   const clonedIcon = icon
-    ? React.cloneElement(icon, {
+    ? cloneElement(icon, {
         className: getClassName('bpk-accordion__leading-icon'),
       })
     : null;
@@ -79,10 +125,7 @@ const BpkAccordionItem = (props: Props) => {
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
     <div id={id} {...rest}>
-      <div
-        aria-labelledby={id}
-        className={getClassName('bpk-accordion__title')}
-      >
+      <div className={titleClassNames.join(' ')}>
         <button
           type="button"
           aria-expanded={expanded}
@@ -90,26 +133,24 @@ const BpkAccordionItem = (props: Props) => {
           onClick={onClick}
           className={getClassName('bpk-accordion__toggle-button')}
         >
-          <span className={getClassName('bpk-accordion__flex-container')}>
-            <BpkText
-              textStyle={textStyle}
-              tagName={tagName}
-              className={getClassName('bpk-accordion__title-text')}
+          <div className={`${getClassName('bpk-accordion__flex-container')}`}>
+            <div className={titleTextClassNames.join(' ')}>
+              <BpkText textStyle={textStyle} tagName={tagName}>
+                {clonedIcon}
+                {title}
+              </BpkText>
+            </div>
+            <span
+              className={`${getClassName(
+                'bpk-accordion__icon-wrapper',
+              )} ${iconClassNames.join(' ')}`}
             >
-              {clonedIcon}
-              {title}
-            </BpkText>
-            <span className={getClassName('bpk-accordion__icon-wrapper')}>
-              <ExpandIcon className={iconClassNames.join(' ')} />
+              <ExpandIcon />
             </span>
-          </span>
+          </div>
         </button>
       </div>
-      <div
-        id={contentId}
-        aria-labelledby={contentId}
-        className={getClassName('bpk-accordion__content-container')}
-      >
+      <div id={contentId} className={contentClassNames.join(' ')}>
         <AnimateHeight duration={200} height={expanded ? 'auto' : 0}>
           {children}
         </AnimateHeight>
@@ -133,7 +174,7 @@ BpkAccordionItem.defaultProps = {
   expanded: false,
   icon: null,
   onClick: () => null,
-  tagName: 'span',
+  tagName: 'h3',
   textStyle: TEXT_STYLES.bodyDefault,
 };
 
