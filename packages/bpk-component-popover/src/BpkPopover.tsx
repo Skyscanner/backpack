@@ -107,6 +107,7 @@ export type Props = CloseButtonProps & {
   closeButtonLabel?: string;
   actionText?: string;
   onAction?: () => void;
+  renderTarget?: () => HTMLElement | HTMLElement | null;
 };
 
 const BpkPopover = ({
@@ -125,6 +126,7 @@ const BpkPopover = ({
   onClose,
   padded = true,
   placement = 'bottom',
+  renderTarget = () => null,
   showArrow = true,
   target,
   ...rest
@@ -186,12 +188,13 @@ const BpkPopover = ({
   const bodyClassNames = getClassName(padded && 'bpk-popover__body--padded');
 
   const labelId = `bpk-popover-label-${id}`;
+  const renderElement = typeof renderTarget === 'function' ? renderTarget() : renderTarget;
 
   return (
     <>
       {targetElement}
       {isOpenState && (
-        <FloatingPortal>
+        <FloatingPortal root={renderElement}>
           <FloatingFocusManager context={context}>
             <div
               className={getClassName('bpk-popover--container')}

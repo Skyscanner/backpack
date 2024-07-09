@@ -144,6 +144,13 @@ const DefaultExample = () => (
   </Spacer>
 );
 
+const WithCustomRenderTargetExample = () => (
+  <Spacer>
+    <div id="my-target" />
+    <PopoverContainer id="my-popover-1" renderTarget={() => document.getElementById('my-target')} />
+  </Spacer>
+);
+
 const WithoutArrowExample = () => (
   <Spacer>
     <PopoverContainer id="my-popover-2" displayArrow={false} />
@@ -176,7 +183,7 @@ const InputTriggerExample = () => (
 
 const WithActionButtonExample = () => (
   <Spacer>
-    <PopoverContainer id="my-popover" actionText="Action" onAction={() => {}} />
+    <PopoverContainer id="my-popover" actionText="Action" onAction={() => { }} />
   </Spacer>
 );
 
@@ -188,6 +195,7 @@ const VisualExample = () => (
 
 export {
   DefaultExample,
+  WithCustomRenderTargetExample,
   WithoutArrowExample,
   WithLabelAsTitleExample,
   WithNoCloseButtonIconExample,
