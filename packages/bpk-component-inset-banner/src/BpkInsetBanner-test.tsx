@@ -20,7 +20,7 @@ import { render } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 
-import BpkInsetBanner from './BpkInsetBanner';
+import BpkInsetBanner, { VARIANT } from './BpkInsetBanner';
 
 describe('BpkInsetBanner', () => {
   it('should render correctly', () => {
@@ -28,7 +28,7 @@ describe('BpkInsetBanner', () => {
       <BpkInsetBanner
         title="Lorem ipsum"
         backgroundColor="#F55D42"
-        variant="onDark"
+        variant={VARIANT.onDark}
       />,
     );
 
@@ -45,7 +45,7 @@ describe('BpkInsetBanner', () => {
         callToAction={{
           text: 'Sponsored',
         }}
-        variant="onDark"
+        variant={VARIANT.onDark}
       />,
     );
 
@@ -64,7 +64,7 @@ describe('BpkInsetBanner', () => {
           linkText: 'More information',
           link: 'www.skyscanner.net',
         }}
-        variant="onDark"
+        variant={VARIANT.onDark}
       />,
     );
 

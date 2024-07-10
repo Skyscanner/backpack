@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/typography';
 @use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/breakpoints';
 @use '../../unstable__bpk-mixins/utils';
@@ -57,24 +56,13 @@
   }
 
   &--text-container {
+    display: flex;
     flex-direction: column;
-  }
-
-  &--title {
-    @include typography.bpk-label-2;
-  }
-
-  &--subheadline {
-    @include typography.bpk-caption;
   }
 
   &--cta-container {
     display: flex;
     align-items: center;
-  }
-
-  &--cta-text {
-    @include typography.bpk-caption;
   }
 }
 
@@ -86,10 +74,7 @@
   background-color: tokens.$bpk-private-info-banner-default-day;
   color: tokens.$bpk-text-on-light-day;
 
-  @include typography.bpk-caption;
-
   &--link-text {
-    padding-top: tokens.bpk-spacing-sm();
     color: tokens.$bpk-private-button-link-normal-foreground-day;
     text-decoration: none;
 

@@ -9,23 +9,23 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkInsetBanner from '@skyscanner/backpack-web/bpk-component-inset-banner';
+import BpkInsetBanner, { VARIANT } from '@skyscanner/backpack-web/bpk-component-inset-banner';
 
 export default () => (
   <BpkInsetBanner
-    title="My title"
-    subheadline="My subheadline"
-    logo="logo.png"
-    ctaText="Sponsored"
+    accessibilityLabel="Sponsored by Skyscanner"
     backgroundColor="#F55D42"
-    callToAction={{
-      text: 'Sponsored',
-    }}
     body={{
       text: 'My body text',
       linkText: 'More information',
       link: 'www.skyscanner.net',
     }}
-    variant="onDark"
+    callToAction={{
+      text: 'Sponsored',
+    }}
+    logo="logo.png"
+    subheadline="My subheadline"
+    title="My title"
+    variant={VARIANT.onDark}
   />);
 ```

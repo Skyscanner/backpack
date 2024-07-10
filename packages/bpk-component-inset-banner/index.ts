@@ -16,6 +16,11 @@
  * limitations under the License.
  */
 
-import BpkInsetBanner from './src/BpkInsetBanner';
+import BpkInsetBanner, {
+  type Props as BpkInsetBannerProps,
+  VARIANT,
+} from './src/BpkInsetBanner';
 
+export type { BpkInsetBannerProps };
+export { VARIANT };
 export default BpkInsetBanner;

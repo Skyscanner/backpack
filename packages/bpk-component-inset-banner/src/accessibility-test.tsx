@@ -19,7 +19,7 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkInsetBanner from './BpkInsetBanner';
+import BpkInsetBanner, { VARIANT } from './BpkInsetBanner';
 
 describe('BpkInsetBanner accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
@@ -37,7 +37,7 @@ describe('BpkInsetBanner accessibility tests', () => {
           linkText: 'More information',
           link: 'www.skyscanner.net',
         }}
-        variant="onDark"
+        variant={VARIANT.onDark}
       />,
     );
     const results = await axe(container);

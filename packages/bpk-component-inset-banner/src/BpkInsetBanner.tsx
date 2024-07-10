@@ -15,18 +15,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkInsetBanner.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  title?: string;
-  subheadline?: string;
-  logo?: string;
+export const VARIANT = {
+  onLight: 'on-light',
+  onDark: 'on-dark',
+};
+
+export type Props = {
+  accessibilityLabel?: string;
   backgroundColor: string;
-  variant: 'onLight' | 'onDark';
   body?: {
     text: string;
     link?: string;
@@ -36,77 +41,74 @@ type Props = {
   callToAction?: {
     text?: string;
   };
+  logo?: string;
+  subheadline?: string;
+  title?: string;
+  variant: (typeof VARIANT)[keyof typeof VARIANT];
 };
 
 const BpkInsetBanner = ({
-  backgroundColor,
+  accessibilityLabel,
+  backgroundColor = surfaceHighlightDay,
   body,
   callToAction,
   logo,
   subheadline,
   title,
-  variant,
+  variant = VARIANT.onLight,
 }: Props) => {
-  const classNames = [];
-  if (variant === 'onLight') {
-    classNames.push('bpk-inset-banner--on-light');
-  }
-  if (variant === 'onDark') {
-    classNames.push('bpk-inset-banner--on-dark');
-  }
-  if (body) {
-    classNames.push('bpk-inset-banner--with-body');
-  }
+  const classNames = getClassName(
+    'bpk-inset-banner',
+    `bpk-inset-banner--${variant}`,
+    body && 'bpk-inset-banner--with-body',
+  );
 
   return (
     <div>
       <div
-        className={getClassName('bpk-inset-banner', ...classNames)}
+        aria-label={accessibilityLabel}
+        className={classNames}
         style={{
           backgroundColor,
         }}
       >
         <div className={getClassName('bpk-inset-banner--content-container')}>
-          {logo ? (
+          {logo && (
             <img
               className={getClassName('bpk-inset-banner--image')}
               src={logo}
               alt=""
               aria-hidden
             />
-          ) : null}
+          )}
           <div className={getClassName('bpk-inset-banner--text-container')}>
-            <div className={getClassName('bpk-inset-banner--title')}>
-              {title}
-            </div>
-            <div className={getClassName('bpk-inset-banner--subheadline')}>
-              {subheadline}
-            </div>
+            <BpkText textStyle={TEXT_STYLES.label2}>{title}</BpkText>
+            <BpkText textStyle={TEXT_STYLES.caption}>{subheadline}</BpkText>
           </div>
         </div>
         <div className={getClassName('bpk-inset-banner--cta-container')}>
-          {callToAction?.text ? (
-            <div className={getClassName('bpk-inset-banner--cta-text')}>
+          {callToAction?.text && (
+            <BpkText textStyle={TEXT_STYLES.caption}>
               {callToAction.text}
-            </div>
-          ) : null}
+            </BpkText>
+          )}
         </div>
       </div>
-      {body ? (
+      {body && (
         <div className={getClassName('bpk-inset-banner-body-container')}>
-          {body.text}
-          {body.link && body.linkText ? (
+          <BpkText textStyle={TEXT_STYLES.caption}>{body.text}</BpkText>
+          {body.link && body.linkText && (
             <a
               href={body.link}
               className={getClassName(
                 'bpk-inset-banner-body-container--link-text',
               )}
             >
-              {body.linkText}
+              <BpkText textStyle={TEXT_STYLES.caption}>{body.linkText}</BpkText>
             </a>
-          ) : null}
+          )}
         </div>
-      ) : null}
+      )}
     </div>
   );
 };

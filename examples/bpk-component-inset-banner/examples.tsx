@@ -16,13 +16,15 @@
  * limitations under the License.
  */
 
-import BpkInsetBanner from '../../packages/bpk-component-inset-banner';
+import BpkInsetBanner, {
+  VARIANT,
+} from '../../packages/bpk-component-inset-banner';
 
 const DefaultExampleTitleOnly = () => (
   <BpkInsetBanner
     title="Lorem ipsum"
     backgroundColor="#054184"
-    variant="onDark"
+    variant={VARIANT.onDark}
   />
 );
 
@@ -31,7 +33,7 @@ const DefaultExampleTitleAndSubheadline = () => (
     title="Lorem ipsum"
     subheadline="Lorem ipsum dolor sit amet"
     backgroundColor="#054184"
-    variant="onDark"
+    variant={VARIANT.onDark}
   />
 );
 
@@ -44,7 +46,8 @@ const WithLogoAndCtaTextExampleLight = () => (
       text: 'Sponsored',
     }}
     backgroundColor="#94C3FF"
-    variant="onLight"
+    variant={VARIANT.onLight}
+    accessibilityLabel="Sponsored by Skyscanner"
   />
 );
 
@@ -60,7 +63,7 @@ const WithBodyTextExampleLight = () => (
     body={{
       text: 'You can change your destination, date of travel, or both, with no change fee. Valid for all new bookings made up to 31 May for travel between now and 31 December 2020.',
     }}
-    variant="onLight"
+    variant={VARIANT.onLight}
   />
 );
 
@@ -78,7 +81,7 @@ const WithBodyTextAndLinkExampleDark = () => (
       linkText: 'More information',
       link: 'www.skyscanner.net',
     }}
-    variant="onDark"
+    variant={VARIANT.onDark}
   />
 );
 
