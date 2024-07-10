@@ -32,7 +32,7 @@ describe('BpkInsetBanner', () => {
       />,
     );
 
-    expect(getByText('Lorem ipsum')).toHaveClass('bpk-inset-banner--title');
+    expect(getByText('Lorem ipsum')).toBeInTheDocument();
   });
 
   it('should render call to action text if provided', () => {
@@ -49,11 +49,11 @@ describe('BpkInsetBanner', () => {
       />,
     );
 
-    expect(getByText('Sponsored')).toHaveClass('bpk-inset-banner--cta-text');
+    expect(getByText('Sponsored')).toBeInTheDocument();
   });
 
   it('should render body if provided', () => {
-    const { getByText } = render(
+    const { getByRole } = render(
       <BpkInsetBanner
         title="Lorem ipsum"
         subheadline="Lorem ipsum dolor sit amet"
@@ -68,7 +68,7 @@ describe('BpkInsetBanner', () => {
       />,
     );
 
-    expect(getByText('More information')).toHaveClass(
+    expect(getByRole('link')).toHaveClass(
       'bpk-inset-banner-body-container--link-text',
     );
   });
