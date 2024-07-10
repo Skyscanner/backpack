@@ -126,7 +126,7 @@ const BpkAccordionItem = (props: Props) => {
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
     <div id={id} {...rest}>
-      <dt className={titleClassNames.join(' ')}>
+      <div className={titleClassNames.join(' ')}>
         <button
           type="button"
           aria-expanded={expanded}
@@ -149,12 +149,12 @@ const BpkAccordionItem = (props: Props) => {
             </span>
           </div>
         </button>
-      </dt>
-      <dd id={contentId} className={contentClassNames.join(' ')}>
+      </div>
+      <div id={contentId} className={contentClassNames.join(' ')}>
         <AnimateHeight duration={200} height={expanded ? 'auto' : 0}>
           {children}
         </AnimateHeight>
-      </dd>
+      </div>
     </div>
   );
 };

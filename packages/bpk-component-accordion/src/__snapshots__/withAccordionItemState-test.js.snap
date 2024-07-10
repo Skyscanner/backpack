@@ -5,7 +5,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
   <div
     id="my-accordion"
   >
-    <dt
+    <div
       class="bpk-accordion__title bpk-accordion__title--collapsed"
     >
       <button
@@ -47,8 +47,8 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
           </span>
         </div>
       </button>
-    </dt>
-    <dd
+    </div>
+    <div
       class="bpk-accordion__content-container"
       id="my-accordion_content"
     >
@@ -61,7 +61,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
           My accordion content
         </div>
       </div>
-    </dd>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -71,7 +71,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
   <div
     id="my-accordion"
   >
-    <dt
+    <div
       class="bpk-accordion__title bpk-accordion__title--collapsed"
     >
       <button
@@ -113,8 +113,8 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
           </span>
         </div>
       </button>
-    </dt>
-    <dd
+    </div>
+    <div
       class="bpk-accordion__content-container"
       id="my-accordion_content"
     >
@@ -127,7 +127,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
           My accordion content
         </div>
       </div>
-    </dd>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -137,7 +137,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
   <div
     id="my-accordion"
   >
-    <dt
+    <div
       class="bpk-accordion__title"
     >
       <button
@@ -179,8 +179,8 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
           </span>
         </div>
       </button>
-    </dt>
-    <dd
+    </div>
+    <div
       class="bpk-accordion__content-container bpk-accordion__content-container--expanded"
       id="my-accordion_content"
     >
@@ -191,7 +191,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
           My accordion content
         </div>
       </div>
-    </dd>
+    </div>
   </div>
 </DocumentFragment>
 `;
