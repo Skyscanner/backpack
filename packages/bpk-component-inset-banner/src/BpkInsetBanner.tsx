@@ -31,7 +31,7 @@ export const VARIANT = {
 
 export type Props = {
   accessibilityLabel?: string;
-  backgroundColor: string;
+  backgroundColor?: string;
   body?: {
     text: string;
     link?: string;
@@ -44,7 +44,7 @@ export type Props = {
   logo?: string;
   subheadline?: string;
   title?: string;
-  variant: (typeof VARIANT)[keyof typeof VARIANT];
+  variant?: (typeof VARIANT)[keyof typeof VARIANT];
 };
 
 const BpkInsetBanner = ({
