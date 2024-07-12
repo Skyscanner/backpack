@@ -36,3 +36,5 @@ export const DefaultWithTitleAndSubheadline = DefaultExampleTitleAndSubheadline;
 export const WithLogoAndCtaTextLight = WithLogoAndCtaTextExampleLight;
 export const WithBodyTextLight = WithBodyTextExampleLight;
 export const WithBodyTextAndLinkDark = WithBodyTextAndLinkExampleDark;
+export const VisualTestDark = WithBodyTextAndLinkExampleDark;
+export const VisualTestLight = WithLogoAndCtaTextExampleLight;
