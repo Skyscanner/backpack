@@ -23,6 +23,7 @@ import BpkSnippet from '../../packages/bpk-component-snippet';
 import {
   DefaultExample,
   DesktopReverseExample,
+  DesktopVerticalExample,
   MobileSquareExample,
   MobilePortraitExample,
   EmptyExample,
@@ -37,6 +38,7 @@ export default {
 
 export const Desktop = DefaultExample;
 export const DesktopReverse = DesktopReverseExample;
+export const DesktopVertical = DesktopVerticalExample;
 export const EmptyContent = EmptyExample;
 
 type Story = StoryObj;

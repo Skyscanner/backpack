@@ -39,9 +39,21 @@
     }
   }
 
+  &--vertical {
+    flex-direction: column;
+    gap: tokens.bpk-spacing-base();
+
+    &--container {
+      width: 100%;
+    }
+
+    &--content {
+      padding: 0;
+    }
+  }
+
   &--container {
     width: 50%;
-    height: auto;
 
     @include breakpoints.bpk-breakpoint-small-tablet {
       width: 100%;

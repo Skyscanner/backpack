@@ -41,11 +41,9 @@ export type Props = {
   bodyStyle?: typeof TEXT_STYLES.bodyDefault | typeof TEXT_STYLES.bodyLongform;
   buttonStyle?: ButtonType;
   headlineStyle?: TextStyle;
-  desktopLayout?: 'imageLeft' | 'imageRight';
+  desktopLayout?: 'imageLeft' | 'imageRight' | 'vertical';
   imageOrientation?: 'landscape' | 'portrait' | 'square';
-  onClick?: (
-    event: MouseEvent<HTMLButtonElement & HTMLAnchorElement>,
-  ) => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement & HTMLAnchorElement>) => void;
 };
 
 const BpkSnippet = ({
@@ -61,57 +59,63 @@ const BpkSnippet = ({
   onClick,
   src,
   subheading,
-}: Props) => {
-  const layout = getClassName(
-    'bpk-snippet',
-    desktopLayout === 'imageRight' && 'bpk-snippet--row-reverse',
-  );
-  const imageStyle = getClassName(
-    'bpk-snippet--container',
-    `bpk-snippet--image__${imageOrientation}`,
-  );
-
-  return (
-    <div className={layout}>
-      <div className={imageStyle}>
-        <img
-          className={getClassName('bpk-snippet--image')}
-          alt={altText || ''}
-          src={src}
-          loading="lazy"
-        />
-      </div>
-      <div
-        className={getClassName(
-          'bpk-snippet--container',
-          'bpk-snippet--content',
-        )}
-      >
-        {headline && (
-          <div className={getClassName('bpk-snippet--headline')}>
-            <BpkText textStyle={headlineStyle} tagName="h3">
-              {headline}
-            </BpkText>
-          </div>
-        )}
-        {subheading && (
-          <div className={getClassName('bpk-snippet--subheading')}>
-            <BpkText textStyle={TEXT_STYLES.subheading}>{subheading}</BpkText>
-          </div>
-        )}
-        {bodyText && (
-          <div className={getClassName('bpk-snippet--bodyText')}>
-            <BpkText textStyle={bodyStyle}>{bodyText}</BpkText>
-          </div>
-        )}
-        {buttonText && onClick && (
-          <BpkButtonV2 type={buttonStyle} onClick={onClick}>
-            {buttonText}
-          </BpkButtonV2>
-        )}
-      </div>
+}: Props) => (
+  <div
+    className={getClassName(
+      'bpk-snippet',
+      desktopLayout === 'imageRight' && 'bpk-snippet--row-reverse',
+      desktopLayout === 'vertical' && 'bpk-snippet--vertical',
+    )}
+  >
+    <div
+      className={getClassName(
+        desktopLayout === 'vertical'
+          ? 'bpk-snippet--vertical--container'
+          : 'bpk-snippet--container',
+        `bpk-snippet--image__${imageOrientation}`,
+      )}
+    >
+      <img
+        className={getClassName('bpk-snippet--image')}
+        alt={altText || ''}
+        src={src}
+        loading="lazy"
+      />
     </div>
-  );
-};
+    <div
+      className={getClassName(
+        desktopLayout === 'vertical'
+          ? 'bpk-snippet--vertical--container'
+          : 'bpk-snippet--container',
+        desktopLayout === 'vertical'
+          ? ' bpk-snippet--vertical--content'
+          : 'bpk-snippet--content',
+      )}
+    >
+      {headline && (
+        <div className={getClassName('bpk-snippet--headline')}>
+          <BpkText textStyle={headlineStyle} tagName="h3">
+            {headline}
+          </BpkText>
+        </div>
+      )}
+      {subheading && (
+        <div className={getClassName('bpk-snippet--subheading')}>
+          <BpkText textStyle={TEXT_STYLES.subheading}>{subheading}</BpkText>
+        </div>
+      )}
+      {bodyText && (
+        <div className={getClassName('bpk-snippet--bodyText')}>
+          <BpkText textStyle={bodyStyle}>{bodyText}</BpkText>
+        </div>
+      )}
+      {buttonText && onClick && (
+        <BpkButtonV2 type={buttonStyle} onClick={onClick}>
+          {buttonText}
+        </BpkButtonV2>
+      )}
+    </div>
+  </div>
+);
 
 export default BpkSnippet;

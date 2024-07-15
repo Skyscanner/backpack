@@ -36,6 +36,12 @@ const DesktopReverseExample = () => (
   <BpkSnippet {...props} desktopLayout="imageRight" />
 );
 
+const DesktopVerticalExample = () => (
+  <div style={{width: '33.33%'}}>
+    <BpkSnippet {...props} desktopLayout="vertical" />
+  </div>
+);
+
 const MobileSquareExample = () => (
   <BpkSnippet {...props} imageOrientation="square" />
 );
@@ -58,6 +64,7 @@ const EmptyExample = () => (
 export {
   DefaultExample,
   DesktopReverseExample,
+  DesktopVerticalExample,
   MobileSquareExample,
   MobilePortraitExample,
   EmptyExample,
