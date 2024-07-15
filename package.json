@@ -186,7 +186,7 @@
     "style-loader": "^4.0.0",
     "ts-migrate": "^0.1.35",
     "typescript": "^5.4.3",
-    "webpack": "^5.92.1",
+    "webpack": "^5.93.0",
     "wrapper-webpack-plugin": "^2.2.2"
   }
 }
