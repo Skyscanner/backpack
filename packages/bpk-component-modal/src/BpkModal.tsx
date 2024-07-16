@@ -40,7 +40,7 @@ export type Props = Partial<ModalDialogProps> & {
   isOpen: boolean;
   closeOnScrimClick?: boolean;
   closeOnEscPressed?: boolean;
-  renderTarget?: () => HTMLElement | HTMLElement | null;
+  renderTarget?: (() => HTMLElement | null) | HTMLElement | null;
   modalStyle?: ModalStyle;
 
   onClose?: (
