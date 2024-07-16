@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { themeAttributes as linkAttributes } from '../../bpk-component-link';
 
 export default [...linkAttributes];
