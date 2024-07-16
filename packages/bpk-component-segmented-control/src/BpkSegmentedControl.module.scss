@@ -102,3 +102,19 @@
 .bpk-segmented-control[class*='rightOfOption'] {
   border-inline-start: none;
 }
+
+.bpk-segmented-control:first-child {
+  border-top-left-radius: tokens.$bpk-border-radius-sm;
+  border-bottom-left-radius: tokens.$bpk-border-radius-sm;
+}
+
+.bpk-segmented-control:last-child {
+  border-top-right-radius: tokens.$bpk-border-radius-sm;
+  border-bottom-right-radius: tokens.$bpk-border-radius-sm;
+}
+
+.bpk-segmented-control:focus {
+  border: (tokens.$bpk-one-pixel-rem * 2) solid tokens.$bpk-text-link-day;
+  outline: none;
+  outline-offset: (tokens.$bpk-one-pixel-rem * 2);
+}
