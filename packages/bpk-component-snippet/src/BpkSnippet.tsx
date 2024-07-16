@@ -43,6 +43,7 @@ export type Props = {
   headlineStyle?: TextStyle;
   desktopLayout?: 'imageLeft' | 'imageRight' | 'vertical';
   imageOrientation?: 'landscape' | 'portrait' | 'square';
+  imageRadius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   onClick?: (event: MouseEvent<HTMLButtonElement & HTMLAnchorElement>) => void;
 };
 
@@ -56,6 +57,7 @@ const BpkSnippet = ({
   headline,
   headlineStyle = TEXT_STYLES.hero5,
   imageOrientation,
+  imageRadius,
   onClick,
   src,
   subheading,
@@ -76,7 +78,10 @@ const BpkSnippet = ({
       )}
     >
       <img
-        className={getClassName('bpk-snippet--image')}
+        className={getClassName(
+          'bpk-snippet--image',
+          `bpk-snippet--image__radius--${imageRadius}`,
+        )}
         alt={altText || ''}
         src={src}
         loading="lazy"

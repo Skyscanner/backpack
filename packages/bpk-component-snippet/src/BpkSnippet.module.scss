@@ -64,8 +64,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    border-radius: tokens.$bpk-border-radius-md;
-    object-fit: fill;
+    object-fit: cover;
 
     &__landscape {
       aspect-ratio: 3 / 2;
@@ -77,6 +76,26 @@
 
     &__square {
       aspect-ratio: 1 / 1;
+    }
+
+    &__radius--xs {
+      border-radius: tokens.$bpk-border-radius-md;
+    }
+
+    &__radius--sm {
+      border-radius: tokens.$bpk-border-radius-md;
+    }
+
+    &__radius--md {
+      border-radius: tokens.$bpk-border-radius-md;
+    }
+
+    &__radius--lg {
+      border-radius: tokens.$bpk-border-radius-md;
+    }
+
+    &__radius--xl {
+      border-radius: tokens.$bpk-border-radius-md;
     }
   }
 

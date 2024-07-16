@@ -21,12 +21,10 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import BpkSnippet from '../../packages/bpk-component-snippet';
 
 import {
-  DefaultExample,
-  DesktopReverseExample,
-  DesktopVerticalExample,
+  DesktopExample,
+  MobileLandscapeExample,
   MobileSquareExample,
-  MobilePortraitExample,
-  EmptyExample,
+  MobilePortraitExample
 } from './examples';
 
 import type { StoryObj } from '@storybook/react';
@@ -36,12 +34,19 @@ export default {
   component: BpkSnippet,
 };
 
-export const Desktop = DefaultExample;
-export const DesktopReverse = DesktopReverseExample;
-export const DesktopVertical = DesktopVerticalExample;
-export const EmptyContent = EmptyExample;
+export const Desktop = DesktopExample;
 
 type Story = StoryObj;
+
+export const MobileLandscape: Story = {
+  render: () => <MobileLandscapeExample />,
+  parameters: {
+    viewport: {
+      viewports: INITIAL_VIEWPORTS,
+      defaultViewport: 'iphone6',
+    },
+  },
+};
 
 export const MobileSquare: Story = {
   render: () => <MobileSquareExample />,
@@ -62,3 +67,11 @@ export const MobilePortrait: Story = {
     },
   },
 };
+
+export const VisualTest = DesktopExample;
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true
+  }
+}

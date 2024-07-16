@@ -16,6 +16,9 @@
  * limitations under the License.
  */
 import BpkSnippet from '../../packages/bpk-component-snippet';
+import BpkText, {
+  TEXT_STYLES,
+} from '../../packages/bpk-component-text/src/BpkText';
 
 const props = {
   src: 'https://content.skyscnr.com/m/f427e62297cce49/original/edinburgh-view-from-calton-hill.jpg',
@@ -28,44 +31,52 @@ const props = {
   onClick: () => window.open('https://www.skyscanner.net/flights', '_blank'),
 };
 
-const DefaultExample = () => (
-  <BpkSnippet {...props} imageOrientation="landscape" />
-);
-
-const DesktopReverseExample = () => (
-  <BpkSnippet {...props} desktopLayout="imageRight" />
-);
-
-const DesktopVerticalExample = () => (
-  <div style={{width: '33.33%'}}>
-    <BpkSnippet {...props} desktopLayout="vertical" />
+const DesktopExample = () => (
+  <div>
+    <div style={{paddingBottom: '2rem'}} >
+      <BpkText textStyle={TEXT_STYLES.heading2}>Default</BpkText>
+      <BpkSnippet {...props} imageOrientation="landscape" imageRadius="md" />
+    </div>
+    <div style={{paddingBottom: '2rem'}}>
+      <BpkText textStyle={TEXT_STYLES.heading2}>Default Reverse</BpkText>
+      <BpkSnippet {...props} desktopLayout="imageRight" imageRadius="md" />
+    </div>
+    <div style={{ paddingBottom: '2rem', width: '33.33%' }}>
+      <BpkText textStyle={TEXT_STYLES.heading2}>Vertical</BpkText>
+      <BpkSnippet {...props} desktopLayout="vertical" imageRadius="md" />
+    </div>
+    <div style={{paddingBottom: '2rem'}}>
+      <BpkText textStyle={TEXT_STYLES.heading2}>Empty Content</BpkText>
+      <BpkSnippet
+        {...props}
+        imageOrientation="landscape"
+        headline=""
+        subheading=""
+        bodyText=""
+        buttonText=""
+      />
+    </div>
+    <div>
+      <BpkText textStyle={TEXT_STYLES.heading2}>Default Radius</BpkText>
+      <BpkSnippet {...props} imageOrientation="landscape" />
+    </div>
   </div>
+);
+
+const MobileLandscapeExample = () => (
+  <BpkSnippet {...props} imageOrientation="landscape" />
 );
 
 const MobileSquareExample = () => (
   <BpkSnippet {...props} imageOrientation="square" />
 );
-
 const MobilePortraitExample = () => (
   <BpkSnippet {...props} imageOrientation="portrait" />
 );
 
-const EmptyExample = () => (
-  <BpkSnippet
-    {...props}
-    imageOrientation="landscape"
-    headline=""
-    subheading=""
-    bodyText=""
-    buttonText=""
-  />
-);
-
 export {
-  DefaultExample,
-  DesktopReverseExample,
-  DesktopVerticalExample,
+  DesktopExample,
+  MobileLandscapeExample,
   MobileSquareExample,
   MobilePortraitExample,
-  EmptyExample,
 };
