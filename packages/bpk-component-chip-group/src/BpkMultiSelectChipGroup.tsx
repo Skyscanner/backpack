@@ -79,8 +79,8 @@ type CommonProps = {
 
 type RailChipGroupProps = {
   stickyChip?: ChipItem;
-  leadingNudgerLabel: string;
-  trailingNudgerLabel: string;
+  leadingNudgerLabel?: string;
+  trailingNudgerLabel?: string;
 } & CommonProps;
 
 type WrapChipGroupProps = {
@@ -160,9 +160,9 @@ const RailChipGroup = ({
   chipStyle = CHIP_TYPES.default,
   chips,
   label,
-  leadingNudgerLabel,
+  leadingNudgerLabel = '',
   stickyChip,
-  trailingNudgerLabel,
+  trailingNudgerLabel = '',
 }: RailChipGroupProps) => {
   const scrollContainerRef = useRef<HTMLElement | null>(null);
 
