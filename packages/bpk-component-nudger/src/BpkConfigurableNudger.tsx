@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { useRef } from 'react';
+
 import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
 import { withButtonAlignment } from '../../bpk-component-icon';
 import MinusIcon from '../../bpk-component-icon/sm/minus';
@@ -31,10 +33,9 @@ const getClassName = cssModules(STYLES);
 const AlignedMinusIcon = withButtonAlignment(MinusIcon);
 const AlignedPlusIcon = withButtonAlignment(PlusIcon);
 
-type Props = CommonProps & {
-  inputClassName?: string | null;
+type Props = CommonProps & { valueClassName?: string | null;
   /**
-   * A simple function that will allow you to set the format of the display value e.g. local dates or times. 
+   * A simple function that will allow you to set the format of the display value e.g. local dates or times.
    */
   formatValue: (arg0: any) => string;
   /**
@@ -55,6 +56,17 @@ type Props = CommonProps & {
   compareValues: (arg0: any, arg1: any) => number;
 };
 
+// We want to maintain native input events across our form components. Along with react updating
+// the value attribute we can set it via native handlers and emit the "change" event.
+const sendNativeChangeEvent= (element: HTMLInputElement, value: string) => {
+  const nativeInputValueSetter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')?.set;
+  nativeInputValueSetter?.call(element, value);
+  const newEvent = new Event('change', {
+    bubbles: true
+  });
+  element?.dispatchEvent(newEvent);
+}
+
 const BpkConfigurableNudger = ({
   buttonType = 'secondary',
   className = null,
@@ -65,11 +77,12 @@ const BpkConfigurableNudger = ({
   id,
   increaseButtonLabel,
   incrementValue,
-  inputClassName = null,
   max,
   min,
+  name,
   onChange,
   value,
+  valueClassName = null,
   ...rest
 }: Props) => {
   const classNames = getClassName('bpk-nudger', className);
@@ -77,37 +90,50 @@ const BpkConfigurableNudger = ({
   const maxButtonDisabled = compareValues(value, max) >= 0;
   const minButtonDisabled = compareValues(value, min) <= 0;
 
-  const inputStyles = getClassName(
-    'bpk-nudger__input',
-    inputClassName && inputClassName,
-    buttonType === 'secondaryOnDark' && 'bpk-nudger__input--secondary-on-dark',
+  const inputStyles = getClassName('bpk-nudger__input');
+  const valueStyles = getClassName(
+    'bpk-nudger__value',
+    valueClassName && valueClassName,
+    buttonType === 'secondaryOnDark' && 'bpk-nudger__value--secondary-on-dark',
   );
+  const inputRef = useRef<HTMLInputElement|null>(null);
 
   return (
     <div className={classNames}>
       <BpkButtonV2
         type={BUTTON_TYPES[buttonType]}
         iconOnly
-        onClick={() => onChange(decrementValue(value))}
+        onClick={() => {
+          const newValue = decrementValue(value);
+          onChange(newValue);
+          inputRef.current && sendNativeChangeEvent(inputRef.current, `${newValue}`);
+        }}
         disabled={minButtonDisabled}
         title={decreaseButtonLabel}
         aria-controls={id}
-      >        
+      >
         <AlignedMinusIcon />
       </BpkButtonV2>
+      <span aria-live="polite" className={valueStyles}>
+        {formatValue(value)}
+      </span>
       <input
         type="text"
-        aria-live="polite"
-        readOnly
         value={formatValue(value)}
         id={id}
+        ref={inputRef}
+        name={name || id}
         className={inputStyles}
         {...rest}
       />
       <BpkButtonV2
         type={BUTTON_TYPES[buttonType]}
         iconOnly
-        onClick={() => onChange(incrementValue(value))}
+        onClick={() => {
+          const newValue = incrementValue(value);
+          onChange(newValue);
+          inputRef.current && sendNativeChangeEvent(inputRef.current, `${newValue}`);
+        }}
         disabled={maxButtonDisabled}
         title={increaseButtonLabel}
         aria-controls={id}

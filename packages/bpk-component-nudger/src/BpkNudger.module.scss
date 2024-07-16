@@ -27,6 +27,10 @@
   }
 
   &__input {
+    display: none;
+  }
+
+  &__value {
     display: inline-block;
     padding: tokens.bpk-spacing-md() 0;
     border: none;

@@ -141,7 +141,7 @@ class ConfigurableNudgerContainer extends Component<{}, { value: string }> {
           incrementValue={incrementValue}
           decrementValue={decrementValue}
           formatValue={formatValue}
-          inputClassName={getClassName('bpk-nudger-configurable')}
+          valueClassName={getClassName('bpk-nudger-configurable')}
         />
       </div>
     );

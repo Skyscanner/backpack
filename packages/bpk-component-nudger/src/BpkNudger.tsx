@@ -41,7 +41,6 @@ const BpkNudger = ({
   title,
   ...rest
 }: CommonProps) => {
-
   const classNames = getClassName(title && 'bpk-nudger__container');
 
   return (
@@ -69,7 +68,7 @@ const BpkNudger = ({
         </div>
       )}
       <BpkConfigurableNudger
-        inputClassName={getClassName('bpk-nudger__input--numeric')}
+        valueClassName={getClassName('bpk-nudger__value--numeric')}
         compareValues={compareValues}
         incrementValue={incrementValue}
         decrementValue={decrementValue}
