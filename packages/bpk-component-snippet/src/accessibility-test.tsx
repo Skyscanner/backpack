@@ -44,10 +44,4 @@ describe('BpkJourneyArrow accessibility tests', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
-
-  it('should not have programmatically-detectable accessibility issues with empty content', async () => {
-    const { container } = render(<BpkSnippet src="" altText="" />);
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
 });

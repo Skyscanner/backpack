@@ -66,6 +66,8 @@
     height: 100%;
     object-fit: cover;
 
+    // In Snippet component we’re sourcing only three options: 3:2 (landscape), square and 5:7 (portrait)
+    // https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=45681-58458&t=WIGrWPWvIuQYQKrk-0
     &__landscape {
       aspect-ratio: 3 / 2;
     }
@@ -78,12 +80,14 @@
       aspect-ratio: 1 / 1;
     }
 
+    // rounded corner of the image
+    // https://skyscanner.slack.com/archives/C0JHPDSSU/p1721047356634579?thread_ts=1718608140.853189&cid=C0JHPDSSU
     &__radius--xs {
-      border-radius: tokens.$bpk-border-radius-md;
+      border-radius: tokens.$bpk-border-radius-xs;
     }
 
     &__radius--sm {
-      border-radius: tokens.$bpk-border-radius-md;
+      border-radius: tokens.$bpk-border-radius-sm;
     }
 
     &__radius--md {
@@ -91,11 +95,11 @@
     }
 
     &__radius--lg {
-      border-radius: tokens.$bpk-border-radius-md;
+      border-radius: tokens.$bpk-border-radius-lg;
     }
 
     &__radius--xl {
-      border-radius: tokens.$bpk-border-radius-md;
+      border-radius: tokens.$bpk-border-radius-xl;
     }
   }
 
@@ -122,7 +126,7 @@
   }
 
   &--headline {
-    h3 {
+    > span {
       @include typography.bpk-text--bold;
     }
   }

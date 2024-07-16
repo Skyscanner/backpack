@@ -31,6 +31,31 @@ import STYLES from './BpkSnippet.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+export const BODY_STYLE = {
+  bodyDefault: TEXT_STYLES.bodyDefault,
+  bodyLongform: TEXT_STYLES.bodyLongform,
+} as const;
+
+export const DESKTOP_LAYOUT = {
+  imageLeft: 'imageLeft',
+  imageRight: 'imageRight',
+  vertical: 'vertical',
+} as const;
+
+export const IMAGE_ORIENTATION = {
+  landscape: 'landscape',
+  portrait: 'portrait',
+  square: 'square',
+} as const;
+
+export const IMAGE_RADIUS = {
+  xs: 'xs',
+  sm: 'sm',
+  md: 'md',
+  lg: 'lg',
+  xl: 'xl',
+} as const;
+
 export type Props = {
   src: string;
   altText: string;
@@ -38,12 +63,12 @@ export type Props = {
   subheading?: string | null;
   bodyText?: string | null;
   buttonText?: string | null;
-  bodyStyle?: typeof TEXT_STYLES.bodyDefault | typeof TEXT_STYLES.bodyLongform;
+  bodyStyle?: (typeof BODY_STYLE)[keyof typeof BODY_STYLE];
   buttonStyle?: ButtonType;
   headlineStyle?: TextStyle;
-  desktopLayout?: 'imageLeft' | 'imageRight' | 'vertical';
-  imageOrientation?: 'landscape' | 'portrait' | 'square';
-  imageRadius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  desktopLayout?: (typeof DESKTOP_LAYOUT)[keyof typeof DESKTOP_LAYOUT];
+  imageOrientation?: (typeof IMAGE_ORIENTATION)[keyof typeof IMAGE_ORIENTATION];
+  imageRadius?: (typeof IMAGE_RADIUS)[keyof typeof IMAGE_RADIUS];
   onClick?: (event: MouseEvent<HTMLButtonElement & HTMLAnchorElement>) => void;
 };
 
@@ -82,7 +107,7 @@ const BpkSnippet = ({
           'bpk-snippet--image',
           `bpk-snippet--image__radius--${imageRadius}`,
         )}
-        alt={altText || ''}
+        alt={altText}
         src={src}
         loading="lazy"
       />
@@ -99,9 +124,7 @@ const BpkSnippet = ({
     >
       {headline && (
         <div className={getClassName('bpk-snippet--headline')}>
-          <BpkText textStyle={headlineStyle} tagName="h3">
-            {headline}
-          </BpkText>
+          <BpkText textStyle={headlineStyle}>{headline}</BpkText>
         </div>
       )}
       {subheading && (
