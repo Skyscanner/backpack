@@ -60,6 +60,10 @@ type State = {
   isVisible: boolean;
 };
 
+/**
+ * @deprecated the portal is deprecated and will be removed in a future release. Please read [](https://github.com/Skyscanner/backpack/blob/main/packages/bpk-react-utils/docs/portal-migration.md) for further information
+ * @returns{Component} used to render children into a new component tree. For use with Modals, popovers, tooltips.
+*/
 class Portal extends Component<Props, State> {
   portalElement: null | HTMLDivElement;
 
