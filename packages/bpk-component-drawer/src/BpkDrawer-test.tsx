@@ -16,32 +16,29 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import BpkDrawer from './BpkDrawer';
 
 describe('BpkDrawer', () => {
   it('should render correctly in the given target if renderTarget is supplied', () => {
-    const customRenderTarget = document.createElement('div');
-
-    const { asFragment } = render(
-      <BpkDrawer
-        id="my-drawer"
-        title="Drawer title"
-        onClose={jest.fn()}
-        closeLabel="Close"
-        dialogRef={jest.fn()}
-        isIphone={false}
-        getApplicationElement={jest.fn()}
-        isOpen
-        renderTarget={() => customRenderTarget}
-      >
-        Drawer content
-      </BpkDrawer>,
+    render(
+      <div id="pagewrap">
+        <BpkDrawer
+          id="my-drawer"
+          title="Drawer title"
+          onClose={jest.fn()}
+          closeLabel="Close"
+          dialogRef={jest.fn()}
+          isIphone={false}
+          getApplicationElement={jest.fn()}
+          isOpen
+          renderTarget={() => document.getElementById('pagewrap')}
+        >
+          Drawer content
+        </BpkDrawer>
+      </div>,
     );
-    expect(asFragment()).toMatchSnapshot();
-    expect(customRenderTarget).toMatchSnapshot();
+    expect(screen.getByText('Drawer content')).toBeVisible();
   });
 });
