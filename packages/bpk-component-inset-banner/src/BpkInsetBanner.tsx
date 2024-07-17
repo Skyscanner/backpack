@@ -46,7 +46,7 @@ export type Props = {
   subheadline?: string;
   title?: string;
   variant?: (typeof VARIANT)[keyof typeof VARIANT];
-  [rest: string]: any;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const BpkInsetBanner = ({
