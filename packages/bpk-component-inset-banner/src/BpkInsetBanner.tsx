@@ -41,10 +41,12 @@ export type Props = {
   callToAction?: {
     text?: string;
   };
+  className?: string;
   logo?: string;
   subheadline?: string;
   title?: string;
   variant?: (typeof VARIANT)[keyof typeof VARIANT];
+  [rest: string]: any;
 };
 
 const BpkInsetBanner = ({
@@ -52,19 +54,22 @@ const BpkInsetBanner = ({
   backgroundColor = surfaceHighlightDay,
   body,
   callToAction,
+  className,
   logo,
   subheadline,
   title,
   variant = VARIANT.onLight,
+  ...rest
 }: Props) => {
   const classNames = getClassName(
     'bpk-inset-banner',
     `bpk-inset-banner--${variant}`,
     body && 'bpk-inset-banner--with-body',
+    className,
   );
 
   return (
-    <div>
+    <div {...rest}>
       <div
         aria-label={accessibilityLabel}
         className={classNames}

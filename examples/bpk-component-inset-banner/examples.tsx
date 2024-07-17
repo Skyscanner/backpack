@@ -19,6 +19,11 @@
 import BpkInsetBanner, {
   VARIANT,
 } from '../../packages/bpk-component-inset-banner';
+import { cssModules } from '../../packages/bpk-react-utils';
+
+import STYLES from './examples.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 const DefaultExampleTitleOnly = () => (
   <BpkInsetBanner
@@ -48,6 +53,18 @@ const WithLogoAndCtaTextExampleLight = () => (
     backgroundColor="#94C3FF"
     variant={VARIANT.onLight}
     accessibilityLabel="Sponsored by Skyscanner"
+  />
+);
+
+const WithCustomPadding = () => (
+  <BpkInsetBanner
+    logo="https://content.skyscnr.com/m/23c24b7080cfe18a/Medium-Skyscanner-Vertical-Blue.png"
+    callToAction={{
+      text: 'Promoted',
+    }}
+    backgroundColor="#94C3FF"
+    variant={VARIANT.onLight}
+    className={getClassName('bpk-custom-padding')}
   />
 );
 
@@ -91,4 +108,5 @@ export {
   WithLogoAndCtaTextExampleLight,
   WithBodyTextExampleLight,
   WithBodyTextAndLinkExampleDark,
+  WithCustomPadding,
 };

@@ -24,6 +24,7 @@ import {
   WithLogoAndCtaTextExampleLight,
   WithBodyTextExampleLight,
   WithBodyTextAndLinkExampleDark,
+  WithCustomPadding,
 } from './examples';
 
 export default {
@@ -38,3 +39,4 @@ export const WithBodyTextLight = WithBodyTextExampleLight;
 export const WithBodyTextAndLinkDark = WithBodyTextAndLinkExampleDark;
 export const VisualTestDark = WithBodyTextAndLinkExampleDark;
 export const VisualTestLight = WithLogoAndCtaTextExampleLight;
+export const WithCustomClassPadding = WithCustomPadding;
