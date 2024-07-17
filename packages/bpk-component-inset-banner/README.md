@@ -23,6 +23,7 @@ export default () => (
     callToAction={{
       text: 'Sponsored',
     }}
+    className="my-classname"
     logo="logo.png"
     subheadline="My subheadline"
     title="My title"
