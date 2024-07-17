@@ -72,4 +72,23 @@ describe('BpkInsetBanner', () => {
       'bpk-inset-banner-body-container--link-text',
     );
   });
+
+  it('should use custom class if provided', () => {
+    const { container } = render(
+      <BpkInsetBanner
+        title="Lorem ipsum"
+        subheadline="Lorem ipsum dolor sit amet"
+        logo="https://content.skyscnr.com/m/7950ed6f30581485/Medium-Skyscanner-Vertical-White.png"
+        backgroundColor="#F55D42"
+        className="custom-class"
+        variant={VARIANT.onDark}
+      />,
+    );
+
+    const containerDiv = container.querySelector('div.bpk-inset-banner');
+
+    expect(containerDiv).toHaveClass(
+      'bpk-inset-banner bpk-inset-banner--on-dark custom-class',
+    );
+  });
 });
