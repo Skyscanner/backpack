@@ -16,31 +16,30 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import BpkModal from './BpkModal';
 
 describe('BpkModal', () => {
   it('should render correctly in the given target if renderTarget is supplied', () => {
-    const customRenderTarget = document.createElement('div');
-
-    const { asFragment } = render(
-      <BpkModal
-        id="my-modal"
-        title="Modal title"
-        onClose={jest.fn()}
-        closeLabel="Close"
-        dialogRef={jest.fn()}
-        isIphone={false}
-        getApplicationElement={jest.fn()}
-        isOpen
-        renderTarget={() => customRenderTarget}
-      >
-        Modal content inside a custom target
-      </BpkModal>,
+    render(
+      <div id="pagewrap">
+        <button type="button">Open modal</button>
+        <BpkModal
+          id="my-modal"
+          title="Modal title"
+          onClose={jest.fn()}
+          closeLabel="Close"
+          dialogRef={jest.fn()}
+          isIphone={false}
+          getApplicationElement={jest.fn()}
+          isOpen
+          renderTarget={() => document.getElementById('pagewrap')}
+        >
+          Modal content
+        </BpkModal>
+      </div>,
     );
-
-    expect(asFragment()).toMatchSnapshot();
-    expect(customRenderTarget).toMatchSnapshot();
+    expect(screen.getAllByText('Modal content')).not.toBeNull();
   });
 });

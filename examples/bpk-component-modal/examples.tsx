@@ -112,12 +112,11 @@ type ContainerProps =  {
   id?: string;
   wrapperProps?: Object;
   isOpen?: boolean;
-} & Omit<BpkModalProps, 'getApplicationElement'| 'id' | 'isOpen'>;
+} & Omit<BpkModalProps, 'getApplicationElement'| 'id'>;
 
 const ModalContainer = (props: ContainerProps) => {
-  const [isOpen, setIsOpen] = useState(props.isOpen || false);
-
-  const { accessoryView, buttonLabel, children, wrapperProps, ...rest } = props;
+  const { accessoryView, buttonLabel, children, isOpen, wrapperProps, ...rest } = props;
+  const [isOpenState, setIsOpen] = useState(isOpen);
 
   return (
     <div id="modal-container" {...wrapperProps}>
@@ -128,7 +127,7 @@ const ModalContainer = (props: ContainerProps) => {
         <BpkModal
           id="my-modal"
           className="my-classname"
-          isOpen={isOpen}
+          isOpen={isOpenState}
           onClose={() => setIsOpen(false)}
           getApplicationElement={() => document.getElementById('pagewrap')}
           renderTarget={() => document.getElementById('modal-container')}
