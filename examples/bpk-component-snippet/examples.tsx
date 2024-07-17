@@ -35,15 +35,23 @@ const DesktopExample = () => (
   <div>
     <div style={{paddingBottom: '2rem'}} >
       <BpkText textStyle={TEXT_STYLES.heading2}>Default</BpkText>
-      <BpkSnippet {...props} imageOrientation="landscape" imageRadius="md" />
+      <BpkSnippet {...props} imageOrientation="landscape" />
+    </div>
+    <div style={{paddingBottom: '2rem'}} >
+      <BpkText textStyle={TEXT_STYLES.heading2}>Default square</BpkText>
+      <BpkSnippet {...props} imageOrientation="square" />
+    </div>
+    <div>
+      <BpkText textStyle={TEXT_STYLES.heading2}>Default Radius off</BpkText>
+      <BpkSnippet {...props} imageOrientation="landscape" imageRadius={false} />
     </div>
     <div style={{paddingBottom: '2rem'}}>
       <BpkText textStyle={TEXT_STYLES.heading2}>Default Reverse</BpkText>
-      <BpkSnippet {...props} desktopLayout="imageRight" imageRadius="md" />
+      <BpkSnippet {...props} desktopLayout="imageRight" />
     </div>
     <div style={{ paddingBottom: '2rem', width: '33.33%' }}>
       <BpkText textStyle={TEXT_STYLES.heading2}>Vertical</BpkText>
-      <BpkSnippet {...props} desktopLayout="vertical" imageRadius="md" />
+      <BpkSnippet {...props} desktopLayout="vertical" />
     </div>
     <div style={{paddingBottom: '2rem'}}>
       <BpkText textStyle={TEXT_STYLES.heading2}>Empty Content</BpkText>
@@ -55,10 +63,6 @@ const DesktopExample = () => (
         bodyText=""
         buttonText=""
       />
-    </div>
-    <div>
-      <BpkText textStyle={TEXT_STYLES.heading2}>Default Radius</BpkText>
-      <BpkSnippet {...props} imageOrientation="landscape" />
     </div>
   </div>
 );

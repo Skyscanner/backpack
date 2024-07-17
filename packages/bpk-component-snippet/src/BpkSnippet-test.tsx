@@ -42,7 +42,7 @@ describe('BpkSnippet', () => {
     expect(screen.getByText('Call to Action')).toBeInTheDocument();
   });
 
-  it('should render vertical desktop correctly', () => {
+  it('should render desktop reverse correctly', () => {
     const { container } = render(
       <BpkSnippet {...props} desktopLayout="imageRight" />,
     );
@@ -52,23 +52,13 @@ describe('BpkSnippet', () => {
     );
   });
 
-  it('should render mobile correctly', () => {
+  it('should render desktop vertical correctly', () => {
     const { container } = render(
-      <BpkSnippet {...props} imageOrientation="landscape" />,
+      <BpkSnippet {...props} desktopLayout="vertical" />,
     );
     expect(container.querySelectorAll('.bpk-snippet--image').length).toBe(1);
-    expect(
-      container.querySelectorAll('.bpk-snippet--image__landscape').length,
-    ).toBe(1);
-  });
-
-  it('should render square mobile correctly', () => {
-    const { container } = render(
-      <BpkSnippet {...props} imageOrientation="square" />,
+    expect(container.querySelectorAll('.bpk-snippet--vertical').length).toBe(
+      1,
     );
-    expect(container.querySelectorAll('.bpk-snippet--image').length).toBe(1);
-    expect(
-      container.querySelectorAll('.bpk-snippet--image__square').length,
-    ).toBe(1);
   });
 });

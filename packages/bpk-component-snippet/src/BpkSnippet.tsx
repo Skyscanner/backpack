@@ -19,6 +19,10 @@
 import type { MouseEvent } from 'react';
 
 import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
+import BpkImage, {
+  BORDER_RADIUS_STYLES,
+  withLazyLoading,
+} from '../../bpk-component-image';
 import BpkText, {
   TEXT_STYLES,
   type TextStyle,
@@ -48,14 +52,6 @@ export const IMAGE_ORIENTATION = {
   square: 'square',
 } as const;
 
-export const IMAGE_RADIUS = {
-  xs: 'xs',
-  sm: 'sm',
-  md: 'md',
-  lg: 'lg',
-  xl: 'xl',
-} as const;
-
 export type Props = {
   src: string;
   altText: string;
@@ -68,9 +64,12 @@ export type Props = {
   headlineStyle?: TextStyle;
   desktopLayout?: (typeof DESKTOP_LAYOUT)[keyof typeof DESKTOP_LAYOUT];
   imageOrientation?: (typeof IMAGE_ORIENTATION)[keyof typeof IMAGE_ORIENTATION];
-  imageRadius?: (typeof IMAGE_RADIUS)[keyof typeof IMAGE_RADIUS];
+  imageRadius?: boolean;
   onClick?: (event: MouseEvent<HTMLButtonElement & HTMLAnchorElement>) => void;
 };
+
+const documentIfExists = typeof window !== 'undefined' ? document : null;
+const LazyLoadedImage = withLazyLoading(BpkImage, documentIfExists);
 
 const BpkSnippet = ({
   altText,
@@ -82,68 +81,85 @@ const BpkSnippet = ({
   headline,
   headlineStyle = TEXT_STYLES.hero5,
   imageOrientation,
-  imageRadius,
+  imageRadius = true,
   onClick,
   src,
   subheading,
-}: Props) => (
-  <div
-    className={getClassName(
-      'bpk-snippet',
-      desktopLayout === 'imageRight' && 'bpk-snippet--row-reverse',
-      desktopLayout === 'vertical' && 'bpk-snippet--vertical',
-    )}
-  >
+}: Props) => {
+  let imageAspectRatio;
+  switch (imageOrientation) {
+    case 'landscape':
+      imageAspectRatio = 3 / 2;
+      break;
+    case 'square':
+      imageAspectRatio = 1;
+      break;
+    case 'portrait':
+      imageAspectRatio = 5 / 7;
+      break;
+    default:
+      imageAspectRatio = 3 / 2;
+      break;
+  }
+  return (
     <div
       className={getClassName(
-        desktopLayout === 'vertical'
-          ? 'bpk-snippet--vertical--container'
-          : 'bpk-snippet--container',
-        `bpk-snippet--image__${imageOrientation}`,
+        'bpk-snippet',
+        desktopLayout === 'imageRight' && 'bpk-snippet--row-reverse',
+        desktopLayout === 'vertical' && 'bpk-snippet--vertical',
       )}
     >
-      <img
+      <div
         className={getClassName(
-          'bpk-snippet--image',
-          `bpk-snippet--image__radius--${imageRadius}`,
+          desktopLayout === 'vertical'
+            ? 'bpk-snippet--vertical--container'
+            : 'bpk-snippet--container',
         )}
-        alt={altText}
-        src={src}
-        loading="lazy"
-      />
+      >
+        <LazyLoadedImage
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+          className={getClassName('bpk-snippet--image')}
+          altText={altText}
+          aspectRatio={imageAspectRatio}
+          borderRadiusStyle={
+            imageRadius ? BORDER_RADIUS_STYLES.sm : BORDER_RADIUS_STYLES.none
+          }
+          src={src}
+        />
+      </div>
+      <div
+        className={getClassName(
+          desktopLayout === 'vertical'
+            ? 'bpk-snippet--vertical--container'
+            : 'bpk-snippet--container',
+          desktopLayout === 'vertical'
+            ? ' bpk-snippet--vertical--content'
+            : 'bpk-snippet--content',
+        )}
+      >
+        {headline && (
+          <div className={getClassName('bpk-snippet--headline')}>
+            <BpkText textStyle={headlineStyle}>{headline}</BpkText>
+          </div>
+        )}
+        {subheading && (
+          <div className={getClassName('bpk-snippet--subheading')}>
+            <BpkText textStyle={TEXT_STYLES.subheading}>{subheading}</BpkText>
+          </div>
+        )}
+        {bodyText && (
+          <div className={getClassName('bpk-snippet--bodyText')}>
+            <BpkText textStyle={bodyStyle}>{bodyText}</BpkText>
+          </div>
+        )}
+        {buttonText && onClick && (
+          <BpkButtonV2 type={buttonStyle} onClick={onClick}>
+            {buttonText}
+          </BpkButtonV2>
+        )}
+      </div>
     </div>
-    <div
-      className={getClassName(
-        desktopLayout === 'vertical'
-          ? 'bpk-snippet--vertical--container'
-          : 'bpk-snippet--container',
-        desktopLayout === 'vertical'
-          ? ' bpk-snippet--vertical--content'
-          : 'bpk-snippet--content',
-      )}
-    >
-      {headline && (
-        <div className={getClassName('bpk-snippet--headline')}>
-          <BpkText textStyle={headlineStyle}>{headline}</BpkText>
-        </div>
-      )}
-      {subheading && (
-        <div className={getClassName('bpk-snippet--subheading')}>
-          <BpkText textStyle={TEXT_STYLES.subheading}>{subheading}</BpkText>
-        </div>
-      )}
-      {bodyText && (
-        <div className={getClassName('bpk-snippet--bodyText')}>
-          <BpkText textStyle={bodyStyle}>{bodyText}</BpkText>
-        </div>
-      )}
-      {buttonText && onClick && (
-        <BpkButtonV2 type={buttonStyle} onClick={onClick}>
-          {buttonText}
-        </BpkButtonV2>
-      )}
-    </div>
-  </div>
-);
+  );
+};
 
 export default BpkSnippet;
