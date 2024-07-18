@@ -33,7 +33,8 @@ const getClassName = cssModules(STYLES);
 const AlignedMinusIcon = withButtonAlignment(MinusIcon);
 const AlignedPlusIcon = withButtonAlignment(PlusIcon);
 
-type Props = CommonProps & { inputClassName?: string | null;
+type Props = CommonProps & {
+  inputClassName?: string | null;
   /**
    * A simple function that will allow you to set the format of the display value e.g. local dates or times.
    */
@@ -55,9 +56,6 @@ type Props = CommonProps & { inputClassName?: string | null;
    */
   compareValues: (arg0: any, arg1: any) => number;
 };
-
-// We want to maintain native input events across our form components. Along with react updating
-// the value attribute we can set it via native handlers and emit the "change" event.
 
 const BpkConfigurableNudger = ({
   buttonType = 'secondary',
@@ -97,6 +95,8 @@ const BpkConfigurableNudger = ({
         onClick={() => {
           const newValue = decrementValue(value);
           onChange(newValue);
+          // We want to maintain native input events across our form components. Along with react updating
+          // the value attribute we can set it via native handlers and emit a "change" event.
           inputRef.current && setNativeValue(inputRef.current, `${newValue}`);
         }}
         disabled={minButtonDisabled}
@@ -122,6 +122,8 @@ const BpkConfigurableNudger = ({
         onClick={() => {
           const newValue = incrementValue(value);
           onChange(newValue);
+          // We want to maintain native input events across our form components. Along with react updating
+          // the value attribute we can set it via native handlers and emit a "change" event.
           inputRef.current && setNativeValue(inputRef.current, `${newValue}`);
         }}
         disabled={maxButtonDisabled}
