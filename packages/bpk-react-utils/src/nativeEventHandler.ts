@@ -16,31 +16,21 @@
  * limitations under the License.
  */
 
-// Simple function to emit 'change' events on a given input element.
-function emitChangeEvent(element: HTMLInputElement) {
-  const newEvent = new Event('change', {
-    bubbles: true,
-  });
-  element.dispatchEvent(newEvent);
-}
-
-// There are cases where input element's values are modifed in react. 
+// There are cases where input element's values are modifed indirectly.
 // This causes the elements to not emit events that would have been if they had been modified by the user directly.
-// In order to maintain the expected native behaviour of the input element, It's possible to call this function
-// during an "onEvent" handler and update the element value, together with updating react it's own state.
+// In order to maintain the expected native behaviour of the input element, It's possible to call this function during an
+// "onEvent" handler and update the element value, together with updating react it's own state which isn't mapped to the elements value prop.
 function setNativeValue(element: HTMLInputElement, value: string) {
-  const { set: valueSetter } =
-    Object.getOwnPropertyDescriptor(element, 'value') || {};
-  const prototype = Object.getPrototypeOf(element);
-  const { set: prototypeValueSetter } =
-    Object.getOwnPropertyDescriptor(prototype, 'value') || {};
-
-  if (prototypeValueSetter && valueSetter !== prototypeValueSetter) {
-    prototypeValueSetter.call(element, value);
-    emitChangeEvent(element);
-  } else if (valueSetter) {
-    valueSetter.call(element, value);
-    emitChangeEvent(element);
+  const inputProto = window.HTMLInputElement.prototype;
+  const descriptor = Object.getOwnPropertyDescriptor(
+    inputProto,
+    'value',
+  ) as PropertyDescriptor;
+  const setValue = descriptor.set;
+  if (setValue) {
+    const event = new Event('change', { bubbles: true });
+    setValue.call(element, value);
+    element.dispatchEvent(event);
   }
 }
 
