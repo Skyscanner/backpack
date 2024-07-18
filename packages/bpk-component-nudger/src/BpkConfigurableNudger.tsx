@@ -106,8 +106,8 @@ const BpkConfigurableNudger = ({
         <AlignedMinusIcon />
       </BpkButtonV2>
       <input
-        aria-live="polite"
         type="text"
+        aria-live="polite"
         defaultValue={formatValue(value)}
         id={id}
         ref={inputRef}
