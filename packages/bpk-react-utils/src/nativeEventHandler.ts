@@ -33,7 +33,6 @@ function setNativeValue(element: HTMLInputElement, value: string) {
   if (prototypeValueSetter && valueSetter !== prototypeValueSetter) {
     prototypeValueSetter.call(element, value);
     fireChangeEvent(element);
-    
   } else if (valueSetter) {
     valueSetter.call(element, value);
     fireChangeEvent(element);
