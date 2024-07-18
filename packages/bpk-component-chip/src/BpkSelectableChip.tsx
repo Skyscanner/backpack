@@ -51,6 +51,7 @@ const BpkSelectableChip = ({
                            }: Props) => {
   const [isSelected, setIsSelected] = useState(selected);
 
+  // Testing
   const classNames = getClassName(
     'bpk-chip',
     `bpk-chip--${type}`,
