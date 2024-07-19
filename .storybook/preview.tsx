@@ -24,16 +24,8 @@ import '../packages/bpk-stylesheets/font';
 import '../packages/bpk-stylesheets/larken';
 
 import BpkRtlToggle from '../packages/bpk-component-rtl-toggle';
-import BpkThemeToggle, {
-  updateOnThemeChange,
-} from '../packages/bpk-component-theme-toggle';
-import BpkThemeProvider from '../packages/bpk-theming';
-
-import themeableAttributes from './themeableAttributes';
 
 import type { Preview } from '@storybook/react';
-
-const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 
 const preview: Preview = {
   decorators: [
@@ -52,15 +44,9 @@ const preview: Preview = {
       }
       return (
         <div>
-          <EnhancedThemeProvider themeAttributes={themeableAttributes}>
             {story()}
-          </EnhancedThemeProvider>
           <br />
           <BpkRtlToggle />
-          <br />
-          <div style={{ width: '10rem' }}>
-            <BpkThemeToggle />
-          </div>
         </div>
     )},
   ],

@@ -23,6 +23,7 @@
 @use 'sass:math';
 @use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/icons';
 
 .bpk-icon-marker {
   $marker-width: 26px;
@@ -63,6 +64,8 @@
     left: ($marker-width - $bpk-icon-size-sm-px) * 0.5;
     color: tokens.$bpk-surface-default-day;
 
+    @include icons.bpk-icon--rtl-support;
+
     > svg {
       position: absolute;
 
@@ -84,6 +87,7 @@
       top: 8px;
       left: ($selected-marker-width - $bpk-icon-size-sm-px) * 0.5;
 
+      @include icons.bpk-icon--rtl-support;
       @include utils.bpk-themeable-property(
         color,
         --bpk-icon-marker-default-selected-color,

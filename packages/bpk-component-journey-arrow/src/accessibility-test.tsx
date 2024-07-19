@@ -19,32 +19,17 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkDialog from './BpkDialog';
+import BpkJourneyArrow from './BpkJourneyArrow';
 
-describe('BpkDialog accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const customRenderTarget = document.createElement('div');
+describe('BpkJourneyArrow accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues with no stops', async () => {
+    const { container } = render(<BpkJourneyArrow />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 
-    const { container } = render(
-      <>
-        <div id="pagewrap">
-          <button type="button">Open dialog</button>
-        </div>
-        <BpkDialog
-          id="my-modal"
-          ariaLabel="example dialog to showcase component"
-          ariaModal
-          onClose={jest.fn()}
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-          getApplicationElement={jest.fn()}
-          isOpen
-          renderTarget={() => customRenderTarget}
-        >
-          Dialog content inside a custom target
-        </BpkDialog>
-      </>,
-    );
+  it('should not have programmatically-detectable accessibility issues with stops', async () => {
+    const { container } = render(<BpkJourneyArrow stops={2} />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

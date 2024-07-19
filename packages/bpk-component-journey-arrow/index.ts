@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkJourneyArrow, {
+  type Props as BpkJourneyArrowProps,
+} from './src/BpkJourneyArrow';
 
-import { themeAttributes as linkAttributes } from '../../bpk-component-link';
-
-export default [...linkAttributes];
+export type { BpkJourneyArrowProps };
+export default BpkJourneyArrow;
