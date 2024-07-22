@@ -29,6 +29,7 @@ export type CommonProps = {
   max: string | number;
   value: string | number;
   onChange: (arg0: any) => void | null;
+  name?: string | null;
   className?: string | null;
   /**
    * This is the label that will be read out when screen reader users tab to the increase button. Make sure you use a descriptive label.

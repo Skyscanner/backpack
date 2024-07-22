@@ -16,31 +16,11 @@
  * limitations under the License.
  */
 
+import BpkInsetBanner, {
+  type Props as BpkInsetBannerProps,
+  VARIANT,
+} from './src/BpkInsetBanner';
 
-import BpkDialog from '../../packages/bpk-component-dialog/src/BpkDialog';
-
-import {
-  DefaultExample,
-  WithIconExample,
-  NotDismissibleExample,
-  WithFlareExample,
-} from './examples';
-
-export default {
-  title: 'bpk-component-dialog',
-  component: BpkDialog,
-};
-
-export const Default = DefaultExample;
-export const WithAnIcon = WithIconExample;
-
-export const NotDismissible = NotDismissibleExample;
-
-export const WithFlare = WithFlareExample;
-
-export const VisualTest = DefaultExample;
-
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
-};
+export type { BpkInsetBannerProps };
+export { VARIANT };
+export default BpkInsetBanner;

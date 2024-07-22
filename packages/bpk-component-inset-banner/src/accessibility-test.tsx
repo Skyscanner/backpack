@@ -19,31 +19,26 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkDialog from './BpkDialog';
+import BpkInsetBanner, { VARIANT } from './BpkInsetBanner';
 
-describe('BpkDialog accessibility tests', () => {
+describe('BpkInsetBanner accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const customRenderTarget = document.createElement('div');
-
     const { container } = render(
-      <>
-        <div id="pagewrap">
-          <button type="button">Open dialog</button>
-        </div>
-        <BpkDialog
-          id="my-modal"
-          ariaLabel="example dialog to showcase component"
-          ariaModal
-          onClose={jest.fn()}
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-          getApplicationElement={jest.fn()}
-          isOpen
-          renderTarget={() => customRenderTarget}
-        >
-          Dialog content inside a custom target
-        </BpkDialog>
-      </>,
+      <BpkInsetBanner
+        title="Lorem ipsum"
+        subheadline="Lorem ipsum dolor sit amet"
+        logo="https://content.skyscnr.com/m/7950ed6f30581485/Medium-Skyscanner-Vertical-White.png"
+        backgroundColor="#F55D42"
+        callToAction={{
+          text: 'Sponsored',
+        }}
+        body={{
+          text: 'You can change your destination, date of travel, or both, with no change fee. Valid for all new bookings made up to 31 May for travel between now and 31 December 2020.',
+          linkText: 'More information',
+          link: 'www.skyscanner.net',
+        }}
+        variant={VARIANT.onDark}
+      />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

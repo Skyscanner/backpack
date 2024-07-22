@@ -16,11 +16,13 @@
  * limitations under the License.
  */
 
+import { useRef } from 'react';
+
 import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
 import { withButtonAlignment } from '../../bpk-component-icon';
 import MinusIcon from '../../bpk-component-icon/sm/minus';
 import PlusIcon from '../../bpk-component-icon/sm/plus';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, setNativeValue } from '../../bpk-react-utils';
 
 import { type CommonProps } from './common-types';
 
@@ -34,7 +36,7 @@ const AlignedPlusIcon = withButtonAlignment(PlusIcon);
 type Props = CommonProps & {
   inputClassName?: string | null;
   /**
-   * A simple function that will allow you to set the format of the display value e.g. local dates or times. 
+   * A simple function that will allow you to set the format of the display value e.g. local dates or times.
    */
   formatValue: (arg0: any) => string;
   /**
@@ -68,6 +70,7 @@ const BpkConfigurableNudger = ({
   inputClassName = null,
   max,
   min,
+  name,
   onChange,
   value,
   ...rest
@@ -82,32 +85,47 @@ const BpkConfigurableNudger = ({
     inputClassName && inputClassName,
     buttonType === 'secondaryOnDark' && 'bpk-nudger__input--secondary-on-dark',
   );
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   return (
     <div className={classNames}>
       <BpkButtonV2
         type={BUTTON_TYPES[buttonType]}
         iconOnly
-        onClick={() => onChange(decrementValue(value))}
+        onClick={() => {
+          const newValue = decrementValue(value);
+          onChange(newValue);
+          // We want to maintain native input events across our form components. Along with react updating
+          // the value attribute we can set it via native handlers and emit a "change" event.
+          inputRef.current && setNativeValue(inputRef.current, `${newValue}`);
+        }}
         disabled={minButtonDisabled}
         title={decreaseButtonLabel}
         aria-controls={id}
-      >        
+      >
         <AlignedMinusIcon />
       </BpkButtonV2>
       <input
         type="text"
         aria-live="polite"
-        readOnly
-        value={formatValue(value)}
+        defaultValue={formatValue(value)}
         id={id}
+        ref={inputRef}
+        name={name || id}
+        onChange={(event) => onChange(parseInt(event?.target.value, 10))}
         className={inputStyles}
         {...rest}
       />
       <BpkButtonV2
         type={BUTTON_TYPES[buttonType]}
         iconOnly
-        onClick={() => onChange(incrementValue(value))}
+        onClick={() => {
+          const newValue = incrementValue(value);
+          onChange(newValue);
+          // We want to maintain native input events across our form components. Along with react updating
+          // the value attribute we can set it via native handlers and emit a "change" event.
+          inputRef.current && setNativeValue(inputRef.current, `${newValue}`);
+        }}
         disabled={maxButtonDisabled}
         title={increaseButtonLabel}
         aria-controls={id}

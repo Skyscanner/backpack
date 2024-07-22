@@ -155,8 +155,8 @@
     "core-js": "^3.37.0",
     "css-loader": "^6.10.0",
     "d3-scale": "^4.0.2",
-    "danger": "^12.2.0",
-    "danger-plugin-toolbox": "^2.0.1",
+    "danger": "^12.3.3",
+    "danger-plugin-toolbox": "^3.0.1",
     "date-fns": "^3.6.0",
     "eslint_d": "^13.0.0",
     "glob": "^10.4.2",
@@ -186,7 +186,7 @@
     "style-loader": "^4.0.0",
     "ts-migrate": "^0.1.35",
     "typescript": "^5.4.3",
-    "webpack": "^5.92.1",
+    "webpack": "^5.93.0",
     "wrapper-webpack-plugin": "^2.2.2"
   }
 }

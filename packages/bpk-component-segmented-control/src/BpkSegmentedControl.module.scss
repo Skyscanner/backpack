@@ -88,16 +88,46 @@
 
 // Handle border lines between buttons
 .bpk-segmented-control:not(:first-of-type, [class*='selected']) {
-  border-left: tokens.$bpk-one-pixel-rem solid tokens.$bpk-line-day;
+  border-inline-start: tokens.$bpk-one-pixel-rem solid tokens.$bpk-line-day;
 }
 
 .bpk-segmented-control--surface-contrast:not(
     :first-of-type,
     [class*='selected']
   ) {
-  border-left: tokens.$bpk-one-pixel-rem solid tokens.$bpk-line-on-dark-day;
+  border-inline-start: tokens.$bpk-one-pixel-rem solid
+    tokens.$bpk-line-on-dark-day;
 }
 
 .bpk-segmented-control[class*='rightOfOption'] {
-  border-left: none;
+  border-inline-start: none;
+}
+
+.bpk-segmented-control:first-child {
+  border-top-left-radius: tokens.$bpk-border-radius-sm;
+  border-bottom-left-radius: tokens.$bpk-border-radius-sm;
+
+  @include utils.bpk-rtl {
+    border-top-left-radius: 0;
+    border-top-right-radius: tokens.$bpk-border-radius-sm;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: tokens.$bpk-border-radius-sm;
+  }
+}
+
+.bpk-segmented-control:last-child {
+  border-top-right-radius: tokens.$bpk-border-radius-sm;
+  border-bottom-right-radius: tokens.$bpk-border-radius-sm;
+
+  @include utils.bpk-rtl {
+    border-top-left-radius: tokens.$bpk-border-radius-sm;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: tokens.$bpk-border-radius-sm;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.bpk-segmented-control:focus {
+  border: (tokens.$bpk-one-pixel-rem * 2) solid tokens.$bpk-text-link-day;
+  outline: none;
 }
