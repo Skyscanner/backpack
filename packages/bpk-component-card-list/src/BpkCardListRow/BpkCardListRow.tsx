@@ -173,7 +173,10 @@ const BpkCardListRow = ({
         {children.map((card, index) => (
           <div
             key={`card-${index + 1}`}
-            className={getClassName('bpk-card-list-row__card')}
+            className={getClassName(
+              'bpk-card-list-row__card',
+              numberOfCardsToShow < 5 && 'bpk-card-list-row__card-padding',
+            )}
             ref={cardRef}
             style={{ width: `calc(100% / ${numberOfDisplay})` }}
           >

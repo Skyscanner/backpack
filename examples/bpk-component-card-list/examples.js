@@ -157,7 +157,7 @@ const GridToStackWithButtonExample = () => (
   />
 );
 
-const RowToRailWith4InitiallyShownCardsExmaple = () => (
+const RowToRailWith5InitiallyShownCardsExample = () => (
   <BpkCardList
     cardList={cards(DealsCard)}
     accessory="pagination"
@@ -165,7 +165,7 @@ const RowToRailWith4InitiallyShownCardsExmaple = () => (
     layoutMobile="rail"
     title={title}
     description={description}
-    initiallyShownCards={4}
+    initiallyShownCards={5}
     buttonText="Explore more"
   />
 );
@@ -192,7 +192,7 @@ const RowToStackExample = () => (
 
 export {
   RowToRailExample,
-  RowToRailWith4InitiallyShownCardsExmaple,
+  RowToRailWith5InitiallyShownCardsExample,
   GridToRailExample,
   GridToStackWithButtonExample,
   RowToStackExample,

@@ -634,7 +634,7 @@ exports[`BpkCardList should render correctly with header, row, rail and no acces
           data-testid="container"
         >
           <div
-            class="bpk-card-list-row__card"
+            class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
             <div>
@@ -642,7 +642,7 @@ exports[`BpkCardList should render correctly with header, row, rail and no acces
             </div>
           </div>
           <div
-            class="bpk-card-list-row__card"
+            class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
             <div>
@@ -700,7 +700,7 @@ exports[`BpkCardList should render correctly with header, row, rail and paginati
           data-testid="container"
         >
           <div
-            class="bpk-card-list-row__card"
+            class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
             <div>
@@ -708,7 +708,7 @@ exports[`BpkCardList should render correctly with header, row, rail and paginati
             </div>
           </div>
           <div
-            class="bpk-card-list-row__card"
+            class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
             <div>
@@ -716,7 +716,7 @@ exports[`BpkCardList should render correctly with header, row, rail and paginati
             </div>
           </div>
           <div
-            class="bpk-card-list-row__card"
+            class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
             <div>
@@ -774,7 +774,7 @@ exports[`BpkCardList should render correctly with header, row, stack and no acce
           data-testid="container"
         >
           <div
-            class="bpk-card-list-row__card"
+            class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
             <div>
@@ -782,7 +782,7 @@ exports[`BpkCardList should render correctly with header, row, stack and no acce
             </div>
           </div>
           <div
-            class="bpk-card-list-row__card"
+            class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
             <div>
@@ -834,7 +834,7 @@ exports[`BpkCardList should render correctly with row, rail and no accessory 1`]
           data-testid="container"
         >
           <div
-            class="bpk-card-list-row__card"
+            class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
             <div>
@@ -842,7 +842,7 @@ exports[`BpkCardList should render correctly with row, rail and no accessory 1`]
             </div>
           </div>
           <div
-            class="bpk-card-list-row__card"
+            class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
             <div>
@@ -894,7 +894,7 @@ exports[`BpkCardList should render correctly with row, rail and pagination acces
           data-testid="container"
         >
           <div
-            class="bpk-card-list-row__card"
+            class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
             <div>
@@ -902,7 +902,7 @@ exports[`BpkCardList should render correctly with row, rail and pagination acces
             </div>
           </div>
           <div
-            class="bpk-card-list-row__card"
+            class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
             <div>
@@ -910,7 +910,7 @@ exports[`BpkCardList should render correctly with row, rail and pagination acces
             </div>
           </div>
           <div
-            class="bpk-card-list-row__card"
+            class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
             <div>
@@ -962,7 +962,7 @@ exports[`BpkCardList should render correctly with row, stack and no accessory 1`
           data-testid="container"
         >
           <div
-            class="bpk-card-list-row__card"
+            class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
             <div>
@@ -970,7 +970,7 @@ exports[`BpkCardList should render correctly with row, stack and no accessory 1`
             </div>
           </div>
           <div
-            class="bpk-card-list-row__card"
+            class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
             <div>

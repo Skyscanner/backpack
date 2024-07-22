@@ -39,5 +39,10 @@
       padding: tokens.bpk-spacing-base() tokens.bpk-spacing-base()
         tokens.bpk-spacing-base();
     }
+
+    &-padding {
+      padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-base()
+        tokens.bpk-spacing-base() tokens.bpk-spacing-sm();
+    }
   }
 }

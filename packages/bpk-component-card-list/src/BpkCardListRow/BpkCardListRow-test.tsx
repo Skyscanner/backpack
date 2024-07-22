@@ -80,7 +80,9 @@ describe('BpkCardListRow', () => {
 
     expect(container).toMatchSnapshot();
     expect(
-      container.getElementsByClassName('bpk-card-list-row__card'),
+      container.getElementsByClassName(
+        'bpk-card-list-row__card bpk-card-list-row__card-padding',
+      ),
     ).toHaveLength(7);
     expect(getAllByRole('button')).toHaveLength(12); // 7 cards, 2 arrow, 3 indicators
     expect(container.getElementsByClassName('bpk-button')).toHaveLength(2);
@@ -109,6 +111,21 @@ describe('BpkCardListRow', () => {
     expect(container.getElementsByClassName('bpk-page-indicator')).toHaveLength(
       0,
     );
+  });
+
+  it('should not render without padding className when number of cards displayed is > 5', () => {
+    const { container } = render(
+      <BpkCardListRow {...props} numberOfCardsToShow={5}>
+        {mockCards(7)}
+      </BpkCardListRow>,
+    );
+
+    expect(
+      container.getElementsByClassName('bpk-card-list-row__card'),
+    ).toHaveLength(7);
+    expect(
+      container.getElementsByClassName('bpk-card-list-row__card-padding'),
+    ).toHaveLength(0);
   });
 
   describe('pagination accessory', () => {
