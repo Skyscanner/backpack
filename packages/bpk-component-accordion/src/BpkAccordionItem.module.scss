@@ -22,16 +22,16 @@
 @use '../../unstable__bpk-mixins/utils';
 
 .bpk-accordion {
+  &__item {
+    @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
+
+    &-on-dark {
+      @include borders.bpk-border-bottom-sm(tokens.$bpk-line-on-dark-day);
+    }
+  }
+
   &__title {
     height: auto;
-
-    &--collapsed {
-      @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
-
-      &-on-dark {
-        @include borders.bpk-border-bottom-sm(tokens.$bpk-line-on-dark-day);
-      }
-    }
   }
 
   &__toggle-button {
@@ -90,12 +90,8 @@
     &--expanded {
       padding-bottom: tokens.bpk-spacing-base();
 
-      @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
-
       &-on-dark {
         padding-bottom: tokens.bpk-spacing-base();
-
-        @include borders.bpk-border-bottom-sm(tokens.$bpk-line-on-dark-day);
       }
     }
   }
