@@ -37,6 +37,6 @@
   }
 
   &--border-radius-sm {
-    @include radii.bpk-border-radius-sm;
+    @include radii.bpk-border-radius-md;
   }
 }
