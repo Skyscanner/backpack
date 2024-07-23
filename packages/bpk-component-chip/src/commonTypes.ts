@@ -37,5 +37,4 @@ export interface CommonProps extends ButtonProps {
   selected?: boolean;
   leadingAccessoryView?: ReactNode;
   trailingAccessoryView?: ReactNode;
-  id: string;
 }
