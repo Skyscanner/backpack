@@ -39,12 +39,18 @@ exports[`BpkCardList should render correctly with grid, rail and button accessor
       <div
         class="bpk-card-list-grid"
       >
-        <div>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
+          Card 0
+        </button>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
           Card 1
-        </div>
-        <div>
-          Card 2
-        </div>
+        </button>
       </div>
       <button
         class="bpk-button bpk-button--primary"
@@ -90,12 +96,18 @@ exports[`BpkCardList should render correctly with grid, rail and expand accessor
       <div
         class="bpk-card-list-grid"
       >
-        <div>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
+          Card 0
+        </button>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
           Card 1
-        </div>
-        <div>
-          Card 2
-        </div>
+        </button>
       </div>
       <button
         class="bpk-button bpk-button--link"
@@ -158,12 +170,18 @@ exports[`BpkCardList should render correctly with grid, rail and no accessory 1`
       <div
         class="bpk-card-list-grid"
       >
-        <div>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
+          Card 0
+        </button>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
           Card 1
-        </div>
-        <div>
-          Card 2
-        </div>
+        </button>
       </div>
     </div>
   </div>
@@ -209,12 +227,18 @@ exports[`BpkCardList should render correctly with grid, stack and button accesso
       <div
         class="bpk-card-list-grid"
       >
-        <div>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
+          Card 0
+        </button>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
           Card 1
-        </div>
-        <div>
-          Card 2
-        </div>
+        </button>
       </div>
       <button
         class="bpk-button bpk-button--primary"
@@ -260,12 +284,18 @@ exports[`BpkCardList should render correctly with grid, stack and expand accesso
       <div
         class="bpk-card-list-grid"
       >
-        <div>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
+          Card 0
+        </button>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
           Card 1
-        </div>
-        <div>
-          Card 2
-        </div>
+        </button>
       </div>
       <button
         class="bpk-button bpk-button--link"
@@ -328,12 +358,18 @@ exports[`BpkCardList should render correctly with grid, stack and no accessory 1
       <div
         class="bpk-card-list-grid"
       >
-        <div>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
+          Card 0
+        </button>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
           Card 1
-        </div>
-        <div>
-          Card 2
-        </div>
+        </button>
       </div>
     </div>
   </div>
@@ -379,12 +415,18 @@ exports[`BpkCardList should render correctly with header, grid, rail and expand 
       <div
         class="bpk-card-list-grid"
       >
-        <div>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
+          Card 0
+        </button>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
           Card 1
-        </div>
-        <div>
-          Card 2
-        </div>
+        </button>
       </div>
       <button
         class="bpk-button bpk-button--link"
@@ -453,12 +495,18 @@ exports[`BpkCardList should render correctly with header, grid, rail and no acce
       <div
         class="bpk-card-list-grid"
       >
-        <div>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
+          Card 0
+        </button>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
           Card 1
-        </div>
-        <div>
-          Card 2
-        </div>
+        </button>
       </div>
     </div>
   </div>
@@ -504,12 +552,18 @@ exports[`BpkCardList should render correctly with header, grid, stack and expand
       <div
         class="bpk-card-list-grid"
       >
-        <div>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
+          Card 0
+        </button>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
           Card 1
-        </div>
-        <div>
-          Card 2
-        </div>
+        </button>
       </div>
       <button
         class="bpk-button bpk-button--link"
@@ -578,12 +632,18 @@ exports[`BpkCardList should render correctly with header, grid, stack and no acc
       <div
         class="bpk-card-list-grid"
       >
-        <div>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
+          Card 0
+        </button>
+        <button
+          class="bpk-card bpk-card--atomic-button bpk-card--padded"
+          type="button"
+        >
           Card 1
-        </div>
-        <div>
-          Card 2
-        </div>
+        </button>
       </div>
     </div>
   </div>
@@ -637,17 +697,23 @@ exports[`BpkCardList should render correctly with header, row, rail and no acces
             class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
-            <div>
-              Card 1
-            </div>
+            <button
+              class="bpk-card bpk-card--atomic-button bpk-card--padded"
+              type="button"
+            >
+              Card 0
+            </button>
           </div>
           <div
             class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
-            <div>
-              Card 2
-            </div>
+            <button
+              class="bpk-card bpk-card--atomic-button bpk-card--padded"
+              type="button"
+            >
+              Card 1
+            </button>
           </div>
         </div>
       </div>
@@ -703,25 +769,34 @@ exports[`BpkCardList should render correctly with header, row, rail and paginati
             class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
-            <div>
+            <button
+              class="bpk-card bpk-card--atomic-button bpk-card--padded"
+              type="button"
+            >
+              Card 0
+            </button>
+          </div>
+          <div
+            class="bpk-card-list-row__card bpk-card-list-row__card-padding"
+            style="width: calc(100% / 3);"
+          >
+            <button
+              class="bpk-card bpk-card--atomic-button bpk-card--padded"
+              type="button"
+            >
               Card 1
-            </div>
+            </button>
           </div>
           <div
             class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
-            <div>
+            <button
+              class="bpk-card bpk-card--atomic-button bpk-card--padded"
+              type="button"
+            >
               Card 2
-            </div>
-          </div>
-          <div
-            class="bpk-card-list-row__card bpk-card-list-row__card-padding"
-            style="width: calc(100% / 3);"
-          >
-            <div>
-              Card 3
-            </div>
+            </button>
           </div>
         </div>
       </div>
@@ -777,17 +852,23 @@ exports[`BpkCardList should render correctly with header, row, stack and no acce
             class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
-            <div>
-              Card 1
-            </div>
+            <button
+              class="bpk-card bpk-card--atomic-button bpk-card--padded"
+              type="button"
+            >
+              Card 0
+            </button>
           </div>
           <div
             class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
-            <div>
-              Card 2
-            </div>
+            <button
+              class="bpk-card bpk-card--atomic-button bpk-card--padded"
+              type="button"
+            >
+              Card 1
+            </button>
           </div>
         </div>
       </div>
@@ -837,17 +918,23 @@ exports[`BpkCardList should render correctly with row, rail and no accessory 1`]
             class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
-            <div>
-              Card 1
-            </div>
+            <button
+              class="bpk-card bpk-card--atomic-button bpk-card--padded"
+              type="button"
+            >
+              Card 0
+            </button>
           </div>
           <div
             class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
-            <div>
-              Card 2
-            </div>
+            <button
+              class="bpk-card bpk-card--atomic-button bpk-card--padded"
+              type="button"
+            >
+              Card 1
+            </button>
           </div>
         </div>
       </div>
@@ -897,25 +984,34 @@ exports[`BpkCardList should render correctly with row, rail and pagination acces
             class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
-            <div>
+            <button
+              class="bpk-card bpk-card--atomic-button bpk-card--padded"
+              type="button"
+            >
+              Card 0
+            </button>
+          </div>
+          <div
+            class="bpk-card-list-row__card bpk-card-list-row__card-padding"
+            style="width: calc(100% / 3);"
+          >
+            <button
+              class="bpk-card bpk-card--atomic-button bpk-card--padded"
+              type="button"
+            >
               Card 1
-            </div>
+            </button>
           </div>
           <div
             class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
-            <div>
+            <button
+              class="bpk-card bpk-card--atomic-button bpk-card--padded"
+              type="button"
+            >
               Card 2
-            </div>
-          </div>
-          <div
-            class="bpk-card-list-row__card bpk-card-list-row__card-padding"
-            style="width: calc(100% / 3);"
-          >
-            <div>
-              Card 3
-            </div>
+            </button>
           </div>
         </div>
       </div>
@@ -965,17 +1061,23 @@ exports[`BpkCardList should render correctly with row, stack and no accessory 1`
             class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
-            <div>
-              Card 1
-            </div>
+            <button
+              class="bpk-card bpk-card--atomic-button bpk-card--padded"
+              type="button"
+            >
+              Card 0
+            </button>
           </div>
           <div
             class="bpk-card-list-row__card bpk-card-list-row__card-padding"
             style="width: calc(100% / 3);"
           >
-            <div>
-              Card 2
-            </div>
+            <button
+              class="bpk-card bpk-card--atomic-button bpk-card--padded"
+              type="button"
+            >
+              Card 1
+            </button>
           </div>
         </div>
       </div>

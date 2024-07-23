@@ -17,6 +17,8 @@
  */
 import { render } from '@testing-library/react';
 
+import mockCards from '../testMocks';
+
 import BpkCardList from './BpkCardList';
 
 describe('BpkCardList', () => {
@@ -25,7 +27,7 @@ describe('BpkCardList', () => {
       <BpkCardList
         title="Title"
         description="Description"
-        cardList={[<div>Card 1</div>, <div>Card 2</div>]}
+        cardList={mockCards(2)}
         layoutDesktop="grid"
         layoutMobile="stack"
       />,
@@ -38,7 +40,7 @@ describe('BpkCardList', () => {
       <BpkCardList
         title="Title"
         description="Description"
-        cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
+        cardList={mockCards(3)}
         layoutDesktop="grid"
         layoutMobile="stack"
         initiallyShownCards={2}
@@ -55,7 +57,7 @@ describe('BpkCardList', () => {
       <BpkCardList
         title="Title"
         description="Description"
-        cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
+        cardList={mockCards(3)}
         layoutDesktop="grid"
         layoutMobile="stack"
         initiallyShownCards={2}
@@ -73,7 +75,7 @@ describe('BpkCardList', () => {
       <BpkCardList
         title="Title"
         description="Description"
-        cardList={[<div>Card 1</div>, <div>Card 2</div>]}
+        cardList={mockCards(2)}
         layoutDesktop="grid"
         layoutMobile="rail"
       />,
@@ -86,7 +88,7 @@ describe('BpkCardList', () => {
       <BpkCardList
         title="Title"
         description="Description"
-        cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
+        cardList={mockCards(3)}
         layoutDesktop="grid"
         layoutMobile="rail"
         initiallyShownCards={2}
@@ -103,7 +105,7 @@ describe('BpkCardList', () => {
       <BpkCardList
         title="Title"
         description="Description"
-        cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
+        cardList={mockCards(3)}
         layoutDesktop="grid"
         layoutMobile="rail"
         initiallyShownCards={2}
@@ -121,7 +123,7 @@ describe('BpkCardList', () => {
       <BpkCardList
         title="Title"
         description="Description"
-        cardList={[<div>Card 1</div>, <div>Card 2</div>]}
+        cardList={mockCards(2)}
         layoutDesktop="row"
         layoutMobile="stack"
         ariaLabelIndicator="Go to page"
@@ -137,7 +139,7 @@ describe('BpkCardList', () => {
       <BpkCardList
         title="Title"
         description="Description"
-        cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
+        cardList={mockCards(3)}
         layoutDesktop="row"
         layoutMobile="rail"
         accessory="pagination"
@@ -154,7 +156,7 @@ describe('BpkCardList', () => {
       <BpkCardList
         title="Title"
         description="Description"
-        cardList={[<div>Card 1</div>, <div>Card 2</div>]}
+        cardList={mockCards(2)}
         layoutDesktop="row"
         layoutMobile="rail"
         ariaLabelIndicator="Go to page"
@@ -173,7 +175,7 @@ describe('BpkCardList', () => {
         buttonText="Button"
         onButtonClick={jest.fn()}
         href="https://www.skyscanner.net"
-        cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
+        cardList={mockCards(3)}
         layoutDesktop="grid"
         layoutMobile="stack"
         initiallyShownCards={2}
@@ -192,7 +194,7 @@ describe('BpkCardList', () => {
         buttonText="Button"
         onButtonClick={jest.fn()}
         href="https://www.skyscanner.net"
-        cardList={[<div>Card 1</div>, <div>Card 2</div>]}
+        cardList={mockCards(2)}
         layoutDesktop="grid"
         layoutMobile="stack"
       />,
@@ -208,7 +210,7 @@ describe('BpkCardList', () => {
         buttonText="Button"
         onButtonClick={jest.fn()}
         href="https://www.skyscanner.net"
-        cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
+        cardList={mockCards(3)}
         layoutDesktop="grid"
         layoutMobile="rail"
         initiallyShownCards={2}
@@ -227,7 +229,7 @@ describe('BpkCardList', () => {
         buttonText="Button"
         onButtonClick={jest.fn()}
         href="https://www.skyscanner.net"
-        cardList={[<div>Card 1</div>, <div>Card 2</div>]}
+        cardList={mockCards(2)}
         layoutDesktop="grid"
         layoutMobile="rail"
       />,
@@ -243,7 +245,7 @@ describe('BpkCardList', () => {
         buttonText="Button"
         onButtonClick={jest.fn()}
         href="https://www.skyscanner.net"
-        cardList={[<div>Card 1</div>, <div>Card 2</div>]}
+        cardList={mockCards(2)}
         layoutDesktop="row"
         layoutMobile="stack"
         ariaLabelIndicator="Go to page"
@@ -262,7 +264,7 @@ describe('BpkCardList', () => {
         buttonText="Button"
         onButtonClick={jest.fn()}
         href="https://www.skyscanner.net"
-        cardList={[<div>Card 1</div>, <div>Card 2</div>, <div>Card 3</div>]}
+        cardList={mockCards(3)}
         layoutDesktop="row"
         layoutMobile="rail"
         accessory="pagination"
@@ -282,7 +284,7 @@ describe('BpkCardList', () => {
         buttonText="Button"
         onButtonClick={jest.fn()}
         href="https://www.skyscanner.net"
-        cardList={[<div>Card 1</div>, <div>Card 2</div>]}
+        cardList={mockCards(2)}
         layoutDesktop="row"
         layoutMobile="rail"
         ariaLabelIndicator="Go to page"
