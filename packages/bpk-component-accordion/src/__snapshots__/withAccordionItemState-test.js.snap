@@ -3,6 +3,7 @@
 exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = `
 <DocumentFragment>
   <div
+    class="bpk-accordion__item"
     id="my-accordion"
   >
     <div
@@ -58,7 +59,11 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
         <div
           style="display: none;"
         >
-          My accordion content
+          <div
+            class="bpk-accordion__content-inner-container"
+          >
+            My accordion content
+          </div>
         </div>
       </div>
     </div>
@@ -69,6 +74,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
 exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "expanded" prop 1`] = `
 <DocumentFragment>
   <div
+    class="bpk-accordion__item"
     id="my-accordion"
   >
     <div
@@ -124,7 +130,11 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
         <div
           style="display: none;"
         >
-          My accordion content
+          <div
+            class="bpk-accordion__content-inner-container"
+          >
+            My accordion content
+          </div>
         </div>
       </div>
     </div>
@@ -135,6 +145,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
 exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "initiallyExpanded" prop 1`] = `
 <DocumentFragment>
   <div
+    class="bpk-accordion__item"
     id="my-accordion"
   >
     <div
@@ -188,7 +199,11 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
         style="height: auto; overflow: visible; transition: height 200ms ease;"
       >
         <div>
-          My accordion content
+          <div
+            class="bpk-accordion__content-inner-container"
+          >
+            My accordion content
+          </div>
         </div>
       </div>
     </div>

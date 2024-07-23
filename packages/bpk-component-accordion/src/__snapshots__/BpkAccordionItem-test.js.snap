@@ -3,6 +3,7 @@
 exports[`BpkAccordionItem should not render an "initiallyExpanded" attribute on the html node 1`] = `
 <DocumentFragment>
   <div
+    class="bpk-accordion__item"
     id="my-accordion"
   >
     <div
@@ -58,7 +59,11 @@ exports[`BpkAccordionItem should not render an "initiallyExpanded" attribute on 
         <div
           style="display: none;"
         >
-          My accordion content
+          <div
+            class="bpk-accordion__content-inner-container"
+          >
+            My accordion content
+          </div>
         </div>
       </div>
     </div>
@@ -69,6 +74,7 @@ exports[`BpkAccordionItem should not render an "initiallyExpanded" attribute on 
 exports[`BpkAccordionItem should render correctly 1`] = `
 <DocumentFragment>
   <div
+    class="bpk-accordion__item"
     id="my-accordion"
   >
     <div
@@ -124,7 +130,11 @@ exports[`BpkAccordionItem should render correctly 1`] = `
         <div
           style="display: none;"
         >
-          My accordion content
+          <div
+            class="bpk-accordion__content-inner-container"
+          >
+            My accordion content
+          </div>
         </div>
       </div>
     </div>
@@ -191,7 +201,11 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
         <div
           style="display: none;"
         >
-          My accordion content
+          <div
+            class="bpk-accordion__content-inner-container"
+          >
+            My accordion content
+          </div>
         </div>
       </div>
     </div>
@@ -202,6 +216,7 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
 exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
 <DocumentFragment>
   <div
+    class="bpk-accordion__item"
     id="my-accordion"
   >
     <div
@@ -255,7 +270,11 @@ exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
         style="height: auto; overflow: visible; transition: height 200ms ease;"
       >
         <div>
-          My accordion content
+          <div
+            class="bpk-accordion__content-inner-container"
+          >
+            My accordion content
+          </div>
         </div>
       </div>
     </div>
@@ -266,6 +285,7 @@ exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
 exports[`BpkAccordionItem should render correctly with "tagName" prop set 1`] = `
 <DocumentFragment>
   <div
+    class="bpk-accordion__item"
     id="my-accordion"
   >
     <div
@@ -321,7 +341,11 @@ exports[`BpkAccordionItem should render correctly with "tagName" prop set 1`] = 
         <div
           style="display: none;"
         >
-          My accordion content
+          <div
+            class="bpk-accordion__content-inner-container"
+          >
+            My accordion content
+          </div>
         </div>
       </div>
     </div>
@@ -332,6 +356,7 @@ exports[`BpkAccordionItem should render correctly with "tagName" prop set 1`] = 
 exports[`BpkAccordionItem should render correctly with "textStyle" prop set 1`] = `
 <DocumentFragment>
   <div
+    class="bpk-accordion__item"
     id="my-accordion"
   >
     <div
@@ -387,7 +412,11 @@ exports[`BpkAccordionItem should render correctly with "textStyle" prop set 1`] 
         <div
           style="display: none;"
         >
-          My accordion content
+          <div
+            class="bpk-accordion__content-inner-container"
+          >
+            My accordion content
+          </div>
         </div>
       </div>
     </div>
@@ -398,6 +427,7 @@ exports[`BpkAccordionItem should render correctly with "textStyle" prop set 1`] 
 exports[`BpkAccordionItem should render correctly with an icon set 1`] = `
 <DocumentFragment>
   <div
+    class="bpk-accordion__item"
     id="my-accordion"
   >
     <div
@@ -465,7 +495,11 @@ exports[`BpkAccordionItem should render correctly with an icon set 1`] = `
         <div
           style="display: none;"
         >
-          My accordion content
+          <div
+            class="bpk-accordion__content-inner-container"
+          >
+            My accordion content
+          </div>
         </div>
       </div>
     </div>
@@ -476,6 +510,7 @@ exports[`BpkAccordionItem should render correctly with an icon set 1`] = `
 exports[`BpkAccordionItem should render correctly with no divider 1`] = `
 <DocumentFragment>
   <div
+    class="bpk-accordion__item"
     id="my-accordion"
   >
     <div
@@ -531,7 +566,11 @@ exports[`BpkAccordionItem should render correctly with no divider 1`] = `
         <div
           style="display: none;"
         >
-          My accordion content
+          <div
+            class="bpk-accordion__content-inner-container"
+          >
+            My accordion content
+          </div>
         </div>
       </div>
     </div>
@@ -543,6 +582,7 @@ exports[`BpkAccordionItem should render correctly with no divider 1`] = `
 exports[`BpkAccordionItem should render correctly with onDark set 1`] = `
 <DocumentFragment>
   <div
+    class="bpk-accordion__item"
     id="my-accordion"
   >
     <div
@@ -598,7 +638,11 @@ exports[`BpkAccordionItem should render correctly with onDark set 1`] = `
         <div
           style="display: none;"
         >
-          My accordion content
+          <div
+            class="bpk-accordion__content-inner-container"
+          >
+            My accordion content
+          </div>
         </div>
       </div>
     </div>
