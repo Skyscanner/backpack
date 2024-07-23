@@ -155,7 +155,7 @@ const BpkAccordionItem = (props: Props) => {
         </button>
       </div>
       <div id={contentId} className={contentClassNames.join(' ')}>
-        <AnimateHeight duration={800} height={expanded ? 'auto' : 0}>
+        <AnimateHeight duration={200} height={expanded ? 'auto' : 0}>
           <div
             className={getClassName('bpk-accordion__content-inner-container')}
           >
