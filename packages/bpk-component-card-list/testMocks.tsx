@@ -18,7 +18,12 @@
 
 import BpkCard from '../bpk-component-card';
 
-const mockCards = (numberOfCards: number) =>
-  [...Array(numberOfCards)].map((k, v) => <BpkCard>{`Card ${v}`}</BpkCard>);
+const mockCards = (numberOfCards: number) => {
+  const cards = [];
+  for (let i = 0; i < numberOfCards; i+=1) {
+    cards.push(<BpkCard key={i}>{`Card ${i}`}</BpkCard>);
+  }
+  return cards;
+};
 
 export default mockCards;
