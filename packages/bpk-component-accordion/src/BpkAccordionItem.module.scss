@@ -86,13 +86,9 @@
 
   &__content-container {
     margin: 0;
+  }
 
-    &--expanded {
-      padding-bottom: tokens.bpk-spacing-base();
-
-      &-on-dark {
-        padding-bottom: tokens.bpk-spacing-base();
-      }
-    }
+  &__content-inner-container {
+    padding-bottom: tokens.bpk-spacing-base();
   }
 }
