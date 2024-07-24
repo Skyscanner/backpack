@@ -64,23 +64,15 @@ const BpkSelectableChip = ({
   );
 
   return (
-    <label>
-      <input
-        type={role === 'checkbox' ? 'checkbox' : 'radio'}
-        className={getClassName('bpk-chip__hidden-input')}
-        name={name}
-        aria-label={accessibilityLabel}
-        disabled={disabled}
-        checked={selected}
-        {...inputProps}
-      />
-      <button
+    <>
+    <label htmlFor={inputProps.id}>
+      <span
         aria-checked={role === 'button' || role === 'tab' ? undefined : selected}
         className={classNames}
-        disabled={disabled}
+        // disabled={disabled}
         role={role}
         title={accessibilityLabel}
-        type="button"
+        // type="button"
         {...rest}
       >
         {leadingAccessoryView && (
@@ -99,9 +91,21 @@ const BpkSelectableChip = ({
             {trailingAccessoryView}
           </span>
         )}
-      </button>
+      </span>
     </label>
-  );
+  <input
+    type={role === 'checkbox' ? 'checkbox' : 'radio'}
+    className={getClassName('bpk-chip__hidden-input')}
+    name={name}
+    disabled={disabled}
+    defaultChecked={selected}
+    aria-disabled="true"
+    aria-hidden="true"
+    {...inputProps}
+  />
+    </>
+)
+  ;
 };
 
 export default BpkSelectableChip;
