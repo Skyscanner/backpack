@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import type { ComponentProps, ReactNode, SyntheticEvent } from 'react';
 
 export const CHIP_TYPES = {
@@ -26,12 +25,12 @@ export const CHIP_TYPES = {
 } as const;
 
 // onClick is already part of the button props, but we need to specify that they are required
-interface ButtonProps extends Omit<ComponentProps<'button'>, 'type'> {
-  // onClick: (event: SyntheticEvent<HTMLButtonElement>) => void | null;
+interface FakeButtonProps extends Omit<ComponentProps<'input'>, 'type'> {
+  onClick: (event: SyntheticEvent<HTMLInputElement>) => void | null;
   children?: ReactNode | string;
   type?: (typeof CHIP_TYPES)[keyof typeof CHIP_TYPES]; // this is different from the native button type
 }
-export interface CommonProps extends ButtonProps {
+export interface CommonProps extends FakeButtonProps {
   accessibilityLabel: string;
   disabled?: boolean;
   selected?: boolean;

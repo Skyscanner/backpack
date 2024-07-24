@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import  { type ReactNode, useRef } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
@@ -37,21 +37,21 @@ export interface Props extends CommonProps {
 }
 
 const BpkSelectableChip = ({
-   accessibilityLabel,
-   children,
-   className,
-   disabled = false,
-   dismissible = false,
-   inputProps = {},
-   leadingAccessoryView = null,
-   name = "",
-   role = 'checkbox',
-   selected = false,
-   trailingAccessoryView = null,
-   type = CHIP_TYPES.default,
-   ...rest
- }: Props) => {
-
+  accessibilityLabel,
+  children,
+  className,
+  disabled = false,
+  dismissible = false,
+  id = null,
+  leadingAccessoryView = null,
+  name = '',
+  onClick = ()=>{},
+  role = 'checkbox',
+  selected = false,
+  trailingAccessoryView = null,
+  type = CHIP_TYPES.default,
+  ...rest
+}: Props) => {
   const classNames = getClassName(
     'bpk-chip',
     `bpk-chip--${type}`,
@@ -60,52 +60,56 @@ const BpkSelectableChip = ({
     !children && 'bpk-chip--icon-only',
     !disabled && selected && `bpk-chip--${type}-selected`,
     dismissible && `bpk-chip--${type}-dismissible`,
-    className
+    className,
   );
+  const randomId = useRef(`${crypto.randomUUID().substring(30)}`);
+  if (!id){
+    id = randomId.current;
+  }
 
   return (
-    <>
-    <label htmlFor={inputProps.id}>
-      <span
-        aria-checked={role === 'button' || role === 'tab' ? undefined : selected}
-        className={classNames}
-        // disabled={disabled}
-        role={role}
-        title={accessibilityLabel}
-        // type="button"
+    <span>
+      <label htmlFor={id}>
+        <span
+          aria-checked={
+            role === 'button' || role === 'tab' ? undefined : selected
+          }
+          className={classNames}
+          role={role}
+          title={accessibilityLabel}
+        >
+          {leadingAccessoryView && (
+            <span
+              className={getClassName(
+                'bpk-chip__leading-accessory-view',
+                !children && 'bpk-chip--icon-only__leading-accessory-view',
+              )}
+            >
+              {leadingAccessoryView}
+            </span>
+          )}
+          <BpkText textStyle={TEXT_STYLES.footnote}>{children}</BpkText>
+          {trailingAccessoryView && (
+            <span className={getClassName('bpk-chip__trailing-accessory-view')}>
+              {trailingAccessoryView}
+            </span>
+          )}
+        </span>
+      </label>
+      <input
+        type={role === 'checkbox' ? 'checkbox' : 'radio'}
+        className={getClassName('bpk-chip__hidden-input')}
+        name={name}
+        disabled={disabled}
+        defaultChecked={selected}
+        aria-disabled="true"
+        aria-hidden="true"
+        onChange={onClick}
+        id={id}
         {...rest}
-      >
-        {leadingAccessoryView && (
-          <span
-            className={getClassName(
-              'bpk-chip__leading-accessory-view',
-              !children && 'bpk-chip--icon-only__leading-accessory-view'
-            )}
-          >
-            {leadingAccessoryView}
-          </span>
-        )}
-        <BpkText textStyle={TEXT_STYLES.footnote}>{children}</BpkText>
-        {trailingAccessoryView && (
-          <span className={getClassName('bpk-chip__trailing-accessory-view')}>
-            {trailingAccessoryView}
-          </span>
-        )}
-      </span>
-    </label>
-  <input
-    type={role === 'checkbox' ? 'checkbox' : 'radio'}
-    className={getClassName('bpk-chip__hidden-input')}
-    name={name}
-    disabled={disabled}
-    defaultChecked={selected}
-    aria-disabled="true"
-    aria-hidden="true"
-    {...inputProps}
-  />
-    </>
-)
-  ;
+      />
+    </span>
+  );
 };
 
 export default BpkSelectableChip;
