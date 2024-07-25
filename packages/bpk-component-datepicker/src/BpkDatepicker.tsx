@@ -94,7 +94,7 @@ type Props = {
   onOpenChange?: (arg0: boolean) => void | null;
   selectionConfiguration?: SelectionConfiguration;
   initiallyFocusedDate?: Date;
-  renderTarget?: (() => HTMLElement | null) | HTMLElement | null;
+  renderTarget?: null | HTMLElement | (() => null | HTMLElement);
   isOpen?: boolean;
   valid?: boolean;
   // Disabling this as if we set a default property for this value it causes the internal onClose function to stop working for default setup
