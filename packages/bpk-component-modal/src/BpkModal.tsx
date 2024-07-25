@@ -16,12 +16,9 @@
  * limitations under the License.
  */
 
-import { useEffect } from 'react';
 import type { ReactNode } from 'react';
 
-import { FloatingPortal } from '@floating-ui/react';
-
-import { cssModules, isDeviceIphone } from '../../bpk-react-utils';
+import { Portal, cssModules, isDeviceIphone } from '../../bpk-react-utils';
 import { withScrim } from '../../bpk-scrim-utils';
 
 import BpkModalInner, { MODAL_STYLING } from './BpkModalInner';
@@ -40,7 +37,7 @@ export type Props = Partial<ModalDialogProps> & {
   isOpen: boolean;
   closeOnScrimClick?: boolean;
   closeOnEscPressed?: boolean;
-  renderTarget?: (() => HTMLElement | null) | HTMLElement | null;
+  renderTarget?: null | HTMLElement | (() => null | HTMLElement);
   modalStyle?: ModalStyle;
 
   onClose?: (
@@ -74,28 +71,12 @@ const BpkModal = ({
   modalStyle = MODAL_STYLING.default,
   onClose = () => null,
   padded = true,
-  renderTarget = () => null,
+  renderTarget = null,
   showHeader = true,
   title = null,
   wide = false,
   ...rest
 }: Props) => {
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && onClose) {
-        onClose();
-      }
-    };
-
-    if (isOpen) {
-      window.addEventListener('keydown', handleKeyDown);
-    }
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [isOpen, onClose]);
-
   const containerClass = [getClassName('bpk-modal__container')];
 
   if (fullScreen || isIphone) {
@@ -106,35 +87,34 @@ const BpkModal = ({
     );
   }
 
-  const renTarget = typeof renderTarget === 'function' ? renderTarget() : renderTarget 
-
   return (
-    <>
-      {isOpen && (
-        <FloatingPortal root={renTarget}>
-          <ScrimBpkModalInner
-            onClose={onClose}
-            fullScreenOnMobile={fullScreenOnMobile}
-            fullScreen={fullScreen}
-            closeOnScrimClick={closeOnScrimClick}
-            containerClassName={containerClass.join(' ')}
-            isIphone={isIphone}
-            title={title}
-            className={className}
-            contentClassName={contentClassName}
-            closeLabel={closeLabel}
-            closeText={closeText}
-            wide={wide}
-            showHeader={showHeader}
-            padded={padded}
-            accessoryView={accessoryView}
-            dialogRef={dialogRef}
-            modalStyle={modalStyle}
-            {...rest}
-          />
-        </FloatingPortal>
-      )}
-    </>
+    <Portal
+      isOpen={isOpen}
+      onClose={onClose}
+      renderTarget={renderTarget}
+      closeOnEscPressed={closeOnEscPressed}
+    >
+      <ScrimBpkModalInner
+        onClose={onClose}
+        fullScreenOnMobile={fullScreenOnMobile}
+        fullScreen={fullScreen}
+        closeOnScrimClick={closeOnScrimClick}
+        containerClassName={containerClass.join(' ')}
+        isIphone={isIphone}
+        title={title}
+        className={className}
+        contentClassName={contentClassName}
+        closeLabel={closeLabel}
+        closeText={closeText}
+        wide={wide}
+        showHeader={showHeader}
+        padded={padded}
+        accessoryView={accessoryView}
+        dialogRef={dialogRef}
+        modalStyle={modalStyle}
+        {...rest}
+      />
+    </Portal>
   );
 };
 

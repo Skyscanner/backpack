@@ -48,6 +48,7 @@ type Props = {
 
 const BpkAccordionItem = (props: Props) => {
   const { divider, onDark } = useContext(BpkAccordionContext);
+  const itemClassNames = [getClassName('bpk-accordion__item')];
   const iconClassNames = [getClassName('bpk-accordion__item-expand-icon')];
   const titleTextClassNames = [getClassName('bpk-accordion__title-text')];
   const titleClassNames = [getClassName('bpk-accordion__title')];
@@ -69,6 +70,10 @@ const BpkAccordionItem = (props: Props) => {
   // it, but the benefit of a better container api versus this was worth it
   // $FlowFixMe[prop-missing] - see above
   delete rest.initiallyExpanded;
+
+  if (onDark) {
+    itemClassNames.push(getClassName('bpk-accordion__item--on-dark'));
+  }
 
   if (expanded && !onDark) {
     iconClassNames.push(
@@ -125,7 +130,7 @@ const BpkAccordionItem = (props: Props) => {
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-    <div id={id} {...rest}>
+    <div id={id} className={getClassName('bpk-accordion__item')} {...rest}>
       <div className={titleClassNames.join(' ')}>
         <button
           type="button"
@@ -136,23 +141,26 @@ const BpkAccordionItem = (props: Props) => {
         >
           <div className={`${getClassName('bpk-accordion__flex-container')}`}>
             <div className={titleTextClassNames.join(' ')}>
-              <BpkText
-                textStyle={textStyle}
-                tagName={tagName}
-              >
+              <BpkText textStyle={textStyle} tagName={tagName}>
                 {clonedIcon}
                 {title}
               </BpkText>
             </div>
-            <span className={`${getClassName('bpk-accordion__icon-wrapper')} ${iconClassNames.join(' ')}`}>
-              <ExpandIcon/>
+            <span
+              className={`${getClassName('bpk-accordion__icon-wrapper')} ${iconClassNames.join(' ')}`}
+            >
+              <ExpandIcon />
             </span>
           </div>
         </button>
       </div>
       <div id={contentId} className={contentClassNames.join(' ')}>
         <AnimateHeight duration={200} height={expanded ? 'auto' : 0}>
-          {children}
+          <div
+            className={getClassName('bpk-accordion__content-inner-container')}
+          >
+            {children}
+          </div>
         </AnimateHeight>
       </div>
     </div>
