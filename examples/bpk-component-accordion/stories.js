@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-
-
 import BpkAccordion from '../../packages/bpk-component-accordion/src/BpkAccordion';
 import BpkAccordionItem from '../../packages/bpk-component-accordion/src/BpkAccordionItem';
 
@@ -34,8 +32,12 @@ import {
   WithSeoContentExample,
   WithSeoContentOnDarkExample,
   SingleItemExampleWithoutDivider,
+  SingleItemExampleWithoutDividerOnDark,
 } from './examples';
-import { WithSingleItemAccordionStateMock, WithAccordionItemStateMock } from './stories-utils';
+import {
+  WithSingleItemAccordionStateMock,
+  WithAccordionItemStateMock,
+} from './stories-utils';
 
 export default {
   title: 'bpk-component-accordion',
@@ -70,11 +72,12 @@ export const WithContent = WithSeoContentExample;
 export const WithSeoContentOnDark = WithSeoContentOnDarkExample;
 
 export const WithoutDivider = SingleItemExampleWithoutDivider;
+export const WithoutDividerOnDark = SingleItemExampleWithoutDividerOnDark;
 
 export const VisualTest = SingleItemExample;
 export const VisualTestOnDark = WithDarkBackgroundExample;
 
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

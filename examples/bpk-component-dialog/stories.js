@@ -16,27 +16,31 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/radii';
-@use 'bpkImageMixins';
 
-.bpk-image {
-  opacity: 1;
+import BpkDialog from '../../packages/bpk-component-dialog/src/BpkDialog';
 
-  @include bpkImageMixins.bpk-image;
+import {
+  DefaultExample,
+  WithIconExample,
+  NotDismissibleExample,
+  WithFlareExample,
+} from './examples';
 
-  &__img {
-    @include bpkImageMixins.bpk-image__img;
-  }
+export default {
+  title: 'bpk-component-dialog',
+  component: BpkDialog,
+};
 
-  &__spinner {
-    @include bpkImageMixins.bpk-image__spinner;
-  }
+export const Default = DefaultExample;
+export const WithAnIcon = WithIconExample;
 
-  &--no-background {
-    @include bpkImageMixins.bpk-image--no-background;
-  }
+export const NotDismissible = NotDismissibleExample;
 
-  &--border-radius-sm {
-    @include radii.bpk-border-radius-md;
-  }
-}
+export const WithFlare = WithFlareExample;
+
+export const VisualTest = DefaultExample;
+
+export const VisualTestWithZoom = VisualTest.bind({});
+VisualTestWithZoom.args = {
+  zoomEnabled: true
+};
