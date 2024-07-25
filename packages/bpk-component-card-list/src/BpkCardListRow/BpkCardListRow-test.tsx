@@ -26,7 +26,7 @@ import mockCards from '../../testMocks';
 
 import BpkCardListRow from './BpkCardListRow';
 
-import type { BpkAccessoryTypes } from '../common-types';
+import type { ACCESSORY_TYPES } from '../common-types';
 
 jest.mock('../../../bpk-react-utils', () => ({
   ...jest.requireActual('../../../bpk-react-utils'),
@@ -41,7 +41,7 @@ const mockScroll = jest.fn();
 
 describe('BpkCardListRow', () => {
   const props = {
-    accessory: 'pagination' as typeof BpkAccessoryTypes.Pagination,
+    accessory: 'pagination' as typeof ACCESSORY_TYPES.Pagination,
     ariaLabelIndicator: 'Go to slide',
     ariaLabelNext: 'Next',
     ariaLabelPrev: 'Previous',

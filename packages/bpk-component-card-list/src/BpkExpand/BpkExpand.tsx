@@ -23,7 +23,7 @@ import {
 import ChevronDown from '../../../bpk-component-icon/sm/chevron-down';
 import ChevronUp from '../../../bpk-component-icon/sm/chevron-up';
 
-import type { BpkExpandProps } from '../common-types';
+import type { ExpandProps } from '../common-types';
 
 const AlignedChevronDownIcon = withButtonAlignment(withRtlSupport(ChevronDown));
 const AlignedChevronUpIcon = withButtonAlignment(withRtlSupport(ChevronUp));
@@ -34,7 +34,7 @@ const BpkExpand = ({
   hideContent,
   setCollapsed,
   showContent,
-}: BpkExpandProps) => {
+}: ExpandProps) => {
   const buttonIcon = collapsed ? (
     <AlignedChevronDownIcon />
   ) : (

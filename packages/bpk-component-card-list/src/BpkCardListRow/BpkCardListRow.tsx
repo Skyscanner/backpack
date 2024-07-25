@@ -29,7 +29,7 @@ import debounce from 'lodash/debounce';
 import BpkPageIndicator from '../../../bpk-component-page-indicator';
 import { cssModules, isRTL } from '../../../bpk-react-utils';
 
-import type { BpkAccessoryTypes } from '../common-types';
+import type { ACCESSORY_TYPES } from '../common-types';
 
 import STYLES from './BpkCardListRow.module.scss';
 
@@ -38,7 +38,7 @@ const DEBOUNCE_TIME = 150;
 let setVisibleIndexes: (array: number[]) => {};
 
 type BpkCardListRowProps = {
-  accessory?: typeof BpkAccessoryTypes.Pagination;
+  accessory?: typeof ACCESSORY_TYPES.Pagination;
   ariaLabelIndicator: string;
   ariaLabelNext: string;
   ariaLabelPrev: string;

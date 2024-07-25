@@ -20,19 +20,19 @@ import { BpkButtonV2 } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';
 import BpkExpand from '../BpkExpand';
 import {
-  BpkAccessoryTypes,
-  type BpkCardListGridStackProps,
+  ACCESSORY_TYPES,
+  type CardListGridStackProps,
 } from '../common-types';
 
 import STYLES from './BpkCardListStack.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkCardListStack = (props: BpkCardListGridStackProps) => {
+const BpkCardListStack = (props: CardListGridStackProps) => {
   const { accessory, children } = props;
 
   let accessoryContent;
-  if (accessory === BpkAccessoryTypes.Expand) {
+  if (accessory === ACCESSORY_TYPES.Expand) {
     const { collapsed, expandText, hideContent, setCollapsed, showContent } =
       props;
     accessoryContent = (
@@ -45,7 +45,7 @@ const BpkCardListStack = (props: BpkCardListGridStackProps) => {
         <>{expandText}</>
       </BpkExpand>
     );
-  } else if (accessory === BpkAccessoryTypes.Button) {
+  } else if (accessory === ACCESSORY_TYPES.Button) {
     const { buttonText, onButtonClick } = props;
     accessoryContent = (
       <BpkButtonV2 onClick={onButtonClick}>{buttonText}</BpkButtonV2>

@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import type { ReactElement } from 'react';
 import { useState } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
@@ -28,7 +27,7 @@ import BpkCardListGrid from './BpkCardListGrid';
 import BpkCardListRail from './BpkCardListRail';
 import BpkCardListRow from './BpkCardListRow';
 import BpkCardListStack from './BpkCardListStack';
-import { BpkAccessoryTypes, type BpkCardListProps } from './common-types';
+import { ACCESSORY_TYPES, LAYOUTS, type CardListProps } from './common-types';
 
 import STYLES from './BpkCardList.module.scss';
 
@@ -36,7 +35,7 @@ const getClassName = cssModules(STYLES);
 const MAX_ITEMS = 12; // MAX should be 12 for Desktop Grid and Mobile Stack
 const DEFAULT_ITEMS = 3;
 
-const BpkCardList = (props: BpkCardListProps) => {
+const BpkCardList = (props: CardListProps) => {
   const {
     buttonText,
     cardList,
@@ -81,19 +80,19 @@ const BpkCardList = (props: BpkCardListProps) => {
         <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
           {(isActive) => {
             if (isActive) {
-              if (layoutMobile === 'rail') {
+              if (layoutMobile === LAYOUTS.rail) {
                 return <BpkCardListRail>{cardList}</BpkCardListRail>;
               }
               const { accessory } = props;
 
               let modeProps = {};
-              if (accessory === BpkAccessoryTypes.Expand) {
+              if (accessory === ACCESSORY_TYPES.Expand) {
                 modeProps = {
                   accessory,
                   expandText: props.expandText,
                   onButtonClick: props.onButtonClick,
                 };
-              } else if (accessory === BpkAccessoryTypes.Button) {
+              } else if (accessory === ACCESSORY_TYPES.Button) {
                 modeProps = {
                   accessory,
                   buttonText: props.buttonText,
@@ -113,15 +112,15 @@ const BpkCardList = (props: BpkCardListProps) => {
               );
             }
 
-            if (layoutDesktop === 'row') {
-              const { accessory } = props;
+            if (layoutDesktop === LAYOUTS.row) {
+              const { accessory, ariaLabelIndicator, ariaLabelNext, ariaLabelPrev } = props;
               return (
                 <BpkCardListRow
                   accessory={button ? undefined : accessory}
                   numberOfCardsToShow={initiallyShownCards}
-                  ariaLabelNext={props.ariaLabelNext}
-                  ariaLabelPrev={props.ariaLabelPrev}
-                  ariaLabelIndicator={props.ariaLabelIndicator}
+                  ariaLabelNext={ariaLabelNext}
+                  ariaLabelPrev={ariaLabelPrev}
+                  ariaLabelIndicator={ariaLabelIndicator}
                 >
                   {cardList}
                 </BpkCardListRow>
@@ -130,13 +129,13 @@ const BpkCardList = (props: BpkCardListProps) => {
 
             const { accessory } = props;
             let accessoryProps = {};
-            if (accessory === BpkAccessoryTypes.Expand) {
+            if (accessory === ACCESSORY_TYPES.Expand) {
               accessoryProps = {
                 accessory,
                 expandText: props.expandText,
                 onButtonClick: props.onButtonClick,
               };
-            } else if (accessory === BpkAccessoryTypes.Button) {
+            } else if (accessory === ACCESSORY_TYPES.Button) {
               accessoryProps = {
                 accessory,
                 buttonText: props.buttonText,

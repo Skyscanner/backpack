@@ -18,16 +18,24 @@
 
 import type { Dispatch, ReactElement, SetStateAction } from 'react';
 
-export type layoutDesktopProps = 'row' | 'grid';
-export type layoutMobileProps = 'rail' | 'stack';
+export const LAYOUTS = {
+  row: 'row',
+  grid: 'grid',
+  rail: 'rail',
+  stack: 'stack'
+} as const;
 
-export const BpkAccessoryTypes = {
+
+export type layoutDesktopProps = typeof LAYOUTS.row | typeof LAYOUTS.grid;
+export type layoutMobileProps = typeof LAYOUTS.stack | typeof LAYOUTS.rail;
+
+export const ACCESSORY_TYPES = {
   Expand: 'expand',
   Button: 'button',
   Pagination: 'pagination',
 } as const;
 
-type BpkCardListBaseProps = {
+type CardListBaseProps = {
   title: string;
   description?: string;
   cardList: ReactElement[];
@@ -37,25 +45,25 @@ type BpkCardListBaseProps = {
 };
 
 type GridProps = {
-  layoutDesktop: 'grid';
-  accessory?: typeof BpkAccessoryTypes.Expand | typeof BpkAccessoryTypes.Button;
+  layoutDesktop: typeof LAYOUTS.grid;
+  accessory?: typeof ACCESSORY_TYPES.Expand | typeof ACCESSORY_TYPES.Button;
 };
 
 type RowProps = {
-  layoutDesktop: 'row';
-  accessory?: typeof BpkAccessoryTypes.Pagination;
+  layoutDesktop: typeof LAYOUTS.row;
+  accessory?: typeof ACCESSORY_TYPES.Pagination;
   ariaLabelIndicator: string;
   ariaLabelNext: string;
   ariaLabelPrev: string;
 };
 
 type StackProps = {
-  layoutMobile: 'stack';
-  accessory?: typeof BpkAccessoryTypes.Expand | typeof BpkAccessoryTypes.Button;
+  layoutMobile: typeof LAYOUTS.stack;
+  accessory?: typeof ACCESSORY_TYPES.Expand | typeof ACCESSORY_TYPES.Button;
 };
 
 type RailProps = {
-  layoutMobile: 'rail';
+  layoutMobile: typeof LAYOUTS.rail;
 };
 
 type ButtonProps = {
@@ -72,40 +80,40 @@ type NoAccessory = {
 };
 
 type ButtonAccessory = {
-  accessory: typeof BpkAccessoryTypes.Button;
+  accessory: typeof ACCESSORY_TYPES.Button;
 } & ButtonProps;
 
 type PaginationAccessory = {
-  accessory: typeof BpkAccessoryTypes.Pagination;
+  accessory: typeof ACCESSORY_TYPES.Pagination;
 };
 
 type ExpandAccessory = {
-  accessory: typeof BpkAccessoryTypes.Expand;
+  accessory: typeof ACCESSORY_TYPES.Expand;
   expandText: string;
   onButtonClick: () => void;
 };
 
-export type BpkCardListProps = BpkCardListBaseProps &
+export type CardListProps = CardListBaseProps &
   (GridProps | RowProps) &
   (StackProps | RailProps) &
   (HeaderButtonProps | NoHeaderButton) &
   (NoAccessory | ButtonAccessory | PaginationAccessory | ExpandAccessory);
 
-type BpkCardListGridStackBaseProps = {
+type CardListGridStackBaseProps = {
   children: ReactElement[];
 };
 
-type BpkCardListGridStackExpandModeProps = {
+type CardListGridStackExpandModeProps = {
   showContent: () => void;
   hideContent: () => void;
   collapsed: boolean;
   setCollapsed: Dispatch<SetStateAction<boolean>>;
 } & ExpandAccessory;
 
-export type BpkCardListGridStackProps = BpkCardListGridStackBaseProps &
-  (BpkCardListGridStackExpandModeProps | ButtonAccessory | NoAccessory);
+export type CardListGridStackProps = CardListGridStackBaseProps &
+  (CardListGridStackExpandModeProps | ButtonAccessory | NoAccessory);
 
-export type BpkExpandProps = {
+export type ExpandProps = {
   children: string | ReactElement;
   collapsed: boolean;
   hideContent: () => void;
