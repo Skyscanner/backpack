@@ -22,7 +22,7 @@
 @use '../../unstable__bpk-mixins/utils';
 
 .bpk-accordion {
-  &__item {
+  &__item--with-divider {
     @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
 
     &-on-dark {
@@ -89,6 +89,8 @@
   }
 
   &__content-inner-container {
-    padding-bottom: tokens.bpk-spacing-base();
+    &--with-divider {
+      padding-bottom: tokens.bpk-spacing-base();
+    }
   }
 }
