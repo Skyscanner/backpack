@@ -17,7 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import { updateOnDirectionChange } from '../../packages/bpk-component-rtl-toggle';
 import BpkSlider from '../../packages/bpk-component-slider';
@@ -25,15 +25,11 @@ import BpkSlider from '../../packages/bpk-component-slider';
 const SliderContainer = (props) => {
   const [value, setValue] = useState(props.value || 50);
 
-  const inputRef = useRef(null);
-  const inputRef2 = useRef(null);
-
   const min = props.min || 0;
   const time = !!props.time;
 
   const handleChange = (v) => {
     setValue(v);
-    console.log(inputRef.current);
   };
 
   const valueTimeFormatter = (v) => `12:${v.toString().padStart(2, '0')}pm`;
@@ -44,7 +40,6 @@ const SliderContainer = (props) => {
     </p>
   );
   
-
   return (
     <form>
       <div>
