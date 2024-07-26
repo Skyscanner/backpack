@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import BpkSnippet from '../../packages/bpk-component-snippet';
+import BpkSnippet, { BODY_STYLE, DESKTOP_LAYOUT, IMAGE_ORIENTATION } from '../../packages/bpk-component-snippet';
 import BpkText, {
   TEXT_STYLES,
 } from '../../packages/bpk-component-text/src/BpkText';
@@ -34,30 +34,33 @@ const props = {
 const DesktopExample = () => (
   <div>
     <div style={{paddingBottom: '2rem'}} >
-      <BpkText textStyle={TEXT_STYLES.heading2}>Default</BpkText>
-      <BpkSnippet {...props} imageOrientation="landscape" />
+      <BpkText textStyle={TEXT_STYLES.heading2}>Default Desktop</BpkText>
+      <BpkSnippet {...props} />
     </div>
     <div style={{paddingBottom: '2rem'}} >
-      <BpkText textStyle={TEXT_STYLES.heading2}>Default square</BpkText>
-      <BpkSnippet {...props} imageOrientation="square" />
-    </div>
-    <div>
-      <BpkText textStyle={TEXT_STYLES.heading2}>Default Radius off</BpkText>
-      <BpkSnippet {...props} imageOrientation="landscape" imageRadius={false} />
+      <BpkText textStyle={TEXT_STYLES.heading2}>Desktop square</BpkText>
+      <BpkSnippet {...props} imageOrientation={IMAGE_ORIENTATION.square} />
     </div>
     <div style={{paddingBottom: '2rem'}}>
-      <BpkText textStyle={TEXT_STYLES.heading2}>Default Reverse</BpkText>
-      <BpkSnippet {...props} desktopLayout="imageRight" />
+      <BpkText textStyle={TEXT_STYLES.heading2}>Desktop Radius off</BpkText>
+      <BpkSnippet {...props} imageRadius={false} />
+    </div>
+    <div style={{paddingBottom: '2rem'}}>
+      <BpkText textStyle={TEXT_STYLES.heading2}>Desktop Reverse</BpkText>
+      <BpkSnippet {...props} desktopLayout={DESKTOP_LAYOUT.imageRight} />
+    </div>
+    <div style={{paddingBottom: '2rem'}} >
+      <BpkText textStyle={TEXT_STYLES.heading2}>Desktop bodyLongform</BpkText>
+      <BpkSnippet {...props} bodyStyle={BODY_STYLE.bodyLongform} />
     </div>
     <div style={{ paddingBottom: '2rem', width: '33.33%' }}>
-      <BpkText textStyle={TEXT_STYLES.heading2}>Vertical</BpkText>
-      <BpkSnippet {...props} desktopLayout="vertical" />
+      <BpkText textStyle={TEXT_STYLES.heading2}>Desktop Vertical</BpkText>
+      <BpkSnippet {...props} desktopLayout={DESKTOP_LAYOUT.vertical} />
     </div>
     <div style={{paddingBottom: '2rem'}}>
-      <BpkText textStyle={TEXT_STYLES.heading2}>Empty Content</BpkText>
+      <BpkText textStyle={TEXT_STYLES.heading2}>Desktop Empty Content</BpkText>
       <BpkSnippet
         {...props}
-        imageOrientation="landscape"
         headline=""
         subheading=""
         bodyText=""
@@ -68,14 +71,15 @@ const DesktopExample = () => (
 );
 
 const MobileLandscapeExample = () => (
-  <BpkSnippet {...props} imageOrientation="landscape" />
+  <BpkSnippet {...props} imageOrientation={IMAGE_ORIENTATION.landscape} />
 );
 
 const MobileSquareExample = () => (
-  <BpkSnippet {...props} imageOrientation="square" />
+  <BpkSnippet {...props} imageOrientation={IMAGE_ORIENTATION.square} />
 );
+
 const MobilePortraitExample = () => (
-  <BpkSnippet {...props} imageOrientation="portrait" />
+  <BpkSnippet {...props} imageOrientation={IMAGE_ORIENTATION.portrait} />
 );
 
 export {

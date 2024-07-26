@@ -16,6 +16,19 @@
  * limitations under the License.
  */
 
-import BpkSnippet from './src/BpkSnippet';
+import BpkSnippet, {
+  BODY_STYLE,
+  BUTTON_STYLE,
+  DESKTOP_LAYOUT,
+  HEADLINE_STYLE,
+  IMAGE_ORIENTATION,
+} from './src/BpkSnippet';
 
 export default BpkSnippet;
+export {
+  BODY_STYLE,
+  BUTTON_STYLE,
+  DESKTOP_LAYOUT,
+  HEADLINE_STYLE,
+  IMAGE_ORIENTATION,
+};

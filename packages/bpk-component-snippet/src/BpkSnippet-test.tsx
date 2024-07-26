@@ -18,7 +18,7 @@
 
 import { render, screen } from '@testing-library/react';
 
-import BpkSnippet from './BpkSnippet';
+import BpkSnippet, { DESKTOP_LAYOUT } from './BpkSnippet';
 
 const props = {
   src: 'https://content.skyscnr.com/m/f427e62297cce49/original/edinburgh-view-from-calton-hill.jpg',
@@ -44,7 +44,7 @@ describe('BpkSnippet', () => {
 
   it('should render desktop reverse correctly', () => {
     const { container } = render(
-      <BpkSnippet {...props} desktopLayout="imageRight" />,
+      <BpkSnippet {...props} desktopLayout={DESKTOP_LAYOUT.imageRight} />,
     );
     expect(container.querySelectorAll('.bpk-snippet--image').length).toBe(1);
     expect(container.querySelectorAll('.bpk-snippet--row-reverse').length).toBe(
@@ -54,7 +54,7 @@ describe('BpkSnippet', () => {
 
   it('should render desktop vertical correctly', () => {
     const { container } = render(
-      <BpkSnippet {...props} desktopLayout="vertical" />,
+      <BpkSnippet {...props} desktopLayout={DESKTOP_LAYOUT.vertical} />,
     );
     expect(container.querySelectorAll('.bpk-snippet--image').length).toBe(1);
     expect(container.querySelectorAll('.bpk-snippet--vertical').length).toBe(

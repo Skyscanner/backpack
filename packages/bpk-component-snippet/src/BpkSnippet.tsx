@@ -18,6 +18,7 @@
 
 import type { MouseEvent } from 'react';
 
+import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
 import BpkImage, {
   BORDER_RADIUS_STYLES,
@@ -25,11 +26,8 @@ import BpkImage, {
 } from '../../bpk-component-image';
 import BpkText, {
   TEXT_STYLES,
-  type TextStyle,
 } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
-
-import type { ButtonType } from '../../bpk-component-button/src/BpkButtonV2/common-types';
 
 import STYLES from './BpkSnippet.module.scss';
 
@@ -38,6 +36,24 @@ const getClassName = cssModules(STYLES);
 export const BODY_STYLE = {
   bodyDefault: TEXT_STYLES.bodyDefault,
   bodyLongform: TEXT_STYLES.bodyLongform,
+} as const;
+
+export const BUTTON_STYLE = {
+  primary: BUTTON_TYPES.primary,
+  featured: BUTTON_TYPES.featured,
+} as const;
+
+export const HEADLINE_STYLE = {
+  heading1: TEXT_STYLES.heading1,
+  heading2: TEXT_STYLES.heading2,
+  heading3: TEXT_STYLES.heading3,
+  heading4: TEXT_STYLES.heading4,
+  heading5: TEXT_STYLES.heading5,
+  hero1: TEXT_STYLES.hero1,
+  hero2: TEXT_STYLES.hero2,
+  hero3: TEXT_STYLES.hero3,
+  hero4: TEXT_STYLES.hero4,
+  hero5: TEXT_STYLES.hero5,
 } as const;
 
 export const DESKTOP_LAYOUT = {
@@ -60,8 +76,8 @@ export type Props = {
   bodyText?: string | null;
   buttonText?: string | null;
   bodyStyle?: (typeof BODY_STYLE)[keyof typeof BODY_STYLE];
-  buttonStyle?: ButtonType;
-  headlineStyle?: TextStyle;
+  buttonStyle?: (typeof BUTTON_STYLE)[keyof typeof BUTTON_STYLE];
+  headlineStyle?: (typeof HEADLINE_STYLE)[keyof typeof HEADLINE_STYLE];
   desktopLayout?: (typeof DESKTOP_LAYOUT)[keyof typeof DESKTOP_LAYOUT];
   imageOrientation?: (typeof IMAGE_ORIENTATION)[keyof typeof IMAGE_ORIENTATION];
   imageRadius?: boolean;
@@ -95,13 +111,13 @@ const getImageAspectRatio = (
 
 const BpkSnippet = ({
   altText,
-  bodyStyle = TEXT_STYLES.bodyDefault,
+  bodyStyle = BODY_STYLE.bodyDefault,
   bodyText,
-  buttonStyle = BUTTON_TYPES.primary,
+  buttonStyle = BUTTON_STYLE.primary,
   buttonText,
-  desktopLayout = 'imageLeft',
+  desktopLayout = DESKTOP_LAYOUT.imageLeft,
   headline,
-  headlineStyle = TEXT_STYLES.hero5,
+  headlineStyle = HEADLINE_STYLE.hero5,
   imageOrientation,
   imageRadius = true,
   onClick,
@@ -143,9 +159,17 @@ const BpkSnippet = ({
       }
     >
       {headline && (
-        <div className={getClassName('bpk-snippet--headline')}>
-          <BpkText textStyle={headlineStyle}>{headline}</BpkText>
-        </div>
+        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+          {(isMobile: boolean) => (
+            <div className={getClassName('bpk-snippet--headline')}>
+              <BpkText
+                textStyle={isMobile ? HEADLINE_STYLE.heading4 : headlineStyle}
+              >
+                {headline}
+              </BpkText>
+            </div>
+          )}
+        </BpkBreakpoint>
       )}
       {subheading && (
         <div className={getClassName('bpk-snippet--subheading')}>
@@ -153,9 +177,17 @@ const BpkSnippet = ({
         </div>
       )}
       {bodyText && (
-        <div className={getClassName('bpk-snippet--bodyText')}>
-          <BpkText textStyle={bodyStyle}>{bodyText}</BpkText>
-        </div>
+        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+          {(isMobile: boolean) => (
+            <div className={getClassName('bpk-snippet--bodyText')}>
+              <BpkText
+                textStyle={isMobile ? BODY_STYLE.bodyDefault : bodyStyle}
+              >
+                {bodyText}
+              </BpkText>
+            </div>
+          )}
+        </BpkBreakpoint>
       )}
       {buttonText && onClick && (
         <BpkButtonV2 type={buttonStyle} onClick={onClick}>

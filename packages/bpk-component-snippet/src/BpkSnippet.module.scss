@@ -88,10 +88,4 @@
       padding-bottom: tokens.bpk-spacing-md();
     }
   }
-
-  &--headline {
-    > span {
-      @include typography.bpk-text--bold;
-    }
-  }
 }
