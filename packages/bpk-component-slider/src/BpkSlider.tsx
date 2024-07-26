@@ -16,12 +16,15 @@
  * limitations under the License.
  */
 
-import * as Slider from '@radix-ui/react-slider';
+import { type RefObject, useRef } from 'react';
 
-import { cssModules, isRTL } from '../../bpk-react-utils';
+import * as Slider from '@radix-ui/react-slider';
+import { usePrevious } from  '@radix-ui/react-use-previous';
+
+
+import { cssModules, isRTL, setNativeValue} from '../../bpk-react-utils';
 
 import STYLES from './BpkSlider.module.scss';
-import { useRef } from 'react';
 
 const getClassName = cssModules(STYLES);
 
@@ -43,7 +46,6 @@ export type Props = {
 const BpkSlider = ({
   ariaLabel,
   ariaValuetext,
-  // inputRefs,
   max,
   min,
   minDistance,
@@ -56,8 +58,8 @@ const BpkSlider = ({
 }: Props) => {
   const invert = isRTL();
   const currentValue = Array.isArray(value) ? value : [value];
-
-  const inputRef = useRef(true);
+  const previousValue = usePrevious(currentValue);
+  const inputRefs = [useRef(null) as RefObject<HTMLInputElement>, useRef(null) as RefObject<HTMLInputElement>]
   
   const processSliderValues = (
     sliderValues: number[],
@@ -71,12 +73,21 @@ const BpkSlider = ({
 
   const handleOnChange = (sliderValues: number[]) => {
     processSliderValues(sliderValues, onChange);
-    console.log(inputRef.current);
+    
   };
 
   const handleOnAfterChange = (sliderValues: number[]) => {
-    processSliderValues(sliderValues, onAfterChange);
-    
+    console.log(currentValue);
+    console.log(previousValue);
+    processSliderValues(sliderValues, onAfterChange);    
+    for (let i = 0; i < sliderValues.length; i+=1 ){
+      
+      if (previousValue[i] !== currentValue[i] && inputRefs[i].current) {
+        console.log('fire');
+        const element = inputRefs[i].current as HTMLInputElement;
+        setNativeValue(element, sliderValues.length > 0 ? `${sliderValues[i]}` : `${sliderValues}`)  
+      }
+    }
   };
 
   return (
@@ -103,7 +114,7 @@ const BpkSlider = ({
           aria-valuetext={ariaValuetext ? ariaValuetext[index] : val.toString()}
           className={getClassName('bpk-slider__thumb')}
           aria-valuenow={currentValue[index]}
-          inputRef={inputRef}
+          inputRef={inputRefs[index]}
         />
       ))}
     </Slider.Root>
