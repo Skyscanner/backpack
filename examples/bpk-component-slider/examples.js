@@ -17,64 +17,57 @@
  */
 
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+import { useRef, useState } from 'react';
 
 import { updateOnDirectionChange } from '../../packages/bpk-component-rtl-toggle';
 import BpkSlider from '../../packages/bpk-component-slider';
 
-class SliderContainer extends Component {
-  constructor(props) {
-    super();
+const SliderContainer = (props) => {
+  const [value, setValue] = useState(props.value || 50);
 
-    this.state = {
-      value: props.value || 50,
-    };
-  }
+  const inputRef = useRef(null);
+  const inputRef2 = useRef(null);
 
-  handleChange = (value) => {
-    this.setState({ value });
+  const min = props.min || 0;
+  const time = !!props.time;
+
+  const handleChange = (v) => {
+    setValue(v);
+    console.log(inputRef.current);
   };
 
-  valueTimeFormatter = (value) => `12:${value.toString().padStart(2, '0')}pm`;
+  const valueTimeFormatter = (v) => `12:${v.toString().padStart(2, '0')}pm`;
 
-  valueComponent = (min, max, formatter) => (
+  const valueComponent = (mi, ma, formatter) => (
     <p>
-      {formatter ? formatter(min) : min} - {formatter ? formatter(max) : max}
+      {formatter ? formatter(mi) : mi} - {formatter ? formatter(ma) : ma}
     </p>
   );
+  
 
-  render() {
-    const min = this.props.min || 0;
-    const time = !!this.props.time;
-
-    return (
+  return (
+    <form>
       <div>
-        {this.state.value.length
-          ? this.valueComponent(
-              this.state.value[0],
-              this.state.value[1],
-              time && this.valueTimeFormatter,
-            )
-          : this.valueComponent(
-              min,
-              this.state.value,
-              time && this.valueTimeFormatter,
-            )}
+        {value.length
+          ? valueComponent(value[0], value[1], time && valueTimeFormatter)
+          : valueComponent(min, value, time && valueTimeFormatter)}
         <BpkSlider
           min={min}
           max={time ? 59 : 100}
           step={1}
-          onChange={this.handleChange}
-          {...this.props}
-          value={this.state.value}
+          onChange={handleChange}
+          name="Slider"
+          {...props}
+          value={value}
           ariaLabel={['minimum', 'maximum']}
-          ariaValuetext={[this.state.value[0], this.state.value[1]]}
+          ariaValuetext={[value[0], value[1]]}
+          // inputRefs={[inputRef, inputRef2]}
         />
         <br />
       </div>
-    );
-  }
-}
+    </form>
+  );
+};
 
 SliderContainer.propTypes = {
   time: PropTypes.bool,

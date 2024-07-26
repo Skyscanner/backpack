@@ -21,6 +21,7 @@ import * as Slider from '@radix-ui/react-slider';
 import { cssModules, isRTL } from '../../bpk-react-utils';
 
 import STYLES from './BpkSlider.module.scss';
+import { useRef } from 'react';
 
 const getClassName = cssModules(STYLES);
 
@@ -28,21 +29,25 @@ export type Props = {
   max: number;
   min: number;
   minDistance?: number;
+  name?: string;
   step?: number;
   onChange: (value: number[] | number) => void;
   onAfterChange?: (value: number[] | number) => void;
   value: number[] | number;
   ariaLabel: string[];
   ariaValuetext?: string[];
+  inputRefs?: HTMLInputElement[];
   [rest: string]: any;
 };
 
 const BpkSlider = ({
   ariaLabel,
   ariaValuetext,
+  // inputRefs,
   max,
   min,
   minDistance,
+  name,
   onAfterChange,
   onChange,
   step,
@@ -52,6 +57,8 @@ const BpkSlider = ({
   const invert = isRTL();
   const currentValue = Array.isArray(value) ? value : [value];
 
+  const inputRef = useRef(true);
+  
   const processSliderValues = (
     sliderValues: number[],
     callback?: (val: number | number[]) => void,
@@ -64,10 +71,12 @@ const BpkSlider = ({
 
   const handleOnChange = (sliderValues: number[]) => {
     processSliderValues(sliderValues, onChange);
+    console.log(inputRef.current);
   };
 
   const handleOnAfterChange = (sliderValues: number[]) => {
     processSliderValues(sliderValues, onAfterChange);
+    
   };
 
   return (
@@ -81,6 +90,7 @@ const BpkSlider = ({
       onValueCommit={handleOnAfterChange}
       inverted={invert}
       minStepsBetweenThumbs={minDistance}
+      name={name}
       {...rest}
     >
       <Slider.Track className={getClassName('bpk-slider__track')}>
@@ -93,6 +103,7 @@ const BpkSlider = ({
           aria-valuetext={ariaValuetext ? ariaValuetext[index] : val.toString()}
           className={getClassName('bpk-slider__thumb')}
           aria-valuenow={currentValue[index]}
+          inputRef={inputRef}
         />
       ))}
     </Slider.Root>

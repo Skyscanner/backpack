@@ -21,6 +21,9 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
+  "scripts": {
+    "postinstall": "patch-package"
+  },
   "dependencies": {
     "@floating-ui/react": "^0.26.12",
     "@popperjs/core": "^2.11.8",
@@ -39,6 +42,7 @@
     "lodash.debounce": "^4.0.8",
     "normalize.css": "4.2.0",
     "object-assign": "^4.1.1",
+    "patch-package": "^8.0.0",
     "prop-types": "^15.7.2",
     "react-autosuggest": "^9.4.3",
     "react-table": "^7.8.0",

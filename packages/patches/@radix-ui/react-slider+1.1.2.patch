@@ -1,0 +1,33 @@
+diff --git a/node_modules/@radix-ui/react-slider/dist/index.js b/node_modules/@radix-ui/react-slider/patches/dist/index.js
+index c46cee175..35f259fe0 100644
+--- a/node_modules/@radix-ui/react-slider/dist/index.js
++++ b/node_modules/@radix-ui/react-slider/dist/index.js
+@@ -191,6 +191,7 @@ const $1791bb30e2e418d5$export$472062a354075cee = /*#__PURE__*/ $inrcs$react.for
+     })))), isFormControl && values.map((value, index)=>/*#__PURE__*/ $inrcs$react.createElement($1791bb30e2e418d5$var$BubbleInput, {
+             key: index,
+             name: name ? name + (values.length > 1 ? '[]' : '') : undefined,
++            inputRef: inputRef,
+             value: value
+         })
+     ));
+@@ -435,7 +436,7 @@ const $1791bb30e2e418d5$export$2c1b491743890dec = /*#__PURE__*/ $inrcs$react.for
+     }));
+ });
+ const $1791bb30e2e418d5$var$SliderThumbImpl = /*#__PURE__*/ $inrcs$react.forwardRef((props, forwardedRef)=>{
+-    const { __scopeSlider: __scopeSlider , index: index , ...thumbProps } = props;
++    const { __scopeSlider: __scopeSlider , index: index ,  inputRef: inputRef , ...thumbProps } = props;
+     const context = $1791bb30e2e418d5$var$useSliderContext($1791bb30e2e418d5$var$THUMB_NAME, __scopeSlider);
+     const orientation = $1791bb30e2e418d5$var$useSliderOrientationContext($1791bb30e2e418d5$var$THUMB_NAME, __scopeSlider);
+     const [thumb, setThumb] = $inrcs$react.useState(null);
+@@ -490,8 +491,9 @@ const $1791bb30e2e418d5$var$SliderThumbImpl = /*#__PURE__*/ $inrcs$react.forward
+     displayName: $1791bb30e2e418d5$var$THUMB_NAME
+ });
+ /* -----------------------------------------------------------------------------------------------*/ const $1791bb30e2e418d5$var$BubbleInput = (props)=>{
+-    const { value: value , ...inputProps } = props;
+-    const ref = $inrcs$react.useRef(null);
++    const { value: value , inputRef: inputRef , ...inputProps } = props;
++    let ref = $inrcs$react.useRef(null);
++    if (inputRef) ref = inputRef;
+     const prevValue = $inrcs$radixuireactuseprevious.usePrevious(value); // Bubble value change to parents (e.g form change event)
+     $inrcs$react.useEffect(()=>{
+         const input = ref.current;
