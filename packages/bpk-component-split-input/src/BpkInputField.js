@@ -37,7 +37,7 @@ class BpkInputField extends Component {
   }
 
   render() {
-    const { focus, id, index, label, value, ...rest } = this.props;
+    const { focus, id, index, label, name, value, ...rest } = this.props;
     return (
       <div key={index} className={getClassName('bpk-input-field')}>
         <BpkInput
@@ -49,6 +49,7 @@ class BpkInputField extends Component {
             this.input = input;
           }}
           value={value || ''}
+          name={name}
           {...rest}
         />
       </div>
@@ -62,6 +63,7 @@ BpkInputField.propTypes = {
   value: PropTypes.string,
   focus: PropTypes.bool.isRequired,
   index: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 BpkInputField.defaultProps = {
