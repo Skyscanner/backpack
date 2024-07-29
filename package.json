@@ -115,7 +115,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.20.2",
     "@babel/plugin-proposal-private-methods": "^7.17.12",
     "@babel/plugin-transform-runtime": "^7.24.3",
-    "@babel/preset-env": "^7.24.3",
+    "@babel/preset-env": "^7.25.0",
     "@babel/preset-react": "^7.24.1",
     "@babel/preset-typescript": "^7.24.1",
     "@babel/register": "^7.24.6",
