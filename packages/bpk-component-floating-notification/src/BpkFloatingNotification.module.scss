@@ -20,7 +20,7 @@
 @use '../../unstable__bpk-mixins/breakpoints';
 
 .bpk-floating-notification {
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: tokens.bpk-spacing-xl();
   left: 0;

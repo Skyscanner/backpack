@@ -48,10 +48,15 @@ type Props = {
 
 const BpkAccordionItem = (props: Props) => {
   const { divider, onDark } = useContext(BpkAccordionContext);
+  const itemClassNames = [getClassName('bpk-accordion__item')];
   const iconClassNames = [getClassName('bpk-accordion__item-expand-icon')];
   const titleTextClassNames = [getClassName('bpk-accordion__title-text')];
   const titleClassNames = [getClassName('bpk-accordion__title')];
   const contentClassNames = [getClassName('bpk-accordion__content-container')];
+  const contentInnerClassNames = [
+    getClassName('bpk-accordion__content-inner-container'),
+  ];
+
   const {
     children,
     expanded,
@@ -70,15 +75,28 @@ const BpkAccordionItem = (props: Props) => {
   // $FlowFixMe[prop-missing] - see above
   delete rest.initiallyExpanded;
 
+  if (divider) {
+    contentInnerClassNames.push(
+      getClassName('bpk-accordion__content-inner-container--with-divider'),
+    );
+
+    if (onDark) {
+      itemClassNames.push(
+        getClassName('bpk-accordion__item--with-divider-on-dark'),
+      );
+    } else {
+      itemClassNames.push(getClassName('bpk-accordion__item--with-divider'));
+    }
+  }
+
+  if (onDark) {
+    itemClassNames.push(getClassName('bpk-accordion__item--on-dark'));
+  }
+
   if (expanded && !onDark) {
     iconClassNames.push(
       getClassName('bpk-accordion__item-expand-icon--flipped'),
     );
-    if (divider) {
-      contentClassNames.push(
-        getClassName('bpk-accordion__content-container--expanded'),
-      );
-    }
   }
 
   if (expanded && onDark) {
@@ -88,11 +106,6 @@ const BpkAccordionItem = (props: Props) => {
     iconClassNames.push(
       getClassName('bpk-accordion__item-expand-icon--on-dark'),
     );
-    if (divider) {
-      contentClassNames.push(
-        getClassName('bpk-accordion__content-container--expanded-on-dark'),
-      );
-    }
     titleTextClassNames.push(
       getClassName('bpk-accordion__title-text--on-dark'),
     );
@@ -102,18 +115,10 @@ const BpkAccordionItem = (props: Props) => {
     iconClassNames.push(
       getClassName('bpk-accordion__item-expand-icon--on-dark'),
     );
-    if (divider) {
-      titleClassNames.push(
-        getClassName('bpk-accordion__title--collapsed-on-dark'),
-      );
-    }
+
     titleTextClassNames.push(
       getClassName('bpk-accordion__title-text--on-dark'),
     );
-  }
-
-  if (!expanded && !onDark && divider) {
-    titleClassNames.push(getClassName('bpk-accordion__title--collapsed'));
   }
 
   const contentId = `${id}_content`;
@@ -125,7 +130,7 @@ const BpkAccordionItem = (props: Props) => {
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-    <div id={id} {...rest}>
+    <div id={id} className={itemClassNames.join(' ')} {...rest}>
       <div className={titleClassNames.join(' ')}>
         <button
           type="button"
@@ -136,23 +141,22 @@ const BpkAccordionItem = (props: Props) => {
         >
           <div className={`${getClassName('bpk-accordion__flex-container')}`}>
             <div className={titleTextClassNames.join(' ')}>
-              <BpkText
-                textStyle={textStyle}
-                tagName={tagName}
-              >
+              <BpkText textStyle={textStyle} tagName={tagName}>
                 {clonedIcon}
                 {title}
               </BpkText>
             </div>
-            <span className={`${getClassName('bpk-accordion__icon-wrapper')} ${iconClassNames.join(' ')}`}>
-              <ExpandIcon/>
+            <span
+              className={`${getClassName('bpk-accordion__icon-wrapper')} ${iconClassNames.join(' ')}`}
+            >
+              <ExpandIcon />
             </span>
           </div>
         </button>
       </div>
       <div id={contentId} className={contentClassNames.join(' ')}>
         <AnimateHeight duration={200} height={expanded ? 'auto' : 0}>
-          {children}
+          <div className={contentInnerClassNames.join(' ')}>{children}</div>
         </AnimateHeight>
       </div>
     </div>

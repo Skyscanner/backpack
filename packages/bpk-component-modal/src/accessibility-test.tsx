@@ -23,24 +23,22 @@ import BpkModal from './BpkModal';
 
 describe('BpkModal accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
+    const customRenderTarget = document.createElement('div');
 
     const { container } = render(
-      <div id="pagewrap">
-        <button type="button">Open modal</button>
-        <BpkModal
-          id="my-modal"
-          title="Modal title"
-          onClose={jest.fn()}
-          closeLabel="Close"
-          dialogRef={jest.fn()}
-          isIphone={false}
-          getApplicationElement={jest.fn()}
-          isOpen
-          renderTarget={() => document.getElementById('pagewrap')}
-        >
-          Modal content inside a custom target
-        </BpkModal>
-      </div>,
+      <BpkModal
+        id="my-modal"
+        title="Modal title"
+        onClose={jest.fn()}
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+        isIphone={false}
+        getApplicationElement={jest.fn()}
+        isOpen
+        renderTarget={() => customRenderTarget}
+      >
+        Modal content inside a custom target
+      </BpkModal>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
