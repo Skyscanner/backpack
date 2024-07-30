@@ -17,7 +17,7 @@
  */
 import { renderToString } from 'react-dom/server';
 
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import useMediaQuery from './useMediaQuery';

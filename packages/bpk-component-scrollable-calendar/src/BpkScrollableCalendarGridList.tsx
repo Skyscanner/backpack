@@ -17,7 +17,7 @@
  */
 
 import { useRef, useState, useMemo, useEffect } from 'react';
-import type { ElementType } from 'react';
+import type { ElementType, ReactNode } from 'react';
 
 import { startOfDay, startOfMonth } from 'date-fns';
 import AutoSizer from 'react-virtualized-auto-sizer';
@@ -54,7 +54,7 @@ type Props = Partial<BpkCalendarGridProps> & {
   formatDateFull: (date: Date) => Date | string;
   month: Date;
   weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-  formatMonth: (date: Date) => Date | string;
+  formatMonth: (date: Date) => ReactNode | string;
   focusedDate?: Date | null;
   selectionConfiguration?: SelectionConfiguration;
   className?: string | null;

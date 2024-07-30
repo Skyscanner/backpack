@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ElementType } from 'react';
+import type { ElementType, ReactNode } from 'react';
 
 import { BpkCalendarGrid } from '../../bpk-component-calendar';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
@@ -33,7 +33,7 @@ type Props = Partial<BpkCalendarGridProps> & {
   month: Date;
   formatDateFull: (date: Date) => Date | string;
   weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-  formatMonth: (date: Date) => Date | string;
+  formatMonth: (date: Date) => ReactNode | string;
 };
 const BpkScrollableCalendarGrid = ({
   className,
