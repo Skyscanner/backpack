@@ -63,7 +63,7 @@ BpkInputField.propTypes = {
   value: PropTypes.string,
   focus: PropTypes.bool.isRequired,
   index: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
 };
 
 BpkInputField.defaultProps = {
