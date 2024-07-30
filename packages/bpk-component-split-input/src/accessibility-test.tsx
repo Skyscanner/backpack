@@ -24,7 +24,9 @@ import BpkSplitInput from './BpkSplitInput';
 
 describe('BpkSplitInput accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(<BpkSplitInput />);
+    const { container } = render(
+        <BpkSplitInput id="test" name="test"  label="test" onChange={() => {}} onSubmit={() => {}} />
+    );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

@@ -15,9 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
 import { Component } from 'react';
 
 import BpkInput from '../../bpk-component-input';
@@ -27,8 +25,18 @@ import STYLES from './BpkInputField.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-class BpkInputField extends Component {
-  componentDidUpdate(prevProps) {
+interface Props {
+  id: string;
+  label: string;
+  value?: string;
+  focus: boolean;
+  index: number;
+  name?: string;
+  [key: string]: any;
+}
+
+class BpkInputField extends Component<Props> {
+  componentDidUpdate(prevProps: Props) {
     const { focus } = this.props;
     if (prevProps.focus !== focus && this.input && focus) {
       this.input.focus();
@@ -36,16 +44,19 @@ class BpkInputField extends Component {
     }
   }
 
+  private input: HTMLInputElement | null = null;
+
   render() {
-    const { focus, id, index, label, value, ...rest } = this.props;
+    const { focus, id, index, label, name, value, ...rest } = this.props;
     return (
       <div key={index} className={getClassName('bpk-input-field')}>
         <BpkInput
           id={id}
           autoComplete="off"
-          maxLength="1"
+          name={name || ''}
+          maxLength={1}
           aria-label={`${label} ${index}`}
-          inputRef={(input) => {
+          inputRef={(input: HTMLInputElement) => {
             this.input = input;
           }}
           value={value || ''}
@@ -55,17 +66,5 @@ class BpkInputField extends Component {
     );
   }
 }
-
-BpkInputField.propTypes = {
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  value: PropTypes.string,
-  focus: PropTypes.bool.isRequired,
-  index: PropTypes.number.isRequired,
-};
-
-BpkInputField.defaultProps = {
-  value: '',
-};
 
 export default BpkInputField;
