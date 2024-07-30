@@ -49,7 +49,7 @@ class BpkInputField extends Component {
             this.input = input;
           }}
           value={value || ''}
-          name={name}
+          name={name || ''}
           {...rest}
         />
       </div>
