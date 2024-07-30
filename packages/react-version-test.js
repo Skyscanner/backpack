@@ -18,6 +18,6 @@
 
 import { version } from 'react';
 
-it('packages/* should be ^17.0.0', () => {
-  expect(version).toMatch(/^17/);
+it('packages/* should be ^18.0.0', () => {
+  expect(version).toMatch(/^18/);
 });
