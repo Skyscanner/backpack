@@ -24,9 +24,7 @@ import BpkImage, {
   BORDER_RADIUS_STYLES,
   withLazyLoading,
 } from '../../bpk-component-image';
-import BpkText, {
-  TEXT_STYLES,
-} from '../../bpk-component-text/src/BpkText';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkSnippet.module.scss';
@@ -124,43 +122,43 @@ const BpkSnippet = ({
   src,
   subheading,
 }: Props) => (
-  <div
-    className={getClassName(
-      'bpk-snippet',
-      desktopLayout === 'imageRight' && 'bpk-snippet--row-reverse',
-      desktopLayout === 'vertical' && 'bpk-snippet--vertical',
-    )}
-  >
-    <div
-      className={getClassName(
-        'bpk-snippet--image',
-        desktopLayout === 'vertical'
-          ? 'bpk-snippet--vertical--container'
-          : 'bpk-snippet--container',
-      )}
-    >
-      <LazyLoadedImage
-        altText={altText}
-        aspectRatio={getImageAspectRatio(imageOrientation)}
-        borderRadiusStyle={
-          imageRadius ? BORDER_RADIUS_STYLES.sm : BORDER_RADIUS_STYLES.none
-        }
-        src={src}
-      />
-    </div>
-    <div
-      className={
-        desktopLayout === 'vertical'
-          ? getClassName(
-              'bpk-snippet--vertical--container',
-              'bpk-snippet--vertical--content',
-            )
-          : getClassName('bpk-snippet--container', 'bpk-snippet--content')
-      }
-    >
-      {headline && (
-        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-          {(isMobile: boolean) => (
+  <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+    {(isMobile: boolean) => (
+      <div
+        className={getClassName(
+          'bpk-snippet',
+          desktopLayout === 'imageRight' && 'bpk-snippet--row-reverse',
+          desktopLayout === 'vertical' && 'bpk-snippet--vertical',
+        )}
+      >
+        <div
+          className={getClassName(
+            'bpk-snippet--image',
+            desktopLayout === 'vertical'
+              ? 'bpk-snippet--vertical--container'
+              : 'bpk-snippet--container',
+          )}
+        >
+          <LazyLoadedImage
+            altText={altText}
+            aspectRatio={getImageAspectRatio(imageOrientation)}
+            borderRadiusStyle={
+              imageRadius ? BORDER_RADIUS_STYLES.sm : BORDER_RADIUS_STYLES.none
+            }
+            src={src}
+          />
+        </div>
+        <div
+          className={
+            desktopLayout === 'vertical'
+              ? getClassName(
+                  'bpk-snippet--vertical--container',
+                  'bpk-snippet--vertical--content',
+                )
+              : getClassName('bpk-snippet--container', 'bpk-snippet--content')
+          }
+        >
+          {headline && (
             <div className={getClassName('bpk-snippet--headline')}>
               <BpkText
                 textStyle={isMobile ? HEADLINE_STYLE.heading4 : headlineStyle}
@@ -169,16 +167,12 @@ const BpkSnippet = ({
               </BpkText>
             </div>
           )}
-        </BpkBreakpoint>
-      )}
-      {subheading && (
-        <div className={getClassName('bpk-snippet--subheading')}>
-          <BpkText textStyle={TEXT_STYLES.subheading}>{subheading}</BpkText>
-        </div>
-      )}
-      {bodyText && (
-        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-          {(isMobile: boolean) => (
+          {subheading && (
+            <div className={getClassName('bpk-snippet--subheading')}>
+              <BpkText textStyle={TEXT_STYLES.subheading}>{subheading}</BpkText>
+            </div>
+          )}
+          {bodyText && (
             <div className={getClassName('bpk-snippet--bodyText')}>
               <BpkText
                 textStyle={isMobile ? BODY_STYLE.bodyDefault : bodyStyle}
@@ -187,15 +181,15 @@ const BpkSnippet = ({
               </BpkText>
             </div>
           )}
-        </BpkBreakpoint>
-      )}
-      {buttonText && onClick && (
-        <BpkButtonV2 type={buttonStyle} onClick={onClick}>
-          {buttonText}
-        </BpkButtonV2>
-      )}
-    </div>
-  </div>
+          {buttonText && onClick && (
+            <BpkButtonV2 type={buttonStyle} onClick={onClick}>
+              {buttonText}
+            </BpkButtonV2>
+          )}
+        </div>
+      </div>
+    )}
+  </BpkBreakpoint>
 );
 
 export default BpkSnippet;
