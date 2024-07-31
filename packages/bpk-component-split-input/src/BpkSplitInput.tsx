@@ -211,7 +211,7 @@ class BpkSplitInput extends Component<Props, State> {
           focus={focusedInput === index}
           id={`${id}-${index}`}
           label={label}
-          name={name}
+          name={`${name}-${index}`}
           type={type}
           large={large}
           value={inputValue && inputValue[index]}
