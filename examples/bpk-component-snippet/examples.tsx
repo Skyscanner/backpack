@@ -15,7 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import BpkSnippet, { BODY_STYLE, DESKTOP_LAYOUT, IMAGE_ORIENTATION } from '../../packages/bpk-component-snippet';
+import BpkSnippet, {
+  BODY_STYLE,
+  DESKTOP_LAYOUT,
+  IMAGE_ORIENTATION,
+} from '../../packages/bpk-component-snippet';
 import BpkText, {
   TEXT_STYLES,
 } from '../../packages/bpk-component-text/src/BpkText';
@@ -33,23 +37,23 @@ const props = {
 
 const DesktopExample = () => (
   <div>
-    <div style={{paddingBottom: '2rem'}} >
+    <div style={{ paddingBottom: '2rem' }}>
       <BpkText textStyle={TEXT_STYLES.heading2}>Default Desktop</BpkText>
       <BpkSnippet {...props} />
     </div>
-    <div style={{paddingBottom: '2rem'}} >
+    <div style={{ paddingBottom: '2rem' }}>
       <BpkText textStyle={TEXT_STYLES.heading2}>Desktop square</BpkText>
       <BpkSnippet {...props} imageOrientation={IMAGE_ORIENTATION.square} />
     </div>
-    <div style={{paddingBottom: '2rem'}}>
+    <div style={{ paddingBottom: '2rem' }}>
       <BpkText textStyle={TEXT_STYLES.heading2}>Desktop Radius off</BpkText>
       <BpkSnippet {...props} imageRadius={false} />
     </div>
-    <div style={{paddingBottom: '2rem'}}>
+    <div style={{ paddingBottom: '2rem' }}>
       <BpkText textStyle={TEXT_STYLES.heading2}>Desktop Reverse</BpkText>
       <BpkSnippet {...props} desktopLayout={DESKTOP_LAYOUT.imageRight} />
     </div>
-    <div style={{paddingBottom: '2rem'}} >
+    <div style={{ paddingBottom: '2rem' }}>
       <BpkText textStyle={TEXT_STYLES.heading2}>Desktop bodyLongform</BpkText>
       <BpkSnippet {...props} bodyStyle={BODY_STYLE.bodyLongform} />
     </div>
@@ -57,15 +61,9 @@ const DesktopExample = () => (
       <BpkText textStyle={TEXT_STYLES.heading2}>Desktop Vertical</BpkText>
       <BpkSnippet {...props} desktopLayout={DESKTOP_LAYOUT.vertical} />
     </div>
-    <div style={{paddingBottom: '2rem'}}>
+    <div style={{ paddingBottom: '2rem' }}>
       <BpkText textStyle={TEXT_STYLES.heading2}>Desktop Empty Content</BpkText>
-      <BpkSnippet
-        {...props}
-        headline=""
-        subheading=""
-        bodyText=""
-        buttonText=""
-      />
+      <BpkSnippet {...props} />
     </div>
   </div>
 );
