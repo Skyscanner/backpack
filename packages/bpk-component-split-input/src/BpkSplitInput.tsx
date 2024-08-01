@@ -201,7 +201,7 @@ class BpkSplitInput extends Component<Props, State> {
 
   renderInputs = () => {
     const { focusedInput, inputValue } = this.state;
-    const { id, inputLength, label, large, name, placeholder, type } = this.props;
+    const { id, inputLength, label, large, name, placeholder, type, ...rest } = this.props;
     const inputs = [];
     for (let index = 0; index < inputLength!; index += 1) {
       inputs.push(
@@ -216,11 +216,12 @@ class BpkSplitInput extends Component<Props, State> {
           large={large}
           value={inputValue && inputValue[index]}
           placeholder={placeholder}
-          onChange={this.handleOnChange}
+          {...rest}
           onInput={this.handleOnChange}
           onKeyDown={this.handleOnKeyDown}
           onPaste={this.handleOnPaste}
           onFocus={(e: FocusEvent<HTMLInputElement>) => this.handleOnFocus(e, index)}
+          onChange={this.handleOnChange}
         />,
       );
     }
