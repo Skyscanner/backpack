@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* eslint-disable no-await-in-loop */
 
 import { useEffect, useState } from 'react';
 
@@ -50,9 +49,11 @@ describe('BpkSplitInput', () => {
 
     const splitInputs = screen.getAllByTestId('mySplitInput');
 
+    /* eslint-disable no-await-in-loop */
     for (const input of splitInputs) {
       await userEvent.click(input);
       await userEvent.keyboard('1'); }
+    /* eslint-enable no-await-in-loop */
 
     const form = screen.getByTestId('form') as HTMLFormElement;
 
@@ -99,10 +100,12 @@ it('should emit change event when text has been entered and blurred', async () =
 
     expect(formValidation).not.toHaveBeenCalled();
 
+  /* eslint-disable no-await-in-loop */
     for (const input of splitInputs) {
       await userEvent.click(input);
       await userEvent.keyboard('1');
     }
+  /* eslint-enable no-await-in-loop */
 
     await userEvent.click(form); // change event emitted on blur
 
