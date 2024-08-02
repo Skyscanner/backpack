@@ -1,0 +1,91 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../unstable__bpk-mixins/breakpoints';
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/typography';
+
+.bpk-snippet {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @include breakpoints.bpk-breakpoint-small-tablet {
+    flex-direction: column;
+    gap: tokens.bpk-spacing-base();
+  }
+
+  &--row-reverse {
+    flex-direction: row-reverse;
+
+    @include breakpoints.bpk-breakpoint-small-tablet {
+      flex-direction: column;
+      gap: tokens.bpk-spacing-base();
+    }
+  }
+
+  &--vertical {
+    flex-direction: column;
+    gap: tokens.bpk-spacing-base();
+
+    &--container {
+      width: 100%;
+    }
+
+    &--content {
+      padding: 0;
+    }
+  }
+
+  &--container {
+    width: 50%;
+
+    @include breakpoints.bpk-breakpoint-small-tablet {
+      width: 100%;
+    }
+  }
+
+  &--image {
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &--content {
+    display: flex;
+    padding: tokens.bpk-spacing-xxxl();
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    @include breakpoints.bpk-breakpoint-small-tablet {
+      padding: 0;
+    }
+  }
+
+  &--headline,
+  &--subheading,
+  &--bodyText {
+    padding-bottom: tokens.bpk-spacing-base();
+
+    @include breakpoints.bpk-breakpoint-small-tablet {
+      padding-bottom: tokens.bpk-spacing-md();
+    }
+  }
+}
