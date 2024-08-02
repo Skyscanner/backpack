@@ -107,7 +107,7 @@ const BpkSlider = ({
         >
           {/* custom thumb with child input */}
           <span>
-            <BubbleInput value={currentValue[index]} {...inputProps} />
+            <BubbleInput value={currentValue[index]} {...(inputProps && inputProps[index])} />
           </span>
         </Slider.Thumb>
       ))}
