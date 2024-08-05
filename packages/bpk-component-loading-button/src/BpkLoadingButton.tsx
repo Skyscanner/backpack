@@ -20,6 +20,7 @@ import PropTypes from 'prop-types';
 import type { ReactElement, ReactNode } from 'react';
 
 import { BUTTON_TYPES, BpkButtonV2, SIZE_TYPES } from '../../bpk-component-button';
+import type { Props as ButtonProps } from '../../bpk-component-button/src/BpkButtonV2/common-types';
 import {
   withButtonAlignment,
   withLargeButtonAlignment,
@@ -83,7 +84,7 @@ type LoadingProps = {
   iconPosition: string,
   iconDisabled?: ReactElement<any>,
   iconLoading?: ReactElement<any>,
-};
+} & ButtonProps;
 
 const BpkLoadingButton = (props: LoadingProps) => {
   const {
