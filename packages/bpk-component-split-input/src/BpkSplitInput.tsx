@@ -37,20 +37,20 @@ const SPACEBAR = 32;
 const ENTER = 13;
 
 interface Props {
-  type?: string;
+  type?: string | number;
   id: string;
   label: string;
   name: string;
   inputLength?: number;
   placeholder?: string;
-  onChange: (value: string) => void;
-  onSubmit: (value: string) => void;
+  onChange: (value: string | number) => void;
+  onSubmit: (value: string | number) => void;
   large?: boolean;
 }
 
 interface State {
   focusedInput: number;
-  inputValue: string[];
+  inputValue: string[] | number[];
 }
 
 class BpkSplitInput extends Component<Props, State> {
@@ -69,13 +69,13 @@ class BpkSplitInput extends Component<Props, State> {
     };
   }
 
-  onInputChange = (input: string[]) => {
+  onInputChange = (input: string[] | number[]) => {
     this.setState({ inputValue: input });
     const value = input.join('');
     this.props.onChange(value);
   };
 
-  updateInputValue = (value: string) => {
+  updateInputValue = (value: string | number ) => {
     const { focusedInput, inputValue } = this.state;
     inputValue[focusedInput] = value;
     this.onInputChange(inputValue);
@@ -90,7 +90,7 @@ class BpkSplitInput extends Component<Props, State> {
     }
   };
 
-  validateInput = (inputValue: string[]) => {
+  validateInput = (inputValue: string[] | number[]) => {
     let index = 0;
     while (index < inputValue.length) {
       if (!this.isInputValid(inputValue[index])) {
@@ -104,9 +104,9 @@ class BpkSplitInput extends Component<Props, State> {
 
   isNumeric = () => this.props.type === INPUT_TYPES.number;
 
-  isInputValid = (value: string) => {
-    const isTypeValid = this.isNumeric() ? /^\d$/.test(value) : typeof value === 'string';
-    return isTypeValid && value.trim().length === 1;
+  isInputValid = (value: string | number) => {
+    const isTypeValid = this.isNumeric() ? /^\d$/.test(`${value}`) : typeof value === 'string';
+    return isTypeValid && `${value}`.trim().length === 1;
   };
 
   focusInput = (inputIndex: number) => {

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { Component } from 'react';
+import { PureComponent } from 'react';
 
 import BpkInput from '../../bpk-component-input';
 import { cssModules } from '../../bpk-react-utils';
@@ -25,17 +25,24 @@ import STYLES from './BpkInputField.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-interface Props {
+export type Props = DefaultProps;
+
+type DefaultProps = {
   id: string;
   label: string;
-  value?: string;
+  value: string | number;
   focus: boolean;
   index: number;
-  name?: string;
+  name: string;
   [key: string]: any;
 }
 
-class BpkInputField extends Component<Props> {
+class BpkInputField extends PureComponent<Props> {
+  static defaultProps = {
+    value: '',
+    name: ''
+  };
+
   componentDidUpdate(prevProps: Props) {
     const { focus } = this.props;
     if (prevProps.focus !== focus && this.input && focus) {
@@ -53,13 +60,13 @@ class BpkInputField extends Component<Props> {
         <BpkInput
           id={id}
           autoComplete="off"
-          name={name || ''}
+          name={name}
           maxLength={1}
           aria-label={`${label} ${index}`}
           inputRef={(input: HTMLInputElement) => {
             this.input = input;
           }}
-          value={value || ''}
+          value={value}
           {...rest}
         />
       </div>
