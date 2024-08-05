@@ -20,7 +20,6 @@ import PropTypes from 'prop-types';
 import type { ReactElement, ReactNode } from 'react';
 
 import { BUTTON_TYPES, BpkButtonV2, SIZE_TYPES } from '../../bpk-component-button';
-import type { Props as ButtonProps } from '../../bpk-component-button/src/BpkButtonV2/common-types';
 import {
   withButtonAlignment,
   withLargeButtonAlignment,
@@ -30,6 +29,8 @@ import ArrowIconLg from '../../bpk-component-icon/lg/long-arrow-right';
 import ArrowIconSm from '../../bpk-component-icon/sm/long-arrow-right';
 import { BpkSpinner, BpkLargeSpinner } from '../../bpk-component-spinner';
 import { cssModules } from '../../bpk-react-utils';
+
+import type { Props as ButtonProps } from '../../bpk-component-button/src/BpkButtonV2/common-types';
 
 import STYLES from './BpkLoadingButton.module.scss';
 
