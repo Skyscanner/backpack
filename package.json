@@ -152,7 +152,7 @@
     "babel-plugin-react-docgen": "^4.2.1",
     "babel-plugin-require-context-hook": "^1.0.0",
     "chokidar": "^3.6.0",
-    "core-js": "^3.37.0",
+    "core-js": "^3.38.0",
     "css-loader": "^6.10.0",
     "d3-scale": "^4.0.2",
     "danger": "^12.3.3",
