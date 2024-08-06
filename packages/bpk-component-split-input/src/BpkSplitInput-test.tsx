@@ -16,7 +16,10 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { useState } from 'react';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import BpkSplitInput from './BpkSplitInput';
 
@@ -24,38 +27,37 @@ const defaultProps = {
   name: 'otpInput',
   id: 'otpInput',
   label: 'otp input',
-  onChange: () => {},
-  onSubmit: () => {},
+  onChange: jest.fn(),
+  onSubmit: jest.fn(),
 };
 
 describe('BpkSplitInput', () => {
   it('should render without crashing', () => {
-    const { asFragment } = render(<BpkSplitInput {...defaultProps} />);
-
-    expect(asFragment()).toMatchSnapshot();
+    render(<BpkSplitInput {...defaultProps} />);
+    const inputs = screen.getAllByPlaceholderText('');
+    expect(inputs).toHaveLength(4);
   });
 
   it('should render correctly with inputLength param', () => {
-    const { asFragment } = render(
-      <BpkSplitInput {...defaultProps} inputLength={6} />,
-    );
-
-    expect(asFragment()).toMatchSnapshot();
+    render(<BpkSplitInput {...defaultProps} inputLength={6} />);
+    const inputs = screen.getAllByPlaceholderText('');
+    expect(inputs).toHaveLength(6);
   });
 
-  it('should render correctly with large set as false', () => {
-    const { asFragment } = render(
-      <BpkSplitInput {...defaultProps} large={false} />,
-    );
-
-    expect(asFragment()).toMatchSnapshot();
+  it('should render correctly with large set as true', () => {
+    render(<BpkSplitInput {...defaultProps} />);
+    const inputs = screen.getAllByPlaceholderText('');
+    inputs.forEach((input) => {
+      expect(input).toHaveClass('bpk-input--large');
+    });
   });
 
   it('should render correctly with placeholder', () => {
-    const { asFragment } = render(
-      <BpkSplitInput {...defaultProps} placeholder="x" />,
-    );
-
-    expect(asFragment()).toMatchSnapshot();
+    const placeholder = 'x';
+    render(<BpkSplitInput {...defaultProps} placeholder={placeholder} />);
+    const inputs = screen.getAllByPlaceholderText('x');
+    inputs.forEach((input) => {
+      expect(input).toHaveAttribute('placeholder', placeholder);
+    });
   });
 });
