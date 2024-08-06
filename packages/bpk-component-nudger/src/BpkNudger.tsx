@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { useRef } from 'react';
 import type { ChangeEvent } from 'react';
 
@@ -24,6 +23,7 @@ import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
 import { withButtonAlignment } from '../../bpk-component-icon';
 import MinusIcon from '../../bpk-component-icon/sm/minus';
 import PlusIcon from '../../bpk-component-icon/sm/plus';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLabel from '../../bpk-component-label';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules, setNativeValue } from '../../bpk-react-utils';
@@ -79,7 +79,7 @@ const BpkNudger = ({
       onChange(max);
       setNativeValue(element, max, false);
     }
-  }
+  };
 
   return (
     <div className={containerClassNames}>
@@ -131,7 +131,7 @@ const BpkNudger = ({
           ref={inputRef}
           name={name || id}
           onInput={(event: ChangeEvent<HTMLInputElement>) => {
-             // allow the removal of a value
+            // allow the removal of a value
             if (
               !event.target.validity.valid &&
               Number.isNaN(event.target.valueAsNumber)
