@@ -34,6 +34,7 @@ import {
   AnchorTagsExample,
   CustomIconExample,
   VisualExample,
+  SubmitExample,
 } from './examples';
 
 export default {
@@ -61,6 +62,7 @@ export const Mixture = MixtureExample;
 export const AnchorTags = AnchorTagsExample;
 
 export const CustomIcon = CustomIconExample;
+export const Submit = SubmitExample;
 export const VisualTest = VisualExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
