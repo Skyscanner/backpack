@@ -76,6 +76,5 @@ export const VisualTestV1WithZoom = {
     zoomEnabled: true,
   },
 };
-
-export const FullWidth = () => <FullWidthExample />;
 export const SubmitButton = () => <SubmitButtonExample />;
+export const FullWidth = () => <FullWidthExample />;
