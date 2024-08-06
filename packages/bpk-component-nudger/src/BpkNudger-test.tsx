@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import BpkConfigurableNudger from './BpkConfigurableNudger';
 import BpkNudger from './BpkNudger';
 
 describe('BpkNudger', () => {
@@ -50,46 +49,6 @@ describe('BpkNudger', () => {
         decreaseButtonLabel="Decrease"
         increaseButtonLabel="Increase"
         buttonType="secondaryOnDark"
-      />,
-    );
-
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render as a configurable nudger correctly', () => {
-    const compareValues = (a: string, b: string) => {
-      const options = ['economy', 'premium', 'business', 'first'];
-      const [aIndex, bIndex] = [options.indexOf(a), options.indexOf(b)];
-      return aIndex - bIndex;
-    };
-
-    const incrementValue = (currentValue: string) => {
-      const options = ['economy', 'premium', 'business', 'first'];
-      const [aIndex] = [options.indexOf(currentValue) + 1];
-      return options[aIndex];
-    };
-
-    const decrementValue = (currentValue: string) => {
-      const options = ['economy', 'premium', 'business', 'first'];
-      const [aIndex] = [options.indexOf(currentValue) - 1];
-      return options[aIndex];
-    };
-
-    const formatValue = (a: number) => a.toString();
-
-    const { asFragment } = render(
-      <BpkConfigurableNudger
-        id="nudger"
-        min="economy"
-        max="first"
-        value="premium"
-        onChange={() => null}
-        decreaseButtonLabel="Decrease"
-        increaseButtonLabel="Increase"
-        compareValues={compareValues}
-        incrementValue={incrementValue}
-        decrementValue={decrementValue}
-        formatValue={formatValue}
       />,
     );
 
@@ -178,4 +137,77 @@ describe('BpkNudger', () => {
     await userEvent.click(plusButton);
     expect(onChangeSpy).toHaveBeenCalledWith(4);
   });
+
+  it('should return a min on direct user input with a lower number', async () => {
+    const onChangeSpy = jest.fn();
+    render(
+      <BpkNudger
+        id="nudger"
+        min={1}
+        max={9}
+        value={3}
+        onChange={onChangeSpy}
+        decreaseButtonLabel="Decrease"
+        increaseButtonLabel="Increase"
+        data-testid="myNudger"
+      />,
+    );
+
+    const input = screen.getByTestId('myNudger') as HTMLInputElement;
+    await userEvent.click(input);
+    await userEvent.type(input, '{backspace}');
+    await userEvent.type(input, '0');
+
+    expect(onChangeSpy).toHaveBeenCalledWith(1);
+    expect(input.value).toEqual('1');
+  });
+
+  it('should return a max on direct user input with a higher number', async () => {
+    const user = userEvent.setup()
+    const onChangeSpy = jest.fn();
+    render(
+      <BpkNudger
+        id="nudger"
+        min={1}
+        max={9}
+        value={3}
+        onChange={onChangeSpy}
+        decreaseButtonLabel="Decrease"
+        increaseButtonLabel="Increase"
+        data-testid="myNudger"
+      />,
+    );
+
+    const input = screen.getByTestId('myNudger') as HTMLInputElement;
+    await user.clear(input);
+    await user.type(input, '88');
+
+    expect(onChangeSpy).toHaveBeenCalledWith(9);
+    expect(input.value).toEqual('9');
+  });
+  
+  it('should return number that direct user input with', async () => {
+    const user = userEvent.setup()
+    const onChangeSpy = jest.fn();
+    render(
+      <BpkNudger
+        id="nudger"
+        min={1}
+        max={9}
+        value={3}
+        onChange={onChangeSpy}
+        decreaseButtonLabel="Decrease"
+        increaseButtonLabel="Increase"
+        data-testid="myNudger"
+      />,
+    );
+
+    const input = screen.getByTestId('myNudger') as HTMLInputElement;
+    await user.clear(input);
+    await user.type(input, '7');
+
+    expect(onChangeSpy).toHaveBeenCalledWith(7);
+    expect(input.value).toEqual('7');
+  });
+ 
 });

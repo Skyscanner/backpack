@@ -16,9 +16,8 @@
  * limitations under the License.
  */
 
-import BpkConfigurableNudger from './src/BpkConfigurableNudger';
 import BpkNudger from './src/BpkNudger';
 import themeAttributes from './src/themeAttributes';
 
 export default BpkNudger;
-export { themeAttributes, BpkConfigurableNudger };
+export { themeAttributes };

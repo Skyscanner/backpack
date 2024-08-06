@@ -25,11 +25,11 @@ export const BUTTON_TYPES = {
 
 export type CommonProps = {
   id: string;
-  min: string | number;
-  max: string | number;
-  value: string | number;
-  onChange: (arg0: any) => void | null;
-  name?: string | null;
+  min:  number;
+  max:  number;
+  value:  number;
+  onChange: (arg0: number) => void | null;
+  name?: string | undefined;
   className?: string | null;
   /**
    * This is the label that will be read out when screen reader users tab to the increase button. Make sure you use a descriptive label.
@@ -38,6 +38,7 @@ export type CommonProps = {
    * Function that handle the incrementing of the current selected value.
    */
   increaseButtonLabel: string;
+  inputClassName?: string | undefined;
   /**
    * This is the label that will be read out when screen reader users tab to the decrease button. Make sure you use a descriptive label
    */
