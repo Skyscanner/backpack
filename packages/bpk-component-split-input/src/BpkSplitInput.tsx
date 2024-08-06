@@ -43,7 +43,7 @@ interface Props {
   name: string;
   inputLength?: number;
   placeholder?: string;
-  onChange: (value: string | number) => void;
+  onInputChange: (value: string | number) => void;
   onSubmit: (value: string | number) => void;
   large?: boolean;
 }
@@ -72,7 +72,7 @@ class BpkSplitInput extends Component<Props, State> {
   onInputChange = (input: string[] | number[]) => {
     this.setState({ inputValue: input });
     const value = input.join('');
-    this.props.onChange(value);
+    this.props.onInputChange(value);
   };
 
   updateInputValue = (value: string | number ) => {
@@ -216,13 +216,13 @@ class BpkSplitInput extends Component<Props, State> {
           large={large}
           value={inputValue && inputValue[index]}
           placeholder={placeholder}
-          {...rest}
+          onChange={this.handleOnChange}
           onInput={this.handleOnChange}
           onKeyDown={this.handleOnKeyDown}
           onPaste={this.handleOnPaste}
           onFocus={(e: FocusEvent<HTMLInputElement>) => this.handleOnFocus(e, index)}
-          onChange={this.handleOnChange}
-        />,
+          {...rest}
+         />,
       );
     }
 

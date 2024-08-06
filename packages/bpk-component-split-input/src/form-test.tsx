@@ -37,7 +37,7 @@ describe('BpkSplitInput', () => {
             inputLength={4}
             label="Enter code"
             placeholder='Enter code'
-            onChange={(value) => setInputTest(inputTest)}
+            onInputChange={(value) => setInputTest(inputTest)}
             onSubmit={(value) => setInputTest(inputTest)}
           />
           <button type="submit">Submit</button>
@@ -85,7 +85,7 @@ it('should emit change event when text has been entered and blurred', async () =
             inputLength={4}
             label="Enter code"
             placeholder='Enter code'
-            onChange={(value) => setInputTest(inputTest)}
+            onInputChange={(value) => setInputTest(inputTest)}
             onSubmit={(value) => setInputTest(inputTest)}
           />
           <button type="submit">Submit</button>

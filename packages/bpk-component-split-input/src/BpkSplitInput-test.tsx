@@ -27,7 +27,7 @@ const defaultProps = {
   name: 'otpInput',
   id: 'otpInput',
   label: 'otp input',
-  onChange: jest.fn(),
+  onInputChange: jest.fn(),
   onSubmit: jest.fn(),
 };
 
