@@ -16,9 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import BpkCheckbox from './BpkCheckbox';
@@ -30,5 +28,17 @@ describe('BpkCheckbox accessibility tests', () => {
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  it('should render using label as aria-label if no ariaLabel prop provided', async () => {
+    render(<BpkCheckbox name="checkbox" label="Prefer directs" />);
+    const label = screen.getByLabelText('Prefer directs');
+    expect(label).toBeInTheDocument();
+  });
+
+  it('should render using ariaLabel prop as aria-label if prop provided', async () => {
+    render(<BpkCheckbox name="checkbox" label="Prefer directs" ariaLabel="aria label test string"/>);
+    const ariaLabel = screen.getByLabelText('aria label test string');
+    expect(ariaLabel).toBeInTheDocument();
   });
 });
