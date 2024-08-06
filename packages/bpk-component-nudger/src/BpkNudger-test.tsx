@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import BpkNudger from './BpkNudger';
@@ -209,5 +209,4 @@ describe('BpkNudger', () => {
     expect(onChangeSpy).toHaveBeenCalledWith(7);
     expect(input.value).toEqual('7');
   });
- 
 });
