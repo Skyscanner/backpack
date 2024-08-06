@@ -26,6 +26,7 @@ import {
 
 import debounce from 'lodash/debounce';
 
+// @ts-ignore
 import BpkPageIndicator from '../../../bpk-component-page-indicator';
 import { cssModules, isRTL } from '../../../bpk-react-utils';
 

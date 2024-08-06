@@ -16,33 +16,18 @@
  * limitations under the License.
  */
 
-@import '../../packages/bpk-mixins/index.scss';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
-.bpk-card-list-examples {
-  &__header {
-    display: flex;
-    height: bpk-spacing-xxl();
-    padding: bpk-spacing-md();
-    justify-content: space-between;
-    align-items: center;
-    color: $bpk-text-on-dark-day;
-  }
-
-  &__wrapper {
-    width: bpk-spacing-md() * 41;
-  }
-}
-
-.bpk-destinationCard {
-  .bpk-destinationCard-image {
-    border-top-left-radius: 0.75rem;
-    border-top-right-radius: 0.75rem;
+.bpkdocs-consumer-level {
+  img {
+    border-top-left-radius: tokens.$bpk-border-radius-md;
+    border-top-right-radius: tokens.$bpk-border-radius-md;
     overflow: hidden;
   }
 
   .bpk-bottom {
     display: flex;
-    padding: bpk-spacing-lg();
+    padding: tokens.bpk-spacing-lg();
     justify-content: space-between;
   }
 
@@ -52,24 +37,30 @@
   }
 }
 
-.bpk-internalLinkCard {
+.bpkdocs-consumer-level__internal-card {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   overflow: hidden;
 
-  .bpk-image {
-    flex: 0 0 5.5rem;
+  .bpkdocs-internal-link-img {
+    width: 20%;
+  }
+
+  img {
+    border-top-left-radius: tokens.$bpk-border-radius-md;
+    border-bottom-left-radius: tokens.$bpk-border-radius-md;
   }
 
   .bpk-info {
-    display: flex;
-    margin: auto bpk-spacing-lg();
+    margin: auto tokens.bpk-spacing-lg();
     flex-direction: column;
   }
 
   .bpk-verticalLinks {
     &_bullet {
-      margin: 0 bpk-spacing-sm();
-      color: $bpk-core-accent-day;
+      margin: 0 tokens.bpk-spacing-sm();
+      color: tokens.$bpk-core-accent-day;
     }
   }
 }

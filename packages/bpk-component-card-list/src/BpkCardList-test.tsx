@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import mockCards from '../testMocks';
 
@@ -23,7 +23,7 @@ import BpkCardList from './BpkCardList';
 
 describe('BpkCardList', () => {
   it('should render correctly with grid, stack and no accessory', () => {
-    const { asFragment } = render(
+    render(
       <BpkCardList
         title="Title"
         description="Description"
@@ -32,11 +32,18 @@ describe('BpkCardList', () => {
         layoutMobile="stack"
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.queryByTestId('button')).not.toBeInTheDocument();
+    expect(
+      screen.getByTestId('bpk-card-list--card-list').firstChild,
+    ).toHaveClass('bpk-card-list-grid');
+    expect(screen.getAllByRole('button', { name: /Card \d/ })).toHaveLength(2);
   });
 
   it('should render correctly with grid, stack and expand accessory', () => {
-    const { asFragment } = render(
+    render(
       <BpkCardList
         title="Title"
         description="Description"
@@ -49,11 +56,21 @@ describe('BpkCardList', () => {
         onButtonClick={jest.fn()}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.getByTestId('button')).toHaveTextContent('Expand');
+    expect(screen.getByTestId('button')).toHaveClass(
+      'bpk-button bpk-button--link',
+    );
+    expect(
+      screen.getByTestId('bpk-card-list--card-list').firstChild,
+    ).toHaveClass('bpk-card-list-grid');
+    expect(screen.getAllByRole('button', { name: /Card \d/ })).toHaveLength(2);
   });
 
   it('should render correctly with grid, stack and button accessory', () => {
-    const { asFragment } = render(
+    render(
       <BpkCardList
         title="Title"
         description="Description"
@@ -67,11 +84,18 @@ describe('BpkCardList', () => {
         href="https://www.skyscanner.net"
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.queryAllByRole('button')[0]).toHaveTextContent('Button');
+    expect(screen.queryAllByRole('button')[0]).toHaveClass(
+      'bpk-button bpk-button--primary',
+    );
+    expect(screen.getAllByRole('button', { name: /Card \d/ })).toHaveLength(2);
   });
 
   it('should render correctly with grid, rail and no accessory', () => {
-    const { asFragment } = render(
+    render(
       <BpkCardList
         title="Title"
         description="Description"
@@ -80,11 +104,18 @@ describe('BpkCardList', () => {
         layoutMobile="rail"
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.queryByTestId('button')).not.toBeInTheDocument();
+    expect(
+      screen.getByTestId('bpk-card-list--card-list').firstChild,
+    ).toHaveClass('bpk-card-list-grid');
+    expect(screen.getAllByRole('button', { name: /Card \d/ })).toHaveLength(2);
   });
 
   it('should render correctly with grid, rail and expand accessory', () => {
-    const { asFragment } = render(
+    render(
       <BpkCardList
         title="Title"
         description="Description"
@@ -97,11 +128,17 @@ describe('BpkCardList', () => {
         onButtonClick={jest.fn()}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.queryByTestId('button')).toHaveTextContent('Expand');
+    expect(
+      screen.getByTestId('bpk-card-list--card-list').firstChild,
+    ).toHaveClass('bpk-card-list-grid');
   });
 
   it('should render correctly with grid, rail and button accessory', () => {
-    const { asFragment } = render(
+    render(
       <BpkCardList
         title="Title"
         description="Description"
@@ -115,11 +152,20 @@ describe('BpkCardList', () => {
         href="https://www.skyscanner.net"
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.queryAllByRole('button')[0]).toHaveTextContent('Button');
+    expect(screen.queryAllByRole('button')[0]).toHaveClass(
+      'bpk-button bpk-button--primary',
+    );
+    expect(
+      screen.getByTestId('bpk-card-list--card-list').firstChild,
+    ).toHaveClass('bpk-card-list-grid');
   });
 
   it('should render correctly with row, stack and no accessory', () => {
-    const { asFragment } = render(
+    render(
       <BpkCardList
         title="Title"
         description="Description"
@@ -131,15 +177,22 @@ describe('BpkCardList', () => {
         ariaLabelPrev="Previous"
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.queryByTestId('button')).not.toBeInTheDocument();
+    expect(
+      screen.getByTestId('bpk-card-list--card-list').firstChild,
+    ).toHaveClass('bpk-card-list-row');
+    expect(screen.getAllByRole('button', { name: /Card \d/ })).toHaveLength(2);
   });
 
   it('should render correctly with row, rail and pagination accessory', () => {
-    const { asFragment } = render(
+    render(
       <BpkCardList
         title="Title"
         description="Description"
-        cardList={mockCards(3)}
+        cardList={mockCards(6)}
         layoutDesktop="row"
         layoutMobile="rail"
         accessory="pagination"
@@ -148,11 +201,28 @@ describe('BpkCardList', () => {
         ariaLabelPrev="Previous"
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.queryByTestId('button')).not.toBeInTheDocument();
+    expect(
+      screen.getByTestId('bpk-card-list--card-list').firstChild,
+    ).toHaveClass('bpk-card-list-row');
+    expect(screen.getAllByRole('button', { name: /Card \d/ })).toHaveLength(6);
+    expect(
+      screen.getByRole('button', { name: 'Previous' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Go to page 1' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Go to page 2' }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Next' })).toBeInTheDocument();
   });
 
   it('should render correctly with row, rail and no accessory', () => {
-    const { asFragment } = render(
+    render(
       <BpkCardList
         title="Title"
         description="Description"
@@ -164,11 +234,19 @@ describe('BpkCardList', () => {
         ariaLabelPrev="Previous"
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.queryByTestId('button')).not.toBeInTheDocument();
+    expect(
+      screen.getByTestId('bpk-card-list--card-list').firstChild,
+    ).toHaveClass('bpk-card-list-row');
+    expect(screen.getAllByRole('button', { name: /Card \d/ })).toHaveLength(2);
+    expect(screen.queryAllByRole('button', { name: 'Previous' })).toHaveLength(
+      0,
+    );
   });
 
   it('should render correctly with header, grid, stack and expand accessory', () => {
-    const { asFragment } = render(
+    render(
       <BpkCardList
         title="Title"
         description="Description"
@@ -183,11 +261,18 @@ describe('BpkCardList', () => {
         expandText="Expand"
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.queryByTestId('button')).toHaveTextContent('Expand');
+    expect(
+      screen.getByTestId('bpk-card-list--card-list').firstChild,
+    ).toHaveClass('bpk-card-list-grid');
+    expect(screen.getAllByRole('button', { name: /Card \d/ })).toHaveLength(2);
   });
 
   it('should render correctly with header, grid, stack and no accessory', () => {
-    const { asFragment } = render(
+    render(
       <BpkCardList
         title="Title"
         description="Description"
@@ -199,11 +284,18 @@ describe('BpkCardList', () => {
         layoutMobile="stack"
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.queryByTestId('button')).not.toBeInTheDocument();
+    expect(
+      screen.getByTestId('bpk-card-list--card-list').firstChild,
+    ).toHaveClass('bpk-card-list-grid');
+    expect(screen.getAllByRole('button', { name: /Card \d/ })).toHaveLength(2);
   });
 
   it('should render correctly with header, grid, rail and expand accessory', () => {
-    const { asFragment } = render(
+    render(
       <BpkCardList
         title="Title"
         description="Description"
@@ -218,11 +310,18 @@ describe('BpkCardList', () => {
         expandText="Expand"
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.queryByTestId('button')).toHaveTextContent('Expand');
+    expect(
+      screen.getByTestId('bpk-card-list--card-list').firstChild,
+    ).toHaveClass('bpk-card-list-grid');
+    expect(screen.getAllByRole('button', { name: /Card \d/ })).toHaveLength(2);
   });
 
   it('should render correctly with header, grid, rail and no accessory', () => {
-    const { asFragment } = render(
+    render(
       <BpkCardList
         title="Title"
         description="Description"
@@ -234,18 +333,25 @@ describe('BpkCardList', () => {
         layoutMobile="rail"
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.queryByTestId('button')).not.toBeInTheDocument();
+    expect(
+      screen.getByTestId('bpk-card-list--card-list').firstChild,
+    ).toHaveClass('bpk-card-list-grid');
+    expect(screen.getAllByRole('button', { name: /Card \d/ })).toHaveLength(2);
   });
 
   it('should render correctly with header, row, stack and no accessory', () => {
-    const { asFragment } = render(
+    render(
       <BpkCardList
         title="Title"
         description="Description"
         buttonText="Button"
         onButtonClick={jest.fn()}
         href="https://www.skyscanner.net"
-        cardList={mockCards(2)}
+        cardList={mockCards(6)}
         layoutDesktop="row"
         layoutMobile="stack"
         ariaLabelIndicator="Go to page"
@@ -253,18 +359,28 @@ describe('BpkCardList', () => {
         ariaLabelPrev="Previous"
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.queryByTestId('button')).not.toBeInTheDocument();
+    expect(
+      screen.getByTestId('bpk-card-list--card-list').firstChild,
+    ).toHaveClass('bpk-card-list-row');
+    expect(screen.getAllByRole('button', { name: /Card \d/ })).toHaveLength(6);
+    expect(screen.queryAllByRole('button', { name: 'Previous' })).toHaveLength(
+      0,
+    );
   });
 
   it('should render correctly with header, row, rail and pagination accessory', () => {
-    const { asFragment } = render(
+    render(
       <BpkCardList
         title="Title"
         description="Description"
         buttonText="Button"
         onButtonClick={jest.fn()}
         href="https://www.skyscanner.net"
-        cardList={mockCards(3)}
+        cardList={mockCards(6)}
         layoutDesktop="row"
         layoutMobile="rail"
         accessory="pagination"
@@ -273,11 +389,21 @@ describe('BpkCardList', () => {
         ariaLabelPrev="Previous"
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.queryByTestId('button')).not.toBeInTheDocument();
+    expect(
+      screen.getByTestId('bpk-card-list--card-list').firstChild,
+    ).toHaveClass('bpk-card-list-row');
+    expect(screen.getAllByRole('button', { name: /Card \d/ })).toHaveLength(6);
+    expect(screen.queryAllByRole('button', { name: 'Previous' })).toHaveLength(
+      0,
+    );
   });
 
   it('should render correctly with header, row, rail and no accessory', () => {
-    const { asFragment } = render(
+    render(
       <BpkCardList
         title="Title"
         description="Description"
@@ -292,6 +418,16 @@ describe('BpkCardList', () => {
         ariaLabelPrev="Previous"
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.queryByTestId('button')).not.toBeInTheDocument();
+    expect(
+      screen.getByTestId('bpk-card-list--card-list').firstChild,
+    ).toHaveClass('bpk-card-list-row');
+    expect(screen.getAllByRole('button', { name: /Card \d/ })).toHaveLength(2);
+    expect(screen.queryAllByRole('button', { name: 'Previous' })).toHaveLength(
+      0,
+    );
   });
 });

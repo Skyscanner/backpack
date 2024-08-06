@@ -27,7 +27,9 @@ describe('BpkCardListRail', () => {
       <BpkCardListRail>{mockCards(3)}</BpkCardListRail>,
     );
 
-    expect(container).toMatchSnapshot();
+    expect(container.firstChild).toHaveClass(
+      'bpk-card-list--rail_scrollContainer',
+    );
     expect(
       container.getElementsByClassName('bpk-card-list--rail_card'),
     ).toHaveLength(3);

@@ -18,6 +18,7 @@
 
 import { useRef, useState } from 'react';
 
+// @ts-ignore
 import BpkPageIndicator, { VARIANT } from '../../bpk-component-page-indicator';
 import { cssModules } from '../../bpk-react-utils';
 

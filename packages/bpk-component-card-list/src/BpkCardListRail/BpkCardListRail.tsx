@@ -18,6 +18,7 @@
  */
 import type { ReactElement } from 'react';
 
+// @ts-ignore
 import BpkMobileScrollContainer from '../../../bpk-component-mobile-scroll-container';
 import { cssModules } from '../../../bpk-react-utils';
 

@@ -76,7 +76,10 @@ const BpkCardList = (props: CardListProps) => {
         button={button}
       />
 
-      <div className={getClassName('bpk-card-list--card-list')}>
+      <div
+        className={getClassName('bpk-card-list--card-list')}
+        data-testid="bpk-card-list--card-list"
+      >
         <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
           {(isActive) => {
             if (isActive) {
@@ -113,7 +116,12 @@ const BpkCardList = (props: CardListProps) => {
             }
 
             if (layoutDesktop === LAYOUTS.row) {
-              const { accessory, ariaLabelIndicator, ariaLabelNext, ariaLabelPrev } = props;
+              const {
+                accessory,
+                ariaLabelIndicator,
+                ariaLabelNext,
+                ariaLabelPrev,
+              } = props;
               return (
                 <BpkCardListRow
                   accessory={button ? undefined : accessory}

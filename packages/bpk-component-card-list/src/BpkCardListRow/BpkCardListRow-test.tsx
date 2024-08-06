@@ -78,7 +78,6 @@ describe('BpkCardListRow', () => {
       <BpkCardListRow {...props}>{mockCards(7)}</BpkCardListRow>,
     );
 
-    expect(container).toMatchSnapshot();
     expect(
       container.getElementsByClassName(
         'bpk-card-list-row__card bpk-card-list-row__card-padding',

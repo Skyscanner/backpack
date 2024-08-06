@@ -15,14 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import BpkExpand from './BpkExpand';
 
 describe('BpkExpand', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(
+    render(
       <BpkExpand
         collapsed
         hideContent={jest.fn()}
@@ -33,7 +33,7 @@ describe('BpkExpand', () => {
       </BpkExpand>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByRole('button')).toHaveAttribute('type', 'button');
   });
 
   it('should call showContent function when collapsed and button is clicked', async () => {
@@ -41,7 +41,7 @@ describe('BpkExpand', () => {
     const setCollapsed = jest.fn();
     const showContent = jest.fn();
 
-    const { asFragment, getByTestId } = render(
+    render(
       <BpkExpand
         collapsed
         hideContent={hideContent}
@@ -52,9 +52,7 @@ describe('BpkExpand', () => {
       </BpkExpand>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
-
-    await userEvent.click(getByTestId('button'));
+    await userEvent.click(screen.getByTestId('button'));
 
     expect(showContent).toHaveBeenCalled();
     expect(setCollapsed).toHaveBeenCalledWith(false);
@@ -65,7 +63,7 @@ describe('BpkExpand', () => {
     const setCollapsed = jest.fn();
     const showContent = jest.fn();
 
-    const { asFragment, getByTestId } = render(
+    render(
       <BpkExpand
         collapsed={false}
         hideContent={hideContent}
@@ -76,9 +74,7 @@ describe('BpkExpand', () => {
       </BpkExpand>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
-
-    await userEvent.click(getByTestId('button'));
+    await userEvent.click(screen.getByTestId('button'));
 
     expect(hideContent).toHaveBeenCalled();
     expect(setCollapsed).toHaveBeenCalledWith(true);

@@ -15,7 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import BpkCard from '../../../bpk-component-card';
 
@@ -24,7 +25,7 @@ import BpkCardListGrid from './BpkCardListGrid';
 describe('BpkCardListGrid', () => {
   it('should show expand accessory', () => {
     const cards = Array(12).map(() => <BpkCard>test</BpkCard>);
-    const { asFragment } = render(
+    render(
       <BpkCardListGrid
         accessory="expand"
         expandText="Show More"
@@ -38,21 +39,28 @@ describe('BpkCardListGrid', () => {
       </BpkCardListGrid>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByRole('button')).toHaveClass(
+      'bpk-button bpk-button--link',
+    );
   });
 
-  it('should show button accessory', () => {
+  it('should show button accessory and handle onButtonClick', async () => {
     const cards = Array(12).map(() => <BpkCard>test</BpkCard>);
-    const { asFragment } = render(
+    const onButtonClick = jest.fn();
+    render(
       <BpkCardListGrid
         accessory="button"
         buttonText="Show More"
-        onButtonClick={jest.fn()}
+        onButtonClick={onButtonClick}
       >
         {cards}
       </BpkCardListGrid>,
     );
+    await userEvent.click(screen.getByRole('button'));
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByRole('button')).toHaveClass(
+      'bpk-button bpk-button--primary',
+    );
+    expect(onButtonClick).toHaveBeenCalled();
   });
 });
