@@ -50,12 +50,12 @@ describe('BpkNudger form test', () => {
 
     const minusButton = screen.getByRole('button', { name: 'Decrease' });
 
-    const textInput = screen.getByTestId('myNudger');
-    expect(textInput).toHaveValue(5);
+    const numInput = screen.getByTestId('myNudger');
+    expect(numInput).toHaveValue(5);
 
     await userEvent.click(minusButton);
 
-    expect(textInput).toHaveValue(4);
+    expect(numInput).toHaveValue(4);
 
     const formData = new FormData(
       screen.getByTestId('form') as HTMLFormElement,
@@ -95,13 +95,13 @@ describe('BpkNudger form test', () => {
 
     const minusButton = screen.getByRole('button', { name: 'Decrease' });
 
-    const textInput = screen.getByTestId('myNudger');
-    expect(textInput).toHaveValue(5);
+    const numInput = screen.getByTestId('myNudger');
+    expect(numInput).toHaveValue(5);
     expect(formValidation).not.toHaveBeenCalled();
 
     await userEvent.click(minusButton);
 
-    expect(textInput).toHaveValue(4);
+    expect(numInput).toHaveValue(4);
 
     expect(formValidation).toHaveBeenCalledTimes(1);
   });
