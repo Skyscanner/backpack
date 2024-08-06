@@ -79,6 +79,9 @@ const BpkNudger = ({
       onChange(max);
       setNativeValue(element, max, false);
     }
+    if (element.valueAsNumber >= min && element.valueAsNumber <= max) {
+      onChange(element.valueAsNumber);
+    }
   };
 
   return (
@@ -142,12 +145,6 @@ const BpkNudger = ({
               setNativeValue(inputElement, min, true);
             }
             valueLimitter(inputElement);
-            if (inputElement.valueAsNumber >= min && inputElement.valueAsNumber <= max) {
-              onChange(inputElement.valueAsNumber);
-            }
-          }}
-          onChange={(event) => {
-            valueLimitter(event.target);
           }}
           className={inputClassNames}
           {...rest}
