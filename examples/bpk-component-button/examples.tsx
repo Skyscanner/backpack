@@ -28,6 +28,7 @@ import {
 } from '../../packages/bpk-component-icon';
 import LargeLongArrowRightIcon from '../../packages/bpk-component-icon/lg/long-arrow-right';
 import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
+import BpkLoadingButton from '../../packages/bpk-component-loading-button';
 import { cssModules } from '../../packages/bpk-react-utils';
 import {
   action,
@@ -176,6 +177,18 @@ const FullWidthExample = (props: any) => (
   </BpkButtonV2>
 );
 
+const SubmitButtonExample = (props: any) => (
+  <BpkButtonV2 submit {...props}>
+    Submit Button
+  </BpkButtonV2>
+);
+
+const SubmitLoadingButtonExample = (props: any) => (
+  <BpkLoadingButton submit {...props}>
+    Submit Loading Button
+  </BpkLoadingButton>
+);
+
 const MixedExample = () => (
   <>
     <PrimaryExample />
@@ -188,6 +201,8 @@ const MixedExample = () => (
     <LinkOnDarkExample />
     <FeaturedExample />
     <FullWidthExample />
+    <SubmitButtonExample />
+    <SubmitLoadingButtonExample />
   </>
 );
 
@@ -218,4 +233,6 @@ export {
   MixedExample,
   AnchorTagsExample,
   FullWidthExample,
+  SubmitButtonExample,
+  SubmitLoadingButtonExample
 };
