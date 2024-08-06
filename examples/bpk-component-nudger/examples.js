@@ -46,7 +46,7 @@ class NudgerContainer extends Component<
     super();
 
     this.state = {
-      value: 2,
+      value: 0,
     };
   }
 
@@ -71,6 +71,7 @@ class NudgerContainer extends Component<
           id={id}
           min={-10}
           max={10}
+          step={4}
           value={this.state.value}
           onChange={this.handleChange}
           decreaseButtonLabel="Remove passenger"

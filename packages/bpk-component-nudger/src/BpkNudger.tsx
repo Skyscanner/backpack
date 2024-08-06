@@ -17,7 +17,6 @@
  */
 
 import { useRef } from 'react';
-import type { ChangeEvent } from 'react';
 
 import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
 import { withButtonAlignment } from '../../bpk-component-icon';
@@ -34,8 +33,6 @@ import STYLES from './BpkNudger.module.scss';
 
 const getClassName = cssModules(STYLES);
 const compareValues = (a: number, b: number): number => a - b;
-const incrementValue = (currentValue: number): number => currentValue + 1;
-const decrementValue = (currentValue: number): number => currentValue - 1;
 
 const BpkNudger = ({
   buttonType = 'secondary',
@@ -49,6 +46,7 @@ const BpkNudger = ({
   min,
   name,
   onChange,
+  step = 1,
   subtitle,
   title,
   value,
@@ -71,6 +69,8 @@ const BpkNudger = ({
 
   const inputRef = useRef<HTMLInputElement | null>(null);
 
+  const incrementValue = (currentValue: number): number => currentValue + step;
+  const decrementValue = (currentValue: number): number => currentValue - step;
   const valueLimitter = (element: HTMLInputElement): void => {
     if (element.valueAsNumber < min) {
       onChange(min);
@@ -130,17 +130,21 @@ const BpkNudger = ({
           id={id}
           ref={inputRef}
           name={name || id}
-          onInput={(event: ChangeEvent<HTMLInputElement>) => {
+          step={step}
+          onInput={(event) => {
+            const inputElement = event.target as HTMLInputElement;
             // allow the removal of a value
             if (
-              !event.target.validity.valid &&
-              Number.isNaN(event.target.valueAsNumber)
+              !inputElement.validity.valid &&
+              Number.isNaN(inputElement.valueAsNumber)
             ) {
               onChange(min);
-              setNativeValue(event.target, min, true);
+              setNativeValue(inputElement, min, true);
             }
-            valueLimitter(event.target);
-            onChange(event.target.valueAsNumber);
+            valueLimitter(inputElement);
+            if (inputElement.valueAsNumber >= min && inputElement.valueAsNumber <= max) {
+              onChange(inputElement.valueAsNumber);
+            }
           }}
           onChange={(event) => {
             valueLimitter(event.target);
