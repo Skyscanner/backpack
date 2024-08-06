@@ -23,7 +23,6 @@
 .bpk-nudger {
   @include utils.bpk-rtl {
     display: flex;
-    flex-direction: row-reverse;
   }
 
   &__input {

@@ -69,7 +69,7 @@ class NudgerContainer extends Component<
         <BpkNudger
           aria-labelledby="passenger-label"
           id={id}
-          min={1}
+          min={-10}
           max={10}
           value={this.state.value}
           onChange={this.handleChange}
