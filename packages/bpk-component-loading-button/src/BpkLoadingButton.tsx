@@ -30,6 +30,8 @@ import ArrowIconSm from '../../bpk-component-icon/sm/long-arrow-right';
 import { BpkSpinner, BpkLargeSpinner } from '../../bpk-component-spinner';
 import { cssModules } from '../../bpk-react-utils';
 
+import type { Props as ButtonProps } from '../../bpk-component-button/src/BpkButtonV2/common-types';
+
 import STYLES from './BpkLoadingButton.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -83,7 +85,7 @@ type LoadingProps = {
   iconPosition: string,
   iconDisabled?: ReactElement<any>,
   iconLoading?: ReactElement<any>,
-};
+} & ButtonProps;
 
 const BpkLoadingButton = (props: LoadingProps) => {
   const {
