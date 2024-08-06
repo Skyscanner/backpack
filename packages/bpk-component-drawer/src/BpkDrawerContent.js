@@ -16,16 +16,16 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+/* @flow strict */
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import PropTypes from 'prop-types';
+import type { Node } from 'react';
+
 import Transition from 'react-transition-group/Transition';
 
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -33,43 +33,43 @@ import STYLES from './BpkDrawerContent.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
-  children: ReactNode;
-  dialogRef: () => void;
-  onCloseAnimationComplete: () => void;
-  onClose: () => void;
-  id: string;
-  title: string;
-  className?: string | null;
-  contentClassName?: string | null;
-  closeLabel?: string | null;
-  closeText?: string | null;
-  isDrawerShown?: boolean;
-  hideTitle?: boolean;
-  closeOnScrimClick?: boolean;
-  isIphone?: boolean;
-  isIpad?: boolean;
-  [rest: string]: any;
+type Props = {
+  children: Node,
+  dialogRef: () => mixed,
+  onCloseAnimationComplete: () => mixed,
+  onClose: () => mixed,
+  id: string,
+  title: string,
+  className: ?string,
+  contentClassName: ?string,
+  closeLabel: string,
+  closeText: ?string,
+  isDrawerShown: boolean,
+  hideTitle: boolean,
+  closeOnScrimClick: boolean,
+  isIphone: boolean,
+  isIpad: boolean,
 };
 
-const BpkDrawerContent = ({
-  children,
-  className = null,
-  closeLabel = null,
-  closeOnScrimClick = true, // Unused from withScrim scrim HOC
-  closeText = null,
-  contentClassName = null,
-  dialogRef,
-  hideTitle = false,
-  id,
-  isDrawerShown = true,
-  isIpad = false, // Unused from withScrim scrim HOC
-  isIphone = false, // Unused from withScrim scrim HOC
-  onClose,
-  onCloseAnimationComplete,
-  title,
-  ...rest
-}: Props) => {
+const BpkDrawerContent = (props: Props) => {
+  const {
+    children,
+    className,
+    closeLabel,
+    closeOnScrimClick, // Unused from withScrim scrim HOC
+    closeText,
+    contentClassName,
+    dialogRef,
+    hideTitle,
+    id,
+    isDrawerShown,
+    isIpad, // Unused from withScrim scrim HOC
+    isIphone, // Unused from withScrim scrim HOC
+    onClose,
+    onCloseAnimationComplete,
+    title,
+    ...rest
+  } = props;
 
   const drawerClassNames = [getClassName('bpk-drawer')];
   const headerClassNames = [getClassName('bpk-drawer__heading')];
@@ -101,10 +101,11 @@ const BpkDrawerContent = ({
       in={isDrawerShown}
       onExited={onCloseAnimationComplete}
     >
-      {(status: string) => (
+      {(status) => (
+        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
         <section
           id={id}
-          tabIndex={-1}
+          tabIndex="-1"
           role="dialog"
           key="dialog"
           aria-labelledby={headingId}
@@ -124,7 +125,10 @@ const BpkDrawerContent = ({
               <BpkButtonLink onClick={onClose}>{closeText}</BpkButtonLink>
             ) : (
               <div className={getClassName('bpk-drawer__close-button')}>
-                <BpkCloseButton label={closeLabel} onClick={onClose} />
+                <BpkCloseButton
+                  label={closeLabel}
+                  onClick={onClose}
+                />
               </div>
             )}
           </header>
@@ -135,6 +139,34 @@ const BpkDrawerContent = ({
   );
 };
 
+BpkDrawerContent.propTypes = {
+  children: PropTypes.node.isRequired,
+  dialogRef: PropTypes.func.isRequired,
+  onCloseAnimationComplete: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  contentClassName: PropTypes.string,
+  closeLabel: PropTypes.string,
+  closeText: PropTypes.string,
+  isDrawerShown: PropTypes.bool,
+  hideTitle: PropTypes.bool,
+  closeOnScrimClick: PropTypes.bool,
+  isIphone: PropTypes.bool,
+  isIpad: PropTypes.bool,
+};
 
+BpkDrawerContent.defaultProps = {
+  className: null,
+  contentClassName: null,
+  closeLabel: null,
+  closeText: null,
+  isDrawerShown: true,
+  hideTitle: false,
+  closeOnScrimClick: true,
+  isIphone: false,
+  isIpad: false,
+};
 
 export default BpkDrawerContent;

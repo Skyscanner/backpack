@@ -31,6 +31,7 @@ import {
   MixedExample,
   AnchorTagsExample,
   FullWidthExample,
+  SubmitButtonExample,
 } from './examples';
 import { MixedExample as MixedExampleV1 } from './examplesv1';
 
@@ -75,5 +76,5 @@ export const VisualTestV1WithZoom = {
     zoomEnabled: true,
   },
 };
-
+export const SubmitButton = () => <SubmitButtonExample />;
 export const FullWidth = () => <FullWidthExample />;

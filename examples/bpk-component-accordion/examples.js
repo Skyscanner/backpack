@@ -390,6 +390,22 @@ const SingleItemExampleWithoutDivider = () => (
   </SingleItemAccordion>
 );
 
+const SingleItemExampleWithoutDividerOnDark = () => (
+  <div style={{ backgroundColor: surfaceContrastDay }}>
+    <SingleItemAccordion divider={false} onDark>
+      <BpkAccordionItem id="stops" title="Stops" initiallyExpanded>
+        <StopsContent />
+      </BpkAccordionItem>
+      <BpkAccordionItem id="airlines" title="Airlines">
+        <AirlinesContent />
+      </BpkAccordionItem>
+      <BpkAccordionItem id="airports" title="Airports">
+        <AirportsContent />
+      </BpkAccordionItem>
+    </SingleItemAccordion>
+  </div>
+);
+
 export {
   SingleItemExample,
   SingleItemExampleInitiallyExpandedExample,
@@ -403,4 +419,5 @@ export {
   WithSeoContentExample,
   WithSeoContentOnDarkExample,
   SingleItemExampleWithoutDivider,
+  SingleItemExampleWithoutDividerOnDark,
 };
