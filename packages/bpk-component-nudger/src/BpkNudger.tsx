@@ -136,13 +136,13 @@ const BpkNudger = ({
           step={step}
           onInput={(event) => {
             const inputElement = event.target as HTMLInputElement;
-            // allow the removal of a value
             if (
-              !inputElement.validity.valid &&
+              !inputElement.validity.valid && // allow the removal of a value
               Number.isNaN(inputElement.valueAsNumber)
             ) {
-              onChange(null);
-              setNativeValue(inputElement, null, false);
+              // set prev value if entry invalid
+              onChange(value);
+              setNativeValue(inputElement, value, false);
             }
             valueLimitter(inputElement);
           }}
