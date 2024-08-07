@@ -141,8 +141,8 @@ const BpkNudger = ({
               !inputElement.validity.valid &&
               Number.isNaN(inputElement.valueAsNumber)
             ) {
-              onChange(min);
-              setNativeValue(inputElement, min, true);
+              onChange(null);
+              setNativeValue(inputElement, null, false);
             }
             valueLimitter(inputElement);
           }}
