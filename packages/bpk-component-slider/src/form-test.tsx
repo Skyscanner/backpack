@@ -56,7 +56,7 @@ describe('BpkSlider form test', () => {
 
     const sliderThumb = screen.getByLabelText('slider');
     expect(sliderThumb).toBeInTheDocument();
-    await userEvent.click(sliderThumb);
+    await sliderThumb.focus();
     await userEvent.keyboard('{ArrowRight}');
 
     const form = screen.getByTestId('form') as HTMLFormElement;
@@ -69,7 +69,7 @@ describe('BpkSlider form test', () => {
   it('should emit change event when slider value is changed', async () => {
     const handleChange = jest.fn();
     const Wrap = () => {
-      const [sliderValue, setSliderValue] = useState<number[]>([100]);
+      const [sliderValue, setSliderValue] = useState<number[]>([0]);
       return (
         <form data-testid="form">
           <BpkSlider
@@ -79,7 +79,6 @@ describe('BpkSlider form test', () => {
             name="slider"
             ariaLabel={['slider']}
             ariaValuetext={['min', 'max']}
-            data-testid="mySlider"
             value={sliderValue}
             onChange={(value) => {
               handleChange(value);
@@ -95,9 +94,50 @@ describe('BpkSlider form test', () => {
     const sliderThumb = screen.getByLabelText('slider');
     expect(sliderThumb).toBeInTheDocument();
 
-    await userEvent.click(sliderThumb);
+    await sliderThumb.focus();
     await userEvent.keyboard('{ArrowRight}');
     expect(handleChange).toHaveBeenCalledTimes(1);
-    expect(handleChange).toHaveBeenCalledWith(51);
+  });
+
+  it('should emit change event when both sides of slider value are changed', async () => {
+    const handleChange = jest.fn();
+    const Wrap = () => {
+      const [sliderValue, setSliderValue] = useState<number[]>([0, 100]);
+      return (
+        <form data-testid="form">
+          <BpkSlider
+            id="slider"
+            min={0}
+            max={100}
+            name="slider"
+            ariaLabel={['min', 'max']}
+            ariaValuetext={['0', '100']}
+            value={sliderValue}
+            onChange={(value) => {
+              handleChange(value);
+              setSliderValue(Array.isArray(value) ? value : [value]);
+
+            }}
+          />
+        </form>
+      );
+    };
+    render(<Wrap />);
+
+    const sliderThumbMin = screen.getByLabelText('min');
+    expect(sliderThumbMin).toBeInTheDocument();
+
+    await sliderThumbMin.focus();
+    await userEvent.keyboard('{ArrowRight}');
+    expect(handleChange).toHaveBeenCalledTimes(1);
+    expect(handleChange).toHaveBeenCalledWith([1, 100]);
+
+    const sliderThumbMax = screen.getByLabelText('max');
+    expect(sliderThumbMax).toBeInTheDocument();
+
+    await sliderThumbMax.focus();
+    await userEvent.keyboard('{ArrowLeft}');
+    expect(handleChange).toHaveBeenCalledTimes(2);
+    expect(handleChange).toHaveBeenCalledWith([1, 99]);
   });
 });
