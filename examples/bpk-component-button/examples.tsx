@@ -176,6 +176,12 @@ const FullWidthExample = (props: any) => (
   </BpkButtonV2>
 );
 
+const SubmitButtonExample = (props: any) => (
+  <BpkButtonV2 submit {...props}>
+    Submit Button
+  </BpkButtonV2>
+);
+
 const MixedExample = () => (
   <>
     <PrimaryExample />
@@ -188,6 +194,7 @@ const MixedExample = () => (
     <LinkOnDarkExample />
     <FeaturedExample />
     <FullWidthExample />
+    <SubmitButtonExample />
   </>
 );
 
@@ -218,4 +225,5 @@ export {
   MixedExample,
   AnchorTagsExample,
   FullWidthExample,
+  SubmitButtonExample,
 };
