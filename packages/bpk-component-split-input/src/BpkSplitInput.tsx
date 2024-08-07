@@ -15,10 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
 import { Component } from 'react';
+import type { ChangeEvent, ClipboardEvent, FocusEvent, KeyboardEvent,  } from 'react';
 
 import { INPUT_TYPES } from '../../bpk-component-input';
 import { cssModules } from '../../bpk-react-utils';
@@ -37,27 +36,48 @@ const DELETE = 46;
 const SPACEBAR = 32;
 const ENTER = 13;
 
-class BpkSplitInput extends Component {
-  constructor(props) {
-    super(props);
+interface Props {
+  type?: string | number;
+  id: string;
+  label: string;
+  name: string;
+  inputLength?: number;
+  placeholder?: string;
+  onInputChange: (value: string | number) => void;
+  onSubmit: (value: string | number) => void;
+  large?: boolean;
+}
 
+interface State {
+  focusedInput: number;
+  inputValue: string[] | number[];
+}
+
+class BpkSplitInput extends Component<Props, State> {
+  static defaultProps = {
+    type: INPUT_TYPES.number,
+    inputLength: 4,
+    large: true,
+    placeholder: '',
+  };
+
+  constructor(props: Props) {
+    super(props);
     this.state = {
       focusedInput: 0,
-      inputValue: [],
+      inputValue: Array(props.inputLength).fill(''),
     };
   }
 
-  onInputChange = (input) => {
+  onInputChange = (input: string[] | number[]) => {
     this.setState({ inputValue: input });
-    const { onChange } = this.props;
     const value = input.join('');
-    onChange(value);
+    this.props.onInputChange(value);
   };
 
-  updateInputValue = (value) => {
+  updateInputValue = (value: string | number ) => {
     const { focusedInput, inputValue } = this.state;
     inputValue[focusedInput] = value;
-
     this.onInputChange(inputValue);
   };
 
@@ -70,7 +90,7 @@ class BpkSplitInput extends Component {
     }
   };
 
-  validateInput = (inputValue) => {
+  validateInput = (inputValue: string[] | number[]) => {
     let index = 0;
     while (index < inputValue.length) {
       if (!this.isInputValid(inputValue[index])) {
@@ -84,16 +104,14 @@ class BpkSplitInput extends Component {
 
   isNumeric = () => this.props.type === INPUT_TYPES.number;
 
-  isInputValid = (value) => {
-    const isTypeValid = this.isNumeric()
-      ? /^\d$/.test(value)
-      : typeof value === 'string';
-    return isTypeValid && value.trim().length === 1;
+  isInputValid = (value: string | number) => {
+    const isTypeValid = this.isNumeric() ? /^\d$/.test(`${value}`) : typeof value === 'string';
+    return isTypeValid && `${value}`.trim().length === 1;
   };
 
-  focusInput = (inputIndex) => {
+  focusInput = (inputIndex: number) => {
     const { inputLength } = this.props;
-    const focusedInput = Math.max(Math.min(inputLength - 1, inputIndex), 0);
+    const focusedInput = Math.max(Math.min(inputLength! - 1, inputIndex), 0);
     this.setState({ focusedInput });
   };
 
@@ -107,23 +125,23 @@ class BpkSplitInput extends Component {
     this.focusInput(focusedInput - 1);
   };
 
-  handleOnPaste = (e) => {
+  handleOnPaste = (e: ClipboardEvent<HTMLInputElement>) => {
     e.preventDefault();
     const { inputLength } = this.props;
     const { focusedInput, inputValue } = this.state;
 
     const pastedData = e.clipboardData
       .getData('text/plain')
-      .slice(0, inputLength - focusedInput)
-      .split('');
+      .slice(0, inputLength! - focusedInput)
+  .split('');
     const charsReceived = pastedData.length;
 
     let firstInvalidInputPosition;
     let position = focusedInput;
     for (position; position < charsReceived; position += 1) {
       const firstElement = pastedData.shift();
-      if (this.isInputValid(firstElement)) {
-        inputValue[position] = firstElement;
+      if (this.isInputValid(firstElement!)) {
+        inputValue[position] = firstElement!;
       } else if (typeof firstInvalidInputPosition === 'undefined') {
         firstInvalidInputPosition = position;
       }
@@ -136,33 +154,30 @@ class BpkSplitInput extends Component {
     this.onInputChange(inputValue);
   };
 
-  handleOnKeyDown = (e) => {
-    if (e.keyCode === BACKSPACE || e.key === 'Backspace') {
+  handleOnKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Backspace') {
       e.preventDefault();
       this.updateInputValue('');
       this.focusPreviousInput();
-    } else if (e.keyCode === DELETE || e.key === 'Delete') {
+    } else if (e.key === 'Delete') {
       e.preventDefault();
       this.updateInputValue('');
     } else if (
-      e.keyCode === LEFT_ARROW ||
       e.key === 'Left' ||
       e.key === 'ArrowLeft'
     ) {
       e.preventDefault();
       this.focusPreviousInput();
     } else if (
-      e.keyCode === RIGHT_ARROW ||
       e.key === 'Right' ||
       e.key === 'ArrowRight'
     ) {
       e.preventDefault();
       this.focusNextInput();
-    } else if (e.keyCode === ENTER || e.key === 'Enter') {
+    } else if (e.key === 'Enter') {
       e.preventDefault();
       this.handleSubmit();
     } else if (
-      e.keyCode === SPACEBAR ||
       e.key === ' ' ||
       e.key === 'Spacebar' ||
       e.key === 'Space'
@@ -171,7 +186,7 @@ class BpkSplitInput extends Component {
     }
   };
 
-  handleOnChange = (e) => {
+  handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     if (this.isInputValid(value)) {
       this.updateInputValue(value);
@@ -179,17 +194,16 @@ class BpkSplitInput extends Component {
     }
   };
 
-  handleOnFocus = (e, index) => {
+  handleOnFocus = (e: FocusEvent<HTMLInputElement>, index: number) => {
     this.setState({ focusedInput: index });
     e.target.select();
   };
 
   renderInputs = () => {
     const { focusedInput, inputValue } = this.state;
-    const { id, inputLength, label, large, name, placeholder, type } =
-      this.props;
+    const { id, inputLength, label, large, name, placeholder, type, ...rest } = this.props;
     const inputs = [];
-    for (let index = 0; index < inputLength; index += 1) {
+    for (let index = 0; index < inputLength!; index += 1) {
       inputs.push(
         <InputField
           key={index}
@@ -206,8 +220,9 @@ class BpkSplitInput extends Component {
           onInput={this.handleOnChange}
           onKeyDown={this.handleOnKeyDown}
           onPaste={this.handleOnPaste}
-          onFocus={(e) => this.handleOnFocus(e, index)}
-        />,
+          onFocus={(e: FocusEvent<HTMLInputElement>) => this.handleOnFocus(e, index)}
+          {...rest}
+         />,
       );
     }
 
@@ -222,25 +237,6 @@ class BpkSplitInput extends Component {
     );
   }
 }
-
-BpkSplitInput.propTypes = {
-  type: PropTypes.oneOf([INPUT_TYPES.text, INPUT_TYPES.number]),
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  inputLength: PropTypes.number,
-  placeholder: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
-  large: PropTypes.bool,
-};
-
-BpkSplitInput.defaultProps = {
-  type: INPUT_TYPES.number,
-  inputLength: 4,
-  large: true,
-  placeholder: '',
-};
 
 export default BpkSplitInput;
 export { INPUT_TYPES };

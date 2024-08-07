@@ -46,7 +46,7 @@ type InputProps = {
   /**
    * **Required:** The value attribute of the input.
    */
-  value: string;
+  value: string | number;
   type?: (typeof INPUT_TYPES)[keyof typeof INPUT_TYPES];
 };
 

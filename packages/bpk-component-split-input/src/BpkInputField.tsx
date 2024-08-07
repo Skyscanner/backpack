@@ -15,10 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
-import { Component } from 'react';
+import { PureComponent } from 'react';
 
 import BpkInput from '../../bpk-component-input';
 import { cssModules } from '../../bpk-react-utils';
@@ -27,14 +25,33 @@ import STYLES from './BpkInputField.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-class BpkInputField extends Component {
-  componentDidUpdate(prevProps) {
+export type Props = DefaultProps;
+
+type DefaultProps = {
+  id: string;
+  label: string;
+  value: string | number;
+  focus: boolean;
+  index: number;
+  name: string;
+  [key: string]: any;
+}
+
+class BpkInputField extends PureComponent<Props> {
+  static defaultProps = {
+    value: '',
+    name: ''
+  };
+
+  componentDidUpdate(prevProps: Props) {
     const { focus } = this.props;
     if (prevProps.focus !== focus && this.input && focus) {
       this.input.focus();
       this.input.select();
     }
   }
+
+  private input: HTMLInputElement | null = null;
 
   render() {
     const { focus, id, index, label, name, value, ...rest } = this.props;
@@ -43,31 +60,18 @@ class BpkInputField extends Component {
         <BpkInput
           id={id}
           autoComplete="off"
-          maxLength="1"
+          name={name}
+          maxLength={1}
           aria-label={`${label} ${index}`}
-          inputRef={(input) => {
+          inputRef={(input: HTMLInputElement) => {
             this.input = input;
           }}
-          value={value || ''}
-          name={name || ''}
+          value={value}
           {...rest}
         />
       </div>
     );
   }
 }
-
-BpkInputField.propTypes = {
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  value: PropTypes.string,
-  focus: PropTypes.bool.isRequired,
-  index: PropTypes.number.isRequired,
-  name: PropTypes.string,
-};
-
-BpkInputField.defaultProps = {
-  value: '',
-};
 
 export default BpkInputField;

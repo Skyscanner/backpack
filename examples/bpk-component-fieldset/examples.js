@@ -519,7 +519,7 @@ const SplitInputExample = () => (
     name="otpInput"
     id="otpInput"
     label="otp input"
-    onChange={action('On Input Change')}
+    onInputChange={action('On Input Change')}
     onSubmit={action('On Submit')}
     inputLength={4}
   />
