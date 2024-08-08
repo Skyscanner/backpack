@@ -3,7 +3,7 @@
 exports[`BpkSwitch should render correctly 1`] = `
 <DocumentFragment>
   <label
-    class="bpk-switch"
+    class="bpk-switch bpk-switch-label-position--left"
   >
     <input
       aria-label="Switch"
@@ -27,7 +27,7 @@ exports[`BpkSwitch should render correctly 1`] = `
 exports[`BpkSwitch should render correctly when checked 1`] = `
 <DocumentFragment>
   <label
-    class="bpk-switch"
+    class="bpk-switch bpk-switch-label-position--left"
   >
     <input
       aria-label="Switch"
@@ -52,7 +52,7 @@ exports[`BpkSwitch should render correctly when checked 1`] = `
 exports[`BpkSwitch should render small switch 1`] = `
 <DocumentFragment>
   <label
-    class="bpk-switch"
+    class="bpk-switch bpk-switch-label-position--left"
   >
     <input
       aria-label="Switch"
@@ -76,7 +76,7 @@ exports[`BpkSwitch should render small switch 1`] = `
 exports[`BpkSwitch should support arbitrary props 1`] = `
 <DocumentFragment>
   <label
-    class="bpk-switch"
+    class="bpk-switch bpk-switch-label-position--left"
   >
     <input
       aria-label="Switch"
@@ -101,7 +101,7 @@ exports[`BpkSwitch should support arbitrary props 1`] = `
 exports[`BpkSwitch should support custom class names 1`] = `
 <DocumentFragment>
   <label
-    class="bpk-switch custom-classname"
+    class="bpk-switch bpk-switch-label-position--left custom-classname"
   >
     <input
       aria-label="Switch"
