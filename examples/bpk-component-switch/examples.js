@@ -27,6 +27,10 @@ const SmallExample = ({ ...rest }: {}) => (
   <BpkSwitch small {...rest} label="Backpack" />
 );
 
+const LabelonRightExample =({ ...rest }: {}) => (
+  <BpkSwitch {...rest} label="Backpack" labelPosition="right" />
+);
+
 // Putting the switch in a container which we know is too small to contain the label and the switch
 const ReducedSpaceExample =  ({ ...rest }: {}) => (
   <div style={{ width: "4rem" }}>
@@ -47,4 +51,4 @@ const MixedExample = () => (
 );
 
 
-export { DefaultExample, SmallExample, MixedExample, ReducedSpaceExample };
+export { DefaultExample, SmallExample, MixedExample, ReducedSpaceExample, LabelonRightExample };

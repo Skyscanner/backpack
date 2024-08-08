@@ -27,6 +27,7 @@ $border-width: tokens.$bpk-one-pixel-rem * 2;
 .bpk-switch {
   position: relative;
   display: flex;
+  width: fit-content;
   align-items: center;
 
   // Checkbox is invisible so the switch element can be the visual element.
@@ -89,6 +90,17 @@ $border-width: tokens.$bpk-one-pixel-rem * 2;
         width: tokens.bpk-spacing-base();
         height: tokens.bpk-spacing-base();
       }
+    }
+  }
+}
+
+.bpk-switch-label-position {
+  &--right {
+    flex-direction: row-reverse;
+
+    .bpk-switch__label {
+      margin-inline-end: 0;
+      margin-inline-start: tokens.bpk-spacing-md();
     }
   }
 }

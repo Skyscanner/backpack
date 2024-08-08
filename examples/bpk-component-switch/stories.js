@@ -21,7 +21,7 @@ import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
 
 import BpkSwitch from '../../packages/bpk-component-switch/src/BpkSwitch';
 
-import { DefaultExample, SmallExample, MixedExample, ReducedSpaceExample } from './examples';
+import { DefaultExample, SmallExample, MixedExample, ReducedSpaceExample, LabelonRightExample } from './examples';
 
 export default {
   title: 'bpk-component-switch',
@@ -46,6 +46,7 @@ export default {
 export const Default = DefaultExample;
 export const Small = SmallExample;
 export const ReducedSpace = ReducedSpaceExample;
+export const LabelOnRight = LabelonRightExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});

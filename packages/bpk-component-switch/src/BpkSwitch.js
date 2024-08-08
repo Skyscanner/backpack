@@ -29,10 +29,11 @@ const getClassName = cssModules(STYLES);
 export type Props = {
   label: Node,
   className: ?string,
+  labelPosition: ?'left' | 'right',
 };
 
 const BpkSwitch = (props: Props) => {
-  const { className, label, small, ...rest } = props;
+  const { className, label, labelPosition = 'left', small, ...rest } = props;
 
   const switchClassNames = getClassName(
     'bpk-switch__switch',
@@ -40,7 +41,7 @@ const BpkSwitch = (props: Props) => {
   );
 
   return (
-    <label className={getClassName('bpk-switch', className)}>
+    <label className={getClassName('bpk-switch', `bpk-switch-label-position--${labelPosition}`, className)}>
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <input
         type="checkbox"
