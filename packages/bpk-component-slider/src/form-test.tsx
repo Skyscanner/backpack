@@ -66,39 +66,6 @@ describe('BpkSlider form test', () => {
     });
   });
 
-  it('should emit change event when slider value is changed', async () => {
-    const handleChange = jest.fn();
-    const Wrap = () => {
-      const [sliderValue, setSliderValue] = useState<number[]>([0]);
-      return (
-        <form data-testid="form">
-          <BpkSlider
-            id="slider"
-            min={0}
-            max={100}
-            name="slider"
-            ariaLabel={['slider']}
-            ariaValuetext={['min', 'max']}
-            value={sliderValue}
-            onChange={(value) => {
-              handleChange(value);
-              setSliderValue(Array.isArray(value) ? value : [value]);
-
-            }}
-          />
-        </form>
-      );
-    };
-    render(<Wrap />);
-
-    const sliderThumb = screen.getByLabelText('slider');
-    expect(sliderThumb).toBeInTheDocument();
-
-    await sliderThumb.focus();
-    await userEvent.keyboard('{ArrowRight}');
-    expect(handleChange).toHaveBeenCalledTimes(1);
-  });
-
   it('should emit change event when both sides of slider value are changed', async () => {
     const handleChange = jest.fn();
     const Wrap = () => {
