@@ -31,10 +31,10 @@ window.ResizeObserver =
     unobserve: jest.fn(),
   }));
 
-describe('BpkSlider form test', () => {
+describe('BpkSlider form-test for single-thumb slider', () => {
   it('should work as a form component in a form', async () => {
     const Wrap = () => {
-      const [sliderValue, setSliderValue] = useState<number[]>([50]);
+      const [sliderValue, setSliderValue] = useState<number>(50);  // single-thumb slider with only max value
       return (
         <form data-testid="form">
           <BpkSlider
@@ -46,7 +46,7 @@ describe('BpkSlider form test', () => {
             ariaLabel={['slider']}
             ariaValuetext={['min', 'max']}
             data-testid="mySlider"
-            onChange={(value) => setSliderValue(Array.isArray(value) ? value : [value])}
+            onChange={(value) => setSliderValue(value as number)}
           />
         </form>
       );
@@ -66,10 +66,10 @@ describe('BpkSlider form test', () => {
     });
   });
 
-  it('should emit change event when both sides of slider value are changed', async () => {
+  it('should emit change event when both sides of slider value are changed for two-thumb slider', async () => {
     const handleChange = jest.fn();
     const Wrap = () => {
-      const [sliderValue, setSliderValue] = useState<number[]>([0, 100]);
+      const [sliderValue, setSliderValue] = useState<number[]>([0, 100]);  // two-thumb slider with min and max value
       return (
         <form data-testid="form">
           <BpkSlider
@@ -81,9 +81,8 @@ describe('BpkSlider form test', () => {
             ariaValuetext={['0', '100']}
             value={sliderValue}
             onChange={(value) => {
-              handleChange(value);
-              setSliderValue(Array.isArray(value) ? value : [value]);
-
+              handleChange(value as number[]);
+              setSliderValue(value as number[]);
             }}
           />
         </form>
