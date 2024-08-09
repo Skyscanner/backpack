@@ -151,6 +151,12 @@ const WithCustomRenderTargetExample = () => (
   </Spacer>
 );
 
+const HoverExample = () => (
+  <Spacer>
+    <PopoverContainer id="my-popover-1" hoverable />
+  </Spacer>
+);
+
 const WithoutArrowExample = () => (
   <Spacer>
     <PopoverContainer id="my-popover-2" displayArrow={false} />
@@ -196,6 +202,7 @@ const VisualExample = () => (
 export {
   DefaultExample,
   WithCustomRenderTargetExample,
+  HoverExample,
   WithoutArrowExample,
   WithLabelAsTitleExample,
   WithNoCloseButtonIconExample,
