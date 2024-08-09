@@ -17,7 +17,6 @@
  */
 
 
-import BpkConfigurableNudger from '../../packages/bpk-component-nudger/src/BpkConfigurableNudger';
 import BpkNudger from '../../packages/bpk-component-nudger/src/BpkNudger';
 
 import {
@@ -26,7 +25,6 @@ import {
   LowerBoundExample,
   UpperBoundsExample,
   StatefulExample,
-  ConfigurableExample,
   OnDarkExample,
   MixedExample,
 } from './examples';
@@ -34,7 +32,6 @@ import {
 export default {
   title: 'bpk-component-nudger',
   component: BpkNudger,
-  subcomponents: { BpkConfigurableNudger },
 };
 
 export const Default = DefaultExample;
@@ -46,8 +43,6 @@ export const LowerBounds = LowerBoundExample;
 export const UpperBounds = UpperBoundsExample;
 
 export const Stateful = StatefulExample;
-
-export const ConfigurableNudger = ConfigurableExample;
 
 export const OnDarkNudger = OnDarkExample;
 

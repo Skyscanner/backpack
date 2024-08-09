@@ -36,7 +36,7 @@ describe('BpkNudger form test', () => {
             max={9}
             value={nudgerValue}
             name="test-nudger"
-            onChange={(v) => setNudgerValue(v)}
+            onValueChange={(v) => setNudgerValue(v)}
             decreaseButtonLabel="Decrease"
             increaseButtonLabel="Increase"
             data-testid="myNudger"
@@ -50,12 +50,12 @@ describe('BpkNudger form test', () => {
 
     const minusButton = screen.getByRole('button', { name: 'Decrease' });
 
-    const textInput = screen.getByTestId('myNudger');
-    expect(textInput).toHaveValue('5');
+    const numInput = screen.getByTestId('myNudger');
+    expect(numInput).toHaveValue(5);
 
     await userEvent.click(minusButton);
 
-    expect(textInput).toHaveValue('4');
+    expect(numInput).toHaveValue(4);
 
     const formData = new FormData(
       screen.getByTestId('form') as HTMLFormElement,
@@ -81,7 +81,7 @@ describe('BpkNudger form test', () => {
             max={9}
             value={nudgerValue}
             name="test-nudger"
-            onChange={(v) => setNudgerValue(v)}
+            onValueChange={(v) => setNudgerValue(v)}
             decreaseButtonLabel="Decrease"
             increaseButtonLabel="Increase"
             data-testid="myNudger"
@@ -95,13 +95,55 @@ describe('BpkNudger form test', () => {
 
     const minusButton = screen.getByRole('button', { name: 'Decrease' });
 
-    const textInput = screen.getByTestId('myNudger');
-    expect(textInput).toHaveValue('5');
+    const numInput = screen.getByTestId('myNudger');
+    expect(numInput).toHaveValue(5);
     expect(formValidation).not.toHaveBeenCalled();
 
     await userEvent.click(minusButton);
 
-    expect(textInput).toHaveValue('4');
+    expect(numInput).toHaveValue(4);
+
+    expect(formValidation).toHaveBeenCalledTimes(1);
+  });
+
+  it('should emit change event when nudger value is manually changed', async () => {
+    const formValidation = jest.fn();
+    const Wrap = () => {
+      // state is required to force react to update and re-render the component.
+      const [nudgerValue, setNudgerValue] = useState(5);
+      useEffect(() => {
+        document.addEventListener('change', formValidation);
+      }, []);
+      return (
+        <form data-testid="form">
+          <BpkNudger
+            id="nudger"
+            min={1}
+            max={9}
+            value={nudgerValue}
+            name="test-nudger"
+            onValueChange={(v) => setNudgerValue(v)}
+            decreaseButtonLabel="Decrease"
+            increaseButtonLabel="Increase"
+            data-testid="myNudger"
+          />
+          ,<button type="submit">Submit</button>
+        </form>
+      );
+    };
+
+    render(<Wrap />);
+
+    const numInput = screen.getByTestId('myNudger');
+    const button = screen.getByRole('button', { name: 'Submit' });
+    expect(numInput).toHaveValue(5);
+    expect(formValidation).not.toHaveBeenCalled();
+
+    await userEvent.clear(numInput);
+    await userEvent.type(numInput, '4');
+    await button.focus();
+    
+    expect(numInput).toHaveValue(4);
 
     expect(formValidation).toHaveBeenCalledTimes(1);
   });

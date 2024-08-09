@@ -23,7 +23,6 @@
 .bpk-nudger {
   @include utils.bpk-rtl {
     display: flex;
-    flex-direction: row-reverse;
   }
 
   &__input {
@@ -36,6 +35,16 @@
 
     @include typography.bpk-text;
     @include typography.bpk-heading-5;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      margin: 0;
+      appearance: none;
+    }
+
+    &[type='number'] {
+      appearance: textfield;
+    }
 
     &--secondary-on-dark {
       background-color: transparent;
