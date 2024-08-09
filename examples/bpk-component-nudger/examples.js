@@ -72,7 +72,7 @@ class NudgerContainer extends Component<
           min={1}
           max={10}
           value={this.state.value}
-          onChange={this.handleChange}
+          onValueChange={this.handleChange}
           decreaseButtonLabel="Remove passenger"
           increaseButtonLabel="Add passenger"
           buttonType={buttonType}
@@ -88,7 +88,7 @@ const DefaultExample = () => (
     min={1}
     max={99}
     value={3}
-    onChange={action('change')}
+    onValueChange={action('change')}
     decreaseButtonLabel="Decrease"
     increaseButtonLabel="Increase"
   />
@@ -100,7 +100,7 @@ const WithLabelExample = () => (
     min={1}
     max={99}
     value={3}
-    onChange={action('change')}
+    onValueChange={action('change')}
     decreaseButtonLabel="Decrease"
     increaseButtonLabel="Increase"
     title="Adults"
@@ -115,7 +115,7 @@ const LowerBoundExample = () => (
     min={3}
     max={99}
     value={3}
-    onChange={action('change')}
+    onValueChange={action('change')}
     decreaseButtonLabel="Decrease"
     increaseButtonLabel="Increase"
   />
@@ -127,7 +127,7 @@ const UpperBoundsExample = () => (
     min={1}
     max={99}
     value={99}
-    onChange={action('change')}
+    onValueChange={action('change')}
     decreaseButtonLabel="Decrease"
     increaseButtonLabel="Increase"
   />
