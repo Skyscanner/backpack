@@ -28,7 +28,7 @@ export type CommonProps = {
   min:  number;
   max:  number;
   value:  number;
-  onChange: (arg0: number) => void | null;
+  onValueChange: (arg0: number) => void;
   name?: string | undefined;
   step?: number;
   className?: string | null;

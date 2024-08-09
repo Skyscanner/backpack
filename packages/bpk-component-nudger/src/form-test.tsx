@@ -36,7 +36,7 @@ describe('BpkNudger form test', () => {
             max={9}
             value={nudgerValue}
             name="test-nudger"
-            onChange={(v) => setNudgerValue(v)}
+            onValueChange={(v) => setNudgerValue(v)}
             decreaseButtonLabel="Decrease"
             increaseButtonLabel="Increase"
             data-testid="myNudger"
@@ -81,7 +81,7 @@ describe('BpkNudger form test', () => {
             max={9}
             value={nudgerValue}
             name="test-nudger"
-            onChange={(v) => setNudgerValue(v)}
+            onValueChange={(v) => setNudgerValue(v)}
             decreaseButtonLabel="Decrease"
             increaseButtonLabel="Increase"
             data-testid="myNudger"
@@ -122,7 +122,7 @@ describe('BpkNudger form test', () => {
             max={9}
             value={nudgerValue}
             name="test-nudger"
-            onChange={(v) => setNudgerValue(v)}
+            onValueChange={(v) => setNudgerValue(v)}
             decreaseButtonLabel="Decrease"
             increaseButtonLabel="Increase"
             data-testid="myNudger"

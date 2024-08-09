@@ -43,9 +43,9 @@ const BpkNudger = ({
   increaseButtonLabel,
   inputClassName,
   max,
-  min,
+  min = 0,
   name,
-  onChange,
+  onValueChange,
   step = 1,
   subtitle,
   title,
@@ -73,14 +73,14 @@ const BpkNudger = ({
   const decrementValue = (currentValue: number): number => currentValue - step;
   const valueLimitter = (element: HTMLInputElement): void => {
     if (element.valueAsNumber < min) {
-      onChange(min);
+      onValueChange(min);
       setNativeValue(element, min, false);
     } else if (element.valueAsNumber > max) {
-      onChange(max);
+      onValueChange(max);
       setNativeValue(element, max, false);
     }
     if (element.valueAsNumber >= min && element.valueAsNumber <= max) {
-      onChange(element.valueAsNumber);
+      onValueChange(element.valueAsNumber);
     }
   };
 
@@ -110,12 +110,12 @@ const BpkNudger = ({
           iconOnly
           onClick={() => {
             if (Number.isNaN(value)) {
-              onChange(min);
+              onValueChange(min);
               inputRef.current && setNativeValue(inputRef.current, min);
               return;
             }
             const newValue = decrementValue(value);
-            onChange(newValue);
+            onValueChange(newValue);
             // We want to maintain native input events across our form components. Along with react updating
             // the value attribute we can set it via native handlers and emit a "change" event.
             inputRef.current && setNativeValue(inputRef.current, newValue);
@@ -141,7 +141,7 @@ const BpkNudger = ({
               Number.isNaN(inputElement.valueAsNumber)
             ) {
               // set prev value if entry invalid
-              onChange(value);
+              onValueChange(value);
               setNativeValue(inputElement, value, false);
             }
             valueLimitter(inputElement);
@@ -154,12 +154,12 @@ const BpkNudger = ({
           iconOnly
           onClick={() => {
             if (Number.isNaN(value)) {
-              onChange(max);
+              onValueChange(max);
               inputRef.current && setNativeValue(inputRef.current, max);
               return;
             }
             const newValue = incrementValue(value);
-            onChange(newValue);
+            onValueChange(newValue);
             // We want to maintain native input events across our form components. Along with react updating
             // the value attribute we can set it via native handlers and emit a "change" event.
             inputRef.current && setNativeValue(inputRef.current, newValue);
