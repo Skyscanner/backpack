@@ -15,23 +15,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import BpkSwitch from '../../packages/bpk-component-switch';
 
-const DefaultExample = ({ ...rest }: {}) => (
-  <BpkSwitch {...rest} label="Backpack" />
+type Props = {
+  checked?: boolean,
+  [rest: string]: any
+};
+
+const DefaultExample = ({ ...rest }: Props) => (
+  <BpkSwitch {...rest} ariaLabel="Activate Backpack" />
 );
 
-const SmallExample = ({ ...rest }: {}) => (
-  <BpkSwitch small {...rest} label="Backpack" />
+const SmallExample = ({ ...rest }: Props) => (
+  <BpkSwitch small {...rest} ariaLabel="Activate Backpack" />
 );
 
 // Putting the switch in a container which we know is too small to contain the label and the switch
-const ReducedSpaceExample =  ({ ...rest }: {}) => (
+const ReducedSpaceExample =  ({ ...rest }: Props) => (
   <div style={{ width: "4rem" }}>
-    <BpkSwitch {...rest} label="Backpack" />
-    <BpkSwitch {...rest} label="Backpack" small />
+    <BpkSwitch {...rest} ariaLabel="Activate Backpack" />
+    <BpkSwitch {...rest} ariaLabel="Activate Backpack" small />
   </div>
 );
 
