@@ -29,7 +29,7 @@ describe('BpkNudger', () => {
         min={1}
         max={9}
         value={2}
-        onChange={() => null}
+        onValueChange={() => null}
         decreaseButtonLabel="Decrease"
         increaseButtonLabel="Increase"
       />,
@@ -45,7 +45,7 @@ describe('BpkNudger', () => {
         min={1}
         max={9}
         value={2}
-        onChange={() => null}
+        onValueChange={() => null}
         decreaseButtonLabel="Decrease"
         increaseButtonLabel="Increase"
         buttonType="secondaryOnDark"
@@ -62,7 +62,7 @@ describe('BpkNudger', () => {
         min={1}
         max={9}
         value={1}
-        onChange={() => null}
+        onValueChange={() => null}
         decreaseButtonLabel="Decrease"
         increaseButtonLabel="Increase"
       />,
@@ -77,7 +77,7 @@ describe('BpkNudger', () => {
         min={1}
         max={9}
         value={9}
-        onChange={() => null}
+        onValueChange={() => null}
         decreaseButtonLabel="Decrease"
         increaseButtonLabel="Increase"
       />,
@@ -92,7 +92,7 @@ describe('BpkNudger', () => {
         min={1}
         max={9}
         value={0}
-        onChange={() => null}
+        onValueChange={() => null}
         decreaseButtonLabel="Decrease"
         increaseButtonLabel="Increase"
       />,
@@ -107,7 +107,7 @@ describe('BpkNudger', () => {
         min={1}
         max={9}
         value={10}
-        onChange={() => null}
+        onValueChange={() => null}
         decreaseButtonLabel="Decrease"
         increaseButtonLabel="Increase"
       />,
@@ -123,7 +123,7 @@ describe('BpkNudger', () => {
         min={1}
         max={9}
         value={3}
-        onChange={onChangeSpy}
+        onValueChange={onChangeSpy}
         decreaseButtonLabel="Decrease"
         increaseButtonLabel="Increase"
       />,
@@ -146,7 +146,7 @@ describe('BpkNudger', () => {
         min={1}
         max={9}
         value={3}
-        onChange={onChangeSpy}
+        onValueChange={onChangeSpy}
         decreaseButtonLabel="Decrease"
         increaseButtonLabel="Increase"
         data-testid="myNudger"
@@ -171,7 +171,7 @@ describe('BpkNudger', () => {
         min={1}
         max={9}
         value={3}
-        onChange={onChangeSpy}
+        onValueChange={onChangeSpy}
         decreaseButtonLabel="Decrease"
         increaseButtonLabel="Increase"
         data-testid="myNudger"
@@ -195,7 +195,7 @@ describe('BpkNudger', () => {
         min={1}
         max={9}
         value={3}
-        onChange={onChangeSpy}
+        onValueChange={onChangeSpy}
         decreaseButtonLabel="Decrease"
         increaseButtonLabel="Increase"
         data-testid="myNudger"
