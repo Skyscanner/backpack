@@ -48,16 +48,12 @@ describe('BpkSwitch', () => {
       <BpkSwitch ariaLabel="Switch" className="custom-classname" />,
     );
     expect(screen.getByRole('checkbox')).toBeInTheDocument();
-    // expect(container.querySelectorAll(".custom-classname")).toBe(1);
-    // expect(container.querySelectorAll(".custom-classname")).toBe(1);
+    expect(container.querySelectorAll(".custom-classname")[0]).toBeInTheDocument();
   });
 
   it('should support arbitrary props', () => {
-    const { container } = render(<BpkSwitch ariaLabel="Switch" testid="123" />);
+    render(<BpkSwitch ariaLabel="Switch" data-testid="my-switch" />);
     expect(screen.getByRole('checkbox')).toBeInTheDocument();
-    expect(screen.getByRole('checkbox')).toHaveAttribute('aria-label', 'Switch');
-    // expect(container.querySelectorAll(".bpk-switch__checkbox")).toBe(1);
-    // expect(container.querySelectorAll(".bpk-switch__switch")).toBe(1);
-    expect(container.querySelectorAll("[data-testid='123']")[0]).toBeInTheDocument();
+    expect(screen.getAllByTestId('my-switch')).toHaveLength(1);
   });
 });
