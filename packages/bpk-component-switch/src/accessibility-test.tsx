@@ -24,7 +24,7 @@ import BpkSwitch from './BpkSwitch';
 
 describe('BpkSwitch accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(<BpkSwitch label="Switch" />);
+    const { container } = render(<BpkSwitch ariaLabel="Switch" />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

@@ -32,6 +32,7 @@ describe('BpkSwitch form test', () => {
         <form data-testid="form">
           <BpkSwitch
             name="switch"
+            ariaLabel='Switch'
             checked={isChecked}
             onChange={() => setIsChecked(!isChecked)}
             data-testid="myswitch"
@@ -64,6 +65,7 @@ describe('BpkSwitch form test', () => {
         <form data-testid="form">
           <BpkSwitch
             name="switch"
+            ariaLabel='Switch'
             checked={isChecked}
             onChange={() => setIsChecked(!isChecked)}
             data-testid="myswitch"

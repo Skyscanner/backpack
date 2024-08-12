@@ -47,12 +47,6 @@ $border-width: tokens.$bpk-one-pixel-rem * 2;
     }
   }
 
-  &__label {
-    /* stylelint-disable backpack/use-typography-styles */
-    line-height: $height;
-    margin-inline-end: tokens.bpk-spacing-md();
-  }
-
   // The 'track'.
   &__switch {
     position: relative;

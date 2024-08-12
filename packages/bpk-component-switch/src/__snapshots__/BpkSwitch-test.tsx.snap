@@ -12,12 +12,6 @@ exports[`BpkSwitch should render correctly 1`] = `
     />
     <span
       aria-hidden="true"
-      class="bpk-switch__label"
-    >
-      Switch
-    </span>
-    <span
-      aria-hidden="true"
       class="bpk-switch__switch"
     />
   </label>
@@ -37,12 +31,6 @@ exports[`BpkSwitch should render correctly when checked 1`] = `
     />
     <span
       aria-hidden="true"
-      class="bpk-switch__label"
-    >
-      Switch
-    </span>
-    <span
-      aria-hidden="true"
       class="bpk-switch__switch"
     />
   </label>
@@ -59,12 +47,6 @@ exports[`BpkSwitch should render small switch 1`] = `
       class="bpk-switch__checkbox"
       type="checkbox"
     />
-    <span
-      aria-hidden="true"
-      class="bpk-switch__label"
-    >
-      Switch
-    </span>
     <span
       aria-hidden="true"
       class="bpk-switch__switch bpk-switch__switch--small"
@@ -86,12 +68,6 @@ exports[`BpkSwitch should support arbitrary props 1`] = `
     />
     <span
       aria-hidden="true"
-      class="bpk-switch__label"
-    >
-      Switch
-    </span>
-    <span
-      aria-hidden="true"
       class="bpk-switch__switch"
     />
   </label>
@@ -108,12 +84,6 @@ exports[`BpkSwitch should support custom class names 1`] = `
       class="bpk-switch__checkbox"
       type="checkbox"
     />
-    <span
-      aria-hidden="true"
-      class="bpk-switch__label"
-    >
-      Switch
-    </span>
     <span
       aria-hidden="true"
       class="bpk-switch__switch"
