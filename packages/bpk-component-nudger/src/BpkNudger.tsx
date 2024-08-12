@@ -43,7 +43,7 @@ const BpkNudger = ({
   increaseButtonLabel,
   inputClassName,
   max,
-  min = 0,
+  min,
   name,
   onValueChange,
   step = 1,
@@ -52,6 +52,8 @@ const BpkNudger = ({
   value,
   ...rest
 }: CommonProps) => {
+  // Ensure that the minimum value is 0 or greater it's not designed to handle negative values.
+  const minimum = min < 0 ? 0 : min;
   const containerClassNames = getClassName(title && 'bpk-nudger__container');
   const inputClassNames = getClassName(
     'bpk-nudger__input',
@@ -62,7 +64,7 @@ const BpkNudger = ({
   const nudgerClassNames = getClassName('bpk-nudger', className);
 
   const maxButtonDisabled = compareValues(value, max) >= 0;
-  const minButtonDisabled = compareValues(value, min) <= 0;
+  const minButtonDisabled = compareValues(value, minimum) <= 0;
 
   const AlignedMinusIcon = withButtonAlignment(MinusIcon);
   const AlignedPlusIcon = withButtonAlignment(PlusIcon);
@@ -72,14 +74,14 @@ const BpkNudger = ({
   const incrementValue = (currentValue: number): number => currentValue + step;
   const decrementValue = (currentValue: number): number => currentValue - step;
   const valueLimitter = (element: HTMLInputElement): void => {
-    if (element.valueAsNumber < min) {
-      onValueChange(min);
-      setNativeValue(element, min, false);
+    if (element.valueAsNumber < minimum) {
+      onValueChange(minimum);
+      setNativeValue(element, minimum, false);
     } else if (element.valueAsNumber > max) {
       onValueChange(max);
       setNativeValue(element, max, false);
     }
-    if (element.valueAsNumber >= min && element.valueAsNumber <= max) {
+    if (element.valueAsNumber >= minimum && element.valueAsNumber <= max) {
       onValueChange(element.valueAsNumber);
     }
   };
@@ -110,8 +112,8 @@ const BpkNudger = ({
           iconOnly
           onClick={() => {
             if (Number.isNaN(value)) {
-              onValueChange(min);
-              inputRef.current && setNativeValue(inputRef.current, min);
+              onValueChange(minimum);
+              inputRef.current && setNativeValue(inputRef.current, minimum);
               return;
             }
             const newValue = decrementValue(value);
