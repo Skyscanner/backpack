@@ -29,7 +29,6 @@ import { BpkCode } from '../../packages/bpk-component-code';
 import BpkFieldset from '../../packages/bpk-component-fieldset';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../packages/bpk-component-select';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSwitch from '../../packages/bpk-component-switch';
 import { cssModules } from '../../packages/bpk-react-utils';
 
@@ -78,7 +77,7 @@ const AriaLiveDemo = ({
 );
 
 class SelectExample<SProps extends {}> extends Component<
-SProps,
+  SProps,
   { destination: string; direct: boolean }
 > {
   constructor(props: SProps) {
@@ -131,12 +130,16 @@ SProps,
                 <option value="Panjin">Panjin</option>
               </BpkSelect>
             </BpkFieldset>
-            <BpkSwitch
-              className={getClassName('bpk-storybook-aria-live-demo__switch')}
-              label="Direct flights only"
-              checked={direct}
-              onChange={this.toggleDirectness}
-            />
+            <div
+              className={getClassName('bpk-storybook-aria-live-demo__switch-wrapper')}
+            >
+              <span>Direct flights only</span>
+              <BpkSwitch
+                ariaLabel="Direct flights only"
+                checked={direct}
+                onChange={this.toggleDirectness}
+              />
+            </div>
           </div>
         </div>
         <AriaLiveDemo
@@ -186,7 +189,7 @@ class ChipsExample<CProps extends {}> extends Component<
 
   id = 'aria-live-chips-example';
 
-  toggleCategory = (category: "Flights" | "Hotels" | "Car hire") => {
+  toggleCategory = (category: 'Flights' | 'Hotels' | 'Car hire') => {
     this.setState((prevState) => {
       const nextState = prevState;
       nextState.categories[category] = !prevState.categories[category];
@@ -213,19 +216,21 @@ class ChipsExample<CProps extends {}> extends Component<
             <BpkCode>aria-controls=&quot;{this.id}&quot;</BpkCode> to link it to
             the ARIA live region below with the same ID.
           </p>
-          {(Object.keys(categories) as Array<keyof typeof categories>).map((category) => (
-            <BpkChip
-              className={getClassName('bpk-storybook-aria-live-demo__chip')}
-              aria-controls={this.id}
-              selected={categories[category]}
-              accessibilityLabel={category}
-              onClick={() => {
-                this.toggleCategory(category);
-              }}
-            >
-              {category}
-            </BpkChip>
-          ))}
+          {(Object.keys(categories) as Array<keyof typeof categories>).map(
+            (category) => (
+              <BpkChip
+                className={getClassName('bpk-storybook-aria-live-demo__chip')}
+                aria-controls={this.id}
+                selected={categories[category]}
+                accessibilityLabel={category}
+                onClick={() => {
+                  this.toggleCategory(category);
+                }}
+              >
+                {category}
+              </BpkChip>
+            ),
+          )}
         </div>
         <AriaLiveDemo
           id={this.id}
