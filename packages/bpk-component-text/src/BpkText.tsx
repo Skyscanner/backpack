@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode, ReactElement } from 'react';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 

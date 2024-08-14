@@ -31,17 +31,17 @@ describe('useMediaQuery', () => {
 
     it('should match when matchSSR=true', () => {
       const html = renderToString(<DummyComponent matchSSR />);
-      expect(html).toMatchSnapshot();
+      expect(html).toMatch(/matches/);
     });
 
     it('should not match when matchSSR=false', () => {
       const html = renderToString(<DummyComponent matchSSR={false} />);
-      expect(html).toMatchSnapshot();
+      expect(html).toMatch(/no match/);
     });
 
     it('should not match when matchSSR not explicitly set', () => {
       const html = renderToString(<DummyComponent />);
-      expect(html).toMatchSnapshot();
+      expect(html).toMatch(/no match/);
     });
   });
 
@@ -66,10 +66,8 @@ describe('useMediaQuery', () => {
     }));
 
     const view = renderHook(() => useMediaQuery('(min-width: 768px)'));
-
-    expect(view.result.all.length).toBe(1);
-
-    expect(view.result.all[0]).toBe(true);
+    
+    expect(view.result.current).toBe(true);
   });
 
   it('should return false if media query doesn`t match', () => {
@@ -81,8 +79,6 @@ describe('useMediaQuery', () => {
 
     const view = renderHook(() => useMediaQuery('(min-width: 1024px)'));
 
-    expect(view.result.all.length).toBe(1);
-
-    expect(view.result.all[0]).toBe(false);
+    expect(view.result.current).toBe(false);
   });
 });

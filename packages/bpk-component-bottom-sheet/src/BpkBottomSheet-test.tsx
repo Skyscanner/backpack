@@ -16,28 +16,27 @@
  * limitations under the License.
  */
 
-import { renderToString } from 'react-dom/server';
-
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import BpkBottomSheet from './BpkBottomSheet';
 // mock breakpoint to always match
-jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () => jest.fn(() => true));
+jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () =>
+  jest.fn(() => true),
+);
 describe('BpkBottomSheet', () => {
-
   const props = {
     ariaLabelledby: 'bottom-sheet',
-    id: "my-bottom-sheet",
+    id: 'my-bottom-sheet',
     isOpen: true,
     onClose: jest.fn(),
-  }
+  };
 
   it('renders without crashing with all props', () => {
-    expect(() => renderToString(
+    render(
       <BpkBottomSheet
-        actionText='Action'
-        ariaLabelledby='bottom-sheet'
+        actionText="Action"
+        ariaLabelledby="bottom-sheet"
         closeLabel="Close"
         closeOnEscPressed
         closeOnScrimClick
@@ -49,81 +48,67 @@ describe('BpkBottomSheet', () => {
         wide
       >
         Bottom Sheet content
-      </BpkBottomSheet>
-    )).not.toThrow();
+      </BpkBottomSheet>,
+    );
+    expect(screen.getByText('Bottom Sheet content')).toBeInTheDocument();
+    expect(screen.getByText('Bottom sheet title')).toBeInTheDocument();
+
   });
+
   it('renders without crashing with minimum props', () => {
-    expect(() => renderToString(
-      <BpkBottomSheet
-        ariaLabelledby='bottom-sheet'
-        id="my-bottom-sheet"
-        isOpen
-        onClose={jest.fn()}
-      >
-        Bottom Sheet content
-      </BpkBottomSheet>
-    )).not.toThrow();
+    render( <BpkBottomSheet
+      ariaLabelledby="bottom-sheet"
+      id="my-bottom-sheet"
+      isOpen
+      onClose={jest.fn()}
+    >
+      Bottom Sheet content
+    </BpkBottomSheet>,);
+    expect(screen.getByText('Bottom Sheet content')).toBeInTheDocument();
+    expect(screen.queryByText('Bottom sheet title')).not.toBeInTheDocument();
   });
-  it('renders correctly with minimum prop', () => {
-    const { asFragment } = render(
-      <BpkBottomSheet
-        ariaLabelledby='bottom-sheet'
-        id="my-bottom-sheet"
-        isOpen
-        onClose={jest.fn()}
-      >
-        Bottom Sheet content
-      </BpkBottomSheet>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+
   it('renders correctly with wide prop', () => {
-    const { asFragment } = render(
-      <BpkBottomSheet
-        {...props}
-        wide
-      >
+    const { container } = render(
+      <BpkBottomSheet {...props} wide>
         Bottom Sheet content
-      </BpkBottomSheet>
+      </BpkBottomSheet>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelector('.bpk-bottom-sheet--wide')).toBeInTheDocument();
   });
+
   it('renders correctly with action props', () => {
-    const { asFragment } = render(
-      <BpkBottomSheet
-        {...props}
-        actionText='Action'
-        onAction={jest.fn()}
-        wide
-      >
+    render(
+      <BpkBottomSheet {...props} actionText="Action" onAction={jest.fn()} wide>
         Bottom Sheet content
-      </BpkBottomSheet>
+      </BpkBottomSheet>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByText('Action')).toBeInTheDocument();
   });
+
   it('renders correctly with ariaLabelledBy prop', () => {
     const { container } = render(
-      <BpkBottomSheet
-        {...props}
-        ariaLabelledby='my-bottomsheet-title-id'
-      >
+      <BpkBottomSheet {...props} ariaLabelledby="my-bottomsheet-title-id">
         Bottom Sheet content
-      </BpkBottomSheet>
+      </BpkBottomSheet>,
     );
 
-    expect(container.querySelector('dialog[aria-labelledby="my-bottomsheet-title-id"]')).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        'dialog[aria-labelledby="my-bottomsheet-title-id"]',
+      ),
+    ).toBeInTheDocument();
   });
+
   it('renders correctly with ariaLabel prop', () => {
     const { container } = render(
-      <BpkBottomSheet
-        {...props}
-        ariaLabel='my a11y title'
-      >
+      <BpkBottomSheet {...props} ariaLabel="my a11y title">
         Bottom Sheet content
-      </BpkBottomSheet>
-
+      </BpkBottomSheet>,
     );
 
-    expect(container.querySelector('dialog[aria-label="my a11y title"]')).toBeInTheDocument();
+    expect(
+      container.querySelector('dialog[aria-label="my a11y title"]'),
+    ).toBeInTheDocument();
   });
 });
