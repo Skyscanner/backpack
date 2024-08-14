@@ -16,10 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { StatelessFunctionalComponent } from 'react';
+import type { SyntheticEvent, FunctionComponent } from 'react';
 
 import CloseIcon from '../../bpk-component-icon/sm/close';
 import { cssModules } from '../../bpk-react-utils';
@@ -29,16 +26,26 @@ import STYLES from './BpkCloseButton.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  label: string,
-  onClick: (event: SyntheticEvent<>) => mixed,
-  className: ?string,
-  customIcon: ?StatelessFunctionalComponent<any>,
-  onDark: Boolean,
+  label: string;
+  onClick: (event: SyntheticEvent<any>) => any;
+  className?: string | null;
+  customIcon?: FunctionComponent<any> | null;
+  onDark?: Boolean;
 };
 
-const BpkCloseButton = (props: Props) => {
-  const { className, customIcon, label, onClick, onDark, ...rest } = props;
-  const classNames = [onDark ? getClassName('bpk-close-button__onDark') : getClassName('bpk-close-button__default')];
+const BpkCloseButton = ({
+  className = null,
+  customIcon = null,
+  label,
+  onClick,
+  onDark = false,
+  ...rest
+}: Props) => {
+  const classNames = [
+    onDark
+      ? getClassName('bpk-close-button__onDark')
+      : getClassName('bpk-close-button__default'),
+  ];
   const Icon = customIcon || CloseIcon;
 
   if (className) {
@@ -46,7 +53,6 @@ const BpkCloseButton = (props: Props) => {
   }
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
     <button
       type="button"
       title={label}
@@ -56,24 +62,10 @@ const BpkCloseButton = (props: Props) => {
       {...rest}
     >
       <span className={getClassName('bpk-close-button-icon')}>
-        <Icon/>
+        <Icon />
       </span>
     </button>
   );
-};
-
-BpkCloseButton.propTypes = {
-  label: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  className: PropTypes.string,
-  customIcon: PropTypes.func,
-  onDark: PropTypes.bool,
-};
-
-BpkCloseButton.defaultProps = {
-  className: null,
-  customIcon: null,
-  onDark: false,
 };
 
 export default BpkCloseButton;
