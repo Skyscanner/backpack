@@ -68,32 +68,6 @@ exports[`withInfiniteScroll should finish the list when array changes to empty 1
 </DocumentFragment>
 `;
 
-exports[`withInfiniteScroll should finish the list when data source returns less than the number of elements requested 1`] = `
-<DocumentFragment>
-  <div>
-    <div
-      id="list"
-    >
-      <div>
-        Element 0
-      </div>
-      <div>
-        Element 1
-      </div>
-      <div>
-        Element 2
-      </div>
-      <div>
-        Element 3
-      </div>
-      <div>
-        Element 4
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`withInfiniteScroll should pass extra props to the decorated component 1`] = `
 <DocumentFragment>
   <div>
