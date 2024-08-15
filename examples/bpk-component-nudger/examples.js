@@ -25,9 +25,7 @@ import { iconSizeLg, lineHeightBase } from '@skyscanner/bpk-foundations-web/toke
 import { withAlignment } from '../../packages/bpk-component-icon';
 import AccountIcon from '../../packages/bpk-component-icon/lg/account';
 import BpkLabel from '../../packages/bpk-component-label';
-import BpkNudger, {
-  BpkConfigurableNudger,
-} from '../../packages/bpk-component-nudger';
+import BpkNudger from '../../packages/bpk-component-nudger';
 import { cssModules } from '../../packages/bpk-react-utils';
 import {
   action,
@@ -48,7 +46,7 @@ class NudgerContainer extends Component<
     super();
 
     this.state = {
-      value: 2,
+      value: 0,
     };
   }
 
@@ -71,77 +69,13 @@ class NudgerContainer extends Component<
         <BpkNudger
           aria-labelledby="passenger-label"
           id={id}
-          min={1}
+          min={0}
           max={10}
           value={this.state.value}
-          onChange={this.handleChange}
+          onValueChange={this.handleChange}
           decreaseButtonLabel="Remove passenger"
           increaseButtonLabel="Add passenger"
           buttonType={buttonType}
-        />
-      </div>
-    );
-  }
-}
-
-const options = ['economy', 'premium', 'business', 'first'];
-const compareValues = (a: string, b: string): number => {
-  const [aIndex, bIndex] = [options.indexOf(a), options.indexOf(b)];
-  return aIndex - bIndex;
-};
-
-const incrementValue = (a: string): string => {
-  const currentIndex = options.indexOf(a);
-  const newIndex = currentIndex + 1;
-  if (currentIndex === -1 || newIndex >= options.length) {
-    return a;
-  }
-  return options[newIndex];
-};
-
-const decrementValue = (a: string): string => {
-  const index = options.indexOf(a) - 1;
-  if (index < 0) {
-    return a;
-  }
-  return options[index];
-};
-
-const formatValue = (a: string): string => a.toString();
-
-class ConfigurableNudgerContainer extends Component<{}, { value: string }> {
-  constructor() {
-    super();
-
-    this.state = {
-      value: 'premium',
-    };
-  }
-
-  handleChange = (value: string) => {
-    this.setState({ value });
-  };
-
-  render() {
-    return (
-      <div>
-        <BpkLabel id="traveller-label" htmlFor="nudger">
-          Traveller Class
-        </BpkLabel>
-        <BpkConfigurableNudger
-          id="nudger"
-          aria-labelledby="traveller-label"
-          min="economy"
-          max="first"
-          value={this.state.value}
-          onChange={this.handleChange}
-          decreaseButtonLabel="Decrease"
-          increaseButtonLabel="Increase"
-          compareValues={compareValues}
-          incrementValue={incrementValue}
-          decrementValue={decrementValue}
-          formatValue={formatValue}
-          inputClassName={getClassName('bpk-nudger-configurable')}
         />
       </div>
     );
@@ -154,7 +88,7 @@ const DefaultExample = () => (
     min={1}
     max={99}
     value={3}
-    onChange={action('change')}
+    onValueChange={action('change')}
     decreaseButtonLabel="Decrease"
     increaseButtonLabel="Increase"
   />
@@ -166,7 +100,7 @@ const WithLabelExample = () => (
     min={1}
     max={99}
     value={3}
-    onChange={action('change')}
+    onValueChange={action('change')}
     decreaseButtonLabel="Decrease"
     increaseButtonLabel="Increase"
     title="Adults"
@@ -181,7 +115,7 @@ const LowerBoundExample = () => (
     min={3}
     max={99}
     value={3}
-    onChange={action('change')}
+    onValueChange={action('change')}
     decreaseButtonLabel="Decrease"
     increaseButtonLabel="Increase"
   />
@@ -193,7 +127,7 @@ const UpperBoundsExample = () => (
     min={1}
     max={99}
     value={99}
-    onChange={action('change')}
+    onValueChange={action('change')}
     decreaseButtonLabel="Decrease"
     increaseButtonLabel="Increase"
   />
@@ -203,7 +137,6 @@ const StatefulExample = () => (
   <NudgerContainer id="default-nudger" buttonType="secondary" />
 );
 
-const ConfigurableExample = () => <ConfigurableNudgerContainer />;
 
 const OnDarkExample = () => (
   <BpkDarkExampleWrapper>
@@ -215,7 +148,6 @@ const MixedExample = () => (
   <div>
     <DefaultExample />
     <WithLabelExample />
-    <ConfigurableExample />
     <OnDarkExample />
   </div>
 );
@@ -226,7 +158,6 @@ export {
   LowerBoundExample,
   UpperBoundsExample,
   StatefulExample,
-  ConfigurableExample,
   OnDarkExample,
   MixedExample,
 };
