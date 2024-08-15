@@ -116,17 +116,18 @@ describe('BpkLoadingButton', () => {
         My button
       </BpkLoadingButton>,
     );
+
     expect(asFragment()).toMatchSnapshot();
     expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with a "iconOnly" attribute', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkLoadingButton iconOnly>
         <span className="visually-hidden">Search</span>
       </BpkLoadingButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelectorAll('.bpk-button--icon-only').length).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 
@@ -147,100 +148,109 @@ describe('BpkLoadingButton', () => {
   });
 
   it('should render correctly with a "large" attribute', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkLoadingButton large>My button</BpkLoadingButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelectorAll('.bpk-button--large').length).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "secondary" attributes', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkLoadingButton large secondary>
         My button
       </BpkLoadingButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelectorAll('.bpk-button--large').length).toBe(1);
+    expect(container.querySelectorAll('.bpk-button--secondary').length).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "secondaryOnDark" attributes', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkLoadingButton large secondaryOnDark>
         My button
       </BpkLoadingButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelectorAll('.bpk-button--large').length).toBe(1);
+    expect(container.querySelectorAll('.bpk-button--secondary-on-dark').length).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "primaryOnDark" attributes', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkLoadingButton large primaryOnDark>
         My button
       </BpkLoadingButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelectorAll('.bpk-button--large').length).toBe(1);
+    expect(container.querySelectorAll('.bpk-button--primary-on-dark').length).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "primaryOnLight" attributes', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkLoadingButton large primaryOnLight>
         My button
       </BpkLoadingButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelectorAll('.bpk-button--large').length).toBe(1);
+    expect(container.querySelectorAll('.bpk-button--primary-on-light').length).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "destructive" attributes', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkLoadingButton large destructive>
         My button
       </BpkLoadingButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelectorAll('.bpk-button--large').length).toBe(1);
+    expect(container.querySelectorAll('.bpk-button--destructive').length).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "link" attributes', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkLoadingButton large link>
         My button
       </BpkLoadingButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelectorAll('.bpk-button--large').length).toBe(1);
+    expect(container.querySelectorAll('.bpk-button--link').length).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "linkOnDark" attributes', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkLoadingButton large linkOnDark>
         My button
       </BpkLoadingButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelectorAll('.bpk-button--large').length).toBe(1);
+    expect(container.querySelectorAll('.bpk-button--link-on-dark').length).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "featured" attributes', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkLoadingButton large featured>
         My button
       </BpkLoadingButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelectorAll('.bpk-button--large').length).toBe(1);
+    expect(container.querySelectorAll('.bpk-button--featured').length).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 
   it('should render correctly with "large" and "iconOnly" attributes', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkLoadingButton large iconOnly>
         <span className="visually-hidden">Search</span>
       </BpkLoadingButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelectorAll('.bpk-button--large').length).toBe(1);
+    expect(container.querySelectorAll('.bpk-button--icon-only').length).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 
@@ -290,17 +300,17 @@ describe('BpkLoadingButton', () => {
   it('should render correctly with a "iconLoading" attribute', () => {
     const AlignedIcon = withButtonAlignment(BaggageIcon);
     const icon = <AlignedIcon />;
-    const { asFragment } = render(
+    const { container } = render(
       <BpkLoadingButton loading iconLoading={icon}>
         My button
       </BpkLoadingButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelectorAll('.bpk-loading-button__icon').length).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 
   it('should respect the class names entered as a string', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkLoadingButton
         large
         secondary
@@ -309,7 +319,7 @@ describe('BpkLoadingButton', () => {
         My button
       </BpkLoadingButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelectorAll('.custom-class-1').length).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 

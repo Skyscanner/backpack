@@ -82,7 +82,7 @@ type LoadingProps = {
   loading?: boolean,
   iconOnly?: boolean,
   icon?: ReactElement<any>,
-  iconPosition?: string,
+  iconPosition?: (typeof ICON_POSITION)[keyof typeof ICON_POSITION],
   iconDisabled?: ReactElement<any>,
   iconLoading?: ReactElement<any>,
 } & ButtonProps;
