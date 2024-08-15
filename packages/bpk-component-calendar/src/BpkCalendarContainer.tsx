@@ -222,8 +222,7 @@ const withCalendarState = <P extends object>(Calendar: ComponentType<P>) => {
 
       const minDate = startOfDay(nextProps.minDate!);
       const maxDate = startOfDay(nextProps.maxDate!);
-      // @ts-ignore
-      if (focusedDateHasChanged(this.props, nextProps)) {
+      if (focusedDateHasChanged(this.props as CalendarProps<P>, nextProps as CalendarProps<P>)) {
         this.setState({
           focusedDate: dateToBoundaries(
             rawNextSelectedDate[0],
