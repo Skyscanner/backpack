@@ -34,7 +34,7 @@ describe('BpkNudger accessibility tests', () => {
           min={1}
           max={9}
           value={2}
-          onChange={() => null}
+          onValueChange={() => null}
           decreaseButtonLabel="Decrease"
           increaseButtonLabel="Increase"
         />

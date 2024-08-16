@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-
 import XlSpinner from '@skyscanner/bpk-svgs/dist/js/spinners/xl';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -31,12 +29,16 @@ import STYLES from './BpkSpinner.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  type: SpinnerTypes,
-  className?: string,
+  type?: SpinnerTypes;
+  className?: string | null;
+  [rest: string]: any;
 };
 
-const BpkExtraLargeSpinner = (props: Props) => {
-  const { className, type, ...rest } = props;
+const BpkExtraLargeSpinner = ({
+  className = null,
+  type = SPINNER_TYPES.dark,
+  ...rest
+}: Props) => {
   const classNames = getClassName(
     'bpk-spinner',
     'bpk-spinner--extra-large',
@@ -46,21 +48,9 @@ const BpkExtraLargeSpinner = (props: Props) => {
 
   return (
     <span className={classNames}>
-      <XlSpinner
-        {...rest}
-      />
+      <XlSpinner {...rest} />
     </span>
   );
-};
-
-BpkExtraLargeSpinner.propTypes = {
-  type: PropTypes.oneOf(Object.keys(SPINNER_TYPES)),
-  className: PropTypes.string,
-};
-
-BpkExtraLargeSpinner.defaultProps = {
-  type: SPINNER_TYPES.dark,
-  className: null,
 };
 
 export default BpkExtraLargeSpinner;
