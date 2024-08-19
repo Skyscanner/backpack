@@ -16,37 +16,47 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 
-import BpkExtraLargeSpinner from './BpkExtraLargeSpinner';
-import SPINNER_TYPES from './spinnerTypes';
+import CustomCloseIcon from '../../bpk-component-icon/sm/close-circle';
 
-describe('BpkExtraLargeSpinner', () => {
+import BpkCloseButton from './BpkCloseButton';
+
+const error = jest.spyOn(console, "error").mockImplementation(() => {});
+
+describe('BpkCloseButton', () => {
+  beforeEach(() => {
+    error.mockReset();
+  })
   it('should render correctly', () => {
-    const { asFragment } = render(<BpkExtraLargeSpinner />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly with type as light', () => {
     const { asFragment } = render(
-      <BpkExtraLargeSpinner type={SPINNER_TYPES.light} />,
+      <BpkCloseButton label="Close" onClick={() => null} />,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
-  it('should render correctly with type as primary', () => {
+  it('should render correctly with a custom icon', () => {
     const { asFragment } = render(
-      <BpkExtraLargeSpinner type={SPINNER_TYPES.primary} />,
+      <BpkCloseButton
+        label="Close"
+        onClick={() => null}
+        customIcon={CustomCloseIcon}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 
-  it('should render correctly with a "className" attribute', () => {
+  it('should render correctly with a custom className', () => {
     const { asFragment } = render(
-      <BpkExtraLargeSpinner className="my-custom-class" />,
+      <BpkCloseButton
+        label="Close"
+        onClick={() => null}
+        className="my-custom-classname"
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
+    expect(error).not.toHaveBeenCalled();
   });
 });
