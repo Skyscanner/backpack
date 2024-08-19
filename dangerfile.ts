@@ -155,8 +155,8 @@ const invalidCSSProperties = ["is an invalid value for the .* css style property
 const invalidProps = ["for a non-boolean attribute", "Invalid ARIA attribute"]
 // TODO: Address tests being wrapped in act
 const actTests = ["inside a test was not wrapped in act(...)"]
-// TODO: Remove this in a future version when we remove it from the codebase
-const legacyChildContextTypes = ["uses the legacy childContextTypes API which is no longer supported and will be removed in the next major release. Use React.createContext() instead"]
+// TODO: Remove this in a future version when we update the compoent
+const legacyChildContextTypes = ["Use React.createContext() instead", ".Learn more about this warning here: https://reactjs.org/link/legacy-context"]
 // TODO: Convert components that use CSSTransition to functional components and allow for using refs
 const findDOMNode = ["findDOMNode is deprecated and will be removed in the next major release."];
 

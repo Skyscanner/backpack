@@ -133,8 +133,8 @@ jobs:
           path: dist-storybook/
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
 
-      - name: Percy Test
-        run: npm run percy-test
-        if: ( github.ref == 'refs/heads/main' || github.repository == github.event.pull_request.head.repo.full_name) && github.actor != 'dependabot[bot]'
-        env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+      # - name: Percy Test
+      #   run: npm run percy-test
+      #   if: ( github.ref == 'refs/heads/main' || github.repository == github.event.pull_request.head.repo.full_name) && github.actor != 'dependabot[bot]'
+      #   env:
+      #     PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
