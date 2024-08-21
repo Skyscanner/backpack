@@ -28,14 +28,6 @@ import STYLES from './BpkSplitInput.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-// keyCode constants
-const BACKSPACE = 8;
-const LEFT_ARROW = 37;
-const RIGHT_ARROW = 39;
-const DELETE = 46;
-const SPACEBAR = 32;
-const ENTER = 13;
-
 interface Props {
   type?: string | number;
   id: string;
@@ -65,7 +57,7 @@ class BpkSplitInput extends Component<Props, State> {
     super(props);
     this.state = {
       focusedInput: 0,
-      inputValue: Array(props.inputLength).fill(''),
+      inputValue: [],
     };
   }
 
