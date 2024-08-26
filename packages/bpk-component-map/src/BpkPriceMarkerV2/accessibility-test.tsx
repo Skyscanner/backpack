@@ -16,13 +16,15 @@
  * limitations under the License.
  */
 
+import type { ReactNode } from 'react';
+
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import { BpkPriceMarkerV2 } from './BpkPriceMarker';
 
 type Props = {
-  children: Node;
+  children: ReactNode;
 };
 
 jest.mock('@react-google-maps/api', () => ({

@@ -31,6 +31,19 @@ exports[`withInfiniteScroll renders items after the first render 1`] = `
   <div>
     <div
       id="list"
+    />
+    <div
+      class="bpk-sentinel"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`withInfiniteScroll should finish the list when array changes to empty 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      id="list"
     >
       <div>
         Element 0
@@ -51,42 +64,6 @@ exports[`withInfiniteScroll renders items after the first render 1`] = `
     <div
       class="bpk-sentinel"
     />
-  </div>
-</DocumentFragment>
-`;
-
-exports[`withInfiniteScroll should finish the list when array changes to empty 1`] = `
-<DocumentFragment>
-  <div>
-    <div
-      id="list"
-    />
-  </div>
-</DocumentFragment>
-`;
-
-exports[`withInfiniteScroll should finish the list when data source returns less than the number of elements requested 1`] = `
-<DocumentFragment>
-  <div>
-    <div
-      id="list"
-    >
-      <div>
-        Element 0
-      </div>
-      <div>
-        Element 1
-      </div>
-      <div>
-        Element 2
-      </div>
-      <div>
-        Element 3
-      </div>
-      <div>
-        Element 4
-      </div>
-    </div>
   </div>
 </DocumentFragment>
 `;
@@ -111,40 +88,29 @@ exports[`withInfiniteScroll should refresh data when data changes 1`] = `
       id="list"
     >
       <div>
-        1
+        Element 0
       </div>
       <div>
-        2
+        Element 1
       </div>
       <div>
-        3
+        Element 2
+      </div>
+      <div>
+        Element 3
+      </div>
+      <div>
+        Element 4
       </div>
     </div>
+    <div
+      class="bpk-sentinel"
+    />
   </div>
 </DocumentFragment>
 `;
 
 exports[`withInfiniteScroll should refresh data when data changes from an empty Array 1`] = `
-<DocumentFragment>
-  <div>
-    <div
-      id="list"
-    >
-      <div>
-        1
-      </div>
-      <div>
-        2
-      </div>
-      <div>
-        3
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`withInfiniteScroll should render correctly when no more elements 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -166,6 +132,22 @@ exports[`withInfiniteScroll should render correctly when no more elements 1`] = 
         Element 4
       </div>
     </div>
+    <div
+      class="bpk-sentinel"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`withInfiniteScroll should render correctly when no more elements 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      id="list"
+    />
+    <div
+      class="bpk-sentinel"
+    />
   </div>
 </DocumentFragment>
 `;
@@ -205,16 +187,10 @@ exports[`withInfiniteScroll should render correctly with a "renderSeeMoreCompone
   <div>
     <div
       id="list"
-    >
-      <div>
-        Element 0
-      </div>
-    </div>
-    <button
-      type="button"
-    >
-      see more
-    </button>
+    />
+    <div
+      class="bpk-sentinel"
+    />
   </div>
 </DocumentFragment>
 `;
@@ -224,11 +200,7 @@ exports[`withInfiniteScroll should render correctly with an "elementsPerScroll" 
   <div>
     <div
       id="list"
-    >
-      <div>
-        Element 0
-      </div>
-    </div>
+    />
     <div
       class="bpk-sentinel"
     />

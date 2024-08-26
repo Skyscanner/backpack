@@ -19,6 +19,8 @@
 import 'jest-axe/extend-expect';
 import '@testing-library/jest-dom';
 import 'raf/polyfill';
+import { TextEncoder } from 'util'
+
 import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
 
 // The below is a workaround to the problem were calling resetModules causes react to be required twice.
@@ -30,5 +32,5 @@ jest.doMock('react', () => {
   }
   return mockActualReact;
 });
-
+global.TextEncoder = TextEncoder; 
 registerRequireContextHook();

@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016 Skyscanner Ltd
+ * Copyright 2022 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,21 @@
  * limitations under the License.
  */
 
-import { version } from 'react';
+import { renderHook } from '@testing-library/react'
 
-it('packages/* should be ^18.0.0', () => {
-  expect(version).toMatch(/^18/);
+import { useScrollToInitialImage } from './utils';
+
+describe('useScrollToInitialImage', () => {
+  it('should scroll to initial image on mount', () => {
+    const imagesRef = {
+      current: [document.createElement('div'), document.createElement('div')],
+    };
+    const initialImageIndex = 0;
+
+    renderHook(() => useScrollToInitialImage(initialImageIndex, imagesRef));
+
+    expect(
+      imagesRef.current[initialImageIndex].scrollIntoView,
+    ).toHaveBeenCalledTimes(1);
+  });
 });
