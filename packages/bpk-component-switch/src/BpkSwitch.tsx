@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -27,13 +23,18 @@ import STYLES from './BpkSwitch.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  label: Node,
-  className: ?string,
+  ariaLabel: string;
+  className?: string | null;
+  small?: boolean;
+  [rest: string]: any;
 };
 
-const BpkSwitch = (props: Props) => {
-  const { className, label, small, ...rest } = props;
-
+const BpkSwitch = ({
+  ariaLabel,
+  className = null,
+  small = false,
+  ...rest
+}: Props) => {
   const switchClassNames = getClassName(
     'bpk-switch__switch',
     small && 'bpk-switch__switch--small',
@@ -41,30 +42,15 @@ const BpkSwitch = (props: Props) => {
 
   return (
     <label className={getClassName('bpk-switch', className)}>
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <input
         type="checkbox"
         className={getClassName('bpk-switch__checkbox')}
-        aria-label={label}
+        aria-label={ariaLabel}
         {...rest}
       />
-      <span aria-hidden className={getClassName('bpk-switch__label')}>
-        {label}
-      </span>
       <span aria-hidden className={switchClassNames} />
     </label>
   );
-};
-
-BpkSwitch.propTypes = {
-  label: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  small: PropTypes.bool,
-};
-
-BpkSwitch.defaultProps = {
-  className: null,
-  small: false,
 };
 
 export default BpkSwitch;

@@ -43,8 +43,12 @@
     flex: 0.5;
   }
 
-  &__switch {
-    flex: 0.3;
+  &__switch-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 0.2;
   }
 
   &__chip {

@@ -32,6 +32,7 @@ describe('BpkSwitch form test', () => {
         <form data-testid="form">
           <BpkSwitch
             name="switch"
+            ariaLabel='Switch'
             checked={isChecked}
             onChange={() => setIsChecked(!isChecked)}
             data-testid="myswitch"
@@ -48,7 +49,8 @@ describe('BpkSwitch form test', () => {
     await userEvent.click(mySwitch);
     expect(mySwitch).toBeChecked();
 
-    const formData = new FormData(screen.getByTestId('form'));
+    const formElement = screen.getByTestId('form') as HTMLFormElement;
+    const formData = new FormData(formElement);
     expect(Object.fromEntries(formData.entries())).toEqual({ switch: 'on' });
   });
 
@@ -64,6 +66,7 @@ describe('BpkSwitch form test', () => {
         <form data-testid="form">
           <BpkSwitch
             name="switch"
+            ariaLabel='Switch'
             checked={isChecked}
             onChange={() => setIsChecked(!isChecked)}
             data-testid="myswitch"
