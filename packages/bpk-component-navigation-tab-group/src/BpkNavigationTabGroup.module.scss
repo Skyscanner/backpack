@@ -1,0 +1,107 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/borders';
+
+@mixin tab-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.bpk-navigation-tab-group {
+  display: flex;
+
+  .bpk-navigation-tab-wrap {
+    height: tokens.$bpk-one-pixel-rem * 36;
+    padding: 0 tokens.bpk-spacing-base();
+    border: none;
+    border-radius: tokens.$bpk-one-pixel-rem * 100;
+    margin-inline-end: tokens.bpk-spacing-sm();
+
+    @include tab-link;
+
+    &--surface-contrast {
+      background-color: tokens.$bpk-surface-contrast-day;
+      color: tokens.$bpk-text-primary-inverse-day;
+
+      @include borders.bpk-border-sm(tokens.$bpk-text-disabled-on-dark-day);
+
+      &:hover {
+        background-color: tokens.$bpk-core-primary-night;
+
+        @include borders.bpk-border-sm(tokens.$bpk-core-primary-night);
+      }
+
+      &-selected {
+        background-color: tokens.$bpk-core-accent-day;
+
+        @include borders.bpk-border-sm(tokens.$bpk-core-accent-day);
+
+        &:hover {
+          background-color: tokens.$bpk-core-accent-day;
+
+          @include borders.bpk-border-sm(tokens.$bpk-core-accent-day);
+        }
+      }
+    }
+
+    &--canvas-default {
+      background-color: tokens.$bpk-canvas-day;
+      color: tokens.$bpk-text-primary-day;
+
+      @include borders.bpk-border-sm(tokens.$bpk-text-disabled-day);
+
+      &:hover {
+        color: tokens.$bpk-text-primary-day;
+
+        @include borders.bpk-border-sm(tokens.$bpk-text-primary-day);
+      }
+
+      &-selected {
+        background-color: tokens.$bpk-core-accent-day;
+        color: tokens.$bpk-text-primary-inverse-day;
+
+        @include borders.bpk-border-sm(tokens.$bpk-core-accent-day);
+
+        &:hover {
+          background-color: tokens.$bpk-core-accent-day;
+          color: tokens.$bpk-text-primary-inverse-day;
+
+          @include borders.bpk-border-sm(tokens.$bpk-core-accent-day);
+        }
+      }
+    }
+  }
+
+  .bpk-navigation-tab-icon {
+    height: tokens.bpk-spacing-base();
+    margin-inline-end: tokens.bpk-spacing-md();
+
+    &--surface-contrast {
+      fill: tokens.$bpk-text-primary-inverse-day;
+    }
+
+    &--canvas-default {
+      &-selected {
+        fill: tokens.$bpk-text-primary-inverse-day;
+      }
+    }
+  }
+}
