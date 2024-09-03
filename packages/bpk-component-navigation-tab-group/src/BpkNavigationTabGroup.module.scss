@@ -38,10 +38,10 @@
     @include tab-link;
 
     &--surface-contrast {
-      background-color: tokens.$bpk-surface-contrast-day;
-      color: tokens.$bpk-text-primary-inverse-day;
+      background-color: transparent;
+      color: tokens.$bpk-text-on-dark-day;
 
-      @include borders.bpk-border-sm(tokens.$bpk-text-disabled-on-dark-day);
+      @include borders.bpk-border-sm(tokens.$bpk-line-day);
 
       &:hover {
         background-color: tokens.$bpk-core-primary-night;
@@ -63,10 +63,10 @@
     }
 
     &--canvas-default {
-      background-color: tokens.$bpk-canvas-day;
+      background-color: transparent;
       color: tokens.$bpk-text-primary-day;
 
-      @include borders.bpk-border-sm(tokens.$bpk-text-disabled-day);
+      @include borders.bpk-border-sm(tokens.$bpk-line-day);
 
       &:hover {
         color: tokens.$bpk-text-primary-day;
@@ -76,13 +76,13 @@
 
       &-selected {
         background-color: tokens.$bpk-core-accent-day;
-        color: tokens.$bpk-text-primary-inverse-day;
+        color: tokens.$bpk-text-on-dark-day;
 
         @include borders.bpk-border-sm(tokens.$bpk-core-accent-day);
 
         &:hover {
           background-color: tokens.$bpk-core-accent-day;
-          color: tokens.$bpk-text-primary-inverse-day;
+          color: tokens.$bpk-text-on-dark-day;
 
           @include borders.bpk-border-sm(tokens.$bpk-core-accent-day);
         }
@@ -95,12 +95,12 @@
     margin-inline-end: tokens.bpk-spacing-md();
 
     &--surface-contrast {
-      fill: tokens.$bpk-text-primary-inverse-day;
+      fill: tokens.$bpk-text-on-dark-day;
     }
 
     &--canvas-default {
       &-selected {
-        fill: tokens.$bpk-text-primary-inverse-day;
+        fill: tokens.$bpk-text-on-dark-day;
       }
     }
   }

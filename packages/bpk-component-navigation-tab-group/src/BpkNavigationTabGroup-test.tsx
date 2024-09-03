@@ -101,6 +101,6 @@ describe('BpkNavigationTabGroup', () => {
     const flightTextElement = screen.getByText('Flights');
     const flightLink = flightTextElement.closest('a');
 
-    expect(flightLink).toHaveClass('bpk-navigation-tab-wrap--CanvasDefault');
+    expect(flightLink).toHaveClass('bpk-navigation-tab-wrap--canvas-default');
   });
 });

@@ -68,7 +68,7 @@ const TabWrap = ({ children, onClick, selected, tab, type }: TabWrapProps) => {
       className={tabStyling}
       href={tab.href}
       onClick={onClick}
-      aria-current={selected ? 'page' : undefined}
+      aria-current={selected ? 'page' : false}
     >
       {children}
     </a>
@@ -77,8 +77,8 @@ const TabWrap = ({ children, onClick, selected, tab, type }: TabWrapProps) => {
       className={tabStyling}
       type="button"
       onClick={onClick}
-      aria-current={selected ? 'page' : undefined}
-      role='link'
+      aria-current={selected ? 'page' : false}
+      role="link"
     >
       {children}
     </button>
@@ -119,7 +119,7 @@ const BpkNavigationTabGroup = ({
             type={type}
           >
             <>
-              {Icon ? (
+              {Icon && (
                 <span
                   className={getClassName(
                     'bpk-navigation-tab-icon',
@@ -129,7 +129,7 @@ const BpkNavigationTabGroup = ({
                 >
                   <Icon />
                 </span>
-              ) : null}
+              )}
               <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
                 {tab.text}
               </BpkText>
