@@ -19,7 +19,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import BpkNavigationTabGroup from './BpkNavigationTabGroup';
+import BpkNavigationTabGroup, { NAVIGATION_TAB_GROUP_TYPES } from './BpkNavigationTabGroup';
 
 import type { Props } from './BpkNavigationTabGroup';
 
@@ -39,14 +39,19 @@ describe('BpkNavigationTabGroup', () => {
   });
 
   it('should render correctly', () => {
-    const { asFragment } = render(
+    render(
       <BpkNavigationTabGroup
         tabs={tabs}
         onItemClick={() => {}}
         selectedIndex={0}
+        ariaLabel="Navigation tabs"
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByRole('navigation')).toBeInTheDocument();
+    expect(screen.getByRole('navigation')).toHaveAttribute('aria-label', 'Navigation tabs');
+    expect(screen.getByText('Flights')).toBeInTheDocument();
+    expect(screen.getByText('Hotels')).toBeInTheDocument();
+    expect(screen.getByText('Car hire')).toBeInTheDocument();
   });
 
   it('should render selected link', () => {
@@ -55,6 +60,7 @@ describe('BpkNavigationTabGroup', () => {
         tabs={tabs}
         onItemClick={() => {}}
         selectedIndex={0}
+        ariaLabel="Navigation tabs"
       />,
     );
 
@@ -76,6 +82,7 @@ describe('BpkNavigationTabGroup', () => {
         tabs={tabs}
         onItemClick={onItemClick}
         selectedIndex={0}
+        ariaLabel="Navigation tabs"
       />,
     );
 
@@ -94,7 +101,8 @@ describe('BpkNavigationTabGroup', () => {
         tabs={tabs}
         onItemClick={() => {}}
         selectedIndex={0}
-        type="CanvasDefault"
+        type={NAVIGATION_TAB_GROUP_TYPES.CanvasDefault}
+        ariaLabel="Navigation tabs"
       />,
     );
 

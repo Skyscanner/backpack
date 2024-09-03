@@ -43,6 +43,7 @@ export default () => (
     onItemClick={() => {}}
     selectedIndex={0}
     type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
+    ariaLabel="Navigation tabs"
   />
 );
 ```

@@ -46,6 +46,7 @@ export type Props = {
    */
   onItemClick: (tab: TabItem, index: number) => void;
   selectedIndex: number;
+  ariaLabel: string;
 };
 
 type TabWrapProps = {
@@ -86,6 +87,7 @@ const TabWrap = ({ children, onClick, selected, tab, type }: TabWrapProps) => {
 };
 
 const BpkNavigationTabGroup = ({
+  ariaLabel,
   onItemClick,
   selectedIndex,
   tabs,
@@ -105,7 +107,7 @@ const BpkNavigationTabGroup = ({
     <nav
       className={containerStyling}
       role="navigation"
-      aria-label="Tab Navigation"
+      aria-label={ariaLabel}
     >
       {tabs.map((tab, index) => {
         const selected = index === selectedTab;

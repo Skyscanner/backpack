@@ -42,6 +42,7 @@ describe('BpkNavigationTabGroup accessibility tests', () => {
         tabs={tabs}
         onItemClick={() => {}}
         selectedIndex={0}
+        ariaLabel="Navigation tabs"
       />,
     );
     const results = await axe(container);
@@ -54,6 +55,7 @@ describe('BpkNavigationTabGroup accessibility tests', () => {
         tabs={tabsNoHref}
         onItemClick={() => {}}
         selectedIndex={0}
+        ariaLabel="Navigation tabs"
       />,
     );
     const results = await axe(container);

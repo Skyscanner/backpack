@@ -75,6 +75,7 @@ const SimpleSurfaceContrast = () => (
       onItemClick={() => {}}
       selectedIndex={2}
       type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
+      ariaLabel="Navigation tabs"
     />
   </div>
 );
@@ -89,6 +90,7 @@ const SimpleCanvasDefault = () => (
       onItemClick={() => {}}
       selectedIndex={0}
       type={NAVIGATION_TAB_GROUP_TYPES.CanvasDefault}
+      ariaLabel="Navigation tabs"
     />
   </div>
 );
@@ -100,6 +102,7 @@ const WithIconSurfaceContrastForExample = () => (
       onItemClick={() => {}}
       selectedIndex={0}
       type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
+      ariaLabel="Navigation tabs"
     />
   </div>
 );
@@ -112,6 +115,7 @@ const WithIconCanvasDefaultForExample = () => (
       onItemClick={() => {}}
       selectedIndex={0}
       type={NAVIGATION_TAB_GROUP_TYPES.CanvasDefault}
+      ariaLabel="Navigation tabs"
     />
   </div>
 );
@@ -124,6 +128,7 @@ const TabsNoHrefSurfaceContrastForExample = () => (
     onItemClick={() => {}}
     selectedIndex={0}
     type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
+    ariaLabel="Navigation tabs"
   />
 </div>
 );
@@ -136,6 +141,7 @@ const TabsNoHrefCanvasDefaultForExample = () => (
       onItemClick={() => {}}
       selectedIndex={0}
       type={NAVIGATION_TAB_GROUP_TYPES.CanvasDefault}
+      ariaLabel="Navigation tabs"
     />
   </div>
 );
@@ -148,6 +154,7 @@ const TabsOnlyTextSurfaceContrastForExample = () => (
     onItemClick={() => {}}
     selectedIndex={0}
     type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
+    ariaLabel="Navigation tabs"
   />
 </div>
 );
@@ -160,6 +167,7 @@ const TabsOnlyTextCanvasDefaultForExample = () => (
       onItemClick={() => {}}
       selectedIndex={0}
       type={NAVIGATION_TAB_GROUP_TYPES.CanvasDefault}
+      ariaLabel="Navigation tabs"
     />
   </div>
 );
