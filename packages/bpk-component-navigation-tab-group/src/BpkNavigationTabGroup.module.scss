@@ -41,12 +41,16 @@
       background-color: transparent;
       color: tokens.$bpk-text-on-dark-day;
 
-      @include borders.bpk-border-sm(tokens.$bpk-line-day);
+      @include borders.bpk-border-sm(
+        tokens.$bpk-private-navigation-tab-outline-day
+      );
 
       &:hover {
-        background-color: tokens.$bpk-core-primary-night;
+        background-color: tokens.$bpk-private-navigation-tab-hover-day;
 
-        @include borders.bpk-border-sm(tokens.$bpk-core-primary-night);
+        @include borders.bpk-border-sm(
+          tokens.$bpk-private-navigation-tab-hover-day
+        );
       }
 
       &-selected {
@@ -66,7 +70,9 @@
       background-color: transparent;
       color: tokens.$bpk-text-primary-day;
 
-      @include borders.bpk-border-sm(tokens.$bpk-line-day);
+      @include borders.bpk-border-sm(
+        tokens.$bpk-private-navigation-tab-outline-day
+      );
 
       &:hover {
         color: tokens.$bpk-text-primary-day;
