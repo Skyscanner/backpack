@@ -118,6 +118,11 @@ describe('BpkScrim', () => {
     beforeEach(() => {
       TestComponent = () => <div>TestComponent</div>;
       Component = withScrim(TestComponent);
+      jest.useFakeTimers();
+    });
+
+    afterEach(() => {
+      jest.useRealTimers();
     });
 
     it('should mount correctly when is iPhone', () => {
@@ -134,6 +139,7 @@ describe('BpkScrim', () => {
           isIphone
         />,
       );
+      jest.runAllTimers();
       expect(storeScroll).toHaveBeenCalled();
       expect(lockScroll).toHaveBeenCalled();
       expect(fixBody).toHaveBeenCalled();
@@ -155,6 +161,7 @@ describe('BpkScrim', () => {
           isIphone={false}
         />,
       );
+      jest.runAllTimers();
       expect(lockScroll).toHaveBeenCalled();
       expect(focusStore.storeFocus).toHaveBeenCalled();
       expect(storeScroll).not.toHaveBeenCalled();

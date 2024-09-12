@@ -79,6 +79,7 @@ const BpkSaveButton = ({
     <button
       type="button"
       aria-label={accessibilityLabel}
+      aria-pressed={checked}
       className={getClassName(
         'bpk-save-button',
         smallSize && 'bpk-save-button__small',

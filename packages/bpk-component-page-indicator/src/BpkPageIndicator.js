@@ -57,78 +57,102 @@ const BpkPageIndicator = ({
   showNav,
   totalIndicators,
   variant,
-}: Props) => (
-  // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-  <div className={className}>
+}: Props) => {
+  /**
+   * This validation is used to avoid an a11y issue when onClick isn't available.
+   * In this case, we can set aria-hidden = true to let screen reader skip reading page indicator dots.
+   * and render the dot as div rather than button to align with aria-hidden = true.
+  */
+  const isInteractive = !!onClick;
+
+  return (
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <div
-      className={getClassName(
-        'bpk-page-indicator',
-        showNav && 'bpk-page-indicator__showNav',
-      )}
+      className={className}
+      aria-hidden={isInteractive ? 'false': 'true'}
+      data-testid="indicator-container"
     >
-      {showNav && (
-        <NavButton
-          currentIndex={currentIndex}
-          onClick={onClick}
-          disabled={currentIndex === 0}
-          direction={DIRECTIONS.PREV}
-          ariaLabel={prevNavLabel}
-        />
-      )}
-      <div className={getClassName('bpk-page-indicator__container')}>
-        <div
-          className={getClassName('bpk-page-indicator__indicators-container')}
-          style={
-            currentIndex > START_SCROLL_INDEX
-              ? {
+      <div
+        className={getClassName(
+          'bpk-page-indicator',
+          showNav && 'bpk-page-indicator__showNav',
+        )}
+      >
+        {showNav && (
+          <NavButton
+            currentIndex={currentIndex}
+            onClick={onClick}
+            disabled={currentIndex === 0}
+            direction={DIRECTIONS.PREV}
+            ariaLabel={prevNavLabel}
+          />
+        )}
+        <div className={getClassName('bpk-page-indicator__container')}>
+          <div
+            className={getClassName('bpk-page-indicator__indicators-container')}
+            style={
+              currentIndex > START_SCROLL_INDEX
+                ? {
                   '--scroll-index':
                     totalIndicators > DISPLAYED_TOTAL
                       ? Math.min(
-                          currentIndex - START_SCROLL_INDEX,
-                          totalIndicators - DISPLAYED_TOTAL,
-                        )
+                        currentIndex - START_SCROLL_INDEX,
+                        totalIndicators - DISPLAYED_TOTAL,
+                      )
                       : 0,
                 }
-              : undefined
-          }
-        >
-          {[...Array(totalIndicators)].map((val, index) => (
-            <button
-              type="button"
-              onClick={(e) => {
-                onClick(e, index, DIRECTIONS.INDICATORS);
-              }}
-              className={getClassName(
-                'bpk-page-indicator__indicator',
-                `bpk-page-indicator__indicator--${variant}`,
-                index === currentIndex &&
+                : undefined
+            }
+          >
+            {[...Array(totalIndicators)].map((val, index) => isInteractive ? (
+              <button
+                type="button"
+                onClick={(e) => {
+                  onClick(e, index, DIRECTIONS.INDICATORS);
+                }}
+                className={getClassName(
+                  'bpk-page-indicator__indicator',
+                  `bpk-page-indicator__indicator--${variant}`,
+                  index === currentIndex &&
                   `bpk-page-indicator__indicator--active-${variant}`,
-              )}
-              aria-label={`${indicatorLabel} ${index + 1}`}
-              aria-current={currentIndex === index ? 'true' : 'false'}
-              // eslint-disable-next-line react/no-array-index-key
-              key={`indicator-${index}`}
-            />
-          ))}
+                )}
+                aria-label={`${indicatorLabel} ${index + 1}`}
+                aria-current={currentIndex === index ? 'true' : 'false'}
+                // eslint-disable-next-line react/no-array-index-key
+                key={`indicator-${index}`}
+              />
+            ) : (
+              <div
+                className={getClassName(
+                  'bpk-page-indicator__indicator',
+                  `bpk-page-indicator__indicator--${variant}`,
+                  index === currentIndex &&
+                  `bpk-page-indicator__indicator--active-${variant}`,
+                )}
+                // eslint-disable-next-line react/no-array-index-key
+                key={`indicator-${index}`}
+              />
+            ))}
+          </div>
         </div>
+        {showNav && (
+          <NavButton
+            currentIndex={currentIndex}
+            onClick={onClick}
+            disabled={currentIndex === totalIndicators - 1}
+            ariaLabel={nextNavLabel}
+            direction={DIRECTIONS.NEXT}
+          />
+        )}
       </div>
-      {showNav && (
-        <NavButton
-          currentIndex={currentIndex}
-          onClick={onClick}
-          disabled={currentIndex === totalIndicators - 1}
-          ariaLabel={nextNavLabel}
-          direction={DIRECTIONS.NEXT}
-        />
-      )}
     </div>
-  </div>
-);
+  )
+};
 
 BpkPageIndicator.propTypes = {
-  indicatorLabel: PropTypes.string.isRequired,
-  prevNavLabel: PropTypes.string.isRequired,
-  nextNavLabel: PropTypes.string.isRequired,
+  indicatorLabel: PropTypes.string,
+  prevNavLabel: PropTypes.string,
+  nextNavLabel: PropTypes.string,
   currentIndex: PropTypes.number.isRequired,
   totalIndicators: PropTypes.number.isRequired,
   variant: PropTypes.oneOf(Object.keys(VARIANT)),

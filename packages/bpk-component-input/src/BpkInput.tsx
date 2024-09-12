@@ -146,7 +146,7 @@ class BpkInput extends Component<Props, State> {
     return clearable ? (
       <div className={containerClassNames.join(' ')}>
         {renderedInput}
-        {value.length > 0 && (
+        {`${value}`.length > 0 && (
           <button
             type="button"
             title={clearButtonLabel || ''}

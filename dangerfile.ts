@@ -149,10 +149,14 @@ const reactRecogniseProp = ["React does not recognize"]
 const invalidTags = ["The tag <rect>", "The tag <g>", "The tag <text>"]
 const passingTests = ["✓"]
 const unknownEventHandler = ["Unknown event handler"]
-const propType = ["Failed prop type"]
+const propType = ["Failed prop type", "Support for defaultProps will be removed from function components in a future major release. Use JavaScript default parameters instead.", 'A props object containing a "key" prop is being spread into JSX:']
 const componentWillReceiveProps = ["componentWillReceiveProps"]
 const invalidCSSProperties = ["is an invalid value for the .* css style property."]
 const invalidProps = ["for a non-boolean attribute", "Invalid ARIA attribute"]
+// TODO: Address tests being wrapped in act
+const actTests = ["inside a test was not wrapped in act(...)"]
+// TODO: Convert components that use CSSTransition to functional components and allow for using refs
+const findDOMNode = ["findDOMNode is deprecated and will be removed in the next major release."];
 
 const allIgnoredWarnings = linterWarnings
   .concat(invalidReactChild)
@@ -166,6 +170,8 @@ const allIgnoredWarnings = linterWarnings
   .concat(componentWillReceiveProps)
   .concat(invalidCSSProperties)
   .concat(invalidProps)
+  .concat(actTests)
+  .concat(findDOMNode);
 
 commonFileWarnings('logs/test.log', {
   logType: 'fail',

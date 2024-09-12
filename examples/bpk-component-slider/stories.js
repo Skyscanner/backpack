@@ -40,12 +40,16 @@ export default {
           <Title />
           <ArgsTable of={PRIMARY_STORY} />
           <Markdown>
-            {`**Note**: The aria props are the values that will be passed to the thumb of the slider. If your slider is for times for instance you would likely pass something like the following to ensure the value of the thumb is read out in a formatted state rather than just the value of where the thumb is on the track. If no \`ariaValuetext\` is passed to the component the screen reader will read just the value of the thumb
+            {`
+              **Note**: minDistance and step props are multiplied to calculate the minimum distance allowed between thumbs
+
+            **Note**: The aria props are the values that will be passed to the thumb of the slider. If your slider is for times for instance you would likely pass something like the following to ensure the value of the thumb is read out in a formatted state rather than just the value of where the thumb is on the track. If no \`ariaValuetext\` is passed to the component the screen reader will read just the value of the thumb
 
             ariaLabels={['From', 'To']}
     ariaValuetext={[getSliderTime(finalSliderStart), getSliderTime(finalSliderEnd)]}
 
           `}
+
 
           </Markdown>
         </>

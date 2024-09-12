@@ -18,7 +18,6 @@
 
 import { render } from '@testing-library/react';
 
-// @ts-ignore
 import { BpkButtonV2 } from '../../bpk-component-button';
 
 import BpkSectionHeader, { SECTION_TYPES } from './BpkSectionHeader';

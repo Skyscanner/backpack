@@ -44,6 +44,7 @@
 
   &__previous-price {
     display: flex;
+    color: tokens.$bpk-text-error-day;
     text-decoration-line: line-through;
   }
 

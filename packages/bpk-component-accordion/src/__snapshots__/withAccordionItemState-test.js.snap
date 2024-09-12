@@ -3,10 +3,11 @@
 exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = `
 <DocumentFragment>
   <div
+    class="bpk-accordion__item bpk-accordion__item--with-divider"
     id="my-accordion"
   >
-    <dt
-      class="bpk-accordion__title bpk-accordion__title--collapsed"
+    <div
+      class="bpk-accordion__title"
     >
       <button
         aria-controls="my-accordion_content"
@@ -47,8 +48,8 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
           </span>
         </div>
       </button>
-    </dt>
-    <dd
+    </div>
+    <div
       class="bpk-accordion__content-container"
       id="my-accordion_content"
     >
@@ -58,10 +59,14 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
         <div
           style="display: none;"
         >
-          My accordion content
+          <div
+            class="bpk-accordion__content-inner-container bpk-accordion__content-inner-container--with-divider"
+          >
+            My accordion content
+          </div>
         </div>
       </div>
-    </dd>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -69,10 +74,11 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
 exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "expanded" prop 1`] = `
 <DocumentFragment>
   <div
+    class="bpk-accordion__item bpk-accordion__item--with-divider"
     id="my-accordion"
   >
-    <dt
-      class="bpk-accordion__title bpk-accordion__title--collapsed"
+    <div
+      class="bpk-accordion__title"
     >
       <button
         aria-controls="my-accordion_content"
@@ -113,8 +119,8 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
           </span>
         </div>
       </button>
-    </dt>
-    <dd
+    </div>
+    <div
       class="bpk-accordion__content-container"
       id="my-accordion_content"
     >
@@ -124,10 +130,14 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
         <div
           style="display: none;"
         >
-          My accordion content
+          <div
+            class="bpk-accordion__content-inner-container bpk-accordion__content-inner-container--with-divider"
+          >
+            My accordion content
+          </div>
         </div>
       </div>
-    </dd>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -135,9 +145,10 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
 exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "initiallyExpanded" prop 1`] = `
 <DocumentFragment>
   <div
+    class="bpk-accordion__item bpk-accordion__item--with-divider"
     id="my-accordion"
   >
-    <dt
+    <div
       class="bpk-accordion__title"
     >
       <button
@@ -179,19 +190,23 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
           </span>
         </div>
       </button>
-    </dt>
-    <dd
-      class="bpk-accordion__content-container bpk-accordion__content-container--expanded"
+    </div>
+    <div
+      class="bpk-accordion__content-container"
       id="my-accordion_content"
     >
       <div
         style="height: auto; overflow: visible; transition: height 200ms ease;"
       >
         <div>
-          My accordion content
+          <div
+            class="bpk-accordion__content-inner-container bpk-accordion__content-inner-container--with-divider"
+          >
+            My accordion content
+          </div>
         </div>
       </div>
-    </dd>
+    </div>
   </div>
 </DocumentFragment>
 `;

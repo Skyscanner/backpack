@@ -395,6 +395,9 @@ const VisualExample = () => (
     </div>
   </div>
 );
+const SubmitExample = () => (
+  <LoadingButtonStory submit wrapped={BpkLoadingButton} />
+);
 
 export {
   DocsPrimaryExample,
@@ -411,4 +414,5 @@ export {
   AnchorTagsExample,
   CustomIconExample,
   VisualExample,
+  SubmitExample,
 };

@@ -16,41 +16,81 @@
  * limitations under the License.
  */
 
+import { useRef } from 'react';
+
+import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
+import { withButtonAlignment } from '../../bpk-component-icon';
+import MinusIcon from '../../bpk-component-icon/sm/minus';
+import PlusIcon from '../../bpk-component-icon/sm/plus';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLabel from '../../bpk-component-label';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, setNativeValue } from '../../bpk-react-utils';
 
-import BpkConfigurableNudger from './BpkConfigurableNudger';
 import { type CommonProps } from './common-types';
 
 import STYLES from './BpkNudger.module.scss';
 
 const getClassName = cssModules(STYLES);
 const compareValues = (a: number, b: number): number => a - b;
-const incrementValue = (currentValue: number): number => currentValue + 1;
-const decrementValue = (currentValue: number): number => currentValue - 1;
-const formatValue = (currentValue: number): string => currentValue.toString();
 
 const BpkNudger = ({
   buttonType = 'secondary',
   className = null,
+  decreaseButtonLabel,
   icon,
   id,
+  increaseButtonLabel,
+  inputClassName,
+  max,
+  min,
+  name,
+  onValueChange,
+  step = 1,
   subtitle,
   title,
+  value,
   ...rest
 }: CommonProps) => {
+  // Ensure that the minimum value is 0 or greater it's not designed to handle negative values.
+  const minimum = min < 0 ? 0 : min;
+  const containerClassNames = getClassName(title && 'bpk-nudger__container');
+  const inputClassNames = getClassName(
+    'bpk-nudger__input',
+    'bpk-nudger__input--numeric',
+    inputClassName && inputClassName,
+    buttonType === 'secondaryOnDark' && 'bpk-nudger__input--secondary-on-dark',
+  );
+  const nudgerClassNames = getClassName('bpk-nudger', className);
 
-  const classNames = getClassName(title && 'bpk-nudger__container');
+  const maxButtonDisabled = compareValues(value, max) >= 0;
+  const minButtonDisabled = compareValues(value, minimum) <= 0;
+
+  const AlignedMinusIcon = withButtonAlignment(MinusIcon);
+  const AlignedPlusIcon = withButtonAlignment(PlusIcon);
+
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  const incrementValue = (currentValue: number): number => currentValue + step;
+  const decrementValue = (currentValue: number): number => currentValue - step;
+  const valueLimitter = (element: HTMLInputElement): void => {
+    if (element.valueAsNumber < minimum) {
+      onValueChange(minimum);
+      setNativeValue(element, minimum, false);
+    } else if (element.valueAsNumber > max) {
+      onValueChange(max);
+      setNativeValue(element, max, false);
+    }
+    if (element.valueAsNumber >= minimum && element.valueAsNumber <= max) {
+      onValueChange(element.valueAsNumber);
+    }
+  };
 
   return (
-    <div className={classNames}>
+    <div className={containerClassNames}>
       {title && (
         <div className={getClassName('bpk-nudger__label')}>
-          <BpkLabel htmlFor={id}>
-            {icon}
-          </BpkLabel>
+          <BpkLabel htmlFor={id}>{icon}</BpkLabel>
           <span
             // For a11y on IOS, role='text' forces label to be read in full. More info: https://axesslab.com/text-splitting/
             // eslint-disable-next-line jsx-a11y/aria-role
@@ -60,28 +100,81 @@ const BpkNudger = ({
             <BpkText textStyle={TEXT_STYLES.heading5}>{title}</BpkText>
             {subtitle && (
               <span className={getClassName('bpk-nudger__label--subtitle')}>
-                <BpkText>
-                  {subtitle}
-                </BpkText>
+                <BpkText>{subtitle}</BpkText>
               </span>
             )}
           </span>
         </div>
       )}
-      <BpkConfigurableNudger
-        inputClassName={getClassName('bpk-nudger__input--numeric')}
-        compareValues={compareValues}
-        incrementValue={incrementValue}
-        decrementValue={decrementValue}
-        formatValue={formatValue}
-        // TODO: className to be removed
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={className}
-        buttonType={buttonType}
-        id={id}
-        {...rest}
-      />
+      <div className={nudgerClassNames}>
+        <BpkButtonV2
+          type={BUTTON_TYPES[buttonType]}
+          iconOnly
+          onClick={() => {
+            if (Number.isNaN(value)) {
+              onValueChange(minimum);
+              inputRef.current && setNativeValue(inputRef.current, minimum);
+              return;
+            }
+            const newValue = decrementValue(value);
+            onValueChange(newValue);
+            // We want to maintain native input events across our form components. Along with react updating
+            // the value attribute we can set it via native handlers and emit a "change" event.
+            inputRef.current && setNativeValue(inputRef.current, newValue);
+          }}
+          disabled={minButtonDisabled}
+          title={decreaseButtonLabel}
+          aria-controls={id}
+        >
+          <AlignedMinusIcon />
+        </BpkButtonV2>
+        <input
+          type="number"
+          aria-live="polite"
+          defaultValue={value}
+          id={id}
+          ref={inputRef}
+          name={name || id}
+          step={step}
+          onInput={(event) => {
+            const inputElement = event.target as HTMLInputElement;
+            if (
+              !inputElement.validity.valid && // allow the removal of a value
+              Number.isNaN(inputElement.valueAsNumber)
+            ) {
+              // set prev value if entry invalid
+              onValueChange(value);
+              setNativeValue(inputElement, value, false);
+            }
+            valueLimitter(inputElement);
+          }}
+          className={inputClassNames}
+          {...rest}
+        />
+        <BpkButtonV2
+          type={BUTTON_TYPES[buttonType]}
+          iconOnly
+          onClick={() => {
+            if (Number.isNaN(value)) {
+              onValueChange(max);
+              inputRef.current && setNativeValue(inputRef.current, max);
+              return;
+            }
+            const newValue = incrementValue(value);
+            onValueChange(newValue);
+            // We want to maintain native input events across our form components. Along with react updating
+            // the value attribute we can set it via native handlers and emit a "change" event.
+            inputRef.current && setNativeValue(inputRef.current, newValue);
+          }}
+          disabled={maxButtonDisabled}
+          title={increaseButtonLabel}
+          aria-controls={id}
+        >
+          <AlignedPlusIcon />
+        </BpkButtonV2>
+      </div>
     </div>
-  )};
+  );
+};
 
 export default BpkNudger;

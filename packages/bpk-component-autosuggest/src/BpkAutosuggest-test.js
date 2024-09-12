@@ -19,7 +19,6 @@
 /* @flow strict */
 
 import { render } from '@testing-library/react';
-import ReactTestUtils from 'react-dom/test-utils';
 
 import BpkAutosuggest from './BpkAutosuggest';
 
@@ -72,7 +71,7 @@ describe('BpkAutosuggest', () => {
       inputRef = ref;
     };
 
-    const tree = ReactTestUtils.renderIntoDocument(
+    const { container } = render(
       <BpkAutosuggest
         suggestions={suggestions}
         onSuggestionsFetchRequested={onSuggestionsFetchRequested}
@@ -83,13 +82,12 @@ describe('BpkAutosuggest', () => {
       />,
     );
 
-    const input = ReactTestUtils.findRenderedDOMComponentWithTag(tree, 'input');
-
+    const input = container.querySelector('input');
     expect(input).toEqual(inputRef);
   });
 
   it('should default autocomplete to off', () => {
-    const tree = ReactTestUtils.renderIntoDocument(
+    const { container } = render(
       <BpkAutosuggest
         suggestions={suggestions}
         onSuggestionsFetchRequested={onSuggestionsFetchRequested}
@@ -100,12 +98,12 @@ describe('BpkAutosuggest', () => {
       />,
     );
 
-    const input = ReactTestUtils.findRenderedDOMComponentWithTag(tree, 'input');
+    const input = container.querySelector('input');
     expect(input.autocomplete).toEqual('off');
   });
 
   it('should allow a consumer to override autocomplete', () => {
-    const tree = ReactTestUtils.renderIntoDocument(
+    const { container } = render(
       <BpkAutosuggest
         suggestions={suggestions}
         onSuggestionsFetchRequested={onSuggestionsFetchRequested}
@@ -116,7 +114,7 @@ describe('BpkAutosuggest', () => {
       />,
     );
 
-    const input = ReactTestUtils.findRenderedDOMComponentWithTag(tree, 'input');
+    const input = container.querySelector('input');
     expect(input.autocomplete).toEqual('on');
   });
 });

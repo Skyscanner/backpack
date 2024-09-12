@@ -30,6 +30,8 @@ import ArrowIconSm from '../../bpk-component-icon/sm/long-arrow-right';
 import { BpkSpinner, BpkLargeSpinner } from '../../bpk-component-spinner';
 import { cssModules } from '../../bpk-react-utils';
 
+import type { Props as ButtonProps } from '../../bpk-component-button/src/BpkButtonV2/common-types';
+
 import STYLES from './BpkLoadingButton.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -77,33 +79,33 @@ type LoadingProps = {
   large?: boolean,
   link?: boolean,
   linkOnDark?: boolean,
-  loading: boolean,
-  iconOnly: boolean,
+  loading?: boolean,
+  iconOnly?: boolean,
   icon?: ReactElement<any>,
-  iconPosition: string,
+  iconPosition?: (typeof ICON_POSITION)[keyof typeof ICON_POSITION],
   iconDisabled?: ReactElement<any>,
   iconLoading?: ReactElement<any>,
-};
+} & ButtonProps;
 
 const BpkLoadingButton = (props: LoadingProps) => {
   const {
     children,
-    destructive,
-    disabled,
-    featured,
+    destructive = false,
+    disabled = false,
+    featured = false,
     icon,
     iconDisabled,
     iconLoading,
-    iconOnly,
-    iconPosition,
-    large,
-    link,
-    linkOnDark,
-    loading,
-    primaryOnDark,
-    primaryOnLight,
-    secondary,
-    secondaryOnDark,
+    iconOnly = false,
+    iconPosition = ICON_POSITION.TRAILING,
+    large = false,
+    link = false,
+    linkOnDark = false,
+    loading = false,
+    primaryOnDark = false,
+    primaryOnLight = false,
+    secondary = false,
+    secondaryOnDark = false,
     ...rest
   } = props;
 
@@ -152,41 +154,6 @@ const BpkLoadingButton = (props: LoadingProps) => {
       </div>
     </BpkButtonV2>
   );
-};
-
-BpkLoadingButton.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  secondary: PropTypes.bool,
-  destructive: PropTypes.bool,
-  link: PropTypes.bool,
-  linkOnDark: PropTypes.bool,
-  loading: PropTypes.bool,
-  iconOnly: PropTypes.bool,
-  icon: PropTypes.element,
-  iconPosition: PropTypes.oneOf([
-    ICON_POSITION.LEADING,
-    ICON_POSITION.TRAILING,
-  ]),
-  iconDisabled: PropTypes.element,
-  iconLoading: PropTypes.element,
-};
-
-BpkLoadingButton.defaultProps = {
-  className: null,
-  disabled: false,
-  secondary: false,
-  destructive: false,
-  large: false,
-  link: false,
-  linkOnDark: false,
-  loading: false,
-  iconOnly: false,
-  icon: null,
-  iconPosition: ICON_POSITION.TRAILING,
-  iconDisabled: null,
-  iconLoading: null,
 };
 
 export default BpkLoadingButton;

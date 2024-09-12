@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import BpkPopover from './BpkPopover';
@@ -31,11 +31,16 @@ describe('BpkPopover accessibility tests', () => {
         label="My popover"
         closeButtonText="Close"
         target={target}
+        isOpen
+        showArrow
       >
         My popover content
       </BpkPopover>,
     );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+
+    await waitFor(async () => {
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    })
   });
 });

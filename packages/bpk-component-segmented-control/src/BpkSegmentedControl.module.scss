@@ -1,0 +1,133 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/typography';
+@use '../../unstable__bpk-mixins/radii';
+@use '../../unstable__bpk-mixins/borders';
+@use '../../unstable__bpk-mixins/shadows';
+
+.bpk-segmented-control-group {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+
+  @include radii.bpk-border-radius-sm;
+
+  &-shadow {
+    @include shadows.bpk-box-shadow-sm;
+  }
+}
+
+.bpk-segmented-control {
+  min-height: tokens.bpk-spacing-xl();
+  padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
+  flex: 1;
+  border: none;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  overflow: hidden;
+
+  @include typography.bpk-label-2;
+
+  &--canvas-default {
+    background-color: tokens.$bpk-private-segmented-control-canvas-default-day;
+    color: tokens.$bpk-text-primary-day;
+
+    &-selected {
+      background-color: tokens.$bpk-core-primary-day;
+      color: tokens.$bpk-text-on-dark-day;
+    }
+  }
+
+  &--canvas-contrast {
+    background-color: tokens.$bpk-surface-default-day;
+    color: tokens.$bpk-text-primary-day;
+
+    &-selected {
+      background-color: tokens.$bpk-core-primary-day;
+      color: tokens.$bpk-text-on-dark-day;
+    }
+  }
+
+  &--surface-default {
+    background-color: tokens.$bpk-private-segmented-control-canvas-default-day;
+    color: tokens.$bpk-text-primary-day;
+
+    &-selected {
+      background-color: tokens.$bpk-core-primary-day;
+      color: tokens.$bpk-text-on-dark-day;
+    }
+  }
+
+  &--surface-contrast {
+    background-color: tokens.$bpk-private-segmented-control-surface-contrast-day;
+    color: tokens.$bpk-text-on-dark-day;
+
+    &-selected {
+      background-color: tokens.$bpk-private-segmented-control-surface-contrast-on-day;
+      color: tokens.$bpk-text-on-dark-day;
+    }
+  }
+}
+
+// Handle border lines between buttons
+.bpk-segmented-control:not(:first-of-type, [class*='selected']) {
+  border-inline-start: tokens.$bpk-one-pixel-rem solid tokens.$bpk-line-day;
+}
+
+.bpk-segmented-control--surface-contrast:not(
+    :first-of-type,
+    [class*='selected']
+  ) {
+  border-inline-start: tokens.$bpk-one-pixel-rem solid
+    tokens.$bpk-line-on-dark-day;
+}
+
+.bpk-segmented-control[class*='rightOfOption'] {
+  border-inline-start: none;
+}
+
+.bpk-segmented-control:first-child {
+  border-top-left-radius: tokens.$bpk-border-radius-sm;
+  border-bottom-left-radius: tokens.$bpk-border-radius-sm;
+
+  @include utils.bpk-rtl {
+    border-top-left-radius: 0;
+    border-top-right-radius: tokens.$bpk-border-radius-sm;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: tokens.$bpk-border-radius-sm;
+  }
+}
+
+.bpk-segmented-control:last-child {
+  border-top-right-radius: tokens.$bpk-border-radius-sm;
+  border-bottom-right-radius: tokens.$bpk-border-radius-sm;
+
+  @include utils.bpk-rtl {
+    border-top-left-radius: tokens.$bpk-border-radius-sm;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: tokens.$bpk-border-radius-sm;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.bpk-segmented-control:focus {
+  border: (tokens.$bpk-one-pixel-rem * 2) solid tokens.$bpk-text-link-day;
+  outline: none;
+}

@@ -31,7 +31,7 @@ const SplitInputExample = () => (
       name="otpInput"
       id="otpInput"
       label="otp input"
-      onChange={action('On Input Change')}
+      onInputChange={action('On Input Change')}
       onSubmit={action('On Submit')}
       inputLength={4}
     />
@@ -46,7 +46,7 @@ const SplitInputSixDigitExample = () => (
       name="otpInput"
       id="otpInput"
       label="otp input"
-      onChange={action('On Input Change')}
+      onInputChange={action('On Input Change')}
       onSubmit={action('On Submit')}
       inputLength={6}
     />
@@ -62,7 +62,7 @@ const SplitInputWithPlaceholderExample = () => (
       id="otpInput"
       label="otp input"
       placeholder="X"
-      onChange={action('On Input Change')}
+      onInputChange={action('On Input Change')}
       onSubmit={action('On Submit')}
       inputLength={6}
     />
@@ -78,7 +78,7 @@ const SplitInputSmallExample = () => (
       id="otpInput"
       label="otp input"
       large={false}
-      onChange={action('On Input Change')}
+      onInputChange={action('On Input Change')}
       onSubmit={action('On Submit')}
     />
   </form>

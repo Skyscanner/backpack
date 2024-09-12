@@ -129,6 +129,10 @@
     @include typography.bpk-hero-5;
   }
 
+  &--hero-6 {
+    @include typography.bpk-hero-6;
+  }
+
   &--editorial-1 {
     @include typography.bpk-editorial-1;
   }

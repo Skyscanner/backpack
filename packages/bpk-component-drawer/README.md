@@ -9,41 +9,23 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import { Component } from 'react';
 import BpkDrawer from '@skyscanner/backpack-web/bpk-component-drawer';
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import { BpkButtonV2 as BpkButton } from '@skyscanner/backpack-web/bpk-component-button';
+import { useState } from 'react';
 
-class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      isOpen: false,
-    };
-  }
-
-  onOpen = () => {
-    this.setState({
-      isOpen: true,
-    });
-  };
-
-  onClose = () => {
-    this.setState({
-      isOpen: false,
-    });
-  };
+function App() {
+  const [isOpen, setIsOpen] = useState(false);
 
   render() {
     return (
       <div>
         <div id="pagewrap">
-          <BpkButton onClick={this.onOpen}>Open drawer</BpkButton>
+          <BpkButton onClick={() => setIsOpen(true)}>Open drawer</BpkButton>
         </div>
         <BpkDrawer
           id="my-drawer"
-          isOpen={this.state.isOpen}
-          onClose={this.onClose}
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
           title="Drawer title"
           closeLabel="Close drawer"
           getApplicationElement={() => document.getElementById('pagewrap')}
