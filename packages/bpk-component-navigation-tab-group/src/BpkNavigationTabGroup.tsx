@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { FunctionComponent, ReactElement } from 'react';
+import type { MouseEvent, FunctionComponent, ReactElement } from 'react';
 import { useState } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
@@ -34,17 +34,21 @@ export type NavigationTabGroupTypes =
   (typeof NAVIGATION_TAB_GROUP_TYPES)[keyof typeof NAVIGATION_TAB_GROUP_TYPES];
 
 type TabItem = {
+  id: string;
   text: string;
   icon?: FunctionComponent<any> | null;
   href?: string;
+  dataCy?: string;
+  dataAnalyticsName?: string;
 };
 export type Props = {
+  id: string;
   tabs: TabItem[];
   type?: NavigationTabGroupTypes;
   /*
    * Index parameter to track which is clicked
    */
-  onItemClick: (tab: TabItem, index: number) => void;
+  onItemClick: (e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>,tab: TabItem, index: number) => void;
   selectedIndex: number;
   ariaLabel: string;
 };
@@ -54,7 +58,7 @@ type TabWrapProps = {
   type: NavigationTabGroupTypes;
   selected: boolean;
   children: ReactElement;
-  onClick: () => void;
+  onClick: (e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
 };
 
 const TabWrap = ({ children, onClick, selected, tab, type }: TabWrapProps) => {
@@ -64,22 +68,29 @@ const TabWrap = ({ children, onClick, selected, tab, type }: TabWrapProps) => {
     selected && `bpk-navigation-tab-wrap--${type}-selected`,
   );
 
+  const tabProps = {
+    ...(tab.dataCy && { 'data-cy': tab.dataCy }),
+    ...(tab.dataAnalyticsName && { 'data-analytics-name': tab.dataAnalyticsName }),
+    id: tab.id,
+    className: tabStyling,
+  };
+
   return tab.href ? (
     <a
-      className={tabStyling}
+      {...tabProps}
       href={tab.href}
-      onClick={onClick}
+      onClick={(e: MouseEvent<HTMLAnchorElement>) => onClick(e)}
       aria-current={selected ? 'page' : false}
     >
       {children}
     </a>
   ) : (
     <button
-      className={tabStyling}
+      {...tabProps}
       type="button"
-      onClick={onClick}
-      aria-current={selected ? 'page' : false}
+      onClick={(e: MouseEvent<HTMLButtonElement>) => onClick(e)}
       role="link"
+      aria-current={selected ? 'page' : false}
     >
       {children}
     </button>
@@ -88,23 +99,25 @@ const TabWrap = ({ children, onClick, selected, tab, type }: TabWrapProps) => {
 
 const BpkNavigationTabGroup = ({
   ariaLabel,
+  id,
   onItemClick,
   selectedIndex,
   tabs,
   type = NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast,
 }: Props) => {
   const [selectedTab, setSelectedTab] = useState(selectedIndex);
-  const handleButtonClick = (tab: TabItem, index: number) => {
+  const handleButtonClick = (e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>, tab: TabItem, index: number) => {
     if (index !== selectedTab) {
       setSelectedTab(index);
     }
-    onItemClick(tab, index);
+    onItemClick(e, tab, index);
   };
 
   const containerStyling = getClassName('bpk-navigation-tab-group');
 
   return (
     <nav
+      id={id}
       className={containerStyling}
       role="navigation"
       aria-label={ariaLabel}
@@ -117,7 +130,7 @@ const BpkNavigationTabGroup = ({
             key={`index-${index.toString()}`}
             tab={tab}
             selected={selected}
-            onClick={() => handleButtonClick(tab, index)}
+            onClick={(e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => handleButtonClick(e, tab, index)}
             type={type}
           >
             <>

@@ -24,9 +24,15 @@ import BpkNavigationTabGroup, { NAVIGATION_TAB_GROUP_TYPES } from './BpkNavigati
 import type { Props } from './BpkNavigationTabGroup';
 
 const tabs: Props['tabs'] = [
-  { text: 'Flights', href: '/' },
-  { text: 'Hotels', href: '/hotel' },
-  { text: 'Car hire', href: '/carhire' },
+  { id: 'air', text: 'Flights', href: '/' },
+  { id: 'hotel', text: 'Hotels', href: '/hotel' },
+  { id: 'car', text: 'Car hire', href: '/carhire' },
+];
+
+const tabsWithAnalytics: Props['tabs'] = [
+  { id: 'air', text: 'Flights', href: '/', dataCy:'flight-feature', dataAnalyticsName:'flights' },
+  { id: 'hotel', text: 'Hotels', href: '/hotel', dataCy:'hotel-feature', dataAnalyticsName:'hotels' },
+  { id: 'car', text: 'Car hire', href: '/carhire', dataCy:'carhire-feature', dataAnalyticsName:'car hire' },
 ];
 
 describe('BpkNavigationTabGroup', () => {
@@ -41,6 +47,7 @@ describe('BpkNavigationTabGroup', () => {
   it('should render correctly', () => {
     render(
       <BpkNavigationTabGroup
+        id = "navTest"
         tabs={tabs}
         onItemClick={() => {}}
         selectedIndex={0}
@@ -57,6 +64,7 @@ describe('BpkNavigationTabGroup', () => {
   it('should render selected link', () => {
     render(
       <BpkNavigationTabGroup
+        id = "navTest"
         tabs={tabs}
         onItemClick={() => {}}
         selectedIndex={0}
@@ -79,6 +87,7 @@ describe('BpkNavigationTabGroup', () => {
 
     render(
       <BpkNavigationTabGroup
+        id = "navTest"
         tabs={tabs}
         onItemClick={onItemClick}
         selectedIndex={0}
@@ -90,7 +99,8 @@ describe('BpkNavigationTabGroup', () => {
 
     expect(onItemClick).toHaveBeenCalledTimes(1);
     expect(onItemClick).toHaveBeenCalledWith(
-      { text: 'Hotels', href: '/hotel' },
+      expect.any(Object),
+      { id:'hotel', text: 'Hotels', href: '/hotel' },
       1,
     );
   });
@@ -98,6 +108,7 @@ describe('BpkNavigationTabGroup', () => {
   it('should render correctly when type is CanvasDefault', () => {
     render(
       <BpkNavigationTabGroup
+        id = "navTest"
         tabs={tabs}
         onItemClick={() => {}}
         selectedIndex={0}
@@ -110,5 +121,45 @@ describe('BpkNavigationTabGroup', () => {
     const flightLink = flightTextElement.closest('a');
 
     expect(flightLink).toHaveClass('bpk-navigation-tab-wrap--canvas-default');
+  });
+
+  it('should render correctly props when tab props with data analytics', () => {
+    render(
+      <BpkNavigationTabGroup
+        id = "navTest"
+        tabs={tabsWithAnalytics}
+        onItemClick={() => {}}
+        selectedIndex={0}
+        type={NAVIGATION_TAB_GROUP_TYPES.CanvasDefault}
+        ariaLabel="Navigation tabs"
+      />,
+    );
+
+    const flightTextElement = screen.getByText('Flights');
+    const flightLink = flightTextElement.closest('a');
+
+    expect(flightLink).toHaveAttribute('id', 'air');
+    expect(flightLink).toHaveAttribute('data-cy', 'flight-feature');
+    expect(flightLink).toHaveAttribute('data-analytics-name', 'flights');
+  });
+
+  it('should render correctly props when tab props without data analytics', () => {
+    render(
+      <BpkNavigationTabGroup
+        id = "navTest"
+        tabs={tabs}
+        onItemClick={() => {}}
+        selectedIndex={0}
+        type={NAVIGATION_TAB_GROUP_TYPES.CanvasDefault}
+        ariaLabel="Navigation tabs"
+      />,
+    );
+
+    const flightTextElement = screen.getByText('Flights');
+    const flightLink = flightTextElement.closest('a');
+
+    expect(flightLink).toHaveAttribute('id', 'air');
+    expect(flightLink).not.toHaveAttribute('data-cy');
+    expect(flightLink).not.toHaveAttribute('data-analytics-name');
   });
 });

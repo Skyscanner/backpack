@@ -24,21 +24,22 @@ import BpkNavigationTabGroup from './BpkNavigationTabGroup';
 import type { Props } from './BpkNavigationTabGroup';
 
 const tabs: Props['tabs'] = [
-  { text: 'Flights', href: '/' },
-  { text: 'Hotels', href: '/hotel' },
-  { text: 'Car hire', href: '/carhire' },
+  { id: 'air', text: 'Flights', href: '/' },
+  { id: 'hotel',text: 'Hotels', href: '/hotel' },
+  { id: 'car', text: 'Car hire', href: '/carhire' },
 ];
 
 const tabsNoHref: Props['tabs'] = [
-  { text: 'Flights'},
-  { text: 'Hotels'},
-  { text: 'Car hire'},
+  { id: 'air', text: 'Flights'},
+  { id: 'hotel', text: 'Hotels'},
+  { id: 'car', text: 'Car hire'},
 ];
 
 describe('BpkNavigationTabGroup accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
       <BpkNavigationTabGroup
+        id = "navTest"
         tabs={tabs}
         onItemClick={() => {}}
         selectedIndex={0}
@@ -52,6 +53,7 @@ describe('BpkNavigationTabGroup accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues without href', async () => {
     const { container } = render(
       <BpkNavigationTabGroup
+        id = "navTest"
         tabs={tabsNoHref}
         onItemClick={() => {}}
         selectedIndex={0}
