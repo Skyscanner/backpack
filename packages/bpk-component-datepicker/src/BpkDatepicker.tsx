@@ -278,8 +278,9 @@ class BpkDatepicker extends Component<Props, State> {
           DateUtils.isSameDay(newEndDate, selectionConfiguration.startDate))
       ) {
         onDateSelect(selectionConfiguration.startDate, newEndDate);
+        this.myRef && setNativeValue(this.myRef, this.props.formatDate(newEndDate));
       } else {
-        this.myRef && setNativeValue(this.myRef, this.props.formatDate(newStartDate))
+        this.myRef && setNativeValue(this.myRef, this.props.formatDate(newStartDate));
         onDateSelect(newStartDate);
       }
     }
