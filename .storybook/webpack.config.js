@@ -71,6 +71,7 @@ module.exports = ({ config }) => {
         options: {
           importLoaders: 1,
           modules: {
+            namedExport: false,
             localIdentName: '[local]-[hash:base64:5]',
           },
         },
@@ -96,6 +97,7 @@ module.exports = ({ config }) => {
         options: {
           importLoaders: 1,
           modules: {
+            namedExport: false,
             localIdentName: '[local]-[hash:base64:5]',
           },
         },
