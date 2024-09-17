@@ -113,7 +113,7 @@ class BpkDatepicker extends Component<Props, State> {
 
   elementRef?: HTMLInputElement;
 
-  divRef?: RefObject<HTMLInputElement>;
+  focusRef?: RefObject<HTMLInputElement>;
 
   static defaultProps = {
     calendarComponent: DefaultCalendar,
@@ -146,7 +146,7 @@ class BpkDatepicker extends Component<Props, State> {
     this.state = {
       isOpen: props.isOpen!,
     };
-    this.divRef = createRef();
+    this.focusRef = createRef();
     this.inputRef = (ref) => {
       this.elementRef = ref
     }
@@ -323,7 +323,7 @@ class BpkDatepicker extends Component<Props, State> {
     delete rest.isOpen;
 
     const input = inputComponent || (
-      <div ref={this.divRef} >
+      <div ref={this.focusRef} >
         <Input
           inputRef={this.inputRef}
           id={id}
