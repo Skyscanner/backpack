@@ -17,9 +17,9 @@
  */
 
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { CALENDAR_SELECTION_TYPE } from '../../bpk-component-calendar';
@@ -119,11 +119,12 @@ describe('BpkDatepicker form test', () => {
   });
 
   it('should emit a change event when input is changed', async () => {
-    const mockOnDateSelect = jest.fn();
-
-    const Wrap = ({ onDateSelect }: any) => {
+    const formValidation = jest.fn();
+    const Wrap = () => {
       const [calendarDate, setCalendarDate] = useState(new Date(2020, 2, 19));
-
+      useEffect(() => {
+        document.addEventListener('change', formValidation);
+      }, []);
       return (
         <form data-testid="form">
           <BpkDatepicker
@@ -144,7 +145,6 @@ describe('BpkDatepicker form test', () => {
             maxDate={new Date(2020, 2, 31)}
             onDateSelect={(date1, date2) => {
               setCalendarDate(date1);
-              onDateSelect(date1, date2); // Call the passed mock function
             }}
             selectionConfiguration={{
               type: CALENDAR_SELECTION_TYPE.single,
@@ -156,7 +156,7 @@ describe('BpkDatepicker form test', () => {
       );
     };
 
-    render(<Wrap onDateSelect={mockOnDateSelect} />);
+    render(<Wrap />);
 
     const inputField = screen.getByRole('textbox', {
       name: /Thursday, 19th March 2020/i,
@@ -177,7 +177,7 @@ describe('BpkDatepicker form test', () => {
     await userEvent.click(dateButton);
 
     expect(inputField.getAttribute('value')).toEqual('30/03/2020');
-    expect(mockOnDateSelect).toHaveBeenCalled();
+    expect(formValidation).toHaveBeenCalledTimes(1);
   });
 });
 
