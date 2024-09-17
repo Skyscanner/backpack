@@ -111,7 +111,7 @@ type State = {
 class BpkDatepicker extends Component<Props, State> {
   inputRef: (ref:HTMLInputElement) => void;
 
-  myRef?: HTMLInputElement;
+  elementRef?: HTMLInputElement;
 
   divRef?: RefObject<HTMLInputElement>;
 
@@ -148,7 +148,7 @@ class BpkDatepicker extends Component<Props, State> {
     };
     this.divRef = createRef();
     this.inputRef = (ref) => {
-      this.myRef = ref
+      this.elementRef = ref
     }
   }
 
@@ -278,9 +278,9 @@ class BpkDatepicker extends Component<Props, State> {
           DateUtils.isSameDay(newEndDate, selectionConfiguration.startDate))
       ) {
         onDateSelect(selectionConfiguration.startDate, newEndDate);
-        this.myRef && setNativeValue(this.myRef, this.props.formatDate(newEndDate));
+        this.elementRef && setNativeValue(this.elementRef, this.props.formatDate(newEndDate));
       } else {
-        this.myRef && setNativeValue(this.myRef, this.props.formatDate(newStartDate));
+        this.elementRef && setNativeValue(this.elementRef, this.props.formatDate(newStartDate));
         onDateSelect(newStartDate);
       }
     }
