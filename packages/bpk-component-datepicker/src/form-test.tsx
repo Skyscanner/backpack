@@ -17,7 +17,9 @@
  */
 
 
-import { render, screen } from '@testing-library/react';
+import { useState } from 'react';
+
+import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { CALENDAR_SELECTION_TYPE } from '../../bpk-component-calendar';
@@ -116,5 +118,66 @@ describe('BpkDatepicker form test', () => {
     expect(Object.fromEntries(formData.entries())).toEqual({ datepicker_input: '19/03/2020 - 19/04/2020' });
   });
 
+  it('should emit a change event when input is changed', async () => {
+    const mockOnDateSelect = jest.fn();
+
+    const Wrap = ({ onDateSelect }: any) => {
+      const [calendarDate, setCalendarDate] = useState(new Date(2020, 2, 19));
+
+      return (
+        <form data-testid="form">
+          <BpkDatepicker
+            id="datepicker"
+            closeButtonText="Close"
+            daysOfWeek={weekDays}
+            changeMonthLabel="Change month"
+            previousMonthLabel="Go to previous month"
+            nextMonthLabel="Go to next month"
+            title="Departure date"
+            weekStartsOn={1}
+            getApplicationElement={() => document.createElement('div')}
+            formatDate={formatDate}
+            formatMonth={formatMonth}
+            formatDateFull={formatDateFull}
+            inputProps={inputProps}
+            minDate={new Date(2020, 2, 1)}
+            maxDate={new Date(2020, 2, 31)}
+            onDateSelect={(date1, date2) => {
+              setCalendarDate(date1);
+              onDateSelect(date1, date2); // Call the passed mock function
+            }}
+            selectionConfiguration={{
+              type: CALENDAR_SELECTION_TYPE.single,
+              date: calendarDate,
+            }}
+            data-testid="myDatepicker"
+          />
+        </form>
+      );
+    };
+
+    render(<Wrap onDateSelect={mockOnDateSelect} />);
+
+    const inputField = screen.getByRole('textbox', {
+      name: /Thursday, 19th March 2020/i,
+    });
+
+    await userEvent.click(inputField);
+
+    const calendarDialog = screen.getByRole('dialog', {
+      name: 'Departure date',
+    });
+
+    expect(calendarDialog).toBeInTheDocument();
+
+    const dateButton = screen.getByRole('button', {
+      name: /30/i,
+    });
+
+    await userEvent.click(dateButton);
+
+    expect(inputField.getAttribute('value')).toEqual('30/03/2020');
+    expect(mockOnDateSelect).toHaveBeenCalled();
+  });
 });
 
