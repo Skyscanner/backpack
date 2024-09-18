@@ -17,7 +17,7 @@
  */
 
 import { createRef, Component } from 'react';
-import type { ReactElement} from 'react';
+import type { ReactElement, RefObject } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import {
@@ -33,12 +33,14 @@ import {
 import BpkInput, { withOpenEvents } from '../../bpk-component-input';
 import BpkModal from '../../bpk-component-modal';
 import BpkPopover from '../../bpk-component-popover';
+import { setNativeValue } from '../../bpk-react-utils';
 
 import type {
   DaysOfWeek,
   ReactComponent,
   SelectionConfiguration,
 } from '../../bpk-component-calendar';
+
 
 const Input = withOpenEvents(BpkInput);
 
@@ -62,7 +64,7 @@ type Props = {
   id: string;
   title: string;
   /**
-   * Because this component uses a modal on mobile viewports, you need to let it know what 
+   * Because this component uses a modal on mobile viewports, you need to let it know what
    * the root element of your application is by returning its DOM node via this prop
    * This is to "hide" your application from screen readers whilst the datepicker is open.
    * The "pagewrap" element id is a convention we use internally at Skyscanner. In most cases it should "just work".
@@ -107,7 +109,11 @@ type State = {
 };
 
 class BpkDatepicker extends Component<Props, State> {
-  inputRef: React.RefObject<HTMLInputElement>;
+  inputRef: (ref:HTMLInputElement) => void;
+
+  elementRef?: HTMLInputElement;
+
+  focusRef?: RefObject<HTMLInputElement>;
 
   static defaultProps = {
     calendarComponent: DefaultCalendar,
@@ -140,7 +146,10 @@ class BpkDatepicker extends Component<Props, State> {
     this.state = {
       isOpen: props.isOpen!,
     };
-    this.inputRef = createRef();
+    this.focusRef = createRef();
+    this.inputRef = (ref) => {
+      this.elementRef = ref
+    }
   }
 
   componentDidUpdate(prevProps: Props, prevState: State) {
@@ -269,7 +278,9 @@ class BpkDatepicker extends Component<Props, State> {
           DateUtils.isSameDay(newEndDate, selectionConfiguration.startDate))
       ) {
         onDateSelect(selectionConfiguration.startDate, newEndDate);
+        this.elementRef && setNativeValue(this.elementRef, this.props.formatDate(newEndDate));
       } else {
+        this.elementRef && setNativeValue(this.elementRef, this.props.formatDate(newStartDate));
         onDateSelect(newStartDate);
       }
     }
@@ -312,8 +323,9 @@ class BpkDatepicker extends Component<Props, State> {
     delete rest.isOpen;
 
     const input = inputComponent || (
-      <div ref={this.inputRef} >
+      <div ref={this.focusRef} >
         <Input
+          inputRef={this.inputRef}
           id={id}
           name={`${id}_input`}
           value={this.getValue(selectionConfiguration!, formatDate)}
