@@ -30,9 +30,9 @@ const tabs: Props['tabs'] = [
 ];
 
 const tabsWithAnalytics: Props['tabs'] = [
-  { id: 'air', text: 'Flights', href: '/', dataCy:'flight-feature', dataAnalyticsName:'flights' },
-  { id: 'hotel', text: 'Hotels', href: '/hotel', dataCy:'hotel-feature', dataAnalyticsName:'hotels' },
-  { id: 'car', text: 'Car hire', href: '/carhire', dataCy:'carhire-feature', dataAnalyticsName:'car hire' },
+  { id: 'air', text: 'Flights', href: '/', dataCypress:'flight-feature', dataAnalyticsName:'flights' },
+  { id: 'hotel', text: 'Hotels', href: '/hotel', dataCypress:'hotel-feature', dataAnalyticsName:'hotels' },
+  { id: 'car', text: 'Car hire', href: '/carhire', dataCypress:'carhire-feature', dataAnalyticsName:'car hire' },
 ];
 
 describe('BpkNavigationTabGroup', () => {

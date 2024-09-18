@@ -47,10 +47,10 @@ const tabs: BpkNavigationTabGroupProps['tabs'] = [
 ];
 
 const tabsWithIcon: BpkNavigationTabGroupProps['tabs'] = [
-  { id: 'air', text: 'Flights', href: '/', icon: flightIcons, dataCy:'flight-feature', dataAnalyticsName:'flights' },
-  { id: 'hotel', text: 'Hotels', href: '/hotel', icon: hotelIcons, dataCy:'hotel-feature', dataAnalyticsName:'hotels' },
-  { id: 'car', text: 'Car hire', href: '/carhire', icon: carIcons, dataCy:'carhire-feature', dataAnalyticsName:'car hire' },
-  { id: 'explore', text: 'Explore', href: '/Explore', icon: exploreIcons, dataCy:'explore-feature', dataAnalyticsName:'explore' },
+  { id: 'air', text: 'Flights', href: '/', icon: flightIcons, dataCypress:'flight-feature', dataAnalyticsName:'flights' },
+  { id: 'hotel', text: 'Hotels', href: '/hotel', icon: hotelIcons, dataCypress:'hotel-feature', dataAnalyticsName:'hotels' },
+  { id: 'car', text: 'Car hire', href: '/carhire', icon: carIcons, dataCypress:'carhire-feature', dataAnalyticsName:'car hire' },
+  { id: 'explore', text: 'Explore', href: '/Explore', icon: exploreIcons, dataCypress:'explore-feature', dataAnalyticsName:'explore' },
 ];
 
 const tabsNoHref: BpkNavigationTabGroupProps['tabs'] = [

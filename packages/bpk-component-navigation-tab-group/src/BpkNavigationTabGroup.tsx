@@ -38,7 +38,7 @@ type TabItem = {
   text: string;
   icon?: FunctionComponent<any> | null;
   href?: string;
-  dataCy?: string;
+  dataCypress?: string;
   dataAnalyticsName?: string;
 };
 export type Props = {
@@ -69,7 +69,7 @@ const TabWrap = ({ children, onClick, selected, tab, type }: TabWrapProps) => {
   );
 
   const tabProps = {
-    ...(tab.dataCy && { 'data-cy': tab.dataCy }),
+    ...(tab.dataCypress && { 'data-cy': tab.dataCypress }),
     ...(tab.dataAnalyticsName && { 'data-analytics-name': tab.dataAnalyticsName }),
     id: tab.id,
     className: tabStyling,
