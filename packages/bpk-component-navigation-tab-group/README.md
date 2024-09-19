@@ -31,14 +31,15 @@ const carIcons = withRtlSupport(Car);
 const flightIcons = withRtlSupport(Flight);
 
 const tabs: BpkNavigationTabGroupProps['tabs'] = [
-  { text: 'Flights', href: '/', icon: flightIcons },
-  { text: 'Hotels', href: '/hotel', icon: hotelIcons },
-  { text: 'Car hire', href: '/carhire', icon: carIcons },
-  { text: 'Explore', href: '/Explore', icon: exploreIcons },
+  { id: 'airli', text: 'Flights', href: '/', icon: flightIcons },
+  { id: 'hotel', text: 'Hotels', href: '/hotel', icon: hotelIcons },
+  { id: 'carhire', text: 'Car hire', href: '/carhire', icon: carIcons },
+  { id: 'explore', text: 'Explore', href: '/Explore', icon: exploreIcons },
 ];
 
 export default () => (
   <BpkNavigationTabGroup
+    id='navExample'
     tabs={tabs}
     onItemClick={() => {}}
     selectedIndex={0}

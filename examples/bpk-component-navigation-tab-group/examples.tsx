@@ -40,37 +40,38 @@ const carIcons = withRtlSupport(Car);
 const flightIcons = withRtlSupport(Flight);
 
 const tabs: BpkNavigationTabGroupProps['tabs'] = [
-  { text: 'Flights', href: '/' },
-  { text: 'Hotels', href: '/hotel' },
-  { text: 'Car hire', href: '/carhire' },
-  { text: 'Explore', href: '/Explore' },
+  { id: 'air', text: 'Flights', href: '/' },
+  { id: 'hotel', text: 'Hotels', href: '/hotel' },
+  { id: 'car', text: 'Car hire', href: '/carhire' },
+  { id: 'explore', text: 'Explore', href: '/Explore' },
 ];
 
 const tabsWithIcon: BpkNavigationTabGroupProps['tabs'] = [
-  { text: 'Flights', href: '/', icon: flightIcons },
-  { text: 'Hotels', href: '/hotel', icon: hotelIcons },
-  { text: 'Car hire', href: '/carhire', icon: carIcons },
-  { text: 'Explore', href: '/Explore', icon: exploreIcons },
+  { id: 'air', text: 'Flights', href: '/', icon: flightIcons, 'data-Cy':'flight-feature', 'data-Analytics':'flights' },
+  { id: 'hotel', text: 'Hotels', href: '/hotel', icon: hotelIcons, 'data-Cy':'hotel-feature', 'data-Analytics':'hotels' },
+  { id: 'car', text: 'Car hire', href: '/carhire', icon: carIcons, 'data-Cy':'carhire-feature', 'data-Analytics':'car hire' },
+  { id: 'explore', text: 'Explore', href: '/Explore', icon: exploreIcons, 'data-Cy':'explore-feature', 'data-Analytics':'explore' },
 ];
 
 const tabsNoHref: BpkNavigationTabGroupProps['tabs'] = [
-  { text: 'Flights', icon: flightIcons },
-  { text: 'Hotels', icon: hotelIcons },
-  { text: 'Car hire', icon: carIcons },
-  { text: 'Explore', icon: exploreIcons },
+  { id: 'air', text: 'Flights', icon: flightIcons },
+  { id: 'hotel', text: 'Hotels', icon: hotelIcons },
+  { id: 'carhire', text: 'Car hire', icon: carIcons },
+  { id: 'explore', text: 'Explore', icon: exploreIcons },
 ];
 
 const tabsOnlyText: BpkNavigationTabGroupProps['tabs'] = [
-  { text: 'Flights'},
-  { text: 'Hotels' },
-  { text: 'Car hire'},
-  { text: 'Explore'},
+  { id: 'air', text: 'Flights'},
+  { id: 'hotel', text: 'Hotels' },
+  { id: 'carhire', text: 'Car hire'},
+  { id: 'explore', text: 'Explore'},
 ];
 
 // Simple Navigation Tab Group
 const SimpleSurfaceContrast = () => (
   <div className={getClassNames('bpk-navigation-tab-group-story')}>
     <BpkNavigationTabGroup
+      id='navExample'
       tabs={tabs}
       onItemClick={() => {}}
       selectedIndex={2}
@@ -86,6 +87,7 @@ const SimpleCanvasDefault = () => (
     className={getClassNames('bpk-navigation-tab-group-story__canvas-default')}
   >
     <BpkNavigationTabGroup
+      id='navExample'
       tabs={tabs}
       onItemClick={() => {}}
       selectedIndex={0}
@@ -98,6 +100,7 @@ const SimpleCanvasDefault = () => (
 const WithIconSurfaceContrastForExample = () => (
   <div className={getClassNames('bpk-navigation-tab-group-story')}>
     <BpkNavigationTabGroup
+      id='navExample'
       tabs={tabsWithIcon}
       onItemClick={() => {}}
       selectedIndex={0}
@@ -111,6 +114,7 @@ const WithIconSurfaceContrastForExample = () => (
 const WithIconCanvasDefaultForExample = () => (
   <div>
     <BpkNavigationTabGroup
+      id='navExample'
       tabs={tabsWithIcon}
       onItemClick={() => {}}
       selectedIndex={0}
@@ -124,6 +128,7 @@ const WithIconCanvasDefaultForExample = () => (
 const TabsNoHrefSurfaceContrastForExample = () => (
   <div className={getClassNames('bpk-navigation-tab-group-story')}>
   <BpkNavigationTabGroup
+    id='navExample'
     tabs={tabsNoHref}
     onItemClick={() => {}}
     selectedIndex={0}
@@ -137,6 +142,7 @@ const TabsNoHrefSurfaceContrastForExample = () => (
 const TabsNoHrefCanvasDefaultForExample = () => (
   <div>
     <BpkNavigationTabGroup
+      id='navExample'
       tabs={tabsNoHref}
       onItemClick={() => {}}
       selectedIndex={0}
@@ -150,6 +156,7 @@ const TabsNoHrefCanvasDefaultForExample = () => (
 const TabsOnlyTextSurfaceContrastForExample = () => (
   <div className={getClassNames('bpk-navigation-tab-group-story')}>
   <BpkNavigationTabGroup
+    id='navExample'
     tabs={tabsOnlyText}
     onItemClick={() => {}}
     selectedIndex={0}
@@ -163,6 +170,7 @@ const TabsOnlyTextSurfaceContrastForExample = () => (
 const TabsOnlyTextCanvasDefaultForExample = () => (
   <div>
     <BpkNavigationTabGroup
+      id='navExample'
       tabs={tabsOnlyText}
       onItemClick={() => {}}
       selectedIndex={0}
