@@ -38,8 +38,7 @@ type TabItem = {
   text: string;
   icon?: FunctionComponent<any> | null;
   href?: string;
-  dataCypress?: string;
-  dataAnalyticsName?: string;
+  [rest: string]: any;
 };
 export type Props = {
   id: string;
@@ -68,16 +67,11 @@ const TabWrap = ({ children, onClick, selected, tab, type }: TabWrapProps) => {
     selected && `bpk-navigation-tab-wrap--${type}-selected`,
   );
 
-  const tabProps = {
-    ...(tab.dataCypress && { 'data-cy': tab.dataCypress }),
-    ...(tab.dataAnalyticsName && { 'data-analytics-name': tab.dataAnalyticsName }),
-    id: tab.id,
-    className: tabStyling,
-  };
-
   return tab.href ? (
     <a
-      {...tabProps}
+      {...tab}
+      id={tab.id}
+      className={tabStyling}
       href={tab.href}
       onClick={(e: MouseEvent<HTMLAnchorElement>) => onClick(e)}
       aria-current={selected ? 'page' : false}
@@ -86,7 +80,9 @@ const TabWrap = ({ children, onClick, selected, tab, type }: TabWrapProps) => {
     </a>
   ) : (
     <button
-      {...tabProps}
+      {...tab}
+      id={tab.id}
+      className={tabStyling}
       type="button"
       onClick={(e: MouseEvent<HTMLButtonElement>) => onClick(e)}
       role="link"
