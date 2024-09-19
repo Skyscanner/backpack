@@ -140,7 +140,7 @@ describe('BpkNavigationTabGroup', () => {
 
     expect(flightLink).toHaveAttribute('id', 'air');
     expect(flightLink).toHaveAttribute('data-cy', 'flight-feature');
-    expect(flightLink).toHaveAttribute('data-analytics-name', 'flights');
+    expect(flightLink).toHaveAttribute('data-analytics-name', 'flight');
   });
 
   it('should render correctly props when tab props without data analytics', () => {
