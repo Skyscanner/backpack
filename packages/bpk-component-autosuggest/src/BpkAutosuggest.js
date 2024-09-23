@@ -18,10 +18,12 @@
 
 /* @flow strict */
 
+import { useState } from 'react';
+
 import Autosuggest from 'react-autosuggest';
 
 import BpkInput from '../../bpk-component-input';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, setNativeValue } from '../../bpk-react-utils';
 
 import STYLES from './BpkAutosuggest.module.scss';
 
@@ -75,4 +77,25 @@ Autosuggest.defaultProps.renderInputComponent = (inputProps: Props) => {
   );
 };
 
-export default Autosuggest;
+const AutosuggestWrapper = (props) => {
+  // eslint-disable-next-line react/prop-types
+  const [value, setValue] = useState(props.inputProps.value || '');
+  const newProps = props;
+  // eslint-disable-next-line react/prop-types
+  const { onBlur } = props.inputProps;
+  newProps.inputProps.onBlur = (event) => {
+    if (value !== event.target.value) {
+      // We want change events to be sent when a user has clicked on a suggestion
+      setNativeValue(event.target, event.target.value);
+      if (onBlur) {
+        onBlur(event);
+      }
+      setValue(event.target.value);
+    }
+  };
+  return (
+      <Autosuggest {...newProps} />
+  )};
+
+
+export default AutosuggestWrapper;

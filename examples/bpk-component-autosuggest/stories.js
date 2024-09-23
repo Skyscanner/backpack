@@ -20,7 +20,7 @@ import { ArgsTable } from '@storybook/addon-docs';
 import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
 import { userEvent, within } from '@storybook/testing-library';
 
-import BpkAutosuggest from '../../packages/bpk-component-autosuggest/src/BpkAutosuggest';
+import AutosuggestWrapper from '../../packages/bpk-component-autosuggest/src/BpkAutosuggest';
 import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
 
 import AutosuggestExample from './examples';
@@ -29,7 +29,7 @@ import type { StoryObj } from '@storybook/react';
 
 export default {
   title: 'bpk-component-autosuggest',
-  component: BpkAutosuggest,
+  component: AutosuggestWrapper,
   subcomponents: {
     BpkAutosuggestSuggestion,
   },
@@ -41,7 +41,7 @@ export default {
           <ArgsTable of={PRIMARY_STORY} />
           <Markdown>
             {
-            `**BpkAutosuggest:**
+            `**AutosuggestWrapper:**
             Please refer to react-autosuggest's
             documentation for a full list of [props](https://github.com/moroshko/react-autosuggest#props).
             **Note:** The \`inputProps\` object is passed directly to a
@@ -87,7 +87,7 @@ export const VisualTest: Story = {
   render: () => <AutosuggestExample alwaysRenderSuggestions />,
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    
+
     const input = canvas.getByPlaceholderText('Enter an office name'); // Find the input field
     input.focus(); // Explicitly set focus using the DOM's focus method
     await userEvent.type(input, 'Lon', { delay: 100 }); // Simulate typing into the input field

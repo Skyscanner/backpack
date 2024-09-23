@@ -20,7 +20,7 @@
 
 import { render } from '@testing-library/react';
 
-import BpkAutosuggest from './BpkAutosuggest';
+import AutosuggestWrapper from './BpkAutosuggest';
 
 const suggestions = ['Edinburgh', 'Glasgow', 'London'];
 const onSuggestionsFetchRequested = () => null;
@@ -34,10 +34,10 @@ const inputProps = {
   onChange: () => null,
 };
 
-describe('BpkAutosuggest', () => {
+describe('AutosuggestWrapper', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
-      <BpkAutosuggest
+      <AutosuggestWrapper
         suggestions={suggestions}
         onSuggestionsFetchRequested={onSuggestionsFetchRequested}
         onSuggestionsClearRequested={onSuggestionsClearRequested}
@@ -51,7 +51,7 @@ describe('BpkAutosuggest', () => {
 
   it('should render correctly with an "alwaysRenderSuggestions" attribute', () => {
     const { asFragment } = render(
-      <BpkAutosuggest
+      <AutosuggestWrapper
         suggestions={suggestions}
         onSuggestionsFetchRequested={onSuggestionsFetchRequested}
         onSuggestionsClearRequested={onSuggestionsClearRequested}
@@ -72,7 +72,7 @@ describe('BpkAutosuggest', () => {
     };
 
     const { container } = render(
-      <BpkAutosuggest
+      <AutosuggestWrapper
         suggestions={suggestions}
         onSuggestionsFetchRequested={onSuggestionsFetchRequested}
         onSuggestionsClearRequested={onSuggestionsClearRequested}
@@ -88,7 +88,7 @@ describe('BpkAutosuggest', () => {
 
   it('should default autocomplete to off', () => {
     const { container } = render(
-      <BpkAutosuggest
+      <AutosuggestWrapper
         suggestions={suggestions}
         onSuggestionsFetchRequested={onSuggestionsFetchRequested}
         onSuggestionsClearRequested={onSuggestionsClearRequested}
@@ -104,7 +104,7 @@ describe('BpkAutosuggest', () => {
 
   it('should allow a consumer to override autocomplete', () => {
     const { container } = render(
-      <BpkAutosuggest
+      <AutosuggestWrapper
         suggestions={suggestions}
         onSuggestionsFetchRequested={onSuggestionsFetchRequested}
         onSuggestionsClearRequested={onSuggestionsClearRequested}
