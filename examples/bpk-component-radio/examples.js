@@ -51,7 +51,7 @@ class GroupExample extends Component<{}, { value: string }> {
             <BpkRadio
               {...rest}
               id={city}
-              name={city}
+              name='group_example'
               label={city}
               onChange={(event) => {
                 this.updateValue(event.target.value);
