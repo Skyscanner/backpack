@@ -33,12 +33,15 @@ export const NAVIGATION_TAB_GROUP_TYPES = {
 export type NavigationTabGroupTypes =
   (typeof NAVIGATION_TAB_GROUP_TYPES)[keyof typeof NAVIGATION_TAB_GROUP_TYPES];
 
-type TabItem = {
+type TabWrapItem = {
   id: string;
-  text: string;
-  icon?: FunctionComponent<any> | null;
   href?: string;
   [rest: string]: any;
+};
+
+type TabItem = TabWrapItem & {
+  text: string;
+  icon?: FunctionComponent<any> | null;
 };
 export type Props = {
   id: string;
@@ -49,11 +52,11 @@ export type Props = {
    */
   onItemClick: (e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>,tab: TabItem, index: number) => void;
   selectedIndex: number;
-  ariaLabel: string;
+  ariaLabel?: string;
 };
 
 type TabWrapProps = {
-  tab: TabItem;
+  tab: TabWrapItem;
   type: NavigationTabGroupTypes;
   selected: boolean;
   children: ReactElement;
@@ -120,11 +123,12 @@ const BpkNavigationTabGroup = ({
     >
       {tabs.map((tab, index) => {
         const selected = index === selectedTab;
-        const Icon = tab.icon;
+        const {icon,text,...tabWrapItem} = tab;
+        const Icon = icon;
         return (
           <TabWrap
             key={`index-${index.toString()}`}
-            tab={tab}
+            tab={tabWrapItem}
             selected={selected}
             onClick={(e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => handleButtonClick(e, tab, index)}
             type={type}
@@ -142,7 +146,7 @@ const BpkNavigationTabGroup = ({
                 </span>
               )}
               <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
-                {tab.text}
+                {text}
               </BpkText>
             </>
           </TabWrap>
