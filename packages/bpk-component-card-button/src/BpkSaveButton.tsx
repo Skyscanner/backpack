@@ -68,6 +68,7 @@ const BpkSaveButton = ({
   onCheckedChange,
   size = SIZE_TYPES.default,
   style = STYLE_TYPES.default,
+  ...rest
 }: Props) => {
   const [shouldPlayAnim, setPlayAnim] = useState(false);
   const smallSize = size === SIZE_TYPES.small;
@@ -91,6 +92,7 @@ const BpkSaveButton = ({
           setPlayAnim(true);
         }
       }}
+      {...rest}
     >
       <div
         className={getClassName(
