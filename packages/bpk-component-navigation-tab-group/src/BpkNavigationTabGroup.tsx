@@ -52,7 +52,7 @@ export type Props = {
    */
   onItemClick: (e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>,tab: TabItem, index: number) => void;
   selectedIndex: number;
-  ariaLabel?: string;
+  ariaLabel: string;
 };
 
 type TabWrapProps = {

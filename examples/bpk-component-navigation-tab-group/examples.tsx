@@ -92,6 +92,7 @@ const SimpleCanvasDefault = () => (
       onItemClick={() => {}}
       selectedIndex={0}
       type={NAVIGATION_TAB_GROUP_TYPES.CanvasDefault}
+      ariaLabel="Navigation tabs"
     />
   </div>
 );
