@@ -47,10 +47,10 @@ const tabs: BpkNavigationTabGroupProps['tabs'] = [
 ];
 
 const tabsWithIcon: BpkNavigationTabGroupProps['tabs'] = [
-  { id: 'air', text: 'Flights', href: '/', icon: flightIcons, 'data-Cy':'flight-feature', 'data-Analytics':'flights' },
-  { id: 'hotel', text: 'Hotels', href: '/hotel', icon: hotelIcons, 'data-Cy':'hotel-feature', 'data-Analytics':'hotels' },
-  { id: 'car', text: 'Car hire', href: '/carhire', icon: carIcons, 'data-Cy':'carhire-feature', 'data-Analytics':'car hire' },
-  { id: 'explore', text: 'Explore', href: '/Explore', icon: exploreIcons, 'data-Cy':'explore-feature', 'data-Analytics':'explore' },
+  { id: 'air', text: 'Flights', href: '/', icon: flightIcons, 'data-cy':'flight-feature', 'data-analytics':'flights' },
+  { id: 'hotel', text: 'Hotels', href: '/hotel', icon: hotelIcons, 'data-cy':'hotel-feature', 'data-analytics':'hotels' },
+  { id: 'car', text: 'Car hire', href: '/carhire', icon: carIcons, 'data-cy':'carhire-feature', 'data-analytics':'car hire' },
+  { id: 'explore', text: 'Explore', href: '/Explore', icon: exploreIcons, 'data-cy':'explore-feature', 'data-analytics':'explore' },
 ];
 
 const tabsNoHref: BpkNavigationTabGroupProps['tabs'] = [
