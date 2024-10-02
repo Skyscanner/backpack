@@ -20,25 +20,16 @@ import BpkFloatingNotification from '../../packages/bpk-component-floating-notif
 import BpkIconHeart from '../../packages/bpk-component-icon/sm/heart';
 import BpkIconInformationCircle from '../../packages/bpk-component-icon/sm/information-circle';
 
-const hideAfterHack = {
-  // Apply a exceptionally large number to hideAfter to effectively keep the UI around forever
-  hideAfter: 2_147_483_647, // largest 32 bit signed integer, maximum value for setTimeout. Around 28 days. :)
-};
-
 const DefaultExample = () => (
-  <BpkFloatingNotification text="Saved" {...hideAfterHack} />
+  <BpkFloatingNotification text="Saved" hideAfter={8000} />
 );
 
 const IconExample = () => (
-  <BpkFloatingNotification
-    icon={BpkIconHeart}
-    text="Saved"
-    {...hideAfterHack}
-  />
+  <BpkFloatingNotification icon={BpkIconHeart} text="Saved" hideAfter={8000} />
 );
 
 const CtaExample = () => (
-  <BpkFloatingNotification ctaText="View" text="Saved" {...hideAfterHack} />
+  <BpkFloatingNotification ctaText="View" text="Saved" hideAfter={8000} />
 );
 
 const CtaIconLongTextExample = () => (
@@ -46,7 +37,7 @@ const CtaIconLongTextExample = () => (
     ctaText="View"
     icon={BpkIconHeart}
     text="Killer Combo saved to New York and Miami 🎉"
-    {...hideAfterHack}
+    hideAfter={8000}
   />
 );
 
@@ -55,7 +46,9 @@ const VisualTestExample = () => (
     animateOnEnter
     animateOnExit
     ctaText="View"
-    {...hideAfterHack}
+    // Apply a exceptionally large number to hideAfter to effectively keep the UI around forever
+    // largest 32 bit signed integer, maximum value for setTimeout. Around 28 days. :)
+    hideAfter={2_147_483_647}
     icon={BpkIconInformationCircle}
     text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   />
