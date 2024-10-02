@@ -34,7 +34,6 @@
     "a11y-focus-store": "^1.0.0",
     "d3-path": "^2.0.0",
     "d3-scale": "^4.0.2",
-    "date-fns": "^3.3.1",
     "intersection-observer": "^0.7.0",
     "lodash": "^4.17.20",
     "lodash.clamp": "^4.0.3",
@@ -48,6 +47,7 @@
     "react-window": "^1.8.7"
   },
   "peerDependencies": {
+    "date-fns": "3.3.1 - 4",
     "node-sass": ">= 7",
     "react": "17.0.2 - 18.3.1",
     "react-dom": "17.0.2 - 18.3.1",
