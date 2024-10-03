@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkAutosuggest should render correctly 1`] = `
+exports[`AutosuggestWrapper should render correctly 1`] = `
 <DocumentFragment>
   <div
     aria-expanded="false"
@@ -29,7 +29,7 @@ exports[`BpkAutosuggest should render correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions" attribute 1`] = `
+exports[`AutosuggestWrapper should render correctly with an "alwaysRenderSuggestions" attribute 1`] = `
 <DocumentFragment>
   <div
     aria-expanded="true"

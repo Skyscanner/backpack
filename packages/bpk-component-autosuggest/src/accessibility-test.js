@@ -21,7 +21,7 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkAutosuggest from './BpkAutosuggest';
+import AutosuggestWrapper from './BpkAutosuggest';
 
 const suggestions = ['Edinburgh', 'Glasgow', 'London'];
 const onSuggestionsFetchRequested = () => null;
@@ -43,7 +43,7 @@ describe('BpkAutosuggest accessibility tests', () => {
   */
   it.skip('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkAutosuggest
+      <AutosuggestWrapper
         suggestions={suggestions}
         onSuggestionsFetchRequested={onSuggestionsFetchRequested}
         onSuggestionsClearRequested={onSuggestionsClearRequested}
