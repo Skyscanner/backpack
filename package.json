@@ -156,7 +156,7 @@
     "d3-scale": "^4.0.2",
     "danger": "^12.3.3",
     "danger-plugin-toolbox": "^3.0.1",
-    "date-fns": "^3.6.0",
+    "date-fns": "^4.1.0",
     "eslint_d": "^14.0.4",
     "glob": "^10.4.2",
     "gulp": "^5.0.0",
