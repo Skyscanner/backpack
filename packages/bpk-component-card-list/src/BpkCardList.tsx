@@ -20,7 +20,7 @@ import { BpkButtonV2 } from '../../bpk-component-button';
 import BpkSectionHeader from '../../bpk-component-section-header';
 import { cssModules } from '../../bpk-react-utils';
 
-import { type CardListProps } from './common-types';
+import type CardListProps from './common-types';
 
 import STYLES from './BpkCardList.module.scss';
 

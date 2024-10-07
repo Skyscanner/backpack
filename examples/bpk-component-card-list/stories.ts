@@ -18,7 +18,7 @@
 
 import BpkCardList from "../../packages/bpk-component-card-list";
 
-import { BasicExample } from './examples';
+import BasicExample from './examples';
 
 export default {
   title: 'bpk-component-card-list',
@@ -29,7 +29,9 @@ export const Basic = BasicExample;
 
 export const VisualTest = Basic;
 
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.parameters = {
-  zoomEnabled: true,
-};
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true
+  }
+}
