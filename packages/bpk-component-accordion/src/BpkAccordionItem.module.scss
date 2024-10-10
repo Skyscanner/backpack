@@ -65,7 +65,10 @@
   }
 
   &__icon-wrapper {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+
+    @include margins.bpk-margin-leading(tokens.bpk-spacing-md());
   }
 
   &__leading-icon {
