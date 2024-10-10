@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import { ArgsTable } from '@storybook/addon-docs';
-import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
+import { ArgTypes } from '@storybook/addon-docs';
+import { Title, Markdown } from '@storybook/blocks';
 
 import BpkAriaLive from '../../packages/bpk-component-aria-live/src/BpkAriaLive';
 
@@ -31,7 +31,7 @@ export default {
       page: () => (
         <>
           <Title />
-          <ArgsTable of={PRIMARY_STORY} />
+          <ArgTypes exclude={['zoomEnabled']} />
           <Markdown>
             {`**Note:** \`aria-relevant\` and \`aria-atomic\` props can also be set.
             \`aria-relevant\` determines what sort of changes should be read out. By default it is \`text\` but can be \`additions\`, \`removals\` or \`all\`. [Read more about \`aria-relevant\` on MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-relevant).
