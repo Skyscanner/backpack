@@ -18,7 +18,7 @@
 
 import { useRef, useState } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+// @ts-ignore
 import BpkPageIndicator, { VARIANT } from '../../bpk-component-page-indicator';
 import { cssModules } from '../../bpk-react-utils';
 
