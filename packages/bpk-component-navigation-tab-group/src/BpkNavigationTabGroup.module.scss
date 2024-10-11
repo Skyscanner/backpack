@@ -29,6 +29,10 @@
 .bpk-navigation-tab-group {
   display: flex;
 
+  .bpk-navigation-tab-list {
+    display: flex;
+  }
+
   .bpk-navigation-tab-wrap {
     height: tokens.$bpk-one-pixel-rem * 36;
     padding: 0 tokens.bpk-spacing-base();

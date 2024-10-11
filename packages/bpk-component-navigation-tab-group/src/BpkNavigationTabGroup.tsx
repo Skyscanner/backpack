@@ -77,7 +77,8 @@ const TabWrap = ({ children, onClick, selected, tab, type }: TabWrapProps) => {
       className={tabStyling}
       href={tab.href}
       onClick={(e: MouseEvent<HTMLAnchorElement>) => onClick(e)}
-      aria-current={selected ? 'page' : false}
+      role="tab"
+      aria-selected={selected}
     >
       {children}
     </a>
@@ -88,8 +89,8 @@ const TabWrap = ({ children, onClick, selected, tab, type }: TabWrapProps) => {
       className={tabStyling}
       type="button"
       onClick={(e: MouseEvent<HTMLButtonElement>) => onClick(e)}
-      role="link"
-      aria-current={selected ? 'page' : false}
+      role="tab"
+      aria-selected={selected}
     >
       {children}
     </button>
@@ -121,6 +122,7 @@ const BpkNavigationTabGroup = ({
       role="navigation"
       aria-label={ariaLabel}
     >
+    <div role="tablist" className={getClassName('bpk-navigation-tab-list')}>
       {tabs.map((tab, index) => {
         const selected = index === selectedTab;
         const {icon,text,...tabWrapItem} = tab;
@@ -152,6 +154,7 @@ const BpkNavigationTabGroup = ({
           </TabWrap>
         );
       })}
+     </div>
     </nav>
   );
 };
