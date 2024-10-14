@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import { ArgsTable } from '@storybook/addon-docs';
-import { Title, Markdown, PRIMARY_STORY } from '@storybook/blocks';
+import { ArgTypes } from '@storybook/addon-docs';
+import { Title, Markdown } from '@storybook/blocks';
 
 import BpkSlider from '../../packages/bpk-component-slider/src/BpkSlider';
 
@@ -38,7 +38,7 @@ export default {
       page: () => (
         <>
           <Title />
-          <ArgsTable of={PRIMARY_STORY} />
+          <ArgTypes exclude={['zoomEnabled']} />
           <Markdown>
             {`
               **Note**: minDistance and step props are multiplied to calculate the minimum distance allowed between thumbs
