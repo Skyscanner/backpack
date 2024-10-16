@@ -37,11 +37,31 @@ type Props = {
    * Use with caution.
    */
   leadingClassName: ?string,
-  trailingText: ?string,
+  railingText: ?string,
   previousPrice: ?string,
 };
 
 const getClassName = cssModules(STYLES);
+
+const getPriceTextStyle = (size: $Values<typeof SIZES>) => {
+  if (size === SIZES.small) {
+    return TEXT_STYLES.heading4;
+  }
+
+  if (size === SIZES.large) {
+    return TEXT_STYLES.xxl;
+  }
+
+  return TEXT_STYLES.heading5;
+};
+
+const getDefaultTextStyle = (size: $Values<typeof SIZES>) => {
+  if (size === SIZES.large) {
+    return TEXT_STYLES.sm;
+  }
+
+  return TEXT_STYLES.xs;
+};
 
 const BpkPrice = (props: Props) => {
   const {
@@ -56,7 +76,8 @@ const BpkPrice = (props: Props) => {
     ...rest
   } = props;
 
-  const isSmall = size === SIZES.small;
+  const defaultTextStyle = getDefaultTextStyle(size);
+  const priceTextStyle = getPriceTextStyle(size);
   const isAlignRight = align === ALIGNS.right;
 
   return (
@@ -78,30 +99,21 @@ const BpkPrice = (props: Props) => {
       >
         {previousPrice && (
           <span className={getClassName('bpk-price__previous-price')}>
-            <BpkText
-              textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
-              tagName="span"
-            >
+            <BpkText textStyle={defaultTextStyle} tagName="span">
               {previousPrice}
             </BpkText>
           </span>
         )}
         {previousPrice && leadingText && (
           <span className={getClassName('bpk-price__separator')}>
-            <BpkText
-              textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
-              tagName="span"
-            >
+            <BpkText textStyle={defaultTextStyle} tagName="span">
               &#67871;
             </BpkText>
           </span>
         )}
 
         {leadingText && (
-          <BpkText
-            textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
-            tagName="span"
-          >
+          <BpkText textStyle={defaultTextStyle} tagName="span">
             {leadingText}
           </BpkText>
         )}
@@ -109,20 +121,19 @@ const BpkPrice = (props: Props) => {
       <div
         className={getClassName(isAlignRight && 'bpk-price__column-container')}
       >
-        <span className={getClassName('bpk-price__price', !isAlignRight && 'bpk-price__spacing')}>
-          <BpkText
-            textStyle={isSmall ? TEXT_STYLES.heading4 : TEXT_STYLES.xxl}
-            tagName="span"
-          >
+        <span
+          className={getClassName(
+            'bpk-price__price',
+            !isAlignRight && 'bpk-price__spacing',
+          )}
+        >
+          <BpkText textStyle={priceTextStyle} tagName="span">
             {price}
           </BpkText>
         </span>
         {trailingText && (
           <span className={getClassName('bpk-price__trailing')}>
-            <BpkText
-              textStyle={isSmall ? TEXT_STYLES.xs : TEXT_STYLES.sm}
-              tagName="span"
-            >
+            <BpkText textStyle={defaultTextStyle} tagName="span">
               {trailingText}
             </BpkText>
           </span>

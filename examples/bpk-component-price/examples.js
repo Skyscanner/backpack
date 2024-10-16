@@ -18,6 +18,8 @@
 
 import BpkPrice, { SIZES, ALIGNS } from '../../packages/bpk-component-price';
 
+const XSmallExample = () => <BpkPrice size={SIZES.xsmall} price="£1,830" />;
+
 const SmallExample = () => <BpkPrice price="£1,830" />;
 
 const SmallWithTrailingTextExample = () => (
@@ -103,7 +105,6 @@ const LargeWithPreviousPriceLeadingTextExample = () => (
 );
 
 const LargeLongPriceExample = () => (
-   
   <div style={{ width: 184 }}>
     <BpkPrice
       size={SIZES.large}
@@ -122,6 +123,7 @@ const LargeLongPriceExample = () => (
 
 const MixedExample = () => (
   <div>
+    <XSmallExample />
     <SmallExample />
     <SmallWithTrailingTextExample />
     <SmallWithLeadingAndTrailingTextExample />
@@ -141,6 +143,7 @@ const MixedExample = () => (
 );
 
 export {
+  XSmallExample,
   SmallExample,
   SmallWithTrailingTextExample,
   SmallWithLeadingAndTrailingTextExample,
