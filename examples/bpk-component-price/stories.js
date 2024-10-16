@@ -20,6 +20,13 @@ import BpkPrice from '../../packages/bpk-component-price/src/BpkPrice';
 
 import {
   XSmallExample,
+  XSmallWithTrailingTextExample,
+  XSmallWithLeadingAndTrailingTextExample,
+  XSmallWithPreviousPriceExample,
+  XSmallWithPreviousPriceLeadingTextExample,
+  XSmallRightExample,
+  XSmallRightWithTrailingTextExample,
+  XSmallRightWithLeadingandTrailingTextExample,
   SmallExample,
   SmallWithTrailingTextExample,
   SmallWithLeadingAndTrailingTextExample,
@@ -44,6 +51,16 @@ export default {
 };
 
 export const XSmall = XSmallExample;
+export const XSmallWithTrailingText = XSmallWithTrailingTextExample;
+export const XSmallWithLeadingAndTrailingText =
+  XSmallWithLeadingAndTrailingTextExample;
+export const XSmallWithPreviousPrice = XSmallWithPreviousPriceExample;
+export const XSmallWithPreviousPriceLeadingText =
+  XSmallWithPreviousPriceLeadingTextExample;
+export const XSmallRight = XSmallRightExample;
+export const XSmallRightWithTrailingText = XSmallRightWithTrailingTextExample;
+export const XSmallRightWithLeadingandTrailingText =
+  XSmallRightWithLeadingandTrailingTextExample;
 export const Small = SmallExample;
 export const SmallWithTrailingText = SmallWithTrailingTextExample;
 export const SmallWithLeadingAndTrailingText =

@@ -20,6 +20,61 @@ import BpkPrice, { SIZES, ALIGNS } from '../../packages/bpk-component-price';
 
 const XSmallExample = () => <BpkPrice size={SIZES.xsmall} price="£1,830" />;
 
+const XSmallWithTrailingTextExample = () => (
+  <BpkPrice size={SIZES.xsmall} price="£1,830" trailingText="per day" />
+);
+
+const XSmallWithLeadingAndTrailingTextExample = () => (
+  <BpkPrice
+    size={SIZES.xsmall}
+    leadingText="from"
+    price="£1,830"
+    trailingText="per day"
+  />
+);
+
+const XSmallWithPreviousPriceExample = () => (
+  <BpkPrice
+    size={SIZES.xsmall}
+    previousPrice="£2,033"
+    price="£1,830"
+    trailingText="per day"
+  />
+);
+
+const XSmallWithPreviousPriceLeadingTextExample = () => (
+  <BpkPrice
+    size={SIZES.xsmall}
+    previousPrice="£2,033"
+    leadingText="Web only deal"
+    price="£1,830"
+    trailingText="per day"
+  />
+);
+
+const XSmallRightExample = () => (
+  <BpkPrice size={SIZES.xsmall} price="£1,830" align={ALIGNS.right} />
+);
+
+const XSmallRightWithTrailingTextExample = () => (
+  <BpkPrice
+    size={SIZES.xsmall}
+    price="£1,830"
+    trailingText="per day"
+    align={ALIGNS.right}
+  />
+);
+
+const XSmallRightWithLeadingandTrailingTextExample = () => (
+  <BpkPrice
+    size={SIZES.xsmall}
+    leadingText="from"
+    price="£1,830"
+    trailingText="per day"
+    align={ALIGNS.right}
+  />
+);
+
 const SmallExample = () => <BpkPrice price="£1,830" />;
 
 const SmallWithTrailingTextExample = () => (
@@ -124,6 +179,13 @@ const LargeLongPriceExample = () => (
 const MixedExample = () => (
   <div>
     <XSmallExample />
+    <XSmallWithTrailingTextExample />
+    <XSmallWithLeadingAndTrailingTextExample />
+    <XSmallWithPreviousPriceExample />
+    <XSmallWithPreviousPriceLeadingTextExample />
+    <XSmallRightExample />
+    <XSmallRightWithTrailingTextExample />
+    <XSmallRightWithLeadingandTrailingTextExample />
     <SmallExample />
     <SmallWithTrailingTextExample />
     <SmallWithLeadingAndTrailingTextExample />
@@ -144,6 +206,13 @@ const MixedExample = () => (
 
 export {
   XSmallExample,
+  XSmallWithTrailingTextExample,
+  XSmallWithLeadingAndTrailingTextExample,
+  XSmallWithPreviousPriceExample,
+  XSmallWithPreviousPriceLeadingTextExample,
+  XSmallRightExample,
+  XSmallRightWithTrailingTextExample,
+  XSmallRightWithLeadingandTrailingTextExample,
   SmallExample,
   SmallWithTrailingTextExample,
   SmallWithLeadingAndTrailingTextExample,
