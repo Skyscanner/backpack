@@ -37,7 +37,7 @@ type Props = {
    * Use with caution.
    */
   leadingClassName: ?string,
-  railingText: ?string,
+  trailingText: ?string,
   previousPrice: ?string,
 };
 
