@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -34,7 +34,7 @@ window.ResizeObserver =
 describe('BpkSlider form-test for single-thumb slider', () => {
   it('should work as a form component in a form', async () => {
     const Wrap = () => {
-      const [sliderValue, setSliderValue] = useState<number>(50);  // single-thumb slider with only max value
+      const [sliderValue, setSliderValue] = useState<number>(50); // single-thumb slider with only max value
       return (
         <form data-testid="form">
           <BpkSlider
@@ -67,9 +67,12 @@ describe('BpkSlider form-test for single-thumb slider', () => {
   });
 
   it('should emit change event when both sides of slider value are changed for two-thumb slider', async () => {
-    const handleChange = jest.fn();
+    const formValidation = jest.fn();
     const Wrap = () => {
-      const [sliderValue, setSliderValue] = useState<number[]>([0, 100]);  // two-thumb slider with min and max value
+      const [sliderValue, setSliderValue] = useState<number[]>([0, 100]); // two-thumb slider with min and max value
+      useEffect(() => {
+        document.addEventListener('change', formValidation);
+      }, []);
       return (
         <form data-testid="form">
           <BpkSlider
@@ -81,7 +84,6 @@ describe('BpkSlider form-test for single-thumb slider', () => {
             ariaValuetext={['0', '100']}
             value={sliderValue}
             onChange={(value) => {
-              handleChange(value as number[]);
               setSliderValue(value as number[]);
             }}
           />
@@ -95,15 +97,13 @@ describe('BpkSlider form-test for single-thumb slider', () => {
 
     await sliderThumbMin.focus();
     await userEvent.keyboard('{ArrowRight}');
-    expect(handleChange).toHaveBeenCalledTimes(1);
-    expect(handleChange).toHaveBeenCalledWith([1, 100]);
+    expect(formValidation).toHaveBeenCalledTimes(1);
 
     const sliderThumbMax = screen.getByLabelText('max');
     expect(sliderThumbMax).toBeInTheDocument();
 
     await sliderThumbMax.focus();
     await userEvent.keyboard('{ArrowLeft}');
-    expect(handleChange).toHaveBeenCalledTimes(2);
-    expect(handleChange).toHaveBeenCalledWith([1, 99]);
+    expect(formValidation).toHaveBeenCalledTimes(2);
   });
 });
