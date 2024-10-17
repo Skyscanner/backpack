@@ -20,11 +20,11 @@ import {
   useRef,
   useEffect,
   type ComponentPropsWithRef,
+  type RefObject,
 } from 'react';
 
 import { useComposedRefs } from '@radix-ui/react-compose-refs';
 import * as Slider from '@radix-ui/react-slider';
-import { usePrevious } from '@radix-ui/react-use-previous';
 
 import { cssModules, isRTL, setNativeValue } from '../../bpk-react-utils';
 
@@ -72,6 +72,8 @@ const BpkSlider = ({
     }
   };
 
+  const thumbRefs = [useRef(null), useRef(null)];
+
   const handleOnChange = (sliderValues: number[]) => {
     processSliderValues(sliderValues, onChange);
   };
@@ -103,11 +105,16 @@ const BpkSlider = ({
           aria-valuetext={ariaValuetext ? ariaValuetext[index] : val.toString()}
           className={getClassName('bpk-slider__thumb')}
           aria-valuenow={currentValue[index]}
+          ref={thumbRefs[index]}
           asChild
         >
           {/* custom thumb with child input */}
           <span>
-            <BubbleInput value={currentValue[index]} {...(inputProps && inputProps[index])} />
+            <BubbleInput
+              value={currentValue[index]}
+              thumbRef={thumbRefs[index]}
+              {...(inputProps && inputProps[index])}
+            />
           </span>
         </Slider.Thumb>
       ))}
@@ -117,20 +124,55 @@ const BpkSlider = ({
 
 // Work around until radix-ui/react-slider is updated to accept an inputRef prop https://github.com/radix-ui/primitives/pull/3033
 const BubbleInput = forwardRef(
-  (props: ComponentPropsWithRef<'input'>, forwardedRef) => {
-    const { value, ...inputProps } = props;
+  (
+    props: ComponentPropsWithRef<'input'> & {
+      thumbRef: RefObject<HTMLElement>;
+    },
+    forwardedRef,
+  ) => {
+    const { thumbRef, value, ...inputProps } = props;
     const ref = useRef<HTMLInputElement>();
     const composedRefs = useComposedRefs(forwardedRef, ref);
 
-    const prevValue = usePrevious(value);
-
-    // Bubble value change to parents (e.g form change event)
+    // Provide native behaviour that the input range type provides.
     useEffect(() => {
-      const input = ref.current!;
-      if (prevValue !== value) {
-        setNativeValue(input, `${value}`);
+      const thumb = thumbRef.current;
+      const input = ref.current;
+      if (thumb) {
+        const interactionEndHandler = (prevValue: number) => {
+          if (input) {
+            const newValue = parseFloat(input.getAttribute('value') as string);
+            if (prevValue !== newValue) {
+              setNativeValue(input, newValue);
+            }
+          }
+        };
+
+        const focusInHandler = () => {
+          // Controller needed as we may click more than once when in focus. On focusout we can then abort the event listeners
+          const controller = new AbortController();
+          thumb.addEventListener('focusout', () => controller.abort(), {
+            once: true,
+          });
+          // needed on document as users can drag the thumb while out of the thumb elements mouse area
+          document.addEventListener('click', () => interactionEndHandler(value as number), {
+            signal: controller.signal,
+          });
+          thumb.addEventListener('keyup', () => interactionEndHandler(value as number), {
+            signal: controller.signal,
+          });
+        };
+
+        thumb.addEventListener('focusin', focusInHandler);
+
+        return () => {
+          if (thumb) {
+            thumb.removeEventListener('focusin', focusInHandler);
+          }
+        };
       }
-    }, [prevValue, value]);
+      return () => {};
+    }, [thumbRef, ref, value]);
 
     /**
      * We purposefully do not use `type="hidden"` here otherwise forms that
