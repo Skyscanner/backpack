@@ -135,13 +135,13 @@ const BubbleInput = forwardRef(
     const { thumbRef, value, ...inputProps } = props;
     const ref = useRef<HTMLInputElement>();
     const composedRefs = useComposedRefs(forwardedRef, ref);
-    
-    const thumb = thumbRef.current;
-    const input = ref.current;
 
     // This Hook Provides the native behaviour that the input range type would have around the "change" event.
     // When a user changes the value of the slider. The change event is emitted.
     useEffect(() => {
+      // for test works where ref is passed into the useEffect
+      const thumb = thumbRef.current;
+      const input = ref.current;
       // thumb should be rendered before adding any eventListeners
       if (thumb) {
         // The interactionEndHandler is used to ensure that the input value is updated
@@ -193,7 +193,7 @@ const BubbleInput = forwardRef(
         };
       }
       return () => {};
-    }, [thumb, input, value]);
+    }, [thumbRef, ref, value]);
 
     /**
      * We purposefully do not use `type="hidden"` here otherwise forms that
