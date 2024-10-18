@@ -43,8 +43,8 @@ export type Props = {
   ariaLabel: string[];
   ariaValuetext?: string[];
   inputProps?:
-  | [{ [key: string]: any }]
-  | [{ [key: string]: any }, { [key: string]: any }];
+    | [{ [key: string]: any }]
+    | [{ [key: string]: any }, { [key: string]: any }];
   [rest: string]: any;
 };
 
@@ -157,12 +157,24 @@ const BubbleInput = forwardRef(
             once: true,
           });
           // needed on document as users can drag the thumb while out of the thumb elements mouse area
-          document.addEventListener('click', () => interactionEndHandler(value as number), {
-            signal: controller.signal,
-          });
-          thumb.addEventListener('keyup', () => interactionEndHandler(value as number), {
-            signal: controller.signal,
-          });
+          document.addEventListener(
+            'click',
+            () => interactionEndHandler(value as number),
+            {
+              signal: controller.signal,
+            },
+          );
+          thumb.addEventListener(
+            'keyup',
+            (e: KeyboardEvent) => {
+              ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(
+                e.key,
+              ) && interactionEndHandler(value as number);
+            },
+            {
+              signal: controller.signal,
+            },
+          );
         };
 
         thumb.addEventListener('focusin', focusInHandler);
