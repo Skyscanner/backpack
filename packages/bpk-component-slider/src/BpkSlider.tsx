@@ -135,58 +135,65 @@ const BubbleInput = forwardRef(
     const { thumbRef, value, ...inputProps } = props;
     const ref = useRef<HTMLInputElement>();
     const composedRefs = useComposedRefs(forwardedRef, ref);
+    
+    const thumb = thumbRef.current;
+    const input = ref.current;
 
-    // Provide native behaviour that the input range type provides.
+    // This Hook Provides the native behaviour that the input range type would have around the "change" event.
+    // When a user changes the value of the slider. The change event is emitted.
     useEffect(() => {
-      const thumb = thumbRef.current;
-      const input = ref.current;
+      // thumb should be rendered before adding any eventListeners
       if (thumb) {
-        const interactionEndHandler = (prevValue: number) => {
-          if (input) {
+        // The interactionEndHandler is used to ensure that the input value is updated
+        // and change event fired when the user stops interacting with the thumb
+        const interactionEndHandler = (event: MouseEvent | KeyboardEvent) => {
+          if (
+            input &&
+            // if it's a mouse event or arrow key event
+            ((event as MouseEvent).button > -1 ||
+              ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(
+                (event as KeyboardEvent).key,
+              ))
+          ) {
+            // parseFloat works for both integers and floats and the Slider supports decimal stepping. e.g. 0 - 1
             const newValue = parseFloat(input.getAttribute('value') as string);
-            if (prevValue !== newValue) {
+            if (value !== newValue) { // newValue is changed if the slider has moved, clicking away from the thumb will not fire the change event
               setNativeValue(input, newValue);
             }
           }
         };
 
+        // the focusInHandler is used to add event listeners to the document when the thumb is in focus
+        // Allows us to track at which moment the user 
         const focusInHandler = () => {
-          // Controller needed as we may click more than once when in focus. On focusout we can then abort the event listeners
+          // The Controller is needed as we may click more than once when in focus (clicking along the line of slider to move the thumb to that position). 
           const controller = new AbortController();
+          // On focusout we can then abort the event listeners attached to the thumb and document
           thumb.addEventListener('focusout', () => controller.abort(), {
-            once: true,
+            once: true, // not necessary to fire more than once and will restart on the next focusin
           });
-          // needed on document as users can drag the thumb while out of the thumb elements mouse area
-          document.addEventListener(
-            'click',
-            () => interactionEndHandler(value as number),
-            {
-              signal: controller.signal,
-            },
-          );
-          thumb.addEventListener(
-            'keyup',
-            (e: KeyboardEvent) => {
-              ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(
-                e.key,
-              ) && interactionEndHandler(value as number);
-            },
-            {
-              signal: controller.signal,
-            },
-          );
+
+          // These two EventListeners signal the end of the interaction with the thumb
+          document.addEventListener('click', interactionEndHandler, { // needed on document as users can drag the thumb while out of the thumb elements mouse area
+            signal: controller.signal,
+          });
+          thumb.addEventListener('keyup', interactionEndHandler, {
+            signal: controller.signal,
+          });
         };
 
+        // Add event listeners to the thumb for when the user starts interacting with the thumb
         thumb.addEventListener('focusin', focusInHandler);
 
         return () => {
+          // clean up event listeners
           if (thumb) {
             thumb.removeEventListener('focusin', focusInHandler);
           }
         };
       }
       return () => {};
-    }, [thumbRef, ref, value]);
+    }, [thumb, input, value]);
 
     /**
      * We purposefully do not use `type="hidden"` here otherwise forms that
