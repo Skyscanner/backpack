@@ -19,6 +19,14 @@
 import BpkPrice from '../../packages/bpk-component-price/src/BpkPrice';
 
 import {
+  XSmallExample,
+  XSmallWithTrailingTextExample,
+  XSmallWithLeadingAndTrailingTextExample,
+  XSmallWithPreviousPriceExample,
+  XSmallWithPreviousPriceLeadingTextExample,
+  XSmallRightExample,
+  XSmallRightWithTrailingTextExample,
+  XSmallRightWithLeadingandTrailingTextExample,
   SmallExample,
   SmallWithTrailingTextExample,
   SmallWithLeadingAndTrailingTextExample,
@@ -42,6 +50,17 @@ export default {
   component: BpkPrice,
 };
 
+export const XSmall = XSmallExample;
+export const XSmallWithTrailingText = XSmallWithTrailingTextExample;
+export const XSmallWithLeadingAndTrailingText =
+  XSmallWithLeadingAndTrailingTextExample;
+export const XSmallWithPreviousPrice = XSmallWithPreviousPriceExample;
+export const XSmallWithPreviousPriceLeadingText =
+  XSmallWithPreviousPriceLeadingTextExample;
+export const XSmallRight = XSmallRightExample;
+export const XSmallRightWithTrailingText = XSmallRightWithTrailingTextExample;
+export const XSmallRightWithLeadingandTrailingText =
+  XSmallRightWithLeadingandTrailingTextExample;
 export const Small = SmallExample;
 export const SmallWithTrailingText = SmallWithTrailingTextExample;
 export const SmallWithLeadingAndTrailingText =
@@ -66,5 +85,5 @@ export const LargeLongPrice = LargeLongPriceExample;
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

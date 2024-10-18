@@ -19,6 +19,7 @@
 /* @flow strict */
 
 export const SIZES = {
+  xsmall: 'xsmall',
   small: 'small',
   large: 'large',
 };
