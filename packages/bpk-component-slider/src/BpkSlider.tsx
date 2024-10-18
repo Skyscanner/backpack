@@ -42,7 +42,9 @@ export type Props = {
   value: number[] | number;
   ariaLabel: string[];
   ariaValuetext?: string[];
-  inputProps?: [{ [key: string]: any }];
+  inputProps?:
+  | [{ [key: string]: any }]
+  | [{ [key: string]: any }, { [key: string]: any }];
   [rest: string]: any;
 };
 
