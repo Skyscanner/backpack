@@ -23,15 +23,3 @@ export default () => (
   />
 );
 ```
-
-## Props
-
-### BpkCardList
-
-| Property            | PropType                               | Required | Default Value |
-| ------------------- | -------------------------------------- | -------- | ------------- |
-| buttonText          | string                                 | false    | -             |
-| description         | string                                 | false    | -             |
-| onButtonClick       | Function                               | false    | -             |
-| title               | string                                 | true     | -             |
-| buttonHref          | string                                 | false    | -             |
