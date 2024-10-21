@@ -268,6 +268,7 @@ const WithNonPaddedContentExample = () => (
     closeLabel="Close drawer"
     buttonText="Open drawer"
     getApplicationElement={() => document.getElementById('pagewrap')}
+    padded={false}
   >
     <div className={getClassName('bpk-drawer-content-full-width')}>
       <p>

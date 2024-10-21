@@ -49,6 +49,7 @@ type Props = {
   closeOnScrimClick: boolean,
   isIphone: boolean,
   isIpad: boolean,
+  padded: boolean,
 };
 
 const BpkDrawerContent = (props: Props) => {
@@ -67,6 +68,7 @@ const BpkDrawerContent = (props: Props) => {
     isIphone, // Unused from withScrim scrim HOC
     onClose,
     onCloseAnimationComplete,
+    padded,
     title,
     ...rest
   } = props;
@@ -81,6 +83,10 @@ const BpkDrawerContent = (props: Props) => {
 
   if (hideTitle) {
     headerClassNames.push(getClassName('bpk-drawer__heading--visually-hidden'));
+  }
+
+  if (padded) {
+    contentClassNames.push(getClassName('bpk-drawer__content--padded'));
   }
 
   if (contentClassName) {
@@ -125,10 +131,7 @@ const BpkDrawerContent = (props: Props) => {
               <BpkButtonLink onClick={onClose}>{closeText}</BpkButtonLink>
             ) : (
               <div className={getClassName('bpk-drawer__close-button')}>
-                <BpkCloseButton
-                  label={closeLabel}
-                  onClick={onClose}
-                />
+                <BpkCloseButton label={closeLabel} onClick={onClose} />
               </div>
             )}
           </header>
