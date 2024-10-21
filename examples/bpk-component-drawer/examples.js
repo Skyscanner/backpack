@@ -262,10 +262,27 @@ const WithFullHeightContentExample = () => (
   </DrawerContainer>
 );
 
+const WithNonPaddedContentExample = () => (
+  <DrawerContainer
+    title="Drawer title"
+    closeLabel="Close drawer"
+    buttonText="Open drawer"
+    getApplicationElement={() => document.getElementById('pagewrap')}
+  >
+    <div className={getClassName('bpk-drawer-content-full-width')}>
+      <p>
+        This has default padding disabled to give full control of the layout
+        e.g. full width background color.
+      </p>
+    </div>
+  </DrawerContainer>
+);
+
 export {
   DefaultExample,
   OverflowingExamples,
   CloseButtonTextExample,
   WithVisuallyHiddenTitleExample,
   WithFullHeightContentExample,
+  WithNonPaddedContentExample,
 };
