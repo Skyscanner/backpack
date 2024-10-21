@@ -42,6 +42,7 @@ type Props = {
   closeLabel: ?string,
   closeText: ?string,
   hideTitle: ?boolean,
+  padded?: boolean,
 };
 
 type State = {
@@ -118,6 +119,7 @@ BpkDrawer.defaultProps = {
   closeLabel: null,
   closeText: null,
   hideTitle: false,
+  padded: true,
 };
 
 export default BpkDrawer;

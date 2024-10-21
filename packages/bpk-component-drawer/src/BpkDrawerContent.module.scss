@@ -103,8 +103,11 @@
 
   &__content {
     height: 100%;
-    padding: tokens.bpk-spacing-base();
     flex: 1 1 100%;
     overflow-y: auto;
+  }
+
+  &__content--padded {
+    padding: tokens.bpk-spacing-base();
   }
 }
