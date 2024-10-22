@@ -22,6 +22,7 @@ import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import { BpkModalV2, MODAL_STYLING } from '../../packages/bpk-component-modal';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
+import { RangeSliderExample } from '../bpk-component-slider/examples';
 
 import type { Props as BpkModalProps } from '../../packages/bpk-component-modal/src/BpkModalV2/BpkModal';
 
@@ -124,6 +125,8 @@ const DefaultExample = (initiallyOpen: boolean) => (
       This is a default modal using the HTML dialog element. You can put
       anything you want in here.
     </Paragraph>
+    <RangeSliderExample />
+    <input type="range" min="1" max="100" />
   </ModalContainer>
 );
 

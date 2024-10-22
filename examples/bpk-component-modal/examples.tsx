@@ -35,6 +35,7 @@ import BpkModal, {
 import { BpkNavigationBarButtonLink } from '../../packages/bpk-component-navigation-bar';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
+import { RangeSliderExample } from '../bpk-component-slider/examples';
 
 import STYLES from './examples.module.scss';
 
@@ -145,6 +146,8 @@ const ModalContainer = (props: ContainerProps) => {
 const DefaultExample = (isOpen: boolean) => (
   <ModalContainer title="Modal title" closeLabel="Close modal" isOpen={isOpen} >
     This is a default modal. You can put anything you want in here.
+    <RangeSliderExample />
+    <input type="range" min="1" max="100" />
   </ModalContainer>
 );
 

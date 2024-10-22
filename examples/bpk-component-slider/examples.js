@@ -63,7 +63,7 @@ class SliderContainer extends Component {
         <BpkSlider
           min={min}
           max={time ? 59 : 100}
-          step={1}
+          step={0.5}
           onChange={this.handleChange}
           {...this.props}
           value={this.state.value}

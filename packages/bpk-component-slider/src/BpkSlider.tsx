@@ -146,11 +146,11 @@ const BubbleInput = forwardRef(
       if (thumb) {
         // The interactionEndHandler is used to ensure that the input value is updated
         // and change event fired when the user stops interacting with the thumb
-        const interactionEndHandler = (event: MouseEvent | KeyboardEvent) => {
+        const interactionEndHandler = (event: MouseEvent | KeyboardEvent | TouchEvent) => {
           if (
             input &&
-            // if it's a mouse event or arrow key event
-            ((event as MouseEvent).button > -1 ||
+            // if it's a mouse event, touch event or arrow key event
+            ((event as MouseEvent).button > -1 || (event as TouchEvent).touches.length > -1 ||
               ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(
                 (event as KeyboardEvent).key,
               ))
@@ -164,7 +164,7 @@ const BubbleInput = forwardRef(
         };
 
         // the focusInHandler is used to add event listeners to the document when the thumb is in focus
-        // Allows us to track at which moment the user 
+        // Allows us to track at which moment the user focuses on the thumb
         const focusInHandler = () => {
           // The Controller is needed as we may click more than once when in focus (clicking along the line of slider to move the thumb to that position). 
           const controller = new AbortController();
@@ -173,8 +173,11 @@ const BubbleInput = forwardRef(
             once: true, // not necessary to fire more than once and will restart on the next focusin
           });
 
-          // These two EventListeners signal the end of the interaction with the thumb
+          // These three EventListeners signal the end of the interaction with the thumb
           document.addEventListener('click', interactionEndHandler, { // needed on document as users can drag the thumb while out of the thumb elements mouse area
+            signal: controller.signal,
+          });
+          thumb.addEventListener('touchend', interactionEndHandler, {
             signal: controller.signal,
           });
           thumb.addEventListener('keyup', interactionEndHandler, {

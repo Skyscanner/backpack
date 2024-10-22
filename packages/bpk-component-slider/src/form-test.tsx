@@ -70,9 +70,7 @@ describe('BpkSlider form-test for single-thumb slider', () => {
     const formValidation = jest.fn();
     const Wrap = () => {
       const [sliderValue, setSliderValue] = useState<number[]>([0, 100]); // two-thumb slider with min and max value
-      useEffect(() => {
-        document.addEventListener('change', formValidation);
-      }, []);
+
       return (
         <form data-testid="form">
           <BpkSlider
@@ -92,6 +90,7 @@ describe('BpkSlider form-test for single-thumb slider', () => {
       );
     };
     render(<Wrap />);
+    document.addEventListener('change', formValidation);
 
     const sliderThumbMin = screen.getByLabelText('min');
     expect(sliderThumbMin).toBeInTheDocument();
