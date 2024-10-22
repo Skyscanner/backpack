@@ -139,25 +139,29 @@ const BubbleInput = forwardRef(
     // This Hook Provides the native behaviour that the input range type would have around the "change" event.
     // When a user changes the value of the slider. The change event is emitted.
     useEffect(() => {
-      // for test works where ref is passed into the useEffect
+      // for tests to work the ref is passed into the useEffect rather than the variable of ref.current.
       const thumb = thumbRef.current;
       const input = ref.current;
       // thumb should be rendered before adding any eventListeners
       if (thumb) {
         // The interactionEndHandler is used to ensure that the input value is updated
         // and change event fired when the user stops interacting with the thumb
-        const interactionEndHandler = (event: MouseEvent | KeyboardEvent | TouchEvent) => {
+        const interactionEndHandler = (
+          event: MouseEvent | KeyboardEvent | TouchEvent,
+        ) => {
           if (
             input &&
             // if it's a mouse event, touch event or arrow key event
-            ((event as MouseEvent).button > -1 || (event as TouchEvent).touches.length > -1 ||
+            ((event as MouseEvent).button > -1 ||
+              (event as TouchEvent).touches.length > -1 ||
               ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(
                 (event as KeyboardEvent).key,
               ))
           ) {
             // parseFloat works for both integers and floats and the Slider supports decimal stepping. e.g. 0 - 1
             const newValue = parseFloat(input.getAttribute('value') as string);
-            if (value !== newValue) { // newValue is changed if the slider has moved, clicking away from the thumb will not fire the change event
+            if (value !== newValue) {
+              // newValue is changed if the slider has moved, clicking away from the thumb will not fire the change event
               setNativeValue(input, newValue);
             }
           }
@@ -166,7 +170,7 @@ const BubbleInput = forwardRef(
         // the focusInHandler is used to add event listeners to the document when the thumb is in focus
         // Allows us to track at which moment the user focuses on the thumb
         const focusInHandler = () => {
-          // The Controller is needed as we may click more than once when in focus (clicking along the line of slider to move the thumb to that position). 
+          // The Controller is needed as we may click more than once when in focus (clicking along the line of slider to move the thumb to that position).
           const controller = new AbortController();
           // On focusout we can then abort the event listeners attached to the thumb and document
           thumb.addEventListener('focusout', () => controller.abort(), {
@@ -174,7 +178,8 @@ const BubbleInput = forwardRef(
           });
 
           // These three EventListeners signal the end of the interaction with the thumb
-          document.addEventListener('click', interactionEndHandler, { // needed on document as users can drag the thumb while out of the thumb elements mouse area
+          document.addEventListener('click', interactionEndHandler, {
+            // needed on document as users can drag the thumb while out of the thumb elements mouse area
             signal: controller.signal,
           });
           thumb.addEventListener('touchend', interactionEndHandler, {
