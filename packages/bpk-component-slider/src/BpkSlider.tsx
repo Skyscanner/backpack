@@ -153,7 +153,7 @@ const BubbleInput = forwardRef(
             input &&
             // if it's a mouse event, touch event or arrow key event
             ((event as MouseEvent).button > -1 ||
-              (event as TouchEvent).touches.length > -1 ||
+              (event as TouchEvent).touches?.length > -1 ||
               ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(
                 (event as KeyboardEvent).key,
               ))
