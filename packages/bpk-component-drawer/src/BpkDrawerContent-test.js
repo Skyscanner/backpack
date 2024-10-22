@@ -63,6 +63,22 @@ describe('BpkDrawerContent', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render correctly when it has padded=true', () => {
+    const { asFragment } = render(
+      <BpkDrawerContent
+        id="my-drawer"
+        title="Drawer title"
+        onClose={jest.fn()}
+        onCloseAnimationComplete={jest.fn()}
+        dialogRef={jest.fn()}
+        padded
+      >
+        Drawer content
+      </BpkDrawerContent>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('should render correctly when it has a contentClassName', () => {
     const { asFragment } = render(
       <BpkDrawerContent
