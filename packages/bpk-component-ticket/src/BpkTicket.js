@@ -17,6 +17,7 @@
  */
 
 /* @flow strict */
+/* eslint-disable valid-jsdoc */
 
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
@@ -38,6 +39,10 @@ type Props = {
   href: ?string,
 };
 
+/**
+ * @deprecated use bpk-component-card instead
+ * @returns {Component} a ticket component
+ */
 const BpkTicket = (props: Props) => {
   const {
     children,
