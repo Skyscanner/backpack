@@ -44,12 +44,12 @@ type Props = {
   contentClassName?: string,
   closeLabel?: string,
   closeText?: string,
-  isDrawerShown: boolean,
-  hideTitle: boolean,
-  closeOnScrimClick: boolean,
-  isIphone: boolean,
-  isIpad: boolean,
-  padded: boolean,
+  isDrawerShown?: boolean,
+  hideTitle?: boolean,
+  closeOnScrimClick?: boolean,
+  isIphone?: boolean,
+  isIpad?: boolean,
+  padded?: boolean,
 };
 
 const BpkDrawerContent = ({
