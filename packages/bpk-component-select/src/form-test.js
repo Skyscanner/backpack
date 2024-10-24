@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { useEffect } from 'react';
-
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -65,30 +63,24 @@ describe('BpkSelect form test', () => {
 
   it('should emit change event on option selection that calls formValidation', async () => {
     const formValidation = jest.fn();
-    const Wrap = () => {
-      useEffect(() => {
-        document.addEventListener('change', formValidation);
-      }, []);
-      return (
-        <form data-testid="form">
-          <BpkSelect
-            id="fruits"
-            name="fruits"
-            defaultValue="apples"
-            data-testid="myselect"
-          >
-            <option value="apples">Apples</option>
-            <option data-testid="select-option" value="oranges">
-              Oranges
-            </option>
-            <option value="pears">Pears</option>
-            <option value="tomatoes">Tomatoes</option>
-          </BpkSelect>
-          <button type="submit">Submit</button>
-        </form>
-      );
-    };
-    render(<Wrap />);
+  
+    render(<form data-testid="form">
+      <BpkSelect
+        id="fruits"
+        name="fruits"
+        defaultValue="apples"
+        data-testid="myselect"
+      >
+        <option value="apples">Apples</option>
+        <option data-testid="select-option" value="oranges">
+          Oranges
+        </option>
+        <option value="pears">Pears</option>
+        <option value="tomatoes">Tomatoes</option>
+      </BpkSelect>
+      <button type="submit">Submit</button>
+    </form>);
+    document.addEventListener('change', formValidation);
 
     const select = screen.getByTestId('myselect');
 

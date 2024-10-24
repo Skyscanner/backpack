@@ -65,9 +65,6 @@ describe('BpkInput', () => {
     const Wrap = () => {
       // state is required to force react to update and re-render the component.
       const [inputTest, setInputTest] = useState('');
-      useEffect(() => {
-        document.addEventListener('change', formValidation);
-      }, []);
       return (
         <form data-testid="form">
           <BpkInput
@@ -85,6 +82,7 @@ describe('BpkInput', () => {
     };
 
     render(<Wrap />);
+    document.addEventListener('change', formValidation);
 
     const textInput = screen.getByTestId('myInput');
     const form = screen.getByTestId('form');

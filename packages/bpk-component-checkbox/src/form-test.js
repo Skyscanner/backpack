@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -57,10 +57,7 @@ describe('BpkCheckbox form test', () => {
     const formValidation = jest.fn();
     const Wrap = () => {
       // state is required to force react to update and re-render the component.
-      const [isChecked, setIsChecked] = useState(false);
-      useEffect(() => {
-        document.addEventListener('change', formValidation);
-      }, []);
+      const [isChecked, setIsChecked] = useState(false); 
       return (
         <form data-testid="form">
           <BpkCheckbox
@@ -75,6 +72,7 @@ describe('BpkCheckbox form test', () => {
       );
     };
     render(<Wrap />);
+    document.addEventListener('change', formValidation);
 
     const checkbox = screen.getByTestId('mycheckbox');
     expect(checkbox).not.toBeChecked();

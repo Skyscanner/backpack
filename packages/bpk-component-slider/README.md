@@ -28,3 +28,9 @@ const Slider = () => (
 ## Props
 
 Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/slider/web-aNXvlY7y#section-props-1e).
+
+
+## Native Events
+
+Just like a `input` `type="range"` the BpkSlider will fire a change event from the hidden `input` `type="number"` for each thumb. These behave similarly where user can drag the thumb and will fire a change event on `mouseup`/`click`.
+As for the keyboard events the change event will fire on `keyup` rather than on every keystroke registered like the `input` `type=range` does.

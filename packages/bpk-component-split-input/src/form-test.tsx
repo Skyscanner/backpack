@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -71,11 +71,6 @@ it('should emit change event when text has been entered and blurred', async () =
     const formValidation = jest.fn();
     const Wrap = () => {
       const [inputTest, setInputTest] = useState('');
-
-      useEffect(() => {
-        document.addEventListener('change', formValidation);
-      }, []);
-
       return (
         <form data-testid="form">
           <BpkSplitInput
@@ -94,6 +89,7 @@ it('should emit change event when text has been entered and blurred', async () =
     };
 
     render(<Wrap />);
+    document.addEventListener('change', formValidation);
 
     const splitInputs = screen.getAllByTestId('mySplitInput');
     const form = screen.getByTestId('form');
