@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { ReactElement } from 'react';
 
 import { render } from '@testing-library/react';
 
@@ -25,7 +25,7 @@ import BpkDrawerContent from './BpkDrawerContent';
 jest.mock(
   'react-transition-group/Transition',
   () =>
-    ({ children }) =>
+    ({ children }: { children: (state: string) => ReactElement }) =>
       children('entered'),
 );
 
