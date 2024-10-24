@@ -2,6 +2,8 @@
 
 > Backpack ticket component.
 
+# 👻 This component has been deprecated, and usages should be replaced with bpk-component-card
+
 ## Installation
 
 Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
