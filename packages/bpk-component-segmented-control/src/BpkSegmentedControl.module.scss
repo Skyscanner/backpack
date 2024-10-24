@@ -128,6 +128,7 @@
 }
 
 .bpk-segmented-control:focus {
-  border: (tokens.$bpk-one-pixel-rem * 2) solid tokens.$bpk-text-link-day;
   outline: none;
+
+  @include borders.bpk-border-lg(tokens.$bpk-text-link-day);
 }
