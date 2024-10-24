@@ -126,7 +126,3 @@
     border-bottom-right-radius: 0;
   }
 }
-
-.bpk-segmented-control:focus {
-  @include borders.bpk-border-lg(tokens.$bpk-text-link-day);
-}
