@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -70,9 +70,6 @@ describe('BpkNudger form test', () => {
     const Wrap = () => {
       // state is required to force react to update and re-render the component.
       const [nudgerValue, setNudgerValue] = useState(5);
-      useEffect(() => {
-        document.addEventListener('change', formValidation);
-      }, []);
       return (
         <form data-testid="form">
           <BpkNudger
@@ -92,7 +89,8 @@ describe('BpkNudger form test', () => {
     };
 
     render(<Wrap />);
-
+    document.addEventListener('change', formValidation);
+  
     const minusButton = screen.getByRole('button', { name: 'Decrease' });
 
     const numInput = screen.getByTestId('myNudger');
@@ -111,9 +109,6 @@ describe('BpkNudger form test', () => {
     const Wrap = () => {
       // state is required to force react to update and re-render the component.
       const [nudgerValue, setNudgerValue] = useState(5);
-      useEffect(() => {
-        document.addEventListener('change', formValidation);
-      }, []);
       return (
         <form data-testid="form">
           <BpkNudger
@@ -133,6 +128,7 @@ describe('BpkNudger form test', () => {
     };
 
     render(<Wrap />);
+    document.addEventListener('change', formValidation);
 
     const numInput = screen.getByTestId('myNudger');
     const button = screen.getByRole('button', { name: 'Submit' });

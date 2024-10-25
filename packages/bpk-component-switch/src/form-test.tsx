@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -59,9 +59,6 @@ describe('BpkSwitch form test', () => {
     const Wrap = () => {
       // state is required to force react to update and re-render the component.
       const [isChecked, setIsChecked] = useState(false);
-      useEffect(() => {
-        document.addEventListener('change', formValidation);
-      }, []);
       return (
         <form data-testid="form">
           <BpkSwitch
@@ -76,7 +73,8 @@ describe('BpkSwitch form test', () => {
       );
     };
     render(<Wrap />);
-
+    document.addEventListener('change', formValidation);
+    
     const mySwitch = screen.getByTestId('myswitch');
     expect(mySwitch).not.toBeChecked();
     expect(formValidation).not.toHaveBeenCalled();
