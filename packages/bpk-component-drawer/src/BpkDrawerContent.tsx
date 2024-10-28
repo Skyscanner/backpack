@@ -37,7 +37,7 @@ type Props = {
   children: ReactNode,
   dialogRef: () => React.RefObject<HTMLElement>,
   onCloseAnimationComplete: () => void,
-  onClose: () => () => void
+  onClose: () => void
   id: string,
   title: string,
   className?: string,
