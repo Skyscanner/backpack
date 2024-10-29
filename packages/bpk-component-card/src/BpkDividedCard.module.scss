@@ -19,10 +19,6 @@
 @use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/utils';
 
-$min-vertical-width: 240;
-$max-vertical-width: 720;
-$min-horizontal-width: $max-vertical-width + 1;
-$min-horizontal-height: 292;
 $fixed-secondary-width: 216;
 
 .bpk-divided-card {
@@ -38,14 +34,10 @@ $fixed-secondary-width: 216;
 
   &--vertical-container {
     display: flex;
-    min-width: tokens.$bpk-one-pixel-rem * $min-vertical-width;
-    max-width: tokens.$bpk-one-pixel-rem * $max-vertical-width;
   }
 
   &--horizontal-container {
     display: flex;
-    min-width: tokens.$bpk-one-pixel-rem * $min-horizontal-width;
-    min-height: tokens.$bpk-one-pixel-rem * $min-horizontal-height;
   }
 
   &__primary {
