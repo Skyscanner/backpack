@@ -19,12 +19,9 @@
 @use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/utils';
 
-$fixed-secondary-width: 216;
-
 .bpk-divided-card {
   &--content {
     display: flex;
-    height: 100%;
     align-items: stretch;
   }
 
@@ -52,7 +49,6 @@ $fixed-secondary-width: 216;
     }
 
     &--horizontal {
-      width: tokens.$bpk-one-pixel-rem * $fixed-secondary-width;
       border-left: tokens.$bpk-input-border;
 
       @include utils.bpk-rtl {
