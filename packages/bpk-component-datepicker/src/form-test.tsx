@@ -17,7 +17,7 @@
  */
 
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -122,9 +122,6 @@ describe('BpkDatepicker form test', () => {
     const formValidation = jest.fn();
     const Wrap = () => {
       const [calendarDate, setCalendarDate] = useState(new Date(2020, 2, 19));
-      useEffect(() => {
-        document.addEventListener('change', formValidation);
-      }, []);
       return (
         <form data-testid="form">
           <BpkDatepicker
@@ -157,6 +154,7 @@ describe('BpkDatepicker form test', () => {
     };
 
     render(<Wrap />);
+    document.addEventListener('change', formValidation);
 
     const inputField = screen.getByRole('textbox', {
       name: /Thursday, 19th March 2020/i,
