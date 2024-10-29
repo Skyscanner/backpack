@@ -61,7 +61,7 @@ exports[`BpkDrawer should render correctly in the given target if renderTarget i
             </div>
           </header>
           <div
-            class="bpk-drawer__content"
+            class="bpk-drawer__content bpk-drawer__content--padded"
           >
             Drawer content
           </div>
