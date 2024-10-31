@@ -110,11 +110,14 @@ const DefaultDividedCardExample = () => (
 );
 
 const VerticalDividedCardExample = () => (
-  <BpkDividedCard
-    primaryContent={longMessage}
-    secondaryContent={shortContent}
-    orientation={ORIENTATION.vertical}
-  />
+   
+  <div style={{ width: 343 }}>
+    <BpkDividedCard
+      primaryContent={longMessage}
+      secondaryContent={shortContent}
+      orientation={ORIENTATION.vertical}
+    />
+  </div>
 );
 const WithHrefDividedCardExample = () => (
   <BpkDividedCard
@@ -125,12 +128,15 @@ const WithHrefDividedCardExample = () => (
 );
 
 const NonElevatedDividedCardExample = () => (
-  <BpkDividedCard
-    primaryContent={longMessage}
-    secondaryContent={shortContent}
-    orientation={ORIENTATION.vertical}
-    isElevated={false}
-  />
+   
+  <div style={{ width: 343 }}>
+    <BpkDividedCard
+      primaryContent={longMessage}
+      secondaryContent={shortContent}
+      orientation={ORIENTATION.vertical}
+      isElevated={false}
+    />
+  </div>
 );
 
 const CardWrapperExample = () => (
