@@ -142,6 +142,7 @@
     "@types/lodash.clamp": "^4.0.9",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
+    "@types/react-transition-group": "^4.4.11",
     "@types/react-window": "^1.8.8",
     "@types/webpack-env": "^1.18.4",
     "autoprefixer": "^10.4.18",
