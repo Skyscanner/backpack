@@ -725,3 +725,245 @@ exports[`small right view should support trailing text attribute 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`xsmall left view should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price"
+  >
+    <div
+      class=""
+    />
+    <div
+      class=""
+    >
+      <span
+        class="bpk-price__price bpk-price__spacing"
+      >
+        <span
+          class="bpk-text bpk-text--heading-5"
+        >
+          £1,830
+        </span>
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`xsmall left view should support custom class names 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price custom-classname"
+  >
+    <div
+      class=""
+    />
+    <div
+      class=""
+    >
+      <span
+        class="bpk-price__price bpk-price__spacing"
+      >
+        <span
+          class="bpk-text bpk-text--heading-5"
+        >
+          £1,830
+        </span>
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`xsmall left view should support custom leading class names 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price"
+  >
+    <div
+      class="leading-classname"
+    />
+    <div
+      class=""
+    >
+      <span
+        class="bpk-price__price bpk-price__spacing"
+      >
+        <span
+          class="bpk-text bpk-text--heading-5"
+        >
+          £1,830
+        </span>
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`xsmall left view should support leading text attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price"
+  >
+    <div
+      class=""
+    >
+      <span
+        class="bpk-text bpk-text--xs"
+      >
+        from
+      </span>
+    </div>
+    <div
+      class=""
+    >
+      <span
+        class="bpk-price__price bpk-price__spacing"
+      >
+        <span
+          class="bpk-text bpk-text--heading-5"
+        >
+          £1,830
+        </span>
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`xsmall left view should support previous price attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price"
+  >
+    <div
+      class="bpk-price__leading"
+    >
+      <span
+        class="bpk-price__previous-price"
+      >
+        <span
+          class="bpk-text bpk-text--xs"
+        >
+          £2,000
+        </span>
+      </span>
+    </div>
+    <div
+      class=""
+    >
+      <span
+        class="bpk-price__price bpk-price__spacing"
+      >
+        <span
+          class="bpk-text bpk-text--heading-5"
+        >
+          £1,830
+        </span>
+      </span>
+      <span
+        class="bpk-price__trailing"
+      >
+        <span
+          class="bpk-text bpk-text--xs"
+        >
+          per day
+        </span>
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`xsmall left view should support previous price with leading text attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price"
+  >
+    <div
+      class="bpk-price__leading"
+    >
+      <span
+        class="bpk-price__previous-price"
+      >
+        <span
+          class="bpk-text bpk-text--xs"
+        >
+          £2,000
+        </span>
+      </span>
+      <span
+        class="bpk-price__separator"
+      >
+        <span
+          class="bpk-text bpk-text--xs"
+        >
+          𐤟
+        </span>
+      </span>
+      <span
+        class="bpk-text bpk-text--xs"
+      >
+        from
+      </span>
+    </div>
+    <div
+      class=""
+    >
+      <span
+        class="bpk-price__price bpk-price__spacing"
+      >
+        <span
+          class="bpk-text bpk-text--heading-5"
+        >
+          £1,830
+        </span>
+      </span>
+      <span
+        class="bpk-price__trailing"
+      >
+        <span
+          class="bpk-text bpk-text--xs"
+        >
+          per day
+        </span>
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`xsmall left view should support trailing text attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-price"
+  >
+    <div
+      class=""
+    />
+    <div
+      class=""
+    >
+      <span
+        class="bpk-price__price bpk-price__spacing"
+      >
+        <span
+          class="bpk-text bpk-text--heading-5"
+        >
+          £1,830
+        </span>
+      </span>
+      <span
+        class="bpk-price__trailing"
+      >
+        <span
+          class="bpk-text bpk-text--xs"
+        >
+          per day
+        </span>
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;

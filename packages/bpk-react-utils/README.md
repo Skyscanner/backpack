@@ -6,6 +6,75 @@
 
 Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
+## Portal.js
+
+Render's children into a new component tree and appends it to `document.body`. Useful for Modals, Popovers, Tooltips etc where
+it's necessary in overcoming z-index issues when absolutely positioning elements.
+
+### Usage
+
+```js
+import { Portal } from '@skyscanner/backpack-web/bpk-react-utils';
+import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import { BpkCode } from '@skyscanner/backpack-web/bpk-component-code';
+import { Component } from 'react';
+
+class MyComponent extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      isOpen: false,
+    };
+  }
+
+  onOpen = () => {
+    this.setState({
+      isOpen: true,
+    });
+  };
+
+  onClose = () => {
+    this.setState({
+      isOpen: false,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <BpkButton onClick={this.onOpen}>Open portal</BpkButton>
+        <Portal isOpen={this.state.isOpen} onClose={this.onClose}>
+          <div>
+            I'm now appended to <BpkCode>document.body</BpkCode>
+          </div>
+        </Portal>
+      </div>
+    );
+  }
+}
+```
+
+**NOTE:** Events used to bubble up from the portal into the parent component. Due to the way React works, events do not
+bubble up into the component in the DOM where the portal is rendered (i.e. render target), but instead they bubble up
+into the parent component in the shadow DOM, that is the component where you added the `Portal` in your React code. To
+avoid confusion and bugs caused by this behaviour, we have prevented mouse and keyboard events from bubbling up outside
+the portal.
+
+### Props
+
+| Property          | PropType                | Required | Default Value |
+| ----------------- | ----------------------- | -------- | ------------- |
+| children          | node                    | true     | -             |
+| isOpen            | bool                    | true     | -             |
+| beforeClose       | func                    | false    | null          |
+| onClose           | func                    | false    | noop          |
+| onOpen            | func                    | false    | noop          |
+| onRender          | func                    | false    | noop          |
+| renderTarget      | func                    | false    | null          |
+| target            | oneOf([function, node]) | false    | null          |
+| closeOnEscPressed | bool                    | false    | true          |
+
 ## `cssModules.js`
 
 A helpful utility which permits backwards compatibility with hard coded classes and [CSS modules](https://github.com/css-modules/css-modules).

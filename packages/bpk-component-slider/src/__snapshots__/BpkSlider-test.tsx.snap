@@ -35,7 +35,13 @@ exports[`BpkSlider should render correctly 1`] = `
         role="slider"
         style=""
         tabindex="0"
-      />
+      >
+        <input
+          style="display: none;"
+          type="number"
+          value="25"
+        />
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -76,7 +82,13 @@ exports[`BpkSlider should render correctly with a "step" attribute 1`] = `
         role="slider"
         style=""
         tabindex="0"
-      />
+      >
+        <input
+          style="display: none;"
+          type="number"
+          value="25"
+        />
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -117,7 +129,13 @@ exports[`BpkSlider should render correctly with a minimum distance between contr
         role="slider"
         style=""
         tabindex="0"
-      />
+      >
+        <input
+          style="display: none;"
+          type="number"
+          value="10"
+        />
+      </span>
     </span>
     <span
       style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(90% + 0px);"
@@ -135,7 +153,13 @@ exports[`BpkSlider should render correctly with a minimum distance between contr
         role="slider"
         style=""
         tabindex="0"
-      />
+      >
+        <input
+          style="display: none;"
+          type="number"
+          value="90"
+        />
+      </span>
     </span>
   </span>
 </DocumentFragment>
@@ -176,7 +200,13 @@ exports[`BpkSlider should render correctly with a range of values 1`] = `
         role="slider"
         style=""
         tabindex="0"
-      />
+      >
+        <input
+          style="display: none;"
+          type="number"
+          value="10"
+        />
+      </span>
     </span>
     <span
       style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(90% + 0px);"
@@ -194,7 +224,13 @@ exports[`BpkSlider should render correctly with a range of values 1`] = `
         role="slider"
         style=""
         tabindex="0"
-      />
+      >
+        <input
+          style="display: none;"
+          type="number"
+          value="90"
+        />
+      </span>
     </span>
   </span>
 </DocumentFragment>

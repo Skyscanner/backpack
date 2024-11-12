@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { ReactElement } from 'react';
 
 import { render } from '@testing-library/react';
 
@@ -25,7 +25,7 @@ import BpkDrawerContent from './BpkDrawerContent';
 jest.mock(
   'react-transition-group/Transition',
   () =>
-    () =>
+    ({ children }: { children: (state: string) => ReactElement }) =>
       children('entered'),
 );
 
@@ -50,12 +50,28 @@ describe('BpkDrawerContent', () => {
     const { asFragment } = render(
       <BpkDrawerContent
         id="my-drawer"
-        additionalClassName="my-classname"
+        className="my-classname"
         title="Drawer title"
         onClose={jest.fn()}
         onCloseAnimationComplete={jest.fn()}
         closeLabel="Close"
         dialogRef={jest.fn()}
+      >
+        Drawer content
+      </BpkDrawerContent>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly when it has padded=true', () => {
+    const { asFragment } = render(
+      <BpkDrawerContent
+        id="my-drawer"
+        title="Drawer title"
+        onClose={jest.fn()}
+        onCloseAnimationComplete={jest.fn()}
+        dialogRef={jest.fn()}
+        padded
       >
         Drawer content
       </BpkDrawerContent>,
@@ -114,7 +130,3 @@ describe('BpkDrawerContent', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 });
-function children(arg0: string): any {
-  throw new Error('Function not implemented.');
-}
-

@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import type { ReactNode } from 'react';
 
 import Transition from 'react-transition-group/Transition';
@@ -35,56 +33,58 @@ import STYLES from './BpkDrawerContent.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  children: ReactNode;
-  dialogRef: () => (ref: HTMLElement | null | undefined) => void,
+  children: ReactNode,
+  dialogRef: () => React.RefObject<HTMLElement>,
   onCloseAnimationComplete: () => void,
-  onClose?: (
-    arg0?: TouchEvent | MouseEvent | KeyboardEvent,
-    arg1?: {
-      source: 'ESCAPE' | 'DOCUMENT_CLICK';
-    },
-  ) => void;
+  onClose: () => void
   id: string,
   title: string,
-  additionalClassName?: string,
-  contentClassName?: string
-  closeLabel: string,
+  className?: string,
+  contentClassName?: string,
+  closeLabel?: string,
   closeText?: string,
   isDrawerShown?: boolean,
   hideTitle?: boolean,
   closeOnScrimClick?: boolean,
   isIphone?: boolean,
   isIpad?: boolean,
+  padded?: boolean
 };
 
 const BpkDrawerContent = ({
-  additionalClassName=undefined,
   children,
+  className,
   closeLabel,
-  closeOnScrimClick=false,
-  closeText=undefined,
-  contentClassName=undefined,
+  closeOnScrimClick = true, // Unused from withScrim scrim HOC
+  closeText,
+  contentClassName,
   dialogRef,
-  hideTitle=false,
+  hideTitle = false,
   id,
-  isDrawerShown=false,
-  isIpad=false,
-  isIphone=false,
+  isDrawerShown = true,
+  isIpad = false, // Unused from withScrim scrim HOC
+  isIphone = false, // Unused from withScrim scrim HOC
   onClose,
   onCloseAnimationComplete,
+  padded,
   title,
   ...rest
 }: Props) => {
+
   const drawerClassNames = [getClassName('bpk-drawer')];
   const headerClassNames = [getClassName('bpk-drawer__heading')];
   const contentClassNames = [getClassName('bpk-drawer__content')];
 
-  if (additionalClassName) {
-    drawerClassNames.push(additionalClassName);
+  if (className) {
+    drawerClassNames.push(className);
   }
 
   if (hideTitle) {
     headerClassNames.push(getClassName('bpk-drawer__heading--visually-hidden'));
+  }
+
+  if (padded) {
+    contentClassNames.push(getClassName('bpk-drawer__content--padded'));
   }
 
   if (contentClassName) {
@@ -106,7 +106,6 @@ const BpkDrawerContent = ({
       onExited={onCloseAnimationComplete}
     >
       {(status: string) => (
-        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
         <section
           id={id}
           tabIndex={-1}
@@ -129,10 +128,7 @@ const BpkDrawerContent = ({
               <BpkButtonLink onClick={onClose}>{closeText}</BpkButtonLink>
             ) : (
               <div className={getClassName('bpk-drawer__close-button')}>
-                <BpkCloseButton
-                  label={closeLabel}
-                  onClick={onClose}
-                />
+                <BpkCloseButton label={closeLabel} onClick={onClose} />
               </div>
             )}
           </header>

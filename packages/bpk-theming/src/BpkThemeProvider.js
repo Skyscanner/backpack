@@ -17,7 +17,6 @@
  */
 
 import PropTypes from 'prop-types';
-import { Component } from 'react';
 
 const uniq = (arr = []) => {
   const seen = {};
@@ -56,35 +55,25 @@ const createStyle = (theme, themeAttributes) => {
   return style;
 };
 
-class BpkThemeProvider extends Component {
-  getChildContext() {
-    return { theme: this.props.theme };
-  }
+const BpkThemeProvider = (props) => {
+  const {
+    children,
+    component: WrapperComponent,
+    style: userStyle,
+    theme,
+    themeAttributes,
+    ...rest
+  } = props;
 
-  render() {
-    const {
-      children,
-      component: WrapperComponent,
-      style: userStyle,
-      theme,
-      themeAttributes,
-      ...rest
-    } = this.props;
+  const dedupedThemeAttributes = uniq(themeAttributes);
+  const style = createStyle(theme, dedupedThemeAttributes);
 
-    const dedupedThemeAttributes = uniq(themeAttributes);
-    const style = createStyle(theme, dedupedThemeAttributes);
-
-    return (
-      <WrapperComponent style={{ ...userStyle, ...style }} {...rest}>
-        {children}
-      </WrapperComponent>
-    );
-  }
+  return (
+    <WrapperComponent style={{ ...userStyle, ...style }} {...rest}>
+      {children}
+    </WrapperComponent>
+  );
 }
-
-BpkThemeProvider.childContextTypes = {
-  theme: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-};
 
 const themeAttributesPropType = (props, propName, componentName) => {
   const { theme } = props;
