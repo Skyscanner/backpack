@@ -21,5 +21,9 @@
 import BpkDrawer from './src/BpkDrawer';
 import themeAttributes from './src/themeAttributes';
 
+import type { Props } from './src/BpkDrawer';
+
+export type BpkDrawerProps = Props;
+
 export default BpkDrawer;
 export { themeAttributes };

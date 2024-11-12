@@ -25,7 +25,7 @@ import BpkDrawerContent from './BpkDrawerContent';
 jest.mock(
   'react-transition-group/Transition',
   () =>
-    ({ children }) =>
+    () =>
       children('entered'),
 );
 
@@ -39,7 +39,7 @@ describe('BpkDrawerContent', () => {
         onCloseAnimationComplete={jest.fn()}
         closeLabel="Close"
         dialogRef={jest.fn()}
-      >
+        >
         Drawer content
       </BpkDrawerContent>,
     );
@@ -50,7 +50,7 @@ describe('BpkDrawerContent', () => {
     const { asFragment } = render(
       <BpkDrawerContent
         id="my-drawer"
-        className="my-classname"
+        additionalClassName="my-classname"
         title="Drawer title"
         onClose={jest.fn()}
         onCloseAnimationComplete={jest.fn()}
@@ -114,3 +114,7 @@ describe('BpkDrawerContent', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 });
+function children(arg0: string): any {
+  throw new Error('Function not implemented.');
+}
+
