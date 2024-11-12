@@ -20,7 +20,6 @@ import type { ReactNode } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import assign from 'object-assign';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CSSTransition from 'react-transition-group/CSSTransition';
 
 // Object.assign() is used unpolyfilled in react-transition-group.
