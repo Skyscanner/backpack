@@ -22,6 +22,7 @@
 .bpk-journey-arrow {
   display: flex;
   width: 100%;
+  min-width: tokens.bpk-spacing-xxl();
   height: tokens.bpk-spacing-md();
   margin: 0 tokens.bpk-spacing-md();
   justify-content: center;
