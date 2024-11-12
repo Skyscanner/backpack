@@ -43,19 +43,20 @@ export type Props = {
   renderTarget?: null | HTMLElement | (() => null | HTMLElement),
   dialogRef?: (ref: HTMLElement | null | undefined) => void,
   className?: string | null,
-  contentClassName?: string | null,
+  contentClassName?: string,
   closeLabel?: string | null,
-  closeText?: string | null,
+  closeText?: string,
   hideTitle?: boolean,
   isIphone?: boolean,
+  padded?: boolean,
 };
 
 const BpkDrawer = ({
   children,
   className = null,
   closeLabel = null,
-  closeText = null,
-  contentClassName = null,
+  closeText = undefined,
+  contentClassName = undefined,
   dialogRef,
   getApplicationElement,
   hideTitle = false,
@@ -63,6 +64,7 @@ const BpkDrawer = ({
   isIphone = isDeviceIphone(),
   isOpen,
   onClose,
+  padded = true,
   renderTarget = null,
   title,
 }: Props) =>  {
@@ -97,6 +99,7 @@ const BpkDrawer = ({
           closeOnScrimClick
           isIpad
           isIphone={isIphone}
+          padded={padded}
         >
           {children}
         </BpkScrimDrawerContent>
