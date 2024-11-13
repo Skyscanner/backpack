@@ -18,8 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import Transition from 'react-transition-group/Transition';
+import { Transition } from 'react-transition-group';
 
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -49,7 +48,7 @@ type Props = {
   closeOnScrimClick?: boolean,
   isIphone?: boolean,
   isIpad?: boolean,
-  padded?: boolean,
+  padded?: boolean
 };
 
 const BpkDrawerContent = ({

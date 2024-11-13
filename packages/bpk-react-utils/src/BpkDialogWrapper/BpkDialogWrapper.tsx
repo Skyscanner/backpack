@@ -18,7 +18,6 @@
 import type { SyntheticEvent, ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import CSSTransition from 'react-transition-group/CSSTransition';
 
 import cssModules from '../cssModules';
