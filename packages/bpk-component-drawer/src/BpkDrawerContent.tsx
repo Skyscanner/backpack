@@ -48,7 +48,8 @@ type Props = {
   closeOnScrimClick?: boolean,
   isIphone?: boolean,
   isIpad?: boolean,
-  padded?: boolean
+  padded?: boolean,
+  mobileModalDisplay?: boolean,
 };
 
 const BpkDrawerContent = ({
@@ -64,6 +65,7 @@ const BpkDrawerContent = ({
   isDrawerShown = true,
   isIpad = false, // Unused from withScrim scrim HOC
   isIphone = false, // Unused from withScrim scrim HOC
+  mobileModalDisplay = false,
   onClose,
   onCloseAnimationComplete,
   padded,
@@ -77,6 +79,10 @@ const BpkDrawerContent = ({
 
   if (className) {
     drawerClassNames.push(className);
+  }
+
+  if (mobileModalDisplay) {
+    drawerClassNames.push(getClassName('bpk-drawer__modal-mobile-view'));
   }
 
   if (hideTitle) {

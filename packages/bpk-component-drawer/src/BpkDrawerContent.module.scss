@@ -110,4 +110,11 @@
   &__content--padded {
     padding: tokens.bpk-spacing-base();
   }
+
+  &__modal-mobile-view {
+    transform: scale(1);
+    transition:
+      opacity tokens.$bpk-duration-sm ease-in-out,
+      transform tokens.$bpk-duration-sm ease-in-out;
+  }
 }

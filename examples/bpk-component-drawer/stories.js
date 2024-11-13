@@ -25,6 +25,7 @@ import {
   WithVisuallyHiddenTitleExample,
   WithFullHeightContentExample,
   WithNonPaddedContentExample,
+  WithMobileModalBehaviourExample
 } from './examples';
 
 export default {
@@ -41,3 +42,5 @@ export const WithVisuallyHiddenTitle = WithVisuallyHiddenTitleExample;
 export const WithFullHeightContent = WithFullHeightContentExample;
 
 export const WithNonPaddedContent = WithNonPaddedContentExample;
+
+export const WithMobileModalBehaviour = WithMobileModalBehaviourExample;

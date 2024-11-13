@@ -49,6 +49,7 @@ export type Props = {
   hideTitle?: boolean,
   isIphone?: boolean,
   padded?: boolean,
+  mobileModalDisplay?: boolean,
 };
 
 const BpkDrawer = ({
@@ -63,6 +64,7 @@ const BpkDrawer = ({
   id,
   isIphone = isDeviceIphone(),
   isOpen,
+  mobileModalDisplay = false,
   onClose,
   padded = true,
   renderTarget = null,
@@ -100,6 +102,7 @@ const BpkDrawer = ({
           isIpad
           isIphone={isIphone}
           padded={padded}
+          mobileModalDisplay={mobileModalDisplay}
         >
           {children}
         </BpkScrimDrawerContent>
