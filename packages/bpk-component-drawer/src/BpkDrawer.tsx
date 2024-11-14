@@ -42,7 +42,7 @@ export type Props = {
   getApplicationElement: () => HTMLElement | null,
   renderTarget?: null | HTMLElement | (() => null | HTMLElement),
   dialogRef?: (ref: HTMLElement | null | undefined) => void,
-  className?: string | null,
+  className?: string,
   contentClassName?: string,
   closeLabel?: string | null,
   closeText?: string,
@@ -54,7 +54,7 @@ export type Props = {
 
 const BpkDrawer = ({
   children,
-  className = null,
+  className = undefined,
   closeLabel = null,
   closeText = undefined,
   contentClassName = undefined,
