@@ -50,7 +50,7 @@ describe('BpkDrawerContent', () => {
     const { asFragment } = render(
       <BpkDrawerContent
         id="my-drawer"
-        className="my-classname"
+        additionalClassName="my-classname"
         title="Drawer title"
         onClose={jest.fn()}
         onCloseAnimationComplete={jest.fn()}
