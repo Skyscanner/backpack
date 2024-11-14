@@ -3,6 +3,7 @@
 exports[`BpkIconMarkerBackground should render properly 1`] = `
 <DocumentFragment>
   <svg
+    aria-hidden="true"
     class="bpk-icon-marker-background"
     height="32"
     viewBox="0 0 26 32"
@@ -19,6 +20,7 @@ exports[`BpkIconMarkerBackground should render properly 1`] = `
 exports[`BpkIconMarkerBackground should render properly with "disabled" 1`] = `
 <DocumentFragment>
   <svg
+    aria-hidden="true"
     class="bpk-icon-marker-background bpk-icon-marker-background--disabled"
     height="32"
     viewBox="0 0 26 32"
@@ -35,6 +37,7 @@ exports[`BpkIconMarkerBackground should render properly with "disabled" 1`] = `
 exports[`BpkIconMarkerBackground should render properly with "interactive" 1`] = `
 <DocumentFragment>
   <svg
+    aria-hidden="true"
     class="bpk-icon-marker-background bpk-icon-marker-background--interactive"
     height="32"
     viewBox="0 0 26 32"
@@ -51,6 +54,7 @@ exports[`BpkIconMarkerBackground should render properly with "interactive" 1`] =
 exports[`BpkIconMarkerBackground should render properly with "selected" 1`] = `
 <DocumentFragment>
   <svg
+    aria-hidden="true"
     class="bpk-icon-marker-background bpk-icon-marker-background--selected"
     height="40"
     viewBox="0 0 32 40"

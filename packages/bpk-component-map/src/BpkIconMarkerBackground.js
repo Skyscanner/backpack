@@ -48,6 +48,7 @@ const BpkIconMarkerBackground = (props: Props) => {
         width="32"
         height="40"
         viewBox="0 0 32 40"
+        aria-hidden="true"
         className={classNames}
         {...rest}
       >
@@ -62,6 +63,7 @@ const BpkIconMarkerBackground = (props: Props) => {
       width="26"
       height="32"
       viewBox="0 0 26 32"
+      aria-hidden="true"
       className={classNames}
       {...rest}
     >

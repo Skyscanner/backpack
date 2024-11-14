@@ -39,7 +39,7 @@ type Props = {
   onClose: () => void
   id: string,
   title: string,
-  className?: string,
+  className?: string | null,
   contentClassName?: string,
   closeLabel?: string,
   closeText?: string,
