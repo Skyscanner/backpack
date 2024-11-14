@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { ReactNode, RefObject } from 'react';
 
 import { Transition } from 'react-transition-group';
 
@@ -34,7 +34,7 @@ const getClassName = cssModules(STYLES);
 
 type Props = {
   children: ReactNode,
-  dialogRef: () => React.RefObject<HTMLElement>,
+  dialogRef: () => RefObject<HTMLElement>,
   onCloseAnimationComplete: () => void,
   onClose: () => void
   id: string,
