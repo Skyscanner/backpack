@@ -39,7 +39,7 @@ type Props = {
   onClose: () => void
   id: string,
   title: string,
-  additionalClassName?: string | null,
+  className?: string | null,
   contentClassName?: string,
   closeLabel?: string,
   closeText?: string,
@@ -52,8 +52,8 @@ type Props = {
 };
 
 const BpkDrawerContent = ({
-  additionalClassName,
   children,
+  className,
   closeLabel,
   closeOnScrimClick = true, // Unused from withScrim scrim HOC
   closeText,
@@ -75,8 +75,8 @@ const BpkDrawerContent = ({
   const headerClassNames = [getClassName('bpk-drawer__heading')];
   const contentClassNames = [getClassName('bpk-drawer__content')];
 
-  if (additionalClassName) {
-    drawerClassNames.push(additionalClassName);
+  if (className) {
+    drawerClassNames.push(className);
   }
 
   if (hideTitle) {
