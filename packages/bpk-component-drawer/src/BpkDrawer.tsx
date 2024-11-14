@@ -89,7 +89,8 @@ const BpkDrawer = ({
           dialogRef={dialogRef}
           closeLabel={closeLabel || ""}
           closeText={closeText}
-          additionalClassName={className}
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+          className={className}
           contentClassName={contentClassName}
           getApplicationElement={getApplicationElement}
           hideTitle={hideTitle}
