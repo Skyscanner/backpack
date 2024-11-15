@@ -81,10 +81,6 @@ const BpkDrawerContent = ({
     drawerClassNames.push(className);
   }
 
-  if (mobileModalDisplay) {
-    drawerClassNames.push(getClassName('bpk-drawer__modal-mobile-view'));
-  }
-
   if (hideTitle) {
     headerClassNames.push(getClassName('bpk-drawer__heading--visually-hidden'));
   }
@@ -121,6 +117,7 @@ const BpkDrawerContent = ({
           className={[
             drawerClassNames.join(' '),
             getClassName(`bpk-drawer--${status}`),
+            mobileModalDisplay ? getClassName(`bpk-drawer__modal-mobile-view--${status}`) : "",
           ].join(' ')}
           ref={dialogRef}
           {...rest}
