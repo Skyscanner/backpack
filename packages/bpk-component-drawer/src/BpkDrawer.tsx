@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import type { ReactNode } from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { Portal, isDeviceIphone } from '../../bpk-react-utils';
 import { withScrim } from '../../bpk-scrim-utils';
@@ -72,6 +72,11 @@ const BpkDrawer = ({
 }: Props) =>  {
 
   const [isDrawerShown, setIsDrawerShown] = useState(true);
+  useEffect(() => {
+    if (isOpen) {
+      setIsDrawerShown(true);
+    }
+  }, [isOpen]);
 
   const onCloseAnimationComplete = () => {
     if (onClose){
