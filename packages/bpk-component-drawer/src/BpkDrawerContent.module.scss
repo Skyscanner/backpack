@@ -111,23 +111,19 @@
 
   &__modal-mobile-view {
     @include breakpoints.bpk-breakpoint-mobile {
-      transform: scale(0);
+      transform: scale(1);
+      transition:
+        opacity tokens.$bpk-duration-sm ease-in-out,
+        transform tokens.$bpk-duration-sm ease-in-out;
 
       &--entering {
         transform: scale(0.9);
-        transition: transform tokens.$bpk-duration-xs ease;
         opacity: tokens.$bpk-modal-initial-opacity;
       }
 
       &--entered {
         transform: scale(1);
         opacity: tokens.$bpk-modal-opacity;
-      }
-
-      &--exiting {
-        transition:
-          opacity tokens.$bpk-duration-sm ease-in-out,
-          transform tokens.$bpk-duration-sm ease-in-out;
       }
 
       &--exiting,
