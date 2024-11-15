@@ -116,8 +116,7 @@ const BpkDrawerContent = ({
           aria-labelledby={headingId}
           className={[
             drawerClassNames.join(' '),
-            getClassName(`bpk-drawer--${status}`),
-            mobileModalDisplay ? getClassName(`bpk-drawer__modal-mobile-view--${status}`) : "",
+            getClassName(`bpk-drawer--${status}`, mobileModalDisplay ? `bpk-drawer__modal-mobile-view--${status}` : undefined),
           ].join(' ')}
           ref={dialogRef}
           {...rest}
