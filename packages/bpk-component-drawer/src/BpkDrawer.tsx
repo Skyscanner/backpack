@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import type { ReactNode } from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { Portal, isDeviceIphone } from '../../bpk-react-utils';
 import { withScrim } from '../../bpk-scrim-utils';
@@ -42,18 +42,19 @@ export type Props = {
   getApplicationElement: () => HTMLElement | null,
   renderTarget?: null | HTMLElement | (() => null | HTMLElement),
   dialogRef?: (ref: HTMLElement | null | undefined) => void,
-  className?: string | null,
+  className?: string,
   contentClassName?: string,
   closeLabel?: string | null,
   closeText?: string,
   hideTitle?: boolean,
   isIphone?: boolean,
   padded?: boolean,
+  mobileModalDisplay?: boolean,
 };
 
 const BpkDrawer = ({
   children,
-  className = null,
+  className = undefined,
   closeLabel = null,
   closeText = undefined,
   contentClassName = undefined,
@@ -63,6 +64,7 @@ const BpkDrawer = ({
   id,
   isIphone = isDeviceIphone(),
   isOpen,
+  mobileModalDisplay = false,
   onClose,
   padded = true,
   renderTarget = null,
@@ -70,6 +72,11 @@ const BpkDrawer = ({
 }: Props) =>  {
 
   const [isDrawerShown, setIsDrawerShown] = useState(true);
+  useEffect(() => {
+    if (isOpen) {
+      setIsDrawerShown(true);
+    }
+  }, [isOpen]);
 
   const onCloseAnimationComplete = () => {
     if (onClose){
@@ -101,6 +108,7 @@ const BpkDrawer = ({
           isIpad
           isIphone={isIphone}
           padded={padded}
+          mobileModalDisplay={mobileModalDisplay}
         >
           {children}
         </BpkScrimDrawerContent>

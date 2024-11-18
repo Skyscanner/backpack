@@ -279,6 +279,18 @@ const WithNonPaddedContentExample = () => (
   </DrawerContainer>
 );
 
+const WithMobileModalBehaviourExample = () => (
+  <DrawerContainer
+    title="Drawer title"
+    closeLabel="Close drawer"
+    buttonText="Open drawer"
+    getApplicationElement={() => document.getElementById('pagewrap')}
+    mobileModalDisplay
+  >
+    This is a default drawer. You can put anything you want in here.
+  </DrawerContainer>
+);
+
 export {
   DefaultExample,
   OverflowingExamples,
@@ -286,4 +298,5 @@ export {
   WithVisuallyHiddenTitleExample,
   WithFullHeightContentExample,
   WithNonPaddedContentExample,
+  WithMobileModalBehaviourExample
 };
