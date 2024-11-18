@@ -157,7 +157,7 @@
     "danger": "^12.3.3",
     "danger-plugin-toolbox": "^3.1.2",
     "date-fns": "^3.6.0",
-    "eslint_d": "^14.0.4",
+    "eslint_d": "^14.2.2",
     "glob": "^10.4.2",
     "gulp": "^5.0.0",
     "gulp-rename": "^2.0.0",
