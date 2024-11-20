@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-import LgSpinner from '@skyscanner/bpk-svgs/dist/js/spinners/lg';
 
 import { cssModules } from '../../bpk-react-utils';
 
 import SPINNER_TYPES from './spinnerTypes';
+import LgSpinner from './spinners/lg';
 
 import type { SpinnerTypes } from './spinnerTypes';
 
