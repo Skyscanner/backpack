@@ -5,5 +5,6 @@ coverage
 /packages/bpk-component-flare/src/__generated__
 /packages/bpk-component-icon/sm
 /packages/bpk-component-icon/lg
+/packages/bpk-component-spinner/src/spinners
 /packages/bpk-stylesheets/base.js
 *.d.ts

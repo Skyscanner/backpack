@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-import SmSpinner from '@skyscanner/bpk-svgs/dist/js/spinners/sm';
 
 import { cssModules } from '../../bpk-react-utils';
 
 import SPINNER_TYPES from './spinnerTypes';
+import SmSpinner from './spinners/sm';
 
 import type { SpinnerTypes } from './spinnerTypes';
 
