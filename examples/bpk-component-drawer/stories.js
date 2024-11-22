@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BkpDrawer from '../../packages/bpk-component-drawer/src/BpkDrawer';
 
 import {
@@ -25,6 +24,8 @@ import {
   CloseButtonTextExample,
   WithVisuallyHiddenTitleExample,
   WithFullHeightContentExample,
+  WithNonPaddedContentExample,
+  WithMobileModalBehaviourExample
 } from './examples';
 
 export default {
@@ -39,3 +40,7 @@ export const CloseButtonText = CloseButtonTextExample;
 export const WithVisuallyHiddenTitle = WithVisuallyHiddenTitleExample;
 
 export const WithFullHeightContent = WithFullHeightContentExample;
+
+export const WithNonPaddedContent = WithNonPaddedContentExample;
+
+export const WithMobileModalBehaviour = WithMobileModalBehaviourExample;

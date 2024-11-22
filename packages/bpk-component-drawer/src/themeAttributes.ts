@@ -16,29 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable__bpk-mixins/tokens';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { themeAttributes as linkAttributes } from '../../bpk-component-link';
 
-.bpk-drawer-paragraph {
-  margin-bottom: tokens.bpk-spacing-md();
-}
-
-.bpk-drawer-content-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.bpk-drawer-button {
-  margin: auto auto 0;
-}
-
-.bpk-drawer-content-full-width {
-  height: 100%;
-  padding: tokens.bpk-spacing-base();
-  background-color: tokens.$bpk-canvas-contrast-day;
-
-  p {
-    padding: tokens.bpk-spacing-base();
-    border-radius: tokens.$bpk-border-radius-md;
-    background-color: tokens.$bpk-surface-default-day;
-  }
-}
+export default [...linkAttributes];

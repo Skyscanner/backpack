@@ -16,29 +16,14 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable__bpk-mixins/tokens';
+/* @flow strict */
 
-.bpk-drawer-paragraph {
-  margin-bottom: tokens.bpk-spacing-md();
-}
+import BpkDrawer from './src/BpkDrawer';
+import themeAttributes from './src/themeAttributes';
 
-.bpk-drawer-content-container {
-  display: flex;
-  flex-direction: column;
-}
+import type { Props } from './src/BpkDrawer';
 
-.bpk-drawer-button {
-  margin: auto auto 0;
-}
+export type BpkDrawerProps = Props;
 
-.bpk-drawer-content-full-width {
-  height: 100%;
-  padding: tokens.bpk-spacing-base();
-  background-color: tokens.$bpk-canvas-contrast-day;
-
-  p {
-    padding: tokens.bpk-spacing-base();
-    border-radius: tokens.$bpk-border-radius-md;
-    background-color: tokens.$bpk-surface-default-day;
-  }
-}
+export default BpkDrawer;
+export { themeAttributes };

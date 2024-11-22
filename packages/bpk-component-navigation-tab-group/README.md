@@ -51,4 +51,4 @@ export default () => (
 
 ## Props
 
-Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/navigation-tab-group/web-4eQsMvYv).
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/navigation-tab-group/web-4wIhe9UI-4wIhe9UI).

@@ -16,29 +16,25 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable__bpk-mixins/tokens';
+const fs = require('fs');
 
-.bpk-drawer-paragraph {
-  margin-bottom: tokens.bpk-spacing-md();
-}
+const gulp = require('gulp');
 
-.bpk-drawer-content-container {
-  display: flex;
-  flex-direction: column;
-}
+const ICONS_FOLDER_PATH = './node_modules/@skyscanner/bpk-svgs/dist/js/spinners';
 
-.bpk-drawer-button {
-  margin: auto auto 0;
-}
+const rm = (path, options) =>
+  new Promise((resolve, reject) =>
+    fs.rm(path, options, (err, ...d) => (err ? reject(err) : resolve(...d))),
+  );
+gulp.task('copy', () =>
+  gulp
+    .src(`${ICONS_FOLDER_PATH}/**/*`)
+    .pipe(gulp.dest('./packages/bpk-component-spinner/src/spinners')),
+);
 
-.bpk-drawer-content-full-width {
-  height: 100%;
-  padding: tokens.bpk-spacing-base();
-  background-color: tokens.$bpk-canvas-contrast-day;
-
-  p {
-    padding: tokens.bpk-spacing-base();
-    border-radius: tokens.$bpk-border-radius-md;
-    background-color: tokens.$bpk-surface-default-day;
-  }
-}
+gulp.task('clean', () =>
+  Promise.all([
+    rm('./packages/bpk-component-spinner/src/spinners', { force: true, recursive: true }),
+  ]),
+);
+gulp.task('generateSpinners', gulp.series('clean', 'copy'));

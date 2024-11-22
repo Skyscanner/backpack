@@ -16,29 +16,6 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable__bpk-mixins/tokens';
+import BpkCardList from "./src/BpkCardList";
 
-.bpk-drawer-paragraph {
-  margin-bottom: tokens.bpk-spacing-md();
-}
-
-.bpk-drawer-content-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.bpk-drawer-button {
-  margin: auto auto 0;
-}
-
-.bpk-drawer-content-full-width {
-  height: 100%;
-  padding: tokens.bpk-spacing-base();
-  background-color: tokens.$bpk-canvas-contrast-day;
-
-  p {
-    padding: tokens.bpk-spacing-base();
-    border-radius: tokens.$bpk-border-radius-md;
-    background-color: tokens.$bpk-surface-default-day;
-  }
-}
+export default BpkCardList;

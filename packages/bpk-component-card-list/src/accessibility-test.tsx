@@ -16,10 +16,24 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { render } from "@testing-library/react";
+import { axe } from "jest-axe";
 
-import BpkDrawer from './src/BpkDrawer';
-import themeAttributes from './src/themeAttributes';
+import BpkCardList from "./BpkCardList";
 
-export default BpkDrawer;
-export { themeAttributes };
+describe('BpkCardList accessibility tests', () => {
+  it('should not have any accessibility issues', async () => {
+    const { container } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        buttonText="Button"
+        buttonHref="https://www.skyscanner.net"
+        onButtonClick={() => {}}
+      />
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

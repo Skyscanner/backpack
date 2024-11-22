@@ -20,11 +20,11 @@ import {
   useRef,
   useEffect,
   type ComponentPropsWithRef,
+  type RefObject,
 } from 'react';
 
 import { useComposedRefs } from '@radix-ui/react-compose-refs';
 import * as Slider from '@radix-ui/react-slider';
-import { usePrevious } from '@radix-ui/react-use-previous';
 
 import { cssModules, isRTL, setNativeValue } from '../../bpk-react-utils';
 
@@ -42,7 +42,9 @@ export type Props = {
   value: number[] | number;
   ariaLabel: string[];
   ariaValuetext?: string[];
-  inputProps?: [{ [key: string]: any }];
+  inputProps?:
+    | [{ [key: string]: any }]
+    | [{ [key: string]: any }, { [key: string]: any }];
   [rest: string]: any;
 };
 
@@ -71,6 +73,8 @@ const BpkSlider = ({
       callback(val);
     }
   };
+
+  const thumbRefs = [useRef(null), useRef(null)];
 
   const handleOnChange = (sliderValues: number[]) => {
     processSliderValues(sliderValues, onChange);
@@ -103,11 +107,16 @@ const BpkSlider = ({
           aria-valuetext={ariaValuetext ? ariaValuetext[index] : val.toString()}
           className={getClassName('bpk-slider__thumb')}
           aria-valuenow={currentValue[index]}
+          ref={thumbRefs[index]}
           asChild
         >
           {/* custom thumb with child input */}
           <span>
-            <BubbleInput value={currentValue[index]} {...(inputProps && inputProps[index])} />
+            <BubbleInput
+              value={currentValue[index]}
+              thumbRef={thumbRefs[index]}
+              {...(inputProps && inputProps[index])}
+            />
           </span>
         </Slider.Thumb>
       ))}
@@ -117,20 +126,82 @@ const BpkSlider = ({
 
 // Work around until radix-ui/react-slider is updated to accept an inputRef prop https://github.com/radix-ui/primitives/pull/3033
 const BubbleInput = forwardRef(
-  (props: ComponentPropsWithRef<'input'>, forwardedRef) => {
-    const { value, ...inputProps } = props;
+  (
+    props: ComponentPropsWithRef<'input'> & {
+      thumbRef: RefObject<HTMLElement>;
+    },
+    forwardedRef,
+  ) => {
+    const { thumbRef, value, ...inputProps } = props;
     const ref = useRef<HTMLInputElement>();
     const composedRefs = useComposedRefs(forwardedRef, ref);
 
-    const prevValue = usePrevious(value);
-
-    // Bubble value change to parents (e.g form change event)
+    // This Hook Provides the native behaviour that the input range type would have around the "change" event.
+    // When a user changes the value of the slider. The change event is emitted.
     useEffect(() => {
-      const input = ref.current!;
-      if (prevValue !== value) {
-        setNativeValue(input, `${value}`);
+      // for tests to work the ref is passed into the useEffect rather than the variable of ref.current.
+      const thumb = thumbRef.current;
+      const input = ref.current;
+      // thumb should be rendered before adding any eventListeners
+      if (thumb) {
+        // The interactionEndHandler is used to ensure that the input value is updated
+        // and change event fired when the user stops interacting with the thumb
+        const interactionEndHandler = (
+          event: MouseEvent | KeyboardEvent | TouchEvent,
+        ) => {
+          if (
+            input &&
+            // if it's a mouse event, touch event or arrow key event
+            ((event as MouseEvent).button > -1 ||
+              (event as TouchEvent).touches?.length > -1 ||
+              ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(
+                (event as KeyboardEvent).key,
+              ))
+          ) {
+            // parseFloat works for both integers and floats and the Slider supports decimal stepping. e.g. 0 - 1
+            const newValue = parseFloat(input.getAttribute('value') as string);
+            if (value !== newValue) {
+              // newValue is changed if the slider has moved, clicking away from the thumb will not fire the change event
+              setNativeValue(input, newValue);
+            }
+          }
+        };
+
+        // the focusInHandler is used to add event listeners to the document when the thumb is in focus
+        // Allows us to track at which moment the user focuses on the thumb
+        const focusInHandler = () => {
+          // The Controller is needed as we may click more than once when in focus (clicking along the line of slider to move the thumb to that position).
+          const controller = new AbortController();
+          // On focusout we can then abort the event listeners attached to the thumb and document
+          thumb.addEventListener('focusout', () => controller.abort(), {
+            once: true, // not necessary to fire more than once and will restart on the next focusin
+          });
+
+          // These three EventListeners signal the end of the interaction with the thumb
+          document.addEventListener('click', interactionEndHandler, {
+            // needed on document as users can drag the thumb while out of the thumb elements mouse area
+            signal: controller.signal,
+          });
+          thumb.addEventListener('touchend', interactionEndHandler, {
+            signal: controller.signal,
+          });
+          thumb.addEventListener('keyup', interactionEndHandler, {
+            signal: controller.signal,
+          });
+        };
+
+        // Add event listeners to the thumb for when the user starts interacting with the thumb
+        thumb.addEventListener('focusin', focusInHandler);
+
+        return () => {
+          // clean up event listeners
+          if (thumb) {
+            thumb.removeEventListener('focusin', focusInHandler);
+          }
+        };
       }
-    }, [prevValue, value]);
+      return () => {};
+    }, [thumbRef, ref, value]);
 
     /**
      * We purposefully do not use `type="hidden"` here otherwise forms that

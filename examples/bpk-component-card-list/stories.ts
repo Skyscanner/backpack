@@ -16,29 +16,22 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable__bpk-mixins/tokens';
+import BpkCardList from "../../packages/bpk-component-card-list";
 
-.bpk-drawer-paragraph {
-  margin-bottom: tokens.bpk-spacing-md();
-}
+import BasicExample from './examples';
 
-.bpk-drawer-content-container {
-  display: flex;
-  flex-direction: column;
-}
+export default {
+  title: 'bpk-component-card-list',
+  component: BpkCardList,
+};
 
-.bpk-drawer-button {
-  margin: auto auto 0;
-}
+export const Basic = BasicExample;
 
-.bpk-drawer-content-full-width {
-  height: 100%;
-  padding: tokens.bpk-spacing-base();
-  background-color: tokens.$bpk-canvas-contrast-day;
+export const VisualTest = Basic;
 
-  p {
-    padding: tokens.bpk-spacing-base();
-    border-radius: tokens.$bpk-border-radius-md;
-    background-color: tokens.$bpk-surface-default-day;
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true
   }
 }

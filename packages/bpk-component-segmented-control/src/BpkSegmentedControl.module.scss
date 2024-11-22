@@ -126,8 +126,3 @@
     border-bottom-right-radius: 0;
   }
 }
-
-.bpk-segmented-control:focus {
-  border: (tokens.$bpk-one-pixel-rem * 2) solid tokens.$bpk-text-link-day;
-  outline: none;
-}

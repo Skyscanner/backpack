@@ -16,29 +16,24 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable__bpk-mixins/tokens';
+import { render, screen } from "@testing-library/react";
 
-.bpk-drawer-paragraph {
-  margin-bottom: tokens.bpk-spacing-md();
-}
+import BpkCardList from "./BpkCardList";
 
-.bpk-drawer-content-container {
-  display: flex;
-  flex-direction: column;
-}
+describe('BpkCardList', () => {
+  it('should render correctly', () => {
+    render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        buttonText="Button"
+        buttonHref="https://www.skyscanner.net"
+        onButtonClick={() => {}}
+      />
+    );
 
-.bpk-drawer-button {
-  margin: auto auto 0;
-}
-
-.bpk-drawer-content-full-width {
-  height: 100%;
-  padding: tokens.bpk-spacing-base();
-  background-color: tokens.$bpk-canvas-contrast-day;
-
-  p {
-    padding: tokens.bpk-spacing-base();
-    border-radius: tokens.$bpk-border-radius-md;
-    background-color: tokens.$bpk-surface-default-day;
-  }
-}
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.getByText('Button')).toBeInTheDocument();
+  });
+});
