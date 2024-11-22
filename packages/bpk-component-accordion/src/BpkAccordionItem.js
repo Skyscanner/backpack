@@ -19,7 +19,8 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import { Node, Element, useContext, cloneElement } from 'react';
+import { useContext, cloneElement } from 'react';
+import type { Node, Element } from 'react';
 
 import AnimateHeight from '../../bpk-animate-height';
 import { withButtonAlignment } from '../../bpk-component-icon';
@@ -147,7 +148,9 @@ const BpkAccordionItem = (props: Props) => {
               </BpkText>
             </div>
             <span
-              className={`${getClassName('bpk-accordion__icon-wrapper')} ${iconClassNames.join(' ')}`}
+              className={`${getClassName(
+                'bpk-accordion__icon-wrapper',
+              )} ${iconClassNames.join(' ')}`}
             >
               <ExpandIcon />
             </span>

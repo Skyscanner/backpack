@@ -19,7 +19,8 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-import { createContext, Node } from 'react';
+import { createContext } from 'react';
+import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
