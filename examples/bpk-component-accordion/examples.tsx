@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import {
   colorMonteverde,
   colorPanjin,
@@ -32,9 +30,12 @@ import {
   BpkAccordionItem,
   withAccordionItemState,
 } from '../../packages/bpk-component-accordion';
+// @ts-expect-error Untyped import - see `decisions/imports-ts-suppressions.md`.
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import { withAlignment } from '../../packages/bpk-component-icon';
+// @ts-expect-error Untyped import - see `decisions/imports-ts-suppressions.md`.
 import StopsIcon from '../../packages/bpk-component-icon/sm/stops';
+// @ts-expect-error Untyped import - see `decisions/imports-ts-suppressions.md`.
 import TimeIcon from '../../packages/bpk-component-icon/sm/time';
 import BpkText from '../../packages/bpk-component-text';
 
@@ -44,7 +45,7 @@ const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
 const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);
 const AlignedTimeIcon = withAlignment(TimeIcon, lineHeightBase, iconSizeSm);
 
-const CheckboxWrapper = (props) => (
+const CheckboxWrapper = (props: any) => (
   <div style={{ padding: `1rem 0` }} {...props} />
 );
 

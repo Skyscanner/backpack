@@ -78,6 +78,7 @@ export const VisualTest = SingleItemExample;
 export const VisualTestOnDark = WithDarkBackgroundExample;
 
 export const VisualTestWithZoom = VisualTest.bind({});
+// @ts-expect-error failed typings
 VisualTestWithZoom.args = {
   zoomEnabled: true,
 };
