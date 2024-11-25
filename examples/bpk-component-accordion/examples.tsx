@@ -33,9 +33,7 @@ import {
 // @ts-expect-error Untyped import - see `decisions/imports-ts-suppressions.md`.
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import { withAlignment } from '../../packages/bpk-component-icon';
-// @ts-expect-error Untyped import - see `decisions/imports-ts-suppressions.md`.
 import StopsIcon from '../../packages/bpk-component-icon/sm/stops';
-// @ts-expect-error Untyped import - see `decisions/imports-ts-suppressions.md`.
 import TimeIcon from '../../packages/bpk-component-icon/sm/time';
 import BpkText from '../../packages/bpk-component-text';
 

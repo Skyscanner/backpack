@@ -18,7 +18,6 @@
 
 import { render } from '@testing-library/react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import StopsIcon from '../../bpk-component-icon/sm/stops';
 
 import { BpkAccordionContext } from './BpkAccordion';
