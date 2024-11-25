@@ -16,11 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
 import { createContext } from 'react';
-import type { Node } from 'react';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -28,15 +25,26 @@ import STYLES from './BpkAccordion.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = { children: Node, className: ?string };
+export type BpkAccordionProps = {
+  children: ReactNode;
+  className?: string;
+  divider?: boolean;
+  onDark?: boolean;
+};
 
 export const BpkAccordionContext = createContext({
   onDark: false,
   divider: true,
 });
 
-const BpkAccordion = (props: Props) => {
-  const { children, className, divider, onDark, ...rest } = props;
+const BpkAccordion = (props: BpkAccordionProps) => {
+  const {
+    children,
+    className,
+    divider = true,
+    onDark = false,
+    ...rest
+  } = props;
 
   const classNames = getClassName(
     'bpk-accordion',
@@ -46,25 +54,11 @@ const BpkAccordion = (props: Props) => {
 
   return (
     <BpkAccordionContext.Provider value={{ onDark, divider }}>
-      {/* // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */}
       <div className={classNames} {...rest}>
         {children}
       </div>
     </BpkAccordionContext.Provider>
   );
-};
-
-BpkAccordion.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  onDark: PropTypes.bool,
-  divider: PropTypes.bool,
-};
-
-BpkAccordion.defaultProps = {
-  className: null,
-  onDark: false,
-  divider: true,
 };
 
 export default BpkAccordion;

@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
@@ -40,6 +38,7 @@ describe('withSingleItemAccordionState(BpkAccordion)', () => {
 
   it('should render correctly with arbitrary props', () => {
     const { asFragment } = render(
+      // @ts-expect-error - foo is not a valid prop
       <EnhancedComponent className="someClass" foo="bar">
         <div>Accordion Item 1</div>
         <div>Accordion Item 2</div>
@@ -51,25 +50,32 @@ describe('withSingleItemAccordionState(BpkAccordion)', () => {
 
   it('should render correctly with custom initially expanded item', () => {
     const { asFragment } = render(
+      /* eslint-disable react/no-unknown-property */
       <EnhancedComponent>
         <div>Accordion Item 1</div>
-        {/* eslint-disable-next-line react/no-unknown-property */}
+        {/*
+        // @ts-expect-error testing unknown property */}
         <div initiallyExpanded>Accordion Item 2</div>
         <div>Accordion Item 3</div>
       </EnhancedComponent>,
+      /* eslint-enable react/no-unknown-property */
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly even when multiple items are marked as initially expanded', () => {
     const { asFragment } = render(
+      /* eslint-disable react/no-unknown-property */
       <EnhancedComponent>
         <div>Accordion Item 1</div>
-        {/* eslint-disable-next-line react/no-unknown-property */}
+        {/*
+        // @ts-expect-error testing unknown property */}
         <div initiallyExpanded>Accordion Item 2</div>
-        {/* eslint-disable-next-line react/no-unknown-property */}
+        {/*
+        // @ts-expect-error testing unknown property */}
         <div initiallyExpanded>Accordion Item 3</div>
       </EnhancedComponent>,
+      /* eslint-enable react/no-unknown-property */
     );
     expect(asFragment()).toMatchSnapshot();
   });
