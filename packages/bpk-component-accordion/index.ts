@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import BpkAccordion from './src/BpkAccordion';
 import BpkAccordionItem from './src/BpkAccordionItem';
 import withAccordionItemState from './src/withAccordionItemState';

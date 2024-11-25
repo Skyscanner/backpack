@@ -16,22 +16,22 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
 import BpkAccordion from './BpkAccordion';
+import BpkAccordionItem from './BpkAccordionItem';
 
-describe('BpkAccordion', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(<BpkAccordion>Accordion child</BpkAccordion>);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly with custom "className" prop', () => {
-    const { asFragment } = render(
-      <BpkAccordion className="my-custom-class">Accordion child</BpkAccordion>,
+describe('BpkAccordion accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkAccordion>
+        <BpkAccordionItem id="item" title="item">
+          Accordion item
+        </BpkAccordionItem>
+      </BpkAccordion>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

@@ -16,11 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { useContext, cloneElement } from 'react';
+import type { ReactNode, ReactElement } from 'react';
 
-import PropTypes from 'prop-types';
-import { Node, Element, useContext, cloneElement } from 'react';
-
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import AnimateHeight from '../../bpk-animate-height';
 import { withButtonAlignment } from '../../bpk-component-icon';
 import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
@@ -35,18 +34,20 @@ const getClassName = cssModules(STYLES);
 
 const ExpandIcon = withButtonAlignment(ChevronDownIcon);
 
-type Props = {
-  children: Node,
-  id: string,
-  title: string,
-  expanded: boolean,
-  icon: ?Element<any>,
-  onClick: () => mixed,
-  tagName: 'span' | 'p' | 'text' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
-  textStyle: $Values<typeof TEXT_STYLES>,
+export type BpkAccordionItemProps = {
+  children: ReactNode;
+  id: string;
+  title: string;
+  className?: string;
+  expanded?: boolean;
+  initiallyExpanded?: boolean;
+  icon?: ReactElement;
+  onClick?: () => void;
+  tagName?: 'span' | 'p' | 'text' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  textStyle?: (typeof TEXT_STYLES)[keyof typeof TEXT_STYLES];
 };
 
-const BpkAccordionItem = (props: Props) => {
+const BpkAccordionItem = (props: BpkAccordionItemProps) => {
   const { divider, onDark } = useContext(BpkAccordionContext);
   const itemClassNames = [getClassName('bpk-accordion__item')];
   const iconClassNames = [getClassName('bpk-accordion__item-expand-icon')];
@@ -59,12 +60,12 @@ const BpkAccordionItem = (props: Props) => {
 
   const {
     children,
-    expanded,
-    icon,
+    expanded = false,
+    icon = null,
     id,
-    onClick,
-    tagName,
-    textStyle,
+    onClick = () => null,
+    tagName = 'h3',
+    textStyle = TEXT_STYLES.bodyDefault,
     title,
     ...rest
   } = props;
@@ -72,7 +73,6 @@ const BpkAccordionItem = (props: Props) => {
   // if this component is passed initiallyExpanded, this makes sure it doesn't
   // end up on the node. Not ideal as our container component shouldn't be passing
   // it, but the benefit of a better container api versus this was worth it
-  // $FlowFixMe[prop-missing] - see above
   delete rest.initiallyExpanded;
 
   if (divider) {
@@ -147,7 +147,9 @@ const BpkAccordionItem = (props: Props) => {
               </BpkText>
             </div>
             <span
-              className={`${getClassName('bpk-accordion__icon-wrapper')} ${iconClassNames.join(' ')}`}
+              className={`${getClassName(
+                'bpk-accordion__icon-wrapper',
+              )} ${iconClassNames.join(' ')}`}
             >
               <ExpandIcon />
             </span>
@@ -161,25 +163,6 @@ const BpkAccordionItem = (props: Props) => {
       </div>
     </div>
   );
-};
-
-BpkAccordionItem.propTypes = {
-  children: PropTypes.node.isRequired,
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  expanded: PropTypes.bool,
-  icon: PropTypes.node,
-  onClick: PropTypes.func,
-  tagName: PropTypes.string,
-  textStyle: PropTypes.string,
-};
-
-BpkAccordionItem.defaultProps = {
-  expanded: false,
-  icon: null,
-  onClick: () => null,
-  tagName: 'h3',
-  textStyle: TEXT_STYLES.bodyDefault,
 };
 
 export default BpkAccordionItem;

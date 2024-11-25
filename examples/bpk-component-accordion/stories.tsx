@@ -77,7 +77,9 @@ export const WithoutDividerOnDark = SingleItemExampleWithoutDividerOnDark;
 export const VisualTest = SingleItemExample;
 export const VisualTestOnDark = WithDarkBackgroundExample;
 
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true,
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true,
+  }
 };
