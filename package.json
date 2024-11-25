@@ -122,7 +122,7 @@
     "@percy/cli": "^1.30.0",
     "@percy/storybook": "^6.0.1",
     "@skyscanner/bpk-foundations-web": "^18.1.0",
-    "@skyscanner/bpk-svgs": "^19.3.0",
+    "@skyscanner/bpk-svgs": "^20.0.0",
     "@skyscanner/eslint-config-skyscanner": "^18.2.0",
     "@skyscanner/stylelint-config-skyscanner": "^11.1.0",
     "@storybook/addon-a11y": "^7.6.17",
