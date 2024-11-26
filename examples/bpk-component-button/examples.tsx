@@ -97,7 +97,12 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
         Disabled
       </Wrapped>
       &nbsp;
-      <Wrapped iconOnly onClick={action('Button clicked')} {...rest}>
+      <Wrapped
+        iconOnly
+        onClick={action('Button clicked')}
+        aria-label="Button"
+        {...rest}
+      >
         <AlignedSmallLongArrowRightIcon />
       </Wrapped>
       &nbsp;
@@ -105,6 +110,7 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
         iconOnly
         size={SIZE_TYPES.large}
         onClick={action('Button clicked')}
+        aria-label="Button"
         {...rest}
       >
         <AlignedLargeLongArrowRightIcon />

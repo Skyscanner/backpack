@@ -16,31 +16,31 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
 import { Component } from 'react';
 import type { ComponentType } from 'react';
 
 import { wrapDisplayName } from '../../bpk-react-utils';
 
+import type { BpkAccordionItemProps } from './BpkAccordionItem';
+
 type Props = {
-  initiallyExpanded: boolean,
-  expanded: boolean,
-  onClick: ?() => mixed,
+  initiallyExpanded: boolean;
+  expanded: boolean;
+  onClick?: () => void;
 };
 
 type State = {
-  expanded: boolean,
+  expanded: boolean;
 };
 
-const withAccordionItemState = (ComposedComponent: ComponentType<any>) => {
-  class WithAccordionItemState extends Component<Props, State> {
-    static propTypes = {
-      initiallyExpanded: PropTypes.bool,
-      expanded: PropTypes.bool,
-      onClick: PropTypes.func,
-    };
+const withAccordionItemState = <P extends BpkAccordionItemProps>(
+  ComposedComponent: ComponentType<P>,
+) => {
+  class WithAccordionItemState extends Component<P & Props, State> {
+    static displayName = wrapDisplayName(
+      ComposedComponent,
+      'withAccordionItemState',
+    );
 
     static defaultProps = {
       initiallyExpanded: false,
@@ -48,7 +48,7 @@ const withAccordionItemState = (ComposedComponent: ComponentType<any>) => {
       onClick: null,
     };
 
-    constructor(props: Props) {
+    constructor(props: P & Props) {
       super(props);
 
       this.state = {
@@ -69,20 +69,14 @@ const withAccordionItemState = (ComposedComponent: ComponentType<any>) => {
       const { expanded, initiallyExpanded, onClick, ...rest } = this.props;
 
       return (
-        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
         <ComposedComponent
           expanded={this.state.expanded}
           onClick={this.onClick}
-          {...rest}
+          {...(rest as P)}
         />
       );
     }
   }
-
-  WithAccordionItemState.displayName = wrapDisplayName(
-    ComposedComponent,
-    'withAccordionItemState',
-  );
 
   return WithAccordionItemState;
 };

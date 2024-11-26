@@ -16,36 +16,40 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
 import { Component, Children, cloneElement } from 'react';
-import type { Node, Element, ComponentType } from 'react';
+import type { ReactNode, ReactElement, ComponentType } from 'react';
 
 import { wrapDisplayName } from '../../bpk-react-utils';
 
-const getInitiallyExpanded = (children) => {
-  const accordionItems = Children.toArray(children);
+import type { BpkAccordionProps } from './BpkAccordion';
+
+const getInitiallyExpanded = (children: ReactNode) => {
+  const accordionItems = Children.toArray(children) as ReactElement[];
   const result = accordionItems.reduceRight(
     (prev, item) => (item.props.initiallyExpanded ? item : prev),
-    {},
+    {} as ReactElement,
   );
   return (result || {}).key || null;
 };
 
 type Props = {
-  children: Node,
+  children: ReactNode;
 };
 
 type State = {
-  expanded: ?string | ?number,
+  expanded?: string | number | null;
 };
 
-const withSingleItemAccordionState = (
-  ComposedComponent: ComponentType<any>,
+const withSingleItemAccordionState = <P extends BpkAccordionProps>(
+  ComposedComponent: ComponentType<P>,
 ) => {
-  class WithSingleItemAccordionState extends Component<Props, State> {
-    constructor(props: Props) {
+  class WithSingleItemAccordionState extends Component<P & Props, State> {
+    static displayName = wrapDisplayName(
+      ComposedComponent,
+      'withSingleItemAccordionState',
+    );
+
+    constructor(props: P & Props) {
       super(props);
 
       this.state = {
@@ -53,13 +57,13 @@ const withSingleItemAccordionState = (
       };
     }
 
-    openAccordionItem = (key: ?string | ?number) => {
+    openAccordionItem = (key?: string | number | null) => {
       this.setState({ expanded: key });
     };
 
-    renderAccordionItem = (accordionItem: Element<any>) => {
+    renderAccordionItem = (accordionItem: ReactElement) => {
       const expanded = this.state.expanded === accordionItem.key;
-      const onClick = () => this.openAccordionItem(accordionItem.key);
+      const onClick = () => this.openAccordionItem(accordionItem?.key);
 
       return cloneElement(accordionItem, { expanded, onClick });
     };
@@ -68,21 +72,14 @@ const withSingleItemAccordionState = (
       const { children, ...rest } = this.props;
 
       return (
-        <ComposedComponent {...rest}>
-          {Children.toArray(children).map(this.renderAccordionItem)}
+        <ComposedComponent {...(rest as P)}>
+          {Children.toArray(children).map((el) =>
+            this.renderAccordionItem(el as ReactElement),
+          )}
         </ComposedComponent>
       );
     }
   }
-
-  WithSingleItemAccordionState.propTypes = {
-    children: PropTypes.node.isRequired,
-  };
-
-  WithSingleItemAccordionState.displayName = wrapDisplayName(
-    ComposedComponent,
-    'withSingleItemAccordionState',
-  );
 
   return WithSingleItemAccordionState;
 };

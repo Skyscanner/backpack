@@ -7,6 +7,7 @@
 /dist-storybook
 /coverage
 /packages/bpk-component-icon/*/
+/packages/bpk-component-spinner/src/spinners
 /packages/bpk-component-flare/src/__generated__
 !/packages/bpk-component-icon/src
 node_modules

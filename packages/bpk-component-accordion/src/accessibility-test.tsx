@@ -16,4 +16,22 @@
  * limitations under the License.
  */
 
-export default ['spinnerPrimaryColor'];
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
+
+import BpkAccordion from './BpkAccordion';
+import BpkAccordionItem from './BpkAccordionItem';
+
+describe('BpkAccordion accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkAccordion>
+        <BpkAccordionItem id="item" title="item">
+          Accordion item
+        </BpkAccordionItem>
+      </BpkAccordion>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
