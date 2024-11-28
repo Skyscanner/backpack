@@ -16,10 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import { useEffect } from 'react';
-
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -51,29 +47,21 @@ describe('BpkRadio form test', () => {
 
   it('should emit change event when toggled', async () => {
     const formValidation = jest.fn();
-    const Wrap = () => {
-      useEffect(() => {
-        document.addEventListener('change', formValidation);
-      }, []);
-      return (
-        <form data-testid="form">
-          <BpkRadio
-            type="radio"
-            name="radio"
-            value="One"
-            data-testid="myradio"
-          />
-          <BpkRadio
-            type="radio"
-            name="radio"
-            value="Two"
-            data-testid="myradio2"
-          />
-          <button type="submit">Submit</button>
-        </form>
-      );
-    };
+    const Wrap = () => (
+      <form data-testid="form">
+        <BpkRadio type="radio" name="radio" value="One" data-testid="myradio" />
+        <BpkRadio
+          type="radio"
+          name="radio"
+          value="Two"
+          data-testid="myradio2"
+        />
+        <button type="submit">Submit</button>
+      </form>
+    );
+
     render(<Wrap />);
+    document.addEventListener('change', formValidation);
 
     const radio = screen.getByTestId('myradio');
     const radio2 = screen.getByTestId('myradio2');

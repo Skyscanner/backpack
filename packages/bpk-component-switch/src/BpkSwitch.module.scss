@@ -27,7 +27,12 @@ $border-width: tokens.$bpk-one-pixel-rem * 2;
 .bpk-switch {
   position: relative;
   display: flex;
+  width: fit-content;
   align-items: center;
+
+  &:focus-within {
+    @include utils.bpk-focus-indicator;
+  }
 
   // Checkbox is invisible so the switch element can be the visual element.
   &__checkbox {
@@ -45,12 +50,6 @@ $border-width: tokens.$bpk-one-pixel-rem * 2;
         left: ($width - $height) + $border-width;
       }
     }
-  }
-
-  &__label {
-    /* stylelint-disable backpack/use-typography-styles */
-    line-height: $height;
-    margin-inline-end: tokens.bpk-spacing-md();
   }
 
   // The 'track'.

@@ -17,13 +17,10 @@
  */
 
 
-import PropTypes from 'prop-types';
-
-import SmSpinner from '@skyscanner/bpk-svgs/dist/js/spinners/sm';
-
 import { cssModules } from '../../bpk-react-utils';
 
 import SPINNER_TYPES from './spinnerTypes';
+import SmSpinner from './spinners/sm';
 
 import type { SpinnerTypes } from './spinnerTypes';
 
@@ -32,14 +29,18 @@ import STYLES from './BpkSpinner.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  type: SpinnerTypes,
-  className?: string,
-  alignToButton: boolean,
+  type?: SpinnerTypes;
+  className?: string | null;
+  alignToButton?: boolean;
+  [rest: string]: any;
 };
 
-const BpkSpinner = (props: Props) => {
-  const { alignToButton, className, type, ...rest } = props;
-
+const BpkSpinner = ({
+  alignToButton = false,
+  className = null,
+  type = SPINNER_TYPES.dark,
+  ...rest
+}: Props) => {
   const classNames = getClassName(
     'bpk-spinner',
     `bpk-spinner--${type}`,
@@ -49,23 +50,9 @@ const BpkSpinner = (props: Props) => {
 
   return (
     <span className={classNames}>
-      <SmSpinner
-        {...rest}
-      />
+      <SmSpinner {...rest} />
     </span>
   );
-};
-
-BpkSpinner.propTypes = {
-  type: PropTypes.oneOf(Object.keys(SPINNER_TYPES)),
-  className: PropTypes.string,
-  alignToButton: PropTypes.bool,
-};
-
-BpkSpinner.defaultProps = {
-  type: SPINNER_TYPES.dark,
-  className: null,
-  alignToButton: false,
 };
 
 export default BpkSpinner;

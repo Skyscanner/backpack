@@ -23,7 +23,7 @@ import BpkInsetBanner, {
 const DefaultExampleTitleOnly = () => (
   <BpkInsetBanner
     title="Lorem ipsum"
-    backgroundColor="#054184"
+    backgroundColor="#FF6601"
     variant={VARIANT.onDark}
   />
 );
@@ -32,7 +32,7 @@ const DefaultExampleTitleAndSubheadline = () => (
   <BpkInsetBanner
     title="Lorem ipsum"
     subheadline="Lorem ipsum dolor sit amet"
-    backgroundColor="#054184"
+    backgroundColor="#FF6601"
     variant={VARIANT.onDark}
   />
 );
@@ -41,11 +41,11 @@ const WithLogoAndCtaTextExampleLight = () => (
   <BpkInsetBanner
     title="Lorem ipsum"
     subheadline="Lorem ipsum dolor sit amet"
-    logo="https://content.skyscnr.com/m/23c24b7080cfe18a/Medium-Skyscanner-Vertical-Blue.png"
+    logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
     callToAction={{
       text: 'Sponsored',
     }}
-    backgroundColor="#94C3FF"
+    backgroundColor="#FFE300"
     variant={VARIANT.onLight}
     accessibilityLabel="Sponsored by Skyscanner"
   />
@@ -55,8 +55,8 @@ const WithBodyTextExampleLight = () => (
   <BpkInsetBanner
     title="Lorem ipsum"
     subheadline="Lorem ipsum dolor sit amet"
-    logo="https://content.skyscnr.com/m/23c24b7080cfe18a/Medium-Skyscanner-Vertical-Blue.png"
-    backgroundColor="#94C3FF"
+    logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
+    backgroundColor="#FFE300"
     callToAction={{
       text: 'Sponsored',
     }}
@@ -71,8 +71,8 @@ const WithBodyTextAndLinkExampleDark = () => (
   <BpkInsetBanner
     title="Lorem ipsum"
     subheadline="Lorem ipsum dolor sit amet"
-    logo="https://content.skyscnr.com/m/7950ed6f30581485/Medium-Skyscanner-Vertical-White.png"
-    backgroundColor="#054184"
+    logo="https://content.skyscnr.com/m/3f4dadbd41da8235/original/Skyland_White_172x96.png"
+    backgroundColor="#FF6601"
     callToAction={{
       text: 'Sponsored',
     }}

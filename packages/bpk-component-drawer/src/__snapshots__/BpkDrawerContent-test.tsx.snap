@@ -1,0 +1,330 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkDrawerContent should render correctly 1`] = `
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-drawer-heading-my-drawer"
+    class="bpk-drawer bpk-drawer--entered"
+    id="my-drawer"
+    role="dialog"
+    tabindex="-1"
+  >
+    <header
+      class="bpk-drawer__header"
+    >
+      <h2
+        class="bpk-drawer__heading"
+        id="bpk-drawer-heading-my-drawer"
+      >
+        Drawer title
+      </h2>
+       
+      <div
+        class="bpk-drawer__close-button"
+      >
+        <button
+          aria-label="Close"
+          class="bpk-close-button__default"
+          title="Close"
+          type="button"
+        >
+          <span
+            class="bpk-close-button-icon"
+          >
+            <svg
+              aria-hidden="true"
+              height="1rem"
+              viewBox="0 0 24 24"
+              width="1rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </header>
+    <div
+      class="bpk-drawer__content"
+    >
+      Drawer content
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`BpkDrawerContent should render correctly when it has a className 1`] = `
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-drawer-heading-my-drawer"
+    class="bpk-drawer my-classname bpk-drawer--entered"
+    id="my-drawer"
+    role="dialog"
+    tabindex="-1"
+  >
+    <header
+      class="bpk-drawer__header"
+    >
+      <h2
+        class="bpk-drawer__heading"
+        id="bpk-drawer-heading-my-drawer"
+      >
+        Drawer title
+      </h2>
+       
+      <div
+        class="bpk-drawer__close-button"
+      >
+        <button
+          aria-label="Close"
+          class="bpk-close-button__default"
+          title="Close"
+          type="button"
+        >
+          <span
+            class="bpk-close-button-icon"
+          >
+            <svg
+              aria-hidden="true"
+              height="1rem"
+              viewBox="0 0 24 24"
+              width="1rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </header>
+    <div
+      class="bpk-drawer__content"
+    >
+      Drawer content
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`BpkDrawerContent should render correctly when it has a contentClassName 1`] = `
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-drawer-heading-my-drawer"
+    class="bpk-drawer bpk-drawer--entered"
+    id="my-drawer"
+    role="dialog"
+    tabindex="-1"
+  >
+    <header
+      class="bpk-drawer__header"
+    >
+      <h2
+        class="bpk-drawer__heading"
+        id="bpk-drawer-heading-my-drawer"
+      >
+        Drawer title
+      </h2>
+       
+      <div
+        class="bpk-drawer__close-button"
+      >
+        <button
+          aria-label="Close"
+          class="bpk-close-button__default"
+          title="Close"
+          type="button"
+        >
+          <span
+            class="bpk-close-button-icon"
+          >
+            <svg
+              aria-hidden="true"
+              height="1rem"
+              viewBox="0 0 24 24"
+              width="1rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </header>
+    <div
+      class="bpk-drawer__content my-classname"
+    >
+      Drawer content
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`BpkDrawerContent should render correctly when it has padded=true 1`] = `
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-drawer-heading-my-drawer"
+    class="bpk-drawer bpk-drawer--entered"
+    id="my-drawer"
+    role="dialog"
+    tabindex="-1"
+  >
+    <header
+      class="bpk-drawer__header"
+    >
+      <h2
+        class="bpk-drawer__heading"
+        id="bpk-drawer-heading-my-drawer"
+      >
+        Drawer title
+      </h2>
+       
+      <div
+        class="bpk-drawer__close-button"
+      >
+        <button
+          class="bpk-close-button__default"
+          type="button"
+        >
+          <span
+            class="bpk-close-button-icon"
+          >
+            <svg
+              aria-hidden="true"
+              height="1rem"
+              viewBox="0 0 24 24"
+              width="1rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </header>
+    <div
+      class="bpk-drawer__content bpk-drawer__content--padded"
+    >
+      Drawer content
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`BpkDrawerContent should render correctly with arbitrary attributes 1`] = `
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-drawer-heading-my-drawer"
+    class="bpk-drawer bpk-drawer--entered"
+    data-arbitrary="prop"
+    id="my-drawer"
+    role="dialog"
+    tabindex="-1"
+  >
+    <header
+      class="bpk-drawer__header"
+    >
+      <h2
+        class="bpk-drawer__heading"
+        id="bpk-drawer-heading-my-drawer"
+      >
+        Drawer title
+      </h2>
+       
+      <div
+        class="bpk-drawer__close-button"
+      >
+        <button
+          aria-label="Close"
+          class="bpk-close-button__default"
+          title="Close"
+          type="button"
+        >
+          <span
+            class="bpk-close-button-icon"
+          >
+            <svg
+              aria-hidden="true"
+              height="1rem"
+              viewBox="0 0 24 24"
+              width="1rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </header>
+    <div
+      class="bpk-drawer__content"
+    >
+      Drawer content
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`BpkDrawerContent should render correctly with hideTitle 1`] = `
+<DocumentFragment>
+  <section
+    aria-labelledby="bpk-drawer-heading-my-drawer"
+    class="bpk-drawer bpk-drawer--entered"
+    id="my-drawer"
+    role="dialog"
+    tabindex="-1"
+  >
+    <header
+      class="bpk-drawer__header"
+    >
+      <h2
+        class="bpk-drawer__heading bpk-drawer__heading--visually-hidden"
+        id="bpk-drawer-heading-my-drawer"
+      >
+        Drawer title
+      </h2>
+       
+      <div
+        class="bpk-drawer__close-button"
+      >
+        <button
+          aria-label="Close"
+          class="bpk-close-button__default"
+          title="Close"
+          type="button"
+        >
+          <span
+            class="bpk-close-button-icon"
+          >
+            <svg
+              aria-hidden="true"
+              height="1rem"
+              viewBox="0 0 24 24"
+              width="1rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.587 3.467a1.5 1.5 0 1 0-2.194 2.046q.036.038.074.074l6.438 6.44-6.44 6.44a1.5 1.5 0 0 0 2.122 2.12l6.44-6.438 6.44 6.44a1.5 1.5 0 0 0 2.12-2.122l-6.438-6.44 6.44-6.44a1.5 1.5 0 0 0-2.122-2.12l-6.44 6.438-6.44-6.44z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </header>
+    <div
+      class="bpk-drawer__content"
+    >
+      Drawer content
+    </div>
+  </section>
+</DocumentFragment>
+`;

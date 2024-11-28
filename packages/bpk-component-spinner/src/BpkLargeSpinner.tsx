@@ -16,13 +16,11 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-
-import LgSpinner from '@skyscanner/bpk-svgs/dist/js/spinners/lg';
 
 import { cssModules } from '../../bpk-react-utils';
 
 import SPINNER_TYPES from './spinnerTypes';
+import LgSpinner from './spinners/lg';
 
 import type { SpinnerTypes } from './spinnerTypes';
 
@@ -31,13 +29,18 @@ import STYLES from './BpkSpinner.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  type: SpinnerTypes,
-  className?: string,
-  alignToButton: boolean,
+  type?: SpinnerTypes,
+  className?: string | null,
+  alignToButton?: boolean,
+  [rest: string]: any,
 };
 
-const BpkLargeSpinner = (props: Props) => {
-  const { alignToButton, className, type, ...rest } = props;
+const BpkLargeSpinner = ({
+  alignToButton = false,
+  className = null,
+  type = SPINNER_TYPES.dark,
+  ...rest
+}: Props) => {
 
   const classNames = getClassName(
     'bpk-spinner',
@@ -55,18 +58,6 @@ const BpkLargeSpinner = (props: Props) => {
     </span>
 
   );
-};
-
-BpkLargeSpinner.propTypes = {
-  type: PropTypes.oneOf(Object.keys(SPINNER_TYPES)),
-  className: PropTypes.string,
-  alignToButton: PropTypes.bool,
-};
-
-BpkLargeSpinner.defaultProps = {
-  type: SPINNER_TYPES.dark,
-  className: null,
-  alignToButton: false,
 };
 
 export default BpkLargeSpinner;

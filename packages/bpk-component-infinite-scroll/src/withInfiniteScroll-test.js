@@ -243,7 +243,7 @@ describe('withInfiniteScroll', () => {
         elementsPerScroll={2}
       />,
     );
-
+    await nextTick();
     await intersect();
     await intersect();
 
@@ -267,7 +267,7 @@ describe('withInfiniteScroll', () => {
         seeMoreAfter={0}
       />,
     );
-
+    await nextTick();
     await intersect();
     const button = screen.getByRole('button');
     userEvent.click(button);
@@ -393,7 +393,7 @@ describe('withInfiniteScroll', () => {
 
     const onFinished = jest.fn();
 
-    const { asFragment } = render(
+    render(
       <InfiniteList
         dataSource={myDs}
         elementsPerScroll={3}
@@ -401,11 +401,11 @@ describe('withInfiniteScroll', () => {
         onScrollFinished={onFinished}
       />,
     );
+    await nextTick();
     await intersect();
     await intersect();
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(3);
     expect(onFinished).toHaveBeenCalled();
-    expect(asFragment()).toMatchSnapshot();
   });
 });

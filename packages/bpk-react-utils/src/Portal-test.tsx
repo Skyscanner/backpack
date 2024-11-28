@@ -310,7 +310,11 @@ describe('Portal', () => {
 
   it('does not have a race condition if the portal is opened then closed quickly', async () => {
     const renderTarget = document.createElement('div');
-    const target = document.createElement('div');
+    const target = (
+      <div ref={createRef()} id="targetElement">
+        target
+      </div>
+    );
     const onCloseSpy = jest.fn();
 
     const MyApp = () => {
@@ -663,7 +667,6 @@ describe('Portal', () => {
   });
 
   describe('lifecycle methods', () => {
-    // @ts-expect-error ts-migrate(7034) FIXME: Variable 'rerender' implicitly has type 'any' in s... Remove this comment to see the full error message
     let rerender;
 
     const openSpy = jest.fn();
@@ -694,8 +697,17 @@ describe('Portal', () => {
       it('should close the portal when isOpen is removed', () => {
         expect(openSpy).toHaveBeenCalledTimes(0);
         expect(closeSpy).toHaveBeenCalledTimes(0);
+        ({ rerender } = render(
+          <Portal
+            isOpen
+            onOpen={openSpy}
+            beforeClose={closeSpy}
+            onClose={jest.fn()}
+          >
+            <div>My portal content</div>
+          </Portal>,
+        ));
 
-        // @ts-expect-error ts-migrate(7005) FIXME: Variable 'rerender' implicitly has an 'any' type.
         rerender(
           <Portal
             isOpen={false}
@@ -715,8 +727,18 @@ describe('Portal', () => {
       it('should open the portal again when isOpen is added', () => {
         expect(openSpy).toHaveBeenCalledTimes(0);
         expect(closeSpy).toHaveBeenCalledTimes(0);
-
-        // @ts-expect-error ts-migrate(7005) FIXME: Variable 'rerender' implicitly has an 'any' type.
+        
+        ({ rerender } = render(
+          <Portal
+            isOpen
+            onOpen={openSpy}
+            beforeClose={closeSpy}
+            onClose={jest.fn()}
+          >
+            <div>My portal content</div>
+          </Portal>,
+        ));
+        
         rerender(
           <Portal
             isOpen

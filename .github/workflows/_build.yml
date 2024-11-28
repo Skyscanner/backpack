@@ -28,7 +28,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore Cache
-        uses: actions/cache/restore@v4.0.2
+        uses: actions/cache/restore@v4.1.2
         id: npm-cache
         with:
           path: |
@@ -56,7 +56,7 @@ jobs:
           tar -cf ${{env.BUILD_LOGS}}.tar.br --use-compress-program="brotli -q 7" ./logs
 
       - name: Upload test logs
-        uses: actions/upload-artifact@v4.3.4
+        uses: actions/upload-artifact@v4.4.3
         with:
           name: ${{env.BUILD_LOGS}}
           path: ${{env.BUILD_LOGS}}.tar.br
@@ -77,7 +77,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore Cache
-        uses: actions/cache/restore@v4.0.2
+        uses: actions/cache/restore@v4.1.2
         id: npm-cache
         with:
           path: |
@@ -118,7 +118,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore Cache
-        uses: actions/cache/restore@v4.0.2
+        uses: actions/cache/restore@v4.1.2
         id: npm-cache
         with:
           path: |
@@ -127,7 +127,7 @@ jobs:
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
       - name: Restore Cache
-        uses: actions/cache/restore@v4.0.2
+        uses: actions/cache/restore@v4.1.2
         id: storybook-dist-cache
         with:
           path: dist-storybook/

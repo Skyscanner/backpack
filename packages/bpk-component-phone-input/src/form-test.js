@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -90,9 +90,6 @@ describe('BpkPhoneInput form test', () => {
     const Wrap = () => {
       // state is required to force react to update and re-render the component.
       const [inputValue, setInputValue] = useState('');
-      useEffect(() => {
-        document.addEventListener('change', formValidation);
-      }, []);
       return (
         <form data-testid="form">
           <BpkPhoneInput
@@ -108,6 +105,7 @@ describe('BpkPhoneInput form test', () => {
     };
 
     render(<Wrap />);
+    document.addEventListener('change', formValidation);
 
     const phoneInput = screen.getByTestId('myInput');
     const form = screen.getByTestId('form');

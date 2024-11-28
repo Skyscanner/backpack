@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`useMediaQuery SSR mode should match when matchSSR=true 1`] = `"<div data-reactroot="">matches</div>"`;
-
-exports[`useMediaQuery SSR mode should not match when matchSSR not explicitly set 1`] = `"<div data-reactroot="">no match</div>"`;
-
-exports[`useMediaQuery SSR mode should not match when matchSSR=false 1`] = `"<div data-reactroot="">no match</div>"`;

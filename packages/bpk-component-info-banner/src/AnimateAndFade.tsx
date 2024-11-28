@@ -19,7 +19,6 @@
 import { Component } from 'react';
 import type { ReactNode } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
