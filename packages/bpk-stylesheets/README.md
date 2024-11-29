@@ -14,6 +14,12 @@ Within your Javascript (usually the entrypoint or top-most JS file)
 import '@skyscanner/backpack-web/bpk-stylesheets';
 ```
 
+Within modern Sass compiler
+
+```js
+import '@skyscanner/backpack-web/bpk-stylesheets/modern';
+```
+
 By default font rendering is not included if you need to include Skyscanner Relative in your styles, import it using the following:
 
 ```js
