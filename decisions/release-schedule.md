@@ -15,8 +15,8 @@ Starting Q4 2024, a major version of the @skyscanner/backpack-web package is rel
 | Apr - June 2025      | Sep 2025       | 39.x              |
 | July - Sep 2025      | December 2025  | 40.x              |
 
-!!! note
-    The first column of the table above indicates the period during which a major change might be introduced into the code in a backwards-compatible way before being released in a major version. However, this period may vary depending on the complexity of the change, and a change might be introduced *before* the specified period, allowing consumers a longer adoption period.
+The first column of the table above indicates the period during which a major change might be introduced into the code in a backwards-compatible way before being released in a major version.
+However, this period may vary depending on the complexity of the change, and a change might be introduced *before* the specified period, allowing consumers a longer adoption period.
 
 ## FAQ
 
