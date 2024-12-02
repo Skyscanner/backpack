@@ -21,7 +21,7 @@ The main purpose of the Future API is to allow for breaking changes to be contri
 ## Naming Convention
 
 * We use `v{number}__` prefix with two underscores (where applicable) to mark functions, tokens and properties as part of the Future API, and
-* We use `V{number}` prefix to mark React components and props as part of the Future API, where `number` represents the GC library version in which the change will be released as a breaking change.
+* We use `V{number}` prefix to mark React components and props as part of the Future API, where `number` represents the backpack library version in which the change will be released as a breaking change.
     * **Component**: `BpkButton` -> `<V10BpkButton />`
         * For any major changes to an existing component where creating a separate component is easier (from consumer or owner perspective) than making the changes directly to the old component e.g. major API rewrite, default style or behaviour of a component changes etc.
     * **Function**: `v10__functionName`
