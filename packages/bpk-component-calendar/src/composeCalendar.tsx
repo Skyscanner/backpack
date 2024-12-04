@@ -18,6 +18,8 @@
 
 import type { ComponentType } from 'react';
 
+import { memoize } from 'lodash';
+
 import { cssModules } from '../../bpk-react-utils';
 
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
@@ -184,7 +186,7 @@ const composeCalendar = (
         {Nav && (
           <Nav
             changeMonthLabel={changeMonthLabel}
-            formatMonth={formatMonth}
+            formatMonth={memoize(formatMonth)}
             id={`${id}__bpk_calendar_nav`}
             maxDate={maxDate}
             minDate={minDate}
@@ -210,8 +212,8 @@ const composeCalendar = (
           DateComponent={CalendarDate}
           dateModifiers={dateModifiers}
           daysOfWeek={daysOfWeek}
-          formatDateFull={formatDateFull}
-          formatMonth={formatMonth}
+          formatDateFull={memoize(formatDateFull)}
+          formatMonth={memoize(formatMonth)}
           month={month}
           onDateClick={onDateClick}
           onDateKeyDown={onDateKeyDown}
