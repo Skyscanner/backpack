@@ -19,6 +19,8 @@
 import type { ElementType } from 'react';
 import { Component } from 'react';
 
+import { memoize } from 'lodash';
+
 import { cssModules, isDeviceIos } from '../../bpk-react-utils';
 
 import { addCalendarGridTransition } from './BpkCalendarGridTransition';
@@ -170,7 +172,7 @@ class BpkCalendarGrid extends Component<Props, State> {
               dates={dates}
               onDateClick={onDateClick}
               onDateKeyDown={onDateKeyDown}
-              formatDateFull={formatDateFull}
+              formatDateFull={memoize(formatDateFull)}
               DateComponent={DateComponent}
               dateModifiers={dateModifiers!}
               preventKeyboardFocus={preventKeyboardFocus}

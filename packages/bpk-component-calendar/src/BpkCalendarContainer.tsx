@@ -19,6 +19,8 @@
 import type { ComponentType } from 'react';
 import { Component } from 'react';
 
+import { memoize } from 'lodash';
+
 import { isRTL } from '../../bpk-react-utils';
 
 import BpkCalendarDate from './BpkCalendarDate';
@@ -367,6 +369,7 @@ const withCalendarState = <P extends object>(Calendar: ComponentType<P>) => {
 
     render() {
       const {
+        formatDateFull,
         maxDate,
         minDate,
         onDateSelect,
@@ -394,6 +397,7 @@ const withCalendarState = <P extends object>(Calendar: ComponentType<P>) => {
           preventKeyboardFocus={this.state.preventKeyboardFocus}
           focusedDate={sanitisedFocusedDate}
           {...(calendarProps as P)}
+          formatDateFull={memoize(formatDateFull)}
           minDate={sanitisedMinDate}
           maxDate={sanitisedMaxDate}
           selectionConfiguration={selectionConfiguration}
