@@ -30,6 +30,7 @@ import {
   getCalendarMonthWeeks,
   isSameMonth,
 } from './date-utils';
+import { memoize } from './utils';
 
 import type { DateModifiers, SelectionConfiguration } from './custom-proptypes';
 
@@ -170,7 +171,7 @@ class BpkCalendarGrid extends Component<Props, State> {
               dates={dates}
               onDateClick={onDateClick}
               onDateKeyDown={onDateKeyDown}
-              formatDateFull={formatDateFull}
+              formatDateFull={memoize(formatDateFull)}
               DateComponent={DateComponent}
               dateModifiers={dateModifiers!}
               preventKeyboardFocus={preventKeyboardFocus}
