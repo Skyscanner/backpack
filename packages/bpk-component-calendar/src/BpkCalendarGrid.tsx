@@ -19,8 +19,6 @@
 import type { ElementType } from 'react';
 import { Component } from 'react';
 
-import { memoize } from 'lodash';
-
 import { cssModules, isDeviceIos } from '../../bpk-react-utils';
 
 import { addCalendarGridTransition } from './BpkCalendarGridTransition';
@@ -32,6 +30,7 @@ import {
   getCalendarMonthWeeks,
   isSameMonth,
 } from './date-utils';
+import { memoize } from './utils';
 
 import type { DateModifiers, SelectionConfiguration } from './custom-proptypes';
 
