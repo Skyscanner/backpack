@@ -60,3 +60,19 @@ export const getTransformStyles = (transformValue: string) => {
 
 export const isTransitionEndSupported = () =>
   !!(typeof window !== 'undefined' && 'TransitionEvent' in window);
+
+export function memoize<T extends (...args: any[]) => any>(fn: T): T {
+  const cache = new Map<string, ReturnType<T>>();
+
+  function memoizedFunction(...args: Parameters<T>): ReturnType<T> {
+    const key = JSON.stringify(args);
+    if (cache.has(key)) {
+      return cache.get(key) as ReturnType<T>;
+    }
+    const result = fn(...args);
+    cache.set(key, result);
+    return result;
+  }
+
+  return memoizedFunction as T;
+}

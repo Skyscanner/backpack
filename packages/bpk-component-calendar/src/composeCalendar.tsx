@@ -18,11 +18,10 @@
 
 import type { ComponentType } from 'react';
 
-import { memoize } from 'lodash';
-
 import { cssModules } from '../../bpk-react-utils';
 
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
+import { memoize } from './utils';
 
 import type {
   DaysOfWeek,
@@ -212,8 +211,8 @@ const composeCalendar = (
           DateComponent={CalendarDate}
           dateModifiers={dateModifiers}
           daysOfWeek={daysOfWeek}
-          formatDateFull={memoize(formatDateFull)}
-          formatMonth={memoize(formatMonth)}
+          formatDateFull={formatDateFull}
+          formatMonth={formatMonth}
           month={month}
           onDateClick={onDateClick}
           onDateKeyDown={onDateKeyDown}
