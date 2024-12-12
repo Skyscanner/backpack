@@ -21,6 +21,7 @@ import type { ComponentType } from 'react';
 import { cssModules } from '../../bpk-react-utils';
 
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
+import { memoize } from './utils';
 
 import type {
   DaysOfWeek,
@@ -184,7 +185,7 @@ const composeCalendar = (
         {Nav && (
           <Nav
             changeMonthLabel={changeMonthLabel}
-            formatMonth={formatMonth}
+            formatMonth={memoize(formatMonth)}
             id={`${id}__bpk_calendar_nav`}
             maxDate={maxDate}
             minDate={minDate}
@@ -211,7 +212,7 @@ const composeCalendar = (
           dateModifiers={dateModifiers}
           daysOfWeek={daysOfWeek}
           formatDateFull={formatDateFull}
-          formatMonth={formatMonth}
+          formatMonth={memoize(formatMonth)}
           month={month}
           onDateClick={onDateClick}
           onDateKeyDown={onDateKeyDown}

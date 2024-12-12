@@ -21,7 +21,7 @@
 import type { ReactNode } from 'react';
 import { useState, useEffect } from 'react';
 
-import { Portal, isDeviceIphone } from '../../bpk-react-utils';
+import { Portal, isDeviceIpad, isDeviceIphone } from '../../bpk-react-utils';
 import { withScrim } from '../../bpk-scrim-utils';
 
 import BpkDrawerContent from './BpkDrawerContent';
@@ -47,6 +47,7 @@ export type Props = {
   closeLabel?: string | null,
   closeText?: string,
   hideTitle?: boolean,
+  isIpad?: boolean,
   isIphone?: boolean,
   padded?: boolean,
   mobileModalDisplay?: boolean,
@@ -62,6 +63,7 @@ const BpkDrawer = ({
   getApplicationElement,
   hideTitle = false,
   id,
+  isIpad = isDeviceIpad(),
   isIphone = isDeviceIphone(),
   isOpen,
   mobileModalDisplay = false,
@@ -105,7 +107,7 @@ const BpkDrawer = ({
           onClose={hide}
           onCloseAnimationComplete={onCloseAnimationComplete}
           closeOnScrimClick
-          isIpad
+          isIpad={isIpad}
           isIphone={isIphone}
           padded={padded}
           mobileModalDisplay={mobileModalDisplay}
