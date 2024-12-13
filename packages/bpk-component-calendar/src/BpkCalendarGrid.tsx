@@ -24,13 +24,7 @@ import { cssModules, isDeviceIos } from '../../bpk-react-utils';
 import { addCalendarGridTransition } from './BpkCalendarGridTransition';
 import BpkCalendarWeek from './BpkCalendarWeek';
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
-import {
-  addMonths,
-  formatIsoDate,
-  getCalendarMonthWeeks,
-  isSameMonth,
-} from './date-utils';
-import { memoize } from './utils';
+import { addMonths, getCalendarMonthWeeks, isSameMonth } from './date-utils';
 
 import type { DateModifiers, SelectionConfiguration } from './custom-proptypes';
 
@@ -79,8 +73,14 @@ export type Props = DefaultProps & {
   weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
 };
 
+export type DateProps = {
+  val: Date;
+  textLabel: string | Date;
+  isoLabel: string;
+};
+
 type State = {
-  calendarMonthWeeks: Date[][];
+  calendarMonthWeeks: DateProps[][];
 };
 /*
   BpkCalendarGrid - the grid representing a whole month
@@ -115,6 +115,7 @@ class BpkCalendarGrid extends Component<Props, State> {
       calendarMonthWeeks: getCalendarMonthWeeks(
         props.month,
         props.weekStartsOn,
+        props.formatDateFull,
       ),
     };
   }
@@ -129,6 +130,7 @@ class BpkCalendarGrid extends Component<Props, State> {
         calendarMonthWeeks: getCalendarMonthWeeks(
           nextProps.month,
           nextProps.weekStartsOn,
+          nextProps.formatDateFull,
         ),
       });
     }
@@ -142,7 +144,6 @@ class BpkCalendarGrid extends Component<Props, State> {
       dateModifiers,
       dateProps,
       focusedDate,
-      formatDateFull,
       ignoreOutsideDate,
       isKeyboardFocusable,
       markOutsideDays,
@@ -166,12 +167,11 @@ class BpkCalendarGrid extends Component<Props, State> {
         <div>
           {calendarMonthWeeks.map((dates) => (
             <BpkCalendarWeek
-              key={formatIsoDate(dates[0])}
+              key={dates[0].isoLabel}
               month={month}
               dates={dates}
               onDateClick={onDateClick}
               onDateKeyDown={onDateKeyDown}
-              formatDateFull={memoize(formatDateFull)}
               DateComponent={DateComponent}
               dateModifiers={dateModifiers!}
               preventKeyboardFocus={preventKeyboardFocus}
