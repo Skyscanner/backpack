@@ -101,7 +101,7 @@ function startOfWeek(
 function getCalendarMonthWeeks(
   date: Date,
   weekStartsOn: number,
-  formatDateFull: (d: Date) => Date | string,
+  formatDate?: (d: Date) => Date | string,
 ): DateProps[][] {
   let [year, month, day] = startOfWeek(
     date.getFullYear(),
@@ -118,7 +118,7 @@ function getCalendarMonthWeeks(
       const currDate = dateAtStartOfDay(year, month, day);
       currWeek.push({
         val: currDate,
-        textLabel: formatDateFull(currDate),
+        textLabel: formatDate ? formatDate(currDate) : 'loading...',
         isoLabel: formatIsoDate(currDate),
       });
       [year, month, day] = addDay(year, month, day);

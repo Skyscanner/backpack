@@ -20,6 +20,7 @@ import type { ElementType } from 'react';
 import { Component } from 'react';
 
 import { cssModules, isDeviceIos } from '../../bpk-react-utils';
+import deferCallback from '../../bpk-react-utils/src/deferCallback';
 
 import { addCalendarGridTransition } from './BpkCalendarGridTransition';
 import BpkCalendarWeek from './BpkCalendarWeek';
@@ -110,14 +111,26 @@ class BpkCalendarGrid extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    // We cache expensive calculations (and identities) in state
     this.state = {
       calendarMonthWeeks: getCalendarMonthWeeks(
         props.month,
         props.weekStartsOn,
-        props.formatDateFull,
+        // Do not run expensive date format calculations in the constructor
       ),
     };
+  }
+
+  // Defer expensive calculations to this point to improve INP.
+  componentDidMount(): void {
+    deferCallback(() =>
+      this.setState({
+        calendarMonthWeeks: getCalendarMonthWeeks(
+          this.props.month,
+          this.props.weekStartsOn,
+          this.props.formatDateFull,
+        ),
+      }),
+    );
   }
 
   UNSAFE_componentWillReceiveProps(nextProps: Props) {
