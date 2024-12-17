@@ -90,26 +90,28 @@ export const unfixBody = () => {
   body.style.position = '';
 };
 
-export const lockScroll = () => {
+export const lockScroll = (customPaddingElement?: HTMLElement | null) => {
   const body = getBodyElement();
+  const paddingElement = customPaddingElement || body;
 
-  if (!body) {
+  if (!body || !paddingElement) {
     return;
   }
 
   const paddingRight = getScrollBarWidth();
 
   body.style.overflow = 'hidden';
-  body.style.paddingRight = paddingRight;
+  paddingElement.style.paddingRight = paddingRight;
 };
 
-export const unlockScroll = () => {
+export const unlockScroll = (customPaddingElement?: HTMLElement | null) => {
   const body = getBodyElement();
+  const paddingElement = customPaddingElement || body;
 
-  if (!body) {
+  if (!body || !paddingElement) {
     return;
   }
 
   body.style.overflow = '';
-  body.style.paddingRight = '';
+  paddingElement.style.paddingRight = '';
 };

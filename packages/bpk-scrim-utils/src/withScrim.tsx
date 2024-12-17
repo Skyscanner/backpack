@@ -64,6 +64,10 @@ export type Props = {
    */
   containerClassName?: string;
   closeOnScrimClick?: boolean;
+  /**
+   * Can be used to specify which element other than body should the scroll padding be applied to. Defaults to body.
+   */
+  getCustomPaddingElement?: () => HTMLElement | null;
   [rest: string]: any;
 };
 
@@ -84,8 +88,15 @@ const withScrim = <P extends object>(
     };
 
     componentDidMount() {
-      const { getApplicationElement, isIpad, isIphone } = this.props;
+      const {
+        getApplicationElement,
+        getCustomPaddingElement,
+        isIpad,
+        isIphone,
+      } = this.props;
+
       const applicationElement = getApplicationElement();
+      const customPaddingElement = getCustomPaddingElement?.();
 
       requestAnimationFrame(() => {
         /**
@@ -112,7 +123,7 @@ const withScrim = <P extends object>(
          * The desired behaviour is to prevent the user from scrolling content behind the scrim. The above iOS fixes are in place because lockScroll alone does not solve due to iOS specific issues.
          */
 
-        lockScroll();
+        lockScroll(customPaddingElement);
       });
 
       if (applicationElement) {
@@ -125,14 +136,20 @@ const withScrim = <P extends object>(
     }
 
     componentWillUnmount() {
-      const { getApplicationElement, isIpad, isIphone } = this.props;
+      const {
+        getApplicationElement,
+        getCustomPaddingElement,
+        isIpad,
+        isIphone,
+      } = this.props;
       const applicationElement = getApplicationElement();
+      const customPaddingElement = getCustomPaddingElement?.();
 
       if (isIphone || isIpad) {
         setTimeout(restoreScroll, 0);
         unfixBody();
       }
-      unlockScroll();
+      unlockScroll(customPaddingElement);
 
       if (applicationElement) {
         applicationElement.removeAttribute('aria-hidden');
