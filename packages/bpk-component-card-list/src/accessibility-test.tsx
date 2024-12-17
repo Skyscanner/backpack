@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-import { render } from "@testing-library/react";
-import { axe } from "jest-axe";
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-import BpkCardList from "./BpkCardList";
+import BpkCardList from './BpkCardList';
 
 describe('BpkCardList accessibility tests', () => {
   it('should not have any accessibility issues', async () => {
@@ -30,7 +30,7 @@ describe('BpkCardList accessibility tests', () => {
         buttonText="Button"
         buttonHref="https://www.skyscanner.net"
         onButtonClick={() => {}}
-      />
+      />,
     );
 
     const results = await axe(container);

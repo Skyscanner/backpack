@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import BpkCardListGridStack from "./BpkCardListGridStack";
+import BpkCardListGridStack from './BpkCardListGridStack';
 
 export default BpkCardListGridStack;

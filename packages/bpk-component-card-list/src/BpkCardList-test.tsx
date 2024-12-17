@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-import { render, screen } from "@testing-library/react";
+import { render, screen } from '@testing-library/react';
 
-import BpkCardList from "./BpkCardList";
+import BpkCardList from './BpkCardList';
 
 describe('BpkCardList', () => {
   it('should render correctly', () => {
@@ -29,7 +29,7 @@ describe('BpkCardList', () => {
         buttonText="Button"
         buttonHref="https://www.skyscanner.net"
         onButtonClick={() => {}}
-      />
+      />,
     );
 
     expect(screen.getByText('Title')).toBeInTheDocument();

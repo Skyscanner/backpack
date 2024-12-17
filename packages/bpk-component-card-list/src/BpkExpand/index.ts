@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import BpkExpand from "./BpkExpand";
+import BpkExpand from './BpkExpand';
 
 export default BpkExpand;

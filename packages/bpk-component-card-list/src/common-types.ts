@@ -50,7 +50,7 @@ type CardListBaseProps = {
   initiallyShownCards?: number;
   cardList: ReactElement[];
   expandText?: string;
-  accessory?: typeof ACCESSORY_TYPES[keyof typeof ACCESSORY_TYPES];
+  accessory?: (typeof ACCESSORY_TYPES)[keyof typeof ACCESSORY_TYPES];
 };
 
 type CardListGridStackProps = {

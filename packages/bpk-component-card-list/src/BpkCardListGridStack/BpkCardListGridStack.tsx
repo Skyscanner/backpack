@@ -21,17 +21,22 @@ import { useState } from 'react';
 import { BpkButtonV2 } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';
 import BpkExpand from '../BpkExpand';
-import {
-  ACCESSORY_TYPES,
-  type CardListGridStackProps,
-} from '../common-types';
+import { ACCESSORY_TYPES, type CardListGridStackProps } from '../common-types';
 
 import STYLES from './BpkCardListGridStack.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 const BpkCardListGridStack = (props: CardListGridStackProps) => {
-  const { accessory, buttonText, children, expandText, initiallyShownCards, layout, onButtonClick } = props;
+  const {
+    accessory,
+    buttonText,
+    children,
+    expandText,
+    initiallyShownCards,
+    layout,
+    onButtonClick,
+  } = props;
 
   let defaultInitiallyShownCards: number;
   if (accessory === ACCESSORY_TYPES.Expand) {
@@ -41,19 +46,21 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
   }
 
   const [collapsed, setCollapsed] = useState(true);
-  const [visibleCards, setVisibleCards] = useState(children.slice(0, defaultInitiallyShownCards));
+  const [visibleCards, setVisibleCards] = useState(
+    children.slice(0, defaultInitiallyShownCards),
+  );
 
   const showContent = () => {
     setVisibleCards(children);
     setCollapsed(false);
     onButtonClick?.();
-  }
+  };
 
   const hideContent = () => {
     setVisibleCards(children.slice(0, initiallyShownCards));
     setCollapsed(true);
     onButtonClick?.();
-  }
+  };
 
   let accessoryContent;
   if (accessory === ACCESSORY_TYPES.Expand) {
@@ -69,15 +76,19 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
     );
   } else if (accessory === ACCESSORY_TYPES.Button) {
     accessoryContent = (
-      <div className={getClassName('bpk-card-list-grid-stack__accessory__button')}>
-      <BpkButtonV2 onClick={onButtonClick}>{buttonText}</BpkButtonV2>
+      <div
+        className={getClassName('bpk-card-list-grid-stack__accessory__button')}
+      >
+        <BpkButtonV2 onClick={onButtonClick}>{buttonText}</BpkButtonV2>
       </div>
     );
   }
 
   return (
     <div className={getClassName('bpk-card-list-grid-stack')}>
-      <div className={getClassName(`bpk-card-list-grid-stack__${layout}`)}>{visibleCards}</div>
+      <div className={getClassName(`bpk-card-list-grid-stack__${layout}`)}>
+        {visibleCards}
+      </div>
       {accessoryContent}
     </div>
   );

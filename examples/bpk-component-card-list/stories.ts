@@ -16,9 +16,13 @@
  * limitations under the License.
  */
 
-import BpkCardList from "../../packages/bpk-component-card-list";
+import BpkCardList from '../../packages/bpk-component-card-list';
 
-import { BasicExample, GridToStackExample, GridToStackWithExpandExample } from './examples';
+import {
+  BasicExample,
+  GridToStackExample,
+  GridToStackWithExpandExample,
+} from './examples';
 
 export default {
   title: 'bpk-component-card-list',
@@ -33,6 +37,6 @@ export const VisualTest = Basic;
 export const VisualTestWithZoom = {
   render: VisualTest,
   args: {
-    zoomEnabled: true
-  }
-}
+    zoomEnabled: true,
+  },
+};
