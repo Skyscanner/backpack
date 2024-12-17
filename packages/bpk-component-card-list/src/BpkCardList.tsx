@@ -47,7 +47,7 @@ const BpkCardList = (props: CardListProps) => {
     title,
   } = props;
 
-  const button = buttonText && accessory !== "button" && (
+  const button = buttonText && accessory !== 'button' && (
     <BpkButtonV2 onClick={onButtonClick} href={buttonHref}>
       {buttonText}
     </BpkButtonV2>
@@ -97,7 +97,7 @@ const BpkCardList = (props: CardListProps) => {
                 >
                   {cardList}
                 </BpkCardListGridStack>
-              )
+              );
             }
             return <div />;
           }}

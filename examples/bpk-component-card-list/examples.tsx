@@ -16,14 +16,16 @@
  * limitations under the License.
  */
 
-import { useState } from "react";
+import { useState } from 'react';
 
-import BpkCard from "../../packages/bpk-component-card";
-import BpkCardList from "../../packages/bpk-component-card-list";
-import BpkImage from "../../packages/bpk-component-image";
-import BpkText, { TEXT_STYLES } from "../../packages/bpk-component-text/src/BpkText";
+import BpkCard from '../../packages/bpk-component-card';
+import BpkCardList from '../../packages/bpk-component-card-list';
+import BpkImage from '../../packages/bpk-component-image';
+import BpkText, {
+  TEXT_STYLES,
+} from '../../packages/bpk-component-text/src/BpkText';
 
-import STYLES from "./exampless.module.scss";
+import STYLES from './exampless.module.scss';
 
 const DestinationCard = (i: number) => (
   <BpkCard href="/" padded={false}>
@@ -97,23 +99,14 @@ const GridToStackWithExpandExample = () => {
       cardList={cards(DestinationCard)}
       layoutDesktop="grid"
       layoutMobile="stack"
-      onButtonClick={() => setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')}
+      onButtonClick={() =>
+        setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
+      }
       accessory="expand"
       buttonText="Explore more"
       expandText={expandText}
     />
   );
-}
-
-
-
-
-
-
-
-
-export {
-  BasicExample,
-  GridToStackExample,
-  GridToStackWithExpandExample,
 };
+
+export { BasicExample, GridToStackExample, GridToStackWithExpandExample };
