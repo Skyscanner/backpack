@@ -16,16 +16,104 @@
  * limitations under the License.
  */
 
+import { useState } from "react";
+
+import BpkCard from "../../packages/bpk-component-card";
 import BpkCardList from "../../packages/bpk-component-card-list";
+import BpkImage from "../../packages/bpk-component-image";
+import BpkText, { TEXT_STYLES } from "../../packages/bpk-component-text/src/BpkText";
+
+import STYLES from "./exampless.module.scss";
+
+const DestinationCard = (i: number) => (
+  <BpkCard href="/" padded={false}>
+    <div className={STYLES['bpkdocs-consumer-level']}>
+      <BpkImage
+        aspectRatio={3000 / 1800}
+        altText="card image"
+        src="https://content.skyscnr.com/7adba3a46af3ca29695f96937d19fcf1/GettyImages-149127892.jpg?crop=960px:640px&quality=100"
+      />
+
+      <div className={STYLES['bpk-bottom']}>
+        <div className={STYLES['bpk-column']}>
+          <BpkText textStyle={TEXT_STYLES.heading4}>
+            {`Destination Name ${i}`}
+          </BpkText>
+          <BpkText>Country</BpkText>
+        </div>
+
+        <div className={STYLES['bpk-column']}>
+          <BpkText>Direct</BpkText>
+          <BpkText textStyle={TEXT_STYLES.heading4}>£100</BpkText>
+        </div>
+      </div>
+    </div>
+  </BpkCard>
+);
+
+type ExampleCard = typeof DestinationCard;
+
+const cards = (cardType: ExampleCard) => {
+  const cardList = [];
+  for (let i = 0; i < 14; i += 1) {
+    cardList.push(cardType(i));
+  }
+  return cardList;
+};
 
 const BasicExample = () => (
   <BpkCardList
     title="Must-visit spots"
     description="Check out these world-famous destinations perfect for visiting in spring."
     buttonText="Explore More"
-    buttonHref="https://www.skyscanner.net/"
-    onButtonClick={() => {}}
+    buttonHref=""
+    onButtonClick={() => null}
+    cardList={cards(DestinationCard)}
+    layoutDesktop="grid"
+    layoutMobile="stack"
   />
 );
 
-export default BasicExample;
+const GridToStackExample = () => (
+  <BpkCardList
+    title="Must-visit spots"
+    description="Check out these world-famous destinations perfect for visiting in spring."
+    cardList={cards(DestinationCard)}
+    layoutDesktop="grid"
+    layoutMobile="stack"
+    onButtonClick={() => null}
+    accessory="button"
+    buttonText="Explore more"
+  />
+);
+
+const GridToStackWithExpandExample = () => {
+  const [expandText, setExpandText] = useState('Show more');
+
+  return (
+    <BpkCardList
+      title="Must-visit spots"
+      description="Check out these world-famous destinations perfect for visiting in spring."
+      cardList={cards(DestinationCard)}
+      layoutDesktop="grid"
+      layoutMobile="stack"
+      onButtonClick={() => setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')}
+      accessory="expand"
+      buttonText="Explore more"
+      expandText={expandText}
+    />
+  );
+}
+
+
+
+
+
+
+
+
+export {
+  BasicExample,
+  GridToStackExample,
+  GridToStackWithExpandExample,
+};

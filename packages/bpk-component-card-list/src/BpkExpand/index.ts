@@ -16,23 +16,6 @@
  * limitations under the License.
  */
 
-import BpkCardList from "../../packages/bpk-component-card-list";
+import BpkExpand from "./BpkExpand";
 
-import { BasicExample, GridToStackExample, GridToStackWithExpandExample } from './examples';
-
-export default {
-  title: 'bpk-component-card-list',
-  component: BpkCardList,
-};
-
-export const Basic = BasicExample;
-export const GridToStack = GridToStackExample;
-export const GridToStackWithExpand = GridToStackWithExpandExample;
-
-export const VisualTest = Basic;
-export const VisualTestWithZoom = {
-  render: VisualTest,
-  args: {
-    zoomEnabled: true
-  }
-}
+export default BpkExpand;
