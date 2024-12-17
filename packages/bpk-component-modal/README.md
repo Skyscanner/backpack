@@ -48,6 +48,7 @@ class App extends Component {
           title="Modal title"
           closeLabel="Close modal"
           getApplicationElement={() => document.getElementById('pagewrap')}
+          getCustomPaddingElement={() => document.getElementById('routes-container')}
           renderTarget={() => document.getElementById('modal-container')}
           accessoryView={
             <BpkNavigationBarButtonLink
