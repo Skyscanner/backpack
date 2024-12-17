@@ -16,23 +16,30 @@
  * limitations under the License.
  */
 
-import BpkCardList from "../../packages/bpk-component-card-list";
+@use '../../../unstable__bpk-mixins/tokens';
 
-import { BasicExample, GridToStackExample, GridToStackWithExpandExample } from './examples';
+.bpk-card-list-grid-stack {
+  display: grid;
+  gap: tokens.bpk-spacing-lg();
 
-export default {
-  title: 'bpk-component-card-list',
-  component: BpkCardList,
-};
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(tokens.$bpk-one-pixel-rem * 281, auto)
+    );
+    gap: tokens.bpk-spacing-lg();
+  }
 
-export const Basic = BasicExample;
-export const GridToStack = GridToStackExample;
-export const GridToStackWithExpand = GridToStackWithExpandExample;
+  &__stack {
+    display: grid;
+    grid-template-columns: 1;
+    gap: tokens.bpk-spacing-lg();
+  }
 
-export const VisualTest = Basic;
-export const VisualTestWithZoom = {
-  render: VisualTest,
-  args: {
-    zoomEnabled: true
+  &__accessory {
+    &__button {
+      width: auto;
+    }
   }
 }
