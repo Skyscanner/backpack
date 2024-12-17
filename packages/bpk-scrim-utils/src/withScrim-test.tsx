@@ -150,6 +150,8 @@ describe('BpkScrim', () => {
     it('should mount correctly when is not iPhone', () => {
       const mockSetAttribute = jest.fn();
       const mockRemoveAttribute = jest.fn();
+      const mockCustomPaddingElement = document.createElement('div');
+
       render(
         <Component
           onClose={jest.fn()}
@@ -158,11 +160,12 @@ describe('BpkScrim', () => {
             setAttribute: mockSetAttribute,
             removeAttribute: mockRemoveAttribute,
           }))}
+          getCustomPaddingElement={() => mockCustomPaddingElement}
           isIphone={false}
         />,
       );
       jest.runAllTimers();
-      expect(lockScroll).toHaveBeenCalled();
+      expect(lockScroll).toHaveBeenCalledWith(mockCustomPaddingElement);
       expect(focusStore.storeFocus).toHaveBeenCalled();
       expect(storeScroll).not.toHaveBeenCalled();
       expect(fixBody).not.toHaveBeenCalled();
@@ -182,6 +185,7 @@ describe('BpkScrim', () => {
     it('should unmount correctly when is iPhone', async () => {
       const mockSetAttribute = jest.fn();
       const mockRemoveAttribute = jest.fn();
+
       const { unmount } = render(
         <Component
           onClose={jest.fn()}
@@ -206,6 +210,8 @@ describe('BpkScrim', () => {
 
     it('should unmount correctly when is not iPhone', () => {
       const mockRemoveAttribute = jest.fn();
+      const mockCustomPaddingElement = document.createElement('div');
+
       const { unmount } = render(
         <Component
           onClose={jest.fn()}
@@ -214,12 +220,13 @@ describe('BpkScrim', () => {
             setAttribute: jest.fn(),
             removeAttribute: mockRemoveAttribute,
           }))}
+          getCustomPaddingElement={() => mockCustomPaddingElement}
           isIphone={false}
         />,
       );
       unmount();
 
-      expect(unlockScroll).toHaveBeenCalled();
+      expect(unlockScroll).toHaveBeenCalledWith(mockCustomPaddingElement);
       expect(restoreScroll).not.toHaveBeenCalled();
       expect(unfixBody).not.toHaveBeenCalled();
       expect(focusStore.storeFocus).toHaveBeenCalled();
