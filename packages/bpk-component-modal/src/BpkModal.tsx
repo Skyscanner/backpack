@@ -53,6 +53,11 @@ export type Props = Partial<ModalDialogProps> & {
    * The "pagewrap" element id is a convention we use internally at Skyscanner. In most cases it should "just work".
    */
   getApplicationElement: () => HTMLElement | null;
+
+  /**
+   * Sometimes the content is absolutely positioned and we need to specify the element that should have padding added when the modal is open.
+   */
+  getCustomPaddingElement?: () => HTMLElement | null;
 };
 
 const BpkModal = ({
