@@ -16,14 +16,17 @@
  * limitations under the License.
  */
 
-import { renderHook } from '@testing-library/react'
+import { renderHook } from '@testing-library/react';
 
 import { useScrollToInitialImage } from './utils';
 
 describe('useScrollToInitialImage', () => {
   it('should scroll to initial image on mount', () => {
+    const element = document.createElement('div');
+    element.scrollIntoView = jest.fn();
+
     const imagesRef = {
-      current: [document.createElement('div'), document.createElement('div')],
+      current: [element, document.createElement('div')],
     };
     const initialImageIndex = 0;
 
