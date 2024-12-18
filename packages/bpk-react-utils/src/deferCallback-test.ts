@@ -18,6 +18,8 @@
 
 import deferCallback from './deferCallback';
 
+jest.unmock('./deferCallback');
+
 describe('deferCallback', () => {
   beforeEach(() => {
     jest.clearAllMocks();
