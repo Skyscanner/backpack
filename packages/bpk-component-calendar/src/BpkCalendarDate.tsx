@@ -52,6 +52,7 @@ export type Props = DefaultProps & {
 
 type DefaultProps = {
   className?: string | null;
+  formattedDate?: string;
   isBlocked?: boolean;
   isFocused?: boolean;
   isKeyboardFocusable?: boolean;
@@ -185,6 +186,7 @@ class BpkCalendarDate extends PureComponent<Props> {
     }
 
     delete buttonProps.preventKeyboardFocus;
+    delete buttonProps.formattedDate;
 
     return (
       <button

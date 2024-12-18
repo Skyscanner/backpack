@@ -20,6 +20,7 @@ import { BpkDialogWrapper } from './src/BpkDialogWrapper/BpkDialogWrapper';
 import Portal from './src/Portal';
 import TransitionInitialMount from './src/TransitionInitialMount';
 import cssModules from './src/cssModules';
+import deferCallback from './src/deferCallback';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import deprecated from './src/deprecated';
 import {
@@ -36,6 +37,7 @@ export {
   Portal,
   TransitionInitialMount,
   cssModules,
+  deferCallback,
   deprecated,
   withDefaultProps,
   wrapDisplayName,
@@ -44,12 +46,13 @@ export {
   isDeviceIos,
   isRTL,
   BpkDialogWrapper,
-  setNativeValue
+  setNativeValue,
 };
 export default {
   Portal,
   TransitionInitialMount,
   cssModules,
+  deferCallback,
   deprecated,
   withDefaultProps,
   wrapDisplayName,
@@ -58,5 +61,5 @@ export default {
   isDeviceIos,
   isRTL,
   BpkDialogWrapper,
-  setNativeValue
+  setNativeValue,
 };
