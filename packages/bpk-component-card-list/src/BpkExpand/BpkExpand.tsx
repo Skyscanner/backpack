@@ -56,6 +56,7 @@ const BpkExpand = ({
       data-testid="expand-button"
       type={BUTTON_TYPES.link}
       onClick={() => buttonOnClick()}
+      aria-expanded={!collapsed}
     >
       {children}
       {buttonIcon}
