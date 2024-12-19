@@ -32,7 +32,7 @@ describe('deferCallback', () => {
     deferCallback(callback);
 
     expect(window.requestIdleCallback).toHaveBeenCalledWith(callback, {
-      timeout: 1000,
+      timeout: 500,
     });
   });
 
