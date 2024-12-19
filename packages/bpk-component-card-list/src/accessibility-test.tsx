@@ -19,16 +19,71 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
+import mockCards from '../testMocks';
+
 import BpkCardList from './BpkCardList';
 
-describe('BpkCardList accessibility tests', () => {
-  it('should not have any accessibility issues', async () => {
+describe('BpkCardList', () => {
+  it('should not have any accessibility issues with grid, stack and no accessory', async () => {
     const { container } = render(
       <BpkCardList
         title="Title"
         description="Description"
+        layoutDesktop="grid"
+        layoutMobile="stack"
+        cardList={mockCards(2)}
+      />,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have any accessibility issues with grid, stack, header button and no accessory', async () => {
+    const { container } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        layoutDesktop="grid"
+        layoutMobile="stack"
+        cardList={mockCards(2)}
+        buttonText="Header Button"
+        buttonHref="#"
+        onButtonClick={() => {}}
+      />,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have any accessibility issues with grid, stack, expand accessory', async () => {
+    const { container } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        layoutDesktop="grid"
+        layoutMobile="stack"
+        cardList={mockCards(2)}
+        accessory="expand"
+        expandText="Expand"
+      />,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have any accessibility issues with grid, stack, button accessory', async () => {
+    const { container } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        layoutDesktop="grid"
+        layoutMobile="stack"
+        cardList={mockCards(2)}
+        accessory="button"
         buttonText="Button"
-        buttonHref="https://www.skyscanner.net"
         onButtonClick={() => {}}
       />,
     );
