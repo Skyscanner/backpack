@@ -25,7 +25,12 @@ import deferCallback from '../../bpk-react-utils/src/deferCallback';
 import { addCalendarGridTransition } from './BpkCalendarGridTransition';
 import BpkCalendarWeek from './BpkCalendarWeek';
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
-import { addMonths, getCalendarMonthWeeks, isSameMonth } from './date-utils';
+import {
+  addMonths,
+  getCalendar,
+  getCalendarNoCustomLabel,
+  isSameMonth,
+} from './date-utils';
 
 import type { DateModifiers, SelectionConfiguration } from './custom-proptypes';
 
@@ -76,7 +81,7 @@ export type Props = DefaultProps & {
 
 export type DateProps = {
   val: Date;
-  textLabel: string | Date;
+  customLabel: string | Date;
   isoLabel: string;
 };
 
@@ -112,19 +117,19 @@ class BpkCalendarGrid extends Component<Props, State> {
     super(props);
 
     this.state = {
-      calendarMonthWeeks: getCalendarMonthWeeks(
+      // Do not run expensive date formatting in the constructor
+      calendarMonthWeeks: getCalendarNoCustomLabel(
         props.month,
         props.weekStartsOn,
-        // Do not run expensive date format calculations in the constructor
       ),
     };
   }
 
-  // Defer expensive calculations to this point to improve INP.
   componentDidMount(): void {
+    // Defer expensive date formatting until after render to improve INP.
     deferCallback(() =>
       this.setState({
-        calendarMonthWeeks: getCalendarMonthWeeks(
+        calendarMonthWeeks: getCalendar(
           this.props.month,
           this.props.weekStartsOn,
           this.props.formatDateFull,
@@ -140,7 +145,7 @@ class BpkCalendarGrid extends Component<Props, State> {
       nextProps.weekStartsOn !== this.props.weekStartsOn
     ) {
       this.setState({
-        calendarMonthWeeks: getCalendarMonthWeeks(
+        calendarMonthWeeks: getCalendar(
           nextProps.month,
           nextProps.weekStartsOn,
           nextProps.formatDateFull,

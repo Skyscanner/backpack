@@ -411,7 +411,7 @@ class BpkCalendarWeek extends Component<Props> {
               <DateComponent
                 date={date.val}
                 modifiers={dateModifiers}
-                aria-label={date.textLabel}
+                aria-label={date.customLabel}
                 onClick={onDateClick}
                 onDateKeyDown={onDateKeyDown}
                 preventKeyboardFocus={preventKeyboardFocus}
@@ -422,7 +422,7 @@ class BpkCalendarWeek extends Component<Props> {
                 isOutside={markOutsideDays && !isSameMonth(date.val, month)}
                 isToday={markToday && isToday(date.val)}
                 selectionType={dateSelectionType}
-                formattedDate={date.isoLabel}
+                isoLabel={date.isoLabel}
                 {...dateProps}
               />
             </DateContainer>

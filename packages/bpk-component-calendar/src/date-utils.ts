@@ -98,6 +98,18 @@ function startOfWeek(
   return [date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()];
 }
 
+function getCalendarNoCustomLabel(date: Date, weekStartsOn: number) {
+  return getCalendarMonthWeeks(date, weekStartsOn);
+}
+
+function getCalendar(
+  date: Date,
+  weekStartsOn: number,
+  formatDate: (d: Date) => Date | string,
+) {
+  return getCalendarMonthWeeks(date, weekStartsOn, formatDate);
+}
+
 function getCalendarMonthWeeks(
   date: Date,
   weekStartsOn: number,
@@ -118,8 +130,8 @@ function getCalendarMonthWeeks(
       const currDate = dateAtStartOfDay(year, month, day);
       currWeek.push({
         val: currDate,
-        textLabel: formatDate ? formatDate(currDate) : 'loading...',
         isoLabel: formatIsoDate(currDate),
+        customLabel: formatDate ? formatDate(currDate) : '',
       });
       [year, month, day] = addDay(year, month, day);
     }
@@ -206,7 +218,8 @@ const formatIsoDate = (date: Date) => format(date, 'yyyy-MM-dd');
 const formatIsoMonth = (date: Date) => format(date, 'yyyy-MM');
 
 export {
-  getCalendarMonthWeeks,
+  getCalendar,
+  getCalendarNoCustomLabel,
   getFirstDayOfWeekend,
   getLastDayOfWeekend,
   getMonthsInRange,

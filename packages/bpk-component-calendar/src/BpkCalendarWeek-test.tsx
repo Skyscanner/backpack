@@ -40,37 +40,37 @@ const initialProps: Props = {
   dates: [
     {
       val: startOfDay(new Date(1980, 4, 31)),
-      textLabel: 'Wednesday, 31 April 1980',
+      customLabel: 'Wednesday, 31 April 1980',
       isoLabel: '1980-04-31',
     },
     {
       val: startOfDay(new Date(1980, 5, 1)),
-      textLabel: 'Thursday, 1 May 1980',
+      customLabel: 'Thursday, 1 May 1980',
       isoLabel: '1980-05-01',
     },
     {
       val: startOfDay(new Date(1980, 5, 2)),
-      textLabel: 'Friday, 2 May 1980',
+      customLabel: 'Friday, 2 May 1980',
       isoLabel: '1980-05-02',
     },
     {
       val: startOfDay(new Date(1980, 5, 3)),
-      textLabel: 'Saturday, 3 May 1980',
+      customLabel: 'Saturday, 3 May 1980',
       isoLabel: '1980-05-03',
     },
     {
       val: startOfDay(new Date(1980, 5, 4)),
-      textLabel: 'Sunday, 4 May 1980',
+      customLabel: 'Sunday, 4 May 1980',
       isoLabel: '1980-05-04',
     },
     {
       val: startOfDay(new Date(1980, 5, 5)),
-      textLabel: 'Monday, 5 May 1980',
+      customLabel: 'Monday, 5 May 1980',
       isoLabel: '1980-05-05',
     },
     {
       val: startOfDay(new Date(1980, 5, 6)),
-      textLabel: 'Tuesday, 6 May 1980',
+      customLabel: 'Tuesday, 6 May 1980',
       isoLabel: '1980-05-06',
     },
   ],
