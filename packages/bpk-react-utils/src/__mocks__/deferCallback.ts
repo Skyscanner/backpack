@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2022 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,21 +16,14 @@
  * limitations under the License.
  */
 
-import { renderHook } from '@testing-library/react'
-
-import { useScrollToInitialImage } from './utils';
-
-describe('useScrollToInitialImage', () => {
-  it('should scroll to initial image on mount', () => {
-    const imagesRef = {
-      current: [document.createElement('div'), document.createElement('div')],
-    };
-    const initialImageIndex = 0;
-
-    renderHook(() => useScrollToInitialImage(initialImageIndex, imagesRef));
-
-    expect(
-      imagesRef.current[initialImageIndex].scrollIntoView,
-    ).toHaveBeenCalledTimes(1);
-  });
-});
+/**
+ * Mock deferCallback to immediately invoke the callback. This ensures that
+ * asynchronous state updates triggered by `deferCallback` run before asserting.
+ * https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback
+ * @param {function} callback - callback to execute, value cannot be returned.
+ * You'll typically want to wrap the callback `setState` to update React state.
+ * @returns {void}
+ */
+export default function deferCallback(callback: () => void) {
+  callback();
+}

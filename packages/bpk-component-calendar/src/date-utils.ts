@@ -20,8 +20,8 @@ import { addDays } from 'date-fns/addDays';
 import { addMonths } from 'date-fns/addMonths';
 import { differenceInCalendarMonths } from 'date-fns/differenceInCalendarMonths';
 import { endOfMonth } from 'date-fns/endOfMonth';
-import { format }from 'date-fns/format';
-import { getDay  }from 'date-fns/getDay';
+import { format } from 'date-fns/format';
+import { getDay } from 'date-fns/getDay';
 import { isAfter } from 'date-fns/isAfter';
 import { isBefore } from 'date-fns/isBefore';
 import { isSameDay } from 'date-fns/isSameDay';
@@ -38,6 +38,7 @@ import { setYear } from 'date-fns/setYear';
 import { startOfDay } from 'date-fns/startOfDay';
 import { startOfMonth } from 'date-fns/startOfMonth';
 
+import type { DateProps } from './BpkCalendarGrid';
 import type { DaysOfWeek } from './custom-proptypes';
 
 const ONE_MINUTE_IN_MS = 60 * 1000;
@@ -97,7 +98,23 @@ function startOfWeek(
   return [date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()];
 }
 
-function getCalendarMonthWeeks(date: Date, weekStartsOn: number) {
+function getCalendarNoCustomLabel(date: Date, weekStartsOn: number) {
+  return getCalendarMonthWeeks(date, weekStartsOn);
+}
+
+function getCalendar(
+  date: Date,
+  weekStartsOn: number,
+  formatDate: (d: Date) => Date | string,
+) {
+  return getCalendarMonthWeeks(date, weekStartsOn, formatDate);
+}
+
+function getCalendarMonthWeeks(
+  date: Date,
+  weekStartsOn: number,
+  formatDate?: (d: Date) => Date | string,
+): DateProps[][] {
   let [year, month, day] = startOfWeek(
     date.getFullYear(),
     date.getMonth(),
@@ -110,7 +127,12 @@ function getCalendarMonthWeeks(date: Date, weekStartsOn: number) {
   for (let i = 0; i < 6; i += 1) {
     const currWeek = [];
     for (let j = 0; j < 7; j += 1) {
-      currWeek.push(dateAtStartOfDay(year, month, day));
+      const currDate = dateAtStartOfDay(year, month, day);
+      currWeek.push({
+        val: currDate,
+        isoLabel: formatIsoDate(currDate),
+        customLabel: formatDate ? formatDate(currDate) : '',
+      });
       [year, month, day] = addDay(year, month, day);
     }
     weeksInMonth.push(currWeek);
@@ -196,7 +218,8 @@ const formatIsoDate = (date: Date) => format(date, 'yyyy-MM-dd');
 const formatIsoMonth = (date: Date) => format(date, 'yyyy-MM');
 
 export {
-  getCalendarMonthWeeks,
+  getCalendar,
+  getCalendarNoCustomLabel,
   getFirstDayOfWeekend,
   getLastDayOfWeekend,
   getMonthsInRange,

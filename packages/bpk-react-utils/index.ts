@@ -44,7 +44,7 @@ export {
   isDeviceIos,
   isRTL,
   BpkDialogWrapper,
-  setNativeValue
+  setNativeValue,
 };
 export default {
   Portal,
@@ -58,5 +58,5 @@ export default {
   isDeviceIos,
   isRTL,
   BpkDialogWrapper,
-  setNativeValue
+  setNativeValue,
 };
