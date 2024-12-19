@@ -29,7 +29,7 @@
  */
 const deferCallback = (callback: () => void) => {
   if (window.requestIdleCallback) {
-    window.requestIdleCallback(callback, { timeout: 1000 });
+    window.requestIdleCallback(callback, { timeout: 500 });
   } else {
     setTimeout(callback, 0);
   }
