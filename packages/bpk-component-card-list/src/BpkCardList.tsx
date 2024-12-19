@@ -54,7 +54,7 @@ const BpkCardList = (props: CardListProps) => {
   );
 
   return (
-    <div className={getClassName('bpk-card-list')}>
+    <div className={getClassName('bpk-card-list')} data-testid="bpk-card-list">
       <BpkSectionHeader
         title={title}
         description={description}

@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { BUTTON_TYPES, BpkButtonV2 } from '../../../bpk-component-button';
 import {
   withButtonAlignment,
@@ -52,7 +53,7 @@ const BpkExpand = ({
 
   return (
     <BpkButtonV2
-      data-testid="button"
+      data-testid="expand-button"
       type={BUTTON_TYPES.link}
       onClick={() => buttonOnClick()}
     >

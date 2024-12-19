@@ -16,24 +16,107 @@
  * limitations under the License.
  */
 
-import { render, screen } from '@testing-library/react';
+import { getByText, render, screen } from '@testing-library/react';
+
+import mockCards from '../testMocks';
 
 import BpkCardList from './BpkCardList';
 
 describe('BpkCardList', () => {
-  it('should render correctly', () => {
+  it('should render correctly with grid, stack and no accessory', () => {
     render(
       <BpkCardList
         title="Title"
         description="Description"
-        buttonText="Button"
-        buttonHref="https://www.skyscanner.net"
+        layoutDesktop="grid"
+        layoutMobile="stack"
+        cardList={mockCards(2)}
+      />,
+    );
+
+    const cardsSection = screen.getByTestId('bpk-card-list--card-list')
+      .firstChild?.firstChild;
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(cardsSection?.childNodes.length).toBe(2);
+  });
+
+  it('should render correctly with grid, stack, header button and no accessory', () => {
+    render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        layoutDesktop="grid"
+        layoutMobile="stack"
+        cardList={mockCards(2)}
+        buttonText="Header Button"
+        buttonHref="#"
         onButtonClick={() => {}}
       />,
     );
 
+    const header = screen.getByTestId('bpk-card-list').firstElementChild;
+    const cardsSection = screen.getByTestId('bpk-card-list--card-list')
+      .firstChild?.firstChild;
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(
+      getByText(header as HTMLElement, 'Header Button'),
+    ).toBeInTheDocument();
+    expect(cardsSection?.childNodes.length).toBe(2);
+  });
+
+  it('should render correctly with grid, stack and expand accessory', () => {
+    render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        layoutDesktop="grid"
+        layoutMobile="stack"
+        cardList={mockCards(2)}
+        accessory="expand"
+        expandText="Expand"
+      />,
+    );
+
+    const cardsAndAccessorySection = screen.getByTestId(
+      'bpk-card-list--card-list',
+    ).firstChild;
+    const cardsSection = cardsAndAccessorySection?.firstChild;
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.getByText('Expand')).toBeInTheDocument();
+    expect(cardsSection?.childNodes.length).toBe(2);
+    expect(
+      getByText(cardsAndAccessorySection as HTMLElement, 'Expand'),
+    ).toBeInTheDocument();
+  });
+
+  it('should render correctly with grid, stack and button accessory', () => {
+    render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        layoutDesktop="grid"
+        layoutMobile="stack"
+        cardList={mockCards(2)}
+        accessory="button"
+        buttonText="Button"
+        onButtonClick={() => {}}
+      />,
+    );
+
+    const cardsAndAccessorySection = screen.getByTestId(
+      'bpk-card-list--card-list',
+    ).firstChild;
+    const cardsSection = cardsAndAccessorySection?.firstChild;
+
     expect(screen.getByText('Title')).toBeInTheDocument();
     expect(screen.getByText('Description')).toBeInTheDocument();
     expect(screen.getByText('Button')).toBeInTheDocument();
+    expect(cardsSection?.childNodes.length).toBe(2);
+    expect(
+      getByText(cardsAndAccessorySection as HTMLElement, 'Button'),
+    ).toBeInTheDocument();
   });
 });
