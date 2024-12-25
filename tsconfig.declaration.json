@@ -20,7 +20,8 @@
     "jsx": "react-jsx",
     "allowJs": false,
     "declaration": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "declarationMap": true
   },
   "include": [
     "packages",
