@@ -162,8 +162,8 @@ class BpkCalendarGrid extends Component<Props, State> {
     const classNames = getClassName('bpk-calendar-grid', className);
 
     return (
-      <div className={classNames} aria-hidden={!isKeyboardFocusable}>
-        <div>
+      <div className={classNames} aria-hidden={!isKeyboardFocusable} role="grid" >
+        <div role="rowgroup">
           {calendarMonthWeeks.map((dates) => (
             <BpkCalendarWeek
               key={formatIsoDate(dates[0])}
