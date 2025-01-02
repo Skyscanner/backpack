@@ -411,7 +411,6 @@ class BpkCalendarWeek extends Component<Props> {
             <DateContainer
               className={cellClassName}
               isEmptyCell={!isSameMonth(date, month) && ignoreOutsideDate!}
-              isBlocked={isBlocked}
               key={date.getDate()}
               selectionType={dateSelectionType}
             >
@@ -442,7 +441,6 @@ class BpkCalendarWeek extends Component<Props> {
 type DateContainerProps = {
   children: ReactElement;
   className?: string | null;
-  isBlocked: boolean;
   isEmptyCell: boolean;
   selectionType: string;
 };
