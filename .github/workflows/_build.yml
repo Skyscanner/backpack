@@ -28,7 +28,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore Cache
-        uses: actions/cache/restore@v4.1.2
+        uses: actions/cache/restore@v4.2.0
         id: npm-cache
         with:
           path: |
@@ -77,7 +77,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore Cache
-        uses: actions/cache/restore@v4.1.2
+        uses: actions/cache/restore@v4.2.0
         id: npm-cache
         with:
           path: |
@@ -118,7 +118,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore Cache
-        uses: actions/cache/restore@v4.1.2
+        uses: actions/cache/restore@v4.2.0
         id: npm-cache
         with:
           path: |
@@ -127,7 +127,7 @@ jobs:
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
       - name: Restore Cache
-        uses: actions/cache/restore@v4.1.2
+        uses: actions/cache/restore@v4.2.0
         id: storybook-dist-cache
         with:
           path: dist-storybook/
