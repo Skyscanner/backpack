@@ -3,7 +3,6 @@
 exports[`BpkScrollableCalendarDate should pass props through to button 1`] = `
 <DocumentFragment>
   <button
-    aria-hidden="false"
     aria-label="Nothing happened on this day in 2010"
     aria-pressed="false"
     class="bpk-calendar-date"
@@ -22,7 +21,6 @@ exports[`BpkScrollableCalendarDate should pass props through to button 1`] = `
 exports[`BpkScrollableCalendarDate should render a disabled button 1`] = `
 <DocumentFragment>
   <button
-    aria-hidden="false"
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date"
@@ -42,7 +40,6 @@ exports[`BpkScrollableCalendarDate should render a disabled button 1`] = `
 exports[`BpkScrollableCalendarDate should render a focused button with tabIndex 1`] = `
 <DocumentFragment>
   <button
-    aria-hidden="false"
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date bpk-calendar-date--focused"
@@ -61,7 +58,6 @@ exports[`BpkScrollableCalendarDate should render a focused button with tabIndex 
 exports[`BpkScrollableCalendarDate should render correctly 1`] = `
 <DocumentFragment>
   <button
-    aria-hidden="false"
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date"
@@ -80,7 +76,6 @@ exports[`BpkScrollableCalendarDate should render correctly 1`] = `
 exports[`BpkScrollableCalendarDate should render with a click and keyDown handler 1`] = `
 <DocumentFragment>
   <button
-    aria-hidden="false"
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date"
