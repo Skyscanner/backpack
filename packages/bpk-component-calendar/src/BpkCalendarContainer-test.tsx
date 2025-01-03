@@ -111,7 +111,7 @@ describe('BpkCalendarContainer', () => {
 
     // dates in March are outside current month
     const outsideDate = screen.getByRole('button', {
-      name: /1st March 2010/i,
+      name: /Monday, 1st March/i,
     });
     waitFor(() =>
       expect(outsideDate.classList.contains('bpk-calendar-date--outside')).toBe(
@@ -125,7 +125,7 @@ describe('BpkCalendarContainer', () => {
 
     // dates in March are within current month
     const currentDate = screen.getByRole('button', {
-      name: /1st March 2010/i,
+      name: /Monday, 1st March/i,
     });
     waitFor(() =>
       expect(currentDate.classList.contains('bpk-calendar-date--outside')).toBe(
@@ -300,20 +300,20 @@ describe('BpkCalendarContainer', () => {
 
     await fireEvent.keyDown(getDate(originStr), { key: 'ArrowRight' });
     expect(
-      getDate(/2nd March/).classList.contains('bpk-calendar-date--focused'),
+      getDate(/Tuesday, 2nd March/).classList.contains('bpk-calendar-date--focused'),
     ).toBe(true);
 
-    await fireEvent.keyDown(getDate(/2nd March/i), { key: 'ArrowDown' });
+    await fireEvent.keyDown(getDate(/Tuesday, 2nd March/i), { key: 'ArrowDown' });
     expect(
-      getDate(/9th March/i).classList.contains('bpk-calendar-date--focused'),
+      getDate(/Tuesday, 9th March/i).classList.contains('bpk-calendar-date--focused'),
     ).toBe(true);
 
-    await fireEvent.keyDown(getDate(/9th March/i), { key: 'ArrowLeft' });
+    await fireEvent.keyDown(getDate(/Tuesday, 9th March/i), { key: 'ArrowLeft' });
     expect(
-      getDate(/8th March/i).classList.contains('bpk-calendar-date--focused'),
+      getDate(/Monday, 8th March/i).classList.contains('bpk-calendar-date--focused'),
     ).toBe(true);
 
-    await fireEvent.keyDown(getDate(/8th March/i), { key: 'ArrowUp' });
+    await fireEvent.keyDown(getDate(/Monday, 8th March/i), { key: 'ArrowUp' });
     expect(
       getDate(originStr).classList.contains('bpk-calendar-date--focused'),
     ).toBe(true);
@@ -378,7 +378,7 @@ describe('BpkCalendarContainer', () => {
 
     await fireEvent.keyDown(getDate(/28th February/i), { key: 'ArrowRight' });
     expect(
-      getDate(/1st March/i).classList.contains('bpk-calendar-date--focused'),
+      getDate(/Monday, 1st March/i).classList.contains('bpk-calendar-date--focused'),
     ).toBe(true);
     expect(onMonthChange.mock.calls.length).toEqual(1);
     expect(onMonthChange.mock.calls[0][1]).toEqual({

@@ -4,46 +4,54 @@ exports[`BpkCalendarWeek should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-calendar-week"
+    role="row"
   >
     <div
       aria-hidden="false"
       class="bpk-calendar-week__date bpk-calendar-week__date--none"
+      role="gridcell"
     >
       <div />
     </div>
     <div
       aria-hidden="false"
       class="bpk-calendar-week__date bpk-calendar-week__date--none"
+      role="gridcell"
     >
       <div />
     </div>
     <div
       aria-hidden="false"
       class="bpk-calendar-week__date bpk-calendar-week__date--none"
+      role="gridcell"
     >
       <div />
     </div>
     <div
       aria-hidden="false"
       class="bpk-calendar-week__date bpk-calendar-week__date--none"
+      role="gridcell"
     >
       <div />
     </div>
     <div
       aria-hidden="false"
       class="bpk-calendar-week__date bpk-calendar-week__date--none"
+      role="gridcell"
     >
       <div />
     </div>
     <div
       aria-hidden="false"
       class="bpk-calendar-week__date bpk-calendar-week__date--none"
+      role="gridcell"
     >
       <div />
     </div>
     <div
       aria-hidden="false"
       class="bpk-calendar-week__date bpk-calendar-week__date--none"
+      role="gridcell"
     >
       <div />
     </div>
