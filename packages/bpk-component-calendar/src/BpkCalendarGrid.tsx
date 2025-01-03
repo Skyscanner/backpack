@@ -20,17 +20,17 @@ import type { ElementType } from 'react';
 import { Component } from 'react';
 
 import { cssModules, isDeviceIos } from '../../bpk-react-utils';
+import deferCallback from '../../bpk-react-utils/src/deferCallback';
 
 import { addCalendarGridTransition } from './BpkCalendarGridTransition';
 import BpkCalendarWeek from './BpkCalendarWeek';
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import {
   addMonths,
-  formatIsoDate,
-  getCalendarMonthWeeks,
+  getCalendar,
+  getCalendarNoCustomLabel,
   isSameMonth,
 } from './date-utils';
-import { memoize } from './utils';
 
 import type { DateModifiers, SelectionConfiguration } from './custom-proptypes';
 
@@ -79,8 +79,14 @@ export type Props = DefaultProps & {
   weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
 };
 
+export type DateProps = {
+  val: Date;
+  customLabel: string | Date;
+  isoLabel: string;
+};
+
 type State = {
-  calendarMonthWeeks: Date[][];
+  calendarMonthWeeks: DateProps[][];
 };
 /*
   BpkCalendarGrid - the grid representing a whole month
@@ -110,13 +116,26 @@ class BpkCalendarGrid extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    // We cache expensive calculations (and identities) in state
     this.state = {
-      calendarMonthWeeks: getCalendarMonthWeeks(
+      // Do not run expensive date formatting in the constructor
+      calendarMonthWeeks: getCalendarNoCustomLabel(
         props.month,
         props.weekStartsOn,
       ),
     };
+  }
+
+  componentDidMount(): void {
+    // Defer expensive date formatting until after render to improve INP.
+    deferCallback(() =>
+      this.setState({
+        calendarMonthWeeks: getCalendar(
+          this.props.month,
+          this.props.weekStartsOn,
+          this.props.formatDateFull,
+        ),
+      }),
+    );
   }
 
   UNSAFE_componentWillReceiveProps(nextProps: Props) {
@@ -126,9 +145,10 @@ class BpkCalendarGrid extends Component<Props, State> {
       nextProps.weekStartsOn !== this.props.weekStartsOn
     ) {
       this.setState({
-        calendarMonthWeeks: getCalendarMonthWeeks(
+        calendarMonthWeeks: getCalendar(
           nextProps.month,
           nextProps.weekStartsOn,
+          nextProps.formatDateFull,
         ),
       });
     }
@@ -142,7 +162,6 @@ class BpkCalendarGrid extends Component<Props, State> {
       dateModifiers,
       dateProps,
       focusedDate,
-      formatDateFull,
       ignoreOutsideDate,
       isKeyboardFocusable,
       markOutsideDays,
@@ -166,12 +185,11 @@ class BpkCalendarGrid extends Component<Props, State> {
         <div role="rowgroup">
           {calendarMonthWeeks.map((dates) => (
             <BpkCalendarWeek
-              key={formatIsoDate(dates[0])}
+              key={dates[0].isoLabel}
               month={month}
               dates={dates}
               onDateClick={onDateClick}
               onDateKeyDown={onDateKeyDown}
-              formatDateFull={memoize(formatDateFull)}
               DateComponent={DateComponent}
               dateModifiers={dateModifiers!}
               preventKeyboardFocus={preventKeyboardFocus}
