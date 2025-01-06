@@ -110,7 +110,7 @@ export type Props = CloseButtonProps & {
   closeButtonLabel?: string;
   actionText?: string;
   onAction?: () => void;
-  renderTarget?: () => HTMLElement | HTMLElement | null;
+  renderTarget?: () => HTMLElement | HTMLElement | undefined;
 };
 
 const BpkPopover = ({
@@ -130,7 +130,7 @@ const BpkPopover = ({
   onClose,
   padded = true,
   placement = 'bottom',
-  renderTarget = () => null,
+  renderTarget = () => undefined,
   showArrow = true,
   target,
   ...rest
