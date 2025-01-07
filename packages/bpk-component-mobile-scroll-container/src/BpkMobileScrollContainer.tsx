@@ -19,12 +19,11 @@
 import type { ReactNode, ElementType, CSSProperties } from 'react';
 import { Component } from 'react';
 
+import debounce from 'lodash/debounce';
 
 import { cssModules, isRTL } from '../../bpk-react-utils';
 
 import STYLES from './BpkMobileScrollContainer.module.scss';
-
-import debounce from 'lodash/debounce';
 
 const getClassName = cssModules(STYLES);
 
