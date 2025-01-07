@@ -85,10 +85,6 @@ type State = {
 };
 
 class BpkMobileScrollContainer extends Component<Props, State> {
-  innerEl: HTMLElement | null = null;
-
-  scrollerEl: HTMLElement | null = null;
-
   static defaultProps: Partial<Props> = {
     innerContainerTagName: 'div',
     showScrollbar: false,
@@ -141,8 +137,8 @@ class BpkMobileScrollContainer extends Component<Props, State> {
       return;
     }
     const computedHeight = computeScrollBarAwareHeight(
-      this.scrollerEl,
       this.innerEl,
+      this.scrollerEl,
     );
 
     if (!computedHeight) {
@@ -151,6 +147,10 @@ class BpkMobileScrollContainer extends Component<Props, State> {
 
     this.setState({ computedHeight });
   };
+
+  innerEl: HTMLElement | null = null;
+
+  scrollerEl: HTMLElement | null = null;
 
   render() {
     const classNames = [getClassName('bpk-mobile-scroll-container')];
