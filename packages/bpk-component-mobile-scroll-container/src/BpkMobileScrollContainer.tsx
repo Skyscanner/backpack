@@ -28,8 +28,8 @@ import STYLES from './BpkMobileScrollContainer.module.scss';
 const getClassName = cssModules(STYLES);
 
 const computeScrollBarAwareHeight = (
-  innerEl: HTMLElement | null,
   scrollerEl: HTMLElement | null,
+  innerEl: HTMLElement | null,
 ) => {
   if (!(scrollerEl && innerEl)) {
     return null;
@@ -136,8 +136,8 @@ class BpkMobileScrollContainer extends Component<Props, State> {
       return;
     }
     const computedHeight = computeScrollBarAwareHeight(
-      this.innerEl,
       this.scrollerEl,
+      this.innerEl,
     );
 
     if (!computedHeight) {
