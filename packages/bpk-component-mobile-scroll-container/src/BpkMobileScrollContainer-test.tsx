@@ -101,9 +101,9 @@ describe('BpkMobileScrollContainer', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with ariaLabel prop set to null', () => {
+  it('should render correctly with ariaLabel prop set to undefined', () => {
     const { asFragment } = render(
-      <BpkMobileScrollContainer ariaLabel={null}>
+      <BpkMobileScrollContainer ariaLabel={undefined}>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
         ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
         dis parturient montes, nascetur ridiculus mus.
