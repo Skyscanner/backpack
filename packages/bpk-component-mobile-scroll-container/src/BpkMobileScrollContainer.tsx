@@ -16,42 +16,40 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode, ElementType, CSSProperties } from 'react';
 import { Component } from 'react';
 
-import debounce from 'lodash.debounce';
 
 import { cssModules, isRTL } from '../../bpk-react-utils';
 
 import STYLES from './BpkMobileScrollContainer.module.scss';
 
+import debounce from 'lodash/debounce';
+
 const getClassName = cssModules(STYLES);
 
 const computeScrollBarAwareHeight = (
-  scrollerEl: ?HTMLElement,
-  innerEl: ?HTMLElement,
-): ?string => {
+  innerEl: HTMLElement | null,
+  scrollerEl: HTMLElement | null,
+) => {
   if (!(scrollerEl && innerEl)) {
     return null;
   }
 
-  const scrollBarVisibile = scrollerEl.offsetHeight - innerEl.offsetHeight > 0;
-  return scrollBarVisibile ? `${innerEl.offsetHeight / 16}rem` : 'auto';
+  const scrollBarVisible = scrollerEl.offsetHeight - innerEl.offsetHeight > 0;
+  return scrollBarVisible ? `${innerEl.offsetHeight / 16}rem` : 'auto';
 };
 
 const computeScrollIndicatorClassName = (
-  scrollerEl: ?HTMLElement,
-  leadingIndicatorClassName: ?string = null,
-  trailingIndicatorClassName: ?string = null,
+  scrollerEl: HTMLElement | null,
+  leadingIndicatorClassName?: string,
+  trailingIndicatorClassName?: string,
 ) => {
   if (!scrollerEl) {
     return null;
   }
 
-  const classNames = [];
+  const classNames: string[] = [];
   const { offsetWidth, scrollLeft, scrollWidth } = scrollerEl;
 
   const rtl = isRTL();
@@ -70,51 +68,34 @@ const computeScrollIndicatorClassName = (
 };
 
 type Props = {
-  children: Node,
-  innerContainerTagName: string,
-  className: ?string,
-  leadingIndicatorClassName: ?string,
-  trailingIndicatorClassName: ?string,
-  scrollerRef: ?Function,
-  style: ?Object,
-  showScrollbar: ?boolean,
+  ariaLabel?: string | null;
+  children: ReactNode;
+  innerContainerTagName?: ElementType;
+  className?: string;
+  leadingIndicatorClassName?: string;
+  trailingIndicatorClassName?: string;
+  scrollerRef?: (el: HTMLElement | null) => void;
+  style?: CSSProperties;
+  showScrollbar?: boolean;
 };
 
 type State = {
-  computedHeight: ?string,
-  scrollIndicatorClassName: ?string,
-};
-
-const propTypes = {
-  ariaLabel: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  scrollerRef: PropTypes.func,
-  innerContainerTagName: PropTypes.string,
-  className: PropTypes.string,
-  leadingIndicatorClassName: PropTypes.string,
-  trailingIndicatorClassName: PropTypes.string,
-  style: PropTypes.object,
-  showScrollbar: PropTypes.bool,
-};
-
-const defaultProps = {
-  ariaLabel: null,
-  scrollerRef: null,
-  innerContainerTagName: 'div',
-  className: null,
-  leadingIndicatorClassName: null,
-  trailingIndicatorClassName: null,
-  style: null,
-  showScrollbar: false,
+  computedHeight: string;
+  scrollIndicatorClassName: string | null;
 };
 
 class BpkMobileScrollContainer extends Component<Props, State> {
-  innerEl: ?HTMLElement;
+  innerEl: HTMLElement | null = null;
 
-  scrollerEl: ?HTMLElement;
+  scrollerEl: HTMLElement | null = null;
 
-  constructor() {
-    super();
+  static defaultProps: Partial<Props> = {
+    innerContainerTagName: 'div',
+    showScrollbar: false,
+  };
+
+  constructor(props: Props) {
+    super(props);
 
     this.state = {
       computedHeight: 'auto',
@@ -168,7 +149,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
       return;
     }
 
-    this.setState(() => ({ computedHeight }));
+    this.setState({ computedHeight });
   };
 
   render() {
@@ -177,7 +158,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
       ariaLabel,
       children,
       className,
-      innerContainerTagName,
+      innerContainerTagName = 'div',
       leadingIndicatorClassName,
       scrollerRef,
       showScrollbar,
@@ -218,7 +199,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
         >
           <InnerContainer
             aria-label={ariaLabel}
-            ref={(el) => {
+            ref={(el: any) => {
               this.innerEl = el;
             }}
             className={getClassName('bpk-mobile-scroll-container__inner')}
@@ -230,12 +211,6 @@ class BpkMobileScrollContainer extends Component<Props, State> {
     );
   }
 }
-BpkMobileScrollContainer.propTypes = {
-  ...propTypes,
-};
-BpkMobileScrollContainer.defaultProps = {
-  ...defaultProps,
-};
 
 export default BpkMobileScrollContainer;
 export { computeScrollBarAwareHeight, computeScrollIndicatorClassName };
