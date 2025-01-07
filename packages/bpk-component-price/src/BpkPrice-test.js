@@ -29,6 +29,7 @@ const trailingText = 'per day';
 let props;
 
 describe.each([
+  [SIZES.xsmall, ALIGNS.left],
   [SIZES.small, ALIGNS.left],
   [SIZES.large, ALIGNS.left],
   [SIZES.small, ALIGNS.right],

@@ -60,3 +60,53 @@ export const getTransformStyles = (transformValue: string) => {
 
 export const isTransitionEndSupported = () =>
   !!(typeof window !== 'undefined' && 'TransitionEvent' in window);
+
+/**
+ * Memoizes a given function to optimize performance by caching its results based on input arguments.
+ *
+ * @template T - The type of the function to be memoized. Must be a function.
+ * @param {T} fn - The function to be memoized.
+ * @returns {T} - The memoized version of the input function. Subsequent calls with the same arguments
+ *                will return the cached result, avoiding redundant computations.
+ *
+ * @example
+ * // Simple usage:
+ * const add = (a: number, b: number) => a + b;
+ * const memoizedAdd = memoize(add);
+ *
+ * console.log(memoizedAdd(1, 2)); // Computes and caches result: 3
+ * console.log(memoizedAdd(1, 2)); // Fetches from cache: 3
+ *
+ * @example
+ * // With a more complex function:
+ * const slowFunction = (num: number) => {
+ *   console.log('Computing...');
+ *   return num * 2;
+ * };
+ * const memoizedSlowFunction = memoize(slowFunction);
+ *
+ * console.log(memoizedSlowFunction(5)); // Logs "Computing...", returns 10
+ * console.log(memoizedSlowFunction(5)); // Fetches from cache: 10
+ *
+ * @remarks
+ * - This implementation uses a `Map` object and `JSON.stringify` to create cache keys.
+ * - Functions with non-primitive or cyclic arguments may not work as expected due to
+ *   `JSON.stringify` limitations.
+ * - The cache is stored in memory and will grow indefinitely unless manually managed or
+ *   the function goes out of scope.
+ */
+export function memoize<T extends (...args: any[]) => any>(fn: T): T {
+  const cache = new Map<string, ReturnType<T>>();
+
+  function memoizedFunction(...args: Parameters<T>): ReturnType<T> {
+    const key = JSON.stringify(args);
+    if (cache.has(key)) {
+      return cache.get(key) as ReturnType<T>;
+    }
+    const result = fn(...args);
+    cache.set(key, result);
+    return result;
+  }
+
+  return memoizedFunction as T;
+}

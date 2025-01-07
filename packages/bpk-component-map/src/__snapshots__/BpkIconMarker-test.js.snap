@@ -12,6 +12,7 @@ exports[`BpkIconMarker should render correctly with a "buttonProps" attribute 1`
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon-marker-background"
         height="32"
         viewBox="0 0 26 32"
@@ -45,6 +46,7 @@ exports[`BpkIconMarker should render correctly with a "className" attribute 1`] 
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon-marker-background"
         height="32"
         viewBox="0 0 26 32"
@@ -78,6 +80,7 @@ exports[`BpkIconMarker should render correctly with a "selected" attribute 1`] =
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon-marker-background bpk-icon-marker-background--selected"
         height="40"
         viewBox="0 0 32 40"
@@ -111,6 +114,7 @@ exports[`BpkIconMarker should render properly 1`] = `
       type="button"
     >
       <svg
+        aria-hidden="true"
         class="bpk-icon-marker-background"
         height="32"
         viewBox="0 0 26 32"

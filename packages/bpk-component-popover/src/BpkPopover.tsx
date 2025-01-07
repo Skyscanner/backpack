@@ -37,6 +37,8 @@ import {
   arrow,
   FloatingArrow,
   shift,
+  useHover,
+  safePolygon,
 } from '@floating-ui/react';
 
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
@@ -98,6 +100,7 @@ export type Props = CloseButtonProps & {
   className?: string | null;
   closeButtonIcon?: boolean;
   closeButtonProps?: Object;
+  hoverable?: boolean;
   isOpen?: boolean;
   labelAsTitle?: boolean;
   padded?: boolean;
@@ -107,7 +110,7 @@ export type Props = CloseButtonProps & {
   closeButtonLabel?: string;
   actionText?: string;
   onAction?: () => void;
-  renderTarget?: () => HTMLElement | HTMLElement | null;
+  renderTarget?: () => HTMLElement | HTMLElement | undefined;
 };
 
 const BpkPopover = ({
@@ -118,6 +121,7 @@ const BpkPopover = ({
   closeButtonLabel,
   closeButtonProps = {},
   closeButtonText,
+  hoverable = false,
   id,
   isOpen = false,
   label,
@@ -126,7 +130,7 @@ const BpkPopover = ({
   onClose,
   padded = true,
   placement = 'bottom',
-  renderTarget = () => null,
+  renderTarget = () => undefined,
   showArrow = true,
   target,
   ...rest
@@ -155,12 +159,16 @@ const BpkPopover = ({
 
   const click = useClick(context);
   const dismiss = useDismiss(context);
+  const hover = useHover(context, {
+    enabled: hoverable,
+    mouseOnly: true,
+    handleClose: safePolygon({
+      requireIntent: false,
+    }),
+  });
 
   // Merge all the interactions into prop getters
-  const { getFloatingProps, getReferenceProps } = useInteractions([
-    click,
-    dismiss,
-  ]);
+  const { getFloatingProps, getReferenceProps } = useInteractions([click, dismiss, hover]);
 
   const targetClick = target?.props?.onClick;
   const referenceProps = targetClick ? getReferenceProps({
