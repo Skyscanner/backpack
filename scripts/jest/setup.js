@@ -34,5 +34,3 @@ jest.doMock('react', () => {
 });
 global.TextEncoder = TextEncoder;
 registerRequireContextHook();
-
-jest.mock('../../packages/bpk-react-utils/src/deferCallback');
