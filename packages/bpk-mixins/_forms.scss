@@ -231,6 +231,7 @@
   height: $bpk-input-large-height;
   padding-right: bpk-spacing-base();
   padding-left: bpk-spacing-base();
+  border-radius: $bpk-input-large-border-radius;
 
   &.bpk-input--valid,
   &.bpk-input--invalid,
@@ -402,6 +403,7 @@
   height: $bpk-input-large-height;
   padding: bpk-spacing-md() bpk-spacing-base();
   padding-right: bpk-spacing-xxl();
+  border-radius: $bpk-select-large-border-radius;
   background: $bpk-surface-default-day
     url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjMTYxNjE2ICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTE2LjUzNyA4LjI1SDcuNDYzYTEuMzU4IDEuMzU4IDAgMCAwLTEuMTEgMi4yNTFsNC4zNTQgNC43N2ExLjUzIDEuNTMgMCAwIDAgMi4xODQuMDRsNC43MTgtNC43N2ExLjM1NyAxLjM1NyAwIDAgMC0xLjA3Mi0yLjI5MXoiLz48L3N2Zz4=')
     no-repeat right bpk-spacing-base() center;
@@ -1049,6 +1051,7 @@
   min-height: 6 * bpk-spacing-base();
   padding-right: bpk-spacing-base();
   padding-left: bpk-spacing-base();
+  border-radius: $bpk-input-large-border-radius;
 
   &.bpk-textarea--invalid {
     padding-right: bpk-spacing-xxl();

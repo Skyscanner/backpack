@@ -33,13 +33,13 @@ import {
   endOfMonth,
 } from './date-utils';
 
+import type { DateProps } from './BpkCalendarGrid';
 import type {
   DateModifiers,
   SelectionConfiguration,
   SelectionConfigurationSingle,
   SelectionConfigurationRange,
 } from './custom-proptypes';
-
 
 import STYLES from './BpkCalendarWeek.module.scss';
 
@@ -103,7 +103,6 @@ function getSelectedDate(
  * Gets the correct selection type for the current date
  * @param {Date} date the current date of the calendar
  * @param {Object} selectionConfiguration the current selection configuration
- * @param {Function} formatDateFull function to format dates
  * @param {Date} month the current month of the calendar
  * @param {Number} weekStartsOn index of the first day of the week
  * @param {Boolean} ignoreOutsideDate ignore date outside current month
@@ -112,7 +111,6 @@ function getSelectedDate(
 function getSelectionType(
   date: Date,
   selectionConfiguration: SelectionConfiguration,
-  formatDateFull: (d: Date) => Date | string,
   month: Date,
   weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6,
   ignoreOutsideDate: boolean,
@@ -130,8 +128,7 @@ function getSelectionType(
   if (
     selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single &&
     selectionConfiguration.date &&
-    (selectionConfiguration.date === formatDateFull(date) ||
-      formatDateFull(selectionConfiguration.date) === formatDateFull(date))
+    isSameDay(date, selectionConfiguration.date)
   ) {
     return SELECTION_TYPES.single;
   }
@@ -171,10 +168,10 @@ function getSelectionType(
     ) {
       return SELECTION_TYPES.middle;
     }
-    if (startDate && formatDateFull(startDate) === formatDateFull(date)) {
+    if (sameStartDay) {
       return SELECTION_TYPES.start;
     }
-    if (endDate && formatDateFull(endDate) === formatDateFull(date)) {
+    if (sameEndDay) {
       return SELECTION_TYPES.end;
     }
   }
@@ -196,11 +193,11 @@ const singleDateHandler = (props: Props, nextProps: Props) => {
 
   if (
     ((nextSelectConfig.date &&
-      isSameWeek(nextSelectConfig.date, nextProps.dates[0], {
+      isSameWeek(nextSelectConfig.date, nextProps.dates[0].val, {
         weekStartsOn: nextProps.weekStartsOn,
       })) ||
       (currentSelectConfig.date &&
-        isSameWeek(currentSelectConfig.date, props.dates[0], {
+        isSameWeek(currentSelectConfig.date, props.dates[0].val, {
           weekStartsOn: props.weekStartsOn,
         }))) &&
     currentSelectConfig.date !== nextSelectConfig.date
@@ -237,8 +234,7 @@ const rangeDateHandler = (props: Props, nextProps: Props) => {
 export type Props = DefaultProps & {
   DateComponent: ElementType;
   dateModifiers: DateModifiers;
-  dates: Date[];
-  formatDateFull: (date: Date) => Date | string;
+  dates: DateProps[];
   preventKeyboardFocus: boolean;
   markToday: boolean;
   markOutsideDays: boolean;
@@ -283,7 +279,6 @@ class BpkCalendarWeek extends Component<Props> {
     const shallowProps = [
       'DateComponent',
       'dateModifiers',
-      'formatDateFull',
       'isKeyboardFocusable',
       'markOutsideDays',
       'markToday',
@@ -305,11 +300,11 @@ class BpkCalendarWeek extends Component<Props> {
     // we'll render, component should update.
     if (
       ((nextProps.focusedDate &&
-        isSameWeek(nextProps.focusedDate, nextProps.dates[0], {
+        isSameWeek(nextProps.focusedDate, nextProps.dates[0].val, {
           weekStartsOn: nextProps.weekStartsOn,
         })) ||
         (this.props.focusedDate &&
-          isSameWeek(this.props.focusedDate, this.props.dates[0], {
+          isSameWeek(this.props.focusedDate, this.props.dates[0].val, {
             weekStartsOn: this.props.weekStartsOn,
           }))) &&
       this.props.focusedDate !== nextProps.focusedDate
@@ -363,7 +358,6 @@ class BpkCalendarWeek extends Component<Props> {
       dateModifiers,
       dateProps,
       focusedDate,
-      formatDateFull,
       ignoreOutsideDate,
       isKeyboardFocusable,
       markOutsideDays,
@@ -380,7 +374,7 @@ class BpkCalendarWeek extends Component<Props> {
 
     if (ignoreOutsideDate) {
       const daysOutside = this.props.dates.map((date) =>
-        isSameMonth(date, month),
+        isSameMonth(date.val, month),
       );
 
       const shouldRender = daysOutside.reduce(or);
@@ -395,13 +389,12 @@ class BpkCalendarWeek extends Component<Props> {
         {this.props.dates.map((date) => {
           const isBlocked =
             minDate && maxDate
-              ? !isWithinRange(date, { start: minDate, end: maxDate })
+              ? !isWithinRange(date.val, { start: minDate, end: maxDate })
               : false;
 
           const dateSelectionType = getSelectionType(
-            date,
+            date.val,
             selectionConfiguration!,
-            formatDateFull,
             month,
             weekStartsOn,
             ignoreOutsideDate!,
@@ -410,25 +403,26 @@ class BpkCalendarWeek extends Component<Props> {
           return (
             <DateContainer
               className={cellClassName}
-              isEmptyCell={!isSameMonth(date, month) && ignoreOutsideDate!}
+              isEmptyCell={!isSameMonth(date.val, month) && ignoreOutsideDate!}
               isBlocked={isBlocked}
-              key={date.getDate()}
+              key={date.val.getDate()}
               selectionType={dateSelectionType}
             >
               <DateComponent
-                date={date}
+                date={date.val}
                 modifiers={dateModifiers}
-                aria-label={formatDateFull(date)}
+                aria-label={date.customLabel}
                 onClick={onDateClick}
                 onDateKeyDown={onDateKeyDown}
                 preventKeyboardFocus={preventKeyboardFocus}
                 isKeyboardFocusable={isKeyboardFocusable}
-                isFocused={focusedDate && isSameDay(date, focusedDate)}
-                isSelected={getSelectedDate(date, selectionConfiguration!)}
+                isFocused={focusedDate && isSameDay(date.val, focusedDate)}
+                isSelected={getSelectedDate(date.val, selectionConfiguration!)}
                 isBlocked={isBlocked}
-                isOutside={markOutsideDays && !isSameMonth(date, month)}
-                isToday={markToday && isToday(date)}
+                isOutside={markOutsideDays && !isSameMonth(date.val, month)}
+                isToday={markToday && isToday(date.val)}
                 selectionType={dateSelectionType}
+                isoLabel={date.isoLabel}
                 {...dateProps}
               />
             </DateContainer>
