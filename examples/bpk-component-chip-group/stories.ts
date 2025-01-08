@@ -32,6 +32,7 @@ import {
   AllChipTypesGroup,
   OnContrastChipGroup,
   StateManagement,
+  BpkChipGroupWithChipContent,
 } from './examples';
 
 export default {
@@ -46,6 +47,7 @@ export default {
 export const WrappedChipGroup = BpkChipGroupWrapping;
 export const SingleSelectChipGroup = BpkSingleChipGroupWrapping;
 export const RailChipGroup = BpkChipGroupRail;
+export const ChipGroupWithContent = BpkChipGroupWithChipContent;
 export const StickyChipGroup = BpkChipGroupSticky;
 export const OnContrast = OnContrastChipGroup;
 export const OnDark = OnDarkChipGroup;

@@ -57,6 +57,7 @@ export type ChipComponentType = (typeof CHIP_COMPONENT)[keyof typeof CHIP_COMPON
 
 export type SingleSelectChipItem = {
   text: string;
+  chipContent?: ReactNode;
   accessibilityLabel?: string;
   leadingAccessoryView?: ReactNode;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
@@ -101,6 +102,7 @@ const Chip = (
     }) => {
   const {
     accessibilityLabel,
+    chipContent,
     component = CHIP_COMPONENT.selectable,
     hidden = false,
     leadingAccessoryView = null,
@@ -122,6 +124,7 @@ const Chip = (
       }}
       role={ariaMultiselectable ? 'checkbox' : 'radio'}
       leadingAccessoryView={leadingAccessoryView}
+      chipContent={chipContent}
       {...rest}
     >
       {text}

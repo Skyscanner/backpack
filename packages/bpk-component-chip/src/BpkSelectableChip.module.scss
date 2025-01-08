@@ -20,4 +20,8 @@
 
 .bpk-chip {
   @include chips.bpk-chip;
+
+  &--chip-content {
+    height: auto;
+  }
 }

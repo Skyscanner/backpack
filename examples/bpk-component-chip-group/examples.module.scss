@@ -44,4 +44,11 @@
       margin-bottom: bpk-spacing-md();
     }
   }
+
+  &__chip-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-block: bpk-spacing-md();
+  }
 }

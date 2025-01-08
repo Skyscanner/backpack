@@ -33,11 +33,13 @@ export interface Props extends CommonProps {
   dismissible?: boolean;
   role?: string;
   trailingAccessoryView?: ReactNode;
+  chipContent?: ReactNode;
 }
 
 const BpkSelectableChip = ({
   accessibilityLabel,
   children,
+  chipContent,
   className,
   disabled = false,
   dismissible = false,
@@ -56,6 +58,7 @@ const BpkSelectableChip = ({
     !children && 'bpk-chip--icon-only',
     !disabled && selected && `bpk-chip--${type}-selected`,
     dismissible && `bpk-chip--${type}-dismissible`,
+    chipContent && 'bpk-chip--chip-content',
     className
   );
 
@@ -79,7 +82,7 @@ const BpkSelectableChip = ({
           {leadingAccessoryView}
         </span>
       )}
-      <BpkText textStyle={TEXT_STYLES.footnote}>{children}</BpkText>
+      {chipContent || (<BpkText textStyle={TEXT_STYLES.footnote}>{children}</BpkText>)}
       {trailingAccessoryView && (
         <span className={getClassName('bpk-chip__trailing-accessory-view')}>
           {trailingAccessoryView}

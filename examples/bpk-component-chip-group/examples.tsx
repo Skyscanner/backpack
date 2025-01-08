@@ -149,6 +149,24 @@ export const BpkChipGroupRail = () => (
   </div>
 );
 
+export const BpkChipGroupWithChipContent = () => {
+  const chipsWithContent = chips.map((chip, index) => ({
+    ...chip,
+    chipContent: <div className={getClassName('bpk-chip-group-examples__chip-content')}>
+      {chip.text}
+      <BpkText textStyle={TEXT_STYLES.bodyDefault}>{`Content for ${chip.text}`}</BpkText>
+    </div>,
+  }));
+  return (<div>
+    <BpkMultiSelectChipGroupState
+      type={CHIP_GROUP_TYPES.rail}
+      chips={chipsWithContent}
+      ariaLabel='Select cities'
+      leadingNudgerLabel='Scroll back'
+      trailingNudgerLabel='Scroll forward'
+    />
+  </div>);
+};
 
 export const BpkChipGroupSticky = () => {
   const stickyChip = {
@@ -324,6 +342,9 @@ export const MixedExample = () => (
       Rail
     </BpkText>
     <BpkChipGroupRail />
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName='h2'>
+      Rail with chip content</BpkText>
+    <BpkChipGroupWithChipContent />
     <BpkText textStyle={TEXT_STYLES.heading3} tagName='h2'>
       Rail with sticky chip
     </BpkText>
