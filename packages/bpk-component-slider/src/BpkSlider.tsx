@@ -39,7 +39,7 @@ export type Props<T extends number | number[]>  = {
   step?: number;
   onChange: (value: T) => void;
   onAfterChange?: (value: T) => void;
-  value: number[] | number;
+  value: T;
   ariaLabel: string[];
   ariaValuetext?: string[];
   inputProps?:
