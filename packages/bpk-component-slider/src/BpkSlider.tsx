@@ -32,13 +32,13 @@ import STYLES from './BpkSlider.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
+export type Props<T extends number | number[]>  = {
   max: number;
   min: number;
   minDistance?: number;
   step?: number;
-  onChange: (value: number[] | number) => void;
-  onAfterChange?: (value: number[] | number) => void;
+  onChange: (value: T) => void;
+  onAfterChange?: (value: T) => void;
   value: number[] | number;
   ariaLabel: string[];
   ariaValuetext?: string[];
@@ -48,7 +48,7 @@ export type Props = {
   [rest: string]: any;
 };
 
-const BpkSlider = ({
+const BpkSlider = <T extends number | number[]>({
   ariaLabel,
   ariaValuetext,
   inputProps,
@@ -60,17 +60,17 @@ const BpkSlider = ({
   step,
   value,
   ...rest
-}: Props) => {
+}: Props<T>) => {
   const invert = isRTL();
   const currentValue = Array.isArray(value) ? value : [value];
 
   const processSliderValues = (
     sliderValues: number[],
-    callback?: (val: number | number[]) => void,
+    callback?: (val: T) => void,
   ) => {
     const val = sliderValues.length === 1 ? sliderValues[0] : sliderValues;
     if (callback) {
-      callback(val);
+      callback(val as T);
     }
   };
 
