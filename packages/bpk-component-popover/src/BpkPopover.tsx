@@ -111,6 +111,7 @@ export type Props = CloseButtonProps & {
   actionText?: string;
   onAction?: () => void;
   renderTarget?: () => HTMLElement | HTMLElement | undefined;
+  [rest: string]: any;
 };
 
 const BpkPopover = ({
