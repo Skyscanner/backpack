@@ -3,7 +3,6 @@
 exports[`BpkCalendarDate should pass props through to button 1`] = `
 <DocumentFragment>
   <button
-    aria-hidden="false"
     aria-label="Nothing happened on this day in 2010"
     aria-pressed="false"
     class="bpk-calendar-date"
@@ -22,7 +21,6 @@ exports[`BpkCalendarDate should pass props through to button 1`] = `
 exports[`BpkCalendarDate should render a blocked button as disabled with aria-hidden applied 1`] = `
 <DocumentFragment>
   <button
-    aria-hidden="true"
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date bpk-calendar-date--blocked"
@@ -42,7 +40,6 @@ exports[`BpkCalendarDate should render a blocked button as disabled with aria-hi
 exports[`BpkCalendarDate should render a disabled button 1`] = `
 <DocumentFragment>
   <button
-    aria-hidden="true"
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date bpk-calendar-date--blocked"
@@ -62,7 +59,6 @@ exports[`BpkCalendarDate should render a disabled button 1`] = `
 exports[`BpkCalendarDate should render a focused button with tabIndex 1`] = `
 <DocumentFragment>
   <button
-    aria-hidden="false"
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date bpk-calendar-date--focused"
@@ -81,7 +77,6 @@ exports[`BpkCalendarDate should render a focused button with tabIndex 1`] = `
 exports[`BpkCalendarDate should render correctly 1`] = `
 <DocumentFragment>
   <button
-    aria-hidden="false"
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date"
@@ -100,7 +95,6 @@ exports[`BpkCalendarDate should render correctly 1`] = `
 exports[`BpkCalendarDate should render with a click and keyDown handler 1`] = `
 <DocumentFragment>
   <button
-    aria-hidden="false"
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date"
@@ -119,7 +113,6 @@ exports[`BpkCalendarDate should render with a click and keyDown handler 1`] = `
 exports[`BpkCalendarDate should set a custom class 1`] = `
 <DocumentFragment>
   <button
-    aria-hidden="false"
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date userlandClassName"

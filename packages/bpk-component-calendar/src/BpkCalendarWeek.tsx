@@ -385,7 +385,7 @@ class BpkCalendarWeek extends Component<Props> {
     }
 
     return (
-      <div className={getClassName('bpk-calendar-week')}>
+      <div className={getClassName('bpk-calendar-week')} role="row">
         {this.props.dates.map((date) => {
           const isBlocked =
             minDate && maxDate
@@ -404,7 +404,6 @@ class BpkCalendarWeek extends Component<Props> {
             <DateContainer
               className={cellClassName}
               isEmptyCell={!isSameMonth(date.val, month) && ignoreOutsideDate!}
-              isBlocked={isBlocked}
               key={date.val.getDate()}
               selectionType={dateSelectionType}
             >
@@ -436,7 +435,6 @@ class BpkCalendarWeek extends Component<Props> {
 type DateContainerProps = {
   children: ReactElement;
   className?: string | null;
-  isBlocked: boolean;
   isEmptyCell: boolean;
   selectionType: string;
 };
@@ -446,7 +444,6 @@ type DateContainerProps = {
 const DateContainer = ({
   children,
   className = null,
-  isBlocked,
   isEmptyCell,
   selectionType,
 }: DateContainerProps) => {
@@ -457,7 +454,7 @@ const DateContainer = ({
   );
 
   return (
-    <div aria-hidden={isEmptyCell || isBlocked} className={classNames}>
+    <div aria-hidden={isEmptyCell} className={classNames} role="gridcell">
       {children}
     </div>
   );
