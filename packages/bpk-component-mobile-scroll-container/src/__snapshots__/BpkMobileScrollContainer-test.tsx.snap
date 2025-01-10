@@ -96,7 +96,7 @@ exports[`BpkMobileScrollContainer should render correctly with ariaLabel prop 1`
 </DocumentFragment>
 `;
 
-exports[`BpkMobileScrollContainer should render correctly with ariaLabel prop set to null 1`] = `
+exports[`BpkMobileScrollContainer should render correctly with ariaLabel prop set to undefined 1`] = `
 <DocumentFragment>
   <div
     class="bpk-mobile-scroll-container"
