@@ -46,7 +46,7 @@ console.log('Crunching import paths...');
 // eslint-disable-next-line no-console
 console.log('');
 
-const findReplaces = [{ find: '.module.scss', replace: '.module.css' }];
+const findReplaces = [{ find: '.scss', replace: '.css' }];
 
 const jsFiles = execSync(
   'find dist -name "*.js" -o -name "*.jsx" -name "*.ts" -o -name "*.tsx" | grep -v node_modules',

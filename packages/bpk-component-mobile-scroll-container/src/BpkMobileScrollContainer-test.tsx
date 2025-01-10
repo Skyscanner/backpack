@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 
 import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
@@ -28,9 +26,9 @@ import BpkMobileScrollContainer, {
 } from './BpkMobileScrollContainer';
 
 const makeMockScroller = (
-  scrollLeft,
-  scrollWidth,
-  offsetWidth,
+  scrollLeft:number,
+  scrollWidth:number,
+  offsetWidth:number,
   offsetHeight = 0,
 ): HTMLElement => {
   const element = document.createElement('div');
@@ -41,7 +39,7 @@ const makeMockScroller = (
   return element;
 };
 
-const makeMockInnerEl = (offsetHeight): HTMLElement => {
+const makeMockInnerEl = (offsetHeight: number): HTMLElement => {
   const element = document.createElement('div');
   Object.defineProperty(element, 'offsetHeight', { value: offsetHeight });
   return element;
@@ -103,9 +101,9 @@ describe('BpkMobileScrollContainer', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with ariaLabel prop set to null', () => {
+  it('should render correctly with ariaLabel prop set to undefined', () => {
     const { asFragment } = render(
-      <BpkMobileScrollContainer ariaLabel={null}>
+      <BpkMobileScrollContainer ariaLabel={undefined}>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
         ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
         dis parturient montes, nascetur ridiculus mus.
