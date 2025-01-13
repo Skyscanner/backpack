@@ -20,7 +20,6 @@ import type { ElementType } from 'react';
 import { Component } from 'react';
 
 import { cssModules, isDeviceIos } from '../../bpk-react-utils';
-import deferCallback from '../../bpk-react-utils/src/deferCallback';
 
 import { addCalendarGridTransition } from './BpkCalendarGridTransition';
 import BpkCalendarWeek from './BpkCalendarWeek';
@@ -126,16 +125,13 @@ class BpkCalendarGrid extends Component<Props, State> {
   }
 
   componentDidMount(): void {
-    // Defer expensive date formatting until after render to improve INP.
-    deferCallback(() =>
-      this.setState({
-        calendarMonthWeeks: getCalendar(
-          this.props.month,
-          this.props.weekStartsOn,
-          this.props.formatDateFull,
-        ),
-      }),
-    );
+    this.setState({
+      calendarMonthWeeks: getCalendar(
+        this.props.month,
+        this.props.weekStartsOn,
+        this.props.formatDateFull,
+      ),
+    });
   }
 
   UNSAFE_componentWillReceiveProps(nextProps: Props) {
@@ -181,8 +177,8 @@ class BpkCalendarGrid extends Component<Props, State> {
     const classNames = getClassName('bpk-calendar-grid', className);
 
     return (
-      <div className={classNames} aria-hidden={!isKeyboardFocusable}>
-        <div>
+      <div className={classNames} aria-hidden={!isKeyboardFocusable} role="grid" >
+        <div role="rowgroup">
           {calendarMonthWeeks.map((dates) => (
             <BpkCalendarWeek
               key={dates[0].isoLabel}
