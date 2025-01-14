@@ -24,8 +24,8 @@
   "dependencies": {
     "@floating-ui/react": "^0.26.12",
     "@popperjs/core": "^2.11.8",
-    "@radix-ui/react-compose-refs": "^1.1.0",
-    "@radix-ui/react-slider": "^1.1.2",
+    "@radix-ui/react-compose-refs": "^1.1.1",
+    "@radix-ui/react-slider": "^1.2.2",
     "@react-google-maps/api": "^2.19.3",
     "@skyscanner/bpk-foundations-web": "^19.1.0",
     "@skyscanner/bpk-svgs": "^20.0.0",
