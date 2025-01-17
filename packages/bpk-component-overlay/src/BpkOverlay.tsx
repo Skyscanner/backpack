@@ -41,6 +41,7 @@ export const OVERLAY_TYPES = {
   rightMedium: 'rightMedium',
   rightHigh: 'rightHigh',
   vignette: 'vignette',
+  videoOverlay: 'videoOverlay',
   off: 'off',
 } as const;
 
@@ -61,6 +62,7 @@ const overlayTypeClassSuffixes = {
   [OVERLAY_TYPES.rightMedium]: 'right-medium',
   [OVERLAY_TYPES.rightHigh]: 'right-high',
   [OVERLAY_TYPES.vignette]: 'vignette',
+  [OVERLAY_TYPES.videoOverlay]: 'video-overlay',
   [OVERLAY_TYPES.off]: 'off',
 } as const;
 

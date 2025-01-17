@@ -159,5 +159,15 @@
     &--vignette {
       box-shadow: inset 0 0 50px rgba(tokens.$bpk-text-primary-day, 0.12);
     }
+
+    &--video-overlay {
+      background: linear-gradient(
+        180deg,
+        rgba(tokens.$bpk-text-primary-day, 0.45) 0%,
+        rgba(tokens.$bpk-text-primary-day, 0) 40%,
+        rgba(tokens.$bpk-text-primary-day, 0) 60%,
+        rgba(tokens.$bpk-text-primary-day, 0.9) 100%
+      );
+    }
   }
 }

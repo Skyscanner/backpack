@@ -24,6 +24,7 @@ import {
   BottomExamples,
   LeftExamples,
   RightExamples,
+  VideoOverlayExample,
   VignetteExample,
   WithForegroundContentExample,
   MixedExample,
@@ -41,6 +42,7 @@ export const Bottom = BottomExamples;
 export const Left = LeftExamples;
 export const Right = RightExamples;
 export const Vignette = VignetteExample;
+export const VideoOverlay = VideoOverlayExample;
 
 export const WithForegroundContent = WithForegroundContentExample;
 
@@ -48,6 +50,6 @@ export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
   render: VisualTest,
   args: {
-    zoomEnabled: true
-  }
-}
+    zoomEnabled: true,
+  },
+};

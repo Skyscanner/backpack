@@ -29,6 +29,8 @@ import STYLES from './examples.module.scss';
 
 const IMAGE_SRC =
   'https://content.skyscnr.com/m/1c8c6338a92a7a94/original/matt-hardy-6ArTTluciuA-unsplash.jpg';
+const VIDEO_IMG_SRC =
+  'https://content.skyscnr.com/m/ecf210e9214ce0/original/37866_PH_20211029_001_story.jpg';
 
 const getClassName = cssModules(STYLES);
 
@@ -198,6 +200,22 @@ const VignetteExample = () => {
   );
 };
 
+const VideoOverlayExample = () => {
+  const overlayType = OVERLAY_TYPES.videoOverlay;
+  return (
+    <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+      <BpkOverlay overlayType={overlayType}>
+        <BpkImage src={VIDEO_IMG_SRC} altText="Mountains" aspectRatio={0.6} />
+      </BpkOverlay>
+      <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+        <BpkText textStyle={TEXT_STYLES.xl}>
+          {OverlayName({ overlayType })}
+        </BpkText>
+      </div>
+    </div>
+  );
+};
+
 const WithForegroundContentExample = () => (
   <BpkOverlay
     overlayType={OVERLAY_TYPES.solidHigh}
@@ -240,6 +258,7 @@ export {
   LeftExamples,
   RightExamples,
   VignetteExample,
+  VideoOverlayExample,
   WithForegroundContentExample,
   MixedExample,
 };
