@@ -274,6 +274,21 @@ exports[`BpkOverlay should render correctly with overlayType={topMedium} 1`] = `
 </DocumentFragment>
 `;
 
+exports[`BpkOverlay should render correctly with overlayType={videoBottom} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--video-bottom"
+    />
+  </div>
+</DocumentFragment>
+`;
+
 exports[`BpkOverlay should render correctly with overlayType={videoOverlay} 1`] = `
 <DocumentFragment>
   <div
@@ -284,6 +299,21 @@ exports[`BpkOverlay should render correctly with overlayType={videoOverlay} 1`] 
     </span>
     <div
       class="bpk-overlay__overlay bpk-overlay__overlay--video-overlay"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkOverlay should render correctly with overlayType={videoTop} 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-overlay__wrapper"
+  >
+    <span>
+      Backpack
+    </span>
+    <div
+      class="bpk-overlay__overlay bpk-overlay__overlay--video-top"
     />
   </div>
 </DocumentFragment>
