@@ -30,7 +30,7 @@ import STYLES from './examples.module.scss';
 const IMAGE_SRC =
   'https://content.skyscnr.com/m/1c8c6338a92a7a94/original/matt-hardy-6ArTTluciuA-unsplash.jpg';
 const VIDEO_IMG_SRC =
-  'https://content.skyscnr.com/m/ecf210e9214ce0/original/37866_PH_20211029_001_story.jpg';
+  'https://content.skyscnr.com/m/2af45124245b6759/original/SOCIAL9.png';
 
 const getClassName = cssModules(STYLES);
 
@@ -200,17 +200,42 @@ const VignetteExample = () => {
   );
 };
 
-const VideoOverlayExample = () => {
-  const overlayType = OVERLAY_TYPES.videoOverlay;
+const VideoOverlayExamples = () => {
+  const overlayTypeTop = OVERLAY_TYPES.videoTop;
+  const overlayTypeBottom = OVERLAY_TYPES.videoBottom;
   return (
-    <div className={getClassName('bpk-overlay-stories__overlay-story')}>
-      <BpkOverlay overlayType={overlayType}>
-        <BpkImage src={VIDEO_IMG_SRC} altText="Mountains" aspectRatio={0.6} />
-      </BpkOverlay>
-      <div className={getClassName('bpk-overlay-stories__overlay--name')}>
-        <BpkText textStyle={TEXT_STYLES.xl}>
-          {OverlayName({ overlayType })}
-        </BpkText>
+    <div className={getClassName('bpk-overlay-stories')}>
+      {[overlayTypeTop, overlayTypeBottom].map((overlayType) => (
+        <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+          <BpkOverlay overlayType={overlayType}>
+            <BpkImage
+              src={VIDEO_IMG_SRC}
+              altText="Sail boat"
+              aspectRatio={0.6}
+            />
+          </BpkOverlay>
+          <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+            <BpkText textStyle={TEXT_STYLES.xl}>
+              {OverlayName({ overlayType })}
+            </BpkText>
+          </div>
+        </div>
+      ))}
+      <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+        <BpkOverlay overlayType={overlayTypeTop}>
+          <BpkOverlay overlayType={overlayTypeBottom}>
+            <BpkImage
+              src={VIDEO_IMG_SRC}
+              altText="Sail boat"
+              aspectRatio={0.6}
+            />
+          </BpkOverlay>
+        </BpkOverlay>
+        <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+          <BpkText textStyle={TEXT_STYLES.xl}>
+            {overlayTypeTop} & {overlayTypeBottom}
+          </BpkText>
+        </div>
       </div>
     </div>
   );
@@ -258,7 +283,7 @@ export {
   LeftExamples,
   RightExamples,
   VignetteExample,
-  VideoOverlayExample,
+  VideoOverlayExamples,
   WithForegroundContentExample,
   MixedExample,
 };
