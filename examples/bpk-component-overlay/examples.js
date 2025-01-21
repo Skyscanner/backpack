@@ -211,7 +211,7 @@ const VideoOverlayExamples = () => {
             <BpkImage
               src={VIDEO_IMG_SRC}
               altText="Sail boat"
-              aspectRatio={0.6}
+              aspectRatio={360 / 640}
             />
           </BpkOverlay>
           <div className={getClassName('bpk-overlay-stories__overlay--name')}>
@@ -227,7 +227,7 @@ const VideoOverlayExamples = () => {
             <BpkImage
               src={VIDEO_IMG_SRC}
               altText="Sail boat"
-              aspectRatio={0.6}
+              aspectRatio={360 / 640}
             />
           </BpkOverlay>
         </BpkOverlay>
