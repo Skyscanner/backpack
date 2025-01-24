@@ -123,8 +123,5 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'base.css',
     }),
-    new MiniCssExtractPlugin({
-      filename: 'index.css',
-    }),
   ],
 };
