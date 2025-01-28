@@ -17,8 +17,12 @@
  */
 
 import type { ReactNode } from 'react';
+import { useState } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import BpkIconChevronDown from '../../bpk-component-icon/sm/chevron-down';
+import BpkIconChevronUp from '../../bpk-component-icon/sm/chevron-up';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
+import { cssModules, Portal } from '../../bpk-react-utils';
 
 import { CardContext } from './CardContext';
 
@@ -31,15 +35,85 @@ type Props = {
   className?: string | null;
   backgroundColor: string;
   header: ReactNode;
+  body?: {
+    text: string;
+    link?: string;
+    linkText?: string;
+    moreInfoBtnColor?: string;
+  };
 };
 
 const BpkCardWrapper = ({
   backgroundColor,
+  body,
   card,
   className = null,
   header,
 }: Props) => {
   const classNames = getClassName('bpk-card-wrapper', className);
+
+  const [isBodyOpen, setIsBodyOpen] = useState(false);
+  const toggleExpand = () => setIsBodyOpen(!isBodyOpen);
+  const toggleLabel = isBodyOpen ? 'Less info' : 'More info';
+
+  const moreInfoToggle = (
+    <div
+      style={{
+        fill: body?.moreInfoBtnColor,
+        color: body?.moreInfoBtnColor,
+      }}
+      className={getClassName('bpk-card-wrapper--body--header--toggleLabel')}
+    >
+      <div
+        className={getClassName(
+          'bpk-card-wrapper--body--header--toggleLabel--text',
+        )}
+      >
+        <BpkText textStyle={TEXT_STYLES.caption}>{toggleLabel}</BpkText>
+      </div>
+      {isBodyOpen ? <BpkIconChevronUp /> : <BpkIconChevronDown />}
+    </div>
+  );
+
+  const headerWithBodyDiv = body && (
+    <div
+      className={getClassName(
+        'bpk-card-wrapper--header',
+        'bpk-card-wrapper--body--header',
+      )}
+    >
+      <div className={getClassName('bpk-card-wrapper--body--header--content')}>
+        {header}
+      </div>
+      <div>
+        <button
+          type="button"
+          onClick={toggleExpand}
+          className={getClassName('bpk-card-wrapper--body--header--button')}
+        >
+          {moreInfoToggle}
+        </button>
+        <Portal
+          isOpen={isBodyOpen}
+          renderTarget={document.getElementById('body-header')}
+        >
+          <div className={getClassName('bpk-card-wrapper--body')}>
+            <BpkText textStyle={TEXT_STYLES.caption}>{body.text}</BpkText>
+            {body.link && body.linkText && (
+              <a
+                href={body.link}
+                className={getClassName('bpk-card-wrapper--body--link-text')}
+              >
+                <BpkText textStyle={TEXT_STYLES.caption}>
+                  {body.linkText}
+                </BpkText>
+              </a>
+            )}
+          </div>
+        </Portal>
+      </div>
+    </div>
+  );
 
   return (
     <CardContext.Provider value={{ elevated: false }}>
@@ -50,8 +124,26 @@ const BpkCardWrapper = ({
           '--background-color': backgroundColor,
         }}
       >
-        <div className={getClassName('bpk-card-wrapper--header')}>{header}</div>
-        <div className={getClassName('bpk-card-wrapper--content')}>{card}</div>
+        {body ? (
+          <div
+            className={getClassName('bpk-card-wrapper--body--header-container')}
+            id="body-header"
+          >
+            {headerWithBodyDiv}
+          </div>
+        ) : (
+          <div className={getClassName('bpk-card-wrapper--header')}>
+            {header}
+          </div>
+        )}
+        <div
+          className={getClassName(
+            'bpk-card-wrapper--content',
+            body && isBodyOpen && 'bpk-card-wrapper--content--body-open',
+          )}
+        >
+          {card}
+        </div>
       </div>
     </CardContext.Provider>
   );

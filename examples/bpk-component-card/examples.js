@@ -50,6 +50,24 @@ const headerContent = (
     </BpkText>
   </div>
 );
+const adHeaderContent = (
+  <div className={getClassName('bpk-card-examples__ad-header')}>
+    <img
+      className={getClassName('bpk-card-examples__ad-header--logo')}
+      src="https://content.skyscnr.com/m/3f4dadbd41da8235/original/Skyland_White_172x96.png"
+      alt=""
+      aria-hidden
+    />
+    <div className={getClassName('bpk-card-examples__ad-header--title')}>
+      <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
+        Wrapper title
+      </BpkText>
+      <BpkText tagName="span" textStyle={TEXT_STYLES.caption}>
+        Lorem ipsum dolor sit amet
+      </BpkText>
+    </div>
+  </div>
+);
 const longContent = (
   <Fragment>
     <BpkText
@@ -178,6 +196,27 @@ const WithClassNameWrapperExample = () => (
   />
 );
 
+const WithBodyCardWrapperExample = () => (
+  <BpkCardWrapper
+    backgroundColor={coreAccentDay}
+    body={{
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.',
+      link: 'https://www.skyscanner.es/',
+      linkText: 'Click here',
+      moreInfoBtnColor: 'white',
+    }}
+    card={
+      <BpkCard
+        atomic={false}
+        onClick={() => window.open('https://www.skyscanner.net/')}
+      >
+        {longContent}
+      </BpkCard>
+    }
+    header={adHeaderContent}
+  />
+);
+
 const MixedExample = () => (
   <div>
     <DefaultExample />
@@ -211,5 +250,6 @@ export {
   CardWrapperExample,
   DividedCardWrapperExample,
   WithClassNameWrapperExample,
+  WithBodyCardWrapperExample,
   MixedExample,
 };

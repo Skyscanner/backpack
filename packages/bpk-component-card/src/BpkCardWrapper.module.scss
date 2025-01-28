@@ -20,6 +20,7 @@
 @use '../../unstable__bpk-mixins/borders';
 @use '../../unstable__bpk-mixins/cards';
 @use '../../unstable__bpk-mixins/radii';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-card-wrapper {
   @include cards.bpk-card;
@@ -61,12 +62,63 @@
       right: 0;
       transform: rotate(-45deg);
     }
+
+    &--body-open {
+      &::before,
+      &::after {
+        box-shadow: none;
+      }
+    }
   }
 
   &:has(.bpk-card-wrapper--header:active) {
     &::after {
       box-shadow: tokens.$bpk-box-shadow-lg;
       opacity: 1;
+    }
+  }
+
+  &--body {
+    display: flex;
+    padding: tokens.bpk-spacing-base();
+    flex-direction: column;
+    background-color: tokens.$bpk-private-info-banner-default-day;
+    color: tokens.$bpk-text-on-light-day;
+    cursor: default;
+
+    &--header-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      &--button {
+        cursor: pointer;
+        all: unset;
+      }
+
+      &--toggleLabel {
+        display: flex;
+        margin: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
+        align-items: center;
+
+        &--text {
+          margin-inline-end: tokens.bpk-spacing-md();
+        }
+      }
+    }
+
+    &--link-text {
+      color: tokens.$bpk-private-button-link-normal-foreground-day;
+      text-decoration: none;
+
+      @include utils.bpk-hover {
+        color: tokens.$bpk-private-button-link-pressed-foreground-day;
+      }
     }
   }
 }
