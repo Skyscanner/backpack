@@ -87,35 +87,31 @@ const BpkCardWrapper = ({
       <div className={getClassName('bpk-card-wrapper--body--header--content')}>
         {header}
       </div>
-      <div>
-        <button
-          type="button"
-          onClick={toggleExpand}
-          className={getClassName('bpk-card-wrapper--body--header--button')}
-        >
-          {moreInfoToggle}
-        </button>
-        <Portal
-          isOpen={isBodyOpen}
-          renderTarget={document.getElementById('body-header')}
-        >
-          <div className={getClassName('bpk-card-wrapper--body')}>
-            <BpkText textStyle={TEXT_STYLES.caption}>{body.text}</BpkText>
-            {body.link && body.linkText && (
-              <a
-                href={body.link}
-                className={getClassName('bpk-card-wrapper--body--link-text')}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <BpkText textStyle={TEXT_STYLES.caption}>
-                  {body.linkText}
-                </BpkText>
-              </a>
-            )}
-          </div>
-        </Portal>
-      </div>
+      <button
+        type="button"
+        onClick={toggleExpand}
+        className={getClassName('bpk-card-wrapper--body--header--button')}
+      >
+        {moreInfoToggle}
+      </button>
+      <Portal
+        isOpen={isBodyOpen}
+        renderTarget={document.getElementById('body-header')}
+      >
+        <div className={getClassName('bpk-card-wrapper--body')}>
+          <BpkText textStyle={TEXT_STYLES.caption}>{body.text}</BpkText>
+          {body.link && body.linkText && (
+            <a
+              href={body.link}
+              className={getClassName('bpk-card-wrapper--body--link-text')}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <BpkText textStyle={TEXT_STYLES.caption}>{body.linkText}</BpkText>
+            </a>
+          )}
+        </div>
+      </Portal>
     </div>
   );
 
