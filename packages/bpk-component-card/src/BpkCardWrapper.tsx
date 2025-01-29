@@ -64,11 +64,11 @@ const BpkCardWrapper = ({
         fill: body?.moreInfoBtnColor,
         color: body?.moreInfoBtnColor,
       }}
-      className={getClassName('bpk-card-wrapper--body--header--toggleLabel')}
+      className={getClassName('bpk-card-wrapper--body--header--toggle-label')}
     >
       <div
         className={getClassName(
-          'bpk-card-wrapper--body--header--toggleLabel--text',
+          'bpk-card-wrapper--body--header--toggle-label--text',
         )}
       >
         <BpkText textStyle={TEXT_STYLES.caption}>{toggleLabel}</BpkText>
@@ -87,13 +87,19 @@ const BpkCardWrapper = ({
       <div className={getClassName('bpk-card-wrapper--body--header--content')}>
         {header}
       </div>
-      <button
-        type="button"
-        onClick={toggleExpand}
-        className={getClassName('bpk-card-wrapper--body--header--button')}
+      <div
+        className={getClassName(
+          'bpk-card-wrapper--body--header--button-container',
+        )}
       >
-        {moreInfoToggle}
-      </button>
+        <button
+          type="button"
+          onClick={toggleExpand}
+          className={getClassName('bpk-card-wrapper--body--header--button')}
+        >
+          {moreInfoToggle}
+        </button>
+      </div>
       <Portal
         isOpen={isBodyOpen}
         renderTarget={document.getElementById('body-header')}

@@ -96,8 +96,12 @@
       justify-content: space-between;
       align-items: flex-end;
 
-      &--button {
+      &--button-container {
         margin: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
+        cursor: pointer;
+      }
+
+      &--button {
         all: unset;
 
         &:focus {
@@ -105,10 +109,9 @@
         }
       }
 
-      &--toggleLabel {
+      &--toggle-label {
         display: flex;
         align-items: center;
-        cursor: pointer;
 
         &--text {
           margin-inline-end: tokens.bpk-spacing-md();
