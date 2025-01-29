@@ -97,12 +97,16 @@
       align-items: flex-end;
 
       &--button {
+        margin: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
         all: unset;
+
+        &:focus {
+          @include utils.bpk-focus-indicator;
+        }
       }
 
       &--toggleLabel {
         display: flex;
-        margin: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
         align-items: center;
         cursor: pointer;
 
