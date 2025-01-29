@@ -201,6 +201,8 @@ const WithBodyCardWrapperExample = () => (
     backgroundColor={coreAccentDay}
     body={{
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.',
+      openBtnLabel: 'More info',
+      closeBtnLabel: 'Less info',
       link: 'https://www.skyscanner.es/',
       linkText: 'Click here',
       moreInfoBtnColor: 'white',

@@ -37,6 +37,8 @@ type Props = {
   header: ReactNode;
   body?: {
     text: string;
+    openBtnLabel: string;
+    closeBtnLabel: string;
     link?: string;
     linkText?: string;
     moreInfoBtnColor?: string;
@@ -54,7 +56,7 @@ const BpkCardWrapper = ({
 
   const [isBodyOpen, setIsBodyOpen] = useState(false);
   const toggleExpand = () => setIsBodyOpen(!isBodyOpen);
-  const toggleLabel = isBodyOpen ? 'Less info' : 'More info';
+  const toggleLabel = isBodyOpen ? body?.closeBtnLabel : body?.openBtnLabel;
 
   const moreInfoToggle = (
     <div
