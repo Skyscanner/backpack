@@ -97,7 +97,6 @@
       align-items: flex-end;
 
       &--button {
-        cursor: pointer;
         all: unset;
       }
 
@@ -105,6 +104,7 @@
         display: flex;
         margin: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
         align-items: center;
+        cursor: pointer;
 
         &--text {
           margin-inline-end: tokens.bpk-spacing-md();
@@ -113,6 +113,7 @@
     }
 
     &--link-text {
+      width: max-content;
       color: tokens.$bpk-private-button-link-normal-foreground-day;
       text-decoration: none;
 
