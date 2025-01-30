@@ -2,6 +2,9 @@ name: Build
 
 on:
   workflow_call:
+    secrets:
+      GH_APP_PRIVATE_KEY:
+        required: true
 
 defaults:
   run:
@@ -96,11 +99,17 @@ jobs:
           brotli -d ${{env.BUILD_LOGS}}.tar.br
           tar -xf ${{env.BUILD_LOGS}}.tar
 
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ vars.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
       - name: Danger
         run: npm run danger
         if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
 
   PercyTests:
     runs-on: ubuntu-latest
