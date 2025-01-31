@@ -43,7 +43,7 @@ const WithLogoAndCtaTextExampleLight = () => (
     subheadline="Lorem ipsum dolor sit amet"
     logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
     callToAction={{
-      text: 'Sponsored',
+      ctaText: 'Sponsored',
     }}
     backgroundColor="#FFE300"
     variant={VARIANT.onLight}
@@ -58,7 +58,7 @@ const WithBodyTextExampleLight = () => (
     logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
     backgroundColor="#FFE300"
     callToAction={{
-      text: 'Sponsored',
+      ctaText: 'Sponsored',
     }}
     body={{
       text: 'You can change your destination, date of travel, or both, with no change fee. Valid for all new bookings made up to 31 May for travel between now and 31 December 2020.',
@@ -74,7 +74,7 @@ const WithBodyTextAndLinkExampleDark = () => (
     logo="https://content.skyscnr.com/m/3f4dadbd41da8235/original/Skyland_White_172x96.png"
     backgroundColor="#FF6601"
     callToAction={{
-      text: 'Sponsored',
+      ctaText: 'Sponsored',
     }}
     body={{
       text: 'You can change your destination, date of travel, or both, with no change fee. Valid for all new bookings made up to 31 May for travel between now and 31 December 2020.',
@@ -85,10 +85,31 @@ const WithBodyTextAndLinkExampleDark = () => (
   />
 );
 
+const WitCtaTextAndPopoverExampleLight = () => (
+  <BpkInsetBanner
+    title="Lorem ipsum"
+    subheadline="Lorem ipsum dolor sit amet"
+    logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
+    callToAction={{
+      ctaText: 'Sponsored',
+      ctaPopoverMessage: 'This is a popover message',
+      ctaCloseBtnIcon: true,
+      ctaLabelTitle: true,
+      ctaPopverLabel: 'Info',
+      ctaButtonCloseLabel: 'Close',
+      ctaButtonA11yLabel: 'More info',
+    }}
+    backgroundColor="#FFE300"
+    variant={VARIANT.onLight}
+    accessibilityLabel="Sponsored by Skyscanner"
+  />
+);
+
 export {
   DefaultExampleTitleOnly,
   DefaultExampleTitleAndSubheadline,
   WithLogoAndCtaTextExampleLight,
   WithBodyTextExampleLight,
   WithBodyTextAndLinkExampleDark,
+  WitCtaTextAndPopoverExampleLight,
 };
