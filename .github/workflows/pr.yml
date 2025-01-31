@@ -129,10 +129,17 @@ jobs:
         external_repository: backpack/storybook-prs
         publish_branch: main
 
+    - uses: actions/create-github-app-token@v1
+      id: app-token
+      with:
+        app-id: ${{ vars.GH_APP_ID }}
+        private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
     - name: Link to the pull request build
       uses: actions/github-script@v7
       if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
       with:
+        github-token: ${{ steps.app-token.outputs.token }}
         script: |
           github.rest.issues.createComment({
             issue_number: context.issue.number,
