@@ -24,7 +24,7 @@ import {
   WithLogoAndCtaTextExampleLight,
   WithBodyTextExampleLight,
   WithBodyTextAndLinkExampleDark,
-  WitCtaTextAndPopoverExampleLight,
+  WithCtaTextAndPopoverExampleLight,
 } from './examples';
 
 export default {
@@ -39,4 +39,4 @@ export const WithBodyTextLight = WithBodyTextExampleLight;
 export const WithBodyTextAndLinkDark = WithBodyTextAndLinkExampleDark;
 export const VisualTestDark = WithBodyTextAndLinkExampleDark;
 export const VisualTestLight = WithLogoAndCtaTextExampleLight;
-export const WitCtaTextAndPopoverLight = WitCtaTextAndPopoverExampleLight;
+export const WithCtaTextAndPopoverLight = WithCtaTextAndPopoverExampleLight;

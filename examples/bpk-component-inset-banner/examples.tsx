@@ -85,7 +85,7 @@ const WithBodyTextAndLinkExampleDark = () => (
   />
 );
 
-const WitCtaTextAndPopoverExampleLight = () => (
+const WithCtaTextAndPopoverExampleLight = () => (
   <BpkInsetBanner
     title="Lorem ipsum"
     subheadline="Lorem ipsum dolor sit amet"
@@ -111,5 +111,5 @@ export {
   WithLogoAndCtaTextExampleLight,
   WithBodyTextExampleLight,
   WithBodyTextAndLinkExampleDark,
-  WitCtaTextAndPopoverExampleLight,
+  WithCtaTextAndPopoverExampleLight,
 };
