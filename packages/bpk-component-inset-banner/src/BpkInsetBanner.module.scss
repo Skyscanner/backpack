@@ -60,6 +60,11 @@
     flex-direction: column;
   }
 
+  &--cta-text {
+    display: flex;
+    align-items: center;
+  }
+
   &--cta-button {
     all: unset;
 

@@ -157,7 +157,7 @@ const BpkInsetBanner = ({
         {callToAction &&
           !callToAction.ctaPopoverMessage &&
           callToAction.ctaText && (
-            <div className={getClassName('bpk-inset-banner--cta-container')}>
+            <div className={getClassName('bpk-inset-banner--cta-text')}>
               {callToAction?.ctaText && (
                 <BpkText textStyle={TEXT_STYLES.caption}>
                   {callToAction.ctaText}
