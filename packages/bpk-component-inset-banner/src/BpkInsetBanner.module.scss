@@ -63,7 +63,7 @@
   &--cta-button {
     all: unset;
 
-    &:focus {
+    &:focus-visible {
       @include utils.bpk-focus-indicator;
     }
   }
