@@ -31,6 +31,12 @@ describe('BpkInsetBanner accessibility tests', () => {
         backgroundColor="#F55D42"
         callToAction={{
           text: 'Sponsored',
+          popoverMessage: 'This is a popover message',
+          closeBtnIcon: true,
+          labelTitle: true,
+          popverLabel: 'Info',
+          buttonCloseLabel: 'Close',
+          buttonA11yLabel: 'More info',
         }}
         body={{
           text: 'You can change your destination, date of travel, or both, with no change fee. Valid for all new bookings made up to 31 May for travel between now and 31 December 2020.',
