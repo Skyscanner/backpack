@@ -42,15 +42,15 @@ export type Props = {
     linkText?: string;
   };
   callToAction?: {
-    ctaText?: string;
-    ctaPopoverMessage?: string;
-    ctaPopoverPlacement?: Placement;
-    ctaButtonCloseLabel?: string;
-    ctaButtonA11yLabel?: string;
-    ctaPopverLabel?: string;
-    ctaPopoverId?: string;
-    ctaLabelTitle?: boolean;
-    ctaCloseBtnIcon?: boolean;
+    text?: string;
+    popoverMessage?: string;
+    popoverPlacement?: Placement;
+    buttonCloseLabel?: string;
+    buttonA11yLabel?: string;
+    popverLabel?: string;
+    popoverId?: string;
+    labelTitle?: boolean;
+    closeBtnIcon?: boolean;
   };
   logo?: string;
   subheadline?: string;
@@ -97,7 +97,7 @@ const BpkInsetBanner = ({
             <BpkText textStyle={TEXT_STYLES.caption}>{subheadline}</BpkText>
           </div>
         </div>
-        {callToAction && callToAction.ctaPopoverMessage && (
+        {callToAction && callToAction.popoverMessage && (
           <div
             role="presentation"
             className={getClassName('bpk-inset-banner--cta-container')}
@@ -108,9 +108,9 @@ const BpkInsetBanner = ({
             }}
           >
             <BpkPopover
-              id={callToAction?.ctaPopoverId || ''}
-              label={callToAction?.ctaPopverLabel || ''}
-              placement={callToAction?.ctaPopoverPlacement || 'bottom'}
+              id={callToAction?.popoverId || ''}
+              label={callToAction?.popverLabel || ''}
+              placement={callToAction?.popoverPlacement || 'bottom'}
               onClose={(e: {
                 stopPropagation: () => void;
                 preventDefault: () => void;
@@ -118,13 +118,13 @@ const BpkInsetBanner = ({
                 e.stopPropagation();
                 e.preventDefault();
               }}
-              aria-label={callToAction?.ctaButtonA11yLabel}
-              closeButtonText={callToAction?.ctaButtonCloseLabel}
-              closeButtonIcon={callToAction?.ctaCloseBtnIcon}
-              labelAsTitle={callToAction?.ctaLabelTitle}
+              aria-label={callToAction?.buttonA11yLabel}
+              closeButtonText={callToAction?.buttonCloseLabel}
+              closeButtonIcon={callToAction?.closeBtnIcon}
+              labelAsTitle={callToAction?.labelTitle}
               target={
                 <button
-                  aria-label={callToAction?.ctaButtonA11yLabel}
+                  aria-label={callToAction?.buttonA11yLabel}
                   className={getClassName('bpk-inset-banner--cta-button')}
                   data-testid="adInfoBtn"
                   aria-hidden="false"
@@ -133,9 +133,9 @@ const BpkInsetBanner = ({
                   <div
                     className={getClassName('bpk-inset-banner--cta-content')}
                   >
-                    {callToAction?.ctaText && (
+                    {callToAction?.text && (
                       <BpkText textStyle={TEXT_STYLES.caption}>
-                        {callToAction.ctaText}
+                        {callToAction.text}
                       </BpkText>
                     )}
 
@@ -150,21 +150,17 @@ const BpkInsetBanner = ({
                 </button>
               }
             >
-              <BpkText tagName="p">{callToAction?.ctaPopoverMessage}</BpkText>
+              <BpkText tagName="p">{callToAction?.popoverMessage}</BpkText>
             </BpkPopover>
           </div>
         )}
-        {callToAction &&
-          !callToAction.ctaPopoverMessage &&
-          callToAction.ctaText && (
-            <div className={getClassName('bpk-inset-banner--cta-text')}>
-              {callToAction?.ctaText && (
-                <BpkText textStyle={TEXT_STYLES.caption}>
-                  {callToAction.ctaText}
-                </BpkText>
-              )}
-            </div>
-          )}
+        {callToAction && !callToAction.popoverMessage && callToAction.text && (
+          <div className={getClassName('bpk-inset-banner--cta-text')}>
+            <BpkText textStyle={TEXT_STYLES.caption}>
+              {callToAction.text}
+            </BpkText>
+          </div>
+        )}
       </div>
       {body && (
         <div className={getClassName('bpk-inset-banner-body-container')}>
