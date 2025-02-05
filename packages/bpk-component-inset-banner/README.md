@@ -21,15 +21,15 @@ export default () => (
       link: 'www.skyscanner.net',
     }}
     callToAction={{
-      ctaText: 'Sponsored',
-      ctaPopoverMessage: 'This is a popover message',
-      ctaPopoverPlacement: 'top',
-      ctaButtonCloseLabel: 'Close',
-      ctaButtonA11yLabel: 'More info',
-      ctaPopverLabel: 'More info',
-      ctaPopoverId: 'popover',
-      ctaLabelTitle: true,
-      ctaCloseBtnIcon: false,
+      text: 'Sponsored',
+      popoverMessage: 'This is a popover message',
+      popoverPlacement: 'top',
+      buttonCloseLabel: 'Close',
+      buttonA11yLabel: 'More info',
+      popverLabel: 'More info',
+      popoverId: 'popover',
+      labelTitle: true,
+      closeBtnIcon: false,
     }}
     logo="logo.png"
     subheadline="My subheadline"
