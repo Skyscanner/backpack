@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { render,screen, fireEvent } from '@testing-library/react';
 
 import { coreAccentDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -61,4 +61,25 @@ describe('BpkCardWrapper', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('shows card content when More Info button is clicked', () => {
+    render(
+      <BpkCardWrapper
+        header={headerContent}
+        card={cardContent}
+        backgroundColor={coreAccentDay}
+        body={{
+          text: 'More Info Content',
+          openBtnLabel: 'More Info',
+          closeBtnLabel: 'Less Info',
+        }}
+      />
+    );
+
+    const button = screen.getByRole('button', { name: /more info/i });
+    fireEvent.click(button);
+
+    expect(screen.getByText('More Info Content')).toBeInTheDocument();
+  });
 });
+
