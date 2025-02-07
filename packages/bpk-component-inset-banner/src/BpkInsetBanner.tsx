@@ -118,7 +118,6 @@ const BpkInsetBanner = ({
                 e.stopPropagation();
                 e.preventDefault();
               }}
-              aria-label={callToAction?.buttonA11yLabel}
               closeButtonText={callToAction?.buttonCloseLabel}
               closeButtonIcon={callToAction?.closeBtnIcon}
               labelAsTitle={callToAction?.labelTitle}
