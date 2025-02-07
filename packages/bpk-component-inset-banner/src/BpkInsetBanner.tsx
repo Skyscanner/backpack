@@ -17,8 +17,12 @@
  */
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+import InfoIcon from '../../bpk-component-icon/sm/information-circle';
+import BpkPopover from '../../bpk-component-popover/src/BpkPopover';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
+
+import type { Placement } from '@floating-ui/react';
 
 import STYLES from './BpkInsetBanner.module.scss';
 
@@ -37,9 +41,16 @@ export type Props = {
     link?: string;
     linkText?: string;
   };
-  // [TO-DO] In future iteration we will add a button to CTA section with popover functionality
   callToAction?: {
     text?: string;
+    popoverMessage?: string;
+    popoverPlacement?: Placement;
+    buttonCloseLabel?: string;
+    buttonA11yLabel?: string;
+    popverLabel?: string;
+    popoverId?: string;
+    labelTitle?: boolean;
+    closeBtnIcon?: boolean;
   };
   logo?: string;
   subheadline?: string;
@@ -86,13 +97,69 @@ const BpkInsetBanner = ({
             <BpkText textStyle={TEXT_STYLES.caption}>{subheadline}</BpkText>
           </div>
         </div>
-        <div className={getClassName('bpk-inset-banner--cta-container')}>
-          {callToAction?.text && (
+        {callToAction && callToAction.popoverMessage && (
+          <div
+            role="presentation"
+            className={getClassName('bpk-inset-banner--cta-container')}
+            onClick={(e) => {
+              // Do not propagate the click on the trigger OR popover content up the DOM tree.
+              e.stopPropagation();
+              e.preventDefault();
+            }}
+          >
+            <BpkPopover
+              id={callToAction?.popoverId || ''}
+              label={callToAction?.popverLabel || ''}
+              placement={callToAction?.popoverPlacement || 'bottom'}
+              onClose={(e: {
+                stopPropagation: () => void;
+                preventDefault: () => void;
+              }) => {
+                e.stopPropagation();
+                e.preventDefault();
+              }}
+              closeButtonText={callToAction?.buttonCloseLabel}
+              closeButtonIcon={callToAction?.closeBtnIcon}
+              labelAsTitle={callToAction?.labelTitle}
+              target={
+                <button
+                  aria-label={callToAction?.buttonA11yLabel}
+                  className={getClassName('bpk-inset-banner--cta-button')}
+                  data-testid="adInfoBtn"
+                  aria-hidden="false"
+                  type="button"
+                >
+                  <div
+                    className={getClassName('bpk-inset-banner--cta-content')}
+                  >
+                    {callToAction?.text && (
+                      <BpkText textStyle={TEXT_STYLES.caption}>
+                        {callToAction.text}
+                      </BpkText>
+                    )}
+
+                    <div
+                      className={getClassName(
+                        'bpk-inset-banner--cta-info-icon',
+                      )}
+                    >
+                      <InfoIcon />
+                    </div>
+                  </div>
+                </button>
+              }
+            >
+              <BpkText tagName="p">{callToAction?.popoverMessage}</BpkText>
+            </BpkPopover>
+          </div>
+        )}
+        {callToAction && !callToAction.popoverMessage && callToAction.text && (
+          <div className={getClassName('bpk-inset-banner--cta-text')}>
             <BpkText textStyle={TEXT_STYLES.caption}>
               {callToAction.text}
             </BpkText>
-          )}
-        </div>
+          </div>
+        )}
       </div>
       {body && (
         <div className={getClassName('bpk-inset-banner-body-container')}>

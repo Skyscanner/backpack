@@ -22,6 +22,14 @@ export default () => (
     }}
     callToAction={{
       text: 'Sponsored',
+      popoverMessage: 'This is a popover message',
+      popoverPlacement: 'top',
+      buttonCloseLabel: 'Close',
+      buttonA11yLabel: 'More info',
+      popverLabel: 'More info',
+      popoverId: 'popover',
+      labelTitle: true,
+      closeBtnIcon: false,
     }}
     logo="logo.png"
     subheadline="My subheadline"

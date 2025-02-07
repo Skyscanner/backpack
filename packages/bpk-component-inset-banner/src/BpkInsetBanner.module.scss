@@ -60,9 +60,34 @@
     flex-direction: column;
   }
 
+  &--cta-text {
+    display: flex;
+    align-items: center;
+  }
+
+  &--cta-button {
+    all: unset;
+
+    &:focus-visible {
+      @include utils.bpk-focus-indicator;
+    }
+  }
+
   &--cta-container {
     display: flex;
     align-items: center;
+    cursor: pointer;
+  }
+
+  &--cta-content {
+    display: flex;
+    align-items: center;
+  }
+
+  &--cta-info-icon {
+    display: flex;
+    align-items: center;
+    margin-inline-start: tokens.bpk-spacing-md();
   }
 }
 
