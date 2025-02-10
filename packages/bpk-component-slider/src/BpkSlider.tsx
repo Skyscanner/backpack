@@ -28,7 +28,7 @@ import * as Slider from '@radix-ui/react-slider';
 
 import { cssModules, isRTL, setNativeValue } from '../../bpk-react-utils';
 
-import STYLES from './BpkSlider.module.scss';
+import * as STYLES from './BpkSlider.module.scss';
 
 const getClassName = cssModules(STYLES);
 

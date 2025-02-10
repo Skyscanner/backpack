@@ -54,7 +54,7 @@ import { ARROW_ID } from './constants';
 
 import type { Placement } from '@floating-ui/react';
 
-import STYLES from './BpkPopover.module.scss';
+import * as STYLES from './BpkPopover.module.scss';
 
 const getClassName = cssModules(STYLES);
 

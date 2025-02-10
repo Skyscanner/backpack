@@ -27,7 +27,7 @@ import BpkImage, {
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkSnippet.module.scss';
+import * as STYLES from './BpkSnippet.module.scss';
 
 const getClassName = cssModules(STYLES);
 

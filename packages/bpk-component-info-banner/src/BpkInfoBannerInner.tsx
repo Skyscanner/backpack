@@ -48,7 +48,7 @@ import type {
   ExpandableBannerAction,
 } from './common-types';
 
-import STYLES from './BpkInfoBanner.module.scss';
+import * as STYLES from './BpkInfoBanner.module.scss';
 
 const getClassName = cssModules(STYLES);
 

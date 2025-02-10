@@ -32,7 +32,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import type { Props as ButtonProps } from '../../bpk-component-button/src/BpkButtonV2/common-types';
 
-import STYLES from './BpkLoadingButton.module.scss';
+import * as STYLES from './BpkLoadingButton.module.scss';
 
 const getClassName = cssModules(STYLES);
 

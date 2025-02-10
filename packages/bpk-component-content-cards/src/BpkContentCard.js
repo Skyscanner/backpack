@@ -21,7 +21,7 @@ import BpkText from '../../bpk-component-text';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkContentCard.module.scss';
+import * as STYLES from './BpkContentCard.module.scss';
 
 const getClassName = cssModules(STYLES);
 

@@ -18,7 +18,7 @@
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkSwitch.module.scss';
+import * as STYLES from './BpkSwitch.module.scss';
 
 const getClassName = cssModules(STYLES);
 

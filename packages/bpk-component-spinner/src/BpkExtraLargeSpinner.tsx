@@ -24,7 +24,7 @@ import XlSpinner from './spinners/xl';
 
 import type { SpinnerTypes } from './spinnerTypes';
 
-import STYLES from './BpkSpinner.module.scss';
+import * as STYLES from './BpkSpinner.module.scss';
 
 const getClassName = cssModules(STYLES);
 

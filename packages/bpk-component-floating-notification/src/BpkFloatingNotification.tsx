@@ -26,7 +26,7 @@ import { BUTTON_TYPES, BpkButtonV2 } from '../../bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkFloatingNotification.module.scss';
+import * as STYLES from './BpkFloatingNotification.module.scss';
 
 const getClassName = cssModules(STYLES);
 

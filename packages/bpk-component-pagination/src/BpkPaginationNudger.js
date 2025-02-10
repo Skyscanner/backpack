@@ -24,7 +24,7 @@ import ArrowLeftIcon from '../../bpk-component-icon/sm/arrow-left';
 import ArrowRightIcon from '../../bpk-component-icon/sm/arrow-right';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkPaginationNudger.module.scss';
+import * as STYLES from './BpkPaginationNudger.module.scss';
 
 const getClassName = cssModules(STYLES);
 const AlignedArrowLeftIcon = withRtlSupport(withButtonAlignment(ArrowLeftIcon));

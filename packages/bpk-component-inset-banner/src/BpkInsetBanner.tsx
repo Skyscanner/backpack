@@ -24,7 +24,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import type { Placement } from '@floating-ui/react';
 
-import STYLES from './BpkInsetBanner.module.scss';
+import * as STYLES from './BpkInsetBanner.module.scss';
 
 const getClassName = cssModules(STYLES);
 

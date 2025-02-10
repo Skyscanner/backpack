@@ -24,7 +24,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { SIZES, ALIGNS } from './common-types';
 
-import STYLES from './BpkPrice.module.scss';
+import * as STYLES from './BpkPrice.module.scss';
 
 type Props = {
   price: string,

@@ -22,7 +22,7 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 
 import cssModules from '../cssModules';
 
-import STYLES from './BpkDialogWrapper.module.scss';
+import * as STYLES from './BpkDialogWrapper.module.scss';
 
 const getClassName = cssModules(STYLES);
 

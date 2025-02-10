@@ -25,7 +25,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { SORT_DIRECTION_TYPES } from './common-types';
 
-import STYLES from './BpkDataTableHeader.module.scss';
+import * as STYLES from './BpkDataTableHeader.module.scss';
 
 const DownIcon = withRtlSupport(BpkSmallArrowDownIcon);
 const UpIcon = withRtlSupport(BpkSmallArrowUpIcon);

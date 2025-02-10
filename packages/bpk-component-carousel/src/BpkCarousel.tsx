@@ -27,7 +27,7 @@ import { useScrollToInitialImage } from './utils';
 
 import type { Props } from './types';
 
-import STYLES from './BpkCarousel.module.scss';
+import * as STYLES from './BpkCarousel.module.scss';
 
 const getClassName = cssModules(STYLES);
 

@@ -28,7 +28,7 @@ import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
 import { ARROW_ID, TOOLTIP_TYPES } from './constants';
 
-import STYLES from './BpkTooltip.module.scss';
+import * as STYLES from './BpkTooltip.module.scss';
 
 const getClassName = cssModules(STYLES);
 

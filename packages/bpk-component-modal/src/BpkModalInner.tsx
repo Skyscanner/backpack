@@ -27,7 +27,7 @@ import BpkNavigationBar, {
 } from '../../bpk-component-navigation-bar';
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkModalInner.module.scss';
+import * as STYLES from './BpkModalInner.module.scss';
 
 const getClassName = cssModules(STYLES);
 

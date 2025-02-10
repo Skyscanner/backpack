@@ -27,7 +27,7 @@ import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import BpkAnimateHeight from '../../bpk-animate-height';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkAnimateAndFade.module.scss';
+import * as STYLES from './BpkAnimateAndFade.module.scss';
 
 const getClassName = cssModules(STYLES);
 

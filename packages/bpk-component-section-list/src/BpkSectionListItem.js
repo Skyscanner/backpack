@@ -25,7 +25,7 @@ import { withRtlSupport } from '../../bpk-component-icon';
 import BpkLargeChevronRightIcon from '../../bpk-component-icon/lg/chevron-right';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkSectionListItem.module.scss';
+import * as STYLES from './BpkSectionListItem.module.scss';
 
 const BpkLargeChevronRightIconWithRtlSupport = withRtlSupport(
   BpkLargeChevronRightIcon,

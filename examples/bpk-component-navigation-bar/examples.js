@@ -32,7 +32,7 @@ import { action } from '../bpk-storybook-utils';
 
 import AirlineLogo from './AirlineLogo';
 
-import STYLES from './examples.module.scss';
+import * as STYLES from './examples.module.scss';
 
 const getClassNames = cssModules(STYLES);
 const ArrowIconWithRtl = withRtlSupport(ArrowIcon);

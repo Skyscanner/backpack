@@ -22,7 +22,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import Pointer from './__generated__/js/pointer';
 
-import STYLES from './bpk-flare-bar.module.scss';
+import * as STYLES from './bpk-flare-bar.module.scss';
 
 const getClassName = cssModules(STYLES);
 

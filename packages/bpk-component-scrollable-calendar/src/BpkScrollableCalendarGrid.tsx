@@ -24,7 +24,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import type { BpkCalendarGridProps } from '../../bpk-component-calendar';
 
-import STYLES from './BpkScrollableCalendarGrid.module.scss';
+import * as STYLES from './BpkScrollableCalendarGrid.module.scss';
 
 const getClassName = cssModules(STYLES);
 

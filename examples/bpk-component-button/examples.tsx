@@ -35,7 +35,7 @@ import {
   // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from '../bpk-storybook-utils';
 
-import STYLES from './BpkButtonStory.module.scss';
+import * as STYLES from './BpkButtonStory.module.scss';
 
 const AlignedSmallLongArrowRightIcon = withButtonAlignment(
   withRtlSupport(SmallLongArrowRightIcon),

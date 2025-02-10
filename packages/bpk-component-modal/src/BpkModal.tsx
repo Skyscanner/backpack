@@ -25,7 +25,7 @@ import BpkModalInner, { MODAL_STYLING } from './BpkModalInner';
 
 import type { Props as ModalDialogProps, ModalStyle } from './BpkModalInner';
 
-import STYLES from './BpkModal.module.scss';
+import * as STYLES from './BpkModal.module.scss';
 
 const getClassName = cssModules(STYLES);
 const ScrimBpkModalInner = withScrim(BpkModalInner);

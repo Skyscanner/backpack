@@ -20,7 +20,7 @@ import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkBadge.module.scss';
+import * as STYLES from './BpkBadge.module.scss';
 
 export const BADGE_TYPES = {
   warning: 'warning',

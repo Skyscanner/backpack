@@ -36,7 +36,7 @@ import {
   BpkDarkExampleWrapper,
 } from '../bpk-storybook-utils';
 
-import STYLES from './examples.module.scss';
+import * as STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 

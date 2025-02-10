@@ -41,7 +41,7 @@ import {
   unlockScroll,
 } from './scroll-utils';
 
-import STYLES from './bpk-scrim-content.module.scss';
+import * as STYLES from './bpk-scrim-content.module.scss';
 
 const getClassName = cssModules(STYLES);
 

@@ -29,7 +29,7 @@ import type {
   WeekDayKey,
 } from './custom-proptypes';
 
-import STYLES from './BpkCalendarGridHeader.module.scss';
+import * as STYLES from './BpkCalendarGridHeader.module.scss';
 
 const getClassName = cssModules(STYLES);
 

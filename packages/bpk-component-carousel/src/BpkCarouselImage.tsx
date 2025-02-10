@@ -21,7 +21,7 @@ import { forwardRef } from "react";
 
 import { cssModules } from "../../bpk-react-utils";
 
-import STYLES from "./BpkCarouselImage.module.scss"
+import * as STYLES from "./BpkCarouselImage.module.scss"
 
 const getClassName = cssModules(STYLES);
 

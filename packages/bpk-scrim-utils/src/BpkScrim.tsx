@@ -20,7 +20,7 @@ import type { SyntheticEvent } from 'react';
 
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
-import STYLES from './bpk-scrim.module.scss';
+import * as STYLES from './bpk-scrim.module.scss';
 
 const getClassName = cssModules(STYLES);
 

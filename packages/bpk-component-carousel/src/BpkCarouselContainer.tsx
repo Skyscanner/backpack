@@ -26,7 +26,7 @@ import { useIntersectionObserver } from './utils';
 
 import type { OnImageChangedHandler } from './types';
 
-import STYLES from './BpkCarouselContainer.module.scss';
+import * as STYLES from './BpkCarouselContainer.module.scss';
 
 const getClassName = cssModules(STYLES);
 

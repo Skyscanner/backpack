@@ -25,7 +25,7 @@ import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 
 import type { Props as BpkModalProps } from '../../packages/bpk-component-modal/src/BpkModalV2/BpkModal';
 
-import STYLES from './examples.module.scss';
+import * as STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 

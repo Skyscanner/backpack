@@ -18,7 +18,7 @@
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkJourneyArrow.module.scss';
+import * as STYLES from './BpkJourneyArrow.module.scss';
 
 const getClassName = cssModules(STYLES);
 

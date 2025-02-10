@@ -23,7 +23,7 @@ import { SKELETON_TYPES, IMAGE_SKELETON_STYLE, SIZE_TYPES } from './common-types
 
 import type { ComponentProps} from './common-types';
 
-import STYLES from './BpkSkeleton.module.scss';
+import * as STYLES from './BpkSkeleton.module.scss';
 
 
 const getClassName = cssModules(STYLES);

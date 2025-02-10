@@ -23,7 +23,7 @@ import { cloneElement } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkSelect.module.scss';
+import * as STYLES from './BpkSelect.module.scss';
 
 const getClassName = cssModules(STYLES);
 

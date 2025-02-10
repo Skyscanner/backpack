@@ -33,7 +33,7 @@ import {
 
 import type { DateModifiers, SelectionConfiguration } from './custom-proptypes';
 
-import STYLES from './BpkCalendarGrid.module.scss';
+import * as STYLES from './BpkCalendarGrid.module.scss';
 
 // This should be imported after `./BpkCalendarGrid.module.scss`.
 // Because of how css specificity works the class `bpk-calendar-grid-transition__grid` needs to be defined

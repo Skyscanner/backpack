@@ -25,7 +25,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { HORIZONTAL_NAV_TYPES } from './BpkHorizontalNav';
 
-import STYLES from './BpkHorizontalNavItem.module.scss';
+import * as STYLES from './BpkHorizontalNavItem.module.scss';
 
 const getClassName = cssModules(STYLES);
 

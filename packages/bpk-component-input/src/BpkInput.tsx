@@ -26,7 +26,7 @@ import { CLEAR_BUTTON_MODES, defaultProps } from './common-types';
 
 import type { Props } from './common-types';
 
-import STYLES from './BpkInput.module.scss';
+import * as STYLES from './BpkInput.module.scss';
 
 type State = {
   persistClearButton: boolean;

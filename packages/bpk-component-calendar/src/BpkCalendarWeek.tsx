@@ -41,7 +41,7 @@ import type {
   SelectionConfigurationRange,
 } from './custom-proptypes';
 
-import STYLES from './BpkCalendarWeek.module.scss';
+import * as STYLES from './BpkCalendarWeek.module.scss';
 
 const getClassName = cssModules(STYLES);
 

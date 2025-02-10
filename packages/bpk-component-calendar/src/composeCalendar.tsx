@@ -29,7 +29,7 @@ import type {
   DateModifiers,
 } from './custom-proptypes';
 
-import STYLES from './BpkCalendar.module.scss';
+import * as STYLES from './BpkCalendar.module.scss';
 
 const getClassName = cssModules(STYLES);
 

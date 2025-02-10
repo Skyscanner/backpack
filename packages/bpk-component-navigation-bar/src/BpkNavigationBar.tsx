@@ -23,7 +23,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import type { Tag, TextStyle } from '../../bpk-component-text/src/BpkText';
 
-import STYLES from './BpkNavigationBar.module.scss';
+import * as STYLES from './BpkNavigationBar.module.scss';
 
 const getClassNames = cssModules(STYLES);
 

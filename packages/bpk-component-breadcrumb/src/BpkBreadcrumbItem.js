@@ -27,7 +27,7 @@ import BpkLink from '../../bpk-component-link';
 import BpkText from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkBreadcrumbItem.module.scss';
+import * as STYLES from './BpkBreadcrumbItem.module.scss';
 
 const getClassName = cssModules(STYLES);
 

@@ -22,7 +22,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import type CardListProps from './common-types';
 
-import STYLES from './BpkCardList.module.scss';
+import * as STYLES from './BpkCardList.module.scss';
 
 const getClassName = cssModules(STYLES);
 

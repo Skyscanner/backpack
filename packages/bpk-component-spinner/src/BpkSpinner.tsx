@@ -24,7 +24,7 @@ import SmSpinner from './spinners/sm';
 
 import type { SpinnerTypes } from './spinnerTypes';
 
-import STYLES from './BpkSpinner.module.scss';
+import * as STYLES from './BpkSpinner.module.scss';
 
 const getClassName = cssModules(STYLES);
 

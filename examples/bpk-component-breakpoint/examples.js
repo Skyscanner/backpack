@@ -25,7 +25,7 @@ import BpkBreakpoint, {
 } from '../../packages/bpk-component-breakpoint';
 import { cssModules } from '../../packages/bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import * as STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 

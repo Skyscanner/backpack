@@ -21,7 +21,7 @@ import { useState } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkSegmentedControl.module.scss';
+import * as STYLES from './BpkSegmentedControl.module.scss';
 
 const getClassName = cssModules(STYLES);
 

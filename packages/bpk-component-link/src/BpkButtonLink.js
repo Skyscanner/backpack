@@ -25,7 +25,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import themeAttributes from './themeAttributes';
 
-import STYLES from './BpkLink.module.scss';
+import * as STYLES from './BpkLink.module.scss';
 
 const getClassName = cssModules(STYLES);
 

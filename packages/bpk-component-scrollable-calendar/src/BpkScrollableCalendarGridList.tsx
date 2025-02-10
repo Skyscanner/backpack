@@ -34,7 +34,7 @@ import { getMonthsArray, getMonthItemHeights } from './utils';
 
 import type { BpkCalendarGridProps, SelectionConfiguration } from '../../bpk-component-calendar';
 
-import STYLES from './BpkScrollableCalendarGridList.module.scss';
+import * as STYLES from './BpkScrollableCalendarGridList.module.scss';
 
 const getClassName = cssModules(STYLES);
 

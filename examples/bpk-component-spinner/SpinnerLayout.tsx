@@ -23,7 +23,7 @@ import { Children } from 'react';
 import { SPINNER_TYPES } from '../../packages/bpk-component-spinner';
 import { cssModules } from '../../packages/bpk-react-utils';
 
-import STYLES from './SpinnerLayout.module.scss';
+import * as STYLES from './SpinnerLayout.module.scss';
 
 const getClassName = cssModules(STYLES);
 

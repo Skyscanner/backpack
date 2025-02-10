@@ -26,7 +26,7 @@ import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import { BpkSpinner } from '../../bpk-component-spinner';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkBackgroundImage.module.scss';
+import * as STYLES from './BpkBackgroundImage.module.scss';
 
 const getClassName = cssModules(STYLES);
 

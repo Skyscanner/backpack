@@ -40,7 +40,7 @@ import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 
 import { withSelectedState } from './hocs';
 
-import STYLES from './examples.module.scss';
+import * as STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 

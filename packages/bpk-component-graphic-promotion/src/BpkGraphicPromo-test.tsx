@@ -24,7 +24,7 @@ import BpkGraphicPromo, { TEXT_ALIGN } from './BpkGraphicPromo';
 
 import type { Props } from './BpkGraphicPromo';
 
-import STYLES from './BpkGraphicPromo.module.scss';
+import * as STYLES from './BpkGraphicPromo.module.scss';
 
 const getClassName = cssModules(STYLES);
 

@@ -32,7 +32,7 @@ import BpkCard, {
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import * as STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 

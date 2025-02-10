@@ -25,7 +25,7 @@ import { cssModules } from '../../bpk-react-utils';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, center } from './utils';
 
-import STYLES from './BpkChartGridLines.module.scss';
+import * as STYLES from './BpkChartGridLines.module.scss';
 
 const getClassName = cssModules(STYLES);
 

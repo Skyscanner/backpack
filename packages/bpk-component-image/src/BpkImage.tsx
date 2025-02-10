@@ -27,7 +27,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import BORDER_RADIUS_STYLES from './BpkImageBorderRadiusStyles';
 
-import STYLES from './BpkImage.module.scss';
+import * as STYLES from './BpkImage.module.scss';
 
 const getClassName = cssModules(STYLES);
 

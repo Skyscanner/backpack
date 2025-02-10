@@ -12,7 +12,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 import { cssModules } from '@skyscanner/backpack-web/bpk-react-utils';
 import BpkMobileScrollContainer from '@skyscanner/backpack-web/bpk-component-mobile-scroll-container';
 
-import STYLES from './MyComponent.scss';
+import * as STYLES from './MyComponent.scss';
 
 const getClassName = cssModules(STYLES);
 

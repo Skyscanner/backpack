@@ -22,7 +22,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { CardContext } from './CardContext';
 
-import STYLES from './BpkCardWrapper.module.scss';
+import * as STYLES from './BpkCardWrapper.module.scss';
 
 const getClassName = cssModules(STYLES);
 

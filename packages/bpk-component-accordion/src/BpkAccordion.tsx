@@ -21,7 +21,7 @@ import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkAccordion.module.scss';
+import * as STYLES from './BpkAccordion.module.scss';
 
 const getClassName = cssModules(STYLES);
 

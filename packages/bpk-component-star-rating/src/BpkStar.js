@@ -29,7 +29,7 @@ import HalfSmallIcon from '../../bpk-component-icon/sm/star-half';
 import OutlineSmallIcon from '../../bpk-component-icon/sm/star-outline';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkStar.module.scss';
+import * as STYLES from './BpkStar.module.scss';
 
 const getClassName = cssModules(STYLES);
 

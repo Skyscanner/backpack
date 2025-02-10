@@ -29,7 +29,7 @@ import { cssModules, setNativeValue } from '../../bpk-react-utils';
 
 import { type CommonProps } from './common-types';
 
-import STYLES from './BpkNudger.module.scss';
+import * as STYLES from './BpkNudger.module.scss';
 
 const getClassName = cssModules(STYLES);
 const compareValues = (a: number, b: number): number => a - b;

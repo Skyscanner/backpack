@@ -24,7 +24,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import InputField from './BpkInputField';
 
-import STYLES from './BpkSplitInput.module.scss';
+import * as STYLES from './BpkSplitInput.module.scss';
 
 const getClassName = cssModules(STYLES);
 

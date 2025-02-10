@@ -19,7 +19,7 @@
 
 import { cssModules } from '../../../packages/bpk-react-utils';
 
-import STYLES from './BpkDarkExampleWrapper.module.scss';
+import * as STYLES from './BpkDarkExampleWrapper.module.scss';
 
 const getClassName = cssModules(STYLES);
 

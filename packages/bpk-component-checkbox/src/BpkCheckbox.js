@@ -23,7 +23,7 @@ import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkCheckbox.module.scss';
+import * as STYLES from './BpkCheckbox.module.scss';
 
 const getClassName = cssModules(STYLES);
 

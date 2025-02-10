@@ -46,7 +46,7 @@ import dataProp from './customPropTypes';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, remToPx } from './utils';
 
-import STYLES from './BpkBarchart.module.scss';
+import * as STYLES from './BpkBarchart.module.scss';
 
 const getClassName = cssModules(STYLES);
 

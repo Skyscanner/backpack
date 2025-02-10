@@ -28,7 +28,7 @@ import BpkDataTableHeader from './BpkDataTableHeader';
 import { type BpkDataTableProps, SORT_DIRECTION_TYPES } from './common-types';
 import { createColumnsSchema } from './utils';
 
-import STYLES from './BpkDataTable.module.scss';
+import * as STYLES from './BpkDataTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 

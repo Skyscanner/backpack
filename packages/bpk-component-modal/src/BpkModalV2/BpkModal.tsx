@@ -27,7 +27,7 @@ import { MODAL_STYLING } from '../BpkModalInner';
 
 import type { ModalStyle } from '../BpkModalInner';
 
-import STYLES from './BpKModal.module.scss';
+import * as STYLES from './BpKModal.module.scss';
 
 const getClassName = cssModules(STYLES);
 

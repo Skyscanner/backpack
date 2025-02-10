@@ -38,7 +38,7 @@ import {
   isTransitionEndSupported,
 } from './utils';
 
-import STYLES from './BpkCalendarGridTransition.module.scss';
+import * as STYLES from './BpkCalendarGridTransition.module.scss';
 
 const getClassName = cssModules(STYLES);
 

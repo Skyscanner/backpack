@@ -25,7 +25,7 @@ import BpkLabel from '../../bpk-component-label';
 import BpkSelect from '../../bpk-component-select';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkPhoneInput.module.scss';
+import * as STYLES from './BpkPhoneInput.module.scss';
 
 const getClassName = cssModules(STYLES);
 

@@ -21,7 +21,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import BpkContentCard from './BpkContentCard';
 
-import STYLES from './BpkContentCards.module.scss';
+import * as STYLES from './BpkContentCards.module.scss';
 
 const getClassName = cssModules(STYLES);
 

@@ -26,7 +26,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { remToPx } from './utils';
 
-import STYLES from './BpkBarchartBar.module.scss';
+import * as STYLES from './BpkBarchartBar.module.scss';
 
 const getClassName = cssModules(STYLES);
 

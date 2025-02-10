@@ -28,7 +28,7 @@ import { action } from '../bpk-storybook-utils';
 
 import type { BpkBottomSheetProps } from '../../packages/bpk-component-bottom-sheet';
 
-import STYLES from './examples.module.scss';
+import * as STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 

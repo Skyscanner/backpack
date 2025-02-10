@@ -27,7 +27,7 @@ import { cssModules, isRTL } from '../../bpk-react-utils/index';
 
 import type { ChipStyleType } from './BpkMultiSelectChipGroup';
 
-import STYLES from './Nudger.module.scss';
+import * as STYLES from './Nudger.module.scss';
 
 const getClassName = cssModules(STYLES);
 

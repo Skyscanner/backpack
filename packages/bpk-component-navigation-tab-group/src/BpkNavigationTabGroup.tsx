@@ -22,7 +22,7 @@ import { useState } from 'react';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkNavigationTabGroup.module.scss';
+import * as STYLES from './BpkNavigationTabGroup.module.scss';
 
 const getClassName = cssModules(STYLES);
 

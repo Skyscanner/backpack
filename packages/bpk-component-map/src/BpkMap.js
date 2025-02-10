@@ -28,7 +28,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { LatLongPropType, type LatLong } from './common-types';
 
-import STYLES from './BpkMap.module.scss';
+import * as STYLES from './BpkMap.module.scss';
 
 const getClassName = cssModules(STYLES);
 

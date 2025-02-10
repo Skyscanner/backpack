@@ -55,7 +55,7 @@ import BpkInput, { withOpenEvents } from '../../packages/bpk-component-input';
 import { cssModules } from '../../packages/bpk-react-utils';
 import { action } from '../bpk-storybook-utils';
 
-import STYLES from './examples.module.scss';
+import * as STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 

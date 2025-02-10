@@ -19,7 +19,7 @@ import { type ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkDescriptionList.module.scss';
+import * as STYLES from './BpkDescriptionList.module.scss';
 
 const getClassName = cssModules(STYLES);
 

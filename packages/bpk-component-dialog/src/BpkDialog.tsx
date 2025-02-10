@@ -25,7 +25,7 @@ import { HEADER_ICON_TYPES } from './common-types';
 
 import type { Props } from './common-types';
 
-import STYLES from './BpkDialog.module.scss';
+import * as STYLES from './BpkDialog.module.scss';
 
 const getClassName = cssModules(STYLES);
 

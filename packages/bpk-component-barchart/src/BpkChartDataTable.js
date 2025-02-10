@@ -24,7 +24,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import dataProp from './customPropTypes';
 
-import STYLES from './BpkChartDataTable.module.scss';
+import * as STYLES from './BpkChartDataTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 

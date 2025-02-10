@@ -20,7 +20,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import type { CUSTOM_SIZE_TYPE } from './common-types';
 
-import STYLES from './BpkBaseSkeleton.module.scss';
+import * as STYLES from './BpkBaseSkeleton.module.scss';
 
 const getClassName = cssModules(STYLES);
 

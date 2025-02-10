@@ -23,7 +23,7 @@ import { cssModules } from '../../bpk-react-utils';
 import BpkFlareBar from './BpkFlareBar';
 import CornerRadius from './__generated__/js/corner-radius';
 
-import STYLES from './bpk-content-bubble.module.scss';
+import * as STYLES from './bpk-content-bubble.module.scss';
 
 const getClassName = cssModules(STYLES);
 

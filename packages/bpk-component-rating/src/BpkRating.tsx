@@ -26,7 +26,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { RATING_SIZES, RATING_SCALES } from './common-types';
 
-import STYLES from './BpkRating.module.scss';
+import * as STYLES from './BpkRating.module.scss';
 
 const getClassName = cssModules(STYLES);
 

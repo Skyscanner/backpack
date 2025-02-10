@@ -21,7 +21,7 @@ import type { KeyboardEvent, MouseEvent } from 'react';
 import {BpkButtonV2, BUTTON_TYPES} from '../../bpk-component-button';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkGraphicPromo.module.scss';
+import * as STYLES from './BpkGraphicPromo.module.scss';
 
 const getClassName = cssModules(STYLES);
 

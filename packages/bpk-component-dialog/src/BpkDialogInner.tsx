@@ -23,7 +23,7 @@ import { withScrim } from '../../bpk-scrim-utils';
 
 import { type DialogInnerProps as Props } from './common-types';
 
-import STYLES from './BpkDialogInner.module.scss';
+import * as STYLES from './BpkDialogInner.module.scss';
 
 const getClassName = cssModules(STYLES);
 

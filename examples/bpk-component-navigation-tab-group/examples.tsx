@@ -27,7 +27,7 @@ import { cssModules } from '../../packages/bpk-react-utils';
 
 import type { BpkNavigationTabGroupProps } from '../../packages/bpk-component-navigation-tab-group';
 
-import STYLES from './examples.module.scss';
+import * as STYLES from './examples.module.scss';
 
 const getClassNames = cssModules(STYLES);
 

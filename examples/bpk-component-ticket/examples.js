@@ -29,7 +29,7 @@ import ArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-righ
 import BpkTicket from '../../packages/bpk-component-ticket';
 import { cssModules } from '../../packages/bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import * as STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 

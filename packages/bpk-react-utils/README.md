@@ -84,7 +84,7 @@ A helpful utility which permits backwards compatibility with hard coded classes 
 ```js
 import { cssModules } from '@skyscanner/backpack-web/bpk-react-utils';
 
-import STYLES from './MyComponent.scss';
+import * as STYLES from './MyComponent.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -116,7 +116,7 @@ The returned function accepts multiple class names and ignores values other than
 ```js
 import { cssModules } from '@skyscanner/backpack-web/bpk-react-utils';
 
-import STYLES from './MyComponent.scss';
+import * as STYLES from './MyComponent.scss';
 
 const getClassNames = cssModules(STYLES);
 

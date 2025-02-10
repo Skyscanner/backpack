@@ -18,7 +18,7 @@
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkBoilerplate.module.scss';
+import * as STYLES from './BpkBoilerplate.module.scss';
 
 const getClassName = cssModules(STYLES);
 

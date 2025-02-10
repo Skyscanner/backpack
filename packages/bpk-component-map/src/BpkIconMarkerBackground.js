@@ -20,7 +20,7 @@
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkIconMarkerBackground.module.scss';
+import * as STYLES from './BpkIconMarkerBackground.module.scss';
 
 const getClassName = cssModules(STYLES);
 

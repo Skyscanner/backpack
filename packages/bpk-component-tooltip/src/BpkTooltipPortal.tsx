@@ -28,7 +28,7 @@ import { TOOLTIP_TYPES } from './constants';
 
 import type { TooltipProps } from './BpkTooltip';
 
-import STYLES from './BpkTooltip.module.scss';
+import * as STYLES from './BpkTooltip.module.scss';
 
 const getClassName = cssModules(STYLES);
 

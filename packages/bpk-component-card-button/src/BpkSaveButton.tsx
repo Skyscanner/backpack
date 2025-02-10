@@ -30,7 +30,7 @@ import BpkHeartIconSm from '../../bpk-component-icon/sm/heart';
 import BpkHeartOutlineIconSm from '../../bpk-component-icon/sm/heart--outline';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkSaveButton.module.scss';
+import * as STYLES from './BpkSaveButton.module.scss';
 
 export const SIZE_TYPES = {
   default: 'default',

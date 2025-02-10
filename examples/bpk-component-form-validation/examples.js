@@ -27,7 +27,7 @@ import BpkSelect from '../../packages/bpk-component-select';
 import BpkTextarea from '../../packages/bpk-component-textarea';
 import { cssModules } from '../../packages/bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import * as STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 

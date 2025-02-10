@@ -23,7 +23,7 @@ import type { Node } from 'react';
 
 import { cssModules } from '../../packages/bpk-react-utils';
 
-import STYLES from './BpkBadgeLayout.module.scss';
+import * as STYLES from './BpkBadgeLayout.module.scss';
 
 const getClassName = cssModules(STYLES);
 

@@ -27,7 +27,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import Nudger, { POSITION } from './Nudger';
 
-import STYLES from './BpkChipGroup.module.scss';
+import * as STYLES from './BpkChipGroup.module.scss';
 
 const getClassName = cssModules(STYLES);
 

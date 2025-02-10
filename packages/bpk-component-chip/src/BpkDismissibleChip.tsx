@@ -31,7 +31,7 @@ import { CHIP_TYPES } from './commonTypes';
 
 import type { CommonProps as Props } from './commonTypes';
 
-import STYLES from './BpkSelectableChip.module.scss';
+import * as STYLES from './BpkSelectableChip.module.scss';
 
 const getClassName = cssModules(STYLES);
 

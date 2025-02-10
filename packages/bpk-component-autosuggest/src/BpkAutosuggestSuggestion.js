@@ -23,7 +23,7 @@ import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkAutosuggest.module.scss';
+import * as STYLES from './BpkAutosuggest.module.scss';
 
 const getClassName = cssModules(STYLES);
 

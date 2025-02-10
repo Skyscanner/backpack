@@ -23,7 +23,7 @@ import BpkSkeleton, {
 } from '../../packages/bpk-component-skeleton';
 import { cssModules } from '../../packages/bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import * as STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 

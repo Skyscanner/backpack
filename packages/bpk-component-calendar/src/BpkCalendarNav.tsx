@@ -39,7 +39,7 @@ import {
   startOfMonth,
 } from './date-utils';
 
-import STYLES from './BpkCalendarNav.module.scss';
+import * as STYLES from './BpkCalendarNav.module.scss';
 
 const getClassName = cssModules(STYLES);
 

@@ -23,7 +23,7 @@ import { cssModules } from '../../bpk-react-utils';
 import BpkPaginationBreak from './BpkPaginationBreak';
 import BpkPaginationPage from './BpkPaginationPage';
 
-import STYLES from './BpkPaginationList.module.scss';
+import * as STYLES from './BpkPaginationList.module.scss';
 
 const getClassName = cssModules(STYLES);
 

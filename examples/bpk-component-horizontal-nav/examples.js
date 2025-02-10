@@ -31,7 +31,7 @@ import BpkText from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
-import STYLES from './examples.module.scss';
+import * as STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 

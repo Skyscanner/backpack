@@ -33,7 +33,7 @@ import type {
   ChipItem,
  SingleSelectProps} from '../../packages/bpk-component-chip-group';
 
-import STYLES from './examples.module.scss';
+import * as STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 

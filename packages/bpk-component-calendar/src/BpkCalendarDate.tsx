@@ -23,7 +23,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import type { DateModifiers } from './custom-proptypes';
 
-import STYLES from './BpkCalendarDate.module.scss';
+import * as STYLES from './BpkCalendarDate.module.scss';
 
 const getClassName = cssModules(STYLES);
 
