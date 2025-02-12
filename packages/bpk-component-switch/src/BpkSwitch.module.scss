@@ -29,10 +29,7 @@ $border-width: tokens.$bpk-one-pixel-rem * 2;
   display: flex;
   width: fit-content;
   align-items: center;
-
-  &:focus-within {
-    @include utils.bpk-focus-indicator;
-  }
+  border-radius: $height * 0.5;
 
   // Checkbox is invisible so the switch element can be the visual element.
   &__checkbox {
@@ -49,6 +46,10 @@ $border-width: tokens.$bpk-one-pixel-rem * 2;
       &::before {
         left: ($width - $height) + $border-width;
       }
+    }
+
+    &:focus-visible ~ .bpk-switch__switch {
+      @include utils.bpk-focus-indicator;
     }
   }
 
