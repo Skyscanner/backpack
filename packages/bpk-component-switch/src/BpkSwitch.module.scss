@@ -29,8 +29,9 @@ $border-width: tokens.$bpk-one-pixel-rem * 2;
   display: flex;
   width: fit-content;
   align-items: center;
+  border-radius: $height * 0.5;
 
-  &:focus-within {
+  input[type="checkbox"]:focus-visible + span {
     @include utils.bpk-focus-indicator;
   }
 
