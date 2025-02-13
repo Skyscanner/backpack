@@ -155,11 +155,10 @@ const BpkCardWrapper = ({
             {header}
           </div>
         )}
-
         <div
           className={getClassName(
             'bpk-card-wrapper--content',
-            body && isBodyOpen && 'bpk-card-wrapper--content--body-open',
+            body && isBodyOpen && 'bpk-card-wrapper--content-opened',
           )}
         >
           <div className={STYLES.ticketContainer}>{card}</div>

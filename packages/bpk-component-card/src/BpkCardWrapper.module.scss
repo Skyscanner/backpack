@@ -62,6 +62,16 @@
       right: 0;
       transform: rotate(-45deg);
     }
+
+    &-opened::after {
+      box-shadow: tokens.bpk-spacing-base() 0 0 0
+        tokens.$bpk-private-info-banner-default-day;
+    }
+
+    &-opened::before {
+      box-shadow: tokens.bpk-spacing-base() 0 0 0
+        tokens.$bpk-private-info-banner-default-day;
+    }
   }
 
   &:has(.bpk-card-wrapper--header:active) {
