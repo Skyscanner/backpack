@@ -18,6 +18,7 @@
 
 @use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/margins';
 
 .bpk-price {
   display: flex;
@@ -25,11 +26,7 @@
   color: tokens.$bpk-text-secondary-day;
 
   &--right {
-    text-align: right;
-
-    @include utils.bpk-rtl {
-      text-align: left;
-    }
+    align-items: flex-end;
   }
 
   &__leading {
@@ -53,9 +50,12 @@
     margin: 0 tokens.bpk-spacing-sm();
   }
 
-  &__column-container {
-    display: flex;
-    flex-direction: column;
+  &__main {
+    &--right {
+      display: flex;
+      align-items: center;
+      gap: tokens.bpk-spacing-sm();
+    }
   }
 
   &__price {
@@ -66,12 +66,11 @@
 
   &__spacing::after {
     content: '';
-    margin-right: tokens.bpk-spacing-sm();
+    margin-inline-end: tokens.bpk-spacing-sm();
+  }
 
-    @include utils.bpk-rtl {
-      margin-right: unset;
-      margin-left: tokens.bpk-spacing-sm();
-    }
+  &__icon {
+    display: contents;
   }
 
   &__trailing {
