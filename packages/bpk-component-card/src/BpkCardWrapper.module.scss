@@ -62,13 +62,6 @@
       right: 0;
       transform: rotate(-45deg);
     }
-
-    &--body-open {
-      &::before,
-      &::after {
-        box-shadow: none;
-      }
-    }
   }
 
   &:has(.bpk-card-wrapper--header:active) {
