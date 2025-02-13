@@ -132,7 +132,6 @@ const BpkPrice = (props: Props) => {
             </BpkText>
           </span>
         )}
-
         {leadingText && (
           <BpkText textStyle={defaultTextStyle} tagName="span">
             {leadingText}
@@ -143,6 +142,8 @@ const BpkPrice = (props: Props) => {
         <span
           className={getClassName(
             'bpk-price__price',
+            // When aligning right, we use the gap property to add space between the price and the icon.
+            // When aligning left, we use the ::after pseudo-element instead to achieve the desired wrapping behaviour.
             !isAlignRight && 'bpk-price__spacing',
           )}
         >
