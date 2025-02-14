@@ -22,6 +22,7 @@ export default () => (
     previousPrice="£1,830"
     leadingText="App only deal"
     trailingText="a night"
+    icon={<NewWindowIcon />}
   />
 );
 ```
