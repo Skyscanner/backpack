@@ -79,6 +79,15 @@
     color: tokens.$bpk-text-on-light-day;
     cursor: default;
 
+    &-opened::after {
+      box-shadow: tokens.bpk-spacing-base() 0 0 0
+        tokens.$bpk-private-info-banner-default-day;
+    }
+    &-opened::before {
+      box-shadow: tokens.bpk-spacing-base() 0 0 0
+        tokens.$bpk-private-info-banner-default-day;
+    }
+
     &--header-container {
       display: flex;
       flex-direction: column;
