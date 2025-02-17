@@ -18,6 +18,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
+import type { Node } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
@@ -39,6 +40,7 @@ type Props = {
   leadingClassName: ?string,
   trailingText: ?string,
   previousPrice: ?string,
+  icon?: Node,
 };
 
 const getClassName = cssModules(STYLES);
@@ -67,6 +69,7 @@ const BpkPrice = (props: Props) => {
   const {
     align,
     className,
+    icon,
     leadingClassName,
     leadingText,
     previousPrice,
@@ -79,6 +82,24 @@ const BpkPrice = (props: Props) => {
   const defaultTextStyle = getDefaultTextStyle(size);
   const priceTextStyle = getPriceTextStyle(size);
   const isAlignRight = align === ALIGNS.right;
+
+  const getTrailingTextNode = () => {
+    if (!trailingText) {
+      return null;
+    }
+    const textNode = (
+      <BpkText textStyle={defaultTextStyle} tagName="span">
+        {trailingText}
+      </BpkText>
+    );
+    // When aligned right, use a <div> as the text appears on a separate line.
+    // When aligned left, use a <span> as the test is inline.
+    return isAlignRight ? (
+      <div className={getClassName('bpk-price__trailing')}>{textNode}</div>
+    ) : (
+      <span className={getClassName('bpk-price__trailing')}>{textNode}</span>
+    );
+  };
 
   return (
     <div
@@ -111,19 +132,18 @@ const BpkPrice = (props: Props) => {
             </BpkText>
           </span>
         )}
-
         {leadingText && (
           <BpkText textStyle={defaultTextStyle} tagName="span">
             {leadingText}
           </BpkText>
         )}
       </div>
-      <div
-        className={getClassName(isAlignRight && 'bpk-price__column-container')}
-      >
+      <div className={getClassName(isAlignRight && 'bpk-price__main--right')}>
         <span
           className={getClassName(
             'bpk-price__price',
+            // When aligning right, we use the gap property to add space between the price and the icon.
+            // When aligning left, we use the ::after pseudo-element instead to achieve the desired wrapping behaviour.
             !isAlignRight && 'bpk-price__spacing',
           )}
         >
@@ -131,14 +151,19 @@ const BpkPrice = (props: Props) => {
             {price}
           </BpkText>
         </span>
-        {trailingText && (
-          <span className={getClassName('bpk-price__trailing')}>
-            <BpkText textStyle={defaultTextStyle} tagName="span">
-              {trailingText}
-            </BpkText>
+        {icon && (
+          <span
+            className={getClassName(
+              'bpk-price__icon',
+              !isAlignRight && 'bpk-price__spacing',
+            )}
+          >
+            {icon}
           </span>
         )}
+        {!isAlignRight && getTrailingTextNode()}
       </div>
+      {isAlignRight && getTrailingTextNode()}
     </div>
   );
 };
