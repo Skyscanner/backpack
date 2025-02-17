@@ -144,7 +144,7 @@ class BpkTooltipPortal extends Component<Props, State> {
     this.popper = createPopper(targetElement as HTMLElement, tooltipElement, {
       placement: this.props.placement,
       modifiers: this.props.popperModifiers
-        ? [...this.props.popperModifiers, ...stdModifiers]
+        ? [...stdModifiers, ...this.props.popperModifiers]
         : stdModifiers,
     });
 
