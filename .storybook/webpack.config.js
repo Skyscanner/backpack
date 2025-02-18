@@ -72,6 +72,8 @@ module.exports = ({ config }) => {
           importLoaders: 1,
           modules: {
             localIdentName: '[local]-[hash:base64:5]',
+            namedExport: false,
+            exportLocalsConvention: 'as-is',
           },
         },
       },
@@ -97,6 +99,8 @@ module.exports = ({ config }) => {
           importLoaders: 1,
           modules: {
             localIdentName: '[local]-[hash:base64:5]',
+            namedExport: false,
+            exportLocalsConvention: 'as-is',
           },
         },
       },
@@ -113,11 +117,11 @@ module.exports = ({ config }) => {
         options: {
           additionalData: BPK_TOKENS
             ? fs.readFileSync(
-                path.join(
-                  rootDir,
-                  `node_modules/@skyscanner/bpk-foundations-web/tokens/${BPK_TOKENS}.scss`,
-                ),
-              )
+              path.join(
+                rootDir,
+                `node_modules/@skyscanner/bpk-foundations-web/tokens/${BPK_TOKENS}.scss`,
+              ),
+            )
             : '',
         },
       },
