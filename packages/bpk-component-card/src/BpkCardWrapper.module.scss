@@ -23,7 +23,7 @@
 @use '../../unstable__bpk-mixins/utils';
 
 .bpk-card-wrapper {
-  padding: 0.1rem;
+  padding: tokens.bpk-spacing-sm() * 0.5;
 
   @include cards.bpk-card;
   @include borders.bpk-border-lg(var(--background-color), '');
