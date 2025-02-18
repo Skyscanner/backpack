@@ -106,7 +106,7 @@ const BpkCardWrapper = ({
       </div>
       {document.getElementById('body-header') && (
         <Portal isOpen renderTarget={document.getElementById('body-header')}>
-          <AnimateHeight duration={200} height={isBodyOpen ? 'auto' : 0}>
+          <AnimateHeight duration={80} height={isBodyOpen ? 'auto' : 0}>
             <div
               ref={bodyRef}
               className={getClassName(
@@ -140,7 +140,7 @@ const BpkCardWrapper = ({
         className={classNames}
         style={{
           // @ts-expect-error TS is reporting this incorrectly as --background-color is valid
-          '--background-color': backgroundColor,
+          'background-color': backgroundColor,
         }}
       >
         {body ? (
