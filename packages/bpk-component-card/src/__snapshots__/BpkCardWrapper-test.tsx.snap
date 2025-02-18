@@ -4,7 +4,7 @@ exports[`BpkCardWrapper should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-card-wrapper"
-    style="--background-color: rgb(0, 98, 227);"
+    style="background-color: rgb(0, 98, 227);"
   >
     <div
       class="bpk-card-wrapper--header"
@@ -17,7 +17,9 @@ exports[`BpkCardWrapper should render correctly 1`] = `
       class="bpk-card-wrapper--content"
     >
       <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at. Mauris porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis ante in, vestibulum nulla.
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at. Mauris porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis ante in, vestibulum nulla.
+        </div>
       </div>
     </div>
   </div>
@@ -28,7 +30,7 @@ exports[`BpkCardWrapper should support custom class names 1`] = `
 <DocumentFragment>
   <div
     class="bpk-card-wrapper custom-classname"
-    style="--background-color: rgb(0, 98, 227);"
+    style="background-color: rgb(0, 98, 227);"
   >
     <div
       class="bpk-card-wrapper--header"
@@ -41,7 +43,9 @@ exports[`BpkCardWrapper should support custom class names 1`] = `
       class="bpk-card-wrapper--content"
     >
       <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at. Mauris porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis ante in, vestibulum nulla.
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at. Mauris porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis ante in, vestibulum nulla.
+        </div>
       </div>
     </div>
   </div>
