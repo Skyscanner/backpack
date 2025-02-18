@@ -23,9 +23,10 @@
 @use '../../unstable__bpk-mixins/utils';
 
 .bpk-card-wrapper {
+  padding: 0.1rem;
+
   @include cards.bpk-card;
   @include borders.bpk-border-lg(var(--background-color), '');
-  padding: 0.1rem;
 
   &--header {
     border-radius: tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm 0 0;
@@ -37,8 +38,8 @@
   &--content {
     position: relative;
     border-radius: tokens.$bpk-border-radius-md;
-    overflow: hidden;
     background-color: tokens.$bpk-private-info-banner-default-day;
+    overflow: hidden;
 
     &-opened {
       border-radius: 0 0 tokens.$bpk-border-radius-md
@@ -85,6 +86,7 @@
     background-color: tokens.$bpk-private-info-banner-default-day;
     color: tokens.$bpk-text-on-light-day;
     cursor: default;
+
     &--header-container {
       display: flex;
       flex-direction: column;
