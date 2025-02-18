@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render,screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 
 import { coreAccentDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -73,7 +73,7 @@ describe('BpkCardWrapper', () => {
           openBtnLabel: 'More Info',
           closeBtnLabel: 'Less Info',
         }}
-      />
+      />,
     );
 
     const button = screen.getByRole('button', { name: /more info/i });
@@ -81,5 +81,33 @@ describe('BpkCardWrapper', () => {
 
     expect(screen.getByText('More Info Content')).toBeInTheDocument();
   });
-});
 
+  it('hides card content when Less Info button is clicked', () => {
+    render(
+      <BpkCardWrapper
+        header={headerContent}
+        card={cardContent}
+        backgroundColor={coreAccentDay}
+        body={{
+          text: 'More Info Content',
+          openBtnLabel: 'More Info',
+          closeBtnLabel: 'Less Info',
+        }}
+      />,
+    );
+
+    const openbutton = screen.getByRole('button', { name: /more info/i });
+    fireEvent.click(openbutton);
+
+    expect(screen.getByText('More Info Content')).toBeInTheDocument();
+
+    const closeButton = screen.getByRole('button', { name: /less info/i });
+    fireEvent.click(closeButton);
+
+    // find element that contains the text "More Info Content" and get its closest ancestor with the class "bpk-card-wrapper--body"
+    const contentWrapper = screen.getByText('More Info Content').closest('.bpk-card-wrapper--body');
+
+    // Assert that the found element does NOT have the class "expanded", the content should be collapsed
+    expect(contentWrapper).not.toHaveClass('expanded');
+  });
+});
