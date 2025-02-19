@@ -89,6 +89,8 @@ class BpkMobileScrollContainer extends Component<Props, State> {
     showScrollbar: false,
   };
 
+  debouncedResize: () => void;
+
   constructor(props: Props) {
     super(props);
 
@@ -96,6 +98,8 @@ class BpkMobileScrollContainer extends Component<Props, State> {
       computedHeight: 'auto',
       scrollIndicatorClassName: null,
     };
+
+    this.debouncedResize = this.onWindowResize;
   }
 
   componentDidMount() {
@@ -103,17 +107,21 @@ class BpkMobileScrollContainer extends Component<Props, State> {
       this.setScrollBarAwareHeight();
       this.setScrollIndicatorClassName();
     });
-    window.addEventListener('resize', this.onWindowResize);
+    // When the consumer uses the Nx webpack plugins to bundling, debounce may not be a valid function for invalid browser versions in Browserslist (e.g. Safari 15.7.1).
+    if (typeof debounce === 'function') {
+      this.debouncedResize = debounce(this.onWindowResize, 100);
+    }
+    window.addEventListener('resize', this.debouncedResize);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.onWindowResize);
+    window.removeEventListener('resize', this.debouncedResize);
   }
 
-  onWindowResize = debounce(() => {
+  onWindowResize = () => {
     this.setScrollBarAwareHeight();
     this.setScrollIndicatorClassName();
-  }, 100);
+  };
 
   setScrollIndicatorClassName = () => {
     const classNames = computeScrollIndicatorClassName(
