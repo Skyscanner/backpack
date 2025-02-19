@@ -84,12 +84,12 @@ type State = {
 };
 
 class BpkMobileScrollContainer extends Component<Props, State> {
+  debouncedResize: () => void;
+
   static defaultProps: Partial<Props> = {
     innerContainerTagName: 'div',
     showScrollbar: false,
   };
-
-  debouncedResize: () => void;
 
   constructor(props: Props) {
     super(props);
