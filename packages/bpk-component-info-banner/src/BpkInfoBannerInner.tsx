@@ -91,23 +91,14 @@ type ToggleButtonProps = {
   expanded: boolean;
 };
 
-const ToggleButton = (props: ToggleButtonProps) => {
-  const classNames = getClassName('bpk-info-banner__expand-icon');
-
-  return (
-    <button
-      type="button"
+const ToggleButton = (props: ToggleButtonProps) => (
+    <div
       className={getClassName('bpk-info-banner__toggle-button')}
-      aria-label={props.label}
-      aria-expanded={props.expanded}
       title={props.label}
     >
-      <div className={classNames}>
-        {props.expanded ? <CollapseIcon/> : <ExpandIcon/> }
-      </div>
-    </button>
+      {props.expanded ? <CollapseIcon /> : <ExpandIcon />}
+    </div>
   );
-};
 
 type Props = CommonProps & {
   action?: ExpandableBannerAction;
@@ -175,10 +166,8 @@ const BpkInfoBannerInner = ({
     ? getClassName('bpk-info-banner__children-container--with-action')
     : getClassName('bpk-info-banner__children-container--no-action')
 
-  /* eslint-disable
-    jsx-a11y/no-static-element-interactions,
-    jsx-a11y/click-events-have-key-events,
-    */
+  const BannerHeader = isExpandable ? 'button' : 'div';
+
   // Disabling 'click-events-have-key-events and interactive-supports-focus' because header element is not focusable.
   // ToggleButton is focusable and works for this.
   return (
@@ -189,8 +178,12 @@ const BpkInfoBannerInner = ({
       {...rest}
     >
       <section className={sectionClassNames} role="presentation">
-        <div
+        <BannerHeader
           role={isExpandable ? 'button' : undefined}
+          aria-label={isExpandable ? toggleButtonLabel : undefined}
+          aria-expanded={isExpandable ? expanded : undefined}
+          // BannerHeader is just <button> or <div>, so className should be allowed.
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={headerClassNames}
           onClick={onBannerExpandToggle}
         >
@@ -214,7 +207,7 @@ const BpkInfoBannerInner = ({
               />
             </span>
           )}
-        </div>
+        </BannerHeader>
         <BpkAnimateHeight
           duration={parseInt(durationSm, 10)}
           height={showChildren ? 'auto' : 0}
@@ -233,7 +226,7 @@ const BpkInfoBannerInner = ({
       </section>
     </AnimateAndFade>
   );
-  /* eslint-enable */
+
 };
 
 export default BpkInfoBannerInner;
