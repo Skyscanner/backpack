@@ -105,6 +105,10 @@ class BpkMobileScrollContainer extends Component<Props, State> {
   }
 
   componentDidMount() {
+    requestAnimationFrame(() => {
+      this.setScrollBarAwareHeight();
+      this.setScrollIndicatorClassName();
+    });
     window.addEventListener('resize', this.debouncedResize);
   }
 
