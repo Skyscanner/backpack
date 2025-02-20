@@ -134,9 +134,7 @@ describe('withBannerAlertState(BpkInfoBannerExpandable)', () => {
       </BpkInfoBannerExpandableState>,
     );
 
-    const expandButton = screen.getByRole('button', { name: 'View more' });
-
-    await userEvent.click(expandButton);
+    await userEvent.click(screen.getByText(message));
     expect(onExpandMock).toHaveBeenCalled();
   });
 });

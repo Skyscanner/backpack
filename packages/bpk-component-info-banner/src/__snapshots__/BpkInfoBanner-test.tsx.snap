@@ -8,9 +8,8 @@ exports[`BpkInfoBanner should render correctly 1`] = `
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
-            role="presentation"
           >
             <div
               class="bpk-info-banner__header"
@@ -52,10 +51,11 @@ exports[`BpkInfoBanner should render correctly 1`] = `
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
+                  id="children-container"
                 />
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -73,9 +73,8 @@ exports[`BpkInfoBanner should render correctly with no type specified 1`] = `
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--info bpk-info-banner--style-default"
-            role="presentation"
           >
             <div
               class="bpk-info-banner__header"
@@ -117,10 +116,11 @@ exports[`BpkInfoBanner should render correctly with no type specified 1`] = `
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
+                  id="children-container"
                 />
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>

@@ -8,9 +8,8 @@ exports[`withBannerAlertState(BpkInfoBannerDismissable) should render correctly 
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
-            role="presentation"
           >
             <div
               class="bpk-info-banner__header"
@@ -78,10 +77,11 @@ exports[`withBannerAlertState(BpkInfoBannerDismissable) should render correctly 
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
+                  id="children-container"
                 />
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -97,13 +97,12 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly c
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
-            role="presentation"
           >
             <button
+              aria-controls="children-container"
               aria-expanded="false"
-              aria-label="View more"
               class="bpk-info-banner__header bpk-info-banner__header--expandable"
             >
               <span
@@ -139,7 +138,6 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly c
               >
                 <div
                   class="bpk-info-banner__toggle-button"
-                  title="View more"
                 >
                   <span
                     style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
@@ -156,6 +154,11 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly c
                       />
                     </svg>
                   </span>
+                  <span
+                    class="visually-hidden"
+                  >
+                    View more
+                  </span>
                 </div>
               </span>
             </button>
@@ -167,6 +170,7 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly c
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
+                  id="children-container"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
 blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
@@ -177,7 +181,7 @@ ante in, vestibulum nulla.
                 </div>
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -193,13 +197,12 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly e
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
-            role="presentation"
           >
             <button
+              aria-controls="children-container"
               aria-expanded="true"
-              aria-label="View more"
               class="bpk-info-banner__header bpk-info-banner__header--expandable"
             >
               <span
@@ -235,7 +238,6 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly e
               >
                 <div
                   class="bpk-info-banner__toggle-button"
-                  title="View more"
                 >
                   <span
                     style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
@@ -252,6 +254,11 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly e
                       />
                     </svg>
                   </span>
+                  <span
+                    class="visually-hidden"
+                  >
+                    View more
+                  </span>
                 </div>
               </span>
             </button>
@@ -261,6 +268,7 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly e
               <div>
                 <div
                   class="bpk-info-banner__children-container--no-action"
+                  id="children-container"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
 blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
@@ -271,7 +279,7 @@ ante in, vestibulum nulla.
                 </div>
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>

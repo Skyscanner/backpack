@@ -8,9 +8,8 @@ exports[`BpkInfoBannerInner should render correctly with "style" attribute equal
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--info bpk-info-banner--style-onContrast"
-            role="presentation"
           >
             <div
               class="bpk-info-banner__header"
@@ -52,10 +51,11 @@ exports[`BpkInfoBannerInner should render correctly with "style" attribute equal
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
+                  id="children-container"
                 />
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -71,9 +71,8 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--error bpk-info-banner--style-default"
-            role="presentation"
           >
             <div
               class="bpk-info-banner__header"
@@ -115,10 +114,11 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
+                  id="children-container"
                 />
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -134,9 +134,8 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--error bpk-info-banner--style-default"
-            role="presentation"
           >
             <div
               class="bpk-info-banner__header"
@@ -178,10 +177,11 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
+                  id="children-container"
                 />
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -197,9 +197,8 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--info bpk-info-banner--style-default"
-            role="presentation"
           >
             <div
               class="bpk-info-banner__header"
@@ -241,10 +240,11 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
+                  id="children-container"
                 />
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -260,9 +260,8 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
-            role="presentation"
           >
             <div
               class="bpk-info-banner__header"
@@ -304,10 +303,11 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
+                  id="children-container"
                 />
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -323,9 +323,8 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--warning bpk-info-banner--style-default"
-            role="presentation"
           >
             <div
               class="bpk-info-banner__header"
@@ -367,10 +366,11 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
+                  id="children-container"
                 />
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -386,9 +386,8 @@ exports[`BpkInfoBannerInner should render correctly with a custom banner-alert c
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--warning bpk-info-banner--style-default custom-class"
-            role="presentation"
           >
             <div
               class="bpk-info-banner__header"
@@ -430,10 +429,11 @@ exports[`BpkInfoBannerInner should render correctly with a custom banner-alert c
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
+                  id="children-container"
                 />
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -451,9 +451,8 @@ exports[`BpkInfoBannerInner should render correctly with a custom class name 1`]
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--warning bpk-info-banner--style-default"
-            role="presentation"
           >
             <div
               class="bpk-info-banner__header"
@@ -495,10 +494,11 @@ exports[`BpkInfoBannerInner should render correctly with a custom class name 1`]
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
+                  id="children-container"
                 />
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -514,13 +514,12 @@ exports[`BpkInfoBannerInner should render correctly with a element based message
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
-            role="presentation"
           >
             <button
+              aria-controls="children-container"
               aria-expanded="false"
-              aria-label="View more"
               class="bpk-info-banner__header bpk-info-banner__header--expandable"
             >
               <span
@@ -561,7 +560,6 @@ exports[`BpkInfoBannerInner should render correctly with a element based message
               >
                 <div
                   class="bpk-info-banner__toggle-button"
-                  title="View more"
                 >
                   <span
                     style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
@@ -578,6 +576,11 @@ exports[`BpkInfoBannerInner should render correctly with a element based message
                       />
                     </svg>
                   </span>
+                  <span
+                    class="visually-hidden"
+                  >
+                    View more
+                  </span>
                 </div>
               </span>
             </button>
@@ -589,12 +592,13 @@ exports[`BpkInfoBannerInner should render correctly with a element based message
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
+                  id="children-container"
                 >
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                 </div>
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -610,9 +614,8 @@ exports[`BpkInfoBannerInner should render correctly with animateOnLeave 1`] = `
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--warning bpk-info-banner--style-default"
-            role="presentation"
           >
             <div
               class="bpk-info-banner__header"
@@ -680,10 +683,11 @@ exports[`BpkInfoBannerInner should render correctly with animateOnLeave 1`] = `
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
+                  id="children-container"
                 />
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -699,9 +703,8 @@ exports[`BpkInfoBannerInner should render correctly with arbitrary props 1`] = `
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--warning bpk-info-banner--style-default"
-            role="presentation"
           >
             <div
               class="bpk-info-banner__header"
@@ -743,10 +746,11 @@ exports[`BpkInfoBannerInner should render correctly with arbitrary props 1`] = `
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
+                  id="children-container"
                 />
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -762,13 +766,12 @@ exports[`BpkInfoBannerInner should render correctly with child nodes 1`] = `
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
-            role="presentation"
           >
             <button
+              aria-controls="children-container"
               aria-expanded="false"
-              aria-label="View more"
               class="bpk-info-banner__header bpk-info-banner__header--expandable"
             >
               <span
@@ -804,7 +807,6 @@ exports[`BpkInfoBannerInner should render correctly with child nodes 1`] = `
               >
                 <div
                   class="bpk-info-banner__toggle-button"
-                  title="View more"
                 >
                   <span
                     style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
@@ -821,6 +823,11 @@ exports[`BpkInfoBannerInner should render correctly with child nodes 1`] = `
                       />
                     </svg>
                   </span>
+                  <span
+                    class="visually-hidden"
+                  >
+                    View more
+                  </span>
                 </div>
               </span>
             </button>
@@ -832,12 +839,13 @@ exports[`BpkInfoBannerInner should render correctly with child nodes 1`] = `
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
+                  id="children-container"
                 >
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                 </div>
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -853,9 +861,8 @@ exports[`BpkInfoBannerInner should render correctly with dismissable option 1`] 
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--warning bpk-info-banner--style-default"
-            role="presentation"
           >
             <div
               class="bpk-info-banner__header"
@@ -923,10 +930,11 @@ exports[`BpkInfoBannerInner should render correctly with dismissable option 1`] 
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
+                  id="children-container"
                 />
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
