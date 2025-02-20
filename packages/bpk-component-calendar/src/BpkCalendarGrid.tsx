@@ -29,6 +29,7 @@ import {
   getCalendar,
   getCalendarNoCustomLabel,
   isSameMonth,
+  format,
 } from './date-utils';
 
 import type { DateModifiers, SelectionConfiguration } from './custom-proptypes';
@@ -107,7 +108,7 @@ class BpkCalendarGrid extends Component<Props, State> {
     minDate: new Date(),
     onDateClick: () => {},
     onDateKeyDown: () => {},
-    formatMonth: () => {},
+    formatMonth: (month: Date) => format(month, 'MMMM yyyy'),
     preventKeyboardFocus: false,
     selectionConfiguration: {
       type: CALENDAR_SELECTION_TYPE.single,
