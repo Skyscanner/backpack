@@ -522,7 +522,6 @@ exports[`BpkInfoBannerInner should render correctly with a element based message
               aria-expanded="false"
               aria-label="View more"
               class="bpk-info-banner__header bpk-info-banner__header--expandable"
-              role="button"
             >
               <span
                 class="bpk-info-banner__icon"
@@ -771,7 +770,6 @@ exports[`BpkInfoBannerInner should render correctly with child nodes 1`] = `
               aria-expanded="false"
               aria-label="View more"
               class="bpk-info-banner__header bpk-info-banner__header--expandable"
-              role="button"
             >
               <span
                 class="bpk-info-banner__icon"

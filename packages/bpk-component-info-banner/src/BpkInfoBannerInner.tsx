@@ -179,7 +179,6 @@ const BpkInfoBannerInner = ({
     >
       <section className={sectionClassNames} role="presentation">
         <BannerHeader
-          role={isExpandable ? 'button' : undefined}
           aria-label={isExpandable ? toggleButtonLabel : undefined}
           aria-expanded={isExpandable ? expanded : undefined}
           // BannerHeader is just <button> or <div>, so className should be allowed.

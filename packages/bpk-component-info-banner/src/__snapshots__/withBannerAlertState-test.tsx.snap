@@ -105,7 +105,6 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly c
               aria-expanded="false"
               aria-label="View more"
               class="bpk-info-banner__header bpk-info-banner__header--expandable"
-              role="button"
             >
               <span
                 class="bpk-info-banner__icon"
@@ -202,7 +201,6 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly e
               aria-expanded="true"
               aria-label="View more"
               class="bpk-info-banner__header bpk-info-banner__header--expandable"
-              role="button"
             >
               <span
                 class="bpk-info-banner__icon"
