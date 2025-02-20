@@ -179,6 +179,7 @@ const BpkInfoBannerInner = ({
         <BannerHeader
           aria-expanded={isExpandable ? expanded : undefined}
           aria-controls={isExpandable ? childrenContainerId : undefined}
+          type={isExpandable ? 'button' : undefined}
           // BannerHeader is just <button> or <div>, so className should be allowed.
           // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={headerClassNames}
