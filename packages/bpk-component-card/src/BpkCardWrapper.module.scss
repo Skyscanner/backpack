@@ -38,11 +38,13 @@
     position: relative;
     border-radius: tokens.$bpk-border-radius-md;
     background-color: tokens.$bpk-private-info-banner-default-day;
+    transition: border-radius 0.25s ease-in-out;
     overflow: hidden;
 
     &-opened {
       border-radius: 0 0 tokens.$bpk-border-radius-md
         tokens.$bpk-border-radius-md;
+      transition: border-radius 0.01s ease-in-out;
     }
 
     &::before,
