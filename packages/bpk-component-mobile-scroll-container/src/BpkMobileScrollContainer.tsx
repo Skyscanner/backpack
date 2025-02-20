@@ -23,6 +23,8 @@ import debounce from 'lodash/debounce';
 
 import { cssModules, isRTL } from '../../bpk-react-utils';
 
+import type { DebouncedFunc } from 'lodash';
+
 import STYLES from './BpkMobileScrollContainer.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -84,7 +86,7 @@ type State = {
 };
 
 class BpkMobileScrollContainer extends Component<Props, State> {
-  debouncedResize: () => void;
+  debouncedResize:  DebouncedFunc<() => void>
 
   static defaultProps: Partial<Props> = {
     innerContainerTagName: 'div',
@@ -99,18 +101,10 @@ class BpkMobileScrollContainer extends Component<Props, State> {
       scrollIndicatorClassName: null,
     };
 
-    this.debouncedResize = this.onWindowResize;
+    this.debouncedResize = debounce(this.onWindowResize, 100);
   }
 
   componentDidMount() {
-    requestAnimationFrame(() => {
-      this.setScrollBarAwareHeight();
-      this.setScrollIndicatorClassName();
-    });
-    // When the consumer uses the Nx webpack plugins to bundling, debounce may not be a valid function for invalid browser versions in Browserslist (e.g. Safari 15.7.1).
-    if (typeof debounce === 'function') {
-      this.debouncedResize = debounce(this.onWindowResize, 100);
-    }
     window.addEventListener('resize', this.debouncedResize);
   }
 
