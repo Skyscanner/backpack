@@ -4,6 +4,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
 <DocumentFragment>
   <div
     aria-hidden="false"
+    aria-label="October 2016"
     class="bpk-calendar-grid"
     role="grid"
   >
@@ -847,6 +848,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
 <DocumentFragment>
   <div
     aria-hidden="false"
+    aria-label="October 2016"
     class="bpk-calendar-grid"
     role="grid"
   >
@@ -1690,6 +1692,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
 <DocumentFragment>
   <div
     aria-hidden="false"
+    aria-label="October 2016"
     class="bpk-calendar-grid"
     role="grid"
   >
@@ -2113,6 +2116,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
 <DocumentFragment>
   <div
     aria-hidden="false"
+    aria-label="October 2016"
     class="bpk-calendar-grid"
     role="grid"
   >

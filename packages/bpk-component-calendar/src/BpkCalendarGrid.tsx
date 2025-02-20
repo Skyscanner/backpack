@@ -56,6 +56,11 @@ type DefaultProps = {
   minDate: Date;
   onDateClick: () => void;
   onDateKeyDown: () => void;
+  /**
+   * A function to format a human-readable month, for example: "January 2018":
+   * If you just need to quickly prototype, use the following from [`date-fns`](https://date-fns.org/docs/format#usage)
+   */
+  formatMonth: (month: Date) => string;
   preventKeyboardFocus: boolean;
   /**
    * An object to indicate which configuration of the calendar is being used. Choices are `single` date selection or `range` date selection.
@@ -158,6 +163,7 @@ class BpkCalendarGrid extends Component<Props, State> {
       dateModifiers,
       dateProps,
       focusedDate,
+      formatMonth,
       ignoreOutsideDate,
       isKeyboardFocusable,
       markOutsideDays,
@@ -177,7 +183,12 @@ class BpkCalendarGrid extends Component<Props, State> {
     const classNames = getClassName('bpk-calendar-grid', className);
 
     return (
-      <div className={classNames} aria-hidden={!isKeyboardFocusable} role="grid" >
+      <div
+        className={classNames}
+        aria-hidden={!isKeyboardFocusable}
+        role="grid"
+        aria-label={formatMonth(month)}
+      >
         <div role="rowgroup">
           {calendarMonthWeeks.map((dates) => (
             <BpkCalendarWeek
