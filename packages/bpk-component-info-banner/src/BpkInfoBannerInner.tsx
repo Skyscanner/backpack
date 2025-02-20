@@ -166,8 +166,6 @@ const BpkInfoBannerInner = ({
 
   const BannerHeader = isExpandable ? 'button' : 'div';
 
-  const childrenContainerId = 'children-container';
-
   return (
     <AnimateAndFade
       animateOnEnter={animateOnEnter}
@@ -178,7 +176,6 @@ const BpkInfoBannerInner = ({
       <div className={classNames}>
         <BannerHeader
           aria-expanded={isExpandable ? expanded : undefined}
-          aria-controls={isExpandable ? childrenContainerId : undefined}
           type={isExpandable ? 'button' : undefined}
           // BannerHeader is just <button> or <div>, so className should be allowed.
           // eslint-disable-next-line @skyscanner/rules/forbid-component-props
@@ -210,7 +207,7 @@ const BpkInfoBannerInner = ({
           duration={parseInt(durationSm, 10)}
           height={showChildren ? 'auto' : 0}
         >
-          <div id={childrenContainerId} className={childrenContainerClassName}>
+          <div className={childrenContainerClassName}>
             {children}
           </div>
           {isExpandable && action && (

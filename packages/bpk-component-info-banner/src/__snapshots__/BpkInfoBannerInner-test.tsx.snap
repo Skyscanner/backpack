@@ -51,7 +51,6 @@ exports[`BpkInfoBannerInner should render correctly with "style" attribute equal
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 />
               </div>
             </div>
@@ -114,7 +113,6 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 />
               </div>
             </div>
@@ -177,7 +175,6 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 />
               </div>
             </div>
@@ -240,7 +237,6 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 />
               </div>
             </div>
@@ -303,7 +299,6 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 />
               </div>
             </div>
@@ -366,7 +361,6 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 />
               </div>
             </div>
@@ -429,7 +423,6 @@ exports[`BpkInfoBannerInner should render correctly with a custom banner-alert c
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 />
               </div>
             </div>
@@ -494,7 +487,6 @@ exports[`BpkInfoBannerInner should render correctly with a custom class name 1`]
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 />
               </div>
             </div>
@@ -518,9 +510,9 @@ exports[`BpkInfoBannerInner should render correctly with a element based message
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
           >
             <button
-              aria-controls="children-container"
               aria-expanded="false"
               class="bpk-info-banner__header bpk-info-banner__header--expandable"
+              type="button"
             >
               <span
                 class="bpk-info-banner__icon"
@@ -592,7 +584,6 @@ exports[`BpkInfoBannerInner should render correctly with a element based message
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 >
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                 </div>
@@ -683,7 +674,6 @@ exports[`BpkInfoBannerInner should render correctly with animateOnLeave 1`] = `
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 />
               </div>
             </div>
@@ -746,7 +736,6 @@ exports[`BpkInfoBannerInner should render correctly with arbitrary props 1`] = `
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 />
               </div>
             </div>
@@ -770,9 +759,9 @@ exports[`BpkInfoBannerInner should render correctly with child nodes 1`] = `
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
           >
             <button
-              aria-controls="children-container"
               aria-expanded="false"
               class="bpk-info-banner__header bpk-info-banner__header--expandable"
+              type="button"
             >
               <span
                 class="bpk-info-banner__icon"
@@ -839,7 +828,6 @@ exports[`BpkInfoBannerInner should render correctly with child nodes 1`] = `
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 >
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                 </div>
@@ -930,7 +918,6 @@ exports[`BpkInfoBannerInner should render correctly with dismissable option 1`] 
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 />
               </div>
             </div>

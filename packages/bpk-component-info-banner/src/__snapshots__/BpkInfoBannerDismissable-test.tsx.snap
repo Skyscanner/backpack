@@ -77,7 +77,6 @@ exports[`BpkInfoBannerDismissable should render correctly 1`] = `
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 />
               </div>
             </div>

@@ -77,7 +77,6 @@ exports[`withBannerAlertState(BpkInfoBannerDismissable) should render correctly 
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 />
               </div>
             </div>
@@ -101,9 +100,9 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly c
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
           >
             <button
-              aria-controls="children-container"
               aria-expanded="false"
               class="bpk-info-banner__header bpk-info-banner__header--expandable"
+              type="button"
             >
               <span
                 class="bpk-info-banner__icon"
@@ -170,7 +169,6 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly c
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
 blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
@@ -201,9 +199,9 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly e
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
           >
             <button
-              aria-controls="children-container"
               aria-expanded="true"
               class="bpk-info-banner__header bpk-info-banner__header--expandable"
+              type="button"
             >
               <span
                 class="bpk-info-banner__icon"
@@ -268,7 +266,6 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly e
               <div>
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
 blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis

@@ -51,7 +51,6 @@ exports[`BpkInfoBanner should render correctly 1`] = `
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 />
               </div>
             </div>
@@ -116,7 +115,6 @@ exports[`BpkInfoBanner should render correctly with no type specified 1`] = `
               >
                 <div
                   class="bpk-info-banner__children-container--no-action"
-                  id="children-container"
                 />
               </div>
             </div>
