@@ -47,14 +47,16 @@ const BpkScrollableCalendarGrid = ({
   return (
     <div className={classNames}>
       <span className={getClassName('bpk-scrollable-calendar-grid__title')}>
-        <BpkText
-          tagName="h1"
-          textStyle={TEXT_STYLES.heading4}
-        >    
+        <BpkText tagName="h1" textStyle={TEXT_STYLES.heading4}>
           {formatMonth(month)}
         </BpkText>
       </span>
-      <BpkCalendarGrid month={month} ignoreOutsideDate {...rest} />
+      <BpkCalendarGrid
+        month={month}
+        ignoreOutsideDate
+        formatMonth={formatMonth}
+        {...rest}
+      />
     </div>
   );
 };
