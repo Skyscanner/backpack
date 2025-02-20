@@ -107,6 +107,7 @@ class BpkCalendarGrid extends Component<Props, State> {
     minDate: new Date(),
     onDateClick: () => {},
     onDateKeyDown: () => {},
+    formatMonth: () => {},
     preventKeyboardFocus: false,
     selectionConfiguration: {
       type: CALENDAR_SELECTION_TYPE.single,
