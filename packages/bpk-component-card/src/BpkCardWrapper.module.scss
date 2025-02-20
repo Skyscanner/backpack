@@ -26,7 +26,6 @@
   padding: tokens.bpk-spacing-sm() * 0.5;
 
   @include cards.bpk-card;
-  @include borders.bpk-border-lg(var(--background-color), '');
 
   &--header {
     border-radius: tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm 0 0;
@@ -55,7 +54,6 @@
       width: tokens.bpk-spacing-lg();
       height: tokens.bpk-spacing-lg();
       background-color: transparent;
-      box-shadow: tokens.bpk-spacing-base() 0 0 0 var(--background-color);
       overflow: hidden;
 
       @include radii.bpk-border-radius-md;

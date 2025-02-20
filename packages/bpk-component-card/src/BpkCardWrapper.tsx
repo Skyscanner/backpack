@@ -136,13 +136,7 @@ const BpkCardWrapper = ({
 
   return (
     <CardContext.Provider value={{ elevated: false }}>
-      <div
-        className={classNames}
-        style={{
-          // @ts-expect-error TS is reporting this incorrectly as --background-color is valid
-          'background-color': backgroundColor,
-        }}
-      >
+      <div className={classNames} style={{ 'backgroundColor': backgroundColor }}>
         {body ? (
           <div
             className={getClassName('bpk-card-wrapper--body--header-container')}
