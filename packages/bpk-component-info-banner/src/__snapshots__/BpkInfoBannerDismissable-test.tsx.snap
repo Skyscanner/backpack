@@ -8,9 +8,8 @@ exports[`BpkInfoBannerDismissable should render correctly 1`] = `
     >
       <div>
         <div>
-          <section
+          <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
-            role="presentation"
           >
             <div
               class="bpk-info-banner__header"
@@ -81,7 +80,7 @@ exports[`BpkInfoBannerDismissable should render correctly 1`] = `
                 />
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
