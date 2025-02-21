@@ -26,6 +26,7 @@
   padding: tokens.bpk-spacing-sm() * 0.5;
 
   @include cards.bpk-card;
+  border-radius: tokens.$bpk-one-pixel-rem * 14;
 
   &--header {
     border-radius: tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm 0 0;
