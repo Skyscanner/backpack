@@ -20,13 +20,14 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import mockCards from '../../testMocks';
+import { ACCESSORY_TYPES, LAYOUTS } from '../common-types';
 
 import BpkCardListGridStack from './BpkCardListGridStack';
 
 describe('BpkCardListGridStack', () => {
   it('should render correctly with grid and no accessory', () => {
     render(
-      <BpkCardListGridStack layout="grid" initiallyShownCards={3}>
+      <BpkCardListGridStack layout={LAYOUTS.grid} initiallyShownCards={3}>
         {mockCards(3)}
       </BpkCardListGridStack>,
     );
@@ -37,7 +38,7 @@ describe('BpkCardListGridStack', () => {
 
   it('should render correctly with stack and no accessory', () => {
     render(
-      <BpkCardListGridStack layout="stack" initiallyShownCards={3}>
+      <BpkCardListGridStack layout={LAYOUTS.stack} initiallyShownCards={3}>
         {mockCards(3)}
       </BpkCardListGridStack>,
     );
@@ -49,8 +50,8 @@ describe('BpkCardListGridStack', () => {
   it('should render correctly with expand accessory', () => {
     render(
       <BpkCardListGridStack
-        layout="grid"
-        accessory="expand"
+        layout={LAYOUTS.grid}
+        accessory={ACCESSORY_TYPES.Expand}
         initiallyShownCards={3}
         expandText="Show more"
       >
@@ -68,8 +69,8 @@ describe('BpkCardListGridStack', () => {
   it('should render correctly with button accessory', () => {
     render(
       <BpkCardListGridStack
-        layout="grid"
-        accessory="button"
+        layout={LAYOUTS.grid}
+        accessory={ACCESSORY_TYPES.Button}
         buttonText="Explore more"
         onButtonClick={() => {}}
         initiallyShownCards={3}
@@ -91,8 +92,8 @@ describe('BpkCardListGridStack', () => {
 
     render(
       <BpkCardListGridStack
-        layout="grid"
-        accessory="expand"
+        layout={LAYOUTS.grid}
+        accessory={ACCESSORY_TYPES.Expand}
         initiallyShownCards={3}
         expandText="Show more"
       >

@@ -20,13 +20,14 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import mockCards from '../../testMocks';
+import { ACCESSORY_TYPES, LAYOUTS } from '../common-types';
 
 import BpkCardListGridStack from './BpkCardListGridStack';
 
 describe('BpkCardListGridStack', () => {
   it('should have no accessibility issues for grid and no accessory', async () => {
     const { container } = render(
-      <BpkCardListGridStack layout="grid" initiallyShownCards={3}>
+      <BpkCardListGridStack layout={LAYOUTS.grid} initiallyShownCards={3}>
         {mockCards(3)}
       </BpkCardListGridStack>,
     );
@@ -37,7 +38,7 @@ describe('BpkCardListGridStack', () => {
 
   it('should have no accessibility issues for stack and no accessory', async () => {
     const { container } = render(
-      <BpkCardListGridStack layout="stack" initiallyShownCards={3}>
+      <BpkCardListGridStack layout={LAYOUTS.stack} initiallyShownCards={3}>
         {mockCards(3)}
       </BpkCardListGridStack>,
     );
@@ -49,8 +50,8 @@ describe('BpkCardListGridStack', () => {
   it('should have no accessibility issues for expand accessory', async () => {
     const { container } = render(
       <BpkCardListGridStack
-        layout="grid"
-        accessory="expand"
+        layout={LAYOUTS.grid}
+        accessory={ACCESSORY_TYPES.Expand}
         initiallyShownCards={3}
         expandText="Show more"
       >
@@ -65,8 +66,8 @@ describe('BpkCardListGridStack', () => {
   it('should have no accessibility issues for button accessory', async () => {
     const { container } = render(
       <BpkCardListGridStack
-        layout="grid"
-        accessory="button"
+        layout={LAYOUTS.grid}
+        accessory={ACCESSORY_TYPES.Button}
         initiallyShownCards={3}
         buttonText="Show more"
         onButtonClick={() => {}}

@@ -22,7 +22,7 @@ import BpkSectionHeader from '../../bpk-component-section-header';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkCardListGridStack from './BpkCardListGridStack';
-import { LAYOUTS } from './common-types';
+import { ACCESSORY_TYPES, LAYOUTS } from './common-types';
 
 import type CardListProps from './common-types';
 
@@ -47,7 +47,7 @@ const BpkCardList = (props: CardListProps) => {
     title,
   } = props;
 
-  const button = buttonText && accessory !== 'button' && (
+  const button = buttonText && accessory !== ACCESSORY_TYPES.Button && (
     <BpkButtonV2 onClick={onButtonClick} href={buttonHref}>
       {buttonText}
     </BpkButtonV2>

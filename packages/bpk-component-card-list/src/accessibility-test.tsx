@@ -22,6 +22,7 @@ import { axe } from 'jest-axe';
 import mockCards from '../testMocks';
 
 import BpkCardList from './BpkCardList';
+import { LAYOUTS } from './common-types';
 
 describe('BpkCardList', () => {
   it('should not have any accessibility issues with grid, stack and no accessory', async () => {
@@ -29,8 +30,8 @@ describe('BpkCardList', () => {
       <BpkCardList
         title="Title"
         description="Description"
-        layoutDesktop="grid"
-        layoutMobile="stack"
+        layoutDesktop={LAYOUTS.grid}
+        layoutMobile={LAYOUTS.stack}
         cardList={mockCards(2)}
       />,
     );
@@ -44,8 +45,8 @@ describe('BpkCardList', () => {
       <BpkCardList
         title="Title"
         description="Description"
-        layoutDesktop="grid"
-        layoutMobile="stack"
+        layoutDesktop={LAYOUTS.grid}
+        layoutMobile={LAYOUTS.stack}
         cardList={mockCards(2)}
         buttonText="Header Button"
         buttonHref="#"
@@ -62,8 +63,8 @@ describe('BpkCardList', () => {
       <BpkCardList
         title="Title"
         description="Description"
-        layoutDesktop="grid"
-        layoutMobile="stack"
+        layoutDesktop={LAYOUTS.grid}
+        layoutMobile={LAYOUTS.stack}
         cardList={mockCards(2)}
         accessory="expand"
         expandText="Expand"
@@ -79,8 +80,8 @@ describe('BpkCardList', () => {
       <BpkCardList
         title="Title"
         description="Description"
-        layoutDesktop="grid"
-        layoutMobile="stack"
+        layoutDesktop={LAYOUTS.grid}
+        layoutMobile={LAYOUTS.stack}
         cardList={mockCards(2)}
         accessory="button"
         buttonText="Button"
