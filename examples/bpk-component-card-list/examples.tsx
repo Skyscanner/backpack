@@ -20,12 +20,13 @@ import { useState } from 'react';
 
 import BpkCard from '../../packages/bpk-component-card';
 import BpkCardList from '../../packages/bpk-component-card-list';
+import { LAYOUTS } from '../../packages/bpk-component-card-list/src/common-types';
 import BpkImage from '../../packages/bpk-component-image';
 import BpkText, {
   TEXT_STYLES,
 } from '../../packages/bpk-component-text/src/BpkText';
 
-import STYLES from './exampless.module.scss';
+import STYLES from './examples.module.scss';
 
 const DestinationCard = (i: number) => (
   <BpkCard href="/" padded={false}>
@@ -71,8 +72,8 @@ const BasicExample = () => (
     buttonHref=""
     onButtonClick={() => null}
     cardList={cards(DestinationCard)}
-    layoutDesktop="grid"
-    layoutMobile="stack"
+    layoutDesktop={LAYOUTS.grid}
+    layoutMobile={LAYOUTS.stack}
   />
 );
 
@@ -81,8 +82,8 @@ const GridToStackExample = () => (
     title="Must-visit spots"
     description="Check out these world-famous destinations perfect for visiting in spring."
     cardList={cards(DestinationCard)}
-    layoutDesktop="grid"
-    layoutMobile="stack"
+    layoutDesktop={LAYOUTS.grid}
+    layoutMobile={LAYOUTS.stack}
     onButtonClick={() => null}
     accessory="button"
     buttonText="Explore more"
@@ -97,8 +98,8 @@ const GridToStackWithExpandExample = () => {
       title="Must-visit spots"
       description="Check out these world-famous destinations perfect for visiting in spring."
       cardList={cards(DestinationCard)}
-      layoutDesktop="grid"
-      layoutMobile="stack"
+      layoutDesktop={LAYOUTS.grid}
+      layoutMobile={LAYOUTS.stack}
       onButtonClick={() =>
         setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
       }
