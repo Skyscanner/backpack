@@ -30,6 +30,7 @@ export default () => (
       popoverId: 'popover',
       labelTitle: true,
       closeBtnIcon: false,
+      zIndexCustom: 1200;
     }}
     logo="logo.png"
     subheadline="My subheadline"

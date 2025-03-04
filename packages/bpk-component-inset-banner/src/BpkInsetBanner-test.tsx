@@ -67,7 +67,7 @@ describe('BpkInsetBanner', () => {
       />,
     );
 
-    const ctaButton = screen.getByTestId('adInfoBtn');
+    const ctaButton = screen.getByTestId('ctaBtn');
 
     fireEvent.click(ctaButton);
 

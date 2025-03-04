@@ -51,6 +51,7 @@ export type Props = {
     popoverId?: string;
     labelTitle?: boolean;
     closeBtnIcon?: boolean;
+    zIndexCustom?: number;
   };
   logo?: string;
   subheadline?: string;
@@ -121,11 +122,12 @@ const BpkInsetBanner = ({
               closeButtonText={callToAction?.buttonCloseLabel}
               closeButtonIcon={callToAction?.closeBtnIcon}
               labelAsTitle={callToAction?.labelTitle}
+              zIndexValue={callToAction?.zIndexCustom}
               target={
                 <button
                   aria-label={callToAction?.buttonA11yLabel}
                   className={getClassName('bpk-inset-banner--cta-button')}
-                  data-testid="adInfoBtn"
+                  data-testid="ctaBtn"
                   aria-hidden="false"
                   type="button"
                 >

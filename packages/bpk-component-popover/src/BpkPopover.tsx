@@ -109,6 +109,7 @@ export type Props = CloseButtonProps & {
   target: ReactElement<any>;
   closeButtonLabel?: string;
   actionText?: string;
+  zIndexValue?: number;
   onAction?: () => void;
   renderTarget?: () => HTMLElement | HTMLElement | undefined;
   [rest: string]: any;
@@ -134,6 +135,7 @@ const BpkPopover = ({
   renderTarget = () => undefined,
   showArrow = true,
   target,
+  zIndexValue = 900,
   ...rest
 }: Props) => {
   const [isOpenState, setIsOpenState] = useState(isOpen);
@@ -208,8 +210,8 @@ const BpkPopover = ({
             <div
               className={getClassName('bpk-popover--container')}
               ref={refs.setFloating}
-              style={floatingStyles}
               {...getFloatingProps()}
+              style={{ ...floatingStyles, zIndex: zIndexValue }}
             >
               <TransitionInitialMount
                 appearClassName={getClassName('bpk-popover--appear')}
