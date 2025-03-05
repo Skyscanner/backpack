@@ -19,13 +19,5 @@
 @use '../../unstable__bpk-mixins/tokens';
 
 .bpk-chip-group-nudger {
-  &--leading {
-    margin-inline-end: tokens.bpk-spacing-md();
-    margin-inline-start: tokens.bpk-spacing-sm();
-  }
-
-  &--trailing {
-    margin-inline-end: tokens.bpk-spacing-sm();
-    margin-inline-start: tokens.bpk-spacing-md();
-  }
+  margin-inline: tokens.bpk-spacing-sm();
 }
