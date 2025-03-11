@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { BpkNavigationBarButtonLink } from '../../bpk-component-navigation-bar';
 
@@ -197,5 +197,22 @@ describe('BpkModalInner', () => {
       </BpkModalInner>,
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with showHeader false', () => {
+    render(
+      <BpkModalInner
+        id="my-modal"
+        ariaLabel="Modal title"
+        showHeader={false}
+        dialogRef={jest.fn()}
+        isIphone={false}
+      >
+        Modal content
+      </BpkModalInner>,
+    );
+
+    expect(screen.queryAllByRole('heading')).toHaveLength(0);
+    expect(screen.getByRole('dialog')).toHaveAttribute('aria-label', 'Modal title');
   });
 });
