@@ -215,4 +215,22 @@ describe('BpkModalInner', () => {
     expect(screen.queryAllByRole('heading')).toHaveLength(0);
     expect(screen.getByRole('dialog')).toHaveAttribute('aria-label', 'Modal title');
   });
+
+  it('should render with a11y labelled-by when showHeader true', () => {
+    render(
+      <BpkModalInner
+        id="my-modal"
+        title="Actual title"
+        ariaLabel="Ignored title"
+        showHeader
+        dialogRef={jest.fn()}
+        isIphone={false}
+      >
+        Modal content
+      </BpkModalInner>,
+    );
+
+    expect(screen.getByRole('heading')).toHaveTextContent('Actual title');
+    expect(screen.getByRole('dialog')).toHaveAccessibleName('Actual title');
+  });
 });
