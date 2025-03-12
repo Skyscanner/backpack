@@ -31,11 +31,23 @@ import {
 
 const LinkExample = () => (
   <div>
-    <BpkLink href="#" onClick={action('#1 clicked')} explicit>
+    <BpkLink href="#" onClick={action('#1 clicked')}>
       Link #1
     </BpkLink>
     <br />
     <BpkLink href="#" onClick={action('#2 clicked')}>
+      Link #2
+    </BpkLink>
+  </div>
+);
+
+const ExplicitLinkExample = () => (
+  <div>
+    <BpkLink href="#" onClick={action('#1 clicked')} explicit>
+      Link #1
+    </BpkLink>
+    <br />
+    <BpkLink href="#" onClick={action('#2 clicked')} explicit>
       Link #2
     </BpkLink>
   </div>
@@ -103,6 +115,7 @@ const MixedExample = () => (
 
 export {
   LinkExample,
+  ExplicitLinkExample,
   ButtonLinkExample,
   LinkAlternativeExample,
   ButtonLinkAlternativeExample,
