@@ -31,7 +31,7 @@ import {
 
 const LinkExample = () => (
   <div>
-    <BpkLink href="#" onClick={action('#1 clicked')}>
+    <BpkLink href="#" onClick={action('#1 clicked')} explicit>
       Link #1
     </BpkLink>
     <br />

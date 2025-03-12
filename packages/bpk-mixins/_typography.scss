@@ -820,6 +820,50 @@
   }
 }
 
+/// Explicit inline link.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-link();
+///     @include bpk-link--explicit();
+///   }
+
+@mixin bpk-link--explicit {
+  display: inline-block;
+
+  @include bpk-hover {
+    text-decoration: none;
+
+    &::after {
+      width: 0%;
+    }
+  }
+
+  &::after {
+    position: relative;
+    bottom: tokens.$bpk-border-size-sm;
+    content: '';
+    display: block;
+    width: 100%;
+    height: tokens.$bpk-border-size-sm;
+    transition:
+      width 0.2s ease 0s,
+      left 0.2s ease 0s;
+
+    @include bpk-themeable-property(
+      background,
+      --bpk-link-color,
+      $bpk-text-link-day
+    );
+
+    @media (prefers-reduced-motion) {
+      transition:
+        width 0s ease 0s,
+        left 0s ease 0s;
+    }
+  }
+}
+
 /// White link. Modifies the bpk-link mixin.
 ///
 /// @require {mixin} bpk-link

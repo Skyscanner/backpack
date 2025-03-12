@@ -39,6 +39,7 @@ type Props = {
   blank: boolean,
   rel: ?string,
   alternate: boolean,
+  explicit: Boolean,
 };
 
 const BpkLink = forwardRef((props: Props, ref) => {
@@ -47,6 +48,7 @@ const BpkLink = forwardRef((props: Props, ref) => {
     blank,
     children,
     className,
+    explicit,
     href,
     onClick,
     rel: propRel,
@@ -63,6 +65,9 @@ const BpkLink = forwardRef((props: Props, ref) => {
   }
   if (className) {
     classNames.push(className);
+  }
+  if (explicit) {
+    classNames.push(getClassName('bpk-link--explicit'));
   }
 
   return (
