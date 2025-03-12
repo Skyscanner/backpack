@@ -28,4 +28,8 @@
   &--alternate {
     @include typography.bpk-link--alternate;
   }
+
+  &--explicit {
+    @include typography.bpk-link--explicit;
+  }
 }
