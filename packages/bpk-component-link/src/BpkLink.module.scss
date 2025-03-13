@@ -29,7 +29,7 @@
     @include typography.bpk-link--alternate;
   }
 
-  &--explicit {
-    @include typography.bpk-link--explicit;
+  &--implicit {
+    @include typography.bpk-link--implicit;
   }
 }

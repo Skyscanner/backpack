@@ -39,7 +39,7 @@ type Props = {
   blank: boolean,
   rel: ?string,
   alternate: boolean,
-  explicit: Boolean,
+  implicit: boolean,
 };
 
 const BpkLink = forwardRef((props: Props, ref) => {
@@ -48,8 +48,8 @@ const BpkLink = forwardRef((props: Props, ref) => {
     blank,
     children,
     className,
-    explicit,
     href,
+    implicit,
     onClick,
     rel: propRel,
     ...rest
@@ -66,8 +66,8 @@ const BpkLink = forwardRef((props: Props, ref) => {
   if (className) {
     classNames.push(className);
   }
-  if (explicit) {
-    classNames.push(getClassName('bpk-link--explicit'));
+  if (implicit) {
+    classNames.push(getClassName('bpk-link--implicit'));
   }
 
   return (
@@ -97,6 +97,7 @@ BpkLink.propTypes = {
   blank: PropTypes.bool,
   rel: PropTypes.string,
   alternate: PropTypes.bool,
+  implicit: PropTypes.bool,
 };
 
 BpkLink.defaultProps = {
@@ -105,6 +106,7 @@ BpkLink.defaultProps = {
   blank: false,
   rel: null,
   alternate: false,
+  implicit: false,
 };
 
 export default BpkLink;

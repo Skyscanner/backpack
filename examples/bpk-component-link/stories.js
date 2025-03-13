@@ -22,7 +22,7 @@ import BpkLink from '../../packages/bpk-component-link/src/BpkLink';
 
 import {
   LinkExample,
-  ExplicitLinkExample,
+  ImplicitLinkExample,
   ButtonLinkExample,
   LinkAlternativeExample,
   ButtonLinkAlternativeExample,
@@ -40,7 +40,7 @@ export default {
 };
 
 export const Example = LinkExample;
-export const ExampleExplicit = ExplicitLinkExample;
+export const ExampleImplicit = ImplicitLinkExample;
 export const ExampleButtons = ButtonLinkExample;
 
 export const ExampleAlternate = LinkAlternativeExample;
