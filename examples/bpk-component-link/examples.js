@@ -41,13 +41,13 @@ const LinkExample = () => (
   </div>
 );
 
-const ExplicitLinkExample = () => (
+const ImplicitLinkExample = () => (
   <div>
-    <BpkLink href="#" onClick={action('#1 clicked')} explicit>
+    <BpkLink href="#" onClick={action('#1 clicked')} implicit>
       Link #1
     </BpkLink>
     <br />
-    <BpkLink href="#" onClick={action('#2 clicked')} explicit>
+    <BpkLink href="#" onClick={action('#2 clicked')} implicit>
       Link #2
     </BpkLink>
   </div>
@@ -115,7 +115,7 @@ const MixedExample = () => (
 
 export {
   LinkExample,
-  ExplicitLinkExample,
+  ImplicitLinkExample,
   ButtonLinkExample,
   LinkAlternativeExample,
   ButtonLinkAlternativeExample,
