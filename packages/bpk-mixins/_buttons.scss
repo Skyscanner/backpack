@@ -397,6 +397,10 @@
 
   @include bpk-link;
 
+  &::after {
+    bottom: auto;
+  }
+
   padding: $vertical-padding 0; /* stylelint-disable-line order/order, order/properties-order */
   color: $bpk-private-button-link-normal-foreground-day;
 
