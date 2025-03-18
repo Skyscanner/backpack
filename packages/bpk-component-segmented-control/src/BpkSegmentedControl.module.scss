@@ -27,8 +27,6 @@
   grid-auto-columns: 1fr;
   grid-auto-flow: column;
 
-  // overflow: hidden;
-
   @include radii.bpk-border-radius-sm;
 
   &-shadow {
