@@ -865,23 +865,29 @@
 ///   }
 
 @mixin bpk-link--implicit {
-  display: inline;
-
-  @include bpk-themeable-property(color, --bpk-link-color, $bpk-text-link-day);
+  @include bpk-themeable-property(
+    color,
+    --bpk-link-color,
+    $bpk-text-primary-day
+  );
 
   @include bpk-hover {
-    text-decoration: underline;
-
     @include bpk-themeable-property(
       color,
       --bpk-link-hover-color,
-      $bpk-text-link-day
+      $bpk-text-primary-day
     );
+
+    &::after {
+      width: 100%;
+    }
   }
 
   &::after {
-    content: none;
-    display: none;
+    width: 0;
+    transition:
+      width 0.2s ease 0s,
+      left 0.2s ease 0s;
   }
 
   &:active {
@@ -890,8 +896,12 @@
     @include bpk-themeable-property(
       color,
       --bpk-link-active-color,
-      $bpk-text-link-day
+      $bpk-text-primary-day
     );
+
+    &::after {
+      width: 100%;
+    }
   }
 }
 

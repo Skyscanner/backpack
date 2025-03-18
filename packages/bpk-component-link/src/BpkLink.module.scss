@@ -25,11 +25,11 @@
     @include typography.bpk-link--active;
   }
 
-  &--alternate {
-    @include typography.bpk-link--alternate;
-  }
-
   &--implicit {
     @include typography.bpk-link--implicit;
+  }
+
+  &--alternate {
+    @include typography.bpk-link--alternate;
   }
 }

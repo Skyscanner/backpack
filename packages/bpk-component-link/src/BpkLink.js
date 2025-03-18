@@ -60,14 +60,14 @@ const BpkLink = forwardRef((props: Props, ref) => {
   const target = blank ? '_blank' : null;
   const rel = blank ? propRel || 'noopener noreferrer' : propRel;
 
-  if (alternate) {
-    classNames.push(getClassName('bpk-link--alternate'));
-  }
   if (className) {
     classNames.push(className);
   }
   if (implicit) {
     classNames.push(getClassName('bpk-link--implicit'));
+  }
+  if (alternate) {
+    classNames.push(getClassName('bpk-link--alternate'));
   }
 
   return (
