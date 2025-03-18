@@ -395,7 +395,7 @@
   background: none; /* stylelint-disable-line order/order, order/properties-order */
   box-shadow: none;
 
-  @include bpk-link;
+  @include bpk-link--implicit;
 
   &::after {
     bottom: auto;

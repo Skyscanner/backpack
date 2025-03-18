@@ -791,7 +791,11 @@
   cursor: pointer;
   appearance: none;
 
-  @include bpk-themeable-property(color, --bpk-link-color, $bpk-text-link-day);
+  @include bpk-themeable-property(
+    color,
+    --bpk-link-color,
+    $bpk-text-primary-day
+  );
 
   @include bpk-hover {
     text-decoration: none;
@@ -799,7 +803,7 @@
     @include bpk-themeable-property(
       color,
       --bpk-link-hover-color,
-      $bpk-text-link-day
+      $bpk-text-primary-day
     );
 
     &::after {
@@ -811,7 +815,7 @@
     @include bpk-themeable-property(
       color,
       --bpk-link-visited-color,
-      $bpk-text-link-day
+      $bpk-text-primary-day
     );
   }
 
@@ -819,7 +823,7 @@
     @include bpk-themeable-property(
       color,
       --bpk-link-active-color,
-      $bpk-text-link-day
+      $bpk-text-primary-day
     );
 
     &::after {
@@ -841,7 +845,7 @@
     @include bpk-themeable-property(
       background,
       --bpk-link-color,
-      $bpk-text-link-day
+      $bpk-text-primary-day
     );
 
     @media (prefers-reduced-motion) {
@@ -863,8 +867,16 @@
 @mixin bpk-link--implicit {
   display: inline;
 
+  @include bpk-themeable-property(color, --bpk-link-color, $bpk-text-link-day);
+
   @include bpk-hover {
     text-decoration: underline;
+
+    @include bpk-themeable-property(
+      color,
+      --bpk-link-hover-color,
+      $bpk-text-link-day
+    );
   }
 
   &::after {
@@ -874,6 +886,12 @@
 
   &:active {
     text-decoration: underline;
+
+    @include bpk-themeable-property(
+      color,
+      --bpk-link-active-color,
+      $bpk-text-link-day
+    );
   }
 }
 
@@ -898,6 +916,14 @@
     @include bpk-themeable-property(
       color,
       --bpk-link-alternate-hover-color,
+      $bpk-text-on-dark-day
+    );
+  }
+
+  &::after {
+    @include bpk-themeable-property(
+      background,
+      --bpk-link-alternate-color,
       $bpk-text-on-dark-day
     );
   }
@@ -934,14 +960,14 @@
 ///   }
 
 @mixin bpk-link--active {
-  color: $bpk-text-link-day;
+  color: $bpk-text-primary-day;
 
   &:visited {
-    color: $bpk-text-link-day;
+    color: $bpk-text-primary-day;
   }
 
   &:active {
-    color: $bpk-text-link-day;
+    color: $bpk-text-primary-day;
   }
 }
 
