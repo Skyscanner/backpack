@@ -25,10 +25,6 @@
 
 $arrow-size: tokens.bpk-spacing-lg();
 
-.bpk-popover--container {
-  z-index: tokens.$bpk-zindex-popover;
-}
-
 .bpk-popover {
   transition: opacity tokens.$bpk-duration-sm ease-in-out;
   outline: 0;

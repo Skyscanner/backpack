@@ -106,13 +106,13 @@ const content = [
     pulvinar erat dignissim vitae.
   </Paragraph>,
 ];
-type ContainerProps =  {
+type ContainerProps = {
   title?: string;
   buttonLabel?: string;
   id?: string;
   wrapperProps?: Object;
   isOpen?: boolean;
-} & Omit<BpkModalProps, 'getApplicationElement'| 'id' | 'isOpen'>;
+} & Omit<BpkModalProps, 'getApplicationElement' | 'id' | 'isOpen'>;
 
 const ModalContainer = (props: ContainerProps) => {
   const [isOpen, setIsOpen] = useState(props.isOpen || false);
@@ -230,8 +230,7 @@ const NestedExample = (isOpen: boolean) => (
 
 const NoHeaderExample = (isOpen: boolean) => (
   <ModalContainer
-    title="Modal title"
-    closeLabel="Close modal"
+    ariaLabel="Modal title"
     showHeader={false}
     isOpen={isOpen}
   >
@@ -252,7 +251,7 @@ const WithAccessoryViewExample = (isOpen: boolean) => (
     accessoryView={
       <BpkNavigationBarButtonLink
         label="Close"
-        onClick={() => {}}
+        onClick={() => { }}
         className={getClassName('bpk-modal__leading-button')}
       >
         <div>

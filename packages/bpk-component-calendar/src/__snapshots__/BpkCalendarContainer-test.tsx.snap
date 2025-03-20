@@ -180,6 +180,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
         />
         <div
           aria-hidden="false"
+          aria-label="February 2010"
           class="bpk-calendar-grid bpk-calendar-grid-transition__grid"
           role="grid"
         >
@@ -1032,6 +1033,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
         </div>
         <div
           aria-hidden="true"
+          aria-label="March 2010"
           class="bpk-calendar-grid bpk-calendar-grid-transition__grid"
           role="grid"
         >
@@ -2081,6 +2083,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
         />
         <div
           aria-hidden="false"
+          aria-label="February 2010"
           class="bpk-calendar-grid bpk-calendar-grid-transition__grid"
           role="grid"
         >
@@ -2933,6 +2936,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
         </div>
         <div
           aria-hidden="true"
+          aria-label="March 2010"
           class="bpk-calendar-grid bpk-calendar-grid-transition__grid"
           role="grid"
         >
@@ -3982,6 +3986,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
         />
         <div
           aria-hidden="false"
+          aria-label="February 2010"
           class="bpk-calendar-grid bpk-calendar-grid-transition__grid"
           role="grid"
         >
@@ -4834,6 +4839,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
         </div>
         <div
           aria-hidden="true"
+          aria-label="March 2010"
           class="bpk-calendar-grid bpk-calendar-grid-transition__grid"
           role="grid"
         >

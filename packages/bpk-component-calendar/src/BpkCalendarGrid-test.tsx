@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { addMonths, isWeekend } from 'date-fns';
+import { addMonths, isWeekend, format } from 'date-fns';
 
 import {
   colorMonteverde,
@@ -32,12 +32,15 @@ import { formatDateFull } from '../test-utils';
 import BpkCalendarDate from './BpkCalendarDate';
 import BpkCalendarGrid from './BpkCalendarGrid';
 
+const formatMonth = (date: Date) => format(date, 'MMMM yyyy');
+
 describe('BpkCalendarGrid', () => {
   it('should render correctly with a different "weekStartsOn" attribute', () => {
     const { asFragment } = render(
       <BpkCalendarGrid
         month={new Date('2016-10')}
         formatDateFull={formatDateFull}
+        formatMonth={formatMonth}
         DateComponent={BpkCalendarDate}
         weekStartsOn={3}
         minDate={new Date('2016-01')}
@@ -55,6 +58,7 @@ describe('BpkCalendarGrid', () => {
       <BpkCalendarGrid
         month={new Date('2016-10')}
         formatDateFull={formatDateFull}
+        formatMonth={formatMonth}
         DateComponent={BpkCalendarDate}
         weekStartsOn={1}
         dateModifiers={modifiers}
@@ -68,7 +72,7 @@ describe('BpkCalendarGrid', () => {
   it('should render correctly with a custom date component', () => {
     const MyCustomDate = (props: any) => {
       const cx = {
-        backgroundColor: (colorPanjin as string),
+        backgroundColor: colorPanjin as string,
         width: '50%',
         height: '50%',
         borderRadius: '5rem',
@@ -86,6 +90,7 @@ describe('BpkCalendarGrid', () => {
       <BpkCalendarGrid
         month={new Date('2016-10')}
         formatDateFull={formatDateFull}
+        formatMonth={formatMonth}
         DateComponent={MyCustomDate}
         weekStartsOn={1}
         minDate={new Date('2016-01')}
@@ -102,6 +107,7 @@ describe('BpkCalendarGrid', () => {
       <BpkCalendarGrid
         month={new Date('2016-10')}
         formatDateFull={formatDateFull}
+        formatMonth={formatMonth}
         DateComponent={BpkCalendarDate}
         weekStartsOn={0}
         onDateClick={onDateClick}
@@ -125,6 +131,7 @@ describe('BpkCalendarGrid', () => {
       <BpkCalendarGrid
         month={new Date('2016-10')}
         formatDateFull={formatDateFull}
+        formatMonth={formatMonth}
         DateComponent={BpkCalendarDate}
         weekStartsOn={0}
         minDate={new Date('2016-01')}

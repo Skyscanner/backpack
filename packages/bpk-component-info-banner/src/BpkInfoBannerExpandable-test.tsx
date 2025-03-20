@@ -18,6 +18,7 @@
 
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { axe } from 'jest-axe';
 
 import BpkInfoBannerExpandable from './BpkInfoBannerExpandable';
 import { ALERT_TYPES } from './common-types';
@@ -28,15 +29,17 @@ const innerMessage =
   'Quisque sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus.' +
   'Nunc diam augue, egestas id egestas ut, facilisis nec mi.';
 
+const defaultTestProps = {
+  type: ALERT_TYPES.SUCCESS,
+  message,
+  toggleButtonLabel: 'Show details',
+  onExpandToggle: jest.fn(),
+};
+
 describe('BpkInfoBannerExpandable', () => {
   it('should not show inner message when "expanded" is not set to true', () => {
     render(
-      <BpkInfoBannerExpandable
-        type={ALERT_TYPES.SUCCESS}
-        message={message}
-        toggleButtonLabel="Show details"
-        onExpandToggle={jest.fn()}
-      >
+      <BpkInfoBannerExpandable {...defaultTestProps}>
         {innerMessage}
       </BpkInfoBannerExpandable>,
     );
@@ -45,16 +48,20 @@ describe('BpkInfoBannerExpandable', () => {
 
   it('should show inner message when "expanded" is set to true', () => {
     render(
-      <BpkInfoBannerExpandable
-        type={ALERT_TYPES.SUCCESS}
-        message={message}
-        toggleButtonLabel="Show details"
-        onExpandToggle={jest.fn()}
-        expanded
-      >
+      <BpkInfoBannerExpandable {...defaultTestProps} expanded>
         {innerMessage}
       </BpkInfoBannerExpandable>,
     );
     expect(screen.getByText(innerMessage)).toBeVisible();
+  });
+
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkInfoBannerExpandable {...defaultTestProps}>
+        {innerMessage}
+      </BpkInfoBannerExpandable>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

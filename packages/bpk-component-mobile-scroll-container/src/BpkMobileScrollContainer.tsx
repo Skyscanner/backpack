@@ -23,6 +23,8 @@ import debounce from 'lodash/debounce';
 
 import { cssModules, isRTL } from '../../bpk-react-utils';
 
+import type { DebouncedFunc } from 'lodash';
+
 import STYLES from './BpkMobileScrollContainer.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -84,6 +86,8 @@ type State = {
 };
 
 class BpkMobileScrollContainer extends Component<Props, State> {
+  debouncedResize:  DebouncedFunc<() => void>
+
   static defaultProps: Partial<Props> = {
     innerContainerTagName: 'div',
     showScrollbar: false,
@@ -96,6 +100,8 @@ class BpkMobileScrollContainer extends Component<Props, State> {
       computedHeight: 'auto',
       scrollIndicatorClassName: null,
     };
+
+    this.debouncedResize = debounce(this.onWindowResize, 100);
   }
 
   componentDidMount() {
@@ -103,17 +109,17 @@ class BpkMobileScrollContainer extends Component<Props, State> {
       this.setScrollBarAwareHeight();
       this.setScrollIndicatorClassName();
     });
-    window.addEventListener('resize', this.onWindowResize);
+    window.addEventListener('resize', this.debouncedResize);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.onWindowResize);
+    window.removeEventListener('resize', this.debouncedResize);
   }
 
-  onWindowResize = debounce(() => {
+  onWindowResize = () => {
     this.setScrollBarAwareHeight();
     this.setScrollIndicatorClassName();
-  }, 100);
+  };
 
   setScrollIndicatorClassName = () => {
     const classNames = computeScrollIndicatorClassName(
