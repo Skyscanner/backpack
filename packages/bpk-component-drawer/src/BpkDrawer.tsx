@@ -21,12 +21,15 @@
 import type { ReactNode } from 'react';
 import { useState, useEffect } from 'react';
 
+import type { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
 import { Portal, isDeviceIpad, isDeviceIphone } from '../../bpk-react-utils';
 import { withScrim } from '../../bpk-scrim-utils';
 
 import BpkDrawerContent from './BpkDrawerContent';
 
 const BpkScrimDrawerContent = withScrim(BpkDrawerContent);
+type ValueOf<T> = T[keyof T];
 
 export type Props = {
   id: string,
@@ -40,6 +43,8 @@ export type Props = {
   ) => void;
   title: string,
   getApplicationElement: () => HTMLElement | null,
+  width?: string,
+  transitionDuration?: ValueOf<typeof animations>,
   renderTarget?: null | HTMLElement | (() => null | HTMLElement),
   dialogRef?: (ref: HTMLElement | null | undefined) => void,
   className?: string,
@@ -71,6 +76,8 @@ const BpkDrawer = ({
   padded = true,
   renderTarget = null,
   title,
+  transitionDuration,
+  width,
 }: Props) =>  {
 
   const [isDrawerShown, setIsDrawerShown] = useState(true);
@@ -98,6 +105,8 @@ const BpkDrawer = ({
           dialogRef={dialogRef}
           closeLabel={closeLabel || ""}
           closeText={closeText}
+          width={width}
+          transitionDuration={transitionDuration}
           // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={className}
           contentClassName={contentClassName}

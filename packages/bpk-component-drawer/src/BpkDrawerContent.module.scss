@@ -28,12 +28,11 @@
   right: 0;
   display: flex;
   z-index: tokens.$bpk-zindex-drawer;
-  width: 90%;
-  max-width: 50 * tokens.bpk-spacing-md();
+  width: var(--dynamic-width, 90%);
   height: 100%;
   flex-direction: column;
   transform: translate(100%);
-  transition: transform tokens.$bpk-duration-sm ease;
+  transition: transform var(--duration, tokens.$bpk-duration-sm) ease;
   outline: 0;
   background: tokens.$bpk-surface-default-day;
   overflow-y: scroll;
@@ -114,7 +113,7 @@
       transform: scale(0.9);
       transition:
         opacity tokens.$bpk-duration-sm ease-in-out,
-        transform tokens.$bpk-duration-sm ease-in-out;
+        transform var(--duration, tokens.$bpk-duration-sm) ease-in-out;
       opacity: tokens.$bpk-modal-initial-opacity;
 
       &--entering,
