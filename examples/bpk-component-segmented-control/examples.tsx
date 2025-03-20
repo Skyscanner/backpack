@@ -91,23 +91,23 @@ const SimpleSurfaceContrast = () => (
 
 //  Custom Button Segmented Control
 const customButtonContentDatesFixed = [
-  <div
+  <span
     className={getClassName(
       'bpk-component-segmented-control-stories__custom-button',
     )}
   >
     Specific dates
-  </div>,
+  </span>,
 ];
 
 const customButtonContentDatesFlexible = [
-  <div
+  <span
     className={getClassName(
       'bpk-component-segmented-control-stories__custom-button',
     )}
   >
     Flexible dates
-  </div>,
+  </span>,
 ];
 
 const allCustomButtonContent = [
