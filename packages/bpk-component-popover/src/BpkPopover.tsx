@@ -207,7 +207,7 @@ const BpkPopover = ({
 
   const labelId = `bpk-popover-label-${id}`;
   const renderElement = typeof renderTarget === 'function' ? renderTarget() : renderTarget;
-  
+
   return (
     <>
       {targetElement}
