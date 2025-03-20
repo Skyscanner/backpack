@@ -94,7 +94,7 @@ export type Props = CloseButtonProps & {
   id: string;
   label: string;
   onClose: (
-    event: SyntheticEvent<HTMLButtonElement>,
+    event: SyntheticEvent<HTMLButtonElement> | null,
     props: { source: (typeof EVENT_SOURCES)[keyof typeof EVENT_SOURCES] },
   ) => void;
   className?: string | null;
@@ -173,7 +173,7 @@ const BpkPopover = ({
 
   useEffect(() => {
     if (!isOpenState && onClose) {
-      onClose(null as unknown as SyntheticEvent<HTMLButtonElement>, { source: EVENT_SOURCES.CLOSE_BUTTON });
+      onClose(null, { source: EVENT_SOURCES.CLOSE_BUTTON });
     }
   }, [isOpenState, onClose]);
 
