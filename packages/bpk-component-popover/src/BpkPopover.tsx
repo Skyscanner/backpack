@@ -162,7 +162,6 @@ const BpkPopover = ({
 
   const click = useClick(context);
   const dismiss = useDismiss(context);
-
   const hover = useHover(context, {
     enabled: hoverable,
     mouseOnly: true,
