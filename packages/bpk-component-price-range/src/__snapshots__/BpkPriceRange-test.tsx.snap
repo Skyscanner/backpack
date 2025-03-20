@@ -7,13 +7,13 @@ exports[`BpkPriceRange should render correctly when show price marker 1`] = `
     style="--low: 0.2; --high: 0.8; --prefilled-width: 0px;"
   >
     <div
-      class="bpk-price-range__price"
+      class="bpk-price-range__marker"
     >
       <div
         class="bpk-price-marker"
       >
         <div
-          class="bpk-price-marker__marker bpk-price-marker--low"
+          class="bpk-price-marker__label bpk-price-marker--low"
         >
           <span
             class="bpk-text bpk-text--label-2"

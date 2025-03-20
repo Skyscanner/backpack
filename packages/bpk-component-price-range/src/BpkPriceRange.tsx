@@ -121,7 +121,7 @@ const BpkPriceRange = ({
       ref={linesRef}
     >
       {showPriceIndicator && (
-        <div className={getClassName('bpk-price-range__price')}>
+        <div className={getClassName('bpk-price-range__marker')}>
           <BpkPriceMarker
             ref={indicatorRef}
             priceLabel={marker.price}

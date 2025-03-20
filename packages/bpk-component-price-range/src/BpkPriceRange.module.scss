@@ -102,7 +102,7 @@ $large-lines-height: tokens.bpk-spacing-md();
     }
   }
 
-  &__price {
+  &__marker {
     width: fit-content;
     margin-inline-start: var(--prefilled-width);
   }

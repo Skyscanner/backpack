@@ -29,48 +29,68 @@ const segments = {
   },
 };
 
+const Wrapper = ({
+  children,
+  isLarge,
+}: {
+  children: React.ReactNode;
+  isLarge?: boolean;
+}) => <div style={{ width: isLarge ? '240px' : '140px' }}>{children}</div>;
+
 const SmallerLowPriceRangeExample = () => (
-  <BpkPriceRange
-    marker={{ price: '£50', percentage: 10 }}
-    segments={segments}
-  />
+  <Wrapper>
+    <BpkPriceRange
+      marker={{ price: '£50', percentage: 10 }}
+      segments={segments}
+    />
+  </Wrapper>
 );
 const SmallerTypicalPriceRangeExample = () => (
-  <BpkPriceRange
-    marker={{ price: '£150', percentage: 50 }}
-    segments={segments}
-  />
+  <Wrapper>
+    <BpkPriceRange
+      marker={{ price: '£150', percentage: 50 }}
+      segments={segments}
+    />
+  </Wrapper>
 );
 
 const SmallerHighPriceRangeExample = () => (
-  <BpkPriceRange
-    marker={{ price: '£300', percentage: 90 }}
-    segments={segments}
-  />
+  <Wrapper>
+    <BpkPriceRange
+      marker={{ price: '£300', percentage: 90 }}
+      segments={segments}
+    />
+  </Wrapper>
 );
 
 const LargeLowPriceRangeExample = () => (
-  <BpkPriceRange
-    showPriceIndicator
-    marker={{ price: '£50', percentage: 10 }}
-    segments={segments}
-  />
+  <Wrapper isLarge>
+    <BpkPriceRange
+      showPriceIndicator
+      marker={{ price: '£50', percentage: 10 }}
+      segments={segments}
+    />
+  </Wrapper>
 );
 
 const LargeTypicalPriceRangeExample = () => (
-  <BpkPriceRange
-    showPriceIndicator
-    marker={{ price: '£150', percentage: 50 }}
-    segments={segments}
-  />
+  <Wrapper isLarge>
+    <BpkPriceRange
+      showPriceIndicator
+      marker={{ price: '£150', percentage: 50 }}
+      segments={segments}
+    />
+  </Wrapper>
 );
 
 const LargeHighPriceRangeExample = () => (
-  <BpkPriceRange
-    showPriceIndicator
-    marker={{ price: '£300', percentage: 90 }}
-    segments={segments}
-  />
+  <Wrapper isLarge>
+    <BpkPriceRange
+      showPriceIndicator
+      marker={{ price: '£300', percentage: 90 }}
+      segments={segments}
+    />
+  </Wrapper>
 );
 
 const MixedExample = () => (
