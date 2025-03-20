@@ -1,0 +1,45 @@
+@use 'sass:math';
+@use '../../unstable__bpk-mixins/tokens';
+
+$arrow-size: tokens.bpk-spacing-base();
+
+.bpk-price-marker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: none;
+  border: none;
+  background: none;
+  margin-block-end: tokens.bpk-spacing-sm() * 1.5;
+
+  &__marker {
+    display: inline-flex;
+    z-index: 1;
+    padding: math.div(tokens.bpk-spacing-sm(), 2) tokens.bpk-spacing-md();
+    border-radius: tokens.$bpk-border-radius-sm;
+    color: tokens.$bpk-text-primary-inverse-day;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+    width: $arrow-size;
+    height: $arrow-size;
+    transform: rotate(45deg);
+    border-radius: 25%;
+  }
+
+  &--low {
+    background-color: tokens.$bpk-status-success-spot-day;
+  }
+
+  &--typical {
+    background-color: tokens.$bpk-core-primary-day;
+  }
+
+  &--high {
+    background-color: tokens.$bpk-text-error-day;
+  }
+}
