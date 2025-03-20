@@ -162,6 +162,13 @@ const BpkPopover = ({
 
   const click = useClick(context);
   const dismiss = useDismiss(context);
+
+  useEffect(() => {
+    if (!isOpenState && onClose) {
+      onClose(null as unknown as SyntheticEvent<HTMLButtonElement>, { source: EVENT_SOURCES.CLOSE_BUTTON });
+    }
+  }, [isOpenState, onClose]);
+
   const hover = useHover(context, {
     enabled: hoverable,
     mouseOnly: true,
@@ -200,7 +207,7 @@ const BpkPopover = ({
 
   const labelId = `bpk-popover-label-${id}`;
   const renderElement = typeof renderTarget === 'function' ? renderTarget() : renderTarget;
-
+  
   return (
     <>
       {targetElement}
