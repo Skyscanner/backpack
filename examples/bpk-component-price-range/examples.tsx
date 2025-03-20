@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import type { ReactNode } from 'react';
+
 import BpkPriceRange from '../../packages/bpk-component-price-range';
 
 const segments = {
@@ -33,7 +35,7 @@ const Wrapper = ({
   children,
   isLarge,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   isLarge?: boolean;
 }) => <div style={{ width: isLarge ? '240px' : '140px' }}>{children}</div>;
 
