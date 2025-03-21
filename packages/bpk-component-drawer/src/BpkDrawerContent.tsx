@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode, RefObject } from 'react';
+import type { CSSProperties, ReactNode, RefObject } from 'react';
 
 import { Transition } from 'react-transition-group';
 
@@ -39,6 +39,7 @@ type Props = {
   onClose: () => void
   id: string,
   title: string,
+  width?: string,
   className?: string | null,
   contentClassName?: string,
   closeLabel?: string,
@@ -70,6 +71,7 @@ const BpkDrawerContent = ({
   onCloseAnimationComplete,
   padded,
   title,
+  width,
   ...rest
 }: Props) => {
 
@@ -114,6 +116,11 @@ const BpkDrawerContent = ({
           role="dialog"
           key="dialog"
           aria-labelledby={headingId}
+          style={
+            {
+              '--dynamic-width': width,
+            } as CSSProperties
+          }
           className={[
             drawerClassNames.join(' '),
             getClassName(`bpk-drawer--${status}`, mobileModalDisplay ? `bpk-drawer__modal-mobile-view--${status}` : undefined),
