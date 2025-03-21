@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode, RefObject } from 'react';
+import type { CSSProperties, ReactNode, RefObject } from 'react';
 
 import { Transition } from 'react-transition-group';
 
@@ -116,10 +116,11 @@ const BpkDrawerContent = ({
           role="dialog"
           key="dialog"
           aria-labelledby={headingId}
-          style={{
-            // @ts-expect-error TS is reporting this incorrectly as styles are valid
-            '--dynamic-width': width,
-          }}
+          style={
+            {
+              '--dynamic-width': width,
+            } as CSSProperties
+          }
           className={[
             drawerClassNames.join(' '),
             getClassName(`bpk-drawer--${status}`, mobileModalDisplay ? `bpk-drawer__modal-mobile-view--${status}` : undefined),

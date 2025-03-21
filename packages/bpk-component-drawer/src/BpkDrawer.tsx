@@ -72,7 +72,7 @@ const BpkDrawer = ({
   padded = true,
   renderTarget = null,
   title,
-  width,
+  width = '90%',
 }: Props) =>  {
 
   const [isDrawerShown, setIsDrawerShown] = useState(true);

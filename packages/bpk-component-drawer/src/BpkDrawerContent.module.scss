@@ -28,7 +28,7 @@
   right: 0;
   display: flex;
   z-index: tokens.$bpk-zindex-drawer;
-  width: var(--dynamic-width, 90%);
+  width: var(--dynamic-width);
   height: 100%;
   flex-direction: column;
   transform: translate(100%);
