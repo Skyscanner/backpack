@@ -31,7 +31,6 @@ import { cssModules } from '../../bpk-react-utils';
 import STYLES from './BpkDrawerContent.module.scss';
 
 const getClassName = cssModules(STYLES);
-type ValueOf<T> = T[keyof T];
 
 type Props = {
   children: ReactNode,
@@ -41,7 +40,6 @@ type Props = {
   id: string,
   title: string,
   width?: string,
-  transitionDuration?: ValueOf<typeof animations>,
   className?: string | null,
   contentClassName?: string,
   closeLabel?: string,
@@ -73,7 +71,6 @@ const BpkDrawerContent = ({
   onCloseAnimationComplete,
   padded,
   title,
-  transitionDuration,
   width,
   ...rest
 }: Props) => {
@@ -122,7 +119,6 @@ const BpkDrawerContent = ({
           style={{
             // @ts-expect-error TS is reporting this incorrectly as styles are valid
             '--dynamic-width': width,
-            '--duration': transitionDuration,
           }}
           className={[
             drawerClassNames.join(' '),

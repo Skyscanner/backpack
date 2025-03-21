@@ -32,7 +32,7 @@
   height: 100%;
   flex-direction: column;
   transform: translate(100%);
-  transition: transform var(--duration, tokens.$bpk-duration-sm) ease;
+  transition: transform tokens.$bpk-duration-base ease;
   outline: 0;
   background: tokens.$bpk-surface-default-day;
   overflow-y: scroll;
@@ -60,7 +60,7 @@
   }
 
   &--exiting {
-    transition: transform tokens.$bpk-duration-xs ease;
+    transition: transform tokens.$bpk-duration-base ease;
   }
 
   &--exiting,
@@ -112,8 +112,8 @@
     @include breakpoints.bpk-breakpoint-mobile {
       transform: scale(0.9);
       transition:
-        opacity tokens.$bpk-duration-sm ease-in-out,
-        transform var(--duration, tokens.$bpk-duration-sm) ease-in-out;
+        opacity tokens.$bpk-duration-base ease-in-out,
+        transform tokens.$bpk-duration-base ease-in-out;
       opacity: tokens.$bpk-modal-initial-opacity;
 
       &--entering,
