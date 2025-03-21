@@ -37,7 +37,7 @@ const Wrapper = ({
 }: {
   children: ReactNode;
   isLarge?: boolean;
-}) => <div style={{ width: isLarge ? '240px' : '140px' }}>{children}</div>;
+}) => <div style={{ width: isLarge ? '15rem' : '8.75rem' }}>{children}</div>;
 
 const SmallerLowPriceRangeExample = () => (
   <Wrapper>
