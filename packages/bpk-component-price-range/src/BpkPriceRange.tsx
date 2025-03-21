@@ -53,7 +53,7 @@ const BpkPriceRange = ({
   max = 100,
   min = 0,
   segments,
-  showPriceIndicator = false,
+  showPriceIndicator = true,
 }: Props) => {
   const linesRef = useRef<HTMLDivElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
@@ -149,12 +149,6 @@ const BpkPriceRange = ({
       )}
     </div>
   );
-};
-
-BpkPriceRange.defaultProps = {
-  min: 0,
-  max: 100,
-  showPriceIndicator: false,
 };
 
 export default BpkPriceRange;

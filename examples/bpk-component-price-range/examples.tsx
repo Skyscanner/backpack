@@ -42,6 +42,7 @@ const Wrapper = ({
 const SmallerLowPriceRangeExample = () => (
   <Wrapper>
     <BpkPriceRange
+      showPriceIndicator={false}
       marker={{ price: '£50', percentage: 10 }}
       segments={segments}
     />
@@ -50,6 +51,7 @@ const SmallerLowPriceRangeExample = () => (
 const SmallerTypicalPriceRangeExample = () => (
   <Wrapper>
     <BpkPriceRange
+      showPriceIndicator={false}
       marker={{ price: '£150', percentage: 50 }}
       segments={segments}
     />
@@ -59,6 +61,7 @@ const SmallerTypicalPriceRangeExample = () => (
 const SmallerHighPriceRangeExample = () => (
   <Wrapper>
     <BpkPriceRange
+      showPriceIndicator={false}
       marker={{ price: '£300', percentage: 90 }}
       segments={segments}
     />
@@ -68,7 +71,6 @@ const SmallerHighPriceRangeExample = () => (
 const LargeLowPriceRangeExample = () => (
   <Wrapper isLarge>
     <BpkPriceRange
-      showPriceIndicator
       marker={{ price: '£50', percentage: 10 }}
       segments={segments}
     />
@@ -78,7 +80,6 @@ const LargeLowPriceRangeExample = () => (
 const LargeTypicalPriceRangeExample = () => (
   <Wrapper isLarge>
     <BpkPriceRange
-      showPriceIndicator
       marker={{ price: '£150', percentage: 50 }}
       segments={segments}
     />
@@ -88,7 +89,6 @@ const LargeTypicalPriceRangeExample = () => (
 const LargeHighPriceRangeExample = () => (
   <Wrapper isLarge>
     <BpkPriceRange
-      showPriceIndicator
       marker={{ price: '£300', percentage: 90 }}
       segments={segments}
     />

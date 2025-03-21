@@ -62,10 +62,10 @@ describe('BpkPriceRange', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly when show price marker', () => {
+  it('should render correctly when hide price marker', () => {
     const { asFragment } = render(
       <BpkPriceRange
-        showPriceIndicator
+        showPriceIndicator={false}
         marker={{ price: '£50', percentage: 10 }}
         segments={segments}
       />,
