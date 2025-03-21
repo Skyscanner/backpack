@@ -627,28 +627,10 @@
 ///     @include bpk-checkbox__checkmark();
 ///   }
 @mixin bpk-checkbox__checkmark {
-  &::before,
-  &::after {
-    position: absolute;
-    content: '';
-    transform: rotate(45deg);
-    border-radius: $bpk-border-size-lg;
-    background-color: $bpk-text-primary-inverse-day;
-  }
-
-  &::before {
-    top: bpk-spacing-md() - $bpk-one-pixel-rem;
-    left: 0;
-    width: bpk-spacing-lg() / 3;
-    height: bpk-spacing-sm() - $bpk-one-pixel-rem;
-  }
-
-  &::after {
-    top: bpk-spacing-sm() / 2;
-    left: bpk-spacing-md() - $bpk-one-pixel-rem;
-    width: bpk-spacing-sm() - $bpk-one-pixel-rem;
-    height: bpk-spacing-md() + ($bpk-one-pixel-rem * 3);
-  }
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBMaWNlbnNlOiBQRC4gTWFkZSBieSBNYXJ5IEFrdmVvOiBodHRwczovL21hcnlha3Zlby5jb20vIC0tPgo8c3ZnIHdpZHRoPSIxMyIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgMTMgOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIuMzUzNTIgMy42NDY0OEw1LjUgNy41TDExLjUgMS41IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4=');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 
   &:disabled {
     &::before,
