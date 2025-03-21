@@ -633,10 +633,10 @@
   background-size: contain;
 
   &:disabled {
-    &::before,
-    &::after {
-      background-color: $bpk-text-disabled-day;
-    }
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBMaWNlbnNlOiBQRC4gTWFkZSBieSBNYXJ5IEFrdmVvOiBodHRwczovL21hcnlha3Zlby5jb20vIC0tPgo8c3ZnIGZpbGw9IiMwMDAwMDAiIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDI0IDI0IiBpZD0iY2hlY2siIGRhdGEtbmFtZT0iTGluZSBDb2xvciIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBjbGFzcz0iaWNvbiBsaW5lLWNvbG9yIj48cG9seWxpbmUgaWQ9InByaW1hcnkiIHBvaW50cz0iNSAxMiAxMCAxNyAxOSA4IiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiByZ2IoMCwgMCwgMCk7IHN0cm9rZS1saW5lY2FwOiByb3VuZDsgc3Ryb2tlLWxpbmVqb2luOiByb3VuZDsgc3Ryb2tlLXdpZHRoOiAyOyI+PC9wb2x5bGluZT48L3N2Zz4=');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
 }
 
