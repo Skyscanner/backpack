@@ -115,11 +115,9 @@ const BpkInsetBanner = ({
               onClose={(e: {
                 stopPropagation: () => void;
                 preventDefault: () => void;
-              } | null) => {
-                if (e) {
-                  e.stopPropagation();
-                  e.preventDefault();
-                }
+              } | null) => {         
+                  e?.stopPropagation();
+                  e?.preventDefault();
               }}
               closeButtonText={callToAction?.buttonCloseLabel}
               closeButtonIcon={callToAction?.closeBtnIcon}
