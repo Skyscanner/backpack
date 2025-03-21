@@ -28,11 +28,12 @@
   right: 0;
   display: flex;
   z-index: tokens.$bpk-zindex-drawer;
-  width: var(--dynamic-width);
+  width: 90%;
+  max-width: 50 * tokens.bpk-spacing-md();
   height: 100%;
   flex-direction: column;
   transform: translate(100%);
-  transition: transform tokens.$bpk-duration-base ease;
+  transition: transform tokens.$bpk-duration-sm ease;
   outline: 0;
   background: tokens.$bpk-surface-default-day;
   overflow-y: scroll;
@@ -60,7 +61,7 @@
   }
 
   &--exiting {
-    transition: transform tokens.$bpk-duration-base ease;
+    transition: transform tokens.$bpk-duration-xs ease;
   }
 
   &--exiting,
@@ -112,8 +113,8 @@
     @include breakpoints.bpk-breakpoint-mobile {
       transform: scale(0.9);
       transition:
-        opacity tokens.$bpk-duration-base ease-in-out,
-        transform tokens.$bpk-duration-base ease-in-out;
+        opacity tokens.$bpk-duration-sm ease-in-out,
+        transform tokens.$bpk-duration-sm ease-in-out;
       opacity: tokens.$bpk-modal-initial-opacity;
 
       &--entering,
