@@ -10,19 +10,15 @@ exports[`BpkPriceRange should render correctly when show price marker 1`] = `
       class="bpk-price-range__marker"
     >
       <div
-        class="bpk-price-marker"
+        class="bpk-price-marker bpk-price-marker--low"
       >
-        <div
-          class="bpk-price-marker__label bpk-price-marker--low"
+        <span
+          class="bpk-text bpk-text--label-2"
         >
-          <span
-            class="bpk-text bpk-text--label-2"
-          >
-            £50
-          </span>
-        </div>
+          £50
+        </span>
         <div
-          class="bpk-price-marker__arrow bpk-price-marker--low"
+          class="bpk-price-marker__arrow"
         />
       </div>
     </div>

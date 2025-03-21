@@ -24,20 +24,21 @@ $arrow-size: tokens.bpk-spacing-base();
 .bpk-price-marker {
   position: relative;
   display: flex;
+  z-index: 1;
   flex-direction: column;
   align-items: center;
   flex: none;
   border: none;
-  border-radius: tokens.$bpk-border-radius-sm;
+  border-radius: tokens.$bpk-border-radius-xs;
   background: none;
   box-shadow: tokens.$bpk-box-shadow-sm;
   margin-block-end: tokens.bpk-spacing-sm() * 1.5;
 
-  &__label {
+  span {
     display: inline-flex;
     z-index: 1;
     padding: math.div(tokens.bpk-spacing-sm(), 2) tokens.bpk-spacing-md();
-    border-radius: tokens.$bpk-border-radius-sm;
+    border-radius: tokens.$bpk-border-radius-xs;
     color: tokens.$bpk-text-primary-inverse-day;
   }
 
@@ -49,6 +50,7 @@ $arrow-size: tokens.bpk-spacing-base();
     height: $arrow-size;
     transform: rotate(45deg);
     border-radius: 25%;
+    background-color: inherit;
   }
 
   &--low {

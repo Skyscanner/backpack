@@ -37,21 +37,12 @@ const BpkPriceMarker = (
   { priceLabel, type }: Props,
   ref: ForwardedRef<HTMLDivElement>,
 ) => (
-  <div className={getClassName('bpk-price-marker')} ref={ref}>
-    <div
-      className={getClassName(
-        'bpk-price-marker__label',
-        `bpk-price-marker--${type}`,
-      )}
-    >
-      <BpkText textStyle={TEXT_STYLES.label2}>{priceLabel}</BpkText>
-    </div>
-    <div
-      className={getClassName(
-        'bpk-price-marker__arrow',
-        `bpk-price-marker--${type}`,
-      )}
-    />
+  <div
+    className={getClassName('bpk-price-marker', `bpk-price-marker--${type}`)}
+    ref={ref}
+  >
+    <BpkText textStyle={TEXT_STYLES.label2}>{priceLabel}</BpkText>
+    <div className={getClassName('bpk-price-marker__arrow')} />
   </div>
 );
 
