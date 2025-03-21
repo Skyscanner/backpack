@@ -1,6 +1,6 @@
 # bpk-component-price-range
 
-> Backpack example component.
+> Backpack price range component.
 
 ## Installation
 

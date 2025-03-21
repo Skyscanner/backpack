@@ -64,11 +64,11 @@ const BpkPriceRange = ({
 
   let type: MarkerType;
   if (marker.percentage < segments.low.percentage) {
-    type = MARKER_TYPES.low;
+    type = MARKER_TYPES.LOW;
   } else if (marker.percentage > segments.high.percentage) {
-    type = MARKER_TYPES.high;
+    type = MARKER_TYPES.HIGH;
   } else {
-    type = MARKER_TYPES.typical;
+    type = MARKER_TYPES.TYPICAL;
   }
 
   useEffect(() => {

@@ -16,12 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 export const MARKER_TYPES = {
-  low: 'low',
-  typical: 'typical',
-  high: 'high',
+  LOW: 'low',
+  TYPICAL: 'typical',
+  HIGH: 'high',
 } as const;
 
 export type MarkerType = (typeof MARKER_TYPES)[keyof typeof MARKER_TYPES];
