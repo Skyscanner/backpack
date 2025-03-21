@@ -83,7 +83,7 @@ const BpkPriceRange = ({
 
       setPrefilledWidth(actualPrefilledWidth);
     }
-  }, [linesRef, indicatorRef, indicatorPercent]);
+  }, [indicatorPercent]);
 
   const linesClassNames = {
     lines: getClassName(
