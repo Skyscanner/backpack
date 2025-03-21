@@ -64,7 +64,7 @@ const BpkSegmentedControl = ({
   );
 
   return (
-    <div role="radiogroup" className={containerStyling}>
+    <div className={containerStyling}>
       {buttonContents.map((content, index) => {
         const isSelected = index === selectedButton;
         const rightOfOption = index === selectedButton + 1;
