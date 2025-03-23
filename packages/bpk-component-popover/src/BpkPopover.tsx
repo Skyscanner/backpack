@@ -61,6 +61,7 @@ const getClassName = cssModules(STYLES);
 const EVENT_SOURCES = {
   CLOSE_BUTTON: 'CLOSE_BUTTON',
   CLOSE_LINK: 'CLOSE_LINK',
+  CLOSE_OUTSIDE: 'CLOSE_OUTSIDE',
 };
 
 // The stroke width is used to set the border width of the arrow.
@@ -143,14 +144,22 @@ const BpkPopover = ({
   useEffect(() => {
     if (!isOpen) {
       setIsOpenState(false);
+      onClose(null, { source: EVENT_SOURCES.CLOSE_OUTSIDE });
     }
   }, [isOpen]);
 
   const arrowRef = useRef(null);
 
+  const onFloatingChange = (isFloatingOpen: boolean) => {
+    setIsOpenState(isFloatingOpen);
+    if (!isFloatingOpen && onClose) {
+      onClose(null, { source: EVENT_SOURCES.CLOSE_OUTSIDE});
+    }
+  }
+
   const { context, floatingStyles, refs } = useFloating({
     open: isOpenState,
-    onOpenChange: setIsOpenState,
+    onOpenChange: onFloatingChange,
     placement,
     middleware: [
       showArrow && offset(17),
@@ -169,12 +178,6 @@ const BpkPopover = ({
       requireIntent: false,
     }),
   });
-
-  useEffect(() => {
-    if (!isOpenState && onClose) {
-      onClose(null, { source: EVENT_SOURCES.CLOSE_BUTTON });
-    }
-  }, [isOpenState, onClose]);
 
   // Merge all the interactions into prop getters
   const { getFloatingProps, getReferenceProps } = useInteractions([click, dismiss, hover]);
