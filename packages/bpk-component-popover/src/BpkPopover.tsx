@@ -144,7 +144,6 @@ const BpkPopover = ({
   useEffect(() => {
     if (!isOpen) {
       setIsOpenState(false);
-      onClose(null, { source: EVENT_SOURCES.CLOSE_OUTSIDE });
     }
   }, [isOpen]);
 
