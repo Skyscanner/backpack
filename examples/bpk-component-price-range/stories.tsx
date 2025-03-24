@@ -21,10 +21,10 @@ import BpkPriceRange from '../../packages/bpk-component-price-range';
 import {
   SmallerLowPriceRangeExample,
   SmallerHighPriceRangeExample,
-  SmallerTypicalPriceRangeExample,
+  SmallerMediumPriceRangeExample,
   LargeLowPriceRangeExample,
   LargeHighPriceRangeExample,
-  LargeTypicalPriceRangeExample,
+  LargeMediumPriceRangeExample,
   MixedExample,
 } from './examples';
 
@@ -34,10 +34,10 @@ export default {
 };
 
 export const SmallerLowPriceRange = SmallerLowPriceRangeExample;
-export const SmallerTypicalPriceRange = SmallerTypicalPriceRangeExample;
+export const SmallerMediumPriceRange = SmallerMediumPriceRangeExample;
 export const SmallerHighPriceRange = SmallerHighPriceRangeExample;
 export const LargeLowPriceRange = LargeLowPriceRangeExample;
-export const LargeTypicalPriceRange = LargeTypicalPriceRangeExample;
+export const LargeMediumPriceRange = LargeMediumPriceRangeExample;
 export const LargeHighPriceRange = LargeHighPriceRangeExample;
 
 export const VisualTest = MixedExample;

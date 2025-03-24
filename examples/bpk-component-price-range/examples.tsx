@@ -48,7 +48,7 @@ const SmallerLowPriceRangeExample = () => (
     />
   </Wrapper>
 );
-const SmallerTypicalPriceRangeExample = () => (
+const SmallerMediumPriceRangeExample = () => (
   <Wrapper>
     <BpkPriceRange
       showPriceIndicator={false}
@@ -77,7 +77,7 @@ const LargeLowPriceRangeExample = () => (
   </Wrapper>
 );
 
-const LargeTypicalPriceRangeExample = () => (
+const LargeMediumPriceRangeExample = () => (
   <Wrapper isLarge>
     <BpkPriceRange
       marker={{ price: '£150', percentage: 50 }}
@@ -98,10 +98,10 @@ const LargeHighPriceRangeExample = () => (
 const MixedExample = () => (
   <div>
     <SmallerLowPriceRangeExample />
-    <SmallerTypicalPriceRangeExample />
+    <SmallerMediumPriceRangeExample />
     <SmallerHighPriceRangeExample />
     <LargeLowPriceRangeExample />
-    <LargeTypicalPriceRangeExample />
+    <LargeMediumPriceRangeExample />
     <LargeHighPriceRangeExample />
   </div>
 );
@@ -109,9 +109,9 @@ const MixedExample = () => (
 export {
   SmallerLowPriceRangeExample,
   SmallerHighPriceRangeExample,
-  SmallerTypicalPriceRangeExample,
+  SmallerMediumPriceRangeExample,
   LargeLowPriceRangeExample,
   LargeHighPriceRangeExample,
-  LargeTypicalPriceRangeExample,
+  LargeMediumPriceRangeExample,
   MixedExample,
 };
