@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-@use 'sass:math';
 @use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/utils';
 
@@ -39,7 +38,7 @@ $large-lines-height: tokens.bpk-spacing-md();
     display: flex;
     height: $small-lines-height;
     flex: none;
-    gap: math.div(tokens.bpk-spacing-sm(), 2);
+    gap: tokens.bpk-spacing-sm() / 2;
 
     &--large {
       height: $large-lines-height;
@@ -60,7 +59,7 @@ $large-lines-height: tokens.bpk-spacing-md();
       }
     }
 
-    &--typical {
+    &--medium {
       width: calc(100% * (var(--high) - var(--low)));
       height: 100%;
       background-color: tokens.$bpk-core-primary-day;
@@ -69,7 +68,7 @@ $large-lines-height: tokens.bpk-spacing-md();
     &--high {
       width: calc(100% * (1 - var(--high)));
       height: 100%;
-      background-color: tokens.$bpk-text-error-day;
+      background-color: tokens.$bpk-status-danger-spot-day;
       border-end-end-radius: tokens.$bpk-border-radius-sm;
       border-start-end-radius: tokens.$bpk-border-radius-sm;
 
@@ -111,7 +110,7 @@ $large-lines-height: tokens.bpk-spacing-md();
     position: relative;
     display: flex;
     width: 100%;
-    height: tokens.$bpk-line-height-base-tight;
+    height: 1.25rem;
 
     span {
       position: absolute;

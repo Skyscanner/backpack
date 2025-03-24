@@ -68,7 +68,7 @@ const BpkPriceRange = ({
   } else if (marker.percentage > segments.high.percentage) {
     type = MARKER_TYPES.HIGH;
   } else {
-    type = MARKER_TYPES.TYPICAL;
+    type = MARKER_TYPES.MEDIUM;
   }
 
   useEffect(() => {
@@ -85,25 +85,23 @@ const BpkPriceRange = ({
     }
   }, [indicatorPercent]);
 
-  const linesClassNames = {
-    lines: getClassName(
-      'bpk-price-range__lines',
-      showPriceIndicator && 'bpk-price-range__lines--large',
-    ),
-    low: getClassName(
-      'bpk-price-range__line--low',
-      showPriceIndicator && 'bpk-price-range__line--lowLarge',
-    ),
-    high: getClassName(
-      'bpk-price-range__line--high',
-      showPriceIndicator && 'bpk-price-range__line--highLarge',
-    ),
-    typical: getClassName('bpk-price-range__line--typical'),
-    dot: getClassName(
-      `bpk-price-range__line--${type}`,
-      'bpk-price-range__line--dot',
-    ),
-  };
+  const linesClassName = getClassName(
+    'bpk-price-range__lines',
+    showPriceIndicator && 'bpk-price-range__lines--large',
+  );
+  const lowClassName = getClassName(
+    'bpk-price-range__line--low',
+    showPriceIndicator && 'bpk-price-range__line--lowLarge',
+  );
+  const highClassName = getClassName(
+    'bpk-price-range__line--high',
+    showPriceIndicator && 'bpk-price-range__line--highLarge',
+  );
+  const mediumClassName = getClassName('bpk-price-range__line--medium');
+  const dotClassName = getClassName(
+    `bpk-price-range__line--${type}`,
+    'bpk-price-range__line--dot',
+  );
 
   return (
     <div
@@ -129,12 +127,12 @@ const BpkPriceRange = ({
           />
         </div>
       )}
-      <div className={linesClassNames.lines}>
-        <div className={linesClassNames.low} />
-        <div className={linesClassNames.typical} />
-        <div className={linesClassNames.high} />
+      <div className={linesClassName}>
+        <div className={lowClassName} />
+        <div className={mediumClassName} />
+        <div className={highClassName} />
         {!showPriceIndicator && (
-          <div className={linesClassNames.dot} ref={indicatorRef} />
+          <div className={dotClassName} ref={indicatorRef} />
         )}
       </div>
       {showPriceIndicator && (

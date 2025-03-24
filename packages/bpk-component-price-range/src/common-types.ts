@@ -18,7 +18,7 @@
 
 export const MARKER_TYPES = {
   LOW: 'low',
-  TYPICAL: 'typical',
+  MEDIUM: 'medium',
   HIGH: 'high',
 } as const;
 

@@ -33,44 +33,65 @@ describe('BpkPriceRange', () => {
   };
 
   it('should render low price indicator correctly', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkPriceRange
         marker={{ price: '£50', percentage: 10 }}
         segments={segments}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(
+      container.querySelector('.bpk-price-range__marker'),
+    ).toHaveTextContent('£50');
+    expect(
+      container.querySelector('.bpk-price-range__ranges'),
+    ).toHaveTextContent('£100£200');
+    expect(container.querySelector('.bpk-price-marker')).toHaveClass(
+      'bpk-price-marker--low',
+    );
   });
 
-  it('should render typical price indicator correctly', () => {
-    const { asFragment } = render(
+  it('should render medium price indicator correctly', () => {
+    const { container } = render(
       <BpkPriceRange
         marker={{ price: '£150', percentage: 50 }}
         segments={segments}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(container.querySelector('.bpk-price-marker')).toHaveClass(
+      'bpk-price-marker--medium',
+    );
   });
 
   it('should render high price indicator correctly', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkPriceRange
         marker={{ price: '£300', percentage: 90 }}
         segments={segments}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(container.querySelector('.bpk-price-marker')).toHaveClass(
+      'bpk-price-marker--high',
+    );
   });
 
   it('should render correctly when hide price marker', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkPriceRange
         showPriceIndicator={false}
         marker={{ price: '£50', percentage: 10 }}
         segments={segments}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(
+      container.querySelector('.bpk-price-range__marker'),
+    ).not.toBeInTheDocument();
+    expect(
+      container.querySelector('.bpk-price-range__line--dot'),
+    ).toBeInTheDocument();
   });
 
   it('should not support custom class names', () => {
@@ -82,6 +103,7 @@ describe('BpkPriceRange', () => {
         segments={segments}
       />,
     );
+
     expect(container.className).not.toContain('custom-classname');
   });
 });
