@@ -57,6 +57,7 @@ const BpkPriceRange = ({
 }: Props) => {
   const linesRef = useRef<HTMLDivElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
+  const [linesWidth, setLinesWidth] = useState(0);
   const [prefilledWidth, setPrefilledWidth] = useState(0);
   const calcPercentage = (current: number) =>
     (clamp(current, min, max) - min) / (max - min);
@@ -72,18 +73,33 @@ const BpkPriceRange = ({
   }
 
   useEffect(() => {
+    const resizeObserver = new ResizeObserver((entries) => {
+      if (entries[0].contentRect) {
+        // listen to the width of the lines
+        setLinesWidth(entries[0].contentRect.width);
+      }
+    });
+
+    if (linesRef.current) {
+      resizeObserver.observe(linesRef.current);
+    }
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
     // to calculate the spacing ahead of the price indicator
-    if (indicatorRef.current && linesRef.current) {
+    if (indicatorRef.current && linesWidth) {
       const estimatedWidth =
-        indicatorPercent * linesRef.current.scrollWidth -
-        indicatorRef.current.scrollWidth / 2;
-      const maxPrefilledWidth =
-        linesRef.current.scrollWidth - indicatorRef.current.scrollWidth;
+        indicatorPercent * linesWidth - indicatorRef.current.scrollWidth / 2;
+      const maxPrefilledWidth = linesWidth - indicatorRef.current.scrollWidth;
       const actualPrefilledWidth = clamp(estimatedWidth, 0, maxPrefilledWidth);
 
       setPrefilledWidth(actualPrefilledWidth);
     }
-  }, [indicatorPercent]);
+  }, [indicatorPercent, linesWidth]);
 
   const linesClassName = getClassName(
     'bpk-price-range__lines',

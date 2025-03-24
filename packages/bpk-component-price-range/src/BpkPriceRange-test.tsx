@@ -20,6 +20,14 @@ import { render } from '@testing-library/react';
 
 import BpkPriceRange from './BpkPriceRange';
 
+window.ResizeObserver =
+  window.ResizeObserver ||
+  jest.fn().mockImplementation(() => ({
+    disconnect: jest.fn(),
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+  }));
+
 describe('BpkPriceRange', () => {
   const segments = {
     low: {
