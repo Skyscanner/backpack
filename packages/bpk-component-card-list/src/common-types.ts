@@ -16,12 +16,60 @@
  * limitations under the License.
  */
 
-type CardListProps = {
-  title: string,  
-  description?: string,
-  buttonText?: string,
-  onButtonClick?: () => void,
-  buttonHref?: string,
-}
+import type { Dispatch, ReactElement, SetStateAction } from 'react';
+
+const LAYOUTS = {
+  grid: 'grid',
+  stack: 'stack',
+} as const;
+
+type DesktopLayouts = typeof LAYOUTS.grid;
+type MobileLayouts = typeof LAYOUTS.stack;
+
+const ACCESSORY_TYPES = {
+  Expand: 'expand',
+  Button: 'button',
+} as const;
+
+type ExpandProps = {
+  children: string | ReactElement;
+  collapsed: boolean;
+  hideContent: () => void;
+  setCollapsed: Dispatch<SetStateAction<boolean>>;
+  showContent: () => void;
+};
+
+type CardListBaseProps = {
+  title: string;
+  description?: string;
+  buttonText?: string;
+  onButtonClick?: () => void;
+  buttonHref?: string;
+  layoutMobile: MobileLayouts;
+  layoutDesktop: DesktopLayouts;
+  initiallyShownCards?: number;
+  cardList: ReactElement[];
+  expandText?: string;
+  accessory?: (typeof ACCESSORY_TYPES)[keyof typeof ACCESSORY_TYPES];
+};
+
+type CardListGridStackProps = {
+  children: ReactElement[];
+  accessory?: typeof ACCESSORY_TYPES.Expand | typeof ACCESSORY_TYPES.Button;
+  expandText?: string;
+  buttonText?: string;
+  onButtonClick?: () => void;
+  initiallyShownCards: number;
+  layout: typeof LAYOUTS.grid | typeof LAYOUTS.stack;
+};
+
+type CardListProps = CardListBaseProps;
 
 export default CardListProps;
+export { LAYOUTS, ACCESSORY_TYPES };
+export type {
+  DesktopLayouts,
+  MobileLayouts,
+  CardListGridStackProps,
+  ExpandProps,
+};

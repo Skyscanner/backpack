@@ -16,6 +16,14 @@
  * limitations under the License.
  */
 
-import BpkCardList from './src/BpkCardList';
+import BpkCard from '../bpk-component-card';
 
-export default BpkCardList;
+const mockCards = (numberOfCards: number) => {
+  const cards = [];
+  for (let i = 0; i < numberOfCards; i += 1) {
+    cards.push(<BpkCard key={i}>{`Card ${i}`}</BpkCard>);
+  }
+  return cards;
+};
+
+export default mockCards;
