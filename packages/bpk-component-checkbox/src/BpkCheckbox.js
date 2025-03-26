@@ -106,6 +106,7 @@ const BpkCheckbox = (props: Props) => {
           <span className={getClassName('bpk-checkbox__asterisk')}>*</span>
         )}
       </span>
+      
     </label>
   );
 };
