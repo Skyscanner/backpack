@@ -68,6 +68,7 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 [`bpk-component-panel`](/packages/bpk-component-panel)
 [`bpk-component-phone-input`](/packages/bpk-component-phone-input)
 [`bpk-component-popover`](/packages/bpk-component-popover)
+[`bpk-component-price-range`](/packages/bpk-component-price-range)
 [`bpk-component-progress`](/packages/bpk-component-progress)
 [`bpk-component-radio`](/packages/bpk-component-radio)
 [`bpk-component-rtl-toggle`](/packages/bpk-component-rtl-toggle)
