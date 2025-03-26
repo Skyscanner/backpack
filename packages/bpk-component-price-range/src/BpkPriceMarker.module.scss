@@ -1,0 +1,66 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../unstable__bpk-mixins/tokens';
+
+$arrow-size: tokens.bpk-spacing-base();
+
+.bpk-price-marker {
+  position: relative;
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
+  align-items: center;
+  flex: none;
+  border: none;
+  border-radius: tokens.$bpk-border-radius-xs;
+  background: none;
+  box-shadow: tokens.$bpk-box-shadow-sm;
+  margin-block-end: tokens.bpk-spacing-sm() * 1.5;
+
+  span {
+    display: inline-flex;
+    z-index: 1;
+    padding: tokens.bpk-spacing-sm() / 2 tokens.bpk-spacing-md();
+    border-radius: tokens.$bpk-border-radius-xs;
+    color: tokens.$bpk-text-primary-inverse-day;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+    width: $arrow-size;
+    height: $arrow-size;
+    transform: rotate(45deg);
+    border-radius: 25%;
+    background-color: inherit;
+  }
+
+  &--low {
+    background-color: tokens.$bpk-status-success-spot-day;
+  }
+
+  &--medium {
+    background-color: tokens.$bpk-core-primary-day;
+  }
+
+  &--high {
+    background-color: tokens.$bpk-status-danger-spot-day;
+  }
+}
