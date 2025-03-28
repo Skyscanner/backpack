@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import NewWindowIcon from '../../packages/bpk-component-icon/sm/new-window';
 import BpkPrice, { SIZES, ALIGNS } from '../../packages/bpk-component-price';
 
 const XSmallExample = () => <BpkPrice size={SIZES.xsmall} price="£1,830" />;
@@ -98,6 +99,16 @@ const SmallWithPreviousPriceLeadingTextExample = () => (
   />
 );
 
+const SmallWithPreviousPriceLeadingAndTrailingTextAndIconExample = () => (
+  <BpkPrice
+    previousPrice="£2,033"
+    leadingText="Web only deal"
+    price="£1,830"
+    trailingText="per day"
+    icon={<NewWindowIcon />}
+  />
+);
+
 const SmallRightExample = () => (
   <BpkPrice price="£1,830" align={ALIGNS.right} />
 );
@@ -122,6 +133,17 @@ const SmallRightWithPreviousPriceExample = () => (
     price="£1,830"
     trailingText="per day"
     align={ALIGNS.right}
+  />
+);
+
+const SmallRightWithPreviousPriceLeadingAndTrailingTextAndIconExample = () => (
+  <BpkPrice
+    previousPrice="£2,033"
+    leadingText="Web only deal"
+    price="£1,830"
+    trailingText="per day"
+    align={ALIGNS.right}
+    icon={<NewWindowIcon />}
   />
 );
 
@@ -159,6 +181,17 @@ const LargeWithPreviousPriceLeadingTextExample = () => (
   />
 );
 
+const LargeWithPreviousPriceLeadingAndTrailingTextAndIconExample = () => (
+  <BpkPrice
+    size={SIZES.large}
+    leadingText="App only deal"
+    price="£1,830"
+    trailingText="per day"
+    previousPrice="£2,033"
+    icon={<NewWindowIcon />}
+  />
+);
+
 const LargeLongPriceExample = () => (
   <div style={{ width: 184 }}>
     <BpkPrice
@@ -166,12 +199,14 @@ const LargeLongPriceExample = () => (
       leadingText="from"
       price="£1,830,123,123"
       trailingText="per day"
+      icon={<NewWindowIcon />}
     />
     <BpkPrice
       size={SIZES.large}
       leadingText="from"
       price="ZK 20,309"
       trailingText="a night"
+      icon={<NewWindowIcon />}
     />
   </div>
 );
@@ -191,15 +226,18 @@ const MixedExample = () => (
     <SmallWithLeadingAndTrailingTextExample />
     <SmallWithPreviousPriceExample />
     <SmallWithPreviousPriceLeadingTextExample />
+    <SmallWithPreviousPriceLeadingAndTrailingTextAndIconExample />
     <SmallRightExample />
     <SmallRightWithTrailingTextExample />
     <SmallRightWithLeadingandTrailingTextExample />
     <SmallRightWithPreviousPriceExample />
+    <SmallRightWithPreviousPriceLeadingAndTrailingTextAndIconExample />
     <LargeExample />
     <LargeWithTrailingTextExample />
     <LargeWithLeadingAndTrailingTextExample />
     <LargeWithPreviousPriceExample />
     <LargeWithPreviousPriceLeadingTextExample />
+    <LargeWithPreviousPriceLeadingAndTrailingTextAndIconExample />
     <LargeLongPriceExample />
   </div>
 );
@@ -218,15 +256,18 @@ export {
   SmallWithLeadingAndTrailingTextExample,
   SmallWithPreviousPriceExample,
   SmallWithPreviousPriceLeadingTextExample,
+  SmallWithPreviousPriceLeadingAndTrailingTextAndIconExample,
   SmallRightExample,
   SmallRightWithTrailingTextExample,
   SmallRightWithLeadingandTrailingTextExample,
   SmallRightWithPreviousPriceExample,
+  SmallRightWithPreviousPriceLeadingAndTrailingTextAndIconExample,
   LargeExample,
   LargeWithTrailingTextExample,
   LargeWithLeadingAndTrailingTextExample,
   LargeWithPreviousPriceExample,
   LargeWithPreviousPriceLeadingTextExample,
+  LargeWithPreviousPriceLeadingAndTrailingTextAndIconExample,
   LargeLongPriceExample,
   MixedExample,
 };

@@ -55,6 +55,8 @@ describe('BpkInfoBanner', () => {
         message={message}
       />,
     );
-    expect(screen.getByRole('presentation')).toHaveClass('custom-banner-class-name');
+    expect(screen.getByText(message).parentElement?.parentElement).toHaveClass(
+      'custom-banner-class-name',
+    );
   });
 });

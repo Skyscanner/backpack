@@ -23,12 +23,17 @@ import {
   SimpleCanvasContrast,
   SimpleSurfaceDefault,
   SimpleSurfaceContrast,
+  CustomSurfaceContrast,
+  CustomSurfaceDefault,
+  CustomCanvasContrast,
+  CustomCanvasDefault,
+  CustomSurfaceDefaultNoShadow,
   ComplexSurfaceContrast,
   ComplexSurfaceDefault,
   ComplexCanvasContrast,
   ComplexCanvasDefault,
   ComplexSurfaceDefaultNoShadow,
-  VisualExample
+  VisualExample,
 } from './examples';
 
 export default {
@@ -40,6 +45,12 @@ export const SimpleTwoSegmentsCanvasDefault = SimpleDefault;
 export const SimpleThreeSegmentsCanvasContrast = SimpleCanvasContrast;
 export const SimpleFourSegmentsSurfaceDefault = SimpleSurfaceDefault;
 export const SimpleFourSegmentsSurfaceContrast = SimpleSurfaceContrast;
+export const CustomThreeSegmentsSurfaceContrast = CustomSurfaceContrast;
+export const CustomThreeSegmentsSurfaceDefault = CustomSurfaceDefault;
+export const CustomThreeSegmentsCanvasContrast = CustomCanvasContrast;
+export const CustomThreeSegmentsCanvasDefault = CustomCanvasDefault;
+export const CustomThreeSegmentsSurfaceDefaultNoShadow =
+  CustomSurfaceDefaultNoShadow;
 export const ComplexThreeSegmentsSurfaceContrast = ComplexSurfaceContrast;
 export const ComplexThreeSegmentsSurfaceDefault = ComplexSurfaceDefault;
 export const ComplexThreeSegmentsCanvasContrast = ComplexCanvasContrast;

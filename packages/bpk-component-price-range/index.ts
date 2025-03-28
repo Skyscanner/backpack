@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
+import BpkPriceRange, {
+  type Props as BpkPriceRangeProps,
+} from './src/BpkPriceRange';
 
-.bpk-chip-group-nudger {
-  margin-inline: tokens.bpk-spacing-sm();
-}
+export type { BpkPriceRangeProps };
+export default BpkPriceRange;

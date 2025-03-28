@@ -19,13 +19,17 @@
 
 import { render } from '@testing-library/react';
 
+import NewWindowIcon from '../../bpk-component-icon/sm/new-window';
+
 import BpkPrice from './BpkPrice';
 import { ALIGNS, SIZES } from './common-types';
+
 
 const price = '£1,830';
 const previousPrice = '£2,000';
 const leadingText = 'from';
 const trailingText = 'per day';
+const icon = NewWindowIcon;
 let props;
 
 describe.each([
@@ -79,6 +83,19 @@ describe.each([
         previousPrice={previousPrice}
         leadingText={leadingText}
         trailingText={trailingText}
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should support previous price with leading text and icon attribute', () => {
+    const { asFragment } = render(
+      <BpkPrice
+        {...props}
+        previousPrice={previousPrice}
+        leadingText={leadingText}
+        trailingText={trailingText}
+        icon={icon}
       />,
     );
     expect(asFragment()).toMatchSnapshot();

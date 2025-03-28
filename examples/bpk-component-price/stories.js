@@ -32,15 +32,18 @@ import {
   SmallWithLeadingAndTrailingTextExample,
   SmallWithPreviousPriceExample,
   SmallWithPreviousPriceLeadingTextExample,
+  SmallWithPreviousPriceLeadingAndTrailingTextAndIconExample,
   SmallRightExample,
   SmallRightWithTrailingTextExample,
   SmallRightWithLeadingandTrailingTextExample,
   SmallRightWithPreviousPriceExample,
+  SmallRightWithPreviousPriceLeadingAndTrailingTextAndIconExample,
   LargeExample,
   LargeWithTrailingTextExample,
   LargeWithLeadingAndTrailingTextExample,
   LargeWithPreviousPriceExample,
   LargeWithPreviousPriceLeadingTextExample,
+  LargeWithPreviousPriceLeadingAndTrailingTextAndIconExample,
   LargeLongPriceExample,
   MixedExample,
 } from './examples';
@@ -68,11 +71,15 @@ export const SmallWithLeadingAndTrailingText =
 export const SmallWithPreviousPrice = SmallWithPreviousPriceExample;
 export const SmallWithPreviousPriceLeadingText =
   SmallWithPreviousPriceLeadingTextExample;
+export const SmallWithPreviousPriceLeadingAndTrailingTextAndIcon =
+  SmallWithPreviousPriceLeadingAndTrailingTextAndIconExample;
 export const SmallRight = SmallRightExample;
 export const SmallRightWithTrailingText = SmallRightWithTrailingTextExample;
 export const SmallRightWithLeadingandTrailingText =
   SmallRightWithLeadingandTrailingTextExample;
 export const SmallRightWithPreviousPrice = SmallRightWithPreviousPriceExample;
+export const SmallRightWithPreviousPriceLeadingAndTrailingTextAndIcon =
+  SmallRightWithPreviousPriceLeadingAndTrailingTextAndIconExample;
 export const Large = LargeExample;
 export const LargeWithTrailingText = LargeWithTrailingTextExample;
 export const LargeWithLeadingAndTrailingText =
@@ -80,6 +87,8 @@ export const LargeWithLeadingAndTrailingText =
 export const LargeWithPreviousPrice = LargeWithPreviousPriceExample;
 export const LargeWithPreviousPriceLeadingText =
   LargeWithPreviousPriceLeadingTextExample;
+export const LargeWithPreviousPriceLeadingAndTrailingTextAndIcon =
+  LargeWithPreviousPriceLeadingAndTrailingTextAndIconExample;
 export const LargeLongPrice = LargeLongPriceExample;
 
 export const VisualTest = MixedExample;

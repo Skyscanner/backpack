@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-
-.bpk-chip-group-nudger {
-  margin-inline: tokens.bpk-spacing-sm();
+.bpk-component-segmented-control-stories__custom-button {
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

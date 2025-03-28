@@ -40,6 +40,7 @@ export type Props = {
   ) => void;
   title: string,
   getApplicationElement: () => HTMLElement | null,
+  width?: string,
   renderTarget?: null | HTMLElement | (() => null | HTMLElement),
   dialogRef?: (ref: HTMLElement | null | undefined) => void,
   className?: string,
@@ -71,6 +72,7 @@ const BpkDrawer = ({
   padded = true,
   renderTarget = null,
   title,
+  width = '90%',
 }: Props) =>  {
 
   const [isDrawerShown, setIsDrawerShown] = useState(true);
@@ -98,6 +100,7 @@ const BpkDrawer = ({
           dialogRef={dialogRef}
           closeLabel={closeLabel || ""}
           closeText={closeText}
+          width={width}
           // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={className}
           contentClassName={contentClassName}

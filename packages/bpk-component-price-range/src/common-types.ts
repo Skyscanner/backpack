@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
+export const MARKER_TYPES = {
+  LOW: 'low',
+  MEDIUM: 'medium',
+  HIGH: 'high',
+} as const;
 
-.bpk-chip-group-nudger {
-  margin-inline: tokens.bpk-spacing-sm();
-}
+export type MarkerType = (typeof MARKER_TYPES)[keyof typeof MARKER_TYPES];

@@ -51,6 +51,7 @@ export type Props = {
     popoverId?: string;
     labelTitle?: boolean;
     closeBtnIcon?: boolean;
+    zIndexCustom?: number;
   };
   logo?: string;
   subheadline?: string;
@@ -114,18 +115,19 @@ const BpkInsetBanner = ({
               onClose={(e: {
                 stopPropagation: () => void;
                 preventDefault: () => void;
-              }) => {
-                e.stopPropagation();
-                e.preventDefault();
+              } | null) => {         
+                  e?.stopPropagation();
+                  e?.preventDefault();
               }}
               closeButtonText={callToAction?.buttonCloseLabel}
               closeButtonIcon={callToAction?.closeBtnIcon}
               labelAsTitle={callToAction?.labelTitle}
+              zIndexValue={callToAction?.zIndexCustom}
               target={
                 <button
                   aria-label={callToAction?.buttonA11yLabel}
                   className={getClassName('bpk-inset-banner--cta-button')}
-                  data-testid="adInfoBtn"
+                  data-testid="ctaBtn"
                   aria-hidden="false"
                   type="button"
                 >

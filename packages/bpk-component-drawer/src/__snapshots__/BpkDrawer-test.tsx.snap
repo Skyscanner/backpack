@@ -21,6 +21,7 @@ exports[`BpkDrawer should render correctly in the given target if renderTarget i
           class="bpk-drawer bpk-drawer--entering"
           id="my-drawer"
           role="dialog"
+          style="--dynamic-width: 90%;"
           tabindex="-1"
         >
           <header

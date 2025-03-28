@@ -42,6 +42,11 @@
     align-items: flex-start;
 
     &--expandable {
+      width: 100%;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      text-align: start;
       cursor: pointer;
     }
   }
@@ -78,9 +83,6 @@
     background-color: transparent;
     cursor: pointer;
     appearance: none;
-  }
-
-  &__expand-icon {
     fill: tokens.$bpk-text-secondary-day;
   }
 

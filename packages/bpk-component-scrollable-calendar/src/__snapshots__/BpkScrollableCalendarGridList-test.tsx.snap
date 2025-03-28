@@ -31,6 +31,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
               </span>
               <div
                 aria-hidden="false"
+                aria-label="February 2010"
                 class="bpk-calendar-grid"
                 role="grid"
               >
@@ -623,6 +624,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
               </span>
               <div
                 aria-hidden="false"
+                aria-label="March 2010"
                 class="bpk-calendar-grid"
                 role="grid"
               >
@@ -1319,6 +1321,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom "custom
               </span>
               <div
                 aria-hidden="false"
+                aria-label="February 2010"
                 class="bpk-calendar-grid"
                 role="grid"
               >
@@ -1951,6 +1954,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom "custom
               </span>
               <div
                 aria-hidden="false"
+                aria-label="March 2010"
                 class="bpk-calendar-grid"
                 role="grid"
               >
@@ -2647,6 +2651,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom date co
               </span>
               <div
                 aria-hidden="false"
+                aria-label="February 2010"
                 class="bpk-calendar-grid"
                 role="grid"
               >
@@ -2946,6 +2951,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom date co
               </span>
               <div
                 aria-hidden="false"
+                aria-label="March 2010"
                 class="bpk-calendar-grid"
                 role="grid"
               >
@@ -3348,6 +3354,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
               </span>
               <div
                 aria-hidden="false"
+                aria-label="February 2010"
                 class="bpk-calendar-grid"
                 role="grid"
               >
@@ -3980,6 +3987,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
               </span>
               <div
                 aria-hidden="false"
+                aria-label="March 2010"
                 class="bpk-calendar-grid"
                 role="grid"
               >
@@ -4716,6 +4724,7 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
               </span>
               <div
                 aria-hidden="false"
+                aria-label="February 2010"
                 class="bpk-calendar-grid"
                 role="grid"
               >
@@ -5348,6 +5357,7 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
               </span>
               <div
                 aria-hidden="false"
+                aria-label="March 2010"
                 class="bpk-calendar-grid"
                 role="grid"
               >
