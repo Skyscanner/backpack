@@ -25,6 +25,12 @@
   vertical-align: bottom;
 }
 
+@mixin extra-large-star {
+  width: tokens.$bpk-icon-size-xl;
+  height: tokens.$bpk-icon-size-xl;
+  vertical-align: bottom;
+}
+
 .bpk-star {
   display: inline-flex;
   width: tokens.$bpk-icon-size-sm;
@@ -34,6 +40,10 @@
 
   &--large {
     @include large-star;
+  }
+
+  &--extra-large {
+    @include extra-large-star;
   }
 
   &--half {
@@ -61,6 +71,10 @@
 
     &--large {
       @include large-star;
+    }
+
+    &--extra-large {
+      @include extra-large-star;
     }
   }
 }
