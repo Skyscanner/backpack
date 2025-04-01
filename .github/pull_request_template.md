@@ -10,7 +10,7 @@ Add `major`, `minor` or `patch` label depending on the change according to [semv
 
 Remember to include the following changes:
 
-- [ ] Ensure the PR title includes the name of the component you are changing so it's clear in the release notes for consumers of the changes in the version e.g `[KOA-123][BpkButton] Updating the colour`
+- [ ] Ensure the PR title includes the name of the component you are changing so it's clear in the release notes for consumers of the changes in the version e.g `[Clover-123][BpkButton] Updating the colour`
 - [ ] `README.md` (If you have created a new component)
 - [ ] Component `README.md`
 - [ ] Tests
