@@ -16,6 +16,30 @@
  * limitations under the License.
  */
 
-import BpkCardList from './src/BpkCardList';
+@use '../../../unstable__bpk-mixins/tokens';
 
-export default BpkCardList;
+.bpk-card-list-grid-stack {
+  display: grid;
+  gap: tokens.bpk-spacing-lg();
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(tokens.$bpk-one-pixel-rem * 281, auto)
+    );
+    gap: tokens.bpk-spacing-lg();
+  }
+
+  &__stack {
+    display: grid;
+    grid-template-columns: 1;
+    gap: tokens.bpk-spacing-lg();
+  }
+
+  &__accessory {
+    &__button {
+      width: auto;
+    }
+  }
+}
