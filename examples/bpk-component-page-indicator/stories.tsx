@@ -36,7 +36,13 @@ export const ThreePages = ThreePagesExample;
 export const OverImage = OverImageExample;
 export const WithNav = WithNavExample;
 export const VisualTest = VisualTestExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
+// export const VisualTestWithZoom = VisualTest.bind({});
+// VisualTestWithZoom.args = {
+//   zoomEnabled: true
+// };
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true,
+  }
 };
