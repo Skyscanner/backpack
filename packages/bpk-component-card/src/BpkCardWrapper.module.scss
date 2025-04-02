@@ -20,10 +20,13 @@
 @use '../../unstable__bpk-mixins/borders';
 @use '../../unstable__bpk-mixins/cards';
 @use '../../unstable__bpk-mixins/radii';
+@use '../../unstable__bpk-mixins/utils';
 
 .bpk-card-wrapper {
+  padding: tokens.bpk-spacing-sm() * 0.5;
+  border-radius: tokens.$bpk-one-pixel-rem * 14;
+
   @include cards.bpk-card;
-  @include borders.bpk-border-lg(var(--background-color), '');
 
   &--header {
     border-radius: tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm 0 0;
@@ -34,8 +37,16 @@
 
   &--content {
     position: relative;
-    border-radius: 0 0 tokens.$bpk-border-radius-md tokens.$bpk-border-radius-md;
+    transition: border-radius 0.25s ease-in-out;
+    border-radius: tokens.$bpk-border-radius-md;
+    background-color: tokens.$bpk-private-info-banner-default-day;
     overflow: hidden;
+
+    &-opened {
+      transition: border-radius 0.01s ease-in-out;
+      border-radius: 0 0 tokens.$bpk-border-radius-md
+        tokens.$bpk-border-radius-md;
+    }
 
     &::before,
     &::after {
@@ -46,7 +57,6 @@
       width: tokens.bpk-spacing-lg();
       height: tokens.bpk-spacing-lg();
       background-color: transparent;
-      box-shadow: tokens.bpk-spacing-base() 0 0 0 var(--background-color);
       overflow: hidden;
 
       @include radii.bpk-border-radius-md;
@@ -67,6 +77,58 @@
     &::after {
       box-shadow: tokens.$bpk-box-shadow-lg;
       opacity: 1;
+    }
+  }
+
+  &--body {
+    display: flex;
+    padding: tokens.bpk-spacing-base();
+    flex-direction: column;
+    background-color: tokens.$bpk-private-info-banner-default-day;
+    color: tokens.$bpk-text-on-light-day;
+    cursor: default;
+
+    &--header-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      &--button-container {
+        margin: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
+        cursor: pointer;
+      }
+
+      &--button {
+        all: unset;
+
+        &:focus {
+          @include utils.bpk-focus-indicator;
+        }
+      }
+
+      &--toggle-label {
+        display: flex;
+        align-items: center;
+
+        &--text {
+          margin-inline-end: tokens.bpk-spacing-md();
+        }
+      }
+    }
+
+    &--link-text {
+      width: max-content;
+      color: tokens.$bpk-private-button-link-normal-foreground-day;
+      text-decoration: none;
+
+      @include utils.bpk-hover {
+        color: tokens.$bpk-private-button-link-pressed-foreground-day;
+      }
     }
   }
 }
