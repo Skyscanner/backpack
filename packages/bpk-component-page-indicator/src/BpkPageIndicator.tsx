@@ -36,7 +36,7 @@ export const VARIANT = {
 type Variant = typeof VARIANT[keyof typeof VARIANT];
 type Direction = typeof DIRECTIONS[keyof typeof DIRECTIONS];
 
-interface Props {
+export interface Props {
   indicatorLabel?: string,
   prevNavLabel?: string,
   nextNavLabel?: string,
