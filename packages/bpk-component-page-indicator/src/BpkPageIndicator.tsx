@@ -42,7 +42,7 @@ interface Props {
   nextNavLabel?: string,
   currentIndex: number,
   totalIndicators: number,
-  variant: Variant,
+  variant?: Variant,
   onClick?: (
     event: React.MouseEvent<HTMLButtonElement>,
     newIndex: number,
