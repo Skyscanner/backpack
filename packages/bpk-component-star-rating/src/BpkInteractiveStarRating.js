@@ -43,6 +43,7 @@ type Props = {
   className: ?string,
   hoverRating: number,
   large: boolean,
+  extraLarge: boolean,
   maxRating: number,
   onMouseLeave: () => mixed,
   onRatingHover: (number, any) => mixed,
@@ -53,6 +54,7 @@ type Props = {
 const BpkInteractiveStarRating = (props: Props) => {
   const {
     className,
+    extraLarge,
     getStarLabel,
     hoverRating,
     id,
@@ -84,6 +86,7 @@ const BpkInteractiveStarRating = (props: Props) => {
         onClick={(event) => onRatingSelect(starNumber, event)}
         type={type}
         large={large}
+        extraLarge={extraLarge}
         onMouseEnter={(event) => onRatingHover(starNumber, event)}
         selected={rating === starNumber}
         label={getStarLabel(starNumber, maxRating)}
@@ -106,6 +109,7 @@ BpkInteractiveStarRating.propTypes = {
   className: PropTypes.string,
   hoverRating: PropTypes.number,
   large: PropTypes.bool,
+  extraLarge: PropTypes.bool,
   maxRating: PropTypes.number,
   onMouseLeave: PropTypes.func,
   onRatingHover: PropTypes.func,
@@ -117,6 +121,7 @@ BpkInteractiveStarRating.defaultProps = {
   className: null,
   hoverRating: 0,
   large: false,
+  extraLarge: false,
   maxRating: 5,
   onMouseLeave: () => null,
   onRatingHover: () => null,
