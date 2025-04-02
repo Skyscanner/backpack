@@ -31,7 +31,7 @@ export const DIRECTIONS = {
 type Direction = typeof DIRECTIONS[keyof typeof DIRECTIONS];
 
 interface Props {
-  ariaLabel: string,
+  ariaLabel: string | undefined,
   currentIndex: number,
   direction: Direction,
   disabled?: boolean,
