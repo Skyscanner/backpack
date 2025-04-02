@@ -17,8 +17,6 @@
  */
 /* @flow strict */
 
-import PropTypes from 'prop-types';
-
 import { cssModules } from '../../bpk-react-utils';
 
 import NavButton, { DIRECTIONS } from './NavButton';
@@ -33,30 +31,37 @@ const START_SCROLL_INDEX = Math.floor(DISPLAYED_TOTAL / 2);
 export const VARIANT = {
   default: 'default',
   overImage: 'overImage',
-};
+} as const;
 
-export type Props = {
-  className: ?string,
-  showNav: ?boolean,
+type Variant = typeof VARIANT[keyof typeof VARIANT];
+type Direction = typeof DIRECTIONS[keyof typeof DIRECTIONS];
+
+interface Props {
+  indicatorLabel?: string,
+  prevNavLabel?: string,
+  nextNavLabel?: string,
   currentIndex: number,
   totalIndicators: number,
-  onClick: ?() => void,
-  indicatorLabel: string,
-  prevNavLabel: string,
-  nextNavLabel: string,
-  variant: ?$Keys<typeof VARIANT>,
-};
+  variant: Variant,
+  onClick?: (
+    event: React.MouseEvent<HTMLButtonElement>,
+    newIndex: number,
+    direction: Direction,
+  ) => void,
+  className?: string,
+  showNav?: boolean,
+}
 
-const BpkPageIndicator = ({
-  className,
+const BpkPageIndicator: React.FC<Props> = ({
+  className = undefined,
   currentIndex,
   indicatorLabel,
   nextNavLabel,
-  onClick,
+  onClick = () => {},
   prevNavLabel,
-  showNav,
+  showNav = false,
   totalIndicators,
-  variant,
+  variant = VARIANT.default,
 }: Props) => {
   /**
    * This validation is used to avoid an a11y issue when onClick isn't available.
@@ -93,14 +98,14 @@ const BpkPageIndicator = ({
             style={
               currentIndex > START_SCROLL_INDEX
                 ? {
-                  '--scroll-index':
-                    totalIndicators > DISPLAYED_TOTAL
-                      ? Math.min(
-                        currentIndex - START_SCROLL_INDEX,
-                        totalIndicators - DISPLAYED_TOTAL,
-                      )
-                      : 0,
-                }
+                    '--scroll-index': 
+                      totalIndicators > DISPLAYED_TOTAL
+                        ? Math.min(
+                          currentIndex - START_SCROLL_INDEX,
+                          totalIndicators - DISPLAYED_TOTAL,
+                        )
+                        : 0,
+                  } as React.CSSProperties
                 : undefined
             }
           >
@@ -147,25 +152,6 @@ const BpkPageIndicator = ({
       </div>
     </div>
   )
-};
-
-BpkPageIndicator.propTypes = {
-  indicatorLabel: PropTypes.string,
-  prevNavLabel: PropTypes.string,
-  nextNavLabel: PropTypes.string,
-  currentIndex: PropTypes.number.isRequired,
-  totalIndicators: PropTypes.number.isRequired,
-  variant: PropTypes.oneOf(Object.keys(VARIANT)),
-  onClick: PropTypes.func,
-  className: PropTypes.string,
-  showNav: PropTypes.bool,
-};
-
-BpkPageIndicator.defaultProps = {
-  onClick: null,
-  className: null,
-  showNav: false,
-  variant: VARIANT.default,
 };
 
 export default BpkPageIndicator;
