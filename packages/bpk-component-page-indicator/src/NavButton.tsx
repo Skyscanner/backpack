@@ -31,15 +31,15 @@ export const DIRECTIONS = {
 type Direction = typeof DIRECTIONS[keyof typeof DIRECTIONS];
 
 interface Props {
+  ariaLabel: string,
+  currentIndex: number,
   direction: Direction,
   disabled?: boolean,
-  currentIndex: number,
   onClick?: (
     event: React.MouseEvent<HTMLButtonElement>,
     newIndex: number,
     direction: Direction,
   ) => void,
-  ariaLabel: string,
 };
 
 const AlignedLeftArrowIcon = withButtonAlignment(withRtlSupport(LeftArrowIcon));
