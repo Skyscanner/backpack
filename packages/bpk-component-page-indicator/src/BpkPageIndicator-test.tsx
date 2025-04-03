@@ -15,16 +15,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import BpkPageIndicator from './BpkPageIndicator';
 
-let props;
-
 describe('BpkPageIndicator', () => {
+  let props: {
+    currentIndex: number;
+    totalIndicators: number;
+    indicatorLabel?: string;
+    prevNavLabel?: string;
+    nextNavLabel?: string;
+    onClick?: jest.Mock;
+    className?: string;
+    showNav?: boolean;
+  };
+
   beforeEach(() => {
     props = {
       currentIndex: 0,

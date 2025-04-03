@@ -15,9 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
-
-import PropTypes from 'prop-types';
 
 import {BUTTON_TYPES, BpkButtonV2} from '../../bpk-component-button';
 import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
@@ -28,14 +25,20 @@ export const DIRECTIONS = {
   PREV: 'PREV',
   INDICATORS: 'INDICATORS',
   NEXT: 'NEXT',
-};
+} as const;
+
+type Direction = typeof DIRECTIONS[keyof typeof DIRECTIONS];
 
 type Props = {
-  direction: $Keys<typeof DIRECTIONS>,
-  disabled?: boolean,
+  ariaLabel: string | undefined,
   currentIndex: number,
-  onClick: ?() => void,
-  ariaLabel: string,
+  direction: Direction,
+  disabled?: boolean,
+  onClick?: (
+    event: React.MouseEvent<HTMLButtonElement>,
+    newIndex: number,
+    direction: Direction,
+  ) => void,
 };
 
 const AlignedLeftArrowIcon = withButtonAlignment(withRtlSupport(LeftArrowIcon));
@@ -43,9 +46,13 @@ const AlignedRightArrowIcon = withButtonAlignment(
   withRtlSupport(RightArrowIcon),
 );
 
-const NavButton = (props: Props) => {
-  const { ariaLabel, currentIndex, direction, disabled, onClick } = props;
-  return (
+const NavButton: React.FC<Props> = ({
+  ariaLabel,
+  currentIndex,
+  direction,
+  disabled = false,
+  onClick = () => {},
+}: Props) => (
     <BpkButtonV2
       iconOnly
       type={BUTTON_TYPES.link}
@@ -66,19 +73,5 @@ const NavButton = (props: Props) => {
       )}
     </BpkButtonV2>
   );
-};
-
-NavButton.propTypes = {
-  direction: PropTypes.oneOf(Object.keys(DIRECTIONS)).isRequired,
-  disabled: PropTypes.bool,
-  ariaLabel: PropTypes.string.isRequired,
-  currentIndex: PropTypes.number.isRequired,
-  onClick: PropTypes.func,
-};
-
-NavButton.defaultProps = {
-  disabled: false,
-  onClick: null,
-};
 
 export default NavButton;

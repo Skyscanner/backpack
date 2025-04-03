@@ -15,14 +15,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkPageIndicator, {
-  type Props as BpkPageIndicatorProps,
-  VARIANT,
-} from './src/BpkPageIndicator';
-import { DIRECTIONS } from './src/NavButton';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-export type { BpkPageIndicatorProps };
-export { DIRECTIONS, VARIANT };
-export default BpkPageIndicator;
+import BpkPageIndicator from './BpkPageIndicator';
+
+describe('BpkPageIndicator accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkPageIndicator
+        currentIndex={0}
+        totalIndicators={7}
+        showNav
+        indicatorLabel="Go to slide"
+        prevNavLabel="Previous slide"
+        nextNavLabel="Next slide"
+      />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
