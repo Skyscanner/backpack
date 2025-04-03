@@ -1,0 +1,66 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../packages/unstable__bpk-mixins/tokens';
+
+.bpkdocs-consumer-level {
+  img {
+    border-top-left-radius: tokens.$bpk-border-radius-md;
+    border-top-right-radius: tokens.$bpk-border-radius-md;
+    overflow: hidden;
+  }
+
+  .bpk-bottom {
+    display: flex;
+    padding: tokens.bpk-spacing-lg();
+    justify-content: space-between;
+  }
+
+  .bpk-column {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.bpkdocs-consumer-level__internal-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+
+  .bpkdocs-internal-link-img {
+    width: 20%;
+  }
+
+  img {
+    border-top-left-radius: tokens.$bpk-border-radius-md;
+    border-bottom-left-radius: tokens.$bpk-border-radius-md;
+  }
+
+  .bpk-info {
+    margin: auto tokens.bpk-spacing-lg();
+    flex-direction: column;
+  }
+
+  .bpk-verticalLinks {
+    &_bullet {
+      margin: 0 tokens.bpk-spacing-sm();
+      color: tokens.$bpk-core-accent-day;
+    }
+  }
+}

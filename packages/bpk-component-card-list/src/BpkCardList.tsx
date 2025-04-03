@@ -16,9 +16,13 @@
  * limitations under the License.
  */
 
+import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import { BpkButtonV2 } from '../../bpk-component-button';
 import BpkSectionHeader from '../../bpk-component-section-header';
 import { cssModules } from '../../bpk-react-utils';
+
+import BpkCardListGridStack from './BpkCardListGridStack';
+import { ACCESSORY_TYPES, LAYOUTS } from './common-types';
 
 import type CardListProps from './common-types';
 
@@ -26,21 +30,31 @@ import STYLES from './BpkCardList.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+const DEFAULT_ITEMS = 3;
+
 const BpkCardList = (props: CardListProps) => {
   const {
+    accessory,
     buttonHref,
     buttonText,
+    cardList,
     description,
+    expandText,
+    initiallyShownCards = DEFAULT_ITEMS,
+    layoutDesktop,
+    layoutMobile,
     onButtonClick,
     title,
   } = props;
 
-  const button = buttonText && (
-    <BpkButtonV2 onClick={onButtonClick} href={buttonHref}>{buttonText}</BpkButtonV2>
+  const button = buttonText && accessory !== ACCESSORY_TYPES.Button && (
+    <BpkButtonV2 onClick={onButtonClick} href={buttonHref}>
+      {buttonText}
+    </BpkButtonV2>
   );
 
   return (
-    <div className={getClassName('bpk-card-list')}>
+    <div className={getClassName('bpk-card-list')} data-testid="bpk-card-list">
       <BpkSectionHeader
         title={title}
         description={description}
@@ -51,7 +65,43 @@ const BpkCardList = (props: CardListProps) => {
         className={getClassName('bpk-card-list--card-list')}
         data-testid="bpk-card-list--card-list"
       >
-        TODO: CARDS
+        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+          {(isActive) => {
+            if (isActive) {
+              if (layoutMobile === LAYOUTS.stack) {
+                return (
+                  <BpkCardListGridStack
+                    accessory={accessory}
+                    initiallyShownCards={initiallyShownCards}
+                    buttonText={buttonText}
+                    expandText={expandText}
+                    onButtonClick={onButtonClick}
+                    layout={layoutMobile}
+                  >
+                    {cardList}
+                  </BpkCardListGridStack>
+                );
+              }
+              return <div />;
+            }
+
+            if (layoutDesktop === LAYOUTS.grid) {
+              return (
+                <BpkCardListGridStack
+                  accessory={accessory}
+                  initiallyShownCards={initiallyShownCards}
+                  buttonText={buttonText}
+                  expandText={expandText}
+                  onButtonClick={onButtonClick}
+                  layout={layoutDesktop}
+                >
+                  {cardList}
+                </BpkCardListGridStack>
+              );
+            }
+            return <div />;
+          }}
+        </BpkBreakpoint>
       </div>
     </div>
   );
