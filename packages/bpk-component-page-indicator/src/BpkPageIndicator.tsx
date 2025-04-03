@@ -70,7 +70,6 @@ const BpkPageIndicator: React.FC<Props> = ({
   const isInteractive = !!onClick;
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <div
       className={className}
       aria-hidden={isInteractive ? 'false': 'true'}
