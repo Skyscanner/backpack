@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import {BUTTON_TYPES, BpkButtonV2} from '../../bpk-component-button';
 import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
