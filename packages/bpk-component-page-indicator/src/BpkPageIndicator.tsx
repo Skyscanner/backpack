@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import type { CSSProperties } from 'react';
+
 import { cssModules } from '../../bpk-react-utils';
 
 import NavButton, { DIRECTIONS } from './NavButton';
@@ -69,6 +71,17 @@ const BpkPageIndicator: React.FC<Props> = ({
   */
   const isInteractive = !!onClick;
 
+  type CustomCSSProperties = CSSProperties & {
+    '--scroll-index'?: number,
+  };
+
+  const customStyle : CustomCSSProperties = {
+    '--scroll-index': 
+      totalIndicators > DISPLAYED_TOTAL
+        ? Math.min(currentIndex - START_SCROLL_INDEX, totalIndicators - DISPLAYED_TOTAL)
+        : 0,
+  };
+
   return (
     <div
       className={className}
@@ -95,15 +108,7 @@ const BpkPageIndicator: React.FC<Props> = ({
             className={getClassName('bpk-page-indicator__indicators-container')}
             style={
               currentIndex > START_SCROLL_INDEX
-                ? {
-                    '--scroll-index': 
-                      totalIndicators > DISPLAYED_TOTAL
-                        ? Math.min(
-                          currentIndex - START_SCROLL_INDEX,
-                          totalIndicators - DISPLAYED_TOTAL,
-                        )
-                        : 0,
-                  } as React.CSSProperties
+                ? customStyle
                 : undefined
             }
           >

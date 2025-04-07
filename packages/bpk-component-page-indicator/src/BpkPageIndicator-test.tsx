@@ -21,17 +21,10 @@ import '@testing-library/jest-dom';
 
 import BpkPageIndicator from './BpkPageIndicator';
 
+import type {Props} from './BpkPageIndicator';
+
 describe('BpkPageIndicator', () => {
-  let props: {
-    currentIndex: number;
-    totalIndicators: number;
-    indicatorLabel?: string;
-    prevNavLabel?: string;
-    nextNavLabel?: string;
-    onClick?: jest.Mock;
-    className?: string;
-    showNav?: boolean;
-  };
+  let props: Props
 
   beforeEach(() => {
     props = {
