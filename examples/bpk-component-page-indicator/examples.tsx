@@ -24,8 +24,7 @@ import BpkPageIndicator, {
 } from '../../packages/bpk-component-page-indicator';
 import { cssModules } from '../../packages/bpk-react-utils';
 
-import type {
-  BpkPageIndicatorProps} from '../../packages/bpk-component-page-indicator';
+import type { BpkPageIndicatorProps } from '../../packages/bpk-component-page-indicator';
 
 import STYLES from './examples.module.scss';
 
@@ -35,7 +34,6 @@ const image =
   'https://content.skyscnr.com/m/50d9dff3186775ad/original/Condor-Homepage-Hero-Option-3.png';
 const imageWidth = 400;
 const imageHeight = 90;
-type Variant = typeof VARIANT[keyof typeof VARIANT];
 type PageIndicatorContainerProps = Omit<BpkPageIndicatorProps, 'currentIndex'>
 
 const PageIndicatorContainer = (props: PageIndicatorContainerProps) => {

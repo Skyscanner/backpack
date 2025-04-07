@@ -22,7 +22,8 @@ import BpkPageIndicator, {
 import { DIRECTIONS } from './src/NavButton';
 
 import type {
-  Props as BpkPageIndicatorProps} from './src/BpkPageIndicator';
+  Props as BpkPageIndicatorProps
+} from './src/BpkPageIndicator';
 
 export type { BpkPageIndicatorProps };
 export { DIRECTIONS, VARIANT };
