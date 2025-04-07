@@ -16,27 +16,11 @@
  * limitations under the License.
  */
 
-import BpkPageIndicator from '../../packages/bpk-component-page-indicator/src/BpkPageIndicator';
+import BpkPageIndicator, { VARIANT } from './src/BpkPageIndicator';
+import { DIRECTIONS } from './src/NavButton';
 
-import {
-  DefaultExample,
-  ThreePagesExample,
-  OverImageExample,
-  WithNavExample,
-  VisualTestExample,
-} from './examples';
+import type { Props as BpkPageIndicatorProps } from './src/BpkPageIndicator';
 
-export default {
-  title: 'bpk-component-page-indicator',
-  component: BpkPageIndicator,
-};
-
-export const Default = DefaultExample;
-export const ThreePages = ThreePagesExample;
-export const OverImage = OverImageExample;
-export const WithNav = WithNavExample;
-export const VisualTest = VisualTestExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
-};
+export type { BpkPageIndicatorProps };
+export { DIRECTIONS, VARIANT };
+export default BpkPageIndicator;

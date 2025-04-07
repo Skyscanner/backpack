@@ -15,16 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import BpkPageIndicator from './BpkPageIndicator';
 
-let props;
+import type { Props } from './BpkPageIndicator';
 
 describe('BpkPageIndicator', () => {
+  let props: Props;
+
   beforeEach(() => {
     props = {
       currentIndex: 0,
@@ -43,9 +44,7 @@ describe('BpkPageIndicator', () => {
   });
 
   it('should support custom class names', () => {
-    render(
-      <BpkPageIndicator {...props} className="custom-classname" />,
-    );
+    render(<BpkPageIndicator {...props} className="custom-classname" />);
 
     expect(document.querySelector('.custom-classname')).toBeTruthy();
   });
