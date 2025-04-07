@@ -21,10 +21,12 @@ import type { Dispatch, ReactElement, SetStateAction } from 'react';
 const LAYOUTS = {
   grid: 'grid',
   stack: 'stack',
+  row: 'row',
+  rail: 'rail',
 } as const;
 
-type DesktopLayouts = typeof LAYOUTS.grid;
-type MobileLayouts = typeof LAYOUTS.stack;
+type DesktopLayouts = typeof LAYOUTS.row | typeof LAYOUTS.grid;
+type MobileLayouts = typeof LAYOUTS.rail | typeof LAYOUTS.stack;
 
 const ACCESSORY_TYPES = {
   Expand: 'expand',
@@ -63,6 +65,16 @@ type CardListGridStackProps = {
   layout: typeof LAYOUTS.grid | typeof LAYOUTS.stack;
 };
 
+type CardListRowRailProps = {
+  children: ReactElement[];
+  accessory?: typeof ACCESSORY_TYPES.Expand | typeof ACCESSORY_TYPES.Button;
+  expandText?: string;
+  buttonText?: string;
+  onButtonClick?: () => void;
+  initiallyShownCards: number;
+  layout: typeof LAYOUTS.row | typeof LAYOUTS.rail;
+};
+
 type CardListProps = CardListBaseProps;
 
 export default CardListProps;
@@ -71,5 +83,6 @@ export type {
   DesktopLayouts,
   MobileLayouts,
   CardListGridStackProps,
+  CardListRowRailProps,
   ExpandProps,
 };
