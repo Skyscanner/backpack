@@ -46,7 +46,7 @@ const AlignedRightArrowIcon = withButtonAlignment(
   withRtlSupport(RightArrowIcon),
 );
 
-const NavButton: React.FC<Props> = ({
+const NavButton = ({
   ariaLabel,
   currentIndex,
   direction,
