@@ -24,6 +24,9 @@ import BpkPageIndicator, {
 } from '../../packages/bpk-component-page-indicator';
 import { cssModules } from '../../packages/bpk-react-utils';
 
+import type {
+  BpkPageIndicatorProps} from '../../packages/bpk-component-page-indicator';
+
 import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -33,7 +36,9 @@ const image =
 const imageWidth = 400;
 const imageHeight = 90;
 type Variant = typeof VARIANT[keyof typeof VARIANT];
-const PageIndicatorContainer = (props: { totalIndicators: number; showNav?: boolean; variant?: Variant; className?: string}) => {
+type PageIndicatorContainerProps = Omit<BpkPageIndicatorProps, 'currentIndex'>
+
+const PageIndicatorContainer = (props: PageIndicatorContainerProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (

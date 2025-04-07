@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { CSSProperties } from 'react';
+import type { CSSProperties, MouseEvent } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -45,7 +45,7 @@ export type Props = {
   totalIndicators: number,
   variant?: Variant,
   onClick?: (
-    event: React.MouseEvent<HTMLButtonElement>,
+    event: MouseEvent<HTMLButtonElement>,
     newIndex: number,
     direction: Direction,
   ) => void,
@@ -53,7 +53,7 @@ export type Props = {
   showNav?: boolean,
 }
 
-const BpkPageIndicator: React.FC<Props> = ({
+const BpkPageIndicator = ({
   className = undefined,
   currentIndex,
   indicatorLabel,
