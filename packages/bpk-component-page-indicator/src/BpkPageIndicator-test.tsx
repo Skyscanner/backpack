@@ -21,7 +21,7 @@ import '@testing-library/jest-dom';
 
 import BpkPageIndicator from './BpkPageIndicator';
 
-import type {Props} from './BpkPageIndicator';
+import type { Props } from './BpkPageIndicator';
 
 describe('BpkPageIndicator', () => {
   let props: Props
