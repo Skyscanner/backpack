@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import {BUTTON_TYPES, BpkButtonV2} from '../../bpk-component-button';
+import { BUTTON_TYPES, BpkButtonV2 } from '../../bpk-component-button';
 import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
 import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
 import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
@@ -27,18 +27,18 @@ export const DIRECTIONS = {
   NEXT: 'NEXT',
 } as const;
 
-type Direction = typeof DIRECTIONS[keyof typeof DIRECTIONS];
+type Direction = (typeof DIRECTIONS)[keyof typeof DIRECTIONS];
 
 type Props = {
-  ariaLabel: string | undefined,
-  currentIndex: number,
-  direction: Direction,
-  disabled?: boolean,
+  ariaLabel: string | undefined;
+  currentIndex: number;
+  direction: Direction;
+  disabled?: boolean;
   onClick?: (
     event: React.MouseEvent<HTMLButtonElement>,
     newIndex: number,
     direction: Direction,
-  ) => void,
+  ) => void;
 };
 
 const AlignedLeftArrowIcon = withButtonAlignment(withRtlSupport(LeftArrowIcon));
@@ -53,25 +53,25 @@ const NavButton = ({
   disabled = false,
   onClick = () => {},
 }: Props) => (
-    <BpkButtonV2
-      iconOnly
-      type={BUTTON_TYPES.link}
-      onClick={(e) => {
-        if (direction === DIRECTIONS.PREV) {
-          onClick(e, currentIndex - 1, direction);
-        } else {
-          onClick(e, currentIndex + 1, direction);
-        }
-      }}
-      aria-label={ariaLabel}
-      disabled={disabled}
-    >
-      {direction === DIRECTIONS.PREV ? (
-        <AlignedLeftArrowIcon />
-      ) : (
-        <AlignedRightArrowIcon />
-      )}
-    </BpkButtonV2>
-  );
+  <BpkButtonV2
+    iconOnly
+    type={BUTTON_TYPES.link}
+    onClick={(e) => {
+      if (direction === DIRECTIONS.PREV) {
+        onClick(e, currentIndex - 1, direction);
+      } else {
+        onClick(e, currentIndex + 1, direction);
+      }
+    }}
+    aria-label={ariaLabel}
+    disabled={disabled}
+  >
+    {direction === DIRECTIONS.PREV ? (
+      <AlignedLeftArrowIcon />
+    ) : (
+      <AlignedRightArrowIcon />
+    )}
+  </BpkButtonV2>
+);
 
 export default NavButton;

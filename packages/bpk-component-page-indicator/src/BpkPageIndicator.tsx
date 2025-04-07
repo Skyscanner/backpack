@@ -34,24 +34,24 @@ export const VARIANT = {
   overImage: 'overImage',
 } as const;
 
-type Variant = typeof VARIANT[keyof typeof VARIANT];
-type Direction = typeof DIRECTIONS[keyof typeof DIRECTIONS];
+type Variant = (typeof VARIANT)[keyof typeof VARIANT];
+type Direction = (typeof DIRECTIONS)[keyof typeof DIRECTIONS];
 
 export type Props = {
-  indicatorLabel?: string,
-  prevNavLabel?: string,
-  nextNavLabel?: string,
-  currentIndex: number,
-  totalIndicators: number,
-  variant?: Variant,
+  indicatorLabel?: string;
+  prevNavLabel?: string;
+  nextNavLabel?: string;
+  currentIndex: number;
+  totalIndicators: number;
+  variant?: Variant;
   onClick?: (
     event: MouseEvent<HTMLButtonElement>,
     newIndex: number,
     direction: Direction,
-  ) => void,
-  className?: string,
-  showNav?: boolean,
-}
+  ) => void;
+  className?: string;
+  showNav?: boolean;
+};
 
 const BpkPageIndicator = ({
   className = undefined,
@@ -68,24 +68,27 @@ const BpkPageIndicator = ({
    * This validation is used to avoid an a11y issue when onClick isn't available.
    * In this case, we can set aria-hidden = true to let screen reader skip reading page indicator dots.
    * and render the dot as div rather than button to align with aria-hidden = true.
-  */
+   */
   const isInteractive = !!onClick;
 
   type CustomCSSProperties = CSSProperties & {
-    '--scroll-index'?: number,
+    '--scroll-index'?: number;
   };
 
-  const customStyle : CustomCSSProperties = {
-    '--scroll-index': 
+  const customStyle: CustomCSSProperties = {
+    '--scroll-index':
       totalIndicators > DISPLAYED_TOTAL
-        ? Math.min(currentIndex - START_SCROLL_INDEX, totalIndicators - DISPLAYED_TOTAL)
+        ? Math.min(
+            currentIndex - START_SCROLL_INDEX,
+            totalIndicators - DISPLAYED_TOTAL,
+          )
         : 0,
   };
 
   return (
     <div
       className={className}
-      aria-hidden={isInteractive ? 'false': 'true'}
+      aria-hidden={isInteractive ? 'false' : 'true'}
       data-testid="indicator-container"
     >
       <div
@@ -106,41 +109,39 @@ const BpkPageIndicator = ({
         <div className={getClassName('bpk-page-indicator__container')}>
           <div
             className={getClassName('bpk-page-indicator__indicators-container')}
-            style={
-              currentIndex > START_SCROLL_INDEX
-                ? customStyle
-                : undefined
-            }
+            style={currentIndex > START_SCROLL_INDEX ? customStyle : undefined}
           >
-            {[...Array(totalIndicators)].map((val, index) => isInteractive ? (
-              <button
-                type="button"
-                onClick={(e) => {
-                  onClick(e, index, DIRECTIONS.INDICATORS);
-                }}
-                className={getClassName(
-                  'bpk-page-indicator__indicator',
-                  `bpk-page-indicator__indicator--${variant}`,
-                  index === currentIndex &&
-                  `bpk-page-indicator__indicator--active-${variant}`,
-                )}
-                aria-label={`${indicatorLabel} ${index + 1}`}
-                aria-current={currentIndex === index ? 'true' : 'false'}
-                // eslint-disable-next-line react/no-array-index-key
-                key={`indicator-${index}`}
-              />
-            ) : (
-              <div
-                className={getClassName(
-                  'bpk-page-indicator__indicator',
-                  `bpk-page-indicator__indicator--${variant}`,
-                  index === currentIndex &&
-                  `bpk-page-indicator__indicator--active-${variant}`,
-                )}
-                // eslint-disable-next-line react/no-array-index-key
-                key={`indicator-${index}`}
-              />
-            ))}
+            {[...Array(totalIndicators)].map((val, index) =>
+              isInteractive ? (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    onClick(e, index, DIRECTIONS.INDICATORS);
+                  }}
+                  className={getClassName(
+                    'bpk-page-indicator__indicator',
+                    `bpk-page-indicator__indicator--${variant}`,
+                    index === currentIndex &&
+                      `bpk-page-indicator__indicator--active-${variant}`,
+                  )}
+                  aria-label={`${indicatorLabel} ${index + 1}`}
+                  aria-current={currentIndex === index ? 'true' : 'false'}
+                  // eslint-disable-next-line react/no-array-index-key
+                  key={`indicator-${index}`}
+                />
+              ) : (
+                <div
+                  className={getClassName(
+                    'bpk-page-indicator__indicator',
+                    `bpk-page-indicator__indicator--${variant}`,
+                    index === currentIndex &&
+                      `bpk-page-indicator__indicator--active-${variant}`,
+                  )}
+                  // eslint-disable-next-line react/no-array-index-key
+                  key={`indicator-${index}`}
+                />
+              ),
+            )}
           </div>
         </div>
         {showNav && (
@@ -154,7 +155,7 @@ const BpkPageIndicator = ({
         )}
       </div>
     </div>
-  )
+  );
 };
 
 export default BpkPageIndicator;

@@ -34,7 +34,7 @@ const image =
   'https://content.skyscnr.com/m/50d9dff3186775ad/original/Condor-Homepage-Hero-Option-3.png';
 const imageWidth = 400;
 const imageHeight = 90;
-type PageIndicatorContainerProps = Omit<BpkPageIndicatorProps, 'currentIndex'>
+type PageIndicatorContainerProps = Omit<BpkPageIndicatorProps, 'currentIndex'>;
 
 const PageIndicatorContainer = (props: PageIndicatorContainerProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -16,14 +16,10 @@
  * limitations under the License.
  */
 
-import BpkPageIndicator, {
-  VARIANT,
-} from './src/BpkPageIndicator';
+import BpkPageIndicator, { VARIANT } from './src/BpkPageIndicator';
 import { DIRECTIONS } from './src/NavButton';
 
-import type {
-  Props as BpkPageIndicatorProps
-} from './src/BpkPageIndicator';
+import type { Props as BpkPageIndicatorProps } from './src/BpkPageIndicator';
 
 export type { BpkPageIndicatorProps };
 export { DIRECTIONS, VARIANT };

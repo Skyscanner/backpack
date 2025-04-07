@@ -21,10 +21,10 @@ import '@testing-library/jest-dom';
 
 import BpkPageIndicator from './BpkPageIndicator';
 
-import type {Props} from './BpkPageIndicator';
+import type { Props } from './BpkPageIndicator';
 
 describe('BpkPageIndicator', () => {
-  let props: Props
+  let props: Props;
 
   beforeEach(() => {
     props = {
@@ -44,9 +44,7 @@ describe('BpkPageIndicator', () => {
   });
 
   it('should support custom class names', () => {
-    render(
-      <BpkPageIndicator {...props} className="custom-classname" />,
-    );
+    render(<BpkPageIndicator {...props} className="custom-classname" />);
 
     expect(document.querySelector('.custom-classname')).toBeTruthy();
   });
