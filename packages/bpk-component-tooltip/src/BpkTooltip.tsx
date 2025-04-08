@@ -60,7 +60,7 @@ export type Props = {
    */
   ariaLabel: string;
   /**
-   * "target" should be a DOM element with a "ref" attached to it.
+   * "target" should be a DOM element.
    */
   target: ReactElement<any>;
   id: string;

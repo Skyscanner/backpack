@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render, screen, act } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 
@@ -24,7 +24,6 @@ import BpkTooltip from './BpkTooltip';
 import { TOOLTIP_TYPES } from './constants';
 
 describe('BpkTooltip', () => {
-
   it('should render correctly', () => {
     const target = <span>My tooltip target</span>;
 
@@ -57,11 +56,14 @@ describe('BpkTooltip', () => {
       </BpkTooltip>,
     );
 
-    await act(async () => {
-      await userEvent.hover(screen.getByText('My tooltip target'));
+    await userEvent.hover(screen.getByText('My tooltip target'));
+
+    await waitFor(() => {
+      expect(screen.getByText('My tooltip content')).toBeVisible();
+      expect(screen.getByText('My tooltip content').className).toContain(
+        'bpk-tooltip__inner--dark',
+      );
     });
-    expect(screen.getByText('My tooltip content')).toBeVisible();
-    expect(screen.getByText('My tooltip content').className).toContain('bpk-tooltip__inner--dark');
   });
 
   it('should render correctly with "padded" attribute equal to false', async () => {
@@ -79,11 +81,13 @@ describe('BpkTooltip', () => {
       </BpkTooltip>,
     );
 
-    await act(async () => {
-      await userEvent.hover(screen.getByText('My tooltip target'));
-    });
+    await userEvent.hover(screen.getByText('My tooltip target'));
 
-    expect(screen.getByText('My tooltip content')).toBeVisible();
-    expect(screen.getByText('My tooltip content').className).not.toContain('bpk-tooltip__inner--padded');
+    await waitFor(() => {
+      expect(screen.getByText('My tooltip content')).toBeVisible();
+      expect(screen.getByText('My tooltip content').className).not.toContain(
+        'bpk-tooltip__inner--padded',
+      );
+    });
   });
 });
