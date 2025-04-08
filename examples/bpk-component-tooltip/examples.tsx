@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { useRef } from 'react';
-
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkTooltip, {
   TOOLTIP_TYPES,
