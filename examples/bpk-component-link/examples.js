@@ -41,6 +41,18 @@ const LinkExample = () => (
   </div>
 );
 
+const ImplicitLinkExample = () => (
+  <div>
+    <BpkLink href="#" onClick={action('#1 clicked')} implicit>
+      Link #1
+    </BpkLink>
+    <br />
+    <BpkLink href="#" onClick={action('#2 clicked')} implicit>
+      Link #2
+    </BpkLink>
+  </div>
+);
+
 const ButtonLinkExample = () => (
   <div>
     <BpkButtonLink onClick={action('#1 clicked')}>Link #1</BpkButtonLink>
@@ -56,6 +68,18 @@ const LinkAlternativeExample = () => (
     </BpkLink>
     <br />
     <BpkLink href="#" onClick={action('#2 clicked')} alternate>
+      Link #2
+    </BpkLink>
+  </BpkDarkExampleWrapper>
+);
+
+const LinkAlternativeImplicitExample = () => (
+  <BpkDarkExampleWrapper>
+    <BpkLink href="#" onClick={action('#1 clicked')} alternate implicit>
+      Link #1
+    </BpkLink>
+    <br />
+    <BpkLink href="#" onClick={action('#2 clicked')} alternate implicit>
       Link #2
     </BpkLink>
   </BpkDarkExampleWrapper>
@@ -103,8 +127,10 @@ const MixedExample = () => (
 
 export {
   LinkExample,
+  ImplicitLinkExample,
   ButtonLinkExample,
   LinkAlternativeExample,
+  LinkAlternativeImplicitExample,
   ButtonLinkAlternativeExample,
   CombinedExample,
   CombinedAlternativeExample,
