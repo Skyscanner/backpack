@@ -27,6 +27,7 @@ import {
   ButtonLinkAlternativeExample,
   CombinedExample,
   CombinedAlternativeExample,
+  OverviewExample,
   MixedExample,
 } from './examples';
 
@@ -47,6 +48,8 @@ export const ExampleAlternateButtons = ButtonLinkAlternativeExample;
 
 export const Combined = CombinedExample;
 export const CombinedAlternative = CombinedAlternativeExample;
+
+export const Overview = OverviewExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});

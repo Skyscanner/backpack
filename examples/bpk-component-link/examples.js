@@ -21,6 +21,7 @@
 import {
   colorWhite,
   colorSkyGrayTint04,
+  fontColorBase,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkLink, { BpkButtonLink } from '../../packages/bpk-component-link';
@@ -94,6 +95,25 @@ const CombinedAlternativeExample = () => (
   </BpkDarkExampleWrapper>
 );
 
+const OverviewExample = () => (
+    <>
+      <div style={{ padding: '1rem', paddingBottom: '1rem' }}>
+        Big skies, big landscapes and cool cities, the great American Northwest is the place to discover the great outdoors. Get a real taste of the Frontier spirit and explore a rich history of what was once the Wild West.{' '}
+        <BpkLink href="#" style={{ color: fontColorBase, textDecoration: 'underline' }}>
+          Explore incredible national parks
+        </BpkLink>{' '}
+        , ancient forests, rugged coastlines, and beautiful islands.
+      </div>
+      <BpkDarkExampleWrapper style={{ color: colorWhite, padding: '1rem' }}>
+        Big skies, big landscapes and cool cities, the great American Northwest is the place to discover the great outdoors. Get a real taste of the Frontier spirit and explore a rich history of what was once the Wild West.{' '}
+        <BpkLink href="#" style={{ color: colorWhite, textDecoration: 'underline' }}>
+          Explore incredible national parks
+        </BpkLink>{' '}
+        , ancient forests, rugged coastlines, and beautiful islands.
+      </BpkDarkExampleWrapper>
+    </>
+);
+
 const MixedExample = () => (
   <div>
     <CombinedExample />
@@ -108,5 +128,6 @@ export {
   ButtonLinkAlternativeExample,
   CombinedExample,
   CombinedAlternativeExample,
+  OverviewExample,
   MixedExample,
 };
