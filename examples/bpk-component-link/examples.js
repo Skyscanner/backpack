@@ -123,14 +123,14 @@ const OverviewExample = () => (
     <>
       <div style={{ padding: '1rem', paddingBottom: '1rem' }}>
         Big skies, big landscapes and cool cities, the great American Northwest is the place to discover the great outdoors. Get a real taste of the Frontier spirit and explore a rich history of what was once the Wild West.{' '}
-        <BpkLink href="#" style={{ color: fontColorBase, textDecoration: 'underline' }}>
+        <BpkLink href="#" style={{ color: fontColorBase }}>
           Explore incredible national parks
         </BpkLink>{' '}
         , ancient forests, rugged coastlines, and beautiful islands.
       </div>
       <BpkDarkExampleWrapper style={{ color: colorWhite, padding: '1rem' }}>
         Big skies, big landscapes and cool cities, the great American Northwest is the place to discover the great outdoors. Get a real taste of the Frontier spirit and explore a rich history of what was once the Wild West.{' '}
-        <BpkLink href="#" style={{ color: colorWhite, textDecoration: 'underline' }}>
+        <BpkLink href="#" alternate>
           Explore incredible national parks
         </BpkLink>{' '}
         , ancient forests, rugged coastlines, and beautiful islands.
