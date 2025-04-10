@@ -24,7 +24,7 @@ import {
   BottomExamples,
   LeftExamples,
   RightExamples,
-  VideoOverlayExamples,
+  HeavyOverlayExamples,
   VignetteExample,
   WithForegroundContentExample,
   MixedExample,
@@ -42,7 +42,7 @@ export const Bottom = BottomExamples;
 export const Left = LeftExamples;
 export const Right = RightExamples;
 export const Vignette = VignetteExample;
-export const VideoOverlays = VideoOverlayExamples;
+export const HeavyOverlays = HeavyOverlayExamples;
 
 export const WithForegroundContent = WithForegroundContentExample;
 

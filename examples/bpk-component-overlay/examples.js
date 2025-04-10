@@ -29,7 +29,7 @@ import STYLES from './examples.module.scss';
 
 const IMAGE_SRC =
   'https://content.skyscnr.com/m/1c8c6338a92a7a94/original/matt-hardy-6ArTTluciuA-unsplash.jpg';
-const VIDEO_IMG_SRC =
+const HEAVY_IMG_SRC =
   'https://content.skyscnr.com/m/2af45124245b6759/original/SOCIAL9.png';
 
 const getClassName = cssModules(STYLES);
@@ -200,16 +200,16 @@ const VignetteExample = () => {
   );
 };
 
-const VideoOverlayExamples = () => {
-  const overlayTypeTop = OVERLAY_TYPES.videoTop;
-  const overlayTypeBottom = OVERLAY_TYPES.videoBottom;
+const HeavyOverlayExamples = () => {
+  const overlayTypeTop = OVERLAY_TYPES.heavyTop;
+  const overlayTypeBottom = OVERLAY_TYPES.heavyBottom;
   return (
     <div className={getClassName('bpk-overlay-stories')}>
       {[overlayTypeTop, overlayTypeBottom].map((overlayType) => (
         <div className={getClassName('bpk-overlay-stories__overlay-story')}>
           <BpkOverlay overlayType={overlayType}>
             <BpkImage
-              src={VIDEO_IMG_SRC}
+              src={HEAVY_IMG_SRC}
               altText="Sail boat"
               aspectRatio={360 / 640}
             />
@@ -225,7 +225,7 @@ const VideoOverlayExamples = () => {
         <BpkOverlay overlayType={overlayTypeTop}>
           <BpkOverlay overlayType={overlayTypeBottom}>
             <BpkImage
-              src={VIDEO_IMG_SRC}
+              src={HEAVY_IMG_SRC}
               altText="Sail boat"
               aspectRatio={360 / 640}
             />
@@ -283,7 +283,7 @@ export {
   LeftExamples,
   RightExamples,
   VignetteExample,
-  VideoOverlayExamples,
+  HeavyOverlayExamples,
   WithForegroundContentExample,
   MixedExample,
 };
