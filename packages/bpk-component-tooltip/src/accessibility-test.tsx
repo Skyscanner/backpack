@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import BpkTooltip from './BpkTooltip';
@@ -24,11 +24,17 @@ import BpkTooltip from './BpkTooltip';
 describe('BpkTooltip accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkTooltip id="my-popover" aria-label="Tooltip">
+      <BpkTooltip
+        id="my-popover"
+        ariaLabel="Tooltip"
+        target={<p>My tooltip target</p>}
+      >
         My tooltip content
       </BpkTooltip>,
     );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    await waitFor(async () => {
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
   });
 });

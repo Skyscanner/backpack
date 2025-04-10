@@ -18,126 +18,42 @@
 
 @use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/layers';
+@use '../../unstable__bpk-mixins/radii';
+@use '../../unstable__bpk-mixins/shadows';
 
 $arrow-size: tokens.bpk-spacing-md();
-$arrow-inset-margin: -1 * (tokens.$bpk-one-pixel-rem * 3);
-$light-arrow-border-color: tokens.$bpk-line-day;
 $dark-background-color: tokens.$bpk-surface-contrast-day;
 
-.bpk-tooltip-portal {
+.bpk-tooltip--container {
   z-index: tokens.$bpk-zindex-tooltip;
-
-  &--target {
-    display: inline-block;
-  }
 }
 
 .bpk-tooltip {
-  transition:
-    opacity tokens.$bpk-duration-sm ease-in-out,
-    transform tokens.$bpk-duration-sm ease-in-out;
+  transition: opacity tokens.$bpk-duration-sm ease-in-out;
   outline: 0;
   opacity: 1;
 
+  @include layers.bpk-layer;
+
   &--appear {
     opacity: 0;
-
-    .bpk-tooltip-portal[data-popper-placement='top']
-      &:not(.bpk-tooltip--appear-active) {
-      transform: translate(0, -1rem);
-      transition: none;
-    }
-
-    .bpk-tooltip-portal[data-popper-placement='right']
-      &:not(.bpk-tooltip--appear-active) {
-      transform: translate(1rem, 0);
-      transition: none;
-    }
-
-    .bpk-tooltip-portal[data-popper-placement='bottom']
-      &:not(.bpk-tooltip--appear-active) {
-      transform: translate(0, 1rem);
-      transition: none;
-    }
-
-    .bpk-tooltip-portal[data-popper-placement='left']
-      &:not(.bpk-tooltip--appear-active) {
-      transform: translate(-1rem, 0);
-      transition: none;
-    }
   }
 
   &--appear-active {
-    transform: translate(0, 0);
-    transition:
-      opacity tokens.$bpk-duration-sm ease-in-out,
-      transform tokens.$bpk-duration-sm ease-in-out;
     opacity: 1;
   }
 
   &__arrow {
-    position: absolute;
     width: $arrow-size;
     height: $arrow-size;
-    transform: rotate(45deg);
-    border: tokens.$bpk-one-pixel-rem solid transparent;
-    background: inherit;
-    background-color: tokens.$bpk-surface-default-day;
-
-    .bpk-tooltip-portal[data-popper-placement='top'] & {
-      bottom: $arrow-inset-margin;
-      border-right-color: $light-arrow-border-color;
-      border-bottom-color: $light-arrow-border-color;
-    }
-
-    .bpk-tooltip-portal[data-popper-placement='right'] & {
-      left: $arrow-inset-margin;
-      border-bottom-color: $light-arrow-border-color;
-      border-left-color: $light-arrow-border-color;
-    }
-
-    .bpk-tooltip-portal[data-popper-placement='bottom'] & {
-      top: $arrow-inset-margin;
-      border-top-color: $light-arrow-border-color;
-      border-left-color: $light-arrow-border-color;
-    }
-
-    .bpk-tooltip-portal[data-popper-placement='left'] & {
-      right: $arrow-inset-margin;
-      border-top-color: $light-arrow-border-color;
-      border-right-color: $light-arrow-border-color;
-    }
+    fill: tokens.$bpk-surface-default-day;
 
     &--dark {
-      background-color: $dark-background-color;
-
-      .bpk-tooltip-portal[data-popper-placement='top'] & {
-        border-right-color: $dark-background-color;
-        border-bottom-color: $dark-background-color;
-      }
-
-      .bpk-tooltip-portal[data-popper-placement='right'] & {
-        border-bottom-color: $dark-background-color;
-        border-left-color: $dark-background-color;
-      }
-
-      .bpk-tooltip-portal[data-popper-placement='bottom'] & {
-        border-top-color: $dark-background-color;
-        border-left-color: $dark-background-color;
-      }
-
-      .bpk-tooltip-portal[data-popper-placement='left'] & {
-        border-top-color: $dark-background-color;
-        border-right-color: $dark-background-color;
-      }
+      fill: $dark-background-color;
     }
   }
 
   &__inner {
-    overflow: hidden;
-
-    @include layers.bpk-layer;
-
     &--padded {
       padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
     }
