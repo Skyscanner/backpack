@@ -22,33 +22,122 @@ This is the component for the tooltip that is displayed to users.
 The actual component that developers create (i.e. the default export from this package) is BpkTooltipPortal.
 */
 
-import type { ReactNode } from 'react';
+import type { ReactNode, ReactElement } from 'react';
+import { cloneElement, useRef, useState, useEffect } from 'react';
+
+import {
+  arrow,
+  FloatingArrow,
+  FloatingPortal,
+  offset,
+  shift,
+  useFloating,
+  useHover,
+  useInteractions,
+  useRole,
+} from '@floating-ui/react';
+
+import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
 import { ARROW_ID, TOOLTIP_TYPES } from './constants';
 
+import type { Placement } from '@floating-ui/react';
+
 import STYLES from './BpkTooltip.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type TooltipProps = {
+// The stroke width is used to set the border width of the arrow.
+const strokeWidth = 1;
+
+export type Props = {
+  /**
+   * Tooltips are invisible to assistive technologies such as screen readers.
+   * To improve accessibility, `ariaLabel` is required to describe the content of the tooltip to assistive technologies.
+   * The label will be used on the `target` element, so any existing `aria-label` attached to `target` will be overridden.
+   */
+  ariaLabel: string;
+  /**
+   * "target" should be a DOM element.
+   */
+  target: ReactElement<any>;
   id: string;
   children: ReactNode | string;
   type?: (typeof TOOLTIP_TYPES)[keyof typeof TOOLTIP_TYPES];
   padded?: boolean;
-  className?: string | null;
+  hideOnTouchDevices?: boolean;
+  placement?: Placement;
+  isOpen?: boolean;
 };
 
+// This function is to ensure the arrow alignment when used on the top and bottom
+// doesn't look clipped away from the tooltip. This is due to our use of box-shadows that makes it look floating away,
+// so we need to compensate slightly to make it look as one.
+const getArrowAlignment = (placement: Placement) => {
+  if (placement.includes('bottom')) {
+    return { bottom: '98%' };
+  }
+  if (placement.includes('top')) {
+    return { top: '98%' };
+  }
+  return undefined;
+};
+
+const hasTouchSupport = () =>
+  !!(
+    typeof window !== 'undefined' &&
+    ('ontouchstart' in window || navigator.maxTouchPoints > 0)
+  );
+
 const BpkTooltip = ({
+  ariaLabel,
   children,
-  className = null,
+  hideOnTouchDevices = true,
   id,
+  isOpen = false,
   padded = true,
+  placement = 'bottom',
+  target,
   type = TOOLTIP_TYPES.light,
   ...rest
-}: TooltipProps) => {
-  const classNames = getClassName('bpk-tooltip', className);
+}: Props) => {
+  const [isOpenState, setIsOpenState] = useState(isOpen);
+  const arrowRef = useRef(null);
+
+  useEffect(() => {
+    if (!isOpen) {
+      setIsOpenState(false);
+    }
+  }, [isOpen]);
+
+  const { context, floatingStyles, refs } = useFloating({
+    open: isOpenState,
+    onOpenChange: setIsOpenState,
+    placement,
+    middleware: [offset(8), shift(), arrow({ element: arrowRef })],
+  });
+
+  const hover = useHover(context, {
+    mouseOnly: !hasTouchSupport() || !hideOnTouchDevices,
+  });
+  const role = useRole(context, { role: 'tooltip' });
+
+  const { getFloatingProps, getReferenceProps } = useInteractions([
+    hover,
+    role,
+  ]);
+
+  const targetWithAccessibilityProps = cloneElement(target, {
+    tabIndex: '0',
+    'aria-label': ariaLabel,
+    role: 'tooltip',
+    ref: refs.setReference,
+    ...getReferenceProps(),
+  });
+
+  const classNames = getClassName('bpk-tooltip');
 
   const innerClassNames = getClassName(
     'bpk-tooltip__inner',
@@ -62,27 +151,45 @@ const BpkTooltip = ({
   );
 
   return (
-    <TransitionInitialMount
-      appearClassName={getClassName('bpk-tooltip--appear')}
-      appearActiveClassName={getClassName('bpk-tooltip--appear-active')}
-      transitionTimeout={200}
-    >
-      <section
-        id={id}
-        tabIndex={-1}
-        role="dialog"
-        className={classNames}
-        {...rest}
-      >
-        <span
-          id={ARROW_ID}
-          data-popper-arrow
-          className={arrowClassNames}
-          role="presentation"
-        />
-        <div className={innerClassNames}>{children}</div>
-      </section>
-    </TransitionInitialMount>
+    <>
+      {targetWithAccessibilityProps}
+      {isOpenState && (
+        <FloatingPortal>
+          <div
+            className={getClassName('bpk-tooltip--container')}
+            ref={refs.setFloating}
+            style={floatingStyles}
+            {...getFloatingProps()}
+          >
+            <TransitionInitialMount
+              appearClassName={getClassName('bpk-tooltip--appear')}
+              appearActiveClassName={getClassName('bpk-tooltip--appear-active')}
+              transitionTimeout={200}
+            >
+              <section
+                id={id}
+                tabIndex={-1}
+                role="dialog"
+                className={classNames}
+                {...rest}
+              >
+                <FloatingArrow
+                  ref={arrowRef}
+                  context={context}
+                  id={ARROW_ID}
+                  className={arrowClassNames}
+                  role="presentation"
+                  stroke={surfaceHighlightDay}
+                  strokeWidth={strokeWidth}
+                  style={getArrowAlignment(context.placement)}
+                />
+                <div className={innerClassNames}>{children}</div>
+              </section>
+            </TransitionInitialMount>
+          </div>
+        </FloatingPortal>
+      )}
+    </>
   );
 };
 
