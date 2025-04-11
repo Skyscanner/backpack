@@ -61,6 +61,7 @@ const getClassName = cssModules(STYLES);
 const EVENT_SOURCES = {
   CLOSE_BUTTON: 'CLOSE_BUTTON',
   CLOSE_LINK: 'CLOSE_LINK',
+  CLOSE_OUTSIDE: 'CLOSE_OUTSIDE',
 };
 
 // The stroke width is used to set the border width of the arrow.
@@ -94,7 +95,7 @@ export type Props = CloseButtonProps & {
   id: string;
   label: string;
   onClose: (
-    event: SyntheticEvent<HTMLButtonElement>,
+    event: SyntheticEvent<HTMLButtonElement> | null,
     props: { source: (typeof EVENT_SOURCES)[keyof typeof EVENT_SOURCES] },
   ) => void;
   className?: string | null;
@@ -109,6 +110,7 @@ export type Props = CloseButtonProps & {
   target: ReactElement<any>;
   closeButtonLabel?: string;
   actionText?: string;
+  zIndexValue?: number;
   onAction?: () => void;
   renderTarget?: () => HTMLElement | HTMLElement | undefined;
   [rest: string]: any;
@@ -134,6 +136,7 @@ const BpkPopover = ({
   renderTarget = () => undefined,
   showArrow = true,
   target,
+  zIndexValue = 900,
   ...rest
 }: Props) => {
   const [isOpenState, setIsOpenState] = useState(isOpen);
@@ -146,9 +149,16 @@ const BpkPopover = ({
 
   const arrowRef = useRef(null);
 
+  const onFloatingChange = (isFloatingOpen: boolean) => {
+    setIsOpenState(isFloatingOpen);
+    if (!isFloatingOpen && onClose) {
+      onClose(null, { source: EVENT_SOURCES.CLOSE_OUTSIDE});
+    }
+  }
+
   const { context, floatingStyles, refs } = useFloating({
     open: isOpenState,
-    onOpenChange: setIsOpenState,
+    onOpenChange: onFloatingChange,
     placement,
     middleware: [
       showArrow && offset(17),
@@ -208,8 +218,8 @@ const BpkPopover = ({
             <div
               className={getClassName('bpk-popover--container')}
               ref={refs.setFloating}
-              style={floatingStyles}
               {...getFloatingProps()}
+              style={{ ...floatingStyles, zIndex: zIndexValue }}
             >
               <TransitionInitialMount
                 appearClassName={getClassName('bpk-popover--appear')}

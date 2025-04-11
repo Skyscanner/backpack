@@ -74,6 +74,8 @@ module.exports = {
             options: {
               importLoaders: 1,
               modules: 'global',
+              namedExport: false,
+              exportLocalsConvention: 'as-is',
             },
           },
           {
@@ -100,6 +102,8 @@ module.exports = {
             options: {
               importLoaders: 1,
               modules: 'global',
+              namedExport: false,
+              exportLocalsConvention: 'as-is',
             },
           },
           {
@@ -122,9 +126,6 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'base.css',
-    }),
-    new MiniCssExtractPlugin({
-      filename: 'index.css',
     }),
   ],
 };

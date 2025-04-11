@@ -15,14 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkPageIndicator, {
-  type Props as BpkPageIndicatorProps,
-  VARIANT,
-} from './src/BpkPageIndicator';
-import { DIRECTIONS } from './src/NavButton';
+import BpkPriceRange, {
+  type Props as BpkPriceRangeProps,
+} from './src/BpkPriceRange';
 
-export type { BpkPageIndicatorProps };
-export { DIRECTIONS, VARIANT };
-export default BpkPageIndicator;
+export type { BpkPriceRangeProps };
+export default BpkPriceRange;

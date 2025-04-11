@@ -2,6 +2,9 @@ name: Build
 
 on:
   workflow_call:
+    secrets:
+      GH_APP_PRIVATE_KEY:
+        required: true
 
 defaults:
   run:
@@ -28,7 +31,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore Cache
-        uses: actions/cache/restore@v4.2.0
+        uses: actions/cache/restore@v4.2.3
         id: npm-cache
         with:
           path: |
@@ -56,7 +59,7 @@ jobs:
           tar -cf ${{env.BUILD_LOGS}}.tar.br --use-compress-program="brotli -q 7" ./logs
 
       - name: Upload test logs
-        uses: actions/upload-artifact@v4.6.0
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: ${{env.BUILD_LOGS}}
           path: ${{env.BUILD_LOGS}}.tar.br
@@ -77,7 +80,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore Cache
-        uses: actions/cache/restore@v4.2.0
+        uses: actions/cache/restore@v4.2.3
         id: npm-cache
         with:
           path: |
@@ -86,7 +89,7 @@ jobs:
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
       - name: Download artifacts
-        uses: actions/download-artifact@v4.1.8
+        uses: actions/download-artifact@v4.2.1
         with:
           name: ${{env.BUILD_LOGS}}
 
@@ -96,11 +99,17 @@ jobs:
           brotli -d ${{env.BUILD_LOGS}}.tar.br
           tar -xf ${{env.BUILD_LOGS}}.tar
 
+      - uses: actions/create-github-app-token@v2
+        id: app-token
+        with:
+          app-id: ${{ vars.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
       - name: Danger
         run: npm run danger
         if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
 
   PercyTests:
     runs-on: ubuntu-latest
@@ -118,7 +127,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore Cache
-        uses: actions/cache/restore@v4.2.0
+        uses: actions/cache/restore@v4.2.3
         id: npm-cache
         with:
           path: |
@@ -127,7 +136,7 @@ jobs:
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
       - name: Restore Cache
-        uses: actions/cache/restore@v4.2.0
+        uses: actions/cache/restore@v4.2.3
         id: storybook-dist-cache
         with:
           path: dist-storybook/

@@ -99,6 +99,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                 </span>
                 <div
                   aria-hidden="false"
+                  aria-label="February 2010"
                   class="bpk-calendar-grid"
                   role="grid"
                 >
@@ -691,6 +692,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                 </span>
                 <div
                   aria-hidden="false"
+                  aria-label="March 2010"
                   class="bpk-calendar-grid"
                   role="grid"
                 >
@@ -1456,6 +1458,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                 </span>
                 <div
                   aria-hidden="false"
+                  aria-label="February 2010"
                   class="bpk-calendar-grid"
                   role="grid"
                 >
@@ -2048,6 +2051,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                 </span>
                 <div
                   aria-hidden="false"
+                  aria-label="March 2010"
                   class="bpk-calendar-grid"
                   role="grid"
                 >
@@ -2813,6 +2817,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                 </span>
                 <div
                   aria-hidden="false"
+                  aria-label="February 2010"
                   class="bpk-calendar-grid"
                   role="grid"
                 >
@@ -3405,6 +3410,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                 </span>
                 <div
                   aria-hidden="false"
+                  aria-label="March 2010"
                   class="bpk-calendar-grid"
                   role="grid"
                 >
@@ -4170,6 +4176,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                 </span>
                 <div
                   aria-hidden="false"
+                  aria-label="February 2010"
                   class="bpk-calendar-grid"
                   role="grid"
                 >
@@ -4762,6 +4769,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                 </span>
                 <div
                   aria-hidden="false"
+                  aria-label="March 2010"
                   class="bpk-calendar-grid"
                   role="grid"
                 >

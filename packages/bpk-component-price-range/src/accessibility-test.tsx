@@ -15,23 +15,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkPageIndicator from './BpkPageIndicator';
+import BpkPriceRange from './BpkPriceRange';
 
-describe('BpkPageIndicator accessibility tests', () => {
+window.ResizeObserver =
+  window.ResizeObserver ||
+  jest.fn().mockImplementation(() => ({
+    disconnect: jest.fn(),
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+  }));
+
+describe('BpkPriceRange accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkPageIndicator
-        currentIndex={0}
-        totalIndicators={7}
-        showNav
-        indicatorLabel="Go to slide"
-        prevNavLabel="Previous slide"
-        nextNavLabel="Next slide"
+      <BpkPriceRange
+        showPriceIndicator
+        marker={{ price: '£150', percentage: 50 }}
+        segments={{
+          low: {
+            price: '£100',
+            percentage: 20,
+          },
+          high: {
+            price: '£200',
+            percentage: 80,
+          },
+        }}
       />,
     );
     const results = await axe(container);

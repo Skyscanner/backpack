@@ -29,6 +29,8 @@ import STYLES from './examples.module.scss';
 
 const IMAGE_SRC =
   'https://content.skyscnr.com/m/1c8c6338a92a7a94/original/matt-hardy-6ArTTluciuA-unsplash.jpg';
+const HEAVY_IMG_SRC =
+  'https://content.skyscnr.com/m/2af45124245b6759/original/SOCIAL9.png';
 
 const getClassName = cssModules(STYLES);
 
@@ -198,6 +200,47 @@ const VignetteExample = () => {
   );
 };
 
+const HeavyOverlayExamples = () => {
+  const overlayTypeTop = OVERLAY_TYPES.heavyTop;
+  const overlayTypeBottom = OVERLAY_TYPES.heavyBottom;
+  return (
+    <div className={getClassName('bpk-overlay-stories')}>
+      {[overlayTypeTop, overlayTypeBottom].map((overlayType) => (
+        <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+          <BpkOverlay overlayType={overlayType}>
+            <BpkImage
+              src={HEAVY_IMG_SRC}
+              altText="Sail boat"
+              aspectRatio={360 / 640}
+            />
+          </BpkOverlay>
+          <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+            <BpkText textStyle={TEXT_STYLES.xl}>
+              {OverlayName({ overlayType })}
+            </BpkText>
+          </div>
+        </div>
+      ))}
+      <div className={getClassName('bpk-overlay-stories__overlay-story')}>
+        <BpkOverlay overlayType={overlayTypeTop}>
+          <BpkOverlay overlayType={overlayTypeBottom}>
+            <BpkImage
+              src={HEAVY_IMG_SRC}
+              altText="Sail boat"
+              aspectRatio={360 / 640}
+            />
+          </BpkOverlay>
+        </BpkOverlay>
+        <div className={getClassName('bpk-overlay-stories__overlay--name')}>
+          <BpkText textStyle={TEXT_STYLES.xl}>
+            {overlayTypeTop} & {overlayTypeBottom}
+          </BpkText>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const WithForegroundContentExample = () => (
   <BpkOverlay
     overlayType={OVERLAY_TYPES.solidHigh}
@@ -240,6 +283,7 @@ export {
   LeftExamples,
   RightExamples,
   VignetteExample,
+  HeavyOverlayExamples,
   WithForegroundContentExample,
   MixedExample,
 };

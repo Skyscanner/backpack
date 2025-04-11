@@ -28,7 +28,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Upload to Cache
-        uses: actions/cache@v4.2.0
+        uses: actions/cache@v4.2.3
         id: npm-cache
         with:
           path: |
@@ -52,7 +52,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore NPM Cache
-        uses: actions/cache/restore@v4.2.0
+        uses: actions/cache/restore@v4.2.3
         id: npm-cache
         with:
           path: |
@@ -61,7 +61,7 @@ jobs:
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
       
       - name: Upload dist-storybook to Cache
-        uses: actions/cache@v4.2.0
+        uses: actions/cache@v4.2.3
         id: storybook-dist-cache
         with:
           path: |
@@ -95,7 +95,7 @@ jobs:
         registry-url: 'https://registry.npmjs.org'
 
     - name: Restore npm Cache
-      uses: actions/cache/restore@v4.2.0
+      uses: actions/cache/restore@v4.2.3
       id: npm-cache
       with:
         path: |
@@ -104,7 +104,7 @@ jobs:
         key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
     - name: Restore Cache
-      uses: actions/cache/restore@v4.2.0
+      uses: actions/cache/restore@v4.2.3
       id: storybook-dist-cache
       with:
         path: dist-storybook/
@@ -129,10 +129,17 @@ jobs:
         external_repository: backpack/storybook-prs
         publish_branch: main
 
+    - uses: actions/create-github-app-token@v2
+      id: app-token
+      with:
+        app-id: ${{ vars.GH_APP_ID }}
+        private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
     - name: Link to the pull request build
       uses: actions/github-script@v7
       if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
       with:
+        github-token: ${{ steps.app-token.outputs.token }}
         script: |
           github.rest.issues.createComment({
             issue_number: context.issue.number,

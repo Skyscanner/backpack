@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 
@@ -50,6 +50,28 @@ describe('BpkInsetBanner', () => {
     );
 
     expect(getByText('Sponsored')).toBeInTheDocument();
+  });
+
+  it('should render call to action popover text if provided', () => {
+    render(
+      <BpkInsetBanner
+        title="Lorem ipsum"
+        subheadline="Lorem ipsum dolor sit amet"
+        logo="https://content.skyscnr.com/m/7950ed6f30581485/Medium-Skyscanner-Vertical-White.png"
+        backgroundColor="#F55D42"
+        callToAction={{
+          text: 'Sponsored',
+          popoverMessage: 'Popover message',
+        }}
+        variant={VARIANT.onDark}
+      />,
+    );
+
+    const ctaButton = screen.getByTestId('ctaBtn');
+
+    fireEvent.click(ctaButton);
+
+    expect(screen.getByText('Popover message')).toBeInTheDocument();
   });
 
   it('should render body if provided', () => {

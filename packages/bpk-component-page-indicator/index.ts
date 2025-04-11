@@ -16,32 +16,11 @@
  * limitations under the License.
  */
 
+import BpkPageIndicator, { VARIANT } from './src/BpkPageIndicator';
+import { DIRECTIONS } from './src/NavButton';
 
-import BpkTooltip from '../../packages/bpk-component-tooltip/src/BpkTooltipPortal';
+import type { Props as BpkPageIndicatorProps } from './src/BpkPageIndicator';
 
-import {
-  DefaultExample,
-  DarkExample,
-  SideExample,
-  NoPaddingExample,
-  LinkExample,
-  PopperModifiersExample,
-  FocusExample,
-} from './examples';
-
-export default {
-  title: 'bpk-component-tooltip',
-  component: BpkTooltip,
-};
-
-export const Default = DefaultExample;
-export const Dark = DarkExample;
-export const OnTheSide = SideExample;
-
-export const WithoutPadding = NoPaddingExample;
-
-export const OnALink = LinkExample;
-
-export const PopperModifiers = PopperModifiersExample;
-
-export const Focus = FocusExample;
+export type { BpkPageIndicatorProps };
+export { DIRECTIONS, VARIANT };
+export default BpkPageIndicator;

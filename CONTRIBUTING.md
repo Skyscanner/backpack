@@ -150,7 +150,7 @@ If keeping both versions in one component does not affect its readability, you w
 
 Migration guides are required for all breaking changes.
 
-If you are unsure of the impact or scale of your change, reach out to Koala team and we will help you!
+If you are unsure of the impact or scale of your change, reach out to Clover team and we will help you!
 
 ### Foundation elements
 
@@ -221,7 +221,7 @@ Experimentation code should be cleaned up at most 2 weeks after an experiment ha
 
 Here’s an end-to-end example on how to add an experimental prop to a Bpk component:
 
-1. Reach out to Koala with the proposed change
+1. Reach out to Clover with the proposed change
 2. Contribute code changes. Make sure the API table is updated too!
 ```typescript
 type Props = {
@@ -237,10 +237,10 @@ const BpkText = ({text, color, sparkles}: Props) => {
     ...
 }
 ```
-3. Released by Koala
+3. Released by Clover
 4. Adopt changes in project
 5. Run experiment
-    - if experiment is successful, publish documentation (only Koala members) and remove experimental code.
+    - if experiment is successful, publish documentation (only Clover members) and remove experimental code.
     - if experiment is unsuccessful and further iterations are needed, repeat from step 2. Otherwise, remove experimental code. That’s all!
 </details>
 
@@ -275,7 +275,7 @@ You can also run the tests in 'watch mode', which means the process will continu
 
 There are also visual regression tests, powered by [Percy](https://www.percy.io/).
 
-These visual tests are run on CI. When a PR is raised, a build should be showing on the Percy Backpack dashboard. Head into this build/run and you should be able to view any differences there. Ask a member of the Koala team to approve the changes once you have confirmed it all looks as expected.
+These visual tests are run on CI. When a PR is raised, a build should be showing on the Percy Backpack dashboard. Head into this build/run and you should be able to view any differences there. Ask a member of the Clover team to approve the changes once you have confirmed it all looks as expected.
 
 Visual regression tests run on all Storybook stories titled _'Visual test'_.
 

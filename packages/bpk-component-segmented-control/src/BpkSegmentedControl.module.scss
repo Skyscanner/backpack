@@ -23,9 +23,9 @@
 @use '../../unstable__bpk-mixins/shadows';
 
 .bpk-segmented-control-group {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow: hidden;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
 
   @include radii.bpk-border-radius-sm;
 
@@ -37,13 +37,17 @@
 .bpk-segmented-control {
   min-height: tokens.bpk-spacing-xl();
   padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
-  flex: 1;
   border: none;
-  text-overflow: ellipsis;
   cursor: pointer;
   overflow: hidden;
 
   @include typography.bpk-label-2;
+
+  &:focus-visible {
+    z-index: 0; // Ensure the focus indicator is above the other buttons
+
+    @include utils.bpk-focus-indicator;
+  }
 
   &--canvas-default {
     background-color: tokens.$bpk-private-segmented-control-canvas-default-day;

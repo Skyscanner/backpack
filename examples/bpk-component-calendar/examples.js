@@ -70,6 +70,7 @@ const CalendarGridExample = () => (
     weekStartsOn={1}
     onDateClick={action('Clicked day')}
     formatDateFull={formatDateFull}
+    formatMonth={formatMonth}
     DateComponent={BpkCalendarDate}
     preventKeyboardFocus
   />

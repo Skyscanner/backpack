@@ -52,6 +52,7 @@ export type Props = {
    * The accessory view allows for icons and actions to be placed in front of the main title inside the modal header. To be used with `BpkNavigationBarButtonLink`
    */
   accessoryView?: ReactNode;
+  ariaLabel?: string // optional aria label for scenario when header is disabled
 };
 
 export const MODAL_STYLING = {
@@ -62,6 +63,7 @@ export type ModalStyle = (typeof MODAL_STYLING)[keyof typeof MODAL_STYLING];
 
 const BpkModalInner = ({
   accessoryView = null,
+  ariaLabel,
   children,
   className = null,
   closeLabel = '',
@@ -125,6 +127,7 @@ const BpkModalInner = ({
         tabIndex={-1}
         role="dialog"
         aria-labelledby={showHeader ? headingId : undefined}
+        aria-label={!showHeader ? ariaLabel : undefined}
         className={classNames.join(' ')}
         ref={dialogRef}
       >

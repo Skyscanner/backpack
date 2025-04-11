@@ -85,10 +85,31 @@ const WithBodyTextAndLinkExampleDark = () => (
   />
 );
 
+const WithCtaTextAndPopoverExampleLight = () => (
+  <BpkInsetBanner
+    title="Lorem ipsum"
+    subheadline="Lorem ipsum dolor sit amet"
+    logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
+    callToAction={{
+      text: 'Sponsored',
+      popoverMessage: 'This is a popover message',
+      closeBtnIcon: true,
+      labelTitle: true,
+      popverLabel: 'Info',
+      buttonCloseLabel: 'Close',
+      buttonA11yLabel: 'More info',
+    }}
+    backgroundColor="#FFE300"
+    variant={VARIANT.onLight}
+    accessibilityLabel="Sponsored by Skyscanner"
+  />
+);
+
 export {
   DefaultExampleTitleOnly,
   DefaultExampleTitleAndSubheadline,
   WithLogoAndCtaTextExampleLight,
   WithBodyTextExampleLight,
   WithBodyTextAndLinkExampleDark,
+  WithCtaTextAndPopoverExampleLight,
 };

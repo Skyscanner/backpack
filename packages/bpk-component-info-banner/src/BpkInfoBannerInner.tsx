@@ -91,23 +91,12 @@ type ToggleButtonProps = {
   expanded: boolean;
 };
 
-const ToggleButton = (props: ToggleButtonProps) => {
-  const classNames = getClassName('bpk-info-banner__expand-icon');
-
-  return (
-    <button
-      type="button"
-      className={getClassName('bpk-info-banner__toggle-button')}
-      aria-label={props.label}
-      aria-expanded={props.expanded}
-      title={props.label}
-    >
-      <div className={classNames}>
-        {props.expanded ? <CollapseIcon/> : <ExpandIcon/> }
-      </div>
-    </button>
-  );
-};
+const ToggleButton = (props: ToggleButtonProps) => (
+  <div className={getClassName('bpk-info-banner__toggle-button')}>
+    {props.expanded ? <CollapseIcon /> : <ExpandIcon />}
+    <span className="visually-hidden">{props.label}</span>
+  </div>
+);
 
 type Props = CommonProps & {
   action?: ExpandableBannerAction;
@@ -159,7 +148,7 @@ const BpkInfoBannerInner = ({
   const dismissable = configuration === CONFIGURATION.DISMISSABLE;
   const showChildren = isExpandable && expanded;
 
-  const sectionClassNames = getClassName(
+  const classNames = getClassName(
     'bpk-info-banner',
    `bpk-info-banner--${type}`,
    `bpk-info-banner--style-${style}`,
@@ -175,12 +164,8 @@ const BpkInfoBannerInner = ({
     ? getClassName('bpk-info-banner__children-container--with-action')
     : getClassName('bpk-info-banner__children-container--no-action')
 
-  /* eslint-disable
-    jsx-a11y/no-static-element-interactions,
-    jsx-a11y/click-events-have-key-events,
-    */
-  // Disabling 'click-events-have-key-events and interactive-supports-focus' because header element is not focusable.
-  // ToggleButton is focusable and works for this.
+  const BannerHeader = isExpandable ? 'button' : 'div';
+
   return (
     <AnimateAndFade
       animateOnEnter={animateOnEnter}
@@ -188,9 +173,12 @@ const BpkInfoBannerInner = ({
       show={show}
       {...rest}
     >
-      <section className={sectionClassNames} role="presentation">
-        <div
-          role={isExpandable ? 'button' : undefined}
+      <div className={classNames}>
+        <BannerHeader
+          aria-expanded={isExpandable ? expanded : undefined}
+          type={isExpandable ? 'button' : undefined}
+          // BannerHeader is just <button> or <div>, so className should be allowed.
+          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
           className={headerClassNames}
           onClick={onBannerExpandToggle}
         >
@@ -214,7 +202,7 @@ const BpkInfoBannerInner = ({
               />
             </span>
           )}
-        </div>
+        </BannerHeader>
         <BpkAnimateHeight
           duration={parseInt(durationSm, 10)}
           height={showChildren ? 'auto' : 0}
@@ -230,10 +218,9 @@ const BpkInfoBannerInner = ({
             </BpkLink>
           )}
         </BpkAnimateHeight>
-      </section>
+      </div>
     </AnimateAndFade>
   );
-  /* eslint-enable */
 };
 
 export default BpkInfoBannerInner;
