@@ -29,6 +29,7 @@ type DesktopLayouts = typeof LAYOUTS.row | typeof LAYOUTS.grid;
 type MobileLayouts = typeof LAYOUTS.rail | typeof LAYOUTS.stack;
 
 const ACCESSORY_TYPES = {
+  Pagination: 'pagination',
   Expand: 'expand',
   Button: 'button',
 } as const;
@@ -66,8 +67,8 @@ type CardListGridStackProps = {
 };
 
 type CardListRowRailProps = {
-  children: ReactElement[];
-  accessory?: typeof ACCESSORY_TYPES.Expand | typeof ACCESSORY_TYPES.Button;
+  children: Array<ReactElement<HTMLDivElement | HTMLAnchorElement>>;
+  accessory?: typeof ACCESSORY_TYPES.Pagination;
   expandText?: string;
   buttonText?: string;
   onButtonClick?: () => void;

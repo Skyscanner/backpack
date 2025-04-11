@@ -64,6 +64,16 @@ const cards = (cardType: ExampleCard) => {
   return cardList;
 };
 
+type PageContainerProb = {
+  children: React.ReactNode;
+}
+
+const PageContainer = ({ children }: PageContainerProb) => (
+  <div style = {{width: 1000}}>
+      {children}
+  </div>
+);
+
 const BasicExample = () => (
   <BpkCardList
     title="Must-visit spots"
@@ -75,6 +85,21 @@ const BasicExample = () => (
     layoutDesktop={LAYOUTS.grid}
     layoutMobile={LAYOUTS.stack}
   />
+);
+
+const RowToRailExample = () => (
+  <PageContainer>
+    <BpkCardList
+      title="Must-visit spots"
+      description="Check out these world-famous destinations perfect for visiting in spring."
+      cardList={cards(DestinationCard)}
+      layoutDesktop={LAYOUTS.row}
+      layoutMobile={LAYOUTS.rail}
+      onButtonClick={() => null}
+      accessory="pagination"
+      buttonText="Explore more"
+    />
+  </PageContainer>
 );
 
 const GridToStackExample = () => (
@@ -110,4 +135,4 @@ const GridToStackWithExpandExample = () => {
   );
 };
 
-export { BasicExample, GridToStackExample, GridToStackWithExpandExample };
+export { BasicExample, RowToRailExample, GridToStackExample, GridToStackWithExpandExample };

@@ -15,20 +15,169 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { useRef, useState, useEffect } from 'react';
+
 import { cssModules } from '../../../bpk-react-utils';
 import { ACCESSORY_TYPES, type CardListRowRailProps } from '../common-types';
+
 
 import STYLES from './BpkCardListRowRail.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkCardListRowRail = (props: CardListRowRailProps) => (
+const BpkCardListRowRail = (props: CardListRowRailProps) => {
+  const {
+    accessory,
+    buttonText,
+    children,
+    expandText,
+    initiallyShownCards,
+    layout,
+    onButtonClick,
+  } = props;
+
+  let accessoryContent;
+  if (accessory === ACCESSORY_TYPES.Pagination) {
+    accessoryContent = <div>Hello</div>;
+  }
+
+  const [currentIndex, setCurrentIndex] = useState(0); // 当前可见卡片的索引
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const cardRefs = useRef<Array<HTMLDivElement | null>>([]); // 存储每个卡片的引用
+  const setStateTimeoutRef = useRef<NodeJS.Timeout | null>(null); // 用于延迟设置 currentIndex 的计时器
+
+  useEffect(() => {
+    const container = containerRef.current;
+
+    if (!container) return;
+
+    let isTouching = false; // 标记是否正在触摸
+
+    const handleWheel = (event: WheelEvent) => {
+      event.preventDefault(); // 阻止页面的默认滚动行为
+
+      const sensitivity = 2;
+      const touchBarRatio = 20; // for the sensitivity issue
+      const delta =
+        event.deltaX !== 0
+          ? event.deltaX * touchBarRatio * sensitivity
+          : event.deltaY * sensitivity;
+
+      // 滚动容器
+      container.scrollTo({
+        left: container.scrollLeft + delta, // 将垂直滚动转换为横向滚动
+        behavior: 'smooth', // 平滑滚动
+      });
+    };
+
+    const handleScroll = () => {
+      if (isTouching) return;
+
+      const containerRect = container.getBoundingClientRect();
+      let visibleIndex = -1;
+
+      // 使用 for 循环遍历卡片
+      for (let index = 0; index < cardRefs.current.length; index += 1) {
+        const card = cardRefs.current[index];
+        if (!card) {
+          // Skip the iteration without using `continue`
+          break;
+        }
+
+        const cardRect = card.getBoundingClientRect();
+
+        if (
+          cardRect.left >= containerRect.left - 1 &&
+          cardRect.left < containerRect.right
+        ) {
+          visibleIndex = index;
+          break; // 找到第一个符合条件的卡片后停止遍历
+        }
+      }
+
+      // 更新 currentIndex
+      if (visibleIndex !== -1) {
+        if (setStateTimeoutRef.current)
+          clearTimeout(setStateTimeoutRef.current);
+
+        // console.log('setting currentIndex to:', visibleIndex);
+
+        setStateTimeoutRef.current = setTimeout(
+          () => setCurrentIndex(visibleIndex),
+          150,
+        ); // 延迟设置 currentIndex
+        
+      }
+    };
+
+    const handleTouchStart = () => {
+      isTouching = true; // 标记触摸开始
+    };
+
+    const handleTouchEnd = () => {
+      isTouching = false; // 标记触摸结束
+    };
+
+    // 添加事件监听器
+    container.addEventListener('touchstart', handleTouchStart);
+    container.addEventListener('touchend', handleTouchEnd);
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    container.addEventListener('scroll', handleScroll);
+
+    // 清理事件监听器
+    // return () => {
+    //   container.removeEventListener('touchstart', handleTouchStart);
+    //   container.removeEventListener('touchend', handleTouchEnd);
+    //   container.removeEventListener('wheel', handleWheel);
+    //   container.removeEventListener('scroll', handleScroll);
+    //   if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current); // 清除计时器
+    // };
+  }, [setCurrentIndex]);
+
+  useEffect(() => {
+    console.log('index to card');
+    // 根据 currentIndex 滚动到对应的卡片
+    const targetCard = cardRefs.current[currentIndex];
+    if (targetCard) {
+      targetCard.scrollIntoView({
+        behavior: 'smooth', // 平滑滚动
+        block: 'nearest', // 滚动到最近的可见位置
+        inline: 'start', // 元素左侧与视图左侧对齐
+      });
+    }
+  }, [currentIndex]); // 当 currentIndex 改变时触发
+
+  return (
     <div
       className={getClassName('bpk-card-list-row-rail')}
       data-testid="bpk-card-list-row-rail')}"
     >
-      hello world
+      <div
+        className={getClassName(`bpk-card-list-row-rail__${layout}`)}
+        data-testid="bpk-card-list-row-rail__content"
+        ref={containerRef}
+      >
+        {children.map((card, index) => {
+          const cardRefCallback = (el: HTMLDivElement | null) => {
+            cardRefs.current[index] = el;
+          };
+
+          return (
+            <div
+              className={getClassName(
+                `bpk-card-list-row-rail__${layout}__card`,
+              )}
+              ref={cardRefCallback}
+            >
+              {card}
+            </div>
+          );
+        })}
+      </div>
+
+      <div>{accessoryContent}</div>
     </div>
   );
+};
 
 export default BpkCardListRowRail;
