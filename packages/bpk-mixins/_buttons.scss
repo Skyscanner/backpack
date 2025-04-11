@@ -395,7 +395,11 @@
   background: none; /* stylelint-disable-line order/order, order/properties-order */
   box-shadow: none;
 
-  @include bpk-link;
+  @include bpk-link--implicit;
+
+  &::after {
+    bottom: auto;
+  }
 
   padding: $vertical-padding 0; /* stylelint-disable-line order/order, order/properties-order */
   color: $bpk-private-button-link-normal-foreground-day;

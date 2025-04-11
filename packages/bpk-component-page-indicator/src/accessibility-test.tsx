@@ -16,27 +16,24 @@
  * limitations under the License.
  */
 
-import BpkPageIndicator from '../../packages/bpk-component-page-indicator/src/BpkPageIndicator';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-import {
-  DefaultExample,
-  ThreePagesExample,
-  OverImageExample,
-  WithNavExample,
-  VisualTestExample,
-} from './examples';
+import BpkPageIndicator from './BpkPageIndicator';
 
-export default {
-  title: 'bpk-component-page-indicator',
-  component: BpkPageIndicator,
-};
-
-export const Default = DefaultExample;
-export const ThreePages = ThreePagesExample;
-export const OverImage = OverImageExample;
-export const WithNav = WithNavExample;
-export const VisualTest = VisualTestExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
-};
+describe('BpkPageIndicator accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkPageIndicator
+        currentIndex={0}
+        totalIndicators={7}
+        showNav
+        indicatorLabel="Go to slide"
+        prevNavLabel="Previous slide"
+        nextNavLabel="Next slide"
+      />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

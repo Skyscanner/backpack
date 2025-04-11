@@ -15,14 +15,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkPageIndicator, {
-  type Props as BpkPageIndicatorProps,
-  VARIANT,
-} from './src/BpkPageIndicator';
-import { DIRECTIONS } from './src/NavButton';
+import BpkPageIndicator from '../../packages/bpk-component-page-indicator/src/BpkPageIndicator';
 
-export type { BpkPageIndicatorProps };
-export { DIRECTIONS, VARIANT };
-export default BpkPageIndicator;
+import {
+  DefaultExample,
+  ThreePagesExample,
+  OverImageExample,
+  WithNavExample,
+  VisualTestExample,
+} from './examples';
+
+export default {
+  title: 'bpk-component-page-indicator',
+  component: BpkPageIndicator,
+};
+
+export const Default = DefaultExample;
+export const ThreePages = ThreePagesExample;
+export const OverImage = OverImageExample;
+export const WithNav = WithNavExample;
+export const VisualTest = VisualTestExample;
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true,
+  },
+};
