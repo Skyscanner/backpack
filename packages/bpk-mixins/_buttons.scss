@@ -395,24 +395,24 @@
   background: none; /* stylelint-disable-line order/order, order/properties-order */
   box-shadow: none;
 
-  @include bpk-link--implicit;
+  @include bpk-link;
 
   &::after {
     bottom: auto;
   }
 
   padding: $vertical-padding 0; /* stylelint-disable-line order/order, order/properties-order */
-  color: $bpk-private-button-link-normal-foreground-day;
+  color: $bpk-text-primary-day;
 
   @include bpk-hover {
     background: none;
-    color: $bpk-private-button-link-pressed-foreground-day;
+    color: $bpk-text-primary-day;
     text-decoration: none;
   }
 
   &:active {
     background: none;
-    color: $bpk-private-button-link-pressed-foreground-day;
+    color: $bpk-text-primary-day;
     text-decoration: none;
   }
 
@@ -420,6 +420,10 @@
     background: none;
     color: $bpk-text-disabled-day;
     text-decoration: none;
+
+    &::after {
+      background: $bpk-text-disabled-day;
+    }
   }
 
   &-large {
