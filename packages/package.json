@@ -40,7 +40,7 @@
     "normalize.css": "4.2.0",
     "object-assign": "^4.1.1",
     "prop-types": "^15.7.2",
-    "react-autosuggest": "^9.4.3",
+    "react-autosuggest": "^10.1.0",
     "react-table": "^7.8.0",
     "react-virtualized-auto-sizer": "1.0.20",
     "react-window": "^1.8.7"
