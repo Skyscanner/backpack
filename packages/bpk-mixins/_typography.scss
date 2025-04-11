@@ -781,51 +781,8 @@
 ///     @include bpk-link();
 ///   }
 
-@mixin bpk-link {
-  position: relative;
-  display: inline-block;
-  padding: 0;
-  border: 0;
-  background-color: transparent;
-  text-decoration: none;
-  cursor: pointer;
-  appearance: none;
-
-  @include bpk-themeable-property(
-    color,
-    --bpk-link-color,
-    $bpk-text-primary-day
-  );
-
+@mixin bpk-link-underline-explicit {
   @include bpk-hover {
-    text-decoration: none;
-
-    @include bpk-themeable-property(
-      color,
-      --bpk-link-hover-color,
-      $bpk-text-primary-day
-    );
-
-    &::after {
-      width: 0%;
-    }
-  }
-
-  &:visited {
-    @include bpk-themeable-property(
-      color,
-      --bpk-link-visited-color,
-      $bpk-text-primary-day
-    );
-  }
-
-  &:active {
-    @include bpk-themeable-property(
-      color,
-      --bpk-link-active-color,
-      $bpk-text-primary-day
-    );
-
     &::after {
       width: 0%;
     }
@@ -853,6 +810,56 @@
         width 0s ease 0s,
         left 0s ease 0s;
     }
+  }
+
+  &:active {
+    &::after {
+      width: 0%;
+    }
+  }
+}
+
+@mixin bpk-link {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  appearance: none;
+
+  @include bpk-themeable-property(
+    color,
+    --bpk-link-color,
+    $bpk-text-primary-day
+  );
+  @include bpk-link-underline-explicit;
+
+  @include bpk-hover {
+    text-decoration: none;
+
+    @include bpk-themeable-property(
+      color,
+      --bpk-link-hover-color,
+      $bpk-text-primary-day
+    );
+  }
+
+  &:visited {
+    @include bpk-themeable-property(
+      color,
+      --bpk-link-visited-color,
+      $bpk-text-primary-day
+    );
+  }
+
+  &:active {
+    @include bpk-themeable-property(
+      color,
+      --bpk-link-active-color,
+      $bpk-text-primary-day
+    );
   }
 }
 

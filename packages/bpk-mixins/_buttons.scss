@@ -395,24 +395,34 @@
   background: none; /* stylelint-disable-line order/order, order/properties-order */
   box-shadow: none;
 
-  @include bpk-link--implicit;
+  @include bpk-link;
 
   &::after {
-    bottom: auto;
+    content: none;
+  }
+
+  &__text {
+    display: inline-block;
+
+    @include bpk-link-underline-explicit;
+
+    &::after {
+      position: relative;
+    }
   }
 
   padding: $vertical-padding 0; /* stylelint-disable-line order/order, order/properties-order */
-  color: $bpk-private-button-link-normal-foreground-day;
+  color: $bpk-text-primary-day;
 
   @include bpk-hover {
     background: none;
-    color: $bpk-private-button-link-pressed-foreground-day;
+    color: $bpk-text-primary-day;
     text-decoration: none;
   }
 
   &:active {
     background: none;
-    color: $bpk-private-button-link-pressed-foreground-day;
+    color: $bpk-text-primary-day;
     text-decoration: none;
   }
 
@@ -469,6 +479,16 @@
     );
   }
 
+  &__text {
+    &::after {
+      @include bpk-themeable-property(
+        background,
+        --bpk-button-link-on-dark-hover-text-color,
+        $bpk-private-button-link-on-dark-pressed-foreground-day
+      );
+    }
+  }
+
   &:disabled {
     @include bpk-themeable-property(
       color,
@@ -494,6 +514,10 @@
   padding-right: $horizontal-padding;
   padding-left: $horizontal-padding;
   border-radius: $bpk-button-border-radius;
+
+  &::after {
+    display: none;
+  }
 }
 
 /// Large icon-only button. Modifies the bpk-button & bpk-button--large lib.
@@ -514,6 +538,10 @@
   padding-right: $horizontal-padding;
   padding-left: $horizontal-padding;
   border-radius: $bpk-button-border-radius;
+
+  &::after {
+    display: none;
+  }
 }
 
 /// Featured button. Modifies the bpk-button

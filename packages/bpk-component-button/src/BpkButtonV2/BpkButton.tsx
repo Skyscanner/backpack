@@ -15,6 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { Children } from 'react';
+
 import { cssModules } from '../../../bpk-react-utils';
 
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
@@ -53,6 +55,17 @@ export const BpkButtonV2 = ({
 
   const target = blank ? '_blank' : '';
   const rel = blank ? propRel || 'noopener noreferrer' : propRel;
+  let processedChildren;
+  if (!disabled && (type === BUTTON_TYPES.link || type === BUTTON_TYPES.linkOnDark)) {
+    processedChildren = Children.map(children, (child) => {
+      if (typeof child === 'string') {
+        return <span className={getCommonClassName(`bpk-button--${type}__text`)}>{child}</span>;
+      }
+      return child;
+    });
+  } else {
+    processedChildren = children;
+  }
 
   if (!disabled && href) {
     return (
@@ -64,7 +77,7 @@ export const BpkButtonV2 = ({
         rel={rel}
         {...rest}
       >
-        {children}
+        {processedChildren}
       </a>
     );
   }
@@ -77,7 +90,7 @@ export const BpkButtonV2 = ({
       onClick={onClick}
       {...rest}
     >
-      {children}
+      {processedChildren}
     </button>
   );
 };
