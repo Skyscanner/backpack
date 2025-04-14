@@ -70,6 +70,7 @@ export type Props = {
   hideOnTouchDevices?: boolean;
   placement?: Placement;
   isOpen?: boolean;
+  maxWidth?: string;
 };
 
 // This function is to ensure the arrow alignment when used on the top and bottom
@@ -97,6 +98,7 @@ const BpkTooltip = ({
   hideOnTouchDevices = true,
   id,
   isOpen = false,
+  maxWidth,
   padded = true,
   placement = 'bottom',
   target,
@@ -150,6 +152,8 @@ const BpkTooltip = ({
     type === TOOLTIP_TYPES.dark && 'bpk-tooltip__arrow--dark',
   );
 
+  const innerStyles = maxWidth ? { maxWidth } : undefined;
+
   return (
     <>
       {targetWithAccessibilityProps}
@@ -183,7 +187,9 @@ const BpkTooltip = ({
                   strokeWidth={strokeWidth}
                   style={getArrowAlignment(context.placement)}
                 />
-                <div className={innerClassNames}>{children}</div>
+                <div className={innerClassNames} style={innerStyles}>
+                  {children}
+                </div>
               </section>
             </TransitionInitialMount>
           </div>
