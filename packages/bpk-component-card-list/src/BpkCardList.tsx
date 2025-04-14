@@ -87,11 +87,28 @@ const BpkCardList = (props: CardListProps) => {
                   </BpkCardListGridStack>
                 );
               }
+
+              if (layoutMobile === LAYOUTS.rail) {
+                return (
+                  <BpkCardListRowRail
+                    initiallyShownCards={initiallyShownCards}
+                    buttonText={buttonText}
+                    expandText={expandText}
+                    onButtonClick={onButtonClick}
+                    layout={layoutMobile}
+                  >
+                    {cardList}
+                  </BpkCardListRowRail>
+                );
+              }
+
               return <div />;
             }
+
             if (
               layoutDesktop === LAYOUTS.row &&
-              accessory === ACCESSORY_TYPES.Pagination
+              (accessory === ACCESSORY_TYPES.Pagination ||
+                accessory === undefined)
             ) {
               return (
                 <BpkCardListRowRail
@@ -107,7 +124,8 @@ const BpkCardList = (props: CardListProps) => {
               );
             }
 
-            if (layoutDesktop === LAYOUTS.grid &&
+            if (
+              layoutDesktop === LAYOUTS.grid &&
               (accessory === ACCESSORY_TYPES.Expand ||
                 accessory === ACCESSORY_TYPES.Button)
             ) {

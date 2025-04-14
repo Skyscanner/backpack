@@ -28,13 +28,20 @@ import BpkText, {
 
 import STYLES from './examples.module.scss';
 
+const imageUrls = [
+  "https://content.skyscnr.com/m/7470cf6a4ee49c26/original/Carousel-placeholder-4.jpg",
+  "https://content.skyscnr.com/m/183e7ddaaca13b16/original/Carousel-placeholder-2.jpg",
+  "https://content.skyscnr.com/m/f8b42e98e2b79a6/original/Carousel-placeholder-3.jpg",
+  "https://content.skyscnr.com/m/51c4c9dd04c8dc95/original/Carousel-placeholder-1.jpg",
+]
+
 const DestinationCard = (i: number) => (
   <BpkCard href="/" padded={false}>
     <div className={STYLES['bpkdocs-consumer-level']}>
       <BpkImage
         aspectRatio={3000 / 1800}
         altText="card image"
-        src="https://content.skyscnr.com/7adba3a46af3ca29695f96937d19fcf1/GettyImages-149127892.jpg?crop=960px:640px&quality=100"
+        src={imageUrls[i % 3 + 1]}
       />
 
       <div className={STYLES['bpk-bottom']}>
@@ -69,7 +76,7 @@ type PageContainerProb = {
 }
 
 const PageContainer = ({ children }: PageContainerProb) => (
-  <div style = {{width: 1000}}>
+  <div>
       {children}
   </div>
 );

@@ -20,40 +20,38 @@
 
 .bpk-card-list-row-rail {
   display: flex;
+  flex-direction: column;
 
-  &__row {
-    display: flex;
-    overflow-x: scroll; // 启用横向滚动
-    // scroll-snap-type: x mandatory; // 开启横向分页滚动
-    // gap: tokens.bpk-spacing-sm();
-    // box-sizing: border-box;
-    // padding-bottom: tokens.bpk-spacing-sm(); // todo
-    // padding-top: tokens.bpk-spacing-sm(); // todo
-    // background-color: blueviolet;
+  // &__row,
+  // &__rail {
+  //   display: flex;
+  //   overflow-x: scroll;
+  //   scroll-snap-type: x mandatory;
+  //   gap: tokens.bpk-spacing-sm();
+  //   box-sizing: border-box;
+  //   padding-bottom: tokens.bpk-spacing-sm();
+  //   padding-top: tokens.bpk-spacing-sm();
+  //   scroll-snap-stop: always;
 
-    // scrollbar-width: none; // Firefox
-    // -ms-overflow-style: none; // IE 和 Edge
+  //   scrollbar-width: none;
+  //   -ms-overflow-style: none;
 
-    // &__card {
-    //   flex: 0 0 tokens.$bpk-one-pixel-rem * 300;
-    //   margin: tokens.bpk-spacing-sm();
-    //   padding: tokens.bpk-spacing-sm(); // 去除内边距
+  //   &__card {
+  //     flex: 0 0 tokens.$bpk-one-pixel-rem * 300;
+  //     margin: tokens.bpk-spacing-sm();
+  //     padding: tokens.bpk-spacing-sm();
 
-    //   scroll-snap-align: start; // 卡片左边缘对齐容器左边框
-    //   position: relative;
-    //   overflow: visible;
-    // }
-  }
-
-  // &__stack {
-  //   display: grid;
-  //   grid-template-columns: 1;
-  //   gap: tokens.bpk-spacing-lg();
-  // }
-
-  // &__accessory {
-  //   &__button {
-  //     width: auto;
+  //     scroll-snap-align: start;
+  //     position: relative;
+  //     overflow: visible;
   //   }
   // }
+
+  &__rail {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__accessory {
+    width: 100%;
+  }
 }

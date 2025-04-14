@@ -17,8 +17,11 @@
  */
 import { useRef, useState, useEffect } from 'react';
 
+import BpkPageIndicator, {
+  VARIANT,
+} from '../../../bpk-component-page-indicator';
 import { cssModules } from '../../../bpk-react-utils';
-import { ACCESSORY_TYPES, type CardListRowRailProps } from '../common-types';
+import { ACCESSORY_TYPES, LAYOUTS, type CardListRowRailProps } from '../common-types';
 
 
 import STYLES from './BpkCardListRowRail.module.scss';
@@ -36,15 +39,27 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
     onButtonClick,
   } = props;
 
-  let accessoryContent;
-  if (accessory === ACCESSORY_TYPES.Pagination) {
-    accessoryContent = <div>Hello</div>;
-  }
-
   const [currentIndex, setCurrentIndex] = useState(0); // 当前可见卡片的索引
   const containerRef = useRef<HTMLDivElement | null>(null);
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]); // 存储每个卡片的引用
   const setStateTimeoutRef = useRef<NodeJS.Timeout | null>(null); // 用于延迟设置 currentIndex 的计时器
+
+  let accessoryContent;
+  if (layout === LAYOUTS.row &&accessory === ACCESSORY_TYPES.Pagination) {
+    accessoryContent = (
+      <BpkPageIndicator
+        currentIndex={currentIndex}
+        totalIndicators={children.length}
+        onClick={(_e, index) => {
+          setCurrentIndex(index);
+        }}
+        showNav
+        indicatorLabel="Go to slide"
+        prevNavLabel="Previous slide"
+        nextNavLabel="Next slide"
+      />
+    );
+  }
 
   useEffect(() => {
     const container = containerRef.current;
@@ -54,13 +69,24 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
     let isTouching = false; // 标记是否正在触摸
 
     const handleWheel = (event: WheelEvent) => {
-      event.preventDefault(); // 阻止页面的默认滚动行为
 
       const sensitivity = 2;
-      const touchBarRatio = 20; // for the sensitivity issue
+      const touchBarRatio = 40; // for the sensitivity issue
+
+
+      const adjustedDeltaX = event.deltaX * touchBarRatio * sensitivity;
+      // if (event.deltaX > -100 && event.deltaX < 100) {
+      //   adjustedDeltaX = 0;
+      // }
+   
+      console.log('DeltaMode', event.deltaMode,'DeltaX:', adjustedDeltaX, 'DeltaY:', event.deltaY);
+
+      event.preventDefault(); // 阻止页面的默认滚动行为
+      
+      
       const delta =
         event.deltaX !== 0
-          ? event.deltaX * touchBarRatio * sensitivity
+          ? adjustedDeltaX 
           : event.deltaY * sensitivity;
 
       // 滚动容器
@@ -100,13 +126,10 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
         if (setStateTimeoutRef.current)
           clearTimeout(setStateTimeoutRef.current);
 
-        // console.log('setting currentIndex to:', visibleIndex);
-
         setStateTimeoutRef.current = setTimeout(
           () => setCurrentIndex(visibleIndex),
           150,
-        ); // 延迟设置 currentIndex
-        
+        ); 
       }
     };
 
@@ -114,13 +137,8 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
       isTouching = true; // 标记触摸开始
     };
 
-    const handleTouchEnd = () => {
-      isTouching = false; // 标记触摸结束
-    };
-
     // 添加事件监听器
-    container.addEventListener('touchstart', handleTouchStart);
-    container.addEventListener('touchend', handleTouchEnd);
+    // container.addEventListener('touchstart', handleTouchStart);
     container.addEventListener('wheel', handleWheel, { passive: false });
     container.addEventListener('scroll', handleScroll);
 
@@ -162,12 +180,17 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
             cardRefs.current[index] = el;
           };
 
+          const onFocus = () => {
+            
+          }
+
           return (
             <div
               className={getClassName(
                 `bpk-card-list-row-rail__${layout}__card`,
               )}
               ref={cardRefCallback}
+              onFocus={onFocus}
             >
               {card}
             </div>
@@ -175,7 +198,12 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
         })}
       </div>
 
-      <div>{accessoryContent}</div>
+      <div
+        className={getClassName(`bpk-card-list-row-rail__accessory`)}
+        data-testid="bpk-card-list-row-rail__accessory"
+      >
+        {accessoryContent}
+      </div>
     </div>
   );
 };
