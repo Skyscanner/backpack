@@ -837,8 +837,6 @@
   @include bpk-link-underline-explicit;
 
   @include bpk-hover {
-    text-decoration: none;
-
     @include bpk-themeable-property(
       color,
       --bpk-link-hover-color,
@@ -898,7 +896,7 @@
   }
 
   &:active {
-    text-decoration: underline;
+    text-decoration: none;
 
     @include bpk-themeable-property(
       color,

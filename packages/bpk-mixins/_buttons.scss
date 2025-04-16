@@ -395,12 +395,6 @@
   background: none; /* stylelint-disable-line order/order, order/properties-order */
   box-shadow: none;
 
-  @include bpk-link;
-
-  &::after {
-    content: none;
-  }
-
   &__text {
     display: inline-block;
 
@@ -412,24 +406,36 @@
   }
 
   padding: $vertical-padding 0; /* stylelint-disable-line order/order, order/properties-order */
-  color: $bpk-text-primary-day;
+
+  @include bpk-themeable-property(
+    color,
+    --bpk-button-link-text-color,
+    $bpk-text-primary-day
+  );
 
   @include bpk-hover {
     background: none;
-    color: $bpk-text-primary-day;
-    text-decoration: none;
+
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-link-text-hover-color,
+      $bpk-text-primary-day
+    );
   }
 
   &:active {
     background: none;
-    color: $bpk-text-primary-day;
-    text-decoration: none;
+
+    @include bpk-themeable-property(
+      color,
+      --bpk-button-link-text-active-color,
+      $bpk-text-primary-day
+    );
   }
 
   &:disabled {
     background: none;
     color: $bpk-text-disabled-day;
-    text-decoration: none;
   }
 
   &-large {
