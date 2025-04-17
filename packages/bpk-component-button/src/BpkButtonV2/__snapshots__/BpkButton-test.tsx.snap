@@ -147,7 +147,16 @@ exports[`BpkButtonV2 should render correctly with type="link" 1`] = `
     class="bpk-button bpk-button--link"
     type="button"
   >
-    link button
+    <span
+      class="bpk-button--link__text"
+    >
+      link
+    </span>
+    <span
+      class="bpk-button--link__text"
+    >
+       button
+    </span>
   </button>
 </DocumentFragment>
 `;
