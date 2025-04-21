@@ -41,6 +41,7 @@ type Props = {
   trailingText: ?string,
   previousPrice: ?string,
   icon?: Node,
+  dataPriceYourPick?: boolean,
 };
 
 const getClassName = cssModules(STYLES);
@@ -69,6 +70,7 @@ const BpkPrice = (props: Props) => {
   const {
     align,
     className,
+    dataPriceYourPick,
     icon,
     leadingClassName,
     leadingText,
@@ -147,7 +149,11 @@ const BpkPrice = (props: Props) => {
             !isAlignRight && 'bpk-price__spacing',
           )}
         >
-          <BpkText textStyle={priceTextStyle} tagName="span">
+          <BpkText
+            textStyle={priceTextStyle}
+            tagName="span"
+            data-price-your-pick={dataPriceYourPick ? 'true' : undefined}
+          >
             {price}
           </BpkText>
         </span>
@@ -177,6 +183,7 @@ BpkPrice.propTypes = {
   trailingText: PropTypes.string,
   previousPrice: PropTypes.string,
   leadingClassName: PropTypes.string,
+  dataPriceYourPick: PropTypes.bool,
 };
 
 BpkPrice.defaultProps = {
@@ -187,6 +194,7 @@ BpkPrice.defaultProps = {
   trailingText: null,
   previousPrice: null,
   leadingClassName: null,
+  dataPriceYourPick: false,
 };
 
 export default BpkPrice;

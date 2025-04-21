@@ -99,6 +99,16 @@ const SmallWithPreviousPriceLeadingTextExample = () => (
   />
 );
 
+const SmallWithPreviousPriceAndDataAttributeExample = () => (
+  <BpkPrice
+    previousPrice="£2,033"
+    leadingText="Web only deal"
+    price="£1,830"
+    trailingText="per day"
+    dataPriceYourPick
+  />
+);
+
 const SmallWithPreviousPriceLeadingAndTrailingTextAndIconExample = () => (
   <BpkPrice
     previousPrice="£2,033"
@@ -107,6 +117,10 @@ const SmallWithPreviousPriceLeadingAndTrailingTextAndIconExample = () => (
     trailingText="per day"
     icon={<NewWindowIcon />}
   />
+);
+
+const SmallWithDataAttrbuteExample = () => (
+  <BpkPrice price="£1,830" dataPriceYourPick />
 );
 
 const SmallRightExample = () => (
@@ -227,6 +241,8 @@ const MixedExample = () => (
     <SmallWithPreviousPriceExample />
     <SmallWithPreviousPriceLeadingTextExample />
     <SmallWithPreviousPriceLeadingAndTrailingTextAndIconExample />
+    <SmallWithDataAttrbuteExample />
+    <SmallWithPreviousPriceAndDataAttributeExample />
     <SmallRightExample />
     <SmallRightWithTrailingTextExample />
     <SmallRightWithLeadingandTrailingTextExample />
@@ -257,6 +273,8 @@ export {
   SmallWithPreviousPriceExample,
   SmallWithPreviousPriceLeadingTextExample,
   SmallWithPreviousPriceLeadingAndTrailingTextAndIconExample,
+  SmallWithDataAttrbuteExample,
+  SmallWithPreviousPriceAndDataAttributeExample,
   SmallRightExample,
   SmallRightWithTrailingTextExample,
   SmallRightWithLeadingandTrailingTextExample,
