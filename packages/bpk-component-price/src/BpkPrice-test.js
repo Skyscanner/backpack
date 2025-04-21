@@ -97,7 +97,7 @@ describe.each([
         dataPriceYourPick
       />,
     );
-    expect(screen.getbyText(price)).toHaveAttribute(
+    expect(screen.getByText(price)).toHaveAttribute(
       'data-price-your-pick',
       'true',
     );
