@@ -51,6 +51,7 @@
     padding-inline-end: tokens.bpk-spacing-base();
 
     @include breakpoints.bpk-breakpoint-mobile {
+      max-width: 120 * tokens.$bpk-one-pixel-rem;
       max-height: tokens.bpk-spacing-lg();
     }
   }

@@ -49,6 +49,7 @@ export type Props = {
     buttonA11yLabel?: string;
     popverLabel?: string;
     popoverId?: string;
+    popoverWidth?: string;
     labelTitle?: boolean;
     closeBtnIcon?: boolean;
     zIndexCustom?: number;
@@ -74,6 +75,8 @@ const BpkInsetBanner = ({
     `bpk-inset-banner--${variant}`,
     body && 'bpk-inset-banner--with-body',
   );
+
+  const popoverWidth = callToAction?.popoverWidth || 'auto';
 
   return (
     <div>
@@ -109,6 +112,7 @@ const BpkInsetBanner = ({
             }}
           >
             <BpkPopover
+              style={{ width: popoverWidth, marginInlineEnd: '1rem' }}
               id={callToAction?.popoverId || ''}
               label={callToAction?.popverLabel || ''}
               placement={callToAction?.popoverPlacement || 'bottom'}

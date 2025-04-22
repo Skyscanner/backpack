@@ -98,6 +98,7 @@ const WithCtaTextAndPopoverExampleLight = () => (
       popverLabel: 'Info',
       buttonCloseLabel: 'Close',
       buttonA11yLabel: 'More info',
+      popoverWidth: '15rem',
     }}
     backgroundColor="#FFE300"
     variant={VARIANT.onLight}

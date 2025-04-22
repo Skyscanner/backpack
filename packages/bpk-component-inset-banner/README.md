@@ -28,6 +28,7 @@ export default () => (
       buttonA11yLabel: 'More info',
       popverLabel: 'More info',
       popoverId: 'popover',
+      popoverWidth: '15rem',
       labelTitle: true,
       closeBtnIcon: false,
       zIndexCustom: 1200;
