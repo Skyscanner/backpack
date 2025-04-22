@@ -94,7 +94,7 @@ describe.each([
         previousPrice={previousPrice}
         leadingText={leadingText}
         trailingText={trailingText}
-        dataAttributes={{ 'data-price-your-pick': true }}
+        dataAttributes={{ 'data-price-your-pick': 'true' }}
       />,
     );
     expect(screen.getByText(price)).toHaveAttribute(

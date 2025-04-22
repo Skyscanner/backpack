@@ -106,7 +106,7 @@ const SmallWithPreviousPriceLeadingAndTrailingTextAndDataAttributeExample =
       leadingText="Web only deal"
       price="£1,830"
       trailingText="per day"
-      dataAttributes={{ 'data-price-your-pick': true }}
+      dataAttributes={{ 'data-price-your-pick': 'true' }}
     />
   );
 
@@ -121,7 +121,10 @@ const SmallWithPreviousPriceLeadingAndTrailingTextAndIconExample = () => (
 );
 
 const SmallWithDataAttributeExample = () => (
-  <BpkPrice price="£1,830" dataAttributes={{ 'data-price-your-pick': true }} />
+  <BpkPrice
+    price="£1,830"
+    dataAttributes={{ 'data-price-your-pick': 'true' }}
+  />
 );
 
 const SmallRightExample = () => (
