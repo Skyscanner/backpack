@@ -41,7 +41,7 @@ type Props = {
   trailingText: ?string,
   previousPrice: ?string,
   icon?: Node,
-  dataPriceYourPick?: boolean,
+  dataAttributes?: Record<string, string>,
 };
 
 const getClassName = cssModules(STYLES);
@@ -70,7 +70,7 @@ const BpkPrice = (props: Props) => {
   const {
     align,
     className,
-    dataPriceYourPick,
+    dataAttributes,
     icon,
     leadingClassName,
     leadingText,
@@ -152,7 +152,7 @@ const BpkPrice = (props: Props) => {
           <BpkText
             textStyle={priceTextStyle}
             tagName="span"
-            data-price-your-pick={dataPriceYourPick ? 'true' : undefined}
+            {...dataAttributes}
           >
             {price}
           </BpkText>
@@ -183,7 +183,7 @@ BpkPrice.propTypes = {
   trailingText: PropTypes.string,
   previousPrice: PropTypes.string,
   leadingClassName: PropTypes.string,
-  dataPriceYourPick: PropTypes.bool,
+  dataPriceYourPick: PropTypes.objectOf(PropTypes.string),
 };
 
 BpkPrice.defaultProps = {
@@ -194,7 +194,7 @@ BpkPrice.defaultProps = {
   trailingText: null,
   previousPrice: null,
   leadingClassName: null,
-  dataPriceYourPick: false,
+  dataPriceYourPick: {},
 };
 
 export default BpkPrice;

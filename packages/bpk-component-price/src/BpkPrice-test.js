@@ -87,14 +87,14 @@ describe.each([
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should append data-price-your-pick to price element when dataPriceYourPick is true', () => {
+  it('should append data-price-your-pick to price element when pass dataAttributes', () => {
     render(
       <BpkPrice
         {...props}
         previousPrice={previousPrice}
         leadingText={leadingText}
         trailingText={trailingText}
-        dataPriceYourPick
+        dataAttributes={{ 'data-price-your-pick': true }}
       />,
     );
     expect(screen.getByText(price)).toHaveAttribute(
