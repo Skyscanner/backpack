@@ -183,7 +183,7 @@ BpkPrice.propTypes = {
   trailingText: PropTypes.string,
   previousPrice: PropTypes.string,
   leadingClassName: PropTypes.string,
-  dataPriceYourPick: PropTypes.objectOf(PropTypes.string),
+  dataAttributes: PropTypes.objectOf(PropTypes.string),
 };
 
 BpkPrice.defaultProps = {
@@ -194,7 +194,7 @@ BpkPrice.defaultProps = {
   trailingText: null,
   previousPrice: null,
   leadingClassName: null,
-  dataPriceYourPick: {},
+  dataAttributes: {},
 };
 
 export default BpkPrice;
