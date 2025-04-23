@@ -31,7 +31,7 @@ import {
   withLargeButtonAlignment,
   withRtlSupport,
 } from '../../packages/bpk-component-icon';
-import { sm, lg } from '../../packages/bpk-component-icon/all';
+import { sm, lg, xl } from '../../packages/bpk-component-icon/all';
 import LargeLongArrowRightIcon from '../../packages/bpk-component-icon/lg/long-arrow-right';
 import SearchIcon from '../../packages/bpk-component-icon/lg/search';
 import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
@@ -74,6 +74,19 @@ const LargeIconsExample = () => (
   <BpkList>
     {Object.keys(lg).map((icon) => {
       const Icon = lg[icon];
+      return (
+        <BpkListItem key={icon}>
+          <Icon fill={textColors.textPrimaryDay} /> <span>{icon}</span>
+        </BpkListItem>
+      );
+    })}
+  </BpkList>
+);
+
+const ExtraLargeIconsExample = () => (
+  <BpkList>
+    {Object.keys(xl).map((icon) => {
+      const Icon = xl[icon];
       return (
         <BpkListItem key={icon}>
           <Icon fill={textColors.textPrimaryDay} /> <span>{icon}</span>
@@ -138,12 +151,14 @@ const MixedExample = () => (
   <div>
     <SmallIconsExample />
     <LargeIconsExample />
+    <ExtraLargeIconsExample />
   </div>
 );
 
 export {
   SmallIconsExample,
   LargeIconsExample,
+  ExtraLargeIconsExample,
   AlignToBaseTextExample,
   AlignToLargeTextExample,
   AlignSmallTextToIconExample,

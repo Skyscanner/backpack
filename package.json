@@ -121,7 +121,7 @@
     "@babel/register": "^7.25.7",
     "@percy/cli": "^1.30.6",
     "@percy/storybook": "^6.0.3",
-    "@skyscanner/bpk-foundations-web": "^19.3.0",
+    "@skyscanner/bpk-foundations-web": "^19.4.1",
     "@skyscanner/bpk-svgs": "^20.4.1",
     "@skyscanner/eslint-config-skyscanner": "^20.0.0",
     "@skyscanner/stylelint-config-skyscanner": "^12.2.1",
