@@ -99,6 +99,17 @@ const SmallWithPreviousPriceLeadingTextExample = () => (
   />
 );
 
+const SmallWithPreviousPriceLeadingAndTrailingTextAndDataAttributeExample =
+  () => (
+    <BpkPrice
+      previousPrice="£2,033"
+      leadingText="Web only deal"
+      price="£1,830"
+      trailingText="per day"
+      dataAttributes={{ 'data-price-your-pick': 'true' }}
+    />
+  );
+
 const SmallWithPreviousPriceLeadingAndTrailingTextAndIconExample = () => (
   <BpkPrice
     previousPrice="£2,033"
@@ -106,6 +117,13 @@ const SmallWithPreviousPriceLeadingAndTrailingTextAndIconExample = () => (
     price="£1,830"
     trailingText="per day"
     icon={<NewWindowIcon />}
+  />
+);
+
+const SmallWithDataAttributeExample = () => (
+  <BpkPrice
+    price="£1,830"
+    dataAttributes={{ 'data-price-your-pick': 'true' }}
   />
 );
 
@@ -227,6 +245,8 @@ const MixedExample = () => (
     <SmallWithPreviousPriceExample />
     <SmallWithPreviousPriceLeadingTextExample />
     <SmallWithPreviousPriceLeadingAndTrailingTextAndIconExample />
+    <SmallWithDataAttributeExample />
+    <SmallWithPreviousPriceLeadingAndTrailingTextAndDataAttributeExample />
     <SmallRightExample />
     <SmallRightWithTrailingTextExample />
     <SmallRightWithLeadingandTrailingTextExample />
@@ -257,6 +277,8 @@ export {
   SmallWithPreviousPriceExample,
   SmallWithPreviousPriceLeadingTextExample,
   SmallWithPreviousPriceLeadingAndTrailingTextAndIconExample,
+  SmallWithDataAttributeExample,
+  SmallWithPreviousPriceLeadingAndTrailingTextAndDataAttributeExample,
   SmallRightExample,
   SmallRightWithTrailingTextExample,
   SmallRightWithLeadingandTrailingTextExample,
