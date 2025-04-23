@@ -17,13 +17,12 @@
  */
 /* @flow strict */
 
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import NewWindowIcon from '../../bpk-component-icon/sm/new-window';
 
 import BpkPrice from './BpkPrice';
 import { ALIGNS, SIZES } from './common-types';
-
 
 const price = '£1,830';
 const previousPrice = '£2,000';
@@ -86,6 +85,22 @@ describe.each([
       />,
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should append data-price-your-pick to price element when pass dataAttributes', () => {
+    render(
+      <BpkPrice
+        {...props}
+        previousPrice={previousPrice}
+        leadingText={leadingText}
+        trailingText={trailingText}
+        dataAttributes={{ 'data-price-your-pick': 'true' }}
+      />,
+    );
+    expect(screen.getByText(price)).toHaveAttribute(
+      'data-price-your-pick',
+      'true',
+    );
   });
 
   it('should support previous price with leading text and icon attribute', () => {

@@ -21,6 +21,7 @@
 import {
   colorWhite,
   colorSkyGrayTint04,
+  fontColorBase,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkLink, { BpkButtonLink } from '../../packages/bpk-component-link';
@@ -41,6 +42,18 @@ const LinkExample = () => (
   </div>
 );
 
+const ImplicitLinkExample = () => (
+  <div>
+    <BpkLink href="#" onClick={action('#1 clicked')} implicit>
+      Link #1
+    </BpkLink>
+    <br />
+    <BpkLink href="#" onClick={action('#2 clicked')} implicit>
+      Link #2
+    </BpkLink>
+  </div>
+);
+
 const ButtonLinkExample = () => (
   <div>
     <BpkButtonLink onClick={action('#1 clicked')}>Link #1</BpkButtonLink>
@@ -56,6 +69,18 @@ const LinkAlternativeExample = () => (
     </BpkLink>
     <br />
     <BpkLink href="#" onClick={action('#2 clicked')} alternate>
+      Link #2
+    </BpkLink>
+  </BpkDarkExampleWrapper>
+);
+
+const LinkAlternativeImplicitExample = () => (
+  <BpkDarkExampleWrapper>
+    <BpkLink href="#" onClick={action('#1 clicked')} alternate implicit>
+      Link #1
+    </BpkLink>
+    <br />
+    <BpkLink href="#" onClick={action('#2 clicked')} alternate implicit>
       Link #2
     </BpkLink>
   </BpkDarkExampleWrapper>
@@ -94,6 +119,25 @@ const CombinedAlternativeExample = () => (
   </BpkDarkExampleWrapper>
 );
 
+const OverviewExample = () => (
+    <>
+      <div style={{ paddingBottom: '1rem' }}>
+        Big skies, big landscapes and cool cities, the great American Northwest is the place to discover the great outdoors. Get a real taste of the Frontier spirit and explore a rich history of what was once the Wild West.{' '}
+        <BpkLink href="#" style={{ color: fontColorBase }}>
+          Explore incredible national parks
+        </BpkLink>{' '}
+        , ancient forests, rugged coastlines, and beautiful islands.
+      </div>
+      <BpkDarkExampleWrapper style={{ color: colorWhite, padding: '1rem' }}>
+        Big skies, big landscapes and cool cities, the great American Northwest is the place to discover the great outdoors. Get a real taste of the Frontier spirit and explore a rich history of what was once the Wild West.{' '}
+        <BpkLink href="#" alternate>
+          Explore incredible national parks
+        </BpkLink>{' '}
+        , ancient forests, rugged coastlines, and beautiful islands.
+      </BpkDarkExampleWrapper>
+    </>
+);
+
 const MixedExample = () => (
   <div>
     <CombinedExample />
@@ -103,10 +147,13 @@ const MixedExample = () => (
 
 export {
   LinkExample,
+  ImplicitLinkExample,
   ButtonLinkExample,
   LinkAlternativeExample,
+  LinkAlternativeImplicitExample,
   ButtonLinkAlternativeExample,
   CombinedExample,
   CombinedAlternativeExample,
+  OverviewExample,
   MixedExample,
 };
