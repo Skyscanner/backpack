@@ -51,6 +51,7 @@ type Props = {
   ratingLabel: string | ((number, number) => mixed),
   className: ?string,
   large: boolean,
+  extraLarge: boolean,
   maxRating: number,
   rating: number,
   rounding:
@@ -62,6 +63,7 @@ type Props = {
 const BpkStarRating = (props: Props) => {
   const {
     className,
+    extraLarge,
     large,
     maxRating,
     rating,
@@ -83,7 +85,7 @@ const BpkStarRating = (props: Props) => {
     const type = getTypeByRating(starNumber, rounding(currentRating));
 
     stars.push(
-      <BpkStar key={`star-${starNumber}`} type={type} large={large} />,
+      <BpkStar key={`star-${starNumber}`} type={type} large={large} extraLarge={extraLarge} />,
     );
   }
 
@@ -109,6 +111,7 @@ BpkStarRating.propTypes = {
     .isRequired,
   className: PropTypes.string,
   large: PropTypes.bool,
+  extraLarge: PropTypes.bool,
   maxRating: PropTypes.number,
   rating: PropTypes.number,
   rounding: PropTypes.oneOf([
@@ -121,6 +124,7 @@ BpkStarRating.propTypes = {
 BpkStarRating.defaultProps = {
   className: null,
   large: false,
+  extraLarge: false,
   maxRating: 5,
   rating: 0,
   rounding: ROUNDING_TYPES.down,

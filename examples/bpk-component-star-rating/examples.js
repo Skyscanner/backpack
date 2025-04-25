@@ -191,6 +191,7 @@ const InteractiveExample = () => (
       onRatingSelect={action('large rating selected')}
       large
     />
+    <br />
     <InteractiveStarRating
       id="extra-large-star-rating"
       getStarLabel={(rating, maxRating) =>
