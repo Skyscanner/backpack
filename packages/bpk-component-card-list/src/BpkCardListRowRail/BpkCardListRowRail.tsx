@@ -16,13 +16,17 @@
  * limitations under the License.
  */
 import { useRef, useState, useEffect } from 'react';
+import _ from 'lodash';
 
 import BpkPageIndicator, {
   VARIANT,
 } from '../../../bpk-component-page-indicator';
 import { cssModules } from '../../../bpk-react-utils';
-import { ACCESSORY_TYPES, LAYOUTS, type CardListRowRailProps } from '../common-types';
-
+import {
+  ACCESSORY_TYPES,
+  LAYOUTS,
+  type CardListRowRailProps,
+} from '../common-types';
 
 import STYLES from './BpkCardListRowRail.module.scss';
 
@@ -39,17 +43,19 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
     onButtonClick,
   } = props;
 
-  const [currentIndex, setCurrentIndex] = useState(0); // 当前可见卡片的索引
+  const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const cardRefs = useRef<Array<HTMLDivElement | null>>([]); // 存储每个卡片的引用
-  const setStateTimeoutRef = useRef<NodeJS.Timeout | null>(null); // 用于延迟设置 currentIndex 的计时器
+  const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const setStateTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   let accessoryContent;
-  if (layout === LAYOUTS.row &&accessory === ACCESSORY_TYPES.Pagination) {
+
+  const totalIndicators = children.length;
+  if (layout === LAYOUTS.row && accessory === ACCESSORY_TYPES.Pagination) {
     accessoryContent = (
       <BpkPageIndicator
         currentIndex={currentIndex}
-        totalIndicators={children.length}
+        totalIndicators={totalIndicators}
         onClick={(_e, index) => {
           setCurrentIndex(index);
         }}
@@ -63,38 +69,57 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
 
   useEffect(() => {
     const container = containerRef.current;
-
     if (!container) return;
 
     let isTouching = false; // 标记是否正在触摸
+    let isThrottled = false; // 标记是否处于节流状态
 
-    const handleWheel = (event: WheelEvent) => {
+    const handleHorizontalWheel = _.debounce((event: WheelEvent) => {
+      if (event.deltaX !== 0) {
+        console.log('horizontal wheel');
+        console.log('event.deltaX', event.deltaX);
+        event.preventDefault(); // 阻止页面的默认滚动行为
+        const delta = event.deltaX;
+        container.scrollTo({
+          left: container.scrollLeft + delta,
+          behavior: 'smooth',
+        });
+      }
+    }, 500); // 100ms 的防抖延迟
 
-      const sensitivity = 2;
-      const touchBarRatio = 40; // for the sensitivity issue
+    const handleVerticalWheel2 = _.throttle(
+      (event: WheelEvent) => {
+        if (event.deltaY !== 0 && event.deltaX === 0) {
+          event.preventDefault();
+          const delta = event.deltaY;
+          container.scrollTo({
+            left: container.scrollLeft + delta,
+            behavior: 'smooth',
+          });
+        }
+      },
+      10,
+      { leading: true, trailing: false },
+    ); // 100ms 的防抖延迟
 
-
-      const adjustedDeltaX = event.deltaX * touchBarRatio * sensitivity;
-      // if (event.deltaX > -100 && event.deltaX < 100) {
-      //   adjustedDeltaX = 0;
-      // }
-   
-      console.log('DeltaMode', event.deltaMode,'DeltaX:', adjustedDeltaX, 'DeltaY:', event.deltaY);
-
-      event.preventDefault(); // 阻止页面的默认滚动行为
-      
-      
-      const delta =
-        event.deltaX !== 0
-          ? adjustedDeltaX 
-          : event.deltaY * sensitivity;
-
-      // 滚动容器
-      container.scrollTo({
-        left: container.scrollLeft + delta, // 将垂直滚动转换为横向滚动
-        behavior: 'smooth', // 平滑滚动
-      });
-    };
+    const handleVerticalWheel = _.debounce(
+      (event: WheelEvent) => {
+        if (event.deltaY !== 0 && event.deltaX === 0) {
+          event.preventDefault(); // 阻止页面的默认滚动行为
+          const delta = event.deltaY;
+          const deltaIndex =
+            delta > 0 ? (delta / 400) | (0 + 1) : (delta / 400) | (0 - 1);
+          setCurrentIndex((prevIndex) => {
+            return Math.max(
+              Math.min(prevIndex + deltaIndex, totalIndicators - 1),
+              0,
+            );
+          });
+        }
+      },
+      200,
+      { leading: true, trailing: false },
+    );
 
     const handleScroll = () => {
       if (isTouching) return;
@@ -106,7 +131,6 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
       for (let index = 0; index < cardRefs.current.length; index += 1) {
         const card = cardRefs.current[index];
         if (!card) {
-          // Skip the iteration without using `continue`
           break;
         }
 
@@ -129,7 +153,7 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
         setStateTimeoutRef.current = setTimeout(
           () => setCurrentIndex(visibleIndex),
           150,
-        ); 
+        );
       }
     };
 
@@ -138,23 +162,27 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
     };
 
     // 添加事件监听器
-    // container.addEventListener('touchstart', handleTouchStart);
-    container.addEventListener('wheel', handleWheel, { passive: false });
+    container.addEventListener('touchstart', handleTouchStart);
+    container.addEventListener('wheel', handleHorizontalWheel, {
+      passive: false,
+    });
+    container.addEventListener('wheel', handleVerticalWheel, {
+      passive: false,
+    });
     container.addEventListener('scroll', handleScroll);
 
-    // 清理事件监听器
-    // return () => {
-    //   container.removeEventListener('touchstart', handleTouchStart);
-    //   container.removeEventListener('touchend', handleTouchEnd);
-    //   container.removeEventListener('wheel', handleWheel);
-    //   container.removeEventListener('scroll', handleScroll);
-    //   if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current); // 清除计时器
-    // };
+    const cleanUp = () => {
+      container.removeEventListener('touchstart', handleTouchStart);
+      container.removeEventListener('wheel', handleHorizontalWheel);
+      container.removeEventListener('wheel', handleVerticalWheel);
+      container.removeEventListener('scroll', handleScroll);
+      if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current);
+    };
+
+    return cleanUp;
   }, [setCurrentIndex]);
 
   useEffect(() => {
-    console.log('index to card');
-    // 根据 currentIndex 滚动到对应的卡片
     const targetCard = cardRefs.current[currentIndex];
     if (targetCard) {
       targetCard.scrollIntoView({
@@ -180,9 +208,7 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
             cardRefs.current[index] = el;
           };
 
-          const onFocus = () => {
-            
-          }
+          const onFocus = () => {}; //A11y issue
 
           return (
             <div

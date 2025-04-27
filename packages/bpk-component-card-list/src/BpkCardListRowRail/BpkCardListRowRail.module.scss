@@ -22,30 +22,30 @@
   display: flex;
   flex-direction: column;
 
-  // &__row,
-  // &__rail {
-  //   display: flex;
-  //   overflow-x: scroll;
-  //   scroll-snap-type: x mandatory;
-  //   gap: tokens.bpk-spacing-sm();
-  //   box-sizing: border-box;
-  //   padding-bottom: tokens.bpk-spacing-sm();
-  //   padding-top: tokens.bpk-spacing-sm();
-  //   scroll-snap-stop: always;
+  &__row,
+  &__rail {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    gap: tokens.bpk-spacing-sm();
+    box-sizing: border-box;
+    padding-bottom: tokens.bpk-spacing-sm();
+    padding-top: tokens.bpk-spacing-sm();
+    scroll-snap-stop: always;
 
-  //   scrollbar-width: none;
-  //   -ms-overflow-style: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
-  //   &__card {
-  //     flex: 0 0 tokens.$bpk-one-pixel-rem * 300;
-  //     margin: tokens.bpk-spacing-sm();
-  //     padding: tokens.bpk-spacing-sm();
+    &__card {
+      flex: 0 0 tokens.$bpk-one-pixel-rem * 300;
+      margin: tokens.bpk-spacing-sm();
+      padding: tokens.bpk-spacing-sm();
 
-  //     scroll-snap-align: start;
-  //     position: relative;
-  //     overflow: visible;
-  //   }
-  // }
+      scroll-snap-align: start;
+      position: relative;
+      overflow: visible;
+    }
+  }
 
   &__rail {
     -webkit-overflow-scrolling: touch;
