@@ -51,6 +51,7 @@ type CardListBaseProps = {
   layoutMobile: MobileLayouts;
   layoutDesktop: DesktopLayouts;
   initiallyShownCards?: number;
+  chipGroup?: ReactElement;
   cardList: ReactElement[];
   expandText?: string;
   accessory?: (typeof ACCESSORY_TYPES)[keyof typeof ACCESSORY_TYPES];

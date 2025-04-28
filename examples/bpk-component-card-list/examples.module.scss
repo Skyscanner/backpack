@@ -18,20 +18,36 @@
 
 @use '../../packages/unstable__bpk-mixins/tokens';
 
-.bpkdocs-consumer-level {
+.destination {
+
   img {
     border-top-left-radius: tokens.$bpk-border-radius-md;
     border-top-right-radius: tokens.$bpk-border-radius-md;
     overflow: hidden;
   }
 
-  .bpk-bottom {
+  .destination-bottom {
     display: flex;
+    flex-direction: column;
     padding: tokens.bpk-spacing-lg();
     justify-content: space-between;
   }
 
-  .bpk-column {
+  .destination-name {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: tokens.bpk-spacing-md();
+    justify-content: space-between;
+  }
+
+  .destination-row {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: tokens.bpk-spacing-sm();
+    justify-content: space-between;
+  }
+
+  .destination-column {
     display: flex;
     flex-direction: column;
   }

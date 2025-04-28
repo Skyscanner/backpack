@@ -20,7 +20,8 @@ import BpkCardList from '../../packages/bpk-component-card-list';
 
 import {
   BasicExample,
-  RowToRailExample,
+  RowToRailForCardsExample,
+  RowToRailForSnippetsExample,
   GridToStackExample,
   GridToStackWithExpandExample,
 } from './examples';
@@ -31,7 +32,8 @@ export default {
 };
 
 export const Basic = BasicExample;
-export const RowToRail = RowToRailExample;
+export const RowToRailForCards = RowToRailForCardsExample;
+export const RowToRailForSnippets = RowToRailForSnippetsExample;
 export const GridToStack = GridToStackExample;
 export const GridToStackWithExpand = GridToStackWithExpandExample;
 

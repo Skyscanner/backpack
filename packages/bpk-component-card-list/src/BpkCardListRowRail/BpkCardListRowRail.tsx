@@ -15,12 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, CSSProperties } from 'react';
 import _ from 'lodash';
 
-import BpkPageIndicator, {
-  VARIANT,
-} from '../../../bpk-component-page-indicator';
+import BpkPageIndicator from '../../../bpk-component-page-indicator';
+import BpkSnippet from '../../../bpk-component-snippet';
 import { cssModules } from '../../../bpk-react-utils';
 import {
   ACCESSORY_TYPES,
@@ -47,6 +46,10 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
   const setStateTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const shownNumberStyle = {
+    flex: `0 0 calc(100% / ${initiallyShownCards})`,
+  } as CSSProperties;
 
   let accessoryContent;
 
@@ -75,10 +78,8 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
     let isThrottled = false; // 标记是否处于节流状态
 
     const handleHorizontalWheel = _.debounce((event: WheelEvent) => {
+      event.preventDefault();
       if (event.deltaX !== 0) {
-        console.log('horizontal wheel');
-        console.log('event.deltaX', event.deltaX);
-        event.preventDefault(); // 阻止页面的默认滚动行为
         const delta = event.deltaX;
         container.scrollTo({
           left: container.scrollLeft + delta,
@@ -87,39 +88,44 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
       }
     }, 500); // 100ms 的防抖延迟
 
-    const handleVerticalWheel2 = _.throttle(
-      (event: WheelEvent) => {
-        if (event.deltaY !== 0 && event.deltaX === 0) {
-          event.preventDefault();
-          const delta = event.deltaY;
-          container.scrollTo({
-            left: container.scrollLeft + delta,
-            behavior: 'smooth',
-          });
-        }
-      },
-      10,
-      { leading: true, trailing: false },
-    ); // 100ms 的防抖延迟
+    // const handleVerticalWheel2 = _.throttle(
+    //   (event: WheelEvent) => {
+    //     event.preventDefault();
+    //     if (event.deltaY !== 0 && event.deltaX === 0) {
+    //       const delta = event.deltaY;
+    //       container.scrollTo({
+    //         left: container.scrollLeft + delta,
+    //         behavior: 'smooth',
+    //       });
+    //     }
+    //   },
+    //   10,
+    //   { leading: true, trailing: false },
+    // ); // 100ms 的防抖延迟
 
-    const handleVerticalWheel = _.debounce(
+    const debounceVerticalScroll = _.debounce(
       (event: WheelEvent) => {
-        if (event.deltaY !== 0 && event.deltaX === 0) {
-          event.preventDefault(); // 阻止页面的默认滚动行为
-          const delta = event.deltaY;
-          const deltaIndex =
-            delta > 0 ? (delta / 400) | (0 + 1) : (delta / 400) | (0 - 1);
-          setCurrentIndex((prevIndex) => {
-            return Math.max(
-              Math.min(prevIndex + deltaIndex, totalIndicators - 1),
-              0,
-            );
-          });
-        }
+        const delta = event.deltaY;
+        const deltaIndex =
+          delta > 0 ? (delta / 400) | (0 + 1) : (delta / 400) | (0 - 1);
+        setCurrentIndex((prevIndex) => {
+          return Math.max(
+            Math.min(prevIndex + deltaIndex, totalIndicators - 1),
+            0,
+          );
+        })
       },
       200,
       { leading: true, trailing: false },
     );
+
+    const handleVerticalWheel = 
+      (event: WheelEvent) => {
+        if (event.deltaY !== 0 && event.deltaX === 0) {
+          event.preventDefault();
+          debounceVerticalScroll(event);
+        }
+      };
 
     const handleScroll = () => {
       if (isTouching) return;
@@ -163,12 +169,8 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
 
     // 添加事件监听器
     container.addEventListener('touchstart', handleTouchStart);
-    container.addEventListener('wheel', handleHorizontalWheel, {
-      passive: false,
-    });
-    container.addEventListener('wheel', handleVerticalWheel, {
-      passive: false,
-    });
+    container.addEventListener('wheel', handleHorizontalWheel, {passive: false});
+    container.addEventListener('wheel', handleVerticalWheel, {passive: false});
     container.addEventListener('scroll', handleScroll);
 
     const cleanUp = () => {
@@ -209,13 +211,19 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
           };
 
           const onFocus = () => {}; //A11y issue
+          console.log('typeof card:', typeof card);
+          if (typeof card === typeof BpkSnippet && card !== null) {
+            console.log('YESSS')
+            console.log('YESSS')
 
+          }
           return (
             <div
               className={getClassName(
                 `bpk-card-list-row-rail__${layout}__card`,
               )}
               ref={cardRefCallback}
+              style={shownNumberStyle}
               onFocus={onFocus}
             >
               {card}

@@ -38,6 +38,7 @@ const BpkCardList = (props: CardListProps) => {
     accessory,
     buttonHref,
     buttonText,
+    chipGroup,
     cardList,
     description,
     expandText,
@@ -61,6 +62,8 @@ const BpkCardList = (props: CardListProps) => {
         description={description}
         button={button}
       />
+
+      {chipGroup}
 
       <div
         className={getClassName('bpk-card-list--card-list')}

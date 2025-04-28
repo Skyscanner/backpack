@@ -32,12 +32,11 @@
     padding-bottom: tokens.bpk-spacing-sm();
     padding-top: tokens.bpk-spacing-sm();
     scroll-snap-stop: always;
-
     scrollbar-width: none;
     -ms-overflow-style: none;
 
     &__card {
-      flex: 0 0 tokens.$bpk-one-pixel-rem * 300;
+      box-sizing: border-box; /* 包括 padding 和 border */
       margin: tokens.bpk-spacing-sm();
       padding: tokens.bpk-spacing-sm();
 
