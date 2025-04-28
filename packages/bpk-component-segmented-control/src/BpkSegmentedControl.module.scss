@@ -89,20 +89,10 @@
       color: tokens.$bpk-text-on-dark-day;
     }
   }
-}
 
-.bpk-segmented-control-label {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  padding: tokens.bpk-spacing-md();
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
+  &-label {
+    cursor: pointer;
+  }
 }
 
 // Handle border lines between buttons
