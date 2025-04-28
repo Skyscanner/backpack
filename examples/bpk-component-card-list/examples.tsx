@@ -82,9 +82,7 @@ const DestinationCard = (i: number) => (
 
 
 const Snippet = (i: number) => (
-  <div className={STYLES['snippet']}>
     <BpkSnippet src={imageUrlsDestination[i % 4]} {...snippetProps} />
-  </div>
 )
 
 type ExampleCard = typeof DestinationCard | typeof Snippet;
