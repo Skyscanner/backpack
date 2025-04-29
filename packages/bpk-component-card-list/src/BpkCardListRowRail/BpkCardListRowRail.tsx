@@ -27,7 +27,7 @@ import {
   Children,
   JSXElementConstructor,
 } from 'react';
-import _, { find, set, update } from 'lodash';
+import _, { clone, find, set, update } from 'lodash';
 
 import BpkPageIndicator from '../../../bpk-component-page-indicator';
 import BpkSnippet from '../../../bpk-component-snippet';
@@ -220,78 +220,126 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
     }
   }, [currentIndex]);
 
-  function isTabValidElement(
-    element: React.ReactNode,
-  ): element is ReactElement<
-    HTMLDivElement | HTMLAnchorElement,
-    string | JSXElementConstructor<any>
-  > {
-    // Check if the element is a valid React element
-    if (!isValidElement(element)) {
-      return false;
-    }
+  // function isTabValidElement(
+  //   element: React.ReactNode,
+  // ): element is ReactElement<
+  //   HTMLDivElement | HTMLAnchorElement,
+  //   string | JSXElementConstructor<any>
+  // > {
+  //   // Check if the element is a valid React element
+  //   if (!isValidElement(element)) {
+  //     return false;
+  //   }
 
-    if (typeof element.type === 'string') {
-      return element.type === 'div' || element.type === 'a';
-    }
+  //   if (typeof element.type === 'string') {
+  //     return element.type === 'div' || element.type === 'a';
+  //   }
 
-    return false;
-  }
+  //   return false;
+  // }
 
-  const updateTabIndex = (
-    element: ReactElement<
-      HTMLDivElement | HTMLAnchorElement,
-      string | JSXElementConstructor<any>
-    >,
-    tabIndex: number,
-  ): ReactNode => {
-    if (typeof element === 'string' || typeof element === 'function') {
-      return null; // 如果是字符串或函数，直接返回
-    }
+  // const updateTabIndex = (
+  //   element: ReactElement<
+  //     HTMLDivElement | HTMLAnchorElement,
+  //     string | JSXElementConstructor<any>
+  //   >,
+  //   tabIndex: number,
+  // ): ReactNode => {
+  //   if (typeof element === 'string' || typeof element === 'function') {
+  //     console.log('string or function', element);
+  //     return null; // 如果是字符串或函数，直接返回
+  //   }
 
-    if (
-      element instanceof HTMLDivElement ||
-      element instanceof HTMLAnchorElement
-    ) {
-      const updatedElement = cloneElement(element, {
-        tabIndex: element.tabIndex === 0 ? tabIndex : element.tabIndex,
-      });
+  //   // console.log('hihi', element);
 
-      if (updatedElement.props?.children) {
-        const children = updatedElement.props.children;
-        // 处理 children 是字符串
-        if (typeof children === 'string' || typeof element === 'function') {
-          return null;
-        }
+  //   if (typeof element.type === 'function') {
+  //     console.log('Valid functional or class component');
+  //     if (element.props?.tabIndex === -1) {
+        
+  //     }
+  //     const updatedElement = cloneElement(element, {
+  //       tabIndex: element.props?.tabIndex === -1 ? -1 : tabIndex
+  //     });
 
-        // 处理 children 是数组
-        if (Array.isArray(children)) {
-          const updatedChildren = Children.map(children, (child) => {
-            if (!isValidElement(child) || !isTabValidElement(child)) {
-              return child; // 如果不是有效的 React 元素，直接返回
-            }
-            return updateTabIndex(child, tabIndex); // 递归更新 tabIndex
-          });
-          return cloneElement(updatedElement, { children: updatedChildren });
-        }
+  //     if (updatedElement.props?.children) {
+  //       // console.log('New child', updatedElement)
+  //       const children = updatedElement.props.children;
+  //       // 处理 children 是字符串
+  //       if (typeof children === 'string' || typeof element === 'function') {
+  //         return null;
+  //       }
 
-        // // 处理 children 是单个元素
-        if (!isValidElement(children) || !isTabValidElement(children)) {
-          const updatedChildren = children; // 如果不是有效的 React 元素，直接返回
-          return cloneElement(updatedElement, { children: updatedChildren });
-        }
+  //       console.log('children', children);
 
-        if (isValidElement(children) && isTabValidElement(children)) {
-          const updatedChildren = updateTabIndex(children, tabIndex); // 递归更新 tabIndex
-          return cloneElement(updatedElement, { children: updatedChildren });
-        }
+  //       // 处理 children 是数组
+  //       if (Array.isArray(children)) {
+  //         console.log('HIHIHHI')
+  //         const updatedChildren = Children.map(children, (child) => {
+  //           if (!isValidElement(child) || !isTabValidElement(child)) {
+  //             return child; // 如果不是有效的 React 元素，直接返回
+  //           }
+  //           return updateTabIndex(child, tabIndex); // 递归更新 tabIndex
+  //         });
+  //         return cloneElement(updatedElement, { children: updatedChildren });
+  //       }
 
-        // return cloneElement(updatedElement, { children: updatedChildren });
-      }
-    }
-  };
+  //       // // 处理 children 是单个元素
+  //       if (!isValidElement(children) || !isTabValidElement(children)) {
+  //         const updatedChildren = children; // 如果不是有效的 React 元素，直接返回
+  //         return cloneElement(updatedElement, { children: updatedChildren });
+  //       }  
 
-  console.log('allVisibleIndex', allVisibleIndex);
+  //       if (isValidElement(children) && isTabValidElement(children)) {
+  //       const updatedChildren = cloneElement(updatedElement, { children: children });
+  //       return cloneElement(updatedElement, { children: updatedChildren });  
+  //       }
+  //     }
+  //     return updatedElement;
+  //   }
+
+  //   if (
+  //     element instanceof HTMLDivElement ||
+  //     element instanceof HTMLAnchorElement
+  //   ) {
+  //     console.log('instanceof HTMLDivElement', element);
+  //     const updatedElement = cloneElement(element, {
+  //       tabIndex: element.tabIndex === 0 ? tabIndex : element.tabIndex,
+  //     });
+
+  //     if (updatedElement.props?.children) {
+  //       const children = updatedElement.props.children;
+  //       // 处理 children 是字符串
+  //       if (typeof children === 'string' || typeof element === 'function') {
+  //         return null;
+  //       }
+
+  //       // 处理 children 是数组
+  //       if (Array.isArray(children)) {
+  //         const updatedChildren = Children.map(children, (child) => {
+  //           if (!isValidElement(child) || !isTabValidElement(child)) {
+  //             return child; // 如果不是有效的 React 元素，直接返回
+  //           }
+  //           return updateTabIndex(child, tabIndex); // 递归更新 tabIndex
+  //         });
+  //         return cloneElement(updatedElement, { children: updatedChildren });
+  //       }
+
+  //       // // 处理 children 是单个元素
+  //       if (!isValidElement(children) || !isTabValidElement(children)) {
+  //         const updatedChildren = children; // 如果不是有效的 React 元素，直接返回
+  //         return cloneElement(updatedElement, { children: updatedChildren });
+  //       }
+
+  //       return updatedElement;
+
+        
+
+  //       // return cloneElement(updatedElement, { children: updatedChildren });
+  //     }
+  //   }
+  // };
+
+  // console.log('allVisibleIndex', allVisibleIndex);
 
   return (
     <div
@@ -311,10 +359,10 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
             cardRefs.current[index] = el;
           };
 
-          const updatedCard = updateTabIndex(
-            card,
-            allVisibleIndex.includes(index) ? 0 : -1,
-          );
+          // const updatedCard = updateTabIndex(
+          //   card,
+          //   allVisibleIndex.includes(index) ? 0 : -1,
+          // );
 
           return (
             <div
@@ -325,7 +373,7 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
               style={shownNumberStyle}
             >
               {cloneElement(card, { tabIndex: allVisibleIndex.includes(index) ? 0 : -1 })}
-              {/* {updatedCard}x */}
+              {/* {updatedCard} */}
             </div>
           );
         })}
