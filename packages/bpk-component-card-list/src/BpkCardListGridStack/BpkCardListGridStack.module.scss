@@ -25,8 +25,8 @@
   &__grid {
     display: grid;
     grid-template-columns: repeat(
-      auto-fit,
-      minmax(tokens.$bpk-one-pixel-rem * 281, auto)
+      var(--initially-shown-cards, 3),
+      auto
     );
     gap: tokens.bpk-spacing-lg();
   }

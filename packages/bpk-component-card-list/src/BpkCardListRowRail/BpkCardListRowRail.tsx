@@ -15,8 +15,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { useRef, useState, useEffect, CSSProperties } from 'react';
-import _ from 'lodash';
+import {
+  useRef,
+  useState,
+  useEffect,
+  CSSProperties,
+  ReactNode,
+  ReactElement,
+  cloneElement,
+  isValidElement,
+  Children,
+  JSXElementConstructor,
+} from 'react';
+import _, { find, set, update } from 'lodash';
 
 import BpkPageIndicator from '../../../bpk-component-page-indicator';
 import BpkSnippet from '../../../bpk-component-snippet';
@@ -28,6 +39,7 @@ import {
 } from '../common-types';
 
 import STYLES from './BpkCardListRowRail.module.scss';
+import { number } from 'prop-types';
 
 const getClassName = cssModules(STYLES);
 
@@ -42,6 +54,8 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
     onButtonClick,
   } = props;
 
+  const totalIndicators = children.length;
+  const [allVisibleIndex, setAllVisibleIndex] = useState<Array<number>>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
@@ -51,9 +65,8 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
     flex: `0 0 calc(100% / ${initiallyShownCards})`,
   } as CSSProperties;
 
-  let accessoryContent;
+  let accessoryContent = null;
 
-  const totalIndicators = children.length;
   if (layout === LAYOUTS.row && accessory === ACCESSORY_TYPES.Pagination) {
     accessoryContent = (
       <BpkPageIndicator
@@ -70,12 +83,39 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
     );
   }
 
+  const findAllVisibleIndex = (): number[] => {
+    if (!containerRef.current) {
+      return [];
+    }
+    const containerRect = containerRef.current.getBoundingClientRect();
+    let allVisibleIndex: Array<number> = [];
+    for (let index = 0; index < cardRefs.current.length; index += 1) {
+      const card = cardRefs.current[index];
+      if (!card) {
+        break;
+      }
+      const cardRect = card.getBoundingClientRect();
+      if (
+        cardRect.left >= containerRect.left - 1 &&
+        cardRect.left < containerRect.right
+      ) {
+        allVisibleIndex.push(index);
+      }
+    }
+    return allVisibleIndex;
+  };
+
+  // intialize all visually visible cards' indices
+  useEffect(() => {
+    findAllVisibleIndex(); // initialize
+  }, []);
+
+  // handle scroll events, and update the visible indices while scrolling
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
-    let isTouching = false; // 标记是否正在触摸
-    let isThrottled = false; // 标记是否处于节流状态
+    let isTouching = false;
 
     const handleHorizontalWheel = _.debounce((event: WheelEvent) => {
       event.preventDefault();
@@ -86,7 +126,7 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
           behavior: 'smooth',
         });
       }
-    }, 500); // 100ms 的防抖延迟
+    }, 500);
 
     // const handleVerticalWheel2 = _.throttle(
     //   (event: WheelEvent) => {
@@ -113,53 +153,24 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
             Math.min(prevIndex + deltaIndex, totalIndicators - 1),
             0,
           );
-        })
+        });
       },
       200,
       { leading: true, trailing: false },
     );
 
-    const handleVerticalWheel = 
-      (event: WheelEvent) => {
-        if (event.deltaY !== 0 && event.deltaX === 0) {
-          event.preventDefault();
-          debounceVerticalScroll(event);
-        }
-      };
+    const handleVerticalWheel = (event: WheelEvent) => {
+      if (event.deltaY !== 0 && event.deltaX === 0) {
+        event.preventDefault();
+        debounceVerticalScroll(event);
+      }
+    };
 
     const handleScroll = () => {
       if (isTouching) return;
-
-      const containerRect = container.getBoundingClientRect();
-      let visibleIndex = -1;
-
-      // 使用 for 循环遍历卡片
-      for (let index = 0; index < cardRefs.current.length; index += 1) {
-        const card = cardRefs.current[index];
-        if (!card) {
-          break;
-        }
-
-        const cardRect = card.getBoundingClientRect();
-
-        if (
-          cardRect.left >= containerRect.left - 1 &&
-          cardRect.left < containerRect.right
-        ) {
-          visibleIndex = index;
-          break; // 找到第一个符合条件的卡片后停止遍历
-        }
-      }
-
-      // 更新 currentIndex
-      if (visibleIndex !== -1) {
-        if (setStateTimeoutRef.current)
-          clearTimeout(setStateTimeoutRef.current);
-
-        setStateTimeoutRef.current = setTimeout(
-          () => setCurrentIndex(visibleIndex),
-          150,
-        );
+      const currentAllVisibleIndex = findAllVisibleIndex();
+      if (allVisibleIndex !== currentAllVisibleIndex) {
+        setAllVisibleIndex(currentAllVisibleIndex);
       }
     };
 
@@ -167,10 +178,13 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
       isTouching = true; // 标记触摸开始
     };
 
-    // 添加事件监听器
     container.addEventListener('touchstart', handleTouchStart);
-    container.addEventListener('wheel', handleHorizontalWheel, {passive: false});
-    container.addEventListener('wheel', handleVerticalWheel, {passive: false});
+    container.addEventListener('wheel', handleHorizontalWheel, {
+      passive: false,
+    });
+    container.addEventListener('wheel', handleVerticalWheel, {
+      passive: false,
+    });
     container.addEventListener('scroll', handleScroll);
 
     const cleanUp = () => {
@@ -182,18 +196,102 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
     };
 
     return cleanUp;
-  }, [setCurrentIndex]);
+  }, []);
+
+  useEffect(() => {
+    if (!allVisibleIndex || allVisibleIndex.length === 0) return;
+
+    const firstVisibleIndex = findAllVisibleIndex()[0];
+    if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current);
+    setStateTimeoutRef.current = setTimeout(
+      () => setCurrentIndex(firstVisibleIndex),
+      150,
+    );
+  }, [allVisibleIndex]);
 
   useEffect(() => {
     const targetCard = cardRefs.current[currentIndex];
     if (targetCard) {
       targetCard.scrollIntoView({
-        behavior: 'smooth', // 平滑滚动
-        block: 'nearest', // 滚动到最近的可见位置
-        inline: 'start', // 元素左侧与视图左侧对齐
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'start',
       });
     }
-  }, [currentIndex]); // 当 currentIndex 改变时触发
+  }, [currentIndex]);
+
+  function isTabValidElement(
+    element: React.ReactNode,
+  ): element is ReactElement<
+    HTMLDivElement | HTMLAnchorElement,
+    string | JSXElementConstructor<any>
+  > {
+    // Check if the element is a valid React element
+    if (!isValidElement(element)) {
+      return false;
+    }
+
+    if (typeof element.type === 'string') {
+      return element.type === 'div' || element.type === 'a';
+    }
+
+    return false;
+  }
+
+  const updateTabIndex = (
+    element: ReactElement<
+      HTMLDivElement | HTMLAnchorElement,
+      string | JSXElementConstructor<any>
+    >,
+    tabIndex: number,
+  ): ReactNode => {
+    if (typeof element === 'string' || typeof element === 'function') {
+      return null; // 如果是字符串或函数，直接返回
+    }
+
+    if (
+      element instanceof HTMLDivElement ||
+      element instanceof HTMLAnchorElement
+    ) {
+      const updatedElement = cloneElement(element, {
+        tabIndex: element.tabIndex === 0 ? tabIndex : element.tabIndex,
+      });
+
+      if (updatedElement.props?.children) {
+        const children = updatedElement.props.children;
+        // 处理 children 是字符串
+        if (typeof children === 'string' || typeof element === 'function') {
+          return null;
+        }
+
+        // 处理 children 是数组
+        if (Array.isArray(children)) {
+          const updatedChildren = Children.map(children, (child) => {
+            if (!isValidElement(child) || !isTabValidElement(child)) {
+              return child; // 如果不是有效的 React 元素，直接返回
+            }
+            return updateTabIndex(child, tabIndex); // 递归更新 tabIndex
+          });
+          return cloneElement(updatedElement, { children: updatedChildren });
+        }
+
+        // // 处理 children 是单个元素
+        if (!isValidElement(children) || !isTabValidElement(children)) {
+          const updatedChildren = children; // 如果不是有效的 React 元素，直接返回
+          return cloneElement(updatedElement, { children: updatedChildren });
+        }
+
+        if (isValidElement(children) && isTabValidElement(children)) {
+          const updatedChildren = updateTabIndex(children, tabIndex); // 递归更新 tabIndex
+          return cloneElement(updatedElement, { children: updatedChildren });
+        }
+
+        // return cloneElement(updatedElement, { children: updatedChildren });
+      }
+    }
+  };
+
+  console.log('allVisibleIndex', allVisibleIndex);
 
   return (
     <div
@@ -206,17 +304,18 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
         ref={containerRef}
       >
         {children.map((card, index) => {
+          if (!isValidElement(card)) {
+            return null; // Skip invalid elements
+          }
           const cardRefCallback = (el: HTMLDivElement | null) => {
             cardRefs.current[index] = el;
           };
 
-          const onFocus = () => {}; //A11y issue
-          console.log('typeof card:', typeof card);
-          if (typeof card === typeof BpkSnippet && card !== null) {
-            console.log('YESSS')
-            console.log('YESSS')
+          const updatedCard = updateTabIndex(
+            card,
+            allVisibleIndex.includes(index) ? 0 : -1,
+          );
 
-          }
           return (
             <div
               className={getClassName(
@@ -224,9 +323,9 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
               )}
               ref={cardRefCallback}
               style={shownNumberStyle}
-              onFocus={onFocus}
             >
-              {card}
+              {cloneElement(card, { tabIndex: allVisibleIndex.includes(index) ? 0 : -1 })}
+              {/* {updatedCard}x */}
             </div>
           );
         })}

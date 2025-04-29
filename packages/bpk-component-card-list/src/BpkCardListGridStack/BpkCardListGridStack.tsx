@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useState } from 'react';
+import { useState, CSSProperties } from 'react';
 
 import { BpkButtonV2 } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';
@@ -37,6 +37,10 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
     layout,
     onButtonClick,
   } = props;
+
+  const gridStyle = {
+    '--initially-shown-cards': initiallyShownCards,
+  } as CSSProperties;
 
   let defaultInitiallyShownCards: number;
   if (accessory === ACCESSORY_TYPES.Expand) {
@@ -92,6 +96,7 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
       <div
         className={getClassName(`bpk-card-list-grid-stack__${layout}`)}
         data-testid="bpk-card-list-grid-stack__content"
+        style={gridStyle}
       >
         {visibleCards}
       </div>

@@ -32,10 +32,10 @@ import { BpkChipGroupRail } from '../bpk-component-chip-group/examples';
 import BpkSnippet from '../../packages/bpk-component-snippet/src/BpkSnippet';
 
 const imageUrlsDestination = [
-  "https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg",
-  "https://content.skyscnr.com/m/54f5c2e091ec6e4c/original/March-25-B2-IT-Croazia-Auto_1B_1.jpg",
-  "https://content.skyscnr.com/m/5e987526c2309d27/original/sync_207352798_Albaicin_Viewpoint_207352798_1413.jpg",
-  "https://content.skyscnr.com/m/08ab12ef4f2e4c0c/original/sync_206570010_Viking_Cave_206570010_992.jpg",
+  'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg',
+  'https://content.skyscnr.com/m/54f5c2e091ec6e4c/original/March-25-B2-IT-Croazia-Auto_1B_1.jpg',
+  'https://content.skyscnr.com/m/5e987526c2309d27/original/sync_207352798_Albaicin_Viewpoint_207352798_1413.jpg',
+  'https://content.skyscnr.com/m/08ab12ef4f2e4c0c/original/sync_206570010_Viking_Cave_206570010_992.jpg',
 ];
 
 const snippetProps = {
@@ -49,7 +49,7 @@ const snippetProps = {
 };
 
 const DestinationCard = (i: number) => (
-  <BpkCard href="/" padded={false}>
+  <BpkCard style={{minWidth: '250px'}}  href="/" padded={false}>
     <div className={STYLES['destination']}>
       <BpkImage
         aspectRatio={3000 / 1400}
@@ -58,32 +58,31 @@ const DestinationCard = (i: number) => (
       />
 
       <div className={STYLES['destination-bottom']}>
-          <div className={STYLES['destination-name']}>
-            <BpkText textStyle={TEXT_STYLES.heading4}>
-              {`Destination Name ${i}`}
-            </BpkText>
+        <div className={STYLES['destination-name']}>
+          <BpkText textStyle={TEXT_STYLES.heading4}>
+            {`Destination Name ${i}`}
+          </BpkText>
+        </div>
+        <div className={STYLES['destination-row']}>
+          <BpkText textStyle={TEXT_STYLES.heading5}>Flight</BpkText>
+          <div className={STYLES['destination-column']}>
+            <BpkText textStyle={TEXT_STYLES.heading5}>£150</BpkText>
           </div>
-          <div className={STYLES['destination-row']}>
-            <BpkText textStyle={TEXT_STYLES.heading5}>Flight</BpkText>
-            <div className={STYLES['destination-column']}>
-              <BpkText textStyle={TEXT_STYLES.heading5}>£150</BpkText>
-            </div>
+        </div>
+        <div className={STYLES['destination-row']}>
+          <BpkText textStyle={TEXT_STYLES.heading5}>Hotel</BpkText>
+          <div className={STYLES['destination-column']}>
+            <BpkText textStyle={TEXT_STYLES.heading5}>£100</BpkText>
           </div>
-          <div className={STYLES['destination-row']}>
-            <BpkText textStyle={TEXT_STYLES.heading5}>Hotel</BpkText>
-            <div className={STYLES['destination-column']}>
-              <BpkText textStyle={TEXT_STYLES.heading5}>£100</BpkText>
-            </div>
-          </div>
+        </div>
       </div>
     </div>
   </BpkCard>
 );
 
-
 const Snippet = (i: number) => (
-    <BpkSnippet src={imageUrlsDestination[i % 4]} {...snippetProps} />
-)
+  <BpkSnippet src={imageUrlsDestination[i % 4]} {...snippetProps} />
+);
 
 type ExampleCard = typeof DestinationCard | typeof Snippet;
 
@@ -97,12 +96,10 @@ const makeList = (cardType: ExampleCard) => {
 
 type PageContainerProb = {
   children: React.ReactNode;
-}
+};
 
 const PageContainer = ({ children }: PageContainerProb) => (
-  <div style ={{ maxWidth: '1200px', margin: '0 auto' }}>
-      {children}
-  </div>
+  <div style={{ maxWidth: '1200px', margin: '0 auto' }}>{children}</div>
 );
 
 const BasicExample = () => (
@@ -153,36 +150,47 @@ const RowToRailForSnippetsExample = () => (
 );
 
 const GridToStackExample = () => (
-  <BpkCardList
-    title="Must-visit spots"
-    description="Check out these world-famous destinations perfect for visiting in spring."
-    cardList={makeList(DestinationCard)}
-    layoutDesktop={LAYOUTS.grid}
-    layoutMobile={LAYOUTS.stack}
-    onButtonClick={() => null}
-    accessory="button"
-    buttonText="Explore more"
-  />
+  <PageContainer>
+    <BpkCardList
+      title="Must-visit spots"
+      description="Check out these world-famous destinations perfect for visiting in spring."
+      cardList={makeList(DestinationCard)}
+      initiallyShownCards={3}
+      layoutDesktop={LAYOUTS.grid}
+      layoutMobile={LAYOUTS.stack}
+      onButtonClick={() => null}
+      accessory="button"
+      buttonText="Explore more"
+    />
+  </PageContainer>
 );
 
 const GridToStackWithExpandExample = () => {
   const [expandText, setExpandText] = useState('Show more');
 
   return (
-    <BpkCardList
-      title="Must-visit spots"
-      description="Check out these world-famous destinations perfect for visiting in spring."
-      cardList={makeList(DestinationCard)}
-      layoutDesktop={LAYOUTS.grid}
-      layoutMobile={LAYOUTS.stack}
-      onButtonClick={() =>
-        setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
-      }
-      accessory="expand"
-      buttonText="Explore more"
-      expandText={expandText}
-    />
+    <PageContainer>
+        <BpkCardList
+          title="Must-visit spots"
+          description="Check out these world-famous destinations perfect for visiting in spring."
+          cardList={makeList(DestinationCard)}
+          layoutDesktop={LAYOUTS.grid}
+          layoutMobile={LAYOUTS.stack}
+          onButtonClick={() =>
+            setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
+          }
+          accessory="expand"
+          buttonText="Explore more"
+          expandText={expandText}
+      />
+   </PageContainer>
   );
 };
 
-export { BasicExample, RowToRailForCardsExample, RowToRailForSnippetsExample, GridToStackExample, GridToStackWithExpandExample };
+export {
+  BasicExample,
+  RowToRailForCardsExample,
+  RowToRailForSnippetsExample,
+  GridToStackExample,
+  GridToStackWithExpandExample,
+};
