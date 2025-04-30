@@ -64,7 +64,7 @@ const BpkSegmentedControl = ({
   );
 
   return (
-    <div className={containerStyling}>
+    <div className={containerStyling} role="tablist">
       {buttonContents.map((content, index) => {
         const isSelected = index === selectedButton;
         const rightOfOption = index === selectedButton + 1;
@@ -83,9 +83,10 @@ const BpkSegmentedControl = ({
             key={`index-${index.toString()}`}
             id={index.toString()}
             type="button"
+            role="tab"
             onClick={() => handleButtonClick(index)}
             className={buttonStyling}
-            aria-pressed={!!isSelected}
+            aria-selected={isSelected}
           >
             {content}
           </button>
