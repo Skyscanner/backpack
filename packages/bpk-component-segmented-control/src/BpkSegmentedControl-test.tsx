@@ -100,4 +100,26 @@ describe('BpkSegmentedControl', () => {
 
     expect(selectedButton).toBeInTheDocument();
   });
+
+  it('should move selection with arrow keys', () => {
+    render(<BpkSegmentedControl {...defaultProps} />);
+
+    const radios = screen.getAllByRole('radio');
+
+    radios[0].focus();
+    expect(radios[0]).toHaveFocus();
+
+    // Press left arrow key
+    fireEvent.keyDown(radios[1], { key: 'ArrowLeft', code: 'ArrowLeft' });
+
+    // Should move to previous radio (index 0 = 'one')
+    expect(radios[0]).toHaveFocus();
+
+    // Press right arrow key
+    fireEvent.keyDown(radios[0], { key: 'ArrowRight', code: 'ArrowRight' });
+
+    // Should move back to 'two'
+    expect(radios[1]).toHaveFocus();
+  });
+
 });
