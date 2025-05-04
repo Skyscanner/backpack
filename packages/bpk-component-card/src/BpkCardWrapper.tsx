@@ -17,8 +17,14 @@
  */
 
 import type { ReactNode } from 'react';
+import { useState, useRef } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import AnimateHeight from '../../bpk-animate-height';
+import BpkIconChevronDown from '../../bpk-component-icon/sm/chevron-down';
+import BpkIconChevronUp from '../../bpk-component-icon/sm/chevron-up';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
+import { cssModules, Portal } from '../../bpk-react-utils';
 
 import { CardContext } from './CardContext';
 
@@ -31,27 +37,127 @@ type Props = {
   className?: string | null;
   backgroundColor: string;
   header: ReactNode;
+  body?: {
+    text: string;
+    openBtnLabel: string;
+    closeBtnLabel: string;
+    link?: string;
+    linkText?: string;
+    moreInfoBtnColor?: string;
+  };
 };
 
 const BpkCardWrapper = ({
   backgroundColor,
+  body,
   card,
   className = null,
   header,
 }: Props) => {
   const classNames = getClassName('bpk-card-wrapper', className);
 
+  const [isBodyOpen, setIsBodyOpen] = useState(false);
+  const bodyRef = useRef<HTMLDivElement>(null);
+
+  const toggleExpand = () => {
+    setIsBodyOpen(!isBodyOpen);
+  };
+
+  const toggleLabel = isBodyOpen ? body?.closeBtnLabel : body?.openBtnLabel;
+
+  const moreInfoToggle = (
+    <div
+      style={{ fill: body?.moreInfoBtnColor, color: body?.moreInfoBtnColor }}
+      className={getClassName('bpk-card-wrapper--body--header--toggle-label')}
+    >
+      <div
+        className={getClassName(
+          'bpk-card-wrapper--body--header--toggle-label--text',
+        )}
+      >
+        <BpkText textStyle={TEXT_STYLES.caption}>{toggleLabel}</BpkText>
+      </div>
+      {isBodyOpen ? <BpkIconChevronUp /> : <BpkIconChevronDown />}
+    </div>
+  );
+
+  const headerWithBodyDiv = body && (
+    <div
+      className={getClassName(
+        'bpk-card-wrapper--header',
+        'bpk-card-wrapper--body--header',
+      )}
+    >
+      <div className={getClassName('bpk-card-wrapper--body--header--content')}>
+        {header}
+      </div>
+      <div
+        className={getClassName(
+          'bpk-card-wrapper--body--header--button-container',
+        )}
+      >
+        <button
+          type="button"
+          onClick={toggleExpand}
+          className={getClassName('bpk-card-wrapper--body--header--button')}
+        >
+          {moreInfoToggle}
+        </button>
+      </div>
+      {document.getElementById('body-header') && (
+        <Portal isOpen renderTarget={document.getElementById('body-header')}>
+          <AnimateHeight duration={80} height={isBodyOpen ? 'auto' : 0}>
+            <div
+              ref={bodyRef}
+              className={getClassName(
+                'bpk-card-wrapper--body',
+                isBodyOpen && 'expanded',
+              )}
+            >
+              <BpkText textStyle={TEXT_STYLES.caption}>{body.text}</BpkText>
+              {body.link && body.linkText && (
+                <a
+                  href={body.link}
+                  className={getClassName('bpk-card-wrapper--body--link-text')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <BpkText textStyle={TEXT_STYLES.caption}>
+                    {body.linkText}
+                  </BpkText>
+                </a>
+              )}
+            </div>
+          </AnimateHeight>
+        </Portal>
+      )}
+    </div>
+  );
+
   return (
     <CardContext.Provider value={{ elevated: false }}>
-      <div
-        className={classNames}
-        style={{
-          // @ts-expect-error TS is reporting this incorrectly as --background-color is valid
-          '--background-color': backgroundColor,
-        }}
-      >
-        <div className={getClassName('bpk-card-wrapper--header')}>{header}</div>
-        <div className={getClassName('bpk-card-wrapper--content')}>{card}</div>
+      <div className={classNames} style={{ 'backgroundColor': backgroundColor }}>
+        {body ? (
+          <div
+            className={getClassName('bpk-card-wrapper--body--header-container')}
+            id="body-header"
+          >
+            {headerWithBodyDiv}
+          </div>
+        ) : (
+          <div className={getClassName('bpk-card-wrapper--header')}>
+            {header}
+          </div>
+        )}
+
+        <div
+          className={getClassName(
+            'bpk-card-wrapper--content',
+            body && isBodyOpen && 'bpk-card-wrapper--content-opened',
+          )}
+        >
+          <div className={STYLES.ticketContainer}>{card}</div>
+        </div>
       </div>
     </CardContext.Provider>
   );
