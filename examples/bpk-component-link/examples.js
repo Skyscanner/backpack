@@ -54,6 +54,29 @@ const ImplicitLinkExample = () => (
   </div>
 );
 
+const LinkInGridExample = () => (
+  <div style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+    gap: '1.5rem',
+    width: '100%',
+    maxWidth: '800px',
+  }}>
+    <BpkLink href="#" onClick={action('#1 clicked')}>
+      Link #1
+    </BpkLink>
+    <BpkLink href="#" onClick={action('#2 clicked')}>
+      Link #2
+    </BpkLink>
+    <BpkLink href="#" onClick={action('#2 clicked')}>
+      Link #3
+    </BpkLink>
+    <BpkLink href="#" onClick={action('#2 clicked')}>
+      Link #4
+    </BpkLink>
+  </div>
+)
+
 const ButtonLinkExample = () => (
   <div>
     <BpkButtonLink onClick={action('#1 clicked')}>Link #1</BpkButtonLink>
@@ -156,4 +179,5 @@ export {
   CombinedAlternativeExample,
   OverviewExample,
   MixedExample,
+  LinkInGridExample,
 };

@@ -774,6 +774,48 @@
   margin-bottom: bpk-spacing-sm();
 }
 
+@mixin bpk-link-underlined {
+  transition: background-size 200ms ease;
+  background: linear-gradient($bpk-text-primary-day, $bpk-text-primary-day);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 0.1em;
+
+  @include bpk-hover {
+    background-size: 0 0.1em;
+  }
+}
+
+@mixin bpk-link-underlined--implicit {
+  background-size: 0 0.1em;
+
+  @include bpk-hover {
+    background-size: 100% 0.1em;
+  }
+}
+
+@mixin bpk-link-underlined--alternate {
+  background: linear-gradient($bpk-text-on-dark-day, $bpk-text-on-dark-day);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 0.1em;
+
+  @include bpk-hover {
+    background-size: 0 0.1em;
+  }
+}
+
+@mixin bpk-link-underlined-implicit--alternate {
+  background: linear-gradient($bpk-text-on-dark-day, $bpk-text-on-dark-day);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 0.1em;
+
+  @include bpk-hover {
+    background-size: 100% 0.1em;
+  }
+}
+
 /// Inline link.
 ///
 /// @example scss
@@ -783,7 +825,7 @@
 
 @mixin bpk-link {
   position: relative;
-  display: inline-block;
+  display: inline;
   padding: 0;
   border: 0;
   background-color: transparent;
@@ -805,10 +847,6 @@
       --bpk-link-hover-color,
       $bpk-text-primary-day
     );
-
-    &::after {
-      width: 0%;
-    }
   }
 
   &:visited {
@@ -825,34 +863,6 @@
       --bpk-link-active-color,
       $bpk-text-primary-day
     );
-
-    &::after {
-      width: 0%;
-    }
-  }
-
-  &::after {
-    position: absolute;
-    bottom: 0;
-    content: '';
-    display: block;
-    width: 100%;
-    height: $bpk-border-size-sm;
-    transition:
-      width 0.2s ease 0s,
-      left 0.2s ease 0s;
-
-    @include bpk-themeable-property(
-      background,
-      --bpk-link-color,
-      $bpk-text-primary-day
-    );
-
-    @media (prefers-reduced-motion) {
-      transition:
-        width 0s ease 0s,
-        left 0s ease 0s;
-    }
   }
 }
 
@@ -877,17 +887,6 @@
       --bpk-link-hover-color,
       $bpk-text-primary-day
     );
-
-    &::after {
-      width: 100%;
-    }
-  }
-
-  &::after {
-    width: 0;
-    transition:
-      width 0.2s ease 0s,
-      left 0.2s ease 0s;
   }
 
   &:active {
@@ -898,10 +897,6 @@
       --bpk-link-active-color,
       $bpk-text-primary-day
     );
-
-    &::after {
-      width: 100%;
-    }
   }
 }
 
@@ -930,14 +925,6 @@
     );
   }
 
-  &::after {
-    @include bpk-themeable-property(
-      background,
-      --bpk-link-alternate-color,
-      $bpk-text-on-dark-day
-    );
-  }
-
   &:visited {
     @include bpk-themeable-property(
       color,
@@ -954,6 +941,16 @@
     );
   }
 }
+
+/// White link. Modifies the bpk-link mixin.
+///
+/// @require {mixin} bpk-link
+///
+/// @example scss
+///   .selector {
+///     @include bpk-link();
+///     @include bpk-link--white();
+///   }
 
 @mixin bpk-link--white {
   @include bpk-link--alternate;

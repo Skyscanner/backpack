@@ -31,6 +31,7 @@ import {
   CombinedAlternativeExample,
   OverviewExample,
   MixedExample,
+  LinkInGridExample,
 } from './examples';
 
 export default {
@@ -43,6 +44,7 @@ export default {
 
 export const Example = LinkExample;
 export const ExampleImplicit = ImplicitLinkExample;
+export const ExampleLinksInGrid = LinkInGridExample;
 export const ExampleButtons = ButtonLinkExample;
 
 export const ExampleAlternate = LinkAlternativeExample;
