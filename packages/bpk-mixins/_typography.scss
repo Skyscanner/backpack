@@ -891,7 +891,7 @@
   }
 
   &:active {
-    text-decoration: underline;
+    text-decoration: none;
 
     @include bpk-themeable-property(
       color,
