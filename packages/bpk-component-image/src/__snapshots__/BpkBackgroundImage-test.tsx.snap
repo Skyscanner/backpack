@@ -59,7 +59,7 @@ exports[`BpkBackgroundImage should have loading behavior 1`] = `
         style="width: 100%; height: 100%; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%;"
       />
       <div
-        class="bpk-image__spinner"
+        class="bpk-background-image__spinner"
       >
         <span
           class="bpk-spinner bpk-spinner--dark"
