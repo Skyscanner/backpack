@@ -837,7 +837,7 @@
     content: '';
     display: block;
     width: 100%;
-    height: tokens.$bpk-border-size-sm;
+    height: $bpk-border-size-sm;
     transition:
       width 0.2s ease 0s,
       left 0.2s ease 0s;
@@ -891,7 +891,7 @@
   }
 
   &:active {
-    text-decoration: underline;
+    text-decoration: none;
 
     @include bpk-themeable-property(
       color,
