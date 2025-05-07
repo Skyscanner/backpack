@@ -55,11 +55,7 @@ export default function withLoadingBehavior<P extends object>(
 
     render() {
       return (
-        <WrappedComponent
-          onLoad={this.onLoad}
-          loading={this.state.loading}
-          {...(this.props as P)}
-        />
+        <WrappedComponent onLoad={this.onLoad} loading {...(this.props as P)} />
       );
     }
   }
