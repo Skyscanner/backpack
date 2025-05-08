@@ -16,6 +16,24 @@
  * limitations under the License.
  */
 
-import BpkCardList from './src/BpkCardList';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-export default BpkCardList;
+import mockCards from '../../testMocks';
+import { ACCESSORY_TYPES, LAYOUTS } from '../common-types';
+
+import BpkCardListRowRail from './BpkCardListRowRail';
+
+describe('BpkCardListRowRail', () => {
+  it('should have no accessibility issues for grid and no accessory', async () => {
+    const { container } = render(
+      <BpkCardListRowRail layout={LAYOUTS.row} initiallyShownCards={3}>
+        {mockCards(3)}
+      </BpkCardListRowRail>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+});
