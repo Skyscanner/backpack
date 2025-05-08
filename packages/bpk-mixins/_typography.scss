@@ -782,7 +782,7 @@
 ///   }
 
 @mixin bpk-link-underlined {
-  padding-bottom: 0.03em;
+  padding-bottom: $bpk-one-pixel-rem;
   transition: background-size 200ms ease;
   background: linear-gradient($bpk-text-primary-day, $bpk-text-primary-day);
   background-repeat: no-repeat;
