@@ -8,7 +8,11 @@ exports[`BpkGridToggle should render correctly 1`] = `
       title="Keyboard Shortcut: ctrl + cmd + g"
       type="button"
     >
-      Baseline grid on
+      <span
+        class="bpk-link-underlined"
+      >
+        Baseline grid on
+      </span>
     </button>
   </span>
 </DocumentFragment>
@@ -24,7 +28,11 @@ exports[`BpkGridToggle should render correctly with the className prop 1`] = `
       title="Keyboard Shortcut: ctrl + cmd + g"
       type="button"
     >
-      Baseline grid on
+      <span
+        class="bpk-link-underlined"
+      >
+        Baseline grid on
+      </span>
     </button>
   </span>
 </DocumentFragment>
