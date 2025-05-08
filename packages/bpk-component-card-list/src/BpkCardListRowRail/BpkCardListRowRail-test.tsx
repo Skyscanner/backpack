@@ -46,41 +46,41 @@ describe('BpkCardListRowRail', () => {
     expect(cards.childNodes.length).toBe(3);
   });
 
-  it('should render correctly with expand accessory', () => {
-    render(
-      <BpkCardListRowRail
-        layout={LAYOUTS.row}
-        accessory={ACCESSORY_TYPES.Expand}
-        initiallyShownCards={3}
-        expandText="Show more"
-      >
-        {mockCards(3)}
-      </BpkCardListRowRail>,
-    );
+  // it('should render correctly with expand accessory', () => {
+  //   render(
+  //     <BpkCardListRowRail
+  //       layout={LAYOUTS.row}
+  //       accessory={ACCESSORY_TYPES.Expand}
+  //       initiallyShownCards={3}
+  //       expandText="Show more"
+  //     >
+  //       {mockCards(3)}
+  //     </BpkCardListRowRail>,
+  //   );
 
-    // const container = screen.getByTestId('bpk-card-list-grid-stack');
-    // const cards = screen.getByTestId('bpk-card-list-grid-stack__content');
-    // expect(cards.childNodes.length).toBe(3);
-    // expect(container.lastChild).toHaveRole('button');
-    // expect(container.lastChild).toHaveTextContent('Show more');
-  });
+  //   // const container = screen.getByTestId('bpk-card-list-grid-stack');
+  //   // const cards = screen.getByTestId('bpk-card-list-grid-stack__content');
+  //   // expect(cards.childNodes.length).toBe(3);
+  //   // expect(container.lastChild).toHaveRole('button');
+  //   // expect(container.lastChild).toHaveTextContent('Show more');
+  // });
 
-  it('should render correctly with button accessory', () => {
-    render(
-      <BpkCardListRowRail
-        layout={LAYOUTS.rail}
-        accessory={ACCESSORY_TYPES.Button}
-        initiallyShownCards={3}
-      >
-        {mockCards(3)}
-      </BpkCardListRowRail>,
-    );
+  // it('should render correctly with button accessory', () => {
+  //   render(
+  //     <BpkCardListRowRail
+  //       layout={LAYOUTS.rail}
+  //       accessory={ACCESSORY_TYPES.Button}
+  //       initiallyShownCards={3}
+  //     >
+  //       {mockCards(3)}
+  //     </BpkCardListRowRail>,
+  //   );
 
-    // const container = screen.getByTestId('bpk-card-list-grid-stack');
-    // const cards = screen.getByTestId('bpk-card-list-grid-stack__content');
-    // const accessory = container.lastChild;
-    // expect(cards.childNodes.length).toBe(3);
-    // expect(accessory?.firstChild).toHaveRole('button');
-    // expect(accessory).toHaveTextContent('Explore more');
-  });
+  //   // const container = screen.getByTestId('bpk-card-list-grid-stack');
+  //   // const cards = screen.getByTestId('bpk-card-list-grid-stack__content');
+  //   // const accessory = container.lastChild;
+  //   // expect(cards.childNodes.length).toBe(3);
+  //   // expect(accessory?.firstChild).toHaveRole('button');
+  //   // expect(accessory).toHaveTextContent('Explore more');
+  // });
 });

@@ -25,6 +25,7 @@ import BpkImage from '../../packages/bpk-component-image';
 import BpkText, {
   TEXT_STYLES,
 } from '../../packages/bpk-component-text/src/BpkText';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLink from '../../packages/bpk-component-link';
 
 import STYLES from './examples.module.scss';
