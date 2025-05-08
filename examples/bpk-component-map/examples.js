@@ -209,26 +209,28 @@ class StatefulBpkPriceMarkerV2 extends Component<
         zoom={15}
         center={{ latitude: 55.944665, longitude: -3.1964903 }}
       >
-        {venues
-          .map((venue) => (
-            <BpkPriceMarkerV2
-              id={venue.id}
-              label={venue.price}
-              icon={
-                this.props.airportsIconWithPrice ? venue.airportsIcon : null
-              }
-              position={{
-                latitude: venue.latitude,
-                longitude: venue.longitude,
-              }}
-              onClick={() => {
-                this.props.action();
-                this.selectVenue(venue.id);
-              }}
-              status={this.getStatus(venue.id)}
-              accessibilityLabel="Click the price marker"
-            />
-          ))}
+        {venues.map((venue) => (
+          <BpkPriceMarkerV2
+            id={venue.id}
+            label={venue.price}
+            icon={this.props.airportsIconWithPrice ? venue.airportsIcon : null}
+            position={{
+              latitude: venue.latitude,
+              longitude: venue.longitude,
+            }}
+            onClick={() => {
+              this.props.action();
+              this.selectVenue(venue.id);
+            }}
+            status={this.getStatus(venue.id)}
+            accessibilityLabel="Click the price marker"
+            popoverContent={<div>{venue.name}</div>}
+            popoverProps={{
+              hoverable: true,
+              padded: false,
+            }}
+          />
+        ))}
       </StoryMap>
     );
   }

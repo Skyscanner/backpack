@@ -18,9 +18,12 @@
 
 import type { MouseEvent, ReactNode } from 'react';
 
+import BpkPopover from '../../../bpk-component-popover';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import { cssModules } from '../../../bpk-react-utils';
 import BpkBasicMapMarker from '../BpkBasicMapMarker';
+
+import type { Props as PopoverProps } from '../../../bpk-component-popover';
 
 import STYLES from './BpkPriceMarker.module.scss';
 
@@ -45,6 +48,8 @@ type Props = {
   onClick?: (event: MouseEvent) => void;
   buttonProps?: { [key: string]: string };
   status?: Status;
+  popoverContent?: ReactNode;
+  popoverProps?: PopoverProps;
 };
 
 export const BpkPriceMarkerV2 = (props: Props) => {
@@ -55,6 +60,8 @@ export const BpkPriceMarkerV2 = (props: Props) => {
     icon,
     label,
     onClick,
+    popoverContent,
+    popoverProps,
     position,
     status = MARKER_STATUSES.unselected,
     ...rest
@@ -70,23 +77,38 @@ export const BpkPriceMarkerV2 = (props: Props) => {
     className,
   );
 
+  const priceButton = (
+    <button
+      type="button"
+      className={markerWrapperClassNames}
+      onClick={onClick}
+      {...buttonProps}
+    >
+      <div className={classNames}>
+        {icon}
+        <BpkText textStyle={TEXT_STYLES.label3}>{label}</BpkText>
+      </div>
+    </button>
+  );
+
   return (
     <BpkBasicMapMarker
       position={position}
       aria-label={accessibilityLabel}
       {...rest}
     >
-      <button
-        type="button"
-        className={markerWrapperClassNames}
-        onClick={onClick}
-        {...buttonProps}
-      >
-        <div className={classNames}>
-          {icon}
-          <BpkText textStyle={TEXT_STYLES.label3}>{label}</BpkText>
-        </div>
-      </button>
+      {popoverContent ? (
+        <BpkPopover
+          id="price-marker-popover"
+          label={accessibilityLabel}
+          target={priceButton}
+          {...popoverProps}
+        >
+          {popoverContent}
+        </BpkPopover>
+      ) : (
+        priceButton
+      )}
     </BpkBasicMapMarker>
   );
 };
