@@ -39,7 +39,6 @@ import {
 } from '../common-types';
 
 import STYLES from './BpkCardListRowRail.module.scss';
-import { number } from 'prop-types';
 
 const getClassName = cssModules(STYLES);
 
@@ -125,6 +124,7 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
           left: container.scrollLeft + delta,
           behavior: 'smooth',
         });
+        // handleScroll(); // toDO: why is touchstart event linked to touchbar
       }
     }, 500);
 
@@ -155,7 +155,7 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
           );
         });
       },
-      200,
+      100,
       { leading: true, trailing: false },
     );
 
@@ -198,6 +198,7 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
     return cleanUp;
   }, []);
 
+  // set currentIndex to the first visible card index
   useEffect(() => {
     if (!allVisibleIndex || allVisibleIndex.length === 0) return;
 
@@ -207,6 +208,34 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
       () => setCurrentIndex(firstVisibleIndex),
       150,
     );
+  }, [allVisibleIndex]);
+
+  // set the tab indices of unvisable cards as -1
+  useEffect(() => {
+    for (let index = 0; index < cardRefs.current.length; index++) {
+      const card = cardRefs.current[index];
+      if (!card) {
+        break;
+      }
+      const focusableElements = card.querySelectorAll<HTMLElement>(
+        'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])',
+        // todo: enable all focusable elements, even if they should not be focusable before being passed to the card
+      );
+
+      focusableElements.forEach((el) => {
+        el.tabIndex = allVisibleIndex.includes(index) ? 0 : -1; // 设置 tabIndex 为 0 或 -1
+      });
+
+      // focusableElements.forEach((el) => {
+      //   el.tabIndex = -1
+      // });
+
+      // if (allVisibleIndex.includes(index)) {
+      //   focusableElements.forEach((el) => {
+      //     el.removeAttribute('tabindex')
+      //   });
+      // }
+    }
   }, [allVisibleIndex]);
 
   useEffect(() => {
@@ -219,8 +248,6 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
       });
     }
   }, [currentIndex]);
-
-  // function isTabValidElement(
   //   element: React.ReactNode,
   // ): element is ReactElement<
   //   HTMLDivElement | HTMLAnchorElement,
@@ -255,7 +282,7 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
   //   if (typeof element.type === 'function') {
   //     console.log('Valid functional or class component');
   //     if (element.props?.tabIndex === -1) {
-        
+
   //     }
   //     const updatedElement = cloneElement(element, {
   //       tabIndex: element.props?.tabIndex === -1 ? -1 : tabIndex
@@ -287,11 +314,11 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
   //       if (!isValidElement(children) || !isTabValidElement(children)) {
   //         const updatedChildren = children; // 如果不是有效的 React 元素，直接返回
   //         return cloneElement(updatedElement, { children: updatedChildren });
-  //       }  
+  //       }
 
   //       if (isValidElement(children) && isTabValidElement(children)) {
   //       const updatedChildren = cloneElement(updatedElement, { children: children });
-  //       return cloneElement(updatedElement, { children: updatedChildren });  
+  //       return cloneElement(updatedElement, { children: updatedChildren });
   //       }
   //     }
   //     return updatedElement;
@@ -332,14 +359,14 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
 
   //       return updatedElement;
 
-        
-
   //       // return cloneElement(updatedElement, { children: updatedChildren });
   //     }
   //   }
   // };
 
   // console.log('allVisibleIndex', allVisibleIndex);
+  const [isFocused, setIsFocused] = useState(false);
+
 
   return (
     <div
@@ -349,7 +376,9 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
       <div
         className={getClassName(`bpk-card-list-row-rail__${layout}`)}
         data-testid="bpk-card-list-row-rail__content"
+        role='region'
         ref={containerRef}
+        aria-label="Self defiend Carousel"
       >
         {children.map((card, index) => {
           if (!isValidElement(card)) {
@@ -359,10 +388,7 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
             cardRefs.current[index] = el;
           };
 
-          // const updatedCard = updateTabIndex(
-          //   card,
-          //   allVisibleIndex.includes(index) ? 0 : -1,
-          // );
+          const slideAriaLabel = `slide ${index + 1} of ${totalIndicators}`;
 
           return (
             <div
@@ -371,15 +397,19 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
               )}
               ref={cardRefCallback}
               style={shownNumberStyle}
+              role="group"
+              aria-label={slideAriaLabel}
+              aria-current={index === currentIndex ? 'true' : 'false'}
             >
-              {cloneElement(card, { tabIndex: allVisibleIndex.includes(index) ? 0 : -1 })}
-              {/* {updatedCard} */}
+              {card}
             </div>
           );
         })}
       </div>
 
       <div
+        role='region'
+        aria-label="pagination"
         className={getClassName(`bpk-card-list-row-rail__accessory`)}
         data-testid="bpk-card-list-row-rail__accessory"
       >

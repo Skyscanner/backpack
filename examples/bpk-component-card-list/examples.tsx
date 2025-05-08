@@ -72,9 +72,9 @@ const DestinationCard = (i: number) => (
         </div>
         <div className={STYLES['destination-row']}>
           <BpkText textStyle={TEXT_STYLES.heading5}>Hotel</BpkText>
-          <div className={STYLES['destination-column']}>
+          <div tabIndex={0} className={STYLES['destination-column']}>
             <BpkText textStyle={TEXT_STYLES.heading5}>£100</BpkText>
-            <BpkLink href="#" onClick={console.log('#1 clicked')} implicit> £100 </BpkLink>
+            <BpkLink tabIndex={-1} href="#" onClick={console.log('#1 clicked')} implicit> £100 </BpkLink>
           </div>
         </div>
       </div>
