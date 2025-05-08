@@ -50,43 +50,44 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
   }
 
   const [collapsed, setCollapsed] = useState(true);
-  const [visibleCards, setVisibleCards] = useState(
-    children.slice(0, defaultInitiallyShownCards),
-  );
+  // const [visibleCards, setVisibleCards] = useState(
+  //   children.slice(0, defaultInitiallyShownCards),
+  // );
+
+  const showExpand = children.length > defaultInitiallyShownCards;
+  const initiallCards = children.slice(0, defaultInitiallyShownCards);
+  const restCards = children.slice(defaultInitiallyShownCards + 1, children.length);
 
   const showContent = () => {
-    setVisibleCards(children);
+    // setVisibleCards(children);
     setCollapsed(false);
     onButtonClick?.();
   };
 
   const hideContent = () => {
-    setVisibleCards(children.slice(0, initiallyShownCards));
+    // setVisibleCards(children.slice(0, initiallyShownCards));
     setCollapsed(true);
     onButtonClick?.();
   };
 
-  let accessoryContent;
-  if (accessory === ACCESSORY_TYPES.Expand) {
-    accessoryContent = (
-      <BpkExpand
-        showContent={showContent}
-        hideContent={hideContent}
-        collapsed={collapsed}
-        setCollapsed={setCollapsed}
-      >
-        {expandText || ''}
-      </BpkExpand>
-    );
-  } else if (accessory === ACCESSORY_TYPES.Button) {
-    accessoryContent = (
-      <div
-        className={getClassName('bpk-card-list-grid-stack__accessory__button')}
-      >
-        <BpkButtonV2 onClick={onButtonClick}>{buttonText}</BpkButtonV2>
-      </div>
-    );
-  }
+  const expandAccessoryContent = (
+          <BpkExpand
+            showContent={showContent}
+            hideContent={hideContent}
+            collapsed={collapsed}
+            setCollapsed={setCollapsed}
+          >
+            {expandText || ''}
+          </BpkExpand>
+        );
+
+  const buttonAccessoryContent = (
+        <div
+          className={getClassName('bpk-card-list-grid-stack__accessory__button')}
+        >
+          <BpkButtonV2 onClick={onButtonClick}>{buttonText}</BpkButtonV2>
+        </div>
+      );
 
   return (
     <div
@@ -98,9 +99,24 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
         data-testid="bpk-card-list-grid-stack__content"
         style={gridStyle}
       >
-        {visibleCards}
+        {initiallCards}
       </div>
-      {accessoryContent}
+
+      {accessory === ACCESSORY_TYPES.Button && buttonAccessoryContent}
+
+      {showExpand && (
+          <>
+            {collapsed === true && expandAccessoryContent}
+            <div
+              className={getClassName(`bpk-card-list-grid-stack__${layout}`)}
+              data-testid="bpk-card-list-grid-stack__content"
+              style={gridStyle}
+            >
+              {collapsed === false && restCards}
+            </div>
+            {collapsed === false && expandAccessoryContent}
+          </>
+        )}
     </div>
   );
 };
