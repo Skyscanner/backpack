@@ -51,7 +51,7 @@ const snippetProps = {
 };
 
 const DestinationCard = (i: number) => (
-  <BpkCard style={{minWidth: '250px'}}  href="/" padded={false}>
+  <BpkCard style={{ minWidth: '250px' }} href="/" padded={false}>
     <div className={STYLES['destination']}>
       <BpkImage
         aspectRatio={3000 / 1400}
@@ -75,7 +75,15 @@ const DestinationCard = (i: number) => (
           <BpkText textStyle={TEXT_STYLES.heading5}>Hotel</BpkText>
           <div tabIndex={0} className={STYLES['destination-column']}>
             <BpkText textStyle={TEXT_STYLES.heading5}>£100</BpkText>
-            <BpkLink tabIndex={-1} href="#" onClick={console.log('#1 clicked')} implicit> £100 </BpkLink>
+            <BpkLink
+              tabIndex={-1}
+              href="#"
+              onClick={console.log('#1 clicked')}
+              implicit
+            >
+              {' '}
+              £100{' '}
+            </BpkLink>
           </div>
         </div>
       </div>
@@ -84,7 +92,11 @@ const DestinationCard = (i: number) => (
 );
 
 const Snippet = (i: number) => (
-  <BpkSnippet src={imageUrlsDestination[i % 4]} {...snippetProps} />
+  <BpkSnippet
+    desktopLayout="vertical" // users can choose to use this prop or not
+    src={imageUrlsDestination[i % 4]}
+    {...snippetProps}
+  />
 );
 
 type ExampleCard = typeof DestinationCard | typeof Snippet;
@@ -141,7 +153,7 @@ const RowToRailForSnippetsExample = () => (
       title="Must-visit spots"
       description="Check out these world-famous destinations perfect for visiting in spring."
       chipGroup={BpkChipGroupRail()}
-      initiallyShownCards={1}
+      initiallyShownCards={2}
       cardList={makeList(Snippet)}
       layoutDesktop={LAYOUTS.row}
       layoutMobile={LAYOUTS.rail}
@@ -173,20 +185,20 @@ const GridToStackWithExpandExample = () => {
 
   return (
     <PageContainer>
-        <BpkCardList
-          title="Must-visit spots"
-          description="Check out these world-famous destinations perfect for visiting in spring."
-          cardList={makeList(DestinationCard)}
-          layoutDesktop={LAYOUTS.grid}
-          layoutMobile={LAYOUTS.stack}
-          onButtonClick={() =>
-            setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
-          }
-          accessory="expand"
-          buttonText="Explore more"
-          expandText={expandText}
+      <BpkCardList
+        title="Must-visit spots"
+        description="Check out these world-famous destinations perfect for visiting in spring."
+        cardList={makeList(DestinationCard)}
+        layoutDesktop={LAYOUTS.grid}
+        layoutMobile={LAYOUTS.stack}
+        onButtonClick={() =>
+          setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
+        }
+        accessory="expand"
+        buttonText="Explore more"
+        expandText={expandText}
       />
-   </PageContainer>
+    </PageContainer>
   );
 };
 

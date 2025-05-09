@@ -178,6 +178,10 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
       isTouching = true; // 标记触摸开始
     };
 
+    const handleTouchEnd = () => {
+      isTouching = false; // 标记触摸结束
+    };
+
     container.addEventListener('touchstart', handleTouchStart);
     container.addEventListener('wheel', handleHorizontalWheel, {
       passive: false,
@@ -186,6 +190,9 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
       passive: false,
     });
     container.addEventListener('scroll', handleScroll);
+    container.addEventListener('touchend', handleTouchEnd, {
+      passive: false,
+    });
 
     const cleanUp = () => {
       container.removeEventListener('touchstart', handleTouchStart);
