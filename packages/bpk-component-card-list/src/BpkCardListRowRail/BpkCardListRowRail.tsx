@@ -106,7 +106,7 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
 
   // intialize all visually visible cards' indices
   useEffect(() => {
-    findAllVisibleIndex(); // initialize
+    setAllVisibleIndex(findAllVisibleIndex()); // initialize
   }, []);
 
   // handle scroll events, and update the visible indices while scrolling
@@ -217,7 +217,7 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
     );
   }, [allVisibleIndex]);
 
-  // set the tab indices of unvisable cards as -1
+  // A11Y: set the tab indices of unvisable cards as -1
   useEffect(() => {
     for (let index = 0; index < cardRefs.current.length; index++) {
       const card = cardRefs.current[index];
@@ -245,6 +245,7 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
     }
   }, [allVisibleIndex]);
 
+  // currentIndex: scroll to the current card when currentIndex changes
   useEffect(() => {
     const targetCard = cardRefs.current[currentIndex];
     if (targetCard) {
@@ -255,125 +256,6 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
       });
     }
   }, [currentIndex]);
-  //   element: React.ReactNode,
-  // ): element is ReactElement<
-  //   HTMLDivElement | HTMLAnchorElement,
-  //   string | JSXElementConstructor<any>
-  // > {
-  //   // Check if the element is a valid React element
-  //   if (!isValidElement(element)) {
-  //     return false;
-  //   }
-
-  //   if (typeof element.type === 'string') {
-  //     return element.type === 'div' || element.type === 'a';
-  //   }
-
-  //   return false;
-  // }
-
-  // const updateTabIndex = (
-  //   element: ReactElement<
-  //     HTMLDivElement | HTMLAnchorElement,
-  //     string | JSXElementConstructor<any>
-  //   >,
-  //   tabIndex: number,
-  // ): ReactNode => {
-  //   if (typeof element === 'string' || typeof element === 'function') {
-  //     console.log('string or function', element);
-  //     return null; // 如果是字符串或函数，直接返回
-  //   }
-
-  //   // console.log('hihi', element);
-
-  //   if (typeof element.type === 'function') {
-  //     console.log('Valid functional or class component');
-  //     if (element.props?.tabIndex === -1) {
-
-  //     }
-  //     const updatedElement = cloneElement(element, {
-  //       tabIndex: element.props?.tabIndex === -1 ? -1 : tabIndex
-  //     });
-
-  //     if (updatedElement.props?.children) {
-  //       // console.log('New child', updatedElement)
-  //       const children = updatedElement.props.children;
-  //       // 处理 children 是字符串
-  //       if (typeof children === 'string' || typeof element === 'function') {
-  //         return null;
-  //       }
-
-  //       console.log('children', children);
-
-  //       // 处理 children 是数组
-  //       if (Array.isArray(children)) {
-  //         console.log('HIHIHHI')
-  //         const updatedChildren = Children.map(children, (child) => {
-  //           if (!isValidElement(child) || !isTabValidElement(child)) {
-  //             return child; // 如果不是有效的 React 元素，直接返回
-  //           }
-  //           return updateTabIndex(child, tabIndex); // 递归更新 tabIndex
-  //         });
-  //         return cloneElement(updatedElement, { children: updatedChildren });
-  //       }
-
-  //       // // 处理 children 是单个元素
-  //       if (!isValidElement(children) || !isTabValidElement(children)) {
-  //         const updatedChildren = children; // 如果不是有效的 React 元素，直接返回
-  //         return cloneElement(updatedElement, { children: updatedChildren });
-  //       }
-
-  //       if (isValidElement(children) && isTabValidElement(children)) {
-  //       const updatedChildren = cloneElement(updatedElement, { children: children });
-  //       return cloneElement(updatedElement, { children: updatedChildren });
-  //       }
-  //     }
-  //     return updatedElement;
-  //   }
-
-  //   if (
-  //     element instanceof HTMLDivElement ||
-  //     element instanceof HTMLAnchorElement
-  //   ) {
-  //     console.log('instanceof HTMLDivElement', element);
-  //     const updatedElement = cloneElement(element, {
-  //       tabIndex: element.tabIndex === 0 ? tabIndex : element.tabIndex,
-  //     });
-
-  //     if (updatedElement.props?.children) {
-  //       const children = updatedElement.props.children;
-  //       // 处理 children 是字符串
-  //       if (typeof children === 'string' || typeof element === 'function') {
-  //         return null;
-  //       }
-
-  //       // 处理 children 是数组
-  //       if (Array.isArray(children)) {
-  //         const updatedChildren = Children.map(children, (child) => {
-  //           if (!isValidElement(child) || !isTabValidElement(child)) {
-  //             return child; // 如果不是有效的 React 元素，直接返回
-  //           }
-  //           return updateTabIndex(child, tabIndex); // 递归更新 tabIndex
-  //         });
-  //         return cloneElement(updatedElement, { children: updatedChildren });
-  //       }
-
-  //       // // 处理 children 是单个元素
-  //       if (!isValidElement(children) || !isTabValidElement(children)) {
-  //         const updatedChildren = children; // 如果不是有效的 React 元素，直接返回
-  //         return cloneElement(updatedElement, { children: updatedChildren });
-  //       }
-
-  //       return updatedElement;
-
-  //       // return cloneElement(updatedElement, { children: updatedChildren });
-  //     }
-  //   }
-  // };
-
-  // console.log('allVisibleIndex', allVisibleIndex);
-  const [isFocused, setIsFocused] = useState(false);
-
 
   return (
     <div
