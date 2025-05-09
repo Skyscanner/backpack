@@ -35,6 +35,7 @@ import BpkMap, {
   MARKER_STATUSES,
   withGoogleMapsScript,
 } from '../../packages/bpk-component-map';
+import BpkPopover from '../../packages/bpk-component-popover';
 import BpkText from '../../packages/bpk-component-text';
 import { action } from '../bpk-storybook-utils';
 
@@ -209,26 +210,34 @@ class StatefulBpkPriceMarkerV2 extends Component<
         zoom={15}
         center={{ latitude: 55.944665, longitude: -3.1964903 }}
       >
-        {venues
-          .map((venue) => (
-            <BpkPriceMarkerV2
-              id={venue.id}
-              label={venue.price}
-              icon={
-                this.props.airportsIconWithPrice ? venue.airportsIcon : null
-              }
-              position={{
-                latitude: venue.latitude,
-                longitude: venue.longitude,
-              }}
-              onClick={() => {
-                this.props.action();
-                this.selectVenue(venue.id);
-              }}
-              status={this.getStatus(venue.id)}
-              accessibilityLabel="Click the price marker"
-            />
-          ))}
+        {venues.map((venue) => (
+          <BpkPopover
+            hoverable
+            target={
+              <span id="popover-target">
+                <BpkPriceMarkerV2
+                  id={venue.id}
+                  label={venue.price}
+                  icon={
+                    this.props.airportsIconWithPrice ? venue.airportsIcon : null
+                  }
+                  position={{
+                    latitude: venue.latitude,
+                    longitude: venue.longitude,
+                  }}
+                  onClick={() => {
+                    this.props.action();
+                    this.selectVenue(venue.id);
+                  }}
+                  status={this.getStatus(venue.id)}
+                  accessibilityLabel="Click the price marker"
+                />
+              </span>
+            }
+          >
+            test
+          </BpkPopover>
+        ))}
       </StoryMap>
     );
   }
