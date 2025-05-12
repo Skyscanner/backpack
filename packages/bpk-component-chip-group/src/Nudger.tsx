@@ -56,6 +56,9 @@ const AlignedRightArrowIcon = withButtonAlignment(ArrowRight);
 // Chosen based on feeling good with the example stories
 const SCROLL_DISTANCE = 150;
 
+// Threshold to account for minor scroll rounding errors near edges
+const SCROLL_MARGIN = 2;
+
 const Nudger = ({
   ariaLabel,
   chipStyle = CHIP_TYPES.default,
@@ -77,8 +80,9 @@ const Nudger = ({
 
       const { offsetWidth, scrollLeft, scrollWidth } = scrollContainerRef.current;
       const scrollValue = rtl ? -Math.floor(scrollLeft) : Math.ceil(scrollLeft);
-      const showLeading = scrollValue > 0;
-      const showTrailing = scrollValue < scrollWidth - offsetWidth;
+      const maxScrollValue = scrollWidth - offsetWidth;
+      const showLeading = scrollValue > SCROLL_MARGIN;
+      const showTrailing = scrollValue < maxScrollValue - SCROLL_MARGIN;
 
       setShow(showLeading || showTrailing);
       setEnabled((leading && showLeading) || (!leading && showTrailing))

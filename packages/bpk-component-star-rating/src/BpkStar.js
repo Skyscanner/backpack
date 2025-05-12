@@ -27,6 +27,9 @@ import OutlineLargeIcon from '../../bpk-component-icon/lg/star-outline';
 import SmallIcon from '../../bpk-component-icon/sm/star';
 import HalfSmallIcon from '../../bpk-component-icon/sm/star-half';
 import OutlineSmallIcon from '../../bpk-component-icon/sm/star-outline';
+import ExtraLargeIcon from '../../bpk-component-icon/xl/star';
+import HalfExtraLargeIcon from '../../bpk-component-icon/xl/star-half';
+import OutlineExtraLargeIcon from '../../bpk-component-icon/xl/star-outline';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkStar.module.scss';
@@ -43,13 +46,15 @@ type Props = {
   type: $Keys<typeof STAR_TYPES>,
   className: ?string,
   large: boolean,
+  extraLarge: boolean,
 };
 
 const BpkStar = (props: Props) => {
-  const { className, large, type, ...rest } = props;
+  const { className, extraLarge, large, type, ...rest } = props;
   const iconClassNames = getClassName(
     'bpk-star',
     large && 'bpk-star--large',
+    extraLarge && 'bpk-star--extra-large',
     type === STAR_TYPES.FULL && 'bpk-star--filled',
     className,
   );
@@ -58,6 +63,7 @@ const BpkStar = (props: Props) => {
     'bpk-star__container',
     'bpk-star__container--half-star',
     large && 'bpk-star__container--large',
+    extraLarge && 'bpk-star__container--extra-large',
     className,
   );
 
@@ -75,6 +81,12 @@ const BpkStar = (props: Props) => {
     Icon = LargeIcon;
     OutlineIcon = OutlineLargeIcon;
     HalfIcon = HalfLargeIcon;
+  }
+
+  if (extraLarge) {
+    Icon = ExtraLargeIcon;
+    OutlineIcon = OutlineExtraLargeIcon;
+    HalfIcon = HalfExtraLargeIcon;
   }
 
   if (type === STAR_TYPES.HALF) {
@@ -108,11 +120,13 @@ BpkStar.propTypes = {
     .isRequired,
   className: PropTypes.string,
   large: PropTypes.bool,
+  extraLarge: PropTypes.bool,
 };
 
 BpkStar.defaultProps = {
   className: null,
   large: false,
+  extraLarge: false,
 };
 
 export const BpkStarNonRtl = BpkStar;
