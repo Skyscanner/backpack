@@ -30,8 +30,10 @@ import {
   FloatingArrow,
   FloatingPortal,
   offset,
+  safePolygon,
   shift,
   useFloating,
+  useFocus,
   useHover,
   useInteractions,
   useRole,
@@ -121,12 +123,14 @@ const BpkTooltip = ({
 
   const hover = useHover(context, {
     mouseOnly: !hasTouchSupport() || !hideOnTouchDevices,
+    handleClose: safePolygon()
   });
   const role = useRole(context, { role: 'tooltip' });
 
   const { getFloatingProps, getReferenceProps } = useInteractions([
     hover,
     role,
+    useFocus(context)
   ]);
 
   const targetWithAccessibilityProps = cloneElement(target, {
