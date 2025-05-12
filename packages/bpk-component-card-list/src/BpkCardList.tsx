@@ -23,6 +23,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import BpkCardListGridStack from './BpkCardListGridStack';
 import BpkCardListRowRail from './BpkCardListRowRail';
+import BpkCardListRowRailContainer from './BpkCardListRowRail';
 import { ACCESSORY_TYPES, LAYOUTS } from './common-types';
 
 import type CardListProps from './common-types';
@@ -93,7 +94,7 @@ const BpkCardList = (props: CardListProps) => {
 
               if (layoutMobile === LAYOUTS.rail) {
                 return (
-                  <BpkCardListRowRail
+                  <BpkCardListRowRailContainer
                     initiallyShownCards={initiallyShownCards}
                     buttonText={buttonText}
                     expandText={expandText}
@@ -101,7 +102,7 @@ const BpkCardList = (props: CardListProps) => {
                     layout={layoutMobile}
                   >
                     {cardList}
-                  </BpkCardListRowRail>
+                  </BpkCardListRowRailContainer>
                 );
               }
 
@@ -114,7 +115,7 @@ const BpkCardList = (props: CardListProps) => {
                 accessory === undefined)
             ) {
               return (
-                <BpkCardListRowRail
+                <BpkCardListRowRailContainer
                   accessory={accessory}
                   initiallyShownCards={initiallyShownCards}
                   buttonText={buttonText}
@@ -123,7 +124,7 @@ const BpkCardList = (props: CardListProps) => {
                   layout={layoutDesktop}
                 >
                   {cardList}
-                </BpkCardListRowRail>
+                </BpkCardListRowRailContainer>
               );
             }
 

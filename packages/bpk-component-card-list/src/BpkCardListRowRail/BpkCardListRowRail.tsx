@@ -105,9 +105,9 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
   };
 
   // intialize all visually visible cards' indices
-  useEffect(() => {
-    setAllVisibleIndex(findAllVisibleIndex()); // initialize
-  }, []);
+  // useEffect(() => {
+  //   setAllVisibleIndex(findAllVisibleIndex()); // initialize
+  // }, []);
 
   // handle scroll events, and update the visible indices while scrolling
   useEffect(() => {
@@ -205,7 +205,7 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
     return cleanUp;
   }, []);
 
-  // set currentIndex to the first visible card index
+  // SET CURRENT to the first visible card index
   useEffect(() => {
     if (!allVisibleIndex || allVisibleIndex.length === 0) return;
 

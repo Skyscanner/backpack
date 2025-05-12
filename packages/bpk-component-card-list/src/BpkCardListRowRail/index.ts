@@ -16,6 +16,10 @@
  * limitations under the License.
  */
 
-import BpkCardListRowRail from './BpkCardListRowRail';
+// import BpkCardListRowRail from './BpkCardListRowRail';
 
-export default BpkCardListRowRail;
+// export default BpkCardListRowRail;
+
+import BpkCardListRowRailContainer from './BpkCardListRowRailContainer';
+
+export default BpkCardListRowRailContainer;

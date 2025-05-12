@@ -70,12 +70,17 @@ type CardListGridStackProps = {
 type CardListRowRailProps = {
   children: Array<ReactElement<HTMLDivElement | HTMLAnchorElement>>;
   accessory?: typeof ACCESSORY_TYPES.Pagination;
-  expandText?: string;
-  buttonText?: string;
-  onButtonClick?: () => void;
   initiallyShownCards: number;
   layout: typeof LAYOUTS.row | typeof LAYOUTS.rail;
 };
+
+type CardListCarouselProps = {
+  children: Array<ReactElement<HTMLDivElement | HTMLAnchorElement>>;
+  initiallyShownCards: number;
+  layout: typeof LAYOUTS.row | typeof LAYOUTS.rail;
+  currentIndex: number;
+  setCurrentIndex: Dispatch<SetStateAction<number>>;
+}
 
 type CardListProps = CardListBaseProps;
 
@@ -86,5 +91,6 @@ export type {
   MobileLayouts,
   CardListGridStackProps,
   CardListRowRailProps,
+  CardListCarouselProps,
   ExpandProps,
 };
