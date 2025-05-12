@@ -395,24 +395,25 @@
   background: none; /* stylelint-disable-line order/order, order/properties-order */
   box-shadow: none;
 
-  @include bpk-link--implicit;
+  @include bpk-link;
 
-  &::after {
-    bottom: auto;
+  &__text {
+    @include bpk-link-underlined;
+  }
+
+  &:hover &__text {
+    background-size: 0 $bpk-border-size-sm;
   }
 
   padding: $vertical-padding 0; /* stylelint-disable-line order/order, order/properties-order */
-  color: $bpk-private-button-link-normal-foreground-day;
 
   @include bpk-hover {
     background: none;
-    color: $bpk-private-button-link-pressed-foreground-day;
     text-decoration: none;
   }
 
   &:active {
     background: none;
-    color: $bpk-private-button-link-pressed-foreground-day;
     text-decoration: none;
   }
 
@@ -439,34 +440,14 @@
 
 @mixin bpk-button--link-on-dark {
   @include bpk-button--link;
-  @include bpk-themeable-property(
-    color,
-    --bpk-button-link-on-dark-text-color,
-    $bpk-private-button-link-on-dark-normal-foreground-day
-  );
+  @include bpk-link--alternate;
 
-  @include bpk-hover {
-    @include bpk-themeable-property(
-      color,
-      --bpk-button-link-on-dark-hover-text-color,
-      $bpk-private-button-link-on-dark-pressed-foreground-day
-    );
+  &__text {
+    @include bpk-link-underlined--alternate;
   }
 
-  &:active {
-    @include bpk-themeable-property(
-      color,
-      --bpk-button-link-on-dark-active-text-color,
-      $bpk-private-button-link-on-dark-pressed-foreground-day
-    );
-  }
-
-  &:visited {
-    @include bpk-themeable-property(
-      color,
-      --bpk-button-link-on-dark-text-color,
-      $bpk-private-button-link-on-dark-normal-foreground-day
-    );
+  &:hover &__text {
+    background-size: 0 $bpk-border-size-sm;
   }
 
   &:disabled {
