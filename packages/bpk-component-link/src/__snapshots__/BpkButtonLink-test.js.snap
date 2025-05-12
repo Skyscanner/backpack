@@ -6,7 +6,11 @@ exports[`BpkButtonLink should render correctly 1`] = `
     class="bpk-link"
     type="button"
   >
-    Link
+    <span
+      class="bpk-link-underlined"
+    >
+      Link
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -17,7 +21,11 @@ exports[`BpkButtonLink should render correctly with "alternate" attribute 1`] = 
     class="bpk-link bpk-link--alternate"
     type="button"
   >
-    Link
+    <span
+      class="bpk-link-underlined bpk-link-underlined--alternate"
+    >
+      Link
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -28,7 +36,11 @@ exports[`BpkButtonLink should render correctly with a "className" atribute 1`] =
     class="bpk-link test-class"
     type="button"
   >
-    Link
+    <span
+      class="bpk-link-underlined"
+    >
+      Link
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -40,7 +52,11 @@ exports[`BpkButtonLink should render correctly with arbitrary attributes 1`] = `
     id="test-id"
     type="button"
   >
-    Link
+    <span
+      class="bpk-link-underlined"
+    >
+      Link
+    </span>
   </button>
 </DocumentFragment>
 `;

@@ -49,6 +49,7 @@ const FullExample = () => (
         <BpkTableHeadCell>State</BpkTableHeadCell>
         <BpkTableHeadCell>Small</BpkTableHeadCell>
         <BpkTableHeadCell>Large</BpkTableHeadCell>
+        <BpkTableHeadCell>Extra Large</BpkTableHeadCell>
       </BpkTableRow>
     </BpkTableHead>
     <BpkTableBody>
@@ -60,6 +61,9 @@ const FullExample = () => (
         <BpkTableCell>
           <BpkStar type={STAR_TYPES.EMPTY} large />
         </BpkTableCell>
+        <BpkTableCell>
+          <BpkStar type={STAR_TYPES.EMPTY} extraLarge />
+        </BpkTableCell>
       </BpkTableRow>
       <BpkTableRow>
         <BpkTableCell>Half</BpkTableCell>
@@ -69,6 +73,9 @@ const FullExample = () => (
         <BpkTableCell>
           <BpkStar type={STAR_TYPES.HALF} large />
         </BpkTableCell>
+        <BpkTableCell>
+          <BpkStar type={STAR_TYPES.HALF} extraLarge />
+        </BpkTableCell>
       </BpkTableRow>
       <BpkTableRow>
         <BpkTableCell>Full</BpkTableCell>
@@ -77,6 +84,9 @@ const FullExample = () => (
         </BpkTableCell>
         <BpkTableCell>
           <BpkStar type={STAR_TYPES.FULL} large />
+        </BpkTableCell>
+        <BpkTableCell>
+          <BpkStar type={STAR_TYPES.FULL} extraLarge />
         </BpkTableCell>
       </BpkTableRow>
     </BpkTableBody>
@@ -88,6 +98,8 @@ const FullStarsExample = () => (
     <StarRating rating={5} />
     <br />
     <StarRating rating={5} large />
+    <br />
+    <StarRating rating={5} extraLarge />
   </div>
 );
 
@@ -96,6 +108,8 @@ const EmptyStarsExample = () => (
     <StarRating rating={0} />
     <br />
     <StarRating rating={0} large />
+    <br />
+    <StarRating rating={0} extraLarge />
   </div>
 );
 
@@ -104,6 +118,8 @@ const ThreeStarsExample = () => (
     <StarRating rating={3} />
     <br />
     <StarRating rating={3} large />
+    <br />
+    <StarRating rating={3} extraLarge />
   </div>
 );
 
@@ -112,6 +128,8 @@ const ThreeAndAHalfStarsExample = () => (
     <StarRating rating={3.5} />
     <br />
     <StarRating rating={3.5} large />
+    <br />
+    <StarRating rating={3.5} extraLarge />
   </div>
 );
 
@@ -120,6 +138,8 @@ const ThreePointThreeStarsExample = () => (
     <StarRating rating={3.3} />
     <br />
     <StarRating rating={3.3} large />
+    <br />
+    <StarRating rating={3.3} extraLarge />
   </div>
 );
 
@@ -128,6 +148,8 @@ const ThreePointEightStarsExample = () => (
     <StarRating rating={3.8} />
     <br />
     <StarRating rating={3.8} large />
+    <br />
+    <StarRating rating={3.8} extraLarge />
   </div>
 );
 
@@ -136,6 +158,8 @@ const ThreePointThreeStarsRoundedExample = () => (
     <StarRating rating={3.3} rounding={ROUNDING_TYPES.nearest} />
     <br />
     <StarRating rating={3.3} large rounding={ROUNDING_TYPES.nearest} />
+    <br />
+    <StarRating rating={3.3} extraLarge rounding={ROUNDING_TYPES.nearest} />
   </div>
 );
 
@@ -144,6 +168,8 @@ const ThreePointEightStarsRoundedExample = () => (
     <StarRating rating={3.8} rounding={ROUNDING_TYPES.nearest} />
     <br />
     <StarRating rating={3.8} large rounding={ROUNDING_TYPES.nearest} />
+    <br />
+    <StarRating rating={3.8} extraLarge rounding={ROUNDING_TYPES.nearest} />
   </div>
 );
 
@@ -164,6 +190,15 @@ const InteractiveExample = () => (
       }
       onRatingSelect={action('large rating selected')}
       large
+    />
+    <br />
+    <InteractiveStarRating
+      id="extra-large-star-rating"
+      getStarLabel={(rating, maxRating) =>
+        `${rating} out of ${maxRating} stars`
+      }
+      onRatingSelect={action('extra large rating selected')}
+      extraLarge
     />
   </div>
 );

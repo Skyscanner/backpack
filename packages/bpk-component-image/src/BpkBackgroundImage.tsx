@@ -125,12 +125,14 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
           {loading && (
             <CSSTransition
               classNames={{
-                exit: getClassName('bpk-image__spinner--shown'),
-                exitActive: getClassName('bpk-image__spinner--hidden'),
+                exit: getClassName('bpk-background-image__spinner--shown'),
+                exitActive: getClassName(
+                  'bpk-background-image__spinner--hidden',
+                ),
               }}
               timeout={parseInt(animations.durationBase, 10)}
             >
-              <div className={getClassName('bpk-image__spinner')}>
+              <div className={getClassName('bpk-background-image__spinner')}>
                 <BpkSpinner />
               </div>
             </CSSTransition>

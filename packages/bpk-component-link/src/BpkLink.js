@@ -56,6 +56,7 @@ const BpkLink = forwardRef((props: Props, ref) => {
   } = props;
 
   const classNames = [getClassName('bpk-link')];
+  const underlinedClassNames = [getClassName('bpk-link-underlined')];
 
   const target = blank ? '_blank' : null;
   const rel = blank ? propRel || 'noopener noreferrer' : propRel;
@@ -69,6 +70,14 @@ const BpkLink = forwardRef((props: Props, ref) => {
   if (alternate) {
     classNames.push(getClassName('bpk-link--alternate'));
   }
+  
+  if (implicit && !alternate) {
+    underlinedClassNames.push(getClassName('bpk-link-underlined--implicit'));
+  } else if (alternate && !implicit) {
+    underlinedClassNames.push(getClassName('bpk-link-underlined--alternate'));
+  } else if (implicit && alternate) {
+    underlinedClassNames.push(getClassName('bpk-link-underlined-implicit--alternate'));
+  }
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
@@ -81,7 +90,7 @@ const BpkLink = forwardRef((props: Props, ref) => {
       ref={ref}
       {...rest}
     >
-      {children}
+      <span className={underlinedClassNames.join(' ')}>{children}</span>
     </a>
   );
 });

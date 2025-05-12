@@ -9,7 +9,11 @@ exports[`BpkNavigationButtonLink should render correctly 1`] = `
       class="bpk-link"
       type="button"
     >
-      Test
+      <span
+        class="bpk-link-underlined"
+      >
+        Test
+      </span>
     </button>
   </span>
 </DocumentFragment>

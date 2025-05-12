@@ -8,7 +8,11 @@ exports[`BpkLink should render correctly with "blank" and "rel" attributes 1`] =
     rel="rel-overwrite"
     target="_blank"
   >
-    Link (new window)
+    <span
+      class="bpk-link-underlined"
+    >
+      Link (new window)
+    </span>
   </a>
 </DocumentFragment>
 `;
@@ -19,7 +23,11 @@ exports[`BpkLink should render correctly with a "alternate" attribute 1`] = `
     class="bpk-link bpk-link--alternate"
     href="#"
   >
-    Link
+    <span
+      class="bpk-link-underlined bpk-link-underlined--alternate"
+    >
+      Link
+    </span>
   </a>
 </DocumentFragment>
 `;
@@ -32,7 +40,11 @@ exports[`BpkLink should render correctly with a "blank" attribute 1`] = `
     rel="noopener noreferrer"
     target="_blank"
   >
-    Link (new window)
+    <span
+      class="bpk-link-underlined"
+    >
+      Link (new window)
+    </span>
   </a>
 </DocumentFragment>
 `;
@@ -43,7 +55,11 @@ exports[`BpkLink should render correctly with a "className" attribute 1`] = `
     class="bpk-link test-class"
     href="#"
   >
-    Link
+    <span
+      class="bpk-link-underlined"
+    >
+      Link
+    </span>
   </a>
 </DocumentFragment>
 `;
@@ -54,7 +70,11 @@ exports[`BpkLink should render correctly with a "href" attribute 1`] = `
     class="bpk-link"
     href="#"
   >
-    Link
+    <span
+      class="bpk-link-underlined"
+    >
+      Link
+    </span>
   </a>
 </DocumentFragment>
 `;
@@ -67,7 +87,11 @@ exports[`BpkLink should render correctly with a "rel" attribute 1`] = `
     rel="rel-attr"
     target="_blank"
   >
-    Link (new window)
+    <span
+      class="bpk-link-underlined"
+    >
+      Link (new window)
+    </span>
   </a>
 </DocumentFragment>
 `;
@@ -79,7 +103,11 @@ exports[`BpkLink should render correctly with arbitrary attributes 1`] = `
     href="#"
     id="test-id"
   >
-    Link
+    <span
+      class="bpk-link-underlined"
+    >
+      Link
+    </span>
   </a>
 </DocumentFragment>
 `;
