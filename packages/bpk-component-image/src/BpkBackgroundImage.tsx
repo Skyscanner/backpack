@@ -73,6 +73,12 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
     }
   }
 
+  componentDidUpdate(prevProps: BpkBackgroundImageProps) {
+    if (prevProps.src !== this.props.src) {
+      this.startImageLoad();
+    }
+  }
+
   onBackgroundImageError = (): void => {
     if (this.props.onError) {
       this.props.onError();
