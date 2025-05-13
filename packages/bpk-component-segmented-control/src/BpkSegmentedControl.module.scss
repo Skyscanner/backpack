@@ -35,6 +35,7 @@
 }
 
 .bpk-segmented-control {
+  position: relative;
   min-height: tokens.bpk-spacing-xl();
   padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
   border: none;
@@ -87,6 +88,10 @@
       background-color: tokens.$bpk-private-segmented-control-surface-contrast-on-day;
       color: tokens.$bpk-text-on-dark-day;
     }
+  }
+
+  &-label {
+    cursor: pointer;
   }
 }
 

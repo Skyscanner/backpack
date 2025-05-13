@@ -64,7 +64,7 @@ const BpkSegmentedControl = ({
   );
 
   return (
-    <div className={containerStyling}>
+    <div className={containerStyling} role="radiogroup">
       {buttonContents.map((content, index) => {
         const isSelected = index === selectedButton;
         const rightOfOption = index === selectedButton + 1;
@@ -78,17 +78,24 @@ const BpkSegmentedControl = ({
             `bpk-segmented-control--${type}-selected-shadow`,
         );
 
+        const radioId = `segmented-control-${index}`;
         return (
-          <button
-            key={`index-${index.toString()}`}
-            id={index.toString()}
-            type="button"
-            onClick={() => handleButtonClick(index)}
-            className={buttonStyling}
-            aria-pressed={!!isSelected}
-          >
-            {content}
-          </button>
+          <div key={radioId} className={buttonStyling}>
+            <input
+              id={radioId}
+              type="radio"
+              name="bpk-segmented-control"
+              checked={isSelected}
+              onChange={() => handleButtonClick(index)}
+              className="visually-hidden"
+            />
+            <label
+              htmlFor={radioId}
+              className={getClassName('bpk-segmented-control-label')}
+            >
+              {content}
+            </label>
+          </div>
         );
       })}
     </div>
