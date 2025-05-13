@@ -91,7 +91,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       if (event.deltaX !== 0) return; 
       event.preventDefault();
       debounceVerticalScroll(event);
-    //   }
     };
 
     container.addEventListener('wheel', handleVerticalWheel, {
