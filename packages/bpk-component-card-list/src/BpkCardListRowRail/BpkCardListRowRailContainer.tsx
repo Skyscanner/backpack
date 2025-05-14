@@ -15,90 +15,68 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { useState } from 'react';
+
+import BpkPageIndicator from '../../../bpk-component-page-indicator';
+import BpkCardListCarousel from './BpkCardListCarousel';
+import { cssModules } from '../../../bpk-react-utils';
 import {
-    useRef,
-    useState,
-    useEffect,
-    CSSProperties,
-    ReactNode,
-    ReactElement,
-    cloneElement,
-    isValidElement,
-    Children,
-    JSXElementConstructor,
-  } from 'react';
-  import _, { clone, find, set, update } from 'lodash';
-  
-  import BpkPageIndicator from '../../../bpk-component-page-indicator';
-  import BpkCardListCarousel from './BpkCardListCarousel';
-  import BpkSnippet from '../../../bpk-component-snippet';
-  import { cssModules } from '../../../bpk-react-utils';
-  import {
-    ACCESSORY_TYPES,
-    LAYOUTS,
-    type CardListRowRailProps,
-  } from '../common-types';
-  
-  import STYLES from './BpkCardListRowRail.module.scss';
-  
-  const getClassName = cssModules(STYLES);
-  
-  const BpkCardListRowRail = (props: CardListRowRailProps) => {
-    const {
-      accessory,
-      children,
-      initiallyShownCards,
-      layout,
-    } = props;
-  
-    const totalIndicators = children.length;
-    const [currentIndex, setCurrentIndex] = useState(0);
-  
-    let accessoryContent = null;
-  
-    if (layout === LAYOUTS.row && accessory === ACCESSORY_TYPES.Pagination) {
-      accessoryContent = (
-        <BpkPageIndicator
-          currentIndex={currentIndex}
-          totalIndicators={totalIndicators}
-          onClick={(_e, index) => {
-            setCurrentIndex(index);
-          }}
-          showNav
-          indicatorLabel="Go to slide"
-          prevNavLabel="Previous slide"
-          nextNavLabel="Next slide"
-        />
-      );
-    }
-      
-    return (
-      <div
-        className={getClassName('bpk-card-list-row-rail')}
-        data-testid="bpk-card-list-row-rail')}"
-      >
+  ACCESSORY_TYPES,
+  LAYOUTS,
+  type CardListRowRailProps,
+} from '../common-types';
 
-        <BpkCardListCarousel
-            children={children}
-            initiallyShownCards={initiallyShownCards}
-            layout={layout}
-            currentIndex={currentIndex}
-            setCurrentIndex={setCurrentIndex}
-        />
-  
-        <div
-          role='region'
-          aria-label="pagination"
-          className={getClassName(`bpk-card-list-row-rail__accessory`)}
-          data-testid="bpk-card-list-row-rail__accessory"
-        >
-          {accessoryContent}
-        </div>
+import STYLES from './BpkCardListRowRail.module.scss';
 
-        
-      </div>
+const getClassName = cssModules(STYLES);
+
+const BpkCardListRowRail = (props: CardListRowRailProps) => {
+  const { accessory, children, initiallyShownCards, layout } = props;
+
+  const totalIndicators = children.length;
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  let accessoryContent = null;
+
+  if (layout === LAYOUTS.row && accessory === ACCESSORY_TYPES.Pagination) {
+    accessoryContent = (
+      <BpkPageIndicator
+        currentIndex={currentIndex}
+        totalIndicators={totalIndicators}
+        onClick={(_e, index) => {
+          setCurrentIndex(index);
+        }}
+        showNav
+        indicatorLabel="Go to slide"
+        prevNavLabel="Previous slide"
+        nextNavLabel="Next slide"
+      />
     );
-  };
-  
-  export default BpkCardListRowRail;
-  
+  }
+
+  return (
+    <div
+      className={getClassName('bpk-card-list-row-rail')}
+      data-testid="bpk-card-list-row-rail')}"
+    >
+      <BpkCardListCarousel
+        children={children}
+        initiallyShownCards={initiallyShownCards}
+        layout={layout}
+        currentIndex={currentIndex}
+        setCurrentIndex={setCurrentIndex}
+      />
+
+      <div
+        role="region"
+        aria-label="pagination"
+        className={getClassName(`bpk-card-list-row-rail__accessory`)}
+        data-testid="bpk-card-list-row-rail__accessory"
+      >
+        {accessoryContent}
+      </div>
+    </div>
+  );
+};
+
+export default BpkCardListRowRail;

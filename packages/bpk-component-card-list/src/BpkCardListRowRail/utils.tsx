@@ -16,60 +16,94 @@
  * limitations under the License.
  */
 
-import { useEffect, useMemo, useRef } from 'react';
-import type { MutableRefObject } from 'react';
+import { useEffect } from 'react';
 
-export function useScrollToInitialImage(
-  initialImageIndex: number,
-  imagesRef: MutableRefObject<Array<HTMLElement | null>>,
+export function useUpdateCurrentIndexByVisibility(
+  visibleRatios: number[],
+  setCurrentIndex: (index: number) => void,
+  setStateTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
 ) {
   useEffect(() => {
-    const element = imagesRef.current[initialImageIndex];
-    if (element) {
-      element.scrollIntoView({
+    if (!visibleRatios || visibleRatios.length === 0) return;
+
+    if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current);
+
+    const firstVisibleIndex = visibleRatios.findIndex((ratio) => ratio > 0);
+
+    // when the first visible card is not fully visible
+    // the scrolling hasn't ended
+    // we don't set the current index
+
+    if (visibleRatios[firstVisibleIndex] > 0.95) {
+      setStateTimeoutRef.current = setTimeout(() => {
+        console.log('RATIO: setCurrentIndex', firstVisibleIndex);
+        setCurrentIndex(firstVisibleIndex);
+      }, 150);
+    }
+  }, [visibleRatios]);
+}
+
+export function useScrollToCard(
+  currentIndex: number,
+  cardRefs: React.MutableRefObject<(HTMLDivElement | null)[]>,
+  setStateTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
+  setStateLockRef: React.MutableRefObject<boolean>,
+) {
+  useEffect(() => {
+    const targetCard = cardRefs.current[currentIndex];
+    if (targetCard) {
+      if (setStateTimeoutRef.current) {
+        console.log(
+          'COMPETING: The first priority of setting currentIndex should be here',
+        );
+        clearTimeout(setStateTimeoutRef.current);
+      }
+      if (setStateLockRef.current && setStateLockRef.current === true) {
+        console.log('LOCK: setStateLock is working and prevent scrollIntoView');
+        return;
+      }
+      targetCard.scrollIntoView({
+        behavior: 'smooth',
         block: 'nearest',
         inline: 'start',
       });
     }
-  }, [initialImageIndex, imagesRef]);
+  }, [currentIndex]);
 }
 
 export function useIntersectionObserver(
   { root, threshold }: IntersectionObserverInit,
   visibleRatios: Array<number>,
-  setVisibleRatios: React.Dispatch<
-    React.SetStateAction <Array<number>>
-  >,
-
+  setVisibleRatios: React.Dispatch<React.SetStateAction<Array<number>>>,
 ) {
-let observer: IntersectionObserver | null = null;
+  let observer: IntersectionObserver | null = null;
 
-if (root) {
+  if (root) {
     observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                const index = Number(entry.target.getAttribute('data-index'));
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = Number(entry.target.getAttribute('data-index'));
 
-                if (entry.intersectionRatio !== visibleRatios[index]) {
-                    const index = Number(entry.target.getAttribute('data-index'));
-                    setVisibleRatios((prev) => {
-                        const newVisibleRatios = [...prev];
-                        newVisibleRatios[index] = entry.intersectionRatio;
-                        return newVisibleRatios;
-                    });
-                }
-            }
-    )},      
-        { root, threshold },
+          if (entry.intersectionRatio !== visibleRatios[index]) {
+            const index = Number(entry.target.getAttribute('data-index'));
+            setVisibleRatios((prev) => {
+              const newVisibleRatios = [...prev];
+              newVisibleRatios[index] = entry.intersectionRatio;
+              return newVisibleRatios;
+            });
+          }
+        });
+      },
+      { root, threshold },
     );
-}
+  }
 
-const observe = (element: HTMLElement | null, index: number) => {
+  const observe = (element: HTMLElement | null, index: number) => {
     if (element && observer) {
-        element.setAttribute('data-index', index.toString());
-        observer.observe(element);
+      element.setAttribute('data-index', index.toString());
+      observer.observe(element);
     }
-};
+  };
 
   return observe;
 }
