@@ -122,6 +122,14 @@ class BpkMobileScrollContainer extends Component<Props, State> {
     this.setScrollIndicatorClassName();
   };
 
+  onScroll = (event: UIEvent) => {
+    this.setScrollIndicatorClassName(event);
+    const { onScroll } = this.props;
+    if (onScroll) {
+      onScroll(event);
+    }
+  }
+
   setScrollIndicatorClassName = (event) => {
     const classNames = computeScrollIndicatorClassName(
       this.scrollerEl,
@@ -204,7 +212,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
             }
             this.scrollerEl = el;
           }}
-          onScroll={this.setScrollIndicatorClassName}
+          onScroll={this.onScroll}
           className={scrollerClassNames}
         >
           <InnerContainer
