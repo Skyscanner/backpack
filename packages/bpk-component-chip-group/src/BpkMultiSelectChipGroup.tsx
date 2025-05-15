@@ -19,7 +19,12 @@ import type { ReactNode } from 'react';
 import { useRef, useState, useEffect } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
-import BpkSelectableChip, { BpkDismissibleChip, BpkIconChip, BpkDropdownChip, CHIP_TYPES } from '../../bpk-component-chip';
+import BpkSelectableChip, {
+  BpkDismissibleChip,
+  BpkIconChip,
+  BpkDropdownChip,
+  CHIP_TYPES,
+} from '../../bpk-component-chip';
 import FilterIconSm from '../../bpk-component-icon/sm/filter';
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
@@ -48,11 +53,13 @@ const CHIP_COMPONENT_MAP = {
   [CHIP_COMPONENT.dismissible]: BpkDismissibleChip,
   [CHIP_COMPONENT.dropdown]: BpkDropdownChip,
   [CHIP_COMPONENT.icon]: BpkIconChip,
-}
+};
 
-export type ChipGroupType = (typeof CHIP_GROUP_TYPES)[keyof typeof CHIP_GROUP_TYPES];
+export type ChipGroupType =
+  (typeof CHIP_GROUP_TYPES)[keyof typeof CHIP_GROUP_TYPES];
 export type ChipStyleType = (typeof CHIP_TYPES)[keyof typeof CHIP_TYPES];
-export type ChipComponentType = (typeof CHIP_COMPONENT)[keyof typeof CHIP_COMPONENT];
+export type ChipComponentType =
+  (typeof CHIP_COMPONENT)[keyof typeof CHIP_COMPONENT];
 
 export type SingleSelectChipItem = {
   text: string;
@@ -82,22 +89,23 @@ type RailChipGroupProps = {
   trailingNudgerLabel: string;
 } & CommonProps;
 
-type WrapChipGroupProps = {
-} & CommonProps;
+type WrapChipGroupProps = {} & CommonProps;
 
-export type MultiSelectProps = (RailChipGroupProps & { type: typeof CHIP_GROUP_TYPES.rail } | WrapChipGroupProps & { type: typeof CHIP_GROUP_TYPES.wrap });
+export type MultiSelectProps =
+  | (RailChipGroupProps & { type: typeof CHIP_GROUP_TYPES.rail })
+  | (WrapChipGroupProps & { type: typeof CHIP_GROUP_TYPES.wrap });
 
-const Chip = (
-  { ariaMultiselectable,
-    chipIndex,
-    chipItem,
-    chipStyle }:
-    {
-      chipIndex: number,
-      chipItem: ChipItem,
-      chipStyle: ChipStyleType,
-      ariaMultiselectable: boolean,
-    }) => {
+const Chip = ({
+  ariaMultiselectable,
+  chipIndex,
+  chipItem,
+  chipStyle,
+}: {
+  chipIndex: number;
+  chipItem: ChipItem;
+  chipStyle: ChipStyleType;
+  ariaMultiselectable: boolean;
+}) => {
   const {
     accessibilityLabel,
     component = CHIP_COMPONENT.selectable,
@@ -126,30 +134,42 @@ const Chip = (
       {text}
     </Component>
   );
-}
+};
 
-const ChipGroupContent = (
-  { ariaLabel,
-    ariaMultiselectable,
-    chipGroupClassNames,
-    chipStyle,
-    chips,
-    label }:
-    {
-      chipGroupClassNames: string,
-      ariaMultiselectable: boolean,
-      ariaLabel?: string,
-      label?: string,
-      chips: ChipItem[],
-      chipStyle: ChipStyleType,
-    }) => (
+const ChipGroupContent = ({
+  ariaLabel,
+  ariaMultiselectable,
+  chipGroupClassNames,
+  chipStyle,
+  chips,
+  label,
+}: {
+  chipGroupClassNames: string;
+  ariaMultiselectable: boolean;
+  ariaLabel?: string;
+  label?: string;
+  chips: ChipItem[];
+  chipStyle: ChipStyleType;
+}) => (
   <fieldset
     className={chipGroupClassNames}
     role={ariaMultiselectable ? 'group' : 'radiogroup'}
   >
-    {ariaLabel && <legend className='visually-hidden'>{ariaLabel}</legend>}
-    {label && <BpkText textStyle={TEXT_STYLES.footnote} aria-hidden>{label}</BpkText>}
-    {chips.map((chip, index) => <Chip key={chip.text} chipItem={chip} chipStyle={chipStyle} ariaMultiselectable={ariaMultiselectable} chipIndex={index} />)}
+    {ariaLabel && <legend className="visually-hidden">{ariaLabel}</legend>}
+    {label && (
+      <BpkText textStyle={TEXT_STYLES.footnote} aria-hidden>
+        {label}
+      </BpkText>
+    )}
+    {chips.map((chip, index) => (
+      <Chip
+        key={chip.text}
+        chipItem={chip}
+        chipStyle={chipStyle}
+        ariaMultiselectable={ariaMultiselectable}
+        chipIndex={index}
+      />
+    ))}
   </fieldset>
 );
 
@@ -193,43 +213,61 @@ const RailChipGroup = ({
   return (
     <>
       <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
-        <Nudger position={POSITION.leading} ariaLabel={leadingNudgerLabel} chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} />
+        <Nudger
+          position={POSITION.leading}
+          ariaLabel={leadingNudgerLabel}
+          chipStyle={chipStyle}
+          scrollContainerRef={scrollContainerRef}
+        />
       </BpkBreakpoint>
-      {stickyChip &&
+      {stickyChip && (
         <div className={stickyChipContainerClassnames}>
           <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
-            {(isDesktop) =>
-            {
+            {(isDesktop) => {
               let chipComponent;
               if (isDesktop || isAtStart) {
                 chipComponent = CHIP_COMPONENT.selectable;
               } else {
                 chipComponent = CHIP_COMPONENT.icon;
               }
-              return <Chip chipItem={({
-                ...stickyChip,
-                role: 'button',
-                component: chipComponent,
-                leadingAccessoryView: <FilterIconSm />,
-              })} chipStyle={chipStyle} ariaMultiselectable={ariaMultiselectable} chipIndex={-1} />
-            }
-
-            }
+              return (
+                <Chip
+                  chipItem={{
+                    ...stickyChip,
+                    role: 'button',
+                    component: chipComponent,
+                    leadingAccessoryView: <FilterIconSm />,
+                  }}
+                  chipStyle={chipStyle}
+                  ariaMultiselectable={ariaMultiselectable}
+                  chipIndex={-1}
+                />
+              );
+            }}
           </BpkBreakpoint>
         </div>
-      }
+      )}
       <BpkMobileScrollContainer
-        scrollerRef={(el: HTMLElement | null) => { scrollContainerRef.current = el }}
+        scrollerRef={(el: HTMLElement | null) => {
+          scrollContainerRef.current = el;
+        }}
       >
-        <ChipGroupContent ariaLabel={ariaLabel}
+        <ChipGroupContent
+          ariaLabel={ariaLabel}
           ariaMultiselectable={ariaMultiselectable}
           chipGroupClassNames={chipGroupClassNames}
           chipStyle={chipStyle}
           chips={chips}
-          label={label} />
+          label={label}
+        />
       </BpkMobileScrollContainer>
       <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
-        <Nudger position={POSITION.trailing} ariaLabel={trailingNudgerLabel} chipStyle={chipStyle} scrollContainerRef={scrollContainerRef} />
+        <Nudger
+          position={POSITION.trailing}
+          ariaLabel={trailingNudgerLabel}
+          chipStyle={chipStyle}
+          scrollContainerRef={scrollContainerRef}
+        />
       </BpkBreakpoint>
     </>
   );
@@ -241,20 +279,24 @@ const WrapChipGroup = ({
   chipStyle = CHIP_TYPES.default,
   chips,
   label,
-}: WrapChipGroupProps) =>
-  <ChipGroupContent ariaLabel={ariaLabel}
+}: WrapChipGroupProps) => (
+  <ChipGroupContent
+    ariaLabel={ariaLabel}
     ariaMultiselectable={ariaMultiselectable}
-    chipGroupClassNames={getClassName(
-      'bpk-chip-group',
-      'bpk-chip-group--wrap',
-    )}
+    chipGroupClassNames={getClassName('bpk-chip-group', 'bpk-chip-group--wrap')}
     chipStyle={chipStyle}
     chips={chips}
-    label={label} />;
+    label={label}
+  />
+);
 
 const BpkMultiSelectChipGroup = (props: MultiSelectProps) => (
   <div className={getClassName('bpk-chip-group-container')}>
-    {props.type === CHIP_GROUP_TYPES.rail ? <RailChipGroup {...props} /> : <WrapChipGroup {...props} />}
+    {props.type === CHIP_GROUP_TYPES.rail ? (
+      <RailChipGroup {...props} />
+    ) : (
+      <WrapChipGroup {...props} />
+    )}
   </div>
 );
 

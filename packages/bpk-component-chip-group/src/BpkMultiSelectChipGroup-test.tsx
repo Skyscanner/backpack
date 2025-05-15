@@ -20,12 +20,14 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
-import BpkMultiSelectChipGroup, { CHIP_GROUP_TYPES } from './BpkMultiSelectChipGroup';
+import BpkMultiSelectChipGroup, {
+  CHIP_GROUP_TYPES,
+} from './BpkMultiSelectChipGroup';
 
 const defaultProps = {
   type: CHIP_GROUP_TYPES.wrap,
   ariaLabel: 'a11y label',
-}
+};
 
 let isDesktopMock = true;
 const getIsDesktopMock = () => isDesktopMock;
@@ -58,11 +60,17 @@ describe('BpkMultiSelectChipGroup', () => {
     },
     {
       text: 'Stockholm',
-    }
+    },
   ];
 
   it('should render selected chip', () => {
-    render(<BpkMultiSelectChipGroup {...defaultProps} chips={chips} type={CHIP_GROUP_TYPES.wrap} />);
+    render(
+      <BpkMultiSelectChipGroup
+        {...defaultProps}
+        chips={chips}
+        type={CHIP_GROUP_TYPES.wrap}
+      />,
+    );
 
     const chip = screen.getByRole('checkbox', { name: 'Berlin' });
 
@@ -73,7 +81,7 @@ describe('BpkMultiSelectChipGroup', () => {
     render(
       <BpkMultiSelectChipGroup
         stickyChip={{
-          text: 'Sort & Filter'
+          text: 'Sort & Filter',
         }}
         chips={chips}
         type={CHIP_GROUP_TYPES.rail}
@@ -96,7 +104,7 @@ describe('BpkMultiSelectChipGroup', () => {
         ariaLabel="Filter cities"
         leadingNudgerLabel="Back"
         trailingNudgerLabel="Forward"
-      />
+      />,
     );
 
     const stickyChip = getByRole('button', { name: 'Sort & Filter' });
@@ -114,13 +122,17 @@ describe('BpkMultiSelectChipGroup', () => {
         ariaLabel="Filter cities"
         leadingNudgerLabel="Back"
         trailingNudgerLabel="Forward"
-      />
+      />,
     );
 
-    const scrollEl = container.querySelector('.bpk-chip-group--rail')?.parentElement;
+    const scrollEl = container.querySelector(
+      '.bpk-chip-group--rail',
+    )?.parentElement;
     if (scrollEl) {
-
-      Object.defineProperty(scrollEl, 'scrollLeft', { value: 100, writable: true });
+      Object.defineProperty(scrollEl, 'scrollLeft', {
+        value: 100,
+        writable: true,
+      });
       scrollEl.dispatchEvent(new Event('scroll'));
     }
 
@@ -143,7 +155,7 @@ describe('BpkMultiSelectChipGroup', () => {
           {
             text: 'Berlin',
             onClick,
-          }
+          },
         ]}
         {...defaultProps}
       />,
