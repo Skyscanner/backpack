@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode, ElementType, CSSProperties , UIEvent} from 'react';
+import type { ReactNode, ElementType, CSSProperties, UIEvent } from 'react';
 import { Component } from 'react';
 
 import debounce from 'lodash/debounce';
@@ -87,7 +87,7 @@ type State = {
 };
 
 class BpkMobileScrollContainer extends Component<Props, State> {
-  debouncedResize:  DebouncedFunc<() => void>
+  debouncedResize: DebouncedFunc<() => void>;
 
   static defaultProps: Partial<Props> = {
     innerContainerTagName: 'div',
@@ -121,14 +121,6 @@ class BpkMobileScrollContainer extends Component<Props, State> {
     this.setScrollBarAwareHeight();
     this.setScrollIndicatorClassName();
   };
-
-  onScroll = (event: UIEvent) => {
-    this.setScrollIndicatorClassName();
-    const { onScroll } = this.props;
-    if (onScroll) {
-      onScroll(event);
-    }
-  }
 
   setScrollIndicatorClassName = () => {
     const classNames = computeScrollIndicatorClassName(
@@ -174,6 +166,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
       className,
       innerContainerTagName = 'div',
       leadingIndicatorClassName,
+      onScroll,
       scrollerRef,
       showScrollbar,
       style,
@@ -208,7 +201,12 @@ class BpkMobileScrollContainer extends Component<Props, State> {
             }
             this.scrollerEl = el;
           }}
-          onScroll={this.onScroll}
+          onScroll={(event) => {
+            this.setScrollIndicatorClassName();
+            if (onScroll) {
+              onScroll(event);
+            }
+          }}
           className={scrollerClassNames}
         >
           <InnerContainer
