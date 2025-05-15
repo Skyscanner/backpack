@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 import type { ReactNode } from 'react';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import BpkSelectableChip, { BpkDismissibleChip, BpkIconChip, BpkDropdownChip, CHIP_TYPES } from '../../bpk-component-chip';
@@ -164,6 +164,22 @@ const RailChipGroup = ({
   trailingNudgerLabel,
 }: RailChipGroupProps) => {
   const scrollContainerRef = useRef<HTMLElement | null>(null);
+  const [isAtStart, setIsAtStart] = useState(true);
+
+  useEffect(() => {
+    const el = scrollContainerRef.current;
+    if (!el) {
+      return () => {};
+    }
+
+    const handleScroll = () => {
+      const currentScrollLeft = el.scrollLeft;
+      setIsAtStart(currentScrollLeft <= 0);
+    };
+
+    el.addEventListener('scroll', handleScroll);
+    return () => el.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const stickyChipContainerClassnames = getClassName(
     'bpk-sticky-chip-container',
@@ -183,12 +199,21 @@ const RailChipGroup = ({
         <div className={stickyChipContainerClassnames}>
           <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
             {(isDesktop) =>
-              <Chip chipItem={({
-                role: 'button',
-                component: isDesktop ? CHIP_COMPONENT.selectable : CHIP_COMPONENT.icon,
-                leadingAccessoryView: <FilterIconSm />,
+            {
+              let chipComponent;
+              if (isDesktop || isAtStart) {
+                chipComponent = CHIP_COMPONENT.selectable;
+              } else {
+                chipComponent = CHIP_COMPONENT.icon;
+              }
+              return <Chip chipItem={({
                 ...stickyChip,
+                role: 'button',
+                component: chipComponent,
+                leadingAccessoryView: <FilterIconSm />,
               })} chipStyle={chipStyle} ariaMultiselectable={ariaMultiselectable} chipIndex={-1} />
+            }
+
             }
           </BpkBreakpoint>
         </div>
