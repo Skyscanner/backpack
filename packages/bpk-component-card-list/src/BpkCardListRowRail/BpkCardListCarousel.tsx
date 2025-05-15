@@ -47,7 +47,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   } = props;
 
   const shownNumberStyle = {
-    flex: `0 0 calc(100% / ${initiallyShownCards})`,
+    flex: `0 0 calc((100% - ${12 * (initiallyShownCards - 1)}px) / ${initiallyShownCards})`,
   } as CSSProperties;
 
   const totalIndicators = children.length;
