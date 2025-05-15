@@ -28,12 +28,12 @@ import HotelIconSm from '../../packages/bpk-component-icon/sm/hotels';
 import LandmarkIconSm from '../../packages/bpk-component-icon/sm/landmark';
 import BpkMap, {
   BpkOverlayView,
-  BpkIconMarker,
   BpkPriceMarker,
   BpkPriceMarkerV2,
   PRICE_MARKER_STATUSES,
   MARKER_STATUSES,
   withGoogleMapsScript,
+  BpkPriceMarkerButton,
 } from '../../packages/bpk-component-map';
 import BpkText from '../../packages/bpk-component-text';
 import { action } from '../bpk-storybook-utils';
@@ -209,69 +209,82 @@ class StatefulBpkPriceMarkerV2 extends Component<
         zoom={15}
         center={{ latitude: 55.944665, longitude: -3.1964903 }}
       >
-        {venues
-          .map((venue) => (
-            <BpkPriceMarkerV2
-              id={venue.id}
-              label={venue.price}
-              icon={
-                this.props.airportsIconWithPrice ? venue.airportsIcon : null
-              }
-              position={{
-                latitude: venue.latitude,
-                longitude: venue.longitude,
-              }}
-              onClick={() => {
-                this.props.action();
-                this.selectVenue(venue.id);
-              }}
-              status={this.getStatus(venue.id)}
-              accessibilityLabel="Click the price marker"
-            />
-          ))}
+        {venues.map((venue) => (
+          <BpkPriceMarkerV2
+            id={venue.id}
+            label={venue.price}
+            icon={this.props.airportsIconWithPrice ? venue.airportsIcon : null}
+            position={{
+              latitude: venue.latitude,
+              longitude: venue.longitude,
+            }}
+            onClick={() => {
+              this.props.action();
+              this.selectVenue(venue.id);
+            }}
+            status={this.getStatus(venue.id)}
+            accessibilityLabel="Click the price marker"
+          />
+        ))}
       </StoryMap>
     );
   }
 }
 
-class StatefulBpkIconMarker extends Component<
-  { action: () => mixed },
-  { selectedId: string },
+class StatefulBpkPriceMarkerButton extends Component<
+  { action: () => mixed, airportsIconWithPrice: boolean },
+  PriceMarkerState,
 > {
   static defaultProps = {
     action: () => null,
   };
 
-  constructor(props: { action: () => mixed }) {
+  constructor(props: { action: () => mixed, airportsIconWithPrice: boolean }) {
     super(props);
     this.state = {
-      selectedId: '3',
+      selectedId: '2',
+      viewedVenues: ['1'],
     };
   }
 
+  getStatus = (id: string) => {
+    if (this.state.selectedId === id) {
+      return MARKER_STATUSES.selected;
+    }
+    if (this.state.viewedVenues.includes(id)) {
+      return MARKER_STATUSES.previous_selected;
+    }
+    return MARKER_STATUSES.unselected;
+  };
+
   selectVenue = (id: string) => {
-    this.setState({ selectedId: id });
+    this.setState((prevState) => ({
+      selectedId: id,
+      viewedVenues: [...prevState.viewedVenues, id],
+    }));
   };
 
   render() {
     return (
-      <StoryMap
-        zoom={15}
-        center={{ latitude: 55.944665, longitude: -3.1964903 }}
-      >
+      <div>
         {venues.map((venue) => (
-          <BpkIconMarker
-            key={venue.id}
-            position={{ latitude: venue.latitude, longitude: venue.longitude }}
+          <BpkPriceMarkerButton
+            id={venue.id}
+            label={venue.price}
+            icon={this.props.airportsIconWithPrice ? venue.airportsIcon : null}
+            position={{
+              latitude: venue.latitude,
+              longitude: venue.longitude,
+            }}
             onClick={() => {
               this.props.action();
               this.selectVenue(venue.id);
             }}
-            icon={venue.icon}
-            selected={this.state.selectedId === venue.id}
+            status={this.getStatus(venue.id)}
+            accessibilityLabel="Click the price marker"
           />
         ))}
-      </StoryMap>
+      </div>
     );
   }
 }
@@ -339,10 +352,6 @@ const WithAMarkerExample = () => (
   </StoryMap>
 );
 
-const WithIconMarkersExample = () => (
-  <StatefulBpkIconMarker action={action('Price marker clicked')} />
-);
-
 const WithPriceMarkersExample = () => (
   <StatefulBpkPriceMarker action={action('Price marker clicked')} />
 );
@@ -356,6 +365,20 @@ const WithPriceMarkersV2Example = () => (
 
 const WithIconPriceMarkersV2Example = () => (
   <StatefulBpkPriceMarkerV2
+    action={action('Price marker clicked')}
+    airportsIconWithPrice
+  />
+);
+
+const WithPriceMarkersV2ButtonExample = () => (
+  <StatefulBpkPriceMarkerButton
+    action={action('Price marker clicked')}
+    airportsIconWithPrice={false}
+  />
+);
+
+const WithIconPriceMarkersV2ButtonExample = () => (
+  <StatefulBpkPriceMarkerButton
     action={action('Price marker clicked')}
     airportsIconWithPrice
   />
@@ -391,10 +414,11 @@ export {
   WithOnTilesLoadedExample,
   WithBoundingBoxExample,
   WithAMarkerExample,
-  WithIconMarkersExample,
   WithPriceMarkersExample,
   WithPriceMarkersV2Example,
   WithIconPriceMarkersV2Example,
+  WithPriceMarkersV2ButtonExample,
+  WithIconPriceMarkersV2ButtonExample,
   MultipleMapsExample,
   VisualTestExample,
 };
