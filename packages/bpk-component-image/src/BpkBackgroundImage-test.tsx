@@ -129,4 +129,46 @@ describe('BpkBackgroundImage', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('should call error callback when the image fails to load', async () => {
+    const mockOnError = jest.fn();
+
+    let triggerError: (() => void) | undefined;
+
+    class MockErrorImage {
+      src: string = '';
+
+      set onerror(callback: () => void) {
+        triggerError = callback;
+      }
+    }
+
+    Object.defineProperty(window, 'Image', {
+      writable: true,
+      configurable: true,
+      value: MockErrorImage,
+    });
+
+    render(
+      <BpkBackgroundImage
+        aspectRatio={612 / 408}
+        src="./invalid-image-path.jpg"
+        onError={mockOnError}
+      >
+        <div
+          style={{
+            opacity: 0.7,
+            marginLeft: spacingSm,
+            paddingTop: spacingSm,
+          }}
+        />
+      </BpkBackgroundImage>,
+    );
+
+    if (triggerError) {
+      triggerError();
+    }
+
+    expect(mockOnError).toHaveBeenCalled();
+  });
 });
