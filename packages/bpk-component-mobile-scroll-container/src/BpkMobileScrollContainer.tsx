@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode, ElementType, CSSProperties } from 'react';
+import type { ReactNode, ElementType, CSSProperties , UIEvent} from 'react';
 import { Component } from 'react';
 
 import debounce from 'lodash/debounce';
@@ -123,14 +123,14 @@ class BpkMobileScrollContainer extends Component<Props, State> {
   };
 
   onScroll = (event: UIEvent) => {
-    this.setScrollIndicatorClassName(event);
+    this.setScrollIndicatorClassName();
     const { onScroll } = this.props;
     if (onScroll) {
       onScroll(event);
     }
   }
 
-  setScrollIndicatorClassName = (event) => {
+  setScrollIndicatorClassName = () => {
     const classNames = computeScrollIndicatorClassName(
       this.scrollerEl,
       this.props.leadingIndicatorClassName,
@@ -144,10 +144,6 @@ class BpkMobileScrollContainer extends Component<Props, State> {
     this.setState(() => ({
       scrollIndicatorClassName: classNames.join(' '),
     }));
-
-    if(this.props.onScroll) {
-      this.props.onScroll(event)
-    }
   };
 
   setScrollBarAwareHeight = () => {
