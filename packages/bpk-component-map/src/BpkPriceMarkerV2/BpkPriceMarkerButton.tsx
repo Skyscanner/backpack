@@ -39,6 +39,7 @@ const BpkPriceMarkerButton = ({
     <button
       type="button"
       className={markerWrapperClassNames}
+      // @ts-expect-error Type '((event: MouseEvent) => void) | undefined' is not assignable to type 'MouseEventHandler<HTMLButtonElement> | undefined'
       onClick={onClick}
       {...buttonProps}
     >
