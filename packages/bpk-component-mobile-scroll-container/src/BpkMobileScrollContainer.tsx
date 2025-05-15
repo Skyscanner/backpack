@@ -78,6 +78,7 @@ type Props = {
   scrollerRef?: (el: HTMLElement | null) => void;
   style?: CSSProperties;
   showScrollbar?: boolean;
+  onScroll?: (event: UIEvent) => void;
 };
 
 type State = {
@@ -121,7 +122,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
     this.setScrollIndicatorClassName();
   };
 
-  setScrollIndicatorClassName = () => {
+  setScrollIndicatorClassName = (event) => {
     const classNames = computeScrollIndicatorClassName(
       this.scrollerEl,
       this.props.leadingIndicatorClassName,
@@ -135,6 +136,10 @@ class BpkMobileScrollContainer extends Component<Props, State> {
     this.setState(() => ({
       scrollIndicatorClassName: classNames.join(' '),
     }));
+
+    if(this.props.onScroll) {
+      this.props.onScroll(event)
+    }
   };
 
   setScrollBarAwareHeight = () => {
