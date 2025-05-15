@@ -19,8 +19,6 @@
  @use '../../../unstable__bpk-mixins/tokens';
 
  .bpk-card-list-row-rail {
-   display: flex;
-   flex-direction: column;
  
    &__row,
    &__rail {
@@ -48,10 +46,6 @@
  
    &__rail {
      -webkit-overflow-scrolling: touch;
-   }
- 
-   &__accessory {
-     width: 100%;
    }
  }
  

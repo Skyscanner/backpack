@@ -22,34 +22,6 @@
   display: flex;
   flex-direction: column;
 
-  &__row,
-  &__rail {
-    display: flex;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    gap: tokens.bpk-spacing-sm();
-    box-sizing: border-box;
-    padding-bottom: tokens.bpk-spacing-sm();
-    padding-top: tokens.bpk-spacing-sm();
-    scroll-snap-stop: always;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
-    &__card {
-      box-sizing: border-box; /* 包括 padding 和 border */
-      margin: tokens.bpk-spacing-sm();
-      padding: tokens.bpk-spacing-sm();
-
-      scroll-snap-align: start;
-      position: relative;
-      overflow: visible;
-    }
-  }
-
-  &__rail {
-    -webkit-overflow-scrolling: touch;
-  }
-
   &__accessory {
     width: 100%;
   }

@@ -21,14 +21,14 @@ import { render, screen } from '@testing-library/react';
 import mockCards from '../../testMocks';
 import { ACCESSORY_TYPES, LAYOUTS } from '../common-types';
 
-import BpkCardListRowRail from './BpkCardListRowRail';
+import BpkCardListRowRailContainer from './BpkCardListRowRailContainer';
 
 describe('BpkCardListRowRail', () => {
   it('should render correctly with grid and no accessory', () => {
     render(
-      <BpkCardListRowRail layout={LAYOUTS.row} initiallyShownCards={3}>
+      <BpkCardListRowRailContainer layout={LAYOUTS.row} initiallyShownCards={3}>
         {mockCards(3)}
-      </BpkCardListRowRail>,
+      </BpkCardListRowRailContainer>,
     );
 
     const cards = screen.getByTestId('bpk-card-list-grid-stack__content');
@@ -37,9 +37,9 @@ describe('BpkCardListRowRail', () => {
 
   it('should render correctly with stack and no accessory', () => {
     render(
-      <BpkCardListRowRail layout={LAYOUTS.rail} initiallyShownCards={3}>
+      <BpkCardListRowRailContainer layout={LAYOUTS.rail} initiallyShownCards={3}>
         {mockCards(3)}
-      </BpkCardListRowRail>,
+      </BpkCardListRowRailContainer>,
     );
 
     const cards = screen.getByTestId('bpk-card-list-grid-stack__content');

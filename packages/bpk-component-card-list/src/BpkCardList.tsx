@@ -96,9 +96,6 @@ const BpkCardList = (props: CardListProps) => {
                 return (
                   <BpkCardListRowRailContainer
                     initiallyShownCards={initiallyShownCards}
-                    buttonText={buttonText}
-                    expandText={expandText}
-                    onButtonClick={onButtonClick}
                     layout={layoutMobile}
                   >
                     {cardList}
@@ -118,9 +115,6 @@ const BpkCardList = (props: CardListProps) => {
                 <BpkCardListRowRailContainer
                   accessory={accessory}
                   initiallyShownCards={initiallyShownCards}
-                  buttonText={buttonText}
-                  expandText={expandText}
-                  onButtonClick={onButtonClick}
                   layout={layoutDesktop}
                 >
                   {cardList}

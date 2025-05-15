@@ -26,7 +26,7 @@ import {
   type CardListRowRailProps,
 } from '../common-types';
 
-import STYLES from './BpkCardListRowRail.module.scss';
+import STYLES from './BpkCardListRowRailContainer.module.scss';
 
 const getClassName = cssModules(STYLES);
 
