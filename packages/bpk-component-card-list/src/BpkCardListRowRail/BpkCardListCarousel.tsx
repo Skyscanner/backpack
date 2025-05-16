@@ -148,13 +148,15 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
   useScrollToCard(currentIndex, cardRefs, setStateTimeoutRef, setStateLockRef);
 
+  const carouselAriaLabel = `Entering Carousel with ${initiallyShownCards} slides shown at a time, ${totalIndicators} slides in total. Please use Pagination below with the Previous and Next buttons to navigate, or the slide dot buttons at the end to jump to slides.`;
+
   return (
-    <div
+    <section
       className={getClassName(`bpk-card-list-row-rail__${layout}`)}
       data-testid="bpk-card-list-row-rail__content"
-      role="region"
+      aria-label={carouselAriaLabel}
+      tabIndex={0}
       ref={setRoot}
-      aria-label="Self defiend Carousel"
     >
       {children.map((card, index) => {
         if (!isValidElement(card)) return null;
@@ -184,7 +186,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           </>
         );
       })}
-    </div>
+    </section>
   );
 };
 
