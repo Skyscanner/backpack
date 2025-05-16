@@ -21,7 +21,11 @@ import { useState, CSSProperties } from 'react';
 import { BpkButtonV2 } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';
 import BpkExpand from '../BpkExpand';
-import { ACCESSORY_TYPES, type CardListGridStackProps } from '../common-types';
+import {
+  ACCESSORY_DESKTOP_TYPES,
+  ACCESSORY_MOBILE_TYPES,
+  type CardListGridStackProps,
+} from '../common-types';
 
 import STYLES from './BpkCardListGridStack.module.scss';
 
@@ -43,14 +47,20 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
   } as CSSProperties;
 
   let defaultInitiallyShownCards: number;
-  if (accessory === ACCESSORY_TYPES.Expand) {
+  let showExpand: boolean;
+  if (
+    accessory === (ACCESSORY_DESKTOP_TYPES.Expand ||
+    ACCESSORY_MOBILE_TYPES.Expand)
+  ) {
     defaultInitiallyShownCards = initiallyShownCards;
+    showExpand = children.length > defaultInitiallyShownCards;
   } else {
     defaultInitiallyShownCards = children.length;
+    showExpand = false;
   }
 
   const [collapsed, setCollapsed] = useState(true);
-  const showExpand = children.length > defaultInitiallyShownCards;
+  const showButton = accessory === ACCESSORY_DESKTOP_TYPES.Button;
   const initiallCards = children.slice(0, defaultInitiallyShownCards);
   const restCards = children.slice(
     defaultInitiallyShownCards + 1,
@@ -99,9 +109,10 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
         {initiallCards}
       </div>
 
-      {accessory === ACCESSORY_TYPES.Button && buttonAccessoryContent}
+      {showButton && buttonAccessoryContent}
 
       {showExpand && (
+        // This is for A11y considerations
         <>
           {collapsed === true && expandAccessoryContent}
           <div

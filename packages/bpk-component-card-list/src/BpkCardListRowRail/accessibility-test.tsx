@@ -20,16 +20,16 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import mockCards from '../../testMocks';
-import { ACCESSORY_TYPES, LAYOUTS } from '../common-types';
+import { LAYOUTS } from '../common-types';
 
-import BpkCardListRowRail from './BpkCardListRowRail';
+import BpkCardListRowRailContainer from './BpkCardListRowRailContainer';
 
-describe('BpkCardListRowRail', () => {
+describe('BpkCardListRowRailContainer', () => {
   it('should have no accessibility issues for grid and no accessory', async () => {
     const { container } = render(
-      <BpkCardListRowRail layout={LAYOUTS.row} initiallyShownCards={3}>
+      <BpkCardListRowRailContainer layout={LAYOUTS.row} initiallyShownCards={3}>
         {mockCards(3)}
-      </BpkCardListRowRail>,
+      </BpkCardListRowRailContainer>,
     );
 
     const results = await axe(container);

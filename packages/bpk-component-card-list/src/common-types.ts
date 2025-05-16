@@ -28,8 +28,13 @@ const LAYOUTS = {
 type DesktopLayouts = typeof LAYOUTS.row | typeof LAYOUTS.grid;
 type MobileLayouts = typeof LAYOUTS.rail | typeof LAYOUTS.stack;
 
-const ACCESSORY_TYPES = {
+const ACCESSORY_DESKTOP_TYPES = {
   Pagination: 'pagination',
+  Expand: 'expand',
+  Button: 'button',
+} as const;
+
+const ACCESSORY_MOBILE_TYPES = {
   Expand: 'expand',
   Button: 'button',
 } as const;
@@ -45,33 +50,34 @@ type ExpandProps = {
 type CardListBaseProps = {
   title: string;
   description?: string;
+  cardList: ReactElement[];
+  layoutMobile: MobileLayouts;
+  layoutDesktop: DesktopLayouts;
+  accessoryDesktop?: (typeof ACCESSORY_DESKTOP_TYPES)[keyof typeof ACCESSORY_DESKTOP_TYPES];
+  accessoryMobile?: (typeof ACCESSORY_MOBILE_TYPES)[keyof typeof ACCESSORY_MOBILE_TYPES];
+  initiallyShownCards?: number;
+  chipGroup?: ReactElement;
   buttonText?: string;
   onButtonClick?: () => void;
   buttonHref?: string;
-  layoutMobile: MobileLayouts;
-  layoutDesktop: DesktopLayouts;
-  initiallyShownCards?: number;
-  chipGroup?: ReactElement;
-  cardList: ReactElement[];
   expandText?: string;
-  accessory?: (typeof ACCESSORY_TYPES)[keyof typeof ACCESSORY_TYPES];
 };
 
 type CardListGridStackProps = {
   children: ReactElement[];
-  accessory?: typeof ACCESSORY_TYPES.Expand | typeof ACCESSORY_TYPES.Button;
+  initiallyShownCards: number;
+  layout: typeof LAYOUTS.grid | typeof LAYOUTS.stack;
+  accessory?: typeof ACCESSORY_DESKTOP_TYPES.Expand | typeof ACCESSORY_DESKTOP_TYPES.Button | typeof ACCESSORY_MOBILE_TYPES.Expand | typeof ACCESSORY_MOBILE_TYPES.Button;
   expandText?: string;
   buttonText?: string;
   onButtonClick?: () => void;
-  initiallyShownCards: number;
-  layout: typeof LAYOUTS.grid | typeof LAYOUTS.stack;
 };
 
 type CardListRowRailProps = {
   children: Array<ReactElement<HTMLDivElement | HTMLAnchorElement>>;
-  accessory?: typeof ACCESSORY_TYPES.Pagination;
   initiallyShownCards: number;
   layout: typeof LAYOUTS.row | typeof LAYOUTS.rail;
+  accessory?: typeof ACCESSORY_DESKTOP_TYPES.Pagination;
 };
 
 type CardListCarouselProps = {
@@ -85,7 +91,7 @@ type CardListCarouselProps = {
 type CardListProps = CardListBaseProps;
 
 export default CardListProps;
-export { LAYOUTS, ACCESSORY_TYPES };
+export { LAYOUTS, ACCESSORY_DESKTOP_TYPES, ACCESSORY_MOBILE_TYPES };
 export type {
   DesktopLayouts,
   MobileLayouts,

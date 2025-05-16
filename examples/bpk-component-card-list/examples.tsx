@@ -20,7 +20,7 @@ import { useState } from 'react';
 
 import BpkCard from '../../packages/bpk-component-card';
 import BpkCardList from '../../packages/bpk-component-card-list';
-import { LAYOUTS } from '../../packages/bpk-component-card-list/src/common-types';
+import { LAYOUTS, ACCESSORY_DESKTOP_TYPES, ACCESSORY_MOBILE_TYPES } from '../../packages/bpk-component-card-list/src/common-types';
 import BpkImage from '../../packages/bpk-component-image';
 import BpkText, {
   TEXT_STYLES,
@@ -51,6 +51,7 @@ const snippetProps = {
 };
 
 const DestinationCard = (i: number) => (
+  // Usage Suggestion: define minWidth from consumer side
   <BpkCard style={{ minWidth: '250px' }} href="/" padded={false}>
     <div className={STYLES['destination']}>
       <BpkImage
@@ -74,15 +75,14 @@ const DestinationCard = (i: number) => (
         <div className={STYLES['destination-row']}>
           <BpkText textStyle={TEXT_STYLES.heading5}>Hotel</BpkText>
           <div tabIndex={0} className={STYLES['destination-column']}>
-            <BpkText textStyle={TEXT_STYLES.heading5}>£100</BpkText>
             <BpkLink
               tabIndex={-1}
               href="#"
               onClick={console.log('#1 clicked')}
               implicit
             >
-              {' '}
-              £100{' '}
+              {/* A11y test for table objects inside a card */}
+              <BpkText textStyle={TEXT_STYLES.heading5}>£100</BpkText>
             </BpkLink>
           </div>
         </div>
@@ -92,8 +92,9 @@ const DestinationCard = (i: number) => (
 );
 
 const Snippet = (i: number) => (
+  // Usage Suggestion: set desktopLayout="vertical" for cases with more than 1 snippet
   <BpkSnippet
-    desktopLayout="vertical" // users can choose to use this prop or not
+    desktopLayout="vertical"
     src={imageUrlsDestination[i % 4]}
     {...snippetProps}
   />
@@ -117,7 +118,7 @@ const PageContainer = ({ children }: PageContainerProb) => (
   <div style={{ maxWidth: '1200px', margin: '0 auto' }}>{children}</div>
 );
 
-const BasicExample = () => (
+const BasicExample: React.FC = () => (
   <BpkCardList
     title="Must-visit spots"
     description="Check out these world-famous destinations perfect for visiting in spring."
@@ -140,9 +141,8 @@ const RowToRailForCardsExample = () => (
       cardList={makeList(DestinationCard)}
       layoutDesktop={LAYOUTS.row}
       layoutMobile={LAYOUTS.rail}
-      onButtonClick={() => null}
-      accessory="pagination"
-      buttonText="Explore more"
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Pagination}
+      buttonText='Explore more'
     />
   </PageContainer>
 );
@@ -158,23 +158,92 @@ const RowToRailForSnippetsExample = () => (
       layoutDesktop={LAYOUTS.row}
       layoutMobile={LAYOUTS.rail}
       onButtonClick={() => null}
-      accessory="pagination"
-      buttonText="Explore more"
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Pagination}
     />
   </PageContainer>
 );
+
+const RowToStackForCardsWithExpandExample = () => {
+  const [expandText, setExpandText] = useState('Show more');
+  
+  return (
+    <PageContainer>
+      <BpkCardList
+        title="Must-visit spots"
+        description="Check out these world-famous destinations perfect for visiting in spring."
+        chipGroup={BpkChipGroupRail()}
+        cardList={makeList(DestinationCard)}
+        layoutDesktop={LAYOUTS.row}
+        layoutMobile={LAYOUTS.stack}
+        onButtonClick={() =>
+          setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
+        }
+        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Pagination}
+        accessoryMobile={ACCESSORY_MOBILE_TYPES.Expand}
+        expandText={expandText}
+      />
+    </PageContainer>
+  );
+}
+
+const RowToStackForSnippetsWithExpandExample = () => {
+  const [expandText, setExpandText] = useState('Show more');
+  
+  return (
+    <PageContainer>
+      <BpkCardList
+        title="Must-visit spots"
+        description="Check out these world-famous destinations perfect for visiting in spring."
+        chipGroup={BpkChipGroupRail()}
+        initiallyShownCards={2}
+        cardList={makeList(Snippet)}
+        layoutDesktop={LAYOUTS.row}
+        layoutMobile={LAYOUTS.stack}
+        onButtonClick={() =>
+          setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
+        }
+        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Pagination}
+        accessoryMobile={ACCESSORY_MOBILE_TYPES.Expand}
+        expandText={expandText}
+      />
+    </PageContainer>
+  );
+}
+
+const GridToRailForCardsWithExpandExample = () => {
+  const [expandText, setExpandText] = useState('Show more');
+  
+  return (
+    <PageContainer>
+      <BpkCardList
+        title="Must-visit spots"
+        description="Check out these world-famous destinations perfect for visiting in spring."
+        chipGroup={BpkChipGroupRail()}
+        cardList={makeList(DestinationCard)}
+        layoutDesktop={LAYOUTS.grid}
+        layoutMobile={LAYOUTS.rail}
+        onButtonClick={() =>
+          setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
+        }
+        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Expand}
+        expandText={expandText}
+      />
+    </PageContainer>
+  );
+}
 
 const GridToStackExample = () => (
   <PageContainer>
     <BpkCardList
       title="Must-visit spots"
       description="Check out these world-famous destinations perfect for visiting in spring."
+      chipGroup={BpkChipGroupRail()}
       cardList={makeList(DestinationCard)}
-      initiallyShownCards={3}
       layoutDesktop={LAYOUTS.grid}
       layoutMobile={LAYOUTS.stack}
       onButtonClick={() => null}
-      accessory="button"
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Button}
+      accessoryMobile={ACCESSORY_MOBILE_TYPES.Button}
       buttonText="Explore more"
     />
   </PageContainer>
@@ -194,8 +263,8 @@ const GridToStackWithExpandExample = () => {
         onButtonClick={() =>
           setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
         }
-        accessory="expand"
-        buttonText="Explore more"
+        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Expand}
+        accessoryMobile={ACCESSORY_MOBILE_TYPES.Expand}
         expandText={expandText}
       />
     </PageContainer>
@@ -206,6 +275,9 @@ export {
   BasicExample,
   RowToRailForCardsExample,
   RowToRailForSnippetsExample,
+  RowToStackForCardsWithExpandExample,
+  RowToStackForSnippetsWithExpandExample,
+  GridToRailForCardsWithExpandExample,
   GridToStackExample,
   GridToStackWithExpandExample,
 };

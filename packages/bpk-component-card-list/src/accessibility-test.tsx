@@ -66,7 +66,7 @@ describe('BpkCardList', () => {
         layoutDesktop={LAYOUTS.grid}
         layoutMobile={LAYOUTS.stack}
         cardList={mockCards(2)}
-        accessory="expand"
+        accessoryDesktop="expand"
         expandText="Expand"
       />,
     );
@@ -83,7 +83,7 @@ describe('BpkCardList', () => {
         layoutDesktop={LAYOUTS.grid}
         layoutMobile={LAYOUTS.stack}
         cardList={mockCards(2)}
-        accessory="button"
+        accessoryDesktop="button"
         buttonText="Button"
         onButtonClick={() => {}}
       />,

@@ -21,7 +21,7 @@ import BpkPageIndicator from '../../../bpk-component-page-indicator';
 import BpkCardListCarousel from './BpkCardListCarousel';
 import { cssModules } from '../../../bpk-react-utils';
 import {
-  ACCESSORY_TYPES,
+  ACCESSORY_DESKTOP_TYPES,
   LAYOUTS,
   type CardListRowRailProps,
 } from '../common-types';
@@ -38,7 +38,7 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
 
   let accessoryContent = null;
 
-  if (layout === LAYOUTS.row && accessory === ACCESSORY_TYPES.Pagination) {
+  if (layout === LAYOUTS.row && accessory === ACCESSORY_DESKTOP_TYPES.Pagination) {
     accessoryContent = (
       <BpkPageIndicator
         currentIndex={currentIndex}

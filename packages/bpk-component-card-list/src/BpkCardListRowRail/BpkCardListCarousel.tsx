@@ -101,23 +101,23 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           );
         });
       },
-      150,
+      100,
       { leading: true, trailing: false },
     );
 
+    const handleTouchScroll = () => {
+      setStateLockRef.current = true;
+      if (openSetStateLockTimeoutRef.current) {
+        clearTimeout(openSetStateLockTimeoutRef.current); // refresh and reset the timeout
+      }
+      openSetStateLockTimeoutRef.current = setTimeout(() => {
+        setStateLockRef.current = false;
+      }, 300);
+    }
+
     const handleWheel = (event: WheelEvent) => {
       if (event.deltaX !== 0) {
-        // touchbar scroll
-        setStateLockRef.current = true;
-
-        if (openSetStateLockTimeoutRef.current) {
-          clearTimeout(openSetStateLockTimeoutRef.current); // refresh and reset the timeout
-        }
-
-        openSetStateLockTimeoutRef.current = setTimeout(() => {
-          console.log('unlock SetStateLock');
-          setStateLockRef.current = false;
-        }, 300);
+        handleTouchScroll();
       } else {
         // Mouse Wheel Scroll
         event.preventDefault();
@@ -126,18 +126,14 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     };
 
     container.addEventListener('wheel', handleWheel);
+    container.addEventListener('touchmove', handleTouchScroll)
 
     const cleanUp = () => {
       container.removeEventListener('wheel', handleWheel);
-      if (setStateTimeoutRef.current) {
-        clearTimeout(setStateTimeoutRef.current);
-      }
-      if (openSetStateLockTimeoutRef.current) {
-        clearTimeout(openSetStateLockTimeoutRef.current);
-      }
-      if (setStateLockRef.current) {
-        setStateLockRef.current = false;
-      }
+      container.removeEventListener('touchmove', handleTouchScroll);
+      setStateTimeoutRef.current && clearTimeout(setStateTimeoutRef.current);
+      openSetStateLockTimeoutRef.current && clearTimeout(openSetStateLockTimeoutRef.current);
+      setStateLockRef.current && (setStateLockRef.current = false);
     };
 
     return cleanUp;
