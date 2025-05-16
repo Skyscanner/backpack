@@ -23,9 +23,12 @@ import BpkSectionHeader from '../../bpk-component-section-header';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkCardListGridStack from './BpkCardListGridStack';
-import BpkCardListRowRail from './BpkCardListRowRail';
 import BpkCardListRowRailContainer from './BpkCardListRowRail';
-import { ACCESSORY_DESKTOP_TYPES, ACCESSORY_MOBILE_TYPES, LAYOUTS } from './common-types';
+import {
+  ACCESSORY_DESKTOP_TYPES,
+  ACCESSORY_MOBILE_TYPES,
+  LAYOUTS,
+} from './common-types';
 
 import type CardListProps from './common-types';
 
@@ -54,7 +57,7 @@ const BpkCardList = (props: CardListProps) => {
 
   const [showHeaderButton, setShowHeaderButton] = useState(false);
 
-  const headerButton = buttonText &&  (
+  const headerButton = buttonText && (
     <BpkButtonV2 onClick={onButtonClick} href={buttonHref}>
       {buttonText}
     </BpkButtonV2>
@@ -65,7 +68,7 @@ const BpkCardList = (props: CardListProps) => {
       <BpkSectionHeader
         title={title}
         description={description}
-        {...(showHeaderButton && { button: headerButton })}
+        button={showHeaderButton ? headerButton : null}
       />
 
       {chipGroup}
@@ -77,6 +80,10 @@ const BpkCardList = (props: CardListProps) => {
         <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
           {(isActive) => {
             if (isActive) {
+              setShowHeaderButton(
+                !!buttonText &&
+                  accessoryMobile !== ACCESSORY_MOBILE_TYPES.Button,
+              );
 
               if (layoutMobile === LAYOUTS.rail) {
                 return (
@@ -89,15 +96,7 @@ const BpkCardList = (props: CardListProps) => {
                 );
               }
 
-              if ( layoutMobile === LAYOUTS.stack ) {
-                console.log('layoutMobile === LAYOUTS.stack');
-
-                // if (buttonText && accessoryMobile !== ACCESSORY_MOBILE_TYPES.Button) {
-                //   setShowHeaderButton(true);
-                // } else {
-                //   setShowHeaderButton(false);
-                // } 
-
+              if (layoutMobile === LAYOUTS.stack) {
                 return (
                   <BpkCardListGridStack
                     accessory={accessoryMobile}
@@ -111,10 +110,12 @@ const BpkCardList = (props: CardListProps) => {
                   </BpkCardListGridStack>
                 );
               }
-
             }
-            
+
             //////// Desktop Cases ////////
+            setShowHeaderButton(
+              !!buttonText && accessoryMobile !== ACCESSORY_MOBILE_TYPES.Button,
+            );
 
             if (
               layoutDesktop === LAYOUTS.row &&
@@ -132,14 +133,10 @@ const BpkCardList = (props: CardListProps) => {
               );
             }
 
-            if (layoutDesktop === LAYOUTS.grid && accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.Pagination) {
-
-              if (buttonText && accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.Button) {
-                setShowHeaderButton(true);
-              } else {
-                setShowHeaderButton(false);
-              } 
-
+            if (
+              layoutDesktop === LAYOUTS.grid &&
+              accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.Pagination
+            ) {
               return (
                 <BpkCardListGridStack
                   accessory={accessoryDesktop}
@@ -154,8 +151,7 @@ const BpkCardList = (props: CardListProps) => {
               );
             }
 
-            // throw new Error('Layout or accessory type not supported');
-            return <div />;
+            throw new Error('Layout or accessory type not supported');
           }}
         </BpkBreakpoint>
       </div>

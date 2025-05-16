@@ -113,7 +113,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       openSetStateLockTimeoutRef.current = setTimeout(() => {
         setStateLockRef.current = false;
       }, 300);
-    }
+    };
 
     const handleWheel = (event: WheelEvent) => {
       if (event.deltaX !== 0) {
@@ -126,13 +126,14 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     };
 
     container.addEventListener('wheel', handleWheel);
-    container.addEventListener('touchmove', handleTouchScroll)
+    container.addEventListener('touchmove', handleTouchScroll);
 
     const cleanUp = () => {
       container.removeEventListener('wheel', handleWheel);
       container.removeEventListener('touchmove', handleTouchScroll);
       setStateTimeoutRef.current && clearTimeout(setStateTimeoutRef.current);
-      openSetStateLockTimeoutRef.current && clearTimeout(openSetStateLockTimeoutRef.current);
+      openSetStateLockTimeoutRef.current &&
+        clearTimeout(openSetStateLockTimeoutRef.current);
       setStateLockRef.current && (setStateLockRef.current = false);
     };
 
