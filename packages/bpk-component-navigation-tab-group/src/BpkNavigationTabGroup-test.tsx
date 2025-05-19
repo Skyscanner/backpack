@@ -26,7 +26,7 @@ import type { Props } from './BpkNavigationTabGroup';
 const tabs: Props['tabs'] = [
   { id: 'air', text: 'Flights', href: '/' },
   { id: 'hotel', text: 'Hotels', href: '/hotel' },
-  { id: 'car', text: 'Car hire', href: '/carhire' },
+  { id: 'car', text: 'Car hire', href: '/carhire', target: '_blank' },
 ];
 
 const tabsWithAnalytics: Props['tabs'] = [
@@ -102,6 +102,32 @@ describe('BpkNavigationTabGroup', () => {
       expect.any(Object),
       { id:'hotel', text: 'Hotels', href: '/hotel' },
       1,
+    );
+  });
+
+  it('should ignore tab selection when link opens in new tab', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <BpkNavigationTabGroup
+        id="navTest"
+        tabs={tabs}
+        onItemClick={() => {}}
+        selectedIndex={0}
+        ariaLabel="Navigation tabs"
+      />,
+    );
+
+    await user.click(screen.getByText('Car hire'));
+
+    const flightsTab = screen.getByRole('tab', { name: 'Flights' });
+    const carHireTab = screen.getByRole('tab', { name: 'Car hire' });
+
+    expect(flightsTab).toHaveClass(
+      'bpk-navigation-tab-wrap--surface-contrast-selected',
+    );
+    expect(carHireTab).not.toHaveClass(
+      'bpk-navigation-tab-wrap--surface-contrast-selected',
     );
   });
 
