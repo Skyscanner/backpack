@@ -26,6 +26,12 @@ import type { Props } from './BpkNavigationTabGroup';
 const tabs: Props['tabs'] = [
   { id: 'air', text: 'Flights', href: '/' },
   { id: 'hotel', text: 'Hotels', href: '/hotel' },
+  { id: 'car', text: 'Car hire', href: '/carhire' },
+];
+
+const tabsWithBlankTarget: Props['tabs'] = [
+  { id: 'air', text: 'Flights', href: '/' },
+  { id: 'hotel', text: 'Hotels', href: '/hotel', target: '_blank' },
   { id: 'car', text: 'Car hire', href: '/carhire', target: '_blank' },
 ];
 
@@ -111,7 +117,7 @@ describe('BpkNavigationTabGroup', () => {
     render(
       <BpkNavigationTabGroup
         id="navTest"
-        tabs={tabs}
+        tabs={tabsWithBlankTarget}
         onItemClick={() => {}}
         selectedIndex={0}
         ariaLabel="Navigation tabs"
