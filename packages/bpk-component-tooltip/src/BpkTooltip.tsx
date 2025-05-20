@@ -39,7 +39,7 @@ import {
   useRole,
 } from '@floating-ui/react';
 
-import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { surfaceHighlightDay, onePixelRem } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
@@ -79,10 +79,10 @@ export type Props = {
 // so we need to compensate slightly to make it look as one.
 const getArrowAlignment = (placement: Placement) => {
   if (placement.includes('bottom')) {
-    return { bottom: '98%' };
+    return { bottom: `calc(100% - ${onePixelRem})` };
   }
   if (placement.includes('top')) {
-    return { top: '98%' };
+    return { top: `calc(100% - ${onePixelRem})` };
   }
   return undefined;
 };
