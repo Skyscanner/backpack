@@ -193,11 +193,12 @@ const RailChipGroup = ({
     }
 
     const handleScroll = () => {
-      const currentScrollLeft = el.scrollLeft;
-      setIsAtStart(currentScrollLeft <= 0);
+      const isScrolledToStart = Math.abs(el.scrollLeft) <= 1;
+      setIsAtStart(isScrolledToStart);
     };
 
     el.addEventListener('scroll', handleScroll);
+    handleScroll();
     return () => el.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -225,6 +226,8 @@ const RailChipGroup = ({
           <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
             {(isDesktop) => {
               const shouldHideStickyText = !isDesktop && !isAtStart;
+              console.log('--isAtStart', isAtStart);
+              console.log('--shouldHideStickyText', shouldHideStickyText);
               return (
                 <BpkSelectableChip
                   className={getClassName(
