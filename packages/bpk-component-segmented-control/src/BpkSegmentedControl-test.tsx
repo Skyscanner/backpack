@@ -100,4 +100,21 @@ describe('BpkSegmentedControl', () => {
 
     expect(selectedButton).toBeInTheDocument();
   });
+
+  it('should render with role="group" on the outer div', () => {
+    render(<BpkSegmentedControl {...defaultProps} />);
+    const group = screen.getByRole('group');
+    expect(group).toBeInTheDocument();
+  });
+
+  it('should set the accessible label on the group when label prop is provided', () => {
+    render(
+      <BpkSegmentedControl
+        {...defaultProps}
+        label="Segmented control label"
+      />,
+    );
+    const group = screen.getByRole('group');
+    expect(group).toHaveAttribute('aria-label', 'Segmented control label');
+  });
 });

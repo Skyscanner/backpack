@@ -42,6 +42,10 @@ export type Props = {
   onItemClick: (id: number) => void;
   selectedIndex: number;
   shadow?: boolean;
+  /**
+   * Accessible label for the segmented control group.
+   */
+  label?: string;
 };
 
 const BpkSegmentedControl = ({
@@ -50,6 +54,7 @@ const BpkSegmentedControl = ({
   selectedIndex,
   shadow = false,
   type = SEGMENT_TYPES.CanvasDefault,
+  label,
 }: Props) => {
   const [selectedButton, setSelectedButton] = useState(selectedIndex);
   const handleButtonClick = (id: number) => {
@@ -64,7 +69,11 @@ const BpkSegmentedControl = ({
   );
 
   return (
-    <div className={containerStyling}>
+    <div
+      className={containerStyling}
+      role="group"
+      aria-label={label}
+    >
       {buttonContents.map((content, index) => {
         const isSelected = index === selectedButton;
         const rightOfOption = index === selectedButton + 1;
