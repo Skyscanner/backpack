@@ -35,6 +35,10 @@ export type SegmentTypes = (typeof SEGMENT_TYPES)[keyof typeof SEGMENT_TYPES];
 
 export type Props = {
   buttonContents: string[] | ReactNode[];
+  /**
+   * Accessible label for the segmented control group.
+   */
+  label?: string;
   type?: SegmentTypes;
   /*
    * Index parameter to track which is clicked
@@ -42,10 +46,6 @@ export type Props = {
   onItemClick: (id: number) => void;
   selectedIndex: number;
   shadow?: boolean;
-  /**
-   * Accessible label for the segmented control group.
-   */
-  label?: string;
 };
 
 const BpkSegmentedControl = ({
