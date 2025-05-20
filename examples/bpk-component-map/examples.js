@@ -409,14 +409,14 @@ const WithIconPriceMarkersV2Example = () => (
 
 const WithPriceMarkersV2ButtonExample = () => (
   <StatefulBpkPriceMarkerButton
-    action={action('Price marker clicked')}
+    action={action('Price marker button clicked')}
     airportsIconWithPrice={false}
   />
 );
 
 const WithIconPriceMarkersV2ButtonExample = () => (
   <StatefulBpkPriceMarkerButton
-    action={action('Price marker clicked')}
+    action={action('Price marker button clicked')}
     airportsIconWithPrice
   />
 );
