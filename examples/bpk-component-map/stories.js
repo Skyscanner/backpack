@@ -30,6 +30,7 @@ import {
   WithOnTilesLoadedExample,
   WithBoundingBoxExample,
   WithAMarkerExample,
+  WithIconMarkersExample,
   WithPriceMarkersExample,
   WithPriceMarkersV2Example,
   WithIconPriceMarkersV2Example,
@@ -65,6 +66,8 @@ export const WithOnTilesLoaded = WithOnTilesLoadedExample;
 export const WithABoundingBox = WithBoundingBoxExample;
 
 export const WithAMarker = WithAMarkerExample;
+
+export const IconMarkers = WithIconMarkersExample;
 
 export const PriceMarkers = WithPriceMarkersExample;
 
