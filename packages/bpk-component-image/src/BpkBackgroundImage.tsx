@@ -37,6 +37,7 @@ export type BpkBackgroundImageProps = {
   loading?: boolean;
   src: string;
   className?: string;
+  onError?: (() => void) | null;
   onLoad?: (() => void) | null;
   style?: {};
   imageStyle?: CSSProperties;
@@ -50,6 +51,7 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
     inView: true,
     loading: false,
     onLoad: null,
+    onError: null,
     style: {},
     imageStyle: {},
   };
@@ -71,6 +73,18 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
     }
   }
 
+  componentDidUpdate(prevProps: BpkBackgroundImageProps) {
+    if (prevProps.src !== this.props.src) {
+      this.startImageLoad();
+    }
+  }
+
+  onBackgroundImageError = (): void => {
+    if (this.props.onError) {
+      this.props.onError();
+    }
+  };
+
   onBackgroundImageLoad = (): void => {
     if (this.props.onLoad) {
       this.props.onLoad();
@@ -88,6 +102,7 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
   startImageLoad = (): void => {
     this.trackImg = new Image();
     this.trackImg.src = this.props.src;
+    this.trackImg.onerror = this.onBackgroundImageError;
     this.trackImg.onload = this.onBackgroundImageLoad;
   };
 
