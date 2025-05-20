@@ -64,3 +64,44 @@
     }
   }
 }
+
+.bpk-sticky-chip {
+  display: flex;
+  align-items: center;
+  transition: gap tokens.$bpk-duration-sm ease;
+  gap: tokens.bpk-spacing-md();
+
+  &--collapsed {
+    transition: padding tokens.$bpk-duration-sm ease;
+    gap: 0;
+    padding-inline: tokens.bpk-spacing-md();
+
+    .bpk-sticky-chip {
+      gap: 0;
+    }
+  }
+
+  &--expanded {
+    transition: padding tokens.$bpk-duration-sm ease;
+  }
+
+  &--text {
+    display: inline-block;
+    max-width: tokens.$bpk-modal-max-width;
+    transition:
+      opacity tokens.$bpk-duration-sm ease,
+      max-width tokens.$bpk-duration-sm ease;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &--hide {
+    max-width: 0;
+    opacity: 0;
+  }
+
+  &--show {
+    max-width: tokens.$bpk-modal-max-width;
+    opacity: 1;
+  }
+}

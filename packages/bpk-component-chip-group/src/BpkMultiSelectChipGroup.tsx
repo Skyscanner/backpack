@@ -224,24 +224,38 @@ const RailChipGroup = ({
         <div className={stickyChipContainerClassnames}>
           <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
             {(isDesktop) => {
-              let chipComponent;
-              if (isDesktop || isAtStart) {
-                chipComponent = CHIP_COMPONENT.selectable;
-              } else {
-                chipComponent = CHIP_COMPONENT.icon;
-              }
+              const shouldHideStickyText = !isDesktop && !isAtStart;
               return (
-                <Chip
-                  chipItem={{
-                    ...stickyChip,
-                    role: 'button',
-                    component: chipComponent,
-                    leadingAccessoryView: <FilterIconSm />,
+                <BpkSelectableChip
+                  className={getClassName(
+                    shouldHideStickyText
+                      ? 'bpk-sticky-chip--collapsed'
+                      : 'bpk-sticky-chip--expanded',
+                  )}
+                  type={chipStyle}
+                  selected={stickyChip.selected ?? false}
+                  accessibilityLabel={
+                    stickyChip.accessibilityLabel || stickyChip.text
+                  }
+                  onClick={() => {
+                    stickyChip.onClick?.(!stickyChip.selected, -1);
                   }}
-                  chipStyle={chipStyle}
-                  ariaMultiselectable={ariaMultiselectable}
-                  chipIndex={-1}
-                />
+                  role={ariaMultiselectable ? 'checkbox' : 'radio'}
+                >
+                  <span className={getClassName('bpk-sticky-chip')}>
+                    <FilterIconSm />
+                    <span
+                      className={getClassName(
+                        'bpk-sticky-chip--text',
+                        shouldHideStickyText
+                          ? 'bpk-sticky-chip--hide'
+                          : 'bpk-sticky-chip--show',
+                      )}
+                    >
+                      {stickyChip.text}
+                    </span>
+                  </span>
+                </BpkSelectableChip>
               );
             }}
           </BpkBreakpoint>
