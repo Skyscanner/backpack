@@ -18,13 +18,14 @@
 import { useState } from 'react';
 
 import BpkPageIndicator from '../../../bpk-component-page-indicator';
-import BpkCardListCarousel from './BpkCardListCarousel';
 import { cssModules } from '../../../bpk-react-utils';
 import {
   ACCESSORY_DESKTOP_TYPES,
   LAYOUTS,
   type CardListRowRailProps,
 } from '../common-types';
+
+import BpkCardListCarousel from './BpkCardListCarousel';
 
 import STYLES from './BpkCardListRowRailContainer.module.scss';
 

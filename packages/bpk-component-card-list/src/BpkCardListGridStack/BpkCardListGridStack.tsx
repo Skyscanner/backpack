@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-import { useState, CSSProperties } from 'react';
+import type { CSSProperties } from 'react';
+import { useState } from 'react';
 
 import { BpkButtonV2 } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';

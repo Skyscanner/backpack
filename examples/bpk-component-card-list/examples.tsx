@@ -16,22 +16,26 @@
  * limitations under the License.
  */
 
-import { useState } from 'react';
+import type { ReactNode} from 'react';
+import { useState} from 'react';
 
 import BpkCard from '../../packages/bpk-component-card';
 import BpkCardList from '../../packages/bpk-component-card-list';
-import { LAYOUTS, ACCESSORY_DESKTOP_TYPES, ACCESSORY_MOBILE_TYPES } from '../../packages/bpk-component-card-list/src/common-types';
+import {
+  LAYOUTS,
+  ACCESSORY_DESKTOP_TYPES,
+  ACCESSORY_MOBILE_TYPES,
+} from '../../packages/bpk-component-card-list/src/common-types';
 import BpkImage from '../../packages/bpk-component-image';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkLink from '../../packages/bpk-component-link';
+import BpkSnippet from '../../packages/bpk-component-snippet/src/BpkSnippet';
 import BpkText, {
   TEXT_STYLES,
 } from '../../packages/bpk-component-text/src/BpkText';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkLink from '../../packages/bpk-component-link';
+import { BpkChipGroupRail } from '../bpk-component-chip-group/examples';
 
 import STYLES from './examples.module.scss';
-
-import { BpkChipGroupRail } from '../bpk-component-chip-group/examples';
-import BpkSnippet from '../../packages/bpk-component-snippet/src/BpkSnippet';
 
 const imageUrlsDestination = [
   'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg',
@@ -53,7 +57,7 @@ const snippetProps = {
 const DestinationCard = (i: number) => (
   // Usage Suggestion: define minWidth from consumer side
   <BpkCard style={{ minWidth: '250px' }} href="/" padded={false}>
-    <div className={STYLES['destination']}>
+    <div className={STYLES.destination}>
       <BpkImage
         aspectRatio={3000 / 1400}
         altText="card image"
@@ -74,12 +78,10 @@ const DestinationCard = (i: number) => (
         </div>
         <div className={STYLES['destination-row']}>
           <BpkText textStyle={TEXT_STYLES.heading5}>Hotel</BpkText>
-          <div tabIndex={0} className={STYLES['destination-column']}>
+          <div className={STYLES['destination-column']}>
             <BpkLink
-              tabIndex={-1}
+              tabIndex={0}
               href="#"
-              onClick={console.log('#1 clicked')}
-              implicit
             >
               {/* A11y test for table objects inside a card */}
               <BpkText textStyle={TEXT_STYLES.heading5}>£100</BpkText>
@@ -111,14 +113,14 @@ const makeList = (cardType: ExampleCard) => {
 };
 
 type PageContainerProb = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 const PageContainer = ({ children }: PageContainerProb) => (
   <div style={{ maxWidth: '1200px', margin: '0 auto' }}>{children}</div>
 );
 
-const BasicExample: React.FC = () => (
+const BasicExample= () => (
   <BpkCardList
     title="Must-visit spots"
     description="Check out these world-famous destinations perfect for visiting in spring."
@@ -142,7 +144,7 @@ const RowToRailForCardsExample = () => (
       layoutDesktop={LAYOUTS.row}
       layoutMobile={LAYOUTS.rail}
       accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Pagination}
-      buttonText='Explore more'
+      buttonText="Explore more"
     />
   </PageContainer>
 );
@@ -165,7 +167,7 @@ const RowToRailForSnippetsExample = () => (
 
 const RowToStackForCardsWithExpandExample = () => {
   const [expandText, setExpandText] = useState('Show more');
-  
+
   return (
     <PageContainer>
       <BpkCardList
@@ -184,11 +186,11 @@ const RowToStackForCardsWithExpandExample = () => {
       />
     </PageContainer>
   );
-}
+};
 
 const RowToStackForSnippetsWithExpandExample = () => {
   const [expandText, setExpandText] = useState('Show more');
-  
+
   return (
     <PageContainer>
       <BpkCardList
@@ -208,11 +210,11 @@ const RowToStackForSnippetsWithExpandExample = () => {
       />
     </PageContainer>
   );
-}
+};
 
 const GridToRailForCardsWithExpandExample = () => {
   const [expandText, setExpandText] = useState('Show more');
-  
+
   return (
     <PageContainer>
       <BpkCardList
@@ -230,7 +232,7 @@ const GridToRailForCardsWithExpandExample = () => {
       />
     </PageContainer>
   );
-}
+};
 
 const GridToStackExample = () => (
   <PageContainer>

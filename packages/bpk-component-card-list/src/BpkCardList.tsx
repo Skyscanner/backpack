@@ -17,6 +17,7 @@
  */
 
 import { useState } from 'react';
+
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import { BpkButtonV2 } from '../../bpk-component-button';
 import BpkSectionHeader from '../../bpk-component-section-header';
@@ -44,8 +45,8 @@ const BpkCardList = (props: CardListProps) => {
     accessoryMobile,
     buttonHref,
     buttonText,
-    chipGroup,
     cardList,
+    chipGroup,
     description,
     expandText,
     initiallyShownCards = DEFAULT_ITEMS,
@@ -112,7 +113,7 @@ const BpkCardList = (props: CardListProps) => {
               }
             }
 
-            //////// Desktop Cases ////////
+            /// ///// Desktop Cases ////////
             setShowHeaderButton(
               !!buttonText && accessoryMobile !== ACCESSORY_MOBILE_TYPES.Button,
             );

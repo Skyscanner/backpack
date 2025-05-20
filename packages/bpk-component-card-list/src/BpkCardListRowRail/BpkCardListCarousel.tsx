@@ -15,11 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import type {
+  CSSProperties} from 'react';
 import {
   useRef,
   useState,
   useEffect,
-  CSSProperties,
   isValidElement,
 } from 'react';
 
@@ -28,21 +29,23 @@ import _ from 'lodash';
 import { cssModules } from '../../../bpk-react-utils';
 import { type CardListCarouselProps } from '../common-types';
 
-import STYLES from './BpkCardListCarousel.module.scss';
 import {
+  setA11yTabIndex,
   useUpdateCurrentIndexByVisibility,
   useScrollToCard,
   useIntersectionObserver,
 } from './utils';
+
+import STYLES from './BpkCardListCarousel.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const {
     children,
+    currentIndex,
     initiallyShownCards,
     layout,
-    currentIndex,
     setCurrentIndex,
   } = props;
 
@@ -54,7 +57,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const [root, setRoot] = useState<HTMLElement | null>(null);
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
 
-  const [visibleRatios, setVisibleRatios] = useState<Array<number>>(
+  const [visibleRatios, setVisibleRatios] = useState<number[]>(
     Array(children.length).fill(0),
   );
   const setStateTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -62,25 +65,10 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const openSetStateLockTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const observerVisibility = useIntersectionObserver(
-    { root: root, threshold: 0.1 },
+    { root, threshold: 0.1 },
     visibleRatios,
     setVisibleRatios,
   );
-
-  const setA11yTabIndex = (
-    el: HTMLDivElement | null,
-    index: number,
-    visibleRatios: Array<number>,
-  ) => {
-    if (!el) return;
-    const focusableElements = el.querySelectorAll<HTMLElement>(
-      'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])',
-    );
-
-    focusableElements.forEach((el) => {
-      el.tabIndex = visibleRatios[index] > 0 ? 0 : -1;
-    });
-  };
 
   // handle scroll events, and update the visible indices while scrolling
   useEffect(() => {
@@ -93,13 +81,11 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     const debounceVerticalScroll = _.debounce(
       (event: WheelEvent) => {
         const delta = event.deltaY;
-        const deltaIndex = delta > 0 ? (delta / 100) | 1 : (delta / 100) | -1;
-        setCurrentIndex((prevIndex) => {
-          return Math.max(
+        const deltaIndex = delta > 0 ? Math.floor(delta / 100) : Math.ceil(delta / 100);
+        setCurrentIndex((prevIndex) => Math.max(
             Math.min(prevIndex + deltaIndex, totalIndicators - 1),
             0,
-          );
-        });
+          ));
       },
       100,
       { leading: true, trailing: false },
@@ -128,7 +114,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     container.addEventListener('wheel', handleWheel);
     container.addEventListener('touchmove', handleTouchScroll);
 
-    const cleanUp = () => {
+    return () => {
       container.removeEventListener('wheel', handleWheel);
       container.removeEventListener('touchmove', handleTouchScroll);
       setStateTimeoutRef.current && clearTimeout(setStateTimeoutRef.current);
@@ -136,8 +122,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         clearTimeout(openSetStateLockTimeoutRef.current);
       setStateLockRef.current && (setStateLockRef.current = false);
     };
-
-    return cleanUp;
   }, [root]);
 
   useUpdateCurrentIndexByVisibility(
@@ -170,8 +154,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         const slideAriaLabel = `slide ${index + 1} of ${totalIndicators}`;
 
         return (
-          <>
-            <div
+          <div
               className={getClassName(
                 `bpk-card-list-row-rail__${layout}__card`,
               )}
@@ -183,7 +166,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
             >
               {card}
             </div>
-          </>
         );
       })}
     </section>

@@ -18,6 +18,21 @@
 
 import { useEffect } from 'react';
 
+export function setA11yTabIndex(
+  el: HTMLDivElement | null,
+  index: number,
+  visibleRatios: number[],
+) {
+  if (!el) return;
+  const focusableElements = el.querySelectorAll<HTMLElement>(
+    'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])',
+  );
+
+  focusableElements.forEach((el) => {
+    el.tabIndex = visibleRatios[index] > 0 ? 0 : -1;
+  });
+};
+
 export function useUpdateCurrentIndexByVisibility(
   visibleRatios: number[],
   setCurrentIndex: (index: number) => void,
@@ -45,7 +60,7 @@ export function useUpdateCurrentIndexByVisibility(
 
 export function useScrollToCard(
   currentIndex: number,
-  cardRefs: React.MutableRefObject<(HTMLDivElement | null)[]>,
+  cardRefs: React.MutableRefObject<Array<HTMLDivElement | null>>,
   setStateTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
   setStateLockRef: React.MutableRefObject<boolean>,
 ) {
@@ -73,8 +88,8 @@ export function useScrollToCard(
 
 export function useIntersectionObserver(
   { root, threshold }: IntersectionObserverInit,
-  visibleRatios: Array<number>,
-  setVisibleRatios: React.Dispatch<React.SetStateAction<Array<number>>>,
+  visibleRatios: number[],
+  setVisibleRatios: React.Dispatch<React.SetStateAction<number[]>>,
 ) {
   let observer: IntersectionObserver | null = null;
 
