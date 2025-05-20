@@ -50,11 +50,11 @@ export type Props = {
 
 const BpkSegmentedControl = ({
   buttonContents,
+  label,
   onItemClick,
   selectedIndex,
   shadow = false,
   type = SEGMENT_TYPES.CanvasDefault,
-  label,
 }: Props) => {
   const [selectedButton, setSelectedButton] = useState(selectedIndex);
   const handleButtonClick = (id: number) => {
