@@ -31,7 +31,7 @@ type Props = {
   label: string;
   icon?: ReactNode;
   className?: string;
-  onClick?: (event: MouseEvent) => void;
+  onClick?: () => void;
   buttonProps?: { [key: string]: string };
   status?: Status;
 };
@@ -57,7 +57,6 @@ const BpkPriceMarkerButton = ({
     <button
       type="button"
       className={markerWrapperClassNames}
-      // @ts-expect-error Type '((event: MouseEvent) => void) | undefined' is not assignable to type 'MouseEventHandler<HTMLButtonElement> | undefined'
       onClick={onClick}
       {...buttonProps}
     >

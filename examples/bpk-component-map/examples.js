@@ -28,13 +28,13 @@ import HotelIconSm from '../../packages/bpk-component-icon/sm/hotels';
 import LandmarkIconSm from '../../packages/bpk-component-icon/sm/landmark';
 import BpkMap, {
   BpkOverlayView,
+  BpkIconMarker,
   BpkPriceMarker,
   BpkPriceMarkerV2,
   PRICE_MARKER_STATUSES,
   MARKER_STATUSES,
   withGoogleMapsScript,
   BpkPriceMarkerButton,
-  BpkIconMarker,
 } from '../../packages/bpk-component-map';
 import BpkText from '../../packages/bpk-component-text';
 import { action } from '../bpk-storybook-utils';

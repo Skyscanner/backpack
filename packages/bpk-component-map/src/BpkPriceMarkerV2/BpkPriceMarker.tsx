@@ -1,4 +1,3 @@
-// @ts-nocheck
 /*
  * Backpack - Skyscanner's Design System
  *
@@ -17,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { MouseEvent, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import BpkBasicMapMarker from '../BpkBasicMapMarker';
 
@@ -40,7 +39,7 @@ type Props = {
     longitude: number;
   };
   className?: string;
-  onClick?: (event: MouseEvent) => void;
+  onClick?: () => void;
   buttonProps?: { [key: string]: string };
   status?: Status;
 };
