@@ -61,12 +61,13 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
       data-testid="bpk-card-list-row-rail')}"
     >
       <BpkCardListCarousel
-        children={children}
         initiallyShownCards={initiallyShownCards}
         layout={layout}
         currentIndex={currentIndex}
         setCurrentIndex={setCurrentIndex}
-      />
+      >
+        {children}
+      </BpkCardListCarousel>
 
       <div
         role="region"

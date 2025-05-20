@@ -16,24 +16,38 @@
  * limitations under the License.
  */
 
-// import { render } from '@testing-library/react';
-// import { axe } from 'jest-axe';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-// import mockCards from '../../testMocks';
-// import { LAYOUTS } from '../common-types';
+import mockCards from '../../testMocks';
+import { LAYOUTS } from '../common-types';
 
-// import BpkCardListRowRailContainer from './BpkCardListRowRailContainer';
+import BpkCardListRowRailContainer from './BpkCardListRowRailContainer';
 
-// describe('BpkCardListRowRailContainer', () => {
-//   it('should have no accessibility issues for grid and no accessory', async () => {
-//     const { container } = render(
-//       <BpkCardListRowRailContainer layout={LAYOUTS.row} initiallyShownCards={3}>
-//         {mockCards(3)}
-//       </BpkCardListRowRailContainer>,
-//     );
+describe('BpkCardListRowRailContainer', () => {
+  it('should have no accessibility issues for row and no accessory', async () => {
+    const { container } = render(
+      <BpkCardListRowRailContainer layout={LAYOUTS.row} initiallyShownCards={3}>
+        {mockCards(3)}
+      </BpkCardListRowRailContainer>,
+    );
 
-//     const results = await axe(container);
-//     expect(results).toHaveNoViolations();
-//   });
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 
-// });
+  it('should have no accessibility issues for row and pagination accessory', async () => {
+    const { container } = render(
+      <BpkCardListRowRailContainer
+        layout={LAYOUTS.row}
+        initiallyShownCards={3}
+        accessory="pagination"
+      >
+        {mockCards(5)}
+      </BpkCardListRowRailContainer>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

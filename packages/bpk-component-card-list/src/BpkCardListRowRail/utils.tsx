@@ -28,8 +28,9 @@ export function setA11yTabIndex(
     'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])',
   );
 
-  focusableElements.forEach((el) => {
-    el.tabIndex = visibleRatios[index] > 0 ? 0 : -1;
+  focusableElements.forEach((element: HTMLElement) => {
+    const targetElement = element;
+    targetElement.tabIndex = visibleRatios[index] > 0 ? 0 : -1;
   });
 };
 
@@ -50,6 +51,7 @@ export function useUpdateCurrentIndexByVisibility(
     // we don't set the current index
 
     if (visibleRatios[firstVisibleIndex] > 0.95) {
+      // eslint-disable-next-line no-param-reassign
       setStateTimeoutRef.current = setTimeout(() => {
         console.log('RATIO: setCurrentIndex', firstVisibleIndex);
         setCurrentIndex(firstVisibleIndex);
@@ -100,7 +102,6 @@ export function useIntersectionObserver(
           const index = Number(entry.target.getAttribute('data-index'));
 
           if (entry.intersectionRatio !== visibleRatios[index]) {
-            const index = Number(entry.target.getAttribute('data-index'));
             setVisibleRatios((prev) => {
               const newVisibleRatios = [...prev];
               newVisibleRatios[index] = entry.intersectionRatio;

@@ -81,7 +81,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     const debounceVerticalScroll = _.debounce(
       (event: WheelEvent) => {
         const delta = event.deltaY;
-        const deltaIndex = delta > 0 ? Math.floor(delta / 100) : Math.ceil(delta / 100);
+        const deltaIndex = delta > 0 ? Math.ceil(delta / 100) : Math.floor(delta / 100);
         setCurrentIndex((prevIndex) => Math.max(
             Math.min(prevIndex + deltaIndex, totalIndicators - 1),
             0,
@@ -135,11 +135,13 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const carouselAriaLabel = `Entering Carousel with ${initiallyShownCards} slides shown at a time, ${totalIndicators} slides in total. Please use Pagination below with the Previous and Next buttons to navigate, or the slide dot buttons at the end to jump to slides.`;
 
   return (
-    <section
+    <div
       className={getClassName(`bpk-card-list-row-rail__${layout}`)}
-      data-testid="bpk-card-list-row-rail__content"
+      data-testid="bpk-card-list-row-rail__carousel"
       aria-label={carouselAriaLabel}
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={0}
+      role='region'
       ref={setRoot}
     >
       {children.map((card, index) => {
@@ -168,7 +170,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
             </div>
         );
       })}
-    </section>
+    </div>
   );
 };
 

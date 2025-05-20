@@ -16,67 +16,67 @@
  * limitations under the License.
  */
 
-// import { render } from '@testing-library/react';
-// import { axe } from 'jest-axe';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-// import mockCards from '../../testMocks';
-// import { ACCESSORY_TYPES, LAYOUTS } from '../common-types';
+import mockCards from '../../testMocks';
+import { ACCESSORY_DESKTOP_TYPES, LAYOUTS } from '../common-types';
 
-// import BpkCardListGridStack from './BpkCardListGridStack';
+import BpkCardListGridStack from './BpkCardListGridStack';
 
-// describe('BpkCardListGridStack', () => {
-//   it('should have no accessibility issues for grid and no accessory', async () => {
-//     const { container } = render(
-//       <BpkCardListGridStack layout={LAYOUTS.grid} initiallyShownCards={3}>
-//         {mockCards(3)}
-//       </BpkCardListGridStack>,
-//     );
+describe('BpkCardListGridStack', () => {
+  it('should have no accessibility issues for grid and no accessory', async () => {
+    const { container } = render(
+      <BpkCardListGridStack layout={LAYOUTS.grid} initiallyShownCards={3}>
+        {mockCards(3)}
+      </BpkCardListGridStack>,
+    );
 
-//     const results = await axe(container);
-//     expect(results).toHaveNoViolations();
-//   });
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 
-//   it('should have no accessibility issues for stack and no accessory', async () => {
-//     const { container } = render(
-//       <BpkCardListGridStack layout={LAYOUTS.stack} initiallyShownCards={3}>
-//         {mockCards(3)}
-//       </BpkCardListGridStack>,
-//     );
+  it('should have no accessibility issues for stack and no accessory', async () => {
+    const { container } = render(
+      <BpkCardListGridStack layout={LAYOUTS.stack} initiallyShownCards={3}>
+        {mockCards(3)}
+      </BpkCardListGridStack>,
+    );
 
-//     const results = await axe(container);
-//     expect(results).toHaveNoViolations();
-//   });
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 
-//   it('should have no accessibility issues for expand accessory', async () => {
-//     const { container } = render(
-//       <BpkCardListGridStack
-//         layout={LAYOUTS.grid}
-//         accessory={ACCESSORY_TYPES.Expand}
-//         initiallyShownCards={3}
-//         expandText="Show more"
-//       >
-//         {mockCards(3)}
-//       </BpkCardListGridStack>,
-//     );
+  it('should have no accessibility issues for expand accessory', async () => {
+    const { container } = render(
+      <BpkCardListGridStack
+        layout={LAYOUTS.grid}
+        accessory={ACCESSORY_DESKTOP_TYPES.Expand}
+        initiallyShownCards={3}
+        expandText="Show more"
+      >
+        {mockCards(3)}
+      </BpkCardListGridStack>,
+    );
 
-//     const results = await axe(container);
-//     expect(results).toHaveNoViolations();
-//   });
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 
-//   it('should have no accessibility issues for button accessory', async () => {
-//     const { container } = render(
-//       <BpkCardListGridStack
-//         layout={LAYOUTS.grid}
-//         accessory={ACCESSORY_TYPES.Button}
-//         initiallyShownCards={3}
-//         buttonText="Show more"
-//         onButtonClick={() => {}}
-//       >
-//         {mockCards(3)}
-//       </BpkCardListGridStack>,
-//     );
+  it('should have no accessibility issues for button accessory', async () => {
+    const { container } = render(
+      <BpkCardListGridStack
+        layout={LAYOUTS.grid}
+        accessory={ACCESSORY_DESKTOP_TYPES.Button}
+        initiallyShownCards={3}
+        buttonText="Show more"
+        onButtonClick={() => {}}
+      >
+        {mockCards(3)}
+      </BpkCardListGridStack>,
+    );
 
-//     const results = await axe(container);
-//     expect(results).toHaveNoViolations();
-//   });
-// });
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

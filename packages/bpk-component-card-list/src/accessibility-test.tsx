@@ -16,80 +16,80 @@
  * limitations under the License.
  */
 
-// import { render } from '@testing-library/react';
-// import { axe } from 'jest-axe';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-// import mockCards from '../testMocks';
+import mockCards from '../testMocks';
 
-// import BpkCardList from './BpkCardList';
-// import { LAYOUTS } from './common-types';
+import BpkCardList from './BpkCardList';
+import { LAYOUTS } from './common-types';
 
-// describe('BpkCardList', () => {
-//   it('should not have any accessibility issues with grid, stack and no accessory', async () => {
-//     const { container } = render(
-//       <BpkCardList
-//         title="Title"
-//         description="Description"
-//         layoutDesktop={LAYOUTS.grid}
-//         layoutMobile={LAYOUTS.stack}
-//         cardList={mockCards(2)}
-//       />,
-//     );
+describe('BpkCardList', () => {
+  it('should not have any accessibility issues with grid, stack and no accessory', async () => {
+    const { container } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        layoutDesktop={LAYOUTS.grid}
+        layoutMobile={LAYOUTS.stack}
+        cardList={mockCards(2)}
+      />,
+    );
 
-//     const results = await axe(container);
-//     expect(results).toHaveNoViolations();
-//   });
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 
-//   it('should not have any accessibility issues with grid, stack, header button and no accessory', async () => {
-//     const { container } = render(
-//       <BpkCardList
-//         title="Title"
-//         description="Description"
-//         layoutDesktop={LAYOUTS.grid}
-//         layoutMobile={LAYOUTS.stack}
-//         cardList={mockCards(2)}
-//         buttonText="Header Button"
-//         buttonHref="#"
-//         onButtonClick={() => {}}
-//       />,
-//     );
+  it('should not have any accessibility issues with grid, stack, header button and no accessory', async () => {
+    const { container } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        layoutDesktop={LAYOUTS.grid}
+        layoutMobile={LAYOUTS.stack}
+        cardList={mockCards(2)}
+        buttonText="Header Button"
+        buttonHref="#"
+        onButtonClick={() => {}}
+      />,
+    );
 
-//     const results = await axe(container);
-//     expect(results).toHaveNoViolations();
-//   });
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 
-//   it('should not have any accessibility issues with grid, stack, expand accessory', async () => {
-//     const { container } = render(
-//       <BpkCardList
-//         title="Title"
-//         description="Description"
-//         layoutDesktop={LAYOUTS.grid}
-//         layoutMobile={LAYOUTS.stack}
-//         cardList={mockCards(2)}
-//         accessoryDesktop="expand"
-//         expandText="Expand"
-//       />,
-//     );
+  it('should not have any accessibility issues with grid, stack, expand accessory', async () => {
+    const { container } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        layoutDesktop={LAYOUTS.grid}
+        layoutMobile={LAYOUTS.stack}
+        cardList={mockCards(2)}
+        accessoryDesktop="expand"
+        expandText="Expand"
+      />,
+    );
 
-//     const results = await axe(container);
-//     expect(results).toHaveNoViolations();
-//   });
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 
-//   it('should not have any accessibility issues with grid, stack, button accessory', async () => {
-//     const { container } = render(
-//       <BpkCardList
-//         title="Title"
-//         description="Description"
-//         layoutDesktop={LAYOUTS.grid}
-//         layoutMobile={LAYOUTS.stack}
-//         cardList={mockCards(2)}
-//         accessoryDesktop="button"
-//         buttonText="Button"
-//         onButtonClick={() => {}}
-//       />,
-//     );
+  it('should not have any accessibility issues with grid, stack, button accessory', async () => {
+    const { container } = render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        layoutDesktop={LAYOUTS.grid}
+        layoutMobile={LAYOUTS.stack}
+        cardList={mockCards(2)}
+        accessoryDesktop="button"
+        buttonText="Button"
+        onButtonClick={() => {}}
+      />,
+    );
 
-//     const results = await axe(container);
-//     expect(results).toHaveNoViolations();
-//   });
-// });
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
