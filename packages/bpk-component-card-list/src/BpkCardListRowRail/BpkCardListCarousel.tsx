@@ -75,7 +75,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     const container = root;
     if (!container) {
       console.error('BpkCardListCarousel Root Container not found');
-      return;
+      return undefined;
     }
 
     const debounceVerticalScroll = _.debounce(

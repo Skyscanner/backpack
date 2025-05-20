@@ -18,9 +18,10 @@
 
 import { render, screen } from '@testing-library/react';
 
-import BpkCardListRowRail from './BpkCardListRowRailContainer';
 import mockCards from '../../testMocks';
 import { ACCESSORY_DESKTOP_TYPES, LAYOUTS } from '../common-types';
+
+import BpkCardListRowRail from './BpkCardListRowRailContainer';
 
 describe('BpkCardListRowRail', () => {
 
