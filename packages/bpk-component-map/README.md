@@ -147,6 +147,41 @@ export default () => (
 );
 ```
 
+### BpkPriceMarkerButton
+
+BpkPriceMarkerButton that is the BpkPriceMarker redesign.
+
+```js
+import BpkMap, {
+  BpkPriceMarkerButton,
+  MARKER_STATUSES,
+} from '@skyscanner/backpack-web/bpk-component-map';
+
+export default () => (
+  <BpkPriceMarkerButton
+    label="£120"
+    onClick={() => {
+      console.log('Price marker pressed.');
+    }}
+    status={MARKER_STATUSES.selected}
+  />
+  <BpkPriceMarkerButton
+    label="£120"
+    onClick={() => {
+      console.log('Price marker pressed.');
+    }}
+    status={MARKER_STATUSES.previous_selected}
+  />
+  <BpkPriceMarkerButton
+    label="£120"
+    icon={<AlignedAirportsIconSm />}
+    onClick={() => {
+      console.log('Click the Price marker with icon.');
+    }}
+  />
+);
+```
+
 ## Accompanying HOCs
 
 ### withGoogleMapsScript

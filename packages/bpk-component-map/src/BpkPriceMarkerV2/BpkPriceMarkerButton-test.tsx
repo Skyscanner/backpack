@@ -31,7 +31,11 @@ describe('BpkPriceMarkerButton', () => {
   it('should render properly with a icon', () => {
     const icon = <span>Icon</span>;
     const { asFragment } = render(
-      <BpkPriceMarkerButton label="£120" icon={icon} />,
+      <BpkPriceMarkerButton
+        label="£120"
+        icon={icon}
+        status={MARKER_STATUSES.selected}
+      />,
     );
 
     expect(asFragment()).toMatchSnapshot();

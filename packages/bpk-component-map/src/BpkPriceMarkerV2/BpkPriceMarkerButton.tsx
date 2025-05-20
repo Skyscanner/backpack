@@ -42,15 +42,15 @@ const BpkPriceMarkerButton = ({
   icon,
   label,
   onClick,
-  status,
+  status = 'unselected',
 }: Props) => {
   const markerWrapperClassNames = getClassName('bpk-price-marker__wrapper');
 
   const actualClassName = getClassName(
     'bpk-price-marker',
-    onClick && 'bpk-price-marker--dynamic',
+    onClick ? 'bpk-price-marker--dynamic' : '',
     `bpk-price-marker-${status}`,
-    icon && `bpk-price-marker-${status}--icon`,
+    icon ? `bpk-price-marker-${status}--icon` : '',
     className,
   );
   return (

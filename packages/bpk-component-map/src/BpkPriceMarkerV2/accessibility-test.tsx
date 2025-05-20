@@ -22,6 +22,7 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import { BpkPriceMarkerV2 } from './BpkPriceMarker';
+import BpkPriceMarkerButton from './BpkPriceMarkerButton';
 
 type Props = {
   children: ReactNode;
@@ -51,6 +52,14 @@ describe('BpkPriceMarkerV2 accessibility tests', () => {
         accessibilityLabel="Click the price marker"
       />,
     );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
+
+describe('BpkPriceMarkerButton accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(<BpkPriceMarkerButton label="£120" />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
