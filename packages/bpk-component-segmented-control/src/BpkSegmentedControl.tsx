@@ -72,7 +72,7 @@ const BpkSegmentedControl = ({
     <div
       className={containerStyling}
       role="group"
-      aria-label={label}
+      {...(label ? { 'aria-label': label } : {})}
     >
       {buttonContents.map((content, index) => {
         const isSelected = index === selectedButton;

@@ -117,4 +117,10 @@ describe('BpkSegmentedControl', () => {
     const group = screen.getByRole('group');
     expect(group).toHaveAttribute('aria-label', 'Segmented control label');
   });
+
+  it('should not set aria-label when label prop is not provided', () => {
+    render(<BpkSegmentedControl {...defaultProps} label={undefined} />);
+    const group = screen.getByRole('group');
+    expect(group).not.toHaveAttribute('aria-label');
+  });
 });
