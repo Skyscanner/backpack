@@ -3,11 +3,11 @@
 exports[`BpkPriceMarkerButton should render correctly with "status" attribute as "previous_selected" 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-price-marker__wrapper"
+    class="bpk-price-marker-button__wrapper"
     type="button"
   >
     <div
-      class="bpk-price-marker bpk-price-marker-previous_selected"
+      class="bpk-price-marker-button bpk-price-marker-button-previous_selected"
     >
       <span
         class="bpk-text bpk-text--label-3"
@@ -22,11 +22,11 @@ exports[`BpkPriceMarkerButton should render correctly with "status" attribute as
 exports[`BpkPriceMarkerButton should render correctly with "status" attribute as "selected" 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-price-marker__wrapper"
+    class="bpk-price-marker-button__wrapper"
     type="button"
   >
     <div
-      class="bpk-price-marker bpk-price-marker-selected"
+      class="bpk-price-marker-button bpk-price-marker-button-selected"
     >
       <span
         class="bpk-text bpk-text--label-3"
@@ -41,12 +41,12 @@ exports[`BpkPriceMarkerButton should render correctly with "status" attribute as
 exports[`BpkPriceMarkerButton should render correctly with a "buttonProps" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-price-marker__wrapper"
+    class="bpk-price-marker-button__wrapper"
     testid="arbitrary value"
     type="button"
   >
     <div
-      class="bpk-price-marker bpk-price-marker-unselected"
+      class="bpk-price-marker-button bpk-price-marker-button-unselected"
     >
       <span
         class="bpk-text bpk-text--label-3"
@@ -61,11 +61,11 @@ exports[`BpkPriceMarkerButton should render correctly with a "buttonProps" attri
 exports[`BpkPriceMarkerButton should render correctly with a "className" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-price-marker__wrapper"
+    class="bpk-price-marker-button__wrapper"
     type="button"
   >
     <div
-      class="bpk-price-marker bpk-price-marker-unselected custom-class-1 custom-class-2"
+      class="bpk-price-marker-button bpk-price-marker-button-unselected custom-class-1 custom-class-2"
     >
       <span
         class="bpk-text bpk-text--label-3"
@@ -80,11 +80,11 @@ exports[`BpkPriceMarkerButton should render correctly with a "className" attribu
 exports[`BpkPriceMarkerButton should render correctly with a "onClick" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-price-marker__wrapper"
+    class="bpk-price-marker-button__wrapper"
     type="button"
   >
     <div
-      class="bpk-price-marker bpk-price-marker--dynamic bpk-price-marker-unselected"
+      class="bpk-price-marker-button bpk-price-marker-button--dynamic bpk-price-marker-button-unselected"
     >
       <span
         class="bpk-text bpk-text--label-3"
@@ -99,11 +99,11 @@ exports[`BpkPriceMarkerButton should render correctly with a "onClick" attribute
 exports[`BpkPriceMarkerButton should render properly 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-price-marker__wrapper"
+    class="bpk-price-marker-button__wrapper"
     type="button"
   >
     <div
-      class="bpk-price-marker bpk-price-marker-unselected"
+      class="bpk-price-marker-button bpk-price-marker-button-unselected"
     >
       <span
         class="bpk-text bpk-text--label-3"
@@ -118,11 +118,11 @@ exports[`BpkPriceMarkerButton should render properly 1`] = `
 exports[`BpkPriceMarkerButton should render properly with a icon 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-price-marker__wrapper"
+    class="bpk-price-marker-button__wrapper"
     type="button"
   >
     <div
-      class="bpk-price-marker bpk-price-marker-selected bpk-price-marker-selected--icon"
+      class="bpk-price-marker-button bpk-price-marker-button-selected bpk-price-marker-button-selected--icon"
     >
       <span>
         Icon
