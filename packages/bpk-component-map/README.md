@@ -149,7 +149,7 @@ export default () => (
 
 ### BpkPriceMarkerButton
 
-BpkPriceMarkerButton that is the BpkPriceMarker redesign.
+BpkPriceMarkerButton is a marker-style button typically used on maps.
 
 ```js
 import BpkMap, {

@@ -35,8 +35,8 @@ import {
   WithPriceMarkersExample,
   WithPriceMarkersV2Example,
   WithIconPriceMarkersV2Example,
-  WithPriceMarkersV2ButtonExample,
-  WithIconPriceMarkersV2ButtonExample,
+  WithPriceMarkersV2ButtonWithPopoverOnMapExample,
+  WithIconPriceMarkersV2ButtonWithPopoverOnMapExample,
   MultipleMapsExample,
 } from './examples';
 import WithGoogleMapsScriptMock from './stories-utils';
@@ -77,8 +77,10 @@ export const PriceMarkersV2 = WithPriceMarkersV2Example;
 
 export const WithIconPriceMarkersV2 = WithIconPriceMarkersV2Example;
 
-export const PriceMarkersV2Button = WithPriceMarkersV2ButtonExample;
+export const PriceMarkersV2ButtonWithPopoverOnMap =
+  WithPriceMarkersV2ButtonWithPopoverOnMapExample;
 
-export const WithIconPriceMarkersV2Button = WithIconPriceMarkersV2ButtonExample;
+export const WithIconPriceMarkersV2ButtonWithPopoverOnMap =
+  WithIconPriceMarkersV2ButtonWithPopoverOnMapExample;
 
 export const MultiMaps = MultipleMapsExample;

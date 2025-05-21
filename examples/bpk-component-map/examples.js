@@ -19,7 +19,7 @@
 
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
-import { Component, useState } from 'react';
+import { Component, useRef, useState } from 'react';
 
 import { withRtlSupport } from '../../packages/bpk-component-icon';
 import AirportsIconSm from '../../packages/bpk-component-icon/sm/airports';
@@ -36,6 +36,7 @@ import BpkMap, {
   withGoogleMapsScript,
   BpkPriceMarkerButton,
 } from '../../packages/bpk-component-map';
+import BpkPopover from '../../packages/bpk-component-popover';
 import BpkText from '../../packages/bpk-component-text';
 import { action } from '../bpk-storybook-utils';
 
@@ -274,7 +275,12 @@ class StatefulBpkIconMarker extends Component<
   }
 }
 
-const StatefulBpkPriceMarkerButton = ({
+const getPixelPositionOffset = (width: number, height: number) => ({
+  x: -(width / 2),
+  y: -height,
+});
+
+const StatefulBpkPriceMarkerButtonWithPopoverOnMap = ({
   action: inlineAction,
   airportsIconWithPrice,
 }: {
@@ -283,6 +289,7 @@ const StatefulBpkPriceMarkerButton = ({
 }) => {
   const [selectedId, setSelectedId] = useState('2');
   const [viewedVenues, setViewedVenues] = useState(['1']);
+  const ref = useRef(null);
 
   const getStatus = (id: string) => {
     if (selectedId === id) {
@@ -300,25 +307,47 @@ const StatefulBpkPriceMarkerButton = ({
   };
 
   return (
-    <div>
+    <StoryMap zoom={15} center={{ latitude: 55.944665, longitude: -3.1964903 }}>
       {venues.map((venue) => (
-        <BpkPriceMarkerButton
-          id={venue.id}
-          label={venue.price}
-          icon={airportsIconWithPrice ? venue.airportsIcon : null}
+        <BpkOverlayView
+          getPixelPositionOffset={getPixelPositionOffset}
           position={{
             latitude: venue.latitude,
             longitude: venue.longitude,
           }}
-          onClick={() => {
-            inlineAction();
-            selectVenue(venue.id);
-          }}
-          status={getStatus(venue.id)}
-          accessibilityLabel="Click the price marker"
-        />
+        >
+          <BpkPopover
+            hoverable
+            showArrow
+            id="my-popover}"
+            padded
+            label="My popover"
+            labelAsTitle
+            target={
+              <div ref={ref} style={{ width: 'fit-content' }}>
+                <BpkPriceMarkerButton
+                  id={venue.id}
+                  label={venue.price}
+                  icon={airportsIconWithPrice ? venue.airportsIcon : null}
+                  position={{
+                    latitude: venue.latitude,
+                    longitude: venue.longitude,
+                  }}
+                  onClick={() => {
+                    inlineAction();
+                    selectVenue(venue.id);
+                  }}
+                  status={getStatus(venue.id)}
+                  accessibilityLabel="Click the price marker"
+                />
+              </div>
+            }
+          >
+            <BpkText>My popover content.</BpkText>
+          </BpkPopover>
+        </BpkOverlayView>
       ))}
-    </div>
+    </StoryMap>
   );
 };
 
@@ -407,15 +436,15 @@ const WithIconPriceMarkersV2Example = () => (
   />
 );
 
-const WithPriceMarkersV2ButtonExample = () => (
-  <StatefulBpkPriceMarkerButton
+const WithPriceMarkersV2ButtonWithPopoverOnMapExample = () => (
+  <StatefulBpkPriceMarkerButtonWithPopoverOnMap
     action={action('Price marker button clicked')}
     airportsIconWithPrice={false}
   />
 );
 
-const WithIconPriceMarkersV2ButtonExample = () => (
-  <StatefulBpkPriceMarkerButton
+const WithIconPriceMarkersV2ButtonWithPopoverOnMapExample = () => (
+  <StatefulBpkPriceMarkerButtonWithPopoverOnMap
     action={action('Price marker button clicked')}
     airportsIconWithPrice
   />
@@ -455,8 +484,8 @@ export {
   WithPriceMarkersExample,
   WithPriceMarkersV2Example,
   WithIconPriceMarkersV2Example,
-  WithPriceMarkersV2ButtonExample,
-  WithIconPriceMarkersV2ButtonExample,
+  WithPriceMarkersV2ButtonWithPopoverOnMapExample,
+  WithIconPriceMarkersV2ButtonWithPopoverOnMapExample,
   MultipleMapsExample,
   VisualTestExample,
 };
