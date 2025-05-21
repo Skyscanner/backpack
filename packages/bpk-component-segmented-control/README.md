@@ -10,7 +10,7 @@ import BpkSegmentedControl from '@skyscanner/backpack-web/bpk-component-segmente
 export default () => (
   <BpkSegmentedControl
   buttonContents={buttonContent}
-  label="Trip type" // Accessible name for the segmented control group
+  label="Trip type" // Accessible name, this should be localised
   onItemClick={() => {}}
   selectedIndex={1} // button selected on load
   type={SEGMENT_TYPES.SurfaceContrast}
