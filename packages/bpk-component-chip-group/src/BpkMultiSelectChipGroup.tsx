@@ -226,8 +226,6 @@ const RailChipGroup = ({
           <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
             {(isDesktop) => {
               const shouldHideStickyText = !isDesktop && !isAtStart;
-              console.log('--isAtStart', isAtStart);
-              console.log('--shouldHideStickyText', shouldHideStickyText);
               return (
                 <BpkSelectableChip
                   className={getClassName(
