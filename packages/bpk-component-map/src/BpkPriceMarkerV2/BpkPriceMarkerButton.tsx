@@ -21,8 +21,6 @@ import type { ReactNode } from 'react';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import { cssModules } from '../../../bpk-react-utils';
 
-import type { Status } from './BpkPriceMarker';
-
 import STYLES from './BpkPriceMarkerButton.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -35,6 +33,14 @@ type Props = {
   buttonProps?: { [key: string]: string };
   status?: Status;
 };
+
+export const MARKER_STATUSES = {
+  unselected: 'unselected',
+  selected: 'selected',
+  previous_selected: 'previous_selected',
+} as const;
+
+export type Status = (typeof MARKER_STATUSES)[keyof typeof MARKER_STATUSES];
 
 const BpkPriceMarkerButton = ({
   buttonProps = {},

@@ -21,7 +21,7 @@ import type { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import { BpkPriceMarkerV2 } from './BpkPriceMarker';
+import BpkPriceMarkerV2 from './BpkPriceMarker';
 import BpkPriceMarkerButton from './BpkPriceMarkerButton';
 
 type Props = {

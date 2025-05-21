@@ -24,11 +24,10 @@ import BpkIconMarker, {
 import BpkMap from './src/BpkMap';
 import BpkOverlayView from './src/BpkOverlayView';
 import BpkPriceMarker, { PRICE_MARKER_STATUSES } from './src/BpkPriceMarker';
-import {
-  BpkPriceMarkerV2,
+import BpkPriceMarkerV2 from './src/BpkPriceMarkerV2/BpkPriceMarker';
+import BpkPriceMarkerButton, {
   MARKER_STATUSES,
-} from './src/BpkPriceMarkerV2/BpkPriceMarker';
-import BpkPriceMarkerButton from './src/BpkPriceMarkerV2/BpkPriceMarkerButton';
+} from './src/BpkPriceMarkerV2/BpkPriceMarkerButton';
 import { type LatLong } from './src/common-types';
 import {
   defaultIconMarkerThemeAttributes,

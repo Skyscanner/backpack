@@ -18,8 +18,7 @@
 
 import { render } from '@testing-library/react';
 
-import { MARKER_STATUSES } from './BpkPriceMarker';
-import BpkPriceMarkerButton from './BpkPriceMarkerButton';
+import BpkPriceMarkerButton, { MARKER_STATUSES } from './BpkPriceMarkerButton';
 
 describe('BpkPriceMarkerButton', () => {
   it('should render properly', () => {

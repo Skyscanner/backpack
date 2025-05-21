@@ -20,7 +20,7 @@ import BpkIconMarker from '../../packages/bpk-component-map/src/BpkIconMarker';
 import BpkMap from '../../packages/bpk-component-map/src/BpkMap';
 import BpkOverlayView from '../../packages/bpk-component-map/src/BpkOverlayView';
 import BpkPriceMarker from '../../packages/bpk-component-map/src/BpkPriceMarker';
-import { BpkPriceMarkerV2 } from '../../packages/bpk-component-map/src/BpkPriceMarkerV2/BpkPriceMarker';
+import BpkPriceMarkerV2 from '../../packages/bpk-component-map/src/BpkPriceMarkerV2/BpkPriceMarker';
 import BpkPriceMarkerButton from '../../packages/bpk-component-map/src/BpkPriceMarkerV2/BpkPriceMarkerButton';
 
 import {

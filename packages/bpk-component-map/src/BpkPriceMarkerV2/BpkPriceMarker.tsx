@@ -20,15 +20,12 @@ import type { ReactNode } from 'react';
 
 import BpkBasicMapMarker from '../BpkBasicMapMarker';
 
-import BpkPriceMarkerButton from './BpkPriceMarkerButton';
+import BpkPriceMarkerButton, {
+  MARKER_STATUSES
+} from './BpkPriceMarkerButton';
 
-export const MARKER_STATUSES = {
-  unselected: 'unselected',
-  selected: 'selected',
-  previous_selected: 'previous_selected',
-} as const;
-
-export type Status = (typeof MARKER_STATUSES)[keyof typeof MARKER_STATUSES];
+import type {
+  Status} from './BpkPriceMarkerButton';
 
 type Props = {
   label: string;
@@ -44,7 +41,7 @@ type Props = {
   status?: Status;
 };
 
-export const BpkPriceMarkerV2 = (props: Props) => {
+const BpkPriceMarkerV2 = (props: Props) => {
   const {
     accessibilityLabel,
     buttonProps,
@@ -76,3 +73,5 @@ export const BpkPriceMarkerV2 = (props: Props) => {
     </BpkBasicMapMarker>
   );
 };
+
+export default BpkPriceMarkerV2;
