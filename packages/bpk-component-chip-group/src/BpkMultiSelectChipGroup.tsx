@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 import type { ReactNode } from 'react';
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import BpkSelectableChip, {
@@ -25,11 +25,11 @@ import BpkSelectableChip, {
   BpkDropdownChip,
   CHIP_TYPES,
 } from '../../bpk-component-chip';
-import FilterIconSm from '../../bpk-component-icon/sm/filter';
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 
+import BpkStickyChip from './BpkStickyChip';
 import Nudger, { POSITION } from './Nudger';
 
 import STYLES from './BpkChipGroup.module.scss';
@@ -184,28 +184,7 @@ const RailChipGroup = ({
   trailingNudgerLabel,
 }: RailChipGroupProps) => {
   const scrollContainerRef = useRef<HTMLElement | null>(null);
-  const [isAtStart, setIsAtStart] = useState(true);
 
-  useEffect(() => {
-    const el = scrollContainerRef.current;
-    if (!el) {
-      return () => {};
-    }
-
-    const handleScroll = () => {
-      const isScrolledToStart = Math.abs(el.scrollLeft) <= 1;
-      setIsAtStart(isScrolledToStart);
-    };
-
-    el.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => el.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const stickyChipContainerClassnames = getClassName(
-    'bpk-sticky-chip-container',
-    `bpk-sticky-chip-container--${chipStyle}`,
-  );
   const chipGroupClassNames = getClassName(
     'bpk-chip-group',
     'bpk-chip-group--rail',
@@ -222,46 +201,13 @@ const RailChipGroup = ({
         />
       </BpkBreakpoint>
       {stickyChip && (
-        <div className={stickyChipContainerClassnames}>
-          <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
-            {(isDesktop) => {
-              const shouldHideStickyText = !isDesktop && !isAtStart;
-              return (
-                <BpkSelectableChip
-                  className={getClassName(
-                    shouldHideStickyText
-                      ? 'bpk-sticky-chip--collapsed'
-                      : 'bpk-sticky-chip--expanded',
-                  )}
-                  type={chipStyle}
-                  selected={stickyChip.selected ?? false}
-                  accessibilityLabel={
-                    stickyChip.accessibilityLabel || stickyChip.text
-                  }
-                  onClick={() => {
-                    stickyChip.onClick?.(!stickyChip.selected, -1);
-                  }}
-                  role='button'
-                >
-                  <span className={getClassName('bpk-sticky-chip')}>
-                    <FilterIconSm />
-                    <span
-                      className={getClassName(
-                        'bpk-sticky-chip--text',
-                        shouldHideStickyText
-                          ? 'bpk-sticky-chip--hide'
-                          : 'bpk-sticky-chip--show',
-                      )}
-                    >
-                      {stickyChip.text}
-                    </span>
-                  </span>
-                </BpkSelectableChip>
-              );
-            }}
-          </BpkBreakpoint>
-        </div>
+        <BpkStickyChip
+          chipStyle={chipStyle}
+          stickyChip={stickyChip}
+          scrollContainerRef={scrollContainerRef}
+        />
       )}
+
       <BpkMobileScrollContainer
         scrollerRef={(el: HTMLElement | null) => {
           scrollContainerRef.current = el;

@@ -29,19 +29,10 @@ const defaultProps = {
   ariaLabel: 'a11y label',
 };
 
-let isDesktopMock = true;
-const getIsDesktopMock = () => isDesktopMock;
-
-jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () => ({
-  __esModule: true,
-  default: () => getIsDesktopMock(),
-}));
-
 describe('BpkMultiSelectChipGroup', () => {
   beforeEach(() => {
-    isDesktopMock = true;
     window.matchMedia = jest.fn().mockImplementation(() => ({
-      matches: isDesktopMock,
+      matches: true,
       addEventListener: jest.fn(),
       removeEventListener: jest.fn(),
     }));
@@ -91,53 +82,6 @@ describe('BpkMultiSelectChipGroup', () => {
       />,
     );
     expect(screen.getByRole('button', { name: 'Sort & Filter' })).toBeVisible();
-  });
-
-  it('should render sticky chip as selectable on mobile when isAtStart is true', () => {
-    isDesktopMock = false;
-
-    const { getByRole } = render(
-      <BpkMultiSelectChipGroup
-        stickyChip={{ text: 'Sort & Filter' }}
-        chips={[]}
-        type="rail"
-        ariaLabel="Filter cities"
-        leadingNudgerLabel="Back"
-        trailingNudgerLabel="Forward"
-      />,
-    );
-
-    const stickyChip = getByRole('button', { name: 'Sort & Filter' });
-    expect(stickyChip).toBeVisible();
-  });
-
-  it('should render sticky chip as icon on mobile when scrolled (isAtStart = false)', () => {
-    isDesktopMock = false;
-
-    const { container, getByRole } = render(
-      <BpkMultiSelectChipGroup
-        stickyChip={{ text: 'Sort & Filter' }}
-        chips={[]}
-        type="rail"
-        ariaLabel="Filter cities"
-        leadingNudgerLabel="Back"
-        trailingNudgerLabel="Forward"
-      />,
-    );
-
-    const scrollEl = container.querySelector(
-      '.bpk-chip-group--rail',
-    )?.parentElement;
-    if (scrollEl) {
-      Object.defineProperty(scrollEl, 'scrollLeft', {
-        value: 100,
-        writable: true,
-      });
-      scrollEl.dispatchEvent(new Event('scroll'));
-    }
-
-    const stickyChip = getByRole('button', { name: 'Sort & Filter' });
-    expect(stickyChip).toBeVisible();
   });
 
   it('should call onClick property of chip when clicked', async () => {
