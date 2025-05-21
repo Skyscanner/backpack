@@ -90,7 +90,7 @@ describe('BpkMultiSelectChipGroup', () => {
         trailingNudgerLabel="Scroll forward"
       />,
     );
-    expect(screen.getByRole('checkbox', { name: 'Sort & Filter' })).toBeVisible();
+    expect(screen.getByRole('button', { name: 'Sort & Filter' })).toBeVisible();
   });
 
   it('should render sticky chip as selectable on mobile when isAtStart is true', () => {
@@ -107,7 +107,7 @@ describe('BpkMultiSelectChipGroup', () => {
       />,
     );
 
-    const stickyChip = getByRole('checkbox', { name: 'Sort & Filter' });
+    const stickyChip = getByRole('button', { name: 'Sort & Filter' });
     expect(stickyChip).toBeVisible();
   });
 
@@ -136,7 +136,7 @@ describe('BpkMultiSelectChipGroup', () => {
       scrollEl.dispatchEvent(new Event('scroll'));
     }
 
-    const stickyChip = getByRole('checkbox', { name: 'Sort & Filter' });
+    const stickyChip = getByRole('button', { name: 'Sort & Filter' });
     expect(stickyChip).toBeVisible();
   });
 

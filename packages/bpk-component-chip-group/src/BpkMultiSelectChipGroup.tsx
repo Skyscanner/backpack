@@ -241,7 +241,7 @@ const RailChipGroup = ({
                   onClick={() => {
                     stickyChip.onClick?.(!stickyChip.selected, -1);
                   }}
-                  role={ariaMultiselectable ? 'checkbox' : 'radio'}
+                  role='button'
                 >
                   <span className={getClassName('bpk-sticky-chip')}>
                     <FilterIconSm />
