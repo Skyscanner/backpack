@@ -49,7 +49,10 @@
   &--collapsed {
     transition: padding tokens.$bpk-duration-sm ease;
     gap: tokens.$bpk-spacing-none;
-    padding-inline: tokens.bpk-spacing-md();
+
+    // after the text is folded, we expect that padding of the only Icon chip will change accordingly
+    /* stylelint-disable-next-line declaration-no-important */
+    padding-inline: tokens.bpk-spacing-md() !important;
 
     .bpk-sticky-chip {
       gap: tokens.$bpk-spacing-none;
