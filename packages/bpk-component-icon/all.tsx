@@ -31,7 +31,7 @@ function requireAll(requireContext: any) {
 
 const sm = requireAll(require.context('./sm', false, /\.jsx$/));
 const lg = requireAll(require.context('./lg', false, /\.jsx$/));
-const xl = requireAll(require.context('./xl', false, /\.jsx$/));
+const xxxl = requireAll(require.context('./xxxl', false, /\.jsx$/));
 
 export default sm;
-export { sm, lg, xl };
+export { sm, lg, xxxl };
