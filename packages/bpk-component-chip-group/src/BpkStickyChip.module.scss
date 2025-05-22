@@ -48,11 +48,11 @@
 
   &--collapsed {
     transition: padding tokens.$bpk-duration-sm ease;
-    gap: 0;
+    gap: tokens.$bpk-spacing-none;
     padding-inline: tokens.bpk-spacing-md();
 
     .bpk-sticky-chip {
-      gap: 0;
+      gap: tokens.$bpk-spacing-none;
     }
   }
 
@@ -62,7 +62,7 @@
 
   &--text {
     display: inline-block;
-    max-width: unset;
+    max-width: tokens.$bpk-modal-max-width;
     transition:
       opacity tokens.$bpk-duration-sm ease,
       max-width tokens.$bpk-duration-sm ease;
@@ -71,12 +71,12 @@
   }
 
   &--hide {
-    max-width: 0;
-    opacity: 0;
+    max-width: tokens.$bpk-spacing-none;
+    opacity: tokens.$bpk-modal-initial-opacity;
   }
 
   &--show {
-    max-width: unset;
-    opacity: 1;
+    max-width: tokens.$bpk-modal-max-width;
+    opacity: tokens.$bpk-modal-opacity;
   }
 }
