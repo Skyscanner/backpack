@@ -65,7 +65,7 @@
 
   &--text {
     display: inline-block;
-    max-width: tokens.$bpk-modal-max-width;
+    max-width: tokens.$bpk-breakpoint-mobile;
     transition:
       opacity tokens.$bpk-duration-sm ease,
       max-width tokens.$bpk-duration-sm ease;
@@ -79,7 +79,7 @@
   }
 
   &--show {
-    max-width: tokens.$bpk-modal-max-width;
+    max-width: tokens.$bpk-breakpoint-mobile;
     opacity: tokens.$bpk-modal-opacity;
   }
 }
