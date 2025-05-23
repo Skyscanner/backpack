@@ -35,6 +35,13 @@ describe('BpkProgress', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render correctly with a "tabIndex" attribute', () => {
+    const { asFragment } = render(
+      <BpkProgress min={0} max={100} value={25} tabIndex={-1} className="my-progress-bar" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('should render correctly with a "small" attribute', () => {
     const { asFragment } = render(
       <BpkProgress min={0} max={9} value={2} small />,
