@@ -33,6 +33,7 @@ import {
   CardWrapperExample,
   DividedCardWrapperExample,
   WithClassNameWrapperExample,
+  WithBodyCardWrapperExample,
   MixedExample,
 } from './examples';
 
@@ -62,6 +63,7 @@ export const NonElevatedDividedCard = NonElevatedDividedCardExample;
 export const CardWrapper = CardWrapperExample;
 export const DividedCardWrapper = DividedCardWrapperExample;
 export const WithClassNameWrapper = WithClassNameWrapperExample;
+export const WithBodyCardWrapper = WithBodyCardWrapperExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
