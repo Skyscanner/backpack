@@ -16,6 +16,13 @@
  * limitations under the License.
  */
 
-import BpkCardList from './src/BpkCardList';
+@use '../../../unstable__bpk-mixins/tokens';
 
-export default BpkCardList;
+.bpk-card-list-row-rail {
+  display: flex;
+  flex-direction: column;
+
+  &__accessory {
+    width: 100%;
+  }
+}
