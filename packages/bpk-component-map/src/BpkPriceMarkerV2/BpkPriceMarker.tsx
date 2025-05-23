@@ -16,22 +16,16 @@
  * limitations under the License.
  */
 
-import type { MouseEvent, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
-import { cssModules } from '../../../bpk-react-utils';
 import BpkBasicMapMarker from '../BpkBasicMapMarker';
 
-import STYLES from './BpkPriceMarker.module.scss';
+import BpkPriceMarkerButton, {
+  MARKER_STATUSES
+} from './BpkPriceMarkerButton';
 
-const getClassName = cssModules(STYLES);
-export const MARKER_STATUSES = {
-  unselected: 'unselected',
-  selected: 'selected',
-  previous_selected: 'previous_selected',
-} as const;
-
-export type Status = (typeof MARKER_STATUSES)[keyof typeof MARKER_STATUSES];
+import type {
+  Status} from './BpkPriceMarkerButton';
 
 type Props = {
   label: string;
@@ -42,12 +36,12 @@ type Props = {
     longitude: number;
   };
   className?: string;
-  onClick?: (event: MouseEvent) => void;
+  onClick?: () => void;
   buttonProps?: { [key: string]: string };
   status?: Status;
 };
 
-export const BpkPriceMarkerV2 = (props: Props) => {
+const BpkPriceMarkerV2 = (props: Props) => {
   const {
     accessibilityLabel,
     buttonProps,
@@ -60,15 +54,14 @@ export const BpkPriceMarkerV2 = (props: Props) => {
     ...rest
   } = props;
 
-  const markerWrapperClassNames = getClassName('bpk-price-marker__wrapper');
-
-  const classNames = getClassName(
-    'bpk-price-marker',
-    onClick && 'bpk-price-marker--dynamic',
-    `bpk-price-marker-${status}`,
-    icon && `bpk-price-marker-${status}--icon`,
+  const allButtonProps = {
     className,
-  );
+    icon,
+    label,
+    onClick,
+    status,
+    buttonProps,
+  };
 
   return (
     <BpkBasicMapMarker
@@ -76,17 +69,9 @@ export const BpkPriceMarkerV2 = (props: Props) => {
       aria-label={accessibilityLabel}
       {...rest}
     >
-      <button
-        type="button"
-        className={markerWrapperClassNames}
-        onClick={onClick}
-        {...buttonProps}
-      >
-        <div className={classNames}>
-          {icon}
-          <BpkText textStyle={TEXT_STYLES.label3}>{label}</BpkText>
-        </div>
-      </button>
+      <BpkPriceMarkerButton {...allButtonProps} />
     </BpkBasicMapMarker>
   );
 };
+
+export default BpkPriceMarkerV2;
