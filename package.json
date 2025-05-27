@@ -189,6 +189,6 @@
     "wrapper-webpack-plugin": "^2.2.2"
   },
   "overrides": {
-    "braces": "^3.0.3"
+    "braces": "3.0.3"
   }
 }
