@@ -17,6 +17,7 @@
  */
 
 @use '../../packages/unstable__bpk-mixins/tokens';
+@use '../../packages/unstable__bpk-mixins/breakpoints';
 
 .bpk-card-examples {
   &__header {
@@ -26,6 +27,28 @@
     justify-content: space-between;
     align-items: center;
     color: tokens.$bpk-text-on-dark-day;
+  }
+
+  &__ad-header {
+    display: flex;
+    padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
+    color: tokens.$bpk-text-on-dark-day;
+
+    @include breakpoints.bpk-breakpoint-mobile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &--logo {
+      max-height: tokens.bpk-spacing-xl();
+      object-fit: contain;
+      padding-inline-end: tokens.bpk-spacing-base();
+    }
+
+    &--title {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__wrapper {
