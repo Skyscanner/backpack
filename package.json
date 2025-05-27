@@ -187,5 +187,8 @@
     "typescript": "^5.8.2",
     "webpack": "^5.98.0",
     "wrapper-webpack-plugin": "^2.2.2"
+  },
+  "overrides": {
+    "braces": "3.0.3"
   }
 }
