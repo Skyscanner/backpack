@@ -21,8 +21,13 @@ import type { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
+import { withRtlSupport } from '../../../bpk-component-icon';
+import AirportsIconSm from '../../../bpk-component-icon/sm/airports';
+
 import BpkPriceMarkerV2 from './BpkPriceMarker';
 import BpkPriceMarkerButton from './BpkPriceMarkerButton';
+
+const AlignedAirportsIconSm = withRtlSupport(AirportsIconSm);
 
 type Props = {
   children: ReactNode;
@@ -60,6 +65,14 @@ describe('BpkPriceMarkerV2 accessibility tests', () => {
 describe('BpkPriceMarkerButton accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(<BpkPriceMarkerButton label="£120" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have programmatically-detectable accessibility issues when have icon', async () => {
+    const { container } = render(
+      <BpkPriceMarkerButton label="£120" icon={<AlignedAirportsIconSm />} />,
+    );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

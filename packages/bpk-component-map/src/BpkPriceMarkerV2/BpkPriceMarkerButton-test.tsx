@@ -16,20 +16,23 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import BpkPriceMarkerButton, { MARKER_STATUSES } from './BpkPriceMarkerButton';
 
 describe('BpkPriceMarkerButton', () => {
   it('should render properly', () => {
-    const { asFragment } = render(<BpkPriceMarkerButton label="£120" />);
+    render(<BpkPriceMarkerButton label="£120" />);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByText('£120')).toBeInTheDocument();
+    expect(document.querySelector('.bpk-price-marker-button')).toHaveClass(
+      'bpk-price-marker-button bpk-price-marker-button-unselected',
+    );
   });
 
   it('should render properly with a icon', () => {
     const icon = <span>Icon</span>;
-    const { asFragment } = render(
+    render(
       <BpkPriceMarkerButton
         label="£120"
         icon={icon}
@@ -37,60 +40,64 @@ describe('BpkPriceMarkerButton', () => {
       />,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByText('Icon')).toBeInTheDocument();
   });
 
   it('should render correctly with "status" attribute as "selected"', () => {
-    const { asFragment } = render(
+    render(
       <BpkPriceMarkerButton label="£120" status={MARKER_STATUSES.selected} />,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(document.querySelector('.bpk-price-marker-button')).toHaveClass(
+      'bpk-price-marker-button bpk-price-marker-button-selected',
+    );
   });
 
   it('should render correctly with "status" attribute as "previous_selected"', () => {
-    const { asFragment } = render(
+    render(
       <BpkPriceMarkerButton
         label="£120"
         status={MARKER_STATUSES.previous_selected}
       />,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(document.querySelector('.bpk-price-marker-button')).toHaveClass(
+      'bpk-price-marker-button-previous_selected',
+    );
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const { asFragment } = render(
+    render(
       <BpkPriceMarkerButton
         label="£120"
         className="custom-class-1 custom-class-2"
       />,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(document.querySelector('.bpk-price-marker-button')).toHaveClass(
+      'custom-class-1 custom-class-2',
+    );
   });
 
   it('should render correctly with a "buttonProps" attribute', () => {
-    const { asFragment } = render(
+    render(
       <BpkPriceMarkerButton
         label="£120"
         buttonProps={{ testId: 'arbitrary value' }}
       />,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByRole('button')).toHaveAttribute(
+      'testid',
+      'arbitrary value',
+    );
   });
 
   it('should render correctly with a "onClick" attribute', () => {
-    const { asFragment } = render(
-      <BpkPriceMarkerButton
-        label="£120"
-        onClick={() => {
-          alert('Marker clicked'); // eslint-disable-line no-alert
-        }}
-      />,
-    );
+    const mockOnClick = jest.fn();
+    render(<BpkPriceMarkerButton label="£120" onClick={mockOnClick} />);
 
-    expect(asFragment()).toMatchSnapshot();
+    fireEvent.click(screen.getByRole('button'));
+    expect(mockOnClick).toHaveBeenCalledTimes(1);
   });
 });

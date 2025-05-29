@@ -20,12 +20,9 @@ import type { ReactNode } from 'react';
 
 import BpkBasicMapMarker from '../BpkBasicMapMarker';
 
-import BpkPriceMarkerButton, {
-  MARKER_STATUSES
-} from './BpkPriceMarkerButton';
+import BpkPriceMarkerButton, { MARKER_STATUSES } from './BpkPriceMarkerButton';
 
-import type {
-  Status} from './BpkPriceMarkerButton';
+import type { Status } from './BpkPriceMarkerButton';
 
 type Props = {
   label: string;

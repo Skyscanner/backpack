@@ -319,9 +319,9 @@ const StatefulBpkPriceMarkerButtonWithPopoverOnMap = ({
           <BpkPopover
             hoverable
             showArrow
-            id="my-popover}"
+            id="map-marker-popover"
             padded
-            label="My popover"
+            label="Map marker popover"
             labelAsTitle
             target={
               <div ref={ref} style={{ width: 'fit-content' }}>
@@ -329,21 +329,17 @@ const StatefulBpkPriceMarkerButtonWithPopoverOnMap = ({
                   id={venue.id}
                   label={venue.price}
                   icon={airportsIconWithPrice ? venue.airportsIcon : null}
-                  position={{
-                    latitude: venue.latitude,
-                    longitude: venue.longitude,
-                  }}
                   onClick={() => {
                     inlineAction();
                     selectVenue(venue.id);
                   }}
                   status={getStatus(venue.id)}
-                  accessibilityLabel="Click the price marker"
+                  accessibilityLabel="Click the price marker button"
                 />
               </div>
             }
           >
-            <BpkText>My popover content.</BpkText>
+            <BpkText>Map marker popover content.</BpkText>
           </BpkPopover>
         </BpkOverlayView>
       ))}

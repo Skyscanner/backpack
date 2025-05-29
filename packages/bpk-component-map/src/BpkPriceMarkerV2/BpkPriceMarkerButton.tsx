@@ -25,15 +25,6 @@ import STYLES from './BpkPriceMarkerButton.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  label: string;
-  icon?: ReactNode;
-  className?: string;
-  onClick?: () => void;
-  buttonProps?: { [key: string]: string };
-  status?: Status;
-};
-
 export const MARKER_STATUSES = {
   unselected: 'unselected',
   selected: 'selected',
@@ -42,23 +33,32 @@ export const MARKER_STATUSES = {
 
 export type Status = (typeof MARKER_STATUSES)[keyof typeof MARKER_STATUSES];
 
+type Props = {
+  label: string;
+  icon?: ReactNode;
+  className?: string | null;
+  onClick?: () => void;
+  buttonProps?: { [key: string]: string };
+  status?: Status;
+};
+
 const BpkPriceMarkerButton = ({
   buttonProps = {},
-  className = '',
+  className = null,
   icon,
   label,
   onClick,
-  status = 'unselected',
+  status = MARKER_STATUSES.unselected,
 }: Props) => {
   const markerWrapperClassNames = getClassName(
     'bpk-price-marker-button__wrapper',
   );
 
-  const actualClassName = getClassName(
+  const markerClassNames = getClassName(
     'bpk-price-marker-button',
-    onClick ? 'bpk-price-marker-button--dynamic' : '',
+    onClick ? 'bpk-price-marker-button--dynamic' : null,
     `bpk-price-marker-button-${status}`,
-    icon ? `bpk-price-marker-button-${status}--icon` : '',
+    icon ? `bpk-price-marker-button-${status}--icon` : null,
     className,
   );
   return (
@@ -68,7 +68,7 @@ const BpkPriceMarkerButton = ({
       onClick={onClick}
       {...buttonProps}
     >
-      <div className={actualClassName}>
+      <div className={markerClassNames}>
         {icon}
         <BpkText textStyle={TEXT_STYLES.label3}>{label}</BpkText>
       </div>
