@@ -56,9 +56,9 @@ const BpkPriceMarkerButton = ({
 
   const markerClassNames = getClassName(
     'bpk-price-marker-button',
-    onClick ? 'bpk-price-marker-button--dynamic' : null,
+    onClick && 'bpk-price-marker-button--dynamic',
     `bpk-price-marker-button-${status}`,
-    icon ? `bpk-price-marker-button-${status}--icon` : null,
+    icon && `bpk-price-marker-button-${status}--icon`,
     className,
   );
   return (
