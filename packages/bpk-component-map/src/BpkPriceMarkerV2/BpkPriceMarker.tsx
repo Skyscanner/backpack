@@ -16,29 +16,22 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
-
 import BpkBasicMapMarker from '../BpkBasicMapMarker';
 
 import BpkPriceMarkerButton, { MARKER_STATUSES } from './BpkPriceMarkerButton';
 
-import type { Status } from './BpkPriceMarkerButton';
+import type { Props as BpkPriceMarkerButtonProps } from './BpkPriceMarkerButton';
 
 type Props = {
-  label: string;
-  icon?: ReactNode;
   accessibilityLabel: string;
   position: {
     latitude: number;
     longitude: number;
   };
-  className?: string;
-  onClick?: () => void;
-  buttonProps?: { [key: string]: string };
-  status?: Status;
-};
+} & BpkPriceMarkerButtonProps;
 
-const BpkPriceMarkerV2 = (props: Props) => {
+// eslint-disable-next-line import/prefer-default-export
+export const BpkPriceMarkerV2 = (props: Props) => {
   const {
     accessibilityLabel,
     buttonProps,
@@ -70,5 +63,3 @@ const BpkPriceMarkerV2 = (props: Props) => {
     </BpkBasicMapMarker>
   );
 };
-
-export default BpkPriceMarkerV2;

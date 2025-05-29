@@ -33,7 +33,7 @@ export const MARKER_STATUSES = {
 
 export type Status = (typeof MARKER_STATUSES)[keyof typeof MARKER_STATUSES];
 
-type Props = {
+export type Props = {
   label: string;
   icon?: ReactNode;
   className?: string | null;

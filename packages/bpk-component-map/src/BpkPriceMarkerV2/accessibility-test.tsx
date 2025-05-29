@@ -24,7 +24,7 @@ import { axe } from 'jest-axe';
 import { withRtlSupport } from '../../../bpk-component-icon';
 import AirportsIconSm from '../../../bpk-component-icon/sm/airports';
 
-import BpkPriceMarkerV2 from './BpkPriceMarker';
+import { BpkPriceMarkerV2 } from './BpkPriceMarker';
 import BpkPriceMarkerButton from './BpkPriceMarkerButton';
 
 const AlignedAirportsIconSm = withRtlSupport(AirportsIconSm);
