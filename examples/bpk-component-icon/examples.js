@@ -83,7 +83,7 @@ const LargeIconsExample = () => (
   </BpkList>
 );
 
-const ExtraLargeIconsExample = () => (
+const TripleExtraLargeIconsExample = () => (
   <BpkList>
     {Object.keys(xxxl).map((icon) => {
       const Icon = xxxl[icon];
@@ -151,14 +151,14 @@ const MixedExample = () => (
   <div>
     <SmallIconsExample />
     <LargeIconsExample />
-    <ExtraLargeIconsExample />
+    <TripleExtraLargeIconsExample />
   </div>
 );
 
 export {
   SmallIconsExample,
   LargeIconsExample,
-  ExtraLargeIconsExample,
+  TripleExtraLargeIconsExample,
   AlignToBaseTextExample,
   AlignToLargeTextExample,
   AlignSmallTextToIconExample,
