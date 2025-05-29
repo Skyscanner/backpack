@@ -119,6 +119,11 @@ jobs:
     environment: Publishing
     needs: [Build]
     steps:
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libsecret-1-dev
+
       - name: Update Supernova docs
         run: npx @supernovaio/cli publish-documentation --apiKey=$SUPERNOVA_API_KEY --designSystemId=$DESIGN_SYSTEM_ID
         env:

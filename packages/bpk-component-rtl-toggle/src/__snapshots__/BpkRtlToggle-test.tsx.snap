@@ -7,7 +7,11 @@ exports[`BpkRtlToggle should render correctly 1`] = `
     title="Keyboard Shortcut: ctrl + cmd + r"
     type="button"
   >
-    RTL on
+    <span
+      class="bpk-link-underlined"
+    >
+      RTL on
+    </span>
   </button>
 </DocumentFragment>
 `;

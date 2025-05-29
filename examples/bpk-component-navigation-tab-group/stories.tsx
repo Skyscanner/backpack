@@ -27,6 +27,7 @@ import {
   TabsNoHrefCanvasDefaultForExample,
   TabsOnlyTextSurfaceContrastForExample,
   TabsOnlyTextCanvasDefaultForExample,
+  TabsWithBlankTarget,
   VisualTestExample,
 } from './examples';
 
@@ -50,6 +51,8 @@ export const WithIconCanvasDefault = WithIconCanvasDefaultForExample;
 export const OnlyTextSurfaceContrast = TabsOnlyTextSurfaceContrastForExample;
 
 export const OnlyTextCanvasDefault = TabsOnlyTextCanvasDefaultForExample;
+
+export const WithBlankTarget = TabsWithBlankTarget;
 
 export const VisualTest = VisualTestExample;
 
