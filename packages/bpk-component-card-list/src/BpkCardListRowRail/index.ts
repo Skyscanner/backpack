@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import BpkCardList from './src/BpkCardList';
+import BpkCardListRowRailContainer from './BpkCardListRowRailContainer';
 
-export default BpkCardList;
+export default BpkCardListRowRailContainer;
