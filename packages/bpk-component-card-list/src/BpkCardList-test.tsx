@@ -43,8 +43,8 @@ describe('BpkCardList', () => {
         layoutDesktop={LAYOUTS.grid}
         layoutMobile={LAYOUTS.stack}
         cardList={mockCards(2)}
-        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Button}
-        accessoryMobile={ACCESSORY_MOBILE_TYPES.Button}
+        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.button}
+        accessoryMobile={ACCESSORY_MOBILE_TYPES.button}
         buttonText="Not a Header Button"
         onButtonClick={() => {}}
       />,

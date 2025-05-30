@@ -71,7 +71,7 @@ describe('BpkCardListGridStack', () => {
     render(
       <BpkCardListGridStack
         layout={LAYOUTS.grid}
-        accessory={ACCESSORY_DESKTOP_TYPES.Expand}
+        accessory={ACCESSORY_DESKTOP_TYPES.expand}
         initiallyShownCards={3}
         expandText="Show more"
       >
@@ -90,7 +90,7 @@ describe('BpkCardListGridStack', () => {
     render(
       <BpkCardListGridStack
         layout={LAYOUTS.grid}
-        accessory={ACCESSORY_DESKTOP_TYPES.Button}
+        accessory={ACCESSORY_DESKTOP_TYPES.button}
         buttonText="Explore more"
         onButtonClick={() => {}}
         initiallyShownCards={3}
@@ -116,7 +116,7 @@ describe('BpkCardListGridStack', () => {
     render(
       <BpkCardListGridStack
         layout={LAYOUTS.grid}
-        accessory={ACCESSORY_DESKTOP_TYPES.Expand}
+        accessory={ACCESSORY_DESKTOP_TYPES.expand}
         initiallyShownCards={3}
         expandText="Show more"
       >

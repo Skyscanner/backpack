@@ -60,7 +60,11 @@ const BpkCardList = (props: CardListProps) => {
   const [showHeaderButton, setShowHeaderButton] = useState(false);
 
   const headerButton = buttonText && (
-    <BpkButtonV2 onClick={onButtonClick} href={buttonHref} data-testid="bpk-card-list-header-button">
+    <BpkButtonV2
+      onClick={onButtonClick}
+      href={buttonHref}
+      data-testid="bpk-card-list-header-button"
+    >
       {buttonText}
     </BpkButtonV2>
   );
@@ -84,7 +88,7 @@ const BpkCardList = (props: CardListProps) => {
             if (isActive) {
               setShowHeaderButton(
                 !!buttonText &&
-                  accessoryMobile !== ACCESSORY_MOBILE_TYPES.Button,
+                  accessoryMobile !== ACCESSORY_MOBILE_TYPES.button,
               );
 
               // if (layoutMobile === LAYOUTS.rail) {
@@ -118,13 +122,14 @@ const BpkCardList = (props: CardListProps) => {
 
             /// ///// Desktop Cases ////////
             setShowHeaderButton(
-              !!buttonText && accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.Button,
+              !!buttonText &&
+                accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.button,
             );
 
             // if (
             //   layoutDesktop === LAYOUTS.row &&
-            //   accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.Expand &&
-            //   accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.Button
+            //   accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.expand &&
+            //   accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.button
             // ) {
             //   return (
             //     <BpkCardListRowRailContainer
@@ -139,7 +144,7 @@ const BpkCardList = (props: CardListProps) => {
 
             if (
               layoutDesktop === LAYOUTS.grid &&
-              accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.Pagination
+              accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.pagination
             ) {
               return (
                 <BpkCardListGridStack
@@ -157,7 +162,7 @@ const BpkCardList = (props: CardListProps) => {
               );
             }
 
-            throw new Error('Layout or accessory type not supported');
+            return null;
           }}
         </BpkBreakpoint>
       </div>

@@ -53,7 +53,7 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
   let showExpand: boolean;
   if (
     accessory ===
-    (ACCESSORY_DESKTOP_TYPES.Expand || ACCESSORY_MOBILE_TYPES.Expand)
+    (ACCESSORY_DESKTOP_TYPES.expand || ACCESSORY_MOBILE_TYPES.expand)
   ) {
     defaultInitiallyShownCards = initiallyShownCards;
     showExpand = children.length > defaultInitiallyShownCards;
@@ -63,7 +63,7 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
   }
 
   const [collapsed, setCollapsed] = useState(true);
-  const showButton = accessory === ACCESSORY_DESKTOP_TYPES.Button;
+  const showButton = accessory === ACCESSORY_DESKTOP_TYPES.button;
   const initiallCards = children.slice(0, defaultInitiallyShownCards);
   const restCards = children.slice(defaultInitiallyShownCards, children.length);
 

@@ -18,14 +18,11 @@
 
 import BpkCard from '../bpk-component-card';
 
-const mockCards = (numberOfCards: number) => {
-  const cards = [];
-  for (let i = 0; i < numberOfCards; i += 1) {
-    cards.push(
-      <BpkCard data-testid={`card-testId-${i}`} key={i}>{`Card ${i}`}</BpkCard>,
-    );
-  }
-  return cards;
-};
+const mockCards = (numberOfCards: number): JSX.Element[] =>
+  Array.from({ length: numberOfCards }, (_, i) => (
+    <BpkCard data-testid={`card-testId-${i}`} key={i}>
+      {`Card ${i}`}
+    </BpkCard>
+  ));
 
 export default mockCards;

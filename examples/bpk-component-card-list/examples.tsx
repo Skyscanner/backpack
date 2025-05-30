@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import type { ReactNode} from 'react';
-import { useState} from 'react';
+import type { ReactNode } from 'react';
+import { useState } from 'react';
 
 import BpkCard from '../../packages/bpk-component-card';
 import BpkCardList from '../../packages/bpk-component-card-list';
@@ -29,7 +29,7 @@ import {
 import BpkImage from '../../packages/bpk-component-image';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLink from '../../packages/bpk-component-link';
-import BpkSnippet from '../../packages/bpk-component-snippet/src/BpkSnippet';
+import BpkSnippet, { DESKTOP_LAYOUT as SNIPPET_DESKTOP_LAYOUT } from '../../packages/bpk-component-snippet/src/BpkSnippet';
 import BpkText, {
   TEXT_STYLES,
 } from '../../packages/bpk-component-text/src/BpkText';
@@ -56,7 +56,7 @@ const snippetProps = {
 
 const DestinationCard = (i: number) => (
   // Usage Suggestion: define minWidth from consumer side
-  <BpkCard style={{ minWidth: '250px' }} href="/" padded={false}>
+  <BpkCard className={STYLES['bpk-card']} href="/" padded={false}>
     <div className={STYLES['bpk-destination']}>
       <BpkImage
         aspectRatio={3000 / 1400}
@@ -79,10 +79,7 @@ const DestinationCard = (i: number) => (
         <div className={STYLES['bpk-destination__row']}>
           <BpkText textStyle={TEXT_STYLES.heading5}>Hotel</BpkText>
           <div className={STYLES['bpk-destination__column']}>
-            <BpkLink
-              tabIndex={0}
-              href="#"
-            >
+            <BpkLink tabIndex={0} href="#">
               {/* A11y test for table objects inside a card */}
               <BpkText textStyle={TEXT_STYLES.heading5}>£100</BpkText>
             </BpkLink>
@@ -96,7 +93,7 @@ const DestinationCard = (i: number) => (
 const Snippet = (i: number) => (
   // Usage Suggestion: set desktopLayout="vertical" for cases with more than 1 snippet
   <BpkSnippet
-    desktopLayout="vertical"
+    desktopLayout={SNIPPET_DESKTOP_LAYOUT.vertical}
     src={imageUrlsDestination[i % 4]}
     {...snippetProps}
   />
@@ -112,21 +109,20 @@ const makeList = (cardType: ExampleCard) => {
   return cardList;
 };
 
-type PageContainerProb = {
+type PageContainerProp = {
   children: ReactNode;
 };
 
-const PageContainer = ({ children }: PageContainerProb) => (
+const PageContainer = ({ children }: PageContainerProp) => (
   <div style={{ maxWidth: '1200px', margin: '0 auto' }}>{children}</div>
 );
 
-const BasicExample= () => (
+const BasicExample = () => (
   <BpkCardList
     title="Must-visit spots"
     description="Check out these world-famous destinations perfect for visiting in spring."
     buttonText="Explore More"
     buttonHref="https://www.skyscanner.net/"
-    onButtonClick={() => null}
     cardList={makeList(DestinationCard)}
     layoutDesktop={LAYOUTS.grid}
     layoutMobile={LAYOUTS.stack}
@@ -143,7 +139,7 @@ const BasicExample= () => (
 //       cardList={makeList(DestinationCard)}
 //       layoutDesktop={LAYOUTS.row}
 //       layoutMobile={LAYOUTS.rail}
-//       accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Pagination}
+//       accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
 //       buttonText="Explore more"
 //     />
 //   </PageContainer>
@@ -160,7 +156,7 @@ const BasicExample= () => (
 //       layoutDesktop={LAYOUTS.row}
 //       layoutMobile={LAYOUTS.rail}
 //       onButtonClick={() => null}
-//       accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Pagination}
+//       accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
 //     />
 //   </PageContainer>
 // );
@@ -180,8 +176,8 @@ const BasicExample= () => (
 //         onButtonClick={() =>
 //           setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
 //         }
-//         accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Pagination}
-//         accessoryMobile={ACCESSORY_MOBILE_TYPES.Expand}
+//         accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+//         accessoryMobile={ACCESSORY_MOBILE_TYPES.expand}
 //         expandText={expandText}
 //       />
 //     </PageContainer>
@@ -204,8 +200,8 @@ const BasicExample= () => (
 //         onButtonClick={() =>
 //           setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
 //         }
-//         accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Pagination}
-//         accessoryMobile={ACCESSORY_MOBILE_TYPES.Expand}
+//         accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+//         accessoryMobile={ACCESSORY_MOBILE_TYPES.expand}
 //         expandText={expandText}
 //       />
 //     </PageContainer>
@@ -227,7 +223,7 @@ const BasicExample= () => (
 //         onButtonClick={() =>
 //           setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
 //         }
-//         accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Expand}
+//         accessoryDesktop={ACCESSORY_DESKTOP_TYPES.expand}
 //         expandText={expandText}
 //       />
 //     </PageContainer>
@@ -246,8 +242,8 @@ const GridToStackExample = () => (
       onButtonClick={() => {
         console.log('Button clicked');
       }}
-      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Button}
-      accessoryMobile={ACCESSORY_MOBILE_TYPES.Button}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.button}
+      accessoryMobile={ACCESSORY_MOBILE_TYPES.button}
       buttonText="Explore more"
     />
   </PageContainer>
@@ -271,11 +267,11 @@ const GridToStackWithExpandExample = () => {
         onButtonClick={() => {
           console.log('Button clicked');
         }}
-        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Expand}
-        accessoryMobile={ACCESSORY_MOBILE_TYPES.Expand}
+        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.expand}
+        accessoryMobile={ACCESSORY_MOBILE_TYPES.expand}
         expandText={expandText}
-        buttonText='Explore more'
-        buttonHref='https://www.skyscanner.net'
+        buttonText="Explore more"
+        buttonHref="https://www.skyscanner.net"
       />
     </PageContainer>
   );
