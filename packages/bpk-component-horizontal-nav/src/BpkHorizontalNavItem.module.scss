@@ -43,6 +43,11 @@
     cursor: pointer;
     fill: currentcolor;
 
+    &:focus-visible {
+      @include utils.bpk-focus-indicator;
+      outline-offset: -(tokens.$bpk-one-pixel-rem * 2);
+    }
+
     &--default {
       @include utils.bpk-themeable-property(
         color,
