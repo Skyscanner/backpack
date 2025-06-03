@@ -54,6 +54,7 @@ type Props = {
   stepped: boolean,
   small: boolean,
   className: ?string,
+  tabIndex: ?number,
   onComplete: ?() => mixed,
   onCompleteTransitionEnd: ?() => mixed,
   getValueText: ?(number, number, number) => mixed,
@@ -69,6 +70,7 @@ const propTypes = {
   onComplete: PropTypes.func,
   onCompleteTransitionEnd: PropTypes.func,
   getValueText: PropTypes.func,
+  tabIndex: PropTypes.number,
 };
 
 const defaultProps = {

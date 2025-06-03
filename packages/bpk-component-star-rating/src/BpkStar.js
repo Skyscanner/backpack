@@ -27,9 +27,11 @@ import OutlineLargeIcon from '../../bpk-component-icon/lg/star-outline';
 import SmallIcon from '../../bpk-component-icon/sm/star';
 import HalfSmallIcon from '../../bpk-component-icon/sm/star-half';
 import OutlineSmallIcon from '../../bpk-component-icon/sm/star-outline';
-import ExtraLargeIcon from '../../bpk-component-icon/xl/star';
-import HalfExtraLargeIcon from '../../bpk-component-icon/xl/star-half';
-import OutlineExtraLargeIcon from '../../bpk-component-icon/xl/star-outline';
+// Notice: The naming of the icons and props are extra large, but the
+// actual size is xxxl, 3rem. This is designed on purpose.
+import ExtraLargeIcon from '../../bpk-component-icon/xxxl/star';
+import HalfExtraLargeIcon from '../../bpk-component-icon/xxxl/star-half';
+import OutlineExtraLargeIcon from '../../bpk-component-icon/xxxl/star-outline';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkStar.module.scss';

@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import BpkProgress from './BpkProgress';
 
@@ -33,6 +33,15 @@ describe('BpkProgress', () => {
       <BpkProgress min={0} max={100} value={25} className="my-progress-bar" />,
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with a "tabIndex" attribute', () => {
+    render(
+      <BpkProgress min={0} max={100} value={25} tabIndex={-1} className="my-progress-bar" />,
+    );
+
+    const progressBar = screen.getByRole('progressbar');
+    expect(progressBar).toHaveAttribute('tabIndex', '-1');
   });
 
   it('should render correctly with a "small" attribute', () => {
