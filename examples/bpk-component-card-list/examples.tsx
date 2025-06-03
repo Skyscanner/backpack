@@ -135,6 +135,60 @@ const BasicExample= () => (
 
 const RowToRailForCardsExample = () => (
   <PageContainer>
+    <h1> CardList 1 </h1>
+    <br />
+    <BpkCardList
+      title="Must-visit spots"
+      description="Check out these world-famous destinations perfect for visiting in spring."
+      chipGroup={BpkChipGroupRail()}
+      initiallyShownCards={3}
+      cardList={makeList(DestinationCard)}
+      layoutDesktop={LAYOUTS.row}
+      layoutMobile={LAYOUTS.rail}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Pagination}
+      buttonText="Explore more"
+    />
+    <h1> CardList 2 </h1>
+    <br />
+    <BpkCardList
+      title="Must-visit spots"
+      description="Check out these world-famous destinations perfect for visiting in spring."
+      chipGroup={BpkChipGroupRail()}
+      initiallyShownCards={3}
+      cardList={makeList(DestinationCard)}
+      layoutDesktop={LAYOUTS.row}
+      layoutMobile={LAYOUTS.rail}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Pagination}
+      buttonText="Explore more"
+    />
+    <h1> CardList 3 </h1>
+    <br />
+    <BpkCardList
+      title="Must-visit spots"
+      description="Check out these world-famous destinations perfect for visiting in spring."
+      chipGroup={BpkChipGroupRail()}
+      initiallyShownCards={3}
+      cardList={makeList(DestinationCard)}
+      layoutDesktop={LAYOUTS.row}
+      layoutMobile={LAYOUTS.rail}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Pagination}
+      buttonText="Explore more"
+    />
+    <h1> CardList 4 </h1>
+    <br />
+    <BpkCardList
+      title="Must-visit spots"
+      description="Check out these world-famous destinations perfect for visiting in spring."
+      chipGroup={BpkChipGroupRail()}
+      initiallyShownCards={3}
+      cardList={makeList(DestinationCard)}
+      layoutDesktop={LAYOUTS.row}
+      layoutMobile={LAYOUTS.rail}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.Pagination}
+      buttonText="Explore more"
+    />
+    <h1> CardList 5 </h1>
+    <br />
     <BpkCardList
       title="Must-visit spots"
       description="Check out these world-famous destinations perfect for visiting in spring."
