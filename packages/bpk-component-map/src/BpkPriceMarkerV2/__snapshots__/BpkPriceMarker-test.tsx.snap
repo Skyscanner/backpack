@@ -7,11 +7,11 @@ exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "pr
       class="mock-overlay-view"
     />
     <button
-      class="bpk-price-marker__wrapper"
+      class="bpk-price-marker-button__wrapper"
       type="button"
     >
       <div
-        class="bpk-price-marker bpk-price-marker-previous_selected"
+        class="bpk-price-marker-button bpk-price-marker-button-previous_selected"
       >
         <span
           class="bpk-text bpk-text--label-3"
@@ -31,11 +31,11 @@ exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "se
       class="mock-overlay-view"
     />
     <button
-      class="bpk-price-marker__wrapper"
+      class="bpk-price-marker-button__wrapper"
       type="button"
     >
       <div
-        class="bpk-price-marker bpk-price-marker-selected"
+        class="bpk-price-marker-button bpk-price-marker-button-selected"
       >
         <span
           class="bpk-text bpk-text--label-3"
@@ -55,12 +55,12 @@ exports[`BpkPriceMarkerV2 should render correctly with a "buttonProps" attribute
       class="mock-overlay-view"
     />
     <button
-      class="bpk-price-marker__wrapper"
+      class="bpk-price-marker-button__wrapper"
       testid="arbitrary value"
       type="button"
     >
       <div
-        class="bpk-price-marker bpk-price-marker-unselected"
+        class="bpk-price-marker-button bpk-price-marker-button-unselected"
       >
         <span
           class="bpk-text bpk-text--label-3"
@@ -80,11 +80,11 @@ exports[`BpkPriceMarkerV2 should render correctly with a "className" attribute 1
       class="mock-overlay-view"
     />
     <button
-      class="bpk-price-marker__wrapper"
+      class="bpk-price-marker-button__wrapper"
       type="button"
     >
       <div
-        class="bpk-price-marker bpk-price-marker-unselected custom-class-1 custom-class-2"
+        class="bpk-price-marker-button bpk-price-marker-button-unselected custom-class-1 custom-class-2"
       >
         <span
           class="bpk-text bpk-text--label-3"
@@ -104,11 +104,11 @@ exports[`BpkPriceMarkerV2 should render correctly with a "onClick" attribute 1`]
       class="mock-overlay-view"
     />
     <button
-      class="bpk-price-marker__wrapper"
+      class="bpk-price-marker-button__wrapper"
       type="button"
     >
       <div
-        class="bpk-price-marker bpk-price-marker--dynamic bpk-price-marker-unselected"
+        class="bpk-price-marker-button bpk-price-marker-button--dynamic bpk-price-marker-button-unselected"
       >
         <span
           class="bpk-text bpk-text--label-3"
@@ -128,11 +128,11 @@ exports[`BpkPriceMarkerV2 should render properly 1`] = `
       class="mock-overlay-view"
     />
     <button
-      class="bpk-price-marker__wrapper"
+      class="bpk-price-marker-button__wrapper"
       type="button"
     >
       <div
-        class="bpk-price-marker bpk-price-marker-unselected"
+        class="bpk-price-marker-button bpk-price-marker-button-unselected"
       >
         <span
           class="bpk-text bpk-text--label-3"
@@ -152,11 +152,11 @@ exports[`BpkPriceMarkerV2 should render properly with a icon 1`] = `
       class="mock-overlay-view"
     />
     <button
-      class="bpk-price-marker__wrapper"
+      class="bpk-price-marker-button__wrapper"
       type="button"
     >
       <div
-        class="bpk-price-marker bpk-price-marker-unselected bpk-price-marker-unselected--icon"
+        class="bpk-price-marker-button bpk-price-marker-button-unselected bpk-price-marker-button-unselected--icon"
       >
         <span>
           Icon

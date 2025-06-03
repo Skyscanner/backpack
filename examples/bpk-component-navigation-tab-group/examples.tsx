@@ -67,6 +67,13 @@ const tabsOnlyText: BpkNavigationTabGroupProps['tabs'] = [
   { id: 'explore', text: 'Explore'},
 ];
 
+const tabsWithBlankTarget: BpkNavigationTabGroupProps['tabs'] = [
+  { id: 'air', text: 'Flights', href: '/', target: '_blank' },
+  { id: 'hotel', text: 'Hotels', href: '/hotel', target: '_blank' },
+  { id: 'car', text: 'Car hire', href: '/carhire', target: '_blank' },
+  { id: 'explore', text: 'Explore', href: '/Explore', target: '_blank' },
+];
+
 // Simple Navigation Tab Group
 const SimpleSurfaceContrast = () => (
   <div className={getClassNames('bpk-navigation-tab-group-story')}>
@@ -180,6 +187,20 @@ const TabsOnlyTextCanvasDefaultForExample = () => (
   </div>
 );
 
+// Tabs with Blank Target Navigation Tab Group
+const TabsWithBlankTarget = () => (
+  <div className={getClassNames('bpk-navigation-tab-group-story')}>
+    <BpkNavigationTabGroup
+      id="navExample"
+      tabs={tabsWithBlankTarget}
+      onItemClick={() => {}}
+      selectedIndex={2}
+      type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
+      ariaLabel="Navigation tabs"
+    />
+  </div>
+);
+
 const VisualTestExample = () => (
   <div className={getClassNames('bpk-navigation-tab-group-story__mixed-container')}>
     <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
@@ -227,5 +248,6 @@ export {
   TabsNoHrefCanvasDefaultForExample,
   TabsOnlyTextSurfaceContrastForExample,
   TabsOnlyTextCanvasDefaultForExample,
+  TabsWithBlankTarget,
   VisualTestExample,
 };
