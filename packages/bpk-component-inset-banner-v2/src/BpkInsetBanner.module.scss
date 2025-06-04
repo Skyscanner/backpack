@@ -1,0 +1,115 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/breakpoints';
+@use '../../unstable__bpk-mixins/utils';
+
+.bpk-inset-banner {
+  display: flex;
+  padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
+  justify-content: space-between;
+  border-radius: tokens.$bpk-border-radius-sm;
+
+  &--with-body {
+    border-radius: tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm 0 0;
+  }
+
+  &--on-light {
+    color: tokens.$bpk-text-on-light-day;
+    fill: tokens.$bpk-text-on-light-day;
+  }
+
+  &--on-dark {
+    color: tokens.$bpk-text-on-dark-day;
+    fill: tokens.$bpk-text-on-dark-day;
+  }
+
+  &--content-container {
+    display: flex;
+    align-items: center;
+
+    @include breakpoints.bpk-breakpoint-mobile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &--image {
+    max-height: tokens.bpk-spacing-xl();
+    object-fit: contain;
+    padding-inline-end: tokens.bpk-spacing-base();
+
+    // @include breakpoints.bpk-breakpoint-mobile {
+    //   align
+    // }
+  }
+
+  &--text-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--cta-text {
+    display: flex;
+    align-items: center;
+  }
+
+  &--cta-button {
+    all: unset;
+
+    &:focus-visible {
+      @include utils.bpk-focus-indicator;
+    }
+  }
+
+  &--cta-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &--cta-content {
+    display: flex;
+    align-items: center;
+  }
+
+  &--cta-info-icon {
+    display: flex;
+    align-items: center;
+    margin-inline-start: tokens.bpk-spacing-md();
+  }
+}
+
+.bpk-inset-banner-body-container {
+  display: flex;
+  padding: tokens.bpk-spacing-base();
+  flex-direction: column;
+  border-radius: 0 0 tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm;
+  background-color: tokens.$bpk-private-info-banner-default-day;
+  color: tokens.$bpk-text-on-light-day;
+
+  &--link-text {
+    color: tokens.$bpk-private-button-link-normal-foreground-day;
+    text-decoration: none;
+
+    @include utils.bpk-hover {
+      color: tokens.$bpk-private-button-link-pressed-foreground-day;
+    }
+  }
+}
