@@ -138,7 +138,6 @@ type Props = {
   includeIcon: boolean,
   includeSubheading: boolean,
   includeTertiaryLabel: boolean,
-  isBanana: boolean,
   showClear: boolean,
   theme: { [key: string]: string },
   highlightFirstSuggestion: boolean,
@@ -147,6 +146,7 @@ type Props = {
   renderSectionTitle: (section: any) => ReactNode,
   getSectionSuggestions: (section: any) => any[],
   alwaysRenderSuggestions: boolean,
+  withLabel?: boolean,
 };
 
 class AutosuggestExample extends Component<Props, State> {
@@ -155,7 +155,6 @@ class AutosuggestExample extends Component<Props, State> {
     includeIcon: false,
     includeSubheading: false,
     includeTertiaryLabel: false,
-    isBanana: false,
     showClear: false,
     theme: {},
     highlightFirstSuggestion: false,
@@ -164,6 +163,7 @@ class AutosuggestExample extends Component<Props, State> {
     renderSectionTitle: () => {},
     getSectionSuggestions: () => {},
     alwaysRenderSuggestions: false,
+    withLabel: false,
   };
 
   constructor() {
@@ -214,6 +214,7 @@ class AutosuggestExample extends Component<Props, State> {
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
         getSuggestionValue={getSuggestionValue}
         getA11yResultsMessage={this.getA11yResultsMessage}
+        withLabel={this.props.withLabel}
         renderSuggestion={(suggestion) => (
           <BpkAutosuggestSuggestion
             value={getSuggestionValue(suggestion)}
@@ -226,7 +227,6 @@ class AutosuggestExample extends Component<Props, State> {
           />
         )}
         inputProps={inputProps}
-        isBanana={this.props.isBanana}
         showClear={this.props.showClear}
         theme={this.props.theme}
         highlightFirstSuggestion={this.props.highlightFirstSuggestion}

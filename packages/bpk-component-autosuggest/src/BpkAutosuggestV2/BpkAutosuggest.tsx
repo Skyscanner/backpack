@@ -22,7 +22,6 @@ import type {
   MouseEvent,
   ReactElement,
   HTMLProps,
-  FocusEvent,
 } from 'react';
 
 import { useCombobox } from 'downshift';
@@ -107,6 +106,7 @@ const defaultTheme = {
   ),
   sectionContainer: getClassName('bpk-autosuggest__section-container'),
   sectionTitle: getClassName('bpk-autosuggest__section-title'),
+  input: getClassName('bpk-autosuggest__suggestions-container-input'),
 };
 
 const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
@@ -251,15 +251,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       } else if (suggestions.length === 0) {
         onSuggestionSelected?.();
       }
-    };
-
-    const handleInputFocus = (event: FocusEvent<HTMLInputElement>) => {
-      if (shouldRenderSuggestions) {
-        shouldRenderSuggestions(inputValue);
-        openMenu();
-      }
-
-      inputProps.onFocus?.(event);
     };
 
     const clearSuggestions = (e: MouseEvent) => {

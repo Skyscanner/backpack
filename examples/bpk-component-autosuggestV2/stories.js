@@ -23,7 +23,7 @@ export default {
 };
 
 export const Example = () => <AutosuggestExample />;
-export const WithIcons = () => <AutosuggestExample includeIcon />;
+export const WithIcons = () => <AutosuggestExample includeIcon withLabel/>;
 
 export const WithSubHeadings = () => <AutosuggestExample includeSubheading />;
 

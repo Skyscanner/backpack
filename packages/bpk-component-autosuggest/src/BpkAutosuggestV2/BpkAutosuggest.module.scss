@@ -33,13 +33,17 @@ $arrow-size: tokens.bpk-spacing-sm() * 3;
   &__suggestions-container {
     display: none;
 
+    &-input {
+      width: 100%;
+    }
+
     &--open {
       position: absolute;
       top: 100%;
       display: block;
       z-index: tokens.$bpk-zindex-autosuggest;
       width: 100%;
-      margin-top: bpk-spacing-md() + bpk-spacing-sm();
+      margin-top: $arrow-size + tokens.bpk-spacing-sm();
 
       &::before {
         position: absolute;
