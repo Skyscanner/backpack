@@ -20,6 +20,7 @@
 
 import BpkAutosuggest from './src/BpkAutosuggest';
 import BpkAutosuggestSuggestion from './src/BpkAutosuggestSuggestion';
+import BpkAutosuggestV2 from './src/BpkAutosuggestV2/BpkAutosuggest';
 
 export default BpkAutosuggest;
-export { BpkAutosuggestSuggestion };
+export { BpkAutosuggestSuggestion, BpkAutosuggestV2 };

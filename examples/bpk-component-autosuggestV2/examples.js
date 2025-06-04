@@ -1,0 +1,223 @@
+import { Component, ReactNode } from 'react';
+
+import {
+  BpkAutosuggestSuggestion, BpkAutosuggestV2
+} from '../../packages/bpk-component-autosuggest';
+import { withRtlSupport } from '../../packages/bpk-component-icon';
+import FlightIcon from '../../packages/bpk-component-icon/lg/flight';
+
+const BpkFlightIcon = withRtlSupport(FlightIcon);
+
+const offices = [
+  {
+    name: 'Barcelona',
+    code: 'BCN',
+    country: 'Spain',
+    tertiaryLabel: 'Tertiary label',
+  },
+  {
+    name: 'Beijing',
+    code: 'Any',
+    country: 'China',
+    tertiaryLabel: 'Tertiary label',
+  },
+  {
+    name: 'Budapest',
+    code: 'BUD',
+    country: 'Hungary',
+    tertiaryLabel: 'Tertiary label',
+  },
+  {
+    name: 'Edinburgh',
+    code: 'EDI',
+    country: 'United Kingdom',
+    tertiaryLabel: 'Tertiary label',
+  },
+  {
+    name: 'Glasgow',
+    code: 'Any',
+    country: 'United Kingdom',
+    indent: true,
+    tertiaryLabel: 'Tertiary label',
+  },
+  {
+    name: 'London',
+    code: 'Any',
+    country: 'United Kingdom',
+    tertiaryLabel: 'Tertiary label',
+  },
+  {
+    name: 'Miami, FL',
+    code: 'Any',
+    country: 'United States',
+    tertiaryLabel: 'Tertiary label',
+  },
+  {
+    name: "Shenzhen Bao'an International",
+    code: 'SZX',
+    country: 'China',
+    tertiaryLabel: 'Tertiary label',
+  },
+  {
+    name: 'Singapore Changi',
+    code: 'SIN',
+    country: 'Singapore',
+    tertiaryLabel: 'Tertiary label',
+  },
+  {
+    name: 'Sofia',
+    code: 'SOF',
+    country: 'Bulgaria',
+    tertiaryLabel: 'Tertiary label',
+  },
+];
+
+const dataHanzi = [
+  {
+    name: '深圳寶安國際 (Shenzhen)',
+    code: 'SZX',
+    country: '中國',
+    tertiaryLabel: '三級標籤',
+  },
+];
+
+const sections = [
+  {
+    title: 'Recent searches',
+    suggestions: [offices[0]],
+  },
+  {
+    title: 'Popular locations',
+    suggestions: [...offices.slice(1)],
+  },
+];
+
+const getSuggestions = (value, hanzi) => {
+  const inputValue = value.trim().toLowerCase();
+  const inputLength = inputValue.length;
+
+  const data = hanzi ? dataHanzi : offices;
+
+  return inputLength === 0
+    ? []
+    : data.filter(
+        (office) => office.name.toLowerCase().indexOf(inputValue) !== -1,
+      );
+};
+
+const getSuggestionValue = (suggestion) =>
+  `${suggestion.name} (${suggestion.code})`;
+
+type State = {
+  value: string,
+  suggestions: Array<any>,
+};
+
+type Props = {
+  hanzi: boolean,
+  includeIcon: boolean,
+  includeSubheading: boolean,
+  includeTertiaryLabel: boolean,
+  isBanana: boolean,
+  showClear: boolean,
+  theme: { [key: string]: string },
+  highlightFirstSuggestion: boolean,
+  shouldRenderSuggestions: (value: string) => boolean,
+  multiSection: boolean,
+  renderSectionTitle: (section: any) => ReactNode,
+  getSectionSuggestions: (section: any) => any[],
+  alwaysRenderSuggestions: boolean,
+};
+
+class AutosuggestExample extends Component<Props, State> {
+  static defaultProps = {
+    hanzi: false,
+    includeIcon: false,
+    includeSubheading: false,
+    includeTertiaryLabel: false,
+    isBanana: false,
+    showClear: false,
+    theme: {},
+    highlightFirstSuggestion: false,
+    shouldRenderSuggestions: () => {},
+    multiSection: false,
+    renderSectionTitle: () => {},
+    getSectionSuggestions: () => {},
+    alwaysRenderSuggestions: false,
+  };
+
+  constructor() {
+    super();
+
+    this.state = {
+      suggestions: [],
+    };
+  }
+
+  onSuggestionsFetchRequested = (value) => {
+    this.setState({
+      suggestions: this.props.multiSection
+        ? sections
+        : getSuggestions(value, this.props.hanzi),
+    });
+  };
+
+  onSuggestionsClearRequested = () => {
+    this.setState({
+      suggestions: [],
+    });
+  };
+
+  getA11yResultsMessage = (resultCount) => {
+    if (resultCount > 0) {
+      return 'handle results being single or plural';
+    }
+    return 'no results available';
+  };
+
+  render() {
+    const { suggestions } = this.state;
+
+    const { includeIcon, includeSubheading, includeTertiaryLabel } = this.props;
+
+    const inputProps = {
+      id: 'my-autosuggest',
+      name: 'my_autosuggest',
+      placeholder: 'Enter an office name',
+    };
+
+    return (
+      <BpkAutosuggestV2
+        ariaLabels={{ resultsList: 'results' }}
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+        getSuggestionValue={getSuggestionValue}
+        getA11yResultsMessage={this.getA11yResultsMessage}
+        renderSuggestion={(suggestion) => (
+          <BpkAutosuggestSuggestion
+            value={getSuggestionValue(suggestion)}
+            indent={suggestion.indent}
+            icon={includeIcon ? BpkFlightIcon : null}
+            subHeading={includeSubheading ? suggestion.country : null}
+            tertiaryLabel={
+              includeTertiaryLabel ? suggestion.tertiaryLabel : null
+            }
+          />
+        )}
+        inputProps={inputProps}
+        isBanana={this.props.isBanana}
+        showClear={this.props.showClear}
+        theme={this.props.theme}
+        highlightFirstSuggestion={this.props.highlightFirstSuggestion}
+        shouldRenderSuggestions={this.props.shouldRenderSuggestions}
+        multiSection={this.props.multiSection}
+        renderSectionTitle={this.props.renderSectionTitle}
+        getSectionSuggestions={this.props.getSectionSuggestions}
+        alwaysRenderSuggestions={this.props.alwaysRenderSuggestions}
+      />
+    );
+  }
+}
+
+export default AutosuggestExample;

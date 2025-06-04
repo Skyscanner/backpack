@@ -1,0 +1,152 @@
+@use '../../../unstable__bpk-mixins/tokens';
+@use '../../../unstable__bpk-mixins/borders';
+@use '../../../unstable__bpk-mixins/layers';
+@use '../../../unstable__bpk-mixins/typography';
+@use '../../../unstable__bpk-mixins/utils';
+
+$bpk-spacing-v2: true;
+$arrow-size: tokens.bpk-spacing-sm() * 3;
+
+.bpk-autosuggest {
+  &__container--open {
+    position: relative;
+  }
+
+  &__suggestions-container {
+    display: none;
+
+    &--open {
+      position: absolute;
+      top: 100%;
+      display: block;
+      z-index: tokens.$bpk-zindex-autosuggest;
+      width: 100%;
+      margin-top: bpk-spacing-md() + bpk-spacing-sm();
+
+      &::before {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        content: ' ';
+        display: block;
+        margin-bottom: -(tokens.$bpk-one-pixel-rem);
+        margin-left: -(
+            (tokens.bpk-spacing-sm() * 3) + tokens.$bpk-one-pixel-rem
+          );
+        border: ($arrow-size + tokens.$bpk-one-pixel-rem) solid transparent;
+        border-bottom-color: tokens.$bpk-surface-highlight-day;
+        pointer-events: none;
+      }
+
+      &::after {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        content: ' ';
+        display: block;
+        margin-bottom: -(tokens.$bpk-one-pixel-rem);
+        margin-left: -(tokens.bpk-spacing-md() + tokens.bpk-spacing-sm());
+        border: $arrow-size solid transparent;
+        border-bottom-color: tokens.$bpk-surface-default-day;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__suggestions-list {
+    min-width: fit-content;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+
+    @include layers.bpk-layer;
+  }
+
+  &__suggestion-item {
+    cursor: pointer;
+
+    @include typography.bpk-text;
+    @include typography.bpk-body-default;
+
+    &:not(:last-child) {
+      @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
+    }
+
+    &:active {
+      background-color: tokens.$bpk-canvas-contrast-day;
+    }
+
+    &--highlighted {
+      background-color: tokens.$bpk-canvas-contrast-day;
+    }
+  }
+
+  &__suggestion {
+    display: table;
+    width: 100%;
+    padding: tokens.bpk-spacing-base();
+
+    &--indent {
+      padding-left: tokens.bpk-spacing-xl();
+    }
+
+    &-icon {
+      display: table-cell;
+      margin-right: tokens.bpk-spacing-md();
+      vertical-align: top;
+      fill: tokens.$bpk-text-secondary-day;
+
+      @include utils.bpk-rtl {
+        margin-right: 0;
+        margin-left: tokens.bpk-spacing-md();
+      }
+    }
+
+    &-content {
+      display: table-cell;
+      width: 100%;
+      vertical-align: top;
+    }
+
+    &-inner {
+      display: flex;
+      flex-direction: row;
+      /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &-value {
+      display: block;
+    }
+
+    &-sub-heading {
+      display: table-cell;
+      width: 100%;
+      vertical-align: top;
+
+      @include typography.bpk-text;
+      @include typography.bpk-caption;
+    }
+
+    &-tertiary-label {
+      display: table-cell;
+      align-self: center;
+      color: tokens.$bpk-text-secondary-day;
+      vertical-align: top;
+      word-break: keep-all;
+
+      @include typography.bpk-text;
+      @include typography.bpk-caption;
+    }
+  }
+
+  &__section-title {
+    padding: bpk-spacing-lg() 0 bpk-spacing-sm() bpk-spacing-base();
+    background-color: tokens.$bpk-color-white;
+    color: tokens.$bpk-text-secondary-day;
+
+    @include typography.bpk-label-2;
+  }
+}
