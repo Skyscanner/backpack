@@ -20,8 +20,8 @@ import BpkInsetBanner from '../../packages/bpk-component-inset-banner-v2/src/Bpk
 
 import {
   WithBodyTextAndLinkExampleDarkV2,
-  WithCtaTextAndPopoverExampleLightV2,
-  WithCustomPopoverWidthAndMarginsExampleV2,
+  WithCtaTextAndBottomSheetExampleLightV2,
+  WithCustomBottomSheetWidthAndMarginsExampleV2,
 } from './examples';
 
 export default {
@@ -31,5 +31,5 @@ export default {
 
 export const WithBodyTextAndLinkDark = WithBodyTextAndLinkExampleDarkV2;
 export const VisualTestDark = WithBodyTextAndLinkExampleDarkV2;
-export const WithCtaTextAndPopoverLight = WithCtaTextAndPopoverExampleLightV2;
-export const WithCustomPopoverWidthAndMargins = WithCustomPopoverWidthAndMarginsExampleV2;
+export const WithCtaTextAndPopoverLight = WithCtaTextAndBottomSheetExampleLightV2;
+export const WithCustomPopoverWidthAndMargins = WithCustomBottomSheetWidthAndMarginsExampleV2;

@@ -67,6 +67,7 @@
   }
 
   &--cta-button {
+    margin: auto 0;
     all: unset;
 
     &:focus-visible {
@@ -76,6 +77,7 @@
 
   &--cta-container {
     display: flex;
+    height: tokens.bpk-spacing-xl();
     align-items: center;
     cursor: pointer;
 
