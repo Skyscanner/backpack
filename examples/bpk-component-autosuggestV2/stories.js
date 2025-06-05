@@ -85,3 +85,36 @@ export const WithSectionsAndHighlightFirstSuggestion = () => (
 export const AlwaysRenderSuggestions = () => (
   <AutosuggestExample alwaysRenderSuggestions />
 );
+
+const renderCustomInput = (inputProps) => (
+    <div
+      style={{
+        border: '2px solid #007aff',
+        borderRadius: '8px',
+        padding: '10px 12px',
+      }}
+    >
+      <span
+        style={{
+          fontWeight: 'bold',
+          fontSize: '14px',
+          marginBottom: '2px',
+        }}
+      >
+        From
+      </span>
+      <input
+        {...inputProps}
+        placeholder="Country, city or airport"
+        style={{
+          border: 'none',
+          outline: 'none',
+          fontSize: '16px',
+          width: '100%',
+        }}
+      />
+    </div>
+  );
+export const CustomRenderInput = () => (
+  <AutosuggestExample renderInputComponent={renderCustomInput} />
+);

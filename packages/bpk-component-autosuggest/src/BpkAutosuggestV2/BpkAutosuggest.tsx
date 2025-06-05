@@ -129,14 +129,12 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       onSuggestionSelected,
       onSuggestionsClearRequested,
       onSuggestionsFetchRequested,
-      renderBesideInput,
+      renderInputComponent,
       renderSectionTitle,
       renderSuggestion,
       shouldRenderSuggestions,
-      showClear,
       suggestions,
       theme: customTheme,
-      withLabel,
     },
     forwardedRef,
   ) => {
@@ -253,12 +251,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       }
     };
 
-    const clearSuggestions = (e: MouseEvent) => {
-      onSuggestionsClearRequested();
-      e.stopPropagation();
-      setInputValue('');
-    };
-
     const renderSuggestions = (items: any[], sectionIndex?: number) =>
       items.map((suggestion, index) => {
         const suggestionIndex = sectionIndex ? index + sectionIndex : index;
@@ -304,6 +296,21 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         ? renderSections(suggestions)
         : renderSuggestions(suggestions);
 
+    const renderInput = () => {
+       const inputComponentProps = getInputProps({
+        className: theme.input,
+          onKeyDown,
+          ref: forwardedRef,
+          type: INPUT_TYPES.text,
+          onClick: onClickOrKeydown,
+          ...inputProps,
+      });
+
+        return renderInputComponent
+          ? renderInputComponent(inputComponentProps)
+          : <input {...inputComponentProps} enterKeyHint="search" />;
+    };
+
     return (
       <div
         className={getClassName(
@@ -311,63 +318,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           suggestions.length && theme.containerOpen,
         )}
       >
-        {withLabel ? (
-          <label
-            {...getLabelProps({ 'aria-label': ariaLabels.label })}
-            className={getClassName(
-              theme.label,
-              isDesktop && theme.desktopLabel,
-            )}
-          >
-            <div className={theme.inputTextWrapper}>
-              {renderBesideInput?.()}
-              <div className={theme.inputWrapper}>
-                <input
-                  {...getInputProps({
-                    className: theme.input,
-                    onKeyDown,
-                    ref: forwardedRef,
-                    type: INPUT_TYPES.text,
-                    onClick: onClickOrKeydown,
-                    ...inputProps,
-                  })}
-                  enterKeyHint='search'
-                />
-              </div>
-            </div>
-            {inputValue.length > 0 && showClear && (
-              <div tabIndex={-1}>
-                <button
-                  type="button"
-                  title={ariaLabels.clearButton}
-                  onClick={clearSuggestions}
-                  aria-label={ariaLabels.clearButton}
-                  className={theme.clearButton}
-                  data-testid="clear button"
-                >
-                  X
-                </button>
-              </div>
-            )}
-          </label>
-        ) : (
-          <div className={theme.inputTextWrapper}>
-            {renderBesideInput?.()}
-            <div className={theme.inputWrapper}>
-              <input
-                {...getInputProps({
-                  className: theme.input,
-                  onKeyDown,
-                  ref: forwardedRef,
-                  type: INPUT_TYPES.text,
-                  onClick: onClickOrKeydown,
-                  ...inputProps,
-               })}
-              enterKeyHint='search'
-            />
-          </div>
-        </div>
-        )}
+        {renderInput()}
 
         <div
           className={getClassName(

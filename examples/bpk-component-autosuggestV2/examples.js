@@ -147,6 +147,7 @@ type Props = {
   getSectionSuggestions: (section: any) => any[],
   alwaysRenderSuggestions: boolean,
   withLabel?: boolean,
+  renderInputComponent: (inputProps: any) => ReactNode,
 };
 
 class AutosuggestExample extends Component<Props, State> {
@@ -208,7 +209,7 @@ class AutosuggestExample extends Component<Props, State> {
 
     return (
       <BpkAutosuggestV2
-        ariaLabels={{ resultsList: 'results' }}
+        ariaLabels={{ label:'input label',resultsList: 'results' }}
         suggestions={suggestions}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
@@ -235,6 +236,7 @@ class AutosuggestExample extends Component<Props, State> {
         renderSectionTitle={this.props.renderSectionTitle}
         getSectionSuggestions={this.props.getSectionSuggestions}
         alwaysRenderSuggestions={this.props.alwaysRenderSuggestions}
+        renderInputComponent={this.props.renderInputComponent}
       />
     );
   }
