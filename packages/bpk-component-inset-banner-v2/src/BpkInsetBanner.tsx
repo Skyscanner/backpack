@@ -15,14 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { useState } from 'react';
+
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+import BpkBottomSheet from '../../bpk-component-bottom-sheet';
 import InfoIcon from '../../bpk-component-icon/sm/information-circle';
-import BpkPopover from '../../bpk-component-popover/src/BpkPopover';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
-
-import type { Placement } from '@floating-ui/react';
 
 import STYLES from './BpkInsetBanner.module.scss';
 
@@ -43,15 +43,17 @@ export type Props = {
   };
   callToAction?: {
     text?: string;
-    popoverMessage?: string;
-    popoverPlacement?: Placement;
+    bottomSheetContent: Array<{
+      title: string;
+      description: string;
+    }>;
     buttonCloseLabel?: string;
     buttonA11yLabel?: string;
-    popverLabel?: string;
-    popoverId?: string;
-    popoverWidth?: string;
-    popoverMarginStart?: string;
-    popoverMarginEnd?: string;
+    bottomSheetLabel?: string;
+    bottomSheetId?: string;
+    bottomSheetWidth?: string;
+    bottomSheetMarginStart?: string;
+    bottomSheetMarginEnd?: string;
     labelTitle?: boolean;
     closeBtnIcon?: boolean;
     zIndexCustom?: number;
@@ -78,9 +80,7 @@ const BpkInsetBannerV2 = ({
     body && 'bpk-inset-banner--with-body',
   );
 
-  const popoverWidth = callToAction?.popoverWidth || 'auto';
-  const popoverMarginStart = callToAction?.popoverMarginStart || 'auto';
-  const popoverMarginEnd = callToAction?.popoverMarginEnd || 'auto';
+  const [sheetOpen, setSheetOpen] = useState(false);
 
   return (
     <div>
@@ -105,73 +105,52 @@ const BpkInsetBannerV2 = ({
             <BpkText textStyle={TEXT_STYLES.caption}>{subheadline}</BpkText>
           </div>
         </div>
-        {callToAction && callToAction.popoverMessage && (
+        {callToAction && callToAction.bottomSheetContent && (
           <div
             role="presentation"
             className={getClassName('bpk-inset-banner--cta-container')}
             onClick={(e) => {
-              // Do not propagate the click on the trigger OR popover content up the DOM tree.
+              // Do not propagate the click on the trigger OR bottomSheet content up the DOM tree.
               e.stopPropagation();
               e.preventDefault();
             }}
           >
-            <BpkPopover
-              style={{
-                width: popoverWidth,
-                marginInlineEnd: popoverMarginEnd,
-                marginInlineStart: popoverMarginStart,
-              }}
-              id={callToAction?.popoverId || ''}
-              label={callToAction?.popverLabel || ''}
-              placement={callToAction?.popoverPlacement || 'bottom'}
-              onClose={(e: {
-                stopPropagation: () => void;
-                preventDefault: () => void;
-              } | null) => {         
-                  e?.stopPropagation();
-                  e?.preventDefault();
-              }}
-              closeButtonText={callToAction?.buttonCloseLabel}
-              closeButtonIcon={callToAction?.closeBtnIcon}
-              labelAsTitle={callToAction?.labelTitle}
-              zIndexValue={callToAction?.zIndexCustom}
-              target={
-                <button
-                  aria-label={callToAction?.buttonA11yLabel}
-                  className={getClassName('bpk-inset-banner--cta-button')}
-                  data-testid="ctaBtn"
-                  aria-hidden="false"
-                  type="button"
-                >
-                  <div
-                    className={getClassName('bpk-inset-banner--cta-content')}
-                  >
-                    {callToAction?.text && (
-                      <BpkText textStyle={TEXT_STYLES.caption}>
-                        {callToAction.text}
-                      </BpkText>
-                    )}
-
-                    <div
-                      className={getClassName(
-                        'bpk-inset-banner--cta-info-icon',
-                      )}
-                    >
-                      <InfoIcon />
-                    </div>
-                  </div>
-                </button>
-              }
+            <button
+              aria-label={callToAction?.buttonA11yLabel}
+              className={getClassName('bpk-inset-banner--cta-button')}
+              data-testid="ctaBtn"
+              aria-hidden="false"
+              type="button"
+              onClick={() => setSheetOpen(true)}
             >
-              <BpkText tagName="p">{callToAction?.popoverMessage}</BpkText>
-            </BpkPopover>
-          </div>
-        )}
-        {callToAction && !callToAction.popoverMessage && callToAction.text && (
-          <div className={getClassName('bpk-inset-banner--cta-text')}>
-            <BpkText textStyle={TEXT_STYLES.caption}>
-              {callToAction.text}
-            </BpkText>
+              <div
+                className={getClassName('bpk-inset-banner--cta-content')}
+              >
+                {callToAction?.text && (
+                  <BpkText textStyle={TEXT_STYLES.caption}>
+                    {callToAction.text}
+                  </BpkText>
+                )}
+
+                <div
+                  className={getClassName(
+                    'bpk-inset-banner--cta-info-icon',
+                  )}
+                >
+                  <InfoIcon />
+                </div>
+              </div>
+            </button>
+            <BpkBottomSheet
+              id="my-bottom-sheet"
+              isOpen={sheetOpen}
+              onClose={() => setSheetOpen(false)}
+              title={callToAction?.text || ''}
+              closeLabel="Close bottom sheet"
+              ariaLabel="Bottom sheet"
+            >
+              <BpkText tagName="p">test</BpkText>
+            </BpkBottomSheet>
           </div>
         )}
       </div>

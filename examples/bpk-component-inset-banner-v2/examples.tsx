@@ -28,6 +28,18 @@ const WithBodyTextAndLinkExampleDarkV2 = () => (
     backgroundColor="#FF6601"
     callToAction={{
       text: 'Sponsored',
+      bottomSheetContent: [
+        {
+          title: 'Lorem ipsum dolor sit amet',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        },
+        {
+          title: 'Consectetur adipiscing elit',
+          description:
+            'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        },
+      ],
     }}
     body={{
       text: 'You can change your destination, date of travel, or both, with no change fee. Valid for all new bookings made up to 31 May for travel between now and 31 December 2020.',
@@ -38,44 +50,68 @@ const WithBodyTextAndLinkExampleDarkV2 = () => (
   />
 );
 
-const WithCtaTextAndPopoverExampleLightV2 = () => (
-  <BpkInsetBanner
-    title="Lorem ipsum"
-    subheadline="Lorem ipsum dolor sit amet"
-    logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
-    callToAction={{
-      text: 'Sponsored',
-      popoverMessage:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      closeBtnIcon: true,
-      labelTitle: true,
-      popverLabel: 'Info',
-      buttonCloseLabel: 'Close',
-      buttonA11yLabel: 'More info',
-    }}
-    backgroundColor="#FFE300"
-    variant={VARIANT.onLight}
-    accessibilityLabel="Sponsored by Skyscanner"
-  />
+const WithCtaTextAndBottomSheetExampleLightV2 = () => (
+  <div id="bottom-sheet-container">
+    <div id="pagewrap">
+      <BpkInsetBanner
+        title="Lorem ipsum"
+        subheadline="Lorem ipsum dolor sit amet"
+        logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
+        callToAction={{
+          text: 'Sponsored',
+          bottomSheetContent: [
+            {
+              title: 'Lorem ipsum dolor sit amet',
+              description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            },
+            {
+              title: 'Consectetur adipiscing elit',
+              description:
+                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            },
+          ],
+          closeBtnIcon: true,
+          labelTitle: true,
+          bottomSheetLabel: 'Info',
+          buttonCloseLabel: 'Close',
+          buttonA11yLabel: 'More info',
+        }}
+        backgroundColor="#FFE300"
+        variant={VARIANT.onLight}
+        accessibilityLabel="Sponsored by Skyscanner"
+      />
+    </div>
+  </div>
 );
 
-const WithCustomPopoverWidthAndMarginsExampleV2 = () => (
+const WithCustomBottomSheetWidthAndMarginsExampleV2 = () => (
   <BpkInsetBanner
     title="Lorem ipsum"
     subheadline="Lorem ipsum dolor sit amet"
     logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
     callToAction={{
       text: 'Sponsored',
-      popoverMessage:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      bottomSheetContent: [
+        {
+          title: 'Lorem ipsum dolor sit amet',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        },
+        {
+          title: 'Consectetur adipiscing elit',
+          description:
+            'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        },
+      ],
       closeBtnIcon: true,
       labelTitle: true,
-      popverLabel: 'Info',
+      bottomSheetLabel: 'Info',
       buttonCloseLabel: 'Close',
       buttonA11yLabel: 'More info',
-      popoverWidth: '15rem',
-      popoverMarginStart: '1rem',
-      popoverMarginEnd: '1rem',
+      bottomSheetWidth: '15rem',
+      bottomSheetMarginStart: '1rem',
+      bottomSheetMarginEnd: '1rem',
     }}
     backgroundColor="#FFE300"
     variant={VARIANT.onLight}
@@ -85,6 +121,6 @@ const WithCustomPopoverWidthAndMarginsExampleV2 = () => (
 
 export {
   WithBodyTextAndLinkExampleDarkV2,
-  WithCtaTextAndPopoverExampleLightV2,
-  WithCustomPopoverWidthAndMarginsExampleV2,
+  WithCtaTextAndBottomSheetExampleLightV2,
+  WithCustomBottomSheetWidthAndMarginsExampleV2,
 };

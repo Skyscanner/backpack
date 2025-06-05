@@ -54,10 +54,6 @@
     max-height: tokens.bpk-spacing-xl();
     object-fit: contain;
     padding-inline-end: tokens.bpk-spacing-base();
-
-    // @include breakpoints.bpk-breakpoint-mobile {
-    //   align
-    // }
   }
 
   &--text-container {
@@ -82,6 +78,10 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+
+    @include breakpoints.bpk-breakpoint-mobile {
+      align-items: flex-start;
+    }
   }
 
   &--cta-content {
