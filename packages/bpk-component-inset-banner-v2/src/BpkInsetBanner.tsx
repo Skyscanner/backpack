@@ -20,6 +20,7 @@ import { useState } from 'react';
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkBottomSheet from '../../bpk-component-bottom-sheet';
+import ViewIcon from '../../bpk-component-icon/lg/view';
 import InfoIcon from '../../bpk-component-icon/sm/information-circle';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
@@ -47,6 +48,7 @@ export type Props = {
       title: string;
       description: string;
     }>;
+    bottomSheetTitle?: string;
     buttonCloseLabel?: string;
     buttonA11yLabel?: string;
     bottomSheetLabel?: string;
@@ -145,11 +147,40 @@ const BpkInsetBannerV2 = ({
               id="my-bottom-sheet"
               isOpen={sheetOpen}
               onClose={() => setSheetOpen(false)}
-              title={callToAction?.text || ''}
+              title={callToAction?.bottomSheetTitle || ''}
               closeLabel="Close bottom sheet"
               ariaLabel="Bottom sheet"
             >
-              <BpkText tagName="p">test</BpkText>
+              {
+                callToAction.bottomSheetContent.map((item, index) => (
+                  <div
+                    key={item.title}
+                    className={getClassName(
+                      'bpk-inset-banner--bottom-sheet-content',
+                    )}
+                  >
+                    <div
+                      className={getClassName(
+                        'bpk-inset-banner--bottom-sheet-icon',
+                      )}
+                    >
+                      {index === 0 ? <ViewIcon height={24} width={24} /> : <InfoIcon height={24} width={24}/>}
+                    </div>
+                    <div className={getClassName('bpk-inset-banner--bottom-sheet-text')}>
+                      <div className={getClassName('bpk-inset-banner--bottom-sheet-title')}>
+                        <BpkText textStyle={TEXT_STYLES.heading4}>
+                          {item.title}
+                        </BpkText>
+                      </div>
+                      <div className={getClassName('bpk-inset-banner--bottom-sheet-description')}>
+                        <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+                          {item.description}
+                        </BpkText>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              }
             </BpkBottomSheet>
           </div>
         )}

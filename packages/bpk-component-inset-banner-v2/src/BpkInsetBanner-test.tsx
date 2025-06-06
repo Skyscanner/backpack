@@ -40,12 +40,31 @@ describe('BpkInsetBanner', () => {
       <BpkInsetBanner
         title="Lorem ipsum"
         subheadline="Lorem ipsum dolor sit amet"
-        logo="https://content.skyscnr.com/m/7950ed6f30581485/Medium-Skyscanner-Vertical-White.png"
-        backgroundColor="#F55D42"
+        logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
         callToAction={{
           text: 'Sponsored',
+          bottomSheetContent: [
+            {
+              title: 'Lorem ipsum dolor sit amet',
+              description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            },
+            {
+              title: 'Consectetur adipiscing elit',
+              description:
+                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            },
+          ],
+          bottomSheetTitle: "About this advert",
+          closeBtnIcon: true,
+          labelTitle: true,
+          bottomSheetLabel: 'Info',
+          buttonCloseLabel: 'Close',
+          buttonA11yLabel: 'More info',
         }}
-        variant={VARIANT.onDark}
+        backgroundColor="#FFE300"
+        variant={VARIANT.onLight}
+        accessibilityLabel="Sponsored by Skyscanner"
       />,
     );
 
@@ -57,13 +76,31 @@ describe('BpkInsetBanner', () => {
       <BpkInsetBanner
         title="Lorem ipsum"
         subheadline="Lorem ipsum dolor sit amet"
-        logo="https://content.skyscnr.com/m/7950ed6f30581485/Medium-Skyscanner-Vertical-White.png"
-        backgroundColor="#F55D42"
+        logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
         callToAction={{
           text: 'Sponsored',
-          popoverMessage: 'Popover message',
+          bottomSheetContent: [
+            {
+              title: 'Lorem ipsum dolor sit amet',
+              description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            },
+            {
+              title: 'Consectetur adipiscing elit',
+              description:
+                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            },
+          ],
+          bottomSheetTitle: "About this advert",
+          closeBtnIcon: true,
+          labelTitle: true,
+          bottomSheetLabel: 'Info',
+          buttonCloseLabel: 'Close',
+          buttonA11yLabel: 'More info',
         }}
-        variant={VARIANT.onDark}
+        backgroundColor="#FFE300"
+        variant={VARIANT.onLight}
+        accessibilityLabel="Sponsored by Skyscanner"
       />,
     );
 
@@ -71,7 +108,7 @@ describe('BpkInsetBanner', () => {
 
     fireEvent.click(ctaButton);
 
-    expect(screen.getByText('Popover message')).toBeInTheDocument();
+    expect(screen.getByText('Consectetur adipiscing elit')).toBeInTheDocument();
   });
 
   it('should render body if provided', () => {

@@ -31,10 +31,22 @@ describe('BpkInsetBanner accessibility tests', () => {
         backgroundColor="#F55D42"
         callToAction={{
           text: 'Sponsored',
-          popoverMessage: 'This is a popover message',
+          bottomSheetContent: [
+            {
+              title: 'Lorem ipsum dolor sit amet',
+              description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            },
+            {
+              title: 'Consectetur adipiscing elit',
+              description:
+                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            },
+          ],
+          bottomSheetTitle: "About this advert",
           closeBtnIcon: true,
           labelTitle: true,
-          popverLabel: 'Info',
+          bottomSheetLabel: 'Info',
           buttonCloseLabel: 'Close',
           buttonA11yLabel: 'More info',
         }}

@@ -40,6 +40,7 @@ const WithBodyTextAndLinkExampleDarkV2 = () => (
             'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         },
       ],
+      bottomSheetTitle: "About this advert",
     }}
     body={{
       text: 'You can change your destination, date of travel, or both, with no change fee. Valid for all new bookings made up to 31 May for travel between now and 31 December 2020.',
@@ -71,6 +72,7 @@ const WithCtaTextAndBottomSheetExampleLightV2 = () => (
                 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             },
           ],
+          bottomSheetTitle: "About this advert",
           closeBtnIcon: true,
           labelTitle: true,
           bottomSheetLabel: 'Info',
@@ -104,6 +106,7 @@ const WithCustomBottomSheetWidthAndMarginsExampleV2 = () => (
             'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         },
       ],
+      bottomSheetTitle: "About this advert",
       closeBtnIcon: true,
       labelTitle: true,
       bottomSheetLabel: 'Info',

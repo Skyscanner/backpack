@@ -67,7 +67,6 @@
   }
 
   &--cta-button {
-    margin: auto 0;
     all: unset;
 
     &:focus-visible {
@@ -80,10 +79,6 @@
     height: tokens.bpk-spacing-xl();
     align-items: center;
     cursor: pointer;
-
-    @include breakpoints.bpk-breakpoint-mobile {
-      align-items: flex-start;
-    }
   }
 
   &--cta-content {
@@ -95,6 +90,32 @@
     display: flex;
     align-items: center;
     margin-inline-start: tokens.bpk-spacing-md();
+  }
+
+  &--bottom-sheet-content {
+    display: flex;
+    padding-bottom: tokens.bpk-spacing-xl();
+    flex-direction: row;
+  }
+
+  &--bottom-sheet-icon {
+    display: flex;
+    margin-right: tokens.bpk-spacing-lg();
+    fill: tokens.$bpk-font-color-base;
+  }
+
+  &--bottom-sheet-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--bottom-sheet-title {
+    margin-bottom: tokens.bpk-spacing-md();
+    color: tokens.$bpk-text-on-light-day;
+  }
+
+  &--bottom-sheet-description {
+    color: tokens.$bpk-text-on-light-day;
   }
 }
 
