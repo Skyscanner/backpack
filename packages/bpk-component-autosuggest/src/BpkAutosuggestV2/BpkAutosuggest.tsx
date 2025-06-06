@@ -16,15 +16,24 @@
  * limitations under the License.
  */
 
-import { useEffect, forwardRef } from 'react';
-import type {
-  KeyboardEvent,
-  MouseEvent,
-  ReactElement,
-  HTMLProps,
-} from 'react';
+import type { KeyboardEvent, ReactElement, HTMLProps } from 'react';
+import { useEffect, forwardRef, useRef } from 'react';
 
+import {
+  useFloating,
+  offset,
+  flip,
+  shift,
+  size,
+  arrow as floatingArrow,
+  FloatingArrow,
+  autoUpdate,
+  FloatingPortal,
+} from '@floating-ui/react';
 import { useCombobox } from 'downshift';
+
+import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
 
 import { INPUT_TYPES } from '../../../bpk-component-input';
 import { cssModules } from '../../../bpk-react-utils';
@@ -89,7 +98,9 @@ export type BpkAutoSuggestProps<T> = {
   renderSectionTitle?: (section: T) => ReactElement;
   alwaysRenderSuggestions?: boolean;
   onInputValueChange?: (input: { method: string; newValue: string }) => void;
-  renderInputComponent?: (inputProps: HTMLProps<HTMLInputElement>) => ReactElement;
+  renderInputComponent?: (
+    inputProps: HTMLProps<HTMLInputElement>,
+  ) => ReactElement;
 };
 
 const defaultTheme = {
@@ -108,6 +119,8 @@ const defaultTheme = {
   sectionTitle: getClassName('bpk-autosuggest__section-title'),
   input: getClassName('bpk-autosuggest__suggestions-container-input'),
 };
+
+const strokeWidth = 0.0625;
 
 const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
   (
@@ -139,6 +152,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     forwardedRef,
   ) => {
     const theme = { ...defaultTheme, ...customTheme };
+    const arrowRef = useRef(null);
 
     function stateReducer(
       state: UseComboboxState<any>,
@@ -200,6 +214,25 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       initialInputValue: defaultValue ?? '',
       id,
     });
+
+    const { context, floatingStyles, refs } =
+      useFloating({
+        placement: 'bottom-start',
+        middleware: [
+          offset(17),
+          flip(),
+          shift(),
+          size({
+            apply({ elements, rects }) {
+              Object.assign(elements.floating.style, {
+                width: `${rects.reference.width}px`,
+              });
+            },
+          }),
+          floatingArrow({ element: arrowRef }),
+        ],
+        whileElementsMounted: autoUpdate,
+      });
 
     useEffect(() => {
       if (defaultValue) {
@@ -297,18 +330,28 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         : renderSuggestions(suggestions);
 
     const renderInput = () => {
-       const inputComponentProps = getInputProps({
+      const refObj = forwardedRef as React.MutableRefObject<HTMLInputElement | null>;
+      const inputComponentProps = getInputProps({
         className: theme.input,
-          onKeyDown,
-          ref: forwardedRef,
-          type: INPUT_TYPES.text,
-          onClick: onClickOrKeydown,
-          ...inputProps,
+        onKeyDown,
+        ref: (node: HTMLInputElement) => {
+          refs.setReference(node);
+          if (typeof forwardedRef === 'function') {
+            forwardedRef(node);
+          } else if (refObj) {
+            refObj.current = node;
+          }
+        },
+        type: INPUT_TYPES.text,
+        onClick: onClickOrKeydown,
+        ...inputProps,
       });
 
-        return renderInputComponent
-          ? renderInputComponent(inputComponentProps)
-          : <input {...inputComponentProps} enterKeyHint="search" />;
+      return renderInputComponent ? (
+        renderInputComponent(inputComponentProps)
+      ) : (
+        <input {...inputComponentProps} enterKeyHint="search" />
+      );
     };
 
     return (
@@ -320,24 +363,38 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       >
         {renderInput()}
 
-        <div
-          className={getClassName(
-            theme.suggestionsContainer,
-            isDesktop && theme.desktopSuggestionsContainer,
-            multiSection && theme.sectionContainer,
-            showSuggestions && theme.suggestionsContainerOpen,
-          )}
-        >
-          <ul
-            {...getMenuProps({ 'aria-label': ariaLabels.resultsList })}
-            className={getClassName(
-              theme.suggestionsList,
-              isDesktop && theme.desktopSuggestionsList,
-            )}
-          >
-            {showSuggestions && renderList()}
-          </ul>
-        </div>
+        {isOpen && (
+          <FloatingPortal>
+            <div
+              ref={refs.setFloating}
+              style={floatingStyles}
+              className={getClassName(
+                theme.suggestionsContainer,
+                isDesktop && theme.desktopSuggestionsContainer,
+                multiSection && theme.sectionContainer,
+                showSuggestions && theme.suggestionsContainerOpen,
+              )}
+            >
+              <FloatingArrow
+                ref={arrowRef}
+                context={context}
+                className={getClassName('bpk-autosuggest__arrow')}
+                role="presentation"
+                stroke={surfaceHighlightDay}
+                strokeWidth={strokeWidth}
+              />
+              <ul
+                {...getMenuProps({ 'aria-label': ariaLabels.resultsList })}
+                className={getClassName(
+                  theme.suggestionsList,
+                  isDesktop && theme.desktopSuggestionsList,
+                )}
+              >
+                {showSuggestions && renderList()}
+              </ul>
+            </div>
+          </FloatingPortal>
+        )}
       </div>
     );
   },

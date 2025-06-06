@@ -26,10 +26,6 @@ $bpk-spacing-v2: true;
 $arrow-size: tokens.bpk-spacing-sm() * 3;
 
 .bpk-autosuggest {
-  &__container--open {
-    position: relative;
-  }
-
   &__suggestions-container {
     display: none;
 
@@ -38,40 +34,18 @@ $arrow-size: tokens.bpk-spacing-sm() * 3;
     }
 
     &--open {
-      position: absolute;
-      top: 100%;
       display: block;
-      z-index: tokens.$bpk-zindex-autosuggest;
       width: 100%;
-      margin-top: $arrow-size + tokens.bpk-spacing-sm();
+    }
+  }
 
-      &::before {
-        position: absolute;
-        bottom: 100%;
-        left: 50%;
-        content: ' ';
-        display: block;
-        margin-bottom: -(tokens.$bpk-one-pixel-rem);
-        margin-left: -(
-            (tokens.bpk-spacing-sm() * 3) + tokens.$bpk-one-pixel-rem
-          );
-        border: ($arrow-size + tokens.$bpk-one-pixel-rem) solid transparent;
-        border-bottom-color: tokens.$bpk-surface-highlight-day;
-        pointer-events: none;
-      }
+  &__arrow {
+    width: tokens.bpk-spacing-lg();
+    height: tokens.bpk-spacing-lg();
+    fill: tokens.$bpk-surface-default-day;
 
-      &::after {
-        position: absolute;
-        bottom: 100%;
-        left: 50%;
-        content: ' ';
-        display: block;
-        margin-bottom: -(tokens.$bpk-one-pixel-rem);
-        margin-left: -(tokens.bpk-spacing-md() + tokens.bpk-spacing-sm());
-        border: $arrow-size solid transparent;
-        border-bottom-color: tokens.$bpk-surface-default-day;
-        pointer-events: none;
-      }
+    &[data-hide] {
+      visibility: hidden;
     }
   }
 
