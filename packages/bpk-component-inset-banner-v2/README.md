@@ -1,6 +1,6 @@
-# bpk-component-inset-banner
+# bpk-component-inset-banner-v2
 
-> Backpack inset banner component.
+> Backpack inset banner v2 component.
 
 ## Installation
 
@@ -9,33 +9,36 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkInsetBanner, { VARIANT } from '@skyscanner/backpack-web/bpk-component-inset-banner';
+import BpkInsetBanner, { VARIANT } from '@skyscanner/backpack-web/bpk-component-inset-banner-v2';
 
 export default () => (
   <BpkInsetBanner
-    accessibilityLabel="Sponsored by Skyscanner"
-    backgroundColor="#F55D42"
-    body={{
-      text: 'My body text',
-      linkText: 'More information',
-      link: 'www.skyscanner.net',
-    }}
+    title="Lorem ipsum"
+    subheadline="Lorem ipsum dolor sit amet"
+    logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
     callToAction={{
       text: 'Sponsored',
-      popoverMessage: 'This is a popover message',
-      popoverPlacement: 'top',
+      bottomSheetContent: [
+        {
+          title: 'Lorem ipsum dolor sit amet',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        },
+        {
+          title: 'Consectetur adipiscing elit',
+          description:
+            'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        },
+      ],
+      bottomSheetTitle: "About this advert",
+      closeBtnIcon: true,
+      labelTitle: true,
+      bottomSheetLabel: 'Info',
       buttonCloseLabel: 'Close',
       buttonA11yLabel: 'More info',
-      popverLabel: 'More info',
-      popoverId: 'popover',
-      popoverWidth: '15rem',
-      labelTitle: true,
-      closeBtnIcon: false,
-      zIndexCustom: 1200;
     }}
-    logo="logo.png"
-    subheadline="My subheadline"
-    title="My title"
-    variant={VARIANT.onDark}
+    backgroundColor="#FFE300"
+    variant={VARIANT.onLight}
+    accessibilityLabel="Sponsored by Skyscanner"
   />);
 ```
