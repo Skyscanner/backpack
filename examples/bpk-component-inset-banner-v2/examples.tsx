@@ -20,6 +20,9 @@ import BpkInsetBanner, {
   VARIANT,
 } from '../../packages/bpk-component-inset-banner-v2';
 
+const image =
+  'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg';
+
 const WithBodyTextAndLinkExampleDarkV2 = () => (
   <BpkInsetBanner
     title="Lorem ipsum"
@@ -122,8 +125,42 @@ const WithCustomBottomSheetWidthAndMarginsExampleV2 = () => (
   />
 );
 
+const WithImageAndBottomSheetExampleV2 = () => (
+  <BpkInsetBanner
+    title="Explore the Canadian Rockies"
+    subheadline="Discover breathtaking landscapes and outdoor adventures"
+    logo="https://content.skyscnr.com/m/3f4dadbd41da8235/original/Skyland_White_172x96.png"
+    image={{
+      src: image,
+      altText: 'Canadian Rockies',
+      aspectRatio: 612/408,
+    }}
+    callToAction={{
+      text: 'Sponsored',
+      bottomSheetContent: [
+        {
+          title: 'Plan Your Trip',
+          description:
+            'Experience the beauty of the Canadian Rockies with our exclusive travel packages.',
+          titleA11yLabel: 'Plan Your Trip',
+          descriptionA11yLabel: 'Experience the beauty of the Canadian Rockies with our exclusive travel packages.',
+        },
+      ],
+      bottomSheetTitle: "About this advert",
+      closeBtnIcon: true,
+      labelTitle: true,
+      bottomSheetLabel: 'Info',
+      buttonCloseLabel: 'Close',
+      buttonA11yLabel: 'More info',
+    }}
+    backgroundColor="#FF6601"
+    variant={VARIANT.onDark}
+  />
+);
+
 export {
   WithBodyTextAndLinkExampleDarkV2,
   WithCtaTextAndBottomSheetExampleLightV2,
   WithCustomBottomSheetWidthAndMarginsExampleV2,
+  WithImageAndBottomSheetExampleV2
 };

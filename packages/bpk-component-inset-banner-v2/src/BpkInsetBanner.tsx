@@ -22,6 +22,7 @@ import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base
 import BpkBottomSheet from '../../bpk-component-bottom-sheet';
 import ViewIcon from '../../bpk-component-icon/lg/view';
 import InfoIcon from '../../bpk-component-icon/sm/information-circle';
+import BpkImage from '../../bpk-component-image';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -46,7 +47,9 @@ export type Props = {
     text?: string;
     bottomSheetContent: Array<{
       title: string;
+      titleA11yLabel?: string;
       description: string;
+      descriptionA11yLabel?: string;
     }>;
     bottomSheetTitle?: string;
     buttonCloseLabel?: string;
@@ -56,6 +59,7 @@ export type Props = {
     bottomSheetWidth?: string;
     bottomSheetMarginStart?: string;
     bottomSheetMarginEnd?: string;
+    bottomSheetA11yLabel?: string;
     labelTitle?: boolean;
     closeBtnIcon?: boolean;
     zIndexCustom?: number;
@@ -64,6 +68,11 @@ export type Props = {
   subheadline?: string;
   title?: string;
   variant?: (typeof VARIANT)[keyof typeof VARIANT];
+  image?: {
+    src: string;
+    altText: string;
+    aspectRatio: number;
+  }
 };
 
 const BpkInsetBannerV2 = ({
@@ -71,6 +80,7 @@ const BpkInsetBannerV2 = ({
   backgroundColor = surfaceHighlightDay,
   body,
   callToAction,
+  image,
   logo,
   subheadline,
   title,
@@ -80,6 +90,7 @@ const BpkInsetBannerV2 = ({
     'bpk-inset-banner',
     `bpk-inset-banner--${variant}`,
     body && 'bpk-inset-banner--with-body',
+    image && 'bpk-inset-banner--with-image',
   );
 
   const [sheetOpen, setSheetOpen] = useState(false);
@@ -144,12 +155,12 @@ const BpkInsetBannerV2 = ({
               </div>
             </button>
             <BpkBottomSheet
-              id="my-bottom-sheet"
+              id="InsetBannerBottomSheet"
               isOpen={sheetOpen}
               onClose={() => setSheetOpen(false)}
               title={callToAction?.bottomSheetTitle || ''}
               closeLabel="Close bottom sheet"
-              ariaLabel="Bottom sheet"
+              ariaLabel={callToAction?.bottomSheetA11yLabel || ''}
             >
               {
                 callToAction.bottomSheetContent.map((item, index) => (
@@ -168,12 +179,12 @@ const BpkInsetBannerV2 = ({
                     </div>
                     <div className={getClassName('bpk-inset-banner--bottom-sheet-text')}>
                       <div className={getClassName('bpk-inset-banner--bottom-sheet-title')}>
-                        <BpkText textStyle={TEXT_STYLES.heading4}>
+                        <BpkText textStyle={TEXT_STYLES.heading4} aria-label={item.titleA11yLabel}>
                           {item.title}
                         </BpkText>
                       </div>
                       <div className={getClassName('bpk-inset-banner--bottom-sheet-description')}>
-                        <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+                        <BpkText textStyle={TEXT_STYLES.bodyDefault} aria-label={item.descriptionA11yLabel}>
                           {item.description}
                         </BpkText>
                       </div>
@@ -186,7 +197,7 @@ const BpkInsetBannerV2 = ({
         )}
       </div>
       {body && (
-        <div className={getClassName('bpk-inset-banner-body-container')}>
+        <div className={getClassName('bpk-inset-banner-body-container')} >
           <BpkText textStyle={TEXT_STYLES.caption}>{body.text}</BpkText>
           {body.link && body.linkText && (
             <a
@@ -198,6 +209,11 @@ const BpkInsetBannerV2 = ({
               <BpkText textStyle={TEXT_STYLES.caption}>{body.linkText}</BpkText>
             </a>
           )}
+        </div>
+      )}
+      {image && (
+        <div className={getClassName('bpk-inset-banner-image-container')} >
+          <BpkImage src={image.src} altText={image.altText} aspectRatio={image.aspectRatio} />
         </div>
       )}
     </div>

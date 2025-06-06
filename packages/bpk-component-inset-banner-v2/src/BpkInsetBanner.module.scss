@@ -30,6 +30,10 @@
     border-radius: tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm 0 0;
   }
 
+  &--with-image {
+    border-radius: tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm 0 0;
+  }
+
   &--on-light {
     color: tokens.$bpk-text-on-light-day;
     fill: tokens.$bpk-text-on-light-day;
@@ -135,4 +139,10 @@
       color: tokens.$bpk-private-button-link-pressed-foreground-day;
     }
   }
+}
+
+.bpk-inset-banner-image-container {
+  min-height: tokens.$bpk-line-height-8-xl;
+  border-radius: 0 0 tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm;
+  overflow: hidden;
 }

@@ -22,6 +22,7 @@ import {
   WithBodyTextAndLinkExampleDarkV2,
   WithCtaTextAndBottomSheetExampleLightV2,
   WithCustomBottomSheetWidthAndMarginsExampleV2,
+  WithImageAndBottomSheetExampleV2
 } from './examples';
 
 export default {
@@ -33,3 +34,4 @@ export const WithBodyTextAndLinkDark = WithBodyTextAndLinkExampleDarkV2;
 export const VisualTestDark = WithBodyTextAndLinkExampleDarkV2;
 export const WithCtaTextAndPopoverLight = WithCtaTextAndBottomSheetExampleLightV2;
 export const WithCustomPopoverWidthAndMargins = WithCustomBottomSheetWidthAndMarginsExampleV2;
+export const WithImageAndBottomSheet = WithImageAndBottomSheetExampleV2;
