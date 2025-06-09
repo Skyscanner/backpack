@@ -17,16 +17,14 @@
  */
 
 import type { CSSProperties } from 'react';
-import { useState } from 'react';
+import { Children, useState } from 'react';
 
 import { BpkButtonV2 } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';
 import BpkExpand from '../BpkExpand';
-import {
-  ACCESSORY_DESKTOP_TYPES,
-  ACCESSORY_MOBILE_TYPES,
-  type CardListGridStackProps,
-} from '../common-types';
+import { ACCESSORY_DESKTOP_TYPES } from '../common-types';
+
+import type { CardListGridStackProps } from '../common-types';
 
 import STYLES from './BpkCardListGridStack.module.scss';
 
@@ -49,23 +47,22 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
     '--initially-shown-cards': initiallyShownCards,
   } as CSSProperties;
 
-  let defaultInitiallyShownCards: number;
-  let showExpand: boolean;
-  if (
-    accessory ===
-    (ACCESSORY_DESKTOP_TYPES.expand || ACCESSORY_MOBILE_TYPES.expand)
-  ) {
-    defaultInitiallyShownCards = initiallyShownCards;
-    showExpand = children.length > defaultInitiallyShownCards;
-  } else {
-    defaultInitiallyShownCards = children.length;
-    showExpand = false;
-  }
+  const isExpandType: boolean = accessory === ACCESSORY_DESKTOP_TYPES.expand;
+  const defaultInitiallyShownCards = isExpandType
+    ? initiallyShownCards
+    : children.length;
+  const showExpand: boolean = isExpandType
+    ? children.length > defaultInitiallyShownCards
+    : false;
 
   const [collapsed, setCollapsed] = useState(true);
   const showButton = accessory === ACCESSORY_DESKTOP_TYPES.button;
-  const initiallCards = children.slice(0, defaultInitiallyShownCards);
-  const restCards = children.slice(defaultInitiallyShownCards, children.length);
+  const childrenArray = Children.toArray(children);
+  const initialCards = childrenArray.slice(0, defaultInitiallyShownCards);
+  const restCards = childrenArray.slice(
+    defaultInitiallyShownCards,
+    children.length,
+  );
 
   const showContent = () => {
     setCollapsed(false);
@@ -112,7 +109,7 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
         data-testid="bpk-card-list-grid-stack__initial-content"
         style={gridStyle}
       >
-        {initiallCards}
+        {initialCards}
       </div>
 
       {showButton && buttonAccessoryContent}
