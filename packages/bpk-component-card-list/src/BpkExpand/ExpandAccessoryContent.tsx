@@ -29,39 +29,20 @@ import type { ExpandProps } from '../common-types';
 const AlignedChevronDownIcon = withButtonAlignment(withRtlSupport(ChevronDown));
 const AlignedChevronUpIcon = withButtonAlignment(withRtlSupport(ChevronUp));
 
-const BpkExpand = ({
+const ExpandAccessoryContent = ({
   children,
   collapsed,
-  hideContent,
-  setCollapsed,
-  showContent,
-}: ExpandProps) => {
-  const buttonIcon = collapsed ? (
-    <AlignedChevronDownIcon />
-  ) : (
-    <AlignedChevronUpIcon />
-  );
-  const buttonOnClick = () => {
-    if (collapsed) {
-      showContent();
-      setCollapsed(false);
-    } else {
-      hideContent();
-      setCollapsed(true);
-    }
-  };
-
-  return (
+  onExpandTogle,
+}: ExpandProps) => (
     <BpkButtonV2
       data-testid="bpk-card-list__accessory-expand-button"
       type={BUTTON_TYPES.link}
-      onClick={() => buttonOnClick()}
+      onClick={() => onExpandTogle()}
       aria-expanded={!collapsed}
     >
       {children}
-      {buttonIcon}
+      {collapsed ? <AlignedChevronDownIcon /> : <AlignedChevronUpIcon />}
     </BpkButtonV2>
   );
-};
 
-export default BpkExpand;
+export default ExpandAccessoryContent;

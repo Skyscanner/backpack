@@ -19,12 +19,10 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import BpkExpand from './BpkExpand';
+import ExpandAccessoryContent from './ExpandAccessoryContent';
 
-describe('BpkExpand', () => {
-  const hideContent = jest.fn();
-  const setCollapsed = jest.fn();
-  const showContent = jest.fn();
+describe('ExpandAccessoryContent', () => {
+  const onExpandTogle = jest.fn();
 
   beforeEach(() => {
     jest.resetAllMocks();
@@ -34,45 +32,31 @@ describe('BpkExpand', () => {
     const user = userEvent.setup();
 
     render(
-      <BpkExpand
-        collapsed
-        hideContent={hideContent}
-        setCollapsed={setCollapsed}
-        showContent={showContent}
-      >
+      <ExpandAccessoryContent collapsed onExpandTogle={onExpandTogle}>
         Expand
-      </BpkExpand>,
+      </ExpandAccessoryContent>,
     );
 
     const button = screen.getByTestId('bpk-card-list__accessory-expand-button');
     expect(button).toHaveTextContent('Expand');
 
     await user.click(button);
-    expect(showContent).toHaveBeenCalled();
-    expect(setCollapsed).toHaveBeenCalledWith(false);
-    expect(hideContent).not.toHaveBeenCalled();
+    expect(onExpandTogle).toHaveBeenCalled();
   });
 
   it('should render correctly when expanded', async () => {
     const user = userEvent.setup();
 
     render(
-      <BpkExpand
-        collapsed={false}
-        hideContent={hideContent}
-        setCollapsed={setCollapsed}
-        showContent={showContent}
-      >
+      <ExpandAccessoryContent collapsed={false} onExpandTogle={onExpandTogle}>
         Collapse
-      </BpkExpand>,
+      </ExpandAccessoryContent>,
     );
 
     const button = screen.getByTestId('bpk-card-list__accessory-expand-button');
     expect(button).toHaveTextContent('Collapse');
 
     await user.click(button);
-    expect(hideContent).toHaveBeenCalled();
-    expect(setCollapsed).toHaveBeenCalledWith(true);
-    expect(showContent).not.toHaveBeenCalled();
+    expect(onExpandTogle).toHaveBeenCalled();
   });
 });

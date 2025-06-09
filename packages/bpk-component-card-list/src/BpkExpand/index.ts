@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import BpkExpand from './BpkExpand';
+import ExpandAccessoryContent from './ExpandAccessoryContent';
 
-export default BpkExpand;
+export default ExpandAccessoryContent;

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { Dispatch, ReactElement, SetStateAction } from 'react';
+import type { ReactElement } from 'react';
 
 const LAYOUTS = {
   grid: 'grid',
@@ -42,9 +42,7 @@ const ACCESSORY_MOBILE_TYPES = {
 type ExpandProps = {
   children: string | ReactElement;
   collapsed: boolean;
-  hideContent: () => void;
-  setCollapsed: Dispatch<SetStateAction<boolean>>;
-  showContent: () => void;
+  onExpandTogle: () => void;
 };
 
 type CardListBaseProps = {

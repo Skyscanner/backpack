@@ -21,7 +21,7 @@ import { Children, useState } from 'react';
 
 import { BpkButtonV2 } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';
-import BpkExpand from '../BpkExpand';
+import ExpandAccessoryContent from '../BpkExpand/ExpandAccessoryContent';
 import { ACCESSORY_DESKTOP_TYPES } from '../common-types';
 
 import type { CardListGridStackProps } from '../common-types';
@@ -61,28 +61,21 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
   const initialCards = childrenArray.slice(0, defaultInitiallyShownCards);
   const restCards = childrenArray.slice(
     defaultInitiallyShownCards,
-    children.length,
+    childrenArray.length,
   );
 
-  const showContent = () => {
-    setCollapsed(false);
-    onExpandClick?.();
-  };
-
-  const hideContent = () => {
-    setCollapsed(true);
+  const onExpandTogle = () => {
+    setCollapsed((prev) => !prev);
     onExpandClick?.();
   };
 
   const expandAccessoryContent = (
-    <BpkExpand
-      showContent={showContent}
-      hideContent={hideContent}
+    <ExpandAccessoryContent
       collapsed={collapsed}
-      setCollapsed={setCollapsed}
+      onExpandTogle={onExpandTogle}
     >
       {expandText || ''}
-    </BpkExpand>
+    </ExpandAccessoryContent>
   );
 
   const buttonAccessoryContent = (
