@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-import BpkInsetBanner from '../../packages/bpk-component-inset-banner-v2/src/BpkInsetBanner';
+import BpkInsetBannerSponsored from '../../packages/bpk-component-inset-banner-v2/src/BpkInsetBannerSponsored';
 
 import {
-  WithBodyTextAndLinkExampleDarkV2,
   WithCtaTextAndBottomSheetExampleLightV2,
   WithCustomBottomSheetWidthAndMarginsExampleV2,
   WithImageAndBottomSheetExampleV2
@@ -27,11 +26,9 @@ import {
 
 export default {
   title: 'bpk-component-inset-banner-v2',
-  component: BpkInsetBanner,
+  component: BpkInsetBannerSponsored,
 };
 
-export const WithBodyTextAndLinkDark = WithBodyTextAndLinkExampleDarkV2;
-export const VisualTestDark = WithBodyTextAndLinkExampleDarkV2;
 export const WithCtaTextAndPopoverLight = WithCtaTextAndBottomSheetExampleLightV2;
 export const WithCustomPopoverWidthAndMargins = WithCustomBottomSheetWidthAndMarginsExampleV2;
 export const WithImageAndBottomSheet = WithImageAndBottomSheetExampleV2;

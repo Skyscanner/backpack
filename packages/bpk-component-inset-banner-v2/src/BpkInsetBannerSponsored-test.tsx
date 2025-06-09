@@ -20,7 +20,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 
-import BpkInsetBanner, { VARIANT } from './BpkInsetBanner';
+import BpkInsetBanner, { VARIANT } from './BpkInsetBannerSponsored';
 
 describe('BpkInsetBanner', () => {
   it('should render correctly', () => {
@@ -111,24 +111,4 @@ describe('BpkInsetBanner', () => {
     expect(screen.getByText('Consectetur adipiscing elit')).toBeInTheDocument();
   });
 
-  it('should render body if provided', () => {
-    const { getByRole } = render(
-      <BpkInsetBanner
-        title="Lorem ipsum"
-        subheadline="Lorem ipsum dolor sit amet"
-        logo="https://content.skyscnr.com/m/7950ed6f30581485/Medium-Skyscanner-Vertical-White.png"
-        backgroundColor="#F55D42"
-        body={{
-          text: 'You can change your destination, date of travel, or both, with no change fee. Valid for all new bookings made up to 31 May for travel between now and 31 December 2020.',
-          linkText: 'More information',
-          link: 'www.skyscanner.net',
-        }}
-        variant={VARIANT.onDark}
-      />,
-    );
-
-    expect(getByRole('link')).toHaveClass(
-      'bpk-inset-banner-body-container--link-text',
-    );
-  });
 });

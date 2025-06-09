@@ -19,7 +19,7 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkInsetBanner, { VARIANT } from './BpkInsetBanner';
+import BpkInsetBanner, { VARIANT } from './BpkInsetBannerSponsored';
 
 describe('BpkInsetBanner accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
@@ -49,11 +49,6 @@ describe('BpkInsetBanner accessibility tests', () => {
           bottomSheetLabel: 'Info',
           buttonCloseLabel: 'Close',
           buttonA11yLabel: 'More info',
-        }}
-        body={{
-          text: 'You can change your destination, date of travel, or both, with no change fee. Valid for all new bookings made up to 31 May for travel between now and 31 December 2020.',
-          linkText: 'More information',
-          link: 'www.skyscanner.net',
         }}
         variant={VARIANT.onDark}
       />,

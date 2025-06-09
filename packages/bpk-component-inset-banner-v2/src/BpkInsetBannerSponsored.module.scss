@@ -26,10 +26,6 @@
   justify-content: space-between;
   border-radius: tokens.$bpk-border-radius-sm;
 
-  &--with-body {
-    border-radius: tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm 0 0;
-  }
-
   &--with-image {
     border-radius: tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm 0 0;
   }
@@ -120,24 +116,6 @@
 
   &--bottom-sheet-description {
     color: tokens.$bpk-text-on-light-day;
-  }
-}
-
-.bpk-inset-banner-body-container {
-  display: flex;
-  padding: tokens.bpk-spacing-base();
-  flex-direction: column;
-  border-radius: 0 0 tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm;
-  background-color: tokens.$bpk-private-info-banner-default-day;
-  color: tokens.$bpk-text-on-light-day;
-
-  &--link-text {
-    color: tokens.$bpk-private-button-link-normal-foreground-day;
-    text-decoration: none;
-
-    @include utils.bpk-hover {
-      color: tokens.$bpk-private-button-link-pressed-foreground-day;
-    }
   }
 }
 

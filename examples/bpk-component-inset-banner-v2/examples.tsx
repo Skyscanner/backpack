@@ -23,36 +23,8 @@ import BpkInsetBanner, {
 const image =
   'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg';
 
-const WithBodyTextAndLinkExampleDarkV2 = () => (
-  <BpkInsetBanner
-    title="Lorem ipsum"
-    subheadline="Lorem ipsum dolor sit amet"
-    logo="https://content.skyscnr.com/m/3f4dadbd41da8235/original/Skyland_White_172x96.png"
-    backgroundColor="#FF6601"
-    callToAction={{
-      text: 'Sponsored',
-      bottomSheetContent: [
-        {
-          title: 'Lorem ipsum dolor sit amet',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        },
-        {
-          title: 'Consectetur adipiscing elit',
-          description:
-            'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        },
-      ],
-      bottomSheetTitle: "About this advert",
-    }}
-    body={{
-      text: 'You can change your destination, date of travel, or both, with no change fee. Valid for all new bookings made up to 31 May for travel between now and 31 December 2020.',
-      linkText: 'More information',
-      link: 'www.skyscanner.net',
-    }}
-    variant={VARIANT.onDark}
-  />
-);
+const imageWidth = 300;
+const imageHeight = 150;
 
 const WithCtaTextAndBottomSheetExampleLightV2 = () => (
   <div id="bottom-sheet-container">
@@ -133,7 +105,7 @@ const WithImageAndBottomSheetExampleV2 = () => (
     image={{
       src: image,
       altText: 'Canadian Rockies',
-      aspectRatio: 612/408,
+      aspectRatio: imageWidth / imageHeight,
     }}
     callToAction={{
       text: 'Sponsored',
@@ -157,7 +129,6 @@ const WithImageAndBottomSheetExampleV2 = () => (
 );
 
 export {
-  WithBodyTextAndLinkExampleDarkV2,
   WithCtaTextAndBottomSheetExampleLightV2,
   WithCustomBottomSheetWidthAndMarginsExampleV2,
   WithImageAndBottomSheetExampleV2

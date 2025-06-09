@@ -26,7 +26,7 @@ import BpkImage from '../../bpk-component-image';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './BpkInsetBanner.module.scss';
+import STYLES from './BpkInsetBannerSponsored.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -38,11 +38,6 @@ export const VARIANT = {
 export type Props = {
   accessibilityLabel?: string;
   backgroundColor?: string;
-  body?: {
-    text: string;
-    link?: string;
-    linkText?: string;
-  };
   callToAction?: {
     text?: string;
     bottomSheetContent: Array<{
@@ -76,7 +71,6 @@ export type Props = {
 const BpkInsetBannerV2 = ({
   accessibilityLabel,
   backgroundColor = surfaceHighlightDay,
-  body,
   callToAction,
   image,
   logo,
@@ -87,7 +81,6 @@ const BpkInsetBannerV2 = ({
   const classNames = getClassName(
     'bpk-inset-banner',
     `bpk-inset-banner--${variant}`,
-    body && 'bpk-inset-banner--with-body',
     image && 'bpk-inset-banner--with-image',
   );
 
@@ -194,21 +187,6 @@ const BpkInsetBannerV2 = ({
           </div>
         )}
       </div>
-      {body && (
-        <div className={getClassName('bpk-inset-banner-body-container')} >
-          <BpkText textStyle={TEXT_STYLES.caption}>{body.text}</BpkText>
-          {body.link && body.linkText && (
-            <a
-              href={body.link}
-              className={getClassName(
-                'bpk-inset-banner-body-container--link-text',
-              )}
-            >
-              <BpkText textStyle={TEXT_STYLES.caption}>{body.linkText}</BpkText>
-            </a>
-          )}
-        </div>
-      )}
       {image && (
         <div className={getClassName('bpk-inset-banner-image-container')} >
           <BpkImage src={image.src} altText={image.altText} aspectRatio={image.aspectRatio} />

@@ -19,7 +19,7 @@
 import BpkInsetBannerV2, {
   type Props as BpkInsetBannerProps,
   VARIANT,
-} from './src/BpkInsetBanner';
+} from './src/BpkInsetBannerSponsored';
 
 export type { BpkInsetBannerProps };
 export { VARIANT };
