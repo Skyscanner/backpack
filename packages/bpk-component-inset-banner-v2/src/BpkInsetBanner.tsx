@@ -47,9 +47,7 @@ export type Props = {
     text?: string;
     bottomSheetContent: Array<{
       title: string;
-      titleA11yLabel?: string;
       description: string;
-      descriptionA11yLabel?: string;
     }>;
     bottomSheetTitle?: string;
     buttonCloseLabel?: string;
@@ -179,12 +177,12 @@ const BpkInsetBannerV2 = ({
                     </div>
                     <div className={getClassName('bpk-inset-banner--bottom-sheet-text')}>
                       <div className={getClassName('bpk-inset-banner--bottom-sheet-title')}>
-                        <BpkText textStyle={TEXT_STYLES.heading4} aria-label={item.titleA11yLabel}>
+                        <BpkText textStyle={TEXT_STYLES.heading4}>
                           {item.title}
                         </BpkText>
                       </div>
                       <div className={getClassName('bpk-inset-banner--bottom-sheet-description')}>
-                        <BpkText textStyle={TEXT_STYLES.bodyDefault} aria-label={item.descriptionA11yLabel}>
+                        <BpkText textStyle={TEXT_STYLES.bodyDefault}>
                           {item.description}
                         </BpkText>
                       </div>

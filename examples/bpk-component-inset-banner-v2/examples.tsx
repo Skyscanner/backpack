@@ -142,8 +142,6 @@ const WithImageAndBottomSheetExampleV2 = () => (
           title: 'Plan Your Trip',
           description:
             'Experience the beauty of the Canadian Rockies with our exclusive travel packages.',
-          titleA11yLabel: 'Plan Your Trip',
-          descriptionA11yLabel: 'Experience the beauty of the Canadian Rockies with our exclusive travel packages.',
         },
       ],
       bottomSheetTitle: "About this advert",
