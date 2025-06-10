@@ -60,7 +60,7 @@ const snippetProps = {
   subheading: 'Subheading',
   bodyText:
     'Lorem ipsum dolor sit amet consectetur. Tristique at pharetra tincidunt elementum vulputate varius sit euismod hac. Dignissim hendrerit enim eros nisi diam. Elit arcu mattis cum in id varius vitae augue neque. Quisque in semper malesuada lacus ut etiam elementum.',
-  buttonText: 'Call to Action',
+  buttonContent: 'Call to Action',
   onClick: () => window.open('https://www.skyscanner.net/flights', '_blank'),
 };
 
@@ -150,7 +150,7 @@ const RowToRailForCardsExample = () => (
       layoutDesktop={LAYOUTS.row}
       layoutMobile={LAYOUTS.rail}
       accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
-      buttonText="Explore more"
+      buttonContent="Explore more"
     />
   </PageContainer>
 );
@@ -197,45 +197,23 @@ const RowToStackForCardsWithExpandExample = () => {
 const RowToStackForSnippetsWithExpandExample = () => {
   const [expandText, setExpandText] = useState('Show more');
 
-//   return (
-//     <PageContainer>
-//       <BpkCardList
-//         title="Must-visit spots"
-//         description="Check out these world-famous destinations perfect for visiting in spring."
-//         chipGroup={BpkChipGroupRail()}
-//         initiallyShownCards={2}
-//         cardList={makeList(Snippet)}
-//         layoutDesktop={LAYOUTS.row}
-//         layoutMobile={LAYOUTS.stack}
-//         onButtonClick={() =>
-//           setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
-//         }
-//         accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
-//         accessoryMobile={ACCESSORY_MOBILE_TYPES.expand}
-//         expandText={expandText}
-//       />
-//     </PageContainer>
-//   );
-// };
-
-// const GridToRailForCardsWithExpandExample = () => {
-//   const [expandText, setExpandText] = useState('Show more');
-
   return (
     <PageContainer>
       <BpkCardList
         title="Must-visit spots"
         description="Check out these world-famous destinations perfect for visiting in spring."
         chipGroup={BpkChipGroupRail()}
-        cardList={makeList(DestinationCard)}
-        layoutDesktop={LAYOUTS.grid}
-        layoutMobile={LAYOUTS.rail}
-        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.expand}
-        expandText={expandText}
-        onExpandClick={() =>
+        initiallyShownCards={2}
+        cardList={makeList(Snippet)}
+        layoutDesktop={LAYOUTS.row}
+        layoutMobile={LAYOUTS.stack}
+        onButtonClick={() =>
           setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
         }
-        />
+        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+        accessoryMobile={ACCESSORY_MOBILE_TYPES.expand}
+        expandText={expandText}
+      />
     </PageContainer>
   );
 };
