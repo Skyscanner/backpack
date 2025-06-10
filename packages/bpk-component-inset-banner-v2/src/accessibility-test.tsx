@@ -19,12 +19,12 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkInsetBanner, { VARIANT } from './BpkInsetBannerSponsored';
+import BpkInsetBannerSponsored, { VARIANT } from './BpkInsetBannerSponsored';
 
 describe('BpkInsetBanner accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkInsetBanner
+      <BpkInsetBannerSponsored
         title="Lorem ipsum"
         subheadline="Lorem ipsum dolor sit amet"
         logo="https://content.skyscnr.com/m/7950ed6f30581485/Medium-Skyscanner-Vertical-White.png"

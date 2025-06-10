@@ -20,12 +20,12 @@ import { render, screen, fireEvent } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 
-import BpkInsetBanner, { VARIANT } from './BpkInsetBannerSponsored';
+import BpkInsetBannerSponsored, { VARIANT } from './BpkInsetBannerSponsored';
 
 describe('BpkInsetBanner', () => {
   it('should render correctly', () => {
     const { getByText } = render(
-      <BpkInsetBanner
+      <BpkInsetBannerSponsored
         title="Lorem ipsum"
         backgroundColor="#F55D42"
         variant={VARIANT.onDark}
@@ -37,7 +37,7 @@ describe('BpkInsetBanner', () => {
 
   it('should render call to action text if provided', () => {
     const { getByText } = render(
-      <BpkInsetBanner
+      <BpkInsetBannerSponsored
         title="Lorem ipsum"
         subheadline="Lorem ipsum dolor sit amet"
         logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
@@ -73,7 +73,7 @@ describe('BpkInsetBanner', () => {
 
   it('should render call to action popover text if provided', () => {
     render(
-      <BpkInsetBanner
+      <BpkInsetBannerSponsored
         title="Lorem ipsum"
         subheadline="Lorem ipsum dolor sit amet"
         logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
