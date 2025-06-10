@@ -55,7 +55,7 @@ type CardListBaseProps = {
   accessoryMobile?: (typeof ACCESSORY_MOBILE_TYPES)[keyof typeof ACCESSORY_MOBILE_TYPES]; // added
   initiallyShownCards?: number;
   chipGroup?: ReactElement;
-  buttonText?: string;
+  buttonContent?: React.ReactNode;
   onButtonClick?: () => void;
   onExpandClick?: () => void; // added
   buttonHref?: string; // added
@@ -72,7 +72,7 @@ type CardListGridStackProps = {
     | typeof ACCESSORY_MOBILE_TYPES.expand
     | typeof ACCESSORY_MOBILE_TYPES.button;
   expandText?: string;
-  buttonText?: string;
+  buttonContent?: React.ReactNode;
   onButtonClick?: () => void;
   onExpandClick?: () => void;
   buttonHref?: string;

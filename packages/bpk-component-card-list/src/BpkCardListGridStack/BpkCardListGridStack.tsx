@@ -33,8 +33,8 @@ const getClassName = cssModules(STYLES);
 const BpkCardListGridStack = (props: CardListGridStackProps) => {
   const {
     accessory,
+    buttonContent,
     buttonHref,
-    buttonText,
     children,
     expandText,
     initiallyShownCards,
@@ -84,7 +84,7 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
         onClick={onButtonClick}
         href={buttonHref}
       >
-        {buttonText}
+        {buttonContent}
       </BpkButtonV2>
     </div>
   );
