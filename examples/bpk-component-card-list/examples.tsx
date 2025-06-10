@@ -129,106 +129,106 @@ const BasicExample = () => (
   />
 );
 
-// const RowToRailForCardsExample = () => (
-//   <PageContainer>
-//     <BpkCardList
-//       title="Must-visit spots"
-//       description="Check out these world-famous destinations perfect for visiting in spring."
-//       chipGroup={BpkChipGroupRail()}
-//       initiallyShownCards={3}
-//       cardList={makeList(DestinationCard)}
-//       layoutDesktop={LAYOUTS.row}
-//       layoutMobile={LAYOUTS.rail}
-//       accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
-//       buttonText="Explore more"
-//     />
-//   </PageContainer>
-// );
+const RowToRailForCardsExample = () => (
+  <PageContainer>
+    <BpkCardList
+      title="Must-visit spots"
+      description="Check out these world-famous destinations perfect for visiting in spring."
+      chipGroup={BpkChipGroupRail()}
+      initiallyShownCards={3}
+      cardList={makeList(DestinationCard)}
+      layoutDesktop={LAYOUTS.row}
+      layoutMobile={LAYOUTS.rail}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+      buttonText="Explore more"
+    />
+  </PageContainer>
+);
 
-// const RowToRailForSnippetsExample = () => (
-//   <PageContainer>
-//     <BpkCardList
-//       title="Must-visit spots"
-//       description="Check out these world-famous destinations perfect for visiting in spring."
-//       chipGroup={BpkChipGroupRail()}
-//       initiallyShownCards={2}
-//       cardList={makeList(Snippet)}
-//       layoutDesktop={LAYOUTS.row}
-//       layoutMobile={LAYOUTS.rail}
-//       onButtonClick={() => null}
-//       accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
-//     />
-//   </PageContainer>
-// );
+const RowToRailForSnippetsExample = () => (
+  <PageContainer>
+    <BpkCardList
+      title="Must-visit spots"
+      description="Check out these world-famous destinations perfect for visiting in spring."
+      chipGroup={BpkChipGroupRail()}
+      initiallyShownCards={2}
+      cardList={makeList(Snippet)}
+      layoutDesktop={LAYOUTS.row}
+      layoutMobile={LAYOUTS.rail}
+      onButtonClick={() => null}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+    />
+  </PageContainer>
+);
 
-// const RowToStackForCardsWithExpandExample = () => {
-//   const [expandText, setExpandText] = useState('Show more');
+const RowToStackForCardsWithExpandExample = () => {
+  const [expandText, setExpandText] = useState('Show more');
 
-//   return (
-//     <PageContainer>
-//       <BpkCardList
-//         title="Must-visit spots"
-//         description="Check out these world-famous destinations perfect for visiting in spring."
-//         chipGroup={BpkChipGroupRail()}
-//         cardList={makeList(DestinationCard)}
-//         layoutDesktop={LAYOUTS.row}
-//         layoutMobile={LAYOUTS.stack}
-//         onButtonClick={() =>
-//           setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
-//         }
-//         accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
-//         accessoryMobile={ACCESSORY_MOBILE_TYPES.expand}
-//         expandText={expandText}
-//       />
-//     </PageContainer>
-//   );
-// };
+  return (
+    <PageContainer>
+      <BpkCardList
+        title="Must-visit spots"
+        description="Check out these world-famous destinations perfect for visiting in spring."
+        chipGroup={BpkChipGroupRail()}
+        cardList={makeList(DestinationCard)}
+        layoutDesktop={LAYOUTS.row}
+        layoutMobile={LAYOUTS.stack}
+        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+        accessoryMobile={ACCESSORY_MOBILE_TYPES.expand}
+        expandText={expandText}
+        onExpandClick={() =>
+          setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
+        }
+      />
+    </PageContainer>
+  );
+};
 
-// const RowToStackForSnippetsWithExpandExample = () => {
-//   const [expandText, setExpandText] = useState('Show more');
+const RowToStackForSnippetsWithExpandExample = () => {
+  const [expandText, setExpandText] = useState('Show more');
 
-//   return (
-//     <PageContainer>
-//       <BpkCardList
-//         title="Must-visit spots"
-//         description="Check out these world-famous destinations perfect for visiting in spring."
-//         chipGroup={BpkChipGroupRail()}
-//         initiallyShownCards={2}
-//         cardList={makeList(Snippet)}
-//         layoutDesktop={LAYOUTS.row}
-//         layoutMobile={LAYOUTS.stack}
-//         onButtonClick={() =>
-//           setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
-//         }
-//         accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
-//         accessoryMobile={ACCESSORY_MOBILE_TYPES.expand}
-//         expandText={expandText}
-//       />
-//     </PageContainer>
-//   );
-// };
+  return (
+    <PageContainer>
+      <BpkCardList
+        title="Must-visit spots"
+        description="Check out these world-famous destinations perfect for visiting in spring."
+        chipGroup={BpkChipGroupRail()}
+        initiallyShownCards={2}
+        cardList={makeList(Snippet)}
+        layoutDesktop={LAYOUTS.row}
+        layoutMobile={LAYOUTS.stack}
+        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+        accessoryMobile={ACCESSORY_MOBILE_TYPES.expand}
+        expandText={expandText}
+        onExpandClick={() =>
+          setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
+        }
+      />
+    </PageContainer>
+  );
+};
 
-// const GridToRailForCardsWithExpandExample = () => {
-//   const [expandText, setExpandText] = useState('Show more');
+const GridToRailForCardsWithExpandExample = () => {
+  const [expandText, setExpandText] = useState('Show more');
 
-//   return (
-//     <PageContainer>
-//       <BpkCardList
-//         title="Must-visit spots"
-//         description="Check out these world-famous destinations perfect for visiting in spring."
-//         chipGroup={BpkChipGroupRail()}
-//         cardList={makeList(DestinationCard)}
-//         layoutDesktop={LAYOUTS.grid}
-//         layoutMobile={LAYOUTS.rail}
-//         onButtonClick={() =>
-//           setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
-//         }
-//         accessoryDesktop={ACCESSORY_DESKTOP_TYPES.expand}
-//         expandText={expandText}
-//       />
-//     </PageContainer>
-//   );
-// };
+  return (
+    <PageContainer>
+      <BpkCardList
+        title="Must-visit spots"
+        description="Check out these world-famous destinations perfect for visiting in spring."
+        chipGroup={BpkChipGroupRail()}
+        cardList={makeList(DestinationCard)}
+        layoutDesktop={LAYOUTS.grid}
+        layoutMobile={LAYOUTS.rail}
+        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.expand}
+        expandText={expandText}
+        onExpandClick={() =>
+          setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
+        }
+        />
+    </PageContainer>
+  );
+};
 
 const GridToStackExample = () => {
   const [expandText, setExpandText] = useState('Show more');
@@ -287,11 +287,11 @@ const GridToStackWithExpandExample = () => {
 
 export {
   BasicExample,
-  // RowToRailForCardsExample,
-  // RowToRailForSnippetsExample,
-  // RowToStackForCardsWithExpandExample,
-  // RowToStackForSnippetsWithExpandExample,
-  // GridToRailForCardsWithExpandExample,
+  RowToRailForCardsExample,
+  RowToRailForSnippetsExample,
+  RowToStackForCardsWithExpandExample,
+  RowToStackForSnippetsWithExpandExample,
+  GridToRailForCardsWithExpandExample,
   GridToStackExample,
   GridToStackWithExpandExample,
 };
