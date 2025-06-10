@@ -29,6 +29,6 @@ export default {
   component: BpkInsetBannerSponsored,
 };
 
-export const WithCtaTextAndPopoverLight = WithCtaTextAndBottomSheetExampleLightV2;
-export const WithCustomPopoverWidthAndMargins = WithCustomBottomSheetWidthAndMarginsExampleV2;
-export const WithImageAndBottomSheet = WithImageAndBottomSheetExampleV2;
+export const SponsoredBannerWithCtaTextAndPopoverLight = WithCtaTextAndBottomSheetExampleLightV2;
+export const SponsoredBannerWithCustomPopoverWidthAndMargins = WithCustomBottomSheetWidthAndMarginsExampleV2;
+export const SponsoredBannerWithImageAndBottomSheet = WithImageAndBottomSheetExampleV2;
