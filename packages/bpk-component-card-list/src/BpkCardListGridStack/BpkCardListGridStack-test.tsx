@@ -91,7 +91,7 @@ describe('BpkCardListGridStack', () => {
       <BpkCardListGridStack
         layout={LAYOUTS.grid}
         accessory={ACCESSORY_DESKTOP_TYPES.button}
-        buttonText="Explore more"
+        buttonContent="Explore more"
         onButtonClick={() => {}}
         initiallyShownCards={3}
       >

@@ -48,7 +48,7 @@ describe('BpkCardList', () => {
         layoutDesktop={LAYOUTS.grid}
         layoutMobile={LAYOUTS.stack}
         cardList={mockCards(2)}
-        buttonText="Header Button"
+        buttonContent="Header Button"
         buttonHref="#"
         onButtonClick={() => {}}
       />,
@@ -84,7 +84,7 @@ describe('BpkCardList', () => {
         layoutMobile={LAYOUTS.stack}
         cardList={mockCards(2)}
         accessoryDesktop="button"
-        buttonText="Button"
+        buttonContent="Button"
         onButtonClick={() => {}}
       />,
     );
