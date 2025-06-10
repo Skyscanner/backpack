@@ -60,7 +60,7 @@ const snippetProps = {
   subheading: 'Subheading',
   bodyText:
     'Lorem ipsum dolor sit amet consectetur. Tristique at pharetra tincidunt elementum vulputate varius sit euismod hac. Dignissim hendrerit enim eros nisi diam. Elit arcu mattis cum in id varius vitae augue neque. Quisque in semper malesuada lacus ut etiam elementum.',
-  buttonText: 'Call to Action',
+  buttonContent: 'Call to Action',
   onClick: () => window.open('https://www.skyscanner.net/flights', '_blank'),
 };
 
