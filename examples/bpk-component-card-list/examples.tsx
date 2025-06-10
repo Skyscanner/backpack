@@ -230,24 +230,32 @@ const BasicExample = () => (
 //   );
 // };
 
-const GridToStackExample = () => (
-  <PageContainer>
-    <BpkCardList
-      title="Must-visit spots"
-      description="Check out these world-famous destinations perfect for visiting in spring."
-      chipGroup={BpkChipGroupRail()}
-      cardList={makeList(DestinationCard)}
-      layoutDesktop={LAYOUTS.grid}
-      layoutMobile={LAYOUTS.stack}
-      onButtonClick={() => {
-        console.log('Button clicked');
-      }}
-      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.button}
-      accessoryMobile={ACCESSORY_MOBILE_TYPES.button}
-      buttonText="Explore more"
-    />
-  </PageContainer>
-);
+const GridToStackExample = () => {
+  const [expandText, setExpandText] = useState('Show more');
+
+  return (
+    <PageContainer>
+      <BpkCardList
+        title="Must-visit spots"
+        description="Check out these world-famous destinations perfect for visiting in spring."
+        chipGroup={BpkChipGroupRail()}
+        cardList={makeList(DestinationCard)}
+        layoutDesktop={LAYOUTS.grid}
+        layoutMobile={LAYOUTS.stack}
+        onExpandClick={() =>
+          setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
+        }
+        onButtonClick={() => {
+          console.log('Button clicked');
+        }}
+        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.expand}
+        accessoryMobile={ACCESSORY_MOBILE_TYPES.button}
+        expandText={expandText}
+        buttonText=""
+      />
+    </PageContainer>
+  )
+};
 
 const GridToStackWithExpandExample = () => {
   const [expandText, setExpandText] = useState('Show more');

@@ -47,7 +47,7 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
     '--initially-shown-cards': initiallyShownCards,
   } as CSSProperties;
 
-  const isExpandType: boolean = accessory === ACCESSORY_DESKTOP_TYPES.expand;
+  const isExpandType: boolean = accessory === ACCESSORY_DESKTOP_TYPES.expand; // or ACCESSORY_MOBILE_TYPES.expand
   const defaultInitiallyShownCards = isExpandType
     ? initiallyShownCards
     : children.length;
@@ -70,10 +70,7 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
   };
 
   const expandAccessoryContent = (
-    <ExpandAccessoryContent
-      collapsed={collapsed}
-      onExpandTogle={onExpandTogle}
-    >
+    <ExpandAccessoryContent collapsed={collapsed} onExpandTogle={onExpandTogle}>
       {expandText || ''}
     </ExpandAccessoryContent>
   );
