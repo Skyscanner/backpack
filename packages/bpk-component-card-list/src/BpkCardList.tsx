@@ -43,8 +43,8 @@ const BpkCardList = (props: CardListProps) => {
   const {
     accessoryDesktop,
     accessoryMobile,
+    buttonContent,
     buttonHref,
-    buttonText,
     cardList,
     chipGroup,
     description,
@@ -59,13 +59,13 @@ const BpkCardList = (props: CardListProps) => {
 
   const [showHeaderButton, setShowHeaderButton] = useState(false);
 
-  const headerButton = buttonText && (
+  const headerButton = buttonContent && (
     <BpkButtonV2
       onClick={onButtonClick}
       href={buttonHref}
       data-testid="bpk-card-list-header-button"
     >
-      {buttonText}
+      {buttonContent}
     </BpkButtonV2>
   );
 
@@ -87,7 +87,7 @@ const BpkCardList = (props: CardListProps) => {
           {(isActive) => {
             if (isActive) {
               setShowHeaderButton(
-                !!buttonText &&
+                !!buttonContent &&
                   accessoryMobile !== ACCESSORY_MOBILE_TYPES.button,
               );
 
@@ -107,7 +107,7 @@ const BpkCardList = (props: CardListProps) => {
                   <BpkCardListGridStack
                     accessory={accessoryMobile}
                     initiallyShownCards={initiallyShownCards}
-                    buttonText={buttonText}
+                    buttonContent={buttonContent}
                     expandText={expandText}
                     onButtonClick={onButtonClick}
                     onExpandClick={onExpandClick}
@@ -122,7 +122,7 @@ const BpkCardList = (props: CardListProps) => {
 
             /// ///// Desktop Cases ////////
             setShowHeaderButton(
-              !!buttonText &&
+              !!buttonContent &&
                 accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.button,
             );
 
@@ -150,7 +150,7 @@ const BpkCardList = (props: CardListProps) => {
                 <BpkCardListGridStack
                   accessory={accessoryDesktop}
                   initiallyShownCards={initiallyShownCards}
-                  buttonText={buttonText}
+                  buttonContent={buttonContent}
                   expandText={expandText}
                   onButtonClick={onButtonClick}
                   onExpandClick={onExpandClick}

@@ -26,6 +26,11 @@ import {
   ACCESSORY_DESKTOP_TYPES,
   ACCESSORY_MOBILE_TYPES,
 } from '../../packages/bpk-component-card-list/src/common-types';
+import {
+  withButtonAlignment,
+  withRtlSupport,
+} from '../../packages/bpk-component-icon';
+import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
 import BpkImage from '../../packages/bpk-component-image';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLink from '../../packages/bpk-component-link';
@@ -35,7 +40,12 @@ import BpkText, {
 } from '../../packages/bpk-component-text/src/BpkText';
 import { BpkChipGroupRail } from '../bpk-component-chip-group/examples';
 
+
 import STYLES from './examples.module.scss';
+
+const AlignedSmallLongArrowRightIcon = withButtonAlignment(
+  withRtlSupport(SmallLongArrowRightIcon),
+);
 
 const imageUrlsDestination = [
   'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg',
@@ -101,9 +111,9 @@ const Snippet = (i: number) => (
 
 type ExampleCard = typeof DestinationCard | typeof Snippet;
 
-const makeList = (cardType: ExampleCard) => {
+const makeList = (cardType: ExampleCard, number: number = 9) => {
   const cardList = [];
-  for (let i = 0; i < 9; i += 1) {
+  for (let i = 0; i < number; i += 1) {
     cardList.push(cardType(i));
   }
   return cardList;
@@ -121,7 +131,7 @@ const BasicExample = () => (
   <BpkCardList
     title="Must-visit spots"
     description="Check out these world-famous destinations perfect for visiting in spring."
-    buttonText="Explore More"
+    buttonContent="Explore More"
     buttonHref="https://www.skyscanner.net/"
     cardList={makeList(DestinationCard)}
     layoutDesktop={LAYOUTS.grid}
@@ -140,7 +150,7 @@ const BasicExample = () => (
 //       layoutDesktop={LAYOUTS.row}
 //       layoutMobile={LAYOUTS.rail}
 //       accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
-//       buttonText="Explore more"
+//       buttonContent="Explore more"
 //     />
 //   </PageContainer>
 // );
@@ -230,32 +240,25 @@ const BasicExample = () => (
 //   );
 // };
 
-const GridToStackExample = () => {
-  const [expandText, setExpandText] = useState('Show more');
-
-  return (
+const GridToStackExample = () =>  (
     <PageContainer>
       <BpkCardList
         title="Must-visit spots"
         description="Check out these world-famous destinations perfect for visiting in spring."
         chipGroup={BpkChipGroupRail()}
-        cardList={makeList(DestinationCard)}
+        cardList={makeList(DestinationCard, 6)}
         layoutDesktop={LAYOUTS.grid}
         layoutMobile={LAYOUTS.stack}
-        onExpandClick={() =>
-          setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
-        }
         onButtonClick={() => {
           console.log('Button clicked');
         }}
-        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.expand}
+        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.button}
         accessoryMobile={ACCESSORY_MOBILE_TYPES.button}
-        expandText={expandText}
-        buttonText=""
-      />
+        buttonContent={<>Explore More <AlignedSmallLongArrowRightIcon /></>}
+        />
     </PageContainer>
   )
-};
+;
 
 const GridToStackWithExpandExample = () => {
   const [expandText, setExpandText] = useState('Show more');
@@ -278,7 +281,7 @@ const GridToStackWithExpandExample = () => {
         accessoryDesktop={ACCESSORY_DESKTOP_TYPES.expand}
         accessoryMobile={ACCESSORY_MOBILE_TYPES.expand}
         expandText={expandText}
-        buttonText="Explore more"
+        buttonContent="Explore more"
         buttonHref="https://www.skyscanner.net"
       />
     </PageContainer>
