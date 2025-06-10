@@ -34,29 +34,30 @@ export const VARIANT = {
   onLight: 'on-light',
   onDark: 'on-dark',
 };
+type callToActionType = {
+  text?: string;
+  bottomSheetContent: Array<{
+    title: string;
+    description: string;
+  }>;
+  bottomSheetTitle?: string;
+  buttonCloseLabel?: string;
+  buttonA11yLabel?: string;
+  bottomSheetLabel?: string;
+  bottomSheetId?: string;
+  bottomSheetWidth?: string;
+  bottomSheetMarginStart?: string;
+  bottomSheetMarginEnd?: string;
+  bottomSheetA11yLabel?: string;
+  labelTitle?: boolean;
+  closeBtnIcon?: boolean;
+  zIndexCustom?: number;
+}
 
 export type Props = {
   accessibilityLabel?: string;
   backgroundColor?: string;
-  callToAction?: {
-    text?: string;
-    bottomSheetContent: Array<{
-      title: string;
-      description: string;
-    }>;
-    bottomSheetTitle?: string;
-    buttonCloseLabel?: string;
-    buttonA11yLabel?: string;
-    bottomSheetLabel?: string;
-    bottomSheetId?: string;
-    bottomSheetWidth?: string;
-    bottomSheetMarginStart?: string;
-    bottomSheetMarginEnd?: string;
-    bottomSheetA11yLabel?: string;
-    labelTitle?: boolean;
-    closeBtnIcon?: boolean;
-    zIndexCustom?: number;
-  };
+  callToAction?: callToActionType & {bottomSheetContent: callToActionType['bottomSheetContent']};
   logo?: string;
   subheadline?: string;
   title?: string;
