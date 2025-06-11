@@ -52,6 +52,7 @@ export type Props = {
   isIphone?: boolean,
   padded?: boolean,
   mobileModalDisplay?: boolean,
+  containerClassName?: string,
 };
 
 const BpkDrawer = ({
@@ -59,6 +60,7 @@ const BpkDrawer = ({
   className = undefined,
   closeLabel = null,
   closeText = undefined,
+  containerClassName = undefined,
   contentClassName = undefined,
   dialogRef,
   getApplicationElement,
@@ -114,6 +116,7 @@ const BpkDrawer = ({
           isIphone={isIphone}
           padded={padded}
           mobileModalDisplay={mobileModalDisplay}
+          containerClassName={containerClassName}
         >
           {children}
         </BpkScrimDrawerContent>
