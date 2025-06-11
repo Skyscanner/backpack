@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
-import BpkInsetBanner, {
+import {
   VARIANT,
+  BpkInsetBannerSponsored,
 } from '../../packages/bpk-component-inset-banner/src/bpk-component-inset-banner-v2';
 
 const image =
@@ -30,7 +31,7 @@ const logoUrl = 'https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland
 const WithCtaTextAndBottomSheetExampleLightV2 = () => (
   <div id="bottom-sheet-container">
     <div id="pagewrap">
-      <BpkInsetBanner
+      <BpkInsetBannerSponsored
         title="Lorem ipsum"
         subheadline="Lorem ipsum dolor sit amet"
         logo={logoUrl}
@@ -64,7 +65,7 @@ const WithCtaTextAndBottomSheetExampleLightV2 = () => (
 );
 
 const WithCustomBottomSheetWidthAndMarginsExampleV2 = () => (
-  <BpkInsetBanner
+  <BpkInsetBannerSponsored
     title="Lorem ipsum"
     subheadline="Lorem ipsum dolor sit amet"
     logo={logoUrl}
@@ -99,7 +100,7 @@ const WithCustomBottomSheetWidthAndMarginsExampleV2 = () => (
 );
 
 const WithImageAndBottomSheetExampleV2 = () => (
-  <BpkInsetBanner
+  <BpkInsetBannerSponsored
     title="Explore the Canadian Rockies"
     subheadline="Discover breathtaking landscapes and outdoor adventures"
     logo={logoUrl}

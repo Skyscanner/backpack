@@ -69,7 +69,7 @@ export type Props = {
   }
 };
 
-const BpkInsetBannerSponsored = ({
+export const BpkInsetBannerSponsored = ({
   accessibilityLabel,
   backgroundColor = surfaceHighlightDay,
   callToAction,
@@ -196,5 +196,3 @@ const BpkInsetBannerSponsored = ({
     </div>
   );
 };
-
-export default BpkInsetBannerSponsored;

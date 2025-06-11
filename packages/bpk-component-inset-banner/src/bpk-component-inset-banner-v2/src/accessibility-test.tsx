@@ -19,7 +19,7 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkInsetBannerSponsored, { VARIANT } from './BpkInsetBannerSponsored';
+import  { BpkInsetBannerSponsored, VARIANT } from './BpkInsetBannerSponsored';
 
 describe('BpkInsetBanner accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {

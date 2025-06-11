@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/breakpoints';
-@use '../../unstable__bpk-mixins/utils';
+@use '../../../../unstable__bpk-mixins/tokens';
+@use '../../../../unstable__bpk-mixins/breakpoints';
+@use '../../../../unstable__bpk-mixins/utils';
 
 .bpk-inset-banner {
   display: flex;

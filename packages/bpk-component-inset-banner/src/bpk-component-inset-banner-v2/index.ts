@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-import BpkInsetBannerV2, {
+import {
   type Props as BpkInsetBannerProps,
   VARIANT,
+  BpkInsetBannerSponsored,
 } from './src/BpkInsetBannerSponsored';
 
 export type { BpkInsetBannerProps };
-export { VARIANT };
-export default BpkInsetBannerV2;
+export { VARIANT, BpkInsetBannerSponsored };

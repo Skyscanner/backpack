@@ -20,7 +20,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 
-import BpkInsetBannerSponsored, { VARIANT } from './BpkInsetBannerSponsored';
+import  { BpkInsetBannerSponsored, VARIANT } from './BpkInsetBannerSponsored';
 
 describe('BpkInsetBanner', () => {
   it('should render correctly', () => {
