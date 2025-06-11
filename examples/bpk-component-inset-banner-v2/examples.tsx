@@ -18,13 +18,14 @@
 
 import BpkInsetBanner, {
   VARIANT,
-} from '../../packages/bpk-component-inset-banner-v2';
+} from '../../packages/bpk-component-inset-banner/src/bpk-component-inset-banner-v2';
 
 const image =
   'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg';
 
 const imageWidth = 300;
 const imageHeight = 150;
+const logoUrl = 'https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png';
 
 const WithCtaTextAndBottomSheetExampleLightV2 = () => (
   <div id="bottom-sheet-container">
@@ -32,7 +33,7 @@ const WithCtaTextAndBottomSheetExampleLightV2 = () => (
       <BpkInsetBanner
         title="Lorem ipsum"
         subheadline="Lorem ipsum dolor sit amet"
-        logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
+        logo={logoUrl}
         callToAction={{
           text: 'Sponsored',
           bottomSheetContent: [
@@ -66,7 +67,7 @@ const WithCustomBottomSheetWidthAndMarginsExampleV2 = () => (
   <BpkInsetBanner
     title="Lorem ipsum"
     subheadline="Lorem ipsum dolor sit amet"
-    logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
+    logo={logoUrl}
     callToAction={{
       text: 'Sponsored',
       bottomSheetContent: [
@@ -101,7 +102,7 @@ const WithImageAndBottomSheetExampleV2 = () => (
   <BpkInsetBanner
     title="Explore the Canadian Rockies"
     subheadline="Discover breathtaking landscapes and outdoor adventures"
-    logo="https://content.skyscnr.com/m/3f4dadbd41da8235/original/Skyland_White_172x96.png"
+    logo={logoUrl}
     image={{
       src: image,
       altText: 'Canadian Rockies',
