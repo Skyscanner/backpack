@@ -32,7 +32,7 @@ export function setA11yTabIndex(
     const targetElement = element;
     targetElement.tabIndex = visibleRatios[index] > 0 ? 0 : -1;
   });
-};
+}
 
 export function useUpdateCurrentIndexByVisibility(
   visibleRatios: number[],
@@ -62,11 +62,17 @@ export function useUpdateCurrentIndexByVisibility(
 
 export function useScrollToCard(
   currentIndex: number,
+  container: HTMLElement | null,
   cardRefs: React.MutableRefObject<Array<HTMLDivElement | null>>,
   setStateTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
   setStateLockRef: React.MutableRefObject<boolean>,
 ) {
   useEffect(() => {
+    const isVisible =
+      container &&
+      container.getBoundingClientRect().bottom <= window.innerHeight;
+    if (!isVisible) return; // Escape from scrollIntoView if the container is not visible
+
     const targetCard = cardRefs.current[currentIndex];
     if (targetCard) {
       if (setStateTimeoutRef.current) {

@@ -96,13 +96,21 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     };
 
     const handleWheel = (event: WheelEvent) => {
-      if (event.deltaX !== 0) {
-        handleTouchScroll();
-      } else {
-        // Mouse Wheel Scroll
-        event.preventDefault();
-        debounceVerticalScroll(event);
-      }
+      handleTouchScroll();
+
+      // // Bad Experience: if we use mouse wheel to scroll, the page will get stuck
+      // const isHorizontalScroll = Math.abs(event.deltaX) > Math.abs(event.deltaY);
+      // if (isHorizontalScroll) {
+      //   handleTouchScroll();
+      // }
+
+      // // Disable Mouse Wheel Scroll !!!/
+
+      // else {
+      //   // Mouse Wheel Scroll
+      //   event.preventDefault();
+      //   debounceVerticalScroll(event);
+      // }
     };
 
     container.addEventListener('wheel', handleWheel);
@@ -124,7 +132,13 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     setStateTimeoutRef,
   );
 
-  useScrollToCard(currentIndex, cardRefs, setStateTimeoutRef, setStateLockRef);
+  useScrollToCard(
+    currentIndex,
+    root,
+    cardRefs,
+    setStateTimeoutRef,
+    setStateLockRef,
+  );
 
   const carouselAriaLabel = `Entering Carousel with ${initiallyShownCards} slides shown at a time, ${totalIndicators} slides in total. Please use Pagination below with the Previous and Next buttons to navigate, or the slide dot buttons at the end to jump to slides.`;
 

@@ -34,12 +34,13 @@ import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-a
 import BpkImage from '../../packages/bpk-component-image';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLink from '../../packages/bpk-component-link';
-import BpkSnippet, { DESKTOP_LAYOUT as SNIPPET_DESKTOP_LAYOUT } from '../../packages/bpk-component-snippet/src/BpkSnippet';
+import BpkSnippet, {
+  DESKTOP_LAYOUT as SNIPPET_DESKTOP_LAYOUT,
+} from '../../packages/bpk-component-snippet/src/BpkSnippet';
 import BpkText, {
   TEXT_STYLES,
 } from '../../packages/bpk-component-text/src/BpkText';
 import { BpkChipGroupRail } from '../bpk-component-chip-group/examples';
-
 
 import STYLES from './examples.module.scss';
 
@@ -235,31 +236,33 @@ const GridToRailForCardsWithExpandExample = () => {
         onExpandClick={() =>
           setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
         }
-        />
+      />
     </PageContainer>
   );
 };
 
-const GridToStackExample = () =>  (
-    <PageContainer>
-      <BpkCardList
-        title="Must-visit spots"
-        description="Check out these world-famous destinations perfect for visiting in spring."
-        chipGroup={BpkChipGroupRail()}
-        cardList={makeList(DestinationCard, 6)}
-        layoutDesktop={LAYOUTS.grid}
-        layoutMobile={LAYOUTS.stack}
-        onButtonClick={() => {
-          console.log('Button clicked');
-        }}
-        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.button}
-        accessoryMobile={ACCESSORY_MOBILE_TYPES.button}
-        buttonContent={<>Explore More <AlignedSmallLongArrowRightIcon /></>}
-        />
-    </PageContainer>
-  )
-;
-
+const GridToStackExample = () => (
+  <PageContainer>
+    <BpkCardList
+      title="Must-visit spots"
+      description="Check out these world-famous destinations perfect for visiting in spring."
+      chipGroup={BpkChipGroupRail()}
+      cardList={makeList(DestinationCard, 6)}
+      layoutDesktop={LAYOUTS.grid}
+      layoutMobile={LAYOUTS.stack}
+      onButtonClick={() => {
+        console.log('Button clicked');
+      }}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.button}
+      accessoryMobile={ACCESSORY_MOBILE_TYPES.button}
+      buttonContent={
+        <>
+          Explore More <AlignedSmallLongArrowRightIcon />
+        </>
+      }
+    />
+  </PageContainer>
+);
 const GridToStackWithExpandExample = () => {
   const [expandText, setExpandText] = useState('Show more');
 
@@ -288,6 +291,58 @@ const GridToStackWithExpandExample = () => {
   );
 };
 
+const MultiComponentsTestExample = () => (
+  <PageContainer>
+    <BpkCardList
+      title="Must-visit spots"
+      description="Check out these world-famous destinations perfect for visiting in spring."
+      chipGroup={BpkChipGroupRail()}
+      initiallyShownCards={3}
+      cardList={makeList(DestinationCard)}
+      layoutDesktop={LAYOUTS.row}
+      layoutMobile={LAYOUTS.rail}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+      buttonContent="Explore more"
+    />
+    <br />
+    <BpkCardList
+      title="Must-visit spots"
+      description="Check out these world-famous destinations perfect for visiting in spring."
+      chipGroup={BpkChipGroupRail()}
+      initiallyShownCards={2}
+      cardList={makeList(Snippet)}
+      layoutDesktop={LAYOUTS.row}
+      layoutMobile={LAYOUTS.rail}
+      onButtonClick={() => null}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+    />
+    <br />
+    <BpkCardList
+      title="Must-visit spots"
+      description="Check out these world-famous destinations perfect for visiting in spring."
+      chipGroup={BpkChipGroupRail()}
+      initiallyShownCards={3}
+      cardList={makeList(DestinationCard)}
+      layoutDesktop={LAYOUTS.row}
+      layoutMobile={LAYOUTS.rail}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+      buttonContent="Explore more"
+    />
+    <br />
+    <BpkCardList
+      title="Must-visit spots"
+      description="Check out these world-famous destinations perfect for visiting in spring."
+      chipGroup={BpkChipGroupRail()}
+      initiallyShownCards={2}
+      cardList={makeList(Snippet)}
+      layoutDesktop={LAYOUTS.row}
+      layoutMobile={LAYOUTS.rail}
+      onButtonClick={() => null}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+    />
+  </PageContainer>
+);
+
 export {
   BasicExample,
   RowToRailForCardsExample,
@@ -297,4 +352,5 @@ export {
   GridToRailForCardsWithExpandExample,
   GridToStackExample,
   GridToStackWithExpandExample,
+  MultiComponentsTestExample,
 };
