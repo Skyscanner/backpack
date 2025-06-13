@@ -33,8 +33,7 @@
 
     &__card {
       position: relative;
-      margin: tokens.bpk-spacing-sm();
-      padding: tokens.bpk-spacing-sm();
+      padding: tokens.bpk-spacing-sm() * 2;
       overflow: visible;
       box-sizing: border-box; /* 包括 padding 和 border */
       scroll-snap-align: start;
