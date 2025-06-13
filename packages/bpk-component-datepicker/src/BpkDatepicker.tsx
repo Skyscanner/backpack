@@ -329,7 +329,7 @@ class BpkDatepicker extends Component<Props, State> {
           id={id}
           name={`${id}_input`}
           value={this.getValue(selectionConfiguration!, formatDate)}
-          aria-live="assertive"
+          aria-live="polite"
           aria-atomic="true"
           aria-label={this.getLabel(selectionConfiguration!, formatDateFull)}
           onChange={() => null}

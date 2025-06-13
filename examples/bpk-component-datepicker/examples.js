@@ -338,7 +338,7 @@ class MultipleInputDatepicker extends Component {
               ? formatDate(this.state.selectionConfiguration.startDate)
               : ''
           }
-          aria-live="assertive"
+          aria-live="polite"
           aria-atomic="true"
           aria-label={
             this.state.selectionConfiguration.startDate
@@ -358,7 +358,7 @@ class MultipleInputDatepicker extends Component {
               ? formatDate(this.state.selectionConfiguration.endDate)
               : ''
           }
-          aria-live="assertive"
+          aria-live="polite"
           aria-atomic="true"
           aria-label={
             this.state.selectionConfiguration.endDate
