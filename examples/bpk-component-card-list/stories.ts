@@ -20,13 +20,14 @@ import BpkCardList from '../../packages/bpk-component-card-list';
 
 import {
   BasicExample,
-  // RowToRailForCardsExample,
-  // RowToRailForSnippetsExample,
-  // RowToStackForCardsWithExpandExample,
-  // RowToStackForSnippetsWithExpandExample,
-  // GridToRailForCardsWithExpandExample,
+  RowToRailForCardsExample,
+  RowToRailForSnippetsExample,
+  RowToStackForCardsWithExpandExample,
+  RowToStackForSnippetsWithExpandExample,
+  GridToRailForCardsWithExpandExample,
   GridToStackExample,
   GridToStackWithExpandExample,
+  MultiComponentsScrollingTestExample,
 } from './examples';
 
 export default {
@@ -35,13 +36,15 @@ export default {
 };
 
 export const Basic = BasicExample;
-// export const RowToRailForCards = RowToRailForCardsExample;
-// export const RowToRailForSnippets = RowToRailForSnippetsExample;
-// export const RowToStackForCardsWithExpand = RowToStackForCardsWithExpandExample;
-// export const RowToStackForSnippetsWithExpand = RowToStackForSnippetsWithExpandExample;
-// export const GridToRailForCardsWithExpand = GridToRailForCardsWithExpandExample;
+export const RowToRailForCards = RowToRailForCardsExample;
+export const RowToRailForSnippets = RowToRailForSnippetsExample;
+export const RowToStackForCardsWithExpand = RowToStackForCardsWithExpandExample;
+export const RowToStackForSnippetsWithExpand =
+  RowToStackForSnippetsWithExpandExample;
+export const GridToRailForCardsWithExpand = GridToRailForCardsWithExpandExample;
 export const GridToStack = GridToStackExample;
 export const GridToStackWithExpand = GridToStackWithExpandExample;
+export const MultiComponentsScrollingTest = MultiComponentsScrollingTestExample;
 
 export const VisualTest = Basic;
 export const VisualTestWithZoom = {
