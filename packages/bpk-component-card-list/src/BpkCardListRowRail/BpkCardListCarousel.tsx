@@ -55,7 +55,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     Array(children.length).fill(0),
   );
   const setStateTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const setStateLockRef = useRef(false);
+  const stateScrollingLockRef = useRef(false);
   const openSetStateLockTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const observerVisibility = useIntersectionObserver(
@@ -64,7 +64,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     setVisibleRatios,
   );
 
-  // handle scroll events, and update the visible indices while scrolling
   useEffect(() => {
     const container = root;
     if (!container) {
@@ -72,57 +71,24 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       return undefined;
     }
 
-    const debounceVerticalScroll = _.debounce(
-      (event: WheelEvent) => {
-        const delta = event.deltaY;
-        const deltaIndex =
-          delta > 0 ? Math.ceil(delta / 100) : Math.floor(delta / 100);
-        setCurrentIndex((prevIndex) =>
-          Math.max(Math.min(prevIndex + deltaIndex, totalIndicators - 1), 0),
-        );
-      },
-      100,
-      { leading: true, trailing: false },
-    );
-
-    const handleTouchScroll = () => {
-      setStateLockRef.current = true;
+    const lockScrollDuringInteraction = () => {
+      stateScrollingLockRef.current = true; // Prevent scrollIntoView while scrolling
       if (openSetStateLockTimeoutRef.current) {
-        clearTimeout(openSetStateLockTimeoutRef.current); // refresh and reset the timeout
+        clearTimeout(openSetStateLockTimeoutRef.current); // reset the release lock timeout
       }
       openSetStateLockTimeoutRef.current = setTimeout(() => {
-        setStateLockRef.current = false;
+        stateScrollingLockRef.current = false; // release the lock after 300ms
       }, 300);
     };
 
-    const handleWheel = (event: WheelEvent) => {
-      handleTouchScroll();
-
-      // // Bad Experience: if we use mouse wheel to scroll, the page will get stuck
-      // const isHorizontalScroll = Math.abs(event.deltaX) > Math.abs(event.deltaY);
-      // if (isHorizontalScroll) {
-      //   handleTouchScroll();
-      // }
-
-      // // Disable Mouse Wheel Scroll !!!/
-
-      // else {
-      //   // Mouse Wheel Scroll
-      //   event.preventDefault();
-      //   debounceVerticalScroll(event);
-      // }
-    };
-
-    container.addEventListener('wheel', handleWheel);
-    container.addEventListener('touchmove', handleTouchScroll);
+    // Prevent scrollIntoView scroll back up when the user scroll down 
+    // rapidly and immediately after he scroll the carousel with touchBar
+    container.addEventListener('mousewheel', lockScrollDuringInteraction)
+    container.addEventListener('touchmove', lockScrollDuringInteraction);
 
     return () => {
-      container.removeEventListener('wheel', handleWheel);
-      container.removeEventListener('touchmove', handleTouchScroll);
-      setStateTimeoutRef.current && clearTimeout(setStateTimeoutRef.current);
-      openSetStateLockTimeoutRef.current &&
-        clearTimeout(openSetStateLockTimeoutRef.current);
-      setStateLockRef.current && (setStateLockRef.current = false);
+      container.removeEventListener('touchmove', lockScrollDuringInteraction);
+      container.removeEventListener('mousewheel', lockScrollDuringInteraction);
     };
   }, [root]);
 
@@ -132,13 +98,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     setStateTimeoutRef,
   );
 
-  useScrollToCard(
-    currentIndex,
-    root,
-    cardRefs,
-    setStateTimeoutRef,
-    setStateLockRef,
-  );
+  useScrollToCard(currentIndex, root, cardRefs, stateScrollingLockRef);
 
   const carouselAriaLabel = `Entering Carousel with ${initiallyShownCards} slides shown at a time, ${totalIndicators} slides in total. Please use Pagination below with the Previous and Next buttons to navigate, or the slide dot buttons at the end to jump to slides.`;
 

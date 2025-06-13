@@ -41,7 +41,7 @@ export function useUpdateCurrentIndexByVisibility(
 ) {
   useEffect(() => {
     if (!visibleRatios || visibleRatios.length === 0) return;
-
+    
     if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current);
 
     const firstVisibleIndex = visibleRatios.findIndex((ratio) => ratio > 0);
@@ -53,7 +53,6 @@ export function useUpdateCurrentIndexByVisibility(
     if (visibleRatios[firstVisibleIndex] > 0.95) {
       // eslint-disable-next-line no-param-reassign
       setStateTimeoutRef.current = setTimeout(() => {
-        console.log('RATIO: setCurrentIndex', firstVisibleIndex);
         setCurrentIndex(firstVisibleIndex);
       }, 150);
     }
@@ -64,8 +63,7 @@ export function useScrollToCard(
   currentIndex: number,
   container: HTMLElement | null,
   cardRefs: React.MutableRefObject<Array<HTMLDivElement | null>>,
-  setStateTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
-  setStateLockRef: React.MutableRefObject<boolean>,
+  stateScrollingLockRef: React.MutableRefObject<boolean>,
 ) {
   useEffect(() => {
     const isVisible =
@@ -73,18 +71,10 @@ export function useScrollToCard(
       container.getBoundingClientRect().bottom <= window.innerHeight;
     if (!isVisible) return; // Escape from scrollIntoView if the container is not visible
 
+    if (stateScrollingLockRef.current && stateScrollingLockRef.current === true) return;
+
     const targetCard = cardRefs.current[currentIndex];
     if (targetCard) {
-      if (setStateTimeoutRef.current) {
-        console.log(
-          'COMPETING: The first priority of setting currentIndex should be here',
-        );
-        clearTimeout(setStateTimeoutRef.current);
-      }
-      if (setStateLockRef.current && setStateLockRef.current === true) {
-        console.log('LOCK: setStateLock is working and prevent scrollIntoView');
-        return;
-      }
       targetCard.scrollIntoView({
         behavior: 'smooth',
         block: 'nearest',

@@ -291,7 +291,7 @@ const GridToStackWithExpandExample = () => {
   );
 };
 
-const MultiComponentsTestExample = () => (
+const MultiComponentsScrollingTestExample = () => (
   <PageContainer>
     <BpkCardList
       title="Must-visit spots"
@@ -352,5 +352,5 @@ export {
   GridToRailForCardsWithExpandExample,
   GridToStackExample,
   GridToStackWithExpandExample,
-  MultiComponentsTestExample,
+  MultiComponentsScrollingTestExample,
 };

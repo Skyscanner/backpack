@@ -27,7 +27,7 @@ import {
   GridToRailForCardsWithExpandExample,
   GridToStackExample,
   GridToStackWithExpandExample,
-  MultiComponentsTestExample,
+  MultiComponentsScrollingTestExample,
 } from './examples';
 
 export default {
@@ -44,7 +44,7 @@ export const RowToStackForSnippetsWithExpand =
 export const GridToRailForCardsWithExpand = GridToRailForCardsWithExpandExample;
 export const GridToStack = GridToStackExample;
 export const GridToStackWithExpand = GridToStackWithExpandExample;
-export const MultiComponentsTest = MultiComponentsTestExample;
+export const MultiComponentsScrollingTest = MultiComponentsScrollingTestExample;
 
 export const VisualTest = Basic;
 export const VisualTestWithZoom = {
