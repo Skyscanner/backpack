@@ -16,6 +16,13 @@
  * limitations under the License.
  */
 
-import BpkCardList from './src/BpkCardList';
+import BpkCard from '../bpk-component-card';
 
-export default BpkCardList;
+const mockCards = (numberOfCards: number): JSX.Element[] =>
+  Array.from({ length: numberOfCards }, (_, i) => (
+    <BpkCard data-testid={`card-testId-${i}`} key={i}>
+      {`Card ${i}`}
+    </BpkCard>
+  ));
+
+export default mockCards;

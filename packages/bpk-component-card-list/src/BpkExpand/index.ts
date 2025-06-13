@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import BpkCardList from './src/BpkCardList';
+import ExpandAccessoryContent from './ExpandAccessoryContent';
 
-export default BpkCardList;
+export default ExpandAccessoryContent;

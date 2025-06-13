@@ -16,24 +16,71 @@
  * limitations under the License.
  */
 
-import { render, screen } from "@testing-library/react";
+import { render, screen } from '@testing-library/react';
 
-import BpkCardList from "./BpkCardList";
+import mockCards from '../testMocks';
+
+import BpkCardList from './BpkCardList';
+import {
+  ACCESSORY_DESKTOP_TYPES,
+  ACCESSORY_MOBILE_TYPES,
+  LAYOUTS,
+} from './common-types';
+
+const BpkChipGroupRail = jest.fn(() => (
+  <div data-testid="mock-chip-group-rail">
+    <span>Mock Chip Group Rail</span>
+  </div>
+));
 
 describe('BpkCardList', () => {
-  it('should render correctly', () => {
+  it('should render correctly with chip group, grid, stack and SectionHeader without header button', () => {
     render(
       <BpkCardList
         title="Title"
         description="Description"
-        buttonText="Button"
-        buttonHref="https://www.skyscanner.net"
+        chipGroup={BpkChipGroupRail()}
+        layoutDesktop={LAYOUTS.grid}
+        layoutMobile={LAYOUTS.stack}
+        cardList={mockCards(2)}
+        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.button}
+        accessoryMobile={ACCESSORY_MOBILE_TYPES.button}
+        buttonContent="Not a Header Button"
         onButtonClick={() => {}}
-      />
+      />,
     );
 
+    const cardsSection = screen.getByTestId('bpk-card-list-grid-stack');
+    const chipGroup = screen.getByTestId('mock-chip-group-rail');
+    const headerButton = screen.queryByTestId('bpk-card-list-header-button');
+    expect(cardsSection).toBeInTheDocument();
+    expect(chipGroup).toBeInTheDocument();
     expect(screen.getByText('Title')).toBeInTheDocument();
     expect(screen.getByText('Description')).toBeInTheDocument();
-    expect(screen.getByText('Button')).toBeInTheDocument();
+    expect(headerButton).not.toBeInTheDocument();
+  });
+
+  it('should render correctly with chip group, grid, stack, header button and no accessory', () => {
+    render(
+      <BpkCardList
+        title="Title"
+        description="Description"
+        chipGroup={BpkChipGroupRail()}
+        layoutDesktop={LAYOUTS.grid}
+        layoutMobile={LAYOUTS.stack}
+        cardList={mockCards(2)}
+        buttonContent="Header Button"
+        onButtonClick={() => {}}
+      />,
+    );
+
+    const cardsSection = screen.getByTestId('bpk-card-list-grid-stack');
+    const chipGroup = screen.getByTestId('mock-chip-group-rail');
+    const headerButton = screen.queryByTestId('bpk-card-list-header-button');
+    expect(cardsSection).toBeInTheDocument();
+    expect(chipGroup).toBeInTheDocument();
+    expect(screen.getByText('Title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(headerButton).toBeInTheDocument();
   });
 });

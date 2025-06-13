@@ -17,7 +17,7 @@ export default () => (
   <BpkCardList
     title="Title"
     description="Description"
-    buttonText="Button"
+    buttonContent="Button"
     buttonHref="https://www.skyscanner.net"
     onButtonClick={() => {}}
   />
