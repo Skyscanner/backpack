@@ -44,7 +44,7 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
     accessoryContent = (
       <BpkPageIndicator
         currentIndex={currentIndex}
-        totalIndicators={totalIndicators}
+        totalIndicators={totalIndicators - initiallyShownCards + 1}
         onClick={(_e, index) => {
           setCurrentIndex(index);
         }}
