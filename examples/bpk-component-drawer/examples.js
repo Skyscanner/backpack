@@ -23,7 +23,9 @@ import { Component } from 'react';
 
 import BpkButton from '../../packages/bpk-component-button';
 import BpkDrawer from '../../packages/bpk-component-drawer';
+import { BpkButtonLink } from '../../packages/bpk-component-link';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import BpkTooltip from '../../packages/bpk-component-tooltip';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
@@ -291,6 +293,57 @@ const WithMobileModalBehaviourExample = () => (
   </DrawerContainer>
 );
 
+const DrawerWithTooltipExampleNotAbleToBeShown = () => (
+  <DrawerContainer
+    title="Drawer with Tooltip"
+    closeLabel="Close drawer"
+    buttonText="Open drawer with tooltip"
+    getApplicationElement={() => document.getElementById('pagewrap')}
+  >
+
+    <div style={{display: "flex", justifyContent: "space-between"}}>
+      <BpkTooltip
+        ariaLabel="Example Tooltip on the background"
+        id="my-tooltip"
+        target={
+          <div>
+            <BpkButtonLink onClick={() => null}>Hover me</BpkButtonLink>
+          </div>
+        }
+      >
+        Example Tooltip on the background
+      </BpkTooltip>
+    </div>
+
+  </DrawerContainer>
+);
+
+const DrawerWithTooltipExampleAbleToBeShown = () => (
+  <DrawerContainer
+    title="Drawer with Tooltip"
+    closeLabel="Close drawer"
+    buttonText="Open drawer with tooltip"
+    getApplicationElement={() => document.getElementById('pagewrap')}
+    containerClassName={getClassName('bpk-drawer-with-tooltip-not-able-to-show')}
+  >
+
+    <div style={{display: "flex"}}>
+      <BpkTooltip
+        ariaLabel="Example Tooltip on the background"
+        id="my-tooltip"
+        target={
+          <div>
+            <BpkButtonLink onClick={() => null}>Hover me</BpkButtonLink>
+          </div>
+        }
+      >
+        Example Tooltip on the front
+      </BpkTooltip>
+    </div>
+
+  </DrawerContainer>
+);
+
 export {
   DefaultExample,
   OverflowingExamples,
@@ -298,5 +351,7 @@ export {
   WithVisuallyHiddenTitleExample,
   WithFullHeightContentExample,
   WithNonPaddedContentExample,
-  WithMobileModalBehaviourExample
+  WithMobileModalBehaviourExample,
+  DrawerWithTooltipExampleNotAbleToBeShown,
+  DrawerWithTooltipExampleAbleToBeShown
 };
