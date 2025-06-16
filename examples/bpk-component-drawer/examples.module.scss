@@ -42,3 +42,7 @@
     background-color: tokens.$bpk-surface-default-day;
   }
 }
+
+.bpk-drawer-with-tooltip-not-able-to-show {
+  z-index: 899; // 1 less than the tooltip
+}

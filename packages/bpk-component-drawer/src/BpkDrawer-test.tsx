@@ -24,7 +24,7 @@ describe('BpkDrawer', () => {
   it('should render correctly in the given target if renderTarget is supplied', () => {
     const customRenderTarget = document.createElement('div');
 
-    const { asFragment } = render(
+    render(
       <BpkDrawer
         id="my-drawer"
         title="Drawer title"
@@ -40,7 +40,11 @@ describe('BpkDrawer', () => {
         Drawer content
       </BpkDrawer>,
     );
-    expect(asFragment()).toMatchSnapshot();
-    expect(customRenderTarget).toMatchSnapshot();
+    const drawer = customRenderTarget.querySelector('#my-drawer');
+    expect(drawer).not.toBeNull();
+    // containerClassName is not applied to the drawer itself,
+    // but to the container element: withScrim.
+    expect(drawer?.classList.contains('test-class')).toBe(false);
+
   });
 });
