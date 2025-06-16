@@ -250,9 +250,6 @@ const GridToStackExample = () => (
       cardList={makeList(DestinationCard, 6)}
       layoutDesktop={LAYOUTS.grid}
       layoutMobile={LAYOUTS.stack}
-      onButtonClick={() => {
-        console.log('Button clicked');
-      }}
       accessoryDesktop={ACCESSORY_DESKTOP_TYPES.button}
       accessoryMobile={ACCESSORY_MOBILE_TYPES.button}
       buttonContent={
@@ -279,9 +276,6 @@ const GridToStackWithExpandExample = () => {
         onExpandClick={() =>
           setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
         }
-        onButtonClick={() => {
-          console.log('Button clicked');
-        }}
         accessoryDesktop={ACCESSORY_DESKTOP_TYPES.expand}
         accessoryMobile={ACCESSORY_MOBILE_TYPES.expand}
         expandText={expandText}
