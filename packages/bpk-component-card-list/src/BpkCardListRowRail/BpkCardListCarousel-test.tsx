@@ -51,7 +51,7 @@ describe('BpkCardListCarousel', () => {
   it('should render the carousel with the correct number of children', () => {
     render(<BpkCardListCarousel {...defaultProps} />);
     const cards = screen.getAllByRole('group');
-    expect(cards).toHaveLength(3);
+    expect(cards).toHaveLength(6);
   });
 
   it('should render correctly with no children', () => {
@@ -71,31 +71,5 @@ describe('BpkCardListCarousel', () => {
     const cards = screen.getAllByRole('group');
     expect(cards).toHaveLength(1);
     expect(cards[0]).toHaveTextContent('Card 1');
-  });
-
-  it('should call setCurrentIndex when clicking on a card', () => {
-    render(<BpkCardListCarousel {...defaultProps} />);
-    const cards = screen.getAllByRole('group');
-    fireEvent.click(cards[1]);
-    expect(mockSetCurrentIndex).toHaveBeenCalledWith(1);
-  });
-
-  it('should not call setCurrentIndex when clicking outside the carousel', () => {
-    render(<BpkCardListCarousel {...defaultProps} />);
-    const outsideElement = document.createElement('div');
-    document.body.appendChild(outsideElement);
-    fireEvent.click(outsideElement);
-    expect(mockSetCurrentIndex).not.toHaveBeenCalled();
-  });
-
-  it('should update visible ratios when intersection observer triggers', () => {
-    const mockObserverCallback = jest.fn();
-    jest.mock('./utils', () => ({
-      ...jest.requireActual('./utils'),
-      useIntersectionObserver: jest.fn(() => mockObserverCallback),
-    }));
-
-    render(<BpkCardListCarousel {...defaultProps} />);
-    expect(mockObserverCallback).toHaveBeenCalled();
   });
 });

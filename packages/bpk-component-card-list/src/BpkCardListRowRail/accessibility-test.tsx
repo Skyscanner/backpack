@@ -25,6 +25,26 @@ import { LAYOUTS } from '../common-types';
 import BpkCardListRowRailContainer from './BpkCardListRowRailContainer';
 
 describe('BpkCardListRowRailContainer', () => {
+  beforeAll(() => {
+    global.IntersectionObserver = class IntersectionObserver {
+      root = null;
+
+      rootMargin = '';
+
+      thresholds = [];
+
+      observe = jest.fn();
+
+      unobserve = jest.fn();
+
+      disconnect = jest.fn();
+
+      takeRecords() {
+        return [];
+      }
+    };
+  });
+  
   it('should have no accessibility issues for row and no accessory', async () => {
     const { container } = render(
       <BpkCardListRowRailContainer layout={LAYOUTS.row} initiallyShownCards={3}>

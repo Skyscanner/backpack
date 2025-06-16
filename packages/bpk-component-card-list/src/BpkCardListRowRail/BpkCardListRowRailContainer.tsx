@@ -19,10 +19,7 @@ import { useState } from 'react';
 
 import BpkPageIndicator from '../../../bpk-component-page-indicator';
 import { cssModules } from '../../../bpk-react-utils';
-import {
-  ACCESSORY_DESKTOP_TYPES,
-  LAYOUTS,
-} from '../common-types';
+import { ACCESSORY_DESKTOP_TYPES, LAYOUTS } from '../common-types';
 
 import BpkCardListCarousel from './BpkCardListCarousel';
 
@@ -32,7 +29,7 @@ import STYLES from './BpkCardListRowRailContainer.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkCardListRowRail = (props: CardListRowRailProps) => {
+const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
   const { accessory, children, initiallyShownCards, layout } = props;
 
   const totalIndicators = children.length;
@@ -40,7 +37,10 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
 
   let accessoryContent = null;
 
-  if (layout === LAYOUTS.row && accessory === ACCESSORY_DESKTOP_TYPES.pagination) {
+  if (
+    layout === LAYOUTS.row &&
+    accessory === ACCESSORY_DESKTOP_TYPES.pagination
+  ) {
     accessoryContent = (
       <BpkPageIndicator
         currentIndex={currentIndex}
@@ -59,7 +59,7 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
   return (
     <div
       className={getClassName('bpk-card-list-row-rail')}
-      data-testid="bpk-card-list-row-rail')}"
+      data-testid="bpk-card-list-row-rail"
     >
       <BpkCardListCarousel
         initiallyShownCards={initiallyShownCards}
@@ -70,16 +70,18 @@ const BpkCardListRowRail = (props: CardListRowRailProps) => {
         {children}
       </BpkCardListCarousel>
 
-      <div
-        role="region"
-        aria-label="pagination"
-        className={getClassName(`bpk-card-list-row-rail__accessory`)}
-        data-testid="bpk-card-list-row-rail__accessory"
-      >
-        {accessoryContent}
-      </div>
+      {accessoryContent && (
+        <div
+          role="region"
+          aria-label="pagination"
+          className={getClassName(`bpk-card-list-row-rail__accessory`)}
+          data-testid="bpk-card-list-row-rail__accessory"
+        >
+          {accessoryContent}
+        </div>
+      )}
     </div>
   );
 };
 
-export default BpkCardListRowRail;
+export default BpkCardListRowRailContainer;
