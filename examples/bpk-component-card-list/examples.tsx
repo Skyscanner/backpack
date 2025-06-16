@@ -34,7 +34,6 @@ import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-a
 import BpkImage from '../../packages/bpk-component-image';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLink from '../../packages/bpk-component-link';
-
 import BpkSnippet, {
   DESKTOP_LAYOUT as SNIPPET_DESKTOP_LAYOUT,
 } from '../../packages/bpk-component-snippet/src/BpkSnippet';
