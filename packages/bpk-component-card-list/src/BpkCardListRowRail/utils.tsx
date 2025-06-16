@@ -41,7 +41,7 @@ export function useUpdateCurrentIndexByVisibility(
 ) {
   useEffect(() => {
     if (!visibleRatios || visibleRatios.length === 0) return;
-    
+
     if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current);
 
     const firstVisibleIndex = visibleRatios.findIndex((ratio) => ratio > 0);
@@ -68,10 +68,12 @@ export function useScrollToCard(
   useEffect(() => {
     const isVisible =
       container &&
+      container.getBoundingClientRect().bottom > 0 &&
       container.getBoundingClientRect().bottom <= window.innerHeight;
     if (!isVisible) return; // Escape from scrollIntoView if the container is not visible
 
-    if (stateScrollingLockRef.current && stateScrollingLockRef.current === true) return;
+    if (stateScrollingLockRef.current && stateScrollingLockRef.current === true)
+      return;
 
     const targetCard = cardRefs.current[currentIndex];
     if (targetCard) {
