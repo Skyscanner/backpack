@@ -31,7 +31,7 @@ export function setA11yTabIndex(
 
   focusableElements.forEach((element: HTMLElement) => {
     const targetElement = element;
-    targetElement.tabIndex = visibleRatios[index] > 0.8 ? 0 : -1;
+    targetElement.tabIndex = visibleRatios[index] >= 0.8 ? 0 : -1;
   });
 }
 
