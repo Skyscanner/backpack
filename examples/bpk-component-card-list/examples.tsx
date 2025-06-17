@@ -55,6 +55,20 @@ const imageUrlsDestination = [
   'https://content.skyscnr.com/m/08ab12ef4f2e4c0c/original/sync_206570010_Viking_Cave_206570010_992.jpg',
 ];
 
+const commonProps = {
+  title: 'Must-visit spots',
+  description:
+    'Check out these world-famous destinations perfect for visiting in spring.',
+  chipGroup: <BpkChipGroupRail />,
+  buttonContent: (
+    <span>
+      Explore More <AlignedSmallLongArrowRightIcon />
+    </span>
+  ),
+  buttonHref: 'https://www.skyscanner.net/',
+  initiallyShownCards: 3,
+};
+
 const snippetProps = {
   altText: 'image description',
   headline: 'Title of the section',
@@ -130,28 +144,21 @@ const PageContainer = ({ children }: PageContainerProp) => (
 
 const BasicExample = () => (
   <BpkCardList
-    title="Must-visit spots"
-    description="Check out these world-famous destinations perfect for visiting in spring."
-    buttonContent="Explore More"
-    buttonHref="https://www.skyscanner.net/"
+    {...commonProps}
     cardList={makeList(DestinationCard)}
     layoutDesktop={LAYOUTS.grid}
     layoutMobile={LAYOUTS.stack}
   />
 );
 
-const RowToRailForCardsExample = () => (
+const RowToRailExample = () => (
   <PageContainer>
     <BpkCardList
-      title="Must-visit spots"
-      description="Check out these world-famous destinations perfect for visiting in spring."
-      chipGroup={BpkChipGroupRail()}
-      initiallyShownCards={3}
+      {...commonProps}
       cardList={makeList(DestinationCard)}
       layoutDesktop={LAYOUTS.row}
       layoutMobile={LAYOUTS.rail}
       accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
-      buttonContent="Explore more"
     />
   </PageContainer>
 );
@@ -159,28 +166,24 @@ const RowToRailForCardsExample = () => (
 const RowToRailForSnippetsExample = () => (
   <PageContainer>
     <BpkCardList
-      title="Must-visit spots"
-      description="Check out these world-famous destinations perfect for visiting in spring."
-      chipGroup={BpkChipGroupRail()}
+      {...commonProps}
       initiallyShownCards={2}
       cardList={makeList(Snippet)}
       layoutDesktop={LAYOUTS.row}
       layoutMobile={LAYOUTS.rail}
-      onButtonClick={() => null}
       accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+      buttonContent={undefined}
     />
   </PageContainer>
 );
 
-const RowToStackForCardsWithExpandExample = () => {
+const RowToStackWithExpandExample = () => {
   const [expandText, setExpandText] = useState('Show more');
 
   return (
     <PageContainer>
       <BpkCardList
-        title="Must-visit spots"
-        description="Check out these world-famous destinations perfect for visiting in spring."
-        chipGroup={BpkChipGroupRail()}
+        {...commonProps}
         cardList={makeList(DestinationCard)}
         layoutDesktop={LAYOUTS.row}
         layoutMobile={LAYOUTS.stack}
@@ -190,6 +193,8 @@ const RowToStackForCardsWithExpandExample = () => {
         onExpandClick={() =>
           setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
         }
+        buttonHref={undefined}
+        buttonContent="Static Button"
       />
     </PageContainer>
   );
@@ -201,37 +206,13 @@ const RowToStackForSnippetsWithExpandExample = () => {
   return (
     <PageContainer>
       <BpkCardList
-        title="Must-visit spots"
-        description="Check out these world-famous destinations perfect for visiting in spring."
-        chipGroup={BpkChipGroupRail()}
+        {...commonProps}
         initiallyShownCards={2}
         cardList={makeList(Snippet)}
         layoutDesktop={LAYOUTS.row}
         layoutMobile={LAYOUTS.stack}
-        onButtonClick={() =>
-          setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
-        }
         accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
         accessoryMobile={ACCESSORY_MOBILE_TYPES.expand}
-        expandText={expandText}
-      />
-    </PageContainer>
-  );
-};
-
-const GridToRailForCardsWithExpandExample = () => {
-  const [expandText, setExpandText] = useState('Show more');
-
-  return (
-    <PageContainer>
-      <BpkCardList
-        title="Must-visit spots"
-        description="Check out these world-famous destinations perfect for visiting in spring."
-        chipGroup={BpkChipGroupRail()}
-        cardList={makeList(DestinationCard, 6)}
-        layoutDesktop={LAYOUTS.grid}
-        layoutMobile={LAYOUTS.rail}
-        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.expand}
         expandText={expandText}
         onExpandClick={() =>
           setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
@@ -241,22 +222,39 @@ const GridToRailForCardsWithExpandExample = () => {
   );
 };
 
+const GridToRailWithExpandExample = () => {
+  const [expandText, setExpandText] = useState('Show more');
+
+  return (
+    <PageContainer>
+      <BpkCardList
+        {...commonProps}
+        cardList={makeList(DestinationCard, 6)}
+        layoutDesktop={LAYOUTS.grid}
+        layoutMobile={LAYOUTS.rail}
+        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.expand}
+        expandText={expandText}
+        onExpandClick={() =>
+          setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
+        }
+        buttonHref={undefined}
+        onButtonClick={() =>
+          window.open('https://www.skyscanner.net/flights', '_blank')
+        }
+      />
+    </PageContainer>
+  );
+};
+
 const GridToStackExample = () => (
   <PageContainer>
     <BpkCardList
-      title="Must-visit spots"
-      description="Check out these world-famous destinations perfect for visiting in spring."
-      chipGroup={BpkChipGroupRail()}
+      {...commonProps}
       cardList={makeList(DestinationCard, 6)}
       layoutDesktop={LAYOUTS.grid}
       layoutMobile={LAYOUTS.stack}
       accessoryDesktop={ACCESSORY_DESKTOP_TYPES.button}
       accessoryMobile={ACCESSORY_MOBILE_TYPES.button}
-      buttonContent={
-        <>
-          Explore More <AlignedSmallLongArrowRightIcon />
-        </>
-      }
     />
   </PageContainer>
 );
@@ -267,20 +265,16 @@ const GridToStackWithExpandExample = () => {
   return (
     <PageContainer>
       <BpkCardList
-        title="Must-visit spots"
-        description="Check out these world-famous destinations perfect for visiting in spring."
-        chipGroup={BpkChipGroupRail()}
+        {...commonProps}
         cardList={makeList(DestinationCard)}
         layoutDesktop={LAYOUTS.grid}
         layoutMobile={LAYOUTS.stack}
-        onExpandClick={() =>
-          setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
-        }
         accessoryDesktop={ACCESSORY_DESKTOP_TYPES.expand}
         accessoryMobile={ACCESSORY_MOBILE_TYPES.expand}
         expandText={expandText}
-        buttonContent="Explore more"
-        buttonHref="https://www.skyscanner.net"
+        onExpandClick={() =>
+          setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
+        }
       />
     </PageContainer>
   );
@@ -288,63 +282,23 @@ const GridToStackWithExpandExample = () => {
 
 const MultiComponentsScrollingTestExample = () => (
   <PageContainer>
-    <BpkCardList
-      title="Must-visit spots"
-      description="Check out these world-famous destinations perfect for visiting in spring."
-      chipGroup={BpkChipGroupRail()}
-      initiallyShownCards={3}
-      cardList={makeList(DestinationCard)}
-      layoutDesktop={LAYOUTS.row}
-      layoutMobile={LAYOUTS.rail}
-      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
-      buttonContent="Explore more"
-    />
+    <RowToRailExample />
     <br />
-    <BpkCardList
-      title="Must-visit spots"
-      description="Check out these world-famous destinations perfect for visiting in spring."
-      chipGroup={BpkChipGroupRail()}
-      initiallyShownCards={2}
-      cardList={makeList(Snippet)}
-      layoutDesktop={LAYOUTS.row}
-      layoutMobile={LAYOUTS.rail}
-      onButtonClick={() => null}
-      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
-    />
+    <RowToRailForSnippetsExample />
     <br />
-    <BpkCardList
-      title="Must-visit spots"
-      description="Check out these world-famous destinations perfect for visiting in spring."
-      chipGroup={BpkChipGroupRail()}
-      initiallyShownCards={3}
-      cardList={makeList(DestinationCard)}
-      layoutDesktop={LAYOUTS.row}
-      layoutMobile={LAYOUTS.rail}
-      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
-      buttonContent="Explore more"
-    />
+    <GridToRailWithExpandExample />
     <br />
-    <BpkCardList
-      title="Must-visit spots"
-      description="Check out these world-famous destinations perfect for visiting in spring."
-      chipGroup={BpkChipGroupRail()}
-      initiallyShownCards={2}
-      cardList={makeList(Snippet)}
-      layoutDesktop={LAYOUTS.row}
-      layoutMobile={LAYOUTS.rail}
-      onButtonClick={() => null}
-      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
-    />
+    <GridToStackExample />
   </PageContainer>
 );
 
 export {
   BasicExample,
-  RowToRailForCardsExample,
+  RowToRailExample,
   RowToRailForSnippetsExample,
-  RowToStackForCardsWithExpandExample,
+  RowToStackWithExpandExample,
   RowToStackForSnippetsWithExpandExample,
-  GridToRailForCardsWithExpandExample,
+  GridToRailWithExpandExample,
   GridToStackExample,
   GridToStackWithExpandExample,
   MultiComponentsScrollingTestExample,

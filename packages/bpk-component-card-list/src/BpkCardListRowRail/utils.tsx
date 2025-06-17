@@ -23,7 +23,6 @@ export function setA11yTabIndex(
   index: number,
   visibleRatios: number[],
 ) {
-  console.log('visibleRatios', visibleRatios);
   if (!el) return;
   const focusableElements = el.querySelectorAll<HTMLElement>(
     'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])',

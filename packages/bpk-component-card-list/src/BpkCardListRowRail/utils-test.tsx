@@ -28,7 +28,8 @@ const createMockButton = (index: number): HTMLElement => {
   return mockButton;
 };
 
-const createMockDiv = (): HTMLDivElement => document.createElement('div') as HTMLDivElement;
+const createMockDiv = (): HTMLDivElement =>
+  document.createElement('div') as HTMLDivElement;
 
 const makeMockDiv = (
   index: number,
