@@ -18,8 +18,6 @@
 import type { CSSProperties } from 'react';
 import { useRef, useState, useEffect, isValidElement } from 'react';
 
-import _ from 'lodash';
-
 import { cssModules } from '../../../bpk-react-utils';
 import { type CardListCarouselProps } from '../common-types';
 
@@ -66,10 +64,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
   useEffect(() => {
     const container = root;
-    if (!container) {
-      console.error('BpkCardListCarousel Root Container not found');
-      return undefined;
-    }
+    if (!container) return undefined;
 
     const lockScrollDuringInteraction = () => {
       stateScrollingLockRef.current = true; // Prevent scrollIntoView while scrolling

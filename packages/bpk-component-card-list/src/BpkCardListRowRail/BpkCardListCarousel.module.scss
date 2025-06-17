@@ -31,11 +31,15 @@
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
 
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     &__card {
       position: relative;
-      padding: tokens.bpk-spacing-sm() * 2;
+      padding: tokens.bpk-spacing-md();
       overflow: visible;
-      box-sizing: border-box; /* 包括 padding 和 border */
+      box-sizing: border-box;
       scroll-snap-align: start;
     }
   }
