@@ -41,21 +41,14 @@ export function useUpdateCurrentIndexByVisibility(
 ) {
   useEffect(() => {
     if (!visibleRatios || visibleRatios.length === 0) return;
-
     if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current);
 
     const firstVisibleIndex = visibleRatios.findIndex((ratio) => ratio > 0);
 
-    // when the first visible card is not fully visible
-    // the scrolling hasn't ended
-    // we don't set the current index
-
-    if (visibleRatios[firstVisibleIndex] > 0.95) {
-      // eslint-disable-next-line no-param-reassign
-      setStateTimeoutRef.current = setTimeout(() => {
-        setCurrentIndex(firstVisibleIndex);
-      }, 150);
-    }
+    // eslint-disable-next-line no-param-reassign
+    setStateTimeoutRef.current = setTimeout(() => {
+      setCurrentIndex(firstVisibleIndex);
+    }, 150);
   }, [visibleRatios]);
 }
 
