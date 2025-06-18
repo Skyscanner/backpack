@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import { BpkButtonV2 } from '../../bpk-component-button';
@@ -58,6 +58,15 @@ const BpkCardList = (props: CardListProps) => {
   } = props;
 
   const [showHeaderButton, setShowHeaderButton] = useState(false);
+  const showHeaderButtonRef = useRef(false);
+
+  useEffect(() => {
+    if (showHeaderButtonRef.current) {
+      setShowHeaderButton(true);
+    } else {
+      setShowHeaderButton(false);
+    }
+  }, [showHeaderButtonRef]);
 
   const headerButton = buttonContent && (
     <BpkButtonV2
@@ -89,9 +98,9 @@ const BpkCardList = (props: CardListProps) => {
               if (
                 !!buttonContent &&
                 accessoryMobile !== ACCESSORY_MOBILE_TYPES.button &&
-                showHeaderButton !== true
+                showHeaderButtonRef.current !== true
               )
-                setShowHeaderButton(true);
+                showHeaderButtonRef.current = true;
 
               if (layoutMobile === LAYOUTS.rail) {
                 return (
@@ -124,10 +133,10 @@ const BpkCardList = (props: CardListProps) => {
 
             if (
               !!buttonContent &&
-              accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.button
-              && showHeaderButton !== true
+              accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.button &&
+              showHeaderButtonRef.current !== true
             )
-              setShowHeaderButton(true);
+              showHeaderButtonRef.current = true;
 
             if (
               layoutDesktop === LAYOUTS.row &&
