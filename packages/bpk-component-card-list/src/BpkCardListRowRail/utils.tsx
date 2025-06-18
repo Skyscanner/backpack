@@ -43,7 +43,7 @@ export function useUpdateCurrentIndexByVisibility(
     if (!visibleRatios || visibleRatios.length === 0) return;
     if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current);
 
-    const firstVisibleIndex = visibleRatios.findIndex((ratio) => ratio > 0);
+    const firstVisibleIndex = visibleRatios.findIndex((ratio) => ratio > 0.9);
 
     // eslint-disable-next-line no-param-reassign
     setStateTimeoutRef.current = setTimeout(() => {
