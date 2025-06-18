@@ -18,6 +18,8 @@
 import type { CSSProperties } from 'react';
 import { useRef, useState, useEffect, isValidElement } from 'react';
 
+import uuid from 'uuid';
+
 import { cssModules } from '../../../bpk-react-utils';
 import { type CardListCarouselProps } from '../common-types';
 
@@ -123,6 +125,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
             className={getClassName(`bpk-card-list-row-rail__${layout}__card`)}
             ref={cardRefCallback}
             style={shownNumberStyle}
+            key={`carousel-card-${index.toString()}-${uuid}`}
             role="group"
             aria-label={slideAriaLabel}
             aria-current={index === currentIndex ? 'true' : 'false'}
