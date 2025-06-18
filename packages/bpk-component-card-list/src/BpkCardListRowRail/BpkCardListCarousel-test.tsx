@@ -24,8 +24,6 @@ import { LAYOUTS } from '../common-types';
 
 import BpkCardListCarousel from './BpkCardListCarousel';
 
-// filepath: /Users/stevenzeng/backpack/packages/bpk-component-card-list/src/BpkCardListRowRail/BpkCardListCarousel-test.test.tsx
-
 jest.mock('./utils', () => ({
   setA11yTabIndex: jest.fn(),
   useUpdateCurrentIndexByVisibility: jest.fn(),
