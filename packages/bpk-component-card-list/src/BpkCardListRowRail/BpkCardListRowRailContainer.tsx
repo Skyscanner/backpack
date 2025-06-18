@@ -34,14 +34,11 @@ const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
 
   const totalIndicators = children.length;
   const [currentIndex, setCurrentIndex] = useState(0);
+  const showAccessory = totalIndicators > initiallyShownCards;
 
-  let accessoryContent = null;
-
-  if (
+  const accessoryContent =
     layout === LAYOUTS.row &&
-    accessory === ACCESSORY_DESKTOP_TYPES.pagination
-  ) {
-    accessoryContent = (
+    accessory === ACCESSORY_DESKTOP_TYPES.pagination ? (
       <BpkPageIndicator
         currentIndex={currentIndex}
         totalIndicators={totalIndicators - initiallyShownCards + 1}
@@ -53,8 +50,7 @@ const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
         prevNavLabel="Previous slide"
         nextNavLabel="Next slide"
       />
-    );
-  }
+    ) : null;
 
   return (
     <div
@@ -70,7 +66,7 @@ const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
         {children}
       </BpkCardListCarousel>
 
-      {accessoryContent && (
+      {accessoryContent && showAccessory && (
         <div
           role="region"
           aria-label="pagination"

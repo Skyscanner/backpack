@@ -16,13 +16,14 @@
  * limitations under the License.
  */
 import type { CSSProperties } from 'react';
-import { useRef, useState, useEffect, isValidElement } from 'react';
+import { useRef, useState, useEffect, isValidElement, Children } from 'react';
 
 import uuid from 'uuid';
 
 import { cssModules } from '../../../bpk-react-utils';
 import { type CardListCarouselProps } from '../common-types';
 
+import { SET_INDEX_DELAY } from './constants';
 import {
   setA11yTabIndex,
   useUpdateCurrentIndexByVisibility,
@@ -47,19 +48,19 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     flex: `0 0 calc((100% - ${8 * (initiallyShownCards - 1)}px) / ${initiallyShownCards})`,
   } as CSSProperties;
 
-  const totalIndicators = children.length;
+  const childrenLength = Children.count(children);
   const [root, setRoot] = useState<HTMLElement | null>(null);
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   const [visibleRatios, setVisibleRatios] = useState<number[]>(
-    Array(children.length).fill(0),
+    Array(childrenLength).fill(0),
   );
   const setStateTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const stateScrollingLockRef = useRef(false);
   const openSetStateLockTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const observerVisibility = useIntersectionObserver(
-    { root, threshold: 0.1 },
+    { root, threshold: 0 },
     visibleRatios,
     setVisibleRatios,
   );
@@ -75,7 +76,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       }
       openSetStateLockTimeoutRef.current = setTimeout(() => {
         stateScrollingLockRef.current = false; // release the lock after 300ms
-      }, 300);
+      }, SET_INDEX_DELAY * 2);
     };
 
     // Prevent scrollIntoView scroll back up when the user scroll down
@@ -86,6 +87,10 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     return () => {
       container.removeEventListener('touchmove', lockScrollDuringInteraction);
       container.removeEventListener('mousewheel', lockScrollDuringInteraction);
+      if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current);
+      if (openSetStateLockTimeoutRef.current) {
+        clearTimeout(openSetStateLockTimeoutRef.current);
+      }
     };
   }, [root]);
 
@@ -103,7 +108,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     setStateTimeoutRef,
   );
 
-  const carouselAriaLabel = `Entering Carousel with ${initiallyShownCards} slides shown at a time, ${totalIndicators} slides in total. Please use Pagination below with the Previous and Next buttons to navigate, or the slide dot buttons at the end to jump to slides.`;
+  const carouselAriaLabel = `Entering Carousel with ${initiallyShownCards} slides shown at a time, ${childrenLength} slides in total. Please use Pagination below with the Previous and Next buttons to navigate, or the slide dot buttons at the end to jump to slides.`;
 
   return (
     <div
@@ -124,7 +129,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           setA11yTabIndex(el, index, visibleRatios);
         };
 
-        const slideAriaLabel = `slide ${index + 1} of ${totalIndicators}`;
+        const slideAriaLabel = `slide ${index + 1} of ${childrenLength}`;
 
         return (
           <div

@@ -52,7 +52,7 @@ describe('setA11yTabIndex', () => {
     });
 
     expect(mockButtonList[0].tabIndex).toBe(0);
-    expect(mockButtonList[1].tabIndex).toBe(0);
+    expect(mockButtonList[1].tabIndex).toBe(-1);
     expect(mockButtonList[2].tabIndex).toBe(-1);
     expect(mockButtonList[3].tabIndex).toBe(-1);
   });
@@ -61,6 +61,7 @@ describe('setA11yTabIndex', () => {
 describe('useScrollToCard', () => {
   let mockCardRefs: { current: HTMLDivElement[] };
   let mockCardList: HTMLElement[];
+  const setStateTimeoutRef = { current: null };
 
   beforeEach(() => {
     mockCardRefs = { current: [] as HTMLDivElement[] };
@@ -83,7 +84,7 @@ describe('useScrollToCard', () => {
     const stateScrollingLockRef = { current: false };
 
     renderHook(() =>
-      useScrollToCard(3, mockContainer, mockCardRefs, stateScrollingLockRef),
+      useScrollToCard(3, mockContainer, mockCardRefs, stateScrollingLockRef, setStateTimeoutRef),
     );
 
     expect(mockCardList[3].scrollIntoView).toHaveBeenCalledTimes(1);
@@ -100,7 +101,7 @@ describe('useScrollToCard', () => {
     const stateScrollingLockRef = { current: false };
 
     renderHook(() =>
-      useScrollToCard(3, mockContainer, mockCardRefs, stateScrollingLockRef),
+      useScrollToCard(3, mockContainer, mockCardRefs, stateScrollingLockRef, setStateTimeoutRef),
     );
 
     expect(mockCardList[3].scrollIntoView).not.toHaveBeenCalled();
@@ -117,7 +118,7 @@ describe('useScrollToCard', () => {
     const stateScrollingLockRef = { current: true };
 
     renderHook(() =>
-      useScrollToCard(3, mockContainer, mockCardRefs, stateScrollingLockRef),
+      useScrollToCard(3, mockContainer, mockCardRefs, stateScrollingLockRef, setStateTimeoutRef),
     );
 
     expect(mockCardList[3].scrollIntoView).not.toHaveBeenCalled();

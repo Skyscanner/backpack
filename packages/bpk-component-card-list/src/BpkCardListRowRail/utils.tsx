@@ -18,11 +18,13 @@
 
 import { useEffect } from 'react';
 
-export function setA11yTabIndex(
+import { VISIBLE_RATIO, SET_INDEX_DELAY } from './constants';
+
+export const setA11yTabIndex = (
   el: HTMLDivElement | null,
   index: number,
   visibleRatios: number[],
-) {
+) => {
   if (!el) return;
   const focusableElements = el.querySelectorAll<HTMLElement>(
     'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])',
@@ -30,49 +32,48 @@ export function setA11yTabIndex(
 
   focusableElements.forEach((element: HTMLElement) => {
     const targetElement = element;
-    targetElement.tabIndex = visibleRatios[index] >= 0.8 ? 0 : -1;
+    targetElement.tabIndex = visibleRatios[index] >= VISIBLE_RATIO ? 0 : -1;
   });
-}
+};
 
-export function useUpdateCurrentIndexByVisibility(
+export const useUpdateCurrentIndexByVisibility = (
   visibleRatios: number[],
   setCurrentIndex: (index: number) => void,
   setStateTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
-) {
+) => {
   useEffect(() => {
+    console.log('useUpdateCurrentIndexByVisibility', visibleRatios);
     if (!visibleRatios || visibleRatios.length === 0) return;
     if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current);
 
-    const firstVisibleIndex = visibleRatios.findIndex((ratio) => ratio > 0.9);
+    const firstVisibleIndex = visibleRatios.findIndex(
+      (ratio) => ratio >= VISIBLE_RATIO,
+    );
 
     // eslint-disable-next-line no-param-reassign
     setStateTimeoutRef.current = setTimeout(() => {
       setCurrentIndex(firstVisibleIndex);
-    }, 150);
+    }, SET_INDEX_DELAY);
   }, [visibleRatios]);
-}
+};
 
-export function useScrollToCard(
+export const useScrollToCard = (
   currentIndex: number,
   container: HTMLElement | null,
   cardRefs: React.MutableRefObject<Array<HTMLDivElement | null>>,
   stateScrollingLockRef: React.MutableRefObject<boolean>,
   setStateTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
-) {
+) => {
   useEffect(() => {
     const isVisible =
       container &&
       container.getBoundingClientRect().bottom > 0 &&
       container.getBoundingClientRect().bottom <= window.innerHeight;
     if (!isVisible) return; // Escape from scrollIntoView if the container is not visible
-    // 这是BpkCarousel也有的一个bug，简单地说当Carousel在页面下方不可见的地方时，每次刷新页面，整个页面会滚到这个不可见Carousel
 
     if (stateScrollingLockRef.current && stateScrollingLockRef.current === true)
-      return; //
+      return;
     if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current);
-    // pagination变化导致state变化，与此同时会导致carousel的滚动，而carousel的滚动会导致useUpdateCurrentIndexByVisibility
-    // 的触发，useUpdateCurrentIndexByVisibility会通过setStateTimeoutRef.current执行setCurrentIndex。所以这一步的目的是
-    // 清除已有的useUpdateCurrentIndexByVisibility带来的setStateTimeoutRef.current，优先pagination的state，执行当前的滚动逻辑
 
     const targetCard = cardRefs.current[currentIndex];
     if (targetCard) {
@@ -83,13 +84,13 @@ export function useScrollToCard(
       });
     }
   }, [currentIndex]);
-}
+};
 
-export function useIntersectionObserver(
+export const useIntersectionObserver = (
   { root, threshold }: IntersectionObserverInit,
   visibleRatios: number[],
   setVisibleRatios: React.Dispatch<React.SetStateAction<number[]>>,
-) {
+) => {
   let observer: IntersectionObserver | null = null;
 
   if (root) {
@@ -119,4 +120,4 @@ export function useIntersectionObserver(
   };
 
   return observe;
-}
+};

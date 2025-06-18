@@ -16,11 +16,5 @@
  * limitations under the License.
  */
 
-.bpk-card-list-row-rail {
-  display: flex;
-  flex-direction: column;
-
-  &__accessory {
-    width: 100%;
-  }
-}
+export const VISIBLE_RATIO = 0.9;
+export const SET_INDEX_DELAY = 150;
