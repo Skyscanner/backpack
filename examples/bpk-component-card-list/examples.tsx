@@ -83,7 +83,12 @@ const snippetProps = {
 
 const DestinationCard = (i: number) => (
   // Usage Suggestion: define minWidth from consumer side
-  <BpkCard key={`card-${i.toString()}-${uuid}`} className={STYLES['bpk-card']} href="/" padded={false}>
+  <BpkCard
+    key={`card-${i.toString()}-${uuid}`}
+    className={STYLES['bpk-card']}
+    href="/"
+    padded={false}
+  >
     <div className={STYLES['bpk-destination']}>
       <BpkImage
         aspectRatio={3000 / 1400}
@@ -117,10 +122,10 @@ const DestinationCard = (i: number) => (
   </BpkCard>
 );
 
-const Snippet = (i: number) => (
+const Snippet = (i: number, vertical?: boolean) => (
   // Usage Suggestion: set desktopLayout="vertical" for cases with more than 1 snippet
   <BpkSnippet
-    desktopLayout={SNIPPET_DESKTOP_LAYOUT.vertical}
+    desktopLayout={vertical ? SNIPPET_DESKTOP_LAYOUT.vertical : undefined}
     src={imageUrlsDestination[i % 4]}
     {...snippetProps}
     key={`snippet-${i.toString()}-${uuid}`}
@@ -129,10 +134,10 @@ const Snippet = (i: number) => (
 
 type ExampleCard = typeof DestinationCard | typeof Snippet;
 
-const makeList = (cardType: ExampleCard, number: number = 9) => {
+const makeList = (cardType: ExampleCard,  vertical: boolean = false, number: number = 9) => {
   const cardList = [];
   for (let i = 0; i < number; i += 1) {
-    cardList.push(cardType(i));
+    cardList.push(cardType(i, vertical));
   }
   return cardList;
 };
@@ -171,7 +176,7 @@ const RowToRailForSnippetsExample = () => (
     <BpkCardList
       {...commonProps}
       initiallyShownCards={2}
-      cardList={makeList(Snippet)}
+      cardList={makeList(Snippet, true)} // vertical snippets
       layoutDesktop={LAYOUTS.row}
       layoutMobile={LAYOUTS.rail}
       accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
@@ -211,7 +216,7 @@ const RowToStackForSnippetsWithExpandExample = () => {
       <BpkCardList
         {...commonProps}
         initiallyShownCards={2}
-        cardList={makeList(Snippet)}
+        cardList={makeList(Snippet, true)} // vertical snippets
         layoutDesktop={LAYOUTS.row}
         layoutMobile={LAYOUTS.stack}
         accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
