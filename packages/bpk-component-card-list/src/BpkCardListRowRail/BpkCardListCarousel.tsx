@@ -78,9 +78,9 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       }, 300);
     };
 
-    // Prevent scrollIntoView scroll back up when the user scroll down 
+    // Prevent scrollIntoView scroll back up when the user scroll down
     // rapidly and immediately after he scroll the carousel with touchBar
-    container.addEventListener('mousewheel', lockScrollDuringInteraction)
+    container.addEventListener('mousewheel', lockScrollDuringInteraction);
     container.addEventListener('touchmove', lockScrollDuringInteraction);
 
     return () => {
@@ -95,7 +95,13 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     setStateTimeoutRef,
   );
 
-  useScrollToCard(currentIndex, root, cardRefs, stateScrollingLockRef);
+  useScrollToCard(
+    currentIndex,
+    root,
+    cardRefs,
+    stateScrollingLockRef,
+    setStateTimeoutRef,
+  );
 
   const carouselAriaLabel = `Entering Carousel with ${initiallyShownCards} slides shown at a time, ${totalIndicators} slides in total. Please use Pagination below with the Previous and Next buttons to navigate, or the slide dot buttons at the end to jump to slides.`;
 

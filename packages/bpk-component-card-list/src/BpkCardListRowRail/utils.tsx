@@ -64,6 +64,7 @@ export function useScrollToCard(
   container: HTMLElement | null,
   cardRefs: React.MutableRefObject<Array<HTMLDivElement | null>>,
   stateScrollingLockRef: React.MutableRefObject<boolean>,
+  setStateTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
 ) {
   useEffect(() => {
     const isVisible =
@@ -71,9 +72,14 @@ export function useScrollToCard(
       container.getBoundingClientRect().bottom > 0 &&
       container.getBoundingClientRect().bottom <= window.innerHeight;
     if (!isVisible) return; // Escape from scrollIntoView if the container is not visible
+    // 这是BpkCarousel也有的一个bug，简单地说当Carousel在页面下方不可见的地方时，每次刷新页面，整个页面会滚到这个不可见Carousel
 
     if (stateScrollingLockRef.current && stateScrollingLockRef.current === true)
-      return;
+      return; //
+    if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current);
+    // pagination变化导致state变化，与此同时会导致carousel的滚动，而carousel的滚动会导致useUpdateCurrentIndexByVisibility
+    // 的触发，useUpdateCurrentIndexByVisibility会通过setStateTimeoutRef.current执行setCurrentIndex。所以这一步的目的是
+    // 清除已有的useUpdateCurrentIndexByVisibility带来的setStateTimeoutRef.current，优先pagination的state，执行当前的滚动逻辑
 
     const targetCard = cardRefs.current[currentIndex];
     if (targetCard) {
