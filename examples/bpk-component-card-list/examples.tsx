@@ -19,6 +19,8 @@
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 
+import uuid from 'uuid';
+
 import BpkCard from '../../packages/bpk-component-card';
 import BpkCardList from '../../packages/bpk-component-card-list';
 import {
@@ -81,7 +83,7 @@ const snippetProps = {
 
 const DestinationCard = (i: number) => (
   // Usage Suggestion: define minWidth from consumer side
-  <BpkCard className={STYLES['bpk-card']} href="/" padded={false}>
+  <BpkCard key={`card-${i.toString()}-${uuid}`} className={STYLES['bpk-card']} href="/" padded={false}>
     <div className={STYLES['bpk-destination']}>
       <BpkImage
         aspectRatio={3000 / 1400}
@@ -121,6 +123,7 @@ const Snippet = (i: number) => (
     desktopLayout={SNIPPET_DESKTOP_LAYOUT.vertical}
     src={imageUrlsDestination[i % 4]}
     {...snippetProps}
+    key={`snippet-${i.toString()}-${uuid}`}
   />
 );
 
