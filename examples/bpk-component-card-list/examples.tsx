@@ -82,7 +82,7 @@ const snippetProps = {
 };
 
 const DestinationCard = (i: number) => (
-  // Usage Suggestion: define minWidth from consumer side
+  // Usage Suggestion: define minWidth from consumer side by using className
   <BpkCard
     key={`card-${i.toString()}-${uuid}`}
     className={STYLES['bpk-card']}
@@ -134,7 +134,11 @@ const Snippet = (i: number, vertical?: boolean) => (
 
 type ExampleCard = typeof DestinationCard | typeof Snippet;
 
-const makeList = (cardType: ExampleCard,  vertical: boolean = false, number: number = 9) => {
+const makeList = (
+  cardType: ExampleCard,
+  number: number = 9,
+  vertical: boolean = false,
+) => {
   const cardList = [];
   for (let i = 0; i < number; i += 1) {
     cardList.push(cardType(i, vertical));
@@ -176,7 +180,7 @@ const RowToRailForSnippetsExample = () => (
     <BpkCardList
       {...commonProps}
       initiallyShownCards={2}
-      cardList={makeList(Snippet, true)} // vertical snippets
+      cardList={makeList(Snippet, 9, true)} // vertical snippets
       layoutDesktop={LAYOUTS.row}
       layoutMobile={LAYOUTS.rail}
       accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
@@ -215,8 +219,8 @@ const RowToStackForSnippetsWithExpandExample = () => {
     <PageContainer>
       <BpkCardList
         {...commonProps}
-        initiallyShownCards={2}
-        cardList={makeList(Snippet, true)} // vertical snippets
+        initiallyShownCards={1}
+        cardList={makeList(Snippet)}
         layoutDesktop={LAYOUTS.row}
         layoutMobile={LAYOUTS.stack}
         accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
