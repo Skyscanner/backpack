@@ -23,8 +23,8 @@ import uuid from 'uuid';
 import { cssModules } from '../../../bpk-react-utils';
 import { type CardListCarouselProps } from '../common-types';
 
-import { SET_INDEX_DELAY } from './constants';
 import {
+  lockScroll,
   setA11yTabIndex,
   useUpdateCurrentIndexByVisibility,
   useScrollToCard,
@@ -52,17 +52,18 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const [root, setRoot] = useState<HTMLElement | null>(null);
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
 
-  const [visibleRatios, setVisibleRatios] = useState<number[]>(
+  const [visibilityList, setVisibilityList] = useState<number[]>(
     Array(childrenLength).fill(0),
   );
+
   const setStateTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const stateScrollingLockRef = useRef(false);
   const openSetStateLockTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const observerVisibility = useIntersectionObserver(
-    { root, threshold: 0 },
-    visibleRatios,
-    setVisibleRatios,
+    { root, threshold: 0.5 },
+    setVisibilityList,
+    setStateTimeoutRef,
   );
 
   useEffect(() => {
@@ -70,13 +71,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     if (!container) return undefined;
 
     const lockScrollDuringInteraction = () => {
-      stateScrollingLockRef.current = true; // Prevent scrollIntoView while scrolling
-      if (openSetStateLockTimeoutRef.current) {
-        clearTimeout(openSetStateLockTimeoutRef.current); // reset the release lock timeout
-      }
-      openSetStateLockTimeoutRef.current = setTimeout(() => {
-        stateScrollingLockRef.current = false; // release the lock after 300ms
-      }, SET_INDEX_DELAY * 2);
+      lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef);
     };
 
     // Prevent scrollIntoView scroll back up when the user scroll down
@@ -95,9 +90,11 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   }, [root]);
 
   useUpdateCurrentIndexByVisibility(
-    visibleRatios,
+    visibilityList,
     setCurrentIndex,
     setStateTimeoutRef,
+    stateScrollingLockRef,
+    openSetStateLockTimeoutRef,
   );
 
   useScrollToCard(
@@ -126,7 +123,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         const cardRefCallback = (el: HTMLDivElement | null) => {
           cardRefs.current[index] = el;
           observerVisibility(el, index);
-          setA11yTabIndex(el, index, visibleRatios);
+          setA11yTabIndex(el, index, visibilityList);
         };
 
         const slideAriaLabel = `slide ${index + 1} of ${childrenLength}`;

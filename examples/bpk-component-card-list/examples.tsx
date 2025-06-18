@@ -136,7 +136,7 @@ type ExampleCard = typeof DestinationCard | typeof Snippet;
 
 const makeList = (
   cardType: ExampleCard,
-  number: number = 9,
+  number: number = 20,
   vertical: boolean = false,
 ) => {
   const cardList = [];

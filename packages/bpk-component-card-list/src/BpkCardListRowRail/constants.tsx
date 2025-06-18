@@ -16,5 +16,5 @@
  * limitations under the License.
  */
 
-export const VISIBLE_RATIO = 0.9;
-export const SET_INDEX_DELAY = 150;
+export const SET_INDEX_DELAY = 50;
+export const RELEASE_LOCK_DELAY = SET_INDEX_DELAY + 10;

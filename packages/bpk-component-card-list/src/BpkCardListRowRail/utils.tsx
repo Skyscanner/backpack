@@ -16,14 +16,30 @@
  * limitations under the License.
  */
 
-import { useEffect } from 'react';
+import { useEffect, useRef, useMemo } from 'react';
 
-import { VISIBLE_RATIO, SET_INDEX_DELAY } from './constants';
+import { SET_INDEX_DELAY, RELEASE_LOCK_DELAY } from './constants';
+
+export const lockScroll = (
+  stateScrollingLockRef: React.MutableRefObject<boolean>,
+  openSetStateLockTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
+) => {
+  // eslint-disable-next-line no-param-reassign
+  stateScrollingLockRef.current = true;
+  if (openSetStateLockTimeoutRef.current) {
+    clearTimeout(openSetStateLockTimeoutRef.current);
+  }
+  // eslint-disable-next-line no-param-reassign
+  openSetStateLockTimeoutRef.current = setTimeout(() => {
+    // eslint-disable-next-line no-param-reassign
+    stateScrollingLockRef.current = false;
+  }, RELEASE_LOCK_DELAY);
+};
 
 export const setA11yTabIndex = (
   el: HTMLDivElement | null,
   index: number,
-  visibleRatios: number[],
+  visibilityList: number[],
 ) => {
   if (!el) return;
   const focusableElements = el.querySelectorAll<HTMLElement>(
@@ -32,29 +48,32 @@ export const setA11yTabIndex = (
 
   focusableElements.forEach((element: HTMLElement) => {
     const targetElement = element;
-    targetElement.tabIndex = visibleRatios[index] >= VISIBLE_RATIO ? 0 : -1;
+    targetElement.tabIndex = visibilityList[index] === 1 ? 0 : -1;
   });
 };
 
 export const useUpdateCurrentIndexByVisibility = (
-  visibleRatios: number[],
+  visibilityList: number[],
   setCurrentIndex: (index: number) => void,
   setStateTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
+  stateScrollingLockRef: React.MutableRefObject<boolean>,
+  openSetStateLockTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
 ) => {
   useEffect(() => {
-    console.log('useUpdateCurrentIndexByVisibility', visibleRatios);
-    if (!visibleRatios || visibleRatios.length === 0) return;
+    if (!visibilityList || visibilityList.length === 0) return;
     if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current);
-
-    const firstVisibleIndex = visibleRatios.findIndex(
-      (ratio) => ratio >= VISIBLE_RATIO,
-    );
 
     // eslint-disable-next-line no-param-reassign
     setStateTimeoutRef.current = setTimeout(() => {
-      setCurrentIndex(firstVisibleIndex);
+      const firstVisibleIndex = visibilityList.findIndex(
+        (visibility) => visibility === 1,
+      );
+      if (firstVisibleIndex !== -1) {
+        setCurrentIndex(firstVisibleIndex);
+        lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef);
+      }
     }, SET_INDEX_DELAY);
-  }, [visibleRatios]);
+  }, [visibilityList]);
 };
 
 export const useScrollToCard = (
@@ -88,36 +107,60 @@ export const useScrollToCard = (
 
 export const useIntersectionObserver = (
   { root, threshold }: IntersectionObserverInit,
-  visibleRatios: number[],
-  setVisibleRatios: React.Dispatch<React.SetStateAction<number[]>>,
+  setVisibilityList: React.Dispatch<React.SetStateAction<number[]>>,
+  setStateTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
 ) => {
-  let observer: IntersectionObserver | null = null;
+  const callbackRef = useRef(setVisibilityList);
 
-  if (root) {
-    observer = new IntersectionObserver(
+  useEffect(() => {
+    callbackRef.current = setVisibilityList;
+  });
+
+  const observeAll = useMemo<
+    (element: HTMLElement | null, index: number) => void
+  >(() => {
+    if (!root) return () => {};
+    const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          const index = Number(entry.target.getAttribute('data-index'));
+          const { index } = (entry.target as HTMLElement).dataset;
+          if (!index) return;
 
-          if (entry.intersectionRatio !== visibleRatios[index]) {
-            setVisibleRatios((prev) => {
-              const newVisibleRatios = [...prev];
-              newVisibleRatios[index] = entry.intersectionRatio;
-              return newVisibleRatios;
+          if (setStateTimeoutRef.current)
+            clearTimeout(setStateTimeoutRef.current);
+
+          const currentIndex = parseInt(index, 10);
+
+          if (entry.isIntersecting) {
+            setVisibilityList((prevList) => {
+              const newList = [...prevList];
+              newList[currentIndex] = 1;
+              return newList;
+            });
+          }
+
+          if (!entry.isIntersecting) {
+            setVisibilityList((prevList) => {
+              const newList = [...prevList];
+              newList[currentIndex] = 0;
+              return newList;
             });
           }
         });
       },
+
       { root, threshold },
     );
-  }
 
-  const observe = (element: HTMLElement | null, index: number) => {
-    if (element && observer) {
-      element.setAttribute('data-index', index.toString());
-      observer.observe(element);
-    }
-  };
+    const observeElement = (element: HTMLElement | null, index: number) => {
+      if (element && observer) {
+        element.setAttribute('data-index', index.toString());
+        observer.observe(element);
+      }
+    };
 
-  return observe;
+    return observeElement;
+  }, [root, threshold]);
+
+  return observeAll;
 };

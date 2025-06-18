@@ -42,19 +42,16 @@ const makeMockDiv = (
 
 describe('setA11yTabIndex', () => {
   it('should set tabIndex to 0 for visible elements and -1 for hidden elements', () => {
-    const visibleRatios = [1, 0.8, 0.5, 0];
+    const visibilityList = [0, 1];
     const mockButtonList: HTMLElement[] = [];
 
-    Array.from({ length: 4 }).forEach((_, index) => {
+    Array.from({ length: 2 }).forEach((_, index) => {
       const { mockButton, mockDiv } = makeMockDiv(index);
-      setA11yTabIndex(mockDiv as HTMLDivElement, index, visibleRatios);
+      setA11yTabIndex(mockDiv as HTMLDivElement, index, visibilityList);
       mockButtonList.push(mockButton);
     });
-
-    expect(mockButtonList[0].tabIndex).toBe(0);
-    expect(mockButtonList[1].tabIndex).toBe(-1);
-    expect(mockButtonList[2].tabIndex).toBe(-1);
-    expect(mockButtonList[3].tabIndex).toBe(-1);
+    expect(mockButtonList[0].tabIndex).toBe(-1);
+    expect(mockButtonList[1].tabIndex).toBe(0);
   });
 });
 
