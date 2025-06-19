@@ -136,7 +136,7 @@ type ExampleCard = typeof DestinationCard | typeof Snippet;
 
 const makeList = (
   cardType: ExampleCard,
-  number: number = 20,
+  number: number = 10,
   vertical: boolean = false,
 ) => {
   const cardList = [];
@@ -175,16 +175,40 @@ const RowToRailExample = () => (
   </PageContainer>
 );
 
-const RowToRailForSnippetsExample = () => (
+const RowToStackExample = () => (
   <PageContainer>
     <BpkCardList
       {...commonProps}
-      initiallyShownCards={2}
-      cardList={makeList(Snippet, 9, true)} // vertical snippets
+      cardList={makeList(DestinationCard)}
       layoutDesktop={LAYOUTS.row}
-      layoutMobile={LAYOUTS.rail}
+      layoutMobile={LAYOUTS.stack}
       accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
-      buttonContent={undefined}
+    />
+  </PageContainer>
+);
+
+const GridToRailExample = () => (
+  <PageContainer>
+    <BpkCardList
+      {...commonProps}
+      cardList={makeList(DestinationCard, 6)}
+      layoutDesktop={LAYOUTS.grid}
+      layoutMobile={LAYOUTS.rail}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.button}
+      accessoryMobile={ACCESSORY_MOBILE_TYPES.button}
+    />
+  </PageContainer>
+);
+
+const GridToStackExample = () => (
+  <PageContainer>
+    <BpkCardList
+      {...commonProps}
+      cardList={makeList(DestinationCard, 6)}
+      layoutDesktop={LAYOUTS.grid}
+      layoutMobile={LAYOUTS.stack}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.button}
+      accessoryMobile={ACCESSORY_MOBILE_TYPES.button}
     />
   </PageContainer>
 );
@@ -212,65 +236,6 @@ const RowToStackWithExpandExample = () => {
   );
 };
 
-const RowToStackForSnippetsWithExpandExample = () => {
-  const [expandText, setExpandText] = useState('Show more');
-
-  return (
-    <PageContainer>
-      <BpkCardList
-        {...commonProps}
-        initiallyShownCards={1}
-        cardList={makeList(Snippet)}
-        layoutDesktop={LAYOUTS.row}
-        layoutMobile={LAYOUTS.stack}
-        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
-        accessoryMobile={ACCESSORY_MOBILE_TYPES.expand}
-        expandText={expandText}
-        onExpandClick={() =>
-          setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
-        }
-      />
-    </PageContainer>
-  );
-};
-
-const GridToRailWithExpandExample = () => {
-  const [expandText, setExpandText] = useState('Show more');
-
-  return (
-    <PageContainer>
-      <BpkCardList
-        {...commonProps}
-        cardList={makeList(DestinationCard, 6)}
-        layoutDesktop={LAYOUTS.grid}
-        layoutMobile={LAYOUTS.rail}
-        accessoryDesktop={ACCESSORY_DESKTOP_TYPES.expand}
-        expandText={expandText}
-        onExpandClick={() =>
-          setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
-        }
-        buttonHref={undefined}
-        onButtonClick={() =>
-          window.open('https://www.skyscanner.net/flights', '_blank')
-        }
-      />
-    </PageContainer>
-  );
-};
-
-const GridToStackExample = () => (
-  <PageContainer>
-    <BpkCardList
-      {...commonProps}
-      cardList={makeList(DestinationCard, 6)}
-      layoutDesktop={LAYOUTS.grid}
-      layoutMobile={LAYOUTS.stack}
-      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.button}
-      accessoryMobile={ACCESSORY_MOBILE_TYPES.button}
-    />
-  </PageContainer>
-);
-
 const GridToStackWithExpandExample = () => {
   const [expandText, setExpandText] = useState('Show more');
 
@@ -292,26 +257,40 @@ const GridToStackWithExpandExample = () => {
   );
 };
 
+const RowToRailForSnippetsExample = () => (
+  <PageContainer>
+    <BpkCardList
+      {...commonProps}
+      initiallyShownCards={2}
+      cardList={makeList(Snippet, 100, true)} // vertical snippets
+      layoutDesktop={LAYOUTS.row}
+      layoutMobile={LAYOUTS.rail}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+      buttonContent={undefined}
+    />
+  </PageContainer>
+);
+
 const MultiComponentsScrollingTestExample = () => (
   <PageContainer>
     <RowToRailExample />
     <br />
     <RowToRailForSnippetsExample />
     <br />
-    <GridToRailWithExpandExample />
+    <RowToStackWithExpandExample />
     <br />
-    <GridToStackExample />
+    <GridToStackWithExpandExample />
   </PageContainer>
 );
 
 export {
   BasicExample,
   RowToRailExample,
-  RowToRailForSnippetsExample,
-  RowToStackWithExpandExample,
-  RowToStackForSnippetsWithExpandExample,
-  GridToRailWithExpandExample,
+  RowToStackExample,
+  GridToRailExample,
   GridToStackExample,
+  RowToStackWithExpandExample,
   GridToStackWithExpandExample,
+  RowToRailForSnippetsExample,
   MultiComponentsScrollingTestExample,
 };

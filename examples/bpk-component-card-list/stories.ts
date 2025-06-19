@@ -21,12 +21,12 @@ import BpkCardList from '../../packages/bpk-component-card-list';
 import {
   BasicExample,
   RowToRailExample,
-  RowToRailForSnippetsExample,
-  RowToStackWithExpandExample,
-  RowToStackForSnippetsWithExpandExample,
-  GridToRailWithExpandExample,
+  RowToStackExample,
+  GridToRailExample,
   GridToStackExample,
+  RowToStackWithExpandExample,
   GridToStackWithExpandExample,
+  RowToRailForSnippetsExample,
   MultiComponentsScrollingTestExample,
 } from './examples';
 
@@ -37,13 +37,12 @@ export default {
 
 export const Basic = BasicExample;
 export const RowToRail = RowToRailExample;
-export const RowToRailForSnippets = RowToRailForSnippetsExample;
-export const RowToStackWithExpand = RowToStackWithExpandExample;
-export const RowToStackForSnippetsWithExpand =
-  RowToStackForSnippetsWithExpandExample;
+export const RowToStack = RowToStackExample;
+export const GridToRail = GridToRailExample;
 export const GridToStack = GridToStackExample;
+export const RowToStackWithExpand = RowToStackWithExpandExample;
 export const GridToStackWithExpand = GridToStackWithExpandExample;
-export const GridToRailWithExpand = GridToRailWithExpandExample;
+export const RowToRailForSnippets = RowToRailForSnippetsExample;
 
 export const MultiComponentsScrollingTest = MultiComponentsScrollingTestExample;
 export const VisualTest = Basic;
