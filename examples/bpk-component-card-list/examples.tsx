@@ -136,7 +136,7 @@ type ExampleCard = typeof DestinationCard | typeof Snippet;
 
 const makeList = (
   cardType: ExampleCard,
-  number: number = 10,
+  number: number = 100,
   vertical: boolean = false,
 ) => {
   const cardList = [];
@@ -273,6 +273,18 @@ const RowToRailForSnippetsExample = () => (
 
 const MultiComponentsScrollingTestExample = () => (
   <PageContainer>
+    <RowToRailExample />
+    <br />
+    <RowToRailForSnippetsExample />
+    <br />
+    <RowToStackWithExpandExample />
+    <br />
+    <RowToRailExample />
+    <br />
+    <RowToRailForSnippetsExample />
+    <br />
+    <RowToStackWithExpandExample />
+    <br />
     <RowToRailExample />
     <br />
     <RowToRailForSnippetsExample />

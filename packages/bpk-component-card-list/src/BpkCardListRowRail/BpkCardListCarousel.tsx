@@ -23,6 +23,7 @@ import uuid from 'uuid';
 import { cssModules } from '../../../bpk-react-utils';
 import { type CardListCarouselProps } from '../common-types';
 
+import { RENDER_BUFFER_SIZE } from './constants';
 import {
   lockScroll,
   setA11yTabIndex,
@@ -105,6 +106,15 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     setStateTimeoutRef,
   );
 
+  const firstVisibleIndex = Math.max(0, visibilityList.indexOf(1));
+  const lastVisibleIndex = firstVisibleIndex + initiallyShownCards - 1;
+  const renderList = visibilityList.map((_, index) =>
+    index >= firstVisibleIndex - RENDER_BUFFER_SIZE &&
+    index <= lastVisibleIndex + RENDER_BUFFER_SIZE
+      ? 1
+      : 0,
+  );
+
   const carouselAriaLabel = `Entering Carousel with ${initiallyShownCards} slides shown at a time, ${childrenLength} slides in total. Please use Pagination below with the Previous and Next buttons to navigate, or the slide dot buttons at the end to jump to slides.`;
 
   return (
@@ -138,7 +148,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
             aria-label={slideAriaLabel}
             aria-current={index === currentIndex ? 'true' : 'false'}
           >
-            {card}
+            {renderList[index] === 1 && card}
           </div>
         );
       })}
