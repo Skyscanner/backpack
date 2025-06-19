@@ -53,6 +53,7 @@ export const setA11yTabIndex = (
 };
 
 export const useUpdateCurrentIndexByVisibility = (
+  isMobile: boolean,
   visibilityList: number[],
   setCurrentIndex: (index: number) => void,
   setStateTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
@@ -60,6 +61,7 @@ export const useUpdateCurrentIndexByVisibility = (
   openSetStateLockTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
 ) => {
   useEffect(() => {
+    if (isMobile) return;
     if (!visibilityList || visibilityList.length === 0) return;
     if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current);
 

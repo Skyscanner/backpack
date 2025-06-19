@@ -41,13 +41,14 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     children,
     currentIndex,
     initiallyShownCards,
+    isMobile = false,
     layout,
     setCurrentIndex,
   } = props;
 
   const shownNumberStyle = {
     flex: `0 0 calc((100% - ${8 * (initiallyShownCards - 1)}px) / ${initiallyShownCards})`,
-  } as CSSProperties;
+  };
 
   const childrenLength = Children.count(children);
   const [root, setRoot] = useState<HTMLElement | null>(null);
@@ -91,6 +92,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   }, [root]);
 
   useUpdateCurrentIndexByVisibility(
+    isMobile,
     visibilityList,
     setCurrentIndex,
     setStateTimeoutRef,
@@ -138,17 +140,24 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
         const slideAriaLabel = `slide ${index + 1} of ${childrenLength}`;
 
+        const cardStyle: CSSProperties = isMobile
+          ? {
+              ...shownNumberStyle,
+              visibility: renderList[index] === 1 ? 'visible' : 'hidden',
+            }
+          : shownNumberStyle;
+
         return (
           <div
             className={getClassName(`bpk-card-list-row-rail__${layout}__card`)}
             ref={cardRefCallback}
-            style={shownNumberStyle}
+            style={cardStyle}
             key={`carousel-card-${index.toString()}-${uuid}`}
             role="group"
             aria-label={slideAriaLabel}
             aria-current={index === currentIndex ? 'true' : 'false'}
           >
-            {renderList[index] === 1 && card}
+            {isMobile ? card : renderList[index] === 1 && card}
           </div>
         );
       })}

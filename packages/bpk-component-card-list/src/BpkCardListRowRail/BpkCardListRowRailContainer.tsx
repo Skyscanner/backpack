@@ -30,7 +30,13 @@ import STYLES from './BpkCardListRowRailContainer.module.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
-  const { accessory, children, initiallyShownCards, layout } = props;
+  const {
+    accessory,
+    children,
+    initiallyShownCards,
+    isMobile = false,
+    layout,
+  } = props;
 
   const totalIndicators = children.length;
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -62,6 +68,7 @@ const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
         layout={layout}
         currentIndex={currentIndex}
         setCurrentIndex={setCurrentIndex}
+        isMobile={isMobile}
       >
         {children}
       </BpkCardListCarousel>

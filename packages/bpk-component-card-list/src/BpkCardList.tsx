@@ -107,6 +107,7 @@ const BpkCardList = (props: CardListProps) => {
                   <BpkCardListRowRailContainer
                     initiallyShownCards={initiallyShownCards}
                     layout={layoutMobile}
+                    isMobile
                   >
                     {cardList}
                   </BpkCardListRowRailContainer>

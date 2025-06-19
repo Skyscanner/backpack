@@ -83,6 +83,7 @@ type CardListRowRailProps = {
   initiallyShownCards: number;
   layout: typeof LAYOUTS.row | typeof LAYOUTS.rail;
   accessory?: typeof ACCESSORY_DESKTOP_TYPES.pagination;
+  isMobile?: boolean;
 };
 
 type CardListCarouselProps = {
@@ -91,7 +92,8 @@ type CardListCarouselProps = {
   layout: typeof LAYOUTS.row | typeof LAYOUTS.rail;
   currentIndex: number;
   setCurrentIndex: Dispatch<SetStateAction<number>>;
-}
+  isMobile?: boolean;
+};
 
 type CardListProps = CardListBaseProps;
 
