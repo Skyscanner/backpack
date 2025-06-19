@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactElement } from 'react';
+import type { ReactElement, Dispatch, SetStateAction } from 'react';
 
 const LAYOUTS = {
   grid: 'grid',
@@ -78,20 +78,22 @@ type CardListGridStackProps = {
   buttonHref?: string;
 };
 
-// type CardListRowRailProps = {
-//   children: Array<ReactElement<HTMLDivElement | HTMLAnchorElement>>;
-//   initiallyShownCards: number;
-//   layout: typeof LAYOUTS.row | typeof LAYOUTS.rail;
-//   accessory?: typeof ACCESSORY_DESKTOP_TYPES.Pagination;
-// };
+type CardListRowRailProps = {
+  children: Array<ReactElement<HTMLDivElement | HTMLAnchorElement>>;
+  initiallyShownCards: number;
+  layout: typeof LAYOUTS.row | typeof LAYOUTS.rail;
+  accessory?: typeof ACCESSORY_DESKTOP_TYPES.pagination;
+  isMobile?: boolean;
+};
 
-// type CardListCarouselProps = {
-//   children: Array<ReactElement<HTMLDivElement | HTMLAnchorElement>>;
-//   initiallyShownCards: number;
-//   layout: typeof LAYOUTS.row | typeof LAYOUTS.rail;
-//   currentIndex: number;
-//   setCurrentIndex: Dispatch<SetStateAction<number>>;
-// }
+type CardListCarouselProps = {
+  children: Array<ReactElement<HTMLDivElement | HTMLAnchorElement>>;
+  initiallyShownCards: number;
+  layout: typeof LAYOUTS.row | typeof LAYOUTS.rail;
+  currentIndex: number;
+  setCurrentIndex: Dispatch<SetStateAction<number>>;
+  isMobile?: boolean;
+};
 
 type CardListProps = CardListBaseProps;
 
@@ -101,7 +103,7 @@ export type {
   LayoutDesktop,
   LayoutMobile,
   CardListGridStackProps,
-  // CardListRowRailProps,
-  // CardListCarouselProps,
+  CardListRowRailProps,
+  CardListCarouselProps,
   ExpandProps,
 };

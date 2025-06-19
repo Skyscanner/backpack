@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useState, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import { BpkButtonV2 } from '../../bpk-component-button';
@@ -24,7 +24,7 @@ import BpkSectionHeader from '../../bpk-component-section-header';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkCardListGridStack from './BpkCardListGridStack';
-// import BpkCardListRowRailContainer from './BpkCardListRowRail';
+import BpkCardListRowRailContainer from './BpkCardListRowRail';
 import {
   ACCESSORY_DESKTOP_TYPES,
   ACCESSORY_MOBILE_TYPES,
@@ -58,19 +58,15 @@ const BpkCardList = (props: CardListProps) => {
   } = props;
 
   const [showHeaderButton, setShowHeaderButton] = useState(false);
-  const [isMobileActive, setIsMobileActive] = useState(false);
+  const showHeaderButtonRef = useRef(false);
 
   useEffect(() => {
-    if (isMobileActive) {
-      setShowHeaderButton(
-        !!buttonContent && accessoryMobile !== ACCESSORY_MOBILE_TYPES.button,
-      );
+    if (showHeaderButtonRef.current) {
+      setShowHeaderButton(true);
     } else {
-      setShowHeaderButton(
-        !!buttonContent && accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.button,
-      );
+      setShowHeaderButton(false);
     }
-  }, [isMobileActive, buttonContent, accessoryMobile, accessoryDesktop]);
+  }, [showHeaderButtonRef]);
 
   const headerButton = buttonContent && (
     <BpkButtonV2
@@ -99,18 +95,24 @@ const BpkCardList = (props: CardListProps) => {
         <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
           {(isActive) => {
             if (isActive) {
-              setIsMobileActive(isActive);
+              if (
+                !!buttonContent &&
+                accessoryMobile !== ACCESSORY_MOBILE_TYPES.button &&
+                showHeaderButtonRef.current !== true
+              )
+                showHeaderButtonRef.current = true;
 
-              // if (layoutMobile === LAYOUTS.rail) {
-              //   return (
-              //     <BpkCardListRowRailContainer
-              //       initiallyShownCards={initiallyShownCards}
-              //       layout={layoutMobile}
-              //     >
-              //       {cardList}
-              //     </BpkCardListRowRailContainer>
-              //   );
-              // }
+              if (layoutMobile === LAYOUTS.rail) {
+                return (
+                  <BpkCardListRowRailContainer
+                    initiallyShownCards={initiallyShownCards}
+                    layout={layoutMobile}
+                    isMobile
+                  >
+                    {cardList}
+                  </BpkCardListRowRailContainer>
+                );
+              }
 
               if (layoutMobile === LAYOUTS.stack) {
                 return (
@@ -130,23 +132,28 @@ const BpkCardList = (props: CardListProps) => {
               }
             }
 
-            /// ///// Desktop Cases ////////
+            if (
+              !!buttonContent &&
+              accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.button &&
+              showHeaderButtonRef.current !== true
+            )
+              showHeaderButtonRef.current = true;
 
-            // if (
-            //   layoutDesktop === LAYOUTS.row &&
-            //   accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.expand &&
-            //   accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.button
-            // ) {
-            //   return (
-            //     <BpkCardListRowRailContainer
-            //       accessory={accessoryDesktop}
-            //       initiallyShownCards={initiallyShownCards}
-            //       layout={layoutDesktop}
-            //     >
-            //       {cardList}
-            //     </BpkCardListRowRailContainer>
-            //   );
-            // }
+            if (
+              layoutDesktop === LAYOUTS.row &&
+              accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.expand &&
+              accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.button
+            ) {
+              return (
+                <BpkCardListRowRailContainer
+                  accessory={accessoryDesktop}
+                  initiallyShownCards={initiallyShownCards}
+                  layout={layoutDesktop}
+                >
+                  {cardList}
+                </BpkCardListRowRailContainer>
+              );
+            }
 
             if (
               layoutDesktop === LAYOUTS.grid &&
