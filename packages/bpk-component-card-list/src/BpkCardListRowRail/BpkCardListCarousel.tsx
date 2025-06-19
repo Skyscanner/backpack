@@ -70,7 +70,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
   useEffect(() => {
     const container = root;
-    if (!container) return undefined;
+    if (isMobile || !container) return undefined;
 
     const lockScrollDuringInteraction = () => {
       lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef);
@@ -143,7 +143,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         const cardStyle: CSSProperties = isMobile
           ? {
               ...shownNumberStyle,
-              visibility: renderList[index] === 1 ? 'visible' : 'hidden',
+              // visibility: renderList[index] === 1 ? 'visible' : 'hidden',
             }
           : shownNumberStyle;
 
