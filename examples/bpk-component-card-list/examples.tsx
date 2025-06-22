@@ -28,6 +28,9 @@ import {
   ACCESSORY_DESKTOP_TYPES,
   ACCESSORY_MOBILE_TYPES,
 } from '../../packages/bpk-component-card-list/src/common-types';
+import BpkMultiSelectChipGroup, {
+  CHIP_GROUP_TYPES,
+} from '../../packages/bpk-component-chip-group';
 import {
   withButtonAlignment,
   withRtlSupport,
@@ -42,7 +45,8 @@ import BpkSnippet, {
 import BpkText, {
   TEXT_STYLES,
 } from '../../packages/bpk-component-text/src/BpkText';
-import { BpkChipGroupRail } from '../bpk-component-chip-group/examples';
+
+import type { MultiSelectProps } from '../../packages/bpk-component-chip-group';
 
 import STYLES from './examples.module.scss';
 
@@ -57,16 +61,84 @@ const imageUrlsDestination = [
   'https://content.skyscnr.com/m/08ab12ef4f2e4c0c/original/sync_206570010_Viking_Cave_206570010_992.jpg',
 ];
 
+const BpkMultiSelectChipGroupState = ({ chips, ...rest }: MultiSelectProps) => {
+  const [selectedChips, setSelectedChips] = useState(
+    chips.map((c) => Boolean(c.selected)),
+  );
+
+  const statefulChips = chips.map(
+    (chip, index) =>
+      chip && {
+        ...chip,
+        selected: selectedChips[index],
+        onClick: (selected: boolean, selectedIndex: number) => {
+          if (chip.onClick) {
+            chip.onClick(selected, selectedIndex);
+          }
+
+          const nextSelectedChips = [...selectedChips];
+          nextSelectedChips[selectedIndex] = selected;
+          setSelectedChips(nextSelectedChips);
+        },
+      },
+  );
+
+  return <BpkMultiSelectChipGroup chips={statefulChips} {...rest} />;
+};
+
+const chips = [
+  {
+    text: 'London',
+  },
+  {
+    text: 'Liguria',
+    selected: true,
+  },
+  {
+    text: 'Florence',
+  },
+  {
+    text: 'Stockholm',
+  },
+  {
+    text: 'Copenhagen',
+  },
+  {
+    text: 'Salzburg',
+  },
+  {
+    text: 'Graz',
+  },
+  {
+    text: 'Lanzarote',
+  },
+  {
+    text: 'Valencia',
+  },
+  {
+    text: 'Reykjavik',
+  },
+  {
+    text: 'Tallinn',
+  },
+  {
+    text: 'Sofia',
+  },
+];
+
 const commonProps = {
-  title: 'Must-visit spots',
-  description:
-    'Check out these world-famous destinations perfect for visiting in spring.',
-  chipGroup: <BpkChipGroupRail />,
-  buttonContent: (
-    <span>
-      Explore More <AlignedSmallLongArrowRightIcon />
-    </span>
+  title: 'We think you’ll like',
+  description: 'Check out these destinations for a spring getaway',
+  chipGroup: (
+    <BpkMultiSelectChipGroupState
+      type={CHIP_GROUP_TYPES.rail}
+      chips={chips}
+      ariaLabel="Select cities"
+      leadingNudgerLabel="Scroll back"
+      trailingNudgerLabel="Scroll forward"
+    />
   ),
+  buttonContent: 'See more',
   buttonHref: 'https://www.skyscanner.net/',
   initiallyShownCards: 3,
 };
@@ -136,7 +208,7 @@ type ExampleCard = typeof DestinationCard | typeof Snippet;
 
 const makeList = (
   cardType: ExampleCard,
-  number: number = 100,
+  number: number = 10,
   vertical: boolean = false,
 ) => {
   const cardList = [];
@@ -229,8 +301,12 @@ const RowToStackWithExpandExample = () => {
         onExpandClick={() =>
           setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
         }
-        buttonHref={undefined}
-        buttonContent="Static Button"
+        buttonContent={
+          <span>
+            See more <AlignedSmallLongArrowRightIcon />
+          </span>
+        }
+        buttonHref={undefined} // render <button> instead of <a>
       />
     </PageContainer>
   );

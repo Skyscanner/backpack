@@ -143,7 +143,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         const cardStyle: CSSProperties = isMobile
           ? {
               ...shownNumberStyle,
-              // visibility: renderList[index] === 1 ? 'visible' : 'hidden',
+              visibility: renderList[index] === 1 ? 'visible' : 'hidden',
             }
           : shownNumberStyle;
 
