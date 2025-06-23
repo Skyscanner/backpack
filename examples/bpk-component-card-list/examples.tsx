@@ -19,8 +19,6 @@
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 
-import uuid from 'uuid';
-
 import BpkCard from '../../packages/bpk-component-card';
 import BpkCardList from '../../packages/bpk-component-card-list';
 import {
@@ -147,7 +145,7 @@ const snippetProps = {
 const DestinationCard = (i: number) => (
   // Usage Suggestion: define minWidth from consumer side by using className
   <BpkCard
-    key={`card-${i.toString()}-${uuid}`}
+    key={`card-${i}`}
     className={STYLES['bpk-card']}
     href="/"
     padded={false}
@@ -191,7 +189,7 @@ const Snippet = (i: number, vertical?: boolean) => (
     desktopLayout={vertical ? SNIPPET_DESKTOP_LAYOUT.vertical : undefined}
     src={imageUrlsDestination[i % 4]}
     {...snippetProps}
-    key={`snippet-${i.toString()}-${uuid}`}
+    key={`snippet-${i}`}
   />
 );
 
@@ -199,7 +197,7 @@ type ExampleCard = typeof DestinationCard | typeof Snippet;
 
 const makeList = (
   cardType: ExampleCard,
-  number: number = 10,
+  number: number = 15,
   vertical: boolean = false,
 ) => {
   const cardList = [];
@@ -324,7 +322,7 @@ const RowToRailForSnippetsExample = () => (
     <BpkCardList
       {...commonProps}
       initiallyShownCards={2}
-      cardList={makeList(Snippet, 100, true)} // vertical snippets
+      cardList={makeList(Snippet, 15, true)} // vertical snippets
       layoutDesktop={LAYOUTS.row}
       layoutMobile={LAYOUTS.rail}
       accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}

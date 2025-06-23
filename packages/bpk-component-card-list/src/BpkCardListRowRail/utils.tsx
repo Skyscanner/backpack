@@ -139,9 +139,7 @@ export const useIntersectionObserver = (
               newList[currentIndex] = 1;
               return newList;
             });
-          }
-
-          if (!entry.isIntersecting) {
+          } else {
             setVisibilityList((prevList) => {
               const newList = [...prevList];
               newList[currentIndex] = 0;

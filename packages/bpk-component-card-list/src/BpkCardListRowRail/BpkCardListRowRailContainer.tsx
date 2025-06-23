@@ -47,7 +47,7 @@ const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
     accessory === ACCESSORY_DESKTOP_TYPES.pagination ? (
       <BpkPageIndicator
         currentIndex={currentIndex}
-        totalIndicators={totalIndicators - initiallyShownCards + 1}
+        totalIndicators={totalIndicators}
         onClick={(_e, index) => {
           setCurrentIndex(index);
         }}
