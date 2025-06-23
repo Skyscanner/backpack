@@ -57,16 +57,13 @@ const BpkCardList = (props: CardListProps) => {
     title,
   } = props;
 
-  const [showHeaderButton, setShowHeaderButton] = useState(false);
-  const showHeaderButtonRef = useRef(false);
-
-  useEffect(() => {
-    if (showHeaderButtonRef.current) {
-      setShowHeaderButton(true);
-    } else {
-      setShowHeaderButton(false);
+  const shouldShowHeaderButton = (isMobile: boolean) => {
+    if (!buttonContent) return false;
+    if (isMobile) {
+      return accessoryMobile !== ACCESSORY_MOBILE_TYPES.button;
     }
-  }, [showHeaderButtonRef]);
+    return accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.button;
+  };
 
   const headerButton = buttonContent && (
     <BpkButtonV2
@@ -80,105 +77,81 @@ const BpkCardList = (props: CardListProps) => {
 
   return (
     <div className={getClassName('bpk-card-list')} data-testid="bpk-card-list">
-      <BpkSectionHeader
-        title={title}
-        description={description}
-        button={showHeaderButton ? headerButton : null}
-      />
+      <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+        {(isMobile) => (
+          <>
+            <BpkSectionHeader
+              title={title}
+              description={description}
+              button={shouldShowHeaderButton(isMobile) ? headerButton : null}
+            />
 
-      {chipGroup}
+            {chipGroup}
 
-      <div
-        className={getClassName('bpk-card-list--card-list')}
-        data-testid="bpk-card-list--card-list"
-      >
-        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-          {(isActive) => {
-            if (isActive) {
-              if (
-                !!buttonContent &&
-                accessoryMobile !== ACCESSORY_MOBILE_TYPES.button &&
-                showHeaderButtonRef.current !== true
-              )
-                showHeaderButtonRef.current = true;
-
-              if (layoutMobile === LAYOUTS.rail) {
-                return (
-                  <BpkCardListRowRailContainer
-                    initiallyShownCards={initiallyShownCards}
-                    layout={layoutMobile}
-                    isMobile
-                  >
-                    {cardList}
-                  </BpkCardListRowRailContainer>
-                );
-              }
-
-              if (layoutMobile === LAYOUTS.stack) {
-                return (
-                  <BpkCardListGridStack
-                    accessory={accessoryMobile}
-                    initiallyShownCards={initiallyShownCards}
-                    buttonContent={buttonContent}
-                    expandText={expandText}
-                    onButtonClick={onButtonClick}
-                    onExpandClick={onExpandClick}
-                    layout={layoutMobile}
-                    buttonHref={buttonHref}
-                  >
-                    {cardList}
-                  </BpkCardListGridStack>
-                );
-              }
-            }
-
-            if (
-              !!buttonContent &&
-              accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.button &&
-              showHeaderButtonRef.current !== true
-            )
-              showHeaderButtonRef.current = true;
-
-            if (
-              layoutDesktop === LAYOUTS.row &&
-              accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.expand &&
-              accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.button
-            ) {
-              return (
-                <BpkCardListRowRailContainer
-                  accessory={accessoryDesktop}
-                  initiallyShownCards={initiallyShownCards}
-                  layout={layoutDesktop}
-                >
-                  {cardList}
-                </BpkCardListRowRailContainer>
-              );
-            }
-
-            if (
-              layoutDesktop === LAYOUTS.grid &&
-              accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.pagination
-            ) {
-              return (
-                <BpkCardListGridStack
-                  accessory={accessoryDesktop}
-                  initiallyShownCards={initiallyShownCards}
-                  buttonContent={buttonContent}
-                  expandText={expandText}
-                  onButtonClick={onButtonClick}
-                  onExpandClick={onExpandClick}
-                  layout={layoutDesktop}
-                  buttonHref={buttonHref}
-                >
-                  {cardList}
-                </BpkCardListGridStack>
-              );
-            }
-
-            return null;
-          }}
-        </BpkBreakpoint>
-      </div>
+            <div
+              className={getClassName('bpk-card-list--card-list')}
+              data-testid="bpk-card-list--card-list"
+            >
+              {isMobile ? (
+                <>
+                  {layoutMobile === LAYOUTS.rail && (
+                    <BpkCardListRowRailContainer
+                      initiallyShownCards={initiallyShownCards}
+                      layout={layoutMobile}
+                      isMobile
+                    >
+                      {cardList}
+                    </BpkCardListRowRailContainer>
+                  )}
+                  {layoutMobile === LAYOUTS.stack && (
+                    <BpkCardListGridStack
+                      accessory={accessoryMobile}
+                      initiallyShownCards={initiallyShownCards}
+                      buttonContent={buttonContent}
+                      expandText={expandText}
+                      onButtonClick={onButtonClick}
+                      onExpandClick={onExpandClick}
+                      layout={layoutMobile}
+                      buttonHref={buttonHref}
+                    >
+                      {cardList}
+                    </BpkCardListGridStack>
+                  )}
+                </>
+              ) : (
+                <>
+                  {layoutDesktop === LAYOUTS.row &&
+                    accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.expand &&
+                    accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.button && (
+                      <BpkCardListRowRailContainer
+                        accessory={accessoryDesktop}
+                        initiallyShownCards={initiallyShownCards}
+                        layout={layoutDesktop}
+                      >
+                        {cardList}
+                      </BpkCardListRowRailContainer>
+                    )}
+                  {layoutDesktop === LAYOUTS.grid &&
+                    accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.pagination && (
+                      <BpkCardListGridStack
+                        accessory={accessoryDesktop}
+                        initiallyShownCards={initiallyShownCards}
+                        buttonContent={buttonContent}
+                        expandText={expandText}
+                        onButtonClick={onButtonClick}
+                        onExpandClick={onExpandClick}
+                        layout={layoutDesktop}
+                        buttonHref={buttonHref}
+                      >
+                        {cardList}
+                      </BpkCardListGridStack>
+                    )}
+                </>
+              )}
+            </div>
+          </>
+        )}
+      </BpkBreakpoint>
     </div>
   );
 };
