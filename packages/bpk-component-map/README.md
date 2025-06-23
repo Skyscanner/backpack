@@ -96,13 +96,13 @@ export default () => (
 );
 ```
 
-### BpkPriceMarkerV2
+### BpkPriceMarker
 
-BpkPriceMarker V2 version that is the BpkPriceMarker redesign.
+Price markers are used to display clickable prices on a map.
 
 ```js
 import BpkMap, {
-  BpkPriceMarkerV2,
+  BpkPriceMarker,
   MARKER_STATUSES,
 } from '@skyscanner/backpack-web/bpk-component-map';
 
@@ -116,7 +116,7 @@ export default () => (
       longitude: 86.925,
     }}
   >
-    <BpkPriceMarkerV2
+    <BpkPriceMarker
       label="£120"
       position={{ latitude: 27.9881, longitude: 86.925 }}
       onClick={() => {
@@ -125,7 +125,7 @@ export default () => (
       status={MARKER_STATUSES.selected}
       accessibilityLabel="Price marker pressed."
     />
-    <BpkPriceMarkerV2
+    <BpkPriceMarker
       label="£120"
       position={{ latitude: 27.9881, longitude: 86.925 }}
       onClick={() => {
@@ -134,7 +134,7 @@ export default () => (
       status={MARKER_STATUSES.previous_selected}
       accessibilityLabel="Have seen Price marker before"
     />
-    <BpkPriceMarkerV2
+    <BpkPriceMarker
       label="£120"
       icon={<AlignedAirportsIconSm />}
       position={{ latitude: 27.9881, longitude: 86.925 }}

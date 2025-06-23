@@ -20,8 +20,9 @@ import type { ReactNode } from 'react';
 
 import { render } from '@testing-library/react';
 
-import { BpkPriceMarkerV2 } from './BpkPriceMarker';
-import { MARKER_STATUSES } from './BpkPriceMarkerButton';
+import { MARKER_STATUSES } from '../BpkPriceMarkerButton';
+
+import BpkPriceMarker from './BpkPriceMarker';
 
 type Props = {
   children: ReactNode;
@@ -37,7 +38,7 @@ jest.mock('@react-google-maps/api', () => ({
   ),
 }));
 
-describe('BpkPriceMarkerV2', () => {
+describe('BpkPriceMarker', () => {
   const position = {
     latitude: 41.386947,
     longitude: 2.170048,
@@ -45,7 +46,7 @@ describe('BpkPriceMarkerV2', () => {
 
   it('should render properly', () => {
     const { asFragment } = render(
-      <BpkPriceMarkerV2
+      <BpkPriceMarker
         label="£120"
         position={position}
         accessibilityLabel="Click the price marker"
@@ -57,7 +58,7 @@ describe('BpkPriceMarkerV2', () => {
   it('should render properly with a icon', () => {
     const icon = <span>Icon</span>;
     const { asFragment } = render(
-      <BpkPriceMarkerV2
+      <BpkPriceMarker
         label="£120"
         icon={icon}
         position={position}
@@ -69,7 +70,7 @@ describe('BpkPriceMarkerV2', () => {
 
   it('should render correctly with "status" attribute as "selected"', () => {
     const { asFragment } = render(
-      <BpkPriceMarkerV2
+      <BpkPriceMarker
         label="£120"
         position={position}
         status={MARKER_STATUSES.selected}
@@ -81,7 +82,7 @@ describe('BpkPriceMarkerV2', () => {
 
   it('should render correctly with "status" attribute as "previous_selected"', () => {
     const { asFragment } = render(
-      <BpkPriceMarkerV2
+      <BpkPriceMarker
         label="£120"
         position={position}
         status={MARKER_STATUSES.previous_selected}
@@ -93,7 +94,7 @@ describe('BpkPriceMarkerV2', () => {
 
   it('should render correctly with a "className" attribute', () => {
     const { asFragment } = render(
-      <BpkPriceMarkerV2
+      <BpkPriceMarker
         label="£120"
         position={position}
         className="custom-class-1 custom-class-2"
@@ -105,7 +106,7 @@ describe('BpkPriceMarkerV2', () => {
 
   it('should render correctly with a "buttonProps" attribute', () => {
     const { asFragment } = render(
-      <BpkPriceMarkerV2
+      <BpkPriceMarker
         label="£120"
         position={position}
         buttonProps={{ testId: 'arbitrary value' }}
@@ -117,7 +118,7 @@ describe('BpkPriceMarkerV2', () => {
 
   it('should render correctly with a "onClick" attribute', () => {
     const { asFragment } = render(
-      <BpkPriceMarkerV2
+      <BpkPriceMarker
         label="£120"
         position={position}
         onClick={() => {

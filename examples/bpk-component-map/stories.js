@@ -20,8 +20,7 @@ import BpkIconMarker from '../../packages/bpk-component-map/src/BpkIconMarker';
 import BpkMap from '../../packages/bpk-component-map/src/BpkMap';
 import BpkOverlayView from '../../packages/bpk-component-map/src/BpkOverlayView';
 import BpkPriceMarker from '../../packages/bpk-component-map/src/BpkPriceMarker';
-import { BpkPriceMarkerV2 } from '../../packages/bpk-component-map/src/BpkPriceMarkerV2/BpkPriceMarker';
-import BpkPriceMarkerButton from '../../packages/bpk-component-map/src/BpkPriceMarkerV2/BpkPriceMarkerButton';
+import BpkPriceMarkerButton from '../../packages/bpk-component-map/src/BpkPriceMarkerButton/BpkPriceMarkerButton';
 
 import {
   SimpleExample,
@@ -33,10 +32,9 @@ import {
   WithAMarkerExample,
   WithIconMarkersExample,
   WithPriceMarkersExample,
-  WithPriceMarkersV2Example,
-  WithIconPriceMarkersV2Example,
-  WithPriceMarkersV2ButtonWithPopoverOnMapExample,
-  WithIconPriceMarkersV2ButtonWithPopoverOnMapExample,
+  WithIconPriceMarkersExample,
+  WithPriceMarkersButtonWithPopoverOnMapExample,
+  WithIconPriceMarkersButtonWithPopoverOnMapExample,
   MultipleMapsExample,
 } from './examples';
 import WithGoogleMapsScriptMock from './stories-utils';
@@ -47,7 +45,6 @@ export default {
   subcomponents: {
     BpkIconMarker,
     BpkPriceMarker,
-    BpkPriceMarkerV2,
     BpkPriceMarkerButton,
     BpkOverlayView,
     withGoogleMapsScript: WithGoogleMapsScriptMock,
@@ -73,14 +70,12 @@ export const IconMarkers = WithIconMarkersExample;
 
 export const PriceMarkers = WithPriceMarkersExample;
 
-export const PriceMarkersV2 = WithPriceMarkersV2Example;
+export const WithIconPriceMarkers = WithIconPriceMarkersExample;
 
-export const WithIconPriceMarkersV2 = WithIconPriceMarkersV2Example;
+export const PriceMarkersButtonWithPopoverOnMap =
+  WithPriceMarkersButtonWithPopoverOnMapExample;
 
-export const PriceMarkersV2ButtonWithPopoverOnMap =
-  WithPriceMarkersV2ButtonWithPopoverOnMapExample;
-
-export const WithIconPriceMarkersV2ButtonWithPopoverOnMap =
-  WithIconPriceMarkersV2ButtonWithPopoverOnMapExample;
+export const WithIconPriceMarkersButtonWithPopoverOnMap =
+  WithIconPriceMarkersButtonWithPopoverOnMapExample;
 
 export const MultiMaps = MultipleMapsExample;
