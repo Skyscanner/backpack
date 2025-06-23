@@ -42,7 +42,7 @@ const ACCESSORY_MOBILE_TYPES = {
 type ExpandProps = {
   children: string | ReactElement;
   collapsed: boolean;
-  onExpandTogle: () => void;
+  onExpandToggle: () => void;
 };
 
 type CardListBaseProps = {

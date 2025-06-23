@@ -21,7 +21,7 @@ import { useRef, useState, useEffect, isValidElement, Children } from 'react';
 import uuid from 'uuid';
 
 import { cssModules } from '../../../bpk-react-utils';
-import { type CardListCarouselProps } from '../common-types';
+
 
 import { RENDER_BUFFER_SIZE } from './constants';
 import {
@@ -31,6 +31,8 @@ import {
   useScrollToCard,
   useIntersectionObserver,
 } from './utils';
+
+import type { CardListCarouselProps } from '../common-types';
 
 import STYLES from './BpkCardListCarousel.module.scss';
 
@@ -78,12 +80,12 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
     // Prevent scrollIntoView scroll back up when the user scroll down
     // rapidly and immediately after he scroll the carousel with touchBar
-    container.addEventListener('mousewheel', lockScrollDuringInteraction);
+    container.addEventListener('wheel', lockScrollDuringInteraction);
     container.addEventListener('touchmove', lockScrollDuringInteraction);
 
     return () => {
       container.removeEventListener('touchmove', lockScrollDuringInteraction);
-      container.removeEventListener('mousewheel', lockScrollDuringInteraction);
+      container.removeEventListener('wheel', lockScrollDuringInteraction);
       if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current);
       if (openSetStateLockTimeoutRef.current) {
         clearTimeout(openSetStateLockTimeoutRef.current);

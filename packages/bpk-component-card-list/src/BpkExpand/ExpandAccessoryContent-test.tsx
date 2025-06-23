@@ -22,7 +22,7 @@ import userEvent from '@testing-library/user-event';
 import ExpandAccessoryContent from './ExpandAccessoryContent';
 
 describe('ExpandAccessoryContent', () => {
-  const onExpandTogle = jest.fn();
+  const onExpandToggle = jest.fn();
 
   beforeEach(() => {
     jest.resetAllMocks();
@@ -32,7 +32,7 @@ describe('ExpandAccessoryContent', () => {
     const user = userEvent.setup();
 
     render(
-      <ExpandAccessoryContent collapsed onExpandTogle={onExpandTogle}>
+      <ExpandAccessoryContent collapsed onExpandToggle={onExpandToggle}>
         Expand
       </ExpandAccessoryContent>,
     );
@@ -41,14 +41,14 @@ describe('ExpandAccessoryContent', () => {
     expect(button).toHaveTextContent('Expand');
 
     await user.click(button);
-    expect(onExpandTogle).toHaveBeenCalled();
+    expect(onExpandToggle).toHaveBeenCalled();
   });
 
   it('should render correctly when expanded', async () => {
     const user = userEvent.setup();
 
     render(
-      <ExpandAccessoryContent collapsed={false} onExpandTogle={onExpandTogle}>
+      <ExpandAccessoryContent collapsed={false} onExpandToggle={onExpandToggle}>
         Collapse
       </ExpandAccessoryContent>,
     );
@@ -57,6 +57,6 @@ describe('ExpandAccessoryContent', () => {
     expect(button).toHaveTextContent('Collapse');
 
     await user.click(button);
-    expect(onExpandTogle).toHaveBeenCalled();
+    expect(onExpandToggle).toHaveBeenCalled();
   });
 });

@@ -32,12 +32,12 @@ const AlignedChevronUpIcon = withButtonAlignment(withRtlSupport(ChevronUp));
 const ExpandAccessoryContent = ({
   children,
   collapsed,
-  onExpandTogle,
+  onExpandToggle,
 }: ExpandProps) => (
     <BpkButtonV2
       data-testid="bpk-card-list__accessory-expand-button"
       type={BUTTON_TYPES.link}
-      onClick={() => onExpandTogle()}
+      onClick={() => onExpandToggle()}
       aria-expanded={!collapsed}
     >
       {children}

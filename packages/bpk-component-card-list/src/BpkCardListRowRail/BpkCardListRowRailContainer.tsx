@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { useState } from 'react';
+import { useState, Children } from 'react';
 
 import BpkPageIndicator from '../../../bpk-component-page-indicator';
 import { cssModules } from '../../../bpk-react-utils';
@@ -38,7 +38,7 @@ const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
     layout,
   } = props;
 
-  const totalIndicators = children.length;
+  const totalIndicators = Children.count(children);
   const [currentIndex, setCurrentIndex] = useState(0);
   const showAccessory = totalIndicators > initiallyShownCards;
 
