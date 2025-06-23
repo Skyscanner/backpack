@@ -301,11 +301,6 @@ const RowToStackWithExpandExample = () => {
         onExpandClick={() =>
           setExpandText(expandText === 'Show more' ? 'Show less' : 'Show more')
         }
-        buttonContent={
-          <span>
-            See more <AlignedSmallLongArrowRightIcon />
-          </span>
-        }
         buttonHref={undefined} // render <button> instead of <a>
       />
     </PageContainer>
