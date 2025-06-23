@@ -21,11 +21,12 @@ import type { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import { withRtlSupport } from '../../../bpk-component-icon';
-import AirportsIconSm from '../../../bpk-component-icon/sm/airports';
-import BpkPriceMarkerButton from '../BpkPriceMarkerButton';
+import { withRtlSupport } from '../../bpk-component-icon';
+import AirportsIconSm from '../../bpk-component-icon/sm/airports';
 
 import BpkPriceMarker from './BpkPriceMarker';
+import BpkPriceMarkerButton from './BpkPriceMarkerButton';
+
 
 const AlignedAirportsIconSm = withRtlSupport(AirportsIconSm);
 

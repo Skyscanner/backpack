@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-import BpkBasicMapMarker from '../BpkBasicMapMarker';
-import BpkPriceMarkerButton, { MARKER_STATUSES } from '../BpkPriceMarkerButton/BpkPriceMarkerButton';
+import BpkBasicMapMarker from './BpkBasicMapMarker';
+import BpkPriceMarkerButton, { MARKER_STATUSES } from './BpkPriceMarkerButton';
 
-import type { Props as BpkPriceMarkerButtonProps } from '../BpkPriceMarkerButton/BpkPriceMarkerButton';
+import type { Props as BpkPriceMarkerButtonProps } from './BpkPriceMarkerButton';
 
 type Props = {
   accessibilityLabel: string;
