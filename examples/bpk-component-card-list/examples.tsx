@@ -31,11 +31,6 @@ import {
 import BpkMultiSelectChipGroup, {
   CHIP_GROUP_TYPES,
 } from '../../packages/bpk-component-chip-group';
-import {
-  withButtonAlignment,
-  withRtlSupport,
-} from '../../packages/bpk-component-icon';
-import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
 import BpkImage from '../../packages/bpk-component-image';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLink from '../../packages/bpk-component-link';
@@ -49,10 +44,6 @@ import BpkText, {
 import type { MultiSelectProps } from '../../packages/bpk-component-chip-group';
 
 import STYLES from './examples.module.scss';
-
-const AlignedSmallLongArrowRightIcon = withButtonAlignment(
-  withRtlSupport(SmallLongArrowRightIcon),
-);
 
 const imageUrlsDestination = [
   'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg',
