@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-export const SET_INDEX_DELAY = 50;
-export const RELEASE_LOCK_DELAY = SET_INDEX_DELAY + 10;
+
+export const RELEASE_LOCK_DELAY = 10;
 export const RENDER_BUFFER_SIZE = 3;

@@ -18,7 +18,7 @@
 
 import { useEffect, useRef, useMemo } from 'react';
 
-import { SET_INDEX_DELAY, RELEASE_LOCK_DELAY } from './constants';
+import { RELEASE_LOCK_DELAY } from './constants';
 
 export const lockScroll = (
   stateScrollingLockRef: React.MutableRefObject<boolean>,
@@ -56,25 +56,20 @@ export const useUpdateCurrentIndexByVisibility = (
   isMobile: boolean,
   visibilityList: number[],
   setCurrentIndex: (index: number) => void,
-  setStateTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
   stateScrollingLockRef: React.MutableRefObject<boolean>,
   openSetStateLockTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
 ) => {
   useEffect(() => {
     if (isMobile) return;
     if (!visibilityList || visibilityList.length === 0) return;
-    if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current);
 
-    // eslint-disable-next-line no-param-reassign
-    setStateTimeoutRef.current = setTimeout(() => {
-      const firstVisibleIndex = visibilityList.findIndex(
-        (visibility) => visibility === 1,
-      );
-      if (firstVisibleIndex !== -1) {
-        setCurrentIndex(firstVisibleIndex);
-        lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef);
-      }
-    }, SET_INDEX_DELAY);
+    const firstVisibleIndex = visibilityList.findIndex(
+      (visibility) => visibility === 1,
+    );
+    if (firstVisibleIndex !== -1) {
+      setCurrentIndex(firstVisibleIndex);
+      lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef);
+    }
   }, [visibilityList]);
 };
 
@@ -83,7 +78,6 @@ export const useScrollToCard = (
   container: HTMLElement | null,
   cardRefs: React.MutableRefObject<Array<HTMLDivElement | null>>,
   stateScrollingLockRef: React.MutableRefObject<boolean>,
-  setStateTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
 ) => {
   useEffect(() => {
     const isVisible =
@@ -94,7 +88,6 @@ export const useScrollToCard = (
 
     if (stateScrollingLockRef.current && stateScrollingLockRef.current === true)
       return;
-    if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current);
 
     const targetCard = cardRefs.current[currentIndex];
     if (targetCard) {
@@ -110,7 +103,6 @@ export const useScrollToCard = (
 export const useIntersectionObserver = (
   { root, threshold }: IntersectionObserverInit,
   setVisibilityList: React.Dispatch<React.SetStateAction<number[]>>,
-  setStateTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
 ) => {
   const callbackRef = useRef(setVisibilityList);
 
@@ -127,9 +119,6 @@ export const useIntersectionObserver = (
         entries.forEach((entry) => {
           const { index } = (entry.target as HTMLElement).dataset;
           if (!index) return;
-
-          if (setStateTimeoutRef.current)
-            clearTimeout(setStateTimeoutRef.current);
 
           const currentIndex = parseInt(index, 10);
 

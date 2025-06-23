@@ -20,7 +20,6 @@ import { useRef, useState, useEffect, isValidElement, Children } from 'react';
 
 import { cssModules } from '../../../bpk-react-utils';
 
-
 import { RENDER_BUFFER_SIZE } from './constants';
 import {
   lockScroll,
@@ -58,14 +57,12 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     Array(childrenLength).fill(0),
   );
 
-  const setStateTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const stateScrollingLockRef = useRef(false);
   const openSetStateLockTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const observerVisibility = useIntersectionObserver(
     { root, threshold: 0.5 },
     setVisibilityList,
-    setStateTimeoutRef,
   );
 
   useEffect(() => {
@@ -84,7 +81,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     return () => {
       container.removeEventListener('touchmove', lockScrollDuringInteraction);
       container.removeEventListener('wheel', lockScrollDuringInteraction);
-      if (setStateTimeoutRef.current) clearTimeout(setStateTimeoutRef.current);
       if (openSetStateLockTimeoutRef.current) {
         clearTimeout(openSetStateLockTimeoutRef.current);
       }
@@ -95,18 +91,11 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     isMobile,
     visibilityList,
     setCurrentIndex,
-    setStateTimeoutRef,
     stateScrollingLockRef,
     openSetStateLockTimeoutRef,
   );
 
-  useScrollToCard(
-    currentIndex,
-    root,
-    cardRefs,
-    stateScrollingLockRef,
-    setStateTimeoutRef,
-  );
+  useScrollToCard(currentIndex, root, cardRefs, stateScrollingLockRef);
 
   const firstVisibleIndex = Math.max(0, visibilityList.indexOf(1));
   const lastVisibleIndex = firstVisibleIndex + initiallyShownCards - 1;
