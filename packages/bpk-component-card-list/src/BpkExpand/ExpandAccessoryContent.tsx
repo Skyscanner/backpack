@@ -37,7 +37,7 @@ const ExpandAccessoryContent = ({
     <BpkButtonV2
       data-testid="bpk-card-list__accessory-expand-button"
       type={BUTTON_TYPES.link}
-      onClick={() => onExpandToggle()}
+      onClick={onExpandToggle}
       aria-expanded={!collapsed}
     >
       {children}
