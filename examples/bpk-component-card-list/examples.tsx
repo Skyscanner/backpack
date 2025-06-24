@@ -173,7 +173,7 @@ const DestinationCard = (i: number) => (
           <BpkText textStyle={TEXT_STYLES.heading5}>Hotel</BpkText>
           <div className={STYLES['bpk-destination__column']}>
             <BpkLink tabIndex={0} href="#">
-              {/* A11y test for table objects inside a card */}
+              {/* A11y test for tabable objects inside a card */}
               <BpkText textStyle={TEXT_STYLES.heading5}>£100</BpkText>
             </BpkLink>
           </div>

@@ -51,15 +51,15 @@ type CardListBaseProps = {
   cardList: ReactElement[];
   layoutMobile: LayoutMobile;
   layoutDesktop: LayoutDesktop;
-  accessoryDesktop?: (typeof ACCESSORY_DESKTOP_TYPES)[keyof typeof ACCESSORY_DESKTOP_TYPES]; // added
-  accessoryMobile?: (typeof ACCESSORY_MOBILE_TYPES)[keyof typeof ACCESSORY_MOBILE_TYPES]; // added
+  accessoryDesktop?: (typeof ACCESSORY_DESKTOP_TYPES)[keyof typeof ACCESSORY_DESKTOP_TYPES];
+  accessoryMobile?: (typeof ACCESSORY_MOBILE_TYPES)[keyof typeof ACCESSORY_MOBILE_TYPES]; 
   initiallyShownCardsDesktop?: number;
   initiallyShownCardsMobile?: number;
   chipGroup?: ReactElement;
   buttonContent?: React.ReactNode;
   onButtonClick?: () => void;
-  onExpandClick?: () => void; // added
-  buttonHref?: string; // added
+  onExpandClick?: () => void;
+  buttonHref?: string;
   expandText?: string;
 };
 

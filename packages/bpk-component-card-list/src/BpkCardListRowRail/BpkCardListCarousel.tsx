@@ -77,8 +77,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef);
     };
 
-    // Prevent scrollIntoView scroll back up when the user scroll down
-    // rapidly and immediately after he scroll the carousel with touchBar
     container.addEventListener('wheel', lockScrollDuringInteraction);
     container.addEventListener('touchmove', lockScrollDuringInteraction);
 
