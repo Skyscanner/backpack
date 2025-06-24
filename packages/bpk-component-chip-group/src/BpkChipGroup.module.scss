@@ -41,26 +41,3 @@
     flex-wrap: wrap;
   }
 }
-
-.bpk-sticky-chip-container:first-child {
-  margin-inline-start: tokens.bpk-spacing-sm();
-}
-
-.bpk-sticky-chip-container {
-  margin-inline-end: tokens.bpk-spacing-sm();
-  padding-inline-end: tokens.bpk-spacing-md();
-
-  @include borders.bpk-border-right-sm(tokens.$bpk-line-day);
-
-  @include utils.bpk-rtl {
-    @include borders.bpk-border-left-sm(tokens.$bpk-line-day);
-  }
-
-  &--on-dark {
-    @include borders.bpk-border-right-sm(tokens.$bpk-line-on-dark-day);
-
-    @include utils.bpk-rtl {
-      @include borders.bpk-border-left-sm(tokens.$bpk-line-on-dark-day);
-    }
-  }
-}

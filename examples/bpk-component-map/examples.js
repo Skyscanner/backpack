@@ -19,7 +19,7 @@
 
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
-import { Component } from 'react';
+import { Component, useRef, useState } from 'react';
 
 import { withRtlSupport } from '../../packages/bpk-component-icon';
 import AirportsIconSm from '../../packages/bpk-component-icon/sm/airports';
@@ -34,7 +34,9 @@ import BpkMap, {
   PRICE_MARKER_STATUSES,
   MARKER_STATUSES,
   withGoogleMapsScript,
+  BpkPriceMarkerButton,
 } from '../../packages/bpk-component-map';
+import BpkPopover from '../../packages/bpk-component-popover';
 import BpkText from '../../packages/bpk-component-text';
 import { action } from '../bpk-storybook-utils';
 
@@ -209,26 +211,23 @@ class StatefulBpkPriceMarkerV2 extends Component<
         zoom={15}
         center={{ latitude: 55.944665, longitude: -3.1964903 }}
       >
-        {venues
-          .map((venue) => (
-            <BpkPriceMarkerV2
-              id={venue.id}
-              label={venue.price}
-              icon={
-                this.props.airportsIconWithPrice ? venue.airportsIcon : null
-              }
-              position={{
-                latitude: venue.latitude,
-                longitude: venue.longitude,
-              }}
-              onClick={() => {
-                this.props.action();
-                this.selectVenue(venue.id);
-              }}
-              status={this.getStatus(venue.id)}
-              accessibilityLabel="Click the price marker"
-            />
-          ))}
+        {venues.map((venue) => (
+          <BpkPriceMarkerV2
+            id={venue.id}
+            label={venue.price}
+            icon={this.props.airportsIconWithPrice ? venue.airportsIcon : null}
+            position={{
+              latitude: venue.latitude,
+              longitude: venue.longitude,
+            }}
+            onClick={() => {
+              this.props.action();
+              this.selectVenue(venue.id);
+            }}
+            status={this.getStatus(venue.id)}
+            accessibilityLabel="Click the price marker"
+          />
+        ))}
       </StoryMap>
     );
   }
@@ -275,6 +274,78 @@ class StatefulBpkIconMarker extends Component<
     );
   }
 }
+
+const getPixelPositionOffset = (width: number, height: number) => ({
+  x: -(width / 2),
+  y: -height,
+});
+
+const StatefulBpkPriceMarkerButtonWithPopoverOnMap = ({
+  action: inlineAction,
+  airportsIconWithPrice,
+}: {
+  action: () => mixed,
+  airportsIconWithPrice: boolean,
+}) => {
+  const [selectedId, setSelectedId] = useState('2');
+  const [viewedVenues, setViewedVenues] = useState(['1']);
+  const ref = useRef(null);
+
+  const getStatus = (id: string) => {
+    if (selectedId === id) {
+      return MARKER_STATUSES.selected;
+    }
+    if (viewedVenues.includes(id)) {
+      return MARKER_STATUSES.previous_selected;
+    }
+    return MARKER_STATUSES.unselected;
+  };
+
+  const selectVenue = (id: string) => {
+    setSelectedId(id);
+    setViewedVenues((prevState) => [...prevState, id]);
+  };
+
+  return (
+    <StoryMap zoom={15} center={{ latitude: 55.944665, longitude: -3.1964903 }}>
+      {venues.map((venue) => (
+        <BpkOverlayView
+          getPixelPositionOffset={getPixelPositionOffset}
+          position={{
+            latitude: venue.latitude,
+            longitude: venue.longitude,
+          }}
+        >
+          <BpkPopover
+            hoverable
+            showArrow
+            id="map-marker-popover"
+            padded
+            label="Map marker popover"
+            labelAsTitle
+            target={
+              <div ref={ref} style={{ width: 'fit-content' }}>
+                <BpkPriceMarkerButton
+                  id={venue.id}
+                  label={venue.price}
+                  icon={airportsIconWithPrice ? venue.airportsIcon : null}
+                  onClick={() => {
+                    inlineAction();
+                    selectVenue(venue.id);
+                  }}
+                  status={getStatus(venue.id)}
+                  accessibilityLabel="Click the price marker button"
+                />
+              </div>
+            }
+          >
+            <BpkText>Map marker popover content.</BpkText>
+          </BpkPopover>
+        </BpkOverlayView>
+      ))}
+    </StoryMap>
+  );
+};
 
 const onZoom = (level) => {
   action(`Zoom changed to ${level}`);
@@ -361,6 +432,20 @@ const WithIconPriceMarkersV2Example = () => (
   />
 );
 
+const WithPriceMarkersV2ButtonWithPopoverOnMapExample = () => (
+  <StatefulBpkPriceMarkerButtonWithPopoverOnMap
+    action={action('Price marker button clicked')}
+    airportsIconWithPrice={false}
+  />
+);
+
+const WithIconPriceMarkersV2ButtonWithPopoverOnMapExample = () => (
+  <StatefulBpkPriceMarkerButtonWithPopoverOnMap
+    action={action('Price marker button clicked')}
+    airportsIconWithPrice
+  />
+);
+
 const MultipleMapsExample = () => (
   <>
     <span>first map:</span>
@@ -395,6 +480,8 @@ export {
   WithPriceMarkersExample,
   WithPriceMarkersV2Example,
   WithIconPriceMarkersV2Example,
+  WithPriceMarkersV2ButtonWithPopoverOnMapExample,
+  WithIconPriceMarkersV2ButtonWithPopoverOnMapExample,
   MultipleMapsExample,
   VisualTestExample,
 };

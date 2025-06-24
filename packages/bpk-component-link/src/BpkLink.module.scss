@@ -33,3 +33,19 @@
     @include typography.bpk-link--alternate;
   }
 }
+
+.bpk-link-underlined {
+  @include typography.bpk-link-underlined;
+
+  &--implicit {
+    @include typography.bpk-link-underlined--implicit;
+  }
+
+  &--alternate {
+    @include typography.bpk-link-underlined--alternate;
+  }
+
+  &-implicit--alternate {
+    @include typography.bpk-link-underlined-implicit--alternate;
+  }
+}
