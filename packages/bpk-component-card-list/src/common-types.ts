@@ -53,7 +53,8 @@ type CardListBaseProps = {
   layoutDesktop: LayoutDesktop;
   accessoryDesktop?: (typeof ACCESSORY_DESKTOP_TYPES)[keyof typeof ACCESSORY_DESKTOP_TYPES]; // added
   accessoryMobile?: (typeof ACCESSORY_MOBILE_TYPES)[keyof typeof ACCESSORY_MOBILE_TYPES]; // added
-  initiallyShownCards?: number;
+  initiallyShownCardsDesktop?: number;
+  initiallyShownCardsMobile?: number;
   chipGroup?: ReactElement;
   buttonContent?: React.ReactNode;
   onButtonClick?: () => void;

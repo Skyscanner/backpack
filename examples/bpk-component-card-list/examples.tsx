@@ -129,7 +129,7 @@ const commonProps = {
   ),
   buttonContent: 'See more',
   buttonHref: 'https://www.skyscanner.net/',
-  initiallyShownCards: 3,
+  initiallyShownCardsMobile: 2,
 };
 
 const snippetProps = {
@@ -321,7 +321,8 @@ const RowToRailForSnippetsExample = () => (
   <PageContainer>
     <BpkCardList
       {...commonProps}
-      initiallyShownCards={2}
+      initiallyShownCardsDesktop={2}
+      initiallyShownCardsMobile={1}
       cardList={makeList(Snippet, 15, true)} // vertical snippets
       layoutDesktop={LAYOUTS.row}
       layoutMobile={LAYOUTS.rail}

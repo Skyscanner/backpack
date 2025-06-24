@@ -49,7 +49,8 @@ const BpkCardList = (props: CardListProps) => {
     chipGroup,
     description,
     expandText,
-    initiallyShownCards = DEFAULT_ITEMS,
+    initiallyShownCardsDesktop = DEFAULT_ITEMS,
+    initiallyShownCardsMobile = DEFAULT_ITEMS,
     layoutDesktop,
     layoutMobile,
     onButtonClick,
@@ -96,7 +97,7 @@ const BpkCardList = (props: CardListProps) => {
                 <>
                   {layoutMobile === LAYOUTS.rail && (
                     <BpkCardListRowRailContainer
-                      initiallyShownCards={initiallyShownCards}
+                      initiallyShownCards={initiallyShownCardsMobile}
                       layout={layoutMobile}
                       isMobile
                     >
@@ -106,7 +107,7 @@ const BpkCardList = (props: CardListProps) => {
                   {layoutMobile === LAYOUTS.stack && (
                     <BpkCardListGridStack
                       accessory={accessoryMobile}
-                      initiallyShownCards={initiallyShownCards}
+                      initiallyShownCards={initiallyShownCardsMobile}
                       buttonContent={buttonContent}
                       expandText={expandText}
                       onButtonClick={onButtonClick}
@@ -125,7 +126,7 @@ const BpkCardList = (props: CardListProps) => {
                     accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.button && (
                       <BpkCardListRowRailContainer
                         accessory={accessoryDesktop}
-                        initiallyShownCards={initiallyShownCards}
+                        initiallyShownCards={initiallyShownCardsDesktop}
                         layout={layoutDesktop}
                       >
                         {cardList}
@@ -135,7 +136,7 @@ const BpkCardList = (props: CardListProps) => {
                     accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.pagination && (
                       <BpkCardListGridStack
                         accessory={accessoryDesktop}
-                        initiallyShownCards={initiallyShownCards}
+                        initiallyShownCards={initiallyShownCardsDesktop}
                         buttonContent={buttonContent}
                         expandText={expandText}
                         onButtonClick={onButtonClick}
