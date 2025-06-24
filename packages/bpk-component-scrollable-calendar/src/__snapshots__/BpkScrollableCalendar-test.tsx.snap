@@ -91,11 +91,11 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                 <span
                   class="bpk-scrollable-calendar-grid__title"
                 >
-                  <h1
+                  <h2
                     class="bpk-text bpk-text--heading-4"
                   >
                     February 2010
-                  </h1>
+                  </h2>
                 </span>
                 <div
                   aria-hidden="false"
@@ -684,11 +684,11 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                 <span
                   class="bpk-scrollable-calendar-grid__title"
                 >
-                  <h1
+                  <h2
                     class="bpk-text bpk-text--heading-4"
                   >
                     March 2010
-                  </h1>
+                  </h2>
                 </span>
                 <div
                   aria-hidden="false"
@@ -1450,11 +1450,11 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                 <span
                   class="bpk-scrollable-calendar-grid__title"
                 >
-                  <h1
+                  <h2
                     class="bpk-text bpk-text--heading-4"
                   >
                     February 2010
-                  </h1>
+                  </h2>
                 </span>
                 <div
                   aria-hidden="false"
@@ -2043,11 +2043,11 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                 <span
                   class="bpk-scrollable-calendar-grid__title"
                 >
-                  <h1
+                  <h2
                     class="bpk-text bpk-text--heading-4"
                   >
                     March 2010
-                  </h1>
+                  </h2>
                 </span>
                 <div
                   aria-hidden="false"
@@ -2809,11 +2809,11 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                 <span
                   class="bpk-scrollable-calendar-grid__title"
                 >
-                  <h1
+                  <h2
                     class="bpk-text bpk-text--heading-4"
                   >
                     February 2010
-                  </h1>
+                  </h2>
                 </span>
                 <div
                   aria-hidden="false"
@@ -3402,11 +3402,11 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                 <span
                   class="bpk-scrollable-calendar-grid__title"
                 >
-                  <h1
+                  <h2
                     class="bpk-text bpk-text--heading-4"
                   >
                     March 2010
-                  </h1>
+                  </h2>
                 </span>
                 <div
                   aria-hidden="false"
@@ -4168,11 +4168,11 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                 <span
                   class="bpk-scrollable-calendar-grid__title"
                 >
-                  <h1
+                  <h2
                     class="bpk-text bpk-text--heading-4"
                   >
                     February 2010
-                  </h1>
+                  </h2>
                 </span>
                 <div
                   aria-hidden="false"
@@ -4761,11 +4761,11 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                 <span
                   class="bpk-scrollable-calendar-grid__title"
                 >
-                  <h1
+                  <h2
                     class="bpk-text bpk-text--heading-4"
                   >
                     March 2010
-                  </h1>
+                  </h2>
                 </span>
                 <div
                   aria-hidden="false"
