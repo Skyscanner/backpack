@@ -22,9 +22,7 @@ import { Transition } from 'react-transition-group';
 
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -137,6 +135,8 @@ const BpkDrawerContent = ({
               <BpkButtonLink onClick={onClose}>{closeText}</BpkButtonLink>
             ) : (
               <div className={getClassName('bpk-drawer__close-button')}>
+                // @ts-expect-error TS(2322): Type 'string | undefined' is not assignable to typ... Remove this comment to see the full error message
+                // @ts-expect-error TS(2322) FIXME: Type 'string | undefined' is not assignable to typ... Remove this comment to see the full error message
                 <BpkCloseButton label={closeLabel} onClick={onClose} />
               </div>
             )}

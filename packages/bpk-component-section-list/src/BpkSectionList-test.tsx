@@ -30,6 +30,7 @@ describe('BpkSectionList', () => {
 
   it('should render correctly with a custom className', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2322) FIXME: Type '{ children: string; className: string; }' is... Remove this comment to see the full error message
       <BpkSectionList className="custom-class">Hello world</BpkSectionList>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -37,6 +38,7 @@ describe('BpkSectionList', () => {
 
   it('should render correctly with arbitrary props', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2322) FIXME: Type '{ children: string; testid: string; }' is no... Remove this comment to see the full error message
       <BpkSectionList testid="123">Hello world</BpkSectionList>,
     );
     expect(asFragment()).toMatchSnapshot();

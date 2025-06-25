@@ -25,6 +25,7 @@ import BpkCheckbox from './BpkCheckbox';
 describe('BpkCheckbox', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2740) FIXME: Type '{ name: string; label: string; }' is missing... Remove this comment to see the full error message
       <BpkCheckbox name="checkbox" label="Prefer directs" />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -32,6 +33,7 @@ describe('BpkCheckbox', () => {
 
   it('should render correctly with id attribute', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; id: string; }... Remove this comment to see the full error message
       <BpkCheckbox name="checkbox" label="Prefer directs" id="checkbox" />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -43,6 +45,7 @@ describe('BpkCheckbox', () => {
         name="checkbox"
         label="Prefer directs"
         checked
+        // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; checked: true... Remove this comment to see the full error message
         onChange={() => {}}
       />,
     );
@@ -51,6 +54,7 @@ describe('BpkCheckbox', () => {
 
   it('should render correctly with disabled attribute', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2740) FIXME: Type '{ name: string; label: string; disabled: tru... Remove this comment to see the full error message
       <BpkCheckbox name="checkbox" label="Prefer directs" disabled />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -58,6 +62,7 @@ describe('BpkCheckbox', () => {
 
   it('should render correctly with white attribute', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2740) FIXME: Type '{ name: string; label: string; white: true; ... Remove this comment to see the full error message
       <BpkCheckbox name="checkbox" label="Prefer directs" white />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -65,6 +70,7 @@ describe('BpkCheckbox', () => {
 
   it('should render correctly with valid=false attribute', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2740) FIXME: Type '{ name: string; label: string; valid: false;... Remove this comment to see the full error message
       <BpkCheckbox name="checkbox" label="Prefer directs" valid={false} />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -72,6 +78,7 @@ describe('BpkCheckbox', () => {
 
   it('should render correctly with required attribute', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2740) FIXME: Type '{ name: string; label: string; required: tru... Remove this comment to see the full error message
       <BpkCheckbox name="checkbox" label="Prefer directs" required />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -79,6 +86,7 @@ describe('BpkCheckbox', () => {
 
   it('should render correctly with value attribute', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; value: string... Remove this comment to see the full error message
       <BpkCheckbox name="checkbox" label="Prefer directs" value="my-value" />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -86,6 +94,7 @@ describe('BpkCheckbox', () => {
 
   it('should render correctly with a small label', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2740) FIXME: Type '{ name: string; label: string; smallLabel: t... Remove this comment to see the full error message
       <BpkCheckbox name="checkbox" label="Prefer directs" smallLabel />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -93,6 +102,7 @@ describe('BpkCheckbox', () => {
 
   it('should render correctly with indeterminate attribute', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2740) FIXME: Type '{ name: string; label: string; indeterminate... Remove this comment to see the full error message
       <BpkCheckbox name="checkbox" label="Prefer directs" indeterminate />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -105,6 +115,7 @@ describe('BpkCheckbox', () => {
         label="Prefer directs"
         indeterminate
         checked
+        // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; indeterminate... Remove this comment to see the full error message
         onChange={() => {}}
       />,
     );
@@ -113,6 +124,7 @@ describe('BpkCheckbox', () => {
 
   it('should render as disabled when required and disabled', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2740) FIXME: Type '{ name: string; label: string; required: tru... Remove this comment to see the full error message
       <BpkCheckbox name="checkbox" label="Prefer directs" required disabled />,
     );
     expect(asFragment()).toMatchSnapshot();

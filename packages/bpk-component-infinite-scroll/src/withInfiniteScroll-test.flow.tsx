@@ -21,6 +21,7 @@
 import { Component, Fragment } from 'react';
 
 import { ArrayDataSource } from './DataSource';
+// @ts-expect-error TS(1192) FIXME: Module '"/Users/fayexiao/Documents/workspace4/back... Remove this comment to see the full error message
 import withInfiniteScroll from './withInfiniteScroll';
 
 const elementsArray = [];
@@ -32,6 +33,7 @@ for (let i = 0; i < 5; i += 1) {
 type ListProps = {
   elements: Array<any>,
   'aria-label': string,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   onClick?: ?() => void,
 };
 
@@ -47,7 +49,9 @@ class List extends Component<ListProps> {
     const { elements, ...rest } = this.props;
     return (
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
+      // @ts-expect-error TS(2746) FIXME: This JSX tag's 'children' prop expects a single ch... Remove this comment to see the full error message
       <div id="list" {...rest}>
+        // @ts-expect-error TS(2322): Type 'void' is not assignable to type 'ReactNode'.
         {elements.forEach((element) => (
           <div key={element}>{element}</div>
         ))}
@@ -88,9 +92,12 @@ const InfiniteList = withInfiniteScroll(List);
       elementsPerScroll={5}
       initiallyLoadedElements={1}
       loaderIntersectionTrigger="small"
+      // @ts-expect-error TS(7006) FIXME: Parameter 'evt' implicitly has an 'any' type.
       onScroll={(evt) => {}} // eslint-disable-line no-unused-vars
+      // @ts-expect-error TS(7006) FIXME: Parameter 'evt' implicitly has an 'any' type.
       onScrollFinished={(evt) => {}} // eslint-disable-line no-unused-vars
       renderLoadingComponent={() => <div />}
+      // @ts-expect-error TS(7006) FIXME: Parameter 'onClick' implicitly has an 'any' type.
       renderSeeMoreComponent={(onClick) => (
         <button type="button" onClick={onClick}>
           Button

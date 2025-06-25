@@ -24,22 +24,25 @@ import { action } from '../bpk-storybook-utils';
 
 class StatefulBpkSelect extends Component {
   constructor() {
+    // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 0.
     super();
     this.state = { value: 'oranges' };
   }
 
-  onChange = (value) => {
+  onChange = (value: any) => {
     action(`BpkSelect changed. New value: ${value}`);
     this.setState({ value });
   };
 
   render() {
     return (
+      // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
       <BpkSelect
         id="destination"
         name="destination"
+        // @ts-expect-error TS(2339) FIXME: Property 'value' does not exist on type 'Readonly<... Remove this comment to see the full error message
         value={this.state.value}
-        onChange={(event) => {
+        onChange={(event: any) => {
           this.onChange(event.target.value);
         }}
         {...this.props}
@@ -55,8 +58,7 @@ class StatefulBpkSelect extends Component {
   }
 }
 
-const getFlagUriFromCountryCode = (countryCode) =>
-  `https://images.skyscnr.com/images/country/flag/header/${countryCode.toLowerCase()}.png`;
+const getFlagUriFromCountryCode = (countryCode: any) => `https://images.skyscnr.com/images/country/flag/header/${countryCode.toLowerCase()}.png`;
 
 const countries = [
   { key: 0, id: 'AT', name: 'Austria', disabled: false },
@@ -70,7 +72,7 @@ const countries = [
   { key: 8, id: 'US', name: 'USA', disabled: true },
 ];
 class SelectWithImage extends Component {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = {
       selected: 'IT',
@@ -78,9 +80,10 @@ class SelectWithImage extends Component {
   }
 
   getItemByValue = () => {
+    // @ts-expect-error TS(2339) FIXME: Property 'options' does not exist on type 'Readonl... Remove this comment to see the full error message
     const { options } = this.props;
-    return (val) => {
-      const items = options.filter((o) => o.id === val);
+    return (val: any) => {
+      const items = options.filter((o: any) => o.id === val);
       if (!items.length) throw new Error('Item does not exists');
       return items[0];
     };
@@ -88,7 +91,7 @@ class SelectWithImage extends Component {
 
   getItem = this.getItemByValue();
 
-  handleChange = (e) => {
+  handleChange = (e: any) => {
     const item = this.getItem(e.target.value);
 
     this.setState({
@@ -96,27 +99,30 @@ class SelectWithImage extends Component {
     });
   };
 
-  image = (id) => <img alt="Flag" src={getFlagUriFromCountryCode(id)} />;
+  image = (id: any) => <img alt="Flag" src={getFlagUriFromCountryCode(id)} />;
 
   render() {
+    // @ts-expect-error TS(2339) FIXME: Property 'options' does not exist on type 'Readonl... Remove this comment to see the full error message
     const { options, ...rest } = this.props;
     return (
+      // @ts-expect-error TS(2322) FIXME: Type '{ children: any; image: Element; onChange: (... Remove this comment to see the full error message
       <BpkSelect
+        // @ts-expect-error TS(2339) FIXME: Property 'selected' does not exist on type 'Readon... Remove this comment to see the full error message
         value={this.getItem(this.state.selected).id}
         {...rest}
+        // @ts-expect-error TS(2339) FIXME: Property 'selected' does not exist on type 'Readon... Remove this comment to see the full error message
         image={this.image(this.getItem(this.state.selected).id)}
         onChange={this.handleChange}
       >
-        {options.map((o) => (
-          <option key={o.id} disabled={o.disabled && 'disabled'} value={o.id}>
-            {o.name}
-          </option>
-        ))}
+        {options.map((o: any) => <option key={o.id} disabled={o.disabled && 'disabled'} value={o.id}>
+          {o.name}
+        </option>)}
       </BpkSelect>
     );
   }
 }
 
+// @ts-expect-error TS(2339) FIXME: Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 SelectWithImage.propTypes = {
   // The following will go away with the move to TS
   // eslint-disable-next-line react/forbid-prop-types
@@ -125,10 +131,12 @@ SelectWithImage.propTypes = {
 
 const DefaultExample = () => <StatefulBpkSelect />;
 
+// @ts-expect-error TS(2322) FIXME: Type '{ valid: boolean; }' is not assignable to ty... Remove this comment to see the full error message
 const InvalidExample = () => <StatefulBpkSelect valid={false} />;
 
 const InvalidWithImageExample = () => (
   <SelectWithImage
+    // @ts-expect-error TS(2322) FIXME: Type '{ valid: boolean; id: string; name: string; ... Remove this comment to see the full error message
     valid={false}
     id="countries"
     name="countries"
@@ -136,15 +144,29 @@ const InvalidWithImageExample = () => (
   />
 );
 
+// @ts-expect-error TS(2322) FIXME: Type '{ disabled: true; }' is not assignable to ty... Remove this comment to see the full error message
 const DisabledExample = () => <StatefulBpkSelect disabled />;
 
+// @ts-expect-error TS(2322) FIXME: Type '{ large: true; }' is not assignable to type ... Remove this comment to see the full error message
 const LargeExample = () => <StatefulBpkSelect large />;
 
 const DockedExample = () => (
   <div style={{ display: 'flex' }}>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'large'.
+    // @ts-expect-error TS(2322): Type '{ large: true; docked: true; }' is not assig... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ large: true; docked: true; }' is not assig... Remove this comment to see the full error message
     <StatefulBpkSelect large docked />
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'large'.
+    // @ts-expect-error TS(2322): Type '{ large: true; docked: true; }' is not assig... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ large: true; docked: true; }' is not assig... Remove this comment to see the full error message
     <StatefulBpkSelect large docked />
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'large'.
+    // @ts-expect-error TS(2322): Type '{ large: true; docked: true; }' is not assig... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ large: true; docked: true; }' is not assig... Remove this comment to see the full error message
     <StatefulBpkSelect large docked />
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'large'.
+    // @ts-expect-error TS(2322): Type '{ large: true; docked: true; }' is not assig... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ large: true; docked: true; }' is not assig... Remove this comment to see the full error message
     <StatefulBpkSelect large docked />
   </div>
 );
@@ -152,6 +174,7 @@ const DockedExample = () => (
 const DockedWithImagesExample = () => (
   <div style={{ display: 'flex' }}>
     <SelectWithImage
+      // @ts-expect-error TS(2322) FIXME: Type '{ large: true; dockedFirst: true; id: string... Remove this comment to see the full error message
       large
       dockedFirst
       id="countries"
@@ -159,6 +182,7 @@ const DockedWithImagesExample = () => (
       options={countries}
     />
     <SelectWithImage
+      // @ts-expect-error TS(2322) FIXME: Type '{ large: true; dockedMiddle: true; id: strin... Remove this comment to see the full error message
       large
       dockedMiddle
       id="countries"
@@ -166,6 +190,7 @@ const DockedWithImagesExample = () => (
       options={countries}
     />
     <SelectWithImage
+      // @ts-expect-error TS(2322) FIXME: Type '{ large: true; dockedMiddle: true; id: strin... Remove this comment to see the full error message
       large
       dockedMiddle
       id="countries"
@@ -173,6 +198,7 @@ const DockedWithImagesExample = () => (
       options={countries}
     />
     <SelectWithImage
+      // @ts-expect-error TS(2322) FIXME: Type '{ large: true; dockedLast: true; id: string;... Remove this comment to see the full error message
       large
       dockedLast
       id="countries"
@@ -185,15 +211,27 @@ const DockedWithImagesExample = () => (
 const ManuallyDockedExample = () => (
   <div style={{ display: 'flex' }}>
     <div style={{ width: '100%' }}>
+      // @ts-expect-error TS(2304) FIXME: Cannot find name 'large'.
+      // @ts-expect-error TS(2322): Type '{ large: true; dockedFirst: true; }' is not ... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322) FIXME: Type '{ large: true; dockedFirst: true; }' is not ... Remove this comment to see the full error message
       <StatefulBpkSelect large dockedFirst />
     </div>
     <div style={{ width: '100%' }}>
+      // @ts-expect-error TS(2304) FIXME: Cannot find name 'large'.
+      // @ts-expect-error TS(2322): Type '{ large: true; dockedMiddle: true; }' is not... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322) FIXME: Type '{ large: true; dockedMiddle: true; }' is not... Remove this comment to see the full error message
       <StatefulBpkSelect large dockedMiddle />
     </div>
     <div style={{ width: '100%' }}>
+      // @ts-expect-error TS(2304) FIXME: Cannot find name 'large'.
+      // @ts-expect-error TS(2322): Type '{ large: true; dockedMiddle: true; }' is not... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322) FIXME: Type '{ large: true; dockedMiddle: true; }' is not... Remove this comment to see the full error message
       <StatefulBpkSelect large dockedMiddle />
     </div>
     <div style={{ width: '100%' }}>
+      // @ts-expect-error TS(2304) FIXME: Cannot find name 'large'.
+      // @ts-expect-error TS(2322): Type '{ large: true; dockedLast: true; }' is not a... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322) FIXME: Type '{ large: true; dockedLast: true; }' is not a... Remove this comment to see the full error message
       <StatefulBpkSelect large dockedLast />
     </div>
   </div>
@@ -203,6 +241,7 @@ const ManuallyDockedWithImagesExample = () => (
   <div style={{ display: 'flex' }}>
     <div style={{ width: '100%' }}>
       <SelectWithImage
+        // @ts-expect-error TS(2322) FIXME: Type '{ large: true; dockedFirst: true; id: string... Remove this comment to see the full error message
         large
         dockedFirst
         id="countries"
@@ -212,6 +251,7 @@ const ManuallyDockedWithImagesExample = () => (
     </div>
     <div style={{ width: '100%' }}>
       <SelectWithImage
+        // @ts-expect-error TS(2322) FIXME: Type '{ large: true; dockedMiddle: true; id: strin... Remove this comment to see the full error message
         large
         dockedMiddle
         id="countries"
@@ -221,6 +261,7 @@ const ManuallyDockedWithImagesExample = () => (
     </div>
     <div style={{ width: '100%' }}>
       <SelectWithImage
+        // @ts-expect-error TS(2322) FIXME: Type '{ large: true; dockedMiddle: true; id: strin... Remove this comment to see the full error message
         large
         dockedMiddle
         id="countries"
@@ -230,6 +271,7 @@ const ManuallyDockedWithImagesExample = () => (
     </div>
     <div style={{ width: '100%' }}>
       <SelectWithImage
+        // @ts-expect-error TS(2322) FIXME: Type '{ large: true; dockedLast: true; id: string;... Remove this comment to see the full error message
         large
         dockedLast
         id="countries"
@@ -241,10 +283,12 @@ const ManuallyDockedWithImagesExample = () => (
 );
 
 const WithImageExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; options: { key: ... Remove this comment to see the full error message
   <SelectWithImage id="countries" name="countries" options={countries} />
 );
 
 const WithImageLargeExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ large: true; id: string; name: string; opt... Remove this comment to see the full error message
   <SelectWithImage large id="countries" name="countries" options={countries} />
 );
 

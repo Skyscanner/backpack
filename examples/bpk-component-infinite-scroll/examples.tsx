@@ -60,11 +60,11 @@ const elementsArray = [
   'Item 20',
 ];
 
-const List = ({ elements }) => (
+const List = ({
+  elements
+}: any) => (
   <BpkList className={getClassName('bpk-infinite-scroll-stories__list')}>
-    {elements.map((element) => (
-      <BpkListItem key={element}>{element}</BpkListItem>
-    ))}
+    {elements.map((element: any) => <BpkListItem key={element}>{element}</BpkListItem>)}
   </BpkList>
 );
 
@@ -75,7 +75,8 @@ List.propTypes = {
 const InfiniteList = withInfiniteScroll(List);
 
 class DelayedDataSource extends ArrayDataSource {
-  fetchItems(index, nElements) {
+  // @ts-expect-error TS(2416) FIXME: Property 'fetchItems' in type 'DelayedDataSource' ... Remove this comment to see the full error message
+  fetchItems(index: any, nElements: any) {
     return new Promise((resolve) => {
       setTimeout(() => resolve(super.fetchItems(index, nElements)), 500);
     });
@@ -90,7 +91,8 @@ class InfiniteDataSource extends DataSource {
     this.elements = [];
   }
 
-  fetchItems(index, nElements) {
+  // @ts-expect-error TS(2416) FIXME: Property 'fetchItems' in type 'InfiniteDataSource'... Remove this comment to see the full error message
+  fetchItems(index: any, nElements: any) {
     return new Promise((resolve) => {
       for (let i = index; i < index + nElements; i += 1) {
         this.elements.push(i);
@@ -117,7 +119,9 @@ const StoppingAfterScrollsExample = () => (
       dataSource={new ArrayDataSource(elementsArray)}
       elementsPerScroll={5}
       seeMoreAfter={2}
-      renderSeeMoreComponent={({ onSeeMoreClick }) => (
+      renderSeeMoreComponent={({
+        onSeeMoreClick
+      }: any) => (
         <BpkButton onClick={onSeeMoreClick}>See more</BpkButton>
       )}
     />
@@ -201,6 +205,7 @@ const ForceUpdateDataExampleEmptyArrayExample = () => {
           for (let i = 0; i < 100; i += 1) {
             newElements.push(`Element ${k} ${i}`);
           }
+          // @ts-expect-error TS(2345) FIXME: Argument of type 'string[]' is not assignable to p... Remove this comment to see the full error message
           dataSource.updateData(newElements);
         }}
       >
@@ -211,7 +216,9 @@ const ForceUpdateDataExampleEmptyArrayExample = () => {
           dataSource={dataSource}
           seeMoreAfter={0}
           elementsPerScroll={5}
-          renderSeeMoreComponent={({ onSeeMoreClick }) => (
+          renderSeeMoreComponent={({
+            onSeeMoreClick
+          }: any) => (
             <BpkButton onClick={onSeeMoreClick}>See more</BpkButton>
           )}
         />
@@ -243,7 +250,9 @@ const ForceUpdateDataExampleFromNonEmptyToEmptyExample = () => {
           dataSource={dataSource}
           seeMoreAfter={0}
           elementsPerScroll={5}
-          renderSeeMoreComponent={({ onSeeMoreClick }) => (
+          renderSeeMoreComponent={({
+            onSeeMoreClick
+          }: any) => (
             <BpkButton onClick={onSeeMoreClick}>See more</BpkButton>
           )}
         />

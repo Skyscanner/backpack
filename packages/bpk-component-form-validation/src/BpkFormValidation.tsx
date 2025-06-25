@@ -23,6 +23,7 @@ import {
   iconSizeSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module '../.... Remove this comment to see the full error message
 import AnimateHeight from '../../bpk-animate-height';
 import { withAlignment } from '../../bpk-component-icon';
 import BpkSmallExclamationIcon from '../../bpk-component-icon/sm/exclamation-circle';
@@ -37,7 +38,7 @@ const AlignedExclamationIcon = withAlignment(
   iconSizeSm,
 );
 
-const BpkFormValidation = (props) => {
+const BpkFormValidation = (props: any) => {
   const { children, className, containerProps, expanded, isCheckbox, ...rest } =
     props;
 

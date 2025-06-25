@@ -20,27 +20,32 @@
 import BpkLabel from '../../packages/bpk-component-label';
 import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
+// @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
 const DefaultExample = () => <BpkLabel htmlFor="origin">Origin</BpkLabel>;
 
 const RequiredExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; require... Remove this comment to see the full error message
   <BpkLabel htmlFor="origin" required>
     Origin
   </BpkLabel>
 );
 
 const InvalidExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; valid: ... Remove this comment to see the full error message
   <BpkLabel htmlFor="origin" valid={false}>
     Origin
   </BpkLabel>
 );
 
 const DisabledExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; disable... Remove this comment to see the full error message
   <BpkLabel htmlFor="origin" disabled>
     Origin
   </BpkLabel>
 );
 
 const InvalidRequiredExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; require... Remove this comment to see the full error message
   <BpkLabel htmlFor="origin" required valid={false}>
     Origin
   </BpkLabel>
@@ -48,12 +53,21 @@ const InvalidRequiredExample = () => (
 
 const WhiteExample = () => (
   <BpkDarkExampleWrapper>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; white: ... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; white: ... Remove this comment to see the full error message
     <BpkLabel htmlFor="origin" white>
       Origin
     </BpkLabel>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; white: ... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; white: ... Remove this comment to see the full error message
     <BpkLabel htmlFor="origin" white valid={false}>
       Origin
     </BpkLabel>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; white: ... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; white: ... Remove this comment to see the full error message
     <BpkLabel htmlFor="origin" white disabled>
       Origin
     </BpkLabel>

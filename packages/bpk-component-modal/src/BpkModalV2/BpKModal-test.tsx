@@ -143,7 +143,7 @@ describe('BpkModalV2', () => {
     });
 
     it('should return null when dialog is closed', () => {
-      // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+      // @ts-expect-error TS(2339) FIXME: Property 'store' does not exist on type 'RenderRes... Remove this comment to see the full error message
       const { rerender, store } = render(
         <BpkModalV2 {...props}>
           <div>Content</div>
@@ -156,7 +156,7 @@ describe('BpkModalV2', () => {
         <BpkModalV2 {...props} isOpen={false}>
           <div>Content</div>
         </BpkModalV2>,
-        // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+        // @ts-expect-error TS(2554) FIXME: Expected 1 arguments, but got 3.
         rerender,
         store,
       );

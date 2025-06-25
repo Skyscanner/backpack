@@ -19,6 +19,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
+// @ts-expect-error TS(2305) FIXME: Module '"react"' has no exported member 'Node'.
 import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -29,6 +30,7 @@ const getClassName = cssModules(STYLES);
 
 type Props = {
   children: Node,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   className: ?string,
 };
 

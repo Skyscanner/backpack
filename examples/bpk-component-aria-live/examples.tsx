@@ -23,11 +23,8 @@ import BpkAriaLive, {
   ARIA_LIVE_POLITENESS_SETTINGS,
 } from '../../packages/bpk-component-aria-live';
 import BpkChip from '../../packages/bpk-component-chip';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkCode } from '../../packages/bpk-component-code';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkFieldset from '../../packages/bpk-component-fieldset';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../packages/bpk-component-select';
 import BpkSwitch from '../../packages/bpk-component-switch';
 import { cssModules } from '../../packages/bpk-react-utils';
@@ -113,10 +110,14 @@ class SelectExample<SProps extends {}> extends Component<
               'bpk-storybook-aria-live-demo__select-wrapper',
             )}
           >
+            // @ts-expect-error TS(2746) FIXME: This JSX tag's 'children' prop expects a single ch... Remove this comment to see the full error message
             <BpkFieldset
               label="Destination"
               className={getClassName('bpk-storybook-aria-live-demo__select')}
             >
+              // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+              // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+              // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
               <BpkSelect
                 id="destination"
                 name="destination"

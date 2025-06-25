@@ -27,13 +27,13 @@ import STYLES from './BpkPagination.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const handlePageChange = (onPageChange, pageCount) => (nextPageIndex) => {
+const handlePageChange = (onPageChange: any, pageCount: any) => (nextPageIndex: any) => {
   if (onPageChange && nextPageIndex < pageCount && nextPageIndex >= 0) {
     onPageChange(nextPageIndex);
   }
 };
 
-const BpkPagination = (props) => {
+const BpkPagination = (props: any) => {
   const classNames = [getClassName('bpk-pagination')];
   const {
     className,

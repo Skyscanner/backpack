@@ -81,6 +81,7 @@ class BpkInfoBannerDismissableState extends Component<Props, State> {
           {...this.props}
         />
         {this.state.dismissed && (
+          // @ts-expect-error TS(2739) FIXME: Type '{ children: string; className: string; onCli... Remove this comment to see the full error message
           <BpkButtonPrimary
             className={getClassName('bpk-info-banner-examples__component')}
             onClick={() => {
@@ -93,10 +94,12 @@ class BpkInfoBannerDismissableState extends Component<Props, State> {
             Reset
           </BpkButtonPrimary>
         )}
+        // @ts-expect-error TS(2746) FIXME: This JSX tag's 'children' prop expects a single ch... Remove this comment to see the full error message
         <AriaLiveDemo
           visible
           className={getClassName('bpk-info-banner-examples__component')}
         >
+          // @ts-expect-error TS(2739): Type 'Element[]' is missing the following properti... Remove this comment to see the full error message
           {this.state.updates.map((u) => (
             <>
               {u}
@@ -166,18 +169,15 @@ const SuccessWithReactRenderedMessageExample = (props: {}) => (
     {...props}
   />
 );
-const WarningExample = (props) => (
-  <BpkInfoBanner
-    message="Warning alert"
-    type={ALERT_TYPES.WARNING}
-    {...props}
-  />
-);
-const ErrorExample = (props) => (
-  <BpkInfoBanner message="Error alert" type={ALERT_TYPES.ERROR} {...props} />
-);
+const WarningExample = (props: any) => <BpkInfoBanner
+  message="Warning alert"
+  type={ALERT_TYPES.WARNING}
+  {...props}
+/>;
+const ErrorExample = (props: any) => <BpkInfoBanner message="Error alert" type={ALERT_TYPES.ERROR} {...props} />;
 const SuccessDismissableBehaviourExample = () => (
   <BpkInfoBannerDismissableState
+    // @ts-expect-error TS(2322) FIXME: Type '{ dismissButtonLabel: string; message: strin... Remove this comment to see the full error message
     dismissButtonLabel="Dismiss"
     message="Success alert with dismiss option"
     type={ALERT_TYPES.SUCCESS}
@@ -206,6 +206,7 @@ const SuccessExpandableWithActionExample = () => (
 
 const SuccessAutomaticallyDismissedExample = () => (
   <BpkInfoBannerDismissableState
+    // @ts-expect-error TS(2322) FIXME: Type '{ hideAfter: number; message: string; type: ... Remove this comment to see the full error message
     hideAfter={5}
     message={message}
     type={ALERT_TYPES.SUCCESS}
@@ -220,86 +221,86 @@ const SuccessCustomIconExample = () => (
   />
 );
 
-const OnContrastExample = (props) => (
-  <div style={{ backgroundColor: canvasContrastDay, padding: cardPadding }}>
-    <BpkText
-      tagName="p"
-      className={getClassName('bpk-info-banner-examples__p')}
-    >
-      {message}
-    </BpkText>
-    <BpkInfoBanner
-      message="Info alert on contrast"
-      type={ALERT_TYPES.INFO}
-      style={STYLE_TYPES.ON_CONTRAST}
-      {...props}
-    />
-    <BpkText
-      tagName="p"
-      className={getClassName('bpk-info-banner-examples__p')}
-    >
-      {message}
-    </BpkText>
-    <BpkInfoBannerExpandableState
-      message="Expandable info alert on contrast"
-      style={STYLE_TYPES.ON_CONTRAST}
-      type={ALERT_TYPES.INFO}
-      toggleButtonLabel="View more"
-    >
-      {longMessage}
-    </BpkInfoBannerExpandableState>
-    <BpkText
-      tagName="p"
-      className={getClassName('bpk-info-banner-examples__p')}
-    >
-      {message}
-    </BpkText>
-    <BpkInfoBanner
-      message="Success alert on contrast"
-      type={ALERT_TYPES.SUCCESS}
-      style={STYLE_TYPES.ON_CONTRAST}
-      {...props}
-    />
-    <BpkText
-      tagName="p"
-      className={getClassName('bpk-info-banner-examples__p')}
-    >
-      {message}
-    </BpkText>
-    <BpkInfoBanner
-      message="Warning alert on contrast"
-      type={ALERT_TYPES.WARNING}
-      style={STYLE_TYPES.ON_CONTRAST}
-      {...props}
-    />
-    <BpkText
-      tagName="p"
-      className={getClassName('bpk-info-banner-examples__p')}
-    >
-      {message}
-    </BpkText>
-    <BpkInfoBanner
-      message="Error alert on contrast"
-      type={ALERT_TYPES.ERROR}
-      style={STYLE_TYPES.ON_CONTRAST}
-      {...props}
-    />
-    <BpkText
-      tagName="p"
-      className={getClassName('bpk-info-banner-examples__p')}
-    >
-      {message}
-    </BpkText>
-  </div>
-);
+const OnContrastExample = (props: any) => <div style={{ backgroundColor: canvasContrastDay, padding: cardPadding }}>
+  <BpkText
+    tagName="p"
+    className={getClassName('bpk-info-banner-examples__p')}
+  >
+    {message}
+  </BpkText>
+  <BpkInfoBanner
+    message="Info alert on contrast"
+    type={ALERT_TYPES.INFO}
+    style={STYLE_TYPES.ON_CONTRAST}
+    {...props}
+  />
+  <BpkText
+    tagName="p"
+    className={getClassName('bpk-info-banner-examples__p')}
+  >
+    {message}
+  </BpkText>
+  <BpkInfoBannerExpandableState
+    message="Expandable info alert on contrast"
+    style={STYLE_TYPES.ON_CONTRAST}
+    type={ALERT_TYPES.INFO}
+    toggleButtonLabel="View more"
+  >
+    {longMessage}
+  </BpkInfoBannerExpandableState>
+  <BpkText
+    tagName="p"
+    className={getClassName('bpk-info-banner-examples__p')}
+  >
+    {message}
+  </BpkText>
+  <BpkInfoBanner
+    message="Success alert on contrast"
+    type={ALERT_TYPES.SUCCESS}
+    style={STYLE_TYPES.ON_CONTRAST}
+    {...props}
+  />
+  <BpkText
+    tagName="p"
+    className={getClassName('bpk-info-banner-examples__p')}
+  >
+    {message}
+  </BpkText>
+  <BpkInfoBanner
+    message="Warning alert on contrast"
+    type={ALERT_TYPES.WARNING}
+    style={STYLE_TYPES.ON_CONTRAST}
+    {...props}
+  />
+  <BpkText
+    tagName="p"
+    className={getClassName('bpk-info-banner-examples__p')}
+  >
+    {message}
+  </BpkText>
+  <BpkInfoBanner
+    message="Error alert on contrast"
+    type={ALERT_TYPES.ERROR}
+    style={STYLE_TYPES.ON_CONTRAST}
+    {...props}
+  />
+  <BpkText
+    tagName="p"
+    className={getClassName('bpk-info-banner-examples__p')}
+  >
+    {message}
+  </BpkText>
+</div>;
 
 const DocsDefaultExample = () => (
   <>
     <InfoExample />
     <SuccessExample
+      // @ts-expect-error TS(2322) FIXME: Type '{ className: string; }' is not assignable to... Remove this comment to see the full error message
       className={getClassName('bpk-info-banner-examples__component')}
     />
     <SuccessWithReactRenderedMessageExample
+      // @ts-expect-error TS(2322) FIXME: Type '{ className: string; }' is not assignable to... Remove this comment to see the full error message
       className={getClassName('bpk-info-banner-examples__component')}
     />
     <WarningExample

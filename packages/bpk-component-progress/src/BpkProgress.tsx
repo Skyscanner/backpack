@@ -32,6 +32,7 @@ const getClassName = cssModules(STYLES);
 const isTransitionEndSupported = () =>
   !!(typeof window !== 'undefined' && 'TransitionEvent' in window);
 
+// @ts-expect-error TS(7006) FIXME: Parameter 'numberOfSteps' implicitly has an 'any' ... Remove this comment to see the full error message
 const renderSteps = (numberOfSteps) => {
   const steps = [];
   for (let i = 1; i <= numberOfSteps; i += 1) {
@@ -53,10 +54,15 @@ type Props = {
   value: number,
   stepped: boolean,
   small: boolean,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   className: ?string,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   tabIndex: ?number,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   onComplete: ?() => mixed,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   onCompleteTransitionEnd: ?() => mixed,
+  // @ts-expect-error TS(2300) FIXME: Duplicate identifier 'number'.
   getValueText: ?(number, number, number) => mixed,
 };
 
@@ -132,7 +138,9 @@ class BpkProgress extends Component<Props> {
     const percentage = 100 * (adjustedValue / (max - min));
     const numberOfSteps = stepped ? max - min - 1 : 0;
 
+    // @ts-expect-error TS(2790) FIXME: The operand of a 'delete' operator must be optiona... Remove this comment to see the full error message
     delete rest.onComplete;
+    // @ts-expect-error TS(2790) FIXME: The operand of a 'delete' operator must be optiona... Remove this comment to see the full error message
     delete rest.onCompleteTransitionEnd;
 
     return (
@@ -144,6 +152,7 @@ class BpkProgress extends Component<Props> {
         aria-valuenow={value}
         aria-valuemin={min}
         aria-valuemax={max}
+        // @ts-expect-error TS(2322) FIXME: Type 'string' is not assignable to type 'number'.
         tabIndex="0"
         {...rest}
       >
@@ -158,10 +167,12 @@ class BpkProgress extends Component<Props> {
   }
 }
 
+// @ts-expect-error TS(2339) FIXME: Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 BpkProgress.propTypes = {
   ...propTypes,
 }
 
+// @ts-expect-error TS(2339) FIXME: Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
 BpkProgress.defaultProps = {
   ...defaultProps,
 }

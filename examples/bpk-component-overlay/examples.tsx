@@ -34,7 +34,9 @@ const HEAVY_IMG_SRC =
 
 const getClassName = cssModules(STYLES);
 
-const OverlayName = ({ overlayType }) => (
+const OverlayName = ({
+  overlayType
+}: any) => (
   <BpkText textStyle={TEXT_STYLES.xl}>{overlayType}</BpkText>
 );
 

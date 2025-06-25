@@ -19,6 +19,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
+// @ts-expect-error TS(2305) FIXME: Module '"react"' has no exported member 'Node'.
 import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -35,8 +36,11 @@ export type Props = {
   icon: Node,
   position: LatLong,
   selected: boolean,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   className: ?string,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   onClick: ?(event: SyntheticEvent<>) => mixed,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   buttonProps: ?{ [string]: any },
 };
 
@@ -63,6 +67,7 @@ const BpkIconMarker = (props: Props) => {
       <button
         type="button"
         className={wrapperClassNames}
+        // @ts-expect-error TS(2322) FIXME: Type '((event: SyntheticEvent) => mixed) | null' i... Remove this comment to see the full error message
         onClick={onClick}
         {...buttonProps}
       >

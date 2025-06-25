@@ -37,6 +37,7 @@ describe('BpkRadio', () => {
 
   it('should render correctly with id attribute', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; label: string; }... Remove this comment to see the full error message
       <BpkRadio id="radio" name="radio" label="Direct" />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -44,6 +45,7 @@ describe('BpkRadio', () => {
 
   it('should render correctly with checked attribute', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; checked: true... Remove this comment to see the full error message
       <BpkRadio name="radio" label="Direct" checked onChange={() => {}} />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -65,6 +67,7 @@ describe('BpkRadio', () => {
 
   it('should render correctly with value attribute', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; value: string... Remove this comment to see the full error message
       <BpkRadio name="radio" label="Direct" value="my-value" />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -72,6 +75,7 @@ describe('BpkRadio', () => {
 
   it('should render correctly when invalid', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; value: string... Remove this comment to see the full error message
       <BpkRadio name="radio" label="Direct" value="my-value" valid={false} />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -80,6 +84,7 @@ describe('BpkRadio', () => {
   it('should render correctly with ariaLabel attribute', () => {
     const { asFragment } = render(
       <BpkRadio
+        // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; label: string; a... Remove this comment to see the full error message
         id="radio"
         name="radio"
         label="Direct"

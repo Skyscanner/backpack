@@ -36,8 +36,8 @@ const generateTheme = ({
   secondaryColor500,
   secondaryColor600,
   secondaryColor700,
-  themeName,
-}) => ({
+  themeName
+}: any) => ({
   themeName,
 
   primaryColor: primaryColor500,

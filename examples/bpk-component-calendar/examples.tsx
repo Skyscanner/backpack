@@ -44,7 +44,9 @@ import {
 } from './test-utils';
 
 /* eslint-disable-next-line react/prop-types */
-const DummyDateComponent = ({ date }) => <div>{date.toString()}</div>;
+const DummyDateComponent = ({
+  date
+}: any) => <div>{date.toString()}</div>;
 
 const CalendarNavExample = () => (
   <BpkCalendarNav
@@ -85,6 +87,7 @@ const CalendarGridAndHeaderExample = () => (
 
 const DefaultExample = () => (
   <CalendarContainer
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; formatMonth: (date: any) => st... Remove this comment to see the full error message
     id="myCalendar"
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
@@ -102,6 +105,7 @@ const DefaultExample = () => (
 
 const MinDateInThePastExample = () => (
   <CalendarContainer
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; formatMonth: (date: any) => st... Remove this comment to see the full error message
     id="myCalendar"
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
@@ -117,6 +121,7 @@ const MinDateInThePastExample = () => (
 
 const WeekStartsOnSundayExample = () => (
   <CalendarContainer
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; formatMonth: (date: any) => st... Remove this comment to see the full error message
     id="myCalendar"
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
@@ -130,6 +135,7 @@ const WeekStartsOnSundayExample = () => (
 
 const HonestWeekendExample = () => (
   <CalendarContainer
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; formatMonth: (date: any) => st... Remove this comment to see the full error message
     id="myCalendar"
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
@@ -143,6 +149,7 @@ const HonestWeekendExample = () => (
 
 const WeekdayKeyIsNameNarrowExample = () => (
   <CalendarContainer
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; formatMonth: (date: any) => st... Remove this comment to see the full error message
     id="myCalendar"
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
@@ -157,6 +164,7 @@ const WeekdayKeyIsNameNarrowExample = () => (
 
 const ArabicExample = () => (
   <CalendarContainer
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; formatMonth: (date: any) => st... Remove this comment to see the full error message
     id="myCalendar"
     formatMonth={formatMonthArabic}
     formatDateFull={formatDateFullArabic}
@@ -168,6 +176,7 @@ const ArabicExample = () => (
 
 const JapaneseExample = () => (
   <CalendarContainer
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; formatMonth: (date: any) => st... Remove this comment to see the full error message
     id="myCalendar"
     formatMonth={formatMonthJapanese}
     formatDateFull={formatDateFullJapanese}
@@ -181,6 +190,7 @@ const JapaneseExample = () => (
 
 const MinAndMaxDateExample = () => (
   <CalendarContainer
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; formatMonth: (date: any) => st... Remove this comment to see the full error message
     id="myCalendar"
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
@@ -196,6 +206,7 @@ const MinAndMaxDateExample = () => (
 
 const MarkTodayFalseExample = () => (
   <CalendarContainer
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; formatMonth: (date: any) => st... Remove this comment to see the full error message
     id="myCalendar"
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
@@ -210,6 +221,7 @@ const MarkTodayFalseExample = () => (
 
 const MarkOutsideDaysFalseExample = () => (
   <CalendarContainer
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; formatMonth: (date: any) => st... Remove this comment to see the full error message
     id="myCalendar"
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
@@ -231,6 +243,7 @@ const CustomComposedCalendarSafariBugExample = () => (
       <BpkText>Departure date should be Nov 3 and return Nov 4</BpkText>
     </p>
     <MonthViewCalendar
+      // @ts-expect-error TS(2322) FIXME: Type '{ minDate: Date; maxDate: Date; departureDat... Remove this comment to see the full error message
       minDate={new Date(2018, 10, 1)}
       maxDate={new Date(2018, 10, 20)}
       departureDate={new Date(2018, 10, 3)}
@@ -241,6 +254,7 @@ const CustomComposedCalendarSafariBugExample = () => (
 );
 
 const CustomComposedCalendarExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ weekStartsOn: number; }' is not assignable... Remove this comment to see the full error message
   <MonthViewCalendar weekStartsOn={1} />
 );
 
@@ -287,7 +301,7 @@ const WeekExample = () => {
       },
     ],
     daysOfWeek: weekDays,
-    formatDateFull: (d) => d.toString(),
+    formatDateFull: (d: any) => d.toString(),
     preventKeyboardFocus: false,
     markToday: true,
     markOutsideDays: true,
@@ -303,7 +317,11 @@ const WeekExample = () => {
       </p>
       <table>
         <tbody>
+          // @ts-expect-error TS(2769): No overload matches this call.
+          // @ts-expect-error TS(2769) FIXME: No overload matches this call.
           <BpkCalendarWeek {...weekProps} />
+          // @ts-expect-error TS(2769): No overload matches this call.
+          // @ts-expect-error TS(2769) FIXME: No overload matches this call.
           <BpkCalendarWeek {...weekProps} />
         </tbody>
       </table>
@@ -313,6 +331,7 @@ const WeekExample = () => {
 
 const FocusedDateInThePastExample = () => (
   <CalendarContainer
+    // @ts-expect-error TS(2322) FIXME: Type '{ minDate: Date; initiallyFocusedDate: Date;... Remove this comment to see the full error message
     minDate={new Date(2020, 3, 1)}
     initiallyFocusedDate={new Date(2020, 3, 19)}
     id="myCalendar"
@@ -328,6 +347,7 @@ const FocusedDateInThePastExample = () => (
 
 const RangeDateCalendarExample = () => (
   <CalendarContainer
+    // @ts-expect-error TS(2322) FIXME: Type '{ minDate: Date; id: string; formatMonth: (d... Remove this comment to see the full error message
     minDate={new Date(2020, 3, 1)}
     id="myCalendar"
     formatMonth={formatMonth}

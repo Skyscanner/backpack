@@ -40,7 +40,7 @@ export const createColumnsSchema = (columns: ColumnType[]) => {
         value: cellData,
       }: any
       ) =>
-        // @ts-ignore Cell is called only when column has a Cell which we check below in the return statement
+        // @ts-expect-error TS(2722) FIXME: Cannot invoke an object which is possibly 'undefin... Remove this comment to see the full error message
         column.Cell({
         rowData,
         rowIndex: sortedRows.map((row: {[key: string]: any}) => row.id).indexOf(rowID),
@@ -54,7 +54,7 @@ export const createColumnsSchema = (columns: ColumnType[]) => {
         column: { disableSortBy, id: accessor, label },
       }: any
       ) =>
-        // @ts-ignore Header is called only when column has a Header which we check below in the return statement
+        // @ts-expect-error TS(2722) FIXME: Cannot invoke an object which is possibly 'undefin... Remove this comment to see the full error message
         column.Header({
         label,
         disableSortBy,

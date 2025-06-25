@@ -32,7 +32,9 @@ const DIALING_CODE_TO_ID_MAP = {
   '998_uz': 'uz',
 };
 
+// @ts-expect-error TS(7006) FIXME: Parameter 'dialingCode' implicitly has an 'any' ty... Remove this comment to see the full error message
 const getFlag = (dialingCode) => {
+  // @ts-expect-error TS(7053) FIXME: Element implicitly has an 'any' type because expre... Remove this comment to see the full error message
   const countryCode = DIALING_CODE_TO_ID_MAP[dialingCode];
   const url = `https://images.skyscnr.com/images/country/flag/header/${countryCode}.png`;
   return <BpkImage altText="Flag" aspectRatio={50 / 38} src={url} />;
@@ -40,17 +42,22 @@ const getFlag = (dialingCode) => {
 
 type Props = {
   large: boolean,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   validationMessage: ?string,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   validNumber: ?string,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   description: ?string,
   disabled: boolean,
   dialingCodeMask: boolean,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   required: ?boolean,
   useLongLabels: boolean,
 };
 
 class StoryContainer extends Component<
   Props,
+  // @ts-expect-error TS(1009) FIXME: Trailing comma not allowed.
   { dialingCode: string, value: string },
 > {
   static defaultProps = {
@@ -69,10 +76,12 @@ class StoryContainer extends Component<
     this.state = { dialingCode: '44_uk', value: '' };
   }
 
+  // @ts-expect-error TS(2304) FIXME: Cannot find name 'SyntheticInputEvent'.
   onChange = (e: SyntheticInputEvent<HTMLElement>) => {
     this.setState({ value: e.target.value });
   };
 
+  // @ts-expect-error TS(2304) FIXME: Cannot find name 'SyntheticInputEvent'.
   onDialingCodeChange = (e: SyntheticInputEvent<HTMLElement>) => {
     this.setState({ dialingCode: e.target.value });
   };
@@ -128,6 +137,7 @@ class StoryContainer extends Component<
             id: 'dialing-code',
             name: 'Dialing code',
             label: `${dialingCodeLabel}`,
+            // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; label: string; '... Remove this comment to see the full error message
             'aria-label': 'Dialing code',
             image: getFlag(dialingCode),
           }}

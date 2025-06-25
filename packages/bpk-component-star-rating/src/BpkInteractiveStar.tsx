@@ -31,7 +31,9 @@ const getClassName = cssModules(STYLES);
 type Props = {
   label: string,
   name: string,
+  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
   onClick: () => mixed,
+  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
   onMouseEnter: () => mixed,
   type: typeof STAR_TYPES.EMPTY | typeof STAR_TYPES.FULL,
   value: number,

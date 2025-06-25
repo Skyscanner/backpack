@@ -18,7 +18,7 @@
 
 import PropTypes from 'prop-types';
 
-const BpkPaginationBreak = (props) => {
+const BpkPaginationBreak = (props: any) => {
   const { breakLabel } = props;
   return <div>{breakLabel}</div>;
 };

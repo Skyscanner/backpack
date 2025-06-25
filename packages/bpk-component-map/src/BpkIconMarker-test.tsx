@@ -23,13 +23,11 @@ import { render } from '@testing-library/react';
 import BpkIconMarker from './BpkIconMarker';
 
 jest.mock('@react-google-maps/api', () => ({
-  OverlayView: (props) => (
-    <div>
-      <div className="mock-overlay-view" />
-      {/* eslint-disable-next-line react/prop-types */}
-      {props.children}
-    </div>
-  ),
+  OverlayView: (props: any) => <div>
+    <div className="mock-overlay-view" />
+    {/* eslint-disable-next-line react/prop-types */}
+    {props.children}
+  </div>,
 }));
 
 describe('BpkIconMarker', () => {

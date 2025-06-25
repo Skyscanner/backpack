@@ -123,7 +123,7 @@ const focusedDateHasChanged = <T extends {}>(
     return true;
   }
 
-  // @ts-expect-error TS reporting incorrectly as we are already checking above that the dates are not null
+  // @ts-expect-error TS(2345) FIXME: Argument of type 'Date | null' is not assignable t... Remove this comment to see the full error message
   return !isSameDay(rawNextSelectedDate, rawSelectedDate);
 };
 

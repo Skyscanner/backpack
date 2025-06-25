@@ -35,6 +35,7 @@ describe('BpkBreadcrumb', () => {
 
   it('should render correctly with a custom class name', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; label: string; classNam... Remove this comment to see the full error message
       <BpkBreadcrumb label="My breadcrumbs" className="my-custom-class">
         <div>Anything can go in here</div>
       </BpkBreadcrumb>,
@@ -47,6 +48,7 @@ describe('BpkBreadcrumb', () => {
     const { asFragment } = render(
       <BpkBreadcrumb
         label="My breadcrumbs"
+        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; label: string; testid: ... Remove this comment to see the full error message
         testid="arbitrary value" // <-- arbitrary prop
       >
         <div>Anything can go in here</div>

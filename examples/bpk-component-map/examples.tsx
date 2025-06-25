@@ -18,6 +18,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
+// @ts-expect-error TS(2305) FIXME: Module '"react"' has no exported member 'Node'.
 import type { Node } from 'react';
 import { Component, useRef, useState } from 'react';
 
@@ -54,6 +55,8 @@ const StoryMap = (props: Props) => {
   return (
     <div style={{ height: '400px' }}>
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      // @ts-expect-error TS(2322): Type '{ children: any; googleMapsApiKey: string; }... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322) FIXME: Type '{ children: any; googleMapsApiKey: string; }... Remove this comment to see the full error message
       <BpkMapWithLoading googleMapsApiKey="" {...rest}>
         {children}
       </BpkMapWithLoading>
@@ -116,6 +119,7 @@ type PriceMarkerState = {
 };
 
 class StatefulBpkPriceMarker extends Component<
+  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
   { action: () => mixed },
   PriceMarkerState,
 > {
@@ -123,6 +127,7 @@ class StatefulBpkPriceMarker extends Component<
     action: () => null,
   };
 
+  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
   constructor(props: { action: () => mixed }) {
     super(props);
     this.state = {
@@ -151,14 +156,17 @@ class StatefulBpkPriceMarker extends Component<
   render() {
     return (
       <StoryMap
+        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; zoom: number; center:... Remove this comment to see the full error message
         zoom={15}
         center={{ latitude: 55.944665, longitude: -3.1964903 }}
       >
         {venues.map((venue) => (
           <BpkPriceMarker
+            // @ts-expect-error TS(2322) FIXME: Type '{ id: string; label: string; position: { lat... Remove this comment to see the full error message
             id={venue.id}
             label={venue.price}
             position={{ latitude: venue.latitude, longitude: venue.longitude }}
+            // @ts-expect-error TS(2339) FIXME: Property 'disabled' does not exist on type '{ id: ... Remove this comment to see the full error message
             disabled={venue.disabled}
             onClick={() => {
               this.props.action();
@@ -173,6 +181,7 @@ class StatefulBpkPriceMarker extends Component<
 }
 
 class StatefulBpkPriceMarkerV2 extends Component<
+  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
   { action: () => mixed, airportsIconWithPrice: boolean },
   PriceMarkerState,
 > {
@@ -180,6 +189,7 @@ class StatefulBpkPriceMarkerV2 extends Component<
     action: () => null,
   };
 
+  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
   constructor(props: { action: () => mixed, airportsIconWithPrice: boolean }) {
     super(props);
     this.state = {
@@ -208,11 +218,13 @@ class StatefulBpkPriceMarkerV2 extends Component<
   render() {
     return (
       <StoryMap
+        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; zoom: number; center:... Remove this comment to see the full error message
         zoom={15}
         center={{ latitude: 55.944665, longitude: -3.1964903 }}
       >
         {venues.map((venue) => (
           <BpkPriceMarkerV2
+            // @ts-expect-error TS(2322) FIXME: Type '{ id: string; label: string; icon: Element |... Remove this comment to see the full error message
             id={venue.id}
             label={venue.price}
             icon={this.props.airportsIconWithPrice ? venue.airportsIcon : null}
@@ -234,6 +246,7 @@ class StatefulBpkPriceMarkerV2 extends Component<
 }
 
 class StatefulBpkIconMarker extends Component<
+  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
   { action: () => mixed },
   { selectedId: string },
 > {
@@ -241,6 +254,7 @@ class StatefulBpkIconMarker extends Component<
     action: () => null,
   };
 
+  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
   constructor(props: { action: () => mixed }) {
     super(props);
     this.state = {
@@ -255,6 +269,7 @@ class StatefulBpkIconMarker extends Component<
   render() {
     return (
       <StoryMap
+        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; zoom: number; center:... Remove this comment to see the full error message
         zoom={15}
         center={{ latitude: 55.944665, longitude: -3.1964903 }}
       >
@@ -284,6 +299,7 @@ const StatefulBpkPriceMarkerButtonWithPopoverOnMap = ({
   action: inlineAction,
   airportsIconWithPrice,
 }: {
+  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
   action: () => mixed,
   airportsIconWithPrice: boolean,
 }) => {
@@ -307,15 +323,20 @@ const StatefulBpkPriceMarkerButtonWithPopoverOnMap = ({
   };
 
   return (
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; zoom: number; center:... Remove this comment to see the full error message
     <StoryMap zoom={15} center={{ latitude: 55.944665, longitude: -3.1964903 }}>
       {venues.map((venue) => (
         <BpkOverlayView
+          // @ts-expect-error TS(2322) FIXME: Type '{ children: any[]; getPixelPositionOffset: (... Remove this comment to see the full error message
           getPixelPositionOffset={getPixelPositionOffset}
           position={{
             latitude: venue.latitude,
             longitude: venue.longitude,
           }}
         >
+          // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+          // @ts-expect-error TS(2322): Type '{ children: Element; hoverable: true; showAr... Remove this comment to see the full error message
+          // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; hoverable: true; showAr... Remove this comment to see the full error message
           <BpkPopover
             hoverable
             showArrow
@@ -326,6 +347,7 @@ const StatefulBpkPriceMarkerButtonWithPopoverOnMap = ({
             target={
               <div ref={ref} style={{ width: 'fit-content' }}>
                 <BpkPriceMarkerButton
+                  // @ts-expect-error TS(2322) FIXME: Type '{ id: string; label: string; icon: Element |... Remove this comment to see the full error message
                   id={venue.id}
                   label={venue.price}
                   icon={airportsIconWithPrice ? venue.airportsIcon : null}
@@ -347,10 +369,12 @@ const StatefulBpkPriceMarkerButtonWithPopoverOnMap = ({
   );
 };
 
+// @ts-expect-error TS(7006) FIXME: Parameter 'level' implicitly has an 'any' type.
 const onZoom = (level) => {
   action(`Zoom changed to ${level}`);
 };
 
+// @ts-expect-error TS(7006) FIXME: Parameter 'bounds' implicitly has an 'any' type.
 const onRegionChange = (bounds, center) => {
   action(
     `Dragged to bounds: ${bounds.toString()}, center: ${center.toString()}`,
@@ -358,11 +382,13 @@ const onRegionChange = (bounds, center) => {
 };
 
 const SimpleExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ zoom: number; center: { latitude: number; ... Remove this comment to see the full error message
   <StoryMap zoom={15} center={{ latitude: 55.944357, longitude: -3.1967116 }} />
 );
 
 const DragDisabledAndHiddenControlsExample = () => (
   <StoryMap
+    // @ts-expect-error TS(2322) FIXME: Type '{ center: { latitude: number; longitude: num... Remove this comment to see the full error message
     center={{ latitude: 55.944357, longitude: -3.1967116 }}
     panEnabled={false}
     showControls={false}
@@ -371,6 +397,7 @@ const DragDisabledAndHiddenControlsExample = () => (
 
 const GreddyGestureHandlingExample = () => (
   <StoryMap
+    // @ts-expect-error TS(2322) FIXME: Type '{ center: { latitude: number; longitude: num... Remove this comment to see the full error message
     center={{ latitude: 55.944357, longitude: -3.1967116 }}
     greedyGestureHandling
   />
@@ -378,6 +405,7 @@ const GreddyGestureHandlingExample = () => (
 
 const WithOnZoomAndOnRegionChangeExample = () => (
   <StoryMap
+    // @ts-expect-error TS(2322) FIXME: Type '{ center: { latitude: number; longitude: num... Remove this comment to see the full error message
     center={{ latitude: 55.944357, longitude: -3.1967116 }}
     onZoom={onZoom}
     onRegionChange={onRegionChange}
@@ -386,6 +414,7 @@ const WithOnZoomAndOnRegionChangeExample = () => (
 
 const WithOnTilesLoadedExample = () => (
   <StoryMap
+    // @ts-expect-error TS(2322) FIXME: Type '{ center: { latitude: number; longitude: num... Remove this comment to see the full error message
     center={{ latitude: 55.944357, longitude: -3.1967116 }}
     onTilesLoaded={() => console.log('Tiles loaded')} // eslint-disable-line no-console
   />
@@ -393,6 +422,7 @@ const WithOnTilesLoadedExample = () => (
 
 const WithBoundingBoxExample = () => (
   <StoryMap
+    // @ts-expect-error TS(2322) FIXME: Type '{ bounds: { south: number; west: number; nor... Remove this comment to see the full error message
     bounds={{
       south: 25.94129273544452,
       west: -3.2285547854247625,
@@ -403,6 +433,7 @@ const WithBoundingBoxExample = () => (
 );
 
 const WithAMarkerExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; center: { latitude: num... Remove this comment to see the full error message
   <StoryMap center={{ latitude: 55.944357, longitude: -3.1967116 }}>
     <BpkOverlayView position={{ latitude: 55.944, longitude: -3.1967116 }}>
       <BpkText>Backpack</BpkText>
@@ -450,11 +481,13 @@ const MultipleMapsExample = () => (
   <>
     <span>first map:</span>
     <StoryMap
+      // @ts-expect-error TS(2322) FIXME: Type '{ zoom: number; center: { latitude: number; ... Remove this comment to see the full error message
       zoom={15}
       center={{ latitude: 55.944357, longitude: -3.1967116 }}
     />
     <span>second map:</span>
     <StoryMap
+      // @ts-expect-error TS(2322) FIXME: Type '{ zoom: number; center: { latitude: number; ... Remove this comment to see the full error message
       zoom={15}
       center={{ latitude: 55.944357, longitude: -3.1967116 }}
     />

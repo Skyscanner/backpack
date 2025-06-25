@@ -75,7 +75,6 @@ describe('BpkInput', () => {
     // are missing. Swallow that as it's tested in customPropTypes-test.js.
     jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
     const { asFragment } = render(
-      // @ts-ignore
       <BpkInput
         id="test"
         name="test"
@@ -92,7 +91,6 @@ describe('BpkInput', () => {
     // are missing. Swallow that as it's tested in customPropTypes-test.js.
     jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
     const { asFragment } = render(
-      // @ts-ignore
       <BpkInput
         id="test"
         name="test"
@@ -228,7 +226,7 @@ describe('BpkInput', () => {
     );
 
     const input = screen.getByRole('textbox');
-    // @ts-ignore
+    // @ts-expect-error TS(2454) FIXME: Variable 'inputRef' is used before being assigned.
     expect(input).toEqual(inputRef);
   });
 

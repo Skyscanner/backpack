@@ -35,6 +35,7 @@ const formClassName = getClassName('bpkdocs-forms-page__form');
 
 class FormValidationContainer extends Component {
   constructor() {
+    // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 0.
     super();
 
     this.state = {
@@ -44,6 +45,7 @@ class FormValidationContainer extends Component {
 
   toggleExpanded = () => {
     this.setState((prevState) => ({
+      // @ts-expect-error TS(2339) FIXME: Property 'expanded' does not exist on type 'Readon... Remove this comment to see the full error message
       expanded: !prevState.expanded,
     }));
   };
@@ -54,6 +56,9 @@ class FormValidationContainer extends Component {
         <div style={{ textAlign: 'center' }}>
           <BpkButton onClick={this.toggleExpanded}>Toggle</BpkButton>
         </div>
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'expanded'.
+        // @ts-expect-error TS(2739): Type '{ expanded: any; }' is missing the following... Remove this comment to see the full error message
+        // @ts-expect-error TS(2739) FIXME: Type '{ expanded: any; }' is missing the following... Remove this comment to see the full error message
         <BpkFormValidation expanded={this.state.expanded} {...this.props} />
       </div>
     );
@@ -61,7 +66,7 @@ class FormValidationContainer extends Component {
 }
 
 class InputContainer extends Component {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
 
     const valueProp = props.FormComponent === BpkCheckbox ? 'checked' : 'value';
@@ -72,21 +77,25 @@ class InputContainer extends Component {
   }
 
   render() {
+    // @ts-expect-error TS(2339) FIXME: Property 'FormComponent' does not exist on type 'R... Remove this comment to see the full error message
     const { FormComponent, ...rest } = this.props;
 
     let overrideProps = {};
 
     if (FormComponent === BpkCheckbox) {
       overrideProps = {
+        // @ts-expect-error TS(2339) FIXME: Property 'value' does not exist on type 'Readonly<... Remove this comment to see the full error message
         checked: this.state.value,
-        onChange: (e) => this.setState({ value: e.target.checked }),
+        onChange: (e: any) => this.setState({ value: e.target.checked }),
       };
     } else {
       overrideProps = {
+        // @ts-expect-error TS(2339) FIXME: Property 'value' does not exist on type 'Readonly<... Remove this comment to see the full error message
         value: this.state.value,
-        onChange: (e) => this.setState({ value: e.target.value }),
+        onChange: (e: any) => this.setState({ value: e.target.value }),
       };
       if (FormComponent === BpkInput) {
+        // @ts-expect-error TS(2339) FIXME: Property 'onClear' does not exist on type '{}'.
         overrideProps.onClear = () => this.setState({ value: '' });
       }
     }
@@ -94,11 +103,13 @@ class InputContainer extends Component {
   }
 }
 
+// @ts-expect-error TS(2339) FIXME: Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 InputContainer.propTypes = {
   FormComponent: PropTypes.elementType.isRequired,
 };
 
 const DefaultExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: string; id: string; }' is not as... Remove this comment to see the full error message
   <FormValidationContainer id="my-validation-message">
     A validation message
   </FormValidationContainer>
@@ -108,6 +119,7 @@ const FormsExample = () => (
   <div>
     <form className={formClassName}>
       <InputContainer
+        // @ts-expect-error TS(2322) FIXME: Type '{ FormComponent: typeof BpkInput; id: string... Remove this comment to see the full error message
         FormComponent={BpkInput}
         id="input_invalid"
         name="input_invalid"
@@ -121,6 +133,9 @@ const FormsExample = () => (
       </BpkFormValidation>
     </form>
     <form className={formClassName}>
+      // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+      // @ts-expect-error TS(2322): Type '{ children: Element[]; FormComponent: { (pro... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; FormComponent: { (pro... Remove this comment to see the full error message
       <InputContainer
         FormComponent={BpkSelect}
         id="select_invalid"
@@ -143,6 +158,7 @@ const FormsExample = () => (
     </form>
     <form className={formClassName}>
       <InputContainer
+        // @ts-expect-error TS(2322) FIXME: Type '{ FormComponent: (props: Props) => Element; ... Remove this comment to see the full error message
         FormComponent={BpkCheckbox}
         name="checkbox"
         label="Apples"
@@ -153,6 +169,7 @@ const FormsExample = () => (
     </form>
     <form className={formClassName}>
       <InputContainer
+        // @ts-expect-error TS(2322) FIXME: Type '{ FormComponent: { (props: Props): Element; ... Remove this comment to see the full error message
         FormComponent={BpkTextarea}
         id="textarea"
         name="textarea"

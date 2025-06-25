@@ -32,6 +32,7 @@ Nesciunt, voluptate, illo.`;
 
 class GroupExample extends Component<{}, { value: string }> {
   constructor() {
+    // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 0.
     super();
     this.state = { value: 'Lagos' };
   }
@@ -50,10 +51,11 @@ class GroupExample extends Component<{}, { value: string }> {
           <div>
             <BpkRadio
               {...rest}
+              // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; label: string; o... Remove this comment to see the full error message
               id={city}
               name='group_example'
               label={city}
-              onChange={(event) => {
+              onChange={(event: any) => {
                 this.updateValue(event.target.value);
               }}
               value={city}
@@ -71,6 +73,7 @@ const DefaultExample = () => <GroupExample />;
 
 const MultilineExample = () => (
   <BpkRadio
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; label: string; o... Remove this comment to see the full error message
     id="multi_line"
     name="multi_line"
     label={loremIpsum}
@@ -78,16 +81,22 @@ const MultilineExample = () => (
   />
 );
 
+// @ts-expect-error TS(2322) FIXME: Type '{ valid: boolean; }' is not assignable to ty... Remove this comment to see the full error message
 const InvalidExample = () => <GroupExample valid={false} />;
 
 const WhiteExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: any[]; padded: true; }' is not a... Remove this comment to see the full error message
   <BpkDarkExampleWrapper padded>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'white'.
+    // @ts-expect-error TS(2322): Type '{ white: true; }' is not assignable to type ... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ white: true; }' is not assignable to type ... Remove this comment to see the full error message
     <GroupExample white />
   </BpkDarkExampleWrapper>
 );
 
 const DisabledCheckedExample = () => (
   <BpkRadio
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; label: string; o... Remove this comment to see the full error message
     id="disabled_checked"
     name="disabled_checked"
     label="Return"
@@ -99,6 +108,7 @@ const DisabledCheckedExample = () => (
 
 const DisabledUncheckedExample = () => (
   <BpkRadio
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; label: string; o... Remove this comment to see the full error message
     id="disabled"
     name="disabled"
     label="Return"

@@ -30,6 +30,7 @@ const getClassName = cssModules(STYLES);
 
 class ProgressContainer extends Component<{}, { progress: number }> {
   constructor() {
+    // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 0.
     super();
 
     this.state = {
@@ -58,6 +59,8 @@ class ProgressContainer extends Component<{}, { progress: number }> {
         &nbsp;
         <div className={getClassName('bpkdocs-progress-container__flex-grow')}>
           {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+          // @ts-expect-error TS(2769): No overload matches this call.
+          // @ts-expect-error TS(2769) FIXME: No overload matches this call.
           <BpkProgress min={0} max={100} value={progress} {...this.props} />
         </div>
       </div>
@@ -67,6 +70,7 @@ class ProgressContainer extends Component<{}, { progress: number }> {
 
 class SteppedProgressContainer extends Component<{}, { progress: number }> {
   constructor() {
+    // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 0.
     super();
 
     this.state = {
@@ -84,6 +88,8 @@ class SteppedProgressContainer extends Component<{}, { progress: number }> {
     return (
       <div>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+        // @ts-expect-error TS(2769): No overload matches this call.
+        // @ts-expect-error TS(2769) FIXME: No overload matches this call.
         <BpkProgress
           min={0}
           max={5}
@@ -115,6 +121,7 @@ class SteppedProgressContainer extends Component<{}, { progress: number }> {
 
 const DefaultExample = () => <ProgressContainer />;
 
+// @ts-expect-error TS(2322) FIXME: Type '{ small: true; }' is not assignable to type ... Remove this comment to see the full error message
 const SmallExample = () => <ProgressContainer small />;
 
 const SteppedExample = () => <SteppedProgressContainer />;

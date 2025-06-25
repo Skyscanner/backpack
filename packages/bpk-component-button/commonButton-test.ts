@@ -40,12 +40,15 @@ describe.each([
   { name: 'BpkButtonSecondaryOnDark', ButtonToTest: BpkButtonSecondaryOnDark },
 ])('$name', ({ ButtonToTest }) => {
   it('should render correctly', () => {
+    // @ts-expect-error TS(2749) FIXME: 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
     const { asFragment } = render(<ButtonToTest>My button</ButtonToTest>);
+    // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 3.
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "href" attribute', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2749) FIXME: 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
       <ButtonToTest href="#">My button</ButtonToTest>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -53,18 +56,22 @@ describe.each([
 
   it('should render correctly with a "disabled" attribute', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2749) FIXME: 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
       <ButtonToTest disabled>My button</ButtonToTest>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "large" attribute', () => {
+    // @ts-expect-error TS(2749) FIXME: 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
     const { asFragment } = render(<ButtonToTest large>My button</ButtonToTest>);
+    // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 3.
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with an "iconOnly" attribute', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2749) FIXME: 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
       <ButtonToTest iconOnly>My button</ButtonToTest>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -72,7 +79,9 @@ describe.each([
 
   it('should respect the class names entered as a string', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2749) FIXME: 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
       <ButtonToTest large className="custom-class-1 custom-class-2">
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'My'.
         My button
       </ButtonToTest>,
     );
@@ -81,7 +90,9 @@ describe.each([
 
   it('should add only bpk specific classes if className prop is set to empty string', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2749) FIXME: 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
       <ButtonToTest large className="">
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'My'.
         My button
       </ButtonToTest>,
     );
@@ -90,7 +101,9 @@ describe.each([
 
   it('should render correctly with "blank" attribute', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2749) FIXME: 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
       <ButtonToTest href="#" blank>
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'My'.
         My button
       </ButtonToTest>,
     );
@@ -99,7 +112,9 @@ describe.each([
 
   it('should render correctly with "rel" attribute', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2749) FIXME: 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
       <ButtonToTest href="#" rel="rel-attr">
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'My'.
         My button
       </ButtonToTest>,
     );
@@ -108,7 +123,9 @@ describe.each([
 
   it('should render correctly with "blank" and "rel" attributes', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2749) FIXME: 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
       <ButtonToTest href="#" blank rel="rel-overwrite">
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'My'.
         My button
       </ButtonToTest>,
     );
@@ -117,7 +134,9 @@ describe.each([
 
   it('should render correctly with "disabled" and "href" attributes', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2749) FIXME: 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
       <ButtonToTest href="#" disabled>
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'My'.
         My button
       </ButtonToTest>,
     );

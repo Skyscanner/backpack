@@ -192,7 +192,11 @@ describe('BpkFieldset', () => {
 
   it('should render correctly with select component', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2746) FIXME: This JSX tag's 'children' prop expects a single ch... Remove this comment to see the full error message
       <BpkFieldset label="Fruits" validationMessage="Please select a fruit">
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+        // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
         <BpkSelect id="fruits_select" name="fruits" value="">
           <option value="">Please select...</option>
           <option value="apples">Apples</option>
@@ -209,11 +213,15 @@ describe('BpkFieldset', () => {
 
   it('should render correctly with select component and "required" attribute', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2746) FIXME: This JSX tag's 'children' prop expects a single ch... Remove this comment to see the full error message
       <BpkFieldset
         label="Fruits"
         validationMessage="Please select a fruit"
         required
       >
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+        // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
         <BpkSelect id="fruits_select" name="fruits" value="">
           <option value="">Please select...</option>
           <option value="apples">Apples</option>
@@ -230,12 +238,16 @@ describe('BpkFieldset', () => {
 
   it('should render as disabled when select component is disabled and required', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2746) FIXME: This JSX tag's 'children' prop expects a single ch... Remove this comment to see the full error message
       <BpkFieldset
         label="Fruits"
         validationMessage="Please select a fruit"
         disabled
         required
       >
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+        // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
         <BpkSelect id="fruits_select" name="fruits" value="">
           <option value="">Please select...</option>
           <option value="apples">Apples</option>
@@ -257,6 +269,7 @@ describe('BpkFieldset', () => {
         validationMessage="You must accept the terms and conditions to continue"
       >
         <BpkCheckbox
+          // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; label: string; }... Remove this comment to see the full error message
           id="terms_and_conditions_checkbox"
           name="terms_and_conditions"
           label="I accept the terms and conditions"
@@ -274,6 +287,7 @@ describe('BpkFieldset', () => {
         required
       >
         <BpkCheckbox
+          // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; label: string; }... Remove this comment to see the full error message
           id="terms_and_conditions_checkbox"
           name="terms_and_conditions"
           label="I accept the terms and conditions"
@@ -292,6 +306,7 @@ describe('BpkFieldset', () => {
         required
       >
         <BpkCheckbox
+          // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; label: string; }... Remove this comment to see the full error message
           id="terms_and_conditions_checkbox"
           name="terms_and_conditions"
           label="I accept the terms and conditions"

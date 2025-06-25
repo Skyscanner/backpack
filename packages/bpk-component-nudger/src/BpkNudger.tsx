@@ -22,7 +22,6 @@ import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
 import { withButtonAlignment } from '../../bpk-component-icon';
 import MinusIcon from '../../bpk-component-icon/sm/minus';
 import PlusIcon from '../../bpk-component-icon/sm/plus';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLabel from '../../bpk-component-label';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules, setNativeValue } from '../../bpk-react-utils';
@@ -90,6 +89,8 @@ const BpkNudger = ({
     <div className={containerClassNames}>
       {title && (
         <div className={getClassName('bpk-nudger__label')}>
+          // @ts-expect-error TS(2322): Type 'ReactNode' is not assignable to type 'string... Remove this comment to see the full error message
+          // @ts-expect-error TS(2322) FIXME: Type 'ReactNode' is not assignable to type 'string... Remove this comment to see the full error message
           <BpkLabel htmlFor={id}>{icon}</BpkLabel>
           <span
             // For a11y on IOS, role='text' forces label to be read in full. More info: https://axesslab.com/text-splitting/

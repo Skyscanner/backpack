@@ -20,6 +20,7 @@
 
 import PropTypes from 'prop-types';
 
+// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'd3-s... Remove this comment to see the full error message
 import { scaleBand, scaleLinear } from 'd3-scale';
 
 import { borderRadiusXs } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
@@ -29,11 +30,14 @@ import { remToPx } from './utils';
 
 const borderRadius = remToPx(borderRadiusXs);
 
+// @ts-expect-error TS(7006) FIXME: Parameter 'point' implicitly has an 'any' type.
 const getYPos = (point, { maxYValue, yScale, yScaleDataKey }) =>
   yScale(Math.min(point[yScaleDataKey], maxYValue));
 
 const getBarHeight = (
+  // @ts-expect-error TS(7006) FIXME: Parameter 'point' implicitly has an 'any' type.
   point,
+  // @ts-expect-error TS(7031) FIXME: Binding element 'height' implicitly has an 'any' t... Remove this comment to see the full error message
   { height, margin, maxYValue, yScale, yScaleDataKey },
 ) => {
   const barHeight =
@@ -44,6 +48,7 @@ const getBarHeight = (
   return Math.max(barHeight, 0);
 };
 
+// @ts-expect-error TS(7006) FIXME: Parameter 'point' implicitly has an 'any' type.
 const isOutlier = (point, { maxYValue, yScaleDataKey }) =>
   point[yScaleDataKey] > maxYValue;
 
@@ -61,13 +66,18 @@ type Props = {
     left: number,
     right: number,
   },
+  // @ts-expect-error TS(2300) FIXME: Duplicate identifier 'string'.
   getBarLabel: (any, string, string) => mixed,
   BarComponent: typeof BpkBarchartBar,
+  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
   getBarSelection: (any: any) => mixed,
   outerPadding: number,
   innerPadding: number,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   onBarClick: ?(e: SyntheticEvent<any>, Object) => mixed,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   onBarHover: ?(e: SyntheticEvent<any>, Object) => mixed,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   onBarFocus: ?(e: SyntheticEvent<any>, Object) => mixed,
 };
 
@@ -117,7 +127,9 @@ const BpkBarchartBars = (props: Props) => {
             label={getBarLabel(point, xScaleDataKey, yScaleDataKey)}
             outlier={isOutlier(point, props)}
             onClick={onBarClick ? (e) => onBarClick(e, { point }) : null}
+            // @ts-expect-error TS(2322) FIXME: Type '((e: any) => mixed) | null' is not assignabl... Remove this comment to see the full error message
             onHover={onBarHover ? (e) => onBarHover(e, { point }) : null}
+            // @ts-expect-error TS(2322) FIXME: Type '((e: any) => mixed) | null' is not assignabl... Remove this comment to see the full error message
             onFocus={onBarFocus ? (e) => onBarFocus(e, { point }) : null}
             selected={getBarSelection(point)}
             padding={innerPadding}

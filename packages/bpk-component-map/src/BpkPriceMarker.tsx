@@ -40,10 +40,15 @@ type Props = {
   label: string,
   position: LatLong,
   disabled: boolean,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   className: ?string,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   arrowClassName: ?string,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   onClick: ?(event: SyntheticEvent<>) => mixed,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   buttonProps: ?{ [string]: any },
+  // @ts-expect-error TS(2304) FIXME: Cannot find name '$Keys'.
   status: $Keys<typeof PRICE_MARKER_STATUSES>,
 };
 
@@ -84,6 +89,7 @@ const BpkPriceMarker = (props: Props) => {
       <button
         type="button"
         className={markerWrapperClassNames}
+        // @ts-expect-error TS(2322) FIXME: Type '((event: SyntheticEvent) => mixed) | null' i... Remove this comment to see the full error message
         onClick={onClick}
         disabled={disabled}
         {...buttonProps}

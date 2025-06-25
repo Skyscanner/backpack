@@ -27,6 +27,7 @@ describe('BpkGridToggle', () => {
   });
 
   it('should render correctly with the className prop', () => {
+    // @ts-expect-error TS(2322) FIXME: Type '{ className: string; }' is not assignable to... Remove this comment to see the full error message
     const { asFragment } = render(<BpkGridToggle className="foo" />);
     expect(asFragment()).toMatchSnapshot();
   });

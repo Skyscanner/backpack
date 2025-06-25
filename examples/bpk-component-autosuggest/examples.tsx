@@ -101,7 +101,7 @@ const dataHanzi = [
   },
 ];
 
-const getSuggestions = (value, hanzi) => {
+const getSuggestions = (value: any, hanzi: any) => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
 
@@ -114,8 +114,7 @@ const getSuggestions = (value, hanzi) => {
       );
 };
 
-const getSuggestionValue = (suggestion) =>
-  `${suggestion.name} (${suggestion.code})`;
+const getSuggestionValue = (suggestion: any) => `${suggestion.name} (${suggestion.code})`;
 
 type State = {
   value: string,
@@ -139,7 +138,10 @@ class AutosuggestExample extends Component<Props, State> {
     alwaysRenderSuggestions: false,
   };
 
+  onSuggestionsClearRequested: any;
+
   constructor() {
+    // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 0.
     super();
 
     this.state = {
@@ -148,6 +150,7 @@ class AutosuggestExample extends Component<Props, State> {
     };
   }
 
+  // @ts-expect-error TS(2304) FIXME: Cannot find name 'SyntheticEvent'.
   onChange = (e: SyntheticEvent<any>, { newValue }: { newValue: string }) => {
     this.setState({
       value: newValue,
@@ -180,17 +183,16 @@ class AutosuggestExample extends Component<Props, State> {
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
         getSuggestionValue={getSuggestionValue}
-        renderSuggestion={(suggestion) => (
-          <BpkAutosuggestSuggestion
-            value={getSuggestionValue(suggestion)}
-            indent={suggestion.indent}
-            icon={includeIcon ? BpkFlightIcon : null}
-            subHeading={includeSubheading ? suggestion.country : null}
-            tertiaryLabel={
-              includeTertiaryLabel ? suggestion.tertiaryLabel : null
-            }
-          />
-        )}
+        renderSuggestion={(suggestion: any) => <BpkAutosuggestSuggestion
+          value={getSuggestionValue(suggestion)}
+          indent={suggestion.indent}
+          // @ts-expect-error TS(2322) FIXME: Type '{ (props: { [rest: string]: any; className?:... Remove this comment to see the full error message
+          icon={includeIcon ? BpkFlightIcon : null}
+          subHeading={includeSubheading ? suggestion.country : null}
+          tertiaryLabel={
+            includeTertiaryLabel ? suggestion.tertiaryLabel : null
+          }
+        />}
         inputProps={inputProps}
       />
     );

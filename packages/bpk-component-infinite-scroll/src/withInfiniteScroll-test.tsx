@@ -22,10 +22,11 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { ArrayDataSource } from './DataSource';
+// @ts-expect-error TS(1192) FIXME: Module '"/Users/fayexiao/Documents/workspace4/back... Remove this comment to see the full error message
 import withInfiniteScroll from './withInfiniteScroll';
 
 const nextTick = () => new Promise((res) => setTimeout(res, 0));
-const mockDataSource = (data) => {
+const mockDataSource = (data: any) => {
   const myDs = new ArrayDataSource(data);
   const mockFetch = myDs.fetchItems.bind(myDs);
   myDs.fetchItems = jest.fn((...args) => mockFetch(...args));
@@ -33,19 +34,15 @@ const mockDataSource = (data) => {
 };
 
 describe('withInfiniteScroll', () => {
-  const elementsArray = [];
+  const elementsArray: any = [];
 
   for (let i = 0; i < 5; i += 1) {
     elementsArray.push(`Element ${i}`);
   }
 
-  const List = (props) => (
-    <div id="list">
-      {props.elements.map((element) => (
-        <div key={element}>{element}</div>
-      ))}
-    </div>
-  );
+  const List = (props: any) => <div id="list">
+    {props.elements.map((element: any) => <div key={element}>{element}</div>)}
+  </div>;
 
   List.propTypes = {
     elements: PropTypes.oneOfType([
@@ -55,12 +52,13 @@ describe('withInfiniteScroll', () => {
   };
 
   const InfiniteList = withInfiniteScroll(List);
-  let intersect;
+  let intersect: any;
   let currentOptions = {};
 
   beforeEach(() => {
+    // @ts-expect-error TS(2322) FIXME: Type 'typeof IntersectionObserver' is not assignab... Remove this comment to see the full error message
     global.IntersectionObserver = class {
-      constructor(callback, options) {
+      constructor(callback: any, options: any) {
         intersect = async () => callback([{ isIntersecting: true }]);
         currentOptions = options;
       }
@@ -128,7 +126,9 @@ describe('withInfiniteScroll', () => {
       <InfiniteList
         dataSource={new ArrayDataSource(elementsArray)}
         elementsPerScroll={1}
-        renderSeeMoreComponent={({ onSeeMoreClick }) => (
+        renderSeeMoreComponent={({
+          onSeeMoreClick
+        }: any) => (
           <button type="button" onClick={onSeeMoreClick}>
             see more
           </button>
@@ -259,7 +259,9 @@ describe('withInfiniteScroll', () => {
       <InfiniteList
         dataSource={myDs}
         elementsPerScroll={1}
-        renderSeeMoreComponent={({ onSeeMoreClick }) => (
+        renderSeeMoreComponent={({
+          onSeeMoreClick
+        }: any) => (
           <button type="button" id="test-button" onClick={onSeeMoreClick}>
             see more
           </button>

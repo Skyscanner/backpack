@@ -28,7 +28,6 @@ import { cssModules } from '../../packages/bpk-react-utils';
 import {
   action,
   BpkDarkExampleWrapper,
-  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from '../bpk-storybook-utils';
 
 import STYLES from './BpkButtonStory.module.scss';

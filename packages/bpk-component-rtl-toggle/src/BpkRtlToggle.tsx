@@ -18,7 +18,6 @@
 
 import { Component } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
 
 import { getHtmlElement, DIRECTIONS, DIRECTION_CHANGE_EVENT } from './utils';
@@ -84,6 +83,7 @@ class BpkRtlToggle extends Component<Props, State> {
 
     return (
       <BpkButtonLink
+        // @ts-expect-error TS(2322) FIXME: Type '{ children: string[]; title: string; onClick... Remove this comment to see the full error message
         title="Keyboard Shortcut: ctrl + cmd + r"
         onClick={this.toggleRtl}
       >

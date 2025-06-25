@@ -19,7 +19,7 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+// @ts-expect-error TS(2724) FIXME: '"@skyscanner/bpk-foundations-web/tokens/base.es6"... Remove this comment to see the full error message
 import { spacingSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkBackgroundImage from './BpkBackgroundImage';

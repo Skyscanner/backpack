@@ -20,6 +20,7 @@
 
 import { number } from 'prop-types';
 
+// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'd3-s... Remove this comment to see the full error message
 import { scaleLinear, scaleBand } from 'd3-scale';
 
 import { lineHeightSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
@@ -62,7 +63,10 @@ const margin = {
   right: 0,
 };
 
-const Gridlines = ({ size, ...rest }) => (
+const Gridlines = ({
+  size,
+  ...rest
+}: any) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size}>
     <BpkChartMargin margin={margin}>
       <BpkChartAxis
@@ -123,11 +127,21 @@ const AxesAndGridlinesExample = () => {
   return (
     <div>
       <Heading>Linear scale</Heading>
+      // @ts-expect-error TS(2322): Type '{ scale: any; size: number; }' is not assign... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322) FIXME: Type '{ scale: any; size: number; }' is not assign... Remove this comment to see the full error message
       <Gridlines scale={scale} size={size} />
+      // @ts-expect-error TS(2322): Type '{ scale: any; size: number; numTicks: number... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322) FIXME: Type '{ scale: any; size: number; numTicks: number... Remove this comment to see the full error message
       <Gridlines scale={scale} size={size} numTicks={2} />
       <Heading>Band scale</Heading>
+      // @ts-expect-error TS(2322): Type '{ scale: any; size: number; }' is not assign... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322) FIXME: Type '{ scale: any; size: number; }' is not assign... Remove this comment to see the full error message
       <Gridlines scale={scale2} size={size} />
+      // @ts-expect-error TS(2322): Type '{ scale: any; size: number; tickEvery: numbe... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322) FIXME: Type '{ scale: any; size: number; tickEvery: numbe... Remove this comment to see the full error message
       <Gridlines scale={scale2} size={size} tickEvery={2} />
+      // @ts-expect-error TS(2322): Type '{ scale: any; size: number; tickEvery: numbe... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322) FIXME: Type '{ scale: any; size: number; tickEvery: numbe... Remove this comment to see the full error message
       <Gridlines scale={scale2} size={size} tickEvery={2} tickOffset={1} />
     </div>
   );
@@ -135,6 +149,7 @@ const AxesAndGridlinesExample = () => {
 
 const DefaultExample = () => (
   <RtlBarchart
+    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
     initialWidth={500}
     initialHeight={300}
     data={data.prices}
@@ -151,6 +166,7 @@ const DefaultExample = () => (
 
 const CustomScrollColorsExample = () => (
   <RtlBarchart
+    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
     initialWidth={500}
     initialHeight={300}
     data={data.prices}
@@ -174,6 +190,7 @@ const CustomScrollColorsExample = () => (
 
 const DefaultDisabledDataTableExample = () => (
   <RtlBarchart
+    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
     initialWidth={500}
     initialHeight={300}
     data={data.prices}
@@ -191,6 +208,7 @@ const DefaultDisabledDataTableExample = () => (
 
 const InteractiveExample = () => (
   <SelectableBarChart
+    // @ts-expect-error TS(2322) FIXME: Type '{ initialWidth: number; initialHeight: numbe... Remove this comment to see the full error message
     initialWidth={500}
     initialHeight={300}
     data={data.prices}
@@ -207,6 +225,7 @@ const InteractiveExample = () => (
 
 const OutliersExample = () => (
   <RtlBarchart
+    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
     initialWidth={500}
     initialHeight={300}
     data={data.prices2}
@@ -223,6 +242,7 @@ const OutliersExample = () => (
 
 const CustomTicksExample = () => (
   <RtlBarchart
+    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
     initialWidth={500}
     initialHeight={300}
     data={data.prices}
@@ -241,6 +261,7 @@ const CustomTicksExample = () => (
 
 const CustomTickLabelsExample = () => (
   <RtlBarchart
+    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
     initialWidth={500}
     initialHeight={300}
     data={data.prices}
@@ -251,7 +272,7 @@ const CustomTickLabelsExample = () => (
     }}
     xAxisLabel="Month"
     xAxisMargin={3 * remToPx(lineHeightSm) + 12}
-    xAxisTickValue={(tick) => {
+    xAxisTickValue={(tick: any) => {
       let season = '❄️';
       if (['Mar', 'Apr', 'May'].indexOf(tick) > -1) {
         season = '🌻';
@@ -274,12 +295,13 @@ const CustomTickLabelsExample = () => (
     }}
     yAxisLabel="Average Price"
     yAxisMargin={4 * remToPx(lineHeightSm)}
-    yAxisTickValue={(v) => `£${v}`}
+    yAxisTickValue={(v: any) => `£${v}`}
   />
 );
 
 const GridlinesExample = () => (
   <RtlBarchart
+    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
     initialWidth={500}
     initialHeight={300}
     data={data.prices}
@@ -298,6 +320,7 @@ const CustomYAxisDomainExample = () => (
   <div>
     <Heading>Domain (0 - 800)</Heading>
     <RtlBarchart
+      // @ts-expect-error TS(2769) FIXME: No overload matches this call.
       initialWidth={500}
       initialHeight={300}
       data={data.prices}
@@ -311,6 +334,7 @@ const CustomYAxisDomainExample = () => (
     />
     <Heading>Domain (300 - null)</Heading>
     <RtlBarchart
+      // @ts-expect-error TS(2769) FIXME: No overload matches this call.
       initialWidth={500}
       initialHeight={300}
       data={data.prices}

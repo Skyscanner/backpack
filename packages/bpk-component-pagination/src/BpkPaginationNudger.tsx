@@ -30,10 +30,9 @@ const getClassName = cssModules(STYLES);
 const AlignedArrowLeftIcon = withRtlSupport(withButtonAlignment(ArrowLeftIcon));
 const AlignedArrowRightIcon = withRtlSupport(withButtonAlignment(ArrowRightIcon));
 
-const nudgerIcon = (forward) =>
-  forward ? (<AlignedArrowRightIcon/>) : (<AlignedArrowLeftIcon/>);
+const nudgerIcon = (forward: any) => forward ? (<AlignedArrowRightIcon/>) : (<AlignedArrowLeftIcon/>);
 
-const BpkPaginationNudger = (props) => {
+const BpkPaginationNudger = (props: any) => {
   const { disabled, forward, label, onNudge } = props;
 
   return (

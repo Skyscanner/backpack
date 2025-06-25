@@ -26,7 +26,7 @@ import STYLES from './bpk-flare-bar.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkFlareBar = (props) => {
+const BpkFlareBar = (props: any) => {
   const { className, rounded, svgClassName, ...rest } = props;
 
   const classNames = [getClassName('bpk-flare-bar__container')];

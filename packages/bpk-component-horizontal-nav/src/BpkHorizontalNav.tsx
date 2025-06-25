@@ -19,6 +19,7 @@
 
 import PropTypes from 'prop-types';
 import { Component, Children, cloneElement } from 'react';
+// @ts-expect-error TS(2305) FIXME: Module '"react"' has no exported member 'Node'.
 import type { Node } from 'react';
 
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
@@ -38,12 +39,17 @@ export type Props = {
   autoScrollToSelected: boolean,
   children: Node,
   showUnderline: boolean,
+  // @ts-expect-error TS(2304) FIXME: Cannot find name '$Keys'.
   type: $Keys<typeof HORIZONTAL_NAV_TYPES>,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   className: ?string,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   leadingScrollIndicatorClassName: ?string,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   trailingScrollIndicatorClassName: ?string,
 };
 
+// @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
 const getPos = (ref: ?Element): ?{ left: number, right: number } => {
   if (!ref) {
     return null;
@@ -53,8 +59,10 @@ const getPos = (ref: ?Element): ?{ left: number, right: number } => {
 };
 
 class BpkHorizontalNav extends Component<Props> {
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   selectedItemRef: ?Element;
 
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   scrollRef: ?Element;
 
   constructor(props: Props) {
@@ -150,6 +158,7 @@ class BpkHorizontalNav extends Component<Props> {
         let childRef;
         if (autoScrollToSelected) {
           if (child && child.props && child.props.selected) {
+            // @ts-expect-error TS(7006) FIXME: Parameter 'ref' implicitly has an 'any' type.
             childRef = (ref) => {
               this.selectedItemRef = ref;
             };
@@ -157,6 +166,7 @@ class BpkHorizontalNav extends Component<Props> {
         }
 
         if (type === HORIZONTAL_NAV_TYPES.light) {
+          // @ts-expect-error TS(2339) FIXME: Property 'type' does not exist on type '{}'.
           childProps.type = HORIZONTAL_NAV_TYPES.light;
         }
 
@@ -172,7 +182,9 @@ class BpkHorizontalNav extends Component<Props> {
         <BpkMobileScrollContainer
           ariaLabel={ariaLabel}
           innerContainerTagName="nav"
+          // @ts-expect-error TS(2322) FIXME: Type 'string | null' is not assignable to type 'st... Remove this comment to see the full error message
           leadingIndicatorClassName={leadingScrollIndicatorClassName}
+          // @ts-expect-error TS(2322) FIXME: Type 'string | null' is not assignable to type 'st... Remove this comment to see the full error message
           trailingIndicatorClassName={trailingScrollIndicatorClassName}
           scrollerRef={(ref) => {
             this.scrollRef = ref;
@@ -191,6 +203,7 @@ class BpkHorizontalNav extends Component<Props> {
   }
 }
 
+// @ts-expect-error TS(2339) FIXME: Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 BpkHorizontalNav.propTypes = {
   ariaLabel: PropTypes.string,
   children: PropTypes.node.isRequired,
@@ -209,6 +222,7 @@ BpkHorizontalNav.propTypes = {
   type: PropTypes.oneOf(Object.keys(HORIZONTAL_NAV_TYPES)),
 }
 
+// @ts-expect-error TS(2339) FIXME: Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
 BpkHorizontalNav.defaultProps = {
   ariaLabel: null,
   autoScrollToSelected: false,

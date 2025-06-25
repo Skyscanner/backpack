@@ -29,7 +29,7 @@ const getClassName = cssModules(STYLES);
 const GRID_CLASS_NAME = getClassName('bpk-vertical-grid--on');
 
 class BpkGridToggle extends Component {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
 
     this.state = {
@@ -43,37 +43,43 @@ class BpkGridToggle extends Component {
 
   componentWillUnmount() {
     document
+      // @ts-expect-error TS(2339) FIXME: Property 'targetContainer' does not exist on type ... Remove this comment to see the full error message
       .querySelector(this.props.targetContainer)
       .classList.remove(GRID_CLASS_NAME);
     document.removeEventListener('keydown', this.handleKeyDown);
   }
 
-  handleKeyDown = (e) => {
+  handleKeyDown = (e: any) => {
     if (e.ctrlKey && e.metaKey && e.key.toLowerCase() === 'g') {
       this.toggleGrid(e);
     }
   };
 
-  toggleGrid = (e) => {
+  toggleGrid = (e: any) => {
     e.preventDefault();
 
     document
+      // @ts-expect-error TS(2339) FIXME: Property 'targetContainer' does not exist on type ... Remove this comment to see the full error message
       .querySelector(this.props.targetContainer)
       .classList.toggle(GRID_CLASS_NAME);
 
     this.setState((state) => ({
+      // @ts-expect-error TS(2339) FIXME: Property 'gridEnabled' does not exist on type 'Rea... Remove this comment to see the full error message
       gridEnabled: !state.gridEnabled,
     }));
   };
 
   render() {
+    // @ts-expect-error TS(2339) FIXME: Property 'className' does not exist on type 'Reado... Remove this comment to see the full error message
     const { className } = this.props;
+    // @ts-expect-error TS(2339) FIXME: Property 'gridEnabled' does not exist on type 'Rea... Remove this comment to see the full error message
     const { gridEnabled } = this.state;
     const onOrOff = gridEnabled ? 'off' : 'on';
 
     return (
       <span className={className}>
         <BpkButtonLink
+          // @ts-expect-error TS(2322) FIXME: Type '{ children: string[]; title: string; onClick... Remove this comment to see the full error message
           title="Keyboard Shortcut: ctrl + cmd + g"
           onClick={this.toggleGrid}
         >
@@ -84,11 +90,13 @@ class BpkGridToggle extends Component {
   }
 }
 
+// @ts-expect-error TS(2339) FIXME: Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 BpkGridToggle.propTypes = {
   targetContainer: PropTypes.string,
   className: PropTypes.string,
 };
 
+// @ts-expect-error TS(2339) FIXME: Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
 BpkGridToggle.defaultProps = {
   targetContainer: 'body',
   className: null,

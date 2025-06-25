@@ -43,9 +43,7 @@ import {
 
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
@@ -194,7 +192,7 @@ const BpkPopover = ({
   const targetElement = isValidElement(target) ? (
     cloneElement(target, {
       ...referenceProps,
-      // @ts-ignore - we're adding a popover ref to the target element so we can position the popover relative to it
+      // @ts-expect-error TS(2769) FIXME: No overload matches this call.
       ref: refs.setReference,
     })
   ) : (
@@ -259,6 +257,7 @@ const BpkPopover = ({
                       &nbsp;
                       {closeButtonIcon ? (
                         <BpkCloseButton
+                          // @ts-expect-error TS(2322) FIXME: Type 'string | undefined' is not assignable to typ... Remove this comment to see the full error message
                           label={closeButtonText || closeButtonLabel}
                           onClick={(
                             event: SyntheticEvent<HTMLButtonElement>,

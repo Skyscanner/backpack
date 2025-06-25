@@ -25,6 +25,9 @@ describe('BpkSelect form test', () => {
   it('should work as a form component in a form', async () => {
     render(
       <form data-testid="form">
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+        // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
         <BpkSelect
           id="fruits"
           name="fruits"
@@ -45,15 +48,20 @@ describe('BpkSelect form test', () => {
     const select = screen.getByTestId('myselect');
     const option = screen.getByTestId('select-option');
 
+    // @ts-expect-error TS(2339) FIXME: Property 'options' does not exist on type 'HTMLEle... Remove this comment to see the full error message
     expect(select.options.selectedIndex).toEqual(0);
 
+    // @ts-expect-error TS(2339) FIXME: Property 'selected' does not exist on type 'HTMLEl... Remove this comment to see the full error message
     expect(screen.getByText('Apples').selected).toBeTruthy();
 
     await userEvent.selectOptions(select, option);
 
+    // @ts-expect-error TS(2339) FIXME: Property 'selected' does not exist on type 'HTMLEl... Remove this comment to see the full error message
     expect(option.selected).toBeTruthy();
+    // @ts-expect-error TS(2339) FIXME: Property 'selected' does not exist on type 'HTMLEl... Remove this comment to see the full error message
     expect(screen.getByText('Apples').selected).toBeFalsy();
 
+    // @ts-expect-error TS(2345) FIXME: Argument of type 'HTMLElement' is not assignable t... Remove this comment to see the full error message
     const formData = new FormData(screen.getByTestId('form'));
 
     expect(Object.fromEntries(formData.entries())).toEqual({
@@ -65,6 +73,9 @@ describe('BpkSelect form test', () => {
     const formValidation = jest.fn();
   
     render(<form data-testid="form">
+      // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+      // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
       <BpkSelect
         id="fruits"
         name="fruits"
@@ -84,19 +95,25 @@ describe('BpkSelect form test', () => {
 
     const select = screen.getByTestId('myselect');
 
+    // @ts-expect-error TS(2339) FIXME: Property 'options' does not exist on type 'HTMLEle... Remove this comment to see the full error message
     expect(select.options.selectedIndex).toEqual(0);
+    // @ts-expect-error TS(2339) FIXME: Property 'selected' does not exist on type 'HTMLEl... Remove this comment to see the full error message
     expect(screen.getByText('Apples').selected).toBeTruthy();
 
     await userEvent.selectOptions(select, 'oranges');
 
+    // @ts-expect-error TS(2339) FIXME: Property 'selected' does not exist on type 'HTMLEl... Remove this comment to see the full error message
     expect(screen.getByText('Apples').selected).toBeFalsy();
+    // @ts-expect-error TS(2339) FIXME: Property 'selected' does not exist on type 'HTMLEl... Remove this comment to see the full error message
     expect(screen.getByText('Oranges').selected).toBeTruthy();
 
     expect(formValidation).toHaveBeenCalledTimes(1);
 
     await userEvent.selectOptions(select, 'pears');
 
+    // @ts-expect-error TS(2339) FIXME: Property 'selected' does not exist on type 'HTMLEl... Remove this comment to see the full error message
     expect(screen.getByText('Oranges').selected).toBeFalsy();
+    // @ts-expect-error TS(2339) FIXME: Property 'selected' does not exist on type 'HTMLEl... Remove this comment to see the full error message
     expect(screen.getByText('Pears').selected).toBeTruthy();
     expect(formValidation).toHaveBeenCalledTimes(2);
   });

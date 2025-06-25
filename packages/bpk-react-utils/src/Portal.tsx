@@ -20,7 +20,7 @@ import { Component } from 'react';
 import type { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'obje... Remove this comment to see the full error message
 import assign from 'object-assign';
 
 const KEYCODES = {
@@ -183,7 +183,7 @@ class Portal extends Component<Props, State> {
   }
 
   getClickEventProperties(event: MouseEvent | TouchEvent) {
-    // @ts-expect-error FIXME: TS2339: Property 'button' does not exist on type 'TouchEvent | MouseEvent'.
+    // @ts-expect-error TS(2339) FIXME: Property 'button' does not exist on type 'TouchEve... Remove this comment to see the full error message
     const isNotLeftClick = event.button && event.button !== 0;
 
     const targetElement = this.getTargetElement();
@@ -300,7 +300,7 @@ class Portal extends Component<Props, State> {
           supportsPassiveOption = true;
         },
       });
-      // @ts-expect-error FIXME: TS2769: No overload matches this call.
+      // @ts-expect-error TS(2769) FIXME: No overload matches this call.
       window.addEventListener('test', null, opts);
     } catch (e) {
       return false;

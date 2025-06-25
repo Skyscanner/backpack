@@ -19,9 +19,7 @@
 import PropTypes from 'prop-types';
 import type { ReactNode } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkOverlayView from './BpkOverlayView';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { LatLongPropType, type LatLong } from './common-types';
 
 type Props = {
@@ -40,9 +38,11 @@ const BpkBasicMapMarker = (props: Props) => {
   return (
     <BpkOverlayView
       position={position}
+      // @ts-expect-error TS(2322) FIXME: Type '{ children: ReactNode[]; position: LatLong; ... Remove this comment to see the full error message
       getPixelPositionOffset={getPixelPositionOffset}
       {...rest}
     >
+      // @ts-expect-error TS(2322): Type 'ReactNode' is not assignable to type 'string... Remove this comment to see the full error message
       {children}
     </BpkOverlayView>
   );

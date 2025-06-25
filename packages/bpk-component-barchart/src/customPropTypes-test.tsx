@@ -37,6 +37,7 @@ const badData = [
 describe('chartDataProp', () => {
   it('should fail if data is not an array', () => {
     const result = chartDataProp(
+      // @ts-expect-error TS(2345) FIXME: Argument of type '{ data: {}; xScaleDataKey: strin... Remove this comment to see the full error message
       { data: {}, xScaleDataKey: 'day', yScaleDataKey: 'price' },
       'data',
       'BpkBarchart',
@@ -48,6 +49,7 @@ describe('chartDataProp', () => {
 
   it('should fail if on object is missing a scale key', () => {
     const result = chartDataProp(
+      // @ts-expect-error TS(2345) FIXME: Argument of type '{ data: { day: string; value: nu... Remove this comment to see the full error message
       { data: badData, xScaleDataKey: 'day', yScaleDataKey: 'price' },
       'data',
       'BpkBarchart',
@@ -59,6 +61,7 @@ describe('chartDataProp', () => {
 
   it('should return null for valid data', () => {
     const result = chartDataProp(
+      // @ts-expect-error TS(2345) FIXME: Argument of type '{ data: { day: string; price: nu... Remove this comment to see the full error message
       { data: goodData, xScaleDataKey: 'day', yScaleDataKey: 'price' },
       'data',
       'BpkBarchart',

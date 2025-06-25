@@ -19,8 +19,10 @@
 /* @flow strict */
 
 import { Component } from 'react';
+// @ts-expect-error TS(2305) FIXME: Module '"react"' has no exported member 'Node'.
 import type { Node } from 'react';
 
+// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module '../.... Remove this comment to see the full error message
 import AnimateHeight from '../../packages/bpk-animate-height';
 import BpkButton from '../../packages/bpk-component-button';
 

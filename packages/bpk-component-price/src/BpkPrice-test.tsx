@@ -29,7 +29,7 @@ const previousPrice = '£2,000';
 const leadingText = 'from';
 const trailingText = 'per day';
 const icon = NewWindowIcon;
-let props;
+let props: any;
 
 describe.each([
   [SIZES.xsmall, ALIGNS.left],

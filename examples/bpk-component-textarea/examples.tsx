@@ -28,11 +28,15 @@ laudantium quis, tempore iste non, nam magnam.`;
 
 const DefaultExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="default">Textarea</BpkLabel>
     <BpkTextarea
       id="default"
       name="default"
       value={loremIpsum}
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; value: string; o... Remove this comment to see the full error message
       onChange={action('input changed')}
       placeholder="Please enter some text"
     />
@@ -41,11 +45,15 @@ const DefaultExample = () => (
 
 const PlaceholderExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="placeholder">Textarea</BpkLabel>
     <BpkTextarea
       id="placeholder"
       name="placeholder"
       value=""
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; value: string; o... Remove this comment to see the full error message
       onChange={action('input changed')}
       placeholder="Please enter some text"
     />
@@ -54,11 +62,15 @@ const PlaceholderExample = () => (
 
 const DisabledExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="disabled">Textarea</BpkLabel>
     <BpkTextarea
       id="disabled"
       name="disabled"
       value=""
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; value: string; o... Remove this comment to see the full error message
       onChange={action('input changed')}
       placeholder="Please enter some text"
       disabled
@@ -68,11 +80,15 @@ const DisabledExample = () => (
 
 const InvalidExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="invalid">Textarea</BpkLabel>
     <BpkTextarea
       id="invalid"
       name="invalid"
       value=""
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; value: string; o... Remove this comment to see the full error message
       onChange={action('input changed')}
       placeholder="Please enter some text"
       valid={false}
@@ -82,12 +98,16 @@ const InvalidExample = () => (
 
 const LargeExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="large">Textarea</BpkLabel>
     <BpkTextarea
       id="large"
       name="large"
       large
       value={loremIpsum}
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; large: true; val... Remove this comment to see the full error message
       onChange={action('input changed')}
       placeholder="Please enter some text"
     />

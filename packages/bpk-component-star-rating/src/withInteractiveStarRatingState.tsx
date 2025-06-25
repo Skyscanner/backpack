@@ -28,6 +28,7 @@ const withInteractiveStarRatingState = (
   InteractiveStarRating: ComponentType<any>,
 ) => {
   type Props = {
+    // @ts-expect-error TS(7051) FIXME: Parameter has a name but no type. Did you mean 'ar... Remove this comment to see the full error message
     onRatingSelect: (number, Function) => mixed,
   };
 
@@ -46,6 +47,7 @@ const withInteractiveStarRatingState = (
     };
 
     constructor() {
+      // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 0.
       super();
 
       this.state = {
@@ -56,6 +58,7 @@ const withInteractiveStarRatingState = (
 
     onRatingSelect = (rating: number, event: Function) => {
       if (event) {
+        // @ts-expect-error TS(2339) FIXME: Property 'persist' does not exist on type 'Functio... Remove this comment to see the full error message
         event.persist();
       }
 
@@ -90,6 +93,7 @@ const withInteractiveStarRatingState = (
     }
   }
 
+  // @ts-expect-error TS(2339) FIXME: Property 'displayName' does not exist on type 'typ... Remove this comment to see the full error message
   EnhancedComponent.displayName = wrapDisplayName(
     EnhancedComponent,
     'withInteractiveStarRatingState',

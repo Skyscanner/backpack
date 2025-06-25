@@ -18,6 +18,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
+// @ts-expect-error TS(2724) FIXME: '"react"' has no exported member named 'Element'. ... Remove this comment to see the full error message
 import type { Element } from 'react';
 import { cloneElement } from 'react';
 
@@ -31,15 +32,21 @@ const getClassName = cssModules(STYLES);
 
 export type Props = {
   // TODO: Should this be something like `Element<typeof BpkInput | typeof BpkCheckbox | typeof BpkSelect>`?
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   children: Element<*>,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   label: ?string,
   disabled: boolean,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   valid: ?boolean,
   required: boolean,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   className: ?string,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   validationMessage: ?string,
   isCheckbox: boolean,
   validationProps: {},
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   description: ?string,
 };
 
@@ -91,6 +98,7 @@ const BpkFieldset = (props: Props) => {
     'aria-required'?: boolean,
     'aria-describedby'?: string,
   } = {
+    // @ts-expect-error TS(2322) FIXME: Type '{ disabled: boolean; }' is not assignable to... Remove this comment to see the full error message
     disabled,
   };
 
@@ -118,12 +126,14 @@ const BpkFieldset = (props: Props) => {
       {!isCheckbox && (
         <div className={getClassName('bpk-fieldset__label')}>
           <BpkLabel
+            // @ts-expect-error TS(2322) FIXME: Type '{ children: (string | null)[]; htmlFor: stri... Remove this comment to see the full error message
             htmlFor={childId}
             required={required}
             disabled={disabled}
             valid={isValid}
           >
             {/* $FlowIgnore[incompatible-type] - As this prop is only required when isCheckbox is false our labelPropType handles checking this is null or not. */}
+            // @ts-expect-error TS(2322): Type 'string | null' is not assignable to type 'st... Remove this comment to see the full error message
             {label}
           </BpkLabel>
         </div>
@@ -153,6 +163,7 @@ const BpkFieldset = (props: Props) => {
 };
 
 const labelPropType = (
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   props: { isCheckbox?: boolean, label?: ?string },
   propName: string,
 ) => {

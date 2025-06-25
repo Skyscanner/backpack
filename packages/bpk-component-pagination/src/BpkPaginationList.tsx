@@ -27,7 +27,7 @@ import STYLES from './BpkPaginationList.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkPaginationList = (props) => {
+const BpkPaginationList = (props: any) => {
   const {
     onPageChange,
     pageCount,

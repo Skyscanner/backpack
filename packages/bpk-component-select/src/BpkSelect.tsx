@@ -18,6 +18,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
+// @ts-expect-error TS(2724) FIXME: '"react"' has no exported member named 'Element'. ... Remove this comment to see the full error message
 import type { Element } from 'react';
 import { cloneElement } from 'react';
 
@@ -31,15 +32,19 @@ export type Props = {
   id: string,
   name: string,
   value: string,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   className: ?string,
   disabled: boolean,
   docked: boolean,
   dockedFirst: boolean,
   dockedLast: boolean,
   dockedMiddle: boolean,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   image: ?Element<any>,
   large: boolean,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   valid: ?boolean,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   wrapperClassName: ?string,
 };
 

@@ -31,15 +31,16 @@ const inputId = 'theme-select';
 const getClassName = cssModules(STYLES);
 const availableThemes = Object.keys(bpkCustomThemes);
 
-const setTheme = (theme) => {
+const setTheme = (theme: any) => {
   const htmlElement = getHtmlElement();
+  // @ts-expect-error TS(2531) FIXME: Object is possibly 'null'.
   htmlElement.dispatchEvent(
     new CustomEvent(THEME_CHANGE_EVENT, { detail: { theme } }),
   );
 };
 
 class BpkThemeToggle extends Component {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = {
       selectedTheme: '',
@@ -54,19 +55,21 @@ class BpkThemeToggle extends Component {
     document.removeEventListener('keydown', this.handleKeyDown);
   }
 
-  handleKeyDown = (e) => {
+  handleKeyDown = (e: any) => {
     if (e.ctrlKey && e.metaKey && e.key.toLowerCase() === 't') {
       this.cycleTheme();
     }
   };
 
-  handleChange = (e) => {
+  handleChange = (e: any) => {
     const selectedTheme = e.target.value;
     this.setState({ selectedTheme });
+    // @ts-expect-error TS(7053) FIXME: Element implicitly has an 'any' type because expre... Remove this comment to see the full error message
     setTheme(bpkCustomThemes[selectedTheme]);
   };
 
   cycleTheme = () => {
+    // @ts-expect-error TS(2339) FIXME: Property 'selectedTheme' does not exist on type 'R... Remove this comment to see the full error message
     let { selectedTheme } = this.state;
     const selectedIndex = selectedTheme
       ? availableThemes.indexOf(selectedTheme) + 1
@@ -77,6 +80,7 @@ class BpkThemeToggle extends Component {
       selectedTheme = availableThemes[selectedIndex];
     }
     this.setState({ selectedTheme });
+    // @ts-expect-error TS(7053) FIXME: Element implicitly has an 'any' type because expre... Remove this comment to see the full error message
     setTheme(bpkCustomThemes[selectedTheme]);
   };
 
@@ -85,11 +89,18 @@ class BpkThemeToggle extends Component {
     return (
       <div {...rest}>
         <span className={getClassName('bpk-theme-toggle__label')}>
+          // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+          // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+          // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
           <BpkLabel htmlFor={inputId}>Change theme</BpkLabel>
         </span>
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+        // @ts-expect-error TS(2322): Type '{ children: (Element | Element[])[]; id: str... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322) FIXME: Type '{ children: (Element | Element[])[]; id: str... Remove this comment to see the full error message
         <BpkSelect
           id={inputId}
           name={inputId}
+          // @ts-expect-error TS(2339) FIXME: Property 'selectedTheme' does not exist on type 'R... Remove this comment to see the full error message
           value={this.state.selectedTheme}
           onChange={this.handleChange}
         >

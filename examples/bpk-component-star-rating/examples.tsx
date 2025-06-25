@@ -38,9 +38,7 @@ import { action } from '../bpk-storybook-utils';
 const InteractiveStarRating = withInteractiveStarRatingState(
   BpkInteractiveStarRating,
 );
-const StarRating = (props) => (
-  <BpkStarRating ratingLabel={(r, m) => `${r} out of ${m} stars`} {...props} />
-);
+const StarRating = (props: any) => <BpkStarRating ratingLabel={(r, m) => `${r} out of ${m} stars`} {...props} />;
 
 const FullExample = () => (
   <BpkTable>
@@ -176,16 +174,18 @@ const ThreePointEightStarsRoundedExample = () => (
 const InteractiveExample = () => (
   <div>
     <InteractiveStarRating
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; getStarLabel: (rating: any, ma... Remove this comment to see the full error message
       id="small-star-rating"
-      getStarLabel={(rating, maxRating) =>
+      getStarLabel={(rating: any, maxRating: any) =>
         `${rating} out of ${maxRating} stars`
       }
       onRatingSelect={action('rating selected')}
     />
     <br />
     <InteractiveStarRating
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; getStarLabel: (rating: any, ma... Remove this comment to see the full error message
       id="large-star-rating"
-      getStarLabel={(rating, maxRating) =>
+      getStarLabel={(rating: any, maxRating: any) =>
         `${rating} out of ${maxRating} stars`
       }
       onRatingSelect={action('large rating selected')}
@@ -193,8 +193,9 @@ const InteractiveExample = () => (
     />
     <br />
     <InteractiveStarRating
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; getStarLabel: (rating: any, ma... Remove this comment to see the full error message
       id="extra-large-star-rating"
-      getStarLabel={(rating, maxRating) =>
+      getStarLabel={(rating: any, maxRating: any) =>
         `${rating} out of ${maxRating} stars`
       }
       onRatingSelect={action('extra large rating selected')}

@@ -31,6 +31,7 @@ export const WithForms = FormsExample;
 
 export const VisualTest = FormsExample;
 export const VisualTestWithZoom = VisualTest.bind({});
+// @ts-expect-error TS(2339) FIXME: Property 'args' does not exist on type '() => Elem... Remove this comment to see the full error message
 VisualTestWithZoom.args = {
   zoomEnabled: true
 };

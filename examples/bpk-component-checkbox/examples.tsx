@@ -22,7 +22,6 @@ import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import {
   action,
   BpkDarkExampleWrapper,
-// @ts-expect-error Could not find a declaration file for module '../bpk-storybook-utils'.
 } from '../bpk-storybook-utils';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores doloremque, expedita
@@ -71,6 +70,9 @@ class StatefulCheckbox extends Component<Props, State> {
   render() {
     return (
       <div style={{ padding: '.25rem' }}>
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'isChecked'.
+        // @ts-expect-error TS(2322): Type '{ isChecked: boolean; id: string; name: stri... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322) FIXME: Type '{ isChecked: boolean; id: string; name: stri... Remove this comment to see the full error message
         <BpkCheckbox
           className={undefined} checked={this.state.isChecked}
           onChange={this.handleChange}

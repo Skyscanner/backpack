@@ -20,6 +20,7 @@
 
 import PropTypes from 'prop-types';
 import { Component } from 'react';
+// @ts-expect-error TS(2305) FIXME: Module '"react"' has no exported member 'Node'.
 import type { Node } from 'react';
 
 import BpkButton from '../../packages/bpk-component-button';
@@ -45,7 +46,9 @@ const Paragraph = withDefaultProps(BpkText, {
 type Props = {
   children: Node,
   dismissible: boolean,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   headerIcon: ?Node,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   initiallyOpen: ?boolean,
 };
 
@@ -65,6 +68,7 @@ class DialogContainer extends Component<Props, State> {
   };
 
   constructor(props: Props) {
+    // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 0.
     super();
 
     this.state = {
@@ -100,6 +104,7 @@ class DialogContainer extends Component<Props, State> {
           onClose={this.onClose}
           getApplicationElement={() => document.getElementById('pagewrap')}
           renderTarget={() => document.getElementById('dialog-container')}
+          // @ts-expect-error TS(2783) FIXME: 'headerIcon' is specified more than once, so this ... Remove this comment to see the full error message
           headerIcon
           {...this.props}
         >
@@ -135,6 +140,7 @@ const WithIconExample = () => (
       <span>Warning Icon Dialog</span>
       <DialogContainer
         headerIcon={<InfoIcon />}
+        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; headerIcon: Element; he... Remove this comment to see the full error message
         headerIconType={HEADER_ICON_TYPES.warning}
         dismissible={false}
       >
@@ -149,6 +155,7 @@ const WithIconExample = () => (
       <span>Destructive Icon Dialog</span>
       <DialogContainer
         headerIcon={<TrashIcon />}
+        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; headerIcon: Element; he... Remove this comment to see the full error message
         headerIconType={HEADER_ICON_TYPES.destructive}
         dismissible={false}
       >
@@ -171,6 +178,7 @@ const NotDismissibleExample = () => (
 );
 
 const WithFlareExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; initiallyOpen: true; fl... Remove this comment to see the full error message
   <DialogContainer initiallyOpen flare dismissible={false}>
     <Paragraph>
       This is a dialog with a flare view added as the header.

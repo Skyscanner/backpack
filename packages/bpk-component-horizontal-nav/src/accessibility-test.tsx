@@ -25,9 +25,16 @@ import BpkHorizontalNavItem from './BpkHorizontalNavItem';
 describe('BpkHorizontalNav accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
+      // @ts-expect-error TS(2740) FIXME: Type '{ children: (string | Element)[]; ariaLabel:... Remove this comment to see the full error message
       <BpkHorizontalNav ariaLabel="nav content">
+        // @ts-expect-error TS(2769): No overload matches this call.
+        // @ts-expect-error TS(2769) FIXME: No overload matches this call.
         <BpkHorizontalNavItem>One</BpkHorizontalNavItem>,
+        // @ts-expect-error TS(2769): No overload matches this call.
+        // @ts-expect-error TS(2769) FIXME: No overload matches this call.
         <BpkHorizontalNavItem>Two</BpkHorizontalNavItem>,
+        // @ts-expect-error TS(2769): No overload matches this call.
+        // @ts-expect-error TS(2769) FIXME: No overload matches this call.
         <BpkHorizontalNavItem>Three</BpkHorizontalNavItem>,
       </BpkHorizontalNav>,
     );

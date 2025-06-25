@@ -24,7 +24,6 @@ import {
 import BpkSegmentedControl from '../../packages/bpk-component-segmented-control';
 import { SEGMENT_TYPES } from '../../packages/bpk-component-segmented-control/src/BpkSegmentedControl';
 import { cssModules } from '../../packages/bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
@@ -77,6 +76,7 @@ const SimpleSurfaceDefault = () => (
 );
 
 const SimpleSurfaceContrast = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; padded: true; }' is not... Remove this comment to see the full error message
   <BpkDarkExampleWrapper padded>
     <BpkSegmentedControl
       buttonContents={[
@@ -120,6 +120,7 @@ const allCustomButtonContent = [
 ];
 
 const CustomSurfaceContrast = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; padded: true; }' is not... Remove this comment to see the full error message
   <BpkDarkExampleWrapper padded>
     <BpkSegmentedControl
       buttonContents={allCustomButtonContent}
@@ -144,6 +145,7 @@ const CustomSurfaceDefault = () => (
 );
 
 const CustomCanvasContrast = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; padded: true; style: { ... Remove this comment to see the full error message
   <BpkDarkExampleWrapper padded style={{ backgroundColor: canvasContrastDay }}>
     <BpkSegmentedControl
       buttonContents={allCustomButtonContent}
@@ -207,6 +209,7 @@ const allComplexButtonContent = [
 ];
 
 const ComplexSurfaceContrast = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; padded: true; }' is not... Remove this comment to see the full error message
   <BpkDarkExampleWrapper padded>
     <BpkSegmentedControl
       buttonContents={allComplexButtonContent}
@@ -231,6 +234,7 @@ const ComplexSurfaceDefault = () => (
 );
 
 const ComplexCanvasContrast = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; padded: true; style: { ... Remove this comment to see the full error message
   <BpkDarkExampleWrapper padded style={{ backgroundColor: canvasContrastDay }}>
     <BpkSegmentedControl
       buttonContents={allComplexButtonContent}

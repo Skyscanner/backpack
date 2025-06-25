@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'obje... Remove this comment to see the full error message
 import assign from 'object-assign';
 import CSSTransition from 'react-transition-group/CSSTransition';
 

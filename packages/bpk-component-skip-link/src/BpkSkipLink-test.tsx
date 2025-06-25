@@ -42,6 +42,7 @@ describe('BpkSkipLink', () => {
 
   it('should support arbitrary props', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2322) FIXME: Type '{ href: string; label: string; testid: strin... Remove this comment to see the full error message
       <BpkSkipLink href="#main" label="Skip to main content" testid="123" />,
     );
     expect(asFragment()).toMatchSnapshot();

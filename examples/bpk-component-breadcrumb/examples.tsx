@@ -33,6 +33,9 @@ const DefaultExample = () => (
 const ExtremeExample = () => (
   <BpkBreadcrumb label="Extreme breadcrumb">
     <BpkBreadcrumbItem href="/">Home</BpkBreadcrumbItem>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; href: string; id: string... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; href: string; id: string... Remove this comment to see the full error message
     <BpkBreadcrumbItem href="/page-1" id="123" linkProps={{ target: '_blank' }}>
       Page 1
     </BpkBreadcrumbItem>

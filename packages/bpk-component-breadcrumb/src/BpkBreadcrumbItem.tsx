@@ -19,6 +19,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
+// @ts-expect-error TS(2305) FIXME: Module '"react"' has no exported member 'Node'.
 import type { Node } from 'react';
 
 import { withRtlSupport } from '../../bpk-component-icon';
@@ -36,6 +37,7 @@ export type Props = {
   active: boolean,
   href: ?string,
   className: ?string,
+  // @ts-expect-error TS(2693) FIXME: 'string' only refers to a type, but is being used ... Remove this comment to see the full error message
   linkProps: ?{ [string]: any },
 };
 
@@ -60,6 +62,8 @@ const BpkBreadcrumbItem = (props: Props) => {
       ) : (
         // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
         <div className={getClassName('bpk-breadcrumb-item__link')}>
+          // @ts-expect-error TS(2740): Type '{ children: Node; href: string | null; }' is... Remove this comment to see the full error message
+          // @ts-expect-error TS(2740) FIXME: Type '{ children: Node; href: string | null; }' is... Remove this comment to see the full error message
           <BpkLink
             href={href}
             {...linkProps}

@@ -57,19 +57,19 @@ import { formatMonth, formatDateFull, weekDays } from './test-utils';
 
 const LeftIcon = withButtonAlignment(withRtlSupport(SmallLongArrowLeftIcon));
 const RightIcon = withButtonAlignment(withRtlSupport(SmallLongArrowRightIcon));
-const withDirection = (Nav, direction) => (props) => (
-  <Nav {...props} direction={direction} />
-);
-const withPrices = (DateComponent, prices) => (props) => (
-  <DateComponent {...props} prices={prices} />
-);
+const withDirection = (Nav: any, direction: any) => (props: any) => <Nav {...props} direction={direction} />;
+const withPrices = (DateComponent: any, prices: any) => (props: any) => <DateComponent {...props} prices={prices} />;
 
 const prices = [
   125, 56, 75, 57, 78, 92, 133, 90, 148, 80, 122, 67, 70, 123, 77, 66, 64, 56,
   105, 138, 52, 70, 106, 139, 88, 97, 73, 114, 119, 141, 118,
 ];
 
-const MyCalendarNav = ({ direction, month, onMonthChange }) => (
+const MyCalendarNav = ({
+  direction,
+  month,
+  onMonthChange
+}: any) => (
   <div
     style={{
       display: 'flex',
@@ -100,7 +100,7 @@ const MyCalendarNav = ({ direction, month, onMonthChange }) => (
   </div>
 );
 
-const MyCalendarDate = (props) => {
+const MyCalendarDate = (props: any) => {
   const cx = {
     textAlign: 'center',
     fontSize: '0.8em',
@@ -113,9 +113,11 @@ const MyCalendarDate = (props) => {
   const day = props.date.getDate();
   const price = props.prices[day - 1];
   if (price < 100) {
+    // @ts-expect-error TS(2322) FIXME: Type '"rgb(0, 166, 152)"' is not assignable to typ... Remove this comment to see the full error message
     priceCx.color = colorMonteverde;
   }
   return (
+    // @ts-expect-error TS(2322) FIXME: Type '{ textAlign: string; fontSize: string; color... Remove this comment to see the full error message
     <div style={cx}>
       <div>{day}</div>
       {props.isOutside || props.isBlocked ? null : (
@@ -144,7 +146,7 @@ const MyReturnCalendar = withCalendarState(
 );
 
 class MonthViewCalendar extends Component {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = {
       departDate: props.departureDate,
@@ -153,9 +155,13 @@ class MonthViewCalendar extends Component {
   }
 
   render() {
+    // @ts-expect-error TS(2339) FIXME: Property 'maxDate' does not exist on type 'Readonl... Remove this comment to see the full error message
     const { maxDate, minDate, ...rest } = this.props;
     return (
       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'id'.
+        // @ts-expect-error TS(2741): Property 'weekStartsOn' is missing in type '{ id: ... Remove this comment to see the full error message
+        // @ts-expect-error TS(2741) FIXME: Property 'weekStartsOn' is missing in type '{ id: ... Remove this comment to see the full error message
         <MyDepartCalendar
           id="myCalendar"
           formatMonth={formatMonth}
@@ -164,12 +170,14 @@ class MonthViewCalendar extends Component {
           changeMonthLabel="Change month"
           previousMonthLabel="Go to previous month"
           nextMonthLabel="Go to next month"
+          // @ts-expect-error TS(2339) FIXME: Property 'departDate' does not exist on type 'Read... Remove this comment to see the full error message
           date={this.state.departDate}
           fixedWidth={false}
           onDateSelect={(departDate) => {
             this.setState((prevState) => ({
               departDate,
               returnDate: dateToBoundaries(
+                // @ts-expect-error TS(2339) FIXME: Property 'returnDate' does not exist on type 'Read... Remove this comment to see the full error message
                 prevState.returnDate,
                 departDate,
                 maxDate,
@@ -185,6 +193,9 @@ class MonthViewCalendar extends Component {
             borderRight: `1px solid ${colorSkyGrayTint06}`,
           }}
         />
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'id'.
+        // @ts-expect-error TS(2741): Property 'weekStartsOn' is missing in type '{ id: ... Remove this comment to see the full error message
+        // @ts-expect-error TS(2741) FIXME: Property 'weekStartsOn' is missing in type '{ id: ... Remove this comment to see the full error message
         <MyReturnCalendar
           id="myCalendar"
           formatMonth={formatMonth}
@@ -193,12 +204,14 @@ class MonthViewCalendar extends Component {
           changeMonthLabel="Change month"
           previousMonthLabel="Go to previous month"
           nextMonthLabel="Go to next month"
+          // @ts-expect-error TS(2339) FIXME: Property 'returnDate' does not exist on type 'Read... Remove this comment to see the full error message
           date={this.state.returnDate}
           fixedWidth={false}
           onDateSelect={(returnDate) => {
             this.setState((prevState) => ({
               returnDate,
               departDate: dateToBoundaries(
+                // @ts-expect-error TS(2339) FIXME: Property 'departDate' does not exist on type 'Read... Remove this comment to see the full error message
                 prevState.departDate,
                 minDate,
                 returnDate,
@@ -212,6 +225,7 @@ class MonthViewCalendar extends Component {
   }
 }
 
+// @ts-expect-error TS(2339) FIXME: Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 MonthViewCalendar.propTypes = {
   minDate: PropTypes.instanceOf(Date),
   maxDate: PropTypes.instanceOf(Date),
@@ -220,6 +234,7 @@ MonthViewCalendar.propTypes = {
   weekStartsOn: PropTypes.number.isRequired,
 };
 
+// @ts-expect-error TS(2339) FIXME: Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
 MonthViewCalendar.defaultProps = {
   minDate: startOfDay(new Date()),
   maxDate: startOfDay(addMonths(new Date(), 12)),
@@ -228,21 +243,27 @@ MonthViewCalendar.defaultProps = {
 };
 
 class CalendarContainer extends Component {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
 
+    // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
     if (this.props.selectionConfiguration.type === 'range') {
       this.state = {
         selectionConfiguration: {
+          // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
           type: this.props.selectionConfiguration.type,
+          // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
           startDate: this.props.selectionConfiguration.startDate,
+          // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
           endDate: this.props.selectionConfiguration.endDate,
         },
       };
     } else {
       this.state = {
         selectionConfiguration: {
+          // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
           type: this.props.selectionConfiguration.type,
+          // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
           date: this.props.selectionConfiguration.date,
         },
       };
@@ -251,40 +272,50 @@ class CalendarContainer extends Component {
 
   render() {
     return (
+      // @ts-expect-error TS(2739) FIXME: Type '{ onDateSelect: (startDate: Date, endDate?: ... Remove this comment to see the full error message
       <BpkCalendar
         {...this.props}
+        // @ts-expect-error TS(2322) FIXME: Type 'null' is not assignable to type 'Date | unde... Remove this comment to see the full error message
         onDateSelect={(startDate, endDate = null) => {
+          // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
           if (this.props.selectionConfiguration.type === 'range') {
             if (startDate && !endDate) {
               this.setState({
                 selectionConfiguration: {
+                  // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
                   type: this.props.selectionConfiguration.type,
                   startDate,
                   endDate: null,
                 },
               });
+              // @ts-expect-error TS(2554) FIXME: Expected 0 arguments, but got 1.
               action('Selected day')(startDate);
             }
             if (startDate && endDate) {
               this.setState({
                 selectionConfiguration: {
+                  // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
                   type: this.props.selectionConfiguration.type,
                   startDate,
                   endDate,
                 },
               });
+              // @ts-expect-error TS(2554) FIXME: Expected 0 arguments, but got 1.
               action('Selected end day')(endDate);
             }
           } else {
             this.setState({
               selectionConfiguration: {
+                // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
                 type: this.props.selectionConfiguration.type,
                 date: startDate,
               },
             });
+            // @ts-expect-error TS(2554) FIXME: Expected 0 arguments, but got 1.
             action('Selected day')(startDate);
           }
         }}
+        // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
         selectionConfiguration={this.state.selectionConfiguration}
         onMonthChange={action('Changed month')}
       />
@@ -292,10 +323,12 @@ class CalendarContainer extends Component {
   }
 }
 
+// @ts-expect-error TS(2339) FIXME: Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 CalendarContainer.propTypes = {
   selectionConfiguration: CustomPropTypes.SelectionConfiguration,
 };
 
+// @ts-expect-error TS(2339) FIXME: Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
 CalendarContainer.defaultProps = {
   selectionConfiguration: {
     type: CALENDAR_SELECTION_TYPE.single,

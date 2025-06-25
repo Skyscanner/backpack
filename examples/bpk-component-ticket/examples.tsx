@@ -47,7 +47,9 @@ const flights = Array(100).fill({
   logo: '//logos.skyscnr.com/images/airlines/BA.png',
 });
 
-const Flight = ({ flight }) => (
+const Flight = ({
+  flight
+}: any) => (
   <BpkTicket
     className={getClassName('bpk-stories-flight')}
     stubClassName={getClassName('bpk-stories-flight__stub')}

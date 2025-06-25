@@ -25,6 +25,9 @@ import { action } from '../bpk-storybook-utils';
 
 const SplitInputExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="otpInput">4-digit verification code</BpkLabel>
     <BpkSplitInput
       type={INPUT_TYPES.number}
@@ -40,6 +43,9 @@ const SplitInputExample = () => (
 
 const SplitInputSixDigitExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="otpInput">6-digit verification code</BpkLabel>
     <BpkSplitInput
       type={INPUT_TYPES.text}
@@ -55,6 +61,9 @@ const SplitInputSixDigitExample = () => (
 
 const SplitInputWithPlaceholderExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="otpInput">6-digit verification code</BpkLabel>
     <BpkSplitInput
       type={INPUT_TYPES.text}
@@ -71,6 +80,9 @@ const SplitInputWithPlaceholderExample = () => (
 
 const SplitInputSmallExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="otpInput">4-digit verification code</BpkLabel>
     <BpkSplitInput
       type={INPUT_TYPES.number}

@@ -50,7 +50,6 @@ describe('BpkDismissibleChip', () => {
 
   it(`should ignore setting a trailing accessory view, resulting in a close icon`, () => {
     const { asFragment } = render(
-      // @ts-ignore
       <TestChip trailingAccessoryView={<span>trailing</span>} />,
     );
     expect(asFragment()).toMatchSnapshot();

@@ -18,6 +18,7 @@
 
 /* @flow strict */
 
+// @ts-expect-error TS(1192) FIXME: Module '"/Users/fayexiao/Documents/workspace4/back... Remove this comment to see the full error message
 import withInfiniteScroll, {
   type Props as WithInfiniteScrollProps,
 } from './src/withInfiniteScroll';

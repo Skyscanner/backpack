@@ -18,6 +18,7 @@
 /* @flow strict */
 
 import BpkSplitInput, {
+  // @ts-expect-error TS(2614) FIXME: Module '"./src/BpkSplitInput"' has no exported mem... Remove this comment to see the full error message
   type Props as BpkSplitInputProps,
   INPUT_TYPES,
 } from './src/BpkSplitInput';

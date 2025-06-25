@@ -48,6 +48,7 @@ type State = {
 
 class DrawerContainer extends Component<Props, State> {
   constructor() {
+    // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 0.
     super();
 
     this.state = {
@@ -76,6 +77,9 @@ class DrawerContainer extends Component<Props, State> {
           <BpkButton onClick={this.onOpen}>{buttonText}</BpkButton>
         </div>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md  */}
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'id'.
+        // @ts-expect-error TS(2739): Type '{ id: string; className: string; isOpen: boo... Remove this comment to see the full error message
+        // @ts-expect-error TS(2739) FIXME: Type '{ id: string; className: string; isOpen: boo... Remove this comment to see the full error message
         <BpkDrawer
           id="my-drawer"
           className="my-classname"
@@ -89,11 +93,13 @@ class DrawerContainer extends Component<Props, State> {
   }
 }
 
+// @ts-expect-error TS(2339) FIXME: Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 DrawerContainer.propTypes = {
   buttonText: PropTypes.string.isRequired,
 };
 
 const DefaultExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: string; title: string; closeLabe... Remove this comment to see the full error message
   <DrawerContainer
     title="Drawer title"
     closeLabel="Close drawer"
@@ -105,6 +111,7 @@ const DefaultExample = () => (
 );
 
 const OverflowingExamples = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; title: string; closeL... Remove this comment to see the full error message
   <DrawerContainer
     title="Drawer title"
     closeLabel="Close drawer"
@@ -227,6 +234,7 @@ const OverflowingExamples = () => (
 );
 
 const CloseButtonTextExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: string; title: string; closeText... Remove this comment to see the full error message
   <DrawerContainer
     title="Drawer title"
     closeText="Done"
@@ -238,6 +246,7 @@ const CloseButtonTextExample = () => (
 );
 
 const WithVisuallyHiddenTitleExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: string; title: string; hideTitle... Remove this comment to see the full error message
   <DrawerContainer
     title="Drawer title"
     hideTitle
@@ -250,6 +259,7 @@ const WithVisuallyHiddenTitleExample = () => (
 );
 
 const WithFullHeightContentExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: (string | Element)[]; title: str... Remove this comment to see the full error message
   <DrawerContainer
     title="Drawer title"
     closeLabel="Close drawer"
@@ -265,6 +275,7 @@ const WithFullHeightContentExample = () => (
 );
 
 const WithNonPaddedContentExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; title: string; closeLab... Remove this comment to see the full error message
   <DrawerContainer
     title="Drawer title"
     closeLabel="Close drawer"
@@ -282,6 +293,7 @@ const WithNonPaddedContentExample = () => (
 );
 
 const WithMobileModalBehaviourExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: string; title: string; closeLabe... Remove this comment to see the full error message
   <DrawerContainer
     title="Drawer title"
     closeLabel="Close drawer"
@@ -294,6 +306,7 @@ const WithMobileModalBehaviourExample = () => (
 );
 
 const DrawerWithTooltipExampleNotAbleToBeShown = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; title: string; closeLab... Remove this comment to see the full error message
   <DrawerContainer
     title="Drawer with Tooltip"
     closeLabel="Close drawer"
@@ -319,6 +332,7 @@ const DrawerWithTooltipExampleNotAbleToBeShown = () => (
 );
 
 const DrawerWithTooltipExampleAbleToBeShown = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; title: string; closeLab... Remove this comment to see the full error message
   <DrawerContainer
     title="Drawer with Tooltip"
     closeLabel="Close drawer"

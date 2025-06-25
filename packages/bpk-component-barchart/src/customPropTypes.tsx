@@ -25,6 +25,7 @@ type Props = {
 
 export default (props: Props, propName: string, componentName: string) => {
   const { xScaleDataKey, yScaleDataKey } = props;
+  // @ts-expect-error TS(7053) FIXME: Element implicitly has an 'any' type because expre... Remove this comment to see the full error message
   const data = props[propName];
   if (!Array.isArray(data)) {
     return new Error(

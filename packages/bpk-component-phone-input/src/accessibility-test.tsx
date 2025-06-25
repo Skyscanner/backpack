@@ -49,6 +49,7 @@ const defaultProps = {
 
 describe('BpkPhoneInput accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
+    // @ts-expect-error TS(2741) FIXME: Property 'mixed' is missing in type '{ id: string;... Remove this comment to see the full error message
     const { container } = render(<BpkPhoneInput {...defaultProps} />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();

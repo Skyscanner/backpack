@@ -27,6 +27,8 @@ const getClassName = cssModules(STYLES);
 
 const ScrollExampleBlock = () => (
   <div className={getClassName('bpk-scroll-block')}>
+    // @ts-expect-error TS(2554): Expected 1-3 arguments, but got 0.
+    // @ts-expect-error TS(2554) FIXME: Expected 1-3 arguments, but got 0.
     {new Array(10).fill().map((props, index) => (
       <div
         // eslint-disable-next-line react/no-array-index-key

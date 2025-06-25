@@ -35,6 +35,7 @@ const KEYCODES = {
   SPACEBAR: 32,
 };
 
+// @ts-expect-error TS(7006) FIXME: Parameter 'callback' implicitly has an 'any' type.
 const handleKeyboardEvent = (callback) => (event) => {
   if (event.keyCode === KEYCODES.ENTER || event.keyCode === KEYCODES.SPACEBAR) {
     event.preventDefault();
@@ -51,8 +52,11 @@ type Props = {
   x: number,
   y: number,
   className: ?string,
+  // @ts-expect-error TS(7008) FIXME: Member 'mixed' implicitly has an 'any' type.
   onClick: ?(?any) => mixed,
+  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
   onHover: ?() => mixed,
+  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
   onFocus: ?() => mixed,
   outlier: boolean,
   padding: number,

@@ -251,7 +251,7 @@ describe('Portal', () => {
       </>,
     );
 
-    // @ts-expect-error ts-migrate(7006) FIXME: Parameter 'where' implicitly has an 'any' type.
+    // @ts-expect-error TS(7006) FIXME: Parameter 'where' implicitly has an 'any' type.
     const click = (where, right, drag = false) => {
       fireEvent(
         where,
@@ -341,7 +341,7 @@ describe('Portal', () => {
 
     const { getByText } = render(<MyApp />);
 
-    // @ts-expect-error ts-migrate(7006) FIXME: Parameter 'where' implicitly has an 'any' type.
+    // @ts-expect-error TS(7006) FIXME: Parameter 'where' implicitly has an 'any' type.
     const click = (where) => {
       fireEvent(
         where,

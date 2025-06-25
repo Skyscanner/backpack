@@ -43,6 +43,7 @@ class NudgerContainer extends Component<
   { value: number },
 > {
   constructor() {
+    // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 0.
     super();
 
     this.state = {
@@ -63,6 +64,9 @@ class NudgerContainer extends Component<
 
     return (
       <div>
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+        // @ts-expect-error TS(2322): Type '{ children: string; id: string; htmlFor: str... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322) FIXME: Type '{ children: string; id: string; htmlFor: str... Remove this comment to see the full error message
         <BpkLabel id="passenger-label" htmlFor={id} className={labelClassName}>
           Number of passengers
         </BpkLabel>
@@ -75,6 +79,7 @@ class NudgerContainer extends Component<
           onValueChange={this.handleChange}
           decreaseButtonLabel="Remove passenger"
           increaseButtonLabel="Add passenger"
+          // @ts-expect-error TS(2322) FIXME: Type 'string' is not assignable to type '"secondar... Remove this comment to see the full error message
           buttonType={buttonType}
         />
       </div>

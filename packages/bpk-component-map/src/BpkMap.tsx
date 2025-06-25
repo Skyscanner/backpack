@@ -19,6 +19,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
+// @ts-expect-error TS(2305) FIXME: Module '"react"' has no exported member 'Node'.
 import type { Node } from 'react';
 import { useCallback, useRef } from 'react';
 
@@ -39,17 +40,22 @@ export type Bounds = {
   east: number,
 };
 
+// @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
 export type MapRef = ?{
   getBounds: () => Bounds,
   getCenter: () => LatLong,
   getZoom: () => number,
+  // @ts-expect-error TS(7051) FIXME: Parameter has a name but no type. Did you mean 'ar... Remove this comment to see the full error message
   fitBounds: (Bounds) => void,
 };
 
 type MapOptionStyle = {
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   featureType: ?string,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   elementType: ?string,
   stylers: Array<{
+    // @ts-expect-error TS(1170) FIXME: A computed property name in a type literal must re... Remove this comment to see the full error message
     [string]: string,
   }>,
 };
@@ -62,17 +68,26 @@ type Props = {
   /**
    * Note: One of `bounds` and `center` must be provided.
    */
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   bounds: ?Bounds,
   /**
    * Note: One of `bounds` and `center` must be provided.
    */
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   center: ?LatLong,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   children: ?Node,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   mapRef: ?(MapRef) => mixed,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   onRegionChange: ?(Bounds, LatLong) => mixed,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   onZoom: ?(number) => mixed,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   onTilesLoaded: ?() => void,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   className: ?string,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   mapOptionStyles: ?Array<MapOptionStyle>,
 };
 
@@ -83,6 +98,7 @@ const BpkMap = (props: Props) => {
     children,
     className,
     greedyGestureHandling,
+    // @ts-expect-error TS(2339) FIXME: Property 'mapId' does not exist on type 'Props'.
     mapId,
     mapOptionStyles,
     mapRef,
@@ -110,6 +126,7 @@ const BpkMap = (props: Props) => {
   const mapContainerClassName = getClassName('bpk-map', className);
 
   const onLoad = useCallback(
+    // @ts-expect-error TS(7006) FIXME: Parameter 'map' implicitly has an 'any' type.
     (map) => {
       ref.current = map;
       if (map && bounds) {
@@ -155,11 +172,13 @@ const BpkMap = (props: Props) => {
       }}
       onDragEnd={() => {
         if (ref && ref.current && onRegionChange) {
+          // @ts-expect-error TS(2339) FIXME: Property 'getBounds' does not exist on type 'never... Remove this comment to see the full error message
           onRegionChange(ref.current.getBounds(), ref.current.getCenter());
         }
       }}
       onZoomChanged={() => {
         if (ref && ref.current && onZoom) {
+          // @ts-expect-error TS(2339) FIXME: Property 'getZoom' does not exist on type 'never'.
           onZoom(ref.current.getZoom());
         }
       }}

@@ -20,6 +20,7 @@
 
 import PropTypes from 'prop-types';
 import { Component, Fragment } from 'react';
+// @ts-expect-error TS(2305) FIXME: Module '"react"' has no exported member 'Node'.
 import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -35,6 +36,7 @@ type SchemaMetaDataItem = {
 
 export type Props = {
   children: Node,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   schemaMetaData: ?(SchemaMetaDataItem[]),
   label: string,
 };
@@ -62,6 +64,7 @@ const buildMetaData = (schemaMetaData: SchemaMetaDataItem[]): string => {
 };
 
 class BpkBreadcrumb extends Component<Props> {
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   metaData: ?string;
 
   static defaultProps = {
@@ -95,6 +98,7 @@ class BpkBreadcrumb extends Component<Props> {
   }
 }
 
+// @ts-expect-error TS(2339) FIXME: Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 BpkBreadcrumb.propTypes = {
   children: PropTypes.node.isRequired,
   label: PropTypes.string.isRequired,

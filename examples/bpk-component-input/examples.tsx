@@ -48,7 +48,7 @@ class ClearableInput extends Component {
     ...inputDefaultProps,
   };
 
-  constructor(props) {
+  constructor(props: any) {
     super(props);
 
     this.state = {
@@ -56,7 +56,7 @@ class ClearableInput extends Component {
     };
   }
 
-  onChange = (e) => {
+  onChange = (e: any) => {
     this.setState({ value: e.target.value });
   };
 
@@ -65,10 +65,13 @@ class ClearableInput extends Component {
   };
 
   render() {
+    // @ts-expect-error TS(2339) FIXME: Property 'value' does not exist on type 'Readonly<... Remove this comment to see the full error message
     const { value } = this.state;
+    // @ts-expect-error TS(2339) FIXME: Property 'initialValue' does not exist on type 'Re... Remove this comment to see the full error message
     const { initialValue, ...rest } = this.props;
 
     return (
+      // @ts-expect-error TS(2322) FIXME: Type '{ onChange: (e: any) => void; onClear: () =>... Remove this comment to see the full error message
       <BpkInput
         {...rest}
         onChange={this.onChange}
@@ -81,6 +84,9 @@ class ClearableInput extends Component {
 
 const TextExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="text_value">Search country, city or airport</BpkLabel>
     <BpkInput
       id="text_value"
@@ -94,6 +100,9 @@ const TextExample = () => (
 
 const PlaceholderExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="placeholder">Search country, city or airport</BpkLabel>
     <BpkInput
       id="placeholder"
@@ -107,6 +116,9 @@ const PlaceholderExample = () => (
 
 const ValidExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="valid">Search country, city or airport</BpkLabel>
     <BpkInput
       id="valid"
@@ -121,6 +133,9 @@ const ValidExample = () => (
 
 const InvalidExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="invalid">Search country, city or airport</BpkLabel>
     <BpkInput
       id="invalid"
@@ -135,6 +150,9 @@ const InvalidExample = () => (
 
 const DisabledExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="disabled">Search country, city or airport</BpkLabel>
     <BpkInput
       id="disabled"
@@ -149,27 +167,38 @@ const DisabledExample = () => (
 
 const ClearableExample = () => (
   <div>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="input_clearable">Clearable while editing</BpkLabel>
     <ClearableInput
       id="clearable_clearable"
       name="clearable_clearable"
       initialValue="Edinburgh"
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; initialValue: st... Remove this comment to see the full error message
       placeholder="Enter a country, city or airport"
       clearButtonMode={CLEAR_BUTTON_MODES.whileEditing}
       clearButtonLabel="Clear field"
     />
 
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="input_clearable_always">Always Clearable</BpkLabel>
     <ClearableInput
       id="input_clearable_always"
       name="input_clearable_always"
       initialValue="Edinburgh"
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; initialValue: st... Remove this comment to see the full error message
       placeholder="Enter a country, city or airport"
       valid
       clearButtonMode={CLEAR_BUTTON_MODES.always}
       clearButtonLabel="Clear field"
     />
 
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="input_large_valid_clearable">
       Large, valid clearable while editing
     </BpkLabel>
@@ -177,6 +206,7 @@ const ClearableExample = () => (
       id="input_large_valid_clearable"
       name="input_large_valid_clearable"
       initialValue="Edinburgh"
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; name: string; initialValue: st... Remove this comment to see the full error message
       placeholder="Enter a country, city or airport"
       large
       valid
@@ -188,6 +218,9 @@ const ClearableExample = () => (
 
 const EmailInputExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="email">Enter booking email</BpkLabel>
     <BpkInput
       type={INPUT_TYPES.email}
@@ -202,6 +235,9 @@ const EmailInputExample = () => (
 
 const NumberInputExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="number">Enter number of travellers</BpkLabel>
     <BpkInput
       type={INPUT_TYPES.number}
@@ -216,6 +252,9 @@ const NumberInputExample = () => (
 
 const PasswordInputExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="password">Enter a password</BpkLabel>
     <BpkInput
       type={INPUT_TYPES.password}
@@ -230,6 +269,9 @@ const PasswordInputExample = () => (
 
 const TelephoneInputExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="telephone">Enter contact telephone number</BpkLabel>
     <BpkInput
       type={INPUT_TYPES.tel}
@@ -244,6 +286,9 @@ const TelephoneInputExample = () => (
 
 const LargeInputExample = () => (
   <form>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
     <BpkLabel htmlFor="large">Search country, city or airport</BpkLabel>
     <BpkInput
       id="large"
@@ -272,24 +317,28 @@ const DockedExample = () => (
     >
       <div>
         <BpkLabel
+          // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; classNa... Remove this comment to see the full error message
           htmlFor="input_origin"
           className={getClassName('bpk-forms__place')}
         >
           From
         </BpkLabel>
         <BpkLabel
+          // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; classNa... Remove this comment to see the full error message
           htmlFor="input_destination"
           className={getClassName('bpk-forms__place')}
         >
           To
         </BpkLabel>
         <BpkLabel
+          // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; classNa... Remove this comment to see the full error message
           htmlFor="input_outbound"
           className={getClassName('bpk-forms__date')}
         >
           Departure date
         </BpkLabel>
         <BpkLabel
+          // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; classNa... Remove this comment to see the full error message
           htmlFor="input_inbound"
           className={getClassName('bpk-forms__date')}
         >
@@ -343,18 +392,21 @@ const DockedExample = () => (
     >
       <div>
         <BpkLabel
+          // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; classNa... Remove this comment to see the full error message
           htmlFor="input_hotels_destination"
           className={getClassName('bpk-forms__hotels-destination')}
         >
           Destination or hotel name
         </BpkLabel>
         <BpkLabel
+          // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; classNa... Remove this comment to see the full error message
           htmlFor="input_checkin"
           className={getClassName('bpk-forms__date')}
         >
           Check-in
         </BpkLabel>
         <BpkLabel
+          // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; classNa... Remove this comment to see the full error message
           htmlFor="input_checkout"
           className={getClassName('bpk-forms__date')}
         >

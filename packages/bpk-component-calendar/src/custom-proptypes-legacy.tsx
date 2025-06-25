@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 
 import { isBefore, isSameDay } from './date-utils';
 
-const DateType = () => (props) => {
+const DateType = () => (props: any) => {
   const { endDate, startDate } = props;
 
   // No range selected

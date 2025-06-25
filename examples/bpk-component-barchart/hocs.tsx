@@ -28,10 +28,12 @@ import { wrapDisplayName } from '../../packages/bpk-react-utils';
 // eslint-disable-next-line import/prefer-default-export
 export const withSelectedState = (ComposedComponent: ComponentType<any>) => {
   type State = {
+    // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
     selectedPoint: ?number,
   };
   class WithSelectedState extends Component<{}, State> {
     constructor() {
+      // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 0.
       super();
 
       this.state = {
@@ -39,6 +41,7 @@ export const withSelectedState = (ComposedComponent: ComponentType<any>) => {
       };
     }
 
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'SyntheticEvent'.
     onBarClick = (e: SyntheticEvent<any>, { point }: { point: number }) => {
       this.setState({
         selectedPoint: point,
@@ -61,6 +64,7 @@ export const withSelectedState = (ComposedComponent: ComponentType<any>) => {
     }
   }
 
+  // @ts-expect-error TS(2339) FIXME: Property 'displayName' does not exist on type 'typ... Remove this comment to see the full error message
   WithSelectedState.displayName = wrapDisplayName(
     ComposedComponent,
     'withSelectedState',

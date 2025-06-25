@@ -37,6 +37,9 @@ describe('BpkTableBody', () => {
   it('should render correctly with custom class', () => {
     const { asFragment } = render(
       <table>
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+        // @ts-expect-error TS(2322): Type '{ children: Element; className: string; }' i... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; className: string; }' i... Remove this comment to see the full error message
         <BpkTableBody className="my-custom-class">
           <tr />
         </BpkTableBody>
@@ -48,6 +51,9 @@ describe('BpkTableBody', () => {
   it('should render correctly with arbitrary props', () => {
     const { asFragment } = render(
       <table>
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+        // @ts-expect-error TS(2322): Type '{ children: Element; id: string; "data-foo":... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; id: string; "data-foo":... Remove this comment to see the full error message
         <BpkTableBody id="my-custom-id" data-foo="bar">
           <tr />
         </BpkTableBody>

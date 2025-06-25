@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
 import { cssModules, Portal } from '../../bpk-react-utils';
 
@@ -72,6 +71,8 @@ const BpkDialog = ({
         {headerIcon && <div className={headerIconClassNames}>{headerIcon}</div>}
         {dismissible && (
           <span className={closeButtonClassNames}>
+            // @ts-expect-error TS(2322): Type '((event?: TouchEvent | MouseEvent | Keyboard... Remove this comment to see the full error message
+            // @ts-expect-error TS(2322) FIXME: Type '((event?: TouchEvent | MouseEvent | Keyboard... Remove this comment to see the full error message
             <BpkCloseButton label={closeLabel} onClick={onClose} />
           </span>
         )}

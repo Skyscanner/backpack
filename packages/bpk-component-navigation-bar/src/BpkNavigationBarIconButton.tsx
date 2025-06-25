@@ -18,7 +18,6 @@
 
 import type { ComponentType, MouseEvent, ReactNode } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
 
 import { BAR_STYLES, type BarStyle } from './BpkNavigationBar';
@@ -36,6 +35,7 @@ export type Props = {
 const BpkNavigationBarIconButton = ({ barStyle = BAR_STYLES.default, className, icon, ...rest }: Props) => (
   <span className={className}>
     <BpkCloseButton
+      // @ts-expect-error TS(2322) FIXME: Type 'ComponentType<any>' is not assignable to typ... Remove this comment to see the full error message
       customIcon={icon}
       onDark={barStyle === BAR_STYLES.onDark}
       {...rest}

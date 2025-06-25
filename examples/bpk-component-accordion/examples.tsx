@@ -30,7 +30,6 @@ import {
   BpkAccordionItem,
   withAccordionItemState,
 } from '../../packages/bpk-component-accordion';
-// @ts-expect-error Untyped import - see `decisions/imports-ts-suppressions.md`.
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import { withAlignment } from '../../packages/bpk-component-icon';
 import StopsIcon from '../../packages/bpk-component-icon/sm/stops';
@@ -50,15 +49,20 @@ const CheckboxWrapper = (props: any) => (
 const StopsContent = () => (
   <form>
     <CheckboxWrapper>
+      // @ts-expect-error TS(2322): Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
       <BpkCheckbox name="direct" label="Direct" onChange={() => null} checked />
     </CheckboxWrapper>
     <CheckboxWrapper>
+      // @ts-expect-error TS(2322): Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
       <BpkCheckbox name="1-stop" label="1 stop" onChange={() => null} checked />
     </CheckboxWrapper>
     <CheckboxWrapper>
       <BpkCheckbox
         name="2-plus-stops"
         label="2+ stops"
+        // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
         onChange={() => null}
         checked
       />
@@ -72,6 +76,7 @@ const AirlinesContent = () => (
       <BpkCheckbox
         name="air-france"
         label="Air France"
+        // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
         onChange={() => null}
         checked
       />
@@ -80,6 +85,7 @@ const AirlinesContent = () => (
       <BpkCheckbox
         name="alitalia"
         label="Alitalia"
+        // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
         onChange={() => null}
         checked
       />
@@ -88,6 +94,7 @@ const AirlinesContent = () => (
       <BpkCheckbox
         name="bmi-regional"
         label="BMI regional"
+        // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
         onChange={() => null}
         checked
       />
@@ -96,6 +103,7 @@ const AirlinesContent = () => (
       <BpkCheckbox
         name="british-airways"
         label="British Airways"
+        // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
         onChange={() => null}
         checked
       />
@@ -104,6 +112,7 @@ const AirlinesContent = () => (
       <BpkCheckbox
         name="easyjet"
         label="Easyjet"
+        // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
         onChange={() => null}
         checked
       />
@@ -117,6 +126,7 @@ const AirportsContent = () => (
       <BpkCheckbox
         name="lcy"
         label="London City"
+        // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
         onChange={() => null}
         checked
       />
@@ -125,6 +135,7 @@ const AirportsContent = () => (
       <BpkCheckbox
         name="LGW"
         label="London Gatwick"
+        // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
         onChange={() => null}
         checked
       />
@@ -133,6 +144,7 @@ const AirportsContent = () => (
       <BpkCheckbox
         name="lhr"
         label="London Heathrow"
+        // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
         onChange={() => null}
         checked
       />
@@ -141,6 +153,7 @@ const AirportsContent = () => (
       <BpkCheckbox
         name="ltn"
         label="London Luton"
+        // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
         onChange={() => null}
         checked
       />
@@ -149,6 +162,7 @@ const AirportsContent = () => (
       <BpkCheckbox
         name="stn"
         label="London Stansted"
+        // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
         onChange={() => null}
         checked
       />

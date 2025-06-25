@@ -23,7 +23,8 @@ import { updateOnDirectionChange } from '../../packages/bpk-component-rtl-toggle
 import BpkSlider from '../../packages/bpk-component-slider';
 
 class SliderContainer extends Component {
-  constructor(props) {
+  constructor(props: any) {
+    // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 0.
     super();
 
     this.state = {
@@ -31,32 +32,39 @@ class SliderContainer extends Component {
     };
   }
 
-  handleChange = (value) => {
+  handleChange = (value: any) => {
     this.setState({ value });
   };
 
-  valueTimeFormatter = (value) => `12:${value.toString().padStart(2, '0')}pm`;
+  valueTimeFormatter = (value: any) => `12:${value.toString().padStart(2, '0')}pm`;
 
-  valueComponent = (min, max, formatter) => (
+  valueComponent = (min: any, max: any, formatter: any) => (
     <p>
       {formatter ? formatter(min) : min} - {formatter ? formatter(max) : max}
     </p>
   );
 
   render() {
+    // @ts-expect-error TS(2339) FIXME: Property 'min' does not exist on type 'Readonly<{}... Remove this comment to see the full error message
     const min = this.props.min || 0;
+    // @ts-expect-error TS(2339) FIXME: Property 'time' does not exist on type 'Readonly<{... Remove this comment to see the full error message
     const time = !!this.props.time;
 
     return (
       <div>
+        // @ts-expect-error TS(2339): Property 'value' does not exist on type 'Readonly<... Remove this comment to see the full error message
+        // @ts-expect-error TS(2339) FIXME: Property 'value' does not exist on type 'Readonly<... Remove this comment to see the full error message
         {this.state.value.length
           ? this.valueComponent(
+              // @ts-expect-error TS(2339) FIXME: Property 'value' does not exist on type 'Readonly<... Remove this comment to see the full error message
               this.state.value[0],
+              // @ts-expect-error TS(2339) FIXME: Property 'value' does not exist on type 'Readonly<... Remove this comment to see the full error message
               this.state.value[1],
               time && this.valueTimeFormatter,
             )
           : this.valueComponent(
               min,
+              // @ts-expect-error TS(2339) FIXME: Property 'value' does not exist on type 'Readonly<... Remove this comment to see the full error message
               this.state.value,
               time && this.valueTimeFormatter,
             )}
@@ -66,8 +74,10 @@ class SliderContainer extends Component {
           step={1}
           onChange={this.handleChange}
           {...this.props}
+          // @ts-expect-error TS(2339) FIXME: Property 'value' does not exist on type 'Readonly<... Remove this comment to see the full error message
           value={this.state.value}
           ariaLabel={['minimum', 'maximum']}
+          // @ts-expect-error TS(2339) FIXME: Property 'value' does not exist on type 'Readonly<... Remove this comment to see the full error message
           ariaValuetext={[this.state.value[0], this.state.value[1]]}
           inputProps={[{name: 'min'}, {name: 'max'}]}
         />
@@ -77,6 +87,7 @@ class SliderContainer extends Component {
   }
 }
 
+// @ts-expect-error TS(2339) FIXME: Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 SliderContainer.propTypes = {
   time: PropTypes.bool,
   min: PropTypes.number.isRequired,
@@ -86,19 +97,25 @@ SliderContainer.propTypes = {
   ]).isRequired,
 };
 
+// @ts-expect-error TS(2339) FIXME: Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
 SliderContainer.defaultProps = {
   time: false,
 };
 
 const EnhancedSlider = updateOnDirectionChange(SliderContainer);
 
+// @ts-expect-error TS(2769) FIXME: No overload matches this call.
 const SimpleSliderExample = () => <EnhancedSlider min={0} value={50} />;
+// @ts-expect-error TS(2769) FIXME: No overload matches this call.
 const TimeSliderExample = () => <EnhancedSlider time min={0} value={50} />;
 const SimpleSliderWithStepsExample = () => (
+  // @ts-expect-error TS(2769) FIXME: No overload matches this call.
   <EnhancedSlider min={0} value={50} step={10} />
 );
+// @ts-expect-error TS(2769) FIXME: No overload matches this call.
 const RangeSliderExample = () => <EnhancedSlider min={0} value={[20, 80]} />;
 const RangeSliderWithMinimumDistanceExample = () => (
+  // @ts-expect-error TS(2769) FIXME: No overload matches this call.
   <EnhancedSlider min={0} value={[20, 80]} minDistance={10} />
 );
 

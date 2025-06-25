@@ -26,6 +26,7 @@ import BpkLink from './BpkLink';
 
 describe('BpkLink accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
+    // @ts-expect-error TS(2740) FIXME: Type '{ children: string; href: string; }' is miss... Remove this comment to see the full error message
     const { container } = render(<BpkLink href="#">Link</BpkLink>);
     const results = await axe(container);
     expect(results).toHaveNoViolations();

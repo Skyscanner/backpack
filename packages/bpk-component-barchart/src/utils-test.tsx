@@ -18,6 +18,7 @@
 
 /* @flow strict */
 
+// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'd3-s... Remove this comment to see the full error message
 import { scaleBand } from 'd3-scale';
 
 import data from '../data.json';
@@ -28,7 +29,7 @@ describe('utils', () => {
   describe('identity', () => {
     it('should return the input', () => {
       const obj = {};
-      const arr = [];
+      const arr: any = [];
       expect(identity(null)).toBe(null);
       expect(identity(0)).toBe(0);
       expect(identity(obj)).toBe(obj);
@@ -47,15 +48,21 @@ describe('utils', () => {
 
     it('should return the exact band center', () => {
       const position = center(scale);
+      // @ts-expect-error TS(2345) FIXME: Argument of type 'string' is not assignable to par... Remove this comment to see the full error message
       expect(position(domain[0])).not.toBe(13);
+      // @ts-expect-error TS(2345) FIXME: Argument of type 'string' is not assignable to par... Remove this comment to see the full error message
       expect(Math.round(position(domain[0]))).toBe(13);
+      // @ts-expect-error TS(2345) FIXME: Argument of type 'string' is not assignable to par... Remove this comment to see the full error message
       expect(position(domain[1])).not.toBe(38);
+      // @ts-expect-error TS(2345) FIXME: Argument of type 'string' is not assignable to par... Remove this comment to see the full error message
       expect(Math.round(position(domain[1]))).toBe(38);
     });
 
     it('should return the rounded band center for a rounded range', () => {
       const position = center(scaleRound);
+      // @ts-expect-error TS(2345) FIXME: Argument of type 'string' is not assignable to par... Remove this comment to see the full error message
       expect(position(domain[0])).toBe(13);
+      // @ts-expect-error TS(2345) FIXME: Argument of type 'string' is not assignable to par... Remove this comment to see the full error message
       expect(position(domain[1])).toBe(38);
     });
   });

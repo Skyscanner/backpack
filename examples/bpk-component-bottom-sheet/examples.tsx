@@ -23,7 +23,6 @@ import BpkBottomSheet from '../../packages/bpk-component-bottom-sheet';
 import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action } from '../bpk-storybook-utils';
 
 import type { BpkBottomSheetProps } from '../../packages/bpk-component-bottom-sheet';

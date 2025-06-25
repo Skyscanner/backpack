@@ -46,7 +46,7 @@ const BpkCardWrapper = ({
       <div
         className={classNames}
         style={{
-          // @ts-expect-error TS is reporting this incorrectly as --background-color is valid
+          // @ts-expect-error TS(2322) FIXME: Type '{ '--background-color': string; }' is not as... Remove this comment to see the full error message
           '--background-color': backgroundColor,
         }}
       >

@@ -105,7 +105,7 @@ describe('BpkPriceRange', () => {
   it('should not support custom class names', () => {
     const { container } = render(
       <BpkPriceRange
-        // @ts-expect-error - ignoring for test
+        // @ts-expect-error TS(2322) FIXME: Type '{ className: string; marker: { price: string... Remove this comment to see the full error message
         className="custom-classname"
         marker={{ price: '£50', percentage: 10 }}
         segments={segments}

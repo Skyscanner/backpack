@@ -23,6 +23,7 @@
  
 
 import { render } from '@testing-library/react';
+// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'd3-s... Remove this comment to see the full error message
 import { scaleLinear, scaleBand } from 'd3-scale';
 
 import BpkChartGridLines from './BpkChartGridLines';

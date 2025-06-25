@@ -47,21 +47,27 @@ import {
 } from './test-utils';
 
 export default class ScrollableCal extends Component {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
 
+    // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
     if (this.props.selectionConfiguration.type === 'range') {
       this.state = {
         selectionConfiguration: {
+          // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
           type: this.props.selectionConfiguration.type,
+          // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
           startDate: this.props.selectionConfiguration.startDate,
+          // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
           endDate: this.props.selectionConfiguration.endDate,
         },
       };
     } else {
       this.state = {
         selectionConfiguration: {
+          // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
           type: this.props.selectionConfiguration.type,
+          // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
           date: this.props.selectionConfiguration.date,
         },
       };
@@ -70,50 +76,62 @@ export default class ScrollableCal extends Component {
 
   render() {
     return (
+      // @ts-expect-error TS(2739) FIXME: Type '{ onDateSelect: (startDate: Date, endDate?: ... Remove this comment to see the full error message
       <BpkScrollableCalendar
         id="calendar"
         {...this.props}
+        // @ts-expect-error TS(2322) FIXME: Type 'null' is not assignable to type 'Date | unde... Remove this comment to see the full error message
         onDateSelect={(startDate, endDate = null) => {
+          // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
           if (this.props.selectionConfiguration.type === 'range') {
             if (startDate && !endDate) {
               this.setState({
                 selectionConfiguration: {
+                  // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
                   type: this.props.selectionConfiguration.type,
                   startDate,
                   endDate: null,
                 },
               });
+              // @ts-expect-error TS(2554) FIXME: Expected 0 arguments, but got 1.
               action('Selected day')(startDate);
             }
             if (startDate && endDate) {
               this.setState({
                 selectionConfiguration: {
+                  // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
                   type: this.props.selectionConfiguration.type,
                   startDate,
                   endDate,
                 },
               });
+              // @ts-expect-error TS(2554) FIXME: Expected 0 arguments, but got 1.
               action('Selected end day')(endDate);
             }
           } else {
             this.setState({
               selectionConfiguration: {
+                // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
                 type: this.props.selectionConfiguration.type,
                 date: startDate,
               },
             });
+            // @ts-expect-error TS(2554) FIXME: Expected 0 arguments, but got 1.
             action('Selected day')(startDate);
           }
         }}
+        // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
         selectionConfiguration={this.state.selectionConfiguration}
       />
     );
   }
 }
+// @ts-expect-error TS(2339) FIXME: Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 ScrollableCal.propTypes = {
   selectionConfiguration: CustomPropTypes.SelectionConfiguration,
 };
 
+// @ts-expect-error TS(2339) FIXME: Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
 ScrollableCal.defaultProps = {
   selectionConfiguration: {
     type: CALENDAR_SELECTION_TYPE.single,
@@ -123,6 +141,7 @@ ScrollableCal.defaultProps = {
 
 const DefaultExample = () => (
   <ScrollableCal
+    // @ts-expect-error TS(2322) FIXME: Type '{ weekStartsOn: number; daysOfWeek: { name: ... Remove this comment to see the full error message
     weekStartsOn={1}
     daysOfWeek={weekDays}
     formatMonth={formatMonth}
@@ -139,6 +158,7 @@ const DefaultExample = () => (
 
 const DefaultExampleWithCustomHeight = () => (
   <ScrollableCal
+    // @ts-expect-error TS(2322) FIXME: Type '{ weekStartsOn: number; daysOfWeek: { name: ... Remove this comment to see the full error message
     weekStartsOn={1}
     daysOfWeek={weekDays}
     formatMonth={formatMonth}
@@ -157,6 +177,7 @@ const DefaultExampleWithCustomHeight = () => (
 
 const RangeExample = () => (
   <ScrollableCal
+    // @ts-expect-error TS(2322) FIXME: Type '{ weekStartsOn: number; daysOfWeek: { name: ... Remove this comment to see the full error message
     weekStartsOn={1}
     daysOfWeek={weekDays}
     formatMonth={formatMonth}
@@ -175,6 +196,7 @@ const RangeExample = () => (
 
 const SplitWeekRangeExample = () => (
   <ScrollableCal
+    // @ts-expect-error TS(2322) FIXME: Type '{ DateComponent: ({ isOutside, ...rest }: Pr... Remove this comment to see the full error message
     DateComponent={BpkScrollableCalendarDate}
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
@@ -192,6 +214,7 @@ const SplitWeekRangeExample = () => (
 
 const WeekStartsOnSixExample = () => (
   <ScrollableCal
+    // @ts-expect-error TS(2322) FIXME: Type '{ weekStartsOn: number; daysOfWeek: { name: ... Remove this comment to see the full error message
     weekStartsOn={6}
     daysOfWeek={weekDays}
     formatMonth={formatMonth}
@@ -205,6 +228,7 @@ const WeekStartsOnSixExample = () => (
 
 const WithFocusedDateExample = () => (
   <ScrollableCal
+    // @ts-expect-error TS(2322) FIXME: Type '{ weekStartsOn: number; daysOfWeek: { name: ... Remove this comment to see the full error message
     weekStartsOn={1}
     daysOfWeek={weekDays}
     formatMonth={formatMonth}
@@ -220,6 +244,7 @@ const WithFocusedDateExample = () => (
 const TallContainerExample = () => (
   <div style={{ height: '500px', display: 'flex' }}>
     <ScrollableCal
+      // @ts-expect-error TS(2322) FIXME: Type '{ weekStartsOn: number; daysOfWeek: { name: ... Remove this comment to see the full error message
       weekStartsOn={1}
       daysOfWeek={weekDays}
       formatMonth={formatMonth}
@@ -235,6 +260,7 @@ const TallContainerExample = () => (
 const SingleMonthExample = () => (
   <div style={{ height: '500px', display: 'flex' }}>
     <ScrollableCal
+      // @ts-expect-error TS(2322) FIXME: Type '{ weekStartsOn: number; daysOfWeek: { name: ... Remove this comment to see the full error message
       weekStartsOn={1}
       daysOfWeek={weekDays}
       formatMonth={formatMonth}
@@ -258,6 +284,7 @@ const ScrollableCalendarGridExample = () => (
   <BpkScrollableCalendarGrid
     month={new Date(2019, 1, 0)}
     weekStartsOn={1}
+    // @ts-expect-error TS(2322) FIXME: Type '{ month: Date; weekStartsOn: 1; daysOfWeek: ... Remove this comment to see the full error message
     daysOfWeek={weekDays}
     onDateClick={action('Clicked day')}
     formatMonth={formatMonth}
@@ -270,6 +297,7 @@ const ScrollableCalendarGridListExample = () => (
   <BpkScrollableCalendarGridList
     month={new Date()}
     weekStartsOn={1}
+    // @ts-expect-error TS(2322) FIXME: Type '{ month: Date; weekStartsOn: 1; daysOfWeek: ... Remove this comment to see the full error message
     daysOfWeek={weekDays}
     onDateClick={action('Clicked day')}
     formatMonth={formatMonth}
@@ -282,6 +310,7 @@ const ScrollableCalendarGridListExample = () => (
 
 const WeekStartsOnSundayExample = () => (
   <ScrollableCal
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; formatMonth: (date: any) => st... Remove this comment to see the full error message
     id="myCalendar"
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
@@ -294,6 +323,7 @@ const WeekStartsOnSundayExample = () => (
 
 const HonestWeekendExample = () => (
   <ScrollableCal
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; formatMonth: (date: any) => st... Remove this comment to see the full error message
     id="myCalendar"
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
@@ -306,6 +336,7 @@ const HonestWeekendExample = () => (
 
 const ArabicLocaleExample = () => (
   <ScrollableCal
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; formatMonth: (date: any) => st... Remove this comment to see the full error message
     id="myCalendar"
     formatMonth={formatMonthArabic}
     formatDateFull={formatDateFullArabic}
@@ -318,6 +349,7 @@ const ArabicLocaleExample = () => (
 
 const JapaneseLocaleExample = () => (
   <ScrollableCal
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; formatMonth: (date: any) => st... Remove this comment to see the full error message
     id="myCalendar"
     formatMonth={formatMonthJapanese}
     formatDateFull={formatDateFullJapanese}
@@ -330,6 +362,7 @@ const JapaneseLocaleExample = () => (
 
 const DifferentMinMaxDatesExample = () => (
   <ScrollableCal
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; formatMonth: (date: any) => st... Remove this comment to see the full error message
     id="myCalendar"
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
@@ -342,6 +375,7 @@ const DifferentMinMaxDatesExample = () => (
 
 const DontMarkTodayExample = () => (
   <ScrollableCal
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; formatMonth: (date: any) => st... Remove this comment to see the full error message
     id="myCalendar"
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}
@@ -355,6 +389,7 @@ const DontMarkTodayExample = () => (
 
 const PastCalendarExample = () => (
   <ScrollableCal
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; formatMonth: (date: any) => st... Remove this comment to see the full error message
     id="myCalendar"
     formatMonth={formatMonth}
     formatDateFull={formatDateFull}

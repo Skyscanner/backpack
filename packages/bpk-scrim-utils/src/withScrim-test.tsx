@@ -19,9 +19,9 @@
 import type { ComponentType } from 'react';
 
 import { render } from '@testing-library/react';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'a11y... Remove this comment to see the full error message
 import focusScope from 'a11y-focus-scope';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'a11y... Remove this comment to see the full error message
 import focusStore from 'a11y-focus-store';
 
 import {

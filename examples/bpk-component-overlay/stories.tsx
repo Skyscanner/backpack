@@ -28,7 +28,6 @@ import {
   VignetteExample,
   WithForegroundContentExample,
   MixedExample,
-  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from './examples';
 
 export default {

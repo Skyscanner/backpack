@@ -48,7 +48,7 @@ type Props = {
 const useLegacyWarning = (query: string, legacy: boolean, isClient: boolean) =>
   useMemo(() => {
     if (isClient) {
-      // @ts-expect-error invariant check. query: string matching limited BREAKPOINTS string values
+      // @ts-expect-error TS(2345) FIXME: Argument of type 'string' is not assignable to par... Remove this comment to see the full error message
       if (!legacy && !Object.values(BREAKPOINTS).includes(query)) {
         console.warn(
           `Invalid query ${query}. Use one of the supported queries or pass the legacy prop.`,

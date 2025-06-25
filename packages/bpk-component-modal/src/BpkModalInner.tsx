@@ -18,9 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
 import BpkNavigationBar, {
   BAR_STYLES,
@@ -154,6 +152,7 @@ const BpkModalInner = ({
                 closeText ? (
                   <BpkButtonLink
                     onClick={onClose}
+                    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; onClick: () => void; onD... Remove this comment to see the full error message
                     onDark={modalStyle === MODAL_STYLING.surfaceContrast}
                   >
                     {closeText}

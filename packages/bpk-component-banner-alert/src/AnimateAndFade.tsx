@@ -23,7 +23,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module '../.... Remove this comment to see the full error message
 import BpkAnimateHeight from '../../bpk-animate-height';
 import { cssModules } from '../../bpk-react-utils';
 

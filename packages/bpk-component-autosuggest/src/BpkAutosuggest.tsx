@@ -18,6 +18,7 @@
 
 /* @flow strict */
 
+// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import Autosuggest from 'react-autosuggest';
 
 import BpkInput from '../../bpk-component-input';
@@ -52,7 +53,9 @@ Autosuggest.defaultProps.theme = {
 };
 
 type Props = {
+  // @ts-expect-error TS(2300) FIXME: Duplicate identifier 'mixed'.
   ref: (?HTMLInputElement) => mixed,
+  // @ts-expect-error TS(2300) FIXME: Duplicate identifier 'mixed'.
   inputRef: (?HTMLInputElement) => mixed,
   autoComplete: string,
 };
@@ -61,11 +64,14 @@ Autosuggest.defaultProps.renderInputComponent = (inputProps: Props) => {
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
+    // @ts-expect-error TS(2322) FIXME: Type '{ mixed: any; inputRef: (element: HTMLInputE... Remove this comment to see the full error message
     <BpkInput
       inputRef={(element) => {
+        // @ts-expect-error TS(2349) FIXME: This expression is not callable.
         ref(element);
 
         if (typeof inputRef === 'function') {
+          // @ts-expect-error TS(2349) FIXME: This expression is not callable.
           inputRef(element);
         }
       }}

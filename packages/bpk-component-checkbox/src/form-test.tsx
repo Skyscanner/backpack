@@ -31,6 +31,7 @@ describe('BpkCheckbox form test', () => {
       return (
         <form data-testid="form">
           <BpkCheckbox
+            // @ts-expect-error TS(2322) FIXME: Type '{ type: string; name: string; checked: boole... Remove this comment to see the full error message
             type="checkbox"
             name="checkbox"
             checked={isChecked}
@@ -49,6 +50,7 @@ describe('BpkCheckbox form test', () => {
     await userEvent.click(checkbox);
     expect(checkbox).toBeChecked();
 
+    // @ts-expect-error TS(2345) FIXME: Argument of type 'HTMLElement' is not assignable t... Remove this comment to see the full error message
     const formData = new FormData(screen.getByTestId('form'));
     expect(Object.fromEntries(formData.entries())).toEqual({ checkbox: 'on' });
   });
@@ -61,6 +63,7 @@ describe('BpkCheckbox form test', () => {
       return (
         <form data-testid="form">
           <BpkCheckbox
+            // @ts-expect-error TS(2322) FIXME: Type '{ type: string; name: string; checked: boole... Remove this comment to see the full error message
             type="checkbox"
             name="checkbox"
             checked={isChecked}

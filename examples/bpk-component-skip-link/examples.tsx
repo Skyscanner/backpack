@@ -21,6 +21,7 @@ import BpkSkipLink from '../../packages/bpk-component-skip-link';
 
 const DefaultExample = () => (
   <BpkSkipLink
+    // @ts-expect-error TS(2322) FIXME: Type '{ style: { position: string; }; href: string... Remove this comment to see the full error message
     style={{ position: 'absolute' }}
     href="#main"
     label="Skip to main content"
@@ -29,6 +30,7 @@ const DefaultExample = () => (
 
 const DocsSiteExample = () => (
   <BpkSkipLink
+    // @ts-expect-error TS(2322) FIXME: Type '{ style: { position: string; }; href: string... Remove this comment to see the full error message
     style={{ position: 'absolute' }}
     href="#implementation"
     label="Skip to implementation"

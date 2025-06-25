@@ -18,6 +18,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
+// @ts-expect-error TS(2305) FIXME: Module '"react"' has no exported member 'Node'.
 import type { Node } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
@@ -29,16 +30,23 @@ import STYLES from './BpkPrice.module.scss';
 
 type Props = {
   price: string,
+  // @ts-expect-error TS(2304) FIXME: Cannot find name '$Values'.
   size: $Values<typeof SIZES>,
+  // @ts-expect-error TS(2304) FIXME: Cannot find name '$Values'.
   align: $Values<typeof ALIGNS>,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   className: ?string,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   leadingText: ?string,
   /**
    * **Experimental** This prop is experimental and subject to change.
    * Use with caution.
    */
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   leadingClassName: ?string,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   trailingText: ?string,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   previousPrice: ?string,
   icon?: Node,
   dataAttributes?: Record<string, string>,
@@ -46,6 +54,7 @@ type Props = {
 
 const getClassName = cssModules(STYLES);
 
+// @ts-expect-error TS(2304) FIXME: Cannot find name '$Values'.
 const getPriceTextStyle = (size: $Values<typeof SIZES>) => {
   if (size === SIZES.small) {
     return TEXT_STYLES.heading4;
@@ -58,6 +67,7 @@ const getPriceTextStyle = (size: $Values<typeof SIZES>) => {
   return TEXT_STYLES.heading5;
 };
 
+// @ts-expect-error TS(2304) FIXME: Cannot find name '$Values'.
 const getDefaultTextStyle = (size: $Values<typeof SIZES>) => {
   if (size === SIZES.large) {
     return TEXT_STYLES.sm;

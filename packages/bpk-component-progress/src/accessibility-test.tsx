@@ -31,6 +31,7 @@ describe('BpkProgress accessibility tests', () => {
           Progress indicator
         </label>
         <BpkProgress
+          // @ts-expect-error TS(2769) FIXME: No overload matches this call.
           id="progress"
           aria-labelledby="label"
           min={0}

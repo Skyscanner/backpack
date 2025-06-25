@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module '../.... Remove this comment to see the full error message
 import AnimateHeight from '../../packages/bpk-animate-height/src/AnimateHeight';
 
 import AnimateHeightExample from './examples';
@@ -26,6 +27,7 @@ export default {
 };
 
 export const Example = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: string; fromHeight: string; toHe... Remove this comment to see the full error message
   <AnimateHeightExample
     fromHeight="auto"
     toHeight={0}

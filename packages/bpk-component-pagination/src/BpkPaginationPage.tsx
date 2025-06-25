@@ -24,7 +24,7 @@ import STYLES from './BpkPaginationPage.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkPaginationPage = (props) => {
+const BpkPaginationPage = (props: any) => {
   const classNames = [getClassName('bpk-pagination-page')];
   const { isSelected, onSelect, page, pageLabel } = props;
 

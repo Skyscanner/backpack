@@ -26,6 +26,9 @@ describe('BpkBarchartBar', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
       <svg>
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'x'.
+        // @ts-expect-error TS(2741): Property 'mixed' is missing in type '{ x: number; ... Remove this comment to see the full error message
+        // @ts-expect-error TS(2741) FIXME: Property 'mixed' is missing in type '{ x: number; ... Remove this comment to see the full error message
         <BpkBarchartBar x={10} y={10} width={20} height={100} label="Bar" />
       </svg>,
     );
@@ -35,6 +38,9 @@ describe('BpkBarchartBar', () => {
   it('should render with an onClick handler', () => {
     const { asFragment } = render(
       <svg>
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'x'.
+        // @ts-expect-error TS(2741): Property 'mixed' is missing in type '{ x: number; ... Remove this comment to see the full error message
+        // @ts-expect-error TS(2741) FIXME: Property 'mixed' is missing in type '{ x: number; ... Remove this comment to see the full error message
         <BpkBarchartBar
           x={10}
           y={10}
@@ -51,6 +57,9 @@ describe('BpkBarchartBar', () => {
   it('should render with an onHover handler', () => {
     const { asFragment } = render(
       <svg>
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'x'.
+        // @ts-expect-error TS(2741): Property 'mixed' is missing in type '{ x: number; ... Remove this comment to see the full error message
+        // @ts-expect-error TS(2741) FIXME: Property 'mixed' is missing in type '{ x: number; ... Remove this comment to see the full error message
         <BpkBarchartBar
           x={10}
           y={10}
@@ -67,6 +76,9 @@ describe('BpkBarchartBar', () => {
   it('should render as an outlier', () => {
     const { asFragment } = render(
       <svg>
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'x'.
+        // @ts-expect-error TS(2741): Property 'mixed' is missing in type '{ x: number; ... Remove this comment to see the full error message
+        // @ts-expect-error TS(2741) FIXME: Property 'mixed' is missing in type '{ x: number; ... Remove this comment to see the full error message
         <BpkBarchartBar
           x={10}
           y={10}
@@ -83,6 +95,9 @@ describe('BpkBarchartBar', () => {
   it('should render as selected', () => {
     const { asFragment } = render(
       <svg>
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'x'.
+        // @ts-expect-error TS(2741): Property 'mixed' is missing in type '{ x: number; ... Remove this comment to see the full error message
+        // @ts-expect-error TS(2741) FIXME: Property 'mixed' is missing in type '{ x: number; ... Remove this comment to see the full error message
         <BpkBarchartBar
           x={10}
           y={10}
@@ -99,6 +114,9 @@ describe('BpkBarchartBar', () => {
   it('should render as aria-pressed if onClick present and selected', () => {
     const { asFragment } = render(
       <svg>
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'x'.
+        // @ts-expect-error TS(2741): Property 'mixed' is missing in type '{ x: number; ... Remove this comment to see the full error message
+        // @ts-expect-error TS(2741) FIXME: Property 'mixed' is missing in type '{ x: number; ... Remove this comment to see the full error message
         <BpkBarchartBar
           x={10}
           y={10}
@@ -116,6 +134,9 @@ describe('BpkBarchartBar', () => {
   it('should render with "padding" prop', () => {
     const { asFragment } = render(
       <svg>
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'x'.
+        // @ts-expect-error TS(2741): Property 'mixed' is missing in type '{ x: number; ... Remove this comment to see the full error message
+        // @ts-expect-error TS(2741) FIXME: Property 'mixed' is missing in type '{ x: number; ... Remove this comment to see the full error message
         <BpkBarchartBar
           x={10}
           y={10}

@@ -59,7 +59,7 @@ import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const formatDate = (date) => format(date, 'dd/MM/yyyy');
+const formatDate = (date: any) => format(date, 'dd/MM/yyyy');
 
 const Input = withOpenEvents(BpkInput);
 
@@ -82,21 +82,27 @@ const inputPropsWithEventHandlers = {
 };
 
 class CalendarContainer extends Component {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
 
+    // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
     if (this.props.selectionConfiguration.type === 'range') {
       this.state = {
         selectionConfiguration: {
+          // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
           type: this.props.selectionConfiguration.type,
+          // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
           startDate: this.props.selectionConfiguration.startDate,
+          // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
           endDate: this.props.selectionConfiguration.endDate,
         },
       };
     } else {
       this.state = {
         selectionConfiguration: {
+          // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
           type: this.props.selectionConfiguration.type,
+          // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
           date: this.props.selectionConfiguration.date,
         },
       };
@@ -107,40 +113,52 @@ class CalendarContainer extends Component {
     return (
       <div id="datepicker-element">
         <div id="application-element">
+          // @ts-expect-error TS(2304) FIXME: Cannot find name 'onDateSelect'.
+          // @ts-expect-error TS(2740): Type '{ onDateSelect: (startDate: Date, endDate?: ... Remove this comment to see the full error message
+          // @ts-expect-error TS(2740) FIXME: Type '{ onDateSelect: (startDate: Date, endDate?: ... Remove this comment to see the full error message
           <BpkDatepicker
             {...this.props}
+            // @ts-expect-error TS(2322) FIXME: Type 'null' is not assignable to type 'Date | unde... Remove this comment to see the full error message
             onDateSelect={(startDate, endDate = null) => {
+              // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
               if (this.props.selectionConfiguration.type === 'range') {
                 if (startDate && !endDate) {
                   this.setState({
                     selectionConfiguration: {
+                      // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
                       type: this.props.selectionConfiguration.type,
                       startDate,
                       endDate: null,
                     },
                   });
+                  // @ts-expect-error TS(2554) FIXME: Expected 0 arguments, but got 1.
                   action('Selected day')(startDate);
                 }
                 if (startDate && endDate) {
                   this.setState({
                     selectionConfiguration: {
+                      // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
                       type: this.props.selectionConfiguration.type,
                       startDate,
                       endDate,
                     },
                   });
+                  // @ts-expect-error TS(2554) FIXME: Expected 0 arguments, but got 1.
                   action('Selected end day')(endDate);
                 }
               } else {
                 this.setState({
                   selectionConfiguration: {
+                    // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
                     type: this.props.selectionConfiguration.type,
                     date: startDate,
                   },
                 });
+                // @ts-expect-error TS(2554) FIXME: Expected 0 arguments, but got 1.
                 action('Selected day')(startDate);
               }
             }}
+            // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
             selectionConfiguration={this.state.selectionConfiguration}
             onMonthChange={action('Changed month')}
             getApplicationElement={() =>
@@ -154,10 +172,12 @@ class CalendarContainer extends Component {
   }
 }
 
+// @ts-expect-error TS(2339) FIXME: Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 CalendarContainer.propTypes = {
   selectionConfiguration: CustomPropTypes.SelectionConfiguration,
 };
 
+// @ts-expect-error TS(2339) FIXME: Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
 CalendarContainer.defaultProps = {
   selectionConfiguration: {
     type: CALENDAR_SELECTION_TYPE.single,
@@ -166,14 +186,16 @@ CalendarContainer.defaultProps = {
 };
 
 const getBackgroundForDate = memoize(
+  // @ts-expect-error TS(2345) FIXME: Argument of type 'number' is not assignable to par... Remove this comment to see the full error message
   () => [colorSagano, colorBagan, colorPetra][parseInt(Math.random() * 3, 10)],
 );
 
-const ColoredCalendarDate = (props) => {
+const ColoredCalendarDate = (props: any) => {
   let style = {};
 
   if (!props.isFocused && !props.isOutside && !props.isBlocked) {
     style = {
+      // @ts-expect-error TS(2554) FIXME: Expected 0 arguments, but got 1.
       backgroundColor: getBackgroundForDate(props.date.getTime()), // stylelint-disable
       color: colorSkyGray,
     };
@@ -190,7 +212,10 @@ ColoredCalendarDate.propTypes = {
 };
 
 class ReturnDatepicker extends Component {
+  maxDate: any;
+  minDate: any;
   constructor() {
+    // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 0.
     super();
 
     this.minDate = startOfDay(new Date());
@@ -229,18 +254,21 @@ class ReturnDatepicker extends Component {
               inputProps={inputProps}
               selectionConfiguration={{
                 type: CALENDAR_SELECTION_TYPE.single,
+                // @ts-expect-error TS(2339) FIXME: Property 'departDate' does not exist on type 'Read... Remove this comment to see the full error message
                 date: this.state.departDate,
               }}
               onDateSelect={(departDate) => {
                 this.setState((prevState) => ({
                   departDate,
                   returnDate: dateToBoundaries(
+                    // @ts-expect-error TS(2339) FIXME: Property 'returnDate' does not exist on type 'Read... Remove this comment to see the full error message
                     prevState.returnDate,
                     departDate,
                     this.maxDate,
                   ),
                   isReturnPickerOpen: true,
                 }));
+                // @ts-expect-error TS(2554) FIXME: Expected 0 arguments, but got 1.
                 action('Selected departure date')(departDate);
               }}
               onMonthChange={action('Changed month')}
@@ -266,17 +294,20 @@ class ReturnDatepicker extends Component {
               inputProps={inputProps}
               selectionConfiguration={{
                 type: CALENDAR_SELECTION_TYPE.single,
+                // @ts-expect-error TS(2339) FIXME: Property 'returnDate' does not exist on type 'Read... Remove this comment to see the full error message
                 date: this.state.returnDate,
               }}
               onDateSelect={(returnDate) => {
                 this.setState((prevState) => ({
                   returnDate,
                   departDate: dateToBoundaries(
+                    // @ts-expect-error TS(2339) FIXME: Property 'departDate' does not exist on type 'Read... Remove this comment to see the full error message
                     prevState.departDate,
                     this.minDate,
                     returnDate,
                   ),
                 }));
+                // @ts-expect-error TS(2554) FIXME: Expected 0 arguments, but got 1.
                 action('Selected return date')(returnDate);
               }}
               onOpenChange={(isOpen) => {
@@ -285,6 +316,7 @@ class ReturnDatepicker extends Component {
                 });
               }}
               onMonthChange={action('Changed month')}
+              // @ts-expect-error TS(2339) FIXME: Property 'isReturnPickerOpen' does not exist on ty... Remove this comment to see the full error message
               isOpen={this.state.isReturnPickerOpen}
             />
           </div>
@@ -295,7 +327,8 @@ class ReturnDatepicker extends Component {
 }
 
 class MultipleInputDatepicker extends Component {
-  constructor(props) {
+  ref: any;
+  constructor(props: any) {
     super(props);
 
     this.ref = createRef();
@@ -334,18 +367,23 @@ class MultipleInputDatepicker extends Component {
           id="departure-date"
           name="departure-date"
           value={
+            // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
             this.state.selectionConfiguration.startDate
+              // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
               ? formatDate(this.state.selectionConfiguration.startDate)
               : ''
           }
           aria-live="polite"
           aria-atomic="true"
           aria-label={
+            // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
             this.state.selectionConfiguration.startDate
+              // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
               ? formatDate(this.state.selectionConfiguration.startDate)
               : ''
           }
           onOpen={this.onOpen}
+          // @ts-expect-error TS(2339) FIXME: Property 'isOpen' does not exist on type 'Readonly... Remove this comment to see the full error message
           isOpen={this.state.isOpen}
           style={inputStyles}
           dockedFirst
@@ -354,18 +392,23 @@ class MultipleInputDatepicker extends Component {
           id="arrival-date"
           name="arrival-date"
           value={
+            // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
             this.state.selectionConfiguration.endDate
+              // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
               ? formatDate(this.state.selectionConfiguration.endDate)
               : ''
           }
           aria-live="polite"
           aria-atomic="true"
           aria-label={
+            // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
             this.state.selectionConfiguration.endDate
+              // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
               ? formatDate(this.state.selectionConfiguration.endDate)
               : ''
           }
           onOpen={this.onOpen}
+          // @ts-expect-error TS(2339) FIXME: Property 'isOpen' does not exist on type 'Readonly... Remove this comment to see the full error message
           isOpen={this.state.isOpen}
           style={inputStyles}
           dockedLast
@@ -391,8 +434,10 @@ class MultipleInputDatepicker extends Component {
             formatDateFull={formatDateFull}
             minDate={new Date(2020, 3, 1)}
             onClose={this.onClose}
+            // @ts-expect-error TS(2339) FIXME: Property 'isOpen' does not exist on type 'Readonly... Remove this comment to see the full error message
             isOpen={this.state.isOpen}
             inputComponent={inputs}
+            // @ts-expect-error TS(2322) FIXME: Type 'null' is not assignable to type 'Date | unde... Remove this comment to see the full error message
             onDateSelect={(startDate, endDate = null) => {
               if (startDate && !endDate) {
                 this.setState({
@@ -402,6 +447,7 @@ class MultipleInputDatepicker extends Component {
                     endDate: null,
                   },
                 });
+                // @ts-expect-error TS(2554) FIXME: Expected 0 arguments, but got 1.
                 action('Selected day')(startDate);
               }
               if (startDate && endDate) {
@@ -413,9 +459,11 @@ class MultipleInputDatepicker extends Component {
                   },
                 });
                 this.onClose();
+                // @ts-expect-error TS(2554) FIXME: Expected 0 arguments, but got 1.
                 action('Selected end day')(endDate);
               }
             }}
+            // @ts-expect-error TS(2339) FIXME: Property 'selectionConfiguration' does not exist o... Remove this comment to see the full error message
             selectionConfiguration={this.state.selectionConfiguration}
             onMonthChange={action('Changed month')}
             getApplicationElement={() =>
@@ -432,6 +480,7 @@ class MultipleInputDatepicker extends Component {
 const DefaultExample = () => (
   <div id="application-element">
     <CalendarContainer
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; closeButtonText: string; daysO... Remove this comment to see the full error message
       id="myDatepicker"
       closeButtonText="Close"
       daysOfWeek={weekDays}
@@ -454,6 +503,7 @@ const DefaultExample = () => (
 const RangeExample = () => (
   <div id="application-element">
     <CalendarContainer
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; closeButtonText: string; daysO... Remove this comment to see the full error message
       id="myDatepicker"
       closeButtonText="Close"
       daysOfWeek={weekDays}
@@ -477,6 +527,7 @@ const RangeExample = () => (
 const OpenOnFirstRenderExample = () => (
   <div id="application-element">
     <CalendarContainer
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; closeButtonText: string; daysO... Remove this comment to see the full error message
       id="myDatepicker"
       closeButtonText="Close"
       daysOfWeek={weekDays}
@@ -500,6 +551,7 @@ const OpenOnFirstRenderExample = () => (
 const MinDateInPastExample = () => (
   <div id="application-element">
     <CalendarContainer
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; closeButtonText: string; daysO... Remove this comment to see the full error message
       id="myDatepicker"
       closeButtonText="Close"
       daysOfWeek={weekDays}
@@ -520,6 +572,7 @@ const MinDateInPastExample = () => (
 const WithoutDateSetExample = () => (
   <div id="application-element">
     <CalendarContainer
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; closeButtonText: string; daysO... Remove this comment to see the full error message
       id="myDatepicker"
       closeButtonText="Close"
       daysOfWeek={weekDays}
@@ -538,6 +591,7 @@ const WithoutDateSetExample = () => (
 const PassingPropsExample = () => (
   <div id="application-element">
     <CalendarContainer
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; closeButtonText: string; daysO... Remove this comment to see the full error message
       id="myDatepicker"
       closeButtonText="Close"
       daysOfWeek={weekDays}
@@ -569,6 +623,7 @@ const CustomComponentExample = () => {
   return (
     <div id="application-element">
       <CalendarContainer
+        // @ts-expect-error TS(2322) FIXME: Type '{ id: string; closeButtonText: string; daysO... Remove this comment to see the full error message
         id="myDatepicker"
         closeButtonText="Close"
         daysOfWeek={weekDays}
@@ -589,6 +644,7 @@ const CustomComponentExample = () => {
 const InvalidExample = () => (
   <div id="application-element">
     <CalendarContainer
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; closeButtonText: string; daysO... Remove this comment to see the full error message
       id="myDatepicker"
       closeButtonText="Close"
       daysOfWeek={weekDays}
@@ -614,6 +670,7 @@ const MultipleRangeInputExample = () => <MultipleInputDatepicker />;
 const DefaultVisualExample = () => (
   <div id="application-element">
     <CalendarContainer
+      // @ts-expect-error TS(2322) FIXME: Type '{ id: string; closeButtonText: string; daysO... Remove this comment to see the full error message
       id="myDatepicker"
       closeButtonText="Close"
       daysOfWeek={weekDays}
@@ -639,6 +696,7 @@ const DefaultVisualExample = () => (
 const VisualRangeExample = () => (
     <div id="application-element">
       <CalendarContainer
+        // @ts-expect-error TS(2322) FIXME: Type '{ id: string; closeButtonText: string; daysO... Remove this comment to see the full error message
         id="myDatepicker"
         closeButtonText="Close"
         daysOfWeek={weekDays}

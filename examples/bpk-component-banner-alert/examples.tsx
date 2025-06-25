@@ -65,6 +65,9 @@ class BpkBannerAlertDismissableState extends Component<Props, State> {
     return (
       <>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+        // @ts-expect-error TS(2304) FIXME: Cannot find name 'show'.
+        // @ts-expect-error TS(2741): Property 'type' is missing in type '{ show: boolea... Remove this comment to see the full error message
+        // @ts-expect-error TS(2741) FIXME: Property 'type' is missing in type '{ show: boolea... Remove this comment to see the full error message
         <BpkBannerAlertDismissable
           show={!this.state.dismissed}
           dismissButtonLabel="Dismiss"
@@ -78,6 +81,7 @@ class BpkBannerAlertDismissableState extends Component<Props, State> {
           {...this.props}
         />
         {this.state.dismissed && (
+          // @ts-expect-error TS(2739) FIXME: Type '{ children: string; className: string; onCli... Remove this comment to see the full error message
           <BpkButtonPrimary
             className={getClassName('bpk-banner-alert-examples__component')}
             onClick={() => {
@@ -90,10 +94,12 @@ class BpkBannerAlertDismissableState extends Component<Props, State> {
             Reset
           </BpkButtonPrimary>
         )}
+        // @ts-expect-error TS(2746) FIXME: This JSX tag's 'children' prop expects a single ch... Remove this comment to see the full error message
         <AriaLiveDemo
           visible
           className={getClassName('bpk-banner-alert-examples__component')}
         >
+          // @ts-expect-error TS(2739): Type 'Element[]' is missing the following properti... Remove this comment to see the full error message
           {this.state.updates.map((u) => (
             <>
               {u}
@@ -185,6 +191,7 @@ const ErrorExample = (props: {}) => (
 );
 const SuccessDismissableBehaviourExample = () => (
   <BpkBannerAlertDismissableState
+    // @ts-expect-error TS(2322) FIXME: Type '{ dismissButtonLabel: string; message: strin... Remove this comment to see the full error message
     dismissButtonLabel="Dismiss"
     message="Success alert with dismiss option"
     type={ALERT_TYPES.SUCCESS}
@@ -201,6 +208,7 @@ const SuccessExpandableBehaviourExample = () => (
 );
 const SuccessAutomaticallyDismissedExample = () => (
   <BpkBannerAlertDismissableState
+    // @ts-expect-error TS(2322) FIXME: Type '{ hideAfter: number; message: string; type: ... Remove this comment to see the full error message
     hideAfter={5}
     message={message}
     type={ALERT_TYPES.SUCCESS}
@@ -219,18 +227,23 @@ const DocsDefaultExample = () => (
   <>
     <NeutralExample />
     <PrimaryExample
+      // @ts-expect-error TS(2322) FIXME: Type '{ className: string; }' is not assignable to... Remove this comment to see the full error message
       className={getClassName('bpk-banner-alert-examples__component')}
     />
     <SuccessExample
+      // @ts-expect-error TS(2322) FIXME: Type '{ className: string; }' is not assignable to... Remove this comment to see the full error message
       className={getClassName('bpk-banner-alert-examples__component')}
     />
     <SuccessWithReactRenderedMessageExample
+      // @ts-expect-error TS(2322) FIXME: Type '{ className: string; }' is not assignable to... Remove this comment to see the full error message
       className={getClassName('bpk-banner-alert-examples__component')}
     />
     <WarnExample
+      // @ts-expect-error TS(2322) FIXME: Type '{ className: string; }' is not assignable to... Remove this comment to see the full error message
       className={getClassName('bpk-banner-alert-examples__component')}
     />
     <ErrorExample
+      // @ts-expect-error TS(2322) FIXME: Type '{ className: string; }' is not assignable to... Remove this comment to see the full error message
       className={getClassName('bpk-banner-alert-examples__component')}
     />
   </>

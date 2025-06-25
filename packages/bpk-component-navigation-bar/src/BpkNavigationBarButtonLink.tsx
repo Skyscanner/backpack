@@ -18,11 +18,11 @@
 
 import type { ComponentProps, MouseEvent, ReactNode } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
 
 import { BAR_STYLES, type BarStyle } from './BpkNavigationBar';
 
+// @ts-expect-error TS(2709) FIXME: Cannot use namespace 'BpkButtonLink' as a type.
 export interface Props extends ComponentProps<BpkButtonLink> {
   children: ReactNode,
   onClick: (event: MouseEvent<HTMLElement>) => void,
@@ -44,6 +44,7 @@ const BpkNavigationBarButtonLink = ({
         ...rest
       }
     >
+      // @ts-expect-error TS(2322): Type 'ReactNode' is not assignable to type 'string... Remove this comment to see the full error message
       {children}
     </BpkButtonLink>
   </span>

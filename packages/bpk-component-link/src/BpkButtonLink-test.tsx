@@ -50,6 +50,7 @@ describe('BpkButtonLink', () => {
 
   it('should render correctly with arbitrary attributes', () => {
     const { asFragment } = render(
+      // @ts-expect-error TS(2322) FIXME: Type '{ children: string; onClick: () => null; id:... Remove this comment to see the full error message
       <BpkButtonLink onClick={() => null} id="test-id">
         Link
       </BpkButtonLink>,

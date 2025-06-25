@@ -137,6 +137,7 @@ const ContentBubblePointerHiddenRoundedExample = () => (
       'bpk-flare-stories__content-bubble--full-width',
       'bpk-flare-stories__content-bubble--fixed-height',
     )}
+    // @ts-expect-error TS(2322) FIXME: Type '{ className: string; style: { height: string... Remove this comment to see the full error message
     style={{ height: '45rem' }}
     rounded
     showPointer={false}

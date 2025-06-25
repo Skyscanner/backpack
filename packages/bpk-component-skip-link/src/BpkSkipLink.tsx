@@ -28,6 +28,7 @@ const getClassName = cssModules(STYLES);
 export type Props = {
   label: string,
   href: string,
+  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   className: ?string,
 };
 

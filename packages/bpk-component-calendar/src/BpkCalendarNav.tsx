@@ -25,7 +25,6 @@ import {
 import BpkAriaLive from '../../bpk-component-aria-live';
 import ArrowLeftIcon from '../../bpk-component-icon/lg/arrow-left';
 import ArrowRightIcon from '../../bpk-component-icon/lg/arrow-right';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../bpk-component-select';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -150,6 +149,9 @@ const BpkCalendarNav = ({
             {changeMonthLabel}
           </label>
 
+          // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+          // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+          // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
           <BpkSelect
             id={`${id}_select`}
             name="months"

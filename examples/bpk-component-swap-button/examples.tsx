@@ -34,12 +34,16 @@ const DefaultExample = () => (
 
 const CanvasDefaultExample = () => (
 
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; padded: true; style: { ... Remove this comment to see the full error message
   <BpkDarkExampleWrapper padded style={wrapperStyles} >
   <BpkSwapButton ariaLabel='Swap origin and destination' swapButtonStyle={SWAPBUTTON_STYLES.canvasDefault} onClick={action('Button clicked')}/>
   </BpkDarkExampleWrapper>
 );
 const CanvasContrastExample = () => (
   <div>
+  // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+  // @ts-expect-error TS(2322): Type '{ children: Element; padded: true; style: { ... Remove this comment to see the full error message
+  // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; padded: true; style: { ... Remove this comment to see the full error message
   <BpkDarkExampleWrapper padded style={wrapperStyles}>
     <BpkSwapButton ariaLabel='Swap origin and destination' swapButtonStyle={SWAPBUTTON_STYLES.canvasContrast} onClick={action('Button clicked')}/>
   </BpkDarkExampleWrapper>

@@ -47,6 +47,7 @@ type State = {
 };
 
 class InteractiveExample extends Component<Props, State> {
+  // @ts-expect-error TS(7006) FIXME: Parameter 'props' implicitly has an 'any' type.
   constructor(props) {
     super(props);
 
@@ -58,6 +59,7 @@ class InteractiveExample extends Component<Props, State> {
   render() {
     return (
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
+      // @ts-expect-error TS(2741) FIXME: Property 'children' is missing in type '{ onClick:... Remove this comment to see the full error message
       <BpkLoadingButton
         onClick={() => {
           this.setState({ loading: true });
@@ -90,11 +92,15 @@ const LoadingButtonStory = ({
     >
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      // @ts-expect-error TS(2604): JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
+      // @ts-expect-error TS(2604) FIXME: JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
       <Wrapped onClick={action('Button clicked')} {...rest}>
         Button
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      // @ts-expect-error TS(2604): JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
+      // @ts-expect-error TS(2604) FIXME: JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
       <Wrapped
         iconPosition={ICON_POSITION.LEADING}
         onClick={action('Button leading icon clicked')}
@@ -104,16 +110,22 @@ const LoadingButtonStory = ({
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      // @ts-expect-error TS(2604): JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
+      // @ts-expect-error TS(2604) FIXME: JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
       <Wrapped loading onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
         Loading
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      // @ts-expect-error TS(2604): JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
+      // @ts-expect-error TS(2604) FIXME: JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
       <Wrapped iconOnly onClick={action('Button iconOnly clicked')} {...rest}>
         <span className="visually-hidden">Search</span>
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      // @ts-expect-error TS(2604): JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
+      // @ts-expect-error TS(2604) FIXME: JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
       <Wrapped
         iconOnly
         loading
@@ -124,11 +136,15 @@ const LoadingButtonStory = ({
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      // @ts-expect-error TS(2604): JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
+      // @ts-expect-error TS(2604) FIXME: JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
       <Wrapped large onClick={action('Button clicked')} {...rest}>
         Button
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      // @ts-expect-error TS(2604): JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
+      // @ts-expect-error TS(2604) FIXME: JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
       <Wrapped
         iconPosition={ICON_POSITION.LEADING}
         large
@@ -139,6 +155,8 @@ const LoadingButtonStory = ({
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      // @ts-expect-error TS(2604): JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
+      // @ts-expect-error TS(2604) FIXME: JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
       <Wrapped
         large
         loading
@@ -149,6 +167,8 @@ const LoadingButtonStory = ({
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      // @ts-expect-error TS(2604): JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
+      // @ts-expect-error TS(2604) FIXME: JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
       <Wrapped
         iconOnly
         large
@@ -159,6 +179,8 @@ const LoadingButtonStory = ({
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+      // @ts-expect-error TS(2604): JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
+      // @ts-expect-error TS(2604) FIXME: JSX element type 'Wrapped' does not have any const... Remove this comment to see the full error message
       <Wrapped
         iconOnly
         large
@@ -178,38 +200,55 @@ const DocsPrimaryExample = () => (
   <div>
     <InteractiveExample>Search</InteractiveExample>
     &nbsp;
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+    // @ts-expect-error TS(2322): Type '{ children: string; large: true; }' is not a... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; large: true; }' is not a... Remove this comment to see the full error message
     <InteractiveExample large>Search</InteractiveExample>
   </div>
 );
 const PrimaryExample = () => <LoadingButtonStory wrapped={BpkLoadingButton} />;
 const PrimaryOnDarkExample = () => (
   <BpkDarkExampleWrapper>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'primaryOnDark'.
+    // @ts-expect-error TS(2322): Type '{ primaryOnDark: true; wrapped: (props: Load... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ primaryOnDark: true; wrapped: (props: Load... Remove this comment to see the full error message
     <LoadingButtonStory primaryOnDark wrapped={BpkLoadingButton} />
   </BpkDarkExampleWrapper>
 );
 const PrimaryOnLightExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ primaryOnLight: true; wrapped: (props: Loa... Remove this comment to see the full error message
   <LoadingButtonStory primaryOnLight wrapped={BpkLoadingButton} />
 );
 const SecondaryExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ secondary: true; wrapped: (props: LoadingP... Remove this comment to see the full error message
   <LoadingButtonStory secondary wrapped={BpkLoadingButton} />
 );
 const SecondaryOnDarkExample = () => (
   <BpkDarkExampleWrapper>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'secondaryOnDark'.
+    // @ts-expect-error TS(2322): Type '{ secondaryOnDark: true; wrapped: (props: Lo... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ secondaryOnDark: true; wrapped: (props: Lo... Remove this comment to see the full error message
     <LoadingButtonStory secondaryOnDark wrapped={BpkLoadingButton} />
   </BpkDarkExampleWrapper>
 );
 const DestructiveExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ destructive: true; wrapped: (props: Loadin... Remove this comment to see the full error message
   <LoadingButtonStory destructive wrapped={BpkLoadingButton} />
 );
 const LinkButtonExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ link: true; wrapped: (props: LoadingProps)... Remove this comment to see the full error message
   <LoadingButtonStory link wrapped={BpkLoadingButton} />
 );
 const LinkOnDarkButtonExample = () => (
   <BpkDarkExampleWrapper>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'linkOnDark'.
+    // @ts-expect-error TS(2322): Type '{ linkOnDark: true; wrapped: (props: Loading... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ linkOnDark: true; wrapped: (props: Loading... Remove this comment to see the full error message
     <LoadingButtonStory linkOnDark wrapped={BpkLoadingButton} />
   </BpkDarkExampleWrapper>
 );
 const FeaturedExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ featured: true; wrapped: (props: LoadingPr... Remove this comment to see the full error message
   <LoadingButtonStory featured wrapped={BpkLoadingButton} />
 );
 const MixtureExample = () => (
@@ -227,14 +266,41 @@ const MixtureExample = () => (
 );
 const AnchorTagsExample = () => (
   <div>
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'href'.
+    // @ts-expect-error TS(2322): Type '{ href: string; }' is not assignable to type... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ href: string; }' is not assignable to type... Remove this comment to see the full error message
     <PrimaryExample href="#" />
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'href'.
+    // @ts-expect-error TS(2322): Type '{ href: string; }' is not assignable to type... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ href: string; }' is not assignable to type... Remove this comment to see the full error message
     <PrimaryOnLightExample href="#" />
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'href'.
+    // @ts-expect-error TS(2322): Type '{ href: string; }' is not assignable to type... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ href: string; }' is not assignable to type... Remove this comment to see the full error message
     <PrimaryOnDarkExample href="#" />
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'href'.
+    // @ts-expect-error TS(2322): Type '{ href: string; }' is not assignable to type... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ href: string; }' is not assignable to type... Remove this comment to see the full error message
     <SecondaryExample href="#" />
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'href'.
+    // @ts-expect-error TS(2322): Type '{ href: string; }' is not assignable to type... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ href: string; }' is not assignable to type... Remove this comment to see the full error message
     <SecondaryOnDarkExample href="#" />
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'href'.
+    // @ts-expect-error TS(2322): Type '{ href: string; }' is not assignable to type... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ href: string; }' is not assignable to type... Remove this comment to see the full error message
     <DestructiveExample href="#" />
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'href'.
+    // @ts-expect-error TS(2322): Type '{ href: string; }' is not assignable to type... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ href: string; }' is not assignable to type... Remove this comment to see the full error message
     <LinkButtonExample href="#" />
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'href'.
+    // @ts-expect-error TS(2322): Type '{ href: string; }' is not assignable to type... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ href: string; }' is not assignable to type... Remove this comment to see the full error message
     <LinkOnDarkButtonExample href="#" />
+    // @ts-expect-error TS(2304) FIXME: Cannot find name 'href'.
+    // @ts-expect-error TS(2322): Type '{ href: string; }' is not assignable to type... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322) FIXME: Type '{ href: string; }' is not assignable to type... Remove this comment to see the full error message
     <FeaturedExample href="#" />
   </div>
 );
@@ -396,6 +462,7 @@ const VisualExample = () => (
   </div>
 );
 const SubmitExample = () => (
+  // @ts-expect-error TS(2322) FIXME: Type '{ submit: true; wrapped: (props: LoadingProp... Remove this comment to see the full error message
   <LoadingButtonStory submit wrapped={BpkLoadingButton} />
 );
 

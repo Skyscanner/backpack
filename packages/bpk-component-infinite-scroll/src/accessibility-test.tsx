@@ -22,6 +22,7 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import { ArrayDataSource } from './DataSource';
+// @ts-expect-error TS(1192) FIXME: Module '"/Users/fayexiao/Documents/workspace4/back... Remove this comment to see the full error message
 import withInfiniteScroll from './withInfiniteScroll';
 
 describe('withInfiniteScroll accessibility tests', () => {
@@ -32,13 +33,9 @@ describe('withInfiniteScroll accessibility tests', () => {
       elementsArray.push(`Element ${i}`);
     }
 
-    const List = (props) => (
-      <div id="list">
-        {props.elements.map((element) => (
-          <div key={element}>{element}</div>
-        ))}
-      </div>
-    );
+    const List = (props: any) => <div id="list">
+      {props.elements.map((element: any) => <div key={element}>{element}</div>)}
+    </div>;
 
     List.propTypes = {
       elements: PropTypes.arrayOf(PropTypes.string).isRequired,
