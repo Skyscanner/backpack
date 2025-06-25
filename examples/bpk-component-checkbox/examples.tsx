@@ -16,14 +16,13 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { Component } from 'react';
 
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import {
   action,
   BpkDarkExampleWrapper,
+// @ts-expect-error Could not find a declaration file for module '../bpk-storybook-utils'.
 } from '../bpk-storybook-utils';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores doloremque, expedita
@@ -32,6 +31,17 @@ Nesciunt, voluptate, illo.`;
 
 type Props = {
   isChecked: boolean,
+  id: string,
+  name: string,
+  label: string,
+  indeterminate?: boolean,
+  valid?: boolean,
+  required?: boolean,
+  smallLabel?: boolean,
+  isRequired?: boolean,
+  white?: boolean,
+  disabled?: boolean,
+  onChange?: () => void,
 };
 
 type State = {
@@ -61,12 +71,10 @@ class StatefulCheckbox extends Component<Props, State> {
   render() {
     return (
       <div style={{ padding: '.25rem' }}>
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkCheckbox
-          checked={this.state.isChecked}
+          className={undefined} checked={this.state.isChecked}
           onChange={this.handleChange}
-          {...this.props}
-        />
+          {...this.props}        />
       </div>
     );
   }
