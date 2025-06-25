@@ -99,7 +99,7 @@ describe('BpkAutosuggest', () => {
     );
 
     const input = container.querySelector('input');
-    // @ts-expect-error TS(2531) FIXME: Object is possibly 'null'.
+    // @ts-expect-error TS(2531): Object is possibly 'null'.
     expect(input.autocomplete).toEqual('off');
   });
 
@@ -116,7 +116,7 @@ describe('BpkAutosuggest', () => {
     );
 
     const input = container.querySelector('input');
-    // @ts-expect-error TS(2531) FIXME: Object is possibly 'null'.
+    // @ts-expect-error TS(2531): Object is possibly 'null'.
     expect(input.autocomplete).toEqual('on');
   });
 });

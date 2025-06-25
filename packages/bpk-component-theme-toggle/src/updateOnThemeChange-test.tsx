@@ -53,7 +53,7 @@ describe('EnhancedComponent', () => {
     expect(forceUpdateSpy).not.toHaveBeenCalled();
 
     fireEvent(
-      // @ts-expect-error TS(2345) FIXME: Argument of type '{} | null' is not assignable to ... Remove this comment to see the full error message
+      // @ts-expect-error TS(2345): Argument of type '{} | null' is not assignable to ... Remove this comment to see the full error message
       getHtmlElement(),
       new CustomEvent(THEME_CHANGE_EVENT, { detail: { theme: null } }),
     );

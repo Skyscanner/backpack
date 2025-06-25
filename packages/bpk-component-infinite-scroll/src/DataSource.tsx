@@ -19,7 +19,7 @@
 /* @flow strict */
 
 class DataSource<T = any> {
-  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
+  // @ts-expect-error TS(2304): Cannot find name 'mixed'.
   listeners: Array<() => mixed>;
 
   constructor() {
@@ -31,7 +31,7 @@ class DataSource<T = any> {
     throw new Error('Not implemented');
   }
 
-  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
+  // @ts-expect-error TS(2304): Cannot find name 'mixed'.
   onDataChange(callback: () => mixed): boolean {
     if (this.listeners.indexOf(callback) === -1) {
       this.listeners.push(callback);
@@ -40,7 +40,7 @@ class DataSource<T = any> {
     return false;
   }
 
-  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
+  // @ts-expect-error TS(2304): Cannot find name 'mixed'.
   removeListener(callback: () => mixed): boolean {
     const index = this.listeners.indexOf(callback);
     if (index !== -1) {
@@ -51,7 +51,7 @@ class DataSource<T = any> {
   }
 
   triggerListeners = (...args: Array<any>): void => {
-    // @ts-expect-error TS(2556) FIXME: A spread argument must either have a tuple type or... Remove this comment to see the full error message
+    // @ts-expect-error TS(2556): A spread argument must either have a tuple type or... Remove this comment to see the full error message
     this.listeners.forEach((cb) => cb(...args));
   };
 }

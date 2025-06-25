@@ -26,6 +26,7 @@ import { useIntersectionObserver } from './utils';
 
 import type { OnImageChangedHandler } from './types';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkCarouselContainer.module.... Remove this comment to see the full error message
 import STYLES from './BpkCarouselContainer.module.scss';
 
 const getClassName = cssModules(STYLES);

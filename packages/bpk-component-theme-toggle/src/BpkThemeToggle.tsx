@@ -25,6 +25,7 @@ import { cssModules } from '../../bpk-react-utils';
 import bpkCustomThemes from './theming';
 import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkThemeToggle.module.scss' ... Remove this comment to see the full error message
 import STYLES from './BpkThemeToggle.module.scss';
 
 const inputId = 'theme-select';
@@ -33,7 +34,7 @@ const availableThemes = Object.keys(bpkCustomThemes);
 
 const setTheme = (theme: any) => {
   const htmlElement = getHtmlElement();
-  // @ts-expect-error TS(2531) FIXME: Object is possibly 'null'.
+  // @ts-expect-error TS(2531): Object is possibly 'null'.
   htmlElement.dispatchEvent(
     new CustomEvent(THEME_CHANGE_EVENT, { detail: { theme } }),
   );
@@ -64,12 +65,12 @@ class BpkThemeToggle extends Component {
   handleChange = (e: any) => {
     const selectedTheme = e.target.value;
     this.setState({ selectedTheme });
-    // @ts-expect-error TS(7053) FIXME: Element implicitly has an 'any' type because expre... Remove this comment to see the full error message
+    // @ts-expect-error TS(7053): Element implicitly has an 'any' type because expre... Remove this comment to see the full error message
     setTheme(bpkCustomThemes[selectedTheme]);
   };
 
   cycleTheme = () => {
-    // @ts-expect-error TS(2339) FIXME: Property 'selectedTheme' does not exist on type 'R... Remove this comment to see the full error message
+    // @ts-expect-error TS(2339): Property 'selectedTheme' does not exist on type 'R... Remove this comment to see the full error message
     let { selectedTheme } = this.state;
     const selectedIndex = selectedTheme
       ? availableThemes.indexOf(selectedTheme) + 1
@@ -80,7 +81,7 @@ class BpkThemeToggle extends Component {
       selectedTheme = availableThemes[selectedIndex];
     }
     this.setState({ selectedTheme });
-    // @ts-expect-error TS(7053) FIXME: Element implicitly has an 'any' type because expre... Remove this comment to see the full error message
+    // @ts-expect-error TS(7053): Element implicitly has an 'any' type because expre... Remove this comment to see the full error message
     setTheme(bpkCustomThemes[selectedTheme]);
   };
 
@@ -90,17 +91,23 @@ class BpkThemeToggle extends Component {
       <div {...rest}>
         <span className={getClassName('bpk-theme-toggle__label')}>
           // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+          // @ts-expect-error TS(2304): Cannot find name 'children'.
           // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+          // @ts-expect-error TS(2304): Cannot find name 'children'.
           // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
+          // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
           <BpkLabel htmlFor={inputId}>Change theme</BpkLabel>
         </span>
         // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+        // @ts-expect-error TS(2304): Cannot find name 'children'.
         // @ts-expect-error TS(2322): Type '{ children: (Element | Element[])[]; id: str... Remove this comment to see the full error message
+        // @ts-expect-error TS(2304): Cannot find name 'children'.
         // @ts-expect-error TS(2322) FIXME: Type '{ children: (Element | Element[])[]; id: str... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ children: (Element | Element[])[]; id: str... Remove this comment to see the full error message
         <BpkSelect
           id={inputId}
           name={inputId}
-          // @ts-expect-error TS(2339) FIXME: Property 'selectedTheme' does not exist on type 'R... Remove this comment to see the full error message
+          // @ts-expect-error TS(2339): Property 'selectedTheme' does not exist on type 'R... Remove this comment to see the full error message
           value={this.state.selectedTheme}
           onChange={this.handleChange}
         >

@@ -21,9 +21,9 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'd3-s... Remove this comment to see the full error message
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'd3-s... Remove this comment to see the full error message
 import { scaleLinear, scaleBand } from 'd3-scale';
-// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'loda... Remove this comment to see the full error message
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'loda... Remove this comment to see the full error message
 import debounce from 'lodash.debounce';
 
 import {
@@ -48,6 +48,7 @@ import dataProp from './customPropTypes';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, remToPx } from './utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkBarchart.module.scss' or ... Remove this comment to see the full error message
 import STYLES from './BpkBarchart.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -57,7 +58,7 @@ const lineHeight = remToPx(lineHeightSm);
 
 const getMaxYValue = (
   dataPoints: Array<number>,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   outlierPercentage: ?number,
 ) => {
   const meanValue = dataPoints.reduce((d, t) => d + t, 0) / dataPoints.length;
@@ -76,34 +77,34 @@ type Props = {
   yAxisLabel: string,
   initialWidth: number,
   initialHeight: number,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   leadingScrollIndicatorClassName: ?string,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   trailingScrollIndicatorClassName: ?string,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   outlierPercentage: ?number,
   showGridlines: boolean,
   xAxisMargin: number,
-  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
+  // @ts-expect-error TS(2304): Cannot find name 'mixed'.
   xAxisTickValue: () => mixed,
   xAxisTickOffset: number,
   xAxisTickEvery: number,
   yAxisMargin: number,
-  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
+  // @ts-expect-error TS(2304): Cannot find name 'mixed'.
   yAxisTickValue: () => mixed,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   yAxisNumTicks: ?number,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   yAxisDomain: Array<?number>,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   onBarClick: ?() => mixed,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   onBarHover: ?() => mixed,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   onBarFocus: ?() => mixed,
-  // @ts-expect-error TS(2300) FIXME: Duplicate identifier 'string'.
+  // @ts-expect-error TS(2300): Duplicate identifier 'string'.
   getBarLabel: (any, string, string) => ?string,
-  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
+  // @ts-expect-error TS(2304): Cannot find name 'mixed'.
   getBarSelection: () => mixed,
   BarComponent: typeof BpkBarchartBar,
   disableDataTable: boolean,
@@ -119,10 +120,10 @@ class BpkBarchart extends Component<Props, State> {
 
   yScale: typeof scaleLinear;
 
-  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
+  // @ts-expect-error TS(2304): Cannot find name 'mixed'.
   onWindowResize: () => mixed;
 
-  // @ts-expect-error TS(2564) FIXME: Property 'svgEl' has no initializer and is not def... Remove this comment to see the full error message
+  // @ts-expect-error TS(2564): Property 'svgEl' has no initializer and is not def... Remove this comment to see the full error message
   svgEl: ?Element;
 
   static defaultProps = {
@@ -229,16 +230,16 @@ class BpkBarchart extends Component<Props, State> {
     );
 
     this.xScale.rangeRound([0, width]);
-    // @ts-expect-error TS(7006) FIXME: Parameter 'd' implicitly has an 'any' type.
+    // @ts-expect-error TS(7006): Parameter 'd' implicitly has an 'any' type.
     this.xScale.domain(transformedData.map((d) => d[xScaleDataKey]));
     this.yScale.rangeRound([height, 0]);
     this.yScale.domain([yAxisDomain[0] || 0, yAxisDomain[1] || maxYValue]);
 
     return (
       <BpkMobileScrollContainer
-        // @ts-expect-error TS(2322) FIXME: Type 'string | null' is not assignable to type 'st... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type 'string | null' is not assignable to type 'st... Remove this comment to see the full error message
         leadingIndicatorClassName={leadingScrollIndicatorClassName}
-        // @ts-expect-error TS(2322) FIXME: Type 'string | null' is not assignable to type 'st... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type 'string | null' is not assignable to type 'st... Remove this comment to see the full error message
         trailingIndicatorClassName={trailingScrollIndicatorClassName}
       >
         {!disableDataTable && (
@@ -317,7 +318,7 @@ class BpkBarchart extends Component<Props, State> {
   }
 }
 
-// @ts-expect-error TS(2339) FIXME: Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
+// @ts-expect-error TS(2339): Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 BpkBarchart.propTypes = {
   /**
    * **Required**

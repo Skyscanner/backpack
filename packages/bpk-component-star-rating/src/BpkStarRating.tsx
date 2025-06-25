@@ -24,6 +24,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import BpkStar, { STAR_TYPES } from './BpkStar';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkStarRating.module.scss' o... Remove this comment to see the full error message
 import STYLES from './BpkStarRating.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -48,9 +49,9 @@ export const ROUNDING_TYPES = {
 };
 
 type Props = {
-  // @ts-expect-error TS(2300) FIXME: Duplicate identifier 'number'.
+  // @ts-expect-error TS(2300): Duplicate identifier 'number'.
   ratingLabel: string | ((number, number) => mixed),
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   className: ?string,
   large: boolean,
   extraLarge: boolean,

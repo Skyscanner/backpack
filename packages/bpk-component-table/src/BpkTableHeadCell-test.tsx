@@ -57,8 +57,11 @@ describe('BpkTableHeadCell', () => {
         <thead>
           <tr>
             // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+            // @ts-expect-error TS(2304): Cannot find name 'children'.
             // @ts-expect-error TS(2322): Type '{ children: string; id: string; "data-foo": ... Remove this comment to see the full error message
+            // @ts-expect-error TS(2304): Cannot find name 'children'.
             // @ts-expect-error TS(2322) FIXME: Type '{ children: string; id: string; "data-foo": ... Remove this comment to see the full error message
+            // @ts-expect-error TS(2322): Type '{ children: string; id: string; "data-foo": ... Remove this comment to see the full error message
             <BpkTableHeadCell id="my-custom-id" data-foo="bar">
               Skyscanner
             </BpkTableHeadCell>

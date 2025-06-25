@@ -40,8 +40,11 @@ describe('BpkTableHead', () => {
     const { asFragment } = render(
       <table>
         // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+        // @ts-expect-error TS(2304): Cannot find name 'children'.
         // @ts-expect-error TS(2322): Type '{ children: Element; className: string; }' i... Remove this comment to see the full error message
+        // @ts-expect-error TS(2304): Cannot find name 'children'.
         // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; className: string; }' i... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ children: Element; className: string; }' i... Remove this comment to see the full error message
         <BpkTableHead className="my-custom-class">
           <tr>
             <th>Skyscanner</th>
@@ -56,8 +59,11 @@ describe('BpkTableHead', () => {
     const { asFragment } = render(
       <table>
         // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+        // @ts-expect-error TS(2304): Cannot find name 'children'.
         // @ts-expect-error TS(2322): Type '{ children: Element; id: string; "data-foo":... Remove this comment to see the full error message
+        // @ts-expect-error TS(2304): Cannot find name 'children'.
         // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; id: string; "data-foo":... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ children: Element; id: string; "data-foo":... Remove this comment to see the full error message
         <BpkTableHead id="my-custom-id" data-foo="bar">
           <tr>
             <th>Skyscanner</th>

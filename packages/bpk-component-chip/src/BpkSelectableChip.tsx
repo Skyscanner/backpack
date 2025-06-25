@@ -25,6 +25,7 @@ import { CHIP_TYPES } from './commonTypes';
 
 import type { CommonProps } from './commonTypes';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkSelectableChip.module.scs... Remove this comment to see the full error message
 import STYLES from './BpkSelectableChip.module.scss';
 
 const getClassName = cssModules(STYLES);

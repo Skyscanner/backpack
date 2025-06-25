@@ -34,6 +34,7 @@ import HalfExtraLargeIcon from '../../bpk-component-icon/xxxl/star-half';
 import OutlineExtraLargeIcon from '../../bpk-component-icon/xxxl/star-outline';
 import { cssModules } from '../../bpk-react-utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkStar.module.scss' or its ... Remove this comment to see the full error message
 import STYLES from './BpkStar.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -45,9 +46,9 @@ export const STAR_TYPES = {
 };
 
 type Props = {
-  // @ts-expect-error TS(2304) FIXME: Cannot find name '$Keys'.
+  // @ts-expect-error TS(2304): Cannot find name '$Keys'.
   type: $Keys<typeof STAR_TYPES>,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   className: ?string,
   large: boolean,
   extraLarge: boolean,
@@ -96,7 +97,7 @@ const BpkStar = (props: Props) => {
   if (type === STAR_TYPES.HALF) {
     return (
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-      // @ts-expect-error TS(2322) FIXME: Type 'string[]' is not assignable to type 'string'... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322): Type 'string[]' is not assignable to type 'string'... Remove this comment to see the full error message
       <span className={[containerClassNames, halfIconClassNames]} {...rest}>
         <HalfIcon />
       </span>

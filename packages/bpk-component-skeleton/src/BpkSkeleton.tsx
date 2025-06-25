@@ -23,6 +23,7 @@ import { SKELETON_TYPES, IMAGE_SKELETON_STYLE, SIZE_TYPES } from './common-types
 
 import type { ComponentProps} from './common-types';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkSkeleton.module.scss' or ... Remove this comment to see the full error message
 import STYLES from './BpkSkeleton.module.scss';
 
 

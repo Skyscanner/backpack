@@ -22,7 +22,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { ArrayDataSource } from './DataSource';
-// @ts-expect-error TS(1192) FIXME: Module '"/Users/fayexiao/Documents/workspace4/back... Remove this comment to see the full error message
+// @ts-expect-error TS(1192): Module '"/Users/fayexiao/Documents/workspace4/back... Remove this comment to see the full error message
 import withInfiniteScroll from './withInfiniteScroll';
 
 const nextTick = () => new Promise((res) => setTimeout(res, 0));
@@ -56,7 +56,7 @@ describe('withInfiniteScroll', () => {
   let currentOptions = {};
 
   beforeEach(() => {
-    // @ts-expect-error TS(2322) FIXME: Type 'typeof IntersectionObserver' is not assignab... Remove this comment to see the full error message
+    // @ts-expect-error TS(2322): Type 'typeof IntersectionObserver' is not assignab... Remove this comment to see the full error message
     global.IntersectionObserver = class {
       constructor(callback: any, options: any) {
         intersect = async () => callback([{ isIntersecting: true }]);

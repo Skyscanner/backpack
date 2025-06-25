@@ -29,11 +29,11 @@ function requireAll(requireContext: any) {
   return hash;
 }
 
-// @ts-expect-error TS(2339) FIXME: Property 'context' does not exist on type 'NodeReq... Remove this comment to see the full error message
+// @ts-expect-error TS(2339): Property 'context' does not exist on type 'NodeReq... Remove this comment to see the full error message
 const sm = requireAll(require.context('./sm', false, /\.jsx$/));
-// @ts-expect-error TS(2339) FIXME: Property 'context' does not exist on type 'NodeReq... Remove this comment to see the full error message
+// @ts-expect-error TS(2339): Property 'context' does not exist on type 'NodeReq... Remove this comment to see the full error message
 const lg = requireAll(require.context('./lg', false, /\.jsx$/));
-// @ts-expect-error TS(2339) FIXME: Property 'context' does not exist on type 'NodeReq... Remove this comment to see the full error message
+// @ts-expect-error TS(2339): Property 'context' does not exist on type 'NodeReq... Remove this comment to see the full error message
 const xxxl = requireAll(require.context('./xxxl', false, /\.jsx$/));
 
 export default sm;

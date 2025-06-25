@@ -26,7 +26,7 @@ import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
 const updateOnThemeChange = (EnhancedComponent: any) => {
   class UpdateOnThemeChange extends Component {
     constructor() {
-      // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 0.
+      // @ts-expect-error TS(2554): Expected 1-2 arguments, but got 0.
       super();
       this.state = {
         theme: null,
@@ -34,7 +34,7 @@ const updateOnThemeChange = (EnhancedComponent: any) => {
     }
 
     componentDidMount() {
-      // @ts-expect-error TS(2531) FIXME: Object is possibly 'null'.
+      // @ts-expect-error TS(2531): Object is possibly 'null'.
       getHtmlElement().addEventListener(
         THEME_CHANGE_EVENT,
         this.onThemeChange,
@@ -43,7 +43,7 @@ const updateOnThemeChange = (EnhancedComponent: any) => {
     }
 
     componentWillUnmount() {
-      // @ts-expect-error TS(2531) FIXME: Object is possibly 'null'.
+      // @ts-expect-error TS(2531): Object is possibly 'null'.
       getHtmlElement().removeEventListener(
         THEME_CHANGE_EVENT,
         this.onThemeChange,
@@ -58,18 +58,18 @@ const updateOnThemeChange = (EnhancedComponent: any) => {
     };
 
     render() {
-      // @ts-expect-error TS(2339) FIXME: Property 'theme' does not exist on type 'Readonly<... Remove this comment to see the full error message
+      // @ts-expect-error TS(2339): Property 'theme' does not exist on type 'Readonly<... Remove this comment to see the full error message
       return <EnhancedComponent theme={this.state.theme} {...this.props} />;
     }
   }
 
-  // @ts-expect-error TS(2339) FIXME: Property 'displayName' does not exist on type 'typ... Remove this comment to see the full error message
+  // @ts-expect-error TS(2339): Property 'displayName' does not exist on type 'typ... Remove this comment to see the full error message
   UpdateOnThemeChange.displayName = wrapDisplayName(
     EnhancedComponent,
     'updateOnThemeChange',
   );
 
-  // @ts-expect-error TS(2339) FIXME: Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
+  // @ts-expect-error TS(2339): Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
   UpdateOnThemeChange.propTypes = {
     children: PropTypes.node.isRequired,
   };

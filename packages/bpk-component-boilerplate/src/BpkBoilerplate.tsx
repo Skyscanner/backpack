@@ -18,6 +18,7 @@
 
 import { cssModules } from '../../bpk-react-utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkBoilerplate.module.scss' ... Remove this comment to see the full error message
 import STYLES from './BpkBoilerplate.module.scss';
 
 const getClassName = cssModules(STYLES);

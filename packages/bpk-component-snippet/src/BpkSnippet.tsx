@@ -27,6 +27,7 @@ import BpkImage, {
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkSnippet.module.scss' or i... Remove this comment to see the full error message
 import STYLES from './BpkSnippet.module.scss';
 
 const getClassName = cssModules(STYLES);

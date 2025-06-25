@@ -22,6 +22,7 @@ import { withScrim } from '../../bpk-scrim-utils';
 
 import { type DialogInnerProps as Props } from './common-types';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkDialogInner.module.scss' ... Remove this comment to see the full error message
 import STYLES from './BpkDialogInner.module.scss';
 
 const getClassName = cssModules(STYLES);

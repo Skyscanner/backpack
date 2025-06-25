@@ -22,7 +22,7 @@ import { BpkButtonLink } from '../../bpk-component-link';
 
 import { BAR_STYLES, type BarStyle } from './BpkNavigationBar';
 
-// @ts-expect-error TS(2709) FIXME: Cannot use namespace 'BpkButtonLink' as a type.
+// @ts-expect-error TS(2709): Cannot use namespace 'BpkButtonLink' as a type.
 export interface Props extends ComponentProps<BpkButtonLink> {
   children: ReactNode,
   onClick: (event: MouseEvent<HTMLElement>) => void,

@@ -32,7 +32,7 @@ describe('withInteractiveStarRatingState', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
       <InteractiveStarRating
-        // @ts-expect-error TS(2322) FIXME: Type '{ id: string; getStarLabel: () => string; }'... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ id: string; getStarLabel: () => string; }'... Remove this comment to see the full error message
         id="my-star-rating"
         getStarLabel={() => 'my-label'}
       />,
@@ -43,7 +43,7 @@ describe('withInteractiveStarRatingState', () => {
   it('should render correctly with "large" attribute', () => {
     const { asFragment } = render(
       <InteractiveStarRating
-        // @ts-expect-error TS(2322) FIXME: Type '{ id: string; getStarLabel: () => string; la... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ id: string; getStarLabel: () => string; la... Remove this comment to see the full error message
         id="my-star-rating"
         getStarLabel={() => 'my-label'}
         large
@@ -55,7 +55,7 @@ describe('withInteractiveStarRatingState', () => {
   it('should render correctly when selecting 3rd star', async () => {
     const { asFragment } = render(
       <InteractiveStarRating
-        // @ts-expect-error TS(2322) FIXME: Type '{ id: string; getStarLabel: (rating: any, ma... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ id: string; getStarLabel: (rating: any, ma... Remove this comment to see the full error message
         id="my-star-rating"
         getStarLabel={(rating: any, maxRating: any) =>
           `${rating} out of ${maxRating} stars`
@@ -72,7 +72,7 @@ describe('withInteractiveStarRatingState', () => {
   it('should render correctly when hovering over 4th star', async () => {
     const { asFragment } = render(
       <InteractiveStarRating
-        // @ts-expect-error TS(2322) FIXME: Type '{ id: string; getStarLabel: (rating: any, ma... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ id: string; getStarLabel: (rating: any, ma... Remove this comment to see the full error message
         id="my-star-rating"
         getStarLabel={(rating: any, maxRating: any) =>
           `${rating} out of ${maxRating} stars`

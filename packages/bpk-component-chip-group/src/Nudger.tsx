@@ -27,6 +27,7 @@ import { cssModules, isRTL } from '../../bpk-react-utils/index';
 
 import type { ChipStyleType } from './BpkMultiSelectChipGroup';
 
+// @ts-expect-error TS(2307): Cannot find module './Nudger.module.scss' or its c... Remove this comment to see the full error message
 import STYLES from './Nudger.module.scss';
 
 const getClassName = cssModules(STYLES);

@@ -24,14 +24,14 @@ import BpkProgress from './BpkProgress';
 
 describe('BpkProgress', () => {
   it('should render correctly', () => {
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+    // @ts-expect-error TS(2769): No overload matches this call.
     const { asFragment } = render(<BpkProgress min={0} max={100} value={25} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+      // @ts-expect-error TS(2769): No overload matches this call.
       <BpkProgress min={0} max={100} value={25} className="my-progress-bar" />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -39,7 +39,7 @@ describe('BpkProgress', () => {
 
   it('should render correctly with a "tabIndex" attribute', () => {
     render(
-      // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+      // @ts-expect-error TS(2769): No overload matches this call.
       <BpkProgress min={0} max={100} value={25} tabIndex={-1} className="my-progress-bar" />,
     );
 
@@ -49,7 +49,7 @@ describe('BpkProgress', () => {
 
   it('should render correctly with a "small" attribute', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+      // @ts-expect-error TS(2769): No overload matches this call.
       <BpkProgress min={0} max={9} value={2} small />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -57,7 +57,7 @@ describe('BpkProgress', () => {
 
   it('should render correctly with a "stepped" attribute', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+      // @ts-expect-error TS(2769): No overload matches this call.
       <BpkProgress min={0} max={9} value={2} stepped />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -65,7 +65,7 @@ describe('BpkProgress', () => {
 
   it('should render correctly with "small" and "stepped" attributes', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+      // @ts-expect-error TS(2769): No overload matches this call.
       <BpkProgress min={0} max={9} value={2} small stepped />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -74,12 +74,12 @@ describe('BpkProgress', () => {
   it('should call "onComplete" when "value" is set to be >= "max"', () => {
     const onCompleteSpy = jest.fn();
     const { rerender } = render(
-      // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+      // @ts-expect-error TS(2769): No overload matches this call.
       <BpkProgress min={0} max={100} value={10} onComplete={onCompleteSpy} />,
     );
     expect(onCompleteSpy).not.toHaveBeenCalled();
     rerender(
-      // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+      // @ts-expect-error TS(2769): No overload matches this call.
       <BpkProgress min={0} max={100} value={100} onComplete={onCompleteSpy} />,
     );
     expect(onCompleteSpy).toHaveBeenCalled();
@@ -88,7 +88,7 @@ describe('BpkProgress', () => {
   it('should call "onCompleteTransitionEnd" when "value" is set to be >= "max"', async () => {
     const onCompleteTransitionEndSpy = jest.fn();
     const { rerender } = render(
-      // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+      // @ts-expect-error TS(2769): No overload matches this call.
       <BpkProgress
         min={0}
         max={100}
@@ -99,7 +99,7 @@ describe('BpkProgress', () => {
     expect(onCompleteTransitionEndSpy).not.toHaveBeenCalled();
 
     rerender(
-      // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+      // @ts-expect-error TS(2769): No overload matches this call.
       <BpkProgress
         min={0}
         max={100}

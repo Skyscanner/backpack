@@ -21,6 +21,7 @@ import { useState } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkSegmentedControl.module.s... Remove this comment to see the full error message
 import STYLES from './BpkSegmentedControl.module.scss';
 
 const getClassName = cssModules(STYLES);

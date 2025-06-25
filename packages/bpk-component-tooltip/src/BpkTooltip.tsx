@@ -47,6 +47,7 @@ import { ARROW_ID, TOOLTIP_TYPES } from './constants';
 
 import type { Placement } from '@floating-ui/react';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkTooltip.module.scss' or i... Remove this comment to see the full error message
 import STYLES from './BpkTooltip.module.scss';
 
 const getClassName = cssModules(STYLES);

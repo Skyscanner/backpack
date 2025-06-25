@@ -22,6 +22,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { CardContext } from './CardContext';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkCardWrapper.module.scss' ... Remove this comment to see the full error message
 import STYLES from './BpkCardWrapper.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -46,7 +47,7 @@ const BpkCardWrapper = ({
       <div
         className={classNames}
         style={{
-          // @ts-expect-error TS(2322) FIXME: Type '{ '--background-color': string; }' is not as... Remove this comment to see the full error message
+          // @ts-expect-error TS(2322): Type '{ '--background-color': string; }' is not as... Remove this comment to see the full error message
           '--background-color': backgroundColor,
         }}
       >

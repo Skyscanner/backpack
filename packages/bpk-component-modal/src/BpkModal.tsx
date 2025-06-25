@@ -25,6 +25,7 @@ import BpkModalInner, { MODAL_STYLING } from './BpkModalInner';
 
 import type { Props as ModalDialogProps, ModalStyle } from './BpkModalInner';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkModal.module.scss' or its... Remove this comment to see the full error message
 import STYLES from './BpkModal.module.scss';
 
 const getClassName = cssModules(STYLES);

@@ -26,6 +26,7 @@ import { CLEAR_BUTTON_MODES, defaultProps } from './common-types';
 
 import type { Props } from './common-types';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkInput.module.scss' or its... Remove this comment to see the full error message
 import STYLES from './BpkInput.module.scss';
 
 type State = {

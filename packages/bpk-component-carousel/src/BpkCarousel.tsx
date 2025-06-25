@@ -26,6 +26,7 @@ import { useScrollToInitialImage } from './utils';
 
 import type { Props } from './types';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkCarousel.module.scss' or ... Remove this comment to see the full error message
 import STYLES from './BpkCarousel.module.scss';
 
 const getClassName = cssModules(STYLES);

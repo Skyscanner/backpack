@@ -43,7 +43,7 @@ export const getCalendarGridWidth = (multiplier = 1) => {
       `'calendarDaySize' and 'calendarDaySpacing' must use the same unit. Got ${sizeUnit} and ${spacingUnit}`,
     );
   }
-  // @ts-expect-error TS(2365) FIXME: Operator '+' cannot be applied to types 'string | ... Remove this comment to see the full error message
+  // @ts-expect-error TS(2365): Operator '+' cannot be applied to types 'string | ... Remove this comment to see the full error message
   const width = multiplier * (7 * (sizeValue + 2 * spacingValue));
   return `${width}${sizeUnit}`;
 };

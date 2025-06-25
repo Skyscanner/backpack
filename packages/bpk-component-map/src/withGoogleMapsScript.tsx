@@ -36,17 +36,17 @@ export const LibraryShapeType = PropTypes.arrayOf(
 
 function withGoogleMapsScript(Component: ComponentType<any>) {
   const WithGoogleMapsScript = ({
-    // @ts-expect-error TS(2339) FIXME: Property 'googleMapsApiKey' does not exist on type... Remove this comment to see the full error message
+    // @ts-expect-error TS(2339): Property 'googleMapsApiKey' does not exist on type... Remove this comment to see the full error message
     googleMapsApiKey,
-    // @ts-expect-error TS(2339) FIXME: Property 'libraries' does not exist on type '{}'.
+    // @ts-expect-error TS(2339): Property 'libraries' does not exist on type '{}'.
     libraries,
-    // @ts-expect-error TS(2339) FIXME: Property 'loadingElement' does not exist on type '... Remove this comment to see the full error message
+    // @ts-expect-error TS(2339): Property 'loadingElement' does not exist on type '... Remove this comment to see the full error message
     loadingElement,
-    // @ts-expect-error TS(2339) FIXME: Property 'preventGoogleFontsLoading' does not exis... Remove this comment to see the full error message
+    // @ts-expect-error TS(2339): Property 'preventGoogleFontsLoading' does not exis... Remove this comment to see the full error message
     preventGoogleFontsLoading,
     ...rest
   }: {
-    // @ts-expect-error TS(1170) FIXME: A computed property name in a type literal must re... Remove this comment to see the full error message
+    // @ts-expect-error TS(1170): A computed property name in a type literal must re... Remove this comment to see the full error message
     [string]: any,
   }) => {
     const { isLoaded, loadError } = useJsApiLoader({

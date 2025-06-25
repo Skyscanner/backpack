@@ -30,6 +30,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import type { ChipItem, ChipStyleType } from './BpkMultiSelectChipGroup';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkStickyChip.module.scss' o... Remove this comment to see the full error message
 import STYLES from './BpkStickyChip.module.scss';
 
 const getClassName = cssModules(STYLES);

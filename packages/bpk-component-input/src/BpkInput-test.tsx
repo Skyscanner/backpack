@@ -226,7 +226,7 @@ describe('BpkInput', () => {
     );
 
     const input = screen.getByRole('textbox');
-    // @ts-expect-error TS(2454) FIXME: Variable 'inputRef' is used before being assigned.
+    // @ts-expect-error TS(2454): Variable 'inputRef' is used before being assigned.
     expect(input).toEqual(inputRef);
   });
 

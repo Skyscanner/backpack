@@ -19,11 +19,12 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-// @ts-expect-error TS(2305) FIXME: Module '"react"' has no exported member 'Node'.
+// @ts-expect-error TS(2305): Module '"react"' has no exported member 'Node'.
 import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkRadio.module.scss' or its... Remove this comment to see the full error message
 import STYLES from './BpkRadio.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -31,13 +32,13 @@ const getClassName = cssModules(STYLES);
 type Props = {
   name: string,
   label: Node,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   ariaLabel: ?string,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   className: ?string,
   disabled: boolean,
   white: boolean,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   valid: ?boolean,
 };
 

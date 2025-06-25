@@ -83,7 +83,7 @@ class BpkRtlToggle extends Component<Props, State> {
 
     return (
       <BpkButtonLink
-        // @ts-expect-error TS(2322) FIXME: Type '{ children: string[]; title: string; onClick... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ children: string[]; title: string; onClick... Remove this comment to see the full error message
         title="Keyboard Shortcut: ctrl + cmd + r"
         onClick={this.toggleRtl}
       >

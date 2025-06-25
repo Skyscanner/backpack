@@ -23,12 +23,13 @@ import {
   iconSizeSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module '../.... Remove this comment to see the full error message
+// @ts-expect-error TS(7016): Could not find a declaration file for module '../.... Remove this comment to see the full error message
 import AnimateHeight from '../../bpk-animate-height';
 import { withAlignment } from '../../bpk-component-icon';
 import BpkSmallExclamationIcon from '../../bpk-component-icon/sm/exclamation-circle';
 import { cssModules } from '../../bpk-react-utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkFormValidation.module.scs... Remove this comment to see the full error message
 import STYLES from './BpkFormValidation.module.scss';
 
 const getClassName = cssModules(STYLES);

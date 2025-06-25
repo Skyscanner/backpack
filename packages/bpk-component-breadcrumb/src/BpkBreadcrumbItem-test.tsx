@@ -57,7 +57,7 @@ describe('BpkBreadcrumbItem', () => {
     const { asFragment } = render(
       <BpkBreadcrumbItem
         href="https://skyscanner.design/"
-        // @ts-expect-error TS(2322) FIXME: Type '{ children: string; href: string; testid: st... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ children: string; href: string; testid: st... Remove this comment to see the full error message
         testid="arbitrary value" // <-- arbitrary prop
       >
         Backpack

@@ -20,6 +20,7 @@ import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkBadge.module.scss' or its... Remove this comment to see the full error message
 import STYLES from './BpkBadge.module.scss';
 
 export const BADGE_TYPES = {

@@ -26,6 +26,7 @@ import { BUTTON_TYPES, BpkButtonV2 } from '../../bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkFloatingNotification.modu... Remove this comment to see the full error message
 import STYLES from './BpkFloatingNotification.module.scss';
 
 const getClassName = cssModules(STYLES);

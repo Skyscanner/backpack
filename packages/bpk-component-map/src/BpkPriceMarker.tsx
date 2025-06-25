@@ -26,6 +26,7 @@ import { cssModules } from '../../bpk-react-utils';
 import BpkBasicMapMarker from './BpkBasicMapMarker';
 import { LatLongPropType, type LatLong } from './common-types';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkPriceMarker.module.scss' ... Remove this comment to see the full error message
 import STYLES from './BpkPriceMarker.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -40,15 +41,15 @@ type Props = {
   label: string,
   position: LatLong,
   disabled: boolean,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   className: ?string,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   arrowClassName: ?string,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   onClick: ?(event: SyntheticEvent<>) => mixed,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   buttonProps: ?{ [string]: any },
-  // @ts-expect-error TS(2304) FIXME: Cannot find name '$Keys'.
+  // @ts-expect-error TS(2304): Cannot find name '$Keys'.
   status: $Keys<typeof PRICE_MARKER_STATUSES>,
 };
 
@@ -89,7 +90,7 @@ const BpkPriceMarker = (props: Props) => {
       <button
         type="button"
         className={markerWrapperClassNames}
-        // @ts-expect-error TS(2322) FIXME: Type '((event: SyntheticEvent) => mixed) | null' i... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '((event: SyntheticEvent) => mixed) | null' i... Remove this comment to see the full error message
         onClick={onClick}
         disabled={disabled}
         {...buttonProps}

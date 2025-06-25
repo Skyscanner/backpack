@@ -19,7 +19,7 @@
 import type { KeyboardEvent } from 'react';
 import { useMemo, useState } from 'react';
 
-// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'reac... Remove this comment to see the full error message
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { useTable, useSortBy } from 'react-table';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -28,6 +28,7 @@ import BpkDataTableHeader from './BpkDataTableHeader';
 import { type BpkDataTableProps, SORT_DIRECTION_TYPES } from './common-types';
 import { createColumnsSchema } from './utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkDataTable.module.scss' or... Remove this comment to see the full error message
 import STYLES from './BpkDataTable.module.scss';
 
 const getClassName = cssModules(STYLES);

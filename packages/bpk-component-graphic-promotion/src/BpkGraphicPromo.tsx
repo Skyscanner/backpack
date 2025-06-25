@@ -21,6 +21,7 @@ import type { KeyboardEvent, MouseEvent } from 'react';
 import {BpkButtonV2, BUTTON_TYPES} from '../../bpk-component-button';
 import { cssModules } from '../../bpk-react-utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkGraphicPromo.module.scss'... Remove this comment to see the full error message
 import STYLES from './BpkGraphicPromo.module.scss';
 
 const getClassName = cssModules(STYLES);

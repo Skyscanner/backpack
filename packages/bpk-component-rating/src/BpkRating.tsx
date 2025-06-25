@@ -26,6 +26,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { RATING_SIZES, RATING_SCALES } from './common-types';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkRating.module.scss' or it... Remove this comment to see the full error message
 import STYLES from './BpkRating.module.scss';
 
 const getClassName = cssModules(STYLES);

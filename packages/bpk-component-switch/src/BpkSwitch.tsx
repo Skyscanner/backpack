@@ -18,6 +18,7 @@
 
 import { cssModules } from '../../bpk-react-utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkSwitch.module.scss' or it... Remove this comment to see the full error message
 import STYLES from './BpkSwitch.module.scss';
 
 const getClassName = cssModules(STYLES);

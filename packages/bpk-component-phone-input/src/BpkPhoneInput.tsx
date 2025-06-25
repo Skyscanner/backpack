@@ -25,6 +25,7 @@ import BpkLabel from '../../bpk-component-label';
 import BpkSelect from '../../bpk-component-select';
 import { cssModules } from '../../bpk-react-utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkPhoneInput.module.scss' o... Remove this comment to see the full error message
 import STYLES from './BpkPhoneInput.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -56,9 +57,9 @@ export type Props = {
   id: string,
   name: string,
   label: string,
-  // @ts-expect-error TS(2304) FIXME: Cannot find name 'SyntheticInputEvent'.
+  // @ts-expect-error TS(2304): Cannot find name 'SyntheticInputEvent'.
   onChange: (SyntheticInputEvent<HTMLElement>) => mixed,
-  // @ts-expect-error TS(2304) FIXME: Cannot find name 'SyntheticInputEvent'.
+  // @ts-expect-error TS(2304): Cannot find name 'SyntheticInputEvent'.
   onDialingCodeChange: (SyntheticInputEvent<HTMLElement>) => mixed,
   value: string,
   className: ?string,
@@ -66,7 +67,7 @@ export type Props = {
   dialingCodeMask: boolean,
   large: boolean,
   valid: ?boolean,
-  // @ts-expect-error TS(2693) FIXME: 'string' only refers to a type, but is being used ... Remove this comment to see the full error message
+  // @ts-expect-error TS(2693): 'string' only refers to a type, but is being used ... Remove this comment to see the full error message
   wrapperProps: { [string]: any },
 };
 
@@ -119,7 +120,7 @@ const BpkPhoneInput = (props: Props) => {
     displayValue = `${numberPrefix} ${value}`;
   }
 
-  // @ts-expect-error TS(7006) FIXME: Parameter 'e' implicitly has an 'any' type.
+  // @ts-expect-error TS(7006): Parameter 'e' implicitly has an 'any' type.
   const handleChange = (e) => {
     if (!onChange) {
       return;
@@ -150,13 +151,13 @@ const BpkPhoneInput = (props: Props) => {
   return (
     <span
       {...wrapperProps}
-      // @ts-expect-error TS(2339) FIXME: Property 'className' does not exist on type '{}'.
+      // @ts-expect-error TS(2339): Property 'className' does not exist on type '{}'.
       className={getClassName('bpk-phone-input', wrapperProps.className)}
     >
       <div>
         <div className={getClassName('bpk-phone-input__label')}>
           <BpkLabel
-            // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; disable... Remove this comment to see the full error message
+            // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; disable... Remove this comment to see the full error message
             htmlFor={dialingCodeProps.id}
             disabled={disabled}
           >
@@ -165,8 +166,11 @@ const BpkPhoneInput = (props: Props) => {
         </div>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+        // @ts-expect-error TS(2304): Cannot find name 'children'.
         // @ts-expect-error TS(2322): Type '{ children: Element[]; className: string; wr... Remove this comment to see the full error message
+        // @ts-expect-error TS(2304): Cannot find name 'children'.
         // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; className: string; wr... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ children: Element[]; className: string; wr... Remove this comment to see the full error message
         <BpkSelect
           {...commonProps}
           {...dialingCodeProps}
@@ -188,7 +192,7 @@ const BpkPhoneInput = (props: Props) => {
       <div className={getClassName('bpk-phone-input__phone-number')}>
         <div className={getClassName('bpk-phone-input__label')}>
           <BpkLabel
-            // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; disable... Remove this comment to see the full error message
+            // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; disable... Remove this comment to see the full error message
             htmlFor={id}
             disabled={disabled}
           >

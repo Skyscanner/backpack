@@ -28,8 +28,11 @@ describe('BpkRadio form test', () => {
     render(
       <form data-testid="form">
         // @ts-expect-error TS(2304) FIXME: Cannot find name 'type'.
+        // @ts-expect-error TS(2304): Cannot find name 'type'.
         // @ts-expect-error TS(2322): Type '{ type: string; name: string; "data-testid":... Remove this comment to see the full error message
+        // @ts-expect-error TS(2304): Cannot find name 'type'.
         // @ts-expect-error TS(2322) FIXME: Type '{ type: string; name: string; "data-testid":... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ type: string; name: string; "data-testid":... Remove this comment to see the full error message
         <BpkRadio type="radio" name="radio" data-testid="myradio" />
         <button type="submit">Submit</button>
       </form>,
@@ -43,7 +46,7 @@ describe('BpkRadio form test', () => {
 
     expect(radio).toBeChecked();
 
-    // @ts-expect-error TS(2345) FIXME: Argument of type 'HTMLElement' is not assignable t... Remove this comment to see the full error message
+    // @ts-expect-error TS(2345): Argument of type 'HTMLElement' is not assignable t... Remove this comment to see the full error message
     const formData = new FormData(screen.getByTestId('form'));
 
     expect(Object.fromEntries(formData.entries())).toEqual({ radio: 'on' });
@@ -54,11 +57,14 @@ describe('BpkRadio form test', () => {
     const Wrap = () => (
       <form data-testid="form">
         // @ts-expect-error TS(2304) FIXME: Cannot find name 'type'.
+        // @ts-expect-error TS(2304): Cannot find name 'type'.
         // @ts-expect-error TS(2322): Type '{ type: string; name: string; value: string;... Remove this comment to see the full error message
+        // @ts-expect-error TS(2304): Cannot find name 'type'.
         // @ts-expect-error TS(2322) FIXME: Type '{ type: string; name: string; value: string;... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ type: string; name: string; value: string;... Remove this comment to see the full error message
         <BpkRadio type="radio" name="radio" value="One" data-testid="myradio" />
         <BpkRadio
-          // @ts-expect-error TS(2322) FIXME: Type '{ type: string; name: string; value: string;... Remove this comment to see the full error message
+          // @ts-expect-error TS(2322): Type '{ type: string; name: string; value: string;... Remove this comment to see the full error message
           type="radio"
           name="radio"
           value="Two"

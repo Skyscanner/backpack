@@ -26,7 +26,7 @@ import BpkCheckbox from './BpkCheckbox';
 describe('BpkCheckbox accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      // @ts-expect-error TS(2740) FIXME: Type '{ name: string; label: string; }' is missing... Remove this comment to see the full error message
+      // @ts-expect-error TS(2740): Type '{ name: string; label: string; }' is missing... Remove this comment to see the full error message
       <BpkCheckbox name="checkbox" label="Prefer directs" />,
     );
     const results = await axe(container);

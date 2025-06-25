@@ -21,6 +21,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import BpkContentCard from './BpkContentCard';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkContentCards.module.scss'... Remove this comment to see the full error message
 import STYLES from './BpkContentCards.module.scss';
 
 const getClassName = cssModules(STYLES);

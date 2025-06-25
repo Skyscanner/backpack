@@ -20,11 +20,12 @@
 /* eslint-disable valid-jsdoc */
 
 import PropTypes from 'prop-types';
-// @ts-expect-error TS(2305) FIXME: Module '"react"' has no exported member 'Node'.
+// @ts-expect-error TS(2305): Module '"react"' has no exported member 'Node'.
 import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkTicket.module.scss' or it... Remove this comment to see the full error message
 import STYLES from './BpkTicket.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -32,15 +33,15 @@ const getClassName = cssModules(STYLES);
 type Props = {
   children: Node,
   stub: Node,
-  // @ts-expect-error TS(1170) FIXME: A computed property name in a type literal must re... Remove this comment to see the full error message
+  // @ts-expect-error TS(1170): A computed property name in a type literal must re... Remove this comment to see the full error message
   stubProps: { [string]: any },
   padded: boolean,
   vertical: boolean,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   className: ?string,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   stubClassName: ?string,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   href: ?string,
 };
 

@@ -26,6 +26,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { remToPx } from './utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkBarchartBar.module.scss' ... Remove this comment to see the full error message
 import STYLES from './BpkBarchartBar.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -35,7 +36,7 @@ const KEYCODES = {
   SPACEBAR: 32,
 };
 
-// @ts-expect-error TS(7006) FIXME: Parameter 'callback' implicitly has an 'any' type.
+// @ts-expect-error TS(7006): Parameter 'callback' implicitly has an 'any' type.
 const handleKeyboardEvent = (callback) => (event) => {
   if (event.keyCode === KEYCODES.ENTER || event.keyCode === KEYCODES.SPACEBAR) {
     event.preventDefault();
@@ -52,11 +53,11 @@ type Props = {
   x: number,
   y: number,
   className: ?string,
-  // @ts-expect-error TS(7008) FIXME: Member 'mixed' implicitly has an 'any' type.
+  // @ts-expect-error TS(7008): Member 'mixed' implicitly has an 'any' type.
   onClick: ?(?any) => mixed,
-  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
+  // @ts-expect-error TS(2304): Cannot find name 'mixed'.
   onHover: ?() => mixed,
-  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
+  // @ts-expect-error TS(2304): Cannot find name 'mixed'.
   onFocus: ?() => mixed,
   outlier: boolean,
   padding: number,

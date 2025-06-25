@@ -22,6 +22,7 @@ import { useState } from 'react';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkNavigationTabGroup.module... Remove this comment to see the full error message
 import STYLES from './BpkNavigationTabGroup.module.scss';
 
 const getClassName = cssModules(STYLES);

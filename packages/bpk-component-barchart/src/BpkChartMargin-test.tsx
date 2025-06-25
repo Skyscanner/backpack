@@ -20,7 +20,7 @@
 
 import { render } from '@testing-library/react';
 
-// @ts-expect-error TS(2724) FIXME: '"@skyscanner/bpk-foundations-web/tokens/base.es6"... Remove this comment to see the full error message
+// @ts-expect-error TS(2724): '"@skyscanner/bpk-foundations-web/tokens/base.es6"... Remove this comment to see the full error message
 import { spacingSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkChartMargin from './BpkChartMargin';

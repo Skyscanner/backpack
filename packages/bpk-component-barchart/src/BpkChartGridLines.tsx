@@ -25,6 +25,7 @@ import { cssModules } from '../../bpk-react-utils';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, center } from './utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkChartGridLines.module.scs... Remove this comment to see the full error message
 import STYLES from './BpkChartGridLines.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -40,7 +41,7 @@ type Props = {
   },
   scale: Object,
   orientation: string,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   numTicks: ?number,
   tickOffset: number,
   tickEvery: number,
@@ -59,16 +60,16 @@ const BpkChartGridLines = (props: Props) => {
     ...rest
   } = props;
 
-  // @ts-expect-error TS(2339) FIXME: Property 'ticks' does not exist on type 'Object'.
+  // @ts-expect-error TS(2339): Property 'ticks' does not exist on type 'Object'.
   const ticks = scale.ticks
-    // @ts-expect-error TS(2339) FIXME: Property 'ticks' does not exist on type 'Object'.
+    // @ts-expect-error TS(2339): Property 'ticks' does not exist on type 'Object'.
     ? scale.ticks(numTicks)
-    // @ts-expect-error TS(2339) FIXME: Property 'domain' does not exist on type 'Object'.
+    // @ts-expect-error TS(2339): Property 'domain' does not exist on type 'Object'.
     : scale.domain().filter((tick, i) => (i - tickOffset) % tickEvery === 0);
-  // @ts-expect-error TS(2339) FIXME: Property 'bandwidth' does not exist on type 'Objec... Remove this comment to see the full error message
+  // @ts-expect-error TS(2339): Property 'bandwidth' does not exist on type 'Objec... Remove this comment to see the full error message
   const position = (scale.bandwidth ? center : identity)(scale.copy());
 
-  // @ts-expect-error TS(7006) FIXME: Parameter 'tick' implicitly has an 'any' type.
+  // @ts-expect-error TS(7006): Parameter 'tick' implicitly has an 'any' type.
   const lineProps = (tick) => {
     const value = position(tick);
     return orientation === ORIENTATION_X
@@ -84,7 +85,7 @@ const BpkChartGridLines = (props: Props) => {
         };
   };
 
-  // @ts-expect-error TS(7006) FIXME: Parameter 'tick' implicitly has an 'any' type.
+  // @ts-expect-error TS(7006): Parameter 'tick' implicitly has an 'any' type.
   const toLine = (tick, i) => (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <line

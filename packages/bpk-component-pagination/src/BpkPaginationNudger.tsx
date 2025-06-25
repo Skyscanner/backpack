@@ -24,6 +24,7 @@ import ArrowLeftIcon from '../../bpk-component-icon/sm/arrow-left';
 import ArrowRightIcon from '../../bpk-component-icon/sm/arrow-right';
 import { cssModules } from '../../bpk-react-utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkPaginationNudger.module.s... Remove this comment to see the full error message
 import STYLES from './BpkPaginationNudger.module.scss';
 
 const getClassName = cssModules(STYLES);

@@ -20,6 +20,7 @@ import type { ReactElement } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkAriaLive.module.scss' or ... Remove this comment to see the full error message
 import STYLES from './BpkAriaLive.module.scss';
 
 const getClassName = cssModules(STYLES);

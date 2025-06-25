@@ -33,7 +33,7 @@ describe('withLazyLoading', () => {
   it('should return the original component', () => {
     const documentMock = createDocumentMock();
     const MockImageComponent = () => <div>Fake Image</div>;
-    // @ts-expect-error TS(2345) FIXME: Argument of type '{ addEventListener: jest.Mock<an... Remove this comment to see the full error message
+    // @ts-expect-error TS(2345): Argument of type '{ addEventListener: jest.Mock<an... Remove this comment to see the full error message
     const LazyLoadedImage = withLazyLoading(MockImageComponent, documentMock);
 
     const { asFragment } = render(<LazyLoadedImage />);
@@ -49,7 +49,7 @@ describe('withLazyLoading', () => {
       mockImageComponent(props);
       return <div>Fake Image</div>;
     };
-    // @ts-expect-error TS(2345) FIXME: Argument of type '{ addEventListener: jest.Mock<an... Remove this comment to see the full error message
+    // @ts-expect-error TS(2345): Argument of type '{ addEventListener: jest.Mock<an... Remove this comment to see the full error message
     const LazyLoadedImage = withLazyLoading(MockImageComponent, documentMock);
 
     render(<LazyLoadedImage />);
@@ -63,7 +63,7 @@ describe('withLazyLoading', () => {
     const documentMock = createDocumentMock();
 
     const MockImageComponent = () => <div>Fake Image</div>;
-    // @ts-expect-error TS(2345) FIXME: Argument of type '{ addEventListener: jest.Mock<an... Remove this comment to see the full error message
+    // @ts-expect-error TS(2345): Argument of type '{ addEventListener: jest.Mock<an... Remove this comment to see the full error message
     const LazyLoadedImage = withLazyLoading(MockImageComponent, documentMock);
 
     render(<LazyLoadedImage />);
@@ -80,7 +80,7 @@ describe('withLazyLoading', () => {
     const documentMock = createDocumentMock();
 
     const MockImageComponent = () => <div>Fake Image</div>;
-    // @ts-expect-error TS(2345) FIXME: Argument of type '{ addEventListener: jest.Mock<an... Remove this comment to see the full error message
+    // @ts-expect-error TS(2345): Argument of type '{ addEventListener: jest.Mock<an... Remove this comment to see the full error message
     const LazyLoadedImage = withLazyLoading(MockImageComponent, documentMock);
 
     const { unmount } = render(<LazyLoadedImage />);

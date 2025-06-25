@@ -40,7 +40,7 @@ export const createColumnsSchema = (columns: ColumnType[]) => {
         value: cellData,
       }: any
       ) =>
-        // @ts-expect-error TS(2722) FIXME: Cannot invoke an object which is possibly 'undefin... Remove this comment to see the full error message
+        // @ts-expect-error TS(2722): Cannot invoke an object which is possibly 'undefin... Remove this comment to see the full error message
         column.Cell({
         rowData,
         rowIndex: sortedRows.map((row: {[key: string]: any}) => row.id).indexOf(rowID),
@@ -54,7 +54,7 @@ export const createColumnsSchema = (columns: ColumnType[]) => {
         column: { disableSortBy, id: accessor, label },
       }: any
       ) =>
-        // @ts-expect-error TS(2722) FIXME: Cannot invoke an object which is possibly 'undefin... Remove this comment to see the full error message
+        // @ts-expect-error TS(2722): Cannot invoke an object which is possibly 'undefin... Remove this comment to see the full error message
         column.Header({
         label,
         disableSortBy,

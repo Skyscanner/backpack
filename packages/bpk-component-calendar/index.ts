@@ -32,7 +32,7 @@ import composeCalendar from './src/composeCalendar';
 import { CALENDAR_SELECTION_TYPE } from './src/custom-proptypes';
 import CustomPropTypes, {
   BpkCalendarGridPropTypes,
-  // @ts-expect-error TS(2578) FIXME: Unused '@ts-expect-error' directive.
+  // @ts-expect-error TS(2578): Unused '@ts-expect-error' directive.
   BpkCalendarDatePropTypes, // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from './src/custom-proptypes-legacy';
 import * as DateUtils from './src/date-utils';

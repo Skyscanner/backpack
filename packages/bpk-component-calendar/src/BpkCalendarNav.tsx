@@ -38,6 +38,7 @@ import {
   startOfMonth,
 } from './date-utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkCalendarNav.module.scss' ... Remove this comment to see the full error message
 import STYLES from './BpkCalendarNav.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -150,8 +151,11 @@ const BpkCalendarNav = ({
           </label>
 
           // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+          // @ts-expect-error TS(2304): Cannot find name 'children'.
           // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+          // @ts-expect-error TS(2304): Cannot find name 'children'.
           // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+          // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
           <BpkSelect
             id={`${id}_select`}
             name="months"

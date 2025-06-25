@@ -24,7 +24,7 @@ import type { ReactNode, FunctionComponent, SVGProps } from 'react';
 
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module '../.... Remove this comment to see the full error message
+// @ts-expect-error TS(7016): Could not find a declaration file for module '../.... Remove this comment to see the full error message
 import BpkAnimateHeight from '../../bpk-animate-height';
 import BpkCloseButton from '../../bpk-component-close-button';
 import { withButtonAlignment } from '../../bpk-component-icon';
@@ -46,6 +46,7 @@ import type {
   ExpandableBannerAction,
 } from './common-types';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkInfoBanner.module.scss' o... Remove this comment to see the full error message
 import STYLES from './BpkInfoBanner.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -209,7 +210,7 @@ const BpkInfoBannerInner = ({
             {children}
           </div>
           {isExpandable && action && (
-            // @ts-expect-error TS(2740) FIXME: Type '{ children: string; onClick: () => void; }' ... Remove this comment to see the full error message
+            // @ts-expect-error TS(2740): Type '{ children: string; onClick: () => void; }' ... Remove this comment to see the full error message
             <BpkLink
               onClick={action.callback}
             >

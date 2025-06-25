@@ -23,7 +23,7 @@
  
 
 import { render, fireEvent, screen } from '@testing-library/react';
-// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'd3-s... Remove this comment to see the full error message
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'd3-s... Remove this comment to see the full error message
 import { scaleLinear, scaleBand } from 'd3-scale';
 
 import data from '../data.json';
@@ -54,7 +54,7 @@ describe('BpkBarchartBars', () => {
         xScaleDataKey="month"
         yScaleDataKey="price"
         maxYValue={50}
-        // @ts-expect-error TS(2322) FIXME: Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
         width={size}
         height={size}
         data={prices}
@@ -76,7 +76,7 @@ describe('BpkBarchartBars', () => {
         xScaleDataKey="month"
         yScaleDataKey="price"
         maxYValue={50}
-        // @ts-expect-error TS(2322) FIXME: Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
         width={size}
         height={size}
         data={prices}
@@ -99,7 +99,7 @@ describe('BpkBarchartBars', () => {
         xScaleDataKey="month"
         yScaleDataKey="price"
         maxYValue={50}
-        // @ts-expect-error TS(2322) FIXME: Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
         width={size}
         height={size}
         data={prices}
@@ -122,7 +122,7 @@ describe('BpkBarchartBars', () => {
         xScaleDataKey="month"
         yScaleDataKey="price"
         maxYValue={50}
-        // @ts-expect-error TS(2322) FIXME: Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
         width={size}
         height={size}
         data={prices}
@@ -147,7 +147,7 @@ describe('BpkBarchartBars', () => {
         xScaleDataKey="month"
         yScaleDataKey="price"
         maxYValue={50}
-        // @ts-expect-error TS(2322) FIXME: Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
         width={size}
         height={size}
         data={prices}
@@ -175,7 +175,7 @@ describe('BpkBarchartBars', () => {
         xScaleDataKey="month"
         yScaleDataKey="price"
         maxYValue={50}
-        // @ts-expect-error TS(2322) FIXME: Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
         width={size}
         height={size}
         data={prices}
@@ -203,7 +203,7 @@ describe('BpkBarchartBars', () => {
         xScaleDataKey="month"
         yScaleDataKey="price"
         maxYValue={50}
-        // @ts-expect-error TS(2322) FIXME: Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
         width={size}
         height={size}
         data={prices}

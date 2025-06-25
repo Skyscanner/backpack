@@ -24,6 +24,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { BpkStarNonRtl, STAR_TYPES } from './BpkStar';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkInteractiveStar.module.sc... Remove this comment to see the full error message
 import STYLES from './BpkInteractiveStar.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -31,9 +32,9 @@ const getClassName = cssModules(STYLES);
 type Props = {
   label: string,
   name: string,
-  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
+  // @ts-expect-error TS(2304): Cannot find name 'mixed'.
   onClick: () => mixed,
-  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
+  // @ts-expect-error TS(2304): Cannot find name 'mixed'.
   onMouseEnter: () => mixed,
   type: typeof STAR_TYPES.EMPTY | typeof STAR_TYPES.FULL,
   value: number,

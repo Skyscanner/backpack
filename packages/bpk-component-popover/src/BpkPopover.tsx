@@ -52,6 +52,7 @@ import { ARROW_ID } from './constants';
 
 import type { Placement } from '@floating-ui/react';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkPopover.module.scss' or i... Remove this comment to see the full error message
 import STYLES from './BpkPopover.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -192,7 +193,7 @@ const BpkPopover = ({
   const targetElement = isValidElement(target) ? (
     cloneElement(target, {
       ...referenceProps,
-      // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+      // @ts-expect-error TS(2769): No overload matches this call.
       ref: refs.setReference,
     })
   ) : (
@@ -257,7 +258,7 @@ const BpkPopover = ({
                       &nbsp;
                       {closeButtonIcon ? (
                         <BpkCloseButton
-                          // @ts-expect-error TS(2322) FIXME: Type 'string | undefined' is not assignable to typ... Remove this comment to see the full error message
+                          // @ts-expect-error TS(2322): Type 'string | undefined' is not assignable to typ... Remove this comment to see the full error message
                           label={closeButtonText || closeButtonLabel}
                           onClick={(
                             event: SyntheticEvent<HTMLButtonElement>,

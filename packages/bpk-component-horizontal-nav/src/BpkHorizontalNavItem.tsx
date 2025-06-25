@@ -19,13 +19,14 @@
 
 import PropTypes from 'prop-types';
 import { Component } from 'react';
-// @ts-expect-error TS(2305) FIXME: Module '"react"' has no exported member 'Node'.
+// @ts-expect-error TS(2305): Module '"react"' has no exported member 'Node'.
 import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
 import { HORIZONTAL_NAV_TYPES } from './BpkHorizontalNav';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkHorizontalNavItem.module.... Remove this comment to see the full error message
 import STYLES from './BpkHorizontalNavItem.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -35,11 +36,11 @@ export type Props = {
   disabled: boolean,
   selected: boolean,
   spaceAround: boolean,
-  // @ts-expect-error TS(2304) FIXME: Cannot find name '$Keys'.
+  // @ts-expect-error TS(2304): Cannot find name '$Keys'.
   type: $Keys<typeof HORIZONTAL_NAV_TYPES>,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   className: ?string,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   href: ?string,
 };
 
@@ -101,7 +102,7 @@ class BpkHorizontalNavItem extends Component<Props> {
   }
 }
 
-// @ts-expect-error TS(2339) FIXME: Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
+// @ts-expect-error TS(2339): Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 BpkHorizontalNavItem.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
@@ -120,7 +121,7 @@ BpkHorizontalNavItem.propTypes = {
   type: PropTypes.oneOf(Object.keys(HORIZONTAL_NAV_TYPES)),
 };
 
-// @ts-expect-error TS(2339) FIXME: Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
+// @ts-expect-error TS(2339): Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
 BpkHorizontalNavItem.defaultProps = {
   className: null,
   disabled: false,

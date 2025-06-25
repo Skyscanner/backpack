@@ -20,9 +20,9 @@
 
 // Using Function here as scale refers to the d3-scale 3rd party library
 const center = (scale: Function) => {
-  // @ts-expect-error TS(2339) FIXME: Property 'bandwidth' does not exist on type 'Funct... Remove this comment to see the full error message
+  // @ts-expect-error TS(2339): Property 'bandwidth' does not exist on type 'Funct... Remove this comment to see the full error message
   let offset = scale.bandwidth() / 2;
-  // @ts-expect-error TS(2339) FIXME: Property 'round' does not exist on type 'Function'... Remove this comment to see the full error message
+  // @ts-expect-error TS(2339): Property 'round' does not exist on type 'Function'... Remove this comment to see the full error message
   if (scale.round()) {
     offset = Math.round(offset);
   }

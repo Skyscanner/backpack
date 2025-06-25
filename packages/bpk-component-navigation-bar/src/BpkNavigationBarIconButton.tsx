@@ -35,7 +35,7 @@ export type Props = {
 const BpkNavigationBarIconButton = ({ barStyle = BAR_STYLES.default, className, icon, ...rest }: Props) => (
   <span className={className}>
     <BpkCloseButton
-      // @ts-expect-error TS(2322) FIXME: Type 'ComponentType<any>' is not assignable to typ... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322): Type 'ComponentType<any>' is not assignable to typ... Remove this comment to see the full error message
       customIcon={icon}
       onDark={barStyle === BAR_STYLES.onDark}
       {...rest}

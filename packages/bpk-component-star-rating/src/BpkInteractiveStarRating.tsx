@@ -25,6 +25,7 @@ import { cssModules } from '../../bpk-react-utils';
 import BpkInteractiveStar from './BpkInteractiveStar';
 import { STAR_TYPES } from './BpkStar';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkStarRating.module.scss' o... Remove this comment to see the full error message
 import STYLES from './BpkStarRating.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -38,20 +39,20 @@ export const getTypeByRating = (starNumber: number, rating: number) => {
 };
 
 type Props = {
-  // @ts-expect-error TS(2300) FIXME: Duplicate identifier 'number'.
+  // @ts-expect-error TS(2300): Duplicate identifier 'number'.
   getStarLabel: (number, number) => string,
   id: string,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   className: ?string,
   hoverRating: number,
   large: boolean,
   extraLarge: boolean,
   maxRating: number,
-  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
+  // @ts-expect-error TS(2304): Cannot find name 'mixed'.
   onMouseLeave: () => mixed,
-  // @ts-expect-error TS(7051) FIXME: Parameter has a name but no type. Did you mean 'ar... Remove this comment to see the full error message
+  // @ts-expect-error TS(7051): Parameter has a name but no type. Did you mean 'ar... Remove this comment to see the full error message
   onRatingHover: (number, any) => mixed,
-  // @ts-expect-error TS(7051) FIXME: Parameter has a name but no type. Did you mean 'ar... Remove this comment to see the full error message
+  // @ts-expect-error TS(7051): Parameter has a name but no type. Did you mean 'ar... Remove this comment to see the full error message
   onRatingSelect: (number, any) => mixed,
   rating: number,
 };
@@ -88,12 +89,12 @@ const BpkInteractiveStarRating = (props: Props) => {
     stars.push(
       <BpkInteractiveStar
         key={`star-${starNumber}`}
-        // @ts-expect-error TS(2322) FIXME: Type '(event: any) => mixed' is not assignable to ... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '(event: any) => mixed' is not assignable to ... Remove this comment to see the full error message
         onClick={(event) => onRatingSelect(starNumber, event)}
         type={type}
         large={large}
         extraLarge={extraLarge}
-        // @ts-expect-error TS(2322) FIXME: Type '(event: any) => mixed' is not assignable to ... Remove this comment to see the full error message
+        // @ts-expect-error TS(2322): Type '(event: any) => mixed' is not assignable to ... Remove this comment to see the full error message
         onMouseEnter={(event) => onRatingHover(starNumber, event)}
         selected={rating === starNumber}
         label={getStarLabel(starNumber, maxRating)}

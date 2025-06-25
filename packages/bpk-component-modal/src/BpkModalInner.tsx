@@ -25,6 +25,7 @@ import BpkNavigationBar, {
 } from '../../bpk-component-navigation-bar';
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkModalInner.module.scss' o... Remove this comment to see the full error message
 import STYLES from './BpkModalInner.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -152,7 +153,7 @@ const BpkModalInner = ({
                 closeText ? (
                   <BpkButtonLink
                     onClick={onClose}
-                    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; onClick: () => void; onD... Remove this comment to see the full error message
+                    // @ts-expect-error TS(2322): Type '{ children: string; onClick: () => void; onD... Remove this comment to see the full error message
                     onDark={modalStyle === MODAL_STYLING.surfaceContrast}
                   >
                     {closeText}

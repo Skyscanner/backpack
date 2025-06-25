@@ -20,6 +20,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import type { CUSTOM_SIZE_TYPE } from './common-types';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkBaseSkeleton.module.scss'... Remove this comment to see the full error message
 import STYLES from './BpkBaseSkeleton.module.scss';
 
 const getClassName = cssModules(STYLES);

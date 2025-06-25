@@ -23,6 +23,7 @@ import { cssModules } from '../../bpk-react-utils';
 import BpkFlareBar from './BpkFlareBar';
 import CornerRadius from './__generated__/js/corner-radius';
 
+// @ts-expect-error TS(2307): Cannot find module './bpk-content-bubble.module.sc... Remove this comment to see the full error message
 import STYLES from './bpk-content-bubble.module.scss';
 
 const getClassName = cssModules(STYLES);

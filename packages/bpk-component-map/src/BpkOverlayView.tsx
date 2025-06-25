@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-// @ts-expect-error TS(2305) FIXME: Module '"react"' has no exported member 'Node'.
+// @ts-expect-error TS(2305): Module '"react"' has no exported member 'Node'.
 import type { Node } from 'react';
 
 import { OverlayView } from '@react-google-maps/api';

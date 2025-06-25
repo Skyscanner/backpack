@@ -23,6 +23,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import type { Tag, TextStyle } from '../../bpk-component-text/src/BpkText';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkNavigationBar.module.scss... Remove this comment to see the full error message
 import STYLES from './BpkNavigationBar.module.scss';
 
 const getClassNames = cssModules(STYLES);

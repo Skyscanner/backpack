@@ -34,6 +34,7 @@ import { getMonthsArray, getMonthItemHeights } from './utils';
 
 import type { BpkCalendarGridProps, SelectionConfiguration } from '../../bpk-component-calendar';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkScrollableCalendarGridLis... Remove this comment to see the full error message
 import STYLES from './BpkScrollableCalendarGridList.module.scss';
 
 const getClassName = cssModules(STYLES);

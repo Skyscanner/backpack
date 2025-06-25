@@ -28,7 +28,7 @@ const selectImage = (
 describe('BpkSelect', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
       <BpkSelect
         id="fruits"
         name="fruits"
@@ -48,7 +48,7 @@ describe('BpkSelect', () => {
 
   it('should render correctly with image', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
       <BpkSelect
         id="fruits"
         name="fruits"
@@ -69,7 +69,7 @@ describe('BpkSelect', () => {
 
   it('should render correctly with image and custom classes', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
       <BpkSelect
         id="fruits"
         name="fruits"
@@ -91,7 +91,7 @@ describe('BpkSelect', () => {
 
   it('should render correctly with image and "disabled" property', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
       <BpkSelect
         id="fruits"
         name="fruits"
@@ -114,7 +114,7 @@ describe('BpkSelect', () => {
 
   it('should render correctly with "className" attribute', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
       <BpkSelect
         id="fruits"
         name="fruits"
@@ -135,7 +135,7 @@ describe('BpkSelect', () => {
 
   it('should render correctly with a "valid" attribute equal to false', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
       <BpkSelect
         id="fruits"
         name="fruits"
@@ -156,7 +156,7 @@ describe('BpkSelect', () => {
 
   it('should render correctly with "large" attribute', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
       <BpkSelect id="fruits" name="fruits" value="" onChange={() => null} large>
         <option value="apples">Apples</option>
         <option value="oranges">Oranges</option>
@@ -171,7 +171,7 @@ describe('BpkSelect', () => {
 
   it('should render correctly with "docked" attribute', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
       <BpkSelect
         id="fruits"
         name="fruits"
@@ -192,7 +192,7 @@ describe('BpkSelect', () => {
 
   it('should render correctly with "dockedFirst" attribute', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
       <BpkSelect
         id="fruits"
         name="fruits"
@@ -213,7 +213,7 @@ describe('BpkSelect', () => {
 
   it('should render correctly with "dockedMiddle" attribute', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
       <BpkSelect
         id="fruits"
         name="fruits"
@@ -234,7 +234,7 @@ describe('BpkSelect', () => {
 
   it('should render correctly with "dockedLast" attribute', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
       <BpkSelect
         id="fruits"
         name="fruits"

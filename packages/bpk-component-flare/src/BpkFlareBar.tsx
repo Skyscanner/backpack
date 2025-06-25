@@ -22,6 +22,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import Pointer from './__generated__/js/pointer';
 
+// @ts-expect-error TS(2307): Cannot find module './bpk-flare-bar.module.scss' o... Remove this comment to see the full error message
 import STYLES from './bpk-flare-bar.module.scss';
 
 const getClassName = cssModules(STYLES);

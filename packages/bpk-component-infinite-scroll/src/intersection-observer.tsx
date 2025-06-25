@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-// @ts-expect-error TS(1208) FIXME: 'intersection-observer.tsx' cannot be compiled und... Remove this comment to see the full error message
+// @ts-expect-error TS(1208): 'intersection-observer.tsx' cannot be compiled und... Remove this comment to see the full error message
 if (typeof window === 'undefined') {
-  // @ts-expect-error TS(2322) FIXME: Type 'typeof IntersectionObserver' is not assignab... Remove this comment to see the full error message
+  // @ts-expect-error TS(2322): Type 'typeof IntersectionObserver' is not assignab... Remove this comment to see the full error message
   global.IntersectionObserver = class {
     observe() {}  
 

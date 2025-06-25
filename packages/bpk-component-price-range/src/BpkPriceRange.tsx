@@ -28,6 +28,7 @@ import { MARKER_TYPES } from './common-types';
 
 import type { MarkerType } from './common-types';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkPriceRange.module.scss' o... Remove this comment to see the full error message
 import STYLES from './BpkPriceRange.module.scss';
 
 const getClassName = cssModules(STYLES);

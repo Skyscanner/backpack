@@ -21,6 +21,7 @@ import { PureComponent } from 'react';
 import BpkInput from '../../bpk-component-input';
 import { cssModules } from '../../bpk-react-utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkInputField.module.scss' o... Remove this comment to see the full error message
 import STYLES from './BpkInputField.module.scss';
 
 const getClassName = cssModules(STYLES);

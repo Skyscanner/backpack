@@ -24,7 +24,7 @@ import type { ReactNode, FunctionComponent, SVGProps } from 'react';
 
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module '../.... Remove this comment to see the full error message
+// @ts-expect-error TS(7016): Could not find a declaration file for module '../.... Remove this comment to see the full error message
 import BpkAnimateHeight from '../../bpk-animate-height';
 import BpkCloseButton from '../../bpk-component-close-button';
 import { withButtonAlignment } from '../../bpk-component-icon';
@@ -43,6 +43,7 @@ import type {
   OnExpandToggleHandler,
 } from './common-types';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkBannerAlert.module.scss' ... Remove this comment to see the full error message
 import STYLES from './BpkBannerAlert.module.scss';
 
 const getClassName = cssModules(STYLES);

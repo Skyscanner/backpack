@@ -24,6 +24,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import dataProp from './customPropTypes';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkChartDataTable.module.scs... Remove this comment to see the full error message
 import STYLES from './BpkChartDataTable.module.scss';
 
 const getClassName = cssModules(STYLES);

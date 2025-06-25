@@ -21,6 +21,7 @@ import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
 
 import type { Props } from './common-types';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkButton.module.scss' or it... Remove this comment to see the full error message
 import COMMON_STYLES from './BpkButton.module.scss';
 
 const getCommonClassName = cssModules(COMMON_STYLES);

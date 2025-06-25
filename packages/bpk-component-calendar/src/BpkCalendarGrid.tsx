@@ -34,6 +34,7 @@ import {
 
 import type { DateModifiers, SelectionConfiguration } from './custom-proptypes';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkCalendarGrid.module.scss'... Remove this comment to see the full error message
 import STYLES from './BpkCalendarGrid.module.scss';
 
 // This should be imported after `./BpkCalendarGrid.module.scss`.

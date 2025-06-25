@@ -26,7 +26,7 @@ import BpkLink, { themeAttributes } from './BpkLink';
 
 describe('BpkLink', () => {
   it('should render correctly with a "href" attribute', () => {
-    // @ts-expect-error TS(2740) FIXME: Type '{ children: string; href: string; }' is miss... Remove this comment to see the full error message
+    // @ts-expect-error TS(2740): Type '{ children: string; href: string; }' is miss... Remove this comment to see the full error message
     const { asFragment } = render(<BpkLink href="#">Link</BpkLink>);
 
     expect(asFragment()).toMatchSnapshot();
@@ -36,7 +36,7 @@ describe('BpkLink', () => {
     const myRef = createRef();
 
     render(
-      // @ts-expect-error TS(2740) FIXME: Type '{ children: string; ref: RefObject<unknown>;... Remove this comment to see the full error message
+      // @ts-expect-error TS(2740): Type '{ children: string; ref: RefObject<unknown>;... Remove this comment to see the full error message
       <BpkLink ref={myRef} href="#">
         Link
       </BpkLink>,
@@ -47,7 +47,7 @@ describe('BpkLink', () => {
 
   it('should render correctly with a "className" attribute', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2739) FIXME: Type '{ children: string; href: string; className:... Remove this comment to see the full error message
+      // @ts-expect-error TS(2739): Type '{ children: string; href: string; className:... Remove this comment to see the full error message
       <BpkLink href="#" className="test-class">
         Link
       </BpkLink>,
@@ -57,7 +57,7 @@ describe('BpkLink', () => {
 
   it('should render correctly with a "blank" attribute', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2739) FIXME: Type '{ children: string; href: string; blank: tru... Remove this comment to see the full error message
+      // @ts-expect-error TS(2739): Type '{ children: string; href: string; blank: tru... Remove this comment to see the full error message
       <BpkLink href="#" blank>
         Link (new window)
       </BpkLink>,
@@ -67,7 +67,7 @@ describe('BpkLink', () => {
 
   it('should render correctly with a "rel" attribute', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2739) FIXME: Type '{ children: string; href: string; blank: tru... Remove this comment to see the full error message
+      // @ts-expect-error TS(2739): Type '{ children: string; href: string; blank: tru... Remove this comment to see the full error message
       <BpkLink href="#" blank rel="rel-attr">
         Link (new window)
       </BpkLink>,
@@ -77,7 +77,7 @@ describe('BpkLink', () => {
 
   it('should render correctly with "blank" and "rel" attributes', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2739) FIXME: Type '{ children: string; href: string; blank: tru... Remove this comment to see the full error message
+      // @ts-expect-error TS(2739): Type '{ children: string; href: string; blank: tru... Remove this comment to see the full error message
       <BpkLink href="#" blank rel="rel-overwrite">
         Link (new window)
       </BpkLink>,
@@ -87,7 +87,7 @@ describe('BpkLink', () => {
 
   it('should render correctly with a "alternate" attribute', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2739) FIXME: Type '{ children: string; href: string; alternate:... Remove this comment to see the full error message
+      // @ts-expect-error TS(2739): Type '{ children: string; href: string; alternate:... Remove this comment to see the full error message
       <BpkLink href="#" alternate>
         Link
       </BpkLink>,
@@ -97,7 +97,7 @@ describe('BpkLink', () => {
 
   it('should render correctly with arbitrary attributes', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2322) FIXME: Type '{ children: string; href: string; id: string... Remove this comment to see the full error message
+      // @ts-expect-error TS(2322): Type '{ children: string; href: string; id: string... Remove this comment to see the full error message
       <BpkLink href="#" id="test-id">
         Link
       </BpkLink>,

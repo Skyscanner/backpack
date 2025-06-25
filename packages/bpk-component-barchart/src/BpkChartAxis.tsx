@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import PropTypes from 'prop-types';
-// @ts-expect-error TS(2305) FIXME: Module '"react"' has no exported member 'Node'.
+// @ts-expect-error TS(2305): Module '"react"' has no exported member 'Node'.
 import type { Node } from 'react';
 
 import {
@@ -32,6 +32,7 @@ import { rtlConditionalValue } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, center, remToPx } from './utils';
 
+// @ts-expect-error TS(2307): Cannot find module './BpkChartAxis.module.scss' or... Remove this comment to see the full error message
 import STYLES from './BpkChartAxis.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -39,7 +40,7 @@ const getClassName = cssModules(STYLES);
 const spacing = remToPx('.375rem');
 const lineHeight = remToPx(lineHeightSm);
 
-// @ts-expect-error TS(7031) FIXME: Binding element 'height' implicitly has an 'any' t... Remove this comment to see the full error message
+// @ts-expect-error TS(7031): Binding element 'height' implicitly has an 'any' t... Remove this comment to see the full error message
 const getAxisConfig = ({ height, margin, orientation, scale, width }) => {
   const position = (scale.bandwidth ? center : identity)(scale.copy());
 
@@ -57,7 +58,7 @@ const getAxisConfig = ({ height, margin, orientation, scale, width }) => {
         x: (width - margin.left - margin.right) / 2,
         y: margin.bottom - spacing,
       },
-      // @ts-expect-error TS(7006) FIXME: Parameter 'tick' implicitly has an 'any' type.
+      // @ts-expect-error TS(7006): Parameter 'tick' implicitly has an 'any' type.
       tickPosition: (tick) => [position(tick), 0],
     };
   }
@@ -82,7 +83,7 @@ const getAxisConfig = ({ height, margin, orientation, scale, width }) => {
     labelProps: {
       transform: `translate(${labelTranslateX}, ${labelTranslateY}) rotate(-90)`,
     },
-    // @ts-expect-error TS(7006) FIXME: Parameter 'tick' implicitly has an 'any' type.
+    // @ts-expect-error TS(7006): Parameter 'tick' implicitly has an 'any' type.
     tickPosition: (tick) => [0, position(tick)],
   };
 };
@@ -97,12 +98,12 @@ type Props = {
     right: number,
   },
   scale: Object,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   label: ?Node,
   orientation: string,
-  // @ts-expect-error TS(2300) FIXME: Duplicate identifier 'any'.
+  // @ts-expect-error TS(2300): Duplicate identifier 'any'.
   tickValue: (any, any) => any,
-  // @ts-expect-error TS(8020) FIXME: JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
+  // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   numTicks: ?number,
   tickOffset: number,
   tickEvery: number,
@@ -126,11 +127,11 @@ const BpkChartAxis = (props: Props) => {
   const { containerProps, labelProps, textProps, tickPosition } =
     getAxisConfig(props);
 
-  // @ts-expect-error TS(2339) FIXME: Property 'ticks' does not exist on type 'Object'.
+  // @ts-expect-error TS(2339): Property 'ticks' does not exist on type 'Object'.
   const ticks = scale.ticks
-    // @ts-expect-error TS(2339) FIXME: Property 'ticks' does not exist on type 'Object'.
+    // @ts-expect-error TS(2339): Property 'ticks' does not exist on type 'Object'.
     ? scale.ticks(numTicks)
-    // @ts-expect-error TS(2339) FIXME: Property 'domain' does not exist on type 'Object'.
+    // @ts-expect-error TS(2339): Property 'domain' does not exist on type 'Object'.
     : scale.domain().filter((tick, i) => (i - tickOffset) % tickEvery === 0);
 
   return (
@@ -143,6 +144,7 @@ const BpkChartAxis = (props: Props) => {
     >
       // @ts-expect-error TS(7006): Parameter 'tick' implicitly has an 'any' type.
       // @ts-expect-error TS(7006) FIXME: Parameter 'tick' implicitly has an 'any' type.
+      // @ts-expect-error TS(7006): Parameter 'tick' implicitly has an 'any' type.
       {ticks.map((tick, i) => (
         <g
           transform={`translate(${tickPosition(tick).join(', ')})`}

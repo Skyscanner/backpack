@@ -158,7 +158,7 @@ const withOpenEvents = <P extends object>(WithOpenEventsInputComponent: Componen
       const eventHandlers: EventHandlers = {
         onClick: withEventHandler(onOpen, onClick),
         // a valid type to UIEvent even though it is a valid subtype type of UIEvent
-        // @ts-expect-error TS(2345) FIXME: Argument of type '(e: KeyboardEvent) => void' is n... Remove this comment to see the full error message
+        // @ts-expect-error TS(2345): Argument of type '(e: KeyboardEvent) => void' is n... Remove this comment to see the full error message
         onKeyDown: withEventHandler(handleKeyEvent(onOpen), onKeyDown),
       };
 
