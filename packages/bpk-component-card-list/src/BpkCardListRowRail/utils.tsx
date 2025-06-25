@@ -97,7 +97,7 @@ export const useScrollToCard = (
       container &&
       container.getBoundingClientRect().bottom > 0 &&
       container.getBoundingClientRect().bottom <= window.innerHeight;
-    if (!isVisible) return; // Escape from scrollIntoView if the container is not visible, otherwise it will scroll to the last rendered & non-visible container
+    if (!isVisible) return; // Escape from scrollIntoView if the container is not visible, otherwise the webpage will scroll down to the last rendered & non-visible container
 
     if (stateScrollingLockRef.current && stateScrollingLockRef.current === true)
       return;
