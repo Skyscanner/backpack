@@ -63,7 +63,7 @@ Price markers are used to display clickable prices on a map.
 ```js
 import BpkMap, {
   BpkPriceMarker,
-  PRICE_MARKER_STATUSES,
+  MARKER_STATUSES,
 } from '@skyscanner/backpack-web/bpk-component-map';
 
 export default () => (
@@ -82,7 +82,7 @@ export default () => (
       onClick={() => {
         console.log('Price marker pressed.');
       }}
-      status={PRICE_MARKER_STATUSES.focused}
+      status={MARKER_STATUSES.selected}
     />
     <BpkPriceMarker
       label="£120"
@@ -90,7 +90,7 @@ export default () => (
       onClick={() => {
         console.log('Price marker pressed.');
       }}
-      status={PRICE_MARKER_STATUSES.viewed}
+      status={MARKER_STATUSES.previous_selected}
     />
   </BpkMap>
 );
