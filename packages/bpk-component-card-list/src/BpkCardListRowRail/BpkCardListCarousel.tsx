@@ -99,6 +99,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
   useScrollToCard(currentIndex, root, cardRefs, stateScrollingLockRef);
 
+  // Similar to Virtual Scrolling to improve performance
   const firstVisibleIndex = Math.max(0, visibilityList.indexOf(1));
   const lastVisibleIndex = firstVisibleIndex + initiallyShownCards - 1;
   const renderList = visibilityList.map((_, index) =>
@@ -134,7 +135,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         const cardStyle: CSSProperties = isMobile
           ? {
               ...shownNumberStyle,
-              visibility: renderList[index] === 1 ? 'visible' : 'hidden',
+              visibility: renderList[index] === 1 ? 'visible' : 'hidden', // for mobile, {renderList[index] === 1 && card} will cause reflowing and bugs, implementing visibility improvement instead
             }
           : shownNumberStyle;
 

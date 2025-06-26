@@ -20,6 +20,12 @@ import { useEffect, useRef, useMemo } from 'react';
 
 import { RELEASE_LOCK_DELAY } from './constants';
 
+/**
+ * Typically used to prevent useScrollToCard() from being called, to prevent scrollings caused by state changes, so as to avoid cyclic dependencies.
+ * @param stateScrollingLockRef - Ref to the state that indicates if scrollIntoView should be locked
+ * @param openSetStateLockTimeoutRef - Ref to the timeout that releases the lock after a delay. Should be renewed every time another scroll action is triggered, with a new lock is added.
+ */
+
 export const lockScroll = (
   stateScrollingLockRef: React.MutableRefObject<boolean>,
   openSetStateLockTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
@@ -35,6 +41,13 @@ export const lockScroll = (
     stateScrollingLockRef.current = false;
   }, RELEASE_LOCK_DELAY);
 };
+
+/**
+ * Only sets the tabIndex of focusable elements as 0 if the card is visible, otherwise sets it to -1, including all its children.
+ * For example, if there is a button inside a card which is not shown, it cannot be focused as well.
+ * @param el - Card container element, typically a div used to wrap the card content.
+ * @param index - Current container index
+ */
 
 export const setA11yTabIndex = (
   el: HTMLDivElement | null,
@@ -60,7 +73,7 @@ export const useUpdateCurrentIndexByVisibility = (
   openSetStateLockTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
 ) => {
   useEffect(() => {
-    if (isMobile) return;
+    if (isMobile) return; // No pagination on mobile, so no need to update the current index
     if (!visibilityList || visibilityList.length === 0) return;
 
     const firstVisibleIndex = visibilityList.findIndex(
@@ -68,7 +81,7 @@ export const useUpdateCurrentIndexByVisibility = (
     );
     if (firstVisibleIndex !== -1) {
       setCurrentIndex(firstVisibleIndex);
-      lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef);
+      lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef); // prevent scrollIntoView from being called immediately after the current index is set
     }
   }, [visibilityList]);
 };
@@ -84,7 +97,7 @@ export const useScrollToCard = (
       container &&
       container.getBoundingClientRect().bottom > 0 &&
       container.getBoundingClientRect().bottom <= window.innerHeight;
-    if (!isVisible) return; // Escape from scrollIntoView if the container is not visible
+    if (!isVisible) return; // Escape from scrollIntoView if the container is not visible, otherwise the webpage will scroll down to the last rendered & non-visible container
 
     if (stateScrollingLockRef.current && stateScrollingLockRef.current === true)
       return;
