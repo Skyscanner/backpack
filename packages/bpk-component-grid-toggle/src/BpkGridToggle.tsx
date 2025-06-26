@@ -22,7 +22,7 @@ import { Component } from 'react';
 import { BpkButtonLink } from '../../bpk-component-link';
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkGridToggle.module.scss' o... Remove this comment to see the full error message
+
 import STYLES from './BpkGridToggle.module.scss';
 
 const getClassName = cssModules(STYLES);

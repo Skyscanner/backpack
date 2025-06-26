@@ -26,7 +26,7 @@ import { ACCESSORY_DESKTOP_TYPES } from '../common-types';
 
 import type { CardListGridStackProps } from '../common-types';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkCardListGridStack.module.... Remove this comment to see the full error message
+
 import STYLES from './BpkCardListGridStack.module.scss';
 
 const getClassName = cssModules(STYLES);

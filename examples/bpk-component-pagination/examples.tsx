@@ -40,8 +40,7 @@ class PaginationContainer extends Component {
     const { pageCount, visibleRange } = this.props;
     return (
       <div>
-        // @ts-expect-error TS(2339): Property 'pageIndex' does not exist on type 'Reado... Remove this comment to see the full error message
-        // @ts-expect-error TS(2339) FIXME: Property 'pageIndex' does not exist on type 'Reado... Remove this comment to see the full error message
+        {/* @ts-expect-error TS(2339) FIXME: Property 'pageIndex' does not exist on type 'Reado... Remove this comment to see the full error message */}
         Page {this.state.pageIndex + 1}
         <BpkPagination
           pageCount={pageCount}

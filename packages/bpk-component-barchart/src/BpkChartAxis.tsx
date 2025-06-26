@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 // @ts-expect-error TS(2305): Module '"react"' has no exported member 'Node'.
@@ -32,7 +32,7 @@ import { rtlConditionalValue } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, center, remToPx } from './utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkChartAxis.module.scss' or... Remove this comment to see the full error message
+
 import STYLES from './BpkChartAxis.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -142,10 +142,7 @@ const BpkChartAxis = (props: Props) => {
       {...containerProps}
       {...rest}
     >
-      // @ts-expect-error TS(7006): Parameter 'tick' implicitly has an 'any' type.
-      // @ts-expect-error TS(7006) FIXME: Parameter 'tick' implicitly has an 'any' type.
-      // @ts-expect-error TS(7006): Parameter 'tick' implicitly has an 'any' type.
-      {ticks.map((tick, i) => (
+     {ticks.map((tick: any, i: { toString: () => any; }) => (
         <g
           transform={`translate(${tickPosition(tick).join(', ')})`}
           key={`${orientation}axis${i.toString()}`}

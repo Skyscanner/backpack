@@ -25,7 +25,6 @@ import { cssModules } from '../../bpk-react-utils';
 import bpkCustomThemes from './theming';
 import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkThemeToggle.module.scss' ... Remove this comment to see the full error message
 import STYLES from './BpkThemeToggle.module.scss';
 
 const inputId = 'theme-select';
@@ -90,20 +89,10 @@ class BpkThemeToggle extends Component {
     return (
       <div {...rest}>
         <span className={getClassName('bpk-theme-toggle__label')}>
-          // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-          // @ts-expect-error TS(2304): Cannot find name 'children'.
-          // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
-          // @ts-expect-error TS(2304): Cannot find name 'children'.
-          // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
-          // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
-          <BpkLabel htmlFor={inputId}>Change theme</BpkLabel>
+          <BpkLabel
+          // @ts-expect-error
+          htmlFor={inputId}>Change theme</BpkLabel>
         </span>
-        // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
-        // @ts-expect-error TS(2322): Type '{ children: (Element | Element[])[]; id: str... Remove this comment to see the full error message
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
-        // @ts-expect-error TS(2322) FIXME: Type '{ children: (Element | Element[])[]; id: str... Remove this comment to see the full error message
-        // @ts-expect-error TS(2322): Type '{ children: (Element | Element[])[]; id: str... Remove this comment to see the full error message
         <BpkSelect
           id={inputId}
           name={inputId}

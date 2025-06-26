@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 import { Component } from 'react';
@@ -140,7 +140,6 @@ const WithIconExample = () => (
       <span>Warning Icon Dialog</span>
       <DialogContainer
         headerIcon={<InfoIcon />}
-        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; headerIcon: Element; he... Remove this comment to see the full error message
         headerIconType={HEADER_ICON_TYPES.warning}
         dismissible={false}
       >
@@ -155,7 +154,7 @@ const WithIconExample = () => (
       <span>Destructive Icon Dialog</span>
       <DialogContainer
         headerIcon={<TrashIcon />}
-        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; headerIcon: Element; he... Remove this comment to see the full error message
+
         headerIconType={HEADER_ICON_TYPES.destructive}
         dismissible={false}
       >
@@ -178,8 +177,7 @@ const NotDismissibleExample = () => (
 );
 
 const WithFlareExample = () => (
-  // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; initiallyOpen: true; fl... Remove this comment to see the full error message
-  <DialogContainer initiallyOpen flare dismissible={false}>
+<DialogContainer initiallyOpen flare dismissible={false}>
     <Paragraph>
       This is a dialog with a flare view added as the header.
     </Paragraph>

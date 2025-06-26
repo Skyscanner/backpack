@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 // @ts-expect-error TS(2305): Module '"react"' has no exported member 'Node'.
@@ -26,7 +26,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import themeAttributes from './themeAttributes';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkLink.module.scss' or its ... Remove this comment to see the full error message
+
 import STYLES from './BpkLink.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -55,7 +55,7 @@ const BpkButtonLink = (props: Props) => {
   if (alternate) {
     classNames.push(getClassName('bpk-link--alternate'));
   }
-  
+
   if (implicit && !alternate) {
     underlinedClassNames.push(getClassName('bpk-link-underlined--implicit'));
   } else if (alternate && !implicit) {

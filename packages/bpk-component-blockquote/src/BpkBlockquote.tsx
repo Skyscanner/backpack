@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkBlockquote.module.scss' o... Remove this comment to see the full error message
+
 import STYLES from './BpkBlockquote.module.scss';
 
 const getClassName = cssModules(STYLES);

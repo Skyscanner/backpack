@@ -25,13 +25,7 @@ describe('BpkSelect form test', () => {
   it('should work as a form component in a form', async () => {
     render(
       <form data-testid="form">
-        // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
-        // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
-        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-        // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-        <BpkSelect
+       <BpkSelect
           id="fruits"
           name="fruits"
           defaultValue="apples"
@@ -74,14 +68,8 @@ describe('BpkSelect form test', () => {
 
   it('should emit change event on option selection that calls formValidation', async () => {
     const formValidation = jest.fn();
-  
+
     render(<form data-testid="form">
-      // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-      // @ts-expect-error TS(2304): Cannot find name 'children'.
-      // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-      // @ts-expect-error TS(2304): Cannot find name 'children'.
-      // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-      // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
       <BpkSelect
         id="fruits"
         name="fruits"

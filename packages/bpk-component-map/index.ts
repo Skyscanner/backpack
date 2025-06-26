@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import BpkIconMarker, {
   type Props as IconMarkerProps,

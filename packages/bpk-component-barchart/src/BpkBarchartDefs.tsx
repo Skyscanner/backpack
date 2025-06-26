@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 const GRADIENT_ATTRIBUTES = {
   x1: 0,

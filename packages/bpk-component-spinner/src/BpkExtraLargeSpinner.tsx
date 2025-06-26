@@ -24,7 +24,7 @@ import XlSpinner from './spinners/xl';
 
 import type { SpinnerTypes } from './spinnerTypes';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkSpinner.module.scss' or i... Remove this comment to see the full error message
+
 import STYLES from './BpkSpinner.module.scss';
 
 const getClassName = cssModules(STYLES);

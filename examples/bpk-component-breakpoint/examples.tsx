@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 // @ts-expect-error TS(2305) FIXME: Module '"react"' has no exported member 'Node'.
 import type { Node } from 'react';

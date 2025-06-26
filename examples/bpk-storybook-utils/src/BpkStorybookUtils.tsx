@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
 
 /* eslint-disable global-require, no-console, import/no-mutable-exports */
 let action =

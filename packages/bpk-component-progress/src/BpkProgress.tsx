@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 import { Component } from 'react';
@@ -25,7 +25,7 @@ import clamp from 'lodash.clamp';
 
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkProgress.module.scss' or ... Remove this comment to see the full error message
+
 import STYLES from './BpkProgress.module.scss';
 
 const getClassName = cssModules(STYLES);

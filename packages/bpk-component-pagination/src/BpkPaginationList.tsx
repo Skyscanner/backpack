@@ -23,7 +23,7 @@ import { cssModules } from '../../bpk-react-utils';
 import BpkPaginationBreak from './BpkPaginationBreak';
 import BpkPaginationPage from './BpkPaginationPage';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkPaginationList.module.scs... Remove this comment to see the full error message
+
 import STYLES from './BpkPaginationList.module.scss';
 
 const getClassName = cssModules(STYLES);

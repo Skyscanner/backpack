@@ -26,13 +26,7 @@ describe('BpkSelect accessibility tests', () => {
     const { container } = render(
       <div>
         <label htmlFor="fruits">Fruits</label>
-        // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
-        // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
-        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-        // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-        <BpkSelect
+         <BpkSelect
           id="fruits"
           name="fruits"
           value="oranges"

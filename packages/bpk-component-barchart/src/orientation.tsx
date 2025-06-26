@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 export const ORIENTATION_X = 'x';
 export const ORIENTATION_Y = 'y';

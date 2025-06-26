@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import BpkLabel from '../../packages/bpk-component-label';
 import BpkTextarea from '../../packages/bpk-component-textarea';
 import { action } from '../bpk-storybook-utils';
@@ -28,10 +26,9 @@ laudantium quis, tempore iste non, nam magnam.`;
 
 const DefaultExample = () => (
   <form>
+    <BpkLabel
     // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
-    <BpkLabel htmlFor="default">Textarea</BpkLabel>
+    htmlFor="default">Textarea</BpkLabel>
     <BpkTextarea
       id="default"
       name="default"
@@ -45,10 +42,9 @@ const DefaultExample = () => (
 
 const PlaceholderExample = () => (
   <form>
-    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
-    <BpkLabel htmlFor="placeholder">Textarea</BpkLabel>
+   <BpkLabel
+  //  @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+   htmlFor="placeholder">Textarea</BpkLabel>
     <BpkTextarea
       id="placeholder"
       name="placeholder"
@@ -62,10 +58,9 @@ const PlaceholderExample = () => (
 
 const DisabledExample = () => (
   <form>
-    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
-    <BpkLabel htmlFor="disabled">Textarea</BpkLabel>
+   <BpkLabel
+  //  @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
+   htmlFor="disabled">Textarea</BpkLabel>
     <BpkTextarea
       id="disabled"
       name="disabled"
@@ -80,10 +75,9 @@ const DisabledExample = () => (
 
 const InvalidExample = () => (
   <form>
+    <BpkLabel
     // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
-    <BpkLabel htmlFor="invalid">Textarea</BpkLabel>
+    htmlFor="invalid">Textarea</BpkLabel>
     <BpkTextarea
       id="invalid"
       name="invalid"
@@ -98,10 +92,9 @@ const InvalidExample = () => (
 
 const LargeExample = () => (
   <form>
+    <BpkLabel
     // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-    // @ts-expect-error TS(2322): Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ children: string; htmlFor: string; }' is n... Remove this comment to see the full error message
-    <BpkLabel htmlFor="large">Textarea</BpkLabel>
+    htmlFor="large">Textarea</BpkLabel>
     <BpkTextarea
       id="large"
       name="large"

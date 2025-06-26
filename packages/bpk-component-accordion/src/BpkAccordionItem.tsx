@@ -28,7 +28,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { BpkAccordionContext } from './BpkAccordion';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkAccordionItem.module.scss... Remove this comment to see the full error message
+
 import STYLES from './BpkAccordionItem.module.scss';
 
 const getClassName = cssModules(STYLES);

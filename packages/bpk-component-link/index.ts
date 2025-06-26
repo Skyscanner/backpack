@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import BpkButtonLink from './src/BpkButtonLink';
 import BpkLink from './src/BpkLink';

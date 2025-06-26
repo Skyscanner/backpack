@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 
@@ -34,7 +34,7 @@ import HalfExtraLargeIcon from '../../bpk-component-icon/xxxl/star-half';
 import OutlineExtraLargeIcon from '../../bpk-component-icon/xxxl/star-outline';
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkStar.module.scss' or its ... Remove this comment to see the full error message
+
 import STYLES from './BpkStar.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -106,14 +106,14 @@ const BpkStar = (props: Props) => {
 
   return type === STAR_TYPES.FULL ? (
     <span className={iconClassNames} >
-      <Icon 
+      <Icon
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
       {...rest} />
     </span>
 
   ) : (
     <span className={iconClassNames} >
-      <OutlineIcon 
+      <OutlineIcon
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
       {...rest} />
     </span>

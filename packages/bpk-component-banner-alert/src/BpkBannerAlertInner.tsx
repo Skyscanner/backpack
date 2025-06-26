@@ -43,7 +43,7 @@ import type {
   OnExpandToggleHandler,
 } from './common-types';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkBannerAlert.module.scss' ... Remove this comment to see the full error message
+
 import STYLES from './BpkBannerAlert.module.scss';
 
 const getClassName = cssModules(STYLES);

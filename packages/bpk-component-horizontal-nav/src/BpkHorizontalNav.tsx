@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 import { Component, Children, cloneElement } from 'react';
@@ -25,7 +25,7 @@ import type { Node } from 'react';
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkHorizontalNav.module.scss... Remove this comment to see the full error message
+
 import STYLES from './BpkHorizontalNav.module.scss';
 
 const getClassName = cssModules(STYLES);

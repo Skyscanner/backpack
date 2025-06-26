@@ -24,7 +24,7 @@ import BpkGraphicPromo, { TEXT_ALIGN } from './BpkGraphicPromo';
 
 import type { Props } from './BpkGraphicPromo';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkGraphicPromo.module.scss'... Remove this comment to see the full error message
+
 import STYLES from './BpkGraphicPromo.module.scss';
 
 const getClassName = cssModules(STYLES);

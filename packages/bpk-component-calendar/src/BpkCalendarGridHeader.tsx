@@ -29,7 +29,7 @@ import type {
   WeekDayKey,
 } from './custom-proptypes';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkCalendarGridHeader.module... Remove this comment to see the full error message
+
 import STYLES from './BpkCalendarGridHeader.module.scss';
 
 const getClassName = cssModules(STYLES);

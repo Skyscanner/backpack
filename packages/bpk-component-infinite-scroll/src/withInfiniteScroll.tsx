@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 // @ts-expect-error TS(2724): '"react"' has no exported member named 'Element'. ... Remove this comment to see the full error message
@@ -31,7 +29,6 @@ import { cssModules } from '../../bpk-react-utils';
 import './intersection-observer';
 import DataSource from './DataSource';
 
-// @ts-expect-error TS(2307): Cannot find module './withInfiniteScroll.module.sc... Remove this comment to see the full error message
 import STYLES from './withInfiniteScroll.module.scss';
 
 const getClassNames = cssModules(STYLES);
@@ -54,30 +51,28 @@ export type Props = {
    * How many more elements to load every time the user reaches the bottom of the list.
    */
   initiallyLoadedElements: number,
-  loaderIntersectionTrigger: ?('small' | 'half' | 'full'),
-  onScroll: ?(o: ScrollEvent) => void,
-  onScrollFinished: ?(o: ScrollFinishedEvent) => void,
-  renderLoadingComponent: ?() => Element<any>,
-  renderSeeMoreComponent: ?({
-    // @ts-expect-error TS(2304): Cannot find name 'SyntheticEvent'.
-    onSeeMoreClick: (event: SyntheticEvent<any>) => mixed,
-  // @ts-expect-error TS(7010): 'Element', which lacks return-type annotation, imp... Remove this comment to see the full error message
-  }) => Element<any>,
+  loaderIntersectionTrigger: "small" | "half" | "full" | null | undefined,
+  onScroll: ((o: ScrollEvent) => void) | null | undefined,
+  onScrollFinished: ((o: ScrollFinishedEvent) => void) | null | undefined,
+  renderLoadingComponent: (() => Element<any>) | null | undefined,
+  renderSeeMoreComponent?: (args: {
+    onSeeMoreClick: (event: React.SyntheticEvent<any>) => unknown,
+  }) => React.ReactElement,
   /**
    * `seeMoreAfter` is how many scrolls should happen before a 'See more' button is displayed. This only happens once.
    */
-  seeMoreAfter: ?number,
+  seeMoreAfter: number | null | undefined,
 };
 
 export type State = {
   index: number,
-  elementsToRender: Array<any>,
+  elementsToRender: any[],
   isListFinished: boolean,
   showSeeMore: boolean,
 };
 
 type ExtendedProps = {
-  elements: Array<any>,
+  elements: any[],
 };
 
 const propTypes = {
@@ -105,44 +100,26 @@ const defaultProps = {
 
 type PropsWithDefault = Config<Props, typeof defaultProps>;
 
-// @ts-expect-error TS(2304): Cannot find name 'T'.
-const withInfiniteScroll = <T: ExtendedProps>(
-  // @ts-expect-error TS(2304): Cannot find name 'T'.
-  // @ts-expect-error TS(2304) FIXME: Cannot find name 'T'.
-  // @ts-expect-error TS(2304): Cannot find name 'T'.
+const withInfiniteScroll = <T extends ExtendedProps>(
   ComponentToExtend: AbstractComponent<T>,
-// @ts-expect-error TS(2693): 'PropsWithDefault' only refers to a type, but is b... Remove this comment to see the full error message
-// @ts-expect-error TS(2693) FIXME: 'PropsWithDefault' only refers to a type, but is b... Remove this comment to see the full error message
-// @ts-expect-error TS(2693): 'PropsWithDefault' only refers to a type, but is b... Remove this comment to see the full error message
-): AbstractComponent<PropsWithDefault & $Diff<T, ExtendedProps>> =>
-  // @ts-expect-error TS(2693): 'Props' only refers to a type, but is being used a... Remove this comment to see the full error message
-  // @ts-expect-error TS(2693) FIXME: 'Props' only refers to a type, but is being used a... Remove this comment to see the full error message
-  // @ts-expect-error TS(2693): 'Props' only refers to a type, but is being used a... Remove this comment to see the full error message
-  class WithInfiniteScroll extends Component<Props, State> {
+): AbstractComponent<PropsWithDefault & Omit<T, keyof ExtendedProps>> =>
+    class WithInfiniteScroll extends Component<Props, State> {
 
     // @ts-expect-error TS(2304): Cannot find name 'handleKeyPress'.
     handleKeyPress: (e: SyntheticKeyboardEvent<HTMLButtonElement>) => void;
 
     observer: IntersectionObserver;
 
-    sentinel: ?HTMLElement;
+    sentinel: HTMLElement | null | undefined;
 
-    // @ts-expect-error TS(2609): JSX spread child must be an array type.
-    // @ts-expect-error TS(2609) FIXME: JSX spread child must be an array type.
-    // @ts-expect-error TS(2609): JSX spread child must be an array type.
-    static propTypes = { ...propTypes };
+   static propTypes = { ...propTypes };
 
-    // @ts-expect-error TS(2609): JSX spread child must be an array type.
-    // @ts-expect-error TS(2609) FIXME: JSX spread child must be an array type.
-    // @ts-expect-error TS(2609): JSX spread child must be an array type.
-    static defaultProps = { ...defaultProps };
+   static defaultProps = { ...defaultProps };
 
     constructor(props: Props) {
-      // @ts-expect-error TS(2337): Super calls are not permitted outside constructors... Remove this comment to see the full error message
-      super(props);
+     super(props);
 
       this.state = {
-        // @ts-expect-error TS(2304): Cannot find name 'index'.
         index: 0,
         elementsToRender: [],
         isListFinished: false,
@@ -152,54 +129,55 @@ const withInfiniteScroll = <T: ExtendedProps>(
       this.props.dataSource.onDataChange(this.updateData);
 
       const thresholds = {
-        // @ts-expect-error TS(2304): Cannot find name 'small'.
         small: 0.01,
         half: 0.5,
         full: 0.99, // using 0.99 instead of 1 to avoid problems with float precision in IE11
       };
       const displaySize = this.props.loaderIntersectionTrigger || 'full';
       this.observer = new IntersectionObserver(this.handleIntersection, {
-        // @ts-expect-error TS(2304): Cannot find name 'threshold'.
         threshold: thresholds[displaySize] || thresholds.full,
       });
     }
 
     componentDidMount() {
-      // @ts-expect-error TS(2532): Object is possibly 'undefined'.
       this.fetchItems({
-        // @ts-expect-error TS(2532): Object is possibly 'undefined'.
         elementsPerScroll: this.props.initiallyLoadedElements,
-      // @ts-expect-error TS(7006): Parameter 'newState' implicitly has an 'any' type.
       }).then((newState) => {
-        // @ts-expect-error TS(2532): Object is possibly 'undefined'.
-        this.setState(newState);
+        this.setState({
+          index: newState.index ?? 0,
+          elementsToRender: newState.elementsToRender ?? [],
+          isListFinished: newState.isListFinished ?? false,
+          showSeeMore: newState.showSeeMore ?? false,
+        });
       });
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps: { dataSource: DataSource<any>; }) {
       if (this.sentinel && this.state.index > 0) {
-        // @ts-expect-error TS(2532): Object is possibly 'undefined'.
         this.observer.observe(this.sentinel);
       }
 
       if (this.props.dataSource !== prevProps.dataSource) {
-        // @ts-expect-error TS(2304): Cannot find name 'prevProps'.
         prevProps.dataSource.removeListener(this.updateData);
         this.props.dataSource.onDataChange(this.updateData);
         this.fetchItems({
-          // @ts-expect-error TS(2304): Cannot find name 'index'.
           index: 0,
           elementsPerScroll: this.props.elementsPerScroll,
           elementsToRender: [],
-        }).then((newState) => this.setStateAfterDsUpdate(newState));
+        }).then((newState) =>
+          this.setStateAfterDsUpdate({
+            index: newState.index ?? 0,
+            elementsToRender: newState.elementsToRender ?? [],
+            isListFinished: newState.isListFinished ?? false,
+            showSeeMore: newState.showSeeMore ?? false,
+          })
+        );
       }
     }
 
     componentWillUnmount() {
-      // @ts-expect-error TS(2532): Object is possibly 'undefined'.
       this.props.dataSource.removeListener(this.updateData);
       if (this.sentinel) {
-        // @ts-expect-error TS(2532): Object is possibly 'undefined'.
         this.observer.unobserve(this.sentinel);
       }
     }
@@ -210,53 +188,41 @@ const withInfiniteScroll = <T: ExtendedProps>(
       // If after this call there is no elementsToRender or index present in state
       // it means the new data source has no items and we need to
       // reset the list, which we do by setting `elementsToRender` to `[]` and `index` to `0`
-      // @ts-expect-error TS(2304): Cannot find name 'elementsToRender'.
       const { elementsToRender, index } = newState;
-      // @ts-expect-error TS(2609): JSX spread child must be an array type.
-      // @ts-expect-error TS(2609) FIXME: JSX spread child must be an array type.
-      // @ts-expect-error TS(2609): JSX spread child must be an array type.
       this.setState({
-        // @ts-expect-error TS(2304): Cannot find name 'newState'.
         ...newState,
-        // @ts-expect-error TS(2304): Cannot find name 'elementsToRender'.
         elementsToRender: elementsToRender || [],
         index: index || 0,
       });
     }
 
     updateData = () => {
-      // @ts-expect-error TS(2304): Cannot find name 'index'.
       const { index } = this.state;
       // This means updateData was called before any data was loaded, e.g.
       // An ArrayDataSource initialized empty and then changed latter on via `updateData`
       // In this case we want to load new data and not just replace the old one.
       // "See More After" should also be computed again in this case.
-      // @ts-expect-error TS(2532): Object is possibly 'undefined'.
-      // @ts-expect-error TS(2532) FIXME: Object is possibly 'undefined'.
-      // @ts-expect-error TS(2532): Object is possibly 'undefined'.
       const isFirstLoad = index < this.props.elementsPerScroll;
       this.fetchItems({
-        // @ts-expect-error TS(2304): Cannot find name 'index'.
         index: 0,
         elementsPerScroll: isFirstLoad ? this.props.elementsPerScroll : index,
         elementsToRender: [],
         computeShowSeeMore: isFirstLoad,
-      }).then((newState) => this.setStateAfterDsUpdate(newState));
+      }).then((newState) =>
+        this.setStateAfterDsUpdate({
+          index: newState.index ?? 0,
+          elementsToRender: newState.elementsToRender ?? [],
+          isListFinished: newState.isListFinished ?? false,
+          showSeeMore: newState.showSeeMore ?? false,
+        })
+      );
     };
 
-    // @ts-expect-error TS(2304): Cannot find name '$Shape'.
-    // @ts-expect-error TS(2304) FIXME: Cannot find name '$Shape'.
-    // @ts-expect-error TS(2304): Cannot find name '$Shape'.
-    fetchItems(config): Promise<$Shape<State>> {
-      // @ts-expect-error TS(2304): Cannot find name 'onScrollFinished'.
+    fetchItems(config: { elementsPerScroll: number; index?: number; elementsToRender?: never[]; computeShowSeeMore?: boolean; } | undefined): Promise<Partial<State>> {
       const { onScrollFinished, seeMoreAfter } = this.props;
-      // @ts-expect-error TS(2304): Cannot find name 'computeShowSeeMore'.
-      // @ts-expect-error TS(2304) FIXME: Cannot find name 'computeShowSeeMore'.
-      // @ts-expect-error TS(2304): Cannot find name 'computeShowSeeMore'.
       const { computeShowSeeMore, elementsPerScroll, elementsToRender, index } =
         extend(
           {
-            // @ts-expect-error TS(2304): Cannot find name 'index'.
             index: this.state.index,
             elementsPerScroll: this.props.elementsPerScroll,
             elementsToRender: this.state.elementsToRender,
@@ -268,9 +234,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
       return this.props.dataSource
         .fetchItems(index, elementsPerScroll)
         .then((nextElements) => {
-          // @ts-expect-error TS(2304): Cannot find name 'let'.
           let result = {
-            // @ts-expect-error TS(2304): Cannot find name 'isListFinished'.
             isListFinished: true,
           };
           if (nextElements && nextElements.length > 0) {
@@ -282,16 +246,11 @@ const withInfiniteScroll = <T: ExtendedProps>(
               showSeeMore: computeShowSeeMore
                 ? seeMoreAfter === index / elementsPerScroll
                 : this.state.showSeeMore,
-              // @ts-expect-error TS(2339): Property 'elementsPerScroll' does not exist on typ... Remove this comment to see the full error message
-              // @ts-expect-error TS(2339) FIXME: Property 'elementsPerScroll' does not exist on typ... Remove this comment to see the full error message
-              // @ts-expect-error TS(2339): Property 'elementsPerScroll' does not exist on typ... Remove this comment to see the full error message
               isListFinished: nextElements.length < elementsPerScroll,
             };
           }
           if (onScrollFinished && result.isListFinished) {
-            // @ts-expect-error TS(2304): Cannot find name 'onScrollFinished'.
             onScrollFinished({
-              // @ts-expect-error TS(2304): Cannot find name 'elementsToRender'.
               totalNumberElements: elementsToRender.length,
             });
           }
@@ -299,25 +258,24 @@ const withInfiniteScroll = <T: ExtendedProps>(
         });
     }
 
-    // @ts-expect-error TS(2786): 'IntersectionObserverEntry' cannot be used as a JS... Remove this comment to see the full error message
-    // @ts-expect-error TS(2786) FIXME: 'IntersectionObserverEntry' cannot be used as a JS... Remove this comment to see the full error message
-    // @ts-expect-error TS(2786): 'IntersectionObserverEntry' cannot be used as a JS... Remove this comment to see the full error message
-    handleIntersection = (entries: Array<IntersectionObserverEntry>) => {
-      // @ts-expect-error TS(2304): Cannot find name 'onScroll'.
+   handleIntersection = (entries: IntersectionObserverEntry[]) => {
       const { onScroll } = this.props;
       const entry = entries[0];
       if (entry.isIntersecting) {
         if (this.sentinel) {
-          // @ts-expect-error TS(2532): Object is possibly 'undefined'.
           this.observer.unobserve(this.sentinel);
         }
         if (onScroll) {
-          // @ts-expect-error TS(2304): Cannot find name 'onScroll'.
           onScroll({ currentIndex: this.state.index });
         }
+        // @ts-expect-error TS(2532): Object is possibly 'undefined'.
         return this.fetchItems().then((newState) => {
-          // @ts-expect-error TS(2532): Object is possibly 'undefined'.
-          this.setState(newState);
+          this.setState({
+            index: newState.index ?? 0,
+            elementsToRender: newState.elementsToRender ?? [],
+            isListFinished: newState.isListFinished ?? false,
+            showSeeMore: newState.showSeeMore ?? false,
+          });
         });
       }
       return Promise.resolve();
@@ -326,17 +284,17 @@ const withInfiniteScroll = <T: ExtendedProps>(
     handleSeeMoreClick = (): void => {
       // @ts-expect-error TS(2532): Object is possibly 'undefined'.
       this.fetchItems().then((newState) => {
-        // @ts-expect-error TS(2532): Object is possibly 'undefined'.
-        this.setState(newState);
+        this.setState({
+          index: newState.index ?? 0,
+          elementsToRender: newState.elementsToRender ?? [],
+          isListFinished: newState.isListFinished ?? false,
+          showSeeMore: newState.showSeeMore ?? false,
+        });
       });
     };
 
     render() {
-      // @ts-expect-error TS(2304): Cannot find name 'elementsToRender'.
       const { elementsToRender, isListFinished, showSeeMore } = this.state;
-      // @ts-expect-error TS(2304): Cannot find name 'renderLoadingComponent'.
-      // @ts-expect-error TS(2304) FIXME: Cannot find name 'renderLoadingComponent'.
-      // @ts-expect-error TS(2304): Cannot find name 'renderLoadingComponent'.
       const { renderLoadingComponent, renderSeeMoreComponent } = this.props;
 
       const rest = omit(this.props, Object.keys(propTypes));
@@ -345,28 +303,20 @@ const withInfiniteScroll = <T: ExtendedProps>(
 
       if (!isListFinished) {
         if (showSeeMore && renderSeeMoreComponent) {
-          // @ts-expect-error TS(2304): Cannot find name 'loadingOrButton'.
           loadingOrButton = renderSeeMoreComponent({
-            // @ts-expect-error TS(2532): Object is possibly 'undefined'.
             onSeeMoreClick: this.handleSeeMoreClick,
           });
         } else {
-          // @ts-expect-error TS(2304): Cannot find name 'loadingOrButton'.
           loadingOrButton = (
             <div
               ref={(spinner) => {
-                // @ts-expect-error TS(2532): Object is possibly 'undefined'.
                 this.sentinel = spinner;
               }}
               // @ts-expect-error TS(2322): Type 'string | null' is not assignable to type 'st... Remove this comment to see the full error message
               className={
-                // @ts-expect-error TS(2304): Cannot find name 'renderLoadingComponent'.
                 renderLoadingComponent ? null : getClassNames('bpk-sentinel')
               }
             >
-              // @ts-expect-error TS(2304): Cannot find name 'renderLoadingComponent'.
-              // @ts-expect-error TS(2304) FIXME: Cannot find name 'renderLoadingComponent'.
-              // @ts-expect-error TS(2304): Cannot find name 'renderLoadingComponent'.
               {renderLoadingComponent && renderLoadingComponent()}
             </div>
           );
@@ -375,13 +325,8 @@ const withInfiniteScroll = <T: ExtendedProps>(
 
       return (
         <div>
-          // @ts-expect-error TS(2304): Cannot find name 'ComponentToExtend'.
-          // @ts-expect-error TS(2304) FIXME: Cannot find name 'ComponentToExtend'.
-          // @ts-expect-error TS(2304): Cannot find name 'ComponentToExtend'.
-          <ComponentToExtend {...rest} elements={elementsToRender} />
-          // @ts-expect-error TS(2304): Cannot find name 'loadingOrButton'.
-          // @ts-expect-error TS(2304) FIXME: Cannot find name 'loadingOrButton'.
-          // @ts-expect-error TS(2304): Cannot find name 'loadingOrButton'.
+          <ComponentToExtend
+          {...rest} elements={elementsToRender} />
           {loadingOrButton}
         </div>
       );

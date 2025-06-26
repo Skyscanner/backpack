@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import { Component } from 'react';
 
@@ -30,10 +29,13 @@ const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Do
 quaerat temporibus ipsam, ut, ipsa, velit sed assumenda suscipit dolore quod similique delectus numquam neque!
 Nesciunt, voluptate, illo.`;
 
-class GroupExample extends Component<{}, { value: string }> {
-  constructor() {
-    // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 0.
-    super();
+interface GroupExampleProps {
+  white?: boolean;
+}
+
+class GroupExample extends Component<GroupExampleProps, { value: string }> {
+  constructor(props: GroupExampleProps) {
+    super(props);
     this.state = { value: 'Lagos' };
   }
 
@@ -87,9 +89,6 @@ const InvalidExample = () => <GroupExample valid={false} />;
 const WhiteExample = () => (
   // @ts-expect-error TS(2322) FIXME: Type '{ children: any[]; padded: true; }' is not a... Remove this comment to see the full error message
   <BpkDarkExampleWrapper padded>
-    // @ts-expect-error TS(2304) FIXME: Cannot find name 'white'.
-    // @ts-expect-error TS(2322): Type '{ white: true; }' is not assignable to type ... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ white: true; }' is not assignable to type ... Remove this comment to see the full error message
     <GroupExample white />
   </BpkDarkExampleWrapper>
 );

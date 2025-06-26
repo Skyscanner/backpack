@@ -24,7 +24,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import InputField from './BpkInputField';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkSplitInput.module.scss' o... Remove this comment to see the full error message
+
 import STYLES from './BpkSplitInput.module.scss';
 
 const getClassName = cssModules(STYLES);

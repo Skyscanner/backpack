@@ -28,7 +28,7 @@ import * as Slider from '@radix-ui/react-slider';
 
 import { cssModules, isRTL, setNativeValue } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkSlider.module.scss' or it... Remove this comment to see the full error message
+
 import STYLES from './BpkSlider.module.scss';
 
 const getClassName = cssModules(STYLES);

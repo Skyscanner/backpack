@@ -30,7 +30,7 @@ import BpkHeartIconSm from '../../bpk-component-icon/sm/heart';
 import BpkHeartOutlineIconSm from '../../bpk-component-icon/sm/heart--outline';
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkSaveButton.module.scss' o... Remove this comment to see the full error message
+
 import STYLES from './BpkSaveButton.module.scss';
 
 export const SIZE_TYPES = {

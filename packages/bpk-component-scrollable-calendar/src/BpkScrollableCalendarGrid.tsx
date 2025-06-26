@@ -24,7 +24,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import type { BpkCalendarGridProps } from '../../bpk-component-calendar';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkScrollableCalendarGrid.mo... Remove this comment to see the full error message
+
 import STYLES from './BpkScrollableCalendarGrid.module.scss';
 
 const getClassName = cssModules(STYLES);

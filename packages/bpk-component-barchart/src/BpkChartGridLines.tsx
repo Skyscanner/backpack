@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 
@@ -25,7 +25,7 @@ import { cssModules } from '../../bpk-react-utils';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, center } from './utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkChartGridLines.module.scs... Remove this comment to see the full error message
+
 import STYLES from './BpkChartGridLines.module.scss';
 
 const getClassName = cssModules(STYLES);

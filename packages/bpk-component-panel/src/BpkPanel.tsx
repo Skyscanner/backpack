@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkPanel.module.scss' or its... Remove this comment to see the full error message
+
 import STYLES from './BpkPanel.module.scss';
 
 const getClassName = cssModules(STYLES);

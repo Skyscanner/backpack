@@ -159,9 +159,7 @@ class MonthViewCalendar extends Component {
     const { maxDate, minDate, ...rest } = this.props;
     return (
       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-        // @ts-expect-error TS(2304) FIXME: Cannot find name 'id'.
-        // @ts-expect-error TS(2741): Property 'weekStartsOn' is missing in type '{ id: ... Remove this comment to see the full error message
-        // @ts-expect-error TS(2741) FIXME: Property 'weekStartsOn' is missing in type '{ id: ... Remove this comment to see the full error message
+         {/* @ts-expect-error TS(2741) FIXME: Property 'weekStartsOn' is missing in type '{ id: ... Remove this comment to see the full error message */}
         <MyDepartCalendar
           id="myCalendar"
           formatMonth={formatMonth}
@@ -193,9 +191,7 @@ class MonthViewCalendar extends Component {
             borderRight: `1px solid ${colorSkyGrayTint06}`,
           }}
         />
-        // @ts-expect-error TS(2304) FIXME: Cannot find name 'id'.
-        // @ts-expect-error TS(2741): Property 'weekStartsOn' is missing in type '{ id: ... Remove this comment to see the full error message
-        // @ts-expect-error TS(2741) FIXME: Property 'weekStartsOn' is missing in type '{ id: ... Remove this comment to see the full error message
+         {/* @ts-expect-error TS(2741) FIXME: Property 'weekStartsOn' is missing in type '{ id: ... Remove this comment to see the full error message */}
         <MyReturnCalendar
           id="myCalendar"
           formatMonth={formatMonth}

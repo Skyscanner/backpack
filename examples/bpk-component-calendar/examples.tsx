@@ -307,7 +307,7 @@ const WeekExample = () => {
     markOutsideDays: true,
     isKeyboardFocusable: true,
     month: new Date(1980, 5, 1),
-    weekStartsOn: 0,
+    weekStartsOn: 0 as 0 | 1 | 2 | 3 | 4 | 5 | 6,
   };
 
   return (
@@ -317,12 +317,8 @@ const WeekExample = () => {
       </p>
       <table>
         <tbody>
-          // @ts-expect-error TS(2769): No overload matches this call.
-          // @ts-expect-error TS(2769) FIXME: No overload matches this call.
-          <BpkCalendarWeek {...weekProps} />
-          // @ts-expect-error TS(2769): No overload matches this call.
-          // @ts-expect-error TS(2769) FIXME: No overload matches this call.
-          <BpkCalendarWeek {...weekProps} />
+         <BpkCalendarWeek {...weekProps} />
+         <BpkCalendarWeek {...weekProps} />
         </tbody>
       </table>
     </div>

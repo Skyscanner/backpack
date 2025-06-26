@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import { Component } from 'react';
 
@@ -186,7 +186,6 @@ class AutosuggestExample extends Component<Props, State> {
         renderSuggestion={(suggestion: any) => <BpkAutosuggestSuggestion
           value={getSuggestionValue(suggestion)}
           indent={suggestion.indent}
-          // @ts-expect-error TS(2322) FIXME: Type '{ (props: { [rest: string]: any; className?:... Remove this comment to see the full error message
           icon={includeIcon ? BpkFlightIcon : null}
           subHeading={includeSubheading ? suggestion.country : null}
           tertiaryLabel={

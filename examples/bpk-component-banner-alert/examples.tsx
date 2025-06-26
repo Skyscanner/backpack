@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
 
 import { Component } from 'react';
 
@@ -64,10 +64,7 @@ class BpkBannerAlertDismissableState extends Component<Props, State> {
   render() {
     return (
       <>
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-        // @ts-expect-error TS(2304) FIXME: Cannot find name 'show'.
-        // @ts-expect-error TS(2741): Property 'type' is missing in type '{ show: boolea... Remove this comment to see the full error message
-        // @ts-expect-error TS(2741) FIXME: Property 'type' is missing in type '{ show: boolea... Remove this comment to see the full error message
+        {/* @ts-expect-error TS(2741) FIXME: Property 'type' is missing in type '{ show: boolea... Remove this comment to see the full error message */}
         <BpkBannerAlertDismissable
           show={!this.state.dismissed}
           dismissButtonLabel="Dismiss"
@@ -94,12 +91,11 @@ class BpkBannerAlertDismissableState extends Component<Props, State> {
             Reset
           </BpkButtonPrimary>
         )}
-        // @ts-expect-error TS(2746) FIXME: This JSX tag's 'children' prop expects a single ch... Remove this comment to see the full error message
-        <AriaLiveDemo
+       <AriaLiveDemo
           visible
           className={getClassName('bpk-banner-alert-examples__component')}
         >
-          // @ts-expect-error TS(2739): Type 'Element[]' is missing the following properti... Remove this comment to see the full error message
+          {/* @ts-expect-error TS(2739): Type 'Element[]' is missing the following properti... Remove this comment to see the full error message */}
           {this.state.updates.map((u) => (
             <>
               {u}

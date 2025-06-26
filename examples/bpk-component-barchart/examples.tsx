@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { number } from 'prop-types';
 
 // @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'd3-s... Remove this comment to see the full error message
@@ -58,8 +56,8 @@ const data = require('./data.json');
 
 const margin = {
   top: 0,
-  left: 40,  
-  bottom: 40,  
+  left: 40,
+  bottom: 40,
   right: 0,
 };
 
@@ -127,21 +125,16 @@ const AxesAndGridlinesExample = () => {
   return (
     <div>
       <Heading>Linear scale</Heading>
-      // @ts-expect-error TS(2322): Type '{ scale: any; size: number; }' is not assign... Remove this comment to see the full error message
-      // @ts-expect-error TS(2322) FIXME: Type '{ scale: any; size: number; }' is not assign... Remove this comment to see the full error message
+       {/* @ts-expect-error TS(2322) FIXME: Type '{ scale: any; size: number; }' is not assign... Remove this comment to see the full error message */}
       <Gridlines scale={scale} size={size} />
-      // @ts-expect-error TS(2322): Type '{ scale: any; size: number; numTicks: number... Remove this comment to see the full error message
-      // @ts-expect-error TS(2322) FIXME: Type '{ scale: any; size: number; numTicks: number... Remove this comment to see the full error message
+      {/* @ts-expect-error TS(2322) FIXME: Type '{ scale: any; size: number; numTicks: number... Remove this comment to see the full error message */}
       <Gridlines scale={scale} size={size} numTicks={2} />
       <Heading>Band scale</Heading>
-      // @ts-expect-error TS(2322): Type '{ scale: any; size: number; }' is not assign... Remove this comment to see the full error message
-      // @ts-expect-error TS(2322) FIXME: Type '{ scale: any; size: number; }' is not assign... Remove this comment to see the full error message
+       {/* @ts-expect-error TS(2322) FIXME: Type '{ scale: any; size: number; }' is not assign... Remove this comment to see the full error message */}
       <Gridlines scale={scale2} size={size} />
-      // @ts-expect-error TS(2322): Type '{ scale: any; size: number; tickEvery: numbe... Remove this comment to see the full error message
-      // @ts-expect-error TS(2322) FIXME: Type '{ scale: any; size: number; tickEvery: numbe... Remove this comment to see the full error message
+      {/* @ts-expect-error TS(2322) FIXME: Type '{ scale: any; size: number; tickEvery: numbe... Remove this comment to see the full error message */}
       <Gridlines scale={scale2} size={size} tickEvery={2} />
-      // @ts-expect-error TS(2322): Type '{ scale: any; size: number; tickEvery: numbe... Remove this comment to see the full error message
-      // @ts-expect-error TS(2322) FIXME: Type '{ scale: any; size: number; tickEvery: numbe... Remove this comment to see the full error message
+       {/* @ts-expect-error TS(2322) FIXME: Type '{ scale: any; size: number; tickEvery: numbe... Remove this comment to see the full error message */}
       <Gridlines scale={scale2} size={size} tickEvery={2} tickOffset={1} />
     </div>
   );

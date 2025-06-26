@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import { isRTL } from '../../bpk-react-utils';
 

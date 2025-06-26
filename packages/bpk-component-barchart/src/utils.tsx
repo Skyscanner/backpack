@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 // Using Function here as scale refers to the d3-scale 3rd party library
 const center = (scale: Function) => {

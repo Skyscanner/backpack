@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 
@@ -26,7 +26,7 @@ import { cssModules } from '../../bpk-react-utils';
 import BpkBasicMapMarker from './BpkBasicMapMarker';
 import { LatLongPropType, type LatLong } from './common-types';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkPriceMarker.module.scss' ... Remove this comment to see the full error message
+
 import STYLES from './BpkPriceMarker.module.scss';
 
 const getClassName = cssModules(STYLES);

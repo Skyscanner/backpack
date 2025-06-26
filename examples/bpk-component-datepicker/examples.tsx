@@ -113,9 +113,7 @@ class CalendarContainer extends Component {
     return (
       <div id="datepicker-element">
         <div id="application-element">
-          // @ts-expect-error TS(2304) FIXME: Cannot find name 'onDateSelect'.
-          // @ts-expect-error TS(2740): Type '{ onDateSelect: (startDate: Date, endDate?: ... Remove this comment to see the full error message
-          // @ts-expect-error TS(2740) FIXME: Type '{ onDateSelect: (startDate: Date, endDate?: ... Remove this comment to see the full error message
+           {/* @ts-expect-error TS(2740) FIXME: Type '{ onDateSelect: (startDate: Date, endDate?: ... Remove this comment to see the full error message */}
           <BpkDatepicker
             {...this.props}
             // @ts-expect-error TS(2322) FIXME: Type 'null' is not assignable to type 'Date | unde... Remove this comment to see the full error message
@@ -213,7 +211,9 @@ ColoredCalendarDate.propTypes = {
 
 class ReturnDatepicker extends Component {
   maxDate: any;
+
   minDate: any;
+
   constructor() {
     // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 0.
     super();
@@ -328,6 +328,7 @@ class ReturnDatepicker extends Component {
 
 class MultipleInputDatepicker extends Component {
   ref: any;
+
   constructor(props: any) {
     super(props);
 

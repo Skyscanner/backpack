@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import BpkSwapButton, { SWAPBUTTON_STYLES } from '../../packages/bpk-component-swap-button';
 import { action, BpkDarkExampleWrapper } from '../bpk-storybook-utils';
@@ -41,9 +40,7 @@ const CanvasDefaultExample = () => (
 );
 const CanvasContrastExample = () => (
   <div>
-  // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-  // @ts-expect-error TS(2322): Type '{ children: Element; padded: true; style: { ... Remove this comment to see the full error message
-  // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; padded: true; style: { ... Remove this comment to see the full error message
+  {/*  @ts-expect-error TS(2322) FIXME: Type '{ children: Element; padded: true; style: { ... Remove this comment to see the full error message */}
   <BpkDarkExampleWrapper padded style={wrapperStyles}>
     <BpkSwapButton ariaLabel='Swap origin and destination' swapButtonStyle={SWAPBUTTON_STYLES.canvasContrast} onClick={action('Button clicked')}/>
   </BpkDarkExampleWrapper>

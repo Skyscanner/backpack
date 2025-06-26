@@ -41,7 +41,7 @@ import type {
   SelectionConfigurationRange,
 } from './custom-proptypes';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkCalendarWeek.module.scss'... Remove this comment to see the full error message
+
 import STYLES from './BpkCalendarWeek.module.scss';
 
 const getClassName = cssModules(STYLES);

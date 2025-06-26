@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import { Component } from 'react';
 import type { ComponentType } from 'react';

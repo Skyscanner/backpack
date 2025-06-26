@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import BpkInteractiveStar from './src/BpkInteractiveStar';
 import BpkInteractiveStarRating from './src/BpkInteractiveStarRating';

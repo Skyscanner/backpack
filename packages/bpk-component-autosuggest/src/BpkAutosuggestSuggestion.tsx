@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import PropTypes from 'prop-types';
 // @ts-expect-error TS(2305): Module '"react"' has no exported member 'Node'.
@@ -24,7 +23,7 @@ import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkAutosuggest.module.scss' ... Remove this comment to see the full error message
+
 import STYLES from './BpkAutosuggest.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -59,6 +58,7 @@ const BpkAutosuggestSuggestion = (props: Props) => {
     <section className={classNames.join(' ')} {...rest}>
       {icon ? (
         <div className={getClassName('bpk-autosuggest__suggestion-icon')}>
+          {/* @ts-expect-error TS(2554): Expected 0 arguments, but got 1. */}
           <Icon />
         </div>
       ) : null}

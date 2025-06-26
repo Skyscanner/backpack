@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 import { Component } from 'react';
@@ -26,7 +26,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { HORIZONTAL_NAV_TYPES } from './BpkHorizontalNav';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkHorizontalNavItem.module.... Remove this comment to see the full error message
+
 import STYLES from './BpkHorizontalNavItem.module.scss';
 
 const getClassName = cssModules(STYLES);

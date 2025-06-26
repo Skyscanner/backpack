@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 // @ts-expect-error TS(2305): Module '"react"' has no exported member 'Node'.
@@ -28,7 +28,7 @@ import BpkBasicMapMarker from './BpkBasicMapMarker';
 import BpkIconMarkerBackground from './BpkIconMarkerBackground';
 import { LatLongPropType, type LatLong } from './common-types';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkIconMarker.module.scss' o... Remove this comment to see the full error message
+
 import STYLES from './BpkIconMarker.module.scss';
 
 const getClassName = cssModules(STYLES);

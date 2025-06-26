@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import PropTypes from 'prop-types';
 import { Component } from 'react';
@@ -77,9 +76,7 @@ class DrawerContainer extends Component<Props, State> {
           <BpkButton onClick={this.onOpen}>{buttonText}</BpkButton>
         </div>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md  */}
-        // @ts-expect-error TS(2304) FIXME: Cannot find name 'id'.
-        // @ts-expect-error TS(2739): Type '{ id: string; className: string; isOpen: boo... Remove this comment to see the full error message
-        // @ts-expect-error TS(2739) FIXME: Type '{ id: string; className: string; isOpen: boo... Remove this comment to see the full error message
+        {/* @ts-expect-error TS(2739) FIXME: Type '{ id: string; className: string; isOpen: boo... Remove this comment to see the full error message */}
         <BpkDrawer
           id="my-drawer"
           className="my-classname"

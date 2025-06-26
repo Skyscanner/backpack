@@ -16,15 +16,12 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import Autosuggest from 'react-autosuggest';
 
 import BpkInput from '../../bpk-component-input';
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkAutosuggest.module.scss' ... Remove this comment to see the full error message
 import STYLES from './BpkAutosuggest.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -54,10 +51,8 @@ Autosuggest.defaultProps.theme = {
 };
 
 type Props = {
-  // @ts-expect-error TS(2300): Duplicate identifier 'mixed'.
-  ref: (?HTMLInputElement) => mixed,
-  // @ts-expect-error TS(2300): Duplicate identifier 'mixed'.
-  inputRef: (?HTMLInputElement) => mixed,
+  ref: (element: HTMLInputElement | null) => any,
+  inputRef: (element: HTMLInputElement | null) => any,
   autoComplete: string,
 };
 Autosuggest.defaultProps.renderInputComponent = (inputProps: Props) => {
@@ -68,11 +63,9 @@ Autosuggest.defaultProps.renderInputComponent = (inputProps: Props) => {
     // @ts-expect-error TS(2322): Type '{ mixed: any; inputRef: (element: HTMLInputE... Remove this comment to see the full error message
     <BpkInput
       inputRef={(element) => {
-        // @ts-expect-error TS(2349): This expression is not callable.
         ref(element);
 
         if (typeof inputRef === 'function') {
-          // @ts-expect-error TS(2349): This expression is not callable.
           inputRef(element);
         }
       }}

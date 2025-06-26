@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 
@@ -24,7 +24,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { BpkStarNonRtl, STAR_TYPES } from './BpkStar';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkInteractiveStar.module.sc... Remove this comment to see the full error message
+
 import STYLES from './BpkInteractiveStar.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -69,9 +69,9 @@ const BpkInteractiveStar = (props: Props) => {
     >
       <div className={iconClassNames} >
         <BpkStarNonRtl
-          type={type} 
+          type={type}
           /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */
-          {...rest} 
+          {...rest}
         />
       </div>
     </button>

@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import PropTypes from 'prop-types';
 import { cloneElement, Component } from 'react';
@@ -175,7 +174,6 @@ class Autosuggest extends Component<{}, AutosuggestState> {
     };
 
     return (
-      // @ts-expect-error TS(2741) FIXME: Property '$Exact' is missing in type '{ children: ... Remove this comment to see the full error message
       <FieldsetContainer
         label="Destination"
         validationMessage="Please select a destination."
@@ -201,18 +199,15 @@ class Autosuggest extends Component<{}, AutosuggestState> {
   }
 }
 
-type FieldsetProps = {
-  // @ts-expect-error TS(7010) FIXME: '$Exact', which lacks return-type annotation, impl... Remove this comment to see the full error message
-  ...$Exact<BpkFieldsetProps>,
-  // @ts-expect-error TS(2304) FIXME: Cannot find name 'mixed'.
-  validStates: Array<mixed>,
+type FieldsetProps = BpkFieldsetProps & {
+ validStates: any[],
 };
 
 type FieldsetState = {
   value: string,
   checked: boolean,
   validState: any,
-  valueDate: ?Date,
+  valueDate: Date | null | undefined,
 };
 
 class FieldsetContainer extends Component<FieldsetProps, FieldsetState> {
@@ -262,7 +257,6 @@ class FieldsetContainer extends Component<FieldsetProps, FieldsetState> {
         nextValidState = 0;
       }
 
-      // @ts-expect-error TS(2339) FIXME: Property 'isCheckbox' does not exist on type 'Read... Remove this comment to see the full error message
       if (this.props.isCheckbox) {
         if (prevState.checked === false && nextValidState === 1) {
           isChecked = true;
@@ -279,8 +273,7 @@ class FieldsetContainer extends Component<FieldsetProps, FieldsetState> {
   };
 
   render() {
-    // @ts-expect-error TS(2339) FIXME: Property 'children' does not exist on type 'Readon... Remove this comment to see the full error message
-    const { children, className, isCheckbox, validStates, ...rest } =
+   const { children, className, isCheckbox, validStates, ...rest } =
       this.props;
     const valid = validStates[this.state.validState];
 
@@ -303,14 +296,13 @@ class FieldsetContainer extends Component<FieldsetProps, FieldsetState> {
         <BpkFieldset
           className={classNames}
           isCheckbox={isCheckbox}
+          // @ts-expect-error TS(2322) FIXME: Type '{ className: string; isCheckbox: boolean; la... Remove this comment to see the full error message
           valid={valid}
           {...rest}
           {...dynamicFieldsetProps}
         >
           {clonedChildren}
         </BpkFieldset>
-        // @ts-expect-error TS(2339): Property 'disabled' does not exist on type 'Readon... Remove this comment to see the full error message
-        // @ts-expect-error TS(2339) FIXME: Property 'disabled' does not exist on type 'Readon... Remove this comment to see the full error message
         {!this.props.disabled && (
           <div className={getClassName('bpk-fieldsets__toggle')}>
             <BpkButton onClick={this.toggleStates}>Toggle states</BpkButton>
@@ -322,8 +314,7 @@ class FieldsetContainer extends Component<FieldsetProps, FieldsetState> {
 }
 
 const InputExample = () => (
-  // @ts-expect-error TS(2741) FIXME: Property '$Exact' is missing in type '{ children: ... Remove this comment to see the full error message
-  <FieldsetContainer
+ <FieldsetContainer
     label="Name"
     validationMessage="Please enter your full name."
     validStates={[null, true, false]}
@@ -340,17 +331,13 @@ const InputExample = () => (
 );
 
 const SelectExample = () => (
-  // @ts-expect-error TS(2746) FIXME: This JSX tag's 'children' prop expects a single ch... Remove this comment to see the full error message
   <FieldsetContainer
     label="Cabin class"
     validationMessage="Please select a cabin class."
     validStates={[true, false]}
     description="The final price will be adjusted based on your selection"
   >
-    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-    // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-    <BpkSelect id="cabin_class_select" name="cabin_class" value="">
+   <BpkSelect id="cabin_class_select" name="cabin_class" value="">
       <option value="">Please select...</option>
       <option value="economy">Economy</option>
       <option value="premium_economy">Premium Economy</option>
@@ -361,7 +348,6 @@ const SelectExample = () => (
 );
 
 const CheckboxExample = () => (
-  // @ts-expect-error TS(2741) FIXME: Property '$Exact' is missing in type '{ children: ... Remove this comment to see the full error message
   <FieldsetContainer
     validationMessage="Please accept our terms & conditions to continue."
     validStates={[null, true, false]}
@@ -379,7 +365,6 @@ const CheckboxExample = () => (
 const DatepickerExample = () => {
   const inputProps = { placeholder: 'Select the 10th' };
   return (
-    // @ts-expect-error TS(2741) FIXME: Property '$Exact' is missing in type '{ children: ... Remove this comment to see the full error message
     <FieldsetContainer
       label="Date"
       validationMessage="Please select the 10th"
@@ -409,8 +394,7 @@ const DatepickerExample = () => {
 };
 
 const TextareaExample = () => (
-  // @ts-expect-error TS(2741) FIXME: Property '$Exact' is missing in type '{ children: ... Remove this comment to see the full error message
-  <FieldsetContainer
+ <FieldsetContainer
     label="Additional Information"
     validationMessage="Please enter any other details you may need."
     validStates={[true, false]}
@@ -430,7 +414,6 @@ const TextareaExample = () => (
 const AutosuggestExample = () => <Autosuggest />;
 
 const RequiredInputExample = () => (
-  // @ts-expect-error TS(2741) FIXME: Property '$Exact' is missing in type '{ children: ... Remove this comment to see the full error message
   <FieldsetContainer
     label="Name"
     validationMessage="Please enter your full name."
@@ -449,7 +432,6 @@ const RequiredInputExample = () => (
 );
 
 const RequiredSelectExample = () => (
-  // @ts-expect-error TS(2746) FIXME: This JSX tag's 'children' prop expects a single ch... Remove this comment to see the full error message
   <FieldsetContainer
     label="Cabin class"
     validationMessage="Please select a cabin class."
@@ -457,10 +439,7 @@ const RequiredSelectExample = () => (
     description="The final price will be adjusted based on your selection"
     required
   >
-    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-    // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-    <BpkSelect id="cabin_class_select" name="cabin_class" value="">
+   <BpkSelect id="cabin_class_select" name="cabin_class" value="">
       <option value="">Please select...</option>
       <option value="economy">Economy</option>
       <option value="premium_economy">Premium Economy</option>
@@ -471,8 +450,7 @@ const RequiredSelectExample = () => (
 );
 
 const RequiredCheckboxExample = () => (
-  // @ts-expect-error TS(2741) FIXME: Property '$Exact' is missing in type '{ children: ... Remove this comment to see the full error message
-  <FieldsetContainer
+ <FieldsetContainer
     validationMessage="Please accept our terms & conditions to continue."
     validStates={[false, true]}
     isCheckbox
@@ -488,8 +466,7 @@ const RequiredCheckboxExample = () => (
 );
 
 const DisabledInputExample = () => (
-  // @ts-expect-error TS(2741) FIXME: Property '$Exact' is missing in type '{ children: ... Remove this comment to see the full error message
-  <FieldsetContainer
+ <FieldsetContainer
     label="Name"
     validationMessage="Please enter your full name."
     validStates={[]}
@@ -506,16 +483,12 @@ const DisabledInputExample = () => (
 );
 
 const DisabledSelectExample = () => (
-  // @ts-expect-error TS(2746) FIXME: This JSX tag's 'children' prop expects a single ch... Remove this comment to see the full error message
-  <FieldsetContainer
+ <FieldsetContainer
     label="Cabin class"
     validationMessage="Please select a cabin class."
     validStates={[]}
     disabled
   >
-    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-    // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
     <BpkSelect id="cabin_class_select" name="cabin_class" value="">
       <option value="">Please select...</option>
       <option value="economy">Economy</option>
@@ -527,8 +500,7 @@ const DisabledSelectExample = () => (
 );
 
 const DisabledCheckboxExample = () => (
-  // @ts-expect-error TS(2741) FIXME: Property '$Exact' is missing in type '{ children: ... Remove this comment to see the full error message
-  <FieldsetContainer
+ <FieldsetContainer
     validationMessage="Please accept our terms & conditions to continue."
     validStates={[]}
     isCheckbox

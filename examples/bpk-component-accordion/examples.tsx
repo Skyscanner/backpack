@@ -49,13 +49,11 @@ const CheckboxWrapper = (props: any) => (
 const StopsContent = () => (
   <form>
     <CheckboxWrapper>
-      // @ts-expect-error TS(2322): Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
-      // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
+     {/* @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message */}
       <BpkCheckbox name="direct" label="Direct" onChange={() => null} checked />
     </CheckboxWrapper>
     <CheckboxWrapper>
-      // @ts-expect-error TS(2322): Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
-      // @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message
+       {/* @ts-expect-error TS(2322) FIXME: Type '{ name: string; label: string; onChange: () ... Remove this comment to see the full error message */}
       <BpkCheckbox name="1-stop" label="1 stop" onChange={() => null} checked />
     </CheckboxWrapper>
     <CheckboxWrapper>

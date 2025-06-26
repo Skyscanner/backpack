@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import BpkBadge, { BADGE_TYPES } from '../../packages/bpk-component-badge';
 import BpkSmallExclamationIcon from '../../packages/bpk-component-icon/sm/exclamation';

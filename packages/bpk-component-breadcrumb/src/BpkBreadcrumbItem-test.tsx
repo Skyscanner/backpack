@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import { render } from '@testing-library/react';
 
@@ -71,6 +71,7 @@ describe('BpkBreadcrumbItem', () => {
     const { asFragment } = render(
       <BpkBreadcrumbItem
         href="https://skyscanner.design/"
+        // @ts-expect-error TS(2322): Type '{ children: string; href: string; linkProps:... Remove this comment to see the full error message
         linkProps={{ testid: 'arbitrary value' }} // <-- arbitrary prop
       >
         Backpack

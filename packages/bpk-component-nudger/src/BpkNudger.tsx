@@ -28,7 +28,7 @@ import { cssModules, setNativeValue } from '../../bpk-react-utils';
 
 import { type CommonProps } from './common-types';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkNudger.module.scss' or it... Remove this comment to see the full error message
+
 import STYLES from './BpkNudger.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -90,9 +90,7 @@ const BpkNudger = ({
     <div className={containerClassNames}>
       {title && (
         <div className={getClassName('bpk-nudger__label')}>
-          // @ts-expect-error TS(2322): Type 'ReactNode' is not assignable to type 'string... Remove this comment to see the full error message
-          // @ts-expect-error TS(2322) FIXME: Type 'ReactNode' is not assignable to type 'string... Remove this comment to see the full error message
-          // @ts-expect-error TS(2322): Type 'ReactNode' is not assignable to type 'string... Remove this comment to see the full error message
+           {/* @ts-expect-error TS(2322): Type 'ReactNode' is not assignable to type 'string... Remove this comment to see the full error message */}
           <BpkLabel htmlFor={id}>{icon}</BpkLabel>
           <span
             // For a11y on IOS, role='text' forces label to be read in full. More info: https://axesslab.com/text-splitting/

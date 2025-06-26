@@ -22,10 +22,20 @@ import { Component } from 'react';
 import BpkSelect from '../../packages/bpk-component-select';
 import { action } from '../bpk-storybook-utils';
 
-class StatefulBpkSelect extends Component {
-  constructor() {
-    // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 0.
-    super();
+type StatefulBpkSelectProps = {
+  large?: boolean;
+  docked?: boolean;
+  dockedFirst?: boolean;
+  dockedMiddle?: boolean;
+  dockedLast?: boolean;
+  disabled?: boolean;
+  valid?: boolean;
+  [key: string]: any;
+};
+
+class StatefulBpkSelect extends Component<StatefulBpkSelectProps> {
+  constructor(props: StatefulBpkSelectProps) {
+    super(props);
     this.state = { value: 'oranges' };
   }
 
@@ -36,8 +46,7 @@ class StatefulBpkSelect extends Component {
 
   render() {
     return (
-      // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-      <BpkSelect
+       <BpkSelect
         id="destination"
         name="destination"
         // @ts-expect-error TS(2339) FIXME: Property 'value' does not exist on type 'Readonly<... Remove this comment to see the full error message
@@ -105,7 +114,6 @@ class SelectWithImage extends Component {
     // @ts-expect-error TS(2339) FIXME: Property 'options' does not exist on type 'Readonl... Remove this comment to see the full error message
     const { options, ...rest } = this.props;
     return (
-      // @ts-expect-error TS(2322) FIXME: Type '{ children: any; image: Element; onChange: (... Remove this comment to see the full error message
       <BpkSelect
         // @ts-expect-error TS(2339) FIXME: Property 'selected' does not exist on type 'Readon... Remove this comment to see the full error message
         value={this.getItem(this.state.selected).id}
@@ -131,7 +139,6 @@ SelectWithImage.propTypes = {
 
 const DefaultExample = () => <StatefulBpkSelect />;
 
-// @ts-expect-error TS(2322) FIXME: Type '{ valid: boolean; }' is not assignable to ty... Remove this comment to see the full error message
 const InvalidExample = () => <StatefulBpkSelect valid={false} />;
 
 const InvalidWithImageExample = () => (
@@ -144,29 +151,15 @@ const InvalidWithImageExample = () => (
   />
 );
 
-// @ts-expect-error TS(2322) FIXME: Type '{ disabled: true; }' is not assignable to ty... Remove this comment to see the full error message
 const DisabledExample = () => <StatefulBpkSelect disabled />;
 
-// @ts-expect-error TS(2322) FIXME: Type '{ large: true; }' is not assignable to type ... Remove this comment to see the full error message
 const LargeExample = () => <StatefulBpkSelect large />;
 
 const DockedExample = () => (
   <div style={{ display: 'flex' }}>
-    // @ts-expect-error TS(2304) FIXME: Cannot find name 'large'.
-    // @ts-expect-error TS(2322): Type '{ large: true; docked: true; }' is not assig... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ large: true; docked: true; }' is not assig... Remove this comment to see the full error message
     <StatefulBpkSelect large docked />
-    // @ts-expect-error TS(2304) FIXME: Cannot find name 'large'.
-    // @ts-expect-error TS(2322): Type '{ large: true; docked: true; }' is not assig... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ large: true; docked: true; }' is not assig... Remove this comment to see the full error message
     <StatefulBpkSelect large docked />
-    // @ts-expect-error TS(2304) FIXME: Cannot find name 'large'.
-    // @ts-expect-error TS(2322): Type '{ large: true; docked: true; }' is not assig... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ large: true; docked: true; }' is not assig... Remove this comment to see the full error message
-    <StatefulBpkSelect large docked />
-    // @ts-expect-error TS(2304) FIXME: Cannot find name 'large'.
-    // @ts-expect-error TS(2322): Type '{ large: true; docked: true; }' is not assig... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ large: true; docked: true; }' is not assig... Remove this comment to see the full error message
+   <StatefulBpkSelect large docked />
     <StatefulBpkSelect large docked />
   </div>
 );
@@ -211,27 +204,15 @@ const DockedWithImagesExample = () => (
 const ManuallyDockedExample = () => (
   <div style={{ display: 'flex' }}>
     <div style={{ width: '100%' }}>
-      // @ts-expect-error TS(2304) FIXME: Cannot find name 'large'.
-      // @ts-expect-error TS(2322): Type '{ large: true; dockedFirst: true; }' is not ... Remove this comment to see the full error message
-      // @ts-expect-error TS(2322) FIXME: Type '{ large: true; dockedFirst: true; }' is not ... Remove this comment to see the full error message
-      <StatefulBpkSelect large dockedFirst />
+     <StatefulBpkSelect large dockedFirst />
     </div>
     <div style={{ width: '100%' }}>
-      // @ts-expect-error TS(2304) FIXME: Cannot find name 'large'.
-      // @ts-expect-error TS(2322): Type '{ large: true; dockedMiddle: true; }' is not... Remove this comment to see the full error message
-      // @ts-expect-error TS(2322) FIXME: Type '{ large: true; dockedMiddle: true; }' is not... Remove this comment to see the full error message
       <StatefulBpkSelect large dockedMiddle />
     </div>
     <div style={{ width: '100%' }}>
-      // @ts-expect-error TS(2304) FIXME: Cannot find name 'large'.
-      // @ts-expect-error TS(2322): Type '{ large: true; dockedMiddle: true; }' is not... Remove this comment to see the full error message
-      // @ts-expect-error TS(2322) FIXME: Type '{ large: true; dockedMiddle: true; }' is not... Remove this comment to see the full error message
       <StatefulBpkSelect large dockedMiddle />
     </div>
     <div style={{ width: '100%' }}>
-      // @ts-expect-error TS(2304) FIXME: Cannot find name 'large'.
-      // @ts-expect-error TS(2322): Type '{ large: true; dockedLast: true; }' is not a... Remove this comment to see the full error message
-      // @ts-expect-error TS(2322) FIXME: Type '{ large: true; dockedLast: true; }' is not a... Remove this comment to see the full error message
       <StatefulBpkSelect large dockedLast />
     </div>
   </div>

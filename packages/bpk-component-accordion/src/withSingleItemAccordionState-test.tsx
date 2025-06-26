@@ -53,13 +53,9 @@ describe('withSingleItemAccordionState(BpkAccordion)', () => {
       /* eslint-disable react/no-unknown-property */
       <EnhancedComponent>
         <div>Accordion Item 1</div>
-        // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
+        <div
         // @ts-expect-error TS(2322): Type '{ children: string; initiallyExpanded: true;... Remove this comment to see the full error message
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
-        // @ts-expect-error TS(2322) FIXME: Type '{ children: string; initiallyExpanded: true;... Remove this comment to see the full error message
-        // @ts-expect-error TS(2322): Type '{ children: string; initiallyExpanded: true;... Remove this comment to see the full error message
-        <div initiallyExpanded>Accordion Item 2</div>
+        initiallyExpanded>Accordion Item 2</div>
         <div>Accordion Item 3</div>
       </EnhancedComponent>,
       /* eslint-enable react/no-unknown-property */
@@ -72,20 +68,12 @@ describe('withSingleItemAccordionState(BpkAccordion)', () => {
       /* eslint-disable react/no-unknown-property */
       <EnhancedComponent>
         <div>Accordion Item 1</div>
-        // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
+        <div
         // @ts-expect-error TS(2322): Type '{ children: string; initiallyExpanded: true;... Remove this comment to see the full error message
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
-        // @ts-expect-error TS(2322) FIXME: Type '{ children: string; initiallyExpanded: true;... Remove this comment to see the full error message
+        initiallyExpanded>Accordion Item 2</div>
+        <div
         // @ts-expect-error TS(2322): Type '{ children: string; initiallyExpanded: true;... Remove this comment to see the full error message
-        <div initiallyExpanded>Accordion Item 2</div>
-        // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
-        // @ts-expect-error TS(2322): Type '{ children: string; initiallyExpanded: true;... Remove this comment to see the full error message
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
-        // @ts-expect-error TS(2322) FIXME: Type '{ children: string; initiallyExpanded: true;... Remove this comment to see the full error message
-        // @ts-expect-error TS(2322): Type '{ children: string; initiallyExpanded: true;... Remove this comment to see the full error message
-        <div initiallyExpanded>Accordion Item 3</div>
+        initiallyExpanded>Accordion Item 3</div>
       </EnhancedComponent>,
       /* eslint-enable react/no-unknown-property */
     );

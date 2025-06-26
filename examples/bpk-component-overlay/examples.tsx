@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
 import PropTypes from 'prop-types';
 
 import BpkImage from '../../packages/bpk-component-image';

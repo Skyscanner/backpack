@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 // @ts-expect-error TS(2305): Module '"react"' has no exported member 'Node'.
@@ -29,7 +29,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { LatLongPropType, type LatLong } from './common-types';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkMap.module.scss' or its c... Remove this comment to see the full error message
+
 import STYLES from './BpkMap.module.scss';
 
 const getClassName = cssModules(STYLES);

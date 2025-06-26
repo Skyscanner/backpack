@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
 
 import BpkSkipLink, { type Props as BpkSkipLinkProps } from './src/BpkSkipLink';
 import themeAttributes from './src/themeAttributes';

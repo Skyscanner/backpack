@@ -19,7 +19,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { type Props, propTypes, defaultProps } from './common-types';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkButtonBase.module.scss' o... Remove this comment to see the full error message
+
 import COMMON_STYLES from './BpkButtonBase.module.scss';
 
 const getClassName = cssModules(COMMON_STYLES);

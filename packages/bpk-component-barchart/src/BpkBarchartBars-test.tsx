@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 // TODO: remove this once we update the Chart implementation to accept values
 // other than pixels
- 
+
 
 import { render, fireEvent, screen } from '@testing-library/react';
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'd3-s... Remove this comment to see the full error message
@@ -54,10 +54,10 @@ describe('BpkBarchartBars', () => {
         xScaleDataKey="month"
         yScaleDataKey="price"
         maxYValue={50}
-        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
-        width={size}
+       width={size}
         height={size}
         data={prices}
+        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
         getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
           `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
         }
@@ -76,10 +76,10 @@ describe('BpkBarchartBars', () => {
         xScaleDataKey="month"
         yScaleDataKey="price"
         maxYValue={50}
-        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
-        width={size}
+         width={size}
         height={size}
         data={prices}
+        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
         getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
           `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
         }
@@ -99,10 +99,10 @@ describe('BpkBarchartBars', () => {
         xScaleDataKey="month"
         yScaleDataKey="price"
         maxYValue={50}
-        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
         width={size}
         height={size}
         data={prices}
+        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
         getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
           `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
         }
@@ -122,15 +122,16 @@ describe('BpkBarchartBars', () => {
         xScaleDataKey="month"
         yScaleDataKey="price"
         maxYValue={50}
-        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
-        width={size}
+       width={size}
         height={size}
         data={prices}
+        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
         getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
           `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
         }
         BarComponent={BpkBarchartBar}
         padding={0}
+        // @ts-expect-error TS(2322): Type '{ month: string; price: number; }' is
         getBarSelection={(point) => point.month === 'Mar'}
       />,
     );
@@ -147,10 +148,10 @@ describe('BpkBarchartBars', () => {
         xScaleDataKey="month"
         yScaleDataKey="price"
         maxYValue={50}
-        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
         width={size}
         height={size}
         data={prices}
+        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
         getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
           `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
         }
@@ -175,10 +176,10 @@ describe('BpkBarchartBars', () => {
         xScaleDataKey="month"
         yScaleDataKey="price"
         maxYValue={50}
-        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
         width={size}
         height={size}
         data={prices}
+        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
         getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
           `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
         }
@@ -203,10 +204,10 @@ describe('BpkBarchartBars', () => {
         xScaleDataKey="month"
         yScaleDataKey="price"
         maxYValue={50}
-        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
         width={size}
         height={size}
         data={prices}
+        // @ts-expect-error TS(2322): Type '{ margin: { top: number; right: number; bott... Remove this comment to see the full error message
         getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
           `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
         }

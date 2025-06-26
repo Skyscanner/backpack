@@ -16,13 +16,12 @@
  * limitations under the License.
  */
 
-// @ts-expect-error TS(1208): 'intersection-observer.tsx' cannot be compiled und... Remove this comment to see the full error message
 if (typeof window === 'undefined') {
   // @ts-expect-error TS(2322): Type 'typeof IntersectionObserver' is not assignab... Remove this comment to see the full error message
   global.IntersectionObserver = class {
-    observe() {}  
+    observe() {}
 
-    unobserve() {}  
+    unobserve() {}
   };
 } else {
   require('intersection-observer'); /* eslint-disable-line global-require */

@@ -21,7 +21,7 @@ import { useState } from 'react';
 import SwapVertical from '../../bpk-component-icon/sm/swap--vertical';
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkSwapButton.module.scss' o... Remove this comment to see the full error message
+
 import STYLES from './BpkSwapButton.module.scss';
 
 const getClassName = cssModules(STYLES);

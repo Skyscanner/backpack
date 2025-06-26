@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 import { Component, Fragment } from 'react';
@@ -25,7 +25,7 @@ import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkBreadcrumb.module.scss' o... Remove this comment to see the full error message
+
 import STYLES from './BpkBreadcrumb.module.scss';
 
 const getClassName = cssModules(STYLES);

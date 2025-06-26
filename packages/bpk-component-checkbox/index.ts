@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import BpkCheckbox from './src/BpkCheckbox';
 import themeAttributes from './src/themeAttributes';

@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import PropTypes from 'prop-types';
 import { Component, createRef } from 'react';
@@ -45,6 +44,10 @@ type Props = {
   id: string,
   inputTrigger: boolean,
   displayArrow: boolean,
+  labelAsTitle?: boolean,
+  closeButtonIcon?: boolean,
+  actionText?: string,
+  onAction?: () => void,
 };
 
 type State = {
@@ -52,18 +55,20 @@ type State = {
 };
 
 class PopoverContainer extends Component<Props, State> {
+  ref: any;
+
   static propTypes = {
     id: PropTypes.string.isRequired,
     inputTrigger: PropTypes.bool,
     displayArrow: PropTypes.bool,
+    placement: PropTypes.string,
+    isOpen: PropTypes.bool,
   };
 
   static defaultProps = {
     inputTrigger: false,
     displayArrow: true,
   };
-
-  ref: any;
 
   constructor() {
     // @ts-expect-error TS(2554) FIXME: Expected 1-2 arguments, but got 0.
@@ -116,7 +121,6 @@ class PopoverContainer extends Component<Props, State> {
     } else {
       target = openButton;
     }
-
     return (
       <div id="popover-container">
         <BpkPopover
@@ -128,6 +132,8 @@ class PopoverContainer extends Component<Props, State> {
           onClose={this.closePopover}
           target={target}
           showArrow={displayArrow}
+          actionText={this.props.actionText}
+          onAction={this.props.onAction}
           {...rest}
         >
           <Paragraph>My popover content.</Paragraph>
@@ -135,8 +141,8 @@ class PopoverContainer extends Component<Props, State> {
         </BpkPopover>
       </div>
     );
-  }
-}
+  };
+};
 
 const Spacer = (props: { children: Node }) => (
   <div className={getClassName('bpk-popover-spacer')}>{props.children}</div>
@@ -151,19 +157,17 @@ const DefaultExample = () => (
 const WithCustomRenderTargetExample = () => (
   <Spacer>
     <div id="my-target" />
-    // @ts-expect-error TS(2304) FIXME: Cannot find name 'id'.
-    // @ts-expect-error TS(2322): Type '{ id: string; renderTarget: () => HTMLElemen... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; renderTarget: () => HTMLElemen... Remove this comment to see the full error message
-    <PopoverContainer id="my-popover-1" renderTarget={() => document.getElementById('my-target')} />
+    <PopoverContainer id="my-popover-1"
+    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; renderTarget: () => Element; }'... Remove this comment to see the full error message
+    renderTarget={() => document.getElementById('my-target')} />
   </Spacer>
 );
 
 const HoverExample = () => (
   <Spacer>
-    // @ts-expect-error TS(2304) FIXME: Cannot find name 'id'.
-    // @ts-expect-error TS(2322): Type '{ id: string; hoverable: true; }' is not ass... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; hoverable: true; }' is not ass... Remove this comment to see the full error message
-    <PopoverContainer id="my-popover-1" hoverable />
+   <PopoverContainer id="my-popover-1"
+    //  @ts-expect-error TS(2322) FIXME: Type '{ id: string; hoverable: true; }' is not
+   hoverable />
   </Spacer>
 );
 
@@ -175,27 +179,18 @@ const WithoutArrowExample = () => (
 
 const WithLabelAsTitleExample = () => (
   <Spacer>
-    // @ts-expect-error TS(2304) FIXME: Cannot find name 'id'.
-    // @ts-expect-error TS(2322): Type '{ id: string; labelAsTitle: true; }' is not ... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; labelAsTitle: true; }' is not ... Remove this comment to see the full error message
-    <PopoverContainer id="my-popover" labelAsTitle />
+   <PopoverContainer id="my-popover" labelAsTitle />
   </Spacer>
 );
 
 const WithNoCloseButtonIconExample = () => (
   <Spacer>
-    // @ts-expect-error TS(2304) FIXME: Cannot find name 'id'.
-    // @ts-expect-error TS(2322): Type '{ id: string; labelAsTitle: true; closeButto... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; labelAsTitle: true; closeButto... Remove this comment to see the full error message
-    <PopoverContainer id="my-popover" labelAsTitle closeButtonIcon={false} />
+   <PopoverContainer id="my-popover" labelAsTitle closeButtonIcon={false} />
   </Spacer>
 );
 
 const OnTheSideExample = () => (
   <Spacer>
-    // @ts-expect-error TS(2304) FIXME: Cannot find name 'id'.
-    // @ts-expect-error TS(2322): Type '{ id: string; placement: string; }' is not a... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; placement: string; }' is not a... Remove this comment to see the full error message
     <PopoverContainer id="my-popover" placement="right" />
   </Spacer>
 );
@@ -208,18 +203,12 @@ const InputTriggerExample = () => (
 
 const WithActionButtonExample = () => (
   <Spacer>
-    // @ts-expect-error TS(2304) FIXME: Cannot find name 'id'.
-    // @ts-expect-error TS(2322): Type '{ id: string; actionText: string; onAction: ... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; actionText: string; onAction: ... Remove this comment to see the full error message
     <PopoverContainer id="my-popover" actionText="Action" onAction={() => { }} />
   </Spacer>
 );
 
 const VisualExample = () => (
   <Spacer>
-    // @ts-expect-error TS(2304) FIXME: Cannot find name 'id'.
-    // @ts-expect-error TS(2322): Type '{ id: string; isOpen: true; }' is not assign... Remove this comment to see the full error message
-    // @ts-expect-error TS(2322) FIXME: Type '{ id: string; isOpen: true; }' is not assign... Remove this comment to see the full error message
     <PopoverContainer id="my-popover-1" isOpen />
   </Spacer>
 );

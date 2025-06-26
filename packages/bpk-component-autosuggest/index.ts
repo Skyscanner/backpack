@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import BpkAutosuggest from './src/BpkAutosuggest';
 import BpkAutosuggestSuggestion from './src/BpkAutosuggestSuggestion';

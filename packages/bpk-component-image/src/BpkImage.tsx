@@ -27,7 +27,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import BORDER_RADIUS_STYLES from './BpkImageBorderRadiusStyles';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkImage.module.scss' or its... Remove this comment to see the full error message
+
 import STYLES from './BpkImage.module.scss';
 
 const getClassName = cssModules(STYLES);

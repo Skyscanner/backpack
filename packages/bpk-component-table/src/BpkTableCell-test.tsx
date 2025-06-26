@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 /*
 Note: The tests here are wrapped in table > tr to avoid a validation

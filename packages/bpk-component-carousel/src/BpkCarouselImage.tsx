@@ -21,7 +21,7 @@ import { forwardRef } from "react";
 
 import { cssModules } from "../../bpk-react-utils";
 
-// @ts-expect-error TS(2307): Cannot find module './BpkCarouselImage.module.scss... Remove this comment to see the full error message
+
 import STYLES from "./BpkCarouselImage.module.scss"
 
 const getClassName = cssModules(STYLES);

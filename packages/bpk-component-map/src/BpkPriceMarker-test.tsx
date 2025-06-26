@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import { render } from '@testing-library/react';
 
@@ -99,6 +99,7 @@ describe('BpkMapMarker', () => {
       <BpkPriceMarker
         label="£120"
         position={position}
+        // @ts-expect-error
         buttonProps={{ testId: 'arbitrary value' }}
       />,
     );

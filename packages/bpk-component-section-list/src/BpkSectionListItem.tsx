@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 // @ts-expect-error TS(2305): Module '"react"' has no exported member 'Node'.
@@ -26,7 +26,7 @@ import { withRtlSupport } from '../../bpk-component-icon';
 import BpkLargeChevronRightIcon from '../../bpk-component-icon/lg/chevron-right';
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkSectionListItem.module.sc... Remove this comment to see the full error message
+
 import STYLES from './BpkSectionListItem.module.scss';
 
 const BpkLargeChevronRightIconWithRtlSupport = withRtlSupport(

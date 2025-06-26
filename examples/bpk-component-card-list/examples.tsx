@@ -88,9 +88,7 @@ const DestinationCard = (i: number) => (
         <div className={STYLES['bpk-destination__row']}>
           <BpkText textStyle={TEXT_STYLES.heading5}>Hotel</BpkText>
           <div className={STYLES['bpk-destination__column']}>
-            // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-            // @ts-expect-error TS(2322): Type '{ children: Element; tabIndex: number; href:... Remove this comment to see the full error message
-            // @ts-expect-error TS(2322) FIXME: Type '{ children: Element; tabIndex: number; href:... Remove this comment to see the full error message
+             {/* @ts-expect-error TS(2322) FIXME: Type '{ children: Element; tabIndex: number; href:... Remove this comment to see the full error message */}
             <BpkLink tabIndex={0} href="#">
               {/* A11y test for table objects inside a card */}
               <BpkText textStyle={TEXT_STYLES.heading5}>£100</BpkText>

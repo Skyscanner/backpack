@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import BpkStarRating, {
   BpkInteractiveStarRating,

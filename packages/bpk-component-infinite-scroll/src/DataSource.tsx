@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 class DataSource<T = any> {
   // @ts-expect-error TS(2304): Cannot find name 'mixed'.

@@ -26,7 +26,7 @@ import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import { BpkSpinner } from '../../bpk-component-spinner';
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkBackgroundImage.module.sc... Remove this comment to see the full error message
+
 import STYLES from './BpkBackgroundImage.module.scss';
 
 const getClassName = cssModules(STYLES);

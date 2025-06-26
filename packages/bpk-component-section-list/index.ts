@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import BpkSectionList from './src/BpkSectionList';
 import BpkSectionListItem from './src/BpkSectionListItem';

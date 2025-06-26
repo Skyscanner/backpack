@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import { render } from '@testing-library/react';
 
@@ -67,6 +67,7 @@ describe('BpkIconMarker', () => {
       <BpkIconMarker
         position={position}
         icon={icon}
+        // @ts-expect-error TS(2322): Type '{ position: { latitude: number; longitude: num... Remove this comment to see the full error message
         buttonProps={{ testId: 'arbitrary value' }}
       />,
     );

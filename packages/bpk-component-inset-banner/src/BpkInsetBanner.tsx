@@ -24,7 +24,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import type { Placement } from '@floating-ui/react';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkInsetBanner.module.scss' ... Remove this comment to see the full error message
+
 import STYLES from './BpkInsetBanner.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -128,7 +128,7 @@ const BpkInsetBanner = ({
               onClose={(e: {
                 stopPropagation: () => void;
                 preventDefault: () => void;
-              } | null) => {         
+              } | null) => {
                   e?.stopPropagation();
                   e?.preventDefault();
               }}

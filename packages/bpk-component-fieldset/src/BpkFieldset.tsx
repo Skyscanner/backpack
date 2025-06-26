@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 // @ts-expect-error TS(2724): '"react"' has no exported member named 'Element'. ... Remove this comment to see the full error message
@@ -26,7 +26,7 @@ import BpkFormValidation from '../../bpk-component-form-validation';
 import BpkLabel from '../../bpk-component-label';
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkFieldset.module.scss' or ... Remove this comment to see the full error message
+
 import STYLES from './BpkFieldset.module.scss';
 
 const getClassName = cssModules(STYLES);

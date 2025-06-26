@@ -22,7 +22,6 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import { ArrayDataSource } from './DataSource';
-// @ts-expect-error TS(1192): Module '"/Users/fayexiao/Documents/workspace4/back... Remove this comment to see the full error message
 import withInfiniteScroll from './withInfiniteScroll';
 
 describe('withInfiniteScroll accessibility tests', () => {

@@ -38,7 +38,7 @@ import {
   isTransitionEndSupported,
 } from './utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkCalendarGridTransition.mo... Remove this comment to see the full error message
+
 import STYLES from './BpkCalendarGridTransition.module.scss';
 
 const getClassName = cssModules(STYLES);

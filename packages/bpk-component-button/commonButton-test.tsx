@@ -42,7 +42,7 @@ describe.each([
   it('should render correctly', () => {
     // @ts-expect-error TS(2749): 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
     const { asFragment } = render(<ButtonToTest>My button</ButtonToTest>);
-    // @ts-expect-error TS(2554): Expected 1-2 arguments, but got 3.
+
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -65,7 +65,6 @@ describe.each([
   it('should render correctly with a "large" attribute', () => {
     // @ts-expect-error TS(2749): 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
     const { asFragment } = render(<ButtonToTest large>My button</ButtonToTest>);
-    // @ts-expect-error TS(2554): Expected 1-2 arguments, but got 3.
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -81,7 +80,6 @@ describe.each([
     const { asFragment } = render(
       // @ts-expect-error TS(2749): 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
       <ButtonToTest large className="custom-class-1 custom-class-2">
-        // @ts-expect-error TS(2304): Cannot find name 'My'.
         My button
       </ButtonToTest>,
     );
@@ -92,7 +90,6 @@ describe.each([
     const { asFragment } = render(
       // @ts-expect-error TS(2749): 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
       <ButtonToTest large className="">
-        // @ts-expect-error TS(2304): Cannot find name 'My'.
         My button
       </ButtonToTest>,
     );
@@ -103,7 +100,6 @@ describe.each([
     const { asFragment } = render(
       // @ts-expect-error TS(2749): 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
       <ButtonToTest href="#" blank>
-        // @ts-expect-error TS(2304): Cannot find name 'My'.
         My button
       </ButtonToTest>,
     );
@@ -114,7 +110,6 @@ describe.each([
     const { asFragment } = render(
       // @ts-expect-error TS(2749): 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
       <ButtonToTest href="#" rel="rel-attr">
-        // @ts-expect-error TS(2304): Cannot find name 'My'.
         My button
       </ButtonToTest>,
     );
@@ -125,7 +120,6 @@ describe.each([
     const { asFragment } = render(
       // @ts-expect-error TS(2749): 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
       <ButtonToTest href="#" blank rel="rel-overwrite">
-        // @ts-expect-error TS(2304): Cannot find name 'My'.
         My button
       </ButtonToTest>,
     );
@@ -136,7 +130,6 @@ describe.each([
     const { asFragment } = render(
       // @ts-expect-error TS(2749): 'ButtonToTest' refers to a value, but is being use... Remove this comment to see the full error message
       <ButtonToTest href="#" disabled>
-        // @ts-expect-error TS(2304): Cannot find name 'My'.
         My button
       </ButtonToTest>,
     );

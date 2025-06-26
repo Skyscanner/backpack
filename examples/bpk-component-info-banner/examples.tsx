@@ -94,12 +94,11 @@ class BpkInfoBannerDismissableState extends Component<Props, State> {
             Reset
           </BpkButtonPrimary>
         )}
-        // @ts-expect-error TS(2746) FIXME: This JSX tag's 'children' prop expects a single ch... Remove this comment to see the full error message
         <AriaLiveDemo
           visible
           className={getClassName('bpk-info-banner-examples__component')}
         >
-          // @ts-expect-error TS(2739): Type 'Element[]' is missing the following properti... Remove this comment to see the full error message
+          {/* @ts-expect-error TS(2739): Type 'Element[]' is missing the following properti... Remove this comment to see the full error message */}
           {this.state.updates.map((u) => (
             <>
               {u}
@@ -109,8 +108,8 @@ class BpkInfoBannerDismissableState extends Component<Props, State> {
         </AriaLiveDemo>
       </>
     );
-  }
-}
+  };
+};
 
 const BpkInfoBannerExpandableState = withBannerAlertState(
   BpkInfoBannerExpandable,

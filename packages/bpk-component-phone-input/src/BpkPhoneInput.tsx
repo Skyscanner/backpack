@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import PropTypes from 'prop-types';
 
 import BpkInput, { INPUT_TYPES } from '../../bpk-component-input';
@@ -25,7 +23,6 @@ import BpkLabel from '../../bpk-component-label';
 import BpkSelect from '../../bpk-component-select';
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkPhoneInput.module.scss' o... Remove this comment to see the full error message
 import STYLES from './BpkPhoneInput.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -52,21 +49,19 @@ export type Props = {
   dialingCodes: Array<{
     code: string,
     description: string,
-    numberPrefix: ?string,
+    numberPrefix: string | null | undefined,
   }>,
   id: string,
   name: string,
   label: string,
-  // @ts-expect-error TS(2304): Cannot find name 'SyntheticInputEvent'.
-  onChange: (SyntheticInputEvent<HTMLElement>) => mixed,
-  // @ts-expect-error TS(2304): Cannot find name 'SyntheticInputEvent'.
-  onDialingCodeChange: (SyntheticInputEvent<HTMLElement>) => mixed,
+  onChange: (event: React.ChangeEvent<HTMLElement>) => unknown,
+  onDialingCodeChange: (event: React.ChangeEvent<HTMLElement>) => unknown,
   value: string,
-  className: ?string,
+  className: string | null | undefined,
   disabled: boolean,
   dialingCodeMask: boolean,
   large: boolean,
-  valid: ?boolean,
+  valid: boolean | null | undefined,
   // @ts-expect-error TS(2693): 'string' only refers to a type, but is being used ... Remove this comment to see the full error message
   wrapperProps: { [string]: any },
 };
@@ -74,7 +69,7 @@ export type Props = {
 type CommonProps = {
   large: boolean,
   disabled: boolean,
-  valid: ?boolean,
+  valid: boolean | null | undefined,
 };
 
 const BpkPhoneInput = (props: Props) => {
@@ -165,12 +160,6 @@ const BpkPhoneInput = (props: Props) => {
           </BpkLabel>
         </div>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-        // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
-        // @ts-expect-error TS(2322): Type '{ children: Element[]; className: string; wr... Remove this comment to see the full error message
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
-        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; className: string; wr... Remove this comment to see the full error message
-        // @ts-expect-error TS(2322): Type '{ children: Element[]; className: string; wr... Remove this comment to see the full error message
         <BpkSelect
           {...commonProps}
           {...dialingCodeProps}

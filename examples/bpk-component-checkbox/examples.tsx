@@ -70,9 +70,7 @@ class StatefulCheckbox extends Component<Props, State> {
   render() {
     return (
       <div style={{ padding: '.25rem' }}>
-        // @ts-expect-error TS(2304) FIXME: Cannot find name 'isChecked'.
-        // @ts-expect-error TS(2322): Type '{ isChecked: boolean; id: string; name: stri... Remove this comment to see the full error message
-        // @ts-expect-error TS(2322) FIXME: Type '{ isChecked: boolean; id: string; name: stri... Remove this comment to see the full error message
+         {/* @ts-expect-error TS(2322) FIXME: Type '{ isChecked: boolean; id: string; name: stri... Remove this comment to see the full error message */}
         <BpkCheckbox
           className={undefined} checked={this.state.isChecked}
           onChange={this.handleChange}

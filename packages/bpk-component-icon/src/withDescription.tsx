@@ -20,7 +20,7 @@ import type { ComponentType } from 'react';
 
 import { cssModules, wrapDisplayName } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './withDescription.module.scss'... Remove this comment to see the full error message
+
 import STYLES from './withDescription.module.scss';
 
 const getClassName = cssModules(STYLES);

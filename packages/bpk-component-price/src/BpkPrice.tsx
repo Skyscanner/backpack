@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 // @ts-expect-error TS(2305): Module '"react"' has no exported member 'Node'.
@@ -26,7 +26,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { SIZES, ALIGNS } from './common-types';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkPrice.module.scss' or its... Remove this comment to see the full error message
+
 import STYLES from './BpkPrice.module.scss';
 
 type Props = {

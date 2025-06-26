@@ -21,7 +21,7 @@ import type { SyntheticEvent, FunctionComponent } from 'react';
 import CloseIcon from '../../bpk-component-icon/sm/close';
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkCloseButton.module.scss' ... Remove this comment to see the full error message
+
 import STYLES from './BpkCloseButton.module.scss';
 
 const getClassName = cssModules(STYLES);

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 
@@ -24,7 +24,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import BpkStar, { STAR_TYPES } from './BpkStar';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkStarRating.module.scss' o... Remove this comment to see the full error message
+
 import STYLES from './BpkStarRating.module.scss';
 
 const getClassName = cssModules(STYLES);

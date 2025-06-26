@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 // @ts-expect-error TS(2724): '"react"' has no exported member named 'Element'. ... Remove this comment to see the full error message
@@ -24,7 +24,7 @@ import { cloneElement } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkSelect.module.scss' or it... Remove this comment to see the full error message
+
 import STYLES from './BpkSelect.module.scss';
 
 const getClassName = cssModules(STYLES);

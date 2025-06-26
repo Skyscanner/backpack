@@ -16,12 +16,11 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import { Component, Fragment } from 'react';
 
 import { ArrayDataSource } from './DataSource';
-// @ts-expect-error TS(1192): Module '"/Users/fayexiao/Documents/workspace4/back... Remove this comment to see the full error message
 import withInfiniteScroll from './withInfiniteScroll';
 
 const elementsArray = [];
@@ -31,7 +30,7 @@ for (let i = 0; i < 5; i += 1) {
 }
 
 type ListProps = {
-  elements: Array<any>,
+  elements: any[],
   'aria-label': string,
   // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   onClick?: ?() => void,
@@ -49,9 +48,8 @@ class List extends Component<ListProps> {
     const { elements, ...rest } = this.props;
     return (
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-      // @ts-expect-error TS(2746): This JSX tag's 'children' prop expects a single ch... Remove this comment to see the full error message
       <div id="list" {...rest}>
-        // @ts-expect-error TS(2322): Type 'void' is not assignable to type 'ReactNode'.
+        {/*  @ts-expect-error TS(2322): Type 'void' is not assignable to type 'ReactNode'. */}
         {elements.forEach((element) => (
           <div key={element}>{element}</div>
         ))}

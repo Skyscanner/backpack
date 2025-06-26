@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 // TODO: remove this once we update the Chart implementation to accept values
 // other than pixels
- 
+
 
 import { render } from '@testing-library/react';
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'd3-s... Remove this comment to see the full error message

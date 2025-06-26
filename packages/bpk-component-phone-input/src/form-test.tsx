@@ -55,19 +55,13 @@ describe('BpkPhoneInput form test', () => {
       // state is required to force react to update and re-render the component.
       const [inputValue, setInputValue] = useState('');
       return (
-        // @ts-expect-error TS(2746): This JSX tag's 'children' prop expects a single ch... Remove this comment to see the full error message
         <form data-testid="form">
-          // @ts-expect-error TS(2365) FIXME: Operator '<' cannot be applied to types 'string' a... Remove this comment to see the full error message
-          // @ts-expect-error TS(2365): Operator '<' cannot be applied to types 'string' a... Remove this comment to see the full error message
-          // @ts-expect-error TS(2741): Property 'mixed' is missing in type '{ "data-testi... Remove this comment to see the full error message
           <BpkPhoneInput
-            // @ts-expect-error TS(2609) FIXME: JSX spread child must be an array type.
             {...defaultProps}
             data-testid="myInput"
             value={inputValue}
-            // @ts-expect-error TS(7006) FIXME: Parameter 'e' implicitly has an 'any' type.
-            // @ts-expect-error TS(7006): Parameter 'e' implicitly has an 'any' type.
-            onChange={(e) => setInputValue(e.target.value)}
+            // @ts-expect-error TS(2322): Type '{ type: string; name: string; data-testid: s... Remove this comment to see the full error message
+           onChange={(e) => setInputValue(e.target.value)}
           />
 
           <button type="submit">Submit</button>
@@ -99,19 +93,13 @@ describe('BpkPhoneInput form test', () => {
       // state is required to force react to update and re-render the component.
       const [inputValue, setInputValue] = useState('');
       return (
-        // @ts-expect-error TS(2746): This JSX tag's 'children' prop expects a single ch... Remove this comment to see the full error message
         <form data-testid="form">
-          // @ts-expect-error TS(2365) FIXME: Operator '<' cannot be applied to types 'string' a... Remove this comment to see the full error message
-          // @ts-expect-error TS(2365): Operator '<' cannot be applied to types 'string' a... Remove this comment to see the full error message
-          // @ts-expect-error TS(2741): Property 'mixed' is missing in type '{ "data-testi... Remove this comment to see the full error message
           <BpkPhoneInput
-            // @ts-expect-error TS(2609) FIXME: JSX spread child must be an array type.
             {...defaultProps}
             data-testid="myInput"
             value={inputValue}
-            // @ts-expect-error TS(7006) FIXME: Parameter 'e' implicitly has an 'any' type.
-            // @ts-expect-error TS(7006): Parameter 'e' implicitly has an 'any' type.
-            onChange={(e) => setInputValue(e.target.value)}
+            // @ts-expect-error TS(2322): Type '{ type: string; name: string; data-testid: s... Remove this comment to see the full error message
+             onChange={(e) => setInputValue(e.target.value)}
           />
 
           <button type="submit">Submit</button>

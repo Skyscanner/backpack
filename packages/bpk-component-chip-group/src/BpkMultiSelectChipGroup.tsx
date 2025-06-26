@@ -32,7 +32,7 @@ import { cssModules } from '../../bpk-react-utils';
 import BpkStickyChip from './BpkStickyChip';
 import Nudger, { POSITION } from './Nudger';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkChipGroup.module.scss' or... Remove this comment to see the full error message
+
 import STYLES from './BpkChipGroup.module.scss';
 
 const getClassName = cssModules(STYLES);

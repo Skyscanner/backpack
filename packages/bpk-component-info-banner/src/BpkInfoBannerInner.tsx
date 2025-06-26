@@ -46,7 +46,7 @@ import type {
   ExpandableBannerAction,
 } from './common-types';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkInfoBanner.module.scss' o... Remove this comment to see the full error message
+
 import STYLES from './BpkInfoBanner.module.scss';
 
 const getClassName = cssModules(STYLES);

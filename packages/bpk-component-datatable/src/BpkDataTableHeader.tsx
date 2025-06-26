@@ -25,7 +25,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { SORT_DIRECTION_TYPES } from './common-types';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkDataTableHeader.module.sc... Remove this comment to see the full error message
+
 import STYLES from './BpkDataTableHeader.module.scss';
 
 const DownIcon = withRtlSupport(BpkSmallArrowDownIcon);

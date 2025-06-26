@@ -33,7 +33,7 @@ import {
 
 import type CardListProps from './common-types';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkCardList.module.scss' or ... Remove this comment to see the full error message
+
 import STYLES from './BpkCardList.module.scss';
 
 const getClassName = cssModules(STYLES);

@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { render } from '@testing-library/react';
 
@@ -192,14 +191,7 @@ describe('BpkFieldset', () => {
 
   it('should render correctly with select component', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2746): This JSX tag's 'children' prop expects a single ch... Remove this comment to see the full error message
-      <BpkFieldset label="Fruits" validationMessage="Please select a fruit">
-        // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
-        // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
-        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-        // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
+     <BpkFieldset label="Fruits" validationMessage="Please select a fruit">
         <BpkSelect id="fruits_select" name="fruits" value="">
           <option value="">Please select...</option>
           <option value="apples">Apples</option>
@@ -216,18 +208,11 @@ describe('BpkFieldset', () => {
 
   it('should render correctly with select component and "required" attribute', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2746): This JSX tag's 'children' prop expects a single ch... Remove this comment to see the full error message
       <BpkFieldset
         label="Fruits"
         validationMessage="Please select a fruit"
         required
       >
-        // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
-        // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
-        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-        // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
         <BpkSelect id="fruits_select" name="fruits" value="">
           <option value="">Please select...</option>
           <option value="apples">Apples</option>
@@ -244,19 +229,12 @@ describe('BpkFieldset', () => {
 
   it('should render as disabled when select component is disabled and required', () => {
     const { asFragment } = render(
-      // @ts-expect-error TS(2746): This JSX tag's 'children' prop expects a single ch... Remove this comment to see the full error message
       <BpkFieldset
         label="Fruits"
         validationMessage="Please select a fruit"
         disabled
         required
       >
-        // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
-        // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-        // @ts-expect-error TS(2304): Cannot find name 'children'.
-        // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
-        // @ts-expect-error TS(2322): Type '{ children: Element[]; id: string; name: str... Remove this comment to see the full error message
         <BpkSelect id="fruits_select" name="fruits" value="">
           <option value="">Please select...</option>
           <option value="apples">Apples</option>

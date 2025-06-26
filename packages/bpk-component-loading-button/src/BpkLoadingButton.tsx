@@ -30,7 +30,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import type { Props as ButtonProps } from '../../bpk-component-button/src/BpkButtonV2/common-types';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkLoadingButton.module.scss... Remove this comment to see the full error message
+
 import STYLES from './BpkLoadingButton.module.scss';
 
 const getClassName = cssModules(STYLES);

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import BpkLoadingButton, { ICON_POSITION } from './src/BpkLoadingButton';
 

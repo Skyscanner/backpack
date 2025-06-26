@@ -34,7 +34,7 @@ import { getMonthsArray, getMonthItemHeights } from './utils';
 
 import type { BpkCalendarGridProps, SelectionConfiguration } from '../../bpk-component-calendar';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkScrollableCalendarGridLis... Remove this comment to see the full error message
+
 import STYLES from './BpkScrollableCalendarGridList.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -82,7 +82,7 @@ const BpkScrollableCalendarGridList = (props: Props) => {
   // Row and month item heights are defined in rem to support text scaling
   const rowHeight = customRowHeight;
   // Most calendar grids have 5 rows. Calculate height in px as this is what react-window expects.
-  const estimatedMonthItemHeight = 
+  const estimatedMonthItemHeight =
     (BASE_MONTH_ITEM_HEIGHT + 5 * rowHeight) * DEFAULT_ROOT_FONT_SIZE;
 
   const getInitialRootFontSize = () =>

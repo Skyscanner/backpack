@@ -55,14 +55,11 @@ const Separator = () => (
 const DefaultExample = () => (
   // @ts-expect-error TS(2740) FIXME: Type '{ children: (string | Element)[]; }' is miss... Remove this comment to see the full error message
   <BpkHorizontalNav>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+    {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem selected>Hotels</BpkHorizontalNavItem>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+    {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
   </BpkHorizontalNav>
 );
@@ -75,18 +72,13 @@ const ScrollToSelectedExample = () => (
     <div
       className={getClassName('bpk-horizontal-nav-stories__narrow-container')}
     >
-      // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-      // @ts-expect-error TS(2740): Type '{ children: Element[]; autoScrollToSelected:... Remove this comment to see the full error message
-      // @ts-expect-error TS(2740) FIXME: Type '{ children: (string | Element)[]; autoScroll... Remove this comment to see the full error message
+       {/* @ts-expect-error TS(2740) FIXME: Type '{ children: (string | Element)[]; autoScroll... Remove this comment to see the full error message */}
       <BpkHorizontalNav autoScrollToSelected>
-        // @ts-expect-error TS(2769): No overload matches this call.
-        // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+         {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
         <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
-        // @ts-expect-error TS(2769): No overload matches this call.
-        // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+        {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
         <BpkHorizontalNavItem>Hotels</BpkHorizontalNavItem>
-        // @ts-expect-error TS(2769): No overload matches this call.
-        // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+         {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
         <BpkHorizontalNavItem selected>Car hire</BpkHorizontalNavItem>
       </BpkHorizontalNav>
     </div>
@@ -96,32 +88,24 @@ const ScrollToSelectedExample = () => (
 const NotUnderlinedExample = () => (
   // @ts-expect-error TS(2740) FIXME: Type '{ children: (string | Element)[]; showUnderl... Remove this comment to see the full error message
   <BpkHorizontalNav showUnderline={false}>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem selected>Hotels</BpkHorizontalNavItem>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
   </BpkHorizontalNav>
 );
 
 const LightAppearanceExample = () => (
   <BpkDarkExampleWrapper>
-    // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-    // @ts-expect-error TS(2740): Type '{ children: Element[]; type: string; }' is m... Remove this comment to see the full error message
-    // @ts-expect-error TS(2740) FIXME: Type '{ children: (string | Element)[]; type: stri... Remove this comment to see the full error message
-    <BpkHorizontalNav type={HORIZONTAL_NAV_TYPES.light}>
-      // @ts-expect-error TS(2769): No overload matches this call.
-      // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+    {/* @ts-expect-error TS(2740) FIXME: Type '{ children: (string | Element)[]; type: HORIZ... Remove this comment to see the full error message */}
+   <BpkHorizontalNav type={HORIZONTAL_NAV_TYPES.light}>
+       {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
       <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
-      // @ts-expect-error TS(2769): No overload matches this call.
-      // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+       {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
       <BpkHorizontalNavItem selected>Hotels</BpkHorizontalNavItem>
-      // @ts-expect-error TS(2769): No overload matches this call.
-      // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+       {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
       <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
     </BpkHorizontalNav>
   </BpkDarkExampleWrapper>
@@ -138,14 +122,11 @@ const UsingCustomScrollColorsExample = () => (
       'bpk-horizontal-nav-custom-scrollers--trailing',
     )}
   >
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem selected>Hotels</BpkHorizontalNavItem>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
   </BpkHorizontalNav>
 );
@@ -153,16 +134,13 @@ const UsingCustomScrollColorsExample = () => (
 const AnchorTagsExample = () => (
   // @ts-expect-error TS(2740) FIXME: Type '{ children: (string | Element)[]; }' is miss... Remove this comment to see the full error message
   <BpkHorizontalNav>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem href="#">Flights</BpkHorizontalNavItem>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem selected href="#">
       Hotels
     </BpkHorizontalNavItem>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem href="#">Car hire</BpkHorizontalNavItem>
   </BpkHorizontalNav>
 );
@@ -170,19 +148,16 @@ const AnchorTagsExample = () => (
 const ExtremeExample = () => (
   // @ts-expect-error TS(2740) FIXME: Type '{ children: (string | Element)[]; }' is miss... Remove this comment to see the full error message
   <BpkHorizontalNav>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+    {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem selected>
       Flights Flights Flights Flights Flights Flights Flights Flights Flights
       Flights Flights Flights Flights Flights Flights Flights
     </BpkHorizontalNavItem>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+    {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem>
       HotelsHotelsHotelsHotelsHotelsHotels
     </BpkHorizontalNavItem>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
   </BpkHorizontalNav>
 );
@@ -190,14 +165,11 @@ const ExtremeExample = () => (
 const SpacedAroundExample = () => (
   // @ts-expect-error TS(2740) FIXME: Type '{ children: (string | Element)[]; }' is miss... Remove this comment to see the full error message
   <BpkHorizontalNav>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem spaceAround>Flights</BpkHorizontalNavItem>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem spaceAround>Hotels</BpkHorizontalNavItem>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem spaceAround selected>
       Car hire
     </BpkHorizontalNavItem>
@@ -207,14 +179,11 @@ const SpacedAroundExample = () => (
 const DisabledItemExample = () => (
   // @ts-expect-error TS(2740) FIXME: Type '{ children: (string | Element)[]; }' is miss... Remove this comment to see the full error message
   <BpkHorizontalNav>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem>Hotels</BpkHorizontalNavItem>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem disabled>Car hire</BpkHorizontalNavItem>
   </BpkHorizontalNav>
 );
@@ -222,16 +191,13 @@ const DisabledItemExample = () => (
 const SeparatorsExample = () => (
   // @ts-expect-error TS(2740) FIXME: Type '{ children: (string | Element)[]; }' is miss... Remove this comment to see the full error message
   <BpkHorizontalNav>
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+   {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem selected>Flights</BpkHorizontalNavItem>
     <Separator />
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem>Hotels</BpkHorizontalNavItem>
     <Separator />
-    // @ts-expect-error TS(2769): No overload matches this call.
-    // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+     {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
     <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
   </BpkHorizontalNav>
 );

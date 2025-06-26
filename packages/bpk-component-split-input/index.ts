@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
 
 import BpkSplitInput, {
   // @ts-expect-error TS(2614): Module '"./src/BpkSplitInput"' has no exported mem... Remove this comment to see the full error message

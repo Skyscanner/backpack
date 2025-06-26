@@ -27,7 +27,7 @@ import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import BpkAnimateHeight from '../../bpk-animate-height';
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkAnimateAndFade.module.scs... Remove this comment to see the full error message
+
 import STYLES from './BpkAnimateAndFade.module.scss';
 
 const getClassName = cssModules(STYLES);

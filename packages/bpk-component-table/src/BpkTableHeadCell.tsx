@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 // @ts-expect-error TS(2305): Module '"react"' has no exported member 'Node'.
@@ -24,7 +24,6 @@ import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkTable.module.scss' or its... Remove this comment to see the full error message
 import STYLES from './BpkTable.module.scss';
 
 const getClassName = cssModules(STYLES);

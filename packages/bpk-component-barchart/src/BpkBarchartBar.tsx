@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import PropTypes from 'prop-types';
 
 import { borderRadiusXs } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
@@ -26,7 +24,6 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { remToPx } from './utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkBarchartBar.module.scss' ... Remove this comment to see the full error message
 import STYLES from './BpkBarchartBar.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -52,13 +49,10 @@ type Props = {
   width: number,
   x: number,
   y: number,
-  className: ?string,
-  // @ts-expect-error TS(7008): Member 'mixed' implicitly has an 'any' type.
-  onClick: ?(?any) => mixed,
-  // @ts-expect-error TS(2304): Cannot find name 'mixed'.
-  onHover: ?() => mixed,
-  // @ts-expect-error TS(2304): Cannot find name 'mixed'.
-  onFocus: ?() => mixed,
+  className?: string | null,
+  onClick?: ((event?: any) => any) | null,
+  onHover?: (() => any) | null,
+  onFocus?: (() => any) | null,
   outlier: boolean,
   padding: number,
   selected: boolean,

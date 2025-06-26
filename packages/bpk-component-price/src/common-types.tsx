@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 export const SIZES = {
   xsmall: 'xsmall',

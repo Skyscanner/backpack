@@ -25,7 +25,7 @@ import BpkNavigationBar from "../../bpk-component-navigation-bar";
 import { TEXT_STYLES } from "../../bpk-component-text/src/BpkText";
 import { BpkDialogWrapper, cssModules } from "../../bpk-react-utils";
 
-// @ts-expect-error TS(2307): Cannot find module './BpkBottomSheet.module.scss' ... Remove this comment to see the full error message
+
 import STYLES from './BpkBottomSheet.module.scss';
 
 const getClassName = cssModules(STYLES);

@@ -31,7 +31,7 @@ import { CHIP_TYPES } from './commonTypes';
 
 import type { CommonProps as Props } from './commonTypes';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkSelectableChip.module.scs... Remove this comment to see the full error message
+
 import STYLES from './BpkSelectableChip.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -52,7 +52,7 @@ const BpkDismissibleChip = ({
       leadingAccessoryView={leadingAccessoryView}
       disabled={false}
       dismissible
-      trailingAccessoryView={<CloseCircleIconSm 
+      trailingAccessoryView={<CloseCircleIconSm
         fill={
           type === CHIP_TYPES.default || type === CHIP_TYPES.onImage
             ? chipColors.privateChipOnDarkOnDismissIconNight

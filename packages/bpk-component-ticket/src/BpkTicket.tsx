@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 /* eslint-disable valid-jsdoc */
 
 import PropTypes from 'prop-types';
@@ -25,7 +25,6 @@ import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkTicket.module.scss' or it... Remove this comment to see the full error message
 import STYLES from './BpkTicket.module.scss';
 
 const getClassName = cssModules(STYLES);

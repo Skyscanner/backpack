@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
 
 import BpkDarkExampleWrapper from './src/BpkDarkExampleWrapper';
 import { action } from './src/BpkStorybookUtils';

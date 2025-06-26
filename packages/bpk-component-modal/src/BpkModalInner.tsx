@@ -25,7 +25,7 @@ import BpkNavigationBar, {
 } from '../../bpk-component-navigation-bar';
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkModalInner.module.scss' o... Remove this comment to see the full error message
+
 import STYLES from './BpkModalInner.module.scss';
 
 const getClassName = cssModules(STYLES);

@@ -25,7 +25,7 @@ import { cssModules, isRTL } from '../../bpk-react-utils';
 
 import type { DebouncedFunc } from 'lodash';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkMobileScrollContainer.mod... Remove this comment to see the full error message
+
 import STYLES from './BpkMobileScrollContainer.module.scss';
 
 const getClassName = cssModules(STYLES);

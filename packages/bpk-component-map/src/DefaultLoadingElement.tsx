@@ -15,12 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
 
 import { BpkLargeSpinner, SPINNER_TYPES } from '../../bpk-component-spinner';
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './DefaultLoadingElement.module... Remove this comment to see the full error message
+
 import STYLES from './DefaultLoadingElement.module.scss';
 
 const getClassName = cssModules(STYLES);

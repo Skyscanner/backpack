@@ -56,9 +56,7 @@ class FormValidationContainer extends Component {
         <div style={{ textAlign: 'center' }}>
           <BpkButton onClick={this.toggleExpanded}>Toggle</BpkButton>
         </div>
-        // @ts-expect-error TS(2304) FIXME: Cannot find name 'expanded'.
-        // @ts-expect-error TS(2739): Type '{ expanded: any; }' is missing the following... Remove this comment to see the full error message
-        // @ts-expect-error TS(2739) FIXME: Type '{ expanded: any; }' is missing the following... Remove this comment to see the full error message
+         {/* @ts-expect-error TS(2739) FIXME: Type '{ expanded: any; }' is missing the following... Remove this comment to see the full error message */}
         <BpkFormValidation expanded={this.state.expanded} {...this.props} />
       </div>
     );
@@ -133,9 +131,7 @@ const FormsExample = () => (
       </BpkFormValidation>
     </form>
     <form className={formClassName}>
-      // @ts-expect-error TS(2304) FIXME: Cannot find name 'children'.
-      // @ts-expect-error TS(2322): Type '{ children: Element[]; FormComponent: { (pro... Remove this comment to see the full error message
-      // @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; FormComponent: { (pro... Remove this comment to see the full error message
+       {/* @ts-expect-error TS(2322) FIXME: Type '{ children: Element[]; FormComponent: { (pro... Remove this comment to see the full error message */}
       <InputContainer
         FormComponent={BpkSelect}
         id="select_invalid"

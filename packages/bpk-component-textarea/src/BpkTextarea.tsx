@@ -16,13 +16,12 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
 
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkTextarea.module.scss' or ... Remove this comment to see the full error message
 import STYLES from './BpkTextarea.module.scss';
 
 const getClassName = cssModules(STYLES);

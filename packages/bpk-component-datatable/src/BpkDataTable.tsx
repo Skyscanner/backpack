@@ -28,7 +28,7 @@ import BpkDataTableHeader from './BpkDataTableHeader';
 import { type BpkDataTableProps, SORT_DIRECTION_TYPES } from './common-types';
 import { createColumnsSchema } from './utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkDataTable.module.scss' or... Remove this comment to see the full error message
+
 import STYLES from './BpkDataTable.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -158,9 +158,9 @@ const BpkDataTable = (props: BpkDataTableProps) => {
               className: headerClassNames,
             })}
           >
-            {headerGroup.headers.map((column: any) => { 
+            {headerGroup.headers.map((column: any) => {
               // if consumer passes a custom sort function for a specific column (using sortBy to specify the column id),
-              // we need to pass them to react-table by setting the sortType and sortDirection properties on the column              
+              // we need to pass them to react-table by setting the sortType and sortDirection properties on the column
               if (sort && sortBy) {
                 if (column.id === sortBy) {
                   if (typeof sort === 'function') {
@@ -195,7 +195,7 @@ const BpkDataTable = (props: BpkDataTableProps) => {
                 className: getRowClassNames(i, rowClassName),
               })}
             >
-              {row.cells.map((cell: {[key: string]: any}) => {                
+              {row.cells.map((cell: {[key: string]: any}) => {
                 if (cell.column.className) {
                   cellClassNames.push(cell.column.className);
                 }

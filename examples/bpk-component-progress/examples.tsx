@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import { Component } from 'react';
 
@@ -59,8 +59,7 @@ class ProgressContainer extends Component<{}, { progress: number }> {
         &nbsp;
         <div className={getClassName('bpkdocs-progress-container__flex-grow')}>
           {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-          // @ts-expect-error TS(2769): No overload matches this call.
-          // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+          {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
           <BpkProgress min={0} max={100} value={progress} {...this.props} />
         </div>
       </div>
@@ -88,8 +87,7 @@ class SteppedProgressContainer extends Component<{}, { progress: number }> {
     return (
       <div>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-        // @ts-expect-error TS(2769): No overload matches this call.
-        // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+         {/* @ts-expect-error TS(2769) FIXME: No overload matches this call. */}
         <BpkProgress
           min={0}
           max={5}

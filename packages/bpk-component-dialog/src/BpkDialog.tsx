@@ -24,7 +24,7 @@ import { HEADER_ICON_TYPES } from './common-types';
 
 import type { Props } from './common-types';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkDialog.module.scss' or it... Remove this comment to see the full error message
+
 import STYLES from './BpkDialog.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -72,9 +72,7 @@ const BpkDialog = ({
         {headerIcon && <div className={headerIconClassNames}>{headerIcon}</div>}
         {dismissible && (
           <span className={closeButtonClassNames}>
-            // @ts-expect-error TS(2322): Type '((event?: TouchEvent | MouseEvent | Keyboard... Remove this comment to see the full error message
-            // @ts-expect-error TS(2322) FIXME: Type '((event?: TouchEvent | MouseEvent | Keyboard... Remove this comment to see the full error message
-            // @ts-expect-error TS(2322): Type '((event?: TouchEvent | MouseEvent | Keyboard... Remove this comment to see the full error message
+            {/* @ts-expect-error TS(2322): Type '((event?: TouchEvent | MouseEvent | Keyboard... Remove this comment to see the full error message */}
             <BpkCloseButton label={closeLabel} onClick={onClose} />
           </span>
         )}

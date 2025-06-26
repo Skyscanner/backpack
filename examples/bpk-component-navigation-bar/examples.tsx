@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import { withRtlSupport } from '../../packages/bpk-component-icon';
 import CloseIcon from '../../packages/bpk-component-icon/sm/close';

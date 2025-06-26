@@ -52,7 +52,7 @@ import { ARROW_ID } from './constants';
 
 import type { Placement } from '@floating-ui/react';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkPopover.module.scss' or i... Remove this comment to see the full error message
+
 import STYLES from './BpkPopover.module.scss';
 
 const getClassName = cssModules(STYLES);

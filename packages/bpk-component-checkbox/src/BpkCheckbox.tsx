@@ -20,7 +20,7 @@ import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error TS(2307): Cannot find module './BpkCheckbox.module.scss' or ... Remove this comment to see the full error message
+
 import STYLES from './BpkCheckbox.module.scss';
 
 const getClassName = cssModules(STYLES);
