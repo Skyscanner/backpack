@@ -118,7 +118,6 @@ export default () => (
         <AlignedRtlSupportedBpkSmallFlightIcon /> See more
       </span>
     }
-    buttonHref="https://www.skyscanner.net"
     cardList={[
       <div key="1">Card 1</div>,
       <div key="2">Card 2</div>,
@@ -173,9 +172,9 @@ export default () => (
 
 ---
 
-#### 5. How to render `<button>` instead of `<a>` for the button
+#### 5. How to render `<a>` instead of `<button>` for the button
 
-By setting `buttonHref` to `undefined`, you can force the button to render as a `<button>` element instead of an `<a>`.
+By setting `buttonHref`, you can force the button to render as a `<a>` element instead of an `<button>`. It is passed into BpkButtonV2
 
 ##### Example:
 
@@ -189,7 +188,7 @@ export default () => (
     title="We think you’ll like"
     description="Check out these destinations for a spring getaway"
     buttonContent="Click me"
-    buttonHref={undefined} // Force rendering as <button>
+    buttonHref="https://www.skyscanner.net" // without this, it's a <button>
     cardList={[
       <div key="1">Card 1</div>,
       <div key="2">Card 2</div>,
