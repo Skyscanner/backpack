@@ -44,7 +44,7 @@ const BpkNavigationBarButtonLink = ({
         ...rest
       }
     >
-      // @ts-expect-error TS(2322): Type 'ReactNode' is not assignable to type 'string... Remove this comment to see the full error message
+       {/* @ts-expect-error TS(2322): Type 'ReactNode' is not assignable to type 'string... Remove this comment to see the full error message */}
       {children}
     </BpkButtonLink>
   </span>

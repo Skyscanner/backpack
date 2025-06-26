@@ -118,7 +118,7 @@ const getSuggestionValue = (suggestion: any) => `${suggestion.name} (${suggestio
 
 type State = {
   value: string,
-  suggestions: Array<any>,
+  suggestions: any[],
 };
 
 type Props = {

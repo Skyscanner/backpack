@@ -46,8 +46,7 @@ export type MapRef = ?{
   getBounds: () => Bounds,
   getCenter: () => LatLong,
   getZoom: () => number,
-  // @ts-expect-error TS(7051): Parameter has a name but no type. Did you mean 'ar... Remove this comment to see the full error message
-  fitBounds: (Bounds) => void,
+  fitBounds: (bounds: Bounds) => void,
 };
 
 type MapOptionStyle = {
@@ -79,9 +78,9 @@ type Props = {
   // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   children: ?Node,
   // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
-  mapRef: ?(MapRef) => mixed,
+  mapRef: ?(mapRefType: MapRef) => mixed,
   // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
-  onRegionChange: ?(Bounds, LatLong) => mixed,
+  onRegionChange: ?((bounds: Bounds, center: LatLong) => mixed),
   // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   onZoom: ?(number) => mixed,
   // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
@@ -89,7 +88,7 @@ type Props = {
   // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   className: ?string,
   // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
-  mapOptionStyles: ?Array<MapOptionStyle>,
+  mapOptionStyles: ?MapOptionStyle[],
 };
 
 const BpkMap = (props: Props) => {

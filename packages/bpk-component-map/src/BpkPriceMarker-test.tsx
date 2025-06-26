@@ -25,7 +25,7 @@ import BpkPriceMarker, { PRICE_MARKER_STATUSES } from './BpkPriceMarker';
 jest.mock('@react-google-maps/api', () => ({
   OverlayView: (props: any) => <div>
     <div className="mock-overlay-view" />
-    {/* eslint-disable-next-line react/prop-types */}
+    { }
     {props.children}
   </div>,
 }));

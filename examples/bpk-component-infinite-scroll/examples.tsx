@@ -84,7 +84,7 @@ class DelayedDataSource extends ArrayDataSource {
 }
 
 class InfiniteDataSource extends DataSource {
-  elements: Array<any>;
+  elements: any[];
 
   constructor() {
     super();

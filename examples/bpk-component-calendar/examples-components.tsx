@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* eslint-disable react/prop-types */
+ 
 
 import PropTypes from 'prop-types';
 import { Component } from 'react';

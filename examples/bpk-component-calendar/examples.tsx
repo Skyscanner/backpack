@@ -43,7 +43,7 @@ import {
   weekDays,
 } from './test-utils';
 
-/* eslint-disable-next-line react/prop-types */
+ 
 const DummyDateComponent = ({
   date
 }: any) => <div>{date.toString()}</div>;

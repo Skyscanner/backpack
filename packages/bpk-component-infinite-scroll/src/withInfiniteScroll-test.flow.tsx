@@ -91,9 +91,9 @@ const InfiniteList = withInfiniteScroll(List);
       initiallyLoadedElements={1}
       loaderIntersectionTrigger="small"
       // @ts-expect-error TS(7006): Parameter 'evt' implicitly has an 'any' type.
-      onScroll={(evt) => {}} // eslint-disable-line no-unused-vars
+      onScroll={(evt) => {}}  
       // @ts-expect-error TS(7006): Parameter 'evt' implicitly has an 'any' type.
-      onScrollFinished={(evt) => {}} // eslint-disable-line no-unused-vars
+      onScrollFinished={(evt) => {}}  
       renderLoadingComponent={() => <div />}
       // @ts-expect-error TS(7006): Parameter 'onClick' implicitly has an 'any' type.
       renderSeeMoreComponent={(onClick) => (

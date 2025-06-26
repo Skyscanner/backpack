@@ -38,11 +38,10 @@ const BpkBasicMapMarker = (props: Props) => {
   return (
     <BpkOverlayView
       position={position}
-      // @ts-expect-error TS(2322): Type '{ children: ReactNode[]; position: LatLong; ... Remove this comment to see the full error message
       getPixelPositionOffset={getPixelPositionOffset}
       {...rest}
     >
-      // @ts-expect-error TS(2322): Type 'ReactNode' is not assignable to type 'string... Remove this comment to see the full error message
+       {/* @ts-expect-error TS(2322): Type 'ReactNode' is not assignable to type 'string... Remove this comment to see the full error message */}
       {children}
     </BpkOverlayView>
   );

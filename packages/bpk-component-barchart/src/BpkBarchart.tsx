@@ -57,7 +57,7 @@ const spacing = remToPx('.375rem');
 const lineHeight = remToPx(lineHeightSm);
 
 const getMaxYValue = (
-  dataPoints: Array<number>,
+  dataPoints: number[],
   // @ts-expect-error TS(8020): JSDoc types can only be used inside documentation ... Remove this comment to see the full error message
   outlierPercentage: ?number,
 ) => {
@@ -70,7 +70,7 @@ const getMaxYValue = (
 };
 
 type Props = {
-  data: Array<any>, // We pass any here as the array can contain free form data depending on the user
+  data: any[], // We pass any here as the array can contain free form data depending on the user
   xScaleDataKey: string,
   yScaleDataKey: string,
   xAxisLabel: string,

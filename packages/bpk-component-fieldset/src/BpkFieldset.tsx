@@ -127,14 +127,13 @@ const BpkFieldset = (props: Props) => {
       {!isCheckbox && (
         <div className={getClassName('bpk-fieldset__label')}>
           <BpkLabel
-            // @ts-expect-error TS(2322): Type '{ children: (string | null)[]; htmlFor: stri... Remove this comment to see the full error message
-            htmlFor={childId}
+           htmlFor={childId}
             required={required}
             disabled={disabled}
             valid={isValid}
           >
             {/* $FlowIgnore[incompatible-type] - As this prop is only required when isCheckbox is false our labelPropType handles checking this is null or not. */}
-            // @ts-expect-error TS(2322): Type 'string | null' is not assignable to type 'st... Remove this comment to see the full error message
+             {/* @ts-expect-error TS(2322): Type 'string | null' is not assignable to type 'st... Remove this comment to see the full error message */}
             {label}
           </BpkLabel>
         </div>

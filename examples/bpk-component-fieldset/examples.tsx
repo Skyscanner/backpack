@@ -124,7 +124,7 @@ let instances = 0;
 
 type AutosuggestState = {
   value: string,
-  suggestions: Array<any>,
+  suggestions: any[],
 };
 
 class Autosuggest extends Component<{}, AutosuggestState> {

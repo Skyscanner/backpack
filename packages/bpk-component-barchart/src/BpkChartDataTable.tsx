@@ -30,7 +30,7 @@ import STYLES from './BpkChartDataTable.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  data: Array<any>, // We pass any here as the array can contain free form data depending on the user
+  data: any[], // We pass any here as the array can contain free form data depending on the user
   xScaleDataKey: string,
   yScaleDataKey: string,
   xAxisLabel: string,

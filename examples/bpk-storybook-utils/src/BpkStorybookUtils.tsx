@@ -19,7 +19,7 @@
 
 /* eslint-disable global-require, no-console, import/no-mutable-exports */
 let action =
-  (...args: Array<any>) =>
+  (...args: any[]) =>
   () =>
     console.info(args);
 

@@ -48,7 +48,7 @@ ante in, vestibulum nulla.`;
 type Props = {};
 type State = {
   dismissed: boolean,
-  updates: Array<string>,
+  updates: string[],
 };
 
 class BpkBannerAlertDismissableState extends Component<Props, State> {

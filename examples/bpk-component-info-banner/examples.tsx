@@ -52,7 +52,7 @@ ante in, vestibulum nulla.`;
 type Props = {};
 type State = {
   dismissed: boolean,
-  updates: Array<string>,
+  updates: string[],
 };
 
 class BpkInfoBannerDismissableState extends Component<Props, State> {

@@ -20,13 +20,13 @@
 
 import PropTypes from 'prop-types';
 
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'd3-s... Remove this comment to see the full error message
-import { scaleBand, scaleLinear } from 'd3-scale';
-
 import { borderRadiusXs } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkBarchartBar from './BpkBarchartBar';
 import { remToPx } from './utils';
+
+import type BpkBarchartBar from './BpkBarchartBar';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'd3-s... Remove this comment to see the full error message
+import type { scaleBand, scaleLinear } from 'd3-scale';
 
 const borderRadius = remToPx(borderRadiusXs);
 
@@ -53,7 +53,7 @@ const isOutlier = (point, { maxYValue, yScaleDataKey }) =>
   point[yScaleDataKey] > maxYValue;
 
 type Props = {
-  data: Array<any>, // We pass any here as the array can contain free form data depending on the user
+  data: any[], // We pass any here as the array can contain free form data depending on the user
   xScaleDataKey: string,
   yScaleDataKey: string,
   height: number,
