@@ -38,6 +38,7 @@ const DEFAULT_ITEMS = 3;
 
 const BpkCardList = (props: CardListProps) => {
   const {
+    accessibilityLabels,
     accessoryDesktop,
     accessoryMobile,
     buttonContent,
@@ -96,6 +97,7 @@ const BpkCardList = (props: CardListProps) => {
                     <BpkCardListRowRailContainer
                       initiallyShownCards={initiallyShownCardsMobile}
                       layout={layoutMobile}
+                      accessibilityLabels={accessibilityLabels}
                       isMobile
                     >
                       {cardList}
@@ -125,6 +127,7 @@ const BpkCardList = (props: CardListProps) => {
                         accessory={accessoryDesktop}
                         initiallyShownCards={initiallyShownCardsDesktop}
                         layout={layoutDesktop}
+                        accessibilityLabels={accessibilityLabels}
                       >
                         {cardList}
                       </BpkCardListRowRailContainer>

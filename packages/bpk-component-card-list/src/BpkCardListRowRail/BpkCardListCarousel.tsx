@@ -37,12 +37,16 @@ const getClassName = cssModules(STYLES);
 
 const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const {
+    carouselLabel = (initiallyShownCards: number, childrenLength: number) =>
+      `Entering Carousel with ${initiallyShownCards} slides shown at a time, ${childrenLength} slides in total. Please use Pagination below with the Previous and Next buttons to navigate, or the slide dot buttons at the end to jump to slides.`,
     children,
     currentIndex,
     initiallyShownCards,
     isMobile = false,
     layout,
     setCurrentIndex,
+    slideLabel = (index: number, childrenLength: number) =>
+      `slide ${index + 1} of ${childrenLength}`,
   } = props;
 
   type CustomCSSProperties = CSSProperties & {
@@ -108,13 +112,12 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       : 0,
   );
 
-  const carouselAriaLabel = `Entering Carousel with ${initiallyShownCards} slides shown at a time, ${childrenLength} slides in total. Please use Pagination below with the Previous and Next buttons to navigate, or the slide dot buttons at the end to jump to slides.`;
-
   return (
     <div
       className={getClassName(`bpk-card-list-row-rail__${layout}`)}
       data-testid="bpk-card-list-row-rail__carousel"
-      aria-label={carouselAriaLabel}
+      aria-label={carouselLabel(initiallyShownCards, childrenLength)}
+      aria-roledescription="carousel"
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={0}
       role="region"
@@ -128,8 +131,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           observerVisibility(el, index);
           setA11yTabIndex(el, index, visibilityList);
         };
-
-        const slideAriaLabel = `slide ${index + 1} of ${childrenLength}`;
 
         const cardStyle: CSSProperties = isMobile
           ? {
@@ -145,7 +146,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
             style={cardStyle}
             key={`carousel-card-${index.toString()}`}
             role="group"
-            aria-label={slideAriaLabel}
+            aria-label={slideLabel(index, childrenLength)}
             aria-current={index === currentIndex ? 'true' : 'false'}
           >
             {isMobile ? card : renderList[index] === 1 && card}

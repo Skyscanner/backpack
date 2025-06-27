@@ -45,6 +45,14 @@ type ExpandProps = {
   onExpandToggle: () => void;
 };
 
+type AccessibilityLabels = {
+  indicatorLabel?: string;
+  prevNavLabel?: string;
+  nextNavLabel?: string;
+  carouselLabel?: (initiallyShownCards: number, childrenLength: number) => string;
+  slideLabel?: (index: number, childrenLength: number) => string;
+};
+
 type CardListBaseProps = {
   title: string;
   description?: string;
@@ -52,7 +60,7 @@ type CardListBaseProps = {
   layoutMobile: LayoutMobile;
   layoutDesktop: LayoutDesktop;
   accessoryDesktop?: (typeof ACCESSORY_DESKTOP_TYPES)[keyof typeof ACCESSORY_DESKTOP_TYPES];
-  accessoryMobile?: (typeof ACCESSORY_MOBILE_TYPES)[keyof typeof ACCESSORY_MOBILE_TYPES]; 
+  accessoryMobile?: (typeof ACCESSORY_MOBILE_TYPES)[keyof typeof ACCESSORY_MOBILE_TYPES];
   initiallyShownCardsDesktop?: number;
   initiallyShownCardsMobile?: number;
   chipGroup?: ReactElement;
@@ -61,6 +69,7 @@ type CardListBaseProps = {
   onExpandClick?: () => void;
   buttonHref?: string;
   expandText?: string;
+  accessibilityLabels?: AccessibilityLabels;
 };
 
 type CardListGridStackProps = {
@@ -85,6 +94,7 @@ type CardListRowRailProps = {
   layout: typeof LAYOUTS.row | typeof LAYOUTS.rail;
   accessory?: typeof ACCESSORY_DESKTOP_TYPES.pagination;
   isMobile?: boolean;
+  accessibilityLabels?: AccessibilityLabels;
 };
 
 type CardListCarouselProps = {
@@ -94,6 +104,8 @@ type CardListCarouselProps = {
   currentIndex: number;
   setCurrentIndex: Dispatch<SetStateAction<number>>;
   isMobile?: boolean;
+  carouselLabel?: (initiallyShownCards: number, childrenLength: number) => string;
+  slideLabel?: (index: number, childrenLength: number) => string;
 };
 
 type CardListProps = CardListBaseProps;
