@@ -31,6 +31,7 @@ const getClassName = cssModules(STYLES);
 
 const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
   const {
+    accessibilityLabels,
     accessory,
     children,
     initiallyShownCards,
@@ -48,13 +49,11 @@ const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
       <BpkPageIndicator
         currentIndex={currentIndex}
         totalIndicators={totalIndicators}
-        onClick={(_e, index) => {
-          setCurrentIndex(index);
-        }}
+        onClick={(_e, index) => setCurrentIndex(index)}
         showNav
-        indicatorLabel="Go to slide"
-        prevNavLabel="Previous slide"
-        nextNavLabel="Next slide"
+        indicatorLabel={accessibilityLabels?.indicatorLabel ?? 'Go to slide'}
+        prevNavLabel={accessibilityLabels?.prevNavLabel ?? 'Previous slide'}
+        nextNavLabel={accessibilityLabels?.nextNavLabel ?? 'Next slide'}
       />
     ) : null;
 
@@ -69,6 +68,8 @@ const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
         currentIndex={currentIndex}
         setCurrentIndex={setCurrentIndex}
         isMobile={isMobile}
+        carouselLabel={accessibilityLabels?.carouselLabel}
+        slideLabel={accessibilityLabels?.slideLabel}
       >
         {children}
       </BpkCardListCarousel>

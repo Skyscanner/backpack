@@ -130,6 +130,15 @@ const commonProps = {
   buttonContent: 'See more',
   buttonHref: 'https://www.skyscanner.net/',
   initiallyShownCardsMobile: 2,
+  accessibilityLabels: {
+    indicatorLabel: 'Go to slide',
+    prevNavLabel: 'Previous slide',
+    nextNavLabel: 'Next slide',
+    carouselLabel: (initiallyShownCards: number, childrenLength: number) =>
+      `Entering Carousel with ${initiallyShownCards} slides shown at a time, ${childrenLength} slides in total. Please use Pagination below with the Previous and Next buttons to navigate, or the slide dot buttons at the end to jump to slides.`,
+    slideLabel: (index: number, childrenLength: number) =>
+      `slide ${index + 1} of ${childrenLength}`,
+  },
 };
 
 const snippetProps = {
