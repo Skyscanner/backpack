@@ -26,16 +26,19 @@ const image =
 
 const imageWidth = 300;
 const imageHeight = 150;
-const logoUrl =
+const logoDarkUrl =
   'https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png';
 
-const WithCtaTextAndBottomSheetExampleLightV2 = () => (
+const logoWhiteUrl =
+  'https://js.skyscnr.com/sttc/bpk-content/skyland-a76916b4.png';
+
+const WithCtaTextAndBottomSheetExampleV2Light = () => (
   <div id="bottom-sheet-container">
     <div id="pagewrap">
       <BpkInsetBannerSponsored
         title="Lorem ipsum"
         subheadline="Lorem ipsum dolor sit amet"
-        logo={logoUrl}
+        logo={logoDarkUrl}
         callToAction={{
           text: 'Sponsored',
           bottomSheetContent: [
@@ -65,11 +68,11 @@ const WithCtaTextAndBottomSheetExampleLightV2 = () => (
   </div>
 );
 
-const WithCustomBottomSheetWidthAndMarginsExampleV2 = () => (
+const WithCustomBottomSheetWidthAndMarginsExampleV2Light = () => (
   <BpkInsetBannerSponsored
     title="Lorem ipsum"
     subheadline="Lorem ipsum dolor sit amet"
-    logo={logoUrl}
+    logo={logoDarkUrl}
     callToAction={{
       text: 'Sponsored',
       bottomSheetContent: [
@@ -100,11 +103,11 @@ const WithCustomBottomSheetWidthAndMarginsExampleV2 = () => (
   />
 );
 
-const WithImageAndBottomSheetExampleV2 = () => (
+const WithImageAndBottomSheetExampleV2Dark = () => (
   <BpkInsetBannerSponsored
     title="Explore the Canadian Rockies"
     subheadline="Discover breathtaking landscapes and outdoor adventures"
-    logo={logoUrl}
+    logo={logoWhiteUrl}
     image={{
       src: image,
       altText: 'Canadian Rockies',
@@ -131,11 +134,11 @@ const WithImageAndBottomSheetExampleV2 = () => (
   />
 );
 
-const WithoutImageOnDarkExampleV2 = () => (
+const WithCtaTextAndBottomSheetExampleV2Dark = () => (
   <BpkInsetBannerSponsored
     title="Summer Travel Deals"
     subheadline="Exclusive offers on flights and hotels"
-    logo={logoUrl}
+    logo={logoWhiteUrl}
     callToAction={{
       text: 'Sponsored',
       bottomSheetContent: [
@@ -158,11 +161,11 @@ const WithoutImageOnDarkExampleV2 = () => (
   />
 );
 
-const WithImageOnLightExampleV2 = () => (
+const WithImageAndBottomSheetExampleV2Light = () => (
   <BpkInsetBannerSponsored
     title="Visit Santorini"
     subheadline="Experience the beauty of Greek islands"
-    logo={logoUrl}
+    logo={logoDarkUrl}
     image={{
       src: image,
       altText: 'Santorini landscape',
@@ -191,9 +194,9 @@ const WithImageOnLightExampleV2 = () => (
 );
 
 export {
-  WithCtaTextAndBottomSheetExampleLightV2,
-  WithCustomBottomSheetWidthAndMarginsExampleV2,
-  WithImageAndBottomSheetExampleV2,
-  WithoutImageOnDarkExampleV2,
-  WithImageOnLightExampleV2,
+  WithCtaTextAndBottomSheetExampleV2Light,
+  WithCustomBottomSheetWidthAndMarginsExampleV2Light,
+  WithImageAndBottomSheetExampleV2Dark,
+  WithCtaTextAndBottomSheetExampleV2Dark,
+  WithImageAndBottomSheetExampleV2Light,
 };
