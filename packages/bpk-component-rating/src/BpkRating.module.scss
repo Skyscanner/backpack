@@ -35,6 +35,7 @@
   &__text-wrapper {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: baseline;
     white-space: nowrap;
 
