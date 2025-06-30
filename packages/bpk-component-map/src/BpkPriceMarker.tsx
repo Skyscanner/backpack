@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import BpkBasicMapMarker from '../BpkBasicMapMarker';
-
+import BpkBasicMapMarker from './BpkBasicMapMarker';
 import BpkPriceMarkerButton, { MARKER_STATUSES } from './BpkPriceMarkerButton';
 
 import type { Props as BpkPriceMarkerButtonProps } from './BpkPriceMarkerButton';
@@ -30,8 +29,7 @@ type Props = {
   };
 } & BpkPriceMarkerButtonProps;
 
-// eslint-disable-next-line import/prefer-default-export
-export const BpkPriceMarkerV2 = (props: Props) => {
+const BpkPriceMarker = (props: Props) => {
   const {
     accessibilityLabel,
     buttonProps,
@@ -63,3 +61,5 @@ export const BpkPriceMarkerV2 = (props: Props) => {
     </BpkBasicMapMarker>
   );
 };
+
+export default BpkPriceMarker;

@@ -18,8 +18,8 @@
 
 import type { ReactNode } from 'react';
 
-import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
-import { cssModules } from '../../../bpk-react-utils';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkPriceMarkerButton.module.scss';
 

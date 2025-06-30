@@ -30,8 +30,6 @@ import BpkMap, {
   BpkOverlayView,
   BpkIconMarker,
   BpkPriceMarker,
-  BpkPriceMarkerV2,
-  PRICE_MARKER_STATUSES,
   MARKER_STATUSES,
   withGoogleMapsScript,
   BpkPriceMarkerButton,
@@ -116,63 +114,6 @@ type PriceMarkerState = {
 };
 
 class StatefulBpkPriceMarker extends Component<
-  { action: () => mixed },
-  PriceMarkerState,
-> {
-  static defaultProps = {
-    action: () => null,
-  };
-
-  constructor(props: { action: () => mixed }) {
-    super(props);
-    this.state = {
-      selectedId: '2',
-      viewedVenues: ['1'],
-    };
-  }
-
-  getStatus = (id: string) => {
-    if (this.state.selectedId === id) {
-      return PRICE_MARKER_STATUSES.focused;
-    }
-    if (this.state.viewedVenues.includes(id)) {
-      return PRICE_MARKER_STATUSES.viewed;
-    }
-    return PRICE_MARKER_STATUSES.default;
-  };
-
-  selectVenue = (id: string) => {
-    this.setState((prevState) => ({
-      selectedId: id,
-      viewedVenues: [...prevState.viewedVenues, id],
-    }));
-  };
-
-  render() {
-    return (
-      <StoryMap
-        zoom={15}
-        center={{ latitude: 55.944665, longitude: -3.1964903 }}
-      >
-        {venues.map((venue) => (
-          <BpkPriceMarker
-            id={venue.id}
-            label={venue.price}
-            position={{ latitude: venue.latitude, longitude: venue.longitude }}
-            disabled={venue.disabled}
-            onClick={() => {
-              this.props.action();
-              this.selectVenue(venue.id);
-            }}
-            status={this.getStatus(venue.id)}
-          />
-        ))}
-      </StoryMap>
-    );
-  }
-}
-
-class StatefulBpkPriceMarkerV2 extends Component<
   { action: () => mixed, airportsIconWithPrice: boolean },
   PriceMarkerState,
 > {
@@ -212,7 +153,7 @@ class StatefulBpkPriceMarkerV2 extends Component<
         center={{ latitude: 55.944665, longitude: -3.1964903 }}
       >
         {venues.map((venue) => (
-          <BpkPriceMarkerV2
+          <BpkPriceMarker
             id={venue.id}
             label={venue.price}
             icon={this.props.airportsIconWithPrice ? venue.airportsIcon : null}
@@ -415,31 +356,27 @@ const WithIconMarkersExample = () => (
 );
 
 const WithPriceMarkersExample = () => (
-  <StatefulBpkPriceMarker action={action('Price marker clicked')} />
-);
-
-const WithPriceMarkersV2Example = () => (
-  <StatefulBpkPriceMarkerV2
+  <StatefulBpkPriceMarker
     action={action('Price marker clicked')}
     airportsIconWithPrice={false}
   />
 );
 
-const WithIconPriceMarkersV2Example = () => (
-  <StatefulBpkPriceMarkerV2
+const WithIconPriceMarkersExample = () => (
+  <StatefulBpkPriceMarker
     action={action('Price marker clicked')}
     airportsIconWithPrice
   />
 );
 
-const WithPriceMarkersV2ButtonWithPopoverOnMapExample = () => (
+const WithPriceMarkersButtonWithPopoverOnMapExample = () => (
   <StatefulBpkPriceMarkerButtonWithPopoverOnMap
     action={action('Price marker button clicked')}
     airportsIconWithPrice={false}
   />
 );
 
-const WithIconPriceMarkersV2ButtonWithPopoverOnMapExample = () => (
+const WithIconPriceMarkersButtonWithPopoverOnMapExample = () => (
   <StatefulBpkPriceMarkerButtonWithPopoverOnMap
     action={action('Price marker button clicked')}
     airportsIconWithPrice
@@ -463,8 +400,8 @@ const MultipleMapsExample = () => (
 
 const VisualTestExample = () => (
   <>
-    <WithPriceMarkersV2Example />
-    <WithIconPriceMarkersV2Example />
+    <WithPriceMarkersExample />
+    <WithIconPriceMarkersExample />
   </>
 );
 
@@ -478,10 +415,9 @@ export {
   WithAMarkerExample,
   WithIconMarkersExample,
   WithPriceMarkersExample,
-  WithPriceMarkersV2Example,
-  WithIconPriceMarkersV2Example,
-  WithPriceMarkersV2ButtonWithPopoverOnMapExample,
-  WithIconPriceMarkersV2ButtonWithPopoverOnMapExample,
+  WithIconPriceMarkersExample,
+  WithPriceMarkersButtonWithPopoverOnMapExample,
+  WithIconPriceMarkersButtonWithPopoverOnMapExample,
   MultipleMapsExample,
   VisualTestExample,
 };
