@@ -26,7 +26,8 @@ const image =
 
 const imageWidth = 300;
 const imageHeight = 150;
-const logoUrl = 'https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png';
+const logoUrl =
+  'https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png';
 
 const WithCtaTextAndBottomSheetExampleLightV2 = () => (
   <div id="bottom-sheet-container">
@@ -49,7 +50,7 @@ const WithCtaTextAndBottomSheetExampleLightV2 = () => (
                 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             },
           ],
-          bottomSheetTitle: "About this advert",
+          bottomSheetTitle: 'About this advert',
           closeBtnIcon: true,
           labelTitle: true,
           bottomSheetLabel: 'Info',
@@ -83,7 +84,7 @@ const WithCustomBottomSheetWidthAndMarginsExampleV2 = () => (
             'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         },
       ],
-      bottomSheetTitle: "About this advert",
+      bottomSheetTitle: 'About this advert',
       closeBtnIcon: true,
       labelTitle: true,
       bottomSheetLabel: 'Info',
@@ -118,7 +119,7 @@ const WithImageAndBottomSheetExampleV2 = () => (
             'Experience the beauty of the Canadian Rockies with our exclusive travel packages.',
         },
       ],
-      bottomSheetTitle: "About this advert",
+      bottomSheetTitle: 'About this advert',
       closeBtnIcon: true,
       labelTitle: true,
       bottomSheetLabel: 'Info',
@@ -130,8 +131,69 @@ const WithImageAndBottomSheetExampleV2 = () => (
   />
 );
 
+const WithoutImageOnDarkExampleV2 = () => (
+  <BpkInsetBannerSponsored
+    title="Summer Travel Deals"
+    subheadline="Exclusive offers on flights and hotels"
+    logo={logoUrl}
+    callToAction={{
+      text: 'Sponsored',
+      bottomSheetContent: [
+        {
+          title: 'Limited Time Offers',
+          description:
+            'Take advantage of our summer travel deals with discounts on flights, hotels, and vacation packages.',
+        },
+      ],
+      bottomSheetTitle: 'About this advert',
+      closeBtnIcon: true,
+      labelTitle: true,
+      bottomSheetLabel: 'Info',
+      buttonCloseLabel: 'Close',
+      buttonA11yLabel: 'More info',
+    }}
+    backgroundColor="#0770E3"
+    variant={VARIANT.onDark}
+    accessibilityLabel="Sponsored by Skyscanner"
+  />
+);
+
+const WithImageOnLightExampleV2 = () => (
+  <BpkInsetBannerSponsored
+    title="Visit Santorini"
+    subheadline="Experience the beauty of Greek islands"
+    logo={logoUrl}
+    image={{
+      src: image,
+      altText: 'Santorini landscape',
+      aspectRatio: imageWidth / imageHeight,
+    }}
+    callToAction={{
+      text: 'Sponsored',
+      bottomSheetContent: [
+        {
+          title: 'Greece Getaways',
+          description:
+            'Explore the stunning views and unique architecture of Santorini with our curated travel guides.',
+        },
+      ],
+      bottomSheetTitle: 'About this advert',
+      closeBtnIcon: true,
+      labelTitle: true,
+      bottomSheetLabel: 'Info',
+      buttonCloseLabel: 'Close',
+      buttonA11yLabel: 'More info',
+    }}
+    backgroundColor="#FFE300"
+    variant={VARIANT.onLight}
+    accessibilityLabel="Sponsored by Skyscanner"
+  />
+);
+
 export {
   WithCtaTextAndBottomSheetExampleLightV2,
   WithCustomBottomSheetWidthAndMarginsExampleV2,
-  WithImageAndBottomSheetExampleV2
+  WithImageAndBottomSheetExampleV2,
+  WithoutImageOnDarkExampleV2,
+  WithImageOnLightExampleV2,
 };
