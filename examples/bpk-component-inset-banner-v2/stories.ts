@@ -19,9 +19,11 @@
 import { BpkInsetBannerSponsored } from '../../packages/bpk-component-inset-banner/src/bpk-component-inset-banner-v2/src/BpkInsetBannerSponsored';
 
 import {
-  WithCtaTextAndBottomSheetExampleLightV2,
-  WithCustomBottomSheetWidthAndMarginsExampleV2,
-  WithImageAndBottomSheetExampleV2
+  WithCtaTextAndBottomSheetExampleV2Light,
+  WithCustomBottomSheetWidthAndMarginsExampleV2Light,
+  WithImageAndBottomSheetExampleV2Dark,
+  WithCtaTextAndBottomSheetExampleV2Dark,
+  WithImageAndBottomSheetExampleV2Light,
 } from './examples';
 
 export default {
@@ -29,6 +31,13 @@ export default {
   component: BpkInsetBannerSponsored,
 };
 
-export const SponsoredBannerWithCtaTextAndPopoverLight = WithCtaTextAndBottomSheetExampleLightV2;
-export const SponsoredBannerWithCustomPopoverWidthAndMargins = WithCustomBottomSheetWidthAndMarginsExampleV2;
-export const SponsoredBannerWithImageAndBottomSheet = WithImageAndBottomSheetExampleV2;
+export const SponsoredBannerWithCtaTextAndPopoverLight =
+  WithCtaTextAndBottomSheetExampleV2Light;
+export const SponsoredBannerWithCtaTextAndPopoverDark =
+  WithCtaTextAndBottomSheetExampleV2Dark;
+export const SponsoredBannerWithImageAndBottomSheetDark =
+  WithImageAndBottomSheetExampleV2Dark;
+export const SponsoredBannerWithImageAndBottomSheetLight =
+  WithImageAndBottomSheetExampleV2Light;
+export const SponsoredBannerWithCustomPopoverWidthAndMargins =
+  WithCustomBottomSheetWidthAndMarginsExampleV2Light;

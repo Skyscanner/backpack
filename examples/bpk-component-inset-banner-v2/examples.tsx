@@ -26,15 +26,19 @@ const image =
 
 const imageWidth = 300;
 const imageHeight = 150;
-const logoUrl = 'https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png';
+const logoDarkUrl =
+  'https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png';
 
-const WithCtaTextAndBottomSheetExampleLightV2 = () => (
+const logoWhiteUrl =
+  'https://js.skyscnr.com/sttc/bpk-content/skyland-a76916b4.png';
+
+const WithCtaTextAndBottomSheetExampleV2Light = () => (
   <div id="bottom-sheet-container">
     <div id="pagewrap">
       <BpkInsetBannerSponsored
         title="Lorem ipsum"
         subheadline="Lorem ipsum dolor sit amet"
-        logo={logoUrl}
+        logo={logoDarkUrl}
         callToAction={{
           text: 'Sponsored',
           bottomSheetContent: [
@@ -49,7 +53,7 @@ const WithCtaTextAndBottomSheetExampleLightV2 = () => (
                 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             },
           ],
-          bottomSheetTitle: "About this advert",
+          bottomSheetTitle: 'About this advert',
           closeBtnIcon: true,
           labelTitle: true,
           bottomSheetLabel: 'Info',
@@ -64,11 +68,11 @@ const WithCtaTextAndBottomSheetExampleLightV2 = () => (
   </div>
 );
 
-const WithCustomBottomSheetWidthAndMarginsExampleV2 = () => (
+const WithCustomBottomSheetWidthAndMarginsExampleV2Light = () => (
   <BpkInsetBannerSponsored
     title="Lorem ipsum"
     subheadline="Lorem ipsum dolor sit amet"
-    logo={logoUrl}
+    logo={logoDarkUrl}
     callToAction={{
       text: 'Sponsored',
       bottomSheetContent: [
@@ -83,7 +87,7 @@ const WithCustomBottomSheetWidthAndMarginsExampleV2 = () => (
             'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         },
       ],
-      bottomSheetTitle: "About this advert",
+      bottomSheetTitle: 'About this advert',
       closeBtnIcon: true,
       labelTitle: true,
       bottomSheetLabel: 'Info',
@@ -99,11 +103,11 @@ const WithCustomBottomSheetWidthAndMarginsExampleV2 = () => (
   />
 );
 
-const WithImageAndBottomSheetExampleV2 = () => (
+const WithImageAndBottomSheetExampleV2Dark = () => (
   <BpkInsetBannerSponsored
     title="Explore the Canadian Rockies"
     subheadline="Discover breathtaking landscapes and outdoor adventures"
-    logo={logoUrl}
+    logo={logoWhiteUrl}
     image={{
       src: image,
       altText: 'Canadian Rockies',
@@ -118,7 +122,7 @@ const WithImageAndBottomSheetExampleV2 = () => (
             'Experience the beauty of the Canadian Rockies with our exclusive travel packages.',
         },
       ],
-      bottomSheetTitle: "About this advert",
+      bottomSheetTitle: 'About this advert',
       closeBtnIcon: true,
       labelTitle: true,
       bottomSheetLabel: 'Info',
@@ -130,8 +134,69 @@ const WithImageAndBottomSheetExampleV2 = () => (
   />
 );
 
+const WithCtaTextAndBottomSheetExampleV2Dark = () => (
+  <BpkInsetBannerSponsored
+    title="Summer Travel Deals"
+    subheadline="Exclusive offers on flights and hotels"
+    logo={logoWhiteUrl}
+    callToAction={{
+      text: 'Sponsored',
+      bottomSheetContent: [
+        {
+          title: 'Limited Time Offers',
+          description:
+            'Take advantage of our summer travel deals with discounts on flights, hotels, and vacation packages.',
+        },
+      ],
+      bottomSheetTitle: 'About this advert',
+      closeBtnIcon: true,
+      labelTitle: true,
+      bottomSheetLabel: 'Info',
+      buttonCloseLabel: 'Close',
+      buttonA11yLabel: 'More info',
+    }}
+    backgroundColor="#0770E3"
+    variant={VARIANT.onDark}
+    accessibilityLabel="Sponsored by Skyscanner"
+  />
+);
+
+const WithImageAndBottomSheetExampleV2Light = () => (
+  <BpkInsetBannerSponsored
+    title="Visit Santorini"
+    subheadline="Experience the beauty of Greek islands"
+    logo={logoDarkUrl}
+    image={{
+      src: image,
+      altText: 'Santorini landscape',
+      aspectRatio: imageWidth / imageHeight,
+    }}
+    callToAction={{
+      text: 'Sponsored',
+      bottomSheetContent: [
+        {
+          title: 'Greece Getaways',
+          description:
+            'Explore the stunning views and unique architecture of Santorini with our curated travel guides.',
+        },
+      ],
+      bottomSheetTitle: 'About this advert',
+      closeBtnIcon: true,
+      labelTitle: true,
+      bottomSheetLabel: 'Info',
+      buttonCloseLabel: 'Close',
+      buttonA11yLabel: 'More info',
+    }}
+    backgroundColor="#FFE300"
+    variant={VARIANT.onLight}
+    accessibilityLabel="Sponsored by Skyscanner"
+  />
+);
+
 export {
-  WithCtaTextAndBottomSheetExampleLightV2,
-  WithCustomBottomSheetWidthAndMarginsExampleV2,
-  WithImageAndBottomSheetExampleV2
+  WithCtaTextAndBottomSheetExampleV2Light,
+  WithCustomBottomSheetWidthAndMarginsExampleV2Light,
+  WithImageAndBottomSheetExampleV2Dark,
+  WithCtaTextAndBottomSheetExampleV2Dark,
+  WithImageAndBottomSheetExampleV2Light,
 };
