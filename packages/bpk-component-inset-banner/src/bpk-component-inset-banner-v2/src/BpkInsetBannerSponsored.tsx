@@ -17,8 +17,6 @@
  */
 import { useState } from 'react';
 
-import { get } from 'lodash';
-
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkBottomSheet from '../../../../bpk-component-bottom-sheet';
