@@ -39,12 +39,6 @@
     grid-area: logo;
   }
 
-  &--content {
-    display: flex;
-    grid-area: content;
-    flex-direction: column;
-  }
-
   &--with-image {
     border-radius: tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm 0 0;
   }
