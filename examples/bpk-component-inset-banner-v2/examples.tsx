@@ -37,7 +37,7 @@ const WithCtaTextAndBottomSheetExampleV2Light = () => (
     <div id="pagewrap">
       <BpkInsetBannerSponsored
         title="Lorem ipsum"
-        subheadline="Lorem ipsum dolor sit amet"
+        subheadline="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Morbi non blandit risus. Curabitur vitae nisl ac leo faucibus varius at vitae tortor. Nam vel justo nec orci efficitur laoreet."
         logo={logoDarkUrl}
         callToAction={{
           text: 'Sponsored',

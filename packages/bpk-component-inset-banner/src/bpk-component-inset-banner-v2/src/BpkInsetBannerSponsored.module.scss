@@ -21,10 +21,29 @@
 @use '../../../../unstable__bpk-mixins/utils';
 
 .bpk-inset-banner {
-  display: flex;
+  display: grid;
   padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
-  justify-content: space-between;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: 'logo content cta';
+  align-items: center;
   border-radius: tokens.$bpk-border-radius-sm;
+
+  @include breakpoints.bpk-breakpoint-mobile {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'logo cta'
+      'content content';
+  }
+
+  &--logo {
+    grid-area: logo;
+  }
+
+  &--content {
+    display: flex;
+    grid-area: content;
+    flex-direction: column;
+  }
 
   &--with-image {
     border-radius: tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm 0 0;
@@ -40,16 +59,6 @@
     fill: tokens.$bpk-text-on-dark-day;
   }
 
-  &--content-container {
-    display: flex;
-    align-items: center;
-
-    @include breakpoints.bpk-breakpoint-mobile {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
-
   &--image {
     max-height: tokens.bpk-spacing-xl();
     object-fit: contain;
@@ -58,7 +67,9 @@
 
   &--text-container {
     display: flex;
+    grid-area: content;
     flex-direction: column;
+    word-wrap: break-word;
   }
 
   &--cta-text {
@@ -77,6 +88,7 @@
   &--cta-container {
     display: flex;
     height: tokens.bpk-spacing-xl();
+    grid-area: cta;
     align-items: center;
     cursor: pointer;
   }
