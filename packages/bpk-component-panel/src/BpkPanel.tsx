@@ -67,12 +67,4 @@ const BpkPanel = ({
   );
 };
 
-
-BpkPanel.defaultProps = {
-  padded: true,
-  fullWidth: false,
-  className: null,
-  keyline: true,
-};
-
 export default BpkPanel;
