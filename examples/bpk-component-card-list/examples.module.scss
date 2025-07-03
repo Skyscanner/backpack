@@ -18,31 +18,39 @@
 
 @use '../../packages/unstable__bpk-mixins/tokens';
 
-.bpk-drawer-paragraph {
-  margin-bottom: tokens.bpk-spacing-md();
+.bpk-card {
+  min-width: tokens.$bpk-one-pixel-rem * 250;
 }
 
-.bpk-drawer-content-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.bpk-drawer-button {
-  margin: auto auto 0;
-}
-
-.bpk-drawer-content-full-width {
-  height: 100%;
-  padding: tokens.bpk-spacing-base();
-  background-color: tokens.$bpk-canvas-contrast-day;
-
-  p {
-    padding: tokens.bpk-spacing-base();
-    border-radius: tokens.$bpk-border-radius-md;
-    background-color: tokens.$bpk-surface-default-day;
+.bpk-destination {
+  img {
+    border-radius: tokens.$bpk-border-radius-md tokens.$bpk-border-radius-md 0 0;
+    overflow: hidden;
   }
-}
 
-.bpk-drawer-with-tooltip-not-able-to-show {
-  z-index: 899; // 1 less than the tooltip
+  &__bottom {
+    display: flex;
+    padding: tokens.bpk-spacing-lg();
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__name {
+    display: flex;
+    padding-bottom: tokens.bpk-spacing-md();
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__row {
+    display: flex;
+    padding-bottom: tokens.bpk-spacing-sm();
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+  }
 }
