@@ -87,7 +87,7 @@
 /// @example scss
 ///   .selector {
 ///     @include bpk-panel();
-///     @include bpk-panel--full-width();
+///     @include bpk-panel--full-width-keyline();
 ///   }
 @mixin bpk-panel--full-width-keyline {
   box-shadow:
