@@ -9,7 +9,10 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkInsetBanner, { VARIANT } from '@skyscanner/backpack-web/bpk-component-inset-banner-v2';
+import {
+  VARIANT,
+  BpkInsetBannerSponsored,
+} from '@skyscanner/bpk-component-inset-banner-v2';
 
 export default () => (
   <BpkInsetBanner
@@ -30,7 +33,7 @@ export default () => (
             'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         },
       ],
-      bottomSheetTitle: "About this advert",
+      bottomSheetTitle: 'About this advert',
       closeBtnIcon: true,
       labelTitle: true,
       bottomSheetLabel: 'Info',
@@ -40,5 +43,6 @@ export default () => (
     backgroundColor="#FFE300"
     variant={VARIANT.onLight}
     accessibilityLabel="Sponsored by Skyscanner"
-  />);
+  />
+);
 ```
