@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
+import BpkInsetBannerSponsored from './src/BpkInsetBannerSponsored';
 import {
-  type Props as BpkInsetBannerProps,
+  type CommonProps as BpkInsetBannerProps,
   VARIANT,
-  BpkInsetBannerSponsored,
-} from './src/BpkInsetBannerSponsored';
+} from './src/common-types';
 
 export type { BpkInsetBannerProps };
 export { VARIANT, BpkInsetBannerSponsored };

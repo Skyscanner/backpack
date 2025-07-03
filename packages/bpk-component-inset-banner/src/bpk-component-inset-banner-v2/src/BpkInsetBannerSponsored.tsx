@@ -28,52 +28,13 @@ import BpkText, {
 } from '../../../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../../../bpk-react-utils';
 
+import { VARIANT, type CommonProps } from './common-types';
+
 import STYLES from './BpkInsetBannerSponsored.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const VARIANT = {
-  onLight: 'on-light',
-  onDark: 'on-dark',
-};
-type callToActionType = {
-  text?: string;
-  bottomSheetContent: Array<{
-    title: string;
-    description: string;
-  }>;
-  bottomSheetTitle?: string;
-  buttonCloseLabel?: string;
-  buttonA11yLabel?: string;
-  bottomSheetLabel?: string;
-  bottomSheetId?: string;
-  bottomSheetWidth?: string;
-  bottomSheetMarginStart?: string;
-  bottomSheetMarginEnd?: string;
-  bottomSheetA11yLabel?: string;
-  labelTitle?: boolean;
-  closeBtnIcon?: boolean;
-  zIndexCustom?: number;
-};
-
-export type Props = {
-  accessibilityLabel?: string;
-  backgroundColor?: string;
-  callToAction?: callToActionType & {
-    bottomSheetContent: callToActionType['bottomSheetContent'];
-  };
-  logo?: string;
-  subheadline?: string;
-  title?: string;
-  variant?: (typeof VARIANT)[keyof typeof VARIANT];
-  image?: {
-    src: string;
-    altText: string;
-    aspectRatio: number;
-  };
-};
-
-export const BpkInsetBannerSponsored = ({
+const BpkInsetBannerSponsored = ({
   accessibilityLabel,
   backgroundColor = surfaceHighlightDay,
   callToAction,
@@ -82,7 +43,7 @@ export const BpkInsetBannerSponsored = ({
   subheadline,
   title,
   variant = VARIANT.onLight,
-}: Props) => {
+}: CommonProps) => {
   const classNames = getClassName(
     'bpk-inset-banner',
     `bpk-inset-banner--${variant}`,
@@ -214,3 +175,5 @@ export const BpkInsetBannerSponsored = ({
     </div>
   );
 };
+
+export default BpkInsetBannerSponsored;
