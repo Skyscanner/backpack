@@ -15,18 +15,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkPanel.module.scss';
 
+
 const getClassName = cssModules(STYLES);
 
-const BpkPanel = (props) => {
+export type Props = {
+  children: ReactNode;
+  padded?: boolean,
+  fullWidth?: boolean,
+  className?: string | null,
+  keyline?: boolean,
+};
+
+
+const BpkPanel = ({
+  children,
+  className = null,
+  fullWidth = false,
+  keyline = true,
+  padded = true,
+  ...rest
+}: Props) => {
   const classNames = [getClassName('bpk-panel')];
-  const { children, className, fullWidth, keyline, padded, ...rest } = props;
 
   if (padded) {
     classNames.push(getClassName('bpk-panel--padded'));
@@ -52,13 +67,6 @@ const BpkPanel = (props) => {
   );
 };
 
-BpkPanel.propTypes = {
-  children: PropTypes.node.isRequired,
-  padded: PropTypes.bool,
-  fullWidth: PropTypes.bool,
-  className: PropTypes.string,
-  keyline: PropTypes.bool,
-};
 
 BpkPanel.defaultProps = {
   padded: true,
