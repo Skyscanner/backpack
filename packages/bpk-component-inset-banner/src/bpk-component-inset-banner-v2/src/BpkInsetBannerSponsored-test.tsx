@@ -28,6 +28,7 @@ describe('BpkInsetBanner', () => {
     const { getByText } = render(
       <BpkInsetBannerSponsored
         title="Lorem ipsum"
+        logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
         backgroundColor="#F55D42"
         variant={VARIANT.onDark}
       />,
