@@ -36,7 +36,6 @@
   display: block;
   background-color: $bpk-card-background-color;
 
-  @include bpk-border-sm($bpk-panel-border-color);
   @include bpk-border-radius-md;
 }
 
@@ -53,7 +52,21 @@
   padding: $bpk-card-padding;
 }
 
-/// Makes panel full width by removing left and right border.
+/// Controls if we have a keyline or not on the panel
+/// Modifies the bpk-panel mixin.
+///
+/// @require {mixin} bpk-panel
+///
+/// @example scss
+///   .selector {
+///     @include bpk-panel();
+///     @include bpk-panel--keyline();
+///   }
+@mixin bpk-panel--keyline {
+  @include bpk-border-sm($bpk-panel-border-color);
+}
+
+/// Makes panel full width by removing the border radius
 /// Modifies the bpk-panel mixin.
 ///
 /// @require {mixin} bpk-panel
@@ -65,6 +78,18 @@
 ///   }
 @mixin bpk-panel--full-width {
   border-radius: 0;
+}
+
+/// Sets the keyline to only show on the top and bottom when full
+///
+/// @require {mixin} bpk-panel
+///
+/// @example scss
+///   .selector {
+///     @include bpk-panel();
+///     @include bpk-panel--full-width();
+///   }
+@mixin bpk-panel--full-width-keyline {
   box-shadow:
     $bpk-panel-border-color 0 -1 * $bpk-one-pixel-rem 0 0 inset,
     $bpk-panel-border-color 0 $bpk-one-pixel-rem 0 0 inset;

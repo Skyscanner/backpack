@@ -54,6 +54,28 @@ describe('BpkPanel', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render with no keyline when attribute is false', () => {
+    const { asFragment } = render(
+      <BpkPanel keyline={false}>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkPanel>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render with no keyline when attribute is false and fullwidth', () => {
+    const { asFragment } = render(
+      <BpkPanel keyline={false} fullWidth>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkPanel>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('should render with className attribute', () => {
     const { asFragment } = render(
       <BpkPanel className="custom-class">

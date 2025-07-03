@@ -45,11 +45,21 @@ const FullWidthExample = () => (
   </BpkPanel>
 );
 
+const NoKeylineExample = () => (
+  <BpkPanel keyline={false}>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+    imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
+    consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non dictum
+    mi ante eu arcu.
+  </BpkPanel>
+);
+
 const MixedExample = () => (
   <div>
     <DefaultExample />
     <WithoutPaddingExample />
     <FullWidthExample />
+    <NoKeylineExample />
   </div>
 );
 
@@ -58,4 +68,5 @@ export {
   WithoutPaddingExample,
   FullWidthExample,
   MixedExample,
+  NoKeylineExample,
 };

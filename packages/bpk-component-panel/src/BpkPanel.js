@@ -26,13 +26,20 @@ const getClassName = cssModules(STYLES);
 
 const BpkPanel = (props) => {
   const classNames = [getClassName('bpk-panel')];
-  const { children, className, fullWidth, padded, ...rest } = props;
+  const { children, className, fullWidth, keyline, padded, ...rest } = props;
 
   if (padded) {
     classNames.push(getClassName('bpk-panel--padded'));
   }
   if (fullWidth) {
     classNames.push(getClassName('bpk-panel--full-width'));
+  }
+  if (keyline) {
+    if (fullWidth) {
+      classNames.push(getClassName('bpk-panel--full-width-keyline'));
+    } else {
+      classNames.push(getClassName('bpk-panel--keyline'));
+    }
   }
   if (className) {
     classNames.push(className);
@@ -50,12 +57,14 @@ BpkPanel.propTypes = {
   padded: PropTypes.bool,
   fullWidth: PropTypes.bool,
   className: PropTypes.string,
+  keyline: PropTypes.bool,
 };
 
 BpkPanel.defaultProps = {
   padded: true,
   fullWidth: false,
   className: null,
+  keyline: true,
 };
 
 export default BpkPanel;
