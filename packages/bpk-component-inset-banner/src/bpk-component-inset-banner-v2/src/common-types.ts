@@ -46,7 +46,7 @@ export type CommonProps = {
   callToAction?: callToActionType & {
     bottomSheetContent: callToActionType['bottomSheetContent'];
   };
-  logo?: string;
+  logo: string;
   subheadline?: string;
   title?: string;
   variant?: (typeof VARIANT)[keyof typeof VARIANT];
