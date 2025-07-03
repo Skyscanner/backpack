@@ -20,7 +20,8 @@ import { render, screen, fireEvent } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 
-import  { BpkInsetBannerSponsored, VARIANT } from './BpkInsetBannerSponsored';
+import BpkInsetBannerSponsored from './BpkInsetBannerSponsored';
+import { VARIANT } from './common-types';
 
 describe('BpkInsetBanner', () => {
   it('should render correctly', () => {
@@ -55,7 +56,7 @@ describe('BpkInsetBanner', () => {
                 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             },
           ],
-          bottomSheetTitle: "About this advert",
+          bottomSheetTitle: 'About this advert',
           closeBtnIcon: true,
           labelTitle: true,
           bottomSheetLabel: 'Info',
@@ -91,7 +92,7 @@ describe('BpkInsetBanner', () => {
                 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             },
           ],
-          bottomSheetTitle: "About this advert",
+          bottomSheetTitle: 'About this advert',
           closeBtnIcon: true,
           labelTitle: true,
           bottomSheetLabel: 'Info',
@@ -110,5 +111,4 @@ describe('BpkInsetBanner', () => {
 
     expect(screen.getByText('Consectetur adipiscing elit')).toBeInTheDocument();
   });
-
 });
