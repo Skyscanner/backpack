@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import BpkCardList from './src/BpkCardList';
 
-export default BpkCardList;
+export const RELEASE_LOCK_DELAY = 20;
+export const RENDER_BUFFER_SIZE = 3;

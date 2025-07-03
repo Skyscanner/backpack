@@ -16,6 +16,11 @@
  * limitations under the License.
  */
 
-import BpkCardList from './src/BpkCardList';
+.bpk-card-list-row-rail {
+  display: flex;
+  flex-direction: column;
 
-export default BpkCardList;
+  &__accessory {
+    width: 100%;
+  }
+}
