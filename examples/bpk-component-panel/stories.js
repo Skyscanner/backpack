@@ -23,6 +23,7 @@ import {
   WithoutPaddingExample,
   FullWidthExample,
   MixedExample,
+  NoKeylineExample,
 } from './examples';
 
 export default {
@@ -34,6 +35,7 @@ export const Default = DefaultExample;
 export const WithoutPadding = WithoutPaddingExample;
 
 export const FullWidth = FullWidthExample;
+export const NoKeyline = NoKeylineExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
