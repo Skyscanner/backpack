@@ -18,9 +18,13 @@
 
 import BpkInsetBanner, {
   type Props as BpkInsetBannerProps,
-  VARIANT,
 } from './src/BpkInsetBanner';
+import BpkInsetBannerSponsored from './src/BpkInsetBannerV2/BpkInsetBannerSponsored';
+import { type CommonProps as BpkInsetBannerSponsoredProps } from './src/BpkInsetBannerV2/common-types';
+import { VARIANT } from './src/BpkInsetBannerV2/common-types';
 
 export type { BpkInsetBannerProps };
+export type { BpkInsetBannerSponsoredProps };
+
 export { VARIANT };
-export default BpkInsetBanner;
+export { BpkInsetBannerSponsored, BpkInsetBanner };
