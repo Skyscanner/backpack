@@ -23,11 +23,10 @@ import BpkIconMarker, {
 } from './src/BpkIconMarker';
 import BpkMap from './src/BpkMap';
 import BpkOverlayView from './src/BpkOverlayView';
-import BpkPriceMarker, { PRICE_MARKER_STATUSES } from './src/BpkPriceMarker';
-import { BpkPriceMarkerV2 } from './src/BpkPriceMarkerV2/BpkPriceMarker';
+import BpkPriceMarker from './src/BpkPriceMarker';
 import BpkPriceMarkerButton, {
   MARKER_STATUSES,
-} from './src/BpkPriceMarkerV2/BpkPriceMarkerButton';
+} from './src/BpkPriceMarkerButton';
 import { type LatLong } from './src/common-types';
 import {
   defaultIconMarkerThemeAttributes,
@@ -41,12 +40,10 @@ export type BpkIconMarkerProps = IconMarkerProps;
 export {
   BpkIconMarker,
   BpkPriceMarker,
-  BpkPriceMarkerV2,
   BpkOverlayView,
   withGoogleMapsScript,
   defaultIconMarkerThemeAttributes,
   priceMarkerThemeAttributes,
-  PRICE_MARKER_STATUSES,
   MARKER_STATUSES,
   BpkPriceMarkerButton,
 };
