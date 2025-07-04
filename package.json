@@ -128,6 +128,7 @@
     "@storybook/addon-a11y": "^8.6.10",
     "@storybook/addon-actions": "^8.6.10",
     "@storybook/addon-docs": "^8.6.10",
+    "@storybook/addon-essentials": "^8.6.14",
     "@storybook/addon-interactions": "^8.6.10",
     "@storybook/addon-viewport": "^8.6.10",
     "@storybook/addon-webpack5-compiler-babel": "^3.0.5",
