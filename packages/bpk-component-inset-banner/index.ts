@@ -19,9 +19,9 @@
 import BpkInsetBanner, {
   type Props as BpkInsetBannerProps,
 } from './src/BpkInsetBanner';
-import BpkInsetBannerSponsored from './src/bpk-component-inset-banner-v2/BpkInsetBannerSponsored';
-import { type CommonProps as BpkInsetBannerSponsoredProps } from './src/bpk-component-inset-banner-v2/common-types';
-import { VARIANT } from './src/bpk-component-inset-banner-v2/common-types';
+import BpkInsetBannerSponsored from './src/BpkInsetBannerV2/BpkInsetBannerSponsored';
+import { type CommonProps as BpkInsetBannerSponsoredProps } from './src/BpkInsetBannerV2/common-types';
+import { VARIANT } from './src/BpkInsetBannerV2/common-types';
 
 export type { BpkInsetBannerProps };
 export type { BpkInsetBannerSponsoredProps };

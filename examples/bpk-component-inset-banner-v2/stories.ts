@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkInsetBannerSponsored from '../../packages/bpk-component-inset-banner/src/bpk-component-inset-banner-v2/BpkInsetBannerSponsored';
+import BpkInsetBannerSponsored from '../../packages/bpk-component-inset-banner/src/BpkInsetBannerV2/BpkInsetBannerSponsored';
 
 import {
   WithCtaTextAndBottomSheetExampleV2Light,
