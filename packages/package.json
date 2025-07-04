@@ -22,7 +22,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@floating-ui/react": "^0.27.8",
+    "@floating-ui/react": "^0.26.12",
     "@popperjs/core": "^2.11.8",
     "@radix-ui/react-compose-refs": "^1.1.1",
     "@radix-ui/react-slider": "1.1.2",
