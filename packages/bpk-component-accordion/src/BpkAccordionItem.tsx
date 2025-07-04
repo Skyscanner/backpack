@@ -42,6 +42,7 @@ export type BpkAccordionItemProps = {
   expanded?: boolean;
   initiallyExpanded?: boolean;
   icon?: ReactElement;
+  iconPosition?: 'leading' | 'trailing';
   onClick?: () => void;
   tagName?: 'span' | 'p' | 'text' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   textStyle?: (typeof TEXT_STYLES)[keyof typeof TEXT_STYLES];
@@ -62,6 +63,7 @@ const BpkAccordionItem = (props: BpkAccordionItemProps) => {
     children,
     expanded = false,
     icon = null,
+    iconPosition = 'leading',
     id,
     onClick = () => null,
     tagName = 'h3',
@@ -124,7 +126,7 @@ const BpkAccordionItem = (props: BpkAccordionItemProps) => {
   const contentId = `${id}_content`;
   const clonedIcon = icon
     ? cloneElement(icon, {
-        className: getClassName('bpk-accordion__leading-icon'),
+        className: getClassName(`bpk-accordion__${iconPosition}-icon`),
       })
     : null;
 
@@ -142,8 +144,9 @@ const BpkAccordionItem = (props: BpkAccordionItemProps) => {
           <div className={`${getClassName('bpk-accordion__flex-container')}`}>
             <div className={titleTextClassNames.join(' ')}>
               <BpkText textStyle={textStyle} tagName={tagName}>
-                {clonedIcon}
+                {iconPosition === 'leading' && clonedIcon}
                 {title}
+                {iconPosition === 'trailing' && clonedIcon}
               </BpkText>
             </div>
             <span

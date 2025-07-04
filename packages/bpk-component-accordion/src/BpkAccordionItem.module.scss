@@ -75,6 +75,10 @@
     @include margins.bpk-margin-trailing(tokens.bpk-spacing-md(), true);
   }
 
+  &__trailing-icon {
+    @include margins.bpk-margin-leading(tokens.bpk-spacing-md());
+  }
+
   &__item-expand-icon {
     fill: tokens.$bpk-text-primary-day;
 

@@ -295,6 +295,33 @@ const WithIconsExample = () => (
   </BpkAccordion>
 );
 
+const WithIconsTrailingExample = () => (
+  <BpkAccordion>
+    <BpkAccordionItem
+      id="stops"
+      title="Stops"
+      tagName="h3"
+      expanded
+      icon={<AlignedStopsIcon fill={colorPanjin} />}
+      iconPosition="trailing"
+    >
+      <StopsContent />
+    </BpkAccordionItem>
+    <BpkAccordionItem
+      id="departure-times"
+      title="Departure times"
+      tagName="h2"
+      icon={<AlignedTimeIcon fill={colorMonteverde} />}
+      iconPosition="trailing"
+    >
+      <AirlinesContent />
+    </BpkAccordionItem>
+    <BpkAccordionItem id="journey-duration" title="Journey duration" expanded>
+      <AirportsContent />
+    </BpkAccordionItem>
+  </BpkAccordion>
+);
+
 const WithBoldTitlesExample = () => (
   <SingleItemAccordion>
     <BpkAccordionItem
@@ -419,4 +446,5 @@ export {
   WithSeoContentOnDarkExample,
   SingleItemExampleWithoutDivider,
   SingleItemExampleWithoutDividerOnDark,
+  WithIconsTrailingExample,
 };

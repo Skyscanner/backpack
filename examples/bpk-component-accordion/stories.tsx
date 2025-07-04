@@ -33,6 +33,7 @@ import {
   WithSeoContentOnDarkExample,
   SingleItemExampleWithoutDivider,
   SingleItemExampleWithoutDividerOnDark,
+  WithIconsTrailingExample,
 } from './examples';
 import {
   WithSingleItemAccordionStateMock,
@@ -65,6 +66,8 @@ export const CustomTitleTextStyle = CustomTitleTextStyleExample;
 
 export const WithIcons = WithIconsExample;
 
+export const WithTrailingIcon = WithIconsTrailingExample;
+
 export const WithBoldTitles = WithBoldTitlesExample;
 
 export const WithDarkBackground = WithDarkBackgroundExample;
@@ -81,5 +84,5 @@ export const VisualTestWithZoom = {
   render: VisualTest,
   args: {
     zoomEnabled: true,
-  }
+  },
 };
