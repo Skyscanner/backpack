@@ -99,7 +99,8 @@ describe('BpkRating', () => {
     );
 
     expect(screen.getByText('Average')).toBeVisible();
-    expect(screen.queryByText('6.7')).not.toBeInTheDocument();
+    expect(document.querySelector('.bpk-rating__title--with-subtitle')).not.toBeInTheDocument();
+
   });
 
   it('should render large title only correctly', () => {

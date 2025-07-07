@@ -54,6 +54,7 @@ type Props = {
   subtitle?: string,
   title?: string | ReactNode,
   value: string | number,
+  [rest: string]: any
 };
 
 const BpkRating = ({
