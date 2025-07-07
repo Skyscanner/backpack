@@ -132,23 +132,26 @@ const BpkRating = ({
 
       <div className={textWrapperStyles}>
         {title && (
-          <BpkText
-            textStyle={titleTextSize}
-            tagName="span"
-            aria-hidden="true"
-          >
-            <span className={titleStyles}>{title}</span>
-          </BpkText>
+          <span className={titleStyles}>
+            <BpkText
+              textStyle={titleTextSize}
+              tagName="span"
+              aria-hidden="true"
+            >
+              {title}
+            </BpkText>
+          </span>
         )}
 
-        {subtitle && (
+        {subtitle && (<span className={subtitleStyles}>
           <BpkText
             textStyle={subtitleTextSize}
             tagName="span"
             aria-hidden="true"
           >
-            <span className={subtitleStyles}>{subtitle}</span>
+            {subtitle}
           </BpkText>
+          </span>
         )}
       </div>
     </div>
