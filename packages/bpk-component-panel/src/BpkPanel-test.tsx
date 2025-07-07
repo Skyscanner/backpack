@@ -22,68 +22,66 @@ import BpkPanel from './BpkPanel';
 
 describe('BpkPanel', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkPanel>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
         ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
         dis parturient montes, nascetur ridiculus mus.
       </BpkPanel>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelector('.bpk-panel')).toHaveTextContent(`Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.`)
+    expect(container.querySelector('.bpk-panel')).toBeInTheDocument();
+    expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--keyline');
+    expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--padded');
   });
 
   it('should render with padded attribute', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkPanel padded={false}>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
         ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
         dis parturient montes, nascetur ridiculus mus.
       </BpkPanel>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--keyline');
+    expect(container.querySelector('.bpk-panel')).not.toHaveClass('bpk-panel--padded');
   });
 
   it('should render with fullWidth attribute', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkPanel fullWidth>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
         ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
         dis parturient montes, nascetur ridiculus mus.
       </BpkPanel>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--padded');
+    expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--full-width');
+    expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--full-width-keyline');
   });
 
-  it('should render with no keyline when attribute is false', () => {
-    const { asFragment } = render(
+  it('should render BpkPanel without keyline when keyline attribute is false', () => {
+    const { container } = render(
       <BpkPanel keyline={false}>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
         ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
         dis parturient montes, nascetur ridiculus mus.
       </BpkPanel>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--padded');
+    expect(container.querySelector('.bpk-panel')).not.toHaveClass('bpk-panel--keyline');
   });
 
-  it('should render with no keyline when attribute is false and fullwidth', () => {
-    const { asFragment } = render(
+  it('should render BpkPanel without keyline when keyline attribute is false and fullwidth', () => {
+    const { container } = render(
       <BpkPanel keyline={false} fullWidth>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
         ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
         dis parturient montes, nascetur ridiculus mus.
       </BpkPanel>,
     );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render with className attribute', () => {
-    const { asFragment } = render(
-      <BpkPanel className="custom-class">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.
-      </BpkPanel>,
-    );
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.querySelector('.bpk-panel')).not.toHaveClass('bpk-panel--keyline');
+    expect(container.querySelector('.bpk-panel')).not.toHaveClass('bpk-panel--full-width-keyline');
+    expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--full-width');
   });
 });

@@ -30,6 +30,7 @@ export type Props = {
   fullWidth?: boolean,
   className?: string | null,
   keyline?: boolean,
+  [rest: string]: any;
 };
 
 
