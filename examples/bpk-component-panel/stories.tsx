@@ -16,24 +16,31 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/panels';
+import BpkPanel from '../../packages/bpk-component-panel/src/BpkPanel';
 
-.bpk-panel {
-  @include panels.bpk-panel;
+import {
+  DefaultExample,
+  WithoutPaddingExample,
+  FullWidthExample,
+  MixedExample,
+  NoKeylineExample,
+} from './examples';
 
-  &--padded {
-    @include panels.bpk-panel--padded;
-  }
+export default {
+  title: 'bpk-component-panel',
+  component: BpkPanel,
+};
 
-  &--full-width {
-    @include panels.bpk-panel--full-width;
-  }
+export const Default = DefaultExample;
+export const WithoutPadding = WithoutPaddingExample;
 
-  &--keyline {
-    @include panels.bpk-panel--keyline;
-  }
+export const FullWidth = FullWidthExample;
+export const NoKeyline = NoKeylineExample;
 
-  &--full-width-keyline {
-    @include panels.bpk-panel--full-width-keyline;
+export const VisualTest = MixedExample;
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true
   }
 }
