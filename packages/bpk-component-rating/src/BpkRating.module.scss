@@ -34,6 +34,7 @@
 
   &__text-wrapper {
     display: flex;
+    min-width: 0;
     flex-direction: row;
     align-items: baseline;
     white-space: nowrap;
@@ -61,6 +62,12 @@
   }
 
   &__subtitle {
+    min-width: 0;
+    max-width: 100%;
+    flex: 1 1 auto;
     color: tokens.$bpk-text-secondary-day;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 }
