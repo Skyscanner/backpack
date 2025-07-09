@@ -83,7 +83,7 @@ type Props = {
 const BpkText = ({
   children,
   className = null,
-  color = 'inherit',
+  color = '',
   tagName: TagName = 'span',
   textStyle = TEXT_STYLES.bodyDefault,
   ...rest
