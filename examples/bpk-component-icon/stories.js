@@ -19,6 +19,7 @@
 import {
   SmallIconsExample,
   LargeIconsExample,
+  TripleExtraLargeIconsExample,
   AlignToBaseTextExample,
   AlignToLargeTextExample,
   AlignSmallTextToIconExample,
@@ -36,6 +37,8 @@ export default {
 export const SmallIcons = SmallIconsExample;
 
 export const LargeIcons = LargeIconsExample;
+
+export const TripleExtraLargeIcons = TripleExtraLargeIconsExample
 
 export const AlignToTextBase = AlignToBaseTextExample;
 

@@ -35,6 +35,10 @@ export type SegmentTypes = (typeof SEGMENT_TYPES)[keyof typeof SEGMENT_TYPES];
 
 export type Props = {
   buttonContents: string[] | ReactNode[];
+  /**
+   * Accessible label for the segmented control group.
+   */
+  label?: string;
   type?: SegmentTypes;
   /*
    * Index parameter to track which is clicked
@@ -46,6 +50,7 @@ export type Props = {
 
 const BpkSegmentedControl = ({
   buttonContents,
+  label,
   onItemClick,
   selectedIndex,
   shadow = false,
@@ -64,7 +69,11 @@ const BpkSegmentedControl = ({
   );
 
   return (
-    <div className={containerStyling}>
+    <div
+      className={containerStyling}
+      role="group"
+      {...(label ? { 'aria-label': label } : {})}
+    >
       {buttonContents.map((content, index) => {
         const isSelected = index === selectedButton;
         const rightOfOption = index === selectedButton + 1;

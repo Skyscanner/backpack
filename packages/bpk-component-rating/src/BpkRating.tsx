@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import type { ReactNode } from 'react';
 
 import clamp from 'lodash.clamp';
@@ -55,20 +54,20 @@ type Props = {
   subtitle?: string,
   title?: string | ReactNode,
   value: string | number,
+  [rest: string]: any
 };
 
-const BpkRating = (props: Props) => {
-  const {
-    ariaLabel,
-    className,
-    ratingScale,
-    showScale,
-    size,
-    subtitle,
-    title,
-    value,
-    ...rest
-  } = props;
+const BpkRating = ({
+  ariaLabel,
+  className,
+  ratingScale = RATING_SCALES.zeroToFive,
+  showScale = true,
+  size = RATING_SIZES.base,
+  subtitle = undefined,
+  title = null,
+  value,
+  ...rest
+}: Props) => {
 
   const classNames = getClassName(
     'bpk-rating',
@@ -134,47 +133,30 @@ const BpkRating = (props: Props) => {
 
       <div className={textWrapperStyles}>
         {title && (
-          <BpkText
-            textStyle={titleTextSize}
-            tagName="span"
-            aria-hidden="true"
-          >
-            <span className={titleStyles}>{title}</span>
-          </BpkText>
+          <span className={titleStyles}>
+            <BpkText
+              textStyle={titleTextSize}
+              tagName="span"
+              aria-hidden="true"
+            >
+              {title}
+            </BpkText>
+          </span>
         )}
 
-        {subtitle && (
+        {subtitle && (<span className={subtitleStyles}>
           <BpkText
             textStyle={subtitleTextSize}
             tagName="span"
             aria-hidden="true"
           >
-            <span className={subtitleStyles}>{subtitle}</span>
+            {subtitle}
           </BpkText>
+          </span>
         )}
       </div>
     </div>
   );
-};
-
-BpkRating.propTypes = {
-  ariaLabel: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  className: PropTypes.string,
-  ratingScale: PropTypes.oneOf(Object.keys(RATING_SCALES)),
-  size: PropTypes.oneOf(Object.keys(RATING_SIZES)),
-  subtitle: PropTypes.string,
-  showScale: PropTypes.bool,
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-};
-
-BpkRating.defaultProps = {
-  className: null,
-  ratingScale: RATING_SCALES.zeroToFive,
-  size: RATING_SIZES.base,
-  subtitle: null,
-  showScale: true,
-  title: null,
 };
 
 export default BpkRating;

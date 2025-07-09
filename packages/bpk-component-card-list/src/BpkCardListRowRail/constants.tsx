@@ -16,27 +16,6 @@
  * limitations under the License.
  */
 
-import BpkPanel from '../../packages/bpk-component-panel/src/BpkPanel';
 
-import {
-  DefaultExample,
-  WithoutPaddingExample,
-  FullWidthExample,
-  MixedExample,
-} from './examples';
-
-export default {
-  title: 'bpk-component-panel',
-  component: BpkPanel,
-};
-
-export const Default = DefaultExample;
-export const WithoutPadding = WithoutPaddingExample;
-
-export const FullWidth = FullWidthExample;
-
-export const VisualTest = MixedExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
-};
+export const RELEASE_LOCK_DELAY = 20;
+export const RENDER_BUFFER_SIZE = 3;
