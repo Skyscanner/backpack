@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactElement } from 'react';
+import type { ReactElement, Dispatch, SetStateAction } from 'react';
 
 const LAYOUTS = {
   grid: 'grid',
@@ -42,7 +42,15 @@ const ACCESSORY_MOBILE_TYPES = {
 type ExpandProps = {
   children: string | ReactElement;
   collapsed: boolean;
-  onExpandTogle: () => void;
+  onExpandToggle: () => void;
+};
+
+type AccessibilityLabels = {
+  indicatorLabel?: string;
+  prevNavLabel?: string;
+  nextNavLabel?: string;
+  carouselLabel?: (initiallyShownCards: number, childrenLength: number) => string;
+  slideLabel?: (index: number, childrenLength: number) => string;
 };
 
 type CardListBaseProps = {
@@ -51,15 +59,17 @@ type CardListBaseProps = {
   cardList: ReactElement[];
   layoutMobile: LayoutMobile;
   layoutDesktop: LayoutDesktop;
-  accessoryDesktop?: (typeof ACCESSORY_DESKTOP_TYPES)[keyof typeof ACCESSORY_DESKTOP_TYPES]; // added
-  accessoryMobile?: (typeof ACCESSORY_MOBILE_TYPES)[keyof typeof ACCESSORY_MOBILE_TYPES]; // added
-  initiallyShownCards?: number;
+  accessoryDesktop?: (typeof ACCESSORY_DESKTOP_TYPES)[keyof typeof ACCESSORY_DESKTOP_TYPES];
+  accessoryMobile?: (typeof ACCESSORY_MOBILE_TYPES)[keyof typeof ACCESSORY_MOBILE_TYPES];
+  initiallyShownCardsDesktop?: number;
+  initiallyShownCardsMobile?: number;
   chipGroup?: ReactElement;
   buttonContent?: React.ReactNode;
   onButtonClick?: () => void;
-  onExpandClick?: () => void; // added
-  buttonHref?: string; // added
+  onExpandClick?: () => void;
+  buttonHref?: string;
   expandText?: string;
+  accessibilityLabels?: AccessibilityLabels;
 };
 
 type CardListGridStackProps = {
@@ -78,20 +88,25 @@ type CardListGridStackProps = {
   buttonHref?: string;
 };
 
-// type CardListRowRailProps = {
-//   children: Array<ReactElement<HTMLDivElement | HTMLAnchorElement>>;
-//   initiallyShownCards: number;
-//   layout: typeof LAYOUTS.row | typeof LAYOUTS.rail;
-//   accessory?: typeof ACCESSORY_DESKTOP_TYPES.Pagination;
-// };
+type CardListRowRailProps = {
+  children: Array<ReactElement<HTMLDivElement | HTMLAnchorElement>>;
+  initiallyShownCards: number;
+  layout: typeof LAYOUTS.row | typeof LAYOUTS.rail;
+  accessory?: typeof ACCESSORY_DESKTOP_TYPES.pagination;
+  isMobile?: boolean;
+  accessibilityLabels?: AccessibilityLabels;
+};
 
-// type CardListCarouselProps = {
-//   children: Array<ReactElement<HTMLDivElement | HTMLAnchorElement>>;
-//   initiallyShownCards: number;
-//   layout: typeof LAYOUTS.row | typeof LAYOUTS.rail;
-//   currentIndex: number;
-//   setCurrentIndex: Dispatch<SetStateAction<number>>;
-// }
+type CardListCarouselProps = {
+  children: Array<ReactElement<HTMLDivElement | HTMLAnchorElement>>;
+  initiallyShownCards: number;
+  layout: typeof LAYOUTS.row | typeof LAYOUTS.rail;
+  currentIndex: number;
+  setCurrentIndex: Dispatch<SetStateAction<number>>;
+  isMobile?: boolean;
+  carouselLabel?: (initiallyShownCards: number, childrenLength: number) => string;
+  slideLabel?: (index: number, childrenLength: number) => string;
+};
 
 type CardListProps = CardListBaseProps;
 
@@ -101,7 +116,7 @@ export type {
   LayoutDesktop,
   LayoutMobile,
   CardListGridStackProps,
-  // CardListRowRailProps,
-  // CardListCarouselProps,
+  CardListRowRailProps,
+  CardListCarouselProps,
   ExpandProps,
 };

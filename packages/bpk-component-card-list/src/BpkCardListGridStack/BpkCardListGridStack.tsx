@@ -64,13 +64,13 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
     childrenArray.length,
   );
 
-  const onExpandTogle = () => {
+  const onExpandToggle = () => {
     setCollapsed((prev) => !prev);
     onExpandClick?.();
   };
 
   const expandAccessoryContent = (
-    <ExpandAccessoryContent collapsed={collapsed} onExpandTogle={onExpandTogle}>
+    <ExpandAccessoryContent collapsed={collapsed} onExpandToggle={onExpandToggle}>
       {expandText || ''}
     </ExpandAccessoryContent>
   );

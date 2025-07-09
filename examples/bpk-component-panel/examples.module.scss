@@ -16,15 +16,9 @@
  * limitations under the License.
  */
 
-import BpkInsetBanner, {
-  type Props as BpkInsetBannerProps,
-} from './src/BpkInsetBanner';
-import BpkInsetBannerSponsored from './src/BpkInsetBannerV2/BpkInsetBannerSponsored';
-import { type CommonProps as BpkInsetBannerSponsoredProps } from './src/BpkInsetBannerV2/common-types';
-import { VARIANT } from './src/BpkInsetBannerV2/common-types';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
-export type { BpkInsetBannerProps };
-export type { BpkInsetBannerSponsoredProps };
-
-export { VARIANT };
-export { BpkInsetBannerSponsored, BpkInsetBanner };
+.bpk-panel-examples--wrapper {
+  padding: tokens.bpk-spacing-base();
+  background-color: tokens.$bpk-surface-highlight-day;
+}

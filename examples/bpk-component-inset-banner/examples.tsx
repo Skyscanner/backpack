@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-import BpkInsetBanner, {
+import {
+  BpkInsetBanner,
   VARIANT,
 } from '../../packages/bpk-component-inset-banner';
 

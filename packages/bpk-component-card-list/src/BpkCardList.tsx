@@ -15,16 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { useState, useEffect } from 'react';
-
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import { BpkButtonV2 } from '../../bpk-component-button';
 import BpkSectionHeader from '../../bpk-component-section-header';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkCardListGridStack from './BpkCardListGridStack';
-// import BpkCardListRowRailContainer from './BpkCardListRowRail';
+import BpkCardListRowRailContainer from './BpkCardListRowRail';
 import {
   ACCESSORY_DESKTOP_TYPES,
   ACCESSORY_MOBILE_TYPES,
@@ -41,6 +38,7 @@ const DEFAULT_ITEMS = 3;
 
 const BpkCardList = (props: CardListProps) => {
   const {
+    accessibilityLabels,
     accessoryDesktop,
     accessoryMobile,
     buttonContent,
@@ -49,7 +47,8 @@ const BpkCardList = (props: CardListProps) => {
     chipGroup,
     description,
     expandText,
-    initiallyShownCards = DEFAULT_ITEMS,
+    initiallyShownCardsDesktop = DEFAULT_ITEMS,
+    initiallyShownCardsMobile = DEFAULT_ITEMS,
     layoutDesktop,
     layoutMobile,
     onButtonClick,
@@ -57,20 +56,13 @@ const BpkCardList = (props: CardListProps) => {
     title,
   } = props;
 
-  const [showHeaderButton, setShowHeaderButton] = useState(false);
-  const [isMobileActive, setIsMobileActive] = useState(false);
-
-  useEffect(() => {
-    if (isMobileActive) {
-      setShowHeaderButton(
-        !!buttonContent && accessoryMobile !== ACCESSORY_MOBILE_TYPES.button,
-      );
-    } else {
-      setShowHeaderButton(
-        !!buttonContent && accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.button,
-      );
+  const shouldShowHeaderButton = (isMobile: boolean) => {
+    if (!buttonContent) return false;
+    if (isMobile) {
+      return accessoryMobile !== ACCESSORY_MOBILE_TYPES.button;
     }
-  }, [isMobileActive, buttonContent, accessoryMobile, accessoryDesktop]);
+    return accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.button;
+  };
 
   const headerButton = buttonContent && (
     <BpkButtonV2
@@ -84,94 +76,83 @@ const BpkCardList = (props: CardListProps) => {
 
   return (
     <div className={getClassName('bpk-card-list')} data-testid="bpk-card-list">
-      <BpkSectionHeader
-        title={title}
-        description={description}
-        button={showHeaderButton ? headerButton : null}
-      />
+      <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+        {(isMobile) => (
+          <>
+            <BpkSectionHeader
+              title={title}
+              description={description}
+              button={shouldShowHeaderButton(isMobile) ? headerButton : null}
+            />
 
-      {chipGroup}
+            {chipGroup}
 
-      <div
-        className={getClassName('bpk-card-list--card-list')}
-        data-testid="bpk-card-list--card-list"
-      >
-        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-          {(isActive) => {
-            if (isActive) {
-              setIsMobileActive(isActive);
-
-              // if (layoutMobile === LAYOUTS.rail) {
-              //   return (
-              //     <BpkCardListRowRailContainer
-              //       initiallyShownCards={initiallyShownCards}
-              //       layout={layoutMobile}
-              //     >
-              //       {cardList}
-              //     </BpkCardListRowRailContainer>
-              //   );
-              // }
-
-              if (layoutMobile === LAYOUTS.stack) {
-                return (
-                  <BpkCardListGridStack
-                    accessory={accessoryMobile}
-                    initiallyShownCards={initiallyShownCards}
-                    buttonContent={buttonContent}
-                    expandText={expandText}
-                    onButtonClick={onButtonClick}
-                    onExpandClick={onExpandClick}
-                    layout={layoutMobile}
-                    buttonHref={buttonHref}
-                  >
-                    {cardList}
-                  </BpkCardListGridStack>
-                );
-              }
-            }
-
-            /// ///// Desktop Cases ////////
-
-            // if (
-            //   layoutDesktop === LAYOUTS.row &&
-            //   accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.expand &&
-            //   accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.button
-            // ) {
-            //   return (
-            //     <BpkCardListRowRailContainer
-            //       accessory={accessoryDesktop}
-            //       initiallyShownCards={initiallyShownCards}
-            //       layout={layoutDesktop}
-            //     >
-            //       {cardList}
-            //     </BpkCardListRowRailContainer>
-            //   );
-            // }
-
-            if (
-              layoutDesktop === LAYOUTS.grid &&
-              accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.pagination
-            ) {
-              return (
-                <BpkCardListGridStack
-                  accessory={accessoryDesktop}
-                  initiallyShownCards={initiallyShownCards}
-                  buttonContent={buttonContent}
-                  expandText={expandText}
-                  onButtonClick={onButtonClick}
-                  onExpandClick={onExpandClick}
-                  layout={layoutDesktop}
-                  buttonHref={buttonHref}
-                >
-                  {cardList}
-                </BpkCardListGridStack>
-              );
-            }
-
-            return null;
-          }}
-        </BpkBreakpoint>
-      </div>
+            <div
+              className={getClassName('bpk-card-list--card-list')}
+              data-testid="bpk-card-list--card-list"
+            >
+              {isMobile ? (
+                <>
+                  {layoutMobile === LAYOUTS.rail && (
+                    <BpkCardListRowRailContainer
+                      initiallyShownCards={initiallyShownCardsMobile}
+                      layout={layoutMobile}
+                      accessibilityLabels={accessibilityLabels}
+                      isMobile
+                    >
+                      {cardList}
+                    </BpkCardListRowRailContainer>
+                  )}
+                  {layoutMobile === LAYOUTS.stack && (
+                    <BpkCardListGridStack
+                      accessory={accessoryMobile}
+                      initiallyShownCards={initiallyShownCardsMobile}
+                      buttonContent={buttonContent}
+                      expandText={expandText}
+                      onButtonClick={onButtonClick}
+                      onExpandClick={onExpandClick}
+                      layout={layoutMobile}
+                      buttonHref={buttonHref}
+                    >
+                      {cardList}
+                    </BpkCardListGridStack>
+                  )}
+                </>
+              ) : (
+                <>
+                  {layoutDesktop === LAYOUTS.row &&
+                    accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.expand &&
+                    accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.button && (
+                      <BpkCardListRowRailContainer
+                        accessory={accessoryDesktop}
+                        initiallyShownCards={initiallyShownCardsDesktop}
+                        layout={layoutDesktop}
+                        accessibilityLabels={accessibilityLabels}
+                      >
+                        {cardList}
+                      </BpkCardListRowRailContainer>
+                    )}
+                  {layoutDesktop === LAYOUTS.grid &&
+                    accessoryDesktop !== ACCESSORY_DESKTOP_TYPES.pagination && (
+                      <BpkCardListGridStack
+                        accessory={accessoryDesktop}
+                        initiallyShownCards={initiallyShownCardsDesktop}
+                        buttonContent={buttonContent}
+                        expandText={expandText}
+                        onButtonClick={onButtonClick}
+                        onExpandClick={onExpandClick}
+                        layout={layoutDesktop}
+                        buttonHref={buttonHref}
+                      >
+                        {cardList}
+                      </BpkCardListGridStack>
+                    )}
+                </>
+              )}
+            </div>
+          </>
+        )}
+      </BpkBreakpoint>
     </div>
   );
 };
