@@ -49,8 +49,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       `slide ${index + 1} of ${childrenLength}`,
   } = props;
 
-  console.log('currentIndex', currentIndex);
-
   type CustomCSSProperties = CSSProperties & {
     '--initially-shown-cards'?: number;
   };
@@ -96,20 +94,20 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   }, [root]);
 
   // Calculate the first visible index and group index based on visibilityList
-  // const visibleIndexes = visibilityList
-  //   .map((v, i) => (v === 1 ? i : -1))
-  //   .filter(i => i !== -1);
-  // const minVisibleIndex = visibleIndexes.length > 0 ? Math.min(...visibleIndexes) : 0;
-  // const groupIndex = Math.floor(minVisibleIndex / initiallyShownCards);
+  const visibleIndexes = visibilityList
+    .map((v, i) => (v === 1 ? i : -1))
+    .filter(i => i !== -1);
+  const minVisibleIndex = visibleIndexes.length > 0 ? Math.min(...visibleIndexes) : 0;
+  const groupIndex = Math.floor(minVisibleIndex / initiallyShownCards);
   
-  // useUpdateCurrentIndexByVisibility(
-  //   isMobile,
-  //   groupIndex,
-  //   setCurrentIndex,
-  //   stateScrollingLockRef,
-  //   openSetStateLockTimeoutRef,
-  //   initiallyShownCards,
-  // );
+  useUpdateCurrentIndexByVisibility(
+    isMobile,
+    groupIndex,
+    setCurrentIndex,
+    stateScrollingLockRef,
+    openSetStateLockTimeoutRef,
+    initiallyShownCards,
+  );
 
   useScrollToCard(currentIndex * initiallyShownCards, root, cardRefs, stateScrollingLockRef);
 
