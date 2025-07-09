@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import BpkCardList from "./src/BpkCardList";
+import BpkCardList from './src/BpkCardList';
 
 export default BpkCardList;

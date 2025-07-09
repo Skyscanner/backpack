@@ -25,7 +25,9 @@ import {
   WithVisuallyHiddenTitleExample,
   WithFullHeightContentExample,
   WithNonPaddedContentExample,
-  WithMobileModalBehaviourExample
+  WithMobileModalBehaviourExample,
+  DrawerWithTooltipExampleNotAbleToBeShown,
+  DrawerWithTooltipExampleAbleToBeShown,
 } from './examples';
 
 export default {
@@ -44,3 +46,7 @@ export const WithFullHeightContent = WithFullHeightContentExample;
 export const WithNonPaddedContent = WithNonPaddedContentExample;
 
 export const WithMobileModalBehaviour = WithMobileModalBehaviourExample;
+
+export const DrawerWithTooltipNotAbleToBeShown = DrawerWithTooltipExampleNotAbleToBeShown;
+
+export const DrawerWithTooltipAbleToBeShown = DrawerWithTooltipExampleAbleToBeShown;

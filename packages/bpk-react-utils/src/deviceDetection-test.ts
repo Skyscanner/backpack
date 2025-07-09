@@ -23,7 +23,7 @@ let windowSpy: jest.SpyInstance;
 describe('isIphone tests', () => {
   beforeEach(() => {
     jest.resetModules();
-    windowSpy = jest.spyOn(window, 'window', 'get');
+    windowSpy = jest.spyOn(window, 'navigator', 'get');
   });
 
   afterEach(() => {
@@ -40,10 +40,8 @@ describe('isIphone tests', () => {
 
   it('should return true if an iPhone', () => {
     windowSpy.mockImplementation(() => ({
-      navigator: {
-        userAgent: 'iPhone'
-      }
-  }));
+      userAgent: 'iPhone',
+    }));
 
     expect(isDeviceIphone()).toBe(true);
   });
@@ -52,7 +50,7 @@ describe('isIphone tests', () => {
 describe('isIpad tests', () => {
   beforeEach(() => {
     jest.resetModules();
-    windowSpy = jest.spyOn(window, 'window', 'get');
+    windowSpy = jest.spyOn(window, 'navigator', 'get');
   });
 
   afterEach(() => {
@@ -69,20 +67,16 @@ describe('isIpad tests', () => {
 
   it('should return true if an iPad', () => {
     windowSpy.mockImplementation(() => ({
-      navigator: {
-        userAgent: 'iPad'
-      }
-  }));
+      userAgent: 'iPad',
+    }));
 
     expect(isDeviceIpad()).toBe(true);
   });
 
   it('should return true if an iPad Pro', () => {
     windowSpy.mockImplementation(() => ({
-      navigator: {
-        maxTouchPoints: 3,
-        userAgent: 'Macintosh'
-      }
+      maxTouchPoints: 3,
+      userAgent: 'Macintosh',
     }));
     expect(isDeviceIpad()).toBe(true);
   });
@@ -91,7 +85,7 @@ describe('isIpad tests', () => {
 describe('isIos tests', () => {
   beforeEach(() => {
     jest.resetModules();
-    windowSpy = jest.spyOn(window, 'window', 'get');
+    windowSpy = jest.spyOn(window, 'navigator', 'get');
   });
 
   afterEach(() => {
@@ -104,40 +98,32 @@ describe('isIos tests', () => {
 
   it('should return false by default', () => {
     windowSpy.mockImplementation(() => ({
-      navigator: {
-        userAgent: 'Mac'
-      }
-  }));
+      userAgent: 'Mac',
+    }));
 
     expect(isDeviceIos()).toBe(false);
   });
 
   it('should return true if an iPhone', () => {
     windowSpy.mockImplementation(() => ({
-      navigator: {
-        userAgent: 'iPhone'
-      }
-  }));
+      userAgent: 'iPhone',
+    }));
 
     expect(isDeviceIos()).toBe(true);
   });
 
   it('should return true if an iPad', () => {
     windowSpy.mockImplementation(() => ({
-      navigator: {
-        userAgent: 'iPad'
-      }
-  }));
+      userAgent: 'iPad',
+    }));
 
     expect(isDeviceIos()).toBe(true);
   });
 
   it('should return true if an iPad Pro', () => {
     windowSpy.mockImplementation(() => ({
-      navigator: {
-        userAgent: 'Macintosh',
-        maxTouchPoints: 3
-      }
+      userAgent: 'Macintosh',
+      maxTouchPoints: 3,
     }));
 
     expect(isDeviceIos()).toBe(true);

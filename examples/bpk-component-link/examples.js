@@ -54,11 +54,42 @@ const ImplicitLinkExample = () => (
   </div>
 );
 
+const LinkInGridExample = () => (
+  <div style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+    gap: '1.5rem',
+    width: '100%',
+    maxWidth: '800px',
+  }}>
+    <BpkLink href="#" onClick={action('#1 clicked')}>
+      Link #1
+    </BpkLink>
+    <BpkLink href="#" onClick={action('#2 clicked')}>
+      Link #2
+    </BpkLink>
+    <BpkLink href="#" onClick={action('#3 clicked')}>
+      Link #3
+    </BpkLink>
+    <BpkLink href="#" onClick={action('#5 clicked')}>
+      Link #4
+    </BpkLink>
+  </div>
+)
+
 const ButtonLinkExample = () => (
   <div>
     <BpkButtonLink onClick={action('#1 clicked')}>Link #1</BpkButtonLink>
     <br />
     <BpkButtonLink onClick={action('#2 clicked')}>Link #2</BpkButtonLink>
+  </div>
+);
+
+const ImplicitButtonLinkExample = () => (
+  <div>
+    <BpkButtonLink onClick={action('#1 clicked')} implicit>Link #1</BpkButtonLink>
+    <br />
+    <BpkButtonLink onClick={action('#2 clicked')} implicit>Link #2</BpkButtonLink>
   </div>
 );
 
@@ -108,11 +139,11 @@ const CombinedExample = () => (
 const CombinedAlternativeExample = () => (
   <BpkDarkExampleWrapper style={{ color: colorSkyGrayTint04 }}>
     Links can be both{' '}
-    <BpkLink href="#" style={{ color: colorWhite }}>
+    <BpkLink href="#" alternate>
       anchor tags
     </BpkLink>{' '}
     as well as{' '}
-    <BpkButtonLink onClick={() => null} style={{ color: colorWhite }}>
+    <BpkButtonLink onClick={() => null} alternate>
       button tags
     </BpkButtonLink>
     .
@@ -156,4 +187,6 @@ export {
   CombinedAlternativeExample,
   OverviewExample,
   MixedExample,
+  LinkInGridExample,
+  ImplicitButtonLinkExample,
 };

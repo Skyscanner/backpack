@@ -68,25 +68,6 @@ if (componentSourceFilesModified && !snapshotsModified) {
   );
 }
 
-// If TS files have changed, the type files should have been updated.
-const componentFilesModified = fileChanges.some(
-  (filePath) =>
-    // packages/(one or more chars)/src/(one or more chars).(js or ts or tsx)
-    filePath.match(/packages\/.*bpk-component.+\/src\/.+\.(ts|tsx)$/) &&
-    !filePath.includes('-test.') &&
-    !filePath.endsWith('.d.ts'),
-);
-
-const typeFilesModified = fileChanges.some((filePath) =>
-  filePath.endsWith('.d.ts'),
-);
-
-if (componentFilesModified && !typeFilesModified) {
-  warn(
-    "Package source files (e.g. `packages/package-name/src/Component.tsx`) were updated, but type files weren't. Have you checked that no types have changed?",
-  );
-}
-
 // New files should include the Backpack license heading.
 const unlicensedFiles = createdFiles.filter((filePath: string) => {
   if (shouldContainLicensingInformation(filePath)) {

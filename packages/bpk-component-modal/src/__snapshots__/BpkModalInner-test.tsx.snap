@@ -408,9 +408,13 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
                 label="Close"
                 type="button"
               >
-                <div>
-                  Testing
-                </div>
+                <span
+                  class="bpk-link-underlined"
+                >
+                  <div>
+                    Testing
+                  </div>
+                </span>
               </button>
             </span>
           </span>
@@ -495,7 +499,11 @@ exports[`BpkModalInner should render correctly with closeText prop 1`] = `
             class="bpk-link"
             type="button"
           >
-            Dismiss
+            <span
+              class="bpk-link-underlined"
+            >
+              Dismiss
+            </span>
           </button>
         </div>
       </nav>

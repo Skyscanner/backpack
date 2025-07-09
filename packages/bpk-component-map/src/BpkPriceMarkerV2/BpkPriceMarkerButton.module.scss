@@ -18,7 +18,7 @@
 
 @use '../../../unstable__bpk-mixins/tokens';
 
-.bpk-price-marker {
+.bpk-price-marker-button {
   display: flex;
   height: tokens.bpk-spacing-lg();
   padding: 0 tokens.bpk-spacing-md();
