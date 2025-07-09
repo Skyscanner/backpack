@@ -65,6 +65,13 @@ describe('BpkText', () => {
     expect(getByText(text)).toBeInstanceOf(HTMLParagraphElement);
   });
 
+  it('should render correctly with color prop', () => {
+    const { getByText } = render(<BpkText color="#0c838a">{text}</BpkText>);
+
+    expect(getByText(text)).toHaveClass('bpk-text bpk-text--body-default');
+    expect(getByText(text)).toHaveAttribute('style', '--text-color: #0c838a;');
+  });
+
   it('should pass down unknown props', () => {
     const { getByText } = render(
       // eslint-disable-next-line backpack/use-tokens

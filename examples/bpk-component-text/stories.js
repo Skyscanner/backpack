@@ -29,6 +29,7 @@ import {
   LabelStylesExample,
   LarkenStylesExample,
   LarkenFallbackStylesExample,
+  ColorPropExample,
   MixedExample,
 } from './examples';
 
@@ -49,6 +50,8 @@ export const BodyStyles = BodyStylesExample;
 export const LabelStyles = LabelStylesExample;
 export const LarkenStyles = LarkenStylesExample;
 export const LarkenFallbackStyles = LarkenFallbackStylesExample;
+
+export const ColorProp = ColorPropExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});

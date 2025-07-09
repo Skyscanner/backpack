@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { textColors } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { withDefaultProps } from '../../packages/bpk-react-utils';
 
@@ -179,6 +181,23 @@ const LarkenFallbackStylesExample = () => (
   </div>
 );
 
+const ColorPropExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p" color={textColors.textPrimaryDay}>
+      Text with color token textPrimaryDay
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p" color="rgb(0, 98, 227)">
+      Text with color RGB rgb(0, 98, 227)
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p" color="#0c838a">
+      Text with color HEX #0c838a
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p" color="purple">
+      Text with color named purple
+    </BpkText>
+  </div>
+);
+
 const MixedExample = () => (
   <div>
     <HeroStylesExample />
@@ -187,6 +206,7 @@ const MixedExample = () => (
     <LabelStylesExample />
     <LarkenStylesExample />
     <LarkenFallbackStylesExample />
+    <ColorPropExample />
   </div>
 );
 
@@ -201,5 +221,6 @@ export {
   LabelStylesExample,
   LarkenStylesExample,
   LarkenFallbackStylesExample,
+  ColorPropExample,
   MixedExample,
 };

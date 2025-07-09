@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -76,12 +76,14 @@ type Props = {
   tagName?: Tag;
   className?: string | null;
   id?: string;
+  color?: string;
   [rest: string]: any;
 };
 
 const BpkText = ({
   children,
   className = null,
+  color = 'inherit',
   tagName: TagName = 'span',
   textStyle = TEXT_STYLES.bodyDefault,
   ...rest
@@ -92,10 +94,14 @@ const BpkText = ({
     className,
   );
 
+  const style = {
+    '--text-color': color,
+  } as CSSProperties;
+
   return (
     // Allowed, TagName is always a dom element.
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <TagName className={classNames} {...rest}>
+    <TagName className={classNames} style={style} {...rest}>
       {children}
     </TagName>
   );
