@@ -39,7 +39,7 @@ const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
     layout,
   } = props;
 
-  const totalIndicators = Children.count(children);
+  const totalIndicators = Math.ceil(Children.count(children) / initiallyShownCards);
   const [currentIndex, setCurrentIndex] = useState(0);
   const showAccessory = totalIndicators > initiallyShownCards;
 
