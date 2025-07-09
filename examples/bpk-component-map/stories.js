@@ -21,6 +21,7 @@ import BpkMap from '../../packages/bpk-component-map/src/BpkMap';
 import BpkOverlayView from '../../packages/bpk-component-map/src/BpkOverlayView';
 import BpkPriceMarker from '../../packages/bpk-component-map/src/BpkPriceMarker';
 import { BpkPriceMarkerV2 } from '../../packages/bpk-component-map/src/BpkPriceMarkerV2/BpkPriceMarker';
+import BpkPriceMarkerButton from '../../packages/bpk-component-map/src/BpkPriceMarkerV2/BpkPriceMarkerButton';
 
 import {
   SimpleExample,
@@ -34,6 +35,8 @@ import {
   WithPriceMarkersExample,
   WithPriceMarkersV2Example,
   WithIconPriceMarkersV2Example,
+  WithPriceMarkersV2ButtonWithPopoverOnMapExample,
+  WithIconPriceMarkersV2ButtonWithPopoverOnMapExample,
   MultipleMapsExample,
 } from './examples';
 import WithGoogleMapsScriptMock from './stories-utils';
@@ -45,8 +48,9 @@ export default {
     BpkIconMarker,
     BpkPriceMarker,
     BpkPriceMarkerV2,
+    BpkPriceMarkerButton,
     BpkOverlayView,
-    withGoogleMapsScript: WithGoogleMapsScriptMock
+    withGoogleMapsScript: WithGoogleMapsScriptMock,
   },
 };
 
@@ -72,5 +76,11 @@ export const PriceMarkers = WithPriceMarkersExample;
 export const PriceMarkersV2 = WithPriceMarkersV2Example;
 
 export const WithIconPriceMarkersV2 = WithIconPriceMarkersV2Example;
+
+export const PriceMarkersV2ButtonWithPopoverOnMap =
+  WithPriceMarkersV2ButtonWithPopoverOnMapExample;
+
+export const WithIconPriceMarkersV2ButtonWithPopoverOnMap =
+  WithIconPriceMarkersV2ButtonWithPopoverOnMapExample;
 
 export const MultiMaps = MultipleMapsExample;

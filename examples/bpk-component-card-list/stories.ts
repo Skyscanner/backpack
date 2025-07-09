@@ -16,9 +16,19 @@
  * limitations under the License.
  */
 
-import BpkCardList from "../../packages/bpk-component-card-list";
+import BpkCardList from '../../packages/bpk-component-card-list';
 
-import BasicExample from './examples';
+import {
+  BasicExample,
+  RowToRailExample,
+  RowToStackExample,
+  GridToRailExample,
+  GridToStackExample,
+  RowToStackWithExpandExample,
+  GridToStackWithExpandExample,
+  RowToRailForSnippetsExample,
+  MultiComponentsScrollingTestExample,
+} from './examples';
 
 export default {
   title: 'bpk-component-card-list',
@@ -26,12 +36,19 @@ export default {
 };
 
 export const Basic = BasicExample;
+export const RowToRail = RowToRailExample;
+export const RowToStack = RowToStackExample;
+export const GridToRail = GridToRailExample;
+export const GridToStack = GridToStackExample;
+export const RowToStackWithExpand = RowToStackWithExpandExample;
+export const GridToStackWithExpand = GridToStackWithExpandExample;
+export const RowToRailForSnippets = RowToRailForSnippetsExample;
 
+export const MultiComponentsScrollingTest = MultiComponentsScrollingTestExample;
 export const VisualTest = Basic;
-
 export const VisualTestWithZoom = {
   render: VisualTest,
   args: {
-    zoomEnabled: true
-  }
-}
+    zoomEnabled: true,
+  },
+};

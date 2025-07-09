@@ -38,6 +38,7 @@ describe('BpkDrawer accessibility tests', () => {
         getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
+        containerClassName='test-class'
       >
         Drawer content
       </BpkDrawer>,

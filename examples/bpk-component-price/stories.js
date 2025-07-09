@@ -33,6 +33,8 @@ import {
   SmallWithPreviousPriceExample,
   SmallWithPreviousPriceLeadingTextExample,
   SmallWithPreviousPriceLeadingAndTrailingTextAndIconExample,
+  SmallWithDataAttributeExample,
+  SmallWithPreviousPriceLeadingAndTrailingTextAndDataAttributeExample,
   SmallRightExample,
   SmallRightWithTrailingTextExample,
   SmallRightWithLeadingandTrailingTextExample,
@@ -73,6 +75,9 @@ export const SmallWithPreviousPriceLeadingText =
   SmallWithPreviousPriceLeadingTextExample;
 export const SmallWithPreviousPriceLeadingAndTrailingTextAndIcon =
   SmallWithPreviousPriceLeadingAndTrailingTextAndIconExample;
+export const SmallWithDataAttribute = SmallWithDataAttributeExample;
+export const SmallWithPreviousPriceLeadingAndTrailingTextAndDataAttribute =
+  SmallWithPreviousPriceLeadingAndTrailingTextAndDataAttributeExample;
 export const SmallRight = SmallRightExample;
 export const SmallRightWithTrailingText = SmallRightWithTrailingTextExample;
 export const SmallRightWithLeadingandTrailingText =

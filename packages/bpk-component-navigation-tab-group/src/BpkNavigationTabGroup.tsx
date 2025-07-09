@@ -107,7 +107,7 @@ const BpkNavigationTabGroup = ({
 }: Props) => {
   const [selectedTab, setSelectedTab] = useState(selectedIndex);
   const handleButtonClick = (e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>, tab: TabItem, index: number) => {
-    if (index !== selectedTab) {
+    if (index !== selectedTab && tab.target !== '_blank') {
       setSelectedTab(index);
     }
     onItemClick(e, tab, index);

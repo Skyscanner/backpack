@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
 import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -26,9 +26,9 @@ import BpkMobileScrollContainer, {
 } from './BpkMobileScrollContainer';
 
 const makeMockScroller = (
-  scrollLeft:number,
-  scrollWidth:number,
-  offsetWidth:number,
+  scrollLeft: number,
+  scrollWidth: number,
+  offsetWidth: number,
   offsetHeight = 0,
 ): HTMLElement => {
   const element = document.createElement('div');
@@ -127,9 +127,7 @@ describe('BpkMobileScrollContainer', () => {
             'custom-leading-class-name',
             'custom-trailing-class-name',
           ),
-        ).toEqual([
-          'custom-leading-class-name',
-        ]);
+        ).toEqual(['custom-leading-class-name']);
       });
 
       it('should return custom trailingIndicatorClassName if scrolling right is possible', () => {
@@ -141,9 +139,7 @@ describe('BpkMobileScrollContainer', () => {
             'custom-leading-class-name',
             'custom-trailing-class-name',
           ),
-        ).toEqual([
-          'custom-trailing-class-name',
-        ]);
+        ).toEqual(['custom-trailing-class-name']);
       });
 
       it('should return custom leadingIndicatorClassName and custom trailingIndicatorClassName if scrolling both right and left is possible', () => {
@@ -185,6 +181,37 @@ describe('BpkMobileScrollContainer', () => {
         const innerEl = makeMockInnerEl(288);
 
         expect(computeScrollBarAwareHeight(scrollerEl, innerEl)).toBe('auto');
+      });
+    });
+
+    describe('onScroll', () => {
+      it('should call the onScroll prop when scrolling', () => {
+        const onScrollMock = jest.fn();
+
+        const { container } = render(
+          <BpkMobileScrollContainer
+            onScroll={onScrollMock}
+            leadingIndicatorClassName="leading-indicator"
+          >
+            <div>Content</div>
+          </BpkMobileScrollContainer>,
+        );
+
+        const scroller = container.querySelector(
+          '.bpk-mobile-scroll-container__scroller',
+        );
+
+        expect(scroller).toBeInTheDocument();
+
+        scroller!.scrollLeft = 100;
+        fireEvent.scroll(scroller!);
+        const wrapper = container.firstChild as HTMLElement;
+
+        expect(wrapper).not.toBeNull();
+        expect(wrapper.className).toMatch(/leading/);
+
+        expect(onScrollMock).toHaveBeenCalledTimes(1);
+        expect(onScrollMock).toHaveBeenCalledWith(expect.any(Object));
       });
     });
   });

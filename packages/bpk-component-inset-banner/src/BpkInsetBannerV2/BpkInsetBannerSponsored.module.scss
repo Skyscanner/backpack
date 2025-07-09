@@ -1,0 +1,132 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../unstable__bpk-mixins/tokens';
+@use '../../../unstable__bpk-mixins/breakpoints';
+@use '../../../unstable__bpk-mixins/utils';
+
+.bpk-inset-banner {
+  display: grid;
+  padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: 'logo content cta';
+  align-items: center;
+  border-radius: tokens.$bpk-border-radius-sm;
+
+  @include breakpoints.bpk-breakpoint-mobile {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'logo cta'
+      'content content';
+  }
+
+  &--logo {
+    grid-area: logo;
+  }
+
+  &--with-image {
+    border-radius: tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm 0 0;
+  }
+
+  &--on-light {
+    color: tokens.$bpk-text-on-light-day;
+    fill: tokens.$bpk-text-on-light-day;
+  }
+
+  &--on-dark {
+    color: tokens.$bpk-text-on-dark-day;
+    fill: tokens.$bpk-text-on-dark-day;
+  }
+
+  &--image {
+    max-height: tokens.bpk-spacing-xl();
+    object-fit: contain;
+    padding-inline-end: tokens.bpk-spacing-base();
+  }
+
+  &--text-container {
+    display: flex;
+    grid-area: content;
+    flex-direction: column;
+    word-wrap: break-word;
+  }
+
+  &--cta-text {
+    display: flex;
+    align-items: center;
+  }
+
+  &--cta-button {
+    all: unset;
+
+    &:focus-visible {
+      @include utils.bpk-focus-indicator;
+    }
+  }
+
+  &--cta-container {
+    display: flex;
+    height: tokens.bpk-spacing-xl();
+    grid-area: cta;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &--cta-content {
+    display: flex;
+    align-items: center;
+  }
+
+  &--cta-info-icon {
+    display: flex;
+    align-items: center;
+    margin-inline-start: tokens.bpk-spacing-md();
+  }
+
+  &--bottom-sheet-content {
+    display: flex;
+    padding-bottom: tokens.bpk-spacing-xl();
+    flex-direction: row;
+  }
+
+  &--bottom-sheet-icon {
+    display: flex;
+    margin-right: tokens.bpk-spacing-lg();
+    fill: tokens.$bpk-font-color-base;
+  }
+
+  &--bottom-sheet-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--bottom-sheet-title {
+    margin-bottom: tokens.bpk-spacing-md();
+    color: tokens.$bpk-text-on-light-day;
+  }
+
+  &--bottom-sheet-description {
+    color: tokens.$bpk-text-on-light-day;
+  }
+}
+
+.bpk-inset-banner-image-container {
+  min-height: tokens.$bpk-line-height-8-xl;
+  border-radius: 0 0 tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm;
+  overflow: hidden;
+}
