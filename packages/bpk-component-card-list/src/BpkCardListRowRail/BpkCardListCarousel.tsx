@@ -20,6 +20,7 @@ import { useRef, useState, useEffect, isValidElement, Children } from 'react';
 
 import { cssModules } from '../../../bpk-react-utils';
 
+import LazyRenderOnceVisible from './LazyRenderOnceVisible';
 import { RENDER_BUFFER_SIZE } from './constants';
 import {
   lockScroll,
@@ -158,7 +159,9 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
             aria-label={slideLabel(index, childrenLength)}
             aria-current={index === currentIndex ? 'true' : 'false'}
           >
-            {isMobile ? card : renderList[index] === 1 && card}
+            <LazyRenderOnceVisible placeholder={<div />}>
+              {card}
+            </LazyRenderOnceVisible>
           </div>
         );
       })}

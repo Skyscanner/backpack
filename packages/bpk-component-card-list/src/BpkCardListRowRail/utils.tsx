@@ -76,7 +76,7 @@ export const useUpdateCurrentIndexByVisibility = (
   useEffect(() => {
     if (isMobile) return; // No pagination on mobile, so no need to update the current index
     // if (!visibilityList || visibilityList.length === 0) return;
-    
+
     setCurrentIndex(groupIndex);
     lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef); // prevent scrollIntoView from being called immediately after the current index is set
   }, [groupIndex]);
