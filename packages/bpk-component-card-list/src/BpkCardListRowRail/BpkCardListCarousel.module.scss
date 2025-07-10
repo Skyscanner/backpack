@@ -57,6 +57,20 @@
       overflow: visible;
       box-sizing: border-box;
       scroll-snap-align: start;
+
+      @include breakpoints.bpk-breakpoint-mobile {
+        flex: 0 0
+          calc(
+            (
+                100% -
+                  (
+                    tokens.bpk-spacing-md() *
+                      (var(--initially-shown-cards, 3) - 1)
+                  )
+              ) /
+              (var(--initially-shown-cards, 3) - 0.5)
+          );
+      }
     }
   }
 

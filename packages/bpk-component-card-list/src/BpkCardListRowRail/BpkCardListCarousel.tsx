@@ -18,6 +18,8 @@
 import type { CSSProperties } from 'react';
 import { useRef, useState, useEffect, isValidElement, Children } from 'react';
 
+import throttle from 'lodash/debounce';
+
 import { cssModules } from '../../../bpk-react-utils';
 
 import { RENDER_BUFFER_SIZE } from './constants';
@@ -57,9 +59,11 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
   const childrenLength = Children.count(children);
   const [root, setRoot] = useState<HTMLElement | null>(null);
+  const [, forceUpdate] = useState(0);
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
   const hasBeenVisibleRef = useRef<Set<number>>(new Set());
   const firstCardWidthRef = useRef<number | null>(null);
+  const firstCardHeightRef = useRef<number | null>(null);
 
   const [visibilityList, setVisibilityList] = useState<number[]>(
     Array(childrenLength).fill(0),
@@ -94,11 +98,15 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     cardRefs.current[index] = el;
     observerVisibility(el, index);
     setA11yTabIndex(el, index, visibilityList);
-    // 进入可视区时记录
+    // record the first card's width and height when it becomes visible
     if (el && visibilityList[index] === 1) {
       hasBeenVisibleRef.current.add(index);
       if (firstCardWidthRef.current == null && el.offsetWidth) {
         firstCardWidthRef.current = el.offsetWidth;
+      }
+
+      if (firstCardHeightRef.current == null && el.offsetHeight) {
+        firstCardHeightRef.current = el.offsetHeight;
       }
     }
   };
@@ -132,6 +140,17 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     }
   }, [currentIndex, initiallyShownCards, childrenLength]);
 
+  useEffect(() => {
+    const handleResize = throttle(() => {
+      firstCardWidthRef.current = null;
+      firstCardHeightRef.current = null;
+      forceUpdate((n) => n + 1);
+    }, 200);
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div
       className={getClassName(`bpk-card-list-row-rail__${layout}`)}
@@ -142,21 +161,28 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       tabIndex={0}
       role="region"
       ref={setRoot}
-      onWheel={(e) => e.preventDefault()} // 禁止鼠标滚轮滑动
     >
       {children.map((card, index) => {
         if (!isValidElement(card)) return null;
+
+        const cardDimensionStyle = {};
+        if (firstCardWidthRef.current) {
+          cardDimensionStyle.width = `${firstCardWidthRef.current}px`;
+        }
+        if (firstCardHeightRef.current) {
+          cardDimensionStyle.height = `${firstCardHeightRef.current}px`;
+        }
+
         // Only render cards that are within the renderList range
         if (renderList[index] !== 1 && !hasBeenVisibleRef.current.has(index)) {
-          // Placeholder for cards not yet visible
           return (
             <div
               key={`placeholder-${index.toString()}`}
               style={{
-                width:
-                  firstCardWidthRef.current && `${firstCardWidthRef.current}px`,
+                ...shownNumberStyle,
+                ...cardDimensionStyle,
+                flexShrink: 0,
                 visibility: 'hidden',
-                pointerEvents: 'none',
               }}
               aria-hidden="true"
             />
@@ -167,7 +193,10 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           <div
             className={getClassName(`bpk-card-list-row-rail__${layout}__card`)}
             ref={cardRefCallback(index)}
-            style={shownNumberStyle}
+            style={{
+              ...shownNumberStyle,
+              ...cardDimensionStyle,
+            }}
             key={`carousel-card-${index.toString()}`}
             role="group"
             aria-label={slideLabel(index, childrenLength)}
