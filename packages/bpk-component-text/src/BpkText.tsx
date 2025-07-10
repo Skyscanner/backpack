@@ -75,15 +75,15 @@ type Props = {
   textStyle?: TextStyle;
   tagName?: Tag;
   className?: string | null;
+  color?: string | null;
   id?: string;
-  color?: string;
   [rest: string]: any;
 };
 
 const BpkText = ({
   children,
   className = null,
-  color,
+  color = null,
   tagName: TagName = 'span',
   textStyle = TEXT_STYLES.bodyDefault,
   ...rest
