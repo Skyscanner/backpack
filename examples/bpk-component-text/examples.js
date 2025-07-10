@@ -186,7 +186,7 @@ const ColorPropExample = () => (
     <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p" color={textColors.textPrimaryDay}>
       Text with color token textPrimaryDay
     </BpkText>
-    <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p" color="rgb(0, 98, 227)">
+    <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p" color="rgb(0, 98, 227)" style={{ marginBottom: '1rem' }}>
       Text with color RGB rgb(0, 98, 227)
     </BpkText>
     <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p" color="#0c838a">
