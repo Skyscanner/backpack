@@ -17,6 +17,8 @@
  */
 
 import { render } from '@testing-library/react';
+
+import { textColors } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import '@testing-library/jest-dom';
 
 import BpkText from './BpkText';
@@ -66,20 +68,25 @@ describe('BpkText', () => {
   });
 
   it('should render correctly with color prop', () => {
-    const { getByText } = render(<BpkText color="#0c838a">{text}</BpkText>);
+    const { getByText } = render(
+      <BpkText color={textColors.textSecondaryDay}>{text}</BpkText>,
+    );
 
     expect(getByText(text)).toHaveClass('bpk-text bpk-text--body-default');
-    expect(getByText(text)).toHaveAttribute('style', '--text-color: #0c838a;');
+    expect(getByText(text)).toHaveAttribute(
+      'style',
+      'color: rgb(98, 105, 113);',
+    );
   });
 
   it('should pass down unknown props', () => {
     const { getByText } = render(
       // eslint-disable-next-line backpack/use-tokens
-      <BpkText style={{ color: 'red' }}>{text}</BpkText>,
+      <BpkText style={{ backgroundColor: 'red' }}>{text}</BpkText>,
     );
 
     expect(getByText(text)).toHaveClass('bpk-text bpk-text--body-default');
-    expect(getByText(text)).toHaveAttribute('style', 'color: red;');
+    expect(getByText(text)).toHaveAttribute('style', 'background-color: red;');
   });
 
   ['xs', 'sm', 'base', 'lg', 'xl', 'xxl', 'xxxl', 'xxxxl', 'xxxxxl'].forEach(

@@ -82,7 +82,7 @@ export default () => (
 
 ### Color Prop
 
-The color prop allows you to customize the text color of the BpkText component rather override by className. It supports a variety of color formats, including CSS named colors, HEX values, RGB/RGBA values, HSL/HSLA values and CSS global values. If no color is provided, the text color defaults to 'inherit', meaning it will inherit the color from its parent element. It's recommended to use predefined tokens from [bpk-foundations-web](https://github.com/Skyscanner/backpack-foundations/tree/7f2a6358ddb288a2c8372f3ffef3d39fa97a40cf/packages/bpk-foundations-web/tokens) for consistency.
+The color prop allows you to customize the text color of the BpkText component rather override by className. It supports a variety of color formats, including CSS named colors, HEX values, RGB/RGBA values, HSL/HSLA values and CSS global values. It's recommended to use predefined tokens from [bpk-foundations-web](https://github.com/Skyscanner/backpack-foundations/tree/7f2a6358ddb288a2c8372f3ffef3d39fa97a40cf/packages/bpk-foundations-web/tokens) for consistency.
 
 ```javascript
 import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';

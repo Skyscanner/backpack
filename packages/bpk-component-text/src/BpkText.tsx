@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { CSSProperties, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -94,14 +94,10 @@ const BpkText = ({
     className,
   );
 
-  const style = {
-    '--text-color': color,
-  } as CSSProperties;
-
   return (
     // Allowed, TagName is always a dom element.
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <TagName className={classNames} style={style} {...rest}>
+    <TagName className={classNames} style={{ color }} {...rest}>
       {children}
     </TagName>
   );

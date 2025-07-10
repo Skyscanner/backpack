@@ -19,8 +19,6 @@
 @use '../../unstable__bpk-mixins/typography';
 
 .bpk-text {
-  color: var(--text-color, inherit);
-
   @include typography.bpk-text;
 
   &--xs {
