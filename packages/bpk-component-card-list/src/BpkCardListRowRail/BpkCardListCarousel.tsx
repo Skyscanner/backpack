@@ -24,7 +24,6 @@ import { RENDER_BUFFER_SIZE } from './constants';
 import {
   lockScroll,
   setA11yTabIndex,
-  useUpdateCurrentIndexByVisibility,
   useScrollToCard,
   useIntersectionObserver,
 } from './utils';
@@ -44,7 +43,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     initiallyShownCards,
     isMobile = false,
     layout,
-    setCurrentIndex,
     slideLabel = (index: number, childrenLength: number) =>
       `slide ${index + 1} of ${childrenLength}`,
   } = props;
@@ -73,43 +71,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const observerVisibility = useIntersectionObserver(
     { root, threshold: 0.5 },
     setVisibilityList,
-  );
-
-  useEffect(() => {
-    const container = root;
-    if (isMobile || !container) return undefined;
-
-    const lockScrollDuringInteraction = () => {
-      lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef);
-    };
-
-    container.addEventListener('wheel', lockScrollDuringInteraction);
-    container.addEventListener('touchmove', lockScrollDuringInteraction);
-
-    return () => {
-      container.removeEventListener('touchmove', lockScrollDuringInteraction);
-      container.removeEventListener('wheel', lockScrollDuringInteraction);
-      if (openSetStateLockTimeoutRef.current) {
-        clearTimeout(openSetStateLockTimeoutRef.current);
-      }
-    };
-  }, [root]);
-
-  // Calculate the first visible index and group index based on visibilityList
-  const visibleIndexes = visibilityList
-    .map((v, i) => (v === 1 ? i : -1))
-    .filter((i) => i !== -1);
-  const minVisibleIndex =
-    visibleIndexes.length > 0 ? Math.min(...visibleIndexes) : 0;
-  const groupIndex = Math.floor(minVisibleIndex / initiallyShownCards);
-
-  useUpdateCurrentIndexByVisibility(
-    isMobile,
-    groupIndex,
-    setCurrentIndex,
-    stateScrollingLockRef,
-    openSetStateLockTimeoutRef,
-    initiallyShownCards,
   );
 
   useScrollToCard(
@@ -141,6 +102,35 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       }
     }
   };
+
+  useEffect(() => {
+    const container = root;
+    if (isMobile || !container) return undefined;
+
+    const lockScrollDuringInteraction = () => {
+      lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef);
+    };
+
+    container.addEventListener('wheel', lockScrollDuringInteraction);
+    container.addEventListener('touchmove', lockScrollDuringInteraction);
+
+    return () => {
+      container.removeEventListener('touchmove', lockScrollDuringInteraction);
+      container.removeEventListener('wheel', lockScrollDuringInteraction);
+      if (openSetStateLockTimeoutRef.current) {
+        clearTimeout(openSetStateLockTimeoutRef.current);
+      }
+    };
+  }, [root]);
+
+  useEffect(() => {
+    // update hasBeenVisibleRef to include the range of cards that should be visible
+    const start = currentIndex * initiallyShownCards;
+    const end = start + initiallyShownCards + RENDER_BUFFER_SIZE;
+    for (let i = start; i < end && i < childrenLength; i += 1) {
+      hasBeenVisibleRef.current.add(i);
+    }
+  }, [currentIndex, initiallyShownCards, childrenLength]);
 
   return (
     <div

@@ -66,7 +66,6 @@ const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
         initiallyShownCards={initiallyShownCards}
         layout={layout}
         currentIndex={currentIndex}
-        setCurrentIndex={setCurrentIndex}
         isMobile={isMobile}
         carouselLabel={accessibilityLabels?.carouselLabel}
         slideLabel={accessibilityLabels?.slideLabel}
