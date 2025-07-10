@@ -17,6 +17,7 @@
  */
 
 @use '../../../unstable__bpk-mixins/tokens';
+@use '../../../unstable__bpk-mixins/breakpoints';
 
 .bpk-card-list-row-rail {
   &__row,
@@ -24,12 +25,16 @@
     display: flex;
     padding-top: tokens.bpk-spacing-sm();
     padding-bottom: tokens.bpk-spacing-sm();
-    overflow-x: scroll;
+    overflow-x: hidden;
     box-sizing: border-box;
     gap: tokens.bpk-spacing-sm();
     scroll-snap-stop: always;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
+
+    @include breakpoints.bpk-breakpoint-mobile {
+      overflow-x: scroll;
+    }
 
     &::-webkit-scrollbar {
       display: none;

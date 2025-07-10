@@ -20,7 +20,6 @@ import { useRef, useState, useEffect, isValidElement, Children } from 'react';
 
 import { cssModules } from '../../../bpk-react-utils';
 
-import LazyRenderOnceVisible from './LazyRenderOnceVisible';
 import { RENDER_BUFFER_SIZE } from './constants';
 import {
   lockScroll,
@@ -61,6 +60,8 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const childrenLength = Children.count(children);
   const [root, setRoot] = useState<HTMLElement | null>(null);
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const hasBeenVisibleRef = useRef<Set<number>>(new Set());
+  const firstCardWidthRef = useRef<number | null>(null);
 
   const [visibilityList, setVisibilityList] = useState<number[]>(
     Array(childrenLength).fill(0),
@@ -97,10 +98,11 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   // Calculate the first visible index and group index based on visibilityList
   const visibleIndexes = visibilityList
     .map((v, i) => (v === 1 ? i : -1))
-    .filter(i => i !== -1);
-  const minVisibleIndex = visibleIndexes.length > 0 ? Math.min(...visibleIndexes) : 0;
+    .filter((i) => i !== -1);
+  const minVisibleIndex =
+    visibleIndexes.length > 0 ? Math.min(...visibleIndexes) : 0;
   const groupIndex = Math.floor(minVisibleIndex / initiallyShownCards);
-  
+
   useUpdateCurrentIndexByVisibility(
     isMobile,
     groupIndex,
@@ -110,7 +112,12 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     initiallyShownCards,
   );
 
-  useScrollToCard(currentIndex * initiallyShownCards, root, cardRefs, stateScrollingLockRef);
+  useScrollToCard(
+    currentIndex * initiallyShownCards,
+    root,
+    cardRefs,
+    stateScrollingLockRef,
+  );
 
   // Similar to Virtual Scrolling to improve performance
   const firstVisibleIndex = Math.max(0, visibilityList.indexOf(1));
@@ -122,6 +129,19 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       : 0,
   );
 
+  const cardRefCallback = (index: number) => (el: HTMLDivElement | null) => {
+    cardRefs.current[index] = el;
+    observerVisibility(el, index);
+    setA11yTabIndex(el, index, visibilityList);
+    // 进入可视区时记录
+    if (el && visibilityList[index] === 1) {
+      hasBeenVisibleRef.current.add(index);
+      if (firstCardWidthRef.current == null && el.offsetWidth) {
+        firstCardWidthRef.current = el.offsetWidth;
+      }
+    }
+  };
+
   return (
     <div
       className={getClassName(`bpk-card-list-row-rail__${layout}`)}
@@ -132,36 +152,37 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       tabIndex={0}
       role="region"
       ref={setRoot}
+      onWheel={(e) => e.preventDefault()} // 禁止鼠标滚轮滑动
     >
       {children.map((card, index) => {
         if (!isValidElement(card)) return null;
-
-        const cardRefCallback = (el: HTMLDivElement | null) => {
-          cardRefs.current[index] = el;
-          observerVisibility(el, index);
-          setA11yTabIndex(el, index, visibilityList);
-        };
-
-        const cardStyle: CSSProperties = isMobile
-          ? {
-              ...shownNumberStyle,
-              visibility: renderList[index] === 1 ? 'visible' : 'hidden', // for mobile, {renderList[index] === 1 && card} will cause reflowing and bugs, implementing visibility improvement instead
-            }
-          : shownNumberStyle;
+        // Only render cards that are within the renderList range
+        if (renderList[index] !== 1 && !hasBeenVisibleRef.current.has(index)) {
+          // Placeholder for cards not yet visible
+          return (
+            <div
+              key={`placeholder-${index.toString()}`}
+              style={{
+                width:
+                  firstCardWidthRef.current && `${firstCardWidthRef.current}px`,
+                visibility: 'hidden',
+                pointerEvents: 'none',
+              }}
+              aria-hidden="true"
+            />
+          );
+        }
 
         return (
           <div
             className={getClassName(`bpk-card-list-row-rail__${layout}__card`)}
-            ref={cardRefCallback}
-            style={cardStyle}
+            ref={cardRefCallback(index)}
+            style={shownNumberStyle}
             key={`carousel-card-${index.toString()}`}
             role="group"
             aria-label={slideLabel(index, childrenLength)}
-            aria-current={index === currentIndex ? 'true' : 'false'}
           >
-            <LazyRenderOnceVisible placeholder={<div />}>
-              {card}
-            </LazyRenderOnceVisible>
+            {card}
           </div>
         );
       })}
