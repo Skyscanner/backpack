@@ -67,16 +67,19 @@ describe('BpkText', () => {
     expect(getByText(text)).toBeInstanceOf(HTMLParagraphElement);
   });
 
-  it('should render correctly with color prop', () => {
-    const { getByText } = render(
-      <BpkText color={textColors.textSecondaryDay}>{text}</BpkText>,
-    );
+  it.each([
+    { color: textColors.textSecondaryDay, expected: 'rgb(98, 105, 113)' },
+    // eslint-disable-next-line backpack/use-tokens
+    { color: 'rgb(0, 98, 227)', expected: 'rgb(0, 98, 227)' },
+    // eslint-disable-next-line backpack/use-tokens
+    { color: '#0c838a', expected: 'rgb(12, 131, 138)' },
+    // eslint-disable-next-line backpack/use-tokens
+    { color: 'purple', expected: 'purple' },
+  ])('should render correctly with color="%s"', ({ color, expected }) => {
+    const { getByText } = render(<BpkText color={color}>{text}</BpkText>);
 
     expect(getByText(text)).toHaveClass('bpk-text bpk-text--body-default');
-    expect(getByText(text)).toHaveAttribute(
-      'style',
-      'color: rgb(98, 105, 113);',
-    );
+    expect(getByText(text)).toHaveAttribute('style', `color: ${expected};`);
   });
 
   it('should pass down unknown props', () => {
