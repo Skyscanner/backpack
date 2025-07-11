@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+@use 'sass:math';
 @use '../../unstable__bpk-mixins/tokens';
 
 $arrow-size: tokens.bpk-spacing-base();
@@ -36,7 +37,7 @@ $arrow-size: tokens.bpk-spacing-base();
   span {
     display: inline-flex;
     z-index: 1;
-    padding: tokens.bpk-spacing-sm() / 2 tokens.bpk-spacing-md();
+    padding: math.div(tokens.bpk-spacing-sm(), 2) tokens.bpk-spacing-md();
     border-radius: tokens.$bpk-border-radius-xs;
     color: tokens.$bpk-text-primary-inverse-day;
   }
