@@ -73,7 +73,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const openSetStateLockTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const observerVisibility = useIntersectionObserver(
-    { root, threshold: 0.5 },
+    { root, threshold: 0.1 },
     setVisibilityList,
   );
 
@@ -99,7 +99,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     observerVisibility(el, index);
     setA11yTabIndex(el, index, visibilityList);
     // record the first card's width and height when it becomes visible
-    if (el && visibilityList[index] === 1) {
+    if (el && visibilityList[index] === 0) {
       hasBeenVisibleRef.current.add(index);
       if (firstCardWidthRef.current == null && el.offsetWidth) {
         firstCardWidthRef.current = el.offsetWidth;
