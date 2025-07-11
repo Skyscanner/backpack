@@ -165,7 +165,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       {children.map((card, index) => {
         if (!isValidElement(card)) return null;
 
-        const cardDimensionStyle = {};
+        const cardDimensionStyle: CSSProperties = {};
         if (firstCardWidthRef.current) {
           cardDimensionStyle.width = `${firstCardWidthRef.current}px`;
         }
@@ -173,7 +173,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           cardDimensionStyle.height = `${firstCardHeightRef.current}px`;
         }
 
-        // Only render cards that are within the renderList range
+        // Only render cards that are within the renderList range or have been visible before
         if (renderList[index] !== 1 && !hasBeenVisibleRef.current.has(index)) {
           return (
             <div
