@@ -65,23 +65,6 @@ export const setA11yTabIndex = (
   });
 };
 
-export const useUpdateCurrentIndexByVisibility = (
-  isMobile: boolean,
-  groupIndex: number,
-  setCurrentIndex: (index: number) => void,
-  stateScrollingLockRef: React.MutableRefObject<boolean>,
-  openSetStateLockTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
-  initiallyShownCards: number,
-) => {
-  useEffect(() => {
-    if (isMobile) return; // No pagination on mobile, so no need to update the current index
-    // if (!visibilityList || visibilityList.length === 0) return;
-
-    setCurrentIndex(groupIndex);
-    lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef); // prevent scrollIntoView from being called immediately after the current index is set
-  }, [groupIndex]);
-};
-
 export const useScrollToCard = (
   currentIndex: number,
   container: HTMLElement | null,

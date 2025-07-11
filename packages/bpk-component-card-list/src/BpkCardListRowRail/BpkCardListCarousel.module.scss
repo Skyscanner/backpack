@@ -18,6 +18,7 @@
 
 @use '../../../unstable__bpk-mixins/tokens';
 @use '../../../unstable__bpk-mixins/breakpoints';
+@use '../../../unstable__bpk-mixins/utils';
 
 .bpk-card-list-row-rail {
   &__row,
@@ -42,7 +43,7 @@
 
     &__card {
       position: relative;
-      padding: tokens.bpk-spacing-md();
+      padding: 0 tokens.bpk-spacing-md();
       flex: 0 0
         calc(
           (
@@ -57,6 +58,17 @@
       overflow: visible;
       box-sizing: border-box;
       scroll-snap-align: start;
+
+      @include breakpoints.bpk-breakpoint-mobile {
+        &:first-child {
+          padding-left: tokens.bpk-spacing-sm();
+
+          @include utils.bpk-rtl {
+            padding-right: tokens.bpk-spacing-sm();
+            padding-left: tokens.bpk-spacing-md();
+          }
+        }
+      }
 
       @include breakpoints.bpk-breakpoint-mobile {
         flex: 0 0
