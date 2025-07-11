@@ -24,6 +24,7 @@ import { Component, useRef, useState } from 'react';
 import { withRtlSupport } from '../../packages/bpk-component-icon';
 import AirportsIconSm from '../../packages/bpk-component-icon/sm/airports';
 import FoodIconSm from '../../packages/bpk-component-icon/sm/food';
+import HeartIconSm from '../../packages/bpk-component-icon/sm/heart';
 import HotelIconSm from '../../packages/bpk-component-icon/sm/hotels';
 import LandmarkIconSm from '../../packages/bpk-component-icon/sm/landmark';
 import BpkMap, {
@@ -44,6 +45,7 @@ const AlignedHotelIconSm = withRtlSupport(HotelIconSm);
 const AlignedLandmarkIconSm = withRtlSupport(LandmarkIconSm);
 const AlignedAirportsIconSm = withRtlSupport(AirportsIconSm);
 const AlignedFoodIconSm = withRtlSupport(FoodIconSm);
+const AlignedHeartIconSm = withRtlSupport(HeartIconSm);
 
 type Props = { children: ?Node, language: string };
 
@@ -78,6 +80,7 @@ const venues = [
     price: '£48',
     icon: <AlignedLandmarkIconSm />,
     airportsIcon: <AlignedAirportsIconSm />,
+    heartIcon: <AlignedHeartIconSm />,
   },
   {
     id: '2',
@@ -87,6 +90,7 @@ const venues = [
     price: '£151',
     icon: <AlignedFoodIconSm />,
     airportsIcon: <AlignedAirportsIconSm />,
+    heartIcon: <AlignedHeartIconSm />,
   },
   {
     id: '3',
@@ -96,6 +100,7 @@ const venues = [
     price: '£62',
     icon: <AlignedHotelIconSm />,
     airportsIcon: <AlignedAirportsIconSm />,
+    heartIcon: <AlignedHeartIconSm />,
   },
   {
     id: '4',
@@ -105,6 +110,7 @@ const venues = [
     price: '£342',
     icon: <AlignedHotelIconSm />,
     airportsIcon: <AlignedAirportsIconSm />,
+    heartIcon: <AlignedHeartIconSm />,
   },
 ];
 
@@ -114,7 +120,7 @@ type PriceMarkerState = {
 };
 
 class StatefulBpkPriceMarker extends Component<
-  { action: () => mixed, airportsIconWithPrice: boolean },
+  { action: () => mixed, airportsIconWithPrice: boolean, heartIconWithPrice: boolean },
   PriceMarkerState,
 > {
   static defaultProps = {
@@ -152,23 +158,33 @@ class StatefulBpkPriceMarker extends Component<
         zoom={15}
         center={{ latitude: 55.944665, longitude: -3.1964903 }}
       >
-        {venues.map((venue) => (
-          <BpkPriceMarker
-            id={venue.id}
-            label={venue.price}
-            icon={this.props.airportsIconWithPrice ? venue.airportsIcon : null}
-            position={{
-              latitude: venue.latitude,
-              longitude: venue.longitude,
-            }}
-            onClick={() => {
-              this.props.action();
-              this.selectVenue(venue.id);
-            }}
-            status={this.getStatus(venue.id)}
-            accessibilityLabel="Click the price marker"
-          />
-        ))}
+        {venues.map((venue) => {
+          let icon = null;
+          if (this.props.airportsIconWithPrice) {
+            icon = venue.airportsIcon;
+          }
+          if (this.props.heartIconWithPrice) {
+            icon = venue.heartIcon
+          }
+
+          return (
+            <BpkPriceMarker
+              id={venue.id}
+              label={venue.price}
+              icon={icon}
+              position={{
+                latitude: venue.latitude,
+                longitude: venue.longitude,
+              }}
+              onClick={() => {
+                this.props.action();
+                this.selectVenue(venue.id);
+              }}
+              status={this.getStatus(venue.id)}
+              accessibilityLabel='Click the price marker'
+            />
+          );
+        })}
       </StoryMap>
     );
   }
@@ -369,6 +385,13 @@ const WithIconPriceMarkersExample = () => (
   />
 );
 
+const WithHeartIconPriceMarkerExample = () => (
+  <StatefulBpkPriceMarker
+    action={action('Price marker clicked')}
+    heartIconWithPrice
+  />
+);
+
 const WithPriceMarkersButtonWithPopoverOnMapExample = () => (
   <StatefulBpkPriceMarkerButtonWithPopoverOnMap
     action={action('Price marker button clicked')}
@@ -416,6 +439,7 @@ export {
   WithIconMarkersExample,
   WithPriceMarkersExample,
   WithIconPriceMarkersExample,
+  WithHeartIconPriceMarkerExample,
   WithPriceMarkersButtonWithPopoverOnMapExample,
   WithIconPriceMarkersButtonWithPopoverOnMapExample,
   MultipleMapsExample,

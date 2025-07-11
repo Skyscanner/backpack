@@ -33,6 +33,7 @@ import {
   WithIconMarkersExample,
   WithPriceMarkersExample,
   WithIconPriceMarkersExample,
+  WithHeartIconPriceMarkerExample,
   WithPriceMarkersButtonWithPopoverOnMapExample,
   WithIconPriceMarkersButtonWithPopoverOnMapExample,
   MultipleMapsExample,
@@ -71,6 +72,8 @@ export const IconMarkers = WithIconMarkersExample;
 export const PriceMarkers = WithPriceMarkersExample;
 
 export const WithIconPriceMarkers = WithIconPriceMarkersExample;
+
+export const WithHeartIconPriceMarker =WithHeartIconPriceMarkerExample;
 
 export const PriceMarkersButtonWithPopoverOnMap =
   WithPriceMarkersButtonWithPopoverOnMapExample;
