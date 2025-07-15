@@ -96,9 +96,9 @@
 }
 
 .bpk-segmented-control--surface-contrast:not(
-    :first-of-type,
-    [class*='selected']
-  ) {
+  :first-of-type,
+  [class*='selected']
+) {
   border-inline-start: tokens.$bpk-one-pixel-rem solid
     tokens.$bpk-line-on-dark-day;
 }

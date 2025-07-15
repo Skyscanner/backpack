@@ -75,6 +75,7 @@ type Props = {
   textStyle?: TextStyle;
   tagName?: Tag;
   className?: string | null;
+  color?: string | null;
   id?: string;
   [rest: string]: any;
 };
@@ -82,6 +83,7 @@ type Props = {
 const BpkText = ({
   children,
   className = null,
+  color = null,
   tagName: TagName = 'span',
   textStyle = TEXT_STYLES.bodyDefault,
   ...rest
@@ -92,10 +94,13 @@ const BpkText = ({
     className,
   );
 
+  const { style, ...otherProps } = rest;
+  const computedStyles = { ...style, ...(color ? { color } : {}) };
+
   return (
     // Allowed, TagName is always a dom element.
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <TagName className={classNames} {...rest}>
+    <TagName className={classNames} style={computedStyles} {...otherProps}>
       {children}
     </TagName>
   );
