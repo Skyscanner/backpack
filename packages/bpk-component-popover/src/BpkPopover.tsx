@@ -204,7 +204,10 @@ const BpkPopover = ({
   );
 
   const classNames = getClassName('bpk-popover', className);
-  const bodyClassNames = getClassName(padded && 'bpk-popover__body--padded');
+  const bodyClassNames = getClassName(
+    'bpk-popover__body',
+    padded && 'bpk-popover__body--padded',
+  );
 
   const labelId = `bpk-popover-label-${id}`;
   const renderElement = typeof renderTarget === 'function' ? renderTarget() : renderTarget;
@@ -300,7 +303,23 @@ const BpkPopover = ({
                       {label}
                     </span>
                   )}
-                  <div className={bodyClassNames}>{children}</div>
+                  <div className={bodyClassNames}>
+                    <div>{children}</div>
+                    {!labelAsTitle && closeButtonIcon && (
+                      <BpkCloseButton
+                        label={closeButtonText || closeButtonLabel}
+                        onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
+                          bindEventSource(
+                            EVENT_SOURCES.CLOSE_BUTTON,
+                            onClose,
+                            event,
+                          );
+                          setIsOpenState(false);
+                        }}
+                        {...closeButtonProps}
+                      />
+                    )}
+                  </div>
                   {actionText && onAction && (
                     <div className={getClassName('bpk-popover__action')}>
                       <BpkButtonLink onClick={onAction}>
