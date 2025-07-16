@@ -48,9 +48,9 @@ const getMaxValue = (ratingScale: ValueOf<typeof RATING_SCALES>) => {
 type Props = {
   ariaLabel: string,
   className?: string,
-  ratingScale: ValueOf<typeof RATING_SCALES>,
+  ratingScale?: ValueOf<typeof RATING_SCALES>,
   showScale?: boolean,
-  size: ValueOf<typeof RATING_SIZES>,
+  size?: ValueOf<typeof RATING_SIZES>,
   subtitle?: string,
   title?: string | ReactNode,
   value: string | number,
