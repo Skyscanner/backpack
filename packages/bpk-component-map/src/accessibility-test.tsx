@@ -21,11 +21,12 @@ import type { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import { withRtlSupport } from '../../../bpk-component-icon';
-import AirportsIconSm from '../../../bpk-component-icon/sm/airports';
+import { withRtlSupport } from '../../bpk-component-icon';
+import AirportsIconSm from '../../bpk-component-icon/sm/airports';
 
-import { BpkPriceMarkerV2 } from './BpkPriceMarker';
+import BpkPriceMarker from './BpkPriceMarker';
 import BpkPriceMarkerButton from './BpkPriceMarkerButton';
+
 
 const AlignedAirportsIconSm = withRtlSupport(AirportsIconSm);
 
@@ -43,7 +44,7 @@ jest.mock('@react-google-maps/api', () => ({
   ),
 }));
 
-describe('BpkPriceMarkerV2 accessibility tests', () => {
+describe('BpkPriceMarke accessibility tests', () => {
   const position = {
     latitude: 41.386947,
     longitude: 2.170048,
@@ -51,7 +52,7 @@ describe('BpkPriceMarkerV2 accessibility tests', () => {
 
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkPriceMarkerV2
+      <BpkPriceMarker
         label="£120"
         position={position}
         accessibilityLabel="Click the price marker"
