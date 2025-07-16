@@ -179,7 +179,7 @@ const WithNoCloseButtonIconExample = () => (
 
 const WithNoTitleExample = () => (
   <Spacer>
-    <PopoverContainer id="my-popover" labelAsTitle={undefined} />
+    <PopoverContainer id="my-popover" labelAsTitle={false} />
   </Spacer>
 );
 
