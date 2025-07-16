@@ -16,9 +16,16 @@
  * limitations under the License.
  */
 import type { CSSProperties } from 'react';
-import { useRef, useState, useEffect, isValidElement, Children } from 'react';
+import {
+  useRef,
+  useState,
+  useEffect,
+  isValidElement,
+  Children,
+  useMemo,
+} from 'react';
 
-import throttle from 'lodash/debounce';
+import throttle from 'lodash/throttle';
 
 import { cssModules } from '../../../bpk-react-utils';
 
@@ -87,29 +94,45 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   // Similar to Virtual Scrolling to improve performance
   const firstVisibleIndex = Math.max(0, visibilityList.indexOf(1));
   const lastVisibleIndex = firstVisibleIndex + initiallyShownCards - 1;
-  const renderList = visibilityList.map((_, index) =>
-    index >= firstVisibleIndex - RENDER_BUFFER_SIZE &&
-    index <= lastVisibleIndex + RENDER_BUFFER_SIZE
-      ? 1
-      : 0,
+  const renderList = useMemo(
+    () =>
+      visibilityList.map((_, index) =>
+        index >= firstVisibleIndex - RENDER_BUFFER_SIZE &&
+        index <= lastVisibleIndex + RENDER_BUFFER_SIZE
+          ? 1
+          : 0,
+      ),
+    [visibilityList, firstVisibleIndex, lastVisibleIndex],
   );
 
-  const cardRefCallback = (index: number) => (el: HTMLDivElement | null) => {
-    cardRefs.current[index] = el;
-    observerVisibility(el, index);
-    setA11yTabIndex(el, index, visibilityList);
-    // record the first card's width and height when it becomes visible
-    if (el && visibilityList[index] === 0) {
-      hasBeenVisibleRef.current.add(index);
-      if (firstCardWidthRef.current == null && el.offsetWidth) {
-        firstCardWidthRef.current = el.offsetWidth;
-      }
-
-      if (firstCardHeightRef.current == null && el.offsetHeight) {
-        firstCardHeightRef.current = el.offsetHeight;
-      }
-    }
-  };
+  const cardRefFns = useMemo(
+    () =>
+      Array(childrenLength)
+        .fill(null)
+        .map((_, i) => (el: HTMLDivElement | null) => {
+          cardRefs.current[i] = el;
+          observerVisibility(el, i);
+          setA11yTabIndex(el, i, visibilityList);
+          // record the first card's width and height when it becomes visible
+          if (el && visibilityList[i] === 0) {
+            hasBeenVisibleRef.current.add(i);
+            if (firstCardWidthRef.current == null && el.offsetWidth) {
+              firstCardWidthRef.current = el.offsetWidth;
+            }
+            if (firstCardHeightRef.current == null && el.offsetHeight) {
+              firstCardHeightRef.current = el.offsetHeight;
+            }
+          }
+        }),
+    [
+      childrenLength,
+      observerVisibility,
+      visibilityList,
+      hasBeenVisibleRef,
+      firstCardWidthRef,
+      firstCardHeightRef,
+    ],
+  );
 
   useEffect(() => {
     const container = root;
@@ -192,7 +215,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         return (
           <div
             className={getClassName(`bpk-card-list-row-rail__${layout}__card`)}
-            ref={cardRefCallback(index)}
+            ref={cardRefFns[index]}
             style={{
               ...shownNumberStyle,
               ...cardDimensionStyle,
