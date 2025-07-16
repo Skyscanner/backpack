@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkCalendar should render correctly 1`] = `
 <DocumentFragment>
@@ -7,7 +7,7 @@ exports[`BpkCalendar should render correctly 1`] = `
   >
     <div
       class="bpk-calendar-grid-transition__strip"
-      style="transform: translateX(-22.75rem);"
+      style="transform: translateX(-22.75rem); -webkit-transform: translateX(-22.75rem);"
     >
       <div>
         {"minDate":"2009-02-01T00:00:00.000Z","maxDate":"2011-02-01T00:00:00.000Z","month":"2010-01-01T00:00:00.000Z","preventKeyboardFocus":true,"isKeyboardFocusable":false,"focusedDate":"2010-01-01T00:00:00.000Z","aria-hidden":true,"className":"bpk-calendar-grid-transition__grid"}

@@ -16,15 +16,31 @@
  * limitations under the License.
  */
 
-import BpkInsetBanner, {
-  type Props as BpkInsetBannerProps,
-} from './src/BpkInsetBanner';
-import BpkInsetBannerSponsored from './src/BpkInsetBannerV2/BpkInsetBannerSponsored';
-import { type CommonProps as BpkInsetBannerSponsoredProps } from './src/BpkInsetBannerV2/common-types';
-import { VARIANT } from './src/BpkInsetBannerV2/common-types';
+import BpkPanel from '../../packages/bpk-component-panel/src/BpkPanel';
 
-export type { BpkInsetBannerProps };
-export type { BpkInsetBannerSponsoredProps };
+import {
+  DefaultExample,
+  WithoutPaddingExample,
+  FullWidthExample,
+  MixedExample,
+  NoKeylineExample,
+} from './examples';
 
-export { VARIANT };
-export { BpkInsetBannerSponsored, BpkInsetBanner };
+export default {
+  title: 'bpk-component-panel',
+  component: BpkPanel,
+};
+
+export const Default = DefaultExample;
+export const WithoutPadding = WithoutPaddingExample;
+
+export const FullWidth = FullWidthExample;
+export const NoKeyline = NoKeylineExample;
+
+export const VisualTest = MixedExample;
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true
+  }
+}

@@ -1,10 +1,10 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkImage should accept userland className 1`] = `
 <DocumentFragment>
   <div
     class="userland-classname"
-    style="width: .0625rem;"
+    style="width: 0.0625rem;"
   >
     <div
       class="bpk-image bpk-image--no-background"
@@ -23,7 +23,7 @@ exports[`BpkImage should accept userland className 1`] = `
 exports[`BpkImage should accept userland styling 1`] = `
 <DocumentFragment>
   <div
-    style="width: .0625rem;"
+    style="width: 0.0625rem;"
   >
     <div
       class="bpk-image bpk-image--no-background"
