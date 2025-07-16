@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "previous_selected" 1`] = `
+exports[`BpkPriceMarker should render correctly with "status" attribute as "previous_selected" 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -24,7 +24,7 @@ exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "pr
 </DocumentFragment>
 `;
 
-exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "selected" 1`] = `
+exports[`BpkPriceMarker should render correctly with "status" attribute as "selected" 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -48,7 +48,7 @@ exports[`BpkPriceMarkerV2 should render correctly with "status" attribute as "se
 </DocumentFragment>
 `;
 
-exports[`BpkPriceMarkerV2 should render correctly with a "buttonProps" attribute 1`] = `
+exports[`BpkPriceMarker should render correctly with a "buttonProps" attribute 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -73,7 +73,7 @@ exports[`BpkPriceMarkerV2 should render correctly with a "buttonProps" attribute
 </DocumentFragment>
 `;
 
-exports[`BpkPriceMarkerV2 should render correctly with a "className" attribute 1`] = `
+exports[`BpkPriceMarker should render correctly with a "className" attribute 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -97,7 +97,7 @@ exports[`BpkPriceMarkerV2 should render correctly with a "className" attribute 1
 </DocumentFragment>
 `;
 
-exports[`BpkPriceMarkerV2 should render correctly with a "onClick" attribute 1`] = `
+exports[`BpkPriceMarker should render correctly with a "onClick" attribute 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -121,7 +121,7 @@ exports[`BpkPriceMarkerV2 should render correctly with a "onClick" attribute 1`]
 </DocumentFragment>
 `;
 
-exports[`BpkPriceMarkerV2 should render properly 1`] = `
+exports[`BpkPriceMarker should render properly 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -145,7 +145,7 @@ exports[`BpkPriceMarkerV2 should render properly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkPriceMarkerV2 should render properly with a icon 1`] = `
+exports[`BpkPriceMarker should render properly with a icon 1`] = `
 <DocumentFragment>
   <div>
     <div
