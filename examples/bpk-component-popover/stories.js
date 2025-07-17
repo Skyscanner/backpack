@@ -29,6 +29,7 @@ import {
   InputTriggerExample,
   WithActionButtonExample,
   WithNoCloseButtonIconExample,
+  WithNoTitleExample,
   VisualExample
 } from './examples';
 
@@ -44,6 +45,7 @@ export const WithoutArrow = WithoutArrowExample;
 export const WithLabelAsTitle = WithLabelAsTitleExample;
 export const WithNoCloseButtonIcon =
 WithNoCloseButtonIconExample;
+export const WithNoTitle = WithNoTitleExample;
 export const OnTheSide = OnTheSideExample;
 export const TriggeredByInput = InputTriggerExample;
 export const WithActionButton = WithActionButtonExample;
