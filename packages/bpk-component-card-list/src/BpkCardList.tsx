@@ -34,7 +34,8 @@ import STYLES from './BpkCardList.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const DEFAULT_ITEMS = 3;
+const DEFAULT_ITEMS_DESKTOP = 3;
+const DEFAULT_ITEMS_MOBILE = 2;
 
 const BpkCardList = (props: CardListProps) => {
   const {
@@ -47,8 +48,8 @@ const BpkCardList = (props: CardListProps) => {
     chipGroup,
     description,
     expandText,
-    initiallyShownCardsDesktop = DEFAULT_ITEMS,
-    initiallyShownCardsMobile = DEFAULT_ITEMS,
+    initiallyShownCardsDesktop = DEFAULT_ITEMS_DESKTOP,
+    initiallyShownCardsMobile = DEFAULT_ITEMS_MOBILE,
     layoutDesktop,
     layoutMobile,
     onButtonClick,
