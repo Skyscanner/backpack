@@ -109,13 +109,13 @@
     "Samsung >= 16"
   ],
   "devDependencies": {
-    "@babel/cli": "^7.27.0",
-    "@babel/core": "^7.27.4",
+    "@babel/cli": "^7.28.0",
+    "@babel/core": "^7.28.0",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-proposal-object-rest-spread": "^7.20.2",
     "@babel/plugin-proposal-private-methods": "^7.17.12",
-    "@babel/plugin-transform-runtime": "^7.27.4",
-    "@babel/preset-env": "^7.27.2",
+    "@babel/plugin-transform-runtime": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
     "@babel/preset-react": "^7.27.1",
     "@babel/preset-typescript": "^7.27.0",
     "@babel/register": "^7.27.1",
