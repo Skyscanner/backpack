@@ -129,7 +129,6 @@ const commonProps = {
   ),
   buttonContent: 'See more',
   buttonHref: 'https://www.skyscanner.net/',
-  initiallyShownCardsMobile: 2,
   accessibilityLabels: {
     indicatorLabel: 'Go to slide',
     prevNavLabel: 'Previous slide',
@@ -152,7 +151,6 @@ const snippetProps = {
 };
 
 const DestinationCard = (i: number) => (
-  // Usage Suggestion: define minWidth from consumer side by using className
   <BpkCard
     key={`card-${i}`}
     className={STYLES['bpk-card']}

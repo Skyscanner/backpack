@@ -17,6 +17,8 @@
  */
 
 @use '../../../unstable__bpk-mixins/tokens';
+@use '../../../unstable__bpk-mixins/breakpoints';
+@use '../../../unstable__bpk-mixins/utils';
 
 .bpk-card-list-row-rail {
   &__row,
@@ -24,12 +26,16 @@
     display: flex;
     padding-top: tokens.bpk-spacing-sm();
     padding-bottom: tokens.bpk-spacing-sm();
-    overflow-x: scroll;
+    overflow-x: hidden;
     box-sizing: border-box;
     gap: tokens.bpk-spacing-sm();
     scroll-snap-stop: always;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
+
+    @include breakpoints.bpk-breakpoint-mobile {
+      overflow-x: scroll;
+    }
 
     &::-webkit-scrollbar {
       display: none;
@@ -37,7 +43,7 @@
 
     &__card {
       position: relative;
-      padding: tokens.bpk-spacing-md();
+      padding: 0 tokens.bpk-spacing-md();
       flex: 0 0
         calc(
           (
@@ -52,6 +58,30 @@
       overflow: visible;
       box-sizing: border-box;
       scroll-snap-align: start;
+
+      @include breakpoints.bpk-breakpoint-mobile {
+        // On mobile, if there is more than one card in the viewport, the last card only shows partially, so subtract 0.8 when do the calculation
+        flex: 0 0
+          calc(
+            (
+                100% -
+                  (
+                    tokens.bpk-spacing-md() *
+                      (var(--initially-shown-cards, 3) - 1)
+                  )
+              ) /
+              max(1, (var(--initially-shown-cards, 3) - 0.8))
+          );
+
+        &:first-child {
+          padding-left: tokens.bpk-spacing-sm();
+
+          @include utils.bpk-rtl {
+            padding-right: tokens.bpk-spacing-sm();
+            padding-left: tokens.bpk-spacing-md();
+          }
+        }
+      }
     }
   }
 
