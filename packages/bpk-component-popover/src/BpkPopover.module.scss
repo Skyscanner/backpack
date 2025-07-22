@@ -58,6 +58,11 @@ $arrow-size: tokens.bpk-spacing-lg();
   }
 
   &__body {
+    display: flex;
+    column-gap: tokens.bpk-spacing-base();
+    justify-content: space-between;
+    align-items: flex-start;
+
     &--padded {
       padding: tokens.bpk-spacing-base();
 

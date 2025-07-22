@@ -26,7 +26,6 @@ import BpkCardListCarousel from './BpkCardListCarousel';
 
 jest.mock('./utils', () => ({
   setA11yTabIndex: jest.fn(),
-  useUpdateCurrentIndexByVisibility: jest.fn(),
   useScrollToCard: jest.fn(),
   useIntersectionObserver: jest.fn(() => jest.fn()),
 }));

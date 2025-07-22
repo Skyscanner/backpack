@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useEffect, useRef, useMemo } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 
 import { RELEASE_LOCK_DELAY } from './constants';
 
@@ -65,27 +65,6 @@ export const setA11yTabIndex = (
   });
 };
 
-export const useUpdateCurrentIndexByVisibility = (
-  isMobile: boolean,
-  visibilityList: number[],
-  setCurrentIndex: (index: number) => void,
-  stateScrollingLockRef: React.MutableRefObject<boolean>,
-  openSetStateLockTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
-) => {
-  useEffect(() => {
-    if (isMobile) return; // No pagination on mobile, so no need to update the current index
-    if (!visibilityList || visibilityList.length === 0) return;
-
-    const firstVisibleIndex = visibilityList.findIndex(
-      (visibility) => visibility === 1,
-    );
-    if (firstVisibleIndex !== -1) {
-      setCurrentIndex(firstVisibleIndex);
-      lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef); // prevent scrollIntoView from being called immediately after the current index is set
-    }
-  }, [visibilityList]);
-};
-
 export const useScrollToCard = (
   currentIndex: number,
   container: HTMLElement | null,
@@ -117,24 +96,16 @@ export const useIntersectionObserver = (
   { root, threshold }: IntersectionObserverInit,
   setVisibilityList: React.Dispatch<React.SetStateAction<number[]>>,
 ) => {
-  const callbackRef = useRef(setVisibilityList);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    callbackRef.current = setVisibilityList;
-  });
-
-  const observeAll = useMemo<
-    (element: HTMLElement | null, index: number) => void
-  >(() => {
     if (!root) return () => {};
-    const observer = new IntersectionObserver(
+    observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           const { index } = (entry.target as HTMLElement).dataset;
           if (!index) return;
-
           const currentIndex = parseInt(index, 10);
-
           if (entry.isIntersecting) {
             setVisibilityList((prevList) => {
               const newList = [...prevList];
@@ -150,19 +121,21 @@ export const useIntersectionObserver = (
           }
         });
       },
-
       { root, threshold },
     );
-
-    const observeElement = (element: HTMLElement | null, index: number) => {
-      if (element && observer) {
-        element.setAttribute('data-index', index.toString());
-        observer.observe(element);
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+        observerRef.current = null;
       }
     };
+  }, [root, threshold, setVisibilityList]);
 
-    return observeElement;
-  }, [root, threshold]);
-
-  return observeAll;
+  const observeElement = (element: HTMLElement | null, index: number) => {
+    if (element && observerRef.current) {
+      element.setAttribute('data-index', index.toString());
+      observerRef.current.observe(element);
+    }
+  };
+  return observeElement;
 };
