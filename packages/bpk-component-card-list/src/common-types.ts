@@ -77,10 +77,10 @@ type CardListGridStackProps = {
   initiallyShownCards: number;
   layout: typeof LAYOUTS.grid | typeof LAYOUTS.stack;
   accessory?:
-    | typeof ACCESSORY_DESKTOP_TYPES.expand
-    | typeof ACCESSORY_DESKTOP_TYPES.button
-    | typeof ACCESSORY_MOBILE_TYPES.expand
-    | typeof ACCESSORY_MOBILE_TYPES.button;
+  | typeof ACCESSORY_DESKTOP_TYPES.expand
+  | typeof ACCESSORY_DESKTOP_TYPES.button
+  | typeof ACCESSORY_MOBILE_TYPES.expand
+  | typeof ACCESSORY_MOBILE_TYPES.button;
   expandText?: string;
   buttonContent?: React.ReactNode;
   onButtonClick?: () => void;
@@ -102,6 +102,7 @@ type CardListCarouselProps = {
   initiallyShownCards: number;
   layout: typeof LAYOUTS.row | typeof LAYOUTS.rail;
   currentIndex: number;
+  setCurrentIndex: Dispatch<SetStateAction<number>>;
   isMobile?: boolean;
   carouselLabel?: (initiallyShownCards: number, childrenLength: number) => string;
   slideLabel?: (index: number, childrenLength: number) => string;
