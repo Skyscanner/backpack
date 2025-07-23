@@ -43,6 +43,8 @@ import STYLES from './BpkCardListCarousel.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+const PAGINATION_INDICATOR_MAX_SHOWN_COUNT = 5;
+
 const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const {
     carouselLabel = (initiallyShownCards: number, childrenLength: number) =>
@@ -101,10 +103,10 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
     // Calculate how many cards to render based on the number of initially shown cards and total children
     const totalPages = Math.ceil(childrenLength / initiallyShownCards);
-    const shownIdicatorAccount = Math.min(totalPages, 5);
+    const shownIndicatorCount = Math.min(totalPages, PAGINATION_INDICATOR_MAX_SHOWN_COUNT);
     return Math.max(
       RENDER_BUFFER_SIZE,
-      shownIdicatorAccount * initiallyShownCards - initiallyShownCards,
+      shownIndicatorCount * initiallyShownCards - initiallyShownCards,
     );
   }, [childrenLength, initiallyShownCards, isMobile]);
 
