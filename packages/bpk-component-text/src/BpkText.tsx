@@ -18,6 +18,8 @@
 
 import type { ReactNode } from 'react';
 
+import type { textColors } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkText.module.scss';
@@ -58,6 +60,7 @@ export const TEXT_STYLES = {
   editorial3: 'editorial-3',
 } as const;
 
+export type TextColor = (typeof textColors)[keyof typeof textColors];
 export type TextStyle = (typeof TEXT_STYLES)[keyof typeof TEXT_STYLES];
 export type Tag =
   | 'span'
@@ -75,7 +78,12 @@ type Props = {
   textStyle?: TextStyle;
   tagName?: Tag;
   className?: string | null;
-  color?: string | null;
+  /**
+   * The `color` prop allows you to set the text color directly, bypassing any styles applied via `className`.
+   * It uses predefined `textColors` tokens to ensure consistency with the design system.
+   * This prop is currently optional but will become mandatory in the future.
+   */
+  color?: TextColor | null;
   id?: string;
   [rest: string]: any;
 };

@@ -99,24 +99,20 @@ describe('BpkText', () => {
     });
   });
 
-  [
-    { color: textColors.textSecondaryDay, expected: 'rgb(98, 105, 113)' },
-    // eslint-disable-next-line backpack/use-tokens
-    { color: 'rgb(0, 98, 227)', expected: 'rgb(0, 98, 227)' },
-    // eslint-disable-next-line backpack/use-tokens
-    { color: '#0c838a', expected: 'rgb(12, 131, 138)' },
-    // eslint-disable-next-line backpack/use-tokens
-    { color: 'purple', expected: 'purple' },
-  ].forEach(({ color, expected }) => {
-    it(`should render correctly with color="${color}"`, () => {
-      const { getByText } = render(<BpkText color={color}>{text}</BpkText>);
+  it('should render correctly with prop color is token textSecondaryDay', () => {
+    const { getByText } = render(
+      <BpkText color={textColors.textSecondaryDay}>{text}</BpkText>,
+    );
 
-      expect(getByText(text)).toHaveClass('bpk-text bpk-text--body-default');
-      expect(getByText(text)).toHaveAttribute('style', `color: ${expected};`);
-    });
+    expect(getByText(text)).toHaveClass('bpk-text bpk-text--body-default');
+    expect(getByText(text)).toHaveAttribute(
+      'style',
+      `color: rgb(98, 105, 113);`,
+    );
   });
 
-  it('should render correctly with prop color=invalid', () => {
+  it('should render correctly with prop color is invalid', () => {
+    // @ts-expect-error Type '"invalid"' is not assignable to type 'TextColor | null | undefined'.
     const { getByText } = render(<BpkText color="invalid">{text}</BpkText>);
 
     expect(getByText(text)).toHaveClass('bpk-text bpk-text--body-default');
