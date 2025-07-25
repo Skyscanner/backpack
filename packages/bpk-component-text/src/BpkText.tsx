@@ -78,6 +78,11 @@ type Props = {
   textStyle?: TextStyle;
   tagName?: Tag;
   className?: string | null;
+  /**
+   * The `color` prop allows you to set the text color directly, bypassing any styles applied via `className`.
+   * It uses predefined `textColors` tokens to ensure consistency with the design system.
+   * This prop is currently optional but will become mandatory in the future.
+   */
   color?: TextColor | null;
   id?: string;
   [rest: string]: any;
