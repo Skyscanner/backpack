@@ -106,7 +106,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     const shownIndicatorCount = Math.min(totalPages, PAGINATION_INDICATOR_MAX_SHOWN_COUNT);
     return Math.max(
       RENDER_BUFFER_SIZE,
-      shownIndicatorCount * initiallyShownCards - initiallyShownCards,
+      (shownIndicatorCount - 1) * initiallyShownCards,
     );
   }, [childrenLength, initiallyShownCards, isMobile]);
 
@@ -197,7 +197,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         setCurrentIndex(newIndex);
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initiallyShownCards]);
 
   useEffect(() => {
