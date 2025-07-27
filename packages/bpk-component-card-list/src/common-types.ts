@@ -102,6 +102,7 @@ type CardListCarouselProps = {
   initiallyShownCards: number;
   layout: typeof LAYOUTS.row | typeof LAYOUTS.rail;
   currentIndex: number;
+  setCurrentIndex: Dispatch<SetStateAction<number>>;
   isMobile?: boolean;
   carouselLabel?: (initiallyShownCards: number, childrenLength: number) => string;
   slideLabel?: (index: number, childrenLength: number) => string;
