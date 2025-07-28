@@ -204,36 +204,10 @@ const BpkPopover = ({
   );
 
   const classNames = getClassName('bpk-popover', className);
-  const bodyClassNames = getClassName(
-    'bpk-popover__body',
-    padded && 'bpk-popover__body--padded',
-  );
+  const bodyClassNames = getClassName(padded && 'bpk-popover__body--padded');
 
   const labelId = `bpk-popover-label-${id}`;
   const renderElement = typeof renderTarget === 'function' ? renderTarget() : renderTarget;
-
-  const closeButtonIconElement = (
-    <BpkCloseButton
-      label={closeButtonText || closeButtonLabel}
-      onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
-        bindEventSource(EVENT_SOURCES.CLOSE_BUTTON, onClose, event);
-        setIsOpenState(false);
-      }}
-      {...closeButtonProps}
-    />
-  );
-  
-  const closeButtonTextElement = (
-    <BpkButtonLink
-      onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
-        bindEventSource(EVENT_SOURCES.CLOSE_LINK, onClose, event);
-        setIsOpenState(false);
-      }}
-      {...closeButtonProps}
-    >
-      {closeButtonText}
-    </BpkButtonLink>
-  );
 
   return (
     <>
@@ -283,9 +257,40 @@ const BpkPopover = ({
                         {label}
                       </BpkText>
                       &nbsp;
-                      {closeButtonIcon
-                        ? closeButtonIconElement
-                        : !!closeButtonText && closeButtonTextElement}
+                      {closeButtonIcon ? (
+                        <BpkCloseButton
+                          label={closeButtonText || closeButtonLabel}
+                          onClick={(
+                            event: SyntheticEvent<HTMLButtonElement>,
+                          ) => {
+                            bindEventSource(
+                              EVENT_SOURCES.CLOSE_BUTTON,
+                              onClose,
+                              event,
+                            );
+                            setIsOpenState(false);
+                          }}
+                          {...closeButtonProps}
+                        />
+                      ) : (
+                        closeButtonText && (
+                          <BpkButtonLink
+                            onClick={(
+                              event: SyntheticEvent<HTMLButtonElement>,
+                            ) => {
+                              bindEventSource(
+                                EVENT_SOURCES.CLOSE_LINK,
+                                onClose,
+                                event,
+                              );
+                              setIsOpenState(false);
+                            }}
+                            {...closeButtonProps}
+                          >
+                            {closeButtonText}
+                          </BpkButtonLink>
+                        )
+                      )}
                     </header>
                   ) : (
                     <span
@@ -295,10 +300,7 @@ const BpkPopover = ({
                       {label}
                     </span>
                   )}
-                  <div className={bodyClassNames}>
-                    <div>{children}</div>
-                    {!labelAsTitle && closeButtonIcon && closeButtonIconElement}
-                  </div>
+                  <div className={bodyClassNames}>{children}</div>
                   {actionText && onAction && (
                     <div className={getClassName('bpk-popover__action')}>
                       <BpkButtonLink onClick={onAction}>
@@ -308,7 +310,19 @@ const BpkPopover = ({
                   )}
                   {!labelAsTitle && closeButtonText && (
                     <footer className={getClassName('bpk-popover__footer')}>
-                      {closeButtonTextElement}
+                      <BpkButtonLink
+                        onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
+                          bindEventSource(
+                            EVENT_SOURCES.CLOSE_LINK,
+                            onClose,
+                            event,
+                          );
+                          setIsOpenState(false);
+                        }}
+                        {...closeButtonProps}
+                      >
+                        {closeButtonText}
+                      </BpkButtonLink>
                     </footer>
                   )}
                 </section>
