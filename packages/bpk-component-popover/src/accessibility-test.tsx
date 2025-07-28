@@ -30,6 +30,7 @@ describe('BpkPopover accessibility tests', () => {
         onClose={() => null}
         label="My popover"
         closeButtonText="Close"
+        closeButtonIcon={false}
         target={target}
         isOpen
         showArrow

@@ -38,6 +38,7 @@ describe('BpkPopover', () => {
         closeButtonLabel="Close"
         target={target}
         isOpen
+        closeButtonIcon={false}
       >
         My popover content
       </BpkPopover>,
@@ -53,6 +54,7 @@ describe('BpkPopover', () => {
       label: 'My popover',
       closeButtonLabel: 'Close',
       target: <button type="button">My target</button>,
+      closeButtonIcon: false,
     };
     const { rerender } = render(
       <BpkPopover {...props} isOpen>
@@ -81,6 +83,7 @@ describe('BpkPopover', () => {
         target={target}
         isOpen
         showArrow={false}
+        closeButtonIcon={false}
       >
         My popover content
       </BpkPopover>,
@@ -142,6 +145,7 @@ describe('BpkPopover', () => {
         closeButtonLabel="Close"
         padded={false}
         target={<button type="button">My target</button>}
+        closeButtonIcon={false}
         isOpen
       >
         My popover content
@@ -181,6 +185,7 @@ describe('BpkPopover', () => {
         actionText="Action"
         onAction={() => null}
         target={<button type="button">My target</button>}
+        closeButtonIcon={false}
         isOpen
       >
         My popover content

@@ -9,7 +9,10 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkInput, { INPUT_TYPES, CLEAR_BUTTON_MODES } from '@skyscanner/backpack-web/bpk-component-input';
+import BpkInput, {
+  INPUT_TYPES,
+  CLEAR_BUTTON_MODES,
+} from '@skyscanner/backpack-web/bpk-component-input';
 
 export default () => (
   <BpkInput
@@ -68,6 +71,7 @@ export default () => {
         isOpen={this.state.isOpen}
         label="Popover"
         closeButtonText="Close"
+        closeButtonIcon={false}
       >
         A popover!
       </BpkPopover>
