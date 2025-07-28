@@ -59,6 +59,7 @@ class App extends Component {
           closeButtonProps={{
             tabIndex: 0,
           }}
+          closeButtonIcon={false}
         >
           <BpkText>My popover content</BpkText>
         </BpkPopover>
