@@ -84,8 +84,7 @@ class PopoverContainer extends Component<Props, State> {
   };
 
   render() {
-    const { displayArrow, id, inputTrigger, ...rest } =
-      this.props;
+    const { displayArrow, id, inputTrigger, ...rest } = this.props;
     let target = null;
 
     const openButton = (
@@ -147,7 +146,10 @@ const DefaultExample = () => (
 const WithCustomRenderTargetExample = () => (
   <Spacer>
     <div id="my-target" />
-    <PopoverContainer id="my-popover-1" renderTarget={() => document.getElementById('my-target')} />
+    <PopoverContainer
+      id="my-popover-1"
+      renderTarget={() => document.getElementById('my-target')}
+    />
   </Spacer>
 );
 
@@ -175,6 +177,12 @@ const WithNoCloseButtonIconExample = () => (
   </Spacer>
 );
 
+const WithNoTitleExample = () => (
+  <Spacer>
+    <PopoverContainer id="my-popover" labelAsTitle={false} />
+  </Spacer>
+);
+
 const OnTheSideExample = () => (
   <Spacer>
     <PopoverContainer id="my-popover" placement="right" />
@@ -189,7 +197,7 @@ const InputTriggerExample = () => (
 
 const WithActionButtonExample = () => (
   <Spacer>
-    <PopoverContainer id="my-popover" actionText="Action" onAction={() => { }} />
+    <PopoverContainer id="my-popover" actionText="Action" onAction={() => {}} />
   </Spacer>
 );
 
@@ -204,10 +212,11 @@ export {
   WithCustomRenderTargetExample,
   HoverExample,
   WithoutArrowExample,
+  WithNoTitleExample,
   WithLabelAsTitleExample,
   WithNoCloseButtonIconExample,
   OnTheSideExample,
   InputTriggerExample,
   WithActionButtonExample,
-  VisualExample
+  VisualExample,
 };
