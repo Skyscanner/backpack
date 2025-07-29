@@ -191,5 +191,8 @@
   },
   "overrides": {
     "braces": "3.0.3"
+  },
+  "dependencies": {
+    "downshift": "^9.0.10"
   }
 }
