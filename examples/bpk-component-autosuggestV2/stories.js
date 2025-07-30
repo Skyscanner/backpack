@@ -71,6 +71,20 @@ export const HighlightFistSuggestion = () => (
   <AutosuggestExample includeSubheading includeTertiaryLabel includeIcon highlightFirstSuggestion />
 );
 
+const renderSectionTitle = (section) => <div>{section.title}</div>;
+const getSectionSuggestions = (section) => section.suggestions;
+
+export const WithSections = () => (
+  <AutosuggestExample
+    multiSection
+    renderSectionTitle={renderSectionTitle}
+    getSectionSuggestions={getSectionSuggestions}
+    includeIcon
+    includeSubheading
+    includeTertiaryLabel
+  />
+);
+
 export const Hanzi = () => (
   <AutosuggestExample includeSubheading includeTertiaryLabel hanzi />
 );

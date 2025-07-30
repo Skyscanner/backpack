@@ -34,7 +34,6 @@ import { useCombobox } from 'downshift';
 
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-
 import { INPUT_TYPES } from '../../../bpk-component-input';
 import { cssModules } from '../../../bpk-react-utils';
 
@@ -100,6 +99,7 @@ export type BpkAutoSuggestProps<T> = {
   renderInputComponent?: (
     inputProps: HTMLProps<HTMLInputElement>,
   ) => ReactElement;
+  onSuggestionHighlighted?: (data: { suggestion: T | null }) => void;
 };
 
 const defaultTheme = {
@@ -138,6 +138,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       onClick,
       onInputValueChange,
       onLoad,
+      onSuggestionHighlighted,
       onSuggestionSelected,
       onSuggestionsClearRequested,
       onSuggestionsFetchRequested,
@@ -147,12 +148,13 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       shouldRenderSuggestions,
       suggestions,
       theme: customTheme = {},
-
     },
     forwardedRef,
   ) => {
     const theme = { ...defaultTheme, ...customTheme };
     const arrowRef = useRef(null);
+    const previousHighlightedIndexRef = useRef<number | null>(null);
+    console.log('BpkAutosuggest', suggestions, multiSection);
 
     function stateReducer(
       state: UseComboboxState<any>,
@@ -174,6 +176,11 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         }
       }
     }
+
+    const flattenedSuggestions = multiSection
+      ? suggestions.flatMap((section) => getSectionSuggestions?.(section) ?? [])
+      : suggestions;
+
     const {
       getInputProps,
       getItemProps,
@@ -186,7 +193,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       setInputValue,
     } = useCombobox({
       stateReducer,
-      items: suggestions,
+      items: flattenedSuggestions,
       itemToString(suggestion: any | null) {
         return suggestion ? getSuggestionValue(suggestion) : '';
       },
@@ -220,24 +227,23 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       id,
     });
 
-    const { context, floatingStyles, refs } =
-      useFloating({
-        placement: 'bottom-start',
-        middleware: [
-          offset(17),
-          flip(),
-          shift(),
-          size({
-            apply({ elements, rects }) {
-              Object.assign(elements.floating.style, {
-                width: `${rects.reference.width}px`,
-              });
-            },
-          }),
-          floatingArrow({ element: arrowRef }),
-        ],
-        whileElementsMounted: autoUpdate,
-      });
+    const { context, floatingStyles, refs } = useFloating({
+      placement: 'bottom-start',
+      middleware: [
+        offset(17),
+        flip(),
+        shift(),
+        size({
+          apply({ elements, rects }) {
+            Object.assign(elements.floating.style, {
+              width: `${rects.reference.width}px`,
+            });
+          },
+        }),
+        floatingArrow({ element: arrowRef }),
+      ],
+      whileElementsMounted: autoUpdate,
+    });
 
     useEffect(() => {
       if (defaultValue) {
@@ -259,13 +265,26 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    useEffect(() => {
+      if (highlightedIndex === previousHighlightedIndexRef.current) return;
+
+      previousHighlightedIndexRef.current = highlightedIndex;
+
+      const currentSuggestion =
+        highlightedIndex != null && highlightedIndex >= 0
+          ? (flattenedSuggestions?.[highlightedIndex] ?? null)
+          : null;
+
+      onSuggestionHighlighted?.({ suggestion: currentSuggestion });
+    }, [highlightedIndex, flattenedSuggestions, onSuggestionHighlighted]);
+
     const onClickOrKeydown = () => {
       if (shouldRenderSuggestions) {
         shouldRenderSuggestions(inputValue);
         openMenu();
       }
 
-      if ( !isOpen && inputValue.length) {
+      if (!isOpen && inputValue.length) {
         onSuggestionsFetchRequested(inputValue);
         openMenu();
       } else {
@@ -329,7 +348,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         );
       });
 
-
     // renderSections function to render multi-section suggestions
     const renderSections = (sections: any[]) =>
       sections.map((section, index) => (
@@ -350,7 +368,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
     // Render the input component
     const renderInput = () => {
-      const refObj = forwardedRef as React.MutableRefObject<HTMLInputElement | null>;
+      const refObj =
+        forwardedRef as React.MutableRefObject<HTMLInputElement | null>;
       const inputComponentProps = getInputProps({
         className: theme.input,
         onKeyDown,
