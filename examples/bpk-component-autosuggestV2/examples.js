@@ -128,6 +128,7 @@ type Props = {
   includeSubheading: boolean,
   includeTertiaryLabel: boolean,
   alwaysRenderSuggestions: boolean,
+  highlightFirstSuggestion: boolean,
 };
 
 class AutosuggestExample extends Component<Props, State> {
@@ -137,6 +138,7 @@ class AutosuggestExample extends Component<Props, State> {
     includeSubheading: false,
     includeTertiaryLabel: false,
     alwaysRenderSuggestions: false,
+    highlightFirstSuggestion: false,
   };
 
   constructor() {
@@ -182,6 +184,7 @@ class AutosuggestExample extends Component<Props, State> {
         suggestions={suggestions}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+        highlightFirstSuggestion={this.props.highlightFirstSuggestion}
         getSuggestionValue={getSuggestionValue}
         // getA11yResultsMessage need add in v2
         getA11yResultsMessage={this.getA11yResultsMessage}

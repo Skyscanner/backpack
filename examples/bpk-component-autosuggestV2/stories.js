@@ -67,6 +67,10 @@ export const WithSubHeadingTertiaryLabels = () => (
   <AutosuggestExample includeSubheading includeTertiaryLabel />
 );
 
+export const HighlightFistSuggestion = () => (
+  <AutosuggestExample includeSubheading includeTertiaryLabel includeIcon highlightFirstSuggestion />
+);
+
 export const Hanzi = () => (
   <AutosuggestExample includeSubheading includeTertiaryLabel hanzi />
 );
