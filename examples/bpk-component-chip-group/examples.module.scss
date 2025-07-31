@@ -16,32 +16,32 @@
  * limitations under the License.
  */
 
-@import '../../packages/bpk-mixins/index.scss';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
 .bpk-chip-group-examples {
   &__fixed-width {
-    width: 300 * $bpk-one-pixel-rem;
+    width: 300 * tokens.$bpk-one-pixel-rem;
   }
 
   &__contrast {
-    padding: bpk-spacing-base();
-    background-color: $bpk-canvas-contrast-day;
+    padding: tokens.bpk-spacing-base();
+    background-color: tokens.$bpk-canvas-contrast-day;
   }
 
   &__dark {
-    padding: bpk-spacing-base();
-    background-color: $bpk-surface-contrast-day;
+    padding: tokens.bpk-spacing-base();
+    background-color: tokens.$bpk-surface-contrast-day;
   }
 
   &__image {
-    padding: bpk-spacing-base();
+    padding: tokens.bpk-spacing-base();
     background-image: url('https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg');
   }
 
   &__mixed-container {
     h2 {
-      margin-top: bpk-spacing-xl();
-      margin-bottom: bpk-spacing-md();
+      margin-top: tokens.bpk-spacing-xl();
+      margin-bottom: tokens.bpk-spacing-md();
     }
   }
 }

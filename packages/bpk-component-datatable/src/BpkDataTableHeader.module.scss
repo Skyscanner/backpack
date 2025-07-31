@@ -16,12 +16,13 @@
  * limitations under the License.
  */
 
+@use 'sass:math';
 @use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/typography';
 @use '../../unstable__bpk-mixins/utils';
 
 $bpk-margin-size-sort-icons: tokens.bpk-spacing-sm() + tokens.bpk-spacing-md();
-$icon-height: tokens.$bpk-line-height-xs / 2;
+$icon-height: math.div(tokens.$bpk-line-height-xs, 2);
 
 .bpk-data-table-column__header {
   display: flex;
