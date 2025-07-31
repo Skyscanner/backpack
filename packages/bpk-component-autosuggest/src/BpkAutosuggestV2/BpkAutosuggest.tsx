@@ -100,6 +100,7 @@ export type BpkAutoSuggestProps<T> = {
     inputProps: HTMLProps<HTMLInputElement>,
   ) => ReactElement;
   onSuggestionHighlighted?: (data: { suggestion: T | null }) => void;
+  focusInputOnSuggestionClick?: boolean;
 };
 
 const defaultTheme = {
@@ -127,6 +128,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       alwaysRenderSuggestions,
       ariaLabels,
       defaultValue,
+      focusInputOnSuggestionClick = false,
       getA11yResultsMessage,
       getSectionSuggestions,
       getSuggestionValue,
@@ -314,6 +316,12 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       }
     };
 
+    const handleSuggestionClick = (event: React.MouseEvent) => {
+      if (!focusInputOnSuggestionClick) {
+        (document.activeElement as HTMLElement)?.blur?.();
+      }
+    };
+
     // const clearSuggestions = (e: MouseEvent) => {
     //   e.stopPropagation();
     //   setInputValue('');
@@ -332,7 +340,11 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         return (
           <li
             key={key}
-            {...getItemProps({ item: suggestion, index: suggestionIndex })}
+            {...getItemProps({
+              item: suggestion,
+              index: suggestionIndex,
+              onClick: handleSuggestionClick,
+            })}
             className={getClassName(
               theme.suggestion,
               highlightedIndex === suggestionIndex &&
