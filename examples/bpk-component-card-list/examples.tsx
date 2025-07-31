@@ -167,7 +167,7 @@ const DestinationCard = (i: number) => (
       <div className={STYLES['bpk-destination__bottom']}>
         <div className={STYLES['bpk-destination__name']}>
           <BpkText textStyle={TEXT_STYLES.heading4}>
-            {`Destination Name ${i}`}
+            {`Destination ${i}`}
           </BpkText>
         </div>
         <div className={STYLES['bpk-destination__row']}>
