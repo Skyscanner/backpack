@@ -16,28 +16,25 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { Component, Fragment, ReactNode } from 'react';
 
-import PropTypes from 'prop-types';
-import { Component, Fragment } from 'react';
-import type { Node } from 'react';
-
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkBreadcrumb.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type SchemaMetaDataItem = {
-  url: string,
-  label: string,
-};
+interface SchemaMetaDataItem {
+  url: string;
+  label: string;
+}
 
-export type Props = {
-  children: Node,
-  schemaMetaData: ?(SchemaMetaDataItem[]),
-  label: string,
-};
+export interface Props {
+  children: ReactNode;
+  schemaMetaData?: SchemaMetaDataItem[];
+  label: string;
+}
 
 /*
   The google structured data reference for the stringified output of
@@ -62,11 +59,7 @@ const buildMetaData = (schemaMetaData: SchemaMetaDataItem[]): string => {
 };
 
 class BpkBreadcrumb extends Component<Props> {
-  metaData: ?string;
-
-  static defaultProps = {
-    schemaMetaData: null,
-  };
+  metaData?: string;
 
   constructor(props: Props) {
     super(props);
@@ -75,7 +68,7 @@ class BpkBreadcrumb extends Component<Props> {
   }
 
   render() {
-    const { children, label, schemaMetaData, ...rest } = this.props;
+    const { children, label, ...rest } = this.props;
 
     return (
       <Fragment>
@@ -86,7 +79,6 @@ class BpkBreadcrumb extends Component<Props> {
             dangerouslySetInnerHTML={{ __html: this.metaData }}
           />
         )}
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <nav aria-label={label} {...rest}>
           <ol className={getClassName('bpk-breadcrumb')}>{children}</ol>
         </nav>
@@ -94,20 +86,5 @@ class BpkBreadcrumb extends Component<Props> {
     );
   }
 }
-
-BpkBreadcrumb.propTypes = {
-  children: PropTypes.node.isRequired,
-  label: PropTypes.string.isRequired,
-  schemaMetaData: PropTypes.arrayOf(
-    PropTypes.shape({
-      url: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-    }),
-  ),
-};
-
-BpkBreadcrumb.defaultProps = {
-  schemaMetaData: null,
-};
 
 export default BpkBreadcrumb;

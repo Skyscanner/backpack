@@ -16,39 +16,39 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { ReactNode } from 'react';
 
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
-
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { withRtlSupport } from '../../bpk-component-icon';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ArrowRight from '../../bpk-component-icon/sm/arrow-right';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLink from '../../bpk-component-link';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkText from '../../bpk-component-text';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkBreadcrumbItem.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
-  children: Node,
-  active: boolean,
-  href: ?string,
-  className: ?string,
-  linkProps: ?{ [string]: any },
-};
+export interface Props {
+  children: ReactNode;
+  active?: boolean;
+  href?: string;
+  className?: string;
+  linkProps?: { [key: string]: any };
+}
 
 const RtlSupportedArrowRight = withRtlSupport(ArrowRight);
 
 const BpkBreadcrumbItem = (props: Props) => {
-  const { active, children, className, href, linkProps, ...rest } = props;
+  const { active = false, children, className, href, linkProps, ...rest } = props;
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <li className={getClassName('bpk-breadcrumb-item', className)} {...rest}>
       {active ? (
-        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
         <div className={getClassName('bpk-breadcrumb-item__active-item')}>
           <BpkText
             aria-current="page"
@@ -58,7 +58,6 @@ const BpkBreadcrumbItem = (props: Props) => {
           </BpkText>
         </div>
       ) : (
-        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
         <div className={getClassName('bpk-breadcrumb-item__link')}>
           <BpkLink
             href={href}
@@ -75,21 +74,6 @@ const BpkBreadcrumbItem = (props: Props) => {
       </div>
     </li>
   );
-};
-
-BpkBreadcrumbItem.propTypes = {
-  children: PropTypes.node.isRequired,
-  active: PropTypes.bool,
-  href: PropTypes.string,
-  className: PropTypes.string,
-  linkProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-};
-
-BpkBreadcrumbItem.defaultProps = {
-  active: false,
-  href: null,
-  className: null,
-  linkProps: null,
 };
 
 export default BpkBreadcrumbItem;

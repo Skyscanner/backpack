@@ -16,18 +16,24 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 
-import BpkBreadcrumb from './BpkBreadcrumb';
+import BpkBreadcrumbItem from './BpkBreadcrumbItem';
 
-describe('BpkBreadcrumb', () => {
+describe('BpkBreadcrumbItem', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
-      <BpkBreadcrumb label="My breadcrumbs">
-        <div>Anything can go in here</div>
-      </BpkBreadcrumb>,
+      <BpkBreadcrumbItem href="https://skyscanner.design/">
+        Backpack
+      </BpkBreadcrumbItem>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with a "active" prop', () => {
+    const { asFragment } = render(
+      <BpkBreadcrumbItem active>Backpack</BpkBreadcrumbItem>,
     );
 
     expect(asFragment()).toMatchSnapshot();
@@ -35,42 +41,37 @@ describe('BpkBreadcrumb', () => {
 
   it('should render correctly with a custom class name', () => {
     const { asFragment } = render(
-      <BpkBreadcrumb label="My breadcrumbs" className="my-custom-class">
-        <div>Anything can go in here</div>
-      </BpkBreadcrumb>,
+      <BpkBreadcrumbItem
+        href="https://skyscanner.design/"
+        className="my-custom-class"
+      >
+        Backpack
+      </BpkBreadcrumbItem>,
     );
-
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
     const { asFragment } = render(
-      <BpkBreadcrumb
-        label="My breadcrumbs"
+      <BpkBreadcrumbItem
+        href="https://skyscanner.design/"
         testid="arbitrary value" // <-- arbitrary prop
       >
-        <div>Anything can go in here</div>
-      </BpkBreadcrumb>,
+        Backpack
+      </BpkBreadcrumbItem>,
     );
 
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with schema meta data', () => {
-    const schemaMetaData = [
-      {
-        url: 'http://www.skyscanner.net',
-        label: 'home',
-      },
-      {
-        url: 'http://www.skyscanner.net/hotels',
-        label: 'hotels',
-      },
-    ];
+  it('should render correctly with with "linkProps" attribute', () => {
     const { asFragment } = render(
-      <BpkBreadcrumb label="My breadcrumbs" schemaMetaData={schemaMetaData}>
-        <div>Anything can go in here</div>
-      </BpkBreadcrumb>,
+      <BpkBreadcrumbItem
+        href="https://skyscanner.design/"
+        linkProps={{ testid: 'arbitrary value' }} // <-- arbitrary prop
+      >
+        Backpack
+      </BpkBreadcrumbItem>,
     );
 
     expect(asFragment()).toMatchSnapshot();
