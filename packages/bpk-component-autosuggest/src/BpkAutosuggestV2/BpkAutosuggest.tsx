@@ -220,6 +220,11 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
             suggestion: changes.selectedItem,
             inputValue,
           });
+
+          if (alwaysRenderSuggestions) {
+            // Manually clear suggestions or hide menu
+            onSuggestionsClearRequested(); // optional
+          }
         }
       },
       getA11yStatusMessage() {
@@ -372,7 +377,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         </section>
       ));
 
-    const showSuggestions = alwaysRenderSuggestions ? true : isOpen;
+    const showSuggestions = (alwaysRenderSuggestions || isOpen) && suggestions.length > 0;
 
     const renderList = () =>
       multiSection
