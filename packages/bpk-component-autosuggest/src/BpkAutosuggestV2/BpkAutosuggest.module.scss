@@ -1,0 +1,137 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../unstable__bpk-mixins/tokens';
+@use '../../../unstable__bpk-mixins/borders';
+@use '../../../unstable__bpk-mixins/layers';
+@use '../../../unstable__bpk-mixins/typography';
+@use '../../../unstable__bpk-mixins/utils';
+
+.bpk-autosuggest {
+  &__suggestions-container {
+    display: none;
+
+    &-input {
+      width: 100%;
+    }
+
+    &--open {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__arrow {
+    width: tokens.bpk-spacing-lg();
+    height: tokens.bpk-spacing-lg();
+    fill: tokens.$bpk-surface-default-day;
+
+    &[data-hide] {
+      visibility: hidden;
+    }
+  }
+
+  &__suggestions-list {
+    min-width: fit-content;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+
+    @include layers.bpk-layer;
+  }
+
+  &__suggestion-item {
+    cursor: pointer;
+
+    @include typography.bpk-text;
+    @include typography.bpk-body-default;
+
+    &:not(:last-child) {
+      @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
+    }
+
+    &:active {
+      background-color: tokens.$bpk-canvas-contrast-day;
+    }
+
+    &--highlighted {
+      background-color: tokens.$bpk-canvas-contrast-day;
+    }
+  }
+
+  &__suggestion {
+    display: table;
+    width: 100%;
+    padding: tokens.bpk-spacing-base();
+
+    &--indent {
+      padding-left: tokens.bpk-spacing-xl();
+    }
+
+    &-icon {
+      display: table-cell;
+      margin-right: tokens.bpk-spacing-md();
+      vertical-align: top;
+      fill: tokens.$bpk-text-secondary-day;
+
+      @include utils.bpk-rtl {
+        margin-right: 0;
+        margin-left: tokens.bpk-spacing-md();
+      }
+    }
+
+    &-content {
+      display: table-cell;
+      width: 100%;
+      vertical-align: top;
+    }
+
+    &-inner {
+      display: flex;
+      flex-direction: row;
+      /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &-value {
+      display: block;
+    }
+
+    &-sub-heading {
+      display: table-cell;
+      width: 100%;
+      vertical-align: top;
+
+      @include typography.bpk-text;
+      @include typography.bpk-caption;
+    }
+
+    &-tertiary-label {
+      display: table-cell;
+      align-self: center;
+      color: tokens.$bpk-text-secondary-day;
+      vertical-align: top;
+      word-break: keep-all;
+
+      @include typography.bpk-text;
+      @include typography.bpk-caption;
+    }
+  }
+}
