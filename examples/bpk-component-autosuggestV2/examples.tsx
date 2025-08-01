@@ -18,18 +18,31 @@
 
 /* @flow strict */
 
-import { Component, ReactNode } from 'react';
+import { Component } from 'react';
+import type { ReactElement } from 'react';
 
-import {
-  BpkAutosuggestSuggestion,
-  BpkAutosuggestV2,
-} from '../../packages/bpk-component-autosuggest';
+// @ts-ignore
+import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
+import BpkAutosuggestV2 from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestV2/BpkAutosuggest';
 import { withRtlSupport } from '../../packages/bpk-component-icon';
 import FlightIcon from '../../packages/bpk-component-icon/lg/flight';
 
 const BpkFlightIcon = withRtlSupport(FlightIcon);
 
-const offices = [
+type Suggestion = {
+  name: string;
+  code: string;
+  country: string;
+  tertiaryLabel: string;
+  indent?: boolean;
+};
+
+type Section = {
+  title: string;
+  suggestions: Suggestion[];
+};
+
+const offices: Suggestion[] = [
   {
     name: 'Barcelona',
     code: 'BCN',
@@ -93,7 +106,7 @@ const offices = [
   },
 ];
 
-const dataHanzi = [
+const dataHanzi: Suggestion[] = [
   {
     name: '深圳寶安國際 (Shenzhen)',
     code: 'SZX',
@@ -102,7 +115,7 @@ const dataHanzi = [
   },
 ];
 
-const sections = [
+const sections: Section[] = [
   {
     title: 'Recent searches',
     suggestions: [offices[0]],
@@ -113,41 +126,38 @@ const sections = [
   },
 ];
 
-const getSuggestions = (value, hanzi) => {
+const getSuggestions = (value: string, hanzi: boolean): Suggestion[] => {
   const inputValue = value.trim().toLowerCase();
-  const inputLength = inputValue.length;
-
   const data = hanzi ? dataHanzi : offices;
 
-  return inputLength === 0
-    ? []
-    : data.filter(
-        (office) => office.name.toLowerCase().indexOf(inputValue) !== -1,
+  return inputValue.length === 0
+    ? data
+    : data.filter((office) =>
+        office.name.toLowerCase().includes(inputValue),
       );
 };
 
-const getSuggestionValue = (suggestion) =>
+const getSuggestionValue = (suggestion: Suggestion): string =>
   `${suggestion.name} (${suggestion.code})`;
 
-type State = {
-  value: string,
-  suggestions: Array<any>,
+type Props = {
+  hanzi: boolean;
+  includeIcon: boolean;
+  includeSubheading: boolean;
+  includeTertiaryLabel: boolean;
+  alwaysRenderSuggestions: boolean;
+  highlightFirstSuggestion: boolean;
+  multiSection: boolean;
+  renderSectionTitle: (section: Section) => ReactElement | null;
+  getSectionSuggestions: (section: Section) => Suggestion[];
 };
 
-type Props = {
-  hanzi: boolean,
-  includeIcon: boolean,
-  includeSubheading: boolean,
-  includeTertiaryLabel: boolean,
-  alwaysRenderSuggestions: boolean,
-  highlightFirstSuggestion: boolean,
-  multiSection: boolean,
-  renderSectionTitle: (section: any) => ReactNode,
-  getSectionSuggestions: (section: any) => any[],
+type State = {
+  suggestions: Array<Suggestion | Section>;
 };
 
 class AutosuggestExample extends Component<Props, State> {
-  static defaultProps = {
+  static defaultProps: Partial<Props> = {
     hanzi: false,
     includeIcon: false,
     includeSubheading: false,
@@ -155,20 +165,18 @@ class AutosuggestExample extends Component<Props, State> {
     alwaysRenderSuggestions: false,
     highlightFirstSuggestion: false,
     multiSection: false,
-    renderSectionTitle: () => {},
-    getSectionSuggestions: () => {},
+    renderSectionTitle: () => null,
+    getSectionSuggestions: () => [],
   };
 
-  constructor() {
-    super();
-
+  constructor(props: Props) {
+    super(props);
     this.state = {
-      // value: '',
       suggestions: [],
     };
   }
 
-  onSuggestionsFetchRequested = (value) => {
+  onSuggestionsFetchRequested = (value: string) => {
     this.setState({
       suggestions: this.props.multiSection
         ? sections
@@ -177,46 +185,47 @@ class AutosuggestExample extends Component<Props, State> {
   };
 
   onSuggestionsClearRequested = () => {
-    this.setState({
-      suggestions: [],
-    });
+    this.setState({ suggestions: [] });
   };
 
-  getA11yResultsMessage = (resultCount) => {
-    if (resultCount > 0) {
-      return 'handle results being single or plural';
-    }
-    return 'no results available';
-  };
+  getA11yResultsMessage = (resultCount: number): string => resultCount > 0
+      ? 'handle results being single or plural'
+      : 'no results available';
 
   render() {
     const { suggestions } = this.state;
-
-    const { includeIcon, includeSubheading, includeTertiaryLabel } = this.props;
+    const {
+      alwaysRenderSuggestions,
+      getSectionSuggestions,
+      highlightFirstSuggestion,
+      includeIcon,
+      includeSubheading,
+      includeTertiaryLabel,
+      multiSection,
+      renderSectionTitle,
+    } = this.props;
 
     const inputProps = {
       id: 'my-autosuggest',
       name: 'my_autosuggest',
-      // value,
       placeholder: 'Enter an office name',
-      // onChange: this.onChange,
     };
+
     return (
       <BpkAutosuggestV2
-        // ariaLabels need add in v2
         ariaLabels={{ label: 'input label', resultsList: 'results' }}
-        alwaysRenderSuggestions={this.props.alwaysRenderSuggestions}
+        alwaysRenderSuggestions={alwaysRenderSuggestions}
         suggestions={suggestions}
+        id="autosuggest-example"
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-        highlightFirstSuggestion={this.props.highlightFirstSuggestion}
-        multiSection={this.props.multiSection}
-        renderSectionTitle={this.props.renderSectionTitle}
-        getSectionSuggestions={this.props.getSectionSuggestions}
+        highlightFirstSuggestion={highlightFirstSuggestion}
+        multiSection={multiSection}
+        renderSectionTitle={renderSectionTitle}
+        getSectionSuggestions={getSectionSuggestions}
         getSuggestionValue={getSuggestionValue}
-        // getA11yResultsMessage need add in v2
         getA11yResultsMessage={this.getA11yResultsMessage}
-        renderSuggestion={(suggestion) => (
+        renderSuggestion={(suggestion: Suggestion) => (
           <BpkAutosuggestSuggestion
             value={getSuggestionValue(suggestion)}
             indent={suggestion.indent}
@@ -228,7 +237,9 @@ class AutosuggestExample extends Component<Props, State> {
           />
         )}
         inputProps={inputProps}
-        onSuggestionHighlighted={({ suggestion }) => {
+        onSuggestionHighlighted={({
+          suggestion,
+        }: { suggestion?: Suggestion }) => {
           if (suggestion) {
             console.log('User highlighted:', suggestion.name);
           } else {

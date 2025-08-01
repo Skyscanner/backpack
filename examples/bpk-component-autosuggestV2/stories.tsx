@@ -16,12 +16,15 @@
  * limitations under the License.
  */
 
-import { ArgTypes } from '@storybook/addon-docs';
+import type { ReactElement } from 'react';
+
+
 import { Title, Markdown } from '@storybook/blocks';
 import { userEvent, within } from '@storybook/test';
 
-import BpkAutosuggest from '../../packages/bpk-component-autosuggest/src/BpkAutosuggest';
+// @ts-ignore
 import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
+import BpkAutosuggestV2 from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestV2/BpkAutosuggest';
 
 import AutosuggestExample from './examples';
 
@@ -29,7 +32,7 @@ import type { StoryObj } from '@storybook/react';
 
 export default {
   title: 'bpk-component-autosuggestV2',
-  component: BpkAutosuggest,
+  component: BpkAutosuggestV2,
   subcomponents: {
     BpkAutosuggestSuggestion,
   },
@@ -38,23 +41,22 @@ export default {
       page: () => (
         <>
           <Title />
-          <ArgTypes exclude={['zoomEnabled']} />
           <Markdown>
-            {
-            `**BpkAutosuggest:**
-            Please refer to react-autosuggest's
-            documentation for a full list of [props](https://github.com/moroshko/react-autosuggest#props).
-            **Note:** The \`inputProps\` object is passed directly to a
-            [BpkInput](../bpk-component-input/README.md#props) component, so its prop types apply also.`
-            }
+            {`**BpkAutosuggest:**
+Please refer to react-autosuggest's documentation for a full list of [props](https://github.com/moroshko/react-autosuggest#props).
+
+**Note:** The \`inputProps\` object is passed directly to a [BpkInput](../bpk-component-input/README.md#props) component, so its prop types apply also.`}
           </Markdown>
         </>
       )
     },
   },
-};
+} as const;
+
+// --- Basic examples ---
 
 export const Example = () => <AutosuggestExample />;
+
 export const WithIcons = () => <AutosuggestExample includeIcon />;
 
 export const WithSubHeadings = () => <AutosuggestExample includeSubheading />;
@@ -68,11 +70,22 @@ export const WithSubHeadingTertiaryLabels = () => (
 );
 
 export const HighlightFistSuggestion = () => (
-  <AutosuggestExample includeSubheading includeTertiaryLabel includeIcon highlightFirstSuggestion />
+  <AutosuggestExample
+    includeSubheading
+    includeTertiaryLabel
+    includeIcon
+    highlightFirstSuggestion
+  />
 );
 
-const renderSectionTitle = (section) => <div>{section.title}</div>;
-const getSectionSuggestions = (section) => section.suggestions;
+// --- Multi-section example ---
+
+const renderSectionTitle = (section: { title: string }): ReactElement => (
+  <div>{section.title}</div>
+);
+
+const getSectionSuggestions = (section: { suggestions: any[] }): any[] =>
+  section.suggestions;
 
 export const WithSections = () => (
   <AutosuggestExample
@@ -85,12 +98,19 @@ export const WithSections = () => (
   />
 );
 
+// --- Other variations ---
+
 export const Hanzi = () => (
   <AutosuggestExample includeSubheading includeTertiaryLabel hanzi />
 );
 
 export const All = () => (
-  <AutosuggestExample includeSubheading includeTertiaryLabel includeIcon alwaysRenderSuggestions />
+  <AutosuggestExample
+    includeSubheading
+    includeTertiaryLabel
+    includeIcon
+    alwaysRenderSuggestions
+  />
 );
 
 export const SmallInput = () => (
@@ -99,6 +119,8 @@ export const SmallInput = () => (
   </div>
 );
 
+// --- Visual regression test (Percy) ---
+
 type Story = StoryObj<typeof AutosuggestExample>;
 
 export const VisualTest: Story = {
@@ -106,18 +128,17 @@ export const VisualTest: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    const input = canvas.getByPlaceholderText('Enter an office name'); // Find the input field
-    input.focus(); // Explicitly set focus using the DOM's focus method
-    await userEvent.type(input, 'Lon', { delay: 100 }); // Simulate typing into the input field
+    const input = canvas.getByPlaceholderText('Enter an office name');
+    input.focus();
+    await userEvent.type(input, 'Lon', { delay: 100 });
 
-    await canvas.findByText('London (Any)'); // Wait for the suggestions to appear
-    const dropdown = canvas.getByText('London (Any)'); // Find the dropdown field
-
-    dropdown.classList.add('percy-selector-placeholder'); // Add placeholder to trigger Percy snapshot
+    await canvas.findByText('London (Any)');
+    const dropdown = canvas.getByText('London (Any)');
+    dropdown.classList.add('percy-selector-placeholder');
   },
   parameters: {
     percy: {
-      waitForSelector: '.percy-selector-placeholder', // Wait for the input to have this class before taking the snapshot
-    }
-  }
+      waitForSelector: '.percy-selector-placeholder',
+    },
+  },
 };

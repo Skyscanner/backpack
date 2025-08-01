@@ -93,7 +93,7 @@ export type BpkAutoSuggestProps<T> = {
   shouldRenderSuggestions?: (value?: string) => boolean;
   multiSection?: boolean;
   getSectionSuggestions?: (section: T) => T[];
-  renderSectionTitle?: (section: T) => ReactElement;
+  renderSectionTitle?: (section: T) => ReactElement | null;
   alwaysRenderSuggestions?: boolean;
   onInputValueChange?: (input: { method: string; newValue: string }) => void;
   renderInputComponent?: (
@@ -259,8 +259,9 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       if (!isDesktop) {
         onLoad?.(inputValue);
       }
-      const shouldRenderResultsOnInitialLoad = !!inputValue;
-      if (shouldRenderResultsOnInitialLoad) {
+      if (alwaysRenderSuggestions) {
+        onSuggestionsFetchRequested(inputValue ?? '');
+      } else if (inputValue) {
         onSuggestionsFetchRequested(inputValue);
       }
       // fire track event on load and forget about it after. We don't want to track again when anything (inputValue) changes
