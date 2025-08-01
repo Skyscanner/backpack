@@ -132,13 +132,30 @@ const getSuggestions = (value: string, hanzi: boolean): Suggestion[] => {
 
   return inputValue.length === 0
     ? data
-    : data.filter((office) =>
-        office.name.toLowerCase().includes(inputValue),
-      );
+    : data.filter((office) => office.name.toLowerCase().includes(inputValue));
 };
 
 const getSuggestionValue = (suggestion: Suggestion): string =>
   `${suggestion.name} (${suggestion.code})`;
+
+const getFilteredSections = (value: string, rawSections: Section[]): Section[] => {
+  const inputValue = value.trim().toLowerCase();
+
+  return rawSections
+    .map((section) => {
+      const filteredSuggestions = section.suggestions.filter((suggestion) =>
+        suggestion.name.toLowerCase().includes(inputValue),
+      );
+
+      if (filteredSuggestions.length === 0) return null;
+
+      return {
+        ...section,
+        suggestions: filteredSuggestions,
+      };
+    })
+    .filter(Boolean) as Section[];
+};
 
 type Props = {
   hanzi: boolean;
@@ -179,16 +196,17 @@ class AutosuggestExample extends Component<Props, State> {
   onSuggestionsFetchRequested = (value: string) => {
     this.setState({
       suggestions: this.props.multiSection
-        ? sections
+        ? getFilteredSections(value, sections)
         : getSuggestions(value, this.props.hanzi),
     });
   };
 
-  onSuggestionsClearRequested = () => {
+    onSuggestionsClearRequested = () => {
     this.setState({ suggestions: [] });
   };
 
-  getA11yResultsMessage = (resultCount: number): string => resultCount > 0
+  getA11yResultsMessage = (resultCount: number): string =>
+    resultCount > 0
       ? 'handle results being single or plural'
       : 'no results available';
 
@@ -239,7 +257,9 @@ class AutosuggestExample extends Component<Props, State> {
         inputProps={inputProps}
         onSuggestionHighlighted={({
           suggestion,
-        }: { suggestion?: Suggestion }) => {
+        }: {
+          suggestion?: Suggestion;
+        }) => {
           if (suggestion) {
             console.log('User highlighted:', suggestion.name);
           } else {
