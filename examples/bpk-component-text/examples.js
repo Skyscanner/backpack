@@ -16,9 +16,7 @@
  * limitations under the License.
  */
 
-import { textColors } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
 import { withDefaultProps } from '../../packages/bpk-react-utils';
 
 const Paragraph = withDefaultProps(BpkText, {
@@ -182,8 +180,8 @@ const LarkenFallbackStylesExample = () => (
 );
 
 const ColorPropExample = () => (
-  <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p" color={textColors.textPrimaryDay}>
-    Text with color token textPrimaryDay
+  <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p" color={TEXT_COLORS.textSecondary}>
+    Text with color token textSecondary
   </BpkText>
 );
 

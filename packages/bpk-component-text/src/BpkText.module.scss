@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+@use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/typography';
 
 .bpk-text {
@@ -143,5 +144,61 @@
 
   &--editorial-3 {
     @include typography.bpk-editorial-3;
+  }
+
+  &--textHeroDay {
+    color: tokens.$bpk-text-hero-day;
+  }
+
+  &--textPrimaryDay {
+    color: tokens.$bpk-text-primary-day;
+  }
+
+  &--textSecondaryDay {
+    color: tokens.$bpk-text-secondary-day;
+  }
+
+  &--textSuccessDay {
+    color: tokens.$bpk-text-success-day;
+  }
+
+  &--textErrorDay {
+    color: tokens.$bpk-text-error-day;
+  }
+
+  &--textDisabledDay {
+    color: tokens.$bpk-text-disabled-day;
+  }
+
+  &--textDisabledOnDarkDay {
+    color: tokens.$bpk-text-disabled-on-dark-day;
+  }
+
+  &--textOnDarkDay {
+    color: tokens.$bpk-text-on-dark-day;
+  }
+
+  &--textPrimaryDarkColor {
+    color: tokens.$bpk-text-primary-dark-color;
+  }
+
+  &--textPrimaryLightColor {
+    color: tokens.$bpk-text-primary-light-color;
+  }
+
+  &--textSecondaryDarkColor {
+    color: tokens.$bpk-text-secondary-dark-color;
+  }
+
+  &--textSecondaryLightColor {
+    color: tokens.$bpk-text-secondary-light-color;
+  }
+
+  &--textTertiaryDarkColor {
+    color: tokens.$bpk-text-tertiary-dark-color;
+  }
+
+  &--textTertiaryLightColor {
+    color: tokens.$bpk-text-tertiary-light-color;
   }
 }

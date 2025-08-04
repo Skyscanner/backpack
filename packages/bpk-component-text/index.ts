@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import component, { TEXT_STYLES } from './src/BpkText';
+import component, { TEXT_COLORS, TEXT_STYLES } from './src/BpkText';
 
 export default component;
-export { TEXT_STYLES };
+export { TEXT_COLORS, TEXT_STYLES };
