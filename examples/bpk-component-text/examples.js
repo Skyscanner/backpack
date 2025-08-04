@@ -180,7 +180,7 @@ const LarkenFallbackStylesExample = () => (
 );
 
 const ColorPropExample = () => (
-  <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p" color={TEXT_COLORS.textSecondary}>
+  <BpkText tagName="p" color={TEXT_COLORS.textSecondary}>
     Text with color token textSecondary
   </BpkText>
 );
