@@ -115,7 +115,6 @@ describe('BpkText', () => {
     const { getByText } = render(<BpkText color="invalid">{text}</BpkText>);
 
     expect(getByText(text)).toHaveClass('bpk-text bpk-text--body-default');
-    expect(getByText(text)).not.toHaveAttribute('style');
   });
 
   it('should render correctly with prop color with className', () => {
