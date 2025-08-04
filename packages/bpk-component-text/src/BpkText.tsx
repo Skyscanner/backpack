@@ -65,7 +65,7 @@ export const TEXT_COLORS = {
   textSuccess: 'text-success',
   textError: 'text-error',
   textDisabled: 'text-disabled',
-  textDisabledOnDark: 'text-disabled-on-dark',
+  textDisabledDark: 'text-disabled-dark',
   textPrimaryDark: 'text-primary-dark',
   textPrimaryLight: 'text-primary-light',
   textSecondaryDark: 'text-secondary-dark',
