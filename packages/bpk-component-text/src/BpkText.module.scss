@@ -20,23 +20,29 @@
 @use '../../unstable__bpk-mixins/typography';
 
 $text-colors: (
-  'textHeroDay': tokens.$bpk-text-hero-day,
-  'textPrimaryDay': tokens.$bpk-text-primary-day,
-  'textSecondaryDay': tokens.$bpk-text-secondary-day,
-  'textSuccessDay': tokens.$bpk-text-success-day,
-  'textErrorDay': tokens.$bpk-text-error-day,
-  'textDisabledDay': tokens.$bpk-text-disabled-day,
-  'textDisabledOnDarkDay': tokens.$bpk-text-disabled-on-dark-day,
-  'textOnDarkDay': tokens.$bpk-text-on-dark-day,
-  'textPrimaryDarkColor': tokens.$bpk-text-primary-dark-color,
-  'textPrimaryLightColor': tokens.$bpk-text-primary-light-color,
-  'textSecondaryDarkColor': tokens.$bpk-text-secondary-dark-color,
-  'textSecondaryLightColor': tokens.$bpk-text-secondary-light-color,
-  'textTertiaryDarkColor': tokens.$bpk-text-tertiary-dark-color,
-  'textTertiaryLightColor': tokens.$bpk-text-tertiary-light-color,
+  'textHero': tokens.$bpk-text-hero-day,
+  'textPrimary': tokens.$bpk-text-primary-day,
+  'textSecondary': tokens.$bpk-text-secondary-day,
+  'textSuccess': tokens.$bpk-text-success-day,
+  'textError': tokens.$bpk-text-error-day,
+  'textDisabled': tokens.$bpk-text-disabled-day,
+  'textDisabledOnDark': tokens.$bpk-text-disabled-on-dark-day,
+  'textOnDark': tokens.$bpk-text-on-dark-day,
+  'textPrimaryDark': tokens.$bpk-text-primary-dark-color,
+  'textPrimaryLight': tokens.$bpk-text-primary-light-color,
+  'textSecondaryDark': tokens.$bpk-text-secondary-dark-color,
+  'textSecondaryLight': tokens.$bpk-text-secondary-light-color,
+  'textTertiaryDark': tokens.$bpk-text-tertiary-dark-color,
+  'textTertiaryLight': tokens.$bpk-text-tertiary-light-color,
 );
 
 .bpk-text {
+  @each $color-name, $color-token in $text-colors {
+    &--#{$color-name} {
+      color: $color-token;
+    }
+  }
+
   @include typography.bpk-text;
 
   &--xs {
@@ -161,11 +167,5 @@ $text-colors: (
 
   &--editorial-3 {
     @include typography.bpk-editorial-3;
-  }
-
-  @each $class-name, $color-token in $text-colors {
-    &--#{$class-name} {
-      color: $color-token;
-    }
   }
 }
