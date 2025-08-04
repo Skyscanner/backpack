@@ -58,22 +58,22 @@ export const TEXT_STYLES = {
   editorial3: 'editorial-3',
 } as const;
 
-export const TEXT_COLORS = {
-  textHero: 'textHeroDay',
-  textPrimary: 'textPrimaryDay',
-  textSecondary: 'textSecondaryDay',
-  textSuccess: 'textSuccessDay',
-  textError: 'textErrorDay',
-  textDisabled: 'textDisabledDay',
-  textDisabledOnDark: 'textDisabledOnDarkDay',
-  textOnDark: 'textOnDarkDay',
-  textPrimaryDark: 'textPrimaryDarkColor',
-  textPrimaryLight: 'textPrimaryLightColor',
-  textSecondaryDark: 'textSecondaryDarkColor',
-  textSecondaryLight: 'textSecondaryLightColor',
-  textTertiaryDark: 'textTertiaryDarkColor',
-  textTertiaryLight: 'textTertiaryLightColor',
-} as const;
+export const TEXT_COLORS = [
+  'textHero',
+  'textPrimary',
+  'textSecondary',
+  'textSuccess',
+  'textError',
+  'textDisabled',
+  'textDisabledOnDark',
+  'textOnDark',
+  'textPrimaryDark',
+  'textPrimaryLight',
+  'textSecondaryDark',
+  'textSecondaryLight',
+  'textTertiaryDark',
+  'textTertiaryLight',
+] as const;
 
 export type TextColor = (typeof TEXT_COLORS)[keyof typeof TEXT_COLORS];
 export type TextStyle = (typeof TEXT_STYLES)[keyof typeof TEXT_STYLES];
