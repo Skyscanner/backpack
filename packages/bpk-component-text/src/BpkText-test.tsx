@@ -106,7 +106,7 @@ describe('BpkText', () => {
     );
 
     expect(getByText(text)).toHaveClass(
-      `bpk-text bpk-text--body-default bpk-text--textSecondaryDay`,
+      `bpk-text bpk-text--body-default bpk-text--textSecondary`,
     );
   });
 
@@ -116,5 +116,17 @@ describe('BpkText', () => {
 
     expect(getByText(text)).toHaveClass('bpk-text bpk-text--body-default');
     expect(getByText(text)).not.toHaveAttribute('style');
+  });
+
+  it('should render correctly with prop color with className', () => {
+    const { getByText } = render(
+      <BpkText color={TEXT_COLORS.textSecondary} className="test-classname">
+        {text}
+      </BpkText>,
+    );
+
+    expect(getByText(text)).toHaveClass(
+      `bpk-text bpk-text--body-default bpk-text--textSecondary test-classname`,
+    );
   });
 });
