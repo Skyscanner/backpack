@@ -19,6 +19,23 @@
 @use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/typography';
 
+$text-colors: (
+  'textHeroDay': tokens.$bpk-text-hero-day,
+  'textPrimaryDay': tokens.$bpk-text-primary-day,
+  'textSecondaryDay': tokens.$bpk-text-secondary-day,
+  'textSuccessDay': tokens.$bpk-text-success-day,
+  'textErrorDay': tokens.$bpk-text-error-day,
+  'textDisabledDay': tokens.$bpk-text-disabled-day,
+  'textDisabledOnDarkDay': tokens.$bpk-text-disabled-on-dark-day,
+  'textOnDarkDay': tokens.$bpk-text-on-dark-day,
+  'textPrimaryDarkColor': tokens.$bpk-text-primary-dark-color,
+  'textPrimaryLightColor': tokens.$bpk-text-primary-light-color,
+  'textSecondaryDarkColor': tokens.$bpk-text-secondary-dark-color,
+  'textSecondaryLightColor': tokens.$bpk-text-secondary-light-color,
+  'textTertiaryDarkColor': tokens.$bpk-text-tertiary-dark-color,
+  'textTertiaryLightColor': tokens.$bpk-text-tertiary-light-color,
+);
+
 .bpk-text {
   @include typography.bpk-text;
 
@@ -146,59 +163,9 @@
     @include typography.bpk-editorial-3;
   }
 
-  &--textHeroDay {
-    color: tokens.$bpk-text-hero-day;
-  }
-
-  &--textPrimaryDay {
-    color: tokens.$bpk-text-primary-day;
-  }
-
-  &--textSecondaryDay {
-    color: tokens.$bpk-text-secondary-day;
-  }
-
-  &--textSuccessDay {
-    color: tokens.$bpk-text-success-day;
-  }
-
-  &--textErrorDay {
-    color: tokens.$bpk-text-error-day;
-  }
-
-  &--textDisabledDay {
-    color: tokens.$bpk-text-disabled-day;
-  }
-
-  &--textDisabledOnDarkDay {
-    color: tokens.$bpk-text-disabled-on-dark-day;
-  }
-
-  &--textOnDarkDay {
-    color: tokens.$bpk-text-on-dark-day;
-  }
-
-  &--textPrimaryDarkColor {
-    color: tokens.$bpk-text-primary-dark-color;
-  }
-
-  &--textPrimaryLightColor {
-    color: tokens.$bpk-text-primary-light-color;
-  }
-
-  &--textSecondaryDarkColor {
-    color: tokens.$bpk-text-secondary-dark-color;
-  }
-
-  &--textSecondaryLightColor {
-    color: tokens.$bpk-text-secondary-light-color;
-  }
-
-  &--textTertiaryDarkColor {
-    color: tokens.$bpk-text-tertiary-dark-color;
-  }
-
-  &--textTertiaryLightColor {
-    color: tokens.$bpk-text-tertiary-light-color;
+  @each $class-name, $color-token in $text-colors {
+    &--#{$class-name} {
+      color: $color-token;
+    }
   }
 }
