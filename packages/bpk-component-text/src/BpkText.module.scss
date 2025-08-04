@@ -20,20 +20,20 @@
 @use '../../unstable__bpk-mixins/typography';
 
 $text-colors: (
-  'textHero': tokens.$bpk-text-hero-day,
-  'textPrimary': tokens.$bpk-text-primary-day,
-  'textSecondary': tokens.$bpk-text-secondary-day,
-  'textSuccess': tokens.$bpk-text-success-day,
-  'textError': tokens.$bpk-text-error-day,
-  'textDisabled': tokens.$bpk-text-disabled-day,
-  'textDisabledOnDark': tokens.$bpk-text-disabled-on-dark-day,
-  'textOnDark': tokens.$bpk-text-on-dark-day,
-  'textPrimaryDark': tokens.$bpk-text-primary-dark-color,
-  'textPrimaryLight': tokens.$bpk-text-primary-light-color,
-  'textSecondaryDark': tokens.$bpk-text-secondary-dark-color,
-  'textSecondaryLight': tokens.$bpk-text-secondary-light-color,
-  'textTertiaryDark': tokens.$bpk-text-tertiary-dark-color,
-  'textTertiaryLight': tokens.$bpk-text-tertiary-light-color,
+  'text-hero': tokens.$bpk-text-hero-day,
+  'text-primary': tokens.$bpk-text-primary-day,
+  'text-secondary': tokens.$bpk-text-secondary-day,
+  'text-success': tokens.$bpk-text-success-day,
+  'text-error': tokens.$bpk-text-error-day,
+  'text-disabled': tokens.$bpk-text-disabled-day,
+  'text-disabled-on-dark': tokens.$bpk-text-disabled-on-dark-day,
+  'text-on-dark': tokens.$bpk-text-on-dark-day,
+  'text-primary-dark': tokens.$bpk-text-primary-dark-color,
+  'text-primary-light': tokens.$bpk-text-primary-light-color,
+  'text-secondary-dark': tokens.$bpk-text-secondary-dark-color,
+  'text-secondary-light': tokens.$bpk-text-secondary-light-color,
+  'text-tertiary-dark': tokens.$bpk-text-tertiary-dark-color,
+  'text-tertiary-light': tokens.$bpk-text-tertiary-light-color,
 );
 
 .bpk-text {

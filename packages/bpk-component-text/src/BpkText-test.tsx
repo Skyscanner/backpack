@@ -106,7 +106,7 @@ describe('BpkText', () => {
     );
 
     expect(getByText(text)).toHaveClass(
-      `bpk-text bpk-text--body-default bpk-text--textSecondary`,
+      `bpk-text bpk-text--body-default bpk-text--text-secondary`,
     );
   });
 
@@ -126,7 +126,7 @@ describe('BpkText', () => {
     );
 
     expect(getByText(text)).toHaveClass(
-      `bpk-text bpk-text--body-default bpk-text--textSecondary test-classname`,
+      `bpk-text bpk-text--body-default bpk-text--text-secondary test-classname`,
     );
   });
 });
