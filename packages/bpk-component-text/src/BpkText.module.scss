@@ -161,7 +161,7 @@ $text-colors: (
   }
 
   @each $color-name, $color-value in $text-colors {
-    &--#{$color-name} {
+    &.bpk-text--#{$color-name} {
       color: $color-value;
     }
   }
