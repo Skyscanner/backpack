@@ -34,7 +34,7 @@ import { useCombobox } from 'downshift';
 
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { INPUT_TYPES } from '../../../bpk-component-input';
+import BpkInput from '../../../bpk-component-input';
 import { cssModules } from '../../../bpk-react-utils';
 
 import type {
@@ -59,6 +59,9 @@ export type BpkAutoSuggestTheme = {
   // add extra theme from fsc
   desktopSuggestionsContainer?: string;
   desktopSuggestionsList?: string;
+  inputTextWrapper?: string;
+  inputWrapper?: string;
+  label?: string;
 };
 
 export type BpkAutoSuggestProps<T> = {
@@ -67,6 +70,8 @@ export type BpkAutoSuggestProps<T> = {
     resultsList: string;
     label?: string;
     clearButton?: string;
+    inputDescription?: string;
+    noResults?: string;
   };
   getSuggestionValue: (suggestion: T) => string;
   inputProps: HTMLProps<HTMLInputElement>;
@@ -82,12 +87,10 @@ export type BpkAutoSuggestProps<T> = {
   getA11yResultsMessage: (resultCount: number) => string;
   defaultValue?: string;
   isDesktop?: boolean;
-  // isDestination?: boolean;
   onLoad?: (inputValue: string) => void;
   onClick?: () => void;
-  // renderBesideInput?: () => ReactElement;
-  // showClear?: boolean;
-  // isSwapButton?: boolean;
+  renderBesideInput?: () => ReactElement;
+  showClear?: boolean;
   theme?: Partial<BpkAutoSuggestTheme>;
   highlightFirstSuggestion?: boolean;
   shouldRenderSuggestions?: (value?: string) => boolean;
@@ -144,10 +147,12 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       onSuggestionSelected,
       onSuggestionsClearRequested,
       onSuggestionsFetchRequested,
+      renderBesideInput,
       renderInputComponent,
       renderSectionTitle,
       renderSuggestion,
       shouldRenderSuggestions,
+      showClear = true,
       suggestions,
       theme: customTheme = {},
     },
@@ -156,7 +161,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     const theme = { ...defaultTheme, ...customTheme };
     const arrowRef = useRef(null);
     const previousHighlightedIndexRef = useRef<number | null>(null);
-    console.log('BpkAutosuggest', suggestions, multiSection);
 
     function stateReducer(
       state: UseComboboxState<any>,
@@ -328,10 +332,10 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       }
     };
 
-    // const clearSuggestions = (e: MouseEvent) => {
-    //   e.stopPropagation();
-    //   setInputValue('');
-    // };
+    const clearSuggestions = (e?: React.SyntheticEvent<HTMLButtonElement>) => {
+      e?.stopPropagation();
+      setInputValue('');
+    };
 
     // Render suggestions function to render single section suggestion
     const renderSuggestions = (items: any[], sectionIndex?: number) =>
@@ -377,7 +381,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         </section>
       ));
 
-    const showSuggestions = (alwaysRenderSuggestions || isOpen) && suggestions.length > 0;
+    const showSuggestions =
+      (alwaysRenderSuggestions || isOpen) && suggestions.length > 0;
 
     const renderList = () =>
       multiSection
@@ -388,10 +393,18 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     const renderInput = () => {
       const refObj =
         forwardedRef as React.MutableRefObject<HTMLInputElement | null>;
-      const inputComponentProps = getInputProps({
-        className: theme.input,
-        onKeyDown,
-        ref: (node: HTMLInputElement) => {
+
+      const {
+        className: inputClassName,
+        name: inputName,
+        onClick: inputOnClick,
+        onKeyDown: inputOnKeyDown,
+        type: typeFromInputProps,
+        ...restInputProps
+      } = inputProps;
+
+      const { ref, value, ...finalInputProps } = getInputProps({
+        ref: (node: HTMLInputElement | null) => {
           refs.setReference(node);
           if (typeof forwardedRef === 'function') {
             forwardedRef(node);
@@ -399,15 +412,44 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
             refObj.current = node;
           }
         },
-        type: INPUT_TYPES.text,
+        onKeyDown,
         onClick: onClickOrKeydown,
-        ...inputProps,
+        className: inputClassName || theme.input,
+        ...restInputProps,
       });
 
-      return renderInputComponent ? (
-        renderInputComponent(inputComponentProps)
-      ) : (
-        <input {...inputComponentProps} enterKeyHint="search" />
+      const normalizedInputValue = Array.isArray(value)
+        ? (value.join(', ') as string | number)
+        : ((value ?? '') as string | number);
+
+      if (renderInputComponent) {
+        return renderInputComponent({
+          ref,
+          ...finalInputProps,
+        });
+      }
+
+      return (
+        <label
+          {...getLabelProps({ 'aria-label': ariaLabels.label })}
+          className={getClassName(theme.label)}
+        >
+          <div className={getClassName(theme.inputTextWrapper)}>
+            {renderBesideInput?.()}
+            <div className={getClassName(theme.inputWrapper)}>
+              <BpkInput
+                value={normalizedInputValue}
+                inputRef={ref as React.RefCallback<HTMLInputElement>}
+                clearButtonMode={showClear ? 'whileEditing' : 'never'}
+                clearButtonLabel={ariaLabels.clearButton || 'Clear input'}
+                onClear={clearSuggestions}
+                name={inputName || id}
+                id={id}
+                {...finalInputProps}
+              />
+            </div>
+          </div>
+        </label>
       );
     };
 
