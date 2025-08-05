@@ -193,10 +193,38 @@ const WithImageAndBottomSheetExampleV2Light = () => (
   />
 );
 
+const WithSingleBottomSheetItemExampleV2Light = () => (
+  <BpkInsetBannerSponsored
+    title="Weekend Getaways"
+    subheadline="Find the perfect short break destination"
+    logo={logoDarkUrl}
+    callToAction={{
+      text: 'Sponsored',
+      bottomSheetContent: [
+        {
+          title: 'Single Information Item',
+          description:
+            'This example only has one item in the bottom sheet content, so it should not display an info icon next to it.',
+        },
+      ],
+      bottomSheetTitle: 'About this advert',
+      closeBtnIcon: true,
+      labelTitle: true,
+      bottomSheetLabel: 'Info',
+      buttonCloseLabel: 'Close',
+      buttonA11yLabel: 'More info',
+    }}
+    backgroundColor="#FFE300"
+    variant={VARIANT.onLight}
+    accessibilityLabel="Sponsored by Skyscanner"
+  />
+);
+
 export {
   WithCtaTextAndBottomSheetExampleV2Light,
   WithCustomBottomSheetWidthAndMarginsExampleV2Light,
   WithImageAndBottomSheetExampleV2Dark,
   WithCtaTextAndBottomSheetExampleV2Dark,
   WithImageAndBottomSheetExampleV2Light,
+  WithSingleBottomSheetItemExampleV2Light,
 };

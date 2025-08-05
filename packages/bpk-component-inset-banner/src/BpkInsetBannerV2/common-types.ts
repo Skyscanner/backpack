@@ -55,4 +55,6 @@ export type CommonProps = {
     altText: string;
     aspectRatio: number;
   };
+  adInfoA11yLabel?: string;
+  ariaAdScenicA11yLabel?: string;
 };
