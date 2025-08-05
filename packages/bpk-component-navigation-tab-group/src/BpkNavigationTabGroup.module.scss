@@ -71,6 +71,19 @@
       }
     }
 
+    &--visual-change-only {
+      display: flex;
+      min-width: tokens.bpk-spacing-xxxl() + tokens.bpk-spacing-md() +
+        tokens.bpk-spacing-sm();
+      min-height: tokens.bpk-spacing-xxl() + tokens.bpk-spacing-base();
+      padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: tokens.$bpk-border-radius-nav-tabs;
+      text-align: center;
+    }
+
     &--canvas-default {
       background-color: transparent;
       color: tokens.$bpk-text-primary-day;
@@ -113,6 +126,10 @@
       &-selected {
         fill: tokens.$bpk-text-on-dark-day;
       }
+    }
+
+    &--visual-change-only-experiment {
+      margin-inline-end: 0;
     }
   }
 }

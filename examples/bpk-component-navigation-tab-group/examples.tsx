@@ -16,12 +16,16 @@
  * limitations under the License.
  */
 import { withRtlSupport } from '../../packages/bpk-component-icon';
+import Beach from '../../packages/bpk-component-icon/sm/beach';
 import Car from '../../packages/bpk-component-icon/sm/cars';
 import Explore from '../../packages/bpk-component-icon/sm/explore';
 import Flight from '../../packages/bpk-component-icon/sm/flight';
 import Hotel from '../../packages/bpk-component-icon/sm/hotels';
 import BpkNavigationTabGroup from '../../packages/bpk-component-navigation-tab-group';
-import { NAVIGATION_TAB_GROUP_TYPES } from '../../packages/bpk-component-navigation-tab-group/src/BpkNavigationTabGroup';
+import {
+  NAVIGATION_TAB_GROUP_TYPES,
+  PackageExperimentVersions,
+} from '../../packages/bpk-component-navigation-tab-group/src/BpkNavigationTabGroup';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 
@@ -39,6 +43,8 @@ const carIcons = withRtlSupport(Car);
 
 const flightIcons = withRtlSupport(Flight);
 
+const packageIcons = withRtlSupport(Beach);
+
 const tabs: BpkNavigationTabGroupProps['tabs'] = [
   { id: 'air', text: 'Flights', href: '/' },
   { id: 'hotel', text: 'Hotels', href: '/hotel' },
@@ -51,6 +57,13 @@ const tabsWithIcon: BpkNavigationTabGroupProps['tabs'] = [
   { id: 'hotel', text: 'Hotels', href: '/hotel', icon: hotelIcons, 'data-cy':'hotel-feature', 'data-analytics':'hotels' },
   { id: 'car', text: 'Car hire', href: '/carhire', icon: carIcons, 'data-cy':'carhire-feature', 'data-analytics':'car hire' },
   { id: 'explore', text: 'Explore', href: '/Explore', icon: exploreIcons, 'data-cy':'explore-feature', 'data-analytics':'explore' },
+];
+
+const tabsWithPackagesAndIcons: BpkNavigationTabGroupProps['tabs'] = [
+  { id: 'air', text: 'Flights', href: '/', icon: flightIcons, 'data-cy':'flight-feature', 'data-analytics':'flights' },
+  { id: 'hotel', text: 'Hotels', href: '/hotel', icon: hotelIcons, 'data-cy':'hotel-feature', 'data-analytics':'hotels' },
+  { id: 'car', text: 'Car hire', href: '/carhire', icon: carIcons, 'data-cy':'carhire-feature', 'data-analytics':'car hire' },
+  { id: 'packages', text: 'Packages', href: '/destinations/packages-holidays', icon: packageIcons, 'data-cy':'packages', 'data-analytics':'packages' },
 ];
 
 const tabsNoHref: BpkNavigationTabGroupProps['tabs'] = [
@@ -239,6 +252,22 @@ const VisualTestExample = () => (
   </div>
 );
 
+// Tabs with Packages Experiment Tab
+const TabsWithPackagesVisualChangeExample = () => (
+  <div className={getClassNames('bpk-navigation-tab-group-story')}>
+    <BpkNavigationTabGroup
+      id="navExample"
+      tabs={tabsWithPackagesAndIcons}
+      onItemClick={() => {}}
+      selectedIndex={2}
+      type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
+      ariaLabel="Navigation tabs"
+      packagesExperimentEnabled
+      packagesExperimentVersion={PackageExperimentVersions.VISUAL_CHANGE_ONLY}
+    />
+  </div>
+);
+
 export {
   SimpleSurfaceContrast,
   SimpleCanvasDefault,
@@ -250,4 +279,5 @@ export {
   TabsOnlyTextCanvasDefaultForExample,
   TabsWithBlankTarget,
   VisualTestExample,
+  TabsWithPackagesVisualChangeExample,
 };
