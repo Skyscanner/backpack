@@ -192,7 +192,7 @@ const ColorPropExample = () => (
 
     <div className={getClassName('bpk-stories-text_success')}>
       <BpkText tagName="p" color={TEXT_COLORS.textSecondary}>
-          Text with color prop textSecondary with parent color override
+          Text with color prop textSecondary with parent className override
       </BpkText>
     </div>
 
