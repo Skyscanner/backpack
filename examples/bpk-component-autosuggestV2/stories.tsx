@@ -47,7 +47,7 @@ Please refer to react-autosuggest's documentation for a full list of [props](htt
 **Note:** The \`inputProps\` object is passed directly to a [BpkInput](../bpk-component-input/README.md#props) component, so its prop types apply also.`}
           </Markdown>
         </>
-      )
+      ),
     },
   },
 } as const;
@@ -118,36 +118,40 @@ export const SmallInput = () => (
   </div>
 );
 
-const renderCustomInput = (inputProps: React.InputHTMLAttributes<HTMLInputElement>) => (
-    <div
+const renderCustomInput = (
+  inputProps: React.InputHTMLAttributes<HTMLInputElement> & {
+      ref?: React.LegacyRef<HTMLInputElement>;
+    },
+) => (
+  <div
     ref={inputProps.ref}
+    style={{
+      border: '2px solid #007aff',
+      borderRadius: '8px',
+      padding: '10px 12px',
+    }}
+  >
+    <span
       style={{
-        border: '2px solid #007aff',
-        borderRadius: '8px',
-        padding: '10px 12px',
+        fontWeight: 'bold',
+        fontSize: '14px',
+        marginBottom: '2px',
       }}
     >
-      <span
-        style={{
-          fontWeight: 'bold',
-          fontSize: '14px',
-          marginBottom: '2px',
-        }}
-      >
-        From
-      </span>
-      <input
-        {...inputProps}
-        placeholder="Country, city or airport"
-        style={{
-          border: 'none',
-          outline: 'none',
-          fontSize: '16px',
-          width: '100%',
-        }}
-      />
-    </div>
-  );
+      From
+    </span>
+    <input
+      {...inputProps}
+      placeholder="Country, city or airport"
+      style={{
+        border: 'none',
+        outline: 'none',
+        fontSize: '16px',
+        width: '100%',
+      }}
+    />
+  </div>
+);
 export const CustomRenderInput = () => (
   <AutosuggestExample renderInputComponent={renderCustomInput} />
 );

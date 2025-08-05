@@ -100,7 +100,9 @@ export type BpkAutoSuggestProps<T> = {
   alwaysRenderSuggestions?: boolean;
   onInputValueChange?: (input: { method: string; newValue: string }) => void;
   renderInputComponent?: (
-    inputProps: HTMLProps<HTMLInputElement>,
+    inputProps: React.InputHTMLAttributes<HTMLInputElement> & {
+      ref?: React.LegacyRef<HTMLInputElement>;
+    },
   ) => ReactElement;
   onSuggestionHighlighted?: (data: { suggestion: T | null }) => void;
   focusInputOnSuggestionClick?: boolean;
@@ -379,7 +381,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           <div className={theme.sectionTitle}>
             {renderSectionTitle?.(section)}
           </div>
-          {renderSuggestions(getSectionSuggestions?.(section)!, index)}
+          {getSectionSuggestions?.(section) &&
+            renderSuggestions(getSectionSuggestions(section), index)}
         </section>
       ));
 

@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import { Component } from 'react';
-import type { ReactElement,HTMLProps } from 'react';
+import type { ReactElement, HTMLProps } from 'react';
 
 // @ts-ignore
 import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
@@ -138,7 +138,10 @@ const getSuggestions = (value: string, hanzi: boolean): Suggestion[] => {
 const getSuggestionValue = (suggestion: Suggestion): string =>
   `${suggestion.name} (${suggestion.code})`;
 
-const getFilteredSections = (value: string, rawSections: Section[]): Section[] => {
+const getFilteredSections = (
+  value: string,
+  rawSections: Section[],
+): Section[] => {
   const inputValue = value.trim().toLowerCase();
 
   return rawSections
@@ -165,9 +168,11 @@ type Props = {
   alwaysRenderSuggestions: boolean;
   highlightFirstSuggestion: boolean;
   multiSection: boolean;
-  renderInputComponent: (
-      inputProps: HTMLProps<HTMLInputElement>,
-    ) => ReactElement;
+  renderInputComponent?: (
+    inputProps: React.InputHTMLAttributes<HTMLInputElement> & {
+      ref?: React.LegacyRef<HTMLInputElement>;
+    },
+  ) => ReactElement;
   renderSectionTitle: (section: Section) => ReactElement | null;
   getSectionSuggestions: (section: Section) => Suggestion[];
 };
@@ -205,7 +210,7 @@ class AutosuggestExample extends Component<Props, State> {
     });
   };
 
-    onSuggestionsClearRequested = () => {
+  onSuggestionsClearRequested = () => {
     this.setState({ suggestions: [] });
   };
 
