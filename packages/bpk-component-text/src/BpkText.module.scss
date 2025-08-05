@@ -20,19 +20,17 @@
 @use '../../unstable__bpk-mixins/typography';
 
 $text-colors: (
-  'text-hero': tokens.$bpk-text-hero-day,
-  'text-primary': tokens.$bpk-text-primary-day,
-  'text-secondary': tokens.$bpk-text-secondary-day,
-  'text-success': tokens.$bpk-text-success-day,
-  'text-error': tokens.$bpk-text-error-day,
   'text-disabled': tokens.$bpk-text-disabled-day,
   'text-disabled-on-dark': tokens.$bpk-text-disabled-on-dark-day,
-  'text-primary-dark': tokens.$bpk-text-primary-dark-color,
-  'text-primary-light': tokens.$bpk-text-primary-light-color,
-  'text-secondary-dark': tokens.$bpk-text-secondary-dark-color,
-  'text-secondary-light': tokens.$bpk-text-secondary-light-color,
-  'text-tertiary-dark': tokens.$bpk-text-tertiary-dark-color,
-  'text-tertiary-light': tokens.$bpk-text-tertiary-light-color,
+  'text-error': tokens.$bpk-text-error-day,
+  'text-hero': tokens.$bpk-text-hero-day,
+  'text-link': tokens.$bpk-text-link-day,
+  'text-on-dark': tokens.$bpk-text-on-dark-day,
+  'text-on-light': tokens.$bpk-text-on-light-day,
+  'text-primary': tokens.$bpk-text-primary-day,
+  'text-primary-inverse': tokens.$bpk-text-primary-inverse-day,
+  'text-secondary': tokens.$bpk-text-secondary-day,
+  'text-success': tokens.$bpk-text-success-day,
 );
 
 .bpk-text {
@@ -162,9 +160,9 @@ $text-colors: (
     @include typography.bpk-editorial-3;
   }
 
-  @each $color-name, $color-token in $text-colors {
+  @each $color-name, $color-value in $text-colors {
     &--#{$color-name} {
-      color: $color-token;
+      color: $color-value;
     }
   }
 }
