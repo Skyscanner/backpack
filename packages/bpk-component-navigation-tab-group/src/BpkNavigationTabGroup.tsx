@@ -73,12 +73,17 @@ type TabWrapProps = {
   packagesExperimentVersion?: string;
 };
 
+const isVisualChangeExperimentEnabled = (
+  packagesExperimentEnabled?: boolean,
+  packagesExperimentVersion?: string,
+): boolean | undefined => packagesExperimentEnabled && packagesExperimentVersion === PackageExperimentVersions.VISUAL_CHANGE_ONLY
+
 const TabWrap = ({ children, onClick, packagesExperimentEnabled, packagesExperimentVersion, selected, tab, type }: TabWrapProps) => {
   const tabStyling = getClassName(
     'bpk-navigation-tab-wrap',
     `bpk-navigation-tab-wrap--${type}`,
     selected && `bpk-navigation-tab-wrap--${type}-selected`,
-    (packagesExperimentEnabled && packagesExperimentVersion === PackageExperimentVersions.VISUAL_CHANGE_ONLY) && 'bpk-navigation-tab-wrap--visual-change-only',
+    (isVisualChangeExperimentEnabled(packagesExperimentEnabled, packagesExperimentVersion)) && 'bpk-navigation-tab-wrap--visual-change-only',
   );
 
   return tab.href ? (
@@ -126,8 +131,7 @@ const BpkNavigationTabGroup = ({
     onItemClick(e, tab, index);
   };
 
-  const visualChangeExperimentPackagesTabEnabled =
-    packagesExperimentEnabled && packagesExperimentVersion === PackageExperimentVersions.VISUAL_CHANGE_ONLY;
+  const visualChangeExperimentPackagesTabEnabled = isVisualChangeExperimentEnabled(packagesExperimentEnabled, packagesExperimentVersion);
 
   const containerStyling = getClassName('bpk-navigation-tab-group');
 
