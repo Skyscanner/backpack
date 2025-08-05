@@ -24,14 +24,7 @@
 
 .bpk-autosuggest {
   &__suggestions-container {
-    display: none;
-
     &-input {
-      width: 100%;
-    }
-
-    &--open {
-      display: block;
       width: 100%;
     }
   }

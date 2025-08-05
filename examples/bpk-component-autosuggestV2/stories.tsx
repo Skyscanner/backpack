@@ -18,7 +18,6 @@
 
 import type { ReactElement } from 'react';
 
-
 import { Title, Markdown } from '@storybook/blocks';
 import { userEvent, within } from '@storybook/test';
 
@@ -117,6 +116,40 @@ export const SmallInput = () => (
   <div style={{ width: '80px' }}>
     <AutosuggestExample />
   </div>
+);
+
+const renderCustomInput = (inputProps: React.InputHTMLAttributes<HTMLInputElement>) => (
+    <div
+    ref={inputProps.ref}
+      style={{
+        border: '2px solid #007aff',
+        borderRadius: '8px',
+        padding: '10px 12px',
+      }}
+    >
+      <span
+        style={{
+          fontWeight: 'bold',
+          fontSize: '14px',
+          marginBottom: '2px',
+        }}
+      >
+        From
+      </span>
+      <input
+        {...inputProps}
+        placeholder="Country, city or airport"
+        style={{
+          border: 'none',
+          outline: 'none',
+          fontSize: '16px',
+          width: '100%',
+        }}
+      />
+    </div>
+  );
+export const CustomRenderInput = () => (
+  <AutosuggestExample renderInputComponent={renderCustomInput} />
 );
 
 // --- Visual regression test (Percy) ---

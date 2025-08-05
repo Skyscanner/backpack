@@ -240,20 +240,22 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
     const { context, floatingStyles, refs } = useFloating({
       placement: 'bottom-start',
-      middleware: [
-        offset(17),
-        flip(),
-        shift(),
-        size({
-          apply({ elements, rects }) {
-            Object.assign(elements.floating.style, {
-              width: `${rects.reference.width}px`,
-            });
-          },
-        }),
-        floatingArrow({ element: arrowRef }),
-      ],
-      whileElementsMounted: autoUpdate,
+      middleware: isDesktop
+        ? [
+            offset(17),
+            flip(),
+            shift(),
+            size({
+              apply({ elements, rects }) {
+                Object.assign(elements.floating.style, {
+                  width: `${rects.reference.width}px`,
+                });
+              },
+            }),
+            floatingArrow({ element: arrowRef }),
+          ]
+        : [],
+      whileElementsMounted: isDesktop ? autoUpdate : undefined,
     });
 
     useEffect(() => {
@@ -462,38 +464,54 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       >
         {renderInput()}
 
-        {showSuggestions && (
-          <FloatingPortal>
+        {showSuggestions &&
+          (isDesktop ? (
+            <FloatingPortal>
+              <div
+                ref={refs.setFloating}
+                style={floatingStyles}
+                className={getClassName(
+                  theme.suggestionsContainer,
+                  theme.desktopSuggestionsContainer,
+                  multiSection && theme.sectionContainer,
+                  showSuggestions && theme.suggestionsContainerOpen,
+                )}
+              >
+                <FloatingArrow
+                  ref={arrowRef}
+                  context={context}
+                  className={getClassName('bpk-autosuggest__arrow')}
+                  role="presentation"
+                  stroke={surfaceHighlightDay}
+                  strokeWidth={strokeWidth}
+                />
+                <ul
+                  {...getMenuProps({ 'aria-label': ariaLabels.resultsList })}
+                  className={getClassName(
+                    theme.suggestionsList,
+                    theme.desktopSuggestionsList,
+                  )}
+                >
+                  {renderList()}
+                </ul>
+              </div>
+            </FloatingPortal>
+          ) : (
             <div
-              ref={refs.setFloating}
-              style={floatingStyles}
               className={getClassName(
                 theme.suggestionsContainer,
-                isDesktop && theme.desktopSuggestionsContainer,
                 multiSection && theme.sectionContainer,
                 showSuggestions && theme.suggestionsContainerOpen,
               )}
             >
-              <FloatingArrow
-                ref={arrowRef}
-                context={context}
-                className={getClassName('bpk-autosuggest__arrow')}
-                role="presentation"
-                stroke={surfaceHighlightDay}
-                strokeWidth={strokeWidth}
-              />
               <ul
                 {...getMenuProps({ 'aria-label': ariaLabels.resultsList })}
-                className={getClassName(
-                  theme.suggestionsList,
-                  isDesktop && theme.desktopSuggestionsList,
-                )}
+                className={getClassName(theme.suggestionsList)}
               >
-                {showSuggestions && renderList()}
+                {renderList()}
               </ul>
             </div>
-          </FloatingPortal>
-        )}
+          ))}
       </div>
     );
   },

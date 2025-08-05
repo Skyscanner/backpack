@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import { Component } from 'react';
-import type { ReactElement } from 'react';
+import type { ReactElement,HTMLProps } from 'react';
 
 // @ts-ignore
 import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
@@ -165,6 +165,9 @@ type Props = {
   alwaysRenderSuggestions: boolean;
   highlightFirstSuggestion: boolean;
   multiSection: boolean;
+  renderInputComponent: (
+      inputProps: HTMLProps<HTMLInputElement>,
+    ) => ReactElement;
   renderSectionTitle: (section: Section) => ReactElement | null;
   getSectionSuggestions: (section: Section) => Suggestion[];
 };
@@ -182,6 +185,7 @@ class AutosuggestExample extends Component<Props, State> {
     alwaysRenderSuggestions: false,
     highlightFirstSuggestion: false,
     multiSection: false,
+    renderInputComponent: undefined,
     renderSectionTitle: () => null,
     getSectionSuggestions: () => [],
   };
@@ -240,6 +244,7 @@ class AutosuggestExample extends Component<Props, State> {
         highlightFirstSuggestion={highlightFirstSuggestion}
         multiSection={multiSection}
         renderSectionTitle={renderSectionTitle}
+        renderInputComponent={this.props.renderInputComponent}
         getSectionSuggestions={getSectionSuggestions}
         getSuggestionValue={getSuggestionValue}
         getA11yResultsMessage={this.getA11yResultsMessage}
