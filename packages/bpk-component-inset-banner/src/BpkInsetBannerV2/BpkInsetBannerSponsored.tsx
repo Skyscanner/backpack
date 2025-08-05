@@ -34,6 +34,8 @@ const getClassName = cssModules(STYLES);
 
 const BpkInsetBannerSponsored = ({
   accessibilityLabel,
+  adInfoA11yLabel = '',
+  ariaAdScenicA11yLabel = '',
   backgroundColor = surfaceHighlightDay,
   callToAction,
   image,
@@ -64,7 +66,7 @@ const BpkInsetBannerSponsored = ({
             <img
               className={getClassName('bpk-inset-banner--image')}
               src={logo}
-              alt=""
+              alt={ariaAdScenicA11yLabel}
               aria-hidden
             />
           )}
@@ -100,6 +102,7 @@ const BpkInsetBannerSponsored = ({
 
                 <div
                   className={getClassName('bpk-inset-banner--cta-info-icon')}
+                  aria-label={adInfoA11yLabel}
                 >
                   <InfoIcon />
                 </div>
@@ -126,11 +129,12 @@ const BpkInsetBannerSponsored = ({
                     className={getClassName(
                       'bpk-inset-banner--bottom-sheet-icon',
                     )}
+                    data-testid="bottom-sheet-icon-container"
                   >
                     {index === 0 ? (
-                      <ViewIcon height={24} width={24} />
+                      <ViewIcon height={24} width={24} data-testid="view-icon" />
                     ) : (
-                      <InfoIcon height={24} width={24} />
+                      callToAction.bottomSheetContent.length > 1 && <InfoIcon height={24} width={24} data-testid="info-icon" />
                     )}
                   </div>
                   <div
