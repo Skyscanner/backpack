@@ -17,7 +17,12 @@
  */
 
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
-import { withDefaultProps } from '../../packages/bpk-react-utils';
+import { withDefaultProps , cssModules } from '../../packages/bpk-react-utils';
+
+
+import STYLES from './examples.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 const Paragraph = withDefaultProps(BpkText, {
   textStyle: TEXT_STYLES.bodyLongform,
@@ -180,9 +185,28 @@ const LarkenFallbackStylesExample = () => (
 );
 
 const ColorPropExample = () => (
-  <BpkText tagName="p" color={TEXT_COLORS.textSecondary}>
-    Text with color token textSecondary
-  </BpkText>
+  <div>
+    <BpkText tagName="p" color={TEXT_COLORS.textSecondary}>
+      Text with color prop textSecondary
+    </BpkText>
+
+    <div className={getClassName('bpk-stories-text_success')}>
+      <BpkText tagName="p" color={TEXT_COLORS.textSecondary}>
+          Text with color prop textSecondary with parent color override
+      </BpkText>
+    </div>
+
+    <div className={getClassName('bpk-stories-text_success')}>
+       <BpkText tagName="p">
+        Text without color prop with parent color override
+      </BpkText>
+    </div>
+
+    <BpkText tagName="p" className={getClassName('bpk-stories-text_success')} color={TEXT_COLORS.textSecondary} >
+      Text with color prop textSecondary with self className override
+    </BpkText>
+
+  </div>
 );
 
 const MixedExample = () => (
