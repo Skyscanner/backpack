@@ -16,10 +16,13 @@
  * limitations under the License.
  */
 
-import { textColors } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
+import { withDefaultProps , cssModules } from '../../packages/bpk-react-utils';
 
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { withDefaultProps } from '../../packages/bpk-react-utils';
+
+import STYLES from './examples.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 const Paragraph = withDefaultProps(BpkText, {
   textStyle: TEXT_STYLES.bodyLongform,
@@ -182,9 +185,28 @@ const LarkenFallbackStylesExample = () => (
 );
 
 const ColorPropExample = () => (
-  <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p" color={textColors.textPrimaryDay}>
-    Text with color token textPrimaryDay
-  </BpkText>
+  <div>
+    <BpkText tagName="p" color={TEXT_COLORS.textSecondary}>
+      Text with color prop textSecondary
+    </BpkText>
+
+    <div className={getClassName('bpk-stories-text_success')}>
+      <BpkText tagName="p" color={TEXT_COLORS.textSecondary}>
+          Text with color prop textSecondary with parent className override
+      </BpkText>
+    </div>
+
+    <div className={getClassName('bpk-stories-text_success')}>
+       <BpkText tagName="p">
+        Text without color prop with parent color override
+      </BpkText>
+    </div>
+
+    <BpkText tagName="p" className={getClassName('bpk-stories-text_success')} color={TEXT_COLORS.textSecondary} >
+      Text with color prop textSecondary with self className override
+    </BpkText>
+
+  </div>
 );
 
 const MixedExample = () => (
