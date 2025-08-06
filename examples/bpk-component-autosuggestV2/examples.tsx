@@ -215,9 +215,10 @@ class AutosuggestExample extends Component<Props, State> {
   };
 
   getA11yResultsMessage = (resultCount: number): string =>
-    resultCount > 0
-      ? 'handle results being single or plural'
-      : 'no results available';
+    resultCount === 0
+      ? 'no results available'
+      : 'handle results being single or plural';
+
 
   render() {
     const { suggestions } = this.state;

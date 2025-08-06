@@ -66,11 +66,10 @@ export type BpkAutoSuggestTheme = {
 
 export type BpkAutoSuggestProps<T> = {
   suggestions: T[];
-  ariaLabels: {
-    resultsList: string;
+  ariaLabels?: {
+    resultsList?: string;
     label?: string;
     clearButton?: string;
-    inputDescription?: string;
     noResults?: string;
   };
   getSuggestionValue: (suggestion: T) => string;
@@ -83,7 +82,15 @@ export type BpkAutoSuggestProps<T> = {
   onSuggestionsClearRequested: () => void;
   renderSuggestion: (suggestion: T) => ReactElement;
   id: string;
-  // enterKeyHint?: string;
+  enterKeyHint?:
+    | 'enter'
+    | 'done'
+    | 'go'
+    | 'next'
+    | 'previous'
+    | 'search'
+    | 'send'
+    | undefined;
   getA11yResultsMessage: (resultCount: number) => string;
   defaultValue?: string;
   isDesktop?: boolean;
@@ -133,6 +140,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       alwaysRenderSuggestions,
       ariaLabels,
       defaultValue,
+      enterKeyHint,
       focusInputOnSuggestionClick = false,
       getA11yResultsMessage,
       getSectionSuggestions,
@@ -234,7 +242,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         }
       },
       getA11yStatusMessage() {
-        return getA11yResultsMessage(suggestions.length) ?? '';
+        const count = suggestions.length;
+        return getA11yResultsMessage?.(count) ?? '';
       },
       initialInputValue: defaultValue ?? '',
       id,
@@ -430,13 +439,16 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       if (renderInputComponent) {
         return renderInputComponent({
           ref,
+          enterKeyHint,
           ...finalInputProps,
         });
       }
 
       return (
         <label
-          {...getLabelProps({ 'aria-label': ariaLabels.label })}
+          {...getLabelProps({
+            ...(ariaLabels?.label && { 'aria-label': ariaLabels.label }),
+          })}
           className={getClassName(theme.label)}
         >
           <div className={getClassName(theme.inputTextWrapper)}>
@@ -446,11 +458,12 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
                 value={normalizedInputValue}
                 inputRef={ref as React.RefCallback<HTMLInputElement>}
                 clearButtonMode={showClear ? 'whileEditing' : 'never'}
-                clearButtonLabel={ariaLabels.clearButton || 'Clear input'}
+                clearButtonLabel={ariaLabels?.clearButton || 'Clear input'}
                 onClear={clearSuggestions}
                 name={inputName || id}
                 id={id}
                 {...finalInputProps}
+                enterKeyHint={enterKeyHint}
               />
             </div>
           </div>
@@ -489,7 +502,11 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
                   strokeWidth={strokeWidth}
                 />
                 <ul
-                  {...getMenuProps({ 'aria-label': ariaLabels.resultsList })}
+                  {...getMenuProps({
+                    ...(ariaLabels?.resultsList && {
+                      'aria-label': ariaLabels.resultsList,
+                    }),
+                  })}
                   className={getClassName(
                     theme.suggestionsList,
                     theme.desktopSuggestionsList,
@@ -508,7 +525,11 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
               )}
             >
               <ul
-                {...getMenuProps({ 'aria-label': ariaLabels.resultsList })}
+                {...getMenuProps({
+                  ...(ariaLabels?.resultsList && {
+                    'aria-label': ariaLabels.resultsList,
+                  }),
+                })}
                 className={getClassName(theme.suggestionsList)}
               >
                 {renderList()}
