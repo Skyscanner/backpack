@@ -83,7 +83,7 @@ const TabWrap = ({ children, onClick, packagesExperimentEnabled, packagesExperim
     'bpk-navigation-tab-wrap',
     `bpk-navigation-tab-wrap--${type}`,
     selected && `bpk-navigation-tab-wrap--${type}-selected`,
-    (isVisualChangeExperimentEnabled(packagesExperimentEnabled, packagesExperimentVersion)) && 'bpk-navigation-tab-wrap--visual-change-only',
+    (isVisualChangeExperimentEnabled(packagesExperimentEnabled, packagesExperimentVersion)) && 'bpk-navigation-tab-wrap--visual-change-only-packages-experiment',
   );
 
   return tab.href ? (

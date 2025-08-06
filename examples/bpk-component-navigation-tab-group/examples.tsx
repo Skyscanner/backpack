@@ -214,6 +214,22 @@ const TabsWithBlankTarget = () => (
   </div>
 );
 
+// Tabs with Packages Experiment Tab
+const TabsWithPackagesVisualChangeExample = () => (
+  <div className={getClassNames('bpk-navigation-tab-group-story')}>
+    <BpkNavigationTabGroup
+      id="navExample"
+      tabs={tabsWithPackagesAndIcons}
+      onItemClick={() => {}}
+      selectedIndex={2}
+      type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
+      ariaLabel="Navigation tabs"
+      packagesExperimentEnabled
+      packagesExperimentVersion={PackageExperimentVersions.VISUAL_CHANGE_ONLY}
+    />
+  </div>
+);
+
 const VisualTestExample = () => (
   <div className={getClassNames('bpk-navigation-tab-group-story__mixed-container')}>
     <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
@@ -248,23 +264,11 @@ const VisualTestExample = () => (
       No Href CanvasDefault
     </BpkText>
     <TabsNoHrefCanvasDefaultForExample />
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+      Header Tab With Packages Experiment - Visual Change Only
+    </BpkText>
+    <TabsWithPackagesVisualChangeExample />
     <br />
-  </div>
-);
-
-// Tabs with Packages Experiment Tab
-const TabsWithPackagesVisualChangeExample = () => (
-  <div className={getClassNames('bpk-navigation-tab-group-story')}>
-    <BpkNavigationTabGroup
-      id="navExample"
-      tabs={tabsWithPackagesAndIcons}
-      onItemClick={() => {}}
-      selectedIndex={2}
-      type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
-      ariaLabel="Navigation tabs"
-      packagesExperimentEnabled
-      packagesExperimentVersion={PackageExperimentVersions.VISUAL_CHANGE_ONLY}
-    />
   </div>
 );
 
