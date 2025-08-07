@@ -19,7 +19,7 @@
 /* @flow strict */
 
 import { Component } from 'react';
-import type { ReactElement, HTMLProps } from 'react';
+import type { ReactElement } from 'react';
 
 // @ts-ignore
 import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
