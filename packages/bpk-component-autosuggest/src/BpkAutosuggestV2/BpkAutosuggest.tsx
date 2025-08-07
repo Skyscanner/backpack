@@ -64,6 +64,20 @@ export type BpkAutoSuggestTheme = {
   label?: string;
 };
 
+export type EnterKeyHintType =
+  | 'enter'
+  | 'done'
+  | 'go'
+  | 'next'
+  | 'previous'
+  | 'search'
+  | 'send';
+
+export type BpkInputRenderProps =
+  React.InputHTMLAttributes<HTMLInputElement> & {
+    ref?: React.Ref<HTMLInputElement>;
+  };
+
 export type BpkAutoSuggestProps<T> = {
   suggestions: T[];
   ariaLabels?: {
@@ -82,15 +96,7 @@ export type BpkAutoSuggestProps<T> = {
   onSuggestionsClearRequested: () => void;
   renderSuggestion: (suggestion: T) => ReactElement;
   id: string;
-  enterKeyHint?:
-    | 'enter'
-    | 'done'
-    | 'go'
-    | 'next'
-    | 'previous'
-    | 'search'
-    | 'send'
-    | undefined;
+  enterKeyHint?: EnterKeyHintType;
   getA11yResultsMessage: (resultCount: number) => string;
   defaultValue?: string;
   isDesktop?: boolean;
@@ -106,11 +112,7 @@ export type BpkAutoSuggestProps<T> = {
   renderSectionTitle?: (section: T) => ReactElement | null;
   alwaysRenderSuggestions?: boolean;
   onInputValueChange?: (input: { method: string; newValue: string }) => void;
-  renderInputComponent?: (
-    inputProps: React.InputHTMLAttributes<HTMLInputElement> & {
-      ref?: React.LegacyRef<HTMLInputElement>;
-    },
-  ) => ReactElement;
+  renderInputComponent?: (inputProps: BpkInputRenderProps) => ReactElement;
   onSuggestionHighlighted?: (data: { suggestion: T | null }) => void;
   focusInputOnSuggestionClick?: boolean;
 };
@@ -162,7 +164,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       renderSectionTitle,
       renderSuggestion,
       shouldRenderSuggestions,
-      showClear = true,
+      showClear = false,
       suggestions,
       theme: customTheme = {},
     },
@@ -358,7 +360,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           ? sectionIndex === 0 && index === 0
           : index === 0;
 
-        const key = index * 1000;
+        const key = getSuggestionValue(suggestion);
 
         return (
           <li
@@ -405,8 +407,17 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
     // Render the input component
     const renderInput = () => {
-      const refObj =
-        forwardedRef as React.MutableRefObject<HTMLInputElement | null>;
+      const inputRef: React.Ref<HTMLInputElement> = (node) => {
+        refs.setReference(node);
+
+        if (typeof forwardedRef === 'function') {
+          forwardedRef(node);
+        } else if (forwardedRef) {
+          const mutable =
+            forwardedRef as React.MutableRefObject<HTMLInputElement | null>;
+          mutable.current = node;
+        }
+      };
 
       const {
         className: inputClassName,
@@ -417,15 +428,12 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         ...restInputProps
       } = inputProps;
 
-      const { ref, value, ...finalInputProps } = getInputProps({
-        ref: (node: HTMLInputElement | null) => {
-          refs.setReference(node);
-          if (typeof forwardedRef === 'function') {
-            forwardedRef(node);
-          } else if (refObj) {
-            refObj.current = node;
-          }
-        },
+      const {
+        ref: _ignoredRef,
+        value,
+        ...finalInputProps
+      } = getInputProps({
+        ref: inputRef,
         onKeyDown,
         onClick: onClickOrKeydown,
         className: inputClassName || theme.input,
@@ -438,7 +446,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
       if (renderInputComponent) {
         return renderInputComponent({
-          ref,
+          ref: inputRef,
           enterKeyHint,
           ...finalInputProps,
         });
@@ -456,7 +464,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
             <div className={getClassName(theme.inputWrapper)}>
               <BpkInput
                 value={normalizedInputValue}
-                inputRef={ref as React.RefCallback<HTMLInputElement>}
+                inputRef={inputRef}
                 clearButtonMode={showClear ? 'whileEditing' : 'never'}
                 clearButtonLabel={ariaLabels?.clearButton || 'Clear input'}
                 onClear={clearSuggestions}
@@ -488,7 +496,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
                 style={floatingStyles}
                 className={getClassName(
                   theme.suggestionsContainer,
-                  theme.desktopSuggestionsContainer,
+                  isDesktop && theme.desktopSuggestionsContainer,
                   multiSection && theme.sectionContainer,
                   showSuggestions && theme.suggestionsContainerOpen,
                 )}
@@ -509,7 +517,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
                   })}
                   className={getClassName(
                     theme.suggestionsList,
-                    theme.desktopSuggestionsList,
+                    isDesktop && theme.desktopSuggestionsList,
                   )}
                 >
                   {renderList()}
