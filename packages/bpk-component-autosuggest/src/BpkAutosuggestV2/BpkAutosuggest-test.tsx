@@ -1,3 +1,21 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -60,13 +78,11 @@ describe('BpkAutosuggest', () => {
   describe('Basic rendering', () => {
     it('renders input with placeholder', () => {
       setup();
-
       expect(screen.getByPlaceholderText('Search here...')).toBeInTheDocument();
     });
 
     it('renders input with aria-label from ariaLabels.label', () => {
       setup();
-
       expect(screen.getByLabelText('Search input')).toBeInTheDocument();
     });
 
@@ -139,7 +155,6 @@ describe('BpkAutosuggest', () => {
   describe('Custom renderBesideInput', () => {
     it('renders beside input when provided', () => {
       setup({ renderBesideInput: () => <div data-testid="icon">Icon</div> });
-
       expect(screen.getByTestId('icon')).toBeInTheDocument();
     });
   });
@@ -152,12 +167,103 @@ describe('BpkAutosuggest', () => {
       });
 
       await typeAndWait(user);
-
       expect(screen.getAllByRole('option')[0]).toHaveClass('highlighted');
     });
   });
 
-  describe('Accessibility', () => {
+  describe('onSuggestionHighlighted', () => {
+    it('calls onSuggestionHighlighted when highlighting a suggestion', async () => {
+      const onSuggestionHighlighted = jest.fn();
+      setup({ onSuggestionHighlighted });
+
+      await typeAndWait(user);
+      await user.keyboard('{ArrowDown}');
+
+      expect(onSuggestionHighlighted).toHaveBeenCalledWith({
+        suggestion: suggestions[0],
+      });
+    });
+
+    it('calls onSuggestionHighlighted with null when no suggestion is highlighted', async () => {
+      const onSuggestionHighlighted = jest.fn();
+      setup({ onSuggestionHighlighted });
+
+      await typeAndWait(user);
+      await user.keyboard('{Escape}');
+
+      expect(
+        onSuggestionHighlighted.mock.calls.some(
+          ([call]) => call?.suggestion === null,
+        ),
+      ).toBe(true);
+    });
+  });
+
+  describe('multiSection and renderSectionTitle', () => {
+    const sectionSuggestions = [
+      {
+        title: 'UK',
+        items: [
+          { PlaceId: '1', PlaceName: 'London' },
+          { PlaceId: '2', PlaceName: 'Manchester' },
+        ],
+      },
+      {
+        title: 'France',
+        items: [{ PlaceId: '3', PlaceName: 'Paris' }],
+      },
+    ];
+
+    const getSectionSuggestions = (section: any) => section.items;
+    const renderSectionTitle = (section: any) => <strong>{section.title}</strong>;
+
+    it('renders section titles and grouped suggestions', async () => {
+      setup({
+        suggestions: sectionSuggestions,
+        multiSection: true,
+        getSectionSuggestions,
+        renderSectionTitle,
+      });
+
+      await typeAndWait(user);
+
+      expect(screen.getByText('UK')).toBeInTheDocument();
+      expect(screen.getByText('France')).toBeInTheDocument();
+      expect(screen.getAllByRole('option')).toHaveLength(3);
+    });
+  });
+
+  describe('floating portal (desktop)', () => {
+    it('renders suggestions outside container via portal', async () => {
+      const { container } = render(
+        <BpkAutosuggest {...getBaseProps()} isDesktop />,
+      );
+
+      await typeAndWait(user);
+
+      const inside = container.querySelector('[role="listbox"]');
+      expect(inside).not.toBeInTheDocument();
+
+      const outside = document.body.querySelector('[role="listbox"]');
+      expect(outside).toBeInTheDocument();
+    });
+  });
+
+  describe('ARIA attributes', () => {
+    it('applies aria-activedescendant when highlighting', async () => {
+      setup();
+      await typeAndWait(user);
+      await user.keyboard('{ArrowDown}');
+
+      const input = screen.getByRole('combobox');
+      const activeId = input.getAttribute('aria-activedescendant');
+
+      expect(activeId).toBeTruthy();
+
+      const highlightedOption = document.getElementById(activeId!);
+      expect(highlightedOption).toHaveAttribute('aria-selected', 'true');
+    });
+
     it('adds aria-label to result list from ariaLabels', async () => {
       setup();
       await typeAndWait(user);
@@ -166,6 +272,15 @@ describe('BpkAutosuggest', () => {
         'aria-label',
         'Suggestions list',
       );
+    });
+  });
+
+  describe('defaultValue', () => {
+    it('pre-fills input if defaultValue is given', () => {
+      setup({ defaultValue: 'Paris' });
+
+      const input = screen.getByRole('combobox');
+      expect(input).toHaveValue('Paris');
     });
   });
 
@@ -179,7 +294,6 @@ describe('BpkAutosuggest', () => {
       });
 
       const input = await typeAndWait(user);
-
       expect(input).toHaveClass('custom-input');
 
       screen
