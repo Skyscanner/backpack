@@ -141,7 +141,6 @@ describe('BpkGraphicPromo', () => {
 
     expect(renderedElement.tagName.toLowerCase()).toBe('a');
     expect(renderedElement).toHaveAttribute('href', href);
-
   });
 
   it('should render correctly when href is not set', () => {
@@ -151,6 +150,5 @@ describe('BpkGraphicPromo', () => {
     const renderedElement = screen.getByRole('link');
 
     expect(renderedElement.tagName.toLowerCase()).toBe('div');
-
   });
 });

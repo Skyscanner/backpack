@@ -18,7 +18,7 @@
 
 import type { KeyboardEvent, MouseEvent, ReactNode } from 'react';
 
-import {BpkButtonV2, BUTTON_TYPES} from '../../bpk-component-button';
+import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkGraphicPromo.module.scss';
@@ -95,10 +95,9 @@ const constructAriaLabel = ({
 type WrapperProps = {
   id?: string;
   cardClasses?: string;
-  style?: {[key: string]: string | number};
+  style?: { [key: string]: string | number };
   href?: string | null;
   'aria-label'?: string;
-  tabIndex?: number;
   onClick?: (event: MouseEvent<HTMLElement>) => void;
   onKeyDown?: (event: KeyboardEvent<HTMLElement>) => void;
   children?: ReactNode;
@@ -113,9 +112,8 @@ const Wrapper = ({
   onClick,
   onKeyDown,
   style = {},
-  tabIndex = 0,
 }: WrapperProps) => {
-  const commonProps = { 
+  const commonProps = {
     id,
     style,
     'aria-label': ariaLabel,
@@ -129,19 +127,17 @@ const Wrapper = ({
         href={href}
         {...commonProps}
       >{children}</a>)
-  } 
+  }
   return (
     <div
       {...commonProps}
-      tabIndex={tabIndex}
+      tabIndex={0}
       role='link'
-      >
-        {children}
-      </div>
+    >
+      {children}
+    </div>
   );
 }
-
-
 
 const BpkGraphicPromo = ({
   buttonText,
@@ -192,7 +188,6 @@ const BpkGraphicPromo = ({
         subheading,
         tagline,
       })}
-      tabIndex={0}
       onClick={onClickWrapper}
       onKeyDown={onKeyWrapper}
     >
