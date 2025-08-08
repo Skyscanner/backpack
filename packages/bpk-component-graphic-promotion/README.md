@@ -24,7 +24,6 @@ export default () => (
     subheading="Portugal and 6 more countries have just been added to the UK travel green list"
     tagline="Tagline"
     textAlign={TEXT_ALIGN.start}
-    href="http://abc"
   />
 );
 ```
