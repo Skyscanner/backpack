@@ -119,7 +119,6 @@ const Wrapper = ({
     id,
     style,
     'aria-label': ariaLabel,
-    tabIndex,
     onClick,
     onKeyDown,
     className: cardClasses,
@@ -134,13 +133,12 @@ const Wrapper = ({
   return (
     <div
       {...commonProps}
+      tabIndex={tabIndex}
       role='link'
       >
         {children}
       </div>
-    
   );
-
 }
 
 
