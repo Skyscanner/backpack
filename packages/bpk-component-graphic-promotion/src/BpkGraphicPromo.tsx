@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { KeyboardEvent, MouseEvent } from 'react';
+import type { KeyboardEvent, MouseEvent, ReactNode } from 'react';
 
 import {BpkButtonV2, BUTTON_TYPES} from '../../bpk-component-button';
 import { cssModules } from '../../bpk-react-utils';
@@ -59,6 +59,11 @@ export type Props = {
   invertVertically?: boolean;
   textAlign: (typeof TEXT_ALIGN)[keyof typeof TEXT_ALIGN];
   style?: {};
+  /**
+   * Optional link href. If provided, the component will render as an anchor tag <a> instead of a <div>.
+   * This improves semantic HTML and SEO.
+   */
+  href?: string | null;
 };
 
 const constructAriaLabel = ({
@@ -87,12 +92,65 @@ const constructAriaLabel = ({
 
   return text.join('. ');
 };
+type WrapperProps = {
+  id: string | undefined;
+  cardClasses?: string | undefined;
+  style?: {[key: string]: string | number};
+  href?: string | undefined;
+  'aria-label'?: string;
+  tabIndex?: number;
+  onClick?: (event: MouseEvent<HTMLElement>) => void;
+  onKeyDown?: (event: KeyboardEvent<HTMLElement>) => void;
+  children?: ReactNode;
+};
+
+const Wrapper = ({
+  'aria-label': ariaLabel = '',
+  cardClasses = '',
+  children,
+  href,
+  id,
+  onClick,
+  onKeyDown,
+  style = {},
+  tabIndex = 0,
+}: WrapperProps) => {
+  const commonProps = { 
+    id,
+    style,
+    'aria-label': ariaLabel,
+    tabIndex,
+    onClick,
+    onKeyDown,
+    className: cardClasses,
+  }
+  if (href) {
+    return (
+      <a
+        href={href}
+        {...commonProps}
+      >{children}</a>)
+  } 
+  return (
+    <div
+      {...commonProps}
+      role='link'
+      >
+        {children}
+      </div>
+    
+  );
+
+}
+
+
 
 const BpkGraphicPromo = ({
   buttonText,
   className = null,
   contentId,
   headline,
+  href = null,
   invertVertically = false,
   onClick,
   sponsor = null,
@@ -121,14 +179,14 @@ const BpkGraphicPromo = ({
     getClassName(baseClass, `${baseClass}--${textAlign}`);
 
   return (
-    // The card appears as a single component for the screen reader; its children are hidden. The card handles mouse
-    // clicks and key presses (Enter/Space) for the whole component, as described here:
-    // https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets
-    <div
+    // The card appears as a single component for the screen reader; its children are hidden.
+    // The card handles mouse clicks and key presses (Enter/Space) for the whole component,
+    // as described here: https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets
+    <Wrapper
       id={contentId || ''}
-      className={cardClasses}
+      cardClasses={cardClasses}
       style={style}
-      role="link"
+      href={href || undefined}
       aria-label={constructAriaLabel({
         buttonText,
         headline,
@@ -193,7 +251,7 @@ const BpkGraphicPromo = ({
           </BpkButtonV2>
         </div>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 
