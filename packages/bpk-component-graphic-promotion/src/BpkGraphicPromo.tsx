@@ -93,8 +93,8 @@ const constructAriaLabel = ({
   return text.join('. ');
 };
 type WrapperProps = {
-  id: string | undefined;
-  cardClasses?: string | undefined;
+  id?: string;
+  cardClasses?: string;
   style?: {[key: string]: string | number};
   href?: string | null;
   'aria-label'?: string;
