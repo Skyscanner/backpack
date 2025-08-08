@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+@use 'sass:math';
 @use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/utils';
 
@@ -38,7 +39,7 @@ $large-lines-height: tokens.bpk-spacing-md();
     display: flex;
     height: $small-lines-height;
     flex: none;
-    gap: tokens.bpk-spacing-sm() / 2;
+    gap: math.div(tokens.bpk-spacing-sm(), 2);
 
     &--large {
       height: $large-lines-height;
