@@ -120,24 +120,20 @@ const Wrapper = ({
     onClick,
     onKeyDown,
     className: cardClasses,
-  }
+  };
   if (href) {
     return (
-      <a
-        href={href}
-        {...commonProps}
-      >{children}</a>)
+      <a href={href} {...commonProps}>
+        {children}
+      </a>
+    );
   }
   return (
-    <div
-      {...commonProps}
-      tabIndex={0}
-      role='link'
-    >
+    <div {...commonProps} tabIndex={0} role="link">
       {children}
     </div>
   );
-}
+};
 
 const BpkGraphicPromo = ({
   buttonText,
@@ -214,21 +210,15 @@ const BpkGraphicPromo = ({
         </div>
         <div className={getTextClasses('bpk-graphic-promo__promo-content')}>
           {!sponsor && tagline && (
-            <span
-              className={getClassName('bpk-graphic-promo__tagline')}
-            >
+            <span className={getClassName('bpk-graphic-promo__tagline')}>
               {tagline}
             </span>
           )}
-          <h2
-            className={getClassName('bpk-graphic-promo__headline')}
-          >
+          <h2 className={getClassName('bpk-graphic-promo__headline')}>
             {headline}
           </h2>
           {subheading && (
-            <p
-              className={getClassName('bpk-graphic-promo__subheading')}
-            >
+            <p className={getClassName('bpk-graphic-promo__subheading')}>
               {subheading}
             </p>
           )}

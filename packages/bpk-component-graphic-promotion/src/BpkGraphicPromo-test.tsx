@@ -134,9 +134,7 @@ describe('BpkGraphicPromo', () => {
 
   it('should render correctly when href is set', () => {
     const href = 'http://abc';
-    render(
-      <BpkGraphicPromo {...props} href={href} contentId={null} />,
-    );
+    render(<BpkGraphicPromo {...props} href={href} contentId={null} />);
     const renderedElement = screen.getByRole('link');
 
     expect(renderedElement.tagName.toLowerCase()).toBe('a');
@@ -144,9 +142,7 @@ describe('BpkGraphicPromo', () => {
   });
 
   it('should render correctly when href is not set', () => {
-    render(
-      <BpkGraphicPromo {...props} contentId={null} />,
-    );
+    render(<BpkGraphicPromo {...props} contentId={null} />);
     const renderedElement = screen.getByRole('link');
 
     expect(renderedElement.tagName.toLowerCase()).toBe('div');
