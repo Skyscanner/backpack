@@ -96,7 +96,7 @@ type WrapperProps = {
   id: string | undefined;
   cardClasses?: string | undefined;
   style?: {[key: string]: string | number};
-  href?: string | undefined;
+  href?: string | null;
   'aria-label'?: string;
   tabIndex?: number;
   onClick?: (event: MouseEvent<HTMLElement>) => void;
@@ -179,14 +179,14 @@ const BpkGraphicPromo = ({
     getClassName(baseClass, `${baseClass}--${textAlign}`);
 
   return (
-    // The card appears as a single component for the screen reader; its children are hidden.
-    // The card handles mouse clicks and key presses (Enter/Space) for the whole component,
-    // as described here: https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets
+    // The card appears as a single component for the screen reader; its children are hidden. The card handles mouse
+    // clicks and key presses (Enter/Space) for the whole component, as described here:
+    // https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets
     <Wrapper
       id={contentId || ''}
       cardClasses={cardClasses}
       style={style}
-      href={href || undefined}
+      href={href}
       aria-label={constructAriaLabel({
         buttonText,
         headline,
