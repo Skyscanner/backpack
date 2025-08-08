@@ -12,15 +12,18 @@ import figma from "@figma/code-connect"
 
 figma.connect(
   BpkCard,
-  "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=4395%3A2506",
+  "https://www.figma.com/design/jgi6YqueUZ2XnsPsJBhCPw/Untitled?node-id=23-23&m=dev",
   {
     props: {
-      // No matching props could be found for these Figma properties:
-      // "state": figma.enum('State', {
-      //   "Default": "default",
-      //   "Focused": "focused"
-      // })
+      children: figma.instance('Content Slot'),
+      padded: figma.enum('padded', {
+        'base': true,
+        'none': false,
+      })
+
     },
-    example: (props) => <BpkCard />,
+    example: ({ children, padded }) => <BpkCard padded={padded}>
+      {children}
+    </BpkCard>,
   },
 )
