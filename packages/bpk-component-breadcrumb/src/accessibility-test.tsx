@@ -16,16 +16,20 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-import BpkBreadcrumb, {
-  type Props as BpkBreadcrumbProps,
-} from './src/BpkBreadcrumb';
-import BpkBreadcrumbItem, {
-  type Props as BpkBreadcrumbItemProps,
-} from './src/BpkBreadcrumbItem';
+import BpkBreadcrumb from './BpkBreadcrumb';
+import BpkBreadcrumbItem from './BpkBreadcrumbItem';
 
-export type { BpkBreadcrumbProps, BpkBreadcrumbItemProps };
-
-export default BpkBreadcrumb;
-export { BpkBreadcrumbItem };
+describe('BpkBreadcrumb accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkBreadcrumb label="My breadcrumbs">
+        <BpkBreadcrumbItem href="#">Breadcrumb</BpkBreadcrumbItem>
+      </BpkBreadcrumb>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
