@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useEffect, forwardRef, useRef } from 'react';
+import { useEffect, forwardRef, useRef, useId } from 'react';
 import type { KeyboardEvent, ReactElement, HTMLProps } from 'react';
 
 import {
@@ -35,6 +35,7 @@ import { useCombobox } from 'downshift';
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkInput from '../../../bpk-component-input';
+import BpkText from '../../../bpk-component-text';
 import { cssModules } from '../../../bpk-react-utils';
 
 import type {
@@ -62,6 +63,7 @@ export type BpkAutoSuggestTheme = {
   inputTextWrapper?: string;
   inputWrapper?: string;
   label?: string;
+  visuallyHidden?: string;
 };
 
 export type EnterKeyHintType =
@@ -132,6 +134,7 @@ const defaultTheme = {
   sectionContainer: getClassName('bpk-autosuggest__section-container'),
   sectionTitle: getClassName('bpk-autosuggest__section-title'),
   input: getClassName('bpk-autosuggest__suggestions-container-input'),
+  visuallyHidden: getClassName('bpk-autosuggest__visuallyhidden')
 };
 
 const strokeWidth = 0.0625;
@@ -170,6 +173,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     },
     forwardedRef,
   ) => {
+    const ariaDescribedByLabelId = useId();
     const theme = { ...defaultTheme, ...customTheme };
     const arrowRef = useRef(null);
     const previousHighlightedIndexRef = useRef<number | null>(null);
@@ -418,6 +422,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           mutable.current = node;
         }
       };
+      const inputAriaLabel = inputValue || inputProps.placeholder;
 
       const {
         className: inputClassName,
@@ -436,6 +441,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         ref: inputRef,
         onKeyDown,
         onClick: onClickOrKeydown,
+        'aria-describedby': ariaDescribedByLabelId,
+        'aria-label': inputAriaLabel,
         className: inputClassName || theme.input,
         ...restInputProps,
       });
@@ -453,14 +460,18 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       }
 
       return (
-        <label
-          {...getLabelProps({
-            ...(ariaLabels?.label && { 'aria-label': ariaLabels.label }),
-          })}
-          className={getClassName(theme.label)}
-        >
+        <div className={getClassName(theme.label)}>
           <div className={getClassName(theme.inputTextWrapper)}>
-            {renderBesideInput?.()}
+            <label aria-hidden {...getLabelProps()}>
+              {renderBesideInput?.()}
+            </label>
+            <BpkText
+              // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+              className={theme.visuallyHidden}
+              id={ariaDescribedByLabelId}
+            >
+              {ariaLabels?.label && ariaLabels.label}
+            </BpkText>
             <div className={getClassName(theme.inputWrapper)}>
               <BpkInput
                 value={normalizedInputValue}
@@ -475,7 +486,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
               />
             </div>
           </div>
-        </label>
+        </div>
       );
     };
 

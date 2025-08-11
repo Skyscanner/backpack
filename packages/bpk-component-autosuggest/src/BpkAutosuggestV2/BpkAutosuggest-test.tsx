@@ -81,17 +81,22 @@ describe('BpkAutosuggest', () => {
       expect(screen.getByPlaceholderText('Search here...')).toBeInTheDocument();
     });
 
-    it('renders input with aria-label from ariaLabels.label', () => {
-      setup();
-      expect(screen.getByLabelText('Search input')).toBeInTheDocument();
-    });
-
     it('shows suggestions after typing', async () => {
       const props = setup();
       await typeAndWait(user, 'Lo');
 
       expect(props.onSuggestionsFetchRequested).toHaveBeenCalledWith('Lo');
       expect(screen.getAllByRole('option')).toHaveLength(suggestions.length);
+    });
+
+    it('sets aria-label on the input to input value if present', async () => {
+      setup();
+
+      const input = screen.getByRole('combobox');
+      await user.click(input);
+      await user.type(input, 'Lo');
+
+      expect(input).toHaveAttribute('aria-label', 'Lo');
     });
   });
 
@@ -116,6 +121,29 @@ describe('BpkAutosuggest', () => {
         inputValue: 'Lo',
         suggestion: suggestions[0],
       });
+    });
+
+    it('calls onInputValueChange with method and newValue', async () => {
+      const onInputValueChange = jest.fn();
+      setup({ onInputValueChange });
+
+      await typeAndWait(user, 'Lo');
+
+      expect(onInputValueChange).toHaveBeenCalledWith({
+        method: expect.any(String),
+        newValue: 'Lo',
+      });
+    });
+
+    it('blurs input when suggestion is clicked and focusInputOnSuggestionClick is false', async () => {
+      setup({ focusInputOnSuggestionClick: false });
+
+      const input = await typeAndWait(user);
+      expect(input).toHaveFocus();
+
+      await user.click(screen.getAllByRole('option')[0]);
+
+      expect(input).not.toHaveFocus();
     });
   });
 
@@ -199,6 +227,14 @@ describe('BpkAutosuggest', () => {
     });
   });
 
+  describe('alwaysRenderSuggestions', () => {
+    it('always renders suggestions when alwaysRenderSuggestions is true', () => {
+      setup({ alwaysRenderSuggestions: true });
+
+      expect(screen.getAllByRole('option')).toHaveLength(suggestions.length);
+    });
+  });
+
   describe('multiSection and renderSectionTitle', () => {
     const sectionSuggestions = [
       {
@@ -215,7 +251,9 @@ describe('BpkAutosuggest', () => {
     ];
 
     const getSectionSuggestions = (section: any) => section.items;
-    const renderSectionTitle = (section: any) => <strong>{section.title}</strong>;
+    const renderSectionTitle = (section: any) => (
+      <strong>{section.title}</strong>
+    );
 
     it('renders section titles and grouped suggestions', async () => {
       setup({
@@ -273,6 +311,41 @@ describe('BpkAutosuggest', () => {
         'Suggestions list',
       );
     });
+
+    it('renders visually hidden label from ariaLabels.label and links it via aria-describedby', () => {
+      setup();
+
+      const input = screen.getByRole('combobox');
+      const describedById = input.getAttribute('aria-describedby');
+
+      expect(describedById).toBeTruthy();
+
+      const hiddenLabel = document.getElementById(describedById!);
+      expect(hiddenLabel).toBeInTheDocument();
+      expect(hiddenLabel).toHaveTextContent('Search input');
+    });
+
+    it('sets aria-describedby on the input to the generated srLabelId and renders corresponding label', () => {
+      setup();
+
+      const input = screen.getByRole('combobox');
+      const describedById = input.getAttribute('aria-describedby');
+
+      expect(describedById).toBeTruthy();
+
+      const srLabel = document.getElementById(describedById!);
+      expect(srLabel).toBeInTheDocument();
+      expect(srLabel).toHaveTextContent('Search input');
+    });
+
+    it('sets aria-label on the input to the input value or placeholder', async () => {
+      setup();
+      let input = screen.getByRole('combobox');
+      expect(input).toHaveAttribute('aria-label', 'Search here...');
+
+      input = await typeAndWait(user, 'Lo');
+      expect(input).toHaveAttribute('aria-label', 'Lo');
+    });
   });
 
   describe('defaultValue', () => {
@@ -284,7 +357,7 @@ describe('BpkAutosuggest', () => {
     });
   });
 
-  describe('Styling / Theming', () => {
+  describe('Set Theme', () => {
     it('applies custom theme classNames', async () => {
       setup({
         theme: {

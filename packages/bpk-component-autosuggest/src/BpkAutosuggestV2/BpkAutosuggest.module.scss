@@ -127,4 +127,8 @@
       @include typography.bpk-caption;
     }
   }
+
+  &__visuallyhidden {
+    @include utils.bpk-visually-hidden;
+  }
 }
