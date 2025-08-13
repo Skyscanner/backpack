@@ -57,7 +57,7 @@ const tabsNoHref: BpkNavigationTabGroupProps['tabs'] = [
   { id: 'air', text: 'Flights', icon: flightIcons },
   { id: 'hotel', text: 'Hotels', icon: hotelIcons },
   { id: 'carhire', text: 'Car hire', icon: carIcons },
-  { id: 'explore', text: 'Explore', icon: exploreIcons },
+  { id: 'explore', text: 'Explore', icon: exploreIcons, newBadgeString: 'New' },
 ];
 
 const tabsOnlyText: BpkNavigationTabGroupProps['tabs'] = [

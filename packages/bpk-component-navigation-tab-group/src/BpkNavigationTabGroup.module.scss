@@ -34,6 +34,7 @@
   }
 
   .bpk-navigation-tab-wrap {
+    position: relative;
     height: tokens.$bpk-one-pixel-rem * 36;
     padding: 0 tokens.bpk-spacing-base();
     border: none;
@@ -115,4 +116,23 @@
       }
     }
   }
+}
+
+.bpk-navigation-tab-content-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bpk-navigation-tab-badge-wrapper {
+  position: absolute;
+  top: -0.625rem;
+  right: -1rem;
+  z-index: 1;
+}
+
+:global([dir='rtl']) .bpk-navigation-tab-badge-wrapper {
+  right: auto;
+  left: -0.5rem;
 }
