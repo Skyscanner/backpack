@@ -1,4 +1,3 @@
-import React from 'react';
 import BpkText from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -15,7 +14,20 @@ const BpkBubble = ({ label }: Props) => (
     <BpkText textStyle="label-3" tagName="span">
       {label}
     </BpkText>
-    <span className={getClassName('bpk-bubble-arrow')} />
+    <svg
+      className={getClassName('bpk-bubble-arrow')}
+      xmlns="http://www.w3.org/2000/svg"
+      width="23"
+      height="5"
+      viewBox="0 0 23 5"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M22.4116 0C21.4371 0.0363497 20.4853 0.288304 19.639 0.740739L13.1471 4.20667C12.6461 4.47294 12.0775 4.6127 11.4996 4.6127C10.9219 4.61263 10.354 4.47288 9.8531 4.20667L3.36122 0.740739C2.51489 0.28829 1.56307 0.0363716 0.588623 0H22.4116Z"
+        fill="currentColor"
+      />
+    </svg>
   </span>
 );
 

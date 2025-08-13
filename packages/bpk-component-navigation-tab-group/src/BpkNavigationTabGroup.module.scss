@@ -121,18 +121,24 @@
 .bpk-navigation-tab-content-wrapper {
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .bpk-navigation-tab-badge-wrapper {
   position: absolute;
-  display: block; // Prevents inline shrink
   top: -0.625rem;
   right: -1rem;
+  display: block; // Prevents inline shrink
 }
 
 :global([dir='rtl']) .bpk-navigation-tab-badge-wrapper {
   right: auto;
   left: -0.5rem;
+}
+
+:global([dir='rtl']) .bpk-bubble-arrow {
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
 }
