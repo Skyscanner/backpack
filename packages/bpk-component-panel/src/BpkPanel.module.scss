@@ -30,10 +30,10 @@
   }
 
   &--keyline {
-    //@include panels.bpk-panel--keyline;
+    @include panels.bpk-panel--keyline;
   }
 
   &--full-width-keyline {
-    //@include panels.bpk-panel--full-width-keyline;
+    @include panels.bpk-panel--full-width-keyline;
   }
 }
