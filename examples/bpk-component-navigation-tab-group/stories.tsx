@@ -29,6 +29,7 @@ import {
   TabsOnlyTextCanvasDefaultForExample,
   TabsWithBlankTarget,
   VisualTestExample,
+  TabsWithNewBubble,
 } from './examples';
 
 export default {
@@ -53,6 +54,8 @@ export const OnlyTextSurfaceContrast = TabsOnlyTextSurfaceContrastForExample;
 export const OnlyTextCanvasDefault = TabsOnlyTextCanvasDefaultForExample;
 
 export const WithBlankTarget = TabsWithBlankTarget;
+
+export const WithNewBubble = TabsWithNewBubble;
 
 export const VisualTest = VisualTestExample;
 

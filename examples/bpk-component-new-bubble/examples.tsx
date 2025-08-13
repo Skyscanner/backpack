@@ -1,56 +1,67 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import BpkBubble from '../../packages/bpk-component-tab-new-bubble/src/BpkBubble';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import { cssModules } from '../../packages/bpk-react-utils';
+
 import STYLES from './examples.module.scss';
 
 const getClassNames = cssModules(STYLES);
 
-import { cssModules } from '../../packages/bpk-react-utils';
-import BpkNavigationTabGroup, {
-  type BpkNavigationTabGroupProps,
-} from '../../packages/bpk-component-navigation-tab-group';
-import {
-  NAVIGATION_TAB_GROUP_TYPES
-} from '../../packages/bpk-component-navigation-tab-group/src/BpkNavigationTabGroup';
-import BpkText from '../../packages/bpk-component-text';
+const SimpleExample = () => (
+  <div className={getClassNames('bpk-content-outer')}>
+    <span className={getClassNames('bpk-content')}>
+      <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+        Simple
+      </BpkText>
 
-const renderTabLabel = (text: string) => {
-  if (text === 'Packages') {
-    // Only apply to the 4th tab
-    return (
-      <div style={{ position: 'relative', display: 'inline-block' }}>
-        <BpkText>{text}</BpkText>
-        <div
-          style={{
-            position: 'absolute',
-            top: -10,
-            right: -20,
-            backgroundColor: '#d92b77',
-            color: '#fff',
-            padding: '2px 6px',
-            borderRadius: '12px',
-            fontSize: '10px',
-            fontWeight: 600,
-          }}
-        >
-          New
-        </div>
-      </div>
-    );
-  }
+      <span className={getClassNames('bpk-bubble-wrapper')}>
+        <BpkBubble label="New" />
+      </span>
+    </span>
+  </div>
+);
 
-  return text; // unchanged for others
-};
+const WithLongLabelExample = () => (
+  <div className={getClassNames('bpk-content-outer')}>
+    <span className={getClassNames('bpk-content')}>
+      <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+        With long label
+      </BpkText>
 
-const tabsWithBlankTarget: BpkNavigationTabGroupProps['tabs'] = [
-  { id: 'air', text: 'Flights', href: '/', target: '_blank' },
-  { id: 'hotel', text: 'Hotels', href: '/hotel', target: '_blank' },
-  { id: 'car', text: 'Car hire', href: '/carhire', target: '_blank' },
-  { id: 'explore', text: 'Explore', href: '/Explore', target: '_blank' },
-];
-
-const NewBubbleExample = () => {
+      <span className={getClassNames('bpk-bubble-wrapper')}>
+        <BpkBubble label="Nouveau" />
+      </span>
+    </span>
+  </div>
+);
 
 
-};
+const VisualTestExample = () => (
+  <div>
+    <SimpleExample />
+    <WithLongLabelExample />
+  </div>
+);
 
 export {
-  NewBubbleExample,
+  SimpleExample,
+  WithLongLabelExample,
+  VisualTestExample,
 };

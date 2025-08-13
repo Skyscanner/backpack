@@ -19,11 +19,11 @@
 import type { MouseEvent, FunctionComponent, ReactElement } from 'react';
 import { useState } from 'react';
 
+import BpkBubble from '../../bpk-component-tab-new-bubble/src/BpkBubble';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkNavigationTabGroup.module.scss';
-import BpkBubble from '../../bpk-component-tab-new-bubble/src/BpkBubble';
 
 const getClassName = cssModules(STYLES);
 
@@ -147,23 +147,21 @@ const BpkNavigationTabGroup = ({
                         selected && `bpk-navigation-tab-icon--${type}-selected`,
                       )}
                     >
-                    <Icon />
-                  </span>
-                          )}
-                          <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
-                            {text}
-                          </BpkText>
+                      <Icon />
+                    </span>)}
+
+                    <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
+                      {text}
+                    </BpkText>
                 </div>
 
-                      {tab.newBadgeString && (
-                        <span className={getClassName('bpk-navigation-tab-badge-wrapper')}>
-                <BpkBubble label={tab.newBadgeString} />
-              </span>
-                      )}
-                    </>
-                  </TabWrap>
-                );
-              })}
+                {tab.newBadgeString && (
+                  <span className={getClassName('bpk-navigation-tab-badge-wrapper')}>
+                  <BpkBubble label={tab.newBadgeString} />
+                  </span>)}
+              </>
+            </TabWrap>);
+        })}
       </div>
     </nav>
   );

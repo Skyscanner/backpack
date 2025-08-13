@@ -57,7 +57,7 @@ const tabsNoHref: BpkNavigationTabGroupProps['tabs'] = [
   { id: 'air', text: 'Flights', icon: flightIcons },
   { id: 'hotel', text: 'Hotels', icon: hotelIcons },
   { id: 'carhire', text: 'Car hire', icon: carIcons },
-  { id: 'explore', text: 'Explore', icon: exploreIcons, newBadgeString: 'New' },
+  { id: 'explore', text: 'Explore', icon: exploreIcons },
 ];
 
 const tabsOnlyText: BpkNavigationTabGroupProps['tabs'] = [
@@ -72,6 +72,13 @@ const tabsWithBlankTarget: BpkNavigationTabGroupProps['tabs'] = [
   { id: 'hotel', text: 'Hotels', href: '/hotel', target: '_blank' },
   { id: 'car', text: 'Car hire', href: '/carhire', target: '_blank' },
   { id: 'explore', text: 'Explore', href: '/Explore', target: '_blank' },
+];
+
+const tabsWithNewBubble: BpkNavigationTabGroupProps['tabs'] = [
+  { id: 'air', text: 'Flights', href: '/', target: '_blank' },
+  { id: 'hotel', text: 'Hotels', href: '/hotel', target: '_blank' },
+  { id: 'car', text: 'Car hire', href: '/carhire', target: '_blank' },
+  { id: 'packages', text: 'Packages', href: '/destinations/packages-holidays', target: '_blank', newBadgeString: 'New' },
 ];
 
 // Simple Navigation Tab Group
@@ -201,6 +208,21 @@ const TabsWithBlankTarget = () => (
   </div>
 );
 
+// Tabs with 'New' Bubble Tab Group
+const TabsWithNewBubble = () => (
+  <div className={getClassNames('bpk-navigation-tab-group-story')}>
+    <BpkNavigationTabGroup
+      id="navExample"
+      tabs={tabsWithNewBubble}
+      onItemClick={() => {}}
+      selectedIndex={2}
+      type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
+      ariaLabel="Navigation tabs"
+    />
+  </div>
+);
+
+
 const VisualTestExample = () => (
   <div className={getClassNames('bpk-navigation-tab-group-story__mixed-container')}>
     <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
@@ -235,6 +257,10 @@ const VisualTestExample = () => (
       No Href CanvasDefault
     </BpkText>
     <TabsNoHrefCanvasDefaultForExample />
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+      Tabs with New Bubble
+    </BpkText>
+    <TabsWithNewBubble />
     <br />
   </div>
 );
@@ -249,5 +275,6 @@ export {
   TabsOnlyTextSurfaceContrastForExample,
   TabsOnlyTextCanvasDefaultForExample,
   TabsWithBlankTarget,
+  TabsWithNewBubble,
   VisualTestExample,
 };
