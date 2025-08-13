@@ -3,14 +3,16 @@
 
 .bpk-bubble {
   background-color: tokens.$bpk-status-danger-spot-day;
-  color: white;
   border-radius: tokens.$bpk-border-radius-xs;
   padding: 0 0.5rem;
-  height: 1.125rem;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.2;
-  display: inline-block;
+  height: 1.25rem;
+  width: 2.44rem;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 140%;
+  display: inline-flex;
   position: relative;
   font-family: tokens.$bpk-font-family-larken;
 }

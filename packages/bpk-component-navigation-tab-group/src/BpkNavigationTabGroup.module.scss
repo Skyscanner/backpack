@@ -127,9 +127,9 @@
 
 .bpk-navigation-tab-badge-wrapper {
   position: absolute;
+  display: block; // Prevents inline shrink
   top: -0.625rem;
   right: -1rem;
-  z-index: 1;
 }
 
 :global([dir='rtl']) .bpk-navigation-tab-badge-wrapper {

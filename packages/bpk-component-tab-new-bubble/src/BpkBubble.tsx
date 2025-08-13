@@ -12,7 +12,7 @@ export type Props = {
 
 const BpkBubble = ({ label }: Props) => (
   <span className={getClassName('bpk-bubble')}>
-    <BpkText textStyle="label-2" tagName="span">
+    <BpkText textStyle="label-3" tagName="span">
       {label}
     </BpkText>
     <span className={getClassName('bpk-bubble-arrow')} />
