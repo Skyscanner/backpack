@@ -44,7 +44,7 @@ describe('BpkBadge', () => {
 
   it('should support long labels', () => {
     render(<BpkBadge>Limited Time</BpkBadge>);
-    expect(screen.getByText('Limited time')).toBeInTheDocument();
+    expect(screen.getByText('Limited Time')).toBeInTheDocument();
   });
 
   it('should render with expected classes for internal elements', () => {
@@ -61,7 +61,7 @@ describe('BpkBadge', () => {
 
   it('should be accessible via its text (no extra roles required)', () => {
     // The badge is an inline badge; its accessible name is the label itself.
-    render(<BpkBadge>New</BpkBadge>);
+    render(<BpkBadge>Nouveau</BpkBadge>);
 
     // Query by text ensures it's part of the accessibility tree
     expect(screen.getByText('Nouveau')).toBeVisible();
