@@ -128,18 +128,14 @@
 .bpk-navigation-tab-badge-wrapper {
   position: absolute;
   top: -0.625rem;
-  right: -1rem;
+  right: tokens.$bpk-one-pixel-rem * 4; // align the arrow to the tab’s right edge
   display: block; // Prevents inline shrink
   max-width: tokens.bpk-spacing-xxxl();
+  transform: translateX(50%); // shift bubble outward as it grows
 }
 
 :global([dir='rtl']) .bpk-navigation-tab-badge-wrapper {
   right: auto;
-  left: -0.5rem;
-}
-
-:global([dir='rtl']) .bpk-bubble-arrow {
-  right: auto;
-  left: 50%;
+  left: tokens.$bpk-one-pixel-rem * 4;
   transform: translateX(-50%);
 }

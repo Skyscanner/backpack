@@ -157,7 +157,7 @@ const BpkNavigationTabGroup = ({
 
                 {tab.newBadgeString && (
                   <span className={getClassName('bpk-navigation-tab-badge-wrapper')}>
-                  <BpkBadge label={tab.newBadgeString} />
+                    <BpkBadge label={tab.newBadgeString} />
                   </span>)}
               </>
             </TabWrap>);
