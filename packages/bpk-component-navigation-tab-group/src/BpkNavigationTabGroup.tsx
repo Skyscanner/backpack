@@ -43,7 +43,7 @@ type TabWrapItem = {
 type TabItem = TabWrapItem & {
   text: string;
   icon?: FunctionComponent<any> | null;
-  newBadgeString?: string;
+  badgeString?: string;
 };
 export type Props = {
   id: string;
@@ -155,10 +155,10 @@ const BpkNavigationTabGroup = ({
                     </BpkText>
                 </div>
 
-                {tab.newBadgeString && (
+                {tab.badgeString && (
                   <span className={getClassName('bpk-navigation-tab-badge-wrapper')}>
                     <BpkBadge>
-                      {tab.newBadgeString}
+                      {tab.badgeString}
                     </BpkBadge>
                   </span>)}
               </>
