@@ -15,7 +15,7 @@ Render a pink “New” (or any short label) badge. Typically used as a small ca
 ```tsx
 import BpkBadge from '../../packages/bpk-component-tab-new-bubble';
 
-export default () => <BpkBadge label="New" />;
+export default () => <BpkBadge>New</BpkBadge>;
 ```
 
 ### Placing it next to a heading (example)
