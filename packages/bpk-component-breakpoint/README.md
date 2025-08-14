@@ -39,7 +39,7 @@ import { isTablet, isMobilePhone } from 'some-device-detection';
 ```
 
 If you match to a different breakpoint when rendering on the server, than what is matched to in the traveller's browser,
-then React will print a warning saying there is a mismatch.**This will also cause a re-flow when the client hydrates, which can result in a poor user experience—especially for header or layout components.**
+then React will print a warning saying there is a mismatch.**This will also cause reflow during client-side hydration, which can lead to a poor user experience—especially for layout components like header.**
 Please consider this carefully before using this component in critical UI areas.
 
 ### Testing
