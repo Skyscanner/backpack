@@ -40,7 +40,7 @@
 
 .bpk-badge-arrow {
   position: absolute;
-  bottom: -(tokens.bpk-spacing-sm() + tokens.$bpk-one-pixel-rem);
+  bottom: -5px; // stylelint-disable-line
   left: 50%;
   transform: translateX(-50%);
   color: tokens.$bpk-status-danger-spot-day;
