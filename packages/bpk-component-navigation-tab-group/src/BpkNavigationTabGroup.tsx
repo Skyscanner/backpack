@@ -19,7 +19,7 @@
 import type { MouseEvent, FunctionComponent, ReactElement } from 'react';
 import { useState } from 'react';
 
-import BpkBubble from '../../bpk-component-tab-new-bubble/src/BpkBubble';
+import BpkBadge from '../../bpk-component-tab-badge/src/BpkBadge';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -157,7 +157,7 @@ const BpkNavigationTabGroup = ({
 
                 {tab.newBadgeString && (
                   <span className={getClassName('bpk-navigation-tab-badge-wrapper')}>
-                  <BpkBubble label={tab.newBadgeString} />
+                  <BpkBadge label={tab.newBadgeString} />
                   </span>)}
               </>
             </TabWrap>);

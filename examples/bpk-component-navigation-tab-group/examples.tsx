@@ -74,11 +74,11 @@ const tabsWithBlankTarget: BpkNavigationTabGroupProps['tabs'] = [
   { id: 'explore', text: 'Explore', href: '/Explore', target: '_blank' },
 ];
 
-const tabsWithNewBubble: BpkNavigationTabGroupProps['tabs'] = [
+const tabsWithBadge: BpkNavigationTabGroupProps['tabs'] = [
   { id: 'air', text: 'Flights', href: '/', target: '_blank' },
   { id: 'hotel', text: 'Hotels', href: '/hotel', target: '_blank' },
   { id: 'car', text: 'Car hire', href: '/carhire', target: '_blank' },
-  { id: 'packages', text: 'Packages', href: '/destinations/packages-holidays', target: '_blank', newBadgeString: 'New' },
+  { id: 'packages', text: 'Packages', href: '/destinations/packages-holidays', target: '_blank', newBadgeString: 'Nouveaou' },
 ];
 
 // Simple Navigation Tab Group
@@ -209,11 +209,11 @@ const TabsWithBlankTarget = () => (
 );
 
 // Tabs with 'New' Bubble Tab Group
-const TabsWithNewBubble = () => (
+const TabsWithBadge = () => (
   <div className={getClassNames('bpk-navigation-tab-group-story')}>
     <BpkNavigationTabGroup
       id="navExample"
-      tabs={tabsWithNewBubble}
+      tabs={tabsWithBadge}
       onItemClick={() => {}}
       selectedIndex={2}
       type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
@@ -260,7 +260,7 @@ const VisualTestExample = () => (
     <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
       Tabs with New Bubble
     </BpkText>
-    <TabsWithNewBubble />
+    <TabsWithBadge />
     <br />
   </div>
 );
@@ -275,6 +275,6 @@ export {
   TabsOnlyTextSurfaceContrastForExample,
   TabsOnlyTextCanvasDefaultForExample,
   TabsWithBlankTarget,
-  TabsWithNewBubble,
+  TabsWithBadge,
   VisualTestExample,
 };

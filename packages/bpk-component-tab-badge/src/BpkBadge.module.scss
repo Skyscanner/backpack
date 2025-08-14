@@ -18,32 +18,27 @@
 
 @use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/borders';
+@use '../../unstable__bpk-mixins/typography';
 
-.bpk-bubble {
+.bpk-badge {
   position: relative;
   display: inline-flex;
   width: auto;
-  min-width: tokens.bpk-spacing-xxl();
-  max-width: tokens.bpk-spacing-xxl() * 2;
+  min-width: auto;
   height: tokens.$bpk-line-height-base-tight;
   padding: 0 tokens.bpk-spacing-md();
   flex-direction: column;
   justify-content: center;
   border-radius: tokens.$bpk-border-radius-xs;
   background-color: tokens.$bpk-status-danger-spot-day;
-  color: tokens.$bpk-color-white;
   font-family: tokens.$bpk-font-family-larken;
-  font-size: tokens.$bpk-font-size-xs;
   text-align: center;
   white-space: nowrap;
 
-  span {
-    // ts-ignore
-    font-weight: tokens.$bpk-font-weight-bold - tokens.$bpk-font-weight-light !important; // stylelint-disable-line declaration-no-important
-  }
+  @include typography.bpk-text--xs;
 }
 
-.bpk-bubble-arrow {
+.bpk-badge-arrow {
   position: absolute;
   bottom: -(tokens.bpk-spacing-sm() + tokens.$bpk-one-pixel-rem);
   left: 50%;

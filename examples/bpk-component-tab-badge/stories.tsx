@@ -16,9 +16,27 @@
  * limitations under the License.
  */
 
-import BpkBubble, {
-  type Props as BpkBubbleProps
-} from './src/BpkBubble';
 
-export type { BpkBubbleProps };
-export default BpkBubble;
+import BpkBadge from '../../packages/bpk-component-tab-badge/src/BpkBadge';
+
+import {
+  SimpleExample,
+  WithLongLabelExample,
+  VisualTestExample,
+} from './examples';
+
+export default {
+  title: 'bpk-component-bubble',
+  component: BpkBadge,
+};
+
+export const Default = SimpleExample;
+export const LongLabel = WithLongLabelExample;
+
+export const VisualTest = VisualTestExample;
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true
+  },
+};

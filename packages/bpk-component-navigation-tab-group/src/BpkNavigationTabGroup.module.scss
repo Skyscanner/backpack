@@ -130,6 +130,7 @@
   top: -0.625rem;
   right: -1rem;
   display: block; // Prevents inline shrink
+  max-width: tokens.bpk-spacing-xxxl();
 }
 
 :global([dir='rtl']) .bpk-navigation-tab-badge-wrapper {

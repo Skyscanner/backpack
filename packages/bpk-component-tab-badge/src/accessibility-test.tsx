@@ -19,12 +19,12 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkBubble from './BpkBubble';
+import BpkBadge from './BpkBadge';
 
 describe('BpkPageIndicator accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkBubble label='New' />
+      <BpkBadge label='New' />
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
