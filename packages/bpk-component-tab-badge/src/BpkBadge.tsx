@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import type { ReactNode } from 'react';
+
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 import BpkBadgeArrow from '../icons/arrow';
@@ -24,14 +26,14 @@ import STYLES from './BpkBadge.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
-  label: string;
+type Props = {
+  children: ReactNode;
 };
 
-const BpkBadge = ({ label }: Props) => (
+const BpkBadge = ({ children }: Props) => (
   <span className={getClassName('bpk-badge')}>
     <BpkText textStyle={TEXT_STYLES.label3} tagName="span" color={TEXT_COLORS.textOnDark}>
-      {label}
+      {children}
     </BpkText>
     <BpkBadgeArrow styles={getClassName('bpk-badge-arrow')} />
   </span>

@@ -31,8 +31,10 @@ const SimpleExample = () => (
         Simple
       </BpkText>
 
-      <span className={getClassNames('bpk-bubble-wrapper')}>
-        <BpkBadge label="New" />
+      <span className={getClassNames('bpk-badge-wrapper')}>
+        <BpkBadge>
+          New
+        </BpkBadge>
       </span>
     </span>
   </div>
@@ -45,8 +47,10 @@ const WithLongLabelExample = () => (
         With long label
       </BpkText>
 
-      <span className={getClassNames('bpk-bubble-wrapper')}>
-        <BpkBadge label="Nouveau" />
+      <span className={getClassNames('bpk-badge-wrapper')}>
+        <BpkBadge>
+          Nouveau
+        </BpkBadge>
       </span>
     </span>
   </div>

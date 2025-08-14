@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+@use '../../packages/unstable__bpk-mixins/tokens';
+
 .bpk-content-outer {
   display: flex;
   justify-content: center;
@@ -26,9 +28,10 @@
   display: inline-block;
 }
 
-.bpk-bubble-wrapper {
+.bpk-badge-wrapper {
   position: absolute;
-  top: -0.625rem;
-  right: -1rem;
+  top: -1rem;
+  right: tokens.$bpk-one-pixel-rem * -3; // align the arrow to the tab’s right edge
   display: block;
+  transform: translateX(50%); // shift bubble outward as it grows
 }
