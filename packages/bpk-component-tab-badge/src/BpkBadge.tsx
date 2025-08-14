@@ -18,7 +18,7 @@
 
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
-import BpkBubbleArrow from '../icons/arrow';
+import BpkBadgeArrow from '../icons/arrow';
 
 import STYLES from './BpkBadge.module.scss';
 
@@ -33,7 +33,7 @@ const BpkBadge = ({ label }: Props) => (
     <BpkText textStyle={TEXT_STYLES.label3} tagName="span" color={TEXT_COLORS.textOnDark}>
       {label}
     </BpkText>
-    <BpkBubbleArrow styles={getClassName('bpk-badge-arrow')} />
+    <BpkBadgeArrow styles={getClassName('bpk-badge-arrow')} />
   </span>
 );
 
