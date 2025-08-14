@@ -20,19 +20,19 @@ import { render, screen } from '@testing-library/react';
 
 import BpkBadge from './BpkBadge';
 
-describe('BpkBubble', () => {
+describe('BpkBadge', () => {
   it('should render correctly', () => {
     const { container } = render(<BpkBadge label="New" />);
 
     // Root wrapper exists
-    const root = container.querySelector('.bpk-bubble');
+    const root = container.querySelector('.bpk-badge');
     expect(root).toBeInTheDocument();
 
     // Label text is visible
     expect(screen.getByText('New')).toBeInTheDocument();
 
     // Arrow exists and is marked decorative
-    const arrow = container.querySelector('.bpk-bubble-arrow');
+    const arrow = container.querySelector('.bpk-badge-arrow');
     expect(arrow).toBeInTheDocument();
     expect(arrow).toHaveAttribute('aria-hidden', 'true');
   });
@@ -51,16 +51,16 @@ describe('BpkBubble', () => {
     const { container } = render(<BpkBadge label="New" />);
 
     // Root pill has class applied
-    const root = container.querySelector('.bpk-bubble');
+    const root = container.querySelector('.bpk-badge');
     expect(root).toBeInTheDocument();
 
     // Arrow has class applied
-    const arrow = container.querySelector('.bpk-bubble-arrow');
+    const arrow = container.querySelector('.bpk-badge-arrow');
     expect(arrow).toBeInTheDocument();
   });
 
   it('should be accessible via its text (no extra roles required)', () => {
-    // The bubble is an inline badge; its accessible name is the label itself.
+    // The badge is an inline badge; its accessible name is the label itself.
     render(<BpkBadge label="Nouveau" />);
 
     // Query by text ensures it's part of the accessibility tree
