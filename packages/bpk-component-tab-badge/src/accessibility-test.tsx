@@ -24,7 +24,9 @@ import BpkBadge from './BpkBadge';
 describe('BpkPageIndicator accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkBadge label='New' />
+      <BpkBadge>
+        New
+      </BpkBadge>
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

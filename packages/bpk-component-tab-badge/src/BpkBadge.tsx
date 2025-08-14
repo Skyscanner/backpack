@@ -26,7 +26,7 @@ import STYLES from './BpkBadge.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
+export type Props = {
   children: ReactNode;
 };
 
