@@ -36,7 +36,7 @@ export default () => (
       Packages
     </BpkText>
     <span className={getClassNames('bubble-wrapper')}>
-      <BpkBadge label="New" />
+      <BpkBadge>New</BpkBadge>
     </span>
   </div>
 );
