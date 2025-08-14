@@ -15,7 +15,7 @@ Render a pink “New” (or any short label) badge. Typically used as a small ca
 ```tsx
 import BpkBadge from '../../packages/bpk-component-tab-new-bubble';
 
-export default () => <BpkBadge label="New" />;
+export default () => <BpkBadge>New</BpkBadge>;
 ```
 
 ### Placing it next to a heading (example)
@@ -36,7 +36,7 @@ export default () => (
       Packages
     </BpkText>
     <span className={getClassNames('bubble-wrapper')}>
-      <BpkBadge label="New" />
+      <BpkBadge>New</BpkBadge>
     </span>
   </div>
 );
@@ -64,7 +64,14 @@ export default () => (
 ### Accessibility
 
 * Keep `label` short and meaningful (e.g. “New”, “Beta”, “Nouveau”).
-* The component renders text within a `<span>` using Backpack’s label text style for legibility.
+| Prop     | Type       | Required | Description                                 |
+| -------- | ---------- | -------- | ------------------------------------------- |
+| children | ReactNode  | ✓        | Content shown inside the bubble pill.       |
+
+### Accessibility
+
+* Keep the content (children) short and meaningful (e.g. “New”, “Beta”, “Nouveau”).
+* The component renders the children within a `<span>` using Backpack’s label text style for legibility.
 
 ## Theming
 
