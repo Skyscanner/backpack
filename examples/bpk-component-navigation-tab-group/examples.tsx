@@ -78,7 +78,7 @@ const tabsWithBadge: BpkNavigationTabGroupProps['tabs'] = [
   { id: 'air', text: 'Flights', href: '/', target: '_blank' },
   { id: 'hotel', text: 'Hotels', href: '/hotel', target: '_blank' },
   { id: 'car', text: 'Car hire', href: '/carhire', target: '_blank' },
-  { id: 'packages', text: 'Packages', href: '/destinations/packages-holidays', target: '_blank', newBadgeString: 'Nouveaou' },
+  { id: 'packages', text: 'Packages', href: '/destinations/packages-holidays', target: '_blank', newBadgeString: 'New' },
 ];
 
 // Simple Navigation Tab Group
@@ -258,7 +258,7 @@ const VisualTestExample = () => (
     </BpkText>
     <TabsNoHrefCanvasDefaultForExample />
     <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
-      Tabs with New Bubble
+      Tabs with a badge
     </BpkText>
     <TabsWithBadge />
     <br />
