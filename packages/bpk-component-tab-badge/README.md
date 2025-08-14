@@ -64,7 +64,14 @@ export default () => (
 ### Accessibility
 
 * Keep `label` short and meaningful (e.g. “New”, “Beta”, “Nouveau”).
-* The component renders text within a `<span>` using Backpack’s label text style for legibility.
+| Prop     | Type       | Required | Description                                 |
+| -------- | ---------- | -------- | ------------------------------------------- |
+| children | ReactNode  | ✓        | Content shown inside the bubble pill.       |
+
+### Accessibility
+
+* Keep the content (children) short and meaningful (e.g. “New”, “Beta”, “Nouveau”).
+* The component renders the children within a `<span>` using Backpack’s label text style for legibility.
 
 ## Theming
 
