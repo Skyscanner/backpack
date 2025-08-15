@@ -30,7 +30,7 @@ export type Props = {
   children: ReactNode;
 };
 
-const BpkBadge = ({ children }: Props) => (
+const BpkBubble = ({ children }: Props) => (
   <span className={getClassName('bpk-badge')}>
     <BpkText textStyle={TEXT_STYLES.label3} tagName="span" color={TEXT_COLORS.textOnDark}>
       {children}
@@ -39,4 +39,4 @@ const BpkBadge = ({ children }: Props) => (
   </span>
 );
 
-export default BpkBadge;
+export default BpkBubble;

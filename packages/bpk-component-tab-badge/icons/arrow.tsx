@@ -20,7 +20,7 @@ type Props = {
   styles?: string;
 };
 
-const BpkBadgeArrow = ({ styles }: Props) => (
+const BpkBubbleArrow = ({ styles }: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="23"
@@ -37,4 +37,4 @@ const BpkBadgeArrow = ({ styles }: Props) => (
   </svg>
 );
 
-export default BpkBadgeArrow;
+export default BpkBubbleArrow;

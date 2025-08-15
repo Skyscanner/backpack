@@ -18,11 +18,11 @@
 
 import { render, screen } from '@testing-library/react';
 
-import BpkBadge from './BpkBadge';
+import BpkBubble from './BpkBubble';
 
 describe('BpkBadge', () => {
   it('should render correctly', () => {
-    const { container } = render(<BpkBadge>New</BpkBadge>);
+    const { container } = render(<BpkBubble>New</BpkBubble>);
 
     // Root wrapper exists
     const root = container.querySelector('.bpk-badge');
@@ -38,17 +38,17 @@ describe('BpkBadge', () => {
   });
 
   it('should render the provided label', () => {
-    render(<BpkBadge>Beta</BpkBadge>);
+    render(<BpkBubble>Beta</BpkBubble>);
     expect(screen.getByText('Beta')).toBeInTheDocument();
   });
 
   it('should support long labels', () => {
-    render(<BpkBadge>Limited Time</BpkBadge>);
+    render(<BpkBubble>Limited Time</BpkBubble>);
     expect(screen.getByText('Limited Time')).toBeInTheDocument();
   });
 
   it('should render with expected classes for internal elements', () => {
-    const { container } = render(<BpkBadge>New</BpkBadge>);
+    const { container } = render(<BpkBubble>New</BpkBubble>);
 
     // Root pill has class applied
     const root = container.querySelector('.bpk-badge');
@@ -61,7 +61,7 @@ describe('BpkBadge', () => {
 
   it('should be accessible via its text (no extra roles required)', () => {
     // The badge is an inline badge; its accessible name is the label itself.
-    render(<BpkBadge>Nouveau</BpkBadge>);
+    render(<BpkBubble>Nouveau</BpkBubble>);
 
     // Query by text ensures it's part of the accessibility tree
     expect(screen.getByText('Nouveau')).toBeVisible();

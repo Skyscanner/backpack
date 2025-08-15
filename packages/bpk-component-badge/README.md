@@ -9,14 +9,14 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkBadge, { BADGE_TYPES } from '@skyscanner/backpack-web/bpk-component-badge';
+import BpkBubble, { BADGE_TYPES } from '@skyscanner/backpack-web/bpk-component-badge';
 
 export default () => (
-  <BpkBadge
+  <BpkBubble
     type={BADGE_TYPES.warning}
   >
     My Badge
-  </BpkBadge>
+  </BpkBubble>
 );
 ```
 

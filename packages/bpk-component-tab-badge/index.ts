@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-import BpkBadge, {
+import BpkBubble, {
   type Props as BpkBubbleProps
-} from './src/BpkBadge';
+} from './src/BpkBubble';
 
 export type { BpkBubbleProps };
-export default BpkBadge;
+export default BpkBubble;

@@ -17,7 +17,7 @@
  */
 
 
-import BpkBadge from '../../packages/bpk-component-tab-badge/src/BpkBadge';
+import BpkBubble from '../../packages/bpk-component-tab-badge/src/BpkBubble';
 
 import {
   SimpleExample,
@@ -27,7 +27,7 @@ import {
 
 export default {
   title: 'bpk-component-bubble',
-  component: BpkBadge,
+  component: BpkBubble,
 };
 
 export const Default = SimpleExample;
