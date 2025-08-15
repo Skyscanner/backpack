@@ -25,13 +25,13 @@ import STYLES from './examples.module.scss';
 const getClassNames = cssModules(STYLES);
 
 const SimpleExample = () => (
-  <div className={getClassNames('bpk-content-outer')}>
-    <span className={getClassNames('bpk-content')}>
+  <div className={getClassNames('bpk-content')}>
+    <span className={getClassNames('bpk-content__container')}>
       <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
         Simple
       </BpkText>
 
-      <span className={getClassNames('bpk-bubble-wrapper')}>
+      <span className={getClassNames('bpk-content__container__bubble-wrapper')}>
         <BpkBubble>
           New
         </BpkBubble>
@@ -41,13 +41,13 @@ const SimpleExample = () => (
 );
 
 const WithLongLabelExample = () => (
-  <div className={getClassNames('bpk-content-outer')}>
-    <span className={getClassNames('bpk-content')}>
+  <div className={getClassNames('bpk-content')}>
+    <span className={getClassNames('bpk-content__container')}>
       <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
         With long label
       </BpkText>
 
-      <span className={getClassNames('bpk-bubble-wrapper')}>
+      <span className={getClassNames('bpk-content__container__bubble-wrapper')}>
         <BpkBubble>
           Nouveau
         </BpkBubble>

@@ -18,20 +18,20 @@
 
 @use '../../packages/unstable__bpk-mixins/tokens';
 
-.bpk-content-outer {
+.bpk-content {
   display: flex;
   justify-content: center;
-}
 
-.bpk-content {
-  position: relative;
-  display: inline-block;
-}
+  &__container {
+    position: relative;
+    display: inline-block;
 
-.bpk-bubble-wrapper {
-  position: absolute;
-  top: -1rem;
-  right: tokens.$bpk-one-pixel-rem * -3; // align the arrow to the tab’s right edge
-  display: block;
-  transform: translateX(50%); // shift bubble outward as it grows
+    &__bubble-wrapper {
+      position: absolute;
+      top: -1rem;
+      right: tokens.$bpk-one-pixel-rem * -3; // align the arrow to the tab’s right edge
+      display: block;
+      transform: translateX(50%); // shift bubble outward as it grows
+    }
+  }
 }
