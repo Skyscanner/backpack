@@ -54,16 +54,8 @@ export default () => (
   right: -0.75rem;
 }
 ```
-
-## Props
-
-| Prop  | Type   | Required | Description                        |
-| ----- | ------ | -------- | ---------------------------------- |
-| label | string | ✓        | Text shown inside the bubble pill. |
-
 ### Accessibility
 
-* Keep `label` short and meaningful (e.g. “New”, “Beta”, “Nouveau”).
 | Prop     | Type       | Required | Description                                 |
 | -------- | ---------- | -------- | ------------------------------------------- |
 | children | ReactNode  | ✓        | Content shown inside the bubble pill.       |

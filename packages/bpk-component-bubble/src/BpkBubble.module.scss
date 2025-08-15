@@ -39,6 +39,8 @@
 
   &__arrow {
     position: absolute;
+
+    // The -5px value aligns the arrow visually with the bubble. No suitable design token exists for this negative offset.
     bottom: -5px; // stylelint-disable-line
     left: 50%;
     transform: translateX(-50%);

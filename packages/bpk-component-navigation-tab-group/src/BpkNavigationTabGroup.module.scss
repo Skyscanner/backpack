@@ -18,7 +18,7 @@
 
 @use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/borders';
-@use '../../../packages/unstable__bpk-mixins/utils';
+@use '../../unstable__bpk-mixins/utils';
 
 @mixin tab-link {
   display: flex;
