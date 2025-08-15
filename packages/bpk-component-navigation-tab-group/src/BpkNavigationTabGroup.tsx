@@ -19,7 +19,7 @@
 import type { MouseEvent, FunctionComponent, ReactElement } from 'react';
 import { useState } from 'react';
 
-import BpkBubble from '../../bpk-component-tab-badge/src/BpkBubble';
+import BpkBubble from '../../bpk-component-tab-bubble/src/BpkBubble';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -43,7 +43,7 @@ type TabWrapItem = {
 type TabItem = TabWrapItem & {
   text: string;
   icon?: FunctionComponent<any> | null;
-  badgeString?: string;
+  badgeText?: string;
 };
 export type Props = {
   id: string;
@@ -155,10 +155,10 @@ const BpkNavigationTabGroup = ({
                     </BpkText>
                 </div>
 
-                {tab.badgeString && (
+                {tab.badgeText && (
                   <span className={getClassName('bpk-navigation-tab-badge-wrapper')}>
                     <BpkBubble>
-                      {tab.badgeString}
+                      {tab.badgeText}
                     </BpkBubble>
                   </span>)}
               </>

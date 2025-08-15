@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkBubble from '../../packages/bpk-component-tab-badge/src/BpkBubble';
+import BpkBubble from '../../packages/bpk-component-tab-bubble/src/BpkBubble';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 
@@ -31,7 +31,7 @@ const SimpleExample = () => (
         Simple
       </BpkText>
 
-      <span className={getClassNames('bpk-badge-wrapper')}>
+      <span className={getClassNames('bpk-bubble-wrapper')}>
         <BpkBubble>
           New
         </BpkBubble>
@@ -47,7 +47,7 @@ const WithLongLabelExample = () => (
         With long label
       </BpkText>
 
-      <span className={getClassNames('bpk-badge-wrapper')}>
+      <span className={getClassNames('bpk-bubble-wrapper')}>
         <BpkBubble>
           Nouveau
         </BpkBubble>

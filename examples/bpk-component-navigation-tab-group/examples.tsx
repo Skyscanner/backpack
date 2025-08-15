@@ -78,7 +78,7 @@ const tabsWithBadge: BpkNavigationTabGroupProps['tabs'] = [
   { id: 'air', text: 'Flights', href: '/', target: '_blank' },
   { id: 'hotel', text: 'Hotels', href: '/hotel', target: '_blank' },
   { id: 'car', text: 'Car hire', href: '/carhire', target: '_blank' },
-  { id: 'packages', text: 'Packages', href: '/destinations/packages-holidays', target: '_blank', badgeString: 'New' },
+  { id: 'packages', text: 'Packages', href: '/destinations/packages-holidays', target: '_blank', badgeText: 'New' },
 ];
 
 // Simple Navigation Tab Group

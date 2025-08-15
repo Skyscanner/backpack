@@ -20,7 +20,7 @@ import { render, screen } from '@testing-library/react';
 
 import BpkBubble from './BpkBubble';
 
-describe('BpkBadge', () => {
+describe('BpkBubble', () => {
   it('should render correctly', () => {
     const { container } = render(<BpkBubble>New</BpkBubble>);
 

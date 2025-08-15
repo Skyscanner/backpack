@@ -20,9 +20,9 @@ import type { ReactNode } from 'react';
 
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
-import BpkBadgeArrow from '../icons/arrow';
+import BpkBubbleArrow from '../icons/BpkBubbleArrow';
 
-import STYLES from './BpkBadge.module.scss';
+import STYLES from './BpkBubble.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -31,11 +31,11 @@ export type Props = {
 };
 
 const BpkBubble = ({ children }: Props) => (
-  <span className={getClassName('bpk-badge')}>
+  <span className={getClassName('bpk-bubble')}>
     <BpkText textStyle={TEXT_STYLES.label3} tagName="span" color={TEXT_COLORS.textOnDark}>
       {children}
     </BpkText>
-    <BpkBadgeArrow styles={getClassName('bpk-badge-arrow')} />
+    <BpkBubbleArrow styles={getClassName('bpk-bubble-arrow')} />
   </span>
 );
 

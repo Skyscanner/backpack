@@ -17,7 +17,7 @@
  */
 
 
-import BpkBubble from '../../packages/bpk-component-tab-badge/src/BpkBubble';
+import BpkBubble from '../../packages/bpk-component-tab-bubble/src/BpkBubble';
 
 import {
   SimpleExample,
