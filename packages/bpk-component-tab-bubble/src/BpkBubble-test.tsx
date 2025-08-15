@@ -25,14 +25,14 @@ describe('BpkBubble', () => {
     const { container } = render(<BpkBubble>New</BpkBubble>);
 
     // Root wrapper exists
-    const root = container.querySelector('.bpk-badge');
+    const root = container.querySelector('.bpk-bubble');
     expect(root).toBeInTheDocument();
 
     // Label text is visible
     expect(screen.getByText('New')).toBeInTheDocument();
 
     // Arrow exists and is marked decorative
-    const arrow = container.querySelector('.bpk-badge-arrow');
+    const arrow = container.querySelector('.bpk-bubble-arrow');
     expect(arrow).toBeInTheDocument();
     expect(arrow).toHaveAttribute('aria-hidden', 'true');
   });
@@ -60,7 +60,7 @@ describe('BpkBubble', () => {
   });
 
   it('should be accessible via its text (no extra roles required)', () => {
-    // The badge is an inline badge; its accessible name is the label itself.
+    // The bubble is an inline bubble; its accessible name is the label itself.
     render(<BpkBubble>Nouveau</BpkBubble>);
 
     // Query by text ensures it's part of the accessibility tree
