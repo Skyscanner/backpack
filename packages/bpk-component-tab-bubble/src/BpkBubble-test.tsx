@@ -51,11 +51,11 @@ describe('BpkBubble', () => {
     const { container } = render(<BpkBubble>New</BpkBubble>);
 
     // Root pill has class applied
-    const root = container.querySelector('.bpk-badge');
+    const root = container.querySelector('.bpk-bubble');
     expect(root).toBeInTheDocument();
 
     // Arrow has class applied
-    const arrow = container.querySelector('.bpk-badge-arrow');
+    const arrow = container.querySelector('.bpk-bubble-arrow');
     expect(arrow).toBeInTheDocument();
   });
 
