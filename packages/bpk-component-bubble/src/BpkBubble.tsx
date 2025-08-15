@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
-
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 import BpkBubbleArrow from '../icons/BpkBubbleArrow';
@@ -27,7 +25,7 @@ import STYLES from './BpkBubble.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  children: ReactNode;
+  children: string;
 };
 
 const BpkBubble = ({ children }: Props) => (
@@ -35,7 +33,7 @@ const BpkBubble = ({ children }: Props) => (
     <BpkText textStyle={TEXT_STYLES.label3} tagName="span" color={TEXT_COLORS.textOnDark}>
       {children}
     </BpkText>
-    <BpkBubbleArrow styles={getClassName('bpk-bubble-arrow')} />
+    <BpkBubbleArrow styles={getClassName('bpk-bubble__arrow')} />
   </span>
 );
 

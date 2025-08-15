@@ -29,7 +29,7 @@ import {
   TabsOnlyTextCanvasDefaultForExample,
   TabsWithBlankTarget,
   VisualTestExample,
-  TabsWithBadge,
+  TabsWithBubble,
 } from './examples';
 
 export default {
@@ -55,7 +55,7 @@ export const OnlyTextCanvasDefault = TabsOnlyTextCanvasDefaultForExample;
 
 export const WithBlankTarget = TabsWithBlankTarget;
 
-export const WithNewBubble = TabsWithBadge;
+export const WithNewBubble = TabsWithBubble;
 
 export const VisualTest = VisualTestExample;
 

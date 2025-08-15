@@ -36,12 +36,12 @@
   white-space: nowrap;
 
   @include typography.bpk-text--xs;
-}
 
-.bpk-bubble-arrow {
-  position: absolute;
-  bottom: -5px; // stylelint-disable-line
-  left: 50%;
-  transform: translateX(-50%);
-  color: tokens.$bpk-status-danger-spot-day;
+  &__arrow {
+    position: absolute;
+    bottom: -5px; // stylelint-disable-line
+    left: 50%;
+    transform: translateX(-50%);
+    color: tokens.$bpk-status-danger-spot-day;
+  }
 }

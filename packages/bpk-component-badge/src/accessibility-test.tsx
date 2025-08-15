@@ -21,7 +21,7 @@ import { axe } from 'jest-axe';
 
 import BpkBadge from './BpkBadge';
 
-describe('BpkBubble accessibility tests', () => {
+describe('BpkBadge accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(<BpkBadge>Promociando</BpkBadge>);
     const results = await axe(container);
