@@ -32,7 +32,7 @@ describe('BpkBubble', () => {
     expect(screen.getByText('New')).toBeInTheDocument();
 
     // Arrow exists and is marked decorative
-    const arrow = container.querySelector('.bpk-bubble-arrow');
+    const arrow = container.querySelector('.bpk-bubble__arrow');
     expect(arrow).toBeInTheDocument();
     expect(arrow).toHaveAttribute('aria-hidden', 'true');
   });
@@ -55,7 +55,7 @@ describe('BpkBubble', () => {
     expect(root).toBeInTheDocument();
 
     // Arrow has class applied
-    const arrow = container.querySelector('.bpk-bubble-arrow');
+    const arrow = container.querySelector('.bpk-bubble__arrow');
     expect(arrow).toBeInTheDocument();
   });
 
