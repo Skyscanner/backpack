@@ -28,7 +28,6 @@ type callToActionType = {
   }>;
   bottomSheetTitle?: string;
   buttonCloseLabel?: string;
-  buttonA11yLabel?: string;
   bottomSheetLabel?: string;
   bottomSheetId?: string;
   bottomSheetWidth?: string;

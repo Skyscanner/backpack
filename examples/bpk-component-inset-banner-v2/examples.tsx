@@ -58,7 +58,6 @@ const WithCtaTextAndBottomSheetExampleV2Light = () => (
           labelTitle: true,
           bottomSheetLabel: 'Info',
           buttonCloseLabel: 'Close',
-          buttonA11yLabel: 'More info',
         }}
         backgroundColor="#FFE300"
         variant={VARIANT.onLight}
@@ -92,7 +91,6 @@ const WithCustomBottomSheetWidthAndMarginsExampleV2Light = () => (
       labelTitle: true,
       bottomSheetLabel: 'Info',
       buttonCloseLabel: 'Close',
-      buttonA11yLabel: 'More info',
       bottomSheetWidth: '15rem',
       bottomSheetMarginStart: '1rem',
       bottomSheetMarginEnd: '1rem',
@@ -127,7 +125,6 @@ const WithImageAndBottomSheetExampleV2Dark = () => (
       labelTitle: true,
       bottomSheetLabel: 'Info',
       buttonCloseLabel: 'Close',
-      buttonA11yLabel: 'More info',
     }}
     backgroundColor="#FF6601"
     variant={VARIANT.onDark}
@@ -153,7 +150,6 @@ const WithCtaTextAndBottomSheetExampleV2Dark = () => (
       labelTitle: true,
       bottomSheetLabel: 'Info',
       buttonCloseLabel: 'Close',
-      buttonA11yLabel: 'More info',
     }}
     backgroundColor="#0770E3"
     variant={VARIANT.onDark}
@@ -185,7 +181,6 @@ const WithImageAndBottomSheetExampleV2Light = () => (
       labelTitle: true,
       bottomSheetLabel: 'Info',
       buttonCloseLabel: 'Close',
-      buttonA11yLabel: 'More info',
     }}
     backgroundColor="#FFE300"
     variant={VARIANT.onLight}
@@ -212,7 +207,6 @@ const WithSingleBottomSheetItemExampleV2Light = () => (
       labelTitle: true,
       bottomSheetLabel: 'Info',
       buttonCloseLabel: 'Close',
-      buttonA11yLabel: 'More info',
     }}
     backgroundColor="#FFE300"
     variant={VARIANT.onLight}

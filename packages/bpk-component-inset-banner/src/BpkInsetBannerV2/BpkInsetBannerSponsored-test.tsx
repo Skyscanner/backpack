@@ -62,7 +62,6 @@ describe('BpkInsetBanner', () => {
           labelTitle: true,
           bottomSheetLabel: 'Info',
           buttonCloseLabel: 'Close',
-          buttonA11yLabel: 'More info',
         }}
         backgroundColor="#FFE300"
         variant={VARIANT.onLight}
@@ -98,7 +97,6 @@ describe('BpkInsetBanner', () => {
           labelTitle: true,
           bottomSheetLabel: 'Info',
           buttonCloseLabel: 'Close',
-          buttonA11yLabel: 'More info',
         }}
         backgroundColor="#FFE300"
         variant={VARIANT.onLight}
@@ -131,7 +129,6 @@ describe('BpkInsetBanner', () => {
           labelTitle: true,
           bottomSheetLabel: 'Info',
           buttonCloseLabel: 'Close',
-          buttonA11yLabel: 'More info',
         }}
         backgroundColor="#FFE300"
         variant={VARIANT.onLight}

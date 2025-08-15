@@ -67,7 +67,6 @@ const BpkInsetBannerSponsored = ({
               className={getClassName('bpk-inset-banner--image')}
               src={logo}
               alt={ariaAdScenicA11yLabel}
-              aria-hidden
             />
           )}
         </div>
@@ -86,7 +85,6 @@ const BpkInsetBannerSponsored = ({
             }}
           >
             <button
-              aria-label={callToAction?.buttonA11yLabel}
               className={getClassName('bpk-inset-banner--cta-button')}
               data-testid="ctaBtn"
               aria-hidden="false"

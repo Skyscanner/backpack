@@ -49,7 +49,6 @@ describe('BpkInsetBanner accessibility tests', () => {
           labelTitle: true,
           bottomSheetLabel: 'Info',
           buttonCloseLabel: 'Close',
-          buttonA11yLabel: 'More info',
         }}
         variant={VARIANT.onDark}
       />,
