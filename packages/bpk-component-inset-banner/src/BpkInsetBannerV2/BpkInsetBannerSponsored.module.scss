@@ -54,7 +54,7 @@
   }
 
   &--image {
-    max-height: tokens.bpk-spacing-xl();
+    max-height: tokens.$bpk-icon-size-lg;
     object-fit: contain;
     padding-inline-end: tokens.bpk-spacing-base();
   }
