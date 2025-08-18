@@ -115,8 +115,8 @@
 
   &--bottom-sheet-icon {
     display: flex;
-    margin-right: tokens.bpk-spacing-lg();
     fill: tokens.$bpk-font-color-base;
+    margin-inline-end: tokens.bpk-spacing-lg();
   }
 
   &--bottom-sheet-text {
