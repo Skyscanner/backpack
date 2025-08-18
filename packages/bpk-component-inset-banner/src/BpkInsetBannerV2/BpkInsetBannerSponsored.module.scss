@@ -36,7 +36,13 @@
   }
 
   &--logo {
+    height: 100%;
     grid-area: logo;
+
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &--with-image {
@@ -81,13 +87,12 @@
 
   &--cta-container {
     display: flex;
-    height: tokens.bpk-spacing-xl();
     height: 100%;
     grid-area: cta;
     cursor: pointer;
 
     @include breakpoints.bpk-breakpoint-mobile {
-      align-items: start;
+      align-items: flex-start;
     }
   }
 
