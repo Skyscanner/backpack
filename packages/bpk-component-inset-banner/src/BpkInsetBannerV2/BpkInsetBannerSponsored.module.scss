@@ -82,9 +82,13 @@
   &--cta-container {
     display: flex;
     height: tokens.bpk-spacing-xl();
+    height: 100%;
     grid-area: cta;
-    align-items: center;
     cursor: pointer;
+
+    @include breakpoints.bpk-breakpoint-mobile {
+      align-items: start;
+    }
   }
 
   &--cta-content {
