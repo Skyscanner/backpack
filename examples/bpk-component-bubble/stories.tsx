@@ -16,20 +16,27 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/breakpoints';
 
-.bpk-card-list {
-  display: flex;
-  flex-direction: column;
-  gap: tokens.bpk-spacing-lg();
+import BpkBubble from '../../packages/bpk-component-bubble/src/BpkBubble';
 
-  @include breakpoints.bpk-breakpoint-mobile {
-    gap: tokens.bpk-spacing-base();
-  }
+import {
+  SimpleExample,
+  WithLongLabelExample,
+  VisualTestExample,
+} from './examples';
 
-  &--card-list {
-    display: flex;
-    flex-direction: column;
-  }
-}
+export default {
+  title: 'bpk-component-bubble',
+  component: BpkBubble,
+};
+
+export const Default = SimpleExample;
+export const LongLabel = WithLongLabelExample;
+
+export const VisualTest = VisualTestExample;
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true
+  },
+};

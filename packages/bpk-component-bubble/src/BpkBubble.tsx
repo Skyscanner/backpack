@@ -16,7 +16,25 @@
  * limitations under the License.
  */
 
-import component, { TEXT_COLORS, TEXT_STYLES } from './src/BpkText';
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
+import BpkBubbleArrow from '../icons/BpkBubbleArrow';
 
-export default component;
-export { TEXT_COLORS, TEXT_STYLES };
+import STYLES from './BpkBubble.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+export type Props = {
+  children: string;
+};
+
+const BpkBubble = ({ children }: Props) => (
+  <span className={getClassName('bpk-bubble')}>
+    <BpkText textStyle={TEXT_STYLES.label3} tagName="span" color={TEXT_COLORS.textOnDark}>
+      {children}
+    </BpkText>
+    <BpkBubbleArrow styles={getClassName('bpk-bubble__arrow')} />
+  </span>
+);
+
+export default BpkBubble;

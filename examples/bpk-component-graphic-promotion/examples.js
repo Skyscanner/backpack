@@ -180,6 +180,20 @@ const NonSponsoredRightAlignedExample = () => (
   />
 );
 
+const LinkWrapperExample = () => (
+  <BpkGraphicPromo
+    tagline={tagline}
+    href="https://www.skyscanner.net"
+    headline={headline}
+    subheading={subheading}
+    buttonText={buttonText}
+    className={graphicPromoClassName}
+    style={style}
+    onClick={onClick}
+    textAlign={TEXT_ALIGN.end}
+  />
+);
+
 const VisualTestExample = () => (
   <>
     <BpkGraphicPromo
@@ -281,4 +295,5 @@ export {
   NonSponsoredRightAlignedExample,
   NoStyleExample,
   VisualTestExample,
+  LinkWrapperExample,
 };

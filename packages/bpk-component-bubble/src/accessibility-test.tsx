@@ -16,20 +16,19 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/breakpoints';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-.bpk-card-list {
-  display: flex;
-  flex-direction: column;
-  gap: tokens.bpk-spacing-lg();
+import BpkBubble from './BpkBubble';
 
-  @include breakpoints.bpk-breakpoint-mobile {
-    gap: tokens.bpk-spacing-base();
-  }
-
-  &--card-list {
-    display: flex;
-    flex-direction: column;
-  }
-}
+describe('BpkBubble accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkBubble>
+        New
+      </BpkBubble>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

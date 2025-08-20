@@ -58,6 +58,21 @@ export const TEXT_STYLES = {
   editorial3: 'editorial-3',
 } as const;
 
+export const TEXT_COLORS = {
+  textDisabled: 'text-disabled',
+  textDisabledOnDark: 'text-disabled-on-dark',
+  textError: 'text-error',
+  textHero: 'text-hero',
+  textLink: 'text-link',
+  textOnDark: 'text-on-dark',
+  textOnLight: 'text-on-light',
+  textPrimary: 'text-primary',
+  textPrimaryInverse: 'text-primary-inverse',
+  textSecondary: 'text-secondary',
+  textSuccess: 'text-success',
+} as const;
+
+export type TextColor = (typeof TEXT_COLORS)[keyof typeof TEXT_COLORS];
 export type TextStyle = (typeof TEXT_STYLES)[keyof typeof TEXT_STYLES];
 export type Tag =
   | 'span'
@@ -75,7 +90,7 @@ type Props = {
   textStyle?: TextStyle;
   tagName?: Tag;
   className?: string | null;
-  color?: string | null;
+  color?: TextColor | null;
   id?: string;
   [rest: string]: any;
 };
@@ -91,16 +106,14 @@ const BpkText = ({
   const classNames = getClassName(
     'bpk-text',
     `bpk-text--${textStyle}`,
+    color ? `bpk-text--${color}` : '',
     className,
   );
-
-  const { style, ...otherProps } = rest;
-  const computedStyles = { ...style, ...(color ? { color } : {}) };
 
   return (
     // Allowed, TagName is always a dom element.
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <TagName className={classNames} style={computedStyles} {...otherProps}>
+    <TagName className={classNames} {...rest}>
       {children}
     </TagName>
   );

@@ -121,8 +121,8 @@
     "@babel/register": "^7.27.1",
     "@percy/cli": "^1.31.0",
     "@percy/storybook": "^6.0.3",
-    "@skyscanner/bpk-foundations-web": "^19.5.0",
-    "@skyscanner/bpk-svgs": "^20.6.0",
+    "@skyscanner/bpk-foundations-web": "^22.1.0",
+    "@skyscanner/bpk-svgs": "^20.8.0",
     "@skyscanner/eslint-config-skyscanner": "^20.0.0",
     "@skyscanner/stylelint-config-skyscanner": "^13.1.0",
     "@storybook/addon-a11y": "^8.6.10",
@@ -186,7 +186,7 @@
     "style-loader": "^4.0.0",
     "ts-migrate": "^0.1.35",
     "typescript": "^5.8.2",
-    "webpack": "^5.99.8",
+    "webpack": "^5.101.2",
     "wrapper-webpack-plugin": "^2.2.2"
   },
   "overrides": {

@@ -16,20 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/breakpoints';
+import BpkBubble, {
+  type Props as BpkBubbleProps
+} from './src/BpkBubble';
 
-.bpk-card-list {
-  display: flex;
-  flex-direction: column;
-  gap: tokens.bpk-spacing-lg();
-
-  @include breakpoints.bpk-breakpoint-mobile {
-    gap: tokens.bpk-spacing-base();
-  }
-
-  &--card-list {
-    display: flex;
-    flex-direction: column;
-  }
-}
+export type { BpkBubbleProps };
+export default BpkBubble;
