@@ -36,7 +36,13 @@
   }
 
   &--logo {
+    height: 100%;
     grid-area: logo;
+
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &--with-image {
@@ -54,7 +60,7 @@
   }
 
   &--image {
-    max-height: tokens.bpk-spacing-xl();
+    max-height: tokens.$bpk-icon-size-lg;
     object-fit: contain;
     padding-inline-end: tokens.bpk-spacing-base();
   }
@@ -81,10 +87,13 @@
 
   &--cta-container {
     display: flex;
-    height: tokens.bpk-spacing-xl();
+    height: 100%;
     grid-area: cta;
-    align-items: center;
     cursor: pointer;
+
+    @include breakpoints.bpk-breakpoint-mobile {
+      align-items: flex-start;
+    }
   }
 
   &--cta-content {
@@ -106,8 +115,8 @@
 
   &--bottom-sheet-icon {
     display: flex;
-    margin-right: tokens.bpk-spacing-lg();
     fill: tokens.$bpk-font-color-base;
+    margin-inline-end: tokens.bpk-spacing-lg();
   }
 
   &--bottom-sheet-text {
