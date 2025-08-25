@@ -24,6 +24,10 @@
 
 .bpk-autosuggest {
   &__suggestions-container {
+    min-width: fit-content;
+
+    @include layers.bpk-layer;
+
     &-input {
       width: 100%;
     }
@@ -40,13 +44,10 @@
   }
 
   &__suggestions-list {
-    min-width: fit-content;
     margin: 0;
     padding: 0;
     list-style: none;
     overflow: hidden;
-
-    @include layers.bpk-layer;
   }
 
   &__suggestion-item {
@@ -125,6 +126,12 @@
 
       @include typography.bpk-text;
       @include typography.bpk-caption;
+    }
+  }
+
+  &__section-container {
+    &:not(:first-of-type) {
+      border-top: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
     }
   }
 

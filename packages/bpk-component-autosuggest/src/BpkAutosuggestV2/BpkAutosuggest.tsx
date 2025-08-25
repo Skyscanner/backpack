@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useEffect, forwardRef, useRef, useId } from 'react';
+import { useEffect, forwardRef, useRef } from 'react';
 import type { KeyboardEvent, ReactElement, HTMLProps } from 'react';
 
 import {
@@ -134,7 +134,7 @@ const defaultTheme = {
   sectionContainer: getClassName('bpk-autosuggest__section-container'),
   sectionTitle: getClassName('bpk-autosuggest__section-title'),
   input: getClassName('bpk-autosuggest__suggestions-container-input'),
-  visuallyHidden: getClassName('bpk-autosuggest__visuallyhidden')
+  visuallyHidden: getClassName('bpk-autosuggest__visuallyhidden'),
 };
 
 const strokeWidth = 0.0625;
@@ -173,10 +173,12 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     },
     forwardedRef,
   ) => {
-    const ariaDescribedByLabelId = useId();
+    const ariaDescribedByLabelId = `${id}-srOnly`;
     const theme = { ...defaultTheme, ...customTheme };
     const arrowRef = useRef(null);
     const previousHighlightedIndexRef = useRef<number | null>(null);
+    const hasInteractedRef = useRef(false);
+    const hasLoadedInitiallyRef = useRef(false);
 
     function stateReducer(
       state: UseComboboxState<any>,
@@ -288,6 +290,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         onLoad?.(inputValue);
       }
       if (alwaysRenderSuggestions) {
+        hasLoadedInitiallyRef.current = true;
         onSuggestionsFetchRequested(inputValue ?? '');
       } else if (inputValue) {
         onSuggestionsFetchRequested(inputValue);
@@ -310,6 +313,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     }, [highlightedIndex, flattenedSuggestions, onSuggestionHighlighted]);
 
     const onClickOrKeydown = () => {
+      hasInteractedRef.current = true;
       if (shouldRenderSuggestions) {
         shouldRenderSuggestions(inputValue);
         openMenu();
@@ -392,7 +396,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     // renderSections function to render multi-section suggestions
     const renderSections = (sections: any[]) =>
       sections.map((section, index) => (
-        <section key={section.title}>
+        <section key={section.title} className={theme.sectionContainer}>
           <div className={theme.sectionTitle}>
             {renderSectionTitle?.(section)}
           </div>
@@ -402,7 +406,11 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       ));
 
     const showSuggestions =
-      (alwaysRenderSuggestions || isOpen) && suggestions.length > 0;
+      suggestions.length > 0 &&
+      ((alwaysRenderSuggestions &&
+        hasLoadedInitiallyRef.current &&
+        !hasInteractedRef.current) ||
+        isOpen);
 
     const renderList = () =>
       multiSection

@@ -80,7 +80,7 @@ export const HighlightFistSuggestion = () => (
 // --- Multi-section example ---
 
 const renderSectionTitle = (section: { title: string }): ReactElement => (
-  <div>{section.title}</div>
+  <div style={{ padding: '16px 16px 0 16px' }}>{section.title}</div>
 );
 
 const getSectionSuggestions = (section: { suggestions: any[] }): any[] =>
