@@ -31,6 +31,7 @@ import {
   NoPaddingExample,
   WithAccessoryViewExample,
   ContrastExample,
+  ContrastWithCloseButtonTextExample,
 } from './examples';
 
 export default {
@@ -58,6 +59,7 @@ export const NoPadding = NoPaddingExample;
 
 export const WithAccessoryView = WithAccessoryViewExample;
 export const Contrast = ContrastExample;
+export const ContrastWithCloseButtonText = ContrastWithCloseButtonTextExample;
 
 // Due to how iframes work we can pass a local url to load the stories above.
 // Attempted to use a Custom Iframe component with a react portal and ref to
