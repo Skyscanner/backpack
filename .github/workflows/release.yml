@@ -16,7 +16,7 @@ jobs:
   Create-NPM-Cache:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: actions/setup-node@v4
         with:
@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [Create-NPM-Cache]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: actions/setup-node@v4
         with:
@@ -85,7 +85,7 @@ jobs:
     needs: [Create-NPM-Cache, Build]
     steps:
     - name: Checkout source code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         ref: main
 
