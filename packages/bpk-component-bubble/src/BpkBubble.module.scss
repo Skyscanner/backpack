@@ -1,0 +1,48 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/borders';
+@use '../../unstable__bpk-mixins/typography';
+
+.bpk-bubble {
+  position: relative;
+  display: inline-flex;
+  width: auto;
+  height: tokens.$bpk-line-height-base-tight;
+  padding: 0 tokens.bpk-spacing-md();
+  flex-direction: column;
+  justify-content: center;
+  border-radius: tokens.$bpk-border-radius-xs;
+  background-color: tokens.$bpk-status-danger-spot-day;
+  font-family: tokens.$bpk-font-family-larken;
+  text-align: center;
+  white-space: nowrap;
+
+  @include typography.bpk-text--xs;
+
+  &__arrow {
+    position: absolute;
+
+    // The -5px value aligns the arrow visually with the bubble. No suitable design token exists for this negative offset.
+    bottom: -5px; // stylelint-disable-line
+    left: 50%;
+    transform: translateX(-50%);
+    color: tokens.$bpk-status-danger-spot-day;
+  }
+}
