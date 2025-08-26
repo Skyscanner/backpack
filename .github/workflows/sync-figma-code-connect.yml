@@ -4,12 +4,30 @@ on:
       - packages/**/*.figma.tsx
     branches:
       - main
+  pull_request:
+    branches: [main]
 
 jobs:
   code-connect:
     name: Code Connect
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Restore Cache
+        uses: actions/cache/restore@v4.2.4
+        id: npm-cache
+        with:
+          path: |
+            node_modules/
+            packages/node_modules/
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+
       - run: npx figma connect publish
         env:
           FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_TOKEN }}

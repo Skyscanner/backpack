@@ -17,22 +17,6 @@ env:
   BUILD_CACHE_NAME: build-cache
 
 jobs:
-  code-connect:
-    name: Code Connect
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: ".nvmrc"
-          registry-url: 'https://registry.npmjs.org'
-      - name: Install dependencies
-        run: npm install -D @figma/code-connect
-
-      - run: npx figma connect publish
-        env:
-          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_TOKEN }}
   Create-NPM-Cache:
     runs-on: ubuntu-latest
     steps:
