@@ -80,7 +80,21 @@ export default () => (
 );
 ```
 
-For certain langauges/characters that are not supported by Larken, the fonts will use the Noto Sans/Serif fonts defined [here](https://www.skyscanner.design/latest/foundations/product-typography/fallback-fonts-Fx8gulTr)
+### Color Prop
+
+The `color` prop allows you to set the text color directly rather override by  `className`. It uses predefined `TEXT_COLORS` tokens to ensure ux consistency with the design system.
+
+```javascript
+import BpkText, { TEXT_COLORS } from '@skyscanner/backpack-web/bpk-component-text';
+
+export default () => (
+  <BpkText color={TEXT_COLORS.textSecondary}>
+    Text with token textSecondary
+  </BpkText>
+);
+```
+
+
 
 ## Props
 

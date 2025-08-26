@@ -43,7 +43,6 @@ export function useIntersectionObserver(
 ) {
   const callbackRef = useRef(onIntersecting);
 
-
   useEffect(() => {
     callbackRef.current = onIntersecting;
   });

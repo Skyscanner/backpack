@@ -76,6 +76,7 @@
 }
 
 .bpk-graphic-promo {
+  display: block;
   max-width: 76.5rem;
   margin-right: auto;
   margin-left: auto;
@@ -83,6 +84,7 @@
   background-position: center;
   background-size: cover;
   color: tokens.$bpk-text-on-dark-day;
+  text-decoration: none;
   box-shadow: none;
 
   @include breakpoints.bpk-breakpoint-small-tablet {

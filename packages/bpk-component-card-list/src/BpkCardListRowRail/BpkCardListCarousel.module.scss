@@ -1,0 +1,92 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../unstable__bpk-mixins/tokens';
+@use '../../../unstable__bpk-mixins/breakpoints';
+@use '../../../unstable__bpk-mixins/utils';
+
+.bpk-card-list-row-rail {
+  &__row,
+  &__rail {
+    display: flex;
+    padding-top: tokens.bpk-spacing-sm();
+    padding-bottom: tokens.bpk-spacing-lg();
+    overflow-x: hidden;
+    box-sizing: border-box;
+    gap: tokens.bpk-spacing-sm();
+    scroll-snap-stop: always;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    @include breakpoints.bpk-breakpoint-mobile {
+      padding-bottom: tokens.bpk-spacing-base();
+      overflow-x: scroll;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &__card {
+      position: relative;
+      padding: 0 tokens.bpk-spacing-md();
+      flex: 0 0
+        calc(
+          (
+              100% -
+                (
+                  tokens.bpk-spacing-md() *
+                    (var(--initially-shown-cards, 3) - 1)
+                )
+            ) /
+            var(--initially-shown-cards, 3)
+        );
+      overflow: visible;
+      box-sizing: border-box;
+      scroll-snap-align: start;
+
+      @include breakpoints.bpk-breakpoint-mobile {
+        // On mobile, if there is more than one card in the viewport, the last card only shows partially, so subtract 0.8 when do the calculation
+        flex: 0 0
+          calc(
+            (
+                100% -
+                  (
+                    tokens.bpk-spacing-md() *
+                      (var(--initially-shown-cards, 3) - 1)
+                  )
+              ) /
+              max(1, (var(--initially-shown-cards, 3) - 0.8))
+          );
+
+        &:first-child {
+          padding-left: tokens.bpk-spacing-sm();
+
+          @include utils.bpk-rtl {
+            padding-right: tokens.bpk-spacing-sm();
+            padding-left: tokens.bpk-spacing-md();
+          }
+        }
+      }
+    }
+  }
+
+  &__rail {
+    -webkit-overflow-scrolling: touch;
+  }
+}

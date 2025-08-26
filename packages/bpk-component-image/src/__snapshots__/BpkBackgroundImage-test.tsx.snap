@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkBackgroundImage should accept userland className 1`] = `
 <DocumentFragment>
@@ -12,7 +12,7 @@ exports[`BpkBackgroundImage should accept userland className 1`] = `
     >
       <div
         class="bpk-background-image__img bpk-background-image__img--shown"
-        style="background-image: url(./path/to/image.jpg);"
+        style="background-image: url("./path/to/image.jpg");"
       />
       <div
         class="bpk-background-image__content"
@@ -138,7 +138,7 @@ exports[`BpkBackgroundImage should render correctly 1`] = `
     >
       <div
         class="bpk-background-image__img bpk-background-image__img--shown"
-        style="background-image: url(./path/to/image.jpg);"
+        style="background-image: url("./path/to/image.jpg");"
       />
       <div
         class="bpk-background-image__content"

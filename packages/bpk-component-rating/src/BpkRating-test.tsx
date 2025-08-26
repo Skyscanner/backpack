@@ -16,25 +16,28 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import BpkRating, { RATING_SIZES, RATING_SCALES } from '../index';
 
 describe('BpkRating', () => {
+
   it('should render correctly', () => {
-    const { asFragment } = render(
+    render(
       <BpkRating
         ariaLabel="4.6 Excellent 672 reviews"
         value={4.6}
         title="Excellent"
-        subtitle="672 reviews"
-      />,
+        subtitle="672 reviews" />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Excellent')).toBeVisible()
+    expect(screen.getByText('672 reviews')).toBeVisible()
+    expect(screen.getByLabelText('4.6 Excellent 672 reviews')).toBeInTheDocument();
   });
 
   it('should render large size correctly', () => {
-    const { asFragment } = render(
+     render(
       <BpkRating
         ariaLabel="4.6 Excellent 2,420 reviews"
         value={4.6}
@@ -43,11 +46,13 @@ describe('BpkRating', () => {
         size={RATING_SIZES.large}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByLabelText('4.6 Excellent 2,420 reviews')).toHaveClass('bpk-rating bpk-rating--large');
+    expect(screen.getByText('Excellent')).toHaveClass('bpk-text bpk-text--heading-5');
   });
 
   it('should render showScale rating correctly', () => {
-    const { asFragment } = render(
+    render(
       <BpkRating
         ariaLabel="6.7 Average might recommend"
         title="Average"
@@ -55,11 +60,14 @@ describe('BpkRating', () => {
         value={6.7}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByLabelText('6.7 Average might recommend')).toHaveClass('bpk-rating');
+    expect(screen.getByText('/5')).toHaveClass('bpk-rating__scale');
+
   });
 
   it('should not show scale with showScale=false correctly', () => {
-    const { asFragment } = render(
+    render(
       <BpkRating
         ariaLabel="4.9 Awesome It is a fantanstic place"
         title="Awesome"
@@ -68,22 +76,26 @@ describe('BpkRating', () => {
         showScale={false}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+     expect(screen.queryByText('4.9')).not.toHaveClass('bpk-rating__scale');
   });
 
   it('should render title only correctly', () => {
-    const { asFragment } = render(
+    render(
       <BpkRating
         ariaLabel="6.7 Average might recommend"
         title="Average"
         value={6.7}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Average')).toBeVisible();
+    expect(document.querySelector('.bpk-rating__title--with-subtitle')).not.toBeInTheDocument();
+
   });
 
   it('should render large title only correctly', () => {
-    const { asFragment } = render(
+    render(
       <BpkRating
         ariaLabel="6.7 Average might recommend"
         title="Average"
@@ -91,11 +103,13 @@ describe('BpkRating', () => {
         size={RATING_SIZES.large}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Average')).toHaveClass('bpk-text--heading-5');
+    expect(screen.getByLabelText('6.7 Average might recommend')).toHaveClass('bpk-rating');
   });
 
   it('should render zero to ten scale rating correctly', () => {
-    const { asFragment } = render(
+    render(
       <BpkRating
         ariaLabel="8.2 Excellent 2,420 reviews"
         value={8.2}
@@ -104,11 +118,15 @@ describe('BpkRating', () => {
         ratingScale={RATING_SCALES.zeroToTen}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Excellent')).toBeVisible();
+    expect(screen.getByText('2,420 reviews')).toBeVisible();
+    expect(screen.getByLabelText('8.2 Excellent 2,420 reviews')).toBeInTheDocument();
+    expect(screen.getByText('8.2')).toHaveClass('bpk-text--label-1');
   });
 
   it('should correctly handling values lower than 0', () => {
-    const { asFragment } = render(
+    render(
       <BpkRating
         ariaLabel="-1.3 Low bad option"
         title="Low"
@@ -117,11 +135,15 @@ describe('BpkRating', () => {
         className="custom-classname"
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Low')).toBeVisible();
+    expect(screen.getByText('Bad option')).toBeVisible();
+    expect(screen.getByLabelText('-1.3 Low bad option')).toBeInTheDocument();
+    expect(screen.getByText('/5')).toHaveClass('bpk-rating__scale');
   });
 
   it('should correctly handling values higher than 5 when rating scale is zero to five', () => {
-    const { asFragment } = render(
+    render(
       <BpkRating
         ariaLabel="10 Super, smashing, great"
         title="Smashing"
@@ -130,11 +152,15 @@ describe('BpkRating', () => {
         ratingScale={RATING_SCALES.zeroToFive}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Smashing')).toBeVisible();
+    expect(screen.getByText('Doubleplusgood')).toBeVisible();
+    expect(screen.getByLabelText('10 Super, smashing, great')).toBeInTheDocument();
+    expect(screen.getByText('/5')).toHaveClass('bpk-rating__scale');
   });
 
   it('should correctly handling values higher than 10 when rating scale is zero to ten', () => {
-    const { asFragment } = render(
+    render(
       <BpkRating
         ariaLabel="15 Amazing brilliant"
         title="Amazing"
@@ -144,11 +170,15 @@ describe('BpkRating', () => {
         ratingScale={RATING_SCALES.zeroToTen}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Amazing')).toBeVisible();
+    expect(screen.getByText('Brilliant')).toBeVisible();
+    expect(screen.getByLabelText('15 Amazing brilliant')).toBeInTheDocument();
+    expect(screen.getByText('/10')).toHaveClass('bpk-rating__scale');
   });
 
   it('should correctly when value is string type', () => {
-    const { asFragment } = render(
+    render(
       <BpkRating
         ariaLabel="4,6 Wonderful Wise choice"
         title="Wonderful"
@@ -156,6 +186,10 @@ describe('BpkRating', () => {
         value="4,6"
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByText('Wonderful')).toBeVisible();
+    expect(screen.getByText('Wise choice')).toBeVisible();
+    expect(screen.getByLabelText('4,6 Wonderful Wise choice')).toBeInTheDocument();
+    expect(screen.getByText('4,6')).toHaveClass('bpk-text--label-1');
   });
 });

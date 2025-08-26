@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkScrollableCalendar should render correctly 1`] = `
 <DocumentFragment>
@@ -77,7 +77,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
         style="overflow: visible; height: 0px; width: 0px;"
       >
         <div
-          style="position: relative; height: 350px; width: 910px; overflow: auto; will-change: transform; direction: ltr;"
+          style="position: relative; height: 350px; width: 910px; overflow: auto; -webkit-overflow-scrolling: touch; will-change: transform; direction: ltr;"
         >
           <div
             style="height: 4506px; width: 100%;"
@@ -1436,7 +1436,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
         style="overflow: visible; height: 0px; width: 0px;"
       >
         <div
-          style="position: relative; height: 350px; width: 910px; overflow: auto; will-change: transform; direction: ltr;"
+          style="position: relative; height: 350px; width: 910px; overflow: auto; -webkit-overflow-scrolling: touch; will-change: transform; direction: ltr;"
         >
           <div
             style="height: 4506px; width: 100%;"
@@ -2795,7 +2795,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
         style="overflow: visible; height: 0px; width: 0px;"
       >
         <div
-          style="position: relative; height: 350px; width: 910px; overflow: auto; will-change: transform; direction: ltr;"
+          style="position: relative; height: 350px; width: 910px; overflow: auto; -webkit-overflow-scrolling: touch; will-change: transform; direction: ltr;"
         >
           <div
             style="height: 4506px; width: 100%;"
@@ -4154,7 +4154,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
         style="overflow: visible; height: 0px; width: 0px;"
       >
         <div
-          style="position: relative; height: 350px; width: 910px; overflow: auto; will-change: transform; direction: ltr;"
+          style="position: relative; height: 350px; width: 910px; overflow: auto; -webkit-overflow-scrolling: touch; will-change: transform; direction: ltr;"
         >
           <div
             style="height: 4506px; width: 100%;"

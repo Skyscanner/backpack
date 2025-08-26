@@ -1,0 +1,46 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import BpkInsetBannerSponsored from '../../packages/bpk-component-inset-banner/src/BpkInsetBannerV2/BpkInsetBannerSponsored';
+
+import {
+  WithCtaTextAndBottomSheetExampleV2Light,
+  WithCustomBottomSheetWidthAndMarginsExampleV2Light,
+  WithImageAndBottomSheetExampleV2Dark,
+  WithCtaTextAndBottomSheetExampleV2Dark,
+  WithImageAndBottomSheetExampleV2Light,
+  WithSingleBottomSheetItemExampleV2Light,
+} from './examples';
+
+export default {
+  title: 'bpk-component-inset-banner-v2',
+  component: BpkInsetBannerSponsored,
+};
+
+export const SponsoredBannerWithCtaTextAndPopoverLight =
+  WithCtaTextAndBottomSheetExampleV2Light;
+export const SponsoredBannerWithCtaTextAndPopoverDark =
+  WithCtaTextAndBottomSheetExampleV2Dark;
+export const SponsoredBannerWithImageAndBottomSheetDark =
+  WithImageAndBottomSheetExampleV2Dark;
+export const SponsoredBannerWithImageAndBottomSheetLight =
+  WithImageAndBottomSheetExampleV2Light;
+export const SponsoredBannerWithCustomPopoverWidthAndMargins =
+  WithCustomBottomSheetWidthAndMarginsExampleV2Light;
+export const SponsoredBannerWithSingleBottomSheetItem =
+  WithSingleBottomSheetItemExampleV2Light;

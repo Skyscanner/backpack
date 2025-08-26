@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkDatepicker "readOnly" can be overriden in "inputProps" 1`] = `
 <DocumentFragment>
@@ -8,6 +8,7 @@ exports[`BpkDatepicker "readOnly" can be overriden in "inputProps" 1`] = `
       aria-invalid="false"
       aria-label="Monday, 15th February 2010"
       aria-live="polite"
+      aria-readonly="false"
       class="bpk-input bpk-input--large"
       data-openable="true"
       id="myDatepicker"
@@ -28,11 +29,13 @@ exports[`BpkDatepicker should render correctly 1`] = `
       aria-invalid="false"
       aria-label="Monday, 15th February 2010"
       aria-live="polite"
+      aria-readonly="false"
       class="bpk-input bpk-input--large"
       data-openable="true"
       id="myDatepicker"
       name="myDatepicker_input"
       placeholder="placeholder"
+      readonly=""
       type="text"
       value="15/02/2010"
     />
@@ -48,11 +51,13 @@ exports[`BpkDatepicker should render correctly when not valid 1`] = `
       aria-invalid="true"
       aria-label="Monday, 15th February 2010"
       aria-live="polite"
+      aria-readonly="false"
       class="bpk-input bpk-input--invalid bpk-input--large"
       data-openable="true"
       id="myDatepicker"
       name="myDatepicker_input"
       placeholder="placeholder"
+      readonly=""
       type="text"
       value="15/02/2010"
     />
@@ -68,11 +73,13 @@ exports[`BpkDatepicker should render range correctly 1`] = `
       aria-invalid="false"
       aria-label="Monday, 15th February 2010 - Saturday, 20th February 2010"
       aria-live="polite"
+      aria-readonly="false"
       class="bpk-input bpk-input--large"
       data-openable="true"
       id="myDatepicker"
       name="myDatepicker_input"
       placeholder="placeholder"
+      readonly=""
       type="text"
       value="15/02/2010 - 20/02/2010"
     />
