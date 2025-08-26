@@ -1,0 +1,16 @@
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - packages/**/*.figma.tsx
+    branches:
+      - main
+
+jobs:
+  code-connect:
+    name: Code Connect
+    runs-on: ubuntu-latest
+    steps:
+      - run: npx figma connect publish
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_TOKEN }}
