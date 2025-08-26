@@ -463,6 +463,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         return renderInputComponent({
           ref: inputRef,
           enterKeyHint,
+          value,
           ...finalInputProps,
         });
       }
