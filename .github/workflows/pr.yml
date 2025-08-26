@@ -12,11 +12,18 @@ defaults:
   run:
     shell: bash -l {0}
 
-env: 
+env:
   CACHE_NAME: node-modules-cache
   BUILD_CACHE_NAME: build-cache
 
 jobs:
+  code-connect:
+    name: Code Connect
+    runs-on: ubuntu-latest
+    steps:
+      - run: npx figma connect publish
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_TOKEN }}
   Create-NPM-Cache:
     runs-on: ubuntu-latest
     steps:
@@ -59,7 +66,7 @@ jobs:
             node_modules/
             packages/node_modules/
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
-      
+
       - name: Upload dist-storybook to Cache
         uses: actions/cache@v4.2.4
         id: storybook-dist-cache
