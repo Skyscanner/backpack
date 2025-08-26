@@ -21,7 +21,7 @@ figma.connect(
         "Warning": BADGE_TYPES.warning,
         "Critical": BADGE_TYPES.critical,
         "Inverse": BADGE_TYPES.inverse,
-        "Outline": BADGE_TYPES.outline,
+        "Outline": BADGE_TYPES.outline,1
         "Brand": BADGE_TYPES.brand,
         "Strong": BADGE_TYPES.strong
       }),
