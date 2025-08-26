@@ -418,17 +418,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
     // Render the input component
     const renderInput = () => {
-      const inputRef: React.Ref<HTMLInputElement> = (node) => {
-        refs.setReference(node);
 
-        if (typeof forwardedRef === 'function') {
-          forwardedRef(node);
-        } else if (forwardedRef) {
-          const mutable =
-            forwardedRef as React.MutableRefObject<HTMLInputElement | null>;
-          mutable.current = node;
-        }
-      };
       const inputAriaLabel = inputValue || inputProps.placeholder;
 
       const {
@@ -441,12 +431,12 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       } = inputProps;
 
       const {
-        ref: _ignoredRef,
+        ref: downshiftInputRef,
         value,
         ...finalInputProps
       } = getInputProps({
-        ref: inputRef,
         onKeyDown,
+        ref: forwardedRef,
         onClick: onClickOrKeydown,
         'aria-describedby': ariaDescribedByLabelId,
         'aria-label': inputAriaLabel,
@@ -454,13 +444,30 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         ...restInputProps,
       });
 
+      const setInputRef = (node: HTMLInputElement | null) => {
+        refs.setReference(node);
+
+        // convert input ref from Downshift
+        if (typeof downshiftInputRef === 'function') {
+          downshiftInputRef(node);
+        } else if (
+          downshiftInputRef &&
+          typeof downshiftInputRef === 'object' &&
+          'current' in downshiftInputRef
+        ) {
+          (
+            downshiftInputRef as React.MutableRefObject<HTMLInputElement | null>
+          ).current = node;
+        }
+      };
+
       const normalizedInputValue = Array.isArray(value)
         ? (value.join(', ') as string | number)
         : ((value ?? '') as string | number);
 
       if (renderInputComponent) {
         return renderInputComponent({
-          ref: inputRef,
+          ref: setInputRef,
           enterKeyHint,
           value,
           ...finalInputProps,
@@ -483,7 +490,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
             <div className={getClassName(theme.inputWrapper)}>
               <BpkInput
                 value={normalizedInputValue}
-                inputRef={inputRef}
+                inputRef={setInputRef}
                 clearButtonMode={showClear ? 'whileEditing' : 'never'}
                 clearButtonLabel={ariaLabels?.clearButton || 'Clear input'}
                 onClear={clearSuggestions}
