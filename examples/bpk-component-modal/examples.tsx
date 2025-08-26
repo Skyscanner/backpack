@@ -143,7 +143,7 @@ const ModalContainer = (props: ContainerProps) => {
 };
 
 const DefaultExample = (isOpen: boolean) => (
-  <ModalContainer title="Modal title" closeLabel="Close modal" isOpen={isOpen} >
+  <ModalContainer title="Modal title" closeLabel="Close modal" isOpen={isOpen}>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
@@ -160,7 +160,12 @@ const ContrastExample = (isOpen: boolean) => (
 );
 
 const WideExample = (isOpen: boolean) => (
-  <ModalContainer title="Modal title" closeLabel="Close modal" isOpen={isOpen} wide>
+  <ModalContainer
+    title="Modal title"
+    closeLabel="Close modal"
+    isOpen={isOpen}
+    wide
+  >
     This is a wide modal.
   </ModalContainer>
 );
@@ -174,6 +179,17 @@ const OverflowingExample = (isOpen: boolean) => (
 const CloseButtonTextExample = (isOpen: boolean) => (
   <ModalContainer title="Modal title" closeText="Done" isOpen={isOpen}>
     This is a default modal. You can put anything you want in here.
+  </ModalContainer>
+);
+
+const ContrastWithCloseButtonTextExample = (isOpen: boolean) => (
+  <ModalContainer
+    title="Modal title"
+    modalStyle={MODAL_STYLING.surfaceContrast}
+    isOpen={isOpen}
+    closeText="Done"
+  >
+    This is a contrast modal. You can put anything you want in here.
   </ModalContainer>
 );
 
@@ -199,19 +215,34 @@ const NotFullScreenOnMobileExample = (isOpen: boolean) => (
 );
 
 const FullScreenExample = (isOpen: boolean) => (
-  <ModalContainer title="Modal title" closeLabel="Close modal" fullScreen isOpen={isOpen}>
+  <ModalContainer
+    title="Modal title"
+    closeLabel="Close modal"
+    fullScreen
+    isOpen={isOpen}
+  >
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
 const FullScreenOverflowingExample = (isOpen: boolean) => (
-  <ModalContainer title="Modal title" closeLabel="Close modal" fullScreen isOpen={isOpen}>
+  <ModalContainer
+    title="Modal title"
+    closeLabel="Close modal"
+    fullScreen
+    isOpen={isOpen}
+  >
     {Children.toArray(content)}
   </ModalContainer>
 );
 
 const NestedExample = (isOpen: boolean) => (
-  <ModalContainer title="Modal title" closeLabel="Close modal" fullScreen isOpen={isOpen}>
+  <ModalContainer
+    title="Modal title"
+    closeLabel="Close modal"
+    fullScreen
+    isOpen={isOpen}
+  >
     This is a full-screen modal. You can put anything you want in here,
     including other modals!
     <ModalContainer
@@ -229,17 +260,18 @@ const NestedExample = (isOpen: boolean) => (
 );
 
 const NoHeaderExample = (isOpen: boolean) => (
-  <ModalContainer
-    ariaLabel="Modal title"
-    showHeader={false}
-    isOpen={isOpen}
-  >
+  <ModalContainer ariaLabel="Modal title" showHeader={false} isOpen={isOpen}>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
 const NoPaddingExample = (isOpen: boolean) => (
-  <ModalContainer title="Modal title" closeLabel="Close modal" padded={false} isOpen={isOpen}>
+  <ModalContainer
+    title="Modal title"
+    closeLabel="Close modal"
+    padded={false}
+    isOpen={isOpen}
+  >
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
@@ -251,7 +283,7 @@ const WithAccessoryViewExample = (isOpen: boolean) => (
     accessoryView={
       <BpkNavigationBarButtonLink
         label="Close"
-        onClick={() => { }}
+        onClick={() => {}}
         className={getClassName('bpk-modal__leading-button')}
       >
         <div>
@@ -282,4 +314,5 @@ export {
   NoPaddingExample,
   WithAccessoryViewExample,
   ContrastExample,
+  ContrastWithCloseButtonTextExample,
 };
