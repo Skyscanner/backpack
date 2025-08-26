@@ -12,7 +12,7 @@ defaults:
   run:
     shell: bash -l {0}
 
-env: 
+env:
   CACHE_NAME: node-modules-cache
   BUILD_CACHE_NAME: build-cache
 
@@ -59,7 +59,7 @@ jobs:
             node_modules/
             packages/node_modules/
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
-      
+
       - name: Upload dist-storybook to Cache
         uses: actions/cache@v4.2.4
         id: storybook-dist-cache
