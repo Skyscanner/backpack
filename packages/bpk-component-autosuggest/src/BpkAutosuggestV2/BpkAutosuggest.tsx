@@ -57,7 +57,6 @@ export type BpkAutoSuggestTheme = {
   suggestionHighlighted?: string;
   sectionContainer?: string;
   sectionTitle?: string;
-  // add extra theme from fsc
   desktopSuggestionsContainer?: string;
   desktopSuggestionsList?: string;
   inputTextWrapper?: string;
@@ -133,7 +132,7 @@ const defaultTheme = {
   ),
   sectionContainer: getClassName('bpk-autosuggest__section-container'),
   sectionTitle: getClassName('bpk-autosuggest__section-title'),
-  input: getClassName('bpk-autosuggest__suggestions-container-input'),
+  input: getClassName('bpk-autosuggest__input'),
   visuallyHidden: getClassName('bpk-autosuggest__visuallyhidden'),
 };
 
@@ -517,7 +516,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
                 className={getClassName(
                   theme.suggestionsContainer,
                   isDesktop && theme.desktopSuggestionsContainer,
-                  multiSection && theme.sectionContainer,
                   showSuggestions && theme.suggestionsContainerOpen,
                 )}
               >
@@ -548,7 +546,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
             <div
               className={getClassName(
                 theme.suggestionsContainer,
-                multiSection && theme.sectionContainer,
                 showSuggestions && theme.suggestionsContainerOpen,
               )}
             >
