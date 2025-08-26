@@ -19,14 +19,8 @@ jobs:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Restore Cache
-        uses: actions/cache/restore@v4.2.4
-        id: npm-cache
-        with:
-          path: |
-            node_modules/
-            packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+      - name: Install dependencies
+        run: npm install -D @figma/code-connect
 
       - run: npx figma connect publish
         env:
