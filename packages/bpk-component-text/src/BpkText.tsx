@@ -18,8 +18,6 @@
 
 import type { ReactNode } from 'react';
 
-import type { textColors } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkText.module.scss';
@@ -60,7 +58,21 @@ export const TEXT_STYLES = {
   editorial3: 'editorial-3',
 } as const;
 
-export type TextColor = (typeof textColors)[keyof typeof textColors];
+export const TEXT_COLORS = {
+  textDisabled: 'text-disabled',
+  textDisabledOnDark: 'text-disabled-on-dark',
+  textError: 'text-error',
+  textHero: 'text-hero',
+  textLink: 'text-link',
+  textOnDark: 'text-on-dark',
+  textOnLight: 'text-on-light',
+  textPrimary: 'text-primary',
+  textPrimaryInverse: 'text-primary-inverse',
+  textSecondary: 'text-secondary',
+  textSuccess: 'text-success',
+} as const;
+
+export type TextColor = (typeof TEXT_COLORS)[keyof typeof TEXT_COLORS];
 export type TextStyle = (typeof TEXT_STYLES)[keyof typeof TEXT_STYLES];
 export type Tag =
   | 'span'
@@ -78,11 +90,6 @@ type Props = {
   textStyle?: TextStyle;
   tagName?: Tag;
   className?: string | null;
-  /**
-   * The `color` prop allows you to set the text color directly, bypassing any styles applied via `className`.
-   * It uses predefined `textColors` tokens to ensure consistency with the design system.
-   * This prop is currently optional but will become mandatory in the future.
-   */
   color?: TextColor | null;
   id?: string;
   [rest: string]: any;
@@ -99,16 +106,14 @@ const BpkText = ({
   const classNames = getClassName(
     'bpk-text',
     `bpk-text--${textStyle}`,
+    color ? `bpk-text--${color}` : '',
     className,
   );
-
-  const { style, ...otherProps } = rest;
-  const computedStyles = { ...style, ...(color ? { color } : {}) };
 
   return (
     // Allowed, TagName is always a dom element.
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <TagName className={classNames} style={computedStyles} {...otherProps}>
+    <TagName className={classNames} {...rest}>
       {children}
     </TagName>
   );

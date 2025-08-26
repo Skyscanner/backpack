@@ -154,7 +154,7 @@ const BpkModalInner = ({
                 closeText ? (
                   <BpkButtonLink
                     onClick={onClose}
-                    onDark={modalStyle === MODAL_STYLING.surfaceContrast}
+                    alternate={modalStyle === MODAL_STYLING.surfaceContrast}
                   >
                     {closeText}
                   </BpkButtonLink>

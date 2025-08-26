@@ -16,7 +16,22 @@
  * limitations under the License.
  */
 
-import component, { TEXT_COLORS, TEXT_STYLES } from './src/BpkText';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
-export default component;
-export { TEXT_COLORS, TEXT_STYLES };
+.bpk-content {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    position: relative;
+    display: inline-block;
+
+    &__bubble-wrapper {
+      position: absolute;
+      top: -1rem;
+      right: tokens.$bpk-one-pixel-rem * -3; // align the arrow to the tab’s right edge
+      display: block;
+      transform: translateX(50%); // shift bubble outward as it grows
+    }
+  }
+}

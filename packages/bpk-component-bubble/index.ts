@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-import component, { TEXT_COLORS, TEXT_STYLES } from './src/BpkText';
+import BpkBubble, {
+  type Props as BpkBubbleProps
+} from './src/BpkBubble';
 
-export default component;
-export { TEXT_COLORS, TEXT_STYLES };
+export type { BpkBubbleProps };
+export default BpkBubble;

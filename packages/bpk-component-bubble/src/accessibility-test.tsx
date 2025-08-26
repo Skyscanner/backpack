@@ -16,7 +16,19 @@
  * limitations under the License.
  */
 
-import component, { TEXT_COLORS, TEXT_STYLES } from './src/BpkText';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-export default component;
-export { TEXT_COLORS, TEXT_STYLES };
+import BpkBubble from './BpkBubble';
+
+describe('BpkBubble accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkBubble>
+        New
+      </BpkBubble>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});

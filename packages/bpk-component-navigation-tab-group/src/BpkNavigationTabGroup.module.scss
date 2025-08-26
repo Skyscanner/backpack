@@ -18,6 +18,7 @@
 
 @use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/borders';
+@use '../../unstable__bpk-mixins/utils';
 
 @mixin tab-link {
   display: flex;
@@ -29,11 +30,34 @@
 .bpk-navigation-tab-group {
   display: flex;
 
+  .bpk-navigation-tab-content-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bpk-navigation-tab-bubble-wrapper {
+    position: absolute;
+    top: -0.625rem;
+    right: tokens.$bpk-one-pixel-rem * 4; // align the arrow to the tab’s right edge
+    display: block; // Prevents inline shrink
+    max-width: tokens.bpk-spacing-xxxl();
+    transform: translateX(50%); // shift bubble outward as it grows
+
+    @include utils.bpk-rtl {
+      right: auto;
+      left: tokens.$bpk-one-pixel-rem * 4;
+      transform: translateX(-50%);
+    }
+  }
+
   .bpk-navigation-tab-list {
     display: flex;
   }
 
   .bpk-navigation-tab-wrap {
+    position: relative;
     height: tokens.$bpk-one-pixel-rem * 36;
     padding: 0 tokens.bpk-spacing-base();
     border: none;

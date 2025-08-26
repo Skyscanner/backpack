@@ -16,7 +16,27 @@
  * limitations under the License.
  */
 
-import component, { TEXT_COLORS, TEXT_STYLES } from './src/BpkText';
 
-export default component;
-export { TEXT_COLORS, TEXT_STYLES };
+import BpkBubble from '../../packages/bpk-component-bubble/src/BpkBubble';
+
+import {
+  SimpleExample,
+  WithLongLabelExample,
+  VisualTestExample,
+} from './examples';
+
+export default {
+  title: 'bpk-component-bubble',
+  component: BpkBubble,
+};
+
+export const Default = SimpleExample;
+export const LongLabel = WithLongLabelExample;
+
+export const VisualTest = VisualTestExample;
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true
+  },
+};
