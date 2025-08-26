@@ -394,15 +394,18 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
     // renderSections function to render multi-section suggestions
     const renderSections = (sections: any[]) =>
-      sections.map((section, index) => (
-        <section key={section.title} className={theme.sectionContainer}>
-          <div className={theme.sectionTitle}>
-            {renderSectionTitle?.(section)}
-          </div>
-          {getSectionSuggestions?.(section) &&
-            renderSuggestions(getSectionSuggestions(section), index)}
-        </section>
-      ));
+      sections.map((section, index) => {
+        const sectionSuggestions = getSectionSuggestions?.(section);
+        return (
+          <section key={section.title}>
+            <div className={theme.sectionTitle}>
+              {renderSectionTitle?.(section)}
+            </div>
+            {Array.isArray(sectionSuggestions) && sectionSuggestions.length > 0 &&
+              renderSuggestions(sectionSuggestions, index)}
+          </section>
+        );
+      });
 
     const showSuggestions =
       suggestions.length > 0 &&
