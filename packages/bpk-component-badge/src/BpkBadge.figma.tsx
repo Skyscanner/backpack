@@ -1,6 +1,6 @@
-import React from "react"
-import BpkBadge, { BADGE_TYPES } from './BpkBadge';
 import figma from "@figma/code-connect"
+
+import BpkBadge, { BADGE_TYPES } from './BpkBadge';
 
 figma.connect(
   BpkBadge,
