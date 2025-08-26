@@ -1,5 +1,5 @@
 import React from "react"
-import BpkBadge from "./BpkBadge"
+import BpkBadge, { BADGE_TYPES, BadgeType } from './BpkBadge';
 import figma from "@figma/code-connect"
 
 /**
@@ -15,16 +15,15 @@ figma.connect(
   "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=37974%3A344",
   {
     props: {
-      // No matching props could be found for these Figma properties:
-      "style": figma.enum('Style', {
-        "Normal": "normal",
-        "Success": "success",
-        "Warning": "warning",
-        "Critical": "critical",
-        "Inverse": "inverse",
-        "Outline": "outline",
-        "Brand": "brand",
-        "Strong": "strong"
+      style: figma.enum('Style', {
+        "Normal": BADGE_TYPES.normal,
+        "Success": BADGE_TYPES.success,
+        "Warning": BADGE_TYPES.warning,
+        "Critical": BADGE_TYPES.critical,
+        "Inverse": BADGE_TYPES.inverse,
+        "Outline": BADGE_TYPES.outline,
+        "Brand": BADGE_TYPES.brand,
+        "Strong": BADGE_TYPES.strong
       }),
     },
     example: ({ style }) => <BpkBadge type={style}>My badge</BpkBadge>,
