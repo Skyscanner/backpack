@@ -16,12 +16,13 @@
  * limitations under the License.
  */
 
-import type { ReactElement } from 'react';
+import type { ReactElement,InputHTMLAttributes,LegacyRef } from 'react';
 
-import { Title, Markdown } from '@storybook/blocks';
 import { userEvent, within } from '@storybook/test';
 
 // @ts-ignore
+// BpkAutosuggestSuggestion is a Flow-based JS file without type declarations.
+// This will be removed once the file is migrated to TypeScript.
 import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
 import BpkAutosuggestV2 from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestV2/BpkAutosuggest';
 
@@ -35,22 +36,7 @@ export default {
   subcomponents: {
     BpkAutosuggestSuggestion,
   },
-  parameters: {
-    docs: {
-      page: () => (
-        <>
-          <Title />
-          <Markdown>
-            {`**BpkAutosuggest:**
-Please refer to react-autosuggest's documentation for a full list of [props](https://github.com/moroshko/react-autosuggest#props).
-
-**Note:** The \`inputProps\` object is passed directly to a [BpkInput](../bpk-component-input/README.md#props) component, so its prop types apply also.`}
-          </Markdown>
-        </>
-      ),
-    },
-  },
-} as const;
+}
 
 // --- Basic examples ---
 
@@ -99,8 +85,8 @@ export const WithSections = () => (
 
 // --- Other variations ---
 
-export const Hanzi = () => (
-  <AutosuggestExample includeSubheading includeTertiaryLabel hanzi />
+export const ChineseCharacter = () => (
+  <AutosuggestExample includeSubheading includeTertiaryLabel isChineseCharacter />
 );
 
 export const All = () => (
@@ -119,8 +105,8 @@ export const SmallInput = () => (
 );
 
 const renderCustomInput = (
-  inputProps: React.InputHTMLAttributes<HTMLInputElement> & {
-      ref?: React.LegacyRef<HTMLInputElement>;
+  inputProps: InputHTMLAttributes<HTMLInputElement> & {
+      ref?: LegacyRef<HTMLInputElement>;
     },
 ) => (
   <div

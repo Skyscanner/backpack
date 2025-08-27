@@ -483,13 +483,12 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
             <label aria-hidden {...getLabelProps()}>
               {renderBesideInput?.()}
             </label>
-            <BpkText
-              // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+            <span
               className={theme.visuallyHidden}
               id={ariaDescribedByLabelId}
             >
               {ariaLabels?.label && ariaLabels.label}
-            </BpkText>
+            </span>
             <div className={getClassName(theme.inputWrapper)}>
               <BpkInput
                 value={normalizedInputValue}

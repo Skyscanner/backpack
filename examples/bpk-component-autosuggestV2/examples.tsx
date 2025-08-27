@@ -15,13 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-/* @flow strict */
-
 import { Component } from 'react';
-import type { ReactElement } from 'react';
+import type { ReactElement,InputHTMLAttributes,LegacyRef } from 'react';
 
 // @ts-ignore
+// BpkAutosuggestSuggestion is a Flow-based JS file without type declarations.
+// This will be removed once the file is migrated to TypeScript.
 import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
 import BpkAutosuggestV2 from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestV2/BpkAutosuggest';
 import { withRtlSupport } from '../../packages/bpk-component-icon';
@@ -29,6 +28,8 @@ import FlightIcon from '../../packages/bpk-component-icon/lg/flight';
 
 const BpkFlightIcon = withRtlSupport(FlightIcon);
 
+// TODO: Reuse or extract a shared Suggestion type from BpkAutosuggestSuggestion
+// once it's migrated from Flow to TypeScript.
 type Suggestion = {
   name: string;
   code: string;
@@ -106,7 +107,7 @@ const offices: Suggestion[] = [
   },
 ];
 
-const dataHanzi: Suggestion[] = [
+const dataChineseCharacter: Suggestion[] = [
   {
     name: '深圳寶安國際 (Shenzhen)',
     code: 'SZX',
@@ -126,9 +127,9 @@ const sections: Section[] = [
   },
 ];
 
-const getSuggestions = (value: string, hanzi: boolean): Suggestion[] => {
+const getSuggestions = (value: string, isChineseCharacter: boolean): Suggestion[] => {
   const inputValue = value.trim().toLowerCase();
-  const data = hanzi ? dataHanzi : offices;
+  const data = isChineseCharacter ? dataChineseCharacter : offices;
 
   return inputValue.length === 0
     ? data
@@ -161,7 +162,7 @@ const getFilteredSections = (
 };
 
 type Props = {
-  hanzi: boolean;
+  isChineseCharacter: boolean;
   includeIcon: boolean;
   includeSubheading: boolean;
   includeTertiaryLabel: boolean;
@@ -169,8 +170,8 @@ type Props = {
   highlightFirstSuggestion: boolean;
   multiSection: boolean;
   renderInputComponent?: (
-    inputProps: React.InputHTMLAttributes<HTMLInputElement> & {
-      ref?: React.LegacyRef<HTMLInputElement>;
+    inputProps: InputHTMLAttributes<HTMLInputElement> & {
+      ref?: LegacyRef<HTMLInputElement>;
     },
   ) => ReactElement;
   renderSectionTitle: (section: Section) => ReactElement | null;
@@ -183,7 +184,7 @@ type State = {
 
 class AutosuggestExample extends Component<Props, State> {
   static defaultProps: Partial<Props> = {
-    hanzi: false,
+    isChineseCharacter: false,
     includeIcon: false,
     includeSubheading: false,
     includeTertiaryLabel: false,
@@ -206,7 +207,7 @@ class AutosuggestExample extends Component<Props, State> {
     this.setState({
       suggestions: this.props.multiSection
         ? getFilteredSections(value, sections)
-        : getSuggestions(value, this.props.hanzi),
+        : getSuggestions(value, this.props.isChineseCharacter),
     });
   };
 
@@ -266,17 +267,6 @@ class AutosuggestExample extends Component<Props, State> {
           />
         )}
         inputProps={inputProps}
-        onSuggestionHighlighted={({
-          suggestion,
-        }: {
-          suggestion?: Suggestion;
-        }) => {
-          if (suggestion) {
-            console.log('User highlighted:', suggestion.name);
-          } else {
-            console.log('No suggestion highlighted');
-          }
-        }}
       />
     );
   }
