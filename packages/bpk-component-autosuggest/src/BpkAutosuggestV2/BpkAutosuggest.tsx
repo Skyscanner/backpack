@@ -17,7 +17,15 @@
  */
 
 import { useEffect, forwardRef, useRef } from 'react';
-import type { KeyboardEvent, ReactElement, HTMLProps } from 'react';
+import type {
+  KeyboardEvent,
+  ReactElement,
+  HTMLProps,
+  MutableRefObject,
+  InputHTMLAttributes,
+  Ref,
+  SyntheticEvent,
+} from 'react';
 
 import {
   useFloating,
@@ -35,7 +43,6 @@ import { useCombobox } from 'downshift';
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkInput from '../../../bpk-component-input';
-import BpkText from '../../../bpk-component-text';
 import { cssModules } from '../../../bpk-react-utils';
 
 import type {
@@ -74,10 +81,9 @@ export type EnterKeyHintType =
   | 'search'
   | 'send';
 
-export type BpkInputRenderProps =
-  React.InputHTMLAttributes<HTMLInputElement> & {
-    ref?: React.Ref<HTMLInputElement>;
-  };
+export type BpkInputRenderProps = InputHTMLAttributes<HTMLInputElement> & {
+  ref?: Ref<HTMLInputElement>;
+};
 
 export type BpkAutoSuggestProps<T> = {
   suggestions: T[];
@@ -184,11 +190,24 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       actionAndChanges: UseComboboxStateChangeOptions<any>,
     ) {
       const { changes, type } = actionAndChanges;
+
+      const shouldForceKeepOpen =
+        alwaysRenderSuggestions &&
+        state.inputValue && state.inputValue.length > 0 &&
+        suggestions.length > 0 &&
+        changes.isOpen === false;
+
+      if (shouldForceKeepOpen) {
+        return {
+          ...changes,
+          isOpen: true,
+        };
+      }
       switch (type) {
         case useCombobox.stateChangeTypes.InputClick:
           return {
             ...changes,
-            isOpen: !isDesktop, // keep the menu closed when input gets focused.
+            isOpen: state.isOpen,
           };
         default: {
           const forceOpen = !isDesktop && !!changes.inputValue;
@@ -311,7 +330,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       onSuggestionHighlighted?.({ suggestion: currentSuggestion });
     }, [highlightedIndex, flattenedSuggestions, onSuggestionHighlighted]);
 
-    const onClickOrKeydown = () => {
+    const handleInputInteraction = () => {
       hasInteractedRef.current = true;
       if (shouldRenderSuggestions) {
         shouldRenderSuggestions(inputValue);
@@ -342,19 +361,19 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       }
 
       if (defaultValue) {
-        onClickOrKeydown();
+        handleInputInteraction();
       } else if (suggestions.length === 0) {
         onSuggestionSelected?.();
       }
     };
 
-    const handleSuggestionClick = (event: React.MouseEvent) => {
+    const handleSuggestionClick = () => {
       if (!focusInputOnSuggestionClick) {
         (document.activeElement as HTMLElement)?.blur?.();
       }
     };
 
-    const clearSuggestions = (e?: React.SyntheticEvent<HTMLButtonElement>) => {
+    const clearSuggestions = (e?: SyntheticEvent<HTMLButtonElement>) => {
       e?.stopPropagation();
       setInputValue('');
     };
@@ -397,11 +416,12 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       sections.map((section, index) => {
         const sectionSuggestions = getSectionSuggestions?.(section);
         return (
-          <section key={section.title}>
+          <section key={section.title} className={theme.sectionContainer}>
             <div className={theme.sectionTitle}>
               {renderSectionTitle?.(section)}
             </div>
-            {Array.isArray(sectionSuggestions) && sectionSuggestions.length > 0 &&
+            {Array.isArray(sectionSuggestions) &&
+              sectionSuggestions.length > 0 &&
               renderSuggestions(sectionSuggestions, index)}
           </section>
         );
@@ -440,7 +460,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       } = getInputProps({
         onKeyDown,
         ref: forwardedRef,
-        onClick: onClickOrKeydown,
+        onClick: handleInputInteraction,
+        onFocus: handleInputInteraction,
         'aria-describedby': ariaDescribedByLabelId,
         'aria-label': inputAriaLabel,
         className: inputClassName || theme.input,
@@ -459,7 +480,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           'current' in downshiftInputRef
         ) {
           (
-            downshiftInputRef as React.MutableRefObject<HTMLInputElement | null>
+            downshiftInputRef as MutableRefObject<HTMLInputElement | null>
           ).current = node;
         }
       };
@@ -483,10 +504,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
             <label aria-hidden {...getLabelProps()}>
               {renderBesideInput?.()}
             </label>
-            <span
-              className={theme.visuallyHidden}
-              id={ariaDescribedByLabelId}
-            >
+            <span className={theme.visuallyHidden} id={ariaDescribedByLabelId}>
               {ariaLabels?.label && ariaLabels.label}
             </span>
             <div className={getClassName(theme.inputWrapper)}>
