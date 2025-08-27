@@ -17,26 +17,14 @@
  */
 
 import figma from "@figma/code-connect"
-
-import BpkBadge, { BADGE_TYPES } from './BpkBadge';
+import BpkImage from './BpkImage';
 
 figma.connect(
-  BpkBadge,
-  "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=37974%3A344",
+  BpkImage,
+  "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=4401-28&m=dev",
   {
     props: {
-      style: figma.enum('Style', {
-        "Normal": BADGE_TYPES.normal,
-        "Success": BADGE_TYPES.success,
-        "Warning": BADGE_TYPES.warning,
-        "Critical": BADGE_TYPES.critical,
-        "Inverse": BADGE_TYPES.inverse,
-        "Outline": BADGE_TYPES.outline,
-        "Brand": BADGE_TYPES.brand,
-        "Strong": BADGE_TYPES.strong
-      }),
-      label: figma.textContent("Attribute"),
     },
-    example: ({ style, label }) => <BpkBadge type={style}>{label}</BpkBadge>,
+    example: () => <BpkImage altText="" src="" aspectRatio={16/9}/>,
   },
 )

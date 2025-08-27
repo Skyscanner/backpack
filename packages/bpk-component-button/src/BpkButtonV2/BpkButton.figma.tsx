@@ -1,3 +1,21 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import figma from '@figma/code-connect'
 
 import { withButtonAlignment } from "../../../bpk-component-icon"
@@ -35,28 +53,22 @@ figma.connect(
       isDisabled: figma.enum('State', {
         "Disabled": true,
       }),
-      content: figma.enum('Icon', {
-        "Left": <>
-          <AlignedLightningIcon />
-          Label
-        </>,
-        "Right": <>
-          Label
-          <AlignedArrowIcon />
-          </>,
-        "None": <>Label</>,
-        "Icon only": <>
-        <AlignedArrowIcon />
-        <span className="visually-hidden">Label</span>
-        </>,
+      leftContent: figma.enum('Icon', {
+        "Left": <AlignedLightningIcon />
+      }),
+      label: figma.textContent("Label"),
+      rightContent: figma.enum('Icon', {
+        "Right": <AlignedArrowIcon />
       }),
       iconOnly: figma.enum('Icon', {
         "Icon only": true,
       })
     },
-    example: ({ content, iconOnly, isDisabled, size, style }) => (
+    example: ({ rightContent, iconOnly, isDisabled, size, style, label, leftContent }) => (
         <BpkButtonV2 type={style} size={size} disabled={isDisabled} iconOnly={iconOnly}>
-          {content}
+          {leftContent}
+          {label}
+          {rightContent}
         </BpkButtonV2>
       )
   },
