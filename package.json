@@ -100,11 +100,13 @@
     "verbose": true
   },
   "browserslist": [
-    "Chrome >= 109",
-    "Edge >= 129",
+    "Android >= 96",
+    "Chrome >= 87",
+    "Edge >= 96",
     "Firefox >= 131",
+    "Opera >= 82",
     "Safari >= 15",
-    "Samsung >= 26"
+    "Samsung >= 16"
   ],
   "devDependencies": {
     "@babel/cli": "^7.28.3",
