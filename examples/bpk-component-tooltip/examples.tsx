@@ -128,6 +128,27 @@ const LinkExample = () => (
   </div>
 );
 
+const LongTextExample = () => (
+  <div style={wrapperStyle}>
+    <BpkTooltip
+      ariaLabel="Montréal-Trudeau International Airport"
+      id="my-tooltip"
+      target={
+        <div>
+          <Heading>LongText</Heading>
+        </div>
+      }
+      isOpen
+      maxWidth='32rem'
+    >
+      This is a long text with more than one
+      line included, we should customize the 
+      max width of the tooltip to make it look
+      good from time to time.
+    </BpkTooltip>
+  </div>
+);
+
 const VisualTestExample = () => (
   <div style={wrapperStyle}>
     <BpkTooltip
@@ -151,5 +172,6 @@ export {
   SideExample,
   NoPaddingExample,
   LinkExample,
+  LongTextExample,
   VisualTestExample,
 };
