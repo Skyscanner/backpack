@@ -28,9 +28,9 @@
   }
 
   &__suggestions-container {
-    min-width: fit-content;
-
-    @include layers.bpk-layer;
+    border: tokens.$bpk-one-pixel-rem solid tokens.$bpk-surface-highlight-day;
+    border-radius: tokens.$bpk-border-radius-sm;
+    background-color: tokens.$bpk-color-white;
   }
 
   &__arrow {
@@ -44,9 +44,13 @@
   }
 
   &__suggestions-list {
+    min-width: fit-content;
     margin: 0;
     padding: 0;
+    border-radius: tokens.$bpk-border-radius-sm;
+    background-color: tokens.$bpk-color-white;
     list-style: none;
+    box-shadow: tokens.$bpk-box-shadow-lg;
     overflow: hidden;
   }
 
