@@ -193,7 +193,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
       const shouldForceKeepOpen =
         alwaysRenderSuggestions &&
-        state.inputValue && state.inputValue.length > 0 &&
+        state.inputValue &&
+        state.inputValue.length > 0 &&
         suggestions.length > 0 &&
         changes.isOpen === false;
 
@@ -441,7 +442,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
     // Render the input component
     const renderInput = () => {
-
       const inputAriaLabel = inputValue || inputProps.placeholder;
 
       const {

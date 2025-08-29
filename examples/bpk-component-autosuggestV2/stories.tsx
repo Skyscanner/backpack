@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-import type { ReactElement,InputHTMLAttributes,LegacyRef } from 'react';
+import type { ReactElement, InputHTMLAttributes, LegacyRef } from 'react';
 
 import { userEvent, within } from '@storybook/test';
 
 // @ts-ignore
 // BpkAutosuggestSuggestion is a Flow-based JS file without type declarations.
-// This will be removed once the file is migrated to TypeScript.
+// TODO: This will be removed once the file is migrated to TypeScript.
 import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
 import BpkAutosuggestV2 from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestV2/BpkAutosuggest';
 
@@ -36,7 +36,7 @@ export default {
   subcomponents: {
     BpkAutosuggestSuggestion,
   },
-}
+};
 
 // --- Basic examples ---
 
@@ -86,7 +86,11 @@ export const WithSections = () => (
 // --- Other variations ---
 
 export const ChineseCharacter = () => (
-  <AutosuggestExample includeSubheading includeTertiaryLabel isChineseCharacter />
+  <AutosuggestExample
+    includeSubheading
+    includeTertiaryLabel
+    isChineseCharacter
+  />
 );
 
 export const All = () => (
@@ -106,8 +110,8 @@ export const SmallInput = () => (
 
 const renderCustomInput = (
   inputProps: InputHTMLAttributes<HTMLInputElement> & {
-      ref?: LegacyRef<HTMLInputElement>;
-    },
+    ref?: LegacyRef<HTMLInputElement>;
+  },
 ) => (
   <div
     ref={inputProps.ref}

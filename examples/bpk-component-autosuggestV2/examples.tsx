@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 import { Component } from 'react';
-import type { ReactElement,InputHTMLAttributes,LegacyRef } from 'react';
+import type { ReactElement, InputHTMLAttributes, LegacyRef } from 'react';
 
 // @ts-ignore
 // BpkAutosuggestSuggestion is a Flow-based JS file without type declarations.
-// This will be removed once the file is migrated to TypeScript.
+// TODO: This will be removed once the file is migrated to TypeScript.
 import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
 import BpkAutosuggestV2 from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestV2/BpkAutosuggest';
 import { withRtlSupport } from '../../packages/bpk-component-icon';
@@ -127,7 +127,10 @@ const sections: Section[] = [
   },
 ];
 
-const getSuggestions = (value: string, isChineseCharacter: boolean): Suggestion[] => {
+const getSuggestions = (
+  value: string,
+  isChineseCharacter: boolean,
+): Suggestion[] => {
   const inputValue = value.trim().toLowerCase();
   const data = isChineseCharacter ? dataChineseCharacter : offices;
 
@@ -219,7 +222,6 @@ class AutosuggestExample extends Component<Props, State> {
     resultCount === 0
       ? 'no results available'
       : 'handle results being single or plural';
-
 
   render() {
     const { suggestions } = this.state;

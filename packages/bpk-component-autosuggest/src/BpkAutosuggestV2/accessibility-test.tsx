@@ -21,15 +21,15 @@ import { axe } from 'jest-axe';
 
 import BpkAutosuggest from './BpkAutosuggest';
 
-type Suggestion = { PlaceId: string; PlaceName: string };
+type Suggestion = { placeId: string; placeName: string };
 
 const suggestions: Suggestion[] = [
-  { PlaceId: '1', PlaceName: 'London' },
-  { PlaceId: '2', PlaceName: 'Paris' },
+  { placeId: '1', placeName: 'London' },
+  { placeId: '2', placeName: 'Paris' },
 ];
 
-const renderSuggestion = (s: Suggestion) => <div>{s.PlaceName}</div>;
-const getSuggestionValue = (s: Suggestion) => s.PlaceName;
+const renderSuggestion = (s: Suggestion) => <div>{s.placeName}</div>;
+const getSuggestionValue = (s: Suggestion) => s.placeName;
 
 const getBaseProps = () => ({
   id: 'bpk-autosuggest',
@@ -49,7 +49,6 @@ const getBaseProps = () => ({
   getA11yResultsMessage: (count: number) =>
     `${count} result${count === 1 ? '' : 's'}`,
 });
-
 
 describe('BpkAutosuggestV2 accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {

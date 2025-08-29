@@ -21,15 +21,15 @@ import userEvent from '@testing-library/user-event';
 
 import BpkAutosuggest from './BpkAutosuggest';
 
-type Suggestion = { PlaceId: string; PlaceName: string };
+type Suggestion = { placeId: string; placeName: string };
 
 const suggestions: Suggestion[] = [
-  { PlaceId: '1', PlaceName: 'London' },
-  { PlaceId: '2', PlaceName: 'Paris' },
+  { placeId: '1', placeName: 'London' },
+  { placeId: '2', placeName: 'Paris' },
 ];
 
-const renderSuggestion = (s: Suggestion) => <div>{s.PlaceName}</div>;
-const getSuggestionValue = (s: Suggestion) => s.PlaceName;
+const renderSuggestion = (s: Suggestion) => <div>{s.placeName}</div>;
+const getSuggestionValue = (s: Suggestion) => s.placeName;
 
 const getBaseProps = () => ({
   id: 'bpk-autosuggest',
@@ -240,13 +240,13 @@ describe('BpkAutosuggest', () => {
       {
         title: 'UK',
         items: [
-          { PlaceId: '1', PlaceName: 'London' },
-          { PlaceId: '2', PlaceName: 'Manchester' },
+          { placeId: '1', placeName: 'London' },
+          { placeId: '2', placeName: 'Manchester' },
         ],
       },
       {
         title: 'France',
-        items: [{ PlaceId: '3', PlaceName: 'Paris' }],
+        items: [{ placeId: '3', placeName: 'Paris' }],
       },
     ];
 
