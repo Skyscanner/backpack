@@ -262,9 +262,9 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       onSelectedItemChange(changes) {
         const { selectedItem } = changes;
         if (selectedItem) {
-          setInputValue(getSuggestionValue(changes.selectedItem));
+          setInputValue(getSuggestionValue(selectedItem));
           onSuggestionSelected?.({
-            suggestion: changes.selectedItem,
+            suggestion: selectedItem,
             inputValue,
           });
 
