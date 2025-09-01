@@ -22,6 +22,7 @@ import type {
   ReactElement,
   HTMLProps,
   MutableRefObject,
+  ReactNode,
   InputHTMLAttributes,
   Ref,
   SyntheticEvent,
@@ -185,6 +186,9 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     const hasInteractedRef = useRef(false);
     const hasLoadedInitiallyRef = useRef(false);
 
+    const suggestionsCount = suggestions.length;
+    const hasSuggestions = suggestionsCount > 0;
+
     function stateReducer(
       state: UseComboboxState<any>,
       actionAndChanges: UseComboboxStateChangeOptions<any>,
@@ -195,7 +199,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         alwaysRenderSuggestions &&
         state.inputValue &&
         state.inputValue.length > 0 &&
-        suggestions.length > 0 &&
+        hasSuggestions &&
         changes.isOpen === false;
 
       if (shouldForceKeepOpen) {
@@ -237,25 +241,27 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     } = useCombobox({
       stateReducer,
       items: flattenedSuggestions,
-      itemToString(suggestion: any | null) {
+      itemToString(suggestion) {
         return suggestion ? getSuggestionValue(suggestion) : '';
       },
       async onInputValueChange(changes) {
+        const { inputValue: newInputValue, isOpen: newIsOpen, type } = changes;
         onInputValueChange?.({
-          method: changes.type,
-          newValue: changes.inputValue ?? '',
+          method: type,
+          newValue: newInputValue ?? '',
         });
 
-        if (changes.inputValue?.length) {
-          if (changes.isOpen) {
-            onSuggestionsFetchRequested(changes.inputValue);
+        if (newInputValue?.length) {
+          if (newIsOpen) {
+            onSuggestionsFetchRequested(newInputValue);
           }
-        } else if (suggestions.length) {
+        } else if (suggestionsCount) {
           onSuggestionsClearRequested();
         }
       },
       onSelectedItemChange(changes) {
-        if (changes.selectedItem) {
+        const { selectedItem } = changes;
+        if (selectedItem) {
           setInputValue(getSuggestionValue(changes.selectedItem));
           onSuggestionSelected?.({
             suggestion: changes.selectedItem,
@@ -264,13 +270,12 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
           if (alwaysRenderSuggestions) {
             // Manually clear suggestions or hide menu
-            onSuggestionsClearRequested(); // optional
+            onSuggestionsClearRequested();
           }
         }
       },
       getA11yStatusMessage() {
-        const count = suggestions.length;
-        return getA11yResultsMessage?.(count) ?? '';
+        return getA11yResultsMessage?.(suggestionsCount) ?? '';
       },
       initialInputValue: defaultValue ?? '',
       id,
@@ -357,13 +362,13 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         return;
       }
 
-      if (e.key === 'Enter' && suggestions.length) {
+      if (e.key === 'Enter' && suggestionsCount) {
         onSuggestionSelected?.({ suggestion: suggestions[0], inputValue });
       }
 
       if (defaultValue) {
         handleInputInteraction();
-      } else if (suggestions.length === 0) {
+      } else if (suggestionsCount === 0) {
         onSuggestionSelected?.();
       }
     };
@@ -380,56 +385,107 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     };
 
     // Render suggestions function to render single section suggestion
-    const renderSuggestions = (items: any[], sectionIndex?: number) =>
-      items.map((suggestion, index) => {
-        const suggestionIndex = sectionIndex ? index + sectionIndex : index;
-        const isFirstSuggestion = sectionIndex
-          ? sectionIndex === 0 && index === 0
-          : index === 0;
+    const renderSuggestions = <T,>({
+      items,
+      sectionId,
+      sectionIndex,
+      sectionTitle,
+      startIndex = 0,
+    }: {
+      items: T[];
+      sectionId?: string;
+      sectionTitle?: string;
+      sectionIndex?: number;
+      startIndex?: number;
+    }): ReactNode[] =>
+      items.map((suggestion, localIndex) => {
+        const globalIndex = startIndex + localIndex;
+        const isFirst = globalIndex === 0;
+        const itemId = sectionId
+          ? `item-${sectionIndex}-${localIndex}`
+          : undefined;
 
-        const key = getSuggestionValue(suggestion);
+        const isHighlighted =
+          highlightedIndex === globalIndex ||
+          (highlightFirstSuggestion && isFirst && highlightedIndex === -1);
 
         return (
           <li
-            key={key}
+            key={
+              sectionTitle
+                ? `${sectionTitle}-${getSuggestionValue(suggestion)}`
+                : getSuggestionValue(suggestion)
+            }
+            aria-labelledby={
+              sectionId && itemId ? `${sectionId} ${itemId}` : undefined
+            }
             {...getItemProps({
               item: suggestion,
-              index: suggestionIndex,
+              index: globalIndex,
               onClick: handleSuggestionClick,
+              'aria-selected': highlightedIndex === globalIndex,
             })}
             className={getClassName(
               theme.suggestion,
-              highlightedIndex === suggestionIndex &&
-                theme.suggestionHighlighted,
-              highlightFirstSuggestion &&
-                isFirstSuggestion &&
-                highlightedIndex === -1 &&
-                theme.suggestionHighlighted,
+              isHighlighted && theme.suggestionHighlighted,
             )}
           >
-            {renderSuggestion(suggestion)}
+            {itemId ? (
+              <span id={itemId}>{renderSuggestion(suggestion)}</span>
+            ) : (
+              renderSuggestion(suggestion)
+            )}
           </li>
         );
       });
 
     // renderSections function to render multi-section suggestions
-    const renderSections = (sections: any[]) =>
-      sections.map((section, index) => {
-        const sectionSuggestions = getSectionSuggestions?.(section);
+    const renderSections = <T,>(sections: T[]): ReactNode[] => {
+      let suggestionIndex = 0;
+
+      return sections.map((section, sectionIndex) => {
+        const sectionSuggestions = getSectionSuggestions?.(section) ?? [];
+
+        if (sectionSuggestions.length === 0) {
+          return null;
+        }
+
+        const sectionId = `section-${sectionIndex}`;
+        const sectionTitleElement = renderSectionTitle?.(section);
+
+        const sectionTitle =
+          typeof sectionTitleElement === 'string'
+            ? sectionTitleElement
+            : `section-${sectionIndex}`;
+
+        const renderedItems = renderSuggestions({
+          items: sectionSuggestions,
+          sectionId,
+          sectionTitle,
+          sectionIndex,
+          startIndex: suggestionIndex,
+        });
+
+        suggestionIndex += sectionSuggestions.length;
+
         return (
-          <section key={section.title} className={theme.sectionContainer}>
-            <div className={theme.sectionTitle}>
-              {renderSectionTitle?.(section)}
+          <section
+            key={sectionTitle}
+            className={theme.sectionContainer}
+            role="group"
+            aria-labelledby={sectionId}
+          >
+            <div id={sectionId} className={theme.sectionTitle}>
+              {sectionTitleElement}
             </div>
-            {Array.isArray(sectionSuggestions) &&
-              sectionSuggestions.length > 0 &&
-              renderSuggestions(sectionSuggestions, index)}
+            {renderedItems}
           </section>
         );
       });
+    };
 
     const showSuggestions =
-      suggestions.length > 0 &&
+      hasSuggestions &&
       ((alwaysRenderSuggestions &&
         hasLoadedInitiallyRef.current &&
         !hasInteractedRef.current) ||
@@ -438,7 +494,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     const renderList = () =>
       multiSection
         ? renderSections(suggestions)
-        : renderSuggestions(suggestions);
+        : renderSuggestions({ items: suggestions });
 
     // Render the input component
     const renderInput = () => {
@@ -485,10 +541,13 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         }
       };
 
-      const normalizedInputValue = Array.isArray(value)
-        ? (value.join(', ') as string | number)
-        : ((value ?? '') as string | number);
+      let normalizedInputValue: string | number = '';
 
+      if (Array.isArray(value)) {
+        normalizedInputValue = value.join(', ');
+      } else if (typeof value === 'string' || typeof value === 'number') {
+        normalizedInputValue = value;
+      }
       if (renderInputComponent) {
         return renderInputComponent({
           ref: setInputRef,
@@ -529,7 +588,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       <div
         className={getClassName(
           theme.container,
-          suggestions.length && theme.containerOpen,
+          suggestionsCount && theme.containerOpen,
         )}
       >
         {renderInput()}

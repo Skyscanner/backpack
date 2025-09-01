@@ -119,7 +119,7 @@ const dataChineseCharacter: Suggestion[] = [
 const sections: Section[] = [
   {
     title: 'Recent searches',
-    suggestions: [offices[0]],
+    suggestions: [offices[0], offices[2], offices[1]],
   },
   {
     title: 'Popular locations',
