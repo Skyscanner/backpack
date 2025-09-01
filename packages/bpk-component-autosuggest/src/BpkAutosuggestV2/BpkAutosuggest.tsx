@@ -368,7 +368,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
       if (defaultValue) {
         handleInputInteraction();
-      } else if (suggestionsCount === 0) {
+      } else if (!hasSuggestions) {
         onSuggestionSelected?.();
       }
     };
