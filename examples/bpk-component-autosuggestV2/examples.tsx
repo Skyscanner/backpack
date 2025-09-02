@@ -172,6 +172,9 @@ type Props = {
   alwaysRenderSuggestions: boolean;
   highlightFirstSuggestion: boolean;
   multiSection: boolean;
+  inputProps: InputHTMLAttributes<HTMLInputElement> & {
+    ref?: LegacyRef<HTMLInputElement>;
+  };
   renderInputComponent?: (
     inputProps: InputHTMLAttributes<HTMLInputElement> & {
       ref?: LegacyRef<HTMLInputElement>;
@@ -179,6 +182,7 @@ type Props = {
   ) => ReactElement;
   renderSectionTitle: (section: Section) => ReactElement | null;
   getSectionSuggestions: (section: Section) => Suggestion[];
+  onSuggestionSelected?: any;
 };
 
 type State = {
@@ -197,6 +201,12 @@ class AutosuggestExample extends Component<Props, State> {
     renderInputComponent: undefined,
     renderSectionTitle: () => null,
     getSectionSuggestions: () => [],
+    onSuggestionSelected: () => [],
+    inputProps: {
+      id: 'my-autosuggest',
+      name: 'my_autosuggest',
+      placeholder: 'Enter an office name',
+    },
   };
 
   constructor(props: Props) {
@@ -232,15 +242,10 @@ class AutosuggestExample extends Component<Props, State> {
       includeIcon,
       includeSubheading,
       includeTertiaryLabel,
+      inputProps,
       multiSection,
       renderSectionTitle,
     } = this.props;
-
-    const inputProps = {
-      id: 'my-autosuggest',
-      name: 'my_autosuggest',
-      placeholder: 'Enter an office name',
-    };
 
     return (
       <BpkAutosuggestV2
@@ -250,6 +255,7 @@ class AutosuggestExample extends Component<Props, State> {
         id="autosuggest-example"
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+        onSuggestionSelected={this.props.onSuggestionSelected}
         highlightFirstSuggestion={highlightFirstSuggestion}
         multiSection={multiSection}
         renderSectionTitle={renderSectionTitle}

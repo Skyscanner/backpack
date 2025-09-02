@@ -17,6 +17,7 @@
  */
 
 import type { ReactElement, InputHTMLAttributes, LegacyRef } from 'react';
+import { useState } from 'react';
 
 import { userEvent, within } from '@storybook/test';
 
@@ -145,6 +146,87 @@ const renderCustomInput = (
 export const CustomRenderInput = () => (
   <AutosuggestExample renderInputComponent={renderCustomInput} />
 );
+
+const renderBrokenInput = (
+  inputProps: InputHTMLAttributes<HTMLInputElement> & {
+    ref?: LegacyRef<HTMLInputElement>;
+  },
+) => (
+  <div
+    style={{
+      border: '2px dashed red',
+      borderRadius: '6px',
+      padding: '10px',
+      background: '#fffbe6',
+    }}
+  >
+    <div
+      style={{
+        fontWeight: 600,
+        fontSize: '13px',
+        marginBottom: '4px',
+      }}
+    >
+      Broken Input (Missing ref)
+    </div>
+    <input
+      {...inputProps}
+      placeholder="Search"
+      style={{
+        border: 'none',
+        outline: 'none',
+        fontSize: '14px',
+        width: '100%',
+      }}
+    />
+  </div>
+);
+
+export const BrokenRefMisalignment = () => (
+  <div style={{ padding: '16px' }}>
+    <AutosuggestExample
+      renderInputComponent={renderBrokenInput}
+      alwaysRenderSuggestions
+      includeIcon
+    />
+  </div>
+);
+
+export const LegacyEvents = () => {
+  const [value, setValue] = useState('');
+
+  const onChange = (_e: Event, { newValue }: { newValue: string }) => {
+    setValue(newValue);
+  };
+
+  const onBlur = (
+    _e: Event,
+    { highlightedSuggestion }: { highlightedSuggestion?: any },
+  ) => {};
+
+  const onSuggestionSelected = (
+    _e: Event,
+    { suggestion }: { suggestion: any },
+  ) => {};
+
+  const onSuggestionHighlighted = ({ suggestion }: { suggestion: any }) => {};
+
+  return (
+    <div style={{ padding: '16px', width: '360px' }}>
+      <AutosuggestExample
+        onSuggestionSelected={onSuggestionSelected}
+        onSuggestionHighlighted={onSuggestionHighlighted}
+        highlightFirstSuggestion
+        inputProps={{
+          placeholder: 'Type e.g. London',
+          value,
+          onChange,
+          onBlur,
+        }}
+      />
+    </div>
+  );
+};
 
 // --- Visual regression test (Percy) ---
 
