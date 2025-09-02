@@ -28,7 +28,6 @@ type callToActionType = {
   }>;
   bottomSheetTitle?: string;
   buttonCloseLabel?: string;
-  buttonA11yLabel?: string;
   bottomSheetLabel?: string;
   bottomSheetId?: string;
   bottomSheetWidth?: string;
@@ -55,4 +54,6 @@ export type CommonProps = {
     altText: string;
     aspectRatio: number;
   };
+  adInfoA11yLabel?: string;
+  ariaAdScenicA11yLabel?: string;
 };

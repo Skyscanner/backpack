@@ -39,9 +39,11 @@ const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
     layout,
   } = props;
 
-  const totalIndicators = Children.count(children);
+  const childrenCount = Children.count(children);
+  const totalIndicators = Math.ceil(childrenCount / initiallyShownCards);
+  const showAccessory = childrenCount > initiallyShownCards;
+
   const [currentIndex, setCurrentIndex] = useState(0);
-  const showAccessory = totalIndicators > initiallyShownCards;
 
   const accessoryContent =
     layout === LAYOUTS.row &&
@@ -65,8 +67,8 @@ const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
       <BpkCardListCarousel
         initiallyShownCards={initiallyShownCards}
         layout={layout}
-        currentIndex={currentIndex}
         setCurrentIndex={setCurrentIndex}
+        currentIndex={currentIndex}
         isMobile={isMobile}
         carouselLabel={accessibilityLabels?.carouselLabel}
         slideLabel={accessibilityLabels?.slideLabel}

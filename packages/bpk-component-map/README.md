@@ -63,46 +63,6 @@ Price markers are used to display clickable prices on a map.
 ```js
 import BpkMap, {
   BpkPriceMarker,
-  PRICE_MARKER_STATUSES,
-} from '@skyscanner/backpack-web/bpk-component-map';
-
-export default () => (
-  <BpkMap
-    zoom={15}
-    showControls={false}
-    panEnabled={false}
-    center={{
-      latitude: 27.9881,
-      longitude: 86.925,
-    }}
-  >
-    <BpkPriceMarker
-      label="£120"
-      position={{ latitude: 27.9881, longitude: 86.925 }}
-      onClick={() => {
-        console.log('Price marker pressed.');
-      }}
-      status={PRICE_MARKER_STATUSES.focused}
-    />
-    <BpkPriceMarker
-      label="£120"
-      position={{ latitude: 27.9881, longitude: 86.925 }}
-      onClick={() => {
-        console.log('Price marker pressed.');
-      }}
-      status={PRICE_MARKER_STATUSES.viewed}
-    />
-  </BpkMap>
-);
-```
-
-### BpkPriceMarkerV2
-
-BpkPriceMarker V2 version that is the BpkPriceMarker redesign.
-
-```js
-import BpkMap, {
-  BpkPriceMarkerV2,
   MARKER_STATUSES,
 } from '@skyscanner/backpack-web/bpk-component-map';
 
@@ -116,7 +76,47 @@ export default () => (
       longitude: 86.925,
     }}
   >
-    <BpkPriceMarkerV2
+    <BpkPriceMarker
+      label="£120"
+      position={{ latitude: 27.9881, longitude: 86.925 }}
+      onClick={() => {
+        console.log('Price marker pressed.');
+      }}
+      status={MARKER_STATUSES.selected}
+    />
+    <BpkPriceMarker
+      label="£120"
+      position={{ latitude: 27.9881, longitude: 86.925 }}
+      onClick={() => {
+        console.log('Price marker pressed.');
+      }}
+      status={MARKER_STATUSES.previous_selected}
+    />
+  </BpkMap>
+);
+```
+
+### BpkPriceMarker
+
+Price markers are used to display clickable prices on a map.
+
+```js
+import BpkMap, {
+  BpkPriceMarker,
+  MARKER_STATUSES,
+} from '@skyscanner/backpack-web/bpk-component-map';
+
+export default () => (
+  <BpkMap
+    zoom={15}
+    showControls={false}
+    panEnabled={false}
+    center={{
+      latitude: 27.9881,
+      longitude: 86.925,
+    }}
+  >
+    <BpkPriceMarker
       label="£120"
       position={{ latitude: 27.9881, longitude: 86.925 }}
       onClick={() => {
@@ -125,7 +125,7 @@ export default () => (
       status={MARKER_STATUSES.selected}
       accessibilityLabel="Price marker pressed."
     />
-    <BpkPriceMarkerV2
+    <BpkPriceMarker
       label="£120"
       position={{ latitude: 27.9881, longitude: 86.925 }}
       onClick={() => {
@@ -134,7 +134,7 @@ export default () => (
       status={MARKER_STATUSES.previous_selected}
       accessibilityLabel="Have seen Price marker before"
     />
-    <BpkPriceMarkerV2
+    <BpkPriceMarker
       label="£120"
       icon={<AlignedAirportsIconSm />}
       position={{ latitude: 27.9881, longitude: 86.925 }}

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { fireEvent, render } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -130,5 +130,21 @@ describe('BpkGraphicPromo', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly when href is set', () => {
+    const href = 'http://abc';
+    render(<BpkGraphicPromo {...props} href={href} contentId={null} />);
+    const renderedElement = screen.getByRole('link');
+
+    expect(renderedElement.tagName.toLowerCase()).toBe('a');
+    expect(renderedElement).toHaveAttribute('href', href);
+  });
+
+  it('should render correctly when href is not set', () => {
+    render(<BpkGraphicPromo {...props} contentId={null} />);
+    const renderedElement = screen.getByRole('link');
+
+    expect(renderedElement.tagName.toLowerCase()).toBe('div');
   });
 });

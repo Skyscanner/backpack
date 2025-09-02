@@ -16,7 +16,22 @@
  * limitations under the License.
  */
 
+@use '../../unstable__bpk-mixins/tokens';
 @use '../../unstable__bpk-mixins/typography';
+
+$text-colors: (
+  'text-disabled': tokens.$bpk-text-disabled-day,
+  'text-disabled-on-dark': tokens.$bpk-text-disabled-on-dark-day,
+  'text-error': tokens.$bpk-text-error-day,
+  'text-hero': tokens.$bpk-text-hero-day,
+  'text-link': tokens.$bpk-text-link-day,
+  'text-on-dark': tokens.$bpk-text-on-dark-day,
+  'text-on-light': tokens.$bpk-text-on-light-day,
+  'text-primary': tokens.$bpk-text-primary-day,
+  'text-primary-inverse': tokens.$bpk-text-primary-inverse-day,
+  'text-secondary': tokens.$bpk-text-secondary-day,
+  'text-success': tokens.$bpk-text-success-day,
+);
 
 .bpk-text {
   @include typography.bpk-text;
@@ -143,5 +158,11 @@
 
   &--editorial-3 {
     @include typography.bpk-editorial-3;
+  }
+
+  @each $color-name, $color-value in $text-colors {
+    &.bpk-text--#{$color-name} {
+      color: $color-value;
+    }
   }
 }

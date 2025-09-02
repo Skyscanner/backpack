@@ -62,7 +62,6 @@ describe('BpkInsetBanner', () => {
           labelTitle: true,
           bottomSheetLabel: 'Info',
           buttonCloseLabel: 'Close',
-          buttonA11yLabel: 'More info',
         }}
         backgroundColor="#FFE300"
         variant={VARIANT.onLight}
@@ -98,7 +97,6 @@ describe('BpkInsetBanner', () => {
           labelTitle: true,
           bottomSheetLabel: 'Info',
           buttonCloseLabel: 'Close',
-          buttonA11yLabel: 'More info',
         }}
         backgroundColor="#FFE300"
         variant={VARIANT.onLight}
@@ -111,5 +109,39 @@ describe('BpkInsetBanner', () => {
     fireEvent.click(ctaButton);
 
     expect(screen.getByText('Consectetur adipiscing elit')).toBeInTheDocument();
+  });
+
+  it('should not render an info icon when there is only one item in bottom sheet content', () => {
+    render(
+      <BpkInsetBannerSponsored
+        title="Lorem ipsum"
+        logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
+        callToAction={{
+          text: 'Sponsored',
+          bottomSheetContent: [
+            {
+              title: 'Single item title',
+              description: 'Single item description',
+            }
+          ],
+          bottomSheetTitle: 'About this advert',
+          closeBtnIcon: true,
+          labelTitle: true,
+          bottomSheetLabel: 'Info',
+          buttonCloseLabel: 'Close',
+        }}
+        backgroundColor="#FFE300"
+        variant={VARIANT.onLight}
+        accessibilityLabel="Sponsored by Skyscanner"
+      />,
+    );
+
+    const ctaButton = screen.getByTestId('ctaBtn');
+    fireEvent.click(ctaButton);
+
+    const infoIconContainers = screen.getAllByTestId('bottom-sheet-icon-container');
+    expect(infoIconContainers.length).toBe(1);
+    expect(screen.getByTestId('view-icon')).toBeInTheDocument();
+    expect(screen.queryByTestId('info-icon')).not.toBeInTheDocument();
   });
 });
