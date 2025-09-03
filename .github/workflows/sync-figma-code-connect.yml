@@ -2,9 +2,10 @@ on:
   push:
     paths:
       - packages/**/*.figma.tsx
-    branches:
-      - main
+    branches: [main]
   pull_request:
+    paths:
+      - packages/**/*.figma.tsx
     branches: [ main ]
 
 jobs:
