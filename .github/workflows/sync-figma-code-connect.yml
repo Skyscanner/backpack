@@ -3,10 +3,6 @@ on:
     paths:
       - packages/**/*.figma.tsx
     branches: [main]
-  pull_request:
-    paths:
-      - packages/**/*.figma.tsx
-    branches: [ main ]
 
 jobs:
   code-connect:
