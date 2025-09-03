@@ -11,25 +11,39 @@ export function patchInputPropsLegacySupport(
 ): HTMLProps<HTMLInputElement> {
   const { onBlur, onChange, ...rest } = inputProps;
   const patched: HTMLProps<HTMLInputElement> = { ...rest };
+
   if (typeof onChange === 'function' && onChange.length >= 2) {
     patched.onChange = (e: ChangeEvent<HTMLInputElement>) => {
-      (onChange as any)(e.nativeEvent, { newValue: e.target.value });
+      const newValue = e.target.value;
+      const syntheticEvent = {
+        nativeEvent: new Event('input'),
+        target: { value: newValue },
+      } as unknown as Event;
+
+      (onChange as any)(syntheticEvent, { newValue });
     };
   } else {
     patched.onChange = onChange;
   }
+
   if (typeof onBlur === 'function' && onBlur.length >= 2) {
     patched.onBlur = (e: FocusEvent<HTMLInputElement>) => {
       const highlighted = context?.getHighlightedSuggestion?.();
-      (onBlur as any)(e.nativeEvent, { highlightedSuggestion: highlighted });
+      const syntheticEvent = {
+        nativeEvent: new Event('blur'),
+      } as unknown as Event;
+
+      (onBlur as any)(syntheticEvent, { highlightedSuggestion: highlighted });
     };
   } else {
     patched.onBlur = onBlur;
   }
+
   return patched;
 }
 
 // --- Legacy Top-Level Props Compatibility ---
+
 export function patchAutosuggestPropsLegacySupport<T>(props: {
   onSuggestionSelected?:
     | ((data?: { suggestion?: T; inputValue: string }) => void)
@@ -46,6 +60,7 @@ export function patchAutosuggestPropsLegacySupport<T>(props: {
 } {
   const { onInputValueChange, onSuggestionSelected } = props;
   const result: any = {};
+
   if (
     typeof onSuggestionSelected === 'function' &&
     onSuggestionSelected.length >= 2
@@ -54,11 +69,18 @@ export function patchAutosuggestPropsLegacySupport<T>(props: {
       suggestion?: T;
       inputValue: string;
     }) => {
-      (onSuggestionSelected as any)(null, { suggestion: data?.suggestion });
+      const syntheticEvent = {
+        preventDefault: () => {},
+      } as unknown as Event;
+
+      (onSuggestionSelected as any)(syntheticEvent, {
+        suggestion: data?.suggestion,
+      });
     };
   } else {
     result.onSuggestionSelected = onSuggestionSelected;
   }
+
   if (
     typeof onInputValueChange === 'function' &&
     onInputValueChange.length >= 2
@@ -67,10 +89,17 @@ export function patchAutosuggestPropsLegacySupport<T>(props: {
       method: string;
       newValue: string;
     }) => {
-      (onInputValueChange as any)(null, { newValue: data.newValue });
+      const syntheticEvent = {
+        type: 'input',
+      } as unknown as Event;
+
+      (onInputValueChange as any)(syntheticEvent, {
+        newValue: data.newValue,
+      });
     };
   } else {
     result.onInputValueChange = onInputValueChange;
   }
+
   return result;
 }

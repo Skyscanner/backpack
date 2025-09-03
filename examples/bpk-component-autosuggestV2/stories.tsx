@@ -16,7 +16,14 @@
  * limitations under the License.
  */
 
-import type { ReactElement, InputHTMLAttributes, LegacyRef } from 'react';
+import type {
+  ReactElement,
+  InputHTMLAttributes,
+  LegacyRef,
+  FocusEvent,
+  ChangeEventHandler,
+  FocusEventHandler,
+} from 'react';
 import { useState } from 'react';
 
 import { userEvent, within } from '@storybook/test';
@@ -204,24 +211,33 @@ export const LegacyEvents = () => {
     { highlightedSuggestion }: { highlightedSuggestion?: any },
   ) => {};
 
-  const onSuggestionSelected = (
-    _e: Event,
-    { suggestion }: { suggestion: any },
-  ) => {};
+  const onFocus = (e: FocusEvent<HTMLInputElement>) => {
+    const target = e.currentTarget;
+    setTimeout(() => target.select(), 10);
+  };
 
-  const onSuggestionHighlighted = ({ suggestion }: { suggestion: any }) => {};
+  const onSuggestionSelected = (
+    e: Event,
+    { suggestion }: { suggestion: any },
+  ) => {
+    if (e.preventDefault) {
+      e.preventDefault();
+    }
+  };
 
   return (
     <div style={{ padding: '16px', width: '360px' }}>
       <AutosuggestExample
         onSuggestionSelected={onSuggestionSelected}
-        onSuggestionHighlighted={onSuggestionHighlighted}
         highlightFirstSuggestion
         inputProps={{
+          id: 'my-autosuggest',
+          name: 'my_autosuggest',
           placeholder: 'Type e.g. London',
           value,
-          onChange,
-          onBlur,
+          onChange: onChange as unknown as ChangeEventHandler<HTMLInputElement>,
+          onBlur: onBlur as unknown as FocusEventHandler<HTMLInputElement>,
+          onFocus,
         }}
       />
     </div>

@@ -66,7 +66,7 @@ describe('patchAutosuggestPropsLegacySupport', () => {
 
     expect(legacyHandler).toHaveBeenCalledTimes(1);
     const [calledEvent, calledData] = legacyHandler.mock.calls[0];
-    expect(calledEvent).toBe(null);
+    expect(typeof calledEvent?.preventDefault).toBe('function');
     expect(calledData).toEqual({ suggestion: 'foo' });
   });
 
@@ -82,7 +82,7 @@ describe('patchAutosuggestPropsLegacySupport', () => {
 
     expect(legacyHandler).toHaveBeenCalledTimes(1);
     const [calledEvent, calledData] = legacyHandler.mock.calls[0];
-    expect(calledEvent).toBe(null);
+    expect(calledEvent).toEqual(expect.objectContaining({ type: 'input' }));
     expect(calledData).toEqual({ newValue: 'abc' });
   });
 });
