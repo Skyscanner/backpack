@@ -41,7 +41,7 @@ const RealisticExample = () => {
       const el = document.getElementById('main');
       if (el) el.focus();
     }, 0);
-  }
+  };
 
   return (
     <div>
@@ -66,6 +66,6 @@ const RealisticExample = () => {
       </main>
     </div>
   )
-}
+};
 
-export { DefaultExample, DocsSiteExample, RealisticExample};
+export { DefaultExample, DocsSiteExample, RealisticExample };
