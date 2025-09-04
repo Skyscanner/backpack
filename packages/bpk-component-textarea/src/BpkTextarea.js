@@ -35,9 +35,12 @@ type Props = {
   large: ?boolean,
 };
 
-const BpkTextarea = (props: Props) => {
-  const { className, large, valid, ...rest } = props;
-
+const BpkTextarea = ({
+  className = null,
+  large = null,
+  valid = false,
+  ...rest
+}: Props) => {
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid
   const isInvalid = valid === false;
@@ -64,12 +67,6 @@ BpkTextarea.propTypes = {
   className: PropTypes.string,
   valid: PropTypes.bool,
   large: PropTypes.bool,
-};
-
-BpkTextarea.defaultProps = {
-  className: null,
-  valid: null,
-  large: false,
 };
 
 export default BpkTextarea;

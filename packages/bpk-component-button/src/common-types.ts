@@ -32,18 +32,6 @@ export type Props = {
   rel?: string;
 };
 
-export const defaultProps = {
-  href: null,
-  className: null,
-  disabled: false,
-  onClick: null,
-  submit: false,
-  large: false,
-  iconOnly: false,
-  blank: false,
-  rel: null,
-};
-
 export const propTypes = {
   children: PropTypes.node.isRequired,
   href: PropTypes.string,
