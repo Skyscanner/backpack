@@ -37,6 +37,6 @@ figma.connect(
       }),
       label: figma.textContent("Attribute"),
     },
-    example: ({ style, label }) => <BpkBadge type={style}>{label}</BpkBadge>,
+    example: ({ label, style }) => <BpkBadge type={style}>{label}</BpkBadge>,
   },
 )

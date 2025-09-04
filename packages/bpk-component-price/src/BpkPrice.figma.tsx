@@ -1,7 +1,8 @@
-import React from "react"
-import BpkPrice from "./BpkPrice"
-import { SIZES, ALIGNS } from './common-types';
 import figma from "@figma/code-connect"
+
+import BpkPrice from "./BpkPrice"
+import { SIZES, ALIGNS } from './common-types'
+
 
 figma.connect(
   BpkPrice,
@@ -20,7 +21,7 @@ figma.connect(
       }),
       trailingText: figma.string('Trailing text'),
     },
-    example: ({ price, size, align, trailingText }) => (
+    example: ({ align, price, size, trailingText }) => (
       <BpkPrice price={price} size={size} align={align} trailingText={trailingText} />
     ),
   },

@@ -64,7 +64,7 @@ figma.connect(
         "Icon only": true,
       })
     },
-    example: ({ rightContent, iconOnly, isDisabled, size, style, label, leftContent }) => (
+    example: ({ iconOnly, isDisabled, label, leftContent, rightContent, size, style }) => (
         <BpkButtonV2 type={style} size={size} disabled={isDisabled} iconOnly={iconOnly}>
           {leftContent}
           {label}
