@@ -38,10 +38,16 @@ type Props = {
   selected: boolean,
 };
 
-const BpkInteractiveStar = (props: Props) => {
-  const { label, name, onClick, onMouseEnter, selected, type, value, ...rest } =
-    props;
-
+const BpkInteractiveStar = ({
+  label,
+  name,
+  onClick,
+  onMouseEnter,
+  selected = false,
+  type,
+  value,
+  ...rest
+}: Props) => {
   const buttonClassNames = getClassName(
     'bpk-interactive-star',
     selected && 'bpk-interactive-star--selected',
@@ -66,9 +72,9 @@ const BpkInteractiveStar = (props: Props) => {
     >
       <div className={iconClassNames} >
         <BpkStarNonRtl
-          type={type} 
+          type={type}
           /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */
-          {...rest} 
+          {...rest}
         />
       </div>
     </button>
@@ -83,10 +89,6 @@ BpkInteractiveStar.propTypes = {
   type: PropTypes.oneOf([STAR_TYPES.EMPTY, STAR_TYPES.FULL]).isRequired,
   value: PropTypes.number.isRequired,
   selected: PropTypes.bool,
-};
-
-BpkInteractiveStar.defaultProps = {
-  selected: false,
 };
 
 export default BpkInteractiveStar;

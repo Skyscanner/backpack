@@ -42,19 +42,17 @@ type Props = {
   implicit: boolean,
 };
 
-const BpkLink = forwardRef((props: Props, ref) => {
-  const {
-    alternate,
-    blank,
-    children,
-    className,
-    href,
-    implicit,
-    onClick,
-    rel: propRel,
-    ...rest
-  } = props;
-
+const BpkLink = forwardRef(({
+  alternate = false,
+  blank = false,
+  children,
+  className = null,
+  href,
+  implicit = false,
+  onClick = null,
+  rel: propRel = null,
+  ...rest
+}: Props, ref) => {
   const classNames = [getClassName('bpk-link')];
   const underlinedClassNames = [getClassName('bpk-link-underlined')];
 
@@ -70,7 +68,7 @@ const BpkLink = forwardRef((props: Props, ref) => {
   if (alternate) {
     classNames.push(getClassName('bpk-link--alternate'));
   }
-  
+
   if (implicit && !alternate) {
     underlinedClassNames.push(getClassName('bpk-link-underlined--implicit'));
   } else if (alternate && !implicit) {
@@ -107,15 +105,6 @@ BpkLink.propTypes = {
   rel: PropTypes.string,
   alternate: PropTypes.bool,
   implicit: PropTypes.bool,
-};
-
-BpkLink.defaultProps = {
-  className: null,
-  onClick: null,
-  blank: false,
-  rel: null,
-  alternate: false,
-  implicit: false,
 };
 
 export default BpkLink;

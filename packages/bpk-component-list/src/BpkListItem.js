@@ -32,9 +32,7 @@ type Props = {
   className: ?string,
 };
 
-const BpkListItem = (props: Props) => {
-  const { children, className } = props;
-
+const BpkListItem = ({children, className = null}: Props) => {
   const classNames = getClassName('bpk-list__item', className);
 
   return <li className={classNames}>{children}</li>;
@@ -46,10 +44,6 @@ BpkListItem.propTypes = {
     PropTypes.node,
   ]).isRequired,
   className: PropTypes.string,
-};
-
-BpkListItem.defaultProps = {
-  className: null,
 };
 
 export default BpkListItem;

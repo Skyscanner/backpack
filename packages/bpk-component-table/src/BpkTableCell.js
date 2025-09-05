@@ -32,15 +32,13 @@ type Props = {
   className: ?string,
 };
 
-const BpkTableCell = (props: Props) => {
-  const { className, ...rest } = props;
-
+const BpkTableCell = ({children, className = null, ...rest}: Props) => {
   const classNames = getClassName('bpk-table__cell', className);
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
     <td className={classNames} {...rest}>
-      {props.children}
+      {children}
     </td>
   );
 };
@@ -48,10 +46,6 @@ const BpkTableCell = (props: Props) => {
 BpkTableCell.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
-};
-
-BpkTableCell.defaultProps = {
-  className: null,
 };
 
 export default BpkTableCell;

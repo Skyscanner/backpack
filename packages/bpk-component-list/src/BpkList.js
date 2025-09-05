@@ -36,10 +36,14 @@ type Props = {
   title: ?string,
 };
 
-const BpkList = (props: Props) => {
-  const { ariaLabel, ariaLabelledby, children, className, ordered, title } =
-    props;
-
+const BpkList = ({
+  ariaLabel = null,
+  ariaLabelledby = null,
+  children,
+  className = null,
+  ordered = false,
+  title = null
+}: Props) => {
   const ListElements: any = ordered ? 'ol' : 'ul';
   const classNames: string = getClassName('bpk-list', className);
 
@@ -67,12 +71,5 @@ BpkList.propTypes = {
   title: PropTypes.string,
 };
 
-BpkList.defaultProps = {
-  ordered: false,
-  className: null,
-  ariaLabel: null,
-  ariaLabelledby: null,
-  title: null,
-};
 
 export default BpkList;

@@ -21,7 +21,6 @@ import BpkButtonBase, { BUTTON_TYPES } from './BpkButtonBase';
 import {
   type Props as CommonProps,
   propTypes,
-  defaultProps,
 } from './common-types';
 
 export type Props = CommonProps & {
@@ -35,19 +34,17 @@ export type Props = CommonProps & {
   linkOnDark?: boolean;
 };
 
-const BpkButton = (props: Props) => {
-  const {
-    destructive,
-    featured,
-    link,
-    linkOnDark,
-    primaryOnDark,
-    primaryOnLight,
-    secondary,
-    secondaryOnDark,
-    ...rest
-  } = props;
-
+const BpkButton = ({
+  destructive = false,
+  featured = false,
+  link = false,
+  linkOnDark = false,
+  primaryOnDark = false,
+  primaryOnLight = false,
+  secondary = false,
+  secondaryOnDark = false,
+  ...rest
+}: Props) => {
   if (primaryOnDark) {
     return <BpkButtonBase type={BUTTON_TYPES.primaryOnDark} {...rest} />;
   }
@@ -75,18 +72,6 @@ const BpkButton = (props: Props) => {
     return <BpkButtonBase type={BUTTON_TYPES.linkOnDark} {...rest} />;
   }
   return <BpkButtonBase {...rest} />;
-};
-
-BpkButton.defaultProps = {
-  ...defaultProps,
-  primaryOnDark: false,
-  primaryOnLight: false,
-  secondary: false,
-  secondaryOnDark: false,
-  destructive: false,
-  featured: false,
-  link: false,
-  linkOnDark: false,
 };
 
 BpkButton.propTypes = {

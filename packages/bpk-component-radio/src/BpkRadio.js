@@ -37,10 +37,16 @@ type Props = {
   valid: ?boolean,
 };
 
-const BpkRadio = (props: Props) => {
-  const { ariaLabel, className, disabled, label, name, valid, white, ...rest } =
-    props;
-
+const BpkRadio = ({
+  ariaLabel = null,
+  className = null,
+  disabled = false,
+  label,
+  name,
+  valid = null,
+  white = false,
+  ...rest
+}: Props) => {
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid
   const isInvalid = valid === false;
@@ -84,14 +90,6 @@ BpkRadio.propTypes = {
   white: PropTypes.bool,
   className: PropTypes.string,
   valid: PropTypes.bool,
-};
-
-BpkRadio.defaultProps = {
-  ariaLabel: null,
-  disabled: false,
-  white: false,
-  className: null,
-  valid: null,
 };
 
 export default BpkRadio;

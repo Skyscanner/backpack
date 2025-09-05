@@ -26,9 +26,11 @@ import STYLES from './bpk-flare-bar.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkFlareBar = (props) => {
-  const { className, rounded, svgClassName, ...rest } = props;
-
+const BpkFlareBar = ({
+  className = null,
+  svgClassName = null,
+  ...rest
+}) => {
   const classNames = [getClassName('bpk-flare-bar__container')];
   if (className) {
     classNames.push(className);
@@ -50,13 +52,6 @@ const BpkFlareBar = (props) => {
 BpkFlareBar.propTypes = {
   className: PropTypes.string,
   svgClassName: PropTypes.string,
-  rounded: PropTypes.bool,
-};
-
-BpkFlareBar.defaultProps = {
-  className: null,
-  svgClassName: null,
-  rounded: false,
 };
 
 export default BpkFlareBar;

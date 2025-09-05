@@ -43,21 +43,19 @@ export type Props = {
   description: ?string,
 };
 
-const BpkFieldset = (props: Props) => {
-  const {
-    children,
-    className,
-    description,
-    disabled,
-    isCheckbox,
-    label,
-    required,
-    valid,
-    validationMessage,
-    validationProps,
-    ...rest
-  } = props;
-
+const BpkFieldset = ({
+  children,
+  className = null,
+  description = null,
+  disabled = false,
+  isCheckbox = false,
+  label = null,
+  required = false,
+  valid = null,
+  validationMessage = null,
+  validationProps = {},
+  ...rest
+}: Props) => {
   if (!children) {
     return null;
   }
@@ -181,19 +179,6 @@ export const propTypes = {
   description: PropTypes.string,
 };
 
-export const defaultProps = {
-  label: null,
-  disabled: false,
-  valid: null,
-  required: false,
-  className: null,
-  validationMessage: null,
-  isCheckbox: false,
-  validationProps: {},
-  description: null,
-};
-
 BpkFieldset.propTypes = { ...propTypes };
-BpkFieldset.defaultProps = { ...defaultProps };
 
 export default BpkFieldset;

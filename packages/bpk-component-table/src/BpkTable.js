@@ -32,8 +32,7 @@ type Props = {
   className: ?string,
 };
 
-const BpkTable = (props: Props) => {
-  const { children, className, ...rest } = props;
+const BpkTable = ({children, className = null, ...rest}: Props) => {
 
   const classNames = getClassName('bpk-table', className);
 
@@ -50,8 +49,5 @@ BpkTable.propTypes = {
   className: PropTypes.string,
 };
 
-BpkTable.defaultProps = {
-  className: null,
-};
 
 export default BpkTable;

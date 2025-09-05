@@ -66,21 +66,19 @@ const getDefaultTextStyle = (size: $Values<typeof SIZES>) => {
   return TEXT_STYLES.xs;
 };
 
-const BpkPrice = (props: Props) => {
-  const {
-    align,
-    className,
-    dataAttributes,
-    icon,
-    leadingClassName,
-    leadingText,
-    previousPrice,
-    price,
-    size,
-    trailingText,
-    ...rest
-  } = props;
-
+const BpkPrice = ({
+  align = ALIGNS.left,
+  className = null,
+  dataAttributes = {},
+  icon,
+  leadingClassName = null,
+  leadingText = null,
+  previousPrice = null,
+  price,
+  size = SIZES.small,
+  trailingText = null,
+  ...rest
+}: Props) => {
   const defaultTextStyle = getDefaultTextStyle(size);
   const priceTextStyle = getPriceTextStyle(size);
   const isAlignRight = align === ALIGNS.right;
@@ -184,17 +182,6 @@ BpkPrice.propTypes = {
   previousPrice: PropTypes.string,
   leadingClassName: PropTypes.string,
   dataAttributes: PropTypes.objectOf(PropTypes.string),
-};
-
-BpkPrice.defaultProps = {
-  size: SIZES.small,
-  align: ALIGNS.left,
-  className: null,
-  leadingText: null,
-  trailingText: null,
-  previousPrice: null,
-  leadingClassName: null,
-  dataAttributes: {},
 };
 
 export default BpkPrice;

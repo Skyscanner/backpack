@@ -43,21 +43,19 @@ export type Props = {
   wrapperClassName: ?string,
 };
 
-const BpkSelect = (props: Props) => {
-  const {
-    className,
-    disabled,
-    docked,
-    dockedFirst,
-    dockedLast,
-    dockedMiddle,
-    image,
-    large,
-    valid,
-    wrapperClassName,
-    ...rest
-  } = props;
-
+const BpkSelect = ({
+  className = null,
+  disabled = false,
+  docked = false,
+  dockedFirst = false,
+  dockedLast = false,
+  dockedMiddle = false,
+  image = null,
+  large = false,
+  valid = null,
+  wrapperClassName = null,
+  ...rest
+}: Props) => {
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid
   const isInvalid = valid === false;
@@ -124,19 +122,6 @@ BpkSelect.propTypes = {
   large: PropTypes.bool,
   valid: PropTypes.bool,
   wrapperClassName: PropTypes.string,
-};
-
-BpkSelect.defaultProps = {
-  className: null,
-  docked: false,
-  dockedFirst: false,
-  dockedLast: false,
-  dockedMiddle: false,
-  disabled: false,
-  image: null,
-  large: false,
-  valid: null,
-  wrapperClassName: null,
 };
 
 export default BpkSelect;

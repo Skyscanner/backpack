@@ -37,10 +37,14 @@ const AlignedExclamationIcon = withAlignment(
   iconSizeSm,
 );
 
-const BpkFormValidation = (props) => {
-  const { children, className, containerProps, expanded, isCheckbox, ...rest } =
-    props;
-
+const BpkFormValidation = ({
+  children,
+  className = null,
+  containerProps = {},
+  expanded,
+  isCheckbox = false,
+  ...rest
+}) => {
   const classNames = getClassName(
     'bpk-form-validation',
     expanded && 'bpk-form-validation--appear',
@@ -74,12 +78,6 @@ BpkFormValidation.propTypes = {
   isCheckbox: PropTypes.bool,
   className: PropTypes.string,
   containerProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-};
-
-BpkFormValidation.defaultProps = {
-  isCheckbox: false,
-  className: null,
-  containerProps: {},
 };
 
 export default BpkFormValidation;
