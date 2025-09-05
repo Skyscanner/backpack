@@ -16,7 +16,15 @@
  * limitations under the License.
  */
 
-import type { ReactElement, InputHTMLAttributes, LegacyRef } from 'react';
+import type {
+  ReactElement,
+  InputHTMLAttributes,
+  LegacyRef,
+  FocusEvent,
+  ChangeEventHandler,
+  FocusEventHandler,
+} from 'react';
+import { useState } from 'react';
 
 import { userEvent, within } from '@storybook/test';
 
@@ -145,6 +153,96 @@ const renderCustomInput = (
 export const CustomRenderInput = () => (
   <AutosuggestExample renderInputComponent={renderCustomInput} />
 );
+
+const renderBrokenInput = (
+  inputProps: InputHTMLAttributes<HTMLInputElement> & {
+    ref?: LegacyRef<HTMLInputElement>;
+  },
+) => (
+  <div
+    style={{
+      border: '2px dashed red',
+      borderRadius: '6px',
+      padding: '10px',
+      background: '#fffbe6',
+    }}
+  >
+    <div
+      style={{
+        fontWeight: 600,
+        fontSize: '13px',
+        marginBottom: '4px',
+      }}
+    >
+      Broken Input (Missing ref)
+    </div>
+    <input
+      {...inputProps}
+      placeholder="Search"
+      style={{
+        border: 'none',
+        outline: 'none',
+        fontSize: '14px',
+        width: '100%',
+      }}
+    />
+  </div>
+);
+
+export const BrokenRefMisalignment = () => (
+  <div style={{ padding: '16px' }}>
+    <AutosuggestExample
+      renderInputComponent={renderBrokenInput}
+      alwaysRenderSuggestions
+      includeIcon
+    />
+  </div>
+);
+
+export const LegacyEvents = () => {
+  const [value, setValue] = useState('');
+
+  const onChange = (_e: Event, { newValue }: { newValue: string }) => {
+    setValue(newValue);
+  };
+
+  const onBlur = (
+    _e: Event,
+    { highlightedSuggestion }: { highlightedSuggestion?: any },
+  ) => {};
+
+  const onFocus = (e: FocusEvent<HTMLInputElement>) => {
+    const target = e.currentTarget;
+    setTimeout(() => target.select(), 10);
+  };
+
+  const onSuggestionSelected = (
+    e: Event,
+    { suggestion }: { suggestion: any },
+  ) => {
+    if (e.preventDefault) {
+      e.preventDefault();
+    }
+  };
+
+  return (
+    <div style={{ padding: '16px', width: '360px' }}>
+      <AutosuggestExample
+        onSuggestionSelected={onSuggestionSelected}
+        highlightFirstSuggestion
+        inputProps={{
+          id: 'my-autosuggest',
+          name: 'my_autosuggest',
+          placeholder: 'Type e.g. London',
+          value,
+          onChange: onChange as unknown as ChangeEventHandler<HTMLInputElement>,
+          onBlur: onBlur as unknown as FocusEventHandler<HTMLInputElement>,
+          onFocus,
+        }}
+      />
+    </div>
+  );
+};
 
 // --- Visual regression test (Percy) ---
 

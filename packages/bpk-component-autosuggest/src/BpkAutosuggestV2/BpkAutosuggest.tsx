@@ -46,6 +46,11 @@ import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base
 import BpkInput from '../../../bpk-component-input';
 import { cssModules } from '../../../bpk-react-utils';
 
+import {
+  patchInputPropsLegacySupport,
+  patchAutosuggestPropsLegacySupport,
+} from './compat-utils';
+
 import type {
   UseComboboxState,
   UseComboboxStateChangeOptions,
@@ -189,6 +194,21 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     const suggestionsCount = suggestions.length;
     const hasSuggestions = suggestionsCount > 0;
 
+    const {
+      onInputValueChange: safeOnInputValueChange,
+      onSuggestionSelected: safeOnSuggestionSelected,
+    } = patchAutosuggestPropsLegacySupport({
+      onSuggestionSelected,
+      onInputValueChange,
+    });
+
+    const safeInputProps = patchInputPropsLegacySupport(inputProps, {
+      getHighlightedSuggestion: () =>
+        highlightedIndex != null && highlightedIndex >= 0
+          ? (flattenedSuggestions?.[highlightedIndex] ?? null)
+          : null,
+    });
+
     function stateReducer(
       state: UseComboboxState<any>,
       actionAndChanges: UseComboboxStateChangeOptions<any>,
@@ -228,6 +248,20 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       ? suggestions.flatMap((section) => getSectionSuggestions?.(section) ?? [])
       : suggestions;
 
+    const legacyOnChangeHandler = (() => {
+      const raw = inputProps.onChange;
+      if (typeof raw === 'function' && raw.length >= 2) {
+        return (newValue: string) => {
+          const fn = raw as unknown as (
+            e: Event,
+            data: { newValue: string },
+          ) => void;
+          fn(new Event('input'), { newValue });
+        };
+      }
+      return null;
+    })();
+
     const {
       getInputProps,
       getItemProps,
@@ -246,7 +280,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       },
       async onInputValueChange(changes) {
         const { inputValue: newInputValue, isOpen: newIsOpen, type } = changes;
-        onInputValueChange?.({
+        safeOnInputValueChange?.({
           method: type,
           newValue: newInputValue ?? '',
         });
@@ -261,12 +295,17 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       },
       onSelectedItemChange(changes) {
         const { selectedItem } = changes;
+        const newValue = getSuggestionValue(selectedItem);
         if (selectedItem) {
-          setInputValue(getSuggestionValue(selectedItem));
-          onSuggestionSelected?.({
+          setInputValue(newValue);
+          safeOnSuggestionSelected?.({
             suggestion: selectedItem,
             inputValue,
           });
+
+          if (legacyOnChangeHandler) {
+            legacyOnChangeHandler(newValue);
+          }
 
           if (alwaysRenderSuggestions) {
             // Manually clear suggestions or hide menu
@@ -363,13 +402,13 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       }
 
       if (e.key === 'Enter' && suggestionsCount) {
-        onSuggestionSelected?.({ suggestion: suggestions[0], inputValue });
+        safeOnSuggestionSelected?.({ suggestion: suggestions[0], inputValue });
       }
 
       if (defaultValue) {
         handleInputInteraction();
       } else if (!hasSuggestions) {
-        onSuggestionSelected?.();
+        safeOnSuggestionSelected?.();
       }
     };
 
@@ -498,7 +537,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
     // Render the input component
     const renderInput = () => {
-      const inputAriaLabel = inputValue || inputProps.placeholder;
+      const inputAriaLabel = inputValue || safeInputProps.placeholder;
 
       const {
         className: inputClassName,
@@ -507,7 +546,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         onKeyDown: inputOnKeyDown,
         type: typeFromInputProps,
         ...restInputProps
-      } = inputProps;
+      } = safeInputProps;
 
       const {
         ref: downshiftInputRef,
@@ -548,13 +587,18 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       } else if (typeof value === 'string' || typeof value === 'number') {
         normalizedInputValue = value;
       }
+
       if (renderInputComponent) {
-        return renderInputComponent({
-          ref: setInputRef,
-          enterKeyHint,
-          value,
-          ...finalInputProps,
-        });
+        return (
+          <div ref={setInputRef}>
+            {renderInputComponent({
+              ...finalInputProps,
+              ref: setInputRef,
+              enterKeyHint,
+              value,
+            })}
+          </div>
+        );
       }
 
       return (
