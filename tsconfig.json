@@ -25,5 +25,5 @@
     "@types",
     "examples"
   ],
-  "exclude": ["packages/**/*.figma.tsx"]
+  "exclude": ["**/**/*.figma.tsx"]
 }

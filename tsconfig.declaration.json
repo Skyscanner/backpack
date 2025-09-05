@@ -29,6 +29,6 @@
   "exclude": [
     "**/**/*test*",
     "**/**/*stories*",
-    "packages/**/*.figma.tsx"
+    "**/**/*.figma.tsx"
   ]
 }
