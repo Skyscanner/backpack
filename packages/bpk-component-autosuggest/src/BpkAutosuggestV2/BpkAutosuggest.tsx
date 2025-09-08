@@ -593,16 +593,14 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
                   showSuggestions && theme.suggestionsContainerOpen,
                 )}
               >
-                <div className="bpk-autosuggest__floating-wrapper">
-                  <FloatingArrow
-                    ref={arrowRef}
-                    context={context}
-                    className={getClassName('bpk-autosuggest__arrow')}
-                    role="presentation"
-                    stroke={surfaceHighlightDay}
-                    strokeWidth={strokeWidth}
-                  />
-                </div>
+                <FloatingArrow
+                  ref={arrowRef}
+                  context={context}
+                  className={getClassName('bpk-autosuggest__arrow')}
+                  role="presentation"
+                  stroke={surfaceHighlightDay}
+                  strokeWidth={strokeWidth}
+                />
                 <ul
                   {...getMenuProps({
                     ...(ariaLabels?.resultsList && {
