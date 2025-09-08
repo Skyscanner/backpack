@@ -48,7 +48,7 @@ const BpkButtonBase = (
     iconOnly = false,
     large = false,
     onClick = () => null,
-    rel: propRel  = '',
+    rel: propRel = '',
     submit = false,
     type,
     ...rest

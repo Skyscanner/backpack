@@ -41,7 +41,7 @@ const BpkButtonLink = ({
   alternate = false,
   children,
   className = null,
-  implicit =false,
+  implicit = false,
   onClick,
   ...rest
 }: Props) => {

@@ -37,8 +37,8 @@ type Props = {
 
 const BpkTextarea = ({
   className = null,
-  large = null,
-  valid = false,
+  large = false,
+  valid = null,
   ...rest
 }: Props) => {
   // Explicit check for false primitive value as undefined is
