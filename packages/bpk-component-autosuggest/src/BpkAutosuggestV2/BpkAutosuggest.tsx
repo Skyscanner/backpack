@@ -512,7 +512,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       });
 
       const setInputRef = (node: HTMLInputElement | null) => {
-        if (refs.reference.current === node) return;
+        if (refs.reference?.current === node) return;
 
         // convert input ref from Downshift
         if (typeof downshiftInputRef === 'function') {
