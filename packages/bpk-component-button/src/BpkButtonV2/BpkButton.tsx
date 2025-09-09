@@ -15,6 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { Children } from 'react';
+
 import { cssModules } from '../../../bpk-react-utils';
 
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
@@ -54,6 +56,28 @@ export const BpkButtonV2 = ({
   const target = blank ? '_blank' : '';
   const rel = blank ? propRel || 'noopener noreferrer' : propRel;
 
+  let processedChildren;
+  if (!disabled && (type === BUTTON_TYPES.link || type === BUTTON_TYPES.linkOnDark)) {
+    processedChildren = Children.map(children, (child) => {
+      if (typeof child === 'string') {
+        const match = child.match(/^(\s*)(.*?)(\s*)$/);
+        const leading = match?.[1] ?? '';
+        const text = match?.[2] ?? '';
+        const trailing = match?.[3] ?? '';
+        return (
+          <>
+            {leading.length > 0 && <span>{leading}</span>}
+            <span className={getCommonClassName(`bpk-button--${type}__text`)}>{text}</span>
+            {trailing.length > 0 && <span>{trailing}</span>}
+          </>
+        )
+      }
+      return child;
+    });
+  } else {
+    processedChildren = children;
+  }
+
   if (!disabled && href) {
     return (
       <a
@@ -64,7 +88,7 @@ export const BpkButtonV2 = ({
         rel={rel}
         {...rest}
       >
-        {children}
+        {processedChildren}
       </a>
     );
   }
@@ -77,7 +101,7 @@ export const BpkButtonV2 = ({
       onClick={onClick}
       {...rest}
     >
-      {children}
+      {processedChildren}
     </button>
   );
 };
