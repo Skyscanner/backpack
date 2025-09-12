@@ -52,7 +52,12 @@ const RealisticExample = () => {
       <BpkSkipLink
         href="#main"
         label="Skip to main content"
-        onClick={onSkipToMain}
+        onClick={
+          (e) => {
+            e.preventDefault();
+            onSkipToMain();
+          }
+        }
       />
 
       <main
