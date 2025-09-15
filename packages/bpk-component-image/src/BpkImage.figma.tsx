@@ -16,14 +16,16 @@
  * limitations under the License.
  */
 
-import BpkSkipLink from '../../packages/bpk-component-skip-link/src/BpkSkipLink';
+import figma from "@figma/code-connect"
 
-import { DefaultExample, RealisticExample } from './examples';
+import BpkImage from './BpkImage';
 
-export default {
-  title: 'bpk-component-skip-link',
-  component: BpkSkipLink,
-};
-
-export const Default = DefaultExample;
-export const Realistic = RealisticExample;
+figma.connect(
+  BpkImage,
+  "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=4401-28&m=dev",
+  {
+    props: {
+    },
+    example: () => <BpkImage altText="" src="" aspectRatio={16/9}/>,
+  },
+)
