@@ -25,7 +25,6 @@ figma.connect(
   "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=22719%3A26190",
   {
     props: {
-      // These props were automatically mapped based on your linked code:
       size: figma.enum("Size", {
         Default: SIZE_TYPES.default,
         Small: SIZE_TYPES.small,
