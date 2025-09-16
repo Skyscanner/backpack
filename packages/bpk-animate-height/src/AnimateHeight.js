@@ -62,9 +62,9 @@ class AnimateHeight extends Component {
     const contentHeight = this.contentElement.offsetHeight;
     this.contentElement.style.overflow = '';
 
-    let newHeight;
+    let newHeight = null;
     let shouldSetTimeout = false;
-    let timeoutHeight;
+    let timeoutHeight = null;
     let timeoutOverflow = transitionOverflow;
     let timeoutDuration = duration;
 
@@ -103,7 +103,7 @@ class AnimateHeight extends Component {
         });
 
         if (!isTransitionEndSupported()) {
-          this.onTransitionEnd?.();
+          this.onTransitionEnd();
         }
       }, timeoutDuration);
     }
