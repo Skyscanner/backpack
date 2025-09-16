@@ -29,7 +29,7 @@ const getClassName = cssModules(STYLES);
 
 type Props = { children: Node, className: ?string };
 
-const BpkTableHeadCell = ({ className = null, ...rest }: Props) => {
+const BpkTableHeadCell = ({ children, className = null, ...rest }: Props) => {
 
   const classNames = getClassName(
     'bpk-table__cell',
@@ -37,7 +37,11 @@ const BpkTableHeadCell = ({ className = null, ...rest }: Props) => {
     className,
   );
 
-  return <th {...rest} className={classNames} />;
+    return (
+    <th className={classNames} {...rest}>
+      {children}
+    </th>
+  );
 };
 
 BpkTableHeadCell.propTypes = {
