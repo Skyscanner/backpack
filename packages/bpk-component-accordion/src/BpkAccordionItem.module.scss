@@ -47,6 +47,11 @@
     @include utils.bpk-rtl {
       text-align: right;
     }
+
+    &--background-variant-padding {
+      padding: 0 tokens.bpk-spacing-base();
+      border-radius: tokens.$bpk-border-radius-md;
+    }
   }
 
   &__flex-container {

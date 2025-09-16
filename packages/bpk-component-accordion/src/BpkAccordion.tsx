@@ -22,11 +22,13 @@ import type { ReactNode } from 'react';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkAccordion.module.scss';
+import { ACCORDION_TYPES, AccordionType } from './common-types';
 
 const getClassName = cssModules(STYLES);
 
 export type BpkAccordionProps = {
   children: ReactNode;
+  type?: AccordionType;
   className?: string;
   divider?: boolean;
   onDark?: boolean;
@@ -35,11 +37,13 @@ export type BpkAccordionProps = {
 export const BpkAccordionContext = createContext({
   onDark: false,
   divider: true,
+  type: ACCORDION_TYPES.default as AccordionType,
 });
 
 const BpkAccordion = (props: BpkAccordionProps) => {
   const {
     children,
+    type = ACCORDION_TYPES.default,
     className,
     divider = true,
     onDark = false,
@@ -49,11 +53,12 @@ const BpkAccordion = (props: BpkAccordionProps) => {
   const classNames = getClassName(
     'bpk-accordion',
     onDark && 'bpk-accordion--on-dark',
+    `bpk-accordion--${type}`,
     className,
   );
 
   return (
-    <BpkAccordionContext.Provider value={{ onDark, divider }}>
+    <BpkAccordionContext.Provider value={{ onDark, divider, type }}>
       <div className={classNames} {...rest}>
         {children}
       </div>

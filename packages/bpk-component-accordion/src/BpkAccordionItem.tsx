@@ -27,6 +27,7 @@ import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
 import { BpkAccordionContext } from './BpkAccordion';
+import { ACCORDION_TYPES } from './common-types';
 
 import STYLES from './BpkAccordionItem.module.scss';
 
@@ -48,7 +49,7 @@ export type BpkAccordionItemProps = {
 };
 
 const BpkAccordionItem = (props: BpkAccordionItemProps) => {
-  const { divider, onDark } = useContext(BpkAccordionContext);
+  const { divider, onDark, type } = useContext(BpkAccordionContext);
   const itemClassNames = [getClassName('bpk-accordion__item')];
   const iconClassNames = [getClassName('bpk-accordion__item-expand-icon')];
   const titleTextClassNames = [getClassName('bpk-accordion__title-text')];
@@ -57,6 +58,7 @@ const BpkAccordionItem = (props: BpkAccordionItemProps) => {
   const contentInnerClassNames = [
     getClassName('bpk-accordion__content-inner-container'),
   ];
+  const toggleButtonClassNames = [getClassName('bpk-accordion__toggle-button')];
 
   const {
     children,
@@ -121,6 +123,12 @@ const BpkAccordionItem = (props: BpkAccordionItemProps) => {
     );
   }
 
+  if (type === ACCORDION_TYPES.surfaceLowContrast || type === ACCORDION_TYPES.surfaceDefault) {
+    toggleButtonClassNames.push(
+      getClassName('bpk-accordion__toggle-button--background-variant-padding'),
+    );
+  }
+
   const contentId = `${id}_content`;
   const clonedIcon = icon
     ? cloneElement(icon, {
@@ -141,7 +149,7 @@ const BpkAccordionItem = (props: BpkAccordionItemProps) => {
           aria-expanded={expanded}
           aria-controls={contentId}
           onClick={onClick}
-          className={getClassName('bpk-accordion__toggle-button')}
+          className={toggleButtonClassNames.join(' ')}
         >
           <div className={`${getClassName('bpk-accordion__flex-container')}`}>
             <div className={titleTextClassNames.join(' ')}>

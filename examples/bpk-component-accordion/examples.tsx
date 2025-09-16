@@ -39,6 +39,7 @@ import StopsIcon from '../../packages/bpk-component-icon/sm/stops';
 import TimeIcon from '../../packages/bpk-component-icon/sm/time';
 import TrendDownIcon from '../../packages/bpk-component-icon/lg/trend--down';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
+import { ACCORDION_TYPES } from '../../packages/bpk-component-accordion/src/common-types';
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
 const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
@@ -414,7 +415,7 @@ const VariantExample = () => (
   <div>
     <div style={{ backgroundColor: canvasContrastDay, padding: '2rem' }}>
 
-      <BpkAccordion divider={false}>
+      <BpkAccordion divider={false} type={ACCORDION_TYPES.surfaceDefault}>
         <StatefulAccordionItem
           id="stops"
           title={ <BpkText textStyle={TEXT_STYLES.heading4}>You found some <BpkText textStyle={TEXT_STYLES.heading4} color={TEXT_COLORS.textSuccess}>great prices</BpkText> - nice one!</BpkText> }
@@ -425,7 +426,7 @@ const VariantExample = () => (
     </div>
 
     <div style={{ backgroundColor: canvasDay, padding: '2rem' }}>
-      <BpkAccordion divider={false}>
+      <BpkAccordion divider={false} type={ACCORDION_TYPES.surfaceLowContrast}>
         <StatefulAccordionItem
           id="stops"
           title={ <BpkText textStyle={TEXT_STYLES.heading4}>You found some <BpkText textStyle={TEXT_STYLES.heading4} color={TEXT_COLORS.textSuccess}>great prices</BpkText> - nice one!</BpkText> }
