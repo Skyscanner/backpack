@@ -17,8 +17,10 @@
  */
 
 import {
+  canvasContrastDay,
+  canvasDay,
   colorMonteverde,
-  colorPanjin,
+  colorPanjin, iconSizeLg,
   iconSizeSm,
   lineHeightBase,
   surfaceContrastDay,
@@ -35,13 +37,16 @@ import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import { withAlignment } from '../../packages/bpk-component-icon';
 import StopsIcon from '../../packages/bpk-component-icon/sm/stops';
 import TimeIcon from '../../packages/bpk-component-icon/sm/time';
-import BpkText from '../../packages/bpk-component-text';
+import TrendDownIcon from '../../packages/bpk-component-icon/lg/trend--down';
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
 const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
 
 const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);
 const AlignedTimeIcon = withAlignment(TimeIcon, lineHeightBase, iconSizeSm);
+
+const AlignedTrendDownIcon = withAlignment(TrendDownIcon, lineHeightBase, iconSizeLg);
 
 const CheckboxWrapper = (props: any) => (
   <div style={{ padding: `1rem 0` }} {...props} />
@@ -405,6 +410,33 @@ const SingleItemExampleWithoutDividerOnDark = () => (
   </div>
 );
 
+const VariantExample = () => (
+  <div>
+    <div style={{ backgroundColor: canvasContrastDay, padding: '2rem' }}>
+
+      <BpkAccordion divider={false}>
+        <StatefulAccordionItem
+          id="stops"
+          title={ <BpkText textStyle={TEXT_STYLES.heading4}>You found some <BpkText textStyle={TEXT_STYLES.heading4} color={TEXT_COLORS.textSuccess}>great prices</BpkText> - nice one!</BpkText> }
+          icon={<AlignedTrendDownIcon />}>
+          <StopsContent />
+        </StatefulAccordionItem>
+      </BpkAccordion>
+    </div>
+
+    <div style={{ backgroundColor: canvasDay, padding: '2rem' }}>
+      <BpkAccordion divider={false}>
+        <StatefulAccordionItem
+          id="stops"
+          title={ <BpkText textStyle={TEXT_STYLES.heading4}>You found some <BpkText textStyle={TEXT_STYLES.heading4} color={TEXT_COLORS.textSuccess}>great prices</BpkText> - nice one!</BpkText> }
+          icon={<AlignedTrendDownIcon />}>
+          <StopsContent />
+        </StatefulAccordionItem>
+      </BpkAccordion>
+    </div>
+  </div>
+)
+
 export {
   SingleItemExample,
   SingleItemExampleInitiallyExpandedExample,
@@ -419,4 +451,5 @@ export {
   WithSeoContentOnDarkExample,
   SingleItemExampleWithoutDivider,
   SingleItemExampleWithoutDividerOnDark,
+  VariantExample,
 };

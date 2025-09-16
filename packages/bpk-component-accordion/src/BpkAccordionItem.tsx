@@ -37,7 +37,7 @@ const ExpandIcon = withButtonAlignment(ChevronDownIcon);
 export type BpkAccordionItemProps = {
   children: ReactNode;
   id: string;
-  title: string;
+  title: string | ReactElement;
   className?: string;
   expanded?: boolean;
   initiallyExpanded?: boolean;
@@ -128,6 +128,10 @@ const BpkAccordionItem = (props: BpkAccordionItemProps) => {
       })
     : null;
 
+  const titleItem = typeof title === 'string'
+    ?  <BpkText textStyle={textStyle} tagName={tagName}>{clonedIcon} {title}</BpkText>
+    : <>{clonedIcon} {title}</>;
+
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
     <div id={id} className={itemClassNames.join(' ')} {...rest}>
@@ -141,10 +145,7 @@ const BpkAccordionItem = (props: BpkAccordionItemProps) => {
         >
           <div className={`${getClassName('bpk-accordion__flex-container')}`}>
             <div className={titleTextClassNames.join(' ')}>
-              <BpkText textStyle={textStyle} tagName={tagName}>
-                {clonedIcon}
-                {title}
-              </BpkText>
+              {titleItem}
             </div>
             <span
               className={`${getClassName(
