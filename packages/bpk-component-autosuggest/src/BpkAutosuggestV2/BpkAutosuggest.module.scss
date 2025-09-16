@@ -28,6 +28,7 @@
   }
 
   &__suggestions-container {
+    margin-top: tokens.bpk-spacing-md() + tokens.bpk-spacing-sm();
     border: tokens.$bpk-one-pixel-rem solid tokens.$bpk-surface-highlight-day;
     border-radius: tokens.$bpk-border-radius-sm;
     background-color: tokens.$bpk-color-white;

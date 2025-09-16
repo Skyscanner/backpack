@@ -18,7 +18,6 @@
 
 import { useEffect, forwardRef, useRef } from 'react';
 import type {
-  KeyboardEvent,
   ReactElement,
   HTMLProps,
   MutableRefObject,
@@ -84,6 +83,7 @@ export type EnterKeyHintType =
 
 export type BpkInputRenderProps = InputHTMLAttributes<HTMLInputElement> & {
   ref?: Ref<HTMLInputElement>;
+  onClear?: (e: SyntheticEvent<HTMLButtonElement>) => void;
 };
 
 export type BpkAutoSuggestProps<T> = {
@@ -196,11 +196,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       const { changes, type } = actionAndChanges;
 
       const shouldForceKeepOpen =
-        alwaysRenderSuggestions &&
-        state.inputValue &&
-        state.inputValue.length > 0 &&
-        hasSuggestions &&
-        changes.isOpen === false;
+        alwaysRenderSuggestions && hasSuggestions && changes.isOpen === false;
 
       if (shouldForceKeepOpen) {
         return {
@@ -251,12 +247,12 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           newValue: newInputValue ?? '',
         });
 
-        if (newInputValue?.length) {
+        if (newInputValue?.length > 0) {
           if (newIsOpen) {
             onSuggestionsFetchRequested(newInputValue);
           }
-        } else if (suggestionsCount) {
-          onSuggestionsClearRequested();
+        } else {
+          onSuggestionsFetchRequested('');
         }
       },
       onSelectedItemChange(changes) {
@@ -285,7 +281,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       placement: 'bottom-start',
       middleware: isDesktop
         ? [
-            offset(17),
+            offset(4),
             flip(),
             shift(),
             size({
@@ -346,6 +342,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       if (!isOpen && inputValue.length) {
         onSuggestionsFetchRequested(inputValue);
         openMenu();
+      } else if (alwaysRenderSuggestions && !inputValue) {
+        onSuggestionsFetchRequested('');
       } else {
         onClick?.();
       }
@@ -354,22 +352,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       // Every other use case is within a new screen or modal so is interacted with via the user navigating into the modal/new screen
       if (isDesktop) {
         onLoad?.(inputValue);
-      }
-    };
-
-    const onKeyDown = (e: KeyboardEvent): void => {
-      if (e.key !== 'Enter') {
-        return;
-      }
-
-      if (e.key === 'Enter' && suggestionsCount) {
-        onSuggestionSelected?.({ suggestion: suggestions[0], inputValue });
-      }
-
-      if (defaultValue) {
-        handleInputInteraction();
-      } else if (!hasSuggestions) {
-        onSuggestionSelected?.();
       }
     };
 
@@ -382,6 +364,10 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     const clearSuggestions = (e?: SyntheticEvent<HTMLButtonElement>) => {
       e?.stopPropagation();
       setInputValue('');
+      if (alwaysRenderSuggestions) {
+        hasLoadedInitiallyRef.current = true;
+        onSuggestionsFetchRequested('');
+      }
     };
 
     // Render suggestions function to render single section suggestion
@@ -475,9 +461,11 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
             role="group"
             aria-labelledby={sectionId}
           >
-            <div id={sectionId} className={theme.sectionTitle}>
-              {sectionTitleElement}
-            </div>
+            {sectionTitleElement && (
+              <div id={sectionId} className={theme.sectionTitle}>
+                {sectionTitleElement}
+              </div>
+            )}
             {renderedItems}
           </section>
         );
@@ -514,7 +502,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         value,
         ...finalInputProps
       } = getInputProps({
-        onKeyDown,
         ref: forwardedRef,
         onClick: handleInputInteraction,
         onFocus: handleInputInteraction,
@@ -525,7 +512,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       });
 
       const setInputRef = (node: HTMLInputElement | null) => {
-        refs.setReference(node);
+        if (refs.reference?.current === node) return;
 
         // convert input ref from Downshift
         if (typeof downshiftInputRef === 'function') {
@@ -541,13 +528,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         }
       };
 
-      let normalizedInputValue: string | number = '';
-
-      if (Array.isArray(value)) {
-        normalizedInputValue = value.join(', ');
-      } else if (typeof value === 'string' || typeof value === 'number') {
-        normalizedInputValue = value;
-      }
       if (renderInputComponent) {
         return renderInputComponent({
           ref: setInputRef,
@@ -568,24 +548,32 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
             </span>
             <div className={getClassName(theme.inputWrapper)}>
               <BpkInput
-                value={normalizedInputValue}
+                value={inputValue}
                 inputRef={setInputRef}
                 clearButtonMode={showClear ? 'whileEditing' : 'never'}
                 clearButtonLabel={ariaLabels?.clearButton || 'Clear input'}
-                onClear={clearSuggestions}
                 name={inputName || id}
                 id={id}
                 {...finalInputProps}
                 enterKeyHint={enterKeyHint}
+                onClear={clearSuggestions}
               />
             </div>
           </div>
         </div>
       );
     };
+    const containerWrapperRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+      if (containerWrapperRef.current) {
+        refs.setReference(containerWrapperRef.current);
+      }
+    }, [refs]);
 
     return (
       <div
+        ref={containerWrapperRef}
         className={getClassName(
           theme.container,
           suggestionsCount && theme.containerOpen,
