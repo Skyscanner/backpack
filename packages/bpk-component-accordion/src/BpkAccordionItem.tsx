@@ -38,7 +38,8 @@ const ExpandIcon = withButtonAlignment(ChevronDownIcon);
 export type BpkAccordionItemProps = {
   children: ReactNode;
   id: string;
-  title: string | ReactElement;
+  title?: string | ReactElement | null;
+  label?: string | null;
   className?: string;
   expanded?: boolean;
   initiallyExpanded?: boolean;
@@ -69,6 +70,7 @@ const BpkAccordionItem = (props: BpkAccordionItemProps) => {
     tagName = 'h3',
     textStyle = TEXT_STYLES.bodyDefault,
     title,
+    label,
     ...rest
   } = props;
 
@@ -158,9 +160,12 @@ const BpkAccordionItem = (props: BpkAccordionItemProps) => {
             <span
               className={`${getClassName(
                 'bpk-accordion__icon-wrapper',
-              )} ${iconClassNames.join(' ')}`}
+              )}`}
             >
-              <ExpandIcon />
+              { label && ( <BpkText textStyle={TEXT_STYLES.label2}>{label}</BpkText> ) }
+              <span className={`${iconClassNames.join(' ')}`}>
+                <ExpandIcon />
+              </span>
             </span>
           </div>
         </button>

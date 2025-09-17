@@ -419,6 +419,7 @@ const VariantExample = () => (
         <StatefulAccordionItem
           id="stops"
           title={ <BpkText textStyle={TEXT_STYLES.heading4}>You found some <BpkText textStyle={TEXT_STYLES.heading4} color={TEXT_COLORS.textSuccess}>great prices</BpkText> - nice one!</BpkText> }
+          label="Show price data"
           icon={<AlignedTrendDownIcon />}>
           <StopsContent />
         </StatefulAccordionItem>
@@ -429,8 +430,7 @@ const VariantExample = () => (
       <BpkAccordion divider={false} type={ACCORDION_TYPES.surfaceLowContrast}>
         <StatefulAccordionItem
           id="stops"
-          title={ <BpkText textStyle={TEXT_STYLES.heading4}>You found some <BpkText textStyle={TEXT_STYLES.heading4} color={TEXT_COLORS.textSuccess}>great prices</BpkText> - nice one!</BpkText> }
-          icon={<AlignedTrendDownIcon />}>
+          label="Our lowest price £90">
           <StopsContent />
         </StatefulAccordionItem>
       </BpkAccordion>
