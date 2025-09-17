@@ -41,6 +41,7 @@ import TrendDownIcon from '../../packages/bpk-component-icon/lg/trend--down';
 import StopsIcon from '../../packages/bpk-component-icon/sm/stops';
 import TimeIcon from '../../packages/bpk-component-icon/sm/time';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
+import BpkPriceRange from '../../packages/bpk-component-price-range';
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
 const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
@@ -172,6 +173,32 @@ const SeoTextContent = () => (
     fam typewriter iPhone selfies tattooed.
   </BpkText>
 );
+
+const PriceContent = () => (
+  <div style={{ display: 'flex', padding: '0 1rem 1rem 1rem', alignContent: 'space-between', gap: '4rem' }}>
+    <div style={{ flexGrow: 1 }}>
+      <BpkText>
+        The average nightly price in Amsterdam for your dates is £85. In September, Amsterdam hotels usually range from £113 to £216 a night.
+      </BpkText>
+    </div>
+    <div style={{ width: '14rem' }}>
+      <BpkPriceRange
+        showPriceIndicator
+        marker={{ price: '£85', percentage: 10 }}
+        segments={{
+          low: {
+            price: '£113',
+            percentage: 20,
+          },
+          high: {
+            price: '£216',
+            percentage: 80,
+          },
+        }}
+      />
+    </div>
+  </div>
+)
 
 const SingleItemExample = () => (
   <SingleItemAccordion>
@@ -422,7 +449,7 @@ const VariantExample = () => (
           title={ <BpkText textStyle={TEXT_STYLES.heading4}>You found some <BpkText textStyle={TEXT_STYLES.heading4} color={TEXT_COLORS.textSuccess}>great prices</BpkText> - nice one!</BpkText> }
           label="Show price data"
           icon={<AlignedTrendDownIcon />}>
-          <StopsContent />
+          <PriceContent />
         </StatefulAccordionItem>
       </BpkAccordion>
     </div>
