@@ -33,8 +33,8 @@ import {
   BpkAccordionItem,
   withAccordionItemState,
 } from '../../packages/bpk-component-accordion';
-// @ts-expect-error Untyped import - see `decisions/imports-ts-suppressions.md`.
 import { ACCORDION_TYPES } from '../../packages/bpk-component-accordion/src/common-types';
+// @ts-expect-error Untyped import - see `decisions/imports-ts-suppressions.md`.
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import { withAlignment } from '../../packages/bpk-component-icon';
 import TrendDownIcon from '../../packages/bpk-component-icon/lg/trend--down';
