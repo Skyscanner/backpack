@@ -32,7 +32,8 @@ import {
   WithSeoContentExample,
   WithSeoContentOnDarkExample,
   SingleItemExampleWithoutDivider,
-  SingleItemExampleWithoutDividerOnDark, VariantExample,
+  SingleItemExampleWithoutDividerOnDark,
+  VariantExample,
 } from './examples';
 import {
   WithSingleItemAccordionStateMock,
