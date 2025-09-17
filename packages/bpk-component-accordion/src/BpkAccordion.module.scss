@@ -26,12 +26,12 @@
   }
 
   &--surface-default {
-    background: tokens.$bpk-surface-default-day;
     border-radius: tokens.$bpk-border-radius-md;
+    background: tokens.$bpk-surface-default-day;
   }
 
   &--surface-low-contrast {
-    background: tokens.$bpk-surface-low-contrast-day;
     border-radius: tokens.$bpk-border-radius-md;
+    background: tokens.$bpk-surface-low-contrast-day;
   }
 }
