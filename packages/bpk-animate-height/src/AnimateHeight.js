@@ -52,62 +52,62 @@ class AnimateHeight extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-  const { duration, height, transitionOverflow } = this.props;
+    const { duration, height, transitionOverflow } = this.props;
 
-  // Check if 'height' prop has changed
-  if (this.contentElement && height !== prevProps.height) {
-    // Cache content height
-    this.contentElement.style.display = '';
-    this.contentElement.style.overflow = transitionOverflow;
-    const contentHeight = this.contentElement.offsetHeight;
-    this.contentElement.style.overflow = '';
+    // Check if 'height' prop has changed
+    if (this.contentElement && height !== prevProps.height) {
+      // Cache content height
+      this.contentElement.style.display = '';
+      this.contentElement.style.overflow = transitionOverflow;
+      const contentHeight = this.contentElement.offsetHeight;
+      this.contentElement.style.overflow = '';
 
-    let newHeight = null;
-    let shouldSetTimeout = false;
-    let timeoutHeight = null;
-    let timeoutOverflow = transitionOverflow;
-    let timeoutDuration = duration;
+      let newHeight = null;
+      let shouldSetTimeout = false;
+      let timeoutHeight = null;
+      let timeoutOverflow = transitionOverflow;
+      let timeoutDuration = duration;
 
-    clearTimeout(this.timeoutID);
+      clearTimeout(this.timeoutID);
 
-    if (isNumber(height)) {
-      // If new height is a number
-      newHeight = height < 0 ? 0 : height;
-    } else {
-      // If not, animate to content height and then reset to auto
-      newHeight = contentHeight;
-      shouldSetTimeout = true;
-      timeoutHeight = 'auto';
-      timeoutOverflow = 'visible';
+      if (isNumber(height)) {
+        // If new height is a number
+        newHeight = height < 0 ? 0 : height;
+      } else {
+        // If not, animate to content height and then reset to auto
+        newHeight = contentHeight;
+        shouldSetTimeout = true;
+        timeoutHeight = 'auto';
+        timeoutOverflow = 'visible';
+      }
+
+      // If previous height was 'auto'
+      // set it explicitly to be able to use transition
+      if (prevState.height === 'auto') {
+        shouldSetTimeout = true;
+        timeoutHeight = newHeight;
+        newHeight = contentHeight;
+        timeoutDuration = 50;
+      }
+
+      this.setState({
+        height: newHeight,
+        overflow: transitionOverflow,
+      });
+
+      if (shouldSetTimeout) {
+        this.timeoutID = setTimeout(() => {
+          this.setState({
+            height: timeoutHeight,
+            overflow: timeoutOverflow,
+          });
+
+          if (!isTransitionEndSupported()) {
+            this.onTransitionEnd();
+          }
+        }, timeoutDuration);
+      }
     }
-
-    // If previous height was 'auto'
-    // set it explicitly to be able to use transition
-    if (prevState.height === 'auto') {
-      shouldSetTimeout = true;
-      timeoutHeight = newHeight;
-      newHeight = contentHeight;
-      timeoutDuration = 50;
-    }
-
-    this.setState({
-      height: newHeight,
-      overflow: transitionOverflow,
-    });
-
-    if (shouldSetTimeout) {
-      this.timeoutID = setTimeout(() => {
-        this.setState({
-          height: timeoutHeight,
-          overflow: timeoutOverflow,
-        });
-
-        if (!isTransitionEndSupported()) {
-          this.onTransitionEnd();
-        }
-      }, timeoutDuration);
-    }
-  }
 }
 
   componentWillUnmount() {
