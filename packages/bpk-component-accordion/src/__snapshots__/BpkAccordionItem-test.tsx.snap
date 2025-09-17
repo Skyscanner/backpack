@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkAccordionItem should not render an "initiallyExpanded" attribute on the html node 1`] = `
 <DocumentFragment>
@@ -24,26 +24,30 @@ exports[`BpkAccordionItem should not render an "initiallyExpanded" attribute on 
             <h3
               class="bpk-text bpk-text--body-default"
             >
-              My accordion item
+               My accordion item
             </h3>
           </div>
           <span
-            class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
+            class="bpk-accordion__icon-wrapper"
           >
             <span
-              style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+              class="bpk-accordion__item-expand-icon"
             >
-              <svg
-                aria-hidden="true"
-                height="1rem"
-                viewBox="0 0 24 24"
-                width="1rem"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
-                <path
-                  d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.57 1.57 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0"
-                />
-              </svg>
+                <svg
+                  aria-hidden="true"
+                  height="1rem"
+                  viewBox="0 0 24 24"
+                  width="1rem"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.57 1.57 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0"
+                  />
+                </svg>
+              </span>
             </span>
           </span>
         </div>
@@ -95,26 +99,30 @@ exports[`BpkAccordionItem should render correctly 1`] = `
             <h3
               class="bpk-text bpk-text--body-default"
             >
-              My accordion item
+               My accordion item
             </h3>
           </div>
           <span
-            class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
+            class="bpk-accordion__icon-wrapper"
           >
             <span
-              style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+              class="bpk-accordion__item-expand-icon"
             >
-              <svg
-                aria-hidden="true"
-                height="1rem"
-                viewBox="0 0 24 24"
-                width="1rem"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
-                <path
-                  d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.57 1.57 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0"
-                />
-              </svg>
+                <svg
+                  aria-hidden="true"
+                  height="1rem"
+                  viewBox="0 0 24 24"
+                  width="1rem"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.57 1.57 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0"
+                  />
+                </svg>
+              </span>
             </span>
           </span>
         </div>
@@ -166,26 +174,30 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
             <h3
               class="bpk-text bpk-text--body-default"
             >
-              My accordion item
+               My accordion item
             </h3>
           </div>
           <span
-            class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
+            class="bpk-accordion__icon-wrapper"
           >
             <span
-              style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+              class="bpk-accordion__item-expand-icon"
             >
-              <svg
-                aria-hidden="true"
-                height="1rem"
-                viewBox="0 0 24 24"
-                width="1rem"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
-                <path
-                  d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.57 1.57 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0"
-                />
-              </svg>
+                <svg
+                  aria-hidden="true"
+                  height="1rem"
+                  viewBox="0 0 24 24"
+                  width="1rem"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.57 1.57 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0"
+                  />
+                </svg>
+              </span>
             </span>
           </span>
         </div>
@@ -237,26 +249,30 @@ exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
             <h3
               class="bpk-text bpk-text--body-default"
             >
-              My accordion item
+               My accordion item
             </h3>
           </div>
           <span
-            class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--flipped"
+            class="bpk-accordion__icon-wrapper"
           >
             <span
-              style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+              class="bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--flipped"
             >
-              <svg
-                aria-hidden="true"
-                height="1rem"
-                viewBox="0 0 24 24"
-                width="1rem"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
-                <path
-                  d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.57 1.57 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0"
-                />
-              </svg>
+                <svg
+                  aria-hidden="true"
+                  height="1rem"
+                  viewBox="0 0 24 24"
+                  width="1rem"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.57 1.57 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0"
+                  />
+                </svg>
+              </span>
             </span>
           </span>
         </div>
@@ -306,26 +322,30 @@ exports[`BpkAccordionItem should render correctly with "tagName" prop set 1`] = 
             <h3
               class="bpk-text bpk-text--body-default"
             >
-              My accordion item
+               My accordion item
             </h3>
           </div>
           <span
-            class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
+            class="bpk-accordion__icon-wrapper"
           >
             <span
-              style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+              class="bpk-accordion__item-expand-icon"
             >
-              <svg
-                aria-hidden="true"
-                height="1rem"
-                viewBox="0 0 24 24"
-                width="1rem"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
-                <path
-                  d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.57 1.57 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0"
-                />
-              </svg>
+                <svg
+                  aria-hidden="true"
+                  height="1rem"
+                  viewBox="0 0 24 24"
+                  width="1rem"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.57 1.57 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0"
+                  />
+                </svg>
+              </span>
             </span>
           </span>
         </div>
@@ -377,26 +397,30 @@ exports[`BpkAccordionItem should render correctly with "textStyle" prop set 1`] 
             <h3
               class="bpk-text bpk-text--xl"
             >
-              My accordion item
+               My accordion item
             </h3>
           </div>
           <span
-            class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
+            class="bpk-accordion__icon-wrapper"
           >
             <span
-              style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+              class="bpk-accordion__item-expand-icon"
             >
-              <svg
-                aria-hidden="true"
-                height="1rem"
-                viewBox="0 0 24 24"
-                width="1rem"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
-                <path
-                  d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.57 1.57 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0"
-                />
-              </svg>
+                <svg
+                  aria-hidden="true"
+                  height="1rem"
+                  viewBox="0 0 24 24"
+                  width="1rem"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.57 1.57 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0"
+                  />
+                </svg>
+              </span>
             </span>
           </span>
         </div>
@@ -460,26 +484,30 @@ exports[`BpkAccordionItem should render correctly with an icon set 1`] = `
                   d="M11.25 7.5a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5m-3.588-.866a1.5 1.5 0 0 1-.358 2.09C5.597 9.933 4.5 11.89 4.5 14.092V19.5a1.5 1.5 0 1 1-3 0v-5.41c0-3.227 1.614-6.076 4.071-7.814a1.5 1.5 0 0 1 2.091.358m7.176 0a1.5 1.5 0 0 1 2.09-.359C19.387 8.014 21 10.864 21 14.091v1.788l.44-.44a1.5 1.5 0 0 1 2.12 2.122l-3 3a1.5 1.5 0 0 1-2.12 0l-3-3a1.5 1.5 0 0 1 2.12-2.122l.44.44V14.09c0-2.201-1.097-4.159-2.804-5.366a1.5 1.5 0 0 1-.358-2.091z"
                 />
               </svg>
-              My accordion item
+               My accordion item
             </h3>
           </div>
           <span
-            class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon"
+            class="bpk-accordion__icon-wrapper"
           >
             <span
-              style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+              class="bpk-accordion__item-expand-icon"
             >
-              <svg
-                aria-hidden="true"
-                height="1rem"
-                viewBox="0 0 24 24"
-                width="1rem"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
-                <path
-                  d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.57 1.57 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0"
-                />
-              </svg>
+                <svg
+                  aria-hidden="true"
+                  height="1rem"
+                  viewBox="0 0 24 24"
+                  width="1rem"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.57 1.57 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0"
+                  />
+                </svg>
+              </span>
             </span>
           </span>
         </div>
@@ -531,26 +559,30 @@ exports[`BpkAccordionItem should render correctly with no divider 1`] = `
             <h3
               class="bpk-text bpk-text--body-default"
             >
-              My accordion item
+               My accordion item
             </h3>
           </div>
           <span
-            class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--on-dark"
+            class="bpk-accordion__icon-wrapper"
           >
             <span
-              style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+              class="bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--on-dark"
             >
-              <svg
-                aria-hidden="true"
-                height="1rem"
-                viewBox="0 0 24 24"
-                width="1rem"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
-                <path
-                  d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.57 1.57 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0"
-                />
-              </svg>
+                <svg
+                  aria-hidden="true"
+                  height="1rem"
+                  viewBox="0 0 24 24"
+                  width="1rem"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.57 1.57 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0"
+                  />
+                </svg>
+              </span>
             </span>
           </span>
         </div>
@@ -603,26 +635,30 @@ exports[`BpkAccordionItem should render correctly with onDark set 1`] = `
             <h3
               class="bpk-text bpk-text--body-default"
             >
-              My accordion item
+               My accordion item
             </h3>
           </div>
           <span
-            class="bpk-accordion__icon-wrapper bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--on-dark"
+            class="bpk-accordion__icon-wrapper"
           >
             <span
-              style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+              class="bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--on-dark"
             >
-              <svg
-                aria-hidden="true"
-                height="1rem"
-                viewBox="0 0 24 24"
-                width="1rem"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
               >
-                <path
-                  d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.57 1.57 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0"
-                />
-              </svg>
+                <svg
+                  aria-hidden="true"
+                  height="1rem"
+                  viewBox="0 0 24 24"
+                  width="1rem"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.113 8.095a1.496 1.496 0 0 1 0 2.008l-6.397 5.948a1 1 0 0 1-1.358.003l-6.532-6.01a1.427 1.427 0 0 1 .138-1.949 1.57 1.57 0 0 1 1.997-.103l5.078 4.638 4.97-4.535a1.72 1.72 0 0 1 2.104 0"
+                  />
+                </svg>
+              </span>
             </span>
           </span>
         </div>
