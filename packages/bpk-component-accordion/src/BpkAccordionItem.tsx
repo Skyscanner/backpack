@@ -66,11 +66,11 @@ const BpkAccordionItem = (props: BpkAccordionItemProps) => {
     expanded = false,
     icon = null,
     id,
+    label,
     onClick = () => null,
     tagName = 'h3',
     textStyle = TEXT_STYLES.bodyDefault,
     title,
-    label,
     ...rest
   } = props;
 

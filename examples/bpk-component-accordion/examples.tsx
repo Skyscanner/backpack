@@ -34,13 +34,13 @@ import {
   withAccordionItemState,
 } from '../../packages/bpk-component-accordion';
 // @ts-expect-error Untyped import - see `decisions/imports-ts-suppressions.md`.
+import { ACCORDION_TYPES } from '../../packages/bpk-component-accordion/src/common-types';
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import { withAlignment } from '../../packages/bpk-component-icon';
+import TrendDownIcon from '../../packages/bpk-component-icon/lg/trend--down';
 import StopsIcon from '../../packages/bpk-component-icon/sm/stops';
 import TimeIcon from '../../packages/bpk-component-icon/sm/time';
-import TrendDownIcon from '../../packages/bpk-component-icon/lg/trend--down';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
-import { ACCORDION_TYPES } from '../../packages/bpk-component-accordion/src/common-types';
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
 const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
