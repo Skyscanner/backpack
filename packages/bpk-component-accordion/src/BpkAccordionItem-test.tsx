@@ -22,6 +22,7 @@ import StopsIcon from '../../bpk-component-icon/sm/stops';
 
 import { BpkAccordionContext } from './BpkAccordion';
 import BpkAccordionItem from './BpkAccordionItem';
+import { ACCORDION_TYPES } from './common-types';
 
 describe('BpkAccordionItem', () => {
   it('should render correctly', () => {
@@ -109,7 +110,7 @@ describe('BpkAccordionItem', () => {
 
   it('should render correctly with onDark set', () => {
     const { asFragment } = render(
-      <BpkAccordionContext.Provider value={{ onDark: true, divider: true }}>
+      <BpkAccordionContext.Provider value={{ onDark: true, divider: true, type: ACCORDION_TYPES.default }}>
         <BpkAccordionItem id="my-accordion" title="My accordion item">
           My accordion content
         </BpkAccordionItem>
@@ -121,7 +122,7 @@ describe('BpkAccordionItem', () => {
 
   it('should render correctly with no divider', () => {
     const { asFragment } = render(
-      <BpkAccordionContext.Provider value={{ onDark: true, divider: false }}>
+      <BpkAccordionContext.Provider value={{ onDark: true, divider: false, type: ACCORDION_TYPES.default }}>
         <BpkAccordionItem id="my-accordion" title="My accordion item">
           My accordion content
         </BpkAccordionItem>
