@@ -58,7 +58,9 @@
     display: inline-flex;
     width: 100%;
     margin: tokens.bpk-spacing-base() 0;
-    flex-direction: row;
+    gap: tokens.bpk-spacing-md();
+    align-items: center;
+    flex-direction: bottom;
   }
 
   &__title-text {
@@ -77,8 +79,8 @@
     @include margins.bpk-margin-leading(tokens.bpk-spacing-md());
   }
 
-  &__leading-icon {
-    @include margins.bpk-margin-trailing(tokens.bpk-spacing-md(), true);
+  &__leading-icon svg {
+    vertical-align: middle;
   }
 
   &__item-expand-icon {

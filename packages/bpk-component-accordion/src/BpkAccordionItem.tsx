@@ -132,15 +132,10 @@ const BpkAccordionItem = (props: BpkAccordionItemProps) => {
   }
 
   const contentId = `${id}_content`;
-  const clonedIcon = icon
-    ? cloneElement(icon, {
-        className: getClassName('bpk-accordion__leading-icon'),
-      })
-    : null;
 
   const titleItem = typeof title === 'string'
-    ?  <BpkText textStyle={textStyle} tagName={tagName}>{clonedIcon} {title}</BpkText>
-    : <>{clonedIcon} {title}</>;
+    ?  <BpkText textStyle={textStyle} tagName={tagName}>{title}</BpkText>
+    : <>{title}</>;
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
@@ -154,6 +149,11 @@ const BpkAccordionItem = (props: BpkAccordionItemProps) => {
           className={toggleButtonClassNames.join(' ')}
         >
           <div className={`${getClassName('bpk-accordion__flex-container')}`}>
+            { icon && (
+              <div className={`${getClassName('bpk-accordion__leading-icon')}`}>
+                {icon}
+              </div>
+            )}
             <div className={titleTextClassNames.join(' ')}>
               {titleItem}
             </div>

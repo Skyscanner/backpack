@@ -40,8 +40,8 @@ import { withAlignment } from '../../packages/bpk-component-icon';
 import TrendDownIcon from '../../packages/bpk-component-icon/lg/trend--down';
 import StopsIcon from '../../packages/bpk-component-icon/sm/stops';
 import TimeIcon from '../../packages/bpk-component-icon/sm/time';
-import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkPriceRange from '../../packages/bpk-component-price-range';
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
 const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
