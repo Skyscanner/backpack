@@ -58,9 +58,9 @@
     display: inline-flex;
     width: 100%;
     margin: tokens.bpk-spacing-base() 0;
-    gap: tokens.bpk-spacing-md();
-    align-items: center;
     flex-direction: bottom;
+    align-items: center;
+    gap: tokens.bpk-spacing-md();
   }
 
   &__title-text {
