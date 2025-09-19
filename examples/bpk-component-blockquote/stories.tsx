@@ -16,16 +16,25 @@
  * limitations under the License.
  */
 
-import BpkBlockquote from '../../packages/bpk-component-blockquote';
+import BpkBlockquote from '../../packages/bpk-component-blockquote/src/BpkBlockquote';
 
-const textContent = `
-It's your world and we'll help you explore it.
-Find the best prices across millions of flights, hotels and car hire options to create your perfect trip.`;
+import { DefaultExample, ExtraSpaceExample } from './examples';
 
-const DefaultExample = () => <BpkBlockquote>{textContent}</BpkBlockquote>;
+export default {
+  title: 'bpk-component-blockquote',
+  component: BpkBlockquote,
+};
 
-const ExtraSpaceExample = () => (
-  <BpkBlockquote extraSpace>{textContent}</BpkBlockquote>
-);
+export const Default = DefaultExample;
 
-export { DefaultExample, ExtraSpaceExample };
+export const ExampleWithAdditionalSpacingAboveAndBelow = ExtraSpaceExample;
+
+export const VisualTest = DefaultExample;
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true
+  }
+}
+
+
