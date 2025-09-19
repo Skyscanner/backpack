@@ -16,16 +16,10 @@
  * limitations under the License.
  */
 
-import BpkBlockquote from '../../packages/bpk-component-blockquote';
+import BpkBlockquote from './src/BpkBlockquote';
+import themeAttributes from './src/themeAttributes';
 
-const textContent = `
-It's your world and we'll help you explore it.
-Find the best prices across millions of flights, hotels and car hire options to create your perfect trip.`;
+export default BpkBlockquote;
+export { themeAttributes };
 
-const DefaultExample = () => <BpkBlockquote>{textContent}</BpkBlockquote>;
 
-const ExtraSpaceExample = () => (
-  <BpkBlockquote extraSpace>{textContent}</BpkBlockquote>
-);
-
-export { DefaultExample, ExtraSpaceExample };

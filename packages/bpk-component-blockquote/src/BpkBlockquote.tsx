@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -24,27 +24,20 @@ import STYLES from './BpkBlockquote.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkBlockquote = (props) => {
+export type Props = {
+  children: ReactNode;
+  extraSpace?: boolean;
+};
+
+const BpkBlockquote = ({ children, extraSpace = false }: Props) => {
   const classNames = [getClassName('bpk-blockquote')];
-  if (props.extraSpace) {
+  if (extraSpace) {
     classNames.push(getClassName('bpk-blockquote--extra-spacing'));
   }
 
-  return (
-    <blockquote className={classNames.join(' ')}>{props.children}</blockquote>
-  );
-};
-
-BpkBlockquote.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
-  extraSpace: PropTypes.bool,
-};
-
-BpkBlockquote.defaultProps = {
-  extraSpace: false,
+  return <blockquote className={classNames.join(' ')}>{children}</blockquote>;
 };
 
 export default BpkBlockquote;
+
+

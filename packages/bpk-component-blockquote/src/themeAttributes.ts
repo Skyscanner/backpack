@@ -16,10 +16,8 @@
  * limitations under the License.
  */
 
-import themeAttributes from './themeAttributes';
+const themeAttributes = ['blockquoteBarColor'] as const;
 
-describe('themeAttributes', () => {
-  it('exports the expected themeAttributes', () => {
-    expect(themeAttributes).toEqual(['blockquoteBarColor']);
-  });
-});
+export default themeAttributes;
+
+
