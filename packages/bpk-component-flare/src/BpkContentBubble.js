@@ -93,7 +93,6 @@ const getClassName = cssModules(STYLES);
         {showPointer && (
           <div className={getClassName('bpk-content-bubble__pointer')}>
             <BpkFlareBar
-              rounded={rounded}
               {...flareProps}
             />
           </div>
