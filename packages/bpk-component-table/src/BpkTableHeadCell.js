@@ -29,8 +29,7 @@ const getClassName = cssModules(STYLES);
 
 type Props = { children: Node, className: ?string };
 
-const BpkTableHeadCell = (props: Props) => {
-  const { className, ...rest } = props;
+const BpkTableHeadCell = ({ children, className = null, ...rest }: Props) => {
 
   const classNames = getClassName(
     'bpk-table__cell',
@@ -38,16 +37,16 @@ const BpkTableHeadCell = (props: Props) => {
     className,
   );
 
-  return <th {...rest} className={classNames} />;
+  return (
+    <th className={classNames} {...rest}>
+      {children}
+    </th>
+  );
 };
 
 BpkTableHeadCell.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-};
-
-BpkTableHeadCell.defaultProps = {
-  className: null,
 };
 
 export default BpkTableHeadCell;

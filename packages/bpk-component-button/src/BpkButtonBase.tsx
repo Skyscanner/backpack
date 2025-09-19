@@ -17,12 +17,13 @@
  */
 import { cssModules } from '../../bpk-react-utils';
 
-import { type Props, propTypes, defaultProps } from './common-types';
+import { type Props, propTypes } from './common-types';
 
 import COMMON_STYLES from './BpkButtonBase.module.scss';
 
 const getClassName = cssModules(COMMON_STYLES);
 
+const noop = () => null;
 // This is a duplicate of BpkButtonV2
 // Better to duplicate rather than prematurely align the abstraction between Button and ButtonV2
 export const BUTTON_TYPES = {
@@ -39,22 +40,21 @@ export const BUTTON_TYPES = {
 
 type ValueOf<T> = T[keyof T];
 const BpkButtonBase = (
-  props: Props & { type?: ValueOf<typeof BUTTON_TYPES> },
-) => {
-  const {
-    blank,
+  {
+    blank = false,
     children,
-    className,
-    disabled,
-    href,
-    iconOnly,
-    large,
-    onClick,
-    rel: propRel,
-    submit,
+    className = '',
+    disabled = false,
+    href = '',
+    iconOnly = false,
+    large = false,
+    onClick = noop,
+    rel: propRel = undefined,
+    submit = false,
     type,
     ...rest
-  } = props;
+  }: Props & { type?: ValueOf<typeof BUTTON_TYPES> },
+) => {
 
   const classNames = [];
   if (type === undefined) {
@@ -135,6 +135,5 @@ const BpkButtonBase = (
 };
 
 BpkButtonBase.propTypes = { ...propTypes };
-BpkButtonBase.defaultProps = { ...defaultProps };
 
 export default BpkButtonBase;
