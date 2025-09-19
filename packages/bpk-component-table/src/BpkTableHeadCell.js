@@ -37,7 +37,7 @@ const BpkTableHeadCell = ({ children, className = null, ...rest }: Props) => {
     className,
   );
 
-    return (
+  return (
     <th className={classNames} {...rest}>
       {children}
     </th>
