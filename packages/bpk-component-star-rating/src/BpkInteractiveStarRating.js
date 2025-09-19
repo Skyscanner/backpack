@@ -29,6 +29,8 @@ import STYLES from './BpkStarRating.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+const noop = () => null;
+
 export const getTypeByRating = (starNumber: number, rating: number) => {
   if (starNumber > rating) {
     return STAR_TYPES.EMPTY;
@@ -59,9 +61,9 @@ const BpkInteractiveStarRating = ({
   id,
   large = false,
   maxRating = 5,
-  onMouseLeave = () => null,
-  onRatingHover = () => null,
-  onRatingSelect = () => null,
+  onMouseLeave = noop,
+  onRatingHover = noop,
+  onRatingSelect = noop,
   rating = 0,
   ...rest
 }: Props) => {

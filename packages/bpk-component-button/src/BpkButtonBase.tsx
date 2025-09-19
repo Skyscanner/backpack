@@ -23,6 +23,7 @@ import COMMON_STYLES from './BpkButtonBase.module.scss';
 
 const getClassName = cssModules(COMMON_STYLES);
 
+const noop = () => null;
 // This is a duplicate of BpkButtonV2
 // Better to duplicate rather than prematurely align the abstraction between Button and ButtonV2
 export const BUTTON_TYPES = {
@@ -47,7 +48,7 @@ const BpkButtonBase = (
     href = '',
     iconOnly = false,
     large = false,
-    onClick = () => null,
+    onClick = noop,
     rel: propRel = undefined,
     submit = false,
     type,
