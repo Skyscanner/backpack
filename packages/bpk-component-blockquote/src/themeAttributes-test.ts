@@ -16,8 +16,12 @@
  * limitations under the License.
  */
 
-import BpkBlockquote from './src/BpkBlockquote';
-import themeAttributes from './src/themeAttributes';
+import themeAttributes from './themeAttributes';
 
-export default BpkBlockquote;
-export { themeAttributes };
+describe('themeAttributes', () => {
+  it('exports the expected themeAttributes', () => {
+    expect(themeAttributes).toEqual(['blockquoteBarColor']);
+  });
+});
+
+
