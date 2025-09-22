@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkTextarea from '../../packages/bpk-component-textarea/src/BpkTextarea';
 
 import {
@@ -39,7 +38,7 @@ export const Disabled = DisabledExample;
 export const Invalid = InvalidExample;
 export const Large = LargeExample;
 export const VisualTest = MixedExample;
-export const VisualTestWithZoom = VisualTest.bind({});
+export const VisualTestWithZoom = VisualTest.bind({}) as any;
 VisualTestWithZoom.args = {
   zoomEnabled: true
 };

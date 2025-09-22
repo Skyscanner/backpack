@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import BpkLabel from '../../packages/bpk-component-label';
 import BpkTextarea from '../../packages/bpk-component-textarea';
 import { action } from '../bpk-storybook-utils';
