@@ -16,9 +16,8 @@
  * limitations under the License.
  */
 
-import { Component, Fragment, ReactNode } from 'react';
+import { Component, Fragment, type ReactNode } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkBreadcrumb.module.scss';
@@ -34,6 +33,8 @@ export interface Props {
   children: ReactNode;
   schemaMetaData?: SchemaMetaDataItem[];
   label: string;
+  className?: string;
+  [key: string]: any; // Allow arbitrary props to be passed through
 }
 
 /*
@@ -68,7 +69,7 @@ class BpkBreadcrumb extends Component<Props> {
   }
 
   render() {
-    const { children, label, ...rest } = this.props;
+    const { children, label, schemaMetaData, ...rest } = this.props;
 
     return (
       <Fragment>

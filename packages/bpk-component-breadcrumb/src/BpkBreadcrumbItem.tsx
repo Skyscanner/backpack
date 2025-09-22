@@ -16,17 +16,13 @@
  * limitations under the License.
  */
 
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { withRtlSupport } from '../../bpk-component-icon';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import ArrowRight from '../../bpk-component-icon/sm/arrow-right';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLink from '../../bpk-component-link';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkText from '../../bpk-component-text';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkBreadcrumbItem.module.scss';
@@ -39,6 +35,7 @@ export interface Props {
   href?: string;
   className?: string;
   linkProps?: { [key: string]: any };
+  [key: string]: any; // Allow arbitrary props to be passed through
 }
 
 const RtlSupportedArrowRight = withRtlSupport(ArrowRight);
