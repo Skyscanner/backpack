@@ -16,13 +16,15 @@
  * limitations under the License.
  */
 
+import type { FC, TextareaHTMLAttributes } from 'react';
+
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkTextarea.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
+export interface BpkTextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   id: string;
   name: string;
   value: string;
@@ -31,12 +33,12 @@ export type Props = {
   large?: boolean;
 }
 
-const BpkTextarea = ({
+const BpkTextarea: FC<BpkTextareaProps> = ({
   className,
   large = false,
   valid,
   ...rest
-}: Props) => {
+}) => {
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid
   const isInvalid = valid === false;
