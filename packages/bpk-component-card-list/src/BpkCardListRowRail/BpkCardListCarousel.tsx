@@ -199,7 +199,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   ): boolean => {
     const isInViewport = index >= firstVisibleIndex - dynamicRenderBufferSize &&
                             index <= firstVisibleIndex + initiallyShownCards - 1 + dynamicRenderBufferSize;
-        const hasBeenVisible = hasBeenVisibleRef.current.has(index);
+    const hasBeenVisible = hasBeenVisibleRef.current.has(index);
 
     return isInViewport || hasBeenVisible
   }
