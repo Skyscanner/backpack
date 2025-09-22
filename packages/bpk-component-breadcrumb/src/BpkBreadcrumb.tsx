@@ -29,13 +29,13 @@ interface SchemaMetaDataItem {
   label: string;
 }
 
-export interface Props {
+export type Props = {
   children: ReactNode;
   schemaMetaData?: SchemaMetaDataItem[];
   label: string;
   className?: string;
-  [key: string]: any; // Allow arbitrary props to be passed through
-}
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
+};
 
 /*
   The google structured data reference for the stringified output of
