@@ -30,6 +30,7 @@ import {
   NonSponsoredCenterAlignedExample,
   NonSponsoredRightAlignedExample,
   NoStyleExample,
+  LinkWrapperExample,
 } from './examples';
 
 export default {
@@ -51,6 +52,8 @@ export const NonSponsored = NonSponsoredExample;
 export const NonSponsoredCenterAligned = NonSponsoredCenterAlignedExample;
 
 export const NonSponsoredRightAligned = NonSponsoredRightAlignedExample;
+
+export const LinkWrapper = LinkWrapperExample;
 
 export const VisualTest = VisualTestExample;
 export const VisualTestWithZoom = VisualTest.bind({});

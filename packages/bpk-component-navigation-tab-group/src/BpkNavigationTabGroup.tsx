@@ -19,6 +19,7 @@
 import type { MouseEvent, FunctionComponent, ReactElement } from 'react';
 import { useState } from 'react';
 
+import BpkBubble from '../../bpk-component-bubble/src/BpkBubble';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -42,6 +43,7 @@ type TabWrapItem = {
 type TabItem = TabWrapItem & {
   text: string;
   icon?: FunctionComponent<any> | null;
+  badgeText?: string;
 };
 export type Props = {
   id: string;
@@ -122,39 +124,47 @@ const BpkNavigationTabGroup = ({
       role="navigation"
       aria-label={ariaLabel}
     >
-    <div role="tablist" className={getClassName('bpk-navigation-tab-list')}>
-      {tabs.map((tab, index) => {
-        const selected = index === selectedTab;
-        const {icon,text,...tabWrapItem} = tab;
-        const Icon = icon;
-        return (
-          <TabWrap
-            key={`index-${index.toString()}`}
-            tab={tabWrapItem}
-            selected={selected}
-            onClick={(e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => handleButtonClick(e, tab, index)}
-            type={type}
-          >
-            <>
-              {Icon && (
-                <span
-                  className={getClassName(
-                    'bpk-navigation-tab-icon',
-                    `bpk-navigation-tab-icon--${type}`,
-                    selected && `bpk-navigation-tab-icon--${type}-selected`,
-                  )}
-                >
-                  <Icon />
-                </span>
-              )}
-              <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
-                {text}
-              </BpkText>
-            </>
-          </TabWrap>
-        );
-      })}
-     </div>
+      <div role="tablist" className={getClassName('bpk-navigation-tab-list')}>
+        {tabs.map((tab, index) => {
+          const selected = index === selectedTab;
+          const {icon,text,...tabWrapItem} = tab;
+          const Icon = icon;
+          return (
+            <TabWrap
+              key={`index-${index.toString()}`}
+              tab={tabWrapItem}
+              selected={selected}
+              onClick={(e) => handleButtonClick(e, tab, index)}
+              type={type}
+            >
+              <>
+                <div className={getClassName('bpk-navigation-tab-content-wrapper')}>
+                  {Icon && (
+                    <span
+                      className={getClassName(
+                        'bpk-navigation-tab-icon',
+                        `bpk-navigation-tab-icon--${type}`,
+                        selected && `bpk-navigation-tab-icon--${type}-selected`,
+                      )}
+                    >
+                      <Icon />
+                    </span>)}
+
+                    <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
+                      {text}
+                    </BpkText>
+                </div>
+
+                {tab.badgeText && (
+                  <span className={getClassName('bpk-navigation-tab-bubble-wrapper')}>
+                    <BpkBubble>
+                      {tab.badgeText}
+                    </BpkBubble>
+                  </span>)}
+              </>
+            </TabWrap>);
+        })}
+      </div>
     </nav>
   );
 };

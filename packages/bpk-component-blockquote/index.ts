@@ -16,4 +16,10 @@
  * limitations under the License.
  */
 
-export default ['blockquoteBarColor'];
+import BpkBlockquote from './src/BpkBlockquote';
+import themeAttributes from './src/themeAttributes';
+
+export default BpkBlockquote;
+export { themeAttributes };
+
+

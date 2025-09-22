@@ -16,35 +16,25 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
+import BpkBubbleArrow from '../icons/BpkBubbleArrow';
 
-import STYLES from './BpkBlockquote.module.scss';
+import STYLES from './BpkBubble.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkBlockquote = (props) => {
-  const classNames = [getClassName('bpk-blockquote')];
-  if (props.extraSpace) {
-    classNames.push(getClassName('bpk-blockquote--extra-spacing'));
-  }
-
-  return (
-    <blockquote className={classNames.join(' ')}>{props.children}</blockquote>
-  );
+export type Props = {
+  children: string;
 };
 
-BpkBlockquote.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
-  extraSpace: PropTypes.bool,
-};
+const BpkBubble = ({ children }: Props) => (
+  <span className={getClassName('bpk-bubble')}>
+    <BpkText textStyle={TEXT_STYLES.label3} tagName="span" color={TEXT_COLORS.textOnDark}>
+      {children}
+    </BpkText>
+    <BpkBubbleArrow styles={getClassName('bpk-bubble__arrow')} />
+  </span>
+);
 
-BpkBlockquote.defaultProps = {
-  extraSpace: false,
-};
-
-export default BpkBlockquote;
+export default BpkBubble;

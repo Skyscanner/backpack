@@ -51,8 +51,13 @@ type Props = {
   extraLarge: boolean,
 };
 
-const BpkStar = (props: Props) => {
-  const { className, extraLarge, large, type, ...rest } = props;
+const BpkStar = ({
+  className = null,
+  extraLarge = false,
+  large = false,
+  type,
+  ...rest
+}: Props) => {
   const iconClassNames = getClassName(
     'bpk-star',
     large && 'bpk-star--large',
@@ -102,14 +107,14 @@ const BpkStar = (props: Props) => {
 
   return type === STAR_TYPES.FULL ? (
     <span className={iconClassNames} >
-      <Icon 
+      <Icon
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
       {...rest} />
     </span>
 
   ) : (
     <span className={iconClassNames} >
-      <OutlineIcon 
+      <OutlineIcon
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
       {...rest} />
     </span>
@@ -123,12 +128,6 @@ BpkStar.propTypes = {
   className: PropTypes.string,
   large: PropTypes.bool,
   extraLarge: PropTypes.bool,
-};
-
-BpkStar.defaultProps = {
-  className: null,
-  large: false,
-  extraLarge: false,
 };
 
 export const BpkStarNonRtl = BpkStar;

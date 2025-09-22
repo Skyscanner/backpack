@@ -19,16 +19,14 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkBlockquote from './BpkBlockquote';
+import BpkBubble from './BpkBubble';
 
-describe('BpkBlockquote accessibility tests', () => {
+describe('BpkBubble accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkBlockquote>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.
-      </BpkBlockquote>,
+      <BpkBubble>
+        New
+      </BpkBubble>
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

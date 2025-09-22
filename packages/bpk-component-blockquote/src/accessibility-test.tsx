@@ -17,28 +17,22 @@
  */
 
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
 import BpkBlockquote from './BpkBlockquote';
 
-describe('BpkBlockquote', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(
+describe('BpkBlockquote accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
       <BpkBlockquote>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
         ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
         dis parturient montes, nascetur ridiculus mus.
       </BpkBlockquote>,
     );
-    expect(asFragment()).toMatchSnapshot();
-  });
-  it('should render correctly with additional spacing', () => {
-    const { asFragment } = render(
-      <BpkBlockquote extraSpace>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.
-      </BpkBlockquote>,
-    );
-    expect(asFragment()).toMatchSnapshot();
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
+
+

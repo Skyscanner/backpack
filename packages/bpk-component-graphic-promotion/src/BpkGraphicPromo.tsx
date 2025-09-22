@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-import type { KeyboardEvent, MouseEvent } from 'react';
+import type { KeyboardEvent, MouseEvent, ReactNode } from 'react';
 
-import {BpkButtonV2, BUTTON_TYPES} from '../../bpk-component-button';
+import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkGraphicPromo.module.scss';
@@ -59,6 +59,11 @@ export type Props = {
   invertVertically?: boolean;
   textAlign: (typeof TEXT_ALIGN)[keyof typeof TEXT_ALIGN];
   style?: {};
+  /**
+   * Optional link href. If provided, the component will render as an anchor tag <a> instead of a <div>.
+   * This improves semantic HTML and SEO.
+   */
+  href?: string | null;
 };
 
 const constructAriaLabel = ({
@@ -87,12 +92,55 @@ const constructAriaLabel = ({
 
   return text.join('. ');
 };
+type WrapperProps = {
+  id?: string;
+  cardClasses?: string;
+  style?: { [key: string]: string | number };
+  href?: string | null;
+  'aria-label'?: string;
+  onClick?: (event: MouseEvent<HTMLElement>) => void;
+  onKeyDown?: (event: KeyboardEvent<HTMLElement>) => void;
+  children?: ReactNode;
+};
+
+const Wrapper = ({
+  'aria-label': ariaLabel = '',
+  cardClasses = '',
+  children,
+  href,
+  id,
+  onClick,
+  onKeyDown,
+  style = {},
+}: WrapperProps) => {
+  const commonProps = {
+    id,
+    style,
+    'aria-label': ariaLabel,
+    onClick,
+    onKeyDown,
+    className: cardClasses,
+  };
+  if (href) {
+    return (
+      <a href={href} {...commonProps}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <div {...commonProps} tabIndex={0} role="link">
+      {children}
+    </div>
+  );
+};
 
 const BpkGraphicPromo = ({
   buttonText,
   className = null,
   contentId,
   headline,
+  href = null,
   invertVertically = false,
   onClick,
   sponsor = null,
@@ -124,11 +172,11 @@ const BpkGraphicPromo = ({
     // The card appears as a single component for the screen reader; its children are hidden. The card handles mouse
     // clicks and key presses (Enter/Space) for the whole component, as described here:
     // https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets
-    <div
+    <Wrapper
       id={contentId || ''}
-      className={cardClasses}
+      cardClasses={cardClasses}
       style={style}
-      role="link"
+      href={href}
       aria-label={constructAriaLabel({
         buttonText,
         headline,
@@ -136,7 +184,6 @@ const BpkGraphicPromo = ({
         subheading,
         tagline,
       })}
-      tabIndex={0}
       onClick={onClickWrapper}
       onKeyDown={onKeyWrapper}
     >
@@ -163,21 +210,15 @@ const BpkGraphicPromo = ({
         </div>
         <div className={getTextClasses('bpk-graphic-promo__promo-content')}>
           {!sponsor && tagline && (
-            <span
-              className={getClassName('bpk-graphic-promo__tagline')}
-            >
+            <span className={getClassName('bpk-graphic-promo__tagline')}>
               {tagline}
             </span>
           )}
-          <h2
-            className={getClassName('bpk-graphic-promo__headline')}
-          >
+          <h2 className={getClassName('bpk-graphic-promo__headline')}>
             {headline}
           </h2>
           {subheading && (
-            <p
-              className={getClassName('bpk-graphic-promo__subheading')}
-            >
+            <p className={getClassName('bpk-graphic-promo__subheading')}>
               {subheading}
             </p>
           )}
@@ -193,7 +234,7 @@ const BpkGraphicPromo = ({
           </BpkButtonV2>
         </div>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 

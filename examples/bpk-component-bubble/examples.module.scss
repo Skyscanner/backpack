@@ -16,8 +16,22 @@
  * limitations under the License.
  */
 
-import BpkBlockquote from './src/BpkBlockquote';
-import themeAttributes from './src/themeAttributes';
+@use '../../packages/unstable__bpk-mixins/tokens';
 
-export default BpkBlockquote;
-export { themeAttributes };
+.bpk-content {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    position: relative;
+    display: inline-block;
+
+    &__bubble-wrapper {
+      position: absolute;
+      top: -1rem;
+      right: tokens.$bpk-one-pixel-rem * -3; // align the arrow to the tab’s right edge
+      display: block;
+      transform: translateX(50%); // shift bubble outward as it grows
+    }
+  }
+}

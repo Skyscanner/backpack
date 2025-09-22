@@ -16,16 +16,9 @@
  * limitations under the License.
  */
 
-import BpkBlockquote from '../../packages/bpk-component-blockquote';
+import BpkBubble, {
+  type Props as BpkBubbleProps
+} from './src/BpkBubble';
 
-const textContent = `
-It's your world and we'll help you explore it.
-Find the best prices across millions of flights, hotels and car hire options to create your perfect trip.`;
-
-const DefaultExample = () => <BpkBlockquote>{textContent}</BpkBlockquote>;
-
-const ExtraSpaceExample = () => (
-  <BpkBlockquote extraSpace>{textContent}</BpkBlockquote>
-);
-
-export { DefaultExample, ExtraSpaceExample };
+export type { BpkBubbleProps };
+export default BpkBubble;

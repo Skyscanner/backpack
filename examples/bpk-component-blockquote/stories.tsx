@@ -16,10 +16,25 @@
  * limitations under the License.
  */
 
-import themeAttributes from './themeAttributes';
+import BpkBlockquote from '../../packages/bpk-component-blockquote/src/BpkBlockquote';
 
-describe('themeAttributes', () => {
-  it('exports the expected themeAttributes', () => {
-    expect(themeAttributes).toEqual(['blockquoteBarColor']);
-  });
-});
+import { DefaultExample, ExtraSpaceExample } from './examples';
+
+export default {
+  title: 'bpk-component-blockquote',
+  component: BpkBlockquote,
+};
+
+export const Default = DefaultExample;
+
+export const ExampleWithAdditionalSpacingAboveAndBelow = ExtraSpaceExample;
+
+export const VisualTest = DefaultExample;
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true
+  }
+};
+
+
