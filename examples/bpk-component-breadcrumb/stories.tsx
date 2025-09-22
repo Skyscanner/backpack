@@ -33,7 +33,9 @@ export const Default = DefaultExample;
 export const Extreme = ExtremeExample;
 export const VisualTest = DefaultExample;
 
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true,
+  }
 };
