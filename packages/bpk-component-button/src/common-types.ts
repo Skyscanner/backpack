@@ -23,25 +23,13 @@ export type Props = {
   children: ReactNode;
   href?: string;
   className?: string;
-  disabled: boolean;
+  disabled?: boolean;
   onClick?: (event: SyntheticEvent) => unknown;
-  submit: boolean;
-  large: boolean;
-  iconOnly: boolean;
-  blank: boolean;
+  submit?: boolean;
+  large?: boolean;
+  iconOnly?: boolean;
+  blank?: boolean;
   rel?: string;
-};
-
-export const defaultProps = {
-  href: null,
-  className: null,
-  disabled: false,
-  onClick: null,
-  submit: false,
-  large: false,
-  iconOnly: false,
-  blank: false,
-  rel: null,
 };
 
 export const propTypes = {
