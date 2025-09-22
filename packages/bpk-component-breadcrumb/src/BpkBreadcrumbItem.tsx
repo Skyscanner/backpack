@@ -35,7 +35,7 @@ export type Props {
   href?: string;
   className?: string;
   linkProps?: { [key: string]: any };
-  [key: string]: any; // Allow arbitrary props to be passed through
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 }
 
 const RtlSupportedArrowRight = withRtlSupport(ArrowRight);
