@@ -20,11 +20,10 @@
 import BpkFieldset, {
   type Props,
   propTypes,
-  defaultProps,
 } from './src/BpkFieldset';
 import themeAttributes from './src/themeAttributes';
 
 export type BpkFieldsetProps = Props;
 
 export default BpkFieldset;
-export { propTypes, defaultProps, themeAttributes };
+export { propTypes, themeAttributes };
