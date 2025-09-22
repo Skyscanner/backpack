@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { withRtlSupport } from '../../bpk-component-icon';
 import ArrowRight from '../../bpk-component-icon/sm/arrow-right';
