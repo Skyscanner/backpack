@@ -38,7 +38,9 @@ export const Disabled = DisabledExample;
 export const Invalid = InvalidExample;
 export const Large = LargeExample;
 export const VisualTest = MixedExample;
-export const VisualTestWithZoom = VisualTest.bind({}) as any;
-VisualTestWithZoom.args = {
-  zoomEnabled: true
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true
+  }
 };
