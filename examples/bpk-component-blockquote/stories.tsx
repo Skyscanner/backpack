@@ -16,4 +16,25 @@
  * limitations under the License.
  */
 
-export default ['blockquoteBarColor'];
+import BpkBlockquote from '../../packages/bpk-component-blockquote/src/BpkBlockquote';
+
+import { DefaultExample, ExtraSpaceExample } from './examples';
+
+export default {
+  title: 'bpk-component-blockquote',
+  component: BpkBlockquote,
+};
+
+export const Default = DefaultExample;
+
+export const ExampleWithAdditionalSpacingAboveAndBelow = ExtraSpaceExample;
+
+export const VisualTest = DefaultExample;
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true
+  }
+};
+
+
