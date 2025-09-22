@@ -29,7 +29,7 @@ import STYLES from './BpkBreadcrumbItem.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export interface Props {
+export type Props {
   children: ReactNode;
   active?: boolean;
   href?: string;
