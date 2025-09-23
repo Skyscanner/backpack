@@ -37,6 +37,7 @@ figma.connect(
         label="label"
         onChange={onChange}
         white={style}
+        checked
       />
     ),
   },
