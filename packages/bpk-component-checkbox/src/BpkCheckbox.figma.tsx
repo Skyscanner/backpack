@@ -25,19 +25,23 @@ figma.connect(
   'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=30442%3A60450',
   {
     props: {
+      state: figma.enum('State', {
+        Disabled: true,
+      }),
       style: figma.enum('Style', {
         Default: false,
         'On dark': true,
       }),
+      label: figma.textContent('Option'),
       onChange: () => {},
     },
-    example: ({ label, name, onChange, style }) => (
+    example: ({ label, onChange, state, style }) => (
       <BpkCheckbox
-        name="name"
-        label="label"
+        name={label}
+        label={label}
         onChange={onChange}
         white={style}
-        checked
+        disabled={state}
       />
     ),
   },
