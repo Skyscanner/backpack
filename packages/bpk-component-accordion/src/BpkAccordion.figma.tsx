@@ -18,7 +18,7 @@
 
 import figma from '@figma/code-connect';
 
-import { BpkAccordion } from './BpkAccordion';
+import { BpkAccordion, BpkAccordionItem } from './BpkAccordion';
 
 figma.connect(
   BpkAccordion,
@@ -31,7 +31,11 @@ figma.connect(
       }),
     },
     example: ({ divider, onDark }) => (
-      <BpkAccordion divider={divider} onDark={onDark} />
+      <BpkAccordion divider={divider} onDark={onDark}>
+        <BpkAccordionItem id="accordion-item" title="accordion-item">
+          accordion item 1
+        </BpkAccordionItem>
+      </BpkAccordion>
     ),
   },
 );
