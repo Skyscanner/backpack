@@ -89,7 +89,7 @@ npm run storybook
 npm run lint
 
 # Type check
-npm run type-check
+npm run typecheck
 ```
 
 ## Component Development Workflow
