@@ -41,14 +41,18 @@ figma.connect(
       }),
       label: figma.textContent('Prefer directs'),
       name: figma.textContent('prefer-directs'),
+      white: figma.enum('Background', {
+        "On dark background": true,
+      }),
       onChange : () => {}
     },
-    example: ({label, name, onChange, state}) => (
+    example: ({label, name, onChange, state, white}) => (
       <BpkCheckbox
         name={name}
         label={label}
         checked={state}
         onChange={onChange}
+        white={white}
       />
     ),
   },
