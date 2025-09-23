@@ -15,7 +15,7 @@ const imageList = [
   <img src="https://content.skyscnr.com/m/7470cf6a4ee49c26/original/Carousel-placeholder-4.jpg" alt="" />,
   <img src="https://content.skyscnr.com/m/f8b42e98e2b79a6/original/Carousel-placeholder-3.jpg" alt="" />,
   <img src="https://content.skyscnr.com/m/183e7ddaaca13b16/original/Carousel-placeholder-2.jpg" alt="" />,
-]
+];
 figma.connect(
   BpkCarousel,
   'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=27887%3A32585',
