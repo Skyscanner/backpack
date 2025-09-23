@@ -9,7 +9,7 @@ This guide provides instructions and context for AI agents working with the Back
 - **Repository**: Skyscanner/backpack
 - **Language**: TypeScript/JavaScript (React components)
 - **Package Manager**: npm
-- **Build System**: Gulp + custom scripts
+- **Build System**: Webpack, Gulp + custom scripts
 - **Styling**: SCSS with BEM methodology
 - **Documentation**: [skyscanner.design](https://www.skyscanner.design/)
 
