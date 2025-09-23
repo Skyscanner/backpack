@@ -21,6 +21,6 @@ figma.connect(
       }),
     },
     example: ({ disabled, label, type}) =>
-      <BpkSelectableChip onClick={()=>{}} accessibilityLabel={label} type={type} disabled={disabled} >{label}</BpkSelectableChip>
+      <BpkSelectableChip onClick={() => {}} accessibilityLabel={label} type={type} disabled={disabled} >{label}</BpkSelectableChip>
   },
 )
