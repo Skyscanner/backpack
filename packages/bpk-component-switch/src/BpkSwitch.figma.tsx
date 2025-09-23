@@ -18,7 +18,7 @@
 
 import figma from "@figma/code-connect";
 
-import BpkSwitch from "./BpkSwitch"
+import BpkSwitch from "./BpkSwitch";
 
 figma.connect(
   BpkSwitch,
