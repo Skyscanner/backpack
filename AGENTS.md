@@ -235,3 +235,5 @@ import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
 // Token imports
 @use '@skyscanner/backpack-web/unstable__bpk-mixins/tokens';
 ```
+
+This guide should help AI agents understand the structure, patterns, and conventions used in the Backpack Design System codebase.
