@@ -32,10 +32,13 @@ figma.connect(BpkFieldset, figmaUrl, {
   variant: { Type: "Input" },
   props: {
     error: figma.boolean("Error"),
+    labelInstance: figma.nestedProps("Label", {
+      label: figma.textContent("Label"),
+    }),
   },
-  example: ({ error }) => (
+  example: ({ error, labelInstance }) => (
     <BpkFieldset
-      label={figma.textContent("Label")}
+      label={labelInstance.label}
       required={false}
       disabled={false}
       valid={!error}
@@ -55,10 +58,13 @@ figma.connect(BpkFieldset, figmaUrl, {
   variant: { Type: "Select" },
   props: {
     error: figma.boolean("Error"),
+    labelInstance: figma.nestedProps("Label", {
+      label: figma.textContent("Label"),
+    }),
   },
-  example: ({ error }) => (
+  example: ({ error, labelInstance }) => (
     <BpkFieldset
-      label={figma.textContent("Label")}
+      label={labelInstance.label}
       required={false}
       disabled={false}
       valid={!error}
@@ -77,10 +83,13 @@ figma.connect(BpkFieldset, figmaUrl, {
   variant: { Type: "Text area" },
   props: {
     error: figma.boolean("Error"),
+    labelInstance: figma.nestedProps("Label", {
+      label: figma.textContent("Label"),
+    }),
   },
-  example: ({ error }) => (
+  example: ({ error, labelInstance }) => (
     <BpkFieldset
-      label={figma.textContent("Label")}
+      label={labelInstance.label}
       required={false}
       disabled={false}
       valid={!error}
@@ -95,10 +104,13 @@ figma.connect(BpkFieldset, figmaUrl, {
   variant: { Type: "Radio group" },
   props: {
     error: figma.boolean("Error"),
+    labelInstance: figma.nestedProps("Label", {
+      label: figma.textContent("Label"),
+    }),
   },
-  example: ({ error }) => (
+  example: ({ error, labelInstance }) => (
     <BpkFieldset
-      label={figma.textContent("Label")}
+      label={labelInstance.label}
       required={false}
       disabled={false}
       valid={!error}
