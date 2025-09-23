@@ -26,8 +26,8 @@ This guide provides instructions and context for AI agents working with the Back
 packages/
 ├── bpk-component-{name}/          # Individual React components
 ├── bpk-mixins/                    # SCSS mixins and utilities
-├── bpk-stylesheets/              # Compiled CSS
-└── bpk-tokens/                   # Design tokens
+├── bpk-stylesheets/               # Compiled CSS
+└── bpk-tokens/                    # Design tokens
 ```
 
 ### File Naming Conventions
@@ -342,12 +342,12 @@ Check the `decisions/` directory for architectural decisions and guidelines:
 packages/bpk-component-example/
 ├── src/
 │   ├── BpkExample.tsx           # Main component
-│   ├── BpkExample.module.scss          # Styles
+│   ├── BpkExample.module.scss   # Styles
 │   └── BpkExample.test.tsx      # Tests
 ├── README.md                    # Component documentation
 examples/bpk-component-example/
-│   ├── examples.tsx   # Storybook examples
-│   └── stories.tsx    # Storybook stories
+│   ├── examples.tsx             # Storybook examples
+│   └── stories.tsx              # Storybook stories
 ```
 
 ### Import Patterns
