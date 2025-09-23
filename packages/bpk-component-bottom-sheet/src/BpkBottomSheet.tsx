@@ -31,6 +31,16 @@ import STYLES from './BpkBottomSheet.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+export const PADDING_TYPE = {
+  none: 'none',
+  base: 'base',
+  small: 'small',
+  medium: 'medium',
+  large: 'large'
+}
+
+export type PaddingType = (typeof PADDING_TYPE)[keyof typeof PADDING_TYPE];
+
 interface CommonProps {
   actionText?: string;
   children: ReactNode;
@@ -48,6 +58,7 @@ interface CommonProps {
   title?: string;
   wide?: boolean;
   isOpen: boolean;
+  paddingType?: PaddingType;
 }
 
 export type Props = CommonProps & ({ ariaLabelledby: string } | { ariaLabel: string; });
@@ -62,6 +73,7 @@ const BpkBottomSheet = ({
   isOpen,
   onAction = () => null,
   onClose,
+  paddingType = PADDING_TYPE.small,
   title = '',
   wide = false,
   ...ariaProps
@@ -89,6 +101,11 @@ const BpkBottomSheet = ({
     'bpk-bottom-sheet',
     wide && 'bpk-bottom-sheet--wide'
   );
+
+  const contentStyle = getClassName(
+    'bpk-bottom-sheet--content',
+    paddingType !== PADDING_TYPE.none && `bpk-bottom-sheet--padding-${paddingType}`
+  )
 
   return <BpkBreakpoint query={BREAKPOINTS.ABOVE_MOBILE}>
     {(isAboveMobile: boolean) =>
@@ -141,7 +158,7 @@ const BpkBottomSheet = ({
               }
             />
           </header>
-          <div className={getClassName('bpk-bottom-sheet--content')}>{children}</div>
+          <div className={contentStyle}>{children}</div>
         </>
       </BpkDialogWrapper>
     }

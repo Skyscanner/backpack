@@ -46,6 +46,7 @@ describe('BpkBottomSheet', () => {
         onClose={jest.fn()}
         title="Bottom sheet title"
         wide
+        paddingType="small"
       >
         Bottom Sheet content
       </BpkBottomSheet>,

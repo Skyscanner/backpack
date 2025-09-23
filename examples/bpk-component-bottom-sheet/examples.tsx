@@ -289,6 +289,36 @@ const MultipleBottomSheetsExample = () => (
   </>
 )
 
+const NoPaddingExample = () => (
+  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" paddingType='none' isComponentOpen>
+    <>{Children.toArray(content)}</>
+  </BottomSheetContainer>
+)
+
+const BasePaddingExample = () => (
+  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" paddingType='base' isComponentOpen>
+    <>{Children.toArray(content)}</>
+  </BottomSheetContainer>
+)
+
+const SmallPaddingExample = () => (
+  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" paddingType='small' isComponentOpen>
+    <>{Children.toArray(content)}</>
+  </BottomSheetContainer>
+)
+
+const MediumPaddingExample = () => (
+  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" paddingType='medium' isComponentOpen>
+    <>{Children.toArray(content)}</>
+  </BottomSheetContainer>
+)
+
+const LargePaddingExample = () => (
+  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" paddingType='large' isComponentOpen>
+    <>{Children.toArray(content)}</>
+  </BottomSheetContainer>
+)
+
 export {
   DefaultExample,
   BackdropClickCloseExample,
@@ -301,5 +331,10 @@ export {
   ActionButtonExample,
   WideExample,
   NestedExample,
-  MultipleBottomSheetsExample
+  MultipleBottomSheetsExample,
+  NoPaddingExample,
+  BasePaddingExample,
+  SmallPaddingExample,
+  MediumPaddingExample,
+  LargePaddingExample
 };

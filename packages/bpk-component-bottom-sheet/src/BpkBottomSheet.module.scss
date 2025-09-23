@@ -103,9 +103,25 @@
   }
 
   &--content {
-    padding: tokens.$bpk-modal-content-padding;
+    padding: 0;
     flex: 1;
     overflow-y: auto;
+  }
+
+  &--padding-base {
+    padding: tokens.bpk-spacing-base();
+  }
+
+  &--padding-small {
+    padding: tokens.bpk-spacing-lg();
+  }
+
+  &--padding-medium {
+    padding: tokens.bpk-spacing-xxl();
+  }
+
+  &--padding-large {
+    padding: tokens.bpk-spacing-xxxl();
   }
 
   &--wide {

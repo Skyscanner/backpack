@@ -31,6 +31,11 @@ import {
   WideExample,
   NestedExample,
   MultipleBottomSheetsExample,
+  NoPaddingExample,
+  BasePaddingExample,
+  SmallPaddingExample,
+  MediumPaddingExample,
+  LargePaddingExample,
 } from './examples';
 
 export default {
@@ -57,3 +62,9 @@ export const Wide = WideExample;
 export const Nested = NestedExample;
 
 export const MultipleBottomSheets = MultipleBottomSheetsExample;
+
+export const NoPadding = NoPaddingExample;
+export const BasePadding = BasePaddingExample;
+export const SmallPadding = SmallPaddingExample;
+export const MediumPadding = MediumPaddingExample;
+export const LargePadding = LargePaddingExample;
