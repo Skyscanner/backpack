@@ -26,12 +26,12 @@ figma.connect(
   {
     props: {
       style: figma.enum('Style', {
-        "Default": false,
-        "On dark": true,
+        Default: false,
+        'On dark': true,
       }),
-      onChange : () => {}
+      onChange: () => {},
     },
-    example: ({label, name, onChange, style}) => (
+    example: ({ label, name, onChange, style }) => (
       <BpkCheckbox
         name="name"
         label="label"
