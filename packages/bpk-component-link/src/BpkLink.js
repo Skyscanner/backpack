@@ -17,33 +17,47 @@
  */
 
 /* @flow strict */
+import PropTypes from 'prop-types';
+import type { Node } from 'react';
+import { forwardRef } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import themeAttributes from './themeAttributes';
+import themeAttributes, {
+  linkAlternateThemeAttributes,
+} from './themeAttributes';
 
 import STYLES from './BpkLink.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  children: React.ReactNode;
-  className?: string | null;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-  alternate?: boolean;
-  implicit?: boolean;
-} & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onClick' | 'className'>;
+  children: Node,
+  href: ?string,
+  className: ?string,
+  onClick: ?(event: SyntheticEvent<>) => mixed,
+  blank: boolean,
+  rel: ?string,
+  alternate: boolean,
+  implicit: boolean,
+};
 
-const BpkButtonLink = ({
+const BpkLink = forwardRef(({
   alternate = false,
+  blank = false,
   children,
   className = null,
+  href,
   implicit = false,
-  onClick,
+  onClick = null,
+  rel: propRel = null,
   ...rest
-}: Props) => {
+}: Props, ref) => {
   const classNames = [getClassName('bpk-link')];
   const underlinedClassNames = [getClassName('bpk-link-underlined')];
+
+  const target = blank ? '_blank' : null;
+  const rel = blank ? propRel || 'noopener noreferrer' : propRel;
 
   if (className) {
     classNames.push(className);
@@ -60,22 +74,38 @@ const BpkButtonLink = ({
   } else if (alternate && !implicit) {
     underlinedClassNames.push(getClassName('bpk-link-underlined--alternate'));
   } else if (implicit && alternate) {
-    underlinedClassNames.push(
-      getClassName('bpk-link-underlined-implicit--alternate'),
-    );
+    underlinedClassNames.push(getClassName('bpk-link-underlined-implicit--alternate'));
   }
 
   return (
-    <button
-      type="button"
+    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
+    <a
       className={classNames.join(' ')}
+      href={href}
       onClick={onClick}
+      target={target}
+      rel={rel}
+      ref={ref}
       {...rest}
     >
       <span className={underlinedClassNames.join(' ')}>{children}</span>
-    </button>
+    </a>
   );
+});
+
+BpkLink.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+  href: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+  blank: PropTypes.bool,
+  rel: PropTypes.string,
+  alternate: PropTypes.bool,
+  implicit: PropTypes.bool,
 };
 
-export { themeAttributes };
-export default BpkButtonLink;
+export default BpkLink;
+export { themeAttributes, linkAlternateThemeAttributes };
