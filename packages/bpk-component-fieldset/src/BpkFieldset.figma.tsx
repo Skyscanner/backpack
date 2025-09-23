@@ -33,12 +33,12 @@ figma.connect(BpkFieldset, figmaUrl, {
   props: {
     error: figma.boolean("Error"),
   },
-  example: (props) => (
+  example: ({ error }) => (
     <BpkFieldset
-      label="Example Fieldset"
+      label={figma.textContent("Label")}
       required={false}
       disabled={false}
-      valid={!props.error}
+      valid={!error}
     >
       <BpkInput
         id="example-input"
@@ -56,12 +56,12 @@ figma.connect(BpkFieldset, figmaUrl, {
   props: {
     error: figma.boolean("Error"),
   },
-  example: (props) => (
+  example: ({ error }) => (
     <BpkFieldset
-      label="Example Fieldset"
+      label={figma.textContent("Label")}
       required={false}
       disabled={false}
-      valid={!props.error}
+      valid={!error}
     >
       <BpkSelect id="example-select" name="example-select" value="">
         <option value="">Select</option>
@@ -78,12 +78,12 @@ figma.connect(BpkFieldset, figmaUrl, {
   props: {
     error: figma.boolean("Error"),
   },
-  example: (props) => (
+  example: ({ error }) => (
     <BpkFieldset
-      label="Example Fieldset"
+      label={figma.textContent("Label")}
       required={false}
       disabled={false}
-      valid={!props.error}
+      valid={!error}
     >
       <BpkTextarea id="textarea" name="textarea" value="" />
     </BpkFieldset>
@@ -96,12 +96,12 @@ figma.connect(BpkFieldset, figmaUrl, {
   props: {
     error: figma.boolean("Error"),
   },
-  example: (props) => (
+  example: ({ error }) => (
     <BpkFieldset
-      label="Example Fieldset"
+      label={figma.textContent("Label")}
       required={false}
       disabled={false}
-      valid={!props.error}
+      valid={!error}
     >
       <div id="example-radio-group">
         <BpkCheckbox name="group" label="Radio 1" checked={false} />
