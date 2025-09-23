@@ -25,27 +25,18 @@ figma.connect(
   'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=30442%3A60450',
   {
     props: {
-      state: figma.enum('State', {
-        "Checked": true,
-        "Disabled": true,
-        "Error": null,
-        "Indeterminate": false,
-        "Not checked": false,
-      }),
-      label: figma.textContent('Prefer directs'),
-      name: figma.textContent('prefer-directs'),
-      white: figma.enum('Background', {
-        "On dark background": true,
+      style: figma.enum('Style', {
+        "Default": false,
+        "On dark": true,
       }),
       onChange : () => {}
     },
-    example: ({label, name, onChange, state, white}) => (
+    example: ({label, name, onChange, style}) => (
       <BpkCheckbox
-        name={name}
-        label={label}
-        checked={state}
+        name="name"
+        label="label"
         onChange={onChange}
-        white={white}
+        white={style}
       />
     ),
   },
