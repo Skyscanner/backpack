@@ -18,18 +18,20 @@
 
 /* @flow strict */
 
-export default [
+const themeAttributes = [
   'linkColor',
   'linkHoverColor',
   'linkActiveColor',
   'linkVisitedColor',
-];
+] as const;
 
 const linkAlternateThemeAttributes = [
   'linkAlternateColor',
   'linkAlternateHoverColor',
   'linkAlternateActiveColor',
   'linkAlternateVisitedColor',
-];
+] as const;
 
+export default themeAttributes;
 export { linkAlternateThemeAttributes };
+
