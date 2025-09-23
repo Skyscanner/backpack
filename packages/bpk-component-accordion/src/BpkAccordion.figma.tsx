@@ -29,11 +29,12 @@ figma.connect(
       onDark: figma.enum('Style', {
         'On Dark': true,
       }),
+      body: figma.string('Body'),
     },
-    example: ({ divider, onDark }) => (
+    example: ({ body, divider, onDark }) => (
       <BpkAccordion divider={divider} onDark={onDark}>
         <BpkAccordionItem id="accordion-item" title="accordion-item">
-          accordion item 1
+          {body}
         </BpkAccordionItem>
       </BpkAccordion>
     ),
