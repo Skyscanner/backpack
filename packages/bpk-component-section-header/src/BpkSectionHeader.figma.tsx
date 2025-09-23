@@ -27,25 +27,23 @@ figma.connect(
   'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=31941%3A4068',
   {
     props: {
-      // These props were automatically mapped based on your linked code:
       title: figma.string('Title'),
-      description: figma.string('Title'),
-      // No matching props could be found for these Figma properties:
-      // "title": figma.string('Title'),
-      // "subheading": figma.string('Subheading'),
+      description: figma.string('Subheading'),
       button: figma.boolean('Button', {
-        true: <BpkButtonV2 onClick={() => null}> action</BpkButtonV2>,
-        false: null,
+        true: <BpkButtonV2 onClick={() => null}>action</BpkButtonV2>,
       }),
-      // "subheading": figma.boolean('Subheading?'),
-      // "info": figma.boolean('Info?'),
       style: figma.enum('Style', {
         Default: SECTION_TYPES.default,
         'On Dark': SECTION_TYPES.onDark,
       }),
     },
-    example: (props) => (
-      <BpkSectionHeader title={props.title} description={props.description} />
+    example: ({ button, description, style, title }) => (
+      <BpkSectionHeader
+        title={title}
+        description={description}
+        style={style}
+        button={button}
+      />
     ),
   },
 );
