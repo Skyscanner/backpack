@@ -16,19 +16,18 @@
  * limitations under the License.
  */
 
-import figma from "@figma/code-connect"
+import figma from '@figma/code-connect';
 
-import BpkAccordionItem from "./BpkAccordionItem"
+import BpkAccordionItem from './BpkAccordionItem';
 
 figma.connect(
   BpkAccordionItem,
-  "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=26748%3A32644",
+  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=26748%3A32644',
   {
     props: {
-      title: figma.string("Title"),
+      title: figma.string('Title'),
+      id: figma.string('Title'),
     },
-    example: (props) => (
-      <BpkAccordionItem id="item" title={props.title} />
-    ),
+    example: ({ id, title }) => <BpkAccordionItem id={id} title={title} />,
   },
-)
+);

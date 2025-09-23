@@ -18,9 +18,7 @@
 
 import figma from '@figma/code-connect';
 
-import {
-  BpkAccordion,
-} from './BpkAccordion';
+import { BpkAccordion } from './BpkAccordion';
 
 figma.connect(
   BpkAccordion,
@@ -32,8 +30,8 @@ figma.connect(
         'On Dark': true,
       }),
     },
-    example: () => (
-      <BpkAccordion />
+    example: ({ divider, onDark }) => (
+      <BpkAccordion divider={divider} onDark={onDark} />
     ),
   },
 );
