@@ -15,7 +15,7 @@ figma.connect(
         "On Image": "on-image",
       }),
       icon: figma.boolean("Icon"),
-      disabled: figma.enum("State",{
+      disabled: figma.enum("State", {
         Disabled: true,
         Default: false,
       }),
