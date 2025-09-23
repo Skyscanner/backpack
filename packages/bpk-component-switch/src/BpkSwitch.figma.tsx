@@ -35,7 +35,7 @@ figma.connect(
       }),
     },
     example: ({size, state}) => (
-      <BpkSwitch ariaLabel="Activate Backpack" small={size} checked={state}/>
+      <BpkSwitch ariaLabel="Activate Backpack" small={size} checked={state} />
     ),
   },
 )
