@@ -346,7 +346,7 @@ packages/bpk-component-example/
 │   └── BpkExample.test.tsx      # Tests
 ├── README.md                    # Component documentation
 examples/bpk-component-example/
-│   └── examples.tsx   # Storybook examples
+│   ├── examples.tsx   # Storybook examples
 │   └── stories.tsx    # Storybook stories
 ```
 
