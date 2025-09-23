@@ -14,7 +14,6 @@ figma.connect(
         "On Dark": "on-dark",
         "On Image": "on-image",
       }),
-      icon: figma.boolean("Icon"),
       disabled: figma.enum("State", {
         Disabled: true,
         Default: false,
