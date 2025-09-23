@@ -30,22 +30,21 @@ figma.connect(
   'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=51528%3A105887',
   {
     props: {
-      // These props were automatically mapped based on your linked code:
       status: figma.enum('State', {
         Unselected: MARKER_STATUSES.unselected,
         Selected: MARKER_STATUSES.selected,
         "Pervious selected": MARKER_STATUSES.previous_selected,
       }),
       icon: figma.boolean('Icon?', {
-        true: <Icon/>,
+        true: <Icon />,
         false: undefined,
       }),
     },
     example: ({ icon, status }) => (
       <BpkPriceMarker
-        accessibilityLabel=""
+        accessibilityLabel="$123"
         position={{ latitude: 0.0, longitude: 0.0 }}
-        label=""
+        label="$123"
         status={status}
         icon={icon}
       />
