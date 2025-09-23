@@ -18,7 +18,7 @@
 
 import figma from '@figma/code-connect';
 
-import BpkHorizontalNav from './BpkHorizontalNav';
+import BpkHorizontalNav, { HORIZONTAL_NAV_TYPES } from './BpkHorizontalNav';
 import BpkHorizontalNavItem from './BpkHorizontalNavItem';
 
 figma.connect(
@@ -26,14 +26,14 @@ figma.connect(
   'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=27880%3A31440',
   {
     props: {
-      autoScrollToSelected: figma.boolean('Line'),
+      showUnderline: figma.boolean('Line'),
       type: figma.enum('Style', {
-        Default: 'default',
-        'On Contrast': 'light',
+        Default: HORIZONTAL_NAV_TYPES.default,
+        'On Contrast': HORIZONTAL_NAV_TYPES.light,
       }),
     },
-    example: (props) => (
-      <BpkHorizontalNav {...props}>
+    example: ({ showUnderline, type }) => (
+      <BpkHorizontalNav showUnderline={showUnderline} type={type}>
         <BpkHorizontalNavItem>One</BpkHorizontalNavItem>
         <BpkHorizontalNavItem>Two</BpkHorizontalNavItem>
         <BpkHorizontalNavItem>Three</BpkHorizontalNavItem>

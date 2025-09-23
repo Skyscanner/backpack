@@ -18,6 +18,7 @@
 
 import figma from '@figma/code-connect';
 
+import { HORIZONTAL_NAV_TYPES } from './BpkHorizontalNav';
 import BpkHorizontalNavItem from './BpkHorizontalNavItem';
 
 figma.connect(
@@ -27,13 +28,10 @@ figma.connect(
     props: {
       selected: figma.enum('State', {
         Active: true,
-        Pressed: true,
-        Hover: true,
-        'Not Selected': false,
       }),
       type: figma.enum('Style', {
-        Default: 'default',
-        Light: 'light',
+        Default: HORIZONTAL_NAV_TYPES.default,
+        Light: HORIZONTAL_NAV_TYPES.light,
       }),
       children: figma.textContent('Label'),
     },
