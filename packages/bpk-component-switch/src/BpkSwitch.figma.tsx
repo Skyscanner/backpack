@@ -20,7 +20,6 @@ import figma from "@figma/code-connect";
 
 import BpkSwitch from "./BpkSwitch"
 
-
 figma.connect(
   BpkSwitch,
   "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=6099%3A10807",
