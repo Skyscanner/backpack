@@ -42,9 +42,9 @@ figma.connect(
     },
     example: ({ icon, status }) => (
       <BpkPriceMarker
-        accessibilityLabel="$123"
+        accessibilityLabel="£370"
         position={{ latitude: 0.0, longitude: 0.0 }}
-        label="$123"
+        label="£370"
         status={status}
         icon={icon}
       />
