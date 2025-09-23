@@ -120,25 +120,371 @@ npm run type-check
    - Comprehensive prop documentation
    - Usage examples
 
-## Design Tokens
+## Design Tokens and Typography
 
-Backpack uses design tokens for consistent styling:
+Backpack uses design tokens and typography mixins for consistent styling across all components. The token system is built on top of `@skyscanner/bpk-foundations-web` and provides access to all design system values.
 
-- **Colors**: Primary, secondary, background, text colors
-- **Spacing**: Consistent spacing scale (sm, base, lg, xl, xxl)
-- **Typography**: Font sizes, line heights, font weights
-- **Borders**: Border radius, border widths
-- **Shadows**: Box shadow definitions
-- **Breakpoints**: Responsive design breakpoints
+### Design Token Architecture
 
-Access tokens via:
+Design tokens are centralized in `packages/unstable__bpk-mixins/_tokens.scss` which forwards all tokens from the foundations package:
+
+```scss
+@forward '@skyscanner/bpk-foundations-web/tokens/base.default';
+```
+
+### Importing Tokens and Typography
+
+Always import both tokens and typography at the top of your SCSS files:
+
 ```scss
 @use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/typography';
+```
 
+### Typography Mixins
+
+Backpack provides a comprehensive set of typography mixins for consistent text styling. Use these instead of setting font properties manually.
+
+#### Text Size Mixins
+```scss
 .my-component {
-  color: tokens.$bpk-color-text-primary;
+  // Size-based typography
+  &__small-text {
+    @include typography.bpk-text-xs;    // Extra small
+    @include typography.bpk-text-sm;    // Small
+    @include typography.bpk-text-base;  // Base/default
+    @include typography.bpk-text-lg;    // Large
+    @include typography.bpk-text-xl;    // Extra large
+    @include typography.bpk-text-xxl;   // 2x large
+    @include typography.bpk-text-xxxl;  // 3x large
+  }
+}
+```
+
+#### Semantic Typography Mixins (Recommended)
+```scss
+.my-component {
+  // Body text styles
+  &__body {
+    @include typography.bpk-body-default;   // Standard body text
+    @include typography.bpk-body-longform;  // Longer reading content
+  }
+  
+  // Headings
+  &__heading {
+    @include typography.bpk-heading-1;  // H1 - largest heading
+    @include typography.bpk-heading-2;  // H2
+    @include typography.bpk-heading-3;  // H3
+    @include typography.bpk-heading-4;  // H4
+    @include typography.bpk-heading-5;  // H5 - smallest heading
+  }
+  
+  // Labels and captions
+  &__label {
+    @include typography.bpk-label-1;    // Primary labels
+    @include typography.bpk-label-2;    // Secondary labels
+    @include typography.bpk-label-3;    // Tertiary labels
+  }
+  
+  &__caption {
+    @include typography.bpk-caption;    // Small descriptive text
+    @include typography.bpk-footnote;   // Footnote text
+  }
+  
+  // Subheadings
+  &__subheading {
+    @include typography.bpk-subheading; // Section subheadings
+  }
+}
+```
+
+#### Hero and Editorial Typography
+```scss
+.my-component {
+  // Hero text for landing pages
+  &__hero {
+    @include typography.bpk-hero-1;     // Largest hero text
+    @include typography.bpk-hero-2;     // Large hero text
+    @include typography.bpk-hero-3;     // Medium hero text
+    @include typography.bpk-hero-4;     // Smaller hero text
+    @include typography.bpk-hero-5;     // Small hero text
+    @include typography.bpk-hero-6;     // Smallest hero text
+  }
+  
+  // Editorial content (uses Larken font)
+  &__editorial {
+    @include typography.bpk-editorial-1; // Large editorial
+    @include typography.bpk-editorial-2; // Medium editorial
+    @include typography.bpk-editorial-3; // Small editorial
+  }
+}
+```
+
+#### Font Weight Modifiers
+```scss
+.my-component {
+  &__text {
+    @include typography.bpk-body-default;
+    
+    // Weight modifiers
+    &--bold {
+      @include typography.bpk-text--bold;  // Bold weight
+    }
+    
+    &--black {
+      @include typography.bpk-text--black; // Heavy/black weight
+    }
+  }
+}
+```
+
+### Design Token Usage
+
+#### Color Tokens
+```scss
+.my-component {
+  // Text colors
+  color: tokens.$bpk-text-primary-day;
+  color: tokens.$bpk-text-secondary-day;
+  color: tokens.$bpk-text-disabled-day;
+  color: tokens.$bpk-text-on-dark-day;
+  
+  // Background colors
+  background-color: tokens.$bpk-canvas-day;
+  background-color: tokens.$bpk-canvas-contrast-day;
+  background-color: tokens.$bpk-surface-highlight-day;
+  
+  // Brand colors
+  background-color: tokens.$bpk-core-primary-day;
+  background-color: tokens.$bpk-core-accent-day;
+  
+  // Border colors
+  border-color: tokens.$bpk-line-day;
+  border-color: tokens.$bpk-line-on-dark-day;
+}
+```
+
+#### Spacing Tokens (Function-based)
+```scss
+.my-component {
+  // Spacing functions return values in rem
+  padding: tokens.bpk-spacing-base();     // 1rem (16px)
+  margin: tokens.bpk-spacing-lg();        // 1.5rem (24px)
+  gap: tokens.bpk-spacing-sm();           // 0.5rem (8px)
+  
+  // Multiple values
+  padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-base();
+  margin: tokens.bpk-spacing-md() 0;
+  
+  // Full spacing scale
+  padding: tokens.bpk-spacing-none();     // 0
+  padding: tokens.bpk-spacing-sm();       // 0.5rem
+  padding: tokens.bpk-spacing-base();     // 1rem
+  padding: tokens.bpk-spacing-md();       // 1.25rem
+  padding: tokens.bpk-spacing-lg();       // 1.5rem
+  padding: tokens.bpk-spacing-xl();       // 2rem
+}
+```
+
+#### Font Tokens
+```scss
+.my-component {
+  // Font families
+  font-family: tokens.$bpk-font-family-base;     // Default font
+  font-family: tokens.$bpk-font-family-larken;   // Editorial font
+  
+  // Font weights (use typography mixins instead when possible)
+  font-weight: tokens.$bpk-font-weight-book;     // 400
+  font-weight: tokens.$bpk-font-weight-bold;     // 700
+  font-weight: tokens.$bpk-font-weight-black;    // 900
+  font-weight: tokens.$bpk-font-weight-light;    // 300
+  
+  // Font sizes (use typography mixins instead)
+  font-size: tokens.$bpk-font-size-base;         // 1rem
+  font-size: tokens.$bpk-font-size-lg;           // 1.25rem
+  font-size: tokens.$bpk-font-size-xl;           // 1.5rem
+  
+  // Line heights
+  line-height: tokens.$bpk-line-height-base;     // 1.5
+  line-height: tokens.$bpk-line-height-tight;    // 1.25
+}
+```
+
+#### Border and Shadow Tokens
+```scss
+.my-component {
+  // Border sizes
+  border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+  border-width: tokens.$bpk-border-size-lg;
+  
+  // Border radius (function-based)
+  border-radius: tokens.bpk-border-radius-sm();   // 0.25rem
+  border-radius: tokens.bpk-border-radius-md();   // 0.5rem
+  border-radius: tokens.bpk-border-radius-lg();   // 0.75rem
+  
+  // Box shadows (function-based)
+  box-shadow: tokens.bpk-box-shadow-sm();         // Subtle shadow
+  box-shadow: tokens.bpk-box-shadow-base();       // Default shadow
+  box-shadow: tokens.bpk-box-shadow-lg();         // Prominent shadow
+}
+```
+
+### Typography Patterns and Content Styling
+
+#### Links
+```scss
+.my-component {
+  &__link {
+    @include typography.bpk-link;
+    
+    // Link variants
+    &--implicit {
+      @include typography.bpk-link--implicit;
+    }
+    
+    &--alternate {
+      @include typography.bpk-link--alternate;  // For dark backgrounds
+    }
+    
+    &--active {
+      @include typography.bpk-link--active;
+    }
+  }
+  
+  // Underlined links
+  &__underlined-link {
+    @include typography.bpk-link-underlined;
+    
+    &--implicit {
+      @include typography.bpk-link-underlined--implicit;
+    }
+  }
+}
+```
+
+#### Lists and Content
+```scss
+.my-component {
+  // Paragraphs
+  &__paragraph {
+    @include typography.bpk-paragraph;
+  }
+  
+  // Lists
+  &__list {
+    @include typography.bpk-list;
+    
+    &--nested {
+      @include typography.bpk-list--nested;
+    }
+  }
+  
+  &__list-item {
+    @include typography.bpk-list-item;
+  }
+  
+  // Code blocks
+  &__code {
+    @include typography.bpk-code;
+    
+    &--alternate {
+      @include typography.bpk-code--alternate;
+    }
+    
+    &--block {
+      @include typography.bpk-code--block;
+    }
+  }
+  
+  // Blockquotes
+  &__blockquote {
+    @include typography.bpk-blockquote;
+    
+    &--extra-spacing {
+      @include typography.bpk-blockquote--extra-spacing;
+    }
+  }
+}
+```
+
+#### Tables
+```scss
+.my-component {
+  &__table {
+    @include typography.bpk-table;
+    
+    &--alternate {
+      @include typography.bpk-table--alternate;
+    }
+  }
+  
+  &__table-cell {
+    @include typography.bpk-table__cell;
+    
+    &--head {
+      @include typography.bpk-table__cell--head;
+    }
+    
+    &--head-alternate {
+      @include typography.bpk-table__cell--head-alternate;
+    }
+  }
+}
+```
+
+### Best Practices
+
+1. **Prefer Typography Mixins**: Use semantic typography mixins like `bpk-body-default` instead of size-based ones like `bpk-text-base`
+
+2. **Use Spacing Functions**: Always use `tokens.bpk-spacing-base()` instead of direct values
+
+3. **Semantic Color Naming**: Use semantic color tokens that describe purpose, not appearance
+
+4. **Consistent Patterns**: Follow established patterns for similar UI elements
+
+### Complete Component Example
+
+```scss
+@use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/typography';
+
+.bpk-my-component {
+  display: flex;
+  flex-direction: column;
   padding: tokens.bpk-spacing-base();
-  border-radius: tokens.bpk-border-radius-sm();
+  background-color: tokens.$bpk-canvas-day;
+  border-radius: tokens.bpk-border-radius-md();
+  border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+  box-shadow: tokens.bpk-box-shadow-sm();
+  
+  &__title {
+    @include typography.bpk-heading-3;
+    color: tokens.$bpk-text-primary-day;
+    margin-bottom: tokens.bpk-spacing-sm();
+  }
+  
+  &__body {
+    @include typography.bpk-body-default;
+    color: tokens.$bpk-text-secondary-day;
+    margin-bottom: tokens.bpk-spacing-base();
+  }
+  
+  &__link {
+    @include typography.bpk-link;
+    @include typography.bpk-link-underlined;
+  }
+  
+  &--compact {
+    padding: tokens.bpk-spacing-sm();
+    
+    .bpk-my-component__title {
+      @include typography.bpk-heading-4;
+    }
+    
+    .bpk-my-component__body {
+      @include typography.bpk-caption;
+    }
+  }
 }
 ```
 
