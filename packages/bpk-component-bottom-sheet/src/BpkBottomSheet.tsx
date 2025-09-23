@@ -105,7 +105,7 @@ const BpkBottomSheet = ({
   const contentStyle = getClassName(
     'bpk-bottom-sheet--content',
     paddingType !== PADDING_TYPE.none && `bpk-bottom-sheet--padding-${paddingType}`
-  )
+  );
 
   return <BpkBreakpoint query={BREAKPOINTS.ABOVE_MOBILE}>
     {(isAboveMobile: boolean) =>
