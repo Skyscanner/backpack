@@ -20,7 +20,7 @@ figma.connect(
         Default: false,
       }),
     },
-    example: ({ disabled, label, type}) =>
+    example: ({ disabled, label, type }) =>
       <BpkSelectableChip onClick={() => {}} accessibilityLabel={label} type={type} disabled={disabled} >{label}</BpkSelectableChip>
   },
 )
