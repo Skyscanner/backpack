@@ -18,24 +18,12 @@
 
 import figma from '@figma/code-connect';
 
-import BpkDividedCard, { ORIENTATION } from './BpkDividedCard';
+import BpkCard from './BpkCard';
 
 figma.connect(
-  BpkDividedCard,
-  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=22678%3A26157',
+  BpkCard,
+  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=4395%3A2506',
   {
-    props: {
-      orientation: figma.enum('Size', {
-        Desktop: ORIENTATION.horizontal,
-        Mobile: ORIENTATION.vertical,
-      }),
-    },
-    example: ({ orientation }) => (
-      <BpkDividedCard
-        orientation={orientation}
-        primaryContent="Primary content"
-        secondaryContent="Secondary content"
-      />
-    ),
+    example: () => <BpkCard>children</BpkCard>,
   },
 );
