@@ -26,6 +26,7 @@ figma.connect(
   {
     props: {
       large: figma.enum('Size', {
+        Default: false,
         Large: true,
       }),
       docked: figma.enum('Docking', {
