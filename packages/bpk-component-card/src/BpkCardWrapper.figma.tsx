@@ -27,7 +27,7 @@ figma.connect(
   'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=22618%3A28743',
   {
     props: {},
-    example: ({ backgroundColor, card, header }) => (
+    example: () => (
       <BpkCardWrapper
         card={<div>Card content</div>}
         backgroundColor={coreAccentDay}
