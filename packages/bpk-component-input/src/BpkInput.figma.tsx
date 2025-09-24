@@ -29,9 +29,6 @@ figma.connect(
         Default: false,
         Large: true,
       }),
-      docked: figma.enum('Docking', {
-        None: true,
-      }),
       dockedFirst: figma.enum('Docking', {
         Left: true,
       }),
@@ -42,13 +39,12 @@ figma.connect(
         Right: true,
       }),
     },
-    example: ({ docked, dockedFirst, dockedLast, dockedMiddle, large }) => (
+    example: ({ dockedFirst, dockedLast, dockedMiddle, large }) => (
       <BpkInput
         id="input-id"
         name="input-name"
         value="Enter"
         large={large}
-        docked={docked}
         dockedFirst={dockedFirst}
         dockedMiddle={dockedMiddle}
         dockedLast={dockedLast}
