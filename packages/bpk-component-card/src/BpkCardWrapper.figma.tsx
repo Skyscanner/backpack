@@ -26,7 +26,6 @@ figma.connect(
   BpkCardWrapper,
   'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=22618%3A28743',
   {
-    props: {},
     example: () => (
       <BpkCardWrapper
         card={<div>Card content</div>}

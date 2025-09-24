@@ -24,7 +24,6 @@ figma.connect(
   BpkCard,
   'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=4395%3A2506',
   {
-    props: {},
     example: () => <BpkCard>children</BpkCard>,
   },
 );
