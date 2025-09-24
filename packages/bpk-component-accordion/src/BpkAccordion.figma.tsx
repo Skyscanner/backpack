@@ -18,7 +18,8 @@
 
 import figma from "@figma/code-connect";
 
-import { BpkAccordion, BpkAccordionItem } from './BpkAccordion';
+import BpkAccordion from './BpkAccordion';
+import BpkAccordionItem from './BpkAccordionItem';
 
 figma.connect(
   BpkAccordion,
