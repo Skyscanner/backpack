@@ -17,6 +17,7 @@
  */
 
 import figma from "@figma/code-connect";
+
 import BpkAccordion from './BpkAccordion';
 import BpkAccordionItem from './BpkAccordionItem';
 
