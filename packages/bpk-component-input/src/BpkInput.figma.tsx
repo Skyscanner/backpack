@@ -42,8 +42,8 @@ figma.connect(
     example: ({ dockedFirst, dockedLast, dockedMiddle, large }) => (
       <BpkInput
         id="input-id"
-        name="input-name"
-        value="Enter"
+        name=""
+        value=""
         large={large}
         dockedFirst={dockedFirst}
         dockedMiddle={dockedMiddle}
