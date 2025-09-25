@@ -71,7 +71,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const [root, setRoot] = useState<HTMLElement | null>(null);
   const [, forceUpdate] = useState(0);
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
-  const hasBeenVisibleRef = useRef<Set<number>>(new Set());
   const firstCardWidthRef = useRef<number | null>(null);
   const firstCardHeightRef = useRef<number | null>(null);
 
@@ -96,6 +95,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
   // Similar to Virtual Scrolling to improve performance
   const firstVisibleIndex = Math.max(0, visibilityList.indexOf(1));
+  const lastVisibleIndex = firstVisibleIndex + initiallyShownCards - 1;
 
   const dynamicRenderBufferSize = useMemo(() => {
     if (childrenLength === 0 || initiallyShownCards === 0 || isMobile) return RENDER_BUFFER_SIZE;
@@ -119,7 +119,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           setA11yTabIndex(el, i, visibilityList);
           // record the first card's width and height when it becomes visible
           if (el && visibilityList[i] === 0) {
-            hasBeenVisibleRef.current.add(i);
             if (firstCardWidthRef.current == null && el.offsetWidth) {
               firstCardWidthRef.current = el.offsetWidth;
             }
@@ -132,7 +131,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       childrenLength,
       observerVisibility,
       visibilityList,
-      hasBeenVisibleRef,
       firstCardWidthRef,
       firstCardHeightRef,
     ],
@@ -156,21 +154,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         clearTimeout(openSetStateLockTimeoutRef.current);
       }
     };
-  }, [root]);
-
-  useEffect(() => {
-    // update hasBeenVisibleRef to include the range of cards that should be visible
-    const start = currentIndex * initiallyShownCards;
-    const end = start + initiallyShownCards + dynamicRenderBufferSize;
-    for (let i = start; i < end && i < childrenLength; i += 1) {
-      hasBeenVisibleRef.current.add(i);
-    }
-  }, [
-    currentIndex,
-    initiallyShownCards,
-    childrenLength,
-    dynamicRenderBufferSize,
-  ]);
+  }, [root, isMobile]);
 
   useEffect(() => {
     const firstVisible = visibilityList.indexOf(1);
@@ -194,14 +178,11 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   }, []);
 
 
-  const shouldCardBeVisible = (
-    index: number,
-  ): boolean => {
+  const shouldCardBeVisible = (index: number) => {
     const isInViewport = index >= firstVisibleIndex - dynamicRenderBufferSize &&
-                            index <= firstVisibleIndex + initiallyShownCards - 1 + dynamicRenderBufferSize;
-    const hasBeenVisible = hasBeenVisibleRef.current.has(index);
+      index <= lastVisibleIndex + dynamicRenderBufferSize;
 
-    return isInViewport || hasBeenVisible
+    return isInViewport;
   }
 
   return (
@@ -227,19 +208,15 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           cardDimensionStyle.height = `${firstCardHeightRef.current}px`;
         }
 
-        // Determine visibility based on virtualization logic
-        const shouldBeVisible = shouldCardBeVisible(index);
-
         // Card virtualization optimization styles
-        const cardVirtualizationStyle: CSSProperties = {};
-        if (!shouldBeVisible) {
-          // Use content-visibility for browser-native virtualization
-          cardVirtualizationStyle.contentVisibility = 'auto';
+        const cardVirtualizationStyle: CSSProperties = {
+          contentVisibility: 'auto' // Use content-visibility for browser-native virtualization
+        };
 
-          // Set intrinsic size to match actual card dimensions
-          if (cardDimensionStyle.width && cardDimensionStyle.height) {
-            cardVirtualizationStyle.containIntrinsicSize = `${cardDimensionStyle.width} ${cardDimensionStyle.height}`;
-          }
+
+        const shouldBeVisible = shouldCardBeVisible(index);
+        if (!shouldBeVisible && cardDimensionStyle.width && cardDimensionStyle.height) {
+          cardVirtualizationStyle.containIntrinsicSize = `${cardDimensionStyle.width} ${cardDimensionStyle.height}`;
         }
 
         return (
