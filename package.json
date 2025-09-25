@@ -120,7 +120,7 @@
     "@figma/code-connect": "^1.3.5",
     "@percy/cli": "^1.31.0",
     "@percy/storybook": "^6.0.3",
-    "@skyscanner/bpk-foundations-web": "^22.3.0",
+    "@skyscanner/bpk-foundations-web": "^22.2.0",
     "@skyscanner/bpk-svgs": "^20.8.0",
     "@skyscanner/eslint-config-skyscanner": "^20.0.0",
     "@skyscanner/stylelint-config-skyscanner": "^13.1.0",
