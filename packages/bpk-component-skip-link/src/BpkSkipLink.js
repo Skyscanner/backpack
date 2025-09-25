@@ -31,10 +31,12 @@ export type Props = {
   className: ?string,
 };
 
-const BpkSkipLink = (props: Props) => {
-  const { className, href, label, ...rest } = props;
-
-  return (
+const BpkSkipLink = ({
+  className = null,
+  href,
+  label,
+  ...rest
+}: Props) => (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <a
       href={href}
@@ -44,16 +46,11 @@ const BpkSkipLink = (props: Props) => {
       {label}
     </a>
   );
-};
 
 BpkSkipLink.propTypes = {
   label: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
   className: PropTypes.string,
-};
-
-BpkSkipLink.defaultProps = {
-  className: null,
 };
 
 export default BpkSkipLink;

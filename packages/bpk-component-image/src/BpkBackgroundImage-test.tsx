@@ -171,4 +171,41 @@ describe('BpkBackgroundImage', () => {
 
     expect(mockOnError).toHaveBeenCalled();
   });
+
+  it('loads image when inView flips or src changes', () => {
+    const loaded: string[] = [];
+    Object.defineProperty(window, 'Image', {
+      writable: true,
+      configurable: true,
+      value: class {
+        set src(url: string) {
+          loaded.push(url);
+        }
+
+        onloadHandler?: () => void;
+
+        onerrorHandler?: () => void;
+
+        set onload(cb: () => void) {
+          this.onloadHandler = cb;
+        }
+
+        set onerror(cb: () => void) {
+          this.onerrorHandler = cb;
+        }
+      },
+    });
+
+    const { rerender } = render(
+      <BpkBackgroundImage aspectRatio={1} src="one.jpg" inView={false} />,
+    );
+    expect(loaded).toEqual([]);
+
+    rerender(<BpkBackgroundImage aspectRatio={1} src="one.jpg" inView />);
+    expect(loaded).toEqual(['one.jpg']);
+
+    loaded.length = 0;
+    rerender(<BpkBackgroundImage aspectRatio={1} src="two.jpg" inView />);
+    expect(loaded).toEqual(['two.jpg']);
+  });
 });

@@ -37,8 +37,14 @@ type Props = {
   implicit?: boolean;
 };
 
-const BpkButtonLink = (props: Props) => {
-  const { alternate, children, className, implicit, onClick, ...rest } = props;
+const BpkButtonLink = ({
+  alternate = false,
+  children,
+  className = null,
+  implicit = false,
+  onClick,
+  ...rest
+}: Props) => {
   const classNames = [getClassName('bpk-link')];
   const underlinedClassNames = [getClassName('bpk-link-underlined')];
 
@@ -51,7 +57,7 @@ const BpkButtonLink = (props: Props) => {
   if (alternate) {
     classNames.push(getClassName('bpk-link--alternate'));
   }
-  
+
   if (implicit && !alternate) {
     underlinedClassNames.push(getClassName('bpk-link-underlined--implicit'));
   } else if (alternate && !implicit) {
@@ -79,12 +85,6 @@ BpkButtonLink.propTypes = {
   className: PropTypes.string,
   alternate: PropTypes.bool,
   implicit: PropTypes.bool,
-};
-
-BpkButtonLink.defaultProps = {
-  className: null,
-  alternate: false,
-  implicit: false,
 };
 
 export { themeAttributes };

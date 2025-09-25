@@ -16,10 +16,26 @@
  * limitations under the License.
  */
 
-import themeAttributes from './themeAttributes';
+import figma from "@figma/code-connect";
 
-describe('themeAttributes', () => {
-  it('exports the expected themeAttributes', () => {
-    expect(themeAttributes).toEqual(['blockquoteBarColor']);
-  });
-});
+import BpkSwitch from "./BpkSwitch";
+
+figma.connect(
+  BpkSwitch,
+  "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=6099%3A10807",
+  {
+    props: {
+      size: figma.enum("Size", {
+        "Default": false,
+        "Small": true,
+      }),
+      state: figma.enum("State", {
+        "On": true,
+        "Off": false,
+      }),
+    },
+    example: ({size, state}) => (
+      <BpkSwitch ariaLabel="Activate Backpack" small={size} checked={state} />
+    ),
+  },
+)
