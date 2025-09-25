@@ -29,7 +29,6 @@ import throttle from 'lodash/throttle';
 
 import { cssModules } from '../../../bpk-react-utils';
 
-import { RENDER_BUFFER_SIZE } from './constants';
 import {
   lockScroll,
   setA11yTabIndex,
@@ -42,8 +41,6 @@ import type { CardListCarouselProps } from '../common-types';
 import STYLES from './BpkCardListCarousel.module.scss';
 
 const getClassName = cssModules(STYLES);
-
-const PAGINATION_INDICATOR_MAX_SHOWN_COUNT = 5;
 
 const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const {
@@ -92,23 +89,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     cardRefs,
     stateScrollingLockRef,
   );
-
-  // Similar to Virtual Scrolling to improve performance
-  const firstVisibleIndex = Math.max(0, visibilityList.indexOf(1));
-  const lastVisibleIndex = firstVisibleIndex + initiallyShownCards - 1;
-
-  const dynamicRenderBufferSize = useMemo(() => {
-    if (childrenLength === 0 || initiallyShownCards === 0 || isMobile) return RENDER_BUFFER_SIZE;
-
-    // Calculate how many cards to render based on the number of initially shown cards and total children
-    const totalPages = Math.ceil(childrenLength / initiallyShownCards);
-    const shownIndicatorCount = Math.min(totalPages, PAGINATION_INDICATOR_MAX_SHOWN_COUNT);
-    return Math.max(
-      RENDER_BUFFER_SIZE,
-      (shownIndicatorCount - 1) * initiallyShownCards,
-    );
-  }, [childrenLength, initiallyShownCards, isMobile]);
-
   const cardRefFns = useMemo(
     () =>
       Array(childrenLength)
@@ -178,12 +158,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   }, []);
 
 
-  const shouldCardBeVisible = (index: number) => {
-    const isInViewport = index >= firstVisibleIndex - dynamicRenderBufferSize &&
-      index <= lastVisibleIndex + dynamicRenderBufferSize;
-
-    return isInViewport;
-  }
+  const shouldCardBeVisible = (index: number) => visibilityList[index] === 1;
 
   return (
     <div
@@ -210,12 +185,10 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
         // Card virtualization optimization styles
         const cardVirtualizationStyle: CSSProperties = {};
+        const isCardVisible = shouldCardBeVisible(index);
 
-
-        const shouldBeVisible = shouldCardBeVisible(index);
-        if (!shouldBeVisible) {
-          cardDimensionStyle.contentVisibility = 'auto'; // Use content-visibility for browser-native virtualization
-
+        if (!isCardVisible) {
+          cardVirtualizationStyle.contentVisibility = 'auto';
           if (cardDimensionStyle.width && cardDimensionStyle.height) {
             cardVirtualizationStyle.containIntrinsicSize = `${cardDimensionStyle.width} ${cardDimensionStyle.height}`;
           }
