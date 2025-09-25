@@ -52,20 +52,21 @@ class AnimateHeight extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    const { height: prevHeight, transitionOverflow: prevTransitionOverflow } = prevProps;
     const { duration, height, transitionOverflow } = this.props;
 
     // Check if 'height' prop has changed
-    if (this.contentElement && height !== prevProps.height) {
+    if (this.contentElement && height !== prevHeight) {
       // Cache content height
       this.contentElement.style.display = '';
-      this.contentElement.style.overflow = transitionOverflow;
+      this.contentElement.style.overflow = prevTransitionOverflow;
       const contentHeight = this.contentElement.offsetHeight;
       this.contentElement.style.overflow = '';
 
       let newHeight = null;
       let shouldSetTimeout = false;
       let timeoutHeight = null;
-      let timeoutOverflow = transitionOverflow;
+      let timeoutOverflow = prevTransitionOverflow;
       let timeoutDuration = duration;
 
       clearTimeout(this.timeoutID);
