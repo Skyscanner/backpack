@@ -59,7 +59,7 @@ const BpkFallbackComponent = ({
   }
 
   return (
-     <div style={{ padding: 16, background: '#fff' }}>
+     <div style={{ padding: 16}}>
       <div
         style={{ fontFamily: stack, fontWeight: weight, fontSize: size }}
         dir={isArabic ? 'rtl' : 'ltr'}
