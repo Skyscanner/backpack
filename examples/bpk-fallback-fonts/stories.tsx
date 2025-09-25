@@ -32,7 +32,7 @@ const meta: Meta<typeof BpkFallbackComponent> = {
     },
     weight: {
       control: { type: 'select' },
-      options: [800], // 可以扩展到 400/500/700/900
+      options: [800], // Can be extended to 400/500/700/900
     },
     size: { control: { type: 'number', min: 14, max: 48, step: 1 } },
     forceFallback: { control: 'boolean' },
