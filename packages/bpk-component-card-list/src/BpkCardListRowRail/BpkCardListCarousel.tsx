@@ -209,14 +209,16 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         }
 
         // Card virtualization optimization styles
-        const cardVirtualizationStyle: CSSProperties = {
-          contentVisibility: 'auto' // Use content-visibility for browser-native virtualization
-        };
+        const cardVirtualizationStyle: CSSProperties = {};
 
 
         const shouldBeVisible = shouldCardBeVisible(index);
-        if (!shouldBeVisible && cardDimensionStyle.width && cardDimensionStyle.height) {
-          cardVirtualizationStyle.containIntrinsicSize = `${cardDimensionStyle.width} ${cardDimensionStyle.height}`;
+        if (!shouldBeVisible) {
+          cardDimensionStyle.contentVisibility = 'auto'; // Use content-visibility for browser-native virtualization
+
+          if (cardDimensionStyle.width && cardDimensionStyle.height) {
+            cardVirtualizationStyle.containIntrinsicSize = `${cardDimensionStyle.width} ${cardDimensionStyle.height}`;
+          }
         }
 
         return (
