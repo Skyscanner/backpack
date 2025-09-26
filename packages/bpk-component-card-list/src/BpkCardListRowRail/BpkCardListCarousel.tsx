@@ -29,7 +29,6 @@ import throttle from 'lodash/throttle';
 
 import { cssModules } from '../../../bpk-react-utils';
 
-import { RENDER_BUFFER_SIZE } from './constants';
 import {
   lockScroll,
   setA11yTabIndex,
@@ -42,8 +41,6 @@ import type { CardListCarouselProps } from '../common-types';
 import STYLES from './BpkCardListCarousel.module.scss';
 
 const getClassName = cssModules(STYLES);
-
-const PAGINATION_INDICATOR_MAX_SHOWN_COUNT = 5;
 
 const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const {
@@ -71,7 +68,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const [root, setRoot] = useState<HTMLElement | null>(null);
   const [, forceUpdate] = useState(0);
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
-  const hasBeenVisibleRef = useRef<Set<number>>(new Set());
   const firstCardWidthRef = useRef<number | null>(null);
   const firstCardHeightRef = useRef<number | null>(null);
 
@@ -93,39 +89,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     cardRefs,
     stateScrollingLockRef,
   );
-
-  // Similar to Virtual Scrolling to improve performance
-  const firstVisibleIndex = Math.max(0, visibilityList.indexOf(1));
-  const lastVisibleIndex = firstVisibleIndex + initiallyShownCards - 1;
-
-  const dynamicRenderBufferSize = useMemo(() => {
-    if (childrenLength === 0 || initiallyShownCards === 0 || isMobile) return RENDER_BUFFER_SIZE;
-
-    // Calculate how many cards to render based on the number of initially shown cards and total children
-    const totalPages = Math.ceil(childrenLength / initiallyShownCards);
-    const shownIndicatorCount = Math.min(totalPages, PAGINATION_INDICATOR_MAX_SHOWN_COUNT);
-    return Math.max(
-      RENDER_BUFFER_SIZE,
-      (shownIndicatorCount - 1) * initiallyShownCards,
-    );
-  }, [childrenLength, initiallyShownCards, isMobile]);
-
-  const renderList = useMemo(
-    () =>
-      visibilityList.map((_, index) =>
-        index >= firstVisibleIndex - dynamicRenderBufferSize &&
-        index <= lastVisibleIndex + dynamicRenderBufferSize
-          ? 1
-          : 0,
-      ),
-    [
-      visibilityList,
-      firstVisibleIndex,
-      lastVisibleIndex,
-      dynamicRenderBufferSize,
-    ],
-  );
-
   const cardRefFns = useMemo(
     () =>
       Array(childrenLength)
@@ -136,7 +99,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           setA11yTabIndex(el, i, visibilityList);
           // record the first card's width and height when it becomes visible
           if (el && visibilityList[i] === 0) {
-            hasBeenVisibleRef.current.add(i);
             if (firstCardWidthRef.current == null && el.offsetWidth) {
               firstCardWidthRef.current = el.offsetWidth;
             }
@@ -149,7 +111,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       childrenLength,
       observerVisibility,
       visibilityList,
-      hasBeenVisibleRef,
       firstCardWidthRef,
       firstCardHeightRef,
     ],
@@ -173,21 +134,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         clearTimeout(openSetStateLockTimeoutRef.current);
       }
     };
-  }, [root]);
-
-  useEffect(() => {
-    // update hasBeenVisibleRef to include the range of cards that should be visible
-    const start = currentIndex * initiallyShownCards;
-    const end = start + initiallyShownCards + dynamicRenderBufferSize;
-    for (let i = start; i < end && i < childrenLength; i += 1) {
-      hasBeenVisibleRef.current.add(i);
-    }
-  }, [
-    currentIndex,
-    initiallyShownCards,
-    childrenLength,
-    dynamicRenderBufferSize,
-  ]);
+  }, [root, isMobile]);
 
   useEffect(() => {
     const firstVisible = visibilityList.indexOf(1);
@@ -210,6 +157,9 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+
+  const shouldCardBeVisible = (index: number) => visibilityList[index] === 1;
+
   return (
     <div
       className={getClassName(`bpk-card-list-row-rail__${layout}`)}
@@ -224,6 +174,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       {children.map((card, index) => {
         if (!isValidElement(card)) return null;
 
+        // Dynamic card dimensions (inline styles are appropriate here)
         const cardDimensionStyle: CSSProperties = {};
         if (firstCardWidthRef.current) {
           cardDimensionStyle.width = `${firstCardWidthRef.current}px`;
@@ -232,20 +183,15 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           cardDimensionStyle.height = `${firstCardHeightRef.current}px`;
         }
 
-        // Only render cards that are within the renderList range or have been visible before
-        if (renderList[index] !== 1 && !hasBeenVisibleRef.current.has(index)) {
-          return (
-            <div
-              key={`placeholder-${index.toString()}`}
-              style={{
-                ...shownNumberStyle,
-                ...cardDimensionStyle,
-                flexShrink: 0,
-                visibility: 'hidden',
-              }}
-              aria-hidden="true"
-            />
-          );
+        // Card virtualization optimization styles
+        const cardVirtualizationStyle: CSSProperties = {};
+        const isCardVisible = shouldCardBeVisible(index);
+
+        if (!isCardVisible) {
+          cardVirtualizationStyle.contentVisibility = 'auto';
+          if (cardDimensionStyle.width && cardDimensionStyle.height) {
+            cardVirtualizationStyle.containIntrinsicSize = `${cardDimensionStyle.width} ${cardDimensionStyle.height}`;
+          }
         }
 
         return (
@@ -255,6 +201,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
             style={{
               ...shownNumberStyle,
               ...cardDimensionStyle,
+              ...cardVirtualizationStyle,
             }}
             key={`carousel-card-${index.toString()}`}
             role="group"
