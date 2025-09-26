@@ -115,6 +115,7 @@ const BpkInsetBannerSponsored = ({
               ariaLabel={callToAction?.bottomSheetA11yLabel || ''}
               closeOnScrimClick
               closeOnEscPressed
+              paddingType='base'
             >
               {callToAction.bottomSheetContent.map((item, index) => (
                 <div
