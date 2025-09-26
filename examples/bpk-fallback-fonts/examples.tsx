@@ -43,7 +43,7 @@ export interface BpkFallbackComponentProps {
   size?: number;
   forceFallback?: boolean;
 }
-export const SCRIPTS ={ ARABIC: 'arabic', LATIN: 'latin', GREEK: 'greek', CYRILLIC: 'cyrillic' } as const;
+export const SCRIPTS = { ARABIC: 'arabic', LATIN: 'latin', GREEK: 'greek', CYRILLIC: 'cyrillic' } as const;
 
 const BpkFallbackComponent = ({
   forceFallback = false,
@@ -51,7 +51,7 @@ const BpkFallbackComponent = ({
   size = 22,
   weight = 800,
 }: BpkFallbackComponentProps) => {
-  const isArabic = script === 'arabic';
+  const isArabic = script === SCRIPTS.ARABIC;
   let stack: string;
   if (isArabic) {
     stack = forceFallback ? STACKS.notoSansArabic800Fallback : STACKS.notoSansArabic800;
@@ -60,7 +60,7 @@ const BpkFallbackComponent = ({
   }
 
   return (
-     <div style={{ padding: 16}}>
+    <div style={{ padding: 16 }}>
       <div
         style={{ fontFamily: stack, fontWeight: weight, fontSize: size }}
         dir={isArabic ? 'rtl' : 'ltr'}
