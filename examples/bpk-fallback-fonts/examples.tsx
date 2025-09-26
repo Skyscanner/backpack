@@ -43,10 +43,11 @@ export interface BpkFallbackComponentProps {
   size?: number;
   forceFallback?: boolean;
 }
+export const SCRIPTS ={ ARABIC: 'arabic', LATIN: 'latin', GREEK: 'greek', CYRILLIC: 'cyrillic' } as const;
 
 const BpkFallbackComponent = ({
   forceFallback = false,
-  script = 'latin',
+  script = SCRIPTS.ARABIC,
   size = 22,
   weight = 800,
 }: BpkFallbackComponentProps) => {
@@ -73,4 +74,6 @@ const BpkFallbackComponent = ({
   );
 };
 
-export default BpkFallbackComponent;
+export {
+  BpkFallbackComponent
+};

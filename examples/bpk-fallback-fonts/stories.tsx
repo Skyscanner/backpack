@@ -17,18 +17,19 @@
  */
 
 
-import BpkFallbackComponent from './examples';
+import { BpkFallbackComponent, SCRIPTS } from './examples';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
+
 const meta: Meta<typeof BpkFallbackComponent> = {
-  title: 'bpk-fallback-component',
-  parameters: { docs: { disable: true } },
+  title: 'bpk-fallback-font',
+  tags: ['!autodocs'],
   component: BpkFallbackComponent,
   argTypes: {
     script: {
       control: { type: 'inline-radio' },
-      options: ['latin', 'greek', 'cyrillic', 'arabic'],
+      options: Object.values(SCRIPTS),
     },
     weight: {
       control: { type: 'select' },
@@ -43,19 +44,17 @@ export default meta;
 type Story = StoryObj<React.ComponentProps<typeof BpkFallbackComponent>>;
 
 export const Default: Story = {
-  args: { script: 'latin', weight: 800, size: 22, forceFallback: false },
+  args: { script: SCRIPTS.LATIN, weight: 800, size: 22, forceFallback: false },
 };
 
 export const ForcedFallback: Story = {
-  args: { script: 'cyrillic', weight: 800, size: 22, forceFallback: true },
+  args: { script: SCRIPTS.CYRILLIC, weight: 800, size: 22, forceFallback: true },
 };
 
 export const Matrix: Story = {
   args: { weight: 800, size: 20, forceFallback: false },
   render: (args) => {
-    const scripts: Array<'latin' | 'greek' | 'cyrillic' | 'arabic'> = [
-      'latin', 'greek', 'cyrillic', 'arabic',
-    ];
+    const scripts = Object.values(SCRIPTS);
     return (
       <div style={{ display: 'grid', gap: 16 }}>
         {scripts.map((s) => (
