@@ -16,10 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+const themeAttributes: string[] = ['textareaInvalidBorderColor'];
 
-import BpkTextarea from './src/BpkTextarea';
-import themeAttributes from './src/themeAttributes';
-
-export default BpkTextarea;
-export { themeAttributes };
+export default themeAttributes;

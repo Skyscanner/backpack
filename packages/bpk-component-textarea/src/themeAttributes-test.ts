@@ -16,29 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import themeAttributes from './themeAttributes';
 
-import { render } from '@testing-library/react';
-
-import BpkTextarea from './BpkTextarea';
-
-describe('BpkTextarea', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(
-      <BpkTextarea id="test" name="test" value="" />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly with "className" attribute', () => {
-    const { asFragment } = render(
-      <BpkTextarea
-        id="test"
-        name="test"
-        value=""
-        className="my-custom-class-1 my-custom-class-2"
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
+describe('themeAttributes', () => {
+  it('exports the expected themeAttributes', () => {
+    expect(themeAttributes).toEqual(['textareaInvalidBorderColor']);
   });
 });
