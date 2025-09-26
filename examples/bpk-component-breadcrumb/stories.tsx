@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkBreadcrumb from '../../packages/bpk-component-breadcrumb/src/BpkBreadcrumb';
 import BpkBreadcrumbItem from '../../packages/bpk-component-breadcrumb/src/BpkBreadcrumbItem';
 
@@ -33,7 +32,10 @@ export default {
 export const Default = DefaultExample;
 export const Extreme = ExtremeExample;
 export const VisualTest = DefaultExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
+
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true,
+  }
 };
