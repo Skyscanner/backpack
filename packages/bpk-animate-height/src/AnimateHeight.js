@@ -59,7 +59,6 @@ class AnimateHeight extends Component {
     if (this.contentElement && height !== prevHeight) {
       // Cache content height
       this.contentElement.style.display = '';
-      this.contentElement.style.overflow = prevTransitionOverflow;
       const contentHeight = this.contentElement.offsetHeight;
       this.contentElement.style.overflow = '';
 
