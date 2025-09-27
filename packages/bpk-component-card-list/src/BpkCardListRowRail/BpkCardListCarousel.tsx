@@ -219,7 +219,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         if (programmaticTargetIndexRef.current === currentIndex) {
           programmaticTargetIndexRef.current = null;
         }
-      } else if (programmaticTargetIndexRef.current == null) {
+      } else if (programmaticTargetIndexRef.current === null) {
         // Only update state from visibility when not waiting for a programmatic scroll to settle.
         setCurrentIndex(newIndex);
       }
