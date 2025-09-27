@@ -82,6 +82,16 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const stateScrollingLockRef = useRef(false);
   const openSetStateLockTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  // When a user clicks a nav button / page indicator the parent updates `currentIndex`.
+  // We then scroll programmatically (useScrollToCard). The IntersectionObserver still
+  // reports the old visible cards for a short time (until scrolling settles / threshold met).
+  // Without a guard, the visibility effect would see the old page as 'firstVisible' and
+  // revert `currentIndex`, causing the jump back you observed. We keep track of whether
+  // there's a pending programmatic navigation target and suppress visibility-driven
+  // updates until the observer reports the target page as visible.
+  const programmaticTargetIndexRef = useRef<number | null>(null);
+  const prevCurrentIndexRef = useRef(currentIndex);
+
   const observerVisibility = useIntersectionObserver(
     { root, threshold: 0.5 },
     setVisibilityList,
@@ -163,17 +173,20 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef);
     };
 
+    // Capture the current timeout ref for cleanup to satisfy lint rule about ref mutation.
+    const timeoutRefAtMount = openSetStateLockTimeoutRef;
+
     container.addEventListener('wheel', lockScrollDuringInteraction);
     container.addEventListener('touchmove', lockScrollDuringInteraction);
 
     return () => {
       container.removeEventListener('touchmove', lockScrollDuringInteraction);
       container.removeEventListener('wheel', lockScrollDuringInteraction);
-      if (openSetStateLockTimeoutRef.current) {
-        clearTimeout(openSetStateLockTimeoutRef.current);
+      if (timeoutRefAtMount.current) {
+        clearTimeout(timeoutRefAtMount.current);
       }
     };
-  }, [root]);
+  }, [root, isMobile]);
 
   useEffect(() => {
     // update hasBeenVisibleRef to include the range of cards that should be visible
@@ -189,15 +202,29 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     dynamicRenderBufferSize,
   ]);
 
+  // Detect external (programmatic) index changes: parent set via click / nav.
+  useEffect(() => {
+    if (currentIndex !== prevCurrentIndexRef.current) {
+      programmaticTargetIndexRef.current = currentIndex;
+      prevCurrentIndexRef.current = currentIndex;
+    }
+  }, [currentIndex]);
+
   useEffect(() => {
     const firstVisible = visibilityList.indexOf(1);
     if (firstVisible >= 0) {
       const newIndex = Math.floor(firstVisible / initiallyShownCards);
-      if (newIndex !== currentIndex) {
+      if (newIndex === currentIndex) {
+        // Programmatic target reached; clear suppression.
+        if (programmaticTargetIndexRef.current === currentIndex) {
+          programmaticTargetIndexRef.current = null;
+        }
+      } else if (programmaticTargetIndexRef.current == null) {
+        // Only update state from visibility when not waiting for a programmatic scroll to settle.
         setCurrentIndex(newIndex);
       }
     }
-  }, [initiallyShownCards]);
+  }, [visibilityList, initiallyShownCards, currentIndex, setCurrentIndex]);
 
   useEffect(() => {
     const handleResize = throttle(() => {
