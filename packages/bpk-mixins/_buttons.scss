@@ -18,9 +18,9 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@import 'tokens.scss';
-@import 'typography.scss';
-@import 'utils.scss';
+@use 'tokens.scss';
+@use 'typography.scss';
+@use 'utils.scss';
 
 ////
 /// @group buttons
@@ -35,58 +35,58 @@
 
 @mixin bpk-button {
   display: inline-block;
-  min-height: $bpk-button-height;
+  min-height: tokens.$bpk-button-height;
   margin: 0;
-  padding: (6 * $bpk-one-pixel-rem) bpk-spacing-base();
+  padding: (6 * tokens.$bpk-one-pixel-rem) tokens.bpk-spacing-base();
   border: 0;
-  border-radius: $bpk-button-border-radius;
+  border-radius: tokens.$bpk-button-border-radius;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   vertical-align: middle;
   user-select: none;
 
-  @include bpk-label-1;
-  @include bpk-themeable-property(
+  @include typography.bpk-label-1;
+  @include utils.bpk-themeable-property(
     color,
     --bpk-button-primary-text-color,
-    $bpk-text-on-dark-day
+    tokens.$bpk-text-on-dark-day
   );
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     background-color,
     --bpk-button-primary-background-color,
-    $bpk-private-button-primary-normal-background-day
+    tokens.$bpk-private-button-primary-normal-background-day
   );
 
-  @include bpk-hover {
-    @include bpk-themeable-property(
+  @include utils.bpk-hover {
+    @include utils.bpk-themeable-property(
       color,
       --bpk-button-primary-hover-text-color,
-      $bpk-text-on-dark-day
+      tokens.$bpk-text-on-dark-day
     );
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-button-primary-hover-background-color,
-      $bpk-private-button-primary-pressed-background-day
+      tokens.$bpk-private-button-primary-pressed-background-day
     );
   }
 
   &:active {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-button-primary-active-text-color,
-      $bpk-text-on-dark-day
+      tokens.$bpk-text-on-dark-day
     );
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-button-primary-active-background-color,
-      $bpk-private-button-primary-pressed-background-day
+      tokens.$bpk-private-button-primary-pressed-background-day
     );
   }
 
   &:disabled {
-    background-color: $bpk-private-button-disabled-background-day;
-    color: $bpk-text-disabled-day;
+    background-color: tokens.$bpk-private-button-disabled-background-day;
+    color: tokens.$bpk-text-disabled-day;
     cursor: not-allowed;
   }
 }
@@ -102,8 +102,8 @@
 ///   }
 
 @mixin bpk-button--large {
-  min-height: $bpk-button-large-height;
-  padding: (12 * $bpk-one-pixel-rem) bpk-spacing-base();
+  min-height: tokens.$bpk-button-large-height;
+  padding: (12 * tokens.$bpk-one-pixel-rem) tokens.bpk-spacing-base();
 }
 
 /// PrimaryOnDark button. Modifies the bpk-button mixin.
@@ -117,46 +117,46 @@
 ///   }
 
 @mixin bpk-button--primary-on-dark {
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     color,
     --bpk-button-primary-on-dark-text-color,
-    $bpk-text-on-light-day
+    tokens.$bpk-text-on-light-day
   );
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     background-color,
     --bpk-button-primary-on-dark-background-color,
-    $bpk-private-button-primary-on-dark-normal-background-day
+    tokens.$bpk-private-button-primary-on-dark-normal-background-day
   );
 
-  @include bpk-hover {
-    @include bpk-themeable-property(
+  @include utils.bpk-hover {
+    @include utils.bpk-themeable-property(
       color,
       --bpk-button-primary-on-dark-hover-text-color,
-      $bpk-text-on-light-day
+      tokens.$bpk-text-on-light-day
     );
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-button-primary-on-dark-hover-background-color,
-      $bpk-private-button-primary-on-dark-pressed-background-day
+      tokens.$bpk-private-button-primary-on-dark-pressed-background-day
     );
   }
 
   &:active {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-button-primary-on-dark-active-text-color,
-      $bpk-text-on-light-day
+      tokens.$bpk-text-on-light-day
     );
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-button-primary-on-dark-active-background-color,
-      $bpk-private-button-primary-on-dark-pressed-background-day
+      tokens.$bpk-private-button-primary-on-dark-pressed-background-day
     );
   }
 
   &:disabled {
-    background-color: $bpk-private-button-primary-on-dark-disabled-background-day;
-    color: $bpk-private-button-primary-on-dark-disabled-foreground-day;
+    background-color: tokens.$bpk-private-button-primary-on-dark-disabled-background-day;
+    color: tokens.$bpk-private-button-primary-on-dark-disabled-foreground-day;
   }
 }
 
@@ -171,46 +171,46 @@
 ///   }
 
 @mixin bpk-button--primary-on-light {
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     color,
     --bpk-button-primary-on-light-text-color,
-    $bpk-text-on-dark-night
+    tokens.$bpk-text-on-dark-night
   );
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     background-color,
     --bpk-button-primary-on-light-background-color,
-    $bpk-private-button-primary-on-light-normal-background-day
+    tokens.$bpk-private-button-primary-on-light-normal-background-day
   );
 
-  @include bpk-hover {
-    @include bpk-themeable-property(
+  @include utils.bpk-hover {
+    @include utils.bpk-themeable-property(
       color,
       --bpk-button-primary-on-light-hover-text-color,
-      $bpk-text-on-dark-night
+      tokens.$bpk-text-on-dark-night
     );
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-button-primary-on-light-hover-background-color,
-      $bpk-private-button-primary-on-light-pressed-background-day
+      tokens.$bpk-private-button-primary-on-light-pressed-background-day
     );
   }
 
   &:active {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-button-primary-on-light-active-text-color,
-      $bpk-text-on-dark-night
+      tokens.$bpk-text-on-dark-night
     );
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-button-primary-on-light-active-background-color,
-      $bpk-private-button-primary-on-light-pressed-background-day
+      tokens.$bpk-private-button-primary-on-light-pressed-background-day
     );
   }
 
   &:disabled {
-    background-color: $bpk-private-button-primary-on-light-disabled-background-day;
-    color: $bpk-private-button-primary-on-light-disabled-foreground-day;
+    background-color: tokens.$bpk-private-button-primary-on-light-disabled-background-day;
+    color: tokens.$bpk-private-button-primary-on-light-disabled-foreground-day;
   }
 }
 
@@ -225,46 +225,46 @@
 ///   }
 
 @mixin bpk-button--secondary {
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     color,
     --bpk-button-secondary-text-color,
-    $bpk-text-primary-day
+    tokens.$bpk-text-primary-day
   );
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     background-color,
     --bpk-button-secondary-background-color,
-    $bpk-private-button-secondary-normal-background-day
+    tokens.$bpk-private-button-secondary-normal-background-day
   );
 
-  @include bpk-hover {
-    @include bpk-themeable-property(
+  @include utils.bpk-hover {
+    @include utils.bpk-themeable-property(
       color,
       --bpk-button-secondary-hover-text-color,
-      $bpk-text-primary-day
+      tokens.$bpk-text-primary-day
     );
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-button-secondary-hover-background-color,
-      $bpk-private-button-secondary-pressed-background-day
+      tokens.$bpk-private-button-secondary-pressed-background-day
     );
   }
 
   &:active {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-button-secondary-active-text-color,
-      $bpk-text-primary-day
+      tokens.$bpk-text-primary-day
     );
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-button-secondary-active-background-color,
-      $bpk-private-button-secondary-pressed-background-day
+      tokens.$bpk-private-button-secondary-pressed-background-day
     );
   }
 
   &:disabled {
-    background-color: $bpk-private-button-disabled-background-day;
-    color: $bpk-text-disabled-day;
+    background-color: tokens.$bpk-private-button-disabled-background-day;
+    color: tokens.$bpk-text-disabled-day;
   }
 }
 
@@ -279,46 +279,46 @@
 ///   }
 
 @mixin bpk-button--secondary-on-dark {
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     color,
     --bpk-button-secondary-on-dark-text-color,
-    $bpk-text-on-dark-day
+    tokens.$bpk-text-on-dark-day
   );
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     background-color,
     --bpk-button-secondary-on-dark-background-color,
-    $bpk-private-button-secondary-on-dark-normal-background-day
+    tokens.$bpk-private-button-secondary-on-dark-normal-background-day
   );
 
-  @include bpk-hover {
-    @include bpk-themeable-property(
+  @include utils.bpk-hover {
+    @include utils.bpk-themeable-property(
       color,
       --bpk-button-secondary-on-dark-hover-text-color,
-      $bpk-text-on-dark-day
+      tokens.$bpk-text-on-dark-day
     );
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-button-secondary-on-dark-hover-background-color,
-      $bpk-private-button-secondary-on-dark-pressed-background-day
+      tokens.$bpk-private-button-secondary-on-dark-pressed-background-day
     );
   }
 
   &:active {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-button-secondary-on-dark-active-text-color,
-      $bpk-text-on-dark-day
+      tokens.$bpk-text-on-dark-day
     );
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-button-secondary-on-dark-active-background-color,
-      $bpk-private-button-secondary-on-dark-pressed-background-day
+      tokens.$bpk-private-button-secondary-on-dark-pressed-background-day
     );
   }
 
   &:disabled {
-    background-color: $bpk-private-button-secondary-on-dark-disabled-background-day;
-    color: $bpk-private-button-secondary-on-dark-disabled-foreground-day;
+    background-color: tokens.$bpk-private-button-secondary-on-dark-disabled-background-day;
+    color: tokens.$bpk-private-button-secondary-on-dark-disabled-foreground-day;
   }
 }
 
@@ -335,46 +335,46 @@
 ///   }
 
 @mixin bpk-button--destructive {
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     color,
     --bpk-button-destructive-text-color,
-    $bpk-private-button-destructive-normal-foreground-day
+    tokens.$bpk-private-button-destructive-normal-foreground-day
   );
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     background-color,
     --bpk-button-destructive-background-color,
-    $bpk-private-button-destructive-normal-background-day
+    tokens.$bpk-private-button-destructive-normal-background-day
   );
 
-  @include bpk-hover {
-    @include bpk-themeable-property(
+  @include utils.bpk-hover {
+    @include utils.bpk-themeable-property(
       color,
       --bpk-button-destructive-hover-text-color,
-      $bpk-text-primary-inverse-day
+      tokens.$bpk-text-primary-inverse-day
     );
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-button-destructive-hover-background-color,
-      $bpk-private-button-destructive-pressed-background-day
+      tokens.$bpk-private-button-destructive-pressed-background-day
     );
   }
 
   &:active {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-button-destructive-active-text-color,
-      $bpk-text-primary-inverse-day
+      tokens.$bpk-text-primary-inverse-day
     );
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-button-destructive-active-background-color,
-      $bpk-private-button-destructive-pressed-background-day
+      tokens.$bpk-private-button-destructive-pressed-background-day
     );
   }
 
   &:disabled {
-    background-color: $bpk-private-button-disabled-background-day;
-    color: $bpk-text-disabled-day;
+    background-color: tokens.$bpk-private-button-disabled-background-day;
+    color: tokens.$bpk-text-disabled-day;
   }
 }
 
@@ -389,36 +389,36 @@
 ///   }
 
 @mixin bpk-button--link {
-  $vertical-padding: $bpk-one-pixel-rem * 6;
-  $vertical-padding-large: $bpk-one-pixel-rem * 12;
+  $vertical-padding: tokens.$bpk-one-pixel-rem * 6;
+  $vertical-padding-large: tokens.$bpk-one-pixel-rem * 12;
 
   background: none; /* stylelint-disable-line order/order, order/properties-order */
   box-shadow: none;
 
-  @include bpk-link--implicit;
+  @include typography.bpk-link--implicit;
 
   &::after {
     bottom: auto;
   }
 
   padding: $vertical-padding 0; /* stylelint-disable-line order/order, order/properties-order */
-  color: $bpk-private-button-link-normal-foreground-day;
+  color: tokens.$bpk-private-button-link-normal-foreground-day;
 
-  @include bpk-hover {
+  @include utils.bpk-hover {
     background: none;
-    color: $bpk-private-button-link-pressed-foreground-day;
+    color: tokens.$bpk-private-button-link-pressed-foreground-day;
     text-decoration: none;
   }
 
   &:active {
     background: none;
-    color: $bpk-private-button-link-pressed-foreground-day;
+    color: tokens.$bpk-private-button-link-pressed-foreground-day;
     text-decoration: none;
   }
 
   &:disabled {
     background: none;
-    color: $bpk-text-disabled-day;
+    color: tokens.$bpk-text-disabled-day;
     text-decoration: none;
   }
 
@@ -439,41 +439,41 @@
 
 @mixin bpk-button--link-on-dark {
   @include bpk-button--link;
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     color,
     --bpk-button-link-on-dark-text-color,
-    $bpk-private-button-link-on-dark-normal-foreground-day
+    tokens.$bpk-private-button-link-on-dark-normal-foreground-day
   );
 
-  @include bpk-hover {
-    @include bpk-themeable-property(
+  @include utils.bpk-hover {
+    @include utils.bpk-themeable-property(
       color,
       --bpk-button-link-on-dark-hover-text-color,
-      $bpk-private-button-link-on-dark-pressed-foreground-day
+      tokens.$bpk-private-button-link-on-dark-pressed-foreground-day
     );
   }
 
   &:active {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-button-link-on-dark-active-text-color,
-      $bpk-private-button-link-on-dark-pressed-foreground-day
+      tokens.$bpk-private-button-link-on-dark-pressed-foreground-day
     );
   }
 
   &:visited {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-button-link-on-dark-text-color,
-      $bpk-private-button-link-on-dark-normal-foreground-day
+      tokens.$bpk-private-button-link-on-dark-normal-foreground-day
     );
   }
 
   &:disabled {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-button-link-on-dark-disabled-color,
-      $bpk-private-button-link-on-dark-disabled-foreground-day
+      tokens.$bpk-private-button-link-on-dark-disabled-foreground-day
     );
   }
 }
@@ -489,11 +489,12 @@
 ///   }
 
 @mixin bpk-button--icon-only {
-  $horizontal-padding: ($bpk-button-height - $bpk-icon-size-sm) / 2; // extra padding so that the width will be the same size as the size using sm icons
+  $horizontal-padding: (tokens.$bpk-button-height - tokens.$bpk-icon-size-sm) *
+    0.5; // extra padding so that the width will be the same size as the size using sm icons
 
   padding-right: $horizontal-padding;
   padding-left: $horizontal-padding;
-  border-radius: $bpk-button-border-radius;
+  border-radius: tokens.$bpk-button-border-radius;
 }
 
 /// Large icon-only button. Modifies the bpk-button & bpk-button--large lib.
@@ -509,11 +510,14 @@
 ///   }
 
 @mixin bpk-button--large-icon-only {
-  $horizontal-padding: ($bpk-button-large-height - $bpk-icon-size-lg) / 2; // extra padding so that the width will be the same size as the size using lg icons
+  $horizontal-padding: (
+      tokens.$bpk-button-large-height - tokens.$bpk-icon-size-lg
+    ) *
+    0.5; // extra padding so that the width will be the same size as the size using lg icons
 
   padding-right: $horizontal-padding;
   padding-left: $horizontal-padding;
-  border-radius: $bpk-button-border-radius;
+  border-radius: tokens.$bpk-button-border-radius;
 }
 
 /// Featured button. Modifies the bpk-button
@@ -528,46 +532,46 @@
 ///   }
 
 @mixin bpk-button--featured {
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     color,
     --bpk-button-featured-text-color,
-    $bpk-text-primary-inverse-day
+    tokens.$bpk-text-primary-inverse-day
   );
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     background-color,
     --bpk-button-featured-background-color,
-    $bpk-private-button-featured-normal-background-day
+    tokens.$bpk-private-button-featured-normal-background-day
   );
 
-  @include bpk-hover {
-    @include bpk-themeable-property(
+  @include utils.bpk-hover {
+    @include utils.bpk-themeable-property(
       color,
       --bpk-button-featured-hover-text-color,
-      $bpk-text-primary-inverse-day
+      tokens.$bpk-text-primary-inverse-day
     );
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-button-featured-hover-background-color,
-      $bpk-private-button-featured-pressed-background-day
+      tokens.$bpk-private-button-featured-pressed-background-day
     );
   }
 
   &:active {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-button-featured-active-text-color,
-      $bpk-text-primary-inverse-day
+      tokens.$bpk-text-primary-inverse-day
     );
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-button-featured-active-background-color,
-      $bpk-private-button-featured-pressed-background-day
+      tokens.$bpk-private-button-featured-pressed-background-day
     );
   }
 
   &:disabled {
-    background-color: $bpk-private-button-disabled-background-day;
-    color: $bpk-text-disabled-day;
+    background-color: tokens.$bpk-private-button-disabled-background-day;
+    color: tokens.$bpk-text-disabled-day;
   }
 }
 

@@ -18,10 +18,10 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@import 'tokens.scss';
-@import 'radii.scss';
-@import 'shadows.scss';
-@import 'utils.scss';
+@use 'tokens.scss';
+@use 'radii.scss';
+@use 'shadows.scss';
+@use 'utils.scss';
 
 ////
 /// @group cards
@@ -37,15 +37,15 @@
 @mixin bpk-card {
   position: relative;
   display: block;
-  background-color: $bpk-card-background-color;
-  color: $bpk-text-primary-day;
+  background-color: tokens.$bpk-card-background-color;
+  color: tokens.$bpk-text-primary-day;
   text-decoration: none;
   cursor: pointer;
 
-  @include bpk-box-shadow-sm;
-  @include bpk-border-radius-md;
+  @include shadows.bpk-box-shadow-sm;
+  @include radii.bpk-border-radius-md;
 
-  @include bpk-hover {
+  @include utils.bpk-hover {
     &::after {
       opacity: 1;
     }
@@ -61,12 +61,12 @@
     bottom: 0;
     left: 0;
     content: '';
-    transition: opacity $bpk-duration-sm ease-in-out;
+    transition: opacity tokens.$bpk-duration-sm ease-in-out;
     opacity: 0;
     pointer-events: none; // To prevent the pseudo element absorbing click events
 
-    @include bpk-box-shadow-lg;
-    @include bpk-border-radius-md;
+    @include shadows.bpk-box-shadow-lg;
+    @include radii.bpk-border-radius-md;
 
     // pointer-events doesn't work on ie
     @media screen\0 {
@@ -90,5 +90,5 @@
 ///   }
 
 @mixin bpk-card--padded {
-  padding: $bpk-card-padding;
+  padding: tokens.$bpk-card-padding;
 }
