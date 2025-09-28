@@ -16,4 +16,12 @@
  * limitations under the License.
  */
 
-export default ['fieldsetLabelTextColor'];
+import BpkFieldset, {
+  type BpkFieldsetProps,
+} from './src/BpkFieldset';
+import themeAttributes from './src/themeAttributes';
+
+export type { BpkFieldsetProps };
+
+export default BpkFieldset;
+export { themeAttributes };
