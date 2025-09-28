@@ -55,16 +55,14 @@ const createStyle = (theme, themeAttributes) => {
   return style;
 };
 
-const BpkThemeProvider = (props) => {
-  const {
-    children,
-    component: WrapperComponent,
-    style: userStyle,
-    theme,
-    themeAttributes,
-    ...rest
-  } = props;
-
+const BpkThemeProvider = ({
+  children,
+  component: WrapperComponent = 'div',
+  style: userStyle = null,
+  theme = null,
+  themeAttributes,
+  ...rest
+}) => {
   const dedupedThemeAttributes = uniq(themeAttributes);
   const style = createStyle(theme, dedupedThemeAttributes);
 
@@ -127,12 +125,6 @@ BpkThemeProvider.propTypes = {
   // (disabled because isRequired is inside the custom validator)
   component: PropTypes.elementType,
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-};
-
-BpkThemeProvider.defaultProps = {
-  theme: null,
-  component: 'div',
-  style: null,
 };
 
 export default BpkThemeProvider;

@@ -16,16 +16,14 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import figma from '@figma/code-connect';
 
-import BpkBreadcrumb, {
-  type Props as BpkBreadcrumbProps,
-} from './src/BpkBreadcrumb';
-import BpkBreadcrumbItem, {
-  type Props as BpkBreadcrumbItemProps,
-} from './src/BpkBreadcrumbItem';
+import BpkCard from './BpkCard';
 
-export type { BpkBreadcrumbProps, BpkBreadcrumbItemProps };
-
-export default BpkBreadcrumb;
-export { BpkBreadcrumbItem };
+figma.connect(
+  BpkCard,
+  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=4395%3A2506',
+  {
+    example: () => <BpkCard>children</BpkCard>,
+  },
+);

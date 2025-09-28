@@ -179,6 +179,18 @@ export const propTypes = {
   description: PropTypes.string,
 };
 
+export const defaultProps = {
+  label: null,
+  disabled: false,
+  valid: null,
+  required: false,
+  className: null,
+  validationMessage: null,
+  isCheckbox: false,
+  validationProps: {},
+  description: null,
+};
+
 BpkFieldset.propTypes = { ...propTypes };
 
 export default BpkFieldset;

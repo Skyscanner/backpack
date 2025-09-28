@@ -16,33 +16,39 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import BpkBreadcrumbItem from './BpkBreadcrumbItem';
 
 describe('BpkBreadcrumbItem', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(
+    render(
       <BpkBreadcrumbItem href="https://skyscanner.design/">
         Backpack
       </BpkBreadcrumbItem>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByRole('listitem')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Backpack' })).toBeInTheDocument();
+    expect(screen.getByRole('link')).toHaveAttribute('href', 'https://skyscanner.design/');
+    expect(screen.getByText('Backpack')).toBeInTheDocument();
   });
 
   it('should render correctly with a "active" prop', () => {
-    const { asFragment } = render(
+    render(
       <BpkBreadcrumbItem active>Backpack</BpkBreadcrumbItem>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByRole('listitem')).toBeInTheDocument();
+    expect(screen.getByText('Backpack')).toBeInTheDocument();
+    expect(screen.getByText('Backpack')).toHaveAttribute('aria-current', 'page');
+    // Should not render a link when active
+    expect(screen.queryByRole('link')).not.toBeInTheDocument();
   });
 
   it('should render correctly with a custom class name', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkBreadcrumbItem
         href="https://skyscanner.design/"
         className="my-custom-class"
@@ -50,11 +56,14 @@ describe('BpkBreadcrumbItem', () => {
         Backpack
       </BpkBreadcrumbItem>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    
+    expect(screen.getByRole('listitem')).toBeInTheDocument();
+    expect(container.querySelector('.my-custom-class')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Backpack' })).toBeInTheDocument();
   });
 
   it('should render correctly with arbitrary props', () => {
-    const { asFragment } = render(
+    render(
       <BpkBreadcrumbItem
         href="https://skyscanner.design/"
         testid="arbitrary value" // <-- arbitrary prop
@@ -63,11 +72,13 @@ describe('BpkBreadcrumbItem', () => {
       </BpkBreadcrumbItem>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByRole('listitem')).toBeInTheDocument();
+    expect(screen.getByRole('listitem')).toHaveAttribute('testid', 'arbitrary value');
+    expect(screen.getByRole('link', { name: 'Backpack' })).toBeInTheDocument();
   });
 
   it('should render correctly with with "linkProps" attribute', () => {
-    const { asFragment } = render(
+    render(
       <BpkBreadcrumbItem
         href="https://skyscanner.design/"
         linkProps={{ testid: 'arbitrary value' }} // <-- arbitrary prop
@@ -76,6 +87,8 @@ describe('BpkBreadcrumbItem', () => {
       </BpkBreadcrumbItem>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByRole('listitem')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Backpack' })).toBeInTheDocument();
+    expect(screen.getByRole('link')).toHaveAttribute('testid', 'arbitrary value');
   });
 });
