@@ -142,18 +142,4 @@ const BpkFieldset = ({
   );
 };
 
-// Custom validation function for TypeScript (replacing PropTypes custom validator)
-const validateLabelProp = (
-  props: { isCheckbox?: boolean; label?: string | null },
-  propName: string,
-): Error | boolean => {
-  const { isCheckbox, label } = props;
-  if (!label && !isCheckbox) {
-    return new Error(
-      `\`${propName}\` is required when \`isCheckbox\` is false.`,
-    );
-  }
-  return false;
-};
-
 export default BpkFieldset;
