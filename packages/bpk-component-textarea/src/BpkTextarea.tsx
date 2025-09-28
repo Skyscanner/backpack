@@ -24,7 +24,7 @@ import STYLES from './BpkTextarea.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export interface BpkTextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+interface BpkTextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   id: string;
   name: string;
   value: string;
