@@ -24,4 +24,14 @@
   &--on-dark {
     color: tokens.$bpk-text-on-dark-day;
   }
+
+  &--surface-default {
+    border-radius: tokens.$bpk-border-radius-md;
+    background: tokens.$bpk-surface-default-day;
+  }
+
+  &--surface-low-contrast {
+    border-radius: tokens.$bpk-border-radius-md;
+    background: tokens.$bpk-surface-low-contrast-day;
+  }
 }

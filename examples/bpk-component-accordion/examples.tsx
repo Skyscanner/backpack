@@ -17,8 +17,11 @@
  */
 
 import {
+  canvasContrastDay,
+  canvasDay,
   colorMonteverde,
   colorPanjin,
+  iconSizeLg,
   iconSizeSm,
   lineHeightBase,
   surfaceContrastDay,
@@ -30,18 +33,23 @@ import {
   BpkAccordionItem,
   withAccordionItemState,
 } from '../../packages/bpk-component-accordion';
+import { ACCORDION_TYPES } from '../../packages/bpk-component-accordion/src/common-types';
 // @ts-expect-error Untyped import - see `decisions/imports-ts-suppressions.md`.
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import { withAlignment } from '../../packages/bpk-component-icon';
+import TrendDownIcon from '../../packages/bpk-component-icon/lg/trend--down';
 import StopsIcon from '../../packages/bpk-component-icon/sm/stops';
 import TimeIcon from '../../packages/bpk-component-icon/sm/time';
-import BpkText from '../../packages/bpk-component-text';
+import BpkPriceRange from '../../packages/bpk-component-price-range';
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
 const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
 
 const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);
 const AlignedTimeIcon = withAlignment(TimeIcon, lineHeightBase, iconSizeSm);
+
+const AlignedTrendDownIcon = withAlignment(TrendDownIcon, lineHeightBase, iconSizeLg);
 
 const CheckboxWrapper = (props: any) => (
   <div style={{ padding: `1rem 0` }} {...props} />
@@ -165,6 +173,32 @@ const SeoTextContent = () => (
     fam typewriter iPhone selfies tattooed.
   </BpkText>
 );
+
+const PriceContent = () => (
+  <div style={{ display: 'flex', padding: '0 1rem 1rem 1rem', alignContent: 'space-between', gap: '4rem' }}>
+    <div style={{ flexGrow: 1 }}>
+      <BpkText>
+        The average nightly price in Amsterdam for your dates is £85. In September, Amsterdam hotels usually range from £113 to £216 a night.
+      </BpkText>
+    </div>
+    <div style={{ width: '14rem' }}>
+      <BpkPriceRange
+        showPriceIndicator
+        marker={{ price: '£85', percentage: 10 }}
+        segments={{
+          low: {
+            price: '£113',
+            percentage: 20,
+          },
+          high: {
+            price: '£216',
+            percentage: 80,
+          },
+        }}
+      />
+    </div>
+  </div>
+)
 
 const SingleItemExample = () => (
   <SingleItemAccordion>
@@ -405,6 +439,33 @@ const SingleItemExampleWithoutDividerOnDark = () => (
   </div>
 );
 
+const VariantExample = () => (
+  <div>
+    <div style={{ backgroundColor: canvasContrastDay, padding: '2rem' }}>
+
+      <BpkAccordion divider={false} type={ACCORDION_TYPES.surfaceDefault}>
+        <StatefulAccordionItem
+          id="stops"
+          title={ <BpkText textStyle={TEXT_STYLES.heading4}>You found some <BpkText textStyle={TEXT_STYLES.heading4} color={TEXT_COLORS.textSuccess}>great prices</BpkText> - nice one!</BpkText> }
+          label="Show price data"
+          icon={<AlignedTrendDownIcon />}>
+          <PriceContent />
+        </StatefulAccordionItem>
+      </BpkAccordion>
+    </div>
+
+    <div style={{ backgroundColor: canvasDay, padding: '2rem' }}>
+      <BpkAccordion divider={false} type={ACCORDION_TYPES.surfaceLowContrast}>
+        <StatefulAccordionItem
+          id="stops"
+          label="Our lowest price £90">
+          <StopsContent />
+        </StatefulAccordionItem>
+      </BpkAccordion>
+    </div>
+  </div>
+)
+
 export {
   SingleItemExample,
   SingleItemExampleInitiallyExpandedExample,
@@ -419,4 +480,5 @@ export {
   WithSeoContentOnDarkExample,
   SingleItemExampleWithoutDivider,
   SingleItemExampleWithoutDividerOnDark,
+  VariantExample,
 };
