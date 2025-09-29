@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/utils';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/utils';
 
 $dot-size: tokens.bpk-spacing-md();
 $dot-margin: tokens.bpk-spacing-sm();

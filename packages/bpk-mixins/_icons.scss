@@ -18,8 +18,8 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@import 'tokens.scss';
-@import 'utils.scss';
+@use 'tokens.scss';
+@use 'utils.scss';
 
 ////
 /// @group svgs
@@ -38,7 +38,10 @@
 /// @access private
 
 @mixin _bpk-svg--align-to-large-button() {
-  margin-top: ($bpk-private-button-line-height - $bpk-icon-size-lg) / 2;
+  margin-top: (
+      tokens.$bpk-private-button-line-height - tokens.$bpk-icon-size-lg
+    ) *
+    0.5;
   vertical-align: top;
 }
 
@@ -82,7 +85,7 @@
 ///   }
 
 @mixin bpk-icon--rtl-support() {
-  @include bpk-rtl {
+  @include utils.bpk-rtl {
     transform: scaleX(-1);
   }
 }

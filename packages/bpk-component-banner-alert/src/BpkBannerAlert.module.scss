@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/borders';
-@use '../../unstable__bpk-mixins/radii';
-@use '../../unstable__bpk-mixins/typography';
-@use '../../unstable__bpk-mixins/utils';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/borders';
+@use '../../bpk-mixins/radii';
+@use '../../bpk-mixins/typography';
+@use '../../bpk-mixins/utils';
 
 .bpk-banner-alert {
   background-color: tokens.$bpk-surface-default-day;

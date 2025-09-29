@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/forms';
-@use '../../unstable__bpk-mixins/utils';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/forms';
+@use '../../bpk-mixins/utils';
 
 $bpk-radio-circle-size: tokens.$bpk-one-pixel-rem * 8;
 $bpk-radio-size: tokens.bpk-spacing-lg() - (tokens.$bpk-one-pixel-rem * 4);

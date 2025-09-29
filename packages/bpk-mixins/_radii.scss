@@ -18,7 +18,7 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@import 'tokens.scss';
+@use 'tokens.scss';
 
 ////
 /// @group radii
@@ -32,7 +32,7 @@
 ///   }
 
 @mixin bpk-border-radius-xs {
-  border-radius: $bpk-border-radius-xs;
+  border-radius: tokens.$bpk-border-radius-xs;
 }
 
 /// Small border radius.
@@ -43,7 +43,7 @@
 ///   }
 
 @mixin bpk-border-radius-sm {
-  border-radius: $bpk-border-radius-sm;
+  border-radius: tokens.$bpk-border-radius-sm;
 }
 
 /// Medium border radius.
@@ -54,7 +54,7 @@
 ///   }
 
 @mixin bpk-border-radius-md {
-  border-radius: $bpk-border-radius-md;
+  border-radius: tokens.$bpk-border-radius-md;
 }
 
 /// Large border radius.
@@ -65,7 +65,7 @@
 ///   }
 
 @mixin bpk-border-radius-lg {
-  border-radius: $bpk-border-radius-lg;
+  border-radius: tokens.$bpk-border-radius-lg;
 }
 
 /// Extra large border radius.
@@ -76,5 +76,5 @@
 ///   }
 
 @mixin bpk-border-radius-xl {
-  border-radius: $bpk-border-radius-xl;
+  border-radius: tokens.$bpk-border-radius-xl;
 }

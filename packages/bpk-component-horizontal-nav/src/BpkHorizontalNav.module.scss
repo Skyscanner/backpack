@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/borders';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/borders';
 
 .bpk-horizontal-nav {
   position: relative;

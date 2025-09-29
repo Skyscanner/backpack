@@ -18,7 +18,7 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@import 'tokens.scss';
+@use 'tokens.scss';
 
 ////
 /// @group box-shadows
@@ -32,7 +32,7 @@
 ///   }
 
 @mixin bpk-box-shadow-sm {
-  box-shadow: $bpk-box-shadow-sm;
+  box-shadow: tokens.$bpk-box-shadow-sm;
 }
 
 /// Large box shadow.
@@ -43,7 +43,7 @@
 ///   }
 
 @mixin bpk-box-shadow-lg {
-  box-shadow: $bpk-box-shadow-lg;
+  box-shadow: tokens.$bpk-box-shadow-lg;
 }
 
 /// Extra large box shadow.
@@ -54,5 +54,5 @@
 ///   }
 
 @mixin bpk-box-shadow-xl {
-  box-shadow: $bpk-box-shadow-xl;
+  box-shadow: tokens.$bpk-box-shadow-xl;
 }
