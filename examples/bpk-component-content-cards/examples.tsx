@@ -18,7 +18,6 @@
 
 import type { ComponentProps } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkContentCards from '../../packages/bpk-component-content-cards';
 
 const contentCardProps: ComponentProps<typeof BpkContentCards> = {
