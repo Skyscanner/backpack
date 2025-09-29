@@ -389,7 +389,6 @@ const TextareaExample = () => (
       id="textarea"
       name="textarea"
       value=""
-      placeholder={null}
       onChange={() => null}
     />
   </FieldsetContainer>
