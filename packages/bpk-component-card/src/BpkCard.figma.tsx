@@ -16,6 +16,14 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import figma from '@figma/code-connect';
 
-export default ['textareaInvalidBorderColor'];
+import BpkCard from './BpkCard';
+
+figma.connect(
+  BpkCard,
+  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=4395%3A2506',
+  {
+    example: () => <BpkCard>children</BpkCard>,
+  },
+);

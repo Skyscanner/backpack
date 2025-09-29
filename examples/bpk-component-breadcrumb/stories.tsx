@@ -16,22 +16,26 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkBreadcrumb from '../../packages/bpk-component-breadcrumb/src/BpkBreadcrumb';
+import BpkBreadcrumbItem from '../../packages/bpk-component-breadcrumb/src/BpkBreadcrumbItem';
 
-import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
+import { DefaultExample, ExtremeExample } from './examples';
 
-import BpkTextarea from './BpkTextarea';
+export default {
+  component: BpkBreadcrumb,
+  title: 'bpk-component-breadcrumb',
+  subcomponents: {
+    BpkBreadcrumbItem
+  },
+};
 
-describe('BpkTextarea accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(
-      <div>
-        <label htmlFor="test">Text area</label>
-        <BpkTextarea id="test" name="test" value="" />,
-      </div>,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-});
+export const Default = DefaultExample;
+export const Extreme = ExtremeExample;
+export const VisualTest = DefaultExample;
+
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true,
+  }
+};
