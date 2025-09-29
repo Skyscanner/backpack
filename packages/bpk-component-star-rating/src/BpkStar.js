@@ -82,18 +82,18 @@ const BpkStar = ({
 
   let Icon = SmallIcon;
   let OutlineIcon = OutlineSmallIcon;
-  let HalfIcon = HalfSmallIcon;
+  let HalfIcon = withRtlSupport(HalfSmallIcon);
 
   if (large) {
     Icon = LargeIcon;
     OutlineIcon = OutlineLargeIcon;
-    HalfIcon = HalfLargeIcon;
+    HalfIcon = withRtlSupport(HalfLargeIcon);
   }
 
   if (extraLarge) {
     Icon = ExtraLargeIcon;
     OutlineIcon = OutlineExtraLargeIcon;
-    HalfIcon = HalfExtraLargeIcon;
+    HalfIcon = withRtlSupport(HalfExtraLargeIcon);
   }
 
   if (type === STAR_TYPES.HALF) {

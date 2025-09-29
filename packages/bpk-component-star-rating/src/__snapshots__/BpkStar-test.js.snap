@@ -67,6 +67,7 @@ exports[`BpkStar should render correctly with a large half star 1`] = `
   >
     <svg
       aria-hidden="true"
+      class="bpk-icon--rtl-support"
       height="1.5rem"
       viewBox="0 0 24 24"
       width="1.5rem"
@@ -127,6 +128,7 @@ exports[`BpkStar should render correctly with half star 1`] = `
   >
     <svg
       aria-hidden="true"
+      class="bpk-icon--rtl-support"
       height="1rem"
       viewBox="0 0 24 24"
       width="1rem"
