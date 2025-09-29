@@ -19,9 +19,9 @@
 import type { ChangeEvent, ReactElement } from 'react';
 import { cloneElement, Component } from 'react';
 
-import BpkAutosuggest, {
-  BpkAutosuggestSuggestion,
-} from '../../packages/bpk-component-autosuggest';
+
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkAutosuggest, { BpkAutosuggestSuggestion, } from '../../packages/bpk-component-autosuggest';
 import BpkButton from '../../packages/bpk-component-button';
 import { format } from '../../packages/bpk-component-calendar/src/date-utils';
 import {
@@ -29,16 +29,20 @@ import {
   formatMonth,
   formatDateFull,
 } from '../../packages/bpk-component-calendar/test-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import BpkDatepicker from '../../packages/bpk-component-datepicker';
 import BpkFieldset, {
   type BpkFieldsetProps,
 } from '../../packages/bpk-component-fieldset';
 import BpkInput, { INPUT_TYPES } from '../../packages/bpk-component-input';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../packages/bpk-component-select';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSplitInput from '../../packages/bpk-component-split-input';
 import BpkTextarea from '../../packages/bpk-component-textarea';
 import { cssModules } from '../../packages/bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
@@ -355,7 +359,6 @@ const DatepickerExample = () => {
     >
       <BpkDatepicker
         id="date_input"
-        name="date"
         closeButtonText="Close"
         daysOfWeek={weekDays}
         changeMonthLabel="Change month"
