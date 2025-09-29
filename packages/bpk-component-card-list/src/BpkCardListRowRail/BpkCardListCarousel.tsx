@@ -74,6 +74,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const hasBeenVisibleRef = useRef<Set<number>>(new Set());
   const firstCardWidthRef = useRef<number | null>(null);
   const firstCardHeightRef = useRef<number | null>(null);
+  const prevInitiallyShownCardsRef = useRef(initiallyShownCards);
 
   const [visibilityList, setVisibilityList] = useState<number[]>(
     Array(childrenLength).fill(0),
@@ -169,13 +170,10 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
     container.addEventListener('wheel', lockScrollDuringInteraction);
     container.addEventListener('touchmove', lockScrollDuringInteraction);
-    // container.addEventListener('scroll', lockScrollDuringInteraction);
 
     return () => {
       container.removeEventListener('touchmove', lockScrollDuringInteraction);
       container.removeEventListener('wheel', lockScrollDuringInteraction);
-      // container.removeEventListener('scroll', lockScrollDuringInteraction);
-
       if (openSetStateLockTimeoutRef.current) {
         clearTimeout(openSetStateLockTimeoutRef.current);
       }
@@ -201,11 +199,18 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     if (firstVisible >= 0) {
       const newIndex = Math.floor(firstVisible / initiallyShownCards);
 
-      if (newIndex !== currentIndex) {
+      if (newIndex === currentIndex) return;
+
+      if (stateScrollingLockRef.current) {
+         setCurrentIndex(newIndex);
+      }
+
+      if (prevInitiallyShownCardsRef.current !== initiallyShownCards) {
         setCurrentIndex(newIndex);
+        prevInitiallyShownCardsRef.current = initiallyShownCards;
       }
     }
-  }, [initiallyShownCards]);
+  }, [currentIndex, initiallyShownCards, setCurrentIndex, visibilityList]);
 
   useEffect(() => {
     const handleResize = throttle(() => {
