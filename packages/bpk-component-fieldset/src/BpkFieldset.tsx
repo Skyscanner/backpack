@@ -30,17 +30,20 @@ import STYLES from './BpkFieldset.module.scss';
 const getClassName = cssModules(STYLES);
 
 export interface BpkFieldsetProps {
-  // Child element - typically BpkInput, BpkCheckbox, BpkSelect, etc.
   children: ReactElement<any>;
-  label?: string | null;
   disabled?: boolean;
   valid?: boolean | null;
   required?: boolean;
   className?: string | null;
   validationMessage?: string | null;
-  isCheckbox?: boolean;
   validationProps?: Record<string, any>;
   description?: string | null;
+  isCheckbox?: boolean;
+  /**
+   * Required when `isCheckbox` is false.
+   * This validation is enforced at runtime for TypeScript compatibility.
+   */
+  label?: string | null;
 }
 
 const BpkFieldset = ({
@@ -58,6 +61,15 @@ const BpkFieldset = ({
 }: BpkFieldsetProps) => {
   if (!children) {
     return null;
+  }
+
+  // Runtime validation to maintain backward compatibility with original PropTypes behavior
+  // This ensures label is provided when isCheckbox is false
+  if (!isCheckbox && !label) {
+    if (process.env.NODE_ENV !== 'production') {
+      // eslint-disable-next-line no-console
+      console.error('BpkFieldset: `label` is required when `isCheckbox` is false.');
+    }
   }
 
   // Extract the child's ID, handling both direct id prop and inputProps.id
