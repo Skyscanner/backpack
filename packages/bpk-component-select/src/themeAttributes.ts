@@ -16,4 +16,6 @@
  * limitations under the License.
  */
 
-export default ['selectInvalidBorderColor'];
+const themeAttributes: string[] = ['selectInvalidBorderColor'];
+
+export default themeAttributes;

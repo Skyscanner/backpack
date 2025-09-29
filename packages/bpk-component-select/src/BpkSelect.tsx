@@ -15,10 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
-import type { Element } from 'react';
+import type { ReactElement } from 'react';
 import { cloneElement } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -28,19 +26,20 @@ import STYLES from './BpkSelect.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  id: string,
-  name: string,
-  value: string,
-  className: ?string,
-  disabled: boolean,
-  docked: boolean,
-  dockedFirst: boolean,
-  dockedLast: boolean,
-  dockedMiddle: boolean,
-  image: ?Element<any>,
-  large: boolean,
-  valid: ?boolean,
-  wrapperClassName: ?string,
+  id: string;
+  name: string;
+  value: string;
+  className?: string | null;
+  disabled?: boolean;
+  docked?: boolean;
+  dockedFirst?: boolean;
+  dockedLast?: boolean;
+  dockedMiddle?: boolean;
+  image?: ReactElement | null;
+  large?: boolean;
+  valid?: boolean | null;
+  wrapperClassName?: string | null;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const BpkSelect = ({
@@ -61,7 +60,6 @@ const BpkSelect = ({
   const isInvalid = valid === false;
 
   const select = (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <select
       className={getClassName(
         'bpk-select',
@@ -98,30 +96,6 @@ const BpkSelect = ({
     );
   }
   return select;
-};
-
-BpkSelect.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  /**
-   * The "value" prop is only relevant if the user is wanting a controlled component
-   * In some cases, users may want to create an uncontrolled select as described here: https://beta.reactjs.org/reference/react-dom/components/select
-   * In this case value is not required and nor should it be given a default value (as the linter thinks)
-   * Prop types are not expressive enough (without a drastic increase in complexity of writing a custom validator) to encode this relationship. Equally, this wouldn't actually solve the linting issue (AFAIK).
-   * As a solution, the require-default-props has been disabled for this line.
-   */
-
-  value: PropTypes.string,
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  docked: PropTypes.bool,
-  dockedFirst: PropTypes.bool,
-  dockedLast: PropTypes.bool,
-  dockedMiddle: PropTypes.bool,
-  image: PropTypes.node,
-  large: PropTypes.bool,
-  valid: PropTypes.bool,
-  wrapperClassName: PropTypes.string,
 };
 
 export default BpkSelect;

@@ -16,19 +16,23 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+import type { ChangeEvent } from 'react';
 import { Component } from 'react';
 
 import BpkSelect from '../../packages/bpk-component-select';
 import { action } from '../bpk-storybook-utils';
 
-class StatefulBpkSelect extends Component {
-  constructor() {
-    super();
+type StatefulBpkSelectState = {
+  value: string;
+};
+
+class StatefulBpkSelect extends Component<Record<string, any>, StatefulBpkSelectState> {
+  constructor(props: Record<string, any>) {
+    super(props);
     this.state = { value: 'oranges' };
   }
 
-  onChange = (value) => {
+  onChange = (value: string) => {
     action(`BpkSelect changed. New value: ${value}`);
     this.setState({ value });
   };
@@ -39,7 +43,7 @@ class StatefulBpkSelect extends Component {
         id="destination"
         name="destination"
         value={this.state.value}
-        onChange={(event) => {
+        onChange={(event: ChangeEvent<HTMLSelectElement>) => {
           this.onChange(event.target.value);
         }}
         {...this.props}
@@ -55,10 +59,17 @@ class StatefulBpkSelect extends Component {
   }
 }
 
-const getFlagUriFromCountryCode = (countryCode) =>
+const getFlagUriFromCountryCode = (countryCode: string): string =>
   `https://images.skyscnr.com/images/country/flag/header/${countryCode.toLowerCase()}.png`;
 
-const countries = [
+type Country = {
+  key: number;
+  id: string;
+  name: string;
+  disabled: boolean;
+};
+
+const countries: Country[] = [
   { key: 0, id: 'AT', name: 'Austria', disabled: false },
   { key: 1, id: 'BR', name: 'Brazil', disabled: false },
   { key: 2, id: 'CN', name: 'China', disabled: false },
@@ -69,8 +80,18 @@ const countries = [
   { key: 7, id: 'IT', name: 'Italy', disabled: false },
   { key: 8, id: 'US', name: 'USA', disabled: true },
 ];
-class SelectWithImage extends Component {
-  constructor(props) {
+
+type SelectWithImageProps = {
+  options: Country[];
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
+};
+
+type SelectWithImageState = {
+  selected: string;
+};
+
+class SelectWithImage extends Component<SelectWithImageProps, SelectWithImageState> {
+  constructor(props: SelectWithImageProps) {
     super(props);
     this.state = {
       selected: 'IT',
@@ -79,7 +100,7 @@ class SelectWithImage extends Component {
 
   getItemByValue = () => {
     const { options } = this.props;
-    return (val) => {
+    return (val: string): Country => {
       const items = options.filter((o) => o.id === val);
       if (!items.length) throw new Error('Item does not exists');
       return items[0];
@@ -88,7 +109,7 @@ class SelectWithImage extends Component {
 
   getItem = this.getItemByValue();
 
-  handleChange = (e) => {
+  handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const item = this.getItem(e.target.value);
 
     this.setState({
@@ -96,7 +117,7 @@ class SelectWithImage extends Component {
     });
   };
 
-  image = (id) => <img alt="Flag" src={getFlagUriFromCountryCode(id)} />;
+  image = (id: string) => <img alt="Flag" src={getFlagUriFromCountryCode(id)} />;
 
   render() {
     const { options, ...rest } = this.props;
@@ -116,12 +137,6 @@ class SelectWithImage extends Component {
     );
   }
 }
-
-SelectWithImage.propTypes = {
-  // The following will go away with the move to TS
-  // eslint-disable-next-line react/forbid-prop-types
-  options: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
 
 const DefaultExample = () => <StatefulBpkSelect />;
 
