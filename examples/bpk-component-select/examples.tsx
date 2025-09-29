@@ -132,7 +132,7 @@ class SelectWithImage extends Component<SelectWithImageProps, SelectWithImageSta
         onChange={this.handleChange}
       >
         {options.map((o) => (
-          <option key={o.id} disabled={o.disabled} value={o.id}>
+          <option key={o.id} disabled={o.disabled || undefined} value={o.id}>
             {o.name}
           </option>
         ))}
