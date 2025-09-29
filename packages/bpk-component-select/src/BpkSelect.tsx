@@ -28,6 +28,13 @@ const getClassName = cssModules(STYLES);
 export type Props = {
   id: string;
   name: string;
+ /**
+   * The "value" prop is only relevant if the user is wanting a controlled component
+   * In some cases, users may want to create an uncontrolled select as described here: https://beta.reactjs.org/reference/react-dom/components/select
+   * In this case value is not required and nor should it be given a default value (as the linter thinks)
+   * Prop types are not expressive enough (without a drastic increase in complexity of writing a custom validator) to encode this relationship. Equally, this wouldn't actually solve the linting issue (AFAIK).
+   * As a solution, the require-default-props has been disabled for this line.
+   */
   value?: string;
   className?: string | null;
   disabled?: boolean;
