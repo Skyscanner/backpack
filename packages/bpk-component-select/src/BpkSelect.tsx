@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactElement } from 'react';
+import type { ReactNode } from 'react';
 import { cloneElement } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -42,7 +42,7 @@ export type Props = {
   dockedFirst?: boolean;
   dockedLast?: boolean;
   dockedMiddle?: boolean;
-  image?: ReactElement | null;
+  image?: ReactNode | null;
   large?: boolean;
   valid?: boolean | null;
   wrapperClassName?: string | null;
