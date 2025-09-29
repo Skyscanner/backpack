@@ -28,7 +28,7 @@ const getClassName = cssModules(STYLES);
 export type Props = {
   id: string;
   name: string;
-  value: string;
+  value?: string;
   className?: string | null;
   disabled?: boolean;
   docked?: boolean;

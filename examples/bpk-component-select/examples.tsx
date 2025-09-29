@@ -20,6 +20,7 @@ import type { ChangeEvent } from 'react';
 import { Component } from 'react';
 
 import BpkSelect from '../../packages/bpk-component-select';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action } from '../bpk-storybook-utils';
 
 type StatefulBpkSelectState = {
@@ -123,13 +124,15 @@ class SelectWithImage extends Component<SelectWithImageProps, SelectWithImageSta
     const { options, ...rest } = this.props;
     return (
       <BpkSelect
+        id="destination"
+        name="destination"
         value={this.getItem(this.state.selected).id}
         {...rest}
         image={this.image(this.getItem(this.state.selected).id)}
         onChange={this.handleChange}
       >
         {options.map((o) => (
-          <option key={o.id} disabled={o.disabled && 'disabled'} value={o.id}>
+          <option key={o.id} disabled={o.disabled} value={o.id}>
             {o.name}
           </option>
         ))}

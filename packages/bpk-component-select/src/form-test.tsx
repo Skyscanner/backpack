@@ -42,19 +42,19 @@ describe('BpkSelect form test', () => {
       </form>,
     );
 
-    const select = screen.getByTestId('myselect');
-    const option = screen.getByTestId('select-option');
+    const select: HTMLSelectElement = screen.getByTestId('myselect');
+    const option: HTMLOptionElement = screen.getByTestId('select-option');
 
     expect(select.options.selectedIndex).toEqual(0);
 
-    expect(screen.getByText('Apples').selected).toBeTruthy();
+    expect(screen.getByText<HTMLOptionElement>('Apples').selected).toBeTruthy();
 
     await userEvent.selectOptions(select, option);
 
     expect(option.selected).toBeTruthy();
-    expect(screen.getByText('Apples').selected).toBeFalsy();
+    expect(screen.getByText<HTMLOptionElement>('Apples').selected).toBeFalsy();
 
-    const formData = new FormData(screen.getByTestId('form'));
+    const formData = new FormData(screen.getByTestId<HTMLFormElement>('form'));
 
     expect(Object.fromEntries(formData.entries())).toEqual({
       fruits: 'oranges',
@@ -63,7 +63,7 @@ describe('BpkSelect form test', () => {
 
   it('should emit change event on option selection that calls formValidation', async () => {
     const formValidation = jest.fn();
-  
+
     render(<form data-testid="form">
       <BpkSelect
         id="fruits"
@@ -82,22 +82,22 @@ describe('BpkSelect form test', () => {
     </form>);
     document.addEventListener('change', formValidation);
 
-    const select = screen.getByTestId('myselect');
+    const select: HTMLSelectElement = screen.getByTestId('myselect');
 
     expect(select.options.selectedIndex).toEqual(0);
-    expect(screen.getByText('Apples').selected).toBeTruthy();
+    expect(screen.getByText<HTMLOptionElement>('Apples').selected).toBeTruthy();
 
     await userEvent.selectOptions(select, 'oranges');
 
-    expect(screen.getByText('Apples').selected).toBeFalsy();
-    expect(screen.getByText('Oranges').selected).toBeTruthy();
+    expect(screen.getByText<HTMLOptionElement>('Apples').selected).toBeFalsy();
+    expect(screen.getByText<HTMLOptionElement>('Oranges').selected).toBeTruthy();
 
     expect(formValidation).toHaveBeenCalledTimes(1);
 
     await userEvent.selectOptions(select, 'pears');
 
-    expect(screen.getByText('Oranges').selected).toBeFalsy();
-    expect(screen.getByText('Pears').selected).toBeTruthy();
+    expect(screen.getByText<HTMLOptionElement>('Oranges').selected).toBeFalsy();
+    expect(screen.getByText<HTMLOptionElement>('Pears').selected).toBeTruthy();
     expect(formValidation).toHaveBeenCalledTimes(2);
   });
 });

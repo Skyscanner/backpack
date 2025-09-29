@@ -54,7 +54,9 @@ export const ManuallyDockedWithImages = ManuallyDockedWithImagesExample;
 export const WithImage = WithImageExample;
 export const WithImageLarge = WithImageLargeExample;
 export const VisualTest = MixedExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true,
+  }
 };
