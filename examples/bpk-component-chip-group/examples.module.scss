@@ -24,12 +24,12 @@
   }
 
   &__contrast {
-    padding: bpk-spacing-base();
+    padding: tokens.bpk-spacing-base();
     background-color: tokens.$bpk-canvas-contrast-day;
   }
 
   &__dark {
-    padding: bpk-spacing-base();
+    padding: tokens.bpk-spacing-base();
     background-color: tokens.$bpk-surface-contrast-day;
   }
 

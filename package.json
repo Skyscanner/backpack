@@ -17,6 +17,7 @@
   },
   "scripts": {
     "build": "run-s build:*",
+    "build:unstable__bpk-mixins": "./scripts/scss/generate-unstable__bpk-mixins.sh",
     "build:gulp": "gulp",
     "build:sass": "node scripts/scss/styles-prod.js && rm packages/bpk-stylesheets/index.css",
     "build:stylesheets": "(cd packages/bpk-stylesheets && node build)",

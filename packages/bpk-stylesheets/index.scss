@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 /* stylelint-disable at-rule-disallowed-list */
-// stylelint-disable-next-line scss/at-import-partial-extension
-@use './normalize';
 @use '../bpk-mixins/tokens';
 @use '../bpk-mixins/utils';
+
+@import 'normalize.css';
 
 // stylelint-disable-next-line selector-max-type
 html {
