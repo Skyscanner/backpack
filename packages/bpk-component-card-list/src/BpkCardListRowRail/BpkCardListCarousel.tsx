@@ -99,11 +99,15 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const lastVisibleIndex = firstVisibleIndex + initiallyShownCards - 1;
 
   const dynamicRenderBufferSize = useMemo(() => {
-    if (childrenLength === 0 || initiallyShownCards === 0 || isMobile) return RENDER_BUFFER_SIZE;
+    if (childrenLength === 0 || initiallyShownCards === 0 || isMobile)
+      return RENDER_BUFFER_SIZE;
 
     // Calculate how many cards to render based on the number of initially shown cards and total children
     const totalPages = Math.ceil(childrenLength / initiallyShownCards);
-    const shownIndicatorCount = Math.min(totalPages, PAGINATION_INDICATOR_MAX_SHOWN_COUNT);
+    const shownIndicatorCount = Math.min(
+      totalPages,
+      PAGINATION_INDICATOR_MAX_SHOWN_COUNT,
+    );
     return Math.max(
       RENDER_BUFFER_SIZE,
       (shownIndicatorCount - 1) * initiallyShownCards,
@@ -165,10 +169,13 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
     container.addEventListener('wheel', lockScrollDuringInteraction);
     container.addEventListener('touchmove', lockScrollDuringInteraction);
+    // container.addEventListener('scroll', lockScrollDuringInteraction);
 
     return () => {
       container.removeEventListener('touchmove', lockScrollDuringInteraction);
       container.removeEventListener('wheel', lockScrollDuringInteraction);
+      // container.removeEventListener('scroll', lockScrollDuringInteraction);
+
       if (openSetStateLockTimeoutRef.current) {
         clearTimeout(openSetStateLockTimeoutRef.current);
       }
@@ -194,11 +201,11 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     if (firstVisible >= 0) {
       const newIndex = Math.floor(firstVisible / initiallyShownCards);
 
-      if (newIndex !== currentIndex && stateScrollingLockRef.current) {
+      if (newIndex !== currentIndex) {
         setCurrentIndex(newIndex);
       }
     }
-  }, [visibilityList, initiallyShownCards, currentIndex, setCurrentIndex]);
+  }, [initiallyShownCards]);
 
   useEffect(() => {
     const handleResize = throttle(() => {
