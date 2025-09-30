@@ -60,17 +60,16 @@ type Props = {
     | typeof ROUNDING_TYPES.nearest,
 };
 
-const BpkStarRating = (props: Props) => {
-  const {
-    className,
-    extraLarge,
-    large,
-    maxRating,
-    rating,
-    ratingLabel,
-    rounding,
-    ...rest
-  } = props;
+const BpkStarRating = ({
+  className = null,
+  extraLarge = false,
+  large = false,
+  maxRating = 5,
+  rating = 0,
+  ratingLabel,
+  rounding = ROUNDING_TYPES.down,
+  ...rest
+}: Props) => {
 
   const stars = [];
   const classNames = [getClassName('bpk-star-rating')];
@@ -119,15 +118,6 @@ BpkStarRating.propTypes = {
     ROUNDING_TYPES.up,
     ROUNDING_TYPES.nearest,
   ]),
-};
-
-BpkStarRating.defaultProps = {
-  className: null,
-  large: false,
-  extraLarge: false,
-  maxRating: 5,
-  rating: 0,
-  rounding: ROUNDING_TYPES.down,
 };
 
 export default BpkStarRating;

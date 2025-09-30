@@ -114,7 +114,10 @@ describe('BpkAutosuggest', () => {
 
     it('selects suggestion by Enter key', async () => {
       const props = setup();
+
       await typeAndWait(user);
+      await user.keyboard('{ArrowDown}');
+
       await user.keyboard('{Enter}');
 
       expect(props.onSuggestionSelected).toHaveBeenCalledWith({
@@ -151,19 +154,21 @@ describe('BpkAutosuggest', () => {
     it('clears input via clear button', async () => {
       const props = setup({ showClear: true });
       const input = await typeAndWait(user);
-      const clearButton = screen.getByRole('button', { name: 'Clear' });
+
+      const clearButton = screen.getByRole('button', { name: /clear/i });
       await user.click(clearButton);
 
-      expect(props.onSuggestionsClearRequested).toHaveBeenCalled();
+      expect(props.onSuggestionsFetchRequested).toHaveBeenCalledWith('');
       expect(input).toHaveValue('');
     });
 
     it('clears input via backspace to empty', async () => {
       const props = setup({ showClear: true });
       const input = await typeAndWait(user);
+
       await user.type(input, '{backspace}{backspace}');
 
-      expect(props.onSuggestionsClearRequested).toHaveBeenCalled();
+      expect(props.onSuggestionsFetchRequested).toHaveBeenCalledWith('');
       expect(input).toHaveValue('');
     });
   });

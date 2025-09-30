@@ -126,8 +126,6 @@ const withInfiniteScroll = <T: ExtendedProps>(
         showSeeMore: false,
       };
 
-      this.props.dataSource.onDataChange(this.updateData);
-
       const thresholds = {
         small: 0.01,
         half: 0.5,
@@ -140,6 +138,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
     }
 
     componentDidMount() {
+      this.props.dataSource.onDataChange(this.updateData);
       this.fetchItems({
         elementsPerScroll: this.props.initiallyLoadedElements,
       }).then((newState) => {

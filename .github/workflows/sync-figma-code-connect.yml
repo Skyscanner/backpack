@@ -1,0 +1,15 @@
+on:
+  push:
+    paths:
+      - packages/**/*.figma.tsx
+    branches: [main]
+
+jobs:
+  code-connect:
+    name: Code Connect
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: npx --package @figma/code-connect figma connect publish
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_TOKEN }}
