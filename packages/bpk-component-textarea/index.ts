@@ -16,12 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkTextarea from './src/BpkTextarea';
+import themeAttributes from './src/themeAttributes';
 
-import themeAttributes from './themeAttributes';
-
-describe('themeAttributes', () => {
-  it('exports the expected themeAttributes', () => {
-    expect(themeAttributes).toEqual(['textareaInvalidBorderColor']);
-  });
-});
+export default BpkTextarea;
+export { themeAttributes };
