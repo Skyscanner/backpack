@@ -38,6 +38,12 @@ const DefaultExample = () => (
   </BpkText>
 );
 
+const DefaultFallbackExample = () => (
+  <BpkText>
+    هل تحتاج إلى مكان للإقامة في سنغافورة؟
+  </BpkText>
+);
+
 const WithHeadingTagsExample = () => (
   <div>
     <BpkText textStyle={TEXT_STYLES.hero4} tagName="h4">
@@ -49,12 +55,29 @@ const WithHeadingTagsExample = () => (
   </div>
 );
 
+const WithHeadingTagsFallbackExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.hero4} tagName="h4">
+      استكشف جميع الوجهات من الخميس
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.hero5} tagName="h5">
+      استكشف جميع الوجهات من الخميس
+    </BpkText>
+  </div>
+);
+
 const ParagraphExample = () => (
   <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
     imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
     consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non dictum
     mi ante eu arcu.
+  </BpkText>
+);
+
+const ParagraphFallbackExample = () => (
+  <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+    سافر مع الأفضل في أوروبا
   </BpkText>
 );
 
@@ -98,6 +121,29 @@ const HeroStylesExample = () => (
   </div>
 );
 
+const HeroFallbackStylesExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.hero1} tagName="h1">
+      سنغافورة
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.hero2} tagName="h2">
+      سنغافورة
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.hero3} tagName="h3">
+      سنغافورة
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.hero4} tagName="h4">
+      سنغافورة
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.hero5} tagName="h5">
+      سنغافورة
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.hero6} tagName="h6">
+      سنغافورة
+    </BpkText>
+  </div>
+);
+
 const HeadingStylesExample = () => (
   <div>
     <BpkText textStyle={TEXT_STYLES.heading1} tagName="h1">
@@ -114,6 +160,26 @@ const HeadingStylesExample = () => (
     </BpkText>
     <BpkText textStyle={TEXT_STYLES.heading5} tagName="h5">
       Heading 5
+    </BpkText>
+  </div>
+);
+
+const HeadingFallbackStylesExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.heading1} tagName="h1">
+      استكشف جميع
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
+      استكشف جميع
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+      استكشف جميع
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.heading4} tagName="h4">
+      استكشف جميع
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.heading5} tagName="h5">
+      استكشف جميع
     </BpkText>
   </div>
 );
@@ -138,6 +204,26 @@ const BodyStylesExample = () => (
   </div>
 );
 
+const BodyFallbackStylesExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.subheading} tagName="p">
+      سكاي سكانر — استكشف العالم.
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.bodyLongform} tagName="p">
+      سكاي سكانر — استكشف العالم.
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+      سكاي سكانر — استكشف العالم.
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.footnote} tagName="p">
+      سكاي سكانر — استكشف العالم.
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.caption} tagName="p">
+      سكاي سكانر — استكشف العالم.
+    </BpkText>
+  </div>
+);
+
 const LabelStylesExample = () => (
   <div>
     <BpkText textStyle={TEXT_STYLES.label1} tagName="p">
@@ -148,6 +234,20 @@ const LabelStylesExample = () => (
     </BpkText>
     <BpkText textStyle={TEXT_STYLES.label3} tagName="p">
       Label 3
+    </BpkText>
+  </div>
+);
+
+const LabelFallbackStylesExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.label1} tagName="p">
+      التسمية
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.label2} tagName="p">
+      التسمية
+    </BpkText>
+    <BpkText textStyle={TEXT_STYLES.label3} tagName="p">
+      التسمية
     </BpkText>
   </div>
 );
@@ -223,13 +323,20 @@ const MixedExample = () => (
 
 export {
   DefaultExample,
+  DefaultFallbackExample,
   WithHeadingTagsExample,
+  WithHeadingTagsFallbackExample,
   ParagraphExample,
+  ParagraphFallbackExample,
   WithDefaultPropsExample,
   HeadingStylesExample,
+  HeadingFallbackStylesExample,
   HeroStylesExample,
+  HeroFallbackStylesExample,
   BodyStylesExample,
+  BodyFallbackStylesExample,
   LabelStylesExample,
+  LabelFallbackStylesExample,
   LarkenStylesExample,
   LarkenFallbackStylesExample,
   ColorPropExample,
