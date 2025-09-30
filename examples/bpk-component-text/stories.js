@@ -20,13 +20,20 @@ import BpkText from '../../packages/bpk-component-text/src/BpkText';
 
 import {
   DefaultExample,
+  DefaultFallbackExample,
   WithHeadingTagsExample,
+  WithHeadingTagsFallbackExample,
   ParagraphExample,
+  ParagraphFallbackExample,
   WithDefaultPropsExample,
   HeadingStylesExample,
+  HeadingFallbackStylesExample,
   HeroStylesExample,
+  HeroFallbackStylesExample,
   BodyStylesExample,
+  BodyFallbackStylesExample,
   LabelStylesExample,
+  LabelFallbackStylesExample,
   LarkenStylesExample,
   LarkenFallbackStylesExample,
   ColorPropExample,
@@ -39,15 +46,21 @@ export default {
 };
 
 export const Default = DefaultExample;
+export const DefaultFallback=DefaultFallbackExample;
 export const WithHeadingTags = WithHeadingTagsExample;
-
+export const WithHeadingTagsFallback = WithHeadingTagsFallbackExample
 export const Paragraph = ParagraphExample;
+export const ParagraphFallback = ParagraphFallbackExample
 export const UsingWithDefaultProps = WithDefaultPropsExample;
 
 export const HeroStyles = HeroStylesExample;
+export const HeroFallbackStyles = HeroFallbackStylesExample
 export const HeadingStyles = HeadingStylesExample;
+export const HeadingFallbackStyles =HeadingFallbackStylesExample;
 export const BodyStyles = BodyStylesExample;
+export const BodyFallbackStyles = BodyFallbackStylesExample;
 export const LabelStyles = LabelStylesExample;
+export const LabelFallbackStyles = LabelFallbackStylesExample
 export const LarkenStyles = LarkenStylesExample;
 export const LarkenFallbackStyles = LarkenFallbackStylesExample;
 
