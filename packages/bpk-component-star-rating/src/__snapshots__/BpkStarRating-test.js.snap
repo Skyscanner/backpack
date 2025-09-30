@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkStarRating should render correctly if you give it more than the max rating allowed 1`] = `
 <DocumentFragment>
