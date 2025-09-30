@@ -18,7 +18,7 @@
 
 import BpkSkipLink from '../../packages/bpk-component-skip-link/src/BpkSkipLink';
 
-import { DefaultExample } from './examples';
+import { DefaultExample, RealisticExample } from './examples';
 
 export default {
   title: 'bpk-component-skip-link',
@@ -26,3 +26,4 @@ export default {
 };
 
 export const Default = DefaultExample;
+export const Realistic = RealisticExample;

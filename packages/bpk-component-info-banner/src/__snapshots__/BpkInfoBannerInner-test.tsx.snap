@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkInfoBannerInner should render correctly with "style" attribute equal to "onContrast" 1`] = `
 <DocumentFragment>

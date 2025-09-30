@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkBlockquote should render correctly 1`] = `
+<DocumentFragment>
+  <blockquote
+    class="bpk-blockquote"
+  >
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </blockquote>
+</DocumentFragment>
+`;
+
+exports[`BpkBlockquote should render correctly with additional spacing 1`] = `
+<DocumentFragment>
+  <blockquote
+    class="bpk-blockquote bpk-blockquote--extra-spacing"
+  >
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </blockquote>
+</DocumentFragment>
+`;

@@ -105,3 +105,93 @@ $base-url: 'https://js.skyscnr.com/sttc/bpk-fonts';
     url('#{$base-url}/SkyscannerRelative-BlackItalic-7e516ee5.ttf')
       format('ttf');
 }
+
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  font-style: normal;
+  font-weight: 800;
+  src:
+    url('#{$base-url}/NotoSansArabic-ExtraBold-da8cf050.woff2') format('woff2'),
+    url('#{$base-url}/NotoSansArabic-ExtraBold-4ac084a2.woff') format('woff'),
+    url('#{$base-url}/NotoSansArabic-ExtraBold-a965fbb5.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Noto Sans Hebrew';
+  font-style: normal;
+  font-weight: 800;
+  src:
+    url('#{$base-url}/NotoSansHebrew-ExtraBold-e04df8b4.woff2') format('woff2'),
+    url('#{$base-url}/NotoSansHebrew-ExtraBold-3303fb69.woff') format('woff'),
+    url('#{$base-url}/NotoSansHebrew-ExtraBold-4cfb24e3.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: normal;
+  font-weight: 800;
+  src:
+    url('#{$base-url}/NotoSans-ExtraBold-d8d5cc89.woff2') format('woff2'),
+    url('#{$base-url}/NotoSans-ExtraBold-177dbfc0.woff') format('woff'),
+    url('#{$base-url}/NotoSans-ExtraBold-cac84afc.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Noto Serif Devanagari';
+  font-style: normal;
+  font-weight: 800;
+  src:
+    url('#{$base-url}/NotoSansDevanagari-Bold-19924491.woff2') format('woff2'),
+    url('#{$base-url}/NotoSansDevanagari-Bold-2598dc51.woff') format('woff'),
+    url('#{$base-url}/NotoSansDevanagari-Bold-bca34adc.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Noto Serif Thai';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url('#{$base-url}/NotoSansThai-Bold-74e247cc.woff2') format('woff2'),
+    url('#{$base-url}/NotoSansThai-Bold-91433b5b.woff') format('woff'),
+    url('#{$base-url}/NotoSansThai-Bold-778d694c.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url('#{$base-url}/NotoSansSC-Bold-22c3e4e0.woff2') format('woff2'),
+    url('#{$base-url}/NotoSansSC-Bold-87ef5110.woff') format('woff'),
+    url('#{$base-url}/NotoSansSC-Bold-57f04989.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url('#{$base-url}/NotoSansTC-Bold-355d38e9.woff2') format('woff2'),
+    url('#{$base-url}/NotoSansTC-Bold-2abc3583.woff') format('woff'),
+    url('#{$base-url}/NotoSansTC-Bold-86244830.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 800;
+  src:
+    url('#{$base-url}/NotoSansJP-Bold-b656150c.woff2') format('woff2'),
+    url('#{$base-url}/NotoSansJP-Bold-6ddf472f.woff') format('woff'),
+    url('#{$base-url}/NotoSansJP-Bold-deeb2988.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 800;
+  src:
+    url('#{$base-url}/NotoSansKR-Bold-5286cc6d.woff2') format('woff2'),
+    url('#{$base-url}/NotoSansKR-Bold-74c4cbc7.woff') format('woff'),
+    url('#{$base-url}/NotoSansKR-Bold-5651f33d.ttf') format('ttf');
+}

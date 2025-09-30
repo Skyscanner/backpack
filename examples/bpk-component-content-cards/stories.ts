@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkContentCards from '../../packages/bpk-component-content-cards/src/BpkContentCards';
 
 import {
