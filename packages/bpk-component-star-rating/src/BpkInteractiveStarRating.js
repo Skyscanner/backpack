@@ -29,6 +29,8 @@ import STYLES from './BpkStarRating.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+const noop = () => null;
+
 export const getTypeByRating = (starNumber: number, rating: number) => {
   if (starNumber > rating) {
     return STAR_TYPES.EMPTY;
@@ -51,22 +53,20 @@ type Props = {
   rating: number,
 };
 
-const BpkInteractiveStarRating = (props: Props) => {
-  const {
-    className,
-    extraLarge,
-    getStarLabel,
-    hoverRating,
-    id,
-    large,
-    maxRating,
-    onMouseLeave,
-    onRatingHover,
-    onRatingSelect,
-    rating,
-    ...rest
-  } = props;
-
+const BpkInteractiveStarRating = ({
+  className = null,
+  extraLarge = false,
+  getStarLabel,
+  hoverRating = 0,
+  id,
+  large = false,
+  maxRating = 5,
+  onMouseLeave = noop,
+  onRatingHover = noop,
+  onRatingSelect = noop,
+  rating = 0,
+  ...rest
+}: Props) => {
   const stars = [];
   const classNames = [getClassName('bpk-star-rating')];
   const displayRating = hoverRating || rating;
@@ -115,18 +115,6 @@ BpkInteractiveStarRating.propTypes = {
   onRatingHover: PropTypes.func,
   onRatingSelect: PropTypes.func,
   rating: PropTypes.number,
-};
-
-BpkInteractiveStarRating.defaultProps = {
-  className: null,
-  hoverRating: 0,
-  large: false,
-  extraLarge: false,
-  maxRating: 5,
-  onMouseLeave: () => null,
-  onRatingHover: () => null,
-  onRatingSelect: () => null,
-  rating: 0,
 };
 
 export default BpkInteractiveStarRating;

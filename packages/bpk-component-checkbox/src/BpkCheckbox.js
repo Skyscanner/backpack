@@ -43,21 +43,19 @@ type Props = {
   indeterminate: boolean,
 };
 
-const BpkCheckbox = (props: Props) => {
-  const {
-    checked,
-    className,
-    disabled,
-    indeterminate,
+const BpkCheckbox = ({
+  checked = false,
+    className = null,
+    disabled = false,
+    indeterminate = false,
     label,
     name,
-    required,
-    smallLabel,
-    valid,
-    white,
+    required = false,
+    smallLabel = false,
+    valid = null,
+    white = false,
     ...rest
-  } = props;
-
+}: Props) => {
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid
   const isInvalid = valid === false;
@@ -123,15 +121,6 @@ BpkCheckbox.propTypes = {
   indeterminate: PropTypes.bool,
 };
 
-BpkCheckbox.defaultProps = {
-  required: false,
-  disabled: false,
-  white: false,
-  className: null,
-  smallLabel: false,
-  valid: null,
-  checked: false,
-  indeterminate: false,
-};
+
 
 export default BpkCheckbox;

@@ -1,0 +1,250 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Content Card widget renders correctly with 1 card 1`] = `
+<DocumentFragment>
+  <div>
+    <h2
+      class="bpk-content-cards--header-text"
+    >
+      Header for the component
+    </h2>
+    <div
+      class="bpk-content-cards--layout"
+      role="list"
+    >
+      <div
+        role="listitem"
+      >
+        <a
+          class="bpk-content-card--link bpk-content-card--horizontal"
+          href="http://skyscanner.net/card-1-cta-link.html"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <div
+            class="bpk-content-card--image-container"
+          >
+            <img
+              alt="People surfing in the ocean"
+              class="bpk-content-card--image"
+              loading="lazy"
+              src="http://skyscanner.net/card-1-image-link.jpg"
+            />
+          </div>
+          <div>
+            <h3
+              class="bpk-text bpk-text--body-default bpk-content-card--headline"
+            >
+              Card 1 headline
+            </h3>
+            <p
+              class="bpk-text bpk-text--body-default bpk-content-card--description"
+            >
+              Card 1 description
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Content Card widget renders correctly with 2 cards 1`] = `
+<DocumentFragment>
+  <div>
+    <h2
+      class="bpk-content-cards--header-text"
+    >
+      Header for the component
+    </h2>
+    <div
+      class="bpk-content-cards--layout"
+      role="list"
+    >
+      <div
+        role="listitem"
+      >
+        <a
+          class="bpk-content-card--link bpk-content-card--vertical"
+          href="http://skyscanner.net/card-1-cta-link.html"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <div
+            class="bpk-content-card--image-container"
+          >
+            <img
+              alt="People surfing in the ocean"
+              class="bpk-content-card--image"
+              loading="lazy"
+              src="http://skyscanner.net/card-1-image-link.jpg"
+            />
+          </div>
+          <div>
+            <h3
+              class="bpk-text bpk-text--body-default bpk-content-card--headline"
+            >
+              Card 1 headline
+            </h3>
+            <p
+              class="bpk-text bpk-text--body-default bpk-content-card--description"
+            >
+              Card 1 description
+            </p>
+          </div>
+        </a>
+      </div>
+      <div
+        role="listitem"
+      >
+        <a
+          class="bpk-content-card--link bpk-content-card--vertical"
+          href="http://skyscanner.net/card-2-cta-link.html"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <div
+            class="bpk-content-card--image-container"
+          >
+            <img
+              alt="Man on boat in a fjord"
+              class="bpk-content-card--image"
+              loading="lazy"
+              src="http://skyscanner.net/card-2-image-link.jpg"
+            />
+          </div>
+          <div>
+            <h3
+              class="bpk-text bpk-text--body-default bpk-content-card--headline"
+            >
+              Card 2 headline
+            </h3>
+            <p
+              class="bpk-text bpk-text--body-default bpk-content-card--description"
+            >
+              Card 2 description
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Content Card widget renders correctly with 3 cards 1`] = `
+<DocumentFragment>
+  <div>
+    <h2
+      class="bpk-content-cards--header-text"
+    >
+      Header for the component
+    </h2>
+    <div
+      class="bpk-content-cards--layout"
+      role="list"
+    >
+      <div
+        role="listitem"
+      >
+        <a
+          class="bpk-content-card--link bpk-content-card--vertical"
+          href="http://skyscanner.net/card-1-cta-link.html"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <div
+            class="bpk-content-card--image-container"
+          >
+            <img
+              alt="People surfing in the ocean"
+              class="bpk-content-card--image"
+              loading="lazy"
+              src="http://skyscanner.net/card-1-image-link.jpg"
+            />
+          </div>
+          <div>
+            <h3
+              class="bpk-text bpk-text--body-default bpk-content-card--headline"
+            >
+              Card 1 headline
+            </h3>
+            <p
+              class="bpk-text bpk-text--body-default bpk-content-card--description"
+            >
+              Card 1 description
+            </p>
+          </div>
+        </a>
+      </div>
+      <div
+        role="listitem"
+      >
+        <a
+          class="bpk-content-card--link bpk-content-card--vertical"
+          href="http://skyscanner.net/card-2-cta-link.html"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <div
+            class="bpk-content-card--image-container"
+          >
+            <img
+              alt="Man on boat in a fjord"
+              class="bpk-content-card--image"
+              loading="lazy"
+              src="http://skyscanner.net/card-2-image-link.jpg"
+            />
+          </div>
+          <div>
+            <h3
+              class="bpk-text bpk-text--body-default bpk-content-card--headline"
+            >
+              Card 2 headline
+            </h3>
+            <p
+              class="bpk-text bpk-text--body-default bpk-content-card--description"
+            >
+              Card 2 description
+            </p>
+          </div>
+        </a>
+      </div>
+      <div
+        role="listitem"
+      >
+        <a
+          class="bpk-content-card--link bpk-content-card--vertical"
+          href="http://skyscanner.net/card-3-cta-link.html"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <div
+            class="bpk-content-card--image-container"
+          >
+            <img
+              alt="Airplane flying over mountains"
+              class="bpk-content-card--image"
+              loading="lazy"
+              src="http://skyscanner.net/card-3-image-link.jpg"
+            />
+          </div>
+          <div>
+            <h3
+              class="bpk-text bpk-text--body-default bpk-content-card--headline"
+            >
+              Card 3 headline
+            </h3>
+            <p
+              class="bpk-text bpk-text--body-default bpk-content-card--description"
+            >
+              Card 3 description
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

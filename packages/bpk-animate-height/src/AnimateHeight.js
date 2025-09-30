@@ -51,51 +51,49 @@ class AnimateHeight extends Component {
     }
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    const { height } = this.props;
+  componentDidUpdate(prevProps, prevState) {
+    const { height: prevHeight, transitionOverflow: prevTransitionOverflow } = prevProps;
+    const { duration, height, transitionOverflow } = this.props;
 
     // Check if 'height' prop has changed
-    if (this.contentElement && nextProps.height !== height) {
+    if (this.contentElement && height !== prevHeight) {
       // Cache content height
       this.contentElement.style.display = '';
-      this.contentElement.style.overflow = this.props.transitionOverflow;
       const contentHeight = this.contentElement.offsetHeight;
       this.contentElement.style.overflow = '';
 
       let newHeight = null;
       let shouldSetTimeout = false;
       let timeoutHeight = null;
-      let timeoutOverflow = this.props.transitionOverflow;
-      let timeoutDuration = nextProps.duration;
+      let timeoutOverflow = prevTransitionOverflow;
+      let timeoutDuration = duration;
 
       clearTimeout(this.timeoutID);
 
-      if (isNumber(nextProps.height)) {
+      if (isNumber(height)) {
         // If new height is a number
-        newHeight = nextProps.height < 0 ? 0 : nextProps.height;
+        newHeight = height < 0 ? 0 : height;
       } else {
-        // If not, animate to content height
-        // and then reset to auto
+        // If not, animate to content height and then reset to auto
         newHeight = contentHeight;
         shouldSetTimeout = true;
         timeoutHeight = 'auto';
         timeoutOverflow = 'visible';
       }
 
-      if (this.state.height === 'auto') {
-        // If previous height was 'auto'
-        // set it explicitly to be able to use transition
+      // If previous height was 'auto'
+      // set it explicitly to be able to use transition
+      if (prevState.height === 'auto') {
         shouldSetTimeout = true;
         timeoutHeight = newHeight;
-
         newHeight = contentHeight;
         timeoutDuration = 50;
       }
 
-      this.setState((state, props) => ({
+      this.setState({
         height: newHeight,
-        overflow: props.transitionOverflow,
-      }));
+        overflow: transitionOverflow,
+      });
 
       if (shouldSetTimeout) {
         this.timeoutID = setTimeout(() => {
@@ -110,7 +108,7 @@ class AnimateHeight extends Component {
         }, timeoutDuration);
       }
     }
-  }
+}
 
   componentWillUnmount() {
     clearTimeout(this.timeoutID);
