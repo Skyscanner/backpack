@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkDialogWrapper dialog is not supported renders correctly with animation props 1`] = `
 <DocumentFragment>

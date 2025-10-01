@@ -16,24 +16,26 @@
  * limitations under the License.
  */
 
+import figma from "@figma/code-connect";
 
-import BpkBreadcrumb from '../../packages/bpk-component-breadcrumb/src/BpkBreadcrumb';
-import BpkBreadcrumbItem from '../../packages/bpk-component-breadcrumb/src/BpkBreadcrumbItem';
+import BpkSwitch from "./BpkSwitch";
 
-import { DefaultExample, ExtremeExample } from './examples';
-
-export default {
-  component: BpkBreadcrumb,
-  title: 'bpk-component-breadcrumb',
-  subcomponents: {
-    BpkBreadcrumbItem
+figma.connect(
+  BpkSwitch,
+  "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=6099%3A10807",
+  {
+    props: {
+      size: figma.enum("Size", {
+        "Default": false,
+        "Small": true,
+      }),
+      state: figma.enum("State", {
+        "On": true,
+        "Off": false,
+      }),
+    },
+    example: ({size, state}) => (
+      <BpkSwitch ariaLabel="Activate Backpack" small={size} checked={state} />
+    ),
   },
-};
-
-export const Default = DefaultExample;
-export const Extreme = ExtremeExample;
-export const VisualTest = DefaultExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
-};
+)

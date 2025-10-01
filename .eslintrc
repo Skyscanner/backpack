@@ -167,6 +167,12 @@
       "rules": {
         "@skyscanner/rules/forbid-component-props": ["off"]
       }
+    },
+    {
+      "files": ["**/packages/bpk-component-modal/src/BpkModalV2/BpKModal-test.tsx", "**/packages/bpk-react-utils/src/BpkDialogWrapper/BpkDialogWrapper-test.tsx"],
+      "rules": {
+        "compat/compat": "off"
+      }
     }
   ]
 }

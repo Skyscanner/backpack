@@ -16,9 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
+import type { FC, TextareaHTMLAttributes } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -26,27 +24,26 @@ import STYLES from './BpkTextarea.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  id: string,
-  name: string,
-  value: string,
-  className: ?string,
-  valid: ?boolean,
-  large: ?boolean,
-};
+interface BpkTextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+  id: string;
+  name: string;
+  value: string;
+  className?: string;
+  valid?: boolean;
+  large?: boolean;
+}
 
-const BpkTextarea = ({
-  className = null,
+const BpkTextarea: FC<BpkTextareaProps> = ({
+  className,
   large = false,
-  valid = null,
+  valid,
   ...rest
-}: Props) => {
+}) => {
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid
   const isInvalid = valid === false;
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
     <textarea
       className={getClassName(
         'bpk-textarea',
@@ -58,15 +55,6 @@ const BpkTextarea = ({
       {...rest}
     />
   );
-};
-
-BpkTextarea.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  valid: PropTypes.bool,
-  large: PropTypes.bool,
 };
 
 export default BpkTextarea;
