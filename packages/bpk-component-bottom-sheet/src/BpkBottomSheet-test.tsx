@@ -19,7 +19,7 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import BpkBottomSheet from './BpkBottomSheet';
+import BpkBottomSheet, { PADDING_TYPE } from './BpkBottomSheet';
 // mock breakpoint to always match
 jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () =>
   jest.fn(() => true),
@@ -46,7 +46,11 @@ describe('BpkBottomSheet', () => {
         onClose={jest.fn()}
         title="Bottom sheet title"
         wide
-        paddingType="small"
+        paddingStyles={{
+          top: PADDING_TYPE.lg,
+          start: PADDING_TYPE.lg,
+          end: PADDING_TYPE.lg
+        }}
       >
         Bottom Sheet content
       </BpkBottomSheet>,

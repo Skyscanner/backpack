@@ -34,12 +34,18 @@ const getClassName = cssModules(STYLES);
 export const PADDING_TYPE = {
   none: 'none',
   base: 'base',
-  small: 'small',
-  medium: 'medium',
-  large: 'large'
+  lg: 'lg',
+  xxl: 'xxl',
+  xxxl: 'xxxl'
 }
 
 export type PaddingType = (typeof PADDING_TYPE)[keyof typeof PADDING_TYPE];
+
+export type PaddingStyles = {
+  top: PaddingType,
+  start: PaddingType,
+  end?: PaddingType
+}
 
 interface CommonProps {
   actionText?: string;
@@ -58,7 +64,7 @@ interface CommonProps {
   title?: string;
   wide?: boolean;
   isOpen: boolean;
-  paddingType?: PaddingType;
+  paddingStyles?: PaddingStyles;
 }
 
 export type Props = CommonProps & ({ ariaLabelledby: string } | { ariaLabel: string; });
@@ -73,7 +79,10 @@ const BpkBottomSheet = ({
   isOpen,
   onAction = () => null,
   onClose,
-  paddingType = PADDING_TYPE.small,
+  paddingStyles = {
+    top: PADDING_TYPE.lg,
+    start: PADDING_TYPE.lg,
+  },
   title = '',
   wide = false,
   ...ariaProps
@@ -104,7 +113,10 @@ const BpkBottomSheet = ({
 
   const contentStyle = getClassName(
     'bpk-bottom-sheet--content',
-    paddingType !== PADDING_TYPE.none && `bpk-bottom-sheet--padding-${paddingType}`
+    paddingStyles.top !== PADDING_TYPE.none && `bpk-bottom-sheet--padding-${paddingStyles.top}-top`,
+    paddingStyles.start !== PADDING_TYPE.none && `bpk-bottom-sheet--padding-${paddingStyles.start}-start`,
+    ((paddingStyles.end && paddingStyles.end !== PADDING_TYPE.none) || (!paddingStyles.end && paddingStyles.start && paddingStyles.start !== PADDING_TYPE.none))
+      && `bpk-bottom-sheet--padding-${paddingStyles.end || paddingStyles.start}-end`
   );
 
   return <BpkBreakpoint query={BREAKPOINTS.ABOVE_MOBILE}>
@@ -130,12 +142,13 @@ const BpkBottomSheet = ({
         timeout={{ appear: animationTimeout, exit: isAboveMobile ? 0 : animationTimeout }}
       >
         <>
-          <header className={getClassName('bpk-bottom-sheet--header')}>
+          <header className={getClassName('bpk-bottom-sheet--header-wrapper')}>
             <BpkNavigationBar
               id={headingId}
               title={title}
               titleTextStyle={TEXT_STYLES.label1}
               titleTagName={title ? "h2" : "span"}
+              className={getClassName('bpk-bottom-sheet--header')}
               leadingButton={
                 <BpkCloseButton
                   label={closeLabel}

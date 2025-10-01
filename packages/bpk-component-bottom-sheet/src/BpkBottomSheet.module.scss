@@ -108,20 +108,52 @@
     overflow-y: auto;
   }
 
-  &--padding-base {
-    padding: tokens.bpk-spacing-base();
+  &--padding-base-top {
+    padding-top: tokens.bpk-spacing-base();
   }
 
-  &--padding-small {
-    padding: tokens.bpk-spacing-lg();
+  &--padding-base-start {
+    padding-inline-start: tokens.bpk-spacing-base();
   }
 
-  &--padding-medium {
-    padding: tokens.bpk-spacing-xxl();
+  &--padding-base-end {
+    padding-inline-end: tokens.bpk-spacing-base();
   }
 
-  &--padding-large {
-    padding: tokens.bpk-spacing-xxxl();
+  &--padding-lg-top {
+    padding-top: tokens.bpk-spacing-lg();
+  }
+
+  &--padding-lg-start {
+    padding-inline-start: tokens.bpk-spacing-lg();
+  }
+
+  &--padding-lg-end {
+    padding-inline-end: tokens.bpk-spacing-lg();
+  }
+
+  &--padding-xxl-top {
+    padding-top: tokens.bpk-spacing-xxl();
+  }
+
+  &--padding-xxl-start {
+    padding-inline-start: tokens.bpk-spacing-xxl();
+  }
+
+  &--padding-xxl-end {
+    padding-inline-end: tokens.bpk-spacing-xxl();
+  }
+
+  &--padding-xxxl-top {
+    padding-top: tokens.bpk-spacing-xxxl();
+  }
+
+  &--padding-xxxl-start {
+    padding-inline-start: tokens.bpk-spacing-xxxl();
+  }
+
+  &--padding-xxxl-end {
+    padding-inline-end: tokens.bpk-spacing-xxxl();
   }
 
   &--wide {
@@ -130,17 +162,22 @@
     }
   }
 
-  &--header {
+  &--header-wrapper {
     position: sticky;
     top: 0;
     z-index: tokens.$bpk-zindex-tooltip - 1;
-    padding: tokens.bpk-spacing-sm() 0;
+    padding-top: tokens.bpk-spacing-md();
 
     @include utils.bpk-themeable-property(
       background-color,
       --bpk-navigation-bar-background-color,
       tokens.$bpk-surface-default-day
     );
+  }
+
+  &--header {
+    min-height: fit-content;
+    padding-bottom: 0;
   }
 
   @keyframes slide-up {

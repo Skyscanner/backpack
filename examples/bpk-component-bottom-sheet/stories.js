@@ -33,9 +33,9 @@ import {
   MultipleBottomSheetsExample,
   NoPaddingExample,
   BasePaddingExample,
-  SmallPaddingExample,
-  MediumPaddingExample,
-  LargePaddingExample,
+  LgPaddingExample,
+  XXLPaddingExample,
+  XXXLPaddingExample,
 } from './examples';
 
 export default {
@@ -65,6 +65,6 @@ export const MultipleBottomSheets = MultipleBottomSheetsExample;
 
 export const NoPadding = NoPaddingExample;
 export const BasePadding = BasePaddingExample;
-export const SmallPadding = SmallPaddingExample;
-export const MediumPadding = MediumPaddingExample;
-export const LargePadding = LargePaddingExample;
+export const LgPadding = LgPaddingExample;
+export const XXLPadding = XXLPaddingExample;
+export const XXXLPadding = XXXLPaddingExample;
