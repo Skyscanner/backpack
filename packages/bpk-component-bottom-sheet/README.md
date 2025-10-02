@@ -85,4 +85,4 @@ eg.:
 
 ```
 
-The default values for all are `PADDING_TYPE.lg`. If you want to use a different padding, you can define only top and start, in which case end will be equal to start.
+The default values for all are `PADDING_TYPE.lg`. If you want to use a different padding, by specifying each side, or you can define only top and start, in which case end will be equal to start.
