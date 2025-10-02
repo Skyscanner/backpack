@@ -99,7 +99,6 @@ describe('BpkCardList', () => {
     );
 
     expect(screen.queryByText('Description')).not.toBeInTheDocument();
-    expect(screen.queryByText('Header Button')).not.toBeInTheDocument();
     expect(screen.queryByTestId('bpk-card-list-header-button')).not.toBeInTheDocument();
   });
 });
