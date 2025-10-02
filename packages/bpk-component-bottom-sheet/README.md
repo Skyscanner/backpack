@@ -72,6 +72,8 @@ This component allows various levels of padding:
 
 Padding can be set independently for top, start and end. start and end are left and right respectively when in ltr direction, and right and left respectively when in rtl direction.
 
+The default values for all are `PADDING_TYPE.lg`. If you want to use a different padding, by specifying each side, or you can define only top and start, in which case end will be equal to start.
+
 eg.:
 ```js
   <BpkBottomSheet
@@ -85,4 +87,14 @@ eg.:
 
 ```
 
-The default values for all are `PADDING_TYPE.lg`. If you want to use a different padding, by specifying each side, or you can define only top and start, in which case end will be equal to start.
+eg.:
+```js
+  <BpkBottomSheet
+    {...properties}
+    paddingStyles={{
+      top: PADDING_TYPE.lg,
+      start: PADDING_TYPE.none,
+    }}
+  >
+
+```
