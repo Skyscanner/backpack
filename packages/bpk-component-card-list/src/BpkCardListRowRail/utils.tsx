@@ -76,10 +76,7 @@ export const useScrollToCard = (
       container &&
       container.getBoundingClientRect().bottom > 0 &&
       container.getBoundingClientRect().bottom <= window.innerHeight;
-
     if (!isVisible) return; // Escape from scrollIntoView if the container is not visible, otherwise the webpage will scroll down to the last rendered & non-visible container
-
-    console.log({ currentIndex, stateScrollingLockRef: stateScrollingLockRef.current })
 
     if (stateScrollingLockRef.current && stateScrollingLockRef.current === true)
       return;
@@ -102,71 +99,23 @@ export const useIntersectionObserver = (
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    if (!root) {
-      console.log('❌ [IntersectionObserver] No root element, skipping setup');
-      return () => { };
-    }
-
+    if (!root) return () => { };
     observerRef.current = new IntersectionObserver(
       (entries) => {
-        console.log('🎯 [IntersectionObserver] Processing entries:', entries.length);
-
         entries.forEach((entry) => {
           const { index } = (entry.target as HTMLElement).dataset;
-          if (!index) {
-            console.log('⚠️ [IntersectionObserver] No index found on target');
-            return;
-          }
-
+          if (!index) return;
           const currentIndex = parseInt(index, 10);
-          const isIntersecting = entry.isIntersecting;
-          const intersectionRatio = entry.intersectionRatio;
-          const boundingRect = entry.boundingClientRect;
-          const rootBounds = entry.rootBounds;
-
-          console.log(`📊 [IntersectionObserver] Card ${currentIndex}:`, {
-            isIntersecting,
-            intersectionRatio: intersectionRatio.toFixed(3),
-            target: {
-              top: Math.round(boundingRect.top),
-              left: Math.round(boundingRect.left),
-              width: Math.round(boundingRect.width),
-              height: Math.round(boundingRect.height),
-            },
-            root: rootBounds ? {
-              top: Math.round(rootBounds.top),
-              left: Math.round(rootBounds.left),
-              width: Math.round(rootBounds.width),
-              height: Math.round(rootBounds.height),
-            } : null,
-          });
-
-          if (isIntersecting) {
-            console.log(`✅ [IntersectionObserver] Card ${currentIndex} became visible`);
+          if (entry.isIntersecting) {
             setVisibilityList((prevList) => {
-              console.log(`📝 [IntersectionObserver] Setting card ${currentIndex} visible:`, {
-                before: prevList.map((v, i) => `${i}:${v}`).join(','),
-                action: `${currentIndex}:0→1`
-              });
               const newList = [...prevList];
               newList[currentIndex] = 1;
-              console.log(`📝 [IntersectionObserver] After update:`,
-                newList.map((v, i) => `${i}:${v}`).join(',')
-              );
               return newList;
             });
           } else {
-            console.log(`❌ [IntersectionObserver] Card ${currentIndex} became hidden`);
             setVisibilityList((prevList) => {
-              console.log(`📝 [IntersectionObserver] Setting card ${currentIndex} hidden:`, {
-                before: prevList.map((v, i) => `${i}:${v}`).join(','),
-                action: `${currentIndex}:1→0`
-              });
               const newList = [...prevList];
               newList[currentIndex] = 0;
-              console.log(`📝 [IntersectionObserver] After update:`,
-                newList.map((v, i) => `${i}:${v}`).join(',')
-              );
               return newList;
             });
           }
@@ -174,9 +123,7 @@ export const useIntersectionObserver = (
       },
       { root, threshold },
     );
-
     return () => {
-      console.log('🧹 [IntersectionObserver] Cleaning up observer');
       if (observerRef.current) {
         observerRef.current.disconnect();
         observerRef.current = null;
@@ -186,23 +133,9 @@ export const useIntersectionObserver = (
 
   const observeElement = (element: HTMLElement | null, index: number) => {
     if (element && observerRef.current) {
-      console.log(`👀 [IntersectionObserver] Observing element at index ${index}:`, {
-        element: element.tagName,
-        className: element.className,
-        rect: element.getBoundingClientRect(),
-        isPlaceholder: element.children.length === 0,
-        hasContent: element.children.length > 0
-      });
-
       element.setAttribute('data-index', index.toString());
       observerRef.current.observe(element);
-    } else {
-      console.log(`⚠️ [IntersectionObserver] Cannot observe element at index ${index}:`, {
-        hasElement: !!element,
-        hasObserver: !!observerRef.current
-      });
     }
   };
-
   return observeElement;
 };
