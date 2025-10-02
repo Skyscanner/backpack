@@ -16,13 +16,14 @@
  * limitations under the License.
  */
 
-import { render, screen, fireEvent } from '@testing-library/react';
-
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+
 import mockCards from '../../testMocks';
 import { LAYOUTS } from '../common-types';
 
 import BpkCardListCarousel from './BpkCardListCarousel';
+import { setA11yTabIndex, useIntersectionObserver } from './utils';
 
 jest.mock('./utils', () => ({
   setA11yTabIndex: jest.fn(),

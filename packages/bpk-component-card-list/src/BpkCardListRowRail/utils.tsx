@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { RELEASE_LOCK_DELAY } from './constants';
 
@@ -99,7 +99,7 @@ export const useIntersectionObserver = (
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    if (!root) return () => {};
+    if (!root) return () => { };
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

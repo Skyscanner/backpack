@@ -237,6 +237,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           return (
             <div
               key={`placeholder-${index.toString()}`}
+              ref={cardRefFns[index]}
               style={{
                 ...shownNumberStyle,
                 ...cardDimensionStyle,
