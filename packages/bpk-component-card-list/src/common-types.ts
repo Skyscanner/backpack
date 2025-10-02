@@ -54,7 +54,7 @@ type AccessibilityLabels = {
 };
 
 type CardListBaseProps = {
-  title: string;
+  title?: string;
   description?: string;
   cardList: ReactElement[];
   layoutMobile: LayoutMobile;

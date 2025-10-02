@@ -80,11 +80,13 @@ const BpkCardList = (props: CardListProps) => {
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
         {(isMobile) => (
           <>
-            <BpkSectionHeader
-              title={title}
-              description={description}
-              button={shouldShowHeaderButton(isMobile) ? headerButton : null}
-            />
+            {title && (
+              <BpkSectionHeader
+                title={title}
+                description={description}
+                button={shouldShowHeaderButton(isMobile) ? headerButton : null}
+              />
+            )}
 
             {chipGroup}
 

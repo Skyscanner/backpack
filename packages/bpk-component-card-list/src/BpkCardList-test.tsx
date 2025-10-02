@@ -83,4 +83,23 @@ describe('BpkCardList', () => {
     expect(screen.getByText('Description')).toBeInTheDocument();
     expect(headerButton).toBeInTheDocument();
   });
+
+  it('should not render SectionHeader when title not provided', () => {
+    render(
+      <BpkCardList
+        // no title passed
+        description="Description"
+        chipGroup={BpkChipGroupRail()}
+        layoutDesktop={LAYOUTS.grid}
+        layoutMobile={LAYOUTS.stack}
+        cardList={mockCards(2)}
+        buttonContent="Header Button"
+        onButtonClick={() => {}}
+      />,
+    );
+
+    expect(screen.queryByText('Description')).not.toBeInTheDocument();
+    expect(screen.queryByText('Header Button')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('bpk-card-list-header-button')).not.toBeInTheDocument();
+  });
 });
