@@ -84,7 +84,7 @@ describe('BpkCardList', () => {
     expect(headerButton).toBeInTheDocument();
   });
 
-  it('should not render SectionHeader when title not provided', () => {
+  it('should not render SectionHeader when title undefined', () => {
     render(
       <BpkCardList
         // no title passed
@@ -100,5 +100,26 @@ describe('BpkCardList', () => {
 
     expect(screen.queryByText('Description')).not.toBeInTheDocument();
     expect(screen.queryByTestId('bpk-card-list-header-button')).not.toBeInTheDocument();
+  });
+
+  it('should render SectionHeader when title is an empty string', () => {
+    const { container } = render(
+      <BpkCardList
+        title=""
+        description="Description"
+        chipGroup={BpkChipGroupRail()}
+        layoutDesktop={LAYOUTS.grid}
+        layoutMobile={LAYOUTS.stack}
+        cardList={mockCards(2)}
+        buttonContent="Header Button"
+        onButtonClick={() => {}}
+      />,
+    );
+
+    const heading = container.querySelector('h2');
+    expect(heading).toBeInTheDocument();
+    expect(heading?.textContent).toBe('');
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.getByTestId('bpk-card-list-header-button')).toBeInTheDocument();
   });
 });

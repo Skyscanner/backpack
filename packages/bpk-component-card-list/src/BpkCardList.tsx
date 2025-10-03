@@ -80,7 +80,7 @@ const BpkCardList = (props: CardListProps) => {
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
         {(isMobile) => (
           <>
-            {title && (
+            {(title !== undefined) && (
               <BpkSectionHeader
                 title={title}
                 description={description}
