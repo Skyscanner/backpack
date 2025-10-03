@@ -86,8 +86,8 @@ describe('BpkCardList', () => {
 
   it('should not render SectionHeader when title undefined', () => {
     render(
+      // @ts-expect-error Intentionally omitting 'title' prop
       <BpkCardList
-        // no title passed
         description="Description"
         chipGroup={BpkChipGroupRail()}
         layoutDesktop={LAYOUTS.grid}

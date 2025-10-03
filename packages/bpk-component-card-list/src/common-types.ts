@@ -54,8 +54,6 @@ type AccessibilityLabels = {
 };
 
 type CardListBaseProps = {
-  title?: string;
-  description?: string;
   cardList: ReactElement[];
   layoutMobile: LayoutMobile;
   layoutDesktop: LayoutDesktop;
@@ -70,7 +68,15 @@ type CardListBaseProps = {
   buttonHref?: string;
   expandText?: string;
   accessibilityLabels?: AccessibilityLabels;
-};
+} & TitleProps;
+
+type TitleProps = {
+  title: string;
+  description?: string;
+} | {
+  title?: never;
+  description?: never;
+}
 
 type CardListGridStackProps = {
   children: ReactElement[];
