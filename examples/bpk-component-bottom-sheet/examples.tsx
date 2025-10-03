@@ -20,6 +20,7 @@ import { Component, Children } from 'react';
 import type { ReactNode } from 'react';
 
 import BpkBottomSheet from '../../packages/bpk-component-bottom-sheet';
+import { PADDING_TYPE } from '../../packages/bpk-component-bottom-sheet/src/BpkBottomSheet';
 import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
@@ -289,6 +290,36 @@ const MultipleBottomSheetsExample = () => (
   </>
 )
 
+const NoPaddingExample = () => (
+  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" paddingStyles={{top: PADDING_TYPE.none, start: PADDING_TYPE.none, end: PADDING_TYPE.none, bottom: PADDING_TYPE.none}} isComponentOpen>
+    <>{Children.toArray(content)}</>
+  </BottomSheetContainer>
+)
+
+const BasePaddingExample = () => (
+  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" paddingStyles={{top: PADDING_TYPE.base, start: PADDING_TYPE.base, end: PADDING_TYPE.base, bottom: PADDING_TYPE.base}} isComponentOpen>
+    <>{Children.toArray(content)}</>
+  </BottomSheetContainer>
+)
+
+const LgPaddingExample = () => (
+  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" paddingStyles={{top: PADDING_TYPE.lg, start: PADDING_TYPE.lg, end: PADDING_TYPE.lg, bottom: PADDING_TYPE.lg}} isComponentOpen>
+    <>{Children.toArray(content)}</>
+  </BottomSheetContainer>
+)
+
+const XXLPaddingExample = () => (
+  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" paddingStyles={{top: PADDING_TYPE.xxl, start: PADDING_TYPE.xxl, end: PADDING_TYPE.xxl, bottom: PADDING_TYPE.xxl}} isComponentOpen>
+    <>{Children.toArray(content)}</>
+  </BottomSheetContainer>
+)
+
+const XXXLPaddingExample = () => (
+  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" paddingStyles={{top: PADDING_TYPE.xxxl, start: PADDING_TYPE.xxxl, end: PADDING_TYPE.xxxl, bottom: PADDING_TYPE.xxxl}} isComponentOpen>
+    <>{Children.toArray(content)}</>
+  </BottomSheetContainer>
+)
+
 export {
   DefaultExample,
   BackdropClickCloseExample,
@@ -301,5 +332,10 @@ export {
   ActionButtonExample,
   WideExample,
   NestedExample,
-  MultipleBottomSheetsExample
+  MultipleBottomSheetsExample,
+  NoPaddingExample,
+  BasePaddingExample,
+  LgPaddingExample,
+  XXLPaddingExample,
+  XXXLPaddingExample
 };
