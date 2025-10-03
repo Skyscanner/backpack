@@ -42,9 +42,10 @@ export const PADDING_TYPE = {
 export type PaddingType = (typeof PADDING_TYPE)[keyof typeof PADDING_TYPE];
 
 export type PaddingStyles = {
-  top: PaddingType,
-  start: PaddingType,
-  end?: PaddingType
+  top?: PaddingType,
+  start?: PaddingType,
+  end?: PaddingType,
+  bottom?: PaddingType,
 }
 
 interface CommonProps {
@@ -69,6 +70,38 @@ interface CommonProps {
 
 export type Props = CommonProps & ({ ariaLabelledby: string } | { ariaLabel: string; });
 
+const getContentStyles = (paddingStyles: PaddingStyles): string => {
+  const { 
+    bottom = PADDING_TYPE.lg,
+    end, 
+    start = PADDING_TYPE.lg, 
+    top = PADDING_TYPE.none 
+  } = paddingStyles;
+  
+  const classNames = ['bpk-bottom-sheet--content'];
+
+  // Add padding classes for each side if not 'none'
+  if (top !== PADDING_TYPE.none) {
+    classNames.push(`bpk-bottom-sheet--padding-${top}-top`);
+  }
+
+  if (bottom !== PADDING_TYPE.none) {
+    classNames.push(`bpk-bottom-sheet--padding-${bottom}-bottom`);
+  }
+
+  if (start !== PADDING_TYPE.none) {
+    classNames.push(`bpk-bottom-sheet--padding-${start}-start`);
+  }
+
+  // Handle end padding: use explicit 'end' value or fallback to 'start' value
+  const endPadding = end || start;
+  if (endPadding && endPadding !== PADDING_TYPE.none) {
+    classNames.push(`bpk-bottom-sheet--padding-${endPadding}-end`);
+  }
+
+  return getClassName(...classNames);
+};
+
 const BpkBottomSheet = ({
   actionText = '',
   children,
@@ -80,8 +113,10 @@ const BpkBottomSheet = ({
   onAction = () => null,
   onClose,
   paddingStyles = {
-    top: PADDING_TYPE.lg,
+    top: PADDING_TYPE.none,
     start: PADDING_TYPE.lg,
+    end: PADDING_TYPE.lg,
+    bottom: PADDING_TYPE.lg
   },
   title = '',
   wide = false,
@@ -111,13 +146,7 @@ const BpkBottomSheet = ({
     wide && 'bpk-bottom-sheet--wide'
   );
 
-  const contentStyle = getClassName(
-    'bpk-bottom-sheet--content',
-    paddingStyles.top !== PADDING_TYPE.none && `bpk-bottom-sheet--padding-${paddingStyles.top}-top`,
-    paddingStyles.start !== PADDING_TYPE.none && `bpk-bottom-sheet--padding-${paddingStyles.start}-start`,
-    ((paddingStyles.end && paddingStyles.end !== PADDING_TYPE.none) || (!paddingStyles.end && paddingStyles.start && paddingStyles.start !== PADDING_TYPE.none))
-      && `bpk-bottom-sheet--padding-${paddingStyles.end || paddingStyles.start}-end`
-  );
+  const contentStyle = getContentStyles(paddingStyles);
 
   return <BpkBreakpoint query={BREAKPOINTS.ABOVE_MOBILE}>
     {(isAboveMobile: boolean) =>

@@ -70,30 +70,30 @@ This component allows various levels of padding:
 | `xxl`  | 40 | 2.5 |
 | `xxxl` | 64 | 4   |
 
-Padding can be set independently for top, start and end. start and end are left and right respectively when in ltr direction, and right and left respectively when in rtl direction.
+The default values for top is `PADDING_TYPE.none` due to header having `bpk-spacing-lg()` = 24px padding, other sides are by default `PADDING_TYPE.lg` = 24px. If you want to use a different padding you can specify any side you want to override - top, bottom, start and end. start and end are left and right respectively when in ltr direction, and right and left respectively when in rtl direction.
 
-The default values for all are `PADDING_TYPE.lg`. If you want to use a different padding, by specifying each side, or you can define only top and start, in which case end will be equal to start.
+**Note** that you can't remove the header padding with this property, you can only add to it, by increasing contents top padding.
 
-eg.:
+override of all sides - eg.:
 ```js
   <BpkBottomSheet
     {...properties}
     paddingStyles={{
-      top: PADDING_TYPE.lg,
-      start: PADDING_TYPE.base,
-      end: PADDING_TYPE.xxl
+      top: PADDING_TYPE.base,
+      start: PADDING_TYPE.lg,
+      end: PADDING_TYPE.xxl,
+      bottom: PADDING_TYPE.xxl
     }}
   >
 
 ```
 
-eg.:
+individual override - eg.:
 ```js
   <BpkBottomSheet
     {...properties}
     paddingStyles={{
       top: PADDING_TYPE.lg,
-      start: PADDING_TYPE.none,
     }}
   >
 

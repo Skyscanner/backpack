@@ -112,6 +112,10 @@
     padding-top: tokens.bpk-spacing-base();
   }
 
+  &--padding-base-bottom {
+    padding-bottom: tokens.bpk-spacing-base();
+  }
+
   &--padding-base-start {
     padding-inline-start: tokens.bpk-spacing-base();
   }
@@ -122,6 +126,10 @@
 
   &--padding-lg-top {
     padding-top: tokens.bpk-spacing-lg();
+  }
+
+  &--padding-lg-bottom {
+    padding-bottom: tokens.bpk-spacing-lg();
   }
 
   &--padding-lg-start {
@@ -136,6 +144,10 @@
     padding-top: tokens.bpk-spacing-xxl();
   }
 
+  &--padding-xxl-bottom {
+    padding-bottom: tokens.bpk-spacing-xxl();
+  }
+
   &--padding-xxl-start {
     padding-inline-start: tokens.bpk-spacing-xxl();
   }
@@ -146,6 +158,10 @@
 
   &--padding-xxxl-top {
     padding-top: tokens.bpk-spacing-xxxl();
+  }
+
+  &--padding-xxxl-bottom {
+    padding-bottom: tokens.bpk-spacing-xxxl();
   }
 
   &--padding-xxxl-start {
@@ -166,7 +182,6 @@
     position: sticky;
     top: 0;
     z-index: tokens.$bpk-zindex-tooltip - 1;
-    padding-top: tokens.bpk-spacing-md();
 
     @include utils.bpk-themeable-property(
       background-color,
@@ -177,7 +192,7 @@
 
   &--header {
     min-height: fit-content;
-    padding-bottom: 0;
+    padding: tokens.bpk-spacing-lg();
   }
 
   @keyframes slide-up {

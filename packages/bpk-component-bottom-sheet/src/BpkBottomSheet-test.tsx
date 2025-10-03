@@ -47,9 +47,10 @@ describe('BpkBottomSheet', () => {
         title="Bottom sheet title"
         wide
         paddingStyles={{
-          top: PADDING_TYPE.lg,
+          top: PADDING_TYPE.none,
           start: PADDING_TYPE.lg,
-          end: PADDING_TYPE.lg
+          end: PADDING_TYPE.lg,
+          bottom: PADDING_TYPE.lg
         }}
       >
         Bottom Sheet content
