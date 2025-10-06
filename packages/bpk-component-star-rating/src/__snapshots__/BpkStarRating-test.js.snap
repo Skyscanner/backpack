@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkStarRating should render correctly if you give it more than the max rating allowed 1`] = `
 <DocumentFragment>
@@ -360,6 +360,7 @@ exports[`BpkStarRating should render correctly with "rounding" attribute 1`] = `
     >
       <svg
         aria-hidden="true"
+        class="bpk-icon--rtl-support"
         height="1rem"
         viewBox="0 0 24 24"
         width="1rem"
@@ -618,6 +619,7 @@ exports[`BpkStarRating should render correctly with 3.5 stars 1`] = `
     >
       <svg
         aria-hidden="true"
+        class="bpk-icon--rtl-support"
         height="1rem"
         viewBox="0 0 24 24"
         width="1rem"

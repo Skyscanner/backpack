@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkBannerAlertInner should render correctly with "type" attribute equal to "error" 1`] = `
 <DocumentFragment>
