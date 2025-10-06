@@ -27,6 +27,7 @@
     overflow-x: hidden;
     box-sizing: border-box;
     gap: tokens.bpk-spacing-sm();
+
     // Negative margin to ensure box-shadow of content is not cut off
     margin-block: -(tokens.bpk-spacing-lg());
     padding-block: tokens.bpk-spacing-lg();
