@@ -35,8 +35,6 @@
 
     @include breakpoints.bpk-breakpoint-mobile {
       overflow-x: scroll;
-      margin-block: -(tokens.bpk-spacing-base());
-      padding-block: tokens.bpk-spacing-base();
     }
 
     &::-webkit-scrollbar {
