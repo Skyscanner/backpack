@@ -103,8 +103,13 @@ const BpkPageIndicator = ({
         {showNav && (
           <NavButton
             currentIndex={currentIndex}
-            onClick={onClick}
-            disabled={currentIndex === 0}
+            onClick={ (e) => {
+              if(!onClick || totalIndicators <= 1) return
+              const nextIndex = isDesktopVariant ? (currentIndex - 1 + totalIndicators) % totalIndicators
+                : Math.max(currentIndex - 1, 0)
+              onClick(e, nextIndex, DIRECTIONS.PREV)
+            }}
+            disabled={!isDesktopVariant && (currentIndex === 0 || totalIndicators <= 1)}
             direction={DIRECTIONS.PREV}
             ariaLabel={prevNavLabel}
             type={isDesktopVariant ? BUTTON_TYPES.secondaryOnDark : BUTTON_TYPES.link}
@@ -151,8 +156,13 @@ const BpkPageIndicator = ({
         {showNav && (
           <NavButton
             currentIndex={currentIndex}
-            onClick={onClick}
-            disabled={currentIndex === totalIndicators - 1}
+            onClick={(e) => {
+              if(!onClick || totalIndicators <= 1) return
+              const nextIndex = isDesktopVariant ? (currentIndex + 1) % totalIndicators
+                : Math.min(currentIndex + 1, totalIndicators - 1)
+              onClick(e, nextIndex, DIRECTIONS.NEXT)
+            }}
+            disabled={!isDesktopVariant && (currentIndex === totalIndicators - 1 || totalIndicators <= 1)}
             ariaLabel={nextNavLabel}
             direction={DIRECTIONS.NEXT}
             type={isDesktopVariant ? BUTTON_TYPES.secondaryOnDark : BUTTON_TYPES.link}
