@@ -16,16 +16,27 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { render } from '@testing-library/react';
 
-import BpkBreadcrumb, {
-  type Props as BpkBreadcrumbProps,
-} from './src/BpkBreadcrumb';
-import BpkBreadcrumbItem, {
-  type Props as BpkBreadcrumbItemProps,
-} from './src/BpkBreadcrumbItem';
+import BpkTextarea from './BpkTextarea';
 
-export type { BpkBreadcrumbProps, BpkBreadcrumbItemProps };
+describe('BpkTextarea', () => {
+  it('should render correctly', () => {
+    const { asFragment } = render(
+      <BpkTextarea id="test" name="test" value="" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-export default BpkBreadcrumb;
-export { BpkBreadcrumbItem };
+  it('should render correctly with "className" attribute', () => {
+    const { asFragment } = render(
+      <BpkTextarea
+        id="test"
+        name="test"
+        value=""
+        className="my-custom-class-1 my-custom-class-2"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+});
