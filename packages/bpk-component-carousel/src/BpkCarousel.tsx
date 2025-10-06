@@ -41,6 +41,7 @@ const BpkCarousel = ({
 }: Props & { children?: ReactNode }) => {
   const [shownImageIndex, updateShownImageIndex] = useState(initialImageIndex);
   const imagesRef = useRef<Array<HTMLElement | null>>([]);
+
   useScrollToInitialImage(initialImageIndex!, imagesRef);
 
   const isSmallScreen = useMediaQuery(BREAKPOINTS.MOBILE)

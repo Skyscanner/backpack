@@ -28,7 +28,6 @@ export const DIRECTIONS = {
 } as const;
 
 type Direction = (typeof DIRECTIONS)[keyof typeof DIRECTIONS];
-type ButtonType = (typeof BUTTON_TYPES)[keyof typeof BUTTON_TYPES];
 
 type Props = {
   ariaLabel: string | undefined;
@@ -40,7 +39,6 @@ type Props = {
     newIndex: number,
     direction: Direction,
   ) => void;
-  type?: ButtonType;
 };
 
 const AlignedLeftArrowIcon = withButtonAlignment(withRtlSupport(LeftArrowIcon));
@@ -54,11 +52,10 @@ const NavButton = ({
   direction,
   disabled = false,
   onClick = () => {},
-  type = BUTTON_TYPES.link,
 }: Props) => (
   <BpkButtonV2
     iconOnly
-    type={type}
+    type={BUTTON_TYPES.link}
     onClick={(e) => {
       if (direction === DIRECTIONS.PREV) {
         onClick(e, currentIndex - 1, direction);

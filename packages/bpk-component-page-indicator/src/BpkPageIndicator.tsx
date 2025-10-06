@@ -18,7 +18,6 @@
 
 import type { CSSProperties, MouseEvent } from 'react';
 
-import { BUTTON_TYPES } from '../../bpk-component-button';
 import { cssModules } from '../../bpk-react-utils';
 
 import NavButton, { DIRECTIONS } from './NavButton';
@@ -52,14 +51,12 @@ export type Props = {
   ) => void;
   className?: string;
   showNav?: boolean;
-  isDesktopVariant?: boolean;
 };
 
 const BpkPageIndicator = ({
   className = undefined,
   currentIndex,
   indicatorLabel,
-  isDesktopVariant = false,
   nextNavLabel,
   onClick = () => {},
   prevNavLabel,
@@ -96,7 +93,7 @@ const BpkPageIndicator = ({
     >
       <div
         className={getClassName(
-          isDesktopVariant? 'bpk-page-indicator__desktop' : 'bpk-page-indicator',
+          'bpk-page-indicator',
           showNav && 'bpk-page-indicator__showNav',
         )}
       >
@@ -107,7 +104,6 @@ const BpkPageIndicator = ({
             disabled={currentIndex === 0}
             direction={DIRECTIONS.PREV}
             ariaLabel={prevNavLabel}
-            type={isDesktopVariant ? BUTTON_TYPES.secondaryOnDark : BUTTON_TYPES.link}
           />
         )}
         <div className={getClassName('bpk-page-indicator__container')}>
@@ -155,7 +151,6 @@ const BpkPageIndicator = ({
             disabled={currentIndex === totalIndicators - 1}
             ariaLabel={nextNavLabel}
             direction={DIRECTIONS.NEXT}
-            type={isDesktopVariant ? BUTTON_TYPES.secondaryOnDark : BUTTON_TYPES.link}
           />
         )}
       </div>
