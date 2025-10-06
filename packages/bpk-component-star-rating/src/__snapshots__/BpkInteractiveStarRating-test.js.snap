@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as it has priority over rating 1`] = `
 <DocumentFragment>

@@ -16,11 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import { Component, Fragment } from 'react';
-import type { Node } from 'react';
+import { Component, Fragment, type ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -28,15 +24,17 @@ import STYLES from './BpkBreadcrumb.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type SchemaMetaDataItem = {
-  url: string,
-  label: string,
-};
+interface SchemaMetaDataItem {
+  url: string;
+  label: string;
+}
 
 export type Props = {
-  children: Node,
-  schemaMetaData: ?(SchemaMetaDataItem[]),
-  label: string,
+  children: ReactNode;
+  schemaMetaData?: SchemaMetaDataItem[];
+  label: string;
+  className?: string;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 /*
@@ -62,11 +60,7 @@ const buildMetaData = (schemaMetaData: SchemaMetaDataItem[]): string => {
 };
 
 class BpkBreadcrumb extends Component<Props> {
-  metaData: ?string;
-
-  static defaultProps = {
-    schemaMetaData: null,
-  };
+  metaData?: string;
 
   constructor(props: Props) {
     super(props);
@@ -86,7 +80,6 @@ class BpkBreadcrumb extends Component<Props> {
             dangerouslySetInnerHTML={{ __html: this.metaData }}
           />
         )}
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <nav aria-label={label} {...rest}>
           <ol className={getClassName('bpk-breadcrumb')}>{children}</ol>
         </nav>
@@ -94,20 +87,5 @@ class BpkBreadcrumb extends Component<Props> {
     );
   }
 }
-
-BpkBreadcrumb.propTypes = {
-  children: PropTypes.node.isRequired,
-  label: PropTypes.string.isRequired,
-  schemaMetaData: PropTypes.arrayOf(
-    PropTypes.shape({
-      url: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-    }),
-  ),
-};
-
-BpkBreadcrumb.defaultProps = {
-  schemaMetaData: null,
-};
 
 export default BpkBreadcrumb;
