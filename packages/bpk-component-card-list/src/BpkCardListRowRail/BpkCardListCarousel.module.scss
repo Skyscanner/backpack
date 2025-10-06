@@ -24,19 +24,19 @@
   &__row,
   &__rail {
     display: flex;
-    padding-block: tokens.bpk-spacing-lg();
-    margin-block: -(tokens.bpk-spacing-lg());
     overflow-x: hidden;
     box-sizing: border-box;
     gap: tokens.bpk-spacing-sm();
+    margin-block: -(tokens.bpk-spacing-lg());
+    padding-block: tokens.bpk-spacing-lg();
     scroll-snap-stop: always;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
 
     @include breakpoints.bpk-breakpoint-mobile {
-      padding-block: tokens.bpk-spacing-base();
-      margin-block: -(tokens.bpk-spacing-base());
       overflow-x: scroll;
+      margin-block: -(tokens.bpk-spacing-base());
+      padding-block: tokens.bpk-spacing-base();
     }
 
     &::-webkit-scrollbar {
