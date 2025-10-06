@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkThemeProvider should correctly flatten the themeAttribute prop 1`] = `
 <DocumentFragment>

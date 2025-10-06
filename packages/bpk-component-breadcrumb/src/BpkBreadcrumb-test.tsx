@@ -16,35 +16,38 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import BpkBreadcrumb from './BpkBreadcrumb';
 
 describe('BpkBreadcrumb', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(
+    render(
       <BpkBreadcrumb label="My breadcrumbs">
         <div>Anything can go in here</div>
       </BpkBreadcrumb>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByRole('navigation', { name: 'My breadcrumbs' })).toBeInTheDocument();
+    expect(screen.getByText('Anything can go in here')).toBeInTheDocument();
+    expect(screen.getByRole('list')).toBeInTheDocument();
   });
 
   it('should render correctly with a custom class name', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkBreadcrumb label="My breadcrumbs" className="my-custom-class">
         <div>Anything can go in here</div>
       </BpkBreadcrumb>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByRole('navigation', { name: 'My breadcrumbs' })).toBeInTheDocument();
+    expect(container.querySelector('.my-custom-class')).toBeInTheDocument();
+    expect(screen.getByText('Anything can go in here')).toBeInTheDocument();
   });
 
   it('should render correctly with arbitrary props', () => {
-    const { asFragment } = render(
+    render(
       <BpkBreadcrumb
         label="My breadcrumbs"
         testid="arbitrary value" // <-- arbitrary prop
@@ -53,7 +56,9 @@ describe('BpkBreadcrumb', () => {
       </BpkBreadcrumb>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByRole('navigation', { name: 'My breadcrumbs' })).toBeInTheDocument();
+    expect(screen.getByRole('navigation')).toHaveAttribute('testid', 'arbitrary value');
+    expect(screen.getByText('Anything can go in here')).toBeInTheDocument();
   });
 
   it('should render correctly with schema meta data', () => {
@@ -67,12 +72,15 @@ describe('BpkBreadcrumb', () => {
         label: 'hotels',
       },
     ];
-    const { asFragment } = render(
+    const { container } = render(
       <BpkBreadcrumb label="My breadcrumbs" schemaMetaData={schemaMetaData}>
         <div>Anything can go in here</div>
       </BpkBreadcrumb>,
     );
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByRole('navigation', { name: 'My breadcrumbs' })).toBeInTheDocument();
+    expect(screen.getByText('Anything can go in here')).toBeInTheDocument();
+    // Check that the schema script tag is present
+    expect(container.querySelector('script[type="application/ld+json"]')).toBeInTheDocument();
   });
 });
