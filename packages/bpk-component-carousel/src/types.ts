@@ -23,7 +23,8 @@ export type OnImageChangedHandler = ((shownImageIndex: number) => void) | null |
 export type Props = {
   images: ReactNode[]
   initialImageIndex?: number;
-  onImageChanged?: OnImageChangedHandler
+  onImageChanged?: OnImageChangedHandler;
+  showNav?: boolean;
   /**
    * This prop is used to let the consumer adjust the spacing between the page indicator and the bottom of the image when variant is VARIANT.overImage
   */

@@ -16,9 +16,11 @@
  * limitations under the License.
  */
 
+import type { ReactNode} from 'react';
 import { useRef, useState } from 'react';
 
-import BpkPageIndicator, { VARIANT } from '../../bpk-component-page-indicator';
+import { BREAKPOINTS, useMediaQuery } from '../../bpk-component-breakpoint';
+import BpkPageIndicator, { DIRECTIONS, VARIANT } from '../../bpk-component-page-indicator';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkCarouselContainer from './BpkCarouselContainer';
@@ -32,14 +34,30 @@ const getClassName = cssModules(STYLES);
 
 const BpkCarousel = ({
   bottom,
+  children,
   images,
   initialImageIndex = 0,
-  onImageChanged = null,
-}: Props) => {
+  onImageChanged = null
+}: Props & { children?: ReactNode }) => {
   const [shownImageIndex, updateShownImageIndex] = useState(initialImageIndex);
   const imagesRef = useRef<Array<HTMLElement | null>>([]);
-
   useScrollToInitialImage(initialImageIndex!, imagesRef);
+
+  const isSmallScreen = useMediaQuery(BREAKPOINTS.MOBILE)
+
+  const scrollToIndex = (index: number, behavior: ScrollBehavior = 'smooth') => {
+    const el = imagesRef.current[index];
+    if (el) el.scrollIntoView({ block: 'nearest', inline: 'start', behavior });
+  };
+
+  const handleIndicatorClick: NonNullable<
+    React.ComponentProps<typeof BpkPageIndicator>['onClick']
+  > = (e, newIndex) => {
+    e?.stopPropagation?.();
+    if (newIndex !== shownImageIndex) {
+      scrollToIndex(newIndex);
+    }
+  };
 
   return (
     <div className={getClassName('bpk-carousel')}>
@@ -50,20 +68,26 @@ const BpkCarousel = ({
         onImageChanged={onImageChanged}
       />
       <div
-        className={getClassName('bpk-carousel__page-indicator-over-image')}
+        className={isSmallScreen ?
+          getClassName('bpk-carousel__page-indicator-over-image') : getClassName('bpk-carousel__page-indicator-desktop')}
         style={bottom ? {
           bottom
         } : undefined}
         data-testid="carousel-page-indicator-container"
       >
-        <BpkPageIndicator
-          currentIndex={shownImageIndex}
-          totalIndicators={images.length}
-          variant={VARIANT.overImage}
-          indicatorLabel="Go to slide"
-          prevNavLabel="Previous slide"
-          nextNavLabel="Next slide"
-        />
+        {children ?? (
+          <BpkPageIndicator
+            currentIndex={shownImageIndex}
+            totalIndicators={images.length}
+            variant={VARIANT.overImage}
+            indicatorLabel="Go to slide"
+            prevNavLabel="Previous slide"
+            nextNavLabel="Next slide"
+            onClick={!isSmallScreen ? handleIndicatorClick : () => {}}
+            showNav={!isSmallScreen}
+            isDesktopVariant={!isSmallScreen}
+          />
+        )}
       </div>
     </div>
   );

@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+@use '../../unstable__bpk-mixins/tokens';
+
 .bpk-carousel-image {
   display: inline-flex;
   width: 100%;
@@ -23,6 +25,7 @@
   height: 100%;
   min-height: 0;
   justify-content: center;
+  align-items: flex-end;
   scroll-snap-align: start;
   scroll-snap-stop: always;
 
