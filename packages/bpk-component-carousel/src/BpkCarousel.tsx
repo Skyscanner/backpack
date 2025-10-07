@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import type { ReactNode} from 'react';
 import { useRef, useState } from 'react';
 
 import { BREAKPOINTS, useMediaQuery } from '../../bpk-component-breakpoint';
@@ -34,17 +33,15 @@ const getClassName = cssModules(STYLES);
 
 const BpkCarousel = ({
   bottom,
-  children,
   images,
   initialImageIndex = 0,
-  onImageChanged = null
-}: Props & { children?: ReactNode }) => {
+  onImageChanged = null,
+}: Props) => {
   const [shownImageIndex, updateShownImageIndex] = useState(initialImageIndex);
   const imagesRef = useRef<Array<HTMLElement | null>>([]);
 
-  useScrollToInitialImage(initialImageIndex!, imagesRef);
-
-  const isSmallScreen = useMediaQuery(BREAKPOINTS.MOBILE)
+  const isDesktop = useMediaQuery(BREAKPOINTS.ABOVE_MOBILE)
+  console.log("isDesktop: ", isDesktop);
 
   const scrollToIndex = (index: number, behavior: ScrollBehavior = 'smooth') => {
     const el = imagesRef.current[index];
@@ -53,12 +50,27 @@ const BpkCarousel = ({
 
   const handleIndicatorClick: NonNullable<
     React.ComponentProps<typeof BpkPageIndicator>['onClick']
-  > = (e, newIndex) => {
+  > = (e, newIndex, direction) => {
     e?.stopPropagation?.();
-    if (newIndex !== shownImageIndex) {
-      scrollToIndex(newIndex);
+
+    const wrap = isDesktop;
+    let target = newIndex;
+    if (direction === DIRECTIONS.NEXT) {
+      target = wrap
+      ? (shownImageIndex + 1) % images.length
+      : Math.min(shownImageIndex + 1, images.length - 1);
+    } else if (direction === DIRECTIONS.PREV) {
+      target = wrap
+      ? (shownImageIndex - 1 + images.length) % images.length
+      : Math.max(shownImageIndex - 1, 0);
     }
+    if (target !== shownImageIndex) {
+      scrollToIndex(target);
+    }
+
   };
+
+  useScrollToInitialImage(initialImageIndex!, imagesRef);
 
   return (
     <div className={getClassName('bpk-carousel')}>
@@ -69,26 +81,25 @@ const BpkCarousel = ({
         onImageChanged={onImageChanged}
       />
       <div
-        className={isSmallScreen ?
-          getClassName('bpk-carousel__page-indicator-over-image') : getClassName('bpk-carousel__page-indicator-desktop')}
+        className={isDesktop ? getClassName('bpk-carousel__page-indicator-desktop')
+           : getClassName('bpk-carousel__page-indicator-over-image')}
         style={bottom ? {
           bottom
         } : undefined}
         data-testid="carousel-page-indicator-container"
       >
-        {children ?? (
-          <BpkPageIndicator
-            currentIndex={shownImageIndex}
-            totalIndicators={images.length}
-            variant={VARIANT.overImage}
-            indicatorLabel="Go to slide"
-            prevNavLabel="Previous slide"
-            nextNavLabel="Next slide"
-            onClick={!isSmallScreen ? handleIndicatorClick : () => {}}
-            showNav={!isSmallScreen}
-            isDesktopVariant={!isSmallScreen}
-          />
-        )}
+        <BpkPageIndicator
+          currentIndex={shownImageIndex}
+          totalIndicators={images.length}
+          variant={VARIANT.overImage}
+          indicatorLabel="Go to slide"
+          prevNavLabel="Previous slide"
+          nextNavLabel="Next slide"
+          showNav={isDesktop}
+          isDesktopVariant={isDesktop}
+          onClick={isDesktop ? handleIndicatorClick : () => {}}
+          loop={isDesktop}
+        />
       </div>
     </div>
   );
