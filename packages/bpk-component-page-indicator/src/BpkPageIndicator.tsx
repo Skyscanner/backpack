@@ -53,14 +53,12 @@ export type Props = {
   ) => void;
   className?: string;
   showNav?: boolean;
-  isDesktopVariant?: boolean;
 };
 
 const BpkPageIndicator = ({
   className = undefined,
   currentIndex,
   indicatorLabel,
-  isDesktopVariant = false,
   nextNavLabel,
   onClick = () => {},
   prevNavLabel,
