@@ -33,6 +33,7 @@ const START_SCROLL_INDEX = Math.floor(DISPLAYED_TOTAL / 2);
 export const VARIANT = {
   default: 'default',
   overImage: 'overImage',
+  overImageSpaced: 'overImageSpaced'
 } as const;
 
 type Variant = (typeof VARIANT)[keyof typeof VARIANT];
@@ -53,7 +54,6 @@ export type Props = {
   className?: string;
   showNav?: boolean;
   isDesktopVariant?: boolean;
-  loop?: boolean;
 };
 
 const BpkPageIndicator = ({
@@ -61,7 +61,6 @@ const BpkPageIndicator = ({
   currentIndex,
   indicatorLabel,
   isDesktopVariant = false,
-  loop = false,
   nextNavLabel,
   onClick = () => {},
   prevNavLabel,
@@ -92,7 +91,7 @@ const BpkPageIndicator = ({
 
   return (
     <div
-      className={isDesktopVariant? getClassName('bpk-page-indicator-desktopVariant__container') : className}
+      className={variant === VARIANT.overImageSpaced ? getClassName('bpk-page-indicator-parent__container') : className}
       aria-hidden={isInteractive ? 'false' : 'true'}
       data-testid="indicator-container"
     >
@@ -106,10 +105,10 @@ const BpkPageIndicator = ({
           <NavButton
             currentIndex={currentIndex}
             onClick={onClick}
-            disabled={!loop ? currentIndex === 0 || totalIndicators <= 1 : totalIndicators <= 1}
+            disabled={variant === VARIANT.overImageSpaced ? totalIndicators <= 1 : currentIndex === 0 || totalIndicators <= 1}
             direction={DIRECTIONS.PREV}
             ariaLabel={prevNavLabel}
-            type={isDesktopVariant ? BUTTON_TYPES.secondaryOnDark : BUTTON_TYPES.link}
+            type={variant === VARIANT.overImageSpaced ? BUTTON_TYPES.secondaryOnDark : BUTTON_TYPES.link}
           />
         )}
         <div className={getClassName('bpk-page-indicator__container')}>
@@ -154,10 +153,10 @@ const BpkPageIndicator = ({
           <NavButton
             currentIndex={currentIndex}
             onClick={onClick}
-            disabled={!loop ? currentIndex === totalIndicators - 1 || totalIndicators <= 1 : totalIndicators <= 1}
+            disabled={variant === VARIANT.overImageSpaced ? totalIndicators <= 1 : currentIndex === totalIndicators - 1 || totalIndicators <= 1 }
             ariaLabel={nextNavLabel}
             direction={DIRECTIONS.NEXT}
-            type={isDesktopVariant ? BUTTON_TYPES.secondaryOnDark : BUTTON_TYPES.link}
+            type={variant === VARIANT.overImageSpaced ? BUTTON_TYPES.secondaryOnDark : BUTTON_TYPES.link}
           />
         )}
       </div>
