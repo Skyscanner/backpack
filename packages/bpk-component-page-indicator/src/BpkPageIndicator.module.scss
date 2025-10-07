@@ -82,7 +82,8 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
       background-color: tokens.$bpk-line-day;
     }
 
-    &--overImage {
+    &--overImage,
+    &--overImageSpaced {
       background-color: tokens.$bpk-line-on-dark-day;
     }
 
@@ -92,7 +93,8 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
         pointer-events: none;
       }
 
-      &-overImage {
+      &-overImage,
+      &-overImageSpaced {
         background-color: tokens.$bpk-text-on-dark-day;
         pointer-events: none;
       }
