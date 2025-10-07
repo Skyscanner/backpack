@@ -26,16 +26,15 @@ $displayed-total: 5;
 $container-width: $dot-size * $displayed-total + $dot-margin *
   $displayed-total * 2;
 
+.bpk-page-indicator-desktopVariant__container {
+  width: 100%;
+}
+
 .bpk-page-indicator {
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
-
-  &__desktop {
-    display: flex;
-    align-items: center;
-  }
 
   &__showNav {
     justify-content: space-between;

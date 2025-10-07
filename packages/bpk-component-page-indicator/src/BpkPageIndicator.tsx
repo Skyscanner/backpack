@@ -53,6 +53,7 @@ export type Props = {
   className?: string;
   showNav?: boolean;
   isDesktopVariant?: boolean;
+  loop?: boolean;
 };
 
 const BpkPageIndicator = ({
@@ -60,12 +61,13 @@ const BpkPageIndicator = ({
   currentIndex,
   indicatorLabel,
   isDesktopVariant = false,
+  loop = false,
   nextNavLabel,
   onClick = () => {},
   prevNavLabel,
   showNav = false,
   totalIndicators,
-  variant = VARIANT.default,
+  variant = VARIANT.default
 }: Props) => {
   /**
    * This validation is used to avoid an a11y issue when onClick isn't available.
@@ -90,26 +92,21 @@ const BpkPageIndicator = ({
 
   return (
     <div
-      className={className}
+      className={getClassName(className)}
       aria-hidden={isInteractive ? 'false' : 'true'}
       data-testid="indicator-container"
     >
       <div
         className={getClassName(
-          isDesktopVariant? 'bpk-page-indicator__desktop' : 'bpk-page-indicator',
+          'bpk-page-indicator',
           showNav && 'bpk-page-indicator__showNav',
         )}
       >
         {showNav && (
           <NavButton
             currentIndex={currentIndex}
-            onClick={ (e) => {
-              if(!onClick || totalIndicators <= 1) return
-              const nextIndex = isDesktopVariant ? (currentIndex - 1 + totalIndicators) % totalIndicators
-                : Math.max(currentIndex - 1, 0)
-              onClick(e, nextIndex, DIRECTIONS.PREV)
-            }}
-            disabled={!isDesktopVariant && (currentIndex === 0 || totalIndicators <= 1)}
+            onClick={onClick}
+            disabled={!loop ? currentIndex === 0 || totalIndicators <= 1 : totalIndicators <= 1}
             direction={DIRECTIONS.PREV}
             ariaLabel={prevNavLabel}
             type={isDesktopVariant ? BUTTON_TYPES.secondaryOnDark : BUTTON_TYPES.link}
@@ -156,13 +153,8 @@ const BpkPageIndicator = ({
         {showNav && (
           <NavButton
             currentIndex={currentIndex}
-            onClick={(e) => {
-              if(!onClick || totalIndicators <= 1) return
-              const nextIndex = isDesktopVariant ? (currentIndex + 1) % totalIndicators
-                : Math.min(currentIndex + 1, totalIndicators - 1)
-              onClick(e, nextIndex, DIRECTIONS.NEXT)
-            }}
-            disabled={!isDesktopVariant && (currentIndex === totalIndicators - 1 || totalIndicators <= 1)}
+            onClick={onClick}
+            disabled={!loop ? currentIndex === totalIndicators - 1 || totalIndicators <= 1 : totalIndicators <= 1}
             ariaLabel={nextNavLabel}
             direction={DIRECTIONS.NEXT}
             type={isDesktopVariant ? BUTTON_TYPES.secondaryOnDark : BUTTON_TYPES.link}
