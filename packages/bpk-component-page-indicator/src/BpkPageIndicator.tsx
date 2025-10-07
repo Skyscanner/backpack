@@ -92,7 +92,7 @@ const BpkPageIndicator = ({
 
   return (
     <div
-      className={getClassName(className)}
+      className={isDesktopVariant? getClassName('bpk-page-indicator-desktopVariant__container') : className}
       aria-hidden={isInteractive ? 'false' : 'true'}
       data-testid="indicator-container"
     >
