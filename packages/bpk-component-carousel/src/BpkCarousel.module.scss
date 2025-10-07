@@ -31,12 +31,4 @@
     justify-content: center;
     overflow: clip;
   }
-
-  &__page-indicator-desktop {
-    position: absolute;
-    right: 0;
-    left: 0;
-    margin: auto tokens.bpk-spacing-base();
-    overflow: clip;
-  }
 }

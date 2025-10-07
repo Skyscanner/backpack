@@ -39,9 +39,7 @@ const BpkCarousel = ({
 }: Props) => {
   const [shownImageIndex, updateShownImageIndex] = useState(initialImageIndex);
   const imagesRef = useRef<Array<HTMLElement | null>>([]);
-
   const isDesktop = useMediaQuery(BREAKPOINTS.ABOVE_MOBILE)
-  console.log("isDesktop: ", isDesktop);
 
   const scrollToIndex = (index: number, behavior: ScrollBehavior = 'smooth') => {
     const el = imagesRef.current[index];
@@ -90,14 +88,12 @@ const BpkCarousel = ({
         <BpkPageIndicator
           currentIndex={shownImageIndex}
           totalIndicators={images.length}
-          variant={VARIANT.overImage}
+          variant={VARIANT.overImageSpaced}
           indicatorLabel="Go to slide"
           prevNavLabel="Previous slide"
           nextNavLabel="Next slide"
           showNav={isDesktop}
-          isDesktopVariant={isDesktop}
           onClick={isDesktop ? handleIndicatorClick : () => {}}
-          loop={isDesktop}
         />
       </div>
     </div>
