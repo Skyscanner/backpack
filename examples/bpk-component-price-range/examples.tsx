@@ -31,6 +31,17 @@ const segments = {
   },
 };
 
+const veryLargeSegments = {
+  low: {
+    price: '35M ₫',
+    percentage: 20,
+  },
+  high: {
+    price: '530000000.4M ₫',
+    percentage: 80,
+  },
+};
+
 const Wrapper = ({
   children,
   isLarge,
@@ -95,6 +106,15 @@ const LargeHighPriceRangeExample = () => (
   </Wrapper>
 );
 
+const VeryLargeHighPriceRangeExample = () => (
+  <Wrapper isLarge>
+    <BpkPriceRange
+      marker={{ price: '70M ₫', percentage: 90 }}
+      segments={veryLargeSegments}
+    />
+  </Wrapper>
+);
+
 const MixedExample = () => (
   <div>
     <SmallerLowPriceRangeExample />
@@ -103,6 +123,7 @@ const MixedExample = () => (
     <LargeLowPriceRangeExample />
     <LargeMediumPriceRangeExample />
     <LargeHighPriceRangeExample />
+    <VeryLargeHighPriceRangeExample />
   </div>
 );
 
@@ -113,5 +134,6 @@ export {
   LargeLowPriceRangeExample,
   LargeHighPriceRangeExample,
   LargeMediumPriceRangeExample,
+  VeryLargeHighPriceRangeExample,
   MixedExample,
 };

@@ -19,6 +19,7 @@
 @use '../../unstable__bpk-mixins/tokens';
 
 $arrow-size: tokens.bpk-spacing-base();
+$arrow-offset: $arrow-size / 2;
 
 .bpk-price-marker {
   position: relative;
@@ -30,6 +31,7 @@ $arrow-size: tokens.bpk-spacing-base();
   border: none;
   border-radius: tokens.$bpk-border-radius-xs;
   background: none;
+  white-space: nowrap;
   box-shadow: tokens.$bpk-box-shadow-sm;
   margin-block-end: tokens.bpk-spacing-sm() * 1.5;
 
@@ -43,7 +45,7 @@ $arrow-size: tokens.bpk-spacing-base();
 
   &__arrow {
     position: absolute;
-    top: 50%;
+    top: calc(100% - #{$arrow-offset});
     z-index: 0;
     width: $arrow-size;
     height: $arrow-size;
