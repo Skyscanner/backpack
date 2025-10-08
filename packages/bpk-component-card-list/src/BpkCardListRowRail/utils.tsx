@@ -99,7 +99,7 @@ export const useIntersectionObserver = (
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    if (!root) return () => { };
+    if (!root) return () => {};
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
