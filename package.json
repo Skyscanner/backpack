@@ -118,7 +118,7 @@
     "@babel/preset-typescript": "^7.27.0",
     "@babel/register": "^7.28.3",
     "@percy/cli": "^1.31.0",
-    "@percy/storybook": "^6.0.3",
+    "@percy/storybook": "^9.1.0",
     "@skyscanner/bpk-foundations-web": "^22.1.0",
     "@skyscanner/bpk-svgs": "^20.8.0",
     "@skyscanner/eslint-config-skyscanner": "^22.5.1",
