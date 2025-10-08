@@ -89,7 +89,7 @@ const BpkPageIndicator = ({
 
   return (
     <div
-      className={variant === VARIANT.overImageSpaced ? getClassName('bpk-page-indicator-parent__container') : className}
+      className={variant === VARIANT.overImageSpaced ? getClassName('bpk-page-indicator-fullWidth__container') : className}
       aria-hidden={isInteractive ? 'false' : 'true'}
       data-testid="indicator-container"
     >
