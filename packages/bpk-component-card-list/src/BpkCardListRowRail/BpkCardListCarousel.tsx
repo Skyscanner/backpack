@@ -112,11 +112,14 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
   const renderList = useMemo(
     () =>
-      visibilityList.map((_, index) =>
-        index >= firstVisibleIndex - dynamicRenderBufferSize &&
-        index <= lastVisibleIndex + dynamicRenderBufferSize
-          ? 1
-          : 0,
+      visibilityList.map((_, index) => {
+        const isIndexVisible = index >= firstVisibleIndex - dynamicRenderBufferSize && index <= lastVisibleIndex + dynamicRenderBufferSize;
+        if (isIndexVisible) {
+          hasBeenVisibleRef.current.add(index);
+        }
+
+        return isIndexVisible ? 1 : 0;
+      }
       ),
     [
       visibilityList,
@@ -136,7 +139,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           setA11yTabIndex(el, i, visibilityList);
           // record the first card's width and height when it becomes visible
           if (el && visibilityList[i] === 0) {
-            hasBeenVisibleRef.current.add(i);
             if (firstCardWidthRef.current == null && el.offsetWidth) {
               firstCardWidthRef.current = el.offsetWidth;
             }
@@ -149,7 +151,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       childrenLength,
       observerVisibility,
       visibilityList,
-      hasBeenVisibleRef,
       firstCardWidthRef,
       firstCardHeightRef,
     ],
@@ -173,7 +174,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         clearTimeout(openSetStateLockTimeoutRef.current);
       }
     };
-  }, [root]);
+  }, [root, isMobile]);
 
   useEffect(() => {
     // update hasBeenVisibleRef to include the range of cards that should be visible
@@ -236,16 +237,21 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         if (renderList[index] !== 1 && !hasBeenVisibleRef.current.has(index)) {
           return (
             <div
-              key={`placeholder-${index.toString()}`}
+              className={getClassName(`bpk-card-list-row-rail__${layout}__card`)}
               ref={cardRefFns[index]}
               style={{
                 ...shownNumberStyle,
                 ...cardDimensionStyle,
                 flexShrink: 0,
                 visibility: 'hidden',
+                contain: 'paint'
               }}
+              key={`carousel-card-${index.toString()}`}
+              role="group"
               aria-hidden="true"
-            />
+            >
+              {card}
+            </div>
           );
         }
 
