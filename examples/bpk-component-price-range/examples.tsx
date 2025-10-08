@@ -37,7 +37,7 @@ const veryLargeSegments = {
     percentage: 20,
   },
   high: {
-    price: '530000000.4M ₫',
+    price: '53.4M ₫',
     percentage: 80,
   },
 };
