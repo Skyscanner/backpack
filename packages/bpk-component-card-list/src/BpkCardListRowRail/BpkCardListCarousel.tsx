@@ -245,6 +245,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
                 contain: 'paint'
               }}
               key={`carousel-card-${index.toString()}`}
+              data-testid="bpk-card-list-carousel--placeholder"
               role="group"
               aria-hidden="true"
             >
