@@ -234,16 +234,14 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         }
 
         // Only render cards that are within the renderList range or have been visible before
-        if (renderList[index] !== 1 && !hasBeenVisibleRef.current.has(index)) {
+        const shouldRenderCard = renderList[index] === 1 || hasBeenVisibleRef.current.has(index);
+        if (!shouldRenderCard) {
           return (
             <div
               className={getClassName(`bpk-card-list-row-rail__${layout}__card`)}
-              ref={cardRefFns[index]}
               style={{
                 ...shownNumberStyle,
                 ...cardDimensionStyle,
-                flexShrink: 0,
-                visibility: 'hidden',
                 contain: 'paint'
               }}
               key={`carousel-card-${index.toString()}`}
