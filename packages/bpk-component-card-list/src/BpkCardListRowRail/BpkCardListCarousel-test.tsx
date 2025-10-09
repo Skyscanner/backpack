@@ -16,14 +16,14 @@
  * limitations under the License.
  */
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import mockCards from '../../testMocks';
 import { LAYOUTS } from '../common-types';
 
 import BpkCardListCarousel from './BpkCardListCarousel';
-import { setA11yTabIndex, useIntersectionObserver } from './utils';
+import { useIntersectionObserver } from './utils';
 
 jest.mock('./utils', () => ({
   setA11yTabIndex: jest.fn(),
@@ -33,6 +33,7 @@ jest.mock('./utils', () => ({
 
 describe('BpkCardListCarousel', () => {
   const mockSetCurrentIndex = jest.fn();
+  const mockUseIntersectionObserver = jest.mocked(useIntersectionObserver)
 
   const defaultProps = {
     children: mockCards(6),
@@ -42,8 +43,24 @@ describe('BpkCardListCarousel', () => {
     setCurrentIndex: mockSetCurrentIndex,
   };
 
-  afterEach(() => {
+  beforeEach(() => {
     jest.clearAllMocks();
+  });
+
+  beforeAll(() => {
+    let setVisibilityFn: any;
+    mockUseIntersectionObserver.mockImplementation((__, setVisibilityList) => {
+      if (setVisibilityFn !== setVisibilityList) {
+        setVisibilityFn = setVisibilityList;
+        setVisibilityList((prevList) => prevList.fill(1, 0, 3));
+      }
+
+      return (element, index) => {
+        if (!element) return;
+
+        element.setAttribute('data-index', index.toString());
+      };
+    });
   });
 
   it('should render the carousel with the correct number of children', () => {
@@ -69,5 +86,32 @@ describe('BpkCardListCarousel', () => {
     const cards = screen.getAllByRole('group');
     expect(cards).toHaveLength(1);
     expect(cards[0]).toHaveTextContent('Card 1');
+  });
+
+  describe('virtualization', () => {
+    it('should have the correct number of placeholder cards', async () => {
+      const numberOfCards = 20; // Given the virtualization algorithm, this should be 5 placeholders
+      render(<BpkCardListCarousel {...defaultProps}>{mockCards(numberOfCards)}</BpkCardListCarousel>);
+
+      act(() => {
+        const cards = screen.getAllByTestId(/card-testId-/);
+        expect(cards).toHaveLength(20);
+
+        // Should have placeholder divs with aria-hidden="true"
+        const placeholders = screen.getAllByTestId(/bpk-card-list-carousel--placeholder/);
+        expect(placeholders.length).toBe(5); // This number is coming f
+      })
+
+    });
+
+    it('should add `contain: paint` CSS property in the placeholders', async () => {
+      const numberOfCards = 20; // Given the virtualization algorithm, this should be 5 placeholders
+      render(<BpkCardListCarousel {...defaultProps}>{mockCards(numberOfCards)}</BpkCardListCarousel>);
+
+      act(() => {
+        const placeholders = screen.getAllByTestId(/bpk-card-list-carousel--placeholder/);
+        expect(placeholders.map((el) => el.style.contain)).toEqual(new Array(placeholders.length).fill('paint'));
+      })
+    });
   });
 });
