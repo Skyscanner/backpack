@@ -21,3 +21,4 @@ yarn.lock
 *.css
 !packages/bpk-stylesheets/base.css
 /packages/unstable__bpk-mixins
+/packages/bpk-stylesheets/normalize.scss

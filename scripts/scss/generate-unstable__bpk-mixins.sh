@@ -52,6 +52,6 @@ set -e
 
 # cp scripts/scss/_index.template.scss packages/unstable__bpk-mixins/_index.scss
 
-cp packages/node_modules/normalize.css/normalize.css packages/bpk-stylesheets/normalize.css
+cp packages/node_modules/normalize.css/normalize.css packages/bpk-stylesheets/normalize.scss
 
 # printf "✅  New mixins generated. Import them from unstable__bpk-mixins using '@use' notation \n"
