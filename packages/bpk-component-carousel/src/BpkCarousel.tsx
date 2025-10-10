@@ -39,7 +39,7 @@ const BpkCarousel = ({
 }: Props) => {
   const [shownImageIndex, updateShownImageIndex] = useState(initialImageIndex);
   const imagesRef = useRef<Array<HTMLElement | null>>([]);
-  const isDesktop = useMediaQuery(BREAKPOINTS.ABOVE_MOBILE)
+  const isDesktop = useMediaQuery(BREAKPOINTS.ABOVE_TABLET);
 
   const scrollToIndex = (index: number, behavior: ScrollBehavior = 'smooth') => {
     const el = imagesRef.current[index];
