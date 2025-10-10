@@ -51,21 +51,17 @@ const BpkCarousel = ({
   > = (e, newIndex, direction) => {
     e?.stopPropagation?.();
 
-    const wrap = isDesktop;
     let target = newIndex;
+
     if (direction === DIRECTIONS.NEXT) {
-      target = wrap
-      ? (shownImageIndex + 1) % images.length
-      : Math.min(shownImageIndex + 1, images.length - 1);
+      target = (shownImageIndex + 1) % images.length;
     } else if (direction === DIRECTIONS.PREV) {
-      target = wrap
-      ? (shownImageIndex - 1 + images.length) % images.length
-      : Math.max(shownImageIndex - 1, 0);
+      target = (shownImageIndex - 1 + images.length) % images.length;
     }
+
     if (target !== shownImageIndex) {
       scrollToIndex(target);
     }
-
   };
 
   useScrollToInitialImage(initialImageIndex!, imagesRef);
