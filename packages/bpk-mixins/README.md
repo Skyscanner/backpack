@@ -17,7 +17,7 @@
 
 With modern tooling we recommend that you use granular import
 ```scss
-@use '@skyscanner/backpack-web/unstable__bpk-mixins/buttons';
+@use '@skyscanner/backpack-web/bpk-mixins/buttons';
 
 .bpk-my-component {
   @include buttons.bpk-button;
