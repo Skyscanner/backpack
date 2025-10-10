@@ -345,7 +345,6 @@ const RowToRailWithoutTitleExample = () => (
       {...commonProps}
       title={undefined}
       description={undefined}
-      chipGroup={undefined}
       cardList={makeList(DestinationCard)}
       layoutDesktop={LAYOUTS.row}
       layoutMobile={LAYOUTS.rail}
