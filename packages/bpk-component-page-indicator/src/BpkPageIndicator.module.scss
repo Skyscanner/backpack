@@ -26,6 +26,10 @@ $displayed-total: 5;
 $container-width: $dot-size * $displayed-total + $dot-margin *
   $displayed-total * 2;
 
+.bpk-page-indicator-fullWidth__container {
+  width: 100%;
+}
+
 .bpk-page-indicator {
   display: flex;
   width: 100%;
@@ -78,7 +82,8 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
       background-color: tokens.$bpk-line-day;
     }
 
-    &--overImage {
+    &--overImage,
+    &--overImageSpaced {
       background-color: tokens.$bpk-line-on-dark-day;
     }
 
@@ -88,7 +93,8 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
         pointer-events: none;
       }
 
-      &-overImage {
+      &-overImage,
+      &-overImageSpaced {
         background-color: tokens.$bpk-text-on-dark-day;
         pointer-events: none;
       }

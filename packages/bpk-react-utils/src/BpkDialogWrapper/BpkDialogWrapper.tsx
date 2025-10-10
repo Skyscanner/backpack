@@ -46,7 +46,7 @@ interface CommonProps {
     exit?: string
   };
   timeout?: { appear?: number, exit?: number };
-};
+}
 
 export type Props = CommonProps & ({ ariaLabelledby: string } | { ariaLabel: string; });
 
@@ -59,11 +59,8 @@ const dialogSupported = typeof HTMLDialogElement === 'function';
 
 const setPageProperties = ({ isDialogOpen }: DialogProps) => {
   document.body.style.overflowY = isDialogOpen ? 'hidden' : 'visible';
-
-  if (!dialogSupported) {
-    document.body.style.position = isDialogOpen ? 'fixed' : 'relative';
-    document.body.style.width = isDialogOpen ? '100%' : 'auto';
-  }
+  document.body.style.position = isDialogOpen ? 'fixed' : 'relative';
+  document.body.style.width = isDialogOpen ? '100%' : 'auto';
 };
 
 export const BpkDialogWrapper = ({
@@ -79,7 +76,6 @@ export const BpkDialogWrapper = ({
   transitionClassNames = {},
   ...ariaProps
 }: Props) => {
-
   const ref = useRef<HTMLDialogElement>(null);
   const [dialogTarget, setDialogTarget] = useState<HTMLElement | null>(null);
 
@@ -129,7 +125,7 @@ export const BpkDialogWrapper = ({
 
     setPageProperties({ isDialogOpen: isOpen });
     return () => {
-      setPageProperties({ isDialogOpen: false })
+      setPageProperties({ isDialogOpen: false });
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [id, isOpen, onClose, closeOnEscPressed, closeOnScrimClick]);
@@ -166,7 +162,10 @@ export const BpkDialogWrapper = ({
           className={getClassName('bpk-dialog-wrapper--container', dialogClassName)}
           onCancel={(e) => {
             e.preventDefault();
-            if (closeOnEscPressed && (!dialogTarget || e.target === dialogTarget)) {
+            if (
+              closeOnEscPressed &&
+              (!dialogTarget || e.target === dialogTarget)
+            ) {
               onClose(e, { source: 'ESCAPE' })
             }
           }}
