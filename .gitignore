@@ -20,5 +20,4 @@ yarn.lock
 # Ignore css assets as these should be built on demand from sass
 *.css
 !packages/bpk-stylesheets/base.css
-/packages/unstable__bpk-mixins
 /packages/bpk-stylesheets/normalize.scss
