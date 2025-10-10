@@ -113,7 +113,7 @@ When creating or modifying SCSS files, follow these rules
 2. Use only what you need
    * Instead of blank import of all mixins, import them on demand. E.g. if you need only colour tokens, add `@use '../bpk-mixins/tokens'` statement only
 3. Use `bpk-mixins` for Backpack components development
-   * If you need to add or modify a mixin, do it in `packages/bpk-mixins`, backpack now has formally deprecated `@import` usage and use Modern SASS API in `packages/bpk-mixins`
+   * If you need to add or modify a mixin, do it in `packages/bpk-mixins`. Backpack now formally deprecates `@import` usage and uses the Modern Sass API in `packages/bpk-mixins`.
 
 #### Adding a new component
 
