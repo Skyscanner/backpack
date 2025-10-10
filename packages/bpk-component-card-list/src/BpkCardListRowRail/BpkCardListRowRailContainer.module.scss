@@ -15,10 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@use '../../../unstable__bpk-mixins/tokens';
+@use '../../../unstable__bpk-mixins/utils';
 
 .bpk-card-list-row-rail {
   display: flex;
+  margin-left: -1 * tokens.bpk-spacing-md();
   flex-direction: column;
+
+  @include utils.bpk-rtl {
+    margin-right: -1 * tokens.bpk-spacing-md();
+    margin-left: 0;
+  }
 
   &__accessory {
     width: 100%;
