@@ -215,14 +215,20 @@ const withCalendarState = <P extends object>(Calendar: ComponentType<P>) => {
       };
     }
 
-    UNSAFE_componentWillReceiveProps(nextProps: CalendarProps<P>) {
+    componentDidUpdate(prevProps: CalendarProps<P>) {
       const rawNextSelectedDate = getRawSelectedDate(
-        nextProps.selectionConfiguration!,
+        this.props.selectionConfiguration!,
       );
 
-      const minDate = startOfDay(nextProps.minDate!);
-      const maxDate = startOfDay(nextProps.maxDate!);
-      if (focusedDateHasChanged(this.props as CalendarProps<P>, nextProps as CalendarProps<P>)) {
+      const minDate = startOfDay(this.props.minDate!);
+      const maxDate = startOfDay(this.props.maxDate!);
+
+      if (
+        focusedDateHasChanged(
+          prevProps as CalendarProps<P>,
+          this.props as CalendarProps<P>,
+        )
+      ) {
         this.setState({
           focusedDate: dateToBoundaries(
             rawNextSelectedDate[0],
