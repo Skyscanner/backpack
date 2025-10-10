@@ -339,6 +339,21 @@ const RowToRailForSnippetsExample = () => (
   </PageContainer>
 );
 
+const RowToRailWithoutTitleExample = () => (
+  <PageContainer>
+    <BpkCardList
+      {...commonProps}
+      title={undefined}
+      description={undefined}
+      chipGroup={undefined}
+      cardList={makeList(DestinationCard)}
+      layoutDesktop={LAYOUTS.row}
+      layoutMobile={LAYOUTS.rail}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+    />
+  </PageContainer>
+);
+
 const MultiComponentsScrollingTestExample = () => (
   <PageContainer>
     <RowToRailExample />
@@ -372,5 +387,6 @@ export {
   RowToStackWithExpandExample,
   GridToStackWithExpandExample,
   RowToRailForSnippetsExample,
+  RowToRailWithoutTitleExample,
   MultiComponentsScrollingTestExample,
 };
