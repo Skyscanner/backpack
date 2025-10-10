@@ -20,13 +20,19 @@ import type { ReactNode } from "react";
 
 export type OnImageChangedHandler = ((shownImageIndex: number) => void) | null | undefined;
 
+export type AccessibilityLabels = {
+  indicatorLabel?: string;
+  prevNavLabel?: string;
+  nextNavLabel?: string;
+};
+
 export type Props = {
   images: ReactNode[]
   initialImageIndex?: number;
   onImageChanged?: OnImageChangedHandler;
-  showNav?: boolean;
   /**
    * This prop is used to let the consumer adjust the spacing between the page indicator and the bottom of the image when variant is VARIANT.overImage
   */
   bottom?: number;
+  accessibilityLabels?: AccessibilityLabels;
 };

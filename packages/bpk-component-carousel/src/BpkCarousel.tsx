@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-import { useRef, useState } from 'react';
+import { type MouseEvent, useRef, useState } from 'react';
+
+import { Direction } from 'react-window';
 
 import { BREAKPOINTS, useMediaQuery } from '../../bpk-component-breakpoint';
 import BpkPageIndicator, { DIRECTIONS, VARIANT } from '../../bpk-component-page-indicator';
@@ -32,11 +34,12 @@ import STYLES from './BpkCarousel.module.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkCarousel = ({
+  accessibilityLabels = {},
   bottom,
   images,
   initialImageIndex = 0,
   onImageChanged = null,
-}: Props) => {
+  }: Props) => {
   const [shownImageIndex, updateShownImageIndex] = useState(initialImageIndex);
   const imagesRef = useRef<Array<HTMLElement | null>>([]);
   const isDesktop = useMediaQuery(BREAKPOINTS.ABOVE_TABLET);
@@ -46,22 +49,16 @@ const BpkCarousel = ({
     if (el) el.scrollIntoView({ block: 'nearest', inline: 'start', behavior });
   };
 
-  const handleIndicatorClick: NonNullable<
-    React.ComponentProps<typeof BpkPageIndicator>['onClick']
-  > = (e, newIndex, direction) => {
+  const handleIndicatorClick = (
+    e: MouseEvent<HTMLButtonElement>,
+    newIndex: number,
+  )  => {
     e?.stopPropagation?.();
-
     let target = newIndex;
+    if (newIndex === -1) target = images.length - 1;
+    else if (newIndex === images.length) target = 0;
 
-    if (direction === DIRECTIONS.NEXT) {
-      target = (shownImageIndex + 1) % images.length;
-    } else if (direction === DIRECTIONS.PREV) {
-      target = (shownImageIndex - 1 + images.length) % images.length;
-    }
-
-    if (target !== shownImageIndex) {
-      scrollToIndex(target);
-    }
+    if (target !== shownImageIndex) scrollToIndex(target);
   };
 
   useScrollToInitialImage(initialImageIndex!, imagesRef);
@@ -85,9 +82,9 @@ const BpkCarousel = ({
           currentIndex={shownImageIndex}
           totalIndicators={images.length}
           variant={VARIANT.overImageSpaced}
-          indicatorLabel="Go to slide"
-          prevNavLabel="Previous slide"
-          nextNavLabel="Next slide"
+          indicatorLabel={accessibilityLabels.indicatorLabel ?? "Go to slide"}
+          prevNavLabel={accessibilityLabels.prevNavLabel ?? "Previous slide"}
+          nextNavLabel={accessibilityLabels.nextNavLabel ?? "Next slide"}
           showNav={isDesktop}
           onClick={isDesktop ? handleIndicatorClick : () => {}}
         />
