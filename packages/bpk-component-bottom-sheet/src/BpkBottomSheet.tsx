@@ -55,9 +55,7 @@ interface CommonProps {
 }
 
 export type Props = CommonProps &
-  ({ ariaLabelledby: string } | { ariaLabel: string }) & {
-    isAboveMobile: boolean;
-  };
+  ({ ariaLabelledby: string } | { ariaLabel: string });
 
 const BpkBottomSheet = ({
   actionText = '',
@@ -73,7 +71,9 @@ const BpkBottomSheet = ({
   title = '',
   wide = false,
   ...ariaProps
-}: Props) => {
+}: Props & {
+  isAboveMobile: boolean;
+}) => {
   const [exiting, setExiting] = useState(false);
 
   const animationTimeout = 240;
