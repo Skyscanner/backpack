@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../../packages/unstable__bpk-mixins/tokens';
-@use '../../../packages/unstable__bpk-mixins/radii';
-@use '../../../packages/unstable__bpk-mixins/utils';
+@use '../../../packages/bpk-mixins/tokens';
+@use '../../../packages/bpk-mixins/radii';
+@use '../../../packages/bpk-mixins/utils';
 
 .bpk-dark-example-wrapper {
   @include radii.bpk-border-radius-sm;

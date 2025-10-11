@@ -18,9 +18,9 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@import 'tokens.scss';
-@import 'typography.scss';
-@import 'utils.scss';
+@use 'tokens.scss';
+@use 'typography.scss';
+@use 'utils.scss';
 
 ////
 /// @group forms
@@ -36,22 +36,22 @@
 @mixin bpk-input {
   display: inline-block;
   width: 100%;
-  height: $bpk-input-height;
-  padding: $bpk-input-padding-y $bpk-input-padding-x;
-  border: $bpk-input-border;
-  border-radius: $bpk-input-border-radius;
-  background: $bpk-input-background;
-  color: $bpk-text-primary-day;
+  height: tokens.$bpk-input-height;
+  padding: tokens.$bpk-input-padding-y tokens.$bpk-input-padding-x;
+  border: tokens.$bpk-input-border;
+  border-radius: tokens.$bpk-input-border-radius;
+  background: tokens.$bpk-input-background;
+  color: tokens.$bpk-text-primary-day;
   appearance: none;
 
   &::placeholder {
-    color: $bpk-text-secondary-day;
+    color: tokens.$bpk-text-secondary-day;
   }
 
   &:disabled {
-    border-color: $bpk-input-disabled-border-color;
-    background: $bpk-input-background;
-    color: $bpk-input-disabled-color;
+    border-color: tokens.$bpk-input-disabled-border-color;
+    background: tokens.$bpk-input-background;
+    color: tokens.$bpk-input-disabled-color;
     cursor: not-allowed;
   }
 
@@ -67,7 +67,7 @@
   &[type='number'],
   &[type='tel'],
   &[type='email'] {
-    @include bpk-rtl {
+    @include utils.bpk-rtl {
       text-align: right;
       direction: ltr;
     }
@@ -89,16 +89,16 @@
 ///   }
 
 @mixin bpk-input--valid {
-  padding-right: bpk-spacing-xl();
-  background: $bpk-input-background
+  padding-right: tokens.bpk-spacing-xl();
+  background: tokens.$bpk-input-background
     url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjMGM4MzhhICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTEyIDIyLjVDNi4yMDEgMjIuNSAxLjUgMTcuNzk5IDEuNSAxMlM2LjIwMSAxLjUgMTIgMS41IDIyLjUgNi4yMDEgMjIuNSAxMiAxNy43OTkgMjIuNSAxMiAyMi41em01LjU2LTEyLjQ0YTEuNSAxLjUgMCAwIDAtMi4xMi0yLjEybC00Ljk0IDQuOTM5LTEuOTQtMS45NGExLjUgMS41IDAgMCAwLTIuMTIgMi4xMjJsMyAzYTEuNSAxLjUgMCAwIDAgMi4xMiAwbDYtNnoiLz48L3N2Zz4=')
-    no-repeat right bpk-spacing-md() center;
-  background-size: $bpk-icon-size-sm $bpk-icon-size-sm;
+    no-repeat right tokens.bpk-spacing-md() center;
+  background-size: tokens.$bpk-icon-size-sm tokens.$bpk-icon-size-sm;
 
-  @include bpk-rtl {
-    padding-right: $bpk-input-padding-x;
-    padding-left: bpk-spacing-xl();
-    background-position: left bpk-spacing-md() center;
+  @include utils.bpk-rtl {
+    padding-right: tokens.$bpk-input-padding-x;
+    padding-left: tokens.bpk-spacing-xl();
+    background-position: left tokens.bpk-spacing-md() center;
   }
 }
 
@@ -113,22 +113,22 @@
 ///   }
 
 @mixin bpk-input--invalid {
-  padding-right: bpk-spacing-xl();
-  background: $bpk-input-background
+  padding-right: tokens.bpk-spacing-xl();
+  background: tokens.$bpk-input-background
     url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjZTcwODY2ICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTEyIDEuNUExMC41IDEwLjUgMCAxIDAgMjIuNSAxMiAxMC41IDEwLjUgMCAwIDAgMTIgMS41ek0xMiAxOGExLjUgMS41IDAgMSAxIDEuNS0xLjVBMS41IDEuNSAwIDAgMSAxMiAxOHptMS41LTZhMS41IDEuNSAwIDAgMS0zIDBWNy41YTEuNSAxLjUgMCAwIDEgMyAweiIvPjwvc3ZnPg==')
-    no-repeat right bpk-spacing-md() center;
-  background-size: $bpk-icon-size-sm $bpk-icon-size-sm;
+    no-repeat right tokens.bpk-spacing-md() center;
+  background-size: tokens.$bpk-icon-size-sm tokens.$bpk-icon-size-sm;
 
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     border-color,
     --bpk-input-invalid-border-color,
-    $bpk-form-validation-color
+    tokens.$bpk-form-validation-color
   );
 
-  @include bpk-rtl {
-    padding-right: $bpk-input-padding-x;
-    padding-left: bpk-spacing-xl();
-    background-position: left bpk-spacing-md() center;
+  @include utils.bpk-rtl {
+    padding-right: tokens.$bpk-input-padding-x;
+    padding-left: tokens.bpk-spacing-xl();
+    background-position: left tokens.bpk-spacing-md() center;
   }
 }
 
@@ -143,15 +143,15 @@
 ///   }
 
 @mixin bpk-input--clearable {
-  padding-right: bpk-spacing-xl();
+  padding-right: tokens.bpk-spacing-xl();
 
-  @include bpk-rtl {
-    padding-right: $bpk-input-padding-x;
-    padding-left: bpk-spacing-xl();
+  @include utils.bpk-rtl {
+    padding-right: tokens.$bpk-input-padding-x;
+    padding-left: tokens.bpk-spacing-xl();
   }
 
   &:focus {
-    background: $bpk-input-background;
+    background: tokens.$bpk-input-background;
   }
 }
 
@@ -183,36 +183,36 @@
 
 @mixin bpk-input__clear-button {
   position: absolute;
-  right: bpk-spacing-md();
-  height: $bpk-input-height;
+  right: tokens.bpk-spacing-md();
+  height: tokens.$bpk-input-height;
 
   // remove any default button styling
   padding: 0;
   border: 0;
   background-color: transparent;
-  color: $bpk-text-secondary-day;
+  color: tokens.$bpk-text-secondary-day;
   cursor: pointer;
   appearance: none; // hidden by default
 
-  @include bpk-rtl {
+  @include utils.bpk-rtl {
     right: inherit;
-    left: bpk-spacing-md();
+    left: tokens.bpk-spacing-md();
   }
 
   @include utils.bpk-hover {
-    color: $bpk-text-primary-day;
+    color: tokens.$bpk-text-primary-day;
   }
 
   &:active {
-    color: $bpk-text-primary-day;
+    color: tokens.$bpk-text-primary-day;
   }
 
   &--large {
-    right: bpk-spacing-base();
-    height: $bpk-input-large-height;
+    right: tokens.bpk-spacing-base();
+    height: tokens.$bpk-input-large-height;
 
-    @include bpk-rtl {
-      left: bpk-spacing-base();
+    @include utils.bpk-rtl {
+      left: tokens.bpk-spacing-base();
     }
   }
 }
@@ -228,21 +228,21 @@
 ///   }
 
 @mixin bpk-input--large {
-  height: $bpk-input-large-height;
-  padding-right: bpk-spacing-base();
-  padding-left: bpk-spacing-base();
-  border-radius: $bpk-input-large-border-radius;
+  height: tokens.$bpk-input-large-height;
+  padding-right: tokens.bpk-spacing-base();
+  padding-left: tokens.bpk-spacing-base();
+  border-radius: tokens.$bpk-input-large-border-radius;
 
   &.bpk-input--valid,
   &.bpk-input--invalid,
   &.bpk-input--clearable {
-    padding-right: bpk-spacing-xxl();
-    background-position: right bpk-spacing-base() center;
+    padding-right: tokens.bpk-spacing-xxl();
+    background-position: right tokens.bpk-spacing-base() center;
 
-    @include bpk-rtl {
-      padding-right: bpk-spacing-base();
-      padding-left: bpk-spacing-xxl();
-      background-position: left bpk-spacing-base() center;
+    @include utils.bpk-rtl {
+      padding-right: tokens.bpk-spacing-base();
+      padding-left: tokens.bpk-spacing-xxl();
+      background-position: left tokens.bpk-spacing-base() center;
     }
   }
 }
@@ -259,12 +259,14 @@
 
 @mixin bpk-input--docked-first-child {
   border-right-width: 0;
-  border-radius: $bpk-input-border-radius 0 0 $bpk-input-border-radius;
+  border-radius: tokens.$bpk-input-border-radius 0 0
+    tokens.$bpk-input-border-radius;
 
-  @include bpk-rtl {
-    border-right-width: $bpk-input-border-width;
+  @include utils.bpk-rtl {
+    border-right-width: tokens.$bpk-input-border-width;
     border-left-width: 0;
-    border-radius: 0 $bpk-input-border-radius $bpk-input-border-radius 0;
+    border-radius: 0 tokens.$bpk-input-border-radius
+      tokens.$bpk-input-border-radius 0;
   }
 
   &:focus {
@@ -283,10 +285,12 @@
 ///   }
 
 @mixin bpk-input--docked-last-child {
-  border-radius: 0 $bpk-input-border-radius $bpk-input-border-radius 0;
+  border-radius: 0 tokens.$bpk-input-border-radius
+    tokens.$bpk-input-border-radius 0;
 
-  @include bpk-rtl {
-    border-radius: $bpk-input-border-radius 0 0 $bpk-input-border-radius;
+  @include utils.bpk-rtl {
+    border-radius: tokens.$bpk-input-border-radius 0 0
+      tokens.$bpk-input-border-radius;
   }
 
   &:focus {
@@ -308,8 +312,8 @@
   border-right-width: 0;
   border-radius: 0;
 
-  @include bpk-rtl {
-    border-right-width: $bpk-input-border-width;
+  @include utils.bpk-rtl {
+    border-right-width: tokens.$bpk-input-border-width;
     border-left-width: 0;
   }
 
@@ -352,39 +356,42 @@
 @mixin bpk-select {
   display: inline-block;
   width: 100%;
-  height: $bpk-input-height;
-  padding: bpk-spacing-md() - (2 * $bpk-one-pixel-rem) bpk-spacing-md();
-  padding-right: bpk-spacing-xl();
-  border: solid $bpk-one-pixel-rem $bpk-line-day;
-  border-radius: $bpk-select-border-radius;
-  background: $bpk-surface-default-day
+  height: tokens.$bpk-input-height;
+  padding: tokens.bpk-spacing-md() - (2 * tokens.$bpk-one-pixel-rem)
+    tokens.bpk-spacing-md();
+  padding-right: tokens.bpk-spacing-xl();
+  border: solid tokens.$bpk-one-pixel-rem tokens.$bpk-line-day;
+  border-radius: tokens.$bpk-select-border-radius;
+  background: tokens.$bpk-surface-default-day
     url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjMTYxNjE2ICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTE2LjUzNyA4LjI1SDcuNDYzYTEuMzU4IDEuMzU4IDAgMCAwLTEuMTEgMi4yNTFsNC4zNTQgNC43N2ExLjUzIDEuNTMgMCAwIDAgMi4xODQuMDRsNC43MTgtNC43N2ExLjM1NyAxLjM1NyAwIDAgMC0xLjA3Mi0yLjI5MXoiLz48L3N2Zz4=')
-    no-repeat right bpk-spacing-md() center;
-  background-size: $bpk-input-height / 2;
-  color: $bpk-text-primary-day;
-  line-height: ($bpk-line-height-base - (2 * $bpk-select-border-width));
+    no-repeat right tokens.bpk-spacing-md() center;
+  background-size: tokens.$bpk-input-height * 0.5;
+  color: tokens.$bpk-text-primary-day;
+  line-height: (
+    tokens.$bpk-line-height-base - (2 * tokens.$bpk-select-border-width)
+  );
   appearance: none;
 
-  @include bpk-rtl {
-    padding-right: bpk-spacing-md();
-    padding-left: bpk-spacing-xl();
-    background-position: left bpk-spacing-md() center;
+  @include utils.bpk-rtl {
+    padding-right: tokens.bpk-spacing-md();
+    padding-left: tokens.bpk-spacing-xl();
+    background-position: left tokens.bpk-spacing-md() center;
   }
 
   @media screen\0 {
     /* stylelint-disable-next-line declaration-no-important */
-    padding: bpk-spacing-md() !important;
+    padding: tokens.bpk-spacing-md() !important;
     /* stylelint-disable-next-line declaration-no-important */
     background-image: none !important;
   }
 
   &:disabled {
-    border-color: $bpk-surface-highlight-day;
-    background: $bpk-surface-default-day
+    border-color: tokens.$bpk-surface-highlight-day;
+    background: tokens.$bpk-surface-default-day
       url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjMDAwMDAwICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTE2LjUzNyA4LjI1SDcuNDYzYTEuMzU4IDEuMzU4IDAgMCAwLTEuMTEgMi4yNTFsNC4zNTQgNC43N2ExLjUzIDEuNTMgMCAwIDAgMi4xODQuMDRsNC43MTgtNC43N2ExLjM1NyAxLjM1NyAwIDAgMC0xLjA3Mi0yLjI5MXoiLz48L3N2Zz4=')
-      no-repeat right bpk-spacing-md() center;
-    background-size: $bpk-input-height / 2;
-    color: $bpk-text-disabled-day;
+      no-repeat right tokens.bpk-spacing-md() center;
+    background-size: tokens.$bpk-input-height * 0.5;
+    color: tokens.$bpk-text-disabled-day;
     cursor: not-allowed;
   }
 }
@@ -400,18 +407,18 @@
 ///   }
 
 @mixin bpk-select--large {
-  height: $bpk-input-large-height;
-  padding: bpk-spacing-md() bpk-spacing-base();
-  padding-right: bpk-spacing-xxl();
-  border-radius: $bpk-select-large-border-radius;
-  background: $bpk-surface-default-day
+  height: tokens.$bpk-input-large-height;
+  padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
+  padding-right: tokens.bpk-spacing-xxl();
+  border-radius: tokens.$bpk-select-large-border-radius;
+  background: tokens.$bpk-surface-default-day
     url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjMTYxNjE2ICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTE2LjUzNyA4LjI1SDcuNDYzYTEuMzU4IDEuMzU4IDAgMCAwLTEuMTEgMi4yNTFsNC4zNTQgNC43N2ExLjUzIDEuNTMgMCAwIDAgMi4xODQuMDRsNC43MTgtNC43N2ExLjM1NyAxLjM1NyAwIDAgMC0xLjA3Mi0yLjI5MXoiLz48L3N2Zz4=')
-    no-repeat right bpk-spacing-base() center;
+    no-repeat right tokens.bpk-spacing-base() center;
 
-  @include bpk-rtl {
-    padding-right: bpk-spacing-base();
-    padding-left: bpk-spacing-xxl();
-    background-position: left bpk-spacing-base() center;
+  @include utils.bpk-rtl {
+    padding-right: tokens.bpk-spacing-base();
+    padding-left: tokens.bpk-spacing-xxl();
+    background-position: left tokens.bpk-spacing-base() center;
   }
 }
 
@@ -427,12 +434,14 @@
 
 @mixin bpk-select--docked-first-child {
   border-right-width: 0;
-  border-radius: $bpk-select-border-radius 0 0 $bpk-select-border-radius;
+  border-radius: tokens.$bpk-select-border-radius 0 0
+    tokens.$bpk-select-border-radius;
 
-  @include bpk-rtl {
-    border-right-width: $bpk-select-border-width;
+  @include utils.bpk-rtl {
+    border-right-width: tokens.$bpk-select-border-width;
     border-left-width: 0;
-    border-radius: 0 $bpk-select-border-radius $bpk-select-border-radius 0;
+    border-radius: 0 tokens.$bpk-select-border-radius
+      tokens.$bpk-select-border-radius 0;
   }
 }
 
@@ -447,10 +456,12 @@
 ///   }
 
 @mixin bpk-select--docked-last-child {
-  border-radius: 0 $bpk-select-border-radius $bpk-select-border-radius 0;
+  border-radius: 0 tokens.$bpk-select-border-radius
+    tokens.$bpk-select-border-radius 0;
 
-  @include bpk-rtl {
-    border-radius: $bpk-select-border-radius 0 0 $bpk-select-border-radius;
+  @include utils.bpk-rtl {
+    border-radius: tokens.$bpk-select-border-radius 0 0
+      tokens.$bpk-select-border-radius;
   }
 }
 
@@ -468,8 +479,8 @@
   border-right-width: 0;
   border-radius: 0;
 
-  @include bpk-rtl {
-    border-right-width: $bpk-select-border-width;
+  @include utils.bpk-rtl {
+    border-right-width: tokens.$bpk-select-border-width;
     border-left-width: 0;
   }
 }
@@ -509,22 +520,22 @@
 ///   }
 
 @mixin bpk-select--invalid {
-  padding-right: bpk-spacing-xl();
-  background: $bpk-surface-default-day
+  padding-right: tokens.bpk-spacing-xl();
+  background: tokens.$bpk-surface-default-day
     url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjMTYxNjE2ICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTE2LjUzNyA4LjI1SDcuNDYzYTEuMzU4IDEuMzU4IDAgMCAwLTEuMTEgMi4yNTFsNC4zNTQgNC43N2ExLjUzIDEuNTMgMCAwIDAgMi4xODQuMDRsNC43MTgtNC43N2ExLjM1NyAxLjM1NyAwIDAgMC0xLjA3Mi0yLjI5MXoiLz48L3N2Zz4=')
-    no-repeat right bpk-spacing-md() center;
-  background-size: $bpk-input-height / 2;
+    no-repeat right tokens.bpk-spacing-md() center;
+  background-size: tokens.$bpk-input-height * 0.5;
 
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     border-color,
     --bpk-select-invalid-border-color,
-    $bpk-form-validation-color
+    tokens.$bpk-form-validation-color
   );
 
-  @include bpk-rtl {
-    padding-right: bpk-spacing-md();
-    padding-left: bpk-spacing-xl();
-    background-position: left bpk-spacing-md() center;
+  @include utils.bpk-rtl {
+    padding-right: tokens.bpk-spacing-md();
+    padding-left: tokens.bpk-spacing-xl();
+    background-position: left tokens.bpk-spacing-md() center;
   }
 }
 
@@ -538,13 +549,13 @@
 @mixin bpk-checkbox {
   position: relative;
   display: inline-block;
-  padding-left: bpk-spacing-lg() + bpk-spacing-sm();
+  padding-left: tokens.bpk-spacing-lg() + tokens.bpk-spacing-sm();
 
-  @include bpk-text;
-  @include bpk-body-default;
+  @include typography.bpk-text;
+  @include typography.bpk-body-default;
 
-  @include bpk-rtl {
-    padding-right: bpk-spacing-lg() + bpk-spacing-sm();
+  @include utils.bpk-rtl {
+    padding-right: tokens.bpk-spacing-lg() + tokens.bpk-spacing-sm();
     padding-left: 0;
   }
 }
@@ -570,8 +581,8 @@
 ///   }
 
 @mixin bpk-checkbox__label--small {
-  @include bpk-text;
-  @include bpk-caption;
+  @include typography.bpk-text;
+  @include typography.bpk-caption;
 }
 
 /// White label checkbox. Modifies the bpk-checkbox mixin.
@@ -585,7 +596,7 @@
 ///   }
 
 @mixin bpk-checkbox--white {
-  color: $bpk-surface-default-day;
+  color: tokens.$bpk-surface-default-day;
 }
 
 /// Disabled form checkbox. Modifies the bpk-checkbox mixin.
@@ -599,7 +610,7 @@
 ///   }
 
 @mixin bpk-checkbox--disabled {
-  color: $bpk-label-disabled-color;
+  color: tokens.$bpk-label-disabled-color;
   cursor: not-allowed;
 }
 
@@ -615,7 +626,7 @@
 
 @mixin bpk-checkbox--invalid {
   input[type='checkbox'] {
-    border: ($bpk-one-pixel-rem * 3) solid $bpk-text-error-day;
+    border: (tokens.$bpk-one-pixel-rem * 3) solid tokens.$bpk-text-error-day;
   }
 }
 
@@ -629,8 +640,8 @@
 @mixin bpk-checkbox__checkmark {
   background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2213%22%20height%3D%229%22%20viewBox%3D%220%200%2013%209%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M2.35352%203.64648L5.5%207.5L11.5%201.5%22%20stroke%3D%22white%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
   background-repeat: no-repeat;
-  background-position: $bpk-one-pixel-rem center;
-  background-size: calc(100% - $bpk-one-pixel-rem * 2.5) auto;
+  background-position: tokens.$bpk-one-pixel-rem center;
+  background-size: calc(100% - tokens.$bpk-one-pixel-rem * 2.5) auto;
 
   &:disabled {
     background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2213%22%20height%3D%229%22%20viewBox%3D%220%200%2013%209%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M2.35352%203.64648L5.5%207.5L11.5%201.5%22%20stroke%3D%22lightgrey%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
@@ -645,22 +656,23 @@
 ///   }
 
 @mixin bpk-checkbox__input {
-  $checkbox-input-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
+  $checkbox-input-size: tokens.bpk-spacing-lg() -
+    (tokens.$bpk-one-pixel-rem * 4);
 
   position: absolute;
-  top: ($bpk-line-height-base - $checkbox-input-size) / 2;
+  top: (tokens.$bpk-line-height-base - $checkbox-input-size) * 0.5;
   left: 0;
   width: $checkbox-input-size;
   height: $checkbox-input-size;
   margin: 0;
   padding: 0;
-  border: ($bpk-one-pixel-rem * 3) solid $bpk-text-secondary-day;
-  border-radius: ($bpk-one-pixel-rem * 4);
+  border: (tokens.$bpk-one-pixel-rem * 3) solid tokens.$bpk-text-secondary-day;
+  border-radius: (tokens.$bpk-one-pixel-rem * 4);
   cursor: pointer;
   vertical-align: text-bottom;
   appearance: none;
 
-  @include bpk-rtl {
+  @include utils.bpk-rtl {
     right: 0;
     left: auto;
   }
@@ -672,19 +684,19 @@
 
   &:checked,
   &:indeterminate {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       background-color,
       --bpk-checkbox-checked-color,
-      $bpk-core-accent-day
+      tokens.$bpk-core-accent-day
     );
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       border-color,
       --bpk-checkbox-checked-color,
-      $bpk-core-accent-day
+      tokens.$bpk-core-accent-day
     );
 
     &:disabled {
-      border-color: $bpk-text-disabled-day;
+      border-color: tokens.$bpk-text-disabled-day;
       background: none;
     }
   }
@@ -694,7 +706,7 @@
   }
 
   &:disabled {
-    border-color: $bpk-text-disabled-day;
+    border-color: tokens.$bpk-text-disabled-day;
   }
 }
 
@@ -704,8 +716,8 @@
 ///
 /// @access private
 @mixin _bpk-radio-border($color) {
-  border: $bpk-border-size-xl solid $color;
-  border-radius: $bpk-border-radius-lg;
+  border: tokens.$bpk-border-size-xl solid $color;
+  border-radius: tokens.$bpk-border-radius-lg;
 }
 
 /// Form radio button. Should be applied to containing label element.
@@ -718,10 +730,10 @@
 @mixin bpk-radio {
   position: relative;
   display: inline-block;
-  padding-left: bpk-spacing-lg() + bpk-spacing-sm();
+  padding-left: tokens.bpk-spacing-lg() + tokens.bpk-spacing-sm();
 
-  @include bpk-rtl {
-    padding-right: bpk-spacing-lg() + bpk-spacing-sm();
+  @include utils.bpk-rtl {
+    padding-right: tokens.bpk-spacing-lg() + tokens.bpk-spacing-sm();
     padding-left: 0;
   }
 }
@@ -737,7 +749,7 @@
 ///   }
 
 @mixin bpk-radio--disabled {
-  color: $bpk-label-disabled-color;
+  color: tokens.$bpk-label-disabled-color;
   cursor: not-allowed;
 }
 
@@ -752,10 +764,10 @@
 ///   }
 
 @mixin bpk-radio--white {
-  color: $bpk-text-primary-inverse-day;
+  color: tokens.$bpk-text-primary-inverse-day;
 
   input[type='radio'] {
-    background: $bpk-text-primary-inverse-day;
+    background: tokens.$bpk-text-primary-inverse-day;
   }
 }
 
@@ -771,7 +783,7 @@
 
 @mixin bpk-radio--invalid {
   input[type='radio'] {
-    @include _bpk-radio-border($bpk-text-error-day);
+    @include _bpk-radio-border(tokens.$bpk-text-error-day);
   }
 }
 
@@ -783,7 +795,7 @@
 ///   }
 
 @mixin bpk-radio__input {
-  $bpk-radio-size: bpk-spacing-lg() - ($bpk-one-pixel-rem * 4);
+  $bpk-radio-size: tokens.bpk-spacing-lg() - (tokens.$bpk-one-pixel-rem * 4);
 
   position: absolute;
   top: 0;
@@ -796,9 +808,9 @@
   vertical-align: text-bottom;
   appearance: none;
 
-  @include _bpk-radio-border($bpk-text-secondary-day);
+  @include _bpk-radio-border(tokens.$bpk-text-secondary-day);
 
-  @include bpk-rtl {
+  @include utils.bpk-rtl {
     right: 0;
     left: auto;
   }
@@ -809,19 +821,19 @@
   }
 
   &:checked {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       border-color,
       --bpk-radio-checked-color,
-      $bpk-core-accent-day
+      tokens.$bpk-core-accent-day
     );
 
     &:disabled {
-      border-color: $bpk-text-disabled-day;
+      border-color: tokens.$bpk-text-disabled-day;
     }
   }
 
   &:disabled {
-    border-color: $bpk-text-disabled-day;
+    border-color: tokens.$bpk-text-disabled-day;
   }
 }
 
@@ -834,10 +846,10 @@
 
 @mixin bpk-label {
   display: block;
-  color: $bpk-text-primary-day;
-  font-size: $bpk-font-size-xs;
-  font-weight: $bpk-font-weight-bold;
-  line-height: $bpk-line-height-xs;
+  color: tokens.$bpk-text-primary-day;
+  font-size: tokens.$bpk-font-size-xs;
+  font-weight: tokens.$bpk-font-weight-bold;
+  line-height: tokens.$bpk-line-height-xs;
 }
 
 /// Invalid form label. Modifies the bpk-label mixin.
@@ -851,10 +863,10 @@
 ///   }
 
 @mixin bpk-label--invalid {
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     color,
     --bpk-form-validation-text-color,
-    $bpk-form-validation-color
+    tokens.$bpk-form-validation-color
   );
 }
 
@@ -869,7 +881,7 @@
 ///   }
 
 @mixin bpk-label--white {
-  color: $bpk-color-white;
+  color: tokens.$bpk-color-white;
 }
 
 /// Disabled form label. Modifies the bpk-label mixin.
@@ -883,7 +895,7 @@
 ///   }
 
 @mixin bpk-label--disabled {
-  color: $bpk-label-disabled-color;
+  color: tokens.$bpk-label-disabled-color;
   cursor: not-allowed;
 }
 
@@ -896,16 +908,16 @@
 
 @mixin bpk-form-validation {
   position: relative;
-  transform: translateY(-#{bpk-spacing-base()});
+  transform: translateY(-#{tokens.bpk-spacing-base()});
   transition:
-    opacity $bpk-duration-sm ease-in-out,
-    transform $bpk-duration-sm ease-in-out;
+    opacity tokens.$bpk-duration-sm ease-in-out,
+    transform tokens.$bpk-duration-sm ease-in-out;
   opacity: 0;
 
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     color,
     --bpk-form-validation-text-color,
-    $bpk-form-validation-color
+    tokens.$bpk-form-validation-color
   );
 }
 
@@ -952,8 +964,8 @@
 ///   }
 
 @mixin bpk-form-validation__container {
-  margin-top: bpk-spacing-md();
-  font-size: $bpk-font-size-xs;
+  margin-top: tokens.bpk-spacing-md();
+  font-size: tokens.$bpk-font-size-xs;
 }
 
 /// Form textarea.
@@ -967,22 +979,22 @@
   display: inline-block;
   width: 100%;
   max-width: 100%;
-  min-height: bpk-spacing-md() * 11;
-  padding: $bpk-input-padding-y $bpk-input-padding-x;
-  border: $bpk-input-border;
-  border-radius: $bpk-input-border-radius;
-  background: $bpk-input-background;
-  color: $bpk-text-primary-day;
+  min-height: tokens.bpk-spacing-md() * 11;
+  padding: tokens.$bpk-input-padding-y tokens.$bpk-input-padding-x;
+  border: tokens.$bpk-input-border;
+  border-radius: tokens.$bpk-input-border-radius;
+  background: tokens.$bpk-input-background;
+  color: tokens.$bpk-text-primary-day;
   appearance: none;
 
   &::placeholder {
-    color: $bpk-text-secondary-day;
+    color: tokens.$bpk-text-secondary-day;
   }
 
   &:disabled {
-    border-color: $bpk-input-disabled-border-color;
-    background: $bpk-input-background;
-    color: $bpk-input-disabled-color;
+    border-color: tokens.$bpk-input-disabled-border-color;
+    background: tokens.$bpk-input-background;
+    color: tokens.$bpk-input-disabled-color;
     cursor: not-allowed;
   }
 
@@ -1002,44 +1014,44 @@
 ///   }
 
 @mixin bpk-textarea--invalid {
-  padding-right: bpk-spacing-xl();
-  background: $bpk-input-background
+  padding-right: tokens.bpk-spacing-xl();
+  background: tokens.$bpk-input-background
     url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjZTcwODY2ICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTEyIDEuNUExMC41IDEwLjUgMCAxIDAgMjIuNSAxMiAxMC41IDEwLjUgMCAwIDAgMTIgMS41ek0xMiAxOGExLjUgMS41IDAgMSAxIDEuNS0xLjVBMS41IDEuNSAwIDAgMSAxMiAxOHptMS41LTZhMS41IDEuNSAwIDAgMS0zIDBWNy41YTEuNSAxLjUgMCAwIDEgMyAweiIvPjwvc3ZnPg==')
-    no-repeat right bpk-spacing-md() center;
+    no-repeat right tokens.bpk-spacing-md() center;
 
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     border-color,
     --bpk-textarea-invalid-border-color,
-    $bpk-form-validation-color
+    tokens.$bpk-form-validation-color
   );
 
-  @include bpk-rtl {
-    padding-right: $bpk-input-padding-x;
-    padding-left: bpk-spacing-xl();
-    background-position: left bpk-spacing-md() center;
+  @include utils.bpk-rtl {
+    padding-right: tokens.$bpk-input-padding-x;
+    padding-left: tokens.bpk-spacing-xl();
+    background-position: left tokens.bpk-spacing-md() center;
 
     &.bpk-textarea--large {
-      padding-right: bpk-spacing-base();
-      padding-left: bpk-spacing-xxl();
-      background-position: right bpk-spacing-base() center;
+      padding-right: tokens.bpk-spacing-base();
+      padding-left: tokens.bpk-spacing-xxl();
+      background-position: right tokens.bpk-spacing-base() center;
     }
   }
 }
 
 @mixin bpk-textarea--large {
-  min-height: 6 * bpk-spacing-base();
-  padding-right: bpk-spacing-base();
-  padding-left: bpk-spacing-base();
-  border-radius: $bpk-input-large-border-radius;
+  min-height: 6 * tokens.bpk-spacing-base();
+  padding-right: tokens.bpk-spacing-base();
+  padding-left: tokens.bpk-spacing-base();
+  border-radius: tokens.$bpk-input-large-border-radius;
 
   &.bpk-textarea--invalid {
-    padding-right: bpk-spacing-xxl();
-    background-position: right bpk-spacing-base() center;
+    padding-right: tokens.bpk-spacing-xxl();
+    background-position: right tokens.bpk-spacing-base() center;
 
-    @include bpk-rtl {
-      padding-right: bpk-spacing-base();
-      padding-left: bpk-spacing-xxl();
-      background-position: left bpk-spacing-base() center;
+    @include utils.bpk-rtl {
+      padding-right: tokens.bpk-spacing-base();
+      padding-left: tokens.bpk-spacing-xxl();
+      background-position: left tokens.bpk-spacing-base() center;
     }
   }
 }
