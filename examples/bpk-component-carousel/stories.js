@@ -18,7 +18,7 @@
 
 import BpkCarousel from '../../packages/bpk-component-carousel'
 
-import DefaultExample from './example'
+import { DefaultExample, WithNavDesktopExample, MixedExample} from './example'
 
 export default {
   title: 'bpk-component-carousel',
@@ -27,8 +27,9 @@ export default {
 
 
 export const Default = DefaultExample;
+export const WithNavDesktop = WithNavDesktopExample;
 
-export const VisualTest = DefaultExample;
+export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
   zoomEnabled: true

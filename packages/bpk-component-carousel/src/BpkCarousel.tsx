@@ -16,9 +16,12 @@
  * limitations under the License.
  */
 
-import { useRef, useState } from 'react';
+import { type MouseEvent, useRef, useState } from 'react';
 
-import BpkPageIndicator, { VARIANT } from '../../bpk-component-page-indicator';
+import { Direction } from 'react-window';
+
+import { BREAKPOINTS, useMediaQuery } from '../../bpk-component-breakpoint';
+import BpkPageIndicator, { DIRECTIONS, VARIANT } from '../../bpk-component-page-indicator';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkCarouselContainer from './BpkCarouselContainer';
@@ -31,13 +34,32 @@ import STYLES from './BpkCarousel.module.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkCarousel = ({
+  accessibilityLabels = {},
   bottom,
   images,
   initialImageIndex = 0,
   onImageChanged = null,
-}: Props) => {
+  }: Props) => {
   const [shownImageIndex, updateShownImageIndex] = useState(initialImageIndex);
   const imagesRef = useRef<Array<HTMLElement | null>>([]);
+  const isDesktop = useMediaQuery(BREAKPOINTS.ABOVE_TABLET);
+
+  const scrollToIndex = (index: number, behavior: ScrollBehavior = 'smooth') => {
+    const el = imagesRef.current[index];
+    if (el) el.scrollIntoView({ block: 'nearest', inline: 'start', behavior });
+  };
+
+  const handleIndicatorClick = (
+    e: MouseEvent<HTMLButtonElement>,
+    newIndex: number,
+  )  => {
+    e?.stopPropagation?.();
+    let target = newIndex;
+    if (newIndex === -1) target = images.length - 1;
+    else if (newIndex === images.length) target = 0;
+
+    if (target !== shownImageIndex) scrollToIndex(target);
+  };
 
   useScrollToInitialImage(initialImageIndex!, imagesRef);
 
@@ -59,10 +81,12 @@ const BpkCarousel = ({
         <BpkPageIndicator
           currentIndex={shownImageIndex}
           totalIndicators={images.length}
-          variant={VARIANT.overImage}
-          indicatorLabel="Go to slide"
-          prevNavLabel="Previous slide"
-          nextNavLabel="Next slide"
+          variant={VARIANT.overImageSpaced}
+          indicatorLabel={accessibilityLabels.indicatorLabel ?? "Go to slide"}
+          prevNavLabel={accessibilityLabels.prevNavLabel ?? "Previous slide"}
+          nextNavLabel={accessibilityLabels.nextNavLabel ?? "Next slide"}
+          showNav={isDesktop}
+          onClick={isDesktop ? handleIndicatorClick : () => {}}
         />
       </div>
     </div>
