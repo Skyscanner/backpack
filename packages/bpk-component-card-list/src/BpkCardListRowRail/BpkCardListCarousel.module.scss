@@ -27,10 +27,7 @@
     overflow-x: hidden;
     box-sizing: border-box;
     gap: tokens.bpk-spacing-sm();
-
-    // Negative margin to ensure box-shadow of content is not cut off
-    margin-block: -(tokens.bpk-spacing-lg());
-    padding-block: tokens.bpk-spacing-lg();
+    margin-inline: -1 * tokens.bpk-spacing-md();
     scroll-snap-stop: always;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
@@ -73,22 +70,11 @@
             ) /
             max(1, (var(--initially-shown-cards, 3) - 0.8))
         );
-
-        &:first-child {
-          padding-left: tokens.bpk-spacing-sm();
-
-          @include utils.bpk-rtl {
-            padding-right: tokens.bpk-spacing-sm();
-            padding-left: tokens.bpk-spacing-md();
-          }
-        }
       }
     }
   }
 
   &__row {
-    margin-inline: -1 * tokens.bpk-spacing-md();
-
     &__card {
       flex-basis: calc(
         (
