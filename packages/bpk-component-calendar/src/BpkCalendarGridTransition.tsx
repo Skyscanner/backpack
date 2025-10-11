@@ -106,14 +106,20 @@ class BpkCalendarGridTransition extends Component<Props, State> {
     this.isTransitionEndSupported = isTransitionEndSupported();
   }
 
-  UNSAFE_componentWillReceiveProps({ month: nextMonth = new Date() }: Props) {
-    const { month = new Date() } = this.props;
-    const hasMonthChanged = !isSameMonth(month, nextMonth);
+  componentDidUpdate(prevProps: Props) {
+    const { month: currentMonth = new Date() } = this.props;
+    const { month: previousMonth = new Date() } = prevProps;
+
+    const hasMonthChanged = !isSameMonth(previousMonth, currentMonth);
 
     if (hasMonthChanged) {
       const reverse = isRTL();
+      const monthDifference = differenceInCalendarMonths(
+        currentMonth,
+        previousMonth,
+      );
 
-      if (differenceInCalendarMonths(nextMonth, month) === 1) {
+      if (monthDifference === 1) {
         // Transition to next month
         this.setState({
           transitionValue: reverse
@@ -124,7 +130,7 @@ class BpkCalendarGridTransition extends Component<Props, State> {
         return;
       }
 
-      if (differenceInCalendarMonths(nextMonth, month) === -1) {
+      if (monthDifference === -1) {
         // Transition to previous month
         this.setState({
           transitionValue: reverse
@@ -138,13 +144,15 @@ class BpkCalendarGridTransition extends Component<Props, State> {
       this.setState({
         // Used in a test so this is valid usage.
         // eslint-disable-next-line react/no-unused-state
-        currentMonth: nextMonth,
-        months: [addMonths(nextMonth, -1), nextMonth, addMonths(nextMonth, 1)],
+        currentMonth,
+        months: [
+          addMonths(currentMonth, -1),
+          currentMonth,
+          addMonths(currentMonth, 1),
+        ],
       });
     }
-  }
 
-  componentDidUpdate() {
     // For IE9, immediately call onMonthTransitionEnd instead of
     // waiting for the animation to complete
     // Thx to Airbnb's react-dates <3
