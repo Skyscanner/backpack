@@ -152,9 +152,7 @@ class BpkCalendarGridTransition extends Component<Props, State> {
         ],
       });
     }
-  }
 
-  componentDidUpdate() {
     // For IE9, immediately call onMonthTransitionEnd instead of
     // waiting for the animation to complete
     // Thx to Airbnb's react-dates <3
