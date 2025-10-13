@@ -1,59 +1,55 @@
-# Transition to modern SASS API
+# Transition to modern Sass API
 
 ## Decision
-Backpack is transforming the way it works with SASS to align with modern SASS API used in
-dart-sass and sass-embedded. Old API remains the default option, but at some point of time
-in the future we will switch the default API to the new one
+Backpack has completed its migration from the legacy Sass API to the **modern Sass API** to align with **Dart Sass** and **sass-embedded**. The old `bpk-mixins` package using `@import` has been deprecated and removed. Backpack now ships with a single, unified modern package:
 
-* Backpack is shipped with two versions of `bpk-mixins` package
-  * `packages/bpk-mixins` that remains the stable option. It uses old SASS API and `@import` syntax
-  * `packages/unstable__bpk-mixins` is a modern SASS API version compatible with `sass` and `sass-embedded` packages, but not with `node-sass`
-* In the future the package using Old API will be deprecated and removed and the one using New API will be promoted to stable
-* For our own components we use `unstable__bpk-mixins`
-  * These mixins must be imported with `@use` at-rule
-  * Mixins partials must be used in a granular way (use only those partials that you need to build a particular component, see "Wrong" and "Correct" examples below)
-* If you need to add or modify a mixin, do it in `packages/bpk-mixins`. Then run `npm run unstable__bpk-mixins` to generate a new modern version of the package
+* The new `bpk-mixins` package (`packages/bpk-mixins`) uses the modern Sass API and `@use` syntax, and is no longer compatible with `node-sass`.
+* Component usage guidelines:
+  * All components should now use the new `bpk-mixins` package.
+  * All mixins must be imported using the `@use` rule.
+  * Mixins should be imported **granularly**—only include the partials you actually need.
+* Adding or modifying a mixin:
+  * To add or modify a mixin, make the changes in `packages/bpk-mixins`.
 
 ## Examples
 
 **Wrong (1)**
-```
+```scss
 // BpkAwesomeComponent.module.scss
-
-@use '../unstable__bpk-mixins' as mixins;
+@use '../bpk-mixins' as mixins;
 
 .bpk-awesome-component {
   margin-right: mixins.bpk-spacing-md();
 }
 ```
+Reason: You should import specific mixin modules, not the entire package.
 
 **Wrong (2)**
-```
+```scss
 // BpkAwesomeComponent.module.scss
-
 @import '../bpk-mixins';
 
 .bpk-awesome-component {
   margin-right: bpk-spacing-md();
 }
 ```
+Reason: `@import` is deprecated and no longer supported.
 
 **Correct**
-```
+```scss
 // BpkAwesomeComponent.module.scss
-
-@use '../unstable__bpk-mixins/tokens';
+@use '../bpk-mixins/tokens';
 
 .bpk-awesome-component {
   margin-right: tokens.bpk-spacing-md();
 }
 ```
 
-## Thinking
+## Purpose of this change
 
-The main reason behind such a change is to deliver modern API to consumers in a non-breaking manner. Using `unstable` prefix
-means that we can't guarantee that this package structure won't change before becoming stable.
+The goal of this update is to:
+* Fully adopt the modern Sass API (`@use` / `@forward`).
+* Improve modularity and build performance.
 
 ## Anything Else
-
 https://sass-lang.com/documentation/at-rules/use/#differences-from-import
