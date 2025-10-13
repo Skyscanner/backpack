@@ -18,10 +18,10 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@use 'tokens.scss';
-@use 'borders.scss';
-@use 'radii.scss';
-@use 'utils.scss';
+@use 'tokens';
+@use 'borders';
+@use 'radii';
+@use 'utils';
 
 ////
 /// @group typography

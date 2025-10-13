@@ -18,10 +18,10 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@use 'tokens.scss';
-@use 'radii.scss';
-@use 'shadows.scss';
-@use 'utils.scss';
+@use 'tokens';
+@use 'radii';
+@use 'shadows';
+@use 'utils';
 
 ////
 /// @group layers

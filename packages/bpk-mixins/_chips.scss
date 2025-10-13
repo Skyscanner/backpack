@@ -18,11 +18,11 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@use 'tokens.scss';
-@use 'borders.scss';
-@use 'margins.scss';
-@use 'shadows.scss';
-@use 'utils.scss';
+@use 'tokens';
+@use 'borders';
+@use 'margins';
+@use 'shadows';
+@use 'utils';
 
 @mixin bpk-chip {
   display: inline-flex;
