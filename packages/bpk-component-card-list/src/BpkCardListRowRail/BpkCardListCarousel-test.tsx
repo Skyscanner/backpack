@@ -97,9 +97,10 @@ describe('BpkCardListCarousel', () => {
         const cards = screen.getAllByTestId(/card-testId-/);
         expect(cards).toHaveLength(20);
 
-        // Should have placeholder divs with aria-hidden="true"
+        // This number is determined by the virtualization algorithm,
+        // which renders 5 placeholder cards for 20 total cards in this configuration.
         const placeholders = screen.getAllByTestId(/bpk-card-list-carousel--placeholder/);
-        expect(placeholders.length).toBe(5); // This number is determined by the virtualization algorithm, which renders 5 placeholder cards for 20 total cards in this configuration.
+        expect(placeholders.length).toBe(5);
       })
 
     });
