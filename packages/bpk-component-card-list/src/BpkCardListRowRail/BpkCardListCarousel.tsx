@@ -174,7 +174,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         clearTimeout(openSetStateLockTimeoutRef.current);
       }
     };
-  }, [root, isMobile]);
+  }, [root]);
 
   useEffect(() => {
     // update hasBeenVisibleRef to include the range of cards that should be visible
