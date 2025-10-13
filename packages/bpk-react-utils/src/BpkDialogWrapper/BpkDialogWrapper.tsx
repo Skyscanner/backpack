@@ -15,8 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { SyntheticEvent, ReactNode } from "react";
-import { useEffect, useRef, useState } from "react";
+import type { SyntheticEvent, ReactNode } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import CSSTransition from 'react-transition-group/CSSTransition';
 
@@ -34,21 +34,26 @@ interface CommonProps {
   id: string | undefined;
   isOpen: boolean;
   onClose: (
-    arg0?: TouchEvent | MouseEvent | KeyboardEvent | SyntheticEvent<HTMLDialogElement, Event>,
+    arg0?:
+      | TouchEvent
+      | MouseEvent
+      | KeyboardEvent
+      | SyntheticEvent<HTMLDialogElement, Event>,
     arg1?: {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
     },
   ) => void | null;
   exiting?: boolean;
   transitionClassNames?: {
-    appear?: string,
-    appearActive?: string,
-    exit?: string
+    appear?: string;
+    appearActive?: string;
+    exit?: string;
   };
-  timeout?: { appear?: number, exit?: number };
-};
+  timeout?: { appear?: number; exit?: number };
+}
 
-export type Props = CommonProps & ({ ariaLabelledby: string } | { ariaLabel: string; });
+export type Props = CommonProps &
+  ({ ariaLabelledby: string } | { ariaLabel: string });
 
 type DialogProps = {
   isDialogOpen: boolean;
@@ -59,11 +64,8 @@ const dialogSupported = typeof HTMLDialogElement === 'function';
 
 const setPageProperties = ({ isDialogOpen }: DialogProps) => {
   document.body.style.overflowY = isDialogOpen ? 'hidden' : 'visible';
-
-  if (!dialogSupported) {
-    document.body.style.position = isDialogOpen ? 'fixed' : 'relative';
-    document.body.style.width = isDialogOpen ? '100%' : 'auto';
-  }
+  document.body.style.position = isDialogOpen ? 'fixed' : 'relative';
+  document.body.style.width = isDialogOpen ? '100%' : 'auto';
 };
 
 export const BpkDialogWrapper = ({
@@ -79,10 +81,10 @@ export const BpkDialogWrapper = ({
   transitionClassNames = {},
   ...ariaProps
 }: Props) => {
-
   const ref = useRef<HTMLDialogElement>(null);
   const [dialogTarget, setDialogTarget] = useState<HTMLElement | null>(null);
 
+  // Handle the opening and closing of the dialog
   useEffect(() => {
     const dialog = document.getElementById(`${id}`);
     const dialogWithPolyfill = document.getElementById(`${id}-polyfill`);
@@ -93,7 +95,7 @@ export const BpkDialogWrapper = ({
           const { target } = event;
 
           if (target === modal) {
-            onClose(event, { source: "DOCUMENT_CLICK" });
+            onClose(event, { source: 'DOCUMENT_CLICK' });
             event.stopPropagation();
           }
         });
@@ -101,10 +103,12 @@ export const BpkDialogWrapper = ({
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (closeOnEscPressed
-        && event.key === 'Escape'
-        && (!dialogWithPolyfill || event.target === dialogWithPolyfill)) {
-        onClose(event, { source: "ESCAPE" });
+      if (
+        closeOnEscPressed &&
+        event.key === 'Escape' &&
+        (!dialogWithPolyfill || event.target === dialogWithPolyfill)
+      ) {
+        onClose(event, { source: 'ESCAPE' });
       }
       event.stopPropagation();
     };
@@ -127,16 +131,26 @@ export const BpkDialogWrapper = ({
       ref.current?.close?.();
     }
 
-    setPageProperties({ isDialogOpen: isOpen });
     return () => {
-      setPageProperties({ isDialogOpen: false })
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [id, isOpen, onClose, closeOnEscPressed, closeOnScrimClick]);
 
+  // Lock the scroll of the page when the dialog is open
+  useEffect(() => {
+    setPageProperties({ isDialogOpen: isOpen });
+    return () => {
+      setPageProperties({ isDialogOpen: false });
+    };
+  }, [isOpen]);
+
   const aria = {
-    ...("ariaLabelledby" in ariaProps ? { "aria-labelledby": ariaProps.ariaLabelledby } : undefined),
-    ...("ariaLabel" in ariaProps ? { "aria-label": ariaProps.ariaLabel } : undefined),
+    ...('ariaLabelledby' in ariaProps
+      ? { 'aria-labelledby': ariaProps.ariaLabelledby }
+      : undefined),
+    ...('ariaLabel' in ariaProps
+      ? { 'aria-label': ariaProps.ariaLabel }
+      : undefined),
   };
 
   return isOpen ? (
@@ -163,11 +177,17 @@ export const BpkDialogWrapper = ({
         <dialog
           {...aria}
           id={id}
-          className={getClassName('bpk-dialog-wrapper--container', dialogClassName)}
+          className={getClassName(
+            'bpk-dialog-wrapper--container',
+            dialogClassName,
+          )}
           onCancel={(e) => {
             e.preventDefault();
-            if (closeOnEscPressed && (!dialogTarget || e.target === dialogTarget)) {
-              onClose(e, { source: 'ESCAPE' })
+            if (
+              closeOnEscPressed &&
+              (!dialogTarget || e.target === dialogTarget)
+            ) {
+              onClose(e, { source: 'ESCAPE' });
             }
           }}
           data-open={isOpen}
@@ -183,4 +203,4 @@ export const BpkDialogWrapper = ({
       </CSSTransition>
     </div>
   ) : null;
-}
+};
