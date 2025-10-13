@@ -43,7 +43,7 @@ describe('BpkCardListCarousel', () => {
     setCurrentIndex: mockSetCurrentIndex,
   };
 
-  beforeEach(() => {
+  afterEach(() => {
     jest.clearAllMocks();
   });
 
