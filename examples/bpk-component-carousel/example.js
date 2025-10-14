@@ -32,18 +32,22 @@ const DefaultExample = () => (
 );
 
 const WithNavDesktopExample = () => (
-  <div style={{width: "800px", margin: "auto"}}>
-    <BpkCarousel
-      images={imagesList}
-      bottom={16}
-      accessibilityLabels={{
-        indicatorLabel: "Go to image",
-        prevNavLabel: "Go to previous image",
-        nextNavLabel: "Go to next image"
-      }}
-    />
-  </div>
-);
+    <div style={{
+      maxWidth: "800px",
+      width: "100%",
+      margin: "auto",
+    }}>
+      <BpkCarousel
+        images={imagesList}
+        bottom={16}
+        accessibilityLabels={{
+          indicatorLabel: "Go to image",
+          prevNavLabel: "Go to previous image",
+          nextNavLabel: "Go to next image"
+        }}
+      />
+    </div>
+  );
 
 const MixedExample = () => (
   <div>
