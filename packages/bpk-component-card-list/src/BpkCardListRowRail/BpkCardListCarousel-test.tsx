@@ -111,7 +111,7 @@ describe('BpkCardListCarousel', () => {
 
       act(() => {
         const placeholders = screen.getAllByTestId(/bpk-card-list-carousel--placeholder/);
-        expect(placeholders.map((el) => el.style.contain)).toEqual(new Array(placeholders.length).fill('paint'));
+        expect(placeholders.every((el => el.style.contain === 'paint'))).toBe(true);
       })
     });
   });
