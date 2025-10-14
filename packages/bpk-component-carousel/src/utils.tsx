@@ -27,13 +27,28 @@ export function useScrollToInitialImage(
 ) {
   useEffect(() => {
     const element = imagesRef.current[initialImageIndex];
-    if (element) {
-      element.scrollIntoView({
-        block: 'nearest',
-        inline: 'start',
-      });
-    }
+    if (!element) return;
+    const parent = element.parentElement;
+    if (!parent) return;
+    parent.scroll({ left: element.offsetLeft, behavior: 'auto' });
   }, [initialImageIndex, imagesRef]);
+}
+
+export function scrollToIndex(
+  index: number,
+  imagesRef?: MutableRefObject<Array<HTMLElement | null>>,
+){
+  if (!imagesRef) return;
+  const el = imagesRef.current[index]
+  if(!el) return;
+  const parent = el.parentElement;
+  if (!parent) return;
+  parent.scroll({
+    left: el.offsetLeft,
+    behavior: "smooth",
+  });
+  
+
 }
 
 export function useIntersectionObserver(

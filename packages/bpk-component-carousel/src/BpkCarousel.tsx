@@ -18,14 +18,12 @@
 
 import { type MouseEvent, useRef, useState } from 'react';
 
-import { Direction } from 'react-window';
-
 import { BREAKPOINTS, useMediaQuery } from '../../bpk-component-breakpoint';
 import BpkPageIndicator, { DIRECTIONS, VARIANT } from '../../bpk-component-page-indicator';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkCarouselContainer from './BpkCarouselContainer';
-import { useScrollToInitialImage } from './utils';
+import { scrollToIndex, useScrollToInitialImage } from './utils';
 
 import type { Props } from './types';
 
@@ -44,11 +42,6 @@ const BpkCarousel = ({
   const imagesRef = useRef<Array<HTMLElement | null>>([]);
   const isDesktop = useMediaQuery(BREAKPOINTS.ABOVE_TABLET);
 
-  const scrollToIndex = (index: number, behavior: ScrollBehavior = 'smooth') => {
-    const el = imagesRef.current[index];
-    if (el) el.scrollIntoView({ block: 'nearest', inline: 'start', behavior });
-  };
-
   const handleIndicatorClick = (
     e: MouseEvent<HTMLButtonElement>,
     newIndex: number,
@@ -58,7 +51,7 @@ const BpkCarousel = ({
     if (newIndex === -1) target = images.length - 1;
     else if (newIndex === images.length) target = 0;
 
-    if (target !== shownImageIndex) scrollToIndex(target);
+    if (target !== shownImageIndex) scrollToIndex(target, imagesRef);
   };
 
   useScrollToInitialImage(initialImageIndex!, imagesRef);

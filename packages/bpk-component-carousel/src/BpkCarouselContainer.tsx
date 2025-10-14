@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import type { MutableRefObject, ReactNode } from 'react';
-import { memo, useState } from 'react';
+import type { MutableRefObject, ReactNode} from 'react';
+import { useRef , memo, useState } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -45,15 +45,16 @@ const BpkScrollContainer = memo(({ images, imagesRef, onImageChanged, onVisible 
   }, onImageChanged);
   const observeCycleScroll = useIntersectionObserver(
     (index) => {
+      const container = root;
       const imageElement = imagesRef.current && imagesRef.current[index];
-      if (imageElement) {
-        imageElement.scrollIntoView({
-          block: 'nearest',
-          inline: 'start',
+      if (container && imageElement) {
+        container.scroll({
+          left: imageElement.offsetLeft,
+          behavior: 'auto',
         });
       }
     },
-    { root, threshold: 1 },
+    { root, threshold: 0.98 },
   );
 
   if (images.length === 1) {
