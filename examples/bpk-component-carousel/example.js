@@ -40,11 +40,6 @@ const WithNavDesktopExample = () => (
       <BpkCarousel
         images={imagesList}
         bottom={16}
-        accessibilityLabels={{
-          indicatorLabel: "Go to image",
-          prevNavLabel: "Go to previous image",
-          nextNavLabel: "Go to next image"
-        }}
       />
     </div>
   );
