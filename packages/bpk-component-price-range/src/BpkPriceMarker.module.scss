@@ -40,6 +40,7 @@ $arrow-size: tokens.bpk-spacing-base();
     padding: tokens.bpk-spacing-sm() / 2 tokens.bpk-spacing-md();
     border-radius: tokens.$bpk-border-radius-xs;
     color: tokens.$bpk-text-primary-inverse-day;
+    white-space: nowrap;
   }
 
   &__arrow {
