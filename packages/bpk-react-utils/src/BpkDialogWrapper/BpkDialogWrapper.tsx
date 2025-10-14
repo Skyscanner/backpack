@@ -64,8 +64,10 @@ const dialogSupported = typeof HTMLDialogElement === 'function';
 
 const setPageProperties = ({ isDialogOpen }: DialogProps) => {
   document.body.style.overflowY = isDialogOpen ? 'hidden' : 'visible';
-  document.body.style.position = isDialogOpen ? 'fixed' : 'relative';
-  document.body.style.width = isDialogOpen ? '100%' : 'auto';
+  if (!dialogSupported) {
+    document.body.style.position = isDialogOpen ? 'fixed' : 'relative';
+    document.body.style.width = isDialogOpen ? '100%' : 'auto';
+  }
 };
 
 export const BpkDialogWrapper = ({
