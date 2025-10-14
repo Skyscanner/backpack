@@ -233,20 +233,27 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           cardDimensionStyle.height = `${firstCardHeightRef.current}px`;
         }
 
+        const commonProps = {
+          className: getClassName(`bpk-card-list-row-rail__${layout}__card`),
+          style: {
+            ...shownNumberStyle,
+            ...cardDimensionStyle,
+          },
+          key: `carousel-card-${index.toString()}`,
+          role: "group",
+        };
+
         // Only render cards that are within the renderList range or have been visible before
         const shouldRenderCard = renderList[index] === 1 || hasBeenVisibleRef.current.has(index);
         if (!shouldRenderCard) {
           return (
             <div
-              className={getClassName(`bpk-card-list-row-rail__${layout}__card`)}
+              {...commonProps}
               style={{
-                ...shownNumberStyle,
-                ...cardDimensionStyle,
+                ...commonProps.style,
                 contain: 'paint'
               }}
-              key={`carousel-card-${index.toString()}`}
               data-testid="bpk-card-list-carousel--placeholder"
-              role="group"
               aria-hidden="true"
             >
               {card}
@@ -256,14 +263,8 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
         return (
           <div
-            className={getClassName(`bpk-card-list-row-rail__${layout}__card`)}
+            {...commonProps}
             ref={cardRefFns[index]}
-            style={{
-              ...shownNumberStyle,
-              ...cardDimensionStyle,
-            }}
-            key={`carousel-card-${index.toString()}`}
-            role="group"
             aria-label={slideLabel(index, childrenLength)}
           >
             {card}
