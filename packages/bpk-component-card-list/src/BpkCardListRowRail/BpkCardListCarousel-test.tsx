@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render, screen, act } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import mockCards from '../../testMocks';
@@ -93,15 +93,13 @@ describe('BpkCardListCarousel', () => {
       const numberOfCards = 20; // Given the virtualization algorithm, this should be 5 placeholders
       render(<BpkCardListCarousel {...defaultProps}>{mockCards(numberOfCards)}</BpkCardListCarousel>);
 
-      act(() => {
-        const cards = screen.getAllByTestId(/card-testId-/);
-        expect(cards).toHaveLength(20);
+      const cards = screen.getAllByTestId(/card-testId-/);
+      expect(cards).toHaveLength(20);
 
-        // This number is determined by the virtualization algorithm,
-        // which renders 5 placeholder cards for 20 total cards in this configuration.
-        const placeholders = screen.getAllByTestId(/bpk-card-list-carousel--placeholder/);
-        expect(placeholders.length).toBe(5);
-      })
+      // This number is determined by the virtualization algorithm,
+      // which renders 5 placeholder cards for 20 total cards in this configuration.
+      const placeholders = screen.getAllByTestId(/bpk-card-list-carousel--placeholder/);
+      expect(placeholders.length).toBe(5);
 
     });
 
@@ -109,10 +107,8 @@ describe('BpkCardListCarousel', () => {
       const numberOfCards = 20; // Given the virtualization algorithm, this should be 5 placeholders
       render(<BpkCardListCarousel {...defaultProps}>{mockCards(numberOfCards)}</BpkCardListCarousel>);
 
-      act(() => {
-        const placeholders = screen.getAllByTestId(/bpk-card-list-carousel--placeholder/);
-        expect(placeholders.every((el => el.style.contain === 'paint'))).toBe(true);
-      })
+      const placeholders = screen.getAllByTestId(/bpk-card-list-carousel--placeholder/);
+      expect(placeholders.every((el => el.style.contain === 'paint'))).toBe(true);
     });
   });
 });
