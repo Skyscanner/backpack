@@ -47,11 +47,11 @@ describe('BpkSkeleton', () => {
 
   it('applies default background style by default', () => {
     const { container } = render(<BpkSkeleton type={SKELETON_TYPES.image} />);
-    expect(container.firstChild).toHaveClass('bpk-skeleton--default');
+    expect(container.firstChild).toHaveClass('bpk-skeleton__default');
   });
 
   it('applies correct class names for onContrast background style', () => {
     const { container } = render(<BpkSkeleton type={SKELETON_TYPES.image} backgroundStyle={BACKGROUND_STYLE.onContrast} />);
-    expect(container.firstChild).toHaveClass('bpk-skeleton--onContrast');
+    expect(container.firstChild).toHaveClass('bpk-skeleton__onContrast');
   });
 });

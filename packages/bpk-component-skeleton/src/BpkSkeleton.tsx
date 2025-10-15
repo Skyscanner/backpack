@@ -35,12 +35,13 @@ const BpkSkeleton = (props: ComponentProps) => {
   const classNames: string = getClassName(
       `bpk-skeleton__${type}`,
       typeof size !== 'object' && `bpk-skeleton__${type}--${size}`,
-      isImageRounded && 'bpk-skeleton__image--rounded'
+      isImageRounded && 'bpk-skeleton__image--rounded',
+      `bpk-skeleton__${backgroundStyle}`
    );
   const styleObj = typeof size === 'object' ? size : undefined;
 
   return (
-    <BpkBaseSkeleton backgroundStyle={backgroundStyle} skeletonStyle={classNames} styleObj={styleObj} />
+    <BpkBaseSkeleton skeletonStyle={classNames} styleObj={styleObj} />
   )
 };
 
