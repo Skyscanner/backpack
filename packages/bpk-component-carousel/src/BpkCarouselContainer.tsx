@@ -60,6 +60,7 @@ const BpkScrollContainer = memo(({ images, imagesRef, onImageChanged, onVisible 
         }
       }
     },
+    // when threshold was 1, the loop behaviour (mobile) was not working as expected. This seems to fix it.
     { root, threshold: 0.98 },
   );
 
