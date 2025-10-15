@@ -36,6 +36,10 @@
   @include utils.bpk-rtl {
     animation-direction: reverse;
   }
+
+  &--onContrast {
+    background-color: tokens.$bpk-surface-highlight-night;
+  }
 }
 
 @keyframes shimmer-animation {

@@ -20,7 +20,7 @@ import { render } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 import BpkSkeleton from './BpkSkeleton';
-import { SKELETON_TYPES, SIZE_TYPES, IMAGE_SKELETON_STYLE } from './common-types';
+import { SKELETON_TYPES, SIZE_TYPES, IMAGE_SKELETON_STYLE, BACKGROUND_STYLE } from './common-types';
 
 describe('BpkSkeleton', () => {
   it('renders correctly with default props', () => {
@@ -43,5 +43,15 @@ describe('BpkSkeleton', () => {
   it('applies correct class names for image style', () => {
     const { container } = render(<BpkSkeleton type={SKELETON_TYPES.image} style={IMAGE_SKELETON_STYLE.rounded} />);
     expect(container.firstChild).toHaveClass('bpk-skeleton__image--rounded');
+  });
+
+  it('applies default background style by default', () => {
+    const { container } = render(<BpkSkeleton type={SKELETON_TYPES.image} />);
+    expect(container.firstChild).toHaveClass('bpk-skeleton--default');
+  });
+
+  it('applies correct class names for onContrast background style', () => {
+    const { container } = render(<BpkSkeleton type={SKELETON_TYPES.image} backgroundStyle={BACKGROUND_STYLE.onContrast} />);
+    expect(container.firstChild).toHaveClass('bpk-skeleton--onContrast');
   });
 });

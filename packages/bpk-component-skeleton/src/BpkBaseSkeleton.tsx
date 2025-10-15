@@ -18,7 +18,7 @@
 
 import { cssModules } from '../../bpk-react-utils';
 
-import type { CUSTOM_SIZE_TYPE } from './common-types';
+import type { CUSTOM_SIZE_TYPE, BackgroundStyle } from './common-types';
 
 import STYLES from './BpkBaseSkeleton.module.scss';
 
@@ -27,13 +27,15 @@ const getClassName = cssModules(STYLES);
 type Props = {
   skeletonStyle: string;
   styleObj?: CUSTOM_SIZE_TYPE;
+  backgroundStyle: BackgroundStyle;
 };
 
 const BpkBaseSkeleton = ({
+  backgroundStyle,
   skeletonStyle,
   styleObj = undefined,
  }: Props) => (
-    <div className={getClassName('bpk-skeleton', skeletonStyle)} style={styleObj}  />
+    <div className={getClassName('bpk-skeleton', skeletonStyle, `bpk-skeleton--${backgroundStyle}`)} style={styleObj}  />
   );
 
 export default BpkBaseSkeleton;

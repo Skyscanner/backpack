@@ -20,18 +20,19 @@ import { render } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 import BpkBaseSkeleton from './BpkBaseSkeleton';
+import { BACKGROUND_STYLE } from './common-types';
 
 describe('BpkBaseSkeleton', () => {
   it('renders with default props', () => {
-    const { container } = render(<BpkBaseSkeleton skeletonStyle="custom-class" />);
+    const { container } = render(<BpkBaseSkeleton skeletonStyle="custom-class" backgroundStyle={BACKGROUND_STYLE.default} />);
     const skeletonElement = container.querySelector('.bpk-skeleton');
     expect(skeletonElement).toBeInTheDocument();
-    expect(skeletonElement).toHaveAttribute('class', 'bpk-skeleton custom-class');
+    expect(skeletonElement).toHaveAttribute('class', 'bpk-skeleton custom-class bpk-skeleton--default');
   });
 
   it('renders with custom styles when provided', () => {
     const customStyles = { width: '100px', height: '50px' };
-    const { container } = render(<BpkBaseSkeleton skeletonStyle="custom-class" styleObj={customStyles} />);
+    const { container } = render(<BpkBaseSkeleton skeletonStyle="custom-class" styleObj={customStyles} backgroundStyle={BACKGROUND_STYLE.default} />);
     const skeletonElement = container.querySelector('.bpk-skeleton');
     expect(skeletonElement).toBeInTheDocument();
     expect(skeletonElement).toHaveStyle('width: 100px; height: 50px;');
