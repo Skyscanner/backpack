@@ -21,36 +21,57 @@ import type { MutableRefObject } from 'react';
 
 import type { OnImageChangedHandler } from './types';
 
+// Scrolls to a specific image in the carousel by index.
+//
+// This function provides programmatic scrolling control for the carousel component.
+// It locates the target image element and scrolls its parent container to bring
+// the image into view.
+//
+// The scrolling behavior uses the native browser scroll API with the 'left' position
+// set to the target element's offsetLeft, ensuring the image aligns properly within
+// the visible viewport of the carousel container.
+function scrollImageToView(
+  index: number,
+  imagesRef: MutableRefObject<Array<HTMLElement | null>>,
+  behavior: ScrollBehavior = 'smooth'
+) {
+  const element = imagesRef.current[index];
+  if (!element) return;
+
+  const parent = element.parentElement;
+  if (!parent) return;
+
+  parent.scroll({
+    left: element.offsetLeft,
+    behavior,
+  });
+}
+
+// Hook that scrolls to the initial image when the carousel mounts.
+//
+// This ensures that when a carousel is rendered with a non-zero initialImageIndex,
+// it immediately displays that image without animation. Uses 'auto' behavior to
+// prevent unwanted animation on initial render.
 export function useScrollToInitialImage(
   initialImageIndex: number,
   imagesRef: MutableRefObject<Array<HTMLElement | null>>,
 ) {
   useEffect(() => {
-    const element = imagesRef.current[initialImageIndex];
-    if (!element) return;
-    const parent = element.parentElement;
-    if (!parent) return;
-    parent.scroll({ left: element.offsetLeft, behavior: 'auto' });
+    scrollImageToView(initialImageIndex, imagesRef, 'auto');
   }, [initialImageIndex, imagesRef]);
 }
 
+// Scrolls to a specific image in the carousel with smooth animation.
+//
+// This function is typically used for user-initiated navigation (clicking indicators,
+// navigation buttons, etc.) where a smooth animated scroll provides better UX.
 export function scrollToIndex(
   index: number,
   imagesRef?: MutableRefObject<Array<HTMLElement | null>>,
-){
+) {
   if (!imagesRef) return;
-  const el = imagesRef.current[index]
-  if(!el) return;
-  const parent = el.parentElement;
-  if (!parent) return;
-  parent.scroll({
-    left: el.offsetLeft,
-    behavior: "smooth",
-  });
-  
-
+  scrollImageToView(index, imagesRef, 'smooth');
 }
-
 export function useIntersectionObserver(
   onIntersecting: (index: number) => void,
   { root, threshold }: IntersectionObserverInit,

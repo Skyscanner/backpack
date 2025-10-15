@@ -46,7 +46,7 @@ const BpkCarousel = ({
     e: MouseEvent<HTMLButtonElement>,
     newIndex: number,
   )  => {
-    e?.stopPropagation?.();
+    e.stopPropagation();
     let target = newIndex;
     if (newIndex === -1) target = images.length - 1;
     else if (newIndex === images.length) target = 0;
