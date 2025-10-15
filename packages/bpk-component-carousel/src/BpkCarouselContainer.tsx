@@ -17,7 +17,7 @@
  */
 
 import type { MutableRefObject, ReactNode} from 'react';
-import { useRef , memo, useState } from 'react';
+import { memo, useState } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -48,10 +48,16 @@ const BpkScrollContainer = memo(({ images, imagesRef, onImageChanged, onVisible 
       const container = root;
       const imageElement = imagesRef.current && imagesRef.current[index];
       if (container && imageElement) {
-        container.scroll({
-          left: imageElement.offsetLeft,
-          behavior: 'auto',
-        });
+        // Some browsers and test environments don't support smooth scrolling,
+        // so we must fall back to simply setting scrollLeft
+        if (container.scroll && typeof container.scroll === 'function') {
+          container.scroll({
+            left: imageElement.offsetLeft,
+            behavior: 'auto',
+          });
+        } else {
+          container.scrollLeft = imageElement.offsetLeft;
+        }
       }
     },
     { root, threshold: 0.98 },

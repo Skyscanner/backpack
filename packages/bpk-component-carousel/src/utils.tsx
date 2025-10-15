@@ -33,7 +33,7 @@ import type { OnImageChangedHandler } from './types';
 function scrollImageToView(
   index: number,
   imagesRef: MutableRefObject<Array<HTMLElement | null>>,
-  behavior: ScrollBehavior = 'smooth'
+  behavior: 'auto' | 'smooth' = 'smooth'
 ) {
   const element = imagesRef.current[index];
   if (!element) return;
@@ -41,10 +41,16 @@ function scrollImageToView(
   const parent = element.parentElement;
   if (!parent) return;
 
-  parent.scroll({
-    left: element.offsetLeft,
-    behavior,
-  });
+  // Some browsers and test environments don't support smooth scrolling,
+  // so we must fall back to simply setting scrollLeft
+  if (parent.scroll && typeof parent.scroll === 'function') {
+    parent.scroll({
+      left: element.offsetLeft,
+      behavior,
+    });
+  } else {
+    parent.scrollLeft = element.offsetLeft;
+  }
 }
 
 // Hook that scrolls to the initial image when the carousel mounts.
