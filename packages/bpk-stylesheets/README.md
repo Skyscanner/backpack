@@ -64,7 +64,8 @@ Fallbacks are needed for non‑Latin scripts so text renders correctly everywher
 - Update Skyscanner Relative files and Noto fallback files in `packages/bpk-stylesheets/font.scss`.
 - Update Larken and Noto fallback files in `packages/bpk-stylesheets/larken.scss`.
 
-### Script mapping (in `font.scss`, `larken.scss`)
+### Script mapping 
+Defined in `font.scss`, `larken.scss`
 - Arabic → `Noto Sans Arabic`
 - Hebrew → `Noto Sans Hebrew`
 - Devanagari → `Noto Serif Devanagari`
