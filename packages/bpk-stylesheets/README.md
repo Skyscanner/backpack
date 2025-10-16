@@ -64,7 +64,7 @@ Fallbacks are needed for non‑Latin scripts so text renders correctly everywher
 - Update Skyscanner Relative files and Noto fallback files in `packages/bpk-stylesheets/font.scss`.
 - Update Larken and Noto fallback files in `packages/bpk-stylesheets/larken.scss`.
 
-### Script mapping (in `font.scss`,`larken.scss`)
+### Script mapping (in `font.scss`, `larken.scss`)
 - Arabic → `Noto Sans Arabic`
 - Hebrew → `Noto Sans Hebrew`
 - Devanagari → `Noto Serif Devanagari`
@@ -77,8 +77,7 @@ Fallbacks are needed for non‑Latin scripts so text renders correctly everywher
 
 ### Update in 5 steps
 1. Prepare files
-   - Verify Skyscanner Relative includes Noto fonts for Arabic / Hebrew / Devanagari / Thai / Simplified Chinese / Traditional Chinese / Japanese / Korean fallbacks, as defined in [$bpk-font-family-base] (https://github.com/Skyscanner/backpack-foundations/blob/74e2e6644abadb9e95842ff5797b1f9669208cbb/packages/bpk-foundations-web/tokens/base.default.scss#L781C1-L781C22)
-.
+   - Verify Skyscanner Relative includes Noto fonts for Arabic / Hebrew / Devanagari / Thai / Simplified Chinese / Traditional Chinese / Japanese / Korean fallbacks, as defined in [$bpk-font-family-base] (https://github.com/Skyscanner/backpack-foundations/blob/74e2e6644abadb9e95842ff5797b1f9669208cbb/packages/bpk-foundations-web/tokens/base.default.scss#L781C1-L781C22).
    - Prefer `woff2`; include `woff`/`ttf` only if needed.
    - Add the files to [Skyscanner/bpk-fonts](https://github.com/Skyscanner/bpk-fonts) using hashed filenames. After merge and deploy, they are served from `https://js.skyscnr.com/sttc/bpk-fonts`.
 2. Edit SCSS
