@@ -104,7 +104,7 @@ Fallbacks are needed for non‑Latin scripts so text renders correctly everywher
 - Browsers pick the closest available weight if an exact one is missing.
 - Provide fallback font files for every weight you plan to use across scripts. For example:
   - Relative (in `font.scss`): 400, 400 italic, 500, 500 italic, 700, 700 italic, 900, 900 italic.
-  - Larken + fallbacks (in `larken.scss`): Larken 300 and 400 today. If editorial styles use more weights, add matching `@font-face` for each Noto fallback as well.
+  - Larken + fallbacks (in `larken.scss`): Larken 300 and 400. If editorial styles use more weights, add matching `@font-face` for each Noto fallback as well.
 - If you introduce a new weight, add the corresponding `@font-face` entries.
 - In verification, check each used weight renders from the expected family in DevTools.
 
