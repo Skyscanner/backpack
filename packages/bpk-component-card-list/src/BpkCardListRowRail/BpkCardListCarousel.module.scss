@@ -26,16 +26,16 @@
     display: flex;
     padding-top: tokens.bpk-spacing-sm();
     padding-bottom: tokens.bpk-spacing-lg();
-    overflow-x: hidden;
+    overflow-x: scroll;
     box-sizing: border-box;
     gap: tokens.bpk-spacing-sm();
+    -webkit-overflow-scrolling: touch;
     scroll-snap-stop: always;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
 
     @include breakpoints.bpk-breakpoint-mobile {
       padding-bottom: tokens.bpk-spacing-base();
-      overflow-x: scroll;
     }
 
     &::-webkit-scrollbar {
@@ -84,9 +84,5 @@
         }
       }
     }
-  }
-
-  &__rail {
-    -webkit-overflow-scrolling: touch;
   }
 }
