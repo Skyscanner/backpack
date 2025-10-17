@@ -31,4 +31,29 @@ const DefaultExample = () => (
   <BpkCarousel images={imagesList} bottom={16} />
 );
 
-export default DefaultExample
+const WithNavDesktopExample = () => (
+    <div style={{
+      maxWidth: "800px",
+      width: "100%",
+      margin: "auto",
+    }}>
+      <BpkCarousel
+        images={imagesList}
+        bottom={16}
+      />
+    </div>
+  );
+
+const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <br />
+    <WithNavDesktopExample />
+  </div>
+);
+
+export{
+  DefaultExample,
+  WithNavDesktopExample,
+  MixedExample
+}
