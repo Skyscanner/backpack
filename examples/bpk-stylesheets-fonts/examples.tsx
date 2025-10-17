@@ -18,6 +18,12 @@
 
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 
+const FONT_TYPES = { LARKEN: 'larken', SKYSCANNER: 'skyscanner' } as const;
+const FONT_STYLES = { NORMAL: 'normal', ITALIC: 'italic' } as const;
+
+type FontType = (typeof FONT_TYPES)[keyof typeof FONT_TYPES];
+type FontStyle = (typeof FONT_STYLES)[keyof typeof FONT_STYLES];
+
 const LANGUAGE_SAMPLES = {
   english: {
     text: 'The quick brown fox jumps over the lazy dog',
@@ -46,26 +52,26 @@ const LANGUAGE_SAMPLES = {
 };
 
 const SKYSCANNER_RELATIVE_WEIGHTS = [
-  { weight: 400, style: 'normal' as const, label: '400' },
-  { weight: 400, style: 'italic' as const, label: '400 Italic' },
-  { weight: 500, style: 'normal' as const, label: '500' },
-  { weight: 500, style: 'italic' as const, label: '500 Italic' },
-  { weight: 700, style: 'normal' as const, label: '700' },
-  { weight: 700, style: 'italic' as const, label: '700 Italic' },
-  { weight: 900, style: 'normal' as const, label: '900' },
-  { weight: 900, style: 'italic' as const, label: '900 Italic' },
+  { weight: 400, style: FONT_STYLES.NORMAL, label: '400' },
+  { weight: 400, style: FONT_STYLES.ITALIC, label: '400 Italic' },
+  { weight: 500, style: FONT_STYLES.NORMAL, label: '500' },
+  { weight: 500, style: FONT_STYLES.ITALIC, label: '500 Italic' },
+  { weight: 700, style: FONT_STYLES.NORMAL, label: '700' },
+  { weight: 700, style: FONT_STYLES.ITALIC, label: '700 Italic' },
+  { weight: 900, style: FONT_STYLES.NORMAL, label: '900' },
+  { weight: 900, style: FONT_STYLES.ITALIC, label: '900 Italic' },
 ];
 
 const LARKEN_WEIGHTS = [
-  { weight: 300, style: 'normal' as const, label: '300' },
-  { weight: 400, style: 'normal' as const, label: '400' },
+  { weight: 300, style: FONT_STYLES.NORMAL, label: '300' },
+  { weight: 400, style: FONT_STYLES.NORMAL, label: '400' },
 ];
 
 interface FontTestRowProps {
   text: string;
   fontWeight: number;
-  fontStyle: 'normal' | 'italic';
-  type: 'larken' | 'skyscanner';
+  fontStyle: FontStyle;
+  type: FontType;
 }
 
 const FontTestRow = ({
@@ -76,7 +82,7 @@ const FontTestRow = ({
 }: FontTestRowProps) => (
   <div>
     <BpkText
-      textStyle={type === 'larken' ? TEXT_STYLES.editorial3 : TEXT_STYLES.bodyDefault}
+      textStyle={type === FONT_TYPES.LARKEN ? TEXT_STYLES.editorial3 : TEXT_STYLES.bodyDefault}
       style={{
         fontWeight,
         fontStyle,
@@ -100,7 +106,7 @@ const SkyscannerRelativeExample = () => (
             text={lang.text}
             fontWeight={config.weight}
             fontStyle={config.style}
-            type="skyscanner"
+            type={FONT_TYPES.SKYSCANNER}
           />
         ))}
       </div>
@@ -121,7 +127,7 @@ const LarkenExample = () => (
             text={lang.text}
             fontWeight={config.weight}
             fontStyle={config.style}
-            type="larken"
+            type={FONT_TYPES.LARKEN}
           />
         ))}
       </div>
