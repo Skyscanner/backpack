@@ -18,7 +18,6 @@
 
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 
-// Sample text in different languages
 const LANGUAGE_SAMPLES = {
   english: {
     text: 'The quick brown fox jumps over the lazy dog',
@@ -39,14 +38,13 @@ const LANGUAGE_SAMPLES = {
     text: 'हिन्दी भारत की राजभाषा है। नमस्ते और नववर्ष की शुभकामनाएं।',
   },
   japanese: {
-    text: '私は日本語を勉強しています。東京、大阪、京都などの美しい都市を旅行したいです。',
+    text: '日本語は日本の公用語です。こんにちは、そして明けましておめでとうございます。',
   },
   korean: {
     text: '한국어는 대한민국의 공용어입니다. 안녕하세요 그리고 새해 복 많이 받으세요.',
   },
 };
 
-// Font weight configurations
 const SKYSCANNER_RELATIVE_WEIGHTS = [
   { weight: 400, style: 'normal' as const, label: '400' },
   { weight: 400, style: 'italic' as const, label: '400 Italic' },
@@ -89,7 +87,6 @@ const FontTestRow = ({
   </div>
 );
 
-// Individual font family examples
 const SkyscannerRelativeExample = () => (
   <>
     {SKYSCANNER_RELATIVE_WEIGHTS.map((config) => (
