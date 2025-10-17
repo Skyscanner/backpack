@@ -18,7 +18,7 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@import 'tokens.scss';
+@use 'tokens';
 
 ////
 /// @group scroll-indicator
@@ -37,7 +37,7 @@
   content: ' ';
   display: block;
   z-index: 1;
-  width: bpk-spacing-xl();
+  width: tokens.bpk-spacing-xl();
   background-image: linear-gradient(
     $gradient-direction,
     rgba($gradient-color, 1),

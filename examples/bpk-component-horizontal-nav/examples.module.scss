@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable__bpk-mixins/tokens';
-@use '../../packages/unstable__bpk-mixins/scroll-indicators';
+@use '../../packages/bpk-mixins/tokens';
+@use '../../packages/bpk-mixins/scroll-indicators';
 
 $custom-color: tokens.$bpk-status-success-fill-day;
 
