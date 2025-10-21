@@ -96,11 +96,13 @@ Defined in `font.scss`, `larken.scss`
    - Keep `font-family` names and weights the same unless design says otherwise.
    - If the CDN path changes, update `$base-url` at the top of the file.
 3. Build
-  ```bash
-  npm run build:stylesheets
-  ```
+   
+   ```bash
+   npm run build:stylesheets
+   ```
 4) Verify
   - Import bundles:
+    
     ```js
     import '@skyscanner/backpack-web/bpk-stylesheets/font';
     import '@skyscanner/backpack-web/bpk-stylesheets/larken';
@@ -113,7 +115,7 @@ Defined in `font.scss`, `larken.scss`
     - Computed: Confirm actual `font-family` and `font-weight`.
     - Network: Ensure fonts load from the CDN and the `woff2` format is used.
   - Visual regression:
-    - Use [bpk-stylesheets-fonts](https://backpack.github.io/storybook/?path=/story/bpk-stylesheets-fonts--skyscanner-relative-font)storybook to capture before-and-after snapshots for visual verification.
+    - Use [bpk-stylesheets-fonts](https://backpack.github.io/storybook/?path=/story/bpk-stylesheets-fonts--skyscanner-relative-font) storybook to capture before-and-after snapshots for visual verification.
   - Performance tips:
     - Use `font-display: swap` for better perceived performance.
     - Add `preconnect` or `preload` to the CDN when appropriate to reduce FOUT/FOIT.
