@@ -78,14 +78,11 @@ class AnimateAndFade extends Component<Props, State> {
     }
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps: Props) {
-    if (nextProps.show === this.props.show) {
-      return;
+  componentDidUpdate(prevProps: Props) {
+    if (this.props.show !== prevProps.show) {
+      this.toggle();
     }
-    this.toggle();
-  }
 
-  componentDidUpdate() {
     if (this.state.initiateShow) {
       // React doesn't like us calling setState from componentDidUpdate as it can lead to an infinite re-renders.
       // I think it is ok here, however, as this will only happen conditionally (ie once)
