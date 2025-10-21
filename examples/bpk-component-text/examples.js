@@ -16,8 +16,13 @@
  * limitations under the License.
  */
 
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { withDefaultProps } from '../../packages/bpk-react-utils';
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
+import { withDefaultProps , cssModules } from '../../packages/bpk-react-utils';
+
+
+import STYLES from './examples.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 const Paragraph = withDefaultProps(BpkText, {
   textStyle: TEXT_STYLES.bodyLongform,
@@ -161,21 +166,28 @@ const LarkenStylesExample = () => (
   </div>
 );
 
-const LarkenFallbackStylesExample = () => (
+const ColorPropExample = () => (
   <div>
-    <BpkText textStyle={TEXT_STYLES.editorial2} tagName="p" id="korean">
-      다람쥐 헌 쳇바퀴에 타고파
+    <BpkText tagName="p" color={TEXT_COLORS.textSecondary}>
+      Text with color prop textSecondary
     </BpkText>
-    <BpkText textStyle={TEXT_STYLES.editorial2} tagName="p" id="thai">
-      นายสังฆภัณฑ์ เฮงพิทักษ์ฝั่ง ผู้เฒ่าซึ่งมีอาชีพเป็นฅนขายฃวด
-      ถูกตำรวจปฏิบัติการจับฟ้องศาล ฐานลักนาฬิกาคุณหญิงฉัตรชฎา ฌานสมาธิ
+
+    <div className={getClassName('bpk-stories-text_success')}>
+      <BpkText tagName="p" color={TEXT_COLORS.textSecondary}>
+          Text with color prop textSecondary with parent className override
+      </BpkText>
+    </div>
+
+    <div className={getClassName('bpk-stories-text_success')}>
+       <BpkText tagName="p">
+        Text without color prop with parent color override
+      </BpkText>
+    </div>
+
+    <BpkText tagName="p" className={getClassName('bpk-stories-text_success')} color={TEXT_COLORS.textSecondary} >
+      Text with color prop textSecondary with self className override
     </BpkText>
-    <BpkText textStyle={TEXT_STYLES.editorial2} tagName="p" id="cyrillic">
-      Съешь же ещё этих мягких французских булок да выпей чаю
-    </BpkText>
-    <BpkText textStyle={TEXT_STYLES.editorial2} tagName="p" id="hebrew">
-      עטלף אבק נס דרך מזגן שהתפוצץ כי חם
-    </BpkText>
+
   </div>
 );
 
@@ -186,7 +198,7 @@ const MixedExample = () => (
     <BodyStylesExample />
     <LabelStylesExample />
     <LarkenStylesExample />
-    <LarkenFallbackStylesExample />
+    <ColorPropExample />
   </div>
 );
 
@@ -200,6 +212,6 @@ export {
   BodyStylesExample,
   LabelStylesExample,
   LarkenStylesExample,
-  LarkenFallbackStylesExample,
+  ColorPropExample,
   MixedExample,
 };

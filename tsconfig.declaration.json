@@ -24,7 +24,11 @@
   },
   "include": [
     "packages",
-    "@types",
+    "@types"
   ],
-  "exclude": ["**/**/*test*", "**/**/*stories*"]
+  "exclude": [
+    "**/**/*test*",
+    "**/**/*stories*",
+    "**/**/*.figma.tsx"
+  ]
 }

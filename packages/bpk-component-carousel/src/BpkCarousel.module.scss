@@ -21,6 +21,10 @@
 .bpk-carousel {
   position: relative;
 
+  // Fix for firefox where the images were not displayed because the parent had no size
+  width: 100%;
+  height: 100%;
+
   &__page-indicator-over-image {
     position: absolute;
     right: 0;

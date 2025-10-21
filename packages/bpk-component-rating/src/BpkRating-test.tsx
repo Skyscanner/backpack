@@ -21,15 +21,10 @@ import { render, screen } from '@testing-library/react';
 import BpkRating, { RATING_SIZES, RATING_SCALES } from '../index';
 
 describe('BpkRating', () => {
-  const defaultProps = {
-    ratingScale: RATING_SCALES.zeroToFive,
-    size: RATING_SIZES.base,
-  };
 
   it('should render correctly', () => {
     render(
       <BpkRating
-        {...defaultProps}
         ariaLabel="4.6 Excellent 672 reviews"
         value={4.6}
         title="Excellent"
@@ -44,7 +39,6 @@ describe('BpkRating', () => {
   it('should render large size correctly', () => {
      render(
       <BpkRating
-        {...defaultProps}
         ariaLabel="4.6 Excellent 2,420 reviews"
         value={4.6}
         title="Excellent"
@@ -60,7 +54,6 @@ describe('BpkRating', () => {
   it('should render showScale rating correctly', () => {
     render(
       <BpkRating
-        {...defaultProps}
         ariaLabel="6.7 Average might recommend"
         title="Average"
         subtitle="Might recommend"
@@ -76,7 +69,6 @@ describe('BpkRating', () => {
   it('should not show scale with showScale=false correctly', () => {
     render(
       <BpkRating
-        {...defaultProps}
         ariaLabel="4.9 Awesome It is a fantanstic place"
         title="Awesome"
         subtitle="It is a fantanstic place"
@@ -91,7 +83,6 @@ describe('BpkRating', () => {
   it('should render title only correctly', () => {
     render(
       <BpkRating
-        {...defaultProps}
         ariaLabel="6.7 Average might recommend"
         title="Average"
         value={6.7}
@@ -106,7 +97,6 @@ describe('BpkRating', () => {
   it('should render large title only correctly', () => {
     render(
       <BpkRating
-        {...defaultProps}
         ariaLabel="6.7 Average might recommend"
         title="Average"
         value={6.7}
@@ -121,7 +111,6 @@ describe('BpkRating', () => {
   it('should render zero to ten scale rating correctly', () => {
     render(
       <BpkRating
-        {...defaultProps}
         ariaLabel="8.2 Excellent 2,420 reviews"
         value={8.2}
         title="Excellent"
@@ -139,7 +128,6 @@ describe('BpkRating', () => {
   it('should correctly handling values lower than 0', () => {
     render(
       <BpkRating
-        {...defaultProps}
         ariaLabel="-1.3 Low bad option"
         title="Low"
         subtitle="Bad option"
@@ -157,7 +145,6 @@ describe('BpkRating', () => {
   it('should correctly handling values higher than 5 when rating scale is zero to five', () => {
     render(
       <BpkRating
-        {...defaultProps}
         ariaLabel="10 Super, smashing, great"
         title="Smashing"
         subtitle="Doubleplusgood"
@@ -175,7 +162,6 @@ describe('BpkRating', () => {
   it('should correctly handling values higher than 10 when rating scale is zero to ten', () => {
     render(
       <BpkRating
-        {...defaultProps}
         ariaLabel="15 Amazing brilliant"
         title="Amazing"
         subtitle="Brilliant"
@@ -194,7 +180,6 @@ describe('BpkRating', () => {
   it('should correctly when value is string type', () => {
     render(
       <BpkRating
-        {...defaultProps}
         ariaLabel="4,6 Wonderful Wise choice"
         title="Wonderful"
         subtitle="Wise choice"

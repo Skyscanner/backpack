@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Content Card widget renders horizontal card correctly 1`] = `
+<DocumentFragment>
+  <a
+    class="bpk-content-card--link bpk-content-card--horizontal"
+    href="http://skyscanner.net/card-1-cta-link.html"
+    rel="noreferrer"
+    target="_blank"
+  >
+    <div
+      class="bpk-content-card--image-container"
+    >
+      <img
+        alt="People surfing in the ocean"
+        class="bpk-content-card--image"
+        loading="lazy"
+        src="http://skyscanner.net/card-1-image-link.jpg"
+      />
+    </div>
+    <div>
+      <h3
+        class="bpk-text bpk-text--body-default bpk-content-card--headline"
+      >
+        Card 1 headline
+      </h3>
+      <p
+        class="bpk-text bpk-text--body-default bpk-content-card--description"
+      >
+        Card 1 description
+      </p>
+    </div>
+  </a>
+</DocumentFragment>
+`;
+
+exports[`Content Card widget renders vertical card correctly 1`] = `
+<DocumentFragment>
+  <a
+    class="bpk-content-card--link bpk-content-card--vertical"
+    href="http://skyscanner.net/card-1-cta-link.html"
+    rel="noreferrer"
+    target="_blank"
+  >
+    <div
+      class="bpk-content-card--image-container"
+    >
+      <img
+        alt="People surfing in the ocean"
+        class="bpk-content-card--image"
+        loading="lazy"
+        src="http://skyscanner.net/card-1-image-link.jpg"
+      />
+    </div>
+    <div>
+      <h3
+        class="bpk-text bpk-text--body-default bpk-content-card--headline"
+      >
+        Card 1 headline
+      </h3>
+      <p
+        class="bpk-text bpk-text--body-default bpk-content-card--description"
+      >
+        Card 1 description
+      </p>
+    </div>
+  </a>
+</DocumentFragment>
+`;

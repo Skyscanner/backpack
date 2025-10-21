@@ -17,11 +17,16 @@
  */
 
 @use '../../unstable__bpk-mixins/tokens';
+@use '../../unstable__bpk-mixins/breakpoints';
 
 .bpk-card-list {
   display: flex;
   flex-direction: column;
   gap: tokens.bpk-spacing-lg();
+
+  @include breakpoints.bpk-breakpoint-mobile {
+    gap: tokens.bpk-spacing-base();
+  }
 
   &--card-list {
     display: flex;

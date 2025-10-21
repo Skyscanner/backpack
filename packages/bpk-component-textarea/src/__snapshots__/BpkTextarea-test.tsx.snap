@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkTextarea should render correctly 1`] = `
+<DocumentFragment>
+  <textarea
+    aria-invalid="false"
+    class="bpk-textarea"
+    id="test"
+    name="test"
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkTextarea should render correctly with "className" attribute 1`] = `
+<DocumentFragment>
+  <textarea
+    aria-invalid="false"
+    class="bpk-textarea my-custom-class-1 my-custom-class-2"
+    id="test"
+    name="test"
+  />
+</DocumentFragment>
+`;

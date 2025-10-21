@@ -18,10 +18,6 @@
 
 @use '../../packages/unstable__bpk-mixins/tokens';
 
-.bpk-card {
-  min-width: tokens.$bpk-one-pixel-rem * 250;
-}
-
 .bpk-destination {
   img {
     border-radius: tokens.$bpk-border-radius-md tokens.$bpk-border-radius-md 0 0;

@@ -24,6 +24,7 @@ import {
   WithImageAndBottomSheetExampleV2Dark,
   WithCtaTextAndBottomSheetExampleV2Dark,
   WithImageAndBottomSheetExampleV2Light,
+  WithSingleBottomSheetItemExampleV2Light,
 } from './examples';
 
 export default {
@@ -41,3 +42,5 @@ export const SponsoredBannerWithImageAndBottomSheetLight =
   WithImageAndBottomSheetExampleV2Light;
 export const SponsoredBannerWithCustomPopoverWidthAndMargins =
   WithCustomBottomSheetWidthAndMarginsExampleV2Light;
+export const SponsoredBannerWithSingleBottomSheetItem =
+  WithSingleBottomSheetItemExampleV2Light;
