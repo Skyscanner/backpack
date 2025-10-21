@@ -18,6 +18,8 @@
 
 import { useState } from 'react';
 
+import { backgroundElevation03DarkColor } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
 import { BpkBackgroundImage } from '../../packages/bpk-component-image';
 import BpkPageIndicator, {
   VARIANT,
@@ -80,6 +82,23 @@ const WithNavExample = () => (
   <PageIndicatorContainer totalIndicators={7} showNav />
 );
 
+const backgroundColor = '#003580';
+
+const WithNavOverImageSpacedExample = () => (
+  <div
+    style={{ width: imageWidth, height: imageHeight, backgroundColor: backgroundElevation03DarkColor }}
+  >
+    <div className={getClassName('bpk-page-indicator-examples__container')}>
+      <PageIndicatorContainer
+        totalIndicators={3}
+        variant={VARIANT.overImageSpaced}
+        showNav
+        onClick={ () => {}}
+      />
+    </div>
+  </div>
+);
+
 const ThreePagesWithNavExample = () => (
   <PageIndicatorContainer totalIndicators={3} showNav />
 );
@@ -90,6 +109,7 @@ const VisualTestExample = () => (
     <ThreePagesExample />
     <OverImageExample />
     <WithNavExample />
+    <WithNavOverImageSpacedExample />
     <ThreePagesWithNavExample />
     <div style={{ width: '50%' }}>
       <WithNavExample />
@@ -102,5 +122,6 @@ export {
   ThreePagesExample,
   OverImageExample,
   WithNavExample,
+  WithNavOverImageSpacedExample,
   VisualTestExample,
 };
