@@ -16,16 +16,15 @@
  * limitations under the License.
  */
 
-import { ArgTypes } from '@storybook/addon-docs';
-import { Title, Markdown } from '@storybook/blocks';
-import { userEvent, within } from '@storybook/test';
+import { Title, Markdown, ArgTypes } from '@storybook/addon-docs/blocks';
+import { userEvent, within } from 'storybook/test';
 
 import BpkAutosuggest from '../../packages/bpk-component-autosuggest/src/BpkAutosuggest';
 import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
 
 import AutosuggestExample from './examples';
 
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-webpack5';
 
 export default {
   title: 'bpk-component-autosuggest',
@@ -87,7 +86,7 @@ export const VisualTest: Story = {
   render: () => <AutosuggestExample alwaysRenderSuggestions />,
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    
+
     const input = canvas.getByPlaceholderText('Enter an office name'); // Find the input field
     input.focus(); // Explicitly set focus using the DOM's focus method
     await userEvent.type(input, 'Lon', { delay: 100 }); // Simulate typing into the input field
