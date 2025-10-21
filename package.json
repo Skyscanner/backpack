@@ -45,7 +45,7 @@
     "start": "npm run build && npm run storybook",
     "storybook": "storybook dev -p 9001",
     "storybook:dist": "storybook build -c .storybook -o dist-storybook",
-    "sassdoc": "sassdoc {packages/bpk-mixins/src/**/*,node_modules/@skyscanner/bpk-svgs/dist/*,node_modules/@skyscanner/bpk-foundations-web/tokens/base.default}.scss -d dist-sassdoc -v --strict",
+    "sassdoc": "sassdoc {packages/bpk-mixins/**/*,node_modules/@skyscanner/bpk-svgs/dist/*,node_modules/@skyscanner/bpk-foundations-web/tokens/base.default}.scss -d dist-sassdoc -v --strict",
     "test": "npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest",
     "typecheck": "tsc",
     "prepare": "husky",
