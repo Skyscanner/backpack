@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import { ArgTypes } from '@storybook/addon-docs';
-import { Title } from '@storybook/blocks';
+import { ArgTypes, Title } from '@storybook/addon-docs/blocks';
 
 import '../packages/bpk-stylesheets';
 import '../packages/bpk-stylesheets/font';
