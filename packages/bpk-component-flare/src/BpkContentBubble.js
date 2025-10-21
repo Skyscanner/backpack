@@ -27,17 +27,15 @@ import STYLES from './bpk-content-bubble.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkContentBubble = (props) => {
-  const {
-    className,
-    content,
-    contentClassName,
-    flareProps,
-    rounded,
-    showPointer,
+  const BpkContentBubble = ({
+    className = null,
+    content = null,
+    contentClassName = null,
+    flareProps = null,
+    rounded = true,
+    showPointer = true,
     ...rest
-  } = props;
-
+  }) => {
   const wrapperClassNames = [getClassName('bpk-content-bubble__wrapper')];
   const contentClassNames = [
     getClassName('bpk-content-bubble__content-wrapper'),
@@ -95,7 +93,6 @@ const BpkContentBubble = (props) => {
         {showPointer && (
           <div className={getClassName('bpk-content-bubble__pointer')}>
             <BpkFlareBar
-              rounded={rounded}
               {...flareProps}
             />
           </div>
@@ -112,15 +109,6 @@ BpkContentBubble.propTypes = {
   showPointer: PropTypes.bool,
   className: PropTypes.string,
   contentClassName: PropTypes.string,
-};
-
-BpkContentBubble.defaultProps = {
-  flareProps: null,
-  rounded: true,
-  content: null,
-  showPointer: true,
-  className: null,
-  contentClassName: null,
 };
 
 export default BpkContentBubble;

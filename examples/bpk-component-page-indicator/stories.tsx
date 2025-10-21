@@ -24,6 +24,7 @@ import {
   OverImageExample,
   WithNavExample,
   VisualTestExample,
+  WithNavOverImageSpacedExample,
 } from './examples';
 
 export default {
@@ -35,6 +36,7 @@ export const Default = DefaultExample;
 export const ThreePages = ThreePagesExample;
 export const OverImage = OverImageExample;
 export const WithNav = WithNavExample;
+export const WithNavOverImageSpaced = WithNavOverImageSpacedExample;
 export const VisualTest = VisualTestExample;
 export const VisualTestWithZoom = {
   render: VisualTest,

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkFieldset should render as disabled when checkbox component is disabled and required 1`] = `
 <DocumentFragment>

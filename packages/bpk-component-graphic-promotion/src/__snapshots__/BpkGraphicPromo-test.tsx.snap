@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkGraphicPromo should display the tagline and no sponsor for non-sponsored ad 1`] = `
 <DocumentFragment>

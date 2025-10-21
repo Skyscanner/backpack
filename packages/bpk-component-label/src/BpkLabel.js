@@ -35,9 +35,15 @@ export type Props = {
   white: boolean,
 };
 
-const BpkLabel = (props: Props) => {
-  const { children, className, disabled, required, valid, white, ...rest } =
-    props;
+const BpkLabel = ({
+  children,
+  className = null,
+  disabled = false,
+  required = false,
+  valid = null,
+  white = false,
+  ...rest
+}: Props) => {
   const invalid = valid === false;
 
   const classNames = getClassName(
@@ -69,12 +75,6 @@ BpkLabel.propTypes = {
   white: PropTypes.bool,
 };
 
-BpkLabel.defaultProps = {
-  className: null,
-  disabled: false,
-  valid: null,
-  required: false,
-  white: false,
-};
+
 
 export default BpkLabel;
