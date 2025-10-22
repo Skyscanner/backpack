@@ -24,6 +24,8 @@ import {
   CircleSkeletonExample,
   HeadlineSkeletonExample,
   CombinedComponentExample,
+  BackgroundStyleDefaultExample,
+  BackgroundStyleOnContrastExample,
 } from './examples';
 
 export default {
@@ -38,3 +40,6 @@ export const CircleSkeleton = CircleSkeletonExample;
 export const HeadlineSkeleton = HeadlineSkeletonExample;
 
 export const CombinedComponent = CombinedComponentExample;
+
+export const BackgroundStyleDefault = BackgroundStyleDefaultExample;
+export const BackgroundStyleOnContrast = BackgroundStyleOnContrastExample;

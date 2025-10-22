@@ -78,4 +78,8 @@
       width: tokens.$bpk-one-pixel-rem * 200;
     }
   }
+
+  &__onContrast {
+    background-color: tokens.$bpk-surface-highlight-night;
+  }
 }
