@@ -16,23 +16,23 @@
  * limitations under the License.
  */
 
-/* stylelint-disable at-rule-disallowed-list */
+@forward 'tokens';
+@forward 'badges';
+@forward 'borders';
+@forward 'breakpoints';
+@forward 'buttons';
+@forward 'cards';
+@forward 'chips';
+@forward 'forms';
+@forward 'icons';
+@forward 'layers';
+@forward 'margins';
+@forward 'panels';
+@forward 'radii';
+@forward 'scroll-indicators';
+@forward 'shadows';
+@forward 'spinners';
+@forward 'typography';
+@forward 'utils';
 
-@import 'tokens.scss';
-@import 'badges.scss';
-@import 'borders.scss';
-@import 'breakpoints.scss';
-@import 'buttons.scss';
-@import 'cards.scss';
-@import 'chips.scss';
-@import 'forms.scss';
-@import 'icons.scss';
-@import 'layers.scss';
-@import 'margins.scss';
-@import 'panels.scss';
-@import 'radii.scss';
-@import 'scroll-indicators.scss';
-@import 'shadows.scss';
-@import 'spinners.scss';
-@import 'typography.scss';
-@import 'utils.scss';
+@warn "You're using blank import of all mixins. This might affect performance of your build tool and your bundle size. \nConsider switching to more granular imports, e.g. @use '@skyscanner/backpack-web/bpk-mixins/buttons'";
