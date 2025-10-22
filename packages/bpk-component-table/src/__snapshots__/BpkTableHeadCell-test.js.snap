@@ -50,13 +50,13 @@ exports[`BpkTableHeadCell should render correctly with custom class 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkTableHeadCell should render correctly with no-wrap 1`] = `
+exports[`BpkTableHeadCell should render correctly with wrap enabled 1`] = `
 <DocumentFragment>
   <table>
     <thead>
       <tr>
         <th
-          class="bpk-table__cell bpk-table__cell--head bpk-table__cell--no-wrap"
+          class="bpk-table__cell bpk-table__cell--head bpk-table__cell--wrap"
         >
           Heading
         </th>

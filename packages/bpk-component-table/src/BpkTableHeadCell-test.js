@@ -66,12 +66,12 @@ describe('BpkTableHeadCell', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with no-wrap', () => {
+  it('should render correctly with wrap enabled', () => {
     const { asFragment } = render(
       <table>
         <thead>
           <tr>
-            <BpkTableHeadCell wrap={false}>Heading</BpkTableHeadCell>
+            <BpkTableHeadCell wrap>Heading</BpkTableHeadCell>
           </tr>
         </thead>
       </table>,

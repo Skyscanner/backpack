@@ -56,4 +56,30 @@ const DefaultExample = () => (
   </BpkTable>
 );
 
+// Demonstrates opt-in wrapping via wrap={true}. Long text will wrap onto multiple lines.
+const WrapExample = () => (
+  <BpkTable>
+    <BpkTableHead>
+      <BpkTableRow>
+        <BpkTableHeadCell wrap>Extremely Long Header Title That Will Wrap When Space Is Constrained</BpkTableHeadCell>
+        <BpkTableHeadCell>Standard Header</BpkTableHeadCell>
+        <BpkTableHeadCell wrap>Another Very Long Header Label That Wraps Onto Multiple Lines</BpkTableHeadCell>
+      </BpkTableRow>
+    </BpkTableHead>
+    <BpkTableBody>
+      <BpkTableRow>
+        <BpkTableCell wrap>A super elongated piece of cell content designed to wrap automatically instead of truncating or forcing horizontal scroll</BpkTableCell>
+        <BpkTableCell>Short value</BpkTableCell>
+        <BpkTableCell wrap>Second elongated cell value that demonstrates multi-line wrapping behaviour gracefully</BpkTableCell>
+      </BpkTableRow>
+      <BpkTableRow>
+        <BpkTableCell wrap>Additional very long value showcasing wrapping for dense tabular data in narrow layouts</BpkTableCell>
+        <BpkTableCell>Another</BpkTableCell>
+        <BpkTableCell wrap>Final cell with extended descriptive text wrapping across lines to improve readability</BpkTableCell>
+      </BpkTableRow>
+    </BpkTableBody>
+  </BpkTable>
+);
+
 export default DefaultExample;
+export { WrapExample };
