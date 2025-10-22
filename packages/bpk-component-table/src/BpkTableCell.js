@@ -30,10 +30,19 @@ const getClassName = cssModules(STYLES);
 type Props = {
   children: Node,
   className: ?string,
+  /**
+   * Controls text wrapping behaviour. When false, the cell's text will not wrap (white-space: nowrap).
+   * Defaults to true to preserve current behaviour.
+   */
+  wrap?: boolean,
 };
 
-const BpkTableCell = ({children, className = null, ...rest}: Props) => {
-  const classNames = getClassName('bpk-table__cell', className);
+const BpkTableCell = ({children, className = null, wrap = true, ...rest}: Props) => {
+  const classNames = getClassName(
+    'bpk-table__cell',
+    !wrap && 'bpk-table__cell--no-wrap',
+    className,
+  );
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
@@ -46,6 +55,7 @@ const BpkTableCell = ({children, className = null, ...rest}: Props) => {
 BpkTableCell.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
+  wrap: PropTypes.bool,
 };
 
 export default BpkTableCell;

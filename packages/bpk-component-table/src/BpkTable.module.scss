@@ -27,5 +27,9 @@
     &--head {
       @include typography.bpk-table__cell--head;
     }
+
+    &--no-wrap {
+      white-space: nowrap;
+    }
   }
 }

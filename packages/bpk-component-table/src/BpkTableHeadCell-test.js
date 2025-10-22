@@ -65,4 +65,17 @@ describe('BpkTableHeadCell', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('should render correctly with no-wrap', () => {
+    const { asFragment } = render(
+      <table>
+        <thead>
+          <tr>
+            <BpkTableHeadCell wrap={false}>Heading</BpkTableHeadCell>
+          </tr>
+        </thead>
+      </table>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
