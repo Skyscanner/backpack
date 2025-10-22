@@ -52,11 +52,11 @@ For Editorial text, the Larken font will also need to be imported:
 import '@skyscanner/backpack-web/bpk-stylesheets/larken.css';
 ```
 
-### Repositories overview
+### Font-related Repositories Overview
 
 Font updates involve coordination between three repositories:
 - [Backpack Foundations](https://github.com/Skyscanner/backpack-foundations): defines shared design tokens and font-family values.
-- [Backpack](https://github.com/Skyscanner/backpack): implements stylesheet updates and changelogs.
+- [Backpack](https://github.com/Skyscanner/backpack): registers fonts, implements stylesheet and component.
 - [bpk-fonts](https://github.com/Skyscanner/bpk-fonts): hosts the actual font files deployed to the CDN.
 
 ## How to update Backpack fallback fonts
@@ -71,7 +71,7 @@ Fallbacks are needed for non‑Latin scripts so text renders correctly everywher
 - Update Skyscanner Relative files and Noto fallback files in `packages/bpk-stylesheets/font.scss`.
 - Update Larken and Noto fallback files in `packages/bpk-stylesheets/larken.scss`.
 
-### Script mapping
+### Locale and Font Mapping
 Defined in `font.scss`, `larken.scss`
 - Arabic → `Noto Sans Arabic`
 - Hebrew → `Noto Sans Hebrew`
