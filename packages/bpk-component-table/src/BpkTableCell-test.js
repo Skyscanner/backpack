@@ -53,4 +53,17 @@ describe('BpkTableCell', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('should render correctly with no-wrap', () => {
+    const { asFragment } = render(
+      <table>
+        <tbody>
+          <tr>
+            <BpkTableCell wrap={false}>Tabular data</BpkTableCell>
+          </tr>
+        </tbody>
+      </table>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

@@ -31,3 +31,19 @@ exports[`BpkTableCell should render correctly with custom class 1`] = `
   </table>
 </DocumentFragment>
 `;
+
+exports[`BpkTableCell should render correctly with no-wrap 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="bpk-table__cell bpk-table__cell--no-wrap"
+        >
+          Tabular data
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
