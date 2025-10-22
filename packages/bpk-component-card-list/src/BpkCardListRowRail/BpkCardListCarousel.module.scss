@@ -24,17 +24,18 @@
   &__row,
   &__rail {
     display: flex;
-    padding-top: tokens.bpk-spacing-sm();
-    padding-bottom: tokens.bpk-spacing-lg();
     overflow-x: hidden;
     box-sizing: border-box;
     gap: tokens.bpk-spacing-sm();
+
+    // Negative margin to ensure box-shadow of content is not cut off
+    margin-block: -(tokens.bpk-spacing-lg());
+    padding-block: tokens.bpk-spacing-lg();
     scroll-snap-stop: always;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
 
     @include breakpoints.bpk-breakpoint-mobile {
-      padding-bottom: tokens.bpk-spacing-base();
       overflow-x: scroll;
     }
 
