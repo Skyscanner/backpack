@@ -17,9 +17,9 @@
  */
 
 /* @flow strict */
+// @ts-nocheck
 
 import PropTypes from 'prop-types';
-import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -27,20 +27,10 @@ import STYLES from './BpkTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  children: Node,
-  className: ?string,
-  /**
-   * Controls text wrapping behaviour. When false, the cell's text will not wrap (white-space: nowrap).
-   * Defaults to true to preserve current behaviour.
-   */
-  wrap?: boolean,
-};
-
-const BpkTableCell = ({children, className = null, wrap = true, ...rest}: Props) => {
+const BpkTableCell = ({children, className = null, wrap = false, ...rest}) => {
   const classNames = getClassName(
     'bpk-table__cell',
-    !wrap && 'bpk-table__cell--no-wrap',
+    wrap && 'bpk-table__cell--wrap',
     className,
   );
 

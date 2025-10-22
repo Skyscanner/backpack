@@ -54,12 +54,12 @@ describe('BpkTableCell', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with no-wrap', () => {
+  it('should render correctly with wrap enabled', () => {
     const { asFragment } = render(
       <table>
         <tbody>
           <tr>
-            <BpkTableCell wrap={false}>Tabular data</BpkTableCell>
+            <BpkTableCell wrap>Tabular data</BpkTableCell>
           </tr>
         </tbody>
       </table>,
