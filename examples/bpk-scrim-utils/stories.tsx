@@ -17,8 +17,7 @@
  */
 
 
-import { ArgTypes } from '@storybook/addon-docs';
-import { Title, Markdown } from '@storybook/blocks';
+import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
 import BpkScrim from '../../packages/bpk-scrim-utils/src/BpkScrim';
 
