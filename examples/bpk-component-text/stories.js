@@ -28,7 +28,6 @@ import {
   BodyStylesExample,
   LabelStylesExample,
   LarkenStylesExample,
-  LarkenFallbackStylesExample,
   ColorPropExample,
   MixedExample,
 } from './examples';
@@ -49,7 +48,6 @@ export const HeadingStyles = HeadingStylesExample;
 export const BodyStyles = BodyStylesExample;
 export const LabelStyles = LabelStylesExample;
 export const LarkenStyles = LarkenStylesExample;
-export const LarkenFallbackStyles = LarkenFallbackStylesExample;
 
 export const ColorProp = ColorPropExample;
 

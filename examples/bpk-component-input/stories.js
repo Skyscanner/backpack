@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import { ArgTypes } from '@storybook/addon-docs';
-import { Title, Markdown } from '@storybook/blocks';
+import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
 import BpkInput from '../../packages/bpk-component-input/src/BpkInput';
 
