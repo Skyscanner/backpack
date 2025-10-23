@@ -60,13 +60,7 @@ git checkout -b {BRANCH_NAME}
 npm install --registry="https://registry.npmjs.org/"
 ```
 
-3. Build a modern version of mixins for local development
-
-```sh
-npm run build:unstable__bpk-mixins
-```
-
-4. Build SVGs
+3. Build SVGs
 
 ```sh
 npm run build
@@ -113,14 +107,13 @@ When creating (S)CSS files, follow the CSS Module naming convention by using the
 When creating or modifying SCSS files, follow these rules
 
 1. Use Modern SASS API
-   * Prefer `@use` instead of `@import`
+   * Use `@use` instead of `@import`
    * Prefer `math.div($a, $b)` instead of `$a / $b`. Add `@use sass:math` statement to the top of your file to make this function available
    * Read more about [@use rule](https://sass-lang.com/documentation/at-rules/use/) and [SASS math functions](https://sass-lang.com/documentation/modules/math/)
 2. Use only what you need
-   * Instead of blank import of all mixins, import them on demand. E.g. if you need only colour tokens, add `@use '../unstable__bpk-mixins/tokens'` statement only
-3. Use `unstable__bpk-mixins` for Backpack components development
-   * If you need to add or modify a mixin, do it in `packages/bpk-mixins`, then execute `npm run unstable__bpk-mixins` command to make it available for Modern API
-   * Import mixins from `packages/unstable__bpk-mixins` only. Otherwise your code will break because Modern SASS API doesn't support `~` import syntax or slash division
+   * Instead of blank import of all mixins, import them on demand. E.g. if you need only colour tokens, add `@use '../bpk-mixins/tokens'` statement only
+3. Use `bpk-mixins` for Backpack components development
+   * If you need to add or modify a mixin, do it in `packages/bpk-mixins`. Backpack now formally deprecates `@import` usage and uses the Modern Sass API in `packages/bpk-mixins`.
 
 #### Adding a new component
 
