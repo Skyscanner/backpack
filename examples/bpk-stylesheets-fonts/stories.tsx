@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2022 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,23 +16,18 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
+import {
+  SkyscannerRelativeExample,
+  LarkenExample,
+  MixedExample,
+} from './examples';
 
-.bpk-carousel {
-  position: relative;
+export default {
+  title: 'bpk-stylesheets-fonts',
+};
 
-  // Fix for firefox where the images were not displayed because the parent had no size
-  width: 100%;
-  height: 100%;
+export const SkyscannerRelativeFont = SkyscannerRelativeExample;
+export const LarkenFont = LarkenExample;
 
-  &__page-indicator-over-image {
-    position: absolute;
-    right: 0;
-    bottom: tokens.bpk-spacing-sm();
-    left: 0;
-    display: flex;
-    margin: auto tokens.bpk-spacing-base();
-    justify-content: center;
-    overflow: clip;
-  }
-}
+export const VisualTest = MixedExample;
+

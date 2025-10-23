@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { MutableRefObject, ReactNode } from 'react';
+import type { MutableRefObject, ReactNode} from 'react';
 import { memo, useState } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -45,15 +45,23 @@ const BpkScrollContainer = memo(({ images, imagesRef, onImageChanged, onVisible 
   }, onImageChanged);
   const observeCycleScroll = useIntersectionObserver(
     (index) => {
+      const container = root;
       const imageElement = imagesRef.current && imagesRef.current[index];
-      if (imageElement) {
-        imageElement.scrollIntoView({
-          block: 'nearest',
-          inline: 'start',
-        });
+      if (container && imageElement) {
+        // Some browsers and test environments don't support smooth scrolling,
+        // so we must fall back to simply setting scrollLeft
+        if (container.scroll && typeof container.scroll === 'function') {
+          container.scroll({
+            left: imageElement.offsetLeft,
+            behavior: 'auto',
+          });
+        } else {
+          container.scrollLeft = imageElement.offsetLeft;
+        }
       }
     },
-    { root, threshold: 1 },
+    // when threshold was 1, the loop behaviour (mobile) was not working as expected. This seems to fix it.
+    { root, threshold: 0.98 },
   );
 
   if (images.length === 1) {
