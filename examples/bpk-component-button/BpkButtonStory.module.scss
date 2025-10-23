@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable__bpk-mixins/tokens';
+@use '../../packages/bpk-mixins/tokens';
 
 .bpk-button-story-wrapper {
   padding: tokens.bpk-spacing-sm() 0;

@@ -19,9 +19,9 @@
 // Use of stylelint-disable-next-line declaration-no-important in this file is to ensure that
 // the correct styles are applied for Internet Explorer 11 and are not overriden by system styles.
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/forms';
-@use '../../unstable__bpk-mixins/utils';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/forms';
+@use '../../bpk-mixins/utils';
 
 .bpk-select {
   @include forms.bpk-select;
