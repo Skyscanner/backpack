@@ -33,6 +33,7 @@ describe('BpkCheckbox form test', () => {
           <BpkCheckbox
             type="checkbox"
             name="checkbox"
+            label="Test checkbox"
             checked={isChecked}
             onChange={() => setIsChecked(!isChecked)}
             data-testid="mycheckbox"
@@ -49,7 +50,7 @@ describe('BpkCheckbox form test', () => {
     await userEvent.click(checkbox);
     expect(checkbox).toBeChecked();
 
-    const formData = new FormData(screen.getByTestId('form'));
+    const formData = new FormData(screen.getByTestId('form') as HTMLFormElement);
     expect(Object.fromEntries(formData.entries())).toEqual({ checkbox: 'on' });
   });
 
@@ -63,6 +64,7 @@ describe('BpkCheckbox form test', () => {
           <BpkCheckbox
             type="checkbox"
             name="checkbox"
+            label="Test checkbox"
             checked={isChecked}
             onChange={() => setIsChecked(!isChecked)}
             data-testid="mycheckbox"
