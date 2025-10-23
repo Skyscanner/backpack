@@ -22,9 +22,20 @@
   @include typography.bpk-table;
 
   &__cell {
+    // Allow text to wrap inside table cells (override typography mixin's nowrap).
+    white-space: normal;
+
+    // Break long unbroken strings (e.g., long URLs) only when needed.
+    overflow-wrap: break-word;
+    word-break: break-word; // Fallback / legacy support.
+
     @include typography.bpk-table__cell;
 
     &--head {
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-break: break-word;
+
       @include typography.bpk-table__cell--head;
     }
   }
