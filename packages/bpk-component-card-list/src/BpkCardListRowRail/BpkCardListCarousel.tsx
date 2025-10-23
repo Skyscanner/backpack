@@ -112,11 +112,14 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
   const renderList = useMemo(
     () =>
-      visibilityList.map((_, index) =>
-        index >= firstVisibleIndex - dynamicRenderBufferSize &&
-        index <= lastVisibleIndex + dynamicRenderBufferSize
-          ? 1
-          : 0,
+      visibilityList.map((_, index) => {
+        const isIndexVisible = index >= firstVisibleIndex - dynamicRenderBufferSize && index <= lastVisibleIndex + dynamicRenderBufferSize;
+        if (isIndexVisible) {
+          hasBeenVisibleRef.current.add(index);
+        }
+
+        return isIndexVisible ? 1 : 0;
+      }
       ),
     [
       visibilityList,
@@ -136,7 +139,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           setA11yTabIndex(el, i, visibilityList);
           // record the first card's width and height when it becomes visible
           if (el && visibilityList[i] === 0) {
-            hasBeenVisibleRef.current.add(i);
             if (firstCardWidthRef.current == null && el.offsetWidth) {
               firstCardWidthRef.current = el.offsetWidth;
             }
@@ -149,7 +151,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       childrenLength,
       observerVisibility,
       visibilityList,
-      hasBeenVisibleRef,
       firstCardWidthRef,
       firstCardHeightRef,
     ],
@@ -232,32 +233,38 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           cardDimensionStyle.height = `${firstCardHeightRef.current}px`;
         }
 
+        const commonProps = {
+          className: getClassName(`bpk-card-list-row-rail__${layout}__card`),
+          style: {
+            ...shownNumberStyle,
+            ...cardDimensionStyle,
+          },
+          key: `carousel-card-${index.toString()}`,
+          role: "group",
+        };
+
         // Only render cards that are within the renderList range or have been visible before
-        if (renderList[index] !== 1 && !hasBeenVisibleRef.current.has(index)) {
+        const shouldRenderCard = renderList[index] === 1 || hasBeenVisibleRef.current.has(index);
+        if (!shouldRenderCard) {
           return (
             <div
-              key={`placeholder-${index.toString()}`}
+              {...commonProps}
               style={{
-                ...shownNumberStyle,
-                ...cardDimensionStyle,
-                flexShrink: 0,
-                visibility: 'hidden',
+                ...commonProps.style,
+                contain: 'paint'
               }}
+              data-testid="bpk-card-list-carousel--placeholder"
               aria-hidden="true"
-            />
+            >
+              {card}
+            </div>
           );
         }
 
         return (
           <div
-            className={getClassName(`bpk-card-list-row-rail__${layout}__card`)}
+            {...commonProps}
             ref={cardRefFns[index]}
-            style={{
-              ...shownNumberStyle,
-              ...cardDimensionStyle,
-            }}
-            key={`carousel-card-${index.toString()}`}
-            role="group"
             aria-label={slideLabel(index, childrenLength)}
           >
             {card}

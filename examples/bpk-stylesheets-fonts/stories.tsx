@@ -15,18 +15,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-/* eslint-disable global-require */
+import {
+  SkyscannerRelativeExample,
+  LarkenExample,
+  MixedExample,
+} from './examples';
 
-describe('BpkStorybookUtils', () => {
-  it('action should use storybook/addon-actions if available', () => {
-    const mockActionFunction = jest.fn();
-    jest.mock('storybook/addon-actions', () => ({
-      action: mockActionFunction,
-    }));
-    const { action } = require('./BpkStorybookUtils');
-    action('test');
-    expect(mockActionFunction).toHaveBeenCalledTimes(1);
-  });
-});
+export default {
+  title: 'bpk-stylesheets-fonts',
+};
+
+export const SkyscannerRelativeFont = SkyscannerRelativeExample;
+export const LarkenFont = LarkenExample;
+
+export const VisualTest = MixedExample;
+

@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import { ArgTypes } from '@storybook/addon-docs';
-import { Title, Markdown } from '@storybook/blocks';
+import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
 import BpkBackgroundImage from '../../packages/bpk-component-image/src/BpkBackgroundImage';
 import BpkImage from '../../packages/bpk-component-image/src/BpkImage';
