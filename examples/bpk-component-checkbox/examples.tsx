@@ -16,37 +16,46 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { Component } from 'react';
 
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
-import {
-  action,
-  BpkDarkExampleWrapper,
-} from '../bpk-storybook-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { action, BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores doloremque, expedita
 quaerat temporibus ipsam, ut, ipsa, velit sed assumenda suscipit dolore quod similique delectus numquam neque!
 Nesciunt, voluptate, illo.`;
 
-type Props = {
-  isChecked: boolean,
+type StatefulCheckboxProps = {
+  isChecked?: boolean;
+  id: string;
+  name: string;
+  label: string;
+  white?: boolean;
+  disabled?: boolean;
+  valid?: boolean;
+  indeterminate?: boolean;
+  required?: boolean;
+  smallLabel?: boolean;
+  isRequired?: boolean;
 };
 
-type State = {
-  isChecked: boolean,
+type StatefulCheckboxState = {
+  isChecked: boolean;
 };
 
-class StatefulCheckbox extends Component<Props, State> {
+class StatefulCheckbox extends Component<
+  StatefulCheckboxProps,
+  StatefulCheckboxState
+> {
   static defaultProps = {
     isChecked: false,
   };
 
-  constructor(props: Props) {
+  constructor(props: StatefulCheckboxProps) {
     super(props);
     this.state = {
-      isChecked: props.isChecked,
+      isChecked: props.isChecked || false,
     };
   }
 
@@ -54,18 +63,17 @@ class StatefulCheckbox extends Component<Props, State> {
     this.setState((prevState) => ({
       isChecked: !prevState.isChecked,
     }));
-    // $FlowFixMe[incompatible-type] - ignoring as purely for storybook
     action(`Checkbox changed. Checked is now '${this.state.isChecked}'`);
   };
 
   render() {
+    const { isChecked: _, isRequired: __, ...rest } = this.props;
     return (
       <div style={{ padding: '.25rem' }}>
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkCheckbox
           checked={this.state.isChecked}
           onChange={this.handleChange}
-          {...this.props}
+          {...rest}
         />
       </div>
     );
