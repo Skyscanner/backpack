@@ -21,9 +21,9 @@
 /* stylelint-disable unit-disallowed-list */
 
 @use 'sass:math';
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/utils';
-@use '../../unstable__bpk-mixins/icons';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/utils';
+@use '../../bpk-mixins/icons';
 
 .bpk-icon-marker {
   $marker-width: 26px;

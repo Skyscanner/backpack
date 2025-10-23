@@ -16,15 +16,8 @@
 
 set -e
 
-cd packages
+printf "📋 Copying normal.css to new location...\n"
 
-for dir in */
-do
-  if [ $dir != unstable__bpk-mixins/ ] && [ $dir != bpk-mixins/ ] && [ $dir != node_modules/ ];
-  then
-    echo $dir
-     sass-migrator --load-path=node_modules module "${dir}**/*.scss"
-     sass-migrator --load-path=node_modules division "${dir}**/*.scss"
-     sass-migrator --load-path=node_modules namespace --rename 'unstable__bpk-mixins to mixins' "${dir}**/*.scss"
-  fi
-done
+cp packages/node_modules/normalize.css/normalize.css packages/bpk-stylesheets/normalize.scss
+
+printf "✅  New normal.scss generated. \n"
