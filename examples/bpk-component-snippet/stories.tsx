@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 
 import BpkSnippet from '../../packages/bpk-component-snippet';
 
