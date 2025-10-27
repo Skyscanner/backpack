@@ -173,7 +173,7 @@ const InteractiveTabsExample = () => {
   ];
 
   const handleTabClick = (event) => {
-    setSelectedTab(event.target.name);
+    setSelectedTab(event.currentTarget.name);
   };
 
   return (
