@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 
 import {
   onePixelRem,
@@ -162,6 +162,41 @@ const SeparatorsExample = () => (
   </BpkHorizontalNav>
 );
 
+const InteractiveTabsExample = () => {
+  const [selectedTab, setSelectedTab] = useState('flights');
+
+  const tabs = [
+    { id: 'flights', label: 'Flights' },
+    { id: 'hotels', label: 'Hotels' },
+    { id: 'car-hire', label: 'Car hire' },
+    { id: 'packages', label: 'Packages' },
+  ];
+
+  const handleTabClick = (event) => {
+    setSelectedTab(event.target.name);
+  };
+
+  return (
+    <Fragment>
+      <BpkHorizontalNav>
+        {tabs.map((tab) => (
+          <BpkHorizontalNavItem
+            key={tab.id}
+            name={tab.id}
+            selected={selectedTab === tab.id}
+            onClick={handleTabClick}
+          >
+            {tab.label}
+          </BpkHorizontalNavItem>
+        ))}
+      </BpkHorizontalNav>
+      <div style={{ padding: '1rem', marginTop: '1rem' }}>
+        <BpkText>Selected tab: {selectedTab}</BpkText>
+      </div>
+    </Fragment>
+  );
+};
+
 const MixedExample = () => (
   <div>
     <DefaultExample />
@@ -184,5 +219,6 @@ export {
   SpacedAroundExample,
   DisabledItemExample,
   SeparatorsExample,
+  InteractiveTabsExample,
   MixedExample,
 };
