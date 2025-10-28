@@ -74,6 +74,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const hasBeenVisibleRef = useRef<Set<number>>(new Set());
   const firstCardWidthRef = useRef<number | null>(null);
   const firstCardHeightRef = useRef<number | null>(null);
+  const prevInitiallyShownCardsRef = useRef(initiallyShownCards);
 
   const [visibilityList, setVisibilityList] = useState<number[]>(
     Array(childrenLength).fill(0),
@@ -99,11 +100,15 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const lastVisibleIndex = firstVisibleIndex + initiallyShownCards - 1;
 
   const dynamicRenderBufferSize = useMemo(() => {
-    if (childrenLength === 0 || initiallyShownCards === 0 || isMobile) return RENDER_BUFFER_SIZE;
+    if (childrenLength === 0 || initiallyShownCards === 0 || isMobile)
+      return RENDER_BUFFER_SIZE;
 
     // Calculate how many cards to render based on the number of initially shown cards and total children
     const totalPages = Math.ceil(childrenLength / initiallyShownCards);
-    const shownIndicatorCount = Math.min(totalPages, PAGINATION_INDICATOR_MAX_SHOWN_COUNT);
+    const shownIndicatorCount = Math.min(
+      totalPages,
+      PAGINATION_INDICATOR_MAX_SHOWN_COUNT,
+    );
     return Math.max(
       RENDER_BUFFER_SIZE,
       (shownIndicatorCount - 1) * initiallyShownCards,
@@ -174,7 +179,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         clearTimeout(openSetStateLockTimeoutRef.current);
       }
     };
-  }, [root]);
+  }, [root, isMobile]);
 
   useEffect(() => {
     // update hasBeenVisibleRef to include the range of cards that should be visible
@@ -194,11 +199,19 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     const firstVisible = visibilityList.indexOf(1);
     if (firstVisible >= 0) {
       const newIndex = Math.floor(firstVisible / initiallyShownCards);
-      if (newIndex !== currentIndex) {
+
+      if (newIndex === currentIndex) return;
+
+      if (stateScrollingLockRef.current) {
+         setCurrentIndex(newIndex);
+      }
+
+      if (prevInitiallyShownCardsRef.current !== initiallyShownCards) {
         setCurrentIndex(newIndex);
+        prevInitiallyShownCardsRef.current = initiallyShownCards;
       }
     }
-  }, [initiallyShownCards]);
+  }, [currentIndex, initiallyShownCards, setCurrentIndex, visibilityList]);
 
   useEffect(() => {
     const handleResize = throttle(() => {
