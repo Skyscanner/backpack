@@ -106,7 +106,6 @@ jobs:
           packages/node_modules/
         key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
-    - run: npm install -g npm@latest  # ensure npm >= 11.5.1
     - run: npm run transpile
 
     - name: Publish to npm using Trusted Publishing
