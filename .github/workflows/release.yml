@@ -83,6 +83,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: Publishing
     needs: [Create-NPM-Cache, Build]
+    permissions:
+      id-token: write
+      contents: read
     steps:
     - name: Checkout source code
       uses: actions/checkout@v5
@@ -103,15 +106,15 @@ jobs:
           packages/node_modules/
         key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
+    - run: npm install -g npm@latest  # ensure npm >= 11.5.1
     - run: npm run transpile
 
-    - name: Publish NPM package
+    - name: Publish to npm using Trusted Publishing
       run: |
         cd dist
         npm version $RELEASE_VERSION --no-git-tag-version
         npm publish
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         RELEASE_VERSION: ${{ github.event.release.tag_name }}
 
   SupernovaPublish:
