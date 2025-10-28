@@ -30,6 +30,7 @@ import {
   SpacedAroundExample,
   DisabledItemExample,
   SeparatorsExample,
+  InteractiveTabsExample,
   MixedExample,
 } from './examples';
 
@@ -57,6 +58,9 @@ export const SpaceAround = SpacedAroundExample;
 export const DisabledItem = DisabledItemExample;
 
 export const Separators = SeparatorsExample;
+
+export const InteractiveTabs = InteractiveTabsExample;
+
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
