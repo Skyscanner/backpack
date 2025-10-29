@@ -80,12 +80,12 @@ jobs:
 
   ReleaseWeb:
     name: Release @skyscanner/backpack-web to NPM
-    runs-on: ubuntu-latest
-    environment: Publishing
-    needs: [Create-NPM-Cache, Build]
     permissions:
       id-token: write
       contents: read
+    runs-on: ubuntu-latest
+    environment: Publishing
+    needs: [Create-NPM-Cache, Build]
     steps:
     - name: Checkout source code
       uses: actions/checkout@v5
@@ -108,7 +108,7 @@ jobs:
 
     - run: npm run transpile
 
-    - name: Publish to npm using Trusted Publishing
+    - name: Publish NPM package
       run: |
         cd dist
         npm version $RELEASE_VERSION --no-git-tag-version
