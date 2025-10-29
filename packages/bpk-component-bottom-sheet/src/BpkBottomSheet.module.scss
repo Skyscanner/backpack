@@ -103,9 +103,73 @@
   }
 
   &--content {
-    padding: tokens.$bpk-modal-content-padding;
+    padding: 0;
     flex: 1;
     overflow-y: auto;
+  }
+
+  &--padding-base-top {
+    padding-top: tokens.bpk-spacing-base();
+  }
+
+  &--padding-base-bottom {
+    padding-bottom: tokens.bpk-spacing-base();
+  }
+
+  &--padding-base-start {
+    padding-inline-start: tokens.bpk-spacing-base();
+  }
+
+  &--padding-base-end {
+    padding-inline-end: tokens.bpk-spacing-base();
+  }
+
+  &--padding-lg-top {
+    padding-top: tokens.bpk-spacing-lg();
+  }
+
+  &--padding-lg-bottom {
+    padding-bottom: tokens.bpk-spacing-lg();
+  }
+
+  &--padding-lg-start {
+    padding-inline-start: tokens.bpk-spacing-lg();
+  }
+
+  &--padding-lg-end {
+    padding-inline-end: tokens.bpk-spacing-lg();
+  }
+
+  &--padding-xxl-top {
+    padding-top: tokens.bpk-spacing-xxl();
+  }
+
+  &--padding-xxl-bottom {
+    padding-bottom: tokens.bpk-spacing-xxl();
+  }
+
+  &--padding-xxl-start {
+    padding-inline-start: tokens.bpk-spacing-xxl();
+  }
+
+  &--padding-xxl-end {
+    padding-inline-end: tokens.bpk-spacing-xxl();
+  }
+
+  &--padding-xxxl-top {
+    padding-top: tokens.bpk-spacing-xxxl();
+  }
+
+  &--padding-xxxl-bottom {
+    padding-bottom: tokens.bpk-spacing-xxxl();
+  }
+
+  &--padding-xxxl-start {
+    padding-inline-start: tokens.bpk-spacing-xxxl();
+  }
+
+  &--padding-xxxl-end {
+    padding-inline-end: tokens.bpk-spacing-xxxl();
   }
 
   &--wide {
@@ -114,17 +178,21 @@
     }
   }
 
-  &--header {
+  &--header-wrapper {
     position: sticky;
     top: 0;
     z-index: tokens.$bpk-zindex-tooltip - 1;
-    padding: tokens.bpk-spacing-sm() 0;
 
     @include utils.bpk-themeable-property(
       background-color,
       --bpk-navigation-bar-background-color,
       tokens.$bpk-surface-default-day
     );
+  }
+
+  &--header {
+    min-height: fit-content;
+    padding: tokens.bpk-spacing-lg();
   }
 
   @keyframes slide-up {
