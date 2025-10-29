@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable__bpk-mixins/tokens';
-@use '../../packages/unstable__bpk-mixins/breakpoints';
+@use '../../packages/bpk-mixins/tokens';
+@use '../../packages/bpk-mixins/breakpoints';
 
 .bpkdocs-forms-page {
   &__viewport-alert {
