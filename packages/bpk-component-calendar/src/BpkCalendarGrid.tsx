@@ -141,17 +141,17 @@ class BpkCalendarGrid extends Component<Props, State> {
     });
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps: Props) {
+  componentDidUpdate(prevProps: Props): void {
     // We cache expensive calculations (and identities) in state
     if (
-      !isSameMonth(nextProps.month, this.props.month) ||
-      nextProps.weekStartsOn !== this.props.weekStartsOn
+      !isSameMonth(this.props.month, prevProps.month) ||
+      this.props.weekStartsOn !== prevProps.weekStartsOn
     ) {
       this.setState({
         calendarMonthWeeks: getCalendar(
-          nextProps.month,
-          nextProps.weekStartsOn,
-          nextProps.formatDateFull,
+          this.props.month,
+          this.props.weekStartsOn,
+          this.props.formatDateFull,
         ),
       });
     }

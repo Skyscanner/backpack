@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/borders';
-@use '../../unstable__bpk-mixins/margins';
-@use '../../unstable__bpk-mixins/utils';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/borders';
+@use '../../bpk-mixins/margins';
+@use '../../bpk-mixins/utils';
 
 .bpk-accordion {
   &__item--with-divider {

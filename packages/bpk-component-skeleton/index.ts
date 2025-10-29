@@ -18,5 +18,5 @@
 
 import BpkSkeleton from "./src/BpkSkeleton";
 
-export { SIZE_TYPES, SKELETON_TYPES, IMAGE_SKELETON_STYLE } from './src/common-types';
+export { SIZE_TYPES, SKELETON_TYPES, IMAGE_SKELETON_STYLE, BACKGROUND_STYLE } from './src/common-types';
 export default BpkSkeleton;
