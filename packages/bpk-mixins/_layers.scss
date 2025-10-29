@@ -18,10 +18,10 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@import 'tokens.scss';
-@import 'radii.scss';
-@import 'shadows.scss';
-@import 'utils.scss';
+@use 'tokens';
+@use 'radii';
+@use 'shadows';
+@use 'utils';
 
 ////
 /// @group layers
@@ -35,14 +35,14 @@
 ///   }
 
 @mixin bpk-layer(
-  $background-color: $bpk-color-white,
-  $border-color: $bpk-surface-highlight-day
+  $background-color: tokens.$bpk-color-white,
+  $border-color: tokens.$bpk-surface-highlight-day
 ) {
-  border: $bpk-one-pixel-rem solid $border-color;
+  border: tokens.$bpk-one-pixel-rem solid $border-color;
   background-color: $background-color;
 
-  @include bpk-border-radius-sm;
-  @include bpk-box-shadow-lg;
+  @include radii.bpk-border-radius-sm;
+  @include shadows.bpk-box-shadow-lg;
 }
 
 /// Layer arrow base styles.
@@ -64,7 +64,7 @@
   }
 
   &::before {
-    border: ($arrow-size + $bpk-one-pixel-rem) solid transparent;
+    border: ($arrow-size + tokens.$bpk-one-pixel-rem) solid transparent;
   }
 
   &::after {
@@ -82,26 +82,26 @@
 
 @mixin bpk-layer-arrow-top(
   $arrow-size,
-  $arrow-color: $bpk-color-white,
-  $border-color: $bpk-color-sky-gray-tint-06
+  $arrow-color: tokens.$bpk-color-white,
+  $border-color: tokens.$bpk-color-sky-gray-tint-06
 ) {
   bottom: 100%;
   width: ($arrow-size * 2);
   height: $arrow-size;
 
   &::before {
-    top: -1 * ($arrow-size + $bpk-one-pixel-rem);
-    margin-left: -1 * $bpk-one-pixel-rem;
+    top: -1 * ($arrow-size + tokens.$bpk-one-pixel-rem);
+    margin-left: -1 * tokens.$bpk-one-pixel-rem;
     border-bottom-color: $border-color;
 
-    @include bpk-rtl {
-      margin-right: -1 * $bpk-one-pixel-rem;
+    @include utils.bpk-rtl {
+      margin-right: -1 * tokens.$bpk-one-pixel-rem;
       margin-left: 0;
     }
   }
 
   &::after {
-    top: -1 * $arrow-size + $bpk-one-pixel-rem;
+    top: -1 * $arrow-size + tokens.$bpk-one-pixel-rem;
     border-bottom-color: $arrow-color;
   }
 }
@@ -116,21 +116,21 @@
 
 @mixin bpk-layer-arrow-right(
   $arrow-size,
-  $arrow-color: $bpk-color-white,
-  $border-color: $bpk-color-sky-gray-tint-06
+  $arrow-color: tokens.$bpk-color-white,
+  $border-color: tokens.$bpk-color-sky-gray-tint-06
 ) {
   left: 100%;
   width: $arrow-size;
   height: ($arrow-size * 2);
 
   &::before {
-    right: -1 * ($arrow-size + $bpk-one-pixel-rem);
-    margin-top: -1 * $bpk-one-pixel-rem;
+    right: -1 * ($arrow-size + tokens.$bpk-one-pixel-rem);
+    margin-top: -1 * tokens.$bpk-one-pixel-rem;
     border-left-color: $border-color;
   }
 
   &::after {
-    right: -1 * $arrow-size + $bpk-one-pixel-rem;
+    right: -1 * $arrow-size + tokens.$bpk-one-pixel-rem;
     border-left-color: $arrow-color;
   }
 }
@@ -145,26 +145,26 @@
 
 @mixin bpk-layer-arrow-bottom(
   $arrow-size,
-  $arrow-color: $bpk-color-white,
-  $border-color: $bpk-color-sky-gray-tint-06
+  $arrow-color: tokens.$bpk-color-white,
+  $border-color: tokens.$bpk-color-sky-gray-tint-06
 ) {
   top: 100%;
   width: ($arrow-size * 2);
   height: $arrow-size;
 
   &::before {
-    bottom: -1 * ($arrow-size + $bpk-one-pixel-rem);
-    margin-left: -1 * $bpk-one-pixel-rem;
+    bottom: -1 * ($arrow-size + tokens.$bpk-one-pixel-rem);
+    margin-left: -1 * tokens.$bpk-one-pixel-rem;
     border-top-color: $border-color;
 
-    @include bpk-rtl {
-      margin-right: -1 * $bpk-one-pixel-rem;
+    @include utils.bpk-rtl {
+      margin-right: -1 * tokens.$bpk-one-pixel-rem;
       margin-left: 0;
     }
   }
 
   &::after {
-    bottom: -1 * $arrow-size + $bpk-one-pixel-rem;
+    bottom: -1 * $arrow-size + tokens.$bpk-one-pixel-rem;
     border-top-color: $arrow-color;
   }
 }
@@ -179,21 +179,21 @@
 
 @mixin bpk-layer-arrow-left(
   $arrow-size,
-  $arrow-color: $bpk-color-white,
-  $border-color: $bpk-color-sky-gray-tint-06
+  $arrow-color: tokens.$bpk-color-white,
+  $border-color: tokens.$bpk-color-sky-gray-tint-06
 ) {
   right: 100%;
   width: $arrow-size;
   height: ($arrow-size * 2);
 
   &::before {
-    left: -1 * ($arrow-size + $bpk-one-pixel-rem);
-    margin-top: -1 * $bpk-one-pixel-rem;
+    left: -1 * ($arrow-size + tokens.$bpk-one-pixel-rem);
+    margin-top: -1 * tokens.$bpk-one-pixel-rem;
     border-right-color: $border-color;
   }
 
   &::after {
-    left: -1 * $arrow-size + $bpk-one-pixel-rem;
+    left: -1 * $arrow-size + tokens.$bpk-one-pixel-rem;
     border-right-color: $arrow-color;
   }
 }
