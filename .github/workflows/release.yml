@@ -97,6 +97,11 @@ jobs:
         node-version-file: ".nvmrc"
         registry-url: 'https://registry.npmjs.org'
 
+    - name: Update npm
+      run: |
+        npm install -g npm@latest
+        npm --version
+
     - name: Restore Cache
       uses: actions/cache/restore@v4.3.0
       id: npm-cache
