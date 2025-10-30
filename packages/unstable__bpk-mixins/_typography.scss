@@ -1,0 +1,1234 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* stylelint-disable at-rule-disallowed-list */
+
+@use 'tokens.scss';
+@use 'borders.scss';
+@use 'radii.scss';
+@use 'utils.scss';
+
+////
+/// @group typography
+////
+
+/// Type factory.
+///
+/// @param {variable} $font-size
+/// @param {variable} $line-height
+/// @param {variable} $font-weight false
+/// @param {variable} $letter-spacing false
+///
+/// @access private
+
+@mixin _bpk-text-factory(
+  $font-size,
+  $line-height,
+  $font-weight: false,
+  $letter-spacing: false
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+
+  @if $font-weight {
+    font-weight: $font-weight;
+  }
+
+  @if $letter-spacing {
+    letter-spacing: $letter-spacing;
+  }
+}
+
+/// Text margin reset.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text;
+///   }
+
+@mixin bpk-text {
+  margin: 0;
+}
+
+/// Extra small text style
+///
+/// @require {mixin} bpk-text
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text;
+///     @include bpk-text--xs;
+///   }
+
+@mixin bpk-text--xs {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-xs,
+    tokens.$bpk-line-height-xs,
+    tokens.$bpk-font-weight-book
+  );
+}
+
+/// Extra small text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-xs;
+///   }
+
+@mixin bpk-text-xs {
+  @include bpk-text--xs;
+}
+
+/// Small text style
+///
+/// @require {mixin} bpk-text
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text;
+///     @include bpk-text--sm;
+///   }
+
+@mixin bpk-text--sm {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-sm,
+    tokens.$bpk-line-height-sm,
+    tokens.$bpk-font-weight-book
+  );
+}
+
+/// Small text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-sm;
+///   }
+
+@mixin bpk-text-sm {
+  @include bpk-text--sm;
+}
+
+/// Base text style
+///
+/// @require {mixin} bpk-text
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text;
+///     @include bpk-text--base;
+///   }
+
+@mixin bpk-text--base {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-base,
+    tokens.$bpk-line-height-base,
+    tokens.$bpk-font-weight-book
+  );
+}
+
+/// Base text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-base;
+///   }
+
+@mixin bpk-text-base {
+  @include bpk-text--base;
+}
+
+/// Large text style
+///
+/// @require {mixin} bpk-text
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text;
+///     @include bpk-text--lg;
+///   }
+
+@mixin bpk-text--lg {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-lg,
+    tokens.$bpk-line-height-lg,
+    tokens.$bpk-font-weight-book
+  );
+}
+
+/// Large text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-lg;
+///   }
+
+@mixin bpk-text-lg {
+  @include bpk-text--lg;
+}
+
+/// Extra large text style
+///
+/// @require {mixin} bpk-text
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text;
+///     @include bpk-text--xl;
+///   }
+
+@mixin bpk-text--xl {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-xl,
+    tokens.$bpk-line-height-xl,
+    tokens.$bpk-font-weight-book
+  );
+}
+
+/// Extra large text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-xl;
+///   }
+
+@mixin bpk-text-xl {
+  @include bpk-text--xl;
+}
+
+/// Extra extra large text style
+///
+/// @require {mixin} bpk-text
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text;
+///     @include bpk-text--xxl;
+///   }
+
+@mixin bpk-text--xxl {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-xxl,
+    tokens.$bpk-line-height-xxl,
+    tokens.$bpk-font-weight-bold
+  );
+}
+
+/// Extra extra large text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-xxl;
+///   }
+
+@mixin bpk-text-xxl {
+  @include bpk-text--xxl;
+}
+
+/// Extra extra large text style
+///
+/// @require {mixin} bpk-text
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text;
+///     @include bpk-text--xxxl;
+///   }
+
+@mixin bpk-text--xxxl {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-xxxl,
+    tokens.$bpk-line-height-xxxl,
+    tokens.$bpk-font-weight-bold
+  );
+}
+
+/// Extra extra large text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-xxxl;
+///   }
+
+@mixin bpk-text-xxxl {
+  @include bpk-text--xxxl;
+}
+
+/// Extra extra large text style
+///
+/// @require {mixin} bpk-text
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text;
+///     @include bpk-text--xxxxl;
+///   }
+
+@mixin bpk-text--xxxxl {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-xxxxl,
+    tokens.$bpk-line-height-xxxxl,
+    tokens.$bpk-font-weight-bold,
+    tokens.$bpk-letter-spacing-tight
+  );
+}
+
+/// Extra extra large text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-xxxxl;
+///   }
+
+@mixin bpk-text-xxxxl {
+  @include bpk-text--xxxxl;
+}
+
+/// Extra extra large text style
+///
+/// @require {mixin} bpk-text
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text;
+///     @include bpk-text--xxxxxl;
+///   }
+
+@mixin bpk-text--xxxxxl {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-xxxxxl,
+    tokens.$bpk-line-height-xxxxxl,
+    tokens.$bpk-font-weight-bold,
+    tokens.$bpk-letter-spacing-tight
+  );
+}
+
+/// Extra extra large text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-xxxxxl;
+///   }
+
+@mixin bpk-text-xxxxxl {
+  @include bpk-text--xxxxxl;
+}
+
+/// Bold text style
+///
+/// @require {mixin} bpk-text
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text;
+///     @include bpk-text--bold;
+///   }
+
+@mixin bpk-text--bold {
+  font-weight: tokens.$bpk-font-weight-bold;
+}
+
+/// Bold text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-bold;
+///   }
+
+@mixin bpk-text-bold {
+  @include bpk-text--bold;
+}
+
+/// Black text style
+///
+/// @require {mixin} bpk-text
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text;
+///     @include bpk-text--black;
+///   }
+
+@mixin bpk-text--black {
+  font-weight: tokens.$bpk-font-weight-black;
+}
+
+/// Black text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-heavy;
+///   }
+
+@mixin bpk-text-black {
+  @include bpk-text--black;
+}
+
+/// Caption text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-caption;
+///   }
+
+@mixin bpk-caption {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-xs,
+    tokens.$bpk-line-height-xs,
+    tokens.$bpk-font-weight-book
+  );
+}
+
+/// Footnote text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-footnote;
+///   }
+
+@mixin bpk-footnote {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-sm,
+    tokens.$bpk-line-height-sm,
+    tokens.$bpk-font-weight-book
+  );
+}
+
+/// Label-1 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-label-1;
+///   }
+
+@mixin bpk-label-1 {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-base,
+    tokens.$bpk-line-height-base,
+    tokens.$bpk-font-weight-bold
+  );
+}
+
+/// Label-2 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-label-2;
+///   }
+
+@mixin bpk-label-2 {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-sm,
+    tokens.$bpk-line-height-sm,
+    tokens.$bpk-font-weight-bold
+  );
+}
+
+/// Label-3 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-label-3;
+///   }
+
+@mixin bpk-label-3 {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-xs,
+    tokens.$bpk-line-height-xs,
+    tokens.$bpk-font-weight-bold
+  );
+}
+
+/// Default body text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-body-default;
+///   }
+
+@mixin bpk-body-default {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-base,
+    tokens.$bpk-line-height-base,
+    tokens.$bpk-font-weight-book
+  );
+}
+
+/// Longform body text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-body-longform;
+///   }
+
+@mixin bpk-body-longform {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-lg,
+    tokens.$bpk-line-height-lg,
+    tokens.$bpk-font-weight-book
+  );
+}
+
+/// Subheading text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-subheading;
+///   }
+
+@mixin bpk-subheading {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-xl,
+    tokens.$bpk-line-height-xl,
+    tokens.$bpk-font-weight-book
+  );
+}
+
+/// Editorial 1 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-editorial-1;
+///   }
+
+@mixin bpk-editorial-1 {
+  font-family: tokens.$bpk-font-family-larken;
+
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-xxxxl,
+    tokens.$bpk-line-height-xxxxl,
+    tokens.$bpk-font-weight-light
+  );
+}
+
+/// Editorial 2 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-editorial-2;
+///   }
+
+@mixin bpk-editorial-2 {
+  font-family: tokens.$bpk-font-family-larken;
+
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-xxl,
+    tokens.$bpk-line-height-xxl,
+    tokens.$bpk-font-weight-light
+  );
+}
+
+/// Editorial 3 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-editorial-3;
+///   }
+
+@mixin bpk-editorial-3 {
+  font-family: tokens.$bpk-font-family-larken;
+
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-lg,
+    tokens.$bpk-line-height-lg,
+    tokens.$bpk-font-weight-book
+  );
+}
+
+/// Hero 1 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hero-1;
+///   }
+
+@mixin bpk-hero-1 {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-8-xl,
+    tokens.$bpk-line-height-8-xl,
+    tokens.$bpk-font-weight-black,
+    tokens.$bpk-letter-spacing-hero
+  );
+}
+
+/// Hero 2 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hero-2;
+///   }
+
+@mixin bpk-hero-2 {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-7-xl,
+    tokens.$bpk-line-height-7-xl,
+    tokens.$bpk-font-weight-black,
+    tokens.$bpk-letter-spacing-hero
+  );
+}
+
+/// Hero 3 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hero-3;
+///   }
+
+@mixin bpk-hero-3 {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-6-xl,
+    tokens.$bpk-line-height-6-xl,
+    tokens.$bpk-font-weight-black,
+    tokens.$bpk-letter-spacing-hero
+  );
+}
+
+/// Hero 4 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hero-4;
+///   }
+
+@mixin bpk-hero-4 {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-xxxxxl,
+    tokens.$bpk-line-height-xxxxxl,
+    tokens.$bpk-font-weight-black,
+    tokens.$bpk-letter-spacing-hero
+  );
+}
+
+/// Hero 5 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hero-5;
+///   }
+
+@mixin bpk-hero-5 {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-xxxxl,
+    tokens.$bpk-line-height-xxxl,
+    tokens.$bpk-font-weight-black,
+    tokens.$bpk-letter-spacing-hero
+  );
+}
+
+/// Hero 6 text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hero-6;
+///   }
+
+@mixin bpk-hero-6 {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-xxxl,
+    tokens.$bpk-line-height-xxl,
+    tokens.$bpk-font-weight-black,
+    tokens.$bpk-letter-spacing-hero
+  );
+}
+
+/// Level 1 heading.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-heading-1();
+///   }
+
+@mixin bpk-heading-1 {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-xxxl,
+    tokens.$bpk-line-height-xxxl,
+    tokens.$bpk-font-weight-bold
+  );
+}
+
+/// Level 2 heading.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-heading-2();
+///   }
+
+@mixin bpk-heading-2 {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-xxl,
+    tokens.$bpk-line-height-xxl,
+    tokens.$bpk-font-weight-bold
+  );
+}
+
+/// Level 3 heading.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-heading-3();
+///   }
+
+@mixin bpk-heading-3 {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-xl,
+    tokens.$bpk-line-height-xl-tight,
+    tokens.$bpk-font-weight-bold
+  );
+}
+
+/// Level 4 heading.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-heading-4();
+///   }
+
+@mixin bpk-heading-4 {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-lg,
+    tokens.$bpk-line-height-lg-tight,
+    tokens.$bpk-font-weight-bold
+  );
+}
+
+/// Level 5 heading.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-heading-5();
+///   }
+
+@mixin bpk-heading-5 {
+  @include _bpk-text-factory(
+    tokens.$bpk-font-size-base,
+    tokens.$bpk-line-height-base-tight,
+    tokens.$bpk-font-weight-bold
+  );
+}
+
+/// Paragraph.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-paragraph();
+///   }
+
+@mixin bpk-paragraph {
+  margin-top: tokens.$bpk-spacing-none;
+  margin-bottom: tokens.bpk-spacing-base();
+}
+
+/// List.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-list();
+///   }
+
+@mixin bpk-list {
+  margin-top: tokens.bpk-spacing-base();
+  margin-bottom: tokens.bpk-spacing-base();
+  padding-left: tokens.bpk-spacing-lg();
+}
+
+/// Nested list. Modifies the bpk-list mixin.
+///
+/// @require {mixin} bpk-list
+///
+/// @example scss
+///   .selector {
+///     @include bpk-list();
+///     @include bpk-list--nested();
+///   }
+
+@mixin bpk-list--nested {
+  margin-top: tokens.$bpk-spacing-none;
+  margin-bottom: tokens.$bpk-spacing-none;
+  padding-top: tokens.bpk-spacing-md();
+  padding-bottom: tokens.bpk-spacing-sm();
+}
+
+/// List item.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-list-item();
+///   }
+
+@mixin bpk-list-item {
+  margin-top: 0;
+  margin-bottom: tokens.bpk-spacing-sm();
+}
+
+/// Underlined part inside an inline link.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-link-underlined();
+///   }
+
+@mixin bpk-link-underlined {
+  padding-bottom: tokens.$bpk-one-pixel-rem;
+  transition: background-size 200ms ease;
+  background: linear-gradient(
+    tokens.$bpk-text-primary-day,
+    tokens.$bpk-text-primary-day
+  );
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% tokens.$bpk-border-size-sm;
+
+  @include utils.bpk-hover {
+    background-size: 0 tokens.$bpk-border-size-sm;
+  }
+}
+
+/// Underlined part inside an implicit inline link.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-link-underlined--implicit();
+///   }
+
+@mixin bpk-link-underlined--implicit {
+  background-size: 0 tokens.$bpk-border-size-sm;
+
+  @include utils.bpk-hover {
+    background-size: 100% tokens.$bpk-border-size-sm;
+  }
+}
+
+/// Underlined part inside an alternate inline link.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-link-underlined--alternate();
+///   }
+
+@mixin bpk-link-underlined--alternate {
+  background: linear-gradient(
+    tokens.$bpk-text-on-dark-day,
+    tokens.$bpk-text-on-dark-day
+  );
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% tokens.$bpk-border-size-sm;
+
+  @include utils.bpk-hover {
+    background-size: 0 tokens.$bpk-border-size-sm;
+  }
+}
+
+/// Underlined part inside an implicit alternate inline link.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-link-underlined-implicit--alternate();
+///   }
+
+@mixin bpk-link-underlined-implicit--alternate {
+  background: linear-gradient(
+    tokens.$bpk-text-on-dark-day,
+    tokens.$bpk-text-on-dark-day
+  );
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 tokens.$bpk-border-size-sm;
+
+  @include utils.bpk-hover {
+    background-size: 100% tokens.$bpk-border-size-sm;
+  }
+}
+
+/// Inline link.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-link();
+///   }
+
+@mixin bpk-link {
+  position: relative;
+  display: inline;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  appearance: none;
+
+  @include utils.bpk-themeable-property(
+    color,
+    --bpk-link-color,
+    tokens.$bpk-text-primary-day
+  );
+
+  @include utils.bpk-hover {
+    text-decoration: none;
+
+    @include utils.bpk-themeable-property(
+      color,
+      --bpk-link-hover-color,
+      tokens.$bpk-text-primary-day
+    );
+  }
+
+  &:visited {
+    @include utils.bpk-themeable-property(
+      color,
+      --bpk-link-visited-color,
+      tokens.$bpk-text-primary-day
+    );
+  }
+
+  &:active {
+    @include utils.bpk-themeable-property(
+      color,
+      --bpk-link-active-color,
+      tokens.$bpk-text-primary-day
+    );
+  }
+}
+
+/// Implicit inline link.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-link();
+///     @include bpk-link--implicit();
+///   }
+
+@mixin bpk-link--implicit {
+  @include utils.bpk-themeable-property(
+    color,
+    --bpk-link-color,
+    tokens.$bpk-text-primary-day
+  );
+
+  @include utils.bpk-hover {
+    @include utils.bpk-themeable-property(
+      color,
+      --bpk-link-hover-color,
+      tokens.$bpk-text-primary-day
+    );
+  }
+
+  &:active {
+    text-decoration: none;
+
+    @include utils.bpk-themeable-property(
+      color,
+      --bpk-link-active-color,
+      tokens.$bpk-text-primary-day
+    );
+  }
+}
+
+/// White link. Modifies the bpk-link mixin.
+///
+/// @require {mixin} bpk-link
+///
+/// @example scss
+///   .selector {
+///     @include bpk-link();
+///     @include bpk-link--white();
+///   }
+
+@mixin bpk-link--alternate {
+  @include utils.bpk-themeable-property(
+    color,
+    --bpk-link-alternate-color,
+    tokens.$bpk-text-on-dark-day
+  );
+
+  @include utils.bpk-hover {
+    @include utils.bpk-themeable-property(
+      color,
+      --bpk-link-alternate-hover-color,
+      tokens.$bpk-text-on-dark-day
+    );
+  }
+
+  &:visited {
+    @include utils.bpk-themeable-property(
+      color,
+      --bpk-link-alternate-visited-color,
+      tokens.$bpk-text-on-dark-day
+    );
+  }
+
+  &:active {
+    @include utils.bpk-themeable-property(
+      color,
+      --bpk-link-alternate-active-color,
+      tokens.$bpk-text-on-dark-day
+    );
+  }
+}
+
+/// White link. Modifies the bpk-link mixin.
+///
+/// @require {mixin} bpk-link
+///
+/// @example scss
+///   .selector {
+///     @include bpk-link();
+///     @include bpk-link--white();
+///   }
+
+@mixin bpk-link--white {
+  @include bpk-link--alternate;
+}
+
+/// Active link. Modifies the bpk-link mixin.
+///
+/// @require {mixin} bpk-link
+///
+/// @example scss
+///   .selector {
+///     @include bpk-link();
+///     @include bpk-link--active();
+///   }
+
+@mixin bpk-link--active {
+  color: tokens.$bpk-text-primary-day;
+
+  &:visited {
+    color: tokens.$bpk-text-primary-day;
+  }
+
+  &:active {
+    color: tokens.$bpk-text-primary-day;
+  }
+}
+
+/// Table.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-table();
+///   }
+
+@mixin bpk-table {
+  width: 100%;
+  margin-bottom: tokens.bpk-spacing-md();
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  @include borders.bpk-border-sm(tokens.$bpk-line-day, '');
+}
+
+/// Alternate table style.
+/// @require {mixin} bpk-table
+///
+/// @example scss
+///   .selector {
+///     @include bpk-table();
+///     @include bpk-table--alternate();
+///   }
+
+@mixin bpk-table--alternate {
+  @include borders.bpk-border-sm(tokens.$bpk-line-day, '');
+}
+
+/// Table cell.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-table__cell();
+///   }
+
+@mixin bpk-table__cell {
+  padding: tokens.bpk-spacing-base();
+}
+
+/// Table head cell. Modifies the bpk-table__cell mixin.
+///
+/// @require {mixin} bpk-table__cell
+///
+/// @example scss
+///   .selector {
+///     @include bpk-table__cell();
+///     @include bpk-table__cell--head();
+///   }
+
+@mixin bpk-table__cell--head {
+  background-color: tokens.$bpk-canvas-contrast-day;
+  text-align: left;
+
+  @include bpk-label-1;
+
+  @include utils.bpk-rtl {
+    text-align: right;
+  }
+}
+
+/// Alternate table head cell. Modifies the bpk-table__cell mixin.
+///
+/// @require {mixin} bpk-table__cell
+///
+/// @example scss
+///   .selector {
+///     @include bpk-table__cell();
+///     @include bpk-table__cell--head-alternate();
+///   }
+
+@mixin bpk-table__cell--head-alternate {
+  background-color: tokens.$bpk-canvas-day;
+  text-align: left;
+
+  @include bpk-text--bold;
+
+  @include utils.bpk-rtl {
+    text-align: right;
+  }
+}
+
+/// Code.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-code();
+///   }
+
+@mixin bpk-code {
+  display: inline;
+  padding: 0 tokens.bpk-spacing-sm();
+  background-color: tokens.$bpk-surface-highlight-day;
+  color: tokens.$bpk-text-primary-day;
+  text-align: left;
+  white-space: nowrap;
+  vertical-align: bottom;
+
+  @include radii.bpk-border-radius-xs;
+
+  @include utils.bpk-rtl {
+    direction: ltr;
+  }
+}
+
+/// Alternate code style suited for display on non-white backgrounds.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-code();
+///     @include bpk-code--alternate();
+///   }
+
+@mixin bpk-code--alternate {
+  background-color: tokens.$bpk-canvas-contrast-day;
+  text-shadow: none;
+}
+
+/// Code block. Modifies the bpk-code mixin.
+///
+/// @require {mixin} bpk-code
+///
+/// @example scss
+///   .selector {
+///     @include bpk-code();
+///     @include bpk-code--block();
+///   }
+
+@mixin bpk-code--block {
+  display: block;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  white-space: inherit;
+  overflow: auto;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/// Pre (code block wrapper).
+///
+/// @example scss
+///   .selector {
+///     @include bpk-code__pre();
+///   }
+
+@mixin bpk-code__pre {
+  margin: 0 0 tokens.bpk-spacing-base();
+  padding: tokens.bpk-spacing-lg();
+  background-color: tokens.$bpk-surface-highlight-day;
+
+  @include radii.bpk-border-radius-xs;
+}
+
+/// Pre (code block wrapper) alternate style.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-code__pre();
+///     @include bpk-code__pre--alternate();
+///   }
+
+@mixin bpk-code__pre--alternate {
+  background-color: transparent;
+
+  @include borders.bpk-border-sm(tokens.$bpk-line-day);
+}
+
+/// Blockquote.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-blockquote();
+///   }
+
+@mixin bpk-blockquote {
+  margin: 0 0 tokens.bpk-spacing-base() 0;
+  padding: tokens.bpk-spacing-lg();
+
+  @include borders.bpk-border-left-lg(tokens.$bpk-core-accent-day);
+  @include borders.bpk-border-left-lg(
+    var(--bpk-blockquote-bar-color, tokens.$bpk-core-accent-day)
+  );
+
+  @include utils.bpk-rtl {
+    padding: tokens.bpk-spacing-lg();
+    border-left: 0;
+
+    @include borders.bpk-border-right-lg(tokens.$bpk-core-accent-day);
+    @include borders.bpk-border-right-lg(
+      var(--bpk-blockquote-bar-color, tokens.$bpk-core-accent-day)
+    );
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/// Adds additional spacing above and below blockquotes. Modifies the bpk-blockquote mixin.
+///
+/// @require {mixin} bpk-blockquote
+///
+/// @example scss
+///   .selector {
+///     @include bpk-blockquote();
+///     @include bpk-blockquote--extra-spacing();
+///   }
+
+@mixin bpk-blockquote--extra-spacing {
+  margin-top: tokens.bpk-spacing-xl();
+  margin-bottom: tokens.bpk-spacing-xl();
+}

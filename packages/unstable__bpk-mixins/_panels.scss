@@ -1,0 +1,96 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* stylelint-disable at-rule-disallowed-list */
+
+@use 'tokens.scss';
+@use 'borders.scss';
+@use 'radii.scss';
+
+////
+/// @group panels
+////
+
+/// Basic panel.
+///
+/// @example scss
+///   .selector {
+///     @include @bpk-panel()
+///   }
+@mixin bpk-panel {
+  display: block;
+  background-color: tokens.$bpk-card-background-color;
+
+  @include radii.bpk-border-radius-md;
+}
+
+/// Adds padding to panels. Modifies the bpk-panel mixin.
+///
+/// @require {mixin} bpk-panel
+///
+/// @example scss
+///   .selector {
+///     @include bpk-panel();
+///     @include bpk-panel--padded();
+///   }
+@mixin bpk-panel--padded {
+  padding: tokens.$bpk-card-padding;
+}
+
+/// Controls if we have a keyline or not on the panel
+/// Modifies the bpk-panel mixin.
+///
+/// @require {mixin} bpk-panel
+///
+/// @example scss
+///   .selector {
+///     @include bpk-panel();
+///     @include bpk-panel--keyline();
+///   }
+@mixin bpk-panel--keyline {
+  @include borders.bpk-border-sm(tokens.$bpk-panel-border-color);
+}
+
+/// Makes panel full width by removing the border radius
+/// Modifies the bpk-panel mixin.
+///
+/// @require {mixin} bpk-panel
+///
+/// @example scss
+///   .selector {
+///     @include bpk-panel();
+///     @include bpk-panel--full-width();
+///   }
+@mixin bpk-panel--full-width {
+  border-radius: 0;
+}
+
+/// Sets the keyline to only show on the top and bottom when full
+///
+/// @require {mixin} bpk-panel
+///
+/// @example scss
+///   .selector {
+///     @include bpk-panel();
+///     @include bpk-panel--full-width-keyline();
+///   }
+@mixin bpk-panel--full-width-keyline {
+  box-shadow:
+    tokens.$bpk-panel-border-color 0 -1 * tokens.$bpk-one-pixel-rem 0 0 inset,
+    tokens.$bpk-panel-border-color 0 tokens.$bpk-one-pixel-rem 0 0 inset;
+}

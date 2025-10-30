@@ -1,0 +1,199 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* stylelint-disable at-rule-disallowed-list */
+
+@use 'tokens.scss';
+@use 'radii.scss';
+@use 'shadows.scss';
+@use 'utils.scss';
+
+////
+/// @group layers
+////
+
+/// Layer base styles.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-layer;
+///   }
+
+@mixin bpk-layer(
+  $background-color: tokens.$bpk-color-white,
+  $border-color: tokens.$bpk-surface-highlight-day
+) {
+  border: tokens.$bpk-one-pixel-rem solid $border-color;
+  background-color: $background-color;
+
+  @include radii.bpk-border-radius-sm;
+  @include shadows.bpk-box-shadow-lg;
+}
+
+/// Layer arrow base styles.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-layer-arrow(1rem);
+///   }
+
+@mixin bpk-layer-arrow($arrow-size) {
+  position: absolute;
+  pointer-events: none;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    display: block;
+  }
+
+  &::before {
+    border: ($arrow-size + tokens.$bpk-one-pixel-rem) solid transparent;
+  }
+
+  &::after {
+    border: $arrow-size solid transparent;
+  }
+}
+
+/// Layer top arrow.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-layer-arrow(1rem);
+///     @include bpk-layer-arrow-top(1rem);
+///   }
+
+@mixin bpk-layer-arrow-top(
+  $arrow-size,
+  $arrow-color: tokens.$bpk-color-white,
+  $border-color: tokens.$bpk-color-sky-gray-tint-06
+) {
+  bottom: 100%;
+  width: ($arrow-size * 2);
+  height: $arrow-size;
+
+  &::before {
+    top: -1 * ($arrow-size + tokens.$bpk-one-pixel-rem);
+    margin-left: -1 * tokens.$bpk-one-pixel-rem;
+    border-bottom-color: $border-color;
+
+    @include utils.bpk-rtl {
+      margin-right: -1 * tokens.$bpk-one-pixel-rem;
+      margin-left: 0;
+    }
+  }
+
+  &::after {
+    top: -1 * $arrow-size + tokens.$bpk-one-pixel-rem;
+    border-bottom-color: $arrow-color;
+  }
+}
+
+/// Layer right arrow.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-layer-arrow(1rem);
+///     @include bpk-layer-arrow-right(1rem);
+///   }
+
+@mixin bpk-layer-arrow-right(
+  $arrow-size,
+  $arrow-color: tokens.$bpk-color-white,
+  $border-color: tokens.$bpk-color-sky-gray-tint-06
+) {
+  left: 100%;
+  width: $arrow-size;
+  height: ($arrow-size * 2);
+
+  &::before {
+    right: -1 * ($arrow-size + tokens.$bpk-one-pixel-rem);
+    margin-top: -1 * tokens.$bpk-one-pixel-rem;
+    border-left-color: $border-color;
+  }
+
+  &::after {
+    right: -1 * $arrow-size + tokens.$bpk-one-pixel-rem;
+    border-left-color: $arrow-color;
+  }
+}
+
+/// Layer bottom arrow.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-layer-arrow(1rem);
+///     @include bpk-layer-arrow-bottom(1rem);
+///   }
+
+@mixin bpk-layer-arrow-bottom(
+  $arrow-size,
+  $arrow-color: tokens.$bpk-color-white,
+  $border-color: tokens.$bpk-color-sky-gray-tint-06
+) {
+  top: 100%;
+  width: ($arrow-size * 2);
+  height: $arrow-size;
+
+  &::before {
+    bottom: -1 * ($arrow-size + tokens.$bpk-one-pixel-rem);
+    margin-left: -1 * tokens.$bpk-one-pixel-rem;
+    border-top-color: $border-color;
+
+    @include utils.bpk-rtl {
+      margin-right: -1 * tokens.$bpk-one-pixel-rem;
+      margin-left: 0;
+    }
+  }
+
+  &::after {
+    bottom: -1 * $arrow-size + tokens.$bpk-one-pixel-rem;
+    border-top-color: $arrow-color;
+  }
+}
+
+/// Layer left arrow.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-layer-arrow(1rem);
+///     @include bpk-layer-arrow-left(1rem);
+///   }
+
+@mixin bpk-layer-arrow-left(
+  $arrow-size,
+  $arrow-color: tokens.$bpk-color-white,
+  $border-color: tokens.$bpk-color-sky-gray-tint-06
+) {
+  right: 100%;
+  width: $arrow-size;
+  height: ($arrow-size * 2);
+
+  &::before {
+    left: -1 * ($arrow-size + tokens.$bpk-one-pixel-rem);
+    margin-top: -1 * tokens.$bpk-one-pixel-rem;
+    border-right-color: $border-color;
+  }
+
+  &::after {
+    left: -1 * $arrow-size + tokens.$bpk-one-pixel-rem;
+    border-right-color: $arrow-color;
+  }
+}

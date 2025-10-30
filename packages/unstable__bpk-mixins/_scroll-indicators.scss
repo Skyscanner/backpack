@@ -1,0 +1,79 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* stylelint-disable at-rule-disallowed-list */
+
+@use 'tokens.scss';
+
+////
+/// @group scroll-indicator
+////
+
+/// Scroll indicator utility.
+///
+/// @access private
+
+@mixin _bpk-scroll-indicator($gradient-color, $direction: 'left') {
+  $gradient-direction: if($direction == 'left', 90deg, 270deg);
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  content: ' ';
+  display: block;
+  z-index: 1;
+  width: tokens.bpk-spacing-xl();
+  background-image: linear-gradient(
+    $gradient-direction,
+    rgba($gradient-color, 1),
+    rgba($gradient-color, 0)
+  );
+  pointer-events: none;
+
+  @if $direction == 'left' {
+    left: 0;
+  } @else {
+    right: 0;
+  }
+}
+
+/// Left-sided scroll indicator.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-scroll-indicator-left($bpk-color-grey-100);
+///   }
+
+@mixin bpk-scroll-indicator-left($gradient-color) {
+  &::before {
+    @include _bpk-scroll-indicator($gradient-color, 'left');
+  }
+}
+
+/// Right-sided scroll indicator.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-scroll-indicator-right($bpk-color-grey-100);
+///   }
+
+@mixin bpk-scroll-indicator-right($gradient-color) {
+  &::after {
+    @include _bpk-scroll-indicator($gradient-color, 'right');
+  }
+}

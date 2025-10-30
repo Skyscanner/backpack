@@ -1,0 +1,94 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* stylelint-disable at-rule-disallowed-list */
+
+@use 'tokens.scss';
+@use 'radii.scss';
+@use 'shadows.scss';
+@use 'utils.scss';
+
+////
+/// @group cards
+////
+
+/// Basic card.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-card();
+///   }
+
+@mixin bpk-card {
+  position: relative;
+  display: block;
+  background-color: tokens.$bpk-card-background-color;
+  color: tokens.$bpk-text-primary-day;
+  text-decoration: none;
+  cursor: pointer;
+
+  @include shadows.bpk-box-shadow-sm;
+  @include radii.bpk-border-radius-md;
+
+  @include utils.bpk-hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  // Keep transitions and animations to only transform and opacity.
+  // This pseudo element solution allows us to animate box-shadow in a performant manner.
+  // http://tobiasahlin.com/blog/how-to-animate-box-shadow/
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    transition: opacity tokens.$bpk-duration-sm ease-in-out;
+    opacity: 0;
+    pointer-events: none; // To prevent the pseudo element absorbing click events
+
+    @include shadows.bpk-box-shadow-lg;
+    @include radii.bpk-border-radius-md;
+
+    // pointer-events doesn't work on ie
+    @media screen\0 {
+      z-index: -1;
+    }
+  }
+
+  &:active::after {
+    box-shadow: none;
+  }
+}
+
+/// Adds padding to cards. Modifies the bpk-card mixin.
+///
+/// @require {mixin} bpk-card
+///
+/// @example scss
+///   .selector {
+///     @include bpk-card();
+///     @include bpk-card--padded();
+///   }
+
+@mixin bpk-card--padded {
+  padding: tokens.$bpk-card-padding;
+}
