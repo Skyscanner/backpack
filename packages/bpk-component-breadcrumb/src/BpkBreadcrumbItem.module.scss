@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/typography';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/typography';
 
 /* After adding the wrapper around the icon, need to set the line
     height to stop the 16x16 or 32x32(zoomed) icon from expanding

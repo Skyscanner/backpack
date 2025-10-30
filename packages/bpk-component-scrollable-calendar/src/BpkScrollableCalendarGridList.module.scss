@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
+@use '../../bpk-mixins/tokens';
 
 $calendar-height: 7 * (tokens.$bpk-calendar-day-size + tokens.bpk-spacing-lg());
 
