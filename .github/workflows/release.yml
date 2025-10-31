@@ -97,7 +97,7 @@ jobs:
         node-version-file: ".nvmrc"
         registry-url: 'https://registry.npmjs.org'
 
-    - name: Update npm
+    - name: Update NPM
       run: |
         npm install -g npm@latest
         npm --version
@@ -117,7 +117,7 @@ jobs:
       run: |
         cd dist
         npm version $RELEASE_VERSION --no-git-tag-version
-        npm publish --provenance --access public --loglevel verbose
+        npm publish --access public --loglevel verbose
       env:
         RELEASE_VERSION: ${{ github.event.release.tag_name }}
 
