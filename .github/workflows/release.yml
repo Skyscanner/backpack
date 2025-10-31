@@ -132,6 +132,11 @@ jobs:
 
     - run: npm run transpile
 
+    - name: Simulate npm internal OIDC call (no auth header)
+      run: |
+        echo "Testing OIDC endpoint without Authorization header..."
+        curl -v "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=npm%3Aregistry.npmjs.org" || echo "failed"
+
     - name: Request OIDC token for npm
       run: |
         echo "Requesting token for audience: npm:registry.npmjs.org"
