@@ -80,9 +80,6 @@ jobs:
 
   ReleaseWeb:
     name: Release @skyscanner/backpack-web to NPM
-    permissions:
-      id-token: write
-      contents: read
     runs-on: ubuntu-latest
     environment: Publishing
     needs: [Create-NPM-Cache, Build]
@@ -117,8 +114,9 @@ jobs:
       run: |
         cd dist
         npm version $RELEASE_VERSION --no-git-tag-version
-        npm publish --provenance --access public --loglevel verbose
+        npm publish
       env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         RELEASE_VERSION: ${{ github.event.release.tag_name }}
 
   SupernovaPublish:
