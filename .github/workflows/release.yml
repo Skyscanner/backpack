@@ -4,6 +4,10 @@ on:
   release:
     types: [ published ]
 
+permissions:
+  id-token: write
+  contents: read
+
 defaults:
   run:
     shell: bash -l {0}
@@ -110,6 +114,12 @@ jobs:
           node_modules/
           packages/node_modules/
         key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+
+    - name: Verify OIDC Token
+      run: |
+        echo "Checking OIDC token..."
+        curl -s -f -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+          "$ACTIONS_ID_TOKEN_REQUEST_URL" || echo "OIDC not available"
 
     - run: npm run transpile
 
