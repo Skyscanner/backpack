@@ -138,15 +138,18 @@ jobs:
         curl -v "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=npm%3Aregistry.npmjs.org" || echo "failed"
 
     - name: Request OIDC token for npm
+      id: oidc
       run: |
         echo "Requesting token for audience: npm:registry.npmjs.org"
         TOKEN_URL="${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=npm%3Aregistry.npmjs.org"
-        curl -s -f -H "Authorization: Bearer ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}" "$TOKEN_URL" | jq .
+        TOKEN=$(curl -s -f -H "Authorization: Bearer ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}" "$TOKEN_URL" | jq -r .value)
+        echo "token=$TOKEN" >> $GITHUB_OUTPUT
 
     - name: Publish NPM package
       run: |
         cd dist
         npm version $RELEASE_VERSION --no-git-tag-version
+        export NPM_CONFIG_TOKEN=${{ steps.oidc.outputs.token }}
         npm publish --access public --tag beta --loglevel verbose
       env:
         RELEASE_VERSION: ${{ github.event.release.tag_name }}
