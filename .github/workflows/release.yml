@@ -15,6 +15,8 @@ defaults:
 env:
   CACHE_NAME: node-modules-cache
   BUILD_CACHE_NAME: build-cache
+  ACTIONS_ID_TOKEN_REQUEST_AUDIENCE: "npm:registry.npmjs.org"
+
 
 jobs:
   Create-NPM-Cache:
@@ -87,6 +89,8 @@ jobs:
     permissions:
       id-token: write
       contents: read
+    env:
+      ACTIONS_ID_TOKEN_REQUEST_AUDIENCE: "npm:registry.npmjs.org"
     runs-on: ubuntu-latest
     environment: Publishing
     needs: [Create-NPM-Cache, Build]
@@ -127,6 +131,12 @@ jobs:
         echo $TOKEN | cut -d. -f2 | base64 -d | jq .
 
     - run: npm run transpile
+
+    - name: Request OIDC token for npm
+      run: |
+        echo "Requesting token for audience: npm:registry.npmjs.org"
+        TOKEN_URL="${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=npm%3Aregistry.npmjs.org"
+        curl -s -f -H "Authorization: Bearer ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}" "$TOKEN_URL" | jq .
 
     - name: Publish NPM package
       run: |
