@@ -117,7 +117,7 @@ jobs:
       run: |
         cd dist
         npm version $RELEASE_VERSION --no-git-tag-version
-        npm publish --access public --loglevel verbose
+        npm publish --access public --tag beta --loglevel verbose
       env:
         RELEASE_VERSION: ${{ github.event.release.tag_name }}
 
