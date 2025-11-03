@@ -19,8 +19,9 @@
 import { Component, Children } from 'react';
 import type { ReactNode } from 'react';
 
-import BpkBottomSheet from '../../packages/bpk-component-bottom-sheet';
-import { PADDING_TYPE } from '../../packages/bpk-component-bottom-sheet/src/BpkBottomSheet';
+import BpkBottomSheet, {
+  PADDING_TYPE,
+} from '../../packages/bpk-component-bottom-sheet';
 import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
