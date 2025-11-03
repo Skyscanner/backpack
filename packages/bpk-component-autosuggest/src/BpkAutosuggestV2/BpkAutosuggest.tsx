@@ -183,6 +183,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     const theme = { ...defaultTheme, ...customTheme };
     const arrowRef = useRef(null);
     const previousHighlightedIndexRef = useRef<number | null>(null);
+    // Stores the user's typed value so we can restore it when highlight is cleared
+    const originalInputOnPreviewRef = useRef<string | null>(null);
     const hasInteractedRef = useRef(false);
     const hasLoadedInitiallyRef = useRef(false);
 
@@ -247,18 +249,25 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           newValue: newInputValue ?? '',
         });
 
-        if (newInputValue?.length > 0) {
-          if (newIsOpen) {
-            onSuggestionsFetchRequested(newInputValue);
+        // Only fetch new suggestions when the user actually types.
+        // Avoid fetching when input value is being programmatically updated
+        // (e.g. previewing highlighted items or programmatic setInputValue calls).
+        if (type === useCombobox.stateChangeTypes.InputChange) {
+          if (newInputValue?.length > 0) {
+            if (newIsOpen) {
+              onSuggestionsFetchRequested(newInputValue);
+            }
+          } else {
+            onSuggestionsFetchRequested('');
           }
-        } else {
-          onSuggestionsFetchRequested('');
         }
       },
       onSelectedItemChange(changes) {
         const { selectedItem } = changes;
         if (selectedItem) {
           setInputValue(getSuggestionValue(selectedItem));
+          // Commit the selection: prevent preview effect from restoring the old typed value
+          originalInputOnPreviewRef.current = null;
           onSuggestionSelected?.({
             suggestion: selectedItem,
             inputValue,
@@ -275,6 +284,38 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       },
       initialInputValue: defaultValue ?? '',
       id,
+      onHighlightedIndexChange(changes) {
+        const { highlightedIndex: newIndex, type } = changes;
+        const currentSuggestion =
+          newIndex != null && newIndex >= 0
+            ? (flattenedSuggestions?.[newIndex] ?? null)
+            : null;
+
+        // Always notify consumer about highlighted suggestion
+        onSuggestionHighlighted?.({ suggestion: currentSuggestion });
+
+        // Only preview for keyboard arrow navigation; ignore mouse highlights
+        const isArrowKey =
+          type === useCombobox.stateChangeTypes.InputKeyDownArrowDown ||
+          type === useCombobox.stateChangeTypes.InputKeyDownArrowUp;
+
+        if (isArrowKey) {
+          if (currentSuggestion) {
+            if (originalInputOnPreviewRef.current == null) {
+              originalInputOnPreviewRef.current = inputValue ?? '';
+            }
+            const previewValue = getSuggestionValue(currentSuggestion);
+            if (previewValue !== inputValue) {
+              setInputValue(previewValue);
+            }
+          } else if (originalInputOnPreviewRef.current != null) {
+            if ((inputValue ?? '') !== originalInputOnPreviewRef.current) {
+              setInputValue(originalInputOnPreviewRef.current);
+            }
+            originalInputOnPreviewRef.current = null;
+          }
+        }
+      },
     });
 
     const { context, floatingStyles, refs } = useFloating({
@@ -329,8 +370,23 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           ? (flattenedSuggestions?.[highlightedIndex] ?? null)
           : null;
 
+      // If a preview was active and highlight is cleared (no item), restore original input.
+      if (!currentSuggestion && originalInputOnPreviewRef.current != null) {
+        if ((inputValue ?? '') !== originalInputOnPreviewRef.current) {
+          setInputValue(originalInputOnPreviewRef.current);
+        }
+        originalInputOnPreviewRef.current = null;
+      }
+
+      // For non-keyboard causes we still notify consumer here via effect to cover all cases
       onSuggestionHighlighted?.({ suggestion: currentSuggestion });
-    }, [highlightedIndex, flattenedSuggestions, onSuggestionHighlighted]);
+    }, [
+      highlightedIndex,
+      flattenedSuggestions,
+      onSuggestionHighlighted,
+      inputValue,
+      setInputValue,
+    ]);
 
     const handleInputInteraction = () => {
       hasInteractedRef.current = true;
