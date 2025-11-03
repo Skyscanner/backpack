@@ -81,7 +81,7 @@ describe('BpkTableCell', () => {
     it('should not apply wordBreak class by default', () => {
       const expectedClasses = [ ...defaultClasses ];
 
-      // wordBreak prop ommited
+      // wordBreak prop omitted
       const { cell } = renderCell();
 
       expect(cell?.tagName).toBe('TD');
@@ -114,5 +114,5 @@ describe('BpkTableCell', () => {
       expect(cell?.tagName).toBe('TD');
       expect(cell).toHaveClass(...expectedClasses);
     });
-  })
+  });
 });
