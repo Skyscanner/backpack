@@ -17,9 +17,9 @@
  */
 
 /* @flow strict */
-// @ts-nocheck
 
 import PropTypes from 'prop-types';
+import type { Node } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -27,14 +27,22 @@ import STYLES from './BpkTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkTableHeadCell = ({ children, className = null, wrap = false, ...rest }) => {
+type Props = {
+  children: Node, 
+  className: ?string, 
+  wordBreak?: boolean
+};
 
-  const classNames = getClassName(
+const BpkTableHeadCell = ({ children, className = null, wordBreak = false, ...rest }: Props) => {
+
+  const classes = [
     'bpk-table__cell',
     'bpk-table__cell--head',
-  wrap && 'bpk-table__cell--wrap',
-    className,
-  );
+    wordBreak && 'bpk-table__cell--wordBreak',
+    className && className,
+  ];
+
+  const classNames = getClassName(...classes);
 
   return (
     <th className={classNames} {...rest}>
@@ -46,7 +54,7 @@ const BpkTableHeadCell = ({ children, className = null, wrap = false, ...rest })
 BpkTableHeadCell.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  wrap: PropTypes.bool,
+  wordBreak: PropTypes.bool,
 };
 
 export default BpkTableHeadCell;

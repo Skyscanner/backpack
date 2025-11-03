@@ -57,29 +57,29 @@ const DefaultExample = () => (
 );
 
 // Demonstrates opt-in wrapping via wrap={true}. Long text will wrap onto multiple lines.
-const WrapExample = () => (
+const WordBreakExample = () => (
   <BpkTable>
     <BpkTableHead>
       <BpkTableRow>
-        <BpkTableHeadCell wrap>Extremely Long Header Title That Will Wrap When Space Is Constrained</BpkTableHeadCell>
-        <BpkTableHeadCell>Standard Header</BpkTableHeadCell>
-        <BpkTableHeadCell wrap>Another Very Long Header Label That Wraps Onto Multiple Lines</BpkTableHeadCell>
+        <BpkTableHeadCell wordBreak>wordBreak: true</BpkTableHeadCell>
+        <BpkTableHeadCell wordBreak>https://www.bbc.co.uk/news/world/us_and_canada</BpkTableHeadCell>
+        <BpkTableHeadCell wordBreak>pneumonoultramicroscopicsilicovolcanoconiosis</BpkTableHeadCell>
       </BpkTableRow>
     </BpkTableHead>
     <BpkTableBody>
       <BpkTableRow>
-        <BpkTableCell wrap>A super elongated piece of cell content designed to wrap automatically instead of truncating or forcing horizontal scroll</BpkTableCell>
-        <BpkTableCell>Short value</BpkTableCell>
-        <BpkTableCell wrap>Second elongated cell value that demonstrates multi-line wrapping behaviour gracefully</BpkTableCell>
+        <BpkTableCell wordBreak>wordBreak: true</BpkTableCell>
+        <BpkTableCell wordBreak>https://www.bbc.co.uk/news/world/us_and_canada</BpkTableCell>
+        <BpkTableCell wordBreak>pneumonoultramicroscopicsilicovolcanoconiosis</BpkTableCell>
       </BpkTableRow>
       <BpkTableRow>
-        <BpkTableCell wrap>Additional very long value showcasing wrapping for dense tabular data in narrow layouts</BpkTableCell>
-        <BpkTableCell>Another</BpkTableCell>
-        <BpkTableCell wrap>Final cell with extended descriptive text wrapping across lines to improve readability</BpkTableCell>
+        <BpkTableCell>wordBreak: false</BpkTableCell>
+        <BpkTableCell>https://www.bbc.co.uk/news/world/us_and_canada</BpkTableCell>
+        <BpkTableCell>pneumonoultramicroscopicsilicovolcanoconiosis</BpkTableCell>
       </BpkTableRow>
     </BpkTableBody>
   </BpkTable>
 );
 
 export default DefaultExample;
-export { WrapExample };
+export { WordBreakExample };

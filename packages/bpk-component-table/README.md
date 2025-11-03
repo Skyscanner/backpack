@@ -25,7 +25,7 @@ export default () => (
         <BpkTableHeadCell>Heading 1</BpkTableHeadCell>
         <BpkTableHeadCell>Heading 2</BpkTableHeadCell>
         <BpkTableHeadCell>Heading 3</BpkTableHeadCell>
-  <BpkTableHeadCell wrap={true}>Heading 4 (wrapped)</BpkTableHeadCell>
+        <BpkTableHeadCell wordBreak={true}>Heading4wordBreakTrue</BpkTableHeadCell>
       </BpkTableRow>
     </BpkTableHead>
     <BpkTableBody>
@@ -33,7 +33,7 @@ export default () => (
         <BpkTableCell>Row 1, Data 1</BpkTableCell>
         <BpkTableCell>Row 1, Data 2</BpkTableCell>
         <BpkTableCell>Row 1, Data 3</BpkTableCell>
-  <BpkTableCell wrap={true}>Row 1, Data 4 (wrapped)</BpkTableCell>
+        <BpkTableCell wordBreak={true}>Row1Data4wordBreakTrue</BpkTableCell>
       </BpkTableRow>
       <BpkTableRow>
         <BpkTableCell>Row 2, Data 1</BpkTableCell>
@@ -52,17 +52,8 @@ Check out the full list of props on Skyscanner's [design system documentation we
 
 ### Additional Props
 
-`wrap` (boolean, default `false`)
+`wordBreak` (boolean, default `false`)
 
-Opt-in multi-line wrapping for cell content. By default (prop omitted or `false`) table cells render on a single line (nowrap). Set `wrap={true}` to apply the `bpk-table__cell--wrap` modifier class which sets `white-space: normal;` and allows long text to wrap onto multiple lines. Available on both `BpkTableCell` and `BpkTableHeadCell`.
+Optional prop to add css `word-break: break-word;`, this allows long words and URLs to wrap onto multiple lines within the cell rather than overflowing. This prop is available on both `BpkTableCell` and `BpkTableHeadCell`. Set `wordBreak={true}` to add this behaviour.
 
-Suggested complementary styles (if needed) when wrapping:
-```css
-/* Example: constrain column width with wrapping */
-.my-narrow-column { max-width: 12rem; }
-```
-
-If you prefer truncation instead of wrapping, keep `wrap={false}` (or omit the prop) and add your own ellipsis styles:
-```css
-.my-truncated-cell { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-```
+By default the prop can be omitted.

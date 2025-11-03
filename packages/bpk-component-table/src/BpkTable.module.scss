@@ -28,8 +28,7 @@
       @include typography.bpk-table__cell--head;
     }
 
-    // Wrapping is opt-in; default is single-line via inherited nowrap styling.
-    &--wrap {
+    &--wordBreak {
       white-space: normal;
       word-break: break-word;
     }

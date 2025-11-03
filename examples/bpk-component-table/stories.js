@@ -23,7 +23,7 @@ import BpkTableHead from '../../packages/bpk-component-table/src/BpkTableHead';
 import BpkTableHeadCell from '../../packages/bpk-component-table/src/BpkTableHeadCell';
 import BpkTableRow from '../../packages/bpk-component-table/src/BpkTableRow';
 
-import DefaultExample, { WrapExample } from './examples';
+import DefaultExample, { WordBreakExample } from './examples';
 
 export default {
   title: 'bpk-component-table',
@@ -38,4 +38,4 @@ export default {
 };
 
 export const Default = DefaultExample;
-export const Wrapped = WrapExample;
+export const WordBreak = WordBreakExample;
