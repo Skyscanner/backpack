@@ -39,7 +39,7 @@ const BpkTableHeadCell = ({ children, className = null, wordBreak = false, ...re
     'bpk-table__cell',
     'bpk-table__cell--head',
     wordBreak && 'bpk-table__cell--wordBreak',
-    className && className,
+    className,
   ];
 
   const classNames = getClassName(...classes);

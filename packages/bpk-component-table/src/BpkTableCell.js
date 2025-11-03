@@ -38,8 +38,8 @@ const BpkTableCell = ({children, className = null, wordBreak = false, ...rest}: 
   const classes = [
     'bpk-table__cell',
     wordBreak && 'bpk-table__cell--wordBreak',
-    className && className,
-  ]
+    className,
+  ];
 
   const classNames = getClassName(...classes);
 
