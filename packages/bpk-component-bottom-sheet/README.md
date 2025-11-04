@@ -10,7 +10,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```js
 import { Component } from 'react';
-import BpkBottomSheet from '@skyscanner/backpack-web/bpk-component-bottom-sheet';
+import BpkBottomSheet, { PADDING_TYPE } from '@skyscanner/backpack-web/bpk-component-bottom-sheet';
 import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
 
 class App extends Component {
