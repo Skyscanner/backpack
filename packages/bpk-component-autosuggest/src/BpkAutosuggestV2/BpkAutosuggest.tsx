@@ -183,7 +183,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     const theme = { ...defaultTheme, ...customTheme };
     const arrowRef = useRef(null);
     const previousHighlightedIndexRef = useRef<number | null>(null);
-    // Stores the user's typed value so we can restore it when highlight is cleared
     const originalInputOnPreviewRef = useRef<string | null>(null);
     const hasInteractedRef = useRef(false);
     const hasLoadedInitiallyRef = useRef(false);
@@ -249,9 +248,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           newValue: newInputValue ?? '',
         });
 
-        // Only fetch new suggestions when the user actually types.
-        // Avoid fetching when input value is being programmatically updated
-        // (e.g. previewing highlighted items or programmatic setInputValue calls).
         if (type === useCombobox.stateChangeTypes.InputChange) {
           if (newInputValue?.length > 0) {
             if (newIsOpen) {
@@ -266,7 +262,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         const { selectedItem } = changes;
         if (selectedItem) {
           setInputValue(getSuggestionValue(selectedItem));
-          // Commit the selection: prevent preview effect from restoring the old typed value
           originalInputOnPreviewRef.current = null;
           onSuggestionSelected?.({
             suggestion: selectedItem,
@@ -291,10 +286,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
             ? (flattenedSuggestions?.[newIndex] ?? null)
             : null;
 
-        // Always notify consumer about highlighted suggestion
         onSuggestionHighlighted?.({ suggestion: currentSuggestion });
 
-        // Only preview for keyboard arrow navigation; ignore mouse highlights
         const isArrowKey =
           type === useCombobox.stateChangeTypes.InputKeyDownArrowDown ||
           type === useCombobox.stateChangeTypes.InputKeyDownArrowUp;
