@@ -27,5 +27,10 @@
     &--head {
       @include typography.bpk-table__cell--head;
     }
+
+    &--wordBreak {
+      white-space: normal;
+      word-break: break-word;
+    }
   }
 }
