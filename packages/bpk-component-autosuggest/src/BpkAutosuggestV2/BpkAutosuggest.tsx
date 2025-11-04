@@ -620,6 +620,14 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       }
     }, [refs]);
 
+    // Always call getMenuProps to satisfy Downshift's requirement, even when menu is not rendered.
+    // This prevents the "You forgot to call the getMenuProps" warning without changing UI logic.
+    // We use suppressRefError when not showing suggestions to avoid ref-related warnings.
+    // The return value is intentionally unused here; we call it again in the render with proper props.
+    if (!showSuggestions) {
+      getMenuProps({}, { suppressRefError: true });
+    }
+
     return (
       <div
         ref={containerWrapperRef}
