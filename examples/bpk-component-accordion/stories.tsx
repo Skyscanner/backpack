@@ -33,6 +33,7 @@ import {
   WithSeoContentOnDarkExample,
   SingleItemExampleWithoutDivider,
   SingleItemExampleWithoutDividerOnDark,
+  VariantExample,
 } from './examples';
 import {
   WithSingleItemAccordionStateMock,
@@ -76,6 +77,8 @@ export const WithoutDividerOnDark = SingleItemExampleWithoutDividerOnDark;
 
 export const VisualTest = SingleItemExample;
 export const VisualTestOnDark = WithDarkBackgroundExample;
+
+export const Variant = VariantExample;
 
 export const VisualTestWithZoom = {
   render: VisualTest,
