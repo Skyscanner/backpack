@@ -313,6 +313,9 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
     const { context, floatingStyles, refs } = useFloating({
       placement: 'bottom-start',
+      // Use fixed strategy on desktop to avoid stacking context issues with table headers
+      // Fixed positioning is relative to viewport, not affected by parent transforms/overflows
+      ...(isDesktop && { strategy: 'fixed' }),
       middleware: isDesktop
         ? [
             offset(4),
