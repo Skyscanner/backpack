@@ -25,7 +25,7 @@ export default () => (
         <BpkTableHeadCell>Heading 1</BpkTableHeadCell>
         <BpkTableHeadCell>Heading 2</BpkTableHeadCell>
         <BpkTableHeadCell>Heading 3</BpkTableHeadCell>
-        <BpkTableHeadCell>Heading 4</BpkTableHeadCell>
+        <BpkTableHeadCell wordBreak={true}>Heading4wordBreakTrue</BpkTableHeadCell>
       </BpkTableRow>
     </BpkTableHead>
     <BpkTableBody>
@@ -33,7 +33,7 @@ export default () => (
         <BpkTableCell>Row 1, Data 1</BpkTableCell>
         <BpkTableCell>Row 1, Data 2</BpkTableCell>
         <BpkTableCell>Row 1, Data 3</BpkTableCell>
-        <BpkTableCell>Row 1, Data 4</BpkTableCell>
+        <BpkTableCell wordBreak={true}>Row1Data4wordBreakTrue</BpkTableCell>
       </BpkTableRow>
       <BpkTableRow>
         <BpkTableCell>Row 2, Data 1</BpkTableCell>
@@ -49,3 +49,11 @@ export default () => (
 ## Props
 
 Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/table/web-0i0MzMkj#section-props-3d).
+
+### Additional Props
+
+`wordBreak` (boolean, default `false`)
+
+Optional prop to add css `word-break: break-word;`, this allows long words and URLs to wrap onto multiple lines within the cell rather than overflowing. This prop is available on both `BpkTableCell` and `BpkTableHeadCell`. Set `wordBreak={true}` to add this behaviour.
+
+By default the prop can be omitted.

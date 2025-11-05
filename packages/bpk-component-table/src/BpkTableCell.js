@@ -30,10 +30,18 @@ const getClassName = cssModules(STYLES);
 type Props = {
   children: Node,
   className: ?string,
+  wordBreak?: boolean,
 };
 
-const BpkTableCell = ({children, className = null, ...rest}: Props) => {
-  const classNames = getClassName('bpk-table__cell', className);
+const BpkTableCell = ({children, className = null, wordBreak = false, ...rest}: Props) => {
+
+  const classes = [
+    'bpk-table__cell',
+    wordBreak && 'bpk-table__cell--wordBreak',
+    className,
+  ];
+
+  const classNames = getClassName(...classes);
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
@@ -46,6 +54,7 @@ const BpkTableCell = ({children, className = null, ...rest}: Props) => {
 BpkTableCell.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
+  wordBreak: PropTypes.bool,
 };
 
 export default BpkTableCell;
