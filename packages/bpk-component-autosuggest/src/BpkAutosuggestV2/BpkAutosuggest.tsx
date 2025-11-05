@@ -366,7 +366,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           ? (flattenedSuggestions?.[highlightedIndex] ?? null)
           : null;
 
-      // If a preview was active and highlight is cleared (no item), restore original input.
       if (!currentSuggestion && originalInputOnPreviewRef.current !== null) {
         if ((inputValue ?? '') !== originalInputOnPreviewRef.current) {
           setInputValue(originalInputOnPreviewRef.current);
@@ -374,7 +373,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         originalInputOnPreviewRef.current = null;
       }
 
-      // For non-keyboard causes we still notify consumer here via effect to cover all cases
       onSuggestionHighlighted?.({ suggestion: currentSuggestion });
     }, [
       highlightedIndex,
@@ -623,10 +621,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       }
     }, [refs]);
 
-    // Always call getMenuProps to satisfy Downshift's requirement, even when menu is not rendered.
-    // This prevents the "You forgot to call the getMenuProps" warning without changing UI logic.
-    // We use suppressRefError when not showing suggestions to avoid ref-related warnings.
-    // The return value is intentionally unused here; we call it again in the render with proper props.
+    // Call getMenuProps on every render to satisfy Downshift.
+    // When hidden, use suppressRefError to avoid ref warnings.
     if (!showSuggestions) {
       getMenuProps({}, { suppressRefError: true });
     }
