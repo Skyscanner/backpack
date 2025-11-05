@@ -294,14 +294,14 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
         if (isArrowKey) {
           if (currentSuggestion) {
-            if (originalInputOnPreviewRef.current == null) {
+            if (originalInputOnPreviewRef.current === null) {
               originalInputOnPreviewRef.current = inputValue ?? '';
             }
             const previewValue = getSuggestionValue(currentSuggestion);
             if (previewValue !== inputValue) {
               setInputValue(previewValue);
             }
-          } else if (originalInputOnPreviewRef.current != null) {
+          } else if (originalInputOnPreviewRef.current !== null) {
             if ((inputValue ?? '') !== originalInputOnPreviewRef.current) {
               setInputValue(originalInputOnPreviewRef.current);
             }
@@ -367,7 +367,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           : null;
 
       // If a preview was active and highlight is cleared (no item), restore original input.
-      if (!currentSuggestion && originalInputOnPreviewRef.current != null) {
+      if (!currentSuggestion && originalInputOnPreviewRef.current !== null) {
         if ((inputValue ?? '') !== originalInputOnPreviewRef.current) {
           setInputValue(originalInputOnPreviewRef.current);
         }
