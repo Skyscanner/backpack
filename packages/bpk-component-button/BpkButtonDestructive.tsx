@@ -18,5 +18,10 @@
 
 import BpkButton, {type Props} from './src/BpkButton';
 
+/**
+ * @deprecated BpkButtonDestructive is deprecated and will be removed in a future major version. Please use BpkButtonV2 with type={BUTTON_TYPES.destructive} instead.
+ * @param {Props} props - Component props
+ * @returns {JSX.Element} Destructive button component
+ */
 const BpkButtonDestructive = (props: Props) => <BpkButton {...props} destructive />
 export default BpkButtonDestructive;

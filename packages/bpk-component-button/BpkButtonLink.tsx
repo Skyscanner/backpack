@@ -18,5 +18,10 @@
 
 import BpkButton, {type Props} from './src/BpkButton';
 
+/**
+ * @deprecated BpkButtonLink is deprecated and will be removed in a future major version. Please use BpkButtonV2 with type={BUTTON_TYPES.link} instead.
+ * @param {Props} props - Component props
+ * @returns {JSX.Element} Link button component
+ */
 const BpkButtonLink = (props: Props) => <BpkButton {...props} link />
 export default BpkButtonLink;

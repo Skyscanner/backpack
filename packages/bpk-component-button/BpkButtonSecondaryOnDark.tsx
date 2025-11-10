@@ -18,5 +18,10 @@
 
 import BpkButton, {type Props} from './src/BpkButton';
 
+/**
+ * @deprecated BpkButtonSecondaryOnDark is deprecated and will be removed in a future major version. Please use BpkButtonV2 with type={BUTTON_TYPES.secondaryOnDark} instead.
+ * @param {Props} props - Component props
+ * @returns {JSX.Element} Secondary on dark button component
+ */
 const BpkButtonSecondaryOnDark = (props: Props) => <BpkButton {...props} secondaryOnDark />
 export default BpkButtonSecondaryOnDark;
