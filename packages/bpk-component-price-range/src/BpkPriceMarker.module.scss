@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
+@use '../../bpk-mixins/tokens';
 
 $arrow-size: tokens.bpk-spacing-base();
 
@@ -30,6 +30,7 @@ $arrow-size: tokens.bpk-spacing-base();
   border: none;
   border-radius: tokens.$bpk-border-radius-xs;
   background: none;
+  white-space: nowrap;
   box-shadow: tokens.$bpk-box-shadow-sm;
   margin-block-end: tokens.bpk-spacing-sm() * 1.5;
 

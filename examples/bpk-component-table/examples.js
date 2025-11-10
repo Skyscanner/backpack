@@ -56,4 +56,30 @@ const DefaultExample = () => (
   </BpkTable>
 );
 
+// Demonstrates opt-in wrapping via wrap={true}. Long text will wrap onto multiple lines.
+const WordBreakExample = () => (
+  <BpkTable>
+    <BpkTableHead>
+      <BpkTableRow>
+        <BpkTableHeadCell wordBreak>wordBreak: true</BpkTableHeadCell>
+        <BpkTableHeadCell wordBreak>https://www.bbc.co.uk/news/world/us_and_canada</BpkTableHeadCell>
+        <BpkTableHeadCell wordBreak>pneumonoultramicroscopicsilicovolcanoconiosis</BpkTableHeadCell>
+      </BpkTableRow>
+    </BpkTableHead>
+    <BpkTableBody>
+      <BpkTableRow>
+        <BpkTableCell wordBreak>wordBreak: true</BpkTableCell>
+        <BpkTableCell wordBreak>https://www.bbc.co.uk/news/world/us_and_canada</BpkTableCell>
+        <BpkTableCell wordBreak>pneumonoultramicroscopicsilicovolcanoconiosis</BpkTableCell>
+      </BpkTableRow>
+      <BpkTableRow>
+        <BpkTableCell>wordBreak: false</BpkTableCell>
+        <BpkTableCell>https://www.bbc.co.uk/news/world/us_and_canada</BpkTableCell>
+        <BpkTableCell>pneumonoultramicroscopicsilicovolcanoconiosis</BpkTableCell>
+      </BpkTableRow>
+    </BpkTableBody>
+  </BpkTable>
+);
+
 export default DefaultExample;
+export { WordBreakExample };

@@ -92,39 +92,39 @@ type State = {
 
 /**
  * Updates the current focused date
- * @param {Object} currentProps current input properties
- * @param {Object} nextProps next input properties when component changes
+ * @param {Object} prevProps previous input properties
+ * @param {Object} currentProps current input properties when component changes
  * @returns {Boolean} if the selected date has changed
  */
 const focusedDateHasChanged = <T extends {}>(
+  prevProps: CalendarProps<T>,
   currentProps: CalendarProps<T>,
-  nextProps: CalendarProps<T>,
 ) => {
+  const prevSelectConfig = prevProps.selectionConfiguration!;
   const currentSelectConfig = currentProps.selectionConfiguration!;
-  const nextSelectConfig = nextProps.selectionConfiguration!;
 
-  const rawNextSelectedDate =
-    nextSelectConfig.type === CALENDAR_SELECTION_TYPE.single
-      ? nextSelectConfig.date
-      : nextSelectConfig.startDate;
-  const rawSelectedDate =
+  const rawCurrentSelectedDate =
     currentSelectConfig.type === CALENDAR_SELECTION_TYPE.single
       ? currentSelectConfig.date
       : currentSelectConfig.startDate;
+  const rawPrevSelectedDate =
+    prevSelectConfig.type === CALENDAR_SELECTION_TYPE.single
+      ? prevSelectConfig.date
+      : prevSelectConfig.startDate;
 
-  if (!rawSelectedDate && !rawNextSelectedDate) {
+  if (!rawPrevSelectedDate && !rawCurrentSelectedDate) {
     return false;
   }
 
   if (
-    (rawSelectedDate && !rawNextSelectedDate) ||
-    (!rawSelectedDate && rawNextSelectedDate)
+    (rawPrevSelectedDate && !rawCurrentSelectedDate) ||
+    (!rawPrevSelectedDate && rawCurrentSelectedDate)
   ) {
     return true;
   }
 
   // @ts-expect-error TS reporting incorrectly as we are already checking above that the dates are not null
-  return !isSameDay(rawNextSelectedDate, rawSelectedDate);
+  return !isSameDay(rawCurrentSelectedDate, rawPrevSelectedDate);
 };
 
 /**
@@ -215,14 +215,20 @@ const withCalendarState = <P extends object>(Calendar: ComponentType<P>) => {
       };
     }
 
-    UNSAFE_componentWillReceiveProps(nextProps: CalendarProps<P>) {
+    componentDidUpdate(prevProps: CalendarProps<P>) {
       const rawNextSelectedDate = getRawSelectedDate(
-        nextProps.selectionConfiguration!,
+        this.props.selectionConfiguration!,
       );
 
-      const minDate = startOfDay(nextProps.minDate!);
-      const maxDate = startOfDay(nextProps.maxDate!);
-      if (focusedDateHasChanged(this.props as CalendarProps<P>, nextProps as CalendarProps<P>)) {
+      const minDate = startOfDay(this.props.minDate!);
+      const maxDate = startOfDay(this.props.maxDate!);
+
+      if (
+        focusedDateHasChanged(
+          prevProps as CalendarProps<P>,
+          this.props as CalendarProps<P>,
+        )
+      ) {
         this.setState({
           focusedDate: dateToBoundaries(
             rawNextSelectedDate[0],

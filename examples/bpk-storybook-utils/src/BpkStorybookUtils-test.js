@@ -22,7 +22,7 @@
 describe('BpkStorybookUtils', () => {
   it('action should use storybook/addon-actions if available', () => {
     const mockActionFunction = jest.fn();
-    jest.mock('@storybook/addon-actions', () => ({
+    jest.mock('storybook/addon-actions', () => ({
       action: mockActionFunction,
     }));
     const { action } = require('./BpkStorybookUtils');

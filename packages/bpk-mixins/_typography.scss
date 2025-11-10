@@ -18,10 +18,10 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@import 'tokens.scss';
-@import 'borders.scss';
-@import 'radii.scss';
-@import 'utils.scss';
+@use 'tokens';
+@use 'borders';
+@use 'radii';
+@use 'utils';
 
 ////
 /// @group typography
@@ -77,9 +77,9 @@
 
 @mixin bpk-text--xs {
   @include _bpk-text-factory(
-    $bpk-font-size-xs,
-    $bpk-line-height-xs,
-    $bpk-font-weight-book
+    tokens.$bpk-font-size-xs,
+    tokens.$bpk-line-height-xs,
+    tokens.$bpk-font-weight-book
   );
 }
 
@@ -106,9 +106,9 @@
 
 @mixin bpk-text--sm {
   @include _bpk-text-factory(
-    $bpk-font-size-sm,
-    $bpk-line-height-sm,
-    $bpk-font-weight-book
+    tokens.$bpk-font-size-sm,
+    tokens.$bpk-line-height-sm,
+    tokens.$bpk-font-weight-book
   );
 }
 
@@ -135,9 +135,9 @@
 
 @mixin bpk-text--base {
   @include _bpk-text-factory(
-    $bpk-font-size-base,
-    $bpk-line-height-base,
-    $bpk-font-weight-book
+    tokens.$bpk-font-size-base,
+    tokens.$bpk-line-height-base,
+    tokens.$bpk-font-weight-book
   );
 }
 
@@ -164,9 +164,9 @@
 
 @mixin bpk-text--lg {
   @include _bpk-text-factory(
-    $bpk-font-size-lg,
-    $bpk-line-height-lg,
-    $bpk-font-weight-book
+    tokens.$bpk-font-size-lg,
+    tokens.$bpk-line-height-lg,
+    tokens.$bpk-font-weight-book
   );
 }
 
@@ -193,9 +193,9 @@
 
 @mixin bpk-text--xl {
   @include _bpk-text-factory(
-    $bpk-font-size-xl,
-    $bpk-line-height-xl,
-    $bpk-font-weight-book
+    tokens.$bpk-font-size-xl,
+    tokens.$bpk-line-height-xl,
+    tokens.$bpk-font-weight-book
   );
 }
 
@@ -222,9 +222,9 @@
 
 @mixin bpk-text--xxl {
   @include _bpk-text-factory(
-    $bpk-font-size-xxl,
-    $bpk-line-height-xxl,
-    $bpk-font-weight-bold
+    tokens.$bpk-font-size-xxl,
+    tokens.$bpk-line-height-xxl,
+    tokens.$bpk-font-weight-bold
   );
 }
 
@@ -251,9 +251,9 @@
 
 @mixin bpk-text--xxxl {
   @include _bpk-text-factory(
-    $bpk-font-size-xxxl,
-    $bpk-line-height-xxxl,
-    $bpk-font-weight-bold
+    tokens.$bpk-font-size-xxxl,
+    tokens.$bpk-line-height-xxxl,
+    tokens.$bpk-font-weight-bold
   );
 }
 
@@ -280,10 +280,10 @@
 
 @mixin bpk-text--xxxxl {
   @include _bpk-text-factory(
-    $bpk-font-size-xxxxl,
-    $bpk-line-height-xxxxl,
-    $bpk-font-weight-bold,
-    $bpk-letter-spacing-tight
+    tokens.$bpk-font-size-xxxxl,
+    tokens.$bpk-line-height-xxxxl,
+    tokens.$bpk-font-weight-bold,
+    tokens.$bpk-letter-spacing-tight
   );
 }
 
@@ -310,10 +310,10 @@
 
 @mixin bpk-text--xxxxxl {
   @include _bpk-text-factory(
-    $bpk-font-size-xxxxxl,
-    $bpk-line-height-xxxxxl,
-    $bpk-font-weight-bold,
-    $bpk-letter-spacing-tight
+    tokens.$bpk-font-size-xxxxxl,
+    tokens.$bpk-line-height-xxxxxl,
+    tokens.$bpk-font-weight-bold,
+    tokens.$bpk-letter-spacing-tight
   );
 }
 
@@ -339,7 +339,7 @@
 ///   }
 
 @mixin bpk-text--bold {
-  font-weight: $bpk-font-weight-bold;
+  font-weight: tokens.$bpk-font-weight-bold;
 }
 
 /// Bold text style (without margin reset)
@@ -364,7 +364,7 @@
 ///   }
 
 @mixin bpk-text--black {
-  font-weight: $bpk-font-weight-black;
+  font-weight: tokens.$bpk-font-weight-black;
 }
 
 /// Black text style (without margin reset)
@@ -387,9 +387,9 @@
 
 @mixin bpk-caption {
   @include _bpk-text-factory(
-    $bpk-font-size-xs,
-    $bpk-line-height-xs,
-    $bpk-font-weight-book
+    tokens.$bpk-font-size-xs,
+    tokens.$bpk-line-height-xs,
+    tokens.$bpk-font-weight-book
   );
 }
 
@@ -402,9 +402,9 @@
 
 @mixin bpk-footnote {
   @include _bpk-text-factory(
-    $bpk-font-size-sm,
-    $bpk-line-height-sm,
-    $bpk-font-weight-book
+    tokens.$bpk-font-size-sm,
+    tokens.$bpk-line-height-sm,
+    tokens.$bpk-font-weight-book
   );
 }
 
@@ -417,9 +417,9 @@
 
 @mixin bpk-label-1 {
   @include _bpk-text-factory(
-    $bpk-font-size-base,
-    $bpk-line-height-base,
-    $bpk-font-weight-bold
+    tokens.$bpk-font-size-base,
+    tokens.$bpk-line-height-base,
+    tokens.$bpk-font-weight-bold
   );
 }
 
@@ -432,9 +432,9 @@
 
 @mixin bpk-label-2 {
   @include _bpk-text-factory(
-    $bpk-font-size-sm,
-    $bpk-line-height-sm,
-    $bpk-font-weight-bold
+    tokens.$bpk-font-size-sm,
+    tokens.$bpk-line-height-sm,
+    tokens.$bpk-font-weight-bold
   );
 }
 
@@ -447,9 +447,9 @@
 
 @mixin bpk-label-3 {
   @include _bpk-text-factory(
-    $bpk-font-size-xs,
-    $bpk-line-height-xs,
-    $bpk-font-weight-bold
+    tokens.$bpk-font-size-xs,
+    tokens.$bpk-line-height-xs,
+    tokens.$bpk-font-weight-bold
   );
 }
 
@@ -462,9 +462,9 @@
 
 @mixin bpk-body-default {
   @include _bpk-text-factory(
-    $bpk-font-size-base,
-    $bpk-line-height-base,
-    $bpk-font-weight-book
+    tokens.$bpk-font-size-base,
+    tokens.$bpk-line-height-base,
+    tokens.$bpk-font-weight-book
   );
 }
 
@@ -477,9 +477,9 @@
 
 @mixin bpk-body-longform {
   @include _bpk-text-factory(
-    $bpk-font-size-lg,
-    $bpk-line-height-lg,
-    $bpk-font-weight-book
+    tokens.$bpk-font-size-lg,
+    tokens.$bpk-line-height-lg,
+    tokens.$bpk-font-weight-book
   );
 }
 
@@ -492,9 +492,9 @@
 
 @mixin bpk-subheading {
   @include _bpk-text-factory(
-    $bpk-font-size-xl,
-    $bpk-line-height-xl,
-    $bpk-font-weight-book
+    tokens.$bpk-font-size-xl,
+    tokens.$bpk-line-height-xl,
+    tokens.$bpk-font-weight-book
   );
 }
 
@@ -506,12 +506,12 @@
 ///   }
 
 @mixin bpk-editorial-1 {
-  font-family: $bpk-font-family-larken;
+  font-family: tokens.$bpk-font-family-larken;
 
   @include _bpk-text-factory(
-    $bpk-font-size-xxxxl,
-    $bpk-line-height-xxxxl,
-    $bpk-font-weight-light
+    tokens.$bpk-font-size-xxxxl,
+    tokens.$bpk-line-height-xxxxl,
+    tokens.$bpk-font-weight-light
   );
 }
 
@@ -523,12 +523,12 @@
 ///   }
 
 @mixin bpk-editorial-2 {
-  font-family: $bpk-font-family-larken;
+  font-family: tokens.$bpk-font-family-larken;
 
   @include _bpk-text-factory(
-    $bpk-font-size-xxl,
-    $bpk-line-height-xxl,
-    $bpk-font-weight-light
+    tokens.$bpk-font-size-xxl,
+    tokens.$bpk-line-height-xxl,
+    tokens.$bpk-font-weight-light
   );
 }
 
@@ -540,12 +540,12 @@
 ///   }
 
 @mixin bpk-editorial-3 {
-  font-family: $bpk-font-family-larken;
+  font-family: tokens.$bpk-font-family-larken;
 
   @include _bpk-text-factory(
-    $bpk-font-size-lg,
-    $bpk-line-height-lg,
-    $bpk-font-weight-book
+    tokens.$bpk-font-size-lg,
+    tokens.$bpk-line-height-lg,
+    tokens.$bpk-font-weight-book
   );
 }
 
@@ -558,10 +558,10 @@
 
 @mixin bpk-hero-1 {
   @include _bpk-text-factory(
-    $bpk-font-size-8-xl,
-    $bpk-line-height-8-xl,
-    $bpk-font-weight-black,
-    $bpk-letter-spacing-hero
+    tokens.$bpk-font-size-8-xl,
+    tokens.$bpk-line-height-8-xl,
+    tokens.$bpk-font-weight-black,
+    tokens.$bpk-letter-spacing-hero
   );
 }
 
@@ -574,10 +574,10 @@
 
 @mixin bpk-hero-2 {
   @include _bpk-text-factory(
-    $bpk-font-size-7-xl,
-    $bpk-line-height-7-xl,
-    $bpk-font-weight-black,
-    $bpk-letter-spacing-hero
+    tokens.$bpk-font-size-7-xl,
+    tokens.$bpk-line-height-7-xl,
+    tokens.$bpk-font-weight-black,
+    tokens.$bpk-letter-spacing-hero
   );
 }
 
@@ -590,10 +590,10 @@
 
 @mixin bpk-hero-3 {
   @include _bpk-text-factory(
-    $bpk-font-size-6-xl,
-    $bpk-line-height-6-xl,
-    $bpk-font-weight-black,
-    $bpk-letter-spacing-hero
+    tokens.$bpk-font-size-6-xl,
+    tokens.$bpk-line-height-6-xl,
+    tokens.$bpk-font-weight-black,
+    tokens.$bpk-letter-spacing-hero
   );
 }
 
@@ -606,10 +606,10 @@
 
 @mixin bpk-hero-4 {
   @include _bpk-text-factory(
-    $bpk-font-size-xxxxxl,
-    $bpk-line-height-xxxxxl,
-    $bpk-font-weight-black,
-    $bpk-letter-spacing-hero
+    tokens.$bpk-font-size-xxxxxl,
+    tokens.$bpk-line-height-xxxxxl,
+    tokens.$bpk-font-weight-black,
+    tokens.$bpk-letter-spacing-hero
   );
 }
 
@@ -622,10 +622,10 @@
 
 @mixin bpk-hero-5 {
   @include _bpk-text-factory(
-    $bpk-font-size-xxxxl,
-    $bpk-line-height-xxxl,
-    $bpk-font-weight-black,
-    $bpk-letter-spacing-hero
+    tokens.$bpk-font-size-xxxxl,
+    tokens.$bpk-line-height-xxxl,
+    tokens.$bpk-font-weight-black,
+    tokens.$bpk-letter-spacing-hero
   );
 }
 
@@ -638,10 +638,10 @@
 
 @mixin bpk-hero-6 {
   @include _bpk-text-factory(
-    $bpk-font-size-xxxl,
-    $bpk-line-height-xxl,
-    $bpk-font-weight-black,
-    $bpk-letter-spacing-hero
+    tokens.$bpk-font-size-xxxl,
+    tokens.$bpk-line-height-xxl,
+    tokens.$bpk-font-weight-black,
+    tokens.$bpk-letter-spacing-hero
   );
 }
 
@@ -654,9 +654,9 @@
 
 @mixin bpk-heading-1 {
   @include _bpk-text-factory(
-    $bpk-font-size-xxxl,
-    $bpk-line-height-xxxl,
-    $bpk-font-weight-bold
+    tokens.$bpk-font-size-xxxl,
+    tokens.$bpk-line-height-xxxl,
+    tokens.$bpk-font-weight-bold
   );
 }
 
@@ -669,9 +669,9 @@
 
 @mixin bpk-heading-2 {
   @include _bpk-text-factory(
-    $bpk-font-size-xxl,
-    $bpk-line-height-xxl,
-    $bpk-font-weight-bold
+    tokens.$bpk-font-size-xxl,
+    tokens.$bpk-line-height-xxl,
+    tokens.$bpk-font-weight-bold
   );
 }
 
@@ -684,9 +684,9 @@
 
 @mixin bpk-heading-3 {
   @include _bpk-text-factory(
-    $bpk-font-size-xl,
-    $bpk-line-height-xl-tight,
-    $bpk-font-weight-bold
+    tokens.$bpk-font-size-xl,
+    tokens.$bpk-line-height-xl-tight,
+    tokens.$bpk-font-weight-bold
   );
 }
 
@@ -699,9 +699,9 @@
 
 @mixin bpk-heading-4 {
   @include _bpk-text-factory(
-    $bpk-font-size-lg,
-    $bpk-line-height-lg-tight,
-    $bpk-font-weight-bold
+    tokens.$bpk-font-size-lg,
+    tokens.$bpk-line-height-lg-tight,
+    tokens.$bpk-font-weight-bold
   );
 }
 
@@ -714,9 +714,9 @@
 
 @mixin bpk-heading-5 {
   @include _bpk-text-factory(
-    $bpk-font-size-base,
-    $bpk-line-height-base-tight,
-    $bpk-font-weight-bold
+    tokens.$bpk-font-size-base,
+    tokens.$bpk-line-height-base-tight,
+    tokens.$bpk-font-weight-bold
   );
 }
 
@@ -728,8 +728,8 @@
 ///   }
 
 @mixin bpk-paragraph {
-  margin-top: $bpk-spacing-none;
-  margin-bottom: bpk-spacing-base();
+  margin-top: tokens.$bpk-spacing-none;
+  margin-bottom: tokens.bpk-spacing-base();
 }
 
 /// List.
@@ -740,9 +740,9 @@
 ///   }
 
 @mixin bpk-list {
-  margin-top: bpk-spacing-base();
-  margin-bottom: bpk-spacing-base();
-  padding-left: bpk-spacing-lg();
+  margin-top: tokens.bpk-spacing-base();
+  margin-bottom: tokens.bpk-spacing-base();
+  padding-left: tokens.bpk-spacing-lg();
 }
 
 /// Nested list. Modifies the bpk-list mixin.
@@ -756,10 +756,10 @@
 ///   }
 
 @mixin bpk-list--nested {
-  margin-top: $bpk-spacing-none;
-  margin-bottom: $bpk-spacing-none;
-  padding-top: bpk-spacing-md();
-  padding-bottom: bpk-spacing-sm();
+  margin-top: tokens.$bpk-spacing-none;
+  margin-bottom: tokens.$bpk-spacing-none;
+  padding-top: tokens.bpk-spacing-md();
+  padding-bottom: tokens.bpk-spacing-sm();
 }
 
 /// List item.
@@ -771,7 +771,7 @@
 
 @mixin bpk-list-item {
   margin-top: 0;
-  margin-bottom: bpk-spacing-sm();
+  margin-bottom: tokens.bpk-spacing-sm();
 }
 
 /// Underlined part inside an inline link.
@@ -782,15 +782,18 @@
 ///   }
 
 @mixin bpk-link-underlined {
-  padding-bottom: $bpk-one-pixel-rem;
+  padding-bottom: tokens.$bpk-one-pixel-rem;
   transition: background-size 200ms ease;
-  background: linear-gradient($bpk-text-primary-day, $bpk-text-primary-day);
+  background: linear-gradient(
+    tokens.$bpk-text-primary-day,
+    tokens.$bpk-text-primary-day
+  );
   background-repeat: no-repeat;
   background-position: 0 100%;
-  background-size: 100% $bpk-border-size-sm;
+  background-size: 100% tokens.$bpk-border-size-sm;
 
-  @include bpk-hover {
-    background-size: 0 $bpk-border-size-sm;
+  @include utils.bpk-hover {
+    background-size: 0 tokens.$bpk-border-size-sm;
   }
 }
 
@@ -802,10 +805,10 @@
 ///   }
 
 @mixin bpk-link-underlined--implicit {
-  background-size: 0 $bpk-border-size-sm;
+  background-size: 0 tokens.$bpk-border-size-sm;
 
-  @include bpk-hover {
-    background-size: 100% $bpk-border-size-sm;
+  @include utils.bpk-hover {
+    background-size: 100% tokens.$bpk-border-size-sm;
   }
 }
 
@@ -817,13 +820,16 @@
 ///   }
 
 @mixin bpk-link-underlined--alternate {
-  background: linear-gradient($bpk-text-on-dark-day, $bpk-text-on-dark-day);
+  background: linear-gradient(
+    tokens.$bpk-text-on-dark-day,
+    tokens.$bpk-text-on-dark-day
+  );
   background-repeat: no-repeat;
   background-position: 0 100%;
-  background-size: 100% $bpk-border-size-sm;
+  background-size: 100% tokens.$bpk-border-size-sm;
 
-  @include bpk-hover {
-    background-size: 0 $bpk-border-size-sm;
+  @include utils.bpk-hover {
+    background-size: 0 tokens.$bpk-border-size-sm;
   }
 }
 
@@ -835,13 +841,16 @@
 ///   }
 
 @mixin bpk-link-underlined-implicit--alternate {
-  background: linear-gradient($bpk-text-on-dark-day, $bpk-text-on-dark-day);
+  background: linear-gradient(
+    tokens.$bpk-text-on-dark-day,
+    tokens.$bpk-text-on-dark-day
+  );
   background-repeat: no-repeat;
   background-position: 0 100%;
-  background-size: 0 $bpk-border-size-sm;
+  background-size: 0 tokens.$bpk-border-size-sm;
 
-  @include bpk-hover {
-    background-size: 100% $bpk-border-size-sm;
+  @include utils.bpk-hover {
+    background-size: 100% tokens.$bpk-border-size-sm;
   }
 }
 
@@ -862,35 +871,35 @@
   cursor: pointer;
   appearance: none;
 
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     color,
     --bpk-link-color,
-    $bpk-text-primary-day
+    tokens.$bpk-text-primary-day
   );
 
-  @include bpk-hover {
+  @include utils.bpk-hover {
     text-decoration: none;
 
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-link-hover-color,
-      $bpk-text-primary-day
+      tokens.$bpk-text-primary-day
     );
   }
 
   &:visited {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-link-visited-color,
-      $bpk-text-primary-day
+      tokens.$bpk-text-primary-day
     );
   }
 
   &:active {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-link-active-color,
-      $bpk-text-primary-day
+      tokens.$bpk-text-primary-day
     );
   }
 }
@@ -904,27 +913,27 @@
 ///   }
 
 @mixin bpk-link--implicit {
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     color,
     --bpk-link-color,
-    $bpk-text-primary-day
+    tokens.$bpk-text-primary-day
   );
 
-  @include bpk-hover {
-    @include bpk-themeable-property(
+  @include utils.bpk-hover {
+    @include utils.bpk-themeable-property(
       color,
       --bpk-link-hover-color,
-      $bpk-text-primary-day
+      tokens.$bpk-text-primary-day
     );
   }
 
   &:active {
     text-decoration: none;
 
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-link-active-color,
-      $bpk-text-primary-day
+      tokens.$bpk-text-primary-day
     );
   }
 }
@@ -940,33 +949,33 @@
 ///   }
 
 @mixin bpk-link--alternate {
-  @include bpk-themeable-property(
+  @include utils.bpk-themeable-property(
     color,
     --bpk-link-alternate-color,
-    $bpk-text-on-dark-day
+    tokens.$bpk-text-on-dark-day
   );
 
-  @include bpk-hover {
-    @include bpk-themeable-property(
+  @include utils.bpk-hover {
+    @include utils.bpk-themeable-property(
       color,
       --bpk-link-alternate-hover-color,
-      $bpk-text-on-dark-day
+      tokens.$bpk-text-on-dark-day
     );
   }
 
   &:visited {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-link-alternate-visited-color,
-      $bpk-text-on-dark-day
+      tokens.$bpk-text-on-dark-day
     );
   }
 
   &:active {
-    @include bpk-themeable-property(
+    @include utils.bpk-themeable-property(
       color,
       --bpk-link-alternate-active-color,
-      $bpk-text-on-dark-day
+      tokens.$bpk-text-on-dark-day
     );
   }
 }
@@ -996,14 +1005,14 @@
 ///   }
 
 @mixin bpk-link--active {
-  color: $bpk-text-primary-day;
+  color: tokens.$bpk-text-primary-day;
 
   &:visited {
-    color: $bpk-text-primary-day;
+    color: tokens.$bpk-text-primary-day;
   }
 
   &:active {
-    color: $bpk-text-primary-day;
+    color: tokens.$bpk-text-primary-day;
   }
 }
 
@@ -1016,11 +1025,11 @@
 
 @mixin bpk-table {
   width: 100%;
-  margin-bottom: bpk-spacing-md();
+  margin-bottom: tokens.bpk-spacing-md();
   border-collapse: collapse;
   table-layout: fixed;
 
-  @include bpk-border-sm($bpk-line-day, '');
+  @include borders.bpk-border-sm(tokens.$bpk-line-day, '');
 }
 
 /// Alternate table style.
@@ -1033,7 +1042,7 @@
 ///   }
 
 @mixin bpk-table--alternate {
-  @include bpk-border-sm($bpk-line-day, '');
+  @include borders.bpk-border-sm(tokens.$bpk-line-day, '');
 }
 
 /// Table cell.
@@ -1044,7 +1053,7 @@
 ///   }
 
 @mixin bpk-table__cell {
-  padding: bpk-spacing-base();
+  padding: tokens.bpk-spacing-base();
 }
 
 /// Table head cell. Modifies the bpk-table__cell mixin.
@@ -1058,12 +1067,12 @@
 ///   }
 
 @mixin bpk-table__cell--head {
-  background-color: $bpk-canvas-contrast-day;
+  background-color: tokens.$bpk-canvas-contrast-day;
   text-align: left;
 
   @include bpk-label-1;
 
-  @include bpk-rtl {
+  @include utils.bpk-rtl {
     text-align: right;
   }
 }
@@ -1079,12 +1088,12 @@
 ///   }
 
 @mixin bpk-table__cell--head-alternate {
-  background-color: $bpk-canvas-day;
+  background-color: tokens.$bpk-canvas-day;
   text-align: left;
 
   @include bpk-text--bold;
 
-  @include bpk-rtl {
+  @include utils.bpk-rtl {
     text-align: right;
   }
 }
@@ -1098,16 +1107,16 @@
 
 @mixin bpk-code {
   display: inline;
-  padding: 0 bpk-spacing-sm();
-  background-color: $bpk-surface-highlight-day;
-  color: $bpk-text-primary-day;
+  padding: 0 tokens.bpk-spacing-sm();
+  background-color: tokens.$bpk-surface-highlight-day;
+  color: tokens.$bpk-text-primary-day;
   text-align: left;
   white-space: nowrap;
   vertical-align: bottom;
 
-  @include bpk-border-radius-xs;
+  @include radii.bpk-border-radius-xs;
 
-  @include bpk-rtl {
+  @include utils.bpk-rtl {
     direction: ltr;
   }
 }
@@ -1121,7 +1130,7 @@
 ///   }
 
 @mixin bpk-code--alternate {
-  background-color: $bpk-canvas-contrast-day;
+  background-color: tokens.$bpk-canvas-contrast-day;
   text-shadow: none;
 }
 
@@ -1157,11 +1166,11 @@
 ///   }
 
 @mixin bpk-code__pre {
-  margin: 0 0 bpk-spacing-base();
-  padding: bpk-spacing-lg();
-  background-color: $bpk-surface-highlight-day;
+  margin: 0 0 tokens.bpk-spacing-base();
+  padding: tokens.bpk-spacing-lg();
+  background-color: tokens.$bpk-surface-highlight-day;
 
-  @include bpk-border-radius-xs;
+  @include radii.bpk-border-radius-xs;
 }
 
 /// Pre (code block wrapper) alternate style.
@@ -1175,7 +1184,7 @@
 @mixin bpk-code__pre--alternate {
   background-color: transparent;
 
-  @include bpk-border-sm($bpk-line-day);
+  @include borders.bpk-border-sm(tokens.$bpk-line-day);
 }
 
 /// Blockquote.
@@ -1186,21 +1195,21 @@
 ///   }
 
 @mixin bpk-blockquote {
-  margin: 0 0 bpk-spacing-base() 0;
-  padding: bpk-spacing-lg();
+  margin: 0 0 tokens.bpk-spacing-base() 0;
+  padding: tokens.bpk-spacing-lg();
 
-  @include bpk-border-left-lg($bpk-core-accent-day);
-  @include bpk-border-left-lg(
-    var(--bpk-blockquote-bar-color, $bpk-core-accent-day)
+  @include borders.bpk-border-left-lg(tokens.$bpk-core-accent-day);
+  @include borders.bpk-border-left-lg(
+    var(--bpk-blockquote-bar-color, tokens.$bpk-core-accent-day)
   );
 
-  @include bpk-rtl {
-    padding: bpk-spacing-lg();
+  @include utils.bpk-rtl {
+    padding: tokens.bpk-spacing-lg();
     border-left: 0;
 
-    @include bpk-border-right-lg($bpk-core-accent-day);
-    @include bpk-border-right-lg(
-      var(--bpk-blockquote-bar-color, $bpk-core-accent-day)
+    @include borders.bpk-border-right-lg(tokens.$bpk-core-accent-day);
+    @include borders.bpk-border-right-lg(
+      var(--bpk-blockquote-bar-color, tokens.$bpk-core-accent-day)
     );
   }
 
@@ -1220,6 +1229,6 @@
 ///   }
 
 @mixin bpk-blockquote--extra-spacing {
-  margin-top: bpk-spacing-xl();
-  margin-bottom: bpk-spacing-xl();
+  margin-top: tokens.bpk-spacing-xl();
+  margin-bottom: tokens.bpk-spacing-xl();
 }

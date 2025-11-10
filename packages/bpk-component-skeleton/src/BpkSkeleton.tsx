@@ -19,7 +19,7 @@
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkBaseSkeleton from './BpkBaseSkeleton';
-import { SKELETON_TYPES, IMAGE_SKELETON_STYLE, SIZE_TYPES } from './common-types';
+import { SKELETON_TYPES, IMAGE_SKELETON_STYLE, SIZE_TYPES, BACKGROUND_STYLE } from './common-types';
 
 import type { ComponentProps} from './common-types';
 
@@ -29,13 +29,14 @@ import STYLES from './BpkSkeleton.module.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkSkeleton = (props: ComponentProps) => {
-  const { size = SIZE_TYPES.default, type } = props;
+  const { backgroundStyle = BACKGROUND_STYLE.default, size = SIZE_TYPES.default, type } = props;
 
   const isImageRounded = type === SKELETON_TYPES.image && props.style === IMAGE_SKELETON_STYLE.rounded;
   const classNames: string = getClassName(
       `bpk-skeleton__${type}`,
       typeof size !== 'object' && `bpk-skeleton__${type}--${size}`,
-      isImageRounded && 'bpk-skeleton__image--rounded'
+      isImageRounded && 'bpk-skeleton__image--rounded',
+      `bpk-skeleton__${backgroundStyle}`
    );
   const styleObj = typeof size === 'object' ? size : undefined;
 

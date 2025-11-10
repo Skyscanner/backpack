@@ -18,7 +18,7 @@
 
 import type { ReactElement, InputHTMLAttributes, LegacyRef } from 'react';
 
-import { userEvent, within } from '@storybook/test';
+import { userEvent, within } from 'storybook/test';
 
 // @ts-ignore
 // BpkAutosuggestSuggestion is a Flow-based JS file without type declarations.

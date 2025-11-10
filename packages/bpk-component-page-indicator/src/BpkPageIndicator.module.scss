@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/utils';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/utils';
 
 $dot-size: tokens.bpk-spacing-md();
 $dot-margin: tokens.bpk-spacing-sm();
@@ -25,6 +25,10 @@ $displayed-total: 5;
 /* stylelint-disable-next-line scss/operator-no-newline-after */
 $container-width: $dot-size * $displayed-total + $dot-margin *
   $displayed-total * 2;
+
+.bpk-page-indicator-fullWidth__container {
+  width: 100%;
+}
 
 .bpk-page-indicator {
   display: flex;
@@ -78,7 +82,8 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
       background-color: tokens.$bpk-line-day;
     }
 
-    &--overImage {
+    &--overImage,
+    &--overImageSpaced {
       background-color: tokens.$bpk-line-on-dark-day;
     }
 
@@ -88,7 +93,8 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
         pointer-events: none;
       }
 
-      &-overImage {
+      &-overImage,
+      &-overImageSpaced {
         background-color: tokens.$bpk-text-on-dark-day;
         pointer-events: none;
       }

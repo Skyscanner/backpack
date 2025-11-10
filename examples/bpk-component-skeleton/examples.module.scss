@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable__bpk-mixins/tokens';
+@use '../../packages/bpk-mixins/tokens';
 
 @mixin flex-column {
   display: flex;
@@ -53,4 +53,14 @@
   > div {
     margin-bottom: 14 * tokens.$bpk-one-pixel-rem;
   }
+}
+
+.bpk-background-style-default {
+  padding: tokens.bpk-spacing-base();
+  background-color: tokens.$bpk-canvas-contrast-day;
+}
+
+.bpk-background-style-on-contrast {
+  padding: tokens.bpk-spacing-base();
+  background-color: tokens.$bpk-surface-contrast-day;
 }

@@ -16,15 +16,18 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
+import {
+  SkyscannerRelativeExample,
+  LarkenExample,
+  MixedExample,
+} from './examples';
 
-.bpk-scrollable-calendar-grid {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
+export default {
+  title: 'bpk-stylesheets-fonts',
+};
 
-  &__title {
-    display: block;
-    margin-top: tokens.bpk-spacing-lg();
-  }
-}
+export const SkyscannerRelativeFont = SkyscannerRelativeExample;
+export const LarkenFont = LarkenExample;
+
+export const VisualTest = MixedExample;
+

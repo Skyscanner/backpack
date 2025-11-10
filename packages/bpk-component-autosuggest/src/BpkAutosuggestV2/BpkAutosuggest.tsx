@@ -183,6 +183,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     const theme = { ...defaultTheme, ...customTheme };
     const arrowRef = useRef(null);
     const previousHighlightedIndexRef = useRef<number | null>(null);
+    const originalInputOnPreviewRef = useRef<string | null>(null);
     const hasInteractedRef = useRef(false);
     const hasLoadedInitiallyRef = useRef(false);
 
@@ -247,18 +248,21 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           newValue: newInputValue ?? '',
         });
 
-        if (newInputValue?.length > 0) {
-          if (newIsOpen) {
-            onSuggestionsFetchRequested(newInputValue);
+        if (type === useCombobox.stateChangeTypes.InputChange) {
+          if (newInputValue?.length > 0) {
+            if (newIsOpen) {
+              onSuggestionsFetchRequested(newInputValue);
+            }
+          } else {
+            onSuggestionsFetchRequested('');
           }
-        } else {
-          onSuggestionsFetchRequested('');
         }
       },
       onSelectedItemChange(changes) {
         const { selectedItem } = changes;
         if (selectedItem) {
           setInputValue(getSuggestionValue(selectedItem));
+          originalInputOnPreviewRef.current = null;
           onSuggestionSelected?.({
             suggestion: selectedItem,
             inputValue,
@@ -275,10 +279,43 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       },
       initialInputValue: defaultValue ?? '',
       id,
+      onHighlightedIndexChange(changes) {
+        const { highlightedIndex: newIndex, type } = changes;
+        const currentSuggestion =
+          newIndex != null && newIndex >= 0
+            ? (flattenedSuggestions?.[newIndex] ?? null)
+            : null;
+
+        onSuggestionHighlighted?.({ suggestion: currentSuggestion });
+
+        const isArrowKey =
+          type === useCombobox.stateChangeTypes.InputKeyDownArrowDown ||
+          type === useCombobox.stateChangeTypes.InputKeyDownArrowUp;
+
+        if (isArrowKey) {
+          if (currentSuggestion) {
+            if (originalInputOnPreviewRef.current === null) {
+              originalInputOnPreviewRef.current = inputValue ?? '';
+            }
+            const previewValue = getSuggestionValue(currentSuggestion);
+            if (previewValue !== inputValue) {
+              setInputValue(previewValue);
+            }
+          } else if (originalInputOnPreviewRef.current !== null) {
+            if ((inputValue ?? '') !== originalInputOnPreviewRef.current) {
+              setInputValue(originalInputOnPreviewRef.current);
+            }
+            originalInputOnPreviewRef.current = null;
+          }
+        }
+      },
     });
 
     const { context, floatingStyles, refs } = useFloating({
       placement: 'bottom-start',
+      // Use fixed strategy on desktop to avoid stacking context issues with table headers
+      // Fixed positioning is relative to viewport, not affected by parent transforms/overflows
+      ...(isDesktop && { strategy: 'fixed' }),
       middleware: isDesktop
         ? [
             offset(4),
@@ -329,8 +366,21 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           ? (flattenedSuggestions?.[highlightedIndex] ?? null)
           : null;
 
+      if (!currentSuggestion && originalInputOnPreviewRef.current !== null) {
+        if ((inputValue ?? '') !== originalInputOnPreviewRef.current) {
+          setInputValue(originalInputOnPreviewRef.current);
+        }
+        originalInputOnPreviewRef.current = null;
+      }
+
       onSuggestionHighlighted?.({ suggestion: currentSuggestion });
-    }, [highlightedIndex, flattenedSuggestions, onSuggestionHighlighted]);
+    }, [
+      highlightedIndex,
+      flattenedSuggestions,
+      onSuggestionHighlighted,
+      inputValue,
+      setInputValue,
+    ]);
 
     const handleInputInteraction = () => {
       hasInteractedRef.current = true;
@@ -570,6 +620,12 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         refs.setReference(containerWrapperRef.current);
       }
     }, [refs]);
+
+    // Call getMenuProps on every render to satisfy Downshift.
+    // When hidden, use suppressRefError to avoid ref warnings.
+    if (!showSuggestions) {
+      getMenuProps({}, { suppressRefError: true });
+    }
 
     return (
       <div

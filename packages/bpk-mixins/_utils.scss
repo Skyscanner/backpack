@@ -18,7 +18,8 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@import 'tokens.scss';
+@use 'sass:string';
+@use 'tokens';
 
 ////
 /// @group utils
@@ -32,8 +33,8 @@
 ///   }
 
 @mixin bpk-focus-indicator {
-  outline: ($bpk-one-pixel-rem * 2) solid $bpk-text-link-day;
-  outline-offset: ($bpk-one-pixel-rem * 2);
+  outline: (tokens.$bpk-one-pixel-rem * 2) solid tokens.$bpk-text-link-day;
+  outline-offset: (tokens.$bpk-one-pixel-rem * 2);
 }
 
 /// Hide visually and from screen readers.
@@ -180,7 +181,7 @@
 
 @mixin bpk-locale($locale) {
   html[lang='#{$locale}'] &,
-  html[lang='#{to_lower_case($locale)}'] & {
+  html[lang='#{string.to_lower_case($locale)}'] & {
     @content;
   }
 }
@@ -213,7 +214,7 @@
   @include bpk-themeable-property(
     $property,
     --bpk-primary-color,
-    $bpk-color-sky-blue
+    tokens.$bpk-color-sky-blue
   );
 }
 
@@ -226,12 +227,12 @@
 @function str-replace($string, $search, $replace: '') {
   /* Disabling rule here as the recommendation method is for newer sass versions that we don't yet support */
   /* stylelint-disable-next-line scss/no-global-function-names */
-  $index: str-index($string, $search);
+  $index: string.index($string, $search);
 
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace +
+    @return string.slice($string, 1, $index - 1) + $replace +
       str-replace(
-        str-slice($string, $index + str-length($search)),
+        string.slice($string, $index + string.length($search)),
         $search,
         $replace
       );
@@ -256,11 +257,15 @@
   &::before {
     position: absolute;
     /* stylelint-disable-next-line function-calc-no-invalid */
-    top: calc((-#{bpk-spacing-xxl() + bpk-spacing-sm()} / 2) + 50%);
+    top: calc(
+      (-#{tokens.bpk-spacing-xxl() + tokens.bpk-spacing-sm()} / 2) + 50%
+    );
     /* stylelint-disable-next-line function-calc-no-invalid */
-    left: calc((-#{bpk-spacing-xxl() + bpk-spacing-sm()} / 2) + 50%);
+    left: calc(
+      (-#{tokens.bpk-spacing-xxl() + tokens.bpk-spacing-sm()} / 2) + 50%
+    );
     content: '';
-    width: bpk-spacing-xxl() + bpk-spacing-sm();
-    height: bpk-spacing-xxl() + bpk-spacing-sm();
+    width: tokens.bpk-spacing-xxl() + tokens.bpk-spacing-sm();
+    height: tokens.bpk-spacing-xxl() + tokens.bpk-spacing-sm();
   }
 }

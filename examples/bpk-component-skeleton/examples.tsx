@@ -19,7 +19,8 @@
 import BpkSkeleton, {
   SKELETON_TYPES,
   SIZE_TYPES, 
-  IMAGE_SKELETON_STYLE 
+  IMAGE_SKELETON_STYLE,
+  BACKGROUND_STYLE 
 } from '../../packages/bpk-component-skeleton';
 import { cssModules } from '../../packages/bpk-react-utils';
 
@@ -90,10 +91,22 @@ const CombinedComponentExample = () =>
     </div>
   </div>
 
+const BackgroundStyleDefaultExample = () => 
+  <div className={getClassName('bpk-background-style-default')}>
+    <BpkSkeleton type={SKELETON_TYPES.image} backgroundStyle={BACKGROUND_STYLE.default} />
+  </div>
+
+const BackgroundStyleOnContrastExample = () => 
+  <div className={getClassName('bpk-background-style-on-contrast')}>
+    <BpkSkeleton type={SKELETON_TYPES.image} backgroundStyle={BACKGROUND_STYLE.onContrast} />
+  </div>
+
 export {
   ImageSkeletonExample,
   BodyTextSkeletonExample,
   CircleSkeletonExample,
   HeadlineSkeletonExample,
   CombinedComponentExample,
+  BackgroundStyleDefaultExample,
+  BackgroundStyleOnContrastExample,
 };

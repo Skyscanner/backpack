@@ -121,7 +121,7 @@ describe('BpkAutosuggest', () => {
       await user.keyboard('{Enter}');
 
       expect(props.onSuggestionSelected).toHaveBeenCalledWith({
-        inputValue: 'Lo',
+        inputValue: 'London',
         suggestion: suggestions[0],
       });
     });
@@ -152,7 +152,7 @@ describe('BpkAutosuggest', () => {
 
   describe('Clear button', () => {
     it('clears input via clear button', async () => {
-      const props = setup({ showClear: true });
+      const props = setup({ showClear: true, alwaysRenderSuggestions: true });
       const input = await typeAndWait(user);
 
       const clearButton = screen.getByRole('button', { name: /clear/i });
