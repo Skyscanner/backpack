@@ -34,7 +34,6 @@
 
     @include breakpoints.bpk-breakpoint-mobile {
       overflow-x: scroll;
-      margin-inline-end: 0;
     }
 
     &::-webkit-scrollbar {
@@ -44,14 +43,17 @@
     &__card {
       position: relative;
       padding: 0 tokens.bpk-spacing-md();
-      flex-shrink: 0;
-      flex-basis: calc(
-        (
-            100% -
-              (tokens.bpk-spacing-sm() * (var(--initially-shown-cards, 3) - 1))
-          ) /
-          var(--initially-shown-cards, 3)
-      );
+      flex: 0 0
+        calc(
+          (
+              100% -
+                (
+                  tokens.bpk-spacing-md() *
+                    (var(--initially-shown-cards, 3) - 1)
+                )
+            ) /
+            var(--initially-shown-cards, 3)
+        );
       overflow: visible;
       box-sizing: border-box;
       scroll-snap-align: start;
@@ -69,6 +71,18 @@
             max(1, (var(--initially-shown-cards, 3) - 0.8))
         );
       }
+    }
+  }
+
+  &__row {
+    &__card {
+      flex-basis: calc(
+        (
+            100% -
+              (tokens.bpk-spacing-sm() * (var(--initially-shown-cards, 3) - 1))
+          ) /
+          var(--initially-shown-cards, 3)
+      );
     }
   }
 
