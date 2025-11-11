@@ -2,6 +2,10 @@
 
 > Backpack button component.
 
+# 👻 BpkButton (V1) has been deprecated, and usages should be replaced with BpkButtonV2
+
+The legacy `BpkButton` component and all its variants (`BpkButtonPrimary`, `BpkButtonSecondary`, etc.) are deprecated and will be removed in a future major version. Please migrate to `BpkButtonV2` using the migration guide.
+
 ## Installation
 
 Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
