@@ -17,5 +17,10 @@
  */
 import BpkButton, {type Props} from './src/BpkButton';
 
+/**
+ * @deprecated BpkButtonLinkOnDark is deprecated and will be removed in a future major version. Please use BpkButtonV2 with type={BUTTON_TYPES.linkOnDark} instead.
+ * @param {Props} props - Component props
+ * @returns {JSX.Element} Link on dark button component
+ */
 const BpkButtonLinkOnDark = (props: Props) => <BpkButton {...props} linkOnDark />
 export default BpkButtonLinkOnDark;

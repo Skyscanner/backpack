@@ -34,6 +34,11 @@ export type Props = CommonProps & {
   linkOnDark?: boolean;
 };
 
+/**
+ * @deprecated BpkButton is deprecated and will be removed in a future major version. Please use BpkButtonV2 instead.
+ * @param {Props} props - Component props
+ * @returns {JSX.Element} Button component
+ */
 const BpkButton = ({
   destructive = false,
   featured = false,
