@@ -31,7 +31,7 @@ module.exports = ({ config }) => {
   config.plugins.push(new MiniCssExtractPlugin());
   config.module.rules.push({
     test: /\.[jt]sx?$/,
-    exclude: /node_modules\/(?!bpk-).*/,
+    exclude: /node_modules\/(?!bpk-|@chakra-ui|@emotion|framer-motion).*/,
     loader: 'babel-loader',
     options: {
       presets: [['@babel/preset-env']],
@@ -51,7 +51,23 @@ module.exports = ({ config }) => {
     ...config.resolve.alias,
     react: path.join(rootDir, 'node_modules/react'),
     'react-dom': path.join(rootDir, 'node_modules/react-dom'),
+    '@chakra-ui/react': path.join(rootDir, 'node_modules/@chakra-ui/react'),
+    '@emotion/react': path.join(rootDir, 'node_modules/@emotion/react'),
+    '@emotion/styled': path.join(rootDir, 'node_modules/@emotion/styled'),
+    'framer-motion': path.join(rootDir, 'node_modules/framer-motion'),
   };
+  // Add packages/node_modules to module resolution for Chakra UI and other package dependencies
+  // Ensure root node_modules is checked first, then packages/node_modules
+  if (!config.resolve.modules) {
+    config.resolve.modules = ['node_modules'];
+  }
+  config.resolve.modules = [
+    path.join(rootDir, 'node_modules'),
+    path.join(rootDir, 'packages', 'node_modules'),
+    ...config.resolve.modules.filter(
+      (module) => !module.includes('node_modules')
+    ),
+  ];
   config.module.rules.push({
     test: /\.[jt]sx?$/,
     include: /node_modules\/@skyscanner\/bpk-svgs.*/,

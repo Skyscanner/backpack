@@ -1,0 +1,62 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import BpkBox from '../../packages/bpk-component-layout';
+
+import {
+  DefaultExample,
+  WithPaddingExample,
+  WithMarginExample,
+  FlexboxExample,
+  FlexboxColumnExample,
+  GridExample,
+  WidthHeightExample,
+  ResponsiveExample,
+  SemanticHTMLElementExample,
+  CenteredContentExample,
+  ShadowExample,
+  BorderExample,
+  MixedExample,
+} from './examples';
+
+export default {
+  title: 'bpk-component-layout',
+  component: BpkBox,
+};
+
+export const Default = DefaultExample;
+export const WithPadding = WithPaddingExample;
+export const WithMargin = WithMarginExample;
+export const Flexbox = FlexboxExample;
+export const FlexboxColumn = FlexboxColumnExample;
+export const Grid = GridExample;
+export const WidthHeight = WidthHeightExample;
+export const Responsive = ResponsiveExample;
+export const SemanticHTMLElement = SemanticHTMLElementExample;
+export const CenteredContent = CenteredContentExample;
+export const Shadow = ShadowExample;
+export const Border = BorderExample;
+
+export const VisualTest = MixedExample;
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true,
+  },
+};
+
