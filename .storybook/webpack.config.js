@@ -59,8 +59,11 @@ module.exports = ({ config }) => {
   // Add packages/node_modules to module resolution for Chakra UI and other package dependencies
   // Ensure root node_modules is checked first, then packages/node_modules
   if (!config.resolve.modules) {
+    // eslint-disable-next-line no-param-reassign
     config.resolve.modules = ['node_modules'];
   }
+
+  // eslint-disable-next-line no-param-reassign
   config.resolve.modules = [
     path.join(rootDir, 'node_modules'),
     path.join(rootDir, 'packages', 'node_modules'),

@@ -19,8 +19,36 @@
 import BpkBox, {
   type Props as BpkBoxProps,
 } from './src/BpkBox';
+import {
+  BpkLayoutProvider,
+  type BpkLayoutProviderProps,
+} from './src/BpkLayoutProvider';
+import {
+  BPK_SPACING_TOKENS,
+  BPK_BREAKPOINT_TOKENS,
+  backpackTheme,
+} from './src/backpackTheme';
+import { BPK_COLOR_TOKENS, BPK_COLOR_TOKEN_MAP } from './src/colorTokenTransformers';
 
-export type { BpkBoxProps };
+import type {
+  ResponsiveValue,
+  SpacingValue,
+} from './src/BpkBox.types';
+
+export type {
+  BpkBoxProps,
+  BpkLayoutProviderProps,
+  ResponsiveValue,
+  SpacingValue,
+};
 export default BpkBox;
-export { BpkBox };
+export {
+  BpkBox,
+  BpkLayoutProvider,
+  BPK_SPACING_TOKENS,
+  BPK_BREAKPOINT_TOKENS,
+  BPK_COLOR_TOKENS,
+  BPK_COLOR_TOKEN_MAP,
+  backpackTheme,
+};
 

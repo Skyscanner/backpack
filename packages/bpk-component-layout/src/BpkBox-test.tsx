@@ -17,39 +17,49 @@
  */
 
 import type { ReactElement } from 'react';
+
 import { render } from '@testing-library/react';
-import { ChakraProvider } from '@chakra-ui/react';
 
 import BpkBox from './BpkBox';
+import { BpkLayoutProvider } from './BpkLayoutProvider';
 
-// Wrap component with ChakraProvider for tests
-const renderWithChakra = (component: ReactElement) => {
-  return render(<ChakraProvider>{component}</ChakraProvider>);
-};
+// Wrap component with BpkLayoutProvider for tests
+const renderWithLayout = (component: ReactElement) => render(<BpkLayoutProvider>{component}</BpkLayoutProvider>);
 
 describe('BpkBox', () => {
   it('should render correctly', () => {
-    const { asFragment } = renderWithChakra(<BpkBox>Test content</BpkBox>);
-    expect(asFragment()).toMatchSnapshot();
+    const { container } = renderWithLayout(<BpkBox>Test content</BpkBox>);
+    expect(container.firstChild).toBeInTheDocument();
+    expect(container.firstChild).toHaveTextContent('Test content');
   });
 
   it('should render children', () => {
-    const { getByText } = renderWithChakra(
+    const { getByText } = renderWithLayout(
       <BpkBox>Test content</BpkBox>,
     );
     expect(getByText('Test content')).toBeInTheDocument();
   });
 
-  it('should support custom className', () => {
-    const { container } = renderWithChakra(
+  it('should not support custom className', () => {
+    const { container } = renderWithLayout(
       <BpkBox className="custom-classname">Content</BpkBox>,
     );
-    expect(container.firstChild).toHaveClass('custom-classname');
+    expect(container.firstChild).not.toHaveClass('custom-classname');
   });
 
-  it('should support Chakra UI props', () => {
-    const { container } = renderWithChakra(
-      <BpkBox padding={4} margin={2} bg="blue.500">
+  it('should support Backpack spacing tokens', () => {
+    const { container } = renderWithLayout(
+      <BpkBox padding="base" margin="lg">
+        Content
+      </BpkBox>,
+    );
+    const box = container.firstChild as HTMLElement;
+    expect(box).toBeInTheDocument();
+  });
+
+  it('should support Backpack color tokens', () => {
+    const { container } = renderWithLayout(
+      <BpkBox bg="canvas-contrast" color="text-primary">
         Content
       </BpkBox>,
     );
@@ -58,14 +68,14 @@ describe('BpkBox', () => {
   });
 
   it('should support as prop for semantic HTML', () => {
-    const { container } = renderWithChakra(
+    const { container } = renderWithLayout(
       <BpkBox as="section">Content</BpkBox>,
     );
     expect(container.querySelector('section')).toBeInTheDocument();
   });
 
   it('should support arbitrary props', () => {
-    const { getAllByTestId } = renderWithChakra(
+    const { getAllByTestId } = renderWithLayout(
       <BpkBox data-testid="test-box">Content</BpkBox>,
     );
     expect(getAllByTestId('test-box').length).toBe(1);

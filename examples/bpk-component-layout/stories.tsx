@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkBox from '../../packages/bpk-component-layout';
+import { BpkBox } from '../../packages/bpk-component-layout';
 
 import {
   DefaultExample,
