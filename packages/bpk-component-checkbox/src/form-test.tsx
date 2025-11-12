@@ -31,8 +31,8 @@ describe('BpkCheckbox form test', () => {
       return (
         <form data-testid="form">
           <BpkCheckbox
-            type="checkbox"
             name="checkbox"
+            label="Prefer directs"
             checked={isChecked}
             onChange={() => setIsChecked(!isChecked)}
             data-testid="mycheckbox"
@@ -49,7 +49,8 @@ describe('BpkCheckbox form test', () => {
     await userEvent.click(checkbox);
     expect(checkbox).toBeChecked();
 
-    const formData = new FormData(screen.getByTestId('form'));
+    const form = screen.getByTestId('form') as HTMLFormElement;
+    const formData = new FormData(form);
     expect(Object.fromEntries(formData.entries())).toEqual({ checkbox: 'on' });
   });
 
@@ -57,12 +58,12 @@ describe('BpkCheckbox form test', () => {
     const formValidation = jest.fn();
     const Wrap = () => {
       // state is required to force react to update and re-render the component.
-      const [isChecked, setIsChecked] = useState(false); 
+      const [isChecked, setIsChecked] = useState(false);
       return (
         <form data-testid="form">
           <BpkCheckbox
-            type="checkbox"
             name="checkbox"
+            label="Prefer directs"
             checked={isChecked}
             onChange={() => setIsChecked(!isChecked)}
             data-testid="mycheckbox"
@@ -84,3 +85,5 @@ describe('BpkCheckbox form test', () => {
     expect(formValidation).toHaveBeenCalledTimes(1);
   });
 });
+
+

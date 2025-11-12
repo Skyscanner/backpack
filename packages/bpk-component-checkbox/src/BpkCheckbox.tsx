@@ -16,10 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -27,34 +24,35 @@ import STYLES from './BpkCheckbox.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  name: string,
-  label: Node,
-  required: boolean,
-  disabled: boolean,
-  white: boolean,
-  className: ?string,
-  smallLabel: boolean,
-  valid: ?boolean,
-  checked: boolean,
+type NativeInputProps = React.InputHTMLAttributes<HTMLInputElement>;
+
+type Props = Omit<NativeInputProps, 'type' | 'className'> & {
+  name: string;
+  label: ReactNode;
+  required?: boolean;
+  disabled?: boolean;
+  white?: boolean;
+  className?: string | null;
+  smallLabel?: boolean;
+  valid?: boolean | null;
   /**
    * The indeterminate prop is only a visual clue, it does not affect the checked state of the checkbox. If `indeterminate` is flagged then the checkbox will be displayed with a minus sign in the box.  This is used when there is a checkbox group and the parent displays this state when not all child checkboxes are selected.
    */
-  indeterminate: boolean,
+  indeterminate?: boolean;
 };
 
 const BpkCheckbox = ({
   checked = false,
-    className = null,
-    disabled = false,
-    indeterminate = false,
-    label,
-    name,
-    required = false,
-    smallLabel = false,
-    valid = null,
-    white = false,
-    ...rest
+  className = null,
+  disabled = false,
+  indeterminate = false,
+  label,
+  name,
+  required = false,
+  smallLabel = false,
+  valid = null,
+  white = false,
+  ...rest
 }: Props) => {
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid
@@ -80,13 +78,12 @@ const BpkCheckbox = ({
 
   return (
     <label className={classNames}>
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <input
         type="checkbox"
         className={inputClasses}
         name={name}
         disabled={disabled}
-        aria-label={label}
+        aria-label={typeof label === 'string' ? label : undefined}
         aria-invalid={isInvalid}
         data-indeterminate={indeterminate}
         ref={(e) => {
@@ -108,19 +105,6 @@ const BpkCheckbox = ({
   );
 };
 
-BpkCheckbox.propTypes = {
-  name: PropTypes.string.isRequired,
-  label: PropTypes.node.isRequired,
-  required: PropTypes.bool,
-  disabled: PropTypes.bool,
-  white: PropTypes.bool,
-  className: PropTypes.string,
-  smallLabel: PropTypes.bool,
-  valid: PropTypes.bool,
-  checked: PropTypes.bool,
-  indeterminate: PropTypes.bool,
-};
-
-
-
 export default BpkCheckbox;
+
+

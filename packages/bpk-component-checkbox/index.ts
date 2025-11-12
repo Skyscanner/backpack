@@ -16,12 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkCheckbox from './src/BpkCheckbox';
+import themeAttributes from './src/themeAttributes';
 
-import themeAttributes from './themeAttributes';
+export default BpkCheckbox;
+export { themeAttributes };
 
-describe('themeAttributes', () => {
-  it('exports the expected attributes', () => {
-    expect(themeAttributes).toEqual(['checkboxCheckedColor']);
-  });
-});
+

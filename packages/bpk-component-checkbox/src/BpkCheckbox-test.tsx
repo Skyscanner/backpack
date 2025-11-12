@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 
 import BpkCheckbox from './BpkCheckbox';
@@ -118,3 +116,5 @@ describe('BpkCheckbox', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 });
+
+
