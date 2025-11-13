@@ -20,29 +20,23 @@ import { BpkBox } from '../../packages/bpk-component-layout';
 
 import * as BpkBoxExamples from './BpkBox.examples';
 
-/**
- * Layout Components
- *
- * This package provides layout components for building flexible, responsive layouts.
- * All components use Backpack design tokens for spacing, colors, and breakpoints.
- *
- * Individual component stories are organized in separate files:
- * - BpkBox.stories.tsx
- * - BpkFlex.stories.tsx
- * - BpkGrid.stories.tsx
- * - etc.
- */
-
 export default {
-  title: 'bpk-component-layout',
+  title: 'bpk-component-layout/BpkBox',
   component: BpkBox,
 };
 
-// Visual Tests
-export const VisualTest = BpkBoxExamples.Mixed;
-export const VisualTestWithZoom = {
-  render: VisualTest,
-  args: {
-    zoomEnabled: true,
-  },
-};
+export const Default = BpkBoxExamples.Default;
+export const WithPadding = BpkBoxExamples.WithPadding;
+export const WithMargin = BpkBoxExamples.WithMargin;
+export const Flexbox = BpkBoxExamples.Flexbox;
+export const FlexboxColumn = BpkBoxExamples.FlexboxColumn;
+export const Grid = BpkBoxExamples.Grid;
+export const WidthHeight = BpkBoxExamples.WidthHeight;
+export const Responsive = BpkBoxExamples.Responsive;
+export const ColorTokens = BpkBoxExamples.ColorTokens;
+export const SemanticHTMLElement = BpkBoxExamples.SemanticHTMLElement;
+export const CenteredContent = BpkBoxExamples.CenteredContent;
+export const Shadow = BpkBoxExamples.Shadow;
+export const Border = BpkBoxExamples.Border;
+export const Mixed = BpkBoxExamples.Mixed;
+

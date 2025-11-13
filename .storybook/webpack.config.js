@@ -31,7 +31,14 @@ module.exports = ({ config }) => {
   config.plugins.push(new MiniCssExtractPlugin());
   config.module.rules.push({
     test: /\.[jt]sx?$/,
-    exclude: /node_modules\/(?!bpk-|@chakra-ui|@emotion|framer-motion).*/,
+    // Exclude all node_modules except bpk- packages
+    // Note: @chakra-ui, @emotion, framer-motion are included for transpilation only, not for story discovery
+    // Also exclude any story files from Chakra UI
+    exclude: [
+      /node_modules\/(?!bpk-|@chakra-ui|@emotion|framer-motion).*/,
+      /@chakra-ui\/.*\.stories\./,
+      /@chakra-ui\/.*\/stories\//,
+    ],
     loader: 'babel-loader',
     options: {
       presets: [['@babel/preset-env']],
@@ -39,6 +46,8 @@ module.exports = ({ config }) => {
   });
   config.module.rules.push({
     test: /\.(js|jsx)?$/,
+    // Exclude node_modules from react-docgen to prevent scanning Chakra UI components
+    exclude: /node_modules/,
     loader: 'babel-loader',
     options: {
       plugins: ['babel-plugin-react-docgen'],

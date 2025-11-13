@@ -42,34 +42,20 @@ export interface BpkBaseLayoutProps {
 
   // Spacing props (accept Backpack tokens as strings)
   padding?: SpacingValue;
-  p?: SpacingValue;
   paddingTop?: SpacingValue;
-  pt?: SpacingValue;
   paddingRight?: SpacingValue;
-  pr?: SpacingValue;
   paddingBottom?: SpacingValue;
-  pb?: SpacingValue;
   paddingLeft?: SpacingValue;
-  pl?: SpacingValue;
   paddingX?: SpacingValue;
-  px?: SpacingValue;
   paddingY?: SpacingValue;
-  py?: SpacingValue;
 
   margin?: SpacingValue;
-  m?: SpacingValue;
   marginTop?: SpacingValue;
-  mt?: SpacingValue;
   marginRight?: SpacingValue;
-  mr?: SpacingValue;
   marginBottom?: SpacingValue;
-  mb?: SpacingValue;
   marginLeft?: SpacingValue;
-  ml?: SpacingValue;
   marginX?: SpacingValue;
-  mx?: SpacingValue;
   marginY?: SpacingValue;
-  my?: SpacingValue;
 
   // Gap props
   gap?: SpacingValue;
