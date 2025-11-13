@@ -72,17 +72,6 @@ import type {
   BpkFlexboxShorthandProps,
   BpkSpacingProps,
 } from './src/commonProps.types';
-import type { BpkFlexProps } from './src/BpkFlex/BpkFlex.types';
-import type { BpkGridProps } from './src/BpkGrid/BpkGrid.types';
-import type { BpkStackProps } from './src/BpkStack/BpkStack.types';
-import type { BpkSpacerProps } from './src/BpkSpacer/BpkSpacer.types';
-import type { BpkContainerProps } from './src/BpkContainer/BpkContainer.types';
-import type { BpkCenterProps } from './src/BpkCenter/BpkCenter.types';
-import type { BpkSeparatorProps } from './src/BpkSeparator/BpkSeparator.types';
-import type { BpkWrapProps } from './src/BpkWrap/BpkWrap.types';
-import type { BpkAspectRatioProps } from './src/BpkAspectRatio/BpkAspectRatio.types';
-import type { BpkFloatProps } from './src/BpkFloat/BpkFloat.types';
-import type { BpkGroupProps } from './src/BpkGroup/BpkGroup.types';
 
 export type {
   BpkBoxProps,
