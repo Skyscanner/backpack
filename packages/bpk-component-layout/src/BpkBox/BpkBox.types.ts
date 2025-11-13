@@ -20,8 +20,8 @@ import type { ElementType, ReactNode } from 'react';
 // eslint-disable-next-line no-restricted-imports
 import type React from 'react';
 
-import type { BpkColorToken } from './colorTokenTransformers';
-import type { BpkBaseLayoutProps } from './BpkBaseLayoutProps.types';
+import type { BpkColorToken } from '../colorTokenTransformers';
+import type { BpkBaseLayoutProps } from '../BpkBaseLayoutProps.types';
 
 /**
  * Responsive value type - can be a single value or an object with breakpoint keys

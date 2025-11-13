@@ -21,7 +21,7 @@ import type { ReactElement } from 'react';
 import { render } from '@testing-library/react';
 
 import BpkBox from './BpkBox';
-import { BpkLayoutProvider } from './BpkLayoutProvider';
+import { BpkLayoutProvider } from '../BpkLayoutProvider';
 
 // Wrap component with BpkLayoutProvider for tests
 const renderWithLayout = (component: ReactElement) => render(<BpkLayoutProvider>{component}</BpkLayoutProvider>);

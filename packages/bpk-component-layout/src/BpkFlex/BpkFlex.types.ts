@@ -16,14 +16,15 @@
  * limitations under the License.
  */
 
-import type { ResponsiveValue } from './BpkBox.types';
-import type { BpkBaseLayoutProps } from './BpkBaseLayoutProps.types';
+import type { ResponsiveValue } from '../BpkBox/BpkBox.types';
+import type { BpkBaseLayoutProps } from '../BpkBaseLayoutProps.types';
+import type { BpkFlexboxShorthandProps } from '../commonProps.types';
 
 /**
  * Flexbox-specific props for BpkFlex
  * Includes all Chakra UI Flex component props
  */
-export interface BpkFlexSpecificProps {
+export interface BpkFlexSpecificProps extends BpkFlexboxShorthandProps {
   // Flexbox props (full set)
   flex?: ResponsiveValue<string | number>;
   flexDirection?: ResponsiveValue<string>;
@@ -39,11 +40,7 @@ export interface BpkFlexSpecificProps {
   justifySelf?: ResponsiveValue<string>;
   order?: ResponsiveValue<string | number>;
 
-  // Chakra UI Flex shorthand props (from FlexOptions)
-  align?: ResponsiveValue<string>; // Shorthand for alignItems
-  justify?: ResponsiveValue<string>; // Shorthand for justifyContent
-  wrap?: ResponsiveValue<string>; // Shorthand for flexWrap
-  direction?: ResponsiveValue<string>; // Shorthand for flexDirection
+  // Additional Chakra UI Flex shorthand props (beyond common ones)
   basis?: ResponsiveValue<string | number>; // Shorthand for flexBasis
   grow?: ResponsiveValue<string | number>; // Shorthand for flexGrow
   shrink?: ResponsiveValue<string | number>; // Shorthand for flexShrink

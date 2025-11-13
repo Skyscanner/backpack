@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import type { BpkBaseLayoutProps } from './BpkBaseLayoutProps.types';
-import type { ResponsiveValue, SpacingValue } from './BpkBox.types';
+import type { BpkBaseLayoutProps } from '../BpkBaseLayoutProps.types';
+import type { ResponsiveValue, SpacingValue } from '../BpkBox/BpkBox.types';
 
 /**
  * Grid-specific props for BpkGrid

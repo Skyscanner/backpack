@@ -16,64 +16,58 @@
  * limitations under the License.
  */
 
-import { Grid } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
-import { transformColorProps } from './colorTokenTransformers';
-import { transformSpacingProps } from './tokenTransformers';
+import { transformColorProps } from '../colorTokenTransformers';
+import { transformSpacingProps } from '../tokenTransformers';
 
-import type { BpkGridProps } from './BpkGrid.types';
+import type { BpkBoxProps } from './BpkBox.types';
 
-export type Props = BpkGridProps;
+export type Props = BpkBoxProps;
 
 /**
- * BpkGrid is a layout component that provides a grid container using Chakra UI's Grid component.
- * It follows the facade pattern, wrapping Chakra UI's Grid to provide a Backpack-specific API.
+ * BpkBox is a layout component that provides a flexible container using Chakra UI's Box component.
+ * It follows the facade pattern, wrapping Chakra UI's Box to provide a Backpack-specific API.
  *
  * **Key Features:**
  * - Accepts Backpack spacing tokens as strings (e.g., `padding="base"` instead of `padding={4}`)
  * - Accepts Backpack breakpoint tokens in responsive props (e.g., `{ mobile: "base", desktop: "lg" }`)
- * - Accepts Backpack color tokens for color-related props
+ * - Still supports Chakra UI values for flexibility
  * - Does not support className prop to maintain Backpack design system consistency
  *
  * @param {Props} props - The component props
- * @returns {JSX.Element} The rendered BpkGrid component
+ * @returns {JSX.Element} The rendered BpkBox component
  * @example
  * ```tsx
  * // Using Backpack tokens
- * <BpkGrid
- *   gridTemplateColumns="repeat(3, 1fr)"
- *   gap="base"
- *   padding="lg"
- * >
- *   <BpkBox>Item 1</BpkBox>
- *   <BpkBox>Item 2</BpkBox>
- *   <BpkBox>Item 3</BpkBox>
- * </BpkGrid>
+ * <BpkBox padding="base" margin="lg" bg="blue.500">
+ *   Content here
+ * </BpkBox>
  *
  * // Using responsive props with Backpack breakpoints
- * <BpkGrid
- *   gridTemplateColumns={{
- *     base: "1fr",
- *     mobile: "repeat(2, 1fr)",
- *     desktop: "repeat(3, 1fr)"
- *   }}
- *   gap={{ base: "sm", desktop: "lg" }}
- * >
- *   Responsive grid layout
- * </BpkGrid>
+ * <BpkBox padding={{ mobile: "base", desktop: "xl" }}>
+ *   Responsive content
+ * </BpkBox>
+ *
+ * // Still supports Chakra UI values
+ * <BpkBox padding={4} margin={2}>
+ *   Content
+ * </BpkBox>
  * ```
  */
-const BpkGrid = ({
+const BpkBox = ({
   as,
   children,
   ...rest
 }: Props) => {
   // Filter out any disallowed props (defensive programming)
+  // This ensures only explicitly allowed props are passed to Chakra UI Box
+  // TypeScript will catch invalid props at compile time, this is runtime safety
   const allowedProps = { ...rest };
   const disallowedProps = ['className']; // Explicitly disallowed props
 
   disallowedProps.forEach((prop) => {
-    // eslint-disable-next-line no-param-reassign
+     
     delete allowedProps[prop as keyof typeof allowedProps];
   });
 
@@ -84,14 +78,14 @@ const BpkGrid = ({
   const transformedProps = transformColorProps(spacingTransformed);
 
   return (
-    <Grid
+    <Box
       as={as}
       {...transformedProps}
     >
       {children}
-    </Grid>
+    </Box>
   );
 };
 
-export default BpkGrid;
+export default BpkBox;
 

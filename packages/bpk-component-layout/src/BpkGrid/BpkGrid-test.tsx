@@ -20,85 +20,95 @@ import type { ReactElement } from 'react';
 
 import { render } from '@testing-library/react';
 
-import BpkFlex from './BpkFlex';
-import { BpkLayoutProvider } from './BpkLayoutProvider';
+import BpkGrid from './BpkGrid';
+import { BpkLayoutProvider } from '../BpkLayoutProvider';
 
 // Wrap component with BpkLayoutProvider for tests
 const renderWithLayout = (component: ReactElement) => render(<BpkLayoutProvider>{component}</BpkLayoutProvider>);
 
-describe('BpkFlex', () => {
+describe('BpkGrid', () => {
   it('should render correctly', () => {
-    const { container } = renderWithLayout(<BpkFlex>Test content</BpkFlex>);
+    const { container } = renderWithLayout(<BpkGrid>Test content</BpkGrid>);
     expect(container.firstChild).toBeInTheDocument();
     expect(container.firstChild).toHaveTextContent('Test content');
   });
 
   it('should render children', () => {
     const { getByText } = renderWithLayout(
-      <BpkFlex>Test content</BpkFlex>,
+      <BpkGrid>Test content</BpkGrid>,
     );
     expect(getByText('Test content')).toBeInTheDocument();
   });
 
   it('should not support custom className', () => {
     const { container } = renderWithLayout(
-      <BpkFlex className="custom-classname">Content</BpkFlex>,
+      <BpkGrid className="custom-classname">Content</BpkGrid>,
     );
     expect(container.firstChild).not.toHaveClass('custom-classname');
   });
 
   it('should support Backpack spacing tokens', () => {
     const { container } = renderWithLayout(
-      <BpkFlex padding="base" gap="md">
+      <BpkGrid padding="base" gap="md">
         Content
-      </BpkFlex>,
+      </BpkGrid>,
     );
-    const flex = container.firstChild as HTMLElement;
-    expect(flex).toBeInTheDocument();
+    const grid = container.firstChild as HTMLElement;
+    expect(grid).toBeInTheDocument();
   });
 
   it('should support Backpack color tokens', () => {
     const { container } = renderWithLayout(
-      <BpkFlex bg="canvas-contrast" color="text-primary">
+      <BpkGrid bg="canvas-contrast" color="text-primary">
         Content
-      </BpkFlex>,
+      </BpkGrid>,
     );
-    const flex = container.firstChild as HTMLElement;
-    expect(flex).toBeInTheDocument();
+    const grid = container.firstChild as HTMLElement;
+    expect(grid).toBeInTheDocument();
   });
 
-  it('should support flexbox props', () => {
+  it('should support grid props', () => {
     const { container } = renderWithLayout(
-      <BpkFlex flexDirection="column" alignItems="center" justifyContent="space-between">
+      <BpkGrid gridTemplateColumns="repeat(3, 1fr)" gap="base">
         Content
-      </BpkFlex>,
+      </BpkGrid>,
     );
-    const flex = container.firstChild as HTMLElement;
-    expect(flex).toBeInTheDocument();
+    const grid = container.firstChild as HTMLElement;
+    expect(grid).toBeInTheDocument();
   });
 
-  it('should support Chakra UI Flex shorthand props', () => {
+  it('should support all Chakra UI Grid props including auto props', () => {
     const { container } = renderWithLayout(
-      <BpkFlex align="center" justify="space-between" wrap="wrap" direction="row">
+      <BpkGrid
+        gridTemplateColumns="repeat(3, 1fr)"
+        gridAutoFlow="row"
+        gridAutoRows="minmax(100px, auto)"
+        gridAutoColumns="1fr"
+        gridColumnStart={1}
+        gridColumnEnd={3}
+        gridRowStart={1}
+        gridRowEnd={2}
+        gap="base"
+      >
         Content
-      </BpkFlex>,
+      </BpkGrid>,
     );
-    const flex = container.firstChild as HTMLElement;
-    expect(flex).toBeInTheDocument();
+    const grid = container.firstChild as HTMLElement;
+    expect(grid).toBeInTheDocument();
   });
 
   it('should support as prop for semantic HTML', () => {
     const { container } = renderWithLayout(
-      <BpkFlex as="nav">Content</BpkFlex>,
+      <BpkGrid as="section">Content</BpkGrid>,
     );
-    expect(container.querySelector('nav')).toBeInTheDocument();
+    expect(container.querySelector('section')).toBeInTheDocument();
   });
 
   it('should support arbitrary props', () => {
     const { getAllByTestId } = renderWithLayout(
-      <BpkFlex data-testid="test-flex">Content</BpkFlex>,
+      <BpkGrid data-testid="test-grid">Content</BpkGrid>,
     );
-    expect(getAllByTestId('test-flex').length).toBe(1);
+    expect(getAllByTestId('test-grid').length).toBe(1);
   });
 });
 

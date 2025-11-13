@@ -21,7 +21,7 @@ import type { ElementType, ReactNode } from 'react';
 import type React from 'react';
 
 import type { BpkColorToken } from './colorTokenTransformers';
-import type { ResponsiveValue, SpacingValue, ColorValue } from './BpkBox.types';
+import type { ResponsiveValue, SpacingValue, ColorValue } from './BpkBox/BpkBox.types';
 
 /**
  * Base layout props shared by all layout components (BpkBox, BpkFlex, BpkGrid)

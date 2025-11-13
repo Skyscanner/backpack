@@ -16,73 +16,60 @@
  * limitations under the License.
  */
 
-import { Flex } from '@chakra-ui/react';
+import { Wrap } from '@chakra-ui/react';
 
-import { transformColorProps } from './colorTokenTransformers';
-import { transformSpacingProps } from './tokenTransformers';
+import { transformColorProps } from '../colorTokenTransformers';
+import { transformSpacingProps } from '../tokenTransformers';
 
-import type { BpkFlexProps } from './BpkFlex.types';
+import type { BpkWrapProps } from './BpkWrap.types';
 
-export type Props = BpkFlexProps;
+export type Props = BpkWrapProps;
 
 /**
- * BpkFlex is a layout component that provides a flexbox container using Chakra UI's Flex component.
- * It follows the facade pattern, wrapping Chakra UI's Flex to provide a Backpack-specific API.
+ * BpkWrap is a layout component that provides a wrap layout using Chakra UI's Wrap component.
+ * It follows the facade pattern, wrapping Chakra UI's Wrap to provide a Backpack-specific API.
  *
  * **Key Features:**
- * - Accepts Backpack spacing tokens as strings (e.g., `padding="base"` instead of `padding={4}`)
- * - Accepts Backpack breakpoint tokens in responsive props (e.g., `{ mobile: "base", desktop: "lg" }`)
+ * - Wraps children and provides spacing between them
+ * - Accepts Backpack spacing tokens as strings (e.g., `spacing="base"`)
  * - Accepts Backpack color tokens for color-related props
  * - Does not support className prop to maintain Backpack design system consistency
  *
  * @param {Props} props - The component props
- * @returns {JSX.Element} The rendered BpkFlex component
+ * @returns {JSX.Element} The rendered BpkWrap component
  * @example
  * ```tsx
- * // Using Backpack tokens
- * <BpkFlex padding="base" gap="md" alignItems="center">
+ * <BpkWrap spacing="base">
  *   <BpkBox>Item 1</BpkBox>
  *   <BpkBox>Item 2</BpkBox>
- * </BpkFlex>
- *
- * // Using responsive props with Backpack breakpoints
- * <BpkFlex
- *   flexDirection={{ base: "column", mobile: "row" }}
- *   gap={{ base: "sm", desktop: "lg" }}
- * >
- *   Responsive flex layout
- * </BpkFlex>
+ * </BpkWrap>
  * ```
  */
-const BpkFlex = ({
+const BpkWrap = ({
   as,
   children,
   ...rest
 }: Props) => {
-  // Filter out any disallowed props (defensive programming)
   const allowedProps = { ...rest };
-  const disallowedProps = ['className']; // Explicitly disallowed props
+  const disallowedProps = ['className'];
 
   disallowedProps.forEach((prop) => {
     // eslint-disable-next-line no-param-reassign
     delete allowedProps[prop as keyof typeof allowedProps];
   });
 
-  // Transform Backpack spacing tokens to Chakra UI values
   const spacingTransformed = transformSpacingProps(allowedProps);
-
-  // Transform Backpack color tokens to CSS custom properties
   const transformedProps = transformColorProps(spacingTransformed);
 
   return (
-    <Flex
+    <Wrap
       as={as}
       {...transformedProps}
     >
       {children}
-    </Flex>
+    </Wrap>
   );
 };
 
-export default BpkFlex;
+export default BpkWrap;
 
