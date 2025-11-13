@@ -32,6 +32,13 @@ import {
   ShadowExample,
   BorderExample,
   MixedExample,
+  BpkFlexExample,
+  BpkFlexColumnExample,
+  BpkFlexResponsiveExample,
+  BpkFlexShorthandExample,
+  BpkGridExample,
+  BpkGridResponsiveExample,
+  BpkGridAutoExample,
 } from './examples';
 
 export default {
@@ -51,6 +58,14 @@ export const SemanticHTMLElement = SemanticHTMLElementExample;
 export const CenteredContent = CenteredContentExample;
 export const Shadow = ShadowExample;
 export const Border = BorderExample;
+
+export const BpkFlex = BpkFlexExample;
+export const BpkFlexColumn = BpkFlexColumnExample;
+export const BpkFlexResponsive = BpkFlexResponsiveExample;
+export const BpkFlexShorthand = BpkFlexShorthandExample;
+export const BpkGrid = BpkGridExample;
+export const BpkGridResponsive = BpkGridResponsiveExample;
+export const BpkGridAuto = BpkGridAutoExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {

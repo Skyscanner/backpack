@@ -21,6 +21,7 @@ import type { ElementType, ReactNode } from 'react';
 import type React from 'react';
 
 import type { BpkColorToken } from './colorTokenTransformers';
+import type { BpkBaseLayoutProps } from './BpkBaseLayoutProps.types';
 
 /**
  * Responsive value type - can be a single value or an object with breakpoint keys
@@ -38,74 +39,11 @@ export type SpacingValue = ResponsiveValue<string | number>;
 export type ColorValue = ResponsiveValue<BpkColorToken>;
 
 /**
- * Controlled props for BpkBox
- * This interface explicitly defines which props are allowed, providing a stable API
+ * Box-specific props for BpkBox
+ * BpkBox supports both flexbox and grid props for flexibility
  */
-export interface BpkBoxProps {
-  // Core props
-  as?: ElementType;
-  children?: ReactNode;
-
-  // Layout props
-  width?: ResponsiveValue<string | number>;
-  height?: ResponsiveValue<string | number>;
-  minWidth?: ResponsiveValue<string | number>;
-  maxWidth?: ResponsiveValue<string | number>;
-  minHeight?: ResponsiveValue<string | number>;
-  maxHeight?: ResponsiveValue<string | number>;
-
-  // Spacing props (accept Backpack tokens as strings)
-  padding?: SpacingValue;
-  p?: SpacingValue;
-  paddingTop?: SpacingValue;
-  pt?: SpacingValue;
-  paddingRight?: SpacingValue;
-  pr?: SpacingValue;
-  paddingBottom?: SpacingValue;
-  pb?: SpacingValue;
-  paddingLeft?: SpacingValue;
-  pl?: SpacingValue;
-  paddingX?: SpacingValue;
-  px?: SpacingValue;
-  paddingY?: SpacingValue;
-  py?: SpacingValue;
-
-  margin?: SpacingValue;
-  m?: SpacingValue;
-  marginTop?: SpacingValue;
-  mt?: SpacingValue;
-  marginRight?: SpacingValue;
-  mr?: SpacingValue;
-  marginBottom?: SpacingValue;
-  mb?: SpacingValue;
-  marginLeft?: SpacingValue;
-  ml?: SpacingValue;
-  marginX?: SpacingValue;
-  mx?: SpacingValue;
-  marginY?: SpacingValue;
-  my?: SpacingValue;
-
-  // Gap props
-  gap?: SpacingValue;
-  rowGap?: SpacingValue;
-  columnGap?: SpacingValue;
-
-  // Display props
-  display?: ResponsiveValue<string>;
-  visibility?: ResponsiveValue<string>;
-  overflow?: ResponsiveValue<string>;
-  overflowX?: ResponsiveValue<string>;
-  overflowY?: ResponsiveValue<string>;
-
-  // Position props
-  position?: ResponsiveValue<string>;
-  top?: ResponsiveValue<string | number>;
-  right?: ResponsiveValue<string | number>;
-  bottom?: ResponsiveValue<string | number>;
-  left?: ResponsiveValue<string | number>;
-  zIndex?: ResponsiveValue<string | number>;
-
-  // Flexbox props
+export interface BpkBoxSpecificProps {
+  // Flexbox props (for when BpkBox is used with display: flex)
   flex?: ResponsiveValue<string | number>;
   flexDirection?: ResponsiveValue<string>;
   flexWrap?: ResponsiveValue<string>;
@@ -120,7 +58,7 @@ export interface BpkBoxProps {
   justifySelf?: ResponsiveValue<string>;
   order?: ResponsiveValue<string | number>;
 
-  // Grid props
+  // Grid props (for when BpkBox is used with display: grid)
   gridTemplateColumns?: ResponsiveValue<string>;
   gridTemplateRows?: ResponsiveValue<string>;
   gridTemplateAreas?: ResponsiveValue<string>;
@@ -130,83 +68,14 @@ export interface BpkBoxProps {
   gridGap?: SpacingValue;
   gridColumnGap?: SpacingValue;
   gridRowGap?: SpacingValue;
-
-  // Color props (restricted to Backpack color tokens only)
-  bg?: ColorValue;
-  backgroundColor?: ColorValue;
-  color?: ColorValue;
-  opacity?: ResponsiveValue<string | number>;
-
-  // Border props
-  border?: ResponsiveValue<string>;
-  borderWidth?: ResponsiveValue<string | number>;
-  borderStyle?: ResponsiveValue<string>;
-  borderColor?: ColorValue;
-  borderRadius?: ResponsiveValue<string | number>;
-  borderTop?: ResponsiveValue<string>;
-  borderRight?: ResponsiveValue<string>;
-  borderBottom?: ResponsiveValue<string>;
-  borderLeft?: ResponsiveValue<string>;
-  borderTopWidth?: ResponsiveValue<string | number>;
-  borderRightWidth?: ResponsiveValue<string | number>;
-  borderBottomWidth?: ResponsiveValue<string | number>;
-  borderLeftWidth?: ResponsiveValue<string | number>;
-  borderTopColor?: ColorValue;
-  borderRightColor?: ColorValue;
-  borderBottomColor?: ColorValue;
-  borderLeftColor?: ColorValue;
-  borderTopLeftRadius?: ResponsiveValue<string | number>;
-  borderTopRightRadius?: ResponsiveValue<string | number>;
-  borderBottomLeftRadius?: ResponsiveValue<string | number>;
-  borderBottomRightRadius?: ResponsiveValue<string | number>;
-
-  // Shadow props
-  boxShadow?: ResponsiveValue<string>;
-  textShadow?: ResponsiveValue<string>;
-
-  // Typography props (limited set)
-  fontSize?: ResponsiveValue<string | number>;
-  fontWeight?: ResponsiveValue<string | number>;
-  lineHeight?: ResponsiveValue<string | number>;
-  textAlign?: ResponsiveValue<string>;
-  textTransform?: ResponsiveValue<string>;
-  textDecoration?: ResponsiveValue<string>;
-  letterSpacing?: ResponsiveValue<string | number>;
-
-  // Cursor and pointer events
-  cursor?: ResponsiveValue<string>;
-  pointerEvents?: ResponsiveValue<string>;
-
-  // Transform props
-  transform?: ResponsiveValue<string>;
-  transformOrigin?: ResponsiveValue<string>;
-
-  // Transition props
-  transition?: ResponsiveValue<string>;
-  transitionProperty?: ResponsiveValue<string>;
-  transitionDuration?: ResponsiveValue<string>;
-  transitionTimingFunction?: ResponsiveValue<string>;
-  transitionDelay?: ResponsiveValue<string>;
-
-  // Event handlers (standard React events)
-  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
-  onMouseEnter?: (event: React.MouseEvent<HTMLElement>) => void;
-  onMouseLeave?: (event: React.MouseEvent<HTMLElement>) => void;
-  onFocus?: (event: React.FocusEvent<HTMLElement>) => void;
-  onBlur?: (event: React.FocusEvent<HTMLElement>) => void;
-
-  // Accessibility props
-  id?: string;
-  role?: string;
-  'aria-label'?: string;
-  'aria-labelledby'?: string;
-  'aria-describedby'?: string;
-  tabIndex?: number;
-
-  // Data attributes (for testing, etc.)
-  'data-testid'?: string;
-  'data-cy'?: string;
 }
+
+/**
+ * Controlled props for BpkBox
+ * This interface explicitly defines which props are allowed, providing a stable API
+ * BpkBox extends base layout props and adds flexbox/grid props for flexibility
+ */
+export interface BpkBoxProps extends BpkBaseLayoutProps, BpkBoxSpecificProps {}
 
 /**
  * Type guard to check if a prop is a valid BpkBox prop.

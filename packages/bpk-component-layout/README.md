@@ -38,6 +38,65 @@ This ensures all layout components use Backpack's design system consistently.
 
 **The facade pattern allows you to use Backpack tokens directly as strings**, making the API more intuitive and hiding Chakra UI implementation details.
 
+### BpkFlex
+
+`BpkFlex` is a flexbox layout component that wraps Chakra UI's Flex component. It provides the same Backpack-specific API as `BpkBox` but is optimized for flexbox layouts.
+
+**All Chakra UI Flex props are supported**, including shorthand props:
+
+```tsx
+import { BpkFlex } from '@skyscanner/backpack-web/bpk-component-layout';
+
+// Using standard flexbox props
+<BpkFlex gap="base" alignItems="center" justifyContent="space-between">
+  <BpkBox>Item 1</BpkBox>
+  <BpkBox>Item 2</BpkBox>
+</BpkFlex>
+
+// Using Chakra UI shorthand props
+<BpkFlex align="center" justify="space-between" wrap="wrap" direction="row">
+  <BpkBox>Item 1</BpkBox>
+  <BpkBox>Item 2</BpkBox>
+</BpkFlex>
+```
+
+**Supported Flex-specific props:**
+- Standard: `flexDirection`, `flexWrap`, `alignItems`, `justifyContent`, `flexGrow`, `flexShrink`, `flexBasis`, `alignContent`, `alignSelf`, `justifyItems`, `justifySelf`, `order`
+- Shorthand: `align` (alignItems), `justify` (justifyContent), `wrap` (flexWrap), `direction` (flexDirection), `basis` (flexBasis), `grow` (flexGrow), `shrink` (flexShrink)
+
+### BpkGrid
+
+`BpkGrid` is a grid layout component that wraps Chakra UI's Grid component. It provides the same Backpack-specific API as `BpkBox` but is optimized for grid layouts.
+
+**All Chakra UI Grid props are supported**, including auto-flow and placement props:
+
+```tsx
+import { BpkGrid } from '@skyscanner/backpack-web/bpk-component-layout';
+
+// Basic grid
+<BpkGrid gridTemplateColumns="repeat(3, 1fr)" gap="base">
+  <BpkBox>Item 1</BpkBox>
+  <BpkBox>Item 2</BpkBox>
+  <BpkBox>Item 3</BpkBox>
+</BpkGrid>
+
+// Grid with auto-flow
+<BpkGrid
+  gridAutoFlow="row"
+  gridAutoRows="minmax(100px, auto)"
+  gridAutoColumns="1fr"
+  gap="base"
+>
+  <BpkBox>Auto grid item</BpkBox>
+</BpkGrid>
+```
+
+**Supported Grid-specific props:**
+- Template: `gridTemplateColumns`, `gridTemplateRows`, `gridTemplateAreas`
+- Placement: `gridColumn`, `gridRow`, `gridArea`, `gridColumnStart`, `gridColumnEnd`, `gridRowStart`, `gridRowEnd`
+- Gap: `gridGap`, `gridColumnGap`, `gridRowGap` (also supports Backpack spacing tokens)
+- Auto: `gridAutoFlow`, `gridAutoRows`, `gridAutoColumns`
+
 #### Using Backpack Spacing Tokens (Recommended)
 
 You can use Backpack spacing tokens directly as strings - no imports needed:
@@ -218,8 +277,9 @@ export default () => (
 ```
 
 **Note:**
-- `BpkBox` does **not** support the `className` prop to maintain consistency with Backpack's design principles
+- `BpkBox`, `BpkFlex`, and `BpkGrid` do **not** support the `className` prop to maintain consistency with Backpack's design principles
 - TypeScript will provide autocomplete and type checking for all allowed props
+- All three components share the same prop interface and support the same Backpack tokens
 - The API is intentionally limited to ensure stability and prevent breaking changes
 
 ### Semantic HTML

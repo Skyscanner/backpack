@@ -20,6 +20,8 @@ import type { ReactNode } from 'react';
 
 import {
   BpkBox,
+  BpkFlex,
+  BpkGrid,
   BpkLayoutProvider,
 } from '../../packages/bpk-component-layout';
 
@@ -257,6 +259,160 @@ export const MixedExample = () => (
         A box with padding, background, border, and rounded corners
       </BpkBox>
     </BpkBox>
+  </Wrapper>
+);
+
+export const BpkFlexExample = () => (
+  <Wrapper>
+    <BpkFlex gap="base" padding="base" bg="canvas-contrast" borderRadius="md">
+      <BpkBox flex={1} padding="base" bg="surface-highlight" borderRadius="md">
+        Flex item 1
+      </BpkBox>
+      <BpkBox flex={1} padding="base" bg="surface-default" borderRadius="md">
+        Flex item 2
+      </BpkBox>
+      <BpkBox flex={1} padding="base" bg="surface-elevated" borderRadius="md">
+        Flex item 3
+      </BpkBox>
+    </BpkFlex>
+  </Wrapper>
+);
+
+export const BpkFlexShorthandExample = () => (
+  <Wrapper>
+    <BpkFlex
+      align="center"
+      justify="space-between"
+      wrap="wrap"
+      direction="row"
+      gap="base"
+      padding="base"
+      bg="canvas-contrast"
+      borderRadius="md"
+    >
+      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+        Using shorthand: align, justify, wrap, direction
+      </BpkBox>
+      <BpkBox padding="base" bg="surface-default" borderRadius="md">
+        Flex item 2
+      </BpkBox>
+    </BpkFlex>
+  </Wrapper>
+);
+
+export const BpkFlexColumnExample = () => (
+  <Wrapper>
+    <BpkFlex flexDirection="column" gap="base" padding="base" bg="canvas-contrast" borderRadius="md">
+      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+        Column item 1
+      </BpkBox>
+      <BpkBox padding="base" bg="surface-default" borderRadius="md">
+        Column item 2
+      </BpkBox>
+      <BpkBox padding="base" bg="surface-elevated" borderRadius="md">
+        Column item 3
+      </BpkBox>
+    </BpkFlex>
+  </Wrapper>
+);
+
+export const BpkFlexResponsiveExample = () => (
+  <Wrapper>
+    <BpkFlex
+      flexDirection={{ base: 'column', mobile: 'row' }}
+      gap={{ base: 'sm', desktop: 'lg' }}
+      padding="base"
+      bg="canvas-contrast"
+      borderRadius="md"
+    >
+      <BpkBox flex={1} padding="base" bg="surface-highlight" borderRadius="md">
+        Responsive flex item 1
+      </BpkBox>
+      <BpkBox flex={1} padding="base" bg="surface-default" borderRadius="md">
+        Responsive flex item 2
+      </BpkBox>
+    </BpkFlex>
+  </Wrapper>
+);
+
+export const BpkGridExample = () => (
+  <Wrapper>
+    <BpkGrid
+      gridTemplateColumns="repeat(3, 1fr)"
+      gap="base"
+      padding="base"
+      bg="canvas-contrast"
+      borderRadius="md"
+    >
+      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+        Grid item 1
+      </BpkBox>
+      <BpkBox padding="base" bg="surface-default" borderRadius="md">
+        Grid item 2
+      </BpkBox>
+      <BpkBox padding="base" bg="surface-elevated" borderRadius="md">
+        Grid item 3
+      </BpkBox>
+      <BpkBox padding="base" bg="status-success-fill" borderRadius="md">
+        Grid item 4
+      </BpkBox>
+      <BpkBox padding="base" bg="status-warning-fill" borderRadius="md">
+        Grid item 5
+      </BpkBox>
+      <BpkBox padding="base" bg="status-error-fill" borderRadius="md">
+        Grid item 6
+      </BpkBox>
+    </BpkGrid>
+  </Wrapper>
+);
+
+export const BpkGridResponsiveExample = () => (
+  <Wrapper>
+    <BpkGrid
+      gridTemplateColumns={{
+        base: '1fr',
+        mobile: 'repeat(2, 1fr)',
+        desktop: 'repeat(3, 1fr)',
+      }}
+      gap={{ base: 'sm', desktop: 'lg' }}
+      padding="base"
+      bg="canvas-contrast"
+      borderRadius="md"
+    >
+      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+        Responsive grid item 1
+      </BpkBox>
+      <BpkBox padding="base" bg="surface-default" borderRadius="md">
+        Responsive grid item 2
+      </BpkBox>
+      <BpkBox padding="base" bg="surface-elevated" borderRadius="md">
+        Responsive grid item 3
+      </BpkBox>
+    </BpkGrid>
+  </Wrapper>
+);
+
+export const BpkGridAutoExample = () => (
+  <Wrapper>
+    <BpkGrid
+      gridAutoFlow="row"
+      gridAutoRows="minmax(100px, auto)"
+      gridAutoColumns="1fr"
+      gap="base"
+      padding="base"
+      bg="canvas-contrast"
+      borderRadius="md"
+    >
+      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+        Auto grid item 1
+      </BpkBox>
+      <BpkBox padding="base" bg="surface-default" borderRadius="md">
+        Auto grid item 2
+      </BpkBox>
+      <BpkBox padding="base" bg="surface-elevated" borderRadius="md">
+        Auto grid item 3
+      </BpkBox>
+    </BpkGrid>
   </Wrapper>
 );
 

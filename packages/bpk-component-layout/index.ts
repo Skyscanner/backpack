@@ -19,6 +19,12 @@
 import BpkBox, {
   type Props as BpkBoxProps,
 } from './src/BpkBox';
+import BpkFlex, {
+  type Props as BpkFlexProps,
+} from './src/BpkFlex';
+import BpkGrid, {
+  type Props as BpkGridProps,
+} from './src/BpkGrid';
 import {
   BpkLayoutProvider,
   type BpkLayoutProviderProps,
@@ -34,9 +40,15 @@ import type {
   ResponsiveValue,
   SpacingValue,
 } from './src/BpkBox.types';
+import type { BpkBaseLayoutProps } from './src/BpkBaseLayoutProps.types';
+import type { BpkFlexProps } from './src/BpkFlex.types';
+import type { BpkGridProps } from './src/BpkGrid.types';
 
 export type {
   BpkBoxProps,
+  BpkFlexProps,
+  BpkGridProps,
+  BpkBaseLayoutProps,
   BpkLayoutProviderProps,
   ResponsiveValue,
   SpacingValue,
@@ -44,6 +56,8 @@ export type {
 export default BpkBox;
 export {
   BpkBox,
+  BpkFlex,
+  BpkGrid,
   BpkLayoutProvider,
   BPK_SPACING_TOKENS,
   BPK_BREAKPOINT_TOKENS,
