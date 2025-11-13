@@ -43,7 +43,7 @@ export const DefaultExample = () => (
 
 export const WithPaddingExample = () => (
   <Wrapper>
-    <BpkBox padding="base" bg="canvas-contrast">
+    <BpkBox padding="md" bg="canvas-contrast">
       BpkBox with Backpack spacing token as string: padding=&quot;base&quot; (1rem / 16px)
     </BpkBox>
   </Wrapper>

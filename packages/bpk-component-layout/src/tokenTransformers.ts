@@ -18,14 +18,19 @@
 
 /**
  * Backpack spacing token names mapped to Chakra UI spacing scale values
+ * Based on Backpack spacing tokens: https://www.skyscanner.design/latest/foundations/spacing/overview-jCiTHnBD
+ * Chakra UI uses a 4px base scale, so we map Backpack tokens accordingly
  */
 const BPK_SPACING_MAP = {
-  none: 0,
-  sm: 2, // 0.5rem / 8px
-  base: 4, // 1rem / 16px
-  md: 5, // 1.25rem / 20px
-  lg: 6, // 1.5rem / 24px
-  xl: 8, // 2rem / 32px
+  none: 0, // 0px (bpk-spacing-none)
+  sm: 1, // 4px (bpk-spacing-sm)
+  md: 2, // 8px (bpk-spacing-md)
+  base: 4, // 16px (bpk-spacing-base)
+  lg: 6, // 24px (bpk-spacing-lg)
+  xl: 8, // 32px (bpk-spacing-xl)
+  xxl: 10, // 40px (bpk-spacing-xxl)
+  xxxl: 16, // 64px (bpk-spacing-xxxl)
+  xxxxl: 24, // 96px (bpk-spacing-xxxxl)
 } as const;
 
 export type BpkSpacingToken = keyof typeof BPK_SPACING_MAP;

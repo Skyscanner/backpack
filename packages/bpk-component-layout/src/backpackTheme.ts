@@ -62,39 +62,50 @@ export const backpackTheme = extendTheme({
     '2xl': extractBreakpointValue(bpkBreakpoints.breakpointQueryAboveTablet),
   },
   // Map Backpack spacing tokens to Chakra UI spacing scale
-  // Backpack spacing: none(0), sm(0.5rem/8px), base(1rem/16px), md(1.25rem/20px), lg(1.5rem/24px), xl(2rem/32px)
+  // Based on Backpack spacing tokens: https://www.skyscanner.design/latest/foundations/spacing/overview-jCiTHnBD
+  // Backpack spacing: none(0px), sm(4px), md(8px), base(16px), lg(24px), xl(32px), xxl(40px), xxxl(64px), xxxxl(96px)
   space: {
     // Chakra UI uses a 4px base scale, so we map Backpack tokens accordingly
     // 0 = 0px (none)
     0: '0',
-    // 1 = 4px (not in Backpack, but Chakra default)
-    1: '0.25rem',
-    // 2 = 8px (sm)
-    2: '0.5rem', // bpk-spacing-sm
-    // 3 = 12px (not in Backpack)
+    // 1 = 4px (sm)
+    1: '0.25rem', // bpk-spacing-sm
+    // 2 = 8px (md)
+    2: '0.5rem', // bpk-spacing-md
+    // 3 = 12px (not in Backpack, but Chakra default)
     3: '0.75rem',
     // 4 = 16px (base)
     4: '1rem', // bpk-spacing-base
-    // 5 = 20px (md)
-    5: '1.25rem', // bpk-spacing-md
+    // 5 = 20px (not in Backpack, but Chakra default)
+    5: '1.25rem',
     // 6 = 24px (lg)
     6: '1.5rem', // bpk-spacing-lg
     // 8 = 32px (xl)
     8: '2rem', // bpk-spacing-xl
+    // 10 = 40px (xxl)
+    10: '2.5rem', // bpk-spacing-xxl
+    // 16 = 64px (xxxl)
+    16: '4rem', // bpk-spacing-xxxl
+    // 24 = 96px (xxxxl)
+    24: '6rem', // bpk-spacing-xxxxl
   },
 });
 
 /**
  * Backpack spacing token names mapped to Chakra UI spacing scale values
+ * Based on Backpack spacing tokens: https://www.skyscanner.design/latest/foundations/spacing/overview-jCiTHnBD
  * Use these when you want to use Backpack spacing tokens with BpkBox
  */
 export const BPK_SPACING_TOKENS = {
-  none: 0, // bpk-spacing-none
-  sm: 2, // bpk-spacing-sm (0.5rem / 8px)
-  base: 4, // bpk-spacing-base (1rem / 16px)
-  md: 5, // bpk-spacing-md (1.25rem / 20px)
-  lg: 6, // bpk-spacing-lg (1.5rem / 24px)
-  xl: 8, // bpk-spacing-xl (2rem / 32px)
+  none: 0, // bpk-spacing-none (0px)
+  sm: 1, // bpk-spacing-sm (4px)
+  md: 2, // bpk-spacing-md (8px)
+  base: 4, // bpk-spacing-base (16px)
+  lg: 6, // bpk-spacing-lg (24px)
+  xl: 8, // bpk-spacing-xl (32px)
+  xxl: 10, // bpk-spacing-xxl (40px)
+  xxxl: 16, // bpk-spacing-xxxl (64px)
+  xxxxl: 24, // bpk-spacing-xxxxl (96px)
 } as const;
 
 /**

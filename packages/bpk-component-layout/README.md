@@ -53,12 +53,16 @@ export default () => (
 ```
 
 **Available Backpack spacing token strings:**
-- `"none"` → 0 (bpk-spacing-none)
-- `"sm"` → 0.5rem / 8px (bpk-spacing-sm)
-- `"base"` → 1rem / 16px (bpk-spacing-base)
-- `"md"` → 1.25rem / 20px (bpk-spacing-md)
-- `"lg"` → 1.5rem / 24px (bpk-spacing-lg)
-- `"xl"` → 2rem / 32px (bpk-spacing-xl)
+Based on [Backpack spacing tokens](https://www.skyscanner.design/latest/foundations/spacing/overview-jCiTHnBD):
+- `"none"` → 0px (bpk-spacing-none)
+- `"sm"` → 4px (bpk-spacing-sm)
+- `"md"` → 8px (bpk-spacing-md)
+- `"base"` → 16px (bpk-spacing-base)
+- `"lg"` → 24px (bpk-spacing-lg)
+- `"xl"` → 32px (bpk-spacing-xl)
+- `"xxl"` → 40px (bpk-spacing-xxl)
+- `"xxxl"` → 64px (bpk-spacing-xxxl)
+- `"xxxxl"` → 96px (bpk-spacing-xxxxl)
 
 #### Using Backpack Breakpoints (Recommended)
 
