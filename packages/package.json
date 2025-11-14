@@ -22,6 +22,10 @@
     "access": "public"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "framer-motion": "^10.16.4",
     "@floating-ui/react": "^0.26.12",
     "@popperjs/core": "^2.11.8",
     "@radix-ui/react-compose-refs": "^1.1.1",
