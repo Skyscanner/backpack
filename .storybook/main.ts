@@ -20,8 +20,6 @@ import type { StorybookConfig } from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
   stories: [
-    // Only include stories from examples directory
-    // This pattern explicitly excludes node_modules since it only matches files in examples/
     '../examples/**/stories.@(ts|tsx|js|jsx)',
     '../examples/**/*.stories.@(ts|tsx|js|jsx)',
   ],
@@ -35,13 +33,8 @@ const config: StorybookConfig = {
     options: {},
   },
   docs: {
-    defaultName: 'Documentation',
-    // Completely disable automatic documentation generation
-    // Only stories with explicit tags: ['autodocs'] will generate docs
-    autodocs: 'tag',
+    defaultName: 'Documentation'
   },
-  // Disable automatic story discovery from node_modules
-  staticDirs: [],
   typescript: {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
@@ -49,11 +42,8 @@ const config: StorybookConfig = {
       propFilter: (prop) => {
         const isHTMLElementProp =
             prop.parent?.fileName.includes("node_modules") ?? false
-        // Exclude Chakra UI components from documentation
-        const isChakraComponent =
-            prop.parent?.fileName.includes("@chakra-ui") ?? false
 
-        return !isHTMLElementProp && !isChakraComponent
+        return !isHTMLElementProp
       },
     },
   },

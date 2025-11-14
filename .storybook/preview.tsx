@@ -60,39 +60,15 @@ const preview: Preview = {
           <Title />
           <ArgTypes exclude={['zoomEnabled']}/>
         </>
-      ),
-      // Exclude node_modules from automatic documentation generation
-      extractComponentDescription: (component, { notes }) => {
-        if (notes) {
-          return typeof notes === 'string' ? notes : notes.markdown || notes.text;
-        }
-        // Don't generate docs for components from node_modules or Chakra UI
-        const filePath = component?.__file || component?.fileName || '';
-        if (
-          filePath.includes('node_modules') ||
-          filePath.includes('@chakra-ui') ||
-          filePath.includes('chakra-ui')
-        ) {
-          return null;
-        }
-        return null;
-      },
-    },
-    // Disable automatic documentation for node_modules and Chakra UI
-    controls: {
-      exclude: /node_modules|@chakra-ui|chakra-ui/,
-    },
-    // Completely disable autodocs for node_modules
-    options: {
-      storySort: {
-        order: ['bpk-component-layout'],
-      },
+      )
     },
   },
 
   args: {
     zoomEnabled: false,
-  }
+  },
+
+  tags: ['autodocs']
 };
 
 export default preview;

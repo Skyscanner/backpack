@@ -34,7 +34,7 @@ module.exports = ({ config }) => {
     // Exclude all node_modules except bpk- packages
     // Note: @chakra-ui, @emotion, framer-motion are included for transpilation only, not for story discovery
     // Also exclude any story files from Chakra UI
-    exclude: [
+  exclude: [
       /node_modules\/(?!bpk-|@chakra-ui|@emotion|framer-motion).*/,
       /@chakra-ui\/.*\.stories\./,
       /@chakra-ui\/.*\/stories\//,
