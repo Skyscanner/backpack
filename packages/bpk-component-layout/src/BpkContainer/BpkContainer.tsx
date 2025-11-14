@@ -18,8 +18,7 @@
 
 import { Container } from '@chakra-ui/react';
 
-import { transformColorProps } from '../colorTokenTransformers';
-import { transformSpacingProps } from '../tokenTransformers';
+import { transformBpkLayoutProps } from '../useBpkLayoutProps';
 
 import type { BpkContainerProps } from './BpkContainer.types';
 
@@ -49,16 +48,7 @@ const BpkContainer = ({
   children,
   ...rest
 }: Props) => {
-  const allowedProps = { ...rest };
-  const disallowedProps = ['className'];
-
-  disallowedProps.forEach((prop) => {
-     
-    delete allowedProps[prop as keyof typeof allowedProps];
-  });
-
-  const spacingTransformed = transformSpacingProps(allowedProps);
-  const transformedProps = transformColorProps(spacingTransformed);
+  const transformedProps = transformBpkLayoutProps(rest);
 
   return (
     <Container

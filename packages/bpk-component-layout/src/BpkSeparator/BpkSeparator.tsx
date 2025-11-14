@@ -18,8 +18,7 @@
 
 import { Divider } from '@chakra-ui/react';
 
-import { transformColorProps } from '../colorTokenTransformers';
-import { transformSpacingProps } from '../tokenTransformers';
+import { transformBpkLayoutProps } from '../useBpkLayoutProps';
 
 import type { BpkSeparatorProps } from './BpkSeparator.types';
 
@@ -46,16 +45,9 @@ const BpkSeparator = ({
   as,
   ...rest
 }: Props) => {
-  const allowedProps = { ...rest };
-  const disallowedProps = ['className', 'children']; // Separator doesn't accept children
-
-  disallowedProps.forEach((prop) => {
-     
-    delete allowedProps[prop as keyof typeof allowedProps];
+  const transformedProps = transformBpkLayoutProps(rest, {
+    disallowedProps: ['className', 'children'], // Separator doesn't accept children
   });
-
-  const spacingTransformed = transformSpacingProps(allowedProps);
-  const transformedProps = transformColorProps(spacingTransformed);
 
   return (
     <Divider

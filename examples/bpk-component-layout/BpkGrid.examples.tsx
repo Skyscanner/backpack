@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkBox, BpkGrid } from '../../packages/bpk-component-layout';
+import { BpkBox, BpkGrid, BPK_COLOR_TOKENS } from '../../packages/bpk-component-layout';
 
 import Wrapper from './Wrapper';
 
@@ -33,25 +33,25 @@ export const Default = () => (
       gridTemplateColumns="repeat(3, 1fr)"
       gap="base"
       padding="base"
-      bg="canvas-contrast"
+      bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
-      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Grid item 1
       </BpkBox>
-      <BpkBox padding="base" bg="surface-default" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
         Grid item 2
       </BpkBox>
-      <BpkBox padding="base" bg="surface-elevated" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
         Grid item 3
       </BpkBox>
-      <BpkBox padding="base" bg="status-success-fill" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.statusSuccessFill} borderRadius="md">
         Grid item 4
       </BpkBox>
-      <BpkBox padding="base" bg="status-warning-fill" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.statusWarningFill} borderRadius="md">
         Grid item 5
       </BpkBox>
-      <BpkBox padding="base" bg="status-error-fill" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.statusErrorFill} borderRadius="md">
         Grid item 6
       </BpkBox>
     </BpkGrid>
@@ -68,16 +68,16 @@ export const Responsive = () => (
       }}
       gap={{ base: 'sm', desktop: 'lg' }}
       padding="base"
-      bg="canvas-contrast"
+      bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
-      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Responsive grid item 1
       </BpkBox>
-      <BpkBox padding="base" bg="surface-default" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
         Responsive grid item 2
       </BpkBox>
-      <BpkBox padding="base" bg="surface-elevated" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
         Responsive grid item 3
       </BpkBox>
     </BpkGrid>
@@ -92,16 +92,16 @@ export const Auto = () => (
       gridAutoColumns="1fr"
       gap="base"
       padding="base"
-      bg="canvas-contrast"
+      bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
-      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Auto grid item 1
       </BpkBox>
-      <BpkBox padding="base" bg="surface-default" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
         Auto grid item 2
       </BpkBox>
-      <BpkBox padding="base" bg="surface-elevated" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
         Auto grid item 3
       </BpkBox>
     </BpkGrid>

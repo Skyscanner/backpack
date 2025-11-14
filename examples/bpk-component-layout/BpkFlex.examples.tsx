@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkBox, BpkFlex } from '../../packages/bpk-component-layout';
+import { BpkBox, BpkFlex, BPK_COLOR_TOKENS } from '../../packages/bpk-component-layout';
 
 import Wrapper from './Wrapper';
 
@@ -29,14 +29,14 @@ import Wrapper from './Wrapper';
 
 export const Default = () => (
   <Wrapper>
-    <BpkFlex gap="base" padding="base" bg="canvas-contrast" borderRadius="md">
-      <BpkBox flex={1} padding="base" bg="surface-highlight" borderRadius="md">
+    <BpkFlex gap="base" padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
+      <BpkBox flex={1} padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Flex item 1
       </BpkBox>
-      <BpkBox flex={1} padding="base" bg="surface-default" borderRadius="md">
+      <BpkBox flex={1} padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
         Flex item 2
       </BpkBox>
-      <BpkBox flex={1} padding="base" bg="surface-elevated" borderRadius="md">
+      <BpkBox flex={1} padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
         Flex item 3
       </BpkBox>
     </BpkFlex>
@@ -45,14 +45,14 @@ export const Default = () => (
 
 export const Column = () => (
   <Wrapper>
-    <BpkFlex flexDirection="column" gap="base" padding="base" bg="canvas-contrast" borderRadius="md">
-      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+    <BpkFlex flexDirection="column" gap="base" padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Column item 1
       </BpkBox>
-      <BpkBox padding="base" bg="surface-default" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
         Column item 2
       </BpkBox>
-      <BpkBox padding="base" bg="surface-elevated" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
         Column item 3
       </BpkBox>
     </BpkFlex>
@@ -65,13 +65,13 @@ export const Responsive = () => (
       flexDirection={{ base: 'column', mobile: 'row' }}
       gap={{ base: 'sm', desktop: 'lg' }}
       padding="base"
-      bg="canvas-contrast"
+      bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
-      <BpkBox flex={1} padding="base" bg="surface-highlight" borderRadius="md">
+      <BpkBox flex={1} padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Responsive flex item 1
       </BpkBox>
-      <BpkBox flex={1} padding="base" bg="surface-default" borderRadius="md">
+      <BpkBox flex={1} padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
         Responsive flex item 2
       </BpkBox>
     </BpkFlex>
@@ -87,13 +87,13 @@ export const Shorthand = () => (
       direction="row"
       gap="base"
       padding="base"
-      bg="canvas-contrast"
+      bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
-      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Using shorthand: align, justify, wrap, direction
       </BpkBox>
-      <BpkBox padding="base" bg="surface-default" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
         Flex item 2
       </BpkBox>
     </BpkFlex>

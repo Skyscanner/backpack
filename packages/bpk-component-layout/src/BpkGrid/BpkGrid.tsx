@@ -18,8 +18,7 @@
 
 import { Grid } from '@chakra-ui/react';
 
-import { transformColorProps } from '../colorTokenTransformers';
-import { transformSpacingProps } from '../tokenTransformers';
+import { transformBpkLayoutProps } from '../useBpkLayoutProps';
 
 import type { BpkGridProps } from './BpkGrid.types';
 
@@ -68,20 +67,7 @@ const BpkGrid = ({
   children,
   ...rest
 }: Props) => {
-  // Filter out any disallowed props (defensive programming)
-  const allowedProps = { ...rest };
-  const disallowedProps = ['className']; // Explicitly disallowed props
-
-  disallowedProps.forEach((prop) => {
-     
-    delete allowedProps[prop as keyof typeof allowedProps];
-  });
-
-  // Transform Backpack spacing tokens to Chakra UI values
-  const spacingTransformed = transformSpacingProps(allowedProps);
-
-  // Transform Backpack color tokens to CSS custom properties
-  const transformedProps = transformColorProps(spacingTransformed);
+  const transformedProps = transformBpkLayoutProps(rest);
 
   return (
     <Grid

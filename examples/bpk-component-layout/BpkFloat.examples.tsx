@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkBox, BpkFloat } from '../../packages/bpk-component-layout';
+import { BpkBox, BpkFloat, BPK_COLOR_TOKENS } from '../../packages/bpk-component-layout';
 
 import Wrapper from './Wrapper';
 
@@ -29,8 +29,8 @@ import Wrapper from './Wrapper';
 
 export const Left = () => (
   <Wrapper>
-    <BpkBox padding="base" bg="canvas-contrast" borderRadius="md">
-      <BpkFloat float="left" padding="base" bg="surface-highlight" borderRadius="md" marginRight="base" marginBottom="base">
+    <BpkBox padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
+      <BpkFloat float="left" padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md" marginRight="base" marginBottom="base">
         Float left
       </BpkFloat>
       <BpkBox>
@@ -44,8 +44,8 @@ export const Left = () => (
 
 export const Right = () => (
   <Wrapper>
-    <BpkBox padding="base" bg="canvas-contrast" borderRadius="md">
-      <BpkFloat float="right" padding="base" bg="surface-highlight" borderRadius="md" marginLeft="base" marginBottom="base">
+    <BpkBox padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
+      <BpkFloat float="right" padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md" marginLeft="base" marginBottom="base">
         Float right
       </BpkFloat>
       <BpkBox>

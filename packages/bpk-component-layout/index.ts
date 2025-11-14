@@ -61,7 +61,11 @@ import {
   BPK_BREAKPOINT_TOKENS,
   backpackTheme,
 } from './src/backpackTheme';
-import { BPK_COLOR_TOKENS, BPK_COLOR_TOKEN_MAP } from './src/colorTokenTransformers';
+import {
+  BPK_COLOR_TOKENS,
+  BPK_COLOR_TOKEN_MAP,
+  type BpkColorTokenEnum,
+} from './src/colorTokenTransformers';
 
 import type { BpkBaseLayoutProps } from './src/BpkBaseLayoutProps.types';
 import type {
@@ -92,6 +96,7 @@ export type {
   BpkLayoutProviderProps,
   ResponsiveValue,
   SpacingValue,
+  BpkColorTokenEnum,
 };
 export default BpkBox;
 export {

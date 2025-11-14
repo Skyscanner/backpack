@@ -18,8 +18,7 @@
 
 import { Spacer } from '@chakra-ui/react';
 
-import { transformColorProps } from '../colorTokenTransformers';
-import { transformSpacingProps } from '../tokenTransformers';
+import { transformBpkLayoutProps } from '../useBpkLayoutProps';
 
 import type { BpkSpacerProps } from './BpkSpacer.types';
 
@@ -49,16 +48,9 @@ const BpkSpacer = ({
   as,
   ...rest
 }: Props) => {
-  const allowedProps = { ...rest };
-  const disallowedProps = ['className', 'children']; // Spacer doesn't accept children
-
-  disallowedProps.forEach((prop) => {
-     
-    delete allowedProps[prop as keyof typeof allowedProps];
+  const transformedProps = transformBpkLayoutProps(rest, {
+    disallowedProps: ['className', 'children'], // Spacer doesn't accept children
   });
-
-  const spacingTransformed = transformSpacingProps(allowedProps);
-  const transformedProps = transformColorProps(spacingTransformed);
 
   return (
     <Spacer

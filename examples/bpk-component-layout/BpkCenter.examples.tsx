@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkBox, BpkCenter } from '../../packages/bpk-component-layout';
+import { BpkBox, BpkCenter, BPK_COLOR_TOKENS } from '../../packages/bpk-component-layout';
 
 import Wrapper from './Wrapper';
 
@@ -29,8 +29,8 @@ import Wrapper from './Wrapper';
 
 export const Default = () => (
   <Wrapper>
-    <BpkCenter height="200px" bg="canvas-contrast" borderRadius="md">
-      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+    <BpkCenter height="200px" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Centered content
       </BpkBox>
     </BpkCenter>
@@ -42,10 +42,10 @@ export const Responsive = () => (
     <BpkCenter
       height={{ base: '150px', desktop: '200px' }}
       padding="base"
-      bg="canvas-contrast"
+      bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
-      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Responsive centered content
       </BpkBox>
     </BpkCenter>

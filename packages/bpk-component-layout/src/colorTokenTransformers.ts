@@ -63,6 +63,7 @@ export type BpkColorToken = keyof typeof BPK_COLOR_TOKEN_MAP;
 
 /**
  * Exported color tokens constant for programmatic use (similar to TEXT_COLORS in BpkText)
+ * This provides enum-like access to color tokens for better TypeScript support
  */
 export const BPK_COLOR_TOKENS = {
   // Text colors
@@ -104,6 +105,12 @@ export const BPK_COLOR_TOKENS = {
 } as const;
 
 /**
+ * Color token enum type - similar to TextColor in BpkText
+ * This provides type-safe access to color tokens
+ */
+export type BpkColorTokenEnum = (typeof BPK_COLOR_TOKENS)[keyof typeof BPK_COLOR_TOKENS];
+
+/**
  * Validates if a string is a valid Backpack color token
  *
  * @param {string} value - The string to validate
@@ -112,67 +119,61 @@ export const BPK_COLOR_TOKENS = {
 const isValidBpkColorToken = (value: string): value is BpkColorToken => value in BPK_COLOR_TOKEN_MAP;
 
 /**
- * Transforms a Backpack color token (string) to CSS custom property
- * Only accepts Backpack color tokens - throws a warning for invalid values in development
+ * Transforms a Backpack color token enum value to CSS custom property
+ * Only accepts BpkColorTokenEnum values (from BPK_COLOR_TOKENS constant)
  *
- * @param {string | undefined | null} value - The color token string to transform
+ * @param {BpkColorTokenEnum | undefined | null} value - The color token enum value to transform
  * @returns {string | undefined | null} The CSS custom property or undefined if invalid
  */
 export const transformColorToken = (
-  value: string | undefined | null,
+  value: BpkColorTokenEnum | undefined | null,
 ): string | undefined | null => {
   if (value === undefined || value === null) {
     return value;
   }
 
-  if (typeof value !== 'string') {
-    return value;
+  // BpkColorTokenEnum is a string literal type, so we can safely use it as a key
+  if (value in BPK_COLOR_TOKEN_MAP) {
+    return BPK_COLOR_TOKEN_MAP[value as BpkColorToken];
   }
 
-  // Check if it's a Backpack color token
-  if (isValidBpkColorToken(value)) {
-    return BPK_COLOR_TOKEN_MAP[value];
-  }
-
-  // In development, warn about invalid color tokens
+  // This should never happen if types are correct, but handle it gracefully
   if (process.env.NODE_ENV !== 'production') {
-    // Check if it looks like a Chakra UI color token (e.g., "blue.500", "gray.100")
-    if (value.includes('.') && /^[a-z]+\.[0-9]+$/i.test(value)) {
-      console.warn(
-        `BpkBox: Chakra UI color token "${value}" is not allowed. Use Backpack color tokens instead (e.g., "core-primary", "canvas-contrast"). See BPK_COLOR_TOKENS for available options.`,
-      );
-    }
+    console.warn(
+      `BpkBox: Invalid color token "${value}". Use BPK_COLOR_TOKENS enum values instead.`,
+    );
   }
 
-  // Return undefined for invalid tokens to prevent them from being applied
-  // This enforces strict Backpack token usage
   return undefined;
 };
 
 /**
  * Transforms responsive color prop values (object with breakpoint keys)
- * Converts Backpack color tokens to CSS custom properties
+ * Converts Backpack color token enum values to CSS custom properties
  *
- * @param {T | Record<string, T> | undefined | null} value - The color value or responsive color object to transform.
- * @returns {T | Record<string, T> | undefined | null} The transformed color value or object with Backpack tokens converted to CSS custom properties.
+ * @param {BpkColorTokenEnum | Record<string, BpkColorTokenEnum> | undefined | null} value - The color enum value or responsive color object to transform.
+ * @returns {string | Record<string, string> | undefined | null} The transformed color value or object with Backpack tokens converted to CSS custom properties.
  */
-export const transformResponsiveColorProp = <T extends string>(
-  value: T | Record<string, T> | undefined | null,
-): T | Record<string, T> | undefined | null => {
+export const transformResponsiveColorProp = (
+  value: BpkColorTokenEnum | Record<string, BpkColorTokenEnum> | undefined | null,
+): string | Record<string, string> | undefined | null => {
   if (value === undefined || value === null || typeof value !== 'object') {
-    // For non-object values, transform color if it's a string
+    // For non-object values, transform color enum
     if (typeof value === 'string') {
-      return transformColorToken(value) as T;
+      return transformColorToken(value);
     }
     return value;
   }
 
-  // For responsive objects, transform color values
-  const transformed: Record<string, T> = {};
+  // For responsive objects, transform color enum values
+  const transformed: Record<string, string> = {};
   for (const [key, val] of Object.entries(value)) {
-    const transformedValue =
-      typeof val === 'string' ? (transformColorToken(val) as T) : val;
-    transformed[key] = transformedValue;
+    if (typeof val === 'string') {
+      const transformedValue = transformColorToken(val);
+      if (transformedValue !== undefined && transformedValue !== null) {
+        transformed[key] = transformedValue;
+      }
+    }
   }
   return transformed;
 };

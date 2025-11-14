@@ -21,7 +21,7 @@ import type { ElementType, ReactNode } from 'react';
 import type React from 'react';
 
 import type { BpkBaseLayoutProps } from '../BpkBaseLayoutProps.types';
-import type { BpkColorToken } from '../colorTokenTransformers';
+import type { BpkColorTokenEnum } from '../colorTokenTransformers';
 
 /**
  * Responsive value type - can be a single value or an object with breakpoint keys
@@ -34,9 +34,10 @@ export type ResponsiveValue<T> = T | Record<string, T>;
 export type SpacingValue = ResponsiveValue<string | number>;
 
 /**
- * Color value type - restricted to Backpack color tokens only
+ * Color value type - restricted to Backpack color token enum values only
+ * Similar to TextColor in BpkText, this provides type-safe color token access
  */
-export type ColorValue = ResponsiveValue<BpkColorToken>;
+export type ColorValue = ResponsiveValue<BpkColorTokenEnum>;
 
 /**
  * Box-specific props for BpkBox

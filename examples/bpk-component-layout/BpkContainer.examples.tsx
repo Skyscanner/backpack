@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkBox, BpkContainer } from '../../packages/bpk-component-layout';
+import { BpkBox, BpkContainer, BPK_COLOR_TOKENS } from '../../packages/bpk-component-layout';
 
 import Wrapper from './Wrapper';
 
@@ -29,8 +29,8 @@ import Wrapper from './Wrapper';
 
 export const Default = () => (
   <Wrapper>
-    <BpkContainer maxW="800px" padding="base" bg="canvas-contrast" borderRadius="md">
-      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+    <BpkContainer maxW="800px" padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Container with max width of 800px
       </BpkBox>
     </BpkContainer>
@@ -39,8 +39,8 @@ export const Default = () => (
 
 export const CenterContent = () => (
   <Wrapper>
-    <BpkContainer centerContent maxW="600px" padding="base" bg="canvas-contrast" borderRadius="md">
-      <BpkBox padding="base" bg="surface-highlight" borderRadius="md" width="200px">
+    <BpkContainer centerContent maxW="600px" padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md" width="200px">
         Centered content in container
       </BpkBox>
     </BpkContainer>

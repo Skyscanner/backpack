@@ -16,11 +16,10 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/tokens';
 
 .bpk-box {
   // Base styles for BpkBox
   // Chakra UI Box handles most layout properties via props
   // This class can be used for Backpack-specific styling if needed
 }
-

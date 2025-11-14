@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkBox } from '../../packages/bpk-component-layout';
+import { BpkBox, BPK_COLOR_TOKENS } from '../../packages/bpk-component-layout';
 
 import Wrapper from './Wrapper';
 
@@ -37,7 +37,7 @@ export const Default = () => (
 
 export const WithPadding = () => (
   <Wrapper>
-    <BpkBox padding="base" bg="canvas-contrast">
+    <BpkBox padding="base" bg={BPK_COLOR_TOKENS.canvasContrast}>
       BpkBox with Backpack spacing token: padding=&quot;base&quot; (1rem / 16px)
     </BpkBox>
   </Wrapper>
@@ -45,7 +45,13 @@ export const WithPadding = () => (
 
 export const WithMargin = () => (
   <Wrapper>
-    <BpkBox margin="base" padding="base" bg="surface-highlight" border="1px solid" borderColor="line">
+    <BpkBox
+      margin="base"
+      padding="base"
+      bg={BPK_COLOR_TOKENS.surfaceHighlight}
+      border="1px solid"
+      borderColor={BPK_COLOR_TOKENS.line}
+    >
       BpkBox with Backpack spacing tokens: margin=&quot;base&quot; and padding=&quot;base&quot;
     </BpkBox>
   </Wrapper>
@@ -53,14 +59,14 @@ export const WithMargin = () => (
 
 export const Flexbox = () => (
   <Wrapper>
-    <BpkBox display="flex" gap="base" padding="base" bg="canvas-contrast">
-      <BpkBox flex={1} padding="base" bg="surface-highlight" borderRadius="md">
+    <BpkBox display="flex" gap="base" padding="base" bg={BPK_COLOR_TOKENS.canvasContrast}>
+      <BpkBox flex={1} padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Flex item 1
       </BpkBox>
-      <BpkBox flex={1} padding="base" bg="surface-default" borderRadius="md">
+      <BpkBox flex={1} padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
         Flex item 2
       </BpkBox>
-      <BpkBox flex={1} padding="base" bg="surface-elevated" borderRadius="md">
+      <BpkBox flex={1} padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
         Flex item 3
       </BpkBox>
     </BpkBox>
@@ -69,14 +75,14 @@ export const Flexbox = () => (
 
 export const FlexboxColumn = () => (
   <Wrapper>
-    <BpkBox display="flex" flexDirection="column" gap="base" padding="base" bg="canvas-contrast">
-      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+    <BpkBox display="flex" flexDirection="column" gap="base" padding="base" bg={BPK_COLOR_TOKENS.canvasContrast}>
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Column item 1
       </BpkBox>
-      <BpkBox padding="base" bg="surface-default" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
         Column item 2
       </BpkBox>
-      <BpkBox padding="base" bg="surface-elevated" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
         Column item 3
       </BpkBox>
     </BpkBox>
@@ -90,24 +96,24 @@ export const Grid = () => (
       gridTemplateColumns="repeat(3, 1fr)"
       gap="base"
       padding="base"
-      bg="canvas-contrast"
+      bg={BPK_COLOR_TOKENS.canvasContrast}
     >
-      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Grid item 1
       </BpkBox>
-      <BpkBox padding="base" bg="surface-default" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
         Grid item 2
       </BpkBox>
-      <BpkBox padding="base" bg="surface-elevated" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
         Grid item 3
       </BpkBox>
-      <BpkBox padding="base" bg="status-success-fill" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.statusSuccessFill} borderRadius="md">
         Grid item 4
       </BpkBox>
-      <BpkBox padding="base" bg="status-warning-fill" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.statusWarningFill} borderRadius="md">
         Grid item 5
       </BpkBox>
-      <BpkBox padding="base" bg="status-error-fill" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.statusErrorFill} borderRadius="md">
         Grid item 6
       </BpkBox>
     </BpkBox>
@@ -116,7 +122,7 @@ export const Grid = () => (
 
 export const WidthHeight = () => (
   <Wrapper>
-    <BpkBox width="300px" height="200px" padding="base" bg="surface-highlight" borderRadius="md">
+    <BpkBox width="300px" height="200px" padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
       Fixed width (300px) and height (200px)
     </BpkBox>
   </Wrapper>
@@ -131,7 +137,7 @@ export const Responsive = () => (
         desktop: '33%',
       }}
       padding="base"
-      bg="surface-highlight"
+      bg={BPK_COLOR_TOKENS.surfaceHighlight}
       borderRadius="md"
     >
       Responsive width using Backpack breakpoint tokens: 100% base, 50% mobile, 33% desktop
@@ -141,27 +147,27 @@ export const Responsive = () => (
 
 export const ColorTokens = () => (
   <Wrapper>
-    <BpkBox padding="base" bg="canvas-contrast" borderColor="line" borderWidth="1px" borderRadius="md" marginBottom="base">
-      <BpkBox color="text-primary" marginBottom="sm">
-        Using Backpack color tokens: bg=&quot;canvas-contrast&quot;, color=&quot;text-primary&quot;
+    <BpkBox padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderColor={BPK_COLOR_TOKENS.line} borderWidth="1px" borderRadius="md" marginBottom="base">
+      <BpkBox color={BPK_COLOR_TOKENS.textPrimary} marginBottom="sm">
+        Using Backpack color token enums: bg={BPK_COLOR_TOKENS.canvasContrast}, color={BPK_COLOR_TOKENS.textPrimary}
       </BpkBox>
-      <BpkBox color="text-secondary" fontSize="sm">
-        Secondary text color with Backpack token
+      <BpkBox color={BPK_COLOR_TOKENS.textSecondary} fontSize="sm">
+        Secondary text color with Backpack token enum
       </BpkBox>
     </BpkBox>
-    <BpkBox padding="base" bg="core-primary" color="text-on-dark" borderRadius="md" marginTop="base">
-      Brand color example: bg=&quot;core-primary&quot;, color=&quot;text-on-dark&quot;
+    <BpkBox padding="base" bg={BPK_COLOR_TOKENS.corePrimary} color={BPK_COLOR_TOKENS.textOnDark} borderRadius="md" marginTop="base">
+      Brand color example: bg={BPK_COLOR_TOKENS.corePrimary}, color={BPK_COLOR_TOKENS.textOnDark}
     </BpkBox>
   </Wrapper>
 );
 
 export const SemanticHTMLElement = () => (
   <Wrapper>
-    <BpkBox as="section" padding="base" bg="canvas-contrast" borderRadius="md">
-      <BpkBox as="h2" fontSize="xl" fontWeight="bold" marginBottom={2} color="text-primary">
+    <BpkBox as="section" padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
+      <BpkBox as="h2" fontSize="xl" fontWeight="bold" marginBottom={2} color={BPK_COLOR_TOKENS.textPrimary}>
         Section Title
       </BpkBox>
-      <BpkBox as="p" color="text-secondary">
+      <BpkBox as="p" color={BPK_COLOR_TOKENS.textSecondary}>
         This BpkBox is rendered as a section element, and the title is an h2.
       </BpkBox>
     </BpkBox>
@@ -175,7 +181,7 @@ export const CenteredContent = () => (
       alignItems="center"
       justifyContent="center"
       height="200px"
-      bg="canvas-contrast"
+      bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
       Centered content
@@ -187,7 +193,7 @@ export const Shadow = () => (
   <Wrapper>
     <BpkBox
       padding="lg"
-      bg="canvas"
+      bg={BPK_COLOR_TOKENS.canvas}
       borderRadius="md"
       boxShadow="lg"
       margin="base"
@@ -202,9 +208,9 @@ export const Border = () => (
     <BpkBox
       padding="base"
       border="2px solid"
-      borderColor="core-primary"
+      borderColor={BPK_COLOR_TOKENS.corePrimary}
       borderRadius="lg"
-      bg="surface-highlight"
+      bg={BPK_COLOR_TOKENS.surfaceHighlight}
     >
       BpkBox with custom border
     </BpkBox>
@@ -219,10 +225,10 @@ export const Mixed = () => (
       </BpkBox>
 
       <BpkBox display="flex" gap="base" marginBottom="base">
-        <BpkBox flex={1} padding="base" bg="surface-highlight" borderRadius="md">
+        <BpkBox flex={1} padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
           Flex item 1
         </BpkBox>
-        <BpkBox flex={1} padding="base" bg="surface-default" borderRadius="md">
+        <BpkBox flex={1} padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
           Flex item 2
         </BpkBox>
       </BpkBox>
@@ -233,19 +239,19 @@ export const Mixed = () => (
         gap="base"
         marginBottom="base"
       >
-        <BpkBox padding="base" bg="surface-elevated" borderRadius="md">
+        <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
           Grid item 1
         </BpkBox>
-        <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+        <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
           Grid item 2
         </BpkBox>
       </BpkBox>
 
       <BpkBox
         padding="base"
-        bg="canvas-contrast"
+        bg={BPK_COLOR_TOKENS.canvasContrast}
         border="1px solid"
-        borderColor="line"
+        borderColor={BPK_COLOR_TOKENS.line}
         borderRadius="md"
       >
         A box with padding, background, border, and rounded corners

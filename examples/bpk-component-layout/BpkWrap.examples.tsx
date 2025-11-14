@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkBox, BpkWrap } from '../../packages/bpk-component-layout';
+import { BpkBox, BpkWrap, BPK_COLOR_TOKENS } from '../../packages/bpk-component-layout';
 
 import Wrapper from './Wrapper';
 
@@ -29,20 +29,20 @@ import Wrapper from './Wrapper';
 
 export const Default = () => (
   <Wrapper>
-    <BpkWrap spacing="base" padding="base" bg="canvas-contrast" borderRadius="md">
-      <BpkBox padding="base" bg="surface-highlight" borderRadius="md" minWidth="200px">
+    <BpkWrap spacing="base" padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md" minWidth="200px">
         Wrap item 1
       </BpkBox>
-      <BpkBox padding="base" bg="surface-default" borderRadius="md" minWidth="200px">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md" minWidth="200px">
         Wrap item 2
       </BpkBox>
-      <BpkBox padding="base" bg="surface-elevated" borderRadius="md" minWidth="200px">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md" minWidth="200px">
         Wrap item 3
       </BpkBox>
-      <BpkBox padding="base" bg="status-success-fill" borderRadius="md" minWidth="200px">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.statusSuccessFill} borderRadius="md" minWidth="200px">
         Wrap item 4
       </BpkBox>
-      <BpkBox padding="base" bg="status-warning-fill" borderRadius="md" minWidth="200px">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.statusWarningFill} borderRadius="md" minWidth="200px">
         Wrap item 5
       </BpkBox>
     </BpkWrap>
@@ -54,16 +54,16 @@ export const Responsive = () => (
     <BpkWrap
       spacing={{ base: 'sm', desktop: 'lg' }}
       padding="base"
-      bg="canvas-contrast"
+      bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
-      <BpkBox padding="base" bg="surface-highlight" borderRadius="md" minWidth="150px">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md" minWidth="150px">
         Responsive wrap item 1
       </BpkBox>
-      <BpkBox padding="base" bg="surface-default" borderRadius="md" minWidth="150px">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md" minWidth="150px">
         Responsive wrap item 2
       </BpkBox>
-      <BpkBox padding="base" bg="surface-elevated" borderRadius="md" minWidth="150px">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md" minWidth="150px">
         Responsive wrap item 3
       </BpkBox>
     </BpkWrap>

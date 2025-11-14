@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkBox, BpkAspectRatio } from '../../packages/bpk-component-layout';
+import { BpkBox, BpkAspectRatio, BPK_COLOR_TOKENS } from '../../packages/bpk-component-layout';
 
 import Wrapper from './Wrapper';
 
@@ -29,16 +29,16 @@ import Wrapper from './Wrapper';
 
 export const Default = () => (
   <Wrapper>
-    <BpkAspectRatio ratio={16 / 9} padding="base" bg="canvas-contrast" borderRadius="md">
+    <BpkAspectRatio ratio={16 / 9} padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
       <BpkBox
         width="100%"
         height="100%"
-        bg="surface-highlight"
+        bg={BPK_COLOR_TOKENS.surfaceHighlight}
         borderRadius="md"
         display="flex"
         alignItems="center"
         justifyContent="center"
-        color="text-primary"
+        color={BPK_COLOR_TOKENS.textPrimary}
       >
         16:9 Aspect Ratio
       </BpkBox>
@@ -48,16 +48,16 @@ export const Default = () => (
 
 export const Square = () => (
   <Wrapper>
-    <BpkAspectRatio ratio={1} padding="base" bg="canvas-contrast" borderRadius="md">
+    <BpkAspectRatio ratio={1} padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
       <BpkBox
         width="100%"
         height="100%"
-        bg="surface-highlight"
+        bg={BPK_COLOR_TOKENS.surfaceHighlight}
         borderRadius="md"
         display="flex"
         alignItems="center"
         justifyContent="center"
-        color="text-primary"
+        color={BPK_COLOR_TOKENS.textPrimary}
       >
         1:1 Square
       </BpkBox>
@@ -70,18 +70,18 @@ export const Responsive = () => (
     <BpkAspectRatio
       ratio={{ base: 1, desktop: 16 / 9 }}
       padding="base"
-      bg="canvas-contrast"
+      bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
       <BpkBox
         width="100%"
         height="100%"
-        bg="surface-highlight"
+        bg={BPK_COLOR_TOKENS.surfaceHighlight}
         borderRadius="md"
         display="flex"
         alignItems="center"
         justifyContent="center"
-        color="text-primary"
+        color={BPK_COLOR_TOKENS.textPrimary}
       >
         Responsive aspect ratio
       </BpkBox>

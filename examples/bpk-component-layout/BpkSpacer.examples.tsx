@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkBox, BpkFlex, BpkSpacer } from '../../packages/bpk-component-layout';
+import { BpkBox, BpkFlex, BpkSpacer, BPK_COLOR_TOKENS } from '../../packages/bpk-component-layout';
 
 import Wrapper from './Wrapper';
 
@@ -29,12 +29,12 @@ import Wrapper from './Wrapper';
 
 export const Horizontal = () => (
   <Wrapper>
-    <BpkFlex direction="row" padding="base" bg="canvas-contrast" borderRadius="md">
-      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+    <BpkFlex direction="row" padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Item 1
       </BpkBox>
       <BpkSpacer />
-      <BpkBox padding="base" bg="surface-default" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
         Item 2 (pushed to the right by Spacer)
       </BpkBox>
     </BpkFlex>
@@ -43,12 +43,12 @@ export const Horizontal = () => (
 
 export const Vertical = () => (
   <Wrapper>
-    <BpkFlex direction="column" padding="base" bg="canvas-contrast" borderRadius="md">
-      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+    <BpkFlex direction="column" padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Item 1
       </BpkBox>
       <BpkSpacer />
-      <BpkBox padding="base" bg="surface-default" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
         Item 2 (pushed to the bottom by Spacer)
       </BpkBox>
     </BpkFlex>

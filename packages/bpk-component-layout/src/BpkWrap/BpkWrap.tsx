@@ -18,8 +18,7 @@
 
 import { Wrap } from '@chakra-ui/react';
 
-import { transformColorProps } from '../colorTokenTransformers';
-import { transformSpacingProps } from '../tokenTransformers';
+import { transformBpkLayoutProps } from '../useBpkLayoutProps';
 
 import type { BpkWrapProps } from './BpkWrap.types';
 
@@ -50,16 +49,7 @@ const BpkWrap = ({
   children,
   ...rest
 }: Props) => {
-  const allowedProps = { ...rest };
-  const disallowedProps = ['className'];
-
-  disallowedProps.forEach((prop) => {
-     
-    delete allowedProps[prop as keyof typeof allowedProps];
-  });
-
-  const spacingTransformed = transformSpacingProps(allowedProps);
-  const transformedProps = transformColorProps(spacingTransformed);
+  const transformedProps = transformBpkLayoutProps(rest);
 
   return (
     <Wrap

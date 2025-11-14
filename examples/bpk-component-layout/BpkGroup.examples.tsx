@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkBox, BpkGroup } from '../../packages/bpk-component-layout';
+import { BpkBox, BpkGroup, BPK_COLOR_TOKENS } from '../../packages/bpk-component-layout';
 
 import Wrapper from './Wrapper';
 
@@ -29,14 +29,14 @@ import Wrapper from './Wrapper';
 
 export const Default = () => (
   <Wrapper>
-    <BpkGroup gap="sm" padding="base" bg="canvas-contrast" borderRadius="md">
-      <BpkBox padding="sm" bg="surface-highlight" borderRadius="md">
+    <BpkGroup gap="sm" padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
+      <BpkBox padding="sm" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Group item 1
       </BpkBox>
-      <BpkBox padding="sm" bg="surface-default" borderRadius="md">
+      <BpkBox padding="sm" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
         Group item 2
       </BpkBox>
-      <BpkBox padding="sm" bg="surface-elevated" borderRadius="md">
+      <BpkBox padding="sm" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
         Group item 3
       </BpkBox>
     </BpkGroup>
@@ -48,16 +48,16 @@ export const Responsive = () => (
     <BpkGroup
       gap={{ base: 'sm', desktop: 'base' }}
       padding="base"
-      bg="canvas-contrast"
+      bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
-      <BpkBox padding="sm" bg="surface-highlight" borderRadius="md">
+      <BpkBox padding="sm" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Responsive group item 1
       </BpkBox>
-      <BpkBox padding="sm" bg="surface-default" borderRadius="md">
+      <BpkBox padding="sm" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
         Responsive group item 2
       </BpkBox>
-      <BpkBox padding="sm" bg="surface-elevated" borderRadius="md">
+      <BpkBox padding="sm" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
         Responsive group item 3
       </BpkBox>
     </BpkGroup>

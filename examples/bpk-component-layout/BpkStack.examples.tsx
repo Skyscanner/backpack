@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkBox, BpkStack } from '../../packages/bpk-component-layout';
+import { BpkBox, BpkStack, BPK_COLOR_TOKENS } from '../../packages/bpk-component-layout';
 
 import Wrapper from './Wrapper';
 
@@ -29,14 +29,14 @@ import Wrapper from './Wrapper';
 
 export const Default = () => (
   <Wrapper>
-    <BpkStack spacing="base" padding="base" bg="canvas-contrast" borderRadius="md">
-      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+    <BpkStack spacing="base" padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Stack item 1
       </BpkBox>
-      <BpkBox padding="base" bg="surface-default" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
         Stack item 2
       </BpkBox>
-      <BpkBox padding="base" bg="surface-elevated" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
         Stack item 3
       </BpkBox>
     </BpkStack>
@@ -45,14 +45,14 @@ export const Default = () => (
 
 export const Row = () => (
   <Wrapper>
-    <BpkStack direction="row" spacing="base" padding="base" bg="canvas-contrast" borderRadius="md">
-      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+    <BpkStack direction="row" spacing="base" padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Row item 1
       </BpkBox>
-      <BpkBox padding="base" bg="surface-default" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
         Row item 2
       </BpkBox>
-      <BpkBox padding="base" bg="surface-elevated" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
         Row item 3
       </BpkBox>
     </BpkStack>
@@ -65,13 +65,13 @@ export const Responsive = () => (
       direction={{ base: 'column', mobile: 'row' }}
       spacing={{ base: 'sm', desktop: 'lg' }}
       padding="base"
-      bg="canvas-contrast"
+      bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
-      <BpkBox padding="base" bg="surface-highlight" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Responsive stack item 1
       </BpkBox>
-      <BpkBox padding="base" bg="surface-default" borderRadius="md">
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
         Responsive stack item 2
       </BpkBox>
     </BpkStack>

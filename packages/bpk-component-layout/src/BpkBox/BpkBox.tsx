@@ -18,8 +18,7 @@
 
 import { Box } from '@chakra-ui/react';
 
-import { transformColorProps } from '../colorTokenTransformers';
-import { transformSpacingProps } from '../tokenTransformers';
+import { transformBpkLayoutProps } from '../useBpkLayoutProps';
 
 import type { BpkBoxProps } from './BpkBox.types';
 
@@ -60,22 +59,7 @@ const BpkBox = ({
   children,
   ...rest
 }: Props) => {
-  // Filter out any disallowed props (defensive programming)
-  // This ensures only explicitly allowed props are passed to Chakra UI Box
-  // TypeScript will catch invalid props at compile time, this is runtime safety
-  const allowedProps = { ...rest };
-  const disallowedProps = ['className']; // Explicitly disallowed props
-
-  disallowedProps.forEach((prop) => {
-     
-    delete allowedProps[prop as keyof typeof allowedProps];
-  });
-
-  // Transform Backpack spacing tokens to Chakra UI values
-  const spacingTransformed = transformSpacingProps(allowedProps);
-
-  // Transform Backpack color tokens to CSS custom properties
-  const transformedProps = transformColorProps(spacingTransformed);
+  const transformedProps = transformBpkLayoutProps(rest);
 
   return (
     <Box
