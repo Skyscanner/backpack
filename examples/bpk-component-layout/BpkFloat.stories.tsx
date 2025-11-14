@@ -18,13 +18,15 @@
 
 import { BpkFloat } from '../../packages/bpk-component-layout';
 
-import * as BpkFloatExamples from './BpkFloat.examples';
+import {
+  Left,
+  Right,
+} from './BpkFloat.examples';
 
 export default {
   title: 'bpk-component-layout/BpkFloat',
   component: BpkFloat,
 };
 
-export const {Left} = BpkFloatExamples;
-export const {Right} = BpkFloatExamples;
+export { Left, Right };
 

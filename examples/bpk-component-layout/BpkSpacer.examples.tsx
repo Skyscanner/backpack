@@ -18,7 +18,7 @@
 
 import { BpkBox, BpkFlex, BpkSpacer } from '../../packages/bpk-component-layout';
 
-import { Wrapper } from './Wrapper';
+import Wrapper from './Wrapper';
 
 /**
  * BpkSpacer Examples

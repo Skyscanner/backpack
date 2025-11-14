@@ -18,15 +18,17 @@
 
 import { BpkFlex } from '../../packages/bpk-component-layout';
 
-import * as BpkFlexExamples from './BpkFlex.examples';
+import {
+  Default,
+  Column,
+  Responsive,
+  Shorthand,
+} from './BpkFlex.examples';
 
 export default {
   title: 'bpk-component-layout/BpkFlex',
   component: BpkFlex,
 };
 
-export const {Default} = BpkFlexExamples;
-export const {Column} = BpkFlexExamples;
-export const {Responsive} = BpkFlexExamples;
-export const {Shorthand} = BpkFlexExamples;
+export { Default, Column, Responsive, Shorthand };
 

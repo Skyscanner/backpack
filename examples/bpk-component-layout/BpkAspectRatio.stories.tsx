@@ -18,14 +18,16 @@
 
 import { BpkAspectRatio } from '../../packages/bpk-component-layout';
 
-import * as BpkAspectRatioExamples from './BpkAspectRatio.examples';
+import {
+  Default,
+  Square,
+  Responsive,
+} from './BpkAspectRatio.examples';
 
 export default {
   title: 'bpk-component-layout/BpkAspectRatio',
   component: BpkAspectRatio,
 };
 
-export const {Default} = BpkAspectRatioExamples;
-export const {Square} = BpkAspectRatioExamples;
-export const {Responsive} = BpkAspectRatioExamples;
+export { Default, Square, Responsive };
 

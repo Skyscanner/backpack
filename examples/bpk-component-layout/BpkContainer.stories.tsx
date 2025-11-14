@@ -18,13 +18,15 @@
 
 import { BpkContainer } from '../../packages/bpk-component-layout';
 
-import * as BpkContainerExamples from './BpkContainer.examples';
+import {
+  Default,
+  CenterContent,
+} from './BpkContainer.examples';
 
 export default {
   title: 'bpk-component-layout/BpkContainer',
   component: BpkContainer,
 };
 
-export const {Default} = BpkContainerExamples;
-export const {CenterContent} = BpkContainerExamples;
+export { Default, CenterContent };
 

@@ -18,7 +18,7 @@
 
 import { BpkBox, BpkGroup } from '../../packages/bpk-component-layout';
 
-import { Wrapper } from './Wrapper';
+import Wrapper from './Wrapper';
 
 /**
  * BpkGroup Examples

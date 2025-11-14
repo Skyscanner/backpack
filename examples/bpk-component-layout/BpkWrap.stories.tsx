@@ -18,13 +18,15 @@
 
 import { BpkWrap } from '../../packages/bpk-component-layout';
 
-import * as BpkWrapExamples from './BpkWrap.examples';
+import {
+  Default,
+  Responsive,
+} from './BpkWrap.examples';
 
 export default {
   title: 'bpk-component-layout/BpkWrap',
   component: BpkWrap,
 };
 
-export const {Default} = BpkWrapExamples;
-export const {Responsive} = BpkWrapExamples;
+export { Default, Responsive };
 

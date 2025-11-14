@@ -18,14 +18,16 @@
 
 import { BpkStack } from '../../packages/bpk-component-layout';
 
-import * as BpkStackExamples from './BpkStack.examples';
+import {
+  Default,
+  Row,
+  Responsive,
+} from './BpkStack.examples';
 
 export default {
   title: 'bpk-component-layout/BpkStack',
   component: BpkStack,
 };
 
-export const {Default} = BpkStackExamples;
-export const {Row} = BpkStackExamples;
-export const {Responsive} = BpkStackExamples;
+export { Default, Row, Responsive };
 

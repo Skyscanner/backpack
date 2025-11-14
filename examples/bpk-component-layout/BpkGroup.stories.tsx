@@ -18,13 +18,15 @@
 
 import { BpkGroup } from '../../packages/bpk-component-layout';
 
-import * as BpkGroupExamples from './BpkGroup.examples';
+import {
+  Default,
+  Responsive,
+} from './BpkGroup.examples';
 
 export default {
   title: 'bpk-component-layout/BpkGroup',
   component: BpkGroup,
 };
 
-export const {Default} = BpkGroupExamples;
-export const {Responsive} = BpkGroupExamples;
+export { Default, Responsive };
 

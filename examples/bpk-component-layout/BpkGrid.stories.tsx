@@ -18,14 +18,16 @@
 
 import { BpkGrid } from '../../packages/bpk-component-layout';
 
-import * as BpkGridExamples from './BpkGrid.examples';
+import {
+  Default,
+  Responsive,
+  Auto,
+} from './BpkGrid.examples';
 
 export default {
   title: 'bpk-component-layout/BpkGrid',
   component: BpkGrid,
 };
 
-export const {Default} = BpkGridExamples;
-export const {Responsive} = BpkGridExamples;
-export const {Auto} = BpkGridExamples;
+export { Default, Responsive, Auto };
 

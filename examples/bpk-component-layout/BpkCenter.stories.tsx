@@ -18,13 +18,15 @@
 
 import { BpkCenter } from '../../packages/bpk-component-layout';
 
-import * as BpkCenterExamples from './BpkCenter.examples';
+import {
+  Default,
+  Responsive,
+} from './BpkCenter.examples';
 
 export default {
   title: 'bpk-component-layout/BpkCenter',
   component: BpkCenter,
 };
 
-export const {Default} = BpkCenterExamples;
-export const {Responsive} = BpkCenterExamples;
+export { Default, Responsive };
 

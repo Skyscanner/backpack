@@ -18,25 +18,27 @@
 
 import { BpkBox } from '../../packages/bpk-component-layout';
 
-import * as BpkBoxExamples from './BpkBox.examples';
+import {
+  Default,
+  WithPadding,
+  WithMargin,
+  Flexbox,
+  FlexboxColumn,
+  Grid,
+  WidthHeight,
+  Responsive,
+  ColorTokens,
+  SemanticHTMLElement,
+  CenteredContent,
+  Shadow,
+  Border,
+  Mixed,
+} from './BpkBox.examples';
 
 export default {
   title: 'bpk-component-layout/BpkBox',
   component: BpkBox,
 };
 
-export const {Default} = BpkBoxExamples;
-export const {WithPadding} = BpkBoxExamples;
-export const {WithMargin} = BpkBoxExamples;
-export const {Flexbox} = BpkBoxExamples;
-export const {FlexboxColumn} = BpkBoxExamples;
-export const {Grid} = BpkBoxExamples;
-export const {WidthHeight} = BpkBoxExamples;
-export const {Responsive} = BpkBoxExamples;
-export const {ColorTokens} = BpkBoxExamples;
-export const {SemanticHTMLElement} = BpkBoxExamples;
-export const {CenteredContent} = BpkBoxExamples;
-export const {Shadow} = BpkBoxExamples;
-export const {Border} = BpkBoxExamples;
-export const {Mixed} = BpkBoxExamples;
+export { Default, WithPadding, WithMargin, Flexbox, FlexboxColumn, Grid, WidthHeight, Responsive, ColorTokens, SemanticHTMLElement, CenteredContent, Shadow, Border, Mixed };
 

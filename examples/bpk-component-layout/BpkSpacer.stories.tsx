@@ -18,13 +18,15 @@
 
 import { BpkSpacer } from '../../packages/bpk-component-layout';
 
-import * as BpkSpacerExamples from './BpkSpacer.examples';
+import {
+  Horizontal,
+  Vertical,
+} from './BpkSpacer.examples';
 
 export default {
   title: 'bpk-component-layout/BpkSpacer',
   component: BpkSpacer,
 };
 
-export const {Horizontal} = BpkSpacerExamples;
-export const {Vertical} = BpkSpacerExamples;
+export { Horizontal, Vertical };
 

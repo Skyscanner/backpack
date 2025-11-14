@@ -18,13 +18,15 @@
 
 import { BpkSeparator } from '../../packages/bpk-component-layout';
 
-import * as BpkSeparatorExamples from './BpkSeparator.examples';
+import {
+  Horizontal,
+  Vertical,
+} from './BpkSeparator.examples';
 
 export default {
   title: 'bpk-component-layout/BpkSeparator',
   component: BpkSeparator,
 };
 
-export const {Horizontal} = BpkSeparatorExamples;
-export const {Vertical} = BpkSeparatorExamples;
+export { Horizontal, Vertical };
 
