@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import type { ComponentType } from 'react';
+
 import type { BpkBaseLayoutProps } from '../BpkBaseLayoutProps.types';
 import type { ResponsiveValue } from '../BpkBox/BpkBox.types';
 import type { BpkFlexboxShorthandProps, BpkSpacingProps } from '../commonProps.types';
@@ -38,4 +40,36 @@ export interface BpkStackSpecificProps extends Omit<BpkFlexboxShorthandProps, 'd
  * Combines base layout props with Stack-specific props
  */
 export interface BpkStackProps extends BpkBaseLayoutProps, BpkStackSpecificProps {}
+
+/**
+ * HStack-specific props for BpkStack.HStack
+ * HStack automatically sets direction="row", so we exclude direction from flexbox props
+ */
+export interface BpkHStackSpecificProps extends Omit<BpkFlexboxShorthandProps, 'direction'>, BpkSpacingProps {}
+
+/**
+ * Complete props interface for BpkStack.HStack
+ * Combines base layout props with HStack-specific props
+ */
+export interface BpkHStackProps extends BpkBaseLayoutProps, BpkHStackSpecificProps {}
+
+/**
+ * VStack-specific props for BpkStack.VStack
+ * VStack automatically sets direction="column", so we exclude direction from flexbox props
+ */
+export interface BpkVStackSpecificProps extends Omit<BpkFlexboxShorthandProps, 'direction'>, BpkSpacingProps {}
+
+/**
+ * Complete props interface for BpkStack.VStack
+ * Combines base layout props with VStack-specific props
+ */
+export interface BpkVStackProps extends BpkBaseLayoutProps, BpkVStackSpecificProps {}
+
+/**
+ * BpkStack component with sub-components
+ */
+export type BpkStackComponent = ComponentType<BpkStackProps> & {
+  HStack: ComponentType<BpkHStackProps>;
+  VStack: ComponentType<BpkVStackProps>;
+};
 

@@ -16,39 +16,43 @@
  * limitations under the License.
  */
 
-import { Stack } from '@chakra-ui/react';
+import { VStack } from '@chakra-ui/react';
 
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
 
-import BpkHStack from './BpkHStack';
-import BpkVStack from './BpkVStack';
+import type { BpkVStackProps } from './BpkStack.types';
 
-import type { BpkStackComponent, BpkStackProps } from './BpkStack.types';
-
-export type Props = BpkStackProps;
+export type Props = BpkVStackProps;
 
 /**
- * BpkStack is a layout component that provides a stack layout using Chakra UI's Stack component.
- * It follows the facade pattern, wrapping Chakra UI's Stack to provide a Backpack-specific API.
+ * BpkVStack is a layout component that arranges its children in a vertical line.
+ * It's a convenience component that wraps Chakra UI's VStack with Backpack-specific API.
  *
  * **Key Features:**
+ * - Automatically sets `direction="column"` for vertical stacking
  * - Accepts Backpack spacing tokens as strings (e.g., `spacing="base"` instead of `spacing={4}`)
  * - Accepts Backpack breakpoint tokens in responsive props
  * - Accepts Backpack color tokens for color-related props
  * - Does not support className prop to maintain Backpack design system consistency
  *
  * @param {Props} props - The component props
- * @returns {JSX.Element} The rendered BpkStack component
+ * @returns {JSX.Element} The rendered BpkVStack component
  * @example
  * ```tsx
  * // Using Backpack tokens
- * <BpkStack spacing="base" direction="column">
+ * <BpkStack.VStack spacing="base" alignItems="stretch">
+ *   <BpkBox>Item 1</BpkBox>
+ *   <BpkBox>Item 2</BpkBox>
+ * </BpkStack.VStack>
+ *
+ * // Equivalent to:
+ * <BpkStack direction="column" spacing="base" alignItems="stretch">
  *   <BpkBox>Item 1</BpkBox>
  *   <BpkBox>Item 2</BpkBox>
  * </BpkStack>
  * ```
  */
-const BpkStack = ({
+const BpkVStack = ({
   as,
   children,
   ...rest
@@ -56,19 +60,14 @@ const BpkStack = ({
   const transformedProps = transformBpkLayoutProps(rest);
 
   return (
-    <Stack
+    <VStack
       as={as}
       {...transformedProps}
     >
       {children}
-    </Stack>
+    </VStack>
   );
 };
 
-// Attach HStack and VStack as sub-components
-const BpkStackWithSubComponents = BpkStack as BpkStackComponent;
-BpkStackWithSubComponents.HStack = BpkHStack;
-BpkStackWithSubComponents.VStack = BpkVStack;
-
-export default BpkStackWithSubComponents;
+export default BpkVStack;
 

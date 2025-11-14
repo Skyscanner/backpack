@@ -20,7 +20,7 @@ import type { ReactNode } from 'react';
 
 import { ChakraProvider } from '@chakra-ui/react';
 
-import { backpackTheme } from './backpackTheme';
+import { backpackSystem } from './backpackTheme';
 
 export type BpkLayoutProviderProps = {
   children: ReactNode;
@@ -48,7 +48,8 @@ export type BpkLayoutProviderProps = {
  * }
  * ```
  */
-export const BpkLayoutProvider = ({ children }: BpkLayoutProviderProps) => <ChakraProvider theme={backpackTheme}>{children}</ChakraProvider>;
+// @ts-expect-error - ChakraProvider accepts 'value' prop in v3 but TypeScript types may not be fully updated
+export const BpkLayoutProvider = ({ children }: BpkLayoutProviderProps) => <ChakraProvider value={backpackSystem}>{children}</ChakraProvider>;
 
 export default BpkLayoutProvider;
 

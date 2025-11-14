@@ -73,6 +73,10 @@ import type {
   SpacingValue,
 } from './src/BpkBox/BpkBox.types';
 import type {
+  BpkHStackProps,
+  BpkVStackProps,
+} from './src/BpkStack/BpkStack.types';
+import type {
   BpkFlexboxShorthandProps,
   BpkSpacingProps,
 } from './src/commonProps.types';
@@ -97,6 +101,9 @@ export type {
   ResponsiveValue,
   SpacingValue,
   BpkColorTokenEnum,
+  // Stack sub-components types
+  BpkHStackProps,
+  BpkVStackProps,
 };
 export default BpkBox;
 export {

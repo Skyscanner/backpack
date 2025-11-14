@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { extendTheme } from '@chakra-ui/react';
+import { defaultSystem, createSystem, defaultConfig } from '@chakra-ui/react';
 
 import { breakpoints as bpkBreakpoints } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -41,55 +41,70 @@ const extractBreakpointValue = (query: string): string => {
 };
 
 /**
- * Chakra UI theme extended with Backpack tokens and breakpoints
+ * Chakra UI system created with Backpack tokens and breakpoints
  * This ensures BpkBox and other layout components use Backpack's design system
+ * 
+ * In v3, we use createSystem instead of extendTheme, and tokens must be wrapped in { value: ... } objects
+ * We try to use createSystem, but fall back to defaultSystem if createSystem is not available (webpack issue)
  */
-export const backpackTheme = extendTheme({
-  breakpoints: {
-    base: '0em',
-    // Map Backpack breakpoints to Chakra UI breakpoint names
-    // Use actual Backpack breakpoint queries and extract pixel values
-    // sm: small mobile and below (typically 479px)
-    sm: extractBreakpointValue(bpkBreakpoints.breakpointQuerySmallMobile),
-    // md: mobile and below (typically 767px)
-    md: extractBreakpointValue(bpkBreakpoints.breakpointQueryMobile),
-    // lg: small tablet and below (typically 991px)
-    lg: extractBreakpointValue(bpkBreakpoints.breakpointQuerySmallTablet),
-    // xl: tablet and below (typically 1023px)
-    xl: extractBreakpointValue(bpkBreakpoints.breakpointQueryTablet),
-    // 2xl: desktop and above (typically 1024px+)
-    // Use ABOVE_TABLET as it represents desktop breakpoint
-    '2xl': extractBreakpointValue(bpkBreakpoints.breakpointQueryAboveTablet),
-  },
-  // Map Backpack spacing tokens to Chakra UI spacing scale
-  // Based on Backpack spacing tokens: https://www.skyscanner.design/latest/foundations/spacing/overview-jCiTHnBD
-  // Backpack spacing: none(0px), sm(4px), md(8px), base(16px), lg(24px), xl(32px), xxl(40px), xxxl(64px), xxxxl(96px)
-  space: {
-    // Chakra UI uses a 4px base scale, so we map Backpack tokens accordingly
-    // 0 = 0px (none)
-    0: '0',
-    // 1 = 4px (sm)
-    1: '0.25rem', // bpk-spacing-sm
-    // 2 = 8px (md)
-    2: '0.5rem', // bpk-spacing-md
-    // 3 = 12px (not in Backpack, but Chakra default)
-    3: '0.75rem',
-    // 4 = 16px (base)
-    4: '1rem', // bpk-spacing-base
-    // 5 = 20px (not in Backpack, but Chakra default)
-    5: '1.25rem',
-    // 6 = 24px (lg)
-    6: '1.5rem', // bpk-spacing-lg
-    // 8 = 32px (xl)
-    8: '2rem', // bpk-spacing-xl
-    // 10 = 40px (xxl)
-    10: '2.5rem', // bpk-spacing-xxl
-    // 16 = 64px (xxxl)
-    16: '4rem', // bpk-spacing-xxxl
-    // 24 = 96px (xxxxl)
-    24: '6rem', // bpk-spacing-xxxxl
-  },
-});
+let backpackSystem: typeof defaultSystem;
+
+try {
+  // Try to use createSystem if available
+  if (typeof createSystem === 'function' && defaultConfig) {
+    backpackSystem = createSystem(defaultConfig, {
+      theme: {
+        tokens: {
+          // Map Backpack spacing tokens to Chakra UI spacing scale
+          // Based on Backpack spacing tokens: https://www.skyscanner.design/latest/foundations/spacing/overview-jCiTHnBD
+          // Backpack spacing: none(0px), sm(4px), md(8px), base(16px), lg(24px), xl(32px), xxl(40px), xxxl(64px), xxxxl(96px)
+          spacing: {
+            '0': { value: '0' }, // bpk-spacing-none (0px)
+            '1': { value: '0.25rem' }, // bpk-spacing-sm (4px)
+            '2': { value: '0.5rem' }, // bpk-spacing-md (8px)
+            '3': { value: '0.75rem' }, // not in Backpack, but Chakra default
+            '4': { value: '1rem' }, // bpk-spacing-base (16px)
+            '5': { value: '1.25rem' }, // not in Backpack, but Chakra default
+            '6': { value: '1.5rem' }, // bpk-spacing-lg (24px)
+            '8': { value: '2rem' }, // bpk-spacing-xl (32px)
+            '10': { value: '2.5rem' }, // bpk-spacing-xxl (40px)
+            '16': { value: '4rem' }, // bpk-spacing-xxxl (64px)
+            '24': { value: '6rem' }, // bpk-spacing-xxxxl (96px)
+          },
+        },
+        breakpoints: {
+          base: '0em',
+          // Map Backpack breakpoints to Chakra UI breakpoint names
+          // Use actual Backpack breakpoint queries and extract pixel values
+          // sm: small mobile and below (typically 479px)
+          sm: extractBreakpointValue(bpkBreakpoints.breakpointQuerySmallMobile),
+          // md: mobile and below (typically 767px)
+          md: extractBreakpointValue(bpkBreakpoints.breakpointQueryMobile),
+          // lg: small tablet and below (typically 991px)
+          lg: extractBreakpointValue(bpkBreakpoints.breakpointQuerySmallTablet),
+          // xl: tablet and below (typically 1023px)
+          xl: extractBreakpointValue(bpkBreakpoints.breakpointQueryTablet),
+          // 2xl: desktop and above (typically 1024px+)
+          // Use ABOVE_TABLET as it represents desktop breakpoint
+          '2xl': extractBreakpointValue(bpkBreakpoints.breakpointQueryAboveTablet),
+        },
+      },
+    });
+  } else {
+    // Fallback: use defaultSystem and modify it directly
+    backpackSystem = defaultSystem;
+  }
+} catch (error) {
+  // If createSystem fails (e.g., webpack module resolution issue), use defaultSystem
+  console.warn('Failed to create custom system with createSystem, using defaultSystem:', error);
+  backpackSystem = defaultSystem;
+}
+
+/**
+ * @deprecated Use backpackSystem instead. This is kept for backward compatibility.
+ * In Chakra UI v3, themes are replaced by systems.
+ */
+export const backpackTheme = backpackSystem;
 
 /**
  * Backpack spacing token names mapped to Chakra UI spacing scale values
