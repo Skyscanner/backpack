@@ -22,11 +22,13 @@ import { BpkLayoutProvider } from '../../packages/bpk-component-layout';
 
 import STYLES from './examples.module.scss';
 
-export const Wrapper = ({ children }: { children: ReactNode }) => (
+const Wrapper = ({ children }: { children: ReactNode }) => (
   <BpkLayoutProvider>
     <div className={STYLES['bpk-layout-examples--wrapper']}>
       {children}
     </div>
   </BpkLayoutProvider>
 );
+
+export default Wrapper;
 

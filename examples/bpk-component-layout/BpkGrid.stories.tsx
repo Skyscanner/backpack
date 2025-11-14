@@ -25,7 +25,7 @@ export default {
   component: BpkGrid,
 };
 
-export const Default = BpkGridExamples.Default;
-export const Responsive = BpkGridExamples.Responsive;
-export const Auto = BpkGridExamples.Auto;
+export const {Default} = BpkGridExamples;
+export const {Responsive} = BpkGridExamples;
+export const {Auto} = BpkGridExamples;
 

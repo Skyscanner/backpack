@@ -25,6 +25,6 @@ export default {
   component: BpkGroup,
 };
 
-export const Default = BpkGroupExamples.Default;
-export const Responsive = BpkGroupExamples.Responsive;
+export const {Default} = BpkGroupExamples;
+export const {Responsive} = BpkGroupExamples;
 

@@ -25,7 +25,7 @@ export default {
   component: BpkAspectRatio,
 };
 
-export const Default = BpkAspectRatioExamples.Default;
-export const Square = BpkAspectRatioExamples.Square;
-export const Responsive = BpkAspectRatioExamples.Responsive;
+export const {Default} = BpkAspectRatioExamples;
+export const {Square} = BpkAspectRatioExamples;
+export const {Responsive} = BpkAspectRatioExamples;
 

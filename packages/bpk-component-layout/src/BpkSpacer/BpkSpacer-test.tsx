@@ -20,8 +20,9 @@ import type { ReactElement } from 'react';
 
 import { render } from '@testing-library/react';
 
-import BpkSpacer from './BpkSpacer';
 import { BpkLayoutProvider } from '../BpkLayoutProvider';
+
+import BpkSpacer from './BpkSpacer';
 
 const renderWithLayout = (component: ReactElement) => render(<BpkLayoutProvider>{component}</BpkLayoutProvider>);
 

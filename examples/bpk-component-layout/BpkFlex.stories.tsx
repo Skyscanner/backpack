@@ -25,8 +25,8 @@ export default {
   component: BpkFlex,
 };
 
-export const Default = BpkFlexExamples.Default;
-export const Column = BpkFlexExamples.Column;
-export const Responsive = BpkFlexExamples.Responsive;
-export const Shorthand = BpkFlexExamples.Shorthand;
+export const {Default} = BpkFlexExamples;
+export const {Column} = BpkFlexExamples;
+export const {Responsive} = BpkFlexExamples;
+export const {Shorthand} = BpkFlexExamples;
 

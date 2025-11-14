@@ -52,7 +52,7 @@ const BpkCenter = ({
   const disallowedProps = ['className'];
 
   disallowedProps.forEach((prop) => {
-    // eslint-disable-next-line no-param-reassign
+     
     delete allowedProps[prop as keyof typeof allowedProps];
   });
 

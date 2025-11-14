@@ -25,6 +25,6 @@ export default {
   component: BpkWrap,
 };
 
-export const Default = BpkWrapExamples.Default;
-export const Responsive = BpkWrapExamples.Responsive;
+export const {Default} = BpkWrapExamples;
+export const {Responsive} = BpkWrapExamples;
 

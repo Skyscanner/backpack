@@ -20,8 +20,9 @@ import type { ReactElement } from 'react';
 
 import { render } from '@testing-library/react';
 
-import BpkFloat from './BpkFloat';
 import { BpkLayoutProvider } from '../BpkLayoutProvider';
+
+import BpkFloat from './BpkFloat';
 
 const renderWithLayout = (component: ReactElement) => render(<BpkLayoutProvider>{component}</BpkLayoutProvider>);
 

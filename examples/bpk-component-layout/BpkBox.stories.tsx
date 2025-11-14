@@ -25,18 +25,18 @@ export default {
   component: BpkBox,
 };
 
-export const Default = BpkBoxExamples.Default;
-export const WithPadding = BpkBoxExamples.WithPadding;
-export const WithMargin = BpkBoxExamples.WithMargin;
-export const Flexbox = BpkBoxExamples.Flexbox;
-export const FlexboxColumn = BpkBoxExamples.FlexboxColumn;
-export const Grid = BpkBoxExamples.Grid;
-export const WidthHeight = BpkBoxExamples.WidthHeight;
-export const Responsive = BpkBoxExamples.Responsive;
-export const ColorTokens = BpkBoxExamples.ColorTokens;
-export const SemanticHTMLElement = BpkBoxExamples.SemanticHTMLElement;
-export const CenteredContent = BpkBoxExamples.CenteredContent;
-export const Shadow = BpkBoxExamples.Shadow;
-export const Border = BpkBoxExamples.Border;
-export const Mixed = BpkBoxExamples.Mixed;
+export const {Default} = BpkBoxExamples;
+export const {WithPadding} = BpkBoxExamples;
+export const {WithMargin} = BpkBoxExamples;
+export const {Flexbox} = BpkBoxExamples;
+export const {FlexboxColumn} = BpkBoxExamples;
+export const {Grid} = BpkBoxExamples;
+export const {WidthHeight} = BpkBoxExamples;
+export const {Responsive} = BpkBoxExamples;
+export const {ColorTokens} = BpkBoxExamples;
+export const {SemanticHTMLElement} = BpkBoxExamples;
+export const {CenteredContent} = BpkBoxExamples;
+export const {Shadow} = BpkBoxExamples;
+export const {Border} = BpkBoxExamples;
+export const {Mixed} = BpkBoxExamples;
 

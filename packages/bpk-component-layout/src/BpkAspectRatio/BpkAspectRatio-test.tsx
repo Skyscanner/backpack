@@ -20,8 +20,9 @@ import type { ReactElement } from 'react';
 
 import { render } from '@testing-library/react';
 
-import BpkAspectRatio from './BpkAspectRatio';
 import { BpkLayoutProvider } from '../BpkLayoutProvider';
+
+import BpkAspectRatio from './BpkAspectRatio';
 
 const renderWithLayout = (component: ReactElement) => render(<BpkLayoutProvider>{component}</BpkLayoutProvider>);
 

@@ -25,6 +25,6 @@ export default {
   component: BpkFloat,
 };
 
-export const Left = BpkFloatExamples.Left;
-export const Right = BpkFloatExamples.Right;
+export const {Left} = BpkFloatExamples;
+export const {Right} = BpkFloatExamples;
 

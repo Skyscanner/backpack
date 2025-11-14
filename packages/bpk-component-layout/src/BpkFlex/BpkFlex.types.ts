@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import type { ResponsiveValue } from '../BpkBox/BpkBox.types';
 import type { BpkBaseLayoutProps } from '../BpkBaseLayoutProps.types';
+import type { ResponsiveValue } from '../BpkBox/BpkBox.types';
 import type { BpkFlexboxShorthandProps } from '../commonProps.types';
 
 /**

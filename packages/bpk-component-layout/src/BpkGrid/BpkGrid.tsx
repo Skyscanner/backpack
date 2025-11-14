@@ -73,7 +73,7 @@ const BpkGrid = ({
   const disallowedProps = ['className']; // Explicitly disallowed props
 
   disallowedProps.forEach((prop) => {
-    // eslint-disable-next-line no-param-reassign
+     
     delete allowedProps[prop as keyof typeof allowedProps];
   });
 

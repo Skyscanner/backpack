@@ -20,8 +20,9 @@ import type { ReactElement } from 'react';
 
 import { render } from '@testing-library/react';
 
-import BpkGrid from './BpkGrid';
 import { BpkLayoutProvider } from '../BpkLayoutProvider';
+
+import BpkGrid from './BpkGrid';
 
 // Wrap component with BpkLayoutProvider for tests
 const renderWithLayout = (component: ReactElement) => render(<BpkLayoutProvider>{component}</BpkLayoutProvider>);

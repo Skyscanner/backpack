@@ -25,6 +25,6 @@ export default {
   component: BpkContainer,
 };
 
-export const Default = BpkContainerExamples.Default;
-export const CenterContent = BpkContainerExamples.CenterContent;
+export const {Default} = BpkContainerExamples;
+export const {CenterContent} = BpkContainerExamples;
 

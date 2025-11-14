@@ -53,7 +53,7 @@ const BpkSpacer = ({
   const disallowedProps = ['className', 'children']; // Spacer doesn't accept children
 
   disallowedProps.forEach((prop) => {
-    // eslint-disable-next-line no-param-reassign
+     
     delete allowedProps[prop as keyof typeof allowedProps];
   });
 

@@ -25,6 +25,6 @@ export default {
   component: BpkSpacer,
 };
 
-export const Horizontal = BpkSpacerExamples.Horizontal;
-export const Vertical = BpkSpacerExamples.Vertical;
+export const {Horizontal} = BpkSpacerExamples;
+export const {Vertical} = BpkSpacerExamples;
 

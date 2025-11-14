@@ -25,6 +25,6 @@ export default {
   component: BpkSeparator,
 };
 
-export const Horizontal = BpkSeparatorExamples.Horizontal;
-export const Vertical = BpkSeparatorExamples.Vertical;
+export const {Horizontal} = BpkSeparatorExamples;
+export const {Vertical} = BpkSeparatorExamples;
 

@@ -25,6 +25,6 @@ export default {
   component: BpkCenter,
 };
 
-export const Default = BpkCenterExamples.Default;
-export const Responsive = BpkCenterExamples.Responsive;
+export const {Default} = BpkCenterExamples;
+export const {Responsive} = BpkCenterExamples;
 

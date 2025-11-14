@@ -25,7 +25,7 @@ export default {
   component: BpkStack,
 };
 
-export const Default = BpkStackExamples.Default;
-export const Row = BpkStackExamples.Row;
-export const Responsive = BpkStackExamples.Responsive;
+export const {Default} = BpkStackExamples;
+export const {Row} = BpkStackExamples;
+export const {Responsive} = BpkStackExamples;
 
