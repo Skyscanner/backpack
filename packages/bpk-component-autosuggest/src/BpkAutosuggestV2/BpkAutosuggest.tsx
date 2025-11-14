@@ -23,6 +23,7 @@ import type {
   MutableRefObject,
   ReactNode,
   InputHTMLAttributes,
+  FocusEvent,
   Ref,
   SyntheticEvent,
 } from 'react';
@@ -186,6 +187,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     const originalInputOnPreviewRef = useRef<string | null>(null);
     const hasInteractedRef = useRef(false);
     const hasLoadedInitiallyRef = useRef(false);
+    const committedSelectionRef = useRef(false);
+    const savedHighlightedIndexRef = useRef<number | null>(null);
 
     const suggestionsCount = suggestions.length;
     const hasSuggestions = suggestionsCount > 0;
@@ -206,11 +209,24 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         };
       }
       switch (type) {
-        case useCombobox.stateChangeTypes.InputClick:
+        case useCombobox.stateChangeTypes.InputClick: {
+          // Keep current highlightedIndex when clicking input to maintain user's selection
+          // If menu was closed and we have a saved highlighted index, restore it
+          let targetHighlightedIndex = state.highlightedIndex;
+          if (targetHighlightedIndex === null || targetHighlightedIndex < 0) {
+            if (
+              savedHighlightedIndexRef.current !== null &&
+              savedHighlightedIndexRef.current >= 0
+            ) {
+              targetHighlightedIndex = savedHighlightedIndexRef.current;
+            }
+          }
           return {
             ...changes,
             isOpen: state.isOpen,
+            highlightedIndex: targetHighlightedIndex,
           };
+        }
         default: {
           const forceOpen = !isDesktop && !!changes.inputValue;
           return {
@@ -234,6 +250,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       inputValue,
       isOpen,
       openMenu,
+      selectItem,
       setInputValue,
     } = useCombobox({
       stateReducer,
@@ -251,9 +268,13 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         if (type === useCombobox.stateChangeTypes.InputChange) {
           if (newInputValue?.length > 0) {
             if (newIsOpen) {
+              // Clear old suggestions before requesting new ones to avoid showing stale data
+              onSuggestionsClearRequested?.();
               onSuggestionsFetchRequested(newInputValue);
             }
           } else {
+            // Clear old suggestions before requesting defaults
+            onSuggestionsClearRequested?.();
             onSuggestionsFetchRequested('');
           }
         }
@@ -263,6 +284,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         if (selectedItem) {
           setInputValue(getSuggestionValue(selectedItem));
           originalInputOnPreviewRef.current = null;
+          committedSelectionRef.current = true;
           onSuggestionSelected?.({
             suggestion: selectedItem,
             inputValue,
@@ -335,11 +357,11 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     });
 
     useEffect(() => {
-      if (defaultValue) {
-        setInputValue(defaultValue);
-      } else {
-        setInputValue('');
+      // After user interaction, do not let defaultValue overrides pull input back to an older value.
+      if (hasInteractedRef.current) {
+        return;
       }
+      setInputValue(defaultValue ?? '');
     }, [defaultValue, setInputValue]);
 
     useEffect(() => {
@@ -360,6 +382,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       if (highlightedIndex === previousHighlightedIndexRef.current) return;
 
       previousHighlightedIndexRef.current = highlightedIndex;
+      // Save highlighted index for blur handling (when input loses focus, select the highlighted item)
+      savedHighlightedIndexRef.current = highlightedIndex;
 
       const currentSuggestion =
         highlightedIndex != null && highlightedIndex >= 0
@@ -383,17 +407,48 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     ]);
 
     const handleInputInteraction = () => {
+      // If menu is already open, clicking input should do nothing - keep everything as is
+      if (isOpen) {
+        // Only clear preview value ref if needed, but don't trigger any other actions
+        if (originalInputOnPreviewRef.current !== null) {
+          originalInputOnPreviewRef.current = null;
+        }
+        return;
+      }
+
       hasInteractedRef.current = true;
+      // Reset committed selection flag when user interacts with input again
+      // This allows blur to auto-select if user highlights a new suggestion
+      committedSelectionRef.current = false;
+
+      // If user clicks input while preview value is shown (from arrow key navigation),
+      // keep the preview value instead of restoring original value
+      if (originalInputOnPreviewRef.current !== null) {
+        // Clear the original value ref so the preview value becomes the current value
+        originalInputOnPreviewRef.current = null;
+      }
+
+      // Clear old suggestions before opening menu to avoid showing stale data
+      onSuggestionsClearRequested?.();
+
       if (shouldRenderSuggestions) {
         shouldRenderSuggestions(inputValue);
-        openMenu();
       }
 
       if (!isOpen && inputValue.length) {
+        // Request new suggestions first, then open menu
         onSuggestionsFetchRequested(inputValue);
         openMenu();
       } else if (alwaysRenderSuggestions && !inputValue) {
+        // Request default suggestions for empty input
         onSuggestionsFetchRequested('');
+        if (!isOpen) {
+          openMenu();
+        }
+      } else if (!isOpen) {
+        // Open menu if not already open
+        openMenu();
+        onClick?.();
       } else {
         onClick?.();
       }
@@ -414,9 +469,17 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     const clearSuggestions = (e?: SyntheticEvent<HTMLButtonElement>) => {
       e?.stopPropagation();
       setInputValue('');
+      // Clear old suggestions before requesting defaults
+      onSuggestionsClearRequested?.();
+      // Always fetch default suggestions for empty query
+      onSuggestionsFetchRequested('');
+      // Ensure the menu is visible so defaults are shown immediately
+      if (!isOpen) {
+        openMenu();
+      }
+      // For always-render mode, mark initial load as done so defaults render without interaction
       if (alwaysRenderSuggestions) {
         hasLoadedInitiallyRef.current = true;
-        onSuggestionsFetchRequested('');
       }
     };
 
@@ -445,16 +508,14 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           highlightedIndex === globalIndex ||
           (highlightFirstSuggestion && isFirst && highlightedIndex === -1);
 
+        // Build stable unique key (prefer entityId/id, fallback to index)
+        const suggestionId = (suggestion as any)?.entityId ?? (suggestion as any)?.id ?? globalIndex;
+        const suggestionKey = sectionId ? `${sectionId}-${suggestionId}` : `item-${suggestionId}`;
+
         return (
           <li
-            key={
-              sectionTitle
-                ? `${sectionTitle}-${getSuggestionValue(suggestion)}`
-                : getSuggestionValue(suggestion)
-            }
-            aria-labelledby={
-              sectionId && itemId ? `${sectionId} ${itemId}` : undefined
-            }
+            key={suggestionKey}
+            aria-labelledby={sectionId && itemId ? `${sectionId} ${itemId}` : undefined}
             {...getItemProps({
               item: suggestion,
               index: globalIndex,
@@ -548,6 +609,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       } = inputProps;
 
       const {
+        onBlur: downshiftOnBlur,
         ref: downshiftInputRef,
         value,
         ...finalInputProps
@@ -560,6 +622,54 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         className: inputClassName || theme.input,
         ...restInputProps,
       });
+
+      const handleBlur = (e: FocusEvent<HTMLInputElement>) => {
+        // Call Downshift's onBlur first
+        downshiftOnBlur?.(e);
+        // Call original onBlur if provided
+        restInputProps.onBlur?.(e);
+
+        // Only auto-select highlighted suggestion on desktop
+        // On mobile, clicking input opens a modal, so we shouldn't auto-select on blur
+        if (!isDesktop) {
+          return;
+        }
+
+        // If user already selected a suggestion (via Enter), don't auto-select on blur
+        if (committedSelectionRef.current) {
+          return;
+        }
+
+        // When input loses focus, if there's a highlighted suggestion, select it
+        // Use savedHighlightedIndexRef because highlightedIndex might be cleared during blur
+        const savedIndex = savedHighlightedIndexRef.current;
+        let highlightedSuggestion: any = null;
+
+        if (
+          savedIndex != null &&
+          savedIndex >= 0 &&
+          flattenedSuggestions[savedIndex]
+        ) {
+          // User highlighted a specific suggestion with arrow keys
+          highlightedSuggestion = flattenedSuggestions[savedIndex];
+        } else if (
+          highlightFirstSuggestion &&
+          flattenedSuggestions.length > 0 &&
+          (savedIndex === -1 || savedIndex === null)
+        ) {
+          // First suggestion is highlighted by default (highlightFirstSuggestion is true)
+          const [firstSuggestion] = flattenedSuggestions;
+          highlightedSuggestion = firstSuggestion;
+        }
+
+        if (highlightedSuggestion) {
+          // Use selectItem to trigger onSelectedItemChange, which will update input value
+          // Use setTimeout to ensure this runs after blur event completes
+          setTimeout(() => {
+            selectItem(highlightedSuggestion);
+          }, 0);
+        }
+      };
 
       const setInputRef = (node: HTMLInputElement | null) => {
         if (refs.reference?.current === node) return;
@@ -580,10 +690,12 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
       if (renderInputComponent) {
         return renderInputComponent({
+          ...finalInputProps,
           ref: setInputRef,
           enterKeyHint,
-          value,
-          ...finalInputProps,
+          onBlur: handleBlur,
+          onClear: clearSuggestions,
+          value: inputValue ?? '',
         });
       }
 
@@ -605,6 +717,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
                 name={inputName || id}
                 id={id}
                 {...finalInputProps}
+                onBlur={handleBlur}
                 enterKeyHint={enterKeyHint}
                 onClear={clearSuggestions}
               />
@@ -695,5 +808,4 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     );
   },
 );
-
 export default BpkAutosuggest;
