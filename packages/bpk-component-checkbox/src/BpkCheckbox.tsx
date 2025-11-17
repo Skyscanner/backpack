@@ -26,7 +26,7 @@ const getClassName = cssModules(STYLES);
 
 type NativeInputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
-type Props = Omit<NativeInputProps, 'type' | 'className'> & {
+export type Props = Omit<NativeInputProps, 'type' | 'className'> & {
   name: string;
   label: ReactNode;
   required?: boolean;

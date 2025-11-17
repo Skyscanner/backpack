@@ -16,9 +16,10 @@
  * limitations under the License.
  */
 
-import BpkCheckbox from './src/BpkCheckbox';
+import BpkCheckbox, { type Props as BpkCheckboxProps } from './src/BpkCheckbox';
 import themeAttributes from './src/themeAttributes';
 
+export type { BpkCheckboxProps };
 export default BpkCheckbox;
 export { themeAttributes };
 
