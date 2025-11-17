@@ -33,7 +33,7 @@ export {
   SIZE_TYPES,
   type ButtonType,
   type SizeType,
-  type Props ,
+  type Props,
 } from './src/BpkButtonV2/common-types';
 
 export {
