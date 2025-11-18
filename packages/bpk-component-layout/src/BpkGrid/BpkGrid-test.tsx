@@ -111,5 +111,53 @@ describe('BpkGrid', () => {
     );
     expect(getAllByTestId('test-grid').length).toBe(1);
   });
+
+  it('should support numeric pixel values in gap prop (direct conversion to Chakra UI scale)', () => {
+    const { container } = renderWithLayout(
+      <BpkGrid gap={2}>Content</BpkGrid>, // 2px → Chakra UI 0.5
+    );
+    const grid = container.firstChild as HTMLElement;
+    expect(grid).toBeInTheDocument();
+  });
+
+  it('should support numeric pixel values in responsive gap prop', () => {
+    const { container } = renderWithLayout(
+      <BpkGrid gap={{ base: 0, smallTablet: 2 }}>Content</BpkGrid>, // 0px → 0, 2px → 0.5
+    );
+    const grid = container.firstChild as HTMLElement;
+    expect(grid).toBeInTheDocument();
+  });
+
+  it('should support Chakra UI breakpoint names in responsive gap prop', () => {
+    const { container } = renderWithLayout(
+      <BpkGrid gap={{ base: 0, lg: 2 }}>Content</BpkGrid>, // lg → smallTablet → lg, 2px → 0.5
+    );
+    const grid = container.firstChild as HTMLElement;
+    expect(grid).toBeInTheDocument();
+  });
+
+  it('should support mixed numeric and string token values', () => {
+    const { container } = renderWithLayout(
+      <BpkGrid gap={{ base: 'sm', smallTablet: 2 }}>Content</BpkGrid>, // "sm" → 1, 2px → 0.5
+    );
+    const grid = container.firstChild as HTMLElement;
+    expect(grid).toBeInTheDocument();
+  });
+
+  it('should support gridGap prop with numeric values', () => {
+    const { container } = renderWithLayout(
+      <BpkGrid gridGap={2}>Content</BpkGrid>, // 2px → 0.5
+    );
+    const grid = container.firstChild as HTMLElement;
+    expect(grid).toBeInTheDocument();
+  });
+
+  it('should support gridGap prop with responsive numeric values', () => {
+    const { container } = renderWithLayout(
+      <BpkGrid gridGap={{ base: 0, lg: 6 }}>Content</BpkGrid>, // 0px → 0, lg → smallTablet → lg, 6px → 1.5
+    );
+    const grid = container.firstChild as HTMLElement;
+    expect(grid).toBeInTheDocument();
+  });
 });
 

@@ -2,6 +2,11 @@
 
 > Backpack layout components built on top of Chakra UI.
 
+## Documentation
+
+- **[Implementation Guide](./IMPLEMENTATION_GUIDE.md)** - Comprehensive guide covering wrapping strategies, token alignment, recommended patterns, and pitfalls to avoid
+- **[Storybook Examples](../../examples/bpk-component-layout/)** - Interactive examples and component documentation
+
 ## Installation
 
 Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
@@ -122,6 +127,50 @@ Based on [Backpack spacing tokens](https://www.skyscanner.design/latest/foundati
 - `"xxl"` → 40px (bpk-spacing-xxl)
 - `"xxxl"` → 64px (bpk-spacing-xxxl)
 - `"xxxxl"` → 96px (bpk-spacing-xxxxl)
+
+#### Using Numeric Pixel Values (For Fine-Grained Spacing)
+
+For fine-grained spacing values that don't have corresponding Backpack tokens (e.g., 2px, 6px, 10px, 12px), you can use numeric pixel values directly. These values are automatically converted to Backpack's spacing scale:
+
+```tsx
+import BpkBox from '@skyscanner/backpack-web/bpk-component-layout';
+
+export default () => (
+  <BpkBox padding={2} margin={6} gap={10}>
+    Content with fine-grained spacing
+  </BpkBox>
+);
+```
+
+**Conversion rule:** Numeric values (px) are converted to Backpack spacing scale: `spacing value = px / 4`
+
+**Examples:**
+- `0` → 0px → spacing value `0` → renders as `0`
+- `2` → 2px → spacing value `0.5` → renders as `0.125rem` (2px at 16px root font size)
+- `4` → 4px → spacing value `1` → renders as `0.25rem` (4px, same as `"sm"`)
+- `6` → 6px → spacing value `1.5` → renders as `0.375rem` (6px at 16px root font size)
+- `8` → 8px → spacing value `2` → renders as `0.5rem` (8px, same as `"md"`)
+- `10` → 10px → spacing value `2.5` → renders as `0.625rem` (10px at 16px root font size)
+- `12` → 12px → spacing value `3` → renders as `0.75rem` (12px at 16px root font size)
+- `16` → 16px → spacing value `4` → renders as `1rem` (16px, same as `"base"`)
+
+**Rendering:** All spacing values are rendered using `rem` units in the browser, which are relative to the root element's font size (typically 16px). This ensures spacing scales proportionally if users adjust their browser's font size settings.
+
+**You can mix both approaches:**
+```tsx
+<BpkBox
+  padding="base"        // Backpack token → 16px → renders as 1rem
+  margin={6}            // Numeric value → 6px → renders as 0.375rem
+  gap={{ base: "sm", smallTablet: 2 }}  // Mixed in responsive props
+>
+  Content
+</BpkBox>
+```
+
+**Note:** All spacing-related props support both Backpack token strings and numeric pixel values:
+- `padding`, `margin`, `gap`, `rowGap`, `columnGap`
+- `gridGap`, `gridColumnGap`, `gridRowGap`
+- `spacing`, `spacingX`, `spacingY`
 
 #### Using Backpack Breakpoints (Recommended)
 

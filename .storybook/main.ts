@@ -20,7 +20,7 @@ import type { StorybookConfig } from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
   stories: [
-    '../examples/**/{stories,*\.stories}.@(ts|tsx|js|jsx)',
+    '../examples/**/{stories,*.stories}.@(ts|tsx|js|jsx)',
   ],
   refs: {
     '@chakra-ui/react': { disable: true },

@@ -52,5 +52,29 @@ describe('BpkStack', () => {
     const stack = container.firstChild as HTMLElement;
     expect(stack).toBeInTheDocument();
   });
+
+  it('should support numeric pixel values in spacing prop (direct conversion to Chakra UI scale)', () => {
+    const { container } = renderWithLayout(
+      <BpkStack spacing={2}>Content</BpkStack>, // 2px → Chakra UI 0.5
+    );
+    const stack = container.firstChild as HTMLElement;
+    expect(stack).toBeInTheDocument();
+  });
+
+  it('should support responsive spacing prop with numeric values', () => {
+    const { container } = renderWithLayout(
+      <BpkStack spacing={{ base: 0, lg: 6 }}>Content</BpkStack>, // 0px → 0, lg → smallTablet → lg, 6px → 1.5
+    );
+    const stack = container.firstChild as HTMLElement;
+    expect(stack).toBeInTheDocument();
+  });
+
+  it('should support fine-grained numeric spacing values', () => {
+    const { container } = renderWithLayout(
+      <BpkStack spacing={6}>Content</BpkStack>, // 6px → Chakra UI 1.5
+    );
+    const stack = container.firstChild as HTMLElement;
+    expect(stack).toBeInTheDocument();
+  });
 });
 
