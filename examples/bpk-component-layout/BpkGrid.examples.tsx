@@ -62,22 +62,40 @@ export const Responsive = () => (
   <Wrapper>
     <BpkGrid
       gridTemplateColumns={{
-        base: '1fr',
+        smallMobile: '1fr',
         mobile: 'repeat(2, 1fr)',
         desktop: 'repeat(3, 1fr)',
       }}
-      gap={{ base: 'sm', desktop: 'lg' }}
+      gap={{ smallMobile: 'sm', desktop: 'lg' }}
       padding="base"
       bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
-      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
+      <BpkBox
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceHighlight}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Responsive grid item 1
       </BpkBox>
-      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
+      <BpkBox
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceDefault}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Responsive grid item 2
       </BpkBox>
-      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
+      <BpkBox
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceElevated}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Responsive grid item 3
       </BpkBox>
     </BpkGrid>

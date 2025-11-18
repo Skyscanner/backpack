@@ -40,7 +40,7 @@ export const Default = () => (
 export const Responsive = () => (
   <Wrapper>
     <BpkCenter
-      height={{ base: '150px', desktop: '200px' }}
+      height={{ smallMobile: '150px', desktop: '200px' }}
       padding="base"
       bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"

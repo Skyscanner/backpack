@@ -96,17 +96,38 @@ export const WithResponsiveLayout = () => (
     <BpkFlex
       gap="base"
       padding="base"
-      direction={{ base: 'column', mobile: 'row' }}
+      direction={{ smallMobile: 'column', mobile: 'row' }}
       bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
-      <BpkBox flex={1} padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
+      <BpkBox
+        flex={1}
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceHighlight}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Responsive item 1
       </BpkBox>
-      <BpkBox flex={1} padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
+      <BpkBox
+        flex={1}
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceDefault}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Responsive item 2
       </BpkBox>
-      <BpkBox flex={1} padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
+      <BpkBox
+        flex={1}
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceElevated}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Responsive item 3
       </BpkBox>
     </BpkFlex>

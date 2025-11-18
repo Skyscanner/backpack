@@ -46,18 +46,36 @@ export const Default = () => (
 export const Responsive = () => (
   <Wrapper>
     <BpkGroup
-      gap={{ base: 'sm', desktop: 'base' }}
+      gap={{ smallMobile: 'sm', desktop: 'base' }}
       padding="base"
       bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
-      <BpkBox padding="sm" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
+      <BpkBox
+        padding="sm"
+        bg={BPK_COLOR_TOKENS.surfaceHighlight}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Responsive group item 1
       </BpkBox>
-      <BpkBox padding="sm" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
+      <BpkBox
+        padding="sm"
+        bg={BPK_COLOR_TOKENS.surfaceDefault}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Responsive group item 2
       </BpkBox>
-      <BpkBox padding="sm" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
+      <BpkBox
+        padding="sm"
+        bg={BPK_COLOR_TOKENS.surfaceElevated}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Responsive group item 3
       </BpkBox>
     </BpkGroup>

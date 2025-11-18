@@ -52,18 +52,39 @@ export const Default = () => (
 export const Responsive = () => (
   <Wrapper>
     <BpkWrap
-      spacing={{ base: 'sm', desktop: 'lg' }}
+      spacing={{ smallMobile: 'sm', desktop: 'lg' }}
       padding="base"
       bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
-      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md" minWidth="150px">
+      <BpkBox
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceHighlight}
+        borderRadius="md"
+        minWidth="150px"
+        maxWidth="100%"
+        overflow="hidden"
+      >
         Responsive wrap item 1
       </BpkBox>
-      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md" minWidth="150px">
+      <BpkBox
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceDefault}
+        borderRadius="md"
+        minWidth="150px"
+        maxWidth="100%"
+        overflow="hidden"
+      >
         Responsive wrap item 2
       </BpkBox>
-      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md" minWidth="150px">
+      <BpkBox
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceElevated}
+        borderRadius="md"
+        minWidth="150px"
+        maxWidth="100%"
+        overflow="hidden"
+      >
         Responsive wrap item 3
       </BpkBox>
     </BpkWrap>

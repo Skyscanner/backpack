@@ -62,16 +62,28 @@ export const Row = () => (
 export const Responsive = () => (
   <Wrapper>
     <BpkStack
-      direction={{ base: 'column', mobile: 'row' }}
-      spacing={{ base: 'sm', desktop: 'lg' }}
+      direction={{ smallMobile: 'column', mobile: 'row' }}
+      spacing={{ smallMobile: 'sm', desktop: 'lg' }}
       padding="base"
       bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
-      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
+      <BpkBox
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceHighlight}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Responsive stack item 1
       </BpkBox>
-      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
+      <BpkBox
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceDefault}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Responsive stack item 2
       </BpkBox>
     </BpkStack>

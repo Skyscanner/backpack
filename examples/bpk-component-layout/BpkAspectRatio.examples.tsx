@@ -68,7 +68,7 @@ export const Square = () => (
 export const Responsive = () => (
   <Wrapper>
     <BpkAspectRatio
-      ratio={{ base: 1, desktop: 16 / 9 }}
+      ratio={{ smallMobile: 1, desktop: 16 / 9 }}
       padding="base"
       bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"

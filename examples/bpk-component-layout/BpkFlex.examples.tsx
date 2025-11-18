@@ -62,16 +62,30 @@ export const Column = () => (
 export const Responsive = () => (
   <Wrapper>
     <BpkFlex
-      flexDirection={{ base: 'column', mobile: 'row' }}
-      gap={{ base: 'sm', desktop: 'lg' }}
+      flexDirection={{ smallMobile: 'column', mobile: 'row' }}
+      gap={{ smallMobile: 'sm', desktop: 'lg' }}
       padding="base"
       bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
-      <BpkBox flex={1} padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
+      <BpkBox
+        flex={1}
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceHighlight}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Responsive flex item 1
       </BpkBox>
-      <BpkBox flex={1} padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
+      <BpkBox
+        flex={1}
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceDefault}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Responsive flex item 2
       </BpkBox>
     </BpkFlex>

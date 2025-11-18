@@ -53,13 +53,31 @@ export const WithAlignment = () => (
       bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
-      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
+      <BpkBox
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceHighlight}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Left aligned
       </BpkBox>
-      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
+      <BpkBox
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceDefault}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Center aligned
       </BpkBox>
-      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
+      <BpkBox
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceElevated}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Right aligned
       </BpkBox>
     </BpkStack.HStack>
@@ -90,18 +108,36 @@ export const WithDifferentSpacing = () => (
 export const Responsive = () => (
   <Wrapper>
     <BpkStack.HStack
-      spacing={{ base: 'sm', mobile: 'base', desktop: 'lg' }}
+      spacing={{ smallMobile: 'sm', mobile: 'base', desktop: 'lg' }}
       padding="base"
       bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
-      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
+      <BpkBox
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceHighlight}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Responsive HStack item 1
       </BpkBox>
-      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
+      <BpkBox
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceDefault}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Responsive HStack item 2
       </BpkBox>
-      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
+      <BpkBox
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceElevated}
+        borderRadius="md"
+        minWidth={0}
+        overflow="hidden"
+      >
         Responsive HStack item 3
       </BpkBox>
     </BpkStack.HStack>

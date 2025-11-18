@@ -132,15 +132,16 @@ export const Responsive = () => (
   <Wrapper>
     <BpkBox
       width={{
-        base: '100%',
+        smallMobile: '100%',
         mobile: '50%',
         desktop: '33%',
       }}
       padding="base"
       bg={BPK_COLOR_TOKENS.surfaceHighlight}
       borderRadius="md"
+      overflow="hidden"
     >
-      Responsive width using Backpack breakpoint tokens: 100% base, 50% mobile, 33% desktop
+      Responsive width using Backpack breakpoint tokens: 100% smallMobile, 50% mobile, 33% desktop
     </BpkBox>
   </Wrapper>
 );
@@ -235,7 +236,7 @@ export const Mixed = () => (
 
       <BpkBox
         display="grid"
-        gridTemplateColumns={{ base: '1fr', mobile: 'repeat(2, 1fr)' }}
+        gridTemplateColumns={{ smallMobile: '1fr', mobile: 'repeat(2, 1fr)' }}
         gap="base"
         marginBottom="base"
       >

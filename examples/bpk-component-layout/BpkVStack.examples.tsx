@@ -89,18 +89,36 @@ export const WithDifferentSpacing = () => (
 export const Responsive = () => (
   <Wrapper>
     <BpkStack.VStack
-      spacing={{ base: 'sm', mobile: 'base', desktop: 'lg' }}
+      spacing={{ smallMobile: 'sm', mobile: 'base', desktop: 'lg' }}
       padding="base"
       bg={BPK_COLOR_TOKENS.canvasContrast}
       borderRadius="md"
     >
-      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
+      <BpkBox
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceHighlight}
+        borderRadius="md"
+        width="100%"
+        overflow="hidden"
+      >
         Responsive VStack item 1
       </BpkBox>
-      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
+      <BpkBox
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceDefault}
+        borderRadius="md"
+        width="100%"
+        overflow="hidden"
+      >
         Responsive VStack item 2
       </BpkBox>
-      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
+      <BpkBox
+        padding="base"
+        bg={BPK_COLOR_TOKENS.surfaceElevated}
+        borderRadius="md"
+        width="100%"
+        overflow="hidden"
+      >
         Responsive VStack item 3
       </BpkBox>
     </BpkStack.VStack>

@@ -161,7 +161,7 @@ export default () => (
 <BpkBox
   padding="base"        // Backpack token → 16px → renders as 1rem
   margin={6}            // Numeric value → 6px → renders as 0.375rem
-  gap={{ base: "sm", smallTablet: 2 }}  // Mixed in responsive props
+  gap={{ smallMobile: "sm", smallTablet: 2 }}  // Mixed in responsive props
 >
   Content
 </BpkBox>
@@ -182,7 +182,7 @@ import BpkBox from '@skyscanner/backpack-web/bpk-component-layout';
 export default () => (
   <BpkBox
     width={{
-      base: '100%',
+      smallMobile: '100%',
       mobile: '50%',
       desktop: '33%',
     }}
@@ -199,6 +199,9 @@ export default () => (
 - `smallTablet` → maps to Chakra 'lg' (Backpack SMALL_TABLET)
 - `tablet` → maps to Chakra 'xl' (Backpack TABLET)
 - `desktop` → maps to Chakra '2xl' (Backpack DESKTOP)
+
+**Note about `base` breakpoint:**
+The `base` breakpoint is a special case that represents the default/base styles (typically for mobile-first design) and is defined in the theme as `0em`. While `base` is not a Backpack breakpoint token, it is supported for compatibility. However, **we recommend using `smallMobile` instead of `base`** for consistency with Backpack's design system.
 
 #### Alternative: Using Token Constants
 
