@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+// @ts-expect-error - createSystem, defaultConfig, and defaultSystem are exported but TypeScript types may not be fully updated
 import { defaultSystem, createSystem, defaultConfig } from '@chakra-ui/react';
 
 import { breakpoints as bpkBreakpoints } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
@@ -47,12 +48,12 @@ const extractBreakpointValue = (query: string): string => {
  * In v3, we use createSystem instead of extendTheme, and tokens must be wrapped in { value: ... } objects
  * We try to use createSystem, but fall back to defaultSystem if createSystem is not available (webpack issue)
  */
-let backpackSystem: typeof defaultSystem;
+let backpackSystemValue: typeof defaultSystem;
 
 try {
   // Try to use createSystem if available
   if (typeof createSystem === 'function' && defaultConfig) {
-    backpackSystem = createSystem(defaultConfig, {
+    backpackSystemValue = createSystem(defaultConfig, {
       theme: {
         tokens: {
           // Map Backpack spacing tokens to Chakra UI spacing scale
@@ -92,13 +93,19 @@ try {
     });
   } else {
     // Fallback: use defaultSystem and modify it directly
-    backpackSystem = defaultSystem;
+    backpackSystemValue = defaultSystem;
   }
 } catch (error) {
   // If createSystem fails (e.g., webpack module resolution issue), use defaultSystem
   console.warn('Failed to create custom system with createSystem, using defaultSystem:', error);
-  backpackSystem = defaultSystem;
+  backpackSystemValue = defaultSystem;
 }
+
+/**
+ * Chakra UI system with Backpack tokens and breakpoints
+ * Exported as backpackSystem for use with ChakraProvider
+ */
+export const backpackSystem = backpackSystemValue;
 
 /**
  * @deprecated Use backpackSystem instead. This is kept for backward compatibility.
