@@ -29,19 +29,35 @@ import STYLES from './BpkFieldset.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
-  children: ReactElement<any>;
-  label?: string | null;
+type BaseProps = {
+  children: ReactElement;
   disabled?: boolean;
   valid?: boolean | null;
   required?: boolean;
   className?: string | null;
   validationMessage?: string | null;
-  isCheckbox?: boolean;
   validationProps?: Record<string, any>;
   description?: string | null;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
+
+type CheckboxFieldsetProps = BaseProps & {
+  isCheckbox: true;
+  /**
+   * Optional when `isCheckbox` is true.
+   */
+  label?: string | null;
+};
+
+type NonCheckboxFieldsetProps = BaseProps & {
+  /**
+   * When `isCheckbox` is false or omitted, `label` is required.
+   */
+  isCheckbox?: false | undefined;
+  label: string;
+};
+
+export type Props = CheckboxFieldsetProps | NonCheckboxFieldsetProps;
 
 const BpkFieldset = ({
   children,

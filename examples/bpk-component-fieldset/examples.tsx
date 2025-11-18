@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import { cloneElement, Component } from 'react';
+import type { ReactElement } from 'react';
 
 import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
@@ -30,9 +30,12 @@ import {
   formatMonth,
   formatDateFull,
 } from '../../packages/bpk-component-calendar/test-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import BpkDatepicker from '../../packages/bpk-component-datepicker';
-import BpkFieldset from '../../packages/bpk-component-fieldset';
+import BpkFieldset, {
+  type BpkFieldsetProps,
+} from '../../packages/bpk-component-fieldset';
 import BpkInput, { INPUT_TYPES } from '../../packages/bpk-component-input';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../packages/bpk-component-select';
@@ -182,7 +185,7 @@ class Autosuggest extends Component<
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
           onSuggestionsClearRequested={this.onSuggestionsClearRequested}
           getSuggestionValue={getSuggestionValue}
-          renderSuggestion={(suggestion) => (
+          renderSuggestion={(suggestion: Office) => (
             <BpkAutosuggestSuggestion
               value={getSuggestionValue(suggestion)}
               indent={suggestion.indent}
@@ -218,11 +221,6 @@ class FieldsetContainer extends Component<
   FieldsetContainerProps,
   FieldsetContainerState
 > {
-  static propTypes = {
-    validStates: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
-    className: PropTypes.string,
-  };
-
   static defaultProps = {
     isCheckbox: false,
     disabled: false,
@@ -295,17 +293,19 @@ class FieldsetContainer extends Component<
     });
 
     const classNames = getClassName('bpk-fieldsets__fieldset', className);
+
+    const fieldsetProps = {
+      className: classNames,
+      isCheckbox,
+      valid,
+      ...rest,
+      ...dynamicFieldsetProps,
+      children: clonedChildren,
+    } as BpkFieldsetProps;
+
     return (
       <div className={getClassName('bpk-fieldsets__container')}>
-        <BpkFieldset
-          className={classNames}
-          isCheckbox={isCheckbox}
-          valid={valid}
-          {...rest}
-          {...dynamicFieldsetProps}
-        >
-          {clonedChildren}
-        </BpkFieldset>
+        <BpkFieldset {...fieldsetProps} />
         {!this.props.disabled && (
           <div className={getClassName('bpk-fieldsets__toggle')}>
             <BpkButton onClick={this.toggleStates}>Toggle states</BpkButton>
