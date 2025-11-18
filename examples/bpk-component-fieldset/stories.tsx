@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkFieldset from '../../packages/bpk-component-fieldset/src/BpkFieldset';
+import BpkFieldset from '../../packages/bpk-component-fieldset';
 
 import {
   InputExample,
@@ -62,7 +62,11 @@ export const VisualTest = MixedExample;
 
 export const SplitInput = SplitInputExample;
 
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true
+  },
 };
+
+

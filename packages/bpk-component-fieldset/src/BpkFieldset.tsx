@@ -15,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
-import type { Element } from 'react';
 import { cloneElement } from 'react';
+import type { ReactElement } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkFormValidation from '../../bpk-component-form-validation';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLabel from '../../bpk-component-label';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -30,17 +30,17 @@ import STYLES from './BpkFieldset.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  // TODO: Should this be something like `Element<typeof BpkInput | typeof BpkCheckbox | typeof BpkSelect>`?
-  children: Element<*>,
-  label: ?string,
-  disabled: boolean,
-  valid: ?boolean,
-  required: boolean,
-  className: ?string,
-  validationMessage: ?string,
-  isCheckbox: boolean,
-  validationProps: {},
-  description: ?string,
+  children: ReactElement<any>;
+  label?: string | null;
+  disabled?: boolean;
+  valid?: boolean | null;
+  required?: boolean;
+  className?: string | null;
+  validationMessage?: string | null;
+  isCheckbox?: boolean;
+  validationProps?: Record<string, any>;
+  description?: string | null;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const BpkFieldset = ({
@@ -60,34 +60,33 @@ const BpkFieldset = ({
     return null;
   }
 
-  // $FlowIgnore[prop-missing] - As children could be any element and might not have a value which is safe
-  let childId: string = children.props.id;
-  if (
-    // Flow is being dumb here and doesn't let us do this check, even though it's perfectly safe!
-    // $FlowIgnore[prop-missing]
-    // $FlowIgnore[sketchy-null-mixed]
-    children.props.inputProps &&
-    // $FlowIgnore[sketchy-null-mixed]
-    children.props.inputProps.id &&
-    typeof children.props.inputProps.id === 'string'
-  ) {
-    childId = children.props.inputProps.id;
+  // Get the child's id, checking both direct props and inputProps
+  const childProps = children.props as {
+    id?: string;
+    inputProps?: { id?: string };
+    valid?: boolean | null;
+  };
+
+  let childId: string = childProps.id || '';
+  if (childProps.inputProps?.id && typeof childProps.inputProps.id === 'string') {
+    childId = childProps.inputProps.id;
   }
 
   const classNames = [getClassName('bpk-fieldset')];
   const validationMessageId = `${childId}_validation_message`;
   const descriptionId = `${childId}_description`;
 
-  const isValid = isCheckbox ? valid : children.props.valid;
+  const isValid = isCheckbox ? valid : childProps.valid;
 
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid
   const isInvalid = isValid === false;
 
   const childrenProps: {
-    required?: boolean,
-    'aria-required'?: boolean,
-    'aria-describedby'?: string,
+    required?: boolean;
+    'aria-required'?: boolean;
+    'aria-describedby'?: string;
+    disabled?: boolean;
   } = {
     disabled,
   };
@@ -111,7 +110,6 @@ const BpkFieldset = ({
   }
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <fieldset className={classNames.join(' ')} {...rest}>
       {!isCheckbox && (
         <div className={getClassName('bpk-fieldset__label')}>
@@ -121,7 +119,6 @@ const BpkFieldset = ({
             disabled={disabled}
             valid={isValid}
           >
-            {/* $FlowIgnore[incompatible-type] - As this prop is only required when isCheckbox is false our labelPropType handles checking this is null or not. */}
             {label}
           </BpkLabel>
         </div>
@@ -136,7 +133,6 @@ const BpkFieldset = ({
         </span>
       )}
       {!disabled && validationMessage && (
-        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
         <BpkFormValidation
           id={validationMessageId}
           expanded={isInvalid}
@@ -150,47 +146,6 @@ const BpkFieldset = ({
   );
 };
 
-const labelPropType = (
-  props: { isCheckbox?: boolean, label?: ?string },
-  propName: string,
-) => {
-  const { isCheckbox, label } = props;
-  if (!label && !isCheckbox) {
-    return new Error(
-      `\`${propName}\` is required when \`isCheckbox\` is false.`,
-    );
-  }
-  return false;
-};
-
-export const propTypes = {
-  children: PropTypes.element.isRequired,
-  /**
-   * Required when `isCheckbox` is false.
-   */
-  label: labelPropType,
-  disabled: PropTypes.bool,
-  valid: PropTypes.bool,
-  required: PropTypes.bool,
-  className: PropTypes.string,
-  validationMessage: PropTypes.string,
-  isCheckbox: PropTypes.bool,
-  validationProps: PropTypes.object,
-  description: PropTypes.string,
-};
-
-export const defaultProps = {
-  label: null,
-  disabled: false,
-  valid: null,
-  required: false,
-  className: null,
-  validationMessage: null,
-  isCheckbox: false,
-  validationProps: {},
-  description: null,
-};
-
-BpkFieldset.propTypes = { ...propTypes };
-
 export default BpkFieldset;
+
+
