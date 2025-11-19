@@ -20,7 +20,7 @@
 
 import { Component } from 'react';
 
-import BpkButton from '../../packages/bpk-component-button';
+import { BpkButtonV2, BUTTON_TYPES } from '../../packages/bpk-component-button';
 import BpkProgress from '../../packages/bpk-component-progress';
 import { cssModules } from '../../packages/bpk-react-utils';
 
@@ -41,20 +41,20 @@ class ProgressContainer extends Component<{}, { progress: number }> {
     const { progress } = this.state;
     return (
       <div className={getClassName('bpkdocs-progress-container__flex')}>
-        <BpkButton
-          secondary
+        <BpkButtonV2
           onClick={() => this.setState({ progress: 0 })}
           disabled={progress === 0}
+          type={BUTTON_TYPES.secondary}
         >
           Reset
-        </BpkButton>
+        </BpkButtonV2>
         &nbsp;
-        <BpkButton
+        <BpkButtonV2
           onClick={() => this.setState({ progress: progress + 50 })}
           disabled={progress === 100}
         >
           Go!
-        </BpkButton>
+        </BpkButtonV2>
         &nbsp;
         <div className={getClassName('bpkdocs-progress-container__flex-grow')}>
           {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
@@ -93,20 +93,20 @@ class SteppedProgressContainer extends Component<{}, { progress: number }> {
         />
         <br />
         <div className={getClassName('bpkdocs-progress-container__flex')}>
-          <BpkButton
-            secondary
+          <BpkButtonV2
             onClick={() => this.setProgress(this.state.progress - 1)}
             disabled={this.state.progress <= 1}
+            type={BUTTON_TYPES.secondary}
           >
             Back
-          </BpkButton>
+          </BpkButtonV2>
           <span>{`Step ${this.state.progress} of 5`}</span>
-          <BpkButton
+          <BpkButtonV2
             onClick={() => this.setProgress(this.state.progress + 1)}
             disabled={this.state.progress === 5}
           >
             Continue
-          </BpkButton>
+          </BpkButtonV2>
         </div>
       </div>
     );

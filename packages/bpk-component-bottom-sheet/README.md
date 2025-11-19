@@ -11,7 +11,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ```js
 import { Component } from 'react';
 import BpkBottomSheet, { PADDING_TYPE } from '@skyscanner/backpack-web/bpk-component-bottom-sheet';
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import { BpkButtonV2 } from '@skyscanner/backpack-web/bpk-component-button';
 
 class App extends Component {
   constructor() {
@@ -38,7 +38,7 @@ class App extends Component {
     return (
       <div id="bottom-sheet-container">
         <div id="pagewrap">
-          <BpkButton onClick={this.onOpen}>Open bottom sheet</BpkButton>
+          <BpkButtonV2 onClick={this.onOpen}>Open bottom sheet</BpkButtonV2>
         </div>
         <BpkBottomSheet
           id="my-bottom-sheet"
