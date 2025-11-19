@@ -258,7 +258,7 @@ const WithFullHeightContentExample = () => (
     contentClassName={getClassName('bpk-drawer-content-container')}
   >
     This is a flex drawer. You can put anything you want in here.
-    <BpkButtonV2 className={getClassName('bpk-drawer-button')} type={BUTTON_TYPES.secondary}>
+    <BpkButtonV2 type={BUTTON_TYPES.secondary} className={getClassName('bpk-drawer-button')}>
       I don&apos;t do anything.
     </BpkButtonV2>
   </DrawerContainer>

@@ -42,9 +42,9 @@ class ProgressContainer extends Component<{}, { progress: number }> {
     return (
       <div className={getClassName('bpkdocs-progress-container__flex')}>
         <BpkButtonV2
+          type={BUTTON_TYPES.secondary}
           onClick={() => this.setState({ progress: 0 })}
           disabled={progress === 0}
-          type={BUTTON_TYPES.secondary}
         >
           Reset
         </BpkButtonV2>
@@ -94,9 +94,9 @@ class SteppedProgressContainer extends Component<{}, { progress: number }> {
         <br />
         <div className={getClassName('bpkdocs-progress-container__flex')}>
           <BpkButtonV2
+            type={BUTTON_TYPES.secondary}
             onClick={() => this.setProgress(this.state.progress - 1)}
             disabled={this.state.progress <= 1}
-            type={BUTTON_TYPES.secondary}
           >
             Back
           </BpkButtonV2>
