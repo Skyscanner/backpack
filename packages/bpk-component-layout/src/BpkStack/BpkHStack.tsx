@@ -16,24 +16,30 @@
  * limitations under the License.
  */
 
-import { HStack } from '@chakra-ui/react';
+import type { ElementType } from 'react';
 
+import { getClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+
+import STYLES from './BpkStack.module.scss';
 
 import type { BpkHStackProps } from './BpkStack.types';
 
 export type Props = BpkHStackProps;
 
+const getClass = getClassName(STYLES);
+
 /**
  * BpkHStack is a layout component that arranges its children in a horizontal line.
- * It's a convenience component that wraps Chakra UI's HStack with Backpack-specific API.
+ * It's a convenience component that sets `direction="row"` by default.
  *
  * **Key Features:**
  * - Automatically sets `direction="row"` for horizontal stacking
  * - Accepts Backpack spacing tokens as strings (e.g., `spacing="base"` instead of `spacing={4}`)
  * - Accepts Backpack breakpoint tokens in responsive props
  * - Accepts Backpack color tokens for color-related props
- * - Does not support className prop to maintain Backpack design system consistency
+ * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
+ * - Supports SSR out of the box
  *
  * @param {Props} props - The component props
  * @returns {JSX.Element} The rendered BpkHStack component
@@ -53,21 +59,34 @@ export type Props = BpkHStackProps;
  * ```
  */
 const BpkHStack = ({
-  as,
+  as = 'div',
   children,
+  spacing,
   ...rest
 }: Props) => {
-  const transformedProps = transformBpkLayoutProps(rest);
+  // Map spacing prop to gap prop and set direction to row
+  const propsWithGap = {
+    ...rest,
+    gap: spacing,
+    flexDirection: 'row' as const,
+  };
+
+  const { className, style, restProps } = transformBpkLayoutProps(propsWithGap);
+  const Component = as as ElementType;
+
+  // Split className string into individual class names for CSS Modules mapping
+  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
+  const finalClassName = getClass('bpk-stack', 'stack-direction-row', ...classNameParts);
 
   return (
-    <HStack
-      as={as}
-      {...transformedProps}
+    <Component
+      className={finalClassName || undefined}
+      style={style}
+      {...restProps}
     >
       {children}
-    </HStack>
+    </Component>
   );
 };
 
 export default BpkHStack;
-

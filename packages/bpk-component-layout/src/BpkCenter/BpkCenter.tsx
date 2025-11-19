@@ -16,22 +16,28 @@
  * limitations under the License.
  */
 
-import { Center } from '@chakra-ui/react';
+import type { ElementType } from 'react';
 
+import { getClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+
+import STYLES from './BpkCenter.module.scss';
 
 import type { BpkCenterProps } from './BpkCenter.types';
 
 export type Props = BpkCenterProps;
 
+const getClass = getClassName(STYLES);
+
 /**
- * BpkCenter is a layout component that centers its child using Chakra UI's Center component.
- * It follows the facade pattern, wrapping Chakra UI's Center to provide a Backpack-specific API.
+ * BpkCenter is a layout component that centers its child using CSS Modules.
+ * It uses static CSS classes compiled at build time for optimal performance and SSR support.
  *
  * **Key Features:**
  * - Horizontally and vertically centers its child using display: flex
  * - Accepts Backpack spacing and color tokens
- * - Does not support className prop to maintain Backpack design system consistency
+ * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
+ * - Supports SSR out of the box
  *
  * @param {Props} props - The component props
  * @returns {JSX.Element} The rendered BpkCenter component
@@ -43,21 +49,26 @@ export type Props = BpkCenterProps;
  * ```
  */
 const BpkCenter = ({
-  as,
+  as = 'div',
   children,
   ...rest
 }: Props) => {
-  const transformedProps = transformBpkLayoutProps(rest);
+  const { className, style, restProps } = transformBpkLayoutProps(rest);
+  const Component = as as ElementType;
+
+  // Split className string into individual class names for CSS Modules mapping
+  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
+  const finalClassName = getClass('bpk-center', ...classNameParts);
 
   return (
-    <Center
-      as={as}
-      {...transformedProps}
+    <Component
+      className={finalClassName || undefined}
+      style={style}
+      {...restProps}
     >
       {children}
-    </Center>
+    </Component>
   );
 };
 
 export default BpkCenter;
-

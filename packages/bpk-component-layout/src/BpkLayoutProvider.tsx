@@ -18,38 +18,35 @@
 
 import type { ReactNode } from 'react';
 
-import { ChakraProvider } from '@chakra-ui/react';
-
-import { backpackSystem } from './backpackTheme';
-
 export type BpkLayoutProviderProps = {
   children: ReactNode;
 };
 
 /**
- * BpkLayoutProvider wraps Chakra UI's ChakraProvider with Backpack's theme configuration.
- * This ensures that BpkBox and other layout components use Backpack's tokens and breakpoints.
+ * BpkLayoutProvider is a no-op component that exists for backward compatibility.
+ * 
+ * **Note:** With CSS Modules implementation, BpkLayoutProvider is no longer required.
+ * Layout components now use static CSS classes compiled at build time, so no runtime
+ * theme provider is needed. This component is kept for API compatibility but does nothing.
  *
- * **Important:** This should be placed at the root of your application, wrapping all components
- * that use BpkBox or other layout components.
+ * **Migration:** You can safely remove BpkLayoutProvider from your code. All layout
+ * components will work without it.
  *
  * @param {BpkLayoutProviderProps} props - The component props
- * @returns {JSX.Element} The rendered BpkLayoutProvider component
+ * @returns {JSX.Element} The rendered children
  * @example
  * ```tsx
- * import { BpkLayoutProvider } from '@skyscanner/backpack-web/bpk-component-layout';
+ * // Old usage (still works but not required)
+ * <BpkLayoutProvider>
+ *   <YourApp />
+ * </BpkLayoutProvider>
  *
- * function App() {
- *   return (
- *     <BpkLayoutProvider>
- *       <YourApp />
- *     </BpkLayoutProvider>
- *   );
- * }
+ * // New usage (recommended)
+ * <YourApp />
  * ```
  */
-// @ts-expect-error - ChakraProvider accepts 'value' prop in v3 but TypeScript types may not be fully updated
-export const BpkLayoutProvider = ({ children }: BpkLayoutProviderProps) => <ChakraProvider value={backpackSystem}>{children}</ChakraProvider>;
+export const BpkLayoutProvider = ({ children }: BpkLayoutProviderProps) => {
+  return <>{children}</>;
+};
 
 export default BpkLayoutProvider;
-

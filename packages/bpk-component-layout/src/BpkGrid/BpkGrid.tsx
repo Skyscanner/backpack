@@ -16,23 +16,29 @@
  * limitations under the License.
  */
 
-import { Grid } from '@chakra-ui/react';
+import type { ElementType } from 'react';
 
+import { getClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+
+import STYLES from './BpkGrid.module.scss';
 
 import type { BpkGridProps } from './BpkGrid.types';
 
 export type Props = BpkGridProps;
 
+const getClass = getClassName(STYLES);
+
 /**
- * BpkGrid is a layout component that provides a grid container using Chakra UI's Grid component.
- * It follows the facade pattern, wrapping Chakra UI's Grid to provide a Backpack-specific API.
+ * BpkGrid is a layout component that provides a grid container using CSS Modules.
+ * It uses static CSS classes compiled at build time for optimal performance and SSR support.
  *
  * **Key Features:**
  * - Accepts Backpack spacing tokens as strings (e.g., `padding="base"` instead of `padding={4}`)
  * - Accepts Backpack breakpoint tokens in responsive props (e.g., `{ mobile: "base", desktop: "lg" }`)
  * - Accepts Backpack color tokens for color-related props
- * - Does not support className prop to maintain Backpack design system consistency
+ * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
+ * - Supports SSR out of the box
  *
  * @param {Props} props - The component props
  * @returns {JSX.Element} The rendered BpkGrid component
@@ -52,32 +58,42 @@ export type Props = BpkGridProps;
  * // Using responsive props with Backpack breakpoints
  * <BpkGrid
  *   gridTemplateColumns={{
- *     base: "1fr",
+ *     smallMobile: "1fr",
  *     mobile: "repeat(2, 1fr)",
  *     desktop: "repeat(3, 1fr)"
  *   }}
- *   gap={{ base: "sm", desktop: "lg" }}
+ *   gap={{ smallMobile: "sm", desktop: "lg" }}
  * >
  *   Responsive grid layout
  * </BpkGrid>
  * ```
  */
 const BpkGrid = ({
-  as,
+  as = 'div',
   children,
   ...rest
 }: Props) => {
-  const transformedProps = transformBpkLayoutProps(rest);
+  const { className, style, restProps } = transformBpkLayoutProps(rest);
+  const Component = as as ElementType;
+
+  // Handle gridTemplateColumns specially if it's a string
+  if (rest.gridTemplateColumns && typeof rest.gridTemplateColumns === 'string') {
+    style.gridTemplateColumns = rest.gridTemplateColumns;
+  }
+
+  // Split className string into individual class names for CSS Modules mapping
+  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
+  const finalClassName = getClass('bpk-grid', ...classNameParts);
 
   return (
-    <Grid
-      as={as}
-      {...transformedProps}
+    <Component
+      className={finalClassName || undefined}
+      style={style}
+      {...restProps}
     >
       {children}
-    </Grid>
+    </Component>
   );
 };
 
 export default BpkGrid;
-

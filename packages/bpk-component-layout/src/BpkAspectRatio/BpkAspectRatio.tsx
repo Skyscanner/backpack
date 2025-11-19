@@ -16,23 +16,29 @@
  * limitations under the License.
  */
 
-import { AspectRatio } from '@chakra-ui/react';
+import type { ElementType } from 'react';
 
+import { getClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+
+import STYLES from './BpkAspectRatio.module.scss';
 
 import type { BpkAspectRatioProps } from './BpkAspectRatio.types';
 
 export type Props = BpkAspectRatioProps;
 
+const getClass = getClassName(STYLES);
+
 /**
- * BpkAspectRatio is a layout component that maintains aspect ratio using Chakra UI's AspectRatio component.
- * It follows the facade pattern, wrapping Chakra UI's AspectRatio to provide a Backpack-specific API.
+ * BpkAspectRatio is a layout component that maintains aspect ratio using CSS Modules.
+ * It uses static CSS classes compiled at build time for optimal performance and SSR support.
  *
  * **Key Features:**
  * - Maintains a desired aspect ratio for its child
  * - Commonly used for cropping media (videos, images, maps)
  * - Accepts Backpack spacing and color tokens
- * - Does not support className prop to maintain Backpack design system consistency
+ * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
+ * - Supports SSR out of the box
  *
  * @param {Props} props - The component props
  * @returns {JSX.Element} The rendered BpkAspectRatio component
@@ -44,21 +50,46 @@ export type Props = BpkAspectRatioProps;
  * ```
  */
 const BpkAspectRatio = ({
-  as,
+  as = 'div',
   children,
+  ratio,
   ...rest
 }: Props) => {
-  const transformedProps = transformBpkLayoutProps(rest);
+  const { className, style, restProps } = transformBpkLayoutProps(rest);
+  const Component = as as ElementType;
+
+  // Calculate padding-bottom percentage for aspect ratio
+  // ratio = width / height, so padding-bottom = (1 / ratio) * 100%
+  let paddingBottom = '56.25%'; // Default 16:9
+
+  if (ratio !== undefined) {
+    if (typeof ratio === 'number') {
+      paddingBottom = `${(1 / ratio) * 100}%`;
+    } else if (typeof ratio === 'object' && ratio !== null) {
+      // For responsive ratio, use the first breakpoint value as default
+      const firstValue = Object.values(ratio)[0];
+      if (typeof firstValue === 'number') {
+        paddingBottom = `${(1 / firstValue) * 100}%`;
+      }
+    }
+  }
+
+  // Split className string into individual class names for CSS Modules mapping
+  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
+  const finalClassName = getClass('bpk-aspect-ratio', ...classNameParts);
 
   return (
-    <AspectRatio
-      as={as}
-      {...transformedProps}
+    <Component
+      className={finalClassName || undefined}
+      style={{
+        ...style,
+        '--bpk-aspect-ratio': paddingBottom,
+      } as React.CSSProperties}
+      {...restProps}
     >
       {children}
-    </AspectRatio>
+    </Component>
   );
 };
 
 export default BpkAspectRatio;
-

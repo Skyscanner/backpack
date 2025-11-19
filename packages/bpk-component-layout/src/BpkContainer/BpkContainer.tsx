@@ -16,49 +16,60 @@
  * limitations under the License.
  */
 
-import { Container } from '@chakra-ui/react';
+import type { ElementType } from 'react';
 
+import { getClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+
+import STYLES from './BpkContainer.module.scss';
 
 import type { BpkContainerProps } from './BpkContainer.types';
 
 export type Props = BpkContainerProps;
 
+const getClass = getClassName(STYLES);
+
 /**
- * BpkContainer is a layout component that provides a container layout using Chakra UI's Container component.
- * It follows the facade pattern, wrapping Chakra UI's Container to provide a Backpack-specific API.
+ * BpkContainer is a layout component that provides a container layout using CSS Modules.
+ * It uses static CSS classes compiled at build time for optimal performance and SSR support.
  *
  * **Key Features:**
  * - Sets margin-left and margin-right to auto to keep content centered
  * - Sets a default max-width
  * - Accepts Backpack spacing and color tokens
- * - Does not support className prop to maintain Backpack design system consistency
+ * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
+ * - Supports SSR out of the box
  *
  * @param {Props} props - The component props
  * @returns {JSX.Element} The rendered BpkContainer component
  * @example
  * ```tsx
- * <BpkContainer centerContent padding="base">
+ * <BpkContainer padding="base">
  *   Content here
  * </BpkContainer>
  * ```
  */
 const BpkContainer = ({
-  as,
+  as = 'div',
   children,
   ...rest
 }: Props) => {
-  const transformedProps = transformBpkLayoutProps(rest);
+  const { className, style, restProps } = transformBpkLayoutProps(rest);
+  const Component = as as ElementType;
+
+  // Split className string into individual class names for CSS Modules mapping
+  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
+  const finalClassName = getClass('bpk-container', ...classNameParts);
 
   return (
-    <Container
-      as={as}
-      {...transformedProps}
+    <Component
+      className={finalClassName || undefined}
+      style={style}
+      {...restProps}
     >
       {children}
-    </Container>
+    </Component>
   );
 };
 
 export default BpkContainer;
-

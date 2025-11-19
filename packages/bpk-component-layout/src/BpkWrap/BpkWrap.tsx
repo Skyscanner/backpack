@@ -16,23 +16,29 @@
  * limitations under the License.
  */
 
-import { Wrap } from '@chakra-ui/react';
+import type { ElementType } from 'react';
 
+import { getClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+
+import STYLES from './BpkWrap.module.scss';
 
 import type { BpkWrapProps } from './BpkWrap.types';
 
 export type Props = BpkWrapProps;
 
+const getClass = getClassName(STYLES);
+
 /**
- * BpkWrap is a layout component that provides a wrap layout using Chakra UI's Wrap component.
- * It follows the facade pattern, wrapping Chakra UI's Wrap to provide a Backpack-specific API.
+ * BpkWrap is a layout component that provides a wrap layout using CSS Modules.
+ * It uses static CSS classes compiled at build time for optimal performance and SSR support.
  *
  * **Key Features:**
  * - Wraps children and provides spacing between them
  * - Accepts Backpack spacing tokens as strings (e.g., `spacing="base"`)
  * - Accepts Backpack color tokens for color-related props
- * - Does not support className prop to maintain Backpack design system consistency
+ * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
+ * - Supports SSR out of the box
  *
  * @param {Props} props - The component props
  * @returns {JSX.Element} The rendered BpkWrap component
@@ -45,21 +51,34 @@ export type Props = BpkWrapProps;
  * ```
  */
 const BpkWrap = ({
-  as,
+  as = 'div',
   children,
+  spacing,
   ...rest
 }: Props) => {
-  const transformedProps = transformBpkLayoutProps(rest);
+  // Map spacing prop to gap prop
+  const propsWithGap = {
+    ...rest,
+    gap: spacing,
+    flexWrap: 'wrap',
+  };
+
+  const { className, style, restProps } = transformBpkLayoutProps(propsWithGap);
+  const Component = as as ElementType;
+
+  // Split className string into individual class names for CSS Modules mapping
+  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
+  const finalClassName = getClass('bpk-wrap', ...classNameParts);
 
   return (
-    <Wrap
-      as={as}
-      {...transformedProps}
+    <Component
+      className={finalClassName || undefined}
+      style={style}
+      {...restProps}
     >
       {children}
-    </Wrap>
+    </Component>
   );
 };
 
 export default BpkWrap;
-

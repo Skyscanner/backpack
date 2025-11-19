@@ -16,23 +16,29 @@
  * limitations under the License.
  */
 
-import { Box } from '@chakra-ui/react';
+import type { ElementType } from 'react';
 
+import { getClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+
+import STYLES from './BpkGroup.module.scss';
 
 import type { BpkGroupProps } from './BpkGroup.types';
 
 export type Props = BpkGroupProps;
 
+const getClass = getClassName(STYLES);
+
 /**
- * BpkGroup is a layout component that groups related elements together.
- * It wraps Chakra UI's Box with flexbox styling to provide a Backpack-specific API.
+ * BpkGroup is a layout component that groups related elements together using CSS Modules.
+ * It uses static CSS classes compiled at build time for optimal performance and SSR support.
  *
  * **Key Features:**
  * - Groups related elements with consistent spacing
  * - Uses flexbox for layout
  * - Accepts Backpack spacing and color tokens
- * - Does not support className prop to maintain Backpack design system consistency
+ * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
+ * - Supports SSR out of the box
  *
  * @param {Props} props - The component props
  * @returns {JSX.Element} The rendered BpkGroup component
@@ -45,27 +51,32 @@ export type Props = BpkGroupProps;
  * ```
  */
 const BpkGroup = ({
-  as,
+  as = 'div',
   children,
   ...rest
 }: Props) => {
-  const transformedProps = transformBpkLayoutProps(rest);
-
   // Set default display to flex for grouping behavior
   const propsWithDisplay = {
     display: 'flex',
-    ...transformedProps,
+    ...rest,
   };
 
+  const { className, style, restProps } = transformBpkLayoutProps(propsWithDisplay);
+  const Component = as as ElementType;
+
+  // Split className string into individual class names for CSS Modules mapping
+  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
+  const finalClassName = getClass('bpk-group', ...classNameParts);
+
   return (
-    <Box
-      as={as}
-      {...propsWithDisplay}
+    <Component
+      className={finalClassName || undefined}
+      style={style}
+      {...restProps}
     >
       {children}
-    </Box>
+    </Component>
   );
 };
 
 export default BpkGroup;
-

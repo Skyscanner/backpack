@@ -1,0 +1,289 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/breakpoints';
+
+// Spacing values map (Backpack tokens to rem values)
+// Note: bpk-spacing-none() function doesn't exist, use variable or 0
+$spacing-map: (
+  'none': tokens.$bpk-spacing-none, // 0
+  'sm': tokens.bpk-spacing-sm(), // 0.25rem (4px)
+  'md': tokens.bpk-spacing-md(), // 0.5rem (8px)
+  'base': tokens.bpk-spacing-base(), // 1rem (16px)
+  'lg': tokens.bpk-spacing-lg(), // 1.5rem (24px)
+  'xl': tokens.bpk-spacing-xl(), // 2rem (32px)
+  'xxl': tokens.bpk-spacing-xxl(), // 2.5rem (40px)
+  'xxxl': tokens.bpk-spacing-xxxl(), // 4rem (64px)
+  'xxxxl': tokens.bpk-spacing-xxxxl(), // 6rem (96px)
+);
+
+// Helper function to get spacing value
+@function get-spacing($token) {
+  @if map-has-key($spacing-map, $token) {
+    @return map-get($spacing-map, $token);
+  }
+  // If it's a number, assume it's a pixel value and convert to rem
+  @if type-of($token) == number {
+    @return #{$token / 16}rem;
+  }
+  @return $token;
+}
+
+// Generate spacing utility classes
+@mixin generate-spacing-utilities($property, $prefix) {
+  // Generate base utilities (no breakpoint)
+  @each $token, $value in $spacing-map {
+    .#{$prefix}-#{$token} {
+      #{$property}: $value;
+    }
+  }
+
+  // Generate responsive variants - classes are defined globally, media queries apply them
+  @each $token, $value in $spacing-map {
+    .#{$prefix}-#{$token}-smallMobile {
+      @include breakpoints.bpk-breakpoint-small-mobile {
+        #{$property}: $value;
+      }
+    }
+
+    .#{$prefix}-#{$token}-mobile {
+      @include breakpoints.bpk-breakpoint-mobile {
+        #{$property}: $value;
+      }
+    }
+
+    .#{$prefix}-#{$token}-smallTablet {
+      @include breakpoints.bpk-breakpoint-small-tablet {
+        #{$property}: $value;
+      }
+    }
+
+    .#{$prefix}-#{$token}-tablet {
+      @include breakpoints.bpk-breakpoint-tablet {
+        #{$property}: $value;
+      }
+    }
+
+    .#{$prefix}-#{$token}-desktop {
+      @include breakpoints.bpk-breakpoint-above-tablet {
+        #{$property}: $value;
+      }
+    }
+  }
+}
+
+// Color map (Backpack color tokens to CSS custom properties)
+$color-map: (
+  // Text colors
+  'textPrimary': tokens.$bpk-text-primary-day,
+  'textSecondary': tokens.$bpk-text-secondary-day,
+  'textDisabled': tokens.$bpk-text-disabled-day,
+  'textOnDark': tokens.$bpk-text-on-dark-day,
+  'textOnLight': tokens.$bpk-text-on-light-day,
+  'textLink': tokens.$bpk-text-link-day,
+  'textError': tokens.$bpk-text-error-day,
+  'textSuccess': tokens.$bpk-text-success-day,
+  'textHero': tokens.$bpk-text-hero-day,
+  'textPrimaryInverse': tokens.$bpk-text-primary-inverse-day,
+  'textDisabledOnDark': tokens.$bpk-text-disabled-on-dark-day,
+  // Background colors
+  'canvas': tokens.$bpk-canvas-day,
+  'canvasContrast': tokens.$bpk-canvas-contrast-day,
+  'surfaceDefault': tokens.$bpk-surface-default-day,
+  'surfaceHighlight': tokens.$bpk-surface-highlight-day,
+  'surfaceElevated': tokens.$bpk-surface-elevated-day,
+  // Brand colors
+  'corePrimary': tokens.$bpk-core-primary-day,
+  'coreAccent': tokens.$bpk-core-accent-day,
+  'corePrimaryDark': tokens.$bpk-core-primary-day,
+  // Border colors
+  'line': tokens.$bpk-line-day,
+  'lineOnDark': tokens.$bpk-line-on-dark-day,
+  // Status colors (using CSS variables directly)
+  'statusSuccess': var(--bpk-status-success-day, rgb(0, 138, 0)),
+  'statusSuccessFill': var(--bpk-status-success-fill-day, rgb(230, 255, 230)),
+  'statusWarning': var(--bpk-status-warning-day, rgb(255, 187, 0)),
+  'statusWarningFill': var(--bpk-status-warning-fill-day, rgb(255, 250, 230)),
+  'statusError': var(--bpk-status-error-day, rgb(207, 47, 47)),
+  'statusErrorFill': var(--bpk-status-error-fill-day, rgb(255, 230, 230)),
+);
+
+// Generate color utility classes
+@mixin generate-color-utilities($property, $prefix) {
+  // Generate base utilities (no breakpoint)
+  @each $token, $value in $color-map {
+    .#{$prefix}-#{$token} {
+      #{$property}: $value;
+    }
+  }
+
+  // Generate responsive variants - classes are defined globally, media queries apply them
+  @each $token, $value in $color-map {
+    .#{$prefix}-#{$token}-smallMobile {
+      @include breakpoints.bpk-breakpoint-small-mobile {
+        #{$property}: $value;
+      }
+    }
+
+    .#{$prefix}-#{$token}-mobile {
+      @include breakpoints.bpk-breakpoint-mobile {
+        #{$property}: $value;
+      }
+    }
+
+    .#{$prefix}-#{$token}-smallTablet {
+      @include breakpoints.bpk-breakpoint-small-tablet {
+        #{$property}: $value;
+      }
+    }
+
+    .#{$prefix}-#{$token}-tablet {
+      @include breakpoints.bpk-breakpoint-tablet {
+        #{$property}: $value;
+      }
+    }
+
+    .#{$prefix}-#{$token}-desktop {
+      @include breakpoints.bpk-breakpoint-above-tablet {
+        #{$property}: $value;
+      }
+    }
+  }
+}
+
+// Layout utility classes
+@mixin generate-layout-utilities {
+  // Display utilities
+  .display-block { display: block; }
+  .display-inline { display: inline; }
+  .display-inlineBlock { display: inline-block; }
+  .display-flex { display: flex; }
+  .display-grid { display: grid; }
+  .display-none { display: none; }
+
+  // Flexbox utilities
+  .flex-direction-row { flex-direction: row; }
+  .flex-direction-column { flex-direction: column; }
+  .flex-direction-rowReverse { flex-direction: row-reverse; }
+  .flex-direction-columnReverse { flex-direction: column-reverse; }
+
+  .flex-wrap-nowrap { flex-wrap: nowrap; }
+  .flex-wrap-wrap { flex-wrap: wrap; }
+  .flex-wrap-wrapReverse { flex-wrap: wrap-reverse; }
+
+  .align-items-flexStart { align-items: flex-start; }
+  .align-items-flexEnd { align-items: flex-end; }
+  .align-items-center { align-items: center; }
+  .align-items-baseline { align-items: baseline; }
+  .align-items-stretch { align-items: stretch; }
+
+  .justify-content-flexStart { justify-content: flex-start; }
+  .justify-content-flexEnd { justify-content: flex-end; }
+  .justify-content-center { justify-content: center; }
+  .justify-content-spaceBetween { justify-content: space-between; }
+  .justify-content-spaceAround { justify-content: space-around; }
+  .justify-content-spaceEvenly { justify-content: space-evenly; }
+
+  // Grid utilities
+  .grid-template-columns-1fr { grid-template-columns: 1fr; }
+  .grid-template-columns-repeat2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-template-columns-repeat3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-template-columns-repeat4 { grid-template-columns: repeat(4, 1fr); }
+
+  // Overflow utilities
+  .overflow-hidden { overflow: hidden; }
+  .overflow-visible { overflow: visible; }
+  .overflow-scroll { overflow: scroll; }
+  .overflow-auto { overflow: auto; }
+
+  // Position utilities
+  .position-static { position: static; }
+  .position-relative { position: relative; }
+  .position-absolute { position: absolute; }
+  .position-fixed { position: fixed; }
+  .position-sticky { position: sticky; }
+}
+
+// Responsive layout utilities
+@mixin generate-responsive-layout-utilities {
+  // Responsive display utilities
+  .display-flex-smallMobile {
+    @include breakpoints.bpk-breakpoint-small-mobile {
+      display: flex;
+    }
+  }
+  .display-grid-smallMobile {
+    @include breakpoints.bpk-breakpoint-small-mobile {
+      display: grid;
+    }
+  }
+  .flex-direction-column-smallMobile {
+    @include breakpoints.bpk-breakpoint-small-mobile {
+      flex-direction: column;
+    }
+  }
+  .flex-direction-row-smallMobile {
+    @include breakpoints.bpk-breakpoint-small-mobile {
+      flex-direction: row;
+    }
+  }
+
+  .display-flex-mobile {
+    @include breakpoints.bpk-breakpoint-mobile {
+      display: flex;
+    }
+  }
+  .display-grid-mobile {
+    @include breakpoints.bpk-breakpoint-mobile {
+      display: grid;
+    }
+  }
+  .flex-direction-column-mobile {
+    @include breakpoints.bpk-breakpoint-mobile {
+      flex-direction: column;
+    }
+  }
+  .flex-direction-row-mobile {
+    @include breakpoints.bpk-breakpoint-mobile {
+      flex-direction: row;
+    }
+  }
+
+  .display-flex-desktop {
+    @include breakpoints.bpk-breakpoint-above-tablet {
+      display: flex;
+    }
+  }
+  .display-grid-desktop {
+    @include breakpoints.bpk-breakpoint-above-tablet {
+      display: grid;
+    }
+  }
+  .flex-direction-column-desktop {
+    @include breakpoints.bpk-breakpoint-above-tablet {
+      flex-direction: column;
+    }
+  }
+  .flex-direction-row-desktop {
+    @include breakpoints.bpk-breakpoint-above-tablet {
+      flex-direction: row;
+    }
+  }
+}
+

@@ -16,46 +16,60 @@
  * limitations under the License.
  */
 
-import { Divider } from '@chakra-ui/react';
+import type { ElementType } from 'react';
 
+import { getClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+
+import STYLES from './BpkSeparator.module.scss';
 
 import type { BpkSeparatorProps } from './BpkSeparator.types';
 
 export type Props = BpkSeparatorProps;
 
+const getClass = getClassName(STYLES);
+
 /**
- * BpkSeparator is a layout component that provides a visual separator using Chakra UI's Divider component.
- * It follows the facade pattern, wrapping Chakra UI's Divider to provide a Backpack-specific API.
+ * BpkSeparator is a layout component that provides a visual separator using CSS Modules.
+ * It uses static CSS classes compiled at build time for optimal performance and SSR support.
  *
  * **Key Features:**
  * - Creates a visual separator line
  * - Can be horizontal or vertical
  * - Accepts Backpack spacing and color tokens
- * - Does not support className prop to maintain Backpack design system consistency
+ * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
+ * - Supports SSR out of the box
  *
  * @param {Props} props - The component props
  * @returns {JSX.Element} The rendered BpkSeparator component
  * @example
  * ```tsx
- * <BpkSeparator orientation="horizontal" color="line" />
+ * <BpkSeparator orientation="horizontal" borderColor="line" />
  * ```
  */
 const BpkSeparator = ({
-  as,
+  as = 'hr',
+  orientation = 'horizontal',
   ...rest
 }: Props) => {
-  const transformedProps = transformBpkLayoutProps(rest, {
+  const { className, style, restProps } = transformBpkLayoutProps(rest, {
     disallowedProps: ['className', 'children'], // Separator doesn't accept children
   });
+  const Component = as as ElementType;
+
+  const orientationClass = `separator-orientation-${orientation}`;
+
+  // Split className string into individual class names for CSS Modules mapping
+  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
+  const finalClassName = getClass('bpk-separator', orientationClass, ...classNameParts);
 
   return (
-    <Divider
-      as={as}
-      {...transformedProps}
+    <Component
+      className={finalClassName || undefined}
+      style={style}
+      {...restProps}
     />
   );
 };
 
 export default BpkSeparator;
-

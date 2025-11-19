@@ -16,23 +16,29 @@
  * limitations under the License.
  */
 
-import { Flex } from '@chakra-ui/react';
+import type { ElementType } from 'react';
 
+import { getClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+
+import STYLES from './BpkFlex.module.scss';
 
 import type { BpkFlexProps } from './BpkFlex.types';
 
 export type Props = BpkFlexProps;
 
+const getClass = getClassName(STYLES);
+
 /**
- * BpkFlex is a layout component that provides a flexbox container using Chakra UI's Flex component.
- * It follows the facade pattern, wrapping Chakra UI's Flex to provide a Backpack-specific API.
+ * BpkFlex is a layout component that provides a flexbox container using CSS Modules.
+ * It uses static CSS classes compiled at build time for optimal performance and SSR support.
  *
  * **Key Features:**
  * - Accepts Backpack spacing tokens as strings (e.g., `padding="base"` instead of `padding={4}`)
  * - Accepts Backpack breakpoint tokens in responsive props (e.g., `{ mobile: "base", desktop: "lg" }`)
  * - Accepts Backpack color tokens for color-related props
- * - Does not support className prop to maintain Backpack design system consistency
+ * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
+ * - Supports SSR out of the box
  *
  * @param {Props} props - The component props
  * @returns {JSX.Element} The rendered BpkFlex component
@@ -46,29 +52,34 @@ export type Props = BpkFlexProps;
  *
  * // Using responsive props with Backpack breakpoints
  * <BpkFlex
- *   flexDirection={{ base: "column", mobile: "row" }}
- *   gap={{ base: "sm", desktop: "lg" }}
+ *   flexDirection={{ mobile: "column", desktop: "row" }}
+ *   gap={{ mobile: "sm", desktop: "lg" }}
  * >
  *   Responsive flex layout
  * </BpkFlex>
  * ```
  */
 const BpkFlex = ({
-  as,
+  as = 'div',
   children,
   ...rest
 }: Props) => {
-  const transformedProps = transformBpkLayoutProps(rest);
+  const { className, style, restProps } = transformBpkLayoutProps(rest);
+  const Component = as as ElementType;
+
+  // Split className string into individual class names for CSS Modules mapping
+  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
+  const finalClassName = getClass('bpk-flex', ...classNameParts);
 
   return (
-    <Flex
-      as={as}
-      {...transformedProps}
+    <Component
+      className={finalClassName || undefined}
+      style={style}
+      {...restProps}
     >
       {children}
-    </Flex>
+    </Component>
   );
 };
 
 export default BpkFlex;
-

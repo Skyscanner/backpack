@@ -16,22 +16,26 @@
  * limitations under the License.
  */
 
-import { Spacer } from '@chakra-ui/react';
+import type { ElementType } from 'react';
 
-import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+import { getClassName } from '../styleUtils';
+
+import STYLES from './BpkSpacer.module.scss';
 
 import type { BpkSpacerProps } from './BpkSpacer.types';
 
 export type Props = BpkSpacerProps;
 
+const getClass = getClassName(STYLES);
+
 /**
- * BpkSpacer is a layout component that provides flexible spacing using Chakra UI's Spacer component.
- * It follows the facade pattern, wrapping Chakra UI's Spacer to provide a Backpack-specific API.
+ * BpkSpacer is a layout component that provides flexible spacing using CSS Modules.
+ * It uses static CSS classes compiled at build time for optimal performance and SSR support.
  *
  * **Key Features:**
  * - A flexible flex spacer that expands along the major axis of its containing flex layout
- * - Accepts Backpack spacing and color tokens
- * - Does not support className prop to maintain Backpack design system consistency
+ * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
+ * - Supports SSR out of the box
  *
  * @param {Props} props - The component props
  * @returns {JSX.Element} The rendered BpkSpacer component
@@ -45,20 +49,17 @@ export type Props = BpkSpacerProps;
  * ```
  */
 const BpkSpacer = ({
-  as,
+  as = 'div',
   ...rest
 }: Props) => {
-  const transformedProps = transformBpkLayoutProps(rest, {
-    disallowedProps: ['className', 'children'], // Spacer doesn't accept children
-  });
+  const Component = as as ElementType;
 
   return (
-    <Spacer
-      as={as}
-      {...transformedProps}
+    <Component
+      className={getClass('bpk-spacer')}
+      {...rest}
     />
   );
 };
 
 export default BpkSpacer;
-

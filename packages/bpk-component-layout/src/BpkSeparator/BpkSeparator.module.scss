@@ -1,0 +1,45 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../bpk-mixins/tokens';
+@use '../layoutMixins';
+
+// Base BpkSeparator class
+.bpk-separator {
+  border: 0;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+// Orientation utilities
+.separator-orientation-horizontal {
+  width: 100%;
+  border-top-width: tokens.$bpk-border-size-sm;
+  border-top-color: tokens.$bpk-line-day;
+}
+
+.separator-orientation-vertical {
+  height: 100%;
+  border-left-width: tokens.$bpk-border-size-sm;
+  border-left-color: tokens.$bpk-line-day;
+}
+
+// Include spacing and color utilities from layoutMixins
+@include layoutMixins.generate-spacing-utilities(margin, 'margin');
+@include layoutMixins.generate-color-utilities(border-color, 'border-color');
+

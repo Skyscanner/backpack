@@ -1,0 +1,54 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/breakpoints';
+@use '../layoutMixins';
+
+// Base BpkStack class
+.bpk-stack {
+  display: flex;
+  box-sizing: border-box;
+}
+
+// Stack direction utilities
+.stack-direction-row { flex-direction: row; }
+.stack-direction-column { flex-direction: column; }
+
+@include breakpoints.bpk-breakpoint-small-mobile {
+  .stack-direction-row-smallMobile { flex-direction: row; }
+  .stack-direction-column-smallMobile { flex-direction: column; }
+}
+
+@include breakpoints.bpk-breakpoint-mobile {
+  .stack-direction-row-mobile { flex-direction: row; }
+  .stack-direction-column-mobile { flex-direction: column; }
+}
+
+@include breakpoints.bpk-breakpoint-above-tablet {
+  .stack-direction-row-desktop { flex-direction: row; }
+  .stack-direction-column-desktop { flex-direction: column; }
+}
+
+// Include spacing and color utilities from layoutMixins
+@include layoutMixins.generate-spacing-utilities(padding, 'padding');
+@include layoutMixins.generate-spacing-utilities(margin, 'margin');
+@include layoutMixins.generate-spacing-utilities(gap, 'gap');
+@include layoutMixins.generate-color-utilities(background-color, 'bg');
+@include layoutMixins.generate-color-utilities(color, 'color');
+

@@ -16,30 +16,36 @@
  * limitations under the License.
  */
 
-import { Box } from '@chakra-ui/react';
+import type { ElementType } from 'react';
 
+import { getClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+
+import STYLES from './BpkBox.module.scss';
 
 import type { BpkBoxProps } from './BpkBox.types';
 
 export type Props = BpkBoxProps;
 
+const getClass = getClassName(STYLES);
+
 /**
- * BpkBox is a layout component that provides a flexible container using Chakra UI's Box component.
- * It follows the facade pattern, wrapping Chakra UI's Box to provide a Backpack-specific API.
+ * BpkBox is a layout component that provides a flexible container using CSS Modules.
+ * It uses static CSS classes compiled at build time for optimal performance and SSR support.
  *
  * **Key Features:**
  * - Accepts Backpack spacing tokens as strings (e.g., `padding="base"` instead of `padding={4}`)
  * - Accepts Backpack breakpoint tokens in responsive props (e.g., `{ mobile: "base", desktop: "lg" }`)
- * - Still supports Chakra UI values for flexibility
- * - Does not support className prop to maintain Backpack design system consistency
+ * - Accepts Backpack color tokens for color-related props
+ * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
+ * - Supports SSR out of the box
  *
  * @param {Props} props - The component props
  * @returns {JSX.Element} The rendered BpkBox component
  * @example
  * ```tsx
  * // Using Backpack tokens
- * <BpkBox padding="base" margin="lg" bg="blue.500">
+ * <BpkBox padding="base" margin="lg" bg="surface-highlight">
  *   Content here
  * </BpkBox>
  *
@@ -48,28 +54,33 @@ export type Props = BpkBoxProps;
  *   Responsive content
  * </BpkBox>
  *
- * // Still supports Chakra UI values
- * <BpkBox padding={4} margin={2}>
- *   Content
+ * // Using numeric values (converted to CSS variables)
+ * <BpkBox width={300} height={200}>
+ *   Custom size
  * </BpkBox>
  * ```
  */
 const BpkBox = ({
-  as,
+  as = 'div',
   children,
   ...rest
 }: Props) => {
-  const transformedProps = transformBpkLayoutProps(rest);
+  const { className, style, restProps } = transformBpkLayoutProps(rest);
+  const Component = as as ElementType;
+
+  // Split className string into individual class names for CSS Modules mapping
+  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
+  const finalClassName = getClass('bpk-box', ...classNameParts);
 
   return (
-    <Box
-      as={as}
-      {...transformedProps}
+    <Component
+      className={finalClassName || undefined}
+      style={style}
+      {...restProps}
     >
       {children}
-    </Box>
+    </Component>
   );
 };
 
 export default BpkBox;
-

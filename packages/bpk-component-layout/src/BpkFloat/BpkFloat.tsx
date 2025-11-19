@@ -16,22 +16,28 @@
  * limitations under the License.
  */
 
-import { Box } from '@chakra-ui/react';
+import type { ElementType } from 'react';
 
+import { getClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+
+import STYLES from './BpkFloat.module.scss';
 
 import type { BpkFloatProps } from './BpkFloat.types';
 
 export type Props = BpkFloatProps;
 
+const getClass = getClassName(STYLES);
+
 /**
- * BpkFloat is a layout component that provides floating positioning using CSS float.
- * It wraps Chakra UI's Box with float styling to provide a Backpack-specific API.
+ * BpkFloat is a layout component that provides floating positioning using CSS Modules.
+ * It uses static CSS classes compiled at build time for optimal performance and SSR support.
  *
  * **Key Features:**
  * - Floats content to the left or right
  * - Accepts Backpack spacing and color tokens
- * - Does not support className prop to maintain Backpack design system consistency
+ * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
+ * - Supports SSR out of the box
  *
  * @param {Props} props - The component props
  * @returns {JSX.Element} The rendered BpkFloat component
@@ -43,21 +49,29 @@ export type Props = BpkFloatProps;
  * ```
  */
 const BpkFloat = ({
-  as,
+  as = 'div',
   children,
+  float,
   ...rest
 }: Props) => {
-  const transformedProps = transformBpkLayoutProps(rest);
+  const { className, style, restProps } = transformBpkLayoutProps(rest);
+  const Component = as as ElementType;
+
+  const floatClass = float ? `float-${float}` : '';
+
+  // Split className string into individual class names for CSS Modules mapping
+  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
+  const finalClassName = getClass('bpk-float', floatClass, ...classNameParts);
 
   return (
-    <Box
-      as={as}
-      {...transformedProps}
+    <Component
+      className={finalClassName || undefined}
+      style={style}
+      {...restProps}
     >
       {children}
-    </Box>
+    </Component>
   );
 };
 
 export default BpkFloat;
-
