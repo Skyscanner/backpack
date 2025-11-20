@@ -96,7 +96,7 @@ If you'd like to contribute a change to a React component, please first reach ou
 #### Example components
 Look at existing components for code style inspiration. Here are some good examples to follow:
 - [bpk-component-chip](./packages/bpk-component-chip/index.ts)
-- [bpk-component-button](./packages/bpk-component-button/src/BpkButtonV2/BpkButton.tsx)
+- [bpk-component-button](./packages/bpk-component-button/index.ts)
 
 #### CSS
 

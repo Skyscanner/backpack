@@ -24,7 +24,7 @@ import {
   fontWeightBold,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { BpkButtonPrimary } from '../../packages/bpk-component-button';
+import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import CurrencyIcon from '../../packages/bpk-component-icon/sm/currency';
 import BpkInfoBanner, {
   ALERT_TYPES,
@@ -66,46 +66,44 @@ class BpkInfoBannerDismissableState extends Component<Props, State> {
   }
 
   render() {
-    return (
-      <>
-        <BpkInfoBannerDismissable
-          show={!this.state.dismissed}
-          dismissButtonLabel="Dismiss"
-          onDismiss={() => {
+    return <>
+      <BpkInfoBannerDismissable
+        show={!this.state.dismissed}
+        dismissButtonLabel="Dismiss"
+        onDismiss={() => {
+          this.setState((prevState) => ({
+            dismissed: true,
+            updates: [...prevState.updates, 'Success alert dismissed'],
+          }));
+        }}
+        message="Neutral alert with dismiss option"
+        {...this.props}
+      />
+      {this.state.dismissed && (
+        <BpkButtonV2
+          className={getClassName('bpk-info-banner-examples__component')}
+          onClick={() => {
             this.setState((prevState) => ({
-              dismissed: true,
-              updates: [...prevState.updates, 'Success alert dismissed'],
+              dismissed: false,
+              updates: [...prevState.updates, 'Success alert added'],
             }));
           }}
-          message="Neutral alert with dismiss option"
-          {...this.props}
-        />
-        {this.state.dismissed && (
-          <BpkButtonPrimary
-            className={getClassName('bpk-info-banner-examples__component')}
-            onClick={() => {
-              this.setState((prevState) => ({
-                dismissed: false,
-                updates: [...prevState.updates, 'Success alert added'],
-              }));
-            }}
-          >
-            Reset
-          </BpkButtonPrimary>
-        )}
-        <AriaLiveDemo
-          visible
-          className={getClassName('bpk-info-banner-examples__component')}
         >
-          {this.state.updates.map((u) => (
-            <>
-              {u}
-              <br />
-            </>
-          ))}
-        </AriaLiveDemo>
-      </>
-    );
+          Reset
+        </BpkButtonV2>
+      )}
+      <AriaLiveDemo
+        visible
+        className={getClassName('bpk-info-banner-examples__component')}
+      >
+        {this.state.updates.map((u) => (
+          <>
+            {u}
+            <br />
+          </>
+        ))}
+      </AriaLiveDemo>
+    </>;
   }
 }
 
