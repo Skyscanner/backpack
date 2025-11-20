@@ -18,12 +18,12 @@
 
 import type { ElementType } from 'react';
 
-import { getClassName } from '../styleUtils';
+import { getClassName, processClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
 
-import STYLES from './BpkAspectRatio.module.scss';
-
 import type { BpkAspectRatioProps } from './BpkAspectRatio.types';
+
+import STYLES from './BpkAspectRatio.module.scss';
 
 export type Props = BpkAspectRatioProps;
 
@@ -55,37 +55,27 @@ const BpkAspectRatio = ({
   ratio,
   ...rest
 }: Props) => {
-  const { className, style, restProps } = transformBpkLayoutProps(rest);
+  // Pass ratio to transformBpkLayoutProps so it's included in hash and CSS generation
+  const propsWithRatio = {
+    ...rest,
+    ratio,
+  };
+
+  const { className, restProps, style } = transformBpkLayoutProps(propsWithRatio, {
+    componentName: 'aspect-ratio',
+  });
   const Component = as as ElementType;
 
-  // Calculate padding-bottom percentage for aspect ratio
-  // ratio = width / height, so padding-bottom = (1 / ratio) * 100%
-  let paddingBottom = '56.25%'; // Default 16:9
-
-  if (ratio !== undefined) {
-    if (typeof ratio === 'number') {
-      paddingBottom = `${(1 / ratio) * 100}%`;
-    } else if (typeof ratio === 'object' && ratio !== null) {
-      // For responsive ratio, use the first breakpoint value as default
-      const firstValue = Object.values(ratio)[0];
-      if (typeof firstValue === 'number') {
-        paddingBottom = `${(1 / firstValue) * 100}%`;
-      }
-    }
-  }
-
-  // Split className string into individual class names for CSS Modules mapping
-  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
-  const finalClassName = getClass('bpk-aspect-ratio', ...classNameParts);
+  // Process className: split space-separated string and map through CSS Modules
+  const finalClassName = processClassName(getClass, className, 'bpk-aspect-ratio');
 
   return (
+    // Allowed, Component is always a dom element.
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
     <Component
-      className={finalClassName || undefined}
-      style={{
-        ...style,
-        '--bpk-aspect-ratio': paddingBottom,
-      } as React.CSSProperties}
       {...restProps}
+      className={finalClassName || undefined}
+      style={style || undefined}
     >
       {children}
     </Component>

@@ -21,6 +21,7 @@ import type { ComponentType } from 'react';
 import type { BpkBaseLayoutProps } from '../BpkBaseLayoutProps.types';
 import type { ResponsiveValue } from '../BpkBox/BpkBox.types';
 import type { BpkFlexboxShorthandProps, BpkSpacingProps } from '../commonProps.types';
+import type { FlexDirectionValue } from '../layoutPropTypes';
 
 /**
  * Stack-specific props for BpkStack
@@ -32,7 +33,7 @@ export interface BpkStackSpecificProps extends Omit<BpkFlexboxShorthandProps, 'd
    * @default "column"
    * Note: This overrides the common `direction` prop with specific type constraint
    */
-  direction?: ResponsiveValue<'row' | 'column' | 'row-reverse' | 'column-reverse'>;
+  direction?: ResponsiveValue<FlexDirectionValue>;
 }
 
 /**

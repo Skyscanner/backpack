@@ -19,6 +19,16 @@
 import type { BpkBaseLayoutProps } from '../BpkBaseLayoutProps.types';
 import type { ResponsiveValue } from '../BpkBox/BpkBox.types';
 import type { BpkFlexboxShorthandProps } from '../commonProps.types';
+import type {
+  FlexDirectionValue,
+  FlexWrapValue,
+  AlignItemsValue,
+  AlignContentValue,
+  AlignSelfValue,
+  JustifyContentValue,
+  JustifyItemsValue,
+  JustifySelfValue,
+} from '../layoutPropTypes';
 
 /**
  * Flexbox-specific props for BpkFlex
@@ -27,17 +37,17 @@ import type { BpkFlexboxShorthandProps } from '../commonProps.types';
 export interface BpkFlexSpecificProps extends BpkFlexboxShorthandProps {
   // Flexbox props (full set)
   flex?: ResponsiveValue<string | number>;
-  flexDirection?: ResponsiveValue<string>;
-  flexWrap?: ResponsiveValue<string>;
+  flexDirection?: ResponsiveValue<FlexDirectionValue>;
+  flexWrap?: ResponsiveValue<FlexWrapValue>;
   flexGrow?: ResponsiveValue<string | number>;
   flexShrink?: ResponsiveValue<string | number>;
   flexBasis?: ResponsiveValue<string | number>;
-  alignItems?: ResponsiveValue<string>;
-  alignContent?: ResponsiveValue<string>;
-  alignSelf?: ResponsiveValue<string>;
-  justifyContent?: ResponsiveValue<string>;
-  justifyItems?: ResponsiveValue<string>;
-  justifySelf?: ResponsiveValue<string>;
+  alignItems?: ResponsiveValue<AlignItemsValue>;
+  alignContent?: ResponsiveValue<AlignContentValue>;
+  alignSelf?: ResponsiveValue<AlignSelfValue>;
+  justifyContent?: ResponsiveValue<JustifyContentValue>;
+  justifyItems?: ResponsiveValue<JustifyItemsValue>;
+  justifySelf?: ResponsiveValue<JustifySelfValue>;
   order?: ResponsiveValue<string | number>;
 
   // Additional Chakra UI Flex shorthand props (beyond common ones)

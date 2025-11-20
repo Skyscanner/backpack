@@ -18,12 +18,12 @@
 
 import type { ElementType } from 'react';
 
-import { getClassName } from '../styleUtils';
+import { getClassName, processClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
 
-import STYLES from './BpkWrap.module.scss';
-
 import type { BpkWrapProps } from './BpkWrap.types';
+
+import STYLES from './BpkWrap.module.scss';
 
 export type Props = BpkWrapProps;
 
@@ -54,27 +54,34 @@ const BpkWrap = ({
   as = 'div',
   children,
   spacing,
+  spacingX,
+  spacingY,
   ...rest
 }: Props) => {
-  // Map spacing prop to gap prop
+  // Map spacing prop to gap prop, and pass spacingX/spacingY to transformBpkLayoutProps
   const propsWithGap = {
     ...rest,
     gap: spacing,
+    spacingX,
+    spacingY,
     flexWrap: 'wrap',
   };
 
-  const { className, style, restProps } = transformBpkLayoutProps(propsWithGap);
+  const { className, restProps, style } = transformBpkLayoutProps(propsWithGap, {
+    componentName: 'wrap',
+  });
   const Component = as as ElementType;
 
-  // Split className string into individual class names for CSS Modules mapping
-  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
-  const finalClassName = getClass('bpk-wrap', ...classNameParts);
+  // Process className: split space-separated string and map through CSS Modules
+  const finalClassName = processClassName(getClass, className, 'bpk-wrap');
 
   return (
+    // Allowed, Component is always a dom element.
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
     <Component
-      className={finalClassName || undefined}
-      style={style}
       {...restProps}
+      className={finalClassName || undefined}
+      style={style || undefined}
     >
       {children}
     </Component>

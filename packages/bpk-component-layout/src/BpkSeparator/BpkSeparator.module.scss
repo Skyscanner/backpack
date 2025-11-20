@@ -23,7 +23,7 @@
 .bpk-separator {
   border: 0;
   border-style: solid;
-  box-sizing: border-box;
+  @include layoutMixins.base-component-styles;
 }
 
 // Orientation utilities
@@ -39,6 +39,9 @@
   border-left-color: tokens.$bpk-line-day;
 }
 
-// Include spacing and color utilities from layoutMixins
+// Common layout utilities (spacing, color, layout)
+// Only includes margin and border-color utilities (no padding, gap, or bg/color)
 @include layoutMixins.generate-spacing-utilities(margin, 'margin');
+@include layoutMixins.generate-directional-spacing-utilities(margin, 'margin');
 @include layoutMixins.generate-color-utilities(border-color, 'border-color');
+@include layoutMixins.generate-layout-utilities;

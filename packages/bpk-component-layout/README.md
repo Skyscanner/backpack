@@ -14,7 +14,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ### No Provider Required
 
-**Important:** With CSS Modules implementation, `BpkLayoutProvider` is **no longer required**. Layout components now use static CSS classes compiled at build time, so no runtime theme provider is needed.
+**Important:** With CSS Modules implementation, `BpkProvider` is **no longer required**. Layout components now use static CSS classes compiled at build time, so no runtime theme provider is needed.
 
 You can use layout components directly:
 
@@ -31,7 +31,7 @@ function App() {
 ```
 
 **Migration from Chakra UI version:**
-If you were previously using `BpkLayoutProvider`, you can safely remove it. All layout components will work without it.
+If you were previously using `BpkProvider`, you can safely remove it. All layout components will work without it.
 
 ## Architecture
 
@@ -50,6 +50,16 @@ Layout components use **CSS Modules + SCSS** for styling, which provides:
 2. **CSS classes are pre-compiled** in SCSS files at build time
 3. **Responsive styles** use Backpack breakpoint mixins
 4. **Dynamic values** (like numeric widths) use CSS custom properties
+
+### SCSS Architecture
+
+For detailed information about how SCSS is processed and organized, see **[STYLES.md](./STYLES.md)**.
+
+The styling system uses:
+- **Shared mixins** (`layoutMixins.scss`) - Centralized utility class generators
+- **Component-specific styles** (`.module.scss` files) - Minimal component styles that use shared mixins
+- **Mobile-first responsive design** - All responsive utilities use mobile-first media queries
+- **CSS custom properties** - Dynamic values use CSS variables for runtime flexibility
 
 ## Usage
 
@@ -341,7 +351,7 @@ Use the `as` prop to render as a different HTML element:
 
 If you're migrating from the previous Chakra UI-based implementation:
 
-1. **Remove BpkLayoutProvider** - It's no longer needed
+1. **Remove BpkProvider** - It's no longer needed
 2. **No API changes** - All props remain the same
 3. **Color tokens** - Continue using Backpack color token strings
 4. **Spacing tokens** - Continue using Backpack spacing token strings

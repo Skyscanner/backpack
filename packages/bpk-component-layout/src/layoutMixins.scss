@@ -65,36 +65,126 @@ $spacing-map: (
   }
 
   // Generate responsive variants - classes are defined globally, media queries apply them
+  // Mobile-first approach: smallMobile is base (no media query), others use min-width
+  // This ensures proper cascading where later breakpoints override earlier ones
   @each $token, $value in $spacing-map {
+    // smallMobile: base value, applies to all sizes (no media query)
     .bpk-#{$prefix}-#{$token}-smallMobile {
-      @include breakpoints.bpk-breakpoint-small-mobile {
-        #{$property}: $value;
-      }
+      #{$property}: $value;
     }
 
+    // mobile: applies from mobile breakpoint and above (overrides smallMobile)
     .bpk-#{$prefix}-#{$token}-mobile {
-      @include breakpoints.bpk-breakpoint-mobile {
+      @include breakpoints.bpk-breakpoint-above-mobile {
         #{$property}: $value;
       }
     }
 
+    // smallTablet: applies from smallTablet breakpoint and above (overrides mobile)
     .bpk-#{$prefix}-#{$token}-smallTablet {
-      @include breakpoints.bpk-breakpoint-small-tablet {
+      @include breakpoints.bpk-breakpoint-above-mobile {
         #{$property}: $value;
       }
     }
 
+    // tablet: applies from tablet breakpoint and above (overrides smallTablet)
     .bpk-#{$prefix}-#{$token}-tablet {
-      @include breakpoints.bpk-breakpoint-tablet {
+      @include breakpoints.bpk-breakpoint-above-mobile {
         #{$property}: $value;
       }
     }
 
+    // desktop: applies from desktop breakpoint and above (overrides tablet)
     .bpk-#{$prefix}-#{$token}-desktop {
       @include breakpoints.bpk-breakpoint-above-tablet {
         #{$property}: $value;
       }
     }
+  }
+
+  // Generate dynamic value classes using CSS variables
+  // These classes use CSS variables set at runtime, avoiding inline styles
+  // This provides zero runtime CSS generation for dynamic values
+  .bpk-#{$prefix}-dynamic {
+    // Base value: use the main CSS variable or fallback to 0
+    #{$property}: var(--bpk-#{$prefix}, 0);
+
+    // Responsive values: use breakpoint-specific CSS variables with fallback chain
+    // The fallback chain ensures that if a breakpoint value is not set,
+    // it falls back to the previous breakpoint or base value
+    @include breakpoints.bpk-breakpoint-small-mobile {
+      #{$property}: var(--bpk-#{$prefix}-smallMobile, var(--bpk-#{$prefix}, 0));
+    }
+
+    @include breakpoints.bpk-breakpoint-mobile {
+      #{$property}: var(--bpk-#{$prefix}-mobile, var(--bpk-#{$prefix}-smallMobile, var(--bpk-#{$prefix}, 0)));
+    }
+
+    @include breakpoints.bpk-breakpoint-small-tablet {
+      #{$property}: var(--bpk-#{$prefix}-smallTablet, var(--bpk-#{$prefix}-mobile, var(--bpk-#{$prefix}-smallMobile, var(--bpk-#{$prefix}, 0))));
+    }
+
+    @include breakpoints.bpk-breakpoint-tablet {
+      #{$property}: var(--bpk-#{$prefix}-tablet, var(--bpk-#{$prefix}-smallTablet, var(--bpk-#{$prefix}-mobile, var(--bpk-#{$prefix}-smallMobile, var(--bpk-#{$prefix}, 0)))));
+    }
+
+    @include breakpoints.bpk-breakpoint-above-tablet {
+      #{$property}: var(--bpk-#{$prefix}-desktop, var(--bpk-#{$prefix}-tablet, var(--bpk-#{$prefix}-smallTablet, var(--bpk-#{$prefix}-mobile, var(--bpk-#{$prefix}-smallMobile, var(--bpk-#{$prefix}, 0))))));
+    }
+  }
+}
+
+// Generate directional spacing utilities (top, right, bottom, left, x, y)
+// This generates classes like bpk-padding-top-base, bpk-margin-right-sm, etc.
+@mixin generate-directional-spacing-utilities($base-property, $prefix) {
+  // Directional properties map: (direction-name, css-property)
+  $directions: (
+    'top': #{$base-property}-top,
+    'right': #{$base-property}-right,
+    'bottom': #{$base-property}-bottom,
+    'left': #{$base-property}-left,
+  );
+
+  // Generate base utilities for each direction
+  @each $direction, $css-property in $directions {
+    @each $token, $value in $spacing-map {
+      .bpk-#{$prefix}-#{$direction}-#{$token} {
+        #{$css-property}: $value;
+      }
+    }
+  }
+
+  // Generate x-axis utilities (left + right)
+  @each $token, $value in $spacing-map {
+    .bpk-#{$prefix}-x-#{$token} {
+      #{$base-property}-left: $value;
+      #{$base-property}-right: $value;
+    }
+  }
+
+  // Generate y-axis utilities (top + bottom)
+  @each $token, $value in $spacing-map {
+    .bpk-#{$prefix}-y-#{$token} {
+      #{$base-property}-top: $value;
+      #{$base-property}-bottom: $value;
+    }
+  }
+
+  // Generate dynamic value classes for directional properties
+  @each $direction, $css-property in $directions {
+    .bpk-#{$prefix}-#{$direction}-dynamic {
+      #{$css-property}: var(--bpk-#{$prefix}-#{$direction}, 0);
+    }
+  }
+
+  .bpk-#{$prefix}-x-dynamic {
+    #{$base-property}-left: var(--bpk-#{$prefix}-x, 0);
+    #{$base-property}-right: var(--bpk-#{$prefix}-x, 0);
+  }
+
+  .bpk-#{$prefix}-y-dynamic {
+    #{$base-property}-top: var(--bpk-#{$prefix}-y, 0);
+    #{$base-property}-bottom: var(--bpk-#{$prefix}-y, 0);
   }
 }
 
@@ -311,6 +401,40 @@ $color-map: (
     overflow: auto;
   }
 
+  // Overflow X utilities
+  .bpk-overflow-x-hidden {
+    overflow-x: hidden;
+  }
+
+  .bpk-overflow-x-visible {
+    overflow-x: visible;
+  }
+
+  .bpk-overflow-x-scroll {
+    overflow-x: scroll;
+  }
+
+  .bpk-overflow-x-auto {
+    overflow-x: auto;
+  }
+
+  // Overflow Y utilities
+  .bpk-overflow-y-hidden {
+    overflow-y: hidden;
+  }
+
+  .bpk-overflow-y-visible {
+    overflow-y: visible;
+  }
+
+  .bpk-overflow-y-scroll {
+    overflow-y: scroll;
+  }
+
+  .bpk-overflow-y-auto {
+    overflow-y: auto;
+  }
+
   // Position utilities
   .bpk-position-static {
     position: static;
@@ -331,59 +455,328 @@ $color-map: (
   .bpk-position-sticky {
     position: sticky;
   }
+
+  // Float utilities
+  .bpk-float-left {
+    float: left;
+  }
+
+  .bpk-float-right {
+    float: right;
+  }
+
+  .bpk-float-none {
+    float: none;
+  }
+
+  // Border radius utilities
+  .bpk-border-radius-none {
+    border-radius: 0;
+  }
+
+  .bpk-border-radius-sm {
+    border-radius: tokens.$bpk-border-radius-sm;
+  }
+
+  .bpk-border-radius-md {
+    border-radius: tokens.$bpk-border-radius-md;
+  }
+
+  .bpk-border-radius-lg {
+    border-radius: tokens.$bpk-border-radius-lg;
+  }
+
+  .bpk-border-radius-xl {
+    border-radius: tokens.$bpk-border-radius-xl;
+  }
+
+  .bpk-border-radius-full {
+    border-radius: 50%;
+  }
+
+  // Border utilities
+  .bpk-border-none {
+    border: none;
+  }
+
+  .bpk-border-1 {
+    border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+  }
+
+  .bpk-border-2 {
+    border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+  }
+
+  // Dynamic border utilities using CSS variables (scheme 2)
+  .bpk-border-radius-dynamic {
+    border-radius: var(--bpk-border-radius, 0);
+  }
+
+  .bpk-border-dynamic {
+    border: var(--bpk-border, none);
+  }
+
+  // Size properties (width, height, min-width, max-width, min-height, max-height)
+  // Mobile-first approach: smallMobile is base (no media query), others use min-width
+  .bpk-width-dynamic {
+    // Base value (smallMobile): use the main CSS variable
+    width: var(--bpk-width, initial);
+    
+    // mobile: applies from mobile breakpoint and above (overrides smallMobile)
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      width: var(--bpk-width-mobile, var(--bpk-width, initial));
+    }
+    
+    // desktop: applies from desktop breakpoint and above (overrides mobile)
+    @include breakpoints.bpk-breakpoint-above-tablet {
+      width: var(--bpk-width-desktop, var(--bpk-width-mobile, var(--bpk-width, initial)));
+    }
+  }
+
+  .bpk-height-dynamic {
+    height: var(--bpk-height, initial);
+  }
+
+  .bpk-min-width-dynamic {
+    min-width: var(--bpk-min-width, initial);
+  }
+
+  .bpk-max-width-dynamic {
+    max-width: var(--bpk-max-width, initial);
+  }
+
+  .bpk-min-height-dynamic {
+    min-height: var(--bpk-min-height, initial);
+  }
+
+  .bpk-max-height-dynamic {
+    max-height: var(--bpk-max-height, initial);
+  }
+
+  // Visibility and opacity
+  .bpk-visibility-dynamic {
+    visibility: var(--bpk-visibility, initial);
+  }
+
+  .bpk-opacity-dynamic {
+    opacity: var(--bpk-opacity, initial);
+  }
+
+  // Position properties
+  .bpk-position-dynamic {
+    position: var(--bpk-position, initial);
+  }
+
+  .bpk-top-dynamic {
+    top: var(--bpk-top, initial);
+  }
+
+  .bpk-right-dynamic {
+    right: var(--bpk-right, initial);
+  }
+
+  .bpk-bottom-dynamic {
+    bottom: var(--bpk-bottom, initial);
+  }
+
+  .bpk-left-dynamic {
+    left: var(--bpk-left, initial);
+  }
+
+  .bpk-z-index-dynamic {
+    z-index: var(--bpk-z-index, initial);
+  }
+
+  // Shadow properties
+  .bpk-box-shadow-dynamic {
+    box-shadow: var(--bpk-box-shadow, initial);
+  }
+
+  .bpk-text-shadow-dynamic {
+    text-shadow: var(--bpk-text-shadow, initial);
+  }
+
+  // Typography properties
+  .bpk-font-size-dynamic {
+    font-size: var(--bpk-font-size, initial);
+  }
+
+  .bpk-font-weight-dynamic {
+    font-weight: var(--bpk-font-weight, initial);
+  }
+
+  .bpk-line-height-dynamic {
+    line-height: var(--bpk-line-height, initial);
+  }
+
+  .bpk-text-align-dynamic {
+    text-align: var(--bpk-text-align, initial);
+  }
+
+  .bpk-text-transform-dynamic {
+    text-transform: var(--bpk-text-transform, initial);
+  }
+
+  .bpk-text-decoration-dynamic {
+    text-decoration: var(--bpk-text-decoration, initial);
+  }
+
+  .bpk-letter-spacing-dynamic {
+    letter-spacing: var(--bpk-letter-spacing, initial);
+  }
+
+  // Cursor and pointer events
+  .bpk-cursor-dynamic {
+    cursor: var(--bpk-cursor, initial);
+  }
+
+  .bpk-pointer-events-dynamic {
+    pointer-events: var(--bpk-pointer-events, initial);
+  }
+
+  // Transform properties
+  .bpk-transform-dynamic {
+    transform: var(--bpk-transform, initial);
+  }
+
+  .bpk-transform-origin-dynamic {
+    transform-origin: var(--bpk-transform-origin, initial);
+  }
+
+  // Transition properties
+  .bpk-transition-dynamic {
+    transition: var(--bpk-transition, initial);
+  }
+
+  .bpk-transition-property-dynamic {
+    transition-property: var(--bpk-transition-property, initial);
+  }
+
+  .bpk-transition-duration-dynamic {
+    transition-duration: var(--bpk-transition-duration, initial);
+  }
+
+  .bpk-transition-timing-function-dynamic {
+    transition-timing-function: var(--bpk-transition-timing-function, initial);
+  }
+
+  .bpk-transition-delay-dynamic {
+    transition-delay: var(--bpk-transition-delay, initial);
+  }
+
+  // Grid properties
+  // Mobile-first approach: smallMobile is base (no media query), others use min-width
+  .bpk-grid-template-columns-dynamic {
+    // Base value (smallMobile): use the main CSS variable
+    grid-template-columns: var(--bpk-grid-template-columns, initial);
+    
+    // mobile: applies from mobile breakpoint and above (overrides smallMobile)
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      grid-template-columns: var(--bpk-grid-template-columns-mobile, var(--bpk-grid-template-columns, initial));
+    }
+    
+    // desktop: applies from desktop breakpoint and above (overrides mobile)
+    @include breakpoints.bpk-breakpoint-above-tablet {
+      grid-template-columns: var(--bpk-grid-template-columns-desktop, var(--bpk-grid-template-columns-mobile, var(--bpk-grid-template-columns, initial)));
+    }
+  }
+
+  .bpk-grid-template-rows-dynamic {
+    grid-template-rows: var(--bpk-grid-template-rows, initial);
+  }
+
+  .bpk-grid-template-areas-dynamic {
+    grid-template-areas: var(--bpk-grid-template-areas, initial);
+  }
+
+  .bpk-grid-column-dynamic {
+    grid-column: var(--bpk-grid-column, initial);
+  }
+
+  .bpk-grid-row-dynamic {
+    grid-row: var(--bpk-grid-row, initial);
+  }
+
+  .bpk-grid-area-dynamic {
+    grid-area: var(--bpk-grid-area, initial);
+  }
+
+  .bpk-grid-column-start-dynamic {
+    grid-column-start: var(--bpk-grid-column-start, initial);
+  }
+
+  .bpk-grid-column-end-dynamic {
+    grid-column-end: var(--bpk-grid-column-end, initial);
+  }
+
+  .bpk-grid-row-start-dynamic {
+    grid-row-start: var(--bpk-grid-row-start, initial);
+  }
+
+  .bpk-grid-row-end-dynamic {
+    grid-row-end: var(--bpk-grid-row-end, initial);
+  }
+
+  .bpk-grid-auto-flow-dynamic {
+    grid-auto-flow: var(--bpk-grid-auto-flow, initial);
+  }
+
+  .bpk-grid-auto-rows-dynamic {
+    grid-auto-rows: var(--bpk-grid-auto-rows, initial);
+  }
+
+  .bpk-grid-auto-columns-dynamic {
+    grid-auto-columns: var(--bpk-grid-auto-columns, initial);
+  }
 }
 
 // Responsive layout utilities with bpk- prefix
+// Mobile-first approach: smallMobile is base (no media query), others use min-width
 @mixin generate-responsive-layout-utilities {
   // Responsive display utilities
+  // smallMobile: base value, applies to all sizes (no media query)
   .bpk-display-flex-smallMobile {
-    @include breakpoints.bpk-breakpoint-small-mobile {
-      display: flex;
-    }
+    display: flex;
   }
 
   .bpk-display-grid-smallMobile {
-    @include breakpoints.bpk-breakpoint-small-mobile {
-      display: grid;
-    }
+    display: grid;
   }
 
   .bpk-flex-direction-column-smallMobile {
-    @include breakpoints.bpk-breakpoint-small-mobile {
-      flex-direction: column;
-    }
+    flex-direction: column;
   }
 
   .bpk-flex-direction-row-smallMobile {
-    @include breakpoints.bpk-breakpoint-small-mobile {
-      flex-direction: row;
-    }
+    flex-direction: row;
   }
 
+  // mobile: applies from mobile breakpoint and above (overrides smallMobile)
   .bpk-display-flex-mobile {
-    @include breakpoints.bpk-breakpoint-mobile {
+    @include breakpoints.bpk-breakpoint-above-mobile {
       display: flex;
     }
   }
 
   .bpk-display-grid-mobile {
-    @include breakpoints.bpk-breakpoint-mobile {
+    @include breakpoints.bpk-breakpoint-above-mobile {
       display: grid;
     }
   }
 
   .bpk-flex-direction-column-mobile {
-    @include breakpoints.bpk-breakpoint-mobile {
+    @include breakpoints.bpk-breakpoint-above-mobile {
       flex-direction: column;
     }
   }
 
   .bpk-flex-direction-row-mobile {
-    @include breakpoints.bpk-breakpoint-mobile {
+    @include breakpoints.bpk-breakpoint-above-mobile {
       flex-direction: row;
     }
   }
 
+  // desktop: applies from desktop breakpoint and above (overrides mobile)
   .bpk-display-flex-desktop {
     @include breakpoints.bpk-breakpoint-above-tablet {
       display: flex;
@@ -407,4 +800,38 @@ $color-map: (
       flex-direction: row;
     }
   }
+}
+
+// Base component styles mixin
+// Provides common base styles for all layout components
+@mixin base-component-styles {
+  box-sizing: border-box;
+}
+
+// Common utilities mixin
+// Includes all commonly used utility classes (spacing, color, layout)
+// This reduces repetition across component SCSS files
+@mixin common-layout-utilities($include-gap: true, $include-border-color: false) {
+  // Spacing utilities
+  @include generate-spacing-utilities(padding, 'padding');
+  @include generate-directional-spacing-utilities(padding, 'padding');
+  @include generate-spacing-utilities(margin, 'margin');
+  @include generate-directional-spacing-utilities(margin, 'margin');
+  
+  // Gap utilities (optional, not all components need gap)
+  @if $include-gap {
+    @include generate-spacing-utilities(gap, 'gap');
+  }
+  
+  // Color utilities
+  @include generate-color-utilities(background-color, 'bg');
+  @include generate-color-utilities(color, 'color');
+  
+  // Border color utilities (optional, not all components need border-color)
+  @if $include-border-color {
+    @include generate-color-utilities(border-color, 'border-color');
+  }
+  
+  // Layout utilities (border, border-radius, display, etc.)
+  @include generate-layout-utilities;
 }

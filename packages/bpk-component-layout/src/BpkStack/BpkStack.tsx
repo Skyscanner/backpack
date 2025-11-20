@@ -18,14 +18,16 @@
 
 import type { ElementType } from 'react';
 
-import { getClassName } from '../styleUtils';
+import { getClassName, processClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+
 
 import BpkHStack from './BpkHStack';
 import BpkVStack from './BpkVStack';
-import STYLES from './BpkStack.module.scss';
 
 import type { BpkStackComponent, BpkStackProps } from './BpkStack.types';
+
+import STYLES from './BpkStack.module.scss';
 
 export type Props = BpkStackProps;
 
@@ -67,20 +69,21 @@ const BpkStack = ({
     flexDirection: direction,
   };
 
-  const { className, style, restProps } = transformBpkLayoutProps(propsWithGap);
+  const { className, restProps, style } = transformBpkLayoutProps(propsWithGap, {
+    componentName: 'stack',
+  });
   const Component = as as ElementType;
 
-  // Add direction class
-  const directionClass = direction === 'row' ? 'stack-direction-row' : 'stack-direction-column';
-  // Split className string into individual class names for CSS Modules mapping
-  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
-  const finalClassName = getClass('bpk-stack', directionClass, ...classNameParts);
+  // Process className: split space-separated string and map through CSS Modules
+  const finalClassName = processClassName(getClass, className, 'bpk-stack');
 
   return (
+    // Allowed, Component is always a dom element.
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
     <Component
-      className={finalClassName || undefined}
-      style={style}
       {...restProps}
+      className={finalClassName || undefined}
+      style={style || undefined}
     >
       {children}
     </Component>

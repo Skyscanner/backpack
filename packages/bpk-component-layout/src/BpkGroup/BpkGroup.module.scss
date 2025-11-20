@@ -22,12 +22,8 @@
 // Base BpkGroup class
 .bpk-group {
   display: flex;
-  box-sizing: border-box;
+  @include layoutMixins.base-component-styles;
 }
 
-// Include spacing and color utilities from layoutMixins
-@include layoutMixins.generate-spacing-utilities(padding, 'padding');
-@include layoutMixins.generate-spacing-utilities(margin, 'margin');
-@include layoutMixins.generate-spacing-utilities(gap, 'gap');
-@include layoutMixins.generate-color-utilities(background-color, 'bg');
-@include layoutMixins.generate-color-utilities(color, 'color');
+// Common layout utilities (spacing, color, layout)
+@include layoutMixins.common-layout-utilities($include-gap: true, $include-border-color: false);

@@ -48,18 +48,18 @@ export const BPK_BREAKPOINT_TOKENS = {
 
 /**
  * @deprecated This export is kept for backward compatibility only.
- * With CSS Modules implementation, BpkLayoutProvider and theme configuration are no longer needed.
+ * With CSS Modules implementation, BpkProvider and theme configuration are no longer needed.
  * All layout components now use static CSS classes compiled at build time.
  *
- * This object is a stub and does nothing. You can safely remove BpkLayoutProvider from your code.
+ * This object is a stub and does nothing. You can safely remove BpkProvider from your code.
  */
 export const backpackTheme = {} as any;
 
 /**
  * @deprecated This export is kept for backward compatibility only.
- * With CSS Modules implementation, BpkLayoutProvider and theme configuration are no longer needed.
+ * With CSS Modules implementation, BpkProvider and theme configuration are no longer needed.
  * All layout components now use static CSS classes compiled at build time.
  *
- * This object is a stub and does nothing. You can safely remove BpkLayoutProvider from your code.
+ * This object is a stub and does nothing. You can safely remove BpkProvider from your code.
  */
 export const backpackSystem = {} as any;

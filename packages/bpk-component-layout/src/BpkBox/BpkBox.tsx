@@ -18,12 +18,12 @@
 
 import type { ElementType } from 'react';
 
-import { getClassName } from '../styleUtils';
+import { getClassName, processClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
 
-import STYLES from './BpkBox.module.scss';
-
 import type { BpkBoxProps } from './BpkBox.types';
+
+import STYLES from './BpkBox.module.scss';
 
 export type Props = BpkBoxProps;
 
@@ -65,18 +65,21 @@ const BpkBox = ({
   children,
   ...rest
 }: Props) => {
-  const { className, style, restProps } = transformBpkLayoutProps(rest);
+  const { className, restProps, style } = transformBpkLayoutProps(rest, {
+    componentName: 'box',
+  });
   const Component = as as ElementType;
 
-  // Split className string into individual class names for CSS Modules mapping
-  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
-  const finalClassName = getClass('bpk-box', ...classNameParts);
+  // Process className: split space-separated string and map through CSS Modules
+  const finalClassName = processClassName(getClass, className, 'bpk-box');
 
   return (
+    // Allowed, Component is always a dom element.
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
     <Component
-      className={finalClassName || undefined}
-      style={style}
       {...restProps}
+      className={finalClassName || undefined}
+      style={style || undefined}
     >
       {children}
     </Component>

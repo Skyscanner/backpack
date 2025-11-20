@@ -22,6 +22,26 @@ import type React from 'react';
 
 import type { BpkBaseLayoutProps } from '../BpkBaseLayoutProps.types';
 import type { BpkColorTokenEnum } from '../colorTokenTransformers';
+import type {
+  DisplayValue,
+  FlexDirectionValue,
+  FlexWrapValue,
+  AlignItemsValue,
+  AlignContentValue,
+  AlignSelfValue,
+  JustifyContentValue,
+  JustifyItemsValue,
+  JustifySelfValue,
+  OverflowValue,
+  PositionValue,
+  BorderStyleValue,
+  TextAlignValue,
+  TextTransformValue,
+  TextDecorationValue,
+  CursorValue,
+  PointerEventsValue,
+  VisibilityValue,
+} from '../layoutPropTypes';
 
 /**
  * Responsive value type - can be a single value or an object with breakpoint keys
@@ -46,17 +66,17 @@ export type ColorValue = ResponsiveValue<BpkColorTokenEnum>;
 export interface BpkBoxSpecificProps {
   // Flexbox props (for when BpkBox is used with display: flex)
   flex?: ResponsiveValue<string | number>;
-  flexDirection?: ResponsiveValue<string>;
-  flexWrap?: ResponsiveValue<string>;
+  flexDirection?: ResponsiveValue<FlexDirectionValue>;
+  flexWrap?: ResponsiveValue<FlexWrapValue>;
   flexGrow?: ResponsiveValue<string | number>;
   flexShrink?: ResponsiveValue<string | number>;
   flexBasis?: ResponsiveValue<string | number>;
-  alignItems?: ResponsiveValue<string>;
-  alignContent?: ResponsiveValue<string>;
-  alignSelf?: ResponsiveValue<string>;
-  justifyContent?: ResponsiveValue<string>;
-  justifyItems?: ResponsiveValue<string>;
-  justifySelf?: ResponsiveValue<string>;
+  alignItems?: ResponsiveValue<AlignItemsValue>;
+  alignContent?: ResponsiveValue<AlignContentValue>;
+  alignSelf?: ResponsiveValue<AlignSelfValue>;
+  justifyContent?: ResponsiveValue<JustifyContentValue>;
+  justifyItems?: ResponsiveValue<JustifyItemsValue>;
+  justifySelf?: ResponsiveValue<JustifySelfValue>;
   order?: ResponsiveValue<string | number>;
 
   // Grid props (for when BpkBox is used with display: grid)

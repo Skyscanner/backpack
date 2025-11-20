@@ -20,9 +20,9 @@ import type { ElementType } from 'react';
 
 import { getClassName } from '../styleUtils';
 
-import STYLES from './BpkSpacer.module.scss';
-
 import type { BpkSpacerProps } from './BpkSpacer.types';
+
+import STYLES from './BpkSpacer.module.scss';
 
 export type Props = BpkSpacerProps;
 
@@ -55,6 +55,8 @@ const BpkSpacer = ({
   const Component = as as ElementType;
 
   return (
+    // Allowed, Component is always a dom element.
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
     <Component
       className={getClass('bpk-spacer')}
       {...rest}

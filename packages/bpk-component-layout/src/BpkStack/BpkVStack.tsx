@@ -18,12 +18,12 @@
 
 import type { ElementType } from 'react';
 
-import { getClassName } from '../styleUtils';
+import { getClassName, processClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
 
-import STYLES from './BpkStack.module.scss';
-
 import type { BpkVStackProps } from './BpkStack.types';
+
+import STYLES from './BpkStack.module.scss';
 
 export type Props = BpkVStackProps;
 
@@ -71,18 +71,21 @@ const BpkVStack = ({
     flexDirection: 'column' as const,
   };
 
-  const { className, style, restProps } = transformBpkLayoutProps(propsWithGap);
+  const { className, restProps, style } = transformBpkLayoutProps(propsWithGap, {
+    componentName: 'stack',
+  });
   const Component = as as ElementType;
 
-  // Split className string into individual class names for CSS Modules mapping
-  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
-  const finalClassName = getClass('bpk-stack', 'stack-direction-column', ...classNameParts);
+  // Process className: split space-separated string and map through CSS Modules
+  const finalClassName = processClassName(getClass, className, 'bpk-stack');
 
   return (
+    // Allowed, Component is always a dom element.
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
     <Component
-      className={finalClassName || undefined}
-      style={style}
       {...restProps}
+      className={finalClassName || undefined}
+      style={style || undefined}
     >
       {children}
     </Component>

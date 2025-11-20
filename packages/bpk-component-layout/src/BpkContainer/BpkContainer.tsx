@@ -18,12 +18,12 @@
 
 import type { ElementType } from 'react';
 
-import { getClassName } from '../styleUtils';
+import { getClassName, processClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
 
-import STYLES from './BpkContainer.module.scss';
-
 import type { BpkContainerProps } from './BpkContainer.types';
+
+import STYLES from './BpkContainer.module.scss';
 
 export type Props = BpkContainerProps;
 
@@ -51,21 +51,35 @@ const getClass = getClassName(STYLES);
  */
 const BpkContainer = ({
   as = 'div',
+  centerContent,
   children,
+  maxW,
+  size,
   ...rest
 }: Props) => {
-  const { className, style, restProps } = transformBpkLayoutProps(rest);
+  // Pass container-specific props to transformBpkLayoutProps
+  const propsWithContainer = {
+    ...rest,
+    centerContent,
+    maxW,
+    size,
+  };
+
+  const { className, restProps, style } = transformBpkLayoutProps(propsWithContainer, {
+    componentName: 'container',
+  });
   const Component = as as ElementType;
 
-  // Split className string into individual class names for CSS Modules mapping
-  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
-  const finalClassName = getClass('bpk-container', ...classNameParts);
+  // Process className: split space-separated string and map through CSS Modules
+  const finalClassName = processClassName(getClass, className, 'bpk-container');
 
   return (
+    // Allowed, Component is always a dom element.
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
     <Component
-      className={finalClassName || undefined}
-      style={style}
       {...restProps}
+      className={finalClassName || undefined}
+      style={style || undefined}
     >
       {children}
     </Component>

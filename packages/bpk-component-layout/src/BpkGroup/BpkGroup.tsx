@@ -18,12 +18,12 @@
 
 import type { ElementType } from 'react';
 
-import { getClassName } from '../styleUtils';
+import { getClassName, processClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
 
-import STYLES from './BpkGroup.module.scss';
-
 import type { BpkGroupProps } from './BpkGroup.types';
+
+import STYLES from './BpkGroup.module.scss';
 
 export type Props = BpkGroupProps;
 
@@ -61,18 +61,21 @@ const BpkGroup = ({
     ...rest,
   };
 
-  const { className, style, restProps } = transformBpkLayoutProps(propsWithDisplay);
+  const { className, restProps, style } = transformBpkLayoutProps(propsWithDisplay, {
+    componentName: 'group',
+  });
   const Component = as as ElementType;
 
-  // Split className string into individual class names for CSS Modules mapping
-  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
-  const finalClassName = getClass('bpk-group', ...classNameParts);
+  // Process className: split space-separated string and map through CSS Modules
+  const finalClassName = processClassName(getClass, className, 'bpk-group');
 
   return (
+    // Allowed, Component is always a dom element.
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
     <Component
-      className={finalClassName || undefined}
-      style={style}
       {...restProps}
+      className={finalClassName || undefined}
+      style={style || undefined}
     >
       {children}
     </Component>

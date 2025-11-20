@@ -17,6 +17,12 @@
  */
 
 import type { ResponsiveValue, SpacingValue } from './BpkBox/BpkBox.types';
+import type {
+  FlexDirectionValue,
+  FlexWrapValue,
+  AlignItemsValue,
+  JustifyContentValue,
+} from './layoutPropTypes';
 
 /**
  * Flexbox shorthand props that are common across multiple components
@@ -26,22 +32,22 @@ export interface BpkFlexboxShorthandProps {
   /**
    * Shorthand for `alignItems` style prop
    */
-  align?: ResponsiveValue<string>;
+  align?: ResponsiveValue<AlignItemsValue>;
 
   /**
    * Shorthand for `justifyContent` style prop
    */
-  justify?: ResponsiveValue<string>;
+  justify?: ResponsiveValue<JustifyContentValue>;
 
   /**
    * Shorthand for `flexWrap` style prop
    */
-  wrap?: ResponsiveValue<string>;
+  wrap?: ResponsiveValue<FlexWrapValue>;
 
   /**
    * Shorthand for `flexDirection` style prop
    */
-  direction?: ResponsiveValue<string>;
+  direction?: ResponsiveValue<FlexDirectionValue>;
 }
 
 /**

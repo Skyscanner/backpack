@@ -21,6 +21,18 @@ import type { ElementType, ReactNode } from 'react';
 import type React from 'react';
 
 import type { ResponsiveValue, SpacingValue, ColorValue } from './BpkBox/BpkBox.types';
+import type {
+  DisplayValue,
+  OverflowValue,
+  PositionValue,
+  BorderStyleValue,
+  TextAlignValue,
+  TextTransformValue,
+  TextDecorationValue,
+  CursorValue,
+  PointerEventsValue,
+  VisibilityValue,
+} from './layoutPropTypes';
 
 /**
  * Base layout props shared by all layout components (BpkBox, BpkFlex, BpkGrid)
@@ -62,14 +74,14 @@ export interface BpkBaseLayoutProps {
   columnGap?: SpacingValue;
 
   // Display props
-  display?: ResponsiveValue<string>;
-  visibility?: ResponsiveValue<string>;
-  overflow?: ResponsiveValue<string>;
-  overflowX?: ResponsiveValue<string>;
-  overflowY?: ResponsiveValue<string>;
+  display?: ResponsiveValue<DisplayValue>;
+  visibility?: ResponsiveValue<VisibilityValue>;
+  overflow?: ResponsiveValue<OverflowValue>;
+  overflowX?: ResponsiveValue<OverflowValue>;
+  overflowY?: ResponsiveValue<OverflowValue>;
 
   // Position props
-  position?: ResponsiveValue<string>;
+  position?: ResponsiveValue<PositionValue>;
   top?: ResponsiveValue<string | number>;
   right?: ResponsiveValue<string | number>;
   bottom?: ResponsiveValue<string | number>;
@@ -85,7 +97,7 @@ export interface BpkBaseLayoutProps {
   // Border props
   border?: ResponsiveValue<string>;
   borderWidth?: ResponsiveValue<string | number>;
-  borderStyle?: ResponsiveValue<string>;
+  borderStyle?: ResponsiveValue<BorderStyleValue>;
   borderColor?: ColorValue;
   borderRadius?: ResponsiveValue<string | number>;
   borderTop?: ResponsiveValue<string>;
@@ -113,14 +125,14 @@ export interface BpkBaseLayoutProps {
   fontSize?: ResponsiveValue<string | number>;
   fontWeight?: ResponsiveValue<string | number>;
   lineHeight?: ResponsiveValue<string | number>;
-  textAlign?: ResponsiveValue<string>;
-  textTransform?: ResponsiveValue<string>;
-  textDecoration?: ResponsiveValue<string>;
+  textAlign?: ResponsiveValue<TextAlignValue>;
+  textTransform?: ResponsiveValue<TextTransformValue>;
+  textDecoration?: ResponsiveValue<TextDecorationValue>;
   letterSpacing?: ResponsiveValue<string | number>;
 
   // Cursor and pointer events
-  cursor?: ResponsiveValue<string>;
-  pointerEvents?: ResponsiveValue<string>;
+  cursor?: ResponsiveValue<CursorValue>;
+  pointerEvents?: ResponsiveValue<PointerEventsValue>;
 
   // Transform props
   transform?: ResponsiveValue<string>;

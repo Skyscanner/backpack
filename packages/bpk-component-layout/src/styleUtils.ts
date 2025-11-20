@@ -87,8 +87,16 @@ export const spacingToClassSuffix = (value: string | number | undefined | null):
 };
 
 /**
+ * Converts camelCase property name to kebab-case for CSS class names
+ * @param {string} propName - Property name in camelCase (e.g., 'marginRight', 'paddingTop')
+ * @returns {string} Property name in kebab-case (e.g., 'margin-right', 'padding-top')
+ */
+const camelCaseToKebabCase = (propName: string): string =>
+  propName.replace(/([A-Z])/g, '-$1').toLowerCase();
+
+/**
  * Converts a responsive spacing value to class name parts
- * @param {string} propName - Property name (e.g., 'padding', 'margin')
+ * @param {string} propName - Property name (e.g., 'padding', 'margin', 'marginRight')
  * @param {ResponsiveValue<string | number> | undefined | null} value - Responsive spacing value
  * @returns {string[]} Array of class name parts
  */
@@ -100,9 +108,13 @@ export const responsiveSpacingToClassNames = (
     return [];
   }
 
+  // Convert camelCase to kebab-case for CSS class names
+  // e.g., 'marginRight' -> 'margin-right', 'paddingTop' -> 'padding-top'
+  const kebabPropName = camelCaseToKebabCase(propName);
+
   if (typeof value === 'string' || typeof value === 'number') {
     const suffix = spacingToClassSuffix(value);
-    return suffix ? [`bpk-${propName}-${suffix}`] : [];
+    return suffix ? [`bpk-${kebabPropName}-${suffix}`] : [];
   }
 
   // Handle responsive object
@@ -114,7 +126,7 @@ export const responsiveSpacingToClassNames = (
     if (breakpointValue !== undefined && breakpointValue !== null) {
       const suffix = spacingToClassSuffix(breakpointValue);
       if (suffix) {
-        classNames.push(`bpk-${propName}-${suffix}-${breakpoint}`);
+        classNames.push(`bpk-${kebabPropName}-${suffix}-${breakpoint}`);
       }
     }
   }
@@ -213,6 +225,126 @@ export const responsiveValueToClassNames = (
 };
 
 /**
+ * Converts a pixel value to rem units
+ * @param {number} px - Pixel value to convert
+ * @returns {string} Rem value (e.g., "0.5rem" for 8px)
+ */
+export const convertPxToRem = (px: number): string => {
+  if (px === 0) {
+    return '0';
+  }
+  return `${px / 16}rem`;
+};
+
+/**
+ * Backpack spacing token to rem value mapping
+ * Based on Backpack spacing tokens: https://www.skyscanner.design/latest/foundations/spacing/overview-jCiTHnBD
+ */
+const BPK_SPACING_TOKEN_TO_REM: Record<string, string> = {
+  none: '0',
+  sm: '0.25rem', // 4px
+  md: '0.5rem', // 8px
+  base: '1rem', // 16px
+  lg: '1.5rem', // 24px
+  xl: '2rem', // 32px
+  xxl: '2.5rem', // 40px
+  xxxl: '4rem', // 64px
+  xxxxl: '6rem', // 96px
+};
+
+/**
+ * Backpack border radius token to rem value mapping
+ */
+const BPK_BORDER_RADIUS_TOKEN_TO_REM: Record<string, string> = {
+  none: '0',
+  sm: '0.25rem', // 4px
+  md: '0.5rem', // 8px
+  lg: '0.75rem', // 12px
+  xl: '1rem', // 16px
+  full: '9999px', // Full circle
+};
+
+/**
+ * Converts a spacing value to CSS variable value
+ * @param {string | number} value - Spacing value (token string, number, or CSS value)
+ * @returns {string} CSS variable value in rem or original value
+ */
+export const convertSpacingToCSSValue = (value: string | number): string => {
+  if (typeof value === 'number') {
+    return convertPxToRem(value);
+  }
+  
+  if (typeof value === 'string') {
+    // Check if it's a Backpack spacing token
+    if (value in BPK_SPACING_TOKEN_TO_REM) {
+      return BPK_SPACING_TOKEN_TO_REM[value];
+    }
+    // If it's already a valid CSS value (contains rem, px, %, etc.), return as-is
+    if (/^[\d.]+(rem|px|%|em|vh|vw)$/.test(value) || value === '0' || value === 'auto' || value === 'initial' || value === 'inherit') {
+      return value;
+    }
+  }
+  
+  // For unknown string values, return as-is (could be a custom CSS value)
+  return value;
+};
+
+/**
+ * Converts a border radius value to CSS variable value
+ * @param {string | number} value - Border radius value (token string, number, or CSS value)
+ * @returns {string} CSS variable value in rem or original value
+ */
+export const convertBorderRadiusToCSSValue = (value: string | number): string => {
+  if (typeof value === 'number') {
+    return convertPxToRem(value);
+  }
+  
+  if (typeof value === 'string') {
+    // Check if it's a Backpack border radius token
+    if (value in BPK_BORDER_RADIUS_TOKEN_TO_REM) {
+      return BPK_BORDER_RADIUS_TOKEN_TO_REM[value];
+    }
+    // If it's already a valid CSS value, return as-is
+    if (/^[\d.]+(rem|px|%|em)$/.test(value) || value === '0') {
+      return value;
+    }
+  }
+  
+  // For unknown string values, return as-is
+  return value;
+};
+
+/**
+ * Generates CSS custom properties for dynamic spacing values
+ * @param {string} propName - Property name (e.g., 'padding', 'margin')
+ * @param {ResponsiveValue<string | number>} value - Responsive spacing value
+ * @returns {Record<string, string>} Object with CSS custom properties
+ */
+export const generateSpacingCSSVariables = (
+  propName: string,
+  value: ResponsiveValue<string | number>,
+): Record<string, string> => {
+  const cssVars: Record<string, string> = {};
+  const kebabPropName = propName.replace(/([A-Z])/g, '-$1').toLowerCase();
+
+  if (typeof value === 'string' || typeof value === 'number') {
+    // Simple value
+    const cssVarName = `--bpk-${kebabPropName}`;
+    cssVars[cssVarName] = convertSpacingToCSSValue(value);
+  } else if (typeof value === 'object' && value !== null) {
+    // Responsive object - generate CSS variables for each breakpoint
+    for (const [breakpoint, breakpointValue] of Object.entries(value)) {
+      if (breakpointValue !== undefined && breakpointValue !== null) {
+        const cssVarName = `--bpk-${kebabPropName}-${breakpoint}`;
+        cssVars[cssVarName] = convertSpacingToCSSValue(breakpointValue as string | number);
+      }
+    }
+  }
+
+  return cssVars;
+};
+
+/**
  * Generates CSS custom properties for dynamic values that can't be pre-compiled
  * @param {Record<string, any>} props - Props object with dynamic values
  * @returns {Record<string, string>} Object with CSS custom properties
@@ -265,4 +397,23 @@ export const combineClassNames = (...classNames: Array<string[] | string | null 
     .flat()
     .filter((name): name is string => Boolean(name))
     .join(' ');
+
+/**
+ * Processes className string and applies CSS Modules class mapping
+ * Splits the className string into individual class names and maps them through getClass
+ * @param {Function} getClass - CSS Modules class name mapper function
+ * @param {string | undefined} className - Space-separated class name string
+ * @param {string} defaultClassName - Default class name to use if className is empty
+ * @returns {string | undefined} Mapped class name string
+ */
+export const processClassName = (
+  getClass: (...classes: string[]) => string,
+  className: string | undefined,
+  defaultClassName: string,
+): string | undefined => {
+  if (className) {
+    return getClass(...className.split(/\s+/).filter(Boolean));
+  }
+  return getClass(defaultClassName);
+};
 

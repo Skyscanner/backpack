@@ -146,6 +146,44 @@ export const Responsive = () => (
   </Wrapper>
 );
 
+export const ResponsiveSpacing = () => (
+  <Wrapper>
+    {/* Outer container to show margin (light gray background) */}
+    <BpkBox
+      margin={{
+        smallMobile: 'sm',
+        mobile: 'base',
+        desktop: 'lg',
+      }}
+      bg={BPK_COLOR_TOKENS.canvasContrast}
+      borderRadius="md"
+      padding="base"
+    >
+      {/* Inner box to show padding (highlighted background) */}
+      <BpkBox
+        padding={{
+          smallMobile: 'sm',
+          mobile: 'base',
+          desktop: 'lg',
+        }}
+        bg={BPK_COLOR_TOKENS.surfaceHighlight}
+        borderRadius="md"
+        overflow="hidden"
+      >
+        Responsive spacing using Backpack breakpoint tokens:
+        <br />
+        <br />
+        <strong>Outer container (gray):</strong> margin: sm (smallMobile) → base (mobile) → lg (desktop)
+        <br />
+        <strong>Inner box (highlighted):</strong> padding: sm (smallMobile) → base (mobile) → lg (desktop)
+        <br />
+        <br />
+        Resize the browser window to see the spacing change at different breakpoints.
+      </BpkBox>
+    </BpkBox>
+  </Wrapper>
+);
+
 export const ColorTokens = () => (
   <Wrapper>
     <BpkBox padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderColor={BPK_COLOR_TOKENS.line} borderWidth="1px" borderRadius="md" marginBottom="base">

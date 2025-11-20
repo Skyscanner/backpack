@@ -23,7 +23,7 @@
 // Base BpkGrid class
 .bpk-grid {
   display: grid;
-  box-sizing: border-box;
+  @include layoutMixins.base-component-styles;
 }
 
 // Grid template columns utilities
@@ -43,55 +43,64 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
-@include breakpoints.bpk-breakpoint-small-mobile {
-  .bpk-grid-template-columns-1fr-smallMobile {
+// Responsive grid template columns utilities
+// Mobile-first approach: smallMobile is base (no media query), others use min-width
+// smallMobile: base value, applies to all sizes (no media query)
+.bpk-grid-template-columns-1fr-smallMobile {
+  grid-template-columns: 1fr;
+}
+
+.bpk-grid-template-columns-repeat2-smallMobile {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.bpk-grid-template-columns-repeat3-smallMobile {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+// mobile: applies from mobile breakpoint and above (overrides smallMobile)
+.bpk-grid-template-columns-1fr-mobile {
+  @include breakpoints.bpk-breakpoint-above-mobile {
     grid-template-columns: 1fr;
   }
+}
 
-  .bpk-grid-template-columns-repeat2-smallMobile {
+.bpk-grid-template-columns-repeat2-mobile {
+  @include breakpoints.bpk-breakpoint-above-mobile {
     grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .bpk-grid-template-columns-repeat3-smallMobile {
+.bpk-grid-template-columns-repeat3-mobile {
+  @include breakpoints.bpk-breakpoint-above-mobile {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@include breakpoints.bpk-breakpoint-mobile {
-  .bpk-grid-template-columns-1fr-mobile {
+// desktop: applies from desktop breakpoint and above (overrides mobile)
+.bpk-grid-template-columns-1fr-desktop {
+  @include breakpoints.bpk-breakpoint-above-tablet {
     grid-template-columns: 1fr;
   }
+}
 
-  .bpk-grid-template-columns-repeat2-mobile {
+.bpk-grid-template-columns-repeat2-desktop {
+  @include breakpoints.bpk-breakpoint-above-tablet {
     grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .bpk-grid-template-columns-repeat3-mobile {
+.bpk-grid-template-columns-repeat3-desktop {
+  @include breakpoints.bpk-breakpoint-above-tablet {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@include breakpoints.bpk-breakpoint-above-tablet {
-  .bpk-grid-template-columns-1fr-desktop {
-    grid-template-columns: 1fr;
-  }
-
-  .bpk-grid-template-columns-repeat2-desktop {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .bpk-grid-template-columns-repeat3-desktop {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .bpk-grid-template-columns-repeat4-desktop {
+.bpk-grid-template-columns-repeat4-desktop {
+  @include breakpoints.bpk-breakpoint-above-tablet {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-// Include spacing and color utilities from layoutMixins
-@include layoutMixins.generate-spacing-utilities(padding, 'padding');
-@include layoutMixins.generate-spacing-utilities(margin, 'margin');
-@include layoutMixins.generate-spacing-utilities(gap, 'gap');
-@include layoutMixins.generate-color-utilities(background-color, 'bg');
-@include layoutMixins.generate-color-utilities(color, 'color');
+// Common layout utilities (spacing, color, layout)
+@include layoutMixins.common-layout-utilities($include-gap: true, $include-border-color: false);

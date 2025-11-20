@@ -23,7 +23,7 @@
 .bpk-aspect-ratio {
   position: relative;
   width: 100%;
-  box-sizing: border-box;
+  @include layoutMixins.base-component-styles;
 
   &::before {
     content: '';
@@ -42,8 +42,5 @@
   }
 }
 
-// Include spacing and color utilities from layoutMixins
-@include layoutMixins.generate-spacing-utilities(padding, 'padding');
-@include layoutMixins.generate-spacing-utilities(margin, 'margin');
-@include layoutMixins.generate-color-utilities(background-color, 'bg');
-@include layoutMixins.generate-color-utilities(color, 'color');
+// Common layout utilities (spacing, color, layout)
+@include layoutMixins.common-layout-utilities($include-gap: false, $include-border-color: false);

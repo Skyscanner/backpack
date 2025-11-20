@@ -18,35 +18,35 @@
 
 import type { ReactNode } from 'react';
 
-export type BpkLayoutProviderProps = {
+export type BpkProviderProps = {
   children: ReactNode;
 };
 
 /**
- * BpkLayoutProvider is a no-op component that exists for backward compatibility.
+ * BpkProvider is a no-op component that exists for backward compatibility.
  * 
- * **Note:** With CSS Modules implementation, BpkLayoutProvider is no longer required.
+ * **Note:** With CSS Modules implementation, BpkProvider is no longer required.
  * Layout components now use static CSS classes compiled at build time, so no runtime
  * theme provider is needed. This component is kept for API compatibility but does nothing.
  *
- * **Migration:** You can safely remove BpkLayoutProvider from your code. All layout
+ * **Migration:** You can safely remove BpkProvider from your code. All layout
  * components will work without it.
  *
- * @param {BpkLayoutProviderProps} props - The component props
+ * @param {BpkProviderProps} props - The component props
  * @returns {JSX.Element} The rendered children
  * @example
  * ```tsx
  * // Old usage (still works but not required)
- * <BpkLayoutProvider>
+ * <BpkProvider>
  *   <YourApp />
- * </BpkLayoutProvider>
+ * </BpkProvider>
  *
  * // New usage (recommended)
  * <YourApp />
  * ```
  */
-export const BpkLayoutProvider = ({ children }: BpkLayoutProviderProps) => {
-  return <>{children}</>;
-};
+export const BpkProvider = ({ children }: BpkProviderProps) => <>{children}</>;
 
-export default BpkLayoutProvider;
+export default BpkProvider;
+
+

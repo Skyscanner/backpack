@@ -18,12 +18,12 @@
 
 import type { ElementType } from 'react';
 
-import { getClassName } from '../styleUtils';
+import { getClassName, processClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
 
-import STYLES from './BpkGrid.module.scss';
-
 import type { BpkGridProps } from './BpkGrid.types';
+
+import STYLES from './BpkGrid.module.scss';
 
 export type Props = BpkGridProps;
 
@@ -73,23 +73,21 @@ const BpkGrid = ({
   children,
   ...rest
 }: Props) => {
-  const { className, style, restProps } = transformBpkLayoutProps(rest);
+  const { className, restProps, style } = transformBpkLayoutProps(rest, {
+    componentName: 'grid',
+  });
   const Component = as as ElementType;
 
-  // Handle gridTemplateColumns specially if it's a string
-  if (rest.gridTemplateColumns && typeof rest.gridTemplateColumns === 'string') {
-    style.gridTemplateColumns = rest.gridTemplateColumns;
-  }
-
-  // Split className string into individual class names for CSS Modules mapping
-  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
-  const finalClassName = getClass('bpk-grid', ...classNameParts);
+  // Process className: split space-separated string and map through CSS Modules
+  const finalClassName = processClassName(getClass, className, 'bpk-grid');
 
   return (
+    // Allowed, Component is always a dom element.
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
     <Component
-      className={finalClassName || undefined}
-      style={style}
       {...restProps}
+      className={finalClassName || undefined}
+      style={style || undefined}
     >
       {children}
     </Component>

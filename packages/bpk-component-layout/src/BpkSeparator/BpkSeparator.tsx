@@ -18,12 +18,12 @@
 
 import type { ElementType } from 'react';
 
-import { getClassName } from '../styleUtils';
+import { getClassName, processClassName } from '../styleUtils';
 import { transformBpkLayoutProps } from '../useBpkLayoutProps';
 
-import STYLES from './BpkSeparator.module.scss';
-
 import type { BpkSeparatorProps } from './BpkSeparator.types';
+
+import STYLES from './BpkSeparator.module.scss';
 
 export type Props = BpkSeparatorProps;
 
@@ -52,22 +52,28 @@ const BpkSeparator = ({
   orientation = 'horizontal',
   ...rest
 }: Props) => {
-  const { className, style, restProps } = transformBpkLayoutProps(rest, {
+  // Include orientation in props for transformation
+  const propsWithOrientation = {
+    ...rest,
+    orientation,
+  };
+
+  const { className, restProps, style } = transformBpkLayoutProps(propsWithOrientation, {
+    componentName: 'separator',
     disallowedProps: ['className', 'children'], // Separator doesn't accept children
   });
   const Component = as as ElementType;
 
-  const orientationClass = `separator-orientation-${orientation}`;
-
-  // Split className string into individual class names for CSS Modules mapping
-  const classNameParts = className ? className.split(/\s+/).filter(Boolean) : [];
-  const finalClassName = getClass('bpk-separator', orientationClass, ...classNameParts);
+  // Process className: split space-separated string and map through CSS Modules
+  const finalClassName = processClassName(getClass, className, 'bpk-separator');
 
   return (
+    // Allowed, Component is always a dom element.
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
     <Component
-      className={finalClassName || undefined}
-      style={style}
       {...restProps}
+      className={finalClassName || undefined}
+      style={style || undefined}
     />
   );
 };

@@ -41,9 +41,9 @@ import BpkGroup, {
   type Props as BpkGroupProps,
 } from './src/BpkGroup/BpkGroup';
 import {
-  BpkLayoutProvider,
-  type BpkLayoutProviderProps,
-} from './src/BpkLayoutProvider';
+  BpkProvider,
+  type BpkProviderProps,
+} from './src/BpkProvider';
 import BpkSeparator, {
   type Props as BpkSeparatorProps,
 } from './src/BpkSeparator/BpkSeparator';
@@ -97,14 +97,33 @@ export type {
   BpkBaseLayoutProps,
   BpkFlexboxShorthandProps,
   BpkSpacingProps,
-  BpkLayoutProviderProps,
+  BpkProviderProps,
   ResponsiveValue,
   SpacingValue,
   BpkColorTokenEnum,
   // Stack sub-components types
   BpkHStackProps,
   BpkVStackProps,
-};
+  // Constrained prop value types (for advanced usage)
+  DisplayValue,
+  FlexDirectionValue,
+  FlexWrapValue,
+  AlignItemsValue,
+  AlignContentValue,
+  AlignSelfValue,
+  JustifyContentValue,
+  JustifyItemsValue,
+  JustifySelfValue,
+  OverflowValue,
+  PositionValue,
+  BorderStyleValue,
+  TextAlignValue,
+  TextTransformValue,
+  TextDecorationValue,
+  CursorValue,
+  PointerEventsValue,
+  VisibilityValue,
+} from './src/layoutPropTypes';
 export default BpkBox;
 export {
   BpkBox,
@@ -119,7 +138,7 @@ export {
   BpkAspectRatio,
   BpkFloat,
   BpkGroup,
-  BpkLayoutProvider,
+  BpkProvider,
   BPK_SPACING_TOKENS,
   BPK_BREAKPOINT_TOKENS,
   BPK_COLOR_TOKENS,

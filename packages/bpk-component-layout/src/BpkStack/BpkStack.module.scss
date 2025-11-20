@@ -23,7 +23,7 @@
 // Base BpkStack class
 .bpk-stack {
   display: flex;
-  box-sizing: border-box;
+  @include layoutMixins.base-component-styles;
 }
 
 // Stack direction utilities
@@ -35,39 +35,42 @@
   flex-direction: column;
 }
 
-@include breakpoints.bpk-breakpoint-small-mobile {
-  .bpk-stack-direction-row-smallMobile {
+// Responsive stack direction utilities
+// Mobile-first approach: smallMobile is base (no media query), others use min-width
+// smallMobile: base value, applies to all sizes (no media query)
+.bpk-stack-direction-row-smallMobile {
+  flex-direction: row;
+}
+
+.bpk-stack-direction-column-smallMobile {
+  flex-direction: column;
+}
+
+// mobile: applies from mobile breakpoint and above (overrides smallMobile)
+.bpk-stack-direction-row-mobile {
+  @include breakpoints.bpk-breakpoint-above-mobile {
     flex-direction: row;
   }
+}
 
-  .bpk-stack-direction-column-smallMobile {
+.bpk-stack-direction-column-mobile {
+  @include breakpoints.bpk-breakpoint-above-mobile {
     flex-direction: column;
   }
 }
 
-@include breakpoints.bpk-breakpoint-mobile {
-  .bpk-stack-direction-row-mobile {
+// desktop: applies from desktop breakpoint and above (overrides mobile)
+.bpk-stack-direction-row-desktop {
+  @include breakpoints.bpk-breakpoint-above-tablet {
     flex-direction: row;
   }
+}
 
-  .bpk-stack-direction-column-mobile {
+.bpk-stack-direction-column-desktop {
+  @include breakpoints.bpk-breakpoint-above-tablet {
     flex-direction: column;
   }
 }
 
-@include breakpoints.bpk-breakpoint-above-tablet {
-  .bpk-stack-direction-row-desktop {
-    flex-direction: row;
-  }
-
-  .bpk-stack-direction-column-desktop {
-    flex-direction: column;
-  }
-}
-
-// Include spacing and color utilities from layoutMixins
-@include layoutMixins.generate-spacing-utilities(padding, 'padding');
-@include layoutMixins.generate-spacing-utilities(margin, 'margin');
-@include layoutMixins.generate-spacing-utilities(gap, 'gap');
-@include layoutMixins.generate-color-utilities(background-color, 'bg');
-@include layoutMixins.generate-color-utilities(color, 'color');
+// Common layout utilities (spacing, color, layout)
+@include layoutMixins.common-layout-utilities($include-gap: true, $include-border-color: false);

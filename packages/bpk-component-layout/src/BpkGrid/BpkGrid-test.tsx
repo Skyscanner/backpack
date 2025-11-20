@@ -20,12 +20,12 @@ import type { ReactElement } from 'react';
 
 import { render } from '@testing-library/react';
 
-import { BpkLayoutProvider } from '../BpkLayoutProvider';
+import { BpkProvider } from '../BpkProvider';
 
 import BpkGrid from './BpkGrid';
 
-// Wrap component with BpkLayoutProvider for tests
-const renderWithLayout = (component: ReactElement) => render(<BpkLayoutProvider>{component}</BpkLayoutProvider>);
+// Wrap component with BpkProvider for tests
+const renderWithLayout = (component: ReactElement) => render(<BpkProvider>{component}</BpkProvider>);
 
 describe('BpkGrid', () => {
   it('should render correctly', () => {

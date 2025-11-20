@@ -20,25 +20,28 @@
 @use '../layoutMixins';
 
 // Base BpkFloat class
+// Only contains essential default styles (box-sizing and float)
+// Actual styles are applied via utility classes (e.g., .bpk-padding-base, .bpk-bg-surfaceHighlight)
+// Float property uses component-specific classes (e.g., .bpk-float-float-left)
+// CSS Modules will add its own hash (e.g., .bpk-float_a1b2c3d4)
 .bpk-float {
-  box-sizing: border-box;
+  @include layoutMixins.base-component-styles;
+  float: var(--bpk-float, initial);
 }
 
-// Float utilities
-.bpk-float-left {
-  float: left;
+// Common layout utilities (spacing, color, layout)
+// Includes border-color utilities
+@include layoutMixins.common-layout-utilities($include-gap: false, $include-border-color: true);
+
+// Float utilities for BpkFloat
+.bpk-float-float-left {
+  --bpk-float: left;
 }
 
-.bpk-float-right {
-  float: right;
+.bpk-float-float-right {
+  --bpk-float: right;
 }
 
-.bpk-float-none {
-  float: none;
+.bpk-float-float-none {
+  --bpk-float: none;
 }
-
-// Include spacing and color utilities from layoutMixins
-@include layoutMixins.generate-spacing-utilities(padding, 'padding');
-@include layoutMixins.generate-spacing-utilities(margin, 'margin');
-@include layoutMixins.generate-color-utilities(background-color, 'bg');
-@include layoutMixins.generate-color-utilities(color, 'color');

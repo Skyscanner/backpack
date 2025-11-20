@@ -20,11 +20,11 @@ import type { ReactElement } from 'react';
 
 import { render } from '@testing-library/react';
 
-import { BpkLayoutProvider } from '../BpkLayoutProvider';
+import { BpkProvider } from '../BpkProvider';
 
 import BpkWrap from './BpkWrap';
 
-const renderWithLayout = (component: ReactElement) => render(<BpkLayoutProvider>{component}</BpkLayoutProvider>);
+const renderWithLayout = (component: ReactElement) => render(<BpkProvider>{component}</BpkProvider>);
 
 describe('BpkWrap', () => {
   it('should render correctly', () => {

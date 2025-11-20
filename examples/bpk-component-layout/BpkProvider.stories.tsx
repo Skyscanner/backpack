@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkLayoutProvider } from '../../packages/bpk-component-layout';
+import { BpkProvider } from '../../packages/bpk-component-layout';
 
 import {
   Default,
@@ -24,11 +24,11 @@ import {
   WithSpacingTokens,
   WithColorTokens,
   WithResponsiveLayout,
-} from './BpkLayoutProvider.examples';
+} from './BpkProvider.examples';
 
 export default {
-  title: 'bpk-component-layout/BpkLayoutProvider',
-  component: BpkLayoutProvider,
+  title: 'bpk-component-layout/BpkProvider',
+  component: BpkProvider,
 };
 
 export {
@@ -38,4 +38,5 @@ export {
   WithColorTokens,
   WithResponsiveLayout,
 };
+
 

@@ -18,16 +18,16 @@
 
 import type { ReactNode } from 'react';
 
-import { BpkLayoutProvider } from '../../packages/bpk-component-layout';
+import { BpkProvider } from '../../packages/bpk-component-layout';
 
 import STYLES from './examples.module.scss';
 
 const Wrapper = ({ children }: { children: ReactNode }) => (
-  <BpkLayoutProvider>
+  <BpkProvider>
     <div className={STYLES['bpk-layout-examples--wrapper']}>
       {children}
     </div>
-  </BpkLayoutProvider>
+  </BpkProvider>
 );
 
 export default Wrapper;

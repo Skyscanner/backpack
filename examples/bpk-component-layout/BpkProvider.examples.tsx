@@ -19,29 +19,29 @@
 import {
   BpkBox,
   BpkFlex,
-  BpkLayoutProvider,
+  BpkProvider,
   BPK_COLOR_TOKENS,
 } from '../../packages/bpk-component-layout';
 
 /**
- * BpkLayoutProvider Examples
+ * BpkProvider Examples
  *
- * BpkLayoutProvider is a required wrapper component that configures Chakra UI
- * with Backpack's design tokens and breakpoints. It must wrap your application
- * at the root level for all layout components to work correctly.
+ * BpkProvider is a no-op component that exists for backward compatibility.
+ * With CSS Modules implementation, BpkProvider is no longer required.
+ * Layout components now use static CSS classes compiled at build time.
  */
 
 export const Default = () => (
-  <BpkLayoutProvider>
+  <BpkProvider>
     <BpkBox padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
-      This content is wrapped in BpkLayoutProvider, enabling Backpack layout components
+      This content is wrapped in BpkProvider, enabling Backpack layout components
       to use Backpack design tokens and breakpoints.
     </BpkBox>
-  </BpkLayoutProvider>
+  </BpkProvider>
 );
 
 export const WithLayoutComponents = () => (
-  <BpkLayoutProvider>
+  <BpkProvider>
     <BpkFlex gap="base" padding="base" direction="column">
       <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
         Layout component 1
@@ -53,11 +53,11 @@ export const WithLayoutComponents = () => (
         Layout component 3
       </BpkBox>
     </BpkFlex>
-  </BpkLayoutProvider>
+  </BpkProvider>
 );
 
 export const WithSpacingTokens = () => (
-  <BpkLayoutProvider>
+  <BpkProvider>
     <BpkFlex gap="base" padding="lg" direction="column">
       <BpkBox padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
         Using Backpack spacing tokens: padding=&quot;lg&quot; (1.5rem / 24px)
@@ -69,11 +69,11 @@ export const WithSpacingTokens = () => (
         Using Backpack spacing tokens: padding=&quot;xl&quot; (2rem / 32px)
       </BpkBox>
     </BpkFlex>
-  </BpkLayoutProvider>
+  </BpkProvider>
 );
 
 export const WithColorTokens = () => (
-  <BpkLayoutProvider>
+  <BpkProvider>
     <BpkFlex gap="base" padding="base" direction="column">
       <BpkBox padding="base" bg={BPK_COLOR_TOKENS.canvasContrast} borderRadius="md">
         Canvas Contrast background
@@ -88,11 +88,11 @@ export const WithColorTokens = () => (
         Surface Elevated background
       </BpkBox>
     </BpkFlex>
-  </BpkLayoutProvider>
+  </BpkProvider>
 );
 
 export const WithResponsiveLayout = () => (
-  <BpkLayoutProvider>
+  <BpkProvider>
     <BpkFlex
       gap="base"
       padding="base"
@@ -131,6 +131,7 @@ export const WithResponsiveLayout = () => (
         Responsive item 3
       </BpkBox>
     </BpkFlex>
-  </BpkLayoutProvider>
+  </BpkProvider>
 );
+
 
