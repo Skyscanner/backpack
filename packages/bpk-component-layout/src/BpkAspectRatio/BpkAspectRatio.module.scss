@@ -28,8 +28,8 @@
   &::before {
     content: '';
     display: block;
-    padding-bottom: var(--bpk-aspect-ratio, 56.25%); // Default 16:9
     height: 0;
+    padding-bottom: var(--bpk-aspect-ratio, 56.25%); // Default 16:9
   }
 
   > * {
@@ -47,4 +47,3 @@
 @include layoutMixins.generate-spacing-utilities(margin, 'margin');
 @include layoutMixins.generate-color-utilities(background-color, 'bg');
 @include layoutMixins.generate-color-utilities(color, 'color');
-

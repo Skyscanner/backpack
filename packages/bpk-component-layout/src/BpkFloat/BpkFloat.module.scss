@@ -25,13 +25,20 @@
 }
 
 // Float utilities
-.float-left { float: left; }
-.float-right { float: right; }
-.float-none { float: none; }
+.bpk-float-left {
+  float: left;
+}
+
+.bpk-float-right {
+  float: right;
+}
+
+.bpk-float-none {
+  float: none;
+}
 
 // Include spacing and color utilities from layoutMixins
 @include layoutMixins.generate-spacing-utilities(padding, 'padding');
 @include layoutMixins.generate-spacing-utilities(margin, 'margin');
 @include layoutMixins.generate-color-utilities(background-color, 'bg');
 @include layoutMixins.generate-color-utilities(color, 'color');
-

@@ -27,28 +27,66 @@
 }
 
 // Grid template columns utilities
-.grid-template-columns-1fr { grid-template-columns: 1fr; }
-.grid-template-columns-repeat2 { grid-template-columns: repeat(2, 1fr); }
-.grid-template-columns-repeat3 { grid-template-columns: repeat(3, 1fr); }
-.grid-template-columns-repeat4 { grid-template-columns: repeat(4, 1fr); }
+.bpk-grid-template-columns-1fr {
+  grid-template-columns: 1fr;
+}
+
+.bpk-grid-template-columns-repeat2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.bpk-grid-template-columns-repeat3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.bpk-grid-template-columns-repeat4 {
+  grid-template-columns: repeat(4, 1fr);
+}
 
 @include breakpoints.bpk-breakpoint-small-mobile {
-  .grid-template-columns-1fr-smallMobile { grid-template-columns: 1fr; }
-  .grid-template-columns-repeat2-smallMobile { grid-template-columns: repeat(2, 1fr); }
-  .grid-template-columns-repeat3-smallMobile { grid-template-columns: repeat(3, 1fr); }
+  .bpk-grid-template-columns-1fr-smallMobile {
+    grid-template-columns: 1fr;
+  }
+
+  .bpk-grid-template-columns-repeat2-smallMobile {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bpk-grid-template-columns-repeat3-smallMobile {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @include breakpoints.bpk-breakpoint-mobile {
-  .grid-template-columns-1fr-mobile { grid-template-columns: 1fr; }
-  .grid-template-columns-repeat2-mobile { grid-template-columns: repeat(2, 1fr); }
-  .grid-template-columns-repeat3-mobile { grid-template-columns: repeat(3, 1fr); }
+  .bpk-grid-template-columns-1fr-mobile {
+    grid-template-columns: 1fr;
+  }
+
+  .bpk-grid-template-columns-repeat2-mobile {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bpk-grid-template-columns-repeat3-mobile {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @include breakpoints.bpk-breakpoint-above-tablet {
-  .grid-template-columns-1fr-desktop { grid-template-columns: 1fr; }
-  .grid-template-columns-repeat2-desktop { grid-template-columns: repeat(2, 1fr); }
-  .grid-template-columns-repeat3-desktop { grid-template-columns: repeat(3, 1fr); }
-  .grid-template-columns-repeat4-desktop { grid-template-columns: repeat(4, 1fr); }
+  .bpk-grid-template-columns-1fr-desktop {
+    grid-template-columns: 1fr;
+  }
+
+  .bpk-grid-template-columns-repeat2-desktop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bpk-grid-template-columns-repeat3-desktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .bpk-grid-template-columns-repeat4-desktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 // Include spacing and color utilities from layoutMixins
@@ -57,4 +95,3 @@
 @include layoutMixins.generate-spacing-utilities(gap, 'gap');
 @include layoutMixins.generate-color-utilities(background-color, 'bg');
 @include layoutMixins.generate-color-utilities(color, 'color');
-

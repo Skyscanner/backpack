@@ -22,9 +22,9 @@
 // Base BpkContainer class
 .bpk-container {
   width: 100%;
-  margin-left: auto;
+  max-width: 75rem; // Default max-width (1200px), can be overridden
   margin-right: auto;
-  max-width: 1200px; // Default max-width, can be overridden
+  margin-left: auto;
   box-sizing: border-box;
 }
 
@@ -33,4 +33,3 @@
 @include layoutMixins.generate-spacing-utilities(margin, 'margin');
 @include layoutMixins.generate-color-utilities(background-color, 'bg');
 @include layoutMixins.generate-color-utilities(color, 'color');
-

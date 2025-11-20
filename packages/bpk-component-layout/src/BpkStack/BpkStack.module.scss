@@ -27,22 +27,42 @@
 }
 
 // Stack direction utilities
-.stack-direction-row { flex-direction: row; }
-.stack-direction-column { flex-direction: column; }
+.bpk-stack-direction-row {
+  flex-direction: row;
+}
+
+.bpk-stack-direction-column {
+  flex-direction: column;
+}
 
 @include breakpoints.bpk-breakpoint-small-mobile {
-  .stack-direction-row-smallMobile { flex-direction: row; }
-  .stack-direction-column-smallMobile { flex-direction: column; }
+  .bpk-stack-direction-row-smallMobile {
+    flex-direction: row;
+  }
+
+  .bpk-stack-direction-column-smallMobile {
+    flex-direction: column;
+  }
 }
 
 @include breakpoints.bpk-breakpoint-mobile {
-  .stack-direction-row-mobile { flex-direction: row; }
-  .stack-direction-column-mobile { flex-direction: column; }
+  .bpk-stack-direction-row-mobile {
+    flex-direction: row;
+  }
+
+  .bpk-stack-direction-column-mobile {
+    flex-direction: column;
+  }
 }
 
 @include breakpoints.bpk-breakpoint-above-tablet {
-  .stack-direction-row-desktop { flex-direction: row; }
-  .stack-direction-column-desktop { flex-direction: column; }
+  .bpk-stack-direction-row-desktop {
+    flex-direction: row;
+  }
+
+  .bpk-stack-direction-column-desktop {
+    flex-direction: column;
+  }
 }
 
 // Include spacing and color utilities from layoutMixins
@@ -51,4 +71,3 @@
 @include layoutMixins.generate-spacing-utilities(gap, 'gap');
 @include layoutMixins.generate-color-utilities(background-color, 'bg');
 @include layoutMixins.generate-color-utilities(color, 'color');
-

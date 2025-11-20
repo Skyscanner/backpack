@@ -18,7 +18,6 @@
 
 import type { CSSProperties } from 'react';
 
-import type { ResponsiveValue, SpacingValue, ColorValue } from './BpkBox/BpkBox.types';
 import { BPK_COLOR_TOKENS } from './colorTokenTransformers';
 import {
   combineClassNames,
@@ -27,6 +26,8 @@ import {
   responsiveSpacingToClassNames,
   responsiveValueToClassNames,
 } from './styleUtils';
+
+import type { ResponsiveValue, SpacingValue, ColorValue } from './BpkBox/BpkBox.types';
 
 /**
  * Options for transforming layout props to CSS classes and styles
@@ -114,7 +115,7 @@ export const transformBpkLayoutProps = (
         if (value in BPK_COLOR_TOKENS) {
           // It's a key like 'canvasContrast', convert to camelCase class name
           const colorKey = value.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
-          classNames.push(`${prop === 'bg' ? 'bg' : prop}-${colorKey}`);
+          classNames.push(`bpk-${prop === 'bg' ? 'bg' : prop}-${colorKey}`);
         } else {
           // Check if it's a value in BPK_COLOR_TOKENS (like 'canvas-contrast')
           const tokenKey = Object.keys(BPK_COLOR_TOKENS).find(
@@ -123,7 +124,7 @@ export const transformBpkLayoutProps = (
           if (tokenKey) {
             // Convert token key to camelCase class name
             const colorKey = tokenKey.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
-            classNames.push(`${prop === 'bg' ? 'bg' : prop}-${colorKey}`);
+            classNames.push(`bpk-${prop === 'bg' ? 'bg' : prop}-${colorKey}`);
           } else {
             // Not a recognized token, use responsive color handler
             const classes = responsiveColorToClassNames(prop, value as ColorValue);
@@ -145,7 +146,7 @@ export const transformBpkLayoutProps = (
     if (typeof value === 'string') {
       // Convert kebab-case to camelCase to match SCSS class names
       const displayClass = value.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
-      classNames.push(`display-${displayClass}`);
+      classNames.push(`bpk-display-${displayClass}`);
     } else if (typeof value === 'object' && value !== null) {
       // Handle responsive display
       const breakpoints = Object.keys(value);
@@ -155,7 +156,7 @@ export const transformBpkLayoutProps = (
           const displayClass = typeof breakpointValue === 'string'
             ? breakpointValue.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())
             : breakpointValue;
-          classNames.push(`display-${displayClass}-${breakpoint}`);
+          classNames.push(`bpk-display-${displayClass}-${breakpoint}`);
         }
       }
     }

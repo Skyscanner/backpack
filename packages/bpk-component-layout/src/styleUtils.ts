@@ -62,20 +62,19 @@ export type BpkBreakpoint = (typeof BPK_BREAKPOINTS)[keyof typeof BPK_BREAKPOINT
  * ```
  */
 export const getClassName = (styles: { [key: string]: any } = {}) =>
-  (...classNames: Array<string | boolean | number | {} | null | undefined>): string => {
-    return classNames.reduce((className: string, currentClass) => {
+  (...classNames: Array<string | boolean | number | {} | null | undefined>): string =>
+    classNames.reduce((className: string, currentClass) => {
       if (currentClass && typeof currentClass === 'string') {
         const realName = styles[currentClass] || currentClass;
         return className ? `${className} ${realName}` : realName;
       }
       return className;
     }, '');
-  };
 
 /**
  * Converts a spacing value (token string or number) to a CSS class name suffix
- * @param value - Spacing value (token string or number)
- * @returns Class name suffix (e.g., 'sm', 'base', 'lg', or numeric value)
+ * @param {string | number | undefined | null} value - Spacing value (token string or number)
+ * @returns {string} Class name suffix (e.g., 'sm', 'base', 'lg', or numeric value)
  */
 export const spacingToClassSuffix = (value: string | number | undefined | null): string => {
   if (value === undefined || value === null) {
@@ -89,9 +88,9 @@ export const spacingToClassSuffix = (value: string | number | undefined | null):
 
 /**
  * Converts a responsive spacing value to class name parts
- * @param propName - Property name (e.g., 'padding', 'margin')
- * @param value - Responsive spacing value
- * @returns Array of class name parts
+ * @param {string} propName - Property name (e.g., 'padding', 'margin')
+ * @param {ResponsiveValue<string | number> | undefined | null} value - Responsive spacing value
+ * @returns {string[]} Array of class name parts
  */
 export const responsiveSpacingToClassNames = (
   propName: string,
@@ -103,7 +102,7 @@ export const responsiveSpacingToClassNames = (
 
   if (typeof value === 'string' || typeof value === 'number') {
     const suffix = spacingToClassSuffix(value);
-    return suffix ? [`${propName}-${suffix}`] : [];
+    return suffix ? [`bpk-${propName}-${suffix}`] : [];
   }
 
   // Handle responsive object
@@ -115,7 +114,7 @@ export const responsiveSpacingToClassNames = (
     if (breakpointValue !== undefined && breakpointValue !== null) {
       const suffix = spacingToClassSuffix(breakpointValue);
       if (suffix) {
-        classNames.push(`${propName}-${suffix}-${breakpoint}`);
+        classNames.push(`bpk-${propName}-${suffix}-${breakpoint}`);
       }
     }
   }
@@ -125,8 +124,8 @@ export const responsiveSpacingToClassNames = (
 
 /**
  * Converts a color token to a CSS class name suffix
- * @param value - Color token value
- * @returns Class name suffix
+ * @param {string | undefined | null} value - Color token value
+ * @returns {string} Class name suffix
  */
 export const colorToClassSuffix = (value: string | undefined | null): string => {
   if (!value) {
@@ -139,9 +138,9 @@ export const colorToClassSuffix = (value: string | undefined | null): string => 
 
 /**
  * Converts a responsive color value to class name parts
- * @param propName - Property name (e.g., 'bg', 'color')
- * @param value - Responsive color value
- * @returns Array of class name parts
+ * @param {string} propName - Property name (e.g., 'bg', 'color')
+ * @param {ResponsiveValue<string> | undefined | null} value - Responsive color value
+ * @returns {string[]} Array of class name parts
  */
 export const responsiveColorToClassNames = (
   propName: string,
@@ -153,7 +152,7 @@ export const responsiveColorToClassNames = (
 
   if (typeof value === 'string') {
     const suffix = colorToClassSuffix(value);
-    return suffix ? [`${propName}-${suffix}`] : [];
+    return suffix ? [`bpk-${propName}-${suffix}`] : [];
   }
 
   // Handle responsive object
@@ -165,7 +164,7 @@ export const responsiveColorToClassNames = (
     if (breakpointValue) {
       const suffix = colorToClassSuffix(breakpointValue);
       if (suffix) {
-        classNames.push(`${propName}-${suffix}-${breakpoint}`);
+        classNames.push(`bpk-${propName}-${suffix}-${breakpoint}`);
       }
     }
   }
@@ -175,9 +174,9 @@ export const responsiveColorToClassNames = (
 
 /**
  * Converts a simple responsive value to class name parts
- * @param propName - Property name (e.g., 'flex-direction', 'align-items')
- * @param value - Responsive value
- * @returns Array of class name parts
+ * @param {string} propName - Property name (e.g., 'flex-direction', 'align-items')
+ * @param {ResponsiveValue<string | number> | undefined | null} value - Responsive value
+ * @returns {string[]} Array of class name parts
  */
 export const responsiveValueToClassNames = (
   propName: string,
@@ -193,7 +192,7 @@ export const responsiveValueToClassNames = (
     const valueStr = typeof value === 'string' 
       ? value.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase()) // Convert kebab-case to camelCase
       : value.toString();
-    return [`${propName}-${valueStr}`];
+    return [`bpk-${propName}-${valueStr}`];
   }
 
   // Handle responsive object
@@ -206,7 +205,7 @@ export const responsiveValueToClassNames = (
       const valueStr = typeof breakpointValue === 'string'
         ? breakpointValue.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase()) // Convert kebab-case to camelCase
         : breakpointValue.toString();
-      classNames.push(`${propName}-${valueStr}-${breakpoint}`);
+      classNames.push(`bpk-${propName}-${valueStr}-${breakpoint}`);
     }
   }
 
@@ -215,8 +214,8 @@ export const responsiveValueToClassNames = (
 
 /**
  * Generates CSS custom properties for dynamic values that can't be pre-compiled
- * @param props - Props object with dynamic values
- * @returns Object with CSS custom properties
+ * @param {Record<string, any>} props - Props object with dynamic values
+ * @returns {Record<string, string>} Object with CSS custom properties
  */
 export const generateCSSVariables = (
   props: Record<string, any>,
@@ -258,13 +257,12 @@ export const generateCSSVariables = (
 
 /**
  * Combines multiple class name arrays into a single string
- * @param classNames - Array of class name arrays
- * @returns Combined class name string
+ * @param {Array<string[] | string | null | undefined>} classNames - Array of class name arrays
+ * @returns {string} Combined class name string
  */
-export const combineClassNames = (...classNames: (string[] | string | null | undefined)[]): string => {
-  return classNames
+export const combineClassNames = (...classNames: Array<string[] | string | null | undefined>): string =>
+  classNames
     .flat()
     .filter((name): name is string => Boolean(name))
     .join(' ');
-};
 

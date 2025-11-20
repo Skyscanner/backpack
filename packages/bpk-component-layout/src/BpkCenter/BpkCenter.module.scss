@@ -22,8 +22,8 @@
 // Base BpkCenter class
 .bpk-center {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   box-sizing: border-box;
 }
 
@@ -32,4 +32,3 @@
 @include layoutMixins.generate-spacing-utilities(margin, 'margin');
 @include layoutMixins.generate-color-utilities(background-color, 'bg');
 @include layoutMixins.generate-color-utilities(color, 'color');
-

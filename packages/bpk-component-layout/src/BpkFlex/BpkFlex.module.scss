@@ -27,45 +27,110 @@
 }
 
 // Flex direction utilities
-.flex-direction-row { flex-direction: row; }
-.flex-direction-column { flex-direction: column; }
-.flex-direction-rowReverse { flex-direction: row-reverse; }
-.flex-direction-columnReverse { flex-direction: column-reverse; }
+.bpk-flex-direction-row {
+  flex-direction: row;
+}
+
+.bpk-flex-direction-column {
+  flex-direction: column;
+}
+
+.bpk-flex-direction-rowReverse {
+  flex-direction: row-reverse;
+}
+
+.bpk-flex-direction-columnReverse {
+  flex-direction: column-reverse;
+}
 
 @include breakpoints.bpk-breakpoint-small-mobile {
-  .flex-direction-row-smallMobile { flex-direction: row; }
-  .flex-direction-column-smallMobile { flex-direction: column; }
+  .bpk-flex-direction-row-smallMobile {
+    flex-direction: row;
+  }
+
+  .bpk-flex-direction-column-smallMobile {
+    flex-direction: column;
+  }
 }
 
 @include breakpoints.bpk-breakpoint-mobile {
-  .flex-direction-row-mobile { flex-direction: row; }
-  .flex-direction-column-mobile { flex-direction: column; }
+  .bpk-flex-direction-row-mobile {
+    flex-direction: row;
+  }
+
+  .bpk-flex-direction-column-mobile {
+    flex-direction: column;
+  }
 }
 
 @include breakpoints.bpk-breakpoint-above-tablet {
-  .flex-direction-row-desktop { flex-direction: row; }
-  .flex-direction-column-desktop { flex-direction: column; }
+  .bpk-flex-direction-row-desktop {
+    flex-direction: row;
+  }
+
+  .bpk-flex-direction-column-desktop {
+    flex-direction: column;
+  }
 }
 
 // Flex wrap utilities
-.flex-wrap-nowrap { flex-wrap: nowrap; }
-.flex-wrap-wrap { flex-wrap: wrap; }
-.flex-wrap-wrapReverse { flex-wrap: wrap-reverse; }
+.bpk-flex-wrap-nowrap {
+  flex-wrap: nowrap;
+}
+
+.bpk-flex-wrap-wrap {
+  flex-wrap: wrap;
+}
+
+.bpk-flex-wrap-wrapReverse {
+  flex-wrap: wrap-reverse;
+}
 
 // Align items utilities
-.align-items-flexStart { align-items: flex-start; }
-.align-items-flexEnd { align-items: flex-end; }
-.align-items-center { align-items: center; }
-.align-items-baseline { align-items: baseline; }
-.align-items-stretch { align-items: stretch; }
+.bpk-align-items-flexStart {
+  align-items: flex-start;
+}
+
+.bpk-align-items-flexEnd {
+  align-items: flex-end;
+}
+
+.bpk-align-items-center {
+  align-items: center;
+}
+
+.bpk-align-items-baseline {
+  align-items: baseline;
+}
+
+.bpk-align-items-stretch {
+  align-items: stretch;
+}
 
 // Justify content utilities
-.justify-content-flexStart { justify-content: flex-start; }
-.justify-content-flexEnd { justify-content: flex-end; }
-.justify-content-center { justify-content: center; }
-.justify-content-spaceBetween { justify-content: space-between; }
-.justify-content-spaceAround { justify-content: space-around; }
-.justify-content-spaceEvenly { justify-content: space-evenly; }
+.bpk-justify-content-flexStart {
+  justify-content: flex-start;
+}
+
+.bpk-justify-content-flexEnd {
+  justify-content: flex-end;
+}
+
+.bpk-justify-content-center {
+  justify-content: center;
+}
+
+.bpk-justify-content-spaceBetween {
+  justify-content: space-between;
+}
+
+.bpk-justify-content-spaceAround {
+  justify-content: space-around;
+}
+
+.bpk-justify-content-spaceEvenly {
+  justify-content: space-evenly;
+}
 
 // Include spacing and color utilities from layoutMixins
 @include layoutMixins.generate-spacing-utilities(padding, 'padding');
@@ -73,4 +138,3 @@
 @include layoutMixins.generate-spacing-utilities(gap, 'gap');
 @include layoutMixins.generate-color-utilities(background-color, 'bg');
 @include layoutMixins.generate-color-utilities(color, 'color');
-
