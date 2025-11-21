@@ -210,16 +210,22 @@ The styling system uses **Atomic Utility Classes**:
 `BpkProvider` wraps Chakra UI's `ChakraProvider` with a system configuration:
 
 ```typescript
+// Remove globalCss and preflight from defaultConfig
+const { globalCss: _, preflight: __, ...restConfig } = defaultConfig;
+
 export const backpackSystem = createSystem(restConfig, {
-  disableLayers: true,  // Disables CSS-in-JS
+  disableLayers: true,  // Disables CSS-in-JS cascade layers
+  preflight: false,     // Disables Chakra UI's CSS reset (preflight)
 });
 ```
 
 **Key features:**
-- Disables Chakra UI's CSS cascade layers
-- Removes global CSS injection
-- Keeps Chakra UI component functionality
+- Disables Chakra UI's CSS cascade layers (`disableLayers: true`)
+- Disables Chakra UI's preflight/CSS reset (`preflight: false`)
+- Removes global CSS injection (excluded from `defaultConfig`)
+- Keeps Chakra UI component functionality (e.g., `as` prop, responsive logic)
 - All styling handled by CSS Modules
+- **Zero Chakra UI system styles injected** - completely CSS-in-runtime free
 
 ### Component Usage
 
@@ -275,6 +281,51 @@ Even if `className` is passed (bypassing TypeScript), it's filtered at runtime:
 ```typescript
 disallowedProps = ['className']  // Default filter
 ```
+
+## Logical Properties and RTL Support
+
+### CSS Logical Properties
+
+Backpack Layout Components support CSS logical properties for automatic RTL/LTR adaptation:
+
+**Available logical spacing props:**
+- `marginStart` → `margin-inline-start` (left in LTR, right in RTL)
+- `marginEnd` → `margin-inline-end` (right in LTR, left in RTL)
+- `paddingStart` → `padding-inline-start` (left in LTR, right in RTL)
+- `paddingEnd` → `padding-inline-end` (right in LTR, left in RTL)
+- `marginInline` → `margin-inline` (sets both start and end)
+- `paddingInline` → `padding-inline` (sets both start and end)
+
+**Benefits:**
+- ✅ Automatically adapts to text direction (`dir="rtl"` or `dir="ltr"`)
+- ✅ No manual RTL handling required
+- ✅ Uses modern CSS logical properties
+- ✅ Works with responsive props
+
+**Example:**
+```tsx
+<BpkBox
+  marginStart="base"      // margin-inline-start
+  paddingEnd="lg"         // padding-inline-end
+  marginInline={{ mobile: "base", desktop: "xl" }}
+/>
+```
+
+**Generated CSS:**
+```scss
+.bpk-margin-start-base {
+  margin-inline-start: 1rem;
+}
+
+.bpk-padding-end-lg {
+  padding-inline-end: 1.5rem;
+}
+```
+
+**RTL Behavior:**
+- In LTR: `marginStart` applies to the left side
+- In RTL: `marginStart` automatically applies to the right side
+- No code changes needed - browser handles the flip automatically
 
 ## Responsive Design
 

@@ -256,6 +256,132 @@ export const Border = () => (
   </Wrapper>
 );
 
+export const LogicalSpacing = () => (
+  <Wrapper>
+    <BpkBox marginBottom="base">
+      <BpkBox as="h2" fontSize="xl" fontWeight="bold" marginBottom="base" color={BPK_COLOR_TOKENS.textPrimary}>
+        Logical Spacing Props (RTL Support)
+      </BpkBox>
+      <BpkBox as="p" color={BPK_COLOR_TOKENS.textSecondary} marginBottom="lg" fontSize="sm">
+        Logical spacing props automatically adapt to text direction (LTR/RTL).
+        They use CSS logical properties (margin-inline-start, padding-inline, etc.)
+        which automatically flip based on the dir attribute.
+      </BpkBox>
+
+      <BpkBox
+        marginStart="base"
+        paddingEnd="lg"
+        bg={BPK_COLOR_TOKENS.surfaceHighlight}
+        borderRadius="md"
+        paddingY="base"
+        marginBottom="base"
+      >
+        <strong>marginStart=&quot;base&quot;</strong> (margin-inline-start) and{' '}
+        <strong>paddingEnd=&quot;lg&quot;</strong> (padding-inline-end)
+        <br />
+        <small style={{ color: BPK_COLOR_TOKENS.textSecondary }}>
+          In LTR: margin on left, padding on right. In RTL: automatically flips.
+        </small>
+      </BpkBox>
+
+      <BpkBox
+        marginInline="xl"
+        paddingInline="base"
+        bg={BPK_COLOR_TOKENS.canvasContrast}
+        borderRadius="md"
+        paddingY="base"
+        marginBottom="base"
+      >
+        <strong>marginInline=&quot;xl&quot;</strong> and <strong>paddingInline=&quot;base&quot;</strong>
+        <br />
+        <small style={{ color: BPK_COLOR_TOKENS.textSecondary }}>
+          Sets both start and end simultaneously. Automatically adapts to text direction.
+        </small>
+      </BpkBox>
+
+      <BpkBox
+        marginStart="base"
+        marginEnd="lg"
+        paddingStart="sm"
+        paddingEnd="xl"
+        bg={BPK_COLOR_TOKENS.surfaceElevated}
+        borderRadius="md"
+        paddingY="base"
+      >
+        <strong>Combined logical props:</strong> marginStart, marginEnd, paddingStart, paddingEnd
+        <br />
+        <small style={{ color: BPK_COLOR_TOKENS.textSecondary }}>
+          Each logical property can be set independently. All automatically adapt to RTL.
+        </small>
+      </BpkBox>
+    </BpkBox>
+  </Wrapper>
+);
+
+export const ResponsiveLogicalSpacing = () => (
+  <Wrapper>
+    <BpkBox marginBottom="base">
+      <BpkBox as="h2" fontSize="xl" fontWeight="bold" marginBottom="base" color={BPK_COLOR_TOKENS.textPrimary}>
+        Responsive Logical Spacing
+      </BpkBox>
+      <BpkBox as="p" color={BPK_COLOR_TOKENS.textSecondary} marginBottom="lg" fontSize="sm">
+        Logical spacing props support responsive values using Backpack breakpoint tokens.
+      </BpkBox>
+
+      <BpkBox
+        marginStart={{
+          smallMobile: 'sm',
+          mobile: 'base',
+          desktop: 'xl',
+        }}
+        paddingEnd={{
+          smallMobile: 'base',
+          mobile: 'lg',
+          desktop: 'xxl',
+        }}
+        bg={BPK_COLOR_TOKENS.surfaceHighlight}
+        borderRadius="md"
+        paddingY="base"
+        marginBottom="base"
+      >
+        <strong>Responsive marginStart and paddingEnd</strong>
+        <br />
+        <small style={{ color: BPK_COLOR_TOKENS.textSecondary }}>
+          marginStart: sm (smallMobile) → base (mobile) → xl (desktop)
+          <br />
+          paddingEnd: base (smallMobile) → lg (mobile) → xxl (desktop)
+          <br />
+          Resize the browser window to see the spacing change.
+        </small>
+      </BpkBox>
+
+      <BpkBox
+        marginInline={{
+          smallMobile: 'sm',
+          mobile: 'base',
+          desktop: 'lg',
+        }}
+        paddingInline={{
+          smallMobile: 'base',
+          tablet: 'lg',
+          desktop: 'xl',
+        }}
+        bg={BPK_COLOR_TOKENS.canvasContrast}
+        borderRadius="md"
+        paddingY="base"
+      >
+        <strong>Responsive marginInline and paddingInline</strong>
+        <br />
+        <small style={{ color: BPK_COLOR_TOKENS.textSecondary }}>
+          marginInline: sm (smallMobile) → base (mobile) → lg (desktop)
+          <br />
+          paddingInline: base (smallMobile) → lg (tablet) → xl (desktop)
+        </small>
+      </BpkBox>
+    </BpkBox>
+  </Wrapper>
+);
+
 export const Mixed = () => (
   <Wrapper>
     <BpkBox marginBottom={4}>

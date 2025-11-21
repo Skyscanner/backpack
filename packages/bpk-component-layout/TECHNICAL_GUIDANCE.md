@@ -348,6 +348,37 @@ All spacing props accept `SpacingValue`:
 - `rowGap?: SpacingValue`
 - `columnGap?: SpacingValue`
 
+#### Logical Spacing Props (RTL Support)
+All logical spacing props accept `SpacingValue` and automatically adapt to text direction (LTR/RTL):
+These props use CSS logical properties (`margin-inline-start`, `padding-inline`, etc.) which automatically flip based on the `dir` attribute.
+
+- `marginStart?: SpacingValue` - margin-inline-start (left in LTR, right in RTL)
+- `marginEnd?: SpacingValue` - margin-inline-end (right in LTR, left in RTL)
+- `paddingStart?: SpacingValue` - padding-inline-start (left in LTR, right in RTL)
+- `paddingEnd?: SpacingValue` - padding-inline-end (right in LTR, left in RTL)
+- `marginInline?: SpacingValue` - margin-inline (sets both start and end simultaneously)
+- `paddingInline?: SpacingValue` - padding-inline (sets both start and end simultaneously)
+
+**Benefits:**
+- ✅ Automatically adapts to RTL/LTR text direction
+- ✅ No manual RTL handling required
+- ✅ Uses modern CSS logical properties
+- ✅ Works with responsive props
+
+**Example:**
+```tsx
+<BpkBox
+  marginStart="base"      // margin-inline-start
+  paddingEnd="lg"         // padding-inline-end
+  marginInline={{ mobile: "base", desktop: "xl" }}
+/>
+```
+
+**How it works:**
+- In LTR mode (`dir="ltr"`): `marginStart` applies to the left side
+- In RTL mode (`dir="rtl"`): `marginStart` automatically applies to the right side
+- Browser handles the flip automatically - no JavaScript required
+
 #### Display Props
 - `display?: ResponsiveValue<DisplayValue>`
 - `visibility?: ResponsiveValue<VisibilityValue>`

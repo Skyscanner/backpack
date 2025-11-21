@@ -131,6 +131,13 @@ export const isAllowedBpkBoxProp = (prop: string): boolean => {
     'marginLeft',
     'marginX',
     'marginY',
+    // Logical spacing props (automatically adapt to RTL/LTR)
+    'marginStart',
+    'marginEnd',
+    'paddingStart',
+    'paddingEnd',
+    'marginInline',
+    'paddingInline',
     'gap',
     'rowGap',
     'columnGap',

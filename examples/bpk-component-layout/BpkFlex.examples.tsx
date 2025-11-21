@@ -114,3 +114,31 @@ export const Shorthand = () => (
   </Wrapper>
 );
 
+export const WithLogicalSpacing = () => (
+  <Wrapper>
+    <BpkFlex
+      gap="base"
+      paddingStart="lg"
+      paddingEnd="base"
+      marginStart="base"
+      bg={BPK_COLOR_TOKENS.canvasContrast}
+      borderRadius="md"
+    >
+      <BpkBox flex={1} padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
+        <strong>Logical spacing in BpkFlex</strong>
+        <br />
+        <small style={{ color: BPK_COLOR_TOKENS.textSecondary }}>
+          paddingStart=&quot;lg&quot; (left in LTR, right in RTL)
+          <br />
+          paddingEnd=&quot;base&quot; (right in LTR, left in RTL)
+          <br />
+          marginStart=&quot;base&quot; (left in LTR, right in RTL)
+        </small>
+      </BpkBox>
+      <BpkBox flex={1} padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
+        Flex item 2 with logical spacing
+      </BpkBox>
+    </BpkFlex>
+  </Wrapper>
+);
+

@@ -23,6 +23,7 @@ import {
   Column,
   Responsive,
   Shorthand,
+  WithLogicalSpacing,
 } from './BpkFlex.examples';
 
 export default {
@@ -30,5 +31,5 @@ export default {
   component: BpkFlex,
 };
 
-export { Default, Column, Responsive, Shorthand };
+export { Default, Column, Responsive, Shorthand, WithLogicalSpacing };
 

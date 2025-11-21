@@ -45,13 +45,15 @@ const extractBreakpointValue = (query: string): string => {
  * This disables Chakra UI's CSS-in-JS runtime generation while keeping component functionality
  * All styling is handled by CSS Modules instead
  */
-const { globalCss: _, ...restConfig } = defaultConfig;
+const { globalCss: _, preflight: __, ...restConfig } = defaultConfig;
 
 // In Chakra UI v3, breakpoints and space are configured differently
 // Since we're using CSS Modules for all styling, we only need to disable layers
 export const backpackSystem = createSystem(restConfig, {
   // Disable CSS cascade layers to prevent runtime CSS injection
   disableLayers: true,
+  // Disable preflight (CSS reset) to prevent Chakra UI system styles from being injected
+  preflight: false,
   // Note: breakpoints and space are not needed here since we use CSS Modules
   // Chakra UI components will still work, but styling is handled by CSS Modules
 });

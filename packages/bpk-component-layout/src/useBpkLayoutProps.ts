@@ -386,6 +386,9 @@ function transformWithAtomicClasses(
     'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
     'marginX', 'marginY',
     'gap', 'rowGap', 'columnGap',
+    // Logical spacing props (automatically adapt to RTL/LTR)
+    'marginStart', 'marginEnd', 'paddingStart', 'paddingEnd',
+    'marginInline', 'paddingInline',
   ];
 
   for (const prop of spacingProps) {

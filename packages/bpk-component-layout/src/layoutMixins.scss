@@ -188,6 +188,71 @@ $spacing-map: (
   }
 }
 
+// Generate logical spacing utilities (margin-inline-start, padding-inline, etc.)
+// These automatically adapt to RTL/LTR text direction
+@mixin generate-logical-spacing-utilities($base-property, $prefix) {
+  // Logical properties map: (prop-name, css-logical-property)
+  $logical-props: (
+    'start': #{$base-property}-inline-start,
+    'end': #{$base-property}-inline-end,
+    'inline': #{$base-property}-inline,
+  );
+
+  // Generate base utilities for each logical property
+  @each $prop-name, $css-property in $logical-props {
+    @each $token, $value in $spacing-map {
+      .bpk-#{$prefix}-#{$prop-name}-#{$token} {
+        #{$css-property}: $value;
+      }
+    }
+  }
+
+  // Generate responsive variants for logical properties
+  @each $prop-name, $css-property in $logical-props {
+    @each $token, $value in $spacing-map {
+      // smallMobile: base value, applies to all sizes (no media query)
+      .bpk-#{$prefix}-#{$prop-name}-#{$token}-smallMobile {
+        #{$css-property}: $value;
+      }
+
+      // mobile: applies from mobile breakpoint and above
+      .bpk-#{$prefix}-#{$prop-name}-#{$token}-mobile {
+        @include breakpoints.bpk-breakpoint-above-mobile {
+          #{$css-property}: $value;
+        }
+      }
+
+      // smallTablet: applies from smallTablet breakpoint and above
+      .bpk-#{$prefix}-#{$prop-name}-#{$token}-smallTablet {
+        @include breakpoints.bpk-breakpoint-above-mobile {
+          #{$css-property}: $value;
+        }
+      }
+
+      // tablet: applies from tablet breakpoint and above
+      .bpk-#{$prefix}-#{$prop-name}-#{$token}-tablet {
+        @include breakpoints.bpk-breakpoint-above-mobile {
+          #{$css-property}: $value;
+        }
+      }
+
+      // desktop: applies from desktop breakpoint and above
+      .bpk-#{$prefix}-#{$prop-name}-#{$token}-desktop {
+        @include breakpoints.bpk-breakpoint-above-tablet {
+          #{$css-property}: $value;
+        }
+      }
+    }
+  }
+
+  // Generate dynamic value classes for logical properties
+  @each $prop-name, $css-property in $logical-props {
+    .bpk-#{$prefix}-#{$prop-name}-dynamic {
+      #{$css-property}: var(--bpk-#{$prefix}-#{$prop-name}, 0);
+    }
+  }
+}
+
 // Color map (Backpack color tokens to CSS custom properties)
 $color-map: (
   // Text colors
@@ -817,6 +882,11 @@ $color-map: (
   @include generate-directional-spacing-utilities(padding, 'padding');
   @include generate-spacing-utilities(margin, 'margin');
   @include generate-directional-spacing-utilities(margin, 'margin');
+  
+  // Logical spacing utilities (margin-inline-start, padding-inline, etc.)
+  // These automatically adapt to RTL/LTR text direction
+  @include generate-logical-spacing-utilities(padding, 'padding');
+  @include generate-logical-spacing-utilities(margin, 'margin');
   
   // Gap utilities (optional, not all components need gap)
   @if $include-gap {

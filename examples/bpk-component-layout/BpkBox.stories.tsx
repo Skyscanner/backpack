@@ -33,6 +33,8 @@ import {
   CenteredContent,
   Shadow,
   Border,
+  LogicalSpacing,
+  ResponsiveLogicalSpacing,
   Mixed,
 } from './BpkBox.examples';
 
@@ -41,5 +43,23 @@ export default {
   component: BpkBox,
 };
 
-export { Default, WithPadding, WithMargin, Flexbox, FlexboxColumn, Grid, WidthHeight, Responsive, ResponsiveSpacing, ColorTokens, SemanticHTMLElement, CenteredContent, Shadow, Border, Mixed };
+export {
+  Default,
+  WithPadding,
+  WithMargin,
+  Flexbox,
+  FlexboxColumn,
+  Grid,
+  WidthHeight,
+  Responsive,
+  ResponsiveSpacing,
+  ColorTokens,
+  SemanticHTMLElement,
+  CenteredContent,
+  Shadow,
+  Border,
+  LogicalSpacing,
+  ResponsiveLogicalSpacing,
+  Mixed,
+};
 

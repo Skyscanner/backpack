@@ -22,6 +22,7 @@ import {
   Default,
   Responsive,
   Auto,
+  WithLogicalSpacing,
 } from './BpkGrid.examples';
 
 export default {
@@ -29,5 +30,5 @@ export default {
   component: BpkGrid,
 };
 
-export { Default, Responsive, Auto };
+export { Default, Responsive, Auto, WithLogicalSpacing };
 

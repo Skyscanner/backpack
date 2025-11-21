@@ -73,6 +73,16 @@ export interface BpkBaseLayoutProps {
   marginX?: SpacingValue;
   marginY?: SpacingValue;
 
+  // Logical spacing props (automatically adapt to RTL/LTR)
+  // These use CSS logical properties (margin-inline-start, padding-inline, etc.)
+  // which automatically flip based on text direction
+  marginStart?: SpacingValue;   // margin-inline-start (ms in Chakra UI)
+  marginEnd?: SpacingValue;     // margin-inline-end (me in Chakra UI)
+  paddingStart?: SpacingValue;  // padding-inline-start (ps in Chakra UI)
+  paddingEnd?: SpacingValue;    // padding-inline-end (pe in Chakra UI)
+  marginInline?: SpacingValue;  // margin-inline (sets both start and end)
+  paddingInline?: SpacingValue; // padding-inline (sets both start and end)
+
   // Gap props
   gap?: SpacingValue;
   rowGap?: SpacingValue;

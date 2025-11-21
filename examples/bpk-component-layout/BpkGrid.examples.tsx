@@ -126,3 +126,32 @@ export const Auto = () => (
   </Wrapper>
 );
 
+export const WithLogicalSpacing = () => (
+  <Wrapper>
+    <BpkGrid
+      gridTemplateColumns="repeat(3, 1fr)"
+      gap="base"
+      paddingInline="lg"
+      marginStart="base"
+      bg={BPK_COLOR_TOKENS.canvasContrast}
+      borderRadius="md"
+    >
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceHighlight} borderRadius="md">
+        <strong>Logical spacing in BpkGrid</strong>
+        <br />
+        <small style={{ color: BPK_COLOR_TOKENS.textSecondary }}>
+          paddingInline=&quot;lg&quot; (both sides, adapts to RTL)
+          <br />
+          marginStart=&quot;base&quot; (left in LTR, right in RTL)
+        </small>
+      </BpkBox>
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceDefault} borderRadius="md">
+        Grid item 2
+      </BpkBox>
+      <BpkBox padding="base" bg={BPK_COLOR_TOKENS.surfaceElevated} borderRadius="md">
+        Grid item 3
+      </BpkBox>
+    </BpkGrid>
+  </Wrapper>
+);
+

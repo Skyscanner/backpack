@@ -35,9 +35,11 @@ export type BpkProviderProps = {
  *
  * **Key Features:**
  * - Disables Chakra UI's CSS cascade layers (`disableLayers: true`)
+ * - Disables Chakra UI's preflight (CSS reset) (`preflight: false`)
  * - Removes global CSS injection
  * - Keeps Chakra UI component functionality (like `as` prop, responsive logic)
  * - All styling is handled by CSS Modules (zero CSS-in-runtime)
+ * - **No Chakra UI system styles are injected** - completely CSS-in-runtime free
  *
  * @param {BpkProviderProps} props - The component props
  * @returns {JSX.Element} The rendered BpkProvider component

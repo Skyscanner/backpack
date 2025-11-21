@@ -202,6 +202,43 @@ export default () => (
 - `gridGap`, `gridColumnGap`, `gridRowGap`
 - `spacing`, `spacingX`, `spacingY`
 
+#### Logical Spacing Props (RTL Support)
+
+For RTL (right-to-left) language support, use logical spacing props that automatically adapt to text direction:
+
+```tsx
+import BpkBox from '@skyscanner/backpack-web/bpk-component-layout';
+
+export default () => (
+  <BpkBox
+    marginStart="base"    // margin-inline-start (left in LTR, right in RTL)
+    paddingEnd="lg"       // padding-inline-end (right in LTR, left in RTL)
+    marginInline="xl"     // margin-inline (sets both start and end)
+  >
+    Content that adapts to text direction
+  </BpkBox>
+);
+```
+
+**Available logical spacing props:**
+- `marginStart` / `marginEnd` - Logical margin (automatically flips in RTL)
+- `paddingStart` / `paddingEnd` - Logical padding (automatically flips in RTL)
+- `marginInline` / `paddingInline` - Sets both start and end simultaneously
+
+**Benefits:**
+- ✅ Automatically adapts to RTL/LTR text direction
+- ✅ No need for manual RTL handling
+- ✅ Uses modern CSS logical properties (`margin-inline-start`, `padding-inline`, etc.)
+- ✅ Works with responsive props
+
+```tsx
+// Responsive logical spacing
+<BpkBox
+  marginStart={{ mobile: "base", desktop: "xl" }}
+  paddingInline={{ smallMobile: "sm", tablet: "lg" }}
+/>
+```
+
 #### Using Backpack Breakpoints (Recommended)
 
 For responsive layouts, use Backpack breakpoint names directly as object keys:
@@ -314,6 +351,9 @@ export default () => (
 - **Spacing props**: `padding`, `margin`, `gap` and their variants
   - Accept Backpack token strings: `"none"`, `"sm"`, `"base"`, `"md"`, `"lg"`, `"xl"`
   - Or numeric pixel values (converted to `rem`)
+- **Logical spacing props** (automatically adapt to RTL/LTR):
+  - `marginStart`, `marginEnd`, `paddingStart`, `paddingEnd` - Use CSS logical properties (`margin-inline-start`, etc.)
+  - `marginInline`, `paddingInline` - Set both start and end simultaneously
 - **Display props**: `display`, `visibility`, `overflow`, `overflowX`, `overflowY`
 - **Position props**: `position`, `top`, `right`, `bottom`, `left`, `zIndex`
 - **Flexbox props**: `flex`, `flexDirection`, `flexWrap`, `alignItems`, `justifyContent`, etc.
