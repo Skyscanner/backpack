@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-import type { ElementType } from 'react';
+import { AspectRatio } from '@chakra-ui/react';
 
-import { getClassName, processClassName } from '../styleUtils';
-import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+import { createBpkLayoutComponent } from '../createBpkLayoutComponent';
 
 import type { BpkAspectRatioProps } from './BpkAspectRatio.types';
 
@@ -27,21 +26,18 @@ import STYLES from './BpkAspectRatio.module.scss';
 
 export type Props = BpkAspectRatioProps;
 
-const getClass = getClassName(STYLES);
-
 /**
- * BpkAspectRatio is a layout component that maintains aspect ratio using CSS Modules.
- * It uses static CSS classes compiled at build time for optimal performance and SSR support.
+ * BpkAspectRatio is a layout component that maintains aspect ratio using Chakra UI's AspectRatio component
+ * with CSS Modules styling. It uses Chakra UI for component logic but CSS Modules for all styling.
  *
  * **Key Features:**
+ * - Uses Chakra UI's AspectRatio component (for `as` prop, component logic)
+ * - All styling handled by CSS Modules (zero CSS-in-runtime)
  * - Maintains a desired aspect ratio for its child
  * - Commonly used for cropping media (videos, images, maps)
  * - Accepts Backpack spacing and color tokens
- * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
- * - Supports SSR out of the box
+ * - Requires BpkProvider to disable Chakra UI's CSS-in-JS
  *
- * @param {Props} props - The component props
- * @returns {JSX.Element} The rendered BpkAspectRatio component
  * @example
  * ```tsx
  * <BpkAspectRatio ratio={16 / 9}>
@@ -49,37 +45,20 @@ const getClass = getClassName(STYLES);
  * </BpkAspectRatio>
  * ```
  */
-const BpkAspectRatio = ({
-  as = 'div',
-  children,
-  ratio,
-  ...rest
-}: Props) => {
-  // Pass ratio to transformBpkLayoutProps so it's included in hash and CSS generation
-  const propsWithRatio = {
-    ...rest,
-    ratio,
-  };
+const BpkAspectRatioBase = createBpkLayoutComponent<BpkAspectRatioProps>({
+  componentName: 'aspect-ratio',
+  ChakraComponent: AspectRatio,
+  styles: STYLES,
+  transformProps: (props) => {
+    // Pass ratio to transformation so it's included in CSS generation
+    const { ratio, ...rest } = props;
+    return { ...rest, ratio };
+  },
+});
 
-  const { className, restProps, style } = transformBpkLayoutProps(propsWithRatio, {
-    componentName: 'aspect-ratio',
-  });
-  const Component = as as ElementType;
-
-  // Process className: split space-separated string and map through CSS Modules
-  const finalClassName = processClassName(getClass, className, 'bpk-aspect-ratio');
-
-  return (
-    // Allowed, Component is always a dom element.
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <Component
-      {...restProps}
-      className={finalClassName || undefined}
-      style={style || undefined}
-    >
-      {children}
-    </Component>
-  );
-};
+// AspectRatio needs ratio prop passed directly to Chakra component
+const BpkAspectRatio = ({ ratio, ...props }: BpkAspectRatioProps) => (
+  <BpkAspectRatioBase {...props} ratio={ratio} />
+);
 
 export default BpkAspectRatio;

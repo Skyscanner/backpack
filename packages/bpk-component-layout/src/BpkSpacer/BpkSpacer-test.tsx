@@ -33,7 +33,10 @@ describe('BpkSpacer', () => {
   });
 
   it('should not support children', () => {
-    const { container } = renderWithLayout(<BpkSpacer>Should not render</BpkSpacer>);
+    // TypeScript will error if children is passed, but we test runtime behavior
+    const { container } = renderWithLayout(
+      <BpkSpacer {...({ children: 'Should not render' } as any)} />,
+    );
     expect(container.firstChild).not.toHaveTextContent('Should not render');
   });
 });

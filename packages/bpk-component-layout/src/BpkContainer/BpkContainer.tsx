@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-import type { ElementType } from 'react';
+import { Container } from '@chakra-ui/react';
 
-import { getClassName, processClassName } from '../styleUtils';
-import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+import { createBpkLayoutComponent } from '../createBpkLayoutComponent';
 
 import type { BpkContainerProps } from './BpkContainer.types';
 
@@ -27,21 +26,18 @@ import STYLES from './BpkContainer.module.scss';
 
 export type Props = BpkContainerProps;
 
-const getClass = getClassName(STYLES);
-
 /**
- * BpkContainer is a layout component that provides a container layout using CSS Modules.
- * It uses static CSS classes compiled at build time for optimal performance and SSR support.
+ * BpkContainer is a layout component that provides a container layout using Chakra UI's Container component
+ * with CSS Modules styling. It uses Chakra UI for component logic but CSS Modules for all styling.
  *
  * **Key Features:**
+ * - Uses Chakra UI's Container component (for `as` prop, component logic)
+ * - All styling handled by CSS Modules (zero CSS-in-runtime)
  * - Sets margin-left and margin-right to auto to keep content centered
  * - Sets a default max-width
  * - Accepts Backpack spacing and color tokens
- * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
- * - Supports SSR out of the box
+ * - Requires BpkProvider to disable Chakra UI's CSS-in-JS
  *
- * @param {Props} props - The component props
- * @returns {JSX.Element} The rendered BpkContainer component
  * @example
  * ```tsx
  * <BpkContainer padding="base">
@@ -49,41 +45,15 @@ const getClass = getClassName(STYLES);
  * </BpkContainer>
  * ```
  */
-const BpkContainer = ({
-  as = 'div',
-  centerContent,
-  children,
-  maxW,
-  size,
-  ...rest
-}: Props) => {
-  // Pass container-specific props to transformBpkLayoutProps
-  const propsWithContainer = {
-    ...rest,
-    centerContent,
-    maxW,
-    size,
-  };
-
-  const { className, restProps, style } = transformBpkLayoutProps(propsWithContainer, {
-    componentName: 'container',
-  });
-  const Component = as as ElementType;
-
-  // Process className: split space-separated string and map through CSS Modules
-  const finalClassName = processClassName(getClass, className, 'bpk-container');
-
-  return (
-    // Allowed, Component is always a dom element.
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <Component
-      {...restProps}
-      className={finalClassName || undefined}
-      style={style || undefined}
-    >
-      {children}
-    </Component>
-  );
-};
+const BpkContainer = createBpkLayoutComponent<BpkContainerProps>({
+  componentName: 'container',
+  ChakraComponent: Container,
+  styles: STYLES,
+  transformProps: (props) => {
+    // Pass container-specific props to transformation
+    const { centerContent, maxW, size, ...rest } = props;
+    return { ...rest, centerContent, maxW, size };
+  },
+});
 
 export default BpkContainer;

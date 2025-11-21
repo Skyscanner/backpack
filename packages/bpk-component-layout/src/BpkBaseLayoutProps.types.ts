@@ -37,6 +37,11 @@ import type {
 /**
  * Base layout props shared by all layout components (BpkBox, BpkFlex, BpkGrid)
  * This provides a stable foundation with common layout, spacing, color, and interaction props
+ *
+ * **Note:** `className` is NOT supported in this interface.
+ * All styling is handled internally via CSS Modules. The className prop is automatically
+ * filtered out by `transformBpkLayoutProps` to prevent direct className manipulation.
+ * Use style props (e.g., `padding`, `bg`, `margin`) instead.
  */
 export interface BpkBaseLayoutProps {
   // Core props

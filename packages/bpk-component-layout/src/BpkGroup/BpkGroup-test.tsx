@@ -35,7 +35,7 @@ describe('BpkGroup', () => {
 
   it('should support flexbox props', () => {
     const { container } = renderWithLayout(
-      <BpkGroup gap="base" alignItems="center">
+      <BpkGroup gap="base">
         Content
       </BpkGroup>,
     );

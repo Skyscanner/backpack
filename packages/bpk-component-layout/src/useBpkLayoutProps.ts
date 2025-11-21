@@ -68,8 +68,8 @@ export interface TransformBpkLayoutPropsOptions {
  * Result of transforming layout props
  */
 export interface TransformedLayoutProps {
-  className: string;
-  style: CSSProperties;
+  className: string | undefined;
+  style: CSSProperties | undefined;
   restProps: Record<string, any>;
 }
 
@@ -77,9 +77,13 @@ export interface TransformedLayoutProps {
  * Transforms Backpack layout component props to CSS classes and inline styles.
  * This replaces the Chakra UI transformation with CSS Modules approach.
  *
+ * **Important:** This function automatically filters out `className` from user props.
+ * The returned `className` is generated internally from style props, not from user input.
+ * This ensures all styling is controlled via CSS Modules, not direct className manipulation.
+ *
  * @param {Record<string, any>} props - The props object to transform
  * @param {TransformBpkLayoutPropsOptions} options - Options for transformation
- * @returns {TransformedLayoutProps} Object with className, style, and rest props
+ * @returns {TransformedLayoutProps} Object with className (generated internally), style, and rest props
  */
 export const transformBpkLayoutProps = (
   props: Record<string, any>,
@@ -87,10 +91,12 @@ export const transformBpkLayoutProps = (
 ): TransformedLayoutProps => {
   const {
     componentName,
+    // className is disallowed by default - it's generated internally, not from user props
     disallowedProps = ['className'],
   } = options;
 
-  // Filter out disallowed props
+  // Filter out disallowed props (e.g., className)
+  // This prevents users from passing className directly
   const allowedProps = { ...props };
   disallowedProps.forEach((prop) => {
     delete allowedProps[prop as keyof typeof allowedProps];
@@ -336,7 +342,7 @@ export const transformBpkLayoutProps = (
 
   return {
     className: classNames.filter(Boolean).join(' ') || undefined,
-    style,
+    style: Object.keys(style).length > 0 ? style : undefined,
     restProps,
   };
 };

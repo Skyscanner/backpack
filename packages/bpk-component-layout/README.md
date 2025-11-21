@@ -12,26 +12,28 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ## Setup
 
-### No Provider Required
+### BpkProvider Required
 
-**Important:** With CSS Modules implementation, `BpkProvider` is **no longer required**. Layout components now use static CSS classes compiled at build time, so no runtime theme provider is needed.
-
-You can use layout components directly:
+**Important:** `BpkProvider` is **required** when using layout components. It wraps Chakra UI's `ChakraProvider` with a system configuration that disables CSS-in-JS, allowing CSS Modules to handle all styling.
 
 ```tsx
-import { BpkBox, BpkFlex, BpkGrid } from '@skyscanner/backpack-web/bpk-component-layout';
+import { BpkProvider, BpkBox, BpkFlex, BpkGrid } from '@skyscanner/backpack-web/bpk-component-layout';
 
 function App() {
   return (
-    <BpkBox padding="base" bg="surface-highlight">
-      {/* Your app content */}
-    </BpkBox>
+    <BpkProvider>
+      <BpkBox padding="base" bg="surface-highlight">
+        {/* Your app content */}
+      </BpkBox>
+    </BpkProvider>
   );
 }
 ```
 
-**Migration from Chakra UI version:**
-If you were previously using `BpkProvider`, you can safely remove it. All layout components will work without it.
+**Why BpkProvider is needed:**
+- Disables Chakra UI's CSS-in-JS runtime generation (`disableLayers: true`)
+- Keeps Chakra UI component functionality (like `as` prop, responsive logic)
+- All styling is handled by CSS Modules (zero CSS-in-runtime)
 
 ## Architecture
 
@@ -53,13 +55,31 @@ Layout components use **CSS Modules + SCSS** for styling, which provides:
 
 ### SCSS Architecture
 
-For detailed information about how SCSS is processed and organized, see **[STYLES.md](./STYLES.md)**.
+For detailed information about how SCSS is processed and organized, see **[STYLE.md](./STYLE.md)**.
 
 The styling system uses:
 - **Shared mixins** (`layoutMixins.scss`) - Centralized utility class generators
 - **Component-specific styles** (`.module.scss` files) - Minimal component styles that use shared mixins
 - **Mobile-first responsive design** - All responsive utilities use mobile-first media queries
 - **CSS custom properties** - Dynamic values use CSS variables for runtime flexibility
+- **Component factory** (`createBpkLayoutComponent`) - Reduces code duplication across components
+
+## Component Overview
+
+| Component | Primary Responsibility | Key Features | Default Display |
+|-----------|----------------------|--------------|-----------------|
+| **BpkBox** | Flexible container supporting both flexbox and grid | • Supports all base layout props<br>• Supports flexbox props<br>• Supports grid props<br>• Most versatile component | `block` |
+| **BpkFlex** | Flexbox-optimized layout container | • Pre-configured with `display: flex`<br>• Full flexbox property support<br>• Shorthand props (`align`, `justify`, `wrap`, `direction`) | `flex` |
+| **BpkGrid** | Grid-optimized layout container | • Pre-configured with `display: grid`<br>• Full CSS Grid property support<br>• Grid-specific gap props | `grid` |
+| **BpkStack** | Flexbox-based stack with configurable direction | • Pre-configured with `display: flex`<br>• `spacing` prop for gap between items<br>• Sub-components: `BpkHStack`, `BpkVStack` | `flex` |
+| **BpkContainer** | Container with max-width constraints | • Default max-width: `75rem` (1200px)<br>• Auto margins for centering<br>• `centerContent` prop | `block` |
+| **BpkCenter** | Centers child both horizontally and vertically | • Uses flexbox for centering<br>• Supports all base layout props | `flex` |
+| **BpkSpacer** | Flexible spacer that expands along major axis | • Automatically expands to fill space<br>• Minimal props | `block` |
+| **BpkSeparator** | Visual separator (horizontal or vertical line) | • `orientation` prop<br>• Does not accept children | `block` |
+| **BpkWrap** | Flexbox with `flex-wrap: wrap` by default | • Pre-configured with `display: flex` and `flex-wrap: wrap`<br>• `spacing` prop | `flex` |
+| **BpkAspectRatio** | Maintains specific aspect ratio | • `ratio` prop (e.g., `16/9`, `4/3`)<br>• Uses CSS aspect-ratio property | `block` |
+| **BpkFloat** | Provides floating positioning | • `float` prop (`left` \| `right` \| `none`) | `block` |
+| **BpkGroup** | Flexbox component for grouping elements | • Pre-configured with `display: flex` | `flex` |
 
 ## Usage
 
@@ -347,14 +367,21 @@ Use the `as` prop to render as a different HTML element:
 
 ## Migration Guide
 
-### From Chakra UI Version
+### From Previous Versions
 
-If you're migrating from the previous Chakra UI-based implementation:
+If you're migrating from a previous version:
 
-1. **Remove BpkProvider** - It's no longer needed
+1. **Add BpkProvider** - Wrap your app with `<BpkProvider>` (required for Chakra UI v3 integration)
 2. **No API changes** - All props remain the same
 3. **Color tokens** - Continue using Backpack color token strings
 4. **Spacing tokens** - Continue using Backpack spacing token strings
 5. **Breakpoints** - Continue using Backpack breakpoint names
 
 The migration should be seamless as the API remains 100% compatible.
+
+### Code Optimization
+
+The implementation has been optimized with:
+- **Component factory pattern** - `createBpkLayoutComponent` reduces code duplication
+- **Shared utilities** - Common logic extracted to reusable functions
+- **Type safety** - Full TypeScript support with constrained prop types

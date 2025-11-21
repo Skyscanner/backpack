@@ -16,11 +16,9 @@
  * limitations under the License.
  */
 
-import type { ElementType } from 'react';
+import { Stack } from '@chakra-ui/react';
 
-import { getClassName, processClassName } from '../styleUtils';
-import { transformBpkLayoutProps } from '../useBpkLayoutProps';
-
+import { createBpkLayoutComponent } from '../createBpkLayoutComponent';
 
 import BpkHStack from './BpkHStack';
 import BpkVStack from './BpkVStack';
@@ -31,21 +29,18 @@ import STYLES from './BpkStack.module.scss';
 
 export type Props = BpkStackProps;
 
-const getClass = getClassName(STYLES);
-
 /**
- * BpkStack is a layout component that provides a stack layout using CSS Modules.
- * It uses static CSS classes compiled at build time for optimal performance and SSR support.
+ * BpkStack is a layout component that provides a stack layout using Chakra UI's Stack component
+ * with CSS Modules styling. It uses Chakra UI for component logic but CSS Modules for all styling.
  *
  * **Key Features:**
- * - Accepts Backpack spacing tokens as strings (e.g., `spacing="base"` instead of `spacing={4}`)
+ * - Uses Chakra UI's Stack component (for `as` prop, component logic)
+ * - All styling handled by CSS Modules (zero CSS-in-runtime)
+ * - Accepts Backpack spacing tokens as strings (e.g., `spacing="base"`)
  * - Accepts Backpack breakpoint tokens in responsive props
  * - Accepts Backpack color tokens for color-related props
- * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
- * - Supports SSR out of the box
+ * - Requires BpkProvider to disable Chakra UI's CSS-in-JS
  *
- * @param {Props} props - The component props
- * @returns {JSX.Element} The rendered BpkStack component
  * @example
  * ```tsx
  * // Using Backpack tokens
@@ -55,44 +50,24 @@ const getClass = getClassName(STYLES);
  * </BpkStack>
  * ```
  */
-const BpkStack = ({
-  as = 'div',
-  children,
-  direction = 'column',
-  spacing,
-  ...rest
-}: Props) => {
-  // Map spacing prop to gap prop for CSS Modules
-  const propsWithGap = {
-    ...rest,
-    gap: spacing,
-    flexDirection: direction,
-  };
-
-  const { className, restProps, style } = transformBpkLayoutProps(propsWithGap, {
-    componentName: 'stack',
-  });
-  const Component = as as ElementType;
-
-  // Process className: split space-separated string and map through CSS Modules
-  const finalClassName = processClassName(getClass, className, 'bpk-stack');
-
-  return (
-    // Allowed, Component is always a dom element.
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <Component
-      {...restProps}
-      className={finalClassName || undefined}
-      style={style || undefined}
-    >
-      {children}
-    </Component>
-  );
-};
+const BpkStackBase = createBpkLayoutComponent<BpkStackProps>({
+  componentName: 'stack',
+  ChakraComponent: Stack,
+  styles: STYLES,
+  transformProps: (props) => {
+    // Map spacing prop to gap prop and direction to flexDirection
+    const { spacing, direction = 'column', ...rest } = props;
+    return {
+      ...rest,
+      gap: spacing,
+      flexDirection: direction,
+    };
+  },
+});
 
 // Attach HStack and VStack as sub-components
-const BpkStackWithSubComponents = BpkStack as BpkStackComponent;
-BpkStackWithSubComponents.HStack = BpkHStack;
-BpkStackWithSubComponents.VStack = BpkVStack;
+const BpkStack = BpkStackBase as BpkStackComponent;
+BpkStack.HStack = BpkHStack;
+BpkStack.VStack = BpkVStack;
 
-export default BpkStackWithSubComponents;
+export default BpkStack;

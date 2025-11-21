@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-import type { ElementType } from 'react';
+import { Flex } from '@chakra-ui/react';
 
-import { getClassName, processClassName } from '../styleUtils';
-import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+import { createBpkLayoutComponent } from '../createBpkLayoutComponent';
 
 import type { BpkFlexProps } from './BpkFlex.types';
 
@@ -27,21 +26,18 @@ import STYLES from './BpkFlex.module.scss';
 
 export type Props = BpkFlexProps;
 
-const getClass = getClassName(STYLES);
-
 /**
- * BpkFlex is a layout component that provides a flexbox container using CSS Modules.
- * It uses static CSS classes compiled at build time for optimal performance and SSR support.
+ * BpkFlex is a layout component that provides a flexbox container using Chakra UI's Flex component
+ * with CSS Modules styling. It uses Chakra UI for component logic but CSS Modules for all styling.
  *
  * **Key Features:**
- * - Accepts Backpack spacing tokens as strings (e.g., `padding="base"` instead of `padding={4}`)
- * - Accepts Backpack breakpoint tokens in responsive props (e.g., `{ mobile: "base", desktop: "lg" }`)
+ * - Uses Chakra UI's Flex component (for `as` prop, component logic)
+ * - All styling handled by CSS Modules (zero CSS-in-runtime)
+ * - Accepts Backpack spacing tokens as strings (e.g., `padding="base"`)
+ * - Accepts Backpack breakpoint tokens in responsive props
  * - Accepts Backpack color tokens for color-related props
- * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
- * - Supports SSR out of the box
+ * - Requires BpkProvider to disable Chakra UI's CSS-in-JS
  *
- * @param {Props} props - The component props
- * @returns {JSX.Element} The rendered BpkFlex component
  * @example
  * ```tsx
  * // Using Backpack tokens
@@ -59,30 +55,10 @@ const getClass = getClassName(STYLES);
  * </BpkFlex>
  * ```
  */
-const BpkFlex = ({
-  as = 'div',
-  children,
-  ...rest
-}: Props) => {
-  const { className, restProps, style } = transformBpkLayoutProps(rest, {
-    componentName: 'flex',
-  });
-  const Component = as as ElementType;
-
-  // Process className: split space-separated string and map through CSS Modules
-  const finalClassName = processClassName(getClass, className, 'bpk-flex');
-
-  return (
-    // Allowed, Component is always a dom element.
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <Component
-      {...restProps}
-      className={finalClassName || undefined}
-      style={style || undefined}
-    >
-      {children}
-    </Component>
-  );
-};
+const BpkFlex = createBpkLayoutComponent<BpkFlexProps>({
+  componentName: 'flex',
+  ChakraComponent: Flex,
+  styles: STYLES,
+});
 
 export default BpkFlex;

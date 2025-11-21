@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ElementType } from 'react';
+import { Spacer } from '@chakra-ui/react';
 
 import { getClassName } from '../styleUtils';
 
@@ -29,13 +29,14 @@ export type Props = BpkSpacerProps;
 const getClass = getClassName(STYLES);
 
 /**
- * BpkSpacer is a layout component that provides flexible spacing using CSS Modules.
- * It uses static CSS classes compiled at build time for optimal performance and SSR support.
+ * BpkSpacer is a layout component that provides flexible spacing using Chakra UI's Spacer component
+ * with CSS Modules styling. It uses Chakra UI for component logic but CSS Modules for all styling.
  *
  * **Key Features:**
+ * - Uses Chakra UI's Spacer component (for `as` prop, component logic)
+ * - All styling handled by CSS Modules (zero CSS-in-runtime)
  * - A flexible flex spacer that expands along the major axis of its containing flex layout
- * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
- * - Supports SSR out of the box
+ * - Requires BpkProvider to disable Chakra UI's CSS-in-JS
  *
  * @param {Props} props - The component props
  * @returns {JSX.Element} The rendered BpkSpacer component
@@ -49,15 +50,16 @@ const getClass = getClassName(STYLES);
  * ```
  */
 const BpkSpacer = ({
-  as = 'div',
+  as,
   ...rest
 }: Props) => {
-  const Component = as as ElementType;
-
   return (
-    // Allowed, Component is always a dom element.
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <Component
+    <Spacer
+      as={as}
+      // Only pass className - no Chakra UI style props
+      // This ensures CSS Modules handles all styling
+      // Allowed, Component is always a dom element.
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={getClass('bpk-spacer')}
       {...rest}
     />

@@ -18,34 +18,47 @@
 
 import type { ReactNode } from 'react';
 
+import { ChakraProvider } from '@chakra-ui/react';
+
+import { backpackSystem } from './backpackTheme';
+
 export type BpkProviderProps = {
   children: ReactNode;
 };
 
 /**
- * BpkProvider is a no-op component that exists for backward compatibility.
- * 
- * **Note:** With CSS Modules implementation, BpkProvider is no longer required.
- * Layout components now use static CSS classes compiled at build time, so no runtime
- * theme provider is needed. This component is kept for API compatibility but does nothing.
+ * BpkProvider wraps Chakra UI's ChakraProvider with a system configuration that disables CSS-in-JS.
  *
- * **Migration:** You can safely remove BpkProvider from your code. All layout
- * components will work without it.
+ * **Important:** This provider is **required** when using Chakra UI components.
+ * It provides the system configuration that disables Chakra UI's runtime CSS generation,
+ * allowing CSS Modules to handle all styling instead.
+ *
+ * **Key Features:**
+ * - Disables Chakra UI's CSS cascade layers (`disableLayers: true`)
+ * - Removes global CSS injection
+ * - Keeps Chakra UI component functionality (like `as` prop, responsive logic)
+ * - All styling is handled by CSS Modules (zero CSS-in-runtime)
  *
  * @param {BpkProviderProps} props - The component props
- * @returns {JSX.Element} The rendered children
+ * @returns {JSX.Element} The rendered BpkProvider component
  * @example
  * ```tsx
- * // Old usage (still works but not required)
- * <BpkProvider>
- *   <YourApp />
- * </BpkProvider>
+ * import { BpkProvider, BpkBox } from '@skyscanner/backpack-web/bpk-component-layout';
  *
- * // New usage (recommended)
- * <YourApp />
+ * function App() {
+ *   return (
+ *     <BpkProvider>
+ *       <BpkBox padding="base" bg="surface-highlight">
+ *         Content
+ *       </BpkBox>
+ *     </BpkProvider>
+ *   );
+ * }
  * ```
  */
-export const BpkProvider = ({ children }: BpkProviderProps) => <>{children}</>;
+export const BpkProvider = ({ children }: BpkProviderProps) => (
+  <ChakraProvider value={backpackSystem}>{children}</ChakraProvider>
+);
 
 export default BpkProvider;
 

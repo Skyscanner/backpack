@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-import type { ElementType } from 'react';
+import { Center } from '@chakra-ui/react';
 
-import { getClassName, processClassName } from '../styleUtils';
-import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+import { createBpkLayoutComponent } from '../createBpkLayoutComponent';
 
 import type { BpkCenterProps } from './BpkCenter.types';
 
@@ -27,20 +26,17 @@ import STYLES from './BpkCenter.module.scss';
 
 export type Props = BpkCenterProps;
 
-const getClass = getClassName(STYLES);
-
 /**
- * BpkCenter is a layout component that centers its child using CSS Modules.
- * It uses static CSS classes compiled at build time for optimal performance and SSR support.
+ * BpkCenter is a layout component that centers its child using Chakra UI's Center component
+ * with CSS Modules styling. It uses Chakra UI for component logic but CSS Modules for all styling.
  *
  * **Key Features:**
+ * - Uses Chakra UI's Center component (for `as` prop, component logic)
+ * - All styling handled by CSS Modules (zero CSS-in-runtime)
  * - Horizontally and vertically centers its child using display: flex
  * - Accepts Backpack spacing and color tokens
- * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
- * - Supports SSR out of the box
+ * - Requires BpkProvider to disable Chakra UI's CSS-in-JS
  *
- * @param {Props} props - The component props
- * @returns {JSX.Element} The rendered BpkCenter component
  * @example
  * ```tsx
  * <BpkCenter padding="base">
@@ -48,30 +44,10 @@ const getClass = getClassName(STYLES);
  * </BpkCenter>
  * ```
  */
-const BpkCenter = ({
-  as = 'div',
-  children,
-  ...rest
-}: Props) => {
-  const { className, restProps, style } = transformBpkLayoutProps(rest, {
-    componentName: 'center',
-  });
-  const Component = as as ElementType;
-
-  // Process className: split space-separated string and map through CSS Modules
-  const finalClassName = processClassName(getClass, className, 'bpk-center');
-
-  return (
-    // Allowed, Component is always a dom element.
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <Component
-      {...restProps}
-      className={finalClassName || undefined}
-      style={style || undefined}
-    >
-      {children}
-    </Component>
-  );
-};
+const BpkCenter = createBpkLayoutComponent<BpkCenterProps>({
+  componentName: 'center',
+  ChakraComponent: Center,
+  styles: STYLES,
+});
 
 export default BpkCenter;

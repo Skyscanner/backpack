@@ -42,9 +42,11 @@ describe('BpkGrid', () => {
   });
 
   it('should not support custom className', () => {
+    // TypeScript will error if className is passed, but we test runtime behavior
     const { container } = renderWithLayout(
-      <BpkGrid className="custom-classname">Content</BpkGrid>,
+      <BpkGrid {...({ className: 'custom-classname' } as any)}>Content</BpkGrid>,
     );
+    // className should be filtered out by transformBpkLayoutProps
     expect(container.firstChild).not.toHaveClass('custom-classname');
   });
 

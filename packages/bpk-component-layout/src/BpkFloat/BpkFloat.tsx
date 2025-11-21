@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-import type { ElementType } from 'react';
+import { Box } from '@chakra-ui/react';
 
-import { getClassName, processClassName } from '../styleUtils';
-import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+import { createBpkLayoutComponent } from '../createBpkLayoutComponent';
 
 import type { BpkFloatProps } from './BpkFloat.types';
 
@@ -27,20 +26,17 @@ import STYLES from './BpkFloat.module.scss';
 
 export type Props = BpkFloatProps;
 
-const getClass = getClassName(STYLES);
-
 /**
- * BpkFloat is a layout component that provides floating positioning using CSS Modules.
- * It uses static CSS classes compiled at build time for optimal performance and SSR support.
+ * BpkFloat is a layout component that provides floating positioning using Chakra UI's Box component
+ * with CSS Modules styling. It uses Chakra UI for component logic but CSS Modules for all styling.
  *
  * **Key Features:**
+ * - Uses Chakra UI's Box component (for `as` prop, component logic)
+ * - All styling handled by CSS Modules (zero CSS-in-runtime)
  * - Floats content to the left or right
  * - Accepts Backpack spacing and color tokens
- * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
- * - Supports SSR out of the box
+ * - Requires BpkProvider to disable Chakra UI's CSS-in-JS
  *
- * @param {Props} props - The component props
- * @returns {JSX.Element} The rendered BpkFloat component
  * @example
  * ```tsx
  * <BpkFloat float="right" margin="base">
@@ -48,37 +44,15 @@ const getClass = getClassName(STYLES);
  * </BpkFloat>
  * ```
  */
-const BpkFloat = ({
-  as = 'div',
-  children,
-  float,
-  ...rest
-}: Props) => {
-  // Include float in props for transformation
-  const propsWithFloat = {
-    ...rest,
-    float,
-  };
-
-  const { className, restProps, style } = transformBpkLayoutProps(propsWithFloat, {
-    componentName: 'float',
-  });
-  const Component = as as ElementType;
-
-  // Process className: split space-separated string and map through CSS Modules
-  const finalClassName = processClassName(getClass, className, 'bpk-float');
-
-  return (
-    // Allowed, Component is always a dom element.
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <Component
-      {...restProps}
-      className={finalClassName || undefined}
-      style={style || undefined}
-    >
-      {children}
-    </Component>
-  );
-};
+const BpkFloat = createBpkLayoutComponent<BpkFloatProps>({
+  componentName: 'float',
+  ChakraComponent: Box,
+  styles: STYLES,
+  transformProps: (props) => {
+    // Include float prop in transformation
+    const { float, ...rest } = props;
+    return { ...rest, float };
+  },
+});
 
 export default BpkFloat;

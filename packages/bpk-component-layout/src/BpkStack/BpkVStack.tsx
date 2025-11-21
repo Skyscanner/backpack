@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-import type { ElementType } from 'react';
+import { VStack } from '@chakra-ui/react';
 
-import { getClassName, processClassName } from '../styleUtils';
-import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+import { createBpkLayoutComponent } from '../createBpkLayoutComponent';
 
 import type { BpkVStackProps } from './BpkStack.types';
 
@@ -27,22 +26,18 @@ import STYLES from './BpkStack.module.scss';
 
 export type Props = BpkVStackProps;
 
-const getClass = getClassName(STYLES);
-
 /**
  * BpkVStack is a layout component that arranges its children in a vertical line.
  * It's a convenience component that sets `direction="column"` by default.
  *
  * **Key Features:**
+ * - Uses Chakra UI's VStack component (for `as` prop, component logic)
+ * - All styling handled by CSS Modules (zero CSS-in-runtime)
  * - Automatically sets `direction="column"` for vertical stacking
- * - Accepts Backpack spacing tokens as strings (e.g., `spacing="base"` instead of `spacing={4}`)
+ * - Accepts Backpack spacing tokens as strings (e.g., `spacing="base"`)
  * - Accepts Backpack breakpoint tokens in responsive props
- * - Accepts Backpack color tokens for color-related props
- * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
- * - Supports SSR out of the box
+ * - Requires BpkProvider to disable Chakra UI's CSS-in-JS
  *
- * @param {Props} props - The component props
- * @returns {JSX.Element} The rendered BpkVStack component
  * @example
  * ```tsx
  * // Using Backpack tokens
@@ -58,38 +53,19 @@ const getClass = getClassName(STYLES);
  * </BpkStack>
  * ```
  */
-const BpkVStack = ({
-  as = 'div',
-  children,
-  spacing,
-  ...rest
-}: Props) => {
-  // Map spacing prop to gap prop and set direction to column
-  const propsWithGap = {
-    ...rest,
-    gap: spacing,
-    flexDirection: 'column' as const,
-  };
-
-  const { className, restProps, style } = transformBpkLayoutProps(propsWithGap, {
-    componentName: 'stack',
-  });
-  const Component = as as ElementType;
-
-  // Process className: split space-separated string and map through CSS Modules
-  const finalClassName = processClassName(getClass, className, 'bpk-stack');
-
-  return (
-    // Allowed, Component is always a dom element.
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <Component
-      {...restProps}
-      className={finalClassName || undefined}
-      style={style || undefined}
-    >
-      {children}
-    </Component>
-  );
-};
+const BpkVStack = createBpkLayoutComponent<BpkVStackProps>({
+  componentName: 'stack',
+  ChakraComponent: VStack,
+  styles: STYLES,
+  transformProps: (props) => {
+    // Map spacing prop to gap prop and set direction to column
+    const { spacing, ...rest } = props;
+    return {
+      ...rest,
+      gap: spacing,
+      flexDirection: 'column' as const,
+    };
+  },
+});
 
 export default BpkVStack;

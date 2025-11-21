@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-import type { ElementType } from 'react';
+import { Wrap } from '@chakra-ui/react';
 
-import { getClassName, processClassName } from '../styleUtils';
-import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+import { createBpkLayoutComponent } from '../createBpkLayoutComponent';
 
 import type { BpkWrapProps } from './BpkWrap.types';
 
@@ -27,21 +26,18 @@ import STYLES from './BpkWrap.module.scss';
 
 export type Props = BpkWrapProps;
 
-const getClass = getClassName(STYLES);
-
 /**
- * BpkWrap is a layout component that provides a wrap layout using CSS Modules.
- * It uses static CSS classes compiled at build time for optimal performance and SSR support.
+ * BpkWrap is a layout component that provides a wrap layout using Chakra UI's Wrap component
+ * with CSS Modules styling. It uses Chakra UI for component logic but CSS Modules for all styling.
  *
  * **Key Features:**
+ * - Uses Chakra UI's Wrap component (for `as` prop, component logic)
+ * - All styling handled by CSS Modules (zero CSS-in-runtime)
  * - Wraps children and provides spacing between them
  * - Accepts Backpack spacing tokens as strings (e.g., `spacing="base"`)
  * - Accepts Backpack color tokens for color-related props
- * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
- * - Supports SSR out of the box
+ * - Requires BpkProvider to disable Chakra UI's CSS-in-JS
  *
- * @param {Props} props - The component props
- * @returns {JSX.Element} The rendered BpkWrap component
  * @example
  * ```tsx
  * <BpkWrap spacing="base">
@@ -50,42 +46,21 @@ const getClass = getClassName(STYLES);
  * </BpkWrap>
  * ```
  */
-const BpkWrap = ({
-  as = 'div',
-  children,
-  spacing,
-  spacingX,
-  spacingY,
-  ...rest
-}: Props) => {
-  // Map spacing prop to gap prop, and pass spacingX/spacingY to transformBpkLayoutProps
-  const propsWithGap = {
-    ...rest,
-    gap: spacing,
-    spacingX,
-    spacingY,
-    flexWrap: 'wrap',
-  };
-
-  const { className, restProps, style } = transformBpkLayoutProps(propsWithGap, {
-    componentName: 'wrap',
-  });
-  const Component = as as ElementType;
-
-  // Process className: split space-separated string and map through CSS Modules
-  const finalClassName = processClassName(getClass, className, 'bpk-wrap');
-
-  return (
-    // Allowed, Component is always a dom element.
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <Component
-      {...restProps}
-      className={finalClassName || undefined}
-      style={style || undefined}
-    >
-      {children}
-    </Component>
-  );
-};
+const BpkWrap = createBpkLayoutComponent<BpkWrapProps>({
+  componentName: 'wrap',
+  ChakraComponent: Wrap,
+  styles: STYLES,
+  transformProps: (props) => {
+    // Map spacing prop to gap prop, and pass spacingX/spacingY to transformBpkLayoutProps
+    const { spacing, spacingX, spacingY, ...rest } = props;
+    return {
+      ...rest,
+      gap: spacing,
+      spacingX,
+      spacingY,
+      flexWrap: 'wrap',
+    };
+  },
+});
 
 export default BpkWrap;

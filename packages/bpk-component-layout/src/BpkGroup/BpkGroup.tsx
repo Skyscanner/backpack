@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-import type { ElementType } from 'react';
+import { Box } from '@chakra-ui/react';
 
-import { getClassName, processClassName } from '../styleUtils';
-import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+import { createBpkLayoutComponent } from '../createBpkLayoutComponent';
 
 import type { BpkGroupProps } from './BpkGroup.types';
 
@@ -27,59 +26,35 @@ import STYLES from './BpkGroup.module.scss';
 
 export type Props = BpkGroupProps;
 
-const getClass = getClassName(STYLES);
-
 /**
- * BpkGroup is a layout component that groups related elements together using CSS Modules.
- * It uses static CSS classes compiled at build time for optimal performance and SSR support.
+ * BpkGroup is a layout component that groups related elements together using Chakra UI's Box component
+ * with CSS Modules styling. It uses Chakra UI for component logic but CSS Modules for all styling.
  *
  * **Key Features:**
+ * - Uses Chakra UI's Box component (for `as` prop, component logic)
+ * - All styling handled by CSS Modules (zero CSS-in-runtime)
  * - Groups related elements with consistent spacing
  * - Uses flexbox for layout
  * - Accepts Backpack spacing and color tokens
- * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
- * - Supports SSR out of the box
+ * - Requires BpkProvider to disable Chakra UI's CSS-in-JS
  *
- * @param {Props} props - The component props
- * @returns {JSX.Element} The rendered BpkGroup component
  * @example
  * ```tsx
- * <BpkGroup gap="base" alignItems="center">
+ * <BpkGroup gap="base">
  *   <BpkBox>Item 1</BpkBox>
  *   <BpkBox>Item 2</BpkBox>
  * </BpkGroup>
  * ```
  */
-const BpkGroup = ({
-  as = 'div',
-  children,
-  ...rest
-}: Props) => {
-  // Set default display to flex for grouping behavior
-  const propsWithDisplay = {
+const BpkGroup = createBpkLayoutComponent<BpkGroupProps>({
+  componentName: 'group',
+  ChakraComponent: Box,
+  styles: STYLES,
+  transformProps: (props) => ({
+    // Set default display to flex for grouping behavior
     display: 'flex',
-    ...rest,
-  };
-
-  const { className, restProps, style } = transformBpkLayoutProps(propsWithDisplay, {
-    componentName: 'group',
-  });
-  const Component = as as ElementType;
-
-  // Process className: split space-separated string and map through CSS Modules
-  const finalClassName = processClassName(getClass, className, 'bpk-group');
-
-  return (
-    // Allowed, Component is always a dom element.
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <Component
-      {...restProps}
-      className={finalClassName || undefined}
-      style={style || undefined}
-    >
-      {children}
-    </Component>
-  );
-};
+    ...props,
+  }),
+});
 
 export default BpkGroup;

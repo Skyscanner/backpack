@@ -42,9 +42,11 @@ describe('BpkBox', () => {
   });
 
   it('should not support custom className', () => {
+    // TypeScript will error if className is passed, but we test runtime behavior
     const { container } = renderWithLayout(
-      <BpkBox className="custom-classname">Content</BpkBox>,
+      <BpkBox {...({ className: 'custom-classname' } as any)}>Content</BpkBox>,
     );
+    // className should be filtered out by transformBpkLayoutProps
     expect(container.firstChild).not.toHaveClass('custom-classname');
   });
 

@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-import type { ElementType } from 'react';
+import { Separator } from '@chakra-ui/react';
 
-import { getClassName, processClassName } from '../styleUtils';
-import { transformBpkLayoutProps } from '../useBpkLayoutProps';
+import { createBpkLayoutComponent } from '../createBpkLayoutComponent';
 
 import type { BpkSeparatorProps } from './BpkSeparator.types';
 
@@ -27,55 +26,35 @@ import STYLES from './BpkSeparator.module.scss';
 
 export type Props = BpkSeparatorProps;
 
-const getClass = getClassName(STYLES);
-
 /**
- * BpkSeparator is a layout component that provides a visual separator using CSS Modules.
- * It uses static CSS classes compiled at build time for optimal performance and SSR support.
+ * BpkSeparator is a layout component that provides a visual separator using Chakra UI's Separator component
+ * with CSS Modules styling. It uses Chakra UI for component logic but CSS Modules for all styling.
  *
  * **Key Features:**
+ * - Uses Chakra UI's Separator component (for `as` prop, component logic)
+ * - All styling handled by CSS Modules (zero CSS-in-runtime)
  * - Creates a visual separator line
  * - Can be horizontal or vertical
  * - Accepts Backpack spacing and color tokens
- * - Uses CSS Modules for static CSS generation (no runtime CSS-in-JS)
- * - Supports SSR out of the box
+ * - Requires BpkProvider to disable Chakra UI's CSS-in-JS
  *
- * @param {Props} props - The component props
- * @returns {JSX.Element} The rendered BpkSeparator component
  * @example
  * ```tsx
  * <BpkSeparator orientation="horizontal" borderColor="line" />
  * ```
  */
-const BpkSeparator = ({
-  as = 'hr',
-  orientation = 'horizontal',
-  ...rest
-}: Props) => {
-  // Include orientation in props for transformation
-  const propsWithOrientation = {
-    ...rest,
-    orientation,
-  };
-
-  const { className, restProps, style } = transformBpkLayoutProps(propsWithOrientation, {
-    componentName: 'separator',
+const BpkSeparator = createBpkLayoutComponent<BpkSeparatorProps>({
+  componentName: 'separator',
+  ChakraComponent: Separator,
+  styles: STYLES,
+  transformOptions: {
     disallowedProps: ['className', 'children'], // Separator doesn't accept children
-  });
-  const Component = as as ElementType;
-
-  // Process className: split space-separated string and map through CSS Modules
-  const finalClassName = processClassName(getClass, className, 'bpk-separator');
-
-  return (
-    // Allowed, Component is always a dom element.
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <Component
-      {...restProps}
-      className={finalClassName || undefined}
-      style={style || undefined}
-    />
-  );
-};
+  },
+  transformProps: (props) => {
+    // Include orientation in props for transformation
+    const { orientation = 'horizontal', ...rest } = props;
+    return { ...rest, orientation };
+  },
+});
 
 export default BpkSeparator;
