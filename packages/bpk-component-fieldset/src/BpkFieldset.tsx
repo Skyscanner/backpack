@@ -36,7 +36,7 @@ type BaseProps = {
   required?: boolean;
   className?: string | null;
   validationMessage?: string | null;
-  validationProps?: Record<string, any>;
+  validationProps?: Record<string, unknown>;
   description?: string | null;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
