@@ -30,7 +30,6 @@ import {
   formatMonth,
   formatDateFull,
 } from '../../packages/bpk-component-calendar/test-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import BpkDatepicker from '../../packages/bpk-component-datepicker';
 import BpkFieldset, {
