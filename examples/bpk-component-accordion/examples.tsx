@@ -30,7 +30,6 @@ import {
   BpkAccordionItem,
   withAccordionItemState,
 } from '../../packages/bpk-component-accordion';
-// @ts-expect-error Untyped import - see `decisions/imports-ts-suppressions.md`.
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import { withAlignment } from '../../packages/bpk-component-icon';
 import StopsIcon from '../../packages/bpk-component-icon/sm/stops';

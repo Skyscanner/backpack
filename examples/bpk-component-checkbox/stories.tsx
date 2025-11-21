@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkCheckbox from '../../packages/bpk-component-checkbox/src/BpkCheckbox';
 
 import {
@@ -46,7 +45,11 @@ export const Required = RequiredExample;
 export const SmallLabel = SmallLabelExample;
 
 export const VisualTest = MixedExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true
+  },
 };
+
+

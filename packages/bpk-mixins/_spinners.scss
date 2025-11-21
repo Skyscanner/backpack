@@ -18,9 +18,9 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@import 'tokens.scss';
-@import './icons.scss';
-@import './utils.scss';
+@use 'tokens';
+@use 'icons';
+@use 'utils';
 
 @keyframes bpk-keyframe-spin {
   100% {
@@ -38,8 +38,8 @@
 ///   }
 
 @mixin bpk-spinner() {
-  width: bpk-spacing-base();
-  height: bpk-spacing-base();
+  width: tokens.bpk-spacing-base();
+  height: tokens.bpk-spacing-base();
   animation: bpk-keyframe-spin 600ms linear infinite;
 }
 
@@ -54,8 +54,8 @@
 ///   }
 
 @mixin bpk-spinner--lg() {
-  width: bpk-spacing-lg();
-  height: bpk-spacing-lg();
+  width: tokens.bpk-spacing-lg();
+  height: tokens.bpk-spacing-lg();
 }
 
 /// Extra large spinner. Modifies the bpk-spinner mixin.
@@ -69,8 +69,8 @@
 ///   }
 
 @mixin bpk-spinner--xl() {
-  width: bpk-spacing-xl();
-  height: bpk-spacing-xl();
+  width: tokens.bpk-spacing-xl();
+  height: tokens.bpk-spacing-xl();
 }
 
 /// Align spinner to button. Modifies the bpk-spinner mixin.
@@ -98,5 +98,5 @@
 ///   }
 
 @mixin bpk-spinner--align-to-large-button() {
-  @include bpk-icon-lg--align-to-large-button;
+  @include icons.bpk-icon-lg--align-to-large-button;
 }

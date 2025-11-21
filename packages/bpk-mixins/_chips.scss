@@ -18,74 +18,74 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@import 'tokens.scss';
-@import 'borders.scss';
-@import 'margins.scss';
-@import 'shadows.scss';
-@import 'utils.scss';
+@use 'tokens';
+@use 'borders';
+@use 'margins';
+@use 'shadows';
+@use 'utils';
 
 @mixin bpk-chip {
   display: inline-flex;
-  height: bpk-spacing-xl();
-  padding: 0 bpk-spacing-base();
+  height: tokens.bpk-spacing-xl();
+  padding: 0 tokens.bpk-spacing-base();
   align-items: center;
   border: none;
-  border-radius: $bpk-border-radius-xs * 2;
+  border-radius: tokens.$bpk-border-radius-xs * 2;
   cursor: pointer;
 
   &__leading-accessory-view {
     display: inline-flex;
     fill: currentcolor;
 
-    @include bpk-margin-trailing(bpk-spacing-md());
+    @include margins.bpk-margin-trailing(tokens.bpk-spacing-md());
   }
 
   &__trailing-accessory-view {
     display: inline-flex;
     fill: currentcolor;
 
-    @include bpk-margin-leading(bpk-spacing-md(), false);
-    @include bpk-margin-trailing(-1 * bpk-spacing-md(), false);
+    @include margins.bpk-margin-leading(tokens.bpk-spacing-md(), false);
+    @include margins.bpk-margin-trailing(-1 * tokens.bpk-spacing-md(), false);
   }
 
   &--on-dark {
     background-color: transparent;
-    color: $bpk-text-on-dark-day;
+    color: tokens.$bpk-text-on-dark-day;
 
-    @include bpk-border-sm($bpk-line-on-dark-day);
+    @include borders.bpk-border-sm(tokens.$bpk-line-on-dark-day);
 
-    @include bpk-hover {
-      @include bpk-border-sm($bpk-surface-default-day);
+    @include utils.bpk-hover {
+      @include borders.bpk-border-sm(tokens.$bpk-surface-default-day);
     }
 
     &:active:not(:disabled) {
-      @include bpk-border-sm($bpk-surface-default-day);
+      @include borders.bpk-border-sm(tokens.$bpk-surface-default-day);
     }
 
     &-selected {
-      @include bpk-themeable-property(
+      @include utils.bpk-themeable-property(
         color,
         --bpk-chip-on-dark-selected-text-color,
-        $bpk-text-on-light-day
+        tokens.$bpk-text-on-light-day
       );
-      @include bpk-themeable-property(
+      @include utils.bpk-themeable-property(
         background-color,
         --bpk-chip-on-dark-selected-background-color,
-        $bpk-surface-default-day
+        tokens.$bpk-surface-default-day
       );
-      @include bpk-border-sm(transparent);
+      @include borders.bpk-border-sm(transparent);
 
-      @include bpk-hover {
-        @include bpk-border-sm(transparent);
+      @include utils.bpk-hover {
+        @include borders.bpk-border-sm(transparent);
       }
 
       &:active:not(:disabled) {
-        @include bpk-border-sm(transparent);
+        @include borders.bpk-border-sm(transparent);
       }
     }
 
     &-dismissible {
-      @include bpk-hover {
+      @include utils.bpk-hover {
         svg {
           fill: currentcolor;
         }
@@ -98,53 +98,53 @@
       }
 
       &__trailing-accessory-view {
-        fill: $bpk-text-secondary-day;
+        fill: tokens.$bpk-text-secondary-day;
       }
     }
 
     &-disabled {
-      @include bpk-border-sm(transparent);
+      @include borders.bpk-border-sm(transparent);
     }
   }
 
   &--default {
     background-color: transparent;
-    color: $bpk-text-primary-day;
+    color: tokens.$bpk-text-primary-day;
 
-    @include bpk-border-sm($bpk-line-day);
+    @include borders.bpk-border-sm(tokens.$bpk-line-day);
 
-    @include bpk-hover {
-      @include bpk-border-sm($bpk-core-primary-day);
+    @include utils.bpk-hover {
+      @include borders.bpk-border-sm(tokens.$bpk-core-primary-day);
     }
 
     &:active:not(:disabled) {
-      @include bpk-border-sm($bpk-core-primary-day);
+      @include borders.bpk-border-sm(tokens.$bpk-core-primary-day);
     }
 
     &-selected {
-      @include bpk-themeable-property(
+      @include utils.bpk-themeable-property(
         color,
         --bpk-chip-default-selected-text-color,
-        $bpk-text-on-dark-day
+        tokens.$bpk-text-on-dark-day
       );
-      @include bpk-themeable-property(
+      @include utils.bpk-themeable-property(
         background-color,
         --bpk-chip-default-selected-background-color,
-        $bpk-core-primary-day
+        tokens.$bpk-core-primary-day
       );
-      @include bpk-border-sm(transparent);
+      @include borders.bpk-border-sm(transparent);
 
-      @include bpk-hover {
-        @include bpk-border-sm(transparent);
+      @include utils.bpk-hover {
+        @include borders.bpk-border-sm(transparent);
       }
 
       &:active:not(:disabled) {
-        @include bpk-border-sm(transparent);
+        @include borders.bpk-border-sm(transparent);
       }
     }
 
     &-dismissible {
-      @include bpk-hover {
+      @include utils.bpk-hover {
         svg {
           fill: currentcolor;
         }
@@ -157,60 +157,60 @@
       }
 
       &__trailing-accessory-view {
-        fill: $bpk-text-disabled-on-dark-day;
+        fill: tokens.$bpk-text-disabled-on-dark-day;
       }
     }
 
     &-disabled {
-      @include bpk-border-sm(transparent);
+      @include borders.bpk-border-sm(transparent);
     }
   }
 
   &--on-image {
-    background-color: $bpk-surface-default-day;
-    color: $bpk-text-primary-day;
+    background-color: tokens.$bpk-surface-default-day;
+    color: tokens.$bpk-text-primary-day;
 
-    @include bpk-box-shadow-sm;
+    @include shadows.bpk-box-shadow-sm;
 
-    @include bpk-hover {
-      background-color: $bpk-canvas-contrast-day;
+    @include utils.bpk-hover {
+      background-color: tokens.$bpk-canvas-contrast-day;
     }
 
     &:active:not(:disabled) {
-      background-color: $bpk-canvas-contrast-day;
+      background-color: tokens.$bpk-canvas-contrast-day;
     }
 
     &-selected {
-      @include bpk-themeable-property(
+      @include utils.bpk-themeable-property(
         color,
         --bpk-chip-on-image-selected-text-color,
-        $bpk-text-on-dark-day
+        tokens.$bpk-text-on-dark-day
       );
-      @include bpk-themeable-property(
+      @include utils.bpk-themeable-property(
         background-color,
         --bpk-chip-on-image-selected-background-color,
-        $bpk-core-primary-day
+        tokens.$bpk-core-primary-day
       );
 
-      @include bpk-hover {
-        @include bpk-themeable-property(
+      @include utils.bpk-hover {
+        @include utils.bpk-themeable-property(
           background-color,
           --bpk-chip-on-image-selected-hover-background-color,
-          $bpk-core-primary-day
+          tokens.$bpk-core-primary-day
         );
       }
 
       &:active:not(:disabled) {
-        @include bpk-themeable-property(
+        @include utils.bpk-themeable-property(
           background-color,
           --bpk-chip-on-image-selected-active-background-color,
-          $bpk-core-primary-day
+          tokens.$bpk-core-primary-day
         );
       }
     }
 
     &-dismissible {
-      @include bpk-hover {
+      @include utils.bpk-hover {
         svg {
           fill: currentcolor;
         }
@@ -223,27 +223,27 @@
       }
 
       &__trailing-accessory-view {
-        fill: $bpk-text-disabled-on-dark-day;
+        fill: tokens.$bpk-text-disabled-on-dark-day;
       }
     }
 
     &-disabled {
-      @include bpk-box-shadow-sm;
+      @include shadows.bpk-box-shadow-sm;
     }
   }
 
   &--disabled {
-    background-color: $bpk-private-chip-disabled-background-day;
-    color: $bpk-text-disabled-day;
+    background-color: tokens.$bpk-private-chip-disabled-background-day;
+    color: tokens.$bpk-text-disabled-day;
     cursor: not-allowed;
   }
 
   &--icon-only {
-    padding-inline-end: bpk-spacing-md();
-    padding-inline-start: bpk-spacing-md();
+    padding-inline-end: tokens.bpk-spacing-md();
+    padding-inline-start: tokens.bpk-spacing-md();
 
     &__leading-accessory-view {
-      @include bpk-margin-trailing(0);
+      @include margins.bpk-margin-trailing(0);
     }
   }
 }

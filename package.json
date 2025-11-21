@@ -17,8 +17,8 @@
   },
   "scripts": {
     "build": "run-s build:*",
+    "build:copy-normal_css": "./scripts/scss/copy-normal_css.sh",
     "build:gulp": "gulp",
-    "build:unstable__bpk-mixins": "./scripts/scss/generate-unstable__bpk-mixins.sh",
     "build:sass": "node scripts/scss/styles-prod.js && rm packages/bpk-stylesheets/index.css",
     "build:stylesheets": "(cd packages/bpk-stylesheets && node build)",
     "check-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js",
@@ -152,7 +152,7 @@
     "danger-plugin-toolbox": "^3.1.2",
     "date-fns": "^4.1.0",
     "eslint_d": "^14.3.0",
-    "glob": "^11.0.3",
+    "glob": "^11.1.0",
     "gulp": "^5.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-svgmin": "^4.1.0",

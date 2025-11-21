@@ -18,5 +18,10 @@
 
 import BpkButton, {type Props} from './src/BpkButton';
 
+/**
+ * @deprecated BpkButtonFeatured is deprecated and will be removed in a future major version. Please use BpkButtonV2 with type={BUTTON_TYPES.featured} instead.
+ * @param {Props} props - Component props
+ * @returns {JSX.Element} Featured button component
+ */
 const BpkButtonFeatured = (props: Props) => <BpkButton {...props} featured />
 export default BpkButtonFeatured;

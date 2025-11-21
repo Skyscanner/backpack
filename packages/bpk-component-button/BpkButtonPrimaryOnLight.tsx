@@ -18,5 +18,10 @@
 
 import BpkButton, {type Props} from './src/BpkButton';
 
+/**
+ * @deprecated BpkButtonPrimaryOnLight is deprecated and will be removed in a future major version. Please use BpkButtonV2 with type={BUTTON_TYPES.primaryOnLight} instead.
+ * @param {Props} props - Component props
+ * @returns {JSX.Element} Primary on light button component
+ */
 const BpkButtonPrimaryOnLight = (props: Props) => <BpkButton {...props} primaryOnLight />
 export default BpkButtonPrimaryOnLight;

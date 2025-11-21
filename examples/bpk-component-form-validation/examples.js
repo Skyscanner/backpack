@@ -19,7 +19,7 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import BpkButton from '../../packages/bpk-component-button';
+import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import BpkFormValidation from '../../packages/bpk-component-form-validation';
 import BpkInput from '../../packages/bpk-component-input';
@@ -52,7 +52,7 @@ class FormValidationContainer extends Component {
     return (
       <div>
         <div style={{ textAlign: 'center' }}>
-          <BpkButton onClick={this.toggleExpanded}>Toggle</BpkButton>
+          <BpkButtonV2 onClick={this.toggleExpanded}>Toggle</BpkButtonV2>
         </div>
         <BpkFormValidation expanded={this.state.expanded} {...this.props} />
       </div>
