@@ -23,7 +23,7 @@ import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
   // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from '../../packages/bpk-component-autosuggest';
-import BpkButton from '../../packages/bpk-component-button';
+import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import { format } from '../../packages/bpk-component-calendar/src/date-utils';
 import {
   weekDays,
@@ -320,7 +320,7 @@ class FieldsetContainer extends Component<
         <BpkFieldset {...fieldsetProps} />
         {!this.props.disabled && (
           <div className={getClassName('bpk-fieldsets__toggle')}>
-            <BpkButton onClick={this.toggleStates}>Toggle states</BpkButton>
+            <BpkButtonV2 onClick={this.toggleStates}>Toggle states</BpkButtonV2>
           </div>
         )}
       </div>

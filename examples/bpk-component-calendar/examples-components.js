@@ -31,7 +31,7 @@ import {
   colorMonteverde,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkButton from '../../packages/bpk-component-button';
+import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import BpkCalendar, {
   BpkCalendarGrid,
   BpkCalendarGridHeader,
@@ -79,23 +79,23 @@ const MyCalendarNav = ({ direction, month, onMonthChange }) => (
   >
     <strong>{direction}</strong>
     <div>
-      <BpkButton
+      <BpkButtonV2
         iconOnly
         onClick={(event) =>
           onMonthChange(event, { month: addMonths(month, -1), source: 'PREV' })
         }
       >
         <LeftIcon fill={colorWhite} />
-      </BpkButton>
+      </BpkButtonV2>
       &nbsp;
-      <BpkButton
+      <BpkButtonV2
         iconOnly
         onClick={(event) =>
           onMonthChange(event, { month: addMonths(month, 1), source: 'NEXT' })
         }
       >
         <RightIcon fill={colorWhite} />
-      </BpkButton>
+      </BpkButtonV2>
     </div>
   </div>
 );
