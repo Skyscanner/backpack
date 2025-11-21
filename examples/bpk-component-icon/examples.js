@@ -24,7 +24,7 @@ import {
   lineHeightSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkButton from '../../packages/bpk-component-button';
+import { BpkButtonV2, SIZE_TYPES } from '../../packages/bpk-component-button';
 import {
   withAlignment,
   withButtonAlignment,
@@ -125,26 +125,26 @@ const AlignTextToIconExample = () => (
 );
 
 const AlignToButtonExample = () => (
-  <BpkButton>
+  <BpkButtonV2>
     Next step{' '}
     <AlignedSmallLongArrowRightIcon fill={textColors.textPrimaryInverseDay} />
-  </BpkButton>
+  </BpkButtonV2>
 );
 
 const AlignToLargeButtonExample = () => (
-  <BpkButton large>
+  <BpkButtonV2 size={SIZE_TYPES.large}>
     Next step{' '}
     <AlignedLargeLongArrowRightIcon fill={textColors.textPrimaryInverseDay} />
-  </BpkButton>
+  </BpkButtonV2>
 );
 
 const AlignToLargeButtonRTLExample = () => (
-  <BpkButton large>
+  <BpkButtonV2 size={SIZE_TYPES.large}>
     Search{' '}
     <RtlAlignedLargeLongArrowRightIcon
       fill={textColors.textPrimaryInverseDay}
     />
-  </BpkButton>
+  </BpkButtonV2>
 );
 
 const MixedExample = () => (

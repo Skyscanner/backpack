@@ -16,6 +16,19 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-export default ['checkboxCheckedColor'];
+import BpkCheckbox from './BpkCheckbox';
+
+describe('BpkCheckbox accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkCheckbox name="checkbox" label="Prefer directs" />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
+
+
