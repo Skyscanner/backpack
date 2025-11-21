@@ -19,7 +19,7 @@ This guide provides instructions and context for AI agents working with the Back
 - Each component lives in `packages/bpk-component-{name}/`
 - Components follow the pattern: `BpkComponentName`
 - All components are prefixed with `Bpk`
-- Examples: `BpkButton`, `BpkCard`, `BpkChip`
+- Examples: `BpkButtonV2`, `BpkCard`, `BpkChip`
 
 ### Package Organization
 ```
@@ -31,8 +31,8 @@ packages/
 ```
 
 ### File Naming Conventions
-- React components: PascalCase (e.g., `BpkButton.tsx`)
-- SCSS files: PascalCase (e.g., `BpkButton.module.scss`)
+- React components: PascalCase (e.g., `BpkButtonV2.tsx`)
+- SCSS files: PascalCase (e.g., `BpkButtonV2.module.scss`)
 - Test files: `{ComponentName}.test.tsx`
 - Story files: `{ComponentName}.stories.tsx`
 
@@ -353,7 +353,7 @@ examples/bpk-component-example/
 ### Import Patterns
 ```typescript
 // Component imports
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import { BpkButtonV2 } from '@skyscanner/backpack-web/bpk-component-button';
 
 // Token imports
 @use '@skyscanner/backpack-web/bpk-mixins/tokens';
