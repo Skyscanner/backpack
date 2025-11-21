@@ -17,7 +17,7 @@
  */
 
 import { cloneElement, Component } from 'react';
-import type { ReactElement } from 'react';
+import type { ChangeEvent, ReactElement } from 'react';
 
 import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
@@ -144,7 +144,10 @@ class Autosuggest extends Component<
     };
   }
 
-  onChange = (e: any, { newValue }: { newValue: string }) => {
+  onChange = (
+    _event: ChangeEvent<HTMLInputElement>,
+    { newValue }: { newValue: string },
+  ) => {
     this.setState({
       value: newValue,
     });
@@ -199,7 +202,7 @@ class Autosuggest extends Component<
 }
 
 type FieldsetContainerProps = {
-  validStates: any[];
+  validStates: Array<boolean | null>;
   isCheckbox?: boolean;
   disabled?: boolean;
   label?: string;
@@ -237,11 +240,20 @@ class FieldsetContainer extends Component<
     };
   }
 
-  onChange = (e: any) => {
-    this.setState({
-      value: e.target.value,
-      checked: e.target.checked,
-    });
+  onChange = (
+    e: ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    const { value } = e.target;
+
+    this.setState((prevState) => ({
+      value,
+      checked:
+        'checked' in e.target && typeof e.target.checked === 'boolean'
+          ? e.target.checked
+          : prevState.checked,
+    }));
   };
 
   onDateSelect = (dt: Date) => {
