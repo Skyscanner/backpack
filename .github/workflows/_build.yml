@@ -59,7 +59,7 @@ jobs:
           tar -cf ${{env.BUILD_LOGS}}.tar.br --use-compress-program="brotli -q 7" ./logs
 
       - name: Upload test logs
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v5.0.0
         with:
           name: ${{env.BUILD_LOGS}}
           path: ${{env.BUILD_LOGS}}.tar.br
@@ -89,7 +89,7 @@ jobs:
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
       - name: Download artifacts
-        uses: actions/download-artifact@v5.0.0
+        uses: actions/download-artifact@v6.0.0
         with:
           name: ${{env.BUILD_LOGS}}
 
