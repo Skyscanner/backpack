@@ -657,15 +657,23 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         ref: downshiftInputRef,
         value,
         ...finalInputProps
-      } = getInputProps({
-        ref: forwardedRef,
-        onClick: handleInputInteraction,
-        onFocus: handleInputInteraction,
-        'aria-describedby': ariaDescribedByLabelId,
-        'aria-label': inputAriaLabel,
-        className: inputClassName || theme.input,
-        ...restInputProps,
-      });
+      } = getInputProps(
+        {
+          ref: forwardedRef,
+          onClick: handleInputInteraction,
+          onFocus: handleInputInteraction,
+          'aria-describedby': ariaDescribedByLabelId,
+          'aria-label': inputAriaLabel,
+          className: inputClassName || theme.input,
+          ...restInputProps,
+        },
+        {
+          // We manually handle the ref from Downshift so it can be wired into both
+          // Downshift and Floating UI. Suppress the runtime warning that expects the
+          // ref from getInputProps to be applied directly.
+          suppressRefError: true,
+        },
+      );
 
       const handleBlur = (e: FocusEvent<HTMLInputElement>) => {
         // Call Downshift's onBlur first
