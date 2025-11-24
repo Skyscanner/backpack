@@ -209,8 +209,9 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         };
       }
       switch (type) {
-        case useCombobox.stateChangeTypes.InputClick: {
-          // Keep current highlightedIndex when clicking input to maintain user's selection
+        case useCombobox.stateChangeTypes.InputClick:
+        case useCombobox.stateChangeTypes.InputFocus: {
+          // Keep current highlightedIndex when clicking/focusing input to maintain user's selection
           // If menu was closed and we have a saved highlighted index, restore it
           let targetHighlightedIndex = state.highlightedIndex;
           if (targetHighlightedIndex === null || targetHighlightedIndex < 0) {
@@ -229,9 +230,21 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         }
         default: {
           const forceOpen = !isDesktop && !!changes.inputValue;
+          // When menu opens, restore saved highlighted index if available
+          let targetHighlightedIndex: number | null | undefined = changes.highlightedIndex;
+          if (
+            changes.isOpen === true &&
+            state.isOpen === false &&
+            (targetHighlightedIndex === null || targetHighlightedIndex === undefined || targetHighlightedIndex < 0) &&
+            savedHighlightedIndexRef.current !== null &&
+            savedHighlightedIndexRef.current >= 0
+          ) {
+            targetHighlightedIndex = savedHighlightedIndexRef.current;
+          }
           return {
             ...changes,
             isOpen: forceOpen ? true : changes.isOpen,
+            highlightedIndex: targetHighlightedIndex ?? changes.highlightedIndex,
           };
         }
       }
@@ -266,7 +279,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         });
 
         if (type === useCombobox.stateChangeTypes.InputChange) {
-          if (newInputValue?.length > 0) {
+          if (newInputValue && newInputValue.length > 0) {
             if (newIsOpen) {
               // Clear old suggestions before requesting new ones to avoid showing stale data
               onSuggestionsClearRequested?.();
@@ -282,9 +295,11 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       onSelectedItemChange(changes) {
         const { selectedItem } = changes;
         if (selectedItem) {
-          setInputValue(getSuggestionValue(selectedItem));
+          const newValue = getSuggestionValue(selectedItem);
+          setInputValue(newValue);
           originalInputOnPreviewRef.current = null;
           committedSelectionRef.current = true;
+          hasInteractedRef.current = true;
           onSuggestionSelected?.({
             suggestion: selectedItem,
             inputValue,
@@ -357,8 +372,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     });
 
     useEffect(() => {
-      // After user interaction, do not let defaultValue overrides pull input back to an older value.
-      if (hasInteractedRef.current) {
+      // After user interaction or committed selection, do not let defaultValue overrides pull input back to an older value.
+      if (hasInteractedRef.current || committedSelectionRef.current) {
         return;
       }
       setInputValue(defaultValue ?? '');
