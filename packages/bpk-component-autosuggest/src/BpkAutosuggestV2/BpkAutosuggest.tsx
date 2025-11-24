@@ -193,6 +193,10 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     const suggestionsCount = suggestions.length;
     const hasSuggestions = suggestionsCount > 0;
 
+    const flattenedSuggestions = multiSection
+      ? suggestions.flatMap((section) => getSectionSuggestions?.(section) ?? [])
+      : suggestions;
+
     function stateReducer(
       state: UseComboboxState<any>,
       actionAndChanges: UseComboboxStateChangeOptions<any>,
@@ -209,12 +213,25 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         };
       }
       switch (type) {
-        case useCombobox.stateChangeTypes.InputClick:
-        case useCombobox.stateChangeTypes.InputFocus: {
-          // Keep current highlightedIndex when clicking/focusing input to maintain user's selection
-          // If menu was closed and we have a saved highlighted index, restore it
+        case useCombobox.stateChangeTypes.InputClick: {
+          const isMenuOpening = changes.isOpen === true && state.isOpen === false;
           let targetHighlightedIndex = state.highlightedIndex;
-          if (targetHighlightedIndex === null || targetHighlightedIndex < 0) {
+
+          if (isMenuOpening) {
+            // When menu opens, if highlightFirstSuggestion is true, highlight first item
+            if (highlightFirstSuggestion && flattenedSuggestions.length > 0) {
+              targetHighlightedIndex = 0;
+            } else if (targetHighlightedIndex === null || targetHighlightedIndex < 0) {
+              // Otherwise, restore saved highlighted index if available
+              if (
+                savedHighlightedIndexRef.current !== null &&
+                savedHighlightedIndexRef.current >= 0
+              ) {
+                targetHighlightedIndex = savedHighlightedIndexRef.current;
+              }
+            }
+          } else if (targetHighlightedIndex === null || targetHighlightedIndex < 0) {
+            // Menu already open, restore saved index if current is invalid
             if (
               savedHighlightedIndexRef.current !== null &&
               savedHighlightedIndexRef.current >= 0
@@ -230,15 +247,31 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         }
         default: {
           const forceOpen = !isDesktop && !!changes.inputValue;
-          // When menu opens, restore saved highlighted index if available
+          // When menu opens, determine highlighted index
           let targetHighlightedIndex: number | null | undefined = changes.highlightedIndex;
-          if (
-            changes.isOpen === true &&
-            state.isOpen === false &&
+          const isMenuOpening = changes.isOpen === true && state.isOpen === false;
+          const isArrowKeyNavigation =
+            type === useCombobox.stateChangeTypes.InputKeyDownArrowDown ||
+            type === useCombobox.stateChangeTypes.InputKeyDownArrowUp;
+
+          if (isMenuOpening && !isArrowKeyNavigation) {
+            // When menu opens (not via arrow keys), if highlightFirstSuggestion is true, highlight first item
+            if (highlightFirstSuggestion && flattenedSuggestions.length > 0) {
+              targetHighlightedIndex = 0;
+            } else if (
+              (targetHighlightedIndex === null || targetHighlightedIndex === undefined || targetHighlightedIndex < 0) &&
+              savedHighlightedIndexRef.current !== null &&
+              savedHighlightedIndexRef.current >= 0
+            ) {
+              targetHighlightedIndex = savedHighlightedIndexRef.current;
+            }
+          } else if (
+            !isMenuOpening &&
             (targetHighlightedIndex === null || targetHighlightedIndex === undefined || targetHighlightedIndex < 0) &&
             savedHighlightedIndexRef.current !== null &&
             savedHighlightedIndexRef.current >= 0
           ) {
+            // When menu is already open and no highlighted index, restore saved one
             targetHighlightedIndex = savedHighlightedIndexRef.current;
           }
           return {
@@ -249,10 +282,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         }
       }
     }
-
-    const flattenedSuggestions = multiSection
-      ? suggestions.flatMap((section) => getSectionSuggestions?.(section) ?? [])
-      : suggestions;
 
     const {
       getInputProps,
