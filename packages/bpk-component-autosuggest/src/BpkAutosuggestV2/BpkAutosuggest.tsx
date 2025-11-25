@@ -310,8 +310,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         if (type === useCombobox.stateChangeTypes.InputChange) {
           if (newInputValue && newInputValue.length > 0) {
             if (newIsOpen) {
-              // Clear old suggestions before requesting new ones to avoid showing stale data
-              onSuggestionsClearRequested?.();
               onSuggestionsFetchRequested(newInputValue);
             }
           } else {
