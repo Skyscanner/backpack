@@ -37,6 +37,7 @@
     display: flex;
     width: tokens.bpk-spacing-xxl();
     height: tokens.bpk-spacing-xxl();
+    padding: 0;
     justify-content: center;
     align-items: center;
     transition: transform tokens.$bpk-duration-base;
