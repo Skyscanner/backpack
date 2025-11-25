@@ -18,7 +18,7 @@
 
 /**
  * Backpack Design Tokens for Layout Components
- * 
+ *
  * This file provides token mappings from Backpack design tokens to Chakra UI theme.
  * All tokens are sourced from @skyscanner/bpk-foundations-web
  */
@@ -57,18 +57,18 @@ export const BPK_COLOR_TOKENS = {
   'text-error': 'bpk-text-error-day',
   'text-success': 'bpk-text-success-day',
   'text-hero': 'bpk-text-hero-day',
-  
+
   // Background colors
   'canvas': 'bpk-canvas-day',
   'canvas-contrast': 'bpk-canvas-contrast-day',
   'surface-highlight': 'bpk-surface-highlight-day',
   'surface-default': 'bpk-surface-default-day',
   'surface-elevated': 'bpk-surface-elevated-day',
-  
+
   // Brand colors
   'core-primary': 'bpk-core-primary-day',
   'core-accent': 'bpk-core-accent-day',
-  
+
   // Border colors
   'line': 'bpk-line-day',
   'line-on-dark': 'bpk-line-on-dark-day',
@@ -101,6 +101,9 @@ export type BpkBreakpointValue = BpkBreakpointToken;
 
 /**
  * Validates if a value is a percentage string
+ *
+ * @param {string} value - The value to validate
+ * @returns {boolean} True if the value is a valid percentage string
  */
 export function isPercentage(value: string): boolean {
   return /^\d+(\.\d+)?%$/.test(value);
@@ -108,6 +111,9 @@ export function isPercentage(value: string): boolean {
 
 /**
  * Validates if a spacing value is valid (token or percentage)
+ *
+ * @param {string} value - The spacing value to validate
+ * @returns {boolean} True if the value is a valid Backpack spacing token or percentage
  */
 export function isValidSpacingValue(value: string): boolean {
   return Object.values(BPK_SPACING_TOKENS).includes(value as BpkSpacingToken) || isPercentage(value);
@@ -115,6 +121,9 @@ export function isValidSpacingValue(value: string): boolean {
 
 /**
  * Validates if a color value is valid (token or special values)
+ *
+ * @param {string} value - The color value to validate
+ * @returns {boolean} True if the value is a valid Backpack color token or special value
  */
 export function isValidColorValue(value: string): boolean {
   return Object.values(BPK_COLOR_TOKENS).includes(value as BpkColorToken) ||

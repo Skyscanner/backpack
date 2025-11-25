@@ -16,47 +16,108 @@
  * limitations under the License.
  */
 
+import { getBackpackColorValue } from './colorMapping';
+import { getColorValue, getSpacingValue } from './theme';
 import { isValidSpacingValue, isValidColorValue, isPercentage } from './tokens';
 
 /**
  * Converts Backpack spacing token to Chakra UI compatible value
- * In production, this would look up the actual value from the theme
+ * Returns the actual spacing value from the theme, not a token path
+ *
+ * @param {string} value - Backpack spacing token (e.g., 'bpk-spacing-base') or percentage
+ * @returns {string} The actual spacing value in rem or the percentage string
  */
 export function convertBpkSpacingToChakra(value: string): string {
   if (isPercentage(value)) {
     return value; // Percentages pass through
   }
 
-  // For tokens, we use the token name directly in Chakra theme
-  // The theme mapping will handle the conversion
+  // Look up the actual spacing value from the theme
+  const spacingValue = getSpacingValue(value);
+  if (spacingValue !== undefined) {
+    return spacingValue;
+  }
+
+  // Fallback: if token not found, return the value as-is (will cause a warning)
+  if (process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.warn(
+      `Spacing token "${value}" not found in theme. Returning as-is.`
+    );
+  }
   return value;
 }
 
 /**
- * Converts Backpack color token to Chakra UI compatible value
+ * Converts Backpack color token to actual color value
+ * Returns the actual color value (RGB/hex) that Chakra UI can use directly
+ *
+ * Chakra UI 3.0 does not properly resolve nested color token paths like 'bpk.bpk-line-day'.
+ * Therefore, we return the actual color value directly instead of a token path.
+ *
+ * The color values come from Backpack foundations and are in RGB format (e.g., 'rgb(193, 199, 207)').
+ * Chakra UI accepts RGB, RGBA, HEX, and other standard CSS color formats.
+ *
+ * @param {string} value - Backpack color token (e.g., 'bpk-text-primary-day') or special value
+ * @returns {string} The actual color value (e.g., 'rgb(22, 22, 22)') or special value
  */
 export function convertBpkColorToChakra(value: string): string {
   if (value === 'transparent' || value === 'currentColor') {
     return value;
   }
 
-  // For tokens, we use the token name in the bpk color namespace
-  return `bpk.${value}`;
+  // Get the actual color value from Backpack color mapping
+  const colorValue = getBackpackColorValue(value);
+  if (colorValue) {
+    // Return the actual color value directly
+    // Chakra UI 3.0 accepts RGB, RGBA, HEX, and other standard CSS color formats
+    return colorValue;
+  }
+
+  // Fallback: check legacy getColorValue for backward compatibility
+  const legacyValue = getColorValue(value);
+  if (legacyValue) {
+    return legacyValue;
+  }
+
+  // If token not found, return the value as-is (will cause a warning)
+  if (process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.warn(
+      `Color token "${value}" not found in Backpack color mapping. Returning as-is.`
+    );
+  }
+  return value;
 }
 
 /**
  * Validates and converts spacing props for Chakra UI
+ * Handles all spacing-related properties including padding, margin, gap, size, border radius, position, and typography
+ *
+ * @param {T} props - Component props object
+ * @returns {Record<string, any>} Processed props with spacing tokens converted to actual values
  */
 export function processSpacingProps<T extends Record<string, any>>(
   props: T
 ): Record<string, any> {
   const spacingKeys = [
+    // Padding props
     'p', 'pt', 'pr', 'pb', 'pl', 'px', 'py',
     'padding', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft',
+    // Margin props
     'm', 'mt', 'mr', 'mb', 'ml', 'mx', 'my',
     'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
+    // Gap and spacing
     'gap', 'spacing',
+    // Size props
     'width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight',
+    // Border radius props
+    'borderRadius', 'borderTopLeftRadius', 'borderTopRightRadius',
+    'borderBottomLeftRadius', 'borderBottomRightRadius',
+    // Position props
+    'top', 'right', 'bottom', 'left',
+    // Typography props that can use spacing tokens
+    'fontSize', 'lineHeight',
   ];
 
   const processed: Record<string, any> = { ...props };
@@ -68,13 +129,15 @@ export function processSpacingProps<T extends Record<string, any>>(
       // Validate the value
       if (!isValidSpacingValue(value) && !['auto', 'full', 'fit-content'].includes(value)) {
         if (process.env.NODE_ENV !== 'production') {
+          // eslint-disable-next-line no-console
           console.warn(
             `Invalid spacing value "${value}" for prop "${key}". ` +
             `Only Backpack spacing tokens or percentages are allowed. ` +
-            `Found: ${value}`
+            `Found: ${value}. This prop will be removed.`
           );
         }
-        // In production, we might want to throw or use a fallback
+        // Remove invalid value to prevent it from being passed to Chakra UI
+        delete processed[key];
         return;
       }
 
@@ -87,11 +150,20 @@ export function processSpacingProps<T extends Record<string, any>>(
 
 /**
  * Validates and converts color props for Chakra UI
+ * Handles all color-related properties including text color, background, and border colors
+ *
+ * @param {T} props - Component props object
+ * @returns {Record<string, any>} Processed props with color tokens converted to actual values
  */
 export function processColorProps<T extends Record<string, any>>(
   props: T
 ): Record<string, any> {
-  const colorKeys = ['color', 'bg', 'backgroundColor', 'borderColor'];
+  const colorKeys = [
+    'color',
+    'bg', 'backgroundColor',
+    'borderColor', 'borderTopColor', 'borderRightColor',
+    'borderBottomColor', 'borderLeftColor',
+  ];
 
   const processed: Record<string, any> = { ...props };
 
@@ -102,6 +174,7 @@ export function processColorProps<T extends Record<string, any>>(
       // Validate the value
       if (!isValidColorValue(value)) {
         if (process.env.NODE_ENV !== 'production') {
+          // eslint-disable-next-line no-console
           console.warn(
             `Invalid color value "${value}" for prop "${key}". ` +
             `Only Backpack color tokens, "transparent", or "currentColor" are allowed. ` +
@@ -121,23 +194,32 @@ export function processColorProps<T extends Record<string, any>>(
 /**
  * Processes all props to convert Backpack tokens to Chakra UI format
  * Also explicitly removes className to prevent style overrides
+ *
+ * Processing order:
+ * 1. Remove className
+ * 2. Process spacing props (includes border radius, position, typography)
+ * 3. Process color props (includes all color-related properties)
+ *
+ * @param {T} props - Component props object
+ * @returns {Record<string, any>} Processed props with tokens converted and className removed
  */
 export function processBpkProps<T extends Record<string, any>>(
   props: T
 ): Record<string, any> {
   // Explicitly remove className to prevent style overrides
-  const propsWithoutClassName = { ...props };
-  const className = propsWithoutClassName.className;
-  delete propsWithoutClassName.className;
+  const { className, ...propsWithoutClassName } = props;
 
   if (className !== undefined && process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
     console.warn(
       'className prop is not allowed on Backpack layout components. ' +
       'It has been removed to maintain design system consistency.'
     );
   }
 
+  // Process spacing props (includes border radius, position, typography)
   let processed = processSpacingProps(propsWithoutClassName);
+  // Process color props
   processed = processColorProps(processed);
   return processed;
 }

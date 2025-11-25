@@ -17,129 +17,49 @@
  */
 
 import type { BoxProps, FlexProps, GridProps, StackProps } from '@chakra-ui/react';
-import type { BpkSpacingValue, BpkColorValue, BpkBreakpointValue } from './tokens';
+import type { ReactNode } from 'react';
+
+import type { BpkCommonLayoutProps } from './commonProps';
 
 /**
- * Type that excludes numeric spacing values (px, rem, em) but allows tokens and percentages
- * Note: We allow string to accept token names, but validation happens at runtime
+ * Base type that removes spacing/color props and className from Chakra UI props
+ * These will be replaced with Backpack-specific types
  */
-type BpkSpacing = BpkSpacingValue | string;
-
-/**
- * Type that only allows Backpack color tokens or special values
- */
-type BpkColor = BpkColorValue;
-
-/**
- * Type that only allows Backpack breakpoint tokens
- */
-type BpkBreakpoint = BpkBreakpointValue;
-
-/**
- * Utility type to replace spacing-related props with Backpack token types
- */
-type ReplaceSpacingProps<T> = Omit<
+type RemoveCommonProps<T> = Omit<
   T,
-  | 'padding'
-  | 'paddingTop'
-  | 'paddingRight'
-  | 'paddingBottom'
-  | 'paddingLeft'
-  | 'p'
-  | 'pt'
-  | 'pr'
-  | 'pb'
-  | 'pl'
-  | 'px'
-  | 'py'
-  | 'margin'
-  | 'marginTop'
-  | 'marginRight'
-  | 'marginBottom'
-  | 'marginLeft'
-  | 'm'
-  | 'mt'
-  | 'mr'
-  | 'mb'
-  | 'ml'
-  | 'mx'
-  | 'my'
-  | 'gap'
-  | 'spacing'
-  | 'width'
-  | 'height'
-  | 'minWidth'
-  | 'minHeight'
-  | 'maxWidth'
-  | 'maxHeight'
-> & {
-  padding?: BpkSpacingValue;
-  paddingTop?: BpkSpacingValue;
-  paddingRight?: BpkSpacingValue;
-  paddingBottom?: BpkSpacingValue;
-  paddingLeft?: BpkSpacingValue;
-  p?: BpkSpacingValue;
-  pt?: BpkSpacingValue;
-  pr?: BpkSpacingValue;
-  pb?: BpkSpacingValue;
-  pl?: BpkSpacingValue;
-  px?: BpkSpacingValue;
-  py?: BpkSpacingValue;
-  margin?: BpkSpacingValue;
-  marginTop?: BpkSpacingValue;
-  marginRight?: BpkSpacingValue;
-  marginBottom?: BpkSpacingValue;
-  marginLeft?: BpkSpacingValue;
-  m?: BpkSpacingValue;
-  mt?: BpkSpacingValue;
-  mr?: BpkSpacingValue;
-  mb?: BpkSpacingValue;
-  ml?: BpkSpacingValue;
-  mx?: BpkSpacingValue;
-  my?: BpkSpacingValue;
-  gap?: BpkSpacingValue;
-  spacing?: BpkSpacingValue;
-  width?: BpkSpacingValue | 'auto' | 'full' | 'fit-content';
-  height?: BpkSpacingValue | 'auto' | 'full' | 'fit-content';
-  minWidth?: BpkSpacingValue | 'auto' | 'full' | 'fit-content';
-  minHeight?: BpkSpacingValue | 'auto' | 'full' | 'fit-content';
-  maxWidth?: BpkSpacingValue | 'auto' | 'full' | 'fit-content';
-  maxHeight?: BpkSpacingValue | 'auto' | 'full' | 'fit-content';
-};
-
-/**
- * Utility type to replace color-related props with Backpack token types
- */
-type ReplaceColorProps<T> = Omit<T, 'color' | 'bg' | 'backgroundColor' | 'borderColor'> & {
-  color?: BpkColorValue;
-  bg?: BpkColorValue;
-  backgroundColor?: BpkColorValue;
-  borderColor?: BpkColorValue;
-};
-
-/**
- * Base props type for Backpack layout components
- * Removes className and restricts spacing/color props to Backpack tokens
- */
-export type BpkLayoutProps<T> = ReplaceSpacingProps<ReplaceColorProps<Omit<T, 'className'>>>;
+  | keyof BpkCommonLayoutProps
+  | 'className'
+  | 'children'
+>;
 
 /**
  * Props for BpkBox component
+ * Combines Box-specific props with Backpack common layout props
  */
-export type BpkBoxProps = BpkLayoutProps<BoxProps>;
+export interface BpkBoxProps extends BpkCommonLayoutProps, RemoveCommonProps<BoxProps> {
+  children?: ReactNode;
+}
 
 /**
  * Props for BpkFlex component
+ * Combines Flex-specific props with Backpack common layout props
  */
-export type BpkFlexProps = BpkLayoutProps<FlexProps>;
+export interface BpkFlexProps extends BpkCommonLayoutProps, RemoveCommonProps<FlexProps> {
+  children?: ReactNode;
+}
 
 /**
  * Props for BpkGrid component
+ * Combines Grid-specific props with Backpack common layout props
  */
-export type BpkGridProps = BpkLayoutProps<GridProps>;
+export interface BpkGridProps extends BpkCommonLayoutProps, RemoveCommonProps<GridProps> {
+  children?: ReactNode;
+}
 
 /**
  * Props for BpkStack component
+ * Combines Stack-specific props with Backpack common layout props
  */
-export type BpkStackProps = BpkLayoutProps<StackProps>;
-
+export interface BpkStackProps extends BpkCommonLayoutProps, RemoveCommonProps<StackProps> {
+  children?: ReactNode;
+}

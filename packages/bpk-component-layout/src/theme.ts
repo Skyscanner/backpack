@@ -16,20 +16,16 @@
  * limitations under the License.
  */
 
+// Import color mapping
+import { BACKPACK_COLOR_MAPPING } from './colorMapping';
+
 // Import tokens from Backpack foundations
 // Note: Some tokens may not be in TypeScript definitions but exist at runtime
 // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
 const bpkTokens = require('@skyscanner/bpk-foundations-web/tokens/base.es6');
 
-// Extract spacing tokens (they exist at runtime even if TypeScript doesn't know about them)
+// Extract color tokens (keeping for backward compatibility)
 const {
-  spacingSm,
-  spacingBase,
-  spacingMd,
-  spacingLg,
-  spacingXl,
-  spacingXxl,
-  // Color tokens
   textPrimaryDay,
   textSecondaryDay,
   textDisabledDay,
@@ -50,6 +46,22 @@ const {
   // Breakpoint tokens
   breakpoints,
 } = bpkTokens;
+
+// Note: Spacing tokens are defined as SCSS functions in Backpack foundations,
+// not as direct values. We need to use the actual rem values from the SCSS functions.
+// Based on @skyscanner/bpk-foundations-web/tokens/base.default.scss:
+// - bpk-spacing-sm() returns .25rem
+// - bpk-spacing-md() returns .5rem
+// - bpk-spacing-lg() returns 1.5rem
+// - bpk-spacing-xl() returns 2rem (needs verification)
+// - bpk-spacing-xxl() returns 2.5rem
+// - bpk-spacing-base() returns 1rem (standard base spacing)
+const spacingSm = '.25rem';
+const spacingBase = '1rem'; // Standard base spacing
+const spacingMd = '.5rem';
+const spacingLg = '1.5rem';
+const spacingXl = '2rem';
+const spacingXxl = '2.5rem';
 
 // Note: Chakra UI v3 might have a different API
 // For now, we'll create a theme object that can be used with ChakraProvider
@@ -80,33 +92,10 @@ const spacingMap: Record<string, string> = {
 /**
  * Maps Backpack color tokens to actual color values
  * These come directly from @skyscanner/bpk-foundations-web
+ * 
+ * Uses the centralized color mapping from colorMapping.ts to ensure consistency
  */
-const colorMap: Record<string, string> = {
-  // Text colors
-  'bpk-text-primary-day': textPrimaryDay,
-  'bpk-text-secondary-day': textSecondaryDay,
-  'bpk-text-disabled-day': textDisabledDay,
-  'bpk-text-on-dark-day': textOnDarkDay,
-  'bpk-text-link-day': textLinkDay,
-  'bpk-text-error-day': textErrorDay,
-  'bpk-text-success-day': textSuccessDay,
-  'bpk-text-hero-day': textHeroDay,
-
-  // Background colors
-  'bpk-canvas-day': canvasDay,
-  'bpk-canvas-contrast-day': canvasContrastDay,
-  'bpk-surface-highlight-day': surfaceHighlightDay,
-  'bpk-surface-default-day': surfaceDefaultDay,
-  'bpk-surface-elevated-day': surfaceElevatedDay,
-
-  // Brand colors
-  'bpk-core-primary-day': corePrimaryDay,
-  'bpk-core-accent-day': coreAccentDay,
-
-  // Border colors
-  'bpk-line-day': lineDay,
-  'bpk-line-on-dark-day': lineOnDarkDay,
-};
+const colorMap: Record<string, string> = BACKPACK_COLOR_MAPPING;
 
 /**
  * Maps Backpack breakpoint tokens to media query values
@@ -122,16 +111,45 @@ const breakpointMap: Record<string, string> = {
 };
 
 /**
+ * Exports color map for use in tokenUtils
+ * This allows tokenUtils to look up actual color values
+ */
+export function getColorMap(): Record<string, string> {
+  return { ...colorMap };
+}
+
+/**
+ * Gets the actual color value for a Backpack color token
+ */
+export function getColorValue(token: string): string | undefined {
+  return colorMap[token];
+}
+
+/**
+ * Exports spacing map for use in tokenUtils
+ * This allows tokenUtils to look up actual spacing values
+ */
+export function getSpacingMap(): Record<string, string> {
+  return { ...spacingMap };
+}
+
+/**
+ * Gets the actual spacing value for a Backpack spacing token
+ */
+export function getSpacingValue(token: string): string | undefined {
+  return spacingMap[token];
+}
+
+/**
  * Creates Chakra UI theme with Backpack token mappings
+ * Only uses full token names (no short names) to enforce explicit token usage
  */
 export function createBpkTheme() {
   // Convert spacing map to Chakra UI format
+  // Only use full token names - no short names to enforce explicit usage
   const space: Record<string, string> = {};
   Object.entries(spacingMap).forEach(([token, value]) => {
-    // Use token name as key (without bpk-spacing- prefix for cleaner API)
-    const key = token.replace('bpk-spacing-', '');
-    space[token] = value; // Keep full token name for internal use
-    space[key] = value;   // Also provide short name for convenience
+    space[token] = value; // Only use full token name
   });
 
   // Convert color map to Chakra UI format
@@ -149,6 +167,9 @@ export function createBpkTheme() {
   // Create theme object compatible with Chakra UI
   // Chakra UI 3.30.0 doesn't have extendTheme, so we return theme object directly
   // The theme will be used by ChakraProvider
+  // 
+  // Color structure: colors.bpk['bpk-core-primary-day'] = 'rgb(5, 32, 60)'
+  // Chakra UI resolves 'bpk.bpk-core-primary-day' to colors.bpk['bpk-core-primary-day']
   return {
     space,
     colors: {

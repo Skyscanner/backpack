@@ -27,6 +27,11 @@ import { BpkStack, BpkHStack, BpkVStack } from '../../packages/bpk-component-lay
 import {
   BpkBoxExample,
   BpkBoxWithPropsExample,
+  BpkBoxTextColorsExample,
+  BpkBoxBackgroundColorsExample,
+  BpkBoxBrandColorsExample,
+  BpkBoxBorderColorsExample,
+  BpkBoxColorCombinationsExample,
   BpkFlexExample,
   BpkFlexDirectionExample,
   BpkFlexAlignmentExample,
@@ -36,6 +41,9 @@ import {
   BpkHStackExample,
   BpkVStackExample,
   BpkStackSpacingExample,
+  BpkSpacingTokenExample,
+  BpkColorTokenExample,
+  BpkTokenCombinedExample,
   MixedExample,
 } from './examples';
 
@@ -74,6 +82,11 @@ export default {
 
 export const Box = BpkBoxExample;
 export const BoxWithProps = BpkBoxWithPropsExample;
+export const BoxTextColors = BpkBoxTextColorsExample;
+export const BoxBackgroundColors = BpkBoxBackgroundColorsExample;
+export const BoxBrandColors = BpkBoxBrandColorsExample;
+export const BoxBorderColors = BpkBoxBorderColorsExample;
+export const BoxColorCombinations = BpkBoxColorCombinationsExample;
 
 export const Flex = BpkFlexExample;
 export const FlexDirection = BpkFlexDirectionExample;
@@ -86,6 +99,10 @@ export const Stack = BpkStackExample;
 export const HStack = BpkHStackExample;
 export const VStack = BpkVStackExample;
 export const StackSpacing = BpkStackSpacingExample;
+
+export const SpacingTokens = BpkSpacingTokenExample;
+export const ColorTokens = BpkColorTokenExample;
+export const CombinedTokens = BpkTokenCombinedExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
