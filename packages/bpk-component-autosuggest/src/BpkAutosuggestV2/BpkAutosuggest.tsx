@@ -401,7 +401,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     });
 
     useEffect(() => {
-      // After user interaction or committed selection, do not let defaultValue overrides pull input back to an older value.
+      // Prevent defaultValue from overwriting input after interaction or selection
       if (hasInteractedRef.current || committedSelectionRef.current) {
         return;
       }
@@ -426,7 +426,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       if (highlightedIndex === previousHighlightedIndexRef.current) return;
 
       previousHighlightedIndexRef.current = highlightedIndex;
-      // Save highlighted index for blur handling (when input loses focus, select the highlighted item)
+      // Save highlighted index to allow auto-selection on blur
       savedHighlightedIndexRef.current = highlightedIndex;
 
       const currentSuggestion =
@@ -451,9 +451,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     ]);
 
     const handleInputInteraction = () => {
-      // If menu is already open, clicking input should do nothing - keep everything as is
       if (isOpen) {
-        // Only clear preview value ref if needed, but don't trigger any other actions
         if (originalInputOnPreviewRef.current !== null) {
           originalInputOnPreviewRef.current = null;
         }
@@ -461,18 +459,14 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       }
 
       hasInteractedRef.current = true;
-      // Reset committed selection flag when user interacts with input again
-      // This allows blur to auto-select if user highlights a new suggestion
+      // Reset committed selection to allow auto-select on blur
       committedSelectionRef.current = false;
 
-      // If user clicks input while preview value is shown (from arrow key navigation),
-      // keep the preview value instead of restoring original value
+      // Keep the preview value (from arrow keys) when clicking the input
       if (originalInputOnPreviewRef.current !== null) {
-        // Clear the original value ref so the preview value becomes the current value
         originalInputOnPreviewRef.current = null;
       }
 
-      // Clear old suggestions before opening menu to avoid showing stale data
       onSuggestionsClearRequested?.();
 
       if (shouldRenderSuggestions) {
@@ -480,25 +474,21 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       }
 
       if (!isOpen && inputValue.length) {
-        // Request new suggestions first, then open menu
         onSuggestionsFetchRequested(inputValue);
         openMenu();
       } else if (alwaysRenderSuggestions && !inputValue) {
-        // Request default suggestions for empty input
         onSuggestionsFetchRequested('');
         if (!isOpen) {
           openMenu();
         }
       } else if (!isOpen) {
-        // Open menu if not already open
         openMenu();
         onClick?.();
       } else {
         onClick?.();
       }
 
-      // Desktop destination autosuggest lives on the homepage and is "loaded/interacted with" via clicking on it
-      // Every other use case is within a new screen or modal so is interacted with via the user navigating into the modal/new screen
+      // Track desktop homepage interaction (mobile interaction is tracked via modal entry)
       if (isDesktop) {
         onLoad?.(inputValue);
       }
@@ -513,15 +503,11 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     const clearSuggestions = (e?: SyntheticEvent<HTMLButtonElement>) => {
       e?.stopPropagation();
       setInputValue('');
-      // Clear old suggestions before requesting defaults
       onSuggestionsClearRequested?.();
-      // Always fetch default suggestions for empty query
       onSuggestionsFetchRequested('');
-      // Ensure the menu is visible so defaults are shown immediately
       if (!isOpen) {
         openMenu();
       }
-      // For always-render mode, mark initial load as done so defaults render without interaction
       if (alwaysRenderSuggestions) {
         hasLoadedInitiallyRef.current = true;
       }
@@ -668,9 +654,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           ...restInputProps,
         },
         {
-          // We manually handle the ref from Downshift so it can be wired into both
-          // Downshift and Floating UI. Suppress the runtime warning that expects the
-          // ref from getInputProps to be applied directly.
+          // Suppress the warning because we manually handle the ref
           suppressRefError: true,
         },
       );
@@ -681,19 +665,15 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         // Call original onBlur if provided
         restInputProps.onBlur?.(e);
 
-        // Only auto-select highlighted suggestion on desktop
-        // On mobile, clicking input opens a modal, so we shouldn't auto-select on blur
         if (!isDesktop) {
           return;
         }
 
-        // If user already selected a suggestion (via Enter), don't auto-select on blur
         if (committedSelectionRef.current) {
           return;
         }
 
-        // When input loses focus, if there's a highlighted suggestion, select it
-        // Use savedHighlightedIndexRef because highlightedIndex might be cleared during blur
+        // Auto-select the highlighted suggestion on blur using the saved index
         const savedIndex = savedHighlightedIndexRef.current;
         let highlightedSuggestion: any = null;
 
@@ -715,8 +695,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         }
 
         if (highlightedSuggestion) {
-          // Use selectItem to trigger onSelectedItemChange, which will update input value
-          // Use setTimeout to ensure this runs after blur event completes
+          // Use setTimeout to ensure selectItem runs after the blur event completes
           setTimeout(() => {
             selectItem(highlightedSuggestion);
           }, 0);
