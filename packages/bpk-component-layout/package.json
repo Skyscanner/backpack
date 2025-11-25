@@ -1,0 +1,21 @@
+{
+  "name": "@skyscanner/backpack-web/bpk-component-layout",
+  "version": "0.0.1",
+  "description": "Backpack layout primitives built on Chakra UI with PandaCSS",
+  "main": "index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@chakra-ui/react": "^3.30.0",
+    "@pandacss/dev": "^1.5.1"
+  },
+  "peerDependencies": {
+    "react": "17.0.2 - 18.3.1",
+    "react-dom": "17.0.2 - 18.3.1"
+  }
+}
+
