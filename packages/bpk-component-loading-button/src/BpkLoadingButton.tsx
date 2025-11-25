@@ -30,7 +30,7 @@ import ArrowIconSm from '../../bpk-component-icon/sm/long-arrow-right';
 import { BpkSpinner, BpkLargeSpinner } from '../../bpk-component-spinner';
 import { cssModules } from '../../bpk-react-utils';
 
-import type { Props as ButtonProps } from '../../bpk-component-button/src/BpkButtonV2/common-types';
+import type { Props as ButtonProps } from '../../bpk-component-button';
 
 import STYLES from './BpkLoadingButton.module.scss';
 

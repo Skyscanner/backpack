@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 import { Component } from 'react';
 import type { Node } from 'react';
 
-import BpkButton from '../../packages/bpk-component-button';
+import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import BpkDialog, {
   HEADER_ICON_TYPES,
 } from '../../packages/bpk-component-dialog';
@@ -88,7 +88,7 @@ class DialogContainer extends Component<Props, State> {
     return (
       <div id="dialog-container">
         <div id="pagewrap">
-          <BpkButton onClick={this.onOpen}>Open dialog</BpkButton>
+          <BpkButtonV2 onClick={this.onOpen}>Open dialog</BpkButtonV2>
         </div>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkDialog
@@ -104,7 +104,7 @@ class DialogContainer extends Component<Props, State> {
           {...this.props}
         >
           {this.props.children}
-          <BpkButton onClick={this.onClose}>Close</BpkButton>
+          <BpkButtonV2 onClick={this.onClose}>Close</BpkButtonV2>
         </BpkDialog>
       </div>
     );

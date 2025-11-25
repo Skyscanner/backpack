@@ -22,7 +22,7 @@ import { Component } from 'react';
 import type { Node } from 'react';
 
 import AnimateHeight from '../../packages/bpk-animate-height';
-import BpkButton from '../../packages/bpk-component-button';
+import { BpkButtonV2 } from '../../packages/bpk-component-button';
 
 type Props = {
   fromHeight: string | number,
@@ -59,7 +59,7 @@ class AnimateHeightExample extends Component<Props, State> {
       <div>
         <AnimateHeight {...rest} height={this.state.height} />
         <br />
-        <BpkButton onClick={this.onClick}>{buttonText}</BpkButton>
+        <BpkButtonV2 onClick={this.onClick}>{buttonText}</BpkButtonV2>
       </div>
     );
   }
