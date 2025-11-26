@@ -197,6 +197,38 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       ? suggestions.flatMap((section) => getSectionSuggestions?.(section) ?? [])
       : suggestions;
 
+    const getTargetHighlightedIndex = (
+      currentHighlightedIndex: number | null | undefined,
+      isMenuOpening: boolean,
+      isArrowKeyNavigation = false,
+    ) => {
+      if (
+        isMenuOpening &&
+        !isArrowKeyNavigation &&
+        highlightFirstSuggestion &&
+        flattenedSuggestions.length > 0
+      ) {
+        return 0;
+      }
+
+      if (
+        currentHighlightedIndex !== null &&
+        currentHighlightedIndex !== undefined &&
+        currentHighlightedIndex >= 0
+      ) {
+        return currentHighlightedIndex;
+      }
+
+      if (
+        savedHighlightedIndexRef.current !== null &&
+        savedHighlightedIndexRef.current >= 0
+      ) {
+        return savedHighlightedIndexRef.current;
+      }
+
+      return currentHighlightedIndex;
+    };
+
     function stateReducer(
       state: UseComboboxState<any>,
       actionAndChanges: UseComboboxStateChangeOptions<any>,
@@ -212,33 +244,15 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           isOpen: true,
         };
       }
+
+      const isMenuOpening = changes.isOpen === true && state.isOpen === false;
+
       switch (type) {
         case useCombobox.stateChangeTypes.InputClick: {
-          const isMenuOpening = changes.isOpen === true && state.isOpen === false;
-          let targetHighlightedIndex = state.highlightedIndex;
-
-          if (isMenuOpening) {
-            // When menu opens, if highlightFirstSuggestion is true, highlight first item
-            if (highlightFirstSuggestion && flattenedSuggestions.length > 0) {
-              targetHighlightedIndex = 0;
-            } else if (targetHighlightedIndex === null || targetHighlightedIndex < 0) {
-              // Otherwise, restore saved highlighted index if available
-              if (
-                savedHighlightedIndexRef.current !== null &&
-                savedHighlightedIndexRef.current >= 0
-              ) {
-                targetHighlightedIndex = savedHighlightedIndexRef.current;
-              }
-            }
-          } else if (targetHighlightedIndex === null || targetHighlightedIndex < 0) {
-            // Menu already open, restore saved index if current is invalid
-            if (
-              savedHighlightedIndexRef.current !== null &&
-              savedHighlightedIndexRef.current >= 0
-            ) {
-              targetHighlightedIndex = savedHighlightedIndexRef.current;
-            }
-          }
+          const targetHighlightedIndex = getTargetHighlightedIndex(
+            state.highlightedIndex,
+            isMenuOpening,
+          );
           return {
             ...changes,
             isOpen: state.isOpen,
@@ -247,33 +261,15 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         }
         default: {
           const forceOpen = !isDesktop && !!changes.inputValue;
-          // When menu opens, determine highlighted index
-          let targetHighlightedIndex: number | null | undefined = changes.highlightedIndex;
-          const isMenuOpening = changes.isOpen === true && state.isOpen === false;
           const isArrowKeyNavigation =
             type === useCombobox.stateChangeTypes.InputKeyDownArrowDown ||
             type === useCombobox.stateChangeTypes.InputKeyDownArrowUp;
 
-          if (isMenuOpening && !isArrowKeyNavigation) {
-            // When menu opens (not via arrow keys), if highlightFirstSuggestion is true, highlight first item
-            if (highlightFirstSuggestion && flattenedSuggestions.length > 0) {
-              targetHighlightedIndex = 0;
-            } else if (
-              (targetHighlightedIndex === null || targetHighlightedIndex === undefined || targetHighlightedIndex < 0) &&
-              savedHighlightedIndexRef.current !== null &&
-              savedHighlightedIndexRef.current >= 0
-            ) {
-              targetHighlightedIndex = savedHighlightedIndexRef.current;
-            }
-          } else if (
-            !isMenuOpening &&
-            (targetHighlightedIndex === null || targetHighlightedIndex === undefined || targetHighlightedIndex < 0) &&
-            savedHighlightedIndexRef.current !== null &&
-            savedHighlightedIndexRef.current >= 0
-          ) {
-            // When menu is already open and no highlighted index, restore saved one
-            targetHighlightedIndex = savedHighlightedIndexRef.current;
-          }
+          const targetHighlightedIndex = getTargetHighlightedIndex(
+            changes.highlightedIndex,
+            isMenuOpening,
+            isArrowKeyNavigation,
+          );
           return {
             ...changes,
             isOpen: forceOpen ? true : changes.isOpen,
@@ -329,7 +325,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           hasInteractedRef.current = true;
           onSuggestionSelected?.({
             suggestion: selectedItem,
-            inputValue,
+            inputValue: newValue,
           });
 
           if (alwaysRenderSuggestions) {
@@ -537,8 +533,15 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           (highlightFirstSuggestion && isFirst && highlightedIndex === -1);
 
         // Build stable unique key (prefer entityId/id, fallback to index)
-        const suggestionId = (suggestion as any)?.entityId ?? (suggestion as any)?.id ?? globalIndex;
-        const suggestionKey = sectionId ? `${sectionId}-${suggestionId}` : `item-${suggestionId}`;
+        const suggestionItem = suggestion as {
+          entityId?: string | number;
+          id?: string | number;
+        };
+        const suggestionId =
+          suggestionItem.entityId ?? suggestionItem.id ?? globalIndex;
+        const suggestionKey = sectionId
+          ? `${sectionId}-${suggestionId}`
+          : `item-${suggestionId}`;
 
         return (
           <li
