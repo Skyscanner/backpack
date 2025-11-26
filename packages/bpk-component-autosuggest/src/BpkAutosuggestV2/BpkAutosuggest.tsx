@@ -232,7 +232,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     function stateReducer(
       state: UseComboboxState<any>,
       actionAndChanges: UseComboboxStateChangeOptions<any>,
-    ) {
+    ): Partial<UseComboboxState<any>> {
       const { changes, type } = actionAndChanges;
 
       const shouldForceKeepOpen =
@@ -256,7 +256,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           return {
             ...changes,
             isOpen: state.isOpen,
-            highlightedIndex: targetHighlightedIndex,
+            highlightedIndex: targetHighlightedIndex ?? -1,
           };
         }
         default: {
