@@ -135,6 +135,7 @@ $arrow-size: tokens.bpk-spacing-sm() * 3;
 
     &-value {
       display: block;
+      overflow-wrap: anywhere;
     }
 
     &-sub-heading {
