@@ -30,7 +30,11 @@
   padding: 0 tokens.bpk-spacing-base();
   align-items: center;
   border: none;
-  border-radius: tokens.$bpk-border-radius-xs * 2;
+  @include utils.bpk-themeable-property(
+      border-radius,
+      --bpk-chip-corner-radius,
+      tokens.$bpk-border-radius-xs * 2
+  );
   cursor: pointer;
 
   &__leading-accessory-view {
@@ -108,13 +112,26 @@
   }
 
   &--default {
-    background-color: transparent;
+    @include utils.bpk-themeable-property(
+        background-color,
+        --bpk-chip-default-background-color,
+        transparent
+    );
     color: tokens.$bpk-text-primary-day;
-
     @include borders.bpk-border-sm(tokens.$bpk-line-day);
 
+    @include utils.bpk-themeable-property(
+        box-shadow,
+        --bpk-chip-default-border-color,
+        0 0 0 1px tokens.$bpk-line-day inset
+    );
+
     @include utils.bpk-hover {
-      @include borders.bpk-border-sm(tokens.$bpk-core-primary-day);
+      @include utils.bpk-themeable-property(
+          box-shadow,
+          --bpk-chip-default-hover-border-color,
+          0 0 0 1px tokens.$bpk-core-primary-day inset
+      );
     }
 
     &:active:not(:disabled) {

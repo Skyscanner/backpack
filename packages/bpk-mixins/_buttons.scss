@@ -39,7 +39,11 @@
   margin: 0;
   padding: (6 * tokens.$bpk-one-pixel-rem) tokens.bpk-spacing-base();
   border: 0;
-  border-radius: tokens.$bpk-button-border-radius;
+  @include utils.bpk-themeable-property(
+      border-radius,
+      --bpk-button-corner-radius,
+      tokens.$bpk-button-border-radius
+  );
   text-align: center;
   text-decoration: none;
   cursor: pointer;
