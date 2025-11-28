@@ -28,6 +28,14 @@ export type { BpkFlexProps } from './src/BpkFlex';
 export type { BpkGridProps } from './src/BpkGrid';
 export type { BpkStackProps } from './src/BpkStack';
 
+export type {
+  BpkCommonLayoutProps,
+  BpkBoxSpecificProps,
+  BpkFlexSpecificProps,
+  BpkGridSpecificProps,
+  BpkStackSpecificProps,
+} from './src/types';
+
 // Export token types and utilities
 export type {
   BpkSpacingToken,
@@ -38,11 +46,10 @@ export type {
   BpkBreakpointValue,
 } from './src/tokens';
 export {
-  BPK_SPACING_TOKENS,
-  BPK_COLOR_TOKENS,
-  BPK_BREAKPOINT_TOKENS,
+  BpkSpacing,
+  BpkColor,
+  BpkBreakpoint,
   isValidSpacingValue,
   isValidColorValue,
   isPercentage,
 } from './src/tokens';
-

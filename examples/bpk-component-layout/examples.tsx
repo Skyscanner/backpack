@@ -23,6 +23,7 @@ import { BpkBox } from '../../packages/bpk-component-layout/src/BpkBox';
 import { BpkFlex } from '../../packages/bpk-component-layout/src/BpkFlex';
 import { BpkGrid } from '../../packages/bpk-component-layout/src/BpkGrid';
 import { BpkStack, BpkHStack, BpkVStack } from '../../packages/bpk-component-layout/src/BpkStack';
+import { BpkColor, BpkSpacing, BpkBreakpoint } from '../../packages/bpk-component-layout/src/tokens';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 
@@ -31,13 +32,23 @@ import STYLES from './examples.module.scss';
 const getClassName = cssModules(STYLES);
 
 // Helper component for demo items
-const DemoItem = ({ children, color = 'blue.100' }: { children: React.ReactNode; color?: string }) => (
+// Note: We use Bpk tokens for default values
+const DemoItem = ({
+  children,
+  bg = BpkColor.SurfaceHighlight,
+  color = BpkColor.TextPrimary
+}: {
+  children: React.ReactNode;
+  bg?: string;
+  color?: string;
+}) => (
   <BpkBox
-    p={4}
-    bg={color}
-    borderRadius="md"
+    p={BpkSpacing.Md}
+    bg={bg}
+    color={color}
+    borderRadius={BpkSpacing.Md}
     border="1px solid"
-    borderColor="gray.300"
+    borderColor={BpkColor.Line}
     textAlign="center"
   >
     {children}
@@ -47,7 +58,7 @@ const DemoItem = ({ children, color = 'blue.100' }: { children: React.ReactNode;
 // BpkBox Examples
 export const BpkBoxExample = () => (
   <BpkProvider>
-    <BpkBox p="bpk-spacing-base" bg="bpk-canvas-day" borderRadius="bpk-spacing-md">
+    <BpkBox p={BpkSpacing.Base} bg={BpkColor.Canvas} borderRadius={BpkSpacing.Md}>
       <BpkText>This is a basic Box component with padding and background.</BpkText>
     </BpkBox>
   </BpkProvider>
@@ -56,13 +67,13 @@ export const BpkBoxExample = () => (
 export const BpkBoxWithPropsExample = () => (
   <BpkProvider>
     <BpkBox
-      p="bpk-spacing-lg"
-      bg="bpk-core-primary-day"
-      color="white"
-      borderRadius="bpk-spacing-lg"
-      mb="bpk-spacing-base"
+      p={BpkSpacing.Lg}
+      bg={BpkColor.CorePrimary}
+      color={BpkColor.TextOnDark}
+      borderRadius={BpkSpacing.Lg}
+      mb={BpkSpacing.Base}
     >
-      <BpkBox mb="bpk-spacing-sm">
+      <BpkBox mb={BpkSpacing.Sm}>
         <BpkText textStyle={TEXT_STYLES.heading5}>
           Box with various props
         </BpkText>
@@ -75,32 +86,42 @@ export const BpkBoxWithPropsExample = () => (
 // BpkBox Color Examples
 export const BpkBoxTextColorsExample = () => (
   <BpkProvider>
-    <BpkVStack spacing="bpk-spacing-base">
-      <BpkBox mb="bpk-spacing-base">
+    <BpkVStack spacing={BpkSpacing.Base}>
+      <BpkBox mb={BpkSpacing.Base}>
         <BpkText textStyle={TEXT_STYLES.heading5}>
           Text Colors with Backpack Tokens
         </BpkText>
       </BpkBox>
-      
-      <BpkBox p="bpk-spacing-base" bg="bpk-canvas-day" borderRadius="bpk-spacing-md" border="1px solid" borderColor="bpk-line-day">
-        <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.label1} mb="bpk-spacing-sm">
-          Primary Text Color
-        </BpkText>
-        <BpkText color="bpk-text-secondary-day" textStyle={TEXT_STYLES.bodyDefault}>
-          Secondary Text Color
-        </BpkText>
+
+      <BpkBox p={BpkSpacing.Base} bg={BpkColor.Canvas} borderRadius={BpkSpacing.Md} border="1px solid" borderColor={BpkColor.Line}>
+        <BpkBox color={BpkColor.TextPrimary} mb={BpkSpacing.Sm}>
+          <BpkText textStyle={TEXT_STYLES.label1}>
+            Primary Text Color
+          </BpkText>
+        </BpkBox>
+        <BpkBox color={BpkColor.TextSecondary}>
+          <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+            Secondary Text Color
+          </BpkText>
+        </BpkBox>
       </BpkBox>
 
-      <BpkBox p="bpk-spacing-base" bg="bpk-canvas-day" borderRadius="bpk-spacing-md" border="1px solid" borderColor="bpk-line-day">
-        <BpkText color="bpk-text-link-day" textStyle={TEXT_STYLES.label1} mb="bpk-spacing-sm">
-          Link Text Color
-        </BpkText>
-        <BpkText color="bpk-text-error-day" textStyle={TEXT_STYLES.bodyDefault} mb="bpk-spacing-sm">
-          Error Text Color
-        </BpkText>
-        <BpkText color="bpk-text-success-day" textStyle={TEXT_STYLES.bodyDefault}>
-          Success Text Color
-        </BpkText>
+      <BpkBox p={BpkSpacing.Base} bg={BpkColor.Canvas} borderRadius={BpkSpacing.Md} border="1px solid" borderColor={BpkColor.Line}>
+        <BpkBox color={BpkColor.TextLink} mb={BpkSpacing.Sm}>
+          <BpkText textStyle={TEXT_STYLES.label1}>
+            Link Text Color
+          </BpkText>
+        </BpkBox>
+        <BpkBox color={BpkColor.TextError} mb={BpkSpacing.Sm}>
+          <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+            Error Text Color
+          </BpkText>
+        </BpkBox>
+        <BpkBox color={BpkColor.TextSuccess}>
+          <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+            Success Text Color
+          </BpkText>
+        </BpkBox>
       </BpkBox>
     </BpkVStack>
   </BpkProvider>
@@ -108,34 +129,62 @@ export const BpkBoxTextColorsExample = () => (
 
 export const BpkBoxBackgroundColorsExample = () => (
   <BpkProvider>
-    <BpkVStack spacing="bpk-spacing-base">
-      <BpkBox mb="bpk-spacing-base">
+    <BpkVStack spacing={BpkSpacing.Base}>
+      <BpkBox mb={BpkSpacing.Base}>
         <BpkText textStyle={TEXT_STYLES.heading5}>
           Background Colors with Backpack Tokens
         </BpkText>
       </BpkBox>
-      
-      <BpkGrid templateColumns="repeat(2, 1fr)" gap="bpk-spacing-base">
-        <BpkBox p="bpk-spacing-base" bg="bpk-canvas-day" borderRadius="bpk-spacing-md" border="1px solid" borderColor="bpk-line-day">
-          <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.label1}>
+
+      <BpkGrid templateColumns="repeat(2, 1fr)" gap={BpkSpacing.Base}>
+        <BpkBox
+          p={BpkSpacing.Base}
+          bg={BpkColor.Canvas}
+          color={BpkColor.TextPrimary}
+          borderRadius={BpkSpacing.Md}
+          border="1px solid"
+          borderColor={BpkColor.Line}
+        >
+          <BpkText textStyle={TEXT_STYLES.label1}>
             Canvas Background
           </BpkText>
         </BpkBox>
 
-        <BpkBox p="bpk-spacing-base" bg="bpk-canvas-contrast-day" borderRadius="md" border="1px solid" borderColor="bpk-line-day">
-          <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.label1}>
+        <BpkBox
+          p={BpkSpacing.Base}
+          bg={BpkColor.CanvasContrast}
+          color={BpkColor.TextPrimary}
+          borderRadius={BpkSpacing.Md}
+          border="1px solid"
+          borderColor={BpkColor.Line}
+        >
+          <BpkText textStyle={TEXT_STYLES.label1}>
             Canvas Contrast Background
           </BpkText>
         </BpkBox>
 
-        <BpkBox p="bpk-spacing-base" bg="bpk-surface-highlight-day" borderRadius="md" border="1px solid" borderColor="bpk-line-day">
-          <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.label1}>
+        <BpkBox
+          p={BpkSpacing.Base}
+          bg={BpkColor.SurfaceHighlight}
+          color={BpkColor.TextPrimary}
+          borderRadius={BpkSpacing.Md}
+          border="1px solid"
+          borderColor={BpkColor.Line}
+        >
+          <BpkText textStyle={TEXT_STYLES.label1}>
             Surface Highlight Background
           </BpkText>
         </BpkBox>
 
-        <BpkBox p="bpk-spacing-base" bg="bpk-surface-elevated-day" borderRadius="md" border="1px solid" borderColor="bpk-line-day">
-          <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.label1}>
+        <BpkBox
+          p={BpkSpacing.Base}
+          bg={BpkColor.SurfaceElevated}
+          color={BpkColor.TextPrimary}
+          borderRadius={BpkSpacing.Md}
+          border="1px solid"
+          borderColor={BpkColor.Line}
+        >
+          <BpkText textStyle={TEXT_STYLES.label1}>
             Surface Elevated Background
           </BpkText>
         </BpkBox>
@@ -146,32 +195,36 @@ export const BpkBoxBackgroundColorsExample = () => (
 
 export const BpkBoxBrandColorsExample = () => (
   <BpkProvider>
-    <BpkVStack spacing="bpk-spacing-base">
-      <BpkBox mb="bpk-spacing-base">
+    <BpkVStack spacing={BpkSpacing.Base}>
+      <BpkBox mb={BpkSpacing.Base}>
         <BpkText textStyle={TEXT_STYLES.heading5}>
           Brand Colors with Backpack Tokens
         </BpkText>
       </BpkBox>
-      
-      <BpkHStack spacing="bpk-spacing-base">
-        <BpkBox 
-          p="bpk-spacing-lg" 
-          bg="bpk-core-primary-day" 
-          borderRadius="bpk-spacing-md"
+
+      <BpkHStack spacing={BpkSpacing.Base}>
+        <BpkBox
+          p={BpkSpacing.Lg}
+          bg={BpkColor.CorePrimary}
+          color={BpkColor.TextOnDark}
+          borderRadius={BpkSpacing.Md}
           flex="1"
+          textAlign="center"
         >
-          <BpkText color="white" textStyle={TEXT_STYLES.heading5} textAlign="center">
+          <BpkText textStyle={TEXT_STYLES.heading5}>
             Core Primary
           </BpkText>
         </BpkBox>
 
-        <BpkBox 
-          p="bpk-spacing-lg" 
-          bg="bpk-core-accent-day" 
-          borderRadius="bpk-spacing-md"
+        <BpkBox
+          p={BpkSpacing.Lg}
+          bg={BpkColor.CoreAccent}
+          color={BpkColor.TextOnDark}
+          borderRadius={BpkSpacing.Md}
           flex="1"
+          textAlign="center"
         >
-          <BpkText color="white" textStyle={TEXT_STYLES.heading5} textAlign="center">
+          <BpkText textStyle={TEXT_STYLES.heading5}>
             Core Accent
           </BpkText>
         </BpkBox>
@@ -182,52 +235,55 @@ export const BpkBoxBrandColorsExample = () => (
 
 export const BpkBoxBorderColorsExample = () => (
   <BpkProvider>
-    <BpkVStack spacing="bpk-spacing-base">
-      <BpkBox mb="bpk-spacing-base">
+    <BpkVStack spacing={BpkSpacing.Base}>
+      <BpkBox mb={BpkSpacing.Base}>
         <BpkText textStyle={TEXT_STYLES.heading5}>
           Border Colors with Backpack Tokens
         </BpkText>
       </BpkBox>
-      
-      <BpkVStack spacing="bpk-spacing-md">
-        <BpkBox 
-          p="bpk-spacing-base" 
-          bg="bpk-canvas-day" 
-          borderRadius="bpk-spacing-md" 
-          border="2px solid" 
-          borderColor="bpk-line-day"
+
+      <BpkVStack spacing={BpkSpacing.Md}>
+        <BpkBox
+          p={BpkSpacing.Base}
+          bg={BpkColor.Canvas}
+          color={BpkColor.TextPrimary}
+          borderRadius={BpkSpacing.Md}
+          border="2px solid"
+          borderColor={BpkColor.Line}
         >
-          <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.label1}>
+          <BpkText textStyle={TEXT_STYLES.label1}>
             Standard Border (bpk-line-day)
           </BpkText>
         </BpkBox>
 
-        <BpkBox 
-          p="bpk-spacing-base" 
-          bg="bpk-canvas-day" 
-          borderRadius="bpk-spacing-md" 
-          border="2px solid" 
-          borderColor="bpk-core-primary-day"
+        <BpkBox
+          p={BpkSpacing.Base}
+          bg={BpkColor.Canvas}
+          color={BpkColor.TextPrimary}
+          borderRadius={BpkSpacing.Md}
+          border="2px solid"
+          borderColor={BpkColor.CorePrimary}
         >
-          <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.label1}>
+          <BpkText textStyle={TEXT_STYLES.label1}>
             Primary Border (bpk-core-primary-day)
           </BpkText>
         </BpkBox>
 
-        <BpkBox 
-          p="bpk-spacing-base" 
-          bg="bpk-canvas-day" 
-          borderRadius="bpk-spacing-md" 
-          borderTop="3px solid" 
-          borderTopColor="bpk-core-primary-day"
+        <BpkBox
+          p={BpkSpacing.Base}
+          bg={BpkColor.Canvas}
+          color={BpkColor.TextPrimary}
+          borderRadius={BpkSpacing.Md}
+          borderTop="3px solid"
+          borderTopColor={BpkColor.CorePrimary}
           borderRight="1px solid"
-          borderRightColor="bpk-line-day"
+          borderRightColor={BpkColor.Line}
           borderBottom="1px solid"
-          borderBottomColor="bpk-line-day"
+          borderBottomColor={BpkColor.Line}
           borderLeft="1px solid"
-          borderLeftColor="bpk-line-day"
+          borderLeftColor={BpkColor.Line}
         >
-          <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.label1}>
+          <BpkText textStyle={TEXT_STYLES.label1}>
             Custom Border Colors (top: primary, others: line)
           </BpkText>
         </BpkBox>
@@ -238,61 +294,73 @@ export const BpkBoxBorderColorsExample = () => (
 
 export const BpkBoxColorCombinationsExample = () => (
   <BpkProvider>
-    <BpkVStack spacing="bpk-spacing-lg">
-      <BpkBox mb="bpk-spacing-base">
+    <BpkVStack spacing={BpkSpacing.Lg}>
+      <BpkBox mb={BpkSpacing.Base}>
         <BpkText textStyle={TEXT_STYLES.heading5}>
           Color Combinations with Backpack Tokens
         </BpkText>
       </BpkBox>
-      
-      <BpkGrid templateColumns="repeat(2, 1fr)" gap="bpk-spacing-base">
-        <BpkBox 
-          p="bpk-spacing-lg" 
-          bg="bpk-surface-elevated-day" 
-          borderRadius="bpk-spacing-md" 
-          border="1px solid" 
-          borderColor="bpk-line-day"
+
+      <BpkGrid templateColumns="repeat(2, 1fr)" gap={BpkSpacing.Base}>
+        <BpkBox
+          p={BpkSpacing.Lg}
+          bg={BpkColor.SurfaceElevated}
+          borderRadius={BpkSpacing.Md}
+          border="1px solid"
+          borderColor={BpkColor.Line}
         >
-          <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.heading5} mb="bpk-spacing-sm">
-            Card Title
-          </BpkText>
-          <BpkText color="bpk-text-secondary-day" textStyle={TEXT_STYLES.bodyDefault} mb="bpk-spacing-base">
-            Card description with secondary text color.
-          </BpkText>
-          <BpkBox 
-            p="bpk-spacing-base" 
-            bg="bpk-core-primary-day" 
-            borderRadius="bpk-spacing-md"
-            mt="bpk-spacing-base"
+          <BpkBox color={BpkColor.TextPrimary} mb={BpkSpacing.Sm}>
+            <BpkText textStyle={TEXT_STYLES.heading5}>
+              Card Title
+            </BpkText>
+          </BpkBox>
+          <BpkBox color={BpkColor.TextSecondary} mb={BpkSpacing.Base}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+              Card description with secondary text color.
+            </BpkText>
+          </BpkBox>
+          <BpkBox
+            p={BpkSpacing.Base}
+            bg={BpkColor.CorePrimary}
+            color={BpkColor.TextOnDark}
+            borderRadius={BpkSpacing.Md}
+            mt={BpkSpacing.Base}
+            textAlign="center"
           >
-            <BpkText color="white" textStyle={TEXT_STYLES.label1} textAlign="center">
+            <BpkText textStyle={TEXT_STYLES.label1}>
               Primary Action
             </BpkText>
           </BpkBox>
         </BpkBox>
 
-        <BpkBox 
-          p="bpk-spacing-lg" 
-          bg="bpk-surface-highlight-day" 
-          borderRadius="bpk-spacing-md" 
-          border="1px solid" 
-          borderColor="bpk-line-day"
+        <BpkBox
+          p={BpkSpacing.Lg}
+          bg={BpkColor.SurfaceHighlight}
+          borderRadius={BpkSpacing.Md}
+          border="1px solid"
+          borderColor={BpkColor.Line}
         >
-          <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.heading5} mb="bpk-spacing-sm">
-            Highlight Card
-          </BpkText>
-          <BpkText color="bpk-text-secondary-day" textStyle={TEXT_STYLES.bodyDefault} mb="bpk-spacing-base">
-            This card uses surface-highlight background.
-          </BpkText>
-          <BpkBox 
-            p="bpk-spacing-base" 
-            bg="bpk-canvas-contrast-day" 
-            borderRadius="bpk-spacing-md"
+          <BpkBox color={BpkColor.TextPrimary} mb={BpkSpacing.Sm}>
+            <BpkText textStyle={TEXT_STYLES.heading5}>
+              Highlight Card
+            </BpkText>
+          </BpkBox>
+          <BpkBox color={BpkColor.TextSecondary} mb={BpkSpacing.Base}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+              This card uses surface-highlight background.
+            </BpkText>
+          </BpkBox>
+          <BpkBox
+            p={BpkSpacing.Base}
+            bg={BpkColor.CanvasContrast}
+            color={BpkColor.TextLink}
+            borderRadius={BpkSpacing.Md}
             border="1px solid"
-            borderColor="bpk-line-day"
-            mt="bpk-spacing-base"
+            borderColor={BpkColor.Line}
+            mt={BpkSpacing.Base}
+            textAlign="center"
           >
-            <BpkText color="bpk-text-link-day" textStyle={TEXT_STYLES.label1} textAlign="center">
+            <BpkText textStyle={TEXT_STYLES.label1}>
               Secondary Action
             </BpkText>
           </BpkBox>
@@ -300,168 +368,216 @@ export const BpkBoxColorCombinationsExample = () => (
       </BpkGrid>
 
       {/* Background Color Showcase */}
-      <BpkBox mt="bpk-spacing-lg" mb="bpk-spacing-base">
-        <BpkText textStyle={TEXT_STYLES.heading5} mb="bpk-spacing-sm">
-          Background Color Variations
-        </BpkText>
-        <BpkText color="bpk-text-secondary-day" textStyle={TEXT_STYLES.bodyDefault}>
-          Different background colors with appropriate text colors
-        </BpkText>
+      <BpkBox mt={BpkSpacing.Lg} mb={BpkSpacing.Base}>
+        <BpkBox mb={BpkSpacing.Sm}>
+            <BpkText textStyle={TEXT_STYLES.heading5}>
+            Background Color Variations
+            </BpkText>
+        </BpkBox>
+        <BpkBox color={BpkColor.TextSecondary}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+            Different background colors with appropriate text colors
+            </BpkText>
+        </BpkBox>
       </BpkBox>
 
-      <BpkGrid templateColumns="repeat(2, 1fr)" gap="bpk-spacing-base">
-        <BpkBox 
-          p="bpk-spacing-lg" 
-          bg="bpk-canvas-day" 
-          borderRadius="bpk-spacing-md"
+      <BpkGrid templateColumns="repeat(2, 1fr)" gap={BpkSpacing.Base}>
+        <BpkBox
+          p={BpkSpacing.Lg}
+          bg={BpkColor.Canvas}
+          borderRadius={BpkSpacing.Md}
           border="1px solid"
-          borderColor="bpk-line-day"
+          borderColor={BpkColor.Line}
         >
-          <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.heading5} mb="bpk-spacing-sm">
-            Canvas Background
-          </BpkText>
-          <BpkText color="bpk-text-secondary-day" textStyle={TEXT_STYLES.bodyDefault}>
-            Using bpk-canvas-day background with primary and secondary text colors.
-          </BpkText>
+          <BpkBox color={BpkColor.TextPrimary} mb={BpkSpacing.Sm}>
+            <BpkText textStyle={TEXT_STYLES.heading5}>
+                Canvas Background
+            </BpkText>
+          </BpkBox>
+          <BpkBox color={BpkColor.TextSecondary}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+                Using bpk-canvas-day background with primary and secondary text colors.
+            </BpkText>
+          </BpkBox>
         </BpkBox>
 
-        <BpkBox 
-          p="bpk-spacing-lg" 
-          bg="bpk-canvas-contrast-day" 
-          borderRadius="bpk-spacing-md"
+        <BpkBox
+          p={BpkSpacing.Lg}
+          bg={BpkColor.CanvasContrast}
+          borderRadius={BpkSpacing.Md}
           border="1px solid"
-          borderColor="bpk-line-day"
+          borderColor={BpkColor.Line}
         >
-          <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.heading5} mb="bpk-spacing-sm">
-            Canvas Contrast
-          </BpkText>
-          <BpkText color="bpk-text-secondary-day" textStyle={TEXT_STYLES.bodyDefault}>
-            Using bpk-canvas-contrast-day for subtle contrast.
-          </BpkText>
+          <BpkBox color={BpkColor.TextPrimary} mb={BpkSpacing.Sm}>
+            <BpkText textStyle={TEXT_STYLES.heading5}>
+                Canvas Contrast
+            </BpkText>
+          </BpkBox>
+          <BpkBox color={BpkColor.TextSecondary}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+                Using bpk-canvas-contrast-day for subtle contrast.
+            </BpkText>
+          </BpkBox>
         </BpkBox>
 
-        <BpkBox 
-          p="bpk-spacing-lg" 
-          bg="bpk-surface-default-day" 
-          borderRadius="bpk-spacing-md"
+        <BpkBox
+          p={BpkSpacing.Lg}
+          bg={BpkColor.SurfaceDefault}
+          borderRadius={BpkSpacing.Md}
           border="1px solid"
-          borderColor="bpk-line-day"
+          borderColor={BpkColor.Line}
         >
-          <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.heading5} mb="bpk-spacing-sm">
-            Surface Default
-          </BpkText>
-          <BpkText color="bpk-text-secondary-day" textStyle={TEXT_STYLES.bodyDefault}>
-            Using bpk-surface-default-day background.
-          </BpkText>
+          <BpkBox color={BpkColor.TextPrimary} mb={BpkSpacing.Sm}>
+            <BpkText textStyle={TEXT_STYLES.heading5}>
+                Surface Default
+            </BpkText>
+          </BpkBox>
+          <BpkBox color={BpkColor.TextSecondary}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+                Using bpk-surface-default-day background.
+            </BpkText>
+          </BpkBox>
         </BpkBox>
 
-        <BpkBox 
-          p="bpk-spacing-lg" 
-          bg="bpk-surface-elevated-day" 
-          borderRadius="bpk-spacing-md"
+        <BpkBox
+          p={BpkSpacing.Lg}
+          bg={BpkColor.SurfaceElevated}
+          borderRadius={BpkSpacing.Md}
           border="1px solid"
-          borderColor="bpk-line-day"
+          borderColor={BpkColor.Line}
         >
-          <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.heading5} mb="bpk-spacing-sm">
-            Surface Elevated
-          </BpkText>
-          <BpkText color="bpk-text-secondary-day" textStyle={TEXT_STYLES.bodyDefault}>
-            Using bpk-surface-elevated-day for elevated surfaces.
-          </BpkText>
+          <BpkBox color={BpkColor.TextPrimary} mb={BpkSpacing.Sm}>
+            <BpkText textStyle={TEXT_STYLES.heading5}>
+                Surface Elevated
+            </BpkText>
+          </BpkBox>
+          <BpkBox color={BpkColor.TextSecondary}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+                Using bpk-surface-elevated-day for elevated surfaces.
+            </BpkText>
+          </BpkBox>
         </BpkBox>
       </BpkGrid>
 
       {/* Brand Background Colors */}
-      <BpkBox mt="bpk-spacing-lg" mb="bpk-spacing-base">
-        <BpkText textStyle={TEXT_STYLES.heading5} mb="bpk-spacing-sm">
-          Brand Background Colors
-        </BpkText>
-        <BpkText color="bpk-text-secondary-day" textStyle={TEXT_STYLES.bodyDefault}>
-          Brand colors with white text for contrast
-        </BpkText>
+      <BpkBox mt={BpkSpacing.Lg} mb={BpkSpacing.Base}>
+        <BpkBox mb={BpkSpacing.Sm}>
+            <BpkText textStyle={TEXT_STYLES.heading5}>
+            Brand Background Colors
+            </BpkText>
+        </BpkBox>
+        <BpkBox color={BpkColor.TextSecondary}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+            Brand colors with white text for contrast
+            </BpkText>
+        </BpkBox>
       </BpkBox>
 
-      <BpkHStack spacing="bpk-spacing-base">
-        <BpkBox 
-          p="bpk-spacing-lg" 
-          bg="bpk-core-primary-day" 
-          borderRadius="bpk-spacing-md"
+      <BpkHStack spacing={BpkSpacing.Base}>
+        <BpkBox
+          p={BpkSpacing.Lg}
+          bg={BpkColor.CorePrimary}
+          color={BpkColor.TextOnDark}
+          borderRadius={BpkSpacing.Md}
           flex="1"
+          textAlign="center"
         >
-          <BpkText color="white" textStyle={TEXT_STYLES.heading5} mb="bpk-spacing-sm" textAlign="center">
-            Core Primary
-          </BpkText>
-          <BpkText color="white" textStyle={TEXT_STYLES.bodyDefault} textAlign="center" style={{ opacity: 0.9 }}>
-            Primary brand color background
-          </BpkText>
+          <BpkBox mb={BpkSpacing.Sm}>
+            <BpkText textStyle={TEXT_STYLES.heading5}>
+                Core Primary
+            </BpkText>
+          </BpkBox>
+          <BpkBox style={{ opacity: 0.9 }}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+                Primary brand color background
+            </BpkText>
+          </BpkBox>
         </BpkBox>
 
-        <BpkBox 
-          p="bpk-spacing-lg" 
-          bg="bpk-core-accent-day" 
-          borderRadius="bpk-spacing-md"
+        <BpkBox
+          p={BpkSpacing.Lg}
+          bg={BpkColor.CoreAccent}
+          color={BpkColor.TextOnDark}
+          borderRadius={BpkSpacing.Md}
           flex="1"
+          textAlign="center"
         >
-          <BpkText color="white" textStyle={TEXT_STYLES.heading5} mb="bpk-spacing-sm" textAlign="center">
-            Core Accent
-          </BpkText>
-          <BpkText color="white" textStyle={TEXT_STYLES.bodyDefault} textAlign="center" style={{ opacity: 0.9 }}>
-            Accent brand color background
-          </BpkText>
+          <BpkBox mb={BpkSpacing.Sm}>
+            <BpkText textStyle={TEXT_STYLES.heading5}>
+                Core Accent
+            </BpkText>
+          </BpkBox>
+          <BpkBox style={{ opacity: 0.9 }}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+                Accent brand color background
+            </BpkText>
+          </BpkBox>
         </BpkBox>
       </BpkHStack>
 
       {/* Nested Background Examples */}
-      <BpkBox mt="bpk-spacing-lg" mb="bpk-spacing-base">
-        <BpkText textStyle={TEXT_STYLES.heading5} mb="bpk-spacing-sm">
-          Nested Background Combinations
-        </BpkText>
-        <BpkText color="bpk-text-secondary-day" textStyle={TEXT_STYLES.bodyDefault}>
-          Multiple background layers with different colors
-        </BpkText>
+      <BpkBox mt={BpkSpacing.Lg} mb={BpkSpacing.Base}>
+        <BpkBox mb={BpkSpacing.Sm}>
+            <BpkText textStyle={TEXT_STYLES.heading5}>
+            Nested Background Combinations
+            </BpkText>
+        </BpkBox>
+        <BpkBox color={BpkColor.TextSecondary}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+            Multiple background layers with different colors
+            </BpkText>
+        </BpkBox>
       </BpkBox>
 
-      <BpkBox 
-        p="bpk-spacing-lg" 
-        bg="bpk-canvas-day" 
-        borderRadius="bpk-spacing-md"
+      <BpkBox
+        p={BpkSpacing.Lg}
+        bg={BpkColor.Canvas}
+        borderRadius={BpkSpacing.Md}
         border="1px solid"
-        borderColor="bpk-line-day"
+        borderColor={BpkColor.Line}
       >
-        <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.heading5} mb="bpk-spacing-base">
-          Outer Container (Canvas)
-        </BpkText>
-        
-        <BpkHStack spacing="bpk-spacing-base" mb="bpk-spacing-base">
-          <BpkBox 
-            p="bpk-spacing-base" 
-            bg="bpk-surface-highlight-day" 
-            borderRadius="bpk-spacing-md"
+        <BpkBox color={BpkColor.TextPrimary} mb={BpkSpacing.Base}>
+            <BpkText textStyle={TEXT_STYLES.heading5}>
+            Outer Container (Canvas)
+            </BpkText>
+        </BpkBox>
+
+        <BpkHStack spacing={BpkSpacing.Base} mb={BpkSpacing.Base}>
+          <BpkBox
+            p={BpkSpacing.Base}
+            bg={BpkColor.SurfaceHighlight}
+            color={BpkColor.TextPrimary}
+            borderRadius={BpkSpacing.Md}
             flex="1"
+            textAlign="center"
           >
-            <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.label1} textAlign="center">
+            <BpkText textStyle={TEXT_STYLES.label1}>
               Highlight
             </BpkText>
           </BpkBox>
-          
-          <BpkBox 
-            p="bpk-spacing-base" 
-            bg="bpk-surface-elevated-day" 
-            borderRadius="bpk-spacing-md"
+
+          <BpkBox
+            p={BpkSpacing.Base}
+            bg={BpkColor.SurfaceElevated}
+            color={BpkColor.TextPrimary}
+            borderRadius={BpkSpacing.Md}
             flex="1"
+            textAlign="center"
           >
-            <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.label1} textAlign="center">
+            <BpkText textStyle={TEXT_STYLES.label1}>
               Elevated
             </BpkText>
           </BpkBox>
         </BpkHStack>
 
-        <BpkBox 
-          p="bpk-spacing-base" 
-          bg="bpk-core-primary-day" 
-          borderRadius="bpk-spacing-md"
+        <BpkBox
+          p={BpkSpacing.Base}
+          bg={BpkColor.CorePrimary}
+          color={BpkColor.TextOnDark}
+          borderRadius={BpkSpacing.Md}
+          textAlign="center"
         >
-          <BpkText color="white" textStyle={TEXT_STYLES.label1} textAlign="center">
+          <BpkText textStyle={TEXT_STYLES.label1}>
             Brand Color Nested
           </BpkText>
         </BpkBox>
@@ -473,7 +589,7 @@ export const BpkBoxColorCombinationsExample = () => (
 // BpkFlex Examples
 export const BpkFlexExample = () => (
   <BpkProvider>
-    <BpkFlex gap={4}>
+    <BpkFlex gap={BpkSpacing.Md}>
       <DemoItem>Item 1</DemoItem>
       <DemoItem>Item 2</DemoItem>
       <DemoItem>Item 3</DemoItem>
@@ -483,26 +599,26 @@ export const BpkFlexExample = () => (
 
 export const BpkFlexDirectionExample = () => (
   <BpkProvider>
-    <BpkStack spacing={4}>
+    <BpkStack spacing={BpkSpacing.Md}>
       <div>
-        <BpkBox mb={2}>
+        <BpkBox mb={BpkSpacing.Sm}>
           <BpkText textStyle={TEXT_STYLES.label1}>
             Row (default)
           </BpkText>
         </BpkBox>
-        <BpkFlex direction="row" gap={4}>
+        <BpkFlex direction="row" gap={BpkSpacing.Md}>
           <DemoItem>Item 1</DemoItem>
           <DemoItem>Item 2</DemoItem>
           <DemoItem>Item 3</DemoItem>
         </BpkFlex>
       </div>
       <div>
-        <BpkBox mb={2}>
+        <BpkBox mb={BpkSpacing.Sm}>
           <BpkText textStyle={TEXT_STYLES.label1}>
             Column
           </BpkText>
         </BpkBox>
-        <BpkFlex direction="column" gap={4}>
+        <BpkFlex direction="column" gap={BpkSpacing.Md}>
           <DemoItem>Item 1</DemoItem>
           <DemoItem>Item 2</DemoItem>
           <DemoItem>Item 3</DemoItem>
@@ -514,38 +630,38 @@ export const BpkFlexDirectionExample = () => (
 
 export const BpkFlexAlignmentExample = () => (
   <BpkProvider>
-    <BpkStack spacing={6}>
+    <BpkStack spacing={BpkSpacing.Lg}>
       <div>
-        <BpkBox mb={2}>
+        <BpkBox mb={BpkSpacing.Sm}>
           <BpkText textStyle={TEXT_STYLES.label1}>
             Center aligned
           </BpkText>
         </BpkBox>
-        <BpkFlex align="center" justify="center" gap="bpk-spacing-base" minH="100px" bg="bpk-canvas-contrast-day" p="bpk-spacing-base" borderRadius="bpk-spacing-md">
-          <DemoItem color="blue.200">Centered</DemoItem>
+        <BpkFlex align="center" justify="center" gap={BpkSpacing.Base} minH="100px" bg={BpkColor.CanvasContrast} p={BpkSpacing.Base} borderRadius={BpkSpacing.Md}>
+          <DemoItem bg={BpkColor.CorePrimary} color={BpkColor.TextOnDark}>Centered</DemoItem>
         </BpkFlex>
       </div>
       <div>
-        <BpkBox mb={2}>
+        <BpkBox mb={BpkSpacing.Sm}>
           <BpkText textStyle={TEXT_STYLES.label1}>
             Space between
           </BpkText>
         </BpkBox>
-        <BpkFlex justify="space-between" gap="bpk-spacing-base" bg="bpk-canvas-contrast-day" p="bpk-spacing-base" borderRadius="bpk-spacing-md">
-          <DemoItem color="green.200">Start</DemoItem>
-          <DemoItem color="green.200">End</DemoItem>
+        <BpkFlex justify="space-between" gap={BpkSpacing.Base} bg={BpkColor.CanvasContrast} p={BpkSpacing.Base} borderRadius={BpkSpacing.Md}>
+          <DemoItem bg={BpkColor.SurfaceHighlight}>Start</DemoItem>
+          <DemoItem bg={BpkColor.SurfaceHighlight}>End</DemoItem>
         </BpkFlex>
       </div>
       <div>
-        <BpkBox mb={2}>
+        <BpkBox mb={BpkSpacing.Sm}>
           <BpkText textStyle={TEXT_STYLES.label1}>
             Space around
           </BpkText>
         </BpkBox>
-        <BpkFlex justify="space-around" gap="bpk-spacing-base" bg="bpk-canvas-contrast-day" p="bpk-spacing-base" borderRadius="bpk-spacing-md">
-          <DemoItem color="purple.200">Item 1</DemoItem>
-          <DemoItem color="purple.200">Item 2</DemoItem>
-          <DemoItem color="purple.200">Item 3</DemoItem>
+        <BpkFlex justify="space-around" gap={BpkSpacing.Base} bg={BpkColor.CanvasContrast} p={BpkSpacing.Base} borderRadius={BpkSpacing.Md}>
+          <DemoItem bg={BpkColor.SurfaceElevated}>Item 1</DemoItem>
+          <DemoItem bg={BpkColor.SurfaceElevated}>Item 2</DemoItem>
+          <DemoItem bg={BpkColor.SurfaceElevated}>Item 3</DemoItem>
         </BpkFlex>
       </div>
     </BpkStack>
@@ -555,7 +671,7 @@ export const BpkFlexAlignmentExample = () => (
 // BpkGrid Examples
 export const BpkGridExample = () => (
   <BpkProvider>
-    <BpkGrid templateColumns="repeat(3, 1fr)" gap={4}>
+    <BpkGrid templateColumns="repeat(3, 1fr)" gap={BpkSpacing.Md}>
       <DemoItem>Item 1</DemoItem>
       <DemoItem>Item 2</DemoItem>
       <DemoItem>Item 3</DemoItem>
@@ -568,42 +684,42 @@ export const BpkGridExample = () => (
 
 export const BpkGridTemplateColumnsExample = () => (
   <BpkProvider>
-    <BpkStack spacing={6}>
+    <BpkStack spacing={BpkSpacing.Lg}>
       <div>
-        <BpkBox mb={2}>
+        <BpkBox mb={BpkSpacing.Sm}>
           <BpkText textStyle={TEXT_STYLES.label1}>
             3 equal columns
           </BpkText>
         </BpkBox>
-        <BpkGrid templateColumns="repeat(3, 1fr)" gap={4}>
-          <DemoItem color="red.200">Column 1</DemoItem>
-          <DemoItem color="red.200">Column 2</DemoItem>
-          <DemoItem color="red.200">Column 3</DemoItem>
+        <BpkGrid templateColumns="repeat(3, 1fr)" gap={BpkSpacing.Md}>
+          <DemoItem bg={BpkColor.CorePrimary} color={BpkColor.TextOnDark}>Column 1</DemoItem>
+          <DemoItem bg={BpkColor.CorePrimary} color={BpkColor.TextOnDark}>Column 2</DemoItem>
+          <DemoItem bg={BpkColor.CorePrimary} color={BpkColor.TextOnDark}>Column 3</DemoItem>
         </BpkGrid>
       </div>
       <div>
-        <BpkBox mb={2}>
+        <BpkBox mb={BpkSpacing.Sm}>
           <BpkText textStyle={TEXT_STYLES.label1}>
             Responsive columns (1fr 2fr 1fr)
           </BpkText>
         </BpkBox>
-        <BpkGrid templateColumns="1fr 2fr 1fr" gap={4}>
-          <DemoItem color="orange.200">Narrow</DemoItem>
-          <DemoItem color="orange.200">Wide</DemoItem>
-          <DemoItem color="orange.200">Narrow</DemoItem>
+        <BpkGrid templateColumns="1fr 2fr 1fr" gap={BpkSpacing.Md}>
+          <DemoItem bg={BpkColor.CoreAccent} color={BpkColor.TextOnDark}>Narrow</DemoItem>
+          <DemoItem bg={BpkColor.CoreAccent} color={BpkColor.TextOnDark}>Wide</DemoItem>
+          <DemoItem bg={BpkColor.CoreAccent} color={BpkColor.TextOnDark}>Narrow</DemoItem>
         </BpkGrid>
       </div>
       <div>
-        <BpkBox mb={2}>
+        <BpkBox mb={BpkSpacing.Sm}>
           <BpkText textStyle={TEXT_STYLES.label1}>
             Auto-fit columns
           </BpkText>
         </BpkBox>
-        <BpkGrid templateColumns="repeat(auto-fit, minmax(150px, 1fr))" gap={4}>
-          <DemoItem color="teal.200">Auto</DemoItem>
-          <DemoItem color="teal.200">Auto</DemoItem>
-          <DemoItem color="teal.200">Auto</DemoItem>
-          <DemoItem color="teal.200">Auto</DemoItem>
+        <BpkGrid templateColumns="repeat(auto-fit, minmax(150px, 1fr))" gap={BpkSpacing.Md}>
+          <DemoItem>Auto</DemoItem>
+          <DemoItem>Auto</DemoItem>
+          <DemoItem>Auto</DemoItem>
+          <DemoItem>Auto</DemoItem>
         </BpkGrid>
       </div>
     </BpkStack>
@@ -613,7 +729,7 @@ export const BpkGridTemplateColumnsExample = () => (
 // BpkStack Examples
 export const BpkStackExample = () => (
   <BpkProvider>
-    <BpkStack spacing={4}>
+    <BpkStack spacing={BpkSpacing.Md}>
       <DemoItem>Stack Item 1</DemoItem>
       <DemoItem>Stack Item 2</DemoItem>
       <DemoItem>Stack Item 3</DemoItem>
@@ -623,61 +739,61 @@ export const BpkStackExample = () => (
 
 export const BpkHStackExample = () => (
   <BpkProvider>
-    <BpkHStack spacing={4}>
-      <DemoItem color="pink.200">Horizontal Item 1</DemoItem>
-      <DemoItem color="pink.200">Horizontal Item 2</DemoItem>
-      <DemoItem color="pink.200">Horizontal Item 3</DemoItem>
+    <BpkHStack spacing={BpkSpacing.Md}>
+      <DemoItem bg={BpkColor.SurfaceHighlight}>Horizontal Item 1</DemoItem>
+      <DemoItem bg={BpkColor.SurfaceHighlight}>Horizontal Item 2</DemoItem>
+      <DemoItem bg={BpkColor.SurfaceHighlight}>Horizontal Item 3</DemoItem>
     </BpkHStack>
   </BpkProvider>
 );
 
 export const BpkVStackExample = () => (
   <BpkProvider>
-    <BpkVStack spacing={4}>
-      <DemoItem color="cyan.200">Vertical Item 1</DemoItem>
-      <DemoItem color="cyan.200">Vertical Item 2</DemoItem>
-      <DemoItem color="cyan.200">Vertical Item 3</DemoItem>
+    <BpkVStack spacing={BpkSpacing.Md}>
+      <DemoItem bg={BpkColor.SurfaceElevated}>Vertical Item 1</DemoItem>
+      <DemoItem bg={BpkColor.SurfaceElevated}>Vertical Item 2</DemoItem>
+      <DemoItem bg={BpkColor.SurfaceElevated}>Vertical Item 3</DemoItem>
     </BpkVStack>
   </BpkProvider>
 );
 
 export const BpkStackSpacingExample = () => (
   <BpkProvider>
-    <BpkStack spacing={6}>
+    <BpkStack spacing={BpkSpacing.Lg}>
       <div>
-        <BpkBox mb={2}>
+        <BpkBox mb={BpkSpacing.Sm}>
           <BpkText textStyle={TEXT_STYLES.label1}>
-            Small spacing (2)
+            Small spacing (Sm)
           </BpkText>
         </BpkBox>
-        <BpkVStack spacing={2}>
-          <DemoItem color="yellow.200">Item 1</DemoItem>
-          <DemoItem color="yellow.200">Item 2</DemoItem>
-          <DemoItem color="yellow.200">Item 3</DemoItem>
+        <BpkVStack spacing={BpkSpacing.Sm}>
+          <DemoItem>Item 1</DemoItem>
+          <DemoItem>Item 2</DemoItem>
+          <DemoItem>Item 3</DemoItem>
         </BpkVStack>
       </div>
       <div>
-        <BpkBox mb={2}>
+        <BpkBox mb={BpkSpacing.Sm}>
           <BpkText textStyle={TEXT_STYLES.label1}>
-            Medium spacing (4)
+            Medium spacing (Md)
           </BpkText>
         </BpkBox>
-        <BpkVStack spacing={4}>
-          <DemoItem color="yellow.200">Item 1</DemoItem>
-          <DemoItem color="yellow.200">Item 2</DemoItem>
-          <DemoItem color="yellow.200">Item 3</DemoItem>
+        <BpkVStack spacing={BpkSpacing.Md}>
+          <DemoItem>Item 1</DemoItem>
+          <DemoItem>Item 2</DemoItem>
+          <DemoItem>Item 3</DemoItem>
         </BpkVStack>
       </div>
       <div>
-        <BpkBox mb={2}>
+        <BpkBox mb={BpkSpacing.Sm}>
           <BpkText textStyle={TEXT_STYLES.label1}>
-            Large spacing (8)
+            Large spacing (Lg)
           </BpkText>
         </BpkBox>
-        <BpkVStack spacing={8}>
-          <DemoItem color="yellow.200">Item 1</DemoItem>
-          <DemoItem color="yellow.200">Item 2</DemoItem>
-          <DemoItem color="yellow.200">Item 3</DemoItem>
+        <BpkVStack spacing={BpkSpacing.Lg}>
+          <DemoItem>Item 1</DemoItem>
+          <DemoItem>Item 2</DemoItem>
+          <DemoItem>Item 3</DemoItem>
         </BpkVStack>
       </div>
     </BpkStack>
@@ -687,36 +803,38 @@ export const BpkStackSpacingExample = () => (
 // Backpack Token Examples
 export const BpkSpacingTokenExample = () => (
   <BpkProvider>
-    <BpkStack spacing="bpk-spacing-base">
-      <BpkBox mb="bpk-spacing-base">
+    <BpkStack spacing={BpkSpacing.Base}>
+      <BpkBox mb={BpkSpacing.Base}>
         <BpkText textStyle={TEXT_STYLES.heading5}>
           Backpack Spacing Tokens
         </BpkText>
       </BpkBox>
-      
-      <BpkVStack spacing="bpk-spacing-sm">
-        <BpkBox p="bpk-spacing-sm" bg="gray.100" borderRadius="md">
+
+      <BpkVStack spacing={BpkSpacing.Sm}>
+        <BpkBox p={BpkSpacing.Sm} bg={BpkColor.SurfaceHighlight} borderRadius={BpkSpacing.Md}>
           <BpkText>Small spacing (bpk-spacing-sm)</BpkText>
         </BpkBox>
-        <BpkBox p="bpk-spacing-base" bg="gray.100" borderRadius="md">
+        <BpkBox p={BpkSpacing.Base} bg={BpkColor.SurfaceHighlight} borderRadius={BpkSpacing.Md}>
           <BpkText>Base spacing (bpk-spacing-base)</BpkText>
         </BpkBox>
-        <BpkBox p="bpk-spacing-md" bg="gray.100" borderRadius="md">
+        <BpkBox p={BpkSpacing.Md} bg={BpkColor.SurfaceHighlight} borderRadius={BpkSpacing.Md}>
           <BpkText>Medium spacing (bpk-spacing-md)</BpkText>
         </BpkBox>
-        <BpkBox p="bpk-spacing-lg" bg="gray.100" borderRadius="md">
+        <BpkBox p={BpkSpacing.Lg} bg={BpkColor.SurfaceHighlight} borderRadius={BpkSpacing.Md}>
           <BpkText>Large spacing (bpk-spacing-lg)</BpkText>
         </BpkBox>
-        <BpkBox p="bpk-spacing-xl" bg="gray.100" borderRadius="md">
+        <BpkBox p={BpkSpacing.Xl} bg={BpkColor.SurfaceHighlight} borderRadius={BpkSpacing.Md}>
           <BpkText>Extra large spacing (bpk-spacing-xl)</BpkText>
         </BpkBox>
       </BpkVStack>
 
-      <BpkBox mt="bpk-spacing-base" p="bpk-spacing-base" bg="blue.50" borderRadius="md">
-        <BpkText textStyle={TEXT_STYLES.label1} mb="bpk-spacing-sm">
-          Spacing with percentages (50% width):
-        </BpkText>
-        <BpkBox width="50%" p="bpk-spacing-base" bg="blue.200" borderRadius="md">
+      <BpkBox mt={BpkSpacing.Base} p={BpkSpacing.Base} bg={BpkColor.CanvasContrast} borderRadius={BpkSpacing.Md}>
+        <BpkBox mb={BpkSpacing.Sm}>
+          <BpkText textStyle={TEXT_STYLES.label1}>
+            Spacing with percentages (50% width):
+          </BpkText>
+        </BpkBox>
+        <BpkBox width="50%" p={BpkSpacing.Base} bg={BpkColor.SurfaceHighlight} borderRadius={BpkSpacing.Md}>
           <BpkText>50% width container</BpkText>
         </BpkBox>
       </BpkBox>
@@ -726,55 +844,63 @@ export const BpkSpacingTokenExample = () => (
 
 export const BpkColorTokenExample = () => (
   <BpkProvider>
-    <BpkStack spacing="bpk-spacing-base">
-      <BpkBox mb="bpk-spacing-base">
+    <BpkStack spacing={BpkSpacing.Base}>
+      <BpkBox mb={BpkSpacing.Base}>
         <BpkText textStyle={TEXT_STYLES.heading5}>
           Backpack Color Tokens
         </BpkText>
       </BpkBox>
 
-      <BpkGrid templateColumns="repeat(2, 1fr)" gap="bpk-spacing-base">
+      <BpkGrid templateColumns="repeat(2, 1fr)" gap={BpkSpacing.Base}>
         {/* Text Colors */}
-        <BpkBox p="bpk-spacing-base" bg="bpk-canvas-day" borderRadius="bpk-spacing-md" border="1px solid" borderColor="bpk-line-day">
-          <BpkText color="bpk-text-primary-day" mb="bpk-spacing-sm" textStyle={TEXT_STYLES.label1}>
-            Text Primary
-          </BpkText>
-          <BpkText color="bpk-text-secondary-day" textStyle={TEXT_STYLES.bodyDefault}>
-            Text Secondary
-          </BpkText>
+        <BpkBox p={BpkSpacing.Base} bg={BpkColor.Canvas} borderRadius={BpkSpacing.Md} border="1px solid" borderColor={BpkColor.Line}>
+          <BpkBox color={BpkColor.TextPrimary} mb={BpkSpacing.Sm}>
+            <BpkText textStyle={TEXT_STYLES.label1}>
+              Text Primary
+            </BpkText>
+          </BpkBox>
+          <BpkBox color={BpkColor.TextSecondary}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+              Text Secondary
+            </BpkText>
+          </BpkBox>
         </BpkBox>
 
-        <BpkBox p="bpk-spacing-base" bg="bpk-canvas-day" borderRadius="bpk-spacing-md" border="1px solid" borderColor="bpk-line-day">
-          <BpkText color="bpk-text-link-day" mb="bpk-spacing-sm" textStyle={TEXT_STYLES.label1}>
-            Text Link
-          </BpkText>
-          <BpkText color="bpk-text-error-day" textStyle={TEXT_STYLES.bodyDefault}>
-            Text Error
-          </BpkText>
+        <BpkBox p={BpkSpacing.Base} bg={BpkColor.Canvas} borderRadius={BpkSpacing.Md} border="1px solid" borderColor={BpkColor.Line}>
+          <BpkBox color={BpkColor.TextLink} mb={BpkSpacing.Sm}>
+            <BpkText textStyle={TEXT_STYLES.label1}>
+              Text Link
+            </BpkText>
+          </BpkBox>
+          <BpkBox color={BpkColor.TextError}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+              Text Error
+            </BpkText>
+          </BpkBox>
         </BpkBox>
 
         {/* Background Colors */}
-        <BpkBox p="bpk-spacing-base" bg="bpk-surface-highlight-day" borderRadius="md" border="1px solid" borderColor="bpk-line-day">
-          <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.label1}>
+        <BpkBox p={BpkSpacing.Base} bg={BpkColor.SurfaceHighlight} color={BpkColor.TextPrimary} borderRadius={BpkSpacing.Md} border="1px solid" borderColor={BpkColor.Line}>
+          <BpkText textStyle={TEXT_STYLES.label1}>
             Surface Highlight
           </BpkText>
         </BpkBox>
 
-        <BpkBox p="bpk-spacing-base" bg="bpk-surface-elevated-day" borderRadius="md" border="1px solid" borderColor="bpk-line-day">
-          <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.label1}>
+        <BpkBox p={BpkSpacing.Base} bg={BpkColor.SurfaceElevated} color={BpkColor.TextPrimary} borderRadius={BpkSpacing.Md} border="1px solid" borderColor={BpkColor.Line}>
+          <BpkText textStyle={TEXT_STYLES.label1}>
             Surface Elevated
           </BpkText>
         </BpkBox>
 
         {/* Brand Colors */}
-        <BpkBox p="bpk-spacing-base" bg="bpk-core-primary-day" borderRadius="md">
-          <BpkText color="white" textStyle={TEXT_STYLES.label1}>
+        <BpkBox p={BpkSpacing.Base} bg={BpkColor.CorePrimary} color={BpkColor.TextOnDark} borderRadius={BpkSpacing.Md}>
+          <BpkText textStyle={TEXT_STYLES.label1}>
             Core Primary
           </BpkText>
         </BpkBox>
 
-        <BpkBox p="bpk-spacing-base" bg="bpk-core-accent-day" borderRadius="md">
-          <BpkText color="white" textStyle={TEXT_STYLES.label1}>
+        <BpkBox p={BpkSpacing.Base} bg={BpkColor.CoreAccent} color={BpkColor.TextOnDark} borderRadius={BpkSpacing.Md}>
+          <BpkText textStyle={TEXT_STYLES.label1}>
             Core Accent
           </BpkText>
         </BpkBox>
@@ -785,99 +911,161 @@ export const BpkColorTokenExample = () => (
 
 export const BpkTokenCombinedExample = () => (
   <BpkProvider>
-    <BpkStack spacing="bpk-spacing-lg">
-      <BpkBox mb="bpk-spacing-base">
+    <BpkStack spacing={BpkSpacing.Lg}>
+      <BpkBox mb={BpkSpacing.Base}>
         <BpkText textStyle={TEXT_STYLES.heading4}>
           Combined Backpack Tokens
         </BpkText>
-        <BpkText textStyle={TEXT_STYLES.bodyDefault} color="bpk-text-secondary-day" mt="bpk-spacing-sm">
-          Using Backpack spacing and color tokens together
-        </BpkText>
+        <BpkBox color={BpkColor.TextSecondary} mt={BpkSpacing.Sm}>
+          <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+            Using Backpack spacing and color tokens together
+          </BpkText>
+        </BpkBox>
       </BpkBox>
 
-      <BpkBox 
-        p="bpk-spacing-lg" 
-        bg="bpk-surface-elevated-day" 
-        borderRadius="md"
+      <BpkBox
+        p={BpkSpacing.Lg}
+        bg={BpkColor.SurfaceElevated}
+        borderRadius={BpkSpacing.Md}
         border="1px solid"
-        borderColor="bpk-line-day"
+        borderColor={BpkColor.Line}
       >
-        <BpkText textStyle={TEXT_STYLES.heading5} color="bpk-text-primary-day" mb="bpk-spacing-base">
-          Card with Backpack Tokens
-        </BpkText>
-        <BpkText textStyle={TEXT_STYLES.bodyDefault} color="bpk-text-secondary-day" mb="bpk-spacing-base">
-          This card uses Backpack spacing tokens for padding and margins, and Backpack color tokens for background and text colors.
-        </BpkText>
-        <BpkFlex gap="bpk-spacing-base" mt="bpk-spacing-base">
-          <BpkBox 
-            p="bpk-spacing-base" 
-            bg="bpk-core-primary-day" 
-            borderRadius="bpk-spacing-md"
+        <BpkBox color={BpkColor.TextPrimary} mb={BpkSpacing.Base}>
+          <BpkText textStyle={TEXT_STYLES.heading5}>
+            Card with Backpack Tokens
+          </BpkText>
+        </BpkBox>
+        <BpkBox color={BpkColor.TextSecondary} mb={BpkSpacing.Base}>
+          <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+            This card uses Backpack spacing tokens for padding and margins, and Backpack color tokens for background and text colors.
+          </BpkText>
+        </BpkBox>
+        <BpkFlex gap={BpkSpacing.Base} mt={BpkSpacing.Base}>
+          <BpkBox
+            p={BpkSpacing.Base}
+            bg={BpkColor.CorePrimary}
+            color={BpkColor.TextOnDark}
+            borderRadius={BpkSpacing.Md}
             flex="1"
+            textAlign="center"
           >
-            <BpkText color="white" textStyle={TEXT_STYLES.label1} textAlign="center">
+            <BpkText textStyle={TEXT_STYLES.label1}>
               Primary Action
             </BpkText>
           </BpkBox>
-          <BpkBox 
-            p="bpk-spacing-base" 
-            bg="bpk-canvas-contrast-day" 
-            borderRadius="bpk-spacing-md"
+          <BpkBox
+            p={BpkSpacing.Base}
+            bg={BpkColor.CanvasContrast}
+            color={BpkColor.TextPrimary}
+            borderRadius={BpkSpacing.Md}
             border="1px solid"
-            borderColor="bpk-line-day"
+            borderColor={BpkColor.Line}
             flex="1"
+            textAlign="center"
           >
-            <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.label1} textAlign="center">
+            <BpkText textStyle={TEXT_STYLES.label1}>
               Secondary Action
             </BpkText>
           </BpkBox>
         </BpkFlex>
       </BpkBox>
 
-      <BpkGrid templateColumns="repeat(3, 1fr)" gap="bpk-spacing-base">
-        <BpkBox 
-          p="bpk-spacing-md" 
-          bg="bpk-surface-highlight-day" 
-          borderRadius="bpk-spacing-md"
+      <BpkGrid templateColumns="repeat(3, 1fr)" gap={BpkSpacing.Base}>
+        <BpkBox
+          p={BpkSpacing.Md}
+          bg={BpkColor.SurfaceHighlight}
+          borderRadius={BpkSpacing.Md}
           border="1px solid"
-          borderColor="bpk-line-day"
+          borderColor={BpkColor.Line}
         >
-          <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.label1} mb="bpk-spacing-sm">
-            Item 1
-          </BpkText>
-          <BpkText color="bpk-text-secondary-day" textStyle={TEXT_STYLES.caption}>
-            Using bpk-spacing-md
-          </BpkText>
+          <BpkBox color={BpkColor.TextPrimary} mb={BpkSpacing.Sm}>
+            <BpkText textStyle={TEXT_STYLES.label1}>
+              Item 1
+            </BpkText>
+          </BpkBox>
+          <BpkBox color={BpkColor.TextSecondary}>
+            <BpkText textStyle={TEXT_STYLES.caption}>
+              Using bpk-spacing-md
+            </BpkText>
+          </BpkBox>
         </BpkBox>
-        <BpkBox 
-          p="bpk-spacing-md" 
-          bg="bpk-surface-highlight-day" 
-          borderRadius="bpk-spacing-md"
+        <BpkBox
+          p={BpkSpacing.Md}
+          bg={BpkColor.SurfaceHighlight}
+          borderRadius={BpkSpacing.Md}
           border="1px solid"
-          borderColor="bpk-line-day"
+          borderColor={BpkColor.Line}
         >
-          <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.label1} mb="bpk-spacing-sm">
-            Item 2
-          </BpkText>
-          <BpkText color="bpk-text-secondary-day" textStyle={TEXT_STYLES.caption}>
-            Using bpk-spacing-md
-          </BpkText>
+          <BpkBox color={BpkColor.TextPrimary} mb={BpkSpacing.Sm}>
+            <BpkText textStyle={TEXT_STYLES.label1}>
+              Item 2
+            </BpkText>
+          </BpkBox>
+          <BpkBox color={BpkColor.TextSecondary}>
+            <BpkText textStyle={TEXT_STYLES.caption}>
+              Using bpk-spacing-md
+            </BpkText>
+          </BpkBox>
         </BpkBox>
-        <BpkBox 
-          p="bpk-spacing-md" 
-          bg="bpk-surface-highlight-day" 
-          borderRadius="bpk-spacing-md"
+        <BpkBox
+          p={BpkSpacing.Md}
+          bg={BpkColor.SurfaceHighlight}
+          borderRadius={BpkSpacing.Md}
           border="1px solid"
-          borderColor="bpk-line-day"
+          borderColor={BpkColor.Line}
         >
-          <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.label1} mb="bpk-spacing-sm">
-            Item 3
-          </BpkText>
-          <BpkText color="bpk-text-secondary-day" textStyle={TEXT_STYLES.caption}>
-            Using bpk-spacing-md
-          </BpkText>
+          <BpkBox color={BpkColor.TextPrimary} mb={BpkSpacing.Sm}>
+            <BpkText textStyle={TEXT_STYLES.label1}>
+              Item 3
+            </BpkText>
+          </BpkBox>
+          <BpkBox color={BpkColor.TextSecondary}>
+            <BpkText textStyle={TEXT_STYLES.caption}>
+              Using bpk-spacing-md
+            </BpkText>
+          </BpkBox>
         </BpkBox>
       </BpkGrid>
+    </BpkStack>
+  </BpkProvider>
+);
+
+// New example demonstrating responsive overrides
+export const BpkResponsiveOverrideExample = () => (
+  <BpkProvider>
+    <BpkStack spacing={BpkSpacing.Lg}>
+      <BpkBox mb={BpkSpacing.Base}>
+        <BpkText textStyle={TEXT_STYLES.heading4}>
+          Responsive Overrides
+        </BpkText>
+        <BpkBox color={BpkColor.TextSecondary} mt={BpkSpacing.Sm}>
+          <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+            Resize the window to see changes. Background changes from Canvas (mobile) to SurfaceHighlight (tablet) to CorePrimary (desktop).
+          </BpkText>
+        </BpkBox>
+      </BpkBox>
+
+      <BpkBox
+        p={BpkSpacing.Lg}
+        bg={{
+          base: BpkColor.Canvas,
+          mobile: BpkColor.Canvas,
+          tablet: BpkColor.SurfaceHighlight,
+          desktop: BpkColor.CorePrimary,
+        }}
+        color={{
+             base: BpkColor.TextPrimary,
+             mobile: BpkColor.TextPrimary,
+             desktop: BpkColor.TextOnDark,
+        }}
+        borderRadius={BpkSpacing.Md}
+        border="1px solid"
+        borderColor={BpkColor.Line}
+      >
+        <BpkText textStyle={TEXT_STYLES.heading5}>
+          Responsive Background & Text Color
+        </BpkText>
+      </BpkBox>
     </BpkStack>
   </BpkProvider>
 );
@@ -885,9 +1073,9 @@ export const BpkTokenCombinedExample = () => (
 // Mixed Example for Visual Test
 export const MixedExample = () => (
   <BpkProvider>
-    <BpkStack spacing={8} p={6}>
+    <BpkStack spacing={BpkSpacing.Lg} p={BpkSpacing.Lg}>
       <div>
-        <BpkBox mb={4}>
+        <BpkBox mb={BpkSpacing.Md}>
           <BpkText textStyle={TEXT_STYLES.heading4}>
             Layout Components Showcase
           </BpkText>
@@ -895,7 +1083,7 @@ export const MixedExample = () => (
       </div>
 
       <div>
-        <BpkBox mb={3}>
+        <BpkBox mb={BpkSpacing.Base}>
           <BpkText textStyle={TEXT_STYLES.heading5}>
             Box Component
           </BpkText>
@@ -904,7 +1092,7 @@ export const MixedExample = () => (
       </div>
 
       <div>
-        <BpkBox mb={3}>
+        <BpkBox mb={BpkSpacing.Base}>
           <BpkText textStyle={TEXT_STYLES.heading5}>
             Flex Component
           </BpkText>
@@ -913,7 +1101,7 @@ export const MixedExample = () => (
       </div>
 
       <div>
-        <BpkBox mb={3}>
+        <BpkBox mb={BpkSpacing.Base}>
           <BpkText textStyle={TEXT_STYLES.heading5}>
             Grid Component
           </BpkText>
@@ -922,13 +1110,13 @@ export const MixedExample = () => (
       </div>
 
       <div>
-        <BpkBox mb={3}>
+        <BpkBox mb={BpkSpacing.Base}>
           <BpkText textStyle={TEXT_STYLES.heading5}>
             Stack Components
           </BpkText>
         </BpkBox>
-        <BpkBox mb={4}>
-          <BpkHStack spacing={4}>
+        <BpkBox mb={BpkSpacing.Md}>
+          <BpkHStack spacing={BpkSpacing.Md}>
             <BpkText textStyle={TEXT_STYLES.label1}>HStack:</BpkText>
             <BpkHStackExample />
           </BpkHStack>
@@ -937,27 +1125,33 @@ export const MixedExample = () => (
       </div>
 
       <div>
-        <BpkBox mb={3}>
+        <BpkBox mb={BpkSpacing.Base}>
           <BpkText textStyle={TEXT_STYLES.heading5}>
             Complex Layout
           </BpkText>
         </BpkBox>
-        <BpkBox p={4} bg="gray.50" borderRadius="md">
-          <BpkGrid templateColumns="repeat(2, 1fr)" gap={4} mb={4}>
-            <BpkBox p={4} bg="blue.100" borderRadius="md">
+        <BpkBox p={BpkSpacing.Md} bg={BpkColor.CanvasContrast} borderRadius={BpkSpacing.Md}>
+          <BpkGrid templateColumns="repeat(2, 1fr)" gap={BpkSpacing.Md} mb={BpkSpacing.Md}>
+            <BpkBox p={BpkSpacing.Md} bg={BpkColor.SurfaceHighlight} borderRadius={BpkSpacing.Md}>
               <BpkText textStyle={TEXT_STYLES.label1}>Grid Item 1</BpkText>
             </BpkBox>
-            <BpkBox p={4} bg="green.100" borderRadius="md">
+            <BpkBox p={BpkSpacing.Md} bg={BpkColor.SurfaceHighlight} borderRadius={BpkSpacing.Md}>
               <BpkText textStyle={TEXT_STYLES.label1}>Grid Item 2</BpkText>
             </BpkBox>
           </BpkGrid>
-          <BpkFlex justify="space-between" align="center" p={4} bg="purple.100" borderRadius="md">
+          <BpkFlex justify="space-between" align="center" p={BpkSpacing.Md} bg={BpkColor.SurfaceElevated} borderRadius={BpkSpacing.Md}>
             <BpkText textStyle={TEXT_STYLES.label1}>Flex Item 1</BpkText>
             <BpkText textStyle={TEXT_STYLES.label1}>Flex Item 2</BpkText>
           </BpkFlex>
         </BpkBox>
       </div>
+
+      <div>
+        <BpkBox mb={BpkSpacing.Base}>
+           <BpkText textStyle={TEXT_STYLES.heading5}>Responsive Override</BpkText>
+        </BpkBox>
+        <BpkResponsiveOverrideExample />
+      </div>
     </BpkStack>
   </BpkProvider>
 );
-

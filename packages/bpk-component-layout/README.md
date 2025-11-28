@@ -1,6 +1,6 @@
 # bpk-component-layout
 
-Backpack layout primitives built on Chakra UI with PandaCSS.
+Backpack layout primitives built on Chakra UI 3.0 with PandaCSS for zero-runtime CSS generation.
 
 ## Installation
 
@@ -8,9 +8,30 @@ Backpack layout primitives built on Chakra UI with PandaCSS.
 npm install @skyscanner/backpack-web/bpk-component-layout
 ```
 
+## Dependencies
+
+### Required Dependencies
+
+- **React**: `17.0.2 - 18.3.1` (peer dependency)
+- **React DOM**: `17.0.2 - 18.3.1` (peer dependency)
+- **@chakra-ui/react**: `^3.30.0` (included)
+- **@pandacss/dev**: `^1.5.1` (build-time only, not included in production bundle)
+
+### CSS Import
+
+The package includes pre-generated CSS that must be imported in your application:
+
+```typescript
+import '@skyscanner/backpack-web/bpk-component-layout/dist/bpk-component-layout/src/styled-system/styles.css';
+```
+
+**Note**: The exact path may vary based on your build configuration. Check the `dist` folder structure after installation.
+
 ## Quick Start
 
 ### 1. Wrap your app with BpkProvider
+
+The `BpkProvider` sets up the Chakra UI system with Backpack themes. It is **required** for layout components to function correctly.
 
 ```tsx
 import { BpkProvider } from '@skyscanner/backpack-web/bpk-component-layout';
@@ -24,15 +45,22 @@ function App() {
 }
 ```
 
-### 2. Use layout components
+### 2. Use layout components with Backpack tokens
+
+You can use the exported token objects (`BpkSpacing`, `BpkColor`) for type safety and autocompletion.
 
 ```tsx
-import { BpkBox, BpkFlex, BpkGrid, BpkStack } from '@skyscanner/backpack-web/bpk-component-layout';
+import {
+  BpkBox,
+  BpkFlex,
+  BpkSpacing,
+  BpkColor
+} from '@skyscanner/backpack-web/bpk-component-layout';
 
 function MyComponent() {
   return (
-    <BpkBox p="bpk-spacing-base" bg="bpk-canvas-day">
-      <BpkFlex gap="bpk-spacing-md" align="center">
+    <BpkBox p={BpkSpacing.Base} bg={BpkColor.Canvas}>
+      <BpkFlex gap={BpkSpacing.Md} align="center">
         <BpkBox>Item 1</BpkBox>
         <BpkBox>Item 2</BpkBox>
       </BpkFlex>
@@ -41,32 +69,23 @@ function MyComponent() {
 }
 ```
 
-## Usage
-
-### BpkProvider
-
-The `BpkProvider` component provides the Chakra UI context for all layout components. Wrap your application with it at the root level.
-
-```tsx
-import { BpkProvider } from '@skyscanner/backpack-web/bpk-component-layout';
-
-function App() {
-  return (
-    <BpkProvider>
-      {/* Your app content */}
-    </BpkProvider>
-  );
-}
-```
+## Available Components
 
 ### BpkBox
 
 A basic container component for layout and styling.
 
-```tsx
-import { BpkBox } from '@skyscanner/backpack-web/bpk-component-layout';
+**Common Props**: All spacing and color props (see [Common Props](#common-props))
 
-<BpkBox p="bpk-spacing-base" bg="bpk-canvas-day" color="bpk-text-primary-day">
+**Component-Specific Props**: All Chakra UI `Box` props except spacing/color props and `className`
+
+```tsx
+<BpkBox
+  p={BpkSpacing.Base}
+  bg={BpkColor.Canvas}
+  color={BpkColor.TextPrimary}
+  borderRadius={BpkSpacing.Md}
+>
   Content here
 </BpkBox>
 ```
@@ -75,10 +94,17 @@ import { BpkBox } from '@skyscanner/backpack-web/bpk-component-layout';
 
 A flexbox container component.
 
-```tsx
-import { BpkFlex } from '@skyscanner/backpack-web/bpk-component-layout';
+**Common Props**: All spacing and color props (see [Common Props](#common-props))
 
-<BpkFlex direction="row" align="center" justify="space-between" gap="bpk-spacing-md">
+**Component-Specific Props**: All Chakra UI `Flex` props (e.g., `direction`, `align`, `justify`, `wrap`) except spacing/color props and `className`
+
+```tsx
+<BpkFlex
+  direction="row"
+  align="center"
+  justify="space-between"
+  gap={BpkSpacing.Md}
+>
   <div>Item 1</div>
   <div>Item 2</div>
 </BpkFlex>
@@ -88,10 +114,12 @@ import { BpkFlex } from '@skyscanner/backpack-web/bpk-component-layout';
 
 A grid container component.
 
-```tsx
-import { BpkGrid } from '@skyscanner/backpack-web/bpk-component-layout';
+**Common Props**: All spacing and color props (see [Common Props](#common-props))
 
-<BpkGrid templateColumns="repeat(3, 1fr)" gap="bpk-spacing-base">
+**Component-Specific Props**: All Chakra UI `Grid` props (e.g., `templateColumns`, `templateRows`, `autoFlow`) except spacing/color props and `className`
+
+```tsx
+<BpkGrid templateColumns="repeat(3, 1fr)" gap={BpkSpacing.Base}>
   <div>Item 1</div>
   <div>Item 2</div>
   <div>Item 3</div>
@@ -102,256 +130,194 @@ import { BpkGrid } from '@skyscanner/backpack-web/bpk-component-layout';
 
 Stack components for vertical or horizontal layouts with consistent spacing.
 
-```tsx
-import { BpkStack, BpkHStack, BpkVStack } from '@skyscanner/backpack-web/bpk-component-layout';
+**Common Props**: All spacing and color props (see [Common Props](#common-props))
 
+**Component-Specific Props**:
+- `spacing`: **Required** - Must use `BpkSpacing` tokens (enforced at type level)
+- All other Chakra UI `Stack` props except spacing/color props and `className`
+
+```tsx
 // Vertical stack (default)
-<BpkStack spacing="bpk-spacing-base">
+<BpkStack spacing={BpkSpacing.Base}>
   <div>Item 1</div>
   <div>Item 2</div>
 </BpkStack>
 
 // Horizontal stack
-<BpkHStack spacing="bpk-spacing-md">
+<BpkHStack spacing={BpkSpacing.Md}>
   <div>Item 1</div>
   <div>Item 2</div>
 </BpkHStack>
 
 // Vertical stack (explicit)
-<BpkVStack spacing="bpk-spacing-lg">
+<BpkVStack spacing={BpkSpacing.Lg}>
   <div>Item 1</div>
   <div>Item 2</div>
 </BpkVStack>
+```
+
+## Props API
+
+### Common Props
+
+All layout components share a common set of props for spacing and colors. These props are defined in `BpkCommonLayoutProps` and are available on all components.
+
+#### Spacing Props
+
+All spacing-related props accept `BpkSpacing` tokens or percentages (e.g., `"50%"`). Direct pixel/rem values are **not allowed**.
+
+**Padding Props:**
+- `p`, `padding` - All sides
+- `pt`, `paddingTop` - Top
+- `pr`, `paddingRight` - Right
+- `pb`, `paddingBottom` - Bottom
+- `pl`, `paddingLeft` - Left
+- `px` - Horizontal (left + right)
+- `py` - Vertical (top + bottom)
+
+**Margin Props:**
+- `m`, `margin` - All sides
+- `mt`, `marginTop` - Top
+- `mr`, `marginRight` - Right
+- `mb`, `marginBottom` - Bottom
+- `ml`, `marginLeft` - Left
+- `mx` - Horizontal (left + right)
+- `my` - Vertical (top + bottom)
+
+**Gap:**
+- `gap` - Gap between flex/grid items
+
+**Size Props:**
+- `width`, `height` - Accept tokens, percentages, or special values: `"auto"`, `"full"`, `"fit-content"`
+- `minWidth`, `minHeight`, `maxWidth`, `maxHeight` - Same as above
+
+**Border Radius:**
+- `borderRadius` - All corners
+- `borderTopLeftRadius`, `borderTopRightRadius`, `borderBottomLeftRadius`, `borderBottomRightRadius` - Individual corners
+
+**Position Props:**
+- `top`, `right`, `bottom`, `left` - Accept spacing tokens
+
+**Typography Props:**
+- `fontSize`, `lineHeight` - Accept spacing tokens
+
+#### Color Props
+
+All color-related props accept `BpkColor` tokens or special values (`"transparent"`, `"currentColor"`).
+
+- `color` - Text color
+- `bg`, `backgroundColor` - Background color
+- `borderColor` - Border color
+- `borderTopColor`, `borderRightColor`, `borderBottomColor`, `borderLeftColor` - Individual border colors
+
+### Component-Specific Props
+
+Each component has its own set of specific props that are unique to that component type. These are exported as separate types:
+
+- `BpkBoxSpecificProps` - Box-specific props (e.g., `as`, `display`, `overflow`)
+- `BpkFlexSpecificProps` - Flex-specific props (e.g., `direction`, `align`, `justify`, `wrap`)
+- `BpkGridSpecificProps` - Grid-specific props (e.g., `templateColumns`, `templateRows`, `autoFlow`)
+- `BpkStackSpecificProps` - Stack-specific props (e.g., `spacing`, `direction`)
+
+You can import these types for advanced TypeScript usage:
+
+```typescript
+import type { BpkBoxSpecificProps } from '@skyscanner/backpack-web/bpk-component-layout';
 ```
 
 ## Backpack Design Tokens
 
 All layout components use Backpack design tokens for spacing and colors. This ensures consistency across the design system and prevents the use of arbitrary values.
 
+### Type-Safe Token Objects
+
+We recommend using the exported token objects for better type safety and developer experience:
+
+- `BpkSpacing`: Contains all spacing tokens (e.g., `BpkSpacing.Base`)
+- `BpkColor`: Contains all color tokens (e.g., `BpkColor.CorePrimary`)
+- `BpkBreakpoint`: Contains breakpoint tokens (e.g., `BpkBreakpoint.Tablet`)
+
 ### Spacing Tokens
 
-Spacing tokens must be used for all spacing-related properties. Only Backpack spacing tokens or percentages are allowed (no `px`, `rem`, or `em` values).
+Spacing tokens must be used for all spacing-related properties. Only Backpack spacing tokens or percentages are allowed.
 
 **Available Spacing Tokens:**
-- `bpk-spacing-none` - 0
-- `bpk-spacing-sm` - Small spacing
-- `bpk-spacing-base` - Base spacing (default)
-- `bpk-spacing-md` - Medium spacing
-- `bpk-spacing-lg` - Large spacing
-- `bpk-spacing-xl` - Extra large spacing
-- `bpk-spacing-xxl` - 2x large spacing
-
-**Spacing Properties:**
-All spacing-related props support Backpack tokens:
-- Padding: `p`, `pt`, `pr`, `pb`, `pl`, `px`, `py`, `padding`, `paddingTop`, `paddingRight`, `paddingBottom`, `paddingLeft`
-- Margin: `m`, `mt`, `mr`, `mb`, `ml`, `mx`, `my`, `margin`, `marginTop`, `marginRight`, `marginBottom`, `marginLeft`
-- Gap: `gap`, `spacing`
-- Size: `width`, `height`, `minWidth`, `minHeight`, `maxWidth`, `maxHeight` (also supports `auto`, `full`, `fit-content`)
-- Border Radius: `borderRadius`, `borderTopLeftRadius`, `borderTopRightRadius`, `borderBottomLeftRadius`, `borderBottomRightRadius`
-- Position: `top`, `right`, `bottom`, `left`
-- Typography: `fontSize`, `lineHeight`
-
-**Examples:**
-```tsx
-// Using spacing tokens
-<BpkBox p="bpk-spacing-base" mb="bpk-spacing-lg">
-  Content
-</BpkBox>
-
-// Using percentages (allowed)
-<BpkBox width="50%" height="100%">
-  Content
-</BpkBox>
-
-// Using special size values
-<BpkBox width="auto" maxWidth="full">
-  Content
-</BpkBox>
-```
+- `BpkSpacing.None` (`'bpk-spacing-none'`) - 0
+- `BpkSpacing.Sm` (`'bpk-spacing-sm'`) - 0.25rem (4px)
+- `BpkSpacing.Base` (`'bpk-spacing-base'`) - 1rem (16px)
+- `BpkSpacing.Md` (`'bpk-spacing-md'`) - 0.5rem (8px)
+- `BpkSpacing.Lg` (`'bpk-spacing-lg'`) - 1.5rem (24px)
+- `BpkSpacing.Xl` (`'bpk-spacing-xl'`) - 2rem (32px)
+- `BpkSpacing.Xxl` (`'bpk-spacing-xxl'`) - 2.5rem (40px)
 
 ### Color Tokens
 
 Color tokens must be used for all color-related properties. Only Backpack color tokens or special values (`transparent`, `currentColor`) are allowed.
 
-**Available Color Tokens:**
-
 **Text Colors:**
-- `bpk-text-primary-day` - Primary text color
-- `bpk-text-secondary-day` - Secondary text color
-- `bpk-text-disabled-day` - Disabled text color
-- `bpk-text-on-dark-day` - Text color for dark backgrounds
-- `bpk-text-link-day` - Link text color
-- `bpk-text-error-day` - Error text color
-- `bpk-text-success-day` - Success text color
-- `bpk-text-hero-day` - Hero text color
+- `BpkColor.TextPrimary` - Primary text color
+- `BpkColor.TextSecondary` - Secondary text color
+- `BpkColor.TextDisabled` - Disabled text color
+- `BpkColor.TextOnDark` - Text color for dark backgrounds
+- `BpkColor.TextLink` - Link text color
+- `BpkColor.TextError` - Error text color
+- `BpkColor.TextSuccess` - Success text color
+- `BpkColor.TextHero` - Hero text color
 
 **Background Colors:**
-- `bpk-canvas-day` - Canvas background
-- `bpk-canvas-contrast-day` - Canvas contrast background
-- `bpk-surface-highlight-day` - Surface highlight background
-- `bpk-surface-default-day` - Surface default background
-- `bpk-surface-elevated-day` - Surface elevated background
+- `BpkColor.Canvas` - Main canvas background
+- `BpkColor.CanvasContrast` - Contrast canvas background
+- `BpkColor.SurfaceHighlight` - Highlighted surface
+- `BpkColor.SurfaceDefault` - Default surface
+- `BpkColor.SurfaceElevated` - Elevated surface
 
 **Brand Colors:**
-- `bpk-core-primary-day` - Core primary brand color
-- `bpk-core-accent-day` - Core accent brand color
+- `BpkColor.CorePrimary` - Primary brand color
+- `BpkColor.CoreAccent` - Accent brand color
 
 **Border Colors:**
-- `bpk-line-day` - Standard line/border color
-- `bpk-line-on-dark-day` - Line color for dark backgrounds
+- `BpkColor.Line` - Standard border color
+- `BpkColor.LineOnDark` - Border color for dark backgrounds
 
-**Color Properties:**
-All color-related props support Backpack tokens:
-- Text: `color`
-- Background: `bg`, `backgroundColor`
-- Border: `borderColor`, `borderTopColor`, `borderRightColor`, `borderBottomColor`, `borderLeftColor`
+### Breakpoint Tokens
 
-**Examples:**
+Breakpoint tokens are used for responsive overrides. The system supports 6 Backpack breakpoints:
+
+- `BpkBreakpoint.SmallMobile` (`'small-mobile'`)
+- `BpkBreakpoint.Mobile` (`'mobile'`)
+- `BpkBreakpoint.SmallTablet` (`'small-tablet'`)
+- `BpkBreakpoint.Tablet` (`'tablet'`)
+- `BpkBreakpoint.Desktop` (`'desktop'`)
+- `BpkBreakpoint.LargeDesktop` (`'large-desktop'`)
+
+### Responsive Overrides
+
+You can use standard Chakra UI responsive object syntax with Backpack tokens. This allows you to change tokens based on breakpoints.
+
+**Simplified Breakpoint Keys:** `base`, `mobile`, `tablet`, `desktop`, `large-desktop`.
+
 ```tsx
-// Using color tokens
-<BpkBox 
-  bg="bpk-canvas-day" 
-  color="bpk-text-primary-day" 
-  borderColor="bpk-line-day"
+import {
+  BpkBox,
+  BpkColor,
+  BpkSpacing,
+  BpkBreakpoint
+} from '@skyscanner/backpack-web/bpk-component-layout';
+
+<BpkBox
+  // Change padding based on breakpoint
+  p={{
+    base: BpkSpacing.Base,
+    tablet: BpkSpacing.Lg,
+    desktop: BpkSpacing.Xl
+  }}
+  // Change background color based on breakpoint
+  bg={{
+    base: BpkColor.Canvas,
+    desktop: BpkColor.SurfaceHighlight
+  }}
 >
-  Content
-</BpkBox>
-
-// Using brand colors
-<BpkBox bg="bpk-core-primary-day" color="white">
-  Primary Action
-</BpkBox>
-
-// Using special values
-<BpkBox bg="transparent" borderColor="currentColor">
-  Transparent background
-</BpkBox>
-```
-
-### Token Mapping
-
-All Backpack tokens are automatically mapped to their actual values from `@skyscanner/bpk-foundations-web`. The mapping happens at runtime, ensuring that:
-
-1. **Type Safety**: TypeScript enforces the use of valid tokens
-2. **Runtime Validation**: Invalid values are caught and warned in development
-3. **Consistent Values**: All tokens resolve to the correct design system values
-4. **No Arbitrary Values**: Direct `px` or `rem` values are not allowed (except percentages)
-
-**Token Resolution:**
-- Spacing tokens are resolved to their `rem` values from Backpack foundations
-- Color tokens are resolved to their hex/rgb values from Backpack foundations
-- Invalid tokens will show warnings in development mode
-
-## API
-
-All components follow Chakra UI's layout component API, but with the following differences:
-
-- **No `className` prop**: The `className` prop is intentionally removed to prevent style overrides and maintain design system consistency.
-- **Type-safe props**: All components are fully typed with TypeScript.
-- **Token-only values**: Spacing and color props only accept Backpack tokens or allowed special values (percentages for spacing, `transparent`/`currentColor` for colors).
-
-### Component-Specific Props
-
-Each component exposes its specific Chakra UI props while enforcing Backpack token usage for spacing and color properties:
-
-- **BpkBox**: All Box props + Backpack token restrictions
-- **BpkFlex**: All Flex props + Backpack token restrictions
-- **BpkGrid**: All Grid props + Backpack token restrictions
-- **BpkStack/BpkHStack/BpkVStack**: All Stack props + Backpack token restrictions
-
-## Common Usage Patterns
-
-### Card Layout
-
-```tsx
-<BpkBox 
-  p="bpk-spacing-lg" 
-  bg="bpk-surface-elevated-day" 
-  borderRadius="bpk-spacing-md"
-  border="1px solid"
-  borderColor="bpk-line-day"
->
-  <BpkText color="bpk-text-primary-day" textStyle={TEXT_STYLES.heading5}>
-    Card Title
-  </BpkText>
-  <BpkText color="bpk-text-secondary-day" textStyle={TEXT_STYLES.bodyDefault}>
-    Card content
-  </BpkText>
-</BpkBox>
-```
-
-### Responsive Grid
-
-```tsx
-<BpkGrid 
-  templateColumns="repeat(auto-fit, minmax(200px, 1fr))" 
-  gap="bpk-spacing-base"
->
-  <BpkBox>Item 1</BpkBox>
-  <BpkBox>Item 2</BpkBox>
-  <BpkBox>Item 3</BpkBox>
-</BpkGrid>
-```
-
-### Form Layout
-
-```tsx
-<BpkVStack spacing="bpk-spacing-base">
-  <BpkBox>
-    <label>Name</label>
-    <input />
-  </BpkBox>
-  <BpkBox>
-    <label>Email</label>
-    <input />
-  </BpkBox>
-  <BpkHStack spacing="bpk-spacing-md">
-    <BpkBox 
-      p="bpk-spacing-base" 
-      bg="bpk-core-primary-day" 
-      borderRadius="bpk-spacing-md"
-    >
-      <BpkText color="white">Submit</BpkText>
-    </BpkBox>
-    <BpkBox 
-      p="bpk-spacing-base" 
-      bg="bpk-canvas-contrast-day" 
-      borderRadius="bpk-spacing-md"
-      border="1px solid"
-      borderColor="bpk-line-day"
-    >
-      <BpkText color="bpk-text-primary-day">Cancel</BpkText>
-    </BpkBox>
-  </BpkHStack>
-</BpkVStack>
-```
-
-### Complex Layout
-
-```tsx
-<BpkBox p="bpk-spacing-lg" bg="bpk-canvas-day">
-  <BpkFlex justify="space-between" align="center" mb="bpk-spacing-base">
-    <BpkText textStyle={TEXT_STYLES.heading4}>Header</BpkText>
-    <BpkBox 
-      p="bpk-spacing-sm" 
-      bg="bpk-core-primary-day" 
-      borderRadius="bpk-spacing-md"
-    >
-      <BpkText color="white">Action</BpkText>
-    </BpkBox>
-  </BpkFlex>
-  
-  <BpkGrid templateColumns="repeat(3, 1fr)" gap="bpk-spacing-base">
-    <BpkBox p="bpk-spacing-base" bg="bpk-surface-highlight-day">
-      Column 1
-    </BpkBox>
-    <BpkBox p="bpk-spacing-base" bg="bpk-surface-highlight-day">
-      Column 2
-    </BpkBox>
-    <BpkBox p="bpk-spacing-base" bg="bpk-surface-highlight-day">
-      Column 3
-    </BpkBox>
-  </BpkGrid>
+  Responsive Content
 </BpkBox>
 ```
 
@@ -359,49 +325,54 @@ Each component exposes its specific Chakra UI props while enforcing Backpack tok
 
 ### ⚠️ className is Not Supported
 
-The `className` prop is intentionally removed to maintain design system consistency. If you try to use it, you'll see a warning in development mode and it will be ignored.
-
-```tsx
-// ❌ This will not work
-<BpkBox className="my-custom-class">Content</BpkBox>
-
-// ✅ Use props instead
-<BpkBox p="bpk-spacing-base" bg="bpk-canvas-day">Content</BpkBox>
-```
+The `className` prop is intentionally removed to maintain design system consistency. Use specific style props instead.
 
 ### ⚠️ Only Backpack Tokens Allowed
 
-Direct pixel or rem values are not allowed. Use Backpack tokens or percentages instead.
+Direct pixel or rem values (e.g., `p="16px"`, `p="1rem"`) are **not allowed**. Use Backpack tokens or percentages instead.
 
-```tsx
-// ❌ This will not work
-<BpkBox p="16px" margin="1rem">Content</BpkBox>
+Size props (`width`, `height`, etc.) accept `auto`, `full`, `fit-content` in addition to tokens and percentages.
 
-// ✅ Use tokens
-<BpkBox p="bpk-spacing-base" m="bpk-spacing-lg">Content</BpkBox>
+### ⚠️ Type Safety
 
-// ✅ Percentages are allowed
-<BpkBox width="50%" height="100%">Content</BpkBox>
+All props are strictly typed. TypeScript will prevent you from passing invalid values. Use the exported token objects (`BpkSpacing`, `BpkColor`) for the best developer experience.
+
+## Type Exports
+
+The package exports the following types for advanced usage:
+
+```typescript
+// Component prop types
+import type {
+  BpkBoxProps,
+  BpkFlexProps,
+  BpkGridProps,
+  BpkStackProps,
+  BpkProviderProps
+} from '@skyscanner/backpack-web/bpk-component-layout';
+
+// Common and specific prop types
+import type {
+  BpkCommonLayoutProps,
+  BpkBoxSpecificProps,
+  BpkFlexSpecificProps,
+  BpkGridSpecificProps,
+  BpkStackSpecificProps
+} from '@skyscanner/backpack-web/bpk-component-layout';
+
+// Token types
+import type {
+  BpkSpacingToken,
+  BpkColorToken,
+  BpkBreakpointToken,
+  BpkSpacingValue,
+  BpkColorValue,
+  BpkBreakpointValue
+} from '@skyscanner/backpack-web/bpk-component-layout';
 ```
 
-## Design Philosophy
+## Related Documentation
 
-This package provides a facade over Chakra UI's layout components, offering:
-
-- **Stable API**: Clear and consistent API surface
-- **Design System Integration**: Built to integrate with Backpack design tokens
-- **PandaCSS**: Uses PandaCSS for zero-runtime CSS generation
-- **No Style Overrides**: `className` prop is removed to maintain design system integrity
-- **Token Enforcement**: All spacing and color values must use Backpack tokens, ensuring design consistency
-- **Type Safety**: Full TypeScript support with strict token validation
-
-## Styling Approach
-
-For detailed information about the styling approach, see [STYLE.md](./STYLE.md).
-
-Key points:
-- **Zero-runtime CSS**: Uses PandaCSS for build-time CSS generation
-- **Token-based**: All styling uses Backpack design tokens
-- **Type-safe**: Full TypeScript validation of tokens
-- **Performance**: Follows Chakra UI's performance best practices
-
+- [STYLE.md](./STYLE.md) - Detailed explanation of the styling approach
+- [TECHNICAL_GUIDANCE.md](./TECHNICAL_GUIDANCE.md) - Implementation details for maintainers
+- [BUNDLE_SIZE_ANALYSIS.md](./BUNDLE_SIZE_ANALYSIS.md) - Bundle size impact analysis

@@ -23,73 +23,70 @@
  * All tokens are sourced from @skyscanner/bpk-foundations-web
  */
 
-// Note: In a real implementation, these values would be imported from
-// @skyscanner/bpk-foundations-web. For now, we'll define the structure
-// and mapping. The actual values should be extracted from the foundations package.
-
 /**
  * Backpack Spacing Tokens
- * These map to bpk-spacing-*() functions from Backpack
+ * Use these constants to ensure type safety when passing spacing props
  */
-export const BPK_SPACING_TOKENS = {
-  none: 'bpk-spacing-none',
-  sm: 'bpk-spacing-sm',
-  base: 'bpk-spacing-base',
-  md: 'bpk-spacing-md',
-  lg: 'bpk-spacing-lg',
-  xl: 'bpk-spacing-xl',
-  xxl: 'bpk-spacing-xxl',
+export const BpkSpacing = {
+  None: 'bpk-spacing-none',
+  Sm: 'bpk-spacing-sm',
+  Base: 'bpk-spacing-base',
+  Md: 'bpk-spacing-md',
+  Lg: 'bpk-spacing-lg',
+  Xl: 'bpk-spacing-xl',
+  Xxl: 'bpk-spacing-xxl',
 } as const;
 
-export type BpkSpacingToken = typeof BPK_SPACING_TOKENS[keyof typeof BPK_SPACING_TOKENS];
+export type BpkSpacingToken = typeof BpkSpacing[keyof typeof BpkSpacing];
 
 /**
  * Backpack Color Tokens
- * These map to Backpack color tokens from the foundations package
+ * Use these constants to ensure type safety when passing color props
  */
-export const BPK_COLOR_TOKENS = {
+export const BpkColor = {
   // Text colors
-  'text-primary': 'bpk-text-primary-day',
-  'text-secondary': 'bpk-text-secondary-day',
-  'text-disabled': 'bpk-text-disabled-day',
-  'text-on-dark': 'bpk-text-on-dark-day',
-  'text-link': 'bpk-text-link-day',
-  'text-error': 'bpk-text-error-day',
-  'text-success': 'bpk-text-success-day',
-  'text-hero': 'bpk-text-hero-day',
+  TextPrimary: 'bpk-text-primary-day',
+  TextSecondary: 'bpk-text-secondary-day',
+  TextDisabled: 'bpk-text-disabled-day',
+  TextOnDark: 'bpk-text-on-dark-day',
+  TextLink: 'bpk-text-link-day',
+  TextError: 'bpk-text-error-day',
+  TextSuccess: 'bpk-text-success-day',
+  TextHero: 'bpk-text-hero-day',
 
   // Background colors
-  'canvas': 'bpk-canvas-day',
-  'canvas-contrast': 'bpk-canvas-contrast-day',
-  'surface-highlight': 'bpk-surface-highlight-day',
-  'surface-default': 'bpk-surface-default-day',
-  'surface-elevated': 'bpk-surface-elevated-day',
+  Canvas: 'bpk-canvas-day',
+  CanvasContrast: 'bpk-canvas-contrast-day',
+  SurfaceHighlight: 'bpk-surface-highlight-day',
+  SurfaceDefault: 'bpk-surface-default-day',
+  SurfaceElevated: 'bpk-surface-elevated-day',
 
   // Brand colors
-  'core-primary': 'bpk-core-primary-day',
-  'core-accent': 'bpk-core-accent-day',
+  CorePrimary: 'bpk-core-primary-day',
+  CoreAccent: 'bpk-core-accent-day',
 
   // Border colors
-  'line': 'bpk-line-day',
-  'line-on-dark': 'bpk-line-on-dark-day',
+  Line: 'bpk-line-day',
+  LineOnDark: 'bpk-line-on-dark-day',
 } as const;
 
-export type BpkColorToken = typeof BPK_COLOR_TOKENS[keyof typeof BPK_COLOR_TOKENS];
+export type BpkColorToken = typeof BpkColor[keyof typeof BpkColor];
 
 /**
  * Backpack Breakpoint Tokens
- * These map to Backpack breakpoint queries
+ * Use these constants to ensure type safety when defining responsive overrides
+ * These map to the simplified keys defined in the Chakra theme
  */
-export const BPK_BREAKPOINT_TOKENS = {
-  'small-mobile': 'bpk-breakpoint-small-mobile',
-  'mobile': 'bpk-breakpoint-mobile',
-  'small-tablet': 'bpk-breakpoint-small-tablet',
-  'tablet': 'bpk-breakpoint-tablet',
-  'desktop': 'bpk-breakpoint-above-tablet',
-  'large-desktop': 'bpk-breakpoint-above-desktop',
+export const BpkBreakpoint = {
+  SmallMobile: 'small-mobile',
+  Mobile: 'mobile',
+  SmallTablet: 'small-tablet',
+  Tablet: 'tablet',
+  Desktop: 'desktop',
+  LargeDesktop: 'large-desktop',
 } as const;
 
-export type BpkBreakpointToken = typeof BPK_BREAKPOINT_TOKENS[keyof typeof BPK_BREAKPOINT_TOKENS];
+export type BpkBreakpointToken = typeof BpkBreakpoint[keyof typeof BpkBreakpoint];
 
 /**
  * Helper type for values that can be Backpack tokens or percentages
@@ -116,7 +113,7 @@ export function isPercentage(value: string): boolean {
  * @returns {boolean} True if the value is a valid Backpack spacing token or percentage
  */
 export function isValidSpacingValue(value: string): boolean {
-  return Object.values(BPK_SPACING_TOKENS).includes(value as BpkSpacingToken) || isPercentage(value);
+  return Object.values(BpkSpacing).includes(value as BpkSpacingToken) || isPercentage(value);
 }
 
 /**
@@ -126,8 +123,7 @@ export function isValidSpacingValue(value: string): boolean {
  * @returns {boolean} True if the value is a valid Backpack color token or special value
  */
 export function isValidColorValue(value: string): boolean {
-  return Object.values(BPK_COLOR_TOKENS).includes(value as BpkColorToken) ||
+  return Object.values(BpkColor).includes(value as BpkColorToken) ||
          value === 'transparent' ||
          value === 'currentColor';
 }
-

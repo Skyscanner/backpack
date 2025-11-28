@@ -6,309 +6,280 @@ This document explains the styling approach used in `bpk-component-layout` and h
 
 `bpk-component-layout` uses a **Chakra UI facade pattern** with **PandaCSS** for zero-runtime CSS generation. This approach provides:
 
-- **Zero Runtime Overhead**: All styles are generated at build time
-- **Design System Consistency**: Enforced through token-based styling
-- **Type Safety**: Full TypeScript support with strict validation
-- **Performance**: No CSS-in-JS runtime calculations
+- **Zero Runtime Overhead**: All styles are generated at build time.
+- **Design System Consistency**: Enforced through strict token-based styling.
+- **Type Safety**: Full TypeScript support with explicit prop types.
+- **Performance**: No CSS-in-JS runtime calculations.
 
 ## Architecture
 
 ### Chakra UI Facade Pattern
 
-The layout components act as facades over Chakra UI's layout primitives:
+The layout components act as facades over Chakra UI's layout primitives. We do not expose Chakra UI components directly.
 
 ```
-BpkBox → Chakra UI Box → PandaCSS → Static CSS
+BpkBox → Token Processing (Runtime/Type Check) → Chakra UI Box → PandaCSS → Static CSS
 ```
 
 This pattern provides:
-- **Stable API**: Backpack-specific API that doesn't change with Chakra UI updates
-- **Token Enforcement**: Only Backpack tokens are allowed, not Chakra UI tokens
-- **Style Isolation**: `className` prop is removed to prevent style overrides
+- **Stable API**: Backpack-specific API that doesn't change with Chakra UI updates.
+- **Token Enforcement**: Only Backpack tokens are allowed, not Chakra UI tokens.
+- **Style Isolation**: `className` prop is removed to prevent style overrides.
+
+### Component Structure
+
+Each component follows the same pattern:
+
+1. **Facade Component** (`BpkBox.tsx`, `BpkFlex.tsx`, etc.): Receives Backpack-specific props
+2. **Token Processing** (`processBpkProps`): Validates and converts tokens to CSS values
+3. **Chakra UI Primitive**: Receives processed props and renders
+4. **PandaCSS**: Generates static CSS at build time
 
 ### PandaCSS Integration
 
-PandaCSS is configured to generate static CSS at build time:
+PandaCSS is configured to generate static CSS at build time. The generated styles are located in `src/styled-system` and are shipped with the package.
 
 ```typescript
 // panda.config.ts
 export default defineConfig({
   presets: ['@chakra-ui/panda-preset'],
   jsxFramework: 'react',
-  outdir: 'styled-system',
+  outdir: 'src/styled-system', // Output directory
   // ...
 });
 ```
 
-**Key Benefits:**
-- **Build-time CSS generation**: All styles are pre-compiled
-- **Zero runtime**: No CSS-in-JS processing at runtime
-- **Tree-shakeable**: Only used styles are included in the bundle
-- **Performance**: Follows [Chakra UI's performance best practices](https://chakra-ui.com/guides/styling-performance)
+**Important**: The `styled-system` directory is pre-generated and shipped with the package. Downstream consumers do not need to run PandaCSS generation.
 
-## Token Mapping System
+## Token System
 
-### How It Works
+### Type-Safe Token Objects
 
-1. **User provides Backpack tokens** in component props:
-   ```tsx
-   <BpkBox p="bpk-spacing-base" bg="bpk-canvas-day" />
-   ```
-
-2. **Token validation** happens at runtime (development mode):
-   - Invalid tokens show warnings
-   - Only Backpack tokens or allowed special values are accepted
-
-3. **Token conversion** maps Backpack tokens to actual values:
-   ```typescript
-   // tokenUtils.ts
-   convertBpkSpacingToChakra('bpk-spacing-base') → '1rem'
-   convertBpkColorToChakra('bpk-canvas-day') → '#ffffff'
-   ```
-
-4. **Chakra UI receives actual values**:
-   ```tsx
-   <Box padding="1rem" bg="#ffffff" />
-   ```
-
-5. **PandaCSS generates static CSS** at build time
-
-### Token Resolution
-
-Tokens are resolved from `@skyscanner/bpk-foundations-web`:
-
-- **Spacing tokens**: Mapped from SCSS functions to rem values
-  - `bpk-spacing-sm` → `.25rem`
-  - `bpk-spacing-base` → `1rem`
-  - `bpk-spacing-md` → `.5rem`
-  - etc.
-
-- **Color tokens**: Mapped from Backpack foundations
-  - `bpk-text-primary-day` → Actual hex/rgb value
-  - `bpk-canvas-day` → Actual hex/rgb value
-  - etc.
-
-### Theme Configuration
-
-The theme is created using Chakra UI 3.0's `createSystem`:
+We provide strict TypeScript objects for tokens to ensure type safety and autocompletion:
 
 ```typescript
-// theme.ts
-const bpkSystem = createSystem({
-  theme: {
-    space: {
-      'bpk-spacing-sm': '.25rem',
-      'bpk-spacing-base': '1rem',
-      // ...
-    },
-    colors: {
-      bpk: {
-        'bpk-text-primary-day': '#000000',
-        'bpk-canvas-day': '#ffffff',
-        // ...
-      }
-    }
-  }
-});
+// tokens.ts
+export const BpkColor = {
+  TextPrimary: 'bpk-text-primary-day',
+  Canvas: 'bpk-canvas-day',
+  // ...
+} as const;
+
+export const BpkSpacing = {
+  Base: 'bpk-spacing-base',
+  Md: 'bpk-spacing-md',
+  // ...
+} as const;
+
+export const BpkBreakpoint = {
+  Tablet: 'tablet',
+  Desktop: 'desktop',
+  // ...
+} as const;
 ```
+
+### Token Processing Pipeline
+
+1.  **User provides Backpack tokens** in component props:
+    ```tsx
+    <BpkBox p={BpkSpacing.Base} bg={BpkColor.Canvas} />
+    ```
+
+2.  **Runtime Validation & Conversion**:
+    The `processBpkProps` function handles the conversion at runtime to ensure Chakra UI receives valid CSS values.
+    *   **Spacing**: Converts `bpk-spacing-base` → `1rem` (using hardcoded map matching Backpack foundations).
+    *   **Colors**: Converts `bpk-text-primary-day` → `rgb(22, 22, 22)` (using explicit RGB map from `colorMapping.ts`).
+
+3.  **Chakra UI receives actual values**:
+    ```tsx
+    <Box padding="1rem" bg="rgb(255, 255, 255)" />
+    ```
+
+4.  **PandaCSS generates static CSS** at build time based on these usage patterns in the library itself.
+
+### Responsive Overrides
+
+The system supports Chakra UI's responsive object syntax. The `processResponsiveValue` utility recursively traverses these objects to validate and convert tokens at every breakpoint depth.
+
+```tsx
+<BpkBox
+  bg={{
+    base: BpkColor.Canvas,
+    tablet: BpkColor.SurfaceHighlight,
+    desktop: BpkColor.SurfaceElevated
+  }}
+/>
+```
+
+The processor converts this to:
+```javascript
+{
+  bg: {
+    base: 'rgb(255, 255, 255)',
+    tablet: 'rgb(241, 242, 248)',
+    desktop: 'rgb(255, 255, 255)'
+  }
+}
+```
+
+The recursive processing ensures that nested responsive objects and arrays are properly handled.
+
+### Breakpoint Mapping
+
+Backpack provides 6 standard breakpoints which are mapped to simplified keys:
+
+- `small-mobile` → Backpack's `breakpointQuerySmallMobile`
+- `mobile` → Backpack's `breakpointQueryMobile`
+- `small-tablet` → Backpack's `breakpointQuerySmallTablet`
+- `tablet` → Backpack's `breakpointQueryTablet`
+- `desktop` → Backpack's `breakpointQueryAboveTablet`
+- `large-desktop` → Backpack's `breakpointQueryAboveDesktop`
+
+These simplified keys are used in responsive object syntax for better developer experience.
+
+## Props Architecture
+
+### Common Props vs Component-Specific Props
+
+The props system is structured into two layers:
+
+1. **Common Props** (`BpkCommonLayoutProps`): Shared by all layout components
+   - Spacing props (`BpkSpacingProps`)
+   - Color props (`BpkColorProps`)
+   - Explicitly excludes `className`
+
+2. **Component-Specific Props**: Unique to each component type
+   - `BpkBoxSpecificProps` - Box-specific props
+   - `BpkFlexSpecificProps` - Flex-specific props (e.g., `direction`, `align`, `justify`)
+   - `BpkGridSpecificProps` - Grid-specific props (e.g., `templateColumns`, `templateRows`)
+   - `BpkStackSpecificProps` - Stack-specific props (with enforced `spacing` prop)
+
+This separation provides:
+- **Clear API boundaries**: Developers can see what's common vs. specific
+- **Type safety**: Component-specific props are properly typed
+- **Maintainability**: Common props are defined once and reused
+
+### Spacing Props
+
+All spacing-related props accept:
+- `BpkSpacing` tokens (e.g., `BpkSpacing.Base`)
+- Percentages (e.g., `"50%"`)
+
+**NOT allowed:**
+- Direct pixel values (`"16px"`)
+- Direct rem values (`"1rem"`)
+- Numeric values (`16`)
+
+**Special cases:**
+- Size props (`width`, `height`, etc.) also accept: `"auto"`, `"full"`, `"fit-content"`
+
+### Color Props
+
+All color-related props accept:
+- `BpkColor` tokens (e.g., `BpkColor.Canvas`)
+- Special values: `"transparent"`, `"currentColor"`
+
+**NOT allowed:**
+- Chakra UI color tokens (e.g., `"blue.500"`)
+- Direct hex/rgb values (e.g., `"#ffffff"`)
+- Arbitrary color strings
 
 ## Styling Restrictions
 
 ### What's Allowed
 
-✅ **Backpack spacing tokens**: `bpk-spacing-*`
-✅ **Backpack color tokens**: `bpk-*-day`
-✅ **Percentages**: `50%`, `100%`
-✅ **Special values**: `auto`, `full`, `fit-content` (for size props)
-✅ **Special colors**: `transparent`, `currentColor`
+✅ **Backpack spacing tokens**: via `BpkSpacing` object or string literals.
+✅ **Backpack color tokens**: via `BpkColor` object or string literals.
+✅ **Percentages**: `50%`, `100%` (for size/spacing).
+✅ **Special values**: `auto`, `full`, `fit-content` (for size props only).
+✅ **Special colors**: `transparent`, `currentColor`.
+✅ **Responsive objects**: `{{ base: ..., tablet: ... }}`.
+✅ **Component-specific props**: All Chakra UI props except spacing/color/className.
 
 ### What's NOT Allowed
 
-❌ **Direct pixel/rem values**: `16px`, `1rem`, `2em`
-❌ **Chakra UI tokens**: `sm`, `md`, `lg`, `blue.500`
-❌ **className prop**: Removed to prevent style overrides
-❌ **Arbitrary CSS values**: Only tokens or allowed special values
+❌ **Direct pixel/rem values**: `16px`, `1rem`, `2em`.
+❌ **Chakra UI tokens**: `sm`, `md`, `lg` (unless mapped), `blue.500`.
+❌ **className prop**: Removed to prevent style overrides.
+❌ **Arbitrary CSS values**: Only tokens or allowed special values.
+❌ **Numeric spacing values**: `4`, `8`, `16` (must use tokens).
 
 ### Runtime Validation
 
-In development mode, invalid values trigger warnings:
+In development mode, invalid values trigger warnings in the console to aid debugging.
 
 ```typescript
 // tokenUtils.ts
 if (!isValidSpacingValue(value)) {
-  console.warn(
-    `Invalid spacing value "${value}" for prop "${key}". ` +
-    `Only Backpack spacing tokens or percentages are allowed.`
-  );
-  delete processed[key]; // Remove invalid prop
+  console.warn(`Invalid spacing value "${value}"...`);
 }
 ```
 
-## Component Implementation
-
-### Example: BpkBox
-
-```typescript
-// BpkBox.tsx
-export const BpkBox = ({ children, ...props }: BpkBoxProps) => {
-  // Process props to convert Backpack tokens to Chakra UI format
-  const processedProps = processBpkProps(props);
-  
-  // className is explicitly excluded to prevent style overrides
-  return <Box {...processedProps}>{children}</Box>;
-};
-```
-
-**Key points:**
-1. Props are processed through `processBpkProps`
-2. Tokens are converted to actual values
-3. Invalid props are removed
-4. `className` is explicitly excluded
-
-### Prop Processing Pipeline
-
-```
-User Props
-  ↓
-processBpkProps()
-  ↓
-processSpacingProps() → Convert spacing tokens
-  ↓
-processColorProps() → Convert color tokens
-  ↓
-Chakra UI Component → Receives actual values
-  ↓
-PandaCSS → Generates static CSS
-```
-
-## Development vs Production
-
-### Development Mode
-
-- **Runtime validation**: Invalid tokens show warnings
-- **CSS-in-JS**: Chakra UI uses runtime CSS for hot reloading
-- **Debugging**: Easier to debug with runtime styles
-
-### Production Mode
-
-- **Static CSS**: PandaCSS generates all CSS at build time
-- **Zero runtime**: No CSS-in-JS processing
-- **Optimized**: Only used styles are included
+Invalid values are removed from props in production to prevent rendering issues.
 
 ## Performance Considerations
 
-### Why Zero-Runtime Matters
+### Zero-Runtime Styling
 
-Traditional CSS-in-JS solutions:
-- Calculate styles on every render
-- Create new style objects (garbage collection pressure)
-- Process style objects into CSS strings
+By using PandaCSS, we generate static CSS files. This avoids the runtime performance cost associated with traditional CSS-in-JS libraries (style injection, class generation on render).
 
-PandaCSS approach:
-- ✅ Styles pre-compiled at build time
-- ✅ No runtime calculations
-- ✅ Static CSS files
-- ✅ Better performance, especially in complex applications
+### Token Processing Overhead
 
-### Best Practices
+The token processing layer (`processBpkProps`) adds minimal runtime overhead:
+- **Development**: Validation warnings for invalid tokens
+- **Production**: Fast token-to-value conversion with minimal checks
 
-Following [Chakra UI's performance guide](https://chakra-ui.com/guides/styling-performance):
+The processing is optimized to:
+- Only process props that are present
+- Use efficient lookups (object property access)
+- Recursively handle responsive objects without deep cloning
 
-1. **Use tokens, not dynamic values**: All values come from tokens
-2. **No runtime style calculations**: Everything is pre-compiled
-3. **Static class names**: Generated at build time
-4. **Tree-shaking**: Unused styles are removed
+### Bundle Size
 
-## Comparison with Other Approaches
+The styling system adds:
+- **JavaScript**: ~5-8 KB (gzipped) for token processing utilities
+- **CSS**: ~10-20 KB (gzipped) for generated styles
+- **Chakra UI**: ~150-200 KB (gzipped, tree-shaken) for layout primitives
 
-### vs Traditional CSS-in-JS
+See [BUNDLE_SIZE_ANALYSIS.md](./BUNDLE_SIZE_ANALYSIS.md) for detailed analysis.
 
-| Feature | CSS-in-JS (Runtime) | PandaCSS (Build-time) |
-|---------|---------------------|----------------------|
-| Runtime overhead | Yes | No |
-| Build time | Fast | Slower (CSS generation) |
-| Bundle size | Larger | Smaller (tree-shaken) |
-| Performance | Slower | Faster |
-| Hot reload | Fast | Slower |
+## Build Process
 
-### vs SCSS Modules
+### PandaCSS Generation
 
-| Feature | SCSS Modules | PandaCSS |
-|---------|--------------|----------|
-| Type safety | Limited | Full TypeScript |
-| Token enforcement | Manual | Automatic |
-| Runtime validation | No | Yes (dev mode) |
-| Dynamic styles | Limited | Full support |
+1. **Build Step**: `npm run codegen` runs `panda codegen`
+2. **Output**: Generates `src/styled-system/` directory
+3. **Shipping**: The `styled-system` directory is copied to `dist/` during transpilation
 
-## Configuration Files
+### Consumer Integration
 
-### `panda.config.ts`
+Consumers do **not** need to:
+- Run PandaCSS generation
+- Configure PandaCSS
+- Import PandaCSS dependencies
 
-PandaCSS configuration for build-time CSS generation:
+They only need to:
+- Import the pre-generated CSS file
+- Use `<BpkProvider>` to wrap their app
 
-```typescript
-export default defineConfig({
-  presets: ['@chakra-ui/panda-preset'],
-  include: ['./src/**/*.{ts,tsx}'],
-  outdir: 'styled-system',
-  jsxFramework: 'react',
-});
-```
+## Design Philosophy
 
-### `theme.ts`
+### Why This Approach?
 
-Backpack token mapping to Chakra UI theme:
+1. **Design System Enforcement**: By restricting props to tokens, we ensure consistency across all applications using Backpack.
 
-```typescript
-export function createBpkTheme() {
-  return {
-    space: { /* spacing tokens */ },
-    colors: { bpk: { /* color tokens */ } },
-    breakpoints: { /* breakpoint tokens */ },
-  };
-}
-```
+2. **Type Safety**: TypeScript prevents invalid token usage at compile time, catching errors before runtime.
 
-### `tokenUtils.ts`
+3. **Zero Runtime**: PandaCSS generates static CSS, eliminating the performance overhead of runtime CSS-in-JS.
 
-Runtime token validation and conversion:
+4. **Maintainability**: The facade pattern isolates Backpack's API from Chakra UI's implementation, allowing us to evolve independently.
 
-```typescript
-export function processBpkProps(props) {
-  // Validates and converts tokens
-  // Removes invalid values
-  // Excludes className
-}
-```
+5. **Developer Experience**: Clear prop separation (common vs. specific) makes the API intuitive and discoverable.
 
-## Migration Notes
+### Trade-offs
 
-If migrating from Chakra UI directly:
+- **Bundle Size**: Chakra UI adds ~150-200 KB to the bundle (mitigated by tree-shaking)
+- **Learning Curve**: Developers must learn Backpack tokens instead of arbitrary CSS values
+- **Flexibility**: Less flexible than direct CSS, but more consistent
 
-1. **Replace Chakra tokens with Backpack tokens**:
-   ```tsx
-   // Before
-   <Box p={4} bg="blue.500" />
-   
-   // After
-   <BpkBox p="bpk-spacing-base" bg="bpk-core-primary-day" />
-   ```
-
-2. **Remove className usage**: Use component props instead
-
-3. **Use percentages for dynamic sizing**: Instead of `px` values
-
-4. **Wrap with BpkProvider**: Required for all layout components
-
-## Future Considerations
-
-- **PandaCSS build integration**: May need to run `panda codegen` in build process
-- **Storybook integration**: Currently uses runtime CSS for development
-- **Production optimization**: Ensure static CSS is properly loaded
-
-## References
-
-- [Chakra UI Performance Guide](https://chakra-ui.com/guides/styling-performance)
-- [PandaCSS Documentation](https://panda-css.com/)
-- [Chakra UI 3.0 Documentation](https://chakra-ui.com/)
-
+The benefits of design system consistency and type safety outweigh these trade-offs for a design system library.

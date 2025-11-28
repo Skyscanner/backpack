@@ -91,6 +91,52 @@ export function convertBpkColorToChakra(value: string): string {
 }
 
 /**
+ * Recursively processes a value that might be a responsive object/array
+ *
+ * @param {any} value - The value to process (string, array, or object)
+ * @param {(v: string) => string} converter - Function to convert single values
+ * @param {(v: string) => boolean} validator - Function to validate single values
+ * @param {string} propName - Name of the prop being processed (for error messages)
+ * @returns {any} The processed value
+ */
+function processResponsiveValue(
+  value: any,
+  converter: (v: string) => string,
+  validator: (v: string) => boolean,
+  propName: string
+): any {
+  if (value === undefined || value === null) {
+    return value;
+  }
+
+  if (Array.isArray(value)) {
+    return value.map((v) => processResponsiveValue(v, converter, validator, propName));
+  }
+
+  if (typeof value === 'object') {
+    const result: Record<string, any> = {};
+    Object.keys(value).forEach((key) => {
+      result[key] = processResponsiveValue(value[key], converter, validator, propName);
+    });
+    return result;
+  }
+
+  const strValue = String(value);
+  if (!validator(strValue)) {
+    if (process.env.NODE_ENV !== 'production') {
+      // eslint-disable-next-line no-console
+      console.warn(
+        `Invalid value "${strValue}" for prop "${propName}". ` +
+        `Only Backpack tokens are allowed.`
+      );
+    }
+    return undefined; // Invalid values are removed
+  }
+
+  return converter(strValue);
+}
+
+/**
  * Validates and converts spacing props for Chakra UI
  * Handles all spacing-related properties including padding, margin, gap, size, border radius, position, and typography
  *
@@ -124,24 +170,23 @@ export function processSpacingProps<T extends Record<string, any>>(
 
   spacingKeys.forEach((key) => {
     if (key in processed && processed[key] !== undefined) {
-      const value = String(processed[key]);
+      const isSizeProp = ['width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight'].includes(key);
+      const validator = (v: string) => 
+        isValidSpacingValue(v) || 
+        (isSizeProp && ['auto', 'full', 'fit-content'].includes(v));
 
-      // Validate the value
-      if (!isValidSpacingValue(value) && !['auto', 'full', 'fit-content'].includes(value)) {
-        if (process.env.NODE_ENV !== 'production') {
-          // eslint-disable-next-line no-console
-          console.warn(
-            `Invalid spacing value "${value}" for prop "${key}". ` +
-            `Only Backpack spacing tokens or percentages are allowed. ` +
-            `Found: ${value}. This prop will be removed.`
-          );
-        }
-        // Remove invalid value to prevent it from being passed to Chakra UI
+      const processedValue = processResponsiveValue(
+        processed[key],
+        convertBpkSpacingToChakra,
+        validator,
+        key
+      );
+
+      if (processedValue !== undefined) {
+        processed[key] = processedValue;
+      } else {
         delete processed[key];
-        return;
       }
-
-      processed[key] = convertBpkSpacingToChakra(value);
     }
   });
 
@@ -169,22 +214,18 @@ export function processColorProps<T extends Record<string, any>>(
 
   colorKeys.forEach((key) => {
     if (key in processed && processed[key] !== undefined) {
-      const value = String(processed[key]);
+      const processedValue = processResponsiveValue(
+        processed[key],
+        convertBpkColorToChakra,
+        isValidColorValue,
+        key
+      );
 
-      // Validate the value
-      if (!isValidColorValue(value)) {
-        if (process.env.NODE_ENV !== 'production') {
-          // eslint-disable-next-line no-console
-          console.warn(
-            `Invalid color value "${value}" for prop "${key}". ` +
-            `Only Backpack color tokens, "transparent", or "currentColor" are allowed. ` +
-            `Found: ${value}`
-          );
-        }
-        return;
+      if (processedValue !== undefined) {
+        processed[key] = processedValue;
+      } else {
+        delete processed[key];
       }
-
-      processed[key] = convertBpkColorToChakra(value);
     }
   });
 
@@ -223,4 +264,3 @@ export function processBpkProps<T extends Record<string, any>>(
   processed = processColorProps(processed);
   return processed;
 }
-

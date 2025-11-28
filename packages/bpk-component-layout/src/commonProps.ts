@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import type { ConditionalValue as ResponsiveValue } from '@chakra-ui/react';
 import type { BpkSpacingValue, BpkColorValue } from './tokens';
 
 /**
@@ -24,61 +25,62 @@ import type { BpkSpacingValue, BpkColorValue } from './tokens';
  */
 export interface BpkSpacingProps {
   // Padding props
-  padding?: BpkSpacingValue;
-  paddingTop?: BpkSpacingValue;
-  paddingRight?: BpkSpacingValue;
-  paddingBottom?: BpkSpacingValue;
-  paddingLeft?: BpkSpacingValue;
-  p?: BpkSpacingValue;
-  pt?: BpkSpacingValue;
-  pr?: BpkSpacingValue;
-  pb?: BpkSpacingValue;
-  pl?: BpkSpacingValue;
-  px?: BpkSpacingValue;
-  py?: BpkSpacingValue;
+  padding?: ResponsiveValue<BpkSpacingValue>;
+  paddingTop?: ResponsiveValue<BpkSpacingValue>;
+  paddingRight?: ResponsiveValue<BpkSpacingValue>;
+  paddingBottom?: ResponsiveValue<BpkSpacingValue>;
+  paddingLeft?: ResponsiveValue<BpkSpacingValue>;
+  p?: ResponsiveValue<BpkSpacingValue>;
+  pt?: ResponsiveValue<BpkSpacingValue>;
+  pr?: ResponsiveValue<BpkSpacingValue>;
+  pb?: ResponsiveValue<BpkSpacingValue>;
+  pl?: ResponsiveValue<BpkSpacingValue>;
+  px?: ResponsiveValue<BpkSpacingValue>;
+  py?: ResponsiveValue<BpkSpacingValue>;
 
   // Margin props
-  margin?: BpkSpacingValue;
-  marginTop?: BpkSpacingValue;
-  marginRight?: BpkSpacingValue;
-  marginBottom?: BpkSpacingValue;
-  marginLeft?: BpkSpacingValue;
-  m?: BpkSpacingValue;
-  mt?: BpkSpacingValue;
-  mr?: BpkSpacingValue;
-  mb?: BpkSpacingValue;
-  ml?: BpkSpacingValue;
-  mx?: BpkSpacingValue;
-  my?: BpkSpacingValue;
+  margin?: ResponsiveValue<BpkSpacingValue>;
+  marginTop?: ResponsiveValue<BpkSpacingValue>;
+  marginRight?: ResponsiveValue<BpkSpacingValue>;
+  marginBottom?: ResponsiveValue<BpkSpacingValue>;
+  marginLeft?: ResponsiveValue<BpkSpacingValue>;
+  m?: ResponsiveValue<BpkSpacingValue>;
+  mt?: ResponsiveValue<BpkSpacingValue>;
+  mr?: ResponsiveValue<BpkSpacingValue>;
+  mb?: ResponsiveValue<BpkSpacingValue>;
+  ml?: ResponsiveValue<BpkSpacingValue>;
+  mx?: ResponsiveValue<BpkSpacingValue>;
+  my?: ResponsiveValue<BpkSpacingValue>;
 
-  // Gap and spacing
-  gap?: BpkSpacingValue;
-  spacing?: BpkSpacingValue;
+  // Gap
+  gap?: ResponsiveValue<BpkSpacingValue>;
 
   // Size props
-  width?: BpkSpacingValue | 'auto' | 'full' | 'fit-content';
-  height?: BpkSpacingValue | 'auto' | 'full' | 'fit-content';
-  minWidth?: BpkSpacingValue | 'auto' | 'full' | 'fit-content';
-  minHeight?: BpkSpacingValue | 'auto' | 'full' | 'fit-content';
-  maxWidth?: BpkSpacingValue | 'auto' | 'full' | 'fit-content';
-  maxHeight?: BpkSpacingValue | 'auto' | 'full' | 'fit-content';
+  // width, height etc allow string values like "auto", "full", "fit-content"
+  // BUT we strictly type spacing values to BpkSpacingValue which excludes number
+  width?: ResponsiveValue<BpkSpacingValue | 'auto' | 'full' | 'fit-content'>;
+  height?: ResponsiveValue<BpkSpacingValue | 'auto' | 'full' | 'fit-content'>;
+  minWidth?: ResponsiveValue<BpkSpacingValue | 'auto' | 'full' | 'fit-content'>;
+  minHeight?: ResponsiveValue<BpkSpacingValue | 'auto' | 'full' | 'fit-content'>;
+  maxWidth?: ResponsiveValue<BpkSpacingValue | 'auto' | 'full' | 'fit-content'>;
+  maxHeight?: ResponsiveValue<BpkSpacingValue | 'auto' | 'full' | 'fit-content'>;
 
   // Border radius (can use spacing tokens)
-  borderRadius?: BpkSpacingValue;
-  borderTopLeftRadius?: BpkSpacingValue;
-  borderTopRightRadius?: BpkSpacingValue;
-  borderBottomLeftRadius?: BpkSpacingValue;
-  borderBottomRightRadius?: BpkSpacingValue;
+  borderRadius?: ResponsiveValue<BpkSpacingValue>;
+  borderTopLeftRadius?: ResponsiveValue<BpkSpacingValue>;
+  borderTopRightRadius?: ResponsiveValue<BpkSpacingValue>;
+  borderBottomLeftRadius?: ResponsiveValue<BpkSpacingValue>;
+  borderBottomRightRadius?: ResponsiveValue<BpkSpacingValue>;
 
   // Position props (can use spacing tokens)
-  top?: BpkSpacingValue;
-  right?: BpkSpacingValue;
-  bottom?: BpkSpacingValue;
-  left?: BpkSpacingValue;
+  top?: ResponsiveValue<BpkSpacingValue>;
+  right?: ResponsiveValue<BpkSpacingValue>;
+  bottom?: ResponsiveValue<BpkSpacingValue>;
+  left?: ResponsiveValue<BpkSpacingValue>;
 
   // Font size and line height (can use spacing tokens)
-  fontSize?: BpkSpacingValue;
-  lineHeight?: BpkSpacingValue;
+  fontSize?: ResponsiveValue<BpkSpacingValue>;
+  lineHeight?: ResponsiveValue<BpkSpacingValue>;
 }
 
 /**
@@ -86,14 +88,14 @@ export interface BpkSpacingProps {
  * All color props must use Backpack color tokens or special values
  */
 export interface BpkColorProps {
-  color?: BpkColorValue;
-  bg?: BpkColorValue;
-  backgroundColor?: BpkColorValue;
-  borderColor?: BpkColorValue;
-  borderTopColor?: BpkColorValue;
-  borderRightColor?: BpkColorValue;
-  borderBottomColor?: BpkColorValue;
-  borderLeftColor?: BpkColorValue;
+  color?: ResponsiveValue<BpkColorValue>;
+  bg?: ResponsiveValue<BpkColorValue>;
+  backgroundColor?: ResponsiveValue<BpkColorValue>;
+  borderColor?: ResponsiveValue<BpkColorValue>;
+  borderTopColor?: ResponsiveValue<BpkColorValue>;
+  borderRightColor?: ResponsiveValue<BpkColorValue>;
+  borderBottomColor?: ResponsiveValue<BpkColorValue>;
+  borderLeftColor?: ResponsiveValue<BpkColorValue>;
 }
 
 /**
@@ -104,4 +106,3 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps, BpkColorProps {
   // Explicitly exclude className
   className?: never;
 }
-

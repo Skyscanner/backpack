@@ -28,7 +28,7 @@ export default defineConfig({
   exclude: [],
 
   // The output directory for your css system
-  outdir: 'styled-system',
+  outdir: 'src/styled-system',
 
   // Use CSS-in-JS runtime
   jsxFramework: 'react',

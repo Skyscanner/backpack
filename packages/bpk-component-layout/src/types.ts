@@ -16,10 +16,11 @@
  * limitations under the License.
  */
 
-import type { BoxProps, FlexProps, GridProps, StackProps } from '@chakra-ui/react';
+import type { BoxProps, FlexProps, GridProps, StackProps, ConditionalValue as ResponsiveValue } from '@chakra-ui/react';
 import type { ReactNode } from 'react';
 
 import type { BpkCommonLayoutProps } from './commonProps';
+import type { BpkSpacingValue } from './tokens';
 
 /**
  * Base type that removes spacing/color props and className from Chakra UI props
@@ -33,33 +34,62 @@ type RemoveCommonProps<T> = Omit<
 >;
 
 /**
+ * Component-specific props for BpkBox
+ * Includes all Box props except those in BpkCommonLayoutProps
+ */
+export interface BpkBoxSpecificProps extends RemoveCommonProps<BoxProps> {}
+
+/**
  * Props for BpkBox component
  * Combines Box-specific props with Backpack common layout props
  */
-export interface BpkBoxProps extends BpkCommonLayoutProps, RemoveCommonProps<BoxProps> {
+export interface BpkBoxProps extends BpkCommonLayoutProps, BpkBoxSpecificProps {
   children?: ReactNode;
 }
+
+/**
+ * Component-specific props for BpkFlex
+ * Includes all Flex props except those in BpkCommonLayoutProps
+ */
+export interface BpkFlexSpecificProps extends RemoveCommonProps<FlexProps> {}
 
 /**
  * Props for BpkFlex component
  * Combines Flex-specific props with Backpack common layout props
  */
-export interface BpkFlexProps extends BpkCommonLayoutProps, RemoveCommonProps<FlexProps> {
+export interface BpkFlexProps extends BpkCommonLayoutProps, BpkFlexSpecificProps {
   children?: ReactNode;
 }
+
+/**
+ * Component-specific props for BpkGrid
+ * Includes all Grid props except those in BpkCommonLayoutProps
+ */
+export interface BpkGridSpecificProps extends RemoveCommonProps<GridProps> {}
 
 /**
  * Props for BpkGrid component
  * Combines Grid-specific props with Backpack common layout props
  */
-export interface BpkGridProps extends BpkCommonLayoutProps, RemoveCommonProps<GridProps> {
+export interface BpkGridProps extends BpkCommonLayoutProps, BpkGridSpecificProps {
   children?: ReactNode;
+}
+
+/**
+ * Component-specific props for BpkStack
+ * Includes all Stack props except those in BpkCommonLayoutProps
+ * Explicitly overrides spacing to enforce Backpack tokens
+ */
+export interface BpkStackSpecificProps extends Omit<RemoveCommonProps<StackProps>, 'spacing'> {
+  spacing?: ResponsiveValue<BpkSpacingValue>;
 }
 
 /**
  * Props for BpkStack component
  * Combines Stack-specific props with Backpack common layout props
  */
-export interface BpkStackProps extends BpkCommonLayoutProps, RemoveCommonProps<StackProps> {
+export interface BpkStackProps extends BpkCommonLayoutProps, BpkStackSpecificProps {
   children?: ReactNode;
 }
+
+export type { BpkCommonLayoutProps };

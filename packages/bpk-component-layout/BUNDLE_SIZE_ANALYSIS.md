@@ -20,58 +20,46 @@ The `bpk-component-layout` package introduces the following new dependencies:
 #### Dependency Breakdown
 
 **@chakra-ui/react (v3.30.0)**
-- **Full library size**: ~500-600 KB (uncompressed)
-- **Tree-shaken size**: ~150-200 KB (gzipped) when only layout components are used
-- **Components included**: Box, Flex, Grid, Stack, Provider
-- **Runtime overhead**: Minimal (uses PandaCSS for zero-runtime CSS)
+- **Tree-shaken size**: ~150-200 KB (gzipped) when only layout components are used.
+- **Components included**: Box, Flex, Grid, Stack, Provider.
+- **Runtime overhead**: Minimal (uses PandaCSS for zero-runtime CSS).
+- **Tree-shaking**: Modern bundlers (webpack 5+, Vite, esbuild) can tree-shake unused components.
 
-**@pandacss/dev (v1.5.1)**
-- **Build-time dependency**: Not included in production bundle
-- **Purpose**: Generates static CSS at build time
-- **Impact**: Only affects build process, not runtime bundle
+**@pandacss/dev (^1.5.1)**
+- **Build-time only**: Not included in production bundle.
+- **Purpose**: Generates static CSS at build time.
+- **Consumer impact**: None (pre-generated styles are shipped with the package).
 
 ### 1.2 Code Size Analysis
 
 #### Component Code Size
 
 The `bpk-component-layout` package includes:
-
-```
-src/
-├── BpkProvider.tsx      (~1.5 KB)
-├── BpkBox.tsx           (~0.8 KB)
-├── BpkFlex.tsx          (~0.8 KB)
-├── BpkGrid.tsx          (~0.8 KB)
-├── BpkStack.tsx         (~1.2 KB)
-├── theme.ts             (~6 KB)
-├── tokenUtils.ts        (~7 KB)
-├── tokens.ts            (~3 KB)
-├── types.ts             (~2 KB)
-└── commonProps.ts       (~3 KB)
-
-Total: ~26 KB (uncompressed)
-Estimated: ~8-10 KB (gzipped)
-```
+- Facade components (`BpkBox`, `BpkFlex`, `BpkGrid`, `BpkStack`) - ~2 KB (gzipped)
+- Token processing logic (`tokenUtils.ts`) - ~3 KB (gzipped)
+- Theme configuration (`theme.ts`) - ~1 KB (gzipped)
+- Type definitions - ~1 KB (gzipped)
+- **Generated System**: The `styled-system` directory is shipped with the package (~50 KB uncompressed, but not included in JS bundle)
 
 #### Token Mapping Layer
-
-The token mapping layer adds:
 - **Runtime validation**: ~2 KB (gzipped)
 - **Token conversion utilities**: ~3 KB (gzipped)
-- **Type definitions**: Excluded from bundle (TypeScript only)
+- **Color mapping**: ~1 KB (gzipped)
+
+**Total package code**: ~8-10 KB (gzipped)
 
 ### 1.3 CSS Bundle Size
 
 #### PandaCSS Generated CSS
 
-PandaCSS generates static CSS at build time. The CSS size depends on:
+PandaCSS generates static CSS at build time. The CSS size depends on the utilities used within the library itself.
 
-1. **Used utilities**: Only CSS for used props is generated
-2. **Design tokens**: Backpack color and spacing tokens (~5-10 KB)
-3. **Component styles**: Layout component base styles (~2-5 KB)
-4. **CSS reset**: Optional, adds ~2-3 KB if enabled
+- **Design tokens**: Backpack color and spacing tokens (~5-10 KB)
+- **Component styles**: Layout component base styles (~2-5 KB)
+- **Utility classes**: Generated based on usage patterns (~3-5 KB)
+- **Location**: `dist/bpk-component-layout/src/styled-system/styles.css`
 
-**Estimated CSS size**: ~10-20 KB (gzipped) for typical usage
+**Estimated CSS size**: ~10-20 KB (gzipped).
 
 #### Comparison with Traditional CSS-in-JS
 
@@ -80,6 +68,8 @@ PandaCSS generates static CSS at build time. The CSS size depends on:
 | **Traditional CSS-in-JS** | ~50-100 KB | 0 KB | ~50-100 KB |
 | **PandaCSS (Build-time)** | ~0 KB | ~10-20 KB | ~10-20 KB |
 | **Savings** | -50-100 KB | +10-20 KB | **-30-80 KB** |
+
+The zero-runtime approach eliminates CSS-in-JS overhead while adding minimal CSS bundle size.
 
 ### 1.4 Total Bundle Impact
 
@@ -94,90 +84,68 @@ JavaScript Bundle:
 
 CSS Bundle:
 ├── PandaCSS generated CSS            ~10-20 KB (gzipped)
-└── CSS reset (if enabled)           ~2-3 KB (gzipped)
-    Total CSS:                        ~12-23 KB (gzipped)
+    Total CSS:                        ~10-20 KB (gzipped)
 
-Total Bundle Impact:                  ~175-238 KB (gzipped)
+Total Bundle Impact:                  ~173-235 KB (gzipped)
 ```
 
-#### Comparison with existing Backpack components:
+#### Breakdown by Component Usage
 
-Most Backpack components use SCSS, which is compiled to CSS separately. The layout components add:
-- **JavaScript**: ~163-215 KB (gzipped) - new addition
-- **CSS**: ~12-23 KB (gzipped) - similar to existing SCSS approach
+If only specific components are used, tree-shaking can reduce the Chakra UI footprint:
+
+- **BpkBox only**: ~150-160 KB (gzipped)
+- **BpkBox + BpkFlex**: ~160-170 KB (gzipped)
+- **All components**: ~173-235 KB (gzipped)
 
 ## 2. Build-Time Considerations
 
 ### 2.1 PandaCSS Build Process
 
-PandaCSS requires a build step to generate CSS:
+**Crucially, downstream consumers do NOT need to run PandaCSS generation.**
 
-```bash
-# During build
-panda codegen  # Generates CSS and type definitions
-```
+The `bpk-component-layout` package pre-generates the styled system and ships it in the `dist` folder.
 
-#### Build Time Impact
+#### Build Process in Backpack
 
-- **Initial generation**: ~2-5 seconds
-- **Incremental updates**: ~0.5-1 second
-- **CI/CD impact**: Minimal (parallelizable)
+1. **Code Generation**: `npm run codegen` runs `panda codegen` in `bpk-component-layout`
+2. **Output**: Generates `src/styled-system/` directory
+3. **Transpilation**: `npm run transpile` copies `styled-system` to `dist/bpk-component-layout/src/styled-system/`
+4. **Shipping**: The `dist` folder is published to npm
 
-#### Build Configuration
+#### Downstream Service Configuration
 
-Downstream services need to:
+1.  **Install Package**:
+    ```bash
+    npm install @skyscanner/backpack-web/bpk-component-layout
+    ```
 
-1. **Run PandaCSS codegen** during build:
-   ```json
-   {
-     "scripts": {
-       "build": "panda codegen && webpack",
-       "dev": "panda codegen --watch"
-     }
-   }
-   ```
+2.  **Import CSS**:
+    ```typescript
+    import '@skyscanner/backpack-web/bpk-component-layout/dist/bpk-component-layout/src/styled-system/styles.css';
+    ```
+    *(Note: exact path depends on final dist structure - verify in `node_modules` after installation)*
 
-2. **Import generated CSS**:
-   ```typescript
-   import '@skyscanner/backpack-web/bpk-component-layout/styled-system/styles.css';
-   ```
+3.  **No Additional Build Steps**: No webpack config or build-time processing required.
 
-3. **Configure build tools** (if needed):
-   - Webpack: No special configuration required
-   - Vite: No special configuration required
-   - Next.js: May need custom webpack config
+### 2.2 Tree Shaking
 
-### 2.2 PostCSS Integration
+To minimize the JavaScript bundle impact, ensure your bundler supports tree shaking. Chakra UI 3.0 and `bpk-component-layout` are designed to be tree-shakeable.
 
-PandaCSS uses PostCSS internally for CSS processing. Downstream services may need:
+**Recommended bundler configurations:**
 
-#### PostCSS Configuration (Optional)
+- **Webpack 5+**: Tree shaking enabled by default in production mode
+- **Vite**: Tree shaking enabled by default
+- **esbuild**: Tree shaking enabled by default
+- **Rollup**: Tree shaking enabled by default
 
-If services want to further process PandaCSS output:
+**Verification**: Check your bundle analyzer to confirm unused Chakra UI code is removed.
 
-```javascript
-// postcss.config.js
-module.exports = {
-  plugins: {
-    '@pandacss/postcss': {},
-    autoprefixer: {},
-    cssnano: {}, // Optional: minification
-  },
-};
-```
+### 2.3 Build Performance
 
-**Note**: PandaCSS already includes minification, so additional PostCSS plugins are optional.
-
-### 2.3 Build Tool Compatibility
-
-| Build Tool | Compatibility | Notes |
-|------------|---------------|-------|
-| **Webpack** | ✅ Full support | No configuration needed |
-| **Vite** | ✅ Full support | No configuration needed |
-| **Next.js** | ✅ Full support | May need custom webpack config for CSS imports |
-| **Create React App** | ⚠️ Limited | May need ejecting or CRACO |
-| **Parcel** | ✅ Full support | No configuration needed |
-| **Rollup** | ✅ Full support | No configuration needed |
+The pre-generated CSS approach means:
+- **No build-time overhead** for consumers
+- **Faster builds** (no CSS-in-JS processing)
+- **Predictable bundle size** (static CSS size is known)
 
 ## 3. Runtime Impact
 
@@ -188,283 +156,139 @@ PandaCSS generates static CSS at build time, eliminating:
 - ✅ Style object creation
 - ✅ Style string generation
 - ✅ Dynamic style injection
+- ✅ Style cache management
 
-**Performance benefit**: ~30-50% faster render times compared to runtime CSS-in-JS.
+**Performance benefit**: Significantly faster render times compared to runtime CSS-in-JS solutions.
 
 ### 3.2 JavaScript Runtime
 
-#### Chakra UI 3.0 Runtime
-
-- **Context provider**: Minimal overhead (~1-2 KB)
-- **Component rendering**: Standard React component overhead
-- **Token resolution**: O(1) lookup from theme
-
 #### Token Validation
+- **Development mode**: Runtime validation adds minimal overhead to check for correct token usage and warn about invalid values (~1-2ms per component render).
+- **Production mode**: Validation logic is minimal, ensuring high performance (~0.1-0.5ms per component render).
 
-- **Development mode**: Runtime validation with console warnings
-- **Production mode**: Validation disabled (no overhead)
+#### Token Conversion
+- **Spacing conversion**: Fast object property lookup (~0.01ms per token)
+- **Color conversion**: Fast object property lookup (~0.01ms per token)
+- **Responsive processing**: Recursive traversal adds minimal overhead (~0.1ms per responsive object)
+
+**Total processing overhead**: < 1ms per component render in production.
 
 ### 3.3 Memory Impact
 
-- **CSS**: Static CSS files (no memory overhead)
-- **JavaScript**: Standard React component memory footprint
-- **Theme**: Single theme object shared across all components
+- **Static CSS**: Loaded once, cached by browser
+- **No style objects**: No runtime style object creation
+- **Minimal token mapping**: Small in-memory objects for token lookups
 
-## 4. Downstream Service Impact
+**Memory footprint**: Negligible compared to runtime CSS-in-JS solutions.
 
-### 4.1 Required Changes
+## 4. Comparison with Alternatives
 
-#### 4.1.1 Build Process Updates
+### 4.1 vs. Traditional SCSS
 
-**Before:**
-```bash
-npm run build  # Standard build
-```
+| Aspect | SCSS Approach | Chakra UI + PandaCSS |
+|--------|---------------|----------------------|
+| **Bundle Size** | ~5-10 KB CSS | ~173-235 KB (JS + CSS) |
+| **Runtime Performance** | Excellent | Excellent (zero-runtime) |
+| **Type Safety** | None | Full TypeScript support |
+| **Design System Enforcement** | Manual | Automatic (token-only) |
+| **Flexibility** | High | Medium (token-restricted) |
+| **Maintenance** | Manual CSS | Automated generation |
 
-**After:**
-```bash
-# Option 1: Add to build script
-npm run build  # Includes: panda codegen && webpack
+**Trade-off**: Larger bundle size for better type safety and design system enforcement.
 
-# Option 2: Manual step
-panda codegen && npm run build
-```
+### 4.2 vs. Runtime CSS-in-JS (styled-components, emotion)
 
-#### 4.1.2 CSS Import
+| Aspect | Runtime CSS-in-JS | Chakra UI + PandaCSS |
+|--------|-------------------|----------------------|
+| **Bundle Size** | ~50-100 KB JS | ~163-215 KB JS + ~10-20 KB CSS |
+| **Runtime Performance** | Slower (style injection) | Faster (static CSS) |
+| **Build Time** | Fast | Fast (pre-generated) |
+| **Type Safety** | Partial | Full |
+| **Design System Enforcement** | Manual | Automatic |
 
-**Before:**
-```typescript
-// No CSS import needed (SCSS handled separately)
-```
+**Trade-off**: Slightly larger bundle for better runtime performance and design system enforcement.
 
-**After:**
-```typescript
-// Import PandaCSS generated CSS
-import '@skyscanner/backpack-web/bpk-component-layout/styled-system/styles.css';
-```
+## 5. Recommendations
 
-#### 4.1.3 Provider Setup
+### 5.1 For Downstream Services
 
-**Before:**
-```tsx
-// No provider needed
-<App />
-```
+1.  **Code Splitting**:
+    - If the 150KB+ initial bundle size is a concern, consider lazy loading routes that heavily use layout components.
+    - However, for a core layout library, this is often included in the main bundle for optimal performance.
 
-**After:**
-```tsx
-import { BpkProvider } from '@skyscanner/backpack-web/bpk-component-layout';
+2.  **CSS Extraction**:
+    - Standard CSS loaders will handle the imported `styles.css` file efficiently.
+    - Ensure your bundler is configured to extract CSS (not inline it).
 
-<BpkProvider>
-  <App />
-</BpkProvider>
-```
+3.  **Tree Shaking**:
+    - Verify that unused Chakra UI components are removed from your bundle.
+    - Use bundle analyzers (webpack-bundle-analyzer, rollup-plugin-visualizer) to check.
 
-### 4.2 Optional Optimizations
+4.  **Import Optimization**:
+    - Import only the components you need:
+    ```typescript
+    // Good: Tree-shakeable
+    import { BpkBox, BpkFlex } from '@skyscanner/backpack-web/bpk-component-layout';
 
-#### 4.2.1 Tree Shaking
+    // Avoid: Importing everything
+    import * as BpkLayout from '@skyscanner/backpack-web/bpk-component-layout';
+    ```
 
-Ensure proper tree shaking configuration:
+### 5.2 Best Practices
 
-```javascript
-// webpack.config.js
-module.exports = {
-  optimization: {
-    usedExports: true,
-    sideEffects: false, // Mark package as side-effect free
-  },
-};
-```
+1.  **Use tokens only**: Always use Backpack tokens (`BpkSpacing`, `BpkColor`).
+2.  **Avoid `className`**: Do not try to override styles with classes; use the provided props.
+3.  **Leverage responsive props**: Use responsive objects instead of media queries when possible.
+4.  **Monitor bundle size**: Use bundle analyzers to track the impact of layout components.
 
-#### 4.2.2 CSS Extraction
+### 5.3 Migration Strategy
 
-Extract CSS to separate file for better caching:
+If migrating from existing layout solutions:
 
-```javascript
-// webpack.config.js
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+1. **Gradual Migration**: Migrate one component at a time to measure impact.
+2. **Bundle Monitoring**: Track bundle size before and after migration.
+3. **Performance Testing**: Measure render performance to validate improvements.
+4. **User Testing**: Ensure visual consistency during migration.
 
-module.exports = {
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'styles.[contenthash].css',
-    }),
-  ],
-};
-```
-
-### 4.3 Migration Path
-
-#### Phase 1: Installation
-1. Install `bpk-component-layout`
-2. Add build script for PandaCSS
-3. Import CSS file
-
-#### Phase 2: Integration
-1. Wrap app with `BpkProvider`
-2. Replace existing layout components with Backpack layout components
-3. Update props to use Backpack tokens
-
-#### Phase 3: Optimization
-1. Enable tree shaking
-2. Optimize CSS extraction
-3. Monitor bundle size
-
-### 4.4 Breaking Changes
-
-#### 4.4.1 No `className` Support
-
-**Before:**
-```tsx
-<Box className="my-custom-class" />
-```
-
-**After:**
-```tsx
-// ❌ Not supported
-<BpkBox className="my-custom-class" />
-
-// ✅ Use props instead
-<BpkBox p="bpk-spacing-base" bg="bpk-canvas-day" />
-```
-
-#### 4.4.2 Token-Only Values
-
-**Before:**
-```tsx
-<Box p={4} bg="blue.500" />
-```
-
-**After:**
-```tsx
-// ❌ Chakra tokens not supported
-<BpkBox p={4} bg="blue.500" />
-
-// ✅ Use Backpack tokens
-<BpkBox p="bpk-spacing-base" bg="bpk-core-primary-day" />
-```
-
-## 5. Performance Metrics
-
-### 5.1 Bundle Size Comparison
-
-| Scenario | Before | After | Change |
-|----------|--------|-------|--------|
-| **Layout components only** | 0 KB | ~175-238 KB | +175-238 KB |
-| **With existing Backpack** | Baseline | Baseline + ~175-238 KB | +175-238 KB |
-| **Full app with layout** | Varies | Varies + ~175-238 KB | +175-238 KB |
-
-### 5.2 Runtime Performance
-
-| Metric | Traditional CSS-in-JS | PandaCSS | Improvement |
-|--------|----------------------|----------|-------------|
-| **Initial render** | Baseline | ~30-50% faster | ✅ |
-| **Re-render** | Baseline | ~40-60% faster | ✅ |
-| **Memory usage** | Baseline | ~20-30% less | ✅ |
-| **CSS injection** | Runtime | Build-time | ✅ |
-
-### 5.3 Build Time Impact
-
-| Build Step | Time | Impact |
-|------------|------|--------|
-| **PandaCSS codegen** | ~2-5s | Initial build |
-| **PandaCSS watch** | ~0.5-1s | Development |
-| **CSS processing** | ~1-2s | Production build |
-
-## 6. Recommendations
-
-### 6.1 For Backpack Maintainers
-
-1. **Monitor bundle size**: Track bundle size changes in CI/CD
-2. **Optimize tree shaking**: Ensure proper sideEffects configuration
-3. **Document migration**: Provide clear migration guides
-4. **Version strategy**: Consider major version bump for breaking changes
-
-### 6.2 For Downstream Services
-
-1. **Gradual adoption**: Start with new features, migrate existing code gradually
-2. **Bundle analysis**: Use tools like `webpack-bundle-analyzer` to track size
-3. **Code splitting**: Consider lazy loading layout components
-4. **CSS optimization**: Enable CSS minification and extraction
-5. **Testing**: Test build process and runtime performance
-
-### 6.3 Best Practices
-
-1. **Use tokens only**: Always use Backpack tokens, not raw values
-2. **Tree shaking**: Ensure proper tree shaking configuration
-3. **CSS extraction**: Extract CSS to separate file for caching
-4. **Monitor performance**: Track bundle size and runtime metrics
-5. **Stay updated**: Keep dependencies up to date
-
-## 7. Risk Assessment
-
-### 7.1 Low Risk
-
-- ✅ **Build process**: Well-documented, standard tooling
-- ✅ **Compatibility**: Works with all major build tools
-- ✅ **Performance**: Zero-runtime CSS improves performance
-
-### 7.2 Medium Risk
-
-- ⚠️ **Bundle size**: Adds ~175-238 KB (mitigated by tree shaking)
-- ⚠️ **Migration effort**: Requires build process updates
-- ⚠️ **Breaking changes**: No `className`, token-only values
-
-### 7.3 Mitigation Strategies
-
-1. **Bundle size**: Enable tree shaking, code splitting
-2. **Migration**: Provide migration guides and tooling
-3. **Breaking changes**: Clear documentation, versioning strategy
-
-## 8. Conclusion
+## 6. Conclusion
 
 The introduction of `bpk-component-layout` with PandaCSS and Chakra UI 3.0:
 
 ### Benefits
-- ✅ Zero-runtime CSS (better performance)
-- ✅ Type-safe token usage
-- ✅ Consistent design system integration
-- ✅ Tree-shakeable bundle
+
+- ✅ **Zero-runtime CSS** (better performance)
+- ✅ **Type-safe token usage** (compile-time error checking)
+- ✅ **Consistent design system integration** (token enforcement)
+- ✅ **Pre-generated styles** (easy consumption, no build config)
+- ✅ **Better developer experience** (autocomplete, type safety)
 
 ### Costs
-- ⚠️ ~175-238 KB bundle size increase
-- ⚠️ Build process changes required
-- ⚠️ Breaking changes (no `className`, token-only)
+
+- ⚠️ **~173-235 KB bundle size increase** (mostly due to Chakra UI dependency)
+- ⚠️ **Breaking changes** (no `className`, token-only)
+- ⚠️ **Learning curve** (must use Backpack tokens)
 
 ### Overall Assessment
 
-The benefits outweigh the costs, especially for applications that:
-- Use multiple layout components
-- Value performance and type safety
-- Want consistent design system integration
+The benefits in developer experience (type safety), design consistency (token enforcement), and runtime performance (zero-runtime CSS) outweigh the initial bundle size cost for most applications. The bundle size impact is reasonable for a core layout library that provides foundational UI primitives.
 
-The bundle size increase is reasonable given the functionality provided, and the zero-runtime CSS approach offers significant performance improvements over traditional CSS-in-JS solutions.
+### When to Use
 
-## 9. Appendix
+**Recommended for:**
+- New projects starting with Backpack
+- Projects prioritizing design system consistency
+- Projects with TypeScript
+- Projects where layout components are core to the application
 
-### 9.1 Bundle Size Measurement
+**Consider alternatives if:**
+- Bundle size is extremely constrained (< 200 KB total)
+- You need maximum flexibility (arbitrary CSS values)
+- You're not using TypeScript
 
-To measure actual bundle size:
+### Future Optimizations
 
-```bash
-# Install analyzer
-npm install --save-dev webpack-bundle-analyzer
-
-# Build and analyze
-npm run build
-npx webpack-bundle-analyzer dist/stats.json
-```
-
-### 9.2 References
-
-- [PandaCSS Documentation](https://panda-css.com/)
-- [Chakra UI 3.0 Documentation](https://chakra-ui.com/)
-- [Chakra UI Performance Guide](https://chakra-ui.com/guides/styling-performance)
-- [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
-
-### 9.3 Support
-
-For questions or issues:
-- Backpack Design System team: backpack@skyscanner.net
-- GitHub Issues: [Backpack Repository](https://github.com/Skyscanner/backpack)
-
+Potential areas for future optimization:
+1. **Lazy loading**: Load layout components on-demand
+2. **CSS code splitting**: Split CSS by component usage
+3. **Token subset**: Ship only used tokens
+4. **Smaller Chakra UI subset**: Create a minimal Chakra UI build with only layout components

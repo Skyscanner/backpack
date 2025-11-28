@@ -44,6 +44,7 @@ import {
   BpkSpacingTokenExample,
   BpkColorTokenExample,
   BpkTokenCombinedExample,
+  BpkResponsiveOverrideExample,
   MixedExample,
 } from './examples';
 
@@ -103,6 +104,7 @@ export const StackSpacing = BpkStackSpacingExample;
 export const SpacingTokens = BpkSpacingTokenExample;
 export const ColorTokens = BpkColorTokenExample;
 export const CombinedTokens = BpkTokenCombinedExample;
+export const ResponsiveOverrides = BpkResponsiveOverrideExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
