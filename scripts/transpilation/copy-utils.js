@@ -47,3 +47,16 @@ styleFiles.forEach((styleFile) => {
 // eslint-disable-next-line no-console
 console.log('bpk-stylesheets copied.  👍');
 
+// eslint-disable-next-line no-console
+console.log('Copying bpk-component-layout styled-system...');
+
+if (!fs.existsSync('dist/bpk-component-layout/src/styled-system')) {
+  // Ensure the parent directory exists
+  execSync(`mkdir -p dist/bpk-component-layout/src`);
+  // Copy the entire styled-system directory
+  execSync(`cp -r packages/bpk-component-layout/src/styled-system dist/bpk-component-layout/src/styled-system`);
+}
+
+// eslint-disable-next-line no-console
+console.log('bpk-component-layout styled-system copied.  👍');
+
