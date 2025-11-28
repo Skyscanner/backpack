@@ -2,12 +2,12 @@ import { useState } from 'react';
 
 import { BpkButtonV2, BUTTON_TYPES } from '../../packages/bpk-component-button';
 import { BpkDropdownChip } from '../../packages/bpk-component-chip';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkText from '../../packages/bpk-component-text';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../packages/bpk-theming';
 
 const customTheme = {
-  'button-corner-radius': '999px',
+  'button-border-radius': '999px',
   'button-secondary-background-color': '#E3F0FF',
   'button-secondary-text-color': '#0062E3',
   'button-secondary-hover-background-color': '#B4D7FF',

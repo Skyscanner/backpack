@@ -41,7 +41,7 @@
   border: 0;
   @include utils.bpk-themeable-property(
       border-radius,
-      --bpk-button-corner-radius,
+      --bpk-button-border-radius,
       tokens.$bpk-button-border-radius
   );
   text-align: center;
