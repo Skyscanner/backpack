@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
-import { BpkButtonV2 } from '../../packages/bpk-component-button';
+import { BpkButtonV2, BUTTON_TYPES } from '../../packages/bpk-component-button';
 import { BpkDropdownChip } from '../../packages/bpk-component-chip';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkText from '../../packages/bpk-component-text';
 import BpkThemeProvider from '../../packages/bpk-theming';
 
 const customTheme = {
@@ -26,58 +27,47 @@ const customTheme = {
   'chip-default-selected-background-color': '#0062E3',
 };
 
-
 const DefaultExample = () => {
   const [selected, setSelected] = useState(false);
   const toggleSelected = () => setSelected(!selected);
 
-  return (<>
-    <div style={{ display: 'flex', gap: '.5rem', marginBottom: '1rem' }}>
-      <BpkButtonV2>Primary</BpkButtonV2>
-      <BpkButtonV2 type="secondary">Secondary</BpkButtonV2>
-      <BpkButtonV2 type="destructive">Destructive</BpkButtonV2>
-    </div>
-    <BpkThemeProvider theme={customTheme}
-                      themeAttributes={Object.keys(customTheme)}>
-      <div style={{ display: 'flex', gap: '.5rem', marginBottom: '1rem' }}>
+  const example = (
+    <>
+      <div style={{ display: 'flex', gap: '.5rem' }}>
         <BpkButtonV2>Primary</BpkButtonV2>
-        <BpkButtonV2 type="secondary">Secondary</BpkButtonV2>
-        <BpkButtonV2 type="destructive">Destructive</BpkButtonV2>
+        <BpkButtonV2 type={BUTTON_TYPES.secondary}>Secondary</BpkButtonV2>
+        <BpkButtonV2 type={BUTTON_TYPES.featured}>Featured</BpkButtonV2>
+        <BpkButtonV2 type={BUTTON_TYPES.destructive}>Destructive</BpkButtonV2>
       </div>
-    </BpkThemeProvider>
 
-
-    {/* eslint-disable-next-line backpack/use-tokens */}
-    <div style={{ display: 'flex', gap: '.5rem', padding: '.5rem', backgroundColor: '#EFF3F8' }}>
-      <BpkDropdownChip
-        accessibilityLabel="Toggle chip"
-        selected={selected}
-        onClick={toggleSelected}>London</BpkDropdownChip>
-      <BpkDropdownChip
-        accessibilityLabel="Toggle chip"
-        selected={!selected}
-        onClick={toggleSelected}>Barcelona</BpkDropdownChip>
-    </div>
-
-    <BpkThemeProvider theme={customTheme}
-                      themeAttributes={Object.keys(customTheme)}>
-      {/* eslint-disable-next-line backpack/use-tokens */}
-      <div style={{ display: 'flex', gap: '.5rem', padding: '.5rem', backgroundColor: '#EFF3F8' }}>
+      { }
+      <div style={{ display: 'flex', gap: '.5rem', marginTop: '1rem' }}>
         <BpkDropdownChip
           accessibilityLabel="Toggle chip"
           selected={selected}
           onClick={toggleSelected}>London</BpkDropdownChip>
-
         <BpkDropdownChip
           accessibilityLabel="Toggle chip"
           selected={!selected}
           onClick={toggleSelected}>Barcelona</BpkDropdownChip>
       </div>
-    </BpkThemeProvider>
-  </>);
+    </>
+  );
+
+  return (
+    <>
+      <div style={{ marginBottom: '2rem' }}>
+        <BpkText>Default</BpkText>
+        {example}
+      </div>
+
+      <BpkThemeProvider theme={customTheme}
+                        themeAttributes={Object.keys(customTheme)}>
+        <BpkText>Themed</BpkText>
+        {example}
+      </BpkThemeProvider>
+    </>);
 };
 
 
-export {
-  DefaultExample,
-};
+export default DefaultExample;
