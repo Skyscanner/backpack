@@ -18,11 +18,11 @@
 
 /**
  * Color Mapping Configuration
- * 
+ *
  * This file defines the mapping between Backpack color tokens and their actual values.
  * The mapping ensures that Backpack colors are correctly registered in Chakra UI's theme
  * and can be accessed via token paths like 'bpk.bpk-core-primary-day'.
- * 
+ *
  * All color values come from @skyscanner/bpk-foundations-web and are in RGB format.
  */
 
@@ -32,7 +32,7 @@ const bpkTokens = require('@skyscanner/bpk-foundations-web/tokens/base.es6');
 
 /**
  * Backpack Color Token to Value Mapping
- * 
+ *
  * This mapping contains all Backpack color tokens and their corresponding RGB values.
  * These values are used to populate Chakra UI's theme.colors.bpk object.
  */
@@ -65,7 +65,7 @@ export const BACKPACK_COLOR_MAPPING: Record<string, string> = {
 
 /**
  * Gets the Chakra UI token path for a Backpack color token
- * 
+ *
  * @param {string} bpkToken - Backpack color token (e.g., 'bpk-core-primary-day')
  * @returns {string} Chakra UI token path (e.g., 'bpk.bpk-core-primary-day')
  */
@@ -75,7 +75,7 @@ export function getChakraColorTokenPath(bpkToken: string): string {
 
 /**
  * Gets the actual color value for a Backpack color token
- * 
+ *
  * @param {string} bpkToken - Backpack color token (e.g., 'bpk-core-primary-day')
  * @returns {string | undefined} The actual color value (e.g., 'rgb(5, 32, 60)')
  */
@@ -85,7 +85,7 @@ export function getBackpackColorValue(bpkToken: string): string | undefined {
 
 /**
  * Validates that a Backpack color token exists in the mapping
- * 
+ *
  * @param {string} bpkToken - Backpack color token to validate
  * @returns {boolean} True if the token exists in the mapping
  */
