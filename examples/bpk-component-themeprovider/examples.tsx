@@ -21,7 +21,7 @@ const customTheme = {
 
   // Chip
   'chip-default-background-color': '#fff',
-  'chip-corner-radius': '999px',
+  'chip-border-radius': '999px',
   'chip-default-border-color': 'none',
   'chip-default-hover-border-color': '0 0 0 1px #0062E3 inset',
   'chip-default-selected-background-color': '#0062E3',

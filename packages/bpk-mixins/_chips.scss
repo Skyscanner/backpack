@@ -32,7 +32,7 @@
   border: none;
   @include utils.bpk-themeable-property(
       border-radius,
-      --bpk-chip-corner-radius,
+      --bpk-chip-border-radius,
       tokens.$bpk-border-radius-xs * 2
   );
   cursor: pointer;
