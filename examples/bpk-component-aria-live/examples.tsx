@@ -25,7 +25,6 @@ import BpkAriaLive, {
 import BpkChip from '../../packages/bpk-component-chip';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkCode } from '../../packages/bpk-component-code';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkFieldset from '../../packages/bpk-component-fieldset';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../packages/bpk-component-select';

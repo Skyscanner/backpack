@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable__bpk-mixins/tokens';
-@use '../../packages/unstable__bpk-mixins/scroll-indicators';
+@use '../../packages/bpk-mixins/tokens';
+@use '../../packages/bpk-mixins/scroll-indicators';
 
 .bpk-heading {
   margin-bottom: tokens.bpk-spacing-base();

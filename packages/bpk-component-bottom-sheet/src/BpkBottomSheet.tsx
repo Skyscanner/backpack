@@ -31,6 +31,23 @@ import STYLES from './BpkBottomSheet.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+export const PADDING_TYPE = {
+  none: 'none',
+  base: 'base',
+  lg: 'lg',
+  xxl: 'xxl',
+  xxxl: 'xxxl'
+}
+
+export type PaddingType = (typeof PADDING_TYPE)[keyof typeof PADDING_TYPE];
+
+export type PaddingStyles = {
+  top?: PaddingType,
+  start?: PaddingType,
+  end?: PaddingType,
+  bottom?: PaddingType,
+}
+
 interface CommonProps {
   actionText?: string;
   children: ReactNode;
@@ -52,10 +69,42 @@ interface CommonProps {
   title?: string;
   wide?: boolean;
   isOpen: boolean;
+  paddingStyles?: PaddingStyles;
 }
 
-export type Props = CommonProps &
-  ({ ariaLabelledby: string } | { ariaLabel: string });
+export type Props = CommonProps & ({ ariaLabelledby: string } | { ariaLabel: string; });
+
+const getContentStyles = (paddingStyles: PaddingStyles): string => {
+  const { 
+    bottom = PADDING_TYPE.lg,
+    end, 
+    start = PADDING_TYPE.lg, 
+    top = PADDING_TYPE.none 
+  } = paddingStyles;
+  
+  const classNames = ['bpk-bottom-sheet--content'];
+
+  // Add padding classes for each side if not 'none'
+  if (top !== PADDING_TYPE.none) {
+    classNames.push(`bpk-bottom-sheet--padding-${top}-top`);
+  }
+
+  if (bottom !== PADDING_TYPE.none) {
+    classNames.push(`bpk-bottom-sheet--padding-${bottom}-bottom`);
+  }
+
+  if (start !== PADDING_TYPE.none) {
+    classNames.push(`bpk-bottom-sheet--padding-${start}-start`);
+  }
+
+  // Handle end padding: use explicit 'end' value or fallback to 'start' value
+  const endPadding = end || start;
+  if (endPadding && endPadding !== PADDING_TYPE.none) {
+    classNames.push(`bpk-bottom-sheet--padding-${endPadding}-end`);
+  }
+
+  return getClassName(...classNames);
+};
 
 const BpkBottomSheet = ({
   actionText = '',
@@ -68,6 +117,12 @@ const BpkBottomSheet = ({
   isOpen,
   onAction = () => null,
   onClose,
+  paddingStyles = {
+    top: PADDING_TYPE.none,
+    start: PADDING_TYPE.lg,
+    end: PADDING_TYPE.lg,
+    bottom: PADDING_TYPE.lg
+  },
   title = '',
   wide = false,
   ...ariaProps
@@ -106,6 +161,8 @@ const BpkBottomSheet = ({
     wide && 'bpk-bottom-sheet--wide',
   );
 
+  const contentStyle = getContentStyles(paddingStyles);
+
   return (
     <BpkDialogWrapper
       {...ariaProps}
@@ -127,12 +184,13 @@ const BpkBottomSheet = ({
       }}
     >
       <>
-        <header className={getClassName('bpk-bottom-sheet--header')}>
+        <header className={getClassName('bpk-bottom-sheet--header-wrapper')}>
           <BpkNavigationBar
             id={headingId}
             title={title}
             titleTextStyle={TEXT_STYLES.label1}
             titleTagName={title ? 'h2' : 'span'}
+            className={getClassName('bpk-bottom-sheet--header')}
             leadingButton={
               <BpkCloseButton label={closeLabel} onClick={handleClose} />
             }
@@ -143,9 +201,7 @@ const BpkBottomSheet = ({
             }
           />
         </header>
-        <div className={getClassName('bpk-bottom-sheet--content')}>
-          {children}
-        </div>
+        <div className={contentStyle}>{children}</div>
       </>
     </BpkDialogWrapper>
   );
