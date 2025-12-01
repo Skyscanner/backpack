@@ -22,47 +22,92 @@ import { render } from '@testing-library/react';
 
 import BpkTableHeadCell from './BpkTableHeadCell';
 
-describe('BpkTableHeadCell', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(
-      <table>
-        <thead>
-          <tr>
-            <BpkTableHeadCell>Heading</BpkTableHeadCell>
-          </tr>
-        </thead>
-      </table>,
-    );
-    expect(asFragment()).toMatchSnapshot();
+const defaultClasses = ['bpk-table__cell', 'bpk-table__cell--head'];
+
+const renderHeadCell = (props = {}, content = 'Heading') => {
+  const { getByRole, ...testingLibraryUtils } = render(
+    <table>
+      <thead>
+        <tr>
+          <BpkTableHeadCell {...props}>{content}</BpkTableHeadCell>
+        </tr>
+      </thead>
+    </table>,
+  );
+  const cell = getByRole('columnheader', { name: content });
+  return { cell, ...testingLibraryUtils };
+};
+
+describe('BpkTableHeadCell', () => { 
+  it('should render heading cell with base classes', () => {
+    const { cell } = renderHeadCell();
+
+    expect(cell?.tagName).toBe('TH');
+    expect(cell).toHaveClass(...defaultClasses);
   });
 
-  it('should render correctly with custom class', () => {
-    const { asFragment } = render(
-      <table>
-        <thead>
-          <tr>
-            <BpkTableHeadCell className="my-custom-class">
-              Skyscanner
-            </BpkTableHeadCell>
-          </tr>
-        </thead>
-      </table>,
-    );
-    expect(asFragment()).toMatchSnapshot();
+  it('should apply custom class', () => {
+    const className = 'custom-class';
+    const expectedClasses = [...defaultClasses, className];
+
+    const { cell } = renderHeadCell({
+      className,
+    });
+
+    expect(cell?.tagName).toBe('TH');
+    expect(cell).toHaveClass(...expectedClasses);
   });
 
-  it('should render correctly with arbitrary props', () => {
-    const { asFragment } = render(
-      <table>
-        <thead>
-          <tr>
-            <BpkTableHeadCell id="my-custom-id" data-foo="bar">
-              Skyscanner
-            </BpkTableHeadCell>
-          </tr>
-        </thead>
-      </table>,
-    );
-    expect(asFragment()).toMatchSnapshot();
+  it('should forward arbitrary props', () => {
+    const expectedClasses = [...defaultClasses];
+
+    const { cell } = renderHeadCell({
+      id: 'custom-id',
+      'data-foo': 'bar',
+    });
+
+    expect(cell?.tagName).toBe('TH');
+    expect(cell).toHaveClass(...expectedClasses);
+    expect(cell).toHaveAttribute('id', 'custom-id');
+    expect(cell).toHaveAttribute('data-foo', 'bar');
+  });
+
+  describe('wordBreak prop', () => {
+    it('should not apply wordBreak class by default', () => {
+      const expectedClasses = [ ...defaultClasses ];
+  
+      // wordBreak prop omitted
+      const { cell } = renderHeadCell();
+  
+      expect(cell?.tagName).toBe('TH');
+      expect(cell).toHaveClass(...expectedClasses);
+      expect(cell).not.toHaveClass('bpk-table__cell--wordBreak');
+    });
+
+    it('should not apply wordBreak class when wordBreak is false', () => {
+      const expectedClasses = [ ...defaultClasses ];
+  
+      const { cell } = renderHeadCell({
+        wordBreak: false,
+      });
+  
+      expect(cell?.tagName).toBe('TH');
+      expect(cell).toHaveClass(...expectedClasses);
+      expect(cell).not.toHaveClass('bpk-table__cell--wordBreak');
+    });
+
+    it('should apply wordBreak class when wordBreak is true', () => {
+      const expectedClasses = [
+        ...defaultClasses,
+        'bpk-table__cell--wordBreak'
+      ];
+  
+      const { cell } = renderHeadCell({
+        wordBreak: true,
+      });
+  
+      expect(cell?.tagName).toBe('TH');
+      expect(cell).toHaveClass(...expectedClasses);
+    });
   });
 });

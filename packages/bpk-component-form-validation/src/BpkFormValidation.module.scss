@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/forms';
-@use '../../unstable__bpk-mixins/margins';
-@use '../../unstable__bpk-mixins/utils';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/forms';
+@use '../../bpk-mixins/margins';
+@use '../../bpk-mixins/utils';
 
 .bpk-form-validation {
   @include forms.bpk-form-validation;

@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import {
+  BpkButtonV2,
   BUTTON_TYPES,
   SIZE_TYPES,
-} from '../../packages/bpk-component-button/src/BpkButtonV2/common-types';
+} from '../../packages/bpk-component-button';
 import {
   withButtonAlignment,
   withLargeButtonAlignment,

@@ -18,5 +18,10 @@
 
 import BpkButton, {type Props} from './src/BpkButton';
 
+/**
+ * @deprecated BpkButtonPrimaryOnDark is deprecated and will be removed in a future major version. Please use BpkButtonV2 with type={BUTTON_TYPES.primaryOnDark} instead.
+ * @param {Props} props - Component props
+ * @returns {JSX.Element} Primary on dark button component
+ */
 const BpkButtonPrimaryOnDark = (props: Props) => <BpkButton {...props} primaryOnDark />
 export default BpkButtonPrimaryOnDark;

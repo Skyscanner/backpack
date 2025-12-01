@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../packages/unstable__bpk-mixins/tokens';
-@use '../../packages/unstable__bpk-mixins/radii';
-@use '../../packages/unstable__bpk-mixins/shadows';
+@use '../../packages/bpk-mixins/tokens';
+@use '../../packages/bpk-mixins/radii';
+@use '../../packages/bpk-mixins/shadows';
 
 .bpk-scrim-utils-example {
   &__dialog {

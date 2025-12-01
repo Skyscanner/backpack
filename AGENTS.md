@@ -19,7 +19,7 @@ This guide provides instructions and context for AI agents working with the Back
 - Each component lives in `packages/bpk-component-{name}/`
 - Components follow the pattern: `BpkComponentName`
 - All components are prefixed with `Bpk`
-- Examples: `BpkButton`, `BpkCard`, `BpkChip`
+- Examples: `BpkButtonV2`, `BpkCard`, `BpkChip`
 
 ### Package Organization
 ```
@@ -31,8 +31,8 @@ packages/
 ```
 
 ### File Naming Conventions
-- React components: PascalCase (e.g., `BpkButton.tsx`)
-- SCSS files: PascalCase (e.g., `BpkButton.module.scss`)
+- React components: PascalCase (e.g., `BpkButtonV2.tsx`)
+- SCSS files: PascalCase (e.g., `BpkButtonV2.module.scss`)
 - Test files: `{ComponentName}.test.tsx`
 - Story files: `{ComponentName}.stories.tsx`
 
@@ -126,7 +126,7 @@ Backpack uses design tokens and typography mixins for consistent styling across 
 
 ### Design Token Architecture
 
-Design tokens are centralized in `packages/unstable__bpk-mixins/_tokens.scss` which forwards all tokens from the foundations package:
+Design tokens are centralized in `packages/bpk-mixins/_tokens.scss` which forwards all tokens from the foundations package:
 
 ```scss
 @forward '@skyscanner/bpk-foundations-web/tokens/base.default';
@@ -137,13 +137,13 @@ Design tokens are centralized in `packages/unstable__bpk-mixins/_tokens.scss` wh
 Always import both tokens and typography at the top of your SCSS files:
 
 ```scss
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/typography';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/typography';
 ```
 
 ### Typography Mixins
 
-Backpack provides a comprehensive set of typography mixins for consistent text styling. Use these instead of setting font properties manually. There are more options available in `unstable__bpk-mixins/typography`.
+Backpack provides a comprehensive set of typography mixins for consistent text styling. Use these instead of setting font properties manually. There are more options available in `bpk-mixins/typography`.
 
 #### Text Size Mixins
 ```scss
@@ -171,16 +171,16 @@ Backpack provides a comprehensive set of typography mixins for consistent text s
   color: tokens.$bpk-text-secondary-day;
   color: tokens.$bpk-text-disabled-day;
   color: tokens.$bpk-text-on-dark-day;
-  
+
   // Background colors
   background-color: tokens.$bpk-canvas-day;
   background-color: tokens.$bpk-canvas-contrast-day;
   background-color: tokens.$bpk-surface-highlight-day;
-  
+
   // Brand colors
   background-color: tokens.$bpk-core-primary-day;
   background-color: tokens.$bpk-core-accent-day;
-  
+
   // Border colors
   border-color: tokens.$bpk-line-day;
   border-color: tokens.$bpk-line-on-dark-day;
@@ -194,11 +194,11 @@ Backpack provides a comprehensive set of typography mixins for consistent text s
   padding: tokens.bpk-spacing-base();     // 1rem (16px)
   margin: tokens.bpk-spacing-lg();        // 1.5rem (24px)
   gap: tokens.bpk-spacing-sm();           // 0.5rem (8px)
-  
+
   // Multiple values
   padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-base();
   margin: tokens.bpk-spacing-md() 0;
-  
+
   // Full spacing scale
   padding: tokens.bpk-spacing-none();     // 0
   padding: tokens.bpk-spacing-sm();       // 0.5rem
@@ -222,8 +222,8 @@ Backpack provides a comprehensive set of typography mixins for consistent text s
 ### Complete Component Example
 
 ```scss
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/typography';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/typography';
 
 .bpk-my-component {
   display: flex;
@@ -233,31 +233,31 @@ Backpack provides a comprehensive set of typography mixins for consistent text s
   border-radius: tokens.bpk-border-radius-md();
   border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
   box-shadow: tokens.bpk-box-shadow-sm();
-  
+
   &__title {
     @include typography.bpk-heading-3;
     color: tokens.$bpk-text-primary-day;
     margin-bottom: tokens.bpk-spacing-sm();
   }
-  
+
   &__body {
     @include typography.bpk-body-default;
     color: tokens.$bpk-text-secondary-day;
     margin-bottom: tokens.bpk-spacing-base();
   }
-  
+
   &__link {
     @include typography.bpk-link;
     @include typography.bpk-link-underlined;
   }
-  
+
   &--compact {
     padding: tokens.bpk-spacing-sm();
-    
+
     .bpk-my-component__title {
       @include typography.bpk-heading-4;
     }
-    
+
     .bpk-my-component__body {
       @include typography.bpk-caption;
     }
@@ -353,10 +353,10 @@ examples/bpk-component-example/
 ### Import Patterns
 ```typescript
 // Component imports
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import { BpkButtonV2 } from '@skyscanner/backpack-web/bpk-component-button';
 
 // Token imports
-@use '@skyscanner/backpack-web/unstable__bpk-mixins/tokens';
+@use '@skyscanner/backpack-web/bpk-mixins/tokens';
 ```
 
 This guide should help AI agents understand the structure, patterns, and conventions used in the Backpack Design System codebase.

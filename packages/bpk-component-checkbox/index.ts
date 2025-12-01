@@ -15,16 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkFieldset, {
-  type Props,
-  propTypes,
-  defaultProps,
-} from './src/BpkFieldset';
+import BpkCheckbox, { type Props as BpkCheckboxProps } from './src/BpkCheckbox';
 import themeAttributes from './src/themeAttributes';
 
-export type BpkFieldsetProps = Props;
+export type { BpkCheckboxProps };
+export default BpkCheckbox;
+export { themeAttributes };
 
-export default BpkFieldset;
-export { propTypes, defaultProps, themeAttributes };
+

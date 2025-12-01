@@ -27,15 +27,22 @@ import STYLES from './BpkTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = { children: Node, className: ?string };
+type Props = {
+  children: Node, 
+  className: ?string, 
+  wordBreak?: boolean
+};
 
-const BpkTableHeadCell = ({ children, className = null, ...rest }: Props) => {
+const BpkTableHeadCell = ({ children, className = null, wordBreak = false, ...rest }: Props) => {
 
-  const classNames = getClassName(
+  const classes = [
     'bpk-table__cell',
     'bpk-table__cell--head',
+    wordBreak && 'bpk-table__cell--wordBreak',
     className,
-  );
+  ];
+
+  const classNames = getClassName(...classes);
 
   return (
     <th className={classNames} {...rest}>
@@ -47,6 +54,7 @@ const BpkTableHeadCell = ({ children, className = null, ...rest }: Props) => {
 BpkTableHeadCell.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  wordBreak: PropTypes.bool,
 };
 
 export default BpkTableHeadCell;
