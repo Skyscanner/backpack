@@ -16,6 +16,11 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkFieldset, { type Props as BpkFieldsetProps } from './src/BpkFieldset';
+import themeAttributes from './src/themeAttributes';
 
-export default ['checkboxCheckedColor'];
+export type { BpkFieldsetProps };
+export { themeAttributes };
+export default BpkFieldset;
+
+

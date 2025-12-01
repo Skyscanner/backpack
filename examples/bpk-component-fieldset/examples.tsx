@@ -15,15 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
 import { cloneElement, Component } from 'react';
+import type { ChangeEvent, ReactElement } from 'react';
 
 import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
+  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from '../../packages/bpk-component-autosuggest';
-import BpkButton from '../../packages/bpk-component-button';
+import { BpkButtonV2 } from '../../packages/bpk-component-button';
 import { format } from '../../packages/bpk-component-calendar/src/date-utils';
 import {
   weekDays,
@@ -34,23 +34,31 @@ import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import BpkDatepicker from '../../packages/bpk-component-datepicker';
 import BpkFieldset, {
   type BpkFieldsetProps,
-  propTypes,
-  defaultProps,
 } from '../../packages/bpk-component-fieldset';
 import BpkInput, { INPUT_TYPES } from '../../packages/bpk-component-input';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../packages/bpk-component-select';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSplitInput from '../../packages/bpk-component-split-input';
 import BpkTextarea from '../../packages/bpk-component-textarea';
 import { cssModules } from '../../packages/bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const formatDate = (date) => format(date, 'dd/MM/yyyy');
+const formatDate = (date: Date) => format(date, 'dd/MM/yyyy');
 
-const offices = [
+type Office = {
+  name: string;
+  code: string;
+  country: string;
+  indent?: boolean;
+};
+
+const offices: Office[] = [
   {
     name: 'Barcelona',
     code: 'BCN',
@@ -104,7 +112,7 @@ const offices = [
   },
 ];
 
-const getSuggestions = (value) => {
+const getSuggestions = (value: string) => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
 
@@ -115,19 +123,17 @@ const getSuggestions = (value) => {
       );
 };
 
-const getSuggestionValue = (suggestion) =>
+const getSuggestionValue = (suggestion: { name: string; code: string }) =>
   `${suggestion.name} (${suggestion.code})`;
 
 let instances = 0;
 
-type AutosuggestState = {
-  value: string,
-  suggestions: Array<any>,
-};
-
-class Autosuggest extends Component<{}, AutosuggestState> {
-  constructor() {
-    super();
+class Autosuggest extends Component<
+  Record<string, never>,
+  { value: string; suggestions: Office[] }
+> {
+  constructor(props: Record<string, never>) {
+    super(props);
 
     instances += instances;
 
@@ -138,7 +144,7 @@ class Autosuggest extends Component<{}, AutosuggestState> {
   }
 
   onChange = (
-    e: SyntheticInputEvent<HTMLElement>,
+    _event: ChangeEvent<HTMLInputElement>,
     { newValue }: { newValue: string },
   ) => {
     this.setState({
@@ -181,7 +187,7 @@ class Autosuggest extends Component<{}, AutosuggestState> {
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
           onSuggestionsClearRequested={this.onSuggestionsClearRequested}
           getSuggestionValue={getSuggestionValue}
-          renderSuggestion={(suggestion) => (
+          renderSuggestion={(suggestion: Office) => (
             <BpkAutosuggestSuggestion
               value={getSuggestionValue(suggestion)}
               indent={suggestion.indent}
@@ -194,32 +200,36 @@ class Autosuggest extends Component<{}, AutosuggestState> {
   }
 }
 
-type FieldsetProps = {
-  ...$Exact<BpkFieldsetProps>,
-  validStates: Array<mixed>,
+type FieldsetContainerProps = {
+  validStates: Array<boolean | null>;
+  isCheckbox?: boolean;
+  disabled?: boolean;
+  label?: string;
+  validationMessage?: string;
+  description?: string;
+  required?: boolean;
+  className?: string | null;
+  children: ReactElement;
 };
 
-type FieldsetState = {
-  value: string,
-  checked: boolean,
-  validState: any,
-  valueDate: ?Date,
+type FieldsetContainerState = {
+  value: string;
+  checked: boolean;
+  validState: number;
+  valueDate: Date | null;
 };
 
-class FieldsetContainer extends Component<FieldsetProps, FieldsetState> {
-  static propTypes = {
-    ...propTypes,
-    validStates: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
-  };
-
+class FieldsetContainer extends Component<
+  FieldsetContainerProps,
+  FieldsetContainerState
+> {
   static defaultProps = {
-    ...defaultProps,
     isCheckbox: false,
     disabled: false,
   };
 
-  constructor() {
-    super();
+  constructor(props: FieldsetContainerProps) {
+    super(props);
 
     this.state = {
       value: '',
@@ -229,11 +239,20 @@ class FieldsetContainer extends Component<FieldsetProps, FieldsetState> {
     };
   }
 
-  onChange = (e: SyntheticInputEvent<HTMLElement>) => {
-    this.setState({
-      value: e.target.value,
-      checked: e.target.checked,
-    });
+  onChange = (
+    e: ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    const { value } = e.target;
+
+    this.setState((prevState) => ({
+      value,
+      checked:
+        'checked' in e.target && typeof e.target.checked === 'boolean'
+          ? e.target.checked
+          : prevState.checked,
+    }));
   };
 
   onDateSelect = (dt: Date) => {
@@ -269,11 +288,12 @@ class FieldsetContainer extends Component<FieldsetProps, FieldsetState> {
   render() {
     const { children, className, isCheckbox, validStates, ...rest } =
       this.props;
-    const valid = validStates[this.state.validState];
+    const { validState, value, valueDate } = this.state;
+    const valid = validStates[validState];
 
     const dynamicProps = isCheckbox
       ? { checked: this.state.checked }
-      : { value: this.state.value, date: this.state.valueDate, valid };
+      : { value, date: valueDate, valid };
 
     const dynamicFieldsetProps = isCheckbox ? { valid } : {};
 
@@ -284,21 +304,22 @@ class FieldsetContainer extends Component<FieldsetProps, FieldsetState> {
     });
 
     const classNames = getClassName('bpk-fieldsets__fieldset', className);
+
+    const fieldsetProps = {
+      className: classNames,
+      isCheckbox,
+      valid,
+      ...rest,
+      ...dynamicFieldsetProps,
+      children: clonedChildren,
+    } as BpkFieldsetProps;
+
     return (
       <div className={getClassName('bpk-fieldsets__container')}>
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-        <BpkFieldset
-          className={classNames}
-          isCheckbox={isCheckbox}
-          valid={valid}
-          {...rest}
-          {...dynamicFieldsetProps}
-        >
-          {clonedChildren}
-        </BpkFieldset>
+        <BpkFieldset {...fieldsetProps} />
         {!this.props.disabled && (
           <div className={getClassName('bpk-fieldsets__toggle')}>
-            <BpkButton onClick={this.toggleStates}>Toggle states</BpkButton>
+            <BpkButtonV2 onClick={this.toggleStates}>Toggle states</BpkButtonV2>
           </div>
         )}
       </div>
@@ -364,7 +385,6 @@ const DatepickerExample = () => {
     >
       <BpkDatepicker
         id="date_input"
-        name="date"
         closeButtonText="Close"
         daysOfWeek={weekDays}
         changeMonthLabel="Change month"
@@ -395,7 +415,6 @@ const TextareaExample = () => (
       id="textarea"
       name="textarea"
       value=""
-      placeholder={null}
       onChange={() => null}
     />
   </FieldsetContainer>
@@ -541,3 +560,5 @@ export {
   MixedExample,
   SplitInputExample,
 };
+
+

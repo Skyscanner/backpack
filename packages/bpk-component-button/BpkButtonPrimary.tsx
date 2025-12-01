@@ -18,5 +18,10 @@
 
 import BpkButton, {type Props} from './src/BpkButton';
 
+/**
+ * @deprecated BpkButtonPrimary is deprecated and will be removed in a future major version. Please use BpkButtonV2 with type={BUTTON_TYPES.primary} instead.
+ * @param {Props} props - Component props
+ * @returns {JSX.Element} Primary button component
+ */
 const BpkButtonPrimary = (props: Props) => <BpkButton {...props} />
 export default BpkButtonPrimary;

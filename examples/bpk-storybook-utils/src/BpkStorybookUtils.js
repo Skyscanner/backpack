@@ -24,7 +24,7 @@ let action =
     console.info(args);
 
 try {
-  const storybookAction = require('@storybook/addon-actions').action;
+  const storybookAction = require('storybook/actions').action;
   if (storybookAction) {
     action = storybookAction;
   }
