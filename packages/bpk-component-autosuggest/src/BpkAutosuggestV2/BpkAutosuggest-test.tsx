@@ -107,7 +107,7 @@ describe('BpkAutosuggest', () => {
       await user.click(screen.getAllByRole('option')[0]);
 
       expect(props.onSuggestionSelected).toHaveBeenCalledWith({
-        inputValue: 'Lo',
+        inputValue: 'London',
         suggestion: suggestions[0],
       });
     });
