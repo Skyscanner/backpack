@@ -16,14 +16,13 @@
  * limitations under the License.
  */
 
-import { Box } from '@chakra-ui/react';
-
+import { Box } from './styled-system/jsx';
 import { processBpkProps } from './tokenUtils';
 
 import type { BpkBoxProps } from './types';
 
 export const BpkBox = ({ children, ...props }: BpkBoxProps) => {
-  // Process props to convert Backpack tokens to Chakra UI format
+  // Process props to convert Backpack tokens to runtime style props
   const processedProps = processBpkProps(props);
 
   // className is explicitly excluded from props to prevent style overrides

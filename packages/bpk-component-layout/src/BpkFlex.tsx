@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-import { Flex } from '@chakra-ui/react';
+import { Flex } from './styled-system/jsx';
 
 import { processBpkProps } from './tokenUtils';
 import type { BpkFlexProps } from './types';
 
 export const BpkFlex = ({ children, ...props }: BpkFlexProps) => {
-  // Process props to convert Backpack tokens to Chakra UI format
+  // Process props to convert Backpack tokens to runtime style props
   const processedProps = processBpkProps(props);
 
   // className is explicitly excluded from props to prevent style overrides

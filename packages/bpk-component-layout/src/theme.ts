@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { defineConfig } from '@chakra-ui/react';
-
 // Import color mapping
 import { BACKPACK_COLOR_MAPPING } from './colorMapping';
 
@@ -26,7 +24,7 @@ import { BACKPACK_COLOR_MAPPING } from './colorMapping';
 // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
 const bpkTokens = require('@skyscanner/bpk-foundations-web/tokens/base.es6');
 
-// Extract color tokens (keeping for backward compatibility)
+// Extract breakpoint tokens (kept for potential future use)
 const {
   breakpoints,
 } = bpkTokens;
@@ -48,17 +46,9 @@ const spacingXl = '2rem';
 const spacingXxl = '2.5rem';
 
 /**
- * Backpack Theme Configuration for Chakra UI
- *
- * This theme maps Backpack design tokens from @skyscanner/bpk-foundations-web
- * to Chakra UI's theme structure.
+ * Maps Backpack spacing tokens to actual rem values.
+ * These values are used by tokenUtils to convert spacing tokens to concrete CSS values.
  */
-
-/**
- * Maps Backpack spacing tokens to actual rem values
- * These come directly from @skyscanner/bpk-foundations-web
- */
-// Spacing tokens - directly imported from foundations
 const spacingMap: Record<string, { value: string }> = {
   'bpk-spacing-none': { value: '0' },
   'bpk-spacing-sm': { value: spacingSm },
@@ -70,17 +60,14 @@ const spacingMap: Record<string, { value: string }> = {
 };
 
 /**
- * Maps Backpack color tokens to actual color values
- * These come directly from @skyscanner/bpk-foundations-web
- *
- * Uses the centralized color mapping from colorMapping.ts to ensure consistency
+ * Maps Backpack color tokens to actual color values.
+ * Uses the centralized color mapping from colorMapping.ts to ensure consistency.
  */
 const colorMap: Record<string, string> = BACKPACK_COLOR_MAPPING;
 
 /**
- * Maps Backpack breakpoint tokens to media query values
- * These come directly from @skyscanner/bpk-foundations-web
- * We map them to simpler keys (mobile, tablet, etc.) for easier usage in responsive props
+ * Maps Backpack breakpoint tokens to media query values.
+ * These are kept for potential future use with responsive helpers.
  *
  * Backpack provides 6 standard breakpoints which we map as follows:
  */
@@ -94,23 +81,23 @@ const breakpointMap: Record<string, string> = {
 };
 
 /**
- * Exports color map for use in tokenUtils
- * This allows tokenUtils to look up actual color values
+ * Exports color map for use in tokenUtils.
+ * This allows tokenUtils to look up actual color values.
  */
 export function getColorMap(): Record<string, string> {
   return { ...colorMap };
 }
 
 /**
- * Gets the actual color value for a Backpack color token
+ * Gets the actual color value for a Backpack color token.
  */
 export function getColorValue(token: string): string | undefined {
   return colorMap[token];
 }
 
 /**
- * Exports spacing map for use in tokenUtils
- * This allows tokenUtils to look up actual spacing values
+ * Exports spacing map for use in tokenUtils.
+ * This allows tokenUtils to look up actual spacing values.
  */
 export function getSpacingMap(): Record<string, string> {
   // Return simple string values for backward compatibility with utilities
@@ -122,39 +109,13 @@ export function getSpacingMap(): Record<string, string> {
 }
 
 /**
- * Gets the actual spacing value for a Backpack spacing token
+ * Gets the actual spacing value for a Backpack spacing token.
  */
 export function getSpacingValue(token: string): string | undefined {
   return spacingMap[token]?.value;
 }
 
-/**
- * Creates Chakra UI config with Backpack token mappings
- * Uses defineConfig for proper typing and structure
- */
-export function createBpkConfig() {
-  // Convert color map to Chakra UI token format { value: ... }
-  const colors: Record<string, { value: string }> = {};
-  Object.entries(colorMap).forEach(([token, value]) => {
-    colors[token] = { value };
-  });
-
-  // Convert breakpoint map to Chakra UI format
-  // Breakpoints in Chakra v3 are typically simple strings in the breakpoints object
-  const breakpoints: Record<string, string> = {};
-  Object.entries(breakpointMap).forEach(([token, value]) => {
-    breakpoints[token] = value;
-  });
-
-  return defineConfig({
-    theme: {
-      tokens: {
-        spacing: spacingMap,
-        colors: {
-          bpk: colors,
-        },
-      },
-      breakpoints,
-    },
-  });
+// Exported for completeness in case responsive helpers need direct access.
+export function getBreakpointMap(): Record<string, string> {
+  return { ...breakpointMap };
 }

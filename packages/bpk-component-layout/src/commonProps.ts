@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
-import type { ConditionalValue as ResponsiveValue } from '@chakra-ui/react';
+import type { ConditionalValue } from './styled-system/types';
 import type { BpkSpacingValue, BpkColorValue } from './tokens';
+
+type ResponsiveValue<T> = ConditionalValue<T>;
 
 /**
  * Common spacing-related props shared by all Backpack layout components

@@ -2,33 +2,19 @@
 
 ## Executive Summary
 
-This document analyzes the bundle size impact and downstream service implications of introducing `bpk-component-layout` with PandaCSS and Chakra UI 3.0 integration. The analysis covers JavaScript bundle size, CSS generation, build-time considerations, and recommendations for downstream consumers.
+This document analyzes the bundle size impact and downstream service implications of introducing `bpk-component-layout` with PandaCSS styled-system integration (no Chakra UI runtime). The analysis covers JavaScript bundle size, CSS generation, build-time considerations, and recommendations for downstream consumers.
 
 ## 1. Bundle Size Analysis
 
 ### 1.1 New Dependencies
 
-The `bpk-component-layout` package introduces the following new dependencies:
+The `bpk-component-layout` package introduces the following new dependency:
 
-#### Production Dependencies
+#### Production / Build-Time Dependencies
 
 | Package | Version | Estimated Size | Notes |
 |---------|---------|----------------|-------|
-| `@chakra-ui/react` | ^3.30.0 | ~150-200 KB (gzipped) | Core Chakra UI library with tree-shaking support |
-| `@pandacss/dev` | ^1.5.1 | Build-time only | Not included in production bundle |
-
-#### Dependency Breakdown
-
-**@chakra-ui/react (v3.30.0)**
-- **Tree-shaken size**: ~150-200 KB (gzipped) when only layout components are used.
-- **Components included**: Box, Flex, Grid, Stack, Provider.
-- **Runtime overhead**: Minimal (uses PandaCSS for zero-runtime CSS).
-- **Tree-shaking**: Modern bundlers (webpack 5+, Vite, esbuild) can tree-shake unused components.
-
-**@pandacss/dev (^1.5.1)**
-- **Build-time only**: Not included in production bundle.
-- **Purpose**: Generates static CSS at build time.
-- **Consumer impact**: None (pre-generated styles are shipped with the package).
+| `@pandacss/dev` | ^1.5.1 | Build-time only | Not included in production bundle (used to generate static CSS and styled-system artifacts) |
 
 ### 1.2 Code Size Analysis
 
@@ -37,7 +23,7 @@ The `bpk-component-layout` package introduces the following new dependencies:
 The `bpk-component-layout` package includes:
 - Facade components (`BpkBox`, `BpkFlex`, `BpkGrid`, `BpkStack`) - ~2 KB (gzipped)
 - Token processing logic (`tokenUtils.ts`) - ~3 KB (gzipped)
-- Theme configuration (`theme.ts`) - ~1 KB (gzipped)
+- Token mapping configuration (`theme.ts`) - ~1 KB (gzipped)
 - Type definitions - ~1 KB (gzipped)
 - **Generated System**: The `styled-system` directory is shipped with the package (~50 KB uncompressed, but not included in JS bundle)
 
@@ -77,25 +63,16 @@ The zero-runtime approach eliminates CSS-in-JS overhead while adding minimal CSS
 
 ```
 JavaScript Bundle:
-├── @chakra-ui/react (tree-shaken)    ~150-200 KB (gzipped)
 ├── bpk-component-layout code         ~8-10 KB (gzipped)
 └── Token utilities                   ~5 KB (gzipped)
-    Total JS:                         ~163-215 KB (gzipped)
+    Total JS:                         ~13-15 KB (gzipped)
 
 CSS Bundle:
 ├── PandaCSS generated CSS            ~10-20 KB (gzipped)
     Total CSS:                        ~10-20 KB (gzipped)
 
-Total Bundle Impact:                  ~173-235 KB (gzipped)
+Total Bundle Impact:                  ~23-35 KB (gzipped)
 ```
-
-#### Breakdown by Component Usage
-
-If only specific components are used, tree-shaking can reduce the Chakra UI footprint:
-
-- **BpkBox only**: ~150-160 KB (gzipped)
-- **BpkBox + BpkFlex**: ~160-170 KB (gzipped)
-- **All components**: ~173-235 KB (gzipped)
 
 ## 2. Build-Time Considerations
 
@@ -198,15 +175,15 @@ PandaCSS generates static CSS at build time, eliminating:
 
 ### 4.2 vs. Runtime CSS-in-JS (styled-components, emotion)
 
-| Aspect | Runtime CSS-in-JS | Chakra UI + PandaCSS |
-|--------|-------------------|----------------------|
-| **Bundle Size** | ~50-100 KB JS | ~163-215 KB JS + ~10-20 KB CSS |
+| Aspect | Runtime CSS-in-JS | PandaCSS styled-system |
+|--------|-------------------|------------------------|
+| **Bundle Size** | ~50-100 KB JS | ~13-15 KB JS + ~10-20 KB CSS |
 | **Runtime Performance** | Slower (style injection) | Faster (static CSS) |
 | **Build Time** | Fast | Fast (pre-generated) |
 | **Type Safety** | Partial | Full |
 | **Design System Enforcement** | Manual | Automatic |
 
-**Trade-off**: Slightly larger bundle for better runtime performance and design system enforcement.
+**Trade-off**: Static CSS moves some weight to the CSS bundle while significantly improving runtime performance and design system enforcement.
 
 ## 5. Recommendations
 
@@ -252,7 +229,7 @@ If migrating from existing layout solutions:
 
 ## 6. Conclusion
 
-The introduction of `bpk-component-layout` with PandaCSS and Chakra UI 3.0:
+The introduction of `bpk-component-layout` with PandaCSS styled-system:
 
 ### Benefits
 
@@ -264,7 +241,7 @@ The introduction of `bpk-component-layout` with PandaCSS and Chakra UI 3.0:
 
 ### Costs
 
-- ⚠️ **~173-235 KB bundle size increase** (mostly due to Chakra UI dependency)
+- ⚠️ **~23-35 KB bundle size increase**
 - ⚠️ **Breaking changes** (no `className`, token-only)
 - ⚠️ **Learning curve** (must use Backpack tokens)
 

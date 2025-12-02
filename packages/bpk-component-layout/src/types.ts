@@ -16,11 +16,19 @@
  * limitations under the License.
  */
 
-import type { BoxProps, FlexProps, GridProps, StackProps, ConditionalValue as ResponsiveValue } from '@chakra-ui/react';
 import type { ReactNode } from 'react';
 
+import type {
+  BoxProps as StyledBoxProps,
+  FlexProps as StyledFlexProps,
+  GridProps as StyledGridProps,
+  StackProps as StyledStackProps,
+} from './styled-system/jsx';
+import type { ConditionalValue } from './styled-system/types';
 import type { BpkCommonLayoutProps } from './commonProps';
 import type { BpkSpacingValue } from './tokens';
+
+type ResponsiveValue<T> = ConditionalValue<T>;
 
 /**
  * Base type that removes spacing/color props and className from Chakra UI props
@@ -37,7 +45,7 @@ type RemoveCommonProps<T> = Omit<
  * Component-specific props for BpkBox
  * Includes all Box props except those in BpkCommonLayoutProps
  */
-export interface BpkBoxSpecificProps extends RemoveCommonProps<BoxProps> {}
+export interface BpkBoxSpecificProps extends RemoveCommonProps<StyledBoxProps> {}
 
 /**
  * Props for BpkBox component
@@ -51,7 +59,7 @@ export interface BpkBoxProps extends BpkCommonLayoutProps, BpkBoxSpecificProps {
  * Component-specific props for BpkFlex
  * Includes all Flex props except those in BpkCommonLayoutProps
  */
-export interface BpkFlexSpecificProps extends RemoveCommonProps<FlexProps> {}
+export interface BpkFlexSpecificProps extends RemoveCommonProps<StyledFlexProps> {}
 
 /**
  * Props for BpkFlex component
@@ -65,7 +73,7 @@ export interface BpkFlexProps extends BpkCommonLayoutProps, BpkFlexSpecificProps
  * Component-specific props for BpkGrid
  * Includes all Grid props except those in BpkCommonLayoutProps
  */
-export interface BpkGridSpecificProps extends RemoveCommonProps<GridProps> {}
+export interface BpkGridSpecificProps extends RemoveCommonProps<StyledGridProps> {}
 
 /**
  * Props for BpkGrid component
@@ -80,7 +88,7 @@ export interface BpkGridProps extends BpkCommonLayoutProps, BpkGridSpecificProps
  * Includes all Stack props except those in BpkCommonLayoutProps
  * Explicitly overrides spacing to enforce Backpack tokens
  */
-export interface BpkStackSpecificProps extends Omit<RemoveCommonProps<StackProps>, 'spacing'> {
+export interface BpkStackSpecificProps extends Omit<RemoveCommonProps<StyledStackProps>, 'spacing'> {
   spacing?: ResponsiveValue<BpkSpacingValue>;
 }
 

@@ -1,6 +1,6 @@
 # bpk-component-layout
 
-Backpack layout primitives built on Chakra UI 3.0 with PandaCSS for zero-runtime CSS generation.
+Backpack layout primitives built on PandaCSS styled-system for zero-runtime CSS generation (no Chakra UI runtime).
 
 ## Installation
 
@@ -14,7 +14,6 @@ npm install @skyscanner/backpack-web/bpk-component-layout
 
 - **React**: `17.0.2 - 18.3.1` (peer dependency)
 - **React DOM**: `17.0.2 - 18.3.1` (peer dependency)
-- **@chakra-ui/react**: `^3.30.0` (included)
 - **@pandacss/dev**: `^1.5.1` (build-time only, not included in production bundle)
 
 ### CSS Import
@@ -31,7 +30,7 @@ import '@skyscanner/backpack-web/bpk-component-layout/dist/bpk-component-layout/
 
 ### 1. Wrap your app with BpkProvider
 
-The `BpkProvider` sets up the Chakra UI system with Backpack themes. It is **required** for layout components to function correctly.
+The `BpkProvider` is kept for API compatibility. Layout components are powered by PandaCSS styled-system and **do not require** a runtime styling context; the provider simply renders its children.
 
 ```tsx
 import { BpkProvider } from '@skyscanner/backpack-web/bpk-component-layout';
@@ -77,7 +76,7 @@ A basic container component for layout and styling.
 
 **Common Props**: All spacing and color props (see [Common Props](#common-props))
 
-**Component-Specific Props**: All Chakra UI `Box` props except spacing/color props and `className`
+**Component-Specific Props**: All Box layout props supported by the underlying PandaCSS styled-system `Box`, except spacing/color props and `className`
 
 ```tsx
 <BpkBox
@@ -96,7 +95,7 @@ A flexbox container component.
 
 **Common Props**: All spacing and color props (see [Common Props](#common-props))
 
-**Component-Specific Props**: All Chakra UI `Flex` props (e.g., `direction`, `align`, `justify`, `wrap`) except spacing/color props and `className`
+**Component-Specific Props**: All Flex layout props supported by the underlying PandaCSS styled-system `Flex` (e.g., `direction`, `align`, `justify`, `wrap`) except spacing/color props and `className`
 
 ```tsx
 <BpkFlex
@@ -116,7 +115,7 @@ A grid container component.
 
 **Common Props**: All spacing and color props (see [Common Props](#common-props))
 
-**Component-Specific Props**: All Chakra UI `Grid` props (e.g., `templateColumns`, `templateRows`, `autoFlow`) except spacing/color props and `className`
+**Component-Specific Props**: All Grid layout props supported by the underlying PandaCSS styled-system `Grid` (e.g., `templateColumns`, `templateRows`, `autoFlow`) except spacing/color props and `className`
 
 ```tsx
 <BpkGrid templateColumns="repeat(3, 1fr)" gap={BpkSpacing.Base}>
@@ -134,7 +133,7 @@ Stack components for vertical or horizontal layouts with consistent spacing.
 
 **Component-Specific Props**:
 - `spacing`: **Required** - Must use `BpkSpacing` tokens (enforced at type level)
-- All other Chakra UI `Stack` props except spacing/color props and `className`
+- All other Stack layout props supported by the underlying PandaCSS styled-system `Stack` except spacing/color props and `className`
 
 ```tsx
 // Vertical stack (default)
@@ -292,7 +291,7 @@ Breakpoint tokens are used for responsive overrides. The system supports 6 Backp
 
 ### Responsive Overrides
 
-You can use standard Chakra UI responsive object syntax with Backpack tokens. This allows you to change tokens based on breakpoints.
+You can use standard responsive object syntax (as supported by PandaCSS styled-system) with Backpack tokens. This allows you to change tokens based on breakpoints.
 
 **Simplified Breakpoint Keys:** `base`, `mobile`, `tablet`, `desktop`, `large-desktop`.
 

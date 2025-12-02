@@ -16,14 +16,14 @@
  * limitations under the License.
  */
 
-import { Stack, HStack, VStack } from '@chakra-ui/react';
+import { Stack, HStack, VStack } from './styled-system/jsx';
 
 import { processBpkProps } from './tokenUtils';
 
 import type { BpkStackProps } from './types';
 
 export const BpkStack = ({ children, ...props }: BpkStackProps) => {
-  // Process props to convert Backpack tokens to Chakra UI format
+  // Process props to convert Backpack tokens to runtime style props
   const processedProps = processBpkProps(props);
 
   // className is explicitly excluded from props to prevent style overrides
@@ -31,7 +31,7 @@ export const BpkStack = ({ children, ...props }: BpkStackProps) => {
 };
 
 export const BpkHStack = ({ children, ...props }: BpkStackProps) => {
-  // Process props to convert Backpack tokens to Chakra UI format
+  // Process props to convert Backpack tokens to runtime style props
   const processedProps = processBpkProps(props);
 
   // className is explicitly excluded from props to prevent style overrides
@@ -39,7 +39,7 @@ export const BpkHStack = ({ children, ...props }: BpkStackProps) => {
 };
 
 export const BpkVStack = ({ children, ...props }: BpkStackProps) => {
-  // Process props to convert Backpack tokens to Chakra UI format
+  // Process props to convert Backpack tokens to runtime style props
   const processedProps = processBpkProps(props);
 
   // className is explicitly excluded from props to prevent style overrides

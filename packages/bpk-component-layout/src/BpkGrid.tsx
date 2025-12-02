@@ -4,7 +4,7 @@
  * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
+ * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *   http://www.apache.org/licenses/LICENSE-2.0
@@ -16,15 +16,15 @@
  * limitations under the License.
  */
 
-import { Grid } from '@chakra-ui/react';
+import { Grid } from './styled-system/jsx';
 
 import { processBpkProps } from './tokenUtils';
 import type { BpkGridProps } from './types';
 
 export const BpkGrid = ({ children, ...props }: BpkGridProps) => {
-  // Process props to convert Backpack tokens to Chakra UI format
+  // Process props to convert Backpack tokens to runtime style props
   const processedProps = processBpkProps(props);
-  
+
   // className is explicitly excluded from props to prevent style overrides
   return <Grid {...processedProps}>{children}</Grid>;
 };

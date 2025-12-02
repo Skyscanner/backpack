@@ -16,27 +16,19 @@
  * limitations under the License.
  */
 
-import { ChakraProvider, createSystem, defaultConfig } from '@chakra-ui/react';
 import type { ReactNode } from 'react';
-
-import { createBpkConfig } from './theme';
 
 export interface BpkProviderProps {
   children: ReactNode;
 }
 
 /**
- * Creates a Chakra UI system with Backpack token mappings
- * Chakra UI 3.0 uses `createSystem` with `defaultConfig` and custom config
- */
-const bpkSystem = createSystem(defaultConfig, createBpkConfig());
-
-/**
- * BpkProvider - Provides Chakra UI context for Backpack layout components
+ * BpkProvider - Layout components no longer require a runtime styling context.
  *
- * Chakra UI 3.0 requires the `value` prop to be set to a system object.
- * We create a custom system with Backpack tokens using createSystem.
+ * The Backpack layout system is powered by PandaCSS styled-system with static CSS
+ * generated at build time. This provider is kept for API compatibility and simply
+ * renders its children without modifying context.
  */
 export const BpkProvider = ({ children }: BpkProviderProps) => {
-  return <ChakraProvider value={bpkSystem}>{children}</ChakraProvider>;
+  return <>{children}</>;
 };
