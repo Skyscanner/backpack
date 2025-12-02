@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This document analyzes the bundle size impact and downstream service implications of introducing `bpk-component-layout` with PandaCSS and Chakra UI 3.0 integration. The analysis covers JavaScript bundle size, CSS generation, build-time considerations, and recommendations for downstream consumers.
+This document analyzes the bundle size impact and downstream service implications of introducing `bpk-component-layout` with Chakra UI 3.0 plus PandaCSS-generated Backpack tokens and CSS variables. The analysis covers JavaScript bundle size, CSS generation, build-time considerations, and recommendations for downstream consumers.
 
 ## 1. Bundle Size Analysis
 
@@ -54,7 +54,7 @@ The `bpk-component-layout` package includes:
 
 PandaCSS generates static CSS at build time. The CSS size depends on the utilities used within the library itself.
 
-- **Design tokens**: Backpack color and spacing tokens (~5-10 KB)
+- **Design tokens**: Backpack color and spacing tokens mapped to `var(--bpk-*)` (~5-10 KB)
 - **Component styles**: Layout component base styles (~2-5 KB)
 - **Utility classes**: Generated based on usage patterns (~3-5 KB)
 - **Location**: `dist/bpk-component-layout/src/styled-system/styles.css`
@@ -149,29 +149,22 @@ The pre-generated CSS approach means:
 
 ## 3. Runtime Impact
 
-### 3.1 Zero-Runtime CSS
+### 3.1 Static CSS via CSS Variables
 
-PandaCSS generates static CSS at build time, eliminating:
-- ✅ CSS-in-JS runtime overhead
-- ✅ Style object creation
-- ✅ Style string generation
-- ✅ Dynamic style injection
-- ✅ Style cache management
+PandaCSS still generates the base CSS, but the runtime now consumes those styles through CSS variables (`var(--bpk-*)`). `BpkProvider` writes the token values once, so Chakra and Emotion merely reference those vars instead of recalculating every render.
 
-**Performance benefit**: Significantly faster render times compared to runtime CSS-in-JS solutions.
+**Performance benefit**: Token resolution moves outside the render path, so Chakra only performs layout/responsive processing while the heavy lifting happens in static CSS.
 
 ### 3.2 JavaScript Runtime
 
 #### Token Validation
-- **Development mode**: Runtime validation adds minimal overhead to check for correct token usage and warn about invalid values (~1-2ms per component render).
-- **Production mode**: Validation logic is minimal, ensuring high performance (~0.1-0.5ms per component render).
+- **Development mode**: Validation continues to trap invalid token usage (~1-2ms per component render) before issuing warnings.
+- **Production mode**: The validation path is minimal because token values are now baked into CSS variables, leaving only verification logic (~0.1-0.5ms per render).
 
-#### Token Conversion
-- **Spacing conversion**: Fast object property lookup (~0.01ms per token)
-- **Color conversion**: Fast object property lookup (~0.01ms per token)
-- **Responsive processing**: Recursive traversal adds minimal overhead (~0.1ms per responsive object)
+#### Responsive processing
+- **Responsive handling**: Recursively traversing responsive objects still occurs (~0.1ms per object), but it now just selects the appropriate CSS variable reference rather than computing a literal value.
 
-**Total processing overhead**: < 1ms per component render in production.
+**Total processing overhead**: Still below 1ms per component render, since token conversion is now a one-time operation outside the render path.
 
 ### 3.3 Memory Impact
 

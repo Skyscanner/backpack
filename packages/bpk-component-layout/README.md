@@ -1,6 +1,6 @@
 # bpk-component-layout
 
-Backpack layout primitives built on Chakra UI 3.0 with PandaCSS for zero-runtime CSS generation.
+Backpack layout primitives built on Chakra UI 3.0 with PandaCSS-generated tokens and CSS variables to reduce runtime work.
 
 ## Installation
 
@@ -31,7 +31,7 @@ import '@skyscanner/backpack-web/bpk-component-layout/dist/bpk-component-layout/
 
 ### 1. Wrap your app with BpkProvider
 
-The `BpkProvider` sets up the Chakra UI system with Backpack themes. It is **required** for layout components to function correctly.
+`BpkProvider` sets up the Chakra UI system, and it now also writes all Backpack token values into CSS variables (`--bpk-*`). Layout components consume those `var(...)` values via Chakra style props so the heavy token-to-value work happens once in the provider instead of per component.
 
 ```tsx
 import { BpkProvider } from '@skyscanner/backpack-web/bpk-component-layout';

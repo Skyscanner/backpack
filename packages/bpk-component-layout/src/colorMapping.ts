@@ -64,16 +64,6 @@ export const BACKPACK_COLOR_MAPPING: Record<string, string> = {
 };
 
 /**
- * Gets the Chakra UI token path for a Backpack color token
- *
- * @param {string} bpkToken - Backpack color token (e.g., 'bpk-core-primary-day')
- * @returns {string} Chakra UI token path (e.g., 'bpk.bpk-core-primary-day')
- */
-export function getChakraColorTokenPath(bpkToken: string): string {
-  return `bpk.${bpkToken}`;
-}
-
-/**
  * Gets the actual color value for a Backpack color token
  *
  * @param {string} bpkToken - Backpack color token (e.g., 'bpk-core-primary-day')
@@ -81,15 +71,5 @@ export function getChakraColorTokenPath(bpkToken: string): string {
  */
 export function getBackpackColorValue(bpkToken: string): string | undefined {
   return BACKPACK_COLOR_MAPPING[bpkToken];
-}
-
-/**
- * Validates that a Backpack color token exists in the mapping
- *
- * @param {string} bpkToken - Backpack color token to validate
- * @returns {boolean} True if the token exists in the mapping
- */
-export function isValidBackpackColorToken(bpkToken: string): boolean {
-  return bpkToken in BACKPACK_COLOR_MAPPING;
 }
 

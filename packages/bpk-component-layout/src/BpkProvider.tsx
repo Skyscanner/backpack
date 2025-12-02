@@ -17,12 +17,25 @@
  */
 
 import { ChakraProvider, createSystem, defaultConfig } from '@chakra-ui/react';
+import { useEffect } from 'react';
 import type { ReactNode } from 'react';
 
 import { createBpkConfig } from './theme';
+import { updateCssVariables } from './cssVariables';
+import type { BpkColorToken, BpkSpacingToken } from './tokens';
+
+export interface BpkProviderThemeOverrides {
+  spacing?: Partial<Record<BpkSpacingToken, string>>;
+  colors?: Partial<Record<BpkColorToken, string>>;
+}
 
 export interface BpkProviderProps {
   children: ReactNode;
+  /**
+   * Optional overrides for the CSS variables generated from Backpack tokens.
+   * This mirrors Chakra-style theming by letting consumers adjust token values.
+   */
+  cssVariableOverrides?: BpkProviderThemeOverrides;
 }
 
 /**
@@ -36,7 +49,13 @@ const bpkSystem = createSystem(defaultConfig, createBpkConfig());
  *
  * Chakra UI 3.0 requires the `value` prop to be set to a system object.
  * We create a custom system with Backpack tokens using createSystem.
+ * Additionally, we map every Backpack token to a CSS variable so the Layout
+ * components can be styled via `var(--bpk-*)` instead of recalculating values.
  */
-export const BpkProvider = ({ children }: BpkProviderProps) => {
+export const BpkProvider = ({ children, cssVariableOverrides }: BpkProviderProps) => {
+  useEffect(() => {
+    updateCssVariables(cssVariableOverrides);
+  }, [cssVariableOverrides]);
+
   return <ChakraProvider value={bpkSystem}>{children}</ChakraProvider>;
 };
