@@ -182,11 +182,14 @@ export interface BpkBoxProps extends BpkCommonLayoutProps, BpkBoxSpecificProps {
 
 ### Build Steps
 
-1.  **Generate Static CSS**:
-    `npm run codegen` runs `panda codegen`, generating the styling engine into `src/styled-system`.
+1.  **Generate Styling Engine**:
+    `npm run codegen` runs `panda codegen`, generating the JS/TS styling engine and types into `src/styled-system`.
 
-2.  **Compile & Copy**:
-    `npm run build` (or the monorepo's `npm run transpile`) compiles the TypeScript code. Crucially, it copies the `src/styled-system` directory to `dist/bpk-component-layout/src/styled-system` via the `transpile:copy-utils` script.
+2.  **Generate Static CSS**:
+    `npm run cssgen` runs `panda cssgen`, generating the static CSS file at `src/styled-system/styles.css`.
+
+3.  **Compile & Copy**:
+    `npm run build` runs both codegen steps, then the monorepo's `npm run transpile` compiles the TypeScript code. Crucially, it copies the `src/styled-system` directory to `dist/bpk-component-layout/src/styled-system` via the `transpile:copy-utils` script.
 
 ### Build Integration
 

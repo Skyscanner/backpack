@@ -247,9 +247,10 @@ See [BUNDLE_SIZE_ANALYSIS.md](./BUNDLE_SIZE_ANALYSIS.md) for detailed analysis.
 
 ### PandaCSS Generation
 
-1. **Build Step**: `npm run codegen` runs `panda codegen`
-2. **Output**: Generates `src/styled-system/` directory
-3. **Shipping**: The `styled-system` directory is copied to `dist/` during transpilation
+1. **Codegen Step**: `npm run codegen` generates the JS/TS styling engine in `src/styled-system/`.
+2. **CSS Generation Step**: `npm run cssgen` generates the static CSS file at `src/styled-system/styles.css`.
+3. **Build Integration**: `npm run build` runs both steps before transpilation.
+4. **Shipping**: The `styled-system` directory (including `styles.css`) is copied to `dist/` during transpilation
 
 ### Consumer Integration
 

@@ -107,8 +107,8 @@ The `bpk-component-layout` package pre-generates the styled system and ships it 
 
 #### Build Process in Backpack
 
-1. **Code Generation**: `npm run codegen` runs `panda codegen` in `bpk-component-layout`
-2. **Output**: Generates `src/styled-system/` directory
+1. **Code Generation**: `npm run codegen` runs `panda codegen` in `bpk-component-layout` to generate JS/TS artifacts.
+2. **CSS Generation**: `npm run cssgen` runs `panda cssgen` to generate `src/styled-system/styles.css`.
 3. **Transpilation**: `npm run transpile` copies `styled-system` to `dist/bpk-component-layout/src/styled-system/`
 4. **Shipping**: The `dist` folder is published to npm
 
