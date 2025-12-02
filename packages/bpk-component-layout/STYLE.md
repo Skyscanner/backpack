@@ -4,12 +4,7 @@ This document explains the styling approach used in `bpk-component-layout` and h
 
 ## Overview
 
-`bpk-component-layout` uses a **Chakra UI facade pattern** with **PandaCSS** for zero-runtime CSS generation. This approach provides:
-
-- **Zero Runtime Overhead**: All styles are generated at build time.
-- **Design System Consistency**: Enforced through strict token-based styling.
-- **Type Safety**: Full TypeScript support with explicit prop types.
-- **Performance**: No CSS-in-JS runtime calculations.
+`bpk-component-layout` uses a **Chakra UI facade pattern** with **PandaCSS**-generated tokens and CSS variables. BpkProvider writes those variables once, and Chakra consumes them via `var(--bpk-*)` references so the bulk of token decoding happens outside of each render.
 
 ## Architecture
 
@@ -86,13 +81,10 @@ export const BpkBreakpoint = {
     ```
 
 2.  **Runtime Validation & Conversion**:
-    The `processBpkProps` function handles the conversion at runtime to ensure Chakra UI receives valid CSS values.
-    *   **Spacing**: Converts `bpk-spacing-base` → `1rem` (using hardcoded map matching Backpack foundations).
-    *   **Colors**: Converts `bpk-text-primary-day` → `rgb(22, 22, 22)` (using explicit RGB map from `colorMapping.ts`).
-
-3.  **Chakra UI receives actual values**:
+    `processBpkProps` still validates responsive token usages, but now maps each spacing/color token to a CSS variable reference (`var(--bpk-...)`).
+3.  **Chakra UI sees CSS variables**:
     ```tsx
-    <Box padding="1rem" bg="rgb(255, 255, 255)" />
+    <Box padding="var(--bpk-spacing-base)" bg="var(--bpk-color-canvas)" />
     ```
 
 4.  **PandaCSS generates static CSS** at build time based on these usage patterns in the library itself.
@@ -225,14 +217,7 @@ By using PandaCSS, we generate static CSS files. This avoids the runtime perform
 
 ### Token Processing Overhead
 
-The token processing layer (`processBpkProps`) adds minimal runtime overhead:
-- **Development**: Validation warnings for invalid tokens
-- **Production**: Fast token-to-value conversion with minimal checks
-
-The processing is optimized to:
-- Only process props that are present
-- Use efficient lookups (object property access)
-- Recursively handle responsive objects without deep cloning
+`processBpkProps` now mostly handles validation/responsive expansion; the actual token values come from CSS variables written by `BpkProvider`, so runtime work is limited to recursion/validation rather than token resolution. This keeps the performance profile lean while still protecting consumers from invalid tokens.
 
 ### Bundle Size
 

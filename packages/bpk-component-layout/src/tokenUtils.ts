@@ -18,7 +18,8 @@
 
 import { getBackpackColorValue } from './colorMapping';
 import { getColorValue, getSpacingValue } from './theme';
-import { isValidSpacingValue, isValidColorValue, isPercentage } from './tokens';
+import { isValidSpacingValue, isValidColorValue, isPercentage, BpkColorToken, BpkSpacingToken } from './tokens';
+import { getColorCssVar, getSpacingCssVar } from './cssVariables';
 
 /**
  * Converts Backpack spacing token to Chakra UI compatible value
@@ -27,7 +28,7 @@ import { isValidSpacingValue, isValidColorValue, isPercentage } from './tokens';
  * @param {string} value - Backpack spacing token (e.g., 'bpk-spacing-base') or percentage
  * @returns {string} The actual spacing value in rem or the percentage string
  */
-export function convertBpkSpacingToChakra(value: string): string {
+export function convertBpkSpacingToCssVar(value: string): string {
   if (isPercentage(value)) {
     return value; // Percentages pass through
   }
@@ -35,7 +36,7 @@ export function convertBpkSpacingToChakra(value: string): string {
   // Look up the actual spacing value from the theme
   const spacingValue = getSpacingValue(value);
   if (spacingValue !== undefined) {
-    return spacingValue;
+    return getSpacingCssVar(value as BpkSpacingToken);
   }
 
   // Fallback: if token not found, return the value as-is (will cause a warning)
@@ -61,7 +62,7 @@ export function convertBpkSpacingToChakra(value: string): string {
  * @param {string} value - Backpack color token (e.g., 'bpk-text-primary-day') or special value
  * @returns {string} The actual color value (e.g., 'rgb(22, 22, 22)') or special value
  */
-export function convertBpkColorToChakra(value: string): string {
+export function convertBpkColorToCssVar(value: string): string {
   if (value === 'transparent' || value === 'currentColor') {
     return value;
   }
@@ -71,7 +72,7 @@ export function convertBpkColorToChakra(value: string): string {
   if (colorValue) {
     // Return the actual color value directly
     // Chakra UI 3.0 accepts RGB, RGBA, HEX, and other standard CSS color formats
-    return colorValue;
+    return getColorCssVar(value as BpkColorToken);
   }
 
   // Fallback: check legacy getColorValue for backward compatibility
@@ -177,7 +178,7 @@ export function processSpacingProps<T extends Record<string, any>>(
 
       const processedValue = processResponsiveValue(
         processed[key],
-        convertBpkSpacingToChakra,
+      convertBpkSpacingToCssVar,
         validator,
         key
       );
@@ -216,7 +217,7 @@ export function processColorProps<T extends Record<string, any>>(
     if (key in processed && processed[key] !== undefined) {
       const processedValue = processResponsiveValue(
         processed[key],
-        convertBpkColorToChakra,
+      convertBpkColorToCssVar,
         isValidColorValue,
         key
       );
