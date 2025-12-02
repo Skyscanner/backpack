@@ -171,8 +171,8 @@ export function processSpacingProps<T extends Record<string, any>>(
   spacingKeys.forEach((key) => {
     if (key in processed && processed[key] !== undefined) {
       const isSizeProp = ['width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight'].includes(key);
-      const validator = (v: string) => 
-        isValidSpacingValue(v) || 
+      const validator = (v: string) =>
+        isValidSpacingValue(v) ||
         (isSizeProp && ['auto', 'full', 'fit-content'].includes(v));
 
       const processedValue = processResponsiveValue(
