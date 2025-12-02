@@ -30,12 +30,13 @@
   padding: 0 tokens.bpk-spacing-base();
   align-items: center;
   border: none;
-  @include utils.bpk-themeable-property(
-      border-radius,
-      --bpk-chip-border-radius,
-      tokens.$bpk-border-radius-xs * 2
-  );
   cursor: pointer;
+
+  @include utils.bpk-themeable-property(
+    border-radius,
+    --bpk-chip-border-radius,
+    tokens.$bpk-border-radius-xs * 2
+  );
 
   &__leading-accessory-view {
     display: inline-flex;
@@ -112,25 +113,25 @@
   }
 
   &--default {
-    @include utils.bpk-themeable-property(
-        background-color,
-        --bpk-chip-default-background-color,
-        transparent
-    );
     color: tokens.$bpk-text-primary-day;
-    @include borders.bpk-border-sm(tokens.$bpk-line-day);
 
     @include utils.bpk-themeable-property(
-        box-shadow,
-        --bpk-chip-default-border-color,
-        0 0 0 1px tokens.$bpk-line-day inset
+      background-color,
+      --bpk-chip-default-background-color,
+      transparent
+    );
+
+    @include utils.bpk-themeable-property(
+      box-shadow,
+      --bpk-chip-default-border-color,
+      0 0 0 1px tokens.$bpk-line-day inset
     );
 
     @include utils.bpk-hover {
       @include utils.bpk-themeable-property(
-          box-shadow,
-          --bpk-chip-default-hover-border-color,
-          0 0 0 1px tokens.$bpk-core-primary-day inset
+        box-shadow,
+        --bpk-chip-default-hover-border-color,
+        0 0 0 1px tokens.$bpk-core-primary-day inset
       );
     }
 

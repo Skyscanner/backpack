@@ -5,6 +5,7 @@ import { BpkDropdownChip } from '../../packages/bpk-component-chip';
 import BpkText from '../../packages/bpk-component-text';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../packages/bpk-theming';
+import BpkCheckbox from '../../packages/bpk-component-checkbox';
 
 const customTheme = {
   'button-border-radius': '999px',
@@ -25,6 +26,9 @@ const customTheme = {
   'chip-default-border-color': 'none',
   'chip-default-hover-border-color': '0 0 0 1px #0062E3 inset',
   'chip-default-selected-background-color': '#0062E3',
+
+  // Checkbox
+  'checkbox-checked-color': '#05203C'
 };
 
 const DefaultExample = () => {
@@ -33,15 +37,14 @@ const DefaultExample = () => {
 
   const example = (
     <>
-      <div style={{ display: 'flex', gap: '.5rem' }}>
+      <div style={{ display: 'flex', gap: '.5rem', marginBottom: '1rem' }}>
         <BpkButtonV2>Primary</BpkButtonV2>
         <BpkButtonV2 type={BUTTON_TYPES.secondary}>Secondary</BpkButtonV2>
         <BpkButtonV2 type={BUTTON_TYPES.featured}>Featured</BpkButtonV2>
         <BpkButtonV2 type={BUTTON_TYPES.destructive}>Destructive</BpkButtonV2>
       </div>
 
-      { }
-      <div style={{ display: 'flex', gap: '.5rem', marginTop: '1rem' }}>
+      <div style={{ display: 'flex', gap: '.5rem', marginBottom: '1rem' }}>
         <BpkDropdownChip
           accessibilityLabel="Toggle chip"
           selected={selected}
@@ -50,6 +53,11 @@ const DefaultExample = () => {
           accessibilityLabel="Toggle chip"
           selected={!selected}
           onClick={toggleSelected}>Barcelona</BpkDropdownChip>
+      </div>
+
+      <div style={{ display: 'flex', gap: '.5rem', marginBottom: '1rem' }}>
+        <BpkCheckbox label="Accept terms and conditions" name="checkbox" id="checkbox" checked={selected} />
+        <BpkCheckbox label="Accept terms and conditions" name="checkbox" id="checkbox" checked={!selected} />
       </div>
     </>
   );
