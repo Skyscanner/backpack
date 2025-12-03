@@ -24,11 +24,25 @@ import {
   fontColorBase,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+import {
+  withButtonAlignment,
+  withLargeButtonAlignment,
+  withRtlSupport,
+} from '../../packages/bpk-component-icon';
+import LargeLongArrowRightIcon from '../../packages/bpk-component-icon/lg/long-arrow-right';
+import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
 import BpkLink, { BpkButtonLink } from '../../packages/bpk-component-link';
 import {
   action,
   BpkDarkExampleWrapper,
 } from '../bpk-storybook-utils';
+
+const AlignedSmallLongArrowRightIcon = withButtonAlignment(
+  withRtlSupport(SmallLongArrowRightIcon),
+);
+const AlignedLargeLongArrowRightIcon = withLargeButtonAlignment(
+  withRtlSupport(LargeLongArrowRightIcon),
+);
 
 const LinkExample = () => (
   <div>
@@ -38,6 +52,14 @@ const LinkExample = () => (
     <br />
     <BpkLink href="#" onClick={action('#2 clicked')}>
       Link #2
+    </BpkLink>
+    <br />
+    <BpkLink href="#" onClick={action('#2 clicked')}>
+      Link #3 <AlignedSmallLongArrowRightIcon />
+    </BpkLink>
+    <br />
+    <BpkLink href="#" onClick={action('#2 clicked')}>
+      Link #4 <AlignedLargeLongArrowRightIcon />
     </BpkLink>
   </div>
 );
@@ -50,6 +72,14 @@ const ImplicitLinkExample = () => (
     <br />
     <BpkLink href="#" onClick={action('#2 clicked')} implicit>
       Link #2
+    </BpkLink>
+    <br />
+    <BpkLink href="#" onClick={action('#2 clicked')} implicit>
+      Link #3 <AlignedSmallLongArrowRightIcon />
+    </BpkLink>
+    <br />
+    <BpkLink href="#" onClick={action('#2 clicked')} implicit>
+      Link #4 <AlignedLargeLongArrowRightIcon />
     </BpkLink>
   </div>
 );

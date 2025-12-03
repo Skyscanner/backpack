@@ -27,7 +27,10 @@ import {
   withRtlSupport,
 } from '../../packages/bpk-component-icon';
 import LargeLongArrowRightIcon from '../../packages/bpk-component-icon/lg/long-arrow-right';
+import LargeSortIcon from '../../packages/bpk-component-icon/lg/sort';
+import SmallFilterIcon from '../../packages/bpk-component-icon/sm/filter';
 import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
+import SmallSortIcon from '../../packages/bpk-component-icon/sm/sort';
 import { cssModules } from '../../packages/bpk-react-utils';
 import {
   action,
@@ -42,6 +45,12 @@ const AlignedSmallLongArrowRightIcon = withButtonAlignment(
 );
 const AlignedLargeLongArrowRightIcon = withLargeButtonAlignment(
   withRtlSupport(LargeLongArrowRightIcon),
+);
+const AlignedSmallSortIcon = withButtonAlignment(
+  withRtlSupport(SmallSortIcon),
+);
+const AlignedLargeSortIcon = withButtonAlignment(
+  withRtlSupport(LargeSortIcon),
 );
 
 const getClassName = cssModules(STYLES);
@@ -65,11 +74,22 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
       </Wrapped>
       &nbsp;
       <Wrapped onClick={action('Button clicked')} {...rest}>
-        Button <AlignedSmallLongArrowRightIcon />
+        Find a flights <AlignedSmallLongArrowRightIcon />
+      </Wrapped>
+      &nbsp;
+      <Wrapped onClick={action('Button clicked')} {...rest}>
+        <AlignedSmallLongArrowRightIcon /> Find here <AlignedSmallLongArrowRightIcon />
       </Wrapped>
       &nbsp;
       <Wrapped disabled onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
         Disabled
+      </Wrapped>
+      &nbsp;
+      <Wrapped disabled onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
+        Disabled with icon <AlignedSmallLongArrowRightIcon />
+      </Wrapped>
+      <Wrapped disabled onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
+        <AlignedSmallLongArrowRightIcon />
       </Wrapped>
       &nbsp;
       <Wrapped
@@ -166,11 +186,27 @@ const FeaturedExample = (props: any) => (
 const LinkExample = (props: any) => (
   <ButtonStory type={BUTTON_TYPES.link} wrapped={BpkButtonV2} {...props} />
 );
+
+const LinkImplicitExample = (props: any) => (
+  <ButtonStory type={BUTTON_TYPES.link} wrapped={BpkButtonV2} implicit {...props} />
+);
+
 const LinkOnDarkExample = (props: any) => (
   <BpkDarkExampleWrapper>
     <ButtonStory
       type={BUTTON_TYPES.linkOnDark}
       wrapped={BpkButtonV2}
+      {...props}
+    />
+  </BpkDarkExampleWrapper>
+);
+
+const LinkImplicitOnDarkExample = (props: any) => (
+  <BpkDarkExampleWrapper>
+    <ButtonStory
+      type={BUTTON_TYPES.linkOnDark}
+      wrapped={BpkButtonV2}
+      implicit
       {...props}
     />
   </BpkDarkExampleWrapper>
@@ -197,11 +233,253 @@ const MixedExample = () => (
     <SecondaryOnDarkExample />
     <DestructiveExample />
     <LinkExample />
+    <LinkImplicitExample />
     <LinkOnDarkExample />
+    <LinkImplicitOnDarkExample />
     <FeaturedExample />
     <FullWidthExample />
     <SubmitButtonExample />
   </>
+);
+
+const LinksExample = () => (
+  <div className={getClassName('bpk-button-story-wrapper')}>
+    {/* Link type - Standard underline */}
+    <section className={getClassName('bpk-links-example-section')}>
+      <h3 className={getClassName('bpk-links-example-title')}>
+        Link (Standard underline)
+      </h3>
+      <div className={getClassName('bpk-links-example-row')}>
+        <BpkButtonV2 type={BUTTON_TYPES.link} href="#">
+          Explore
+        </BpkButtonV2>
+        <span className={getClassName('bpk-links-example-spacer')} />
+        <BpkButtonV2 type={BUTTON_TYPES.link} href="#">
+          Find a flight <AlignedSmallLongArrowRightIcon />
+        </BpkButtonV2>
+        <span className={getClassName('bpk-links-example-spacer')} />
+        <BpkButtonV2 type={BUTTON_TYPES.link} href="#">
+          <SmallFilterIcon />
+        </BpkButtonV2>
+        <span className={getClassName('bpk-links-example-spacer')} />
+        <BpkButtonV2 type={BUTTON_TYPES.link} href="#">
+          <AlignedSmallSortIcon /> Sort
+        </BpkButtonV2>
+      </div>
+      <div className={getClassName('bpk-links-example-row')}>
+        <BpkButtonV2 type={BUTTON_TYPES.link} href="#" disabled>
+          Disabled link
+        </BpkButtonV2>
+        <span className={getClassName('bpk-links-example-spacer')} />
+        <BpkButtonV2 type={BUTTON_TYPES.link} href="#" disabled>
+          Disabled with icon <AlignedSmallLongArrowRightIcon />
+        </BpkButtonV2>
+        <span className={getClassName('bpk-links-example-spacer')} />
+        <BpkButtonV2 type={BUTTON_TYPES.link}>
+          Have <AlignedSmallLongArrowRightIcon /> two <span><AlignedSmallLongArrowRightIcon /></span> icons
+        </BpkButtonV2>
+      </div>
+      <div>
+        <BpkButtonV2 type={BUTTON_TYPES.link}>
+          Search
+        </BpkButtonV2>
+        <span className={getClassName('bpk-links-example-spacer')} />
+        <BpkButtonV2 type={BUTTON_TYPES.link}>
+          Search anywhere<AlignedSmallLongArrowRightIcon />
+        </BpkButtonV2>
+        <span className={getClassName('bpk-links-example-spacer')} />
+        <BpkButtonV2 type={BUTTON_TYPES.link} href="#" fullWidth>
+          Full width<AlignedSmallLongArrowRightIcon />
+        </BpkButtonV2>
+      </div>
+    </section>
+
+    {/* Link type - Implicit underline (hover only) */}
+    <section className={getClassName('bpk-links-example-section')}>
+      <h3 className={getClassName('bpk-links-example-title')}>
+        Link Implicit (Underline on hover)
+      </h3>
+      <div className={getClassName('bpk-links-example-row')}>
+        <BpkButtonV2 type={BUTTON_TYPES.link} implicit href="#">
+          Explore
+        </BpkButtonV2>
+        <span className={getClassName('bpk-links-example-spacer')} />
+        <BpkButtonV2 type={BUTTON_TYPES.link} implicit href="#">
+          Find a flight <AlignedSmallLongArrowRightIcon />
+        </BpkButtonV2>
+        <span className={getClassName('bpk-links-example-spacer')} />
+        <BpkButtonV2 type={BUTTON_TYPES.link} implicit href="#">
+          <SmallFilterIcon />
+        </BpkButtonV2>
+        <span className={getClassName('bpk-links-example-spacer')} />
+        <BpkButtonV2 type={BUTTON_TYPES.link} implicit href="#">
+          <AlignedSmallSortIcon /> Sort
+        </BpkButtonV2>
+      </div>
+      <div className={getClassName('bpk-links-example-row')}>
+        <BpkButtonV2 type={BUTTON_TYPES.link} implicit href="#" disabled>
+          Disabled link
+        </BpkButtonV2>
+        <span className={getClassName('bpk-links-example-spacer')} />
+        <BpkButtonV2 type={BUTTON_TYPES.link} implicit href="#" disabled>
+          Disabled with icon <AlignedSmallLongArrowRightIcon />
+        </BpkButtonV2>
+      </div>
+      <div>
+        <BpkButtonV2 type={BUTTON_TYPES.link} implicit>
+          Search
+        </BpkButtonV2>
+        <span className={getClassName('bpk-links-example-spacer')} />
+        <BpkButtonV2 type={BUTTON_TYPES.link} implicit>
+          Search anywhere <AlignedSmallLongArrowRightIcon />
+        </BpkButtonV2>
+      </div>
+    </section>
+
+    {/* Link on dark - Standard underline */}
+    <BpkDarkExampleWrapper>
+      <section
+        className={[
+          getClassName('bpk-links-example-section'),
+          getClassName('bpk-links-example-dark-section'),
+        ].join(' ')}
+      >
+        <h3
+          className={[
+            getClassName('bpk-links-example-title'),
+            getClassName('bpk-links-example-title--dark'),
+          ].join(' ')}
+        >
+          Link on Dark (Standard underline)
+        </h3>
+        <div className={getClassName('bpk-links-example-row')}>
+          <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} href="#">
+            Explore
+          </BpkButtonV2>
+          <span className={getClassName('bpk-links-example-spacer')} />
+          <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} href="#">
+            Find a flight <AlignedSmallLongArrowRightIcon />
+          </BpkButtonV2>
+          <span className={getClassName('bpk-links-example-spacer')} />
+          <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} href="#">
+          <SmallFilterIcon />
+          </BpkButtonV2>
+          <span className={getClassName('bpk-links-example-spacer')} />
+          <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} href="#">
+            <AlignedSmallSortIcon /> Sort
+          </BpkButtonV2>
+        </div>
+        <div className={getClassName('bpk-links-example-row')}>
+          <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} href="#" disabled>
+            Disabled link
+          </BpkButtonV2>
+          <span className={getClassName('bpk-links-example-spacer')} />
+          <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} href="#" disabled>
+            Disabled with icon <AlignedSmallLongArrowRightIcon />
+          </BpkButtonV2>
+        </div>
+        <div>
+          <BpkButtonV2 type={BUTTON_TYPES.linkOnDark}>
+            Search
+          </BpkButtonV2>
+          <span className={getClassName('bpk-links-example-spacer')} />
+          <BpkButtonV2 type={BUTTON_TYPES.linkOnDark}>
+            Search anywhere <AlignedSmallLongArrowRightIcon />
+          </BpkButtonV2>
+        </div>
+      </section>
+
+      {/* Link on dark - Implicit underline (hover only) */}
+      <section
+        className={[
+          getClassName('bpk-links-example-section'),
+          getClassName('bpk-links-example-dark-section'),
+        ].join(' ')}
+      >
+        <h3
+          className={[
+            getClassName('bpk-links-example-title'),
+            getClassName('bpk-links-example-title--dark'),
+          ].join(' ')}
+        >
+          Link on Dark Implicit (Underline on hover)
+        </h3>
+        <div className={getClassName('bpk-links-example-row')}>
+          <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit href="#">
+            Explore
+          </BpkButtonV2>
+          <span className={getClassName('bpk-links-example-spacer')} />
+          <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit href="#">
+            Find a flight <AlignedSmallLongArrowRightIcon />
+          </BpkButtonV2>
+          <span className={getClassName('bpk-links-example-spacer')} />
+          <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit href="#">
+          <SmallFilterIcon />
+          </BpkButtonV2>
+          <span className={getClassName('bpk-links-example-spacer')} />
+          <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit href="#">
+            <AlignedSmallSortIcon /> Sort
+          </BpkButtonV2>
+        </div>
+        <div className={getClassName('bpk-links-example-row')}>
+          <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit href="#" disabled>
+            Disabled link
+          </BpkButtonV2>
+          <span className={getClassName('bpk-links-example-spacer')} />
+          <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit href="#" disabled>
+            Disabled with icon <AlignedSmallLongArrowRightIcon />
+          </BpkButtonV2>
+        </div>
+        <div>
+          <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit>
+            Search
+          </BpkButtonV2>
+          <span className={getClassName('bpk-links-example-spacer')} />
+          <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit>
+            Search anywhere <AlignedSmallLongArrowRightIcon />
+          </BpkButtonV2>
+        </div>
+      </section>
+    </BpkDarkExampleWrapper>
+
+    {/* Large size variants */}
+    <section className={getClassName('bpk-links-example-section')}>
+      <h3 className={getClassName('bpk-links-example-title')}>
+        Large Size Variants
+      </h3>
+      <BpkButtonV2 type={BUTTON_TYPES.link} size={SIZE_TYPES.large} href="#">
+        Explore
+      </BpkButtonV2>
+      <span className={getClassName('bpk-links-example-spacer')} />
+      <BpkButtonV2 type={BUTTON_TYPES.link} size={SIZE_TYPES.large} href="#">
+        Find a flight <AlignedLargeLongArrowRightIcon />
+      </BpkButtonV2>
+      <span className={getClassName('bpk-links-example-spacer')} />
+      <BpkButtonV2 type={BUTTON_TYPES.link} href="#">
+        <AlignedLargeSortIcon />
+      </BpkButtonV2>
+      <span className={getClassName('bpk-links-example-spacer')} />
+      <BpkButtonV2 type={BUTTON_TYPES.link} size={SIZE_TYPES.large} href="#">
+        <AlignedLargeLongArrowRightIcon /> Sort
+      </BpkButtonV2>
+    </section>
+
+    {/* External link with target="_blank" */}
+    <section className={getClassName('bpk-links-example-section')}>
+      <h3 className={getClassName('bpk-links-example-title')}>
+        External Links (target _blank)
+      </h3>
+      <div>
+        <BpkButtonV2 type={BUTTON_TYPES.link} href="https://www.skyscanner.net" blank>
+          External link <AlignedSmallLongArrowRightIcon />
+        </BpkButtonV2>
+        <span className={getClassName('bpk-links-example-spacer')} />
+        <BpkButtonV2 type={BUTTON_TYPES.link} implicit href="https://www.skyscanner.net" blank>
+          External implicit <AlignedSmallLongArrowRightIcon />
+        </BpkButtonV2>
+      </div>
+    </section>
+  </div>
 );
 
 const AnchorTagsExample = () => (
@@ -214,7 +492,9 @@ const AnchorTagsExample = () => (
     <DestructiveExample href="#" />
     <FeaturedExample href="#" />
     <LinkExample href="#" />
+    <LinkImplicitExample href="#" />
     <LinkOnDarkExample href="#" />
+    <LinkImplicitOnDarkExample href="#" />
   </>
 );
 
@@ -227,9 +507,12 @@ export {
   DestructiveExample,
   FeaturedExample,
   LinkExample,
+  LinkImplicitExample,
   LinkOnDarkExample,
-  MixedExample,
+  LinkImplicitOnDarkExample,
+  LinksExample,
   AnchorTagsExample,
   FullWidthExample,
   SubmitButtonExample,
+  MixedExample,
 };

@@ -21,3 +21,30 @@
 .bpk-button-story-wrapper {
   padding: tokens.bpk-spacing-sm() 0;
 }
+
+.bpk-links-example-section {
+  margin-bottom: tokens.bpk-spacing-xl();
+}
+
+.bpk-links-example-title {
+  margin-bottom: tokens.bpk-spacing-base();
+  font-size: tokens.$bpk-font-size-lg;
+  font-weight: tokens.$bpk-font-weight-bold;
+}
+
+.bpk-links-example-title--dark {
+  color: tokens.$bpk-text-on-dark-day;
+}
+
+.bpk-links-example-row {
+  margin-bottom: tokens.bpk-spacing-sm();
+}
+
+.bpk-links-example-dark-section {
+  padding: tokens.bpk-spacing-base();
+}
+
+.bpk-links-example-spacer {
+  display: inline-block;
+  width: tokens.bpk-spacing-xl();
+}

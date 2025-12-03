@@ -51,5 +51,9 @@ export type Props = {
   submit?: boolean;
   href?: string | null;
   blank?: boolean;
+  /**
+   * When true, the underline will only appear on hover (for link type buttons).
+   */
+  implicit?: boolean;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
