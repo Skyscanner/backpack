@@ -30,7 +30,6 @@ import BpkMultiSelectChipGroup, {
   CHIP_GROUP_TYPES,
 } from '../../packages/bpk-component-chip-group';
 import BpkImage from '../../packages/bpk-component-image';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLink from '../../packages/bpk-component-link';
 import BpkSnippet, {
   DESKTOP_LAYOUT as SNIPPET_DESKTOP_LAYOUT,
