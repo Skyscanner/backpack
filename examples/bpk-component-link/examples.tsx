@@ -73,7 +73,7 @@ const LinkInGridExample = () => (
       Link #4
     </BpkLink>
   </div>
-)
+);
 
 const ButtonLinkExample = () => (
   <div>
