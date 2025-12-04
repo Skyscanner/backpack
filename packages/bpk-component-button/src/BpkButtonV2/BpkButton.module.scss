@@ -48,14 +48,6 @@
     @include buttons.bpk-button--featured;
   }
 
-  &--link {
-    @include buttons.bpk-button--link;
-  }
-
-  &--link-on-dark {
-    @include buttons.bpk-button--link-on-dark;
-  }
-
   &--primary-on-dark {
     @include buttons.bpk-button--primary-on-dark;
   }
@@ -86,7 +78,8 @@
   }
 }
 
-.bpk-button-link {
+.bpk-button--link {
+  @include buttons.bpk-button--link;
   @include typography.bpk-link;
 
   display: inline-flex; /* stylelint-disable-line order/order, order/properties-order */
@@ -103,20 +96,17 @@
     @include typography.bpk-link--implicit;
   }
 
-  &--alternate {
-    @include typography.bpk-link--alternate;
-  }
-
-  &--large {
-    @include buttons.bpk-button--large;
-  }
-
   svg {
     fill: currentcolor;
   }
 }
 
-.bpk-button-link-underlined {
+.bpk-button--link-on-dark {
+  @include buttons.bpk-button--link-on-dark;
+  @include typography.bpk-link--alternate;
+}
+
+.bpk-button--link-underlined {
   display: inline-flex;
   align-items: flex-end;
 
@@ -130,7 +120,7 @@
     @include typography.bpk-link-underlined--alternate;
   }
 
-  &-implicit--alternate {
+  &--implicit--alternate {
     @include typography.bpk-link-underlined-implicit--alternate;
   }
 

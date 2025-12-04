@@ -455,7 +455,7 @@ const LinksExample = () => (
         Find a flight <AlignedLargeLongArrowRightIcon />
       </BpkButtonV2>
       <span className={getClassName('bpk-links-example-spacer')} />
-      <BpkButtonV2 type={BUTTON_TYPES.link} href="#">
+      <BpkButtonV2 type={BUTTON_TYPES.link} size={SIZE_TYPES.large} iconOnly href="#">
         <AlignedLargeSortIcon />
       </BpkButtonV2>
       <span className={getClassName('bpk-links-example-spacer')} />

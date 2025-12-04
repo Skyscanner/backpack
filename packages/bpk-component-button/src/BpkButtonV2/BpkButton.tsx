@@ -135,43 +135,26 @@ export const BpkButtonV2 = ({
   const isAlternate = type === BUTTON_TYPES.linkOnDark;
   const isEnabledLinkType = !disabled && isLinkType;
 
-  // Memoize class names to avoid recalculating on every render
-  const classNames = useMemo(
-    () =>
-      isEnabledLinkType
-        ? getCommonClassName(
-            'bpk-button-link',
-            size === SIZE_TYPES.large && 'bpk-button-link--large',
-            implicit && 'bpk-button-link--implicit',
-            isAlternate && 'bpk-button-link--alternate',
-            fullWidth && 'bpk-button--full-width',
-            className,
-          )
-        : getCommonClassName(
-            'bpk-button',
-            size === SIZE_TYPES.large && 'bpk-button--large',
-            iconOnly && 'bpk-button--icon-only',
-            iconOnly && size === SIZE_TYPES.large && 'bpk-button--large-icon-only',
-            `bpk-button--${type}`,
-            fullWidth && 'bpk-button--full-width',
-            className,
-          ),
-    [isEnabledLinkType, implicit, isAlternate, className, size, iconOnly, type, fullWidth],
+  const classNames = getCommonClassName(
+    'bpk-button',
+    isEnabledLinkType ? 'bpk-button--link' : `bpk-button--${type}`,
+    size === SIZE_TYPES.large && 'bpk-button--large',
+    iconOnly && 'bpk-button--icon-only',
+    iconOnly && size === SIZE_TYPES.large && 'bpk-button--large-icon-only',
+    fullWidth && 'bpk-button--full-width',
+    isEnabledLinkType && implicit && 'bpk-button--link--implicit',
+    isEnabledLinkType && isAlternate && 'bpk-button--link-on-dark',
+    className,
   );
 
-  // Memoize underlined class names
-  const underlinedClassNames = useMemo(
-    () =>
-      isEnabledLinkType
-        ? getCommonClassName(
-            'bpk-button-link-underlined',
-            implicit && 'bpk-button-link-underlined--implicit',
-            isAlternate && 'bpk-button-link-underlined--alternate',
-            implicit && isAlternate && 'bpk-button-link-underlined-implicit--alternate',
-          )
-        : null,
-    [isEnabledLinkType, implicit, isAlternate],
-  );
+  const underlinedClassNames = isEnabledLinkType
+      ? getCommonClassName(
+          'bpk-button--link-underlined',
+          implicit && 'bpk-button--link-underlined--implicit',
+          isAlternate && 'bpk-button--link-underlined--alternate',
+          implicit && isAlternate && 'bpk-button--link-underlined--implicit--alternate',
+        )
+      : null;
 
   // Memoize children processing - only process children for link types
   // For non-link types, return children as-is to avoid unnecessary computation
