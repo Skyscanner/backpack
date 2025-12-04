@@ -123,7 +123,7 @@
     "@skyscanner/bpk-foundations-web": "^23.0.0",
     "@skyscanner/bpk-svgs": "^20.8.0",
     "@skyscanner/eslint-config-skyscanner": "^22.6.0",
-    "@skyscanner/stylelint-config-skyscanner": "^13.1.0",
+    "@skyscanner/stylelint-config-skyscanner": "^14.2.0",
     "@storybook/addon-a11y": "^9.1.13",
     "@storybook/addon-docs": "^9.1.13",
     "@storybook/addon-webpack5-compiler-babel": "^3.0.6",
@@ -179,7 +179,7 @@
     "style-loader": "^4.0.0",
     "ts-migrate": "^0.1.35",
     "typescript": "^5.9.2",
-    "webpack": "^5.101.2",
+    "webpack": "^5.103.0",
     "wrapper-webpack-plugin": "^2.2.2"
   },
   "overrides": {
