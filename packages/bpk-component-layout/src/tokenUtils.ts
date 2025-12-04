@@ -17,12 +17,14 @@
  */
 
 import { getBackpackColorValue } from './colorMapping';
-import { getColorValue, getSpacingValue } from './theme';
+import { getSpacingValue } from './theme';
 import { isValidSpacingValue, isValidColorValue, isPercentage } from './tokens';
 
 /**
- * Converts Backpack spacing token to Chakra UI compatible value
- * Returns the actual spacing value from the theme, not a token path
+ * Converts Backpack spacing token for styled-system / PandaCSS.
+ * In the zero-runtime CSS model, we prefer to keep the token identifier
+ * (e.g. "bpk-spacing-base") so that Panda can look up the value via its
+ * token system, rather than returning the concrete rem value.
  *
  * @param {string} value - Backpack spacing token (e.g., 'bpk-spacing-base') or percentage
  * @returns {string} The actual spacing value in rem or the percentage string
@@ -32,10 +34,11 @@ export function convertBpkSpacingToChakra(value: string): string {
     return value; // Percentages pass through
   }
 
-  // Look up the actual spacing value from the theme
+  // If the token exists in our theme spacing map, return the token itself.
+  // PandaCSS will resolve it via its token configuration.
   const spacingValue = getSpacingValue(value);
   if (spacingValue !== undefined) {
-    return spacingValue;
+    return value;
   }
 
   // Fallback: if token not found, return the value as-is (will cause a warning)
@@ -49,14 +52,10 @@ export function convertBpkSpacingToChakra(value: string): string {
 }
 
 /**
- * Converts Backpack color token to actual color value
- * Returns the actual color value (RGB/hex) that Chakra UI can use directly
- *
- * Chakra UI 3.0 does not properly resolve nested color token paths like 'bpk.bpk-line-day'.
- * Therefore, we return the actual color value directly instead of a token path.
- *
- * The color values come from Backpack foundations and are in RGB format (e.g., 'rgb(193, 199, 207)').
- * Chakra UI accepts RGB, RGBA, HEX, and other standard CSS color formats.
+ * Converts Backpack color token for styled-system / PandaCSS.
+ * For recognised Backpack tokens we keep the token identifier
+ * (e.g. "bpk-core-primary-day") so that Panda can resolve it via the
+ * configured color tokens, instead of returning the concrete rgb() value.
  *
  * @param {string} value - Backpack color token (e.g., 'bpk-text-primary-day') or special value
  * @returns {string} The actual color value (e.g., 'rgb(22, 22, 22)') or special value
@@ -66,18 +65,11 @@ export function convertBpkColorToChakra(value: string): string {
     return value;
   }
 
-  // Get the actual color value from Backpack color mapping
+  // If this is a known Backpack color token, return the token identifier.
+  // PandaCSS will look it up from its color tokens.
   const colorValue = getBackpackColorValue(value);
   if (colorValue) {
-    // Return the actual color value directly
-    // Chakra UI 3.0 accepts RGB, RGBA, HEX, and other standard CSS color formats
-    return colorValue;
-  }
-
-  // Fallback: check legacy getColorValue for backward compatibility
-  const legacyValue = getColorValue(value);
-  if (legacyValue) {
-    return legacyValue;
+    return value;
   }
 
   // If token not found, return the value as-is (will cause a warning)
@@ -150,11 +142,13 @@ export function processSpacingProps<T extends Record<string, any>>(
     // Padding props
     'p', 'pt', 'pr', 'pb', 'pl', 'px', 'py',
     'padding', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft',
+    'paddingInline', 'paddingBlock',
     // Margin props
     'm', 'mt', 'mr', 'mb', 'ml', 'mx', 'my',
     'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
+    'marginInline', 'marginBlock',
     // Gap and spacing
-    'gap', 'spacing',
+    'gap', 'spacing', 'rowGap', 'columnGap',
     // Size props
     'width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight',
     // Border radius props
@@ -262,5 +256,13 @@ export function processBpkProps<T extends Record<string, any>>(
   let processed = processSpacingProps(propsWithoutClassName);
   // Process color props
   processed = processColorProps(processed);
+  renameTemplateColumns(processed);
   return processed;
+}
+
+function renameTemplateColumns(props: Record<string, any>) {
+  if ('templateColumns' in props) {
+    props.gridTemplateColumns = props.templateColumns;
+    delete props.templateColumns;
+  }
 }

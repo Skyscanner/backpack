@@ -16,17 +16,69 @@
  * limitations under the License.
  */
 
-import { Grid } from './styled-system/jsx';
-
+import { css, cx } from './styled-system/css';
 import { processBpkProps } from './tokenUtils';
 import type { BpkGridProps } from './types';
 
+const SPACING_KEYS = [
+  'p', 'pt', 'pr', 'pb', 'pl', 'px', 'py',
+  'padding', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft',
+  'm', 'mt', 'mr', 'mb', 'ml', 'mx', 'my',
+  'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
+  'gap', 'rowGap', 'columnGap',
+  'borderRadius', 'borderTopLeftRadius', 'borderTopRightRadius',
+  'borderBottomLeftRadius', 'borderBottomRightRadius',
+];
+
+const COLOR_KEYS = [
+  'color',
+  'bg', 'backgroundColor',
+  'borderColor', 'borderTopColor', 'borderRightColor',
+  'borderBottomColor', 'borderLeftColor',
+];
+
+const GRID_KEYS = [
+  'display',
+  'gridTemplateColumns', 'gridTemplateRows',
+  'gridColumn', 'gridRow',
+  'gridAutoFlow', 'gridAutoColumns', 'gridAutoRows',
+  'alignItems', 'justifyContent', 'placeItems', 'placeContent',
+  'textAlign',
+  'border', 'borderStyle', 'borderWidth', 'boxShadow',
+];
+
+const STYLE_KEYS = new Set([
+  ...SPACING_KEYS,
+  ...COLOR_KEYS,
+  ...GRID_KEYS,
+]);
+
 export const BpkGrid = ({ children, ...props }: BpkGridProps) => {
-  // Process props to convert Backpack tokens to runtime style props
+  // processBpkProps converts tokens and renames templateColumns -> gridTemplateColumns
   const processedProps = processBpkProps(props);
 
-  // className is explicitly excluded from props to prevent style overrides
-  return <Grid {...processedProps}>{children}</Grid>;
+  const styleProps: Record<string, unknown> = { display: 'grid' };
+  const restProps: Record<string, unknown> = {};
+
+  Object.entries(processedProps).forEach(([key, value]) => {
+    if (STYLE_KEYS.has(key)) {
+      styleProps[key] = value;
+    } else {
+      restProps[key] = value;
+    }
+  });
+
+  const className = css(styleProps as any);
+
+  return (
+    <div
+      data-bpk-component="bpk-grid"
+      className={cx('bpk-grid', className)}
+      {...restProps}
+    >
+      {children}
+    </div>
+  );
 };
 
 export type { BpkGridProps };

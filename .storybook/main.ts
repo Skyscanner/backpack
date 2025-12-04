@@ -27,6 +27,10 @@ const config: StorybookConfig = {
     '@storybook/addon-docs',
     '@storybook/addon-webpack5-compiler-babel'
   ],
+  staticDirs: [
+    './public',
+    { from: '../packages/bpk-component-layout/src/styled-system', to: '/layout-styles' },
+  ],
   framework: {
     name: '@storybook/react-webpack5',
     options: {},

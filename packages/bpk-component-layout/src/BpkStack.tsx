@@ -16,34 +16,129 @@
  * limitations under the License.
  */
 
-import { Stack, HStack, VStack } from './styled-system/jsx';
+import { css, cx } from './styled-system/css';
 
 import { processBpkProps } from './tokenUtils';
-
 import type { BpkStackProps } from './types';
 
-export const BpkStack = ({ children, ...props }: BpkStackProps) => {
-  // Process props to convert Backpack tokens to runtime style props
-  const processedProps = processBpkProps(props);
+const SPACING_KEYS = [
+  'p', 'pt', 'pr', 'pb', 'pl', 'px', 'py',
+  'padding', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft',
+  'm', 'mt', 'mr', 'mb', 'ml', 'mx', 'my',
+  'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
+  'gap',
+  'borderRadius', 'borderTopLeftRadius', 'borderTopRightRadius',
+  'borderBottomLeftRadius', 'borderBottomRightRadius',
+];
 
-  // className is explicitly excluded from props to prevent style overrides
-  return <Stack {...processedProps}>{children}</Stack>;
+const COLOR_KEYS = [
+  'color',
+  'bg', 'backgroundColor',
+  'borderColor', 'borderTopColor', 'borderRightColor',
+  'borderBottomColor', 'borderLeftColor',
+];
+
+const FLEX_KEYS = [
+  'display',
+  'flex',
+  'flexDirection',
+  'flexWrap',
+  'alignItems',
+  'justifyContent',
+  'textAlign',
+  'border',
+  'borderStyle',
+  'borderWidth',
+  'boxShadow',
+];
+
+const STYLE_KEYS = new Set([
+  ...SPACING_KEYS,
+  ...COLOR_KEYS,
+  ...FLEX_KEYS,
+]);
+
+function getStyleProps(
+  processedProps: Record<string, any>,
+  direction: 'row' | 'column' | undefined
+) {
+  const { spacing, ...otherProps } = processedProps;
+
+  const styleProps: Record<string, unknown> = {
+    display: 'flex',
+    flexDirection: direction,
+  };
+
+  if (spacing !== undefined) {
+    styleProps.gap = spacing;
+  }
+
+  const restProps: Record<string, unknown> = {};
+
+  Object.entries(otherProps).forEach(([key, value]) => {
+    if (STYLE_KEYS.has(key)) {
+      styleProps[key] = value;
+    } else {
+      restProps[key] = value;
+    }
+  });
+
+  return { styleProps, restProps };
+}
+
+export const BpkStack = ({ children, spacing, ...props }: BpkStackProps) => {
+  const processedProps = processBpkProps({ spacing, ...props });
+
+  const { styleProps, restProps } = getStyleProps(processedProps, undefined);
+
+  // Default to column if no direction is specified
+  if (!styleProps.flexDirection) {
+      styleProps.flexDirection = 'column';
+  }
+
+  const className = css(styleProps as any);
+
+  return (
+    <div
+      data-bpk-component="bpk-stack"
+      className={cx('bpk-stack', className)}
+      {...restProps}
+    >
+      {children}
+    </div>
+  );
 };
 
-export const BpkHStack = ({ children, ...props }: BpkStackProps) => {
-  // Process props to convert Backpack tokens to runtime style props
-  const processedProps = processBpkProps(props);
+export const BpkHStack = ({ children, spacing, ...props }: BpkStackProps) => {
+  const processedProps = processBpkProps({ spacing, ...props });
+  const { styleProps, restProps } = getStyleProps(processedProps, 'row');
+  const className = css(styleProps as any);
 
-  // className is explicitly excluded from props to prevent style overrides
-  return <HStack {...processedProps}>{children}</HStack>;
+  return (
+    <div
+      data-bpk-component="bpk-stack-h"
+      className={cx('bpk-stack-h', className)}
+      {...restProps}
+    >
+      {children}
+    </div>
+  );
 };
 
-export const BpkVStack = ({ children, ...props }: BpkStackProps) => {
-  // Process props to convert Backpack tokens to runtime style props
-  const processedProps = processBpkProps(props);
+export const BpkVStack = ({ children, spacing, ...props }: BpkStackProps) => {
+  const processedProps = processBpkProps({ spacing, ...props });
+  const { styleProps, restProps } = getStyleProps(processedProps, 'column');
+  const className = css(styleProps as any);
 
-  // className is explicitly excluded from props to prevent style overrides
-  return <VStack {...processedProps}>{children}</VStack>;
+  return (
+    <div
+      data-bpk-component="bpk-stack-v"
+      className={cx('bpk-stack-v', className)}
+      {...restProps}
+    >
+      {children}
+    </div>
+  );
 };
 
 export type { BpkStackProps };

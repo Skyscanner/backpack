@@ -16,19 +16,98 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  type ReactNode,
+} from 'react';
+
+import { resolveLayoutConfig, updateCssVariables } from './cssVariables';
+
+import type {
+  LayoutConfig,
+  LayoutPreset,
+  BreakpointPreset,
+  Brand,
+} from './cssVariables';
+
+const defaultLayoutPreset: LayoutPreset = 'default';
+const defaultBreakpointPreset: BreakpointPreset = 'default';
+const defaultBrand: Brand = 'core';
 
 export interface BpkProviderProps {
   children: ReactNode;
+  layoutPreset?: LayoutPreset;
+  breakpointPreset?: BreakpointPreset;
+  brand?: Brand;
 }
 
-/**
- * BpkProvider - Layout components no longer require a runtime styling context.
- *
- * The Backpack layout system is powered by PandaCSS styled-system with static CSS
- * generated at build time. This provider is kept for API compatibility and simply
- * renders its children without modifying context.
- */
-export const BpkProvider = ({ children }: BpkProviderProps) => {
-  return <>{children}</>;
+interface BpkLayoutContextValue extends LayoutConfig {
+  layoutPreset: LayoutPreset;
+  breakpointPreset: BreakpointPreset;
+  brand: Brand;
+  isRoot: boolean;
+}
+
+const BpkLayoutContext = createContext<BpkLayoutContextValue | null>(null);
+
+export function useBpkLayoutContext(): BpkLayoutContextValue | null {
+  return useContext(BpkLayoutContext);
+}
+
+export const BpkProvider = ({
+  brand = defaultBrand,
+  breakpointPreset = defaultBreakpointPreset,
+  children,
+  layoutPreset = defaultLayoutPreset,
+}: BpkProviderProps) => {
+  const parentContext = useContext(BpkLayoutContext);
+  const isRoot = parentContext === null;
+  const config = useMemo(
+    () => resolveLayoutConfig(layoutPreset, breakpointPreset, brand),
+    [layoutPreset, breakpointPreset, brand],
+  );
+
+  useEffect(() => {
+    if (isRoot) {
+      updateCssVariables(config);
+    }
+
+    const hasOverrides = (
+      layoutPreset !== defaultLayoutPreset ||
+      breakpointPreset !== defaultBreakpointPreset ||
+      brand !== defaultBrand
+    );
+
+    if (!isRoot && hasOverrides && process.env.NODE_ENV !== 'production') {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'Nested BpkProvider overrides are ignored. ' +
+        'Only the root provider controls layout configuration.',
+      );
+    }
+  }, [breakpointPreset, brand, config, isRoot, layoutPreset]);
+
+  const contextValue = useMemo<BpkLayoutContextValue>(() => ({
+    ...config,
+    brand,
+    breakpointPreset,
+    layoutPreset,
+    isRoot: isRoot || parentContext?.isRoot === true,
+  }), [
+    brand,
+    breakpointPreset,
+    config,
+    layoutPreset,
+    isRoot,
+    parentContext,
+  ]);
+
+  return (
+    <BpkLayoutContext.Provider value={contextValue}>
+      {children}
+    </BpkLayoutContext.Provider>
+  );
 };

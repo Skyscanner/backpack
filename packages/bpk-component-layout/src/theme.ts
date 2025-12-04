@@ -49,7 +49,7 @@ const spacingXxl = '2.5rem';
  * Maps Backpack spacing tokens to actual rem values.
  * These values are used by tokenUtils to convert spacing tokens to concrete CSS values.
  */
-const spacingMap: Record<string, { value: string }> = {
+export const spacingMap: Record<string, { value: string }> = {
   'bpk-spacing-none': { value: '0' },
   'bpk-spacing-sm': { value: spacingSm },
   'bpk-spacing-base': { value: spacingBase },
@@ -63,7 +63,7 @@ const spacingMap: Record<string, { value: string }> = {
  * Maps Backpack color tokens to actual color values.
  * Uses the centralized color mapping from colorMapping.ts to ensure consistency.
  */
-const colorMap: Record<string, string> = BACKPACK_COLOR_MAPPING;
+export const colorMap: Record<string, string> = BACKPACK_COLOR_MAPPING;
 
 /**
  * Maps Backpack breakpoint tokens to media query values.
@@ -71,7 +71,7 @@ const colorMap: Record<string, string> = BACKPACK_COLOR_MAPPING;
  *
  * Backpack provides 6 standard breakpoints which we map as follows:
  */
-const breakpointMap: Record<string, string> = {
+export const breakpointMap: Record<string, string> = {
   'small-mobile': breakpoints.breakpointQuerySmallMobile,
   'mobile': breakpoints.breakpointQueryMobile,
   'small-tablet': breakpoints.breakpointQuerySmallTablet,

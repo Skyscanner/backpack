@@ -16,17 +16,73 @@
  * limitations under the License.
  */
 
-import { Flex } from './styled-system/jsx';
+import { css, cx } from './styled-system/css';
 
 import { processBpkProps } from './tokenUtils';
 import type { BpkFlexProps } from './types';
 
+const SPACING_KEYS = [
+  'p', 'pt', 'pr', 'pb', 'pl', 'px', 'py',
+  'padding', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft',
+  'm', 'mt', 'mr', 'mb', 'ml', 'mx', 'my',
+  'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
+  'gap',
+  'borderRadius', 'borderTopLeftRadius', 'borderTopRightRadius',
+  'borderBottomLeftRadius', 'borderBottomRightRadius',
+];
+
+const COLOR_KEYS = [
+  'color',
+  'bg', 'backgroundColor',
+  'borderColor', 'borderTopColor', 'borderRightColor',
+  'borderBottomColor', 'borderLeftColor',
+];
+
+const FLEX_KEYS = [
+  'display',
+  'flex',
+  'flexDirection',
+  'flexWrap',
+  'alignItems',
+  'justifyContent',
+  'textAlign',
+  'border',
+  'borderStyle',
+  'borderWidth',
+  'boxShadow',
+];
+
+const STYLE_KEYS = new Set([
+  ...SPACING_KEYS,
+  ...COLOR_KEYS,
+  ...FLEX_KEYS,
+]);
+
 export const BpkFlex = ({ children, ...props }: BpkFlexProps) => {
-  // Process props to convert Backpack tokens to runtime style props
   const processedProps = processBpkProps(props);
 
-  // className is explicitly excluded from props to prevent style overrides
-  return <Flex {...processedProps}>{children}</Flex>;
+  const styleProps: Record<string, unknown> = { display: 'flex' };
+  const restProps: Record<string, unknown> = {};
+
+  Object.entries(processedProps).forEach(([key, value]) => {
+    if (STYLE_KEYS.has(key)) {
+      styleProps[key] = value;
+    } else {
+      restProps[key] = value;
+    }
+  });
+
+  const className = css(styleProps as any);
+
+  return (
+    <div
+      data-bpk-component="bpk-flex"
+      className={cx('bpk-flex', className)}
+      {...restProps}
+    >
+      {children}
+    </div>
+  );
 };
 
 export type { BpkFlexProps };

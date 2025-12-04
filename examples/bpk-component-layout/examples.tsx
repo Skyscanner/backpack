@@ -18,10 +18,10 @@
 
 import { Fragment } from 'react';
 
-import { BpkProvider } from '../../packages/bpk-component-layout/src/BpkProvider';
 import { BpkBox } from '../../packages/bpk-component-layout/src/BpkBox';
 import { BpkFlex } from '../../packages/bpk-component-layout/src/BpkFlex';
 import { BpkGrid } from '../../packages/bpk-component-layout/src/BpkGrid';
+import { BpkProvider } from '../../packages/bpk-component-layout/src/BpkProvider';
 import { BpkStack, BpkHStack, BpkVStack } from '../../packages/bpk-component-layout/src/BpkStack';
 import { BpkColor, BpkSpacing, BpkBreakpoint } from '../../packages/bpk-component-layout/src/tokens';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
@@ -34,8 +34,8 @@ const getClassName = cssModules(STYLES);
 // Helper component for demo items
 // Note: We use Bpk tokens for default values
 const DemoItem = ({
-  children,
   bg = BpkColor.SurfaceHighlight,
+  children,
   color = BpkColor.TextPrimary
 }: {
   children: React.ReactNode;
