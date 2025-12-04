@@ -31,7 +31,7 @@ const getClassName = cssModules(STYLES);
 
 export type Props = {
   children: ReactNode;
-  href: string;
+  href?: string | null;
   className?: string | null;
   onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
   blank?: boolean;
