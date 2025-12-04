@@ -23,7 +23,7 @@ import {
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkLink, { BpkButtonLink } from '../../packages/bpk-component-link';
-// @ts-ignore Untyped import. See `decisions/imports-ts-suppressions.md`.
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
 const LinkExample = () => (
