@@ -31,7 +31,7 @@ const getClassName = cssModules(STYLES);
 
 export type Props = {
   children: ReactNode;
-  href?: string | null;
+  href: string;
   className?: string | null;
   onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
   blank?: boolean;
@@ -85,7 +85,7 @@ const BpkLink = forwardRef<HTMLAnchorElement, Props>(
     return (
       <a
         className={classNames.join(' ')}
-        href={href || undefined}
+        href={href}
         onClick={onClick}
         target={target}
         rel={rel}
