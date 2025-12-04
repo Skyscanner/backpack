@@ -60,7 +60,7 @@ const BpkLink = forwardRef<HTMLAnchorElement, Props>(
     const underlinedClassNames = [getClassName('bpk-link-underlined')];
 
     const target = blank ? '_blank' : undefined;
-    const rel = blank ? propRel || 'noopener noreferrer' : propRel || undefined;
+    const rel = blank ? propRel || 'noopener noreferrer' : propRel;
 
     if (className) {
       classNames.push(className);
