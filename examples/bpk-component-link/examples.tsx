@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import {
   colorWhite,
   colorSkyGrayTint04,
@@ -25,10 +23,8 @@ import {
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkLink, { BpkButtonLink } from '../../packages/bpk-component-link';
-import {
-  action,
-  BpkDarkExampleWrapper,
-} from '../bpk-storybook-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { action, BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
 const LinkExample = () => (
   <div>
@@ -75,7 +71,7 @@ const LinkInGridExample = () => (
       Link #4
     </BpkLink>
   </div>
-)
+);
 
 const ButtonLinkExample = () => (
   <div>

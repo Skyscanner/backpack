@@ -60,7 +60,9 @@ export const CombinedAlternative = CombinedAlternativeExample;
 export const Overview = OverviewExample;
 
 export const VisualTest = MixedExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true
+  },
 };

@@ -16,48 +16,35 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
-import { forwardRef } from 'react';
+import type { ReactNode, MouseEvent } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import themeAttributes, {
-  linkAlternateThemeAttributes,
-} from './themeAttributes';
+import themeAttributes from './themeAttributes';
 
 import STYLES from './BpkLink.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  children: Node,
-  href: ?string,
-  className: ?string,
-  onClick: ?(event: SyntheticEvent<>) => mixed,
-  blank: boolean,
-  rel: ?string,
-  alternate: boolean,
-  implicit: boolean,
+export type Props = {
+  children: ReactNode;
+  onClick: (event: MouseEvent<HTMLButtonElement>) => void;
+  className?: string | null;
+  alternate?: boolean;
+  implicit?: boolean;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
-const BpkLink = forwardRef(({
+const BpkButtonLink = ({
   alternate = false,
-  blank = false,
   children,
   className = null,
-  href,
   implicit = false,
-  onClick = null,
-  rel: propRel = null,
+  onClick,
   ...rest
-}: Props, ref) => {
+}: Props) => {
   const classNames = [getClassName('bpk-link')];
   const underlinedClassNames = [getClassName('bpk-link-underlined')];
-
-  const target = blank ? '_blank' : null;
-  const rel = blank ? propRel || 'noopener noreferrer' : propRel;
 
   if (className) {
     classNames.push(className);
@@ -74,38 +61,22 @@ const BpkLink = forwardRef(({
   } else if (alternate && !implicit) {
     underlinedClassNames.push(getClassName('bpk-link-underlined--alternate'));
   } else if (implicit && alternate) {
-    underlinedClassNames.push(getClassName('bpk-link-underlined-implicit--alternate'));
+    underlinedClassNames.push(
+      getClassName('bpk-link-underlined-implicit--alternate'),
+    );
   }
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <a
+    <button
+      type="button"
       className={classNames.join(' ')}
-      href={href}
       onClick={onClick}
-      target={target}
-      rel={rel}
-      ref={ref}
       {...rest}
     >
       <span className={underlinedClassNames.join(' ')}>{children}</span>
-    </a>
+    </button>
   );
-});
-
-BpkLink.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
-  href: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-  blank: PropTypes.bool,
-  rel: PropTypes.string,
-  alternate: PropTypes.bool,
-  implicit: PropTypes.bool,
 };
 
-export default BpkLink;
-export { themeAttributes, linkAlternateThemeAttributes };
+export { themeAttributes };
+export default BpkButtonLink;

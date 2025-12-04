@@ -20,7 +20,6 @@ import type { ReactNode } from 'react';
 
 import { withRtlSupport } from '../../bpk-component-icon';
 import ArrowRight from '../../bpk-component-icon/sm/arrow-right';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLink from '../../bpk-component-link';
 import BpkText from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';

@@ -45,7 +45,6 @@ import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
