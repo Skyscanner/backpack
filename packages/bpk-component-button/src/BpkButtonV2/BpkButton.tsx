@@ -39,7 +39,7 @@ const SVG_DETECTION_DEPTH = 5;
  * @returns {boolean} true if the element contains SVG, false otherwise
  */
 const containsSVG = (element: ReactNode, depth: number = 0): boolean => {
-  if (!isValidElement(element) || depth > SVG_DETECTION_DEPTH ) {
+  if (!isValidElement(element) || depth > SVG_DETECTION_DEPTH) {
     return false;
   }
 
@@ -168,7 +168,7 @@ export const BpkButtonV2 = ({
     // Only text elements are wrapped in underlined span, icons are rendered as-is
     // Spacing between text and icons is handled via CSS
     return processLinkChildren(children, underlinedClassNames);
-  }, [isLinkType, isEnabledLinkType, underlinedClassNames, children]);
+  }, [isLinkType, underlinedClassNames, children]);
 
   const target = blank ? '_blank' : undefined;
   const rel = blank ? propRel || 'noopener noreferrer' : propRel;

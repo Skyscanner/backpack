@@ -3,7 +3,7 @@
 exports[`BpkLoadingButton should add only bpk specific classes if className prop is set to empty string 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--secondary"
+    class="bpk-button bpk-button--secondary bpk-button--large"
     type="button"
   >
     <div
@@ -38,7 +38,7 @@ exports[`BpkLoadingButton should add only bpk specific classes if className prop
 exports[`BpkLoadingButton should render correctly with "large" and "disabled" attributes 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--large bpk-button--primary"
+    class="bpk-button bpk-button--primary bpk-button--large"
     disabled=""
     type="button"
   >

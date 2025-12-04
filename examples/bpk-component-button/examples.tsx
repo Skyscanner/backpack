@@ -74,7 +74,7 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
       </Wrapped>
       &nbsp;
       <Wrapped onClick={action('Button clicked')} {...rest}>
-        Find a flights <AlignedSmallLongArrowRightIcon />
+        Find a flight <AlignedSmallLongArrowRightIcon />
       </Wrapped>
       &nbsp;
       <Wrapped onClick={action('Button clicked')} {...rest}>

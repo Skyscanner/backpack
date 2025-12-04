@@ -10,7 +10,7 @@ exports[`BpkNudger should render as an on dark nudger correctly 1`] = `
     >
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary-on-dark"
+        class="bpk-button bpk-button--secondary-on-dark bpk-button--icon-only"
         title="Decrease"
         type="button"
       >
@@ -41,7 +41,7 @@ exports[`BpkNudger should render as an on dark nudger correctly 1`] = `
       />
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary-on-dark"
+        class="bpk-button bpk-button--secondary-on-dark bpk-button--icon-only"
         title="Increase"
         type="button"
       >
@@ -76,7 +76,7 @@ exports[`BpkNudger should render correctly 1`] = `
     >
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary"
+        class="bpk-button bpk-button--secondary bpk-button--icon-only"
         title="Decrease"
         type="button"
       >
@@ -107,7 +107,7 @@ exports[`BpkNudger should render correctly 1`] = `
       />
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary"
+        class="bpk-button bpk-button--secondary bpk-button--icon-only"
         title="Increase"
         type="button"
       >
@@ -142,7 +142,7 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
     >
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary"
+        class="bpk-button bpk-button--secondary bpk-button--icon-only"
         disabled=""
         title="Decrease"
         type="button"
@@ -174,7 +174,7 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
       />
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary"
+        class="bpk-button bpk-button--secondary bpk-button--icon-only"
         title="Increase"
         type="button"
       >
@@ -209,7 +209,7 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
     >
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary"
+        class="bpk-button bpk-button--secondary bpk-button--icon-only"
         title="Decrease"
         type="button"
       >
@@ -240,7 +240,7 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
       />
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary"
+        class="bpk-button bpk-button--secondary bpk-button--icon-only"
         disabled=""
         title="Increase"
         type="button"
@@ -276,7 +276,7 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
     >
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary"
+        class="bpk-button bpk-button--secondary bpk-button--icon-only"
         disabled=""
         title="Decrease"
         type="button"
@@ -308,7 +308,7 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
       />
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary"
+        class="bpk-button bpk-button--secondary bpk-button--icon-only"
         title="Increase"
         type="button"
       >
@@ -343,7 +343,7 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
     >
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary"
+        class="bpk-button bpk-button--secondary bpk-button--icon-only"
         title="Decrease"
         type="button"
       >
@@ -374,7 +374,7 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
       />
       <button
         aria-controls="nudger"
-        class="bpk-button bpk-button--icon-only bpk-button--secondary"
+        class="bpk-button bpk-button--secondary bpk-button--icon-only"
         disabled=""
         title="Increase"
         type="button"
