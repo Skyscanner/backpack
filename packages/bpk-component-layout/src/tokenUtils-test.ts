@@ -17,13 +17,7 @@
  */
 
 import { processBpkProps } from './tokenUtils';
-import {
-  BpkSpacing,
-  BpkColor,
-  BpkBorderWidth,
-  BpkShadow,
-  BpkBorderRadius,
-} from './tokens';
+import { BpkSpacing } from './tokens';
 
 // Import foundations tokens to assert concrete values
  
@@ -75,44 +69,6 @@ describe('processBpkProps', () => {
     });
 
     expect(result.width).toBeUndefined();
-  });
-
-  it('converts Backpack color tokens to concrete color values', () => {
-    const result = processBpkProps({
-      backgroundColor: BpkColor.Canvas,
-      color: BpkColor.TextPrimary,
-    });
-
-    expect(result.backgroundColor).toBe(bpkTokens.canvasDay);
-    expect(result.color).toBe(bpkTokens.textPrimaryDay);
-  });
-
-  it('converts border width tokens to concrete border width values', () => {
-    const result = processBpkProps({
-      borderWidth: BpkBorderWidth.SM,
-      borderTopWidth: BpkBorderWidth.LG,
-    });
-
-    expect(result.borderWidth).toBe(bpkTokens.borderSizeSm);
-    expect(result.borderTopWidth).toBe(bpkTokens.borderSizeLg);
-  });
-
-  it('converts border radius tokens to concrete border radius values', () => {
-    const result = processBpkProps({
-      borderRadius: BpkBorderRadius.MD,
-      borderTopLeftRadius: BpkBorderRadius.SM,
-    });
-
-    expect(result.borderRadius).toBe(bpkTokens.borderRadiusMd);
-    expect(result.borderTopLeftRadius).toBe(bpkTokens.borderRadiusSm);
-  });
-
-  it('converts shadow tokens to concrete box-shadow values', () => {
-    const result = processBpkProps({
-      boxShadow: BpkShadow.SM,
-    });
-
-    expect(result.boxShadow).toBe(bpkTokens.boxShadowSm);
   });
 
   it('removes className and logs a warning in non-production', () => {

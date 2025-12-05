@@ -40,67 +40,6 @@ export const BpkSpacing = {
 export type BpkSpacingToken = typeof BpkSpacing[keyof typeof BpkSpacing];
 
 /**
- * Backpack Border Width Tokens
- * Use these constants to ensure type safety when passing border width props
- */
-export const BpkBorderWidth = {
-  SM: 'bpk-border-size-sm',
-  LG: 'bpk-border-size-lg',
-  XL: 'bpk-border-size-xl',
-} as const;
-
-export type BpkBorderWidthToken = typeof BpkBorderWidth[keyof typeof BpkBorderWidth];
-
-/**
- * Backpack Border Radius Tokens
- * Use these constants to ensure type safety when passing border radius props
- */
-export const BpkBorderRadius = {
-  None: 'bpk-border-radius-none',
-  XS: 'bpk-border-radius-xs',
-  SM: 'bpk-border-radius-sm',
-  MD: 'bpk-border-radius-md',
-  LG: 'bpk-border-radius-lg',
-  XL: 'bpk-border-radius-xl',
-  Full: 'bpk-border-radius-full',
-} as const;
-
-export type BpkBorderRadiusToken = typeof BpkBorderRadius[keyof typeof BpkBorderRadius];
-
-/**
- * Backpack Color Tokens
- * Use these constants to ensure type safety when passing color props
- */
-export const BpkColor = {
-  // Text colors
-  TextPrimary: 'bpk-text-primary-day',
-  TextSecondary: 'bpk-text-secondary-day',
-  TextDisabled: 'bpk-text-disabled-day',
-  TextOnDark: 'bpk-text-on-dark-day',
-  TextLink: 'bpk-text-link-day',
-  TextError: 'bpk-text-error-day',
-  TextSuccess: 'bpk-text-success-day',
-  TextHero: 'bpk-text-hero-day',
-
-  // Background colors
-  Canvas: 'bpk-canvas-day',
-  CanvasContrast: 'bpk-canvas-contrast-day',
-  SurfaceHighlight: 'bpk-surface-highlight-day',
-  SurfaceDefault: 'bpk-surface-default-day',
-  SurfaceElevated: 'bpk-surface-elevated-day',
-
-  // Brand colors
-  CorePrimary: 'bpk-core-primary-day',
-  CoreAccent: 'bpk-core-accent-day',
-
-  // Border colors
-  Line: 'bpk-line-day',
-  LineOnDark: 'bpk-line-on-dark-day',
-} as const;
-
-export type BpkColorToken = typeof BpkColor[keyof typeof BpkColor];
-
-/**
  * Backpack Breakpoint Tokens
  * Use these constants to ensure type safety when defining responsive overrides
  * These map to the simplified keys defined in the Chakra theme
@@ -117,27 +56,11 @@ export const BpkBreakpoint = {
 export type BpkBreakpointToken = typeof BpkBreakpoint[keyof typeof BpkBreakpoint];
 
 /**
- * Backpack Shadow Tokens
- * Use these constants to ensure type safety when applying shadows
- */
-export const BpkShadow = {
-  SM: 'bpk-shadow-sm',
-  LG: 'bpk-shadow-lg',
-  XL: 'bpk-shadow-xl',
-} as const;
-
-export type BpkShadowToken = typeof BpkShadow[keyof typeof BpkShadow];
-
-/**
  * Helper type for values that can be Backpack tokens or percentages
  * but NOT px/rem values
  */
 export type BpkSpacingValue = BpkSpacingToken | `${number}%`;
-export type BpkColorValue = BpkColorToken | 'transparent' | 'currentColor';
 export type BpkBreakpointValue = BpkBreakpointToken;
-export type BpkBorderWidthValue = BpkBorderWidthToken;
-export type BpkShadowValue = BpkShadowToken;
-export type BpkBorderRadiusValue = BpkBorderRadiusToken;
 
 /**
  * Helper type for size props that can use rem, percentages or semantic values.
@@ -169,48 +92,6 @@ export function isPercentage(value: string): boolean {
  */
 export function isValidSpacingValue(value: string): boolean {
   return Object.values(BpkSpacing).includes(value as BpkSpacingToken) || isPercentage(value);
-}
-
-/**
- * Validates if a color value is valid (token or special values)
- *
- * @param {string} value - The color value to validate
- * @returns {boolean} True if the value is a valid Backpack color token or special value
- */
-export function isValidColorValue(value: string): boolean {
-  return Object.values(BpkColor).includes(value as BpkColorToken) ||
-         value === 'transparent' ||
-         value === 'currentColor';
-}
-
-/**
- * Validates if a border width value is valid
- *
- * @param {string} value - The border width value to validate
- * @returns {boolean} True if the value is a valid Backpack border width token
- */
-export function isValidBorderWidthValue(value: string): boolean {
-  return Object.values(BpkBorderWidth).includes(value as BpkBorderWidthToken);
-}
-
-/**
- * Validates if a shadow value is valid
- *
- * @param {string} value - The shadow value to validate
- * @returns {boolean} True if the value is a valid Backpack shadow token
- */
-export function isValidShadowValue(value: string): boolean {
-  return Object.values(BpkShadow).includes(value as BpkShadowToken);
-}
-
-/**
- * Validates if a border radius value is valid
- *
- * @param {string} value - The border radius value to validate
- * @returns {boolean} True if the value is a valid Backpack border radius token
- */
-export function isValidBorderRadiusValue(value: string): boolean {
-  return Object.values(BpkBorderRadius).includes(value as BpkBorderRadiusToken);
 }
 
 /**

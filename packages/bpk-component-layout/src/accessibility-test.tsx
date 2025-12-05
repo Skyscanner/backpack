@@ -23,7 +23,7 @@ import '@testing-library/jest-dom';
 
 import { BpkBox } from './BpkBox';
 import { BpkProvider } from './BpkProvider';
-import { BpkSpacing, BpkColor } from './tokens';
+import { BpkSpacing } from './tokens';
 
 describe('bpk-component-layout accessibility tests', () => {
   it('BpkBox basic usage should not have detectable accessibility issues', async () => {
@@ -33,7 +33,6 @@ describe('bpk-component-layout accessibility tests', () => {
           role="region"
           aria-label="Layout region"
           padding={BpkSpacing.MD}
-          backgroundColor={BpkColor.SurfaceHighlight}
         >
           Accessible layout content
         </BpkBox>

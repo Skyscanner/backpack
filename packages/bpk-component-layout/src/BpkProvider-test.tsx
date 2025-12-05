@@ -22,13 +22,13 @@ import '@testing-library/jest-dom';
 
 import { BpkBox } from './BpkBox';
 import { BpkProvider } from './BpkProvider';
-import { BpkSpacing, BpkColor } from './tokens';
+import { BpkSpacing } from './tokens';
 
 describe('BpkProvider', () => {
   it('renders children inside Chakra system without crashing', () => {
     const { getByText } = render(
       <BpkProvider>
-        <BpkBox padding={BpkSpacing.MD} backgroundColor={BpkColor.SurfaceHighlight}>
+        <BpkBox padding={BpkSpacing.MD}>
           Layout content
         </BpkBox>
       </BpkProvider>,

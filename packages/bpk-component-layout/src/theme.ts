@@ -18,9 +18,6 @@
 
 import { defineConfig } from '@chakra-ui/react';
 
-// Import color mapping
-import { BACKPACK_COLOR_MAPPING } from './colorMapping';
-
 // Import tokens from Backpack foundations
 // Note: Some tokens may not be in TypeScript definitions but exist at runtime
  
@@ -68,14 +65,6 @@ const spacingMap: Record<string, { value: string }> = {
   'bpk-spacing-xl': { value: spacingXl },
   'bpk-spacing-xxl': { value: spacingXxl },
 };
-
-/**
- * Maps Backpack color tokens to actual color values.
- * These come directly from @skyscanner/bpk-foundations-web.
- *
- * Uses the centralized color mapping from colorMapping.ts to ensure consistency.
- */
-const colorMap: Record<string, string> = BACKPACK_COLOR_MAPPING;
 
 /**
  * Maps Backpack border size tokens to actual border width values
@@ -126,26 +115,6 @@ const breakpointMap: Record<string, string> = {
   'desktop': breakpoints.breakpointQueryAboveTablet,
   'large-desktop': breakpoints.breakpointQueryAboveDesktop,
 };
-
-/**
- * Exports color map for use in tokenUtils
- * This allows tokenUtils to look up actual color values
- *
- * @returns {Record<string, string>} A shallow copy of the Backpack color map.
- */
-export function getColorMap(): Record<string, string> {
-  return { ...colorMap };
-}
-
-/**
- * Gets the actual color value for a Backpack color token
- *
- * @param {string} token - Backpack color token name.
- * @returns {string | undefined} The actual color value.
- */
-export function getColorValue(token: string): string | undefined {
-  return colorMap[token];
-}
 
 /**
  * Exports spacing map for use in tokenUtils
@@ -203,12 +172,6 @@ export function getShadowValue(token: string): string | undefined {
 }
 
 export function createBpkConfig() {
-  // Convert color map to Chakra UI token format { value: ... }
-  const colors: Record<string, { value: string }> = {};
-  Object.entries(colorMap).forEach(([token, value]) => {
-    colors[token] = { value };
-  });
-
   // Convert breakpoint map to Chakra UI format
   // Breakpoints in Chakra v3 are typically simple strings in the breakpoints object
   const chakraBreakpoints: Record<string, string> = {};
@@ -221,9 +184,6 @@ export function createBpkConfig() {
     theme: {
       tokens: {
         spacing: spacingMap,
-        colors: {
-          bpk: colors,
-        },
       },
       breakpoints: chakraBreakpoints,
     },

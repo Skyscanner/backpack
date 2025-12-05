@@ -18,11 +18,7 @@
 
 import type {
   BpkSpacingValue,
-  BpkColorValue,
-  BpkBorderWidthValue,
-  BpkShadowValue,
   BpkSizeValue,
-  BpkBorderRadiusValue,
 } from './tokens';
 import type { ConditionalValue as ResponsiveValue } from '@chakra-ui/react';
 
@@ -65,42 +61,11 @@ export interface BpkSpacingProps {
   maxWidth?: ResponsiveValue<BpkSizeValue>;
   maxHeight?: ResponsiveValue<BpkSizeValue>;
 
-  // Border width (uses dedicated border size tokens)
-  borderWidth?: ResponsiveValue<BpkBorderWidthValue>;
-  borderTopWidth?: ResponsiveValue<BpkBorderWidthValue>;
-  borderRightWidth?: ResponsiveValue<BpkBorderWidthValue>;
-  borderBottomWidth?: ResponsiveValue<BpkBorderWidthValue>;
-  borderLeftWidth?: ResponsiveValue<BpkBorderWidthValue>;
-
-  // Border radius (uses dedicated border radius tokens)
-  borderRadius?: ResponsiveValue<BpkBorderRadiusValue>;
-  borderTopLeftRadius?: ResponsiveValue<BpkBorderRadiusValue>;
-  borderTopRightRadius?: ResponsiveValue<BpkBorderRadiusValue>;
-  borderBottomLeftRadius?: ResponsiveValue<BpkBorderRadiusValue>;
-  borderBottomRightRadius?: ResponsiveValue<BpkBorderRadiusValue>;
-
   // Position props (can use spacing tokens)
   top?: ResponsiveValue<BpkSpacingValue>;
   right?: ResponsiveValue<BpkSpacingValue>;
   bottom?: ResponsiveValue<BpkSpacingValue>;
   left?: ResponsiveValue<BpkSpacingValue>;
-}
-
-/**
- * Common color-related props shared by all Backpack layout components
- * All color props must use Backpack color tokens or special values
- */
-export interface BpkColorProps {
-  color?: ResponsiveValue<BpkColorValue>;
-  backgroundColor?: ResponsiveValue<BpkColorValue>;
-  borderColor?: ResponsiveValue<BpkColorValue>;
-  borderTopColor?: ResponsiveValue<BpkColorValue>;
-  borderRightColor?: ResponsiveValue<BpkColorValue>;
-  borderBottomColor?: ResponsiveValue<BpkColorValue>;
-  borderLeftColor?: ResponsiveValue<BpkColorValue>;
-
-  // Shadow (uses dedicated shadow tokens)
-  boxShadow?: ResponsiveValue<BpkShadowValue>;
 }
 
 /**
@@ -114,13 +79,41 @@ export interface BpkColorProps {
  * - BpkBox reintroduces a minimal set of events (onClick, onFocus, onBlur)
  *   on its own props type.
  */
-export interface BpkCommonLayoutProps extends BpkSpacingProps, BpkColorProps {
+export interface BpkCommonLayoutProps extends BpkSpacingProps {
   // Explicitly exclude className
   className?: never;
 
   // Testing & automation attributes
   'data-testid'?: string;
   'data-cy'?: string;
+
+  // Explicitly exclude color-related props to keep layout purely structural.
+  // These props still exist on the underlying Chakra Box, so we mark them as
+  // never here to prevent them from leaking into public layout APIs.
+  color?: never;
+  backgroundColor?: never;
+  borderColor?: never;
+  borderTopColor?: never;
+  borderRightColor?: never;
+  borderBottomColor?: never;
+  borderLeftColor?: never;
+
+  // Explicitly exclude border width props from the public layout API for now.
+  borderWidth?: never;
+  borderTopWidth?: never;
+  borderRightWidth?: never;
+  borderBottomWidth?: never;
+  borderLeftWidth?: never;
+
+  // Explicitly exclude border radius props from the public layout API for now.
+  borderRadius?: never;
+  borderTopLeftRadius?: never;
+  borderTopRightRadius?: never;
+  borderBottomLeftRadius?: never;
+  borderBottomRightRadius?: never;
+
+  // Explicitly exclude shadow props from the public layout API for now.
+  boxShadow?: never;
 
   // Explicitly exclude composite border shorthand props to enforce tokenised API
   border?: never;

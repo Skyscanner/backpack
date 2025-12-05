@@ -22,11 +22,7 @@ import type { ReactNode } from 'react';
 import {
   BpkBox,
   BpkProvider,
-  BpkColor,
   BpkSpacing,
-  BpkBorderWidth,
-  BpkShadow,
-  BpkBorderRadius,
 } from '../../packages/bpk-component-layout';
 
 export const Wrapper = ({ children }: { children: ReactNode }) => (
@@ -34,7 +30,7 @@ export const Wrapper = ({ children }: { children: ReactNode }) => (
 );
 
 /**
- * Core layout example – demonstrates basic spacing & background usage.
+ * Core layout example – demonstrates basic spacing usage.
  *
  * @returns {JSX.Element} A box with padding and margin using Backpack spacing tokens.
  */
@@ -43,50 +39,8 @@ export const SpacingExample = () => (
     <BpkBox
       padding={BpkSpacing.MD}
       margin={BpkSpacing.MD}
-      backgroundColor={BpkColor.SurfaceHighlight}
     >
       Default box with padding and margin using Backpack spacing tokens.
-    </BpkBox>
-  </Wrapper>
-);
-
-/**
- * Color example – demonstrates background & border color tokens.
- *
- * @returns {JSX.Element} A box using Backpack surface and border color tokens.
- */
-export const ColorExample = () => (
-  <Wrapper>
-    <BpkBox
-      padding={BpkSpacing.MD}
-      backgroundColor={BpkColor.CoreAccent}
-      color={BpkColor.TextOnDark}
-      borderWidth={BpkBorderWidth.SM}
-      borderStyle="solid"
-      borderColor={BpkColor.CorePrimary}
-    >
-      Box using Backpack surface and border color tokens.
-    </BpkBox>
-  </Wrapper>
-);
-
-/**
- * Border & shadow example – demonstrates border width tokens + shadow tokens.
- *
- * @returns {JSX.Element} A box with tokenised border radius, border width and shadow.
- */
-export const BorderAndShadowExample = () => (
-  <Wrapper>
-    <BpkBox
-      padding={BpkSpacing.MD}
-      backgroundColor={BpkColor.SurfaceDefault}
-      borderRadius={BpkBorderRadius.MD}
-      borderWidth={BpkBorderWidth.SM}
-      borderStyle="solid"
-      borderColor={BpkColor.Line}
-      boxShadow={BpkShadow.SM}
-    >
-      Box with tokenised border radius, border width and shadow.
     </BpkBox>
   </Wrapper>
 );
@@ -103,10 +57,6 @@ export const RtlSpacingExample = () => (
         paddingInline={BpkSpacing.MD}
         marginInline={BpkSpacing.MD}
         paddingTop={BpkSpacing.MD}
-        backgroundColor={BpkColor.SurfaceHighlight}
-        borderWidth={BpkBorderWidth.SM}
-        borderStyle="solid"
-        borderColor={BpkColor.Line}
       >
         Box using marginInline & paddingInline in RTL context.
       </BpkBox>
@@ -124,10 +74,6 @@ export const SizeExample = () => (
     <BpkBox
       width="50%"
       minHeight="6rem"
-      backgroundColor={BpkColor.SurfaceHighlight}
-      borderWidth={BpkBorderWidth.SM}
-      borderStyle="solid"
-      borderColor={BpkColor.Line}
     >
       Box with 50% width and 6rem minHeight.
     </BpkBox>
@@ -142,8 +88,6 @@ export const SizeExample = () => (
 export const MixedExample = () => (
   <Wrapper>
     <SpacingExample />
-    <ColorExample />
-    <BorderAndShadowExample />
     <RtlSpacingExample />
     <SizeExample />
   </Wrapper>

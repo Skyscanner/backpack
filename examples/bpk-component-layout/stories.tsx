@@ -22,8 +22,6 @@ import { BpkProvider, BpkBox } from '../../packages/bpk-component-layout';
 
 import {
   SpacingExample,
-  ColorExample,
-  BorderAndShadowExample,
   RtlSpacingExample,
   SizeExample,
   MixedExample,
@@ -54,8 +52,6 @@ export default {
   },
 };
 export const Spacing = () => <SpacingExample />;
-export const Color = () => <ColorExample />;
-export const BorderAndShadow = () => <BorderAndShadowExample />;
 export const RtlSpacing = () => <RtlSpacingExample />;
 export const Size = () => <SizeExample />;
 
