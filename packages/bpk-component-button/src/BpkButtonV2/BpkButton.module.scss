@@ -48,6 +48,14 @@
     @include buttons.bpk-button--featured;
   }
 
+  &--link {
+    @include buttons.bpk-button--link;
+  }
+
+  &--link-on-dark {
+    @include buttons.bpk-button--link-on-dark;
+  }
+
   &--primary-on-dark {
     @include buttons.bpk-button--primary-on-dark;
   }
@@ -79,7 +87,6 @@
 }
 
 .bpk-btnlink {
-  @include buttons.bpk-button--link;
   @include typography.bpk-link;
 
   display: inline-flex; /* stylelint-disable-line order/order, order/properties-order */
@@ -107,7 +114,6 @@
 }
 
 .bpk-btnlink-alternate {
-  @include buttons.bpk-button--link-on-dark;
   @include typography.bpk-link--alternate;
 
   &:disabled {
