@@ -74,10 +74,6 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
         Button <AlignedSmallLongArrowRightIcon />
       </Wrapped>
       &nbsp;
-      <Wrapped onClick={action('Button clicked')} {...rest}>
-        <AlignedSmallLongArrowRightIcon /> Button <AlignedSmallLongArrowRightIcon />
-      </Wrapped>
-      &nbsp;
       <Wrapped disabled onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
         Disabled
       </Wrapped>
