@@ -20,7 +20,13 @@ import type { ReactNode } from 'react';
 
 import type { BpkCommonLayoutProps } from './commonProps';
 import type { BpkSpacingValue } from './tokens';
-import type { BoxProps, FlexProps, GridProps, StackProps, ConditionalValue as ResponsiveValue } from '@chakra-ui/react';
+import type {
+  BoxProps,
+  FlexProps,
+  GridProps,
+  StackProps,
+  ConditionalValue as ResponsiveValue,
+} from '@chakra-ui/react';
 
 /**
  * Layout-level event props that should not be exposed on layout components
@@ -42,6 +48,41 @@ type LayoutEventProps =
   | 'onKeyPress';
 
 /**
+ * Flexbox & grid layout props that we explicitly support on Backpack layout
+ * components. These are a curated subset of the underlying Box flex/grid API
+ * that are useful for structural layout.
+ */
+export interface BpkFlexGridProps {
+  // Flex layout props
+  display?: BoxProps['display'];
+  flexDirection?: BoxProps['flexDirection'];
+  flexWrap?: BoxProps['flexWrap'];
+  justifyContent?: BoxProps['justifyContent'];
+  alignItems?: BoxProps['alignItems'];
+  alignContent?: BoxProps['alignContent'];
+
+  flex?: BoxProps['flex'];
+  flexGrow?: BoxProps['flexGrow'];
+  flexShrink?: BoxProps['flexShrink'];
+  flexBasis?: BoxProps['flexBasis'];
+  order?: BoxProps['order'];
+  alignSelf?: BoxProps['alignSelf'];
+  justifySelf?: BoxProps['justifySelf'];
+
+  // Grid layout props
+  gridTemplateColumns?: BoxProps['gridTemplateColumns'];
+  gridTemplateRows?: BoxProps['gridTemplateRows'];
+  gridTemplateAreas?: BoxProps['gridTemplateAreas'];
+  gridAutoFlow?: BoxProps['gridAutoFlow'];
+  gridAutoRows?: BoxProps['gridAutoRows'];
+  gridAutoColumns?: BoxProps['gridAutoColumns'];
+  rowGap?: BoxProps['rowGap'];
+  columnGap?: BoxProps['columnGap'];
+}
+
+type FlexGridPropKeys = keyof BpkFlexGridProps;
+
+/**
  * Base type that removes common layout props, reserved props (className,
  * children) and all layout-level event props from Chakra UI props.
  *
@@ -53,13 +94,16 @@ type RemoveCommonProps<T> = Omit<
   | 'className'
   | 'children'
   | LayoutEventProps
+  | FlexGridPropKeys
 >;
 
 /**
  * Component-specific props for BpkBox
  * Includes all Box props except those in BpkCommonLayoutProps
  */
-export interface BpkBoxSpecificProps extends RemoveCommonProps<BoxProps> {}
+export interface BpkBoxSpecificProps
+  extends RemoveCommonProps<BoxProps>,
+    BpkFlexGridProps {}
 
 /**
  * Props for BpkBox component

@@ -25,6 +25,9 @@ import {
   RtlSpacingExample,
   SizeExample,
   MixedExample,
+  PositionExample,
+  FlexExample,
+  GridExample,
 } from './examples';
 
 export default {
@@ -54,6 +57,9 @@ export default {
 export const Spacing = () => <SpacingExample />;
 export const RtlSpacing = () => <RtlSpacingExample />;
 export const Size = () => <SizeExample />;
+export const Position = () => <PositionExample />;
+export const Flex = () => <FlexExample />;
+export const Grid = () => <GridExample />;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {

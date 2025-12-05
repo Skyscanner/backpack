@@ -83,6 +83,9 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps {
   // Explicitly exclude className
   className?: never;
 
+  // Explicitly exclude style to avoid ad-hoc inline styling on layout primitives.
+  style?: never;
+
   // Testing & automation attributes
   'data-testid'?: string;
   'data-cy'?: string;

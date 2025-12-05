@@ -25,6 +25,8 @@ import {
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
 
+import STYLES from './examples.module.scss';
+
 export const Wrapper = ({ children }: { children: ReactNode }) => (
   <BpkProvider>{children}</BpkProvider>
 );
@@ -36,11 +38,10 @@ export const Wrapper = ({ children }: { children: ReactNode }) => (
  */
 export const SpacingExample = () => (
   <Wrapper>
-    <BpkBox
-      padding={BpkSpacing.MD}
-      margin={BpkSpacing.MD}
-    >
-      Default box with padding and margin using Backpack spacing tokens.
+    <BpkBox padding={BpkSpacing.MD} margin={BpkSpacing.MD}>
+      <span className={STYLES['bpk-layout-examples__outline']}>
+        Default box with padding and margin using Backpack spacing tokens.
+      </span>
     </BpkBox>
   </Wrapper>
 );
@@ -58,7 +59,9 @@ export const RtlSpacingExample = () => (
         marginInline={BpkSpacing.MD}
         paddingTop={BpkSpacing.MD}
       >
-        Box using marginInline & paddingInline in RTL context.
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Box using marginInline & paddingInline in RTL context.
+        </span>
       </BpkBox>
     </div>
   </Wrapper>
@@ -71,11 +74,10 @@ export const RtlSpacingExample = () => (
  */
 export const SizeExample = () => (
   <Wrapper>
-    <BpkBox
-      width="50%"
-      minHeight="6rem"
-    >
-      Box with 50% width and 6rem minHeight.
+    <BpkBox width="50%" minHeight="6rem">
+      <span className={STYLES['bpk-layout-examples__outline']}>
+        Box with 50% width and 6rem minHeight.
+      </span>
     </BpkBox>
   </Wrapper>
 );
@@ -90,5 +92,117 @@ export const MixedExample = () => (
     <SpacingExample />
     <RtlSpacingExample />
     <SizeExample />
+    <PositionExample />
+    <FlexExample />
+    <GridExample />
+  </Wrapper>
+);
+
+/**
+ * Position example – demonstrates top/left offsets using spacing tokens.
+ *
+ * @returns {JSX.Element} A relative box with an absolutely positioned child.
+ */
+export const PositionExample = () => (
+  <Wrapper>
+    <BpkBox padding={BpkSpacing.MD}>
+      <BpkBox
+        position="relative"
+        width="10rem"
+        minHeight="6rem"
+      >
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Relative box (10rem x 6rem)
+        </span>
+        <BpkBox
+          position="absolute"
+          top={BpkSpacing.SM}
+          left={BpkSpacing.SM}
+        >
+          <span className={STYLES['bpk-layout-examples__outline']}>
+            Positioned child (top/left from spacing tokens)
+          </span>
+        </BpkBox>
+      </BpkBox>
+    </BpkBox>
+  </Wrapper>
+);
+
+/**
+ * Flexbox example – demonstrates using BpkBox as a flex container.
+ *
+ * @returns {JSX.Element} A flex row with evenly spaced items.
+ */
+export const FlexExample = () => (
+  <Wrapper>
+    <BpkBox
+      display="flex"
+      flexDirection="row"
+      justifyContent="space-between"
+      padding={BpkSpacing.MD}
+    >
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Flex item 1
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Flex item 2
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Flex item 3
+        </span>
+      </BpkBox>
+    </BpkBox>
+  </Wrapper>
+);
+
+/**
+ * Grid example – demonstrates using BpkBox as a grid container.
+ *
+ * @returns {JSX.Element} A simple three-column grid.
+ */
+export const GridExample = () => (
+  <Wrapper>
+    <BpkBox
+      display="grid"
+      gridTemplateColumns="repeat(3, minmax(0, 1fr))"
+      gap={BpkSpacing.MD}
+      padding={BpkSpacing.MD}
+    >
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Grid cell 1
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Grid cell 2
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Grid cell 3
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Grid cell 4
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Grid cell 5
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Grid cell 6
+        </span>
+      </BpkBox>
+    </BpkBox>
   </Wrapper>
 );

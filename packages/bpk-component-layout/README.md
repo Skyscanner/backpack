@@ -66,6 +66,11 @@ The layout API is intentionally limited and strongly typed. The main groups are:
   - Values: `BpkSpacing` tokens or percentages.
 - **Testing attributes** – `data-testid`, `data-cy` for automation and testing.
 
+In addition, `BpkBox` forwards through a set of **flexbox and grid layout props** from the underlying layout system, for example:
+
+- `display="flex"`, `flexDirection`, `justifyContent`, `alignItems`, `flexWrap`
+- `display="grid"`, `gridTemplateColumns`, `gridTemplateRows`, `gap`
+
 In addition, `BpkBox` re‑introduces a **minimal interaction surface**:
 
 - `onClick`, `onFocus`, `onBlur`

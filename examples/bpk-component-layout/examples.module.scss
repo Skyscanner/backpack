@@ -16,9 +16,11 @@
  * limitations under the License.
  */
 
+@use '../../packages/bpk-mixins/tokens';
+
 .bpk-layout-examples {
-  &--wrapper {
-    padding: 1rem;
-    background-color: var(--bpk-surface-highlight-day);
+  &__outline {
+    display: inline-block;
+    outline: tokens.$bpk-border-size-sm dashed currentColor;
   }
 }
