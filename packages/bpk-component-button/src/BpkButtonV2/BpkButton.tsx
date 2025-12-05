@@ -137,10 +137,10 @@ export const BpkButtonV2 = ({
 
   const classNames = getCommonClassName(
     'bpk-button',
-    `bpk-button--${type}`,
     size === SIZE_TYPES.large && 'bpk-button--large',
     iconOnly && 'bpk-button--icon-only',
     iconOnly && size === SIZE_TYPES.large && 'bpk-button--large-icon-only',
+    `bpk-button--${type}`,
     fullWidth && 'bpk-button--full-width',
     isLinkType && 'bpk-btnlink',
     isLinkType && implicit && 'bpk-btnlink--implicit',

@@ -14,7 +14,7 @@ exports[`BpkButtonV2 should add only bpk specific classes if className prop is s
 exports[`BpkButtonV2 should render correctly a "large", "secondary" button 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--secondary bpk-button--large"
+    class="bpk-button bpk-button--large bpk-button--secondary"
     type="button"
   >
     My button
@@ -98,7 +98,7 @@ exports[`BpkButtonV2 should render correctly with a "href" attribute 1`] = `
 exports[`BpkButtonV2 should render correctly with an "iconOnly" attribute 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--primary bpk-button--icon-only"
+    class="bpk-button bpk-button--icon-only bpk-button--primary"
     type="button"
   >
     My button
@@ -109,7 +109,7 @@ exports[`BpkButtonV2 should render correctly with an "iconOnly" attribute 1`] = 
 exports[`BpkButtonV2 should render correctly with large size 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--primary bpk-button--large"
+    class="bpk-button bpk-button--large bpk-button--primary"
     type="button"
   >
     My button
