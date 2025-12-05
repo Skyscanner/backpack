@@ -21,3 +21,34 @@
 .bpk-button-story-wrapper {
   padding: tokens.bpk-spacing-sm() 0;
 }
+
+.bpk-links-example-section {
+  margin-bottom: tokens.bpk-spacing-xl();
+}
+
+.bpk-links-example-title {
+  margin-bottom: tokens.bpk-spacing-base();
+}
+
+.bpk-links-example-title--dark {
+  color: tokens.$bpk-text-on-dark-day;
+}
+
+.bpk-links-example-row {
+  display: flex;
+  width: 50%;
+  margin-bottom: tokens.bpk-spacing-sm();
+  flex-wrap: wrap;
+  gap: tokens.bpk-spacing-xl();
+}
+
+.bpk-links-example-dark-section {
+  padding: tokens.bpk-spacing-base();
+}
+
+// Apply flexbox gap to divs containing buttons (without bpk-links-example-row class)
+.bpk-links-example-section > div:not(.bpk-links-example-row) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: tokens.bpk-spacing-xl();
+}

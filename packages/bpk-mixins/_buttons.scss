@@ -478,6 +478,22 @@
   }
 }
 
+/// Link alignment. Modifies the bpk-button & bpk-button--link lib.
+///
+/// @require {mixin} bpk-button
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--link-alignment();
+///   }
+@mixin bpk-button--link-alignment {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  gap: tokens.bpk-spacing-md();
+}
+
 /// Icon-only button. Modifies the bpk-button mixin.
 ///
 /// @require {mixin} bpk-button
