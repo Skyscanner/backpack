@@ -142,7 +142,7 @@ describe('BpkButtonV2', () => {
         </BpkButtonV2>,
       );
       expect(container?.firstElementChild?.tagName).toBe('A');
-      expect(container?.firstElementChild?.classList?.contains('bpk-btnlink')).toEqual(true);
+      expect(container?.firstElementChild?.classList?.contains('bpk-button--link')).toEqual(true);
     });
 
     it('should render link type button with large size correctly', () => {
@@ -151,7 +151,7 @@ describe('BpkButtonV2', () => {
           Large link button
         </BpkButtonV2>,
       );
-      expect(container?.firstElementChild?.classList?.contains('bpk-btnlink')).toEqual(true);
+      expect(container?.firstElementChild?.classList?.contains('bpk-button--link')).toEqual(true);
       expect(container?.firstElementChild?.classList?.contains('bpk-button--large')).toEqual(true);
     });
 
@@ -161,8 +161,8 @@ describe('BpkButtonV2', () => {
           Implicit link button
         </BpkButtonV2>,
       );
-      expect(container?.firstElementChild?.classList?.contains('bpk-btnlink')).toEqual(true);
-      expect(container?.firstElementChild?.classList?.contains('bpk-btnlink--implicit')).toEqual(true);
+      expect(container?.firstElementChild?.classList?.contains('bpk-button--link')).toEqual(true);
+      expect(container?.firstElementChild?.classList?.contains('bpk-button--link--implicit')).toEqual(true);
     });
 
     it('should render link on dark type button correctly', () => {
@@ -171,8 +171,8 @@ describe('BpkButtonV2', () => {
           Link on dark button
         </BpkButtonV2>,
       );
-      expect(container?.firstElementChild?.classList?.contains('bpk-btnlink')).toEqual(true);
-      expect(container?.firstElementChild?.classList?.contains('bpk-btnlink-alternate')).toEqual(true);
+
+      expect(container?.firstElementChild?.classList?.contains('bpk-button--link-on-dark')).toEqual(true);
     });
 
     it('should render link on dark type button with large size correctly', () => {
@@ -181,8 +181,8 @@ describe('BpkButtonV2', () => {
           Large link on dark button
         </BpkButtonV2>,
       );
-      expect(container?.firstElementChild?.classList?.contains('bpk-btnlink')).toEqual(true);
-      expect(container?.firstElementChild?.classList?.contains('bpk-btnlink-alternate')).toEqual(true);
+
+      expect(container?.firstElementChild?.classList?.contains('bpk-button--link-on-dark')).toEqual(true);
       expect(container?.firstElementChild?.classList?.contains('bpk-button--large')).toEqual(true);
     });
 
@@ -194,7 +194,7 @@ describe('BpkButtonV2', () => {
       );
 
       // Text should be wrapped in underlined span
-      const underlinedSpan = container.querySelector('.bpk-btnlink-underlined');
+      const underlinedSpan = container.querySelector('.bpk-button--link-underlined');
       expect(underlinedSpan).toBeTruthy();
       expect(underlinedSpan?.textContent).toBe('Text only');
     });
@@ -214,7 +214,7 @@ describe('BpkButtonV2', () => {
       );
 
       // Icon should not be wrapped in underlined span
-      const underlinedSpan = container.querySelector('.bpk-btnlink-underlined');
+      const underlinedSpan = container.querySelector('.bpk-button--link-underlined');
       expect(underlinedSpan).toBeFalsy();
 
       // Icon should be present
@@ -236,7 +236,7 @@ describe('BpkButtonV2', () => {
       );
 
       // Text should be wrapped in underlined span
-      const underlinedSpan = container.querySelector('.bpk-btnlink-underlined');
+      const underlinedSpan = container.querySelector('.bpk-button--link-underlined');
       expect(underlinedSpan).toBeTruthy();
       expect(underlinedSpan?.textContent?.trim()).toBe('Text');
 
@@ -260,7 +260,7 @@ describe('BpkButtonV2', () => {
       );
 
       // Text should be wrapped in underlined span
-      const underlinedSpan = container.querySelector('.bpk-btnlink-underlined');
+      const underlinedSpan = container.querySelector('.bpk-button--link-underlined');
       expect(underlinedSpan).toBeTruthy();
       expect(underlinedSpan?.textContent?.trim()).toBe('Text');
 
@@ -284,7 +284,7 @@ describe('BpkButtonV2', () => {
       );
 
       // Both text parts should be wrapped in underlined spans
-      const underlinedSpans = container.querySelectorAll('.bpk-btnlink-underlined');
+      const underlinedSpans = container.querySelectorAll('.bpk-button--link-underlined');
       expect(underlinedSpans.length).toBeGreaterThan(0);
 
       // Icon should be outside the underlined spans
@@ -300,7 +300,7 @@ describe('BpkButtonV2', () => {
       );
 
       // Disabled links should not have underline processing
-      const underlinedSpan = container.querySelector('.bpk-btnlink-underlined');
+      const underlinedSpan = container.querySelector('.bpk-button--link-underlined');
       expect(underlinedSpan).toBeFalsy();
     });
 
@@ -315,10 +315,10 @@ describe('BpkButtonV2', () => {
       expect(container?.firstElementChild?.tagName).toBe('BUTTON');
 
       // Should have link button class
-      expect(container?.firstElementChild?.classList?.contains('bpk-btnlink')).toEqual(true);
+      expect(container?.firstElementChild?.classList?.contains('bpk-button--link')).toEqual(true);
 
       // Buttons without href should not have underline processing
-      const underlinedSpan = container.querySelector('.bpk-btnlink-underlined');
+      const underlinedSpan = container.querySelector('.bpk-button--link-underlined');
       expect(underlinedSpan).toBeTruthy();
     });
 
@@ -337,7 +337,7 @@ describe('BpkButtonV2', () => {
       );
 
       // Icon should not be wrapped in underlined span
-      const underlinedSpan = container.querySelector('.bpk-btnlink-underlined');
+      const underlinedSpan = container.querySelector('.bpk-button--link-underlined');
       expect(underlinedSpan).toBeFalsy();
     });
 
@@ -355,7 +355,7 @@ describe('BpkButtonV2', () => {
       );
 
       expect(container?.firstElementChild?.classList?.contains('bpk-button--large')).toEqual(true);
-      const underlinedSpan = container.querySelector('.bpk-btnlink-underlined');
+      const underlinedSpan = container.querySelector('.bpk-button--link-underlined');
       expect(underlinedSpan).toBeTruthy();
     });
 
@@ -366,7 +366,7 @@ describe('BpkButtonV2', () => {
         </BpkButtonV2>,
       );
 
-      expect(container?.firstElementChild?.classList?.contains('bpk-btnlink')).toEqual(true);
+      expect(container?.firstElementChild?.classList?.contains('bpk-button--link')).toEqual(true);
       expect(container?.firstElementChild?.classList?.contains('bpk-button--full-width')).toEqual(true);
     });
   });

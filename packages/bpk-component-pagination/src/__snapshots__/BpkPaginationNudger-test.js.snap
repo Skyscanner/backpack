@@ -6,7 +6,7 @@ exports[`BpkPaginationNudger should display backward nudger 1`] = `
     class="bpk-pagination-nudger"
   >
     <button
-      class="bpk-button bpk-button--link bpk-btnlink"
+      class="bpk-button bpk-button--link"
       type="button"
     >
       <span
@@ -26,7 +26,7 @@ exports[`BpkPaginationNudger should display backward nudger 1`] = `
         </svg>
       </span>
       <span
-        class="bpk-btnlink-underlined"
+        class="bpk-button--link-underlined"
       >
         <span
           class="bpk-pagination-nudger__text--hidden"
@@ -45,7 +45,7 @@ exports[`BpkPaginationNudger should display forward nudger 1`] = `
     class="bpk-pagination-nudger"
   >
     <button
-      class="bpk-button bpk-button--link bpk-btnlink"
+      class="bpk-button bpk-button--link"
       type="button"
     >
       <span
@@ -65,7 +65,7 @@ exports[`BpkPaginationNudger should display forward nudger 1`] = `
         </svg>
       </span>
       <span
-        class="bpk-btnlink-underlined"
+        class="bpk-button--link-underlined"
       >
         <span
           class="bpk-pagination-nudger__text--hidden"

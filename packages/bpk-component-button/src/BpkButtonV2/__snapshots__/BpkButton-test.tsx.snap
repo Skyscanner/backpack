@@ -142,11 +142,11 @@ exports[`BpkButtonV2 should render correctly with type="featured" 1`] = `
 exports[`BpkButtonV2 should render correctly with type="link" 1`] = `
 <DocumentFragment>
   <button
-    class="bpk-button bpk-button--link bpk-btnlink"
+    class="bpk-button bpk-button--link"
     type="button"
   >
     <span
-      class="bpk-btnlink-underlined"
+      class="bpk-button--link-underlined"
     >
       link button
     </span>

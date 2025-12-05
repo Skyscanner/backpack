@@ -142,18 +142,16 @@ export const BpkButtonV2 = ({
     iconOnly && size === SIZE_TYPES.large && 'bpk-button--large-icon-only',
     `bpk-button--${type}`,
     fullWidth && 'bpk-button--full-width',
-    isLinkType && 'bpk-btnlink',
-    isLinkType && implicit && 'bpk-btnlink--implicit',
-    isLinkType && isAlternate && 'bpk-btnlink-alternate',
+    isLinkType && implicit && 'bpk-button--link--implicit',
     className,
   );
 
   const underlinedClassNames = isEnabledLinkType
       ? getCommonClassName(
-          'bpk-btnlink-underlined',
-          implicit && 'bpk-btnlink-underlined--implicit',
-          isAlternate && 'bpk-btnlink-underlined--alternate',
-          implicit && isAlternate && 'bpk-btnlink-underlined--implicit--alternate',
+          'bpk-button--link-underlined',
+          implicit && 'bpk-button--link-underlined--implicit',
+          isAlternate && 'bpk-button--link-underlined--alternate',
+          implicit && isAlternate && 'bpk-button--link-underlined--implicit--alternate',
         )
       : null;
 

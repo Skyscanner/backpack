@@ -50,10 +50,59 @@
 
   &--link {
     @include buttons.bpk-button--link;
+    @include typography.bpk-link;
+
+    display: inline-flex; /* stylelint-disable-line order/order, order/properties-order */
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    gap: tokens.bpk-spacing-md();
+
+    &--active {
+      @include typography.bpk-link--active;
+    }
+
+    &--implicit {
+      @include typography.bpk-link--implicit;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    svg {
+      fill: currentcolor;
+    }
   }
 
   &--link-on-dark {
     @include buttons.bpk-button--link-on-dark;
+    @include typography.bpk-link;
+    @include typography.bpk-link--alternate;
+
+    display: inline-flex; /* stylelint-disable-line order/order, order/properties-order */
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    gap: tokens.bpk-spacing-md();
+
+    &--active {
+      @include typography.bpk-link--active;
+    }
+
+    &--implicit {
+      @include typography.bpk-link--implicit;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    svg {
+      fill: currentcolor;
+    }
   }
 
   &--primary-on-dark {
@@ -86,43 +135,7 @@
   }
 }
 
-.bpk-btnlink {
-  @include typography.bpk-link;
-
-  display: inline-flex; /* stylelint-disable-line order/order, order/properties-order */
-  justify-content: center;
-  align-items: center;
-  vertical-align: middle;
-  gap: tokens.bpk-spacing-md();
-
-  &--active {
-    @include typography.bpk-link--active;
-  }
-
-  &--implicit {
-    @include typography.bpk-link--implicit;
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    pointer-events: none;
-  }
-
-  svg {
-    fill: currentcolor;
-  }
-}
-
-.bpk-btnlink-alternate {
-  @include typography.bpk-link--alternate;
-
-  &:disabled {
-    cursor: not-allowed;
-    pointer-events: none;
-  }
-}
-
-.bpk-btnlink-underlined {
+.bpk-button--link-underlined {
   display: inline-flex;
   align-items: flex-end;
 
