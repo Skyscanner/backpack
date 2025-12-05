@@ -17,13 +17,20 @@
  */
 
 import { getBackpackColorValue } from './colorMapping';
-import { getColorValue, getSpacingValue, getBorderSizeValue, getShadowValue } from './theme';
+import {
+  getColorValue,
+  getSpacingValue,
+  getBorderSizeValue,
+  getShadowValue,
+  getBorderRadiusValue,
+} from './theme';
 import {
   isValidSpacingValue,
   isValidColorValue,
   isValidBorderWidthValue,
   isValidShadowValue,
   isValidSizeValue,
+   isValidBorderRadiusValue,
   isPercentage,
 } from './tokens';
 
@@ -134,6 +141,27 @@ export function convertBpkShadowToChakra(value: string): string {
     // eslint-disable-next-line no-console
     console.warn(
       `Shadow token "${value}" not found in theme. Returning as-is.`
+    );
+  }
+  return value;
+}
+
+/**
+ * Converts Backpack border radius token to actual border radius value
+ *
+ * @param {string} value - Backpack border radius token (e.g., 'bpk-border-radius-md')
+ * @returns {string} The actual border radius value (e.g., '.75rem')
+ */
+export function convertBpkBorderRadiusToChakra(value: string): string {
+  const radiusValue = getBorderRadiusValue(value);
+  if (radiusValue !== undefined) {
+    return radiusValue;
+  }
+
+  if (process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.warn(
+      `Border radius token "${value}" not found in theme. Returning as-is.`,
     );
   }
   return value;
@@ -308,6 +336,45 @@ export function processShadowProps<T extends Record<string, any>>(
 }
 
 /**
+ * Validates and converts border radius props for Chakra UI
+ *
+ * @param {T} props - Component props object
+ * @returns {Record<string, any>} Processed props with border radius tokens converted to actual values
+ */
+export function processRadiusProps<T extends Record<string, any>>(
+  props: T,
+): Record<string, any> {
+  const radiusKeys = [
+    'borderRadius',
+    'borderTopLeftRadius',
+    'borderTopRightRadius',
+    'borderBottomLeftRadius',
+    'borderBottomRightRadius',
+  ];
+
+  const processed: Record<string, any> = { ...props };
+
+  radiusKeys.forEach((key) => {
+    if (key in processed && processed[key] !== undefined) {
+      const processedValue = processResponsiveValue(
+        processed[key],
+        convertBpkBorderRadiusToChakra,
+        isValidBorderRadiusValue,
+        key,
+      );
+
+      if (processedValue !== undefined) {
+        processed[key] = processedValue;
+      } else {
+        delete processed[key];
+      }
+    }
+  });
+
+  return processed;
+}
+
+/**
  * Validates and converts color props for Chakra UI
  * Handles all color-related properties including text color, background, and border colors
  *
@@ -352,10 +419,11 @@ export function processColorProps<T extends Record<string, any>>(
  *
  * Processing order:
  * 1. Remove className
- * 2. Process spacing props (includes border radius and position)
+ * 2. Process spacing props (includes position)
  * 3. Process border width props
- * 4. Process shadow props
- * 5. Process color props (includes all color-related properties)
+ * 4. Process border radius props
+ * 5. Process shadow props
+ * 6. Process color props (includes all color-related properties)
  *
  * @param {T} props - Component props object
  * @returns {Record<string, any>} Processed props with tokens converted and className removed
@@ -374,10 +442,12 @@ export function processBpkProps<T extends Record<string, any>>(
     );
   }
 
-  // Process spacing props (includes position, typography)
+  // Process spacing props (includes position)
   let processed = processSpacingProps(propsWithoutClassName);
   // Process border width props
   processed = processBorderProps(processed);
+  // Process border radius props
+  processed = processRadiusProps(processed);
   // Process shadow props
   processed = processShadowProps(processed);
   // Process color props

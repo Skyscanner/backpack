@@ -22,6 +22,7 @@ import type {
   BpkBorderWidthValue,
   BpkShadowValue,
   BpkSizeValue,
+  BpkBorderRadiusValue,
 } from './tokens';
 import type { ConditionalValue as ResponsiveValue } from '@chakra-ui/react';
 
@@ -71,12 +72,12 @@ export interface BpkSpacingProps {
   borderBottomWidth?: ResponsiveValue<BpkBorderWidthValue>;
   borderLeftWidth?: ResponsiveValue<BpkBorderWidthValue>;
 
-  // Border radius (can use spacing tokens)
-  borderRadius?: ResponsiveValue<BpkSpacingValue>;
-  borderTopLeftRadius?: ResponsiveValue<BpkSpacingValue>;
-  borderTopRightRadius?: ResponsiveValue<BpkSpacingValue>;
-  borderBottomLeftRadius?: ResponsiveValue<BpkSpacingValue>;
-  borderBottomRightRadius?: ResponsiveValue<BpkSpacingValue>;
+  // Border radius (uses dedicated border radius tokens)
+  borderRadius?: ResponsiveValue<BpkBorderRadiusValue>;
+  borderTopLeftRadius?: ResponsiveValue<BpkBorderRadiusValue>;
+  borderTopRightRadius?: ResponsiveValue<BpkBorderRadiusValue>;
+  borderBottomLeftRadius?: ResponsiveValue<BpkBorderRadiusValue>;
+  borderBottomRightRadius?: ResponsiveValue<BpkBorderRadiusValue>;
 
   // Position props (can use spacing tokens)
   top?: ResponsiveValue<BpkSpacingValue>;

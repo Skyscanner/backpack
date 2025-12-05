@@ -26,6 +26,7 @@ import {
   BpkSpacing,
   BpkBorderWidth,
   BpkShadow,
+  BpkBorderRadius,
 } from '../../packages/bpk-component-layout';
 
 export const Wrapper = ({ children }: { children: ReactNode }) => (
@@ -79,7 +80,7 @@ export const BorderAndShadowExample = () => (
     <BpkBox
       padding={BpkSpacing.MD}
       backgroundColor={BpkColor.SurfaceDefault}
-      borderRadius={BpkSpacing.MD}
+      borderRadius={BpkBorderRadius.MD}
       borderWidth={BpkBorderWidth.SM}
       borderStyle="solid"
       borderColor={BpkColor.Line}

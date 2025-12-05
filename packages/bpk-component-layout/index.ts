@@ -43,6 +43,8 @@ export type {
   BpkBorderWidthValue,
   BpkShadowToken,
   BpkShadowValue,
+  BpkBorderRadiusToken,
+  BpkBorderRadiusValue,
 } from './src/tokens';
 export {
   BpkSpacing,
@@ -50,9 +52,11 @@ export {
   BpkBreakpoint,
   BpkBorderWidth,
   BpkShadow,
+  BpkBorderRadius,
   isValidSpacingValue,
   isValidColorValue,
   isPercentage,
   isValidBorderWidthValue,
   isValidShadowValue,
+  isValidBorderRadiusValue,
 } from './src/tokens';

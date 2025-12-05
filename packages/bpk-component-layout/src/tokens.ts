@@ -52,6 +52,22 @@ export const BpkBorderWidth = {
 export type BpkBorderWidthToken = typeof BpkBorderWidth[keyof typeof BpkBorderWidth];
 
 /**
+ * Backpack Border Radius Tokens
+ * Use these constants to ensure type safety when passing border radius props
+ */
+export const BpkBorderRadius = {
+  None: 'bpk-border-radius-none',
+  XS: 'bpk-border-radius-xs',
+  SM: 'bpk-border-radius-sm',
+  MD: 'bpk-border-radius-md',
+  LG: 'bpk-border-radius-lg',
+  XL: 'bpk-border-radius-xl',
+  Full: 'bpk-border-radius-full',
+} as const;
+
+export type BpkBorderRadiusToken = typeof BpkBorderRadius[keyof typeof BpkBorderRadius];
+
+/**
  * Backpack Color Tokens
  * Use these constants to ensure type safety when passing color props
  */
@@ -121,6 +137,7 @@ export type BpkColorValue = BpkColorToken | 'transparent' | 'currentColor';
 export type BpkBreakpointValue = BpkBreakpointToken;
 export type BpkBorderWidthValue = BpkBorderWidthToken;
 export type BpkShadowValue = BpkShadowToken;
+export type BpkBorderRadiusValue = BpkBorderRadiusToken;
 
 /**
  * Helper type for size props that can use rem, percentages or semantic values.
@@ -184,6 +201,16 @@ export function isValidBorderWidthValue(value: string): boolean {
  */
 export function isValidShadowValue(value: string): boolean {
   return Object.values(BpkShadow).includes(value as BpkShadowToken);
+}
+
+/**
+ * Validates if a border radius value is valid
+ *
+ * @param {string} value - The border radius value to validate
+ * @returns {boolean} True if the value is a valid Backpack border radius token
+ */
+export function isValidBorderRadiusValue(value: string): boolean {
+  return Object.values(BpkBorderRadius).includes(value as BpkBorderRadiusToken);
 }
 
 /**

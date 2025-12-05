@@ -55,8 +55,8 @@ const spacingXxl = '2.5rem';
  */
 
 /**
- * Maps Backpack spacing tokens to actual rem values
- * These come directly from @skyscanner/bpk-foundations-web
+ * Maps Backpack spacing tokens to actual rem values.
+ * These come directly from @skyscanner/bpk-foundations-web.
  */
 // Spacing tokens - directly imported from foundations
 const spacingMap: Record<string, { value: string }> = {
@@ -70,10 +70,10 @@ const spacingMap: Record<string, { value: string }> = {
 };
 
 /**
- * Maps Backpack color tokens to actual color values
- * These come directly from @skyscanner/bpk-foundations-web
+ * Maps Backpack color tokens to actual color values.
+ * These come directly from @skyscanner/bpk-foundations-web.
  *
- * Uses the centralized color mapping from colorMapping.ts to ensure consistency
+ * Uses the centralized color mapping from colorMapping.ts to ensure consistency.
  */
 const colorMap: Record<string, string> = BACKPACK_COLOR_MAPPING;
 
@@ -85,6 +85,20 @@ const borderSizeMap: Record<string, string> = {
   'bpk-border-size-sm': bpkTokens.borderSizeSm,
   'bpk-border-size-lg': bpkTokens.borderSizeLg,
   'bpk-border-size-xl': bpkTokens.borderSizeXl,
+};
+
+/**
+ * Maps Backpack border radius tokens to actual radius values.
+ * These come directly from @skyscanner/bpk-foundations-web.
+ */
+const borderRadiusMap: Record<string, string> = {
+  'bpk-border-radius-none': '0',
+  'bpk-border-radius-xs': bpkTokens.borderRadiusXs,
+  'bpk-border-radius-sm': bpkTokens.borderRadiusSm,
+  'bpk-border-radius-md': bpkTokens.borderRadiusMd,
+  'bpk-border-radius-lg': bpkTokens.borderRadiusLg,
+  'bpk-border-radius-xl': bpkTokens.borderRadiusXl,
+  'bpk-border-radius-full': bpkTokens.borderRadiusFull,
 };
 
 /**
@@ -166,6 +180,16 @@ export function getSpacingValue(token: string): string | undefined {
  */
 export function getBorderSizeValue(token: string): string | undefined {
   return borderSizeMap[token];
+}
+
+/**
+ * Gets the actual border radius value for a Backpack border radius token
+ *
+ * @param {string} token - Backpack border radius token name.
+ * @returns {string | undefined} The actual border radius value.
+ */
+export function getBorderRadiusValue(token: string): string | undefined {
+  return borderRadiusMap[token];
 }
 
 /**

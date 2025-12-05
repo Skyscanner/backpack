@@ -21,7 +21,7 @@ import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { BpkBox } from './BpkBox';
-import { BpkSpacing, BpkColor, BpkBorderWidth, BpkShadow } from './tokens';
+import { BpkSpacing, BpkColor, BpkBorderWidth, BpkShadow, BpkBorderRadius } from './tokens';
 
 describe('BpkBox', () => {
   it('renders children content', () => {
@@ -54,6 +54,7 @@ describe('BpkBox', () => {
         borderStyle="solid"
         borderColor={BpkColor.Line}
         boxShadow={BpkShadow.SM}
+        borderRadius={BpkBorderRadius.MD}
       >
         Token box
       </BpkBox>,

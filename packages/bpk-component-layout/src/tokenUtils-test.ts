@@ -22,6 +22,7 @@ import {
   BpkColor,
   BpkBorderWidth,
   BpkShadow,
+  BpkBorderRadius,
 } from './tokens';
 
 // Import foundations tokens to assert concrete values
@@ -94,6 +95,16 @@ describe('processBpkProps', () => {
 
     expect(result.borderWidth).toBe(bpkTokens.borderSizeSm);
     expect(result.borderTopWidth).toBe(bpkTokens.borderSizeLg);
+  });
+
+  it('converts border radius tokens to concrete border radius values', () => {
+    const result = processBpkProps({
+      borderRadius: BpkBorderRadius.MD,
+      borderTopLeftRadius: BpkBorderRadius.SM,
+    });
+
+    expect(result.borderRadius).toBe(bpkTokens.borderRadiusMd);
+    expect(result.borderTopLeftRadius).toBe(bpkTokens.borderRadiusSm);
   });
 
   it('converts shadow tokens to concrete box-shadow values', () => {
