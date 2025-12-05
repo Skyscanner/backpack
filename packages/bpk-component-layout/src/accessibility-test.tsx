@@ -44,5 +44,3 @@ describe('bpk-component-layout accessibility tests', () => {
     expect(results).toHaveNoViolations();
   });
 });
-
-
