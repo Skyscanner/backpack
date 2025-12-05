@@ -116,11 +116,11 @@ export const PositionExample = () => (
         </span>
         <BpkBox
           position="absolute"
-          top={BpkSpacing.SM}
-          left={BpkSpacing.SM}
+          top="12rem"
+          left="6rem"
         >
           <span className={STYLES['bpk-layout-examples__outline']}>
-            Positioned child (top/left from spacing tokens)
+            Positioned child (top/left from 12rem,10rem)
           </span>
         </BpkBox>
       </BpkBox>

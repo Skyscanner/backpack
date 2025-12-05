@@ -20,6 +20,7 @@ import { getSpacingValue } from './theme';
 import {
   isValidSpacingValue,
   isValidSizeValue,
+  isValidPositionValue,
   isPercentage,
 } from './tokens';
 
@@ -127,12 +128,31 @@ export function processSpacingProps<T extends Record<string, any>>(
   spacingKeys.forEach((key) => {
     if (key in processed && processed[key] !== undefined) {
       const sizeKeys = ['width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight'];
+      const positionKeys = ['top', 'right', 'bottom', 'left'];
+
       const isSizeProp = sizeKeys.includes(key);
+      const isPositionProp = positionKeys.includes(key);
+
+      let converter: (v: string) => string;
+      if (isSizeProp || isPositionProp) {
+        converter = (v: string) => v;
+      } else {
+        converter = convertBpkSpacingToChakra;
+      }
+
+      let validator: (v: string) => boolean;
+      if (isSizeProp) {
+        validator = isValidSizeValue;
+      } else if (isPositionProp) {
+        validator = isValidPositionValue;
+      } else {
+        validator = isValidSpacingValue;
+      }
 
       const processedValue = processResponsiveValue(
         processed[key],
-        isSizeProp ? (v: string) => v : convertBpkSpacingToChakra,
-        isSizeProp ? isValidSizeValue : isValidSpacingValue,
+        converter,
+        validator,
         key
       );
 

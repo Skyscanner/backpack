@@ -19,6 +19,7 @@
 import type {
   BpkSpacingValue,
   BpkSizeValue,
+  BpkPositionValue,
 } from './tokens';
 import type { ConditionalValue as ResponsiveValue } from '@chakra-ui/react';
 
@@ -61,11 +62,11 @@ export interface BpkSpacingProps {
   maxWidth?: ResponsiveValue<BpkSizeValue>;
   maxHeight?: ResponsiveValue<BpkSizeValue>;
 
-  // Position props (can use spacing tokens)
-  top?: ResponsiveValue<BpkSpacingValue>;
-  right?: ResponsiveValue<BpkSpacingValue>;
-  bottom?: ResponsiveValue<BpkSpacingValue>;
-  left?: ResponsiveValue<BpkSpacingValue>;
+  // Position props (use rem values or percentages)
+  top?: ResponsiveValue<BpkPositionValue>;
+  right?: ResponsiveValue<BpkPositionValue>;
+  bottom?: ResponsiveValue<BpkPositionValue>;
+  left?: ResponsiveValue<BpkPositionValue>;
 }
 
 /**

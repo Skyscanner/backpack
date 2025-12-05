@@ -75,6 +75,14 @@ export type BpkSizeValue =
   | 'fit-content';
 
 /**
+ * Helper type for position props that can use rem or percentages.
+ * We intentionally do not allow semantic values like 'auto' here.
+ */
+export type BpkPositionValue =
+  | `${number}rem`
+  | `${number}%`;
+
+/**
  * Validates if a value is a percentage string
  *
  * @param {string} value - The value to validate
@@ -107,5 +115,18 @@ export function isValidSizeValue(value: string): boolean {
     value === 'auto' ||
     value === 'full' ||
     value === 'fit-content'
+  );
+}
+
+/**
+ * Validates if a position value is valid
+ *
+ * @param {string} value - The position value to validate
+ * @returns {boolean} True if the value is a valid rem or percentage
+ */
+export function isValidPositionValue(value: string): boolean {
+  return (
+    /^-?\d+(\.\d+)?rem$/.test(value) || // rem values
+    isPercentage(value) // percentage values
   );
 }
