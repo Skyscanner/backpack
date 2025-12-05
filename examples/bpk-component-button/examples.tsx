@@ -31,6 +31,7 @@ import LargeSortIcon from '../../packages/bpk-component-icon/lg/sort';
 import SmallFilterIcon from '../../packages/bpk-component-icon/sm/filter';
 import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
 import SmallSortIcon from '../../packages/bpk-component-icon/sm/sort';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 import {
   action,
@@ -240,22 +241,17 @@ const LinksExample = () => (
   <div className={getClassName('bpk-button-story-wrapper')}>
     {/* Link type - Standard underline */}
     <section className={getClassName('bpk-links-example-section')}>
-      <h3 className={getClassName('bpk-links-example-title')}>
-        Link (Standard underline)
-      </h3>
+      <BpkText textStyle={TEXT_STYLES.heading4} tagName='p' className={getClassName('bpk-links-example-title')}>Link (Standard underline)</BpkText>
       <div className={getClassName('bpk-links-example-row')}>
         <BpkButtonV2 type={BUTTON_TYPES.link} href="#">
           Button
         </BpkButtonV2>
-        <span className={getClassName('bpk-links-example-spacer')} />
         <BpkButtonV2 type={BUTTON_TYPES.link} href="#">
           Button <SmallLongArrowRightIcon />
         </BpkButtonV2>
-        <span className={getClassName('bpk-links-example-spacer')} />
         <BpkButtonV2 type={BUTTON_TYPES.link} href="#">
           <SmallFilterIcon />
         </BpkButtonV2>
-        <span className={getClassName('bpk-links-example-spacer')} />
         <BpkButtonV2 type={BUTTON_TYPES.link} href="#">
           <SmallSortIcon /> Button
         </BpkButtonV2>
@@ -264,7 +260,6 @@ const LinksExample = () => (
         <BpkButtonV2 type={BUTTON_TYPES.link} href="#" disabled>
           Disabled link
         </BpkButtonV2>
-        <span className={getClassName('bpk-links-example-spacer')} />
         <BpkButtonV2 type={BUTTON_TYPES.link} href="#" disabled>
           Disabled with icon <SmallLongArrowRightIcon />
         </BpkButtonV2>
@@ -273,7 +268,6 @@ const LinksExample = () => (
         <BpkButtonV2 type={BUTTON_TYPES.link}>
           Button
         </BpkButtonV2>
-        <span className={getClassName('bpk-links-example-spacer')} />
         <BpkButtonV2 type={BUTTON_TYPES.link}>
           Button<SmallLongArrowRightIcon />
         </BpkButtonV2>
@@ -282,22 +276,17 @@ const LinksExample = () => (
 
     {/* Link type - Implicit underline (hover only) */}
     <section className={getClassName('bpk-links-example-section')}>
-      <h3 className={getClassName('bpk-links-example-title')}>
-        Link Implicit (Underline on hover)
-      </h3>
+      <BpkText textStyle={TEXT_STYLES.heading4} tagName='p' className={getClassName('bpk-links-example-title')}>Link Implicit (Underline on hover)</BpkText>
       <div className={getClassName('bpk-links-example-row')}>
         <BpkButtonV2 type={BUTTON_TYPES.link} implicit href="#">
           Button
         </BpkButtonV2>
-        <span className={getClassName('bpk-links-example-spacer')} />
         <BpkButtonV2 type={BUTTON_TYPES.link} implicit href="#">
           Button<SmallLongArrowRightIcon />
         </BpkButtonV2>
-        <span className={getClassName('bpk-links-example-spacer')} />
         <BpkButtonV2 type={BUTTON_TYPES.link} implicit href="#">
           <SmallFilterIcon />
         </BpkButtonV2>
-        <span className={getClassName('bpk-links-example-spacer')} />
         <BpkButtonV2 type={BUTTON_TYPES.link} implicit href="#">
           <SmallSortIcon />Button
         </BpkButtonV2>
@@ -306,7 +295,6 @@ const LinksExample = () => (
         <BpkButtonV2 type={BUTTON_TYPES.link} implicit href="#" disabled>
           Disabled link
         </BpkButtonV2>
-        <span className={getClassName('bpk-links-example-spacer')} />
         <BpkButtonV2 type={BUTTON_TYPES.link} implicit href="#" disabled>
           Disabled with icon<SmallLongArrowRightIcon />
         </BpkButtonV2>
@@ -315,7 +303,6 @@ const LinksExample = () => (
         <BpkButtonV2 type={BUTTON_TYPES.link} implicit>
           Button
         </BpkButtonV2>
-        <span className={getClassName('bpk-links-example-spacer')} />
         <BpkButtonV2 type={BUTTON_TYPES.link} implicit>
           Button<SmallLongArrowRightIcon />
         </BpkButtonV2>
@@ -330,27 +317,20 @@ const LinksExample = () => (
           getClassName('bpk-links-example-dark-section'),
         ].join(' ')}
       >
-        <h3
-          className={[
+        <BpkText textStyle={TEXT_STYLES.heading4} tagName='p' className={[
             getClassName('bpk-links-example-title'),
             getClassName('bpk-links-example-title--dark'),
-          ].join(' ')}
-        >
-          Link on Dark (Standard underline)
-        </h3>
+          ].join(' ')}> Link on Dark (Standard underline)</BpkText>
         <div className={getClassName('bpk-links-example-row')}>
           <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} href="#">
             Button
           </BpkButtonV2>
-          <span className={getClassName('bpk-links-example-spacer')} />
           <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} href="#">
             Button<SmallLongArrowRightIcon />
           </BpkButtonV2>
-          <span className={getClassName('bpk-links-example-spacer')} />
           <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} href="#">
             <SmallFilterIcon />
           </BpkButtonV2>
-          <span className={getClassName('bpk-links-example-spacer')} />
           <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} href="#">
             <SmallSortIcon /> Button
           </BpkButtonV2>
@@ -359,7 +339,6 @@ const LinksExample = () => (
           <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} href="#" disabled>
             Disabled link
           </BpkButtonV2>
-          <span className={getClassName('bpk-links-example-spacer')} />
           <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} href="#" disabled>
             Disabled with icon<SmallLongArrowRightIcon />
           </BpkButtonV2>
@@ -368,7 +347,6 @@ const LinksExample = () => (
           <BpkButtonV2 type={BUTTON_TYPES.linkOnDark}>
             Button
           </BpkButtonV2>
-          <span className={getClassName('bpk-links-example-spacer')} />
           <BpkButtonV2 type={BUTTON_TYPES.linkOnDark}>
             Button<SmallLongArrowRightIcon />
           </BpkButtonV2>
@@ -382,27 +360,20 @@ const LinksExample = () => (
           getClassName('bpk-links-example-dark-section'),
         ].join(' ')}
       >
-        <h3
-          className={[
+        <BpkText textStyle={TEXT_STYLES.heading4} tagName='p' className={[
             getClassName('bpk-links-example-title'),
             getClassName('bpk-links-example-title--dark'),
-          ].join(' ')}
-        >
-          Link on Dark Implicit (Underline on hover)
-        </h3>
+          ].join(' ')}> Link on Dark Implicit (Underline on hover)</BpkText>
         <div className={getClassName('bpk-links-example-row')}>
           <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit href="#">
             Button
           </BpkButtonV2>
-          <span className={getClassName('bpk-links-example-spacer')} />
           <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit href="#">
             Button<SmallLongArrowRightIcon />
           </BpkButtonV2>
-          <span className={getClassName('bpk-links-example-spacer')} />
           <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit href="#">
             <SmallFilterIcon />
           </BpkButtonV2>
-          <span className={getClassName('bpk-links-example-spacer')} />
           <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit href="#">
             <SmallSortIcon />Button
           </BpkButtonV2>
@@ -411,7 +382,6 @@ const LinksExample = () => (
           <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit href="#" disabled>
             Disabled link
           </BpkButtonV2>
-          <span className={getClassName('bpk-links-example-spacer')} />
           <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit href="#" disabled>
             Disabled with icon<SmallLongArrowRightIcon />
           </BpkButtonV2>
@@ -420,7 +390,6 @@ const LinksExample = () => (
           <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit>
             Button
           </BpkButtonV2>
-          <span className={getClassName('bpk-links-example-spacer')} />
           <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit>
             Button<SmallLongArrowRightIcon />
           </BpkButtonV2>
@@ -430,36 +399,30 @@ const LinksExample = () => (
 
     {/* Large size variants */}
     <section className={getClassName('bpk-links-example-section')}>
-      <h3 className={getClassName('bpk-links-example-title')}>
-        Large Size Variants
-      </h3>
-      <BpkButtonV2 type={BUTTON_TYPES.link} size={SIZE_TYPES.large} href="#">
-        Button
-      </BpkButtonV2>
-      <span className={getClassName('bpk-links-example-spacer')} />
-      <BpkButtonV2 type={BUTTON_TYPES.link} size={SIZE_TYPES.large} href="#">
-        Button<AlignedLargeLongArrowRightIcon />
-      </BpkButtonV2>
-      <span className={getClassName('bpk-links-example-spacer')} />
-      <BpkButtonV2 type={BUTTON_TYPES.link} size={SIZE_TYPES.large} iconOnly href="#">
-        <AlignedLargeSortIcon />
-      </BpkButtonV2>
-      <span className={getClassName('bpk-links-example-spacer')} />
-      <BpkButtonV2 type={BUTTON_TYPES.link} size={SIZE_TYPES.large} href="#">
-        <LargeLongArrowRightIcon />Button
-      </BpkButtonV2>
+      <BpkText textStyle={TEXT_STYLES.heading4} tagName='p' className={getClassName('bpk-links-example-title')}>Large Size Variants</BpkText>
+       <div>
+        <BpkButtonV2 type={BUTTON_TYPES.link} size={SIZE_TYPES.large} href="#">
+          Button
+        </BpkButtonV2>
+        <BpkButtonV2 type={BUTTON_TYPES.link} size={SIZE_TYPES.large} href="#">
+          Button<AlignedLargeLongArrowRightIcon />
+        </BpkButtonV2>
+        <BpkButtonV2 type={BUTTON_TYPES.link} size={SIZE_TYPES.large} iconOnly href="#">
+          <AlignedLargeSortIcon />
+        </BpkButtonV2>
+        <BpkButtonV2 type={BUTTON_TYPES.link} size={SIZE_TYPES.large} href="#">
+          <LargeLongArrowRightIcon />Button
+        </BpkButtonV2>
+       </div>
     </section>
 
     {/* External link with target="_blank" */}
     <section className={getClassName('bpk-links-example-section')}>
-      <h3 className={getClassName('bpk-links-example-title')}>
-        External Links (target _blank)
-      </h3>
+      <BpkText textStyle={TEXT_STYLES.heading4} tagName='p' className={getClassName('bpk-links-example-title')}>External Links (target _blank)</BpkText>
       <div>
         <BpkButtonV2 type={BUTTON_TYPES.link} href="https://www.skyscanner.net" blank>
           External link<SmallLongArrowRightIcon />
         </BpkButtonV2>
-        <span className={getClassName('bpk-links-example-spacer')} />
         <BpkButtonV2 type={BUTTON_TYPES.link} implicit href="https://www.skyscanner.net" blank>
           External implicit<SmallLongArrowRightIcon />
         </BpkButtonV2>
