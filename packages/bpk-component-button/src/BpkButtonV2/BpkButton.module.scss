@@ -51,12 +51,7 @@
   &--link {
     @include buttons.bpk-button--link;
     @include typography.bpk-link;
-
-    display: inline-flex; /* stylelint-disable-line order/order, order/properties-order */
-    justify-content: center;
-    align-items: center;
-    vertical-align: middle;
-    gap: tokens.bpk-spacing-md();
+    @include buttons.bpk-button--link-alignment;
 
     &--active {
       @include typography.bpk-link--active;
@@ -80,12 +75,7 @@
     @include buttons.bpk-button--link-on-dark;
     @include typography.bpk-link;
     @include typography.bpk-link--alternate;
-
-    display: inline-flex; /* stylelint-disable-line order/order, order/properties-order */
-    justify-content: center;
-    align-items: center;
-    vertical-align: middle;
-    gap: tokens.bpk-spacing-md();
+    @include buttons.bpk-button--link-alignment;
 
     &--active {
       @include typography.bpk-link--active;
