@@ -249,7 +249,7 @@ const LinksExample = () => (
       </h3>
       <div className={getClassName('bpk-links-example-row')}>
         <BpkButtonV2 type={BUTTON_TYPES.link} href="#">
-          <span>Button</span>
+          Button
         </BpkButtonV2>
         <span className={getClassName('bpk-links-example-spacer')} />
         <BpkButtonV2 type={BUTTON_TYPES.link} href="#">
@@ -271,10 +271,6 @@ const LinksExample = () => (
         <span className={getClassName('bpk-links-example-spacer')} />
         <BpkButtonV2 type={BUTTON_TYPES.link} href="#" disabled>
           Disabled with icon <SmallLongArrowRightIcon />
-        </BpkButtonV2>
-        <span className={getClassName('bpk-links-example-spacer')} />
-        <BpkButtonV2 type={BUTTON_TYPES.link}>
-          Have <SmallLongArrowRightIcon /> two <span><SmallLongArrowRightIcon /></span> icons
         </BpkButtonV2>
       </div>
       <div>
@@ -479,7 +475,7 @@ const LinksExample = () => (
       </h3>
       <div className={getClassName('bpk-links-example-row')}>
         <BpkButtonV2 type={BUTTON_TYPES.link} href="#" fullWidth>
-          Full width<SmallLongArrowRightIcon />
+          Full width <SmallLongArrowRightIcon />
         </BpkButtonV2>
       </div>
       </section>

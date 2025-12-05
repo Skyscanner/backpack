@@ -137,22 +137,23 @@ export const BpkButtonV2 = ({
 
   const classNames = getCommonClassName(
     'bpk-button',
-    isEnabledLinkType ? 'bpk-button--link' : `bpk-button--${type}`,
+    `bpk-button--${type}`,
     size === SIZE_TYPES.large && 'bpk-button--large',
     iconOnly && 'bpk-button--icon-only',
     iconOnly && size === SIZE_TYPES.large && 'bpk-button--large-icon-only',
     fullWidth && 'bpk-button--full-width',
-    isEnabledLinkType && implicit && 'bpk-button--link--implicit',
-    isEnabledLinkType && isAlternate && 'bpk-button--link-on-dark',
+    isLinkType && 'bpk-btnlink',
+    isLinkType && implicit && 'bpk-btnlink--implicit',
+    isLinkType && isAlternate && 'bpk-btnlink-alternate',
     className,
   );
 
   const underlinedClassNames = isEnabledLinkType
       ? getCommonClassName(
-          'bpk-button--link-underlined',
-          implicit && 'bpk-button--link-underlined--implicit',
-          isAlternate && 'bpk-button--link-underlined--alternate',
-          implicit && isAlternate && 'bpk-button--link-underlined--implicit--alternate',
+          'bpk-btnlink-underlined',
+          implicit && 'bpk-btnlink-underlined--implicit',
+          isAlternate && 'bpk-btnlink-underlined--alternate',
+          implicit && isAlternate && 'bpk-btnlink-underlined--implicit--alternate',
         )
       : null;
 

@@ -78,7 +78,7 @@
   }
 }
 
-.bpk-button--link {
+.bpk-btnlink {
   @include buttons.bpk-button--link;
   @include typography.bpk-link;
 
@@ -96,17 +96,27 @@
     @include typography.bpk-link--implicit;
   }
 
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
   svg {
     fill: currentcolor;
   }
 }
 
-.bpk-button--link-on-dark {
+.bpk-btnlink-alternate {
   @include buttons.bpk-button--link-on-dark;
   @include typography.bpk-link--alternate;
+
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 }
 
-.bpk-button--link-underlined {
+.bpk-btnlink-underlined {
   display: inline-flex;
   align-items: flex-end;
 
