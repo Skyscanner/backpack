@@ -161,7 +161,7 @@
     "jest": "^30.2.0",
     "jest-axe": "^10.0.0",
     "jest-environment-jsdom": "^30.2.0",
-    "lint-staged": "^16.1.5",
+    "lint-staged": "^16.2.7",
     "lodash": "^4.17.20",
     "mini-css-extract-plugin": "^2.9.0",
     "npm-run-all": "^4.1.5",
