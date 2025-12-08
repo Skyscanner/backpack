@@ -21,6 +21,8 @@ import type { ReactNode } from 'react';
 
 import {
   BpkBox,
+  BpkFlex,
+  BpkGrid,
   BpkProvider,
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
@@ -235,5 +237,102 @@ export const GridExample = () => (
         </span>
       </BpkBox>
     </BpkBox>
+  </Wrapper>
+);
+
+/**
+ * BpkFlex example - demonstrates BpkFlex with flex props.
+ */
+
+export const BpkFlexExample = () => (
+  <Wrapper>
+    <BpkFlex
+      direction="row"
+      justify="space-between"
+      align="center"
+      padding={BpkSpacing.MD}
+    >
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Flex item 1
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Flex item 2
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Flex item 3
+        </span>
+      </BpkBox>
+    </BpkFlex>
+  </Wrapper>
+);
+
+/**
+ * BpkFlex direction example.
+ */
+
+export const BpkFlexDirectionExample = () => (
+  <Wrapper>
+    <BpkFlex direction="column" gap={BpkSpacing.MD} padding={BpkSpacing.MD}>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Column item 1
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Column item 2
+        </span>
+      </BpkBox>
+    </BpkFlex>
+  </Wrapper>
+);
+
+/**
+ * BpkFlex wrap example.
+ */
+
+export const BpkFlexWrapExample = () => (
+  <Wrapper>
+    <BpkFlex
+      wrap="wrap"
+      gap={BpkSpacing.MD}
+      padding={BpkSpacing.MD}
+      width="100%"
+    >
+      {[1, 2, 3, 4, 5, 6].map((i) => (
+        <BpkBox key={i} padding={BpkSpacing.MD} width="10rem">
+          <span className={STYLES['bpk-layout-examples__outline']}>
+            Wrap Item {i}
+          </span>
+        </BpkBox>
+      ))}
+    </BpkFlex>
+  </Wrapper>
+);
+
+/**
+ * BpkGrid example - demonstrates BpkGrid.
+ */
+
+export const BpkGridExample = () => (
+  <Wrapper>
+    <BpkGrid
+      templateColumns="repeat(3, minmax(0, 1fr))"
+      gap={BpkSpacing.MD}
+      padding={BpkSpacing.MD}
+    >
+      {[1, 2, 3, 4, 5, 6].map((i) => (
+        <BpkBox key={i} padding={BpkSpacing.SM}>
+          <span className={STYLES['bpk-layout-examples__outline']}>
+            Grid cell {i}
+          </span>
+        </BpkBox>
+      ))}
+    </BpkGrid>
   </Wrapper>
 );

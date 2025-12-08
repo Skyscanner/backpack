@@ -29,6 +29,10 @@ import {
   PositionExample,
   FlexExample,
   GridExample,
+  BpkFlexExample,
+  BpkFlexDirectionExample,
+  BpkFlexWrapExample,
+  BpkGridExample,
 } from './examples';
 
 export default {
@@ -62,6 +66,10 @@ export const Responsive = () => <ResponsiveExample />;
 export const Position = () => <PositionExample />;
 export const Flex = () => <FlexExample />;
 export const Grid = () => <GridExample />;
+export const BpkFlex = () => <BpkFlexExample />;
+export const BpkFlexDirection = () => <BpkFlexDirectionExample />;
+export const BpkFlexWrap = () => <BpkFlexWrapExample />;
+export const BpkGridStory = () => <BpkGridExample />;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
