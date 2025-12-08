@@ -20,8 +20,8 @@ import type {
   BpkSpacingValue,
   BpkSizeValue,
   BpkPositionValue,
+  BpkResponsiveValue,
 } from './tokens';
-import type { ConditionalValue as ResponsiveValue } from '@chakra-ui/react';
 
 /**
  * Common spacing-related props shared by all Backpack layout components
@@ -29,44 +29,44 @@ import type { ConditionalValue as ResponsiveValue } from '@chakra-ui/react';
  */
 export interface BpkSpacingProps {
   // Padding props
-  padding?: ResponsiveValue<BpkSpacingValue>;
-  paddingTop?: ResponsiveValue<BpkSpacingValue>;
-  paddingRight?: ResponsiveValue<BpkSpacingValue>;
-  paddingBottom?: ResponsiveValue<BpkSpacingValue>;
-  paddingLeft?: ResponsiveValue<BpkSpacingValue>;
+  padding?: BpkResponsiveValue<BpkSpacingValue>;
+  paddingTop?: BpkResponsiveValue<BpkSpacingValue>;
+  paddingRight?: BpkResponsiveValue<BpkSpacingValue>;
+  paddingBottom?: BpkResponsiveValue<BpkSpacingValue>;
+  paddingLeft?: BpkResponsiveValue<BpkSpacingValue>;
 
   // Margin props
-  margin?: ResponsiveValue<BpkSpacingValue>;
-  marginTop?: ResponsiveValue<BpkSpacingValue>;
-  marginRight?: ResponsiveValue<BpkSpacingValue>;
-  marginBottom?: ResponsiveValue<BpkSpacingValue>;
-  marginLeft?: ResponsiveValue<BpkSpacingValue>;
-  marginStart?: ResponsiveValue<BpkSpacingValue>;
-  marginEnd?: ResponsiveValue<BpkSpacingValue>;
-  paddingStart?: ResponsiveValue<BpkSpacingValue>;
-  paddingEnd?: ResponsiveValue<BpkSpacingValue>;
-  marginInline?: ResponsiveValue<BpkSpacingValue>;
-  paddingInline?: ResponsiveValue<BpkSpacingValue>;
+  margin?: BpkResponsiveValue<BpkSpacingValue>;
+  marginTop?: BpkResponsiveValue<BpkSpacingValue>;
+  marginRight?: BpkResponsiveValue<BpkSpacingValue>;
+  marginBottom?: BpkResponsiveValue<BpkSpacingValue>;
+  marginLeft?: BpkResponsiveValue<BpkSpacingValue>;
+  marginStart?: BpkResponsiveValue<BpkSpacingValue>;
+  marginEnd?: BpkResponsiveValue<BpkSpacingValue>;
+  paddingStart?: BpkResponsiveValue<BpkSpacingValue>;
+  paddingEnd?: BpkResponsiveValue<BpkSpacingValue>;
+  marginInline?: BpkResponsiveValue<BpkSpacingValue>;
+  paddingInline?: BpkResponsiveValue<BpkSpacingValue>;
 
   // Gap
-  gap?: ResponsiveValue<BpkSpacingValue>;
+  gap?: BpkResponsiveValue<BpkSpacingValue>;
 
   // Size props
   // width, height etc allow rem values, percentages and a small set of
   // semantic strings. We intentionally do not use spacing tokens here to
   // avoid coupling layout sizes to the spacing scale.
-  width?: ResponsiveValue<BpkSizeValue>;
-  height?: ResponsiveValue<BpkSizeValue>;
-  minWidth?: ResponsiveValue<BpkSizeValue>;
-  minHeight?: ResponsiveValue<BpkSizeValue>;
-  maxWidth?: ResponsiveValue<BpkSizeValue>;
-  maxHeight?: ResponsiveValue<BpkSizeValue>;
+  width?: BpkResponsiveValue<BpkSizeValue>;
+  height?: BpkResponsiveValue<BpkSizeValue>;
+  minWidth?: BpkResponsiveValue<BpkSizeValue>;
+  minHeight?: BpkResponsiveValue<BpkSizeValue>;
+  maxWidth?: BpkResponsiveValue<BpkSizeValue>;
+  maxHeight?: BpkResponsiveValue<BpkSizeValue>;
 
   // Position props (use rem values or percentages)
-  top?: ResponsiveValue<BpkPositionValue>;
-  right?: ResponsiveValue<BpkPositionValue>;
-  bottom?: ResponsiveValue<BpkPositionValue>;
-  left?: ResponsiveValue<BpkPositionValue>;
+  top?: BpkResponsiveValue<BpkPositionValue>;
+  right?: BpkResponsiveValue<BpkPositionValue>;
+  bottom?: BpkResponsiveValue<BpkPositionValue>;
+  left?: BpkResponsiveValue<BpkPositionValue>;
 }
 
 /**
@@ -95,6 +95,7 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps {
   // These props still exist on the underlying Chakra Box, so we mark them as
   // never here to prevent them from leaking into public layout APIs.
   color?: never;
+  background?: never;
   backgroundColor?: never;
   borderColor?: never;
   borderTopColor?: never;

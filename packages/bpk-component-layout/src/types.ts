@@ -19,13 +19,12 @@
 import type { ReactNode } from 'react';
 
 import type { BpkCommonLayoutProps } from './commonProps';
-import type { BpkSpacingValue } from './tokens';
+import type { BpkSpacingValue, BpkResponsiveValue } from './tokens';
 import type {
   BoxProps,
   FlexProps,
   GridProps,
   StackProps,
-  ConditionalValue as ResponsiveValue,
 } from '@chakra-ui/react';
 
 /**
@@ -46,6 +45,40 @@ type LayoutEventProps =
   | 'onKeyDown'
   | 'onKeyUp'
   | 'onKeyPress';
+
+/**
+ * Shorthand props from the underlying layout system that we do NOT expose on
+ * Backpack layout components. These mostly mirror longer-form spacing,
+ * sizing and visual props that we already model explicitly via
+ * BpkCommonLayoutProps and BpkFlexGridProps.
+ */
+type DisallowedShorthandProps =
+  // Spacing shorthands
+  | 'p'
+  | 'pt'
+  | 'pr'
+  | 'pb'
+  | 'pl'
+  | 'px'
+  | 'py'
+  | 'm'
+  | 'mt'
+  | 'mr'
+  | 'mb'
+  | 'ml'
+  | 'mx'
+  | 'my'
+  // Size shorthands
+  | 'w'
+  | 'h'
+  | 'minW'
+  | 'maxW'
+  | 'minH'
+  | 'maxH'
+  // Visual shorthands that map to props we have intentionally excluded
+  | 'bg'
+  | 'rounded'
+  | 'shadow';
 
 /**
  * Flexbox & grid layout props that we explicitly support on Backpack layout
@@ -95,6 +128,7 @@ type RemoveCommonProps<T> = Omit<
   | 'children'
   | LayoutEventProps
   | FlexGridPropKeys
+  | DisallowedShorthandProps
 >;
 
 /**
@@ -155,7 +189,7 @@ export interface BpkGridProps extends BpkCommonLayoutProps, BpkGridSpecificProps
  * Explicitly overrides spacing to enforce Backpack tokens
  */
 export interface BpkStackSpecificProps extends Omit<RemoveCommonProps<StackProps>, 'spacing'> {
-  spacing?: ResponsiveValue<BpkSpacingValue>;
+  spacing?: BpkResponsiveValue<BpkSpacingValue>;
 }
 
 /**

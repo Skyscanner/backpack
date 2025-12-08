@@ -18,15 +18,15 @@
 
 import { defineConfig } from '@chakra-ui/react';
 
+import type { ChakraBreakpointKey } from './tokens';
+
 // Import tokens from Backpack foundations
 // Note: Some tokens may not be in TypeScript definitions but exist at runtime
- 
+
 const bpkTokens = require('@skyscanner/bpk-foundations-web/tokens/base.es6');
 
 // Extract color tokens (keeping for backward compatibility)
-const {
-  breakpoints,
-} = bpkTokens;
+const { breakpoints } = bpkTokens;
 
 // Note: Spacing tokens are defined as SCSS functions in Backpack foundations,
 // not as direct values. We need to use the actual rem values from the SCSS functions.
@@ -37,6 +37,7 @@ const {
 // - bpk-spacing-xl() returns 2rem (needs verification)
 // - bpk-spacing-xxl() returns 2.5rem
 // - bpk-spacing-base() returns 1rem (standard base spacing)
+// TODO: CLOV-1021 - will add spacing tokens to Backpack Foundations package and use them here after we ship the PoC
 const spacingSm = '.25rem';
 const spacingBase = '1rem'; // Standard base spacing
 const spacingMd = '.5rem';
@@ -101,19 +102,27 @@ const shadowMap: Record<string, string> = {
 };
 
 /**
- * Maps Backpack breakpoint tokens to media query values
- * These come directly from @skyscanner/bpk-foundations-web
- * We map them to simpler keys (mobile, tablet, etc.) for easier usage in responsive props
+ * Maps Backpack breakpoint tokens to Chakra breakpoint values.
  *
- * Backpack provides 6 standard breakpoints which we map as follows:
+ * IMPORTANT:
+ * Chakra expects raw width values (e.g. "48rem"), not full media queries.
+ * The media query construction is handled internally by Chakra's system.
+ *
+ * We align the Backpack breakpoints to Chakra's keys like this:
+ * - base: 0 (implicit)
+ * - sm: small-mobile
+ * - md: mobile
+ * - lg: small-tablet
+ * - xl: tablet
+ * - 2xl: desktop
  */
-const breakpointMap: Record<string, string> = {
-  'small-mobile': breakpoints.breakpointQuerySmallMobile,
-  'mobile': breakpoints.breakpointQueryMobile,
-  'small-tablet': breakpoints.breakpointQuerySmallTablet,
-  'tablet': breakpoints.breakpointQueryTablet,
-  'desktop': breakpoints.breakpointQueryAboveTablet,
-  'large-desktop': breakpoints.breakpointQueryAboveDesktop,
+const breakpointMap: Record<ChakraBreakpointKey, string> = {
+  base: '0rem',
+  sm: breakpoints.breakpointSmallMobile,
+  md: breakpoints.breakpointMobile,
+  lg: breakpoints.breakpointSmallTablet,
+  xl: breakpoints.breakpointTablet,
+  '2xl': breakpoints.breakpointDesktop,
 };
 
 /**

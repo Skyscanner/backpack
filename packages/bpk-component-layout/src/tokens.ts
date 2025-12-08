@@ -55,6 +55,17 @@ export const BpkBreakpoint = {
 
 export type BpkBreakpointToken = typeof BpkBreakpoint[keyof typeof BpkBreakpoint];
 
+export type ChakraBreakpointKey = 'base' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+
+export const BpkBreakpointToChakraKey: Record<BpkBreakpointToken, ChakraBreakpointKey> = {
+  'small-mobile': 'base',
+  mobile: 'sm',
+  'small-tablet': 'md',
+  tablet: 'lg',
+  desktop: 'xl',
+  'large-desktop': '2xl',
+};
+
 /**
  * Helper type for values that can be Backpack tokens or percentages
  * but NOT px/rem values
@@ -81,6 +92,19 @@ export type BpkSizeValue =
 export type BpkPositionValue =
   | `${number}rem`
   | `${number}%`;
+
+/**
+ * Helper type for responsive values based on Backpack breakpoints.
+ *
+ * We intentionally only support:
+ * - a single scalar value (non-responsive)
+ * - an object keyed by Backpack breakpoint tokens (and optional base)
+ *
+ * We do NOT support array-based responsive values in the public API.
+ */
+export type BpkResponsiveValue<T> =
+  | T
+  | Partial<Record<BpkBreakpointToken | 'base', T>>;
 
 /**
  * Validates if a value is a percentage string

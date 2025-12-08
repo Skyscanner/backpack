@@ -18,11 +18,15 @@
 
 import { getSpacingValue } from './theme';
 import {
+  BpkBreakpointToChakraKey,
   isValidSpacingValue,
   isValidSizeValue,
   isValidPositionValue,
   isPercentage,
 } from './tokens';
+
+import type {
+  BpkBreakpointToken} from './tokens';
 
 /**
  * Converts Backpack spacing token to Chakra UI compatible value
@@ -61,6 +65,28 @@ export function convertBpkSpacingToChakra(value: string): string {
  * @param {string} propName - The name of the prop being processed (for warning messages)
  * @returns {*} The processed value with tokens converted, or undefined for invalid tokens
  */
+function normalizeResponsiveObject<T>(value: Record<string, T>): Record<string, T> {
+  const normalized: Record<string, T> = {};
+  Object.entries(value).forEach(([key, val]) => {
+    if (key === 'base') {
+      normalized.base = val;
+      return;
+    }
+
+    const chakraKey = BpkBreakpointToChakraKey[key as BpkBreakpointToken];
+    if (chakraKey) {
+      normalized[chakraKey] = val;
+    } else if (process.env.NODE_ENV !== 'production') {
+      // eslint-disable-next-line no-console
+      console.warn(
+        `Unknown breakpoint "${key}" used in responsive prop. ` +
+        'Use Backpack breakpoint tokens such as mobile, tablet or desktop.'
+      );
+    }
+  });
+  return normalized;
+}
+
 function processResponsiveValue(
   value: any,
   converter: (v: string) => string,
@@ -72,15 +98,31 @@ function processResponsiveValue(
   }
 
   if (Array.isArray(value)) {
-    return value.map((v) => processResponsiveValue(v, converter, validator, propName));
+    if (process.env.NODE_ENV !== 'production') {
+      // eslint-disable-next-line no-console
+      console.warn(
+        `Array-based responsive values are not supported for prop "${propName}". ` +
+        `Please use Backpack breakpoint keys instead.`
+      );
+    }
+    return undefined;
   }
 
   if (typeof value === 'object') {
+    const normalized = normalizeResponsiveObject(value);
     const result: Record<string, any> = {};
-    Object.keys(value).forEach((key) => {
-      result[key] = processResponsiveValue(value[key], converter, validator, propName);
+    Object.keys(normalized).forEach((key) => {
+      const processedValue = processResponsiveValue(
+        normalized[key],
+        converter,
+        validator,
+        propName
+      );
+      if (processedValue !== undefined) {
+        result[key] = processedValue;
+      }
     });
-    return result;
+    return Object.keys(result).length > 0 ? result : undefined;
   }
 
   const strValue = String(value);
@@ -169,20 +211,20 @@ export function processSpacingProps<T extends Record<string, any>>(
 
 /**
  * Processes all props to convert Backpack tokens to Chakra UI format
- * Also explicitly removes className to prevent style overrides
+ * Also explicitly removes className and style to prevent ad-hoc overrides
  *
  * Processing order:
- * 1. Remove className
+ * 1. Remove className & style
  * 2. Process spacing props (includes position)
  *
  * @param {T} props - Component props object
- * @returns {Record<string, any>} Processed props with tokens converted and className removed
+ * @returns {Record<string, any>} Processed props with tokens converted and disallowed props removed
  */
 export function processBpkProps<T extends Record<string, any>>(
   props: T
 ): Record<string, any> {
-  // Explicitly remove className to prevent style overrides
-  const { className, ...propsWithoutClassName } = props;
+  // Explicitly remove className and style to prevent style overrides
+  const { className, style, ...cleanProps } = props;
 
   if (className !== undefined && process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line no-console
@@ -192,6 +234,14 @@ export function processBpkProps<T extends Record<string, any>>(
     );
   }
 
+  if (style !== undefined && process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'style prop is not allowed on Backpack layout components. ' +
+      'It has been removed to maintain design system consistency.'
+    );
+  }
+
   // Process spacing props (includes position)
-  return processSpacingProps(propsWithoutClassName);
+  return processSpacingProps(cleanProps);
 }

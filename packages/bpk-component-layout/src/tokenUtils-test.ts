@@ -19,10 +19,6 @@
 import { processBpkProps } from './tokenUtils';
 import { BpkSpacing } from './tokens';
 
-// Import foundations tokens to assert concrete values
- 
-const bpkTokens = require('@skyscanner/bpk-foundations-web/tokens/base.es6');
-
 describe('processBpkProps', () => {
   it('converts spacing tokens to rem values', () => {
     const result = processBpkProps({ padding: BpkSpacing.MD });
@@ -85,5 +81,37 @@ describe('processBpkProps', () => {
     // In Jest, NODE_ENV is "test" so the warning should be emitted.
     expect(warnSpy).toHaveBeenCalled();
     warnSpy.mockRestore();
+  });
+
+  it('removes style and logs a warning in non-production', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    const result = processBpkProps({
+      // style is not part of the public API but should still be stripped
+      // and warned about at runtime if passed through accidentally.
+      style: { dummy: 'value' },
+      padding: BpkSpacing.Base,
+    });
+
+    expect('style' in result).toBe(false);
+    expect(result.padding).toBe('1rem');
+
+    // In Jest, NODE_ENV is "test" so the warning should be emitted.
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
+  });
+
+  it('converts Backpack breakpoint keys to Chakra keys for responsive objects', () => {
+    const result = processBpkProps({
+      padding: {
+        mobile: BpkSpacing.SM,
+        tablet: BpkSpacing.MD,
+      },
+    });
+
+    expect(result.padding).toEqual({
+      sm: '.25rem',
+      lg: '.5rem',
+    });
   });
 });

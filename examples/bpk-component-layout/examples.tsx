@@ -83,6 +83,36 @@ export const SizeExample = () => (
 );
 
 /**
+ * Responsive example – demonstrates breakpoint-based responsive layout props.
+ *
+ * @returns {JSX.Element} A box whose padding and layout change across breakpoints.
+ */
+export const ResponsiveExample = () => (
+  <Wrapper>
+    <BpkBox
+      display="flex"
+      padding={{
+        mobile: BpkSpacing.SM,
+        tablet: BpkSpacing.MD,
+        desktop: BpkSpacing.LG,
+      }}
+      gap={BpkSpacing.SM}
+    >
+      <BpkBox>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Responsive item 1
+        </span>
+      </BpkBox>
+      <BpkBox>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Responsive item 2
+        </span>
+      </BpkBox>
+    </BpkBox>
+  </Wrapper>
+);
+
+/**
  * Mixed visual regression example – used for Percy/visual tests.
  *
  * @returns {JSX.Element} A wrapper containing all layout examples for visual regression.
@@ -92,6 +122,7 @@ export const MixedExample = () => (
     <SpacingExample />
     <RtlSpacingExample />
     <SizeExample />
+    <ResponsiveExample />
     <PositionExample />
     <FlexExample />
     <GridExample />
