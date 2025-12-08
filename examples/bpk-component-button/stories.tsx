@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* eslint-disable */
+
 import { BpkButtonV2 } from '../../packages/bpk-component-button';
 
 import {
@@ -37,6 +39,7 @@ import {
   SubmitButtonExample,
 } from './examples';
 import { MixedExample as MixedExampleV1 } from './examplesv1';
+import { PerformanceBenchmark } from './PerformanceBenchmark';
 
 export default {
   title: 'bpk-component-button',
@@ -87,3 +90,12 @@ export const VisualTestV1WithZoom = {
 };
 export const SubmitButton = () => <SubmitButtonExample />;
 export const FullWidth = () => <FullWidthExample />;
+
+export const PerformanceTest = () => <PerformanceBenchmark />;
+PerformanceTest.parameters = {
+  docs: {
+    description: {
+      story: 'Interactive performance benchmark for testing link button icon detection performance in real browser environment.',
+    },
+  },
+};
