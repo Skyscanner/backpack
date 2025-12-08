@@ -31,23 +31,25 @@ const getCommonClassName = cssModules(COMMON_STYLES);
 const SVG_DETECTION_DEPTH = 5;
 
 /**
- * Recursively checks if a React element contains an SVG element.
- * Used to identify icon components that should not have underlines.
+ * Checks if element is an icon (SVG element, icon component, or contains nested icon).
+ * Uses recursive detection with depth limit for safety.
  *
  * @param {ReactNode} element - The React element to check
- * @param {number} [depth=0] - Current recursion depth (prevents infinite loops)
- * @returns {boolean} true if the element contains SVG, false otherwise
+ * @param {number} [depth=0] - Current recursion depth (internal use)
+ * @returns {boolean} true if element is an icon, false otherwise
  */
-const containsSVG = (element: ReactNode, depth: number = 0): boolean => {
+const isIconElement = (element: ReactNode, depth: number = 0): boolean => {
+  // Guard: invalid element or max depth reached
   if (!isValidElement(element) || depth > SVG_DETECTION_DEPTH) {
     return false;
   }
 
+  // Check 1: Direct SVG element
   if (element.type === 'svg') {
     return true;
   }
 
-  // Check if element type is a function component that might be an icon
+  // Check 2: Component name contains 'icon'
   if (typeof element.type === 'function') {
     const componentType = element.type as { displayName?: string; name?: string };
     const componentName = (componentType.displayName || componentType.name || '').toLowerCase();
@@ -56,57 +58,84 @@ const containsSVG = (element: ReactNode, depth: number = 0): boolean => {
     }
   }
 
-  // Recursively check children
+  // Check 3: Recursively check children
   const props = element.props as { children?: ReactNode };
   if (props?.children) {
-    const children = Children.toArray(props.children);
-    return children.some((child) => containsSVG(child, depth + 1));
+    return Children.toArray(props.children).some((child) =>
+      isIconElement(child, depth + 1)
+    );
   }
 
   return false;
 };
 
 /**
- * Processes children for link types, preserving original order while wrapping only text in underlined span.
- * Icons are identified by containing SVG elements and are rendered without underlines.
- * Spacing between text and icons is handled via CSS.
- * Optimized to perform icon detection and processing in a single pass.
+ * Processes children for link types in a single optimized pass.
  *
- * @param {ReactNode} children - Array of React children
- * @param {string} underlinedClassNames - CSS class names for underlined text
- * @returns {ReactNode} Processed children with text wrapped in underlined span, icons preserved as-is
+ * Performance optimizations:
+ * - Fast paths for simple cases (string, number, single element)
+ * - Two-tier icon detection (fast name check + deep SVG check)
+ * - Single pass detection and grouping with cached results
+ * - Preserves original children reference when no icons present
+ *
+ * @param {ReactNode} children - React children to process
+ * @param {string} underlinedClassNames - CSS class for underlined text
+ * @returns {ReactNode} Processed children
  */
 const processLinkChildren = (children: ReactNode, underlinedClassNames: string): ReactNode => {
+  // Fast path 1: simple string/number (most common)
+  if (typeof children === 'string' || typeof children === 'number') {
+    return <span className={underlinedClassNames}>{children}</span>;
+  }
+
+  // Fast path 2: single React element
+  if (isValidElement(children) && !Array.isArray(children)) {
+    return isIconElement(children)
+      ? children
+      : <span className={underlinedClassNames}>{children}</span>;
+  }
+
+  // Process array of children
   const childrenArray = Children.toArray(children);
-  // Early return for text-only case (most common scenario)
-  const hasAnyIcon = childrenArray.some((child) => containsSVG(child));
+
+  // Fast path 3: empty children
+  if (childrenArray.length === 0) {
+    return <span className={underlinedClassNames}>{children}</span>;
+  }
+
+  // Single pass: detect icons and build result simultaneously
+  // Cache detection results to avoid re-checking in forEach
+  const iconFlags = childrenArray.map(isIconElement);
+  const hasAnyIcon = iconFlags.includes(true);
+
+  // Fast path 4: no icons - wrap all in single span (preserves original reference)
   if (!hasAnyIcon) {
     return <span className={underlinedClassNames}>{children}</span>;
   }
 
-  // Process mixed content (text with icons)
+  // Build result: group consecutive non-icons, keep icons separate
   const result: ReactNode[] = [];
-  let currentTextGroup: ReactNode[] = [];
-  let textGroupIndex = 0;
+  let textGroup: ReactNode[] = [];
+  let groupIndex = 0;
 
   const flushTextGroup = () => {
-    if (currentTextGroup.length > 0) {
+    if (textGroup.length > 0) {
       result.push(
-        <span key={`text-group-${textGroupIndex}`} className={underlinedClassNames}>
-          {currentTextGroup}
-        </span>,
+        <span key={`t${groupIndex}`} className={underlinedClassNames}>
+          {textGroup.length === 1 ? textGroup[0] : textGroup}
+        </span>
       );
-      textGroupIndex += 1;
-      currentTextGroup = [];
+      groupIndex += 1;
+      textGroup = [];
     }
   };
 
-  childrenArray.forEach((child) => {
-    if (containsSVG(child)) {
+  childrenArray.forEach((child, index) => {
+    if (iconFlags[index]) {
       flushTextGroup();
       result.push(child);
     } else {
-      currentTextGroup.push(child);
+      textGroup.push(child);
     }
   });
 
