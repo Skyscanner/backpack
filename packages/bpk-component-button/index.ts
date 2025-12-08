@@ -16,16 +16,6 @@
  * limitations under the License.
  */
 
-import BpkButtonDestructive from './BpkButtonDestructive';
-import BpkButtonFeatured from './BpkButtonFeatured';
-import BpkButtonLink from './BpkButtonLink';
-import BpkButtonLinkOnDark from './BpkButtonLinkOnDark';
-import BpkButtonPrimary from './BpkButtonPrimary';
-import BpkButtonPrimaryOnDark from './BpkButtonPrimaryOnDark';
-import BpkButtonPrimaryOnLight from './BpkButtonPrimaryOnLight';
-import BpkButtonSecondary from './BpkButtonSecondary';
-import BpkButtonSecondaryOnDark from './BpkButtonSecondaryOnDark';
-import BpkButton from './src/BpkButton';
 import { BpkButtonV2 } from './src/BpkButtonV2/BpkButton';
 
 export {
@@ -47,17 +37,7 @@ export {
   destructiveThemeAttributes,
 } from './themeAttributes';
 
+const BpkButton = BpkButtonV2;
 export default BpkButton;
 
-export {
-  BpkButtonPrimary,
-  BpkButtonPrimaryOnDark,
-  BpkButtonPrimaryOnLight,
-  BpkButtonSecondary,
-  BpkButtonSecondaryOnDark,
-  BpkButtonDestructive,
-  BpkButtonLink,
-  BpkButtonLinkOnDark,
-  BpkButtonFeatured,
-  BpkButtonV2,
-};
+export { BpkButtonV2 };

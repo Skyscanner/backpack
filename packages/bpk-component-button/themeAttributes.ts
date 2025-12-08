@@ -16,13 +16,77 @@
  * limitations under the License.
  */
 
-export {
-  buttonThemeAttributes,
-  primaryThemeAttributes,
-  primaryOnDarkThemeAttributes,
-  primaryOnLightThemeAttributes,
-  secondaryThemeAttributes,
-  secondaryOnDarkThemeAttributes,
-  featuredThemeAttributes,
-  destructiveThemeAttributes,
-} from './src/themeAttributes';
+export const buttonThemeAttributes = ['buttonFontSize'];
+
+export const primaryThemeAttributes = [
+  'buttonPrimaryTextColor',
+  'buttonPrimaryHoverTextColor',
+  'buttonPrimaryActiveTextColor',
+  'buttonPrimaryGradientStartColor',
+  'buttonPrimaryGradientEndColor',
+  'buttonPrimaryBackgroundColor',
+  'buttonPrimaryHoverBackgroundColor',
+  'buttonPrimaryActiveBackgroundColor',
+];
+
+export const primaryOnDarkThemeAttributes = [
+  'buttonPrimaryOnDarkTextColor',
+  'buttonPrimaryOnDarkHoverTextColor',
+  'buttonPrimaryOnDarkActiveTextColor',
+  'buttonPrimaryOnDarkBackgroundColor',
+  'buttonPrimaryOnDarkHoverBackgroundColor',
+  'buttonPrimaryOnDarkActiveBackgroundColor',
+];
+
+export const primaryOnLightThemeAttributes = [
+  'buttonPrimaryOnLightTextColor',
+  'buttonPrimaryOnLightHoverTextColor',
+  'buttonPrimaryOnLightActiveTextColor',
+  'buttonPrimaryOnLightBackgroundColor',
+  'buttonPrimaryOnLightHoverBackgroundColor',
+  'buttonPrimaryOnLightActiveBackgroundColor',
+];
+
+export const secondaryThemeAttributes = [
+  'buttonSecondaryTextColor',
+  'buttonSecondaryHoverTextColor',
+  'buttonSecondaryActiveTextColor',
+  'buttonSecondaryBorderColor',
+  'buttonSecondaryHoverBorderColor',
+  'buttonSecondaryActiveBorderColor',
+  'buttonSecondaryBackgroundColor',
+  'buttonSecondaryHoverBackgroundColor',
+  'buttonSecondaryActiveBackgroundColor',
+];
+
+export const secondaryOnDarkThemeAttributes = [
+  'buttonSecondaryOnDarkTextColor',
+  'buttonSecondaryOnDarkHoverTextColor',
+  'buttonSecondaryOnDarkActiveTextColor',
+  'buttonSecondaryOnDarkBackgroundColor',
+  'buttonSecondaryOnDarkHoverBackgroundColor',
+  'buttonSecondaryOnDarkActiveBackgroundColor',
+];
+
+export const featuredThemeAttributes = [
+  'buttonFeaturedTextColor',
+  'buttonFeaturedHoverTextColor',
+  'buttonFeaturedActiveTextColor',
+  'buttonFeaturedGradientStartColor',
+  'buttonFeaturedGradientEndColor',
+  'buttonFeaturedBackgroundColor',
+  'buttonFeaturedHoverBackgroundColor',
+  'buttonFeaturedActiveBackgroundColor',
+];
+
+export const destructiveThemeAttributes = [
+  'buttonDestructiveTextColor',
+  'buttonDestructiveHoverTextColor',
+  'buttonDestructiveActiveTextColor',
+  'buttonDestructiveBorderColor',
+  'buttonDestructiveHoverBorderColor',
+  'buttonDestructiveActiveBorderColor',
+  'buttonDestructiveBackgroundColor',
+  'buttonDestructiveHoverBackgroundColor',
+  'buttonDestructiveActiveBackgroundColor',
+];
