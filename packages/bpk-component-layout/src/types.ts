@@ -125,7 +125,12 @@ export interface BpkBoxProps extends BpkCommonLayoutProps, BpkBoxSpecificProps {
  * Component-specific props for BpkFlex
  * Includes all Flex props except those in BpkCommonLayoutProps
  */
-export interface BpkFlexSpecificProps extends RemoveCommonProps<FlexProps> {}
+export interface BpkFlexSpecificProps extends RemoveCommonProps<FlexProps> {
+  direction?: FlexProps['flexDirection'];
+  justify?: FlexProps['justifyContent'];
+  align?: FlexProps['alignItems'];
+  wrap?: FlexProps['flexWrap'];
+}
 
 /**
  * Props for BpkFlex component
@@ -139,7 +144,18 @@ export interface BpkFlexProps extends BpkCommonLayoutProps, BpkFlexSpecificProps
  * Component-specific props for BpkGrid
  * Includes all Grid props except those in BpkCommonLayoutProps
  */
-export interface BpkGridSpecificProps extends RemoveCommonProps<GridProps> {}
+export interface BpkGridSpecificProps extends RemoveCommonProps<GridProps> {
+  justify?: GridProps['justifyContent'];
+  align?: GridProps['alignItems'];
+  templateColumns?: GridProps['gridTemplateColumns'];
+  templateRows?: GridProps['gridTemplateRows'];
+  templateAreas?: GridProps['gridTemplateAreas'];
+  autoFlow?: GridProps['gridAutoFlow'];
+  autoRows?: GridProps['gridAutoRows'];
+  autoColumns?: GridProps['gridAutoColumns'];
+  rowGap?: GridProps['rowGap'];
+  columnGap?: GridProps['columnGap'];
+}
 
 /**
  * Props for BpkGrid component

@@ -26,8 +26,12 @@ import {
   SizeExample,
   MixedExample,
   PositionExample,
-  FlexExample,
-  GridExample,
+  BpkBoxFlexExample,
+  BpkBoxGridExample,
+  BpkFlexExample,
+  BpkFlexDirectionExample,
+  BpkFlexWrapExample,
+  BpkGridExample,
 } from './examples';
 
 export default {
@@ -58,8 +62,12 @@ export const Spacing = () => <SpacingExample />;
 export const RtlSpacing = () => <RtlSpacingExample />;
 export const Size = () => <SizeExample />;
 export const Position = () => <PositionExample />;
-export const Flex = () => <FlexExample />;
-export const Grid = () => <GridExample />;
+export const BpkBoxFlex = () => <BpkBoxFlexExample />;
+export const BpkBoxGrid = () => <BpkBoxGridExample />;
+export const BpkFlexStory = () => <BpkFlexExample />;
+export const BpkFlexDirection = () => <BpkFlexDirectionExample />;
+export const BpkFlexWrap = () => <BpkFlexWrapExample />;
+export const BpkGridStory = () => <BpkGridExample />;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
