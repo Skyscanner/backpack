@@ -40,6 +40,7 @@ import {
 } from './examples';
 import { MixedExample as MixedExampleV1 } from './examplesv1';
 import { PerformanceBenchmark } from './PerformanceBenchmark';
+import { PerformanceComparison } from './PerformanceComparison';
 
 export default {
   title: 'bpk-component-button',
@@ -96,6 +97,15 @@ PerformanceTest.parameters = {
   docs: {
     description: {
       story: 'Interactive performance benchmark for testing link button icon detection performance in real browser environment.',
+    },
+  },
+};
+
+export const V0VsV1Comparison = () => <PerformanceComparison />;
+V0VsV1Comparison.parameters = {
+  docs: {
+    description: {
+      story: 'Side-by-side performance comparison between V0 (before icon detection) and V1 (after icon detection). Uses median of multiple runs for stable results.',
     },
   },
 };
