@@ -27,6 +27,7 @@ import type {
   StackProps,
 } from '@chakra-ui/react';
 
+
 /**
  * Layout-level event props that should not be exposed on layout components
  * by default. BpkBox will reintroduce a minimal subset (onClick, onFocus,
@@ -164,6 +165,10 @@ export interface BpkFlexSpecificProps extends RemoveCommonProps<FlexProps> {
   justify?: FlexProps['justifyContent'];
   align?: FlexProps['alignItems'];
   wrap?: FlexProps['flexWrap'];
+  grow?: FlexProps['flexGrow'];
+  shrink?: FlexProps['flexShrink'];
+  basis?: FlexProps['flexBasis'];
+  inline?: boolean;
 }
 
 /**
@@ -189,6 +194,9 @@ export interface BpkGridSpecificProps extends RemoveCommonProps<GridProps> {
   autoColumns?: GridProps['gridAutoColumns'];
   rowGap?: GridProps['rowGap'];
   columnGap?: GridProps['columnGap'];
+  column?: GridProps['gridColumn'];
+  row?: GridProps['gridRow'];
+  inline?: boolean;
 }
 
 /**

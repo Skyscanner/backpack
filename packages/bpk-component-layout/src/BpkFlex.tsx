@@ -24,9 +24,13 @@ import type { BpkFlexProps } from './types';
 
 export const BpkFlex = ({
   align,
+  basis,
   children,
   direction,
+  grow,
+  inline,
   justify,
+  shrink,
   wrap,
   ...props
 }: BpkFlexProps) => {
@@ -39,6 +43,10 @@ export const BpkFlex = ({
       justifyContent={justify}
       alignItems={align}
       flexWrap={wrap}
+      flexGrow={grow}
+      flexShrink={shrink}
+      flexBasis={basis}
+      display={inline ? 'inline-flex' : undefined}
     >
       {children}
     </Flex>

@@ -316,6 +316,83 @@ export const BpkFlexWrapExample = () => (
 );
 
 /**
+ * BpkFlex Item Properties example - demonstrates grow, shrink, and basis.
+ */
+
+export const BpkFlexItemExample = () => (
+  <Wrapper>
+    <BpkFlex gap={BpkSpacing.MD} padding={BpkSpacing.MD} width="100%">
+      <BpkFlex
+        grow={1}
+        padding={BpkSpacing.MD}
+        justify="center"
+        align="center"
+      >
+        <BpkBox padding={BpkSpacing.SM} width="100%">
+          <span className={STYLES['bpk-layout-examples__outline']}>
+            Grow: 1
+          </span>
+        </BpkBox>
+      </BpkFlex>
+      <BpkFlex
+        grow={2}
+        padding={BpkSpacing.MD}
+        justify="center"
+        align="center"
+      >
+        <BpkBox padding={BpkSpacing.SM} width="100%">
+          <span className={STYLES['bpk-layout-examples__outline']}>
+            Grow: 2
+          </span>
+        </BpkBox>
+      </BpkFlex>
+      <BpkFlex
+        basis="200px"
+        shrink={0}
+        padding={BpkSpacing.MD}
+        justify="center"
+        align="center"
+      >
+        <BpkBox padding={BpkSpacing.SM} width="100%">
+          <span className={STYLES['bpk-layout-examples__outline']}>
+            Basis: 200px, Shrink: 0
+          </span>
+        </BpkBox>
+      </BpkFlex>
+    </BpkFlex>
+  </Wrapper>
+);
+
+/**
+ * BpkFlex Inline example - demonstrates inline-flex behavior.
+ */
+
+export const BpkFlexInlineExample = () => (
+  <Wrapper>
+    <BpkBox padding={BpkSpacing.MD}>
+      <BpkFlex
+        inline
+        gap={BpkSpacing.SM}
+        padding={BpkSpacing.SM}
+      >
+        <BpkBox padding={BpkSpacing.SM}>
+          <span className={STYLES['bpk-layout-examples__outline']}>
+            Inline Flex 1
+          </span>
+        </BpkBox>
+        <BpkBox padding={BpkSpacing.SM}>
+          <span className={STYLES['bpk-layout-examples__outline']}>
+            Inline Flex 2
+          </span>
+        </BpkBox>
+      </BpkFlex>
+      {' '}
+      <span>Text adjacent to inline flex</span>
+    </BpkBox>
+  </Wrapper>
+);
+
+/**
  * BpkGrid example - demonstrates BpkGrid.
  */
 
@@ -333,6 +410,56 @@ export const BpkGridExample = () => (
           </span>
         </BpkBox>
       ))}
+    </BpkGrid>
+  </Wrapper>
+);
+
+/**
+ * BpkGrid Item Spanning example - demonstrates column/row spanning.
+ */
+
+export const BpkGridSpanExample = () => (
+  <Wrapper>
+    <BpkGrid
+      templateColumns="repeat(3, 1fr)"
+      gap={BpkSpacing.MD}
+      padding={BpkSpacing.MD}
+    >
+      <BpkBox
+        gridColumn="span 2"
+        padding={BpkSpacing.MD}
+      >
+         <BpkBox width="100%" padding={BpkSpacing.SM}>
+          <span className={STYLES['bpk-layout-examples__outline']}>
+            Box: Span 2 Columns
+          </span>
+        </BpkBox>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.MD}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Cell 2
+        </span>
+      </BpkBox>
+      <BpkBox
+        gridRow="span 2"
+        padding={BpkSpacing.MD}
+      >
+        <BpkBox width="100%" height="100%" padding={BpkSpacing.SM}>
+          <span className={STYLES['bpk-layout-examples__outline']}>
+            Box: Span 2 Rows
+          </span>
+        </BpkBox>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.MD}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Cell 4
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.MD}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Cell 5
+        </span>
+      </BpkBox>
     </BpkGrid>
   </Wrapper>
 );

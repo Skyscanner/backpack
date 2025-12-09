@@ -22,6 +22,8 @@ import { axe } from 'jest-axe';
 import '@testing-library/jest-dom';
 
 import { BpkBox } from './BpkBox';
+import { BpkFlex } from './BpkFlex';
+import { BpkGrid } from './BpkGrid';
 import { BpkProvider } from './BpkProvider';
 import { BpkSpacing } from './tokens';
 
@@ -36,6 +38,46 @@ describe('bpk-component-layout accessibility tests', () => {
         >
           Accessible layout content
         </BpkBox>
+      </BpkProvider>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('BpkFlex basic usage should not have detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkFlex
+          role="group"
+          aria-label="Flex container"
+          direction="row"
+          gap={BpkSpacing.MD}
+        >
+          <BpkBox>Item 1</BpkBox>
+          <BpkBox>Item 2</BpkBox>
+        </BpkFlex>
+      </BpkProvider>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('BpkGrid basic usage should not have detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkGrid
+          role="grid"
+          aria-label="Grid container"
+          templateColumns="repeat(2, 1fr)"
+          gap={BpkSpacing.MD}
+        >
+          <BpkBox role="gridcell">Cell 1</BpkBox>
+          <BpkBox role="gridcell">Cell 2</BpkBox>
+          <BpkBox role="gridcell">Cell 3</BpkBox>
+          <BpkBox role="gridcell">Cell 4</BpkBox>
+        </BpkGrid>
       </BpkProvider>,
     );
 

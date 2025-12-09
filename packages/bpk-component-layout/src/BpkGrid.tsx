@@ -28,8 +28,11 @@ export const BpkGrid = ({
   autoFlow,
   autoRows,
   children,
+  column,
   columnGap,
+  inline,
   justify,
+  row,
   rowGap,
   templateAreas,
   templateColumns,
@@ -51,6 +54,9 @@ export const BpkGrid = ({
       gridAutoColumns={autoColumns}
       rowGap={rowGap}
       columnGap={columnGap}
+      gridColumn={column}
+      gridRow={row}
+      display={inline ? 'inline-grid' : undefined}
     >
       {children}
     </Grid>
