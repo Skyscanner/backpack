@@ -40,7 +40,7 @@ export default () => (
 
 ### Link Button
 
-Link buttons (`type="link"` or `type="linkOnDark"`) are styled like `BpkLink` with underline decoration. It has underline bt default, while with `implicit` would underline on hover.
+Link buttons (`type="link"` or `type="linkOnDark"`) are styled like `BpkLink` with underline decoration. It has underline by default, while with `implicit` would underline on hover.
 
 ```js
 import { BpkButtonV2, BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
@@ -93,7 +93,7 @@ export default () => (
 | disabled    | bool     | false    | false              | Whether the button is disabled                                                   |
 | fullWidth   | bool     | false    | false              | Whether the button should take full width                                        |
 | iconOnly    | bool     | false    | false              | Whether the button contains only an icon (no text)                               |
-| implicit    | bool     | false    | false              | For link types only: applies implicit link styling that underline on hover                    |
+| implicit    | bool     | false    | false              | For link types only: applies implicit link styling that would underline on hover                    |
 | onClick     | func     | false    | () => {}           | Click handler function                                                           |
 | submit      | bool     | false    | false              | Whether the button is a submit button                                            |
 | href        | string   | false    | null               | If provided, renders as an anchor tag                                            |

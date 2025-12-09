@@ -42,6 +42,7 @@ const BpkPaginationNudger = (props) => {
         type={BUTTON_TYPES.link}
         onClick={onNudge}
         disabled={disabled}
+        implicit
       >
         {nudgerIcon(forward)}
         <span className={getClassName('bpk-pagination-nudger__text--hidden')}>
