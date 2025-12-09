@@ -90,4 +90,3 @@ export const destructiveThemeAttributes = [
   'buttonDestructiveHoverBackgroundColor',
   'buttonDestructiveActiveBackgroundColor',
 ];
-
