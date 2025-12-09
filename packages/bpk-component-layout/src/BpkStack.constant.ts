@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-// these options align with Chakra's StackOption
+// these options align with Chakra's StackOption excluding separator
+// TODO: add separator to Stack
 const StackOptionKeys = [
   'align',
   'justify',
   'wrap',
   'direction',
-  'separator',
 ] as const;
 
 export default StackOptionKeys;

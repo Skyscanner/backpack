@@ -18,6 +18,7 @@
 
 import type { ReactNode } from 'react';
 
+import { BpkButtonV2, BUTTON_TYPES } from '../../packages/bpk-component-button';
 import {
   BpkBox,
   BpkProvider,
@@ -32,75 +33,160 @@ const Wrapper = ({ children }: { children: ReactNode }) => (
   <BpkProvider>{children}</BpkProvider>
 );
 
-// const Item = ({ label }: { label: string }) => (
-//   <BpkBox padding={BpkSpacing.SM} minHeight="6rem">
-//     {label}
-//   </BpkBox>
-// );
-const Item = ({ height,label, width }: { width?: string, label: string; height?: string }) => (
-  <div style={{ height: height || '3rem', background: 'blue', width: width || '100%' }}>{label}</div>
+const Item = ({ label }: { label: String }) => (
+  <BpkBox padding={BpkSpacing.SM} minHeight="3rem">
+    {label}
+  </BpkBox>
+);
+// Content block component using BpkBox
+const ContentBlock = ({
+  description,
+  title,
+}: {
+  title: string;
+  description: string;
+}) => (
+  <BpkBox padding={BpkSpacing.MD} minHeight="6rem">
+    <BpkVStack gap={BpkSpacing.SM}>
+      <BpkBox fontWeight="bold">{title}</BpkBox>
+      <BpkBox>{description}</BpkBox>
+    </BpkVStack>
+  </BpkBox>
 );
 
-// 1) Default vertical stack
-export const StackDefaultExample = () => (
+// 1) Vertical stack of content blocks
+export const VerticalContentBlocksExample = () => (
   <Wrapper>
-    <BpkStack spacing={BpkSpacing.LG}>
-      <Item label="Item 1" width="5rem" />
-      <Item label="Item 2" width="10rem" />
-      <Item label="Item 3" width="15rem" />
-    </BpkStack>
-  </Wrapper>
-);
-
-// 2) Horizontal stack (row)
-export const StackHorizontalExample = () => (
-  <Wrapper>
-    <BpkStack spacing={BpkSpacing.MD} direction="row">
-      <Item label="Item 1" height="1rem" />
-      <Item label="Item 2" height="2rem" />
-      <Item label="Item 3" height="3rem" />
-    </BpkStack>
-  </Wrapper>
-);
-
-// 3) HStack (row with center align)
-export const HStackExample = () => (
-  <Wrapper>
-    <BpkHStack spacing={BpkSpacing.SM}>
-      <Item label="Item 1" height="1rem" />
-      <Item label="Item 2" height="2rem" />
-      <Item label="Item 3" height="3rem" />
-    </BpkHStack>
-  </Wrapper>
-);
-
-// 4) VStack (column)
-export const VStackExample = () => (
-  <Wrapper>
-    <BpkVStack spacing={BpkSpacing.SM}>
-      <Item label="Item 1" width="5rem" />
-      <Item label="Item 2" width="10rem" />
-      <Item label="Item 3" width="15rem" />
+    <BpkVStack gap={BpkSpacing.LG}>
+      <ContentBlock
+        title="Content Block 1"
+        description="This is the first content block in a vertical stack."
+      />
+      <ContentBlock
+        title="Content Block 2"
+        description="This is the second content block demonstrating vertical stacking."
+      />
+      <ContentBlock
+        title="Content Block 3"
+        description="This is the third content block showing consistent spacing."
+      />
     </BpkVStack>
   </Wrapper>
 );
 
-// 5) Responsive direction
+// 2) Horizontal stack of buttons
+export const HorizontalButtonsExample = () => (
+  <Wrapper>
+    <BpkHStack gap={BpkSpacing.MD}>
+      <BpkButtonV2 type={BUTTON_TYPES.primary}>Primary</BpkButtonV2>
+      <BpkButtonV2 type={BUTTON_TYPES.secondary}>Secondary</BpkButtonV2>
+      <BpkButtonV2 type={BUTTON_TYPES.link}>Link</BpkButtonV2>
+      <BpkButtonV2 type={BUTTON_TYPES.destructive}>Delete</BpkButtonV2>
+    </BpkHStack>
+  </Wrapper>
+);
+
+// 3) Nested Stack example
+export const NestedStackExample = () => (
+  <Wrapper>
+    <BpkVStack gap={BpkSpacing.LG}>
+      <ContentBlock
+        title="Main Section"
+        description="This is the main content section with nested stacks below."
+      />
+      <BpkHStack gap={BpkSpacing.MD} align="center">
+        <BpkVStack gap={BpkSpacing.SM} justify="center">
+          <ContentBlock
+            title="Nested Column 1"
+            description="First column in a nested horizontal stack."
+          />
+          <ContentBlock
+            title="Nested Column 1 - Item 2"
+            description="Second item in the first nested column."
+          />
+        </BpkVStack>
+        <BpkVStack gap={BpkSpacing.SM} justify="center">
+          <ContentBlock
+            title="Nested Column 2"
+            description="Second column in a nested horizontal stack."
+          />
+          <BpkHStack gap={BpkSpacing.SM}>
+            <BpkButtonV2 type={BUTTON_TYPES.secondary}>Action 1</BpkButtonV2>
+            <BpkButtonV2 type={BUTTON_TYPES.secondary}>Action 2</BpkButtonV2>
+          </BpkHStack>
+        </BpkVStack>
+      </BpkHStack>
+    </BpkVStack>
+  </Wrapper>
+);
+
+// 4) Default vertical stack
+export const StackDefaultExample = () => (
+  <Wrapper>
+    <BpkStack gap={BpkSpacing.LG}>
+      <Item label="Item 1" />
+      <Item label="Item 2" />
+      <Item label="Item 3" />
+    </BpkStack>
+  </Wrapper>
+);
+
+// 5) Horizontal stack (row)
+export const StackHorizontalExample = () => (
+  <Wrapper>
+    <BpkStack gap={BpkSpacing.MD} direction="row">
+      <Item label="Item 1" />
+      <Item label="Item 2" />
+      <Item label="Item 3" />
+    </BpkStack>
+  </Wrapper>
+);
+
+// 6) HStack (row with center align)
+export const HStackExample = () => (
+  <Wrapper>
+    <BpkHStack gap={BpkSpacing.SM}>
+      <Item label="Item 1" />
+      <Item label="Item 2" />
+      <Item label="Item 3" />
+    </BpkHStack>
+  </Wrapper>
+);
+
+// 7) VStack (column)
+export const VStackExample = () => (
+  <Wrapper>
+    <BpkVStack gap={BpkSpacing.SM}>
+      <Item label="Item 1" />
+      <Item label="Item 2" />
+      <Item label="Item 3" />
+    </BpkVStack>
+  </Wrapper>
+);
+
+// 8) Responsive direction
 export const ResponsiveDirectionExample = () => (
   <Wrapper>
     <BpkStack
-      wrap="i like to wrap"
-      gap={{mobile:'bpk-spacing-base', tablet:'bpk-spacing-lg', desktop:'bpk-spacing-xl'}}
-      width={{mobile:'100%', tablet:'50%', desktop:'25%'}}
+      gap={{
+        mobile: BpkSpacing.SM,
+        tablet: BpkSpacing.LG,
+        desktop: BpkSpacing.XL,
+      }}
+      width={{
+        mobile: '100%',
+        tablet: '50%',
+        desktop: '25%',
+      }}
       direction={{
         mobile: 'column',
         tablet: 'row',
         desktop: 'row',
       }}
     >
-      <Item label="Item 1" height="1rem" width="5rem"/>
-      <Item label="Item 2" height="2rem" width="10rem"/>
-      <Item label="Item 3" height="3rem" width="15rem"/>
+      <Item label="Item 1" />
+      <Item label="Item 2" />
+      <Item label="Item 3" />
     </BpkStack>
   </Wrapper>
 );

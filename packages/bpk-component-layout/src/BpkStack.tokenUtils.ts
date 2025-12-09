@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import StackOptionKeys from './BpkStack.contanst';
+import StackOptionKeys from './BpkStack.constant';
 import { processBpkProps, processResponsiveValue } from './tokenUtils';
 
 import type { BpkStackSpecificProps, BpkStackProps } from './BpkStack.types';
@@ -50,11 +50,9 @@ function processBpkStackSpecificProps(
 export function processBpkStackProps(
   props: BpkStackProps,
 ): Record<string, any> {
-  // 先处理 spacing 等通用布局 props，再处理 Stack 自己的响应式 props
+  // Handle the common layout props such as spacing first, then process Stack’s own responsive props.
   const cleanProps = processBpkProps(props);
-  console.log('cleanProps', cleanProps);
   const stackSpecificProcessedProps = processBpkStackSpecificProps(cleanProps);
-  console.error('stackSpecificProcessedProps', stackSpecificProcessedProps);
   return stackSpecificProcessedProps;
 }
 

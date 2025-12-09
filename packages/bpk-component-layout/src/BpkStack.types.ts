@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import type StackOptionKeys from './BpkStack.contanst';
+import type StackOptionKeys from './BpkStack.constant';
 import type { BpkCommonLayoutProps } from './commonProps';
 import type { BpkResponsiveValue } from './tokens';
 import type { RemoveCommonProps } from './types';
