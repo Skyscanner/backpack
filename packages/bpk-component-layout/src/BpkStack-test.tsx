@@ -20,16 +20,19 @@ import { render } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 
+import { BpkProvider } from './BpkProvider';
 import { BpkStack, BpkHStack, BpkVStack } from './BpkStack';
 import { BpkSpacing } from './tokens';
 
 describe('BpkStack', () => {
   it('renders children content', () => {
     const { getByText } = render(
-      <BpkStack gap={BpkSpacing.MD}>
-        <div>Child 1</div>
-        <div>Child 2</div>
-      </BpkStack>,
+      <BpkProvider>
+        <BpkStack gap={BpkSpacing.MD}>
+          <div>Child 1</div>
+          <div>Child 2</div>
+        </BpkStack>
+      </BpkProvider>,
     );
 
     expect(getByText('Child 1')).toBeInTheDocument();
@@ -39,10 +42,12 @@ describe('BpkStack', () => {
   describe('BpkHStack', () => {
     it('defaults to row direction', () => {
       const { container } = render(
-        <BpkHStack gap={BpkSpacing.MD}>
-          <div>Child 1</div>
-          <div>Child 2</div>
-        </BpkHStack>,
+        <BpkProvider>
+          <BpkHStack gap={BpkSpacing.MD}>
+            <div>Child 1</div>
+            <div>Child 2</div>
+          </BpkHStack>
+        </BpkProvider>,
       );
 
       // Chakra's HStack uses direction="row" and aligns items "center" by default
@@ -55,10 +60,12 @@ describe('BpkStack', () => {
   describe('BpkVStack', () => {
     it('defaults to column direction', () => {
       const { container } = render(
-        <BpkVStack gap={BpkSpacing.MD}>
-          <div>Child 1</div>
-          <div>Child 2</div>
-        </BpkVStack>,
+        <BpkProvider>
+          <BpkVStack gap={BpkSpacing.MD}>
+            <div>Child 1</div>
+            <div>Child 2</div>
+          </BpkVStack>
+        </BpkProvider>,
       );
 
       // Chakra's VStack uses direction="column" and aligns items "center" by default
@@ -71,9 +78,11 @@ describe('BpkStack', () => {
   describe('BpkStack Props', () => {
     it('accepts valid gap tokens', () => {
       const { container } = render(
-        <BpkStack gap={BpkSpacing.LG}>
-          <div>Child 1</div>
-        </BpkStack>,
+        <BpkProvider>
+          <BpkStack gap={BpkSpacing.LG}>
+            <div>Child 1</div>
+          </BpkStack>
+        </BpkProvider>,
       );
 
       // We can check if the style attribute or class reflects the gap.
@@ -86,9 +95,11 @@ describe('BpkStack', () => {
 
     it('supports align and justify props', () => {
       const { container } = render(
-        <BpkStack align="center" justify="space-between" gap={BpkSpacing.MD}>
-          <div>Child 1</div>
-        </BpkStack>,
+        <BpkProvider>
+          <BpkStack align="center" justify="space-between" gap={BpkSpacing.MD}>
+            <div>Child 1</div>
+          </BpkStack>
+        </BpkProvider>,
       );
 
       const stack = container.firstChild;
@@ -98,10 +109,12 @@ describe('BpkStack', () => {
 
     it('filters out invalid props (e.g. className)', () => {
       const { container } = render(
-        // @ts-expect-error className is disallowed
-        <BpkStack className="forbidden-class" gap={BpkSpacing.MD}>
-          <div>Child</div>
-        </BpkStack>,
+        <BpkProvider>
+          {/* @ts-expect-error className is intentionally not part of the public API */}
+          <BpkStack className="forbidden-class" gap={BpkSpacing.MD}>
+            <div>Child</div>
+          </BpkStack>
+        </BpkProvider>,
       );
 
       const stack = container.firstChild;
