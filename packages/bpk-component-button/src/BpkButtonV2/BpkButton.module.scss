@@ -60,8 +60,6 @@
 
   &--link-on-dark {
     @include buttons.bpk-button--link-on-dark;
-    @include typography.bpk-link;
-    @include typography.bpk-link--alternate;
     @include buttons.bpk-button--link-on-dark-disabled;
 
     &--implicit {
