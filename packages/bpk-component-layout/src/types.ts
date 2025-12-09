@@ -107,7 +107,7 @@ export interface BpkFlexGridProps {
   columnGap?: BoxProps['columnGap'];
 }
 
-type FlexGridPropKeys = keyof BpkFlexGridProps;
+export type FlexGridPropKeys = keyof BpkFlexGridProps;
 
 /**
  * Base type that removes common layout props, reserved props (className,

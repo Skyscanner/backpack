@@ -21,7 +21,7 @@ import type { ReactNode } from 'react';
 import type StackOptionKeys from './BpkStack.constant';
 import type { BpkCommonLayoutProps } from './commonProps';
 import type { BpkResponsiveValue } from './tokens';
-import type { RemoveCommonProps } from './types';
+import type { RemoveCommonProps, BpkFlexGridProps } from './types';
 import type { StackProps } from '@chakra-ui/react';
 
 type StackOptionKeysType = typeof StackOptionKeys[number]
@@ -42,7 +42,7 @@ type BpkStackOptions = {
  */
 export interface BpkStackSpecificProps
   extends Omit<RemoveCommonProps<StackProps>, StackOptionKeysType>,
-    BpkStackOptions {}
+    BpkStackOptions, BpkFlexGridProps {}
 
 /**
  * Props for BpkStack component
