@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
-import { useState } from 'react';
+import type { KeyboardEvent, ReactNode } from 'react';
+import { useId, useRef, useState } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -33,36 +33,126 @@ export const SEGMENT_TYPES = {
 };
 export type SegmentTypes = (typeof SEGMENT_TYPES)[keyof typeof SEGMENT_TYPES];
 
+export type TabPanelProps = {
+  id: string;
+  role: 'tabpanel';
+  'aria-labelledby': string;
+  hidden: boolean;
+  tabIndex: 0;
+};
+
+/**
+ * Helper function to get accessibility props for tab panel elements.
+ * Use this to ensure proper ARIA relationships between tabs and their panels.
+ * @param {string} baseId - The base ID used to generate unique IDs for tabs and panels.
+ * @param {number} index - The index of the tab panel.
+ * @param {number} selectedIndex - The currently selected tab index.
+ * @returns {TabPanelProps} An object containing the necessary props for a tab panel.
+ */
+export const getTabPanelProps = (
+  baseId: string,
+  index: number,
+  selectedIndex: number,
+): TabPanelProps => ({
+  id: `${baseId}-panel-${index}`,
+  role: 'tabpanel',
+  'aria-labelledby': `${baseId}-tab-${index}`,
+  hidden: index !== selectedIndex,
+  tabIndex: 0,
+});
+
 export type Props = {
   buttonContents: string[] | ReactNode[];
+  /**
+   * Unique identifier for the segmented control. Used to generate tab and panel IDs
+   * for ARIA relationships. If not provided, a unique ID will be auto-generated.
+   */
+  id?: string;
   /**
    * Accessible label for the segmented control group.
    */
   label?: string;
+  /**
+   * Array of panel IDs that each tab controls. When provided, adds aria-controls
+   * to each tab button linking it to its corresponding panel.
+   * Should match the order and length of buttonContents.
+   */
+  panelIds?: string[];
   type?: SegmentTypes;
-  /*
-   * Index parameter to track which is clicked
+  /**
+   * Callback fired when a tab is selected. Receives the index of the selected tab.
    */
   onItemClick: (id: number) => void;
   selectedIndex: number;
   shadow?: boolean;
+  activationMode?: 'automatic' | 'manual';
 };
 
 const BpkSegmentedControl = ({
+  activationMode = 'automatic',
   buttonContents,
+  id: providedId,
   label,
   onItemClick,
+  panelIds,
   selectedIndex,
   shadow = false,
   type = SEGMENT_TYPES.CanvasDefault,
 }: Props) => {
+  const generatedId = useId();
+  const id = providedId || generatedId;
+  const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
+
+  // TODO: Consider removing internal state - component is controlled via selectedIndex prop.
+  // Internal state may cause sync issues if selectedIndex changes externally.
   const [selectedButton, setSelectedButton] = useState(selectedIndex);
-  const handleButtonClick = (id: number) => {
-    if (id !== selectedButton) {
-      setSelectedButton(id);
-      onItemClick(id);
+
+  const handleButtonClick = (index: number) => {
+    if (index !== selectedButton) {
+      setSelectedButton(index);
+      onItemClick(index);
     }
   };
+
+  const handleKeyDown = (
+    event: KeyboardEvent<HTMLButtonElement>,
+    currentIndex: number,
+  ) => {
+    const lastIndex = buttonContents.length - 1;
+    let newIndex = currentIndex;
+
+    switch (event.key) {
+      case 'ArrowRight':
+        newIndex = currentIndex === lastIndex ? 0 : currentIndex + 1;
+        break;
+      case 'ArrowLeft':
+        newIndex = currentIndex === 0 ? lastIndex : currentIndex - 1;
+        break;
+      case 'Home':
+        newIndex = 0;
+        break;
+      case 'End':
+        newIndex = lastIndex;
+        break;
+      case ' ':
+      case 'Enter':
+        if (activationMode === 'manual') {
+          setSelectedButton(currentIndex);
+          onItemClick(currentIndex);
+        }
+        return;
+      default:
+        return;
+    }
+
+    event.preventDefault();
+    if (activationMode === 'automatic') {
+      setSelectedButton(newIndex);
+      onItemClick(newIndex);
+    }
+    buttonRefs.current[newIndex]?.focus();
+  };
+
   const containerStyling = getClassName(
     'bpk-segmented-control-group',
     shadow && 'bpk-segmented-control-group-shadow',
@@ -71,7 +161,8 @@ const BpkSegmentedControl = ({
   return (
     <div
       className={containerStyling}
-      role="group"
+      role="tablist"
+      aria-orientation="horizontal"
       {...(label ? { 'aria-label': label } : {})}
     >
       {buttonContents.map((content, index) => {
@@ -87,14 +178,22 @@ const BpkSegmentedControl = ({
             `bpk-segmented-control--${type}-selected-shadow`,
         );
 
+        const tabId = `${id}-tab-${index}`;
         return (
           <button
-            key={`index-${index.toString()}`}
-            id={index.toString()}
+            ref={(el) => {
+              buttonRefs.current[index] = el;
+            }}
+            key={tabId}
+            id={tabId}
             type="button"
+            role="tab"
             onClick={() => handleButtonClick(index)}
+            onKeyDown={(event) => handleKeyDown(event, index)}
             className={buttonStyling}
-            aria-pressed={!!isSelected}
+            tabIndex={isSelected ? 0 : -1}
+            aria-selected={isSelected}
+            {...(panelIds?.[index] ? { 'aria-controls': panelIds[index] } : {})}
           >
             {content}
           </button>
