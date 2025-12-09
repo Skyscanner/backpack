@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode, MouseEvent } from 'react';
+import type { ReactNode, MouseEvent, AnchorHTMLAttributes } from 'react';
 import { forwardRef } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -29,17 +29,16 @@ import STYLES from './BpkLink.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
+export interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
   href: string;
-  className?: string | null;
+  className?: string;
   onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
   blank?: boolean;
-  rel?: string | null;
+  rel?: string;
   alternate?: boolean;
   implicit?: boolean;
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
-};
+}
 
 const BpkLink = forwardRef<HTMLAnchorElement, Props>(
   (
@@ -47,11 +46,11 @@ const BpkLink = forwardRef<HTMLAnchorElement, Props>(
       alternate = false,
       blank = false,
       children,
-      className = null,
+      className,
       href,
       implicit = false,
       onClick,
-      rel: propRel = null,
+      rel: propRel,
       ...rest
     },
     ref,
@@ -60,7 +59,7 @@ const BpkLink = forwardRef<HTMLAnchorElement, Props>(
     const underlinedClassNames = [getClassName('bpk-link-underlined')];
 
     const target = blank ? '_blank' : undefined;
-    const rel = blank ? propRel || 'noopener noreferrer' : propRel || undefined;
+    const rel = blank ? propRel || 'noopener noreferrer' : propRel;
 
     if (className) {
       classNames.push(className);

@@ -56,7 +56,7 @@ const BpkBreadcrumbItem = (props: Props) => {
       ) : (
         <div className={getClassName('bpk-breadcrumb-item__link')}>
           <BpkLink
-            href={href}
+            href={href || '#'}
             {...linkProps}
           >
             {children}

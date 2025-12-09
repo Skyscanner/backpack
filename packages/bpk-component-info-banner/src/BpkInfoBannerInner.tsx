@@ -212,7 +212,7 @@ const BpkInfoBannerInner = ({
           {isExpandable && action && (
             <BpkLink
               onClick={action.callback}
-              href={null}
+              href="#"
             >
               {action.title}
             </BpkLink>
