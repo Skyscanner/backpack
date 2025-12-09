@@ -18,7 +18,10 @@
 import { render, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import BpkSegmentedControl, { SEGMENT_TYPES } from './BpkSegmentedControl';
+import BpkSegmentedControl, {
+  getTabPanelProps,
+  SEGMENT_TYPES,
+} from './BpkSegmentedControl';
 
 const mockOnItemClick = jest.fn();
 
@@ -69,8 +72,8 @@ describe('BpkSegmentedControl', () => {
     const buttonOne = getByText('one');
     fireEvent.click(buttonOne);
 
-    expect(screen.getByText('one')).toHaveAttribute('aria-pressed', 'true');
-    expect(screen.getByText('two')).toHaveAttribute('aria-pressed', 'false');
+    expect(screen.getByText('one')).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByText('two')).toHaveAttribute('aria-selected', 'false');
   });
 
   it('should render with the correct type class', () => {
@@ -101,26 +104,165 @@ describe('BpkSegmentedControl', () => {
     expect(selectedButton).toBeInTheDocument();
   });
 
-  it('should render with role="group" on the outer div', () => {
+  it('should render with role="tablist" on the outer div', () => {
     render(<BpkSegmentedControl {...defaultProps} />);
-    const group = screen.getByRole('group');
-    expect(group).toBeInTheDocument();
+    const tablist = screen.getByRole('tablist');
+    expect(tablist).toBeInTheDocument();
   });
 
-  it('should set the accessible label on the group when label prop is provided', () => {
+  it('should set aria-orientation="horizontal" on the tablist', () => {
+    render(<BpkSegmentedControl {...defaultProps} />);
+    const tablist = screen.getByRole('tablist');
+    expect(tablist).toHaveAttribute('aria-orientation', 'horizontal');
+  });
+
+  it('should set the accessible label on the tablist when label prop is provided', () => {
     render(
-      <BpkSegmentedControl
-        {...defaultProps}
-        label="Segmented control label"
-      />,
+      <BpkSegmentedControl {...defaultProps} label="Segmented control label" />,
     );
-    const group = screen.getByRole('group');
-    expect(group).toHaveAttribute('aria-label', 'Segmented control label');
+    const tablist = screen.getByRole('tablist');
+    expect(tablist).toHaveAttribute('aria-label', 'Segmented control label');
   });
 
   it('should not set aria-label when label prop is not provided', () => {
     render(<BpkSegmentedControl {...defaultProps} label={undefined} />);
-    const group = screen.getByRole('group');
-    expect(group).not.toHaveAttribute('aria-label');
+    const tablist = screen.getByRole('tablist');
+    expect(tablist).not.toHaveAttribute('aria-label');
+  });
+
+  it('should generate tab IDs based on provided id prop', () => {
+    render(<BpkSegmentedControl {...defaultProps} id="my-tabs" />);
+    const tabs = screen.getAllByRole('tab');
+    expect(tabs[0]).toHaveAttribute('id', 'my-tabs-tab-0');
+    expect(tabs[1]).toHaveAttribute('id', 'my-tabs-tab-1');
+  });
+
+  it('should add aria-controls when panelIds prop is provided', () => {
+    render(
+      <BpkSegmentedControl
+        {...defaultProps}
+        id="my-tabs"
+        panelIds={['panel-0', 'panel-1']}
+      />,
+    );
+    const tabs = screen.getAllByRole('tab');
+    expect(tabs[0]).toHaveAttribute('aria-controls', 'panel-0');
+    expect(tabs[1]).toHaveAttribute('aria-controls', 'panel-1');
+  });
+
+  it('should not add aria-controls when panelIds prop is not provided', () => {
+    render(<BpkSegmentedControl {...defaultProps} id="my-tabs" />);
+    const tabs = screen.getAllByRole('tab');
+    expect(tabs[0]).not.toHaveAttribute('aria-controls');
+    expect(tabs[1]).not.toHaveAttribute('aria-controls');
+  });
+
+  describe('keyboard navigation', () => {
+    it('should move focus to next tab on ArrowRight', () => {
+      render(<BpkSegmentedControl {...defaultProps} id="my-tabs" />);
+      const tabs = screen.getAllByRole('tab');
+      tabs[1].focus();
+      fireEvent.keyDown(tabs[1], { key: 'ArrowRight' });
+
+      expect(mockOnItemClick).toHaveBeenCalledWith(0); // wraps to first
+      expect(document.activeElement).toBe(tabs[0]);
+    });
+
+    it('should move focus to previous tab on ArrowLeft', () => {
+      render(<BpkSegmentedControl {...defaultProps} id="my-tabs" />);
+      const tabs = screen.getAllByRole('tab');
+      tabs[1].focus();
+      fireEvent.keyDown(tabs[1], { key: 'ArrowLeft' });
+
+      expect(mockOnItemClick).toHaveBeenCalledWith(0);
+      expect(document.activeElement).toBe(tabs[0]);
+    });
+
+    it('should wrap to last tab when pressing ArrowLeft on first tab', () => {
+      render(
+        <BpkSegmentedControl
+          {...defaultProps}
+          id="my-tabs"
+          selectedIndex={0}
+        />,
+      );
+      const tabs = screen.getAllByRole('tab');
+      tabs[0].focus();
+      fireEvent.keyDown(tabs[0], { key: 'ArrowLeft' });
+
+      expect(mockOnItemClick).toHaveBeenCalledWith(1);
+      expect(document.activeElement).toBe(tabs[1]);
+    });
+
+    it('should move focus to first tab on Home', () => {
+      render(<BpkSegmentedControl {...defaultProps} id="my-tabs" />);
+      const tabs = screen.getAllByRole('tab');
+      tabs[1].focus();
+      fireEvent.keyDown(tabs[1], { key: 'Home' });
+
+      expect(mockOnItemClick).toHaveBeenCalledWith(0);
+      expect(document.activeElement).toBe(tabs[0]);
+    });
+
+    it('should move focus to last tab on End', () => {
+      render(
+        <BpkSegmentedControl
+          {...defaultProps}
+          id="my-tabs"
+          selectedIndex={0}
+        />,
+      );
+      const tabs = screen.getAllByRole('tab');
+      tabs[0].focus();
+      fireEvent.keyDown(tabs[0], { key: 'End' });
+
+      expect(mockOnItemClick).toHaveBeenCalledWith(1);
+      expect(document.activeElement).toBe(tabs[1]);
+    });
+
+    it('should set tabIndex=0 only on selected tab', () => {
+      render(<BpkSegmentedControl {...defaultProps} id="my-tabs" />);
+      const tabs = screen.getAllByRole('tab');
+      expect(tabs[0]).toHaveAttribute('tabIndex', '-1');
+      expect(tabs[1]).toHaveAttribute('tabIndex', '0');
+    });
+  });
+});
+
+describe('getTabPanelProps', () => {
+  it('should return correct props for selected panel', () => {
+    const props = getTabPanelProps('my-tabs', 0, 0);
+    expect(props).toEqual({
+      id: 'my-tabs-panel-0',
+      role: 'tabpanel',
+      'aria-labelledby': 'my-tabs-tab-0',
+      hidden: false,
+      tabIndex: 0,
+    });
+  });
+
+  it('should return hidden=true for non-selected panel', () => {
+    const props = getTabPanelProps('my-tabs', 1, 0);
+    expect(props).toEqual({
+      id: 'my-tabs-panel-1',
+      role: 'tabpanel',
+      'aria-labelledby': 'my-tabs-tab-1',
+      hidden: true,
+      tabIndex: 0,
+    });
+  });
+
+  it('should generate correct IDs for different indices', () => {
+    const props0 = getTabPanelProps('tabs', 0, 0);
+    const props1 = getTabPanelProps('tabs', 1, 0);
+    const props2 = getTabPanelProps('tabs', 2, 2);
+
+    expect(props0.id).toBe('tabs-panel-0');
+    expect(props1.id).toBe('tabs-panel-1');
+    expect(props2.id).toBe('tabs-panel-2');
+
+    expect(props0['aria-labelledby']).toBe('tabs-tab-0');
+    expect(props1['aria-labelledby']).toBe('tabs-tab-1');
+    expect(props2['aria-labelledby']).toBe('tabs-tab-2');
   });
 });
