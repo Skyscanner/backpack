@@ -36,6 +36,7 @@ import {
   BpkFlexInlineExample,
   BpkGridExample,
   BpkGridSpanExample,
+  BpkGridWithItemExample,
 } from './examples';
 
 export default {
@@ -74,8 +75,9 @@ export const BpkFlexDirection = () => <BpkFlexDirectionExample />;
 export const BpkFlexWrap = () => <BpkFlexWrapExample />;
 export const BpkFlexItem = () => <BpkFlexItemExample />;
 export const BpkFlexInline = () => <BpkFlexInlineExample />;
-export const BpkGridStory = () => <BpkGridExample />;
+export const BpkGrid = () => <BpkGridExample />;
 export const BpkGridSpan = () => <BpkGridSpanExample />;
+export const BpkGridItem = () => <BpkGridWithItemExample />;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {

@@ -24,6 +24,7 @@ import type {
   BoxProps,
   FlexProps,
   GridProps,
+  GridItemProps,
   StackProps,
 } from '@chakra-ui/react';
 
@@ -204,6 +205,28 @@ export interface BpkGridSpecificProps extends RemoveCommonProps<GridProps> {
  * Combines Grid-specific props with Backpack common layout props
  */
 export interface BpkGridProps extends BpkCommonLayoutProps, BpkGridSpecificProps {
+  children?: ReactNode;
+}
+
+/**
+ * Component-specific props for BpkGridItem
+ * Includes all GridItem props except those in BpkCommonLayoutProps
+ */
+export interface BpkGridItemSpecificProps extends RemoveCommonProps<GridItemProps> {
+  area?: GridItemProps['area'];
+  colEnd?: GridItemProps['colEnd'];
+  colStart?: GridItemProps['colStart'];
+  colSpan?: GridItemProps['colSpan'];
+  rowEnd?: GridItemProps['rowEnd'];
+  rowStart?: GridItemProps['rowStart'];
+  rowSpan?: GridItemProps['rowSpan'];
+}
+
+/**
+ * Props for BpkGridItem component
+ * Combines GridItem-specific props with Backpack common layout props
+ */
+export interface BpkGridItemProps extends BpkCommonLayoutProps, BpkGridItemSpecificProps {
   children?: ReactNode;
 }
 

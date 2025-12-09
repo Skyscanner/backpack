@@ -24,6 +24,7 @@ import {
   BpkFlex,
   BpkGrid,
   BpkProvider,
+  BpkGridItem,
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
 
@@ -460,6 +461,65 @@ export const BpkGridSpanExample = () => (
           Cell 5
         </span>
       </BpkBox>
+    </BpkGrid>
+  </Wrapper>
+);
+
+/**
+ * BpkGrid with BpkGridItem example.
+ */
+
+export const BpkGridWithItemExample = () => (
+  <Wrapper>
+    <BpkGrid
+      templateRows="repeat(2, 1fr)"
+      templateColumns="repeat(5, 1fr)"
+      gap={BpkSpacing.MD}
+      padding={BpkSpacing.MD}
+      minHeight="200px"
+    >
+      <BpkGridItem
+        rowSpan={2}
+        colSpan={1}
+        padding={BpkSpacing.SM}
+      >
+         <BpkBox width="100%" height="100%" padding={BpkSpacing.SM}>
+          <span className={STYLES['bpk-layout-examples__outline']}>
+            rowSpan=2
+          </span>
+        </BpkBox>
+      </BpkGridItem>
+      <BpkGridItem
+        colSpan={2}
+        padding={BpkSpacing.SM}
+      >
+        <BpkBox width="100%" height="100%" padding={BpkSpacing.SM}>
+          <span className={STYLES['bpk-layout-examples__outline']}>
+            colSpan=2
+          </span>
+        </BpkBox>
+      </BpkGridItem>
+      <BpkGridItem
+        colSpan={2}
+        padding={BpkSpacing.SM}
+      >
+        <BpkBox width="100%" height="100%" padding={BpkSpacing.SM}>
+          <span className={STYLES['bpk-layout-examples__outline']}>
+            colSpan=2
+          </span>
+        </BpkBox>
+      </BpkGridItem>
+
+      <BpkGridItem
+        colSpan={4}
+        padding={BpkSpacing.SM}
+      >
+        <BpkBox width="100%" height="100%" padding={BpkSpacing.SM}>
+          <span className={STYLES['bpk-layout-examples__outline']}>
+            colSpan=4
+          </span>
+        </BpkBox>
+      </BpkGridItem>
     </BpkGrid>
   </Wrapper>
 );

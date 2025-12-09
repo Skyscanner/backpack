@@ -20,17 +20,20 @@ export { BpkProvider } from './src/BpkProvider';
 export { BpkBox } from './src/BpkBox';
 export { BpkFlex } from './src/BpkFlex';
 export { BpkGrid } from './src/BpkGrid';
+export { BpkGridItem } from './src/BpkGridItem';
 
 export type { BpkProviderProps } from './src/BpkProvider';
 export type { BpkBoxProps } from './src/BpkBox';
 export type { BpkFlexProps } from './src/BpkFlex';
 export type { BpkGridProps } from './src/BpkGrid';
+export type { BpkGridItemProps } from './src/BpkGridItem';
 
 export type {
   BpkCommonLayoutProps,
   BpkBoxSpecificProps,
   BpkFlexSpecificProps,
   BpkGridSpecificProps,
+  BpkGridItemSpecificProps,
   BpkStackSpecificProps,
 } from './src/types';
 
