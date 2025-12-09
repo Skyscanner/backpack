@@ -35,7 +35,7 @@ export {
   secondaryOnDarkThemeAttributes,
   featuredThemeAttributes,
   destructiveThemeAttributes,
-} from './themeAttributes';
+} from './src/themeAttributes';
 
 const BpkButton = BpkButtonV2;
 export default BpkButton;
