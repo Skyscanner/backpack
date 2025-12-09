@@ -133,4 +133,109 @@ describe('BpkButtonV2', () => {
 
     expect(container?.firstElementChild?.classList?.contains('bpk-button--full-width')).toEqual(true);
   });
+
+
+  describe('link type buttons', () => {
+    it('should render link type with underline span wrapper', () => {
+      const { container } = render(
+        <BpkButtonV2 type={BUTTON_TYPES.link}>Link button</BpkButtonV2>,
+      );
+
+      const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
+      expect(underlinedSpan).toBeInTheDocument();
+      expect(underlinedSpan?.textContent).toBe('Link button');
+    });
+
+    it('should render linkOnDark type with underline span wrapper', () => {
+      const { container } = render(
+        <BpkButtonV2 type={BUTTON_TYPES.linkOnDark}>Link button</BpkButtonV2>,
+      );
+
+      const button = container.firstElementChild;
+      expect(button?.classList?.contains('bpk-button--link-on-dark')).toBe(true);
+
+      const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
+      expect(underlinedSpan).toBeInTheDocument();
+    });
+
+    it('should render link type with implicit class', () => {
+      const { container } = render(
+        <BpkButtonV2 type={BUTTON_TYPES.link} implicit>
+          Implicit link
+        </BpkButtonV2>,
+      );
+
+      const button = container.firstElementChild;
+      expect(button?.classList?.contains('bpk-button--link--implicit')).toBe(true);
+
+      const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined--implicit"]');
+      expect(underlinedSpan).toBeInTheDocument();
+    });
+
+    it('should render linkOnDark with implicit class', () => {
+      const { container } = render(
+        <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit>
+          Implicit link on dark
+        </BpkButtonV2>,
+      );
+
+      const button = container.firstElementChild;
+      expect(button?.classList?.contains('bpk-button--link--implicit')).toBe(true);
+
+      const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined--implicit--alternate"]');
+      expect(underlinedSpan).toBeInTheDocument();
+    });
+
+    it('should NOT render underline span for iconOnly link', () => {
+      const { container } = render(
+        <BpkButtonV2 type={BUTTON_TYPES.link} iconOnly aria-label="Icon link">
+          <span>Icon</span>
+        </BpkButtonV2>,
+      );
+
+      const button = container.firstElementChild;
+      expect(button?.classList?.contains('bpk-button--link')).toBe(true);
+      expect(button?.classList?.contains('bpk-button--icon-only')).toBe(true);
+
+      const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
+      expect(underlinedSpan).not.toBeInTheDocument();
+    });
+
+    it('should NOT render underline span for disabled link', () => {
+      const { container } = render(
+        <BpkButtonV2 type={BUTTON_TYPES.link} disabled>
+          Disabled link
+        </BpkButtonV2>,
+      );
+
+      const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
+      expect(underlinedSpan).not.toBeInTheDocument();
+    });
+
+    it('should NOT render underline span for iconOnly linkOnDark', () => {
+      const { container } = render(
+        <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} iconOnly aria-label="Icon link">
+          <span>Icon</span>
+        </BpkButtonV2>,
+      );
+
+      const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
+      expect(underlinedSpan).not.toBeInTheDocument();
+    });
+
+    it('should render link as anchor with href', () => {
+      const { container } = render(
+        <BpkButtonV2 type={BUTTON_TYPES.link} href="#">
+          Link anchor
+        </BpkButtonV2>,
+      );
+
+      const anchor = container.firstElementChild;
+      expect(anchor?.tagName).toBe('A');
+      expect(anchor?.getAttribute('href')).toBe('#');
+
+      const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
+      expect(underlinedSpan).toBeInTheDocument();
+    });
+  });
 });

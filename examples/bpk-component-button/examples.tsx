@@ -164,15 +164,102 @@ const FeaturedExample = (props: any) => (
   <ButtonStory type={BUTTON_TYPES.featured} wrapped={BpkButtonV2} {...props} />
 );
 const LinkExample = (props: any) => (
-  <ButtonStory type={BUTTON_TYPES.link} wrapped={BpkButtonV2} {...props} />
+  <div className={getClassName('bpk-button-story-wrapper')}>
+    {/* Default Link */}
+    <BpkButtonV2 type={BUTTON_TYPES.link} onClick={action('Link clicked')} {...props}>
+      Button
+    </BpkButtonV2>
+    &nbsp;
+    {/* Link with icon */}
+    <BpkButtonV2 type={BUTTON_TYPES.link} onClick={action('Link clicked')} {...props}>
+      Button <AlignedSmallLongArrowRightIcon />
+    </BpkButtonV2>
+    &nbsp;
+    {/* Implicit Link */}
+    <BpkButtonV2 type={BUTTON_TYPES.link} implicit onClick={action('Link clicked')} {...props}>
+      Button
+    </BpkButtonV2>
+    &nbsp;
+    {/* Implicit Link with icon */}
+    <BpkButtonV2 type={BUTTON_TYPES.link} implicit onClick={action('Link clicked')} {...props}>
+      Button <AlignedSmallLongArrowRightIcon />
+    </BpkButtonV2>
+    &nbsp;
+    {/* Disabled Link */}
+    <BpkButtonV2 type={BUTTON_TYPES.link} disabled onClick={action('THIS SHOULD NEVER HAPPEN')} {...props}>
+      Disabled
+    </BpkButtonV2>
+    &nbsp;
+    {/* Large Link */}
+    <BpkButtonV2 type={BUTTON_TYPES.link} size={SIZE_TYPES.large} onClick={action('Link clicked')} {...props}>
+      Button
+    </BpkButtonV2>
+    &nbsp;
+    {/* Large Link with icon */}
+    <BpkButtonV2 type={BUTTON_TYPES.link} size={SIZE_TYPES.large} onClick={action('Link clicked')} {...props}>
+      Button <AlignedLargeLongArrowRightIcon />
+    </BpkButtonV2>
+    &nbsp;
+    {/* The iconOnly Link */}
+    <BpkButtonV2 type={BUTTON_TYPES.link} iconOnly onClick={action('Link clicked')} aria-label="Icon link" {...props}>
+      <AlignedSmallLongArrowRightIcon />
+    </BpkButtonV2>
+    &nbsp;
+    {/* Large iconOnly Link */}
+    <BpkButtonV2 type={BUTTON_TYPES.link} iconOnly size={SIZE_TYPES.large} onClick={action('Link clicked')} aria-label="Large icon link" {...props}>
+      <AlignedLargeLongArrowRightIcon />
+    </BpkButtonV2>
+  </div>
 );
+
 const LinkOnDarkExample = (props: any) => (
   <BpkDarkExampleWrapper>
-    <ButtonStory
-      type={BUTTON_TYPES.linkOnDark}
-      wrapped={BpkButtonV2}
-      {...props}
-    />
+    <div className={getClassName('bpk-button-story-wrapper')}>
+      {/* Default LinkOnDark */}
+      <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} onClick={action('Link clicked')} {...props}>
+        Button
+      </BpkButtonV2>
+      &nbsp;
+      {/* LinkOnDark with icon */}
+      <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} onClick={action('Link clicked')} {...props}>
+        Button <AlignedSmallLongArrowRightIcon />
+      </BpkButtonV2>
+      &nbsp;
+      {/* Implicit LinkOnDark */}
+      <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit onClick={action('Link clicked')} {...props}>
+        Button
+      </BpkButtonV2>
+      &nbsp;
+      {/* Implicit LinkOnDark with icon */}
+      <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit onClick={action('Link clicked')} {...props}>
+        Button <AlignedSmallLongArrowRightIcon />
+      </BpkButtonV2>
+      &nbsp;
+      {/* Disabled LinkOnDark */}
+      <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} disabled onClick={action('THIS SHOULD NEVER HAPPEN')} {...props}>
+        Disabled
+      </BpkButtonV2>
+      &nbsp;
+      {/* Large LinkOnDark */}
+      <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} size={SIZE_TYPES.large} onClick={action('Link clicked')} {...props}>
+        Button
+      </BpkButtonV2>
+      &nbsp;
+      {/* Large LinkOnDark with icon */}
+      <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} size={SIZE_TYPES.large} onClick={action('Link clicked')} {...props}>
+        Button <AlignedLargeLongArrowRightIcon />
+      </BpkButtonV2>
+      &nbsp;
+      {/* The iconOnly LinkOnDark */}
+      <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} iconOnly onClick={action('Link clicked')} aria-label="Icon link" {...props}>
+        <AlignedSmallLongArrowRightIcon />
+      </BpkButtonV2>
+      &nbsp;
+      {/* Large iconOnly LinkOnDark */}
+      <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} iconOnly size={SIZE_TYPES.large} onClick={action('Link clicked')} aria-label="Large icon link" {...props}>
+        <AlignedLargeLongArrowRightIcon />
+      </BpkButtonV2>
+    </div>
   </BpkDarkExampleWrapper>
 );
 
