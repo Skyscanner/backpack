@@ -1,5 +1,7 @@
 # bpk-component-button
 
+> Backpack button component.
+
 ## Installation
 
 Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
@@ -31,6 +33,14 @@ export default () => (
   </div>
 );
 ```
+
+## Why do we export both `BpkButton` and `BpkButtonV2`?
+
+The legacy `BpkButton` component (V1) and all its variants (`BpkButtonPrimary`, `BpkButtonSecondary`, etc.) have been removed as of Backpack v41. Importing `BpkButton` now resolves to `BpkButtonV2`.
+
+To ease the migration process, `BpkButtonV2` remains available as a named export for consumers who previously imported it directly. However, **`BpkButtonV2` will be removed in Backpack v42**.
+
+From Backpack v41 onwards, please import `BpkButton` directly.
 
 ## Props
 
