@@ -275,6 +275,13 @@ const SubmitButtonExample = (props: any) => (
   </BpkButtonV2>
 );
 
+const LinksExamples = () => (
+  <>
+    <LinkExample />
+    <LinkOnDarkExample />
+  </>
+);
+
 const MixedExample = () => (
   <>
     <PrimaryExample />
@@ -315,6 +322,7 @@ export {
   FeaturedExample,
   LinkExample,
   LinkOnDarkExample,
+  LinksExamples,
   MixedExample,
   AnchorTagsExample,
   FullWidthExample,
