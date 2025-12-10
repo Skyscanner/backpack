@@ -25,6 +25,7 @@ import {
 
 import BpkSegmentedControl, {
   getTabPanelProps,
+  useSegmentedControlPanels,
 } from '../../packages/bpk-component-segmented-control';
 import { SEGMENT_TYPES } from '../../packages/bpk-component-segmented-control/src/BpkSegmentedControl';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
@@ -281,6 +282,54 @@ const VisualExample = () => (
   </>
 );
 
+// Example demonstrating the recommended hook pattern for managing tabs and panels.
+// The hook automatically handles ID generation and ARIA relationships.
+const WithHookExample = () => {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const buttonContents = ['Flights', 'Hotels', 'Car hire'];
+
+  const { controlProps, getPanelProps } = useSegmentedControlPanels(
+    buttonContents,
+    selectedIndex,
+  );
+
+  const panelStyle = {
+    padding: '1rem',
+    border: '1px solid #ddd',
+    borderRadius: '0.5rem',
+    marginTop: '1rem',
+  };
+
+  return (
+    <div>
+      <BpkSegmentedControl
+        {...controlProps}
+        label="Travel options"
+        onItemClick={setSelectedIndex}
+        type={SEGMENT_TYPES.CanvasDefault}
+      />
+      <div
+        {...getPanelProps(buttonContents.indexOf('Flights'))}
+        style={panelStyle}
+      >
+        <BpkText>Search for flights to your destination.</BpkText>
+      </div>
+      <div
+        {...getPanelProps(buttonContents.indexOf('Hotels'))}
+        style={panelStyle}
+      >
+        <BpkText>Find the perfect place to stay.</BpkText>
+      </div>
+      <div
+        {...getPanelProps(buttonContents.indexOf('Car hire'))}
+        style={panelStyle}
+      >
+        <BpkText>Rent a car for your trip.</BpkText>
+      </div>
+    </div>
+  );
+};
+
 // Example demonstrating accessible tabs with panels using getTabPanelProps helper.
 // This pattern provides full WCAG compliance with proper keyboard navigation
 // and ARIA relationships between tabs and their panels.
@@ -303,11 +352,6 @@ const WithTabPanelsExample = () => {
         onItemClick={setSelectedIndex}
         selectedIndex={selectedIndex}
         type={SEGMENT_TYPES.CanvasDefault}
-        panelIds={[
-          'travel-options-panel-0',
-          'travel-options-panel-1',
-          'travel-options-panel-2',
-        ]}
       />
       <div
         {...getTabPanelProps('travel-options', 0, selectedIndex)}
@@ -352,7 +396,6 @@ const WithConditionalPanelsExample = () => {
         onItemClick={setSelectedIndex}
         selectedIndex={selectedIndex}
         type={SEGMENT_TYPES.SurfaceDefault}
-        panelIds={['date-selection-panel-0', 'date-selection-panel-1']}
       />
       {selectedIndex === 0 && (
         <div
@@ -396,6 +439,7 @@ export {
   ComplexCanvasDefault,
   ComplexSurfaceDefaultNoShadow,
   VisualExample,
+  WithHookExample,
   WithTabPanelsExample,
   WithConditionalPanelsExample,
 };

@@ -21,15 +21,20 @@ import { axe } from 'jest-axe';
 
 import BpkSegmentedControl from './BpkSegmentedControl';
 
-const buttonContents = ['specific dates', 'flexible dates']
+const buttonContents = ['specific dates', 'flexible dates'];
 
 describe('BpkSegmentedControl accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkSegmentedControl buttonContents={buttonContents} onItemClick={() => {}} selectedIndex={1}/>
-    )
+      <BpkSegmentedControl
+        id="test-control"
+        buttonContents={buttonContents}
+        onItemClick={() => {}}
+        selectedIndex={1}
+      />,
+    );
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
-  })
-})
+  });
+});

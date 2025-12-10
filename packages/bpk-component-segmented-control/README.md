@@ -23,9 +23,43 @@ export default () => (
 );
 ```
 
-### With tab panels (recommended for accessibility)
+### With tab panels using the hook (recommended)
 
-When using the segmented control to switch between content panels, use the `getTabPanelProps` helper to ensure proper ARIA relationships:
+The easiest way to use segmented controls with tab panels is the `useSegmentedControlPanels` hook. It automatically manages IDs and provides proper accessibility:
+
+```js
+import { useState } from 'react';
+import BpkSegmentedControl, {
+  useSegmentedControlPanels,
+} from '@skyscanner/backpack-web/bpk-component-segmented-control';
+
+export default () => {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const { controlProps, getPanelProps } = useSegmentedControlPanels(
+    ['Flights', 'Hotels', 'Car hire'],
+    selectedIndex,
+  );
+
+  return (
+    <div>
+      <BpkSegmentedControl
+        {...controlProps}
+        label="Travel options"
+        onItemClick={setSelectedIndex}
+        type={SEGMENT_TYPES.CanvasDefault}
+      />
+      <div {...getPanelProps(0)}>Flights content</div>
+      <div {...getPanelProps(1)}>Hotels content</div>
+      <div {...getPanelProps(2)}>Car hire content</div>
+    </div>
+  );
+};
+```
+
+### With tab panels using getTabPanelProps (alternative)
+
+For more control over ID generation, you can use the `getTabPanelProps` helper directly:
 
 ```js
 import { useState } from 'react';
@@ -44,7 +78,6 @@ export default () => {
         label="Travel options"
         onItemClick={setSelectedIndex}
         selectedIndex={selectedIndex}
-        panelIds={['my-tabs-panel-0', 'my-tabs-panel-1', 'my-tabs-panel-2']}
       />
       <div {...getTabPanelProps('my-tabs', 0, selectedIndex)}>
         Flights content
@@ -79,7 +112,6 @@ export default () => {
         label="Date selection"
         onItemClick={setSelectedIndex}
         selectedIndex={selectedIndex}
-        panelIds={['my-tabs-panel-0', 'my-tabs-panel-1']}
       />
       {selectedIndex === 0 && (
         <div
@@ -128,9 +160,9 @@ The component automatically applies:
 - `role="tab"` on each button
 - `aria-selected` to indicate the selected tab
 - `aria-orientation="horizontal"` on the tablist
-- `aria-controls` linking to panels (when `panelIds` prop provided)
+- `aria-controls` linking to panels (auto-generated panel IDs)
 
-When using the `getTabPanelProps` helper, panels receive:
+When using the `useSegmentedControlPanels` hook or `getTabPanelProps` helper, panels receive:
 
 - `role="tabpanel"`
 - `aria-labelledby` linking back to the controlling tab
@@ -144,10 +176,11 @@ When using the `getTabPanelProps` helper, panels receive:
 | buttonContents | arrayOf(node)        | true     | -                           |
 | onItemClick    | func                 | true     | -                           |
 | selectedIndex  | number               | true     | -                           |
+| activationMode | string               | false    | 'automatic'                 |
 | id             | string               | false    | auto-generated              |
 | label          | string               | false    | -                           |
-| panelIds       | arrayOf(string)      | false    | -                           |
 | shadow         | bool                 | false    | false                       |
+| type           | string               | false    | 'canvas-default'            |
 | type           | oneOf(SEGMENT_TYPES) | false    | SEGMENT_TYPES.CanvasDefault |
 
 ### getTabPanelProps
