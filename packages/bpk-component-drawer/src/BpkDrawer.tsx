@@ -18,15 +18,21 @@
 
 /* @flow strict */
 
-import type { ReactNode } from 'react';
-import { useState, useEffect } from 'react';
+import type { CSSProperties, ReactNode, SyntheticEvent } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-import { Portal, isDeviceIpad, isDeviceIphone } from '../../bpk-react-utils';
-import { withScrim } from '../../bpk-scrim-utils';
+import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkDrawerContent from './BpkDrawerContent';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkCloseButton from '../../bpk-component-close-button';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { BpkButtonLink } from '../../bpk-component-link';
+import { isDeviceIpad, isDeviceIphone, BpkDialogWrapper, cssModules } from '../../bpk-react-utils';
 
-const BpkScrimDrawerContent = withScrim(BpkDrawerContent);
+// Reuse Drawer content styles for layout and animations
+import STYLES from './BpkDrawerContent.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 export type Props = {
   id: string,
@@ -53,74 +59,119 @@ export type Props = {
   padded?: boolean,
   mobileModalDisplay?: boolean,
   containerClassName?: string,
+  // New optional flags to better align with dialog-based behavior
+  closeOnEscPressed?: boolean,
+  closeOnScrimClick?: boolean,
 };
 
 const BpkDrawer = ({
   children,
   className = undefined,
   closeLabel = null,
+  closeOnEscPressed = true,
+  closeOnScrimClick = true,
   closeText = undefined,
   containerClassName = undefined,
   contentClassName = undefined,
   dialogRef,
+  // Deprecated/no-op with dialog-based implementation, kept for backwards compatibility
   getApplicationElement,
   hideTitle = false,
   id,
-  isIpad = isDeviceIpad(),
-  isIphone = isDeviceIphone(),
+  isIpad = isDeviceIpad(), // Unused but preserved for backwards compatibility
+  isIphone = isDeviceIphone(), // Unused but preserved for backwards compatibility
   isOpen,
   mobileModalDisplay = false,
   onClose,
   padded = true,
+  // Deprecated/no-op with dialog-based implementation, kept for backwards compatibility
   renderTarget = null,
   title,
   width = '90%',
-}: Props) =>  {
+}: Props) => {
 
-  const [isDrawerShown, setIsDrawerShown] = useState(true);
+  const [exiting, setExiting] = useState(false);
+  const contentRef = useRef<HTMLElement | null>(null);
+
+  // Keep previous behavior: call consumer onClose after exit animation completes
+  const animationTimeout = parseInt(animations.durationSm, 10) || 240;
+
   useEffect(() => {
     if (isOpen) {
-      setIsDrawerShown(true);
+      setExiting(false);
     }
   }, [isOpen]);
 
-  const onCloseAnimationComplete = () => {
-    if (onClose){
-      onClose();
+  useEffect(() => {
+    if (dialogRef) {
+      dialogRef(contentRef.current);
     }
+    // run only when ref changes
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [contentRef.current]);
+
+  const handleClose = (
+    e?: TouchEvent | MouseEvent | KeyboardEvent | SyntheticEvent<HTMLDialogElement, Event>,
+    meta?: { source: 'ESCAPE' | 'DOCUMENT_CLICK' }
+  ) => {
+    setExiting(true);
+    window.setTimeout(() => {
+      onClose && onClose(e as any, meta);
+      setExiting(false);
+    }, animationTimeout);
   };
 
-  const hide = () => {
-    setIsDrawerShown(false)
-  };
+  const headingId = `bpk-drawer-heading-${id}`;
 
-  return(
-      <Portal isOpen={isOpen} onClose={hide} renderTarget={renderTarget}>
-        <BpkScrimDrawerContent
-          id={id}
-          title={title}
-          dialogRef={dialogRef}
-          closeLabel={closeLabel || ""}
-          closeText={closeText}
-          width={width}
-          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-          className={className}
-          contentClassName={contentClassName}
-          getApplicationElement={getApplicationElement}
-          hideTitle={hideTitle}
-          isDrawerShown={isDrawerShown}
-          onClose={hide}
-          onCloseAnimationComplete={onCloseAnimationComplete}
-          closeOnScrimClick
-          isIpad={isIpad}
-          isIphone={isIphone}
-          padded={padded}
-          mobileModalDisplay={mobileModalDisplay}
-          containerClassName={containerClassName}
-        >
-          {children}
-        </BpkScrimDrawerContent>
-      </Portal>
+  const drawerClassNames = [getClassName('bpk-drawer')];
+  const headerClassNames = [getClassName('bpk-drawer__heading')];
+  const contentsClassNames = [getClassName('bpk-drawer__content')];
+
+  if (className) drawerClassNames.push(className);
+  if (hideTitle) headerClassNames.push(getClassName('bpk-drawer__heading--visually-hidden'));
+  if (padded) contentsClassNames.push(getClassName('bpk-drawer__content--padded'));
+  if (contentClassName) contentsClassNames.push(contentClassName);
+
+  // Mirror previous transition states for exit only
+  const statusClass = exiting ? 'bpk-drawer--exiting' : 'bpk-drawer--entered';
+  const mobileModalStatus = exiting ? 'bpk-drawer__modal-mobile-view--exiting' : 'bpk-drawer__modal-mobile-view--entered';
+
+  return (
+    <BpkDialogWrapper
+      ariaLabelledby={headingId}
+      id={id}
+      isOpen={isOpen}
+      onClose={(arg0, arg1) => handleClose(arg0 as any, arg1)}
+      exiting={exiting}
+      dialogClassName={containerClassName}
+      closeOnEscPressed={closeOnEscPressed}
+      closeOnScrimClick={closeOnScrimClick}
+      timeout={{ appear: 0, exit: animationTimeout }}
+    >
+      <section
+        style={{ '--dynamic-width': width } as CSSProperties}
+        className={[
+          drawerClassNames.join(' '),
+          getClassName(statusClass, mobileModalDisplay ? mobileModalStatus : undefined),
+        ].join(' ')}
+        ref={(el) => { contentRef.current = el; }}
+      >
+        <header className={getClassName('bpk-drawer__header')}>
+          <h2 id={headingId} className={headerClassNames.join(' ')}>
+            {title}
+          </h2>
+          &nbsp;
+          {closeText ? (
+            <BpkButtonLink onClick={() => handleClose()}>{closeText}</BpkButtonLink>
+          ) : (
+            <div className={getClassName('bpk-drawer__close-button')}>
+              <BpkCloseButton label={closeLabel || ''} onClick={() => handleClose()} />
+            </div>
+          )}
+        </header>
+        <div className={contentsClassNames.join(' ')}>{children}</div>
+      </section>
+    </BpkDialogWrapper>
   );
 }
 
