@@ -15,11 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, renderHook } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import BpkSegmentedControl, {
   getTabPanelProps,
+  useSegmentedControlPanels,
   SEGMENT_TYPES,
 } from './BpkSegmentedControl';
 
@@ -67,13 +68,24 @@ describe('BpkSegmentedControl', () => {
     expect(mockOnItemClick).toHaveBeenCalledWith(0);
   });
 
-  it('should update the selected button when a button is clicked', () => {
+  it('should call onItemClick when a different button is clicked', () => {
     const { getByText } = render(<BpkSegmentedControl {...defaultProps} />);
     const buttonOne = getByText('one');
     fireEvent.click(buttonOne);
 
+    expect(mockOnItemClick).toHaveBeenCalledWith(0);
+  });
+
+  it('should reflect selectedIndex prop in aria-selected attribute', () => {
+    const { rerender } = render(
+      <BpkSegmentedControl {...defaultProps} selectedIndex={0} />,
+    );
     expect(screen.getByText('one')).toHaveAttribute('aria-selected', 'true');
     expect(screen.getByText('two')).toHaveAttribute('aria-selected', 'false');
+
+    rerender(<BpkSegmentedControl {...defaultProps} selectedIndex={1} />);
+    expect(screen.getByText('one')).toHaveAttribute('aria-selected', 'false');
+    expect(screen.getByText('two')).toHaveAttribute('aria-selected', 'true');
   });
 
   it('should render with the correct type class', () => {
@@ -137,29 +149,22 @@ describe('BpkSegmentedControl', () => {
     expect(tabs[1]).toHaveAttribute('id', 'my-tabs-tab-1');
   });
 
-  it('should add aria-controls when panelIds prop is provided', () => {
-    render(
-      <BpkSegmentedControl
-        {...defaultProps}
-        id="my-tabs"
-        panelIds={['panel-0', 'panel-1']}
-      />,
-    );
-    const tabs = screen.getAllByRole('tab');
-    expect(tabs[0]).toHaveAttribute('aria-controls', 'panel-0');
-    expect(tabs[1]).toHaveAttribute('aria-controls', 'panel-1');
-  });
-
-  it('should not add aria-controls when panelIds prop is not provided', () => {
+  it('should auto-generate aria-controls for panels', () => {
     render(<BpkSegmentedControl {...defaultProps} id="my-tabs" />);
     const tabs = screen.getAllByRole('tab');
-    expect(tabs[0]).not.toHaveAttribute('aria-controls');
-    expect(tabs[1]).not.toHaveAttribute('aria-controls');
+    expect(tabs[0]).toHaveAttribute('aria-controls', 'my-tabs-panel-0');
+    expect(tabs[1]).toHaveAttribute('aria-controls', 'my-tabs-panel-1');
   });
 
   describe('keyboard navigation', () => {
     it('should move focus to next tab on ArrowRight', () => {
-      render(<BpkSegmentedControl {...defaultProps} id="my-tabs" />);
+      render(
+        <BpkSegmentedControl
+          {...defaultProps}
+          id="my-tabs"
+          selectedIndex={1}
+        />,
+      );
       const tabs = screen.getAllByRole('tab');
       tabs[1].focus();
       fireEvent.keyDown(tabs[1], { key: 'ArrowRight' });
@@ -264,5 +269,77 @@ describe('getTabPanelProps', () => {
     expect(props0['aria-labelledby']).toBe('tabs-tab-0');
     expect(props1['aria-labelledby']).toBe('tabs-tab-1');
     expect(props2['aria-labelledby']).toBe('tabs-tab-2');
+  });
+});
+
+describe('useSegmentedControlPanels', () => {
+  it('should return controlProps with auto-generated id', () => {
+    const { result } = renderHook(() =>
+      useSegmentedControlPanels(['One', 'Two'], 0),
+    );
+
+    expect(result.current.controlProps).toHaveProperty('id');
+    expect(result.current.controlProps.id).toBeTruthy();
+    expect(result.current.controlProps.buttonContents).toEqual(['One', 'Two']);
+    expect(result.current.controlProps.selectedIndex).toBe(0);
+  });
+
+  it('should return getPanelProps function that generates correct props', () => {
+    const { result } = renderHook(() =>
+      useSegmentedControlPanels(['One', 'Two', 'Three'], 1),
+    );
+
+    const panel0Props = result.current.getPanelProps(0);
+    const panel1Props = result.current.getPanelProps(1);
+    const panel2Props = result.current.getPanelProps(2);
+
+    expect(panel0Props.hidden).toBe(true);
+    expect(panel1Props.hidden).toBe(false);
+    expect(panel2Props.hidden).toBe(true);
+
+    expect(panel0Props.role).toBe('tabpanel');
+    expect(panel1Props.role).toBe('tabpanel');
+
+    expect(panel0Props['aria-labelledby']).toContain('-tab-0');
+    expect(panel1Props['aria-labelledby']).toContain('-tab-1');
+    expect(panel2Props['aria-labelledby']).toContain('-tab-2');
+
+    expect(panel0Props.id).toContain('-panel-0');
+    expect(panel1Props.id).toContain('-panel-1');
+    expect(panel2Props.id).toContain('-panel-2');
+  });
+
+  it('should maintain stable IDs across re-renders with same inputs', () => {
+    const { rerender, result } = renderHook(
+      ({ contents, selected }) => useSegmentedControlPanels(contents, selected),
+      {
+        initialProps: { contents: ['A', 'B'], selected: 0 },
+      },
+    );
+
+    const firstId = result.current.controlProps.id;
+    const firstPanelId = result.current.getPanelProps(0).id;
+
+    rerender({ contents: ['A', 'B'], selected: 0 });
+
+    expect(result.current.controlProps.id).toBe(firstId);
+    expect(result.current.getPanelProps(0).id).toBe(firstPanelId);
+  });
+
+  it('should update panel hidden state when selectedIndex changes', () => {
+    const { rerender, result } = renderHook(
+      ({ contents, selected }) => useSegmentedControlPanels(contents, selected),
+      {
+        initialProps: { contents: ['A', 'B', 'C'], selected: 0 },
+      },
+    );
+
+    expect(result.current.getPanelProps(0).hidden).toBe(false);
+    expect(result.current.getPanelProps(1).hidden).toBe(true);
+
+    rerender({ contents: ['A', 'B', 'C'], selected: 1 });
+
+    expect(result.current.getPanelProps(0).hidden).toBe(true);
+    expect(result.current.getPanelProps(1).hidden).toBe(false);
   });
 });

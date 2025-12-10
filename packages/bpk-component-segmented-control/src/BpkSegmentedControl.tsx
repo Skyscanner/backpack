@@ -17,7 +17,7 @@
  */
 
 import type { KeyboardEvent, ReactNode } from 'react';
-import { useId, useRef, useState } from 'react';
+import { useId, useMemo, useRef, useState } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -41,9 +41,17 @@ export type TabPanelProps = {
   tabIndex: 0;
 };
 
+const getPanelId = (baseId: string, index: number) =>
+  `${baseId}-panel-${index}`;
+
 /**
  * Helper function to get accessibility props for tab panel elements.
  * Use this to ensure proper ARIA relationships between tabs and their panels.
+ *
+ * Note: For a simpler API, consider using the useSegmentedControlPanels hook instead,
+ * which manages IDs automatically and reduces boilerplate.
+ * This function is kept for backward compatibility.
+ *
  * @param {string} baseId - The base ID used to generate unique IDs for tabs and panels.
  * @param {number} index - The index of the tab panel.
  * @param {number} selectedIndex - The currently selected tab index.
@@ -54,30 +62,76 @@ export const getTabPanelProps = (
   index: number,
   selectedIndex: number,
 ): TabPanelProps => ({
-  id: `${baseId}-panel-${index}`,
+  id: getPanelId(baseId, index),
   role: 'tabpanel',
   'aria-labelledby': `${baseId}-tab-${index}`,
   hidden: index !== selectedIndex,
   tabIndex: 0,
 });
 
+/**
+ * Custom hook to manage segmented control and its panels with automatic ID generation.
+ * Simplifies the API by eliminating the need to manually track IDs.
+ *
+ * @param {Array<string | ReactNode>} buttonContents - Array of button content (strings or ReactNodes)
+ * @param {number} selectedIndex - Currently selected tab index
+ * @returns {Object} Object with controlProps (for BpkSegmentedControl) and getPanelProps function
+ *
+ * @example
+ * const { controlProps, getPanelProps } = useSegmentedControlPanels(
+ *   ['Flights', 'Hotels', 'Car hire'],
+ *   selectedIndex
+ * );
+ *
+ * return (
+ *   <div>
+ *     <BpkSegmentedControl
+ *       {...controlProps}
+ *       label="Travel options"
+ *       onItemClick={setSelectedIndex}
+ *     />
+ *     <div {...getPanelProps(0)}>Flights content</div>
+ *     <div {...getPanelProps(1)}>Hotels content</div>
+ *     <div {...getPanelProps(2)}>Car hire content</div>
+ *   </div>
+ * );
+ */
+export const useSegmentedControlPanels = (
+  buttonContents: string[] | ReactNode[],
+  selectedIndex: number,
+) => {
+  const baseId = useId();
+
+  const controlProps = useMemo(
+    () => ({
+      id: baseId,
+      buttonContents,
+      selectedIndex,
+    }),
+    [baseId, buttonContents, selectedIndex],
+  );
+
+  const getPanelProps = useMemo(
+    () =>
+      (index: number): TabPanelProps =>
+        getTabPanelProps(baseId, index, selectedIndex),
+    [baseId, selectedIndex],
+  );
+
+  return { controlProps, getPanelProps };
+};
+
 export type Props = {
   buttonContents: string[] | ReactNode[];
-  /**
-   * Unique identifier for the segmented control. Used to generate tab and panel IDs
-   * for ARIA relationships. If not provided, a unique ID will be auto-generated.
-   */
-  id?: string;
   /**
    * Accessible label for the segmented control group.
    */
   label?: string;
   /**
-   * Array of panel IDs that each tab controls. When provided, adds aria-controls
-   * to each tab button linking it to its corresponding panel.
-   * Should match the order and length of buttonContents.
+   * Optional ID for the segmented control. If not provided, an ID will be auto-generated.
+   * Required when manually managing tab panels with getTabPanelProps.
    */
-  panelIds?: string[];
+  id?: string;
   type?: SegmentTypes;
   /**
    * Callback fired when a tab is selected. Receives the index of the selected tab.
@@ -89,12 +143,11 @@ export type Props = {
 };
 
 const BpkSegmentedControl = ({
-  activationMode = 'automatic',
+  activationMode = 'manual',
   buttonContents,
   id: providedId,
   label,
   onItemClick,
-  panelIds,
   selectedIndex,
   shadow = false,
   type = SEGMENT_TYPES.CanvasDefault,
@@ -102,6 +155,12 @@ const BpkSegmentedControl = ({
   const generatedId = useId();
   const id = providedId || generatedId;
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
+
+  // Auto-generate panelIds for aria-controls attributes
+  const computedPanelIds = Array.from(
+    { length: buttonContents.length },
+    (_, i) => getPanelId(id, i),
+  );
 
   // TODO: Consider removing internal state - component is controlled via selectedIndex prop.
   // Internal state may cause sync issues if selectedIndex changes externally.
@@ -193,7 +252,7 @@ const BpkSegmentedControl = ({
             className={buttonStyling}
             tabIndex={isSelected ? 0 : -1}
             aria-selected={isSelected}
-            {...(panelIds?.[index] ? { 'aria-controls': panelIds[index] } : {})}
+            aria-controls={computedPanelIds[index]}
           >
             {content}
           </button>

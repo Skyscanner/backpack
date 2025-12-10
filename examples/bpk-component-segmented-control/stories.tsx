@@ -34,6 +34,7 @@ import {
   ComplexCanvasDefault,
   ComplexSurfaceDefaultNoShadow,
   VisualExample,
+  WithHookExample,
   WithTabPanelsExample,
   WithConditionalPanelsExample,
 } from './examples';
@@ -59,6 +60,7 @@ export const ComplexThreeSegmentsCanvasContrast = ComplexCanvasContrast;
 export const ComplexThreeSegmentsCanvasDefault = ComplexCanvasDefault;
 export const ComplexThreeSegmentsSurfaceDefaultNoShadow =
   ComplexSurfaceDefaultNoShadow;
+export const WithHook = WithHookExample;
 export const WithTabPanels = WithTabPanelsExample;
 export const WithConditionalPanels = WithConditionalPanelsExample;
 export const VisualTest = VisualExample;
