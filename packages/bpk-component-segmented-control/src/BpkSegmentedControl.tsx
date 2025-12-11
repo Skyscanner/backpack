@@ -111,8 +111,8 @@ export type Props = {
    */
   label?: string;
   /**
-   * Optional ID for the segmented control. If not provided, an ID will be auto-generated.
-   * Required when manually managing tab panels with getTabPanelProps.
+   * ID used to link the segmented control with its tab panels for accessibility.
+   * Created using controlProps from useSegmentedControlPanels hook.
    */
   id?: string;
   type?: SegmentTypes;
@@ -126,7 +126,7 @@ export type Props = {
 };
 
 const BpkSegmentedControl = ({
-  activationMode = 'manual',
+  activationMode = 'automatic',
   buttonContents,
   id: providedId,
   label,
