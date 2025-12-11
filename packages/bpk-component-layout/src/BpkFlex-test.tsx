@@ -25,7 +25,11 @@ import { BpkSpacing } from './tokens';
 
 describe('BpkFlex', () => {
   it('renders children content', () => {
-    const { getByText } = render(<BpkFlex>Content</BpkFlex>);
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkFlex>Content</BpkFlex>
+      </BpkProvider>,
+    );
     expect(getByText('Content')).toBeInTheDocument();
   });
 
@@ -49,7 +53,9 @@ describe('BpkFlex', () => {
   it('supports responsive direction', () => {
     const { container } = render(
       <BpkProvider>
-        <BpkFlex direction={['column', 'row']}>Content</BpkFlex>
+        <BpkFlex direction={{ mobile: 'column', tablet: 'row' }}>
+          Content
+        </BpkFlex>
       </BpkProvider>,
     );
     expect(container.firstChild).toBeInTheDocument();

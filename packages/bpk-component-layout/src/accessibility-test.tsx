@@ -68,15 +68,15 @@ describe('bpk-component-layout accessibility tests', () => {
     const { container } = render(
       <BpkProvider>
         <BpkGrid
-          role="grid"
-          aria-label="Grid container"
+          role="region"
+          aria-label="Layout Grid"
           templateColumns="repeat(2, 1fr)"
           gap={BpkSpacing.MD}
         >
-          <BpkBox role="gridcell">Cell 1</BpkBox>
-          <BpkBox role="gridcell">Cell 2</BpkBox>
-          <BpkBox role="gridcell">Cell 3</BpkBox>
-          <BpkBox role="gridcell">Cell 4</BpkBox>
+          <BpkBox>Cell 1</BpkBox>
+          <BpkBox>Cell 2</BpkBox>
+          <BpkBox>Cell 3</BpkBox>
+          <BpkBox>Cell 4</BpkBox>
         </BpkGrid>
       </BpkProvider>,
     );
