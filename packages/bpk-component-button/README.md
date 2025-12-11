@@ -84,20 +84,4 @@ export default () => (
 
 ## Props
 
-| Property    | PropType | Required | Default Value      | Description                                                                      |
-| ----------- | -------- | -------- | ------------------ | -------------------------------------------------------------------------------- |
-| children    | node     | true     | -                  | The content of the button                                                        |
-| type        | oneOf    | false    | BUTTON_TYPES.primary | The button type. One of `primary`, `primaryOnDark`, `primaryOnLight`, `secondary`, `secondaryOnDark`, `destructive`, `featured`, `link`, `linkOnDark` |
-| size        | oneOf    | false    | SIZE_TYPES.small   | The button size. One of `small`, `large`                                         |
-| className   | string   | false    | null               | Custom class name                                                                |
-| disabled    | bool     | false    | false              | Whether the button is disabled                                                   |
-| fullWidth   | bool     | false    | false              | Whether the button should take full width                                        |
-| iconOnly    | bool     | false    | false              | Whether the button contains only an icon (no text)                               |
-| implicit    | bool     | false    | false              | For link types only: applies implicit link styling that would underline on hover                    |
-| onClick     | func     | false    | () => {}           | Click handler function                                                           |
-| submit      | bool     | false    | false              | Whether the button is a submit button                                            |
-| href        | string   | false    | null               | If provided, renders as an anchor tag                                            |
-| blank       | bool     | false    | false              | If true and href is provided, opens in new tab                                   |
-| rel         | string   | false    | undefined          | The rel attribute for anchor tags                                                |
-
 Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/button/web-eI5EFTLO#section-button-props-48).
