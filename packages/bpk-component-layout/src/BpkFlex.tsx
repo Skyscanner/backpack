@@ -18,7 +18,7 @@
 
 import { Flex } from '@chakra-ui/react';
 
-import { processBpkProps } from './tokenUtils';
+import { processBpkProps, processResponsiveStringProp } from './tokenUtils';
 
 import type { BpkFlexProps } from './types';
 
@@ -35,14 +35,18 @@ export const BpkFlex = ({
   ...props
 }: BpkFlexProps) => {
   const processedProps = processBpkProps(props);
+  const processedDirection = processResponsiveStringProp(direction, 'flexDirection');
+  const processedJustify = processResponsiveStringProp(justify, 'justifyContent');
+  const processedAlign = processResponsiveStringProp(align, 'alignItems');
+  const processedWrap = processResponsiveStringProp(wrap, 'flexWrap');
 
   return (
     <Flex
       {...processedProps}
-      flexDirection={direction}
-      justifyContent={justify}
-      alignItems={align}
-      flexWrap={wrap}
+      flexDirection={processedDirection}
+      justifyContent={processedJustify}
+      alignItems={processedAlign}
+      flexWrap={processedWrap}
       flexGrow={grow}
       flexShrink={shrink}
       flexBasis={basis}

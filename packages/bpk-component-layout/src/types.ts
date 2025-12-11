@@ -162,10 +162,10 @@ export interface BpkBoxProps extends BpkCommonLayoutProps, BpkBoxSpecificProps {
  * Includes all Flex props except those in BpkCommonLayoutProps
  */
 export interface BpkFlexSpecificProps extends RemoveCommonProps<FlexProps> {
-  direction?: FlexProps['flexDirection'];
-  justify?: FlexProps['justifyContent'];
-  align?: FlexProps['alignItems'];
-  wrap?: FlexProps['flexWrap'];
+  direction?: BpkResponsiveValue<FlexProps['flexDirection']>;
+  justify?: BpkResponsiveValue<FlexProps['justifyContent']>;
+  align?: BpkResponsiveValue<FlexProps['alignItems']>;
+  wrap?: BpkResponsiveValue<FlexProps['flexWrap']>;
   grow?: FlexProps['flexGrow'];
   shrink?: FlexProps['flexShrink'];
   basis?: FlexProps['flexBasis'];
@@ -185,16 +185,16 @@ export interface BpkFlexProps extends BpkCommonLayoutProps, BpkFlexSpecificProps
  * Includes all Grid props except those in BpkCommonLayoutProps
  */
 export interface BpkGridSpecificProps extends RemoveCommonProps<GridProps> {
-  justify?: GridProps['justifyContent'];
-  align?: GridProps['alignItems'];
+  justify?: BpkResponsiveValue<GridProps['justifyContent']>;
+  align?: BpkResponsiveValue<GridProps['alignItems']>;
   templateColumns?: GridProps['gridTemplateColumns'];
   templateRows?: GridProps['gridTemplateRows'];
   templateAreas?: GridProps['gridTemplateAreas'];
   autoFlow?: GridProps['gridAutoFlow'];
   autoRows?: GridProps['gridAutoRows'];
   autoColumns?: GridProps['gridAutoColumns'];
-  rowGap?: GridProps['rowGap'];
-  columnGap?: GridProps['columnGap'];
+  rowGap?: BpkResponsiveValue<BpkSpacingValue>;
+  columnGap?: BpkResponsiveValue<BpkSpacingValue>;
   column?: GridProps['gridColumn'];
   row?: GridProps['gridRow'];
   inline?: boolean;

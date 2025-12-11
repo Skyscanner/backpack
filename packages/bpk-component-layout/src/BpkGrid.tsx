@@ -18,7 +18,7 @@
 
 import { Grid } from '@chakra-ui/react';
 
-import { processBpkProps } from './tokenUtils';
+import { processBpkProps, processResponsiveStringProp } from './tokenUtils';
 
 import type { BpkGridProps } from './types';
 
@@ -40,12 +40,14 @@ export const BpkGrid = ({
   ...props
 }: BpkGridProps) => {
   const processedProps = processBpkProps(props);
+  const processedJustify = processResponsiveStringProp(justify, 'justifyContent');
+  const processedAlign = processResponsiveStringProp(align, 'alignItems');
 
   return (
     <Grid
       {...processedProps}
-      justifyContent={justify}
-      alignItems={align}
+      justifyContent={processedJustify}
+      alignItems={processedAlign}
       gridTemplateColumns={templateColumns}
       gridTemplateRows={templateRows}
       gridTemplateAreas={templateAreas}

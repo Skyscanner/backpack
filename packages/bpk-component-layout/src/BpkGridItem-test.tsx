@@ -20,14 +20,17 @@ import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { BpkGridItem } from './BpkGridItem';
+import { BpkProvider } from './BpkProvider';
 import { BpkSpacing } from './tokens';
 
 describe('BpkGridItem', () => {
   it('renders its children', () => {
     const { getByText } = render(
-      <BpkGridItem>
-        <span>Grid item</span>
-      </BpkGridItem>,
+      <BpkProvider>
+        <BpkGridItem>
+          <span>Grid item</span>
+        </BpkGridItem>
+      </BpkProvider>,
     );
 
     expect(getByText('Grid item')).toBeInTheDocument();
@@ -35,9 +38,11 @@ describe('BpkGridItem', () => {
 
   it('accepts grid span props', () => {
     const { container } = render(
-      <BpkGridItem colSpan={2} rowSpan={3}>
-        Spanning item
-      </BpkGridItem>,
+      <BpkProvider>
+        <BpkGridItem colSpan={2} rowSpan={3}>
+          Spanning item
+        </BpkGridItem>
+      </BpkProvider>,
     );
 
     expect(container.firstChild).toHaveStyle({ gridColumn: 'span 2' });
@@ -46,12 +51,11 @@ describe('BpkGridItem', () => {
 
   it('supports Backpack spacing tokens', () => {
     const { container } = render(
-      <BpkGridItem padding={BpkSpacing.MD}>
-        Spacing item
-      </BpkGridItem>,
+      <BpkProvider>
+        <BpkGridItem padding={BpkSpacing.MD}>Spacing item</BpkGridItem>
+      </BpkProvider>,
     );
 
     expect(container.firstChild).toHaveStyle('padding: 0.5rem');
   });
 });
-

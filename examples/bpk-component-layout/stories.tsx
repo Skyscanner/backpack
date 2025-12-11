@@ -32,6 +32,7 @@ import {
   BpkFlexExample,
   BpkFlexDirectionExample,
   BpkFlexWrapExample,
+  BpkFlexResponsiveExample,
   BpkFlexItemExample,
   BpkFlexInlineExample,
   BpkGridExample,
@@ -73,6 +74,7 @@ export const Grid = () => <GridExample />;
 export const BpkFlex = () => <BpkFlexExample />;
 export const BpkFlexDirection = () => <BpkFlexDirectionExample />;
 export const BpkFlexWrap = () => <BpkFlexWrapExample />;
+export const BpkFlexResponsive = () => <BpkFlexResponsiveExample />;
 export const BpkFlexItem = () => <BpkFlexItemExample />;
 export const BpkFlexInline = () => <BpkFlexInlineExample />;
 export const BpkGrid = () => <BpkGridExample />;

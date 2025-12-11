@@ -317,6 +317,29 @@ export const BpkFlexWrapExample = () => (
 );
 
 /**
+ * BpkFlex responsive example – demonstrates responsive direction/justify.
+ */
+
+export const BpkFlexResponsiveExample = () => (
+  <Wrapper>
+    <BpkFlex
+      direction={{ mobile: 'column', tablet: 'row' }}
+      justify={{ mobile: 'flex-start', desktop: 'space-between' }}
+      gap={BpkSpacing.MD}
+      padding={BpkSpacing.MD}
+    >
+      {[1, 2, 3].map((i) => (
+        <BpkBox key={i} padding={BpkSpacing.SM}>
+          <span className={STYLES['bpk-layout-examples__outline']}>
+            Responsive Item {i}
+          </span>
+        </BpkBox>
+      ))}
+    </BpkFlex>
+  </Wrapper>
+);
+
+/**
  * BpkFlex Item Properties example - demonstrates grow, shrink, and basis.
  */
 

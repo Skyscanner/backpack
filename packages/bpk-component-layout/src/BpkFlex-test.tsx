@@ -20,6 +20,7 @@ import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { BpkFlex } from './BpkFlex';
+import { BpkProvider } from './BpkProvider';
 import { BpkSpacing } from './tokens';
 
 describe('BpkFlex', () => {
@@ -30,26 +31,27 @@ describe('BpkFlex', () => {
 
   it('accepts flex props: direction, justify, align, wrap, gap', () => {
     const { container } = render(
-      <BpkFlex
-        direction="column"
-        justify="center"
-        align="center"
-        wrap="wrap"
-        gap={BpkSpacing.MD}
-      >
-        Content
-      </BpkFlex>,
+      <BpkProvider>
+        <BpkFlex
+          direction="column"
+          justify="center"
+          align="center"
+          wrap="wrap"
+          gap={BpkSpacing.MD}
+        >
+          Content
+        </BpkFlex>
+      </BpkProvider>,
     );
     expect(container.firstChild).toBeInTheDocument();
   });
 
   it('supports responsive direction', () => {
     const { container } = render(
-      <BpkFlex direction={['column', 'row']}>
-        Content
-      </BpkFlex>,
+      <BpkProvider>
+        <BpkFlex direction={['column', 'row']}>Content</BpkFlex>
+      </BpkProvider>,
     );
     expect(container.firstChild).toBeInTheDocument();
   });
 });
-
