@@ -24,11 +24,10 @@ import {
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkSegmentedControl, {
-  getTabPanelProps,
   useSegmentedControlPanels,
 } from '../../packages/bpk-component-segmented-control';
 import { SEGMENT_TYPES } from '../../packages/bpk-component-segmented-control/src/BpkSegmentedControl';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import BpkText from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
@@ -284,7 +283,7 @@ const VisualExample = () => (
 
 // Example demonstrating the recommended hook pattern for managing tabs and panels.
 // The hook automatically handles ID generation and ARIA relationships.
-const WithHookExample = () => {
+const WithHookControlledPanelsExample = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const buttonContents = ['Flights', 'Hotels', 'Car hire'];
 
@@ -330,51 +329,6 @@ const WithHookExample = () => {
   );
 };
 
-// Example demonstrating accessible tabs with panels using getTabPanelProps helper.
-// This pattern provides full WCAG compliance with proper keyboard navigation
-// and ARIA relationships between tabs and their panels.
-const WithTabPanelsExample = () => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
-  const panelStyle = {
-    padding: '1rem',
-    border: '1px solid #ddd',
-    borderRadius: '0.5rem',
-    marginTop: '1rem',
-  };
-
-  return (
-    <div>
-      <BpkSegmentedControl
-        id="travel-options"
-        buttonContents={['Flights', 'Hotels', 'Car hire']}
-        label="Travel options"
-        onItemClick={setSelectedIndex}
-        selectedIndex={selectedIndex}
-        type={SEGMENT_TYPES.CanvasDefault}
-      />
-      <div
-        {...getTabPanelProps('travel-options', 0, selectedIndex)}
-        style={panelStyle}
-      >
-        <BpkText>Search for flights to your destination.</BpkText>
-      </div>
-      <div
-        {...getTabPanelProps('travel-options', 1, selectedIndex)}
-        style={panelStyle}
-      >
-        <BpkText>Find the perfect place to stay.</BpkText>
-      </div>
-      <div
-        {...getTabPanelProps('travel-options', 2, selectedIndex)}
-        style={panelStyle}
-      >
-        <BpkText>Rent a car for your trip.</BpkText>
-      </div>
-    </div>
-  );
-};
-
 // Example using conditional rendering instead of the hidden attribute.
 // Both approaches are valid - use whichever fits your use case better.
 const WithConditionalPanelsExample = () => {
@@ -390,7 +344,6 @@ const WithConditionalPanelsExample = () => {
   return (
     <div>
       <BpkSegmentedControl
-        id="date-selection"
         buttonContents={['Specific dates', 'Flexible dates']}
         label="Date selection mode"
         onItemClick={setSelectedIndex}
@@ -398,25 +351,13 @@ const WithConditionalPanelsExample = () => {
         type={SEGMENT_TYPES.SurfaceDefault}
       />
       {selectedIndex === 0 && (
-        <div
-          id="date-selection-panel-0"
-          role="tabpanel"
-          aria-labelledby="date-selection-tab-0"
-          style={panelStyle}
-        >
-          <BpkText textStyle={TEXT_STYLES.heading4}>Specific dates</BpkText>
-          <BpkText>Pick exact travel dates from the calendar.</BpkText>
+        <div role="tabpanel" style={panelStyle}>
+          <BpkText>Specific dates Panel</BpkText>
         </div>
       )}
       {selectedIndex === 1 && (
-        <div
-          id="date-selection-panel-1"
-          role="tabpanel"
-          aria-labelledby="date-selection-tab-1"
-          style={panelStyle}
-        >
-          <BpkText textStyle={TEXT_STYLES.heading4}>Flexible dates</BpkText>
-          <BpkText>Choose a month or date range.</BpkText>
+        <div role="tabpanel" style={panelStyle}>
+          <BpkText>Flexible dates Panel</BpkText>
         </div>
       )}
     </div>
@@ -439,7 +380,6 @@ export {
   ComplexCanvasDefault,
   ComplexSurfaceDefaultNoShadow,
   VisualExample,
-  WithHookExample,
-  WithTabPanelsExample,
+  WithHookControlledPanelsExample,
   WithConditionalPanelsExample,
 };
