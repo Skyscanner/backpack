@@ -19,7 +19,7 @@
 import type { KeyboardEvent, ReactNode } from 'react';
 import { useId, useMemo, useRef, useState } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, isRTL } from '../../bpk-react-utils';
 
 import STYLES from './BpkSegmentedControl.module.scss';
 
@@ -44,6 +44,8 @@ export type TabPanelProps = {
 const getPanelId = (baseId: string, index: number) =>
   `${baseId}-panel-${index}`;
 
+const getTabId = (baseId: string, index: number) => `${baseId}-tab-${index}`;
+
 /**
  * Helper function to get accessibility props for tab panel elements.
  * Use this to ensure proper ARIA relationships between tabs and their panels.
@@ -57,14 +59,14 @@ const getPanelId = (baseId: string, index: number) =>
  * @param {number} selectedIndex - The currently selected tab index.
  * @returns {TabPanelProps} An object containing the necessary props for a tab panel.
  */
-export const getTabPanelProps = (
+const getTabPanelProps = (
   baseId: string,
   index: number,
   selectedIndex: number,
 ): TabPanelProps => ({
   id: getPanelId(baseId, index),
   role: 'tabpanel',
-  'aria-labelledby': `${baseId}-tab-${index}`,
+  'aria-labelledby': getTabId(baseId, index),
   hidden: index !== selectedIndex,
   tabIndex: 0,
 });
@@ -76,25 +78,6 @@ export const getTabPanelProps = (
  * @param {Array<string | ReactNode>} buttonContents - Array of button content (strings or ReactNodes)
  * @param {number} selectedIndex - Currently selected tab index
  * @returns {Object} Object with controlProps (for BpkSegmentedControl) and getPanelProps function
- *
- * @example
- * const { controlProps, getPanelProps } = useSegmentedControlPanels(
- *   ['Flights', 'Hotels', 'Car hire'],
- *   selectedIndex
- * );
- *
- * return (
- *   <div>
- *     <BpkSegmentedControl
- *       {...controlProps}
- *       label="Travel options"
- *       onItemClick={setSelectedIndex}
- *     />
- *     <div {...getPanelProps(0)}>Flights content</div>
- *     <div {...getPanelProps(1)}>Hotels content</div>
- *     <div {...getPanelProps(2)}>Car hire content</div>
- *   </div>
- * );
  */
 export const useSegmentedControlPanels = (
   buttonContents: string[] | ReactNode[],
@@ -152,14 +135,9 @@ const BpkSegmentedControl = ({
   shadow = false,
   type = SEGMENT_TYPES.CanvasDefault,
 }: Props) => {
-  const generatedId = useId();
-  const id = providedId || generatedId;
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
-
-  // Auto-generate panelIds for aria-controls attributes
-  const computedPanelIds = Array.from(
-    { length: buttonContents.length },
-    (_, i) => getPanelId(id, i),
+  const panelIds = Array.from({ length: buttonContents.length }, (_, i) =>
+    providedId ? getPanelId(providedId, i) : undefined,
   );
 
   // TODO: Consider removing internal state - component is controlled via selectedIndex prop.
@@ -180,12 +158,28 @@ const BpkSegmentedControl = ({
     const lastIndex = buttonContents.length - 1;
     let newIndex = currentIndex;
 
+    const nextItem = () => {
+      newIndex = currentIndex === lastIndex ? 0 : currentIndex + 1;
+    };
+
+    const previousItem = () => {
+      newIndex = currentIndex === 0 ? lastIndex : currentIndex - 1;
+    };
+
     switch (event.key) {
       case 'ArrowRight':
-        newIndex = currentIndex === lastIndex ? 0 : currentIndex + 1;
+        if (isRTL()) {
+          previousItem();
+        } else {
+          nextItem();
+        }
         break;
       case 'ArrowLeft':
-        newIndex = currentIndex === 0 ? lastIndex : currentIndex - 1;
+        if (isRTL()) {
+          nextItem();
+        } else {
+          previousItem();
+        }
         break;
       case 'Home':
         newIndex = 0;
@@ -237,7 +231,7 @@ const BpkSegmentedControl = ({
             `bpk-segmented-control--${type}-selected-shadow`,
         );
 
-        const tabId = `${id}-tab-${index}`;
+        const tabId = providedId ? getTabId(providedId, index) : undefined;
         return (
           <button
             ref={(el) => {
@@ -252,7 +246,7 @@ const BpkSegmentedControl = ({
             className={buttonStyling}
             tabIndex={isSelected ? 0 : -1}
             aria-selected={isSelected}
-            aria-controls={computedPanelIds[index]}
+            aria-controls={panelIds[index]}
           >
             {content}
           </button>
