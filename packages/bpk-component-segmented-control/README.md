@@ -1,4 +1,6 @@
-# bpk-segmented-control
+# bpk-component-segmented-control
+
+> Backpack segmented control component.
 
 ## Installation
 
@@ -6,38 +8,41 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ## Usage
 
-### Basic usage
+### Basic Usage
 
-```js
-import BpkSegmentedControl from '@skyscanner/backpack-web/bpk-component-segmented-control';
+```tsx
+import BpkSegmentedControl, {
+  SEGMENT_TYPES,
+} from '@skyscanner/backpack-web/bpk-component-segmented-control';
 
 export default () => (
   <BpkSegmentedControl
-    buttonContents={['Option 1', 'Option 2', 'Option 3']}
-    label="Trip type" // Accessible name, this should be localised
-    onItemClick={(index) => console.log('Selected:', index)}
-    selectedIndex={1} // button selected on load
-    type={SEGMENT_TYPES.SurfaceContrast}
-    shadow
+    buttonContents={['Specific dates', 'Flexible dates']}
+    label="Date selection" // Accessible name, this should be localised
+    onItemClick={(index) => console.log(`Selected index: ${index}`)}
+    selectedIndex={0}
+    type={SEGMENT_TYPES.CanvasDefault}
   />
 );
 ```
 
-### With tab panels using the hook (recommended)
+### With Tab Panels (Recommended)
 
-The easiest way to use segmented controls with tab panels is the `useSegmentedControlPanels` hook. It automatically manages IDs and provides proper accessibility:
+When using the segmented control to switch between content panels, use the `useSegmentedControlPanels` hook for automatic ID generation and proper ARIA relationships.
 
-```js
+```tsx
 import { useState } from 'react';
 import BpkSegmentedControl, {
   useSegmentedControlPanels,
+  SEGMENT_TYPES,
 } from '@skyscanner/backpack-web/bpk-component-segmented-control';
 
-export default () => {
+const TabbedContent = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const buttonContents = ['Flights', 'Hotels', 'Car hire'];
 
   const { controlProps, getPanelProps } = useSegmentedControlPanels(
-    ['Flights', 'Hotels', 'Car hire'],
+    buttonContents,
     selectedIndex,
   );
 
@@ -49,152 +54,40 @@ export default () => {
         onItemClick={setSelectedIndex}
         type={SEGMENT_TYPES.CanvasDefault}
       />
-      <div {...getPanelProps(0)}>Flights content</div>
-      <div {...getPanelProps(1)}>Hotels content</div>
-      <div {...getPanelProps(2)}>Car hire content</div>
-    </div>
-  );
-};
-```
-
-### With tab panels using getTabPanelProps (alternative)
-
-For more control over ID generation, you can use the `getTabPanelProps` helper directly:
-
-```js
-import { useState } from 'react';
-import BpkSegmentedControl, {
-  getTabPanelProps,
-} from '@skyscanner/backpack-web/bpk-component-segmented-control';
-
-export default () => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
-  return (
-    <div>
-      <BpkSegmentedControl
-        id="my-tabs"
-        buttonContents={['Flights', 'Hotels', 'Car hire']}
-        label="Travel options"
-        onItemClick={setSelectedIndex}
-        selectedIndex={selectedIndex}
-      />
-      <div {...getTabPanelProps('my-tabs', 0, selectedIndex)}>
-        Flights content
+      <div {...getPanelProps(0)}>
+        <p>Search for flights to your destination.</p>
       </div>
-      <div {...getTabPanelProps('my-tabs', 1, selectedIndex)}>
-        Hotels content
+      <div {...getPanelProps(1)}>
+        <p>Find the perfect place to stay.</p>
       </div>
-      <div {...getTabPanelProps('my-tabs', 2, selectedIndex)}>
-        Car hire content
+      <div {...getPanelProps(2)}>
+        <p>Rent a car for your trip.</p>
       </div>
     </div>
   );
 };
-```
 
-### With conditional rendering
-
-You can also use conditional rendering instead of the `hidden` attribute. When doing so, manually add the panel accessibility attributes:
-
-```js
-import { useState } from 'react';
-import BpkSegmentedControl from '@skyscanner/backpack-web/bpk-component-segmented-control';
-
-export default () => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
-  return (
-    <div>
-      <BpkSegmentedControl
-        id="my-tabs"
-        buttonContents={['Specific dates', 'Flexible dates']}
-        label="Date selection"
-        onItemClick={setSelectedIndex}
-        selectedIndex={selectedIndex}
-      />
-      {selectedIndex === 0 && (
-        <div
-          id="my-tabs-panel-0"
-          role="tabpanel"
-          aria-labelledby="my-tabs-tab-0"
-        >
-          Specific dates content
-        </div>
-      )}
-      {selectedIndex === 1 && (
-        <div
-          id="my-tabs-panel-1"
-          role="tabpanel"
-          aria-labelledby="my-tabs-tab-1"
-        >
-          Flexible dates content
-        </div>
-      )}
-    </div>
-  );
-};
+export default TabbedContent;
 ```
 
 ## Accessibility
 
-### Keyboard navigation
+The `BpkSegmentedControl` component implements the [ARIA tabs pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/) with full keyboard navigation support.
 
-The component implements the [WAI-ARIA Tabs Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/) with the following keyboard interactions:
+### Keyboard Navigation
 
-| Key                | Action                                     |
-| ------------------ | ------------------------------------------ |
-| `←` / `ArrowLeft`  | Move focus to previous tab (wraps to last) |
-| `→` / `ArrowRight` | Move focus to next tab (wraps to first)    |
-| `Home`             | Move focus to first tab                    |
-| `End`              | Move focus to last tab                     |
-| `Tab`              | Move focus into/out of the tab list        |
+- **Arrow Left/Right**: Move focus between tabs (respects RTL layouts)
+- **Home**: Move focus to the first tab
+- **End**: Move focus to the last tab
+- **Enter/Space**: Activate the focused tab (in manual mode)
 
-Selection follows focus automatically (automatic activation mode).
+### Activation Modes
 
-### ARIA attributes
+The component supports two activation modes:
 
-The component automatically applies:
-
-- `role="tablist"` on the container
-- `role="tab"` on each button
-- `aria-selected` to indicate the selected tab
-- `aria-orientation="horizontal"` on the tablist
-- `aria-controls` linking to panels (auto-generated panel IDs)
-
-When using the `useSegmentedControlPanels` hook or `getTabPanelProps` helper, panels receive:
-
-- `role="tabpanel"`
-- `aria-labelledby` linking back to the controlling tab
-- `hidden` attribute for non-selected panels
-- `tabIndex={0}` to allow focus when panel has no focusable content
+- **Automatic (default)**: Tabs are activated automatically when focused via keyboard navigation. This provides a faster experience but may cause frequent content changes.
+- **Manual**: Tabs must be explicitly activated using Enter or Space keys after focusing. This is recommended when tab panel content is computationally expensive or when rapid content changes could be disorienting.
 
 ## Props
 
-| Property       | PropType             | Required | Default Value               |
-| -------------- | -------------------- | -------- | --------------------------- |
-| buttonContents | arrayOf(node)        | true     | -                           |
-| onItemClick    | func                 | true     | -                           |
-| selectedIndex  | number               | true     | -                           |
-| activationMode | string               | false    | 'automatic'                 |
-| id             | string               | false    | auto-generated              |
-| label          | string               | false    | -                           |
-| shadow         | bool                 | false    | false                       |
-| type           | string               | false    | 'canvas-default'            |
-| type           | oneOf(SEGMENT_TYPES) | false    | SEGMENT_TYPES.CanvasDefault |
-
-### getTabPanelProps
-
-Helper function to generate accessibility props for tab panels.
-
-```ts
-getTabPanelProps(baseId: string, index: number, selectedIndex: number): TabPanelProps
-```
-
-| Parameter     | Type   | Description                                 |
-| ------------- | ------ | ------------------------------------------- |
-| baseId        | string | The same `id` passed to BpkSegmentedControl |
-| index         | number | The index of this panel (0-based)           |
-| selectedIndex | number | The currently selected tab index            |
-
-Returns an object with: `id`, `role`, `aria-labelledby`, `hidden`, `tabIndex`
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/segmented-control/web).
