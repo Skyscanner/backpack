@@ -50,7 +50,7 @@ const surfaceContrastWrapperStyle = {
 const SimpleDefault = () => (
   <BpkSegmentedControl
     buttonContents={['Value', 'Value']}
-    label="Segmented control"
+    label='Segmented control'
     onItemClick={() => {}}
     selectedIndex={0}
     type={SEGMENT_TYPES.CanvasDefault}
@@ -61,7 +61,7 @@ const SimpleCanvasContrast = () => (
   <div style={canvasDefaultWrapperStyle}>
     <BpkSegmentedControl
       buttonContents={['Value', 'Value', 'Value']}
-      label="Segmented control"
+      label='Segmented control'
       onItemClick={() => {}}
       selectedIndex={2}
       type={SEGMENT_TYPES.CanvasContrast}
@@ -73,7 +73,7 @@ const SimpleSurfaceDefault = () => (
   <div style={surfaceContrastWrapperStyle}>
     <BpkSegmentedControl
       buttonContents={['Value', 'Value', 'Value', 'Value']}
-      label="Segmented control"
+      label='Segmented control'
       onItemClick={() => {}}
       selectedIndex={2}
       type={SEGMENT_TYPES.SurfaceDefault}
@@ -90,7 +90,7 @@ const SimpleSurfaceContrast = () => (
         'Very Long Value3',
         'Very Long Value4',
       ]}
-      label="Segmented control"
+      label='Segmented control'
       onItemClick={() => {}}
       selectedIndex={2}
       type={SEGMENT_TYPES.SurfaceContrast}
@@ -128,7 +128,7 @@ const CustomSurfaceContrast = () => (
   <BpkDarkExampleWrapper padded>
     <BpkSegmentedControl
       buttonContents={allCustomButtonContent}
-      label="Choose when to travel"
+      label='Choose when to travel'
       onItemClick={() => {}}
       selectedIndex={1}
       type={SEGMENT_TYPES.SurfaceContrast}
@@ -140,7 +140,7 @@ const CustomSurfaceContrast = () => (
 const CustomSurfaceDefault = () => (
   <BpkSegmentedControl
     buttonContents={allCustomButtonContent}
-    label="Choose when to travel"
+    label='Choose when to travel'
     onItemClick={() => {}}
     selectedIndex={1}
     type={SEGMENT_TYPES.SurfaceDefault}
@@ -152,7 +152,7 @@ const CustomCanvasContrast = () => (
   <BpkDarkExampleWrapper padded style={{ backgroundColor: canvasContrastDay }}>
     <BpkSegmentedControl
       buttonContents={allCustomButtonContent}
-      label="Choose when to travel"
+      label='Choose when to travel'
       onItemClick={() => {}}
       selectedIndex={1}
       type={SEGMENT_TYPES.CanvasContrast}
@@ -164,7 +164,7 @@ const CustomCanvasContrast = () => (
 const CustomCanvasDefault = () => (
   <BpkSegmentedControl
     buttonContents={allCustomButtonContent}
-    label="Choose when to travel"
+    label='Choose when to travel'
     onItemClick={() => {}}
     selectedIndex={1}
     type={SEGMENT_TYPES.CanvasDefault}
@@ -175,7 +175,7 @@ const CustomCanvasDefault = () => (
 const CustomSurfaceDefaultNoShadow = () => (
   <BpkSegmentedControl
     buttonContents={allCustomButtonContent}
-    label="Choose when to travel"
+    label='Choose when to travel'
     onItemClick={() => {}}
     selectedIndex={1}
     type={SEGMENT_TYPES.SurfaceDefault}
@@ -215,7 +215,7 @@ const ComplexSurfaceContrast = () => (
   <BpkDarkExampleWrapper padded>
     <BpkSegmentedControl
       buttonContents={allComplexButtonContent}
-      label="Sort flight itineraries"
+      label='Sort flight itineraries'
       onItemClick={() => {}}
       selectedIndex={1}
       type={SEGMENT_TYPES.SurfaceContrast}
@@ -227,7 +227,7 @@ const ComplexSurfaceContrast = () => (
 const ComplexSurfaceDefault = () => (
   <BpkSegmentedControl
     buttonContents={allComplexButtonContent}
-    label="Sort flight itineraries"
+    label='Sort flight itineraries'
     onItemClick={() => {}}
     selectedIndex={1}
     type={SEGMENT_TYPES.SurfaceDefault}
@@ -239,7 +239,7 @@ const ComplexCanvasContrast = () => (
   <BpkDarkExampleWrapper padded style={{ backgroundColor: canvasContrastDay }}>
     <BpkSegmentedControl
       buttonContents={allComplexButtonContent}
-      label="Sort flight itineraries"
+      label='Sort flight itineraries'
       onItemClick={() => {}}
       selectedIndex={1}
       type={SEGMENT_TYPES.CanvasContrast}
@@ -251,7 +251,7 @@ const ComplexCanvasContrast = () => (
 const ComplexCanvasDefault = () => (
   <BpkSegmentedControl
     buttonContents={allComplexButtonContent}
-    label="Sort flight itineraries"
+    label='Sort flight itineraries'
     onItemClick={() => {}}
     selectedIndex={1}
     type={SEGMENT_TYPES.CanvasDefault}
@@ -262,7 +262,7 @@ const ComplexCanvasDefault = () => (
 const ComplexSurfaceDefaultNoShadow = () => (
   <BpkSegmentedControl
     buttonContents={allComplexButtonContent}
-    label="Sort flight itineraries"
+    label='Sort flight itineraries'
     onItemClick={() => {}}
     selectedIndex={1}
     type={SEGMENT_TYPES.SurfaceDefault}
