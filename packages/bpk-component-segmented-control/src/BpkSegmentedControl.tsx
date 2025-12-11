@@ -237,7 +237,7 @@ const BpkSegmentedControl = ({
             ref={(el) => {
               buttonRefs.current[index] = el;
             }}
-            key={tabId}
+            key={tabId || index}
             id={tabId}
             type="button"
             role="tab"
