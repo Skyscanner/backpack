@@ -21,6 +21,7 @@ import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { BpkBox } from './BpkBox';
+import { getSpacingValue } from './theme';
 import { BpkSpacing } from './tokens';
 
 describe('BpkBox', () => {
@@ -56,8 +57,10 @@ describe('BpkBox', () => {
 
     const div = container.querySelector('div');
     expect(div).toBeInTheDocument();
-    // We don't assert exact styles because Chakra generates classes & vars,
-    // but we at least assert that the element rendered successfully.
+    expect(div).toHaveClass('bpk-box');
+    expect(div?.style.getPropertyValue('--bpk-p')).toBe(
+      getSpacingValue(BpkSpacing.MD)
+    );
   });
 
   it('supports basic interaction props: onClick, onFocus, onBlur', () => {

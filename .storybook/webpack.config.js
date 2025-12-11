@@ -28,6 +28,14 @@ const rootDir = path.resolve(__dirname, '../');
 const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = ({ config }) => {
+  // Remove existing css/scss rules to avoid double-processing with Storybook defaults.
+  config.module.rules = config.module.rules.filter(
+    (rule) => {
+      const testStr = rule.test ? rule.test.toString() : '';
+      return !(testStr.includes('\\.css') || testStr.includes('\\.scss'));
+    },
+  );
+
   config.plugins.push(new MiniCssExtractPlugin());
   config.module.rules.push({
     test: /\.[jt]sx?$/,
@@ -61,7 +69,7 @@ module.exports = ({ config }) => {
     },
   });
   config.module.rules.push({
-    test: /\.css/,
+    test: /\.css$/,
     use: [
       {
         loader: devMode ? "style-loader" : MiniCssExtractPlugin.loader,
@@ -71,6 +79,7 @@ module.exports = ({ config }) => {
         options: {
           importLoaders: 1,
           modules: {
+            auto: /\.module\.css$/,
             localIdentName: '[local]-[hash:base64:5]',
             namedExport: false,
             exportLocalsConvention: 'as-is',
@@ -98,6 +107,7 @@ module.exports = ({ config }) => {
         options: {
           importLoaders: 1,
           modules: {
+            auto: /\.module\.(scss|sass)$/,
             localIdentName: '[local]-[hash:base64:5]',
             namedExport: false,
             exportLocalsConvention: 'as-is',

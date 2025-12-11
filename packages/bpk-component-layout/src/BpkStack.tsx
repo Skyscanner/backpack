@@ -16,27 +16,26 @@
  * limitations under the License.
  */
 
-import type { CSSProperties } from 'react';
+import { BpkBox } from './BpkBox';
+import { BpkSpacing } from './tokens';
 
-import { Box } from '@chakra-ui/react';
+import type { BpkStackProps } from './types';
 
-import { mapLayoutToVars } from './utils/mapLayoutProps';
+export const BpkStack = ({
+  children,
+  direction = 'column',
+  spacing = BpkSpacing.MD,
+  ...rest
+}: BpkStackProps) => (
+  <BpkBox
+    display="flex"
+    flexDirection={direction}
+    gap={spacing}
+    {...rest}
+  >
+    {children}
+  </BpkBox>
+);
 
-import type { BpkBoxProps } from './types';
+export default BpkStack;
 
-export const BpkBox = ({ children, ...props }: BpkBoxProps) => {
-  const { cssVars, rest } = mapLayoutToVars(props);
-
-  return (
-    <Box
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      className="bpk-box"
-      style={cssVars as CSSProperties}
-      {...rest}
-    >
-      {children}
-    </Box>
-  );
-};
-
-export type { BpkBoxProps };

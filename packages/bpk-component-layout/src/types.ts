@@ -80,6 +80,8 @@ type DisallowedShorthandProps =
   | 'rounded'
   | 'shadow';
 
+type DisallowedStyleProps = 'sx' | 'css';
+
 /**
  * Flexbox & grid layout props that we explicitly support on Backpack layout
  * components. These are a curated subset of the underlying Box flex/grid API
@@ -129,6 +131,7 @@ type RemoveCommonProps<T> = Omit<
   | LayoutEventProps
   | FlexGridPropKeys
   | DisallowedShorthandProps
+  | DisallowedStyleProps
 >;
 
 /**

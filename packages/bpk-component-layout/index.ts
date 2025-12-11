@@ -18,9 +18,20 @@
 
 export { BpkProvider } from './src/BpkProvider';
 export { BpkBox } from './src/BpkBox';
+export { BpkFlex } from './src/BpkFlex';
+export { BpkGrid } from './src/BpkGrid';
+export { BpkStack } from './src/BpkStack';
+export { default as BpkFlexDefault } from './src/BpkFlex';
+export { default as BpkGridDefault } from './src/BpkGrid';
+export { default as BpkStackDefault } from './src/BpkStack';
 
 export type { BpkProviderProps } from './src/BpkProvider';
-export type { BpkBoxProps } from './src/BpkBox';
+export type {
+  BpkBoxProps,
+  BpkFlexProps,
+  BpkGridProps,
+  BpkStackProps,
+} from './src/types';
 
 
 export type {

@@ -1,0 +1,28 @@
+.bpk-box {
+  /* Spacing */
+  padding: var(--bpk-p, initial);
+  padding-left: var(--bpk-pl, var(--bpk-px, initial));
+  padding-right: var(--bpk-pr, var(--bpk-px, initial));
+  padding-top: var(--bpk-pt, var(--bpk-py, initial));
+  padding-bottom: var(--bpk-pb, var(--bpk-py, initial));
+  margin: var(--bpk-m, initial);
+  gap: var(--bpk-gap, initial);
+
+  /* Flex */
+  display: var(--bpk-display, initial);
+  flex-direction: var(--bpk-flex-dir, initial);
+  justify-content: var(--bpk-jc, initial);
+  align-items: var(--bpk-ai, initial);
+
+  /* Size */
+  width: var(--bpk-w, initial);
+  height: var(--bpk-h, initial);
+
+  /* Position */
+  position: var(--bpk-pos, initial);
+  top: var(--bpk-top, initial);
+  right: var(--bpk-right, initial);
+  bottom: var(--bpk-bottom, initial);
+  left: var(--bpk-left, initial);
+}
+

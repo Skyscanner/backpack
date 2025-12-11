@@ -77,8 +77,8 @@ function normalizeResponsiveObject<T>(value: Record<string, T>): Record<string, 
     if (chakraKey) {
       normalized[chakraKey] = val;
     } else if (process.env.NODE_ENV !== 'production') {
-      // eslint-disable-next-line no-console
-      console.warn(
+    // eslint-disable-next-line no-console
+    console.warn(
         `Unknown breakpoint "${key}" used in responsive prop. ` +
         'Use Backpack breakpoint tokens such as mobile, tablet or desktop.'
       );
@@ -224,7 +224,7 @@ export function processBpkProps<T extends Record<string, any>>(
   props: T
 ): Record<string, any> {
   // Explicitly remove className and style to prevent style overrides
-  const { className, style, ...cleanProps } = props;
+  const { className, css, style, sx, ...cleanProps } = props;
 
   if (className !== undefined && process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line no-console
@@ -239,6 +239,22 @@ export function processBpkProps<T extends Record<string, any>>(
     console.warn(
       'style prop is not allowed on Backpack layout components. ' +
       'It has been removed to maintain design system consistency.'
+    );
+  }
+
+  if (sx !== undefined && process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'sx prop is not allowed on Backpack layout components. ' +
+      'It has been removed to minimise runtime style generation.'
+    );
+  }
+
+  if (css !== undefined && process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'css prop is not allowed on Backpack layout components. ' +
+      'It has been removed to minimise runtime style generation.'
     );
   }
 
