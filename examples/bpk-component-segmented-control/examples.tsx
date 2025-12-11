@@ -308,19 +308,19 @@ const WithHookControlledPanelsExample = () => {
         type={SEGMENT_TYPES.CanvasDefault}
       />
       <div
-        {...getPanelProps(buttonContents.indexOf('Flights'))}
+        {...getPanelProps(0)}
         style={panelStyle}
       >
         <BpkText>Search for flights to your destination.</BpkText>
       </div>
       <div
-        {...getPanelProps(buttonContents.indexOf('Hotels'))}
+        {...getPanelProps(1)}
         style={panelStyle}
       >
         <BpkText>Find the perfect place to stay.</BpkText>
       </div>
       <div
-        {...getPanelProps(buttonContents.indexOf('Car hire'))}
+        {...getPanelProps(2)}
         style={panelStyle}
       >
         <BpkText>Rent a car for your trip.</BpkText>
