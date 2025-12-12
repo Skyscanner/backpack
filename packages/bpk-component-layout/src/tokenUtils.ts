@@ -263,3 +263,26 @@ export function processResponsiveStringProp(value: any, propName: string): any {
     propName
   );
 }
+
+/**
+ * Processes a collection of responsive props.
+ * @param {Record<string, any>} props - Object containing prop values.
+ * @param {Record<string, string>} propNameMap - Map of prop name to CSS/Chakra property name (for error messages and mapping).
+ * @returns {Record<string, any>} Processed props object.
+ */
+export function processResponsiveProps(
+  props: Record<string, any>,
+  propNameMap?: Record<string, string>
+): Record<string, any> {
+  const processed: Record<string, any> = {};
+  Object.keys(props).forEach((key) => {
+    if (props[key] !== undefined) {
+      const targetPropName = propNameMap ? propNameMap[key] || key : key;
+      processed[targetPropName] = processResponsiveStringProp(
+        props[key],
+        targetPropName
+      );
+    }
+  });
+  return processed;
+}

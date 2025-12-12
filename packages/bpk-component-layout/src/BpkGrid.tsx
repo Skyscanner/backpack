@@ -18,7 +18,7 @@
 
 import { Grid } from '@chakra-ui/react';
 
-import { processBpkProps, processResponsiveStringProp } from './tokenUtils';
+import { processBpkProps, processResponsiveProps } from './tokenUtils';
 
 import type { BpkGridProps } from './types';
 
@@ -40,26 +40,24 @@ export const BpkGrid = ({
   ...props
 }: BpkGridProps) => {
   const processedProps = processBpkProps(props);
-  const processedJustify = processResponsiveStringProp(justify, 'justifyContent');
-  const processedAlign = processResponsiveStringProp(align, 'alignItems');
-  const processedTemplateColumns = processResponsiveStringProp(templateColumns, 'gridTemplateColumns');
-  const processedTemplateRows = processResponsiveStringProp(templateRows, 'gridTemplateRows');
-  const processedTemplateAreas = processResponsiveStringProp(templateAreas, 'gridTemplateAreas');
-  const processedAutoFlow = processResponsiveStringProp(autoFlow, 'gridAutoFlow');
-  const processedAutoRows = processResponsiveStringProp(autoRows, 'gridAutoRows');
-  const processedAutoColumns = processResponsiveStringProp(autoColumns, 'gridAutoColumns');
+
+  const processedResponsiveProps = processResponsiveProps(
+    {
+      justifyContent: justify,
+      alignItems: align,
+      gridTemplateColumns: templateColumns,
+      gridTemplateRows: templateRows,
+      gridTemplateAreas: templateAreas,
+      gridAutoFlow: autoFlow,
+      gridAutoRows: autoRows,
+      gridAutoColumns: autoColumns,
+    }
+  );
 
   return (
     <Grid
       {...processedProps}
-      justifyContent={processedJustify}
-      alignItems={processedAlign}
-      gridTemplateColumns={processedTemplateColumns}
-      gridTemplateRows={processedTemplateRows}
-      gridTemplateAreas={processedTemplateAreas}
-      gridAutoFlow={processedAutoFlow}
-      gridAutoRows={processedAutoRows}
-      gridAutoColumns={processedAutoColumns}
+      {...processedResponsiveProps}
       rowGap={rowGap}
       columnGap={columnGap}
       gridColumn={column}
