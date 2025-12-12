@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode, MouseEvent } from 'react';
+import type { ReactNode, MouseEvent, ButtonHTMLAttributes } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -26,19 +26,18 @@ import STYLES from './BpkLink.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
+export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   onClick: (event: MouseEvent<HTMLButtonElement>) => void;
-  className?: string | null;
+  className?: string;
   alternate?: boolean;
   implicit?: boolean;
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
-};
+}
 
 const BpkButtonLink = ({
   alternate = false,
   children,
-  className = null,
+  className,
   implicit = false,
   onClick,
   ...rest
