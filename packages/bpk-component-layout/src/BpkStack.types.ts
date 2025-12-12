@@ -24,7 +24,7 @@ import type { BpkResponsiveValue } from './tokens';
 import type { RemoveCommonProps, BpkFlexGridProps } from './types';
 import type { StackProps } from '@chakra-ui/react';
 
-type StackOptionKeysType = typeof StackOptionKeys[number]
+type StackOptionKeysType = typeof StackOptionKeys[number];
 
 /**
  * Overrides StackOptions to support BpkResponsiveValue
