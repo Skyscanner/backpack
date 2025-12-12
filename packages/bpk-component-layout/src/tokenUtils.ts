@@ -65,7 +65,7 @@ export function convertBpkSpacingToChakra(value: string): string {
  * @param {string} propName - The name of the prop being processed (for warning messages)
  * @returns {*} The processed value with tokens converted, or undefined for invalid tokens
  */
-function normalizeResponsiveObject<T>(value: Record<string, T>): Record<string, T> {
+export function normalizeResponsiveObject<T>(value: Record<string, T>): Record<string, T> {
   const normalized: Record<string, T> = {};
   Object.entries(value).forEach(([key, val]) => {
     if (key === 'base') {
@@ -87,7 +87,7 @@ function normalizeResponsiveObject<T>(value: Record<string, T>): Record<string, 
   return normalized;
 }
 
-function processResponsiveValue(
+export function processResponsiveValue(
   value: any,
   converter: (v: string) => string,
   validator: (v: string) => boolean,

@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+<<<<<<< HEAD
 import { BpkBox } from './BpkBox';
 import { BpkSpacing } from './tokens';
 
@@ -38,4 +39,28 @@ export const BpkStack = ({
 );
 
 export default BpkStack;
+=======
+import { Stack, VStack, HStack } from '@chakra-ui/react';
+
+import { processBpkStackProps } from './BpkStack.tokenUtils';
+
+import type { BpkStackProps } from './BpkStack.types';
+
+export const BpkStack = ({ children, ...props }: BpkStackProps) => {
+  const processedProps = processBpkStackProps(props);
+  return <Stack {...processedProps}>{children}</Stack>;
+};
+
+export const BpkHStack = ({ children, ...props }: BpkStackProps) => {
+  const processedProps = processBpkStackProps(props);
+  return <HStack {...processedProps}>{children}</HStack>;
+};
+
+export const BpkVStack = ({ children, ...props }: BpkStackProps) => {
+  const processedProps = processBpkStackProps(props);
+  return <VStack {...processedProps}>{children}</VStack>;
+};
+
+export type { BpkStackProps };
+>>>>>>> CLOV-989
 

@@ -18,6 +18,7 @@
 
 export { BpkProvider } from './src/BpkProvider';
 export { BpkBox } from './src/BpkBox';
+<<<<<<< HEAD
 export { BpkFlex } from './src/BpkFlex';
 export { BpkGrid } from './src/BpkGrid';
 export { BpkStack } from './src/BpkStack';
@@ -32,6 +33,13 @@ export type {
   BpkGridProps,
   BpkStackProps,
 } from './src/types';
+=======
+export { BpkStack, BpkHStack, BpkVStack } from './src/BpkStack';
+
+export type { BpkProviderProps } from './src/BpkProvider';
+export type { BpkBoxProps } from './src/BpkBox';
+export type { BpkStackProps } from './src/BpkStack';
+>>>>>>> CLOV-989
 
 
 export type {
@@ -39,8 +47,8 @@ export type {
   BpkBoxSpecificProps,
   BpkFlexSpecificProps,
   BpkGridSpecificProps,
-  BpkStackSpecificProps,
 } from './src/types';
+export type { BpkStackSpecificProps } from './src/BpkStack.types';
 
 // Export token types and utilities
 export type {
