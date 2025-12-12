@@ -187,12 +187,12 @@ export interface BpkFlexProps extends BpkCommonLayoutProps, BpkFlexSpecificProps
 export interface BpkGridSpecificProps extends RemoveCommonProps<GridProps> {
   justify?: BpkResponsiveValue<GridProps['justifyContent']>;
   align?: BpkResponsiveValue<GridProps['alignItems']>;
-  templateColumns?: GridProps['gridTemplateColumns'];
-  templateRows?: GridProps['gridTemplateRows'];
-  templateAreas?: GridProps['gridTemplateAreas'];
-  autoFlow?: GridProps['gridAutoFlow'];
-  autoRows?: GridProps['gridAutoRows'];
-  autoColumns?: GridProps['gridAutoColumns'];
+  templateColumns?: BpkResponsiveValue<GridProps['gridTemplateColumns']>;
+  templateRows?: BpkResponsiveValue<GridProps['gridTemplateRows']>;
+  templateAreas?: BpkResponsiveValue<GridProps['gridTemplateAreas']>;
+  autoFlow?: BpkResponsiveValue<GridProps['gridAutoFlow']>;
+  autoRows?: BpkResponsiveValue<GridProps['gridAutoRows']>;
+  autoColumns?: BpkResponsiveValue<GridProps['gridAutoColumns']>;
   rowGap?: BpkResponsiveValue<BpkSpacingValue>;
   columnGap?: BpkResponsiveValue<BpkSpacingValue>;
   column?: GridProps['gridColumn'];

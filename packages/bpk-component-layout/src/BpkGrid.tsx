@@ -42,18 +42,24 @@ export const BpkGrid = ({
   const processedProps = processBpkProps(props);
   const processedJustify = processResponsiveStringProp(justify, 'justifyContent');
   const processedAlign = processResponsiveStringProp(align, 'alignItems');
+  const processedTemplateColumns = processResponsiveStringProp(templateColumns, 'gridTemplateColumns');
+  const processedTemplateRows = processResponsiveStringProp(templateRows, 'gridTemplateRows');
+  const processedTemplateAreas = processResponsiveStringProp(templateAreas, 'gridTemplateAreas');
+  const processedAutoFlow = processResponsiveStringProp(autoFlow, 'gridAutoFlow');
+  const processedAutoRows = processResponsiveStringProp(autoRows, 'gridAutoRows');
+  const processedAutoColumns = processResponsiveStringProp(autoColumns, 'gridAutoColumns');
 
   return (
     <Grid
       {...processedProps}
       justifyContent={processedJustify}
       alignItems={processedAlign}
-      gridTemplateColumns={templateColumns}
-      gridTemplateRows={templateRows}
-      gridTemplateAreas={templateAreas}
-      gridAutoFlow={autoFlow}
-      gridAutoRows={autoRows}
-      gridAutoColumns={autoColumns}
+      gridTemplateColumns={processedTemplateColumns}
+      gridTemplateRows={processedTemplateRows}
+      gridTemplateAreas={processedTemplateAreas}
+      gridAutoFlow={processedAutoFlow}
+      gridAutoRows={processedAutoRows}
+      gridAutoColumns={processedAutoColumns}
       rowGap={rowGap}
       columnGap={columnGap}
       gridColumn={column}

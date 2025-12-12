@@ -38,6 +38,7 @@ import {
   BpkGridExample,
   BpkGridSpanExample,
   BpkGridWithItemExample,
+  BpkGridResponsiveExample,
 } from './examples';
 
 export default {
@@ -80,6 +81,7 @@ export const BpkFlexInline = () => <BpkFlexInlineExample />;
 export const BpkGrid = () => <BpkGridExample />;
 export const BpkGridSpan = () => <BpkGridSpanExample />;
 export const BpkGridItem = () => <BpkGridWithItemExample />;
+export const BpkGridResponsive = () => <BpkGridResponsiveExample />;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {

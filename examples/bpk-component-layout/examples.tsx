@@ -439,6 +439,38 @@ export const BpkGridExample = () => (
 );
 
 /**
+ * BpkGrid responsive example - demonstrates responsive templateColumns and gap.
+ */
+
+export const BpkGridResponsiveExample = () => (
+  <Wrapper>
+    <BpkGrid
+      templateColumns={{
+        mobile: 'repeat(1, 1fr)',
+        tablet: 'repeat(2, 1fr)',
+        desktop: 'repeat(4, 1fr)',
+      }}
+      gap={{
+        mobile: BpkSpacing.SM,
+        tablet: BpkSpacing.MD,
+        desktop: BpkSpacing.LG,
+      }}
+      padding={BpkSpacing.MD}
+    >
+      {[1, 2, 3, 4].map((i) => (
+        <BpkBox key={i} padding={BpkSpacing.SM}>
+          <BpkBox width="100%" height="100%" padding={BpkSpacing.SM}>
+            <span className={STYLES['bpk-layout-examples__outline']}>
+              Responsive Col {i}
+            </span>
+          </BpkBox>
+        </BpkBox>
+      ))}
+    </BpkGrid>
+  </Wrapper>
+);
+
+/**
  * BpkGrid Item Spanning example - demonstrates column/row spanning.
  */
 
