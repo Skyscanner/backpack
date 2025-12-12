@@ -29,20 +29,10 @@ import {
   PositionExample,
   FlexExample,
   GridExample,
-  BpkFlexExample,
-  BpkFlexDirectionExample,
-  BpkFlexWrapExample,
-  BpkFlexResponsiveExample,
-  BpkFlexItemExample,
-  BpkFlexInlineExample,
-  BpkGridExample,
-  BpkGridSpanExample,
-  BpkGridWithItemExample,
-  BpkGridResponsiveExample,
 } from './examples';
 
 export default {
-  title: 'bpk-component-layout',
+  title: 'bpk-component-layout/Box',
   component: BpkBox,
   decorators: [
     (Story: any) => (
@@ -72,16 +62,6 @@ export const Responsive = () => <ResponsiveExample />;
 export const Position = () => <PositionExample />;
 export const Flex = () => <FlexExample />;
 export const Grid = () => <GridExample />;
-export const BpkFlex = () => <BpkFlexExample />;
-export const BpkFlexDirection = () => <BpkFlexDirectionExample />;
-export const BpkFlexWrap = () => <BpkFlexWrapExample />;
-export const BpkFlexResponsive = () => <BpkFlexResponsiveExample />;
-export const BpkFlexItem = () => <BpkFlexItemExample />;
-export const BpkFlexInline = () => <BpkFlexInlineExample />;
-export const BpkGrid = () => <BpkGridExample />;
-export const BpkGridSpan = () => <BpkGridSpanExample />;
-export const BpkGridItem = () => <BpkGridWithItemExample />;
-export const BpkGridResponsive = () => <BpkGridResponsiveExample />;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
