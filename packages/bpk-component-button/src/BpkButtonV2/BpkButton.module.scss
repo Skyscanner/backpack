@@ -51,7 +51,6 @@
   &--link {
     @include buttons.bpk-button--link;
     @include typography.bpk-link;
-    @include buttons.bpk-button--link-disabled;
 
     &--implicit {
       @include typography.bpk-link--implicit;
@@ -61,7 +60,6 @@
   &--link-on-dark {
     @include buttons.bpk-button--link-on-dark;
     @include typography.bpk-link--alternate;
-    @include buttons.bpk-button--link-on-dark-disabled;
 
     &--implicit {
       @include typography.bpk-link--implicit;

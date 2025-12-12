@@ -416,7 +416,8 @@
     text-decoration: none;
   }
 
-  &:disabled {
+  &:disabled,
+  &:disabled:active {
     background: none;
     color: tokens.$bpk-text-disabled-day;
     text-decoration: none;
@@ -469,50 +470,13 @@
     );
   }
 
-  &:disabled {
+  &:disabled,
+  &:disabled:active {
     @include utils.bpk-themeable-property(
       color,
       --bpk-button-link-on-dark-disabled-color,
       tokens.$bpk-private-button-link-on-dark-disabled-foreground-day
     );
-  }
-}
-
-/// Disabled state for link button. Ensures consistent disabled appearance
-/// across :disabled and :disabled:active states.
-///
-/// @require {mixin} bpk-button--link
-///
-/// @example scss
-///   .selector {
-///     @include bpk-button--link();
-///     @include bpk-button--link-disabled();
-///   }
-
-@mixin bpk-button--link-disabled {
-  &:disabled,
-  &:disabled:active {
-    color: tokens.$bpk-text-disabled-day;
-    cursor: not-allowed;
-  }
-}
-
-/// Disabled state for link-on-dark button. Ensures consistent disabled appearance
-/// across :disabled and :disabled:active states on dark backgrounds.
-///
-/// @require {mixin} bpk-button--link-on-dark
-///
-/// @example scss
-///   .selector {
-///     @include bpk-button--link-on-dark();
-///     @include bpk-button--link-on-dark-disabled();
-///   }
-
-@mixin bpk-button--link-on-dark-disabled {
-  &:disabled,
-  &:disabled:active {
-    color: tokens.$bpk-private-button-link-on-dark-disabled-foreground-day;
-    cursor: not-allowed;
   }
 }
 
