@@ -16,15 +16,53 @@
  * limitations under the License.
  */
 
-import { BpkBox } from './BpkBox';
+import { Grid } from '@chakra-ui/react';
+
+import { processBpkProps, processResponsiveProps } from './tokenUtils';
 
 import type { BpkGridProps } from './types';
 
-export const BpkGrid = ({ children, ...rest }: BpkGridProps) => (
-  <BpkBox display="grid" {...rest}>
-    {children}
-  </BpkBox>
-);
+export const BpkGrid = ({
+  align,
+  autoColumns,
+  autoFlow,
+  autoRows,
+  children,
+  column,
+  inline,
+  justify,
+  row,
+  templateAreas,
+  templateColumns,
+  templateRows,
+  ...props
+}: BpkGridProps) => {
+  const processedProps = processBpkProps(props);
 
-export default BpkGrid;
+  const processedResponsiveProps = processResponsiveProps(
+    {
+      justifyContent: justify,
+      alignItems: align,
+      gridTemplateColumns: templateColumns,
+      gridTemplateRows: templateRows,
+      gridTemplateAreas: templateAreas,
+      gridAutoFlow: autoFlow,
+      gridAutoRows: autoRows,
+      gridAutoColumns: autoColumns,
+      gridColumn: column,
+      gridRow: row,
+    }
+  );
 
+  return (
+    <Grid
+      {...processedProps}
+      {...processedResponsiveProps}
+      display={inline ? 'inline-grid' : undefined}
+    >
+      {children}
+    </Grid>
+  );
+};
+
+export type { BpkGridProps };

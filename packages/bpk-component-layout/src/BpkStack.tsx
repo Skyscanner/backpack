@@ -16,30 +16,6 @@
  * limitations under the License.
  */
 
-<<<<<<< HEAD
-import { BpkBox } from './BpkBox';
-import { BpkSpacing } from './tokens';
-
-import type { BpkStackProps } from './types';
-
-export const BpkStack = ({
-  children,
-  direction = 'column',
-  spacing = BpkSpacing.MD,
-  ...rest
-}: BpkStackProps) => (
-  <BpkBox
-    display="flex"
-    flexDirection={direction}
-    gap={spacing}
-    {...rest}
-  >
-    {children}
-  </BpkBox>
-);
-
-export default BpkStack;
-=======
 import { Stack, VStack, HStack } from '@chakra-ui/react';
 
 import { processBpkStackProps } from './BpkStack.tokenUtils';
@@ -62,5 +38,3 @@ export const BpkVStack = ({ children, ...props }: BpkStackProps) => {
 };
 
 export type { BpkStackProps };
->>>>>>> CLOV-989
-

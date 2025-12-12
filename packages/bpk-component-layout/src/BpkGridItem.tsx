@@ -16,53 +16,40 @@
  * limitations under the License.
  */
 
-import { Flex } from '@chakra-ui/react';
+import { GridItem } from '@chakra-ui/react';
 
-import {
-  processBpkProps,
-  processResponsiveProps,
-  validateNoPixelValue,
-} from './tokenUtils';
+import { processBpkProps } from './tokenUtils';
 
-import type { BpkFlexProps } from './types';
+import type { BpkGridItemProps } from './types';
 
-export const BpkFlex = ({
-  align,
-  basis,
+export const BpkGridItem = ({
+  area,
   children,
-  direction,
-  grow,
-  inline,
-  justify,
-  shrink,
-  wrap,
+  colEnd,
+  colSpan,
+  colStart,
+  rowEnd,
+  rowSpan,
+  rowStart,
   ...props
-}: BpkFlexProps) => {
+}: BpkGridItemProps) => {
   const processedProps = processBpkProps(props);
 
-  validateNoPixelValue(basis, 'basis');
-
-  const processedResponsiveProps = processResponsiveProps(
-    {
-      flexDirection: direction,
-      justifyContent: justify,
-      alignItems: align,
-      flexWrap: wrap,
-      flexGrow: grow,
-      flexShrink: shrink,
-      flexBasis: basis,
-    }
-  );
-
   return (
-    <Flex
+    <GridItem
       {...processedProps}
-      {...processedResponsiveProps}
-      display={inline ? 'inline-flex' : undefined}
+      area={area}
+      colEnd={colEnd}
+      colStart={colStart}
+      colSpan={colSpan}
+      rowEnd={rowEnd}
+      rowStart={rowStart}
+      rowSpan={rowSpan}
     >
       {children}
-    </Flex>
+    </GridItem>
   );
 };
 
-export type { BpkFlexProps };
+export type { BpkGridItemProps };
+

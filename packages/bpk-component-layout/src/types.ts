@@ -19,7 +19,14 @@
 import type { ReactNode } from 'react';
 
 import type { BpkCommonLayoutProps } from './commonProps';
-import type { BoxProps, FlexProps, GridProps} from '@chakra-ui/react';
+import type { BpkSpacingValue, BpkResponsiveValue } from './tokens';
+import type {
+  BoxProps,
+  FlexProps,
+  GridProps,
+  GridItemProps,
+} from '@chakra-ui/react';
+
 
 /**
  * Layout-level event props that should not be exposed on layout components
@@ -156,7 +163,16 @@ export interface BpkBoxProps extends BpkCommonLayoutProps, BpkBoxSpecificProps {
  * Component-specific props for BpkFlex
  * Includes all Flex props except those in BpkCommonLayoutProps
  */
-export interface BpkFlexSpecificProps extends RemoveCommonProps<FlexProps> {}
+export interface BpkFlexSpecificProps extends RemoveCommonProps<FlexProps> {
+  direction?: BpkResponsiveValue<FlexProps['flexDirection']>;
+  justify?: BpkResponsiveValue<FlexProps['justifyContent']>;
+  align?: BpkResponsiveValue<FlexProps['alignItems']>;
+  wrap?: BpkResponsiveValue<FlexProps['flexWrap']>;
+  grow?: BpkResponsiveValue<FlexProps['flexGrow']>;
+  shrink?: BpkResponsiveValue<FlexProps['flexShrink']>;
+  basis?: BpkResponsiveValue<FlexProps['flexBasis']>;
+  inline?: boolean;
+}
 
 /**
  * Props for BpkFlex component
@@ -170,7 +186,21 @@ export interface BpkFlexProps extends BpkCommonLayoutProps, BpkFlexSpecificProps
  * Component-specific props for BpkGrid
  * Includes all Grid props except those in BpkCommonLayoutProps
  */
-export interface BpkGridSpecificProps extends RemoveCommonProps<GridProps> {}
+export interface BpkGridSpecificProps extends RemoveCommonProps<GridProps> {
+  justify?: BpkResponsiveValue<GridProps['justifyContent']>;
+  align?: BpkResponsiveValue<GridProps['alignItems']>;
+  templateColumns?: BpkResponsiveValue<GridProps['gridTemplateColumns']>;
+  templateRows?: BpkResponsiveValue<GridProps['gridTemplateRows']>;
+  templateAreas?: BpkResponsiveValue<GridProps['gridTemplateAreas']>;
+  autoFlow?: BpkResponsiveValue<GridProps['gridAutoFlow']>;
+  autoRows?: BpkResponsiveValue<GridProps['gridAutoRows']>;
+  autoColumns?: BpkResponsiveValue<GridProps['gridAutoColumns']>;
+  rowGap?: BpkResponsiveValue<BpkSpacingValue>;
+  columnGap?: BpkResponsiveValue<BpkSpacingValue>;
+  column?: BpkResponsiveValue<GridProps['gridColumn']>;
+  row?: BpkResponsiveValue<GridProps['gridRow']>;
+  inline?: boolean;
+}
 
 /**
  * Props for BpkGrid component
@@ -180,4 +210,28 @@ export interface BpkGridProps extends BpkCommonLayoutProps, BpkGridSpecificProps
   children?: ReactNode;
 }
 
+/**
+ * Component-specific props for BpkGridItem
+ * Includes all GridItem props except those in BpkCommonLayoutProps
+ */
+export interface BpkGridItemSpecificProps
+  extends RemoveCommonProps<GridItemProps> {
+  area?: GridItemProps['area'];
+  colEnd?: GridItemProps['colEnd'];
+  colStart?: GridItemProps['colStart'];
+  colSpan?: GridItemProps['colSpan'];
+  rowEnd?: GridItemProps['rowEnd'];
+  rowStart?: GridItemProps['rowStart'];
+  rowSpan?: GridItemProps['rowSpan'];
+}
+
+/**
+ * Props for BpkGridItem component
+ * Combines GridItem-specific props with Backpack common layout props
+ */
+export interface BpkGridItemProps
+  extends BpkCommonLayoutProps,
+    BpkGridItemSpecificProps {
+  children?: ReactNode;
+}
 export type { BpkCommonLayoutProps };

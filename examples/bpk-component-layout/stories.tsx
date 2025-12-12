@@ -32,7 +32,7 @@ import {
 } from './examples';
 
 export default {
-  title: 'bpk-component-layout',
+  title: 'bpk-component-layout/Box',
   component: BpkBox,
   decorators: [
     (Story: any) => (
