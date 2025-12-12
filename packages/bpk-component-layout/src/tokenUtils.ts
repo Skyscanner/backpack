@@ -141,6 +141,30 @@ export function processResponsiveValue(
 }
 
 /**
+ * Validates a value to ensure it doesn't contain pixel values (string ending in 'px').
+ * Emits a warning in development mode if a pixel value is found.
+ *
+ * @param {any} value - The value to check
+ * @param {string} propName - The name of the prop being checked
+ * @returns {void}
+ */
+export function validateNoPixelValue(value: any, propName: string): void {
+  if (process.env.NODE_ENV === 'production' || typeof value !== 'string') {
+    return;
+  }
+
+  // Check if string ends with 'px' (case insensitive) and has numbers before it
+  // This avoids matching random text but catches "10px", "20.5px" etc.
+  if (/^\d+(\.\d+)?px$/i.test(value.trim())) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      `Pixel value "${value}" is not allowed for prop "${propName}". ` +
+      `Please use relative units (rem) or Backpack tokens instead.`
+    );
+  }
+}
+
+/**
  * Validates and converts spacing props for Chakra UI
  * Handles all spacing-related properties including padding, margin, gap, size, border radius and position
  *

@@ -128,7 +128,7 @@ export const BpkFlexItemExample = () => (
         </BpkBox>
       </BpkFlex>
       <BpkFlex
-        basis="200px"
+        basis="12.5rem"
         shrink={0}
         padding={BpkSpacing.MD}
         justify="center"

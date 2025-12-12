@@ -48,6 +48,11 @@ describe('BpkFlex', () => {
       </BpkProvider>,
     );
     expect(container.firstChild).toBeInTheDocument();
+    expect(container.firstChild).toHaveStyle('flex-direction: column');
+    expect(container.firstChild).toHaveStyle('justify-content: center');
+    expect(container.firstChild).toHaveStyle('align-items: center');
+    expect(container.firstChild).toHaveStyle('flex-wrap: wrap');
+    expect(container.firstChild).toHaveStyle(`gap: .5rem`);
   });
 
   it('supports responsive direction', () => {

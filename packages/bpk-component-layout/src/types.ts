@@ -166,9 +166,9 @@ export interface BpkFlexSpecificProps extends RemoveCommonProps<FlexProps> {
   justify?: BpkResponsiveValue<FlexProps['justifyContent']>;
   align?: BpkResponsiveValue<FlexProps['alignItems']>;
   wrap?: BpkResponsiveValue<FlexProps['flexWrap']>;
-  grow?: FlexProps['flexGrow'];
-  shrink?: FlexProps['flexShrink'];
-  basis?: FlexProps['flexBasis'];
+  grow?: BpkResponsiveValue<FlexProps['flexGrow']>;
+  shrink?: BpkResponsiveValue<FlexProps['flexShrink']>;
+  basis?: BpkResponsiveValue<FlexProps['flexBasis']>;
   inline?: boolean;
 }
 
@@ -195,8 +195,8 @@ export interface BpkGridSpecificProps extends RemoveCommonProps<GridProps> {
   autoColumns?: BpkResponsiveValue<GridProps['gridAutoColumns']>;
   rowGap?: BpkResponsiveValue<BpkSpacingValue>;
   columnGap?: BpkResponsiveValue<BpkSpacingValue>;
-  column?: GridProps['gridColumn'];
-  row?: GridProps['gridRow'];
+  column?: BpkResponsiveValue<GridProps['gridColumn']>;
+  row?: BpkResponsiveValue<GridProps['gridRow']>;
   inline?: boolean;
 }
 

@@ -18,7 +18,11 @@
 
 import { Flex } from '@chakra-ui/react';
 
-import { processBpkProps, processResponsiveProps } from './tokenUtils';
+import {
+  processBpkProps,
+  processResponsiveProps,
+  validateNoPixelValue,
+} from './tokenUtils';
 
 import type { BpkFlexProps } from './types';
 
@@ -36,12 +40,17 @@ export const BpkFlex = ({
 }: BpkFlexProps) => {
   const processedProps = processBpkProps(props);
 
+  validateNoPixelValue(basis, 'basis');
+
   const processedResponsiveProps = processResponsiveProps(
     {
       flexDirection: direction,
       justifyContent: justify,
       alignItems: align,
       flexWrap: wrap,
+      flexGrow: grow,
+      flexShrink: shrink,
+      flexBasis: basis,
     }
   );
 
@@ -49,9 +58,6 @@ export const BpkFlex = ({
     <Flex
       {...processedProps}
       {...processedResponsiveProps}
-      flexGrow={grow}
-      flexShrink={shrink}
-      flexBasis={basis}
       display={inline ? 'inline-flex' : undefined}
     >
       {children}

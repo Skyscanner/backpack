@@ -46,6 +46,8 @@ describe('BpkGridItem', () => {
     );
 
     expect(container.firstChild).toBeInTheDocument();
+    expect(container.firstChild).toHaveStyle('grid-column: span 2/span 2');
+    expect(container.firstChild).toHaveStyle('grid-row: span 3/span 3');
   });
 
   it('supports Backpack spacing tokens', () => {

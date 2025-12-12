@@ -42,5 +42,8 @@ describe('BpkGrid', () => {
       </BpkProvider>,
     );
     expect(container.firstChild).toBeInTheDocument();
+    expect(container.firstChild).toHaveStyle('justify-content: center');
+    expect(container.firstChild).toHaveStyle('align-items: center');
+    expect(container.firstChild).toHaveStyle(`gap: .5rem}`);
   });
 });
