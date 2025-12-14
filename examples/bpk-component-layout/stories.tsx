@@ -31,6 +31,8 @@ import {
   GridExample,
 } from './examples';
 
+import { LargeListPerfExample, DeepTreePerfExample } from './perfExamples';
+
 export default {
   title: 'bpk-component-layout/Box',
   component: BpkBox,
@@ -62,6 +64,9 @@ export const Responsive = () => <ResponsiveExample />;
 export const Position = () => <PositionExample />;
 export const Flex = () => <FlexExample />;
 export const Grid = () => <GridExample />;
+
+export const PerfLargeList = () => <LargeListPerfExample />;
+export const PerfDeepTree = () => <DeepTreePerfExample />;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {

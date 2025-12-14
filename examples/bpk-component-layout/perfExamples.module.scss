@@ -1,0 +1,85 @@
+@use '../../packages/bpk-mixins/tokens';
+@use '../../packages/bpk-mixins/typography';
+
+.bpk-layout-perf {
+  &__controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: tokens.bpk-spacing-sm();
+    align-items: center;
+    margin-bottom: tokens.bpk-spacing-base();
+  }
+
+  &__controls input {
+    @include typography.bpk-text-sm;
+    padding: tokens.bpk-spacing-sm();
+    border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+    border-radius: tokens.bpk-border-radius-sm();
+    min-width: 18rem;
+  }
+
+  &__button {
+    @include typography.bpk-button-default;
+    padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-base();
+    border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+    border-radius: tokens.bpk-border-radius-sm();
+    background: tokens.$bpk-canvas-day;
+    cursor: pointer;
+  }
+
+  &__button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &__note {
+    @include typography.bpk-text-sm;
+    color: tokens.$bpk-text-secondary-day;
+    margin: 0;
+  }
+
+  &__viewport {
+    height: 60vh;
+    overflow: auto;
+    border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+    border-radius: tokens.bpk-border-radius-sm();
+  }
+
+  &__spacer {
+    height: tokens.bpk-spacing-base();
+  }
+
+  &__row {
+    border-bottom: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+  }
+
+  &__rowInner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: tokens.bpk-spacing-sm();
+    padding: tokens.bpk-spacing-sm();
+  }
+
+  &__pill {
+    display: inline-block;
+    padding: tokens.bpk-spacing-none() tokens.bpk-spacing-sm();
+    border-radius: tokens.bpk-border-radius-pill();
+    border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+    white-space: nowrap;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: tokens.bpk-spacing-sm();
+    padding: tokens.bpk-spacing-sm();
+  }
+
+  &__gridCell {
+    border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+    border-radius: tokens.bpk-border-radius-sm();
+    padding: tokens.bpk-spacing-sm();
+  }
+}
+
+
