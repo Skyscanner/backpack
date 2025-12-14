@@ -52,6 +52,9 @@
     @include buttons.bpk-button--link;
     @include typography.bpk-link;
 
+    // override SVG display for link buttons
+    --bpk-button-svg-display: inline-block;
+
     &--implicit {
       @include typography.bpk-link--implicit;
     }
@@ -108,7 +111,7 @@
 
   /* stylelint-disable selector-max-compound-selectors */
   span > svg {
-    display: block;
+    display: var(--bpk-button-svg-display, block);
   }
 
   svg {
