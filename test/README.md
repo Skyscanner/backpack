@@ -11,6 +11,17 @@ Compared branches: `bpk-layout-PoC-control` (control) vs `CLOV-990` (candidate).
   - `test/bpk-layout-perf-CLOV-990-2025-12-14T17-58-26-555Z.jsonl`
   - `test/bpk-layout-perf-CLOV-990-2025-12-14T18-01-17-304Z.jsonl`
 
+### Benchmark scenarios and intent
+
+This dataset contains results for two layout-heavy benchmark scenarios:
+
+- **`large_list_scroll`**: simulates a “results list” style page (e.g. flight results) with many repeated layout compositions.
+  - **Goal**: evaluate how layout primitives behave under repeated rendering + scrolling in a list-heavy UI.
+  - **What it stresses**: runtime styling/prop resolution cost, style recalculation + layout during scroll, and worst-case jank/outliers.
+- **`deep_tree_scroll`**: simulates a deeply nested layout tree (e.g. marketing/landing pages with many nested containers).
+  - **Goal**: evaluate performance characteristics when layout nesting depth is high and updates propagate through a deep tree.
+  - **What it stresses**: style recalculation/layout amplification due to depth, and scroll/interaction stability under deep composition.
+
 ## Summary tables
 
 Notes:
