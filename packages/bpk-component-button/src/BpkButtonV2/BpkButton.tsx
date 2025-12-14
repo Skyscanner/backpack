@@ -53,6 +53,7 @@ export const BpkButtonV2 = ({
     iconOnly && size === SIZE_TYPES.large && 'bpk-button--large-icon-only',
     `bpk-button--${type}`,
     fullWidth && 'bpk-button--full-width',
+    isLinkType && iconOnly && 'bpk-button--link--icon-only',
     isLinkType && implicit && 'bpk-button--link--implicit',
     className,
   );

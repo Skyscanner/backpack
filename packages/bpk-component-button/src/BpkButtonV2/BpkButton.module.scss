@@ -55,6 +55,10 @@
     &--implicit {
       @include typography.bpk-link--implicit;
     }
+
+    &--icon-only {
+      @include buttons.bpk-button--link-aligned;
+    }
   }
 
   &--link-on-dark {
@@ -67,7 +71,7 @@
   }
 
   &--link-underlined {
-    @include typography.bpk-link-underlined;
+    @include buttons.bpk-button--link-underlined;
 
     &--implicit {
       @include typography.bpk-link-underlined--implicit;

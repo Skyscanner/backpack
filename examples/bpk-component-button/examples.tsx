@@ -37,6 +37,9 @@ import {
 
 import STYLES from './BpkButtonStory.module.scss';
 
+const RtlSmallLongArrowRightIcon = withRtlSupport(SmallLongArrowRightIcon);
+const RtlLargeLongArrowRightIcon = withRtlSupport(LargeLongArrowRightIcon);
+
 const AlignedSmallLongArrowRightIcon = withButtonAlignment(
   withRtlSupport(SmallLongArrowRightIcon),
 );
@@ -172,7 +175,7 @@ const LinkExample = (props: any) => (
     &nbsp;
     {/* Link with icon */}
     <BpkButtonV2 type={BUTTON_TYPES.link} onClick={action('Link clicked')} {...props}>
-      Button <AlignedSmallLongArrowRightIcon />
+      Button <RtlSmallLongArrowRightIcon />
     </BpkButtonV2>
     &nbsp;
     {/* Implicit Link */}
@@ -182,7 +185,7 @@ const LinkExample = (props: any) => (
     &nbsp;
     {/* Implicit Link with icon */}
     <BpkButtonV2 type={BUTTON_TYPES.link} implicit onClick={action('Link clicked')} {...props}>
-      Button <AlignedSmallLongArrowRightIcon />
+      Button <RtlSmallLongArrowRightIcon />
     </BpkButtonV2>
     &nbsp;
     {/* Disabled Link */}
@@ -197,17 +200,17 @@ const LinkExample = (props: any) => (
     &nbsp;
     {/* Large Link with icon */}
     <BpkButtonV2 type={BUTTON_TYPES.link} size={SIZE_TYPES.large} onClick={action('Link clicked')} {...props}>
-      Button <AlignedLargeLongArrowRightIcon />
+      Button <RtlLargeLongArrowRightIcon />
     </BpkButtonV2>
     &nbsp;
     {/* The iconOnly Link */}
     <BpkButtonV2 type={BUTTON_TYPES.link} iconOnly onClick={action('Link clicked')} aria-label="Icon link" {...props}>
-      <AlignedSmallLongArrowRightIcon />
+      <RtlSmallLongArrowRightIcon />
     </BpkButtonV2>
     &nbsp;
     {/* Large iconOnly Link */}
     <BpkButtonV2 type={BUTTON_TYPES.link} iconOnly size={SIZE_TYPES.large} onClick={action('Link clicked')} aria-label="Large icon link" {...props}>
-      <AlignedLargeLongArrowRightIcon />
+      <RtlLargeLongArrowRightIcon />
     </BpkButtonV2>
   </div>
 );
@@ -222,7 +225,7 @@ const LinkOnDarkExample = (props: any) => (
       &nbsp;
       {/* LinkOnDark with icon */}
       <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} onClick={action('Link clicked')} {...props}>
-        Button <AlignedSmallLongArrowRightIcon />
+        Button <RtlSmallLongArrowRightIcon />
       </BpkButtonV2>
       &nbsp;
       {/* Implicit LinkOnDark */}
@@ -232,7 +235,7 @@ const LinkOnDarkExample = (props: any) => (
       &nbsp;
       {/* Implicit LinkOnDark with icon */}
       <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit onClick={action('Link clicked')} {...props}>
-        Button <AlignedSmallLongArrowRightIcon />
+        Button <RtlSmallLongArrowRightIcon />
       </BpkButtonV2>
       &nbsp;
       {/* Disabled LinkOnDark */}
@@ -247,17 +250,17 @@ const LinkOnDarkExample = (props: any) => (
       &nbsp;
       {/* Large LinkOnDark with icon */}
       <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} size={SIZE_TYPES.large} onClick={action('Link clicked')} {...props}>
-        Button <AlignedLargeLongArrowRightIcon />
+        Button <RtlLargeLongArrowRightIcon />
       </BpkButtonV2>
       &nbsp;
       {/* The iconOnly LinkOnDark */}
       <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} iconOnly onClick={action('Link clicked')} aria-label="Icon link" {...props}>
-        <AlignedSmallLongArrowRightIcon />
+        <RtlSmallLongArrowRightIcon />
       </BpkButtonV2>
       &nbsp;
       {/* Large iconOnly LinkOnDark */}
       <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} iconOnly size={SIZE_TYPES.large} onClick={action('Link clicked')} aria-label="Large icon link" {...props}>
-        <AlignedLargeLongArrowRightIcon />
+        <RtlLargeLongArrowRightIcon />
       </BpkButtonV2>
     </div>
   </BpkDarkExampleWrapper>

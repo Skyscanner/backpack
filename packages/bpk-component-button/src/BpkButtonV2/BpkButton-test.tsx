@@ -237,5 +237,27 @@ describe('BpkButtonV2', () => {
       const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
       expect(underlinedSpan).toBeInTheDocument();
     });
+
+    it('should render correctly with link type and iconOnly', () => {
+      const { container } = render(
+        <BpkButtonV2 type={BUTTON_TYPES.link} iconOnly aria-label="Icon link">
+          <span>Icon</span>
+        </BpkButtonV2>,
+      );
+
+      const button = container.firstElementChild;
+      expect(button?.classList?.contains('bpk-button--icon-only')).toBe(true);
+    });
+
+    it('should render correctly with linkOnDark type and iconOnly', () => {
+      const { container } = render(
+        <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} iconOnly aria-label="Icon link">
+          <span>Icon</span>
+        </BpkButtonV2>,
+      );
+
+      const button = container.firstElementChild;
+      expect(button?.classList?.contains('bpk-button--icon-only')).toBe(true);
+    });
   });
 });
