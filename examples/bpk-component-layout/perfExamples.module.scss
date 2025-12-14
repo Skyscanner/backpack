@@ -1,5 +1,6 @@
 @use '../../packages/bpk-mixins/tokens';
 @use '../../packages/bpk-mixins/typography';
+@use '../../packages/bpk-mixins/radii';
 
 .bpk-layout-perf {
   &__controls {
@@ -14,15 +15,15 @@
     @include typography.bpk-text-sm;
     padding: tokens.bpk-spacing-sm();
     border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
-    border-radius: tokens.bpk-border-radius-sm();
+    @include radii.bpk-border-radius-sm;
     min-width: 18rem;
   }
 
   &__button {
-    @include typography.bpk-button-default;
+    @include typography.bpk-text-sm;
     padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-base();
     border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
-    border-radius: tokens.bpk-border-radius-sm();
+    @include radii.bpk-border-radius-sm;
     background: tokens.$bpk-canvas-day;
     cursor: pointer;
   }
@@ -42,7 +43,7 @@
     height: 60vh;
     overflow: auto;
     border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
-    border-radius: tokens.bpk-border-radius-sm();
+    @include radii.bpk-border-radius-sm;
   }
 
   &__spacer {
@@ -62,8 +63,9 @@
 
   &__pill {
     display: inline-block;
-    padding: tokens.bpk-spacing-none() tokens.bpk-spacing-sm();
-    border-radius: tokens.bpk-border-radius-pill();
+    padding: tokens.$bpk-spacing-none tokens.bpk-spacing-sm();
+    // No dedicated "pill" radius token; use XL for this benchmark UI.
+    @include radii.bpk-border-radius-xl;
     border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
     white-space: nowrap;
   }
@@ -77,7 +79,7 @@
 
   &__gridCell {
     border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
-    border-radius: tokens.bpk-border-radius-sm();
+    @include radii.bpk-border-radius-sm;
     padding: tokens.bpk-spacing-sm();
   }
 }
