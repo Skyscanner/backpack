@@ -16,9 +16,8 @@
  * limitations under the License.
  */
 
-import { Grid } from '@chakra-ui/react';
-
-import { processBpkProps, processResponsiveProps } from './tokenUtils';
+import { BpkBox } from './BpkBox';
+import { processResponsiveProps } from './tokenUtils';
 
 import type { BpkGridProps } from './types';
 
@@ -29,40 +28,41 @@ export const BpkGrid = ({
   autoRows,
   children,
   column,
+  columnGap,
   inline,
   justify,
   row,
+  rowGap,
   templateAreas,
   templateColumns,
   templateRows,
   ...props
 }: BpkGridProps) => {
-  const processedProps = processBpkProps(props);
-
-  const processedResponsiveProps = processResponsiveProps(
-    {
-      justifyContent: justify,
-      alignItems: align,
-      gridTemplateColumns: templateColumns,
-      gridTemplateRows: templateRows,
-      gridTemplateAreas: templateAreas,
-      gridAutoFlow: autoFlow,
-      gridAutoRows: autoRows,
-      gridAutoColumns: autoColumns,
-      gridColumn: column,
-      gridRow: row,
-    }
-  );
+  const responsiveGridProps = processResponsiveProps({
+    justifyContent: justify,
+    alignItems: align,
+    gridTemplateColumns: templateColumns,
+    gridTemplateRows: templateRows,
+    gridTemplateAreas: templateAreas,
+    gridAutoFlow: autoFlow,
+    gridAutoRows: autoRows,
+    gridAutoColumns: autoColumns,
+    gridColumn: column,
+    gridRow: row,
+    rowGap,
+    columnGap,
+  });
 
   return (
-    <Grid
-      {...processedProps}
-      {...processedResponsiveProps}
-      display={inline ? 'inline-grid' : undefined}
+    <BpkBox
+      display={inline ? 'inline-grid' : 'grid'}
+      {...responsiveGridProps}
+      {...props}
     >
       {children}
-    </Grid>
+    </BpkBox>
   );
 };
 
+export default BpkGrid;
 export type { BpkGridProps };

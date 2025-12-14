@@ -34,6 +34,14 @@ const PROP_TO_VAR: Record<string, string> = {
   flexDirection: '--bpk-flex-dir',
   justifyContent: '--bpk-jc',
   alignItems: '--bpk-ai',
+  alignContent: '--bpk-ac',
+  flexWrap: '--bpk-flex-wrap',
+  flexGrow: '--bpk-flex-grow',
+  flexShrink: '--bpk-flex-shrink',
+  flexBasis: '--bpk-flex-basis',
+  order: '--bpk-order',
+  alignSelf: '--bpk-align-self',
+  justifySelf: '--bpk-justify-self',
 
   // Size
   width: '--bpk-w',
@@ -45,6 +53,18 @@ const PROP_TO_VAR: Record<string, string> = {
   right: '--bpk-right',
   bottom: '--bpk-bottom',
   left: '--bpk-left',
+
+  // Grid
+  gridTemplateColumns: '--bpk-grid-tc',
+  gridTemplateRows: '--bpk-grid-tr',
+  gridTemplateAreas: '--bpk-grid-ta',
+  gridAutoFlow: '--bpk-grid-af',
+  gridAutoRows: '--bpk-grid-ar',
+  gridAutoColumns: '--bpk-grid-ac',
+  gridColumn: '--bpk-grid-col',
+  gridRow: '--bpk-grid-row',
+  rowGap: '--bpk-row-gap',
+  columnGap: '--bpk-col-gap',
 };
 
 const isScalarValue = (value: unknown): value is string | number => (

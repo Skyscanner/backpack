@@ -7,12 +7,32 @@
   padding-bottom: var(--bpk-pb, var(--bpk-py, initial));
   margin: var(--bpk-m, initial);
   gap: var(--bpk-gap, initial);
+  row-gap: var(--bpk-row-gap, var(--bpk-gap, initial));
+  column-gap: var(--bpk-col-gap, var(--bpk-gap, initial));
 
   /* Flex */
   display: var(--bpk-display, initial);
   flex-direction: var(--bpk-flex-dir, initial);
   justify-content: var(--bpk-jc, initial);
   align-items: var(--bpk-ai, initial);
+  align-content: var(--bpk-ac, initial);
+  flex-wrap: var(--bpk-flex-wrap, initial);
+  flex-grow: var(--bpk-flex-grow, initial);
+  flex-shrink: var(--bpk-flex-shrink, initial);
+  flex-basis: var(--bpk-flex-basis, initial);
+  order: var(--bpk-order, initial);
+  align-self: var(--bpk-align-self, initial);
+  justify-self: var(--bpk-justify-self, initial);
+
+  /* Grid */
+  grid-template-columns: var(--bpk-grid-tc, initial);
+  grid-template-rows: var(--bpk-grid-tr, initial);
+  grid-template-areas: var(--bpk-grid-ta, initial);
+  grid-auto-flow: var(--bpk-grid-af, initial);
+  grid-auto-rows: var(--bpk-grid-ar, initial);
+  grid-auto-columns: var(--bpk-grid-ac, initial);
+  grid-column: var(--bpk-grid-col, initial);
+  grid-row: var(--bpk-grid-row, initial);
 
   /* Size */
   width: var(--bpk-w, initial);

@@ -16,25 +16,52 @@
  * limitations under the License.
  */
 
-import { Stack, VStack, HStack } from '@chakra-ui/react';
-
-import { processBpkStackProps } from './BpkStack.tokenUtils';
+import { BpkBox } from './BpkBox';
+import { processResponsiveProps } from './tokenUtils';
+import { BpkSpacing } from './tokens';
 
 import type { BpkStackProps } from './BpkStack.types';
 
-export const BpkStack = ({ children, ...props }: BpkStackProps) => {
-  const processedProps = processBpkStackProps(props);
-  return <Stack {...processedProps}>{children}</Stack>;
+const renderStack = (
+  props: BpkStackProps,
+  directionOverride?: 'row' | 'column'
+) => {
+  const {
+    align,
+    children,
+    direction = 'column',
+    inline,
+    justify,
+    spacing = BpkSpacing.MD,
+    wrap,
+    ...rest
+  } = props;
+
+  const responsiveProps = processResponsiveProps({
+    flexDirection: directionOverride ?? direction,
+    justifyContent: justify,
+    alignItems: align,
+    flexWrap: wrap,
+  });
+
+  return (
+    <BpkBox
+      display={inline ? 'inline-flex' : 'flex'}
+      gap={spacing}
+      {...responsiveProps}
+      {...rest}
+    >
+      {children}
+    </BpkBox>
+  );
 };
 
-export const BpkHStack = ({ children, ...props }: BpkStackProps) => {
-  const processedProps = processBpkStackProps(props);
-  return <HStack {...processedProps}>{children}</HStack>;
-};
+export const BpkStack = (props: BpkStackProps) => renderStack(props);
 
-export const BpkVStack = ({ children, ...props }: BpkStackProps) => {
-  const processedProps = processBpkStackProps(props);
-  return <VStack {...processedProps}>{children}</VStack>;
-};
+export const BpkHStack = (props: BpkStackProps) =>
+  renderStack(props, 'row');
+
+export const BpkVStack = (props: BpkStackProps) =>
+  renderStack(props, 'column');
 
 export type { BpkStackProps };

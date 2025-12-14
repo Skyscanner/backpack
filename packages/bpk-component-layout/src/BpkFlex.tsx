@@ -16,13 +16,8 @@
  * limitations under the License.
  */
 
-import { Flex } from '@chakra-ui/react';
-
-import {
-  processBpkProps,
-  processResponsiveProps,
-  validateNoPixelValue,
-} from './tokenUtils';
+import { BpkBox } from './BpkBox';
+import { processResponsiveProps, validateNoPixelValue } from './tokenUtils';
 
 import type { BpkFlexProps } from './types';
 
@@ -38,31 +33,28 @@ export const BpkFlex = ({
   wrap,
   ...props
 }: BpkFlexProps) => {
-  const processedProps = processBpkProps(props);
-
   validateNoPixelValue(basis, 'basis');
 
-  const processedResponsiveProps = processResponsiveProps(
-    {
-      flexDirection: direction,
-      justifyContent: justify,
-      alignItems: align,
-      flexWrap: wrap,
-      flexGrow: grow,
-      flexShrink: shrink,
-      flexBasis: basis,
-    }
-  );
+  const responsiveFlexProps = processResponsiveProps({
+    flexDirection: direction,
+    justifyContent: justify,
+    alignItems: align,
+    flexWrap: wrap,
+    flexGrow: grow,
+    flexShrink: shrink,
+    flexBasis: basis,
+  });
 
   return (
-    <Flex
-      {...processedProps}
-      {...processedResponsiveProps}
-      display={inline ? 'inline-flex' : undefined}
+    <BpkBox
+      display={inline ? 'inline-flex' : 'flex'}
+      {...responsiveFlexProps}
+      {...props}
     >
       {children}
-    </Flex>
+    </BpkBox>
   );
 };
 
+export default BpkFlex;
 export type { BpkFlexProps };
