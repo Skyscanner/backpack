@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { memo, useEffect, useMemo, useRef, useState } from 'react';
 
 import {
   BpkBox,
@@ -32,17 +32,32 @@ type AutorunParams = {
   clear: boolean;
   download: boolean;
   label?: string;
+  // Optional scenario overrides (keep the page responsive by default).
+  rows?: number;
+  nestedDepth?: number;
+  branches?: number;
+  depth?: number;
 };
 
 const parseAutorunParams = (): AutorunParams => {
   const params = new URLSearchParams(window.location.search);
+  const parseIntParam = (key: string): number | undefined => {
+    const raw = params.get(key);
+    if (!raw) return undefined;
+    const n = Number.parseInt(raw, 10);
+    return Number.isFinite(n) ? n : undefined;
+  };
   const autorunRaw = params.get('autorun');
   const autorun = autorunRaw === '1' || autorunRaw === 'true';
   const runs = Math.max(0, Number.parseInt(params.get('runs') || '0', 10) || 0);
   const clear = (params.get('clear') || '') === '1' || (params.get('clear') || '') === 'true';
   const download = (params.get('download') || '') === '1' || (params.get('download') || '') === 'true';
   const label = params.get('label') || undefined;
-  return { autorun, runs, clear, download, label };
+  const rows = parseIntParam('rows');
+  const nestedDepth = parseIntParam('nestedDepth');
+  const branches = parseIntParam('branches');
+  const depth = parseIntParam('depth');
+  return { autorun, runs, clear, download, label, rows, nestedDepth, branches, depth };
 };
 
 const safeParseJson = <T,>(raw: string | null, fallback: T): T => {
@@ -106,6 +121,17 @@ type LargeListPerfOptions = {
 };
 
 const DEFAULT_LARGE_LIST_OPTS: LargeListPerfOptions = {
+  // Keep default light enough that Storybook remains responsive on load.
+  rows: 300,
+  nestedDepth: 3,
+  scrollMs: 4000,
+  scrollStepPx: 48,
+  toggleEvery: 10,
+  iterations: 5,
+  warmupIterations: 1,
+};
+
+const HEAVY_LARGE_LIST_OPTS: LargeListPerfOptions = {
   rows: 1500,
   nestedDepth: 6,
   scrollMs: 8000,
@@ -124,6 +150,14 @@ type DeepTreePerfOptions = {
 };
 
 const DEFAULT_DEEP_TREE_OPTS: DeepTreePerfOptions = {
+  branches: 6,
+  depth: 40,
+  scrollMs: 4000,
+  iterations: 5,
+  warmupIterations: 1,
+};
+
+const HEAVY_DEEP_TREE_OPTS: DeepTreePerfOptions = {
   branches: 12,
   depth: 80,
   scrollMs: 8000,
@@ -131,7 +165,7 @@ const DEFAULT_DEEP_TREE_OPTS: DeepTreePerfOptions = {
   warmupIterations: 2,
 };
 
-const NestedRow = ({
+const NestedRowImpl = ({
   index,
   depth,
   expanded,
@@ -207,6 +241,8 @@ const NestedRow = ({
     </div>
   );
 };
+
+const NestedRow = memo(NestedRowImpl);
 
 const usePerfApi = (
   api: WindowWithPerf['__bpkLayoutPerf'],
@@ -318,7 +354,15 @@ export const LargeListPerfExample = () => {
   runRef.current = run;
 
   useEffect(() => {
-    const { autorun, runs, clear, download, label: labelFromUrl } = parseAutorunParams();
+    const {
+      autorun,
+      runs,
+      clear,
+      download,
+      label: labelFromUrl,
+      rows: rowsFromUrl,
+      nestedDepth: nestedDepthFromUrl,
+    } = parseAutorunParams();
     if (labelFromUrl && labelFromUrl !== label) {
       setLabel(labelFromUrl);
       localStorage.setItem(LABEL_KEY, JSON.stringify(labelFromUrl));
@@ -330,7 +374,16 @@ export const LargeListPerfExample = () => {
     (async () => {
       // Let the UI mount and settle before running.
       await waitForNextFrame(3);
-      for (let i = 0; i < runs; i += 1) {
+      const overrides: Partial<LargeListPerfOptions> = {};
+      if (typeof rowsFromUrl === 'number' && rowsFromUrl > 0) overrides.rows = rowsFromUrl;
+      if (typeof nestedDepthFromUrl === 'number' && nestedDepthFromUrl >= 0) overrides.nestedDepth = nestedDepthFromUrl;
+
+      // First run applies overrides (if any).
+      if (runs >= 1) {
+        // eslint-disable-next-line no-await-in-loop
+        await runRef.current(overrides);
+      }
+      for (let i = 1; i < runs; i += 1) {
         if (cancelled) return;
         // eslint-disable-next-line no-await-in-loop
         await runRef.current();
@@ -381,6 +434,28 @@ export const LargeListPerfExample = () => {
           }}
           placeholder="label (e.g. bpk-layout-PoC-control)"
         />
+        <button
+          type="button"
+          className={STYLES['bpk-layout-perf__button']}
+          disabled={busy}
+          onClick={() => {
+            setExpandedMap({});
+            setOpts(DEFAULT_LARGE_LIST_OPTS);
+          }}
+        >
+          Preset: light
+        </button>
+        <button
+          type="button"
+          className={STYLES['bpk-layout-perf__button']}
+          disabled={busy}
+          onClick={() => {
+            setExpandedMap({});
+            setOpts(HEAVY_LARGE_LIST_OPTS);
+          }}
+        >
+          Preset: heavy
+        </button>
         <button
           type="button"
           className={STYLES['bpk-layout-perf__button']}
@@ -541,7 +616,15 @@ export const DeepTreePerfExample = () => {
   runRef.current = run;
 
   useEffect(() => {
-    const { autorun, runs, clear, download, label: labelFromUrl } = parseAutorunParams();
+    const {
+      autorun,
+      runs,
+      clear,
+      download,
+      label: labelFromUrl,
+      branches: branchesFromUrl,
+      depth: depthFromUrl,
+    } = parseAutorunParams();
     if (labelFromUrl && labelFromUrl !== label) {
       setLabel(labelFromUrl);
       localStorage.setItem(LABEL_KEY, JSON.stringify(labelFromUrl));
@@ -552,7 +635,15 @@ export const DeepTreePerfExample = () => {
     let cancelled = false;
     (async () => {
       await waitForNextFrame(3);
-      for (let i = 0; i < runs; i += 1) {
+      const overrides: Partial<DeepTreePerfOptions> = {};
+      if (typeof branchesFromUrl === 'number' && branchesFromUrl > 0) overrides.branches = branchesFromUrl;
+      if (typeof depthFromUrl === 'number' && depthFromUrl > 0) overrides.depth = depthFromUrl;
+
+      if (runs >= 1) {
+        // eslint-disable-next-line no-await-in-loop
+        await runRef.current(overrides);
+      }
+      for (let i = 1; i < runs; i += 1) {
         if (cancelled) return;
         // eslint-disable-next-line no-await-in-loop
         await runRef.current();
@@ -602,6 +693,28 @@ export const DeepTreePerfExample = () => {
           }}
           placeholder="label (e.g. CLOV-990)"
         />
+        <button
+          type="button"
+          className={STYLES['bpk-layout-perf__button']}
+          disabled={busy}
+          onClick={() => {
+            setExpanded(false);
+            setOpts(DEFAULT_DEEP_TREE_OPTS);
+          }}
+        >
+          Preset: light
+        </button>
+        <button
+          type="button"
+          className={STYLES['bpk-layout-perf__button']}
+          disabled={busy}
+          onClick={() => {
+            setExpanded(false);
+            setOpts(HEAVY_DEEP_TREE_OPTS);
+          }}
+        >
+          Preset: heavy
+        </button>
         <button
           type="button"
           className={STYLES['bpk-layout-perf__button']}
