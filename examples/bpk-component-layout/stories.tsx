@@ -18,7 +18,14 @@
 
 import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
-import { BpkProvider, BpkBox } from '../../packages/bpk-component-layout';
+import {
+  BpkBox,
+  BpkFlex,
+  BpkGrid,
+  BpkGridItem,
+  BpkProvider,
+  BpkStack,
+} from '../../packages/bpk-component-layout';
 
 import {
   SpacingExample,
@@ -29,18 +36,24 @@ import {
   PositionExample,
   FlexExample,
   GridExample,
+  FlexComponentExample,
+  GridComponentExample,
+  GridItemComponentExample,
+  StackComponentExample,
+  HStackComponentExample,
+  VStackComponentExample,
 } from './examples';
 
 export default {
-  title: 'bpk-component-layout/Box',
+  title: 'bpk-component-layout',
   component: BpkBox,
-  decorators: [
-    (Story: any) => (
-      <BpkProvider>
-        <Story />
-      </BpkProvider>
-    ),
-  ],
+  subcomponents: {
+    BpkProvider,
+    BpkFlex,
+    BpkGrid,
+    BpkGridItem,
+    BpkStack,
+  },
   parameters: {
     docs: {
       page: () => (
@@ -55,13 +68,44 @@ export default {
     },
   },
 };
-export const Spacing = () => <SpacingExample />;
-export const RtlSpacing = () => <RtlSpacingExample />;
-export const Size = () => <SizeExample />;
-export const Responsive = () => <ResponsiveExample />;
-export const Position = () => <PositionExample />;
-export const Flex = () => <FlexExample />;
-export const Grid = () => <GridExample />;
+export const BoxSpacing = () => <SpacingExample />;
+BoxSpacing.storyName = 'Box/Spacing';
+
+export const BoxRtlSpacing = () => <RtlSpacingExample />;
+BoxRtlSpacing.storyName = 'Box/RTL spacing';
+
+export const BoxSize = () => <SizeExample />;
+BoxSize.storyName = 'Box/Size';
+
+export const BoxResponsive = () => <ResponsiveExample />;
+BoxResponsive.storyName = 'Box/Responsive';
+
+export const BoxPosition = () => <PositionExample />;
+BoxPosition.storyName = 'Box/Position';
+
+export const BoxFlex = () => <FlexExample />;
+BoxFlex.storyName = 'Box/Flex (via Box)';
+
+export const BoxGrid = () => <GridExample />;
+BoxGrid.storyName = 'Box/Grid (via Box)';
+
+export const FlexBasic = () => <FlexComponentExample />;
+FlexBasic.storyName = 'Flex/Basic';
+
+export const GridBasic = () => <GridComponentExample />;
+GridBasic.storyName = 'Grid/Basic';
+
+export const GridItem = () => <GridItemComponentExample />;
+GridItem.storyName = 'Grid/GridItem';
+
+export const StackBasic = () => <StackComponentExample />;
+StackBasic.storyName = 'Stack/Basic';
+
+export const StackH = () => <HStackComponentExample />;
+StackH.storyName = 'Stack/HStack';
+
+export const StackV = () => <VStackComponentExample />;
+StackV.storyName = 'Stack/VStack';
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {

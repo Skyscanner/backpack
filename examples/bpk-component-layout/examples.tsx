@@ -23,6 +23,12 @@ import {
   BpkBox,
   BpkProvider,
   BpkSpacing,
+  BpkFlex,
+  BpkGrid,
+  BpkGridItem,
+  BpkStack,
+  BpkHStack,
+  BpkVStack,
 } from '../../packages/bpk-component-layout';
 
 import STYLES from './examples.module.scss';
@@ -235,5 +241,162 @@ export const GridExample = () => (
         </span>
       </BpkBox>
     </BpkBox>
+  </Wrapper>
+);
+
+/**
+ * Flex component example – demonstrates using BpkFlex directly.
+ */
+export const FlexComponentExample = () => (
+  <Wrapper>
+    <BpkFlex
+      direction="row"
+      justify="space-between"
+      gap={BpkSpacing.MD}
+      padding={BpkSpacing.MD}
+    >
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Flex item 1
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Flex item 2
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Flex item 3
+        </span>
+      </BpkBox>
+    </BpkFlex>
+  </Wrapper>
+);
+
+/**
+ * Grid component example – demonstrates using BpkGrid directly.
+ */
+export const GridComponentExample = () => (
+  <Wrapper>
+    <BpkGrid
+      templateColumns="repeat(3, minmax(0, 1fr))"
+      gap={BpkSpacing.MD}
+      padding={BpkSpacing.MD}
+    >
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Grid cell 1
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Grid cell 2
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Grid cell 3
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Grid cell 4
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Grid cell 5
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Grid cell 6
+        </span>
+      </BpkBox>
+    </BpkGrid>
+  </Wrapper>
+);
+
+/**
+ * Grid item example – demonstrates using BpkGridItem inside BpkGrid.
+ */
+export const GridItemComponentExample = () => (
+  <Wrapper>
+    <BpkGrid
+      templateColumns="repeat(3, minmax(0, 1fr))"
+      gap={BpkSpacing.MD}
+      padding={BpkSpacing.MD}
+    >
+      <BpkGridItem colSpan={2}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          GridItem colSpan=2
+        </span>
+      </BpkGridItem>
+      <BpkGridItem>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          GridItem
+        </span>
+      </BpkGridItem>
+      <BpkGridItem colSpan={3}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          GridItem colSpan=3
+        </span>
+      </BpkGridItem>
+    </BpkGrid>
+  </Wrapper>
+);
+
+/**
+ * Stack component examples – demonstrates using BpkStack/HStack/VStack directly.
+ */
+export const StackComponentExample = () => (
+  <Wrapper>
+    <BpkStack gap={BpkSpacing.MD} padding={BpkSpacing.MD}>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Stack item 1
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          Stack item 2
+        </span>
+      </BpkBox>
+    </BpkStack>
+  </Wrapper>
+);
+
+export const HStackComponentExample = () => (
+  <Wrapper>
+    <BpkHStack gap={BpkSpacing.MD} padding={BpkSpacing.MD}>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          HStack item 1
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          HStack item 2
+        </span>
+      </BpkBox>
+    </BpkHStack>
+  </Wrapper>
+);
+
+export const VStackComponentExample = () => (
+  <Wrapper>
+    <BpkVStack gap={BpkSpacing.MD} padding={BpkSpacing.MD}>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          VStack item 1
+        </span>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <span className={STYLES['bpk-layout-examples__outline']}>
+          VStack item 2
+        </span>
+      </BpkBox>
+    </BpkVStack>
   </Wrapper>
 );
