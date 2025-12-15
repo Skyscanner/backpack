@@ -23,7 +23,7 @@ import {
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
 
-import { Wrapper } from './examples';
+import { Wrapper } from './layout-wrapper';
 
 import STYLES from './examples.module.scss';
 
@@ -98,7 +98,7 @@ export const BpkGridWithItemExample = () => (
       templateColumns="repeat(5, 1fr)"
       gap={BpkSpacing.MD}
       padding={BpkSpacing.MD}
-      minHeight="200px"
+      minHeight="12.5rem"
     >
       <BpkGridItem
         rowSpan={2}

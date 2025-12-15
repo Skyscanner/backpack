@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
-
 import type { ReactNode } from 'react';
 import { useState } from 'react';
+
+import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
 import { BpkProvider, BpkBox, BpkSpacing } from '../../packages/bpk-component-layout';
 
@@ -33,19 +33,13 @@ const Tabs = ({
 
   return (
     <div>
-      <div style={{ display: 'flex', gap: 8, marginBottom: 12, flexWrap: 'wrap' }}>
+      <div>
         {tabs.map((t) => (
           <button
             key={t.id}
             type="button"
             onClick={() => setActiveId(t.id)}
-            style={{
-              padding: '6px 10px',
-              borderRadius: 6,
-              border: '1px solid #d9d9d9',
-              background: t.id === activeId ? '#f3f3f3' : 'white',
-              cursor: 'pointer',
-            }}
+            aria-pressed={t.id === activeId}
           >
             {t.label}
           </button>

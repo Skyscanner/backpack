@@ -29,7 +29,7 @@ import {
   FlexExample,
   GridExample,
   MixedExample,
-} from './examples';
+} from './box-examples';
 
 export default {
   title: 'bpk-component-layout/Box',
