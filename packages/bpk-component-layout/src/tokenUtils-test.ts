@@ -16,7 +16,12 @@
  * limitations under the License.
  */
 
-import { convertBpkSpacingToChakra, processBpkProps, processResponsiveProps } from './tokenUtils';
+import {
+  convertBpkSpacingToChakra,
+  processBpkComponentProps,
+  processBpkProps,
+  processResponsiveProps,
+} from './tokenUtils';
 import { BpkSpacing } from './tokens';
 
 describe('processBpkProps', () => {
@@ -127,6 +132,22 @@ describe('processBpkProps', () => {
       flexDirection: { md: 'column', xl: 'row' },
       gridTemplateColumns: { xl: 'repeat(2, 1fr)', '2xl': 'repeat(4, 1fr)' },
     });
+  });
+
+  it('does not let allowlisted Box layout props fall through unprocessed (e.g. array responsive values)', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    const result = processBpkComponentProps(
+      {
+        // Chakra array syntax is intentionally not supported in the public API.
+        display: ['flex', 'grid'],
+      } as any,
+      { component: 'BpkBox' },
+    );
+
+    expect(result.display).toBeUndefined();
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
   });
 
   it('removes array-based responsive values and warns in non-production', () => {

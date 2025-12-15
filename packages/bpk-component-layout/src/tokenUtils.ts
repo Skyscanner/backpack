@@ -155,6 +155,15 @@ export function processBpkComponentProps<T extends Record<string, any>>(
     return processed;
   }
 
+  // Ensure allowlisted layout props do NOT fall through unprocessed (e.g. array responsive values).
+  // These props must be provided via the responsive processing pipeline only.
+  const cleanedProcessed: Record<string, any> = { ...processed };
+  allowlist.forEach((key) => {
+    if (key in cleanedProcessed) {
+      delete cleanedProcessed[key];
+    }
+  });
+
   const responsiveProcessed = processResponsiveProps(
     responsiveSource,
     options.propNameMap,
@@ -167,7 +176,7 @@ export function processBpkComponentProps<T extends Record<string, any>>(
     }
   });
 
-  return { ...processed, ...responsiveProcessed };
+  return { ...cleanedProcessed, ...responsiveProcessed };
 }
 
 /**
