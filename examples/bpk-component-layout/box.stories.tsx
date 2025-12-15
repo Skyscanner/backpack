@@ -28,7 +28,6 @@ import {
   PositionExample,
   FlexExample,
   GridExample,
-  MixedExample,
 } from './box-examples';
 
 export default {
@@ -64,13 +63,5 @@ export const Responsive = () => <ResponsiveExample />;
 export const Position = () => <PositionExample />;
 export const FlexViaBox = () => <FlexExample />;
 export const GridViaBox = () => <GridExample />;
-
-export const VisualTest = MixedExample;
-export const VisualTestWithZoom = {
-  render: VisualTest,
-  args: {
-    zoomEnabled: true,
-  },
-};
 
 

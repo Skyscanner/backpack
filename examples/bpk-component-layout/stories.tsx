@@ -16,126 +16,107 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
-import { useState } from 'react';
+import {
+  BpkBox,
+  BpkFlex,
+  BpkGrid,
+  BpkGridItem,
+  BpkProvider,
+  BpkStack,
+} from '../../packages/bpk-component-layout';
 
-import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
-
-import { BpkProvider, BpkBox, BpkSpacing } from '../../packages/bpk-component-layout';
-
-const Tabs = ({
-  tabs,
-}: {
-  tabs: Array<{ id: string; label: string; content: ReactNode }>;
-}) => {
-  const [activeId, setActiveId] = useState(tabs[0]?.id ?? '');
-  const active = tabs.find((t) => t.id === activeId) ?? tabs[0];
-
-  return (
-    <div>
-      <div>
-        {tabs.map((t) => (
-          <button
-            key={t.id}
-            type="button"
-            onClick={() => setActiveId(t.id)}
-            aria-pressed={t.id === activeId}
-          >
-            {t.label}
-          </button>
-        ))}
-      </div>
-      <div>{active?.content}</div>
-    </div>
-  );
-};
+import {
+  FlexExample,
+  GridExample,
+  PositionExample,
+  ResponsiveExample,
+  RtlSpacingExample,
+  SizeExample,
+  SpacingExample,
+} from './box-examples';
+import {
+  BpkFlexDirectionExample,
+  BpkFlexExample,
+  BpkFlexInlineExample,
+  BpkFlexItemExample,
+  BpkFlexResponsiveExample,
+  BpkFlexWrapExample,
+} from './flex-examples';
+import {
+  BpkGridExample,
+  BpkGridResponsiveExample,
+  BpkGridSpanExample,
+  BpkGridWithItemExample,
+} from './grid-examples';
+import {
+  HStackExample,
+  HorizontalButtonsExample,
+  NestedStackExample,
+  ResponsiveDirectionExample,
+  StackDefaultExample,
+  StackHorizontalExample,
+  VStackExample,
+  VerticalContentBlocksExample,
+} from './stack-examples';
 
 export default {
   title: 'bpk-component-layout',
   component: BpkProvider,
+  subcomponents: {
+    BpkBox,
+    BpkFlex,
+    BpkGrid,
+    BpkGridItem,
+    BpkStack,
+  },
   parameters: {
     docs: {
-      page: () => (
-        <>
-          <Title />
-          <ArgTypes exclude={['zoomEnabled']} />
-          <Tabs
-            tabs={[
-              {
-                id: 'overview',
-                label: 'Overview',
-                content: (
-                  <Markdown>
-                    {`BpkProvider is the root provider for Backpack layout primitives.
-
-Wrap your app (or Storybook) with \`BpkProvider\` so layout tokens and responsive values resolve correctly.`}
-                  </Markdown>
-                ),
-              },
-              {
-                id: 'usage',
-                label: 'Usage',
-                content: (
-                  <Markdown>
-                    {`Typical usage:
-
-\`\`\`tsx
-import { BpkProvider, BpkBox, BpkSpacing } from '@skyscanner/backpack-web/bpk-component-layout';
-
-export function App() {
-  return (
-    <BpkProvider>
-      <BpkBox padding={BpkSpacing.MD}>Hello</BpkBox>
-    </BpkProvider>
-  );
-}
-\`\`\``}
-                  </Markdown>
-                ),
-              },
-              {
-                id: 'responsive',
-                label: 'Responsive',
-                content: (
-                  <Markdown>
-                    {`Responsive values are keyed by Backpack breakpoints (object form only). Arrays are intentionally not supported.
-
-\`\`\`tsx
-<BpkBox
-  padding={{
-    mobile: BpkSpacing.SM,
-    tablet: BpkSpacing.MD,
-    desktop: BpkSpacing.LG,
-  }}
-/>
-\`\`\``}
-                  </Markdown>
-                ),
-              },
-              {
-                id: 'constraints',
-                label: 'Constraints',
-                content: (
-                  <Markdown>
-                    {`These layout primitives are intentionally structural:
-
-- Spacing values: Backpack spacing tokens or percentages
-- No \`className\` / \`style\` on layout primitives
-- Visual props (colors/borders/shadows) are not part of the public layout surface`}
-                  </Markdown>
-                ),
-              },
-            ]}
-          />
-        </>
-      )
+      // Use Storybook's default docs rendering.
+      page: undefined,
     },
   },
 };
-export const ProviderExample = () => (
-  <BpkProvider>
-    <BpkBox padding={BpkSpacing.MD}>
-      Provider example (wraps layout primitives)
-    </BpkBox>
-  </BpkProvider>
+
+export const VisualTest = () => (
+  <>
+    {/* Box examples */}
+    <SpacingExample />
+    <RtlSpacingExample />
+    <SizeExample />
+    <ResponsiveExample />
+    <PositionExample />
+    <FlexExample />
+    <GridExample />
+
+    {/* Flex examples */}
+    <BpkFlexExample />
+    <BpkFlexDirectionExample />
+    <BpkFlexWrapExample />
+    <BpkFlexResponsiveExample />
+    <BpkFlexItemExample />
+    <BpkFlexInlineExample />
+
+    {/* Grid examples */}
+    <BpkGridExample />
+    <BpkGridSpanExample />
+    <BpkGridWithItemExample />
+    <BpkGridResponsiveExample />
+
+    {/* Stack examples */}
+    <VerticalContentBlocksExample />
+    <HorizontalButtonsExample />
+    <NestedStackExample />
+    <StackDefaultExample />
+    <StackHorizontalExample />
+    <HStackExample />
+    <VStackExample />
+    <ResponsiveDirectionExample />
+  </>
 );
+
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true,
+  },
+};
