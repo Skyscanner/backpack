@@ -87,7 +87,6 @@ Instead of Chakra’s default `sm/md/lg` keys or array syntax, use Backpack brea
 - `small-tablet`
 - `tablet`
 - `desktop`
-- `large-desktop`
 
 Example:
 
