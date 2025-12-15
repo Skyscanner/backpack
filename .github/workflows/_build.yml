@@ -119,7 +119,7 @@ jobs:
 
   SonarQube:
     needs: Build
-    runs-on: [ubuntu-latest-medium]
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       pull-requests: write
