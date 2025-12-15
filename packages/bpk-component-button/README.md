@@ -38,49 +38,8 @@ export default () => (
 );
 ```
 
-### Link Button
-
-Link buttons (`type="link"` or `type="linkOnDark"`) are styled like `BpkLink` with underline decoration. It has underline by default, while with `implicit` would underline on hover.
-
-```js
-import { BpkButtonV2, BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
-
-export default () => (
-  <div>
-    {/* Default link with underline */}
-    <BpkButtonV2 type={BUTTON_TYPES.link}>
-      Link Button
-    </BpkButtonV2>
-
-    {/* Implicit link with underline on hover */}
-    <BpkButtonV2 type={BUTTON_TYPES.link} implicit>
-      Implicit Link
-    </BpkButtonV2>
-
-    {/* Link on dark */}
-    <BpkButtonV2 type={BUTTON_TYPES.linkOnDark}>
-      Link on Dark
-    </BpkButtonV2>
-
-    {/* Implicit link on dark */}
-    <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit>
-      Implicit Link on Dark
-    </BpkButtonV2>
-
-    {/* Default link with icon */}
-    <BpkButtonV2 type={BUTTON_TYPES.link}>
-      Link Button with icon <SmallLongArrowRightIcon />
-    </BpkButtonV2>
-
-    {/* The iconOnly link (no underline) */}
-    <BpkButtonV2 type={BUTTON_TYPES.link} iconOnly aria-label="Favorite">
-      <HeartIcon />
-    </BpkButtonV2>
-  </div>
-);
-```
-
-**Note:** When using `iconOnly` with link buttons, no underline is applied.
+### Button Link
+The button which has `link` or `linkOnDark` type. Detail in [Button Link Type](./docs/button-link-type.md)
 
 ## Props
 
