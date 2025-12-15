@@ -18,99 +18,130 @@
 
 import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
-import {
-  BpkBox,
-  BpkFlex,
-  BpkGrid,
-  BpkGridItem,
-  BpkProvider,
-  BpkStack,
-} from '../../packages/bpk-component-layout';
+import type { ReactNode } from 'react';
+import { useState } from 'react';
 
-import {
-  SpacingExample,
-  RtlSpacingExample,
-  SizeExample,
-  MixedExample,
-  ResponsiveExample,
-  PositionExample,
-  FlexExample,
-  GridExample,
-  FlexComponentExample,
-  GridComponentExample,
-  GridItemComponentExample,
-  StackComponentExample,
-  HStackComponentExample,
-  VStackComponentExample,
-} from './examples';
+import { BpkProvider, BpkBox, BpkSpacing } from '../../packages/bpk-component-layout';
+
+const Tabs = ({
+  tabs,
+}: {
+  tabs: Array<{ id: string; label: string; content: ReactNode }>;
+}) => {
+  const [activeId, setActiveId] = useState(tabs[0]?.id ?? '');
+  const active = tabs.find((t) => t.id === activeId) ?? tabs[0];
+
+  return (
+    <div>
+      <div style={{ display: 'flex', gap: 8, marginBottom: 12, flexWrap: 'wrap' }}>
+        {tabs.map((t) => (
+          <button
+            key={t.id}
+            type="button"
+            onClick={() => setActiveId(t.id)}
+            style={{
+              padding: '6px 10px',
+              borderRadius: 6,
+              border: '1px solid #d9d9d9',
+              background: t.id === activeId ? '#f3f3f3' : 'white',
+              cursor: 'pointer',
+            }}
+          >
+            {t.label}
+          </button>
+        ))}
+      </div>
+      <div>{active?.content}</div>
+    </div>
+  );
+};
 
 export default {
   title: 'bpk-component-layout',
-  component: BpkBox,
-  subcomponents: {
-    BpkProvider,
-    BpkFlex,
-    BpkGrid,
-    BpkGridItem,
-    BpkStack,
-  },
+  component: BpkProvider,
   parameters: {
     docs: {
       page: () => (
         <>
           <Title />
           <ArgTypes exclude={['zoomEnabled']} />
-          <Markdown>
-            Notes: BpkProvider is the root component for the Backpack layout components.
-          </Markdown>
+          <Tabs
+            tabs={[
+              {
+                id: 'overview',
+                label: 'Overview',
+                content: (
+                  <Markdown>
+                    {`BpkProvider is the root provider for Backpack layout primitives.
+
+Wrap your app (or Storybook) with \`BpkProvider\` so layout tokens and responsive values resolve correctly.`}
+                  </Markdown>
+                ),
+              },
+              {
+                id: 'usage',
+                label: 'Usage',
+                content: (
+                  <Markdown>
+                    {`Typical usage:
+
+\`\`\`tsx
+import { BpkProvider, BpkBox, BpkSpacing } from '@skyscanner/backpack-web/bpk-component-layout';
+
+export function App() {
+  return (
+    <BpkProvider>
+      <BpkBox padding={BpkSpacing.MD}>Hello</BpkBox>
+    </BpkProvider>
+  );
+}
+\`\`\``}
+                  </Markdown>
+                ),
+              },
+              {
+                id: 'responsive',
+                label: 'Responsive',
+                content: (
+                  <Markdown>
+                    {`Responsive values are keyed by Backpack breakpoints (object form only). Arrays are intentionally not supported.
+
+\`\`\`tsx
+<BpkBox
+  padding={{
+    mobile: BpkSpacing.SM,
+    tablet: BpkSpacing.MD,
+    desktop: BpkSpacing.LG,
+  }}
+/>
+\`\`\``}
+                  </Markdown>
+                ),
+              },
+              {
+                id: 'constraints',
+                label: 'Constraints',
+                content: (
+                  <Markdown>
+                    {`These layout primitives are intentionally structural:
+
+- Spacing values: Backpack spacing tokens or percentages
+- No \`className\` / \`style\` on layout primitives
+- Visual props (colors/borders/shadows) are not part of the public layout surface`}
+                  </Markdown>
+                ),
+              },
+            ]}
+          />
         </>
       )
     },
   },
 };
-export const BoxSpacing = () => <SpacingExample />;
-BoxSpacing.storyName = 'Box/Spacing';
-
-export const BoxRtlSpacing = () => <RtlSpacingExample />;
-BoxRtlSpacing.storyName = 'Box/RTL spacing';
-
-export const BoxSize = () => <SizeExample />;
-BoxSize.storyName = 'Box/Size';
-
-export const BoxResponsive = () => <ResponsiveExample />;
-BoxResponsive.storyName = 'Box/Responsive';
-
-export const BoxPosition = () => <PositionExample />;
-BoxPosition.storyName = 'Box/Position';
-
-export const BoxFlex = () => <FlexExample />;
-BoxFlex.storyName = 'Box/Flex (via Box)';
-
-export const BoxGrid = () => <GridExample />;
-BoxGrid.storyName = 'Box/Grid (via Box)';
-
-export const FlexBasic = () => <FlexComponentExample />;
-FlexBasic.storyName = 'Flex/Basic';
-
-export const GridBasic = () => <GridComponentExample />;
-GridBasic.storyName = 'Grid/Basic';
-
-export const GridItem = () => <GridItemComponentExample />;
-GridItem.storyName = 'Grid/GridItem';
-
-export const StackBasic = () => <StackComponentExample />;
-StackBasic.storyName = 'Stack/Basic';
-
-export const StackH = () => <HStackComponentExample />;
-StackH.storyName = 'Stack/HStack';
-
-export const StackV = () => <VStackComponentExample />;
-StackV.storyName = 'Stack/VStack';
-
-export const VisualTest = MixedExample;
-export const VisualTestWithZoom = {
-  render: VisualTest,
-  args: {
-    zoomEnabled: true,
-  },
-};
+export const ProviderExample = () => (
+  <BpkProvider>
+    <BpkBox padding={BpkSpacing.MD}>
+      Provider example (wraps layout primitives)
+    </BpkBox>
+  </BpkProvider>
+);
