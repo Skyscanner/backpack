@@ -27,6 +27,8 @@ export type { BpkBoxProps } from './src/BpkBox';
 export type { BpkFlexProps } from './src/BpkFlex';
 export type { BpkGridProps } from './src/BpkGrid';
 export type { BpkGridItemProps } from './src/BpkGridItem';
+export { BpkStack, BpkHStack, BpkVStack } from './src/BpkStack';
+export type { BpkStackProps } from './src/BpkStack';
 
 export type {
   BpkCommonLayoutProps,
@@ -34,8 +36,8 @@ export type {
   BpkFlexSpecificProps,
   BpkGridSpecificProps,
   BpkGridItemSpecificProps,
-  BpkStackSpecificProps,
 } from './src/types';
+export type { BpkStackSpecificProps } from './src/BpkStack.types';
 
 // Export token types and utilities
 export type {

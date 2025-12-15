@@ -25,6 +25,7 @@ import { BpkBox } from './BpkBox';
 import { BpkFlex } from './BpkFlex';
 import { BpkGrid } from './BpkGrid';
 import { BpkProvider } from './BpkProvider';
+import { BpkStack } from './BpkStack';
 import { BpkSpacing } from './tokens';
 
 describe('bpk-component-layout accessibility tests', () => {
@@ -38,6 +39,24 @@ describe('bpk-component-layout accessibility tests', () => {
         >
           Accessible layout content
         </BpkBox>
+      </BpkProvider>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('BpkStack basic usage should not have detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkStack
+          role="group"
+          aria-label="Stack region"
+          gap={BpkSpacing.MD}
+        >
+          <div>Item one</div>
+          <div>Item two</div>
+        </BpkStack>
       </BpkProvider>,
     );
 

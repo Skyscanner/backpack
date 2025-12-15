@@ -25,7 +25,6 @@ import type {
   FlexProps,
   GridProps,
   GridItemProps,
-  StackProps,
 } from '@chakra-ui/react';
 
 
@@ -115,7 +114,7 @@ export interface BpkFlexGridProps {
   columnGap?: BoxProps['columnGap'];
 }
 
-type FlexGridPropKeys = keyof BpkFlexGridProps;
+export type FlexGridPropKeys = keyof BpkFlexGridProps;
 
 /**
  * Base type that removes common layout props, reserved props (className,
@@ -123,7 +122,7 @@ type FlexGridPropKeys = keyof BpkFlexGridProps;
  *
  * These will be replaced with Backpack-specific types.
  */
-type RemoveCommonProps<T> = Omit<
+export type RemoveCommonProps<T> = Omit<
   T,
   | keyof BpkCommonLayoutProps
   | 'className'
@@ -227,23 +226,6 @@ export interface BpkGridItemSpecificProps extends RemoveCommonProps<GridItemProp
  * Combines GridItem-specific props with Backpack common layout props
  */
 export interface BpkGridItemProps extends BpkCommonLayoutProps, BpkGridItemSpecificProps {
-  children?: ReactNode;
-}
-
-/**
- * Component-specific props for BpkStack
- * Includes all Stack props except those in BpkCommonLayoutProps
- * Explicitly overrides spacing to enforce Backpack tokens
- */
-export interface BpkStackSpecificProps extends Omit<RemoveCommonProps<StackProps>, 'spacing'> {
-  spacing?: BpkResponsiveValue<BpkSpacingValue>;
-}
-
-/**
- * Props for BpkStack component
- * Combines Stack-specific props with Backpack common layout props
- */
-export interface BpkStackProps extends BpkCommonLayoutProps, BpkStackSpecificProps {
   children?: ReactNode;
 }
 
