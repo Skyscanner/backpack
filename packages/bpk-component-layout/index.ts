@@ -18,9 +18,11 @@
 
 export { BpkProvider } from './src/BpkProvider';
 export { BpkBox } from './src/BpkBox';
+export { BpkStack, BpkHStack, BpkVStack } from './src/BpkStack';
 
 export type { BpkProviderProps } from './src/BpkProvider';
 export type { BpkBoxProps } from './src/BpkBox';
+export type { BpkStackProps } from './src/BpkStack';
 
 
 export type {
@@ -28,8 +30,8 @@ export type {
   BpkBoxSpecificProps,
   BpkFlexSpecificProps,
   BpkGridSpecificProps,
-  BpkStackSpecificProps,
 } from './src/types';
+export type { BpkStackSpecificProps } from './src/BpkStack.types';
 
 // Export token types and utilities
 export type {
