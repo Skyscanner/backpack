@@ -76,6 +76,7 @@ jobs:
 
   Build:
     permissions:
+      contents: read
       statuses: write
       pull-requests: write
     needs: [Create-NPM-Cache, Create-Build-Cache]
