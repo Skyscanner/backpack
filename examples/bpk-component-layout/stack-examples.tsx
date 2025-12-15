@@ -16,27 +16,25 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
-
 import { BpkButtonV2, BUTTON_TYPES } from '../../packages/bpk-component-button';
 import {
   BpkBox,
-  BpkProvider,
   BpkSpacing,
   BpkStack,
   BpkVStack,
   BpkHStack,
 } from '../../packages/bpk-component-layout';
 
-// Shared wrapper to provide BpkProvider context
-const Wrapper = ({ children }: { children: ReactNode }) => (
-  <BpkProvider>{children}</BpkProvider>
-);
+import Wrapper from './layout-wrapper';
+
+import STYLES from './examples.module.scss';
 
 const Item = ({ label }: { label: string }) => (
-  <BpkBox padding={BpkSpacing.SM} minHeight="3rem">
-    {label}
-  </BpkBox>
+  <div className={STYLES['bpk-layout-examples__item']}>
+    <BpkBox padding={BpkSpacing.SM} minHeight="3rem">
+      <span className={STYLES['bpk-layout-examples__outline']}>{label}</span>
+    </BpkBox>
+  </div>
 );
 // Content block component using BpkBox
 const ContentBlock = ({
@@ -46,12 +44,14 @@ const ContentBlock = ({
   title: string;
   description: string;
 }) => (
-  <BpkBox padding={BpkSpacing.MD} minHeight="6rem">
-    <BpkVStack gap={BpkSpacing.SM}>
-      <BpkBox fontWeight="bold">{title}</BpkBox>
-      <BpkBox>{description}</BpkBox>
-    </BpkVStack>
-  </BpkBox>
+  <div className={STYLES['bpk-layout-examples__item']}>
+    <BpkBox padding={BpkSpacing.MD} minHeight="6rem">
+      <BpkVStack gap={BpkSpacing.SM}>
+        <BpkBox fontWeight="bold">{title}</BpkBox>
+        <BpkBox>{description}</BpkBox>
+      </BpkVStack>
+    </BpkBox>
+  </div>
 );
 
 // 1) Vertical stack of content blocks

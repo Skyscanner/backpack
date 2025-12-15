@@ -22,7 +22,7 @@ import {
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
 
-import { Wrapper } from './layout-wrapper';
+import Wrapper from './layout-wrapper';
 
 import STYLES from './examples.module.scss';
 

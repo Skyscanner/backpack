@@ -21,7 +21,7 @@ import {
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
 
-import { Wrapper } from './layout-wrapper';
+import Wrapper from './layout-wrapper';
 
 import STYLES from './examples.module.scss';
 
@@ -52,6 +52,7 @@ export const RtlSpacingExample = () => (
         paddingInline={BpkSpacing.MD}
         marginInline={BpkSpacing.MD}
         paddingTop={BpkSpacing.MD}
+        paddingBottom={BpkSpacing.Base}
       >
         <span className={STYLES['bpk-layout-examples__outline']}>
           Box using marginInline &amp; paddingInline in RTL context.
