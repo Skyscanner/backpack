@@ -64,6 +64,12 @@ jobs:
           name: ${{env.BUILD_LOGS}}
           path: ${{env.BUILD_LOGS}}.tar.br
 
+      - name: Upload coverage reports
+        uses: actions/upload-artifact@v5.0.0
+        with:
+          name: coverage-reports
+          path: coverage/
+
   Danger:
     runs-on: ubuntu-latest
     needs: Build
@@ -110,6 +116,58 @@ jobs:
         if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+
+  SonarQube:
+    needs: Build
+    runs-on: [ubuntu-latest-medium]
+    permissions:
+      contents: read
+      pull-requests: write
+      statuses: write
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Restore Cache
+        uses: actions/cache/restore@v4.3.0
+        id: npm-cache
+        with:
+          path: |
+            node_modules/
+            packages/node_modules/
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+
+      - name: Download coverage reports
+        uses: actions/download-artifact@v6.0.0
+        with:
+          name: coverage-reports
+          path: coverage/
+
+      - name: SonarQube Scan
+        uses: skyscanner/sonarcloud-github-action@v1
+        id: sonarqube-scan
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          projectBaseDir: .
+          args: >
+            -Dsonar.organization=skyscanner
+            -Dsonar.host.url=https://sonarcloud.io
+            -Dsonar.qualitygate.wait=true
+
+      - name: SonarQube PR Feedback
+        if: always() && github.event_name == 'pull_request'
+        uses: skyscanner/sonarqube-pr-feedback@v1.1.0
+        with:
+          component: 'skyscanner_backpack'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   PercyTests:
     runs-on: ubuntu-latest
