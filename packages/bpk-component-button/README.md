@@ -11,7 +11,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ```js
 import { withButtonAlignment, withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
 import ArrowIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/long-arrow-right';
-import { BpkButton, BUTTON_TYPES, SIZE_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
+import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
 
 const AlignedArrowIcon = withButtonAlignment(withRtlSupport(ArrowIcon));
 
