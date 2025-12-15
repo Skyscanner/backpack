@@ -16,27 +16,28 @@
  * limitations under the License.
  */
 
-import type { CSSProperties } from 'react';
+import { BpkGrid, BpkProvider } from '../../packages/bpk-component-layout';
 
-import { Box } from '@chakra-ui/react';
+import {
+  BpkGridExample,
+  BpkGridSpanExample,
+  BpkGridWithItemExample,
+  BpkGridResponsiveExample,
+} from './grid-examples';
 
-import { mapLayoutToVars } from './utils/mapLayoutProps';
-
-import type { BpkBoxProps } from './types';
-
-export const BpkBox = ({ children, ...props }: BpkBoxProps) => {
-  const { cssVars, rest } = mapLayoutToVars(props);
-
-  return (
-    <Box
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      className="bpk-box"
-      style={cssVars as CSSProperties}
-      {...rest}
-    >
-      {children}
-    </Box>
-  );
+export default {
+  title: 'bpk-component-layout/Grid',
+  component: BpkGrid,
+  decorators: [
+    (Story: any) => (
+      <BpkProvider>
+        <Story />
+      </BpkProvider>
+    ),
+  ],
 };
 
-export type { BpkBoxProps };
+export const Default = BpkGridExample;
+export const Span = BpkGridSpanExample;
+export const WithItem = BpkGridWithItemExample;
+export const Responsive = BpkGridResponsiveExample;

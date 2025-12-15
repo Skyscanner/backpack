@@ -16,27 +16,13 @@
  * limitations under the License.
  */
 
-import type { CSSProperties } from 'react';
+// these options align with Chakra's StackOption excluding separator
+// TODO: add separator to Stack
+const StackOptionKeys = [
+  'align',
+  'justify',
+  'wrap',
+  'direction',
+] as const;
 
-import { Box } from '@chakra-ui/react';
-
-import { mapLayoutToVars } from './utils/mapLayoutProps';
-
-import type { BpkBoxProps } from './types';
-
-export const BpkBox = ({ children, ...props }: BpkBoxProps) => {
-  const { cssVars, rest } = mapLayoutToVars(props);
-
-  return (
-    <Box
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      className="bpk-box"
-      style={cssVars as CSSProperties}
-      {...rest}
-    >
-      {children}
-    </Box>
-  );
-};
-
-export type { BpkBoxProps };
+export default StackOptionKeys;

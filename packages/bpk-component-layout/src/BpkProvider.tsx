@@ -16,10 +16,11 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { JSX, ReactNode } from 'react';
 
 import { ChakraProvider, createSystem, defaultConfig } from '@chakra-ui/react';
 
+import '../../backpack/tokens/layout/bpk-layout-shell.css';
 import { createBpkConfig } from './theme';
 
 export interface BpkProviderProps {

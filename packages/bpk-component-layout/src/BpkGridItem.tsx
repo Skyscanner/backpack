@@ -16,27 +16,40 @@
  * limitations under the License.
  */
 
-import type { CSSProperties } from 'react';
+import { GridItem } from '@chakra-ui/react';
 
-import { Box } from '@chakra-ui/react';
+import { processBpkProps } from './tokenUtils';
 
-import { mapLayoutToVars } from './utils/mapLayoutProps';
+import type { BpkGridItemProps } from './types';
 
-import type { BpkBoxProps } from './types';
-
-export const BpkBox = ({ children, ...props }: BpkBoxProps) => {
-  const { cssVars, rest } = mapLayoutToVars(props);
+export const BpkGridItem = ({
+  area,
+  children,
+  colEnd,
+  colSpan,
+  colStart,
+  rowEnd,
+  rowSpan,
+  rowStart,
+  ...props
+}: BpkGridItemProps) => {
+  const processedProps = processBpkProps(props);
 
   return (
-    <Box
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      className="bpk-box"
-      style={cssVars as CSSProperties}
-      {...rest}
+    <GridItem
+      {...processedProps}
+      area={area}
+      colEnd={colEnd}
+      colStart={colStart}
+      colSpan={colSpan}
+      rowEnd={rowEnd}
+      rowStart={rowStart}
+      rowSpan={rowSpan}
     >
       {children}
-    </Box>
+    </GridItem>
   );
 };
 
-export type { BpkBoxProps };
+export type { BpkGridItemProps };
+
