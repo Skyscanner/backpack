@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import StackOptionKeys from './BpkStack.constant';
 import { getSpacingValue } from './theme';
 import {
   BpkBreakpointToChakraKey,
@@ -25,10 +26,7 @@ import {
   isPercentage,
 } from './tokens';
 
-import StackOptionKeys from './BpkStack.constant';
-
-import type {
-  BpkBreakpointToken} from './tokens';
+import type { BpkBreakpointToken } from './tokens';
 
 export type BpkLayoutComponentName = 'BpkBox' | 'BpkFlex' | 'BpkGrid' | 'BpkStack';
 
@@ -184,6 +182,10 @@ function filterToAllowlist(
  * - process allowlisted non-spacing responsive layout props (breakpoint mapping only)
  *
  * The allowlist is grouped by component via `BPK_RESPONSIVE_PROP_KEYS_BY_COMPONENT`.
+ *
+ * @param {T} props - The component props to process.
+ * @param {ProcessBpkComponentPropsOptions} options - Component processing options (allowlist group + mapping).
+ * @returns {Record<string, any>} The processed props ready to pass to Chakra primitives.
  */
 export function processBpkComponentProps<T extends Record<string, any>>(
   props: T,
