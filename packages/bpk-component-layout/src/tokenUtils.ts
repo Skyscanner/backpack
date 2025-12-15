@@ -42,63 +42,108 @@ export type BpkLayoutComponentName = 'BpkBox' | 'BpkFlex' | 'BpkGrid' | 'BpkStac
  * - These groups are meant to keep the responsive surface predictable per component, while
  *   avoiding duplicated per-component breakpoint mapping logic.
  */
+type BpkResponsivePropGroups = {
+  /**
+   * Container-level layout props (how children are laid out).
+   */
+  container: readonly string[];
+  /**
+   * Item-level layout props (how this element participates in a parent layout).
+   */
+  item?: readonly string[];
+};
+
+export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
+  BpkLayoutComponentName,
+  BpkResponsivePropGroups
+> = {
+  BpkBox: {
+    container: [
+      // Display
+      'display',
+      // Flex container props
+      'flexDirection',
+      'flexWrap',
+      'justifyContent',
+      'alignItems',
+      'alignContent',
+      // Grid container props
+      'gridTemplateColumns',
+      'gridTemplateRows',
+      'gridTemplateAreas',
+      'gridAutoFlow',
+      'gridAutoRows',
+      'gridAutoColumns',
+    ],
+    item: [
+      // Flex item props
+      'flex',
+      'flexGrow',
+      'flexShrink',
+      'flexBasis',
+      'order',
+      'alignSelf',
+      'justifySelf',
+      // Grid item placement props (useful on Box when composing grids)
+      'gridColumn',
+      'gridRow',
+    ],
+  },
+  // Note: BpkFlex maps its public API props to these Chakra keys.
+  BpkFlex: {
+    container: [
+      'flexDirection',
+      'justifyContent',
+      'alignItems',
+      'flexWrap',
+    ],
+    item: [
+      'flexGrow',
+      'flexShrink',
+      'flexBasis',
+    ],
+  },
+  // Note: BpkGrid maps its public API props to these Chakra keys.
+  BpkGrid: {
+    container: [
+      'justifyContent',
+      'alignItems',
+      'gridTemplateColumns',
+      'gridTemplateRows',
+      'gridTemplateAreas',
+      'gridAutoFlow',
+      'gridAutoRows',
+      'gridAutoColumns',
+    ],
+    item: [
+      // Used when placing the grid itself within a parent grid.
+      'gridColumn',
+      'gridRow',
+    ],
+  },
+  // Note: BpkStack uses Chakra Stack option prop names directly.
+  BpkStack: {
+    container: StackOptionKeys as unknown as readonly string[],
+  },
+};
+
 export const BPK_RESPONSIVE_PROP_KEYS_BY_COMPONENT: Record<
   BpkLayoutComponentName,
   readonly string[]
 > = {
   BpkBox: [
-    // Display
-    'display',
-    // Flex container props
-    'flexDirection',
-    'flexWrap',
-    'justifyContent',
-    'alignItems',
-    'alignContent',
-    // Flex item props
-    'flex',
-    'flexGrow',
-    'flexShrink',
-    'flexBasis',
-    'order',
-    'alignSelf',
-    'justifySelf',
-    // Grid container props
-    'gridTemplateColumns',
-    'gridTemplateRows',
-    'gridTemplateAreas',
-    'gridAutoFlow',
-    'gridAutoRows',
-    'gridAutoColumns',
-    // Grid item placement props (useful on Box when composing grids)
-    'gridColumn',
-    'gridRow',
+    ...BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkBox.container,
+    ...(BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkBox.item ?? []),
   ],
-  // Note: BpkFlex maps its public API props to these Chakra keys.
   BpkFlex: [
-    'flexDirection',
-    'justifyContent',
-    'alignItems',
-    'flexWrap',
-    'flexGrow',
-    'flexShrink',
-    'flexBasis',
+    ...BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkFlex.container,
+    ...(BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkFlex.item ?? []),
   ],
-  // Note: BpkGrid maps its public API props to these Chakra keys.
   BpkGrid: [
-    'justifyContent',
-    'alignItems',
-    'gridTemplateColumns',
-    'gridTemplateRows',
-    'gridTemplateAreas',
-    'gridAutoFlow',
-    'gridAutoRows',
-    'gridAutoColumns',
-    'gridColumn',
-    'gridRow',
+    ...BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkGrid.container,
+    ...(BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkGrid.item ?? []),
   ],
-  // Note: BpkStack uses Chakra Stack option prop names directly.
-  BpkStack: StackOptionKeys as unknown as readonly string[],
+  BpkStack: [...BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkStack.container],
 };
 
 export type ProcessBpkComponentPropsOptions = {
