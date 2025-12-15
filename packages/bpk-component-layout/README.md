@@ -113,6 +113,8 @@ Example:
 
 Under the hood these keys are mapped to Chakra’s breakpoint keys (`base`, `sm`, `md`, `lg`, `xl`, `2xl`) before generating CSS.
 
+> **Important:** Responsive values are **mobile-first (min-width)**. A key like `mobile` means “apply from the mobile breakpoint and above” (it is not an “only within mobile” range).
+
 > **Note:** Array-based responsive values (e.g. `padding={[...values]}`) are **not supported**.
 > Passing an array will be ignored and will log a warning in non‑production environments.
 

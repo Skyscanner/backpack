@@ -27,6 +27,8 @@ import STYLES from './examples.module.scss';
 
 /**
  * Core layout example – demonstrates basic spacing usage.
+ *
+ * @returns {JSX.Element} A box with padding and margin using Backpack spacing tokens.
  */
 export const SpacingExample = () => (
   <Wrapper>
@@ -40,6 +42,8 @@ export const SpacingExample = () => (
 
 /**
  * RTL-friendly spacing example – demonstrates margin/padding logical props.
+ *
+ * @returns {JSX.Element} Box using marginInline & paddingInline in RTL context.
  */
 export const RtlSpacingExample = () => (
   <Wrapper>
@@ -59,6 +63,8 @@ export const RtlSpacingExample = () => (
 
 /**
  * Size example – demonstrates width/height using semantic values.
+ *
+ * @returns {JSX.Element} Box with 50% width and 6rem minHeight.
  */
 export const SizeExample = () => (
   <Wrapper>
@@ -72,17 +78,25 @@ export const SizeExample = () => (
 
 /**
  * Responsive example – demonstrates breakpoint-based responsive layout props.
+ *
+ * @returns {JSX.Element} A box whose spacing changes across breakpoints.
  */
 export const ResponsiveExample = () => (
   <Wrapper>
     <BpkBox
       display="flex"
       padding={{
-        mobile: BpkSpacing.SM,
+        base: BpkSpacing.SM,
+        mobile: BpkSpacing.Base,
         tablet: BpkSpacing.MD,
         desktop: BpkSpacing.LG,
       }}
-      gap={BpkSpacing.SM}
+      gap={{
+        base: BpkSpacing.SM,
+        mobile: BpkSpacing.Base,
+        tablet: BpkSpacing.MD,
+        desktop: BpkSpacing.LG,
+      }}
     >
       <BpkBox>
         <span className={STYLES['bpk-layout-examples__outline']}>
@@ -100,6 +114,8 @@ export const ResponsiveExample = () => (
 
 /**
  * Position example – demonstrates top/left offsets using allowed values.
+ *
+ * @returns {JSX.Element} A relative box with an absolutely positioned child.
  */
 export const PositionExample = () => (
   <Wrapper>
@@ -120,6 +136,8 @@ export const PositionExample = () => (
 
 /**
  * Flexbox example – demonstrates using BpkBox as a flex container.
+ *
+ * @returns {JSX.Element} A flex row with evenly spaced items.
  */
 export const FlexExample = () => (
   <Wrapper>
@@ -142,6 +160,8 @@ export const FlexExample = () => (
 
 /**
  * Grid example – demonstrates using BpkBox as a grid container.
+ *
+ * @returns {JSX.Element} A simple three-column grid.
  */
 export const GridExample = () => (
   <Wrapper>
@@ -164,6 +184,8 @@ export const GridExample = () => (
 
 /**
  * Mixed visual regression example – used for Percy/visual tests.
+ *
+ * @returns {JSX.Element} A wrapper containing all Box examples for visual regression.
  */
 export const MixedExample = () => (
   <Wrapper>
