@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { convertBpkSpacingToChakra, processBpkProps } from './tokenUtils';
+import { convertBpkSpacingToChakra, processBpkProps, processResponsiveProps } from './tokenUtils';
 import { BpkSpacing } from './tokens';
 
 describe('processBpkProps', () => {
@@ -112,6 +112,20 @@ describe('processBpkProps', () => {
     expect(result.padding).toEqual({
       md: '.25rem',
       xl: '.5rem',
+    });
+  });
+
+  it('maps Backpack breakpoint keys for non-spacing layout props via processResponsiveProps', () => {
+    const result = processResponsiveProps({
+      display: { mobile: 'flex', desktop: 'grid' },
+      flexDirection: { mobile: 'column', tablet: 'row' },
+      gridTemplateColumns: { tablet: 'repeat(2, 1fr)', desktop: 'repeat(4, 1fr)' },
+    });
+
+    expect(result).toEqual({
+      display: { md: 'flex', '2xl': 'grid' },
+      flexDirection: { md: 'column', xl: 'row' },
+      gridTemplateColumns: { xl: 'repeat(2, 1fr)', '2xl': 'repeat(4, 1fr)' },
     });
   });
 

@@ -7,7 +7,10 @@
 `bpk-component-layout` provides **layout-only** primitives and layout tokens for Backpack:
 
 - `BpkProvider` – wraps your app or stories to provide the Backpack layout system.
-- `BpkBox` – a low‑level layout container that accepts a curated set of layout props.
+- `BpkBox` – a low‑level layout container for spacing, sizing and structural composition.
+- `BpkFlex` – a flexbox layout primitive with an ergonomic, responsive API.
+- `BpkGrid` / `BpkGridItem` – grid layout primitives for container + item placement.
+- `BpkStack` / `BpkHStack` / `BpkVStack` – stack layout primitives with tokenised gaps.
 - Typed layout tokens – spacing and size.
 
 Under the hood, this package is implemented as a **facade over a layout system** and generates **CSS at runtime**, but the public API is Backpack‑flavoured and token‑driven. Consumers should only interact with the Backpack components and tokens described here, not with the underlying system.
@@ -77,6 +80,14 @@ In addition, `BpkBox` re‑introduces a **minimal interaction surface**:
 
 No other event handlers are exposed on layout components.
 
+## Component roles
+
+- **`BpkProvider`**: Provides the runtime layout system (tokens + breakpoints) for all layout primitives. Wrap your app (or Storybook) with it.
+- **`BpkBox`**: The base structural primitive. Use it for spacing/sizing/positioning and for composing simple flex/grid layouts via `display` + related props.
+- **`BpkFlex`**: A dedicated flex container primitive. Prefer this when you want a clear, ergonomic flex API (`direction/align/justify/wrap/...`) with Backpack responsive values.
+- **`BpkGrid` / `BpkGridItem`**: Dedicated grid primitives. Prefer these for grid layout composition; use `BpkGridItem` when you want explicit spans/placement.
+- **`BpkStack` / `BpkHStack` / `BpkVStack`**: Dedicated stack primitives. Prefer these when you want consistent tokenised gaps and the simplest stacking API.
+
 ### Responsive values
 
 Layout props support **responsive overrides keyed by Backpack breakpoints**.
@@ -104,6 +115,18 @@ Under the hood these keys are mapped to Chakra’s breakpoint keys (`base`, `sm`
 
 > **Note:** Array-based responsive values (e.g. `padding={[...values]}`) are **not supported**.
 > Passing an array will be ignored and will log a warning in non‑production environments.
+
+### Responsive support (high-level)
+
+- **Supported broadly (recommended)**: container-level layout props and spacing tokens (e.g. `padding/margin/gap`, `width/height`, `direction/templateColumns`, etc.)
+- **Not automatically universal**: item placement props can be more complex; add responsive support based on real usage (PoC-driven).
+
+In particular:
+
+- **`BpkBox`** supports Backpack responsive values for:
+  - **Spacing/size/position** props (tokenised): `padding`, `margin`, `gap`, `width/height`, `top/right/bottom/left`, etc.
+  - **Key structural layout props**: `display`, flex container/item props, and grid container props (via Backpack breakpoint keys).
+- **`BpkGridItem`** placement props like `colSpan/rowSpan` are currently scalar (non-responsive) and should be extended only when needed.
 
 ## Constraints and design principles
 
