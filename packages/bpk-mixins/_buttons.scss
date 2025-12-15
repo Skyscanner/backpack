@@ -482,17 +482,17 @@
   }
 }
 
-/// Button link aligned. Modifies the bpk-button mixin.
+/// Button link icon only aligned. Modifies the bpk-button mixin.
 ///
 /// @require {mixin} bpk-button
 ///
 /// @example scss
 ///   .selector {
 ///     @include bpk-button();
-///     @include bpk-button--link-aligned;
+///     @include bpk-button--link-icon-only-aligned;
 ///   }
 
-@mixin bpk-button--link-aligned {
+@mixin bpk-button--link-icon-only-aligned {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -512,7 +512,7 @@
 @mixin bpk-button--link-underlined {
   gap: tokens.bpk-spacing-md();
 
-  @include bpk-button--link-aligned;
+  @include bpk-button--link-icon-only-aligned;
   @include typography.bpk-link-underlined;
 }
 

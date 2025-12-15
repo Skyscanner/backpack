@@ -60,7 +60,7 @@
     }
 
     &--icon-only {
-      @include buttons.bpk-button--link-aligned;
+      @include buttons.bpk-button--link-icon-only-aligned;
     }
   }
 
