@@ -21,7 +21,6 @@ import { Flex } from '@chakra-ui/react';
 import {
   processBpkProps,
   processResponsiveProps,
-  validateNoPixelValue,
 } from './tokenUtils';
 
 import type { BpkFlexProps } from './types';
@@ -39,8 +38,6 @@ export const BpkFlex = ({
   ...props
 }: BpkFlexProps) => {
   const processedProps = processBpkProps(props);
-
-  validateNoPixelValue(basis, 'basis');
 
   const processedResponsiveProps = processResponsiveProps(
     {

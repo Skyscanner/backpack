@@ -19,7 +19,7 @@
 import type { ReactNode } from 'react';
 
 import type { BpkCommonLayoutProps } from './commonProps';
-import type { BpkSpacingValue, BpkResponsiveValue } from './tokens';
+import type { BpkSpacingValue, BpkResponsiveValue, BpkBasisValue } from './tokens';
 import type {
   BoxProps,
   FlexProps,
@@ -168,7 +168,7 @@ export interface BpkFlexSpecificProps extends RemoveCommonProps<FlexProps> {
   wrap?: BpkResponsiveValue<FlexProps['flexWrap']>;
   grow?: BpkResponsiveValue<FlexProps['flexGrow']>;
   shrink?: BpkResponsiveValue<FlexProps['flexShrink']>;
-  basis?: BpkResponsiveValue<FlexProps['flexBasis']>;
+  basis?: BpkResponsiveValue<BpkBasisValue>;
   inline?: boolean;
 }
 
