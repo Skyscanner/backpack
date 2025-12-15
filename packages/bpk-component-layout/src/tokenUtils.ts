@@ -159,6 +159,7 @@ export function processSpacingProps<T extends Record<string, any>>(
     'marginStart', 'marginEnd', 'marginInline',
     // Gap and spacing
     'gap', 'spacing',
+    'rowGap', 'columnGap',
     // Size props
     'width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight',
     // Position props
@@ -244,4 +245,44 @@ export function processBpkProps<T extends Record<string, any>>(
 
   // Process spacing props (includes position)
   return processSpacingProps(cleanProps);
+}
+
+/**
+ * Processes responsive props that are simple string/enum values (non-spacing)
+ * using Backpack breakpoint keys. Array syntax is rejected as in spacing.
+ *
+ * @param {*} value - The value to process
+ * @param {string} propName - The name of the prop being processed
+ * @returns {*} The processed value with breakpoint keys mapped to Chakra keys
+ */
+export function processResponsiveStringProp(value: any, propName: string): any {
+  return processResponsiveValue(
+    value,
+    (v: string) => v,
+    () => true,
+    propName
+  );
+}
+
+/**
+ * Processes a collection of responsive props.
+ * @param {Record<string, any>} props - Object containing prop values.
+ * @param {Record<string, string>} propNameMap - Map of prop name to CSS/Chakra property name (for error messages and mapping).
+ * @returns {Record<string, any>} Processed props object.
+ */
+export function processResponsiveProps(
+  props: Record<string, any>,
+  propNameMap?: Record<string, string>
+): Record<string, any> {
+  const processed: Record<string, any> = {};
+  Object.keys(props).forEach((key) => {
+    if (props[key] !== undefined) {
+      const targetPropName = propNameMap ? propNameMap[key] || key : key;
+      processed[targetPropName] = processResponsiveStringProp(
+        props[key],
+        targetPropName
+      );
+    }
+  });
+  return processed;
 }

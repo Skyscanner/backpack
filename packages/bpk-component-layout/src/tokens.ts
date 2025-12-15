@@ -94,6 +94,21 @@ export type BpkPositionValue =
   | `${number}%`;
 
 /**
+ * Helper type for flex-basis prop that can use rem, percentages or semantic values.
+ * Excludes 'px' values to enforce design system constraints.
+ */
+export type BpkBasisValue =
+  | `${number}rem`
+  | `${number}%`
+  | 'auto'
+  | 'content'
+  | 'fit-content'
+  | 'max-content'
+  | 'min-content'
+  | 'initial'
+  | 'inherit';
+
+/**
  * Helper type for responsive values based on Backpack breakpoints.
  *
  * We intentionally only support:
