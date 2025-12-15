@@ -16,44 +16,14 @@
  * limitations under the License.
  */
 
-import StackOptionKeys from './BpkStack.constant';
-import { processBpkProps, processResponsiveValue } from './tokenUtils';
+import { processBpkComponentProps } from './tokenUtils';
 
-import type { BpkStackSpecificProps, BpkStackProps } from './BpkStack.types';
-import type { BpkResponsiveValue } from './tokens';
-
-function processBpkStackSpecificProps(
-  props: BpkStackSpecificProps,
-): Record<string, any> {
-  const processed: Record<string, any> = { ...props };
-
-  StackOptionKeys.forEach((key) => {
-    if (props[key] !== undefined) {
-      const processedValue = processResponsiveValue(
-        props[key] as BpkResponsiveValue<any>,
-        (v: string) => v,
-        (v: string) => true,
-        String(key),
-      );
-
-      if (processedValue !== undefined) {
-        processed[key] = processedValue;
-      } else {
-        delete processed[key];
-      }
-    }
-  });
-
-  return processed;
-}
+import type { BpkStackProps } from './BpkStack.types';
 
 export function processBpkStackProps(
   props: BpkStackProps,
 ): Record<string, any> {
-  // Handle the common layout props such as spacing first, then process Stack’s own responsive props.
-  const cleanProps = processBpkProps(props);
-  const stackSpecificProcessedProps = processBpkStackSpecificProps(cleanProps);
-  return stackSpecificProcessedProps;
+  return processBpkComponentProps(props, { component: 'BpkStack' });
 }
 
 export default processBpkStackProps;

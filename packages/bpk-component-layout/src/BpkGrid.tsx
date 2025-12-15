@@ -18,7 +18,7 @@
 
 import { Grid } from '@chakra-ui/react';
 
-import { processBpkProps, processResponsiveProps } from './tokenUtils';
+import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkGridProps } from './types';
 
@@ -37,10 +37,9 @@ export const BpkGrid = ({
   templateRows,
   ...props
 }: BpkGridProps) => {
-  const processedProps = processBpkProps(props);
-
-  const processedResponsiveProps = processResponsiveProps(
-    {
+  const processedProps = processBpkComponentProps(props, {
+    component: 'BpkGrid',
+    responsiveProps: {
       justifyContent: justify,
       alignItems: align,
       gridTemplateColumns: templateColumns,
@@ -51,13 +50,12 @@ export const BpkGrid = ({
       gridAutoColumns: autoColumns,
       gridColumn: column,
       gridRow: row,
-    }
-  );
+    },
+  });
 
   return (
     <Grid
       {...processedProps}
-      {...processedResponsiveProps}
       display={inline ? 'inline-grid' : undefined}
     >
       {children}

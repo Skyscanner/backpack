@@ -18,61 +18,13 @@
 
 import { Box } from '@chakra-ui/react';
 
-import { processBpkProps, processResponsiveProps } from './tokenUtils';
+import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkBoxProps } from './types';
 
-const RESPONSIVE_LAYOUT_PROP_KEYS = [
-  // Display
-  'display',
-  // Flex container props
-  'flexDirection',
-  'flexWrap',
-  'justifyContent',
-  'alignItems',
-  'alignContent',
-  // Flex item props
-  'flex',
-  'flexGrow',
-  'flexShrink',
-  'flexBasis',
-  'order',
-  'alignSelf',
-  'justifySelf',
-  // Grid container props
-  'gridTemplateColumns',
-  'gridTemplateRows',
-  'gridTemplateAreas',
-  'gridAutoFlow',
-  'gridAutoRows',
-  'gridAutoColumns',
-  // Grid item placement props (useful on Box when composing grids)
-  'gridColumn',
-  'gridRow',
-] as const;
-
 export const BpkBox = ({ children, ...props }: BpkBoxProps) => {
-  // Process props to convert Backpack tokens to Chakra UI format
-  const processedProps = processBpkProps(props);
-
-  // className is explicitly excluded from props to prevent style overrides
-  const responsiveLayoutProps: Record<string, any> = {};
-  RESPONSIVE_LAYOUT_PROP_KEYS.forEach((key) => {
-    if ((processedProps as any)[key] !== undefined) {
-      responsiveLayoutProps[key] = (processedProps as any)[key];
-    }
-  });
-
-  // Map Backpack breakpoint keys to Chakra breakpoint keys for layout props.
-  // NOTE: Do not include spacing props here (e.g. gap/rowGap/columnGap) as those
-  // are already normalized and token-converted by processBpkProps.
-  const processedResponsiveLayoutProps = processResponsiveProps(responsiveLayoutProps);
-
-  return (
-    <Box {...processedProps} {...processedResponsiveLayoutProps}>
-      {children}
-    </Box>
-  );
+  const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
+  return <Box {...processedProps}>{children}</Box>;
 };
 
 export type { BpkBoxProps };
