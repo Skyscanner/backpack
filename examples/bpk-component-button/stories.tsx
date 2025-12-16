@@ -28,6 +28,7 @@ import {
   FeaturedExample,
   LinkExample,
   LinkOnDarkExample,
+  LinksExamples,
   MixedExample,
   AnchorTagsExample,
   FullWidthExample,
@@ -56,6 +57,8 @@ export const BpkButtonFeatured = () => <FeaturedExample />;
 export const BpkButtonLinkButton = () => <LinkExample />;
 
 export const BpkButtonLinkOnDarkButton = () => <LinkOnDarkExample />;
+
+export const BpkButtonLinks = () => <LinksExamples />;
 
 export const Mixture = () => <MixedExample />;
 export const AnchorTags = () => <AnchorTagsExample />;

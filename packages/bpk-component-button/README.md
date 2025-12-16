@@ -34,6 +34,9 @@ export default () => (
 );
 ```
 
+### Button Link
+The button which has `link` or `linkOnDark` type. Detail in [Button Link Type](./docs/button-link-type.md)
+
 ## Why do we export both `BpkButton` and `BpkButtonV2`?
 
 The legacy `BpkButton` component (V1) and all its variants (`BpkButtonPrimary`, `BpkButtonSecondary`, etc.) have been removed as of Backpack v41. Importing `BpkButton` now resolves to `BpkButtonV2`.
