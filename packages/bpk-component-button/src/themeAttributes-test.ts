@@ -19,7 +19,10 @@
 import {
   buttonThemeAttributes,
   primaryThemeAttributes,
+  primaryOnDarkThemeAttributes,
+  primaryOnLightThemeAttributes,
   secondaryThemeAttributes,
+  secondaryOnDarkThemeAttributes,
   destructiveThemeAttributes,
   featuredThemeAttributes,
 } from './themeAttributes';
@@ -42,6 +45,28 @@ describe('themeAttributes', () => {
     ]);
   });
 
+  it('should export the correct primaryOnDark theme attributes', () => {
+    expect(primaryOnDarkThemeAttributes).toEqual([
+      'buttonPrimaryOnDarkTextColor',
+      'buttonPrimaryOnDarkHoverTextColor',
+      'buttonPrimaryOnDarkActiveTextColor',
+      'buttonPrimaryOnDarkBackgroundColor',
+      'buttonPrimaryOnDarkHoverBackgroundColor',
+      'buttonPrimaryOnDarkActiveBackgroundColor',
+    ]);
+  });
+
+  it('should export the correct primaryOnLight theme attributes', () => {
+    expect(primaryOnLightThemeAttributes).toEqual([
+      'buttonPrimaryOnLightTextColor',
+      'buttonPrimaryOnLightHoverTextColor',
+      'buttonPrimaryOnLightActiveTextColor',
+      'buttonPrimaryOnLightBackgroundColor',
+      'buttonPrimaryOnLightHoverBackgroundColor',
+      'buttonPrimaryOnLightActiveBackgroundColor',
+    ]);
+  });
+
   it('should export the correct secondary theme attributes', () => {
     expect(secondaryThemeAttributes).toEqual([
       'buttonSecondaryTextColor',
@@ -53,6 +78,17 @@ describe('themeAttributes', () => {
       'buttonSecondaryBackgroundColor',
       'buttonSecondaryHoverBackgroundColor',
       'buttonSecondaryActiveBackgroundColor',
+    ]);
+  });
+
+  it('should export the correct secondaryOnDark theme attributes', () => {
+    expect(secondaryOnDarkThemeAttributes).toEqual([
+      'buttonSecondaryOnDarkTextColor',
+      'buttonSecondaryOnDarkHoverTextColor',
+      'buttonSecondaryOnDarkActiveTextColor',
+      'buttonSecondaryOnDarkBackgroundColor',
+      'buttonSecondaryOnDarkHoverBackgroundColor',
+      'buttonSecondaryOnDarkActiveBackgroundColor',
     ]);
   });
 

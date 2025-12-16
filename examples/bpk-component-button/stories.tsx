@@ -34,7 +34,6 @@ import {
   FullWidthExample,
   SubmitButtonExample,
 } from './examples';
-import { MixedExample as MixedExampleV1 } from './examplesv1';
 
 export default {
   title: 'bpk-component-button',
@@ -72,12 +71,5 @@ export const VisualTestWithZoom = {
   },
 };
 
-export const VisualTestV1 = () => <MixedExampleV1 />;
-export const VisualTestV1WithZoom = {
-  render: VisualTestV1,
-  args: {
-    zoomEnabled: true,
-  },
-};
 export const SubmitButton = () => <SubmitButtonExample />;
 export const FullWidth = () => <FullWidthExample />;
