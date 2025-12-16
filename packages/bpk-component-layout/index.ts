@@ -37,7 +37,7 @@ export type {
   BpkGridSpecificProps,
   BpkGridItemSpecificProps,
 } from './src/types';
-export type { BpkStackSpecificProps } from './src/BpkStack.types';
+export type { BpkStackSpecificProps } from './src/types';
 
 // Export token types and utilities
 export type {

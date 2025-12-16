@@ -18,6 +18,7 @@
 
 import type { ReactNode } from 'react';
 
+import type StackOptionKeys from './BpkStack.constant';
 import type { BpkCommonLayoutProps } from './commonProps';
 import type { BpkSpacingValue, BpkResponsiveValue, BpkBasisValue } from './tokens';
 import type {
@@ -25,6 +26,7 @@ import type {
   FlexProps,
   GridProps,
   GridItemProps,
+  StackProps,
 } from '@chakra-ui/react';
 
 
@@ -183,7 +185,7 @@ export type RemoveCommonProps<T> = Omit<
 export interface BpkBoxSpecificProps
   extends Omit<RemoveCommonProps<BoxProps>, BpkBoxResponsiveLayoutPropKeys>,
     BpkBoxResponsiveLayoutProps,
-    BpkFlexGridProps {}
+    Omit<BpkFlexGridProps, BpkBoxResponsiveLayoutPropKeys> {}
 
 /**
  * Props for BpkBox component
@@ -271,6 +273,36 @@ export interface BpkGridItemSpecificProps extends RemoveCommonProps<GridItemProp
  * Combines GridItem-specific props with Backpack common layout props
  */
 export interface BpkGridItemProps extends BpkCommonLayoutProps, BpkGridItemSpecificProps {
+  children?: ReactNode;
+}
+
+// ---- Stack (moved from BpkStack.types.ts) ----
+type StackOptionKeysType = typeof StackOptionKeys[number];
+
+/**
+ * Overrides StackOptions to support BpkResponsiveValue
+ */
+type BpkStackOptions = {
+  [K in StackOptionKeysType]?: K extends keyof StackProps
+    ? BpkResponsiveValue<StackProps[K]> | StackProps[K]
+    : never;
+};
+
+/**
+ * Component-specific props for BpkStack
+ * Includes all Stack props except those in BpkCommonLayoutProps
+ * Overrides StackOptions to support BpkResponsiveValue
+ */
+export interface BpkStackSpecificProps
+  extends Omit<RemoveCommonProps<StackProps>, StackOptionKeysType>,
+    BpkStackOptions,
+    BpkFlexGridProps {}
+
+/**
+ * Props for BpkStack component
+ * Combines Stack-specific props with Backpack common layout props
+ */
+export interface BpkStackProps extends BpkCommonLayoutProps, BpkStackSpecificProps {
   children?: ReactNode;
 }
 

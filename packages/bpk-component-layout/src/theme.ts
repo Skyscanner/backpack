@@ -125,6 +125,7 @@ const shadowMap: Record<string, string> = {
  * - xl: tablet (>= 769px)
  * - 2xl: desktop (>= 1025px)
  */
+// TODO: CLOV-1021 - will add breakpoint boundary tokens to Backpack Foundations package and use them here after we ship the PoC
 const breakpointMap: Record<ChakraBreakpointKey, string> = {
   base: '0rem',
   sm: '20rem', // 320px
