@@ -34,6 +34,7 @@ export const BpkButtonV2 = ({
   fullWidth = false,
   href = null,
   iconOnly = false,
+  implicit = false,
   onClick = () => {},
   rel: propRel = undefined,
   size = SIZE_TYPES.small,
@@ -41,6 +42,10 @@ export const BpkButtonV2 = ({
   type = BUTTON_TYPES.primary,
   ...rest
 }: Props) => {
+  const isLinkType = type === BUTTON_TYPES.link || type === BUTTON_TYPES.linkOnDark;
+  const alternate = type === BUTTON_TYPES.linkOnDark;
+  const shouldUnderline = isLinkType && !iconOnly && !disabled;
+
   const classNames = getCommonClassName(
     'bpk-button',
     size === SIZE_TYPES.large && 'bpk-button--large',
@@ -48,8 +53,23 @@ export const BpkButtonV2 = ({
     iconOnly && size === SIZE_TYPES.large && 'bpk-button--large-icon-only',
     `bpk-button--${type}`,
     fullWidth && 'bpk-button--full-width',
+    isLinkType && iconOnly && 'bpk-button--link--icon-only',
+    isLinkType && implicit && 'bpk-button--link--implicit',
     className,
   );
+
+  const underlinedClassName = shouldUnderline
+    ? getCommonClassName(
+        'bpk-button--link-underlined',
+        implicit && !alternate && 'bpk-button--link-underlined--implicit',
+        alternate && !implicit && 'bpk-button--link-underlined--alternate',
+        implicit && alternate && 'bpk-button--link-underlined--implicit--alternate',
+      )
+    : null;
+
+  const content = underlinedClassName
+    ? <span className={underlinedClassName}>{children}</span>
+    : children;
 
   const target = blank ? '_blank' : '';
   const rel = blank ? propRel || 'noopener noreferrer' : propRel;
@@ -64,7 +84,7 @@ export const BpkButtonV2 = ({
         rel={rel}
         {...rest}
       >
-        {children}
+        {content}
       </a>
     );
   }
@@ -77,7 +97,7 @@ export const BpkButtonV2 = ({
       onClick={onClick}
       {...rest}
     >
-      {children}
+      {content}
     </button>
   );
 };

@@ -416,7 +416,10 @@
     text-decoration: none;
   }
 
-  &:disabled {
+  // The link button inherits from bpk-link which defines :active styles but has no disabled state,
+  // so we need to ensure the disabled appearance is maintained even when clicked.
+  &:disabled,
+  &:disabled:active {
     background: none;
     color: tokens.$bpk-text-disabled-day;
     text-decoration: none;
@@ -469,13 +472,48 @@
     );
   }
 
-  &:disabled {
+  &:disabled,
+  &:disabled:active {
     @include utils.bpk-themeable-property(
       color,
       --bpk-button-link-on-dark-disabled-color,
       tokens.$bpk-private-button-link-on-dark-disabled-foreground-day
     );
   }
+}
+
+/// Button link icon only aligned. Modifies the bpk-button mixin.
+///
+/// @require {mixin} bpk-button
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--link-icon-only;
+///   }
+
+@mixin bpk-button--link-icon-only {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+
+/// Button link underlined. Modifies the bpk-button mixin.
+///
+/// @require {mixin} bpk-button
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--link-underlined;
+///   }
+
+@mixin bpk-button--link-underlined {
+  gap: tokens.bpk-spacing-md();
+
+  @include bpk-button--link-icon-only;
+  @include typography.bpk-link-underlined;
 }
 
 /// Icon-only button. Modifies the bpk-button mixin.
