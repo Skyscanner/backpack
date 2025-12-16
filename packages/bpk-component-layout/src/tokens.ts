@@ -50,7 +50,6 @@ export const BpkBreakpoint = {
   SmallTablet: 'small-tablet',
   Tablet: 'tablet',
   Desktop: 'desktop',
-  LargeDesktop: 'large-desktop',
 } as const;
 
 export type BpkBreakpointToken = typeof BpkBreakpoint[keyof typeof BpkBreakpoint];
@@ -58,12 +57,13 @@ export type BpkBreakpointToken = typeof BpkBreakpoint[keyof typeof BpkBreakpoint
 export type ChakraBreakpointKey = 'base' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
 export const BpkBreakpointToChakraKey: Record<BpkBreakpointToken, ChakraBreakpointKey> = {
-  'small-mobile': 'base',
-  mobile: 'sm',
-  'small-tablet': 'md',
-  tablet: 'lg',
-  desktop: 'xl',
-  'large-desktop': '2xl',
+  // Keep this mapping in sync with the breakpoints configured in `theme.ts`.
+  // `base` is reserved for "default value" and is not a breakpoint token.
+  'small-mobile': 'sm',
+  mobile: 'md',
+  'small-tablet': 'lg',
+  tablet: 'xl',
+  desktop: '2xl',
 };
 
 /**

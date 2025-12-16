@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import StackOptionKeys from './BpkStack.constant';
 import { getSpacingValue } from './theme';
 import {
   BpkBreakpointToChakraKey,
@@ -25,8 +26,205 @@ import {
   isPercentage,
 } from './tokens';
 
-import type {
-  BpkBreakpointToken} from './tokens';
+import type { BpkBreakpointToken } from './tokens';
+
+export type BpkLayoutComponentName = 'BpkBox' | 'BpkFlex' | 'BpkGrid' | 'BpkStack';
+
+/**
+ * Allowlisted, component-scoped prop groups that are eligible for Backpack responsive value
+ * processing (Backpack breakpoint keys -> Chakra breakpoint keys).
+ *
+ * NOTE:
+ * - Spacing/size/position props are processed separately via `processBpkProps` and therefore
+ *   are intentionally NOT included here.
+ * - These groups are meant to keep the responsive surface predictable per component, while
+ *   avoiding duplicated per-component breakpoint mapping logic.
+ */
+type BpkResponsivePropGroups = {
+  /**
+   * Container-level layout props (how children are laid out).
+   */
+  container: readonly string[];
+  /**
+   * Item-level layout props (how this element participates in a parent layout).
+   */
+  item?: readonly string[];
+};
+
+export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
+  BpkLayoutComponentName,
+  BpkResponsivePropGroups
+> = {
+  BpkBox: {
+    container: [
+      // Display
+      'display',
+      // Flex container props
+      'flexDirection',
+      'flexWrap',
+      'justifyContent',
+      'alignItems',
+      'alignContent',
+      // Grid container props
+      'gridTemplateColumns',
+      'gridTemplateRows',
+      'gridTemplateAreas',
+      'gridAutoFlow',
+      'gridAutoRows',
+      'gridAutoColumns',
+    ],
+    item: [
+      // Flex item props
+      'flex',
+      'flexGrow',
+      'flexShrink',
+      'flexBasis',
+      'order',
+      'alignSelf',
+      'justifySelf',
+      // Grid item placement props (useful on Box when composing grids)
+      'gridColumn',
+      'gridRow',
+    ],
+  },
+  // Note: BpkFlex maps its public API props to these Chakra keys.
+  BpkFlex: {
+    container: [
+      'flexDirection',
+      'justifyContent',
+      'alignItems',
+      'flexWrap',
+    ],
+    item: [
+      'flexGrow',
+      'flexShrink',
+      'flexBasis',
+    ],
+  },
+  // Note: BpkGrid maps its public API props to these Chakra keys.
+  BpkGrid: {
+    container: [
+      'justifyContent',
+      'alignItems',
+      'gridTemplateColumns',
+      'gridTemplateRows',
+      'gridTemplateAreas',
+      'gridAutoFlow',
+      'gridAutoRows',
+      'gridAutoColumns',
+    ],
+    item: [
+      // Used when placing the grid itself within a parent grid.
+      'gridColumn',
+      'gridRow',
+    ],
+  },
+  // Note: BpkStack uses Chakra Stack option prop names directly.
+  BpkStack: {
+    container: StackOptionKeys as unknown as readonly string[],
+  },
+};
+
+export const BPK_RESPONSIVE_PROP_KEYS_BY_COMPONENT: Record<
+  BpkLayoutComponentName,
+  readonly string[]
+> = {
+  BpkBox: [
+    ...BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkBox.container,
+    ...(BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkBox.item ?? []),
+  ],
+  BpkFlex: [
+    ...BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkFlex.container,
+    ...(BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkFlex.item ?? []),
+  ],
+  BpkGrid: [
+    ...BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkGrid.container,
+    ...(BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkGrid.item ?? []),
+  ],
+  BpkStack: [...BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkStack.container],
+};
+
+export type ProcessBpkComponentPropsOptions = {
+  component: BpkLayoutComponentName;
+  /**
+   * Optional map of responsive props. When provided, it will be filtered to the
+   * allowlist for the given component, then breakpoint-normalised.
+   *
+   * This is useful for components like `BpkFlex` and `BpkGrid` that expose a
+   * public API with different prop names.
+   */
+  responsiveProps?: Record<string, any>;
+  /**
+   * Optional mapping of source prop name -> target prop name.
+   * Primarily kept for parity with `processResponsiveProps`.
+   */
+  propNameMap?: Record<string, string>;
+};
+
+function filterToAllowlist(
+  props: Record<string, any>,
+  allowlist: readonly string[],
+): Record<string, any> {
+  const allowed = new Set(allowlist);
+  const result: Record<string, any> = {};
+  Object.keys(props).forEach((key) => {
+    if (allowed.has(key) && props[key] !== undefined) {
+      result[key] = props[key];
+    }
+  });
+  return result;
+}
+
+/**
+ * Process a component's props in one place:
+ * - strip className/style
+ * - process spacing/size/position props (including breakpoint mapping + token conversion)
+ * - process allowlisted non-spacing responsive layout props (breakpoint mapping only)
+ *
+ * The allowlist is grouped by component via `BPK_RESPONSIVE_PROP_KEYS_BY_COMPONENT`.
+ *
+ * @param {T} props - The component props to process.
+ * @param {ProcessBpkComponentPropsOptions} options - Component processing options (allowlist group + mapping).
+ * @returns {Record<string, any>} The processed props ready to pass to Chakra primitives.
+ */
+export function processBpkComponentProps<T extends Record<string, any>>(
+  props: T,
+  options: ProcessBpkComponentPropsOptions,
+): Record<string, any> {
+  const processed = processBpkProps(props);
+
+  const allowlist = BPK_RESPONSIVE_PROP_KEYS_BY_COMPONENT[options.component];
+  const responsiveSource = options.responsiveProps
+    ? filterToAllowlist(options.responsiveProps, allowlist)
+    : filterToAllowlist(processed, allowlist);
+
+  if (Object.keys(responsiveSource).length === 0) {
+    return processed;
+  }
+
+  // Ensure allowlisted layout props do NOT fall through unprocessed (e.g. array responsive values).
+  // These props must be provided via the responsive processing pipeline only.
+  const cleanedProcessed: Record<string, any> = { ...processed };
+  allowlist.forEach((key) => {
+    if (key in cleanedProcessed) {
+      delete cleanedProcessed[key];
+    }
+  });
+
+  const responsiveProcessed = processResponsiveProps(
+    responsiveSource,
+    options.propNameMap,
+  );
+
+  // Remove keys that ended up as `undefined` (e.g. array responsive values are rejected).
+  Object.keys(responsiveProcessed).forEach((key) => {
+    if (responsiveProcessed[key] === undefined) {
+      delete responsiveProcessed[key];
+    }
+  });
+
+  return { ...cleanedProcessed, ...responsiveProcessed };
+}
 
 /**
  * Converts Backpack spacing token to Chakra UI compatible value

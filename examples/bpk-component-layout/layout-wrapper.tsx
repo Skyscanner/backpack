@@ -16,15 +16,17 @@
  * limitations under the License.
  */
 
-import { Box } from '@chakra-ui/react';
+import type { ReactNode } from 'react';
 
-import { processBpkComponentProps } from './tokenUtils';
+import { BpkProvider } from '../../packages/bpk-component-layout';
 
-import type { BpkBoxProps } from './types';
+import STYLES from './examples.module.scss';
 
-export const BpkBox = ({ children, ...props }: BpkBoxProps) => {
-  const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
-  return <Box {...processedProps}>{children}</Box>;
-};
+const Wrapper = ({ children }: { children: ReactNode }) => (
+  <BpkProvider>
+    <div className={STYLES['bpk-layout-examples__frame']}>{children}</div>
+  </BpkProvider>
+);
 
-export type { BpkBoxProps };
+export default Wrapper;
+

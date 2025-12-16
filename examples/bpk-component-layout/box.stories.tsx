@@ -18,22 +18,21 @@
 
 import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
-import { BpkProvider, BpkStack } from '../../packages/bpk-component-layout';
+import { BpkProvider, BpkBox } from '../../packages/bpk-component-layout';
 
 import {
-  StackDefaultExample,
-  StackHorizontalExample,
-  HStackExample,
-  VStackExample,
-  VerticalContentBlocksExample,
-  ResponsiveDirectionExample,
-  HorizontalButtonsExample,
-  NestedStackExample,
-} from './stack-examples';
+  SpacingExample,
+  RtlSpacingExample,
+  SizeExample,
+  ResponsiveExample,
+  PositionExample,
+  FlexExample,
+  GridExample,
+} from './box-examples';
 
 export default {
-  title: 'bpk-component-layout/Stack',
-  component: BpkStack,
+  title: 'bpk-component-layout/Box',
+  component: BpkBox,
   decorators: [
     (Story: any) => (
       <BpkProvider>
@@ -48,8 +47,8 @@ export default {
           <Title />
           <ArgTypes exclude={['zoomEnabled']} />
           <Markdown>
-            Notes: `BpkStack`, `BpkHStack` and `BpkVStack` are layout primitives
-            for stacking items with tokenised gaps.
+            Notes: `BpkBox` is the base layout primitive. It exposes a curated,
+            structural prop surface and tokenised spacing.
           </Markdown>
         </>
       ),
@@ -57,12 +56,12 @@ export default {
   },
 };
 
-export const VerticalContentBlocks = () => <VerticalContentBlocksExample />;
-export const HorizontalButtons = () => <HorizontalButtonsExample />;
-export const NestedStack = () => <NestedStackExample />;
-export const StackDefault = () => <StackDefaultExample />;
-export const StackHorizontal = () => <StackHorizontalExample />;
-export const StackH = () => <HStackExample />;
-export const StackV = () => <VStackExample />;
-export const StackResponsive = () => <ResponsiveDirectionExample />;
+export const Spacing = () => <SpacingExample />;
+export const RtlSpacing = () => <RtlSpacingExample />;
+export const Size = () => <SizeExample />;
+export const Responsive = () => <ResponsiveExample />;
+export const Position = () => <PositionExample />;
+export const FlexViaBox = () => <FlexExample />;
+export const GridViaBox = () => <GridExample />;
+
 

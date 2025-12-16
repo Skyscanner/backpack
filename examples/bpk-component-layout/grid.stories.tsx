@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
+
 import { BpkGrid, BpkProvider } from '../../packages/bpk-component-layout';
 
 import {
@@ -35,6 +37,20 @@ export default {
       </BpkProvider>
     ),
   ],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <ArgTypes exclude={['zoomEnabled']} />
+          <Markdown>
+            Notes: `BpkGrid` and `BpkGridItem` are layout primitives for CSS
+            grid layouts.
+          </Markdown>
+        </>
+      ),
+    },
+  },
 };
 
 export const Default = BpkGridExample;

@@ -16,20 +16,14 @@
  * limitations under the License.
  */
 
-
-import type { ReactNode } from 'react';
-
 import {
   BpkBox,
-  BpkProvider,
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
 
-import STYLES from './examples.module.scss';
+import Wrapper from './layout-wrapper';
 
-export const Wrapper = ({ children }: { children: ReactNode }) => (
-  <BpkProvider>{children}</BpkProvider>
-);
+import STYLES from './examples.module.scss';
 
 /**
  * Core layout example – demonstrates basic spacing usage.
@@ -58,9 +52,10 @@ export const RtlSpacingExample = () => (
         paddingInline={BpkSpacing.MD}
         marginInline={BpkSpacing.MD}
         paddingTop={BpkSpacing.MD}
+        paddingBottom={BpkSpacing.Base}
       >
         <span className={STYLES['bpk-layout-examples__outline']}>
-          Box using marginInline & paddingInline in RTL context.
+          Box using marginInline &amp; paddingInline in RTL context.
         </span>
       </BpkBox>
     </div>
@@ -68,7 +63,7 @@ export const RtlSpacingExample = () => (
 );
 
 /**
- * Size example – demonstrates width/height using spacing tokens and semantic values.
+ * Size example – demonstrates width/height using semantic values.
  *
  * @returns {JSX.Element} Box with 50% width and 6rem minHeight.
  */
@@ -85,18 +80,24 @@ export const SizeExample = () => (
 /**
  * Responsive example – demonstrates breakpoint-based responsive layout props.
  *
- * @returns {JSX.Element} A box whose padding and layout change across breakpoints.
+ * @returns {JSX.Element} A box whose spacing changes across breakpoints.
  */
 export const ResponsiveExample = () => (
   <Wrapper>
     <BpkBox
       display="flex"
       padding={{
-        mobile: BpkSpacing.SM,
+        base: BpkSpacing.SM,
+        mobile: BpkSpacing.Base,
         tablet: BpkSpacing.MD,
         desktop: BpkSpacing.LG,
       }}
-      gap={BpkSpacing.SM}
+      gap={{
+        base: BpkSpacing.SM,
+        mobile: BpkSpacing.Base,
+        tablet: BpkSpacing.MD,
+        desktop: BpkSpacing.LG,
+      }}
     >
       <BpkBox>
         <span className={STYLES['bpk-layout-examples__outline']}>
@@ -113,45 +114,20 @@ export const ResponsiveExample = () => (
 );
 
 /**
- * Mixed visual regression example – used for Percy/visual tests.
- *
- * @returns {JSX.Element} A wrapper containing all layout examples for visual regression.
- */
-export const MixedExample = () => (
-  <Wrapper>
-    <SpacingExample />
-    <RtlSpacingExample />
-    <SizeExample />
-    <ResponsiveExample />
-    <PositionExample />
-    <FlexExample />
-    <GridExample />
-  </Wrapper>
-);
-
-/**
- * Position example – demonstrates top/left offsets using spacing tokens.
+ * Position example – demonstrates top/left offsets using allowed values.
  *
  * @returns {JSX.Element} A relative box with an absolutely positioned child.
  */
 export const PositionExample = () => (
   <Wrapper>
     <BpkBox padding={BpkSpacing.MD}>
-      <BpkBox
-        position="relative"
-        width="10rem"
-        minHeight="6rem"
-      >
+      <BpkBox position="relative" width="10rem" minHeight="6rem">
         <span className={STYLES['bpk-layout-examples__outline']}>
           Relative box (10rem x 6rem)
         </span>
-        <BpkBox
-          position="absolute"
-          top="12rem"
-          left="6rem"
-        >
+        <BpkBox position="absolute" top="12rem" left="6rem">
           <span className={STYLES['bpk-layout-examples__outline']}>
-            Positioned child (top/left from 12rem,10rem)
+            Positioned child (top/left from 12rem, 6rem)
           </span>
         </BpkBox>
       </BpkBox>
@@ -172,21 +148,13 @@ export const FlexExample = () => (
       justifyContent="space-between"
       padding={BpkSpacing.MD}
     >
-      <BpkBox padding={BpkSpacing.SM}>
-        <span className={STYLES['bpk-layout-examples__outline']}>
-          Flex item 1
-        </span>
-      </BpkBox>
-      <BpkBox padding={BpkSpacing.SM}>
-        <span className={STYLES['bpk-layout-examples__outline']}>
-          Flex item 2
-        </span>
-      </BpkBox>
-      <BpkBox padding={BpkSpacing.SM}>
-        <span className={STYLES['bpk-layout-examples__outline']}>
-          Flex item 3
-        </span>
-      </BpkBox>
+      {[1, 2, 3].map((i) => (
+        <BpkBox key={i} padding={BpkSpacing.SM}>
+          <span className={STYLES['bpk-layout-examples__outline']}>
+            Flex item {i}
+          </span>
+        </BpkBox>
+      ))}
     </BpkBox>
   </Wrapper>
 );
@@ -204,36 +172,32 @@ export const GridExample = () => (
       gap={BpkSpacing.MD}
       padding={BpkSpacing.MD}
     >
-      <BpkBox padding={BpkSpacing.SM}>
-        <span className={STYLES['bpk-layout-examples__outline']}>
-          Grid cell 1
-        </span>
-      </BpkBox>
-      <BpkBox padding={BpkSpacing.SM}>
-        <span className={STYLES['bpk-layout-examples__outline']}>
-          Grid cell 2
-        </span>
-      </BpkBox>
-      <BpkBox padding={BpkSpacing.SM}>
-        <span className={STYLES['bpk-layout-examples__outline']}>
-          Grid cell 3
-        </span>
-      </BpkBox>
-      <BpkBox padding={BpkSpacing.SM}>
-        <span className={STYLES['bpk-layout-examples__outline']}>
-          Grid cell 4
-        </span>
-      </BpkBox>
-      <BpkBox padding={BpkSpacing.SM}>
-        <span className={STYLES['bpk-layout-examples__outline']}>
-          Grid cell 5
-        </span>
-      </BpkBox>
-      <BpkBox padding={BpkSpacing.SM}>
-        <span className={STYLES['bpk-layout-examples__outline']}>
-          Grid cell 6
-        </span>
-      </BpkBox>
+      {[1, 2, 3, 4, 5, 6].map((i) => (
+        <BpkBox key={i} padding={BpkSpacing.SM}>
+          <span className={STYLES['bpk-layout-examples__outline']}>
+            Grid cell {i}
+          </span>
+        </BpkBox>
+      ))}
     </BpkBox>
   </Wrapper>
 );
+
+/**
+ * Mixed visual regression example – used for Percy/visual tests.
+ *
+ * @returns {JSX.Element} A wrapper containing all Box examples for visual regression.
+ */
+export const MixedExample = () => (
+  <Wrapper>
+    <SpacingExample />
+    <RtlSpacingExample />
+    <SizeExample />
+    <ResponsiveExample />
+    <PositionExample />
+    <FlexExample />
+    <GridExample />
+  </Wrapper>
+);
+
+
