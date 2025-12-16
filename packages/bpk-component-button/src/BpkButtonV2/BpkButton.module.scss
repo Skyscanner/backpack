@@ -54,6 +54,7 @@
 
     // override SVG display for link buttons
     --bpk-button-svg-display: inline-block;
+    --bpk-button-svg-vertical-align: middle;
 
     &--implicit {
       @include typography.bpk-link--implicit;
@@ -67,6 +68,10 @@
   &--link-on-dark {
     @include buttons.bpk-button--link-on-dark;
     @include typography.bpk-link--alternate;
+
+    // override SVG display for link buttons
+    --bpk-button-svg-display: inline-block;
+    --bpk-button-svg-vertical-align: middle;
 
     &--implicit {
       @include typography.bpk-link--implicit;
@@ -112,6 +117,7 @@
   /* stylelint-disable selector-max-compound-selectors */
   span > svg {
     display: var(--bpk-button-svg-display, block);
+    vertical-align: var(--bpk-button-svg-vertical-align, baseline);
   }
 
   svg {
