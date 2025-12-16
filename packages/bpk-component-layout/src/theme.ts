@@ -25,8 +25,20 @@ import type { ChakraBreakpointKey } from './tokens';
 
 const bpkTokens = require('@skyscanner/bpk-foundations-web/tokens/base.es6');
 
-// Extract color tokens (keeping for backward compatibility)
-const { breakpoints } = bpkTokens;
+// NOTE:
+// We intentionally do not use the raw breakpoint *values* from foundations here.
+// Foundations exports breakpoint values such as `breakpointMobile = "32rem"` which
+// are used primarily for max-width queries (e.g. `(max-width: 32rem)`).
+//
+// Backpack layout responsive values in this package are mobile-first and behave
+// like Chakra breakpoints (min-width thresholds). To align with Backpack’s
+// intended breakpoint ranges we define lower-bound (min-width) thresholds:
+//
+// - small-mobile: 320px+
+// - mobile: 360px+
+// - small-tablet: 513px+
+// - tablet: 769px+
+// - desktop: 1025px+
 
 // Note: Spacing tokens are defined as SCSS functions in Backpack foundations,
 // not as direct values. We need to use the actual rem values from the SCSS functions.
@@ -102,27 +114,25 @@ const shadowMap: Record<string, string> = {
 };
 
 /**
- * Maps Backpack breakpoint tokens to Chakra breakpoint values.
- *
- * IMPORTANT:
  * Chakra expects raw width values (e.g. "48rem"), not full media queries.
  * The media query construction is handled internally by Chakra's system.
  *
- * We align the Backpack breakpoints to Chakra's keys like this:
+ * We align Backpack breakpoint tokens to Chakra's keys like this:
  * - base: 0 (implicit)
- * - sm: small-mobile
- * - md: mobile
- * - lg: small-tablet
- * - xl: tablet
- * - 2xl: desktop
+ * - sm: small-mobile (>= 320px)
+ * - md: mobile (>= 360px)
+ * - lg: small-tablet (>= 513px)
+ * - xl: tablet (>= 769px)
+ * - 2xl: desktop (>= 1025px)
  */
+// TODO: CLOV-1021 - will add breakpoint boundary tokens to Backpack Foundations package and use them here after we ship the PoC
 const breakpointMap: Record<ChakraBreakpointKey, string> = {
   base: '0rem',
-  sm: breakpoints.breakpointSmallMobile,
-  md: breakpoints.breakpointMobile,
-  lg: breakpoints.breakpointSmallTablet,
-  xl: breakpoints.breakpointTablet,
-  '2xl': breakpoints.breakpointDesktop,
+  sm: '20rem', // 320px
+  md: '22.5rem', // 360px
+  lg: '32.0625rem', // 513px
+  xl: '48.0625rem', // 769px
+  '2xl': '64.0625rem', // 1025px
 };
 
 /**

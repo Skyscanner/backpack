@@ -18,22 +18,22 @@
 
 import { Stack, VStack, HStack } from '@chakra-ui/react';
 
-import { processBpkStackProps } from './BpkStack.tokenUtils';
+import { processBpkComponentProps } from './tokenUtils';
 
-import type { BpkStackProps } from './BpkStack.types';
+import type { BpkStackProps } from './types';
 
 export const BpkStack = ({ children, ...props }: BpkStackProps) => {
-  const processedProps = processBpkStackProps(props);
+  const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
   return <Stack {...processedProps}>{children}</Stack>;
 };
 
 export const BpkHStack = ({ children, ...props }: BpkStackProps) => {
-  const processedProps = processBpkStackProps(props);
+  const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
   return <HStack {...processedProps}>{children}</HStack>;
 };
 
 export const BpkVStack = ({ children, ...props }: BpkStackProps) => {
-  const processedProps = processBpkStackProps(props);
+  const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
   return <VStack {...processedProps}>{children}</VStack>;
 };
 

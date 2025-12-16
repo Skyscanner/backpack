@@ -18,6 +18,7 @@
 
 import type { ReactNode } from 'react';
 
+import type StackOptionKeys from './BpkStack.constant';
 import type { BpkCommonLayoutProps } from './commonProps';
 import type { BpkSpacingValue, BpkResponsiveValue, BpkBasisValue } from './tokens';
 import type {
@@ -25,6 +26,7 @@ import type {
   FlexProps,
   GridProps,
   GridItemProps,
+  StackProps,
 } from '@chakra-ui/react';
 
 
@@ -117,6 +119,50 @@ export interface BpkFlexGridProps {
 export type FlexGridPropKeys = keyof BpkFlexGridProps;
 
 /**
+ * Curated subset of Box layout props that support Backpack responsive values.
+ *
+ * NOTE:
+ * - These are structural layout props (flex/grid/display) that we want to allow
+ *   on `BpkBox`, but using Backpack breakpoint keys rather than Chakra's
+ *   array syntax or Chakra breakpoint keys.
+ * - Spacing/size/position props are handled separately via `BpkCommonLayoutProps`.
+ */
+type BpkBoxResponsiveLayoutProps = {
+  // Display
+  display?: BpkResponsiveValue<BoxProps['display']>;
+
+  // Flex container props
+  flexDirection?: BpkResponsiveValue<BoxProps['flexDirection']>;
+  flexWrap?: BpkResponsiveValue<BoxProps['flexWrap']>;
+  justifyContent?: BpkResponsiveValue<BoxProps['justifyContent']>;
+  alignItems?: BpkResponsiveValue<BoxProps['alignItems']>;
+  alignContent?: BpkResponsiveValue<BoxProps['alignContent']>;
+
+  // Flex item props
+  flex?: BpkResponsiveValue<BoxProps['flex']>;
+  flexGrow?: BpkResponsiveValue<BoxProps['flexGrow']>;
+  flexShrink?: BpkResponsiveValue<BoxProps['flexShrink']>;
+  flexBasis?: BpkResponsiveValue<BoxProps['flexBasis']>;
+  order?: BpkResponsiveValue<BoxProps['order']>;
+  alignSelf?: BpkResponsiveValue<BoxProps['alignSelf']>;
+  justifySelf?: BpkResponsiveValue<BoxProps['justifySelf']>;
+
+  // Grid container props
+  gridTemplateColumns?: BpkResponsiveValue<BoxProps['gridTemplateColumns']>;
+  gridTemplateRows?: BpkResponsiveValue<BoxProps['gridTemplateRows']>;
+  gridTemplateAreas?: BpkResponsiveValue<BoxProps['gridTemplateAreas']>;
+  gridAutoFlow?: BpkResponsiveValue<BoxProps['gridAutoFlow']>;
+  gridAutoRows?: BpkResponsiveValue<BoxProps['gridAutoRows']>;
+  gridAutoColumns?: BpkResponsiveValue<BoxProps['gridAutoColumns']>;
+
+  // Grid item placement props (useful on Box when composing grids)
+  gridColumn?: BpkResponsiveValue<BoxProps['gridColumn']>;
+  gridRow?: BpkResponsiveValue<BoxProps['gridRow']>;
+};
+
+type BpkBoxResponsiveLayoutPropKeys = keyof BpkBoxResponsiveLayoutProps;
+
+/**
  * Base type that removes common layout props, reserved props (className,
  * children) and all layout-level event props from Chakra UI props.
  *
@@ -137,8 +183,9 @@ export type RemoveCommonProps<T> = Omit<
  * Includes all Box props except those in BpkCommonLayoutProps
  */
 export interface BpkBoxSpecificProps
-  extends RemoveCommonProps<BoxProps>,
-    BpkFlexGridProps {}
+  extends Omit<RemoveCommonProps<BoxProps>, BpkBoxResponsiveLayoutPropKeys>,
+    BpkBoxResponsiveLayoutProps,
+    Omit<BpkFlexGridProps, BpkBoxResponsiveLayoutPropKeys> {}
 
 /**
  * Props for BpkBox component
@@ -226,6 +273,36 @@ export interface BpkGridItemSpecificProps extends RemoveCommonProps<GridItemProp
  * Combines GridItem-specific props with Backpack common layout props
  */
 export interface BpkGridItemProps extends BpkCommonLayoutProps, BpkGridItemSpecificProps {
+  children?: ReactNode;
+}
+
+// ---- Stack (moved from BpkStack.types.ts) ----
+type StackOptionKeysType = typeof StackOptionKeys[number];
+
+/**
+ * Overrides StackOptions to support BpkResponsiveValue
+ */
+type BpkStackOptions = {
+  [K in StackOptionKeysType]?: K extends keyof StackProps
+    ? BpkResponsiveValue<StackProps[K]> | StackProps[K]
+    : never;
+};
+
+/**
+ * Component-specific props for BpkStack
+ * Includes all Stack props except those in BpkCommonLayoutProps
+ * Overrides StackOptions to support BpkResponsiveValue
+ */
+export interface BpkStackSpecificProps
+  extends Omit<RemoveCommonProps<StackProps>, StackOptionKeysType>,
+    BpkStackOptions,
+    BpkFlexGridProps {}
+
+/**
+ * Props for BpkStack component
+ * Combines Stack-specific props with Backpack common layout props
+ */
+export interface BpkStackProps extends BpkCommonLayoutProps, BpkStackSpecificProps {
   children?: ReactNode;
 }
 

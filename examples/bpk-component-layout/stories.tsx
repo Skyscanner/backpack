@@ -16,54 +16,104 @@
  * limitations under the License.
  */
 
-import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
-
-import { BpkProvider, BpkBox } from '../../packages/bpk-component-layout';
+import {
+  BpkBox,
+  BpkFlex,
+  BpkGrid,
+  BpkGridItem,
+  BpkProvider,
+  BpkStack,
+} from '../../packages/bpk-component-layout';
 
 import {
-  SpacingExample,
-  RtlSpacingExample,
-  SizeExample,
-  MixedExample,
-  ResponsiveExample,
-  PositionExample,
   FlexExample,
   GridExample,
-} from './examples';
+  PositionExample,
+  ResponsiveExample,
+  RtlSpacingExample,
+  SizeExample,
+  SpacingExample,
+} from './box-examples';
+import {
+  BpkFlexDirectionExample,
+  BpkFlexExample,
+  BpkFlexInlineExample,
+  BpkFlexItemExample,
+  BpkFlexResponsiveExample,
+  BpkFlexWrapExample,
+} from './flex-examples';
+import {
+  BpkGridExample,
+  BpkGridResponsiveExample,
+  BpkGridSpanExample,
+  BpkGridWithItemExample,
+} from './grid-examples';
+import {
+  HStackExample,
+  HorizontalButtonsExample,
+  NestedStackExample,
+  ResponsiveDirectionExample,
+  StackDefaultExample,
+  StackHorizontalExample,
+  VStackExample,
+  VerticalContentBlocksExample,
+} from './stack-examples';
 
 export default {
-  title: 'bpk-component-layout/Box',
-  component: BpkBox,
-  decorators: [
-    (Story: any) => (
-      <BpkProvider>
-        <Story />
-      </BpkProvider>
-    ),
-  ],
+  title: 'bpk-component-layout',
+  component: BpkProvider,
+  subcomponents: {
+    BpkBox,
+    BpkFlex,
+    BpkGrid,
+    BpkGridItem,
+    BpkStack,
+  },
   parameters: {
     docs: {
-      page: () => (
-        <>
-          <Title />
-          <ArgTypes exclude={['zoomEnabled']} />
-          <Markdown>
-            Notes: BpkProvider is the root component for the Backpack layout components.
-          </Markdown>
-        </>
-      )
+      // Use Storybook's default docs rendering.
+      page: undefined,
     },
   },
 };
-export const Spacing = () => <SpacingExample />;
-export const RtlSpacing = () => <RtlSpacingExample />;
-export const Size = () => <SizeExample />;
-export const Responsive = () => <ResponsiveExample />;
-export const Position = () => <PositionExample />;
-export const Flex = () => <FlexExample />;
-export const Grid = () => <GridExample />;
 
-export const VisualTest = MixedExample;
+export const VisualTest = () => (
+  <>
+    {/* Box examples */}
+    <SpacingExample />
+    <RtlSpacingExample />
+    <SizeExample />
+    <ResponsiveExample />
+    <PositionExample />
+    <FlexExample />
+    <GridExample />
+
+    {/* Flex examples */}
+    <BpkFlexExample />
+    <BpkFlexDirectionExample />
+    <BpkFlexWrapExample />
+    <BpkFlexResponsiveExample />
+    <BpkFlexItemExample />
+    <BpkFlexInlineExample />
+
+    {/* Grid examples */}
+    <BpkGridExample />
+    <BpkGridSpanExample />
+    <BpkGridWithItemExample />
+    <BpkGridResponsiveExample />
+
+    {/* Stack examples */}
+    <VerticalContentBlocksExample />
+    <HorizontalButtonsExample />
+    <NestedStackExample />
+    <StackDefaultExample />
+    <StackHorizontalExample />
+    <HStackExample />
+    <VStackExample />
+    <ResponsiveDirectionExample />
+  </>
+);
+
 export const VisualTestWithZoom = {
   render: VisualTest,
   args: {

@@ -16,7 +16,12 @@
  * limitations under the License.
  */
 
-import { processBpkProps } from './tokenUtils';
+import {
+  convertBpkSpacingToChakra,
+  processBpkComponentProps,
+  processBpkProps,
+  processResponsiveProps,
+} from './tokenUtils';
 import { BpkSpacing } from './tokens';
 
 describe('processBpkProps', () => {
@@ -110,8 +115,79 @@ describe('processBpkProps', () => {
     });
 
     expect(result.padding).toEqual({
-      sm: '.25rem',
-      lg: '.5rem',
+      md: '.25rem',
+      xl: '.5rem',
     });
+  });
+
+  it('maps Backpack breakpoint keys for non-spacing layout props via processResponsiveProps', () => {
+    const result = processResponsiveProps({
+      display: { mobile: 'flex', desktop: 'grid' },
+      flexDirection: { mobile: 'column', tablet: 'row' },
+      gridTemplateColumns: { tablet: 'repeat(2, 1fr)', desktop: 'repeat(4, 1fr)' },
+    });
+
+    expect(result).toEqual({
+      display: { md: 'flex', '2xl': 'grid' },
+      flexDirection: { md: 'column', xl: 'row' },
+      gridTemplateColumns: { xl: 'repeat(2, 1fr)', '2xl': 'repeat(4, 1fr)' },
+    });
+  });
+
+  it('does not let allowlisted Box layout props fall through unprocessed (e.g. array responsive values)', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    const result = processBpkComponentProps(
+      {
+        // Chakra array syntax is intentionally not supported in the public API.
+        display: ['flex', 'grid'],
+      } as any,
+      { component: 'BpkBox' },
+    );
+
+    expect(result.display).toBeUndefined();
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
+  });
+
+  it('removes array-based responsive values and warns in non-production', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    const result = processBpkProps({
+      // array-based responsive values are intentionally not supported
+      padding: [BpkSpacing.SM, BpkSpacing.MD] as any,
+    });
+
+    expect(result.padding).toBeUndefined();
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
+  });
+
+  it('warns and drops unknown breakpoint keys from responsive objects', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    const result = processBpkProps({
+      padding: {
+        // unknown key should be ignored
+        phablet: BpkSpacing.SM,
+        mobile: BpkSpacing.MD,
+      } as any,
+    });
+
+    expect(result.padding).toEqual({
+      md: '.5rem',
+    });
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
+  });
+
+  it('warns and returns unknown spacing tokens as-is (dev fallback)', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    const result = convertBpkSpacingToChakra('bpk-spacing-unknown');
+
+    expect(result).toBe('bpk-spacing-unknown');
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
   });
 });
