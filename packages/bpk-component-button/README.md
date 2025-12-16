@@ -38,6 +38,9 @@ export default () => (
 );
 ```
 
+### Button Link
+The button which has `link` or `linkOnDark` type. Detail in [Button Link Type](./docs/button-link-type.md)
+
 ## Props
 
 Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/button/web-eI5EFTLO#section-button-props-48).
