@@ -29,10 +29,12 @@ import STYLES from './BpkLink.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface Props
+  extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href' | 'className' | 'rel'> {
+  /** The content of the link. */
   children: ReactNode;
-  href: string;
-  className?: string;
+  href: string | null;
+  className?: string | null;
   onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
   blank?: boolean;
   rel?: string;
@@ -46,10 +48,10 @@ const BpkLink = forwardRef<HTMLAnchorElement, Props>(
       alternate = false,
       blank = false,
       children,
-      className,
+      className = null,
       href,
       implicit = false,
-      onClick,
+      onClick = () => {},
       rel: propRel,
       ...rest
     },
@@ -84,7 +86,7 @@ const BpkLink = forwardRef<HTMLAnchorElement, Props>(
     return (
       <a
         className={classNames.join(' ')}
-        href={href}
+        href={href ?? undefined}
         onClick={onClick}
         target={target}
         rel={rel}

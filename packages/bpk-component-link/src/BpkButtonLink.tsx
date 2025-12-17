@@ -26,10 +26,11 @@ import STYLES from './BpkLink.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface Props extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className' | 'onClick'> {
+  /** The content of the link. */
   children: ReactNode;
   onClick: (event: MouseEvent<HTMLButtonElement>) => void;
-  className?: string;
+  className?: string | null;
   alternate?: boolean;
   implicit?: boolean;
 }
@@ -37,7 +38,7 @@ export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 const BpkButtonLink = ({
   alternate = false,
   children,
-  className,
+  className = null,
   implicit = false,
   onClick,
   ...rest
