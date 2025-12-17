@@ -18,6 +18,7 @@
 
 @use '../../../bpk-mixins/tokens';
 @use '../../../bpk-mixins/buttons';
+@use '../../../bpk-mixins/typography';
 
 .bpk-button {
   @include buttons.bpk-button;
@@ -49,10 +50,48 @@
 
   &--link {
     @include buttons.bpk-button--link;
+    @include typography.bpk-link;
+
+    // override SVG display for link buttons
+    --bpk-button-svg-display: inline-block;
+    --bpk-button-svg-vertical-align: middle;
+
+    &--implicit {
+      @include typography.bpk-link--implicit;
+    }
+
+    &--icon-only {
+      @include buttons.bpk-button--link-icon-only;
+    }
   }
 
   &--link-on-dark {
     @include buttons.bpk-button--link-on-dark;
+    @include typography.bpk-link--alternate;
+
+    // override SVG display for link buttons
+    --bpk-button-svg-display: inline-block;
+    --bpk-button-svg-vertical-align: middle;
+
+    &--implicit {
+      @include typography.bpk-link--implicit;
+    }
+  }
+
+  &--link-underlined {
+    @include buttons.bpk-button--link-underlined;
+
+    &--implicit {
+      @include typography.bpk-link-underlined--implicit;
+    }
+
+    &--alternate {
+      @include typography.bpk-link-underlined--alternate;
+    }
+
+    &--implicit--alternate {
+      @include typography.bpk-link-underlined-implicit--alternate;
+    }
   }
 
   &--primary-on-dark {
@@ -77,7 +116,8 @@
 
   /* stylelint-disable selector-max-compound-selectors */
   span > svg {
-    display: block;
+    display: var(--bpk-button-svg-display, block);
+    vertical-align: var(--bpk-button-svg-vertical-align, baseline);
   }
 
   svg {
