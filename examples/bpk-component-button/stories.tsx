@@ -28,12 +28,12 @@ import {
   FeaturedExample,
   LinkExample,
   LinkOnDarkExample,
+  LinksExamples,
   MixedExample,
   AnchorTagsExample,
   FullWidthExample,
   SubmitButtonExample,
 } from './examples';
-import { MixedExample as MixedExampleV1 } from './examplesv1';
 
 export default {
   title: 'bpk-component-button',
@@ -58,6 +58,8 @@ export const BpkButtonLinkButton = () => <LinkExample />;
 
 export const BpkButtonLinkOnDarkButton = () => <LinkOnDarkExample />;
 
+export const BpkButtonLinks = () => <LinksExamples />;
+
 export const Mixture = () => <MixedExample />;
 export const AnchorTags = () => <AnchorTagsExample />;
 
@@ -69,12 +71,5 @@ export const VisualTestWithZoom = {
   },
 };
 
-export const VisualTestV1 = () => <MixedExampleV1 />;
-export const VisualTestV1WithZoom = {
-  render: VisualTestV1,
-  args: {
-    zoomEnabled: true,
-  },
-};
 export const SubmitButton = () => <SubmitButtonExample />;
 export const FullWidth = () => <FullWidthExample />;
