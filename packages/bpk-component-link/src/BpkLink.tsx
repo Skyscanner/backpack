@@ -37,7 +37,7 @@ export interface Props
   className?: string | null;
   onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
   blank?: boolean;
-  rel?: string;
+  rel?: string | null;
   alternate?: boolean;
   implicit?: boolean;
 }
@@ -52,7 +52,7 @@ const BpkLink = forwardRef<HTMLAnchorElement, Props>(
       href,
       implicit = false,
       onClick = () => {},
-      rel: propRel,
+      rel: propRel = null,
       ...rest
     },
     ref,
@@ -89,7 +89,7 @@ const BpkLink = forwardRef<HTMLAnchorElement, Props>(
         href={href ?? undefined}
         onClick={onClick}
         target={target}
-        rel={rel}
+        rel={rel ?? undefined}
         ref={ref}
         {...rest}
       >
