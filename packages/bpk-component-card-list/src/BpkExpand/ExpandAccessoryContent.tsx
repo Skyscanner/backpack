@@ -39,6 +39,7 @@ const ExpandAccessoryContent = ({
       type={BUTTON_TYPES.link}
       onClick={onExpandToggle}
       aria-expanded={!collapsed}
+      implicit
     >
       {children}
       {collapsed ? <AlignedChevronDownIcon /> : <AlignedChevronUpIcon />}
