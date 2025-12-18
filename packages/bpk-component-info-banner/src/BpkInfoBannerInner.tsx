@@ -33,7 +33,6 @@ import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
 import ChevronUpIcon from '../../bpk-component-icon/sm/chevron-up';
 import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLink from '../../bpk-component-link';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -213,7 +212,7 @@ const BpkInfoBannerInner = ({
           {isExpandable && action && (
             <BpkLink
               onClick={action.callback}
-              href={null}
+              href="#"
             >
               {action.title}
             </BpkLink>

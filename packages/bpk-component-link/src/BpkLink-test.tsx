@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { createRef } from 'react';
 
 import { render } from '@testing-library/react';
@@ -32,7 +30,7 @@ describe('BpkLink', () => {
   });
 
   it('should render with a ref forwarded', () => {
-    const myRef = createRef();
+    const myRef = createRef<HTMLAnchorElement>();
 
     render(
       <BpkLink ref={myRef} href="#">
