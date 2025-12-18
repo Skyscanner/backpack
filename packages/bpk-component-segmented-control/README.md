@@ -90,4 +90,4 @@ The component supports two activation modes:
 
 ## Props
 
-Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/segmented-control/web).
+Check out the full list of props on Skyscanner's [design system documentation website]( https://www.skyscanner.design/latest/components/section-list/web-tP8t6vq8).
