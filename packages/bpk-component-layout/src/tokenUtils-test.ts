@@ -32,6 +32,13 @@ describe('processBpkProps', () => {
     expect(result.padding).toBe('.5rem');
   });
 
+  it('supports the temporary 2px spacing token (bpk-spacing-xs)', () => {
+    const result = processBpkProps({ padding: BpkSpacing.XS });
+
+    // bpk-spacing-xs is mapped to .125rem (2px) in theme.ts
+    expect(result.padding).toBe('.125rem');
+  });
+
   it('passes through percentage spacing values unchanged', () => {
     const result = processBpkProps({ margin: '50%' });
 
