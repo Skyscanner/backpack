@@ -40,6 +40,19 @@ import {
   SmallRightWithLeadingandTrailingTextExample,
   SmallRightWithPreviousPriceExample,
   SmallRightWithPreviousPriceLeadingAndTrailingTextAndIconExample,
+  MediumExample,
+  MediumWithTrailingTextExample,
+  MediumWithLeadingAndTrailingTextExample,
+  MediumWithPreviousPriceExample,
+  MediumWithPreviousPriceLeadingTextExample,
+  MediumWithPreviousPriceLeadingAndTrailingTextAndDataAttributeExample,
+  MediumWithPreviousPriceLeadingAndTrailingTextAndIconExample,
+  MediumWithDataAttributeExample,
+  MediumRightExample,
+  MediumRightWithTrailingTextExample,
+  MediumRightWithLeadingandTrailingTextExample,
+  MediumRightWithPreviousPriceExample,
+  MediumRightWithPreviousPriceLeadingAndTrailingTextAndIconExample,
   LargeExample,
   LargeWithTrailingTextExample,
   LargeWithLeadingAndTrailingTextExample,
@@ -85,6 +98,25 @@ export const SmallRightWithLeadingandTrailingText =
 export const SmallRightWithPreviousPrice = SmallRightWithPreviousPriceExample;
 export const SmallRightWithPreviousPriceLeadingAndTrailingTextAndIcon =
   SmallRightWithPreviousPriceLeadingAndTrailingTextAndIconExample;
+export const Medium = MediumExample;
+export const MediumWithTrailingText = MediumWithTrailingTextExample;
+export const MediumWithLeadingAndTrailingText =
+  MediumWithLeadingAndTrailingTextExample;
+export const MediumWithPreviousPrice = MediumWithPreviousPriceExample;
+export const MediumWithPreviousPriceLeadingText =
+  MediumWithPreviousPriceLeadingTextExample;
+export const MediumWithPreviousPriceLeadingAndTrailingTextAndDataAttribute =
+  MediumWithPreviousPriceLeadingAndTrailingTextAndDataAttributeExample;
+export const MediumWithPreviousPriceLeadingAndTrailingTextAndIcon =
+  MediumWithPreviousPriceLeadingAndTrailingTextAndIconExample;
+export const MediumWithDataAttribute = MediumWithDataAttributeExample;
+export const MediumRight = MediumRightExample;
+export const MediumRightWithTrailingText = MediumRightWithTrailingTextExample;
+export const MediumRightWithLeadingandTrailingText =
+  MediumRightWithLeadingandTrailingTextExample;
+export const MediumRightWithPreviousPrice = MediumRightWithPreviousPriceExample;
+export const MediumRightWithPreviousPriceLeadingAndTrailingTextAndIcon =
+  MediumRightWithPreviousPriceLeadingAndTrailingTextAndIconExample;
 export const Large = LargeExample;
 export const LargeWithTrailingText = LargeWithTrailingTextExample;
 export const LargeWithLeadingAndTrailingText =
