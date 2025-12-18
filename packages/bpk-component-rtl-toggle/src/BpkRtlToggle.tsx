@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
+import type { MouseEvent } from 'react';
 import { Component } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
 
 import { getHtmlElement, DIRECTIONS, DIRECTION_CHANGE_EVENT } from './utils';
@@ -43,7 +43,7 @@ type State = {
 
 type Props = {};
 
-type InteractionEvents = KeyboardEvent | MouseEvent | TouchEvent;
+type InteractionEvents = KeyboardEvent | MouseEvent<HTMLButtonElement> | TouchEvent;
 
 class BpkRtlToggle extends Component<Props, State> {
   constructor(props: Props) {

@@ -18,12 +18,11 @@
 
 import type { ComponentProps, MouseEvent, ReactNode } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkButtonLink } from '../../bpk-component-link';
 
 import { BAR_STYLES, type BarStyle } from './BpkNavigationBar';
 
-export interface Props extends ComponentProps<BpkButtonLink> {
+export interface Props extends ComponentProps<typeof BpkButtonLink> {
   children: ReactNode,
   onClick: (event: MouseEvent<HTMLElement>) => void,
   className?: string,
