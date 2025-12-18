@@ -51,7 +51,7 @@ const getPriceTextStyle = (size: $Values<typeof SIZES>) => {
     return TEXT_STYLES.heading4;
   }
 
-   if (size === SIZES.medium) {
+  if (size === SIZES.medium) {
     return TEXT_STYLES.heading3;
   }
 

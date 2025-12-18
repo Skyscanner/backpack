@@ -221,7 +221,7 @@ const MediumWithDataAttributeExample = () => (
 );
 
 const MediumRightExample = () => (
-  <BpkPrice  size={SIZES.medium} price="£1,830" align={ALIGNS.right} />
+  <BpkPrice size={SIZES.medium} price="£1,830" align={ALIGNS.right} />
 );
 
 const MediumRightWithTrailingTextExample = () => (
