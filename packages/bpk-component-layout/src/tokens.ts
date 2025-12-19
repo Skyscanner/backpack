@@ -29,6 +29,7 @@
  */
 export const BpkSpacing = {
   None: 'bpk-spacing-none',
+  XS: 'bpk-spacing-xs',
   SM: 'bpk-spacing-sm',
   Base: 'bpk-spacing-base',
   MD: 'bpk-spacing-md',

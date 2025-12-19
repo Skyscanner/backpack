@@ -62,7 +62,7 @@ export default function Example() {
 The layout API is intentionally limited and strongly typed. The main groups are:
 
 - **Spacing** – `padding`, `margin`, logical props (`marginStart`, `marginEnd`, `paddingInline`), `gap`:
-  - Values: `BpkSpacing` tokens (`BpkSpacing.SM`, `BpkSpacing.MD`, …) or percentages (e.g. `'50%'`).
+  - Values: `BpkSpacing` tokens (`BpkSpacing.XS`, `BpkSpacing.SM`, `BpkSpacing.MD`, …) or percentages (e.g. `'50%'`).
 - **Size** – `width`, `height`, `minWidth`, `minHeight`, `maxWidth`, `maxHeight`:
   - Values: rem strings (e.g. `'6rem'`), percentages (e.g. `'50%'`) or semantic values (`'auto' | 'full' | 'fit-content'`).
 - **Position** – `top`, `right`, `bottom`, `left`:

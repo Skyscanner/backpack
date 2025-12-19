@@ -50,6 +50,7 @@ const bpkTokens = require('@skyscanner/bpk-foundations-web/tokens/base.es6');
 // - bpk-spacing-xxl() returns 2.5rem
 // - bpk-spacing-base() returns 1rem (standard base spacing)
 // TODO: CLOV-1021 - will add spacing tokens to Backpack Foundations package and use them here after we ship the PoC
+const spacingXs = '.125rem'; // 2px
 const spacingSm = '.25rem';
 const spacingBase = '1rem'; // Standard base spacing
 const spacingMd = '.5rem';
@@ -71,6 +72,9 @@ const spacingXxl = '2.5rem';
 // Spacing tokens - directly imported from foundations
 const spacingMap: Record<string, { value: string }> = {
   'bpk-spacing-none': { value: '0' },
+  // Temporary: Foundations does not yet export a 2px spacing token. This will be
+  // replaced with a foundations value once available.
+  'bpk-spacing-xs': { value: spacingXs },
   'bpk-spacing-sm': { value: spacingSm },
   'bpk-spacing-base': { value: spacingBase },
   'bpk-spacing-md': { value: spacingMd },
