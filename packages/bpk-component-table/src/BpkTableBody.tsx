@@ -16,17 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { ComponentProps } from 'react';
 
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+export type BpkTableBodyProps = ComponentProps<'tbody'>;
 
-type Props = { children: Node };
+const BpkTableBody = (props: BpkTableBodyProps) => <tbody {...props} />;
 
-const BpkTableRow = (props: Props) => <tr {...props} />;
-
-BpkTableRow.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-export default BpkTableRow;
+export default BpkTableBody;

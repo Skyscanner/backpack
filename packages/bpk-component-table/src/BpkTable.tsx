@@ -16,10 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode, ComponentProps } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -27,34 +24,19 @@ import STYLES from './BpkTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  children: Node,
-  className: ?string,
-  wordBreak?: boolean,
-};
+export type BpkTableProps = {
+  children: ReactNode;
+  className?: string | null;
+} & Omit<ComponentProps<'table'>, 'children' | 'className'>;
 
-const BpkTableCell = ({children, className = null, wordBreak = false, ...rest}: Props) => {
-
-  const classes = [
-    'bpk-table__cell',
-    wordBreak && 'bpk-table__cell--wordBreak',
-    className,
-  ];
-
-  const classNames = getClassName(...classes);
+const BpkTable = ({ children, className = null, ...rest }: BpkTableProps) => {
+  const classNames = getClassName('bpk-table', className);
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-    <td className={classNames} {...rest}>
+    <table className={classNames} {...rest}>
       {children}
-    </td>
+    </table>
   );
 };
 
-BpkTableCell.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  wordBreak: PropTypes.bool,
-};
-
-export default BpkTableCell;
+export default BpkTable;
