@@ -25,7 +25,6 @@ import type { ComponentProps} from './common-types';
 
 import STYLES from './BpkSkeleton.module.scss';
 
-
 const getClassName = cssModules(STYLES);
 
 const BpkSkeleton = (props: ComponentProps) => {

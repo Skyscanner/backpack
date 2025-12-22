@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import type { ReactNode } from 'react';
 import { useState, useEffect } from 'react';
 

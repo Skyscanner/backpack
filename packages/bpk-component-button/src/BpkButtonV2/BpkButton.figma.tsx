@@ -25,7 +25,6 @@ import LongArrowRightIcon  from '../../../bpk-component-icon/sm/long-arrow-right
 import { BpkButtonV2 } from "./BpkButton"
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
 
-
 const AlignedArrowIcon = withButtonAlignment(LongArrowRightIcon);
 const AlignedLightningIcon = withButtonAlignment(LightningIcon);
 

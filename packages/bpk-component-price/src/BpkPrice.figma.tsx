@@ -20,7 +20,6 @@ import figma from "@figma/code-connect"
 import BpkPrice from "./BpkPrice"
 import { SIZES, ALIGNS } from './common-types'
 
-
 figma.connect(
   BpkPrice,
   "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=16470%3A17021",

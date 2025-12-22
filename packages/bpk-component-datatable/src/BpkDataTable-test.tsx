@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-
-
 import { Fragment } from 'react';
 
 import { render, screen, fireEvent, within } from '@testing-library/react';

@@ -25,7 +25,6 @@ import { CHIP_TYPES } from '../../bpk-component-chip';
 
 import Nudger, { POSITION } from './Nudger';
 
-
 const mockIsRtl = jest.fn(() => false);
 
 jest.mock('../../bpk-react-utils/index', () => ({

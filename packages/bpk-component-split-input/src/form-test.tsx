@@ -66,7 +66,6 @@ describe('BpkSplitInput', () => {
     });
   });
 
-
 it('should emit change event when text has been entered and blurred', async () => {
     const formValidation = jest.fn();
     const Wrap = () => {

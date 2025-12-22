@@ -20,7 +20,6 @@ import figma from '@figma/code-connect';
 
 import BpkStarRating from './BpkStarRating';
 
-
 /**
  * Star rating
  */
@@ -58,7 +57,6 @@ figma.connect(
     ),
   },
 );
-
 
 /**
  * Hotel star rating

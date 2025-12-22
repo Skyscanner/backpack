@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import { useState } from 'react';
 
 import { CHIP_TYPES } from '../../packages/bpk-component-chip';
@@ -114,7 +113,6 @@ const chips = [
   },
 ];
 
-
 export const BpkChipGroupWrapping = () => (
   <div className={getClassName('bpk-chip-group-examples__fixed-width')}>
     <BpkMultiSelectChipGroupState
@@ -136,7 +134,6 @@ export const BpkSingleChipGroupWrapping = () => (
   </div>
 );
 
-
 export const BpkChipGroupRail = () => (
   <div>
     <BpkMultiSelectChipGroupState
@@ -148,7 +145,6 @@ export const BpkChipGroupRail = () => (
     />
   </div>
 );
-
 
 export const BpkChipGroupSticky = () => {
   const stickyChip = {
@@ -188,7 +184,6 @@ export const OnContrastChipGroup = () => {
     </div>
   );
 };
-
 
 export const OnDarkChipGroup = () => {
   const stickyChip = {
@@ -279,7 +274,6 @@ export const AllChipTypesGroup = () => {
     />
   );
 };
-
 
 export const StateManagement = () => {
   const [route, setRoute] = useState('flights');

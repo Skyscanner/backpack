@@ -27,7 +27,6 @@ export default {
 
 export const VisualTest = JourneyArrowExample;
 
-
 export const VisualTestWithZoom = {
   render: VisualTest,
   args: {

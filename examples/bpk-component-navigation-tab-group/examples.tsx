@@ -222,7 +222,6 @@ const TabsWithBubble = () => (
   </div>
 );
 
-
 const VisualTestExample = () => (
   <div className={getClassNames('bpk-navigation-tab-group-story__mixed-container')}>
     <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">

@@ -31,7 +31,6 @@ import STYLES from './Nudger.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-
 const CHIP_STYLE_TO_BUTTON_STYLE = {
   [CHIP_TYPES.default]: BUTTON_TYPES.secondary,
   [CHIP_TYPES.onDark]: BUTTON_TYPES.secondaryOnDark,

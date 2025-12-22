@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import JourneyArrow from '../../packages/bpk-component-journey-arrow';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 
@@ -40,6 +39,5 @@ const JourneyArrowExample = () => {
     </>
   )
 };
-
 
 export default JourneyArrowExample;

@@ -41,4 +41,3 @@ describe('BpkFieldset accessibility tests', () => {
   });
 });
 
-

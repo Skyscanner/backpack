@@ -50,5 +50,4 @@ const MixedExample = () => (
   </div>
 );
 
-
 export { DefaultExample, SmallExample, MixedExample, ReducedSpaceExample };

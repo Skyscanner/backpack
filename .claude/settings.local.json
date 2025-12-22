@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(for file in BpkTableBody.js BpkTableHead.js BpkTableRow.js BpkTableCell.js BpkTableHeadCell.js)",
+      "Bash(do mv \"$file\" \"$file%.js.tsx\")",
+      "Bash(done)",
+      "Bash(ls:*)",
+      "Bash(npx tsc:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nMigrate bpk-component-table, bpk-component-autosuggest, and bpk-component-barchart utilities to TypeScript\n\n- Convert bpk-component-table to TypeScript:\n  - BpkTable.tsx: Export BpkTableProps type with proper ComponentProps inheritance\n  - BpkTableBody.tsx: Simplify using ComponentProps<''tbody''>\n  - BpkTableHead.tsx: Simplify using ComponentProps<''thead''>\n  - BpkTableRow.tsx: Simplify using ComponentProps<''tr''>\n  - BpkTableCell.tsx: Export BpkTableCellProps with wordBreak option\n  - BpkTableHeadCell.tsx: Export BpkTableHeadCellProps with wordBreak option\n  \n- Convert bpk-component-autosuggest/BpkAutosuggest.tsx:\n  - Update Flow types to TypeScript Ref<HTMLInputElement>\n  - Add proper type guards for ref callbacks\n  - Improve InputComponentProps typing\n\n- Convert bpk-component-barchart utility:\n  - Migrate orientation.ts for string literal exports\n\nAll conversions:\n- Remove Flow pragmas \\(/* @flow strict */\\)\n- Remove PropTypes imports and declarations\n- Convert Flow types to TypeScript equivalents\n- Export component prop types for external consumption\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(find:*)"
+    ]
+  }
+}

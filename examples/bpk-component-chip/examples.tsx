@@ -69,7 +69,6 @@ const StatefulDropdownChip = (props: StatefulSelectableChipProps) => {
   );
 };
 
-
 const StatefulIconChip = (props: StatefulSelectableChipProps & {leadingAccessoryView: ReactNode}) => {
   const [selected, setSelected] = useState(props.selected);
 
@@ -85,7 +84,6 @@ const StatefulIconChip = (props: StatefulSelectableChipProps & {leadingAccessory
     />
   )
 };
-
 
 const StatefulDismissibleChipsExample = (props: StatefulSelectableChipProps) => {
   const [chips, setChips] = useState(['Cheapest flights', 'Direct flights', 'Most popular']);
@@ -130,12 +128,10 @@ const StatefulDismissibleChipsExample = (props: StatefulSelectableChipProps) => 
   );
 }
 
-
 const StatefulRadioGroupChipsExample = (props: StatefulSelectableChipProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [chips] = useState(['Cheapest flights', 'Direct flights', 'Most popular']);
   const [updates, setUpdates] = useState<string[]>([]);
-
 
   const selectChip = (indexToSelect: number) => {
     const selectedChip = chips[indexToSelect];
@@ -189,7 +185,6 @@ const StatefulRadioGroupChipsExample = (props: StatefulSelectableChipProps) => {
   );
 };
 
-
 const StatefulSelectableChips = ({ ...rest }) => (
   <div className={getClassName(`bpk-chip-examples__${rest.type}`)}>
     <StatefulSelectableChip {...rest}>Cheapest flights</StatefulSelectableChip>
@@ -210,7 +205,6 @@ const StatefulIconChips = ({ ...rest }: {type: ValueOf<typeof CHIP_TYPES>, leadi
     <StatefulIconChip {...rest} disabled />
   </div>
 );
-
 
 const StatefulDropdownChips = ({ ...rest }) => (
   <div className={getClassName(`bpk-chip-examples__${rest.type}`)}>

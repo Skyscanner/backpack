@@ -21,7 +21,6 @@ import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkPanel.module.scss';
 
-
 const getClassName = cssModules(STYLES);
 
 export type Props = {
@@ -32,7 +31,6 @@ export type Props = {
   keyline?: boolean,
   [rest: string]: any;
 };
-
 
 const BpkPanel = ({
   children,

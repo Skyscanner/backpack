@@ -40,4 +40,3 @@ const BpkBlockquote = ({ children, extraSpace = false }: Props) => {
 
 export default BpkBlockquote;
 
-

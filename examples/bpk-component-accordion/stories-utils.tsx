@@ -23,8 +23,6 @@
  * @todo remove this file once we upgrade to Storybook v8
  */
 
-import PropTypes from 'prop-types';
-
 /**
  * Temporarily re-defining the accordion props due to a bug in react docgen which doesn't allow us to import the prop types from another file
  * https://github.com/storybookjs/storybook/issues/9266
@@ -48,14 +46,8 @@ const WithSingleItemAccordionStateMockProps = {
 };
 
 const WithSingleItemAccordionStateMock = () => <div />;
-WithSingleItemAccordionStateMock.propTypes = {
-    ...WithSingleItemAccordionStateMockProps,
-};
 
 const WithAccordionItemStateMock = () => <div />;
-WithAccordionItemStateMock.propTypes = {
-    ...withAccordionItemStateMockProps,
-};
 WithAccordionItemStateMock.defaultProps = {
     ...withAccordionItemStateMockDefaultProps,
 };

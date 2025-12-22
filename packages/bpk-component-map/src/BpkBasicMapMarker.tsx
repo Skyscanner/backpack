@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import type { ReactNode } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -46,11 +45,6 @@ const BpkBasicMapMarker = (props: Props) => {
       {children}
     </BpkOverlayView>
   );
-};
-
-BpkBasicMapMarker.propTypes = {
-  children: PropTypes.node.isRequired,
-  position: LatLongPropType.isRequired,
 };
 
 export default BpkBasicMapMarker;

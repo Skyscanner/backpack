@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import type { ReactElement } from 'react';
 import { Children } from 'react';
 
@@ -46,10 +45,6 @@ const SpinnerLayout = (props: Props) => {
       })}
     </div>
   );
-};
-
-SpinnerLayout.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 export default SpinnerLayout;

@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-
 import { render } from '@testing-library/react';
 import { isWeekend } from 'date-fns/isWeekend';
 

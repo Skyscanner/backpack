@@ -23,7 +23,6 @@ import { render, screen } from '@testing-library/react';
 
 import BpkCarousel from './BpkCarousel';
 
-
 describe('BpkCarousel', () => {
   let images: ReactNode[]
 

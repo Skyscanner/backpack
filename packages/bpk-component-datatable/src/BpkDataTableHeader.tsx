@@ -37,7 +37,6 @@ const KEYCODES = {
   SPACEBAR: 32,
 };
 
-
 /**
  * Internal component to render the header of a column.
  * @returns {JSX.Element} data table header component

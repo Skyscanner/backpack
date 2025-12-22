@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkBubble from '../../packages/bpk-component-bubble/src/BpkBubble';
 
 import {

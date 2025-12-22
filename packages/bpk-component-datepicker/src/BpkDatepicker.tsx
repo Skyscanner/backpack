@@ -41,7 +41,6 @@ import type {
   SelectionConfiguration,
 } from '../../bpk-component-calendar';
 
-
 const Input = withOpenEvents(BpkInput);
 
 const DefaultCalendar = withCalendarState(

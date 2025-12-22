@@ -31,4 +31,3 @@ describe('BpkCheckbox accessibility tests', () => {
   });
 });
 
-

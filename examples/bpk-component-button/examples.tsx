@@ -122,9 +122,6 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
     </div>
   );
 };
-
-ButtonStory.defaultProps = { className: null };
-
 const PrimaryExample = (props: any) => (
   <ButtonStory wrapped={BpkButtonV2} {...props} />
 );

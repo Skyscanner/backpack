@@ -56,7 +56,6 @@ const WithLongLabelExample = () => (
   </div>
 );
 
-
 const VisualTestExample = () => (
   <div>
     <SimpleExample />

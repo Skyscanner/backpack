@@ -129,7 +129,6 @@ const BpkAccordionItem = (props: BpkAccordionItemProps) => {
     : null;
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
     <div id={id} className={itemClassNames.join(' ')} {...rest}>
       <div className={titleClassNames.join(' ')}>
         <button

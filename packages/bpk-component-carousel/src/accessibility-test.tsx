@@ -26,7 +26,6 @@ const DemoImages = () => (
 )
 const images = [<DemoImages />, <DemoImages />, <DemoImages />, <DemoImages />, <DemoImages />]
 
-
 describe('BpkCarousel accessibility tests', () => {
 
   beforeAll(() => {

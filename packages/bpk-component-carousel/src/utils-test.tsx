@@ -37,7 +37,6 @@ describe('useScrollToInitialImage', () => {
     const child = document.createElement('div');
     parent.appendChild(child);
 
-
     const imagesRef = { current: [child, document.createElement('div')] };
     const initialImageIndex = 0;
 

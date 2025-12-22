@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import type { ComponentProps, SyntheticEvent } from 'react';
 
 export const CLEAR_BUTTON_MODES = {

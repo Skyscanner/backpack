@@ -86,4 +86,3 @@ describe('BpkCheckbox form test', () => {
   });
 });
 
-

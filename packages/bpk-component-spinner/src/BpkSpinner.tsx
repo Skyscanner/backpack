@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import { cssModules } from '../../bpk-react-utils';
 
 import SPINNER_TYPES from './spinnerTypes';

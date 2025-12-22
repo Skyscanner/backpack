@@ -134,7 +134,6 @@ describe('BpkButtonV2', () => {
     expect(container?.firstElementChild?.classList?.contains('bpk-button--full-width')).toEqual(true);
   });
 
-
   describe('link type buttons', () => {
     it('should render link type with underline span wrapper', () => {
       const { container } = render(

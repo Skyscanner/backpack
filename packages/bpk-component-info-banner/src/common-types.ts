@@ -33,7 +33,6 @@ export type AlertTypeValue = (typeof ALERT_TYPES)[keyof typeof ALERT_TYPES];
 
 export type StyleTypeValue = (typeof STYLE_TYPES)[keyof typeof STYLE_TYPES];
 
-
 export type CommonProps = {
   type?: AlertTypeValue;
   message: ReactNode | string;

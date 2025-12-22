@@ -35,4 +35,3 @@ describe('BpkBlockquote accessibility tests', () => {
   });
 });
 
-
