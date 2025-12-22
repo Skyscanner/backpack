@@ -16,10 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkLabel, { type Props } from './src/BpkLabel';
 
-import BpkContentBubble from './src/BpkContentBubble';
-import BpkFlareBar from './src/BpkFlareBar';
+export type BpkLabelProps = Props;
 
-export default BpkFlareBar;
-export { BpkFlareBar, BpkContentBubble };
+export default BpkLabel;

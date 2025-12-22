@@ -15,10 +15,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkPrice from './src/BpkPrice';
-import { SIZES, ALIGNS } from './src/common-types';
 
-export default BpkPrice;
-export { SIZES, ALIGNS };
+import BpkBarchart from './src/BpkBarchart';
+import BpkBarchartBars from './src/BpkBarchartBars';
+import BpkBarchartDefs from './src/BpkBarchartDefs';
+import BpkChartAxis from './src/BpkChartAxis';
+import BpkChartGridLines from './src/BpkChartGridLines';
+import BpkChartMargin from './src/BpkChartMargin';
+import themeAttributes from './src/themeAttributes';
+
+export default BpkBarchart;
+
+export {
+  BpkBarchartBars,
+  BpkBarchartDefs,
+  BpkChartAxis,
+  BpkChartGridLines,
+  BpkChartMargin,
+  themeAttributes,
+};

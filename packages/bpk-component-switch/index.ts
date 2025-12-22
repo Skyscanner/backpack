@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import BpkSwitch, { type Props as BpkSwitchProps } from './src/BpkSwitch';
 import themeAttributes from './src/themeAttributes';

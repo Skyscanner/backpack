@@ -15,10 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkLabel, { type Props } from './src/BpkLabel';
+import BpkSplitInput, {
+  type Props as BpkSplitInputProps,
+  INPUT_TYPES,
+} from './src/BpkSplitInput';
 
-export type BpkLabelProps = Props;
-
-export default BpkLabel;
+export type { BpkSplitInputProps };
+export { INPUT_TYPES };
+export default BpkSplitInput;

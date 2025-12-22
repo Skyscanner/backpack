@@ -16,11 +16,13 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
-import BpkPhoneInput, {
-  type Props as BpkPhoneInputProps,
-} from './src/BpkPhoneInput';
+import withInfiniteScroll, {
+  type Props as WithInfiniteScrollProps,
+} from './src/withInfiniteScroll';
 
-export type { BpkPhoneInputProps };
-export default BpkPhoneInput;
+export { default as DataSource, ArrayDataSource } from './src/DataSource';
+
+export type { WithInfiniteScrollProps };
+
+export default withInfiniteScroll;

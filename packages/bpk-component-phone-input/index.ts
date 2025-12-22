@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
-import BpkRadio from './src/BpkRadio';
-import themeAttributes from './src/themeAttributes';
+import BpkPhoneInput, {
+  type Props as BpkPhoneInputProps,
+} from './src/BpkPhoneInput';
 
-export default BpkRadio;
-export { themeAttributes };
+export type { BpkPhoneInputProps };
+export default BpkPhoneInput;

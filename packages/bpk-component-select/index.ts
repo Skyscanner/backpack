@@ -16,14 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkSelect, { type Props } from './src/BpkSelect';
+import themeAttributes from './src/themeAttributes';
 
-import withInfiniteScroll, {
-  type Props as WithInfiniteScrollProps,
-} from './src/withInfiniteScroll';
+export type BpkSelectProps = Props;
 
-export { default as DataSource, ArrayDataSource } from './src/DataSource';
-
-export type { WithInfiniteScrollProps };
-
-export default withInfiniteScroll;
+export default BpkSelect;
+export { themeAttributes };

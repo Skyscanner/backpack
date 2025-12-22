@@ -15,9 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkCode from './src/BpkCode';
-import BpkCodeBlock from './src/BpkCodeBlock';
 
-export { BpkCode, BpkCodeBlock };
+import BpkTable from './src/BpkTable';
+import BpkTableBody from './src/BpkTableBody';
+import BpkTableCell from './src/BpkTableCell';
+import BpkTableHead from './src/BpkTableHead';
+import BpkTableHeadCell from './src/BpkTableHeadCell';
+import BpkTableRow from './src/BpkTableRow';
+
+export {
+  BpkTable,
+  BpkTableHead,
+  BpkTableBody,
+  BpkTableRow,
+  BpkTableCell,
+  BpkTableHeadCell,
+};

@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkCode from './src/BpkCode';
+import BpkCodeBlock from './src/BpkCodeBlock';
 
-import BpkCloseButton from './src/BpkCloseButton';
-
-export default BpkCloseButton;
+export { BpkCode, BpkCodeBlock };

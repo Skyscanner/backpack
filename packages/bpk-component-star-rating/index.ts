@@ -15,13 +15,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkSplitInput, {
-  type Props as BpkSplitInputProps,
-  INPUT_TYPES,
-} from './src/BpkSplitInput';
 
-export type { BpkSplitInputProps };
-export { INPUT_TYPES };
-export default BpkSplitInput;
+import BpkInteractiveStar from './src/BpkInteractiveStar';
+import BpkInteractiveStarRating from './src/BpkInteractiveStarRating';
+import BpkStar, { BpkStarNonRtl, STAR_TYPES } from './src/BpkStar';
+import BpkStarRating, { ROUNDING_TYPES } from './src/BpkStarRating';
+import themeAttributes from './src/themeAttributes';
+import withInteractiveStarRatingState from './src/withInteractiveStarRatingState';
+
+export {
+  BpkStar,
+  BpkStarNonRtl,
+  STAR_TYPES,
+  ROUNDING_TYPES,
+  BpkInteractiveStar,
+  BpkInteractiveStarRating,
+  withInteractiveStarRatingState,
+  themeAttributes,
+};
+export default BpkStarRating;

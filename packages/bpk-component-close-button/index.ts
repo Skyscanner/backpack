@@ -16,11 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
-import BpkSectionList from './src/BpkSectionList';
-import BpkSectionListItem from './src/BpkSectionListItem';
-import BpkSectionListSection from './src/BpkSectionListSection';
+import BpkCloseButton from './src/BpkCloseButton';
 
-export default BpkSectionList;
-export { BpkSectionListSection, BpkSectionListItem };
+export default BpkCloseButton;

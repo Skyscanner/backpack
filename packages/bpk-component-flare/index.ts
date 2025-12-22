@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
-import BpkLoadingButton, { ICON_POSITION } from './src/BpkLoadingButton';
+import BpkContentBubble from './src/BpkContentBubble';
+import BpkFlareBar from './src/BpkFlareBar';
 
-export default BpkLoadingButton;
-export { ICON_POSITION };
+export default BpkFlareBar;
+export { BpkFlareBar, BpkContentBubble };

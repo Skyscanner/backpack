@@ -16,23 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import BpkInteractiveStar from './src/BpkInteractiveStar';
-import BpkInteractiveStarRating from './src/BpkInteractiveStarRating';
-import BpkStar, { BpkStarNonRtl, STAR_TYPES } from './src/BpkStar';
-import BpkStarRating, { ROUNDING_TYPES } from './src/BpkStarRating';
+import BpkSkipLink, { type Props as BpkSkipLinkProps } from './src/BpkSkipLink';
 import themeAttributes from './src/themeAttributes';
-import withInteractiveStarRatingState from './src/withInteractiveStarRatingState';
 
-export {
-  BpkStar,
-  BpkStarNonRtl,
-  STAR_TYPES,
-  ROUNDING_TYPES,
-  BpkInteractiveStar,
-  BpkInteractiveStarRating,
-  withInteractiveStarRatingState,
-  themeAttributes,
-};
-export default BpkStarRating;
+export type { BpkSkipLinkProps };
+export { themeAttributes };
+export default BpkSkipLink;

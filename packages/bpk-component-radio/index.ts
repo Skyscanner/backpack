@@ -15,18 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkHorizontalNav, {
-  HORIZONTAL_NAV_TYPES,
-  type Props as NavProps,
-} from './src/BpkHorizontalNav';
-import BpkHorizontalNavItem, {
-  type Props as ItemProps,
-  themeAttributes,
-} from './src/BpkHorizontalNavItem';
 
-export type BpkHorizontalNavProps = NavProps;
-export type BpkHorizontalNavItemProps = ItemProps;
-export { HORIZONTAL_NAV_TYPES, BpkHorizontalNavItem, themeAttributes };
-export default BpkHorizontalNav;
+import BpkRadio from './src/BpkRadio';
+import themeAttributes from './src/themeAttributes';
+
+export default BpkRadio;
+export { themeAttributes };

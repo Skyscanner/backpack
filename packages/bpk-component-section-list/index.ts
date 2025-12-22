@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
-import BpkProgress from './src/BpkProgress';
-import themeAttributes from './src/themeAttributes';
+import BpkSectionList from './src/BpkSectionList';
+import BpkSectionListItem from './src/BpkSectionListItem';
+import BpkSectionListSection from './src/BpkSectionListSection';
 
-export default BpkProgress;
-export { themeAttributes };
+export default BpkSectionList;
+export { BpkSectionListSection, BpkSectionListItem };
