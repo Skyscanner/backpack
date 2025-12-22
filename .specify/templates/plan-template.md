@@ -1,0 +1,686 @@
+# Implementation Plan: [COMPONENT NAME]
+
+**Package Branch**: `[###-component-name]` | **Date**: [DATE] | **Spec**: [link to spec.md]
+**Input**: Component specification from `/specs/[###-component-name]/spec.md`
+
+**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
+
+## Summary
+
+[Extract from component spec: primary requirement + technical approach from research]
+
+## Technical Context
+
+**Framework**: React 18.3.1 with TypeScript 5.9.2
+**Styling**: CSS Modules + Sass (modern API with `@use`)
+**Testing**: Jest 30 + Testing Library + jest-axe
+**Build Tools**: Webpack 5, Babel 7
+**Linting**: ESLint (@skyscanner/eslint-config-skyscanner), Stylelint
+**Component Library**: Backpack Design System (Monorepo)
+**Package Manager**: npm >=10.7.0
+**Node Version**: >=18.20.4
+**Target Browsers**: Chrome 109+, Edge 129+, Firefox 131+, Safari 15+, Samsung 26+
+**Performance Goals**: Meet test coverage thresholds (70% branches, 75% functions/lines/statements)
+**Constraints**: Must follow Backpack constitution and architecture decisions
+**Scale/Scope**: Single reusable component in `packages/bpk-component-[name]/`
+
+## Constitution Check
+
+*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+
+### Core Principles Compliance
+
+- [ ] **Component-First Architecture**: Package structure in `packages/bpk-component-[name]/`
+- [ ] **Naming Conventions**: PascalCase for components, `.module.scss` for styles, `*-test.tsx` for tests
+- [ ] **Modern Sass**: Using `@use` syntax with granular imports from `bpk-mixins`
+- [ ] **Accessibility-First**: Includes `accessibility-test.tsx` with jest-axe
+- [ ] **TypeScript**: All code written in TypeScript with proper types
+- [ ] **SemVer**: Version bump follows rules (document: MAJOR/MINOR/PATCH)
+- [ ] **Deprecation Management**: Any deprecations follow 3-month timeline with `@deprecated` tags
+- [ ] **Test Coverage**: Will meet 70% branches, 75% functions/lines/statements
+- [ ] **Documentation**: Includes README.md, Storybook story, JSDoc comments, Figma Code Connect
+
+### Technology Compliance
+
+- [ ] **React Version**: Using React 18.3.1
+- [ ] **TypeScript Version**: Using TypeScript 5.9.2
+- [ ] **CSS Modules**: All styles use `.module.scss` extension
+- [ ] **rem Units**: All sizing values use `rem` (not `px` or `em`)
+- [ ] **Design Tokens**: Uses tokens from `@skyscanner/bpk-foundations-web` and `bpk-mixins`
+- [ ] **BEM Naming**: CSS classes follow BEM with `bpk-` prefix
+- [ ] **RTL Support**: Component supports right-to-left languages
+- [ ] **Browser Support**: Works on all supported browsers
+
+### Testing Compliance
+
+- [ ] **Unit Tests**: Jest + Testing Library tests in `[ComponentName]-test.tsx`
+- [ ] **Accessibility Tests**: jest-axe tests in `accessibility-test.tsx`
+- [ ] **Visual Tests**: Percy tests via Storybook (unless component uses images)
+- [ ] **Snapshot Tests**: Included for all variants
+- [ ] **Coverage Thresholds**: Meets required percentages
+
+### Documentation Compliance
+
+- [ ] **British English**: Prose uses British English, code uses US English
+- [ ] **Sentence Case**: Titles use sentence case, singular form
+- [ ] **<100 Words**: Component description under 100 words
+- [ ] **Storybook**: Stories in `examples/bpk-component-[name]/stories.tsx`
+- [ ] **JSDoc**: All public APIs documented
+- [ ] **Figma Connect**: `.figma.tsx` file connects to Figma designs
+
+## Project Structure
+
+### Documentation (this component)
+
+```text
+specs/[###-component-name]/
+├── spec.md              # Component specification
+├── plan.md              # This file (/speckit.plan command output)
+├── research.md          # Phase 0 output (/speckit.plan command)
+├── api-design.md        # Phase 1 output (/speckit.plan command)
+├── styling-guide.md     # Phase 1 output (/speckit.plan command)
+├── examples/            # Phase 1 output (/speckit.plan command)
+│   ├── basic-usage.tsx
+│   ├── variants.tsx
+│   └── edge-cases.tsx
+└── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)
+```
+
+### Package Structure (Backpack Monorepo)
+
+```text
+packages/bpk-component-[name]/
+├── README.md                     # Component documentation (British English prose)
+├── package.json                  # Package metadata, dependencies, scripts
+├── index.ts                      # Export entry point (exports from src/)
+├── docs/                         # Documentation assets
+│   ├── screenshots/              # Component screenshots for README
+│   └── design-assets/            # Figma exports, design references
+└── src/
+    ├── BpkComponentName/
+    │   ├── BpkComponentName.tsx            # Main component implementation
+    │   ├── BpkComponentName.module.scss    # CSS Modules styles
+    │   ├── BpkComponentName-test.tsx       # Unit tests (Jest + Testing Library)
+    │   ├── accessibility-test.tsx          # Accessibility tests (jest-axe)
+    │   ├── BpkComponentName.figma.tsx      # Figma Code Connect
+    │   ├── common-types.ts                 # Shared TypeScript types
+    │   └── __snapshots__/                  # Jest snapshot files
+    │       └── BpkComponentName-test.tsx.snap
+    └── themeAttributes.ts        # Theme attributes (if themeable)
+```
+
+### Storybook Examples
+
+```text
+examples/bpk-component-[name]/
+├── stories.tsx           # Storybook stories
+└── README.md            # Example documentation (optional)
+```
+
+**Structure Decision**: Backpack uses a Monorepo architecture where each component is a separate package in `packages/`. This enables:
+- Independent versioning per component
+- Clear dependency boundaries
+- Isolated testing and documentation
+- Easier maintenance and updates
+
+## Complexity Tracking
+
+> **Fill ONLY if Constitution Check has violations that must be justified**
+
+| Violation | Why Needed | Simpler Alternative Rejected Because |
+|-----------|------------|-------------------------------------|
+| [e.g., Using external dependency X] | [specific problem it solves] | [why Backpack's built-in solution insufficient] |
+| [e.g., Not using CSS Modules] | [technical constraint] | [why standard approach won't work] |
+
+If no violations: **No constitution violations. Component follows all Backpack standards.**
+
+## Phase 0: Research & Discovery
+
+**Objective**: Understand existing patterns and gather context
+
+### Research Tasks
+
+1. **Survey Existing Components**:
+   - Review similar components in `packages/` (e.g., buttons, cards, inputs)
+   - Identify reusable patterns and common approaches
+   - Check for existing utilities in `bpk-react-utils`
+   - Review design tokens in `@skyscanner/bpk-foundations-web`
+
+2. **Review Sass Mixins**:
+   - Explore `packages/bpk-mixins/` for relevant utilities
+   - Identify which mixins to import (tokens, typography, shadows, etc.)
+   - Check modern Sass API usage examples
+
+3. **Study Testing Patterns**:
+   - Review test files in similar components
+   - Understand jest-axe usage patterns
+   - Check Storybook story structures in `examples/`
+
+4. **Figma Design Review**:
+   - Review Figma designs and specifications
+   - Identify all visual states (default, hover, focus, active, disabled)
+   - Note responsive behavior and breakpoints
+   - Document design token mappings
+
+5. **Architecture Decisions Review**:
+   - Read relevant files in `decisions/` directory
+   - Understand naming conventions (js-filenames.md, component-scss-filenames.md)
+   - Review modern Sass API requirements (modern-sass-api.md)
+   - Check versioning rules (versioning-rules.md)
+   - Understand deprecation policies (deprecated-api.md, future-api.md)
+
+**Deliverable**: `research.md` documenting findings and patterns to follow
+
+## Phase 1: Design & Planning
+
+**Objective**: Design component API and structure before implementation
+
+### API Design
+
+**Deliverable**: `api-design.md` containing:
+
+1. **Component Props Interface**:
+```typescript
+type BpkComponentNameProps = {
+  // Define all props with types, defaults, and documentation
+  variant: 'primary' | 'secondary' | 'tertiary';
+  size?: 'small' | 'medium' | 'large'; // default: 'medium'
+  disabled?: boolean; // default: false
+  className?: string;
+  children?: ReactNode;
+  onClick?: (event: MouseEvent<HTMLElement>) => void;
+  ariaLabel?: string;
+  // ... other props
+};
+```
+
+2. **Component Composition**:
+   - If component is composed of sub-components, define their interfaces
+   - Document how they work together
+   - Example: `BpkAccordion` + `BpkAccordionItem`
+
+3. **Theming Support**:
+   - If component is themeable, define theme attributes in `themeAttributes.ts`
+   - Document which properties can be themed
+   - Example theme attributes for customization
+
+4. **Accessibility Considerations**:
+   - ARIA attributes required
+   - Keyboard navigation support (Tab, Enter, Space, etc.)
+   - Screen reader announcements
+   - Focus management
+
+### Styling Design
+
+**Deliverable**: `styling-guide.md` containing:
+
+1. **CSS Class Structure** (BEM with `bpk-` prefix):
+```scss
+.bpk-component-name { /* base class */ }
+.bpk-component-name--primary { /* variant modifier */ }
+.bpk-component-name--disabled { /* state modifier */ }
+.bpk-component-name__element { /* child element */ }
+```
+
+2. **Sass Imports** (granular from `bpk-mixins`):
+```scss
+@use '../bpk-mixins/tokens';
+@use '../bpk-mixins/typography';
+@use '../bpk-mixins/shadows';
+@use '../bpk-mixins/borders';
+@use '../bpk-mixins/utils';
+```
+
+3. **Design Token Mapping**:
+   - Map design specs to Backpack tokens
+   - Spacing: `tokens.bpk-spacing-*()` (returns rem values)
+   - Colors: `tokens.$bpk-color-*`
+   - Typography: `typography.bpk-text()`, `typography.bpk-label-1()`, etc.
+   - Shadows: `shadows.bpk-box-shadow-*()` mixins
+   - Border radius: `tokens.bpk-border-radius-*()` or `borders.bpk-border-radius-*()` mixins
+
+4. **Responsive Behavior**:
+   - Define breakpoint behavior (mobile, tablet, desktop)
+   - Use Backpack's responsive mixins if applicable
+
+5. **RTL Support**:
+   - Document directional properties (margin, padding, text-align)
+   - Use logical properties where applicable
+   - Test with `isRTL` utility from `bpk-react-utils`
+
+### Example Code
+
+**Deliverable**: `examples/` directory with:
+
+1. **`basic-usage.tsx`**: Minimal working example
+2. **`variants.tsx`**: All visual variants and sizes
+3. **`edge-cases.tsx`**: Edge cases (long text, no props, errors)
+4. **`interactive-states.tsx`**: Hover, focus, active, disabled states
+5. **`accessibility.tsx`**: Keyboard navigation and screen reader examples
+
+## Phase 2: Task Breakdown
+
+**Objective**: Create detailed implementation tasks
+
+**Note**: This phase is executed by `/speckit.tasks` command, NOT by `/speckit.plan`
+
+**Deliverable**: `tasks.md` with sequenced implementation tasks organized by:
+- Phase 1: Setup (package initialization)
+- Phase 2: Core Implementation (component code)
+- Phase 3: Styling (SCSS and theming)
+- Phase 4: Testing (unit, accessibility, visual)
+- Phase 5: Documentation (README, Storybook, JSDoc)
+- Phase 6: Integration (Figma Code Connect, package publishing)
+
+## Dependencies
+
+### Internal Backpack Dependencies
+
+**Design Foundations**:
+- `@skyscanner/bpk-foundations-web`: Design tokens (colors, spacing, typography)
+- `packages/bpk-mixins/`: Sass mixins and utilities
+
+**React Utilities** (if needed):
+- `bpk-react-utils`: Portal, cssModules, TransitionInitialMount, isRTL, etc.
+- `bpk-theming`: Theming support (if component is themeable)
+
+**Component Dependencies** (if composing with other components):
+- List any Backpack components this component uses
+- Example: `bpk-component-icon` for icons, `bpk-component-spinner` for loading
+
+### External Dependencies
+
+**Peer Dependencies** (already in project):
+- `react: ^18.3.1`
+- `react-dom: ^18.3.1`
+
+**Optional Dependencies** (if needed):
+- Add any specific external libraries required
+- Justify why Backpack's built-in solutions are insufficient
+
+**Development Dependencies** (already in project):
+- TypeScript, Jest, Testing Library, jest-axe, etc.
+
+## Testing Strategy
+
+### Unit Tests (`BpkComponentName-test.tsx`)
+
+**Framework**: Jest 30 + Testing Library
+
+**Test Coverage**:
+1. **Rendering Tests**:
+   - Renders with required props
+   - Renders with optional props
+   - Renders all variants (primary, secondary, tertiary)
+   - Renders all sizes (small, medium, large)
+   - Renders with custom className
+   - Renders with children
+
+2. **Interaction Tests**:
+   - onClick handler called when clicked
+   - Keyboard interactions (Enter, Space)
+   - Focus management
+
+3. **State Tests**:
+   - Disabled state prevents interactions
+   - Loading state (if applicable)
+   - Error state (if applicable)
+
+4. **Edge Cases**:
+   - No props provided (uses defaults)
+   - Null/undefined children
+   - Extremely long text
+   - Invalid prop values (should gracefully handle or error)
+
+5. **Snapshot Tests**:
+   - Snapshot for each variant + size combination
+   - Snapshot for disabled state
+   - Snapshot for edge cases
+
+**Coverage Target**: 70% branches, 75% functions/lines/statements
+
+### Accessibility Tests (`accessibility-test.tsx`)
+
+**Framework**: jest-axe
+
+**Test Coverage**:
+1. **Automated Checks**:
+   - No accessibility violations detected by axe
+   - Test all variants and states
+   - Test with different content (text, icons, etc.)
+
+2. **ARIA Attributes**:
+   - Correct role (if applicable)
+   - aria-label or aria-labelledby present when needed
+   - aria-disabled for disabled state
+   - aria-pressed for toggle buttons (if applicable)
+
+3. **Keyboard Navigation**:
+   - Tab to focus component
+   - Enter/Space to activate (if interactive)
+   - Focus visible (outline or focus indicator)
+
+4. **Screen Reader**:
+   - Test that component announces correctly
+   - Test state changes are announced
+   - Test with actual screen readers (manual testing)
+
+**Important**: Test the public interface. If component is composed (e.g., `BpkAccordion` with `BpkAccordionItem`), test them together as they would be used by consumers.
+
+### Visual Regression Tests (Percy via Storybook)
+
+**Framework**: Percy + Storybook
+
+**Test Coverage** (if component does NOT use images):
+1. All visual variants (primary, secondary, tertiary)
+2. All sizes (small, medium, large)
+3. Interactive states (hover, focus, active, disabled)
+4. Edge cases (long text, empty, error states)
+5. Responsive breakpoints (mobile, tablet, desktop)
+6. RTL rendering
+
+**Exception**: If component uses images (e.g., `BpkImage`, `BpkCard` with images), do NOT add visual tests. Per `decisions/visual-tests.md`, image loading is flaky on CI and causes false positives.
+
+### Integration Tests (if applicable)
+
+**Framework**: Jest + Testing Library
+
+**Test Coverage** (only if component composes with other components):
+- Test integration with other Backpack components
+- Test theming integration (if themeable)
+- Test in realistic usage scenarios
+
+## Documentation Requirements
+
+### README.md (British English prose, <100 words)
+
+**Structure**:
+1. **Title**: Component name in sentence case (e.g., "Bar chart")
+2. **Description**: Plain English, describe purpose (not configuration)
+3. **Installation**: `npm install @skyscanner/backpack-web`
+4. **Usage**: Code example with basic usage
+5. **Props**: Table with prop name, type, default, description
+6. **Browser Support**: Link to browser support info
+7. **Accessibility**: Brief note on accessibility features
+8. **Related Components**: Links to related Backpack components
+9. **Figma**: Link to Figma designs
+
+**Example**:
+```markdown
+# Bar chart
+
+A simple bar chart component for displaying data visually with customisable
+colours and labels. Ideal for presenting comparative data in a clear format.
+
+## Installation
+
+npm install @skyscanner/backpack-web
+
+## Usage
+
+import BpkBarchart from '@skyscanner/backpack-web/bpk-component-barchart';
+
+<BpkBarchart data={chartData} />
+
+[Props table, examples, etc.]
+```
+
+### Storybook Stories (`examples/bpk-component-[name]/stories.tsx`)
+
+**Stories to include**:
+1. **Default**: Basic usage with minimal props
+2. **Variants**: All visual variants (primary, secondary, tertiary)
+3. **Sizes**: All sizes (small, medium, large)
+4. **States**: Interactive states (hover, focus, active, disabled)
+5. **With Content**: With children, icons, or other content
+6. **Edge Cases**: Long text, empty, error states
+7. **Responsive**: Mobile, tablet, desktop views
+8. **Accessibility**: Keyboard navigation demo, screen reader support
+
+**Storybook Configuration**:
+- Use CSF (Component Story Format) 3.0
+- Add a11y addon for accessibility checks
+- Use controls for interactive prop editing
+- Add JSDoc comments to stories for documentation
+
+**Example**:
+```typescript
+import type { Meta, StoryObj } from '@storybook/react';
+import BpkComponentName from './BpkComponentName';
+
+const meta: Meta<typeof BpkComponentName> = {
+  title: 'Components/BpkComponentName',
+  component: BpkComponentName,
+};
+
+export default meta;
+type Story = StoryObj<typeof BpkComponentName>;
+
+export const Default: Story = {
+  args: {
+    variant: 'primary',
+  },
+};
+
+export const AllVariants: Story = {
+  render: () => (
+    <>
+      <BpkComponentName variant="primary">Primary</BpkComponentName>
+      <BpkComponentName variant="secondary">Secondary</BpkComponentName>
+      <BpkComponentName variant="tertiary">Tertiary</BpkComponentName>
+    </>
+  ),
+};
+```
+
+### JSDoc/TSDoc Comments
+
+**Requirements**:
+- Every component must have a JSDoc comment
+- Every prop must be documented
+- Use `@deprecated` for deprecated props
+- Include examples in JSDoc where helpful
+- Use British English for prose, US English for code
+
+**Example**:
+```typescript
+/**
+ * BpkComponentName is a component for [purpose].
+ *
+ * It supports multiple variants (primary, secondary, tertiary) and sizes.
+ *
+ * @example
+ * <BpkComponentName variant="primary" size="medium">
+ *   Click me
+ * </BpkComponentName>
+ */
+type BpkComponentNameProps = {
+  /**
+   * Visual variant of the component.
+   */
+  variant: 'primary' | 'secondary' | 'tertiary';
+
+  /**
+   * Size of the component.
+   * @default 'medium'
+   */
+  size?: 'small' | 'medium' | 'large';
+
+  /**
+   * Whether the component is disabled.
+   * @default false
+   */
+  disabled?: boolean;
+
+  /**
+   * @deprecated Use `size` prop instead. Will be removed in v11.0.0.
+   */
+  large?: boolean;
+};
+```
+
+### Figma Code Connect (`.figma.tsx`)
+
+**Purpose**: Connect component to Figma designs for design-to-code workflow
+
+**Example**:
+```typescript
+import { figma } from '@figma/code-connect';
+import BpkComponentName from './BpkComponentName';
+
+figma.connect(BpkComponentName, 'https://www.figma.com/file/...', {
+  props: {
+    variant: figma.enum('Variant', {
+      Primary: 'primary',
+      Secondary: 'secondary',
+      Tertiary: 'tertiary',
+    }),
+    size: figma.enum('Size', {
+      Small: 'small',
+      Medium: 'medium',
+      Large: 'large',
+    }),
+    disabled: figma.boolean('Disabled'),
+  },
+  example: (props) => <BpkComponentName {...props}>Label</BpkComponentName>,
+});
+```
+
+## Migration & Versioning
+
+### Version Determination (per `decisions/versioning-rules.md`)
+
+**This component is**: [Select one]
+- [ ] **NEW COMPONENT** → **MINOR** version bump for `@skyscanner/backpack-web`
+- [ ] **MAJOR UPDATE** → **MAJOR** version bump (breaking API/visual changes)
+- [ ] **ENHANCEMENT** → **MINOR** version bump (new optional features)
+- [ ] **BUG FIX** → **PATCH** version bump
+
+**Rationale**: [Explain why this version bump according to versioning rules]
+
+### Breaking Changes (if MAJOR)
+
+**API Changes**:
+- [Old API] → [New API]
+- [Prop removed] → [Alternative]
+- [Behavior changed] → [New behavior]
+
+**Visual Changes**:
+- [Old appearance] → [New appearance]
+- [Token change] → [Impact]
+
+**Migration Guide**:
+```typescript
+// Before (old API)
+<BpkComponentName oldProp="value" />
+
+// After (new API)
+<BpkComponentName newProp="value" />
+```
+
+**Timeline**: [Date when breaking change will be released]
+
+### Deprecations (if applicable)
+
+**Deprecated APIs** (minimum 3 months before removal):
+- `oldProp` → Use `newProp` instead
+- `OldComponent` → Use `NewComponent` instead
+
+**Deprecation Implementation**:
+```typescript
+type BpkComponentNameProps = {
+  newProp: string;
+
+  /**
+   * @deprecated oldProp is deprecated. Use newProp instead. Will be removed in v11.0.0.
+   */
+  oldProp?: string;
+};
+
+const BpkComponentName = ({ newProp, oldProp }: BpkComponentNameProps) => {
+  if (oldProp) {
+    console.warn('oldProp is deprecated. Use newProp instead. Will be removed in v11.0.0.');
+  }
+
+  const effectiveProp = newProp || oldProp;
+  // ...
+};
+```
+
+### Future API (if applicable)
+
+**Opt-in V2 Component** (minimum 3 months before becoming default):
+- `BpkComponentName` (current) → `BpkComponentNameV2` (future)
+- Consumers can opt-in to V2 early
+- In next MAJOR version, V2 becomes default and V1 is removed
+
+**Example**:
+```typescript
+// Current usage
+import BpkComponentName from '@skyscanner/backpack-web/bpk-component-name';
+
+// Opt-in to future API
+import BpkComponentNameV2 from '@skyscanner/backpack-web/bpk-component-name/BpkComponentNameV2';
+```
+
+## Release Checklist
+
+Before releasing this component:
+
+- [ ] All constitution checks pass
+- [ ] All tests pass (unit, accessibility, visual)
+- [ ] Test coverage meets thresholds (70% branches, 75% functions/lines/statements)
+- [ ] TypeScript compiles without errors
+- [ ] ESLint and Stylelint pass
+- [ ] README.md is complete and accurate
+- [ ] Storybook stories are comprehensive
+- [ ] JSDoc comments are complete
+- [ ] Figma Code Connect is implemented
+- [ ] Component works in all supported browsers
+- [ ] Component is keyboard accessible
+- [ ] Component works with screen readers
+- [ ] Component supports RTL languages
+- [ ] Version bump is correct (MAJOR/MINOR/PATCH)
+- [ ] Changelog is updated
+- [ ] PR is approved and merged
+- [ ] Package is published to npm
+- [ ] Storybook is deployed
+
+## Notes
+
+### Key Backpack Patterns to Follow
+
+1. **CSS Modules**: Always use `.module.scss` for component styles
+2. **Modern Sass**: Use `@use` syntax, never `@import`
+3. **Granular Imports**: Import specific mixins, not entire package
+4. **Design Tokens**: Use tokens for all values (colors, spacing, typography)
+5. **rem Units**: Always use `rem` for sizing, never `px` or `em`
+6. **BEM Classes**: Use `bpk-component-name--modifier` pattern
+7. **TypeScript**: All code in TypeScript, generate `.d.ts` files
+8. **Accessibility**: Test with jest-axe, ensure keyboard nav and ARIA
+9. **British English**: Prose in British English, code in US English
+10. **Documentation**: <100 words, sentence case, singular titles
+
+### Common Pitfalls to Avoid
+
+1. ❌ Using `@import` in SCSS → ✅ Use `@use`
+2. ❌ Using `px` units → ✅ Use `rem` units
+3. ❌ Importing entire `bpk-mixins` → ✅ Import specific modules
+4. ❌ Not namespacing mixins → ✅ Use `tokens.bpk-spacing-md()`
+5. ❌ Skipping accessibility tests → ✅ Always include jest-axe tests
+6. ❌ Using American English in docs → ✅ Use British English
+7. ❌ Missing `@deprecated` tags → ✅ Document all deprecations
+8. ❌ No runtime warnings for deprecated props → ✅ Add console.warn
+9. ❌ Visual tests for image components → ✅ Skip visual tests if uses images
+10. ❌ Testing implementation details → ✅ Test public interface
+
+## References
+
+- **Backpack Constitution**: `.specify/memory/constitution.md`
+- **Architecture Decisions**: `decisions/` directory
+- **Component Examples**: Browse `packages/` for similar components
+- **Design Tokens**: `@skyscanner/bpk-foundations-web` and `packages/bpk-mixins/`
+- **React Utilities**: `packages/bpk-react-utils/`
+- **Theming**: `packages/bpk-theming/`
+- **Storybook Examples**: `examples/` directory
+- **Testing Patterns**: Review test files in existing components
