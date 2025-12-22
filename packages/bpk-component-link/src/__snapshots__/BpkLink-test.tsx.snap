@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`BpkLink should render correctly with "blank" and "rel" attributes 1`] = `
+exports[`BpkLink as anchor (default) should render correctly with "blank" and "rel" attributes 1`] = `
 <DocumentFragment>
   <a
     class="bpk-link"
@@ -17,7 +17,22 @@ exports[`BpkLink should render correctly with "blank" and "rel" attributes 1`] =
 </DocumentFragment>
 `;
 
-exports[`BpkLink should render correctly with a "alternate" attribute 1`] = `
+exports[`BpkLink as anchor (default) should render correctly with "implicit" attribute 1`] = `
+<DocumentFragment>
+  <a
+    class="bpk-link bpk-link--implicit"
+    href="#"
+  >
+    <span
+      class="bpk-link-underlined bpk-link-underlined--implicit"
+    >
+      Link
+    </span>
+  </a>
+</DocumentFragment>
+`;
+
+exports[`BpkLink as anchor (default) should render correctly with a "alternate" attribute 1`] = `
 <DocumentFragment>
   <a
     class="bpk-link bpk-link--alternate"
@@ -32,7 +47,7 @@ exports[`BpkLink should render correctly with a "alternate" attribute 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkLink should render correctly with a "blank" attribute 1`] = `
+exports[`BpkLink as anchor (default) should render correctly with a "blank" attribute 1`] = `
 <DocumentFragment>
   <a
     class="bpk-link"
@@ -49,7 +64,7 @@ exports[`BpkLink should render correctly with a "blank" attribute 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkLink should render correctly with a "className" attribute 1`] = `
+exports[`BpkLink as anchor (default) should render correctly with a "className" attribute 1`] = `
 <DocumentFragment>
   <a
     class="bpk-link test-class"
@@ -64,7 +79,7 @@ exports[`BpkLink should render correctly with a "className" attribute 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkLink should render correctly with a "href" attribute 1`] = `
+exports[`BpkLink as anchor (default) should render correctly with a "href" attribute 1`] = `
 <DocumentFragment>
   <a
     class="bpk-link"
@@ -79,7 +94,7 @@ exports[`BpkLink should render correctly with a "href" attribute 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkLink should render correctly with a "rel" attribute 1`] = `
+exports[`BpkLink as anchor (default) should render correctly with a "rel" attribute 1`] = `
 <DocumentFragment>
   <a
     class="bpk-link"
@@ -96,7 +111,7 @@ exports[`BpkLink should render correctly with a "rel" attribute 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkLink should render correctly with arbitrary attributes 1`] = `
+exports[`BpkLink as anchor (default) should render correctly with arbitrary attributes 1`] = `
 <DocumentFragment>
   <a
     class="bpk-link"
@@ -105,6 +120,21 @@ exports[`BpkLink should render correctly with arbitrary attributes 1`] = `
   >
     <span
       class="bpk-link-underlined"
+    >
+      Link
+    </span>
+  </a>
+</DocumentFragment>
+`;
+
+exports[`BpkLink as anchor (default) should render correctly with both "implicit" and "alternate" attributes 1`] = `
+<DocumentFragment>
+  <a
+    class="bpk-link bpk-link--implicit bpk-link--alternate"
+    href="#"
+  >
+    <span
+      class="bpk-link-underlined bpk-link-underlined-implicit--alternate"
     >
       Link
     </span>

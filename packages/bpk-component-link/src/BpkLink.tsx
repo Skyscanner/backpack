@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode, MouseEvent, AnchorHTMLAttributes } from 'react';
+import type { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
 import { forwardRef } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -29,75 +29,158 @@ import STYLES from './BpkLink.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export interface Props
-  extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href' | 'className' | 'rel'> {
+/**
+ * Polymorphic component types following Chakra UI pattern.
+ * Allows BpkLink to be rendered as different HTML elements while
+ * preserving proper type inference for element-specific props.
+ */
+
+// Supported element types for BpkLink
+type SupportedElements = 'a' | 'button' | 'span' | 'div';
+
+// Base props that are common to all BpkLink variants
+type BpkLinkBaseProps = {
   /** The content of the link. */
   children: ReactNode;
-  href: string | null;
+  /** Additional CSS class(es) to apply. */
   className?: string | null;
-  onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
-  blank?: boolean;
-  rel?: string | null;
+  /** Use alternate (light) styling for dark backgrounds. */
   alternate?: boolean;
+  /** Use implicit styling (no underline until hover). */
   implicit?: boolean;
-}
+};
 
-const BpkLink = forwardRef<HTMLAnchorElement, Props>(
-  (
-    {
-      alternate = false,
-      blank = false,
-      children,
-      className = null,
-      href,
-      implicit = false,
-      onClick = () => {},
-      rel: propRel = null,
-      ...rest
-    },
-    ref,
-  ) => {
-    const classNames = [getClassName('bpk-link')];
-    const underlinedClassNames = [getClassName('bpk-link-underlined')];
+// Props specific to anchor elements
+type AnchorOnlyProps = {
+  /** The URL the link points to. */
+  href: string | null;
+  /** Opens link in a new tab/window. */
+  blank?: boolean;
+  /** The relationship between linked and current document. */
+  rel?: string | null;
+};
 
-    const target = blank ? '_blank' : undefined;
-    const rel = blank ? propRel || 'noopener noreferrer' : propRel;
+// Polymorphic props type that merges base props with element-specific props
+type PolymorphicProps<E extends ElementType> = BpkLinkBaseProps & {
+  /** The element type to render as. Defaults to 'a'. */
+  as?: E;
+} & Omit<ComponentPropsWithoutRef<E>, keyof BpkLinkBaseProps | 'as'>;
 
-    if (className) {
-      classNames.push(className);
-    }
-    if (implicit) {
-      classNames.push(getClassName('bpk-link--implicit'));
-    }
-    if (alternate) {
-      classNames.push(getClassName('bpk-link--alternate'));
-    }
+// Full props type with conditional anchor-specific props
+type BpkLinkProps<E extends ElementType = 'a'> = E extends 'a'
+  ? Omit<PolymorphicProps<E>, 'href' | 'rel'> & AnchorOnlyProps
+  : PolymorphicProps<E>;
 
-    if (implicit && !alternate) {
-      underlinedClassNames.push(getClassName('bpk-link-underlined--implicit'));
-    } else if (alternate && !implicit) {
-      underlinedClassNames.push(getClassName('bpk-link-underlined--alternate'));
-    } else if (implicit && alternate) {
-      underlinedClassNames.push(
-        getClassName('bpk-link-underlined-implicit--alternate'),
-      );
-    }
+// Polymorphic ref type mapping element types to their ref types
+type PolymorphicRef<E extends SupportedElements> =
+  E extends 'a' ? React.Ref<HTMLAnchorElement> :
+  E extends 'button' ? React.Ref<HTMLButtonElement> :
+  E extends 'span' ? React.Ref<HTMLSpanElement> :
+  E extends 'div' ? React.Ref<HTMLDivElement> :
+  never;
 
-    return (
-      <a
-        className={classNames.join(' ')}
-        href={href ?? undefined}
-        onClick={onClick}
-        target={target}
-        rel={rel ?? undefined}
-        ref={ref}
-        {...rest}
-      >
-        <span className={underlinedClassNames.join(' ')}>{children}</span>
-      </a>
+type PolymorphicComponent = <E extends SupportedElements = 'a'>(
+  props: BpkLinkProps<E> & { ref?: PolymorphicRef<E> }
+) => JSX.Element | null;
+
+const getClassNames = (
+  alternate: boolean,
+  implicit: boolean,
+  className: string | null,
+) => {
+  const classNames = [getClassName('bpk-link')];
+  const underlinedClassNames = [getClassName('bpk-link-underlined')];
+
+  if (className) {
+    classNames.push(className);
+  }
+  if (implicit) {
+    classNames.push(getClassName('bpk-link--implicit'));
+  }
+  if (alternate) {
+    classNames.push(getClassName('bpk-link--alternate'));
+  }
+
+  if (implicit && !alternate) {
+    underlinedClassNames.push(getClassName('bpk-link-underlined--implicit'));
+  } else if (alternate && !implicit) {
+    underlinedClassNames.push(getClassName('bpk-link-underlined--alternate'));
+  } else if (implicit && alternate) {
+    underlinedClassNames.push(
+      getClassName('bpk-link-underlined-implicit--alternate'),
     );
-  },
-);
+  }
 
+  return {
+    linkClassName: classNames.join(' '),
+    underlinedClassName: underlinedClassNames.join(' '),
+  };
+};
+
+const BpkLinkInner = <E extends SupportedElements = 'a'>(
+  {
+    alternate = false,
+    as,
+    children,
+    className = null,
+    implicit = false,
+    ...rest
+  }: BpkLinkProps<E>,
+  // ref is typed as `any` internally due to forwardRef limitations with polymorphic components
+  // The external PolymorphicRef type ensures type safety for consumers
+  ref: any,
+) => {
+  const Element = as || 'a';
+  const { linkClassName, underlinedClassName } = getClassNames(
+    alternate,
+    implicit,
+    className,
+  );
+
+  // Handle anchor-specific props
+  const elementProps: Record<string, unknown> = { ...rest };
+
+  if (Element === 'a') {
+    const anchorProps = rest as unknown as AnchorOnlyProps & {
+      onClick?: (event: React.MouseEvent) => void;
+    };
+    const { blank, href, rel: propRel } = anchorProps;
+
+    elementProps.href = href ?? undefined;
+    if (blank) {
+      elementProps.target = '_blank';
+      elementProps.rel = propRel || 'noopener noreferrer';
+    } else if (propRel) {
+      elementProps.rel = propRel;
+    }
+
+    // Remove anchor-only props that were processed
+    delete elementProps.blank;
+  }
+
+  // Handle button-specific defaults
+  if (Element === 'button') {
+    // Ensure button has a type to prevent form submission
+    if (!('type' in elementProps)) {
+      elementProps.type = 'button';
+    }
+  }
+
+  return (
+    // Allowed: className and ref are passed to the underlying DOM element
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+    <Element className={linkClassName} ref={ref} {...elementProps}>
+      <span className={underlinedClassName}>{children}</span>
+    </Element>
+  );
+};
+
+// A polymorphic link component that can render as different HTML elements.
+const BpkLink = forwardRef(BpkLinkInner) as PolymorphicComponent;
+
+// Legacy Props type export for backwards compatibility
+export type Props = BpkLinkProps<'a'>;
+
+export type { BpkLinkProps, BpkLinkBaseProps, AnchorOnlyProps, SupportedElements };
 export default BpkLink;
 export { themeAttributes, linkAlternateThemeAttributes };

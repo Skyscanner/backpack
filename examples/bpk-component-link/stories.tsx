@@ -16,9 +16,10 @@
  * limitations under the License.
  */
 
+import type { ReactNode } from 'react';
 
 import BpkButtonLink from '../../packages/bpk-component-link/src/BpkButtonLink';
-import BpkLink from '../../packages/bpk-component-link/src/BpkLink';
+import BpkLinkPolymorphic from '../../packages/bpk-component-link/src/BpkLink';
 
 import {
   LinkExample,
@@ -33,36 +34,96 @@ import {
   MixedExample,
   LinkInGridExample,
   ImplicitButtonLinkExample,
+  PolymorphicOverviewExample,
 } from './examples';
+
+type BpkLinkStoryProps = {
+  /** The element type to render as. */
+  as?: 'a' | 'button' | 'span' | 'div';
+  /** The content of the link. */
+  children: ReactNode;
+  /** The URL the link points to (only when as="a"). */
+  href: string | null;
+  /** Opens link in a new tab/window (only when as="a"). */
+  blank?: boolean;
+  /** Use alternate (light) styling for dark backgrounds. */
+  alternate?: boolean;
+  /** Use implicit styling (no underline until hover). */
+  implicit?: boolean;
+  /** Additional CSS class(es) to apply. */
+  className?: string | null;
+};
+
+const BpkLink = ({
+  alternate = false,
+  as = 'a',
+  blank = false,
+  children,
+  className = null,
+  href,
+  implicit = false,
+}: BpkLinkStoryProps) => {
+  if (as === 'a') {
+    return (
+      <BpkLinkPolymorphic
+        as="a"
+        href={href}
+        blank={blank}
+        alternate={alternate}
+        implicit={implicit}
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={className}
+      >
+        {children}
+      </BpkLinkPolymorphic>
+    );
+  }
+  return (
+    <BpkLinkPolymorphic
+      as={as}
+      alternate={alternate}
+      implicit={implicit}
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+      className={className}
+    >
+      {children}
+    </BpkLinkPolymorphic>
+  );
+};
 
 export default {
   title: 'bpk-component-link',
   component: BpkLink,
-  subcomponents: {
-    BpkButtonLink
-  },
+  subcomponents: { BpkButtonLink },
 };
 
+// Basic Examples
 export const Example = LinkExample;
 export const ExampleImplicit = ImplicitLinkExample;
 export const ExampleLinksInGrid = LinkInGridExample;
-export const ExampleButtons = ButtonLinkExample;
-export const ExampleImlicitButtons = ImplicitButtonLinkExample;
 
+// Alternate (Dark Background)
 export const ExampleAlternate = LinkAlternativeExample;
 export const ExampleAlternateImplicit = LinkAlternativeImplicitExample;
 
+// Legacy BpkButtonLink (Deprecated - use as="button" instead)
+export const ExampleButtons = ButtonLinkExample;
+export const ExampleImplicitButtons = ImplicitButtonLinkExample;
 export const ExampleAlternateButtons = ButtonLinkAlternativeExample;
 
+// Combined Examples
 export const Combined = CombinedExample;
 export const CombinedAlternative = CombinedAlternativeExample;
-
 export const Overview = OverviewExample;
 
+// Polymorphic "as" Prop Examples
+export const PolymorphicOverview = PolymorphicOverviewExample;
+
+// Visual Tests
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
   render: VisualTest,
   args: {
-    zoomEnabled: true
+    zoomEnabled: true,
   },
 };
