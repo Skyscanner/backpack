@@ -126,9 +126,7 @@ const BpkLinkInner = <E extends SupportedElements = 'a'>(
     implicit = false,
     ...rest
   }: BpkLinkProps<E>,
-  // ref is typed as `any` internally due to forwardRef limitations with polymorphic components
-  // The external PolymorphicRef type ensures type safety for consumers
-  ref: any,
+  ref: React.Ref<any>,
 ) => {
   const Element = as || 'a';
   const { linkClassName, underlinedClassName } = getClassNames(

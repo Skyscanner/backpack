@@ -19,7 +19,7 @@
 import type { ReactNode } from 'react';
 
 import BpkButtonLink from '../../packages/bpk-component-link/src/BpkButtonLink';
-import BpkLinkPolymorphic from '../../packages/bpk-component-link/src/BpkLink';
+import BpkLink from '../../packages/bpk-component-link/src/BpkLink';
 
 import {
   LinkExample,
@@ -37,7 +37,16 @@ import {
   PolymorphicOverviewExample,
 } from './examples';
 
-type BpkLinkStoryProps = {
+/**
+ * Storybook wrapper for BpkLink.
+ *
+ * This wrapper exists because Storybook's react-docgen-typescript cannot parse
+ * polymorphic generic types. The actual BpkLink component (BpkLink)
+ * supports full type inference based on the `as` prop.
+ *
+ * @see https://storybook.js.org/docs/react/api/argtypes#automatic-argtype-inference
+ */
+type BpkLinkPolymorphicProps = {
   /** The element type to render as. */
   as?: 'a' | 'button' | 'span' | 'div';
   /** The content of the link. */
@@ -54,7 +63,7 @@ type BpkLinkStoryProps = {
   className?: string | null;
 };
 
-const BpkLink = ({
+const BpkLinkPolymorphic = ({
   alternate = false,
   as = 'a',
   blank = false,
@@ -62,10 +71,10 @@ const BpkLink = ({
   className = null,
   href,
   implicit = false,
-}: BpkLinkStoryProps) => {
+}: BpkLinkPolymorphicProps) => {
   if (as === 'a') {
     return (
-      <BpkLinkPolymorphic
+      <BpkLink
         as="a"
         href={href}
         blank={blank}
@@ -75,11 +84,11 @@ const BpkLink = ({
         className={className}
       >
         {children}
-      </BpkLinkPolymorphic>
+      </BpkLink>
     );
   }
   return (
-    <BpkLinkPolymorphic
+    <BpkLink
       as={as}
       alternate={alternate}
       implicit={implicit}
@@ -87,13 +96,13 @@ const BpkLink = ({
       className={className}
     >
       {children}
-    </BpkLinkPolymorphic>
+    </BpkLink>
   );
 };
 
 export default {
   title: 'bpk-component-link',
-  component: BpkLink,
+  component: BpkLinkPolymorphic,
   subcomponents: { BpkButtonLink },
 };
 
