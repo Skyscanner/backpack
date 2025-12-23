@@ -127,7 +127,7 @@ const getClassNames = (
 const BpkLinkInner = <E extends LinkAs = 'a'>(
   {
     alternate = false,
-    as,
+    as: Element = LINK_AS.a,
     children,
     className = null,
     implicit = false,
@@ -135,7 +135,6 @@ const BpkLinkInner = <E extends LinkAs = 'a'>(
   }: BpkLinkProps<E>,
   ref: Ref<any>,
 ) => {
-  const Element = as || LINK_AS.a;
   const { linkClassName, underlinedClassName } = getClassNames(
     alternate,
     implicit,

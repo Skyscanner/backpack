@@ -21,14 +21,18 @@ import { createRef } from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import BpkLink, { themeAttributes } from './BpkLink';
+import BpkLink, { LINK_AS, themeAttributes } from './BpkLink';
 
 describe('BpkLink', () => {
   describe('as anchor (default)', () => {
-    it('should render correctly with a "href" attribute', () => {
-      const { asFragment } = render(<BpkLink href="#">Link</BpkLink>);
+    it('should render as an anchor element with href', () => {
+      render(<BpkLink href="#">Link</BpkLink>);
 
-      expect(asFragment()).toMatchSnapshot();
+      const link = screen.getByRole('link', { name: 'Link' });
+      expect(link).toBeInTheDocument();
+      expect(link.tagName).toBe('A');
+      expect(link).toHaveAttribute('href', '#');
+      expect(link).toHaveClass('bpk-link');
     });
 
     it('should render with a ref forwarded', () => {
@@ -44,83 +48,103 @@ describe('BpkLink', () => {
       expect(myRef.current?.tagName).toBe('A');
     });
 
-    it('should render correctly with a "className" attribute', () => {
-      const { asFragment } = render(
+    it('should apply custom className', () => {
+      render(
         <BpkLink href="#" className="test-class">
           Link
         </BpkLink>,
       );
-      expect(asFragment()).toMatchSnapshot();
+
+      const link = screen.getByRole('link');
+      expect(link).toHaveClass('bpk-link', 'test-class');
     });
 
-    it('should render correctly with a "blank" attribute', () => {
-      const { asFragment } = render(
+    it('should set target="_blank" and rel="noopener noreferrer" when blank is true', () => {
+      render(
         <BpkLink href="#" blank>
           Link (new window)
         </BpkLink>,
       );
-      expect(asFragment()).toMatchSnapshot();
+
+      const link = screen.getByRole('link');
+      expect(link).toHaveAttribute('target', '_blank');
+      expect(link).toHaveAttribute('rel', 'noopener noreferrer');
     });
 
-    it('should render correctly with a "rel" attribute', () => {
-      const { asFragment } = render(
-        <BpkLink href="#" blank rel="rel-attr">
+    it('should use custom rel when provided with blank', () => {
+      render(
+        <BpkLink href="#" blank rel="custom-rel">
           Link (new window)
         </BpkLink>,
       );
-      expect(asFragment()).toMatchSnapshot();
+
+      const link = screen.getByRole('link');
+      expect(link).toHaveAttribute('target', '_blank');
+      expect(link).toHaveAttribute('rel', 'custom-rel');
     });
 
-    it('should render correctly with "blank" and "rel" attributes', () => {
-      const { asFragment } = render(
-        <BpkLink href="#" blank rel="rel-overwrite">
-          Link (new window)
+    it('should apply rel without blank', () => {
+      render(
+        <BpkLink href="#" rel="nofollow">
+          Link
         </BpkLink>,
       );
-      expect(asFragment()).toMatchSnapshot();
+
+      const link = screen.getByRole('link');
+      expect(link).toHaveAttribute('rel', 'nofollow');
+      expect(link).not.toHaveAttribute('target');
     });
 
-    it('should render correctly with a "alternate" attribute', () => {
-      const { asFragment } = render(
+    it('should apply alternate class when alternate prop is true', () => {
+      render(
         <BpkLink href="#" alternate>
           Link
         </BpkLink>,
       );
-      expect(asFragment()).toMatchSnapshot();
+
+      const link = screen.getByRole('link');
+      expect(link).toHaveClass('bpk-link', 'bpk-link--alternate');
     });
 
-    it('should render correctly with arbitrary attributes', () => {
-      const { asFragment } = render(
-        <BpkLink href="#" id="test-id">
+    it('should pass through arbitrary attributes', () => {
+      render(
+        <BpkLink href="#" id="test-id" data-testid="custom">
           Link
         </BpkLink>,
       );
-      expect(asFragment()).toMatchSnapshot();
+
+      const link = screen.getByRole('link');
+      expect(link).toHaveAttribute('id', 'test-id');
+      expect(link).toHaveAttribute('data-testid', 'custom');
     });
 
-    it('should render correctly with "implicit" attribute', () => {
-      const { asFragment } = render(
+    it('should apply implicit class when implicit prop is true', () => {
+      render(
         <BpkLink href="#" implicit>
           Link
         </BpkLink>,
       );
-      expect(asFragment()).toMatchSnapshot();
+
+      const link = screen.getByRole('link');
+      expect(link).toHaveClass('bpk-link', 'bpk-link--implicit');
     });
 
-    it('should render correctly with both "implicit" and "alternate" attributes', () => {
-      const { asFragment } = render(
+    it('should apply both implicit and alternate classes', () => {
+      render(
         <BpkLink href="#" implicit alternate>
           Link
         </BpkLink>,
       );
-      expect(asFragment()).toMatchSnapshot();
+
+      const link = screen.getByRole('link');
+      expect(link).toHaveClass('bpk-link', 'bpk-link--implicit', 'bpk-link--alternate');
     });
   });
 
   describe('as button', () => {
     it('should render as a button element', () => {
       render(
-        <BpkLink as="button" onClick={() => {}}>
+        <BpkLink as={LINK_AS.button} onClick={() => {}}>
           Button Link
         </BpkLink>,
       );
@@ -135,7 +159,7 @@ describe('BpkLink', () => {
       const myRef = createRef<HTMLButtonElement>();
 
       render(
-        <BpkLink as="button" ref={myRef} onClick={() => {}}>
+        <BpkLink as={LINK_AS.button} ref={myRef} onClick={() => {}}>
           Button Link
         </BpkLink>,
       );
@@ -146,7 +170,7 @@ describe('BpkLink', () => {
 
     it('should have type="button" by default', () => {
       render(
-        <BpkLink as="button" onClick={() => {}}>
+        <BpkLink as={LINK_AS.button} onClick={() => {}}>
           Button Link
         </BpkLink>,
       );
@@ -157,7 +181,7 @@ describe('BpkLink', () => {
 
     it('should allow overriding type attribute', () => {
       render(
-        <BpkLink as="button" type="submit" onClick={() => {}}>
+        <BpkLink as={LINK_AS.button} type="submit" onClick={() => {}}>
           Submit Button Link
         </BpkLink>,
       );
@@ -168,7 +192,7 @@ describe('BpkLink', () => {
 
     it('should apply custom className', () => {
       render(
-        <BpkLink as="button" onClick={() => {}} className="test-class">
+        <BpkLink as={LINK_AS.button} onClick={() => {}} className="test-class">
           Button Link
         </BpkLink>,
       );
@@ -179,7 +203,7 @@ describe('BpkLink', () => {
 
     it('should apply alternate class when alternate prop is true', () => {
       render(
-        <BpkLink as="button" onClick={() => {}} alternate>
+        <BpkLink as={LINK_AS.button} onClick={() => {}} alternate>
           Button Link
         </BpkLink>,
       );
@@ -190,7 +214,7 @@ describe('BpkLink', () => {
 
     it('should apply implicit class when implicit prop is true', () => {
       render(
-        <BpkLink as="button" onClick={() => {}} implicit>
+        <BpkLink as={LINK_AS.button} onClick={() => {}} implicit>
           Button Link
         </BpkLink>,
       );
@@ -201,7 +225,7 @@ describe('BpkLink', () => {
 
     it('should pass through arbitrary attributes', () => {
       render(
-        <BpkLink as="button" onClick={() => {}} id="test-id" data-testid="custom">
+        <BpkLink as={LINK_AS.button} onClick={() => {}} id="test-id" data-testid="custom">
           Button Link
         </BpkLink>,
       );
@@ -213,7 +237,7 @@ describe('BpkLink', () => {
 
     it('should support disabled attribute', () => {
       render(
-        <BpkLink as="button" onClick={() => {}} disabled>
+        <BpkLink as={LINK_AS.button} onClick={() => {}} disabled>
           Disabled Button Link
         </BpkLink>,
       );
@@ -225,7 +249,7 @@ describe('BpkLink', () => {
 
   describe('as span', () => {
     it('should render as a span element', () => {
-      render(<BpkLink as="span">Span Link</BpkLink>);
+      render(<BpkLink as={LINK_AS.span}>Span Link</BpkLink>);
 
       const innerSpan = screen.getByText('Span Link');
       const outerSpan = innerSpan.parentElement;
@@ -237,7 +261,7 @@ describe('BpkLink', () => {
       const myRef = createRef<HTMLSpanElement>();
 
       render(
-        <BpkLink as="span" ref={myRef}>
+        <BpkLink as={LINK_AS.span} ref={myRef}>
           Span Link
         </BpkLink>,
       );
@@ -248,7 +272,7 @@ describe('BpkLink', () => {
 
     it('should apply custom className', () => {
       render(
-        <BpkLink as="span" className="test-class">
+        <BpkLink as={LINK_AS.span} className="test-class">
           Span Link
         </BpkLink>,
       );
@@ -260,7 +284,7 @@ describe('BpkLink', () => {
 
     it('should apply alternate class when alternate prop is true', () => {
       render(
-        <BpkLink as="span" alternate>
+        <BpkLink as={LINK_AS.span} alternate>
           Span Link
         </BpkLink>,
       );
@@ -272,7 +296,7 @@ describe('BpkLink', () => {
 
     it('should apply implicit class when implicit prop is true', () => {
       render(
-        <BpkLink as="span" implicit>
+        <BpkLink as={LINK_AS.span} implicit>
           Span Link
         </BpkLink>,
       );
@@ -285,7 +309,7 @@ describe('BpkLink', () => {
 
   describe('as div', () => {
     it('should render as a div element', () => {
-      render(<BpkLink as="div">Div Link</BpkLink>);
+      render(<BpkLink as={LINK_AS.div}>Div Link</BpkLink>);
 
       const innerSpan = screen.getByText('Div Link');
       const outerDiv = innerSpan.parentElement;
@@ -297,7 +321,7 @@ describe('BpkLink', () => {
       const myRef = createRef<HTMLDivElement>();
 
       render(
-        <BpkLink as="div" ref={myRef}>
+        <BpkLink as={LINK_AS.div} ref={myRef}>
           Div Link
         </BpkLink>,
       );
@@ -308,7 +332,7 @@ describe('BpkLink', () => {
 
     it('should apply custom className', () => {
       render(
-        <BpkLink as="div" className="test-class">
+        <BpkLink as={LINK_AS.div} className="test-class">
           Div Link
         </BpkLink>,
       );
@@ -320,7 +344,7 @@ describe('BpkLink', () => {
 
     it('should apply alternate class when alternate prop is true', () => {
       render(
-        <BpkLink as="div" alternate>
+        <BpkLink as={LINK_AS.div} alternate>
           Div Link
         </BpkLink>,
       );
@@ -332,7 +356,7 @@ describe('BpkLink', () => {
 
     it('should apply implicit class when implicit prop is true', () => {
       render(
-        <BpkLink as="div" implicit>
+        <BpkLink as={LINK_AS.div} implicit>
           Div Link
         </BpkLink>,
       );

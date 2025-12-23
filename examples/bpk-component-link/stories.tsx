@@ -67,31 +67,18 @@ const BpkLinkPolymorphic = ({
   implicit = false,
   onClick = () => {},
 }: BpkLinkPolymorphicProps) => {
+  const commonProps = { alternate, implicit, onClick, className };
+
   if (as === LINK_AS.a) {
     return (
-      <BpkLink
-        as={LINK_AS.a}
-        href={href}
-        blank={blank}
-        alternate={alternate}
-        implicit={implicit}
-        onClick={onClick}
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={className}
-      >
+      <BpkLink as={LINK_AS.a} href={href} blank={blank} {...commonProps}>
         {children}
       </BpkLink>
     );
   }
+
   return (
-    <BpkLink
-      as={as}
-      alternate={alternate}
-      implicit={implicit}
-      onClick={onClick}
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      className={className}
-    >
+    <BpkLink as={as} {...commonProps}>
       {children}
     </BpkLink>
   );
