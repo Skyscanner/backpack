@@ -30,6 +30,7 @@ figma.connect(
       size: figma.enum("Size", {
         "X-Small": SIZES.xsmall,
         Small: SIZES.small,
+        Medium: SIZES.medium,
         Large: SIZES.large,
       }),
       align: figma.enum("Alignment", {
