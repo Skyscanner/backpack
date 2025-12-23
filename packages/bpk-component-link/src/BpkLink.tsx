@@ -36,7 +36,14 @@ const getClassName = cssModules(STYLES);
  */
 
 // Supported element types for BpkLink
-type SupportedElements = 'a' | 'button' | 'span' | 'div';
+const LINK_AS = {
+  a: 'a',
+  button: 'button',
+  span: 'span',
+  div: 'div',
+} as const;
+
+type LinkAs = (typeof LINK_AS)[keyof typeof LINK_AS];
 
 // Base props that are common to all BpkLink variants
 type BpkLinkBaseProps = {
@@ -72,14 +79,14 @@ type BpkLinkProps<E extends ElementType = 'a'> = E extends 'a'
   : PolymorphicProps<E>;
 
 // Polymorphic ref type mapping element types to their ref types
-type PolymorphicRef<E extends SupportedElements> =
-  E extends 'a' ? Ref<HTMLAnchorElement> :
-  E extends 'button' ? Ref<HTMLButtonElement> :
-  E extends 'span' ? Ref<HTMLSpanElement> :
-  E extends 'div' ? Ref<HTMLDivElement> :
+type PolymorphicRef<E extends LinkAs> =
+  E extends typeof LINK_AS.a ? Ref<HTMLAnchorElement> :
+  E extends typeof LINK_AS.button ? Ref<HTMLButtonElement> :
+  E extends typeof LINK_AS.span ? Ref<HTMLSpanElement> :
+  E extends typeof LINK_AS.div ? Ref<HTMLDivElement> :
   never;
 
-type PolymorphicComponent = <E extends SupportedElements = 'a'>(
+type PolymorphicComponent = <E extends LinkAs = 'a'>(
   props: BpkLinkProps<E> & { ref?: PolymorphicRef<E> }
 ) => JSX.Element | null;
 
@@ -117,7 +124,7 @@ const getClassNames = (
   };
 };
 
-const BpkLinkInner = <E extends SupportedElements = 'a'>(
+const BpkLinkInner = <E extends LinkAs = 'a'>(
   {
     alternate = false,
     as,
@@ -128,7 +135,7 @@ const BpkLinkInner = <E extends SupportedElements = 'a'>(
   }: BpkLinkProps<E>,
   ref: Ref<any>,
 ) => {
-  const Element = as || 'a';
+  const Element = as || LINK_AS.a;
   const { linkClassName, underlinedClassName } = getClassNames(
     alternate,
     implicit,
@@ -138,7 +145,7 @@ const BpkLinkInner = <E extends SupportedElements = 'a'>(
   // Handle anchor-specific props
   const elementProps: Record<string, unknown> = { ...rest };
 
-  if (Element === 'a') {
+  if (Element === LINK_AS.a) {
     const anchorProps = rest as unknown as AnchorOnlyProps & {
       onClick?: (event: MouseEvent) => void;
     };
@@ -157,7 +164,7 @@ const BpkLinkInner = <E extends SupportedElements = 'a'>(
   }
 
   // Handle button-specific defaults
-  if (Element === 'button') {
+  if (Element === LINK_AS.button) {
     // Ensure button has a type to prevent form submission
     if (!('type' in elementProps)) {
       elementProps.type = 'button';
@@ -179,6 +186,6 @@ const BpkLink = forwardRef(BpkLinkInner) as PolymorphicComponent;
 // Legacy Props type export for backwards compatibility
 export type Props = BpkLinkProps<'a'>;
 
-export type { BpkLinkProps, BpkLinkBaseProps, AnchorOnlyProps, SupportedElements };
+export type { BpkLinkProps, BpkLinkBaseProps, AnchorOnlyProps, LinkAs };
 export default BpkLink;
-export { themeAttributes, linkAlternateThemeAttributes };
+export { LINK_AS, themeAttributes, linkAlternateThemeAttributes };

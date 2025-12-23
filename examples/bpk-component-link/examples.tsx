@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkLink, { BpkButtonLink } from '../../packages/bpk-component-link';
+import BpkLink, { LINK_AS } from '../../packages/bpk-component-link';
 import BpkPanel from '../../packages/bpk-component-panel';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
@@ -107,7 +107,7 @@ const PolymorphicOverviewExample = () => (
     <div className={getClassName('bpk-link-example__cards')}>
       <BpkPanel>
         <BpkText tagName="h4" textStyle={TEXT_STYLES.heading5}>
-          as=a (default)
+          as={LINK_AS.a} (default)
         </BpkText>
         <BpkText
           tagName="p"
@@ -122,7 +122,7 @@ const PolymorphicOverviewExample = () => (
 
       <BpkPanel>
         <BpkText tagName="h4" textStyle={TEXT_STYLES.heading5}>
-          as=button
+          as={LINK_AS.button}
         </BpkText>
         <BpkText
           tagName="p"
@@ -132,14 +132,14 @@ const PolymorphicOverviewExample = () => (
         >
           For actions without navigation
         </BpkText>
-        <BpkLink as="button" onClick={action('Action triggered')}>
+        <BpkLink as={LINK_AS.button} onClick={action('Action triggered')}>
           Trigger action
         </BpkLink>
       </BpkPanel>
 
       <BpkPanel>
         <BpkText tagName="h4" textStyle={TEXT_STYLES.heading5}>
-          as=span
+          as={LINK_AS.span}
         </BpkText>
         <BpkText
           tagName="p"
@@ -149,12 +149,12 @@ const PolymorphicOverviewExample = () => (
         >
           Non-interactive inline text
         </BpkText>
-        <BpkLink as="span">Static inline text</BpkLink>
+        <BpkLink as={LINK_AS.span}>Static inline text</BpkLink>
       </BpkPanel>
 
       <BpkPanel>
         <BpkText tagName="h4" textStyle={TEXT_STYLES.heading5}>
-          as=div
+          as={LINK_AS.div}
         </BpkText>
         <BpkText
           tagName="p"
@@ -164,7 +164,7 @@ const PolymorphicOverviewExample = () => (
         >
           Non-interactive block element
         </BpkText>
-        <BpkLink as="div">Static block text</BpkLink>
+        <BpkLink as={LINK_AS.div}>Static block text</BpkLink>
       </BpkPanel>
     </div>
   </div>
