@@ -63,7 +63,7 @@ export default {
     href: {
       control: 'text',
       description: 'The URL the link points to (only when as="a").',
-      type: { name: 'string', required: true },
+      type: { name: 'string | null', required: true },
     },
     implicit: {
       control: 'boolean',
