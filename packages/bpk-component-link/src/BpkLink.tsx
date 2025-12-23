@@ -22,13 +22,9 @@ import { forwardRef } from 'react';
 import { cssModules } from '../../bpk-react-utils';
 
 import { LINK_AS } from './common-types';
-import themeAttributes, {
-  linkAlternateThemeAttributes,
-} from './themeAttributes';
 
 import type {
   AnchorOnlyProps,
-  BpkLinkBaseProps,
   BpkLinkProps,
   LinkAs,
   PolymorphicComponent,
@@ -130,9 +126,4 @@ const BpkLinkInner = <E extends LinkAs = 'a'>(
 // A polymorphic link component that can render as different HTML elements.
 const BpkLink = forwardRef(BpkLinkInner) as PolymorphicComponent;
 
-// Legacy Props type export for backwards compatibility
-export type Props = BpkLinkProps<'a'>;
-
-export type { BpkLinkProps, BpkLinkBaseProps, AnchorOnlyProps, LinkAs };
 export default BpkLink;
-export { LINK_AS, themeAttributes, linkAlternateThemeAttributes };

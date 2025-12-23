@@ -21,7 +21,7 @@ import { createRef } from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import BpkLink, { LINK_AS, themeAttributes } from './BpkLink';
+import BpkLink, { LINK_AS, themeAttributes } from '../index';
 
 describe('BpkLink', () => {
   describe('as anchor (default)', () => {

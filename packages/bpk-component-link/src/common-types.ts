@@ -87,3 +87,5 @@ export type PolymorphicComponent = <E extends LinkAs = 'a'>(
   props: BpkLinkProps<E> & { ref?: PolymorphicRef<E> }
 ) => JSX.Element | null;
 
+// Legacy Props type export for backwards compatibility
+export type Props = BpkLinkProps<'a'>;
