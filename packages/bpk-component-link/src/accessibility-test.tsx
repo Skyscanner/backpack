@@ -21,7 +21,7 @@ import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 
 import BpkButtonLink from './BpkButtonLink';
-import BpkLink from './BpkLink';
+import BpkLink, { LINK_AS } from './BpkLink';
 
 describe('BpkLink accessibility tests', () => {
   describe('as anchor (default)', () => {
@@ -60,7 +60,7 @@ describe('BpkLink accessibility tests', () => {
   describe('as button', () => {
     it('should not have programmatically-detectable accessibility issues', async () => {
       const { container } = render(
-        <BpkLink as="button" onClick={() => {}}>
+        <BpkLink as={LINK_AS.button} onClick={() => {}}>
           Button Link
         </BpkLink>,
       );
@@ -70,7 +70,7 @@ describe('BpkLink accessibility tests', () => {
 
     it('should be focusable with keyboard', async () => {
       render(
-        <BpkLink as="button" onClick={() => {}}>
+        <BpkLink as={LINK_AS.button} onClick={() => {}}>
           Button Link
         </BpkLink>,
       );
@@ -84,7 +84,7 @@ describe('BpkLink accessibility tests', () => {
     it('should activate with Enter key', async () => {
       const onClick = jest.fn();
       render(
-        <BpkLink as="button" onClick={onClick}>
+        <BpkLink as={LINK_AS.button} onClick={onClick}>
           Button Link
         </BpkLink>,
       );
@@ -99,7 +99,7 @@ describe('BpkLink accessibility tests', () => {
     it('should activate with Space key', async () => {
       const onClick = jest.fn();
       render(
-        <BpkLink as="button" onClick={onClick}>
+        <BpkLink as={LINK_AS.button} onClick={onClick}>
           Button Link
         </BpkLink>,
       );
@@ -113,7 +113,7 @@ describe('BpkLink accessibility tests', () => {
 
     it('should not require role="button" because it is a native button', () => {
       render(
-        <BpkLink as="button" onClick={() => {}}>
+        <BpkLink as={LINK_AS.button} onClick={() => {}}>
           Button Link
         </BpkLink>,
       );
@@ -127,7 +127,7 @@ describe('BpkLink accessibility tests', () => {
 
   describe('as span (non-interactive)', () => {
     it('should not have programmatically-detectable accessibility issues', async () => {
-      const { container } = render(<BpkLink as="span">Span Link</BpkLink>);
+      const { container } = render(<BpkLink as={LINK_AS.span}>Span Link</BpkLink>);
       const results = await axe(container);
       expect(results).toHaveNoViolations();
     });
@@ -136,7 +136,7 @@ describe('BpkLink accessibility tests', () => {
       render(
         <>
           <button type="button">Before</button>
-          <BpkLink as="span">Span Link</BpkLink>
+          <BpkLink as={LINK_AS.span}>Span Link</BpkLink>
           <button type="button">After</button>
         </>,
       );
@@ -149,7 +149,7 @@ describe('BpkLink accessibility tests', () => {
     });
 
     it('should not have interactive role', () => {
-      render(<BpkLink as="span">Span Link</BpkLink>);
+      render(<BpkLink as={LINK_AS.span}>Span Link</BpkLink>);
       const span = screen.getByText('Span Link').parentElement;
 
       expect(span?.tagName).toBe('SPAN');
@@ -159,7 +159,7 @@ describe('BpkLink accessibility tests', () => {
 
   describe('as div (non-interactive)', () => {
     it('should not have programmatically-detectable accessibility issues', async () => {
-      const { container } = render(<BpkLink as="div">Div Link</BpkLink>);
+      const { container } = render(<BpkLink as={LINK_AS.div}>Div Link</BpkLink>);
       const results = await axe(container);
       expect(results).toHaveNoViolations();
     });
@@ -168,7 +168,7 @@ describe('BpkLink accessibility tests', () => {
       render(
         <>
           <button type="button">Before</button>
-          <BpkLink as="div">Div Link</BpkLink>
+          <BpkLink as={LINK_AS.div}>Div Link</BpkLink>
           <button type="button">After</button>
         </>,
       );
@@ -181,7 +181,7 @@ describe('BpkLink accessibility tests', () => {
     });
 
     it('should not have interactive role', () => {
-      render(<BpkLink as="div">Div Link</BpkLink>);
+      render(<BpkLink as={LINK_AS.div}>Div Link</BpkLink>);
       const div = screen.getByText('Div Link').parentElement;
 
       expect(div?.tagName).toBe('DIV');

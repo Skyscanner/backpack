@@ -36,7 +36,7 @@ export interface Props extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'cl
 }
 
 /**
- * @deprecated Use `<BpkLink as="button" />` instead.
+ * @deprecated Use `<BpkLink as={LINK_AS.button} />` instead.
  * BpkButtonLink is maintained for backwards compatibility but will be removed in a future major version.
  * @returns {JSX.Element} A button styled as a link.
  */

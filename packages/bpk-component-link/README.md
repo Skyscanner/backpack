@@ -35,7 +35,7 @@ import BpkLink, { LINK_AS } from '@skyscanner/backpack-web/bpk-component-link';
 <BpkLink as={LINK_AS.div}>Block-level link-styled text</BpkLink>
 
 // Using string literals (alternative)
-<BpkLink as="button" onClick={handleClick}>Action</BpkLink>
+<BpkLink as={LINK_AS.button} onClick={handleClick}>Action</BpkLink>
 ```
 
 ### When to use each element

@@ -18,7 +18,7 @@
 
 import type { ReactNode, MouseEvent } from 'react';
 
-import BpkLink from '../../packages/bpk-component-link/src/BpkLink';
+import BpkLink, { LINK_AS } from '../../packages/bpk-component-link/src/BpkLink';
 
 import {
   LinkExample,
@@ -39,7 +39,7 @@ import {
  * @see https://storybook.js.org/docs/react/api/argtypes#automatic-argtype-inference
  */
 type BpkLinkPolymorphicProps = {
-  /** The element type to render as. */
+  /** The element type of HTML to render. Use LINK_AS constants for type safety. */
   as?: 'a' | 'button' | 'span' | 'div';
   /** The content of the link. */
   children: ReactNode;
@@ -59,7 +59,7 @@ type BpkLinkPolymorphicProps = {
 
 const BpkLinkPolymorphic = ({
   alternate = false,
-  as = 'a',
+  as = LINK_AS.a,
   blank = false,
   children,
   className = null,
@@ -67,10 +67,10 @@ const BpkLinkPolymorphic = ({
   implicit = false,
   onClick = () => {},
 }: BpkLinkPolymorphicProps) => {
-  if (as === 'a') {
+  if (as === LINK_AS.a) {
     return (
       <BpkLink
-        as="a"
+        as={LINK_AS.a}
         href={href}
         blank={blank}
         alternate={alternate}
