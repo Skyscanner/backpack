@@ -80,20 +80,6 @@ The component correctly infers prop types based on the chosen element:
 <BpkLink as="button" href="/">Action</BpkLink>
 ```
 
-### Legacy BpkButtonLink (deprecated)
-
-`BpkButtonLink` is deprecated and will be removed in a future major version. Use `<BpkLink as="button" />` instead:
-
-```tsx
-// ❌ Deprecated
-import { BpkButtonLink } from '@skyscanner/backpack-web/bpk-component-link';
-<BpkButtonLink onClick={handleClick}>Click me</BpkButtonLink>
-
-// ✅ Use instead
-import BpkLink from '@skyscanner/backpack-web/bpk-component-link';
-<BpkLink as="button" onClick={handleClick}>Click me</BpkLink>
-```
-
 ## Single Page App (SPA) Frameworks
 
 If you're using a SPA framework like `react-router-dom` or `Next.js` to navigate between pages without refreshing, then you can wrap `BpkLink` in the component provided by the framework.

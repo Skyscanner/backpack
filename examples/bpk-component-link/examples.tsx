@@ -27,12 +27,6 @@ import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-// Spacing values for non-polymorphic examples (legacy)
-const SPACING = {
-  md: '1rem',
-  lg: '1.5rem',
-};
-
 // =============================================================================
 // Basic Link Examples
 // =============================================================================
@@ -61,67 +55,6 @@ const ImplicitLinkExample = () => (
   </div>
 );
 
-const LinkInGridExample = () => (
-  <div
-    style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
-      gap: SPACING.lg,
-      width: '100%',
-      maxWidth: '800px',
-    }}
-  >
-    <BpkLink href="#" onClick={action('#1 clicked')}>
-      Link #1
-    </BpkLink>
-    <BpkLink href="#" onClick={action('#2 clicked')}>
-      Link #2
-    </BpkLink>
-    <BpkLink href="#" onClick={action('#3 clicked')}>
-      Link #3
-    </BpkLink>
-    <BpkLink href="#" onClick={action('#5 clicked')}>
-      Link #4
-    </BpkLink>
-  </div>
-);
-
-// =============================================================================
-// Legacy BpkButtonLink Examples (Deprecated)
-// =============================================================================
-
-const ButtonLinkExample = () => (
-  <div>
-    <BpkButtonLink onClick={action('#1 clicked')}>Link #1</BpkButtonLink>
-    <br />
-    <BpkButtonLink onClick={action('#2 clicked')}>Link #2</BpkButtonLink>
-  </div>
-);
-
-const ImplicitButtonLinkExample = () => (
-  <div>
-    <BpkButtonLink onClick={action('#1 clicked')} implicit>
-      Link #1
-    </BpkButtonLink>
-    <br />
-    <BpkButtonLink onClick={action('#2 clicked')} implicit>
-      Link #2
-    </BpkButtonLink>
-  </div>
-);
-
-const ButtonLinkAlternativeExample = () => (
-  <BpkDarkExampleWrapper>
-    <BpkButtonLink onClick={action('#1 clicked')} alternate>
-      Link #1
-    </BpkButtonLink>
-    <br />
-    <BpkButtonLink onClick={action('#2 clicked')} alternate>
-      Link #2
-    </BpkButtonLink>
-  </BpkDarkExampleWrapper>
-);
-
 // =============================================================================
 // Alternate (Dark Background) Examples
 // =============================================================================
@@ -148,66 +81,6 @@ const LinkAlternativeImplicitExample = () => (
       Link #2
     </BpkLink>
   </BpkDarkExampleWrapper>
-);
-
-// =============================================================================
-// Combined Examples
-// =============================================================================
-
-const CombinedExample = () => (
-  <BpkText tagName="p" textStyle={TEXT_STYLES.bodyDefault}>
-    Links can be both <BpkLink href="#">anchor tags</BpkLink> as well as{' '}
-    <BpkButtonLink onClick={() => null}>button tags</BpkButtonLink>.
-  </BpkText>
-);
-
-const CombinedAlternativeExample = () => (
-  <BpkDarkExampleWrapper>
-    <BpkText tagName="p" textStyle={TEXT_STYLES.bodyDefault} color={TEXT_COLORS.textOnDark}>
-      Links can be both{' '}
-      <BpkLink href="#" alternate>
-        anchor tags
-      </BpkLink>{' '}
-      as well as{' '}
-      <BpkButtonLink onClick={() => null} alternate>
-        button tags
-      </BpkButtonLink>
-      .
-    </BpkText>
-  </BpkDarkExampleWrapper>
-);
-
-const OverviewExample = () => (
-  <>
-    <div style={{ paddingBottom: SPACING.md }}>
-      <BpkText tagName="p" textStyle={TEXT_STYLES.bodyLongform}>
-        Big skies, big landscapes and cool cities, the great American Northwest
-        is the place to discover the great outdoors. Get a real taste of the
-        Frontier spirit and explore a rich history of what was once the Wild
-        West. <BpkLink href="#">Explore incredible national parks</BpkLink>,
-        ancient forests, rugged coastlines, and beautiful islands.
-      </BpkText>
-    </div>
-    <BpkDarkExampleWrapper style={{ padding: SPACING.md }}>
-      <BpkText tagName="p" textStyle={TEXT_STYLES.bodyLongform} color={TEXT_COLORS.textOnDark}>
-        Big skies, big landscapes and cool cities, the great American Northwest
-        is the place to discover the great outdoors. Get a real taste of the
-        Frontier spirit and explore a rich history of what was once the Wild
-        West.{' '}
-        <BpkLink href="#" alternate>
-          Explore incredible national parks
-        </BpkLink>
-        , ancient forests, rugged coastlines, and beautiful islands.
-      </BpkText>
-    </BpkDarkExampleWrapper>
-  </>
-);
-
-const MixedExample = () => (
-  <div>
-    <CombinedExample />
-    <CombinedAlternativeExample />
-  </div>
 );
 
 // =============================================================================
@@ -297,23 +170,25 @@ const PolymorphicOverviewExample = () => (
   </div>
 );
 
+
+const MixedExample = () => (
+  <div>
+    <LinkExample />
+    <ImplicitLinkExample />
+    <LinkAlternativeExample />
+    <LinkAlternativeImplicitExample />
+  </div>
+);
+
 export {
   // Basic examples
   LinkExample,
   ImplicitLinkExample,
-  LinkInGridExample,
-  // Legacy BpkButtonLink (deprecated)
-  ButtonLinkExample,
-  ImplicitButtonLinkExample,
-  ButtonLinkAlternativeExample,
   // Alternate (dark background)
   LinkAlternativeExample,
   LinkAlternativeImplicitExample,
-  // Combined
-  CombinedExample,
-  CombinedAlternativeExample,
-  OverviewExample,
-  MixedExample,
   // Polymorphic "as" prop examples
   PolymorphicOverviewExample,
+  // Mixed examples for visual tests
+  MixedExample,
 };

@@ -18,22 +18,14 @@
 
 import type { ReactNode } from 'react';
 
-import BpkButtonLink from '../../packages/bpk-component-link/src/BpkButtonLink';
 import BpkLink from '../../packages/bpk-component-link/src/BpkLink';
 
 import {
   LinkExample,
   ImplicitLinkExample,
-  ButtonLinkExample,
   LinkAlternativeExample,
   LinkAlternativeImplicitExample,
-  ButtonLinkAlternativeExample,
-  CombinedExample,
-  CombinedAlternativeExample,
-  OverviewExample,
   MixedExample,
-  LinkInGridExample,
-  ImplicitButtonLinkExample,
   PolymorphicOverviewExample,
 } from './examples';
 
@@ -103,27 +95,15 @@ const BpkLinkPolymorphic = ({
 export default {
   title: 'bpk-component-link',
   component: BpkLinkPolymorphic,
-  subcomponents: { BpkButtonLink },
 };
 
 // Basic Examples
-export const Example = LinkExample;
-export const ExampleImplicit = ImplicitLinkExample;
-export const ExampleLinksInGrid = LinkInGridExample;
+export const Link = LinkExample;
+export const LinkImplicit = ImplicitLinkExample;
 
 // Alternate (Dark Background)
-export const ExampleAlternate = LinkAlternativeExample;
-export const ExampleAlternateImplicit = LinkAlternativeImplicitExample;
-
-// Legacy BpkButtonLink (Deprecated - use as="button" instead)
-export const ExampleButtons = ButtonLinkExample;
-export const ExampleImplicitButtons = ImplicitButtonLinkExample;
-export const ExampleAlternateButtons = ButtonLinkAlternativeExample;
-
-// Combined Examples
-export const Combined = CombinedExample;
-export const CombinedAlternative = CombinedAlternativeExample;
-export const Overview = OverviewExample;
+export const Alternate = LinkAlternativeExample;
+export const AlternateImplicit = LinkAlternativeImplicitExample;
 
 // Polymorphic "as" Prop Examples
 export const PolymorphicOverview = PolymorphicOverviewExample;
