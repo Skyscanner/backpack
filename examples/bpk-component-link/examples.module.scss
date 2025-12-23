@@ -25,19 +25,10 @@
     gap: tokens.bpk-spacing-lg();
   }
 
-  &__description {
-    margin-top: tokens.bpk-spacing-sm();
-  }
-
-  &__cards-grid {
+  &__cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: tokens.bpk-spacing-md();
-  }
-
-  &__card {
-    padding: tokens.bpk-spacing-md();
-    border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
   }
 
   &__card-description {

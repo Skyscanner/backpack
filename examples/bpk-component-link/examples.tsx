@@ -17,7 +17,8 @@
  */
 
 import BpkLink, { BpkButtonLink } from '../../packages/bpk-component-link';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import BpkPanel from '../../packages/bpk-component-panel';
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from '../bpk-storybook-utils';
@@ -162,7 +163,7 @@ const CombinedExample = () => (
 
 const CombinedAlternativeExample = () => (
   <BpkDarkExampleWrapper>
-    <BpkText tagName="p" textStyle={TEXT_STYLES.bodyDefault} color="text-on-dark">
+    <BpkText tagName="p" textStyle={TEXT_STYLES.bodyDefault} color={TEXT_COLORS.textOnDark}>
       Links can be both{' '}
       <BpkLink href="#" alternate>
         anchor tags
@@ -188,7 +189,7 @@ const OverviewExample = () => (
       </BpkText>
     </div>
     <BpkDarkExampleWrapper style={{ padding: SPACING.md }}>
-      <BpkText tagName="p" textStyle={TEXT_STYLES.bodyLongform} color="text-on-dark">
+      <BpkText tagName="p" textStyle={TEXT_STYLES.bodyLongform} color={TEXT_COLORS.textOnDark}>
         Big skies, big landscapes and cool cities, the great American Northwest
         is the place to discover the great outdoors. Get a real taste of the
         Frontier spirit and explore a rich history of what was once the Wild
@@ -222,7 +223,6 @@ const PolymorphicOverviewExample = () => (
       <BpkText
         tagName="p"
         textStyle={TEXT_STYLES.bodyDefault}
-        className={getClassName('bpk-link-example__description')}
       >
         BpkLink supports a polymorphic{' '}
         <BpkText textStyle={TEXT_STYLES.label1}>as</BpkText> prop that allows
@@ -231,30 +231,30 @@ const PolymorphicOverviewExample = () => (
       </BpkText>
     </div>
 
-    <div className={getClassName('bpk-link-example__cards-grid')}>
-      <div className={getClassName('bpk-link-example__card')}>
+    <div className={getClassName('bpk-link-example__cards')}>
+      <BpkPanel>
         <BpkText tagName="h4" textStyle={TEXT_STYLES.heading5}>
           as=a (default)
         </BpkText>
         <BpkText
           tagName="p"
           textStyle={TEXT_STYLES.caption}
-          color="text-secondary"
+          color={TEXT_COLORS.textSecondary}
           className={getClassName('bpk-link-example__card-description')}
         >
           For navigation
         </BpkText>
         <BpkLink href="#">Click to navigate</BpkLink>
-      </div>
+      </BpkPanel>
 
-      <div className={getClassName('bpk-link-example__card')}>
+      <BpkPanel>
         <BpkText tagName="h4" textStyle={TEXT_STYLES.heading5}>
           as=button
         </BpkText>
         <BpkText
           tagName="p"
           textStyle={TEXT_STYLES.caption}
-          color="text-secondary"
+          color={TEXT_COLORS.textSecondary}
           className={getClassName('bpk-link-example__card-description')}
         >
           For actions without navigation
@@ -262,37 +262,37 @@ const PolymorphicOverviewExample = () => (
         <BpkLink as="button" onClick={action('Action triggered')}>
           Trigger action
         </BpkLink>
-      </div>
+      </BpkPanel>
 
-      <div className={getClassName('bpk-link-example__card')}>
+      <BpkPanel>
         <BpkText tagName="h4" textStyle={TEXT_STYLES.heading5}>
           as=span
         </BpkText>
         <BpkText
           tagName="p"
           textStyle={TEXT_STYLES.caption}
-          color="text-secondary"
+          color={TEXT_COLORS.textSecondary}
           className={getClassName('bpk-link-example__card-description')}
         >
           Non-interactive inline text
         </BpkText>
         <BpkLink as="span">Static inline text</BpkLink>
-      </div>
+      </BpkPanel>
 
-      <div className={getClassName('bpk-link-example__card')}>
+      <BpkPanel>
         <BpkText tagName="h4" textStyle={TEXT_STYLES.heading5}>
           as=div
         </BpkText>
         <BpkText
           tagName="p"
           textStyle={TEXT_STYLES.caption}
-          color="text-secondary"
+          color={TEXT_COLORS.textSecondary}
           className={getClassName('bpk-link-example__card-description')}
         >
           Non-interactive block element
         </BpkText>
         <BpkLink as="div">Static block text</BpkLink>
-      </div>
+      </BpkPanel>
     </div>
   </div>
 );
