@@ -16,9 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode, MouseEvent } from 'react';
-
-import BpkLink, { LINK_AS } from '../../packages/bpk-component-link/src/BpkLink';
+import BpkLink from '../../packages/bpk-component-link/src/BpkLink';
 
 import {
   LinkExample,
@@ -29,64 +27,63 @@ import {
   PolymorphicOverviewExample,
 } from './examples';
 
-/**
- * Storybook wrapper for BpkLink.
- *
- * This wrapper exists because Storybook's react-docgen-typescript cannot parse
- * polymorphic generic types. The actual BpkLink component (BpkLink)
- * supports full type inference based on the `as` prop.
- *
- * @see https://storybook.js.org/docs/react/api/argtypes#automatic-argtype-inference
- */
-type BpkLinkPolymorphicProps = {
-  /** The element type of HTML to render. Use LINK_AS constants for type safety. */
-  as?: 'a' | 'button' | 'span' | 'div';
-  /** The content of the link. */
-  children: ReactNode;
-  /** The URL the link points to (only when as="a"). */
-  href: string | null;
-  /** Opens link in a new tab/window (only when as="a"). */
-  blank?: boolean;
-  /** Use alternate (light) styling for dark backgrounds. */
-  alternate?: boolean;
-  /** Use implicit styling (no underline until hover). */
-  implicit?: boolean;
-  /** Additional CSS class(es) to apply. */
-  className?: string | null;
-  /** Callback function triggered when the link is clicked. */
-  onClick?: (event: MouseEvent) => void;
-};
-
-const BpkLinkPolymorphic = ({
-  alternate = false,
-  as = LINK_AS.a,
-  blank = false,
-  children,
-  className = null,
-  href,
-  implicit = false,
-  onClick = () => {},
-}: BpkLinkPolymorphicProps) => {
-  const commonProps = { alternate, implicit, onClick, className };
-
-  if (as === LINK_AS.a) {
-    return (
-      <BpkLink as={LINK_AS.a} href={href} blank={blank} {...commonProps}>
-        {children}
-      </BpkLink>
-    );
-  }
-
-  return (
-    <BpkLink as={as} {...commonProps}>
-      {children}
-    </BpkLink>
-  );
-};
-
 export default {
   title: 'bpk-component-link',
-  component: BpkLinkPolymorphic,
+  component: BpkLink,
+  argTypes: {
+    alternate: {
+      control: 'boolean',
+      description: 'Use alternate (light) styling for dark backgrounds.',
+      defaultValue: { summary: 'false' },
+    },
+    as: {
+      control: 'select',
+      options: ['a', 'button', 'span', 'div'],
+      description: 'The element type of HTML to render. Use LINK_AS constants for type safety.',
+      table: {
+        type: { summary: 'a | button | span | div' },
+        defaultValue: { summary: 'a' },
+      },
+    },
+    blank: {
+      control: 'boolean',
+      description: 'Opens link in a new tab/window (only when as="a").',
+      defaultValue: { summary: 'false' },
+    },
+    children: {
+      control: 'text',
+      description: 'The content of the link.',
+      type: { name: 'ReactNode', required: true },
+    },
+    className: {
+      control: 'text',
+      description: 'Additional CSS classes to apply.',
+      table: { type: { summary: 'string | null' } },
+    },
+    href: {
+      control: 'text',
+      description: 'The URL the link points to (only when as="a").',
+      type: { name: 'string', required: true },
+    },
+    implicit: {
+      control: 'boolean',
+      description: 'Use implicit styling (no underline until hover).',
+      defaultValue: { summary: 'false' },
+    },
+    onClick: {
+      action: 'clicked',
+      description: 'Callback function triggered when the link is clicked.',
+      table: { type: { summary: '(event: MouseEvent) => void' } },
+    },
+  },
+  args: {
+    as: 'a',
+    children: 'Link text',
+    href: '#',
+    alternate: false,
+    blank: false,
+    implicit: false,
+  },
 };
 
 // Basic Examples
