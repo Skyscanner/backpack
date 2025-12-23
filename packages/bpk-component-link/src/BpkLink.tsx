@@ -16,79 +16,27 @@
  * limitations under the License.
  */
 
-import type { ComponentPropsWithoutRef, ElementType, MouseEvent, ReactNode, Ref } from 'react';
+import type { MouseEvent, Ref } from 'react';
 import { forwardRef } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
+import { LINK_AS } from './common-types';
 import themeAttributes, {
   linkAlternateThemeAttributes,
 } from './themeAttributes';
 
+import type {
+  AnchorOnlyProps,
+  BpkLinkBaseProps,
+  BpkLinkProps,
+  LinkAs,
+  PolymorphicComponent,
+} from './common-types';
+
 import STYLES from './BpkLink.module.scss';
 
 const getClassName = cssModules(STYLES);
-
-/**
- * Polymorphic component types following Chakra UI pattern.
- * Allows BpkLink to be rendered as different HTML elements while
- * preserving proper type inference for element-specific props.
- */
-
-// Supported element types for BpkLink
-const LINK_AS = {
-  a: 'a',
-  button: 'button',
-  span: 'span',
-  div: 'div',
-} as const;
-
-type LinkAs = (typeof LINK_AS)[keyof typeof LINK_AS];
-
-// Base props that are common to all BpkLink variants
-type BpkLinkBaseProps = {
-  /** The content of the link. */
-  children: ReactNode;
-  /** Additional CSS class(es) to apply. */
-  className?: string | null;
-  /** Use alternate (light) styling for dark backgrounds. */
-  alternate?: boolean;
-  /** Use implicit styling (no underline until hover). */
-  implicit?: boolean;
-};
-
-// Props specific to anchor elements
-type AnchorOnlyProps = {
-  /** The URL the link points to. */
-  href: string | null;
-  /** Opens link in a new tab/window. */
-  blank?: boolean;
-  /** The relationship between linked and current document. */
-  rel?: string | null;
-};
-
-// Polymorphic props type that merges base props with element-specific props
-type PolymorphicProps<E extends ElementType> = BpkLinkBaseProps & {
-  /** The element type to render as. Defaults to 'a'. */
-  as?: E;
-} & Omit<ComponentPropsWithoutRef<E>, keyof BpkLinkBaseProps | 'as'>;
-
-// Full props type with conditional anchor-specific props
-type BpkLinkProps<E extends ElementType = 'a'> = E extends 'a'
-  ? Omit<PolymorphicProps<E>, 'href' | 'rel'> & AnchorOnlyProps
-  : PolymorphicProps<E>;
-
-// Polymorphic ref type mapping element types to their ref types
-type PolymorphicRef<E extends LinkAs> =
-  E extends typeof LINK_AS.a ? Ref<HTMLAnchorElement> :
-  E extends typeof LINK_AS.button ? Ref<HTMLButtonElement> :
-  E extends typeof LINK_AS.span ? Ref<HTMLSpanElement> :
-  E extends typeof LINK_AS.div ? Ref<HTMLDivElement> :
-  never;
-
-type PolymorphicComponent = <E extends LinkAs = 'a'>(
-  props: BpkLinkProps<E> & { ref?: PolymorphicRef<E> }
-) => JSX.Element | null;
 
 const getClassNames = (
   alternate: boolean,
