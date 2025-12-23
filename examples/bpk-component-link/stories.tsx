@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { ReactNode, MouseEvent } from 'react';
 
 import BpkLink from '../../packages/bpk-component-link/src/BpkLink';
 
@@ -53,6 +53,8 @@ type BpkLinkPolymorphicProps = {
   implicit?: boolean;
   /** Additional CSS class(es) to apply. */
   className?: string | null;
+  /** Callback function triggered when the link is clicked. */
+  onClick?: (event: MouseEvent) => void;
 };
 
 const BpkLinkPolymorphic = ({
@@ -63,6 +65,7 @@ const BpkLinkPolymorphic = ({
   className = null,
   href,
   implicit = false,
+  onClick = () => {},
 }: BpkLinkPolymorphicProps) => {
   if (as === 'a') {
     return (
@@ -72,6 +75,7 @@ const BpkLinkPolymorphic = ({
         blank={blank}
         alternate={alternate}
         implicit={implicit}
+        onClick={onClick}
         // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={className}
       >
@@ -84,6 +88,7 @@ const BpkLinkPolymorphic = ({
       as={as}
       alternate={alternate}
       implicit={implicit}
+      onClick={onClick}
       // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={className}
     >

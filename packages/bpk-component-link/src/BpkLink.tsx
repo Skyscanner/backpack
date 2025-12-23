@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, ElementType, MouseEvent, ReactNode, Ref } from 'react';
 import { forwardRef } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -73,10 +73,10 @@ type BpkLinkProps<E extends ElementType = 'a'> = E extends 'a'
 
 // Polymorphic ref type mapping element types to their ref types
 type PolymorphicRef<E extends SupportedElements> =
-  E extends 'a' ? React.Ref<HTMLAnchorElement> :
-  E extends 'button' ? React.Ref<HTMLButtonElement> :
-  E extends 'span' ? React.Ref<HTMLSpanElement> :
-  E extends 'div' ? React.Ref<HTMLDivElement> :
+  E extends 'a' ? Ref<HTMLAnchorElement> :
+  E extends 'button' ? Ref<HTMLButtonElement> :
+  E extends 'span' ? Ref<HTMLSpanElement> :
+  E extends 'div' ? Ref<HTMLDivElement> :
   never;
 
 type PolymorphicComponent = <E extends SupportedElements = 'a'>(
@@ -126,7 +126,7 @@ const BpkLinkInner = <E extends SupportedElements = 'a'>(
     implicit = false,
     ...rest
   }: BpkLinkProps<E>,
-  ref: React.Ref<any>,
+  ref: Ref<any>,
 ) => {
   const Element = as || 'a';
   const { linkClassName, underlinedClassName } = getClassNames(
@@ -140,7 +140,7 @@ const BpkLinkInner = <E extends SupportedElements = 'a'>(
 
   if (Element === 'a') {
     const anchorProps = rest as unknown as AnchorOnlyProps & {
-      onClick?: (event: React.MouseEvent) => void;
+      onClick?: (event: MouseEvent) => void;
     };
     const { blank, href, rel: propRel } = anchorProps;
 
