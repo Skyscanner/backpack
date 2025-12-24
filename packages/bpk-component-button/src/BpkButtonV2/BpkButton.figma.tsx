@@ -22,7 +22,7 @@ import { withButtonAlignment } from "../../../bpk-component-icon"
 import LightningIcon from '../../../bpk-component-icon/sm/lightning';
 import LongArrowRightIcon  from '../../../bpk-component-icon/sm/long-arrow-right';
 
-import { BpkButton } from "./BpkButton"
+import { BpkButtonV2 as BpkButton  } from "./BpkButton"
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
 
 
