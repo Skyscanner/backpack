@@ -16,24 +16,23 @@
  * limitations under the License.
  */
 
-import BpkButtonLink, { type Props as BpkButtonLinkProps } from './src/BpkButtonLink';
-import BpkLink from './src/BpkLink';
-import themeAttributes, {
-  linkAlternateThemeAttributes,
-} from './src/themeAttributes';
+@use '../../packages/bpk-mixins/tokens';
 
-import type { BpkLinkProps } from './src/common-types';
+.bpk-link-example {
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: tokens.bpk-spacing-lg();
+  }
 
-/**
- * @deprecated Use BpkLinkProps for polymorphic usage
- */
-export type { BpkButtonLinkProps };
-/**
- * @deprecated Use `<BpkLink as="button" />` instead.
- */
-export { BpkButtonLink };
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: tokens.bpk-spacing-md();
+  }
 
-export type { BpkLinkProps };
-
-export default BpkLink;
-export { themeAttributes, linkAlternateThemeAttributes };
+  &__card-description {
+    margin-top: tokens.bpk-spacing-sm();
+    margin-bottom: tokens.bpk-spacing-sm();
+  }
+}

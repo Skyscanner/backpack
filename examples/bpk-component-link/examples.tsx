@@ -16,15 +16,20 @@
  * limitations under the License.
  */
 
-import {
-  colorWhite,
-  colorSkyGrayTint04,
-  fontColorBase,
-} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-
-import BpkLink, { BpkButtonLink } from '../../packages/bpk-component-link';
+import BpkLink from '../../packages/bpk-component-link';
+import BpkPanel from '../../packages/bpk-component-panel';
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
+import { cssModules } from '../../packages/bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from '../bpk-storybook-utils';
+
+import STYLES from './examples.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+// =============================================================================
+// Basic Link Examples
+// =============================================================================
 
 const LinkExample = () => (
   <div>
@@ -50,44 +55,9 @@ const ImplicitLinkExample = () => (
   </div>
 );
 
-const LinkInGridExample = () => (
-  <div style={{
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
-    gap: '1.5rem',
-    width: '100%',
-    maxWidth: '800px',
-  }}>
-    <BpkLink href="#" onClick={action('#1 clicked')}>
-      Link #1
-    </BpkLink>
-    <BpkLink href="#" onClick={action('#2 clicked')}>
-      Link #2
-    </BpkLink>
-    <BpkLink href="#" onClick={action('#3 clicked')}>
-      Link #3
-    </BpkLink>
-    <BpkLink href="#" onClick={action('#5 clicked')}>
-      Link #4
-    </BpkLink>
-  </div>
-);
-
-const ButtonLinkExample = () => (
-  <div>
-    <BpkButtonLink onClick={action('#1 clicked')}>Link #1</BpkButtonLink>
-    <br />
-    <BpkButtonLink onClick={action('#2 clicked')}>Link #2</BpkButtonLink>
-  </div>
-);
-
-const ImplicitButtonLinkExample = () => (
-  <div>
-    <BpkButtonLink onClick={action('#1 clicked')} implicit>Link #1</BpkButtonLink>
-    <br />
-    <BpkButtonLink onClick={action('#2 clicked')} implicit>Link #2</BpkButtonLink>
-  </div>
-);
+// =============================================================================
+// Alternate (Dark Background) Examples
+// =============================================================================
 
 const LinkAlternativeExample = () => (
   <BpkDarkExampleWrapper>
@@ -113,76 +83,112 @@ const LinkAlternativeImplicitExample = () => (
   </BpkDarkExampleWrapper>
 );
 
-const ButtonLinkAlternativeExample = () => (
-  <BpkDarkExampleWrapper>
-    <BpkButtonLink onClick={action('#1 clicked')} alternate>
-      Link #1
-    </BpkButtonLink>
-    <br />
-    <BpkButtonLink onClick={action('#2 clicked')} alternate>
-      Link #2
-    </BpkButtonLink>
-  </BpkDarkExampleWrapper>
-);
+// =============================================================================
+// Polymorphic "as" Prop Examples
+// =============================================================================
 
-const CombinedExample = () => (
-  <div>
-    Links can be both <BpkLink href="#">anchor tags</BpkLink> as well as{' '}
-    <BpkButtonLink onClick={() => null}>button tags</BpkButtonLink>.
+const PolymorphicOverviewExample = () => (
+  <div className={getClassName('bpk-link-example__section')}>
+    <div>
+      <BpkText tagName="h3" textStyle={TEXT_STYLES.heading3}>
+        Polymorphic BpkLink
+      </BpkText>
+      <BpkText
+        tagName="p"
+        textStyle={TEXT_STYLES.bodyDefault}
+      >
+        BpkLink supports a polymorphic{' '}
+        <BpkText textStyle={TEXT_STYLES.label1}>as</BpkText> prop that allows
+        rendering as different HTML elements while maintaining consistent link
+        styling. Use the appropriate element based on the use case:
+      </BpkText>
+    </div>
+
+    <div className={getClassName('bpk-link-example__cards')}>
+      <BpkPanel>
+        <BpkText tagName="h4" textStyle={TEXT_STYLES.heading5}>
+          {`as="a" (default)`}
+        </BpkText>
+        <BpkText
+          tagName="p"
+          textStyle={TEXT_STYLES.caption}
+          color={TEXT_COLORS.textSecondary}
+          className={getClassName('bpk-link-example__card-description')}
+        >
+          For navigation
+        </BpkText>
+        <BpkLink href="#">Click to navigate</BpkLink>
+      </BpkPanel>
+
+      <BpkPanel>
+        <BpkText tagName="h4" textStyle={TEXT_STYLES.heading5}>
+          {`as="button"`}
+        </BpkText>
+        <BpkText
+          tagName="p"
+          textStyle={TEXT_STYLES.caption}
+          color={TEXT_COLORS.textSecondary}
+          className={getClassName('bpk-link-example__card-description')}
+        >
+          For actions without navigation
+        </BpkText>
+        <BpkLink as="button" onClick={action('Action triggered')}>
+          Trigger action
+        </BpkLink>
+      </BpkPanel>
+
+      <BpkPanel>
+        <BpkText tagName="h4" textStyle={TEXT_STYLES.heading5}>
+          {`as="span"`}
+        </BpkText>
+        <BpkText
+          tagName="p"
+          textStyle={TEXT_STYLES.caption}
+          color={TEXT_COLORS.textSecondary}
+          className={getClassName('bpk-link-example__card-description')}
+        >
+          Non-interactive inline text
+        </BpkText>
+        <BpkLink as="span">Static inline text</BpkLink>
+      </BpkPanel>
+
+      <BpkPanel>
+        <BpkText tagName="h4" textStyle={TEXT_STYLES.heading5}>
+          {`as="div"`}
+        </BpkText>
+        <BpkText
+          tagName="p"
+          textStyle={TEXT_STYLES.caption}
+          color={TEXT_COLORS.textSecondary}
+          className={getClassName('bpk-link-example__card-description')}
+        >
+          Non-interactive block element
+        </BpkText>
+        <BpkLink as="div">Static block text</BpkLink>
+      </BpkPanel>
+    </div>
   </div>
 );
 
-const CombinedAlternativeExample = () => (
-  <BpkDarkExampleWrapper style={{ color: colorSkyGrayTint04 }}>
-    Links can be both{' '}
-    <BpkLink href="#" alternate>
-      anchor tags
-    </BpkLink>{' '}
-    as well as{' '}
-    <BpkButtonLink onClick={() => null} alternate>
-      button tags
-    </BpkButtonLink>
-    .
-  </BpkDarkExampleWrapper>
-);
-
-const OverviewExample = () => (
-    <>
-      <div style={{ paddingBottom: '1rem' }}>
-        Big skies, big landscapes and cool cities, the great American Northwest is the place to discover the great outdoors. Get a real taste of the Frontier spirit and explore a rich history of what was once the Wild West.{' '}
-        <BpkLink href="#" style={{ color: fontColorBase }}>
-          Explore incredible national parks
-        </BpkLink>{' '}
-        , ancient forests, rugged coastlines, and beautiful islands.
-      </div>
-      <BpkDarkExampleWrapper style={{ color: colorWhite, padding: '1rem' }}>
-        Big skies, big landscapes and cool cities, the great American Northwest is the place to discover the great outdoors. Get a real taste of the Frontier spirit and explore a rich history of what was once the Wild West.{' '}
-        <BpkLink href="#" alternate>
-          Explore incredible national parks
-        </BpkLink>{' '}
-        , ancient forests, rugged coastlines, and beautiful islands.
-      </BpkDarkExampleWrapper>
-    </>
-);
 
 const MixedExample = () => (
   <div>
-    <CombinedExample />
-    <CombinedAlternativeExample />
+    <LinkExample />
+    <ImplicitLinkExample />
+    <LinkAlternativeExample />
+    <LinkAlternativeImplicitExample />
   </div>
 );
 
 export {
+  // Basic examples
   LinkExample,
   ImplicitLinkExample,
-  ButtonLinkExample,
+  // Alternate (dark background)
   LinkAlternativeExample,
   LinkAlternativeImplicitExample,
-  ButtonLinkAlternativeExample,
-  CombinedExample,
-  CombinedAlternativeExample,
-  OverviewExample,
+  // Polymorphic "as" prop examples
+  PolymorphicOverviewExample,
+  // Mixed examples for visual tests
   MixedExample,
-  LinkInGridExample,
-  ImplicitButtonLinkExample,
 };
