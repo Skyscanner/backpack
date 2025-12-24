@@ -23,7 +23,7 @@ import { Component } from 'react';
 
 import { BpkButtonV2, BUTTON_TYPES } from '../../packages/bpk-component-button';
 import BpkDrawer from '../../packages/bpk-component-drawer';
-import { BpkButtonLink } from '../../packages/bpk-component-link';
+import BpkLink from '../../packages/bpk-component-link';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkTooltip from '../../packages/bpk-component-tooltip';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
@@ -307,7 +307,7 @@ const DrawerWithTooltipExampleNotAbleToBeShown = () => (
         id="my-tooltip"
         target={
           <div>
-            <BpkButtonLink onClick={() => null}>Hover me</BpkButtonLink>
+            <BpkLink as="button" onClick={() => null}>Hover me</BpkLink>
           </div>
         }
       >
@@ -333,7 +333,7 @@ const DrawerWithTooltipExampleAbleToBeShown = () => (
         id="my-tooltip"
         target={
           <div>
-            <BpkButtonLink onClick={() => null}>Hover me</BpkButtonLink>
+            <BpkLink as="button" onClick={() => null}>Hover me</BpkLink>
           </div>
         }
       >
