@@ -106,6 +106,20 @@ import BpkLink from '@skyscanner/backpack-web/bpk-component-link';
 </Link>
 ```
 
+## Deprecated: BpkButtonLink
+
+`BpkButtonLink` has been deprecated. Please use `<BpkLink as="button" />` instead:
+
+```tsx
+// Before (deprecated)
+import { BpkButtonLink } from '@skyscanner/backpack-web/bpk-component-link';
+<BpkButtonLink onClick={handleClick}>Click me</BpkButtonLink>
+
+// After (recommended)
+import BpkLink from '@skyscanner/backpack-web/bpk-component-link';
+<BpkLink as="button" onClick={handleClick}>Click me</BpkLink>
+```
+
 ## Props
 
 Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/link/web-tBkgNmHW#section-props-02).
