@@ -22,7 +22,7 @@ import type { ReactNode } from 'react';
 import BpkBottomSheet, {
   PADDING_TYPE,
 } from '../../packages/bpk-component-bottom-sheet';
-import { BpkButtonV2 } from '../../packages/bpk-component-button';
+import BpkButton from '../../packages/bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -144,9 +144,9 @@ class BottomSheetContainer extends Component<
     return (
       <div id="bottom-sheet-container">
         <div id="pagewrap">
-          <BpkButtonV2 onClick={this.onOpen}>
+          <BpkButton onClick={this.onOpen}>
             Open bottom sheet
-          </BpkButtonV2>
+          </BpkButton>
           <BpkBottomSheet
             ariaLabel='test accessible title'
             id={id || "my-bottom-sheet"}

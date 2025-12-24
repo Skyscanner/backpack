@@ -10,7 +10,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```js
 import { createRef } from 'react';
-import { BpkButtonV2 } from '@skyscanner/backpack-web/bpk-component-button';
+import { BpkButton } from '@skyscanner/backpack-web/bpk-component-button';
 import BpkPopover from '@skyscanner/backpack-web/bpk-component-popover';
 import BpkText from '@skyscanner/backpack-web/bpk-component-text';
 
@@ -39,10 +39,10 @@ class App extends Component {
 
   const target = (
     <div ref={this.ref} className={'my-popover-target'}>
-      <BpkButtonV2
+      <BpkButton
         onClick={this.openPopover}>
           Open
-      </BpkButtonV2>
+      </BpkButton>
     </div>
   )
 

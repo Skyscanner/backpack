@@ -19,7 +19,7 @@
 import type { MouseEvent } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
-import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
+import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import BpkImage, {
   BORDER_RADIUS_STYLES,
   withLazyLoading,
@@ -182,9 +182,9 @@ const BpkSnippet = ({
             </div>
           )}
           {buttonText && onClick && (
-            <BpkButtonV2 type={buttonStyle} onClick={onClick}>
+            <BpkButton type={buttonStyle} onClick={onClick}>
               {buttonText}
-            </BpkButtonV2>
+            </BpkButton>
           )}
         </div>
       </div>

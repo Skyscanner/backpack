@@ -38,7 +38,7 @@ export default () => (
 ### Aligning to BpkButton components
 
 ```js
-import { BpkButtonV2, SIZE_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
+import { BpkButton, SIZE_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
 import BpkSmallFlightIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/flight';
 import BpkLargeAccessibilityIcon from '@skyscanner/backpack-web/bpk-component-icon/lg/accessibility';
 import { withButtonAlignment, withLargeButtonAlignment } from '@skyscanner/backpack-web/bpk-component-icon';
@@ -48,12 +48,12 @@ const AlignedBpkLargeAccessibilityIcon = withLargeButtonAlignment(BpkLargeAccess
 
 export default () => (
   <div>
-    <BpkButtonV2>
+    <BpkButton>
       <AlignedBpkSmallFlightIcon />
-    </BpkButtonV2>
-    <BpkButtonV2 size={SIZE_TYPES.large}>
+    </BpkButton>
+    <BpkButton size={SIZE_TYPES.large}>
       <AlignedBpkLargeAccessibilityIcon />
-    </BpkButtonV2>
+    </BpkButton>
   </div>
 );
 ```

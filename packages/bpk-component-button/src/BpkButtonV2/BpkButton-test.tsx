@@ -18,18 +18,18 @@
 
 import { render } from '@testing-library/react';
 
-import { BpkButtonV2 } from './BpkButton';
+import { BpkButtonV2 as BpkButton } from './BpkButton';
 import { SIZE_TYPES, BUTTON_TYPES } from './common-types';
 
 import type { ButtonType } from './common-types';
 
-describe('BpkButtonV2', () => {
+describe('BpkButton', () => {
   Object.keys(BUTTON_TYPES).forEach((buttonType) => {
     it(`should render correctly with type="${buttonType}"`, () => {
       const { asFragment } = render(
-        <BpkButtonV2 type={buttonType as ButtonType}>
+        <BpkButton type={buttonType as ButtonType}>
           {buttonType} button
-        </BpkButtonV2>,
+        </BpkButton>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
@@ -37,98 +37,98 @@ describe('BpkButtonV2', () => {
 
   it('should render correctly with a "href" attribute', () => {
     const { asFragment } = render(
-      <BpkButtonV2 href="#">My button</BpkButtonV2>,
+      <BpkButton href="#">My button</BpkButton>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "disabled" attribute', () => {
     const { asFragment } = render(
-      <BpkButtonV2 disabled>My button</BpkButtonV2>,
+      <BpkButton disabled>My button</BpkButton>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with large size', () => {
     const { asFragment } = render(
-      <BpkButtonV2 size={SIZE_TYPES.large}>My button</BpkButtonV2>,
+      <BpkButton size={SIZE_TYPES.large}>My button</BpkButton>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with an "iconOnly" attribute', () => {
     const { asFragment } = render(
-      <BpkButtonV2 iconOnly>My button</BpkButtonV2>,
+      <BpkButton iconOnly>My button</BpkButton>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly a "large", "secondary" button', () => {
     const { asFragment } = render(
-      <BpkButtonV2 size={SIZE_TYPES.large} type={BUTTON_TYPES.secondary}>
+      <BpkButton size={SIZE_TYPES.large} type={BUTTON_TYPES.secondary}>
         My button
-      </BpkButtonV2>,
+      </BpkButton>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should respect the class names entered as a string', () => {
     const { asFragment } = render(
-      <BpkButtonV2 className="custom-class-1 custom-class-2">
+      <BpkButton className="custom-class-1 custom-class-2">
         My button
-      </BpkButtonV2>,
+      </BpkButton>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should add only bpk specific classes if className prop is set to empty string', () => {
     const { asFragment } = render(
-      <BpkButtonV2 className="">My button</BpkButtonV2>,
+      <BpkButton className="">My button</BpkButton>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "blank" attribute', () => {
     const { asFragment } = render(
-      <BpkButtonV2 href="#" blank>
+      <BpkButton href="#" blank>
         My button
-      </BpkButtonV2>,
+      </BpkButton>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "rel" attribute', () => {
     const { asFragment } = render(
-      <BpkButtonV2 href="#" rel="rel-attr">
+      <BpkButton href="#" rel="rel-attr">
         My button
-      </BpkButtonV2>,
+      </BpkButton>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "blank" and "rel" attributes', () => {
     const { asFragment } = render(
-      <BpkButtonV2 href="#" blank rel="rel-overwrite">
+      <BpkButton href="#" blank rel="rel-overwrite">
         My button
-      </BpkButtonV2>,
+      </BpkButton>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "disabled" and "href" attributes', () => {
     const { asFragment } = render(
-      <BpkButtonV2 href="#" disabled>
+      <BpkButton href="#" disabled>
         My button
-      </BpkButtonV2>,
+      </BpkButton>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render with a class name if full width is added', () => {
     const { container } = render(
-      <BpkButtonV2 fullWidth>
+      <BpkButton fullWidth>
         My button
-      </BpkButtonV2>,
+      </BpkButton>,
     );
 
     expect(container?.firstElementChild?.classList?.contains('bpk-button--full-width')).toEqual(true);
@@ -138,7 +138,7 @@ describe('BpkButtonV2', () => {
   describe('link type buttons', () => {
     it('should render link type with underline span wrapper', () => {
       const { container } = render(
-        <BpkButtonV2 type={BUTTON_TYPES.link}>Link button</BpkButtonV2>,
+        <BpkButton type={BUTTON_TYPES.link}>Link button</BpkButton>,
       );
 
       const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
@@ -148,7 +148,7 @@ describe('BpkButtonV2', () => {
 
     it('should render linkOnDark type with underline span wrapper', () => {
       const { container } = render(
-        <BpkButtonV2 type={BUTTON_TYPES.linkOnDark}>Link button</BpkButtonV2>,
+        <BpkButton type={BUTTON_TYPES.linkOnDark}>Link button</BpkButton>,
       );
 
       const button = container.firstElementChild;
@@ -160,9 +160,9 @@ describe('BpkButtonV2', () => {
 
     it('should render link type with implicit class', () => {
       const { container } = render(
-        <BpkButtonV2 type={BUTTON_TYPES.link} implicit>
+        <BpkButton type={BUTTON_TYPES.link} implicit>
           Implicit link
-        </BpkButtonV2>,
+        </BpkButton>,
       );
 
       const button = container.firstElementChild;
@@ -174,9 +174,9 @@ describe('BpkButtonV2', () => {
 
     it('should render linkOnDark with implicit class', () => {
       const { container } = render(
-        <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit>
+        <BpkButton type={BUTTON_TYPES.linkOnDark} implicit>
           Implicit link on dark
-        </BpkButtonV2>,
+        </BpkButton>,
       );
 
       const button = container.firstElementChild;
@@ -188,9 +188,9 @@ describe('BpkButtonV2', () => {
 
     it('should NOT render underline span for iconOnly link', () => {
       const { container } = render(
-        <BpkButtonV2 type={BUTTON_TYPES.link} iconOnly aria-label="Icon link">
+        <BpkButton type={BUTTON_TYPES.link} iconOnly aria-label="Icon link">
           <span>Icon</span>
-        </BpkButtonV2>,
+        </BpkButton>,
       );
 
       const button = container.firstElementChild;
@@ -203,9 +203,9 @@ describe('BpkButtonV2', () => {
 
     it('should NOT render underline span for disabled link', () => {
       const { container } = render(
-        <BpkButtonV2 type={BUTTON_TYPES.link} disabled>
+        <BpkButton type={BUTTON_TYPES.link} disabled>
           Disabled link
-        </BpkButtonV2>,
+        </BpkButton>,
       );
 
       const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
@@ -214,9 +214,9 @@ describe('BpkButtonV2', () => {
 
     it('should NOT render underline span for iconOnly linkOnDark', () => {
       const { container } = render(
-        <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} iconOnly aria-label="Icon link">
+        <BpkButton type={BUTTON_TYPES.linkOnDark} iconOnly aria-label="Icon link">
           <span>Icon</span>
-        </BpkButtonV2>,
+        </BpkButton>,
       );
 
       const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
@@ -225,9 +225,9 @@ describe('BpkButtonV2', () => {
 
     it('should render link as anchor with href', () => {
       const { container } = render(
-        <BpkButtonV2 type={BUTTON_TYPES.link} href="#">
+        <BpkButton type={BUTTON_TYPES.link} href="#">
           Link anchor
-        </BpkButtonV2>,
+        </BpkButton>,
       );
 
       const anchor = container.firstElementChild;
@@ -240,9 +240,9 @@ describe('BpkButtonV2', () => {
 
     it('should render correctly with link type and iconOnly', () => {
       const { container } = render(
-        <BpkButtonV2 type={BUTTON_TYPES.link} iconOnly aria-label="Icon link">
+        <BpkButton type={BUTTON_TYPES.link} iconOnly aria-label="Icon link">
           <span>Icon</span>
-        </BpkButtonV2>,
+        </BpkButton>,
       );
 
       const button = container.firstElementChild;
@@ -251,9 +251,9 @@ describe('BpkButtonV2', () => {
 
     it('should render correctly with linkOnDark type and iconOnly', () => {
       const { container } = render(
-        <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} iconOnly aria-label="Icon link">
+        <BpkButton type={BUTTON_TYPES.linkOnDark} iconOnly aria-label="Icon link">
           <span>Icon</span>
-        </BpkButtonV2>,
+        </BpkButton>,
       );
 
       const button = container.firstElementChild;

@@ -10,7 +10,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```js
 import PropTypes from 'prop-types';
-import { BpkButtonV2 } from '@skyscanner/backpack-web/bpk-component-button';
+import { BpkButton } from '@skyscanner/backpack-web/bpk-component-button';
 import BpkSpinner, { SPINNER_TYPES } from '@skyscanner/backpack-web/bpk-component-spinner';
 import withInfiniteScroll, {
   ArrayDataSource,
@@ -47,7 +47,7 @@ const CustomLoading = () => (
 
 const CustomSeeMore = ({ onSeeMoreClick }) => (
   <div>
-    <BpkButtonV2 onClick={onSeeMoreClick}>See More</BpkButtonV2>
+    <BpkButton onClick={onSeeMoreClick}>See More</BpkButton>
   </div>
 );
 
