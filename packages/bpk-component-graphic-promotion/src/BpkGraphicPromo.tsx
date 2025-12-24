@@ -18,7 +18,7 @@
 
 import type { KeyboardEvent, MouseEvent, ReactNode } from 'react';
 
-import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
+import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkGraphicPromo.module.scss';
@@ -222,7 +222,7 @@ const BpkGraphicPromo = ({
               {subheading}
             </p>
           )}
-          <BpkButtonV2
+          <BpkButton
             type={BUTTON_TYPES.primaryOnDark}
             // TODO: className to be removed
             // eslint-disable-next-line @skyscanner/rules/forbid-component-props
@@ -231,7 +231,7 @@ const BpkGraphicPromo = ({
             tabIndex={-1} /* button is not focusable for accessibility */
           >
             {buttonText}
-          </BpkButtonV2>
+          </BpkButton>
         </div>
       </div>
     </Wrapper>

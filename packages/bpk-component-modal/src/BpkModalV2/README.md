@@ -24,7 +24,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ```js
 import { Component } from 'react';
 import BpkModalV2 from '@skyscanner/backpack-web/bpk-component-modal';
-import { BpkButtonV2 } from '@skyscanner/backpack-web/bpk-component-button';
+import { BpkButton } from '@skyscanner/backpack-web/bpk-component-button';
 
 class App extends Component {
   constructor() {
@@ -51,7 +51,7 @@ class App extends Component {
     return (
       <div id="modal-container">
         <div id="pagewrap">
-          <BpkButtonV2 onClick={this.onOpen}>Open modal</BpkButtonV2>
+          <BpkButton onClick={this.onOpen}>Open modal</BpkButton>
         </div>
         <BpkModal
           id="bpk-modal"

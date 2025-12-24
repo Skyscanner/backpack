@@ -174,7 +174,7 @@ export default () => (
 
 #### 5. How to render `<a>` instead of `<button>` for the button
 
-By setting `buttonHref`, you can force the button to render as a `<a>` element instead of an `<button>`. It is passed into BpkButtonV2
+By setting `buttonHref`, you can force the button to render as a `<a>` element instead of an `<button>`. It is passed into BpkButton
 
 ##### Example:
 

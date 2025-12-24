@@ -21,7 +21,7 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import { BpkButtonV2, BUTTON_TYPES } from '../../packages/bpk-component-button';
+import BpkButton, { BUTTON_TYPES } from '../../packages/bpk-component-button';
 import BpkDrawer from '../../packages/bpk-component-drawer';
 import { BpkButtonLink } from '../../packages/bpk-component-link';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
@@ -73,7 +73,7 @@ class DrawerContainer extends Component<Props, State> {
     return (
       <div id="drawer-container">
         <div id="pagewrap">
-          <BpkButtonV2 onClick={this.onOpen}>{buttonText}</BpkButtonV2>
+          <BpkButton onClick={this.onOpen}>{buttonText}</BpkButton>
         </div>
         {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md  */}
         <BpkDrawer
@@ -258,9 +258,9 @@ const WithFullHeightContentExample = () => (
     contentClassName={getClassName('bpk-drawer-content-container')}
   >
     This is a flex drawer. You can put anything you want in here.
-    <BpkButtonV2 type={BUTTON_TYPES.secondary} className={getClassName('bpk-drawer-button')}>
+    <BpkButton type={BUTTON_TYPES.secondary} className={getClassName('bpk-drawer-button')}>
       I don&apos;t do anything.
-    </BpkButtonV2>
+    </BpkButton>
   </DrawerContainer>
 );
 

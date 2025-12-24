@@ -19,7 +19,7 @@
 import PropTypes from 'prop-types';
 import type { ReactElement, ReactNode } from 'react';
 
-import { BUTTON_TYPES, BpkButtonV2, SIZE_TYPES } from '../../bpk-component-button';
+import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../bpk-component-button';
 import {
   withButtonAlignment,
   withLargeButtonAlignment,
@@ -137,7 +137,7 @@ const BpkLoadingButton = (props: LoadingProps) => {
   if(primaryOnDark) {type = BUTTON_TYPES.primaryOnDark}
 
   return (
-    <BpkButtonV2
+    <BpkButton
       iconOnly={iconOnly}
       disabled={showBtnDisabled}
       size={large ? SIZE_TYPES.large : SIZE_TYPES.small}
@@ -152,7 +152,7 @@ const BpkLoadingButton = (props: LoadingProps) => {
           {child2}
         </div>
       </div>
-    </BpkButtonV2>
+    </BpkButton>
   );
 };
 
