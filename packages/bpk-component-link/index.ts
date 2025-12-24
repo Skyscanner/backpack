@@ -22,7 +22,7 @@ import themeAttributes, {
   linkAlternateThemeAttributes,
 } from './src/themeAttributes';
 
-import type { LinkAs, BpkLinkProps } from './src/common-types';
+import type { BpkLinkProps } from './src/common-types';
 
 /**
  * @deprecated Use BpkLinkProps for polymorphic usage
@@ -33,7 +33,7 @@ export type { BpkButtonLinkProps };
  */
 export { BpkButtonLink };
 
-export type { BpkLinkProps, LinkAs };
+export type { BpkLinkProps };
 
 export default BpkLink;
 export { themeAttributes, linkAlternateThemeAttributes };
