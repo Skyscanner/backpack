@@ -16,88 +16,120 @@
  * limitations under the License.
  */
 
-import type { ReactNode, MouseEvent, AnchorHTMLAttributes } from 'react';
+import type { Ref } from 'react';
 import { forwardRef } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import themeAttributes, {
-  linkAlternateThemeAttributes,
-} from './themeAttributes';
+import type {
+  BpkLinkProps,
+  LinkAs,
+  PolymorphicComponent,
+} from './common-types';
 
 import STYLES from './BpkLink.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export interface Props
-  extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href' | 'className' | 'rel'> {
-  /** The content of the link. */
-  children: ReactNode;
-  href: string | null;
-  className?: string | null;
-  onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
-  blank?: boolean;
-  rel?: string | null;
-  alternate?: boolean;
-  implicit?: boolean;
-}
+/**
+ * Processes anchor-specific props and returns the transformed props.
+ * Handles href, blank (target="_blank"), and rel attributes.
+ * @param {Object} props - The props to process.
+ * @returns {Object} The transformed anchor props.
+ */
+const processAnchorProps = (
+  props: Record<string, unknown>,
+): Record<string, unknown> => {
+  const { blank, href, rel, ...otherProps } = props;
 
-const BpkLink = forwardRef<HTMLAnchorElement, Props>(
-  (
-    {
-      alternate = false,
-      blank = false,
-      children,
-      className = null,
-      href,
-      implicit = false,
-      onClick = () => {},
-      rel: propRel = null,
-      ...rest
-    },
-    ref,
-  ) => {
-    const classNames = [getClassName('bpk-link')];
-    const underlinedClassNames = [getClassName('bpk-link-underlined')];
+  return {
+    ...otherProps,
+    href: href ?? undefined,
+    ...(blank ? { target: '_blank', rel: rel || 'noopener noreferrer' } : {}),
+    ...(!blank && rel ? { rel } : {}),
+  };
+};
 
-    const target = blank ? '_blank' : undefined;
-    const rel = blank ? propRel || 'noopener noreferrer' : propRel;
+/**
+ * Processes button-specific props and returns the transformed props.
+ * Ensures button has type="button" by default to prevent form submission.
+ * @param {Object} props - The props to process.
+ * @returns {Object} The transformed button props.
+ */
+const processButtonProps = (
+  props: Record<string, unknown>,
+): Record<string, unknown> => ({
+  type: 'button',
+  ...props, // Allow override if explicitly provided
+});
 
-    if (className) {
-      classNames.push(className);
-    }
-    if (implicit) {
-      classNames.push(getClassName('bpk-link--implicit'));
-    }
-    if (alternate) {
-      classNames.push(getClassName('bpk-link--alternate'));
-    }
+const getClassNames = (
+  alternate: boolean,
+  implicit: boolean,
+  className: string | null,
+) => {
+  const classNames = [
+    getClassName('bpk-link'),
+    className,
+    implicit && getClassName('bpk-link--implicit'),
+    alternate && getClassName('bpk-link--alternate'),
+  ].filter(Boolean);
 
-    if (implicit && !alternate) {
-      underlinedClassNames.push(getClassName('bpk-link-underlined--implicit'));
-    } else if (alternate && !implicit) {
-      underlinedClassNames.push(getClassName('bpk-link-underlined--alternate'));
-    } else if (implicit && alternate) {
-      underlinedClassNames.push(
-        getClassName('bpk-link-underlined-implicit--alternate'),
-      );
-    }
+  // Lookup table for underlined modifier based on implicit/alternate combination
+  const underlinedModifierMap: Record<string, string> = {
+    'true-true': 'bpk-link-underlined-implicit--alternate',
+    'true-false': 'bpk-link-underlined--implicit',
+    'false-true': 'bpk-link-underlined--alternate',
+  };
+  const underlinedModifier = underlinedModifierMap[`${implicit}-${alternate}`] || null;
 
-    return (
-      <a
-        className={classNames.join(' ')}
-        href={href ?? undefined}
-        onClick={onClick}
-        target={target}
-        rel={rel ?? undefined}
-        ref={ref}
-        {...rest}
-      >
-        <span className={underlinedClassNames.join(' ')}>{children}</span>
-      </a>
-    );
-  },
-);
+  const underlinedClassNames = [
+    getClassName('bpk-link-underlined'),
+    underlinedModifier && getClassName(underlinedModifier),
+  ].filter(Boolean);
+
+  return {
+    linkClassName: classNames.join(' '),
+    underlinedClassName: underlinedClassNames.join(' '),
+  };
+};
+
+const BpkLinkInner = <E extends LinkAs = 'a'>(
+  {
+    alternate = false,
+    as: Element = 'a',
+    children,
+    className = null,
+    implicit = false,
+    ...rest
+  }: BpkLinkProps<E>,
+  ref: Ref<any>,
+) => {
+  const { linkClassName, underlinedClassName } = getClassNames(
+    alternate,
+    implicit,
+    className,
+  );
+
+  // Process element-specific props based on the rendered element type
+  const baseProps = rest as Record<string, unknown>;
+  let elementProps = baseProps;
+  if (Element === 'a') {
+    elementProps = processAnchorProps(baseProps);
+  } else if (Element === 'button') {
+    elementProps = processButtonProps(baseProps);
+  }
+
+  return (
+    // Allowed: className and ref are passed to the underlying DOM element
+    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+    <Element className={linkClassName} ref={ref} {...elementProps}>
+      <span className={underlinedClassName}>{children}</span>
+    </Element>
+  );
+};
+
+// A polymorphic link component that can render as different HTML elements.
+const BpkLink = forwardRef(BpkLinkInner) as PolymorphicComponent;
 
 export default BpkLink;
-export { themeAttributes, linkAlternateThemeAttributes };
