@@ -26,6 +26,9 @@ import STYLES from './BpkLink.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+/**
+ * @deprecated Use `BpkLinkProps<'button'>` instead.
+ */
 export interface Props extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className' | 'onClick'> {
   /** The content of the link. */
   children: ReactNode;
@@ -36,7 +39,7 @@ export interface Props extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'cl
 }
 
 /**
- * @deprecated Use `<BpkLink as={LINK_AS.button} />` instead.
+ * @deprecated Use `<BpkLink as="button" />` instead.
  * BpkButtonLink is maintained for backwards compatibility but will be removed in a future major version.
  * @returns {JSX.Element} A button styled as a link.
  */

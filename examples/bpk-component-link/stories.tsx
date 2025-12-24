@@ -39,7 +39,7 @@ export default {
     as: {
       control: 'select',
       options: ['a', 'button', 'span', 'div'],
-      description: 'The element type of HTML to render. Use LINK_AS constants for type safety.',
+      description: 'The element type of HTML to render.',
       table: {
         type: { summary: 'a | button | span | div' },
         defaultValue: { summary: 'a' },

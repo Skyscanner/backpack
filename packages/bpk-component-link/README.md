@@ -18,38 +18,33 @@ import BpkLink from '@skyscanner/backpack-web/bpk-component-link';
 
 ### Polymorphic `as` prop
 
-BpkLink supports a polymorphic `as` prop that allows rendering as different HTML elements while maintaining consistent link styling. You can use the `LINK_AS` constant for type-safe element selection.
+BpkLink supports a polymorphic `as` prop that allows rendering as different HTML elements while maintaining consistent link styling.
 
 ```tsx
-import BpkLink, { LINK_AS } from '@skyscanner/backpack-web/bpk-component-link';
+import BpkLink from '@skyscanner/backpack-web/bpk-component-link';
 
 // Rendering as a button (for actions without navigation)
-<BpkLink as={LINK_AS.button} onClick={() => {}}>
+<BpkLink as="button" onClick={() => {}}>
   Trigger action
 </BpkLink>
 
 // Rendering as a span (non-interactive, for SEO or disabled states)
-<BpkLink as={LINK_AS.span}>Link styling without interaction</BpkLink>
+<BpkLink as="span">Link styling without interaction</BpkLink>
 
 // Rendering as a div (block-level non-interactive element)
-<BpkLink as={LINK_AS.div}>Block-level link-styled text</BpkLink>
-
-// Using string literals (alternative)
-<BpkLink as={LINK_AS.button} onClick={handleClick}>Action</BpkLink>
+<BpkLink as="div">Block-level link-styled text</BpkLink>
 ```
 
 ### When to use each element
 
-| Element | Constant | Use case |
-|---------|----------|----------|
-| `a` (default) | `LINK_AS.a` | Navigation to other pages or external URLs |
-| `button` | `LINK_AS.button` | Actions that don't navigate (e.g., opening modals, triggering functions) |
-| `span` | `LINK_AS.span` | Non-interactive inline text with link styling (e.g., SEO, disabled states) |
-| `div` | `LINK_AS.div` | Non-interactive block-level content with link styling |
+| Element | Use case |
+|---------|----------|
+| `"a"` (default) | Navigation to other pages or external URLs |
+| `"button"` | Actions that don't navigate (e.g., opening modals, triggering functions) |
+| `"span"` | Non-interactive inline text with link styling (e.g., SEO, disabled states) |
+| `"div"` | Non-interactive block-level content with link styling |
 
-**Note:** When `as` is set to `LINK_AS.button`, `LINK_AS.span`, or `LINK_AS.
-div`, the component accepts props appropriate to that element type instead
-of anchor-specific props like `href`, `blank`, and `rel`.
+**Note:** When `as` is set to `"button"`, `"span"`, or `"div"`, the component accepts props appropriate to that element type instead of anchor-specific props like `href`, `blank`, and `rel`.
 
 ### Type inference
 
@@ -60,10 +55,10 @@ The component correctly infers prop types based on the chosen element:
 <BpkLink href="/">Navigate</BpkLink>
 
 // ✅ Correct: onClick for button, no href needed
-<BpkLink as={LINK_AS.button} onClick={handleClick}>Action</BpkLink>
+<BpkLink as="button" onClick={handleClick}>Action</BpkLink>
 
 // ❌ TypeScript error: href is not valid for button
-<BpkLink as={LINK_AS.button} href="/">Action</BpkLink>
+<BpkLink as="button" href="/">Action</BpkLink>
 ```
 
 ### Styling variants
@@ -114,4 +109,3 @@ import BpkLink from '@skyscanner/backpack-web/bpk-component-link';
 ## Props
 
 Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/link/web-tBkgNmHW#section-props-02).
-

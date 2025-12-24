@@ -25,15 +25,7 @@ import type { ComponentPropsWithoutRef, ElementType, ReactNode, Ref } from 'reac
  */
 
 /** Supported element types for BpkLink */
-export const LINK_AS = {
-  a: 'a',
-  button: 'button',
-  span: 'span',
-  div: 'div',
-} as const;
-
-/** Union type of supported element types */
-export type LinkAs = (typeof LINK_AS)[keyof typeof LINK_AS];
+export type LinkAs = 'a' | 'button' | 'span' | 'div';
 
 /** Base props that are common to all BpkLink variants */
 export type BpkLinkBaseProps = {
@@ -76,10 +68,10 @@ export type BpkLinkProps<E extends ElementType = 'a'> = E extends 'a'
 
 /** Polymorphic ref type mapping element types to their ref types */
 export type PolymorphicRef<E extends LinkAs> =
-  E extends typeof LINK_AS.a ? Ref<HTMLAnchorElement> :
-  E extends typeof LINK_AS.button ? Ref<HTMLButtonElement> :
-  E extends typeof LINK_AS.span ? Ref<HTMLSpanElement> :
-  E extends typeof LINK_AS.div ? Ref<HTMLDivElement> :
+  E extends 'a' ? Ref<HTMLAnchorElement> :
+  E extends 'button' ? Ref<HTMLButtonElement> :
+  E extends 'span' ? Ref<HTMLSpanElement> :
+  E extends 'div' ? Ref<HTMLDivElement> :
   never;
 
 /** Polymorphic component type for BpkLink */

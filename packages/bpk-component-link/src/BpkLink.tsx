@@ -21,8 +21,6 @@ import { forwardRef } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import { LINK_AS } from './common-types';
-
 import type {
   AnchorOnlyProps,
   BpkLinkProps,
@@ -71,7 +69,7 @@ const getClassNames = (
 const BpkLinkInner = <E extends LinkAs = 'a'>(
   {
     alternate = false,
-    as: Element = LINK_AS.a,
+    as: Element = 'a',
     children,
     className = null,
     implicit = false,
@@ -88,7 +86,7 @@ const BpkLinkInner = <E extends LinkAs = 'a'>(
   // Handle anchor-specific props
   const elementProps: Record<string, unknown> = { ...rest };
 
-  if (Element === LINK_AS.a) {
+  if (Element === 'a') {
     const anchorProps = rest as unknown as AnchorOnlyProps & {
       onClick?: (event: MouseEvent) => void;
     };
@@ -107,7 +105,7 @@ const BpkLinkInner = <E extends LinkAs = 'a'>(
   }
 
   // Handle button-specific defaults
-  if (Element === LINK_AS.button) {
+  if (Element === 'button') {
     // Ensure button has a type to prevent form submission
     if (!('type' in elementProps)) {
       elementProps.type = 'button';
