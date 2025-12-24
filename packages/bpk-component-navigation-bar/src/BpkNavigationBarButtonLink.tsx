@@ -25,7 +25,7 @@ export interface Props extends Omit<BpkLinkProps<'button'>, 'as'> {
   className?: string;
   /** The bar style to determine link color variant. */
   barStyle?: BarStyle;
-  label?: string;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 }
 
 const BpkNavigationBarButtonLink = ({
