@@ -16,13 +16,12 @@
  * limitations under the License.
  */
 
-import type { MouseEvent, Ref } from 'react';
+import type { Ref } from 'react';
 import { forwardRef } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
 import type {
-  AnchorOnlyProps,
   BpkLinkProps,
   LinkAs,
   PolymorphicComponent,
@@ -32,33 +31,62 @@ import STYLES from './BpkLink.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+/**
+ * Processes anchor-specific props and returns the transformed props.
+ * Handles href, blank (target="_blank"), and rel attributes.
+ * @param {Object} props - The props to process.
+ * @returns {Object} The transformed anchor props.
+ */
+const processAnchorProps = (
+  props: Record<string, unknown>,
+): Record<string, unknown> => {
+  const { blank, href, rel, ...otherProps } = props;
+
+  return {
+    ...otherProps,
+    href: href ?? undefined,
+    ...(blank ? { target: '_blank', rel: rel || 'noopener noreferrer' } : {}),
+    ...(!blank && rel ? { rel } : {}),
+  };
+};
+
+/**
+ * Processes button-specific props and returns the transformed props.
+ * Ensures button has type="button" by default to prevent form submission.
+ * @param {Object} props - The props to process.
+ * @returns {Object} The transformed button props.
+ */
+const processButtonProps = (
+  props: Record<string, unknown>,
+): Record<string, unknown> => ({
+  type: 'button',
+  ...props, // Allow override if explicitly provided
+});
+
 const getClassNames = (
   alternate: boolean,
   implicit: boolean,
   className: string | null,
 ) => {
-  const classNames = [getClassName('bpk-link')];
-  const underlinedClassNames = [getClassName('bpk-link-underlined')];
+  const classNames = [
+    getClassName('bpk-link'),
+    className,
+    implicit && getClassName('bpk-link--implicit'),
+    alternate && getClassName('bpk-link--alternate'),
+  ].filter(Boolean);
 
-  if (className) {
-    classNames.push(className);
-  }
-  if (implicit) {
-    classNames.push(getClassName('bpk-link--implicit'));
-  }
-  if (alternate) {
-    classNames.push(getClassName('bpk-link--alternate'));
-  }
+  // Lookup table for underlined modifier based on implicit/alternate combination
+  const underlinedModifierMap: Record<string, string> = {
+    'true-true': 'bpk-link-underlined-implicit--alternate',
+    'true-false': 'bpk-link-underlined--implicit',
+    'false-true': 'bpk-link-underlined--alternate',
+  };
+  const underlinedModifier = underlinedModifierMap[`${implicit}-${alternate}`] || null;
 
-  if (implicit && !alternate) {
-    underlinedClassNames.push(getClassName('bpk-link-underlined--implicit'));
-  } else if (alternate && !implicit) {
-    underlinedClassNames.push(getClassName('bpk-link-underlined--alternate'));
-  } else if (implicit && alternate) {
-    underlinedClassNames.push(
-      getClassName('bpk-link-underlined-implicit--alternate'),
-    );
-  }
+  const underlinedClassNames = [
+    getClassName('bpk-link-underlined'),
+    underlinedModifier && getClassName(underlinedModifier),
+  ].filter(Boolean);
 
   return {
     linkClassName: classNames.join(' '),
@@ -83,33 +111,13 @@ const BpkLinkInner = <E extends LinkAs = 'a'>(
     className,
   );
 
-  // Handle anchor-specific props
-  const elementProps: Record<string, unknown> = { ...rest };
-
+  // Process element-specific props based on the rendered element type
+  const baseProps = rest as Record<string, unknown>;
+  let elementProps = baseProps;
   if (Element === 'a') {
-    const anchorProps = rest as unknown as AnchorOnlyProps & {
-      onClick?: (event: MouseEvent) => void;
-    };
-    const { blank, href, rel: propRel } = anchorProps;
-
-    elementProps.href = href ?? undefined;
-    if (blank) {
-      elementProps.target = '_blank';
-      elementProps.rel = propRel || 'noopener noreferrer';
-    } else if (propRel) {
-      elementProps.rel = propRel;
-    }
-
-    // Remove anchor-only props that were processed
-    delete elementProps.blank;
-  }
-
-  // Handle button-specific defaults
-  if (Element === 'button') {
-    // Ensure button has a type to prevent form submission
-    if (!('type' in elementProps)) {
-      elementProps.type = 'button';
-    }
+    elementProps = processAnchorProps(baseProps);
+  } else if (Element === 'button') {
+    elementProps = processButtonProps(baseProps);
   }
 
   return (
