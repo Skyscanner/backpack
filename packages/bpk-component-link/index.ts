@@ -22,14 +22,10 @@ import themeAttributes, {
   linkAlternateThemeAttributes,
 } from './src/themeAttributes';
 
-import type {
-   LinkAs,
-   Props as BpkLinkProps,
-   BpkLinkProps as BpkLinkPolymorphicProps,
-} from './src/common-types';
+import type { LinkAs, BpkLinkProps } from './src/common-types';
 
 /**
- * @deprecated Use BpkLinkPolymorphicProps for polymorphic usage
+ * @deprecated Use BpkLinkProps for polymorphic usage
  */
 export type { BpkButtonLinkProps };
 /**
@@ -37,8 +33,6 @@ export type { BpkButtonLinkProps };
  */
 export { BpkButtonLink };
 
-/** Generic polymorphic props type */
-export type { BpkLinkPolymorphicProps };
 export type { BpkLinkProps, LinkAs };
 
 export default BpkLink;
