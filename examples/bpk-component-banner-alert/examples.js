@@ -27,7 +27,7 @@ import BpkBannerAlert, {
   BpkBannerAlertDismissable,
   BpkBannerAlertExpandable,
 } from '../../packages/bpk-component-banner-alert';
-import { BpkButtonV2 } from '../../packages/bpk-component-button';
+import BpkButton from '../../packages/bpk-component-button';
 import CurrencyIcon from '../../packages/bpk-component-icon/sm/currency';
 import { cssModules } from '../../packages/bpk-react-utils';
 import { AriaLiveDemo } from '../bpk-component-aria-live/examples';
@@ -77,7 +77,7 @@ class BpkBannerAlertDismissableState extends Component<Props, State> {
         {...this.props}
       />
       {this.state.dismissed && (
-        <BpkButtonV2
+        <BpkButton
           className={getClassName('bpk-banner-alert-examples__component')}
           onClick={() => {
             this.setState((prevState) => ({
@@ -87,7 +87,7 @@ class BpkBannerAlertDismissableState extends Component<Props, State> {
           }}
         >
           Reset
-        </BpkButtonV2>
+        </BpkButton>
       )}
       <AriaLiveDemo
         visible

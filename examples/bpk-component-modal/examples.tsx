@@ -22,7 +22,7 @@ import {
   iconSizeSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { BpkButtonV2 } from '../../packages/bpk-component-button';
+import BpkButton from '../../packages/bpk-component-button';
 import {
   withAlignment,
   withRtlSupport,
@@ -122,9 +122,9 @@ const ModalContainer = (props: ContainerProps) => {
   return (
     <div id="modal-container" {...wrapperProps}>
       <div id="pagewrap">
-        <BpkButtonV2 onClick={() => setIsOpen(true)}>
+        <BpkButton onClick={() => setIsOpen(true)}>
           {buttonLabel || 'Open modal'}
-        </BpkButtonV2>
+        </BpkButton>
         <BpkModal
           id="my-modal"
           className="my-classname"

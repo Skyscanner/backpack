@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
-import { BpkButtonV2 } from '../../bpk-component-button';
+import BpkButton from '../../bpk-component-button';
 import BpkSectionHeader from '../../bpk-component-section-header';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -66,13 +66,13 @@ const BpkCardList = (props: CardListProps) => {
   };
 
   const headerButton = buttonContent && (
-    <BpkButtonV2
+    <BpkButton
       onClick={onButtonClick}
       href={buttonHref}
       data-testid="bpk-card-list-header-button"
     >
       {buttonContent}
-    </BpkButtonV2>
+    </BpkButton>
   );
 
   return (

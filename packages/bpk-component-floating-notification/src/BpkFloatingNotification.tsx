@@ -22,7 +22,7 @@ import { useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import BpkAriaLive from '../../bpk-component-aria-live';
-import { BUTTON_TYPES, BpkButtonV2 } from '../../bpk-component-button';
+import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -105,9 +105,9 @@ const BpkFloatingNotification = (props: Props) => {
         <BpkAriaLive aria-hidden>{text}</BpkAriaLive>
         {ctaText && (
           <div className={getClassName('bpk-floating-notification__cta')}>
-            <BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit onClick={onClick}>
+            <BpkButton type={BUTTON_TYPES.linkOnDark} implicit onClick={onClick}>
               {ctaText}
-            </BpkButtonV2>
+            </BpkButton>
           </div>
         )}
       </div>

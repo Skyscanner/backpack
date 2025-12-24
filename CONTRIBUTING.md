@@ -188,7 +188,7 @@ For patch and minor changes, you should use JSDoc annotations. JSDoc is a widely
 
 For major changes, you should create a new experimental V2 component. If the experiment is successful, the old component should be deprecated.
 
-The new component should be added in the same folder as the original component, further nested inside a folder which follows the `Bpk{ComponentName}V2` naming. For example, the full path for a new component `BpkButtonV2` should be `packages/bpk-component-button/src/BpkButtonV2/BpkButton.tsx`. The 2 components will then be exported in the `index.(js|ts)` file of `bpk-component-button`.
+The new component should be added in the same folder as the original component, further nested inside a folder which follows the `Bpk{ComponentName}V2` naming. For example, the full path for a new component `BpkButton` should be `packages/bpk-component-button/src/BpkButton/BpkButton.tsx`. The 2 components will then be exported in the `index.(js|ts)` file of `bpk-component-button`.
 
 Any follow-up changes to experimental components will not be considered breaking.
 </details>
