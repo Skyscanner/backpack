@@ -15,7 +15,7 @@ it's necessary in overcoming z-index issues when absolutely positioning elements
 
 ```js
 import { Portal } from '@skyscanner/backpack-web/bpk-react-utils';
-import { BpkButtonV2 } from '@skyscanner/backpack-web/bpk-component-button';
+import { BpkButton } from '@skyscanner/backpack-web/bpk-component-button';
 import { BpkCode } from '@skyscanner/backpack-web/bpk-component-code';
 import { Component } from 'react';
 
@@ -43,7 +43,7 @@ class MyComponent extends Component {
   render() {
     return (
       <div>
-        <BpkButtonV2 onClick={this.onOpen}>Open portal</BpkButtonV2>
+        <BpkButton onClick={this.onOpen}>Open portal</BpkButton>
         <Portal isOpen={this.state.isOpen} onClose={this.onClose}>
           <div>
             I'm now appended to <BpkCode>document.body</BpkCode>

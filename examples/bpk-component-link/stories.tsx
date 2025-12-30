@@ -16,53 +16,92 @@
  * limitations under the License.
  */
 
-
-import BpkButtonLink from '../../packages/bpk-component-link/src/BpkButtonLink';
 import BpkLink from '../../packages/bpk-component-link/src/BpkLink';
 
 import {
   LinkExample,
   ImplicitLinkExample,
-  ButtonLinkExample,
   LinkAlternativeExample,
   LinkAlternativeImplicitExample,
-  ButtonLinkAlternativeExample,
-  CombinedExample,
-  CombinedAlternativeExample,
-  OverviewExample,
   MixedExample,
-  LinkInGridExample,
-  ImplicitButtonLinkExample,
+  PolymorphicOverviewExample,
 } from './examples';
 
 export default {
   title: 'bpk-component-link',
   component: BpkLink,
-  subcomponents: {
-    BpkButtonLink
+  argTypes: {
+    alternate: {
+      control: 'boolean',
+      description: 'Use alternate (light) styling for dark backgrounds.',
+      defaultValue: { summary: 'false' },
+    },
+    as: {
+      control: 'select',
+      options: ['a', 'button', 'span', 'div'],
+      description: 'The element type of HTML to render.',
+      table: {
+        type: { summary: 'a | button | span | div' },
+        defaultValue: { summary: 'a' },
+      },
+    },
+    blank: {
+      control: 'boolean',
+      description: 'Opens link in a new tab/window (only when as="a").',
+      defaultValue: { summary: 'false' },
+    },
+    children: {
+      control: 'text',
+      description: 'The content of the link.',
+      type: { name: 'ReactNode', required: true },
+    },
+    className: {
+      control: 'text',
+      description: 'Additional CSS classes to apply.',
+      table: { type: { summary: 'string | null' } },
+    },
+    href: {
+      control: 'text',
+      description: 'The URL the link points to (only when as="a").',
+      type: { name: 'string | null', required: true },
+    },
+    implicit: {
+      control: 'boolean',
+      description: 'Use implicit styling (no underline until hover).',
+      defaultValue: { summary: 'false' },
+    },
+    onClick: {
+      action: 'clicked',
+      description: 'Callback function triggered when the link is clicked.',
+      table: { type: { summary: '(event: MouseEvent) => void' } },
+    },
+  },
+  args: {
+    as: 'a',
+    children: 'Link text',
+    href: '#',
+    alternate: false,
+    blank: false,
+    implicit: false,
   },
 };
 
-export const Example = LinkExample;
-export const ExampleImplicit = ImplicitLinkExample;
-export const ExampleLinksInGrid = LinkInGridExample;
-export const ExampleButtons = ButtonLinkExample;
-export const ExampleImlicitButtons = ImplicitButtonLinkExample;
+// Basic Examples
+export const Link = LinkExample;
+export const LinkImplicit = ImplicitLinkExample;
 
-export const ExampleAlternate = LinkAlternativeExample;
-export const ExampleAlternateImplicit = LinkAlternativeImplicitExample;
+// Alternate (Dark Background)
+export const Alternate = LinkAlternativeExample;
+export const AlternateImplicit = LinkAlternativeImplicitExample;
 
-export const ExampleAlternateButtons = ButtonLinkAlternativeExample;
+// Polymorphic "as" Prop Examples
+export const PolymorphicOverview = PolymorphicOverviewExample;
 
-export const Combined = CombinedExample;
-export const CombinedAlternative = CombinedAlternativeExample;
-
-export const Overview = OverviewExample;
-
+// Visual Tests
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
   render: VisualTest,
   args: {
-    zoomEnabled: true
+    zoomEnabled: true,
   },
 };

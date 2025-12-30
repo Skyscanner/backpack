@@ -19,27 +19,27 @@ The link button (`type="link"` or `type="linkOnDark"`) is styled like `BpkLink` 
 ## Basic Usage
 
 ```jsx
-import { BpkButtonV2, BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
+import { BpkButton, BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
 
 // Default link with underline
-<BpkButtonV2 type={BUTTON_TYPES.link}>
+<BpkButton type={BUTTON_TYPES.link}>
   Link Button
-</BpkButtonV2>
+</BpkButton>
 
 // Implicit link - underline appears on hover
-<BpkButtonV2 type={BUTTON_TYPES.link} implicit>
+<BpkButton type={BUTTON_TYPES.link} implicit>
   Implicit Link
-</BpkButtonV2>
+</BpkButton>
 
 // Link on dark background
-<BpkButtonV2 type={BUTTON_TYPES.linkOnDark}>
+<BpkButton type={BUTTON_TYPES.linkOnDark}>
   Link on Dark
-</BpkButtonV2>
+</BpkButton>
 
 // Implicit link on dark
-<BpkButtonV2 type={BUTTON_TYPES.linkOnDark} implicit>
+<BpkButton type={BUTTON_TYPES.linkOnDark} implicit>
   Implicit Link on Dark
-</BpkButtonV2>
+</BpkButton>
 ```
 
 ## With Icons
@@ -49,13 +49,13 @@ import { BpkButtonV2, BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-componen
 When combining text with an icon, place them as siblings. The component provides automatic spacing (8px gap) and vertical alignment.
 
 ```jsx
-import { BpkButtonV2, BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
+import { BpkButton, BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
 import SmallLongArrowRightIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/long-arrow-right';
 
 // Text with trailing icon - automatic 8px gap
-<BpkButtonV2 type={BUTTON_TYPES.link}>
+<BpkButton type={BUTTON_TYPES.link}>
   Link Button <SmallLongArrowRightIcon />
-</BpkButtonV2>
+</BpkButton>
 ```
 
 ### Icon Only
@@ -64,9 +64,9 @@ Use `iconOnly` prop for buttons containing only an icon. Always provide `aria-la
 
 ```jsx
 // Icon-only link (no underline applied)
-<BpkButtonV2 type={BUTTON_TYPES.link} iconOnly aria-label="Next">
+<BpkButton type={BUTTON_TYPES.link} iconOnly aria-label="Next">
   <SmallLongArrowRightIcon />
-</BpkButtonV2>
+</BpkButton>
 ```
 
 ### Custom Text Styling with BpkText
@@ -74,7 +74,7 @@ Use `iconOnly` prop for buttons containing only an icon. Always provide `aria-la
 When wrapping text and icon inside `BpkText` or `<span>`, there is **no automatic spacing** between them. And to ensure proper vertical alignment, the icon should be wrapped with `withButtonAlignment`.
 
 ```jsx
-import { BpkButtonV2, BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
+import { BpkButton, BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
 import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
 import {
   withButtonAlignment,
@@ -88,12 +88,12 @@ const AlignedSmallLongArrowRightIcon = withButtonAlignment(
 
 // Text and icon wrapped together in BpkText or span
 // No automatic spacing, use `withButtonAlignment` for proper icon alignment.
-<BpkButtonV2 type={BUTTON_TYPES.link}>
+<BpkButton type={BUTTON_TYPES.link}>
   <BpkText textStyle={TEXT_STYLES.label1}>
     Button
     <AlignedSmallLongArrowRightIcon />
   </BpkText>
-</BpkButtonV2>
+</BpkButton>
 ```
 
 ### Text and Icon as Siblings with Custom Styling
@@ -102,19 +102,19 @@ When text (wrapped in `BpkText`) and icon are siblings, there is an **8px gap** 
 
 ```jsx
 // Text and icon as siblings - 8px gap applied
-<BpkButtonV2 type={BUTTON_TYPES.link}>
+<BpkButton type={BUTTON_TYPES.link}>
   <BpkText textStyle={TEXT_STYLES.label1}>Button</BpkText>
   <SmallLongArrowRightIcon />
-</BpkButtonV2>
+</BpkButton>
 ```
 
 **Note:** If you don't need custom text styling, the simpler approach is to use plain text without `BpkText` or `span`:
 
 ```jsx
 // Simpler approach - no BpkText needed
-<BpkButtonV2 type={BUTTON_TYPES.link}>
+<BpkButton type={BUTTON_TYPES.link}>
   Link Button <SmallLongArrowRightIcon />
-</BpkButtonV2>
+</BpkButton>
 ```
 
 ## Behavior Notes
