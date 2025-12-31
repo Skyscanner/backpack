@@ -2,7 +2,7 @@
 
 This guide is for consumers of `@skyscanner/backpack-web/bpk-component-autosuggest`. It helps you migrate from the **legacy Autosuggest (named export `BpkAutosuggestLegacy`, based on `react-autosuggest`)** to **AutosuggestV2 (default export `BpkAutosuggest`, based on `downshift`)**.
 
-**BpkAutosuggestV2 is a modern redesign**: it significantly improves accessibility (a11y), maintainability, and alignment with modern React/web platform patterns. As a result, it **does not preserve legacy (react-autosuggest-style) callback signatures** — this is an intentional breaking change.
+**BpkAutosuggest (V2) is a modern redesign**: it significantly improves accessibility (a11y), maintainability, and alignment with modern React/web platform patterns. As a result, it **does not preserve legacy (react-autosuggest-style) callback signatures** — this is an intentional breaking change.
 
 ## 1. Which version are you using today?
 
@@ -68,9 +68,7 @@ Below is a typical “type → fetch suggestions → render → select” flow.
 ```js
 import { Component } from 'react';
 import BpkLabel from '@skyscanner/backpack-web/bpk-component-label';
-import BpkAutosuggest, {
-  BpkAutosuggestSuggestion,
-} from '@skyscanner/backpack-web/bpk-component-autosuggest';
+import { BpkAutosuggestLegacy, BpkAutosuggestSuggestion } from '@skyscanner/backpack-web/bpk-component-autosuggest';
 
 class MyComponent extends Component {
   state = { value: '', suggestions: [] };
@@ -100,7 +98,7 @@ class MyComponent extends Component {
     return (
       <div>
         <BpkLabel htmlFor="my-autosuggest">Office</BpkLabel>
-        <BpkAutosuggest
+        <BpkAutosuggestLegacy
           suggestions={suggestions}
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
           onSuggestionsClearRequested={this.onSuggestionsClearRequested}
@@ -119,8 +117,7 @@ class MyComponent extends Component {
 ```tsx
 import { useMemo, useState } from 'react';
 import BpkLabel from '@skyscanner/backpack-web/bpk-component-label';
-import {
-  BpkAutosuggestV2,
+import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
 } from '@skyscanner/backpack-web/bpk-component-autosuggest';
 
@@ -151,7 +148,7 @@ export function MyComponent() {
   return (
     <div>
       <BpkLabel htmlFor="my-autosuggest">Office</BpkLabel>
-      <BpkAutosuggestV2<Office>
+      <BpkAutosuggest<Office>
         id="my-autosuggest"
         inputProps={inputProps}
         suggestions={suggestions}
@@ -236,7 +233,7 @@ const inputProps = { value, onChange: this.onChange };
 **After (v2)**
 
 ```ts
-<BpkAutosuggestV2
+<BpkAutosuggest
   // ...
   onInputValueChange={({ newValue }) => {
     // newValue is the current input value
@@ -317,7 +314,7 @@ onSuggestionSelected={({ suggestion }) => {
 ```tsx
 const inputRef = useRef<HTMLInputElement | null>(null);
 
-<BpkAutosuggestV2 ref={inputRef} /* ... */ />
+<BpkAutosuggest ref={inputRef} /* ... */ />
 ```
 
 ---
@@ -327,12 +324,9 @@ const inputRef = useRef<HTMLInputElement | null>(null);
 V2 still supports `theme` for overriding classNames. It also exports `defaultTheme` for extending:
 
 ```ts
-import {
-  BpkAutosuggestV2,
-  defaultTheme,
-} from '@skyscanner/backpack-web/bpk-component-autosuggest';
+import BpkAutosuggest, { defaultTheme } from '@skyscanner/backpack-web/bpk-component-autosuggest';
 
-<BpkAutosuggestV2
+<BpkAutosuggest
   // ...
   theme={{
     ...defaultTheme,
