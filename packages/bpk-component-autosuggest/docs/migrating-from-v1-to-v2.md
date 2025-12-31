@@ -1,8 +1,10 @@
-## Autosuggest → AutosuggestV2 migration guide (Web)
+## Autosuggest (legacy) → Autosuggest (V2) migration guide (Web)
 
-This guide is for consumers of `@skyscanner/backpack-web/bpk-component-autosuggest`. It helps you migrate from the **legacy Autosuggest (named export `BpkAutosuggestLegacy`, based on `react-autosuggest`)** to **AutosuggestV2 (default export `BpkAutosuggest`, based on `downshift`)**.
+This guide is for consumers of `@skyscanner/backpack-web/bpk-component-autosuggest`. It helps you migrate from **Autosuggest (legacy)** (named export `BpkAutosuggestLegacy`, based on `react-autosuggest`) to **Autosuggest (V2)** (**default export `BpkAutosuggest`**, based on `downshift`).
 
-**BpkAutosuggest (V2) is a modern redesign**: it significantly improves accessibility (a11y), maintainability, and alignment with modern React/web platform patterns. As a result, it **does not preserve legacy (react-autosuggest-style) callback signatures** — this is an intentional breaking change.
+**Autosuggest (V2) is a modern redesign**: it significantly improves accessibility (a11y), maintainability, and alignment with modern React/web platform patterns. As a result, it **does not preserve legacy (react-autosuggest-style) callback signatures** — this is an intentional breaking change.
+
+Most consumers can migrate with minimal code changes by **removing external input control** and **updating a small number of callbacks**.
 
 ## 1. Which version are you using today?
 
@@ -19,6 +21,8 @@ import BpkAutosuggest from '@skyscanner/backpack-web/bpk-component-autosuggest';
 ```
 
 > The first migration step is usually changing the import from named → default.
+>
+> This change is also an intentional API signal: **V2 is the new default**.
 
 ---
 
@@ -26,7 +30,9 @@ import BpkAutosuggest from '@skyscanner/backpack-web/bpk-component-autosuggest';
 
 ### 2.1 Controlled vs uncontrolled: V2 manages the input value internally
 
-- **Legacy**: typically controlled by the consumer via `inputProps`:
+**TL;DR:** **Autosuggest (V2) owns the input value.** You no longer control it via `inputProps.value`.
+
+- **Legacy**: consumers typically control the input via `inputProps`:
   - `inputProps.value`
   - `inputProps.onChange(event, { newValue })`
 
@@ -35,7 +41,11 @@ import BpkAutosuggest from '@skyscanner/backpack-web/bpk-component-autosuggest';
   - To observe selection: `onSuggestionSelected({ inputValue, suggestion })`
   - To set an initial value: `defaultValue`
 
-> If you strongly depend on fully controlling the input value externally, evaluate this upfront. V2 is designed around “Autosuggest owns the input value; consumers provide/update `suggestions` and subscribe to changes”.
+> **Key idea (this is the migration “fork in the road”):** V2 is designed around “Autosuggest owns the input value; consumers provide/update `suggestions` and subscribe to changes”.
+>
+> If you strongly depend on fully controlling the input value externally, evaluate this upfront.
+>
+> `defaultValue` only sets the **initial** input value (uncontrolled). Subsequent updates should be driven by user input and callbacks.
 
 ### 2.2 `onSuggestionsFetchRequested` argument changed
 
@@ -56,6 +66,12 @@ If you have:
 - styles/layout that rely on parent overflow clipping
 
 you may need to adjust (e.g. query from `document.body`, or use `isDesktop={false}`).
+
+> `isDesktop={false}` can be an **escape hatch** for specific layouts/tests, but it is **not recommended as the default** just to make tests easier.
+>
+> Testing tips:
+> - React Testing Library: prefer `screen.getByRole('listbox')` / `screen.getByText(...)` (these query the whole document by default).
+> - Cypress: use `cy.get('body').find('[role="listbox"]')` / `cy.get('body').contains(...)`.
 
 ---
 
@@ -114,8 +130,10 @@ class MyComponent extends Component {
 
 ### 3.2 V2 (recommended)
 
+This example uses hooks for clarity; **class components can be migrated in the same way**.
+
 ```tsx
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import BpkLabel from '@skyscanner/backpack-web/bpk-component-label';
 import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
@@ -135,15 +153,12 @@ export function MyComponent() {
     />
   );
 
-  const inputProps = useMemo(
-    () => ({
-      placeholder: 'Enter an office name',
-      name: 'my-autosuggest',
-      // Do not control value/onChange here in V2
-      autoComplete: 'off',
-    }),
-    [],
-  );
+  const inputProps = {
+    placeholder: 'Enter an office name',
+    name: 'my-autosuggest',
+    // Do not control value/onChange here in V2
+    autoComplete: 'off',
+  };
 
   return (
     <div>
@@ -186,16 +201,16 @@ export function MyComponent() {
 
 > v1 is a thin wrapper around `react-autosuggest`, so you may be using many upstream props. V2 does not guarantee a 1:1 mapping. This table covers the most common migration points.
 
-| Scenario | Legacy Autosuggest (v1) | AutosuggestV2 (v2) | Migration notes |
+| Scenario | Autosuggest (legacy) | Autosuggest (V2) | Migration notes |
 |---|---|---|---|
 | Import | `import { BpkAutosuggestLegacy } from ...` | `import BpkAutosuggest from ...` | **Change import** |
-| Input value control | `inputProps.value` + `inputProps.onChange(e, { newValue })` | internally managed; use `defaultValue` / subscribe via `onInputValueChange` | **Remove external control**; treat “query” as subscribed state |
+| Input value control | `inputProps.value` + `inputProps.onChange(e, { newValue })` | internally managed; use `defaultValue` / subscribe via `onInputValueChange` | Remove external control of `value`; **subscribe instead** |
 | Fetch suggestions | `onSuggestionsFetchRequested({ value })` | `onSuggestionsFetchRequested(value: string)` | argument becomes **string** |
 | Clear suggestions | `onSuggestionsClearRequested()` | `onSuggestionsClearRequested()` | usually unchanged |
 | Selection callback | `onSuggestionSelected(event, data)` (react-autosuggest-style) | `onSuggestionSelected({ inputValue, suggestion })` | logic relying on legacy fields must be rewritten |
 | Render suggestion | `renderSuggestion(s)` | `renderSuggestion(s)` | usually unchanged |
 | `getSuggestionValue` | `getSuggestionValue(s)` | `getSuggestionValue(s)` | usually unchanged |
-| Clear button | depends on consumer wiring of `BpkInput` clear props | `showClear` + `ariaLabels.clearButton` | more “out of the box” in V2 |
+| Clear button | depends on consumer wiring of `BpkInput` clear props | built-in clear button support (see props for the exact API) | more “out of the box” in V2 |
 | Multi-section | `multiSection` + `getSectionSuggestions` + `renderSectionTitle` | same prop names (V2 behaviour applies) | usually portable |
 | Theme | `theme` (react-autosuggest theme keys) | `theme` (common keys + extra keys like input/label/etc) | compare against `defaultTheme` |
 
@@ -216,9 +231,7 @@ onSuggestionsFetchRequested = ({ value }) => {
 **After (v2)**
 
 ```ts
-onSuggestionsFetchRequested={(value) => {
-  setSuggestions(getSuggestions(value));
-}}
+onSuggestionsFetchRequested={(value) => setSuggestions(getSuggestions(value))}
 ```
 
 ### 5.2 Input changes: `inputProps.onChange` → `onInputValueChange`
@@ -244,6 +257,8 @@ const inputProps = { value, onChange: this.onChange };
 > In V2, `inputProps` is still useful for `placeholder/name/autoComplete/...`, but it’s no longer recommended for controlling the input value.
 
 ### 5.2.1 If you still use `inputProps.onChange`: the signature becomes a standard ChangeEvent
+
+> **Legacy edge case:** Most consumers should be able to skip this section and use `onInputValueChange` instead.
 
 In v1 (`react-autosuggest`), many apps do:
 
@@ -282,6 +297,8 @@ onSuggestionSelected={({ inputValue, suggestion }) => {
 
 ### 5.3.1 Migrating legacy handlers that expected `event`
 
+> **Legacy edge case:** Most consumers should be able to skip this section if they don’t rely on the event parameter.
+
 Legacy (react-autosuggest-style) code often looks like:
 
 ```js
@@ -306,7 +323,7 @@ onSuggestionSelected={({ suggestion }) => {
 **Before (v1)**
 
 ```js
-<BpkAutosuggest inputProps={{ inputRef: (el) => (this.input = el), ... }} />
+<BpkAutosuggestLegacy inputProps={{ inputRef: (el) => (this.input = el), ... }} />
 ```
 
 **After (v2)**
