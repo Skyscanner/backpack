@@ -19,16 +19,15 @@
 import { Title, Markdown, ArgTypes } from '@storybook/addon-docs/blocks';
 import { userEvent, within } from 'storybook/test';
 
-import BpkAutosuggest from '../../packages/bpk-component-autosuggest/src/BpkAutosuggest';
-import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
+import { BpkAutosuggestLegacy, BpkAutosuggestSuggestion } from '../../packages/bpk-component-autosuggest';
 
 import AutosuggestExample from './examples';
 
 import type { StoryObj } from '@storybook/react-webpack5';
 
 export default {
-  title: 'bpk-component-autosuggest',
-  component: BpkAutosuggest,
+  title: 'bpk-component-autosuggest/legacy',
+  component: BpkAutosuggestLegacy,
   subcomponents: {
     BpkAutosuggestSuggestion,
   },
@@ -40,7 +39,7 @@ export default {
           <ArgTypes exclude={['zoomEnabled']} />
           <Markdown>
             {
-            `**BpkAutosuggest:**
+            `**BpkAutosuggestLegacy:**
             Please refer to react-autosuggest's
             documentation for a full list of [props](https://github.com/moroshko/react-autosuggest#props).
             **Note:** The \`inputProps\` object is passed directly to a

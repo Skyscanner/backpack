@@ -18,11 +18,12 @@
 import { Component } from 'react';
 import type { ReactElement, InputHTMLAttributes, LegacyRef } from 'react';
 
-// @ts-ignore
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkAutosuggest from '../../packages/bpk-component-autosuggest';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 // BpkAutosuggestSuggestion is a Flow-based JS file without type declarations.
 // TODO: This will be removed once the file is migrated to TypeScript.
 import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
-import BpkAutosuggestV2 from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestV2/BpkAutosuggest';
 import { withRtlSupport } from '../../packages/bpk-component-icon';
 import FlightIcon from '../../packages/bpk-component-icon/lg/flight';
 
@@ -243,7 +244,7 @@ class AutosuggestExample extends Component<Props, State> {
     };
 
     return (
-      <BpkAutosuggestV2
+      <BpkAutosuggest
         ariaLabels={{ label: 'input label', resultsList: 'results' }}
         alwaysRenderSuggestions={alwaysRenderSuggestions}
         suggestions={suggestions}
