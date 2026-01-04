@@ -15,10 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -26,13 +24,18 @@ import STYLES from './BpkCode.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  children: Node,
-  alternate: boolean,
-  className: ?string,
+export type Props = {
+  children: ReactNode;
+  alternate?: boolean;
+  className?: string;
 };
-const BpkCode = (props: Props) => {
-  const { alternate, children, className, ...rest } = props;
+
+const BpkCode = ({
+  alternate = false,
+  children,
+  className = undefined,
+  ...rest
+}: Props) => {
   const classNames = [getClassName('bpk-code')];
 
   if (alternate) {
@@ -44,22 +47,10 @@ const BpkCode = (props: Props) => {
   }
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <code className={classNames.join(' ')} {...rest}>
       {children}
     </code>
   );
-};
-
-BpkCode.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  alternate: PropTypes.bool,
-};
-
-BpkCode.defaultProps = {
-  className: null,
-  alternate: false,
 };
 
 export default BpkCode;

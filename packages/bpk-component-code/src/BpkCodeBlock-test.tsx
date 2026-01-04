@@ -15,27 +15,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
 
-import BpkCode from './BpkCode';
 import BpkCodeBlock from './BpkCodeBlock';
 
-describe('BpkCode accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues – BpkCode', async () => {
-    const { container } = render(
-      <BpkCode>npm install react --save-dev</BpkCode>,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-  it('should not have programmatically-detectable accessibility issues – BpkCodeBlock', async () => {
-    const { container } = render(
+describe('BpkCodeBlock', () => {
+  it('should render correctly', () => {
+    const { asFragment } = render(
       <BpkCodeBlock>npm install react --save-dev</BpkCodeBlock>,
     );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with "alternate"', () => {
+    const { asFragment } = render(
+      <BpkCodeBlock alternate>npm install react --save-dev</BpkCodeBlock>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with custom "className"', () => {
+    const { asFragment } = render(
+      <BpkCodeBlock className="my-custom-class">
+        npm install react --save-dev
+      </BpkCodeBlock>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

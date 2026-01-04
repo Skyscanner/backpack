@@ -15,32 +15,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { render } from '@testing-library/react';
 
-import BpkCodeBlock from './BpkCodeBlock';
+import BpkCode from './BpkCode';
 
-describe('BpkCodeBlock', () => {
+describe('BpkCode', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
-      <BpkCodeBlock>npm install react --save-dev</BpkCodeBlock>,
+      <BpkCode>npm install react --save-dev</BpkCode>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "alternate"', () => {
     const { asFragment } = render(
-      <BpkCodeBlock alternate>npm install react --save-dev</BpkCodeBlock>,
+      <BpkCode alternate>npm install react --save-dev</BpkCode>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom "className"', () => {
     const { asFragment } = render(
-      <BpkCodeBlock className="my-custom-class">
-        npm install react --save-dev
-      </BpkCodeBlock>,
+      <BpkCode className="my-class">npm install react --save-dev</BpkCode>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
