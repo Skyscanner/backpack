@@ -36,18 +36,14 @@ const BpkCode = ({
   className = undefined,
   ...rest
 }: Props) => {
-  const classNames = [getClassName('bpk-code')];
-
-  if (alternate) {
-    classNames.push(getClassName('bpk-code--alternate'));
-  }
-
-  if (className) {
-    classNames.push(className);
-  }
+  const classNames = getClassName(
+    'bpk-code',
+    alternate && 'bpk-code--alternate',
+    className,
+  );
 
   return (
-    <code className={classNames.join(' ')} {...rest}>
+    <code className={classNames} {...rest}>
       {children}
     </code>
   );
