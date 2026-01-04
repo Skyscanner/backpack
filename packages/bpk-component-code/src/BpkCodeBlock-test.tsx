@@ -22,25 +22,39 @@ import BpkCodeBlock from './BpkCodeBlock';
 
 describe('BpkCodeBlock', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkCodeBlock>npm install react --save-dev</BpkCodeBlock>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    const preElement = container.querySelector('pre');
+    const codeElement = container.querySelector('code');
+    
+    expect(preElement).toBeTruthy();
+    expect(codeElement).toBeTruthy();
+    expect(codeElement?.textContent).toBe('npm install react --save-dev');
+    expect(preElement?.className).toContain('bpk-code__pre');
+    expect(codeElement?.className).toContain('bpk-code');
+    expect(codeElement?.className).toContain('bpk-code--block');
   });
 
   it('should render correctly with "alternate"', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkCodeBlock alternate>npm install react --save-dev</BpkCodeBlock>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    const preElement = container.querySelector('pre');
+    
+    expect(preElement?.className).toContain('bpk-code__pre');
+    expect(preElement?.className).toContain('bpk-code__pre--alternate');
   });
 
   it('should render correctly with custom "className"', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkCodeBlock className="my-custom-class">
         npm install react --save-dev
       </BpkCodeBlock>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    const preElement = container.querySelector('pre');
+    
+    expect(preElement?.className).toContain('bpk-code__pre');
+    expect(preElement?.className).toContain('my-custom-class');
   });
 });
