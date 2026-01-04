@@ -33,7 +33,7 @@ export type Props = {
 const BpkCode = ({
   alternate = false,
   children,
-  className = undefined,
+  className,
   ...rest
 }: Props) => {
   const classNames = getClassName(
