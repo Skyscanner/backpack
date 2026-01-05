@@ -16,10 +16,12 @@
  * limitations under the License.
  */
 
-import type { ChangeEvent, KeyboardEvent } from 'react';
+import type { ChangeEvent } from 'react';
 import { Component } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLabel from '../../bpk-component-label';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../bpk-component-select';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -56,11 +58,17 @@ class BpkThemeToggle extends Component<Record<string, never>, State> {
   }
 
   componentDidMount() {
-    document.addEventListener('keydown', this.handleKeyDown);
+    document.addEventListener(
+      'keydown',
+      this.handleKeyDown as (event: Event) => void,
+    );
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeyDown);
+    document.removeEventListener(
+      'keydown',
+      this.handleKeyDown as (event: Event) => void,
+    );
   }
 
   handleKeyDown = (e: KeyboardEvent) => {

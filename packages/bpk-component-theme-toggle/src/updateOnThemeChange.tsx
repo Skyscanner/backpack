@@ -56,7 +56,7 @@ const updateOnThemeChange = <P extends object>(
       if (htmlElement) {
         htmlElement.addEventListener(
           THEME_CHANGE_EVENT,
-          this.onThemeChange as EventListener,
+          this.onThemeChange as (event: Event) => void,
           false,
         );
       }
@@ -67,7 +67,7 @@ const updateOnThemeChange = <P extends object>(
       if (htmlElement) {
         htmlElement.removeEventListener(
           THEME_CHANGE_EVENT,
-          this.onThemeChange as EventListener,
+          this.onThemeChange as (event: Event) => void,
           false,
         );
       }
