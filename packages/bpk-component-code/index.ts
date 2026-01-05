@@ -15,9 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import BpkCode from './src/BpkCode';
 import BpkCodeBlock from './src/BpkCodeBlock';
 
+import type { Props as BpkCodeProps } from './src/BpkCode';
+import type { Props as BpkCodeBlockProps } from './src/BpkCodeBlock';
+
+export type { BpkCodeProps, BpkCodeBlockProps };
 export { BpkCode, BpkCodeBlock };
