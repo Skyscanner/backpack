@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import type { ChangeEvent, KeyboardEvent } from 'react';
 import { Component } from 'react';
 
 import BpkLabel from '../../bpk-component-label';
@@ -25,21 +26,29 @@ import { cssModules } from '../../bpk-react-utils';
 import bpkCustomThemes from './theming';
 import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
 
+import type { Theme } from './theming';
+
 import STYLES from './BpkThemeToggle.module.scss';
 
 const inputId = 'theme-select';
 const getClassName = cssModules(STYLES);
 const availableThemes = Object.keys(bpkCustomThemes);
 
-const setTheme = (theme) => {
+const setTheme = (theme: Theme | undefined) => {
   const htmlElement = getHtmlElement();
-  htmlElement.dispatchEvent(
-    new CustomEvent(THEME_CHANGE_EVENT, { detail: { theme } }),
-  );
+  if (htmlElement) {
+    htmlElement.dispatchEvent(
+      new CustomEvent(THEME_CHANGE_EVENT, { detail: { theme } }),
+    );
+  }
 };
 
-class BpkThemeToggle extends Component {
-  constructor(props) {
+type State = {
+  selectedTheme: string;
+};
+
+class BpkThemeToggle extends Component<Record<string, never>, State> {
+  constructor(props: Record<string, never>) {
     super(props);
     this.state = {
       selectedTheme: '',
@@ -54,13 +63,13 @@ class BpkThemeToggle extends Component {
     document.removeEventListener('keydown', this.handleKeyDown);
   }
 
-  handleKeyDown = (e) => {
+  handleKeyDown = (e: KeyboardEvent) => {
     if (e.ctrlKey && e.metaKey && e.key.toLowerCase() === 't') {
       this.cycleTheme();
     }
   };
 
-  handleChange = (e) => {
+  handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const selectedTheme = e.target.value;
     this.setState({ selectedTheme });
     setTheme(bpkCustomThemes[selectedTheme]);
@@ -81,9 +90,8 @@ class BpkThemeToggle extends Component {
   };
 
   render() {
-    const { ...rest } = this.props;
     return (
-      <div {...rest}>
+      <div>
         <span className={getClassName('bpk-theme-toggle__label')}>
           <BpkLabel htmlFor={inputId}>Change theme</BpkLabel>
         </span>

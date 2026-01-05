@@ -16,39 +16,64 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+import type { ComponentType, ReactNode } from 'react';
 import { Component } from 'react';
 
 import { wrapDisplayName } from '../../bpk-react-utils';
 
 import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
 
-const updateOnThemeChange = (EnhancedComponent) => {
-  class UpdateOnThemeChange extends Component {
-    constructor() {
-      super();
+import type { Theme } from './theming';
+
+type ThemeChangeEvent = CustomEvent<{ theme: Theme | null }>;
+
+type UpdateOnThemeChangeProps = {
+  children: ReactNode;
+};
+
+type UpdateOnThemeChangeState = {
+  theme: Theme | null;
+};
+
+const updateOnThemeChange = <P extends object>(
+  EnhancedComponent: ComponentType<P & { theme: Theme | null }>,
+) => {
+  class UpdateOnThemeChange extends Component<
+    P & UpdateOnThemeChangeProps,
+    UpdateOnThemeChangeState
+  > {
+    public static displayName: string;
+
+    constructor(props: P & UpdateOnThemeChangeProps) {
+      super(props);
       this.state = {
         theme: null,
       };
     }
 
     componentDidMount() {
-      getHtmlElement().addEventListener(
-        THEME_CHANGE_EVENT,
-        this.onThemeChange,
-        false,
-      );
+      const htmlElement = getHtmlElement();
+      if (htmlElement) {
+        htmlElement.addEventListener(
+          THEME_CHANGE_EVENT,
+          this.onThemeChange as EventListener,
+          false,
+        );
+      }
     }
 
     componentWillUnmount() {
-      getHtmlElement().removeEventListener(
-        THEME_CHANGE_EVENT,
-        this.onThemeChange,
-        false,
-      );
+      const htmlElement = getHtmlElement();
+      if (htmlElement) {
+        htmlElement.removeEventListener(
+          THEME_CHANGE_EVENT,
+          this.onThemeChange as EventListener,
+          false,
+        );
+      }
     }
 
-    onThemeChange = (e) => {
+    onThemeChange = (e: ThemeChangeEvent) => {
       const { theme } = e.detail;
       this.setState({ theme });
       this.forceUpdate();
@@ -63,10 +88,6 @@ const updateOnThemeChange = (EnhancedComponent) => {
     EnhancedComponent,
     'updateOnThemeChange',
   );
-
-  UpdateOnThemeChange.propTypes = {
-    children: PropTypes.node.isRequired,
-  };
 
   return UpdateOnThemeChange;
 };

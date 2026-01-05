@@ -23,6 +23,155 @@ import {
   textPrimaryDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+type ThemeConfig = {
+  docsSidebarBackground: string;
+  docsSidebarLink: string;
+  docsSidebarLinkBorder: string;
+  docsSidebarSelectedArrowColor: string;
+  fontSize: string;
+  primaryColor300: string;
+  primaryColor500: string;
+  primaryColor600: string;
+  primaryColor700: string;
+  secondaryColor500: string;
+  secondaryColor600: string;
+  secondaryColor700: string;
+  themeName: string;
+};
+
+export type Theme = {
+  themeName: string;
+  primaryColor: string;
+  logoFillColor: string;
+  accordionActiveColor: string;
+  accordionColor: string;
+  accordionHoverColor: string;
+  badgeBackgroundColor: string;
+  badgeSuccessBackgroundColor: string;
+  badgeDestructiveBackgroundColor: string;
+  bannerAlertPrimaryColor: string;
+  bannerAlertSuccessColor: string;
+  bannerAlertWarnColor: string;
+  bannerAlertErrorColor: string;
+  barchartBarBackgroundColor: string;
+  barchartBarHoverBackgroundColor: string;
+  barchartBarActiveBackgroundColor: string;
+  barchartBarSelectedBackgroundColor: string;
+  blockquoteBarColor: string;
+  buttonFontSize: string;
+  buttonPrimaryTextColor: string;
+  buttonPrimaryHoverTextColor: string;
+  buttonPrimaryActiveTextColor: string;
+  buttonPrimaryGradientStartColor: string;
+  buttonPrimaryGradientEndColor: string;
+  buttonPrimaryBackgroundColor: string;
+  buttonPrimaryHoverBackgroundColor: string;
+  buttonPrimaryActiveBackgroundColor: string;
+  buttonSecondaryTextColor: string;
+  buttonSecondaryHoverTextColor: string;
+  buttonSecondaryActiveTextColor: string;
+  buttonSecondaryBorderColor: string;
+  buttonSecondaryHoverBorderColor: string;
+  buttonSecondaryActiveBorderColor: string;
+  buttonSecondaryBackgroundColor: string;
+  buttonSecondaryHoverBackgroundColor: string;
+  buttonSecondaryActiveBackgroundColor: string;
+  buttonFeaturedTextColor: string;
+  buttonFeaturedHoverTextColor: string;
+  buttonFeaturedActiveTextColor: string;
+  buttonFeaturedGradientStartColor: string;
+  buttonFeaturedGradientEndColor: string;
+  buttonFeaturedBackgroundColor: string;
+  buttonFeaturedHoverBackgroundColor: string;
+  buttonFeaturedActiveBackgroundColor: string;
+  buttonDestructiveTextColor: string;
+  buttonDestructiveHoverTextColor: string;
+  buttonDestructiveActiveTextColor: string;
+  buttonDestructiveBorderColor: string;
+  buttonDestructiveHoverBorderColor: string;
+  buttonDestructiveActiveBorderColor: string;
+  buttonDestructiveBackgroundColor: string;
+  buttonDestructiveHoverBackgroundColor: string;
+  buttonDestructiveActiveBackgroundColor: string;
+  chipDefaultSelectedBackgroundColor: string;
+  chipDefaultSelectedTextColor: string;
+  chipOnDarkSelectedBackgroundColor: string;
+  chipOnDarkSelectedTextColor: string;
+  chipOnImageSelectedBackgroundColor: string;
+  chipOnImageSelectedHoverBackgroundColor: string;
+  chipOnImageSelectedActiveBackgroundColor: string;
+  chipOnImageSelectedTextColor: string;
+  fieldsetLabelTextColor: string;
+  formValidationIconFill: string;
+  formValidationTextColor: string;
+  inputInvalidBorderColor: string;
+  linkColor: string;
+  linkHoverColor: string;
+  linkActiveColor: string;
+  linkVisitedColor: string;
+  linkAlternateColor: string;
+  linkAlternateHoverColor: string;
+  linkAlternateActiveColor: string;
+  linkAlternateVisitedColor: string;
+  horizontalNavBarSelectedColor: string;
+  horizontalNavLinkSelectedColor: string;
+  horizontalNavLinkColor: string;
+  horizontalNavLinkHoverColor: string;
+  horizontalNavLinkActiveColor: string;
+  selectInvalidBorderColor: string;
+  spinnerPrimaryColor: string;
+  starRatingFilledColor: string;
+  sliderBarColor: string;
+  textareaInvalidBorderColor: string;
+  paginationNudgerActiveColor: string;
+  paginationNudgerColor: string;
+  paginationNudgerHoverColor: string;
+  paginationSelectedBackgroundColor: string;
+  progressBarFillColor: string;
+  calendarDateTextColor: string;
+  calendarDateTextHoverColor: string;
+  calendarDateTextActiveColor: string;
+  calendarDateTextFocusColor: string;
+  calendarDateTextSelectedColor: string;
+  calendarDateSelectedBackgroundColor: string;
+  calendarDateFocusedBorderColor: string;
+  calendarNudgerIconColor: string;
+  calendarNudgerIconHoverColor: string;
+  calendarNudgerIconActiveColor: string;
+  checkboxCheckedColor: string;
+  radioCheckedColor: string;
+  switchCheckedColor: string;
+  ratingHighTextColor: string;
+  ratingHighColor: string;
+  ratingMediumTextColor: string;
+  ratingMediumColor: string;
+  ratingLowColor: string;
+  iconMarkerDefaultBackgroundColor: string;
+  iconMarkerDefaultSelectedColor: string;
+  iconMarkerDefaultDisabledColor: string;
+  iconMarkerDefaultDisabledBackgroundColor: string;
+  priceMarkerBackgroundColor: string;
+  priceMarkerSelectedBorderColor: string;
+  priceMarkerSelectedColor: string;
+  priceMarkerViewedBackgroundColor: string;
+  priceMarkerViewedBorderColor: string;
+  priceMarkerViewedColor: string;
+  skipLinkBackgroundColor: string;
+  navigationBarIconButtonColor: string;
+  navigationBarIconButtonHoverColor: string;
+  navigationBarIconButtonActiveColor: string;
+  navigationBarButtonLinkColor: string;
+  navigationBarButtonLinkHoverColor: string;
+  navigationBarButtonLinkActiveColor: string;
+  navigationBarButtonLinkVisitedColor: string;
+  navigationBarTitleColor: string;
+  navigationBarBackgroundColor: string;
+  docsSidebarBackground: string;
+  docsSidebarLink: string;
+  docsSidebarLinkBorder: string;
+  docsSidebarSelectedArrowColor: string;
+};
+
 const generateTheme = ({
   docsSidebarBackground,
   docsSidebarLink,
@@ -37,7 +186,7 @@ const generateTheme = ({
   secondaryColor600,
   secondaryColor700,
   themeName,
-}) => ({
+}: ThemeConfig): Theme => ({
   themeName,
 
   primaryColor: primaryColor500,
@@ -206,12 +355,11 @@ const generateTheme = ({
   docsSidebarSelectedArrowColor,
 });
 
-const londonTheme = {
+const londonTheme: ThemeConfig = {
   primaryColor300: '#F28494',
   primaryColor500: '#ED1B28',
   primaryColor600: '#D11622',
   primaryColor700: '#B1121C',
-  secondaryColor300: '#6889AB',
   secondaryColor500: '#013A76',
   secondaryColor600: '#002F61',
   secondaryColor700: '#00254B',
@@ -223,12 +371,11 @@ const londonTheme = {
   themeName: 'London',
 };
 
-const hongKongTheme = {
+const hongKongTheme: ThemeConfig = {
   primaryColor300: '#108685',
   primaryColor500: '#006463',
   primaryColor600: '#024D4D',
   primaryColor700: '#013838',
-  secondaryColor300: '#686868',
   secondaryColor500: '#4C4C4C',
   secondaryColor600: '#3C3C3C',
   secondaryColor700: '#2A2A2A',
@@ -240,12 +387,11 @@ const hongKongTheme = {
   themeName: 'HongKong',
 };
 
-const dohaTheme = {
+const dohaTheme: ThemeConfig = {
   primaryColor300: '#BF3671',
   primaryColor500: '#9B104C',
   primaryColor600: '#7F083B',
   primaryColor700: '#5E072C',
-  secondaryColor300: '#ffd54f',
   secondaryColor500: '#ffc107',
   secondaryColor600: '#ffb300',
   secondaryColor700: '#ffa000',
@@ -257,7 +403,7 @@ const dohaTheme = {
   themeName: 'Doha',
 };
 
-const bpkCustomThemes = {
+const bpkCustomThemes: { [key: string]: Theme } = {
   London: generateTheme(londonTheme),
   'Hong Kong': generateTheme(hongKongTheme),
   Doha: generateTheme(dohaTheme),
