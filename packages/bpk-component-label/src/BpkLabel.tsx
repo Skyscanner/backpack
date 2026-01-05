@@ -28,7 +28,7 @@ export type Props = {
   children: ReactNode;
   className?: string;
   disabled?: boolean;
-  valid?: boolean;
+  valid?: boolean | null;
   required?: boolean;
   white?: boolean;
 } & ComponentPropsWithoutRef<'label'>;
