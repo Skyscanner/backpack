@@ -33,6 +33,7 @@ type ThemeConfig = {
   primaryColor500: string;
   primaryColor600: string;
   primaryColor700: string;
+  secondaryColor300: string;
   secondaryColor500: string;
   secondaryColor600: string;
   secondaryColor700: string;
@@ -360,6 +361,7 @@ const londonTheme: ThemeConfig = {
   primaryColor500: '#ED1B28',
   primaryColor600: '#D11622',
   primaryColor700: '#B1121C',
+  secondaryColor300: '#6889AB',
   secondaryColor500: '#013A76',
   secondaryColor600: '#002F61',
   secondaryColor700: '#00254B',
@@ -376,6 +378,7 @@ const hongKongTheme: ThemeConfig = {
   primaryColor500: '#006463',
   primaryColor600: '#024D4D',
   primaryColor700: '#013838',
+  secondaryColor300: '#686868',
   secondaryColor500: '#4C4C4C',
   secondaryColor600: '#3C3C3C',
   secondaryColor700: '#2A2A2A',
@@ -392,6 +395,7 @@ const dohaTheme: ThemeConfig = {
   primaryColor500: '#9B104C',
   primaryColor600: '#7F083B',
   primaryColor700: '#5E072C',
+  secondaryColor300: '#ffd54f',
   secondaryColor500: '#ffc107',
   secondaryColor600: '#ffb300',
   secondaryColor700: '#ffa000',

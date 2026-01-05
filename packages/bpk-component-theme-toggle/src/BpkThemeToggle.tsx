@@ -80,7 +80,7 @@ class BpkThemeToggle extends Component<Record<string, never>, State> {
   handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const selectedTheme = e.target.value;
     this.setState({ selectedTheme });
-    setTheme(bpkCustomThemes[selectedTheme]);
+    setTheme(selectedTheme ? bpkCustomThemes[selectedTheme] : undefined);
   };
 
   cycleTheme = () => {
@@ -94,7 +94,7 @@ class BpkThemeToggle extends Component<Record<string, never>, State> {
       selectedTheme = availableThemes[selectedIndex];
     }
     this.setState({ selectedTheme });
-    setTheme(bpkCustomThemes[selectedTheme]);
+    setTheme(selectedTheme ? bpkCustomThemes[selectedTheme] : undefined);
   };
 
   render() {
