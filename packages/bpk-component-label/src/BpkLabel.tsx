@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -31,15 +31,14 @@ export type Props = {
   valid?: boolean;
   required?: boolean;
   white?: boolean;
-  [rest: string]: any; // for spreading additional HTML attributes
-};
+} & ComponentPropsWithoutRef<'label'>;
 
 const BpkLabel = ({
   children,
-  className = undefined,
+  className,
   disabled = false,
   required = false,
-  valid = undefined,
+  valid,
   white = false,
   ...rest
 }: Props) => {
