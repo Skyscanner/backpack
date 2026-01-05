@@ -28,6 +28,7 @@ export type Props = {
   children: ReactNode;
   alternate?: boolean;
   className?: string;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const BpkCodeBlock = ({
