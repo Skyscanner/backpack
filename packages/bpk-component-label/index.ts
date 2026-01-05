@@ -15,10 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkLabel, { type Props } from './src/BpkLabel';
+import BpkLabel from './src/BpkLabel';
 
-export type BpkLabelProps = Props;
+export type { Props as BpkLabelProps } from './src/BpkLabel';
 
 export default BpkLabel;

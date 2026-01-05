@@ -41,7 +41,9 @@ export const InvalidRequired = InvalidRequiredExample;
 export const White = WhiteExample;
 
 export const VisualTest = MixedExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true,
+  },
 };
