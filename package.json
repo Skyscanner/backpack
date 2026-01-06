@@ -50,7 +50,6 @@
     "typecheck": "tsc",
     "prepare": "husky",
     "percy-test": "percy storybook ./dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'",
-    "ts-migrate": "ts-migrate",
     "transpile": "npm run build && run-s transpile:*",
     "transpile:clean": "rm -rf ./dist",
     "transpile:js": "BABEL_ENV=dev babel packages --ignore ./packages/bpk-stylesheets --out-dir dist --extensions \".ts,.tsx,.js,.jsx\" --config-file ./babel.config.js",
@@ -178,7 +177,6 @@
     "sassdoc": "^2.7.0",
     "storybook": "^10.1.11",
     "style-loader": "^4.0.0",
-    "ts-migrate": "^0.1.35",
     "typescript": "^5.9.2",
     "webpack": "^5.103.0",
     "wrapper-webpack-plugin": "^2.2.2"
