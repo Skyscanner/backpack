@@ -45,12 +45,14 @@ const setTheme = (theme: Theme | undefined) => {
   }
 };
 
+type Props = Record<string, never>;
+
 type State = {
   selectedTheme: string;
 };
 
-class BpkThemeToggle extends Component<Record<string, never>, State> {
-  constructor(props: Record<string, never>) {
+class BpkThemeToggle extends Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       selectedTheme: '',
@@ -58,17 +60,11 @@ class BpkThemeToggle extends Component<Record<string, never>, State> {
   }
 
   componentDidMount() {
-    document.addEventListener(
-      'keydown',
-      this.handleKeyDown as (event: Event) => void,
-    );
+    document.addEventListener('keydown', this.handleKeyDown);
   }
 
   componentWillUnmount() {
-    document.removeEventListener(
-      'keydown',
-      this.handleKeyDown as (event: Event) => void,
-    );
+    document.removeEventListener('keydown', this.handleKeyDown);
   }
 
   handleKeyDown = (e: KeyboardEvent) => {
@@ -98,8 +94,9 @@ class BpkThemeToggle extends Component<Record<string, never>, State> {
   };
 
   render() {
+    const { ...rest } = this.props;
     return (
-      <div>
+      <div {...rest}>
         <span className={getClassName('bpk-theme-toggle__label')}>
           <BpkLabel htmlFor={inputId}>Change theme</BpkLabel>
         </span>
