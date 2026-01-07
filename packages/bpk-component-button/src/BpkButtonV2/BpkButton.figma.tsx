@@ -22,7 +22,7 @@ import { withButtonAlignment } from "../../../bpk-component-icon"
 import LightningIcon from '../../../bpk-component-icon/sm/lightning';
 import LongArrowRightIcon  from '../../../bpk-component-icon/sm/long-arrow-right';
 
-import { BpkButtonV2 } from "./BpkButton"
+import { BpkButtonV2 as BpkButton  } from "./BpkButton"
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
 
 
@@ -30,7 +30,7 @@ const AlignedArrowIcon = withButtonAlignment(LongArrowRightIcon);
 const AlignedLightningIcon = withButtonAlignment(LightningIcon);
 
 figma.connect(
-  BpkButtonV2,
+  BpkButton,
   "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=2965%3A0",
   {
     props: {
@@ -65,11 +65,11 @@ figma.connect(
       })
     },
     example: ({ iconOnly, isDisabled, label, leftContent, rightContent, size, style }) => (
-        <BpkButtonV2 type={style} size={size} disabled={isDisabled} iconOnly={iconOnly}>
+        <BpkButton type={style} size={size} disabled={isDisabled} iconOnly={iconOnly}>
           {leftContent}
           {label}
           {rightContent}
-        </BpkButtonV2>
+        </BpkButton>
       )
   },
 )

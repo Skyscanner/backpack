@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BUTTON_TYPES, BpkButtonV2 } from '../../bpk-component-button';
+import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
 import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
 import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
@@ -56,7 +56,7 @@ const NavButton = ({
   onClick = () => {},
   type = BUTTON_TYPES.link,
 }: Props) => (
-  <BpkButtonV2
+  <BpkButton
     iconOnly
     type={type}
     onClick={(e) => {
@@ -74,7 +74,7 @@ const NavButton = ({
     ) : (
       <AlignedRightArrowIcon />
     )}
-  </BpkButtonV2>
+  </BpkButton>
 );
 
 export default NavButton;

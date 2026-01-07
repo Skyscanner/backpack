@@ -15,9 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const THEME_CHANGE_EVENT = 'bpkchangetheme';
 
-const getHtmlElement = () =>
-  typeof document !== 'undefined' ? document.querySelector('html') : {};
+import { render, screen } from '@testing-library/react';
 
-export { THEME_CHANGE_EVENT, getHtmlElement };
+import BpkThemeToggle from './BpkThemeToggle';
+
+describe('BpkThemeToggle', () => {
+  it('should render correctly', () => {
+    render(<BpkThemeToggle />);
+    
+    expect(screen.getByLabelText('Change theme')).toBeInTheDocument();
+    expect(screen.getByRole('combobox')).toBeInTheDocument();
+    expect(screen.getByText('None')).toBeInTheDocument();
+    expect(screen.getByText('London')).toBeInTheDocument();
+    expect(screen.getByText('Hong Kong')).toBeInTheDocument();
+    expect(screen.getByText('Doha')).toBeInTheDocument();
+  });
+});

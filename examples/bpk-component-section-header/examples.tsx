@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkButtonV2 } from '../../packages/bpk-component-button';
+import BpkButton from '../../packages/bpk-component-button';
 import { withButtonAlignment } from '../../packages/bpk-component-icon/index';
 import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
 import BpkSectionHeader, {
@@ -32,11 +32,11 @@ const AlignedSmallLongArrowRightIcon = withButtonAlignment(
   SmallLongArrowRightIcon,
 );
 
-const btnNode = <BpkButtonV2>Action</BpkButtonV2>;
+const btnNode = <BpkButton>Action</BpkButton>;
 const btnWithOnlyIconNode = (
-  <BpkButtonV2 iconOnly>
+  <BpkButton iconOnly>
     <AlignedSmallLongArrowRightIcon />
-  </BpkButtonV2>
+  </BpkButton>
 );
 
 const DefaultExample = () => <BpkSectionHeader title="Section title" />;

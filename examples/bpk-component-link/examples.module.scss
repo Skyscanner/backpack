@@ -16,13 +16,23 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+@use '../../packages/bpk-mixins/tokens';
 
-import BpkThemeToggle from './BpkThemeToggle';
+.bpk-link-example {
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: tokens.bpk-spacing-lg();
+  }
 
-describe('BpkThemeToggle', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(<BpkThemeToggle />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-});
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: tokens.bpk-spacing-md();
+  }
+
+  &__card-description {
+    margin-top: tokens.bpk-spacing-sm();
+    margin-bottom: tokens.bpk-spacing-sm();
+  }
+}

@@ -165,6 +165,102 @@ const SmallRightWithPreviousPriceLeadingAndTrailingTextAndIconExample = () => (
   />
 );
 
+const MediumExample = () => <BpkPrice size={SIZES.medium} price="£1,830" />;
+
+const MediumWithTrailingTextExample = () => (
+  <BpkPrice size={SIZES.medium} price="£1,830" trailingText="per day" />
+);
+
+const MediumWithLeadingAndTrailingTextExample = () => (
+  <BpkPrice size={SIZES.medium} leadingText="from" price="£1,830" trailingText="per day" />
+);
+
+const MediumWithPreviousPriceExample = () => (
+  <BpkPrice size={SIZES.medium} previousPrice="£2,033" price="£1,830" trailingText="per day" />
+);
+
+const MediumWithPreviousPriceLeadingTextExample = () => (
+  <BpkPrice
+    size={SIZES.medium}
+    previousPrice="£2,033"
+    leadingText="Web only deal"
+    price="£1,830"
+    trailingText="per day"
+  />
+);
+
+const MediumWithPreviousPriceLeadingAndTrailingTextAndDataAttributeExample =
+  () => (
+    <BpkPrice
+      size={SIZES.medium}
+      previousPrice="£2,033"
+      leadingText="Web only deal"
+      price="£1,830"
+      trailingText="per day"
+      dataAttributes={{ 'data-price-your-pick': 'true' }}
+    />
+  );
+
+const MediumWithPreviousPriceLeadingAndTrailingTextAndIconExample = () => (
+  <BpkPrice
+    size={SIZES.medium}
+    previousPrice="£2,033"
+    leadingText="Web only deal"
+    price="£1,830"
+    trailingText="per day"
+    icon={<NewWindowIcon />}
+  />
+);
+
+const MediumWithDataAttributeExample = () => (
+  <BpkPrice
+    size={SIZES.medium}
+    price="£1,830"
+    dataAttributes={{ 'data-price-your-pick': 'true' }}
+  />
+);
+
+const MediumRightExample = () => (
+  <BpkPrice size={SIZES.medium} price="£1,830" align={ALIGNS.right} />
+);
+
+const MediumRightWithTrailingTextExample = () => (
+  <BpkPrice size={SIZES.medium} price="£1,830" trailingText="per day" align={ALIGNS.right} />
+);
+
+const MediumRightWithLeadingandTrailingTextExample = () => (
+  <BpkPrice
+    size={SIZES.medium}
+    leadingText="from"
+    price="£1,830"
+    trailingText="per day"
+    align={ALIGNS.right}
+  />
+);
+
+const MediumRightWithPreviousPriceExample = () => (
+  <BpkPrice
+    size={SIZES.medium}
+    previousPrice="£2,033"
+    leadingText="Web only deal"
+    price="£1,830"
+    trailingText="per day"
+    align={ALIGNS.right}
+  />
+);
+
+const MediumRightWithPreviousPriceLeadingAndTrailingTextAndIconExample = () => (
+  <BpkPrice
+    size={SIZES.medium}
+    previousPrice="£2,033"
+    leadingText="Web only deal"
+    price="£1,830"
+    trailingText="per day"
+    align={ALIGNS.right}
+    icon={<NewWindowIcon />}
+  />
+);
+
 const LargeExample = () => <BpkPrice size={SIZES.large} price="£1,830" />;
 
 const LargeWithTrailingTextExample = () => (
@@ -284,6 +380,19 @@ export {
   SmallRightWithLeadingandTrailingTextExample,
   SmallRightWithPreviousPriceExample,
   SmallRightWithPreviousPriceLeadingAndTrailingTextAndIconExample,
+  MediumExample,
+  MediumWithTrailingTextExample,
+  MediumWithLeadingAndTrailingTextExample,
+  MediumWithPreviousPriceExample,
+  MediumWithPreviousPriceLeadingTextExample,
+  MediumWithPreviousPriceLeadingAndTrailingTextAndDataAttributeExample,
+  MediumWithPreviousPriceLeadingAndTrailingTextAndIconExample,
+  MediumWithDataAttributeExample,
+  MediumRightExample,
+  MediumRightWithTrailingTextExample,
+  MediumRightWithLeadingandTrailingTextExample,
+  MediumRightWithPreviousPriceExample,
+  MediumRightWithPreviousPriceLeadingAndTrailingTextAndIconExample,
   LargeExample,
   LargeWithTrailingTextExample,
   LargeWithLeadingAndTrailingTextExample,

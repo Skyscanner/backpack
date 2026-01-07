@@ -15,9 +15,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkCode from './src/BpkCode';
-import BpkCodeBlock from './src/BpkCodeBlock';
+import BpkButtonLink, { type Props as BpkButtonLinkProps } from './src/BpkButtonLink';
+import BpkLink from './src/BpkLink';
+import themeAttributes, {
+  linkAlternateThemeAttributes,
+} from './src/themeAttributes';
 
-export { BpkCode, BpkCodeBlock };
+import type { BpkLinkProps } from './src/common-types';
+
+/**
+ * @deprecated Use BpkLinkProps for polymorphic usage
+ */
+export type { BpkButtonLinkProps };
+/**
+ * @deprecated Use `<BpkLink as="button" />` instead.
+ */
+export { BpkButtonLink };
+
+export type { BpkLinkProps };
+
+export default BpkLink;
+export { themeAttributes, linkAlternateThemeAttributes };

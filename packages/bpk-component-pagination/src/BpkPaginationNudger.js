@@ -18,7 +18,7 @@
 
 import PropTypes from 'prop-types';
 
-import {BpkButtonV2, BUTTON_TYPES} from '../../bpk-component-button';
+import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import { withRtlSupport, withButtonAlignment } from '../../bpk-component-icon';
 import ArrowLeftIcon from '../../bpk-component-icon/sm/arrow-left';
 import ArrowRightIcon from '../../bpk-component-icon/sm/arrow-right';
@@ -38,7 +38,7 @@ const BpkPaginationNudger = (props) => {
 
   return (
     <div className={getClassName('bpk-pagination-nudger')}>
-      <BpkButtonV2
+      <BpkButton
         type={BUTTON_TYPES.link}
         onClick={onNudge}
         disabled={disabled}
@@ -48,7 +48,7 @@ const BpkPaginationNudger = (props) => {
         <span className={getClassName('bpk-pagination-nudger__text--hidden')}>
           {label}
         </span>
-      </BpkButtonV2>
+      </BpkButton>
     </div>
   );
 };

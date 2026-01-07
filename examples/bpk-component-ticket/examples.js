@@ -20,7 +20,7 @@
 
 import PropTypes from 'prop-types';
 
-import { BpkButtonV2 } from '../../packages/bpk-component-button';
+import BpkButton from '../../packages/bpk-component-button';
 import {
   withButtonAlignment,
   withRtlSupport,
@@ -59,9 +59,9 @@ const Flight = ({ flight }) => (
         <div className={getClassName('bpk-stories-flight__price')}>
           £{flight.price}
         </div>
-        <BpkButtonV2>
+        <BpkButton>
           Select <AlignedArrowRightIcon fill="white" />
-        </BpkButtonV2>
+        </BpkButton>
       </div>
     }
   >

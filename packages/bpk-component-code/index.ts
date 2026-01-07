@@ -16,16 +16,11 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkCode from './src/BpkCode';
+import BpkCodeBlock from './src/BpkCodeBlock';
 
-export const SIZES = {
-  xsmall: 'xsmall',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-};
+import type { Props as BpkCodeProps } from './src/BpkCode';
+import type { Props as BpkCodeBlockProps } from './src/BpkCodeBlock';
 
-export const ALIGNS = {
-  left: 'left',
-  right: 'right',
-};
+export type { BpkCodeProps, BpkCodeBlockProps };
+export { BpkCode, BpkCodeBlock };

@@ -21,8 +21,7 @@ import { useCallback, useState } from 'react';
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkButtonLink } from '../../bpk-component-link';
+import BpkLink from '../../bpk-component-link';
 import BpkNavigationBar from '../../bpk-component-navigation-bar';
 import { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { BpkDialogWrapper, cssModules } from '../../bpk-react-utils';
@@ -196,7 +195,7 @@ const BpkBottomSheet = ({
             }
             trailingButton={
               actionText && onAction ? (
-                <BpkButtonLink onClick={onAction}>{actionText}</BpkButtonLink>
+                <BpkLink as="button" onClick={onAction}>{actionText}</BpkLink>
               ) : null
             }
           />

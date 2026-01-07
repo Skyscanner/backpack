@@ -39,6 +39,7 @@ figma.connect(
       implicit,
     }) => (
       <BpkLink
+        href="#"
         implicit={implicit}
         alternate={alternate}
       >

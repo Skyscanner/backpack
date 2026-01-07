@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 import { Component, createRef } from 'react';
 import type { Node } from 'react';
 
-import { BpkButtonV2 } from '../../packages/bpk-component-button';
+import BpkButton from '../../packages/bpk-component-button';
 import BpkInput, { withOpenEvents } from '../../packages/bpk-component-input';
 import BpkPopover from '../../packages/bpk-component-popover';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
@@ -90,7 +90,7 @@ class PopoverContainer extends Component<Props, State> {
 
     const openButton = (
       <div className={getClassName('bpk-popover-target')} ref={this.ref}>
-        <BpkButtonV2 onClick={this.openPopover}>Open</BpkButtonV2>
+        <BpkButton onClick={this.openPopover}>Open</BpkButton>
       </div>
     );
 
