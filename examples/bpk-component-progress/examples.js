@@ -20,7 +20,7 @@
 
 import { Component } from 'react';
 
-import { BpkButtonV2, BUTTON_TYPES } from '../../packages/bpk-component-button';
+import BpkButton, { BUTTON_TYPES } from '../../packages/bpk-component-button';
 import BpkProgress from '../../packages/bpk-component-progress';
 import { cssModules } from '../../packages/bpk-react-utils';
 
@@ -41,20 +41,20 @@ class ProgressContainer extends Component<{}, { progress: number }> {
     const { progress } = this.state;
     return (
       <div className={getClassName('bpkdocs-progress-container__flex')}>
-        <BpkButtonV2
+        <BpkButton
           type={BUTTON_TYPES.secondary}
           onClick={() => this.setState({ progress: 0 })}
           disabled={progress === 0}
         >
           Reset
-        </BpkButtonV2>
+        </BpkButton>
         &nbsp;
-        <BpkButtonV2
+        <BpkButton
           onClick={() => this.setState({ progress: progress + 50 })}
           disabled={progress === 100}
         >
           Go!
-        </BpkButtonV2>
+        </BpkButton>
         &nbsp;
         <div className={getClassName('bpkdocs-progress-container__flex-grow')}>
           {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
@@ -93,20 +93,20 @@ class SteppedProgressContainer extends Component<{}, { progress: number }> {
         />
         <br />
         <div className={getClassName('bpkdocs-progress-container__flex')}>
-          <BpkButtonV2
+          <BpkButton
             type={BUTTON_TYPES.secondary}
             onClick={() => this.setProgress(this.state.progress - 1)}
             disabled={this.state.progress <= 1}
           >
             Back
-          </BpkButtonV2>
+          </BpkButton>
           <span>{`Step ${this.state.progress} of 5`}</span>
-          <BpkButtonV2
+          <BpkButton
             onClick={() => this.setProgress(this.state.progress + 1)}
             disabled={this.state.progress === 5}
           >
             Continue
-          </BpkButtonV2>
+          </BpkButton>
         </div>
       </div>
     );

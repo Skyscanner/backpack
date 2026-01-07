@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BUTTON_TYPES, BpkButtonV2 } from '../../../bpk-component-button';
+import BpkButton, { BUTTON_TYPES } from '../../../bpk-component-button';
 import {
   withButtonAlignment,
   withRtlSupport,
@@ -34,7 +34,7 @@ const ExpandAccessoryContent = ({
   collapsed,
   onExpandToggle,
 }: ExpandProps) => (
-    <BpkButtonV2
+    <BpkButton
       data-testid="bpk-card-list__accessory-expand-button"
       type={BUTTON_TYPES.link}
       onClick={onExpandToggle}
@@ -43,7 +43,7 @@ const ExpandAccessoryContent = ({
     >
       {children}
       {collapsed ? <AlignedChevronDownIcon /> : <AlignedChevronUpIcon />}
-    </BpkButtonV2>
+    </BpkButton>
   );
 
 export default ExpandAccessoryContent;

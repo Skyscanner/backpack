@@ -20,7 +20,7 @@
 
 import PropTypes from 'prop-types';
 
-import { BpkButtonV2 } from '../../packages/bpk-component-button';
+import BpkButton from '../../packages/bpk-component-button';
 import withInfiniteScroll, {
   ArrayDataSource,
   DataSource,
@@ -118,7 +118,7 @@ const StoppingAfterScrollsExample = () => (
       elementsPerScroll={5}
       seeMoreAfter={2}
       renderSeeMoreComponent={({ onSeeMoreClick }) => (
-        <BpkButtonV2 onClick={onSeeMoreClick}>See more</BpkButtonV2>
+        <BpkButton onClick={onSeeMoreClick}>See more</BpkButton>
       )}
     />
   </div>
@@ -171,7 +171,7 @@ const ForceUpdateDataExample = () => {
   const dataSource = new ArrayDataSource(elementsArray);
   return (
     <div>
-      <BpkButtonV2
+      <BpkButton
         onClick={() => {
           const newElements = [];
           const k = Math.floor(Math.random() * 10);
@@ -182,7 +182,7 @@ const ForceUpdateDataExample = () => {
         }}
       >
         Update items
-      </BpkButtonV2>
+      </BpkButton>
       <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
         <InfiniteList dataSource={dataSource} />
       </div>
@@ -194,7 +194,7 @@ const ForceUpdateDataExampleEmptyArrayExample = () => {
   const dataSource = new ArrayDataSource([]);
   return (
     <div>
-      <BpkButtonV2
+      <BpkButton
         onClick={() => {
           const newElements = [];
           const k = Math.floor(Math.random() * 10);
@@ -205,14 +205,14 @@ const ForceUpdateDataExampleEmptyArrayExample = () => {
         }}
       >
         Update items
-      </BpkButtonV2>
+      </BpkButton>
       <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
         <InfiniteList
           dataSource={dataSource}
           seeMoreAfter={0}
           elementsPerScroll={5}
           renderSeeMoreComponent={({ onSeeMoreClick }) => (
-            <BpkButtonV2 onClick={onSeeMoreClick}>See more</BpkButtonV2>
+            <BpkButton onClick={onSeeMoreClick}>See more</BpkButton>
           )}
         />
       </div>
@@ -224,27 +224,27 @@ const ForceUpdateDataExampleFromNonEmptyToEmptyExample = () => {
   const dataSource = new ArrayDataSource(elementsArray);
   return (
     <div>
-      <BpkButtonV2
+      <BpkButton
         onClick={() => {
           dataSource.updateData([]);
         }}
       >
         Clear data
-      </BpkButtonV2>
-      <BpkButtonV2
+      </BpkButton>
+      <BpkButton
         onClick={() => {
           dataSource.updateData(elementsArray);
         }}
       >
         Add data
-      </BpkButtonV2>
+      </BpkButton>
       <div className={getClassName('bpk-infinite-scroll-stories__fixed-panel')}>
         <InfiniteList
           dataSource={dataSource}
           seeMoreAfter={0}
           elementsPerScroll={5}
           renderSeeMoreComponent={({ onSeeMoreClick }) => (
-            <BpkButtonV2 onClick={onSeeMoreClick}>See more</BpkButtonV2>
+            <BpkButton onClick={onSeeMoreClick}>See more</BpkButton>
           )}
         />
       </div>

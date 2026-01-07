@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkButtonV2 } from '../../packages/bpk-component-button';
+import BpkButton from '../../packages/bpk-component-button';
 
 import {
   PrimaryExample,
@@ -37,7 +37,7 @@ import {
 
 export default {
   title: 'bpk-component-button',
-  component: BpkButtonV2,
+  component: BpkButton,
 };
 
 export const BpkButtonPrimary = () => <PrimaryExample />;

@@ -15,21 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+const THEME_CHANGE_EVENT = 'bpkchangetheme';
 
-/* @flow strict */
+const getHtmlElement = (): HTMLElement | null =>
+  typeof document !== 'undefined' ? document.querySelector('html') : null;
 
-export default [
-  'linkColor',
-  'linkHoverColor',
-  'linkActiveColor',
-  'linkVisitedColor',
-];
-
-const linkAlternateThemeAttributes = [
-  'linkAlternateColor',
-  'linkAlternateHoverColor',
-  'linkAlternateActiveColor',
-  'linkAlternateVisitedColor',
-];
-
-export { linkAlternateThemeAttributes };
+export { THEME_CHANGE_EVENT, getHtmlElement };

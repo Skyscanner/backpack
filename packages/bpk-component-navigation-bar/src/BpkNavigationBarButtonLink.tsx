@@ -16,18 +16,15 @@
  * limitations under the License.
  */
 
-import type { ComponentProps, MouseEvent, ReactNode } from 'react';
-
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkButtonLink } from '../../bpk-component-link';
+import BpkLink, { type BpkLinkProps } from '../../bpk-component-link';
 
 import { BAR_STYLES, type BarStyle } from './BpkNavigationBar';
 
-export interface Props extends ComponentProps<BpkButtonLink> {
-  children: ReactNode,
-  onClick: (event: MouseEvent<HTMLElement>) => void,
-  className?: string,
-  barStyle?: BarStyle,
+export interface Props extends Omit<BpkLinkProps<'button'>, 'as'> {
+  /** Additional CSS class(es) to apply to the wrapper span. */
+  className?: string;
+  /** The bar style to determine link color variant. */
+  barStyle?: BarStyle;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 }
 
@@ -38,14 +35,13 @@ const BpkNavigationBarButtonLink = ({
   ...rest
 }: Props) => (
   <span className={className}>
-    <BpkButtonLink
+    <BpkLink
+      as="button"
       alternate={barStyle === BAR_STYLES.onDark}
-      {
-        ...rest
-      }
+      {...rest}
     >
       {children}
-    </BpkButtonLink>
+    </BpkLink>
   </span>
 );
 

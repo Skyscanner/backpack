@@ -16,13 +16,18 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+export default [
+  'linkColor',
+  'linkHoverColor',
+  'linkActiveColor',
+  'linkVisitedColor',
+];
 
-import BpkButtonLink from './src/BpkButtonLink';
-import BpkLink from './src/BpkLink';
-import themeAttributes, {
-  linkAlternateThemeAttributes,
-} from './src/themeAttributes';
+const linkAlternateThemeAttributes = [
+  'linkAlternateColor',
+  'linkAlternateHoverColor',
+  'linkAlternateActiveColor',
+  'linkAlternateVisitedColor',
+];
 
-export default BpkLink;
-export { BpkButtonLink, themeAttributes, linkAlternateThemeAttributes };
+export { linkAlternateThemeAttributes };

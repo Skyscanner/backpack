@@ -31,7 +31,6 @@ import type {
 import {
   useFloating,
   offset,
-  flip,
   shift,
   size,
   arrow as floatingArrow,
@@ -126,7 +125,7 @@ export type BpkAutoSuggestProps<T> = {
   focusInputOnSuggestionClick?: boolean;
 };
 
-const defaultTheme = {
+export const defaultTheme = {
   container: getClassName('bpk-autosuggest__container'),
   containerOpen: getClassName('bpk-autosuggest__container--open'),
   suggestionsContainer: getClassName('bpk-autosuggest__suggestions-container'),
@@ -379,7 +378,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       middleware: isDesktop
         ? [
             offset(4),
-            flip(),
             shift(),
             size({
               apply({ elements, rects }) {
