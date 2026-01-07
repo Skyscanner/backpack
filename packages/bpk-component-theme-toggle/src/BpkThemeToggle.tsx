@@ -16,14 +16,19 @@
  * limitations under the License.
  */
 
+import type { ChangeEvent } from 'react';
 import { Component } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLabel from '../../bpk-component-label';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../bpk-component-select';
 import { cssModules } from '../../bpk-react-utils';
 
 import bpkCustomThemes from './theming';
 import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
+
+import type { Theme } from './theming';
 
 import STYLES from './BpkThemeToggle.module.scss';
 
@@ -31,15 +36,23 @@ const inputId = 'theme-select';
 const getClassName = cssModules(STYLES);
 const availableThemes = Object.keys(bpkCustomThemes);
 
-const setTheme = (theme) => {
+const setTheme = (theme: Theme | undefined) => {
   const htmlElement = getHtmlElement();
-  htmlElement.dispatchEvent(
-    new CustomEvent(THEME_CHANGE_EVENT, { detail: { theme } }),
-  );
+  if (htmlElement) {
+    htmlElement.dispatchEvent(
+      new CustomEvent(THEME_CHANGE_EVENT, { detail: { theme } }),
+    );
+  }
 };
 
-class BpkThemeToggle extends Component {
-  constructor(props) {
+type Props = Record<string, never>;
+
+type State = {
+  selectedTheme: string;
+};
+
+class BpkThemeToggle extends Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       selectedTheme: '',
@@ -54,16 +67,16 @@ class BpkThemeToggle extends Component {
     document.removeEventListener('keydown', this.handleKeyDown);
   }
 
-  handleKeyDown = (e) => {
+  handleKeyDown = (e: KeyboardEvent) => {
     if (e.ctrlKey && e.metaKey && e.key.toLowerCase() === 't') {
       this.cycleTheme();
     }
   };
 
-  handleChange = (e) => {
+  handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const selectedTheme = e.target.value;
     this.setState({ selectedTheme });
-    setTheme(bpkCustomThemes[selectedTheme]);
+    setTheme(selectedTheme ? bpkCustomThemes[selectedTheme] : undefined);
   };
 
   cycleTheme = () => {
@@ -77,7 +90,7 @@ class BpkThemeToggle extends Component {
       selectedTheme = availableThemes[selectedIndex];
     }
     this.setState({ selectedTheme });
-    setTheme(bpkCustomThemes[selectedTheme]);
+    setTheme(selectedTheme ? bpkCustomThemes[selectedTheme] : undefined);
   };
 
   render() {
