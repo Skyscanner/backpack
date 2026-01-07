@@ -15,14 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+const THEME_CHANGE_EVENT = 'bpkchangetheme';
 
-import { render } from '@testing-library/react';
+const getHtmlElement = (): HTMLElement | null =>
+  typeof document !== 'undefined' ? document.querySelector('html') : null;
 
-import BpkThemeToggle from './BpkThemeToggle';
-
-describe('BpkThemeToggle', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(<BpkThemeToggle />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-});
+export { THEME_CHANGE_EVENT, getHtmlElement };
