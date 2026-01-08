@@ -16,23 +16,22 @@
  * limitations under the License.
  */
 
-import type { ComponentType } from 'react';
+import { render } from '@testing-library/react';
 
-import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
-import { wrapDisplayName } from '../../bpk-react-utils';
+import BpkVisuallyHidden from './BpkVisuallyHidden';
 
-export default function withDescription(
-  Component: ComponentType<any> | string,
-  description: string,
-): ComponentType<any> {
-  const WithDescription = (props: string[]) => (
-    <span>
-      <Component {...props} />
-      <BpkVisuallyHidden>{description}</BpkVisuallyHidden>
-    </span>
-  );
+describe('BpkVisuallyHidden', () => {
+  it('should render correctly', () => {
+    const { asFragment } = render(<BpkVisuallyHidden>Content</BpkVisuallyHidden>);
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-  WithDescription.displayName = wrapDisplayName(Component, 'withDescription');
-
-  return WithDescription;
-}
+  (['div', 'span', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const).forEach((as) => {
+    it(`should render correctly with as="${as}"`, () => {
+      const { asFragment } = render(
+        <BpkVisuallyHidden as={as}>Content</BpkVisuallyHidden>,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+  });
+});

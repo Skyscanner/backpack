@@ -16,8 +16,18 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/utils';
+import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden/src/BpkVisuallyHidden';
 
-.bpk-icon-description {
-  @include utils.bpk-visually-hidden;
-}
+import {
+  BasicExample,
+  IconOnlyButtonsWithVisuallyHiddenText,
+} from './examples';
+
+export default {
+  title: 'bpk-component-visually-hidden',
+  component: BpkVisuallyHidden,
+};
+
+export const IconOnlyButtons = () => <IconOnlyButtonsWithVisuallyHiddenText />;
+
+export const Basic = () => <BasicExample />;

@@ -12,6 +12,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 import { withButtonAlignment, withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
 import ArrowIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/long-arrow-right';
 import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
+import BpkVisuallyHidden from '@skyscanner/backpack-web/bpk-component-visually-hidden';
 
 const AlignedArrowIcon = withButtonAlignment(withRtlSupport(ArrowIcon));
 
@@ -27,7 +28,7 @@ export default () => (
     <BpkButton type={BUTTON_TYPES.primaryOnLight}>PrimaryOnLight</BpkButton>
     <BpkButton iconOnly>
       <AlignedArrowIcon />
-      <span className="visually-hidden">Search</span>
+      <BpkVisuallyHidden>Search</BpkVisuallyHidden>
     </BpkButton>
     <BpkButton fullWidth>Full Width</BpkButton>
   </div>

@@ -16,23 +16,17 @@
  * limitations under the License.
  */
 
-import type { ComponentType } from 'react';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
-import { wrapDisplayName } from '../../bpk-react-utils';
+import BpkVisuallyHidden from './BpkVisuallyHidden';
 
-export default function withDescription(
-  Component: ComponentType<any> | string,
-  description: string,
-): ComponentType<any> {
-  const WithDescription = (props: string[]) => (
-    <span>
-      <Component {...props} />
-      <BpkVisuallyHidden>{description}</BpkVisuallyHidden>
-    </span>
-  );
-
-  WithDescription.displayName = wrapDisplayName(Component, 'withDescription');
-
-  return WithDescription;
-}
+describe('BpkVisuallyHidden accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkVisuallyHidden>Screen reader only content</BpkVisuallyHidden>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
