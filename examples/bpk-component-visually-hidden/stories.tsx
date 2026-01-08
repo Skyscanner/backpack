@@ -20,11 +20,7 @@ import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden/src/
 
 import {
   BasicExample,
-  DisabledIconOnlyButtonsWithVisuallyHiddenText,
   IconOnlyButtonsWithVisuallyHiddenText,
-  LargeIconOnlyButtonsWithVisuallyHiddenText,
-  LinkIconOnlyButtonsWithVisuallyHiddenText,
-  PrimaryIconOnlyButtonsWithVisuallyHiddenText,
 } from './examples';
 
 export default {
@@ -33,21 +29,5 @@ export default {
 };
 
 export const IconOnlyButtons = () => <IconOnlyButtonsWithVisuallyHiddenText />;
-
-export const LargeIconOnlyButtons = () => (
-  <LargeIconOnlyButtonsWithVisuallyHiddenText />
-);
-
-export const PrimaryIconOnlyButtons = () => (
-  <PrimaryIconOnlyButtonsWithVisuallyHiddenText />
-);
-
-export const LinkIconOnlyButtons = () => (
-  <LinkIconOnlyButtonsWithVisuallyHiddenText />
-);
-
-export const DisabledIconOnlyButtons = () => (
-  <DisabledIconOnlyButtonsWithVisuallyHiddenText />
-);
 
 export const Basic = () => <BasicExample />;

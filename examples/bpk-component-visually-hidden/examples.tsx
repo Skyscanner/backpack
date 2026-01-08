@@ -26,6 +26,7 @@ import EditIcon from '../../packages/bpk-component-icon/sm/edit';
 import HeartIcon from '../../packages/bpk-component-icon/sm/heart';
 import ShareIcon from '../../packages/bpk-component-icon/sm/share';
 import TrashIcon from '../../packages/bpk-component-icon/sm/trash';
+import BpkText from '../../packages/bpk-component-text/src/BpkText';
 import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden';
 import {
   action,
@@ -87,163 +88,13 @@ export const IconOnlyButtonsWithVisuallyHiddenText = () => (
   </div>
 );
 
-export const LargeIconOnlyButtonsWithVisuallyHiddenText = () => (
-  <div>
-    <BpkButton
-      iconOnly
-      onClick={action('Close clicked')}
-      size={SIZE_TYPES.large}
-      type={BUTTON_TYPES.secondary}
-    >
-      <AlignedCloseIcon />
-      <BpkVisuallyHidden>Close</BpkVisuallyHidden>
-    </BpkButton>
-    &nbsp;
-    <BpkButton
-      iconOnly
-      onClick={action('Edit clicked')}
-      size={SIZE_TYPES.large}
-      type={BUTTON_TYPES.secondary}
-    >
-      <AlignedEditIcon />
-      <BpkVisuallyHidden>Edit</BpkVisuallyHidden>
-    </BpkButton>
-    &nbsp;
-    <BpkButton
-      iconOnly
-      onClick={action('Like clicked')}
-      size={SIZE_TYPES.large}
-      type={BUTTON_TYPES.secondary}
-    >
-      <AlignedHeartIcon />
-      <BpkVisuallyHidden>Like</BpkVisuallyHidden>
-    </BpkButton>
-    &nbsp;
-    <BpkButton
-      iconOnly
-      onClick={action('Share clicked')}
-      size={SIZE_TYPES.large}
-      type={BUTTON_TYPES.secondary}
-    >
-      <AlignedShareIcon />
-      <BpkVisuallyHidden>Share</BpkVisuallyHidden>
-    </BpkButton>
-    &nbsp;
-    <BpkButton
-      iconOnly
-      onClick={action('Delete clicked')}
-      size={SIZE_TYPES.large}
-      type={BUTTON_TYPES.secondary}
-    >
-      <AlignedTrashIcon />
-      <BpkVisuallyHidden>Delete</BpkVisuallyHidden>
-    </BpkButton>
-  </div>
-);
-
-export const PrimaryIconOnlyButtonsWithVisuallyHiddenText = () => (
-  <div>
-    <BpkButton
-      iconOnly
-      onClick={action('Close clicked')}
-      type={BUTTON_TYPES.primary}
-    >
-      <AlignedCloseIcon />
-      <BpkVisuallyHidden>Close</BpkVisuallyHidden>
-    </BpkButton>
-    &nbsp;
-    <BpkButton
-      iconOnly
-      onClick={action('Edit clicked')}
-      type={BUTTON_TYPES.primary}
-    >
-      <AlignedEditIcon />
-      <BpkVisuallyHidden>Edit</BpkVisuallyHidden>
-    </BpkButton>
-    &nbsp;
-    <BpkButton
-      iconOnly
-      onClick={action('Like clicked')}
-      type={BUTTON_TYPES.primary}
-    >
-      <AlignedHeartIcon />
-      <BpkVisuallyHidden>Like</BpkVisuallyHidden>
-    </BpkButton>
-  </div>
-);
-
-export const LinkIconOnlyButtonsWithVisuallyHiddenText = () => (
-  <div>
-    <BpkButton
-      iconOnly
-      onClick={action('Close clicked')}
-      type={BUTTON_TYPES.link}
-    >
-      <AlignedCloseIcon />
-      <BpkVisuallyHidden>Close</BpkVisuallyHidden>
-    </BpkButton>
-    &nbsp;
-    <BpkButton
-      iconOnly
-      onClick={action('Edit clicked')}
-      type={BUTTON_TYPES.link}
-    >
-      <AlignedEditIcon />
-      <BpkVisuallyHidden>Edit</BpkVisuallyHidden>
-    </BpkButton>
-    &nbsp;
-    <BpkButton
-      iconOnly
-      onClick={action('Share clicked')}
-      type={BUTTON_TYPES.link}
-    >
-      <AlignedShareIcon />
-      <BpkVisuallyHidden>Share</BpkVisuallyHidden>
-    </BpkButton>
-  </div>
-);
-
-export const DisabledIconOnlyButtonsWithVisuallyHiddenText = () => (
-  <div>
-    <BpkButton
-      disabled
-      iconOnly
-      onClick={action('THIS SHOULD NEVER HAPPEN')}
-      type={BUTTON_TYPES.secondary}
-    >
-      <AlignedCloseIcon />
-      <BpkVisuallyHidden>Close</BpkVisuallyHidden>
-    </BpkButton>
-    &nbsp;
-    <BpkButton
-      disabled
-      iconOnly
-      onClick={action('THIS SHOULD NEVER HAPPEN')}
-      type={BUTTON_TYPES.secondary}
-    >
-      <AlignedEditIcon />
-      <BpkVisuallyHidden>Edit</BpkVisuallyHidden>
-    </BpkButton>
-    &nbsp;
-    <BpkButton
-      disabled
-      iconOnly
-      onClick={action('THIS SHOULD NEVER HAPPEN')}
-      type={BUTTON_TYPES.secondary}
-    >
-      <AlignedHeartIcon />
-      <BpkVisuallyHidden>Like</BpkVisuallyHidden>
-    </BpkButton>
-  </div>
-);
-
 export const BasicExample = () => (
   <div>
-    <p>
+    <BpkText>
       This text is visible.{' '}
       <BpkVisuallyHidden>This text is only for screen readers.</BpkVisuallyHidden>
-    </p>
+    </BpkText>
     <BpkVisuallyHidden as="h2">Hidden heading for screen readers</BpkVisuallyHidden>
-    <p>Content that follows the hidden heading.</p>
+    <BpkText>Content that follows the hidden heading.</BpkText>
   </div>
 );
