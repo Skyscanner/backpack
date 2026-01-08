@@ -17,91 +17,411 @@
  */
 
 $base-url: 'https://js.skyscnr.com/sttc/bpk-fonts';
+$font-formats: (woff2, woff, ttf);
 
-@font-face {
-  font-family: 'Skyscanner Relative';
-  font-style: normal;
-  font-weight: 400;
-  src:
-    url('#{$base-url}/SkyscannerRelative-Book-f9356ad6.woff2') format('woff2'),
-    url('#{$base-url}/SkyscannerRelative-Book-46f9f429.woff') format('woff'),
-    url('#{$base-url}/SkyscannerRelative-Book-ab1dbcbe.ttf') format('ttf');
+@use 'sass:list';
+@use 'sass:map';
+
+// Table-driven font registry: add families/weights in $bpk-fonts, and the mixin
+// will emit matching @font-face rules. Filenames are the hashed names without
+// extension; only the formats you provide will be output.
+$bpk-fonts: (
+  'Skyscanner Relative': (
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'SkyscannerRelative-Book-f9356ad6',
+        woff: 'SkyscannerRelative-Book-46f9f429',
+        ttf: 'SkyscannerRelative-Book-ab1dbcbe',
+      ),
+    ),
+    (
+      style: italic,
+      weight: 400,
+      files: (
+        woff2: 'SkyscannerRelative-Italic-10532ac3',
+        woff: 'SkyscannerRelative-Italic-db5d0ac5',
+        ttf: 'SkyscannerRelative-Italic-8eec3f3a',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 500,
+      files: (
+        woff2: 'SkyscannerRelative-Medium-c08dc28b',
+        woff: 'SkyscannerRelative-Medium-865e167a',
+        ttf: 'SkyscannerRelative-Medium-d0ae478a',
+      ),
+    ),
+    (
+      style: italic,
+      weight: 500,
+      files: (
+        woff2: 'SkyscannerRelative-MediumItalic-81517f37',
+        woff: 'SkyscannerRelative-MediumItalic-bbdb6b0c',
+        ttf: 'SkyscannerRelative-MediumItalic-226fe64c',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 700,
+      files: (
+        woff2: 'SkyscannerRelative-Bold-8545937e',
+        woff: 'SkyscannerRelative-Bold-a099c9f7',
+        ttf: 'SkyscannerRelative-Bold-ec4cc5a7',
+      ),
+    ),
+    (
+      style: italic,
+      weight: 700,
+      files: (
+        woff2: 'SkyscannerRelative-BoldItalic-01b5d138',
+        woff: 'SkyscannerRelative-BoldItalic-4d6d36e3',
+        ttf: 'SkyscannerRelative-BoldItalic-dc9284dc',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 900,
+      files: (
+        woff2: 'SkyscannerRelative-Black-bb3c9434',
+        woff: 'SkyscannerRelative-Black-bba2eb55',
+        ttf: 'SkyscannerRelative-Black-314703cc',
+      ),
+    ),
+    (
+      style: italic,
+      weight: 900,
+      files: (
+        woff2: 'SkyscannerRelative-BlackItalic-c2149c91',
+        woff: 'SkyscannerRelative-BlackItalic-a34cd594',
+        ttf: 'SkyscannerRelative-BlackItalic-7e516ee5',
+      ),
+    ),
+  ),
+  'Noto Sans JP': (
+    (
+      style: normal,
+      weight: 900,
+      files: (
+        woff2: 'NotoSansJP-ExtraBold-d4e678e6',
+        woff: 'NotoSansJP-ExtraBold-071fa89b',
+        ttf: 'NotoSansJP-ExtraBold-71fc7f76',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 700,
+      files: (
+        woff2: 'NotoSansJP-Bold-b656150c',
+        woff: 'NotoSansJP-Bold-6ddf472f',
+        ttf: 'NotoSansJP-Bold-deeb2988',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'NotoSansJP-Regular-6ab10d56',
+        woff: 'NotoSansJP-Regular-70c49e9e',
+        ttf: 'NotoSansJP-Regular-68d5dc69',
+      ),
+    ),
+  ),
+  'Noto Sans KR': (
+    (
+      style: normal,
+      weight: 900,
+      files: (
+        woff2: 'NotoSansKR-ExtraBold-1dfe3b92',
+        woff: 'NotoSansKR-ExtraBold-6c571306',
+        ttf: 'NotoSansKR-ExtraBold-f350038a',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 700,
+      files: (
+        woff2: 'NotoSansKR-Bold-5286cc6d',
+        woff: 'NotoSansKR-Bold-74c4cbc7',
+        ttf: 'NotoSansKR-Bold-5651f33d',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'NotoSansKR-Regular-b6a2ff73',
+        woff: 'NotoSansKR-Regular-96147637',
+        ttf: 'NotoSansKR-Regular-a2cd60b3',
+      ),
+    ),
+  ),
+  'Noto Sans SC': (
+    (
+      style: normal,
+      weight: 900,
+      files: (
+        woff2: 'NotoSansSC-Bold-22c3e4e0',
+        woff: 'NotoSansSC-Bold-87ef5110',
+        ttf: 'NotoSansSC-Bold-57f04989',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 700,
+      files: (
+        woff2: 'NotoSansSC-Bold-22c3e4e0',
+        woff: 'NotoSansSC-Bold-22c3e4e0',
+        ttf: 'NotoSansSC-Bold-57f04989',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'NotoSansSC-Regular-97e50cfd',
+        woff: 'NotoSansSC-Regular-cba63765',
+        ttf: 'NotoSansSC-Regular-f793115b',
+      ),
+    ),
+  ),
+  'Noto Sans TC': (
+    (
+      style: normal,
+      weight: 900,
+      files: (
+        woff2: 'NotoSansTC-Bold-355d38e9',
+        woff: 'NotoSansTC-Bold-2abc3583',
+        ttf: 'NotoSansTC-Bold-86244830',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 700,
+      files: (
+        woff2: 'NotoSansTC-Bold-355d38e9',
+        woff: 'NotoSansTC-Bold-2abc3583',
+        ttf: 'NotoSansTC-Bold-86244830',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'NotoSansTC-Regular-5d6d6915',
+        woff: 'NotoSansTC-Regular-c4185417',
+        ttf: 'NotoSansTC-Regular-d4301ce6',
+      ),
+    ),
+  ),
+  'Noto Sans Thai': (
+    (
+      style: normal,
+      weight: 900,
+      files: (
+        woff2: 'NotoSansThai-Bold-74e247cc',
+        woff: 'NotoSansThai-Bold-91433b5b',
+        ttf: 'NotoSansThai-Bold-778d694c',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 700,
+      files: (
+        woff2: 'NotoSansThai-Bold-74e247cc',
+        woff: 'NotoSansThai-Bold-91433b5b',
+        ttf: 'NotoSansThai-Bold-778d694c',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'NotoSansThai-Regular-49d26bc7',
+        woff: 'NotoSansThai-Regular-bc78fb35',
+        ttf: 'NotoSansThai-Regular-84e59eed',
+      ),
+    ),
+  ),
+  'Noto Sans Devanagari': (
+    (
+      style: normal,
+      weight: 900,
+      files: (
+        woff2: 'NotoSansDevanagari-ExtraBold-ff675d8c',
+        woff: 'NotoSansDevanagari-ExtraBold-2b68fdf3',
+        ttf: 'NotoSansDevanagari-ExtraBold-ad7aee12',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 700,
+      files: (
+        woff2: 'NotoSansDevanagari-Bold-19924491',
+        woff: 'NotoSansDevanagari-Bold-2598dc51',
+        ttf: 'NotoSansDevanagari-Bold-bca34adc',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'NotoSansDevanagari-Regular-2ddbe014',
+        woff: 'NotoSansDevanagari-Regular-b7e8aefe',
+        ttf: 'NotoSansDevanagari-Regular-e0474da6',
+      ),
+    ),
+  ),
+  'Noto Sans': (
+    (
+      style: normal,
+      weight: 900,
+      files: (
+        woff2: 'NotoSans-ExtraBold-d8d5cc89',
+        woff: 'NotoSans-ExtraBold-177dbfc0',
+        ttf: 'NotoSans-ExtraBold-cac84afc',
+      ),
+    ),
+    (
+      style: italic,
+      weight: 900,
+      files: (
+        woff2: 'NotoSans-ExtraBoldItalic-cf3e028d',
+        woff: 'NotoSans-ExtraBoldItalic-be131c58',
+        ttf: 'NotoSans-ExtraBoldItalic-c435f928',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 700,
+      files: (
+        woff2: 'NotoSans-Bold-0b4b7c45',
+        woff: 'NotoSans-Bold-68b2bc2e',
+        ttf: 'NotoSans-Bold-bc7f5e39',
+      ),
+    ),
+    (
+      style: italic,
+      weight: 700,
+      files: (
+        woff2: 'NotoSans-BoldItalic-61b665f1',
+        woff: 'NotoSans-BoldItalic-eff19cbf',
+        ttf: 'NotoSans-BoldItalic-695e28bf',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'NotoSans-Regular-31a7a3e7',
+        woff: 'NotoSans-Regular-aa4384e7',
+        ttf: 'NotoSans-Regular-f04a504e',
+      ),
+    ),
+    (
+      style: italic,
+      weight: 400,
+      files: (
+        woff2: 'NotoSans-Italic-136bdc6a',
+        woff: 'NotoSans-Italic-7cd36c44',
+        ttf: 'NotoSans-Italic-716d03e4',
+      ),
+    ),
+  ),
+  'Noto Sans Arabic': (
+    (
+      style: normal,
+      weight: 900,
+      files: (
+        woff2: 'NotoSansArabic-ExtraBold-da8cf050',
+        woff: 'NotoSansArabic-ExtraBold-4ac084a2',
+        ttf: 'NotoSansArabic-ExtraBold-a965fbb5',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 700,
+      files: (
+        woff2: 'NotoSansArabic-Bold-237618dd',
+        woff: 'NotoSansArabic-Bold-9e0190d0',
+        ttf: 'NotoSansArabic-Bold-d93e430c',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'NotoSansArabic-Regular-15a84e58',
+        woff: 'NotoSansArabic-Regular-a2985c7a',
+        ttf: 'NotoSansArabic-Regular-471fde3d',
+      ),
+    ),
+  ),
+  'Noto Sans Hebrew': (
+    (
+      style: normal,
+      weight: 900,
+      files: (
+        woff2: 'NotoSansHebrew-ExtraBold-e04df8b4',
+        woff: 'NotoSansHebrew-ExtraBold-3303fb69',
+        ttf: 'NotoSansHebrew-ExtraBold-4cfb24e3',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 700,
+      files: (
+        woff2: 'NotoSansHebrew-Bold-ad38ec01',
+        woff: 'NotoSansHebrew-Bold-6ecb028a',
+        ttf: 'NotoSansHebrew-Bold-752057d4',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'NotoSansHebrew-Regular-d42b5a85',
+        woff: 'NotoSansHebrew-Regular-bdcbbd78',
+        ttf: 'NotoSansHebrew-Regular-41f881f3',
+      ),
+    ),
+  ),
+);
+
+@mixin bpk-font-face($family, $style, $weight, $files) {
+  $srcs: ();
+
+  @each $ext in $font-formats {
+    $file: map.get($files, $ext);
+
+    @if $file != null and $file != '' {
+      $srcs: list.append(
+        $srcs,
+        "url('#{$base-url}/#{$file}.#{$ext}') format('#{$ext}')",
+        comma
+      );
+    }
+  }
+
+  /* stylelint-disable backpack/use-typography-styles */
+  @font-face {
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+    src: #{$srcs};
+  }
+  /* stylelint-enable backpack/use-typography-styles */
 }
 
-@font-face {
-  font-family: 'Skyscanner Relative';
-  font-style: italic;
-  font-weight: 400;
-  src:
-    url('#{$base-url}/SkyscannerRelative-Italic-10532ac3.woff2') format('woff2'),
-    url('#{$base-url}/SkyscannerRelative-Italic-db5d0ac5.woff') format('woff'),
-    url('#{$base-url}/SkyscannerRelative-Italic-8eec3f3a.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: 'Skyscanner Relative';
-  font-style: normal;
-  font-weight: 500;
-  src:
-    url('#{$base-url}/SkyscannerRelative-Medium-c08dc28b.woff2') format('woff2'),
-    url('#{$base-url}/SkyscannerRelative-Medium-865e167a.woff') format('woff'),
-    url('#{$base-url}/SkyscannerRelative-Medium-d0ae478a.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: 'Skyscanner Relative';
-  font-style: italic;
-  font-weight: 500;
-  src:
-    url('#{$base-url}/SkyscannerRelative-MediumItalic-81517f37.woff2')
-      format('woff2'),
-    url('#{$base-url}/SkyscannerRelative-MediumItalic-bbdb6b0c.woff')
-      format('woff'),
-    url('#{$base-url}/SkyscannerRelative-MediumItalic-226fe64c.ttf')
-      format('ttf');
-}
-
-@font-face {
-  font-family: 'Skyscanner Relative';
-  font-style: normal;
-  font-weight: 700;
-  src:
-    url('#{$base-url}/SkyscannerRelative-Bold-8545937e.woff2') format('woff2'),
-    url('#{$base-url}/SkyscannerRelative-Bold-a099c9f7.woff') format('woff'),
-    url('#{$base-url}/SkyscannerRelative-Bold-ec4cc5a7.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: 'Skyscanner Relative';
-  font-style: italic;
-  font-weight: 700;
-  src:
-    url('#{$base-url}/SkyscannerRelative-BoldItalic-01b5d138.woff2')
-      format('woff2'),
-    url('#{$base-url}/SkyscannerRelative-BoldItalic-4d6d36e3.woff')
-      format('woff'),
-    url('#{$base-url}/SkyscannerRelative-BoldItalic-dc9284dc.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: 'Skyscanner Relative';
-  font-style: normal;
-  font-weight: 900;
-  src:
-    url('#{$base-url}/SkyscannerRelative-Black-bb3c9434.woff2') format('woff2'),
-    url('#{$base-url}/SkyscannerRelative-Black-bba2eb55.woff') format('woff'),
-    url('#{$base-url}/SkyscannerRelative-Black-314703cc.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: 'Skyscanner Relative';
-  font-style: italic;
-  font-weight: 900;
-  src:
-    url('#{$base-url}/SkyscannerRelative-BlackItalic-c2149c91.woff2')
-      format('woff2'),
-    url('#{$base-url}/SkyscannerRelative-BlackItalic-a34cd594.woff')
-      format('woff'),
-    url('#{$base-url}/SkyscannerRelative-BlackItalic-7e516ee5.ttf')
-      format('ttf');
+@each $family, $variants in $bpk-fonts {
+  @each $variant in $variants {
+    @include bpk-font-face(
+      $family,
+      map.get($variant, style),
+      map.get($variant, weight),
+      map.get($variant, files)
+    );
+  }
 }
