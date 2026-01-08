@@ -38,7 +38,7 @@ const BpkLabel = ({
   className,
   disabled = false,
   required = false,
-  valid,
+  valid = null,
   white = false,
   ...rest
 }: Props) => {
