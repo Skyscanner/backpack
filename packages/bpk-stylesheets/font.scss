@@ -425,3 +425,8 @@ $bpk-fonts: (
     );
   }
 }
+
+// Avoid synthetic bold/italic across consumers of this bundle.
+:root {
+  font-synthesis: none;
+}
