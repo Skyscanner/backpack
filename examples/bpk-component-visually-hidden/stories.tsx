@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { Title, Markdown, PRIMARY_STORY } from '@storybook/addon-docs';
-
 import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden/src/BpkVisuallyHidden';
 
 import {
@@ -32,43 +30,6 @@ import {
 export default {
   title: 'bpk-component-visually-hidden',
   component: BpkVisuallyHidden,
-  parameters: {
-    docs: {
-      page: () => (
-        <>
-          <Title />
-          <Markdown>
-            {`
-The \`BpkVisuallyHidden\` component hides content visually while keeping it accessible to screen readers. This is essential for providing context to assistive technologies without cluttering the visual interface.
-
-## Common Use Cases
-
-### Icon-Only Buttons
-Use \`BpkVisuallyHidden\` to provide descriptive text for icon-only buttons. This ensures screen reader users understand the button's purpose.
-
-### Additional Context
-Provide extra information for screen readers that would be redundant or unnecessary for sighted users.
-
-### Document Structure
-Create semantic HTML structure (like headings) that helps screen reader navigation without affecting the visual layout.
-
-## Accessibility Notes
-
-- Content wrapped in \`BpkVisuallyHidden\` is completely hidden from view using CSS
-- Screen readers will announce the hidden content normally
-- The component uses the proven "visually-hidden" pattern from industry best practices
-- Do not use this component to hide important visual information - only use it to provide additional context for screen readers
-
-## Props
-
-The component accepts an \`as\` prop to specify the HTML element type (defaults to \`span\`).
-`}
-          </Markdown>
-          <PRIMARY_STORY />
-        </>
-      ),
-    },
-  },
 };
 
 export const IconOnlyButtons = IconOnlyButtonsWithVisuallyHiddenText;

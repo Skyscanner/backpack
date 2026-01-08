@@ -39,7 +39,7 @@ const AlignedShareIcon = withButtonAlignment(ShareIcon);
 const AlignedTrashIcon = withButtonAlignment(TrashIcon);
 
 export const IconOnlyButtonsWithVisuallyHiddenText = () => (
-  <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+  <div>
     <BpkButton
       iconOnly
       onClick={action('Close clicked')}
@@ -48,7 +48,7 @@ export const IconOnlyButtonsWithVisuallyHiddenText = () => (
       <AlignedCloseIcon />
       <BpkVisuallyHidden>Close</BpkVisuallyHidden>
     </BpkButton>
-
+    &nbsp;
     <BpkButton
       iconOnly
       onClick={action('Edit clicked')}
@@ -57,7 +57,7 @@ export const IconOnlyButtonsWithVisuallyHiddenText = () => (
       <AlignedEditIcon />
       <BpkVisuallyHidden>Edit</BpkVisuallyHidden>
     </BpkButton>
-
+    &nbsp;
     <BpkButton
       iconOnly
       onClick={action('Like clicked')}
@@ -66,7 +66,7 @@ export const IconOnlyButtonsWithVisuallyHiddenText = () => (
       <AlignedHeartIcon />
       <BpkVisuallyHidden>Like</BpkVisuallyHidden>
     </BpkButton>
-
+    &nbsp;
     <BpkButton
       iconOnly
       onClick={action('Share clicked')}
@@ -75,7 +75,7 @@ export const IconOnlyButtonsWithVisuallyHiddenText = () => (
       <AlignedShareIcon />
       <BpkVisuallyHidden>Share</BpkVisuallyHidden>
     </BpkButton>
-
+    &nbsp;
     <BpkButton
       iconOnly
       onClick={action('Delete clicked')}
@@ -88,7 +88,7 @@ export const IconOnlyButtonsWithVisuallyHiddenText = () => (
 );
 
 export const LargeIconOnlyButtonsWithVisuallyHiddenText = () => (
-  <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+  <div>
     <BpkButton
       iconOnly
       onClick={action('Close clicked')}
@@ -98,7 +98,7 @@ export const LargeIconOnlyButtonsWithVisuallyHiddenText = () => (
       <AlignedCloseIcon />
       <BpkVisuallyHidden>Close</BpkVisuallyHidden>
     </BpkButton>
-
+    &nbsp;
     <BpkButton
       iconOnly
       onClick={action('Edit clicked')}
@@ -108,7 +108,7 @@ export const LargeIconOnlyButtonsWithVisuallyHiddenText = () => (
       <AlignedEditIcon />
       <BpkVisuallyHidden>Edit</BpkVisuallyHidden>
     </BpkButton>
-
+    &nbsp;
     <BpkButton
       iconOnly
       onClick={action('Like clicked')}
@@ -118,7 +118,7 @@ export const LargeIconOnlyButtonsWithVisuallyHiddenText = () => (
       <AlignedHeartIcon />
       <BpkVisuallyHidden>Like</BpkVisuallyHidden>
     </BpkButton>
-
+    &nbsp;
     <BpkButton
       iconOnly
       onClick={action('Share clicked')}
@@ -128,7 +128,7 @@ export const LargeIconOnlyButtonsWithVisuallyHiddenText = () => (
       <AlignedShareIcon />
       <BpkVisuallyHidden>Share</BpkVisuallyHidden>
     </BpkButton>
-
+    &nbsp;
     <BpkButton
       iconOnly
       onClick={action('Delete clicked')}
@@ -142,7 +142,7 @@ export const LargeIconOnlyButtonsWithVisuallyHiddenText = () => (
 );
 
 export const PrimaryIconOnlyButtonsWithVisuallyHiddenText = () => (
-  <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+  <div>
     <BpkButton
       iconOnly
       onClick={action('Close clicked')}
@@ -151,7 +151,7 @@ export const PrimaryIconOnlyButtonsWithVisuallyHiddenText = () => (
       <AlignedCloseIcon />
       <BpkVisuallyHidden>Close</BpkVisuallyHidden>
     </BpkButton>
-
+    &nbsp;
     <BpkButton
       iconOnly
       onClick={action('Edit clicked')}
@@ -160,7 +160,7 @@ export const PrimaryIconOnlyButtonsWithVisuallyHiddenText = () => (
       <AlignedEditIcon />
       <BpkVisuallyHidden>Edit</BpkVisuallyHidden>
     </BpkButton>
-
+    &nbsp;
     <BpkButton
       iconOnly
       onClick={action('Like clicked')}
@@ -173,7 +173,7 @@ export const PrimaryIconOnlyButtonsWithVisuallyHiddenText = () => (
 );
 
 export const LinkIconOnlyButtonsWithVisuallyHiddenText = () => (
-  <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+  <div>
     <BpkButton
       iconOnly
       onClick={action('Close clicked')}
@@ -182,7 +182,7 @@ export const LinkIconOnlyButtonsWithVisuallyHiddenText = () => (
       <AlignedCloseIcon />
       <BpkVisuallyHidden>Close</BpkVisuallyHidden>
     </BpkButton>
-
+    &nbsp;
     <BpkButton
       iconOnly
       onClick={action('Edit clicked')}
@@ -191,7 +191,7 @@ export const LinkIconOnlyButtonsWithVisuallyHiddenText = () => (
       <AlignedEditIcon />
       <BpkVisuallyHidden>Edit</BpkVisuallyHidden>
     </BpkButton>
-
+    &nbsp;
     <BpkButton
       iconOnly
       onClick={action('Share clicked')}
@@ -204,7 +204,7 @@ export const LinkIconOnlyButtonsWithVisuallyHiddenText = () => (
 );
 
 export const DisabledIconOnlyButtonsWithVisuallyHiddenText = () => (
-  <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+  <div>
     <BpkButton
       disabled
       iconOnly
@@ -214,7 +214,7 @@ export const DisabledIconOnlyButtonsWithVisuallyHiddenText = () => (
       <AlignedCloseIcon />
       <BpkVisuallyHidden>Close</BpkVisuallyHidden>
     </BpkButton>
-
+    &nbsp;
     <BpkButton
       disabled
       iconOnly
@@ -224,7 +224,7 @@ export const DisabledIconOnlyButtonsWithVisuallyHiddenText = () => (
       <AlignedEditIcon />
       <BpkVisuallyHidden>Edit</BpkVisuallyHidden>
     </BpkButton>
-
+    &nbsp;
     <BpkButton
       disabled
       iconOnly
