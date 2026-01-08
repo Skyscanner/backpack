@@ -32,22 +32,22 @@ export default {
   component: BpkVisuallyHidden,
 };
 
-export const IconOnlyButtons = IconOnlyButtonsWithVisuallyHiddenText;
-IconOnlyButtons.storyName = 'Icon-only buttons with visually hidden text';
+export const IconOnlyButtons = () => <IconOnlyButtonsWithVisuallyHiddenText />;
 
-export const LargeIconOnlyButtons = LargeIconOnlyButtonsWithVisuallyHiddenText;
-LargeIconOnlyButtons.storyName = 'Large icon-only buttons';
+export const LargeIconOnlyButtons = () => (
+  <LargeIconOnlyButtonsWithVisuallyHiddenText />
+);
 
-export const PrimaryIconOnlyButtons =
-  PrimaryIconOnlyButtonsWithVisuallyHiddenText;
-PrimaryIconOnlyButtons.storyName = 'Primary icon-only buttons';
+export const PrimaryIconOnlyButtons = () => (
+  <PrimaryIconOnlyButtonsWithVisuallyHiddenText />
+);
 
-export const LinkIconOnlyButtons = LinkIconOnlyButtonsWithVisuallyHiddenText;
-LinkIconOnlyButtons.storyName = 'Link icon-only buttons';
+export const LinkIconOnlyButtons = () => (
+  <LinkIconOnlyButtonsWithVisuallyHiddenText />
+);
 
-export const DisabledIconOnlyButtons =
-  DisabledIconOnlyButtonsWithVisuallyHiddenText;
-DisabledIconOnlyButtons.storyName = 'Disabled icon-only buttons';
+export const DisabledIconOnlyButtons = () => (
+  <DisabledIconOnlyButtonsWithVisuallyHiddenText />
+);
 
-export const Basic = BasicExample;
-Basic.storyName = 'Basic usage examples';
+export const Basic = () => <BasicExample />;
