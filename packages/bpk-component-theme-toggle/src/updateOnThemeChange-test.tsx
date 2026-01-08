@@ -16,25 +16,32 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 
 import { render, fireEvent } from '@testing-library/react';
 
 import updateOnThemeChange from './updateOnThemeChange';
 import { THEME_CHANGE_EVENT, getHtmlElement } from './utils';
 
-const Dummy = ({ children }) => <div>{children}</div>;
+type DummyProps = {
+  children: ReactNode;
+};
+
+const Dummy = ({ children }: DummyProps) => <div>{children}</div>;
 
 const EnhancedComponent = updateOnThemeChange(Dummy);
 
 describe('EnhancedComponent', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <EnhancedComponent>
         <p>Children</p>
       </EnhancedComponent>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    
+    expect(container.querySelector('div')).toBeInTheDocument();
+    expect(container.querySelector('p')).toBeInTheDocument();
+    expect(container.textContent).toBe('Children');
   });
 
   it('should force an update when receiving a theme change event', () => {
@@ -50,15 +57,14 @@ describe('EnhancedComponent', () => {
     );
     expect(forceUpdateSpy).not.toHaveBeenCalled();
 
-    fireEvent(
-      getHtmlElement(),
-      new CustomEvent(THEME_CHANGE_EVENT, { detail: { theme: null } }),
-    );
+    const htmlElement = getHtmlElement();
+    if (htmlElement) {
+      fireEvent(
+        htmlElement,
+        new CustomEvent(THEME_CHANGE_EVENT, { detail: { theme: null } }),
+      );
+    }
 
     expect(forceUpdateSpy).toHaveBeenCalled();
   });
 });
-
-Dummy.propTypes = {
-  children: PropTypes.node.isRequired,
-};
