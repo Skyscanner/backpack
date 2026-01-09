@@ -18,7 +18,7 @@
 
 import PropTypes from 'prop-types';
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { ArrayDataSource } from './DataSource';
@@ -408,4 +408,45 @@ describe('withInfiniteScroll', () => {
     expect(myDs.fetchItems).toHaveBeenCalledTimes(3);
     expect(onFinished).toHaveBeenCalled();
   });
+
+  it('should not show loading spinner when all data fits in initial load', async () => {
+    // Test case: data has 3 items, initially loading 5 items
+    // Since 3 < 5, all data should be loaded and no loading spinner should be shown
+    const dataSource = new ArrayDataSource(['Item 1', 'Item 2', 'Item 3']);
+    const { container } = render(
+      <InfiniteList
+        dataSource={dataSource}
+        elementsPerScroll={5}
+        initiallyLoadedElements={5}
+        renderLoadingComponent={() => <div data-testid="loading-spinner">Loading</div>}
+      />,
+    );
+
+    // Wait for all data to load - loading spinner should disappear
+    await waitFor(() => {
+      const spinner = container.querySelector('[data-testid="loading-spinner"]');
+      expect(spinner).not.toBeInTheDocument();
+    });
+  });
+
+  it('should not show loading spinner when data is completely loaded on first fetch', async () => {
+    // Test case: data is less than elementsPerScroll, so all data is loaded
+    // This should indicate the list is finished and loading spinner should NOT appear
+    const data = ['A', 'B'];
+    const { container } = render(
+      <InfiniteList
+        dataSource={new ArrayDataSource(data)}
+        elementsPerScroll={3}
+        initiallyLoadedElements={3}
+        renderLoadingComponent={() => <div data-testid="loading-spinner">Loading...</div>}
+      />,
+    );
+
+    // Wait for data to load and spinner to disappear
+    await waitFor(() => {
+      const spinner = container.querySelector('[data-testid="loading-spinner"]');
+      expect(spinner).not.toBeInTheDocument();
+    });
+  });
+
 });
