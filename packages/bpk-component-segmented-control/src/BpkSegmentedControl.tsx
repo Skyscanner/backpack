@@ -71,6 +71,47 @@ const getTabPanelProps = (
   tabIndex: 0,
 });
 
+const getContainerAriaProps = (providedId?: string, label?: string) => {
+  const props: Record<string, string> = {};
+
+  if (providedId) {
+    props.role = 'tablist';
+    props['aria-orientation'] = 'horizontal';
+  }
+
+  if (label) {
+    props['aria-label'] = label;
+  }
+
+  return props;
+};
+
+const getButtonAriaProps = (
+  providedId: string | undefined,
+  isSelected: boolean,
+  panelId: string | undefined,
+) => {
+  if (!providedId) {
+    return {};
+  }
+
+  return {
+    role: 'tab',
+    'aria-selected': isSelected,
+    'aria-controls': panelId,
+  };
+};
+
+const getTabIndex = (
+  providedId: string | undefined,
+  isSelected: boolean,
+): number | undefined => {
+  if (!providedId) {
+    return undefined;
+  }
+  return isSelected ? 0 : -1;
+};
+
 /**
  * Custom hook to manage segmented control and its panels with automatic ID generation.
  * Simplifies the API by eliminating the need to manually track IDs.
@@ -214,9 +255,7 @@ const BpkSegmentedControl = ({
   return (
     <div
       className={containerStyling}
-      role="tablist"
-      aria-orientation="horizontal"
-      {...(label ? { 'aria-label': label } : {})}
+      {...getContainerAriaProps(providedId, label)}
     >
       {buttonContents.map((content, index) => {
         const isSelected = index === selectedButton;
@@ -231,22 +270,24 @@ const BpkSegmentedControl = ({
             `bpk-segmented-control--${type}-selected-shadow`,
         );
 
-        const tabId = providedId ? getTabId(providedId, index) : undefined;
+        const buttonTabId = providedId
+          ? getTabId(providedId, index)
+          : undefined;
+        const tabIndexValue = getTabIndex(providedId, isSelected);
+
         return (
           <button
             ref={(el) => {
               buttonRefs.current[index] = el;
             }}
-            key={tabId || index}
-            id={tabId}
+            key={buttonTabId || index}
+            id={buttonTabId}
             type="button"
-            role="tab"
             onClick={() => handleButtonClick(index)}
             onKeyDown={(event) => handleKeyDown(event, index)}
             className={buttonStyling}
-            tabIndex={isSelected ? 0 : -1}
-            aria-selected={isSelected}
-            aria-controls={panelIds[index]}
+            tabIndex={tabIndexValue}
+            {...getButtonAriaProps(providedId, isSelected, panelIds[index])}
           >
             {content}
           </button>
