@@ -438,7 +438,7 @@ describe('withInfiniteScroll', () => {
         dataSource={new ArrayDataSource(data)}
         elementsPerScroll={3}
         initiallyLoadedElements={3}
-        renderLoadingComponent={() => <div data-testid="loading-spinner">Loading...</div>}
+        renderLoadingComponent={() => <div data-testid="loading-spinner">Loading</div>}
       />,
     );
 
