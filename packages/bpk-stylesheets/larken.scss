@@ -160,7 +160,7 @@ $bpk-fonts: (
       ),
     ),
   ),
-  'Noto Sans SC': (
+  'Noto Serif SC': (
     (
       style: normal,
       weight: 300,
@@ -180,7 +180,7 @@ $bpk-fonts: (
       ),
     ),
   ),
-  'Noto Sans TC': (
+  'Noto Serif TC': (
     (
       style: normal,
       weight: 300,
@@ -200,7 +200,7 @@ $bpk-fonts: (
       ),
     ),
   ),
-  'Noto Sans JP': (
+  'Noto Serif JP': (
     (
       style: normal,
       weight: 300,
@@ -220,7 +220,7 @@ $bpk-fonts: (
       ),
     ),
   ),
-  'Noto Sans KR': (
+  'Noto Serif KR': (
     (
       style: normal,
       weight: 300,
@@ -284,4 +284,23 @@ $bpk-fonts: (
 // Avoid synthetic bold/italic across consumers of this bundle.
 :root {
   font-synthesis: none;
+}
+
+// Language-specific font stacks to prefer the right script-specific faces.
+// We use a more specific selector [class*="--editorial-"] to match hashed CSS module classes
+// for editorial styles while ensuring they only override when the language matches.
+[class*='--editorial-'][lang='ja-JP'],
+[class*='--editorial-']:lang(ja-JP) {
+  font-family:
+    Larken, 'Noto Sans Arabic', 'Noto Serif Hebrew', 'Noto Serif',
+    'Noto Serif Devanagari', 'Noto Serif Thai', 'Noto Serif JP',
+    'Noto Serif SC', 'Noto Serif TC', 'Noto Serif KR', sans-serif;
+}
+
+[class*='--editorial-'][lang='zh-TW'],
+[class*='--editorial-']:lang(zh-TW) {
+  font-family:
+    Larken, 'Noto Sans Arabic', 'Noto Serif Hebrew', 'Noto Serif',
+    'Noto Serif Devanagari', 'Noto Serif Thai', 'Noto Serif TC',
+    'Noto Serif SC', 'Noto Serif JP', 'Noto Serif KR', sans-serif;
 }
