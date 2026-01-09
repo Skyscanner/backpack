@@ -70,6 +70,7 @@ export type State = {
   elementsToRender: Array<any>,
   isListFinished: boolean,
   showSeeMore: boolean,
+  isLoading: boolean,
 };
 
 type ExtendedProps = {
@@ -124,6 +125,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
         elementsToRender: [],
         isListFinished: false,
         showSeeMore: false,
+        isLoading: true,
       };
 
       const thresholds = {
@@ -216,6 +218,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
         .then((nextElements) => {
           let result = {
             isListFinished: true,
+            isLoading: false,
           };
           if (nextElements && nextElements.length > 0) {
             const nextIndex = index + elementsPerScroll;
@@ -226,6 +229,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
                 ? seeMoreAfter === index / elementsPerScroll
                 : this.state.showSeeMore,
               isListFinished: nextElements.length < elementsPerScroll,
+              isLoading: false,
             };
           }
           if (onScrollFinished && result.isListFinished) {
@@ -261,14 +265,20 @@ const withInfiniteScroll = <T: ExtendedProps>(
     };
 
     render() {
-      const { elementsToRender, isListFinished, showSeeMore } = this.state;
+      const { elementsToRender, isListFinished, isLoading, showSeeMore } = this.state;
       const { renderLoadingComponent, renderSeeMoreComponent } = this.props;
 
       const rest = omit(this.props, Object.keys(propTypes));
 
       let loadingOrButton = null;
 
-      if (!isListFinished) {
+      // Only show loading/button if:
+      // 1. We have data to show (!isLoading) AND more data is available (!isListFinished)
+      // 2. OR we're still in the initial loading state (isLoading && elementsToRender.length === 0)
+      const shouldShowLoadingOrButton =
+        !isListFinished && (elementsToRender.length > 0 || isLoading);
+
+      if (shouldShowLoadingOrButton) {
         if (showSeeMore && renderSeeMoreComponent) {
           loadingOrButton = renderSeeMoreComponent({
             onSeeMoreClick: this.handleSeeMoreClick,
