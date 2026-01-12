@@ -90,23 +90,6 @@
     }
   }
 
-  &__row {
-    &__card {
-      flex: 0 0
-        calc(
-          (
-              100% -
-                (
-                  var(--carousel-card-gap) *
-                    (var(--initially-shown-cards, 3) - 1) +
-                    (var(--spacing-offset) * 2) /
-                    var(--initially-shown-cards, 3)
-                )
-            ) /
-            var(--initially-shown-cards, 3)
-        );
-    }
-  }
 
   &__rail {
     -webkit-overflow-scrolling: touch;
@@ -114,7 +97,6 @@
     @include breakpoints.bpk-breakpoint-mobile {
       margin-inline: calc(-1 * var(--spacing-offset));
       padding-inline: var(--spacing-offset);
-      scroll-margin-inline: var(--spacing-offset);
     }
   }
 }
