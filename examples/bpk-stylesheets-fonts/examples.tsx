@@ -48,7 +48,7 @@ const LANGUAGE_SAMPLES = {
     lang: 'ja-JP',
   },
   korean: {
-    text: '한국어는 대한국의 공용어입니다. 안녕하세요 그리고 새해 복 많이 받으세요.',
+    text: '한국어는 대한민국의 공용어입니다. 안녕하세요 그리고 새해 복 많이 받으세요.',
   },
   simplifiedChinese: {
     text: '简体中文是中华人民共和国的官方语言。你好，然后新年快乐。',
