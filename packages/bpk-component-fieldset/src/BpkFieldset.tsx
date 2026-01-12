@@ -21,7 +21,6 @@ import type { ReactElement } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkFormValidation from '../../bpk-component-form-validation';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLabel from '../../bpk-component-label';
 import { cssModules } from '../../bpk-react-utils';
 

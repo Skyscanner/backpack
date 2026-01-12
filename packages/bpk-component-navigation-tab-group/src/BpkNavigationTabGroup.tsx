@@ -127,7 +127,7 @@ const BpkNavigationTabGroup = ({
       <div role="tablist" className={getClassName('bpk-navigation-tab-list')}>
         {tabs.map((tab, index) => {
           const selected = index === selectedTab;
-          const {icon,text,...tabWrapItem} = tab;
+          const {badgeText,icon,text,...tabWrapItem} = tab;
           const Icon = icon;
           return (
             <TabWrap
@@ -155,10 +155,10 @@ const BpkNavigationTabGroup = ({
                     </BpkText>
                 </div>
 
-                {tab.badgeText && (
+                {badgeText && (
                   <span className={getClassName('bpk-navigation-tab-bubble-wrapper')}>
                     <BpkBubble>
-                      {tab.badgeText}
+                      {badgeText}
                     </BpkBubble>
                   </span>)}
               </>
