@@ -287,20 +287,19 @@ $bpk-fonts: (
 }
 
 // Language-specific font stacks to prefer the right script-specific faces.
-// We use a more specific selector [class*="--editorial-"] to match hashed CSS module classes
-// for editorial styles while ensuring they only override when the language matches.
-[class*='--editorial-'][lang='ja-JP'],
-[class*='--editorial-']:lang(ja-JP) {
-  font-family:
-    Larken, 'Noto Sans Arabic', 'Noto Serif Hebrew', 'Noto Serif',
-    'Noto Serif Devanagari', 'Noto Serif Thai', 'Noto Serif JP',
-    'Noto Serif SC', 'Noto Serif TC', 'Noto Serif KR', sans-serif;
+// We use a CSS Variable to make this scalable across all components using Larken.
+[lang='ja-JP'],
+:lang(ja-JP) {
+  --bpk-larken-font-stack:
+    larken, 'Noto Serif JP', 'Noto Serif SC', 'Noto Serif TC', 'Noto Serif KR',
+    'Noto Sans Arabic', 'Noto Serif Hebrew', 'Noto Serif',
+    'Noto Serif Devanagari', 'Noto Serif Thai', sans-serif;
 }
 
-[class*='--editorial-'][lang='zh-TW'],
-[class*='--editorial-']:lang(zh-TW) {
-  font-family:
-    Larken, 'Noto Sans Arabic', 'Noto Serif Hebrew', 'Noto Serif',
-    'Noto Serif Devanagari', 'Noto Serif Thai', 'Noto Serif TC',
-    'Noto Serif SC', 'Noto Serif JP', 'Noto Serif KR', sans-serif;
+[lang='zh-TW'],
+:lang(zh-TW) {
+  --bpk-larken-font-stack:
+    larken, 'Noto Serif TC', 'Noto Serif SC', 'Noto Serif JP', 'Noto Serif KR',
+    'Noto Sans Arabic', 'Noto Serif Hebrew', 'Noto Serif',
+    'Noto Serif Devanagari', 'Noto Serif Thai', sans-serif;
 }

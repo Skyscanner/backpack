@@ -431,54 +431,30 @@ $bpk-fonts: (
   font-synthesis: none;
 }
 
-// Language-specific font stacks to prefer the right script-specific faces.
-// We use a more specific selector [lang] to ensure these override component-level defaults.
 [lang='ja-JP'],
 :lang(ja-JP) {
-  font-family:
-    'Skyscanner Relative',
-    'Noto Sans Arabic',
-    'Noto Sans Hebrew',
-    'Noto Sans',
-    'Noto Sans Devanagari',
-    'Noto Sans Thai',
-    'Noto Sans JP',
-    'Noto Sans SC',
-    'Noto Sans TC',
-    'Noto Sans KR',
-    -apple-system,
-    BlinkMacSystemFont,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
+  --bpk-base-font-stack:
+    'Skyscanner Relative', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC',
+    'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans',
+    'Noto Sans Devanagari', 'Noto Sans Thai', -apple-system, blinkmacsystemfont,
+    roboto, oxygen, ubuntu, cantarell, 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
 }
 
 [lang='zh-TW'],
 :lang(zh-TW) {
-  font-family:
-    'Skyscanner Relative',
-    'Noto Sans Arabic',
-    'Noto Sans Hebrew',
-    'Noto Sans',
-    'Noto Sans Devanagari',
-    'Noto Sans Thai',
-    'Noto Sans TC',
-    'Noto Sans SC',
-    'Noto Sans JP',
-    'Noto Sans KR',
-    -apple-system,
-    BlinkMacSystemFont,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
+  --bpk-base-font-stack:
+    'Skyscanner Relative', 'Noto Sans TC', 'Noto Sans SC', 'Noto Sans JP',
+    'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans',
+    'Noto Sans Devanagari', 'Noto Sans Thai', -apple-system, blinkmacsystemfont,
+    roboto, oxygen, ubuntu, cantarell, 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+}
+
+// Using :where([lang]) ensures that we trigger a re-evaluation of the font-stack
+// variable for any element with a lang attribute, but with ZERO specificity.
+// This means any component with its own class (like BpkBubble or Editorial text)
+// will easily override this and use its own font-family logic.
+:where([lang]) {
+  font-family: var(--bpk-base-font-stack);
 }
