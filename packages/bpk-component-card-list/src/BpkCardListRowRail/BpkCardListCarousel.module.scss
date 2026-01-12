@@ -23,16 +23,29 @@
 .bpk-card-list-row-rail {
   &__row,
   &__rail {
+    --spacing-offset: #{tokens.bpk-spacing-md()};
+    --carousel-card-gap: #{(
+        tokens.bpk-spacing-sm() + (tokens.bpk-spacing-md()) * 2
+      )};
+
     display: flex;
     overflow-x: hidden;
     box-sizing: border-box;
-    gap: tokens.bpk-spacing-sm();
-    margin-inline: -1 * tokens.bpk-spacing-md();
+    gap: var(--carousel-card-gap);
+
+    // Negative margin to ensure box-shadow of content is not cut off
+    margin-block: -(tokens.bpk-spacing-lg());
+    margin-inline: -(tokens.bpk-spacing-md());
+    padding-block: tokens.bpk-spacing-lg();
+    padding-inline: tokens.bpk-spacing-md();
     scroll-snap-stop: always;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
 
     @include breakpoints.bpk-breakpoint-mobile {
+      --spacing-offset: #{tokens.bpk-spacing-base()};
+      --carousel-card-gap: #{tokens.bpk-spacing-base()};
+
       overflow-x: scroll;
     }
 
@@ -42,51 +55,66 @@
 
     &__card {
       position: relative;
-      padding: 0 tokens.bpk-spacing-md();
       flex: 0 0
         calc(
           (
               100% -
                 (
-                  tokens.bpk-spacing-md() *
-                    (var(--initially-shown-cards, 3) - 1)
+                  var(--carousel-card-gap) *
+                    (var(--initially-shown-cards, 3) - 1) +
+                    (var(--spacing-offset) * 2) /
+                    var(--initially-shown-cards, 3)
                 )
             ) /
             var(--initially-shown-cards, 3)
         );
       overflow: visible;
       box-sizing: border-box;
+      scroll-margin-inline: var(--spacing-offset);
       scroll-snap-align: start;
 
       @include breakpoints.bpk-breakpoint-mobile {
         // On mobile, if there is more than one card in the viewport, the last card only shows partially, so subtract 0.8 when do the calculation
-        flex-basis: calc(
-          (
-              100% -
-                (
-                  tokens.bpk-spacing-md() *
-                    (var(--initially-shown-cards, 3) - 1)
-                )
-            ) /
-            max(1, (var(--initially-shown-cards, 3) - 0.8))
-        );
+        flex: 0 0
+          calc(
+            (
+                100% -
+                  (
+                    var(--carousel-card-gap) *
+                      (var(--initially-shown-cards, 3) - 1)
+                  )
+              ) /
+              max(1, (var(--initially-shown-cards, 3) - 0.8))
+          );
       }
     }
   }
 
   &__row {
     &__card {
-      flex-basis: calc(
-        (
-            100% -
-              (tokens.bpk-spacing-sm() * (var(--initially-shown-cards, 3) - 1))
-          ) /
-          var(--initially-shown-cards, 3)
-      );
+      flex: 0 0
+        calc(
+          (
+              100% -
+                (
+                  var(--carousel-card-gap) *
+                    (var(--initially-shown-cards, 3) - 1) +
+                    (var(--spacing-offset) * 2) /
+                    var(--initially-shown-cards, 3)
+                )
+            ) /
+            var(--initially-shown-cards, 3)
+        );
     }
   }
 
   &__rail {
     -webkit-overflow-scrolling: touch;
+
+    @include breakpoints.bpk-breakpoint-mobile {
+      margin-inline: calc(-1 * var(--spacing-offset));
+      padding-inline: var(--spacing-offset);
+      scroll-margin-inline: var(--spacing-offset);
+    }
   }
 }
