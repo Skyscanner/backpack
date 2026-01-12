@@ -281,11 +281,6 @@ $bpk-fonts: (
   }
 }
 
-// Avoid synthetic bold/italic across consumers of this bundle.
-:root {
-  font-synthesis: none;
-}
-
 // Language-specific font stacks to prefer the right script-specific faces.
 // We use a CSS Variable to make this scalable across all components using Larken.
 [lang='ja-JP'],
