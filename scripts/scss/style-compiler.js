@@ -63,8 +63,7 @@ async function compile(sassPath) {
   } catch (e) {
     console.error(e)
   }
-  const cleanCss = result.css.toString().replace(/:global\((.*?)\)/g, '$1');
-  const data = new Uint8Array(Buffer.from(`${licenseHeader}\n${cleanCss}`));
+  const data = new Uint8Array(Buffer.from(`${licenseHeader}\n${result.css}`));
   const { dir, name } = path.parse(sassPath);
   const newPath = path.format({ dir, name, ext: '.css' });
   return fs.writeFileSync(newPath, data);
