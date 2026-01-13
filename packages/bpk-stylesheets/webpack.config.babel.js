@@ -23,7 +23,8 @@ const WrapperPlugin = require('wrapper-webpack-plugin');
 
 const postCssPlugins = require('../../scripts/webpack/postCssPlugins');
 
-const TEXT = `Backpack - Skyscanner's Design System
+const TEXT = `
+Backpack - Skyscanner's Design System
 
 Copyright 2016 Skyscanner Ltd
 
@@ -37,12 +38,12 @@ Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-limitations under the License.`;
+limitations under the License.
+`;
 
 const licenseHeader = `/*
- * ${TEXT.replace(/\n/g, '\n * ')}
- */
-`;
+${TEXT.replace(/^/gm, ' * ')}
+ */`;
 
 module.exports = {
   mode: 'production',
