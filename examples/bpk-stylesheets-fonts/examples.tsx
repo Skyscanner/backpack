@@ -91,9 +91,8 @@ const FontTestRow = ({
   text,
   type,
 }: FontTestRowProps) => (
-  <div>
+  <div lang={lang}>
     <BpkText
-      lang={lang}
       textStyle={
         type === FONT_TYPES.LARKEN
           ? TEXT_STYLES.editorial3
