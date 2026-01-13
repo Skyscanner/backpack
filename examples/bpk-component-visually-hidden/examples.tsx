@@ -18,7 +18,6 @@
 
 import BpkButton, {
   BUTTON_TYPES,
-  SIZE_TYPES,
 } from '../../packages/bpk-component-button';
 import { withButtonAlignment } from '../../packages/bpk-component-icon';
 import CloseIcon from '../../packages/bpk-component-icon/sm/close';
