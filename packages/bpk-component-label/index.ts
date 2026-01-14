@@ -16,13 +16,8 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import BpkLabel from './src/BpkLabel';
 
-import BpkThemeToggle from './BpkThemeToggle';
+export type { Props as BpkLabelProps } from './src/BpkLabel';
 
-describe('BpkThemeToggle', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(<BpkThemeToggle />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-});
+export default BpkLabel;

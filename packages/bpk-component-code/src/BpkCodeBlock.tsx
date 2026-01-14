@@ -15,10 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -26,13 +24,19 @@ import STYLES from './BpkCodeBlock.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  children: Node,
-  alternate: boolean,
-  className: ?string,
+export type Props = {
+  children: ReactNode;
+  alternate?: boolean;
+  className?: string;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
-const BpkCodeBlock = (props: Props) => {
-  const { alternate, children, className, ...rest } = props;
+
+const BpkCodeBlock = ({
+  alternate = false,
+  children,
+  className,
+  ...rest
+}: Props) => {
   const preClassNames = getClassName(
     'bpk-code__pre',
     alternate && 'bpk-code__pre--alternate',
@@ -42,22 +46,10 @@ const BpkCodeBlock = (props: Props) => {
   const codeClassNames = getClassName('bpk-code', 'bpk-code--block');
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <pre className={preClassNames} {...rest}>
       <code className={codeClassNames}>{children}</code>
     </pre>
   );
-};
-
-BpkCodeBlock.propTypes = {
-  children: PropTypes.node.isRequired,
-  alternate: PropTypes.bool,
-  className: PropTypes.string,
-};
-
-BpkCodeBlock.defaultProps = {
-  alternate: false,
-  className: null,
 };
 
 export default BpkCodeBlock;

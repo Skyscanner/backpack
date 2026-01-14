@@ -15,10 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -27,17 +25,17 @@ import STYLES from './BpkLabel.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  children: Node,
-  className: ?string,
-  disabled: boolean,
-  valid: ?boolean,
-  required: boolean,
-  white: boolean,
-};
+  children: ReactNode;
+  className?: string;
+  disabled?: boolean;
+  valid?: boolean | null;
+  required?: boolean;
+  white?: boolean;
+} & ComponentPropsWithoutRef<'label'>;
 
 const BpkLabel = ({
   children,
-  className = null,
+  className,
   disabled = false,
   required = false,
   valid = null,
@@ -56,7 +54,6 @@ const BpkLabel = ({
   );
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <label className={classNames} {...rest}>
       {children}
       {!disabled && required && (
@@ -65,16 +62,5 @@ const BpkLabel = ({
     </label>
   );
 };
-
-BpkLabel.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  valid: PropTypes.bool,
-  required: PropTypes.bool,
-  white: PropTypes.bool,
-};
-
-
 
 export default BpkLabel;

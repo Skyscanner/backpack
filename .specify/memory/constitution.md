@@ -46,7 +46,33 @@ All code MUST follow these conventions:
 - **Package names**: kebab-case with `bpk-` prefix (e.g., `bpk-component-button`)
 - **CSS class names**: BEM style with `bpk-` prefix (e.g., `bpk-button--primary`)
 
-**Rationale**: Consistent naming enables quick navigation, automated tooling, and reduces cognitive load. This is documented in `decisions/js-filenames.md` and `decisions/component-scss-filenames.md`.
+**License Headers (NON-NEGOTIABLE)**:
+
+ALL source files (TypeScript, JavaScript, Sass, bash scripts) MUST include the Apache 2.0 license header at the top:
+
+```typescript
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+```
+
+For bash scripts, use `#` comment syntax immediately after the shebang line.
+
+**Rationale**: Consistent naming enables quick navigation, automated tooling, and reduces cognitive load. License headers ensure legal compliance and proper attribution. This is documented in `decisions/js-filenames.md` and `decisions/component-scss-filenames.md`.
 
 ### III. Modern Sass with Granular Imports (NON-NEGOTIABLE)
 

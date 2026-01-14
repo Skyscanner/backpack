@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { render } from '@testing-library/react';
 
@@ -23,23 +22,33 @@ import BpkCode from './BpkCode';
 
 describe('BpkCode', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkCode>npm install react --save-dev</BpkCode>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    const codeElement = container.querySelector('code');
+    
+    expect(codeElement).toBeTruthy();
+    expect(codeElement?.textContent).toBe('npm install react --save-dev');
+    expect(codeElement?.className).toContain('bpk-code');
   });
 
   it('should render correctly with "alternate"', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkCode alternate>npm install react --save-dev</BpkCode>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    const codeElement = container.querySelector('code');
+    
+    expect(codeElement?.className).toContain('bpk-code');
+    expect(codeElement?.className).toContain('bpk-code--alternate');
   });
 
   it('should render correctly with custom "className"', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkCode className="my-class">npm install react --save-dev</BpkCode>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    const codeElement = container.querySelector('code');
+    
+    expect(codeElement?.className).toContain('bpk-code');
+    expect(codeElement?.className).toContain('my-class');
   });
 });
