@@ -31,7 +31,7 @@ export default () => (
 When using the segmented control to switch between content panels, use the `useSegmentedControlPanels` hook for automatic ID generation and proper ARIA relationships.
 
 ```tsx
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import BpkSegmentedControl, {
   useSegmentedControlPanels,
   SEGMENT_TYPES,
@@ -39,7 +39,9 @@ import BpkSegmentedControl, {
 
 const TabbedContent = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const buttonContents = ['Flights', 'Hotels', 'Car hire'];
+
+  // For optimal performance, memoize buttonContents to prevent unnecessary recalculations
+  const buttonContents = useMemo(() => ['Flights', 'Hotels', 'Car hire'], []);
 
   const { controlProps, getPanelProps } = useSegmentedControlPanels(
     buttonContents,
@@ -87,6 +89,28 @@ The component supports two activation modes:
 
 - **Automatic (default)**: Tabs are activated automatically when focused via keyboard navigation. This provides a faster experience but may cause frequent content changes.
 - **Manual**: Tabs must be explicitly activated using Enter or Space keys after focusing. This is recommended when tab panel content is computationally expensive or when rapid content changes could be disorienting.
+
+## Performance
+
+### Memoizing Button Contents
+
+For optimal performance when using `useSegmentedControlPanels` or frequently re-rendering the component, memoize the `buttonContents` array to prevent unnecessary recalculations:
+
+```tsx
+// ✅ Good - memoized array
+const buttonContents = useMemo(() => ['Option 1', 'Option 2'], []);
+
+// ✅ Good - defined outside component
+const BUTTON_CONTENTS = ['Option 1', 'Option 2'];
+
+// ❌ Avoid - creates new array on every render
+const buttonContents = ['Option 1', 'Option 2'];
+```
+
+This is especially important when:
+- Using the `useSegmentedControlPanels` hook
+- The parent component re-renders frequently
+- The button contents are complex React elements
 
 ## Props
 

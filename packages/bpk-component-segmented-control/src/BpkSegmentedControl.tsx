@@ -116,6 +116,9 @@ const getTabIndex = (
  * Custom hook to manage segmented control and its panels with automatic ID generation.
  * Simplifies the API by eliminating the need to manually track IDs.
  *
+ * Note: For optimal performance, memoize the buttonContents array in the parent component
+ * to prevent unnecessary recalculations (e.g., using useMemo or defining outside render).
+ *
  * @param {Array<string | ReactNode>} buttonContents - Array of button content (strings or ReactNodes)
  * @param {number} selectedIndex - Currently selected tab index
  * @returns {Object} Object with controlProps (for BpkSegmentedControl) and getPanelProps function
@@ -177,8 +180,12 @@ const BpkSegmentedControl = ({
   type = SEGMENT_TYPES.CanvasDefault,
 }: Props) => {
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
-  const panelIds = Array.from({ length: buttonContents.length }, (_, i) =>
-    providedId ? getPanelId(providedId, i) : undefined,
+  const panelIds = useMemo(
+    () =>
+      Array.from({ length: buttonContents.length }, (_, i) =>
+        providedId ? getPanelId(providedId, i) : undefined,
+      ),
+    [providedId, buttonContents.length],
   );
 
   // TODO: Consider removing internal state - component is controlled via selectedIndex prop.
@@ -197,30 +204,21 @@ const BpkSegmentedControl = ({
     currentIndex: number,
   ) => {
     const lastIndex = buttonContents.length - 1;
+    const rtl = isRTL();
     let newIndex = currentIndex;
 
-    const nextItem = () => {
-      newIndex = currentIndex === lastIndex ? 0 : currentIndex + 1;
-    };
+    const getNextIndex = () =>
+      currentIndex === lastIndex ? 0 : currentIndex + 1;
 
-    const previousItem = () => {
-      newIndex = currentIndex === 0 ? lastIndex : currentIndex - 1;
-    };
+    const getPrevIndex = () =>
+      currentIndex === 0 ? lastIndex : currentIndex - 1;
 
     switch (event.key) {
       case 'ArrowRight':
-        if (isRTL()) {
-          previousItem();
-        } else {
-          nextItem();
-        }
+        newIndex = rtl ? getPrevIndex() : getNextIndex();
         break;
       case 'ArrowLeft':
-        if (isRTL()) {
-          nextItem();
-        } else {
-          previousItem();
-        }
+        newIndex = rtl ? getNextIndex() : getPrevIndex();
         break;
       case 'Home':
         newIndex = 0;
@@ -230,6 +228,7 @@ const BpkSegmentedControl = ({
         break;
       case ' ':
       case 'Enter':
+        event.preventDefault();
         if (activationMode === 'manual') {
           setSelectedButton(currentIndex);
           onItemClick(currentIndex);
@@ -280,7 +279,7 @@ const BpkSegmentedControl = ({
             ref={(el) => {
               buttonRefs.current[index] = el;
             }}
-            key={buttonTabId || index}
+            key={buttonTabId || `${index}`}
             id={buttonTabId}
             type="button"
             onClick={() => handleButtonClick(index)}
