@@ -30,7 +30,7 @@
   justify-content: center;
   border-radius: tokens.$bpk-border-radius-xs;
   background-color: tokens.$bpk-status-danger-spot-day;
-  font-family: tokens.$bpk-font-family-larken;
+  font-family: var(--bpk-larken-font-stack, tokens.$bpk-font-family-larken);
   text-align: center;
   white-space: nowrap;
 
