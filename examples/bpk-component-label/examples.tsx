@@ -15,9 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import BpkLabel from '../../packages/bpk-component-label';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
 const DefaultExample = () => <BpkLabel htmlFor="origin">Origin</BpkLabel>;

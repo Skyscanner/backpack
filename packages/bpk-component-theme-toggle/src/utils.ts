@@ -15,9 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+const THEME_CHANGE_EVENT = 'bpkchangetheme';
 
-import BpkCode from './src/BpkCode';
-import BpkCodeBlock from './src/BpkCodeBlock';
+const getHtmlElement = (): HTMLElement | null =>
+  typeof document !== 'undefined' ? document.querySelector('html') : null;
 
-export { BpkCode, BpkCodeBlock };
+export { THEME_CHANGE_EVENT, getHtmlElement };

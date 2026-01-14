@@ -506,7 +506,7 @@
 ///   }
 
 @mixin bpk-editorial-1 {
-  font-family: tokens.$bpk-font-family-larken;
+  font-family: var(--bpk-larken-font-stack, tokens.$bpk-font-family-larken);
 
   @include _bpk-text-factory(
     tokens.$bpk-font-size-xxxxl,
@@ -523,7 +523,7 @@
 ///   }
 
 @mixin bpk-editorial-2 {
-  font-family: tokens.$bpk-font-family-larken;
+  font-family: var(--bpk-larken-font-stack, tokens.$bpk-font-family-larken);
 
   @include _bpk-text-factory(
     tokens.$bpk-font-size-xxl,
@@ -540,7 +540,7 @@
 ///   }
 
 @mixin bpk-editorial-3 {
-  font-family: tokens.$bpk-font-family-larken;
+  font-family: var(--bpk-larken-font-stack, tokens.$bpk-font-family-larken);
 
   @include _bpk-text-factory(
     tokens.$bpk-font-size-lg,

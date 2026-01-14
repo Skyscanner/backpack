@@ -16,32 +16,35 @@
  * limitations under the License.
  */
 
-import BpkLabel from '../../packages/bpk-component-label/src/BpkLabel';
+import BpkCode from '../../packages/bpk-component-code/src/BpkCode';
+import BpkCodeBlock from '../../packages/bpk-component-code/src/BpkCodeBlock';
 
 import {
-  DefaultExample,
-  RequiredExample,
-  InvalidExample,
-  DisabledExample,
-  InvalidRequiredExample,
-  WhiteExample,
+  InlineExample,
+  InlineAlternateExample,
+  BlockExample,
+  BlockAlternateExample,
   MixedExample,
 } from './examples';
 
 export default {
-  title: 'bpk-component-label',
-  component: BpkLabel,
+  title: 'bpk-component-code',
+  component: BpkCode,
+  subcomponents: {
+    BpkCodeBlock
+  },
 };
 
-export const Example = DefaultExample;
-export const Required = RequiredExample;
-export const Invalid = InvalidExample;
-export const Disabled = DisabledExample;
-export const InvalidRequired = InvalidRequiredExample;
-export const White = WhiteExample;
+export const Inline = InlineExample;
+export const InlineAlternate = InlineAlternateExample;
+
+export const Block = BlockExample;
+export const BlockAlternate = BlockAlternateExample;
 
 export const VisualTest = MixedExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true
+  },
 };
