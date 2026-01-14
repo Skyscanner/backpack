@@ -2,6 +2,7 @@
 
 **Purpose**: Validate specification completeness and quality before proceeding to planning
 **Created**: 2026-01-14
+**Updated**: 2026-01-14 (File extension correction)
 **Feature**: [spec.md](../spec.md)
 
 ## Content Quality
@@ -69,4 +70,9 @@ The specification is comprehensive, well-structured, and ready for planning. Key
 
 **Ready to Proceed**: Yes - specification is complete and ready for `/speckit.plan` phase
 
-**No Action Required**: All checklist items pass. No spec updates needed.
+**Update 2026-01-14**: Added explicit file extension requirements to fix issue where all files were incorrectly given `.tsx` extension. Logic files without JSX (like `index.ts`) must use `.ts`, only files with JSX should use `.tsx`. Added:
+- User Story 6 (P1) - File Extension Correctness
+- MIG-012 requirement for correct file extensions
+- Clear file extension rules in Implementation Notes
+
+**No Action Required**: All checklist items pass. Spec has been updated with file extension clarification.

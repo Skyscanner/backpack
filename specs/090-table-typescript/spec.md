@@ -2,8 +2,11 @@
 
 **Package Branch**: `090-table-typescript`
 **Created**: 2026-01-14
+**Updated**: 2026-01-14 (File extension correction)
 **Status**: Draft
 **Input**: User description: "help me to migrate bpk-component-table and examples/bpk-component-table to fully support Typescript，I have following Acceptance Criteria: - The component's public API must remain completely unchanged, with all props, exports, default values, and behavior identical to the original Flow implementation. - Exported TypeScript types must match the original Flow type semantics, keeping optional props optional and required props required. - All existing tests must pass without modifications, snapshots must remain identical, and accessibility tests must continue passing. - Default values, event handling, lifecycle methods, and ref forwarding must behave exactly as before migration. - The component must build successfully without TypeScript errors or warnings, and bundle size should not significantly change"
+
+**CRITICAL UPDATE**: Fix incorrect file extensions - logic files should be `.ts` (not `.tsx`), only files with JSX should be `.tsx`
 
 ## Clarifications
 
@@ -11,7 +14,7 @@
 
 - Q: Based on the existing TypeScript components (BpkButton, BpkCalendar) in the repository, how should TypeScript types be organized? → A: Define types inline within each component file (like BpkCalendar does)
 - Q: How should rest props (`...rest`) be typed in TypeScript to match the Flow inexact object pattern? → A: Use `[rest: string]: any; // Inexact rest. See decisions/inexact-rest.md` (matches BpkButton pattern). If Storybook's react-docgen fails, fallback to intersection with React HTML attributes only
-- Q: Should test files use `.ts` or `.tsx` extension after migration? → A: Use `.tsx` extension for all test files (matches BpkButton pattern: `BpkButton-test.tsx`, `accessibility-test.tsx`)
+- Q: Should test files use `.ts` or `.tsx` extension after migration? → A: Use `.tsx` extension for all test files (matches BpkButton pattern: `BpkButton-test.tsx`, `accessibility-test.tsx`). Logic files without JSX should use `.ts` extension
 - Q: How should TypeScript types be exported for consumer use? → A: Export types alongside component exports in each file (e.g., `export type BpkTableProps = {...}; export const BpkTable = ...`)
 
 ## Constitution Check
@@ -114,6 +117,23 @@ The Storybook examples in `examples/bpk-component-table/` are migrated to TypeSc
 
 ---
 
+### User Story 6 - File Extension Correctness (Priority: P1)
+
+All TypeScript file extensions must follow the correct pattern: component files with JSX use `.tsx`, pure logic files without JSX use `.ts`, and test files use `.tsx`. This ensures TypeScript compiler processes files correctly and follows industry best practices.
+
+**Why this priority**: Using incorrect file extensions (e.g., `.tsx` for non-JSX files) can cause TypeScript compiler confusion, increases bundle size unnecessarily (JSX transform overhead), and violates TypeScript community conventions. The distinction between `.ts` and `.tsx` is significant for the compiler.
+
+**Independent Test**: Can be tested by verifying file extensions match their content (JSX presence), and by confirming TypeScript compiles without warnings about incorrect file extensions.
+
+**Acceptance Scenarios**:
+
+1. **Given** a file contains JSX syntax (e.g., `<BpkTable>`), **When** checking the file extension, **Then** it uses `.tsx` extension
+2. **Given** a file contains only imports/exports with no JSX (e.g., `index.ts`), **When** checking the file extension, **Then** it uses `.ts` extension
+3. **Given** all test files (which render components in tests), **When** checking file extensions, **Then** they all use `.tsx` extension
+4. **Given** component source files with React elements, **When** checking file extensions, **Then** they all use `.tsx` extension
+
+---
+
 ### Edge Cases
 
 - What happens when a consumer passes invalid prop types (e.g., number instead of string)?
@@ -132,8 +152,8 @@ The Storybook examples in `examples/bpk-component-table/` are migrated to TypeSc
 ### Functional Requirements
 
 - **FR-001**: All six component exports (BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableCell, BpkTableHeadCell) MUST be migrated from Flow to TypeScript
-- **FR-002**: All component source files MUST use `.tsx` extension (currently `.js` with Flow)
-- **FR-003**: All test files MUST be migrated to TypeScript (`.ts` or `.tsx` extensions)
+- **FR-002**: All component source files with JSX MUST use `.tsx` extension; files without JSX (pure logic, types, utilities) MUST use `.ts` extension (currently `.js` with Flow)
+- **FR-003**: All test files MUST be migrated to TypeScript with `.tsx` extension (test files typically render components, so they contain JSX)
 - **FR-004**: Component public API MUST remain identical (same props, same exports, same default values)
 - **FR-005**: Component behavior MUST remain identical (same rendering, same event handling, same HTML structure)
 - **FR-006**: Package entry point (`index.js`) MUST be migrated to TypeScript (`index.ts`)
@@ -218,13 +238,14 @@ type BpkTableHeadCellProps = {
 - **MIG-002**: Flow-specific comments MUST be removed or converted (e.g., `// $FlowFixMe`)
 - **MIG-003**: Flow type imports MUST be converted to TypeScript types (e.g., `type { Node } from 'react'` → `React.ReactNode`)
 - **MIG-004**: PropTypes MUST be retained for runtime validation (per Backpack constitution principle V)
-- **MIG-005**: Component files MUST be renamed from `.js` to `.tsx`
-- **MIG-006**: Test files MUST be migrated to TypeScript (`.tsx` extensions for unit tests, accessibility tests)
+- **MIG-005**: Component files with JSX MUST be renamed from `.js` to `.tsx`; pure logic/utility files without JSX MUST use `.ts` extension
+- **MIG-006**: Test files MUST be migrated to TypeScript with `.tsx` extension (test files render components, so they contain JSX)
 - **MIG-007**: Storybook files (`examples.js`, `stories.js`) MUST be migrated to TypeScript
 - **MIG-008**: Package entry point MUST be migrated to TypeScript (`index.ts`)
 - **MIG-009**: All TypeScript types MUST be exported for consumer use alongside component exports in each file
 - **MIG-010**: TypeScript types MUST be defined inline within each component file (not in separate common-types files)
 - **MIG-011**: Type exports MUST use named exports (e.g., `export type BpkTableProps`) to allow consumers to import types directly
+- **MIG-012**: File extensions MUST be correct: `.tsx` for files with JSX, `.ts` for pure logic files without JSX (e.g., `index.ts` should NOT be `index.tsx` if it only contains imports/exports)
 
 ## Success Criteria *(mandatory)*
 
@@ -383,33 +404,38 @@ import {
 ```
 packages/bpk-component-table/
 ├── README.md                              # Updated with TypeScript note
-├── index.ts                               # Migrated from index.js
+├── index.ts                               # Migrated from index.js (.ts because no JSX)
 ├── src/
-│   ├── BpkTable.tsx                       # Migrated from .js
+│   ├── BpkTable.tsx                       # Migrated from .js (.tsx because contains JSX)
 │   ├── BpkTable.module.scss               # Unchanged
-│   ├── BpkTable-test.tsx                  # Migrated from .js
-│   ├── BpkTableHead.tsx                   # Migrated from .js
+│   ├── BpkTable-test.tsx                  # Migrated from .js (.tsx because tests render JSX)
+│   ├── BpkTableHead.tsx                   # Migrated from .js (.tsx because contains JSX)
 │   ├── BpkTableHead.module.scss           # Unchanged
-│   ├── BpkTableHead-test.tsx              # Migrated from .js
-│   ├── BpkTableBody.tsx                   # Migrated from .js
+│   ├── BpkTableHead-test.tsx              # Migrated from .js (.tsx because tests render JSX)
+│   ├── BpkTableBody.tsx                   # Migrated from .js (.tsx because contains JSX)
 │   ├── BpkTableBody.module.scss           # Unchanged
-│   ├── BpkTableBody-test.tsx              # Migrated from .js
-│   ├── BpkTableRow.tsx                    # Migrated from .js
+│   ├── BpkTableBody-test.tsx              # Migrated from .js (.tsx because tests render JSX)
+│   ├── BpkTableRow.tsx                    # Migrated from .js (.tsx because contains JSX)
 │   ├── BpkTableRow.module.scss            # Unchanged
-│   ├── BpkTableRow-test.tsx               # Migrated from .js
-│   ├── BpkTableCell.tsx                   # Migrated from .js
+│   ├── BpkTableRow-test.tsx               # Migrated from .js (.tsx because tests render JSX)
+│   ├── BpkTableCell.tsx                   # Migrated from .js (.tsx because contains JSX)
 │   ├── BpkTableCell.module.scss           # Unchanged
-│   ├── BpkTableCell-test.tsx              # Migrated from .js
-│   ├── BpkTableHeadCell.tsx               # Migrated from .js
+│   ├── BpkTableCell-test.tsx              # Migrated from .js (.tsx because tests render JSX)
+│   ├── BpkTableHeadCell.tsx               # Migrated from .js (.tsx because contains JSX)
 │   ├── BpkTableHeadCell.module.scss       # Unchanged
-│   ├── BpkTableHeadCell-test.tsx          # Migrated from .js
-│   ├── accessibility-test.tsx             # Migrated from .js
+│   ├── BpkTableHeadCell-test.tsx          # Migrated from .js (.tsx because tests render JSX)
+│   ├── accessibility-test.tsx             # Migrated from .js (.tsx because tests render JSX)
 │   └── __snapshots__/                     # Unchanged snapshots
 
 examples/bpk-component-table/
-├── examples.tsx                           # Migrated from examples.js
-└── stories.tsx                            # Migrated from stories.js
+├── examples.tsx                           # Migrated from examples.js (.tsx because renders JSX)
+└── stories.tsx                            # Migrated from stories.js (.tsx because renders JSX)
 ```
+
+**File Extension Rules**:
+- `.tsx` - For files that contain JSX/React components (component files, test files, examples, stories)
+- `.ts` - For pure logic files with no JSX (index exports, utility functions, type definitions)
+- The key distinction: If the file uses `<JSXElement>` syntax, it must be `.tsx`; otherwise use `.ts`
 
 **Key Implementation Principles**:
 

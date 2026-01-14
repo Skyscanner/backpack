@@ -299,9 +299,64 @@ From spec:
 
 ---
 
+---
+
+## UPDATE 2026-01-14: File Extension Correction Analysis
+
+### Issue Identified
+
+The original research stated "Use `.tsx` extension for ALL test files" but this guidance was incomplete. TypeScript has specific rules for file extensions:
+
+- **`.tsx`** - Files containing JSX syntax
+- **`.ts`** - Files containing NO JSX (pure TypeScript)
+
+### Current File Analysis
+
+| File | Contains JSX? | Current Extension | Correct Extension | Action Needed |
+|------|---------------|-------------------|-------------------|---------------|
+| `index.ts` | No (imports/exports only) | `.ts` | `.ts` | ✅ Already Correct |
+| `src/BpkTable.tsx` | Yes | `.tsx` | `.tsx` | ✅ Already Correct |
+| `src/BpkTableHead.tsx` | Yes | `.tsx` | `.tsx` | ✅ Already Correct |
+| `src/BpkTableBody.tsx` | Yes | `.tsx` | `.tsx` | ✅ Already Correct |
+| `src/BpkTableRow.tsx` | Yes | `.tsx` | `.tsx` | ✅ Already Correct |
+| `src/BpkTableCell.tsx` | Yes | `.tsx` | `.tsx` | ✅ Already Correct |
+| `src/BpkTableHeadCell.tsx` | Yes | `.tsx` | `.tsx` | ✅ Already Correct |
+| `src/*-test.tsx` | Yes (renders components) | `.tsx` | `.tsx` | ✅ Already Correct |
+| `src/accessibility-test.tsx` | Yes (renders components) | `.tsx` | `.tsx` | ✅ Already Correct |
+| `examples/*.tsx` | Yes (renders JSX) | `.tsx` | `.tsx` | ✅ Already Correct |
+
+### Finding
+
+**ALL FILES ARE ALREADY CORRECTLY NAMED.** No file extension corrections needed.
+
+The `index.ts` file is correctly `.ts` (contains no JSX), and all other files containing JSX are correctly `.tsx`.
+
+### Corrected Decision #3
+
+**Original Decision**: "Use `.tsx` extension for ALL test files"
+
+**Corrected Decision**: "Use `.tsx` extension for files containing JSX; use `.ts` for files without JSX"
+
+**Rationale**:
+- TypeScript compiler distinguishes between `.ts` and `.tsx`
+- `.tsx` enables JSX transform; `.ts` does not
+- Using `.tsx` for non-JSX files adds unnecessary build overhead
+- Following TypeScript best practices
+
+**Implementation in bpk-component-table**:
+- ✅ `index.ts` - Correctly uses `.ts` (no JSX)
+- ✅ All component and test files - Correctly use `.tsx` (contain JSX)
+
+### Verification Result
+
+The migration has been correctly implemented with proper file extensions. No changes needed.
+
+---
+
 ## References
 
 - **Backpack Constitution**: Principle V (TypeScript Migration & Type Safety)
 - **Architecture Decisions**: `decisions/inexact-rest.md`
 - **Similar Components**: `packages/bpk-component-button/`, `packages/bpk-component-calendar/`
 - **Spec Clarifications**: Session 2026-01-14 (4 questions answered)
+- **Spec Update**: 2026-01-14 (File extension correction - User Story 6, MIG-012)
