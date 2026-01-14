@@ -55,6 +55,10 @@
 
     &__card {
       position: relative;
+
+      // For the card widths we need to account for in the flex basis:
+      // - The gaps between cards (--carousel-card-gap) per gap (--initially-shown-cards - 1)
+      // - the negative margin/padding on the rail (--spacing-offset) doubled for each side per card
       flex: 0 0
         calc(
           (
