@@ -16,20 +16,17 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import PropTypes from 'prop-types';
 
-import BpkTable from './src/BpkTable';
-import BpkTableBody from './src/BpkTableBody';
-import BpkTableCell from './src/BpkTableCell';
-import BpkTableHead from './src/BpkTableHead';
-import BpkTableHeadCell from './src/BpkTableHeadCell';
-import BpkTableRow from './src/BpkTableRow';
-
-export {
-  BpkTable,
-  BpkTableHead,
-  BpkTableBody,
-  BpkTableRow,
-  BpkTableCell,
-  BpkTableHeadCell,
+export type BpkTableRowProps = {
+  children: React.ReactNode;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
+
+const BpkTableRow = (props: BpkTableRowProps) => <tr {...props} />;
+
+BpkTableRow.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default BpkTableRow;

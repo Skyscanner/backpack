@@ -46,6 +46,23 @@ export default () => (
 );
 ```
 
+## TypeScript
+
+This component is written in TypeScript and provides its own type definitions. TypeScript users benefit from autocomplete and type checking:
+
+```typescript
+import {
+  BpkTable,
+  BpkTableHead,
+  BpkTableBody,
+  BpkTableRow,
+  BpkTableCell,
+  BpkTableHeadCell,
+  type BpkTableProps,
+  type BpkTableCellProps,
+} from '@skyscanner/backpack-web/bpk-component-table';
+```
+
 ## Props
 
 Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/table/web-0i0MzMkj#section-props-3d).

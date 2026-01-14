@@ -16,17 +16,35 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import PropTypes from 'prop-types';
-import type { Node } from 'react';
 
-type Props = { children: Node };
+import { cssModules } from '../../bpk-react-utils';
 
-const BpkTableBody = (props: Props) => <tbody {...props} />;
+import STYLES from './BpkTable.module.scss';
 
-BpkTableBody.propTypes = {
-  children: PropTypes.node.isRequired,
+const getClassName = cssModules(STYLES);
+
+export type BpkTableProps = {
+  children: React.ReactNode;
+  className?: string | null;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
-export default BpkTableBody;
+const BpkTable = ({children, className = null, ...rest}: BpkTableProps) => {
+
+  const classNames = getClassName('bpk-table', className);
+
+  return (
+    <table className={classNames} {...rest}>
+      {children}
+    </table>
+  );
+};
+
+BpkTable.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+};
+
+
+export default BpkTable;
