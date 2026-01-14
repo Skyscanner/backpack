@@ -112,6 +112,12 @@ const getTabIndex = (
   return isSelected ? 0 : -1;
 };
 
+const getNextIndex = (current: number, max: number) =>
+  current === max ? 0 : current + 1;
+
+const getPrevIndex = (current: number, max: number) =>
+  current === 0 ? max : current - 1;
+
 /**
  * Custom hook to manage segmented control and its panels with automatic ID generation.
  * Simplifies the API by eliminating the need to manually track IDs.
@@ -207,18 +213,16 @@ const BpkSegmentedControl = ({
     const rtl = isRTL();
     let newIndex = currentIndex;
 
-    const getNextIndex = () =>
-      currentIndex === lastIndex ? 0 : currentIndex + 1;
-
-    const getPrevIndex = () =>
-      currentIndex === 0 ? lastIndex : currentIndex - 1;
-
     switch (event.key) {
       case 'ArrowRight':
-        newIndex = rtl ? getPrevIndex() : getNextIndex();
+        newIndex = rtl
+          ? getPrevIndex(currentIndex, lastIndex)
+          : getNextIndex(currentIndex, lastIndex);
         break;
       case 'ArrowLeft':
-        newIndex = rtl ? getNextIndex() : getPrevIndex();
+        newIndex = rtl
+          ? getNextIndex(currentIndex, lastIndex)
+          : getPrevIndex(currentIndex, lastIndex);
         break;
       case 'Home':
         newIndex = 0;
