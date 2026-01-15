@@ -86,6 +86,8 @@ jobs:
       pull-requests: write
     needs: [Create-NPM-Cache, Create-Build-Cache]
     uses: ./.github/workflows/_build.yml
+    secrets:
+      GH_APP_PRIVATE_KEY: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
 
   StorybookDeploy:
