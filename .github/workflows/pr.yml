@@ -154,7 +154,7 @@ jobs:
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            body: `Visit https://backpack.github.io/storybook-prs/${PR_NUMBER} to see this build running in a browser.`
+            body: `Visit https://backpack.github.io/storybook-prs/${ process.env.PR_NUMBER } to see this build running in a browser.`
           })
       env:
         PR_NUMBER: ${{ github.event.pull_request.number }}
