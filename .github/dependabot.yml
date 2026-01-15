@@ -28,6 +28,8 @@ updates:
         - "@testing-library*"
         - "testing-library*"
         - "jest*"
+  cooldown:
+    default-days: 7
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
@@ -39,3 +41,5 @@ updates:
       patterns:
         - "actions/download-artifact"
         - "actions/upload-artifact"
+  cooldown:
+    default-days: 7
