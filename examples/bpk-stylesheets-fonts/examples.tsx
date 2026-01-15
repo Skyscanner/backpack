@@ -45,9 +45,18 @@ const LANGUAGE_SAMPLES = {
   },
   japanese: {
     text: '日本語は日本の公用語です。こんにちは、そして明けましておめでとうございます。',
+    lang: 'ja-JP',
   },
   korean: {
     text: '한국어는 대한민국의 공용어입니다. 안녕하세요 그리고 새해 복 많이 받으세요.',
+  },
+  simplifiedChinese: {
+    text: '简体中文是中华人民共和国的官方语言。你好，然后新年快乐。',
+    lang: 'zh-CN',
+  },
+  traditionalChinese: {
+    text: '繁體中文是中華民國的官方語言。你好，然後新年快樂。',
+    lang: 'zh-TW',
   },
 };
 
@@ -70,6 +79,7 @@ const LARKEN_WEIGHTS = [
 interface FontTestRowProps {
   text: string;
   fontWeight: number;
+  lang?: string;
   fontStyle: FontStyle;
   type: FontType;
 }
@@ -77,12 +87,17 @@ interface FontTestRowProps {
 const FontTestRow = ({
   fontStyle,
   fontWeight,
+  lang,
   text,
   type,
 }: FontTestRowProps) => (
-  <div>
+  <div lang={lang}>
     <BpkText
-      textStyle={type === FONT_TYPES.LARKEN ? TEXT_STYLES.editorial3 : TEXT_STYLES.bodyDefault}
+      textStyle={
+        type === FONT_TYPES.LARKEN
+          ? TEXT_STYLES.editorial3
+          : TEXT_STYLES.bodyDefault
+      }
       style={{
         fontWeight,
         fontStyle,
@@ -100,12 +115,13 @@ const SkyscannerRelativeExample = () => (
         <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
           Weight: {config.label}
         </BpkText>
-        {Object.entries(LANGUAGE_SAMPLES).map(([key, lang]) => (
+        {Object.entries(LANGUAGE_SAMPLES).map(([key, langSample]) => (
           <FontTestRow
             key={`skyscanner-${config.weight}-${config.style}-${key}`}
-            text={lang.text}
+            text={langSample.text}
             fontWeight={config.weight}
             fontStyle={config.style}
+            lang={(langSample as any).lang}
             type={FONT_TYPES.SKYSCANNER}
           />
         ))}
@@ -121,12 +137,13 @@ const LarkenExample = () => (
         <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
           Weight: {config.label}
         </BpkText>
-        {Object.entries(LANGUAGE_SAMPLES).map(([key, lang]) => (
+        {Object.entries(LANGUAGE_SAMPLES).map(([key, langSample]) => (
           <FontTestRow
             key={`larken-${config.weight}-${config.style}-${key}`}
-            text={lang.text}
+            text={langSample.text}
             fontWeight={config.weight}
             fontStyle={config.style}
+            lang={(langSample as any).lang}
             type={FONT_TYPES.LARKEN}
           />
         ))}
@@ -142,9 +159,4 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  SkyscannerRelativeExample,
-  LarkenExample,
-  MixedExample,
-};
-
+export { SkyscannerRelativeExample, LarkenExample, MixedExample };
