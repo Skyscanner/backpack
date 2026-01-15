@@ -12,6 +12,8 @@ env:
   CACHE_NAME: node-modules-cache
   BUILD_CACHE_NAME: build-cache
 
+permissions: {}
+
 jobs:
   Create-NPM-Cache:
     runs-on: ubuntu-latest
@@ -80,7 +82,6 @@ jobs:
       pull-requests: write
     needs: [Create-NPM-Cache, Create-Build-Cache]
     uses: ./.github/workflows/_build.yml
-    secrets: inherit
 
   ReleaseWeb:
     name: Release @skyscanner/backpack-web to NPM

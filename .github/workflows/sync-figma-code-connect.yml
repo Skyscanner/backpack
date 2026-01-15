@@ -4,6 +4,8 @@ on:
       - packages/**/*.figma.tsx
     branches: [main]
 
+permissions: {}
+
 jobs:
   code-connect:
     name: Code Connect
