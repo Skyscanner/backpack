@@ -20,17 +20,17 @@ jobs:
   Create-NPM-Cache:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           persist-credentials: false
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
 
       - name: Upload to Cache
-        uses: actions/cache@v5.0.1
+        uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
         id: npm-cache
         with:
           path: |
@@ -46,17 +46,17 @@ jobs:
     runs-on: ubuntu-latest
     needs: [Create-NPM-Cache]
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           persist-credentials: false
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
 
       - name: Restore NPM Cache
-        uses: actions/cache/restore@v5.0.1
+        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
         id: npm-cache
         with:
           path: |
@@ -65,7 +65,7 @@ jobs:
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
       
       - name: Upload dist-storybook to Cache
-        uses: actions/cache@v5.0.1
+        uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
         id: storybook-dist-cache
         with:
           path: |
@@ -90,17 +90,17 @@ jobs:
     runs-on: ubuntu-latest
     needs: [Create-NPM-Cache, Create-Build-Cache]
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           persist-credentials: false
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
       
       - name: Restore npm Cache
-        uses: actions/cache/restore@v5.0.1
+        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
         id: npm-cache
         with:
           path: |
@@ -109,14 +109,14 @@ jobs:
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
       
       - name: Restore Cache
-        uses: actions/cache/restore@v5.0.1
+        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
         id: storybook-dist-cache
         with:
           path: dist-storybook/
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
       
       - name: Deploy Storybook for main
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
         if: github.ref == 'refs/heads/main'
         with:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
@@ -129,17 +129,17 @@ jobs:
     runs-on: ubuntu-latest
     needs: [Create-NPM-Cache, Create-Build-Cache]
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           persist-credentials: false
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
       
       - name: Restore npm Cache
-        uses: actions/cache/restore@v5.0.1
+        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
         id: npm-cache
         with:
           path: |
@@ -152,7 +152,7 @@ jobs:
         run:  npm run sassdoc
   
       - name: Deploy Sass docs to backpack.github.io, if on main branch
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
         if: github.ref == 'refs/heads/main'
         with:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
@@ -167,13 +167,13 @@ jobs:
       contents: write
       pull-requests: read
     steps:
-      - uses: actions/create-github-app-token@v2
+      - uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1
         id: app-token
         with:
           app-id: ${{ vars.GH_APP_ID }}
           private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
       - name: Draft release notes
-        uses: release-drafter/release-drafter@v6
+        uses: release-drafter/release-drafter@b1476f6e6eb133afa41ed8589daba6dc69b4d3f5 # v6.1.0
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
