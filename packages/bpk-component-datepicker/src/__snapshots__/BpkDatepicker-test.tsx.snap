@@ -11,6 +11,7 @@ exports[`BpkDatepicker "readOnly" can be overriden in "inputProps" 1`] = `
       class="bpk-input bpk-input--large"
       data-openable="true"
       id="myDatepicker"
+      inputmode="none"
       name="myDatepicker_input"
       placeholder="placeholder"
       type="text"
