@@ -56,12 +56,11 @@ type EventHandlers = {
   onTouchEnd?: (event: UIEvent) => void;
   onKeyDown?: (event: UIEvent) => void;
   onKeyUp?: (event: UIEvent) => void;
-  readOnly?: string;
-  'aria-readonly'?: boolean;
+  inputMode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
 };
 
 type InputProps = ComponentProps<'input'> &
-  Omit<EventHandlers, 'readOnly' | 'aria-readonly'>;
+  Omit<EventHandlers, 'inputMode'>;
 
 const handleKeyEvent = (callback?: () => void) => (e: KeyboardEvent) => {
   if (e.code === KEYCODES.ENTER || e.code === KEYCODES.SPACEBAR) {
@@ -163,9 +162,9 @@ const withOpenEvents = <P extends object>(WithOpenEventsInputComponent: Componen
       };
 
       if (hasTouchSupport) {
-        // Prevents the mobile keyboard from opening (iOS / Android), while not announcing it as 'read only' to a screen reader
-        eventHandlers.readOnly = 'readOnly';
-        eventHandlers['aria-readonly'] = false;
+        // Prevents the mobile keyboard from opening (iOS / Android) using inputMode="none"
+        // This avoids WCAG 1.3.1 violation from conflicting readonly + aria-readonly attributes
+        eventHandlers.inputMode = 'none';
 
         eventHandlers.onTouchEnd = withEventHandler(
           this.handleTouchEnd,
@@ -179,12 +178,12 @@ const withOpenEvents = <P extends object>(WithOpenEventsInputComponent: Componen
       eventHandlers.onBlur = withEventHandler(this.handleBlur, onBlur);
 
       return (
-          <WithOpenEventsInputComponent
-            className={className}
-            {...eventHandlers}
-            {...(rest as P)}
-            data-openable // This allows for conditional styling within BpkInput
-          />
+        <WithOpenEventsInputComponent
+          className={className}
+          {...eventHandlers}
+          {...(rest as P)}
+          data-openable // This allows for conditional styling within BpkInput
+        />
       );
     }
   }
