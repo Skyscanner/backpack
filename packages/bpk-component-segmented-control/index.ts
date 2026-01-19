@@ -17,8 +17,11 @@
  */
 
 import BpkSegmentedControl, {
+  useSegmentedControlPanels,
   type Props as BpkSegmentControlProps,
+  type TabPanelProps,
 } from './src/BpkSegmentedControl';
 
-export type { BpkSegmentControlProps };
+export type { BpkSegmentControlProps, TabPanelProps };
+export { useSegmentedControlPanels };
 export default BpkSegmentedControl;
