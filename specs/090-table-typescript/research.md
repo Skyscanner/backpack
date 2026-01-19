@@ -30,7 +30,7 @@ This is a **migration project** converting existing Flow-typed components to Typ
 ```typescript
 // BpkTable.tsx
 export type BpkTableProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string | null;
   [rest: string]: any;
 };
@@ -61,7 +61,7 @@ export const BpkTable = ({ children, className = null, ...rest }: BpkTableProps)
 **Implementation**:
 ```typescript
 type BpkTableProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string | null;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
@@ -70,9 +70,9 @@ type BpkTableProps = {
 **Fallback** (if Storybook breaks):
 ```typescript
 type BpkTableProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string | null;
-} & React.HTMLAttributes<HTMLTableElement>;
+} & HTMLAttributes<HTMLTableElement>;
 ```
 
 ---
@@ -112,7 +112,7 @@ type BpkTableProps = {
 import PropTypes from 'prop-types';
 
 export type BpkTableProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string | null;
   [rest: string]: any;
 };
@@ -158,7 +158,7 @@ import { BpkTable, type BpkTableProps } from '@skyscanner/backpack-web/bpk-compo
 
 | Flow Type | TypeScript Type | Example |
 |-----------|----------------|---------|
-| `Node` | `React.ReactNode` | children prop |
+| `Node` | `ReactNode` | children prop |
 | `?string` | `string \| null` or `string \| undefined` | className (nullable) |
 | `?boolean` | `boolean \| undefined` | wordBreak (optional) |
 | `...rest` | `[rest: string]: any` | HTML attributes |
@@ -193,7 +193,7 @@ const BpkTable = ({children, className = null, ...rest}: BpkTableProps) => {
 6. **BpkTableHeadCell**: Renders `<th>`, has optional `wordBreak` prop
 
 **Common Props** (all 6):
-- `children: React.ReactNode` (required)
+- `children: ReactNode` (required)
 - `className?: string | null` (optional, default: `null`)
 - `[rest: string]: any` (rest props)
 
@@ -358,5 +358,146 @@ The migration has been correctly implemented with proper file extensions. No cha
 - **Backpack Constitution**: Principle V (TypeScript Migration & Type Safety)
 - **Architecture Decisions**: `decisions/inexact-rest.md`
 - **Similar Components**: `packages/bpk-component-button/`, `packages/bpk-component-calendar/`
-- **Spec Clarifications**: Session 2026-01-14 (4 questions answered)
-- **Spec Update**: 2026-01-14 (File extension correction - User Story 6, MIG-012)
+- **Spec Clarifications**: Session 2026-01-14 (4 questions answered), Session 2026-01-19 (rest props pattern updated)
+- **Spec Update**: 2026-01-14 (File extension correction - User Story 6, MIG-012), 2026-01-19 (Type inheritance pattern update)
+
+---
+
+## UPDATE 2026-01-19: Type Inheritance Pattern Change
+
+### Issue Identified
+
+The original research documented using `[rest: string]: any` pattern for rest props. However, the spec has been updated to use proper TypeScript inheritance with `Omit` and intersection types for better type safety.
+
+### New Decision: Rest Props Typing (UPDATED)
+
+**Decision**: Use `Omit<HTMLAttributes<ElementType>, 'className'>` with intersection types
+
+**Rationale**:
+- User requirement: Follow the pattern from BpkButton example with proper inheritance
+- Provides better type safety than `[rest: string]: any`
+- Enables accurate IDE autocomplete for all native HTML attributes
+- Explicitly shows which props are being overridden (className to allow null)
+- Matches TypeScript best practices for component typing
+
+**Implementation Pattern** (UPDATED):
+```typescript
+// BpkTable extends HTMLTableElement attributes
+export type BpkTableProps = {
+  children: ReactNode;
+  className?: string | null;
+} & Omit<HTMLAttributes<HTMLTableElement>, 'className'>;
+
+// BpkTableHead extends HTMLTableSectionElement attributes
+export type BpkTableHeadProps = {
+  children: ReactNode;
+  className?: string | null;
+} & Omit<HTMLAttributes<HTMLTableSectionElement>, 'className'>;
+
+// BpkTableBody extends HTMLTableSectionElement attributes
+export type BpkTableBodyProps = {
+  children: ReactNode;
+  className?: string | null;
+} & Omit<HTMLAttributes<HTMLTableSectionElement>, 'className'>;
+
+// BpkTableRow extends HTMLTableRowElement attributes
+export type BpkTableRowProps = {
+  children: ReactNode;
+  className?: string | null;
+} & Omit<HTMLAttributes<HTMLTableRowElement>, 'className'>;
+
+// BpkTableCell extends HTMLTableCellElement attributes
+export type BpkTableCellProps = {
+  children: ReactNode;
+  className?: string | null;
+  wordBreak?: boolean;
+} & Omit<HTMLAttributes<HTMLTableCellElement>, 'className'>;
+
+// BpkTableHeadCell extends HTMLTableCellElement attributes
+export type BpkTableHeadCellProps = {
+  children: ReactNode;
+  className?: string | null;
+  wordBreak?: boolean;
+} & Omit<HTMLAttributes<HTMLTableCellElement>, 'className'>;
+```
+
+### Why Omit className?
+
+**Reason**: React's HTMLAttributes defines `className?: string | undefined`, but Backpack components use `className?: string | null` to explicitly allow null as a default value.
+
+Without `Omit`, TypeScript would have type conflicts:
+```typescript
+// ❌ Would cause type conflict
+type Conflict = {
+  className?: string | null;  // Our definition
+} & {
+  className?: string;  // React's definition
+}
+
+// ✅ Correct with Omit
+type Correct = {
+  className?: string | null;
+} & Omit<HTMLAttributes<HTMLElement>, 'className'>;
+```
+
+### Why NOT Omit children?
+
+**Reason**: TypeScript intersection types automatically resolve to the more restrictive type when merging:
+
+- Our definition: `children: ReactNode` (required)
+- React's definition: `children?: ReactNode` (optional)
+- Result: `children: ReactNode` (required - more restrictive wins)
+
+No conflict occurs because both types are `ReactNode`. The required constraint from our explicit definition takes precedence.
+
+### HTML Element Type Mapping
+
+Each component extends the appropriate HTML element attributes:
+
+| Component | HTML Element | TypeScript Type |
+|-----------|--------------|----------------|
+| BpkTable | `<table>` | `HTMLTableElement` |
+| BpkTableHead | `<thead>` | `HTMLTableSectionElement` |
+| BpkTableBody | `<tbody>` | `HTMLTableSectionElement` |
+| BpkTableRow | `<tr>` | `HTMLTableRowElement` |
+| BpkTableCell | `<td>` | `HTMLTableCellElement` |
+| BpkTableHeadCell | `<th>` | `HTMLTableCellElement` |
+
+### Benefits of This Pattern
+
+1. **Better Type Safety**: No `any` types in public API
+2. **Accurate Autocomplete**: IDEs can suggest all valid HTML attributes
+3. **Type Checking**: Invalid attributes are caught at compile time
+4. **Clear Intent**: Explicit about which props are overridden
+5. **Follows Best Practices**: Matches TypeScript community standards
+
+### Architecture Decision References
+
+- **User Requirement**: Spec update 2026-01-19 with example from BpkButton
+- **decisions/inexact-rest.md**: Documents both patterns - `[rest: string]: any` and `Omit` approach
+- **Spec NFR-001**: "Migration MUST NOT introduce TypeScript `any` types in public API; instead use proper type inheritance with `Omit` and intersection types"
+
+### Updated File Migration Checklist
+
+All component files need type definition updates:
+
+#### Component Type Updates Needed
+- [ ] `src/BpkTable.tsx` - Update to extend `HTMLTableElement`
+- [ ] `src/BpkTableHead.tsx` - Update to extend `HTMLTableSectionElement`
+- [ ] `src/BpkTableBody.tsx` - Update to extend `HTMLTableSectionElement`
+- [ ] `src/BpkTableRow.tsx` - Update to extend `HTMLTableRowElement`
+- [ ] `src/BpkTableCell.tsx` - Update to extend `HTMLTableCellElement`
+- [ ] `src/BpkTableHeadCell.tsx` - Update to extend `HTMLTableCellElement`
+
+#### Other Files (No Changes Needed)
+- [x] Test files - Logic preserved, no type changes needed
+- [x] Example files - Already migrated with correct pattern
+- [x] Sass files - Unchanged
+
+### Verification Steps
+
+1. TypeScript compilation succeeds with no errors
+2. All tests pass with identical snapshots
+3. TypeScript consumers get accurate autocomplete
+4. No `any` types in generated `.d.ts` files
+5. Bundle size remains within 1% of previous version

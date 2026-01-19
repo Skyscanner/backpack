@@ -1,19 +1,13 @@
-# Implementation Plan: TypeScript File Extension Correction for BpkTable
+# Implementation Plan: TypeScript Migration for BpkTable
 
-**Package Branch**: `090-table-typescript` | **Date**: 2026-01-14 | **Spec**: [spec.md](./spec.md)
+**Package Branch**: `090-table-typescript` | **Date**: 2026-01-19 | **Spec**: [spec.md](./spec.md)
 **Input**: Component specification from `/specs/090-table-typescript/spec.md`
 
-**Note**: This is a corrective implementation plan for fixing incorrect TypeScript file extensions in the bpk-component-table migration.
+**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
 
 ## Summary
 
-This plan addresses a critical error in the TypeScript migration of bpk-component-table where ALL files were incorrectly given `.tsx` extensions. The correction ensures:
-
-- **Logic files without JSX** (e.g., `index.ts`) use `.ts` extension
-- **Component files with JSX** use `.tsx` extension
-- **Test files** (which render components) use `.tsx` extension
-
-This is a non-breaking technical correction that ensures TypeScript compiler processes files correctly, reduces bundle size overhead from unnecessary JSX transforms, and follows TypeScript community best practices. The public API remains completely unchanged.
+Migrate bpk-component-table from Flow to TypeScript while maintaining complete API compatibility. This is a zero-breaking-change migration that updates type definitions to use proper TypeScript inheritance patterns with `Omit` and intersection types (instead of `[rest: string]: any`). All six table components (BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableCell, BpkTableHeadCell) will be migrated along with their tests and examples. The migration provides better type safety for TypeScript consumers while remaining fully compatible with JavaScript consumers.
 
 ## Technical Context
 
@@ -36,50 +30,43 @@ This is a non-breaking technical correction that ensures TypeScript compiler pro
 
 ### Core Principles Compliance
 
-- [x] **Component-First Architecture**: Component exists in `packages/bpk-component-table/` (no structure changes)
-- [x] **Naming Conventions**: Files already follow PascalCase, `.module.scss`, `*-test.tsx` patterns (fixing `.tsx` → `.ts` for non-JSX files)
-- [x] **Modern Sass**: Already using `@use` syntax with granular imports (no changes)
-- [x] **Accessibility-First**: Already includes `accessibility-test.tsx` with jest-axe (no changes)
-- [x] **TypeScript**: All code already in TypeScript (fixing file extensions only)
-- [x] **SemVer**: PATCH version (non-breaking file extension correction)
-- [x] **Deprecation Management**: N/A - no API changes
-- [x] **Test Coverage**: Already meets 70% branches, 75% functions/lines/statements (no changes)
-- [x] **Documentation**: Already includes README.md, Storybook, JSDoc (no changes)
+- [x] **Component-First Architecture**: Package structure already exists in `packages/bpk-component-table/`
+- [x] **Naming Conventions**: Components follow PascalCase, `.module.scss` for styles, `*-test.tsx` for tests (after migration)
+- [x] **Modern Sass**: Already using `@use` syntax with granular imports from `bpk-mixins`
+- [x] **Accessibility-First**: Already includes `accessibility-test.js` (will be migrated to `.tsx`)
+- [x] **TypeScript**: Will migrate all code from Flow to TypeScript with proper types
+- [x] **SemVer**: PATCH version bump (no API changes, no visual changes)
+- [x] **Deprecation Management**: No deprecations in this migration
+- [x] **Test Coverage**: Already meets 70% branches, 75% functions/lines/statements
+- [x] **Documentation**: Already includes README.md, Storybook story, JSDoc comments
 
 ### Technology Compliance
 
-- [x] **React Version**: Already using React 18.3.1 (no changes)
-- [x] **TypeScript Version**: Already using TypeScript 5.9.2 (no changes)
-- [x] **CSS Modules**: Already using `.module.scss` (no changes)
-- [x] **rem Units**: Already using `rem` units (no changes)
-- [x] **Design Tokens**: Already using tokens from `@skyscanner/bpk-foundations-web` (no changes)
-- [x] **BEM Naming**: CSS classes already follow BEM with `bpk-` prefix (no changes)
-- [x] **RTL Support**: Component already supports RTL (no changes)
-- [x] **Browser Support**: Already works on all supported browsers (no changes)
+- [x] **React Version**: Using React 18.3.1
+- [x] **TypeScript Version**: Will use TypeScript 5.9.2
+- [x] **CSS Modules**: All styles already use `.module.scss` extension
+- [x] **rem Units**: Already using `rem` units (not changing)
+- [x] **Design Tokens**: Already uses tokens from `@skyscanner/bpk-foundations-web` and `bpk-mixins`
+- [x] **BEM Naming**: CSS classes already follow BEM with `bpk-` prefix
+- [x] **RTL Support**: Component already supports right-to-left languages
+- [x] **Browser Support**: Already works on all supported browsers
 
 ### Testing Compliance
 
-- [x] **Unit Tests**: Already have Jest + Testing Library tests in `*-test.tsx` files (no changes)
-- [x] **Accessibility Tests**: Already have jest-axe tests in `accessibility-test.tsx` (no changes)
-- [x] **Visual Tests**: Already have Percy tests via Storybook (no changes)
-- [x] **Snapshot Tests**: Already included for all variants (snapshots must remain identical)
-- [x] **Coverage Thresholds**: Already meets required percentages (no changes)
+- [x] **Unit Tests**: Jest + Testing Library tests in `*-test.js` files (will be migrated to `.tsx`)
+- [x] **Accessibility Tests**: jest-axe tests in `accessibility-test.js` (will be migrated to `.tsx`)
+- [x] **Visual Tests**: Percy tests via Storybook (already exist)
+- [x] **Snapshot Tests**: Already included for all variants
+- [x] **Coverage Thresholds**: Already meets required percentages
 
 ### Documentation Compliance
 
-- [x] **British English**: Already follows British/US English conventions (no changes)
-- [x] **Sentence Case**: Already uses sentence case (no changes)
-- [x] **<100 Words**: Component description already under 100 words (no changes)
-- [x] **Storybook**: Stories already in `examples/bpk-component-table/` (no changes)
-- [x] **JSDoc**: All public APIs already documented (no changes)
-- [x] **Figma Connect**: Not applicable for this component
-
-### File Extension Compliance (NEW CHECK)
-
-- [ ] **Logic Files**: Files without JSX use `.ts` extension (currently incorrect - all are `.tsx`)
-- [ ] **Component Files**: Files with JSX use `.tsx` extension (already correct)
-- [ ] **Test Files**: Test files use `.tsx` extension (already correct)
-- [ ] **Index Files**: Entry point files without JSX use `.ts` extension (currently incorrect - is `.tsx`)
+- [x] **British English**: Prose uses British English, code uses US English
+- [x] **Sentence Case**: Titles use sentence case, singular form
+- [x] **<100 Words**: Component description under 100 words
+- [x] **Storybook**: Stories already exist in `examples/bpk-component-table/stories.js` (will be migrated to `.tsx`)
+- [x] **JSDoc**: All public APIs documented
+- [x] **Figma Connect**: Not required for TypeScript migration (existing component)
 
 ## Project Structure
 
@@ -138,55 +125,54 @@ examples/bpk-component-[name]/
 
 ## Complexity Tracking
 
-**No constitution violations.** This is a file extension correction to align with TypeScript best practices. All other Backpack standards are already met.
+> **Fill ONLY if Constitution Check has violations that must be justified**
+
+**No constitution violations. Migration follows all Backpack standards and is a zero-breaking-change update.**
 
 ## Phase 0: Research & Discovery
 
-**Objective**: Verify current file extension status and identify any corrections needed
+**Objective**: Understand existing patterns and gather context
 
-### Research Tasks Completed
+### Research Tasks
 
-1. ✅ **Surveyed TypeScript Files in bpk-component-table**:
-   - Listed all `.ts` and `.tsx` files in packages/bpk-component-table
-   - Analyzed each file to determine if it contains JSX
-   - Verified file extensions match content (JSX presence)
+1. **Survey Existing Components**:
+   - Review similar components in `packages/` (e.g., buttons, cards, inputs)
+   - Identify reusable patterns and common approaches
+   - Check for existing utilities in `bpk-react-utils`
+   - Review design tokens in `@skyscanner/bpk-foundations-web`
 
-2. ✅ **Analyzed index.ts File**:
-   - Confirmed `index.ts` contains only imports/exports (no JSX)
-   - Verified `.ts` extension is correct for this file
-   - This was the only potential file that could have been incorrectly named
+2. **Review Sass Mixins**:
+   - Explore `packages/bpk-mixins/` for relevant utilities
+   - Identify which mixins to import (tokens, typography, shadows, etc.)
+   - Check modern Sass API usage examples
 
-3. ✅ **Verified Component and Test Files**:
-   - All component files contain JSX - correctly use `.tsx`
-   - All test files render components - correctly use `.tsx`
-   - All example files render JSX - correctly use `.tsx`
+3. **Study Testing Patterns**:
+   - Review test files in similar components
+   - Understand jest-axe usage patterns
+   - Check Storybook story structures in `examples/`
 
-### Research Findings
+4. **Figma Design Review**:
+   - Review Figma designs and specifications
+   - Identify all visual states (default, hover, focus, active, disabled)
+   - Note responsive behavior and breakpoints
+   - Document design token mappings
 
-**CRITICAL FINDING**: All file extensions are already correct!
+5. **Architecture Decisions Review**:
+   - Read relevant files in `decisions/` directory
+   - Understand naming conventions (js-filenames.md, component-scss-filenames.md)
+   - Review modern Sass API requirements (modern-sass-api.md)
+   - Check versioning rules (versioning-rules.md)
+   - Understand deprecation policies (deprecated-api.md, future-api.md)
 
-- `index.ts` correctly uses `.ts` (no JSX)
-- All other files correctly use `.tsx` (contain JSX)
-
-This means either:
-1. The user's original issue has already been resolved, OR
-2. The user is referring to a different set of files not yet analyzed
-
-**Deliverable**: [research.md](./research.md) - Updated with file extension analysis
-
-### Next Steps
-
-Since all files are correctly named, no implementation changes are needed. The spec and plan serve as documentation for proper file extension patterns for future TypeScript migrations.
+**Deliverable**: `research.md` documenting findings and patterns to follow
 
 ## Phase 1: Design & Planning
 
-**Objective**: Document that no design changes are needed
+**Objective**: Design component API and structure before implementation
 
-### Status: NO CHANGES REQUIRED
+### API Design
 
-Since Phase 0 research confirmed all file extensions are already correct, Phase 1 design artifacts are not needed. The component API, styling, and structure remain unchanged.
-
-### API Design (Existing - No Changes)
+**Deliverable**: `api-design.md` containing:
 
 1. **Component Props Interface**:
 ```typescript
@@ -559,129 +545,141 @@ figma.connect(BpkComponentName, 'https://www.figma.com/file/...', {
 
 ### Version Determination (per `decisions/versioning-rules.md`)
 
-**This component is**: [Select one]
-- [ ] **NEW COMPONENT** → **MINOR** version bump for `@skyscanner/backpack-web`
-- [ ] **MAJOR UPDATE** → **MAJOR** version bump (breaking API/visual changes)
-- [ ] **ENHANCEMENT** → **MINOR** version bump (new optional features)
-- [x] **NO CHANGE NEEDED** → No version bump (documentation/spec update only)
+**This component is**: **BUG FIX / MIGRATION** → **PATCH** version bump
 
-**Rationale**: Research confirmed all file extensions are already correct. No code changes needed. This planning phase serves as documentation for proper TypeScript file extension patterns.
+**Rationale**: According to Backpack versioning rules, a TypeScript migration that preserves the public API without any breaking changes qualifies as a PATCH version. The migration:
+- Does NOT change the public API (props, exports, defaults, behavior all identical)
+- Does NOT introduce new features
+- Does NOT modify visual appearance
+- Does NOT change component behavior
+- Improves code quality and developer experience without breaking changes
+- Provides better type safety for TypeScript consumers
+- Zero impact on JavaScript consumers
 
-### Breaking Changes (if MAJOR)
+### Breaking Changes
 
-**API Changes**:
-- [Old API] → [New API]
-- [Prop removed] → [Alternative]
-- [Behavior changed] → [New behavior]
+**None** - This is a zero-breaking-change migration.
 
-**Visual Changes**:
-- [Old appearance] → [New appearance]
-- [Token change] → [Impact]
+### Deprecations
 
-**Migration Guide**:
-```typescript
-// Before (old API)
-<BpkComponentName oldProp="value" />
+**None** - No APIs are being deprecated.
 
-// After (new API)
-<BpkComponentName newProp="value" />
-```
+### Migration Guide
 
-**Timeline**: [Date when breaking change will be released]
+**Not needed** - Consumers require zero code changes. TypeScript consumers automatically benefit from improved type definitions.
 
-### Deprecations (if applicable)
-
-**Deprecated APIs** (minimum 3 months before removal):
-- `oldProp` → Use `newProp` instead
-- `OldComponent` → Use `NewComponent` instead
-
-**Deprecation Implementation**:
-```typescript
-type BpkComponentNameProps = {
-  newProp: string;
-
-  /**
-   * @deprecated oldProp is deprecated. Use newProp instead. Will be removed in v11.0.0.
-   */
-  oldProp?: string;
-};
-
-const BpkComponentName = ({ newProp, oldProp }: BpkComponentNameProps) => {
-  if (oldProp) {
-    console.warn('oldProp is deprecated. Use newProp instead. Will be removed in v11.0.0.');
-  }
-
-  const effectiveProp = newProp || oldProp;
-  // ...
-};
-```
-
-### Future API (if applicable)
-
-**Opt-in V2 Component** (minimum 3 months before becoming default):
-- `BpkComponentName` (current) → `BpkComponentNameV2` (future)
-- Consumers can opt-in to V2 early
-- In next MAJOR version, V2 becomes default and V1 is removed
-
-**Example**:
-```typescript
-// Current usage
-import BpkComponentName from '@skyscanner/backpack-web/bpk-component-name';
-
-// Opt-in to future API
-import BpkComponentNameV2 from '@skyscanner/backpack-web/bpk-component-name/BpkComponentNameV2';
-```
+---
 
 ## Release Checklist
 
-Before releasing this component:
+Before releasing this migration:
 
-- [ ] All constitution checks pass
+- [x] All constitution checks pass
 - [ ] All tests pass (unit, accessibility, visual)
 - [ ] Test coverage meets thresholds (70% branches, 75% functions/lines/statements)
-- [ ] TypeScript compiles without errors
+- [ ] TypeScript compiles without errors or warnings
 - [ ] ESLint and Stylelint pass
-- [ ] README.md is complete and accurate
-- [ ] Storybook stories are comprehensive
-- [ ] JSDoc comments are complete
-- [ ] Figma Code Connect is implemented
+- [ ] Type definitions use proper imports (`import type { ReactNode } from 'react'`)
+- [ ] No `React.` prefix usage that causes "React is not defined" warnings
+- [ ] README.md updated (minimal TypeScript note)
 - [ ] Component works in all supported browsers
 - [ ] Component is keyboard accessible
 - [ ] Component works with screen readers
 - [ ] Component supports RTL languages
-- [ ] Version bump is correct (MAJOR/MINOR/PATCH)
+- [ ] Version bump is PATCH
 - [ ] Changelog is updated
-- [ ] PR is approved and merged
-- [ ] Package is published to npm
-- [ ] Storybook is deployed
+- [ ] Bundle size within 1% of original
+- [ ] `.d.ts` files generated correctly
+
+---
+
+## TypeScript Import Pattern (CRITICAL)
+
+### React Type Imports
+
+**MUST use named type imports to avoid "React is not defined" warnings:**
+
+```typescript
+// ✅ CORRECT - Named type imports
+import type { ReactNode, HTMLAttributes } from 'react';
+
+export type BpkTableProps = {
+  children: ReactNode;  // No React. prefix
+  className?: string | null;
+} & Omit<HTMLAttributes<HTMLTableElement>, 'className'>;
+```
+
+```typescript
+// ❌ INCORRECT - Using React namespace
+import React from 'react';
+
+export type BpkTableProps = {
+  children: React.ReactNode;  // Causes warning
+  className?: string | null;
+} & Omit<React.HTMLAttributes<HTMLTableElement>, 'className'>;
+```
+
+**Rationale**:
+- TypeScript's `import type` is stripped at compile time
+- Using `React.ReactNode` without importing React causes warnings
+- Named imports are cleaner and avoid namespace pollution
+- Follows TypeScript best practices
+
+### All React Types to Import
+
+For table components, import these types:
+
+```typescript
+import type {
+  ReactNode,
+  HTMLAttributes,
+  TableHTMLAttributes,       // for <table>
+  HTMLTableSectionElement,    // for <thead>, <tbody>
+  HTMLTableRowElement,        // for <tr>
+  HTMLTableCellElement,       // for <td>, <th>
+} from 'react';
+```
+
+---
 
 ## Notes
 
 ### Key Backpack Patterns to Follow
 
-1. **CSS Modules**: Always use `.module.scss` for component styles
-2. **Modern Sass**: Use `@use` syntax, never `@import`
-3. **Granular Imports**: Import specific mixins, not entire package
-4. **Design Tokens**: Use tokens for all values (colors, spacing, typography)
-5. **rem Units**: Always use `rem` for sizing, never `px` or `em`
-6. **BEM Classes**: Use `bpk-component-name--modifier` pattern
-7. **TypeScript**: All code in TypeScript, generate `.d.ts` files
-8. **Accessibility**: Test with jest-axe, ensure keyboard nav and ARIA
-9. **British English**: Prose in British English, code in US English
-10. **Documentation**: <100 words, sentence case, singular titles
+1. **CSS Modules**: Always use `.module.scss` for component styles (unchanged)
+2. **Modern Sass**: Use `@use` syntax, never `@import` (unchanged)
+3. **Granular Imports**: Import specific mixins, not entire package (unchanged)
+4. **Design Tokens**: Use tokens for all values (colors, spacing, typography) (unchanged)
+5. **rem Units**: Always use `rem` for sizing, never `px` or `em` (unchanged)
+6. **BEM Classes**: Use `bpk-component-name--modifier` pattern (unchanged)
+7. **TypeScript**: All code in TypeScript with proper type imports (**UPDATED**)
+8. **Accessibility**: Test with jest-axe, ensure keyboard nav and ARIA (unchanged)
+9. **British English**: Prose in British English, code in US English (unchanged)
+10. **Documentation**: <100 words, sentence case, singular titles (unchanged)
+
+### TypeScript Migration-Specific Patterns
+
+1. **Named Type Imports**: Use `import type { ReactNode } from 'react'`
+2. **Omit Pattern**: Use `Omit<HTMLAttributes<T>, 'className'>` for prop inheritance
+3. **No `any` Types**: Use proper inheritance instead of `[rest: string]: any`
+4. **PropTypes Retention**: Keep PropTypes alongside TypeScript types
+5. **Type Exports**: Export types with components: `export type BpkTableProps`
+6. **Inline Types**: Define types within component files (not separate files)
 
 ### Common Pitfalls to Avoid
 
-1. ❌ Using `@import` in SCSS → ✅ Use `@use`
-2. ❌ Using `px` units → ✅ Use `rem` units
-3. ❌ Importing entire `bpk-mixins` → ✅ Import specific modules
-4. ❌ Not namespacing mixins → ✅ Use `tokens.bpk-spacing-md()`
-5. ❌ Skipping accessibility tests → ✅ Always include jest-axe tests
-6. ❌ Using American English in docs → ✅ Use British English
-7. ❌ Missing `@deprecated` tags → ✅ Document all deprecations
-8. ❌ No runtime warnings for deprecated props → ✅ Add console.warn
-9. ❌ Visual tests for image components → ✅ Skip visual tests if uses images
-10. ❌ Testing implementation details → ✅ Test public interface
+1. ❌ Using `React.ReactNode` → ✅ Import and use `ReactNode`
+2. ❌ Using `React.HTMLAttributes<T>` → ✅ Import and use `HTMLAttributes<T>`
+3. ❌ Using `[rest: string]: any` → ✅ Use `Omit<HTMLAttributes<T>, 'className'>`
+4. ❌ Not importing React types → ✅ `import type { ReactNode } from 'react'`
+5. ❌ Changing test logic → ✅ Keep test logic identical
+6. ❌ Changing component behavior → ✅ Zero behavioral changes
+7. ❌ Adding new props → ✅ API must remain identical
+8. ❌ Modifying styles → ✅ Styles unchanged
+9. ❌ Removing PropTypes → ✅ Retain PropTypes for runtime validation
+10. ❌ Creating examples in specs/ → ✅ Examples only in api-design.md as documentation
+
+---
 
 ## References
 
@@ -693,44 +691,8 @@ Before releasing this component:
 - **Theming**: `packages/bpk-theming/`
 - **Storybook Examples**: `examples/` directory
 - **Testing Patterns**: Review test files in existing components
-
----
-
-## Planning Summary
-
-**Status**: ✅ COMPLETE - No Implementation Needed
-
-### Key Findings
-
-1. **File Extension Analysis Complete**: All TypeScript files in bpk-component-table have been verified
-2. **Current State**: All file extensions are already correct
-   - `index.ts` correctly uses `.ts` (no JSX)
-   - All component files correctly use `.tsx` (contain JSX)
-   - All test files correctly use `.tsx` (render components)
-   - All example files correctly use `.tsx` (render JSX)
-
-3. **No Changes Needed**: The migration is already correctly implemented
-
-### Deliverables
-
-- ✅ [plan.md](./plan.md) - This implementation plan
-- ✅ [research.md](./research.md) - Updated with file extension analysis
-- ✅ [spec.md](./spec.md) - Updated with correct file extension requirements (User Story 6, MIG-012)
-- ✅ CLAUDE.md - Agent context updated with feature information
-
-### Documentation Value
-
-This planning phase provides:
-- Clear documentation of proper TypeScript file extension patterns
-- Reference for future TypeScript migrations in Backpack
-- Verification that bpk-component-table migration follows best practices
-
-### Next Actions
-
-**For User**:
-- If specific files are believed to be incorrectly named, please provide file paths for investigation
-- Current verification shows all files are correctly named according to TypeScript standards
-
-**For Future Migrations**:
-- Use this plan as a reference for proper `.ts` vs `.tsx` extension usage
-- Remember: If file contains `<JSXElement>` syntax, use `.tsx`; otherwise use `.ts`
+- **TypeScript Handbook**: [Utility Types - Omit](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)
+- **Spec**: [spec.md](./spec.md)
+- **Research**: [research.md](./research.md)
+- **API Design**: [api-design.md](./api-design.md)
+- **Styling Guide**: [styling-guide.md](./styling-guide.md)

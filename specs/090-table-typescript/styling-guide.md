@@ -1,126 +1,100 @@
-# Phase 1: Styling Guide - TypeScript Migration for BpkTable
+# Styling Guide: TypeScript Migration for BpkTable
 
-**Date**: 2026-01-14
+**Date**: 2026-01-19
 **Feature**: TypeScript Migration for bpk-component-table
+**Objective**: Document styling approach (no changes in this migration)
 
 ---
 
 ## Overview
 
-**No styling changes** in this migration. All Sass files remain identical. This document confirms existing styles comply with Backpack constitution.
+**This TypeScript migration does NOT change any styling.**
+
+All Sass files, CSS classes, design tokens, and visual appearance remain unchanged. This document confirms the existing styling approach continues to be used.
 
 ---
 
-## Existing Sass Structure (Unchanged)
+## Styling Architecture (Unchanged)
 
-### Files
+### CSS Modules
 
-```
-packages/bpk-component-table/src/
-├── BpkTable.module.scss
-├── BpkTableHead.module.scss
-├── BpkTableBody.module.scss
-├── BpkTableRow.module.scss
-├── BpkTableCell.module.scss
-└── BpkTableHeadCell.module.scss
-```
+**Status**: No changes
 
-### Modern Sass API Compliance ✅
+All components use CSS Modules with `.module.scss` extension:
+- `BpkTable.module.scss`
+- `BpkTableHead.module.scss`
+- `BpkTableBody.module.scss`
+- `BpkTableRow.module.scss`
+- `BpkTableCell.module.scss`
+- `BpkTableHeadCell.module.scss`
 
-All files already use modern Sass API per constitution:
-- ✅ Using `@use` syntax (not `@import`)
-- ✅ Granular imports from `bpk-mixins`
-- ✅ CSS Modules (`.module.scss`)
-- ✅ `rem` units for sizing
-- ✅ Design tokens from `@skyscanner/bpk-foundations-web`
+### Modern Sass API
 
----
+**Status**: Already compliant
 
-## CSS Class Structure (Unchanged)
-
-### BEM Naming Convention ✅
-
-All classes follow BEM with `bpk-` prefix:
-
-```scss
-// BpkTable.module.scss
-.bpk-table { /* base class */ }
-
-// BpkTableCell.module.scss
-.bpk-table__cell { /* element class */ }
-.bpk-table__cell--word-break { /* modifier class */ }
-
-// BpkTableHeadCell.module.scss
-.bpk-table__head-cell { /* element class */ }
-.bpk-table__head-cell--word-break { /* modifier class */ }
-```
-
----
-
-## Design Token Usage (Unchanged)
-
-### Current Token Mapping
-
-**Verified compliant**: All values use design tokens, no magic numbers.
-
-Example from existing Sass:
+All components use modern Sass with `@use` syntax (not `@import`):
 ```scss
 @use '../bpk-mixins/tokens';
-
-.bpk-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.bpk-table__cell {
-  padding: tokens.bpk-spacing-md();
-  text-align: left;
-}
+@use '../bpk-mixins/typography';
 ```
 
----
+### BEM Class Names
 
-## Responsive Behavior (Unchanged)
+**Status**: No changes
 
-Tables maintain existing responsive behavior:
-- Full width by default
-- Overflow-x scrolling on small screens (handled by consumer)
-- No breakpoint-specific styles in component
-
----
-
-## RTL Support (Unchanged)
-
-RTL support already implemented via logical CSS properties:
-- `text-align: left` automatically flips to `right` in RTL
-- No directional hardcoding (e.g., no `float: left`)
+All CSS classes follow BEM with `bpk-` prefix:
+- `.bpk-table`
+- `.bpk-table__cell`
+- `.bpk-table__cell--wordBreak`
+- etc.
 
 ---
 
-## Migration Impact: Zero
+## Migration Impact on Styles
 
-**Styling changes**: None
-**Sass file modifications**: None
-**Class name changes**: None
-**Token updates**: None
+### No Changes Required
 
-TypeScript migration is **code-only** - styles remain identical.
+| Aspect | Status | Rationale |
+|--------|--------|-----------|
+| Sass files | ✅ Unchanged | TypeScript migration doesn't affect styles |
+| CSS classes | ✅ Unchanged | BEM classes remain identical |
+| Design tokens | ✅ Unchanged | Token usage preserved |
+| `rem` units | ✅ Unchanged | Already using `rem` |
+| RTL support | ✅ Unchanged | Existing RTL implementation preserved |
+| Visual appearance | ✅ Unchanged | Zero visual changes |
+
+### What Gets Migrated
+
+**Only TypeScript files**:
+- Component `.tsx` files (type definitions updated)
+- Test `.tsx` files (file extension only)
+- Example `.tsx` files (file extension only)
+
+**NOT migrated**:
+- `.scss` files (remain unchanged)
+- `.module.scss` files (remain unchanged)
+- `cssModules` usage (remains unchanged)
 
 ---
 
-## Constitution Compliance Verification
+## Verification
 
-- [x] **Modern Sass API**: All files use `@use` syntax
-- [x] **rem Units**: All sizing uses `rem` (not `px` or `em`)
-- [x] **Design Tokens**: All values use tokens from `@skyscanner/bpk-foundations-web`
-- [x] **BEM Naming**: Classes follow `bpk-component--modifier` pattern
-- [x] **CSS Modules**: All files use `.module.scss` extension
-- [x] **RTL Support**: Logical properties used (no hardcoded directions)
+### Visual Regression Tests
+
+**Requirement**: Percy tests must pass without changes
+
+**Expected Outcome**: Zero visual differences between Flow and TypeScript versions
+
+### Bundle Size
+
+**Requirement**: CSS bundle size must remain within 1% of original
+
+**Expected Outcome**: Identical CSS output (Sass compilation unchanged)
 
 ---
 
-## Reference
+## References
 
-- **Current Styles**: `packages/bpk-component-table/src/*.module.scss`
-- **Constitution**: Principle III (Modern Sass with Granular Imports)
-- **Decisions**: `decisions/modern-sass-api.md`, `decisions/sizing-in-rem.md`
+- **Spec**: [spec.md](./spec.md) - Confirms zero visual changes
+- **Constitution**: Principle III (Modern Sass) - Already compliant
+- **Architecture Decision**: `decisions/modern-sass-api.md` - Already implemented

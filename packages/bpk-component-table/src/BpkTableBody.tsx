@@ -17,11 +17,11 @@
  */
 
 import PropTypes from 'prop-types';
+import type { ReactNode, HTMLAttributes } from 'react';
 
 export type BpkTableBodyProps = {
-  children: React.ReactNode;
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
-};
+  children: ReactNode;
+} & HTMLAttributes<HTMLTableSectionElement>;
 
 const BpkTableBody = (props: BpkTableBodyProps) => <tbody {...props} />;
 

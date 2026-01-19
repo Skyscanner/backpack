@@ -17,6 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
+import type { ReactNode, HTMLAttributes } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -25,10 +26,9 @@ import STYLES from './BpkTable.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type BpkTableProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string | null;
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
-};
+} & Omit<HTMLAttributes<HTMLTableElement>, 'className'>;
 
 const BpkTable = ({children, className = null, ...rest}: BpkTableProps) => {
 
