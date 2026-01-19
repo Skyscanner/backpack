@@ -80,12 +80,10 @@ specs/[###-component-name]/
 ├── research.md          # Phase 0 output (/speckit.plan command)
 ├── api-design.md        # Phase 1 output (/speckit.plan command)
 ├── styling-guide.md     # Phase 1 output (/speckit.plan command)
-├── examples/            # Phase 1 output (/speckit.plan command)
-│   ├── basic-usage.tsx
-│   ├── variants.tsx
-│   └── edge-cases.tsx
 └── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)
 ```
+
+**Note**: Storybook examples are created in `examples/bpk-component-[name]/` directory (separate from specs), not within the specs directory.
 
 ### Package Structure (Backpack Monorepo)
 
@@ -114,8 +112,10 @@ packages/bpk-component-[name]/
 
 ```text
 examples/bpk-component-[name]/
-├── stories.tsx           # Storybook stories
-└── README.md            # Example documentation (optional)
+├── stories.tsx                    # Storybook story definitions (CSF 3.0)
+├── examples.tsx                   # Example component implementations
+├── [ComponentName]Story.module.scss # Styles for examples (if needed)
+└── README.md                      # Example documentation (optional)
 ```
 
 **Structure Decision**: Backpack uses a Monorepo architecture where each component is a separate package in `packages/`. This enables:
@@ -249,15 +249,25 @@ type BpkComponentNameProps = {
    - Use logical properties where applicable
    - Test with `isRTL` utility from `bpk-react-utils`
 
-### Example Code
+### Storybook Examples
 
-**Deliverable**: `examples/` directory with:
+**Deliverable**: Storybook stories in `examples/bpk-component-[name]/` directory:
 
-1. **`basic-usage.tsx`**: Minimal working example
-2. **`variants.tsx`**: All visual variants and sizes
-3. **`edge-cases.tsx`**: Edge cases (long text, no props, errors)
-4. **`interactive-states.tsx`**: Hover, focus, active, disabled states
-5. **`accessibility.tsx`**: Keyboard navigation and screen reader examples
+1. **`stories.tsx`**: Storybook story definitions using CSF 3.0 format
+   - Default story with minimal props
+   - Stories for all variants and sizes
+   - Stories for interactive states (hover, focus, active, disabled)
+   - Stories for edge cases (long text, empty states, errors)
+   - Accessibility stories demonstrating keyboard navigation
+
+2. **`examples.tsx`**: Example component implementations
+   - Reusable example components used by stories
+   - Visual demonstrations of all component features
+   - Edge case demonstrations
+
+3. **`*.module.scss`** (if needed): Styles for example layouts and demonstrations
+
+**Note**: Examples are written as Storybook stories, not as separate standalone files. All examples are contained within the `examples/bpk-component-[name]/` directory structure.
 
 ## Phase 2: Task Breakdown
 
