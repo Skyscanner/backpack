@@ -47,11 +47,10 @@
 **Purpose**: Initialize component package structure per Backpack standards
 
 - [ ] T001 Create package directory `packages/bpk-component-[name]/`
-- [ ] T002 [P] Create `packages/bpk-component-[name]/package.json` with metadata and dependencies
-- [ ] T003 [P] Create `packages/bpk-component-[name]/index.ts` export file
-- [ ] T004 [P] Create `packages/bpk-component-[name]/README.md` stub (will be completed in Phase 5)
-- [ ] T005 [P] Create `packages/bpk-component-[name]/src/BpkComponentName/` directory
-- [ ] T006 [P] Create `packages/bpk-component-[name]/docs/` directory for assets
+- [ ] T002 [P] Create `packages/bpk-component-[name]/index.ts` export file
+- [ ] T003 [P] Create `packages/bpk-component-[name]/README.md` stub (will be completed in Phase 5)
+- [ ] T004 [P] Create `packages/bpk-component-[name]/src/Bpk[ComponentName]/` directory (e.g., `src/BpkButton/`)
+- [ ] T005 [P] Create `packages/bpk-component-[name]/docs/` directory for assets
 
 ---
 
@@ -61,10 +60,10 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T007 Create TypeScript types file `packages/bpk-component-[name]/src/BpkComponentName/common-types.ts` with component props interface
-- [ ] T008 Create theme attributes file `packages/bpk-component-[name]/src/themeAttributes.ts` (if component is themeable)
-- [ ] T009 [P] Setup test utilities and mocks in `packages/bpk-component-[name]/src/__mocks__/` if needed
-- [ ] T010 Verify constitution compliance: PascalCase naming, `.module.scss` extension, test file naming
+- [ ] T006 Create TypeScript types file `packages/bpk-component-[name]/src/Bpk[ComponentName]/common-types.ts` (e.g., `BpkButton/common-types.ts`) with component props interface
+- [ ] T007 Create theme attributes file `packages/bpk-component-[name]/src/themeAttributes.ts` (if component is themeable)
+- [ ] T008 [P] Setup test utilities and mocks in `packages/bpk-component-[name]/src/__mocks__/` if needed
+- [ ] T009 Verify constitution compliance: PascalCase naming, `.module.scss` extension, test file naming
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -80,21 +79,21 @@
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T011 [P] [US1] Create unit test file `packages/bpk-component-[name]/src/BpkComponentName/BpkComponentName-test.tsx`
+- [ ] T010 [P] [US1] Create unit test file `packages/bpk-component-[name]/src/Bpk[ComponentName]/Bpk[ComponentName]-test.tsx` (e.g., `BpkButton/BpkButton-test.tsx`)
   - Test rendering with required props
   - Test rendering with optional props
-  - Test all variants (primary, secondary, tertiary)
+  - Test all variants (e.g., primary, secondary, tertiary)
   - Test snapshot for default state
   - **Constitution Check**: Uses Jest + Testing Library, targets 70% branches, 75% functions/lines
 
-- [ ] T012 [P] [US1] Create accessibility test file `packages/bpk-component-[name]/src/BpkComponentName/accessibility-test.tsx`
+- [ ] T011 [P] [US1] Create accessibility test file `packages/bpk-component-[name]/src/Bpk[ComponentName]/accessibility-test.tsx`
   - Test with jest-axe for no violations
   - Test keyboard navigation (Tab, Enter, Space)
   - Test ARIA attributes
   - Test focus management
   - **Constitution Check**: NON-NEGOTIABLE - all components MUST have accessibility tests
 
-- [ ] T013 [P] [US1] Create Storybook story `examples/bpk-component-[name]/stories.tsx`
+- [ ] T012 [P] [US1] Create Storybook story `examples/bpk-component-[name]/stories.tsx`
   - Default story with minimal props
   - All variants story
   - All sizes story
@@ -102,45 +101,45 @@
 
 ### Implementation for User Story 1
 
-- [ ] T014 [US1] Create main component file `packages/bpk-component-[name]/src/BpkComponentName/BpkComponentName.tsx`
+- [ ] T013 [US1] Create main component file `packages/bpk-component-[name]/src/Bpk[ComponentName]/Bpk[ComponentName].tsx` (e.g., `BpkButton/BpkButton.tsx`)
   - Implement component with TypeScript
   - Export default component
   - Add JSDoc comments (British English prose)
   - **Constitution Check**: TypeScript NON-NEGOTIABLE, JSDoc required
 
-- [ ] T015 [US1] Create component styles `packages/bpk-component-[name]/src/BpkComponentName/BpkComponentName.module.scss`
+- [ ] T014 [US1] Create component styles `packages/bpk-component-[name]/src/Bpk[ComponentName]/Bpk[ComponentName].module.scss` (e.g., `BpkButton/BpkButton.module.scss`)
   - Use `@use` syntax to import from `bpk-mixins` (e.g., `@use '../../../bpk-mixins/tokens'`)
   - Import granularly (tokens, typography, shadows, etc.)
-  - Use BEM naming with `bpk-` prefix (`.bpk-component-name`, `.bpk-component-name--primary`)
+  - Use BEM naming with `bpk-` prefix (e.g., `.bpk-button`, `.bpk-button--primary`)
   - Use `rem` units for all sizing (NOT `px` or `em`)
-  - Use design tokens for all values (`tokens.bpk-spacing-md()`, `tokens.$bpk-color-primary`)
+  - Use design tokens for all values (e.g., `tokens.bpk-spacing-md()`, `tokens.$bpk-color-white`)
   - **Constitution Check**: Modern Sass NON-NEGOTIABLE, rem units REQUIRED
 
-- [ ] T016 [US1] Add prop validation and default props in component
+- [ ] T015 [US1] Add prop validation and default props in component
   - Define prop types with TypeScript
   - Set default values for optional props
   - Add prop-types for runtime validation (during migration period)
   - **Constitution Check**: TypeScript types + prop-types during migration
 
-- [ ] T017 [US1] Implement keyboard event handlers for accessibility
+- [ ] T016 [US1] Implement keyboard event handlers for accessibility
   - Handle Enter key
   - Handle Space key
   - Handle Tab navigation
   - **Constitution Check**: Keyboard accessibility REQUIRED
 
-- [ ] T018 [US1] Add ARIA attributes for screen reader support
+- [ ] T017 [US1] Add ARIA attributes for screen reader support
   - aria-label or aria-labelledby
   - aria-disabled for disabled state
   - role attribute if needed
   - **Constitution Check**: Accessibility-First principle
 
-- [ ] T019 [US1] Implement RTL (right-to-left) support
+- [ ] T018 [US1] Implement RTL (right-to-left) support
   - Use logical properties where applicable
   - Test with `isRTL` utility from `bpk-react-utils`
   - Ensure directional properties work correctly
   - **Constitution Check**: RTL support REQUIRED
 
-- [ ] T020 [US1] Run tests and verify they pass
+- [ ] T019 [US1] Run tests and verify they pass
   - Run `npm run jest` for unit tests
   - Run `npm run jest:accessibility` for a11y tests
   - Verify coverage meets thresholds (70% branches, 75% functions/lines/statements)

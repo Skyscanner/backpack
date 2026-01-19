@@ -90,21 +90,20 @@ specs/[###-component-name]/
 ```text
 packages/bpk-component-[name]/
 ├── README.md                     # Component documentation (British English prose)
-├── package.json                  # Package metadata, dependencies, scripts
 ├── index.ts                      # Export entry point (exports from src/)
 ├── docs/                         # Documentation assets
 │   ├── screenshots/              # Component screenshots for README
 │   └── design-assets/            # Figma exports, design references
 └── src/
-    ├── BpkComponentName/
-    │   ├── BpkComponentName.tsx            # Main component implementation
-    │   ├── BpkComponentName.module.scss    # CSS Modules styles
-    │   ├── BpkComponentName-test.tsx       # Unit tests (Jest + Testing Library)
-    │   ├── accessibility-test.tsx          # Accessibility tests (jest-axe)
-    │   ├── BpkComponentName.figma.tsx      # Figma Code Connect
-    │   ├── common-types.ts                 # Shared TypeScript types
-    │   └── __snapshots__/                  # Jest snapshot files
-    │       └── BpkComponentName-test.tsx.snap
+    ├── Bpk[ComponentName]/       # Component directory (e.g., BpkButton/)
+    │   ├── Bpk[ComponentName].tsx            # Main component implementation
+    │   ├── Bpk[ComponentName].module.scss    # CSS Modules styles
+    │   ├── Bpk[ComponentName]-test.tsx       # Unit tests (Jest + Testing Library)
+    │   ├── accessibility-test.tsx            # Accessibility tests (jest-axe)
+    │   ├── Bpk[ComponentName].figma.tsx      # Figma Code Connect
+    │   ├── common-types.ts                   # Shared TypeScript types
+    │   └── __snapshots__/                    # Jest snapshot files
+    │       └── Bpk[ComponentName]-test.tsx.snap
     └── themeAttributes.ts        # Theme attributes (if themeable)
 ```
 
@@ -182,7 +181,7 @@ If no violations: **No constitution violations. Component follows all Backpack s
 
 1. **Component Props Interface**:
 ```typescript
-type BpkComponentNameProps = {
+type Bpk[ComponentName]Props = {
   // Define all props with types, defaults, and documentation
   variant: 'primary' | 'secondary' | 'tertiary';
   size?: 'small' | 'medium' | 'large'; // default: 'medium'
@@ -314,7 +313,7 @@ type BpkComponentNameProps = {
 
 ## Testing Strategy
 
-### Unit Tests (`BpkComponentName-test.tsx`)
+### Unit Tests (`Bpk[ComponentName]-test.tsx`)
 
 **Framework**: Jest 30 + Testing Library
 
@@ -322,8 +321,8 @@ type BpkComponentNameProps = {
 1. **Rendering Tests**:
    - Renders with required props
    - Renders with optional props
-   - Renders all variants (primary, secondary, tertiary)
-   - Renders all sizes (small, medium, large)
+   - Renders all variants (e.g., primary, secondary, tertiary)
+   - Renders all sizes (e.g., small, medium, large)
    - Renders with custom className
    - Renders with children
 
@@ -457,15 +456,15 @@ import BpkBarchart from '@skyscanner/backpack-web/bpk-component-barchart';
 **Example**:
 ```typescript
 import type { Meta, StoryObj } from '@storybook/react';
-import BpkComponentName from './BpkComponentName';
+import Bpk[ComponentName] from './Bpk[ComponentName]';
 
-const meta: Meta<typeof BpkComponentName> = {
-  title: 'Components/BpkComponentName',
-  component: BpkComponentName,
+const meta: Meta<typeof Bpk[ComponentName]> = {
+  title: 'Components/Bpk[ComponentName]',
+  component: Bpk[ComponentName],
 };
 
 export default meta;
-type Story = StoryObj<typeof BpkComponentName>;
+type Story = StoryObj<typeof Bpk[ComponentName]>;
 
 export const Default: Story = {
   args: {
@@ -476,9 +475,9 @@ export const Default: Story = {
 export const AllVariants: Story = {
   render: () => (
     <>
-      <BpkComponentName variant="primary">Primary</BpkComponentName>
-      <BpkComponentName variant="secondary">Secondary</BpkComponentName>
-      <BpkComponentName variant="tertiary">Tertiary</BpkComponentName>
+      <Bpk[ComponentName] variant="primary">Primary</Bpk[ComponentName]>
+      <Bpk[ComponentName] variant="secondary">Secondary</Bpk[ComponentName]>
+      <Bpk[ComponentName] variant="tertiary">Tertiary</Bpk[ComponentName]>
     </>
   ),
 };
@@ -496,16 +495,16 @@ export const AllVariants: Story = {
 **Example**:
 ```typescript
 /**
- * BpkComponentName is a component for [purpose].
+ * Bpk[ComponentName] is a component for [purpose].
  *
  * It supports multiple variants (primary, secondary, tertiary) and sizes.
  *
  * @example
- * <BpkComponentName variant="primary" size="medium">
+ * <Bpk[ComponentName] variant="primary" size="medium">
  *   Click me
- * </BpkComponentName>
+ * </Bpk[ComponentName]>
  */
-type BpkComponentNameProps = {
+type Bpk[ComponentName]Props = {
   /**
    * Visual variant of the component.
    */
@@ -537,9 +536,9 @@ type BpkComponentNameProps = {
 **Example**:
 ```typescript
 import { figma } from '@figma/code-connect';
-import BpkComponentName from './BpkComponentName';
+import Bpk[ComponentName] from './Bpk[ComponentName]';
 
-figma.connect(BpkComponentName, 'https://www.figma.com/file/...', {
+figma.connect(Bpk[ComponentName], 'https://www.figma.com/file/...', {
   props: {
     variant: figma.enum('Variant', {
       Primary: 'primary',
@@ -553,7 +552,7 @@ figma.connect(BpkComponentName, 'https://www.figma.com/file/...', {
     }),
     disabled: figma.boolean('Disabled'),
   },
-  example: (props) => <BpkComponentName {...props}>Label</BpkComponentName>,
+  example: (props) => <Bpk[ComponentName] {...props}>Label</Bpk[ComponentName]>,
 });
 ```
 
@@ -583,10 +582,10 @@ figma.connect(BpkComponentName, 'https://www.figma.com/file/...', {
 **Migration Guide**:
 ```typescript
 // Before (old API)
-<BpkComponentName oldProp="value" />
+<Bpk[ComponentName] oldProp="value" />
 
 // After (new API)
-<BpkComponentName newProp="value" />
+<Bpk[ComponentName] newProp="value" />
 ```
 
 **Timeline**: [Date when breaking change will be released]
@@ -599,7 +598,7 @@ figma.connect(BpkComponentName, 'https://www.figma.com/file/...', {
 
 **Deprecation Implementation**:
 ```typescript
-type BpkComponentNameProps = {
+type Bpk[ComponentName]Props = {
   newProp: string;
 
   /**
@@ -608,7 +607,7 @@ type BpkComponentNameProps = {
   oldProp?: string;
 };
 
-const BpkComponentName = ({ newProp, oldProp }: BpkComponentNameProps) => {
+const Bpk[ComponentName] = ({ newProp, oldProp }: Bpk[ComponentName]Props) => {
   if (oldProp) {
     console.warn('oldProp is deprecated. Use newProp instead. Will be removed in v11.0.0.');
   }
@@ -621,17 +620,17 @@ const BpkComponentName = ({ newProp, oldProp }: BpkComponentNameProps) => {
 ### Future API (if applicable)
 
 **Opt-in V2 Component** (minimum 3 months before becoming default):
-- `BpkComponentName` (current) → `BpkComponentNameV2` (future)
+- `Bpk[ComponentName]` (current) → `Bpk[ComponentName]V2` (future)
 - Consumers can opt-in to V2 early
 - In next MAJOR version, V2 becomes default and V1 is removed
 
 **Example**:
 ```typescript
 // Current usage
-import BpkComponentName from '@skyscanner/backpack-web/bpk-component-name';
+import Bpk[ComponentName] from '@skyscanner/backpack-web/bpk-component-name';
 
 // Opt-in to future API
-import BpkComponentNameV2 from '@skyscanner/backpack-web/bpk-component-name/BpkComponentNameV2';
+import Bpk[ComponentName]V2 from '@skyscanner/backpack-web/bpk-component-name/Bpk[ComponentName]V2';
 ```
 
 ## Release Checklist
