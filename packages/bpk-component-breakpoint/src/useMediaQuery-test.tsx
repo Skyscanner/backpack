@@ -81,4 +81,51 @@ describe('useMediaQuery', () => {
 
     expect(view.result.current).toBe(false);
   });
+
+  describe('ssrSafe parameter', () => {
+    it('should eventually match window.matchMedia when ssrSafe=true after useEffect', () => {
+      // Mock window.matchMedia to return true (e.g., desktop viewport)
+      window.matchMedia = jest.fn().mockImplementation(() => ({
+        matches: true,
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+      }));
+
+      // Pass matchSSR=false and ssrSafe=true (SSR detected mobile, but client has desktop viewport)
+      const view = renderHook(() => useMediaQuery('(min-width: 768px)', false, true));
+
+      // After useEffect runs, it should update to match window.matchMedia (true)
+      // The key is that initial render used matchSSR to prevent hydration errors
+      expect(view.result.current).toBe(true);
+    });
+
+    it('should use window.matchMedia for initial state when ssrSafe=false (CSR optimization)', () => {
+      // Mock window.matchMedia to return true
+      window.matchMedia = jest.fn().mockImplementation(() => ({
+        matches: true,
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+      }));
+
+      // Pass matchSSR=false and ssrSafe=false (default, CSR-optimized)
+      const view = renderHook(() => useMediaQuery('(min-width: 768px)', false, false));
+
+      // Initial state should use window.matchMedia (true) for immediate accuracy in CSR
+      expect(view.result.current).toBe(true);
+    });
+
+    it('should default to ssrSafe=false when not specified', () => {
+      window.matchMedia = jest.fn().mockImplementation(() => ({
+        matches: true,
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+      }));
+
+      // Don't pass ssrSafe parameter (should default to false)
+      const view = renderHook(() => useMediaQuery('(min-width: 768px)', false));
+
+      // Should use window.matchMedia (true) by default
+      expect(view.result.current).toBe(true);
+    });
+  });
 });
