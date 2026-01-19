@@ -72,7 +72,7 @@ ALL source files MUST include the Apache 2.0 license header at the top. This app
 **For bash scripts**, use `#` comment syntax immediately after the shebang line:
 
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 # Backpack - Skyscanner's Design System
 #
 # Copyright 2016 Skyscanner Ltd
