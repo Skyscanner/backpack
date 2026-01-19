@@ -19,6 +19,7 @@ import {
   forwardRef,
   useRef,
   useEffect,
+  useCallback,
   type ComponentPropsWithRef,
   type RefObject,
 } from 'react';
@@ -64,25 +65,74 @@ const BpkSlider = ({
   const invert = isRTL();
   const currentValue = Array.isArray(value) ? value : [value];
 
-  const processSliderValues = (
-    sliderValues: number[],
-    callback?: (val: number | number[]) => void,
-  ) => {
-    const val = sliderValues.length === 1 ? sliderValues[0] : sliderValues;
-    if (callback) {
-      callback(val);
-    }
-  };
+  // Track the latest value for the Chrome workaround
+  const latestValueRef = useRef<number[]>(currentValue);
+  const isDraggingRef = useRef(false);
+  const hasCommittedRef = useRef(false);
+
+  // Keep the latest value ref updated
+  useEffect(() => {
+    latestValueRef.current = currentValue;
+  }, [currentValue]);
+
+  const processSliderValues = useCallback(
+    (
+      sliderValues: number[],
+      callback?: (val: number | number[]) => void,
+    ) => {
+      const val = sliderValues.length === 1 ? sliderValues[0] : sliderValues;
+      if (callback) {
+        callback(val);
+      }
+    },
+    [],
+  );
 
   const thumbRefs = [useRef(null), useRef(null)];
 
-  const handleOnChange = (sliderValues: number[]) => {
-    processSliderValues(sliderValues, onChange);
-  };
+  const handleOnChange = useCallback(
+    (sliderValues: number[]) => {
+      latestValueRef.current = sliderValues;
+      processSliderValues(sliderValues, onChange);
+    },
+    [onChange, processSliderValues],
+  );
 
-  const handleOnAfterChange = (sliderValues: number[]) => {
-    processSliderValues(sliderValues, onAfterChange);
-  };
+  const handleOnAfterChange = useCallback(
+    (sliderValues: number[]) => {
+      hasCommittedRef.current = true;
+      isDraggingRef.current = false;
+      processSliderValues(sliderValues, onAfterChange);
+    },
+    [onAfterChange, processSliderValues],
+  );
+
+  // Chrome workaround: Listen for pointerup/pointercancel on document as safety net
+  // This ensures onAfterChange fires even when Radix's onValueCommit doesn't
+  // See: https://github.com/radix-ui/primitives/issues/1760
+  useEffect(() => {
+    const handlePointerEnd = () => {
+      if (isDraggingRef.current && !hasCommittedRef.current && onAfterChange) {
+        // Radix didn't fire onValueCommit, so we fire it manually
+        processSliderValues(latestValueRef.current, onAfterChange);
+      }
+      isDraggingRef.current = false;
+      hasCommittedRef.current = false;
+    };
+
+    document.addEventListener('pointerup', handlePointerEnd);
+    document.addEventListener('pointercancel', handlePointerEnd);
+
+    return () => {
+      document.removeEventListener('pointerup', handlePointerEnd);
+      document.removeEventListener('pointercancel', handlePointerEnd);
+    };
+  }, [onAfterChange, processSliderValues]);
+
+  const handlePointerDown = useCallback(() => {
+    isDraggingRef.current = true;
+    hasCommittedRef.current = false;
+  }, []);
 
   return (
     <Slider.Root
@@ -108,6 +158,7 @@ const BpkSlider = ({
           className={getClassName('bpk-slider__thumb')}
           aria-valuenow={currentValue[index]}
           ref={thumbRefs[index]}
+          onPointerDown={handlePointerDown}
           asChild
         >
           {/* custom thumb with child input */}
