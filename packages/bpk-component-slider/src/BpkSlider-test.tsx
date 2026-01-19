@@ -33,6 +33,18 @@ window.ResizeObserver =
 Element.prototype.setPointerCapture = jest.fn();
 Element.prototype.releasePointerCapture = jest.fn();
 
+// Mock requestAnimationFrame for testing the Chrome workaround
+const mockRequestAnimationFrame = jest.spyOn(window, 'requestAnimationFrame');
+beforeEach(() => {
+  mockRequestAnimationFrame.mockImplementation((cb) => {
+    cb(0);
+    return 0;
+  });
+});
+afterEach(() => {
+  mockRequestAnimationFrame.mockClear();
+});
+
 describe('BpkSlider', () => {
   const defaultProps = {
     min: 0,

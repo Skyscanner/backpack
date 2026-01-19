@@ -65,15 +65,21 @@ const BpkSlider = ({
   const invert = isRTL();
   const currentValue = Array.isArray(value) ? value : [value];
 
-  // Track the latest value for the Chrome workaround
+  // Track the latest value and callback for the Chrome workaround
+  // Using refs to avoid re-registering document event listeners when these change
   const latestValueRef = useRef<number[]>(currentValue);
+  const onAfterChangeRef = useRef(onAfterChange);
   const isDraggingRef = useRef(false);
   const hasCommittedRef = useRef(false);
 
-  // Keep the latest value ref updated
+  // Keep refs updated
   useEffect(() => {
     latestValueRef.current = currentValue;
   }, [currentValue]);
+
+  useEffect(() => {
+    onAfterChangeRef.current = onAfterChange;
+  }, [onAfterChange]);
 
   const processSliderValues = useCallback(
     (
@@ -112,12 +118,17 @@ const BpkSlider = ({
   // See: https://github.com/radix-ui/primitives/issues/1760
   useEffect(() => {
     const handlePointerEnd = () => {
-      if (isDraggingRef.current && !hasCommittedRef.current && onAfterChange) {
-        // Radix didn't fire onValueCommit, so we fire it manually
-        processSliderValues(latestValueRef.current, onAfterChange);
-      }
-      isDraggingRef.current = false;
-      hasCommittedRef.current = false;
+      // Use requestAnimationFrame to defer the check, allowing Radix's onValueCommit
+      // to fire first and set hasCommittedRef.current = true. This prevents the race
+      // condition where both handlers could fire onAfterChange for the same interaction.
+      requestAnimationFrame(() => {
+        if (isDraggingRef.current && !hasCommittedRef.current && onAfterChangeRef.current) {
+          // Radix didn't fire onValueCommit, so we fire it manually
+          processSliderValues(latestValueRef.current, onAfterChangeRef.current);
+        }
+        isDraggingRef.current = false;
+        hasCommittedRef.current = false;
+      });
     };
 
     document.addEventListener('pointerup', handlePointerEnd);
@@ -127,7 +138,7 @@ const BpkSlider = ({
       document.removeEventListener('pointerup', handlePointerEnd);
       document.removeEventListener('pointercancel', handlePointerEnd);
     };
-  }, [onAfterChange, processSliderValues]);
+  }, [processSliderValues]);
 
   const handlePointerDown = useCallback(() => {
     isDraggingRef.current = true;
