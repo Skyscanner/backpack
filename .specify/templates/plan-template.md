@@ -32,6 +32,7 @@
 
 - [ ] **Component-First Architecture**: Package structure in `packages/bpk-component-[name]/`
 - [ ] **Naming Conventions**: PascalCase for components, `.module.scss` for styles, `*-test.tsx` for tests
+- [ ] **License Headers**: All source files include Apache 2.0 license header at the top
 - [ ] **Modern Sass**: Using `@use` syntax with granular imports from `bpk-mixins`
 - [ ] **Accessibility-First**: Includes `accessibility-test.tsx` with jest-axe
 - [ ] **TypeScript**: All code written in TypeScript with proper types

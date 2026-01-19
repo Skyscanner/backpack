@@ -11,6 +11,7 @@
 
 - [ ] **Component-First Architecture**: Component will be in `packages/bpk-component-[name]/`
 - [ ] **Naming Conventions**: Component name follows PascalCase (BpkComponentName)
+- [ ] **License Headers**: All source files (.ts, .tsx, .js, .jsx, .scss, .css) will include Apache 2.0 license header
 - [ ] **Modern Sass**: Will use `@use` syntax with granular imports from `bpk-mixins`
 - [ ] **Accessibility-First**: Will include `accessibility-test.tsx`
 - [ ] **TypeScript**: Will be written in TypeScript with proper types

@@ -1,22 +1,15 @@
 <!--
 Sync Impact Report:
-Version: 1.0.0 (Initial comprehensive version for Backpack Design System)
-Established principles:
-- I-IX: Core principles based on decisions/ documentation
-- X. Design-Anchored Development (NON-NEGOTIABLE) - from CODE_REVIEW_GUIDELINES.md
-- XI. API Encapsulation & Developer Experience - from CONTRIBUTING.md
-- XII. Experimentation Lifecycle - from CONTRIBUTING.md
-- XIII. Performance Standards - from Skyscanner Web Documentation
-Sources integrated:
-- Backpack decisions/ directory (14 architecture decision documents)
-- CONTRIBUTING.md
-- CODE_REVIEW_GUIDELINES.md
-- Skyscanner Web Documentation (/Users/irinawei/Projects/web-documentation/docs/)
-Templates requiring alignment:
-- ⚠️ spec-template.md - Add Design Review, API restrictions, experimentation sections
-- ⚠️ plan-template.md - Add design approval checkpoint, performance budget sections
-- ⚠️ tasks-template.md - Add design approval tasks, V2 component setup tasks
-- ⚠️ checklist-template.md - Add design approval checks, API quality checks, experimentation checks
+Version: 1.0.0 → 1.0.1 (PATCH - Clarification of existing requirement)
+Modified principles:
+- Principle II (Naming & File Conventions): Enhanced license header section with explicit file type list and complete code examples for all file types (TypeScript, JavaScript, CSS, SCSS, bash scripts)
+Added sections: None
+Removed sections: None
+Templates status:
+- ✅ .specify/templates/spec-template.md - Updated Constitution Check to include explicit license header requirement
+- ✅ .specify/templates/plan-template.md - Updated Core Principles Compliance to include license header checkpoint
+- ✅ .specify/templates/tasks-template.md - Updated Naming & File Conventions compliance checklist to include license headers
+Follow-up TODOs: None - all templates aligned with clarified requirement
 -->
 
 # Backpack Design System Constitution
@@ -48,7 +41,13 @@ All code MUST follow these conventions:
 
 **License Headers (NON-NEGOTIABLE)**:
 
-ALL source files (TypeScript, JavaScript, Sass, bash scripts) MUST include the Apache 2.0 license header at the top:
+ALL source files MUST include the Apache 2.0 license header at the top. This applies to:
+- TypeScript files (`.ts`, `.tsx`)
+- JavaScript files (`.js`, `.jsx`)
+- Sass/CSS files (`.scss`, `.css`)
+- Bash scripts (`.sh`)
+
+**For TypeScript, JavaScript, Sass, and CSS files**, use the following multi-line comment format:
 
 ```typescript
 /*
@@ -70,7 +69,26 @@ ALL source files (TypeScript, JavaScript, Sass, bash scripts) MUST include the A
  */
 ```
 
-For bash scripts, use `#` comment syntax immediately after the shebang line.
+**For bash scripts**, use `#` comment syntax immediately after the shebang line:
+
+```bash
+#!/bin/bash
+# Backpack - Skyscanner's Design System
+#
+# Copyright 2016 Skyscanner Ltd
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+```
 
 **Rationale**: Consistent naming enables quick navigation, automated tooling, and reduces cognitive load. License headers ensure legal compliance and proper attribution. This is documented in `decisions/js-filenames.md` and `decisions/component-scss-filenames.md`.
 
@@ -476,11 +494,12 @@ Constitution amendments require:
 
 ### Version History
 
-- **Version**: 1.0.0
+- **Version**: 1.0.1
 - **Ratified**: 2025-12-22
-- **Last Amended**: 2025-12-22
+- **Last Amended**: 2026-01-19
 
 **Changelog**:
+- v1.0.1 (2026-01-19): Clarified license header requirements for CSS/SCSS files with explicit file type list and code examples for both multi-line comment and bash script formats
 - v1.0.0 (2025-12-22): Initial comprehensive constitution integrating all Backpack standards from decisions/, CONTRIBUTING.md, CODE_REVIEW_GUIDELINES.md, and Skyscanner Web Documentation
 
 ### Compliance

@@ -388,6 +388,7 @@ Throughout implementation, verify compliance with:
 - [ ] Style files: `.module.scss` matching component name
 - [ ] Test files: `*-test.tsx`, `accessibility-test.tsx`
 - [ ] CSS classes: BEM with `bpk-` prefix
+- [ ] License headers: Apache 2.0 header in all .ts, .tsx, .js, .jsx, .scss, .css files
 
 ### Modern Sass (NON-NEGOTIABLE)
 - [ ] Using `@use` syntax (NOT `@import`)
