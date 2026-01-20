@@ -1,3 +1,48 @@
+<!--
+==============================================================================
+DOCUMENT PURPOSE: Define WHAT needs to be built and WHY (Requirements)
+==============================================================================
+
+This specification describes requirements and constraints for non-technical
+stakeholders (designers, product managers, business analysts).
+
+FOCUS: WHAT & WHY
+- What needs to be built
+- Why it's needed
+- What success looks like
+
+✅ INCLUDE in spec.md:
+- Functional requirements (FR-XXX): "Component MUST support X"
+- Component API declarations: Props list with types and plain descriptions
+- Success criteria: Measurable outcomes without implementation details
+- User scenarios: Given/When/Then acceptance tests
+- Non-functional requirements: Performance, accessibility constraints
+- Edge cases: Boundary conditions and error scenarios
+
+❌ EXCLUDE from spec.md (belongs in plan.md):
+- TypeScript interface code with `export interface`
+- React component implementation code
+- Sass/CSS implementation patterns
+- File structure and directory organization
+- Import statements and code examples
+- Build tool configuration
+
+❌ EXCLUDE from spec.md (belongs in tasks.md):
+- Step-by-step implementation tasks
+- Specific file paths and commands
+- Task execution order and dependencies
+
+AUTOMATION:
+- `/speckit.plan` reads this spec and auto-generates implementation patterns
+- `/speckit.tasks` reads spec + plan and auto-generates task list
+
+VALIDATION:
+- Spec should be understandable without technical background
+- Requirements should be testable and measurable
+- No code blocks with TypeScript/React implementation
+==============================================================================
+-->
+
 # Component Specification: [COMPONENT NAME]
 
 **Package Branch**: `[###-component-name]`
@@ -10,7 +55,8 @@
 *GATE: Must pass before implementation begins.*
 
 - [ ] **Component-First Architecture**: Component will be in `packages/bpk-component-[name]/`
-- [ ] **Naming Conventions**: Component name follows PascalCase (BpkComponentName)
+- [ ] **Naming Conventions**: Component name follows PascalCase (e.g., BpkButton)
+- [ ] **License Headers**: All source files (.ts, .tsx, .js, .jsx, .scss, .css) will include Apache 2.0 license header
 - [ ] **Modern Sass**: Will use `@use` syntax with granular imports from `bpk-mixins`
 - [ ] **Accessibility-First**: Will include `accessibility-test.tsx`
 - [ ] **TypeScript**: Will be written in TypeScript with proper types
@@ -126,7 +172,7 @@
 
 **Example**:
 ```typescript
-type BpkComponentNameProps = {
+type Bpk[ComponentName]Props = {
   variant: 'primary' | 'secondary' | 'tertiary';
   size?: 'small' | 'medium' | 'large';
   disabled?: boolean;
@@ -152,7 +198,7 @@ type BpkComponentNameProps = {
 - **STY-002**: Styles MUST use modern Sass API with `@use` syntax
 - **STY-003**: Imports MUST be granular from `bpk-mixins` submodules
 - **STY-004**: All spacing MUST use design tokens (e.g., `tokens.bpk-spacing-md()`)
-- **STY-005**: All colors MUST use design tokens (e.g., `tokens.$bpk-color-primary`)
+- **STY-005**: All colors MUST use design tokens (e.g., `tokens.$bpk-color-white`)
 - **STY-006**: Class names MUST follow BEM with `bpk-` prefix (e.g., `bpk-component-name--variant`)
 - **STY-007**: Component MUST support theming via `bpk-theming` if applicable
 
@@ -166,7 +212,7 @@ type BpkComponentNameProps = {
   @include typography.bpk-text();
 
   &--primary {
-    background-color: tokens.$bpk-color-primary;
+    background-color: tokens.$bpk-color-white;
   }
 
   &--disabled {
@@ -307,12 +353,12 @@ packages/bpk-component-[name]/
 ├── index.ts                            # exports default from src/
 ├── docs/                               # screenshots, design assets
 └── src/
-    ├── BpkComponentName/
-    │   ├── BpkComponentName.tsx
-    │   ├── BpkComponentName.module.scss
-    │   ├── BpkComponentName-test.tsx
+    ├── Bpk[ComponentName]/
+    │   ├── Bpk[ComponentName].tsx
+    │   ├── Bpk[ComponentName].module.scss
+    │   ├── Bpk[ComponentName]-test.tsx
     │   ├── accessibility-test.tsx
-    │   ├── BpkComponentName.figma.tsx
+    │   ├── Bpk[ComponentName].figma.tsx
     │   ├── common-types.ts             # shared types if needed
     │   └── __snapshots__/
     └── themeAttributes.ts              # if component is themeable

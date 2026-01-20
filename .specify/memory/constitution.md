@@ -1,22 +1,21 @@
 <!--
 Sync Impact Report:
-Version: 1.0.0 (Initial comprehensive version for Backpack Design System)
-Established principles:
-- I-IX: Core principles based on decisions/ documentation
-- X. Design-Anchored Development (NON-NEGOTIABLE) - from CODE_REVIEW_GUIDELINES.md
-- XI. API Encapsulation & Developer Experience - from CONTRIBUTING.md
-- XII. Experimentation Lifecycle - from CONTRIBUTING.md
-- XIII. Performance Standards - from Skyscanner Web Documentation
-Sources integrated:
-- Backpack decisions/ directory (14 architecture decision documents)
-- CONTRIBUTING.md
-- CODE_REVIEW_GUIDELINES.md
-- Skyscanner Web Documentation (/Users/irinawei/Projects/web-documentation/docs/)
-Templates requiring alignment:
-- ⚠️ spec-template.md - Add Design Review, API restrictions, experimentation sections
-- ⚠️ plan-template.md - Add design approval checkpoint, performance budget sections
-- ⚠️ tasks-template.md - Add design approval tasks, V2 component setup tasks
-- ⚠️ checklist-template.md - Add design approval checks, API quality checks, experimentation checks
+Version: 1.0.1 → 1.0.2 (PATCH - Template improvements and example corrections)
+Modified principles: None (content clarifications only)
+Added sections: None
+Removed sections: None
+Changes made:
+- Updated component name placeholders from BpkComponentName to Bpk[ComponentName] format across all templates for consistency
+- Changed color token examples from $bpk-color-primary to $bpk-color-white for better visual contrast demonstration
+- Added "e.g." prefix to all examples for clarity
+- Removed package.json references from templates (components don't have individual package.json in Monorepo)
+- Corrected Storybook examples structure (stories.tsx, examples.tsx in examples/ directory)
+- Adjusted task numbering in tasks-template.md after package.json removal
+Templates status:
+- ✅ .specify/templates/spec-template.md - Updated with Bpk[ComponentName] format and corrected examples
+- ✅ .specify/templates/plan-template.md - Updated structure and removed package.json reference
+- ✅ .specify/templates/tasks-template.md - Updated with correct task sequence and examples
+Follow-up TODOs: None - all templates aligned and corrected
 -->
 
 # Backpack Design System Constitution
@@ -48,7 +47,13 @@ All code MUST follow these conventions:
 
 **License Headers (NON-NEGOTIABLE)**:
 
-ALL source files (TypeScript, JavaScript, Sass, bash scripts) MUST include the Apache 2.0 license header at the top:
+ALL source files MUST include the Apache 2.0 license header at the top. This applies to:
+- TypeScript files (`.ts`, `.tsx`)
+- JavaScript files (`.js`, `.jsx`)
+- Sass/CSS files (`.scss`, `.css`)
+- Bash scripts (`.sh`)
+
+**For TypeScript, JavaScript, Sass, and CSS files**, use the following multi-line comment format:
 
 ```typescript
 /*
@@ -70,7 +75,26 @@ ALL source files (TypeScript, JavaScript, Sass, bash scripts) MUST include the A
  */
 ```
 
-For bash scripts, use `#` comment syntax immediately after the shebang line.
+**For bash scripts**, use `#` comment syntax immediately after the shebang line:
+
+```bash
+#!/usr/bin/env bash
+# Backpack - Skyscanner's Design System
+#
+# Copyright 2016 Skyscanner Ltd
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+```
 
 **Rationale**: Consistent naming enables quick navigation, automated tooling, and reduces cognitive load. License headers ensure legal compliance and proper attribution. This is documented in `decisions/js-filenames.md` and `decisions/component-scss-filenames.md`.
 
@@ -98,7 +122,7 @@ All visual CSS parameters (colors, margins, paddings, typography, shadows) MUST 
 
 .bpk-button {
   padding: tokens.bpk-spacing-md();  // ✅ Token, not magic number
-  color: tokens.$bpk-color-primary;   // ✅ Token, not #007bff
+  color: tokens.$bpk-color-white;   // ✅ Token, not #FFFFFF
   @include shadows.bpk-box-shadow-sm();
 }
 ```
@@ -326,7 +350,7 @@ Experimental features MUST follow a controlled lifecycle to enable A/B testing w
 - Update API documentation to indicate experimental status
 
 **Major Changes** (new V2 component):
-- Create experimental V2 component following V2 naming: `BpkComponentNameV2`
+- Create experimental V2 component following V2 naming: `Bpk[ComponentName]V2` (e.g., `BpkButtonV2`)
 - Path: `packages/bpk-component-[name]/src/Bpk[Name]V2/`
 - If experiment succeeds: V1 deprecated, V2 becomes default in next MAJOR version
 - If experiment fails: V2 removed
@@ -476,11 +500,19 @@ Constitution amendments require:
 
 ### Version History
 
-- **Version**: 1.0.0
+- **Version**: 1.0.2
 - **Ratified**: 2025-12-22
-- **Last Amended**: 2025-12-22
+- **Last Amended**: 2026-01-19
 
 **Changelog**:
+- v1.0.2 (2026-01-19): Template improvements and example corrections
+  - Standardized component name placeholders to `Bpk[ComponentName]` format
+  - Updated color token examples to use `$bpk-color-white` for better contrast demonstration
+  - Added "e.g." prefix to all examples for clarity
+  - Removed package.json references (Monorepo structure correction)
+  - Corrected Storybook examples directory structure
+  - Adjusted task template numbering after structural corrections
+- v1.0.1 (2026-01-19): Clarified license header requirements for CSS/SCSS files with explicit file type list and code examples for both multi-line comment and bash script formats
 - v1.0.0 (2025-12-22): Initial comprehensive constitution integrating all Backpack standards from decisions/, CONTRIBUTING.md, CODE_REVIEW_GUIDELINES.md, and Skyscanner Web Documentation
 
 ### Compliance
