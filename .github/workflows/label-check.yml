@@ -1,15 +1,17 @@
 name: label-check
 
 on:
-  pull_request_target:
+  pull_request:
     types: [opened, labeled, unlabeled, synchronize]
+
+permissions: {}
 
 jobs:
   label-check:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/create-github-app-token@v2
+      - uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1
         id: app-token
         with:
           app-id: ${{ vars.GH_APP_ID }}
