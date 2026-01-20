@@ -1,3 +1,48 @@
+<!--
+==============================================================================
+DOCUMENT PURPOSE: Define WHAT needs to be built and WHY (Requirements)
+==============================================================================
+
+This specification describes requirements and constraints for non-technical
+stakeholders (designers, product managers, business analysts).
+
+FOCUS: WHAT & WHY
+- What needs to be built
+- Why it's needed
+- What success looks like
+
+✅ INCLUDE in spec.md:
+- Functional requirements (FR-XXX): "Component MUST support X"
+- Component API declarations: Props list with types and plain descriptions
+- Success criteria: Measurable outcomes without implementation details
+- User scenarios: Given/When/Then acceptance tests
+- Non-functional requirements: Performance, accessibility constraints
+- Edge cases: Boundary conditions and error scenarios
+
+❌ EXCLUDE from spec.md (belongs in plan.md):
+- TypeScript interface code with `export interface`
+- React component implementation code
+- Sass/CSS implementation patterns
+- File structure and directory organization
+- Import statements and code examples
+- Build tool configuration
+
+❌ EXCLUDE from spec.md (belongs in tasks.md):
+- Step-by-step implementation tasks
+- Specific file paths and commands
+- Task execution order and dependencies
+
+AUTOMATION:
+- `/speckit.plan` reads this spec and auto-generates implementation patterns
+- `/speckit.tasks` reads spec + plan and auto-generates task list
+
+VALIDATION:
+- Spec should be understandable without technical background
+- Requirements should be testable and measurable
+- No code blocks with TypeScript/React implementation
+==============================================================================
+-->
+
 # Component Specification: [COMPONENT NAME]
 
 **Package Branch**: `[###-component-name]`
