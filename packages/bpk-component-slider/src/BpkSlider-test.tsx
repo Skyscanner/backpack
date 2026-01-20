@@ -82,10 +82,16 @@ describe('BpkSlider', () => {
   });
 
   describe('onAfterChange', () => {
-    it('should set up document pointer event listeners on mount', () => {
+    it('should add document pointer event listeners on pointerdown', () => {
       const addEventListenerSpy = jest.spyOn(document, 'addEventListener');
 
       render(<BpkSlider {...defaultProps} />);
+      const thumb = screen.getByRole('slider');
+
+      // Listeners should not be added until pointerdown
+      addEventListenerSpy.mockClear();
+
+      fireEvent.pointerDown(thumb, { pointerId: 1 });
 
       expect(addEventListenerSpy).toHaveBeenCalledWith(
         'pointerup',
@@ -99,11 +105,14 @@ describe('BpkSlider', () => {
       addEventListenerSpy.mockRestore();
     });
 
-    it('should remove document pointer event listeners on unmount', () => {
+    it('should remove document pointer event listeners after pointerup', () => {
       const removeEventListenerSpy = jest.spyOn(document, 'removeEventListener');
 
-      const { unmount } = render(<BpkSlider {...defaultProps} />);
-      unmount();
+      render(<BpkSlider {...defaultProps} />);
+      const thumb = screen.getByRole('slider');
+
+      fireEvent.pointerDown(thumb, { pointerId: 1 });
+      fireEvent.pointerUp(document, { pointerId: 1 });
 
       expect(removeEventListenerSpy).toHaveBeenCalledWith(
         'pointerup',

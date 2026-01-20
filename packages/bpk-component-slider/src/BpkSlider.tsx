@@ -116,8 +116,15 @@ const BpkSlider = ({
   // Chrome workaround: Listen for pointerup/pointercancel on document as safety net
   // This ensures onAfterChange fires even when Radix's onValueCommit doesn't
   // See: https://github.com/radix-ui/primitives/issues/1760
-  useEffect(() => {
+  const handlePointerDown = useCallback(() => {
+    isDraggingRef.current = true;
+    hasCommittedRef.current = false;
+
     const handlePointerEnd = () => {
+      // Clean up listeners immediately
+      document.removeEventListener('pointerup', handlePointerEnd);
+      document.removeEventListener('pointercancel', handlePointerEnd);
+
       // Use requestAnimationFrame to defer the check, allowing Radix's onValueCommit
       // to fire first and set hasCommittedRef.current = true. This prevents the race
       // condition where both handlers could fire onAfterChange for the same interaction.
@@ -133,17 +140,7 @@ const BpkSlider = ({
 
     document.addEventListener('pointerup', handlePointerEnd);
     document.addEventListener('pointercancel', handlePointerEnd);
-
-    return () => {
-      document.removeEventListener('pointerup', handlePointerEnd);
-      document.removeEventListener('pointercancel', handlePointerEnd);
-    };
   }, [processSliderValues]);
-
-  const handlePointerDown = useCallback(() => {
-    isDraggingRef.current = true;
-    hasCommittedRef.current = false;
-  }, []);
 
   return (
     <Slider.Root
