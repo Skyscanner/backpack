@@ -43,18 +43,6 @@ type Props = {
   query: string | (typeof BREAKPOINTS)[keyof typeof BREAKPOINTS];
   legacy?: boolean;
   matchSSR?: boolean;
-  /**
-   * Prevents React hydration errors in SSR when server device detection (User-Agent)
-   * doesn't match client viewport size. Common cases: iPhone Safari, Android Chrome.
-   *
-   * Set to true in SSR apps.
-   * Leave false (default) for pure CSR apps.
-   *
-   * Trade-off: When true, causes brief flash but prevents hydration errors.
-   *
-   * @default false
-   */
-  ssrSafe?: boolean;
 };
 
 const useLegacyWarning = (query: string, legacy: boolean, isClient: boolean) =>
@@ -74,7 +62,6 @@ const BpkBreakpoint = ({
   legacy = false,
   matchSSR = false,
   query,
-  ssrSafe = false,
 }: Props) => {
   /**
    * The useEffect and useState combination forces BpkBreakpoint to re-render.
@@ -85,7 +72,7 @@ const BpkBreakpoint = ({
   useEffect(() => {
     updateState({}); // force re-render when on client
   }, []);
-  const matches = useMediaQuery(query, matchSSR, ssrSafe);
+  const matches = useMediaQuery(query, matchSSR);
   const isClient = typeof window !== 'undefined';
   useLegacyWarning(query, legacy, isClient);
   if (isClient) {

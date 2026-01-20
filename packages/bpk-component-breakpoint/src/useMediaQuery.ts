@@ -21,18 +21,16 @@ import { useEffect, useState } from 'react';
 const useMediaQuery = (
   query: string,
   matchSSR = false,
-  ssrSafe = false,
 ): boolean => {
   const isClient = typeof window !== 'undefined' && !!window.matchMedia;
 
   const [matches, setMatches] = useState(() => {
-    // In SSR or when ssrSafe=true: use matchSSR to match server-rendered HTML
+    // When matchSSR=true: use matchSSR value to match server-rendered HTML
     // This prevents hydration errors when User-Agent (server) != viewport size (client)
-    if (!isClient || ssrSafe) {
+    if (!isClient || matchSSR) {
       return matchSSR;
     }
 
-    // In CSR when ssrSafe=false: use real viewport immediately for no flicker
     return window.matchMedia(query).matches;
   });
 

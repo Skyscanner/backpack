@@ -105,7 +105,7 @@ describe('BpkBreakpoint', () => {
         </BpkBreakpoint>,
       );
 
-      expect(mockUseMediaQuery).toHaveBeenCalledWith(BREAKPOINTS.MOBILE, true, false);
+      expect(mockUseMediaQuery).toHaveBeenCalledWith(BREAKPOINTS.MOBILE, true);
     });
 
     it('should pass matchSSR=false to useMediaQuery when matchSSR=false', () => {
@@ -117,7 +117,7 @@ describe('BpkBreakpoint', () => {
         <BpkBreakpoint query={BREAKPOINTS.MOBILE} matchSSR={false} />,
       );
 
-      expect(mockUseMediaQuery).toHaveBeenCalledWith(BREAKPOINTS.MOBILE, false, false);
+      expect(mockUseMediaQuery).toHaveBeenCalledWith(BREAKPOINTS.MOBILE, false);
     });
 
     it('should pass matchSSR=false to useMediaQuery when matchSSR not defined', () => {
@@ -129,7 +129,7 @@ describe('BpkBreakpoint', () => {
         <BpkBreakpoint query={BREAKPOINTS.MOBILE} />,
       );
 
-      expect(mockUseMediaQuery).toHaveBeenCalledWith(BREAKPOINTS.MOBILE, false, false);
+      expect(mockUseMediaQuery).toHaveBeenCalledWith(BREAKPOINTS.MOBILE, false);
     });
   });
 
