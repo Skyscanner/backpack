@@ -1,13 +1,19 @@
 # Implementation Plan: TypeScript Migration for BpkTable
 
-**Package Branch**: `090-table-typescript` | **Date**: 2026-01-19 | **Spec**: [spec.md](./spec.md)
+**Package Branch**: `090-table-typescript` | **Date**: 2026-01-20 | **Spec**: [spec.md](./spec.md)
 **Input**: Component specification from `/specs/090-table-typescript/spec.md`
+**Updates**: 2026-01-20 - Added PropTypes removal, JSDoc comments, interface conversion
 
 **Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
 
 ## Summary
 
-Migrate bpk-component-table from Flow to TypeScript while maintaining complete API compatibility. This is a zero-breaking-change migration that updates type definitions to use proper TypeScript inheritance patterns with `Omit` and intersection types (instead of `[rest: string]: any`). All six table components (BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableCell, BpkTableHeadCell) will be migrated along with their tests and examples. The migration provides better type safety for TypeScript consumers while remaining fully compatible with JavaScript consumers.
+Migrate bpk-component-table from Flow to TypeScript while maintaining complete API compatibility. This is a zero-breaking-change migration that updates type definitions to use interfaces with `extends` syntax (instead of type aliases with intersection types). All six table components (BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableCell, BpkTableHeadCell) will be migrated along with their tests and examples. The migration provides better type safety for TypeScript consumers while remaining fully compatible with JavaScript consumers.
+
+**Incremental Updates (2026-01-20)**:
+1. Remove PropTypes and related imports - TypeScript types are sufficient for compile-time checking
+2. Add JSDoc comment `/** The content of the table */` to all `children` props for better IDE documentation
+3. Convert type aliases to interfaces using `extends` syntax for better extensibility
 
 ## Technical Context
 
@@ -660,24 +666,26 @@ import type {
 ### TypeScript Migration-Specific Patterns
 
 1. **Named Type Imports**: Use `import type { ReactNode } from 'react'`
-2. **Omit Pattern**: Use `Omit<HTMLAttributes<T>, 'className'>` for prop inheritance
+2. **Interface Pattern**: Use `interface BpkTableProps extends Omit<HTMLAttributes<T>, 'className'>` for prop definitions
 3. **No `any` Types**: Use proper inheritance instead of `[rest: string]: any`
-4. **PropTypes Retention**: Keep PropTypes alongside TypeScript types
-5. **Type Exports**: Export types with components: `export type BpkTableProps`
-6. **Inline Types**: Define types within component files (not separate files)
+4. **PropTypes Removal**: Remove PropTypes imports and declarations - TypeScript types replace runtime validation
+5. **Type Exports**: Export interfaces with components: `export interface BpkTableProps`
+6. **Inline Types**: Define interfaces within component files (not separate files)
+7. **JSDoc Comments**: Add `/** The content of the table */` to `children` props for IDE documentation
 
 ### Common Pitfalls to Avoid
 
 1. ❌ Using `React.ReactNode` → ✅ Import and use `ReactNode`
 2. ❌ Using `React.HTMLAttributes<T>` → ✅ Import and use `HTMLAttributes<T>`
-3. ❌ Using `[rest: string]: any` → ✅ Use `Omit<HTMLAttributes<T>, 'className'>`
+3. ❌ Using `[rest: string]: any` → ✅ Use `interface extends Omit<HTMLAttributes<T>, 'className'>`
 4. ❌ Not importing React types → ✅ `import type { ReactNode } from 'react'`
 5. ❌ Changing test logic → ✅ Keep test logic identical
 6. ❌ Changing component behavior → ✅ Zero behavioral changes
 7. ❌ Adding new props → ✅ API must remain identical
 8. ❌ Modifying styles → ✅ Styles unchanged
-9. ❌ Removing PropTypes → ✅ Retain PropTypes for runtime validation
+9. ❌ Using type aliases with `&` → ✅ Use interfaces with `extends` for better extensibility
 10. ❌ Creating examples in specs/ → ✅ Examples only in api-design.md as documentation
+11. ❌ Forgetting JSDoc comments → ✅ Add `/** The content of the table */` to children props
 
 ---
 

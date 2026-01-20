@@ -2,11 +2,14 @@
 
 **Package Branch**: `090-table-typescript`
 **Created**: 2026-01-14
-**Updated**: 2026-01-19 (Type inheritance pattern update)
+**Updated**: 2026-01-20 (TypeScript refinements: PropTypes removal, JSDoc comments, interface conversion)
 **Status**: Draft
 **Input**: User description: "help me to migrate bpk-component-table and examples/bpk-component-table to fully support Typescript，I have following Acceptance Criteria: - The component's public API must remain completely unchanged, with all props, exports, default values, and behavior identical to the original Flow implementation. - Exported TypeScript types must match the original Flow type semantics, keeping optional props optional and required props required. - All existing tests must pass without modifications, snapshots must remain identical, and accessibility tests must continue passing. - Default values, event handling, lifecycle methods, and ref forwarding must behave exactly as before migration. - The component must build successfully without TypeScript errors or warnings, and bundle size should not significantly change"
 
-**CRITICAL UPDATE**: Use proper TypeScript inheritance pattern with `Omit` and intersection types instead of `[rest: string]: any` for better type safety
+**INCREMENTAL UPDATES**:
+1. Remove PropTypes and related imports (TypeScript types are sufficient)
+2. Add JSDoc `/** The content of the table */` comments to children props
+3. Convert type aliases to interfaces while maintaining API compatibility
 
 ## Clarifications
 
@@ -19,6 +22,12 @@
 ### Session 2026-01-19
 
 - Q: How should rest props (`...rest`) be typed in TypeScript to match the Flow inexact object pattern? → A: Updated to use proper TypeScript inheritance pattern with `Omit` and intersection types (e.g., `export type BpkTableProps = { children: React.ReactNode; className?: string | null; } & Omit<React.HTMLAttributes<HTMLTableElement>, 'className'>`). This provides better type safety than `[rest: string]: any` pattern while allowing components to properly inherit native HTML element attributes.
+
+### Session 2026-01-20
+
+- Q: Should we remove PropTypes after TypeScript migration is complete? → A: Yes, remove PropTypes and related imports. TypeScript provides compile-time type checking which is sufficient. Runtime validation is less critical for a design system component consumed by typed codebases.
+- Q: Should type aliases be converted to interfaces? → A: Yes, convert `type` aliases to `interface` declarations where appropriate. Interfaces are preferred for object shapes that may be extended, providing better IDE support and clearer intent.
+- Q: What JSDoc comments should be added? → A: Add `/** The content of the table */` to all `children` props across all table components for better IDE documentation.
 
 ## Constitution Check
 
@@ -163,88 +172,96 @@ All TypeScript file extensions must follow the correct pattern: component files 
 - **FR-007**: Examples directory (`examples/bpk-component-table/`) MUST be migrated to TypeScript (`.tsx` extensions)
 - **FR-008**: All TypeScript types MUST accurately represent the original Flow types without semantic changes
 - **FR-009**: Generated `.d.ts` declaration files MUST be included in published package
-- **FR-010**: Component MUST maintain prop-types for runtime validation alongside TypeScript types
+- **FR-010**: PropTypes MUST be removed from all component files (TypeScript types replace runtime validation)
+- **FR-011**: JSDoc comment `/** The content of the table */` MUST be added to all `children` props
+- **FR-012**: Type aliases MUST be converted to interface declarations where appropriate for better extensibility
 
 ### Component API *(existing props - must be preserved)*
 
 **BpkTable Props**:
-- **`children`** (ReactNode, required): Table content (typically BpkTableHead and BpkTableBody)
+- **`children`** (ReactNode, required): The content of the table (typically BpkTableHead and BpkTableBody)
 - **`className`** (string | null, optional, default: null): Additional CSS class names
 - **`...rest`** (HTMLTableElement attributes): Additional HTML attributes spread to table element
 
 **BpkTableHead Props**:
-- **`children`** (ReactNode, required): Table header content (typically BpkTableRow)
+- **`children`** (ReactNode, required): The content of the table (typically BpkTableRow)
 - **`className`** (string | null, optional, default: null): Additional CSS class names
 - **`...rest`** (HTMLTableSectionElement attributes): Additional HTML attributes spread to thead element
 
 **BpkTableBody Props**:
-- **`children`** (ReactNode, required): Table body content (typically BpkTableRow components)
+- **`children`** (ReactNode, required): The content of the table (typically BpkTableRow components)
 - **`className`** (string | null, optional, default: null): Additional CSS class names
 - **`...rest`** (HTMLTableSectionElement attributes): Additional HTML attributes spread to tbody element
 
 **BpkTableRow Props**:
-- **`children`** (ReactNode, required): Row content (typically BpkTableCell or BpkTableHeadCell)
+- **`children`** (ReactNode, required): The content of the table (typically BpkTableCell or BpkTableHeadCell)
 - **`className`** (string | null, optional, default: null): Additional CSS class names
 - **`...rest`** (HTMLTableRowElement attributes): Additional HTML attributes spread to tr element
 
 **BpkTableCell Props**:
-- **`children`** (ReactNode, required): Cell content
+- **`children`** (ReactNode, required): The content of the table
 - **`className`** (string | null, optional, default: null): Additional CSS class names
 - **`wordBreak`** (boolean, optional, default: false): Whether to apply `word-break: break-word` CSS
 - **`...rest`** (HTMLTableCellElement attributes): Additional HTML attributes spread to td element
 
 **BpkTableHeadCell Props**:
-- **`children`** (ReactNode, required): Header cell content
+- **`children`** (ReactNode, required): The content of the table
 - **`className`** (string | null, optional, default: null): Additional CSS class names
 - **`wordBreak`** (boolean, optional, default: false): Whether to apply `word-break: break-word` CSS
 - **`...rest`** (HTMLTableCellElement attributes): Additional HTML attributes spread to th element
 
-**TypeScript Type Example**:
+**TypeScript Interface Example**:
 ```typescript
 // BpkTable extends HTMLTableElement attributes
-export type BpkTableProps = {
-  children: React.ReactNode;
+export interface BpkTableProps extends Omit<HTMLAttributes<HTMLTableElement>, 'className'> {
+  /** The content of the table */
+  children: ReactNode;
   className?: string | null;
-} & Omit<React.HTMLAttributes<HTMLTableElement>, 'className'>;
+}
 
 // BpkTableHead extends HTMLTableSectionElement attributes
-export type BpkTableHeadProps = {
-  children: React.ReactNode;
+export interface BpkTableHeadProps extends Omit<HTMLAttributes<HTMLTableSectionElement>, 'className'> {
+  /** The content of the table */
+  children: ReactNode;
   className?: string | null;
-} & Omit<React.HTMLAttributes<HTMLTableSectionElement>, 'className'>;
+}
 
 // BpkTableBody extends HTMLTableSectionElement attributes
-export type BpkTableBodyProps = {
-  children: React.ReactNode;
+export interface BpkTableBodyProps extends Omit<HTMLAttributes<HTMLTableSectionElement>, 'className'> {
+  /** The content of the table */
+  children: ReactNode;
   className?: string | null;
-} & Omit<React.HTMLAttributes<HTMLTableSectionElement>, 'className'>;
+}
 
 // BpkTableRow extends HTMLTableRowElement attributes
-export type BpkTableRowProps = {
-  children: React.ReactNode;
+export interface BpkTableRowProps extends Omit<HTMLAttributes<HTMLTableRowElement>, 'className'> {
+  /** The content of the table */
+  children: ReactNode;
   className?: string | null;
-} & Omit<React.HTMLAttributes<HTMLTableRowElement>, 'className'>;
+}
 
 // BpkTableCell extends HTMLTableCellElement attributes
-export type BpkTableCellProps = {
-  children: React.ReactNode;
+export interface BpkTableCellProps extends Omit<HTMLAttributes<HTMLTableCellElement>, 'className'> {
+  /** The content of the table */
+  children: ReactNode;
   className?: string | null;
   wordBreak?: boolean;
-} & Omit<React.HTMLAttributes<HTMLTableCellElement>, 'className'>;
+}
 
 // BpkTableHeadCell extends HTMLTableCellElement attributes
-export type BpkTableHeadCellProps = {
-  children: React.ReactNode;
+export interface BpkTableHeadCellProps extends Omit<HTMLAttributes<HTMLTableCellElement>, 'className'> {
+  /** The content of the table */
+  children: ReactNode;
   className?: string | null;
   wordBreak?: boolean;
-} & Omit<React.HTMLAttributes<HTMLTableCellElement>, 'className'>;
+}
 ```
 
-**Rationale**: Instead of using the `[rest: string]: any` pattern, components should properly extend the native HTML element attributes using TypeScript's `Omit` and intersection types. This provides:
-- Better type safety for consumers
-- Accurate autocomplete for all native HTML attributes
-- Explicit overriding of specific props (like `className` to allow `null`)
-- Follows the pattern used in existing Backpack components like BpkButton
+**Rationale**:
+- Interfaces are preferred over type aliases for object shapes that can be extended, providing better IDE support and error messages
+- JSDoc comments on `children` props improve IDE documentation when hovering over props
+- PropTypes are removed as TypeScript provides compile-time type checking
+- Components properly extend native HTML element attributes using `extends` keyword with `Omit` for better type safety
 
 ### Non-Functional Requirements
 
@@ -262,15 +279,16 @@ export type BpkTableHeadCellProps = {
 - **MIG-001**: Flow type annotations MUST be removed (e.g., `/* @flow strict */`)
 - **MIG-002**: Flow-specific comments MUST be removed or converted (e.g., `// $FlowFixMe`)
 - **MIG-003**: Flow type imports MUST be converted to TypeScript types (e.g., `type { Node } from 'react'` → `React.ReactNode`)
-- **MIG-004**: PropTypes MUST be retained for runtime validation (per Backpack constitution principle V)
+- **MIG-004**: PropTypes MUST be removed entirely (imports and declarations) - TypeScript types replace runtime validation
 - **MIG-005**: Component files with JSX MUST be renamed from `.js` to `.tsx`; pure logic/utility files without JSX MUST use `.ts` extension
 - **MIG-006**: Test files MUST be migrated to TypeScript with `.tsx` extension (test files render components, so they contain JSX)
 - **MIG-007**: Storybook files (`examples.js`, `stories.js`) MUST be migrated to TypeScript
 - **MIG-008**: Package entry point MUST be migrated to TypeScript (`index.ts`)
 - **MIG-009**: All TypeScript types MUST be exported for consumer use alongside component exports in each file
-- **MIG-010**: TypeScript types MUST be defined inline within each component file (not in separate common-types files)
-- **MIG-011**: Type exports MUST use named exports (e.g., `export type BpkTableProps`) to allow consumers to import types directly
-- **MIG-012**: File extensions MUST be correct: `.tsx` for files with JSX, `.ts` for pure logic files without JSX (e.g., `index.ts` should NOT be `index.tsx` if it only contains imports/exports)
+- **MIG-010**: Type aliases MUST be converted to interfaces using `extends` syntax (e.g., `export interface BpkTableProps extends Omit<HTMLAttributes<HTMLTableElement>, 'className'>`)
+- **MIG-011**: JSDoc comment `/** The content of the table */` MUST be added to all `children` properties in interface definitions
+- **MIG-012**: Interface exports MUST use named exports (e.g., `export interface BpkTableProps`) to allow consumers to import types directly
+- **MIG-013**: File extensions MUST be correct: `.tsx` for files with JSX, `.ts` for pure logic files without JSX (e.g., `index.ts` should NOT be `index.tsx` if it only contains imports/exports)
 
 ## Success Criteria *(mandatory)*
 
@@ -469,24 +487,28 @@ examples/bpk-component-table/
 3. **Test Preservation**: All existing tests pass without modifications
 4. **Zero Breaking Changes**: Consumers require zero code changes
 5. **Bundle Size**: Maintain same bundle size (within 1%)
-6. **PropTypes Retention**: Keep prop-types for runtime validation per constitution principle V
-7. **Type Generation**: Ensure `.d.ts` files are generated correctly
+6. **PropTypes Removal**: Remove PropTypes imports and declarations - TypeScript provides compile-time type checking
+7. **Interface Conversion**: Convert type aliases to interfaces for better extensibility and IDE support
+8. **JSDoc Comments**: Add `/** The content of the table */` to all `children` props for better documentation
+9. **Type Generation**: Ensure `.d.ts` files are generated correctly
 
 **Flow to TypeScript Conversion Patterns**:
 
 - `/* @flow strict */` → Remove entirely
+- `import PropTypes from 'prop-types';` → Remove entirely
 - `type { Node } from 'react'` → `React.ReactNode`
 - `?string` → `string | null` or `string | undefined` (context-dependent)
 - `?boolean` → `boolean | undefined`
 - `// $FlowFixMe` → Remove or replace with proper TypeScript typing
-- `PropTypes.node.isRequired` → `children: React.ReactNode` (required)
-- `PropTypes.string` → `string | undefined` (optional)
-- `PropTypes.bool` → `boolean | undefined` (optional)
+- `PropTypes.node.isRequired` → Remove PropTypes declarations
+- `PropTypes.string` → Remove PropTypes declarations
+- `PropTypes.bool` → Remove PropTypes declarations
+- `export type BpkTableProps = {...} & Omit<...>` → `export interface BpkTableProps extends Omit<...> {...}`
 
 **Common Flow/TypeScript Mapping**:
 ```typescript
 // Flow: children: Node (required)
-// TypeScript: children: React.ReactNode
+// TypeScript: children: ReactNode with JSDoc comment
 
 // Flow: className: ?string (optional, nullable)
 // TypeScript: className?: string | null
@@ -495,38 +517,46 @@ examples/bpk-component-table/
 // TypeScript: wordBreak?: boolean
 
 // Flow: {...rest} (inexact object spread)
-// TypeScript: Use Omit with intersection types to properly inherit HTML element attributes
+// TypeScript: Use interface extends with Omit to properly inherit HTML element attributes
+
+// Flow: PropTypes.node.isRequired
+// TypeScript: Remove PropTypes, use interface definition only
 ```
 
-**Type Export Pattern**:
+**Interface Export Pattern**:
 ```typescript
 // Example for BpkTable.tsx
-export type BpkTableProps = {
-  children: React.ReactNode;
-  className?: string | null;
-} & Omit<React.HTMLAttributes<HTMLTableElement>, 'className'>;
+import type { ReactNode, HTMLAttributes } from 'react';
 
-export const BpkTable = ({ children, className = null, ...rest }: BpkTableProps) => {
+export interface BpkTableProps extends Omit<HTMLAttributes<HTMLTableElement>, 'className'> {
+  /** The content of the table */
+  children: ReactNode;
+  className?: string | null;
+}
+
+const BpkTable = ({ children, className = null, ...rest }: BpkTableProps) => {
   // Component implementation
 };
+
+export default BpkTable;
 ```
 
-**Type Pattern for Each Component**:
-- BpkTable: Extends `React.HTMLAttributes<HTMLTableElement>` with `Omit<..., 'className'>`
-- BpkTableHead: Extends `React.HTMLAttributes<HTMLTableSectionElement>` with `Omit<..., 'className'>`
-- BpkTableBody: Extends `React.HTMLAttributes<HTMLTableSectionElement>` with `Omit<..., 'className'>`
-- BpkTableRow: Extends `React.HTMLAttributes<HTMLTableRowElement>` with `Omit<..., 'className'>`
-- BpkTableCell: Extends `React.HTMLAttributes<HTMLTableCellElement>` with `Omit<..., 'className'>`
-- BpkTableHeadCell: Extends `React.HTMLAttributes<HTMLTableCellElement>` with `Omit<..., 'className'>`
+**Interface Pattern for Each Component**:
+- BpkTable: `interface BpkTableProps extends Omit<HTMLAttributes<HTMLTableElement>, 'className'>`
+- BpkTableHead: `interface BpkTableHeadProps extends Omit<HTMLAttributes<HTMLTableSectionElement>, 'className'>`
+- BpkTableBody: `interface BpkTableBodyProps extends Omit<HTMLAttributes<HTMLTableSectionElement>, 'className'>`
+- BpkTableRow: `interface BpkTableRowProps extends Omit<HTMLAttributes<HTMLTableRowElement>, 'className'>`
+- BpkTableCell: `interface BpkTableCellProps extends Omit<HTMLAttributes<HTMLTableCellElement>, 'className'>`
+- BpkTableHeadCell: `interface BpkTableHeadCellProps extends Omit<HTMLAttributes<HTMLTableCellElement>, 'className'>`
 
-Consumers can then import both component and types:
+Consumers can then import both component and interfaces:
 ```typescript
-import { BpkTable, type BpkTableProps } from '@skyscanner/backpack-web/bpk-component-table';
+import BpkTable, { type BpkTableProps } from '@skyscanner/backpack-web/bpk-component-table';
 ```
 
 ## Open Questions
 
-None - all requirements are clearly specified in the acceptance criteria. The type inheritance pattern has been updated to use `Omit` with intersection types for better type safety (2026-01-19).
+None - all requirements are clearly specified. The type inheritance pattern has been updated to use `Omit` with `extends` for interfaces (2026-01-19). PropTypes removal, JSDoc comments, and interface conversion have been specified (2026-01-20).
 
 ## References
 

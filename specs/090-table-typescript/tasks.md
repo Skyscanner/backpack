@@ -59,52 +59,63 @@
 
 ## Phase 2: User Story 2 - Type System Migration (Priority: P1)
 
-**Goal**: Migrate type definitions from Flow to TypeScript with proper inheritance patterns
+**Goal**: Migrate type definitions from Flow to TypeScript with interface inheritance patterns
 
-**Independent Test**: TypeScript compiles without errors. Generated `.d.ts` files contain proper types. No `any` types in public API (except PropTypes which are retained).
+**Incremental Updates (2026-01-20)**:
+- Remove PropTypes and related imports
+- Add JSDoc `/** The content of the table */` comments to children props
+- Convert type aliases to interfaces using `extends` syntax
+
+**Independent Test**: TypeScript compiles without errors. Generated `.d.ts` files contain proper types with JSDoc comments. No `any` types in public API.
 
 ### Type Migration Tasks
 
 - [x] T005 [P] [US2] Update `packages/bpk-component-table/src/BpkTable.tsx` type definitions:
+  - Remove `import PropTypes from 'prop-types'` import
+  - Remove PropTypes declarations (BpkTable.propTypes)
   - Add `import type { ReactNode, HTMLAttributes } from 'react'`
-  - Change type definition to: `export type BpkTableProps = { children: ReactNode; className?: string | null; } & Omit<HTMLAttributes<HTMLTableElement>, 'className'>`
-  - Export type alongside component: `export type BpkTableProps`
-  - Retain PropTypes for runtime validation
+  - Convert to interface: `export interface BpkTableProps extends Omit<HTMLAttributes<HTMLTableElement>, 'className'> { /** The content of the table */ children: ReactNode; className?: string | null; }`
+  - Export interface alongside component
   - Verify no `React.` prefix usage
 
 - [x] T006 [P] [US2] Update `packages/bpk-component-table/src/BpkTableHead.tsx` type definitions:
+  - Remove `import PropTypes from 'prop-types'` import
+  - Remove PropTypes declarations
   - Add `import type { ReactNode, HTMLAttributes } from 'react'`
-  - Change type definition to: `export type BpkTableHeadProps = { children: ReactNode; } & HTMLAttributes<HTMLTableSectionElement>`
-  - Export type alongside component
-  - Retain PropTypes
+  - Convert to interface: `export interface BpkTableHeadProps extends HTMLAttributes<HTMLTableSectionElement> { /** The content of the table */ children: ReactNode; }`
+  - Export interface alongside component
 
 - [x] T007 [P] [US2] Update `packages/bpk-component-table/src/BpkTableBody.tsx` type definitions:
+  - Remove `import PropTypes from 'prop-types'` import
+  - Remove PropTypes declarations
   - Add `import type { ReactNode, HTMLAttributes } from 'react'`
-  - Change type definition to: `export type BpkTableBodyProps = { children: ReactNode; } & HTMLAttributes<HTMLTableSectionElement>`
-  - Export type alongside component
-  - Retain PropTypes
+  - Convert to interface: `export interface BpkTableBodyProps extends HTMLAttributes<HTMLTableSectionElement> { /** The content of the table */ children: ReactNode; }`
+  - Export interface alongside component
 
 - [x] T008 [P] [US2] Update `packages/bpk-component-table/src/BpkTableRow.tsx` type definitions:
+  - Remove `import PropTypes from 'prop-types'` import
+  - Remove PropTypes declarations
   - Add `import type { ReactNode, HTMLAttributes } from 'react'`
-  - Change type definition to: `export type BpkTableRowProps = { children: ReactNode; } & HTMLAttributes<HTMLTableRowElement>`
-  - Export type alongside component
-  - Retain PropTypes
+  - Convert to interface: `export interface BpkTableRowProps extends HTMLAttributes<HTMLTableRowElement> { /** The content of the table */ children: ReactNode; }`
+  - Export interface alongside component
 
 - [x] T009 [P] [US2] Update `packages/bpk-component-table/src/BpkTableCell.tsx` type definitions:
+  - Remove `import PropTypes from 'prop-types'` import
+  - Remove PropTypes declarations
   - Add `import type { ReactNode, HTMLAttributes } from 'react'`
-  - Change type definition to: `export type BpkTableCellProps = { children: ReactNode; className?: string | null; wordBreak?: boolean; } & Omit<HTMLAttributes<HTMLTableCellElement>, 'className'>`
-  - Export type alongside component
-  - Retain PropTypes
+  - Convert to interface: `export interface BpkTableCellProps extends Omit<HTMLAttributes<HTMLTableCellElement>, 'className'> { /** The content of the table */ children: ReactNode; className?: string | null; wordBreak?: boolean; }`
+  - Export interface alongside component
 
 - [x] T010 [P] [US2] Update `packages/bpk-component-table/src/BpkTableHeadCell.tsx` type definitions:
+  - Remove `import PropTypes from 'prop-types'` import
+  - Remove PropTypes declarations
   - Add `import type { ReactNode, HTMLAttributes } from 'react'`
-  - Change type definition to: `export type BpkTableHeadCellProps = { children: ReactNode; className?: string | null; wordBreak?: boolean; } & Omit<HTMLAttributes<HTMLTableCellElement>, 'className'>`
-  - Export type alongside component
-  - Retain PropTypes
+  - Convert to interface: `export interface BpkTableHeadCellProps extends Omit<HTMLAttributes<HTMLTableCellElement>, 'className'> { /** The content of the table */ children: ReactNode; className?: string | null; wordBreak?: boolean; }`
+  - Export interface alongside component
 
-- [x] T011 [US2] Update `packages/bpk-component-table/index.ts` to export all types:
-  - Add type exports: `export type { BpkTableProps } from './src/BpkTable'`
-  - Add type exports for all 6 components
+- [x] T011 [US2] Update `packages/bpk-component-table/index.ts` to export all interfaces:
+  - Add interface exports: `export type { BpkTableProps } from './src/BpkTable'`
+  - Add interface exports for all 6 components
   - Verify file remains `.ts` (no JSX)
 
 - [x] T012 [US2] Run TypeScript compilation to verify no errors or warnings

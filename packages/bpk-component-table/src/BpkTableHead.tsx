@@ -16,17 +16,13 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import type { ReactNode, HTMLAttributes } from 'react';
 
-export type BpkTableHeadProps = {
+export interface BpkTableHeadProps extends HTMLAttributes<HTMLTableSectionElement> {
+  /** The content of the table */
   children: ReactNode;
-} & HTMLAttributes<HTMLTableSectionElement>;
+}
 
 const BpkTableHead = (props: BpkTableHeadProps) => <thead {...props} />;
-
-BpkTableHead.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default BpkTableHead;

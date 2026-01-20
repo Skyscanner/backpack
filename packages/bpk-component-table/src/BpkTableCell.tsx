@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import type { ReactNode, HTMLAttributes } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -25,11 +24,12 @@ import STYLES from './BpkTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkTableCellProps = {
+export interface BpkTableCellProps extends Omit<HTMLAttributes<HTMLTableCellElement>, 'className'> {
+  /** The content of the table */
   children: ReactNode;
   className?: string | null;
   wordBreak?: boolean;
-} & Omit<HTMLAttributes<HTMLTableCellElement>, 'className'>;
+}
 
 const BpkTableCell = ({children, className = null, wordBreak = false, ...rest}: BpkTableCellProps) => {
 
@@ -46,12 +46,6 @@ const BpkTableCell = ({children, className = null, wordBreak = false, ...rest}: 
       {children}
     </td>
   );
-};
-
-BpkTableCell.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  wordBreak: PropTypes.bool,
 };
 
 export default BpkTableCell;
