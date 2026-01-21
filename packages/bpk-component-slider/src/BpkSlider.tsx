@@ -165,6 +165,7 @@ const BpkSlider = ({
       step={step || 1}
       onValueChange={handleOnChange}
       onValueCommit={handleOnAfterChange}
+      onPointerDown={handlePointerDown}
       inverted={invert}
       minStepsBetweenThumbs={minDistance}
       {...rest}
@@ -180,7 +181,6 @@ const BpkSlider = ({
           className={getClassName('bpk-slider__thumb')}
           aria-valuenow={currentValue[index]}
           ref={thumbRefs[index]}
-          onPointerDown={handlePointerDown}
           asChild
         >
           {/* custom thumb with child input */}
