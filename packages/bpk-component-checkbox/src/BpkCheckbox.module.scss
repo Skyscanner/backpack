@@ -18,16 +18,19 @@
 
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/forms';
+@use '../../bpk-mixins/utils';
 
 .bpk-checkbox {
+  // Override for Ark UI structure - use flexbox for proper layout
+  display: flex;
+  padding-left: 0; // Remove padding since control has its own margin
+  align-items: flex-start;
+  gap: 0; // Remove gap, margin is on control
+
   @include forms.bpk-checkbox;
 
-  &__label {
-    @include forms.bpk-checkbox__label;
-
-    &--small {
-      @include forms.bpk-checkbox__label--small;
-    }
+  @include utils.bpk-rtl {
+    padding-right: 0;
   }
 
   &--white {
@@ -44,6 +47,103 @@
 
   &--invalid {
     @include forms.bpk-checkbox--invalid;
+  }
+
+  &__control {
+    // Ark UI Control wrapper - contains the checkbox input visuals
+    // This is the visible checkbox box
+    position: relative;
+    display: inline-block;
+    width: tokens.bpk-spacing-lg() - (tokens.$bpk-one-pixel-rem * 4);
+    height: tokens.bpk-spacing-lg() - (tokens.$bpk-one-pixel-rem * 4);
+    margin-right: tokens.bpk-spacing-md();
+    flex-shrink: 0; // Prevent checkbox from shrinking
+    transition:
+      border-color tokens.$bpk-duration-sm ease-in-out,
+      background-color tokens.$bpk-duration-sm ease-in-out;
+    border: (tokens.$bpk-one-pixel-rem * 3) solid tokens.$bpk-text-secondary-day;
+    border-radius: (tokens.$bpk-one-pixel-rem * 4);
+    background-color: tokens.$bpk-canvas-day;
+    cursor: pointer;
+    vertical-align: text-bottom;
+
+    @include utils.bpk-rtl {
+      margin-right: 0;
+      margin-left: tokens.bpk-spacing-md();
+    }
+
+    // Checked state
+    &[data-state='checked'],
+    &[data-state='indeterminate'] {
+      @include utils.bpk-themeable-property(
+        background-color,
+        --bpk-checkbox-checked-color,
+        tokens.$bpk-core-accent-day
+      );
+      @include utils.bpk-themeable-property(
+        border-color,
+        --bpk-checkbox-checked-color,
+        tokens.$bpk-core-accent-day
+      );
+    }
+
+    // Focus state
+    &[data-focus] {
+      outline: tokens.$bpk-one-pixel-rem * 2 solid tokens.$bpk-core-accent-day;
+      outline-offset: tokens.$bpk-one-pixel-rem * 2;
+    }
+
+    // Disabled state
+    &[data-disabled] {
+      border-color: tokens.$bpk-text-disabled-day;
+      background-color: tokens.$bpk-canvas-contrast-day;
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  &__label {
+    @include forms.bpk-checkbox__label;
+
+    &--small {
+      @include forms.bpk-checkbox__label--small;
+    }
+  }
+
+  &__indicator {
+    // Ark UI Indicator - checkmark or dash icon
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    // Checkmark icon (shown when checked)
+    &[data-state='checked']::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: '';
+      width: tokens.bpk-spacing-md();
+      height: tokens.bpk-spacing-sm();
+      transform: translate(-50%, -60%) rotate(-45deg);
+      border: solid tokens.$bpk-surface-default-day;
+      border-width: 0 0 (tokens.$bpk-one-pixel-rem * 2)
+        (tokens.$bpk-one-pixel-rem * 2);
+    }
+
+    // Dash icon (shown when indeterminate)
+    &[data-state='indeterminate']::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: '';
+      width: tokens.bpk-spacing-md();
+      height: (tokens.$bpk-one-pixel-rem * 2);
+      transform: translate(-50%, -50%);
+      border-radius: tokens.$bpk-border-size-lg;
+      background-color: tokens.$bpk-surface-default-day;
+    }
   }
 
   &__input {

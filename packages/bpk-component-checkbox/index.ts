@@ -16,11 +16,48 @@
  * limitations under the License.
  */
 
-import BpkCheckbox, { type Props as BpkCheckboxProps } from './src/BpkCheckbox';
+import BpkCheckbox, {
+  BpkCheckboxRoot,
+  BpkCheckboxControl,
+  BpkCheckboxLabel,
+  BpkCheckboxIndicator,
+  BpkCheckboxHiddenInput,
+} from './src/BpkCheckbox';
 import themeAttributes from './src/themeAttributes';
 
-export type { BpkCheckboxProps };
+import type {
+  BpkCheckboxProps,
+  BpkCheckboxRootProps,
+  BpkCheckboxControlProps,
+  BpkCheckboxLabelProps,
+  BpkCheckboxIndicatorProps,
+  BpkCheckboxHiddenInputProps,
+} from './src/common-types';
+
+// Default export for simple usage
 export default BpkCheckbox;
+
+// Sub-components for composable API
+export {
+  BpkCheckboxRoot,
+  BpkCheckboxControl,
+  BpkCheckboxLabel,
+  BpkCheckboxIndicator,
+  BpkCheckboxHiddenInput,
+};
+
+// Types
+export type {
+  BpkCheckboxProps,
+  BpkCheckboxRootProps,
+  BpkCheckboxControlProps,
+  BpkCheckboxLabelProps,
+  BpkCheckboxIndicatorProps,
+  BpkCheckboxHiddenInputProps,
+};
+
+// Theme
 export { themeAttributes };
+
 
 
