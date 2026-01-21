@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import clamp from 'lodash/clamp';
 
@@ -41,7 +41,7 @@ export type Props = {
   min?: number;
   max?: number;
   showPriceIndicator?: boolean;
-  marker: Marker;
+  marker?: Marker;
   segments: {
     low: Marker;
     high: Marker;
@@ -59,17 +59,20 @@ const BpkPriceRange = ({
   const indicatorRef = useRef<HTMLDivElement>(null);
   const [linesWidth, setLinesWidth] = useState(0);
   const [prefilledWidth, setPrefilledWidth] = useState(0);
-  const calcPercentage = (current: number) =>
-    (clamp(current, min, max) - min) / (max - min);
-  const indicatorPercent = calcPercentage(marker.percentage);
+  const calcPercentage = useCallback(
+    (current: number) => (clamp(current, min, max) - min) / (max - min),
+    [min, max],
+  );
 
-  let type: MarkerType;
-  if (marker.percentage < segments.low.percentage) {
-    type = MARKER_TYPES.LOW;
-  } else if (marker.percentage > segments.high.percentage) {
-    type = MARKER_TYPES.HIGH;
-  } else {
-    type = MARKER_TYPES.MEDIUM;
+  let type: MarkerType | undefined;
+  if (marker) {
+    if (marker.percentage < segments.low.percentage) {
+      type = MARKER_TYPES.LOW;
+    } else if (marker.percentage > segments.high.percentage) {
+      type = MARKER_TYPES.HIGH;
+    } else {
+      type = MARKER_TYPES.MEDIUM;
+    }
   }
 
   useEffect(() => {
@@ -91,7 +94,8 @@ const BpkPriceRange = ({
 
   useEffect(() => {
     // to calculate the spacing ahead of the price indicator
-    if (indicatorRef.current && linesWidth) {
+    if (marker && indicatorRef.current && linesWidth) {
+      const indicatorPercent = calcPercentage(marker.percentage);
       const estimatedWidth =
         indicatorPercent * linesWidth - indicatorRef.current.scrollWidth / 2;
       const maxPrefilledWidth = linesWidth - indicatorRef.current.scrollWidth;
@@ -99,7 +103,7 @@ const BpkPriceRange = ({
 
       setPrefilledWidth(actualPrefilledWidth);
     }
-  }, [indicatorPercent, linesWidth]);
+  }, [marker, linesWidth]);
 
   const linesClassName = getClassName(
     'bpk-price-range__lines',
@@ -114,10 +118,12 @@ const BpkPriceRange = ({
     showPriceIndicator && 'bpk-price-range__line--highLarge',
   );
   const mediumClassName = getClassName('bpk-price-range__line--medium');
-  const dotClassName = getClassName(
-    `bpk-price-range__line--${type}`,
-    'bpk-price-range__line--dot',
-  );
+  const dotClassName = type
+    ? getClassName(
+        `bpk-price-range__line--${type}`,
+        'bpk-price-range__line--dot',
+      )
+    : undefined;
 
   return (
     <div
@@ -134,7 +140,7 @@ const BpkPriceRange = ({
       )}
       ref={linesRef}
     >
-      {showPriceIndicator && (
+      {marker && type && showPriceIndicator && (
         <div className={getClassName('bpk-price-range__marker')}>
           <BpkPriceMarker
             ref={indicatorRef}
@@ -147,7 +153,7 @@ const BpkPriceRange = ({
         <div className={lowClassName} />
         <div className={mediumClassName} />
         <div className={highClassName} />
-        {!showPriceIndicator && (
+        {marker && type && !showPriceIndicator && (
           <div className={dotClassName} ref={indicatorRef} />
         )}
       </div>

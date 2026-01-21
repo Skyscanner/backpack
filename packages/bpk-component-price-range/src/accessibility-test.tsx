@@ -50,4 +50,23 @@ describe('BpkPriceRange accessibility tests', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('should not have programmatically-detectable accessibility issues without marker', async () => {
+    const { container } = render(
+      <BpkPriceRange
+        segments={{
+          low: {
+            price: '£100',
+            percentage: 20,
+          },
+          high: {
+            price: '£200',
+            percentage: 80,
+          },
+        }}
+      />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });

@@ -115,6 +115,18 @@ const VeryLargeHighPriceRangeExample = () => (
   </Wrapper>
 );
 
+const NoMarkerWithLabelsExample = () => (
+  <Wrapper isLarge>
+    <BpkPriceRange segments={segments} />
+  </Wrapper>
+);
+
+const NoMarkerWithoutLabelsExample = () => (
+  <Wrapper>
+    <BpkPriceRange showPriceIndicator={false} segments={segments} />
+  </Wrapper>
+);
+
 const MixedExample = () => (
   <div>
     <SmallerLowPriceRangeExample />
@@ -124,6 +136,8 @@ const MixedExample = () => (
     <LargeMediumPriceRangeExample />
     <LargeHighPriceRangeExample />
     <VeryLargeHighPriceRangeExample />
+    <NoMarkerWithLabelsExample />
+    <NoMarkerWithoutLabelsExample />
   </div>
 );
 
@@ -135,5 +149,7 @@ export {
   LargeHighPriceRangeExample,
   LargeMediumPriceRangeExample,
   VeryLargeHighPriceRangeExample,
+  NoMarkerWithLabelsExample,
+  NoMarkerWithoutLabelsExample,
   MixedExample,
 };
