@@ -18,6 +18,7 @@
 
 /* @flow strict */
 
+import BpkLink from '../../packages/bpk-component-link';
 import {
   BpkTable,
   BpkTableHead,
@@ -71,6 +72,17 @@ const WordBreakExample = () => (
         <BpkTableCell wordBreak>wordBreak: true</BpkTableCell>
         <BpkTableCell wordBreak>https://www.bbc.co.uk/news/world/us_and_canada</BpkTableCell>
         <BpkTableCell wordBreak>pneumonoultramicroscopicsilicovolcanoconiosis</BpkTableCell>
+      </BpkTableRow>
+      <BpkTableRow>
+        <BpkTableCell wordBreak>wordBreak: true (BpkLink)</BpkTableCell>
+        <BpkTableCell wordBreak>
+          <BpkLink href="https://www.bbc.co.uk/news/world/us_and_canada">
+            https://www.bbc.co.uk/news/world/us_and_canada
+          </BpkLink>
+        </BpkTableCell>
+        <BpkTableCell wordBreak>
+            pneumonoultramicroscopicsilicovolcanoconiosis
+        </BpkTableCell>
       </BpkTableRow>
       <BpkTableRow>
         <BpkTableCell>wordBreak: false</BpkTableCell>
