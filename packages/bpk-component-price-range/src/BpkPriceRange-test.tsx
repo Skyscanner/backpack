@@ -116,9 +116,7 @@ describe('BpkPriceRange', () => {
   });
 
   it('should render without marker when marker prop is omitted (with labels)', () => {
-    const { container } = render(
-      <BpkPriceRange segments={segments} />,
-    );
+    const { container } = render(<BpkPriceRange segments={segments} />);
 
     // Should not render marker or dot
     expect(
