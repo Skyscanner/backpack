@@ -71,6 +71,8 @@ const BpkSlider = ({
   const onAfterChangeRef = useRef(onAfterChange);
   const isDraggingRef = useRef(false);
   const hasCommittedRef = useRef(false);
+  // Store cleanup function to prevent memory leaks if component unmounts during drag
+  const cleanupRef = useRef<(() => void) | null>(null);
 
   // Keep refs updated
   useEffect(() => {
@@ -80,6 +82,13 @@ const BpkSlider = ({
   useEffect(() => {
     onAfterChangeRef.current = onAfterChange;
   }, [onAfterChange]);
+
+  // Cleanup on unmount to prevent memory leaks
+  useEffect(() => () => {
+      if (cleanupRef.current) {
+        cleanupRef.current();
+      }
+    }, []);
 
   const processSliderValues = useCallback(
     (
@@ -117,13 +126,18 @@ const BpkSlider = ({
   // This ensures onAfterChange fires even when Radix's onValueCommit doesn't
   // See: https://github.com/radix-ui/primitives/issues/1760
   const handlePointerDown = useCallback(() => {
+    // Clean up any previous listener still hanging around (edge case)
+    if (cleanupRef.current) {
+      cleanupRef.current();
+    }
+
     isDraggingRef.current = true;
     hasCommittedRef.current = false;
 
     const handlePointerEnd = () => {
-      // Clean up listeners immediately
       document.removeEventListener('pointerup', handlePointerEnd);
       document.removeEventListener('pointercancel', handlePointerEnd);
+      cleanupRef.current = null;
 
       // Use requestAnimationFrame to defer the check, allowing Radix's onValueCommit
       // to fire first and set hasCommittedRef.current = true. This prevents the race
@@ -138,6 +152,7 @@ const BpkSlider = ({
       });
     };
 
+    cleanupRef.current = handlePointerEnd;
     document.addEventListener('pointerup', handlePointerEnd);
     document.addEventListener('pointercancel', handlePointerEnd);
   }, [processSliderValues]);

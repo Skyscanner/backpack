@@ -126,6 +126,32 @@ describe('BpkSlider', () => {
       removeEventListenerSpy.mockRestore();
     });
 
+    it('should clean up document listeners on unmount during drag', () => {
+      const removeEventListenerSpy = jest.spyOn(document, 'removeEventListener');
+
+      const { unmount } = render(<BpkSlider {...defaultProps} />);
+      const thumb = screen.getByRole('slider');
+
+      // Start dragging
+      fireEvent.pointerDown(thumb, { pointerId: 1 });
+
+      // Unmount while still dragging (simulates navigation away)
+      removeEventListenerSpy.mockClear();
+      unmount();
+
+      // Should clean up listeners to prevent memory leak
+      expect(removeEventListenerSpy).toHaveBeenCalledWith(
+        'pointerup',
+        expect.any(Function),
+      );
+      expect(removeEventListenerSpy).toHaveBeenCalledWith(
+        'pointercancel',
+        expect.any(Function),
+      );
+
+      removeEventListenerSpy.mockRestore();
+    });
+
     it('should fire onAfterChange on document pointerup after thumb pointerdown', () => {
       const onAfterChange = jest.fn();
 
