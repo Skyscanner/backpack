@@ -62,15 +62,13 @@ const BpkPriceRange = ({
   const calcPercentage = (current: number) =>
     (clamp(current, min, max) - min) / (max - min);
 
-  let type: MarkerType | undefined;
-  if (marker) {
-    if (marker.percentage < segments.low.percentage) {
-      type = MARKER_TYPES.LOW;
-    } else if (marker.percentage > segments.high.percentage) {
-      type = MARKER_TYPES.HIGH;
-    } else {
-      type = MARKER_TYPES.MEDIUM;
-    }
+  let type: MarkerType;
+  if (marker && marker.percentage < segments.low.percentage) {
+    type = MARKER_TYPES.LOW;
+  } else if (marker && marker.percentage > segments.high.percentage) {
+    type = MARKER_TYPES.HIGH;
+  } else {
+    type = MARKER_TYPES.MEDIUM;
   }
 
   useEffect(() => {
@@ -116,13 +114,13 @@ const BpkPriceRange = ({
     showPriceIndicator && 'bpk-price-range__line--highLarge',
   );
   const mediumClassName = getClassName('bpk-price-range__line--medium');
-  const shouldShowDot = !!marker && !!type && !showPriceIndicator;
-  const dotClassName = shouldShowDot
-    ? getClassName(
-        `bpk-price-range__line--${type}`,
-        'bpk-price-range__line--dot',
-      )
-    : undefined;
+
+  const shouldShowMarker = !!marker && showPriceIndicator;
+  const shouldShowDot = !!marker && !showPriceIndicator;
+  const dotClassName = getClassName(
+    `bpk-price-range__line--${type}`,
+    'bpk-price-range__line--dot',
+  );
 
   return (
     <div
@@ -139,7 +137,7 @@ const BpkPriceRange = ({
       )}
       ref={linesRef}
     >
-      {marker && type && showPriceIndicator && (
+      {shouldShowMarker && (
         <div className={getClassName('bpk-price-range__marker')}>
           <BpkPriceMarker
             ref={indicatorRef}
@@ -152,7 +150,7 @@ const BpkPriceRange = ({
         <div className={lowClassName} />
         <div className={mediumClassName} />
         <div className={highClassName} />
-        {dotClassName && <div className={dotClassName} ref={indicatorRef} />}
+        {shouldShowDot && <div className={dotClassName} ref={indicatorRef} />}
       </div>
       {showPriceIndicator && (
         <div className={getClassName('bpk-price-range__ranges')}>
