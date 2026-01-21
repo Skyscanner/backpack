@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import clamp from 'lodash/clamp';
 
@@ -59,10 +59,8 @@ const BpkPriceRange = ({
   const indicatorRef = useRef<HTMLDivElement>(null);
   const [linesWidth, setLinesWidth] = useState(0);
   const [prefilledWidth, setPrefilledWidth] = useState(0);
-  const calcPercentage = useCallback(
-    (current: number) => (clamp(current, min, max) - min) / (max - min),
-    [min, max],
-  );
+  const calcPercentage = (current: number) =>
+    (clamp(current, min, max) - min) / (max - min);
 
   let type: MarkerType | undefined;
   if (marker) {
