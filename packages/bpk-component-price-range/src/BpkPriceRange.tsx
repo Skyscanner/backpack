@@ -116,7 +116,7 @@ const BpkPriceRange = ({
     showPriceIndicator && 'bpk-price-range__line--highLarge',
   );
   const mediumClassName = getClassName('bpk-price-range__line--medium');
-  const dotClassName = type
+  const dotClassName = marker && type && !showPriceIndicator
     ? getClassName(
         `bpk-price-range__line--${type}`,
         'bpk-price-range__line--dot',
@@ -151,7 +151,7 @@ const BpkPriceRange = ({
         <div className={lowClassName} />
         <div className={mediumClassName} />
         <div className={highClassName} />
-        {marker && type && !showPriceIndicator && (
+        {dotClassName && (
           <div className={dotClassName} ref={indicatorRef} />
         )}
       </div>
