@@ -33,6 +33,18 @@ import STYLES from './BpkSlider.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// Pure utility function to normalize slider values for callbacks
+// Returns single number for single-thumb slider, array for range slider
+const processSliderValues = (
+  sliderValues: number[],
+  callback?: (val: number | number[]) => void,
+) => {
+  const val = sliderValues.length === 1 ? sliderValues[0] : sliderValues;
+  if (callback) {
+    callback(val);
+  }
+};
+
 export type Props = {
   max: number;
   min: number;
@@ -90,19 +102,6 @@ const BpkSlider = ({
       }
     }, []);
 
-  const processSliderValues = useCallback(
-    (
-      sliderValues: number[],
-      callback?: (val: number | number[]) => void,
-    ) => {
-      const val = sliderValues.length === 1 ? sliderValues[0] : sliderValues;
-      if (callback) {
-        callback(val);
-      }
-    },
-    [],
-  );
-
   const thumbRefs = [useRef(null), useRef(null)];
 
   const handleOnChange = useCallback(
@@ -110,7 +109,7 @@ const BpkSlider = ({
       latestValueRef.current = sliderValues;
       processSliderValues(sliderValues, onChange);
     },
-    [onChange, processSliderValues],
+    [onChange],
   );
 
   const handleOnAfterChange = useCallback(
@@ -119,7 +118,7 @@ const BpkSlider = ({
       isDraggingRef.current = false;
       processSliderValues(sliderValues, onAfterChange);
     },
-    [onAfterChange, processSliderValues],
+    [onAfterChange],
   );
 
   // Chrome workaround: Listen for pointerup/pointercancel on document as safety net
@@ -155,7 +154,7 @@ const BpkSlider = ({
     cleanupRef.current = handlePointerEnd;
     document.addEventListener('pointerup', handlePointerEnd);
     document.addEventListener('pointercancel', handlePointerEnd);
-  }, [processSliderValues]);
+  }, []);
 
   return (
     <Slider.Root
