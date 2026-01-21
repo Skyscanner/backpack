@@ -99,7 +99,7 @@ const BpkPriceRange = ({
 
       setPrefilledWidth(actualPrefilledWidth);
     }
-  }, [marker, linesWidth]);
+  }, [marker?.percentage, linesWidth]);
 
   const linesClassName = getClassName(
     'bpk-price-range__lines',
