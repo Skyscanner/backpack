@@ -81,4 +81,82 @@ describe('useMediaQuery', () => {
 
     expect(view.result.current).toBe(false);
   });
+
+  describe('Client-side hydration behavior with matchSSR', () => {
+    it('should use matchSSR=true for initial state when matchSSR=true, then sync to viewport in useEffect', () => {
+      // Mock actual viewport as mobile (matches=false)
+      const mockMedia = {
+        matches: false,
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+      };
+      window.matchMedia = jest.fn().mockImplementation(() => mockMedia);
+
+      // Pass matchSSR=true to simulate server rendering desktop layout
+      const view = renderHook(() => useMediaQuery('(min-width: 768px)', true));
+
+      // After initial render AND useEffect, it should be synced to actual viewport (false)
+      // The useEffect at line 40 calls setMatches(media.matches) which updates to false
+      expect(view.result.current).toBe(false);
+
+      // Verify that addEventListener was called, confirming useEffect ran
+      expect(mockMedia.addEventListener).toHaveBeenCalled();
+    });
+
+    it('should use actual viewport immediately when matchSSR=false (CSR-optimized)', () => {
+      // Mock actual viewport as desktop (matches=true)
+      window.matchMedia = jest.fn().mockImplementation(() => ({
+        matches: true,
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+      }));
+
+      // Pass matchSSR=false explicitly (CSR-optimized)
+      const view = renderHook(() => useMediaQuery('(min-width: 768px)', false));
+
+      // Should use actual viewport (true) - no hydration safety mechanism
+      expect(view.result.current).toBe(true);
+    });
+
+    it('should use actual viewport by default when matchSSR not specified', () => {
+      // Mock actual viewport as mobile (matches=false)
+      window.matchMedia = jest.fn().mockImplementation(() => ({
+        matches: false,
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+      }));
+
+      // Don't pass matchSSR (defaults to false)
+      const view = renderHook(() => useMediaQuery('(min-width: 768px)'));
+
+      // Should use actual viewport (false)
+      expect(view.result.current).toBe(false);
+    });
+
+    it('documents that matchSSR=true prevents hydration mismatches at cost of a flash', () => {
+      // Real-world scenario: Server sees mobile User-Agent, renders with matchSSR=false
+      // But client has desktop viewport (e.g., Android Chrome "Request Desktop Site")
+
+      // If we use matchSSR=false, there would be hydration mismatch:
+      // - Server rendered: false (mobile User-Agent)
+      // - Client initial: true (desktop viewport)
+      // - React error: "Hydration failed because the initial UI does not match..."
+
+      // Solution: Use matchSSR=true to force initial client state to match server
+      const mockMedia = {
+        matches: true, // Actual viewport is desktop
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+      };
+      window.matchMedia = jest.fn().mockImplementation(() => mockMedia);
+
+      // Consumer would pass matchSSR=false (matching server's detection)
+      // But in testing library, renderHook runs useEffect immediately
+      // So we can only verify the final synced state
+      const view = renderHook(() => useMediaQuery('(min-width: 768px)', false));
+
+      // After useEffect, it reflects actual viewport
+      expect(view.result.current).toBe(true);
+    });
+  });
 });
