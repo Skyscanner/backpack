@@ -40,210 +40,421 @@ describe('BpkPriceRange', () => {
     },
   };
 
-  it('should render low price indicator correctly', () => {
-    const { container } = render(
-      <BpkPriceRange
-        marker={{ price: '£50', percentage: 10 }}
-        segments={segments}
-      />,
-    );
+  describe('bubble marker with boundaries (use case 2)', () => {
+    it('should render low bubble marker with boundaries correctly', () => {
+      const { container } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries
+          marker={{ price: '£50', percentage: 10, type: 'bubble' }}
+          segments={segments}
+        />,
+      );
 
-    expect(
-      container.querySelector('.bpk-price-range__marker'),
-    ).toHaveTextContent('£50');
-    expect(
-      container.querySelector('.bpk-price-range__ranges'),
-    ).toHaveTextContent('£100£200');
-    expect(container.querySelector('.bpk-price-marker')).toHaveClass(
-      'bpk-price-marker--low',
-    );
+      expect(
+        container.querySelector('.bpk-price-range__marker'),
+      ).toHaveTextContent('£50');
+      expect(
+        container.querySelector('.bpk-price-range__ranges'),
+      ).toHaveTextContent('£100£200');
+      expect(container.querySelector('.bpk-price-marker')).toHaveClass(
+        'bpk-price-marker--low',
+      );
+    });
+
+    it('should render medium bubble marker with boundaries correctly', () => {
+      const { container } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries
+          marker={{ price: '£150', percentage: 50, type: 'bubble' }}
+          segments={segments}
+        />,
+      );
+
+      expect(container.querySelector('.bpk-price-marker')).toHaveClass(
+        'bpk-price-marker--medium',
+      );
+      expect(
+        container.querySelector('.bpk-price-range__ranges'),
+      ).toHaveTextContent('£100£200');
+    });
+
+    it('should render high bubble marker with boundaries correctly', () => {
+      const { container } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries
+          marker={{ price: '£300', percentage: 90, type: 'bubble' }}
+          segments={segments}
+        />,
+      );
+
+      expect(container.querySelector('.bpk-price-marker')).toHaveClass(
+        'bpk-price-marker--high',
+      );
+      expect(
+        container.querySelector('.bpk-price-range__ranges'),
+      ).toHaveTextContent('£100£200');
+    });
   });
 
-  it('should render medium price indicator correctly', () => {
-    const { container } = render(
-      <BpkPriceRange
-        marker={{ price: '£150', percentage: 50 }}
-        segments={segments}
-      />,
-    );
+  describe('dot marker with boundaries (use case 1)', () => {
+    it('should render low dot marker with boundaries correctly', () => {
+      const { container } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries
+          marker={{ price: '£50', percentage: 10, type: 'dot' }}
+          segments={segments}
+        />,
+      );
 
-    expect(container.querySelector('.bpk-price-marker')).toHaveClass(
-      'bpk-price-marker--medium',
-    );
+      expect(
+        container.querySelector('.bpk-price-range__marker'),
+      ).not.toBeInTheDocument();
+      expect(
+        container.querySelector('.bpk-price-range__line--dot'),
+      ).toBeInTheDocument();
+      expect(container.querySelector('.bpk-price-range__line--dot')).toHaveClass(
+        'bpk-price-range__line--low',
+      );
+      expect(
+        container.querySelector('.bpk-price-range__ranges'),
+      ).toHaveTextContent('£100£200');
+    });
+
+    it('should render medium dot marker with boundaries correctly', () => {
+      const { container } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries
+          marker={{ price: '£150', percentage: 50, type: 'dot' }}
+          segments={segments}
+        />,
+      );
+
+      expect(
+        container.querySelector('.bpk-price-range__marker'),
+      ).not.toBeInTheDocument();
+      expect(
+        container.querySelector('.bpk-price-range__line--dot'),
+      ).toBeInTheDocument();
+      expect(container.querySelector('.bpk-price-range__line--dot')).toHaveClass(
+        'bpk-price-range__line--medium',
+      );
+      expect(
+        container.querySelector('.bpk-price-range__ranges'),
+      ).toHaveTextContent('£100£200');
+    });
+
+    it('should render high dot marker with boundaries correctly', () => {
+      const { container } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries
+          marker={{ price: '£300', percentage: 90, type: 'dot' }}
+          segments={segments}
+        />,
+      );
+
+      expect(
+        container.querySelector('.bpk-price-range__marker'),
+      ).not.toBeInTheDocument();
+      expect(
+        container.querySelector('.bpk-price-range__line--dot'),
+      ).toBeInTheDocument();
+      expect(container.querySelector('.bpk-price-range__line--dot')).toHaveClass(
+        'bpk-price-range__line--high',
+      );
+      expect(
+        container.querySelector('.bpk-price-range__ranges'),
+      ).toHaveTextContent('£100£200');
+    });
   });
 
-  it('should render high price indicator correctly', () => {
-    const { container } = render(
-      <BpkPriceRange
-        marker={{ price: '£300', percentage: 90 }}
-        segments={segments}
-      />,
-    );
+  describe('dot marker without boundaries (use case 3)', () => {
+    it('should render low dot marker without boundaries correctly', () => {
+      const { container } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries={false}
+          marker={{ price: '£50', percentage: 10, type: 'dot' }}
+          segments={segments}
+        />,
+      );
 
-    expect(container.querySelector('.bpk-price-marker')).toHaveClass(
-      'bpk-price-marker--high',
-    );
+      expect(
+        container.querySelector('.bpk-price-range__marker'),
+      ).not.toBeInTheDocument();
+      expect(
+        container.querySelector('.bpk-price-range__line--dot'),
+      ).toBeInTheDocument();
+      expect(container.querySelector('.bpk-price-range__line--dot')).toHaveClass(
+        'bpk-price-range__line--low',
+      );
+      expect(
+        container.querySelector('.bpk-price-range__ranges'),
+      ).not.toBeInTheDocument();
+    });
+
+    it('should render medium dot marker without boundaries correctly', () => {
+      const { container } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries={false}
+          marker={{ price: '£150', percentage: 50, type: 'dot' }}
+          segments={segments}
+        />,
+      );
+
+      expect(
+        container.querySelector('.bpk-price-range__marker'),
+      ).not.toBeInTheDocument();
+      expect(
+        container.querySelector('.bpk-price-range__line--dot'),
+      ).toBeInTheDocument();
+      expect(container.querySelector('.bpk-price-range__line--dot')).toHaveClass(
+        'bpk-price-range__line--medium',
+      );
+      expect(
+        container.querySelector('.bpk-price-range__ranges'),
+      ).not.toBeInTheDocument();
+    });
+
+    it('should render high dot marker without boundaries correctly', () => {
+      const { container } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries={false}
+          marker={{ price: '£300', percentage: 90, type: 'dot' }}
+          segments={segments}
+        />,
+      );
+
+      expect(
+        container.querySelector('.bpk-price-range__marker'),
+      ).not.toBeInTheDocument();
+      expect(
+        container.querySelector('.bpk-price-range__line--dot'),
+      ).toBeInTheDocument();
+      expect(container.querySelector('.bpk-price-range__line--dot')).toHaveClass(
+        'bpk-price-range__line--high',
+      );
+      expect(
+        container.querySelector('.bpk-price-range__ranges'),
+      ).not.toBeInTheDocument();
+    });
   });
 
-  it('should render correctly when hide price marker', () => {
-    const { container } = render(
-      <BpkPriceRange
-        showPriceIndicator={false}
-        marker={{ price: '£50', percentage: 10 }}
-        segments={segments}
-      />,
-    );
+  describe('bubble marker without boundaries (use case 4)', () => {
+    it('should render low bubble marker without boundaries correctly', () => {
+      const { container } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries={false}
+          marker={{ price: '£50', percentage: 10, type: 'bubble' }}
+          segments={segments}
+        />,
+      );
 
-    expect(
-      container.querySelector('.bpk-price-range__marker'),
-    ).not.toBeInTheDocument();
-    expect(
-      container.querySelector('.bpk-price-range__line--dot'),
-    ).toBeInTheDocument();
+      expect(
+        container.querySelector('.bpk-price-range__marker'),
+      ).toHaveTextContent('£50');
+      expect(container.querySelector('.bpk-price-marker')).toHaveClass(
+        'bpk-price-marker--low',
+      );
+      expect(
+        container.querySelector('.bpk-price-range__ranges'),
+      ).not.toBeInTheDocument();
+    });
+
+    it('should render medium bubble marker without boundaries correctly', () => {
+      const { container } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries={false}
+          marker={{ price: '£150', percentage: 50, type: 'bubble' }}
+          segments={segments}
+        />,
+      );
+
+      expect(
+        container.querySelector('.bpk-price-range__marker'),
+      ).toHaveTextContent('£150');
+      expect(container.querySelector('.bpk-price-marker')).toHaveClass(
+        'bpk-price-marker--medium',
+      );
+      expect(
+        container.querySelector('.bpk-price-range__ranges'),
+      ).not.toBeInTheDocument();
+    });
+
+    it('should render high bubble marker without boundaries correctly', () => {
+      const { container } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries={false}
+          marker={{ price: '£300', percentage: 90, type: 'bubble' }}
+          segments={segments}
+        />,
+      );
+
+      expect(
+        container.querySelector('.bpk-price-range__marker'),
+      ).toHaveTextContent('£300');
+      expect(container.querySelector('.bpk-price-marker')).toHaveClass(
+        'bpk-price-marker--high',
+      );
+      expect(
+        container.querySelector('.bpk-price-range__ranges'),
+      ).not.toBeInTheDocument();
+    });
   });
 
-  it('should not support custom class names', () => {
-    const { container } = render(
-      <BpkPriceRange
-        // @ts-expect-error - ignoring for test
-        className="custom-classname"
-        marker={{ price: '£50', percentage: 10 }}
-        segments={segments}
-      />,
-    );
+  describe('no marker with boundaries (use case 5)', () => {
+    it('should render without marker when marker prop is omitted (with labels)', () => {
+      const { container } = render(
+        <BpkPriceRange showPriceOnBoundaries segments={segments} />,
+      );
 
-    expect(container.className).not.toContain('custom-classname');
+      // Should not render marker or dot
+      expect(
+        container.querySelector('.bpk-price-range__marker'),
+      ).not.toBeInTheDocument();
+      expect(
+        container.querySelector('.bpk-price-range__line--dot'),
+      ).not.toBeInTheDocument();
+
+      // Should still render segment bars
+      expect(
+        container.querySelector('.bpk-price-range__line--low'),
+      ).toBeInTheDocument();
+      expect(
+        container.querySelector('.bpk-price-range__line--medium'),
+      ).toBeInTheDocument();
+      expect(
+        container.querySelector('.bpk-price-range__line--high'),
+      ).toBeInTheDocument();
+
+      // Should render segment labels
+      expect(
+        container.querySelector('.bpk-price-range__ranges'),
+      ).toHaveTextContent('£100£200');
+    });
   });
 
-  it('should render without marker when marker prop is omitted (with labels)', () => {
-    const { container } = render(<BpkPriceRange segments={segments} />);
+  describe('no marker without boundaries (use case 6)', () => {
+    it('should render without marker when marker prop is omitted (without labels)', () => {
+      const { container } = render(
+        <BpkPriceRange showPriceOnBoundaries={false} segments={segments} />,
+      );
 
-    // Should not render marker or dot
-    expect(
-      container.querySelector('.bpk-price-range__marker'),
-    ).not.toBeInTheDocument();
-    expect(
-      container.querySelector('.bpk-price-range__line--dot'),
-    ).not.toBeInTheDocument();
+      // Should not render marker or dot
+      expect(
+        container.querySelector('.bpk-price-range__marker'),
+      ).not.toBeInTheDocument();
+      expect(
+        container.querySelector('.bpk-price-range__line--dot'),
+      ).not.toBeInTheDocument();
 
-    // Should still render segment bars
-    expect(
-      container.querySelector('.bpk-price-range__line--low'),
-    ).toBeInTheDocument();
-    expect(
-      container.querySelector('.bpk-price-range__line--medium'),
-    ).toBeInTheDocument();
-    expect(
-      container.querySelector('.bpk-price-range__line--high'),
-    ).toBeInTheDocument();
+      // Should still render segment bars
+      expect(
+        container.querySelector('.bpk-price-range__line--low'),
+      ).toBeInTheDocument();
+      expect(
+        container.querySelector('.bpk-price-range__line--medium'),
+      ).toBeInTheDocument();
+      expect(
+        container.querySelector('.bpk-price-range__line--high'),
+      ).toBeInTheDocument();
 
-    // Should render segment labels
-    expect(
-      container.querySelector('.bpk-price-range__ranges'),
-    ).toHaveTextContent('£100£200');
+      // Should not render segment labels
+      expect(
+        container.querySelector('.bpk-price-range__ranges'),
+      ).not.toBeInTheDocument();
+    });
   });
 
-  it('should render without marker when marker prop is omitted (without labels)', () => {
-    const { container } = render(
-      <BpkPriceRange showPriceIndicator={false} segments={segments} />,
-    );
+  describe('additional behaviour', () => {
+    it('should not support custom class names', () => {
+      const { container } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries
+          // @ts-expect-error - ignoring for test
+          className="custom-classname"
+          marker={{ price: '£50', percentage: 10, type: 'bubble' }}
+          segments={segments}
+        />,
+      );
 
-    // Should not render marker or dot
-    expect(
-      container.querySelector('.bpk-price-range__marker'),
-    ).not.toBeInTheDocument();
-    expect(
-      container.querySelector('.bpk-price-range__line--dot'),
-    ).not.toBeInTheDocument();
+      expect(container.className).not.toContain('custom-classname');
+    });
 
-    // Should still render segment bars
-    expect(
-      container.querySelector('.bpk-price-range__line--low'),
-    ).toBeInTheDocument();
-    expect(
-      container.querySelector('.bpk-price-range__line--medium'),
-    ).toBeInTheDocument();
-    expect(
-      container.querySelector('.bpk-price-range__line--high'),
-    ).toBeInTheDocument();
+    it('should update marker position when marker value changes', () => {
+      const { container, rerender } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries
+          marker={{ price: '£50', percentage: 10, type: 'bubble' }}
+          segments={segments}
+        />,
+      );
 
-    // Should not render segment labels
-    expect(
-      container.querySelector('.bpk-price-range__ranges'),
-    ).not.toBeInTheDocument();
-  });
+      // Initial render with low marker
+      expect(container.querySelector('.bpk-price-marker')).toHaveClass(
+        'bpk-price-marker--low',
+      );
+      expect(
+        container.querySelector('.bpk-price-range__marker'),
+      ).toHaveTextContent('£50');
 
-  it('should update marker position when marker value changes', () => {
-    const { container, rerender } = render(
-      <BpkPriceRange
-        marker={{ price: '£50', percentage: 10 }}
-        segments={segments}
-      />,
-    );
+      // Re-render with high marker
+      rerender(
+        <BpkPriceRange
+          showPriceOnBoundaries
+          marker={{ price: '£300', percentage: 90, type: 'bubble' }}
+          segments={segments}
+        />,
+      );
 
-    // Initial render with low marker
-    expect(container.querySelector('.bpk-price-marker')).toHaveClass(
-      'bpk-price-marker--low',
-    );
-    expect(
-      container.querySelector('.bpk-price-range__marker'),
-    ).toHaveTextContent('£50');
+      expect(container.querySelector('.bpk-price-marker')).toHaveClass(
+        'bpk-price-marker--high',
+      );
+      expect(
+        container.querySelector('.bpk-price-range__marker'),
+      ).toHaveTextContent('£300');
+    });
 
-    // Re-render with high marker
-    rerender(
-      <BpkPriceRange
-        marker={{ price: '£300', percentage: 90 }}
-        segments={segments}
-      />,
-    );
+    it('should recalculate percentages correctly when min or max changes', () => {
+      const { container, rerender } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries
+          min={0}
+          max={100}
+          marker={{ price: '£50', percentage: 50, type: 'bubble' }}
+          segments={segments}
+        />,
+      );
 
-    expect(container.querySelector('.bpk-price-marker')).toHaveClass(
-      'bpk-price-marker--high',
-    );
-    expect(
-      container.querySelector('.bpk-price-range__marker'),
-    ).toHaveTextContent('£300');
-  });
+      // Get the container with style attribute
+      const priceRangeContainer = container.querySelector('.bpk-price-range');
 
-  it('should recalculate percentages correctly when min or max changes', () => {
-    const { container, rerender } = render(
-      <BpkPriceRange
-        min={0}
-        max={100}
-        marker={{ price: '£50', percentage: 50 }}
-        segments={segments}
-      />,
-    );
+      // Initial render: 50% of range 0-100 should be 0.5
+      // segments.low.percentage = 20, so (20-0)/(100-0) = 0.2
+      // segments.high.percentage = 80, so (80-0)/(100-0) = 0.8
+      let style = priceRangeContainer?.getAttribute('style');
+      expect(style).toContain('--low: 0.2');
+      expect(style).toContain('--high: 0.8');
 
-    // Get the container with style attribute
-    const priceRangeContainer = container.querySelector('.bpk-price-range');
+      // Re-render with different min/max range
+      // Now range is 20-80 (same as segment percentages)
+      rerender(
+        <BpkPriceRange
+          showPriceOnBoundaries
+          min={20}
+          max={80}
+          marker={{ price: '£50', percentage: 50, type: 'bubble' }}
+          segments={segments}
+        />,
+      );
 
-    // Initial render: 50% of range 0-100 should be 0.5
-    // segments.low.percentage = 20, so (20-0)/(100-0) = 0.2
-    // segments.high.percentage = 80, so (80-0)/(100-0) = 0.8
-    let style = priceRangeContainer?.getAttribute('style');
-    expect(style).toContain('--low: 0.2');
-    expect(style).toContain('--high: 0.8');
+      // After re-render: segments should be recalculated
+      // segments.low.percentage = 20, so (20-20)/(80-20) = 0/60 = 0
+      // segments.high.percentage = 80, so (80-20)/(80-20) = 60/60 = 1
+      style = priceRangeContainer?.getAttribute('style');
+      expect(style).toContain('--low: 0');
+      expect(style).toContain('--high: 1');
 
-    // Re-render with different min/max range
-    // Now range is 20-80 (same as segment percentages)
-    rerender(
-      <BpkPriceRange
-        min={20}
-        max={80}
-        marker={{ price: '£50', percentage: 50 }}
-        segments={segments}
-      />,
-    );
-
-    // After re-render: segments should be recalculated
-    // segments.low.percentage = 20, so (20-20)/(80-20) = 0/60 = 0
-    // segments.high.percentage = 80, so (80-20)/(80-20) = 60/60 = 1
-    style = priceRangeContainer?.getAttribute('style');
-    expect(style).toContain('--low: 0');
-    expect(style).toContain('--high: 1');
-
-    // Marker should still be rendered (percentage 50 is within range 20-80)
-    expect(container.querySelector('.bpk-price-marker')).toBeInTheDocument();
+      // Marker should still be rendered (percentage 50 is within range 20-80)
+      expect(container.querySelector('.bpk-price-marker')).toBeInTheDocument();
+    });
   });
 });

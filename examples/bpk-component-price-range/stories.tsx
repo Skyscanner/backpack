@@ -19,15 +19,28 @@
 import BpkPriceRange from '../../packages/bpk-component-price-range';
 
 import {
-  SmallerLowPriceRangeExample,
-  SmallerHighPriceRangeExample,
-  SmallerMediumPriceRangeExample,
-  LargeLowPriceRangeExample,
-  LargeHighPriceRangeExample,
-  LargeMediumPriceRangeExample,
-  VeryLargeHighPriceRangeExample,
-  NoMarkerWithLabelsExample,
-  NoMarkerWithoutLabelsExample,
+  // Use case 1: Dot marker with boundaries
+  DotMarkerWithBoundariesLowExample,
+  DotMarkerWithBoundariesMediumExample,
+  DotMarkerWithBoundariesHighExample,
+  // Use case 2: Bubble marker with boundaries
+  BubbleMarkerWithBoundariesLowExample,
+  BubbleMarkerWithBoundariesMediumExample,
+  BubbleMarkerWithBoundariesHighExample,
+  BubbleMarkerWithBoundariesVeryLargeExample,
+  // Use case 3: Dot marker without boundaries
+  DotMarkerWithoutBoundariesLowExample,
+  DotMarkerWithoutBoundariesMediumExample,
+  DotMarkerWithoutBoundariesHighExample,
+  // Use case 4: Bubble marker without boundaries
+  BubbleMarkerWithoutBoundariesLowExample,
+  BubbleMarkerWithoutBoundariesMediumExample,
+  BubbleMarkerWithoutBoundariesHighExample,
+  // Use case 5: No marker with boundaries
+  NoMarkerWithBoundariesExample,
+  // Use case 6: No marker without boundaries
+  NoMarkerWithoutBoundariesExample,
+  // Mixed
   MixedExample,
 } from './examples';
 
@@ -36,15 +49,43 @@ export default {
   component: BpkPriceRange,
 };
 
-export const SmallerLowPriceRange = SmallerLowPriceRangeExample;
-export const SmallerMediumPriceRange = SmallerMediumPriceRangeExample;
-export const SmallerHighPriceRange = SmallerHighPriceRangeExample;
-export const LargeLowPriceRange = LargeLowPriceRangeExample;
-export const LargeMediumPriceRange = LargeMediumPriceRangeExample;
-export const LargeHighPriceRange = LargeHighPriceRangeExample;
-export const VeryLargeHighPriceRange = VeryLargeHighPriceRangeExample;
-export const NoMarkerWithLabels = NoMarkerWithLabelsExample;
-export const NoMarkerWithoutLabels = NoMarkerWithoutLabelsExample;
+// Use case 1: Dot marker with boundaries
+export const DotMarkerWithBoundariesLow = DotMarkerWithBoundariesLowExample;
+export const DotMarkerWithBoundariesMedium =
+  DotMarkerWithBoundariesMediumExample;
+export const DotMarkerWithBoundariesHigh = DotMarkerWithBoundariesHighExample;
+
+// Use case 2: Bubble marker with boundaries
+export const BubbleMarkerWithBoundariesLow =
+  BubbleMarkerWithBoundariesLowExample;
+export const BubbleMarkerWithBoundariesMedium =
+  BubbleMarkerWithBoundariesMediumExample;
+export const BubbleMarkerWithBoundariesHigh =
+  BubbleMarkerWithBoundariesHighExample;
+export const BubbleMarkerWithBoundariesVeryLarge =
+  BubbleMarkerWithBoundariesVeryLargeExample;
+
+// Use case 3: Dot marker without boundaries
+export const DotMarkerWithoutBoundariesLow =
+  DotMarkerWithoutBoundariesLowExample;
+export const DotMarkerWithoutBoundariesMedium =
+  DotMarkerWithoutBoundariesMediumExample;
+export const DotMarkerWithoutBoundariesHigh =
+  DotMarkerWithoutBoundariesHighExample;
+
+// Use case 4: Bubble marker without boundaries
+export const BubbleMarkerWithoutBoundariesLow =
+  BubbleMarkerWithoutBoundariesLowExample;
+export const BubbleMarkerWithoutBoundariesMedium =
+  BubbleMarkerWithoutBoundariesMediumExample;
+export const BubbleMarkerWithoutBoundariesHigh =
+  BubbleMarkerWithoutBoundariesHighExample;
+
+// Use case 5: No marker with boundaries
+export const NoMarkerWithBoundaries = NoMarkerWithBoundariesExample;
+
+// Use case 6: No marker without boundaries
+export const NoMarkerWithoutBoundaries = NoMarkerWithoutBoundariesExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {

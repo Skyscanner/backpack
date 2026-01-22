@@ -29,44 +29,91 @@ window.ResizeObserver =
     unobserve: jest.fn(),
   }));
 
+const segments = {
+  low: {
+    price: '£100',
+    percentage: 20,
+  },
+  high: {
+    price: '£200',
+    percentage: 80,
+  },
+};
+
 describe('BpkPriceRange accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(
-      <BpkPriceRange
-        showPriceIndicator
-        marker={{ price: '£150', percentage: 50 }}
-        segments={{
-          low: {
-            price: '£100',
-            percentage: 20,
-          },
-          high: {
-            price: '£200',
-            percentage: 80,
-          },
-        }}
-      />,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+  describe('bubble marker with boundaries (use case 2)', () => {
+    it('should not have programmatically-detectable accessibility issues', async () => {
+      const { container } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries
+          marker={{ price: '£150', percentage: 50, type: 'bubble' }}
+          segments={segments}
+        />,
+      );
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
   });
 
-  it('should not have programmatically-detectable accessibility issues without marker', async () => {
-    const { container } = render(
-      <BpkPriceRange
-        segments={{
-          low: {
-            price: '£100',
-            percentage: 20,
-          },
-          high: {
-            price: '£200',
-            percentage: 80,
-          },
-        }}
-      />,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+  describe('dot marker with boundaries (use case 1)', () => {
+    it('should not have programmatically-detectable accessibility issues', async () => {
+      const { container } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries
+          marker={{ price: '£150', percentage: 50, type: 'dot' }}
+          segments={segments}
+        />,
+      );
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+  });
+
+  describe('dot marker without boundaries (use case 3)', () => {
+    it('should not have programmatically-detectable accessibility issues', async () => {
+      const { container } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries={false}
+          marker={{ price: '£150', percentage: 50, type: 'dot' }}
+          segments={segments}
+        />,
+      );
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+  });
+
+  describe('bubble marker without boundaries (use case 4)', () => {
+    it('should not have programmatically-detectable accessibility issues', async () => {
+      const { container } = render(
+        <BpkPriceRange
+          showPriceOnBoundaries={false}
+          marker={{ price: '£150', percentage: 50, type: 'bubble' }}
+          segments={segments}
+        />,
+      );
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+  });
+
+  describe('no marker with boundaries (use case 5)', () => {
+    it('should not have programmatically-detectable accessibility issues', async () => {
+      const { container } = render(
+        <BpkPriceRange showPriceOnBoundaries segments={segments} />,
+      );
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+  });
+
+  describe('no marker without boundaries (use case 6)', () => {
+    it('should not have programmatically-detectable accessibility issues', async () => {
+      const { container } = render(
+        <BpkPriceRange showPriceOnBoundaries={false} segments={segments} />,
+      );
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
   });
 });

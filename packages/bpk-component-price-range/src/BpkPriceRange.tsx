@@ -32,19 +32,23 @@ import STYLES from './BpkPriceRange.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Marker = {
+type PriceRangePosition = {
   price: string;
   percentage: number;
 };
 
+type MarkerPriceRangePosition = PriceRangePosition & {
+  type: 'bubble' | 'dot';
+}
+
 export type Props = {
   min?: number;
   max?: number;
-  showPriceIndicator?: boolean; // Should be named 'showPriceLabels'.
-  marker?: Marker;
+  showPriceOnBoundaries: boolean;
+  marker?: MarkerPriceRangePosition;
   segments: {
-    low: Marker;
-    high: Marker;
+    low: PriceRangePosition;
+    high: PriceRangePosition;
   };
 };
 
@@ -53,7 +57,7 @@ const BpkPriceRange = ({
   max = 100,
   min = 0,
   segments,
-  showPriceIndicator = true, // Should be named 'showPriceLabels'.
+  showPriceOnBoundaries,
 }: Props) => {
   const linesRef = useRef<HTMLDivElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
@@ -103,20 +107,20 @@ const BpkPriceRange = ({
 
   const linesClassName = getClassName(
     'bpk-price-range__lines',
-    showPriceIndicator && 'bpk-price-range__lines--large',
+    showPriceOnBoundaries && 'bpk-price-range__lines--large',
   );
   const lowClassName = getClassName(
     'bpk-price-range__line--low',
-    showPriceIndicator && 'bpk-price-range__line--lowLarge',
+    showPriceOnBoundaries && 'bpk-price-range__line--lowLarge',
   );
   const highClassName = getClassName(
     'bpk-price-range__line--high',
-    showPriceIndicator && 'bpk-price-range__line--highLarge',
+    showPriceOnBoundaries && 'bpk-price-range__line--highLarge',
   );
   const mediumClassName = getClassName('bpk-price-range__line--medium');
 
-  const shouldShowMarker = !!marker && showPriceIndicator;
-  const shouldShowDot = !!marker && !showPriceIndicator;
+  const shouldShowBubble = marker?.type === 'bubble';
+  const shouldShowDot = marker?.type === 'dot';
   const dotClassName = getClassName(
     `bpk-price-range__line--${type}`,
     'bpk-price-range__line--dot',
@@ -133,11 +137,11 @@ const BpkPriceRange = ({
       }
       className={getClassName(
         'bpk-price-range',
-        showPriceIndicator && 'bpk-price-range--large',
+        showPriceOnBoundaries && 'bpk-price-range--large',
       )}
       ref={linesRef}
     >
-      {shouldShowMarker && (
+      {shouldShowBubble && (
         <div className={getClassName('bpk-price-range__marker')}>
           <BpkPriceMarker
             ref={indicatorRef}
@@ -152,7 +156,7 @@ const BpkPriceRange = ({
         <div className={highClassName} />
         {shouldShowDot && <div className={dotClassName} ref={indicatorRef} />}
       </div>
-      {showPriceIndicator && (
+      {showPriceOnBoundaries && (
         <div className={getClassName('bpk-price-range__ranges')}>
           <BpkText textStyle={TEXT_STYLES.footnote}>
             {segments.low.price}
