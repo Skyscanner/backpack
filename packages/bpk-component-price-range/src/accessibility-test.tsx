@@ -19,7 +19,8 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkPriceRange from './BpkPriceRange';
+import BpkPriceRange, { type BpkPriceRangeProps } from './BpkPriceRange';
+import { MARKER_DISPLAY_TYPES } from './common-types';
 
 window.ResizeObserver =
   window.ResizeObserver ||
@@ -29,7 +30,7 @@ window.ResizeObserver =
     unobserve: jest.fn(),
   }));
 
-const segments = {
+const segments: BpkPriceRangeProps['segments'] = {
   low: {
     price: '£100',
     percentage: 20,
@@ -41,12 +42,15 @@ const segments = {
 };
 
 describe('BpkPriceRange accessibility tests', () => {
-  describe('bubble marker with boundaries (use case 2)', () => {
+  describe('dot marker (use case 1 - boundaries hidden)', () => {
     it('should not have programmatically-detectable accessibility issues', async () => {
       const { container } = render(
         <BpkPriceRange
-          showPriceOnBoundaries
-          marker={{ price: '£150', percentage: 50, type: 'bubble' }}
+          marker={{
+            price: '£150',
+            percentage: 50,
+            type: MARKER_DISPLAY_TYPES.DOT,
+          }}
           segments={segments}
         />,
       );
@@ -55,12 +59,15 @@ describe('BpkPriceRange accessibility tests', () => {
     });
   });
 
-  describe('dot marker with boundaries (use case 1)', () => {
+  describe('bubble marker (use case 2 - boundaries shown)', () => {
     it('should not have programmatically-detectable accessibility issues', async () => {
       const { container } = render(
         <BpkPriceRange
-          showPriceOnBoundaries
-          marker={{ price: '£150', percentage: 50, type: 'dot' }}
+          marker={{
+            price: '£150',
+            percentage: 50,
+            type: MARKER_DISPLAY_TYPES.BUBBLE,
+          }}
           segments={segments}
         />,
       );
@@ -69,49 +76,9 @@ describe('BpkPriceRange accessibility tests', () => {
     });
   });
 
-  describe('dot marker without boundaries (use case 3)', () => {
+  describe('no marker (use case 3 - boundaries shown)', () => {
     it('should not have programmatically-detectable accessibility issues', async () => {
-      const { container } = render(
-        <BpkPriceRange
-          showPriceOnBoundaries={false}
-          marker={{ price: '£150', percentage: 50, type: 'dot' }}
-          segments={segments}
-        />,
-      );
-      const results = await axe(container);
-      expect(results).toHaveNoViolations();
-    });
-  });
-
-  describe('bubble marker without boundaries (use case 4)', () => {
-    it('should not have programmatically-detectable accessibility issues', async () => {
-      const { container } = render(
-        <BpkPriceRange
-          showPriceOnBoundaries={false}
-          marker={{ price: '£150', percentage: 50, type: 'bubble' }}
-          segments={segments}
-        />,
-      );
-      const results = await axe(container);
-      expect(results).toHaveNoViolations();
-    });
-  });
-
-  describe('no marker with boundaries (use case 5)', () => {
-    it('should not have programmatically-detectable accessibility issues', async () => {
-      const { container } = render(
-        <BpkPriceRange showPriceOnBoundaries segments={segments} />,
-      );
-      const results = await axe(container);
-      expect(results).toHaveNoViolations();
-    });
-  });
-
-  describe('no marker without boundaries (use case 6)', () => {
-    it('should not have programmatically-detectable accessibility issues', async () => {
-      const { container } = render(
-        <BpkPriceRange showPriceOnBoundaries={false} segments={segments} />,
-      );
+      const { container } = render(<BpkPriceRange segments={segments} />);
       const results = await axe(container);
       expect(results).toHaveNoViolations();
     });

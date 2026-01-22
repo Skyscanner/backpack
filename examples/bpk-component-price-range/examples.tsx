@@ -18,9 +18,12 @@
 
 import type { ReactNode } from 'react';
 
-import BpkPriceRange from '../../packages/bpk-component-price-range';
+import BpkPriceRange, {
+  type BpkPriceRangeProps,
+  MARKER_DISPLAY_TYPES,
+} from '../../packages/bpk-component-price-range';
 
-const segments = {
+const segments: BpkPriceRangeProps['segments'] = {
   low: {
     price: '£100',
     percentage: 20,
@@ -31,7 +34,7 @@ const segments = {
   },
 };
 
-const veryLargeSegments = {
+const veryLargeSegments: BpkPriceRangeProps['segments'] = {
   low: {
     price: '35M ₫',
     percentage: 20,
@@ -50,207 +53,124 @@ const Wrapper = ({
   isLarge?: boolean;
 }) => <div style={{ width: isLarge ? '15rem' : '8.75rem' }}>{children}</div>;
 
-// Use case 3: Dot marker without boundaries
-const DotMarkerWithoutBoundariesLowExample = () => (
+// Use case 1: Dot marker (boundaries hidden)
+const DotMarkerLowExample = () => (
   <Wrapper>
     <BpkPriceRange
-      showPriceOnBoundaries={false}
-      marker={{ price: '£50', percentage: 10, type: 'dot' }}
+      marker={{ price: '£50', percentage: 10, type: MARKER_DISPLAY_TYPES.DOT }}
       segments={segments}
     />
   </Wrapper>
 );
 
-const DotMarkerWithoutBoundariesMediumExample = () => (
+const DotMarkerMediumExample = () => (
   <Wrapper>
     <BpkPriceRange
-      showPriceOnBoundaries={false}
-      marker={{ price: '£150', percentage: 50, type: 'dot' }}
+      marker={{ price: '£150', percentage: 50, type: MARKER_DISPLAY_TYPES.DOT }}
       segments={segments}
     />
   </Wrapper>
 );
 
-const DotMarkerWithoutBoundariesHighExample = () => (
+const DotMarkerHighExample = () => (
   <Wrapper>
     <BpkPriceRange
-      showPriceOnBoundaries={false}
-      marker={{ price: '£300', percentage: 90, type: 'dot' }}
+      marker={{ price: '£300', percentage: 90, type: MARKER_DISPLAY_TYPES.DOT }}
       segments={segments}
     />
   </Wrapper>
 );
 
-// Use case 1: Dot marker with boundaries
-const DotMarkerWithBoundariesLowExample = () => (
+// Use case 2: Bubble marker (boundaries shown)
+const BubbleMarkerLowExample = () => (
   <Wrapper isLarge>
     <BpkPriceRange
-      showPriceOnBoundaries
-      marker={{ price: '£50', percentage: 10, type: 'dot' }}
+      marker={{
+        price: '£50',
+        percentage: 10,
+        type: MARKER_DISPLAY_TYPES.BUBBLE,
+      }}
       segments={segments}
     />
   </Wrapper>
 );
 
-const DotMarkerWithBoundariesMediumExample = () => (
+const BubbleMarkerMediumExample = () => (
   <Wrapper isLarge>
     <BpkPriceRange
-      showPriceOnBoundaries
-      marker={{ price: '£150', percentage: 50, type: 'dot' }}
+      marker={{
+        price: '£150',
+        percentage: 50,
+        type: MARKER_DISPLAY_TYPES.BUBBLE,
+      }}
       segments={segments}
     />
   </Wrapper>
 );
 
-const DotMarkerWithBoundariesHighExample = () => (
+const BubbleMarkerHighExample = () => (
   <Wrapper isLarge>
     <BpkPriceRange
-      showPriceOnBoundaries
-      marker={{ price: '£300', percentage: 90, type: 'dot' }}
+      marker={{
+        price: '£300',
+        percentage: 90,
+        type: MARKER_DISPLAY_TYPES.BUBBLE,
+      }}
       segments={segments}
     />
   </Wrapper>
 );
 
-// Use case 2: Bubble marker with boundaries
-const BubbleMarkerWithBoundariesLowExample = () => (
+const BubbleMarkerVeryLargeExample = () => (
   <Wrapper isLarge>
     <BpkPriceRange
-      showPriceOnBoundaries
-      marker={{ price: '£50', percentage: 10, type: 'bubble' }}
-      segments={segments}
-    />
-  </Wrapper>
-);
-
-const BubbleMarkerWithBoundariesMediumExample = () => (
-  <Wrapper isLarge>
-    <BpkPriceRange
-      showPriceOnBoundaries
-      marker={{ price: '£150', percentage: 50, type: 'bubble' }}
-      segments={segments}
-    />
-  </Wrapper>
-);
-
-const BubbleMarkerWithBoundariesHighExample = () => (
-  <Wrapper isLarge>
-    <BpkPriceRange
-      showPriceOnBoundaries
-      marker={{ price: '£300', percentage: 90, type: 'bubble' }}
-      segments={segments}
-    />
-  </Wrapper>
-);
-
-const BubbleMarkerWithBoundariesVeryLargeExample = () => (
-  <Wrapper isLarge>
-    <BpkPriceRange
-      showPriceOnBoundaries
-      marker={{ price: '70M ₫', percentage: 90, type: 'bubble' }}
+      marker={{
+        price: '70M ₫',
+        percentage: 90,
+        type: MARKER_DISPLAY_TYPES.BUBBLE,
+      }}
       segments={veryLargeSegments}
     />
   </Wrapper>
 );
 
-// Use case 4: Bubble marker without boundaries
-const BubbleMarkerWithoutBoundariesLowExample = () => (
-  <Wrapper>
-    <BpkPriceRange
-      showPriceOnBoundaries={false}
-      marker={{ price: '£50', percentage: 10, type: 'bubble' }}
-      segments={segments}
-    />
-  </Wrapper>
-);
-
-const BubbleMarkerWithoutBoundariesMediumExample = () => (
-  <Wrapper>
-    <BpkPriceRange
-      showPriceOnBoundaries={false}
-      marker={{ price: '£150', percentage: 50, type: 'bubble' }}
-      segments={segments}
-    />
-  </Wrapper>
-);
-
-const BubbleMarkerWithoutBoundariesHighExample = () => (
-  <Wrapper>
-    <BpkPriceRange
-      showPriceOnBoundaries={false}
-      marker={{ price: '£300', percentage: 90, type: 'bubble' }}
-      segments={segments}
-    />
-  </Wrapper>
-);
-
-// Use case 5: No marker with boundaries
-const NoMarkerWithBoundariesExample = () => (
+// Use case 3: No marker (boundaries shown)
+const NoMarkerExample = () => (
   <Wrapper isLarge>
-    <BpkPriceRange showPriceOnBoundaries segments={segments} />
-  </Wrapper>
-);
-
-// Use case 6: No marker without boundaries
-const NoMarkerWithoutBoundariesExample = () => (
-  <Wrapper>
-    <BpkPriceRange showPriceOnBoundaries={false} segments={segments} />
+    <BpkPriceRange segments={segments} />
   </Wrapper>
 );
 
 const MixedExample = () => (
   <div>
-    <h4>Use case 1: Dot marker with boundaries</h4>
-    <DotMarkerWithBoundariesLowExample />
-    <DotMarkerWithBoundariesMediumExample />
-    <DotMarkerWithBoundariesHighExample />
+    <h4>Use case 1: Dot marker (boundaries hidden)</h4>
+    <DotMarkerLowExample />
+    <DotMarkerMediumExample />
+    <DotMarkerHighExample />
 
-    <h4>Use case 2: Bubble marker with boundaries</h4>
-    <BubbleMarkerWithBoundariesLowExample />
-    <BubbleMarkerWithBoundariesMediumExample />
-    <BubbleMarkerWithBoundariesHighExample />
-    <BubbleMarkerWithBoundariesVeryLargeExample />
+    <h4>Use case 2: Bubble marker (boundaries shown)</h4>
+    <BubbleMarkerLowExample />
+    <BubbleMarkerMediumExample />
+    <BubbleMarkerHighExample />
+    <BubbleMarkerVeryLargeExample />
 
-    <h4>Use case 3: Dot marker without boundaries</h4>
-    <DotMarkerWithoutBoundariesLowExample />
-    <DotMarkerWithoutBoundariesMediumExample />
-    <DotMarkerWithoutBoundariesHighExample />
-
-    <h4>Use case 4: Bubble marker without boundaries</h4>
-    <BubbleMarkerWithoutBoundariesLowExample />
-    <BubbleMarkerWithoutBoundariesMediumExample />
-    <BubbleMarkerWithoutBoundariesHighExample />
-
-    <h4>Use case 5: No marker with boundaries</h4>
-    <NoMarkerWithBoundariesExample />
-
-    <h4>Use case 6: No marker without boundaries</h4>
-    <NoMarkerWithoutBoundariesExample />
+    <h4>Use case 3: No marker (boundaries shown)</h4>
+    <NoMarkerExample />
   </div>
 );
 
 export {
-  // Use case 1: Dot marker with boundaries
-  DotMarkerWithBoundariesLowExample,
-  DotMarkerWithBoundariesMediumExample,
-  DotMarkerWithBoundariesHighExample,
-  // Use case 2: Bubble marker with boundaries
-  BubbleMarkerWithBoundariesLowExample,
-  BubbleMarkerWithBoundariesMediumExample,
-  BubbleMarkerWithBoundariesHighExample,
-  BubbleMarkerWithBoundariesVeryLargeExample,
-  // Use case 3: Dot marker without boundaries
-  DotMarkerWithoutBoundariesLowExample,
-  DotMarkerWithoutBoundariesMediumExample,
-  DotMarkerWithoutBoundariesHighExample,
-  // Use case 4: Bubble marker without boundaries
-  BubbleMarkerWithoutBoundariesLowExample,
-  BubbleMarkerWithoutBoundariesMediumExample,
-  BubbleMarkerWithoutBoundariesHighExample,
-  // Use case 5: No marker with boundaries
-  NoMarkerWithBoundariesExample,
-  // Use case 6: No marker without boundaries
-  NoMarkerWithoutBoundariesExample,
+  // Use case 1: Dot marker (boundaries hidden)
+  DotMarkerLowExample,
+  DotMarkerMediumExample,
+  DotMarkerHighExample,
+  // Use case 2: Bubble marker (boundaries shown)
+  BubbleMarkerLowExample,
+  BubbleMarkerMediumExample,
+  BubbleMarkerHighExample,
+  BubbleMarkerVeryLargeExample,
+  // Use case 3: No marker (boundaries shown)
+  NoMarkerExample,
   // Mixed
   MixedExample,
 };

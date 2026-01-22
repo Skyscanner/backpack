@@ -9,12 +9,11 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkPriceRange from '@skyscanner/backpack-web/bpk-component-price-range';
+import BpkPriceRange, { MARKER_DISPLAY_TYPES } from '@skyscanner/backpack-web/bpk-component-price-range';
 
 export default () => (
   <BpkPriceRange
-    showPriceOnBoundaries
-    marker={{ price: '£150', percentage: 50, type: 'bubble' }}
+    marker={{ price: '£150', percentage: 50, type: MARKER_DISPLAY_TYPES.BUBBLE }}
     segments={{
       low: {
         price: '£100',
@@ -29,20 +28,22 @@ export default () => (
 );
 ```
 
-### `showPriceOnBoundaries` prop
+### Boundary price visibility
 
-The `showPriceOnBoundaries` prop controls the visibility of the boundary price labels (low and high segment prices).
+The visibility of boundary prices (low and high segment prices) is automatically determined by the marker type:
 
-When `showPriceOnBoundaries` is set to `true`, the price labels for the low and high segments are displayed below the price range bar.
-
-When `showPriceOnBoundaries` is set to `false`, the boundary price labels are hidden.
+| Marker Type | Boundary Prices |
+|-------------|-----------------|
+| `MARKER_DISPLAY_TYPES.BUBBLE` | Shown below the bar |
+| `MARKER_DISPLAY_TYPES.DOT` | Hidden (compact display) |
+| No marker | Shown below the bar |
 
 ### Marker type
 
-The `marker` prop is optional. When provided, it must include a `type` field that determines how the marker is displayed:
+The `marker` prop is optional. When provided, it must include a `type` field that determines how the marker is displayed. Use the exported `MARKER_DISPLAY_TYPES` constant:
 
-- `'bubble'`: Displays the marker as a price bubble above the bar
-- `'dot'`: Displays the marker as a coloured dot on the bar (no price label shown)
+- `MARKER_DISPLAY_TYPES.BUBBLE`: Displays the marker as a price bubble above the bar
+- `MARKER_DISPLAY_TYPES.DOT`: Displays the marker as a coloured dot on the bar (no price label shown)
 
 The marker's colour indicates which price segment it falls into:
 - **Low** (green): When the marker percentage is below the low segment threshold
@@ -51,14 +52,13 @@ The marker's colour indicates which price segment it falls into:
 
 ### Without marker
 
-When the `marker` prop is omitted, only the three-tier price range bars (low/medium/high segments) are displayed:
+When the `marker` prop is omitted, only the three-tier price range bars (low/medium/high segments) are displayed with boundary prices shown:
 
 ```tsx
 import BpkPriceRange from '@skyscanner/backpack-web/bpk-component-price-range';
 
 export default () => (
   <BpkPriceRange
-    showPriceOnBoundaries
     segments={{
       low: {
         price: '£100',
@@ -73,75 +73,42 @@ export default () => (
 );
 ```
 
-## Use Cases
+## Use cases
 
-### Use case 1: Dot marker with boundary prices
+### Use case 1: Dot marker (boundaries hidden)
 
 ```tsx
 <BpkPriceRange
-  showPriceOnBoundaries
-  marker={{ price: '£150', percentage: 50, type: 'dot' }}
+  marker={{ price: '£150', percentage: 50, type: MARKER_DISPLAY_TYPES.DOT }}
   segments={{ low: { price: '£100', percentage: 20 }, high: { price: '£200', percentage: 80 } }}
 />
 ```
 
-### Use case 2: Bubble marker with boundary prices
+### Use case 2: Bubble marker (boundaries shown)
 
 ```tsx
 <BpkPriceRange
-  showPriceOnBoundaries
-  marker={{ price: '£150', percentage: 50, type: 'bubble' }}
+  marker={{ price: '£150', percentage: 50, type: MARKER_DISPLAY_TYPES.BUBBLE }}
   segments={{ low: { price: '£100', percentage: 20 }, high: { price: '£200', percentage: 80 } }}
 />
 ```
 
-### Use case 3: Dot marker without boundary prices
+### Use case 3: No marker (boundaries shown)
 
 ```tsx
 <BpkPriceRange
-  showPriceOnBoundaries={false}
-  marker={{ price: '£150', percentage: 50, type: 'dot' }}
-  segments={{ low: { price: '£100', percentage: 20 }, high: { price: '£200', percentage: 80 } }}
-/>
-```
-
-### Use case 4: Bubble marker without boundary prices
-
-```tsx
-<BpkPriceRange
-  showPriceOnBoundaries={false}
-  marker={{ price: '£150', percentage: 50, type: 'bubble' }}
-  segments={{ low: { price: '£100', percentage: 20 }, high: { price: '£200', percentage: 80 } }}
-/>
-```
-
-### Use case 5: No marker with boundary prices
-
-```tsx
-<BpkPriceRange
-  showPriceOnBoundaries
-  segments={{ low: { price: '£100', percentage: 20 }, high: { price: '£200', percentage: 80 } }}
-/>
-```
-
-### Use case 6: No marker without boundary prices
-
-```tsx
-<BpkPriceRange
-  showPriceOnBoundaries={false}
   segments={{ low: { price: '£100', percentage: 20 }, high: { price: '£200', percentage: 80 } }}
 />
 ```
 
 ## Props
 
-| Property             | PropType                              | Required | Default Value |
-| -------------------- | ------------------------------------- | -------- | ------------- |
-| segments             | `{ low: PriceRangePosition, high: PriceRangePosition }` | true     | -             |
-| showPriceOnBoundaries | `boolean`                            | true     | -             |
-| marker               | `MarkerPriceRangePosition`            | false    | -             |
-| min                  | `number`                              | false    | 0             |
-| max                  | `number`                              | false    | 100           |
+| Property | PropType | Required | Default Value |
+| -------- | -------- | -------- | ------------- |
+| segments | `{ low: PriceRangePosition, high: PriceRangePosition }` | true | - |
+| marker | `MarkerPriceRangePosition` | false | - |
+| min | `number` | false | 0 |
+| max | `number` | false | 100 |
 
 ### Types
 
@@ -152,6 +119,15 @@ type PriceRangePosition = {
 };
 
 type MarkerPriceRangePosition = PriceRangePosition & {
-  type: 'bubble' | 'dot';
+  type: MarkerDisplayType;
 };
+```
+
+### Constants
+
+```ts
+const MARKER_DISPLAY_TYPES = {
+  BUBBLE: 'bubble',
+  DOT: 'dot',
+} as const;
 ```

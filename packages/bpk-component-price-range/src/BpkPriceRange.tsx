@@ -24,9 +24,9 @@ import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkPriceMarker from './BpkPriceMarker';
-import { MARKER_TYPES } from './common-types';
+import { MARKER_DISPLAY_TYPES, MARKER_TYPES } from './common-types';
 
-import type { MarkerType } from './common-types';
+import type { MarkerDisplayType, MarkerType } from './common-types';
 
 import STYLES from './BpkPriceRange.module.scss';
 
@@ -38,13 +38,12 @@ type PriceRangePosition = {
 };
 
 type MarkerPriceRangePosition = PriceRangePosition & {
-  type: 'bubble' | 'dot';
-}
+  type: MarkerDisplayType;
+};
 
-export type Props = {
+export type BpkPriceRangeProps = {
   min?: number;
   max?: number;
-  showPriceOnBoundaries: boolean;
   marker?: MarkerPriceRangePosition;
   segments: {
     low: PriceRangePosition;
@@ -52,13 +51,28 @@ export type Props = {
   };
 };
 
+const getShouldShowPriceOnBoundaries = (
+  markerType: MarkerDisplayType | undefined,
+): boolean => {
+  switch (markerType) {
+    case MARKER_DISPLAY_TYPES.DOT:
+      return false;
+    case MARKER_DISPLAY_TYPES.BUBBLE:
+    case undefined:
+    default:
+      return true;
+  }
+};
+
 const BpkPriceRange = ({
   marker,
   max = 100,
   min = 0,
   segments,
-  showPriceOnBoundaries,
-}: Props) => {
+}: BpkPriceRangeProps) => {
+  const shouldShowPriceOnBoundaries = getShouldShowPriceOnBoundaries(
+    marker?.type,
+  );
   const linesRef = useRef<HTMLDivElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
   const [linesWidth, setLinesWidth] = useState(0);
@@ -107,20 +121,20 @@ const BpkPriceRange = ({
 
   const linesClassName = getClassName(
     'bpk-price-range__lines',
-    showPriceOnBoundaries && 'bpk-price-range__lines--large',
+    shouldShowPriceOnBoundaries && 'bpk-price-range__lines--large',
   );
   const lowClassName = getClassName(
     'bpk-price-range__line--low',
-    showPriceOnBoundaries && 'bpk-price-range__line--lowLarge',
+    shouldShowPriceOnBoundaries && 'bpk-price-range__line--lowLarge',
   );
   const highClassName = getClassName(
     'bpk-price-range__line--high',
-    showPriceOnBoundaries && 'bpk-price-range__line--highLarge',
+    shouldShowPriceOnBoundaries && 'bpk-price-range__line--highLarge',
   );
   const mediumClassName = getClassName('bpk-price-range__line--medium');
 
-  const shouldShowBubble = marker?.type === 'bubble';
-  const shouldShowDot = marker?.type === 'dot';
+  const shouldShowBubble = marker?.type === MARKER_DISPLAY_TYPES.BUBBLE;
+  const shouldShowDot = marker?.type === MARKER_DISPLAY_TYPES.DOT;
   const dotClassName = getClassName(
     `bpk-price-range__line--${type}`,
     'bpk-price-range__line--dot',
@@ -137,7 +151,7 @@ const BpkPriceRange = ({
       }
       className={getClassName(
         'bpk-price-range',
-        showPriceOnBoundaries && 'bpk-price-range--large',
+        shouldShowPriceOnBoundaries && 'bpk-price-range--large',
       )}
       ref={linesRef}
     >
@@ -156,7 +170,7 @@ const BpkPriceRange = ({
         <div className={highClassName} />
         {shouldShowDot && <div className={dotClassName} ref={indicatorRef} />}
       </div>
-      {showPriceOnBoundaries && (
+      {shouldShowPriceOnBoundaries && (
         <div className={getClassName('bpk-price-range__ranges')}>
           <BpkText textStyle={TEXT_STYLES.footnote}>
             {segments.low.price}
