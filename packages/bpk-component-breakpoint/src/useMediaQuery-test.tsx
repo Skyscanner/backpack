@@ -66,7 +66,7 @@ describe('useMediaQuery', () => {
     }));
 
     const view = renderHook(() => useMediaQuery('(min-width: 768px)'));
-    
+
     expect(view.result.current).toBe(true);
   });
 
@@ -80,5 +80,46 @@ describe('useMediaQuery', () => {
     const view = renderHook(() => useMediaQuery('(min-width: 1024px)'));
 
     expect(view.result.current).toBe(false);
+  });
+
+  describe('Client-side hydration behavior with matchSSR', () => {
+    it('should use matchSSR=true for initial state when matchSSR=true, then sync to viewport in useEffect', () => {
+      const mockMedia = {
+        matches: false,
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+      };
+      window.matchMedia = jest.fn().mockImplementation(() => mockMedia);
+
+      const view = renderHook(() => useMediaQuery('(min-width: 768px)', true));
+
+      expect(view.result.current).toBe(false);
+
+      expect(mockMedia.addEventListener).toHaveBeenCalled();
+    });
+
+    it('should use actual viewport immediately when matchSSR=false (CSR-optimized)', () => {
+      window.matchMedia = jest.fn().mockImplementation(() => ({
+        matches: true,
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+      }));
+
+      const view = renderHook(() => useMediaQuery('(min-width: 768px)', false));
+
+      expect(view.result.current).toBe(true);
+    });
+
+    it('should use actual viewport by default when matchSSR not specified', () => {
+      window.matchMedia = jest.fn().mockImplementation(() => ({
+        matches: false,
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+      }));
+
+      const view = renderHook(() => useMediaQuery('(min-width: 768px)'));
+
+      expect(view.result.current).toBe(false);
+    });
   });
 });
