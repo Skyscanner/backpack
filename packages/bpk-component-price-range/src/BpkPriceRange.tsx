@@ -40,7 +40,7 @@ type Marker = {
 export type Props = {
   min?: number;
   max?: number;
-  showPriceIndicator?: boolean;
+  showPriceIndicator?: boolean; // Should be named 'showPriceLabels'.
   marker?: Marker;
   segments: {
     low: Marker;
@@ -53,7 +53,7 @@ const BpkPriceRange = ({
   max = 100,
   min = 0,
   segments,
-  showPriceIndicator = true,
+  showPriceIndicator = true, // Should be named 'showPriceLabels'.
 }: Props) => {
   const linesRef = useRef<HTMLDivElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
