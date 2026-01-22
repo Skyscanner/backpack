@@ -17,11 +17,23 @@
  */
 
 import BpkButtonLink, { type Props as BpkButtonLinkProps } from './src/BpkButtonLink';
-import BpkLink, { type Props as BpkLinkProps } from './src/BpkLink';
+import BpkLink from './src/BpkLink';
 import themeAttributes, {
   linkAlternateThemeAttributes,
 } from './src/themeAttributes';
 
-export type { BpkButtonLinkProps, BpkLinkProps };
+import type { BpkLinkProps } from './src/common-types';
+
+/**
+ * @deprecated Use BpkLinkProps for polymorphic usage
+ */
+export type { BpkButtonLinkProps };
+/**
+ * @deprecated Use `<BpkLink as="button" />` instead.
+ */
+export { BpkButtonLink };
+
+export type { BpkLinkProps };
+
 export default BpkLink;
-export { BpkButtonLink, themeAttributes, linkAlternateThemeAttributes };
+export { themeAttributes, linkAlternateThemeAttributes };

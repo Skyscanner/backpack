@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkButtonV2 } from '../../packages/bpk-component-button';
+import BpkButton from '../../packages/bpk-component-button';
 import { cssModules } from '../../packages/bpk-react-utils';
 import { withScrimmedPortal } from '../../packages/bpk-scrim-utils';
 
@@ -31,7 +31,7 @@ const DialogContent = () => (
         className={getClassName('bpk-scrim-utils-example__dialog')}>
         <div className={getClassName('bpk-scrim-utils-example__dialog-content')}>
             <div>Dialog content here.</div>
-            <BpkButtonV2>Some button</BpkButtonV2>
+            <BpkButton>Some button</BpkButton>
         </div>
     </section>
 )

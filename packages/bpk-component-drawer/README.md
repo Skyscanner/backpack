@@ -10,7 +10,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```js
 import BpkDrawer from '@skyscanner/backpack-web/bpk-component-drawer';
-import { BpkButtonV2 } from '@skyscanner/backpack-web/bpk-component-button';
+import { BpkButton } from '@skyscanner/backpack-web/bpk-component-button';
 import { useState } from 'react';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
     return (
       <div>
         <div id="pagewrap">
-          <BpkButtonV2 onClick={() => setIsOpen(true)}>Open drawer</BpkButtonV2>
+          <BpkButton onClick={() => setIsOpen(true)}>Open drawer</BpkButton>
         </div>
         <BpkDrawer
           id="my-drawer"

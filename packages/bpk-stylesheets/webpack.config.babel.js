@@ -73,9 +73,11 @@ module.exports = {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
-              modules: 'global',
-              namedExport: false,
-              exportLocalsConvention: 'as-is',
+              modules: {
+                mode: 'global',
+                namedExport: false,
+                exportLocalsConvention: 'as-is',
+              },
             },
           },
           {
@@ -101,9 +103,11 @@ module.exports = {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
-              modules: 'global',
-              namedExport: false,
-              exportLocalsConvention: 'as-is',
+              modules: {
+                mode: 'global',
+                namedExport: false,
+                exportLocalsConvention: 'as-is',
+              },
             },
           },
           {

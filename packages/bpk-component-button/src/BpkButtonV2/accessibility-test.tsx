@@ -19,17 +19,17 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import { BpkButtonV2 } from './BpkButton';
+import { BpkButtonV2 as BpkButton } from './BpkButton';
 
 describe('BpkButton accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues when used as a button', async () => {
-    const { container } = render(<BpkButtonV2>My button</BpkButtonV2>);
+    const { container } = render(<BpkButton>My button</BpkButton>);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
   it('should not have programmatically-detectable accessibility issues when used as a link', async () => {
-    const { container } = render(<BpkButtonV2 href="#">My button</BpkButtonV2>);
+    const { container } = render(<BpkButton href="#">My button</BpkButton>);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

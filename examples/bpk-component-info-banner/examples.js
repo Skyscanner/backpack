@@ -24,7 +24,7 @@ import {
   fontWeightBold,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { BpkButtonV2 } from '../../packages/bpk-component-button';
+import BpkButton from '../../packages/bpk-component-button';
 import CurrencyIcon from '../../packages/bpk-component-icon/sm/currency';
 import BpkInfoBanner, {
   ALERT_TYPES,
@@ -80,7 +80,7 @@ class BpkInfoBannerDismissableState extends Component<Props, State> {
         {...this.props}
       />
       {this.state.dismissed && (
-        <BpkButtonV2
+        <BpkButton
           className={getClassName('bpk-info-banner-examples__component')}
           onClick={() => {
             this.setState((prevState) => ({
@@ -90,7 +90,7 @@ class BpkInfoBannerDismissableState extends Component<Props, State> {
           }}
         >
           Reset
-        </BpkButtonV2>
+        </BpkButton>
       )}
       <AriaLiveDemo
         visible

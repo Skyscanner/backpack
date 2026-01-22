@@ -18,7 +18,7 @@
 
 import figma from '@figma/code-connect';
 
-import { BpkButtonV2 } from '../../bpk-component-button';
+import BpkButton from '../../bpk-component-button';
 
 import BpkSectionHeader, { SECTION_TYPES } from './BpkSectionHeader';
 
@@ -30,7 +30,7 @@ figma.connect(
       title: figma.string('Title'),
       description: figma.string('Subheading'),
       button: figma.boolean('Button', {
-        true: <BpkButtonV2 onClick={() => null}>action</BpkButtonV2>,
+        true: <BpkButton onClick={() => null}>action</BpkButton>,
       }),
       style: figma.enum('Style', {
         Default: SECTION_TYPES.default,

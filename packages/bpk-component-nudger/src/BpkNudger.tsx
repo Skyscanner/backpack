@@ -18,11 +18,10 @@
 
 import { useRef } from 'react';
 
-import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
+import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import { withButtonAlignment } from '../../bpk-component-icon';
 import MinusIcon from '../../bpk-component-icon/sm/minus';
 import PlusIcon from '../../bpk-component-icon/sm/plus';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLabel from '../../bpk-component-label';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules, setNativeValue } from '../../bpk-react-utils';
@@ -107,7 +106,7 @@ const BpkNudger = ({
         </div>
       )}
       <div className={nudgerClassNames}>
-        <BpkButtonV2
+        <BpkButton
           type={BUTTON_TYPES[buttonType]}
           iconOnly
           onClick={() => {
@@ -127,7 +126,7 @@ const BpkNudger = ({
           aria-controls={id}
         >
           <AlignedMinusIcon />
-        </BpkButtonV2>
+        </BpkButton>
         <input
           type="number"
           aria-live="polite"
@@ -151,7 +150,7 @@ const BpkNudger = ({
           className={inputClassNames}
           {...rest}
         />
-        <BpkButtonV2
+        <BpkButton
           type={BUTTON_TYPES[buttonType]}
           iconOnly
           onClick={() => {
@@ -171,7 +170,7 @@ const BpkNudger = ({
           aria-controls={id}
         >
           <AlignedPlusIcon />
-        </BpkButtonV2>
+        </BpkButton>
       </div>
     </div>
   );

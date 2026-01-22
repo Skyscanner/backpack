@@ -18,7 +18,7 @@
 
 import { Children, useState } from 'react';
 
-import { BpkButtonV2 } from '../../packages/bpk-component-button';
+import BpkButton from '../../packages/bpk-component-button';
 import { BpkModalV2, MODAL_STYLING } from '../../packages/bpk-component-modal';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
@@ -102,7 +102,7 @@ const ModalContainer = (
   return (
     <div id="modal-container">
       <div id="pagewrap">
-        <BpkButtonV2 onClick={() => setOpen(true)}>Open modal</BpkButtonV2>
+        <BpkButton onClick={() => setOpen(true)}>Open modal</BpkButton>
       </div>
       <BpkModalV2
         id="bpk-modal"
