@@ -1,5 +1,124 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`BpkCheckbox RTL support should render RTL snapshot 1`] = `
+<div>
+  <div
+    dir="rtl"
+  >
+    <label
+      class="bpk-checkbox"
+      data-part="root"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      for="checkbox::r11::input"
+      id="checkbox::r11:"
+    >
+      <div
+        aria-hidden="true"
+        class="bpk-checkbox__control"
+        data-part="control"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox::r11::control"
+      >
+        <div
+          class="bpk-checkbox__indicator"
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="unchecked"
+          dir="ltr"
+          hidden=""
+        />
+      </div>
+      <span
+        class="bpk-checkbox__label bpk-checkbox__label"
+        data-part="label"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox::r11::label"
+      >
+        RTL Test
+      </span>
+      <input
+        aria-invalid="false"
+        aria-labelledby="checkbox::r11::label"
+        class="bpk-checkbox__input"
+        id="checkbox::r11::input"
+        name="test"
+        style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+        type="checkbox"
+        value="on"
+      />
+    </label>
+  </div>
+</div>
+`;
+
+exports[`BpkCheckbox RTL support should render required asterisk in RTL correctly 1`] = `
+<div>
+  <div
+    dir="rtl"
+  >
+    <label
+      class="bpk-checkbox"
+      data-part="root"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      for="checkbox::r12::input"
+      id="checkbox::r12:"
+    >
+      <div
+        aria-hidden="true"
+        class="bpk-checkbox__control"
+        data-part="control"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox::r12::control"
+      >
+        <div
+          class="bpk-checkbox__indicator"
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="unchecked"
+          dir="ltr"
+          hidden=""
+        />
+      </div>
+      <span
+        class="bpk-checkbox__label bpk-checkbox__label"
+        data-part="label"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox::r12::label"
+      >
+        Test
+        <span
+          class="bpk-checkbox__asterisk"
+        >
+          *
+        </span>
+      </span>
+      <input
+        aria-invalid="false"
+        aria-labelledby="checkbox::r12::label"
+        class="bpk-checkbox__input"
+        id="checkbox::r12::input"
+        name="test"
+        style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+        type="checkbox"
+        value="on"
+      />
+    </label>
+  </div>
+</div>
+`;
+
 exports[`BpkCheckbox composable API should render composable API snapshot 1`] = `
 <div>
   <label
@@ -8,8 +127,8 @@ exports[`BpkCheckbox composable API should render composable API snapshot 1`] = 
     data-scope="checkbox"
     data-state="checked"
     dir="ltr"
-    for="checkbox::ru::input"
-    id="checkbox::ru:"
+    for="checkbox::r1j::input"
+    id="checkbox::r1j:"
   >
     <div
       aria-hidden="true"
@@ -18,7 +137,7 @@ exports[`BpkCheckbox composable API should render composable API snapshot 1`] = 
       data-scope="checkbox"
       data-state="checked"
       dir="ltr"
-      id="checkbox::ru::control"
+      id="checkbox::r1j::control"
     >
       <div
         class="bpk-checkbox__indicator"
@@ -34,16 +153,16 @@ exports[`BpkCheckbox composable API should render composable API snapshot 1`] = 
       data-scope="checkbox"
       data-state="checked"
       dir="ltr"
-      id="checkbox::ru::label"
+      id="checkbox::r1j::label"
     >
       Composable example
     </span>
     <input
       aria-invalid="false"
-      aria-labelledby="checkbox::ru::label"
+      aria-labelledby="checkbox::r1j::label"
       checked=""
       class="bpk-checkbox__input"
-      id="checkbox::ru::input"
+      id="checkbox::r1j::input"
       name="test"
       style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
       type="checkbox"
@@ -159,6 +278,65 @@ exports[`BpkCheckbox snapshots should render default checkbox correctly 1`] = `
 </div>
 `;
 
+exports[`BpkCheckbox snapshots should render disabled and indeterminate checkbox correctly 1`] = `
+<div>
+  <label
+    class="bpk-checkbox bpk-checkbox--disabled"
+    data-disabled=""
+    data-part="root"
+    data-scope="checkbox"
+    data-state="indeterminate"
+    dir="ltr"
+    for="checkbox::rn::input"
+    id="checkbox::rn:"
+  >
+    <div
+      aria-hidden="true"
+      class="bpk-checkbox__control"
+      data-disabled=""
+      data-part="control"
+      data-scope="checkbox"
+      data-state="indeterminate"
+      dir="ltr"
+      id="checkbox::rn::control"
+    >
+      <div
+        class="bpk-checkbox__indicator"
+        data-disabled=""
+        data-part="indicator"
+        data-scope="checkbox"
+        data-state="indeterminate"
+        dir="ltr"
+        hidden=""
+      />
+    </div>
+    <span
+      class="bpk-checkbox__label bpk-checkbox__label"
+      data-disabled=""
+      data-part="label"
+      data-scope="checkbox"
+      data-state="indeterminate"
+      dir="ltr"
+      id="checkbox::rn::label"
+    >
+      Test
+    </span>
+    <input
+      aria-checked="mixed"
+      aria-invalid="false"
+      aria-labelledby="checkbox::rn::label"
+      class="bpk-checkbox__input"
+      disabled=""
+      id="checkbox::rn::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
+  </label>
+</div>
+`;
+
 exports[`BpkCheckbox snapshots should render disabled checkbox correctly 1`] = `
 <div>
   <label
@@ -223,7 +401,7 @@ exports[`BpkCheckbox snapshots should render indeterminate checkbox correctly 1`
     class="bpk-checkbox"
     data-part="root"
     data-scope="checkbox"
-    data-state="unchecked"
+    data-state="indeterminate"
     dir="ltr"
     for="checkbox::rm::input"
     id="checkbox::rm:"
@@ -233,7 +411,7 @@ exports[`BpkCheckbox snapshots should render indeterminate checkbox correctly 1`
       class="bpk-checkbox__control"
       data-part="control"
       data-scope="checkbox"
-      data-state="unchecked"
+      data-state="indeterminate"
       dir="ltr"
       id="checkbox::rm::control"
     >
@@ -241,7 +419,7 @@ exports[`BpkCheckbox snapshots should render indeterminate checkbox correctly 1`
         class="bpk-checkbox__indicator"
         data-part="indicator"
         data-scope="checkbox"
-        data-state="unchecked"
+        data-state="indeterminate"
         dir="ltr"
         hidden=""
       />
@@ -250,13 +428,14 @@ exports[`BpkCheckbox snapshots should render indeterminate checkbox correctly 1`
       class="bpk-checkbox__label bpk-checkbox__label"
       data-part="label"
       data-scope="checkbox"
-      data-state="unchecked"
+      data-state="indeterminate"
       dir="ltr"
       id="checkbox::rm::label"
     >
       Test
     </span>
     <input
+      aria-checked="mixed"
       aria-invalid="false"
       aria-labelledby="checkbox::rm::label"
       class="bpk-checkbox__input"
@@ -478,6 +657,112 @@ exports[`BpkCheckbox snapshots should render white checkbox correctly 1`] = `
       aria-labelledby="checkbox::rj::label"
       class="bpk-checkbox__input"
       id="checkbox::rj::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
+  </label>
+</div>
+`;
+
+exports[`BpkCheckbox validation states should render snapshot for checked invalid state 1`] = `
+<div>
+  <label
+    class="bpk-checkbox bpk-checkbox--invalid"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="checked"
+    dir="ltr"
+    for="checkbox::rv::input"
+    id="checkbox::rv:"
+  >
+    <div
+      aria-hidden="true"
+      class="bpk-checkbox__control"
+      data-part="control"
+      data-scope="checkbox"
+      data-state="checked"
+      dir="ltr"
+      id="checkbox::rv::control"
+    >
+      <div
+        class="bpk-checkbox__indicator"
+        data-part="indicator"
+        data-scope="checkbox"
+        data-state="checked"
+        dir="ltr"
+      />
+    </div>
+    <span
+      class="bpk-checkbox__label bpk-checkbox__label"
+      data-part="label"
+      data-scope="checkbox"
+      data-state="checked"
+      dir="ltr"
+      id="checkbox::rv::label"
+    >
+      Test
+    </span>
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::rv::label"
+      checked=""
+      class="bpk-checkbox__input"
+      id="checkbox::rv::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
+  </label>
+</div>
+`;
+
+exports[`BpkCheckbox validation states should render snapshot for invalid state 1`] = `
+<div>
+  <label
+    class="bpk-checkbox bpk-checkbox--invalid"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::rt::input"
+    id="checkbox::rt:"
+  >
+    <div
+      aria-hidden="true"
+      class="bpk-checkbox__control"
+      data-part="control"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::rt::control"
+    >
+      <div
+        class="bpk-checkbox__indicator"
+        data-part="indicator"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        hidden=""
+      />
+    </div>
+    <span
+      class="bpk-checkbox__label bpk-checkbox__label"
+      data-part="label"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::rt::label"
+    >
+      Test
+    </span>
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::rt::label"
+      class="bpk-checkbox__input"
+      id="checkbox::rt::input"
       name="test"
       style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
       type="checkbox"

@@ -26,6 +26,20 @@ import STYLES from './BpkCheckbox.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+/**
+ * BpkCheckboxLabel is the label element for the checkbox.
+ * This component wraps Ark UI's Checkbox.Label and provides Backpack-specific styling.
+ *
+ * @param {BpkCheckboxLabelProps} props - Component props
+ * @param {ReactNode} props.children - Label content
+ * @param {string} [props.className] - Additional CSS classes
+ * @returns {JSX.Element} The checkbox label element
+ *
+ * @example
+ * ```jsx
+ * <BpkCheckboxLabel>I accept the terms and conditions</BpkCheckboxLabel>
+ * ```
+ */
 const BpkCheckboxLabel = ({
   children,
   className,

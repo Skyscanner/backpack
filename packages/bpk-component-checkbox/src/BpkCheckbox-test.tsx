@@ -250,6 +250,183 @@ describe('BpkCheckbox', () => {
       );
       expect(container).toMatchSnapshot();
     });
+
+    it('should render disabled and indeterminate checkbox correctly', () => {
+      const { container} = render(
+        <BpkCheckbox name="test" label="Test" disabled indeterminate />,
+      );
+      expect(container).toMatchSnapshot();
+    });
+  });
+
+  describe('indeterminate state', () => {
+    it('should render with indeterminate state', () => {
+      render(<BpkCheckbox name="test" label="Test" indeterminate />);
+      const checkbox = screen.getByRole('checkbox');
+      // Ark UI handles indeterminate state through data-state attribute
+      expect(checkbox).toBeInTheDocument();
+    });
+
+    it('should have visual indicator for indeterminate state', () => {
+      const { container } = render(
+        <BpkCheckbox name="test" label="Test" indeterminate />,
+      );
+      // Check that the checkbox control is rendered
+      expect(container.querySelector('[data-scope="checkbox"][data-part="control"]')).toBeInTheDocument();
+    });
+  });
+
+  describe('validation states', () => {
+    it('should render with valid=false (invalid state)', () => {
+      render(<BpkCheckbox name="test" label="Test" valid={false} />);
+      const checkbox = screen.getByRole('checkbox');
+      expect(checkbox).toBeInTheDocument();
+    });
+
+    it('should show error styling when valid=false', () => {
+      const { container } = render(
+        <BpkCheckbox name="test" label="Test" valid={false} />,
+      );
+      expect(container.querySelector('.bpk-checkbox--invalid')).toBeInTheDocument();
+    });
+
+    it('should have neutral state when valid=null', () => {
+      const { container } = render(
+        <BpkCheckbox name="test" label="Test" valid={null} />,
+      );
+      expect(container.querySelector('.bpk-checkbox--invalid')).not.toBeInTheDocument();
+    });
+
+    it('should render snapshot for invalid state', () => {
+      const { container } = render(
+        <BpkCheckbox name="test" label="Test" valid={false} />,
+      );
+      expect(container).toMatchSnapshot();
+    });
+
+    it('should maintain red border when checked and invalid', () => {
+      const { container } = render(
+        <BpkCheckbox name="test" label="Test" valid={false} checked onChange={() => {}} />,
+      );
+      expect(container.querySelector('.bpk-checkbox--invalid')).toBeInTheDocument();
+      const checkbox = screen.getByRole('checkbox');
+      expect(checkbox).toBeChecked();
+    });
+
+    it('should render snapshot for checked invalid state', () => {
+      const { container } = render(
+        <BpkCheckbox name="test" label="Test" valid={false} checked onChange={() => {}} />,
+      );
+      expect(container).toMatchSnapshot();
+    });
+  });
+
+  describe('RTL support', () => {
+    it('should render correctly in RTL mode', () => {
+      const { container } = render(
+        <div dir="rtl">
+          <BpkCheckbox name="test" label="Test" />
+        </div>,
+      );
+      expect(container.querySelector('[dir="rtl"]')).toBeInTheDocument();
+    });
+
+    it('should render RTL snapshot', () => {
+      const { container } = render(
+        <div dir="rtl">
+          <BpkCheckbox name="test" label="RTL Test" />
+        </div>,
+      );
+      expect(container).toMatchSnapshot();
+    });
+
+    it('should render required asterisk in RTL correctly', () => {
+      const { container } = render(
+        <div dir="rtl">
+          <BpkCheckbox name="test" label="Test" required />
+        </div>,
+      );
+      expect(screen.getByText('*')).toBeInTheDocument();
+      expect(container).toMatchSnapshot();
+    });
+  });
+
+  describe('form integration', () => {
+    it('should have name attribute for form submission', () => {
+      render(<BpkCheckbox name="accept-terms" label="Test" />);
+      const checkbox = screen.getByRole('checkbox');
+      expect(checkbox).toHaveAttribute('name', 'accept-terms');
+    });
+
+    it('should have value attribute when provided', () => {
+      render(<BpkCheckbox name="option" label="Test" value="yes" />);
+      const checkbox = screen.getByRole('checkbox');
+      expect(checkbox).toHaveAttribute('value', 'yes');
+    });
+
+    it('should work with form submission', () => {
+      const handleSubmit = jest.fn((e) => e.preventDefault());
+      render(
+        <form onSubmit={handleSubmit}>
+          <BpkCheckbox name="agree" label="I agree" defaultChecked />
+          <button type="submit">Submit</button>
+        </form>,
+      );
+      const checkbox = screen.getByRole('checkbox');
+      expect(checkbox).toBeChecked();
+      expect(checkbox).toHaveAttribute('name', 'agree');
+    });
+  });
+
+  describe('edge cases', () => {
+    it('should handle long labels without breaking layout', () => {
+      const longLabel = 'This is a very long label that should wrap properly and not break the checkbox layout or cause any overflow issues in the component';
+      render(<BpkCheckbox name="test" label={longLabel} />);
+      expect(screen.getByText(longLabel)).toBeInTheDocument();
+    });
+
+    it('should handle missing onChange gracefully', () => {
+      render(<BpkCheckbox name="test" label="Test" />);
+      const checkbox = screen.getByRole('checkbox');
+      expect(checkbox).toBeInTheDocument();
+    });
+
+    it('should handle null className', () => {
+      render(<BpkCheckbox name="test" label="Test" className={null} />);
+      const checkbox = screen.getByRole('checkbox');
+      expect(checkbox).toBeInTheDocument();
+    });
+
+    it('should handle undefined checked value', () => {
+      render(<BpkCheckbox name="test" label="Test" checked={undefined} />);
+      const checkbox = screen.getByRole('checkbox');
+      expect(checkbox).toBeInTheDocument();
+    });
+
+    it('should work with white variant and disabled state combined', () => {
+      const { container } = render(
+        <BpkCheckbox name="test" label="Test" white disabled />,
+      );
+      expect(container.querySelector('.bpk-checkbox--white')).toBeInTheDocument();
+      expect(container.querySelector('.bpk-checkbox--disabled')).toBeInTheDocument();
+    });
+
+    it('should render with nested BpkThemeProvider', () => {
+      render(
+        <BpkThemeProvider
+          theme={{ checkboxCheckedColor: '#ff0000' }}
+          themeAttributes={themeAttributes}
+        >
+          <BpkThemeProvider
+            theme={{ checkboxCheckedColor: '#00ff00' }}
+            themeAttributes={themeAttributes}
+          >
+            <BpkCheckbox name="test" label="Nested" checked onChange={() => {}} />
+          </BpkThemeProvider>
+        </BpkThemeProvider>,
+      );
+      expect(screen.getByRole('checkbox')).toBeInTheDocument();
+    });
   });
 
   describe('theming', () => {

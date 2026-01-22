@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-import { Checkbox as ArkCheckbox } from '@ark-ui/react';
+import { useEffect, useRef } from 'react';
+
+import { Checkbox as ArkCheckbox, useCheckboxContext } from '@ark-ui/react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -26,14 +28,44 @@ import STYLES from './BpkCheckbox.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+/**
+ * BpkCheckboxHiddenInput is the hidden native checkbox input element for form integration.
+ * This component wraps Ark UI's Checkbox.HiddenInput and ensures proper form submission.
+ *
+ * @param {BpkCheckboxHiddenInputProps} props - Component props (includes name, value, etc.)
+ * @returns {JSX.Element} The hidden checkbox input element
+ *
+ * @example
+ * ```jsx
+ * <BpkCheckboxHiddenInput />
+ * ```
+ */
 const BpkCheckboxHiddenInput = ({
   ...rest
 }: BpkCheckboxHiddenInputProps) => {
   const classNames = getClassName('bpk-checkbox__input');
+  const checkbox = useCheckboxContext();
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // Set indeterminate property and aria-checked on the native input element
+  // The indeterminate property can only be set via JavaScript, not as an HTML attribute
+  // We also need to manually set aria-checked="mixed" because browsers don't do this automatically
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.indeterminate = checkbox.indeterminate;
+      // Set aria-checked based on state
+      if (checkbox.indeterminate) {
+        inputRef.current.setAttribute('aria-checked', 'mixed');
+      } else {
+        // Let the native checkbox handle aria-checked for checked/unchecked states
+        inputRef.current.removeAttribute('aria-checked');
+      }
+    }
+  }, [checkbox.indeterminate]);
 
   return (
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <ArkCheckbox.HiddenInput className={classNames} {...rest} />
+    <ArkCheckbox.HiddenInput ref={inputRef} className={classNames} {...rest} />
   );
 };
 

@@ -28,6 +28,20 @@ import STYLES from './BpkCheckbox.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+/**
+ * BpkCheckboxControl is the visual checkbox box element.
+ * This component wraps Ark UI's Checkbox.Control and automatically includes an indicator if none is provided.
+ *
+ * @param {BpkCheckboxControlProps} props - Component props
+ * @param {ReactNode} [props.children] - Custom indicator content (defaults to BpkCheckboxIndicator)
+ * @param {string} [props.className] - Additional CSS classes
+ * @returns {JSX.Element} The checkbox control element
+ *
+ * @example
+ * ```jsx
+ * <BpkCheckboxControl />
+ * ```
+ */
 const BpkCheckboxControl = ({
   children,
   className,

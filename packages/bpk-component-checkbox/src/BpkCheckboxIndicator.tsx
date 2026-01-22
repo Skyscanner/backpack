@@ -26,6 +26,20 @@ import STYLES from './BpkCheckbox.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+/**
+ * BpkCheckboxIndicator is the visual indicator (checkmark or dash) shown when the checkbox is checked or indeterminate.
+ * This component wraps Ark UI's Checkbox.Indicator and provides Backpack-specific styling.
+ *
+ * @param {BpkCheckboxIndicatorProps} props - Component props
+ * @param {ReactNode} [props.children] - Custom indicator content
+ * @param {string} [props.className] - Additional CSS classes
+ * @returns {JSX.Element} The checkbox indicator element
+ *
+ * @example
+ * ```jsx
+ * <BpkCheckboxIndicator />
+ * ```
+ */
 const BpkCheckboxIndicator = ({
   children,
   className,

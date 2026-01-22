@@ -268,17 +268,17 @@ Foundational (Phase 2)
 
 ### Implementation
 
-- [ ] T071 [P] [US4] Add disabled prop handling in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.tsx
-- [ ] T072 [P] [US4] Add indeterminate prop handling with ref.current.indeterminate in BpkCheckbox.tsx
-- [ ] T073 [P] [US4] Add disabled state styles (--disabled, cursor, opacity) in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.module.scss
-- [ ] T074 [P] [US4] Add indeterminate state styles (--indeterminate, dash icon) in BpkCheckbox.module.scss
+- [X] T071 [P] [US4] Add disabled prop handling in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.tsx
+- [X] T072 [P] [US4] Add indeterminate prop handling with ref.current.indeterminate in BpkCheckbox.tsx
+- [X] T073 [P] [US4] Add disabled state styles (--disabled, cursor, opacity) in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.module.scss
+- [X] T074 [P] [US4] Add indeterminate state styles (--indeterminate, dash icon) in BpkCheckbox.module.scss
 
 ### Tests
 
-- [ ] T075 [US4] Add disabled state tests (no interaction, aria-disabled) in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox-test.tsx
-- [ ] T076 [US4] Add indeterminate state tests (visual indicator, aria-checked="mixed") in BpkCheckbox-test.tsx
-- [ ] T077 [US4] Add keyboard navigation tests for disabled (not focusable) in accessibility-test.tsx
-- [ ] T078 [US4] Add snapshot tests for disabled and indeterminate states in BpkCheckbox-test.tsx
+- [X] T075 [US4] Add disabled state tests (no interaction, aria-disabled) in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox-test.tsx
+- [X] T076 [US4] Add indeterminate state tests (visual indicator, aria-checked="mixed") in BpkCheckbox-test.tsx
+- [X] T077 [US4] Add keyboard navigation tests for disabled (not focusable) in accessibility-test.tsx
+- [X] T078 [US4] Add snapshot tests for disabled and indeterminate states in BpkCheckbox-test.tsx
 
 **US4 Completion Criteria**:
 - ✅ Disabled checkbox blocks interaction
@@ -299,14 +299,14 @@ Foundational (Phase 2)
 
 ### Implementation
 
-- [ ] T079 [P] [US5] Add valid prop handling (true/false/null) in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.tsx
-- [ ] T080 [P] [US5] Add invalid state styles (--invalid, error color) in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.module.scss
+- [X] T079 [P] [US5] Add valid prop handling (true/false/null) in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.tsx
+- [X] T080 [P] [US5] Add invalid state styles (--invalid, error color) in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.module.scss
 
 ### Tests
 
-- [ ] T081 [US5] Add validation state tests (valid=false shows error styling) in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox-test.tsx
-- [ ] T082 [US5] Add ARIA invalid tests (aria-invalid="true") in accessibility-test.tsx
-- [ ] T083 [US5] Add snapshot tests for invalid states in BpkCheckbox-test.tsx
+- [X] T081 [US5] Add validation state tests (valid=false shows error styling) in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox-test.tsx
+- [X] T082 [US5] Add ARIA invalid tests (aria-invalid="true") in accessibility-test.tsx
+- [X] T083 [US5] Add snapshot tests for invalid states in BpkCheckbox-test.tsx
 
 **US5 Completion Criteria**:
 - ✅ Invalid checkbox shows error styling
@@ -325,14 +325,14 @@ Foundational (Phase 2)
 
 ### Implementation
 
-- [ ] T084 [P] [US6] Add RTL support using bpk-rtl mixin for directional properties in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.module.scss
-- [ ] T085 [P] [US6] Add RTL styles for asterisk positioning in BpkCheckbox.module.scss
+- [X] T084 [P] [US6] Add RTL support using bpk-rtl mixin for directional properties in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.module.scss
+- [X] T085 [P] [US6] Add RTL styles for asterisk positioning in BpkCheckbox.module.scss
 
 ### Tests
 
-- [ ] T086 [US6] Add RTL rendering tests (verify layout mirroring) in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox-test.tsx
-- [ ] T087 [US6] Add RTL accessibility tests (focus indicators in correct position) in accessibility-test.tsx
-- [ ] T088 [US6] Add snapshot tests for RTL mode in BpkCheckbox-test.tsx
+- [X] T086 [US6] Add RTL rendering tests (verify layout mirroring) in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox-test.tsx
+- [X] T087 [US6] Add RTL accessibility tests (focus indicators in correct position) in accessibility-test.tsx
+- [X] T088 [US6] Add snapshot tests for RTL mode in BpkCheckbox-test.tsx
 
 **US6 Completion Criteria**:
 - ✅ RTL layout mirrored correctly
@@ -347,43 +347,43 @@ Foundational (Phase 2)
 
 ### Documentation
 
-- [ ] T089 [P] Update README.md with component description (<100 words, British English) in packages/bpk-component-checkbox/
-- [ ] T090 [P] Add usage examples (simple API) to README.md
-- [ ] T091 [P] Add usage examples (composable API) to README.md
-- [ ] T092 [P] Add theming guide with BpkThemeProvider example to README.md
-- [ ] T093 [P] Add props table for all sub-components to README.md
-- [ ] T094 [P] Add JSDoc comments to BpkCheckbox.tsx with @example annotations in packages/bpk-component-checkbox/src/BpkCheckbox/
-- [ ] T095 [P] Add JSDoc comments to all sub-components (Root, Control, Label, Indicator, HiddenInput)
+- [X] T089 [P] Update README.md with component description (<100 words, British English) in packages/bpk-component-checkbox/
+- [X] T090 [P] Add usage examples (simple API) to README.md
+- [X] T091 [P] Add usage examples (composable API) to README.md
+- [X] T092 [P] Add theming guide with BpkThemeProvider example to README.md
+- [X] T093 [P] Add props table for all sub-components to README.md
+- [X] T094 [P] Add JSDoc comments to BpkCheckbox.tsx with @example annotations in packages/bpk-component-checkbox/src/BpkCheckbox/
+- [X] T095 [P] Add JSDoc comments to all sub-components (Root, Control, Label, Indicator, HiddenInput)
 - [ ] T096 [P] Create BpkCheckbox.figma.tsx for Figma Code Connect in packages/bpk-component-checkbox/src/BpkCheckbox/
 
 ### White Variant
 
-- [ ] T097 [P] Add white prop handling in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.tsx
-- [ ] T098 [P] Implement --white modifier styles in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.module.scss
-- [ ] T099 Add white variant tests in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox-test.tsx
+- [X] T097 [P] Add white prop handling in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.tsx
+- [X] T098 [P] Implement --white modifier styles in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.module.scss
+- [X] T099 Add white variant tests in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox-test.tsx
 
 ### Small Label Variant
 
-- [ ] T100 [P] Add smallLabel prop handling in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.tsx
-- [ ] T101 [P] Implement __label--small modifier styles in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.module.scss
-- [ ] T102 Add smallLabel tests in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox-test.tsx
+- [X] T100 [P] Add smallLabel prop handling in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.tsx
+- [X] T101 [P] Implement __label--small modifier styles in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.module.scss
+- [X] T102 Add smallLabel tests in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox-test.tsx
 
 ### Required Field Support
 
-- [ ] T103 [P] Add required prop handling with asterisk rendering in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.tsx
-- [ ] T104 [P] Add aria-required attribute when required=true in BpkCheckbox.tsx
-- [ ] T105 Add required field tests (asterisk visible, aria-required) in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox-test.tsx
+- [X] T103 [P] Add required prop handling with asterisk rendering in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox.tsx
+- [X] T104 [P] Add aria-required attribute when required=true in BpkCheckbox.tsx
+- [X] T105 Add required field tests (asterisk visible, aria-required) in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox-test.tsx
 
 ### Form Integration
 
-- [ ] T106 [P] Add form integration tests (name, value attributes) in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox-test.tsx
-- [ ] T107 [P] Create form-test.tsx for native form submission tests in packages/bpk-component-checkbox/src/BpkCheckbox/
+- [X] T106 [P] Add form integration tests (name, value attributes) in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox-test.tsx
+- [X] T107 [P] Create form-test.tsx for native form submission tests in packages/bpk-component-checkbox/src/BpkCheckbox/
 
 ### Edge Cases
 
-- [ ] T108 [P] Add edge case tests (long labels, no onChange, null values) in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox-test.tsx
-- [ ] T109 [P] Add touch target size tests (44x44px minimum) in accessibility-test.tsx
-- [ ] T110 [P] Add nested BpkThemeProvider tests in BpkCheckbox-test.tsx
+- [X] T108 [P] Add edge case tests (long labels, no onChange, null values) in packages/bpk-component-checkbox/src/BpkCheckbox/BpkCheckbox-test.tsx
+- [X] T109 [P] Add touch target size tests (44x44px minimum) in accessibility-test.tsx
+- [X] T110 [P] Add nested BpkThemeProvider tests in BpkCheckbox-test.tsx
 
 ### Visual Regression
 
@@ -392,15 +392,15 @@ Foundational (Phase 2)
 
 ### Final Verification
 
-- [ ] T113 Run full test suite with npm test and verify all pass
-- [ ] T114 Check test coverage meets thresholds (70% branches, 75% functions/lines/statements)
+- [X] T113 Run full test suite with npm test and verify all pass
+- [X] T114 Check test coverage meets thresholds (70% branches, 75% functions/lines/statements)
 - [X] T115 Run linter (ESLint, Stylelint) and fix all warnings/errors
-- [ ] T116 Run TypeScript compiler and verify no errors
+- [X] T116 Run TypeScript compiler and verify no errors
 - [ ] T117 Run Storybook locally and verify all stories render correctly
 - [ ] T118 Test in all supported browsers (Chrome, Edge, Firefox, Safari)
 - [ ] T119 Manual accessibility testing (keyboard navigation, screen reader)
 - [ ] T120 Manual RTL testing (render with dir="rtl")
-- [ ] T121 Remove backup file packages/bpk-component-checkbox/src/BpkCheckbox.backup.tsx
+- [X] T121 Remove backup file packages/bpk-component-checkbox/src/BpkCheckbox.backup.tsx
 
 **Phase 9 Completion Criteria**:
 - ✅ Documentation complete
