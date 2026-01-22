@@ -35,7 +35,6 @@ describe('BpkCheckbox form test', () => {
             label="Prefer directs"
             checked={isChecked}
             onChange={() => setIsChecked(!isChecked)}
-            data-testid="mycheckbox"
           />
           <button type="submit">Submit</button>
         </form>
@@ -43,7 +42,7 @@ describe('BpkCheckbox form test', () => {
     };
     render(<Wrap />);
 
-    const checkbox = screen.getByTestId('mycheckbox');
+    const checkbox = screen.getByRole('checkbox', { name: 'Prefer directs' });
     expect(checkbox).not.toBeChecked();
 
     await userEvent.click(checkbox);
@@ -66,7 +65,6 @@ describe('BpkCheckbox form test', () => {
             label="Prefer directs"
             checked={isChecked}
             onChange={() => setIsChecked(!isChecked)}
-            data-testid="mycheckbox"
           />
           <button type="submit">Submit</button>
         </form>
@@ -75,7 +73,7 @@ describe('BpkCheckbox form test', () => {
     render(<Wrap />);
     document.addEventListener('change', formValidation);
 
-    const checkbox = screen.getByTestId('mycheckbox');
+    const checkbox = screen.getByRole('checkbox', { name: 'Prefer directs' });
     expect(checkbox).not.toBeChecked();
     expect(formValidation).not.toHaveBeenCalled();
 
