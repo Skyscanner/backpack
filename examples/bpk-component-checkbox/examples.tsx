@@ -16,10 +16,12 @@
  * limitations under the License.
  */
 
-import { Component } from 'react';
+import { Component, useState } from 'react';
 import type { ComponentProps } from 'react';
 
-import BpkCheckbox from '../../packages/bpk-component-checkbox';
+import BpkCheckbox, { themeAttributes } from '../../packages/bpk-component-checkbox';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkThemeProvider from '../../packages/bpk-theming';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
@@ -161,6 +163,117 @@ const DisabledExample = () => (
   </div>
 );
 
+// Composable API examples
+const ComposableBasicExample = () => {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <div style={{ padding: '.25rem' }}>
+      <BpkCheckbox
+        name="composable"
+        checked={checked}
+        onChange={() => setChecked(!checked)}
+      >
+        <BpkCheckbox.Control>
+          <BpkCheckbox.Indicator />
+        </BpkCheckbox.Control>
+        <BpkCheckbox.Label>Composable checkbox</BpkCheckbox.Label>
+        <BpkCheckbox.HiddenInput />
+      </BpkCheckbox>
+    </div>
+  );
+};
+
+const ComposableWithDescriptionExample = () => {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <div style={{ padding: '.25rem' }}>
+      <BpkCheckbox
+        name="composable-desc"
+        checked={checked}
+        onChange={() => setChecked(!checked)}
+      >
+        <BpkCheckbox.Control>
+          <BpkCheckbox.Indicator />
+        </BpkCheckbox.Control>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <BpkCheckbox.Label>Enable notifications</BpkCheckbox.Label>
+          <span style={{ fontSize: '0.875rem' }}>
+            Get updates about your bookings and trips
+          </span>
+        </div>
+        <BpkCheckbox.HiddenInput />
+      </BpkCheckbox>
+    </div>
+  );
+};
+
+const ComposableCustomLayoutExample = () => {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <div style={{ padding: '.25rem' }}>
+      <BpkCheckbox
+        name="composable-card"
+        checked={checked}
+        onChange={() => setChecked(!checked)}
+      >
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'start',
+            gap: '0.75rem',
+            padding: '1rem',
+            border: checked ? '2px solid #0062e3' : '1px solid #ddd',
+            borderRadius: '0.5rem',
+            backgroundColor: checked ? '#f0f7ff' : 'white',
+          }}
+        >
+          <BpkCheckbox.Control>
+            <BpkCheckbox.Indicator />
+          </BpkCheckbox.Control>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+            <BpkCheckbox.Label>Premium seat</BpkCheckbox.Label>
+            <span style={{ fontSize: '0.875rem' }}>
+              Extra legroom and priority boarding
+            </span>
+            <span style={{ fontSize: '1rem', fontWeight: 'bold' }}>+$49.99</span>
+          </div>
+        </div>
+        <BpkCheckbox.HiddenInput />
+      </BpkCheckbox>
+    </div>
+  );
+};
+
+const ThemedComposableExample = () => {
+  const [checked, setChecked] = useState(true);
+
+  return (
+    <BpkThemeProvider
+      theme={{
+        checkboxCheckedColor: '#ff0000',
+      }}
+      themeAttributes={themeAttributes}
+    >
+      <div style={{ padding: '.25rem' }}>
+        <BpkCheckbox
+          name="themed"
+          checked={checked}
+          onChange={() => setChecked(!checked)}
+        >
+          <BpkCheckbox.Control>
+            <BpkCheckbox.Indicator />
+          </BpkCheckbox.Control>
+          <BpkCheckbox.Label>Themed checkbox (red)</BpkCheckbox.Label>
+          <BpkCheckbox.HiddenInput />
+        </BpkCheckbox>
+      </div>
+    </BpkThemeProvider>
+  );
+};
+
 const MixedExample = () => (
   <div>
     <DefaultExample />
@@ -188,4 +301,8 @@ export {
   SmallLabelRequiredExample,
   SmallLabelInvalidExample,
   MixedExample,
+  ComposableBasicExample,
+  ComposableWithDescriptionExample,
+  ComposableCustomLayoutExample,
+  ThemedComposableExample,
 };

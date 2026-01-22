@@ -7,23 +7,56 @@ exports[`BpkFieldset should render as disabled when checkbox component is disabl
   >
     <label
       class="bpk-checkbox bpk-checkbox--disabled"
+      data-disabled=""
+      data-part="root"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      for="checkbox:terms_and_conditions_checkbox:input"
+      id="checkbox:terms_and_conditions_checkbox"
     >
-      <input
-        aria-invalid="false"
-        aria-label="I accept the terms and conditions"
-        class="bpk-checkbox__input"
-        data-indeterminate="false"
-        disabled=""
-        id="terms_and_conditions_checkbox"
-        name="terms_and_conditions"
-        type="checkbox"
-      />
-      <span
+      <div
         aria-hidden="true"
-        class="bpk-checkbox__label"
+        class="bpk-checkbox__control"
+        data-disabled=""
+        data-part="control"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox:terms_and_conditions_checkbox:control"
+      >
+        <div
+          class="bpk-checkbox__indicator"
+          data-disabled=""
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="unchecked"
+          dir="ltr"
+          hidden=""
+        />
+      </div>
+      <span
+        class="bpk-checkbox__label bpk-checkbox__label"
+        data-disabled=""
+        data-part="label"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox:terms_and_conditions_checkbox:label"
       >
         I accept the terms and conditions
       </span>
+      <input
+        aria-invalid="false"
+        aria-labelledby="checkbox:terms_and_conditions_checkbox:label"
+        class="bpk-checkbox__input"
+        disabled=""
+        id="checkbox:terms_and_conditions_checkbox:input"
+        name="terms_and_conditions"
+        style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+        type="checkbox"
+        value="on"
+      />
     </label>
   </fieldset>
 </DocumentFragment>
@@ -181,22 +214,51 @@ exports[`BpkFieldset should render correctly with checkbox component 1`] = `
   >
     <label
       class="bpk-checkbox"
+      data-part="root"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      for="checkbox:terms_and_conditions_checkbox:input"
+      id="checkbox:terms_and_conditions_checkbox"
     >
-      <input
-        aria-invalid="false"
-        aria-label="I accept the terms and conditions"
-        class="bpk-checkbox__input"
-        data-indeterminate="false"
-        id="terms_and_conditions_checkbox"
-        name="terms_and_conditions"
-        type="checkbox"
-      />
-      <span
+      <div
         aria-hidden="true"
-        class="bpk-checkbox__label"
+        class="bpk-checkbox__control"
+        data-part="control"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox:terms_and_conditions_checkbox:control"
+      >
+        <div
+          class="bpk-checkbox__indicator"
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="unchecked"
+          dir="ltr"
+          hidden=""
+        />
+      </div>
+      <span
+        class="bpk-checkbox__label bpk-checkbox__label"
+        data-part="label"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox:terms_and_conditions_checkbox:label"
       >
         I accept the terms and conditions
       </span>
+      <input
+        aria-invalid="false"
+        aria-labelledby="checkbox:terms_and_conditions_checkbox:label"
+        class="bpk-checkbox__input"
+        id="checkbox:terms_and_conditions_checkbox:input"
+        name="terms_and_conditions"
+        style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+        type="checkbox"
+        value="on"
+      />
     </label>
     <div
       style="height: 0px; overflow: visible; transition: height 200ms ease;"
@@ -246,19 +308,38 @@ exports[`BpkFieldset should render correctly with checkbox component and "requir
   >
     <label
       class="bpk-checkbox"
+      data-part="root"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      for="checkbox:terms_and_conditions_checkbox:input"
+      id="checkbox:terms_and_conditions_checkbox"
     >
-      <input
-        aria-invalid="false"
-        aria-label="I accept the terms and conditions"
-        class="bpk-checkbox__input"
-        data-indeterminate="false"
-        id="terms_and_conditions_checkbox"
-        name="terms_and_conditions"
-        type="checkbox"
-      />
-      <span
+      <div
         aria-hidden="true"
-        class="bpk-checkbox__label"
+        class="bpk-checkbox__control"
+        data-part="control"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox:terms_and_conditions_checkbox:control"
+      >
+        <div
+          class="bpk-checkbox__indicator"
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="unchecked"
+          dir="ltr"
+          hidden=""
+        />
+      </div>
+      <span
+        class="bpk-checkbox__label bpk-checkbox__label"
+        data-part="label"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox:terms_and_conditions_checkbox:label"
       >
         I accept the terms and conditions
         <span
@@ -267,6 +348,16 @@ exports[`BpkFieldset should render correctly with checkbox component and "requir
           *
         </span>
       </span>
+      <input
+        aria-invalid="false"
+        aria-labelledby="checkbox:terms_and_conditions_checkbox:label"
+        class="bpk-checkbox__input"
+        id="checkbox:terms_and_conditions_checkbox:input"
+        name="terms_and_conditions"
+        style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+        type="checkbox"
+        value="on"
+      />
     </label>
     <div
       style="height: 0px; overflow: visible; transition: height 200ms ease;"

@@ -16,95 +16,97 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
-
 import { cssModules } from '../../bpk-react-utils';
+
+import BpkCheckboxControl from './BpkCheckboxControl';
+import BpkCheckboxHiddenInput from './BpkCheckboxHiddenInput';
+import BpkCheckboxIndicator from './BpkCheckboxIndicator';
+import BpkCheckboxLabel from './BpkCheckboxLabel';
+import BpkCheckboxRoot from './BpkCheckboxRoot';
+
+import type { BpkCheckboxProps } from './common-types';
 
 import STYLES from './BpkCheckbox.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type NativeInputProps = React.InputHTMLAttributes<HTMLInputElement>;
+/**
+ * BpkCheckbox is a checkbox component built on Ark UI primitives.
+ *
+ * It supports two modes:
+ * 1. Simple mode: Use with `label` prop for quick implementation
+ * 2. Composable mode: Use with sub-components for custom layouts
+ *
+ * @param {BpkCheckboxProps} props - Component props
+ * @returns {JSX.Element} The rendered checkbox component
+ *
+ * @example
+ * // Simple mode (legacy API)
+ * <BpkCheckbox name="accept" label="I accept the terms" checked={checked} onChange={handleChange} />
+ *
+ * @example
+ * // Composable mode (new API)
+ * <BpkCheckbox name="accept" checked={checked} onChange={handleChange}>
+ *   <BpkCheckbox.Control />
+ *   <BpkCheckbox.Label>I accept the terms</BpkCheckbox.Label>
+ *   <BpkCheckbox.HiddenInput />
+ * </BpkCheckbox>
+ */
+const BpkCheckbox = (props: BpkCheckboxProps) => {
+  // Type guard to check if using simple API (has label prop)
+  const isSimpleMode = 'label' in props && props.label !== undefined;
 
-export type Props = Omit<NativeInputProps, 'type' | 'className'> & {
-  name: string;
-  label: ReactNode;
-  required?: boolean;
-  disabled?: boolean;
-  white?: boolean;
-  className?: string | null;
-  smallLabel?: boolean;
-  valid?: boolean | null;
-  /**
-   * The indeterminate prop is only a visual clue, it does not affect the checked state of the checkbox. If `indeterminate` is flagged then the checkbox will be displayed with a minus sign in the box.  This is used when there is a checkbox group and the parent displays this state when not all child checkboxes are selected.
-   */
-  indeterminate?: boolean;
+  if (isSimpleMode) {
+    // Simple mode: render with auto-generated sub-components
+    const {
+      disabled = false,
+      label,
+      required = false,
+      smallLabel = false,
+      ...rootProps
+    } = props;
+
+    const labelClassNames = getClassName(
+      'bpk-checkbox__label',
+      smallLabel && 'bpk-checkbox__label--small',
+    );
+
+    return (
+      <BpkCheckboxRoot {...rootProps} disabled={disabled}>
+        <BpkCheckboxControl>
+          <BpkCheckboxIndicator />
+        </BpkCheckboxControl>
+        <BpkCheckboxLabel
+          {...(labelClassNames ? { className: labelClassNames } : {})}
+        >
+          {label}
+          {!disabled && required && (
+            <span className={getClassName('bpk-checkbox__asterisk')}>*</span>
+          )}
+        </BpkCheckboxLabel>
+        <BpkCheckboxHiddenInput />
+      </BpkCheckboxRoot>
+    );
+  }
+
+  // Composable mode: render root with user-provided children
+  return <BpkCheckboxRoot {...(props as any)} />;
 };
 
-const BpkCheckbox = ({
-  checked = false,
-  className = null,
-  disabled = false,
-  indeterminate = false,
-  label,
-  name,
-  required = false,
-  smallLabel = false,
-  valid = null,
-  white = false,
-  ...rest
-}: Props) => {
-  // Explicit check for false primitive value as undefined is
-  // treated as neither valid nor invalid
-  const isInvalid = valid === false;
-
-  const classNames: string = getClassName(
-    'bpk-checkbox',
-    white && 'bpk-checkbox--white',
-    disabled && 'bpk-checkbox--disabled',
-    white && disabled && 'bpk-checkbox--disabled--white',
-    isInvalid && 'bpk-checkbox--invalid',
-    className,
-  );
-  const labelClassNames: string = getClassName(
-    'bpk-checkbox__label',
-    smallLabel && 'bpk-checkbox__label--small',
-  );
-  const inputClasses: string = getClassName(
-    'bpk-checkbox__input',
-    white && 'bpk-checkbox__input-white',
-    indeterminate && 'bpk-checkbox__input-indeterminate',
-  );
-
-  return (
-    <label className={classNames}>
-      <input
-        type="checkbox"
-        className={inputClasses}
-        name={name}
-        disabled={disabled}
-        aria-label={typeof label === 'string' ? label : undefined}
-        aria-invalid={isInvalid}
-        data-indeterminate={indeterminate}
-        ref={(e) => {
-          if (e) {
-            e.indeterminate = indeterminate;
-          }
-        }}
-        checked={checked}
-        {...rest}
-      />
-
-      <span className={labelClassNames} aria-hidden="true">
-        {label}
-        {!disabled && required && (
-          <span className={getClassName('bpk-checkbox__asterisk')}>*</span>
-        )}
-      </span>
-    </label>
-  );
-};
+// Attach sub-components as properties
+BpkCheckbox.Root = BpkCheckboxRoot;
+BpkCheckbox.Control = BpkCheckboxControl;
+BpkCheckbox.Label = BpkCheckboxLabel;
+BpkCheckbox.Indicator = BpkCheckboxIndicator;
+BpkCheckbox.HiddenInput = BpkCheckboxHiddenInput;
 
 export default BpkCheckbox;
 
-
+// Export sub-components individually
+export {
+  BpkCheckboxRoot,
+  BpkCheckboxControl,
+  BpkCheckboxLabel,
+  BpkCheckboxIndicator,
+  BpkCheckboxHiddenInput,
+};

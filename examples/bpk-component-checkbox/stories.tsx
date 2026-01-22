@@ -28,6 +28,10 @@ import {
   RequiredExample,
   SmallLabelExample,
   MixedExample,
+  ComposableBasicExample,
+  ComposableWithDescriptionExample,
+  ComposableCustomLayoutExample,
+  ThemedComposableExample,
 } from './examples';
 
 export default {
@@ -52,4 +56,9 @@ export const VisualTestWithZoom = {
   },
 };
 
+// Composable API stories
+export const ComposableBasic = ComposableBasicExample;
+export const ComposableWithDescription = ComposableWithDescriptionExample;
+export const ComposableCustomLayout = ComposableCustomLayoutExample;
+export const ThemedComposable = ThemedComposableExample;
 

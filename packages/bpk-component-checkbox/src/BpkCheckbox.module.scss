@@ -18,16 +18,20 @@
 
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/forms';
+@use '../../bpk-mixins/utils';
 
 .bpk-checkbox {
+  display: flex;
+
+  // Override for Ark UI structure - use flexbox for proper layout
+  padding-left: 0; // Remove padding since control has its own margin
+  align-items: flex-start;
+  gap: 0; // Remove gap, margin is on control
+
   @include forms.bpk-checkbox;
 
-  &__label {
-    @include forms.bpk-checkbox__label;
-
-    &--small {
-      @include forms.bpk-checkbox__label--small;
-    }
+  @include utils.bpk-rtl {
+    padding-right: 0;
   }
 
   &--white {
@@ -44,6 +48,109 @@
 
   &--invalid {
     @include forms.bpk-checkbox--invalid;
+
+    // Override for Ark UI: Apply red border to control element instead of input
+    .bpk-checkbox__control {
+      border-color: tokens.$bpk-text-error-day;
+
+      // Ensure red border remains visible even when checked
+      &[data-state='checked'],
+      &[data-state='indeterminate'] {
+        border-color: tokens.$bpk-text-error-day;
+      }
+    }
+  }
+
+  &__control {
+    // Ark UI Control wrapper - contains the checkbox input visuals
+    // This is the visible checkbox box
+    position: relative;
+    display: inline-block;
+    width: tokens.bpk-spacing-lg() - (tokens.$bpk-one-pixel-rem * 4);
+    height: tokens.bpk-spacing-lg() - (tokens.$bpk-one-pixel-rem * 4);
+    margin-right: tokens.bpk-spacing-md();
+    flex-shrink: 0; // Prevent checkbox from shrinking
+    transition:
+      border-color tokens.$bpk-duration-sm ease-in-out,
+      background-color tokens.$bpk-duration-sm ease-in-out;
+    border: (tokens.$bpk-one-pixel-rem * 3) solid tokens.$bpk-text-secondary-day;
+    border-radius: (tokens.$bpk-one-pixel-rem * 4);
+    background-color: tokens.$bpk-canvas-day;
+    cursor: pointer;
+    vertical-align: text-bottom;
+
+    @include utils.bpk-rtl {
+      margin-right: 0;
+      margin-left: tokens.bpk-spacing-md();
+    }
+
+    // Checked state
+    &[data-state='checked'],
+    &[data-state='indeterminate'] {
+      @include utils.bpk-themeable-property(
+        background-color,
+        --bpk-checkbox-checked-color,
+        tokens.$bpk-core-accent-day
+      );
+      @include utils.bpk-themeable-property(
+        border-color,
+        --bpk-checkbox-checked-color,
+        tokens.$bpk-core-accent-day
+      );
+    }
+
+    // Focus state
+    &[data-focus] {
+      outline: tokens.$bpk-one-pixel-rem * 2 solid tokens.$bpk-core-accent-day;
+      outline-offset: tokens.$bpk-one-pixel-rem * 2;
+    }
+
+    // Disabled state
+    &[data-disabled] {
+      border-color: tokens.$bpk-text-disabled-day;
+      background-color: tokens.$bpk-canvas-contrast-day;
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  &__label {
+    @include forms.bpk-checkbox__label;
+
+    &--small {
+      @include forms.bpk-checkbox__label--small;
+    }
+  }
+
+  &__indicator {
+    position: relative; // Add position relative for absolute positioning of children
+    // Ark UI Indicator - checkmark or dash icon
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    // Checkmark icon (shown when checked) - using SVG background like original
+    &[data-state='checked'] {
+      background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2213%22%20height%3D%229%22%20viewBox%3D%220%200%2013%209%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M2.35352%203.64648L5.5%207.5L11.5%201.5%22%20stroke%3D%22white%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: calc(100% - #{tokens.$bpk-one-pixel-rem * 2.5}) auto;
+    }
+
+    // Dash icon (shown when indeterminate) - match exact dimensions from original
+    &[data-state='indeterminate']::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: '';
+      width: 0.625rem; // 10px - exact width from original
+      height: 0.1875rem; // 3px - exact height from original
+      transform: translate(-50%, -50%);
+      border-radius: tokens.$bpk-border-size-lg;
+      background-color: tokens.$bpk-surface-default-day;
+    }
   }
 
   &__input {

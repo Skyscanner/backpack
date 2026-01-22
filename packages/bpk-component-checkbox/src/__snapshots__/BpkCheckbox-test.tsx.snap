@@ -1,288 +1,773 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`BpkCheckbox should render as disabled when required and disabled 1`] = `
-<DocumentFragment>
-  <label
-    class="bpk-checkbox bpk-checkbox--disabled"
+exports[`BpkCheckbox RTL support should render RTL snapshot 1`] = `
+<div>
+  <div
+    dir="rtl"
   >
-    <input
-      aria-invalid="false"
-      aria-label="Prefer directs"
-      class="bpk-checkbox__input"
-      data-indeterminate="false"
-      disabled=""
-      name="checkbox"
-      type="checkbox"
-    />
-    <span
+    <label
+      class="bpk-checkbox"
+      data-part="root"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      for="checkbox::r11::input"
+      id="checkbox::r11:"
+    >
+      <div
+        aria-hidden="true"
+        class="bpk-checkbox__control"
+        data-part="control"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox::r11::control"
+      >
+        <div
+          class="bpk-checkbox__indicator"
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="unchecked"
+          dir="ltr"
+          hidden=""
+        />
+      </div>
+      <span
+        class="bpk-checkbox__label bpk-checkbox__label"
+        data-part="label"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox::r11::label"
+      >
+        RTL Test
+      </span>
+      <input
+        aria-invalid="false"
+        aria-labelledby="checkbox::r11::label"
+        class="bpk-checkbox__input"
+        id="checkbox::r11::input"
+        name="test"
+        style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+        type="checkbox"
+        value="on"
+      />
+    </label>
+  </div>
+</div>
+`;
+
+exports[`BpkCheckbox RTL support should render required asterisk in RTL correctly 1`] = `
+<div>
+  <div
+    dir="rtl"
+  >
+    <label
+      class="bpk-checkbox"
+      data-part="root"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      for="checkbox::r12::input"
+      id="checkbox::r12:"
+    >
+      <div
+        aria-hidden="true"
+        class="bpk-checkbox__control"
+        data-part="control"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox::r12::control"
+      >
+        <div
+          class="bpk-checkbox__indicator"
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="unchecked"
+          dir="ltr"
+          hidden=""
+        />
+      </div>
+      <span
+        class="bpk-checkbox__label bpk-checkbox__label"
+        data-part="label"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox::r12::label"
+      >
+        Test
+        <span
+          class="bpk-checkbox__asterisk"
+        >
+          *
+        </span>
+      </span>
+      <input
+        aria-invalid="false"
+        aria-labelledby="checkbox::r12::label"
+        class="bpk-checkbox__input"
+        id="checkbox::r12::input"
+        name="test"
+        style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+        type="checkbox"
+        value="on"
+      />
+    </label>
+  </div>
+</div>
+`;
+
+exports[`BpkCheckbox composable API should render composable API snapshot 1`] = `
+<div>
+  <label
+    class="bpk-checkbox"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="checked"
+    dir="ltr"
+    for="checkbox::r1j::input"
+    id="checkbox::r1j:"
+  >
+    <div
       aria-hidden="true"
+      class="bpk-checkbox__control"
+      data-part="control"
+      data-scope="checkbox"
+      data-state="checked"
+      dir="ltr"
+      id="checkbox::r1j::control"
+    >
+      <div
+        class="bpk-checkbox__indicator"
+        data-part="indicator"
+        data-scope="checkbox"
+        data-state="checked"
+        dir="ltr"
+      />
+    </div>
+    <span
       class="bpk-checkbox__label"
+      data-part="label"
+      data-scope="checkbox"
+      data-state="checked"
+      dir="ltr"
+      id="checkbox::r1j::label"
     >
-      Prefer directs
+      Composable example
     </span>
-  </label>
-</DocumentFragment>
-`;
-
-exports[`BpkCheckbox should render correctly 1`] = `
-<DocumentFragment>
-  <label
-    class="bpk-checkbox"
-  >
     <input
       aria-invalid="false"
-      aria-label="Prefer directs"
-      class="bpk-checkbox__input"
-      data-indeterminate="false"
-      name="checkbox"
-      type="checkbox"
-    />
-    <span
-      aria-hidden="true"
-      class="bpk-checkbox__label"
-    >
-      Prefer directs
-    </span>
-  </label>
-</DocumentFragment>
-`;
-
-exports[`BpkCheckbox should render correctly with a small label 1`] = `
-<DocumentFragment>
-  <label
-    class="bpk-checkbox"
-  >
-    <input
-      aria-invalid="false"
-      aria-label="Prefer directs"
-      class="bpk-checkbox__input"
-      data-indeterminate="false"
-      name="checkbox"
-      type="checkbox"
-    />
-    <span
-      aria-hidden="true"
-      class="bpk-checkbox__label bpk-checkbox__label--small"
-    >
-      Prefer directs
-    </span>
-  </label>
-</DocumentFragment>
-`;
-
-exports[`BpkCheckbox should render correctly with checked attribute 1`] = `
-<DocumentFragment>
-  <label
-    class="bpk-checkbox"
-  >
-    <input
-      aria-invalid="false"
-      aria-label="Prefer directs"
+      aria-labelledby="checkbox::r1j::label"
       checked=""
       class="bpk-checkbox__input"
-      data-indeterminate="false"
-      name="checkbox"
+      id="checkbox::r1j::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
       type="checkbox"
+      value="on"
     />
-    <span
-      aria-hidden="true"
-      class="bpk-checkbox__label"
-    >
-      Prefer directs
-    </span>
   </label>
-</DocumentFragment>
+</div>
 `;
 
-exports[`BpkCheckbox should render correctly with disabled attribute 1`] = `
-<DocumentFragment>
+exports[`BpkCheckbox snapshots should render checked checkbox correctly 1`] = `
+<div>
+  <label
+    class="bpk-checkbox"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="checked"
+    dir="ltr"
+    for="checkbox::rg::input"
+    id="checkbox::rg:"
+  >
+    <div
+      aria-hidden="true"
+      class="bpk-checkbox__control"
+      data-part="control"
+      data-scope="checkbox"
+      data-state="checked"
+      dir="ltr"
+      id="checkbox::rg::control"
+    >
+      <div
+        class="bpk-checkbox__indicator"
+        data-part="indicator"
+        data-scope="checkbox"
+        data-state="checked"
+        dir="ltr"
+      />
+    </div>
+    <span
+      class="bpk-checkbox__label bpk-checkbox__label"
+      data-part="label"
+      data-scope="checkbox"
+      data-state="checked"
+      dir="ltr"
+      id="checkbox::rg::label"
+    >
+      Test
+    </span>
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::rg::label"
+      checked=""
+      class="bpk-checkbox__input"
+      id="checkbox::rg::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
+  </label>
+</div>
+`;
+
+exports[`BpkCheckbox snapshots should render default checkbox correctly 1`] = `
+<div>
+  <label
+    class="bpk-checkbox"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::rf::input"
+    id="checkbox::rf:"
+  >
+    <div
+      aria-hidden="true"
+      class="bpk-checkbox__control"
+      data-part="control"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::rf::control"
+    >
+      <div
+        class="bpk-checkbox__indicator"
+        data-part="indicator"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        hidden=""
+      />
+    </div>
+    <span
+      class="bpk-checkbox__label bpk-checkbox__label"
+      data-part="label"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::rf::label"
+    >
+      Test
+    </span>
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::rf::label"
+      class="bpk-checkbox__input"
+      id="checkbox::rf::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
+  </label>
+</div>
+`;
+
+exports[`BpkCheckbox snapshots should render disabled and indeterminate checkbox correctly 1`] = `
+<div>
   <label
     class="bpk-checkbox bpk-checkbox--disabled"
+    data-disabled=""
+    data-part="root"
+    data-scope="checkbox"
+    data-state="indeterminate"
+    dir="ltr"
+    for="checkbox::rn::input"
+    id="checkbox::rn:"
   >
+    <div
+      aria-hidden="true"
+      class="bpk-checkbox__control"
+      data-disabled=""
+      data-part="control"
+      data-scope="checkbox"
+      data-state="indeterminate"
+      dir="ltr"
+      id="checkbox::rn::control"
+    >
+      <div
+        class="bpk-checkbox__indicator"
+        data-disabled=""
+        data-part="indicator"
+        data-scope="checkbox"
+        data-state="indeterminate"
+        dir="ltr"
+        hidden=""
+      />
+    </div>
+    <span
+      class="bpk-checkbox__label bpk-checkbox__label"
+      data-disabled=""
+      data-part="label"
+      data-scope="checkbox"
+      data-state="indeterminate"
+      dir="ltr"
+      id="checkbox::rn::label"
+    >
+      Test
+    </span>
     <input
+      aria-checked="mixed"
       aria-invalid="false"
-      aria-label="Prefer directs"
+      aria-labelledby="checkbox::rn::label"
       class="bpk-checkbox__input"
-      data-indeterminate="false"
       disabled=""
-      name="checkbox"
+      id="checkbox::rn::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
       type="checkbox"
+      value="on"
     />
-    <span
-      aria-hidden="true"
-      class="bpk-checkbox__label"
-    >
-      Prefer directs
-    </span>
   </label>
-</DocumentFragment>
+</div>
 `;
 
-exports[`BpkCheckbox should render correctly with id attribute 1`] = `
-<DocumentFragment>
+exports[`BpkCheckbox snapshots should render disabled checkbox correctly 1`] = `
+<div>
   <label
-    class="bpk-checkbox"
+    class="bpk-checkbox bpk-checkbox--disabled"
+    data-disabled=""
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::rh::input"
+    id="checkbox::rh:"
   >
+    <div
+      aria-hidden="true"
+      class="bpk-checkbox__control"
+      data-disabled=""
+      data-part="control"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::rh::control"
+    >
+      <div
+        class="bpk-checkbox__indicator"
+        data-disabled=""
+        data-part="indicator"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        hidden=""
+      />
+    </div>
+    <span
+      class="bpk-checkbox__label bpk-checkbox__label"
+      data-disabled=""
+      data-part="label"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::rh::label"
+    >
+      Test
+    </span>
     <input
       aria-invalid="false"
-      aria-label="Prefer directs"
+      aria-labelledby="checkbox::rh::label"
       class="bpk-checkbox__input"
-      data-indeterminate="false"
-      id="checkbox"
-      name="checkbox"
+      disabled=""
+      id="checkbox::rh::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
       type="checkbox"
+      value="on"
     />
-    <span
-      aria-hidden="true"
-      class="bpk-checkbox__label"
-    >
-      Prefer directs
-    </span>
   </label>
-</DocumentFragment>
+</div>
 `;
 
-exports[`BpkCheckbox should render correctly with indeterminate attribute 1`] = `
-<DocumentFragment>
+exports[`BpkCheckbox snapshots should render indeterminate checkbox correctly 1`] = `
+<div>
   <label
     class="bpk-checkbox"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="indeterminate"
+    dir="ltr"
+    for="checkbox::rm::input"
+    id="checkbox::rm:"
   >
-    <input
-      aria-invalid="false"
-      aria-label="Prefer directs"
-      class="bpk-checkbox__input bpk-checkbox__input-indeterminate"
-      data-indeterminate="true"
-      name="checkbox"
-      type="checkbox"
-    />
-    <span
+    <div
       aria-hidden="true"
-      class="bpk-checkbox__label"
+      class="bpk-checkbox__control"
+      data-part="control"
+      data-scope="checkbox"
+      data-state="indeterminate"
+      dir="ltr"
+      id="checkbox::rm::control"
     >
-      Prefer directs
-    </span>
-  </label>
-</DocumentFragment>
-`;
-
-exports[`BpkCheckbox should render correctly with indeterminate state when both checked and indeterminate attributes 1`] = `
-<DocumentFragment>
-  <label
-    class="bpk-checkbox"
-  >
-    <input
-      aria-invalid="false"
-      aria-label="Prefer directs"
-      checked=""
-      class="bpk-checkbox__input bpk-checkbox__input-indeterminate"
-      data-indeterminate="true"
-      name="checkbox"
-      type="checkbox"
-    />
+      <div
+        class="bpk-checkbox__indicator"
+        data-part="indicator"
+        data-scope="checkbox"
+        data-state="indeterminate"
+        dir="ltr"
+        hidden=""
+      />
+    </div>
     <span
-      aria-hidden="true"
-      class="bpk-checkbox__label"
+      class="bpk-checkbox__label bpk-checkbox__label"
+      data-part="label"
+      data-scope="checkbox"
+      data-state="indeterminate"
+      dir="ltr"
+      id="checkbox::rm::label"
     >
-      Prefer directs
+      Test
     </span>
-  </label>
-</DocumentFragment>
-`;
-
-exports[`BpkCheckbox should render correctly with required attribute 1`] = `
-<DocumentFragment>
-  <label
-    class="bpk-checkbox"
-  >
     <input
+      aria-checked="mixed"
       aria-invalid="false"
-      aria-label="Prefer directs"
+      aria-labelledby="checkbox::rm::label"
       class="bpk-checkbox__input"
-      data-indeterminate="false"
-      name="checkbox"
+      id="checkbox::rm::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
       type="checkbox"
+      value="on"
     />
-    <span
+  </label>
+</div>
+`;
+
+exports[`BpkCheckbox snapshots should render invalid checkbox correctly 1`] = `
+<div>
+  <label
+    class="bpk-checkbox bpk-checkbox--invalid"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::ri::input"
+    id="checkbox::ri:"
+  >
+    <div
       aria-hidden="true"
-      class="bpk-checkbox__label"
+      class="bpk-checkbox__control"
+      data-part="control"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::ri::control"
     >
-      Prefer directs
+      <div
+        class="bpk-checkbox__indicator"
+        data-part="indicator"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        hidden=""
+      />
+    </div>
+    <span
+      class="bpk-checkbox__label bpk-checkbox__label"
+      data-part="label"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::ri::label"
+    >
+      Test
+    </span>
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::ri::label"
+      class="bpk-checkbox__input"
+      id="checkbox::ri::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
+  </label>
+</div>
+`;
+
+exports[`BpkCheckbox snapshots should render required checkbox correctly 1`] = `
+<div>
+  <label
+    class="bpk-checkbox"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::rk::input"
+    id="checkbox::rk:"
+  >
+    <div
+      aria-hidden="true"
+      class="bpk-checkbox__control"
+      data-part="control"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::rk::control"
+    >
+      <div
+        class="bpk-checkbox__indicator"
+        data-part="indicator"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        hidden=""
+      />
+    </div>
+    <span
+      class="bpk-checkbox__label bpk-checkbox__label"
+      data-part="label"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::rk::label"
+    >
+      Test
       <span
         class="bpk-checkbox__asterisk"
       >
         *
       </span>
     </span>
-  </label>
-</DocumentFragment>
-`;
-
-exports[`BpkCheckbox should render correctly with valid=false attribute 1`] = `
-<DocumentFragment>
-  <label
-    class="bpk-checkbox bpk-checkbox--invalid"
-  >
     <input
-      aria-invalid="true"
-      aria-label="Prefer directs"
+      aria-invalid="false"
+      aria-labelledby="checkbox::rk::label"
       class="bpk-checkbox__input"
-      data-indeterminate="false"
-      name="checkbox"
+      id="checkbox::rk::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
       type="checkbox"
+      value="on"
     />
-    <span
-      aria-hidden="true"
-      class="bpk-checkbox__label"
-    >
-      Prefer directs
-    </span>
   </label>
-</DocumentFragment>
+</div>
 `;
 
-exports[`BpkCheckbox should render correctly with value attribute 1`] = `
-<DocumentFragment>
+exports[`BpkCheckbox snapshots should render small label checkbox correctly 1`] = `
+<div>
   <label
     class="bpk-checkbox"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::rl::input"
+    id="checkbox::rl:"
   >
+    <div
+      aria-hidden="true"
+      class="bpk-checkbox__control"
+      data-part="control"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::rl::control"
+    >
+      <div
+        class="bpk-checkbox__indicator"
+        data-part="indicator"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        hidden=""
+      />
+    </div>
+    <span
+      class="bpk-checkbox__label bpk-checkbox__label bpk-checkbox__label--small"
+      data-part="label"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::rl::label"
+    >
+      Test
+    </span>
     <input
       aria-invalid="false"
-      aria-label="Prefer directs"
+      aria-labelledby="checkbox::rl::label"
       class="bpk-checkbox__input"
-      data-indeterminate="false"
-      name="checkbox"
+      id="checkbox::rl::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
       type="checkbox"
-      value="my-value"
+      value="on"
     />
-    <span
-      aria-hidden="true"
-      class="bpk-checkbox__label"
-    >
-      Prefer directs
-    </span>
   </label>
-</DocumentFragment>
+</div>
 `;
 
-exports[`BpkCheckbox should render correctly with white attribute 1`] = `
-<DocumentFragment>
+exports[`BpkCheckbox snapshots should render white checkbox correctly 1`] = `
+<div>
   <label
     class="bpk-checkbox bpk-checkbox--white"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::rj::input"
+    id="checkbox::rj:"
   >
+    <div
+      aria-hidden="true"
+      class="bpk-checkbox__control"
+      data-part="control"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::rj::control"
+    >
+      <div
+        class="bpk-checkbox__indicator"
+        data-part="indicator"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        hidden=""
+      />
+    </div>
+    <span
+      class="bpk-checkbox__label bpk-checkbox__label"
+      data-part="label"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::rj::label"
+    >
+      Test
+    </span>
     <input
       aria-invalid="false"
-      aria-label="Prefer directs"
-      class="bpk-checkbox__input bpk-checkbox__input-white"
-      data-indeterminate="false"
-      name="checkbox"
+      aria-labelledby="checkbox::rj::label"
+      class="bpk-checkbox__input"
+      id="checkbox::rj::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
       type="checkbox"
+      value="on"
     />
-    <span
-      aria-hidden="true"
-      class="bpk-checkbox__label"
-    >
-      Prefer directs
-    </span>
   </label>
-</DocumentFragment>
+</div>
+`;
+
+exports[`BpkCheckbox validation states should render snapshot for checked invalid state 1`] = `
+<div>
+  <label
+    class="bpk-checkbox bpk-checkbox--invalid"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="checked"
+    dir="ltr"
+    for="checkbox::rv::input"
+    id="checkbox::rv:"
+  >
+    <div
+      aria-hidden="true"
+      class="bpk-checkbox__control"
+      data-part="control"
+      data-scope="checkbox"
+      data-state="checked"
+      dir="ltr"
+      id="checkbox::rv::control"
+    >
+      <div
+        class="bpk-checkbox__indicator"
+        data-part="indicator"
+        data-scope="checkbox"
+        data-state="checked"
+        dir="ltr"
+      />
+    </div>
+    <span
+      class="bpk-checkbox__label bpk-checkbox__label"
+      data-part="label"
+      data-scope="checkbox"
+      data-state="checked"
+      dir="ltr"
+      id="checkbox::rv::label"
+    >
+      Test
+    </span>
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::rv::label"
+      checked=""
+      class="bpk-checkbox__input"
+      id="checkbox::rv::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
+  </label>
+</div>
+`;
+
+exports[`BpkCheckbox validation states should render snapshot for invalid state 1`] = `
+<div>
+  <label
+    class="bpk-checkbox bpk-checkbox--invalid"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::rt::input"
+    id="checkbox::rt:"
+  >
+    <div
+      aria-hidden="true"
+      class="bpk-checkbox__control"
+      data-part="control"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::rt::control"
+    >
+      <div
+        class="bpk-checkbox__indicator"
+        data-part="indicator"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        hidden=""
+      />
+    </div>
+    <span
+      class="bpk-checkbox__label bpk-checkbox__label"
+      data-part="label"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::rt::label"
+    >
+      Test
+    </span>
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::rt::label"
+      class="bpk-checkbox__input"
+      id="checkbox::rt::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
+  </label>
+</div>
 `;

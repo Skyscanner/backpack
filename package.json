@@ -185,5 +185,8 @@
   },
   "overrides": {
     "braces": "3.0.3"
+  },
+  "dependencies": {
+    "@ark-ui/react": "^5.30.0"
   }
 }
