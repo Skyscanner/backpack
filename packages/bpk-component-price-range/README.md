@@ -29,6 +29,18 @@ export default () => (
 );
 ```
 
+### `showPriceIndicator` prop
+
+The `showPriceIndicator` prop is confusingly named.
+It controls the visibility of the price labels for the low, medium, and high segments, as well as the display type
+of the marker label (if `marker` prop is provided).
+
+When `showPriceIndicator` is set to `true` (default), the price labels for the low, medium, and high segments are displayed below the price range bar.
+If a `marker` prop is provided, it is a label is shown above the price range bar.
+
+When `showPriceIndicator` is set to `false`, the price labels for the low, medium, and high segments are hidden.
+If a `marker` prop is provided, it is displayed as a dot on the price range bar without a label.
+
 ### Without marker
 
 The `marker` prop is optional. When omitted, only the three-tier price range bars (low/medium/high segments) are displayed:
