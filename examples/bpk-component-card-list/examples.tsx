@@ -149,6 +149,32 @@ const snippetProps = {
   onClick: () => window.open('https://www.skyscanner.net/flights', '_blank'),
 };
 
+const myCard = (
+  <BpkCard className={STYLES['bpk-card']} href="/" padded={false}>
+    <div className={STYLES['bpk-destination']}>
+      <BpkImage
+        aspectRatio={3000 / 1400}
+        altText="card image"
+        src={imageUrlsDestination[1]}
+      />
+
+      <div className={STYLES['bpk-destination__bottom']}>
+        <div className={STYLES['bpk-destination__name']}>
+          <BpkText textStyle={TEXT_STYLES.heading4}>
+            {`Destination ${1}`}
+          </BpkText>
+        </div>
+        <div className={STYLES['bpk-destination__row']}>
+          <BpkText textStyle={TEXT_STYLES.heading5}>Flight</BpkText>
+          <div className={STYLES['bpk-destination__column']}>
+            <BpkText textStyle={TEXT_STYLES.heading5}>£150</BpkText>
+          </div>
+        </div>
+      </div>
+    </div>
+  </BpkCard>
+);
+
 const DestinationCard = (i: number) => (
   <BpkCard
     key={`card-${i}`}
@@ -234,7 +260,7 @@ const RowToRailExample = () => (
   <PageContainer>
     <BpkCardList
       {...commonProps}
-      cardList={makeList(DestinationCard)}
+      cardList={[myCard, ...makeList(DestinationCard)]}
       layoutDesktop={LAYOUTS.row}
       layoutMobile={LAYOUTS.rail}
       accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}

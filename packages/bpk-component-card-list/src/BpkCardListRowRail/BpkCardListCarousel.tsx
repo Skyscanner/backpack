@@ -233,6 +233,8 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           cardDimensionStyle.height = `${firstCardHeightRef.current}px`;
         }
 
+        const isPageStart = index % initiallyShownCards === 0;
+
         const commonProps = {
           className: getClassName(`bpk-card-list-row-rail__${layout}__card`),
           style: {
@@ -241,6 +243,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           },
           key: `carousel-card-${index.toString()}`,
           role: "group",
+          'data-is-page-start': isPageStart.toString(),
         };
 
         // Only render cards that are within the renderList range or have been visible before

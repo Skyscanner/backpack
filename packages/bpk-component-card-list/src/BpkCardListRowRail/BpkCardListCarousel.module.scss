@@ -79,6 +79,16 @@
       scroll-margin-inline: var(--spacing-offset);
       scroll-snap-align: start;
 
+      @include breakpoints.bpk-breakpoint-above-mobile {
+        // On tablet and desktop, only snap to page-start cards for page-based scrolling
+        scroll-snap-align: none;
+
+        &[data-is-page-start='true'] {
+          scroll-snap-align: start;
+          scroll-snap-stop: always;
+        }
+      }
+
       @include breakpoints.bpk-breakpoint-mobile {
         // On mobile, if there is more than one card in the viewport, the last card only shows partially, so subtract 0.8 when do the calculation
         flex: 0 0
@@ -92,6 +102,11 @@
               ) /
               max(1, (var(--initially-shown-cards, 3) - 0.8))
           );
+      }
+
+      // Ensure child cards stretch to full wrapper height
+      > * {
+        height: 100%;
       }
     }
   }
