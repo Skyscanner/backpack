@@ -84,7 +84,7 @@
         // On tablet and desktop, only snap to page-start cards for page-based scrolling
         scroll-snap-align: none;
 
-        &[data-is-page-start='true'] {
+        &-is-page-start {
           scroll-snap-align: start;
           scroll-snap-stop: always;
         }

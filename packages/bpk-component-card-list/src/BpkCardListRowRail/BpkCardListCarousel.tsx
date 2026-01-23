@@ -101,11 +101,15 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const lastVisibleIndex = firstVisibleIndex + initiallyShownCards - 1;
 
   const dynamicRenderBufferSize = useMemo(() => {
-    if (childrenLength === 0 || initiallyShownCards === 0 || isMobile) return RENDER_BUFFER_SIZE;
+    if (childrenLength === 0 || initiallyShownCards === 0 || isMobile)
+      return RENDER_BUFFER_SIZE;
 
     // Calculate how many cards to render based on the number of initially shown cards and total children
     const totalPages = Math.ceil(childrenLength / initiallyShownCards);
-    const shownIndicatorCount = Math.min(totalPages, PAGINATION_INDICATOR_MAX_SHOWN_COUNT);
+    const shownIndicatorCount = Math.min(
+      totalPages,
+      PAGINATION_INDICATOR_MAX_SHOWN_COUNT,
+    );
     return Math.max(
       RENDER_BUFFER_SIZE,
       (shownIndicatorCount - 1) * initiallyShownCards,
@@ -115,14 +119,15 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const renderList = useMemo(
     () =>
       visibilityList.map((_, index) => {
-        const isIndexVisible = index >= firstVisibleIndex - dynamicRenderBufferSize && index <= lastVisibleIndex + dynamicRenderBufferSize;
+        const isIndexVisible =
+          index >= firstVisibleIndex - dynamicRenderBufferSize &&
+          index <= lastVisibleIndex + dynamicRenderBufferSize;
         if (isIndexVisible) {
           hasBeenVisibleRef.current.add(index);
         }
 
         return isIndexVisible ? 1 : 0;
-      }
-      ),
+      }),
     [
       visibilityList,
       firstVisibleIndex,
@@ -204,7 +209,13 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         setCurrentIndex(newIndex);
       }
     }
-  }, [visibilityList, initiallyShownCards, currentIndex, setCurrentIndex, isMobile]);
+  }, [
+    visibilityList,
+    initiallyShownCards,
+    currentIndex,
+    setCurrentIndex,
+    isMobile,
+  ]);
 
   useEffect(() => {
     const handleResize = throttle(() => {
@@ -242,25 +253,25 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         const isPageStart = index % initiallyShownCards === 0;
 
         const commonProps = {
-          className: getClassName(`bpk-card-list-row-rail__${layout}__card`),
+          className: `${getClassName(`bpk-card-list-row-rail__${layout}__card`)} ${isPageStart && getClassName(`bpk-card-list-row-rail__rail__card-is-page-start`)}`,
           style: {
             ...shownNumberStyle,
             ...cardDimensionStyle,
           },
           key: `carousel-card-${index.toString()}`,
-          role: "group",
-          'data-is-page-start': isPageStart.toString(),
+          role: 'group',
         };
 
         // Only render cards that are within the renderList range or have been visible before
-        const shouldRenderCard = renderList[index] === 1 || hasBeenVisibleRef.current.has(index);
+        const shouldRenderCard =
+          renderList[index] === 1 || hasBeenVisibleRef.current.has(index);
         if (!shouldRenderCard) {
           return (
             <div
               {...commonProps}
               style={{
                 ...commonProps.style,
-                contain: 'paint'
+                contain: 'paint',
               }}
               data-testid="bpk-card-list-carousel--placeholder"
               aria-hidden="true"
