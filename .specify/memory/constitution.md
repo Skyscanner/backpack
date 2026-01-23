@@ -453,7 +453,24 @@ Before starting work on non-trivial changes:
 
 ### Code Quality Gates
 
-Before any code can be merged:
+**Per-Phase Quality Assurance** (CRITICAL):
+
+All implementation MUST follow a phase-gated approach where each phase concludes with mandatory QA checks BEFORE proceeding to the next phase:
+
+1. **After each User Story implementation**:
+   - Run full test suite (`npm run test`)
+   - Run TypeScript compilation (`npm run typecheck`)
+   - Run linting (`npm run lint:js`, `npm run lint:scss`)
+   - Manual testing (keyboard navigation, screen reader)
+   - **STOP**: All checks MUST pass before next phase begins
+
+2. **QA Gate Philosophy**:
+   - Catch issues early when they're cheaper to fix
+   - Prevent cascading failures across phases
+   - Ensure each feature is production-ready before building on it
+   - Enable true incremental delivery and testing
+
+**Before any code can be merged** (Final Gate):
 
 1. **Design approval**: Changes match approved Figma designs
 2. **Linting**: ESLint and Stylelint MUST pass
@@ -500,11 +517,16 @@ Constitution amendments require:
 
 ### Version History
 
-- **Version**: 1.0.2
+- **Version**: 1.0.3
 - **Ratified**: 2025-12-22
-- **Last Amended**: 2026-01-19
+- **Last Amended**: 2026-01-23
 
 **Changelog**:
+- v1.0.3 (2026-01-23): Introduced per-phase quality assurance requirement
+  - Added "Per-Phase Quality Assurance" to Code Quality Gates section
+  - QA checks now MANDATORY after each phase (not just at the end)
+  - Updated tasks-template.md with QA checkpoints after each user story phase
+  - Philosophy: Catch issues early, prevent cascading failures, enable incremental delivery
 - v1.0.2 (2026-01-19): Template improvements and example corrections
   - Standardized component name placeholders to `Bpk[ComponentName]` format
   - Updated color token examples to use `$bpk-color-white` for better contrast demonstration
