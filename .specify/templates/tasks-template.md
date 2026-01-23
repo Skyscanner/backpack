@@ -11,6 +11,13 @@ FOCUS: STEPS (What to do, in what order)
 - Commands to run
 - Verification steps
 - Execution order
+- QA checkpoints after EACH phase
+
+CRITICAL: PER-PHASE QA ENFORCEMENT
+- Each phase (User Story) MUST end with a QA checkpoint
+- QA includes: tests, linting, type-checking, manual testing, accessibility
+- NO phase can begin until previous phase's QA checkpoint passes
+- This prevents cascading failures and enables true incremental delivery
 
 ✅ INCLUDE in tasks.md:
 - Granular tasks with exact file paths
@@ -19,7 +26,7 @@ FOCUS: STEPS (What to do, in what order)
 - Task dependencies and execution order
 - Parallel execution markers [P]
 - Constitution compliance checks per task
-- Checkpoints after each phase
+- **QA checkpoints after EACH phase** (NOT just at the end)
 
 ❌ EXCLUDE from tasks.md (belongs in spec.md):
 - Why tasks are needed (requirements rationale)
@@ -192,7 +199,20 @@ VALIDATION:
   - Verify coverage meets thresholds (70% branches, 75% functions/lines/statements)
   - **Constitution Check**: Coverage thresholds MUST be met
 
-**Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
+**QA Checkpoint for Phase 3 (User Story 1)**: ⚠️ MANDATORY before proceeding to next phase
+
+- [ ] T020-QA [US1] Run full quality assurance checks
+  - Run `npm run test` (includes lint, type-check, jest)
+  - Run `npm run typecheck` - ensure no TypeScript errors
+  - Run `npm run lint:js` - fix any linting errors
+  - Run `npm run lint:scss` - fix any style linting errors
+  - Verify all tests pass with required coverage
+  - Test component manually in browser
+  - Verify keyboard navigation works
+  - Test with screen reader (VoiceOver, NVDA, or JAWS)
+  - **STOP**: All checks MUST pass before moving to Phase 4
+
+**Checkpoint**: At this point, User Story 1 should be fully functional, tested, and QA-approved
 
 ---
 
@@ -217,7 +237,21 @@ VALIDATION:
 - [ ] T028 [US2] Test integration with User Story 1 (ensure backward compatibility)
 - [ ] T029 [US2] Run tests and verify they pass
 
-**Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
+**QA Checkpoint for Phase 4 (User Story 2)**: ⚠️ MANDATORY before proceeding to next phase
+
+- [ ] T030-QA [US2] Run full quality assurance checks
+  - Run `npm run test` (includes lint, type-check, jest)
+  - Run `npm run typecheck` - ensure no TypeScript errors
+  - Run `npm run lint:js` - fix any linting errors
+  - Run `npm run lint:scss` - fix any style linting errors
+  - Verify all tests pass with required coverage
+  - Test component manually in browser
+  - Verify keyboard navigation works
+  - Test with screen reader
+  - Test integration with User Story 1 (ensure backward compatibility)
+  - **STOP**: All checks MUST pass before moving to Phase 5
+
+**Checkpoint**: At this point, User Stories 1 AND 2 should both work independently and together
 
 ---
 
@@ -240,7 +274,21 @@ VALIDATION:
 - [ ] T035 [US3] Update types and documentation
 - [ ] T036 [US3] Run tests and verify they pass
 
-**Checkpoint**: All user stories should now be independently functional
+**QA Checkpoint for Phase 5 (User Story 3)**: ⚠️ MANDATORY before proceeding to documentation phase
+
+- [ ] T037-QA [US3] Run full quality assurance checks
+  - Run `npm run test` (includes lint, type-check, jest)
+  - Run `npm run typecheck` - ensure no TypeScript errors
+  - Run `npm run lint:js` - fix any linting errors
+  - Run `npm run lint:scss` - fix any style linting errors
+  - Verify all tests pass with required coverage
+  - Test component manually in browser
+  - Verify keyboard navigation works
+  - Test with screen reader
+  - Test integration with previous user stories
+  - **STOP**: All checks MUST pass before moving to Documentation phase
+
+**Checkpoint**: All user stories should now be independently functional and QA-approved
 
 ---
 
@@ -250,7 +298,9 @@ VALIDATION:
 
 ## Phase N: Documentation & Polish
 
-**Purpose**: Complete documentation and polish for release
+**Purpose**: Complete documentation and final polish for release
+
+**Note**: Since QA has been performed after each phase, this phase focuses on documentation and final checks.
 
 - [ ] TXXX [P] Complete `packages/bpk-component-[name]/README.md`
   - Component description (<100 words, British English prose)
@@ -290,46 +340,17 @@ VALIDATION:
   - Review and approve Percy changes
   - **Constitution Check**: Skip if component uses images (per decisions/visual-tests.md)
 
-- [ ] TXXX Run full test suite and verify all pass
-  - `npm run test` (includes lint, type-check, jest)
-  - Verify coverage thresholds met
-  - Fix any failing tests
+**QA Checkpoint for Documentation Phase**: ⚠️ MANDATORY before release
 
-- [ ] TXXX Verify TypeScript compilation
-  - Run `npm run typecheck`
-  - Ensure no TypeScript errors
-  - Generate `.d.ts` declaration files
-
-- [ ] TXXX Verify ESLint and Stylelint pass
-  - Run `npm run lint:js`
-  - Run `npm run lint:scss`
-  - Fix any linting errors
-
-- [ ] TXXX Build component and verify output
-  - Run `npm run build`
-  - Check `dist/` output
-  - Verify styles compiled correctly
-
-- [ ] TXXX Test component in all supported browsers
-  - Chrome >= 109
-  - Edge >= 129
-  - Firefox >= 131
-  - Safari >= 15
-  - Samsung >= 26
-  - **Constitution Check**: Browser support REQUIRED
-
-- [ ] TXXX Perform manual accessibility testing
-  - Test with keyboard navigation
-  - Test with screen reader (VoiceOver, NVDA, JAWS)
-  - Test focus management
-  - Verify WCAG 2.1 Level AA compliance
-  - **Constitution Check**: Accessibility-First NON-NEGOTIABLE
-
-- [ ] TXXX Test RTL language support
-  - Switch language to Arabic or Hebrew
-  - Verify layout mirrors correctly
-  - Test directional properties
-  - **Constitution Check**: RTL support REQUIRED
+- [ ] TXXX-QA Final quality assurance and cross-browser testing
+  - Run full test suite: `npm run test`
+  - Run TypeScript compilation: `npm run typecheck`
+  - Build component: `npm run build` - verify output
+  - Test in all supported browsers (Chrome 109+, Edge 129+, Firefox 131+, Safari 15+, Samsung 26+)
+  - Perform manual accessibility testing (keyboard, screen reader, WCAG 2.1 AA)
+  - Test RTL language support (Arabic/Hebrew)
+  - Verify all documentation is complete
+  - **Constitution Check**: All checks MUST pass
 
 - [ ] TXXX Update package.json with correct version per SemVer
   - MAJOR: Breaking changes (API, visual, tokens, removal)
