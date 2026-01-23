@@ -21,17 +21,25 @@ import { render } from '@testing-library/react';
 import BpkVisuallyHidden from './BpkVisuallyHidden';
 
 describe('BpkVisuallyHidden', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(<BpkVisuallyHidden>Content</BpkVisuallyHidden>);
-    expect(asFragment()).toMatchSnapshot();
+  it('should render as a span by default', () => {
+    const { container } = render(<BpkVisuallyHidden>Content</BpkVisuallyHidden>);
+    const element = container.firstChild as HTMLElement;
+
+    expect(element.tagName.toLowerCase()).toBe('span');
+    expect(element.textContent).toBe('Content');
+    expect(element).toHaveClass('bpk-visually-hidden');
   });
 
-  (['div', 'span', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const).forEach((as) => {
-    it(`should render correctly with as="${as}"`, () => {
-      const { asFragment } = render(
+  (['div', 'span', 'p', 'strong', 'em', 'small', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const).forEach((as) => {
+    it(`should render as a ${as} element when as="${as}"`, () => {
+      const { container } = render(
         <BpkVisuallyHidden as={as}>Content</BpkVisuallyHidden>,
       );
-      expect(asFragment()).toMatchSnapshot();
+      const element = container.firstChild as HTMLElement;
+
+      expect(element.tagName.toLowerCase()).toBe(as);
+      expect(element.textContent).toBe('Content');
+      expect(element).toHaveClass('bpk-visually-hidden');
     });
   });
 });
