@@ -111,4 +111,27 @@ describe('BpkCardListCarousel', () => {
       expect(placeholders.every((el => el.style.contain === 'paint'))).toBe(true);
     });
   });
+
+  describe('page-based scrolling on desktop', () => {
+    it('should mark cards at page boundaries with the correct class', () => {
+      render(<BpkCardListCarousel {...defaultProps} isMobile={false} />);
+      const cards = screen.getAllByRole('group');
+
+      // With initiallyShownCards=3, cards at index 0, 3 should be page starts
+      expect(cards[0].className).toContain('card-is-page-start');
+      expect(cards[1].className).not.toContain('card-is-page-start');
+      expect(cards[2].className).not.toContain('card-is-page-start');
+      expect(cards[3].className).toContain('card-is-page-start');
+    });
+
+    it('should not apply page-start class on mobile', () => {
+      render(<BpkCardListCarousel {...defaultProps} isMobile />);
+      const cards = screen.getAllByRole('group');
+
+      // On mobile, no cards should have the page-start class
+      cards.forEach((card) => {
+        expect(card.className).not.toContain('card-is-page-start');
+      });
+    });
+  });
 });
