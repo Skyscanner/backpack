@@ -26,6 +26,8 @@ import {
   LargeHighPriceRangeExample,
   LargeMediumPriceRangeExample,
   VeryLargeHighPriceRangeExample,
+  NoMarkerWithLabelsExample,
+  NoMarkerWithoutLabelsExample,
   MixedExample,
 } from './examples';
 
@@ -41,6 +43,8 @@ export const LargeLowPriceRange = LargeLowPriceRangeExample;
 export const LargeMediumPriceRange = LargeMediumPriceRangeExample;
 export const LargeHighPriceRange = LargeHighPriceRangeExample;
 export const VeryLargeHighPriceRange = VeryLargeHighPriceRangeExample;
+export const NoMarkerWithLabels = NoMarkerWithLabelsExample;
+export const NoMarkerWithoutLabels = NoMarkerWithoutLabelsExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
