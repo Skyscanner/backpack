@@ -87,8 +87,10 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     setVisibilityList,
   );
 
+  // Desktop: scroll to page-start card (multiply by initiallyShownCards for page-based scrolling)
+  // Mobile: scroll to individual card (use currentIndex directly)
   useScrollToCard(
-    currentIndex * initiallyShownCards,
+    isMobile ? currentIndex : currentIndex * initiallyShownCards,
     root,
     cardRefs,
     stateScrollingLockRef,
@@ -174,7 +176,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         clearTimeout(openSetStateLockTimeoutRef.current);
       }
     };
-  }, [root]);
+  }, [root, isMobile]);
 
   useEffect(() => {
     // update hasBeenVisibleRef to include the range of cards that should be visible
@@ -191,6 +193,10 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   ]);
 
   useEffect(() => {
+    // Mobile: keep original behavior (currentIndex = cardIndex)
+    // Desktop: calculate page index from card index
+    if (isMobile) return;
+
     const firstVisible = visibilityList.indexOf(1);
     if (firstVisible >= 0) {
       const newIndex = Math.floor(firstVisible / initiallyShownCards);
@@ -198,7 +204,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         setCurrentIndex(newIndex);
       }
     }
-  }, [initiallyShownCards]);
+  }, [visibilityList, initiallyShownCards, currentIndex, setCurrentIndex, isMobile]);
 
   useEffect(() => {
     const handleResize = throttle(() => {
@@ -233,6 +239,8 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           cardDimensionStyle.height = `${firstCardHeightRef.current}px`;
         }
 
+        const isPageStart = index % initiallyShownCards === 0;
+
         const commonProps = {
           className: getClassName(`bpk-card-list-row-rail__${layout}__card`),
           style: {
@@ -241,6 +249,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           },
           key: `carousel-card-${index.toString()}`,
           role: "group",
+          'data-is-page-start': isPageStart.toString(),
         };
 
         // Only render cards that are within the renderList range or have been visible before

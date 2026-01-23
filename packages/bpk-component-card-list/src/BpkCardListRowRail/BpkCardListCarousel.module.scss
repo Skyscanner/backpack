@@ -29,13 +29,14 @@
       )};
 
     display: flex;
-    overflow-x: hidden;
+    overflow-x: scroll;
     box-sizing: border-box;
     gap: var(--carousel-card-gap);
 
     // Negative margin to ensure box-shadow of content is not cut off
     margin-block: -(tokens.bpk-spacing-lg());
     margin-inline: -(tokens.bpk-spacing-md());
+    -webkit-overflow-scrolling: touch;
     padding-block: tokens.bpk-spacing-lg();
     padding-inline: tokens.bpk-spacing-md();
     scroll-snap-stop: always;
@@ -78,6 +79,16 @@
       box-sizing: border-box;
       scroll-margin-inline: var(--spacing-offset);
       scroll-snap-align: start;
+
+      @include breakpoints.bpk-breakpoint-above-mobile {
+        // On tablet and desktop, only snap to page-start cards for page-based scrolling
+        scroll-snap-align: none;
+
+        &[data-is-page-start='true'] {
+          scroll-snap-align: start;
+          scroll-snap-stop: always;
+        }
+      }
 
       @include breakpoints.bpk-breakpoint-mobile {
         // On mobile, if there is more than one card in the viewport, the last card only shows partially, so subtract 0.8 when do the calculation
