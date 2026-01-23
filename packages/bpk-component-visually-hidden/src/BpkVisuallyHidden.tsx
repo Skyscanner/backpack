@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ElementType, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -24,8 +24,22 @@ import STYLES from './BpkVisuallyHidden.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+export type VisuallyHiddenElement =
+  | 'span'
+  | 'div'
+  | 'p'
+  | 'strong'
+  | 'em'
+  | 'small'
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6';
+
 export type Props = {
-  as?: ElementType;
+  as?: VisuallyHiddenElement;
   children: ReactNode;
 };
 
