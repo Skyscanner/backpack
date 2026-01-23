@@ -16,23 +16,8 @@
  * limitations under the License.
  */
 
-import type { ComponentType } from 'react';
+@use '../../bpk-mixins/utils';
 
-import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
-import { wrapDisplayName } from '../../bpk-react-utils';
-
-export default function withDescription(
-  Component: ComponentType<any> | string,
-  description: string,
-): ComponentType<any> {
-  const WithDescription = (props: string[]) => (
-    <span>
-      <Component {...props} />
-      <BpkVisuallyHidden>{description}</BpkVisuallyHidden>
-    </span>
-  );
-
-  WithDescription.displayName = wrapDisplayName(Component, 'withDescription');
-
-  return WithDescription;
+.bpk-visually-hidden {
+  @include utils.bpk-visually-hidden;
 }
