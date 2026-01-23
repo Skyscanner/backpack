@@ -31,7 +31,7 @@ export type VisuallyHiddenElement =
   | 'strong'
   | 'em'
   | 'small'
-  | 'legend',
+  | 'legend'
   | 'h1'
   | 'h2'
   | 'h3'
