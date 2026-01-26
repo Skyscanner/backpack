@@ -1,0 +1,7 @@
+{
+  "enabledMcpjsonServers": [
+    "mcp-atlassian",
+    "chrome-devtools",
+    "new-relic-mcp-server"
+  ]
+}
