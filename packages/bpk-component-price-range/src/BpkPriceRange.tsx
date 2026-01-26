@@ -38,7 +38,7 @@ type PriceRangePosition = {
 };
 
 type MarkerPriceRangePosition = PriceRangePosition & {
-  type: MarkerDisplayType;
+  type?: MarkerDisplayType;
 };
 
 export type BpkPriceRangeProps = {
@@ -133,8 +133,11 @@ const BpkPriceRange = ({
   );
   const mediumClassName = getClassName('bpk-price-range__line--medium');
 
-  const shouldShowBubble = marker?.type === MARKER_DISPLAY_TYPES.BUBBLE;
-  const shouldShowDot = marker?.type === MARKER_DISPLAY_TYPES.DOT;
+  const shouldShowMarker = !!marker;
+  const defaultMarkerType = MARKER_DISPLAY_TYPES.BUBBLE;
+  const markerType = marker?.type || defaultMarkerType;
+  const shouldShowBubble = shouldShowMarker && markerType === MARKER_DISPLAY_TYPES.BUBBLE;
+  const shouldShowDot = shouldShowMarker && markerType === MARKER_DISPLAY_TYPES.DOT;
   const dotClassName = getClassName(
     `bpk-price-range__line--${type}`,
     'bpk-price-range__line--dot',
