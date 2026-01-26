@@ -73,7 +73,8 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
   const hasBeenVisibleRef = useRef<Set<number>>(new Set());
   const firstCardWidthRef = useRef<number | null>(null);
-  const firstCardHeightRef = useRef<number | null>(null);
+  const maxCardHeightRef = useRef<number | null>(null);
+  const resizeObserverRef = useRef<ResizeObserver | null>(null);
 
   const [visibilityList, setVisibilityList] = useState<number[]>(
     Array(childrenLength).fill(0),
@@ -134,16 +135,33 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       Array(childrenLength)
         .fill(null)
         .map((_, i) => (el: HTMLDivElement | null) => {
+          const prevEl = cardRefs.current[i];
           cardRefs.current[i] = el;
           observerVisibility(el, i);
           setA11yTabIndex(el, i, visibilityList);
-          // record the first card's width and height when it becomes visible
+
+          // Observe card content for size changes
+          if (resizeObserverRef.current) {
+            if (prevEl) {
+              resizeObserverRef.current.unobserve(prevEl);
+            }
+            if (el) {
+              resizeObserverRef.current.observe(el);
+            }
+          }
+
+          // Record the first card's width when it becomes visible
           if (el && visibilityList[i] === 0) {
             if (firstCardWidthRef.current == null && el.offsetWidth) {
               firstCardWidthRef.current = el.offsetWidth;
             }
-            if (firstCardHeightRef.current == null && el.offsetHeight) {
-              firstCardHeightRef.current = el.offsetHeight;
+          }
+
+          // Update max height across all cards
+          if (el) {
+            const child = el.firstElementChild as HTMLElement;
+            if (child && child.scrollHeight > (maxCardHeightRef.current || 0)) {
+              maxCardHeightRef.current = child.scrollHeight;
             }
           }
         }),
@@ -152,7 +170,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       observerVisibility,
       visibilityList,
       firstCardWidthRef,
-      firstCardHeightRef,
+      maxCardHeightRef,
     ],
   );
 
@@ -203,12 +221,38 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   useEffect(() => {
     const handleResize = throttle(() => {
       firstCardWidthRef.current = null;
-      firstCardHeightRef.current = null;
+      maxCardHeightRef.current = null;
       forceUpdate((n) => n + 1);
     }, 200);
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // ResizeObserver to detect when card content changes size
+  useEffect(() => {
+    const recalculateMaxHeight = throttle(() => {
+      let maxHeight = 0;
+      cardRefs.current.forEach((ref) => {
+        if (ref) {
+          // Get the natural height by temporarily removing height constraint
+          const child = ref.firstElementChild as HTMLElement;
+          if (child) {
+            maxHeight = Math.max(maxHeight, child.scrollHeight);
+          }
+        }
+      });
+      if (maxHeight > 0 && maxHeight !== maxCardHeightRef.current) {
+        maxCardHeightRef.current = maxHeight;
+        forceUpdate((n) => n + 1);
+      }
+    }, 100);
+
+    resizeObserverRef.current = new ResizeObserver(recalculateMaxHeight);
+
+    return () => {
+      resizeObserverRef.current?.disconnect();
+    };
   }, []);
 
   return (
@@ -229,8 +273,8 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         if (firstCardWidthRef.current) {
           cardDimensionStyle.width = `${firstCardWidthRef.current}px`;
         }
-        if (firstCardHeightRef.current) {
-          cardDimensionStyle.height = `${firstCardHeightRef.current}px`;
+        if (maxCardHeightRef.current) {
+          cardDimensionStyle.height = `${maxCardHeightRef.current}px`;
         }
 
         const commonProps = {
