@@ -16,7 +16,7 @@ Backpack设计系统目前是一个包含96个package的大型monorepo，使用�
 - **CI时间过长**: 每次PR都运行全量测试和构建，浪费大量CI资源
 - **缺乏缓存机制**: 重复构建相同代码无法利用缓存，开发体验欠佳
 - **依赖关系不清晰**: 缺乏明确的package依赖图，影响变更分析
-- **难以集成其他monorepo**: 需要与banana、future等Skyscanner内部monorepo集成，当前架构不支持
+- **难以集成其他monorepo**: 需要与banana等Skyscanner内部monorepo集成，当前架构不支持
 
 Skyscanner内部已有多个成功的Nx迁移案例（banana、falcon），证明Nx能够有效解决这些问题。
 
@@ -27,7 +27,7 @@ Skyscanner内部已有多个成功的Nx迁移案例（banana、falcon），证�
 2. **构建性能提升**: 实现增量构建和智能缓存，显著提升构建速度
 3. **CI效率优化**: 利用affected commands只测试变更相关的packages，减少CI时间>20%
 4. **改善开发体验**: 保持HMR、Storybook等开发工具的良好体验
-5. **为集成做准备**: 为未来与banana、future等monorepo集成打下基础
+5. **为集成做准备**: 为未来与banana monorepo集成打下基础
 
 ### 关键需求
 - **构建系统**: 保持Webpack 5 + Babel 7 + Gulp 5编译流程
@@ -127,7 +127,7 @@ Skyscanner内部已有多个成功的Nx迁移案例（banana、falcon），证�
    - **缓解**: Milestone 4保留回滚方案，渐进式启用
 
 8. **与其他团队协调** (低风险)
-   - 需要与banana/future团队对齐集成方案
+   - 需要与banana团队对齐集成方案
    - **缓解**: 当前迁移独立进行，集成作为后续项目
 
 详见各milestone文档的"Rollback Plan"部分了解每个阶段的风险缓解策略。
@@ -166,7 +166,7 @@ specs/001-nx-migration/
 - 将Backpack的96个package从custom npm scripts迁移到Nx
 - 保持所有现有功能，零breaking changes
 - 实现构建缓存，提升开发和CI效率
-- 为future和banana monorepo集成做准备
+- 为banana monorepo集成做准备
 
 **时间估计**: 8-10周总计
 - Milestone 1: 2-3周 （PoC/MVP）
