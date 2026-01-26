@@ -74,7 +74,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const hasBeenVisibleRef = useRef<Set<number>>(new Set());
   const firstCardWidthRef = useRef<number | null>(null);
   const maxCardHeightRef = useRef<number | null>(null);
-  const resizeObserverRef = useRef<ResizeObserver | null>(null);
 
   const [visibilityList, setVisibilityList] = useState<number[]>(
     Array(childrenLength).fill(0),
@@ -135,20 +134,9 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       Array(childrenLength)
         .fill(null)
         .map((_, i) => (el: HTMLDivElement | null) => {
-          const prevEl = cardRefs.current[i];
           cardRefs.current[i] = el;
           observerVisibility(el, i);
           setA11yTabIndex(el, i, visibilityList);
-
-          // Observe card content for size changes
-          if (resizeObserverRef.current) {
-            if (prevEl) {
-              resizeObserverRef.current.unobserve(prevEl);
-            }
-            if (el) {
-              resizeObserverRef.current.observe(el);
-            }
-          }
 
           // Record the first card's width when it becomes visible
           if (el && visibilityList[i] === 0) {
@@ -229,31 +217,23 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // ResizeObserver to detect when card content changes size
+  // Recalculate max height when children change
   useEffect(() => {
-    const recalculateMaxHeight = throttle(() => {
-      let maxHeight = 0;
-      cardRefs.current.forEach((ref) => {
-        if (ref) {
-          // Get the natural height by temporarily removing height constraint
-          const child = ref.firstElementChild as HTMLElement;
-          if (child) {
-            maxHeight = Math.max(maxHeight, child.scrollHeight);
-          }
+    maxCardHeightRef.current = null;
+    let maxHeight = 0;
+    cardRefs.current.forEach((ref) => {
+      if (ref) {
+        const child = ref.firstElementChild as HTMLElement;
+        if (child) {
+          maxHeight = Math.max(maxHeight, child.scrollHeight);
         }
-      });
-      if (maxHeight > 0 && maxHeight !== maxCardHeightRef.current) {
-        maxCardHeightRef.current = maxHeight;
-        forceUpdate((n) => n + 1);
       }
-    }, 100);
-
-    resizeObserverRef.current = new ResizeObserver(recalculateMaxHeight);
-
-    return () => {
-      resizeObserverRef.current?.disconnect();
-    };
-  }, []);
+    });
+    if (maxHeight > 0) {
+      maxCardHeightRef.current = maxHeight;
+      forceUpdate((n) => n + 1);
+    }
+  }, [children]);
 
   return (
     <div
