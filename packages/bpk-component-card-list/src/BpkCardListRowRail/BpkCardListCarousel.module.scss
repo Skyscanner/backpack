@@ -83,11 +83,6 @@
       @include breakpoints.bpk-breakpoint-above-mobile {
         // On tablet and desktop, only snap to page-start cards for page-based scrolling
         scroll-snap-align: none;
-
-        &-is-page-start {
-          scroll-snap-align: start;
-          scroll-snap-stop: always;
-        }
       }
 
       @include breakpoints.bpk-breakpoint-mobile {
@@ -104,6 +99,13 @@
               max(1, (var(--initially-shown-cards, 3) - 0.8))
           );
       }
+    }
+  }
+
+  &__card--page-start {
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
     }
   }
 

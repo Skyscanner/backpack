@@ -17,5 +17,5 @@
  */
 
 
-export const RELEASE_LOCK_DELAY = 20;
+export const RELEASE_LOCK_DELAY = 400;
 export const RENDER_BUFFER_SIZE = 3;

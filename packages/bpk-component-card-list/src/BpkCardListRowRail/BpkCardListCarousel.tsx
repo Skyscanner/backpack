@@ -81,6 +81,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
   const stateScrollingLockRef = useRef(false);
   const openSetStateLockTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [lockVersion, setLockVersion] = useState(0);
 
   const observerVisibility = useIntersectionObserver(
     { root, threshold: 0.5 },
@@ -94,6 +95,8 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     root,
     cardRefs,
     stateScrollingLockRef,
+    openSetStateLockTimeoutRef,
+    () => setLockVersion((v) => v + 1), // Trigger page detection when lock releases
   );
 
   // Similar to Virtual Scrolling to improve performance
@@ -168,15 +171,36 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     if (isMobile || !container) return undefined;
 
     const lockScrollDuringInteraction = () => {
-      lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef);
+      lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef, () =>
+        setLockVersion((v) => v + 1),
+      );
+    };
+
+    // Detect when scrolling ends to update pagination dots immediately
+    let scrollEndTimeout: ReturnType<typeof setTimeout>;
+    const handleScroll = () => {
+      clearTimeout(scrollEndTimeout);
+      scrollEndTimeout = setTimeout(() => {
+        if (stateScrollingLockRef.current) {
+          stateScrollingLockRef.current = false;
+          setLockVersion((v) => v + 1);
+          if (openSetStateLockTimeoutRef.current) {
+            clearTimeout(openSetStateLockTimeoutRef.current);
+            openSetStateLockTimeoutRef.current = null;
+          }
+        }
+      }, 50); // Update 50ms after scrolling stops
     };
 
     container.addEventListener('wheel', lockScrollDuringInteraction);
     container.addEventListener('touchmove', lockScrollDuringInteraction);
+    container.addEventListener('scroll', handleScroll);
 
     return () => {
       container.removeEventListener('touchmove', lockScrollDuringInteraction);
       container.removeEventListener('wheel', lockScrollDuringInteraction);
+      container.removeEventListener('scroll', handleScroll);
+      clearTimeout(scrollEndTimeout);
       if (openSetStateLockTimeoutRef.current) {
         clearTimeout(openSetStateLockTimeoutRef.current);
       }
@@ -202,6 +226,9 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     // Desktop: calculate page index from card index
     if (isMobile) return;
 
+    // During programmatic scrolling (button clicks), don't fight with the intended page
+    if (stateScrollingLockRef.current) return;
+
     const firstVisible = visibilityList.indexOf(1);
     if (firstVisible >= 0) {
       const newIndex = Math.floor(firstVisible / initiallyShownCards);
@@ -215,6 +242,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     currentIndex,
     setCurrentIndex,
     isMobile,
+    lockVersion,
   ]);
 
   useEffect(() => {
@@ -253,7 +281,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         const isPageStart = index % initiallyShownCards === 0;
 
         const commonProps = {
-          className: `${getClassName(`bpk-card-list-row-rail__${layout}__card`)} ${isPageStart && getClassName(`bpk-card-list-row-rail__rail__card-is-page-start`)}`,
+          className: `${getClassName(`bpk-card-list-row-rail__${layout}__card`)}${isPageStart ? ` ${getClassName('bpk-card-list-row-rail__card--page-start')}` : ''}`,
           style: {
             ...shownNumberStyle,
             ...cardDimensionStyle,
