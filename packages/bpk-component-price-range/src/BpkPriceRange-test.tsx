@@ -122,6 +122,34 @@ describe('BpkPriceRange', () => {
   });
 
   describe('bubble marker (use case 2 - boundaries shown)', () => {
+    it('should render bubble marker by default when type is not provided', () => {
+      const { container } = render(
+        <BpkPriceRange
+          marker={{
+            price: '£150',
+            percentage: 50,
+          }}
+          segments={segments}
+        />,
+      );
+
+      // Should render bubble marker
+      expect(
+        container.querySelector('.bpk-price-range__marker'),
+      ).toHaveTextContent('£150');
+      expect(container.querySelector('.bpk-price-marker')).toHaveClass(
+        'bpk-price-marker--medium',
+      );
+      // Should show boundaries (default bubble behaviour)
+      expect(
+        container.querySelector('.bpk-price-range__ranges'),
+      ).toHaveTextContent('£100£200');
+      // Should NOT render dot
+      expect(
+        container.querySelector('.bpk-price-range__line--dot'),
+      ).not.toBeInTheDocument();
+    });
+
     it('should render low bubble marker with boundaries correctly', () => {
       const { container } = render(
         <BpkPriceRange

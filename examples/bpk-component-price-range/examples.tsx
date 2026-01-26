@@ -82,6 +82,18 @@ const DotMarkerHighExample = () => (
 );
 
 // Use case 2: Bubble marker (boundaries shown)
+const BubbleMarkerDefaultTypeExample = () => (
+  <Wrapper isLarge>
+    <BpkPriceRange
+      marker={{
+        price: '£150',
+        percentage: 50,
+      }}
+      segments={segments}
+    />
+  </Wrapper>
+);
+
 const BubbleMarkerLowExample = () => (
   <Wrapper isLarge>
     <BpkPriceRange
@@ -149,6 +161,7 @@ const MixedExample = () => (
     <DotMarkerHighExample />
 
     <h4>Use case 2: Bubble marker (boundaries shown)</h4>
+    <BubbleMarkerDefaultTypeExample />
     <BubbleMarkerLowExample />
     <BubbleMarkerMediumExample />
     <BubbleMarkerHighExample />
@@ -165,6 +178,7 @@ export {
   DotMarkerMediumExample,
   DotMarkerHighExample,
   // Use case 2: Bubble marker (boundaries shown)
+  BubbleMarkerDefaultTypeExample,
   BubbleMarkerLowExample,
   BubbleMarkerMediumExample,
   BubbleMarkerHighExample,

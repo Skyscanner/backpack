@@ -76,6 +76,22 @@ describe('BpkPriceRange accessibility tests', () => {
     });
   });
 
+  describe('default marker type (bubble when type omitted)', () => {
+    it('should not have programmatically-detectable accessibility issues', async () => {
+      const { container } = render(
+        <BpkPriceRange
+          marker={{
+            price: '£150',
+            percentage: 50,
+          }}
+          segments={segments}
+        />,
+      );
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+  });
+
   describe('no marker (use case 3 - boundaries shown)', () => {
     it('should not have programmatically-detectable accessibility issues', async () => {
       const { container } = render(<BpkPriceRange segments={segments} />);

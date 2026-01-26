@@ -40,7 +40,7 @@ The visibility of boundary prices (low and high segment prices) is automatically
 
 ### Marker type
 
-The `marker` prop is optional. When provided, it must include a `type` field that determines how the marker is displayed. Use the exported `MARKER_DISPLAY_TYPES` constant:
+The `marker` prop is optional. When provided, the `type` field determines how the marker is displayed. If `type` is omitted, it defaults to `MARKER_DISPLAY_TYPES.BUBBLE`. Use the exported `MARKER_DISPLAY_TYPES` constant:
 
 - `MARKER_DISPLAY_TYPES.BUBBLE`: Displays the marker as a price bubble above the bar
 - `MARKER_DISPLAY_TYPES.DOT`: Displays the marker as a coloured dot on the bar (no price label shown)
@@ -87,8 +87,15 @@ export default () => (
 ### Use case 2: Bubble marker (boundaries shown)
 
 ```tsx
+// With explicit type
 <BpkPriceRange
   marker={{ price: '£150', percentage: 50, type: MARKER_DISPLAY_TYPES.BUBBLE }}
+  segments={{ low: { price: '£100', percentage: 20 }, high: { price: '£200', percentage: 80 } }}
+/>
+
+// With default type (type can be omitted)
+<BpkPriceRange
+  marker={{ price: '£150', percentage: 50 }}
   segments={{ low: { price: '£100', percentage: 20 }, high: { price: '£200', percentage: 80 } }}
 />
 ```
@@ -119,7 +126,7 @@ type PriceRangePosition = {
 };
 
 type MarkerPriceRangePosition = PriceRangePosition & {
-  type: MarkerDisplayType;
+  type?: MarkerDisplayType; // Defaults to BUBBLE
 };
 ```
 
