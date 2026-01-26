@@ -13,40 +13,13 @@ defaults:
     shell: bash -l {0}
 
 env:
-  CACHE_NAME: node-modules-cache
   BUILD_CACHE_NAME: build-cache
 
 permissions: {}
 
 jobs:
-  Create-NPM-Cache:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
-        with:
-          persist-credentials: false
-
-      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
-        with:
-          node-version-file: ".nvmrc"
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Upload to Cache
-        uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
-        id: npm-cache
-        with:
-          path: |
-            node_modules/
-            packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
-
-      - name: Install dependencies
-        if: ${{ steps.npm-cache.outputs.cache-hit != 'true' }}
-        run: npm ci
-
   Create-Build-Cache:
     runs-on: ubuntu-latest
-    needs: [Create-NPM-Cache]
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
@@ -56,15 +29,13 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
 
-      - name: Restore NPM Cache
-        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
-        id: npm-cache
-        with:
-          path: |
-            node_modules/
-            packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+      - name: Set SHAs for Nx affected commands
+        uses: nrwl/nx-set-shas@v4
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Upload dist-storybook to Cache
         uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
@@ -84,14 +55,14 @@ jobs:
     permissions:
       statuses: write
       pull-requests: write
-    needs: [Create-NPM-Cache, Create-Build-Cache]
+    needs: [Create-Build-Cache]
     uses: ./.github/workflows/_build.yml
     secrets:
       GH_APP_PRIVATE_KEY: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
   StorybookDeploy:
     runs-on: ubuntu-latest
-    needs: [Create-NPM-Cache, Create-Build-Cache]
+    needs: [Create-Build-Cache]
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
@@ -101,15 +72,10 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
 
-      - name: Restore npm Cache
-        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
-        id: npm-cache
-        with:
-          path: |
-            node_modules/
-            packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+      - name: Install dependencies
+        run: npm ci
 
       - name: Restore Cache
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
@@ -130,7 +96,7 @@ jobs:
 
   SassDocDeploy:
     runs-on: ubuntu-latest
-    needs: [Create-NPM-Cache, Create-Build-Cache]
+    needs: [Create-Build-Cache]
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
@@ -140,15 +106,10 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
 
-      - name: Restore npm Cache
-        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
-        id: npm-cache
-        with:
-          path: |
-            node_modules/
-            packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+      - name: Install dependencies
+        run: npm ci
 
       - name: Build Sass docs
         if: github.ref == 'refs/heads/main'

@@ -17,7 +17,14 @@ yarn.lock
 /packages/*/changelog.md
 .storybook/__image_snapshots__/__diff_output__
 
-# Ignore css assets as these should be built on demand from sass
+# Ignore css assets as these should be built from sass
 *.css
 !packages/bpk-stylesheets/base.css
 /packages/bpk-stylesheets/normalize.scss
+
+# Nx
+.nx/cache
+.nx/workspace-data
+
+# TypeScript build info
+*.tsbuildinfo

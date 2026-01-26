@@ -11,7 +11,6 @@ defaults:
     shell: bash -l {0}
 
 env:
-  CACHE_NAME: node-modules-cache
   BUILD_CACHE_NAME: build-cache
   BUILD_LOGS: log-artifacts-build
 
@@ -31,15 +30,10 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
 
-      - name: Restore Cache
-        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
-        id: npm-cache
-        with:
-          path: |
-            node_modules/
-            packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+      - name: Install dependencies
+        run: npm ci
 
       - name: Setup logs directory
         run: mkdir logs
@@ -82,15 +76,10 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
 
-      - name: Restore Cache
-        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
-        id: npm-cache
-        with:
-          path: |
-            node_modules/
-            packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+      - name: Install dependencies
+        run: npm ci
 
       - name: Download artifacts
         uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
@@ -131,15 +120,10 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
 
-      - name: Restore Cache
-        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
-        id: npm-cache
-        with:
-          path: |
-            node_modules/
-            packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+      - name: Install dependencies
+        run: npm ci
 
       - name: Restore Cache
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
