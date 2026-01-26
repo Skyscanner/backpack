@@ -18,7 +18,13 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "allowJs": false
+    "allowJs": false,
+    "baseUrl": ".",
+    "paths": {
+      "@backpack/button": ["packages/bpk-component-button/src/index.ts"],
+      "@backpack/icon": ["packages/bpk-component-icon/src/index.ts"],
+      "@backpack/mixins": ["packages/bpk-mixins"]
+    }
   },
   "include": [
     "packages",

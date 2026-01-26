@@ -1,0 +1,8 @@
+{
+  "name": "bpk-component-button",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-component-button/src",
+  "projectType": "library",
+  "tags": ["type:component", "domain:ui", "scope:public"],
+  "targets": {}
+}

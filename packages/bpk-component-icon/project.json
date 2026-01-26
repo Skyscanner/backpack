@@ -1,0 +1,8 @@
+{
+  "name": "bpk-component-icon",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-component-icon/src",
+  "projectType": "library",
+  "tags": ["type:component", "domain:media", "scope:public"],
+  "targets": {}
+}
