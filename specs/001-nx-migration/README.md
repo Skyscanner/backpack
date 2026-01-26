@@ -26,7 +26,7 @@ Skyscanner内部已有多个成功的Nx迁移案例（banana、falcon），证�
 1. **零破坏性变更**: 所有现有功能保持不变，import路径不变，API不变
 2. **构建性能提升**: 实现增量构建和智能缓存，显著提升构建速度
 3. **CI效率优化**: 利用affected commands只测试变更相关的packages，减少CI时间>20%
-4. **改善开发体验**: 保持HMR、Storybook等开发工具的良好体验
+4. **改善开发体验**: 保持HMR（热模块替换）、Storybook等开发工具的良好体验
 5. **为集成做准备**: 为未来与banana monorepo集成打下基础
 
 ### 关键需求
