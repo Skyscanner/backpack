@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/utils';
+import BpkVisuallyHidden, {
+  type Props as BpkVisuallyHiddenProps,
+} from './src/BpkVisuallyHidden';
 
-.bpk-theme-toggle {
-  &__label {
-    @include utils.bpk-visually-hidden;
-  }
-}
+export type { BpkVisuallyHiddenProps };
+export default BpkVisuallyHidden;
