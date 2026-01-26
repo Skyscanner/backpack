@@ -8,6 +8,130 @@
 
 本目录包含Backpack迁移到Nx的完整规划文档，包括需求规范、实施计划和5个详细的milestone计划。
 
+## 🎯 迁移背景
+
+Backpack设计系统目前是一个包含96个package的大型monorepo，使用自定义npm scripts管理构建、测试和开发流程。随着项目规模增长和团队扩大，当前方案面临以下挑战：
+
+- **构建效率低下**: 无增量构建，每次都需要全量构建所有96个packages
+- **CI时间过长**: 每次PR都运行全量测试和构建，浪费大量CI资源
+- **缺乏缓存机制**: 重复构建相同代码无法利用缓存，开发体验欠佳
+- **依赖关系不清晰**: 缺乏明确的package依赖图，影响变更分析
+- **难以集成其他monorepo**: 需要与banana、future等Skyscanner内部monorepo集成，当前架构不支持
+
+Skyscanner内部已有多个成功的Nx迁移案例（banana、falcon），证明Nx能够有效解决这些问题。
+
+## 🎯 迁移目标和需求
+
+### 核心目标
+1. **零破坏性变更**: 所有现有功能保持不变，import路径不变，API不变
+2. **构建性能提升**: 实现增量构建和智能缓存，显著提升构建速度
+3. **CI效率优化**: 利用affected commands只测试变更相关的packages，减少CI时间>20%
+4. **改善开发体验**: 保持HMR、Storybook等开发工具的良好体验
+5. **为集成做准备**: 为未来与banana、future等monorepo集成打下基础
+
+### 关键需求
+- **构建系统**: 保持Webpack 5 + Babel 7 + Gulp 5编译流程
+- **测试框架**: 保持Jest 30 + Testing Library + jest-axe
+- **开发工具**: 保持Storybook 10 + HMR
+- **代码质量**: 保持ESLint + Stylelint + Percy配置
+- **包结构**: 保持packages/目录结构和包命名
+- **性能基准**: 构建时间<110% baseline，缓存命中率>80%
+
+详见 [spec.md](./spec.md) 获取完整的36个功能需求和19个非功能需求。
+
+## 🏗️ 技术方案
+
+### 核心架构决策
+
+我们采用**增量迁移**策略，分5个milestone渐进式完成迁移：
+
+**AD-001: 缓存策略** - 混合方式
+- 先实现本地文件系统缓存（零成本、低风险）
+- 迁移稳定后可选启用Nx Cloud分布式缓存
+
+**AD-002: 包结构** - 保持现状
+- 保留packages/目录和现有命名
+- 不重组为libs/、apps/等Nx标准结构
+- 最小化迁移复杂度和风险
+
+**AD-003: Storybook集成** - 自定义集成
+- 封装现有Storybook 10配置为Nx targets
+- 不使用@nx/storybook plugin（避免配置冲突）
+- 保持HMR和所有现有功能
+
+### 技术栈
+
+**Nx核心工具**:
+- `nx` - 任务编排和缓存引擎
+- `@nx/workspace` - 工作空间管理
+- `@nx/js` - JavaScript/TypeScript构建支持
+- `@nx/jest` - Jest集成和缓存
+- `@nx/webpack` - Webpack构建集成
+
+**保持不变的技术栈**:
+- Webpack 5 (bundling)
+- Babel 7 (transpilation)
+- Gulp 5 (asset processing)
+- Jest 30 (testing)
+- Storybook 10 (component dev)
+- ESLint + Stylelint (code quality)
+
+### 关键实现机制
+
+1. **项目配置**: 为每个package生成project.json，定义build/test/lint targets
+2. **依赖图**: 自动从package.json分析依赖关系，构建dependency graph
+3. **增量构建**: 只构建变更的packages及其dependents
+4. **智能缓存**: 基于文件内容和配置的哈希值缓存构建结果
+5. **Affected检测**: 基于git diff识别受影响的packages
+
+详见 [plan.md](./plan.md) 获取完整的技术方案和架构决策。
+
+## 🚧 主要Blockers和风险
+
+### 已知技术挑战
+
+1. **Webpack配置复杂性** (高风险)
+   - Backpack使用深度定制的Webpack配置
+   - 需要确保Nx能正确封装和执行现有配置
+   - **缓解**: Milestone 1先用run-commands executor验证，不修改Webpack配置
+
+2. **Jest配置迁移** (中风险)
+   - 96个packages有独立jest配置
+   - 需要与Nx的@nx/jest executor兼容
+   - **缓解**: 保留per-package jest.config.js，使用@nx/jest包装
+
+3. **Storybook HMR保留** (中风险)
+   - Storybook 10的HMR必须继续工作
+   - Nx封装不能破坏热更新体验
+   - **缓解**: AD-003决定使用自定义集成而非@nx/storybook plugin
+
+4. **缓存正确性** (高风险)
+   - 缓存键值计算不当可能导致错误的缓存复用
+   - 影响构建正确性和开发体验
+   - **缓解**: 严格定义inputs/outputs，充分测试各种场景
+
+5. **性能回退风险** (中风险)
+   - Nx引入额外开销可能导致性能下降
+   - 尤其是首次构建（无缓存时）
+   - **缓解**: 设置性能基准<110% baseline，持续监控
+
+### 组织和流程挑战
+
+6. **团队学习曲线** (低-中风险)
+   - 开发者需要学习Nx命令和概念
+   - **缓解**: Milestone 5提供完整文档和培训
+
+7. **CI/CD迁移协调** (中风险)
+   - GitHub Actions需要更新
+   - 可能影响release流程
+   - **缓解**: Milestone 4保留回滚方案，渐进式启用
+
+8. **与其他团队协调** (低风险)
+   - 需要与banana/future团队对齐集成方案
+   - **缓解**: 当前迁移独立进行，集成作为后续项目
+
+详见各milestone文档的"Rollback Plan"部分了解每个阶段的风险缓解策略。
+
 ## 🗂️ 文档结构
 
 ```
