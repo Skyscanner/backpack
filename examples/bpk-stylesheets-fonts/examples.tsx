@@ -55,7 +55,7 @@ const LANGUAGE_SAMPLES = {
     lang: 'zh-CN',
   },
   traditionalChinese: {
-    text: '繁體中文是中華民國的官方語言。你好，然後新年快樂。',
+    text: '繁體中文，你好，然後新年快樂。',
     lang: 'zh-TW',
   },
 };

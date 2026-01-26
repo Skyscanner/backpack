@@ -19,6 +19,7 @@ import {
   forwardRef,
   useRef,
   useEffect,
+  useCallback,
   type ComponentPropsWithRef,
   type RefObject,
 } from 'react';
@@ -31,6 +32,18 @@ import { cssModules, isRTL, setNativeValue } from '../../bpk-react-utils';
 import STYLES from './BpkSlider.module.scss';
 
 const getClassName = cssModules(STYLES);
+
+// Pure utility function to normalize slider values for callbacks
+// Returns single number for single-thumb slider, array for range slider
+const processSliderValues = (
+  sliderValues: number[],
+  callback?: (val: number | number[]) => void,
+) => {
+  const val = sliderValues.length === 1 ? sliderValues[0] : sliderValues;
+  if (callback) {
+    callback(val);
+  }
+};
 
 export type Props = {
   max: number;
@@ -64,25 +77,84 @@ const BpkSlider = ({
   const invert = isRTL();
   const currentValue = Array.isArray(value) ? value : [value];
 
-  const processSliderValues = (
-    sliderValues: number[],
-    callback?: (val: number | number[]) => void,
-  ) => {
-    const val = sliderValues.length === 1 ? sliderValues[0] : sliderValues;
-    if (callback) {
-      callback(val);
-    }
-  };
+  // Track the latest value and callback for the Chrome workaround
+  // Using refs to avoid re-registering document event listeners when these change
+  const latestValueRef = useRef<number[]>(currentValue);
+  const onAfterChangeRef = useRef(onAfterChange);
+  const isDraggingRef = useRef(false);
+  const hasCommittedRef = useRef(false);
+  // Store cleanup function to prevent memory leaks if component unmounts during drag
+  const cleanupRef = useRef<(() => void) | null>(null);
+
+  // Keep refs updated
+  useEffect(() => {
+    latestValueRef.current = currentValue;
+  }, [currentValue]);
+
+  useEffect(() => {
+    onAfterChangeRef.current = onAfterChange;
+  }, [onAfterChange]);
+
+  // Cleanup on unmount to prevent memory leaks
+  useEffect(() => () => {
+      if (cleanupRef.current) {
+        cleanupRef.current();
+      }
+    }, []);
 
   const thumbRefs = [useRef(null), useRef(null)];
 
-  const handleOnChange = (sliderValues: number[]) => {
-    processSliderValues(sliderValues, onChange);
-  };
+  const handleOnChange = useCallback(
+    (sliderValues: number[]) => {
+      latestValueRef.current = sliderValues;
+      processSliderValues(sliderValues, onChange);
+    },
+    [onChange],
+  );
 
-  const handleOnAfterChange = (sliderValues: number[]) => {
-    processSliderValues(sliderValues, onAfterChange);
-  };
+  const handleOnAfterChange = useCallback(
+    (sliderValues: number[]) => {
+      hasCommittedRef.current = true;
+      isDraggingRef.current = false;
+      processSliderValues(sliderValues, onAfterChange);
+    },
+    [onAfterChange],
+  );
+
+  // Chrome workaround: Listen for pointerup/pointercancel on document as safety net
+  // This ensures onAfterChange fires even when Radix's onValueCommit doesn't
+  // See: https://github.com/radix-ui/primitives/issues/1760
+  const handlePointerDown = useCallback(() => {
+    // Clean up any previous listener still hanging around (edge case)
+    if (cleanupRef.current) {
+      cleanupRef.current();
+    }
+
+    isDraggingRef.current = true;
+    hasCommittedRef.current = false;
+
+    const handlePointerEnd = () => {
+      document.removeEventListener('pointerup', handlePointerEnd);
+      document.removeEventListener('pointercancel', handlePointerEnd);
+      cleanupRef.current = null;
+
+      // Use requestAnimationFrame to defer the check, allowing Radix's onValueCommit
+      // to fire first and set hasCommittedRef.current = true. This prevents the race
+      // condition where both handlers could fire onAfterChange for the same interaction.
+      requestAnimationFrame(() => {
+        if (isDraggingRef.current && !hasCommittedRef.current && onAfterChangeRef.current) {
+          // Radix didn't fire onValueCommit, so we fire it manually
+          processSliderValues(latestValueRef.current, onAfterChangeRef.current);
+        }
+        isDraggingRef.current = false;
+        hasCommittedRef.current = false;
+      });
+    };
+
+    cleanupRef.current = handlePointerEnd;
+    document.addEventListener('pointerup', handlePointerEnd);
+    document.addEventListener('pointercancel', handlePointerEnd);
+  }, []);
 
   return (
     <Slider.Root
@@ -93,6 +165,7 @@ const BpkSlider = ({
       step={step || 1}
       onValueChange={handleOnChange}
       onValueCommit={handleOnAfterChange}
+      onPointerDown={handlePointerDown}
       inverted={invert}
       minStepsBetweenThumbs={minDistance}
       {...rest}
