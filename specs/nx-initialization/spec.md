@@ -25,6 +25,40 @@ FOCUS: WHAT & WHY
 
 Initialize Nx workspace in the Backpack monorepo to enable modern build tooling features including dependency graphs, affected commands, and build caching. This follows Skyscanner's Phase 1 Initialization guide and aligns with Web Foundations initiative.
 
+## Strategic Context: Backpack-Banana Merge
+
+**This Nx initialization is a prerequisite for merging Backpack into the Banana monorepo.**
+
+### Why This Matters
+
+The ultimate goal is to consolidate Backpack (design system) into Banana (main web application monorepo) as a unified codebase. This merge will:
+
+1. **Unify Development Experience**: Single repo for all web development
+2. **Enable Cross-Repo Affected Commands**: Changes to Backpack components can trigger relevant Banana tests
+3. **Simplify Dependency Management**: One lockfile, one package manager, one CI pipeline
+4. **Improve Developer Velocity**: Atomic commits across design system and consuming apps
+
+### Merge Prerequisites
+
+Before Backpack can be merged into Banana, both repos must have compatible Nx configurations:
+
+| Prerequisite | Status | Notes |
+|--------------|--------|-------|
+| Nx workspace initialized | 🔄 This ticket | Phase 1 |
+| Same Nx version | ✅ Planned | 22.4.0-beta.4 |
+| TypeScript project references | 🔄 This ticket | Via @nx/js/typescript plugin |
+| Compatible tsconfig structure | 🔄 This ticket | tsconfig.base.json pattern |
+| CI using nx-set-shas | 🔄 This ticket | For affected commands |
+| pnpm migration | ❌ Future | Separate scope after Nx init |
+
+### Banana Repository Reference
+
+- **Repository**: https://github.com/Skyscanner/banana
+- **Nx Version**: 22.4.0-beta.4
+- **Package Manager**: pnpm@9.15.9
+- **Workspace Structure**: `apps/`, `libs/`, `tools/`
+- **Planned Backpack Location**: `libs/design-system/` (post-merge)
+
 ## Constitution Check
 
 *GATE: Must pass before implementation begins.*
@@ -211,26 +245,93 @@ As a CI/CD maintainer, I want npm dependencies installed only once at the root l
 - **D1**: packages/package-lock.json will be **deleted** (not kept empty). Root package-lock.json will manage all dependencies via npm workspaces.
 - **D2**: Use **Nx 22.4.0-beta.4** to align with Banana repository (target merge destination)
 - **D3**: No Backpack-specific Nx plugins required for Phase 1 initialization
+- **D4**: Keep npm as package manager for Phase 1 (pnpm migration is a separate prerequisite for Banana merge)
 
-### Banana Alignment Notes
+### Banana Alignment Analysis
 
-Backpack will eventually be merged into Banana. Key differences to consider:
+Backpack will eventually be merged into Banana. The following analysis ensures Phase 1 configuration is merge-compatible:
 
-| Aspect | Backpack (Current) | Banana (Target) |
-| ------ | ------------------ | --------------- |
-| Package Manager | npm | pnpm |
-| Nx Version | (none) | 22.4.0-beta.4 |
-| Nx Plugins | (none) | @nx/eslint, @nx/jest, @nx/storybook, @nx/cypress, nx-stylelint, @nx/js/typescript |
-| Nx Cloud | (none) | Configured (skyscanner.gc.ent.nx.app) |
+#### Configuration Compatibility
 
-For Phase 1 initialization, we will:
-- Use same Nx version as Banana (22.4.0-beta.4)
-- Keep npm as package manager (pnpm migration is separate scope)
-- Start with minimal Nx configuration (no plugins yet)
-- Not configure Nx Cloud (can be added later)
+| Aspect | Backpack (Phase 1) | Banana (Current) | Merge Compatible? |
+| ------ | ------------------ | ---------------- | ----------------- |
+| Nx Version | 22.4.0-beta.4 | 22.4.0-beta.4 | ✅ Yes |
+| @nx/js/typescript plugin | Yes | Yes | ✅ Yes |
+| TypeScript target | es5 | es5 | ✅ Yes |
+| moduleResolution | bundler | bundler | ✅ Yes |
+| jsx | react-jsx | react-jsx | ✅ Yes |
+| React version | 18.3.1 | 18.3.1 | ✅ Yes |
+| Package Manager | npm | pnpm | ⚠️ Separate migration |
+| Nx Cloud | Not configured | Configured | ⚠️ Can add later |
+
+#### Banana Nx Plugins (Reference)
+
+Banana uses these plugins that Backpack may adopt in future phases:
+
+```
+@nx/eslint/plugin      → lint_nx target
+@nx/jest/plugin        → test_nx target
+@nx/storybook/plugin   → storybook_nx, build-storybook targets
+@nx/cypress/plugin     → e2e target
+nx-stylelint/plugin    → stylelint target
+@nx/js/typescript      → typecheck target (Phase 1 only)
+```
+
+#### tsconfig.base.json Alignment
+
+Banana's tsconfig.base.json structure (target for Backpack):
+
+```json
+{
+  "compilerOptions": {
+    "target": "es5",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "composite": true,      // Required for project references
+    "declaration": true     // Required for .d.ts generation
+  }
+}
+```
+
+**Note**: Backpack's Phase 1 tsconfig.base.json should follow this structure to ensure merge compatibility.
+
+#### Workspace Structure Mapping
+
+Post-merge location planning:
+
+```
+banana/
+├── apps/
+│   ├── webapp/
+│   └── server/
+├── libs/
+│   ├── shared/
+│   ├── homepage/
+│   └── design-system/          ← Backpack packages here
+│       ├── bpk-component-*/
+│       ├── bpk-mixins/
+│       ├── bpk-theming/
+│       └── ...
+└── tools/
+```
+
+### Phase 1 Scope Boundaries
+
+**In Scope (This Ticket)**:
+- Nx workspace initialization with @nx/js/typescript
+- npm workspaces configuration
+- TypeScript project references
+- CI workflow updates (remove node_modules caching, add nx-set-shas)
+
+**Out of Scope (Future Work)**:
+- pnpm migration (required before merge, separate ticket)
+- Additional Nx plugins (@nx/eslint, @nx/jest, etc.)
+- Nx Cloud configuration
+- Actual Backpack-Banana merge
 
 ## References
 
+- **Banana Repository**: https://github.com/Skyscanner/banana (merge target)
 - **Phase 1 Initialization Guide**: https://skyscanner.atlassian.net/wiki/spaces/WEAV/pages/1365838884
 - **Nx Manual Migration**: https://nx.dev/recipes/adopting-nx/manual
 - **TypeScript Project References**: https://nx.dev/concepts/typescript-project-linking
