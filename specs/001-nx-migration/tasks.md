@@ -315,8 +315,15 @@
   - Map npm scripts to Nx equivalents
   - Identify affected command opportunities
 - [ ] T069 [M4] Decide on Nx Cloud strategy
-  - Evaluate: local cache only vs Nx Cloud
-  - Document decision and rationale
+  - Research: Banana uses Skyscanner enterprise Nx Cloud
+  - Research: Falcon and Global-Components use local cache only
+  - Decision: Start with local cache only (sufficient performance)
+  - Rationale: Local cache provides 99%+ improvement, proven by M1-M3
+  - Future: Can enable Nx Cloud later if needed for:
+    - Remote cache sharing across team
+    - Distributed CI execution
+    - CI analytics and optimization
+  - Document decision in ci-integration.md
 
 ### M4 Phase 2: Update CI Workflows
 
