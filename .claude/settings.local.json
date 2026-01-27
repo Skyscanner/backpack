@@ -11,7 +11,9 @@
       "Bash(npm run typecheck:*)",
       "Bash(ls:*)",
       "Bash(node -c:*)",
-      "Bash(node -e:*)"
+      "Bash(node -e:*)",
+      "Bash(npx eslint:*)",
+      "Bash(npm run check-react-versions:*)"
     ]
   }
 }
