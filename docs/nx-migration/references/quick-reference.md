@@ -377,10 +377,10 @@ nxr                       # Reset cache
 ## Learning Resources
 
 ### Internal Docs
-- [User Guide](./user-guide.md) - Complete developer guide
-- [CI/CD Guide](./cicd-guide.md) - CI/CD with Nx
-- [Troubleshooting](./troubleshooting.md) - Common issues
-- [Architecture Decisions](./architecture-decisions.md) - Why we chose Nx
+- [User Guide](../guides/user-guide.md) - Complete developer guide
+- [CI/CD Guide](../guides/cicd-guide.md) - CI/CD with Nx
+- [Troubleshooting](../guides/troubleshooting.md) - Common issues
+- [Architecture Decisions](../decisions/architecture-decisions.md) - Why we chose Nx
 
 ### External Resources
 - [Nx Documentation](https://nx.dev)
@@ -389,7 +389,7 @@ nxr                       # Reset cache
 
 ## Getting Help
 
-1. Check [Troubleshooting Guide](./troubleshooting.md)
+1. Check [Troubleshooting Guide](../guides/troubleshooting.md)
 2. Search [GitHub Issues](https://github.com/Skyscanner/backpack/issues)
 3. Ask in #backpack Slack
 4. Nx office hours (check calendar)

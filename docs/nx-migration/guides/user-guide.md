@@ -378,7 +378,7 @@ npm update
 
 ## Troubleshooting
 
-See [troubleshooting.md](./troubleshooting.md) for detailed error solutions.
+See [troubleshooting.md](../guides/troubleshooting.md) for detailed error solutions.
 
 ### Quick Fixes
 
@@ -425,11 +425,11 @@ npx nx storybook:build
 
 ### Internal Documentation
 
-- [Quick Reference](./quick-reference.md) - Command cheat sheet
+- [Quick Reference](../references/quick-reference.md) - Command cheat sheet
 - [CI/CD Guide](./cicd-guide.md) - How Nx works in CI
 - [Affected Commands](./affected-commands.md) - Detailed affected guide
-- [Troubleshooting](./troubleshooting.md) - Common issues and fixes
-- [Architecture Decisions](./architecture-decisions.md) - Why we chose Nx
+- [Troubleshooting](../guides/troubleshooting.md) - Common issues and fixes
+- [Architecture Decisions](../decisions/architecture-decisions.md) - Why we chose Nx
 
 ### External Resources
 
@@ -439,7 +439,7 @@ npx nx storybook:build
 
 ## Getting Help
 
-1. **Check documentation** - Start with this guide and [troubleshooting.md](./troubleshooting.md)
+1. **Check documentation** - Start with this guide and [troubleshooting.md](../guides/troubleshooting.md)
 2. **Search issues** - Check GitHub issues for similar problems
 3. **Ask in Slack** - Post in #backpack channel
 4. **Office hours** - Check team calendar for Nx support sessions

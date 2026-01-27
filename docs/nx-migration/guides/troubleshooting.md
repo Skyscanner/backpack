@@ -568,7 +568,7 @@ npx nx run-many --target=build --all
 ## Getting Help
 
 1. **Check this guide** - Most common issues covered
-2. **Check documentation** - [User Guide](./user-guide.md), [CI/CD Guide](./cicd-guide.md)
+2. **Check documentation** - [User Guide](user-guide.md), [CI/CD Guide](cicd-guide.md)
 3. **Search GitHub issues** - Similar issues might be reported
 4. **Check Nx documentation** - https://nx.dev
 5. **Ask in Slack** - #backpack channel

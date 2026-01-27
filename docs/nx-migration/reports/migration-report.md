@@ -235,7 +235,7 @@ Time: 10-60s for typical changes
 - Zero breaking changes
 
 **Documentation**:
-- [Milestone 1 Report](./milestone-1-report.md)
+- [Milestone 1 Report](../archive/milestones/milestone-1-report.md)
 - [Quick Start Guide](./quick-start.md)
 
 ### M2: Testing & Linting (Week 2-3)
@@ -257,7 +257,7 @@ Time: 10-60s for typical changes
 - Parallel test execution
 
 **Documentation**:
-- [Milestone 2 Report](./milestone-2-report.md)
+- [Milestone 2 Report](../archive/milestones/milestone-2-report.md)
 - [Affected Commands Guide](./affected-commands.md)
 
 ### M3: Storybook & Percy (Week 3-4)
@@ -279,7 +279,7 @@ Time: 10-60s for typical changes
 - Massive dev experience improvement
 
 **Documentation**:
-- [Milestone 3 Report](./milestone-3-report.md)
+- [Milestone 3 Report](../archive/milestones/milestone-3-report.md)
 - [Storybook & Percy Guide](./storybook-percy.md)
 
 ### M4: CI/CD Integration (Week 4-5)
@@ -303,8 +303,8 @@ Time: 10-60s for typical changes
 - Faster developer feedback
 
 **Documentation**:
-- [Milestone 4 Report](./milestone-4-report.md)
-- [CI/CD Guide](./cicd-guide.md)
+- [Milestone 4 Report](../archive/milestones/milestone-4-report.md)
+- [CI/CD Guide](../guides/cicd-guide.md)
 - [Nx Cloud Guide](./nx-cloud-guide.md)
 
 ### M5: Polish & Documentation (Week 5-6)
@@ -328,10 +328,10 @@ Time: 10-60s for typical changes
 - ⏳ Migration retrospective
 
 **Documentation**:
-- [User Guide](./user-guide.md)
-- [Architecture Decisions](./architecture-decisions.md)
-- [Troubleshooting](./troubleshooting.md)
-- [Quick Reference](./quick-reference.md)
+- [User Guide](../guides/user-guide.md)
+- [Architecture Decisions](../decisions/architecture-decisions.md)
+- [Troubleshooting](../guides/troubleshooting.md)
+- [Quick Reference](../references/quick-reference.md)
 
 ---
 
@@ -422,7 +422,7 @@ Seven key architectural decisions guided the migration:
 6. **Conditional CI strategy** (affected for PRs, all for main)
 7. **Percy depends on Storybook** (leverages caching)
 
-See [Architecture Decisions](./architecture-decisions.md) for full details.
+See [Architecture Decisions](../decisions/architecture-decisions.md) for full details.
 
 ---
 
@@ -711,20 +711,20 @@ The incremental, milestone-based approach proved effective, providing immediate 
 
 ### All Milestone Reports
 
-- [Milestone 1: Nx Foundation](./milestone-1-report.md)
-- [Milestone 2: Testing & Linting](./milestone-2-report.md)
-- [Milestone 3: Storybook & Percy](./milestone-3-report.md)
-- [Milestone 4: CI/CD Integration](./milestone-4-report.md)
+- [Milestone 1: Nx Foundation](../archive/milestones/milestone-1-report.md)
+- [Milestone 2: Testing & Linting](../archive/milestones/milestone-2-report.md)
+- [Milestone 3: Storybook & Percy](../archive/milestones/milestone-3-report.md)
+- [Milestone 4: CI/CD Integration](../archive/milestones/milestone-4-report.md)
 
 ### All Documentation
 
-- [User Guide](./user-guide.md)
-- [Quick Reference](./quick-reference.md)
-- [CI/CD Guide](./cicd-guide.md)
+- [User Guide](../guides/user-guide.md)
+- [Quick Reference](../references/quick-reference.md)
+- [CI/CD Guide](../guides/cicd-guide.md)
 - [Affected Commands](./affected-commands.md)
 - [Storybook & Percy](./storybook-percy.md)
-- [Troubleshooting](./troubleshooting.md)
-- [Architecture Decisions](./architecture-decisions.md)
+- [Troubleshooting](../guides/troubleshooting.md)
+- [Architecture Decisions](../decisions/architecture-decisions.md)
 - [Nx Cloud Guide](./nx-cloud-guide.md)
 
 ### External Resources
