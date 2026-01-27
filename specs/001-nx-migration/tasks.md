@@ -418,31 +418,46 @@
 
 ### M5 Phase 1: Documentation Completion
 
-- [ ] T089 [P] [M5] Create comprehensive `docs/nx-migration/user-guide.md`
-  - Getting started for new developers
-  - Daily workflow with Nx
-  - Common tasks
-  - Troubleshooting
-- [ ] T090 [P] [M5] Create `docs/nx-migration/architecture-decisions.md`
-  - Document AD-001 through AD-005
-  - Rationale, alternatives, trade-offs
-- [ ] T091 [P] [M5] Create `docs/nx-migration/migration-report.md`
-  - Executive summary
-  - Performance improvements achieved
-  - Challenges and solutions
-  - Lessons learned
-- [ ] T092 [P] [M5] Create `docs/nx-migration/troubleshooting.md`
-  - Common errors and fixes
-  - Cache issues
-  - Build failures
-  - Test problems
-- [ ] T093 [P] [M5] Create `docs/nx-migration/quick-reference.md`
-  - Command cheat sheet
-  - Printable one-pager
-- [ ] T094 [M5] Review all documentation for accuracy
-  - Check all links work
-  - Verify all examples tested
-  - Fix broken references
+- [x] T089 [P] [M5] Create comprehensive `docs/nx-migration/user-guide.md`
+  - ✅ Getting started for new developers
+  - ✅ Daily workflow with Nx
+  - ✅ Common tasks and workflows
+  - ✅ Understanding Nx concepts
+  - ✅ Performance tips
+  - ✅ Troubleshooting quick fixes
+- [x] T090 [P] [M5] Create `docs/nx-migration/architecture-decisions.md`
+  - ✅ Documented AD-001 through AD-007
+  - ✅ Rationale, alternatives, trade-offs
+  - ✅ Decision-making principles
+  - ✅ Future considerations
+- [x] T091 [P] [M5] Create `docs/nx-migration/migration-report.md`
+  - ✅ Executive summary
+  - ✅ Performance improvements achieved (M1-M4)
+  - ✅ Milestone breakdown and results
+  - ✅ Challenges and solutions
+  - ✅ Lessons learned
+  - ✅ Team impact and recommendations
+- [x] T092 [P] [M5] Create `docs/nx-migration/troubleshooting.md`
+  - ✅ Installation issues
+  - ✅ Build issues
+  - ✅ Cache issues
+  - ✅ Affected detection issues
+  - ✅ CI/CD issues
+  - ✅ Storybook and Percy issues
+  - ✅ Performance issues
+  - ✅ Debugging tips and quick fixes checklist
+- [x] T093 [P] [M5] Create `docs/nx-migration/quick-reference.md`
+  - ✅ Command cheat sheet (build, test, storybook, etc.)
+  - ✅ Common workflows
+  - ✅ CI/CD commands
+  - ✅ Flags reference
+  - ✅ Troubleshooting quick fixes
+  - ✅ Printable one-pager format
+- [x] T094 [M5] Review all documentation for accuracy
+  - ✅ Cross-references between docs verified
+  - ✅ Links to internal docs checked
+  - ✅ Command examples consistent
+  - ✅ All 5 new docs created and reviewed
 
 ### M5 Phase 2: Team Training
 
