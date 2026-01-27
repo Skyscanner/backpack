@@ -18,9 +18,6 @@
 
 import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
-import BpkBackgroundImage from '../../packages/bpk-component-image/src/BpkBackgroundImage';
-import BpkImage from '../../packages/bpk-component-image/src/BpkImage';
-
 import {
   DefaultExample,
   RoundedCornersExample,
@@ -33,6 +30,10 @@ import {
   BackgroundImageExample,
   BackgroundImageWithLazyLoadingAndAnimationExample,
 } from './examples';
+
+import BpkBackgroundImage from '@backpack/bpk-component-image';
+import BpkImage from '@backpack/bpk-component-image';
+
 
 export default {
   title: 'bpk-component-image',

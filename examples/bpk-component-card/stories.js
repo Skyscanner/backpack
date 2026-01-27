@@ -16,10 +16,6 @@
  * limitations under the License.
  */
 
-import BpkCard from '../../packages/bpk-component-card/src/BpkCard';
-import BpkCardWrapper from '../../packages/bpk-component-card/src/BpkCardWrapper';
-import BpkDividedCard from '../../packages/bpk-component-card/src/BpkDividedCard';
-
 import {
   DefaultExample,
   WithHrefExample,
@@ -35,6 +31,11 @@ import {
   WithClassNameWrapperExample,
   MixedExample,
 } from './examples';
+
+import BpkCard from '@backpack/bpk-component-card';
+import BpkCardWrapper from '@backpack/bpk-component-card';
+import BpkDividedCard from '@backpack/bpk-component-card';
+
 
 export default {
   title: 'bpk-component-card',

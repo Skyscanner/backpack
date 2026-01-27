@@ -27,9 +27,12 @@ import {
 import themeAttributes from './src/themeAttributes';
 import withOpenEvents from './src/withOpenEvents';
 
+import type { WithOpenEventsProps } from './src/withOpenEvents';
+
 export default BpkInput;
 
 export type BpkInputProps = Props;
+export type { WithOpenEventsProps };
 export {
   propTypes,
   defaultProps,

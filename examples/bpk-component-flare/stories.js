@@ -17,9 +17,6 @@
  */
 
 
-import BpkContentBubble from '../../packages/bpk-component-flare/src/BpkContentBubble';
-import BpkFlareBar from '../../packages/bpk-component-flare/src/BpkFlareBar';
-
 import {
   FlareBarExample,
   ContentBubbleFullWithImageExample,
@@ -30,6 +27,10 @@ import {
   ContentBubblePointerHiddenRoundedExample,
   MixedExample,
 } from './examples';
+
+import BpkContentBubble from '@backpack/bpk-component-flare';
+import BpkFlareBar from '@backpack/bpk-component-flare';
+
 
 export default {
   title: 'bpk-component-flare',

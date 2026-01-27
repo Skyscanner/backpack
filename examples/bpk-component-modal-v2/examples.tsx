@@ -23,7 +23,7 @@ import { BpkModalV2, MODAL_STYLING } from '../../packages/bpk-component-modal';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 
-import type { Props as BpkModalProps } from '../../packages/bpk-component-modal/src/BpkModalV2/BpkModal';
+import type { BpkModalV2Props } from '@backpack/bpk-component-modal';
 
 import STYLES from './examples.module.scss';
 
@@ -93,7 +93,7 @@ const content = [
 
 const ModalContainer = (
   props: Omit<
-    BpkModalProps,
+    BpkModalV2Props,
     'id' | 'isOpen' | 'ariaLabelledby' | 'closeLabel' | 'onClose'
   > & { initiallyOpen: boolean },
 ) => {

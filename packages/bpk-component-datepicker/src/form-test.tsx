@@ -22,8 +22,7 @@ import { useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { CALENDAR_SELECTION_TYPE } from '../../bpk-component-calendar';
-import { format } from '../../bpk-component-calendar/src/date-utils';
+import { CALENDAR_SELECTION_TYPE, format } from '../../bpk-component-calendar';
 import {
   weekDays,
   formatMonth,

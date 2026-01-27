@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkAccordion from '../../packages/bpk-component-accordion/src/BpkAccordion';
-import BpkAccordionItem from '../../packages/bpk-component-accordion/src/BpkAccordionItem';
 
 import {
   SingleItemExample,
@@ -38,6 +36,8 @@ import {
   WithSingleItemAccordionStateMock,
   WithAccordionItemStateMock,
 } from './stories-utils';
+
+import { BpkAccordion, BpkAccordionItem } from '@backpack/bpk-component-accordion';
 
 export default {
   title: 'bpk-component-accordion',

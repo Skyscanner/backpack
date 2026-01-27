@@ -16,10 +16,11 @@
  * limitations under the License.
  */
 
-import BpkBreadcrumb from '../../packages/bpk-component-breadcrumb/src/BpkBreadcrumb';
-import BpkBreadcrumbItem from '../../packages/bpk-component-breadcrumb/src/BpkBreadcrumbItem';
-
 import { DefaultExample, ExtremeExample } from './examples';
+
+import BpkBreadcrumb from '@backpack/bpk-component-breadcrumb';
+import BpkBreadcrumbItem from '@backpack/bpk-component-breadcrumb';
+
 
 export default {
   component: BpkBreadcrumb,

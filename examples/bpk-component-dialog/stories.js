@@ -17,14 +17,15 @@
  */
 
 
-import BpkDialog from '../../packages/bpk-component-dialog/src/BpkDialog';
-
 import {
   DefaultExample,
   WithIconExample,
   NotDismissibleExample,
   WithFlareExample,
 } from './examples';
+
+import BpkDialog from '@backpack/bpk-component-dialog';
+
 
 export default {
   title: 'bpk-component-dialog',

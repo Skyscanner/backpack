@@ -20,9 +20,10 @@ import BpkSnippet, {
   DESKTOP_LAYOUT,
   IMAGE_ORIENTATION,
 } from '../../packages/bpk-component-snippet';
+
 import BpkText, {
   TEXT_STYLES,
-} from '../../packages/bpk-component-text/src/BpkText';
+} from '@backpack/bpk-component-text';
 
 const props = {
   src: 'https://content.skyscnr.com/m/f427e62297cce49/original/edinburgh-view-from-calton-hill.jpg',

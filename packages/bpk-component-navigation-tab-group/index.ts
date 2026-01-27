@@ -17,8 +17,10 @@
  */
 
 import BpkNavigationTabGroup, {
+  NAVIGATION_TAB_GROUP_TYPES,
   type Props as BpkNavigationTabGroupProps,
 } from './src/BpkNavigationTabGroup';
 
 export type { BpkNavigationTabGroupProps };
+export { NAVIGATION_TAB_GROUP_TYPES };
 export default BpkNavigationTabGroup;

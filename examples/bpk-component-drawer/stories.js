@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BkpDrawer from '../../packages/bpk-component-drawer/src/BpkDrawer';
-
 import {
   DefaultExample,
   OverflowingExamples,
@@ -29,6 +27,9 @@ import {
   DrawerWithTooltipExampleNotAbleToBeShown,
   DrawerWithTooltipExampleAbleToBeShown,
 } from './examples';
+
+import BkpDrawer from '@backpack/bpk-component-drawer';
+
 
 export default {
   title: 'bpk-component-drawer',

@@ -17,13 +17,14 @@
  */
 
 
-import BpkBubble from '../../packages/bpk-component-bubble/src/BpkBubble';
-
 import {
   SimpleExample,
   WithLongLabelExample,
   VisualTestExample,
 } from './examples';
+
+import BpkBubble from '@backpack/bpk-component-bubble';
+
 
 export default {
   title: 'bpk-component-bubble',

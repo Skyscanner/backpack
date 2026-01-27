@@ -18,7 +18,6 @@
 
 import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
-import BpkInput from '../../packages/bpk-component-input/src/BpkInput';
 
 import {
   TextExample,
@@ -37,6 +36,8 @@ import {
   MixedExample,
 } from './examples';
 import { WithOpenEventsMock } from './stories-utils';
+
+import BpkInput from '@backpack/bpk-component-input';
 
 export default {
   title: 'bpk-component-input',

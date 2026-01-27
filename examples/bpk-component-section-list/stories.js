@@ -17,11 +17,12 @@
  */
 
 
-import BpkSectionList from '../../packages/bpk-component-section-list/src/BpkSectionList';
-import BpkSectionListItem from '../../packages/bpk-component-section-list/src/BpkSectionListItem';
-import BpkSectionListSection from '../../packages/bpk-component-section-list/src/BpkSectionListSection';
-
 import DefaultExample from './examples';
+
+import BpkSectionList from '@backpack/bpk-component-section-list';
+import BpkSectionListItem from '@backpack/bpk-component-section-list';
+import BpkSectionListSection from '@backpack/bpk-component-section-list';
+
 
 export default {
   title: 'bpk-component-section-list',

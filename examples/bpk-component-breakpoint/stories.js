@@ -16,9 +16,10 @@
  * limitations under the License.
  */
 
-import BpkBreakpoint from '../../packages/bpk-component-breakpoint/src/BpkBreakpoint';
-
 import DefaultExample from './examples';
+
+import BpkBreakpoint from '@backpack/bpk-component-breakpoint';
+
 
 export default {
   title: 'bpk-component-breakpoint',

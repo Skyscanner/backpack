@@ -17,11 +17,6 @@
  */
 
 
-import BpkInteractiveStar from '../../packages/bpk-component-star-rating/src/BpkInteractiveStar';
-import BpkInteractiveStarRating from '../../packages/bpk-component-star-rating/src/BpkInteractiveStarRating';
-import { BpkStarNonRtl } from '../../packages/bpk-component-star-rating/src/BpkStar';
-import BpkStarRating from '../../packages/bpk-component-star-rating/src/BpkStarRating';
-
 import {
   FullExample,
   FullStarsExample,
@@ -36,6 +31,12 @@ import {
   MixedExample,
 } from './examples';
 import WithInteractiveStarRatingStateMock from './stories-utils';
+
+import BpkInteractiveStar from '@backpack/bpk-component-star-rating';
+import BpkInteractiveStarRating from '@backpack/bpk-component-star-rating';
+import { BpkStarNonRtl } from '@backpack/bpk-component-star-rating';
+import BpkStarRating from '@backpack/bpk-component-star-rating';
+
 
 export default {
   title: 'bpk-component-star-rating',

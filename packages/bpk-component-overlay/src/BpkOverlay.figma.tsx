@@ -18,9 +18,10 @@
 
 import figma from '@figma/code-connect';
 
-import BpkImage from '../../bpk-component-image/src/BpkImage';
-
 import BpkOverlay, { OVERLAY_TYPES } from './BpkOverlay';
+
+import { BpkImage } from '@backpack/bpk-component-image';
+
 
 figma.connect(
   BpkOverlay,

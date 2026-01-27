@@ -19,8 +19,7 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import { CALENDAR_SELECTION_TYPE } from '../../bpk-component-calendar';
-import { format } from '../../bpk-component-calendar/src/date-utils';
+import { CALENDAR_SELECTION_TYPE, format } from '../../bpk-component-calendar';
 import {
   weekDays,
   formatMonth,

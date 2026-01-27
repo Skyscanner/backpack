@@ -16,12 +16,6 @@
  * limitations under the License.
  */
 
-import BpkIconMarker from '../../packages/bpk-component-map/src/BpkIconMarker';
-import BpkMap from '../../packages/bpk-component-map/src/BpkMap';
-import BpkOverlayView from '../../packages/bpk-component-map/src/BpkOverlayView';
-import BpkPriceMarker from '../../packages/bpk-component-map/src/BpkPriceMarker';
-import BpkPriceMarkerButton from '../../packages/bpk-component-map/src/BpkPriceMarkerButton';
-
 import {
   SimpleExample,
   DragDisabledAndHiddenControlsExample,
@@ -39,6 +33,13 @@ import {
   MultipleMapsExample,
 } from './examples';
 import WithGoogleMapsScriptMock from './stories-utils';
+
+import BpkIconMarker from '@backpack/bpk-component-map';
+import BpkMap from '@backpack/bpk-component-map';
+import BpkOverlayView from '@backpack/bpk-component-map';
+import BpkPriceMarker from '@backpack/bpk-component-map';
+import BpkPriceMarkerButton from '@backpack/bpk-component-map';
+
 
 export default {
   title: 'bpk-component-map',

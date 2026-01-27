@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import BpkModal from '../../packages/bpk-component-modal/src/BpkModal';
-
 import {
   DefaultExample,
   WideExample,
@@ -33,6 +31,9 @@ import {
   ContrastExample,
   ContrastWithCloseButtonTextExample,
 } from './examples';
+
+import BpkModal from '@backpack/bpk-component-modal';
+
 
 export default {
   title: 'bpk-component-modal',

@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkInsetBanner from '../../packages/bpk-component-inset-banner/src/BpkInsetBanner';
-
 import {
   DefaultExampleTitleOnly,
   DefaultExampleTitleAndSubheadline,
@@ -27,6 +25,9 @@ import {
   WithCtaTextAndPopoverExampleLight,
   WithCustomPopoverWidthAndMarginsExample,
 } from './examples';
+
+import { BpkInsetBanner } from '@backpack/bpk-component-inset-banner';
+
 
 export default {
   title: 'bpk-component-inset-banner',

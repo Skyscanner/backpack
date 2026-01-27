@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkLabel from '../../packages/bpk-component-label/src/BpkLabel';
-
 import {
   DefaultExample,
   RequiredExample,
@@ -27,6 +25,9 @@ import {
   WhiteExample,
   MixedExample,
 } from './examples';
+
+import BpkLabel from '@backpack/bpk-component-label';
+
 
 export default {
   title: 'bpk-component-label',

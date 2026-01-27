@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkGraphicPromotion from '../../packages/bpk-component-graphic-promotion/src/BpkGraphicPromo';
-
 import {
   VisualTestExample,
   DefaultExample,
@@ -32,6 +30,9 @@ import {
   NoStyleExample,
   LinkWrapperExample,
 } from './examples';
+
+import BpkGraphicPromotion from '@backpack/bpk-component-graphic-promotion';
+
 
 export default {
   title: 'bpk-component-graphic-promotion',

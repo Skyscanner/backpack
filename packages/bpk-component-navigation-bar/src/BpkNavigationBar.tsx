@@ -21,7 +21,7 @@ import type { ReactElement, ReactNode } from 'react';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
-import type { Tag, TextStyle } from '../../bpk-component-text/src/BpkText';
+import type { Tag, TextStyle } from '@backpack/bpk-component-text';
 
 import STYLES from './BpkNavigationBar.module.scss';
 

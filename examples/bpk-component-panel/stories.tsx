@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkPanel from '../../packages/bpk-component-panel/src/BpkPanel';
-
 import {
   DefaultExample,
   WithoutPaddingExample,
@@ -25,6 +23,9 @@ import {
   MixedExample,
   NoKeylineExample,
 } from './examples';
+
+import BpkPanel from '@backpack/bpk-component-panel';
+
 
 export default {
   title: 'bpk-component-panel',

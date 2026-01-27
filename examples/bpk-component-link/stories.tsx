@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkLink from '../../packages/bpk-component-link/src/BpkLink';
-
 import {
   LinkExample,
   ImplicitLinkExample,
@@ -26,6 +24,9 @@ import {
   MixedExample,
   PolymorphicOverviewExample,
 } from './examples';
+
+import BpkLink from '@backpack/bpk-component-link';
+
 
 export default {
   title: 'bpk-component-link',

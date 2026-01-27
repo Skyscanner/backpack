@@ -15,13 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import BpkContentCards from '../../packages/bpk-component-content-cards/src/BpkContentCards';
-
 import {
   WithOneCardExample,
   WithTwoCardsExample,
   WithThreeCardsExample,
 } from './examples';
+
+import BpkContentCards from '@backpack/bpk-component-content-cards';
+
 
 export default {
   title: 'bpk-component-content-cards',

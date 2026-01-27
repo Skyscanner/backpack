@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkText from '../../packages/bpk-component-text/src/BpkText';
-
 import {
   DefaultExample,
   WithHeadingTagsExample,
@@ -31,6 +29,9 @@ import {
   ColorPropExample,
   MixedExample,
 } from './examples';
+
+import BpkText from '@backpack/bpk-component-text';
+
 
 export default {
   title: 'bpk-component-text',

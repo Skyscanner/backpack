@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkBadge from '../../packages/bpk-component-badge/src/BpkBadge';
-
 import {
   DefaultExample,
   WarningExample,
@@ -32,6 +30,9 @@ import {
   DockedTrailingExample,
   MixedExample,
 } from './examples';
+
+import BpkBadge from '@backpack/bpk-component-badge';
+
 
 export default {
   title: 'bpk-component-badge',

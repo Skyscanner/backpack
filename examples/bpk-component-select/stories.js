@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkSelect from '../../packages/bpk-component-select/src/BpkSelect';
-
 import {
   DefaultExample,
   InvalidExample,
@@ -32,6 +30,9 @@ import {
   WithImageLargeExample,
   MixedExample,
 } from './examples';
+
+import BpkSelect from '@backpack/bpk-component-select';
+
 
 export default {
   title: 'bpk-component-select',

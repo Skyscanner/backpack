@@ -16,9 +16,6 @@
  * limitations under the License.
  */
 
-import BpkCode from '../../packages/bpk-component-code/src/BpkCode';
-import BpkCodeBlock from '../../packages/bpk-component-code/src/BpkCodeBlock';
-
 import {
   InlineExample,
   InlineAlternateExample,
@@ -26,6 +23,9 @@ import {
   BlockAlternateExample,
   MixedExample,
 } from './examples';
+
+import { BpkCode, BpkCodeBlock } from '@backpack/bpk-component-code';
+
 
 export default {
   title: 'bpk-component-code',

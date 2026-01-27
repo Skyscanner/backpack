@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkFloatingNotification from '../../packages/bpk-component-floating-notification/src/BpkFloatingNotification';
-
 import {
   CtaIconLongTextExample,
   CtaExample,
@@ -25,6 +23,9 @@ import {
   IconExample,
   VisualTestExample,
 } from './examples';
+
+import BpkFloatingNotification from '@backpack/bpk-component-floating-notification';
+
 
 export default {
   title: 'bpk-component-floating-notification',

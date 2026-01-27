@@ -23,7 +23,7 @@
  * @todo remove this file once we upgrade to Storybook v8
  */
 
-import type { WithBannerAlertStateProps } from '../../packages/bpk-component-info-banner/src/withBannerAlertState';
+import type { WithBannerAlertStateProps } from '@backpack/bpk-component-info-banner';
 
 const withBannerAlertStateMock = (props: WithBannerAlertStateProps) => <div />;
 

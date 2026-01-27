@@ -23,7 +23,7 @@
  * @todo remove this file once we upgrade to Storybook v8
  */
 
-import type { WithOpenEventsProps } from '../../packages/bpk-component-input/src/withOpenEvents';
+import type { WithOpenEventsProps } from '@backpack/bpk-component-input';
 
 const WithOpenEventsMock = (props: WithOpenEventsProps) => <div />;
 

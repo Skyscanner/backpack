@@ -16,11 +16,12 @@
  * limitations under the License.
  */
 
-import BpkBubble from '../../packages/bpk-component-bubble/src/BpkBubble';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
+
+import BpkBubble from '@backpack/bpk-component-bubble';
 
 const getClassNames = cssModules(STYLES);
 

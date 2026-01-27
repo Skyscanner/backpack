@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkTextarea from '../../packages/bpk-component-textarea/src/BpkTextarea';
-
 import {
   DefaultExample,
   PlaceholderExample,
@@ -26,6 +24,9 @@ import {
   LargeExample,
   MixedExample,
 } from './examples';
+
+import BpkTextarea from '@backpack/bpk-component-textarea';
+
 
 export default {
   title: 'bpk-component-textarea',

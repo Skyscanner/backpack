@@ -16,11 +16,6 @@
  * limitations under the License.
  */
 
-import BpkDismissibleChip from '../../packages/bpk-component-chip/src/BpkDismissibleChip';
-import BpkDropdownChip from '../../packages/bpk-component-chip/src/BpkDropdownChip';
-import BpkIconChip from '../../packages/bpk-component-chip/src/BpkIconChip';
-import BpkSelectableChip from '../../packages/bpk-component-chip/src/BpkSelectableChip';
-
 import {
   AllTypesExample,
   AllSelectableChipsExample,
@@ -29,6 +24,12 @@ import {
   RadioGroupChipsExample,
   AllIconChipsExample,
 } from './examples';
+
+import BpkDismissibleChip from '@backpack/bpk-component-chip';
+import BpkDropdownChip from '@backpack/bpk-component-chip';
+import BpkIconChip from '@backpack/bpk-component-chip';
+import BpkSelectableChip from '@backpack/bpk-component-chip';
+
 
 export default {
   title: 'bpk-component-chip',

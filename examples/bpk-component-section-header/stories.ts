@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkSectionHeader from '../../packages/bpk-component-section-header/src/BpkSectionHeader';
-
 import {
   DefaultExample,
   WithDescriptionExample,
@@ -27,6 +25,9 @@ import {
   MixedExample,
   WithOnDarkExample,
 } from './examples';
+
+import BpkSectionHeader from '@backpack/bpk-component-section-header';
+
 
 export default {
   title: 'bpk-component-section-header',

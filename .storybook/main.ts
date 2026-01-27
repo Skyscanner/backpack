@@ -16,7 +16,12 @@
  * limitations under the License.
  */
 
+import path from 'path';
+import { fileURLToPath } from 'url';
 import type { StorybookConfig } from '@storybook/react-webpack5';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const config: StorybookConfig = {
   stories: [
@@ -45,6 +50,15 @@ const config: StorybookConfig = {
         return !isHTMLElementProp
       },
     },
+  },
+  webpackFinal: async (webpackConfig) => {
+    if (webpackConfig.resolve) {
+      webpackConfig.resolve.alias = {
+        ...webpackConfig.resolve.alias,
+        '@backpack': path.resolve(__dirname, '../packages'),
+      };
+    }
+    return webpackConfig;
   },
 };
 export default config;

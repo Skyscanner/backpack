@@ -17,8 +17,6 @@
  */
 
 
-import BpkNudger from '../../packages/bpk-component-nudger/src/BpkNudger';
-
 import {
   DefaultExample,
   WithLabelExample,
@@ -28,6 +26,9 @@ import {
   OnDarkExample,
   MixedExample,
 } from './examples';
+
+import BpkNudger from '@backpack/bpk-component-nudger';
+
 
 export default {
   title: 'bpk-component-nudger',

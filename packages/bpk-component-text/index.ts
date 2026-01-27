@@ -18,5 +18,6 @@
 
 import component, { TEXT_COLORS, TEXT_STYLES } from './src/BpkText';
 
+export type { Tag, TextStyle } from './src/BpkText';
 export default component;
 export { TEXT_COLORS, TEXT_STYLES };

@@ -16,9 +16,6 @@
  * limitations under the License.
  */
 
-import BpkHorizontalNav from '../../packages/bpk-component-horizontal-nav/src/BpkHorizontalNav';
-import BpkHorizontalNavItem from '../../packages/bpk-component-horizontal-nav/src/BpkHorizontalNavItem';
-
 import {
   DefaultExample,
   ScrollToSelectedExample,
@@ -33,6 +30,10 @@ import {
   InteractiveTabsExample,
   MixedExample,
 } from './examples';
+
+import BpkHorizontalNav from '@backpack/bpk-component-horizontal-nav';
+import BpkHorizontalNavItem from '@backpack/bpk-component-horizontal-nav';
+
 
 export default {
   title: 'bpk-component-horizontal-nav',

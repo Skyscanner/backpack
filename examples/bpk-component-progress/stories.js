@@ -17,14 +17,15 @@
  */
 
 
-import BpkProgress from '../../packages/bpk-component-progress/src/BpkProgress';
-
 import {
   DefaultExample,
   SmallExample,
   SteppedExample,
   MixedExample,
 } from './examples';
+
+import BpkProgress from '@backpack/bpk-component-progress';
+
 
 export default {
   title: 'bpk-component-progress',

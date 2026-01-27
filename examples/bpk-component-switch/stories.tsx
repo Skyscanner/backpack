@@ -18,9 +18,10 @@
 
 import { ArgTypes,Title, Markdown } from '@storybook/addon-docs/blocks';
 
-import BpkSwitch from '../../packages/bpk-component-switch/src/BpkSwitch';
-
 import { DefaultExample, SmallExample, MixedExample, ReducedSpaceExample } from './examples';
+
+import BpkSwitch from '@backpack/bpk-component-switch';
+
 
 export default {
   title: 'bpk-component-switch',

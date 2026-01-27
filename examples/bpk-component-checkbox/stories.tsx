@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkCheckbox from '../../packages/bpk-component-checkbox/src/BpkCheckbox';
-
 import {
   DefaultExample,
   IndeterminateExample,
@@ -29,6 +27,9 @@ import {
   SmallLabelExample,
   MixedExample,
 } from './examples';
+
+import BpkCheckbox from '@backpack/bpk-component-checkbox';
+
 
 export default {
   title: 'bpk-component-checkbox',

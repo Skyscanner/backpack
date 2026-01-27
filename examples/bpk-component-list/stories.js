@@ -17,10 +17,10 @@
  */
 
 
-import BpkList from '../../packages/bpk-component-list/src/BpkList';
-import BpkListItem from '../../packages/bpk-component-list/src/BpkListItem';
-
 import { UnorderedExample, OrderedExample, NestedExample } from './examples';
+
+import { BpkList, BpkListItem } from '@backpack/bpk-component-list';
+
 
 export default {
   title: 'bpk-component-list',

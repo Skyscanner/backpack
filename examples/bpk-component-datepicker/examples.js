@@ -37,14 +37,12 @@ import {
   CustomPropTypes,
   CALENDAR_SELECTION_TYPE,
   BpkCalendarGrid,
-} from '../../packages/bpk-component-calendar';
-import {
+
   format,
   dateToBoundaries,
   addMonths,
   addDays,
-  startOfDay,
-} from '../../packages/bpk-component-calendar/src/date-utils';
+  startOfDay} from '../../packages/bpk-component-calendar';
 import {
   weekDays,
   formatMonth,

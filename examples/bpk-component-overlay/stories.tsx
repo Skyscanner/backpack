@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkOverlay from '../../packages/bpk-component-overlay/src/BpkOverlay';
-
 import {
   SolidExamples,
   TopExamples,
@@ -30,6 +28,9 @@ import {
   MixedExample,
   // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from './examples';
+
+import BpkOverlay from '@backpack/bpk-component-overlay';
+
 
 export default {
   title: 'bpk-component-overlay',

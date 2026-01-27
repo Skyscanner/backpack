@@ -25,8 +25,7 @@ import {
 
 import BpkSegmentedControl, {
   useSegmentedControlPanels,
-} from '../../packages/bpk-component-segmented-control';
-import { SEGMENT_TYPES } from '../../packages/bpk-component-segmented-control/src/BpkSegmentedControl';
+ SEGMENT_TYPES } from '../../packages/bpk-component-segmented-control';
 import BpkText from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.

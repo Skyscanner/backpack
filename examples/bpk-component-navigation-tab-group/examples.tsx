@@ -20,8 +20,7 @@ import Car from '../../packages/bpk-component-icon/sm/cars';
 import Explore from '../../packages/bpk-component-icon/sm/explore';
 import Flight from '../../packages/bpk-component-icon/sm/flight';
 import Hotel from '../../packages/bpk-component-icon/sm/hotels';
-import BpkNavigationTabGroup from '../../packages/bpk-component-navigation-tab-group';
-import { NAVIGATION_TAB_GROUP_TYPES } from '../../packages/bpk-component-navigation-tab-group/src/BpkNavigationTabGroup';
+import BpkNavigationTabGroup, { NAVIGATION_TAB_GROUP_TYPES } from '../../packages/bpk-component-navigation-tab-group';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 

@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import BpkSaveButton from '../../packages/bpk-component-card-button/src/BpkSaveButton';
-
 import {
   DefaultExample,
   ContainedExample,
@@ -29,6 +27,9 @@ import {
   SmallCheckedExample,
   AsyncWithErrorCheckedExample,
 } from './examples';
+
+import { BpkSaveButton } from '@backpack/bpk-component-card-button';
+
 
 export default {
   title: 'bpk-component-card-button',

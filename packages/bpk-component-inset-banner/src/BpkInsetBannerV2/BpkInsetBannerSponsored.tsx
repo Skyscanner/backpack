@@ -19,17 +19,17 @@ import { useState } from 'react';
 
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkBottomSheet from '../../../bpk-component-bottom-sheet';
-import { PADDING_TYPE } from '../../../bpk-component-bottom-sheet/src/BpkBottomSheet';
+import BpkBottomSheet, { PADDING_TYPE } from '../../../bpk-component-bottom-sheet';
 import ViewIcon from '../../../bpk-component-icon/lg/view';
 import InfoIcon from '../../../bpk-component-icon/sm/information-circle';
 import BpkImage from '../../../bpk-component-image';
-import BpkText, { TEXT_STYLES } from '../../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../../bpk-react-utils';
 
 import { VARIANT, type CommonProps } from './common-types';
 
 import STYLES from './BpkInsetBannerSponsored.module.scss';
+
+import BpkText, { TEXT_STYLES } from '@backpack/bpk-component-text';
 
 const getClassName = cssModules(STYLES);
 

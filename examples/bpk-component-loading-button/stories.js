@@ -17,8 +17,6 @@
  */
 
 
-import BpkLoadingButton from '../../packages/bpk-component-loading-button/src/BpkLoadingButton';
-
 import {
   DocsPrimaryExample,
   PrimaryExample,
@@ -36,6 +34,9 @@ import {
   VisualExample,
   SubmitExample,
 } from './examples';
+
+import BpkLoadingButton from '@backpack/bpk-component-loading-button';
+
 
 export default {
   title: 'bpk-component-loading-button',

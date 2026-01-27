@@ -16,14 +16,15 @@
  * limitations under the License.
  */
 
-import BpkSplitInput from '../../packages/bpk-component-split-input/src/BpkSplitInput';
-
 import {
   SplitInputExample,
   SplitInputSixDigitExample,
   SplitInputWithPlaceholderExample,
   SplitInputSmallExample,
 } from './examples';
+
+import BpkSplitInput from '@backpack/bpk-component-split-input';
+
 
 export default {
   title: 'bpk-component-split-input',

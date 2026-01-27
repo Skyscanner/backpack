@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import BpkDataTable from '../../packages/bpk-component-datatable/src/BpkDataTable';
-
 import {
   AutowidthExample,
   NonClickNonHoverRowsExample,
@@ -27,6 +25,9 @@ import {
   CustomSortingExample,
   WithColumnArrayExample,
 } from './examples';
+
+import BpkDataTable from '@backpack/bpk-component-datatable';
+
 
 export default {
   title: 'bpk-component-datatable',

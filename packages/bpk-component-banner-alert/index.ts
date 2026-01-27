@@ -23,6 +23,9 @@ import { ALERT_TYPES } from './src/common-types';
 import themeAttributes from './src/themeAttributes';
 import withBannerAlertState from './src/withBannerAlertState';
 
+import type { WithBannerAlertStateProps } from './src/withBannerAlertState';
+
+export type { WithBannerAlertStateProps };
 export {
   ALERT_TYPES,
   BpkBannerAlertDismissable,

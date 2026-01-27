@@ -16,9 +16,10 @@
  * limitations under the License.
  */
 
-import BpkSwapButton from '../../packages/bpk-component-swap-button/src/BpkSwapButton';
-
 import { DefaultExample, CanvasDefaultExample, CanvasContrastExample } from './examples'
+
+import BpkSwapButton from '@backpack/bpk-component-swap-button';
+
 
 export default {
   title: 'bpk-component-swap-button',

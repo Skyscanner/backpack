@@ -26,5 +26,6 @@ import themeAttributes from './src/themeAttributes';
 export type BpkPopoverProps = Props;
 export {
   themeAttributes,
+  BpkPopover,
 };
 export default BpkPopover;

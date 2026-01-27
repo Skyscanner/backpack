@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkTooltip from '../../packages/bpk-component-tooltip/src/BpkTooltip';
-
 import {
   DefaultExample,
   DarkExample,
@@ -26,6 +24,9 @@ import {
   LinkExample,
   VisualTestExample,
 } from './examples';
+
+import BpkTooltip from '@backpack/bpk-component-tooltip';
+
 
 export default {
   title: 'bpk-component-tooltip',

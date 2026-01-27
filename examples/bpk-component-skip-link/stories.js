@@ -16,9 +16,10 @@
  * limitations under the License.
  */
 
-import BpkSkipLink from '../../packages/bpk-component-skip-link/src/BpkSkipLink';
-
 import { DefaultExample, RealisticExample } from './examples';
+
+import BpkSkipLink from '@backpack/bpk-component-skip-link';
+
 
 export default {
   title: 'bpk-component-skip-link',

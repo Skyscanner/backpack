@@ -19,12 +19,14 @@
 import { Title, Markdown, ArgTypes } from '@storybook/addon-docs/blocks';
 import { userEvent, within } from 'storybook/test';
 
-import BpkAutosuggest from '../../packages/bpk-component-autosuggest/src/BpkAutosuggest';
-import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
-
 import AutosuggestExample from './examples';
 
 import type { StoryObj } from '@storybook/react-webpack5';
+
+import BpkAutosuggest from '@backpack/bpk-component-autosuggest';
+import BpkAutosuggestSuggestion from '@backpack/bpk-component-autosuggest';
+
+
 
 export default {
   title: 'bpk-component-autosuggest',

@@ -16,10 +16,6 @@
  * limitations under the License.
  */
 
-import BpkNavigationBar from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBar';
-import BpkNavigationBarButtonLink from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBarButtonLink';
-import BpkNavigationBarIconButton from '../../packages/bpk-component-navigation-bar/src/BpkNavigationBarIconButton';
-
 import {
   DefaultExample,
   LongTitleTextExample,
@@ -33,6 +29,11 @@ import {
   WithLinksOnDarkExample,
   VisualTestExample,
 } from './examples';
+
+import BpkNavigationBar from '@backpack/bpk-component-navigation-bar';
+import BpkNavigationBarButtonLink from '@backpack/bpk-component-navigation-bar';
+import BpkNavigationBarIconButton from '@backpack/bpk-component-navigation-bar';
+
 
 export default {
   title: 'bpk-component-navigation-bar',

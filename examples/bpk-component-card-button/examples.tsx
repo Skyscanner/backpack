@@ -28,7 +28,7 @@ import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 import type {
   SizeType,
   StyleType,
-} from '../../packages/bpk-component-card-button/src/BpkSaveButton';
+} from '@backpack/bpk-component-card-button';
 
 type Props = {
   checked?: boolean;

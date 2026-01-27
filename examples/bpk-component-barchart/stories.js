@@ -17,8 +17,6 @@
  */
 
 
-import BpkBarchart from '../../packages/bpk-component-barchart/src/BpkBarchart';
-
 import {
   AxesAndGridlinesExample,
   DefaultExample,
@@ -31,6 +29,9 @@ import {
   GridlinesExample,
   CustomYAxisDomainExample,
 } from './examples';
+
+import BpkBarchart from '@backpack/bpk-component-barchart';
+
 
 export default {
   title: 'bpk-component-barchart',

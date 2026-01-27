@@ -20,27 +20,28 @@ import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import BpkCard from '../../packages/bpk-component-card';
-import BpkCardList from '../../packages/bpk-component-card-list';
-import {
+import BpkCardList, {
   LAYOUTS,
   ACCESSORY_DESKTOP_TYPES,
   ACCESSORY_MOBILE_TYPES,
-} from '../../packages/bpk-component-card-list/src/common-types';
+} from '../../packages/bpk-component-card-list';
 import BpkMultiSelectChipGroup, {
   CHIP_GROUP_TYPES,
 } from '../../packages/bpk-component-chip-group';
 import BpkImage from '../../packages/bpk-component-image';
 import BpkLink from '../../packages/bpk-component-link';
-import BpkSnippet, {
-  DESKTOP_LAYOUT as SNIPPET_DESKTOP_LAYOUT,
-} from '../../packages/bpk-component-snippet/src/BpkSnippet';
-import BpkText, {
-  TEXT_STYLES,
-} from '../../packages/bpk-component-text/src/BpkText';
+
 
 import type { MultiSelectProps } from '../../packages/bpk-component-chip-group';
 
 import STYLES from './examples.module.scss';
+
+import BpkSnippet, {
+  DESKTOP_LAYOUT as SNIPPET_DESKTOP_LAYOUT,
+} from '@backpack/bpk-component-snippet';
+import BpkText, {
+  TEXT_STYLES,
+} from '@backpack/bpk-component-text';
 
 const imageUrlsDestination = [
   'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg',

@@ -16,14 +16,17 @@
  * limitations under the License.
  */
 
-import BpkTable from '../../packages/bpk-component-table/src/BpkTable';
-import BpkTableBody from '../../packages/bpk-component-table/src/BpkTableBody';
-import BpkTableCell from '../../packages/bpk-component-table/src/BpkTableCell';
-import BpkTableHead from '../../packages/bpk-component-table/src/BpkTableHead';
-import BpkTableHeadCell from '../../packages/bpk-component-table/src/BpkTableHeadCell';
-import BpkTableRow from '../../packages/bpk-component-table/src/BpkTableRow';
-
 import DefaultExample, { WordBreakExample } from './examples';
+
+import {
+  BpkTable,
+  BpkTableBody,
+  BpkTableCell,
+  BpkTableHead,
+  BpkTableHeadCell,
+  BpkTableRow,
+} from '@backpack/bpk-component-table';
+
 
 export default {
   title: 'bpk-component-table',

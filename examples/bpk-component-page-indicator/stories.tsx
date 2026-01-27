@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkPageIndicator from '../../packages/bpk-component-page-indicator/src/BpkPageIndicator';
-
 import {
   DefaultExample,
   ThreePagesExample,
@@ -26,6 +24,9 @@ import {
   VisualTestExample,
   WithNavOverImageSpacedExample,
 } from './examples';
+
+import BpkPageIndicator from '@backpack/bpk-component-page-indicator';
+
 
 export default {
   title: 'bpk-component-page-indicator',

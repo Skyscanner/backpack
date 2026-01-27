@@ -20,7 +20,6 @@ import { useEffect, useRef, useState } from 'react';
 
 import clamp from 'lodash/clamp';
 
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkPriceMarker from './BpkPriceMarker';
@@ -29,6 +28,8 @@ import { MARKER_TYPES } from './common-types';
 import type { MarkerType } from './common-types';
 
 import STYLES from './BpkPriceRange.module.scss';
+
+import BpkText, { TEXT_STYLES } from '@backpack/bpk-component-text';
 
 const getClassName = cssModules(STYLES);
 

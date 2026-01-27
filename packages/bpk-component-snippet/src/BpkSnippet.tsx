@@ -24,10 +24,11 @@ import BpkImage, {
   BORDER_RADIUS_STYLES,
   withLazyLoading,
 } from '../../bpk-component-image';
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkSnippet.module.scss';
+
+import BpkText, { TEXT_STYLES } from '@backpack/bpk-component-text';
 
 const getClassName = cssModules(STYLES);
 

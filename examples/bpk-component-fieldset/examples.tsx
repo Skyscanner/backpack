@@ -24,7 +24,6 @@ import BpkAutosuggest, {
   // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from '../../packages/bpk-component-autosuggest';
 import BpkButton from '../../packages/bpk-component-button';
-import { format } from '../../packages/bpk-component-calendar/src/date-utils';
 import {
   weekDays,
   formatMonth,
@@ -46,6 +45,8 @@ import { cssModules } from '../../packages/bpk-react-utils';
 import { action } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
+
+import { format } from '@backpack/bpk-component-calendar';
 
 const getClassName = cssModules(STYLES);
 
