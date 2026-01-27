@@ -26,20 +26,21 @@
 
 **Purpose**: Prepare workspace and establish baseline metrics before Nx installation
 
-- [ ] T001 Create spike branch `spike/nx-integration-test` for experimentation
-- [ ] T002 [P] Measure baseline performance metrics
+- [x] T001 Create spike branch `spike/nx-integration-test` for experimentation
+- [x] T002 [P] Measure baseline performance metrics
   - Full build time: `time npm run build`
   - Test execution time: `time npm test`
   - Lint time: `time npm run lint`
   - Document results in `docs/nx-migration/baseline-metrics.md`
-- [ ] T003 [P] Document current package structure in `docs/nx-migration/pre-migration-snapshot.md`
+- [x] T003 [P] Document current package structure in `docs/nx-migration/pre-migration-snapshot.md`
   - List all 96 packages
   - Document special cases (bpk-stylesheets, bpk-mixins, shared package.json)
   - Record current npm scripts
-- [ ] T004 Install Nx dependencies: `npm install -D nx@latest @nx/workspace@latest`
-- [ ] T005 Initialize Nx workspace: `npx nx init` (choose integrated monorepo mode)
-- [ ] T006 Add explicit npm workspaces to root `package.json`
-  - Add `"workspaces": ["packages/*"]` field
+- [x] T004 Install Nx dependencies: `npm install -D nx@latest @nx/workspace@latest`
+- [x] T005 Initialize Nx workspace: `npx nx init` (choose integrated monorepo mode)
+- [x] T006 Add explicit npm workspaces to root `package.json` - **SKIPPED: Not needed, Backpack uses implicit workspaces like banana/global-components**
+  - ~~Add `"workspaces": ["packages/*"]` field~~
+  - Current approach: `postinstall: "(cd packages && npm install)"` works with Nx
 
 **Checkpoint**: Nx installed, baseline established - ready for single package test
 

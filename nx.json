@@ -1,0 +1,52 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "defaultProject": "backpack-web",
+  "targetDefaults": {
+    "build": {
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/**/*",
+        "!{projectRoot}/**/*.test.{ts,tsx,js,jsx}",
+        "!{projectRoot}/**/*.md",
+        "!{projectRoot}/**/.*",
+        "{workspaceRoot}/babel.config.js",
+        "{workspaceRoot}/tsconfig.json"
+      ],
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "test": {
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/**/*",
+        "{workspaceRoot}/jest.config.js",
+        "{workspaceRoot}/babel.config.js"
+      ]
+    },
+    "lint": {
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/**/*.{ts,tsx,js,jsx}",
+        "{workspaceRoot}/.eslintrc.js",
+        "{workspaceRoot}/.stylelintrc.json"
+      ]
+    }
+  },
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*"],
+    "production": [
+      "!{projectRoot}/**/*.test.{ts,tsx,js,jsx}",
+      "!{projectRoot}/**/*.spec.{ts,tsx,js,jsx}",
+      "!{projectRoot}/**/jest.config.{js,ts}",
+      "!{projectRoot}/**/*.md"
+    ]
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "test", "lint"],
+        "parallel": 3
+      }
+    }
+  }
+}
