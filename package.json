@@ -83,6 +83,7 @@
       }
     },
     "moduleNameMapper": {
+      "^@backpack/(.*)$": "<rootDir>/packages/$1",
       "^.+\\.scss$": "<rootDir>/scripts/stubs/styleStub.js",
       "^.+\\.(svg|png)$": "<rootDir>/scripts/stubs/fileStub.js",
       "react-transition-group/CSSTransition": "<rootDir>/scripts/stubs/cssTransitionStub.js",

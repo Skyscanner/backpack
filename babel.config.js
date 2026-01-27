@@ -48,6 +48,7 @@ module.exports = {
           {
             root: ['./packages'],
             alias: {
+              '@backpack': './packages',
               '^@skyscanner/bpk-svgs/dist/js/(.+)': (stats) =>
                 `@skyscanner/bpk-svgs/dist/svgs/${stats[1]}.svg`,
             },
@@ -83,7 +84,18 @@ module.exports = {
         '@babel/preset-typescript',
       ],
       // Prevent errors from require.context not existing when running Storyshots.
-      plugins: ['require-context-hook'],
+      plugins: [
+        [
+          'module-resolver',
+          {
+            root: ['./packages'],
+            alias: {
+              '@backpack': './packages',
+            },
+          },
+        ],
+        'require-context-hook',
+      ],
     },
   },
 };
