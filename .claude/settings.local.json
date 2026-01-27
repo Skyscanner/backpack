@@ -9,7 +9,9 @@
       "Bash(npx storybook:*)",
       "Bash(npm run check-bpk-dependencies:*)",
       "Bash(npm run typecheck:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(node -c:*)",
+      "Bash(node -e:*)"
     ]
   }
 }
