@@ -2,7 +2,8 @@ name: PR
 
 on:
   pull_request:
-    branches: [main]
+    # Allow PRs to any branch (including feature branches like WOODPECKER-4039)
+    branches: ['**']
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
