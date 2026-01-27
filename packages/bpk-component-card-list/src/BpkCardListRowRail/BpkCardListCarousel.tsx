@@ -73,6 +73,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
   const hasBeenVisibleRef = useRef<Set<number>>(new Set());
   const firstCardWidthRef = useRef<number | null>(null);
+  const firstCardHeightRef = useRef<number | null>(null);
 
   const [visibilityList, setVisibilityList] = useState<number[]>(
     Array(childrenLength).fill(0),
@@ -141,11 +142,13 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           cardRefs.current[i] = el;
           observerVisibility(el, i);
           setA11yTabIndex(el, i, visibilityList);
-
-          // Record the first card's width when it becomes visible
+          // record the first card's width and height when it becomes visible
           if (el && visibilityList[i] === 0) {
             if (firstCardWidthRef.current == null && el.offsetWidth) {
               firstCardWidthRef.current = el.offsetWidth;
+            }
+            if (firstCardHeightRef.current == null && el.offsetHeight) {
+              firstCardHeightRef.current = el.offsetHeight;
             }
           }
         }),
@@ -154,6 +157,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       observerVisibility,
       visibilityList,
       firstCardWidthRef,
+      firstCardHeightRef,
     ],
   );
 
@@ -204,7 +208,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   useEffect(() => {
     const handleResize = throttle(() => {
       firstCardWidthRef.current = null;
-      // maxCardHeightRef.current = null;
+      firstCardHeightRef.current = null;
       forceUpdate((n) => n + 1);
     }, 200);
 
@@ -229,6 +233,9 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         const cardDimensionStyle: CSSProperties = {};
         if (firstCardWidthRef.current) {
           cardDimensionStyle.width = `${firstCardWidthRef.current}px`;
+        }
+        if (firstCardHeightRef.current) {
+          cardDimensionStyle.height = `${firstCardHeightRef.current}px`;
         }
 
         const commonProps = {
