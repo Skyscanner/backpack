@@ -6,6 +6,10 @@ on:
 
 permissions: {}
 
+env:
+  # Prevent NX plugin timeouts during migration
+  NX_PLUGIN_NO_TIMEOUTS: true
+
 jobs:
   label-check:
     runs-on: ubuntu-latest

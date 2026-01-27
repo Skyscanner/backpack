@@ -14,6 +14,8 @@ env:
   CACHE_NAME: node-modules-cache
   BUILD_CACHE_NAME: build-cache
   BUILD_LOGS: log-artifacts-build
+  # Prevent NX plugin timeouts during migration
+  NX_PLUGIN_NO_TIMEOUTS: true
 
 jobs:
   Build:
@@ -26,6 +28,8 @@ jobs:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           persist-credentials: false
+          # Fetch all git history for NX affected commands
+          fetch-depth: 0
 
       - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
@@ -77,6 +81,8 @@ jobs:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           persist-credentials: false
+          # Fetch all git history for NX affected commands
+          fetch-depth: 0
 
       - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
@@ -126,6 +132,8 @@ jobs:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           persist-credentials: false
+          # Fetch all git history for NX affected commands
+          fetch-depth: 0
 
       - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
