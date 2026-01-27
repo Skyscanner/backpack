@@ -5,15 +5,13 @@ Complete documentation for the Nx migration project.
 ## Quick Start
 
 **New to Nx?** Start here:
-1. [Getting Started](guides/getting-started.md) - 5 minute quick start
+1. [User Guide - Quick Start](guides/user-guide.md#quick-start) - 5 minute setup
 2. [Quick Reference](guides/quick-reference.md) - Command cheat sheet
-3. [User Guide](guides/user-guide.md) - Complete usage guide
 
 ## Documentation
 
 ### 📚 Guides
-- **[Getting Started](guides/getting-started.md)** - Quick start guide
-- **[User Guide](guides/user-guide.md)** - Complete Nx usage guide
+- **[User Guide](guides/user-guide.md)** - Complete Nx usage guide (includes Quick Start)
 - **[Quick Reference](guides/quick-reference.md)** - Command cheat sheet
 - **[CI/CD Guide](guides/cicd-guide.md)** - Using Nx in GitHub Actions
 - **[Troubleshooting](guides/troubleshooting.md)** - Common issues and solutions
@@ -25,7 +23,6 @@ Complete documentation for the Nx migration project.
 ### 📁 Archive
 - **[Migration Report](archive/migration-report.md)** - Complete project summary
 - **[Milestone Reports](archive/milestones/)** - M1-M4 detailed reports
-- **[Historical Docs](archive/)** - Implementation notes and snapshots
 
 ---
 
