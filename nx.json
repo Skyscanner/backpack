@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "plugins": [
+    {
+      "plugin": "@nx/js/typescript",
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        }
+      }
+    }
+  ],
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "production": [
+      "default",
+      "!{projectRoot}/**/*.test.tsx",
+      "!{projectRoot}/**/*-test.tsx",
+      "!{projectRoot}/**/*.stories.tsx",
+      "!{projectRoot}/**/*.figma.tsx"
+    ],
+    "sharedGlobals": []
+  },
+  "targetDefaults": {}
+}

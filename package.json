@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "license": "Apache-2.0",
   "private": true,
+  "workspaces": [
+    "packages"
+  ],
   "engines": {
     "node": ">=18.20.4",
     "npm": ">=10.7.0"
@@ -26,7 +29,7 @@
     "check-pristine": "node scripts/check-pristine-state",
     "clean": "npm run clean:dist && npm run clean:node_modules",
     "clean:dist": "rm -rf dist",
-    "clean:node_modules": "rm -rf packages/node_modules && rm -rf node_modules",
+    "clean:node_modules": "rm -rf node_modules",
     "danger": "danger ci",
     "fix-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js --fix",
     "upgrade-foundations": "node scripts/npm/check-bpk-dependencies.js --fix --upgrade-foundations",
@@ -40,7 +43,6 @@
     "lint:scss": "stylelint 'packages/**/*.scss'",
     "lint:scss:fix": "stylelint 'packages/**/*.scss' --fix",
     "lint-staged": "lint-staged",
-    "postinstall": "(cd packages && npm install)",
     "prettier": "prettier --config .prettierrc --write \"**/*.(js|ts|tsx)\"",
     "start": "npm run build && npm run storybook",
     "storybook": "storybook dev -p 9001",
@@ -107,6 +109,8 @@
     "Samsung >= 26"
   ],
   "devDependencies": {
+    "@nx/js": "22.4.0-beta.4",
+    "nx": "22.4.0-beta.4",
     "@babel/cli": "^7.28.3",
     "@babel/core": "^7.28.3",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
