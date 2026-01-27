@@ -57,6 +57,30 @@
           "projects": "dependencies"
         }
       ]
+    },
+    "storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "storybook dev -p 9001",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "storybook:build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "storybook build -c .storybook -o dist-storybook",
+        "cwd": "{workspaceRoot}"
+      },
+      "outputs": ["{workspaceRoot}/dist-storybook"],
+      "cache": true
+    },
+    "percy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "percy storybook ./dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'",
+        "cwd": "{workspaceRoot}"
+      },
+      "dependsOn": ["storybook:build"]
     }
   },
   "tags": ["type:workspace", "scope:backpack"]

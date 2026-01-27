@@ -51,7 +51,7 @@
       "runner": "nx/tasks-runners/default",
       "options": {
         "cacheableOperations": ["build", "test", "lint", "stylelint"],
-        "parallel": 3
+        "parallel": 4
       }
     }
   }
