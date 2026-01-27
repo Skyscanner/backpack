@@ -27,6 +27,7 @@ import BpkSelectableChip, {
 } from '../../bpk-component-chip';
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
+import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkStickyChip from './BpkStickyChip';
@@ -155,7 +156,9 @@ const ChipGroupContent = ({
     className={chipGroupClassNames}
     role={ariaMultiselectable ? 'group' : 'radiogroup'}
   >
-    {ariaLabel && <legend className="visually-hidden">{ariaLabel}</legend>}
+    {ariaLabel && (
+      <BpkVisuallyHidden as="legend">{ariaLabel}</BpkVisuallyHidden>
+    )}
     {label && (
       <BpkText textStyle={TEXT_STYLES.footnote} aria-hidden>
         {label}
