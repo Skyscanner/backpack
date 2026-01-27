@@ -154,7 +154,7 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly c
                     </svg>
                   </span>
                   <span
-                    class="visually-hidden"
+                    class="bpk-visually-hidden"
                   >
                     View more
                   </span>
@@ -253,7 +253,7 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly e
                     </svg>
                   </span>
                   <span
-                    class="visually-hidden"
+                    class="bpk-visually-hidden"
                   >
                     View more
                   </span>
