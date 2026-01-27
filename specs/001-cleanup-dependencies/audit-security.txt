@@ -1,0 +1,121 @@
+# npm audit report
+
+got  <11.8.5
+Severity: moderate
+Got allows a redirect to a UNIX socket - https://github.com/advisories/GHSA-pfrx-2q88-qq97
+fix available via `npm audit fix --force`
+Will install sassdoc@1.10.12, which is a breaking change
+node_modules/package-json/node_modules/got
+  package-json  <=6.5.0
+  Depends on vulnerable versions of got
+  node_modules/package-json
+    latest-version  0.2.0 - 5.1.0
+    Depends on vulnerable versions of package-json
+    node_modules/latest-version
+      update-notifier  0.2.0 - 5.1.0
+      Depends on vulnerable versions of latest-version
+      node_modules/update-notifier
+        sassdoc  >=1.0.1
+        Depends on vulnerable versions of sass-convert
+        Depends on vulnerable versions of sassdoc-theme-default
+        Depends on vulnerable versions of update-notifier
+        node_modules/sassdoc
+
+html-minifier  *
+Severity: high
+kangax html-minifier REDoS vulnerability - https://github.com/advisories/GHSA-pfq8-rq6v-vf5m
+fix available via `npm audit fix --force`
+Will install sassdoc@1.10.12, which is a breaking change
+node_modules/html-minifier
+  sassdoc-theme-default  >=1.7.0
+  Depends on vulnerable versions of html-minifier
+  Depends on vulnerable versions of sassdoc-extras
+  node_modules/sassdoc-theme-default
+
+lodash  4.0.0 - 4.17.21
+Severity: moderate
+Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions - https://github.com/advisories/GHSA-xxjr-mmjv-4gpg
+fix available via `npm audit fix`
+node_modules/lodash
+
+marked  <=4.0.9
+Severity: high
+Regular Expression Denial of Service in marked - https://github.com/advisories/GHSA-ch52-vgq2-943f
+Inefficient Regular Expression Complexity in marked - https://github.com/advisories/GHSA-rrrm-qjm4-v8hf
+Inefficient Regular Expression Complexity in marked - https://github.com/advisories/GHSA-5v2h-r2cx-5xgj
+fix available via `npm audit fix --force`
+Will install sassdoc@1.10.12, which is a breaking change
+node_modules/marked
+  sassdoc-extras  *
+  Depends on vulnerable versions of marked
+  node_modules/sassdoc-extras
+
+micromatch  <4.0.8
+Severity: moderate
+Regular Expression Denial of Service (ReDoS) in micromatch - https://github.com/advisories/GHSA-952p-6rrq-rcjv
+fix available via `npm audit fix --force`
+Will install ts-migrate@0.0.0, which is a breaking change
+node_modules/jscodeshift/node_modules/micromatch
+node_modules/ts-migrate-plugins/node_modules/micromatch
+  jscodeshift  0.3.20 - 0.13.1
+  Depends on vulnerable versions of micromatch
+  node_modules/jscodeshift
+  node_modules/ts-migrate-plugins/node_modules/jscodeshift
+    json5-writer  *
+    Depends on vulnerable versions of jscodeshift
+    node_modules/json5-writer
+    ts-migrate-plugins  *
+    Depends on vulnerable versions of jscodeshift
+    node_modules/ts-migrate-plugins
+      ts-migrate  >=0.0.3
+      Depends on vulnerable versions of json5-writer
+      Depends on vulnerable versions of ts-migrate-plugins
+      node_modules/ts-migrate
+
+nth-check  <2.0.1
+Severity: high
+Inefficient Regular Expression Complexity in nth-check - https://github.com/advisories/GHSA-rp65-9cf3-cjxr
+fix available via `npm audit fix --force`
+Will install react-svg-loader@3.0.0, which is a breaking change
+node_modules/react-svg-core/node_modules/nth-check
+  css-select  <=3.1.0
+  Depends on vulnerable versions of nth-check
+  node_modules/react-svg-core/node_modules/css-select
+    svgo  1.0.0 - 1.3.2
+    Depends on vulnerable versions of css-select
+    node_modules/react-svg-core/node_modules/svgo
+      react-svg-core  >=2.1.1-alpha.36
+      Depends on vulnerable versions of svgo
+      node_modules/react-svg-core
+        react-svg-loader  >=3.0.1
+        Depends on vulnerable versions of react-svg-core
+        node_modules/react-svg-loader
+
+
+semver-regex  <=3.1.3
+Severity: high
+semver-regex Regular Expression Denial of Service (ReDOS) - https://github.com/advisories/GHSA-44c6-4v22-4mhx
+Regular expression denial of service in semver-regex - https://github.com/advisories/GHSA-4x5v-gmq8-25ch
+fix available via `npm audit fix`
+node_modules/semver-regex
+  sass-convert  *
+  Depends on vulnerable versions of semver-regex
+  node_modules/sass-convert
+
+undici  <6.23.0
+Severity: moderate
+Undici has an unbounded decompression chain in HTTP responses on Node.js Fetch API via Content-Encoding leads to resource exhaustion - https://github.com/advisories/GHSA-g9mf-h72j-4rw9
+fix available via `npm audit fix --force`
+Will install @figma/code-connect@1.2.0, which is a breaking change
+node_modules/undici
+  @figma/code-connect  >=1.2.1
+  Depends on vulnerable versions of undici
+  node_modules/@figma/code-connect
+
+24 vulnerabilities (12 moderate, 12 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force

@@ -16,12 +16,13 @@
  * limitations under the License.
  */
 
+// SSR stub - IntersectionObserver doesn't exist on server
 if (typeof window === 'undefined') {
   global.IntersectionObserver = class {
-    observe() {}  
+    observe() {}
 
-    unobserve() {}  
+    unobserve() {}
   };
-} else {
-  require('intersection-observer'); /* eslint-disable-line global-require */
 }
+// Browser: IntersectionObserver is natively supported in all target browsers
+// Chrome 109+, Edge 129+, Firefox 131+, Safari 15+, Samsung 26+

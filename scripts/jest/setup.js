@@ -23,6 +23,18 @@ import { TextEncoder } from 'util';
 
 import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
 
+// Mock IntersectionObserver for jsdom (used by bpk-component-infinite-scroll)
+// Native IntersectionObserver is supported in all target browsers but jsdom doesn't provide it
+class MockIntersectionObserver {
+  constructor(callback) {
+    this.callback = callback;
+  }
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+global.IntersectionObserver = MockIntersectionObserver;
+
 // The below is a workaround to the problem were calling resetModules causes react to be required twice.
 // further details can be found here: https://github.com/jestjs/jest/issues/8987#issuecomment-584898030
 let mockActualReact;
