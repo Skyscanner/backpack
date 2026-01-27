@@ -1,0 +1,202 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/typography';
+
+$text-colors: (
+  'text-disabled': tokens.$bpk-text-disabled-day,
+  'text-disabled-on-dark': tokens.$bpk-text-disabled-on-dark-day,
+  'text-error': tokens.$bpk-text-error-day,
+  'text-hero': tokens.$bpk-text-hero-day,
+  'text-link': tokens.$bpk-text-link-day,
+  'text-on-dark': tokens.$bpk-text-on-dark-day,
+  'text-on-light': tokens.$bpk-text-on-light-day,
+  'text-primary': tokens.$bpk-text-primary-day,
+  'text-primary-inverse': tokens.$bpk-text-primary-inverse-day,
+  'text-secondary': tokens.$bpk-text-secondary-day,
+  'text-success': tokens.$bpk-text-success-day,
+);
+
+.bpk-text {
+  @include typography.bpk-text;
+
+  // Wrapper class applied when icons are present
+  &--with-icons {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  // Common icon styles
+  &__leading-icon,
+  &__trailing-icon {
+    display: inline-flex;
+    fill: currentcolor;
+  }
+
+  // Leading icon spacing
+  &__leading-icon {
+    margin-inline-end: tokens.bpk-spacing-md(); // 0.5rem
+  }
+
+  // Trailing icon spacing
+  &__trailing-icon {
+    margin-inline-start: tokens.bpk-spacing-md(); // 0.5rem
+  }
+
+  // Icon-only mode (no text content)
+  &--icon-only {
+    .bpk-text__leading-icon {
+      margin-inline-end: 0;
+    }
+
+    .bpk-text__trailing-icon {
+      margin-inline-start: 0;
+    }
+  }
+
+  &--xs {
+    @include typography.bpk-text--xs;
+  }
+
+  &--sm {
+    @include typography.bpk-text--sm;
+  }
+
+  &--base {
+    @include typography.bpk-text--base;
+  }
+
+  &--lg {
+    @include typography.bpk-text--lg;
+  }
+
+  &--xl {
+    @include typography.bpk-text--xl;
+  }
+
+  &--xxl {
+    @include typography.bpk-text--xxl;
+  }
+
+  &--xxxl {
+    @include typography.bpk-text--xxxl;
+  }
+
+  &--xxxxl {
+    @include typography.bpk-text--xxxxl;
+  }
+
+  &--xxxxxl {
+    @include typography.bpk-text--xxxxxl;
+  }
+
+  &--caption {
+    @include typography.bpk-caption;
+  }
+
+  &--footnote {
+    @include typography.bpk-footnote;
+  }
+
+  &--label-1 {
+    @include typography.bpk-label-1;
+  }
+
+  &--label-2 {
+    @include typography.bpk-label-2;
+  }
+
+  &--label-3 {
+    @include typography.bpk-label-3;
+  }
+
+  &--body-default {
+    @include typography.bpk-body-default;
+  }
+
+  &--body-longform {
+    @include typography.bpk-body-longform;
+  }
+
+  &--subheading {
+    @include typography.bpk-subheading;
+  }
+
+  &--heading-1 {
+    @include typography.bpk-heading-1;
+  }
+
+  &--heading-2 {
+    @include typography.bpk-heading-2;
+  }
+
+  &--heading-3 {
+    @include typography.bpk-heading-3;
+  }
+
+  &--heading-4 {
+    @include typography.bpk-heading-4;
+  }
+
+  &--heading-5 {
+    @include typography.bpk-heading-5;
+  }
+
+  &--hero-1 {
+    @include typography.bpk-hero-1;
+  }
+
+  &--hero-2 {
+    @include typography.bpk-hero-2;
+  }
+
+  &--hero-3 {
+    @include typography.bpk-hero-3;
+  }
+
+  &--hero-4 {
+    @include typography.bpk-hero-4;
+  }
+
+  &--hero-5 {
+    @include typography.bpk-hero-5;
+  }
+
+  &--hero-6 {
+    @include typography.bpk-hero-6;
+  }
+
+  &--editorial-1 {
+    @include typography.bpk-editorial-1;
+  }
+
+  &--editorial-2 {
+    @include typography.bpk-editorial-2;
+  }
+
+  &--editorial-3 {
+    @include typography.bpk-editorial-3;
+  }
+
+  @each $color-name, $color-value in $text-colors {
+    &.bpk-text--#{$color-name} {
+      color: $color-value;
+    }
+  }
+}
