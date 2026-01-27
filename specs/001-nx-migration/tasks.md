@@ -128,19 +128,19 @@
 
 ### M1 Phase 5: Documentation
 
-- [ ] T024 [P] [M1] Create `docs/nx-migration/getting-started.md`
+- [x] T024 [P] [M1] Create `docs/nx-migration/getting-started.md`
   - What is Nx and why we're using it
   - New commands vs old npm scripts
   - How to use Nx cache
   - Common tasks
-- [ ] T025 [P] [M1] Create `docs/nx-migration/nx-commands.md` with command reference
-- [ ] T026 [P] [M1] Create `docs/nx-migration/milestone-1-report.md`
+- [x] T025 [P] [M1] Create `docs/nx-migration/nx-commands.md` with command reference
+- [x] T026 [P] [M1] Create `docs/nx-migration/milestone-1-report.md`
   - Performance metrics (before/after)
   - Issues encountered and solutions
   - Lessons learned
-- [ ] T027 [M1] Update root README.md with Nx section
+- [x] T027 [M1] Update root README.md with Nx section
 
-**Checkpoint M1**: All 96 packages building with Nx, caching working, documentation complete
+**Checkpoint M1**: All 91 packages building with Nx, caching working, documentation complete ✅
 
 ---
 
