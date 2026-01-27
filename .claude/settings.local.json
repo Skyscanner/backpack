@@ -13,7 +13,10 @@
       "Bash(node -c:*)",
       "Bash(node -e:*)",
       "Bash(npx eslint:*)",
-      "Bash(npm run check-react-versions:*)"
+      "Bash(npm run check-react-versions:*)",
+      "Bash(npm run build:copy-normal_css:*)",
+      "Bash(npm:*)",
+      "Bash(node --version:*)"
     ]
   }
 }

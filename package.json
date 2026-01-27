@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "license": "Apache-2.0",
   "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "engines": {
     "node": ">=18.20.4",
     "npm": ">=10.7.0"
