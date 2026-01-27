@@ -1,4 +1,4 @@
-# M8: Vite Adoption
+# M9: Vite Adoption
 
 **Priority**: P4
 **Est. Effort**: Medium

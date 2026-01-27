@@ -34,5 +34,5 @@
 - Spec is ready for `/speckit.clarify` or `/speckit.plan`
 - Open questions (Q1-Q3) are planning/timeline questions, not spec clarifications
 - Blockers are documented for investigation during implementation
-- All 9 milestones have verification criteria to ensure non-breaking deployments
-- **Updated 2026-01-27**: Removed `nx release` milestone (M7) per user request - existing release process will be preserved
+- All 10 milestones have verification criteria to ensure non-breaking deployments
+- **Updated 2026-01-27**: Added back `nx release` as M7 (Optional) per user request

@@ -1,11 +1,11 @@
-# M9: Vitest Adoption
+# M10: Vitest Adoption
 
 **Priority**: P4
 **Est. Effort**: Low
 **Complexity**: Small
 **Status**: ⚠️ OPTIONAL - Future Stage
 
-> **Note**: This milestone is optional and recommended for a future stage. It should be done after M8 (Vite Adoption) as Vitest is designed to work with Vite.
+> **Note**: This milestone is optional and recommended for a future stage. It should be done after M9 (Vite Adoption) as Vitest is designed to work with Vite.
 
 ## Overview
 
@@ -44,11 +44,11 @@ Without Vitest adoption:
 
 This milestone is marked optional because:
 - Jest works well currently
-- Requires M8 (Vite) first
+- Requires M9 (Vite) first
 - Marginal improvement for effort required
 - Can be deferred indefinitely
 
-### Dependency on M8
+### Dependency on M9
 
 Vitest is designed to work with Vite. While it can work standalone, the primary benefit comes from sharing configuration:
 
@@ -189,7 +189,7 @@ If issues arise:
 
 ## Dependencies
 
-- M8: Vite Adoption (Vitest should share Vite config)
+- M9: Vite Adoption (Vitest should share Vite config)
 
 ## Blocks
 

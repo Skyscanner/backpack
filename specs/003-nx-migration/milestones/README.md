@@ -12,9 +12,10 @@ This folder contains detailed specifications for each migration milestone.
 | [M4](./M4-components-as-projects.md) | Components as Nx Projects | P2 | Required | Very Low |
 | [M5](./M5-static-checks.md) | Static Checks via Nx | P2 | Required | Low |
 | [M6](./M6-module-boundaries.md) | Module Boundaries | P3 | Required | Low |
-| [M7](./M7-dependency-management.md) | Dependency Management | P3 | ⚠️ Optional | Medium |
-| [M8](./M8-vite-adoption.md) | Vite Adoption | P4 | ⚠️ Optional (Future) | Medium |
-| [M9](./M9-vitest-adoption.md) | Vitest Adoption | P4 | ⚠️ Optional (Future) | Low |
+| [M7](./M7-nx-release.md) | Publishing with Nx | P3 | ⚠️ Optional | Medium |
+| [M8](./M8-dependency-management.md) | Dependency Management | P3 | ⚠️ Optional | Medium |
+| [M9](./M9-vite-adoption.md) | Vite Adoption | P4 | ⚠️ Optional (Future) | Medium |
+| [M10](./M10-vitest-adoption.md) | Vitest Adoption | P4 | ⚠️ Optional (Future) | Low |
 
 ## Dependency Graph
 
@@ -34,11 +35,13 @@ M1: Nx Initialization
                        │
                        ├──▶ M6: Module Boundaries
                        │
-                       ├──▶ M7: Dependency Management (Optional)
+                       ├──▶ M7: Publishing with Nx (Optional)
                        │
-                       └──▶ M8: Vite Adoption (Optional)
+                       ├──▶ M8: Dependency Management (Optional)
+                       │
+                       └──▶ M9: Vite Adoption (Optional)
                                   │
-                                  └──▶ M9: Vitest Adoption (Optional)
+                                  └──▶ M10: Vitest Adoption (Optional)
 ```
 
 ## Milestone Categories
@@ -52,13 +55,14 @@ These milestones deliver the primary value of Nx adoption:
 
 **Estimated effort**: 8-10 weeks
 
-### ⚡ Optional Enhancements (M7-M9)
+### ⚡ Optional Enhancements (M7-M10)
 
 These milestones provide additional benefits but can be deferred:
-- Production Standard compliance for dependencies
-- Vite/Vitest for improved DX
+- `nx release` for automated versioning/publishing (M7)
+- Production Standard compliance for dependencies (M8)
+- Vite/Vitest for improved DX (M9-M10)
 
-**Estimated effort**: 6-8 additional weeks
+**Estimated effort**: 10-14 additional weeks
 
 ## Quick Reference
 
@@ -73,13 +77,14 @@ These milestones provide additional benefits but can be deferred:
 | M5 | Do tasks run via Nx? | `nx affected --target=test` works |
 | M6 | Are boundaries enforced? | Invalid import fails lint |
 
-### Optional Milestones (M7-M9)
+### Optional Milestones (M7-M10)
 
 | Milestone | Key Question | When to Do |
 |-----------|--------------|------------|
-| M7 | Need per-package deps? | Production Standard audit requires it |
-| M8 | Want faster builds? | Developer feedback requests it |
-| M9 | Want faster tests? | After M8 is complete |
+| M7 | Want automated releases? | Production Standard requires it |
+| M8 | Need per-package deps? | Production Standard audit requires it |
+| M9 | Want faster builds? | Developer feedback requests it |
+| M10 | Want faster tests? | After M9 is complete |
 
 ## Reading Each Milestone
 
