@@ -569,7 +569,7 @@ exports[`BpkInfoBannerInner should render correctly with a element based message
                     </svg>
                   </span>
                   <span
-                    class="visually-hidden"
+                    class="bpk-visually-hidden"
                   >
                     View more
                   </span>
@@ -813,7 +813,7 @@ exports[`BpkInfoBannerInner should render correctly with child nodes 1`] = `
                     </svg>
                   </span>
                   <span
-                    class="visually-hidden"
+                    class="bpk-visually-hidden"
                   >
                     View more
                   </span>
