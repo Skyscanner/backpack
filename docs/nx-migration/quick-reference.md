@@ -1,135 +1,146 @@
 # Nx Quick Reference
 
-Quick reference for common Nx commands in Backpack.
+Quick command reference for daily Nx usage in Backpack.
 
-## Build Commands
+## Essential Commands
+
+### Building
 
 ```bash
 # Build single package
 npx nx build bpk-component-button
 
+# Build specific packages
+npx nx run-many --target=build --projects=bpk-component-button,bpk-component-card
+
 # Build all packages
 npx nx run-many --target=build --all
 
-# Build only affected packages
+# Build only changed packages
 npx nx affected --target=build
 
-# Build with parallel execution
+# Build with parallelization (faster)
 npx nx run-many --target=build --all --parallel=4
+
+# Force rebuild (skip cache)
+npx nx build bpk-component-button --skip-nx-cache
 ```
 
-## Test Commands
+### Testing
 
 ```bash
 # Test single package
 npx nx test bpk-component-button
 
-# Test all packages
-npx nx run-many --target=test --all
-
-# Test only affected packages
-npx nx affected --target=test
-
-# Skip cache
-npx nx test bpk-component-button --skip-nx-cache
-```
-
-## Lint Commands
-
-```bash
-# Lint single package (ESLint)
+# Lint single package
 npx nx lint bpk-component-button
-
-# Stylelint single package
 npx nx stylelint bpk-component-button
 
-# Lint all packages (ESLint + Stylelint)
-npx nx run-many --targets=lint,stylelint --all
+# Test all types for one package
+npx nx run-many --targets=test,lint,stylelint --projects=bpk-component-button
 
-# Lint only affected
-npx nx affected --targets=lint,stylelint
+# Test affected packages
+npx nx affected --targets=lint,stylelint,test
+
+# Test all packages
+npm test  # Traditional way
+npx nx run-many --targets=lint,stylelint,test --all --parallel=4  # Nx way
 ```
 
-## Storybook Commands
+### Storybook
 
 ```bash
 # Start Storybook dev server
 npx nx storybook
-# or
-npm run dev
+npm run storybook  # Traditional way
 
-# Build Storybook
+# Build Storybook (with caching)
 npx nx storybook:build
-# or
-npm run dev:build
 
 # Run Percy visual tests
 npx nx percy
 ```
 
-## Affected Commands
+### Dependency Graph
 
 ```bash
-# Show what's affected
-npx nx print-affected
+# View all projects
+npx nx show projects
 
-# Run multiple targets on affected
-npx nx affected --targets=lint,test,build
-
-# Specify base branch
-npx nx affected --target=test --base=origin/main
-
-# View affected dependency graph
-npx nx affected:graph
-```
-
-## Cache Management
-
-```bash
-# Clear all cache
-npx nx reset
-
-# Skip cache for specific run
-npx nx build bpk-component-button --skip-nx-cache
-
-# View cache statistics
-npx nx show project bpk-component-button
-```
-
-## Dependency Graph
-
-```bash
-# View full dependency graph
+# Interactive dependency graph
 npx nx graph
 
-# Focus on specific package
-npx nx graph --focus=bpk-component-button
+# See affected projects
+npx nx show projects --affected
 
-# View affected graph
+# Affected projects graph
+npx nx affected:graph
+
+# Focus on specific project
+npx nx graph --focus=bpk-component-button
+```
+
+### Cache Management
+
+```bash
+# Clear all Nx cache
+npx nx reset
+
+# View cache directory
+ls .nx/cache
+
+# Check cache size
+du -sh .nx/cache
+
+# Run without using cache (force rebuild)
+npx nx build bpk-component-button --skip-nx-cache
+```
+
+### Affected Detection
+
+```bash
+# See what's affected (default: vs main)
+npx nx show projects --affected
+
+# Specify base branch
+npx nx affected --target=build --base=main
+
+# Affected vs specific commit
+npx nx affected --target=build --base=HEAD~1
+
+# Affected vs tag
+npx nx affected --target=build --base=v1.0.0
+
+# Dry run (see what would run)
+npx nx affected --target=build --dry-run
+
+# See affected graph visually
 npx nx affected:graph
 ```
 
-## Parallel Execution
+### Utilities
 
 ```bash
-# Control parallelism (default: 3)
-npx nx run-many --target=build --all --parallel=5
+# Nx version
+npx nx --version
 
-# Sequential execution
-npx nx run-many --target=build --all --parallel=1
-```
+# Nx report (environment info)
+npx nx report
 
-## Output Styles
+# Daemon status
+npx nx daemon
 
-```bash
-# Default (static summary)
-npx nx run-many --target=test --all
+# View project details
+npx nx show project bpk-component-button
 
-# Stream output in real-time
-npx nx run-many --target=test --all --output-style=stream
+# View project details (web UI)
+npx nx show project bpk-component-button --web
 
-# Stream with project prefixes
-npx nx run-many --target=test --all --output-style=stream-with-prefixes
+# Run command with verbose logging
+npx nx build bpk-component-button --verbose
+
+# Run parallel tasks
+npx nx run-many --target=build --all --parallel=4
 ```
 
 ## Common Workflows
@@ -137,118 +148,254 @@ npx nx run-many --target=test --all --output-style=stream-with-prefixes
 ### Daily Development
 
 ```bash
-# Start development
-npm run dev                              # Storybook dev server
+# 1. Pull latest
+git pull origin main
 
-# Test what you changed
-npx nx affected --target=test            # Only affected tests
+# 2. Install dependencies
+npm install
 
-# Lint before commit
-npx nx affected --targets=lint,stylelint # Only affected linting
+# 3. See your changes
+git status
+
+# 4. Build affected
+npx nx affected --target=build
+
+# 5. Test affected
+npx nx affected --targets=lint,test
+
+# 6. Start Storybook
+npx nx storybook
 ```
 
-### Before Creating PR
+### Before Committing
 
 ```bash
-# See what's affected
-npx nx affected:graph --base=origin/main
+# Build everything
+npx nx run-many --target=build --all
 
-# Run full suite on affected
-npx nx affected --targets=lint,stylelint,test,build --base=origin/main
+# Run all tests
+npm test
 
-# Verify cache works
-npx nx affected --target=test --base=origin/main  # Should hit cache on 2nd run
+# Check what you changed
+git status
+git diff
 ```
 
-### CI/CD
+### Creating a PR
 
 ```bash
-# GitHub Actions example
-npx nx affected --target=lint --base=origin/main --parallel=3
-npx nx affected --target=test --base=origin/main --parallel=3
-npx nx affected --target=build --base=origin/main --parallel=3
+# 1. Create branch
+git checkout -b feature/my-feature
+
+# 2. Make changes
+
+# 3. Test affected
+npx nx affected --targets=lint,test
+
+# 4. Commit
+git add .
+git commit -m "feat: my feature"
+
+# 5. Push
+git push origin feature/my-feature
+
+# CI will automatically use nx affected
 ```
 
-## VSCode Integration
-
-### Recommended Extensions
-
-For the best Nx development experience in VSCode, install these extensions:
-
-```json
-{
-  "recommendations": [
-    "nrwl.angular-console",       // Nx Console - visual task runner
-    "dbaeumer.vscode-eslint",     // ESLint integration
-    "stylelint.vscode-stylelint", // Stylelint integration
-    "esbenp.prettier-vscode"      // Prettier formatting
-  ]
-}
-```
-
-To install:
-1. Open VS Code
-2. Go to Extensions (Cmd+Shift+X)
-3. Search for each extension and install
-
-### VSCode Tasks (Optional)
-
-You can optionally create `.vscode/tasks.json` in your workspace for quick access to Nx commands:
-
-<details>
-<summary>Example tasks.json configuration</summary>
-
-```json
-{
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "Nx: Build All",
-      "type": "shell",
-      "command": "npx nx run-many --target=build --all",
-      "group": "build"
-    },
-    {
-      "label": "Nx: Test Affected",
-      "type": "shell",
-      "command": "npx nx affected --target=test",
-      "group": "test"
-    },
-    {
-      "label": "Nx: Storybook Dev",
-      "type": "shell",
-      "command": "npx nx storybook",
-      "isBackground": true
-    }
-  ]
-}
-```
-
-</details>
-
-Use tasks:
-- `CMD+Shift+P` → "Tasks: Run Task" → Select Nx task
-
-## Troubleshooting
+### Debugging
 
 ```bash
+# 1. Clear cache
+npx nx reset
+
+# 2. Check what's affected
+npx nx show projects --affected
+
+# 3. View dependency graph
+npx nx graph
+
+# 4. Verbose rebuild
+npx nx build bpk-component-button --verbose --skip-nx-cache
+
+# 5. Check project config
+npx nx show project bpk-component-button --web
+```
+
+## CI/CD Commands
+
+### Pull Request
+
+```bash
+# Fetch base branch
+git fetch origin main:main --depth=1
+
+# Build affected
+npx nx affected --target=build --base=origin/main --parallel=4
+
+# Test affected
+npx nx affected --targets=lint,stylelint,test --base=origin/main --parallel=4
+```
+
+### Main Branch
+
+```bash
+# Build all
+npx nx run-many --target=build --all --parallel=4
+
+# Test all
+npm test
+```
+
+### Release
+
+```bash
+# Build all packages
+npm run build
+
+# Build Storybook
+npx nx storybook:build
+
+# Publish
+npm publish
+```
+
+## Flags Reference
+
+### Common Flags
+
+```bash
+--all                  # Run for all projects
+--projects=a,b,c      # Run for specific projects
+--target=build        # Specify target to run
+--targets=lint,test   # Multiple targets
+--parallel=4          # Run 4 tasks in parallel
+--skip-nx-cache       # Force rebuild (ignore cache)
+--verbose             # Show detailed logs
+--dry-run             # Show what would run
+--base=main           # Base ref for affected
+--head=HEAD           # Head ref for affected
+```
+
+### Affected-Specific Flags
+
+```bash
+--base=main                    # Compare to main branch
+--base=origin/main            # Compare to remote main
+--base=HEAD~1                 # Compare to previous commit
+--base=v1.0.0                 # Compare to tag
+--exclude=bpk-component-*     # Exclude projects
+--files=packages/button/**    # Based on specific files
+```
+
+## Configuration Files
+
+```bash
+# Global Nx config
+nx.json
+
+# Per-project Nx config
+packages/*/project.json
+
+# Nx cache
+.nx/cache/
+
+# Nx daemon
+.nx/workspace-data/
+```
+
+## Performance Tips
+
+```bash
+# Use parallel execution (4 is optimal for Backpack)
+npx nx run-many --target=build --all --parallel=4
+
+# Use affected for PRs
+npx nx affected --target=test
+
+# Let cache work
+npx nx build bpk-component-button  # Fast on repeat
+
+# Clear cache only when needed
+npx nx reset  # When having issues
+```
+
+## Troubleshooting Quick Fixes
+
+```bash
+# Nx command not found
+npm install
+
+# Build failed
+npx nx reset
+npx nx build bpk-component-button
+
 # Cache issues
-npx nx reset                             # Clear cache
+npx nx reset
 
-# Dependency graph issues
-npx nx graph                             # Verify connections
+# All packages affected
+git diff main  # Check what changed
 
-# Verbose output
-npx nx build bpk-component-button --verbose
+# Affected not working
+git fetch origin main:main
 
-# Check project configuration
-npx nx show project bpk-component-button
+# Slow performance
+npx nx daemon  # Check daemon
 ```
 
-## Resources
+## Package Scripts Comparison
 
-- **Full Documentation**: `docs/nx-migration/`
-- **Getting Started**: `docs/nx-migration/getting-started.md`
-- **Testing Guide**: `docs/nx-migration/testing-guide.md`
-- **Affected Commands**: `docs/nx-migration/affected-commands.md`
-- **Nx Documentation**: https://nx.dev/
+```bash
+# Before (still works)         # After (with Nx)
+npm run build                  npx nx run-many --target=build --all
+npm test                       npx nx run-many --targets=lint,test --all
+npm run storybook              npx nx storybook
+npm run storybook:dist         npx nx storybook:build
+npm run percy-test             npx nx percy
+```
+
+## Aliases (Optional)
+
+Add to your ~/.bashrc or ~/.zshrc:
+
+```bash
+alias nxb='npx nx build'
+alias nxt='npx nx test'
+alias nxl='npx nx lint'
+alias nxa='npx nx affected'
+alias nxg='npx nx graph'
+alias nxr='npx nx reset'
+```
+
+Usage:
+```bash
+nxb bpk-component-button  # Build package
+nxa --target=test         # Test affected
+nxg                       # View graph
+nxr                       # Reset cache
+```
+
+## Learning Resources
+
+### Internal Docs
+- [User Guide](./user-guide.md) - Complete developer guide
+- [CI/CD Guide](./cicd-guide.md) - CI/CD with Nx
+- [Troubleshooting](./troubleshooting.md) - Common issues
+- [Architecture Decisions](./architecture-decisions.md) - Why we chose Nx
+
+### External Resources
+- [Nx Documentation](https://nx.dev)
+- [Nx CLI Reference](https://nx.dev/nx-api/nx/documents/cli)
+- [Nx Concepts](https://nx.dev/concepts)
+
+## Getting Help
+
+1. Check [Troubleshooting Guide](./troubleshooting.md)
+2. Search [GitHub Issues](https://github.com/Skyscanner/backpack/issues)
+3. Ask in #backpack Slack
+4. Nx office hours (check calendar)
+
+---
+
+**Tip**: Print this page for quick offline reference!
+
+Last updated: 2026-01-27
