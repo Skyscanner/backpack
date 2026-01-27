@@ -170,8 +170,10 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     const container = root;
     if (isMobile || !container) return undefined;
 
+    const lockTimeoutRef = openSetStateLockTimeoutRef;
+
     const lockScrollDuringInteraction = () => {
-      lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef, () =>
+      lockScroll(stateScrollingLockRef, lockTimeoutRef, () =>
         setLockVersion((v) => v + 1),
       );
     };
@@ -181,15 +183,12 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     const handleScroll = () => {
       clearTimeout(scrollEndTimeout);
       scrollEndTimeout = setTimeout(() => {
-        if (stateScrollingLockRef.current) {
-          stateScrollingLockRef.current = false;
+        // Don't manually release the lock here - let RELEASE_LOCK_DELAY handle it
+        // to prevent premature page detection during smooth scrollIntoView animations
+        if (!stateScrollingLockRef.current) {
           setLockVersion((v) => v + 1);
-          if (openSetStateLockTimeoutRef.current) {
-            clearTimeout(openSetStateLockTimeoutRef.current);
-            openSetStateLockTimeoutRef.current = null;
-          }
         }
-      }, 50); // Update 50ms after scrolling stops
+      }, 50); // Trigger page detection 50ms after scrolling stops if unlocked
     };
 
     container.addEventListener('wheel', lockScrollDuringInteraction);
@@ -201,8 +200,9 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       container.removeEventListener('wheel', lockScrollDuringInteraction);
       container.removeEventListener('scroll', handleScroll);
       clearTimeout(scrollEndTimeout);
-      if (openSetStateLockTimeoutRef.current) {
-        clearTimeout(openSetStateLockTimeoutRef.current);
+      const lockTimeout = lockTimeoutRef.current;
+      if (lockTimeout) {
+        clearTimeout(lockTimeout);
       }
     };
   }, [root, isMobile]);
@@ -229,9 +229,18 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     // During programmatic scrolling (button clicks), don't fight with the intended page
     if (stateScrollingLockRef.current) return;
 
-    const firstVisible = visibilityList.indexOf(1);
-    if (firstVisible >= 0) {
-      const newIndex = Math.floor(firstVisible / initiallyShownCards);
+    // Find the first visible page-start card (index % initiallyShownCards === 0)
+    // to ensure we detect the correct page, not intermediate cards
+    let firstVisiblePageStart = -1;
+    for (let i = 0; i < visibilityList.length; i += 1) {
+      if (visibilityList[i] === 1 && i % initiallyShownCards === 0) {
+        firstVisiblePageStart = i;
+        break;
+      }
+    }
+
+    if (firstVisiblePageStart >= 0) {
+      const newIndex = firstVisiblePageStart / initiallyShownCards;
       if (newIndex !== currentIndex) {
         setCurrentIndex(newIndex);
       }
