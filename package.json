@@ -43,8 +43,8 @@
     "postinstall": "(cd packages && npm install)",
     "prettier": "prettier --config .prettierrc --write \"**/*.(js|ts|tsx)\"",
     "start": "npm run build && npm run storybook",
-    "storybook": "storybook dev -p 9001",
-    "storybook:dist": "storybook build -c .storybook -o dist-storybook",
+    "storybook": "nx serve:storybook --port 9001",
+    "storybook:dist": "nx build-storybook --output-dir dist-storybook",
     "sassdoc": "sassdoc {packages/bpk-mixins/**/*,node_modules/@skyscanner/bpk-svgs/dist/*,node_modules/@skyscanner/bpk-foundations-web/tokens/base.default}.scss -d dist-sassdoc -v --strict",
     "test": "npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest",
     "typecheck": "tsc",
@@ -118,6 +118,10 @@
     "@babel/preset-typescript": "^7.28.5",
     "@babel/register": "^7.28.3",
     "@figma/code-connect": "^1.3.4",
+    "@nx/jest": "22.4.2",
+    "@nx/storybook": "22.4.2",
+    "@nx/web": "22.4.2",
+    "@nx/webpack": "22.4.2",
     "@percy/cli": "^1.31.0",
     "@percy/storybook": "^9.1.0",
     "@skyscanner/bpk-foundations-web": "^24.1.0",
@@ -165,6 +169,7 @@
     "lodash": "^4.17.20",
     "mini-css-extract-plugin": "^2.9.0",
     "npm-run-all": "^4.1.5",
+    "nx": "22.4.2",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^8.2.0",
     "prop-types": "^15.7.2",
@@ -181,9 +186,12 @@
     "ts-migrate": "^0.1.35",
     "typescript": "^5.9.2",
     "webpack": "^5.103.0",
+    "webpack-cli": "^5.1.4",
     "wrapper-webpack-plugin": "^2.2.2"
   },
   "overrides": {
     "braces": "3.0.3"
-  }
+  },
+  "nx": {},
+  "dependencies": {}
 }
