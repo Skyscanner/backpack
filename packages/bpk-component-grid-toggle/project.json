@@ -1,0 +1,22 @@
+{
+  "name": "bpk-component-grid-toggle",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-component-grid-toggle/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "babel src --out-dir dist --extensions \".ts,.tsx,.js,.jsx\" --config-file ../../babel.config.js",
+        "cwd": "packages/bpk-component-grid-toggle"
+      },
+      "outputs": [
+        "{projectRoot}/dist"
+      ]
+    }
+  },
+  "tags": [
+    "type:package",
+    "scope:backpack"
+  ]
+}

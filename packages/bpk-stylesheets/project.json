@@ -1,0 +1,23 @@
+{
+  "name": "bpk-stylesheets",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-stylesheets/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node build",
+        "cwd": "packages/bpk-stylesheets"
+      },
+      "outputs": [
+        "{projectRoot}/dist"
+      ]
+    }
+  },
+  "tags": [
+    "type:package",
+    "scope:backpack",
+    "special-case"
+  ]
+}
