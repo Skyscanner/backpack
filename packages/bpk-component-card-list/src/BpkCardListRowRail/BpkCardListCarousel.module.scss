@@ -104,4 +104,9 @@
       padding-inline: var(--spacing-offset);
     }
   }
+
+  &__card-wrapper {
+    height: 100%;
+    display: grid;
+  }
 }
