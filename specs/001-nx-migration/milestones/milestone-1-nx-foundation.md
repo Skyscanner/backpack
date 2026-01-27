@@ -14,32 +14,32 @@ Initialize Nx workspace and establish basic build orchestration for all 96 Backp
 ### Success Criteria
 
 - ✅ Nx installed and workspace configured
-- ✅ All 96 packages building successfully via `nx build`
-- ✅ Build output matches current `npm run build` (byte-identical where possible)
+- ✅ All 96 packages building successfully via Nx
+- ✅ Build output matches current npm build (byte-identical where possible)
 - ✅ Local Nx cache enabled with >50% cache hit rate on repeated builds
 - ✅ No breaking changes to package APIs or build artifacts
 - ✅ Documentation: Nx setup guide and command reference
 
 ### Deliverables
 
-1. **Nx Configuration Files**:
-   - `nx.json` - Global Nx configuration
-   - `project.json` for each package (96 files)
-   - Updated root `package.json` with Nx scripts
-   - `.nxignore` file
+1. **Nx Configuration Files**
+   - Global Nx configuration (nx.json)
+   - Project configuration for each package (96 project.json files)
+   - Updated root package.json with Nx scripts
+   - Nx ignore patterns
 
-2. **Build Scripts**:
+2. **Build Integration**
    - Nx targets wrapping existing build scripts
    - Build validation scripts
    - Cache configuration
 
-3. **Documentation**:
-   - `docs/nx-migration/getting-started.md`
-   - `docs/nx-migration/milestone-1-report.md`
+3. **Documentation**
+   - Getting started guide
+   - Milestone 1 completion report
    - Updated README with Nx commands
 
-4. **Validation Reports**:
-   - Build output comparison report
+4. **Validation Reports**
+   - Build output comparison
    - Performance baseline measurements
    - Cache effectiveness analysis
 
@@ -50,77 +50,26 @@ Initialize Nx workspace and establish basic build orchestration for all 96 Backp
 #### Objective
 Create experimental branch to validate Nx integration approach and measure baseline performance.
 
-#### Tasks
+#### Strategy
+- **Spike Branch Creation**: Create isolated experimental branch for validation
+- **Nx Installation**: Install Nx and workspace packages as dev dependencies
+- **Workspace Initialization**: Run Nx init to create initial workspace configuration
+- **Single Package Test**: Choose a simple package (e.g., bpk-animate-height) for initial integration test
+- **Build Validation**: Compare Nx build output with existing npm build output
+- **Performance Baseline**: Measure and document current build, test, and lint times
 
-1. **Create Spike Branch**
-   ```bash
-   git checkout -b spike/nx-integration-test
-   ```
-
-2. **Install Nx**
-   ```bash
-   npm install -D nx@latest @nx/workspace@latest
-   ```
-
-3. **Initialize Nx Workspace**
-   ```bash
-   npx nx init
-   ```
-   - Choose "Integrated monorepo" mode
-   - Keep existing package.json scripts
-   - Enable Nx cache
-
-4. **Test Single Package Integration**
-   - Choose simple package (e.g., `bpk-animate-height`)
-   - Create `packages/bpk-animate-height/project.json`:
-   ```json
-   {
-     "name": "bpk-animate-height",
-     "sourceRoot": "packages/bpk-animate-height/src",
-     "projectType": "library",
-     "targets": {
-       "build": {
-         "executor": "nx:run-commands",
-         "options": {
-           "command": "babel src --out-dir dist --extensions \".ts,.tsx,.js,.jsx\"",
-           "cwd": "packages/bpk-animate-height"
-         },
-         "outputs": ["{projectRoot}/dist"]
-       }
-     },
-     "tags": ["type:package", "scope:backpack"]
-   }
-   ```
-
-5. **Validate Build**
-   ```bash
-   # Build with Nx
-   nx build bpk-animate-height
-
-   # Build with npm (for comparison)
-   cd packages/bpk-animate-height && npm run build
-
-   # Compare outputs
-   diff -r dist-nx/ dist-npm/
-   ```
-
-6. **Measure Performance Baseline**
-   ```bash
-   # Current build time
-   time npm run build
-
-   # Current test time
-   time npm test
-
-   # Current lint time
-   time npm run lint
-
-   # Document results in milestone-1-baseline.md
-   ```
+#### Key Tasks
+1. Install Nx core packages (@nx/workspace, nx)
+2. Initialize Nx workspace in integrated monorepo mode
+3. Create project.json for one test package with build target
+4. Use nx:run-commands executor to wrap existing Babel build script
+5. Build package with Nx and compare output with npm build
+6. Document any differences (timestamps, file ordering, etc.)
+7. Measure baseline performance metrics for comparison
 
 #### Success Gate
 - ✅ Single package builds successfully with Nx
-- ✅ Build output is identical
+- ✅ Build output is identical or differences are acceptable/documented
 - ✅ Cache works for repeated builds
 - ✅ No errors or warnings
 
@@ -129,110 +78,22 @@ Create experimental branch to validate Nx integration approach and measure basel
 #### Objective
 Configure Nx workspace with proper structure and global settings.
 
-#### Tasks
+#### Strategy
+- **Workspace Structure**: Explicitly configure npm workspaces in root package.json
+- **Nx Scripts**: Add convenience scripts for common Nx commands
+- **Global Configuration**: Create nx.json with cache settings and target defaults
+- **Cache Inputs**: Define what files affect each build target (source files, config files)
+- **Cache Outputs**: Define what artifacts are produced by builds
+- **Ignore Patterns**: Configure .nxignore and .gitignore for Nx-specific files
 
-1. **Update Root package.json**
-
-   Add explicit npm workspaces:
-   ```json
-   {
-     "workspaces": [
-       "packages/*"
-     ]
-   }
-   ```
-
-   Add Nx scripts:
-   ```json
-   {
-     "scripts": {
-       "nx": "nx",
-       "build": "nx run-many --target=build --all",
-       "build:affected": "nx affected --target=build",
-       "test": "nx run-many --target=test --all",
-       "test:affected": "nx affected --target=test",
-       "lint": "nx run-many --target=lint --all",
-       "lint:affected": "nx affected --target=lint",
-       "graph": "nx graph"
-     }
-   }
-   ```
-
-2. **Create nx.json**
-
-   ```json
-   {
-     "$schema": "./node_modules/nx/schemas/nx-schema.json",
-     "defaultProject": "backpack-web",
-     "targetDefaults": {
-       "build": {
-         "cache": true,
-         "inputs": [
-           "{projectRoot}/**/*",
-           "!{projectRoot}/**/*.test.{ts,tsx,js,jsx}",
-           "!{projectRoot}/**/*.md",
-           "!{projectRoot}/**/.*",
-           "{workspaceRoot}/babel.config.js",
-           "{workspaceRoot}/tsconfig.json"
-         ],
-         "outputs": ["{projectRoot}/dist"]
-       },
-       "test": {
-         "cache": true,
-         "inputs": [
-           "{projectRoot}/**/*",
-           "{workspaceRoot}/jest.config.js",
-           "{workspaceRoot}/babel.config.js"
-         ]
-       },
-       "lint": {
-         "cache": true,
-         "inputs": [
-           "{projectRoot}/**/*.{ts,tsx,js,jsx}",
-           "{workspaceRoot}/.eslintrc.js",
-           "{workspaceRoot}/.stylelintrc.json"
-         ]
-       }
-     },
-     "namedInputs": {
-       "default": ["{projectRoot}/**/*"],
-       "production": [
-         "!{projectRoot}/**/*.test.{ts,tsx,js,jsx}",
-         "!{projectRoot}/**/*.spec.{ts,tsx,js,jsx}",
-         "!{projectRoot}/**/jest.config.{js,ts}",
-         "!{projectRoot}/**/*.md"
-       ]
-     },
-     "tasksRunnerOptions": {
-       "default": {
-         "runner": "nx/tasks-runners/default",
-         "options": {
-           "cacheableOperations": ["build", "test", "lint"],
-           "parallel": 3
-         }
-       }
-     }
-   }
-   ```
-
-3. **Create .nxignore**
-
-   ```
-   node_modules
-   dist
-   dist-storybook
-   dist-sassdoc
-   .cache
-   coverage
-   ```
-
-4. **Configure Git Ignore**
-
-   Add to `.gitignore`:
-   ```
-   .nx/cache
-   .nx/workspace-data
-   ```
+#### Key Tasks
+1. Update root package.json with explicit workspaces configuration
+2. Add Nx command shortcuts (build, build:affected, test, lint, graph)
+3. Create nx.json with target defaults for build/test/lint
+4. Define namedInputs for production vs. all files
+5. Configure tasksRunnerOptions with caching and parallelization
+6. Set up .nxignore to exclude unnecessary directories
+7. Update .gitignore to exclude Nx cache directories
 
 #### Success Gate
 - ✅ Nx workspace properly configured
@@ -242,74 +103,26 @@ Configure Nx workspace with proper structure and global settings.
 ### Phase 1.3: Package Integration (Week 2)
 
 #### Objective
-Generate `project.json` for all 96 packages.
+Generate project.json configuration for all 96 packages.
 
-#### Tasks
+#### Strategy
+- **Automated Generation**: Create Node.js script to generate project.json for all packages
+- **Consistent Structure**: Use standardized project.json template with build target
+- **Special Cases**: Manually handle packages with unique build requirements
+- **Project Detection**: Validate Nx can detect all packages correctly
+- **Tagging Strategy**: Apply consistent tags (type:package, scope:backpack) for organization
 
-1. **Create project.json Generator Script**
-
-   Create `scripts/nx/generate-project-configs.js`:
-   ```javascript
-   const fs = require('fs');
-   const path = require('path');
-
-   const packagesDir = path.join(__dirname, '../../packages');
-   const packages = fs.readdirSync(packagesDir)
-     .filter(name => {
-       const pkgPath = path.join(packagesDir, name);
-       return fs.statSync(pkgPath).isDirectory() && name !== 'node_modules';
-     });
-
-   packages.forEach(pkgName => {
-     const projectJson = {
-       name: pkgName,
-       sourceRoot: `packages/${pkgName}/src`,
-       projectType: 'library',
-       targets: {
-         build: {
-           executor: 'nx:run-commands',
-           options: {
-             command: 'babel src --out-dir dist --extensions ".ts,.tsx,.js,.jsx"',
-             cwd: `packages/${pkgName}`
-           },
-           outputs: [`{projectRoot}/dist`]
-         }
-       },
-       tags: [`type:package`, `scope:backpack`]
-     };
-
-     const outputPath = path.join(packagesDir, pkgName, 'project.json');
-     fs.writeFileSync(outputPath, JSON.stringify(projectJson, null, 2));
-     console.log(`Generated project.json for ${pkgName}`);
-   });
-   ```
-
-2. **Generate All project.json Files**
-
-   ```bash
-   node scripts/nx/generate-project-configs.js
-   ```
-
-3. **Customize Special Cases**
-
-   Some packages may need custom configurations:
-
-   - **bpk-stylesheets**: Has custom build script
-   - **bpk-mixins**: Sass-only package (no TypeScript build)
-   - **packages/package.json**: Shared package.json (not a project)
-
-   Manually adjust these project.json files.
-
-4. **Validate Project Detection**
-
-   ```bash
-   # List all projects
-   nx show projects
-
-   # Should show all 96 packages
-   # Verify count matches
-   nx show projects | wc -l
-   ```
+#### Key Tasks
+1. Write generator script to create project.json files programmatically
+2. Scan packages/ directory and identify all valid packages
+3. Generate project.json with name, sourceRoot, projectType, and build target
+4. Use nx:run-commands executor to wrap existing Babel commands
+5. Handle special cases:
+   - bpk-stylesheets (custom build)
+   - bpk-mixins (Sass-only, no TypeScript)
+   - packages/package.json (shared config, not a project)
+6. Run generator and create 96 project.json files
+7. Validate project detection with `nx show projects`
 
 #### Success Gate
 - ✅ 96 project.json files generated
@@ -321,110 +134,22 @@ Generate `project.json` for all 96 packages.
 #### Objective
 Integrate existing build pipeline with Nx targets.
 
-#### Tasks
+#### Strategy
+- **Build Wrapping**: Wrap existing build commands as Nx targets without changing logic
+- **Gulp Preservation**: Maintain Gulp tasks for asset processing and Sass compilation
+- **Custom Scripts**: Convert custom npm scripts to Nx targets
+- **Dependency Orchestration**: Let Nx manage build order based on package dependencies
+- **Output Validation**: Ensure Nx builds produce identical artifacts to npm builds
 
-1. **Wrap Build Scripts**
-
-   For packages with complex builds, create Nx executors:
-
-   Example for main transpilation:
-   ```json
-   {
-     "targets": {
-       "transpile": {
-         "executor": "nx:run-commands",
-         "options": {
-           "commands": [
-             "npm run transpile:clean",
-             "npm run transpile:js",
-             "npm run transpile:dts",
-             "npm run transpile:imports",
-             "npm run transpile:copy-css",
-             "npm run transpile:copy-utils"
-           ],
-           "parallel": false
-         },
-         "outputs": ["{workspaceRoot}/dist"]
-       }
-     }
-   }
-   ```
-
-2. **Preserve Gulp Tasks**
-
-   Add Gulp target to root-level project:
-   ```json
-   {
-     "name": "backpack-root",
-     "targets": {
-       "gulp": {
-         "executor": "nx:run-commands",
-         "options": {
-           "command": "gulp"
-         },
-         "outputs": []
-       }
-     }
-   }
-   ```
-
-3. **Custom Script Integration**
-
-   Wrap custom scripts as Nx targets:
-   ```json
-   {
-     "targets": {
-       "check-dependencies": {
-         "executor": "nx:run-commands",
-         "options": {
-           "command": "node scripts/npm/check-bpk-dependencies.js"
-         }
-       },
-       "check-react-versions": {
-         "executor": "nx:run-commands",
-         "options": {
-           "command": "node scripts/npm/check-react-versions.js"
-         }
-       }
-     }
-   }
-   ```
-
-4. **Test Build Execution**
-
-   ```bash
-   # Build all packages
-   nx run-many --target=build --all
-
-   # Build specific package
-   nx build bpk-component-button
-
-   # Build with verbose output
-   nx build bpk-component-button --verbose
-
-   # View dependency graph
-   nx graph
-   ```
-
-5. **Build Output Validation**
-
-   ```bash
-   # Build with npm (baseline)
-   npm run build
-   cp -r dist dist-baseline
-
-   # Build with Nx
-   npm run clean
-   nx run-many --target=build --all
-   cp -r dist dist-nx
-
-   # Compare
-   diff -r dist-baseline dist-nx > build-diff-report.txt
-
-   # Analyze differences
-   # Document any acceptable differences
-   # Fix any unacceptable differences
-   ```
+#### Key Tasks
+1. Configure build targets to use existing Babel/Webpack/Gulp scripts
+2. Preserve complex build pipelines (transpile, copy assets, generate types)
+3. Add root-level project for workspace-wide tasks (Gulp, custom scripts)
+4. Wrap utility scripts (check-dependencies, check-react-versions) as Nx targets
+5. Test build execution with run-many for all packages
+6. Validate build outputs match npm build outputs
+7. Document any acceptable differences (timestamps, file ordering)
+8. Use Nx graph to visualize package dependencies
 
 #### Success Gate
 - ✅ All 96 packages build successfully with Nx
@@ -437,59 +162,21 @@ Integrate existing build pipeline with Nx targets.
 #### Objective
 Validate Nx caching works correctly and provides performance benefits.
 
-#### Tasks
+#### Strategy
+- **Cache Effectiveness**: Measure build time with cold vs. warm cache
+- **Cache Invalidation**: Verify changing files correctly invalidates cache
+- **Selective Rebuild**: Ensure only affected packages rebuild on file changes
+- **Configuration Tuning**: Adjust cache inputs/outputs based on test results
+- **Documentation**: Explain caching behavior and troubleshooting
 
-1. **Cache Effectiveness Test**
-
-   ```bash
-   # Clean cache
-   nx reset
-
-   # First build (cold cache)
-   time nx run-many --target=build --all
-   # Record time: [___] seconds
-
-   # Second build (warm cache)
-   time nx run-many --target=build --all
-   # Record time: [___] seconds
-   # Should be <5 seconds
-
-   # Calculate cache hit rate
-   nx show cache
-   ```
-
-2. **Cache Invalidation Test**
-
-   ```bash
-   # Build all
-   nx run-many --target=build --all
-
-   # Modify single package
-   echo "// cache test" >> packages/bpk-animate-height/src/index.ts
-
-   # Rebuild
-   time nx run-many --target=build --all
-   # Only bpk-animate-height should rebuild
-   # Dependents should also rebuild
-
-   # Verify via Nx output
-   nx build bpk-animate-height --verbose
-   ```
-
-3. **Cache Configuration Tuning**
-
-   Adjust `nx.json` based on test results:
-   - Add/remove inputs for better cache hit rate
-   - Configure parallel execution count
-   - Set cache directory location if needed
-
-4. **Cache Documentation**
-
-   Create `docs/nx-migration/caching-guide.md`:
-   - How Nx caching works
-   - When cache is invalidated
-   - How to clear cache
-   - Troubleshooting cache issues
+#### Key Tasks
+1. Reset cache and measure full build time (cold cache)
+2. Re-run build and measure time with warm cache (should be <5s)
+3. Modify single package and verify only it rebuilds
+4. Check that dependents of modified package also rebuild
+5. Tune nx.json cache inputs to improve hit rate
+6. Adjust parallel execution count for optimal performance
+7. Create caching guide documentation
 
 #### Success Gate
 - ✅ Cache hit rate >50% on repeated builds
@@ -502,69 +189,20 @@ Validate Nx caching works correctly and provides performance benefits.
 #### Objective
 Document Milestone 1 changes and train team on basic Nx usage.
 
-#### Tasks
+#### Strategy
+- **Getting Started Guide**: Explain what Nx is and how to use it for common tasks
+- **Command Reference**: Provide quick reference for Nx commands vs. npm scripts
+- **README Update**: Add Nx section to main README
+- **Migration Report**: Document what was accomplished and lessons learned
+- **Team Training**: Conduct hands-on training session
 
-1. **Create Getting Started Guide**
-
-   `docs/nx-migration/getting-started.md`:
-   - What is Nx and why we're using it
-   - New Nx commands vs. old npm scripts
-   - How to use Nx cache
-   - Common tasks (build, clean cache, view graph)
-   - Troubleshooting basics
-
-2. **Create Command Reference**
-
-   `docs/nx-migration/nx-commands.md`:
-   - Build commands
-   - Cache management
-   - Dependency graph
-   - Affected commands (preview for Milestone 2)
-
-3. **Update Root README**
-
-   Add Nx section:
-   ```markdown
-   ## Building with Nx
-
-   Backpack now uses Nx for build orchestration.
-
-   ```bash
-   # Build all packages
-   npm run build
-   # or
-   nx run-many --target=build --all
-
-   # Build single package
-   nx build bpk-component-button
-
-   # View dependency graph
-   nx graph
-   ```
-
-   See [Nx Migration Guide](docs/nx-migration/getting-started.md) for details.
-   ```
-
-4. **Create Milestone 1 Report**
-
-   `docs/nx-migration/milestone-1-report.md`:
-   - What was accomplished
-   - Performance metrics (baseline vs. Nx)
-   - Issues encountered and resolutions
-   - Lessons learned
-   - Next steps (Milestone 2)
-
-5. **Team Training Session**
-
-   - 1-hour presentation covering:
-     - Nx basics
-     - New build workflow
-     - Cache usage
-     - Q&A
-   - Hands-on exercises:
-     - Build packages with Nx
-     - View dependency graph
-     - Understand cache behavior
+#### Key Tasks
+1. Create getting-started.md with Nx introduction and basic usage
+2. Create nx-commands.md with command reference
+3. Update root README with Nx build section
+4. Write milestone-1-report.md with metrics and learnings
+5. Conduct 1-hour team training session
+6. Include hands-on exercises (build, cache, graph)
 
 #### Success Gate
 - ✅ All documentation complete
@@ -583,15 +221,15 @@ Document Milestone 1 changes and train team on basic Nx usage.
 
 ### Cache Validation Checklist
 
-- [ ] Cache directory created (`.nx/cache`)
+- [ ] Cache directory created (.nx/cache)
 - [ ] Cache hit rate >50% on repeated builds
 - [ ] Cache invalidation works (changing file rebuilds only affected packages)
-- [ ] Cache clears properly with `nx reset`
+- [ ] Cache clears properly
 - [ ] Cache persists across terminal sessions
 
 ### Integration Validation Checklist
 
-- [ ] `npm run build` works (calls Nx)
+- [ ] npm run build works (calls Nx)
 - [ ] Custom scripts work (check-bpk-dependencies, etc.)
 - [ ] Gulp tasks execute correctly
 - [ ] Package interdependencies respected
@@ -609,27 +247,10 @@ Rollback Milestone 1 if:
 
 ### Rollback Procedure
 
-1. **Revert Nx Installation**
-   ```bash
-   git checkout main
-   git branch -D 001-nx-migration
-   npm install
-   ```
-
-2. **Restore Original Scripts**
-   ```bash
-   git checkout main -- package.json
-   npm install
-   ```
-
-3. **Verify Rollback**
-   ```bash
-   npm run build
-   npm test
-   # Verify all works as before
-   ```
-
-4. **Document Issues**
+1. **Revert Branch**: Checkout main branch and delete migration branch
+2. **Restore Dependencies**: Run npm install to restore original node_modules
+3. **Verify Rollback**: Test that npm run build/test/lint work as before
+4. **Document Issues**:
    - Document what went wrong
    - Identify root cause
    - Plan mitigation strategy
@@ -658,19 +279,9 @@ Rollback Milestone 1 if:
 
 Upon Milestone 1 completion:
 
-1. **Tag Release**
-   ```bash
-   git tag -a nx-milestone-1 -m "Milestone 1: Nx Foundation Complete"
-   git push origin nx-milestone-1
-   ```
-
-2. **Team Retrospective**
-   - What went well
-   - What could be improved
-   - Action items for Milestone 2
-
-3. **Proceed to Milestone 2**
-   - [Milestone 2: Testing & Linting Integration](./milestone-2-testing-linting.md)
+1. **Tag Release**: Create git tag for milestone completion
+2. **Team Retrospective**: Review what went well and what to improve
+3. **Proceed to Milestone 2**: [Testing & Linting Integration](./milestone-2-testing-linting.md)
 
 ## References
 

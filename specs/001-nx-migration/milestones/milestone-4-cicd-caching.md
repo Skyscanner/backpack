@@ -8,9 +8,11 @@
 ## Overview
 
 ### Goal
+
 Update GitHub Actions CI/CD pipelines to use Nx commands and optionally enable Nx Cloud for distributed caching across team and CI.
 
 ### Success Criteria
+
 - ✅ All GitHub Actions workflows updated to use Nx
 - ✅ CI checks pass with Nx commands
 - ✅ CI execution time reduced by >20%
@@ -26,44 +28,22 @@ Update GitHub Actions CI/CD pipelines to use Nx commands and optionally enable N
 #### Objective
 Analyze current GitHub Actions workflows and plan Nx integration.
 
-#### Tasks
+#### Strategy
+- **Workflow Audit**: Identify all workflows and their purposes
+- **Command Mapping**: Map npm scripts to Nx equivalents
+- **Affected Opportunities**: Identify where affected commands can optimize CI
+- **Nx Cloud Evaluation**: Decide on local cache vs. Nx Cloud based on cost/benefit
 
-1. **Audit Current Workflows**
-
-   Identify all workflows in `.github/workflows/`:
-   - `ci.yml` - Main CI pipeline
-   - `release.yml` - Release and publish
-   - `percy.yml` - Visual regression
-   - `danger.yml` - PR automation
-   - Others...
-
-2. **Map npm Scripts to Nx Commands**
-
-   Create mapping document:
-   ```markdown
-   | Current Command | Nx Equivalent | Notes |
-   |-----------------|---------------|-------|
-   | npm run build | nx run-many --target=build --all | Full build |
-   | npm test | nx run-many --target=test --all | All tests |
-   | npm run lint | nx run-many --target=lint --all | All linting |
-   | npm run storybook:dist | nx storybook:build | Build Storybook |
-   ```
-
-3. **Identify Affected Command Opportunities**
-
-   For PR validation, use affected commands:
-   ```yaml
-   - nx affected:build --base=origin/main --head=HEAD
-   - nx affected:test --base=origin/main --head=HEAD
-   - nx affected:lint --base=origin/main --head=HEAD
-   ```
-
-4. **Plan Nx Cloud Integration**
-
-   Evaluate options:
-   - **Option A**: Local cache only (no cost, slower CI)
-   - **Option B**: Nx Cloud with distributed caching (faster, requires setup)
-   - **Recommendation**: Start without Nx Cloud, add if performance insufficient
+#### Key Tasks
+1. List all workflows in .github/workflows/
+   - ci.yml (main CI pipeline)
+   - release.yml (release and publish)
+   - percy.yml (visual regression)
+   - danger.yml (PR automation)
+2. Create command mapping table (npm scripts → Nx commands)
+3. Identify affected command opportunities for PR validation
+4. Evaluate Nx Cloud options (local only vs. distributed caching)
+5. Document Nx Cloud decision and rationale
 
 #### Success Gate
 - ✅ All workflows documented
@@ -75,116 +55,23 @@ Analyze current GitHub Actions workflows and plan Nx integration.
 #### Objective
 Update GitHub Actions workflows to use Nx commands.
 
-#### Tasks
+#### Strategy
+- **PR Validation**: Use affected commands to run only changed packages
+- **Main Branch CI**: Use full builds to ensure comprehensive validation
+- **Release Workflow**: Preserve full builds and tests for releases
+- **Percy Integration**: Update visual regression workflow
+- **Danger Preservation**: Keep Danger.js workflow unchanged
 
-1. **Update Main CI Workflow** (`.github/workflows/ci.yml`)
-
-   **Before**:
-   ```yaml
-   - name: Build
-     run: npm run build
-
-   - name: Test
-     run: npm test
-
-   - name: Lint
-     run: npm run lint
-   ```
-
-   **After**:
-   ```yaml
-   - name: Setup Nx
-     run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js"
-     if: env.NX_CLOUD_ACCESS_TOKEN != ''
-
-   - name: Build affected
-     run: nx affected:build --base=origin/main --head=HEAD
-
-   - name: Test affected
-     run: nx affected:test --base=origin/main --head=HEAD --coverage
-
-   - name: Lint affected
-     run: nx affected:lint --base=origin/main --head=HEAD
-
-   - name: Stop Nx Cloud
-     run: npx nx-cloud stop-all-agents
-     if: always() && env.NX_CLOUD_ACCESS_TOKEN != ''
-   ```
-
-2. **Update Release Workflow** (`.github/workflows/release.yml`)
-
-   Preserve full builds for releases:
-   ```yaml
-   - name: Build all packages
-     run: nx run-many --target=build --all
-
-   - name: Run all tests
-     run: nx run-many --target=test --all
-
-   - name: Publish to npm
-     run: npm run transpile && npm publish ./dist
-   ```
-
-3. **Update Percy Workflow** (`.github/workflows/percy.yml`)
-
-   ```yaml
-   - name: Build Storybook
-     run: nx storybook:build
-
-   - name: Run Percy
-     run: npx percy storybook ./dist-storybook
-     env:
-       PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-   ```
-
-4. **Update Danger Workflow** (`.github/workflows/danger.yml`)
-
-   Keep as-is, Danger.js doesn't need Nx changes:
-   ```yaml
-   - name: Run Danger
-     run: npm run danger
-   ```
-
-5. **Add Nx Cloud Workflow** (`.github/workflows/nx-cloud.yml` - optional)
-
-   If using Nx Cloud:
-   ```yaml
-   name: Nx Cloud CI
-   on: [pull_request]
-
-   jobs:
-     main:
-       runs-on: ubuntu-latest
-       steps:
-         - uses: actions/checkout@v4
-           with:
-             fetch-depth: 0
-
-         - uses: actions/setup-node@v4
-           with:
-             node-version: '18'
-             cache: 'npm'
-
-         - name: Install dependencies
-           run: npm ci
-
-         - name: Start Nx Cloud agents
-           run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js"
-           env:
-             NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-
-         - name: Run affected
-           run: |
-             nx affected:build --base=origin/main
-             nx affected:test --base=origin/main
-             nx affected:lint --base=origin/main
-
-         - name: Stop agents
-           run: npx nx-cloud stop-all-agents
-           if: always()
-           env:
-             NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-   ```
+#### Key Tasks
+1. Update ci.yml to use Nx affected commands
+   - nx affected:build instead of full build
+   - nx affected:test instead of full test
+   - nx affected:lint instead of full lint
+2. Update release.yml to use Nx run-many (full builds)
+3. Update percy.yml to use nx storybook:build
+4. Keep danger.yml as-is (no Nx changes needed)
+5. Add Nx Cloud setup steps (if using Nx Cloud)
+6. Configure base/head refs for affected command comparison
 
 #### Success Gate
 - ✅ All workflows updated
@@ -197,80 +84,26 @@ Update GitHub Actions workflows to use Nx commands.
 #### Objective
 Set up Nx Cloud for distributed caching if approved.
 
-#### Tasks
+#### Strategy
+- **Account Creation**: Create Nx Cloud account for organization
+- **Token Management**: Secure access token in GitHub Secrets
+- **Configuration**: Add Nx Cloud settings to nx.json
+- **Testing**: Validate remote caching works locally and in CI
+- **DTE (Optional)**: Configure Distributed Task Execution for parallel CI
 
-1. **Create Nx Cloud Account**
-
-   - Sign up at https://cloud.nx.app/
-   - Create organization for Skyscanner/Backpack
-   - Get access token
-
-2. **Configure Nx Cloud**
-
-   Add to `nx.json`:
-   ```json
-   {
-     "nxCloudAccessToken": "PLACEHOLDER",
-     "tasksRunnerOptions": {
-       "default": {
-         "runner": "nx-cloud",
-         "options": {
-           "accessToken": "PLACEHOLDER",
-           "cacheableOperations": ["build", "test", "lint"],
-           "parallel": 3
-         }
-       }
-     }
-   }
-   ```
-
-   **Important**: Use environment variable in CI:
-   ```bash
-   export NX_CLOUD_ACCESS_TOKEN=${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-   ```
-
-3. **Add GitHub Secrets**
-
-   Add to repository secrets:
-   - `NX_CLOUD_ACCESS_TOKEN` - Nx Cloud access token
-
-4. **Test Nx Cloud Locally**
-
-   ```bash
-   # Set token
-   export NX_CLOUD_ACCESS_TOKEN=your-token-here
-
-   # Build and cache remotely
-   nx run-many --target=build --all
-
-   # Clean local cache
-   nx reset
-
-   # Rebuild (should pull from cloud)
-   nx run-many --target=build --all
-   ```
-
-5. **Test Nx Cloud in CI**
-
-   - Create test PR
-   - Run CI with Nx Cloud
-   - Verify cache hit from cloud
-   - Check Nx Cloud dashboard
-
-6. **Configure DTE (Distributed Task Execution)** - Optional
-
-   For parallel CI execution:
-   ```yaml
-   - name: Start agents
-     run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js"
-
-   - name: Run tasks
-     run: nx affected:build --parallel=5
-   ```
+#### Key Tasks
+1. Sign up at https://cloud.nx.app/ and create organization
+2. Get access token from Nx Cloud dashboard
+3. Add NX_CLOUD_ACCESS_TOKEN to GitHub repository secrets
+4. Configure nx.json with nxCloudAccessToken
+5. Test local caching with cloud (build, reset, rebuild)
+6. Test CI caching in test PR
+7. Verify cache hit from Nx Cloud dashboard
+8. Optional: Configure DTE for parallel execution across agents
 
 #### Success Gate (If Nx Cloud Enabled)
 - ✅ Nx Cloud account created
-- ✅ Access token configured
+- ✅ Access token configured securely
 - ✅ Remote caching works
 - ✅ CI cache hit rate >80%
 - ✅ DTE works (if configured)
@@ -280,74 +113,27 @@ Set up Nx Cloud for distributed caching if approved.
 #### Objective
 Validate CI performance improvements and optimize configuration.
 
-#### Tasks
+#### Strategy
+- **Baseline Measurement**: Record current CI times for comparison
+- **Nx CI Measurement**: Measure same workflows with Nx
+- **Optimization**: Tune parallel settings and cache configuration
+- **Scenario Testing**: Test various PR sizes (small, medium, large, infrastructure)
+- **Cache Monitoring**: Track cache effectiveness metrics
 
-1. **Baseline CI Performance**
-
-   Record current CI times:
-   ```
-   PR Validation:
-   - Lint: [___] min
-   - Test: [___] min
-   - Build: [___] min
-   - Percy: [___] min
-   - Total: [___] min
-
-   Full CI (main branch):
-   - Full build: [___] min
-   - Full test: [___] min
-   - Total: [___] min
-   ```
-
-2. **Measure Nx CI Performance**
-
-   Run same tests with Nx:
-   ```
-   PR Validation (with affected):
-   - Lint: [___] min
-   - Test: [___] min
-   - Build: [___] min
-   - Percy: [___] min
-   - Total: [___] min
-   - Improvement: [___]%
-
-   Full CI:
-   - Full build: [___] min
-   - Full test: [___] min
-   - Total: [___] min
-   - Improvement: [___]%
-   ```
-
-3. **Optimize Based on Results**
-
-   Adjust parallel settings:
-   ```json
-   {
-     "tasksRunnerOptions": {
-       "default": {
-         "options": {
-           "parallel": 5  // Increase if CI has capacity
-         }
-       }
-     }
-   }
-   ```
-
-4. **Test Multiple PR Scenarios**
-
-   - Small change (1 component)
-   - Medium change (5-10 components)
-   - Large change (20+ components)
-   - Infrastructure change (affects all)
-
-   Verify affected detection works correctly.
-
-5. **Monitor Cache Effectiveness**
-
-   Track metrics:
-   - Cache hit rate
-   - Time saved per PR
-   - Cache storage used
+#### Key Tasks
+1. Document baseline CI performance
+   - PR validation time (lint, test, build, Percy)
+   - Full CI time (main branch)
+2. Measure Nx CI performance with same tests
+3. Calculate improvement percentage
+4. Test multiple PR scenarios
+   - Small: 1 component change
+   - Medium: 5-10 components
+   - Large: 20+ components
+   - Infrastructure: affects all packages
+5. Verify affected detection accuracy
+6. Tune parallelization in nx.json if needed
+7. Monitor cache hit rates and storage usage
 
 #### Success Gate
 - ✅ CI execution time reduced >20%
@@ -360,79 +146,21 @@ Validate CI performance improvements and optimize configuration.
 #### Objective
 Document CI/CD changes and communicate to team.
 
-#### Tasks
+#### Strategy
+- **CI/CD Guide**: Explain how CI works with Nx
+- **README Update**: Add CI/CD section to CONTRIBUTING.md
+- **Nx Cloud Guide**: Document cloud usage (if enabled)
+- **Team Announcement**: Communicate changes and benefits
+- **Milestone Report**: Document Phase 4 completion
 
-1. **Create CI/CD Documentation**
-
-   `docs/nx-migration/cicd-guide.md`:
-   ```markdown
-   # CI/CD with Nx
-
-   ## Overview
-   All CI/CD pipelines now use Nx for build orchestration.
-
-   ## PR Validation
-   - Uses `nx affected` to run only changed packages
-   - Typically 50-80% faster than full CI
-   - Same validation quality as before
-
-   ## Main Branch CI
-   - Runs full build/test/lint for all packages
-   - Ensures main branch always passes
-   - Used for releases
-
-   ## Nx Cloud (if enabled)
-   - Distributed caching across team and CI
-   - Cache hit rate typically >80%
-   - Speeds up CI significantly
-
-   ## Troubleshooting
-   [Common CI issues and solutions]
-   ```
-
-2. **Update CONTRIBUTING.md**
-
-   Add CI/CD section:
-   ```markdown
-   ## CI/CD
-
-   PRs automatically run Nx affected commands to validate changes:
-   - Build affected packages
-   - Test affected packages
-   - Lint affected packages
-   - Run Percy visual regression (if applicable)
-
-   To run same checks locally:
-   ```bash
-   nx affected:build --base=main
-   nx affected:test --base=main
-   nx affected:lint --base=main
-   ```
-
-3. **Create Nx Cloud Usage Guide** (if enabled)
-
-   `docs/nx-migration/nx-cloud-guide.md`:
-   - How Nx Cloud works
-   - How to view cache dashboard
-   - Understanding cache hit rates
-   - Troubleshooting cloud issues
-
-4. **Announce CI Changes**
-
-   Team communication:
-   - Slack announcement in #backpack
-   - Email to team
-   - Update team wiki
-   - Include before/after performance metrics
-
-5. **Create Milestone 4 Report**
-
-   `docs/nx-migration/milestone-4-report.md`:
-   - CI/CD changes summary
-   - Performance improvements
-   - Nx Cloud benefits (if enabled)
-   - Issues and resolutions
-   - Lessons learned
+#### Key Tasks
+1. Create cicd-guide.md with CI/CD overview
+2. Update CONTRIBUTING.md with CI validation process
+3. Create nx-cloud-guide.md (if Nx Cloud enabled)
+4. Announce CI changes in Slack/email
+5. Update team wiki with new CI process
+6. Share performance metrics (before/after)
+7. Create milestone-4-report.md with learnings
 
 #### Success Gate
 - ✅ All documentation complete
@@ -441,7 +169,7 @@ Document CI/CD changes and communicate to team.
 
 ## Validation & Testing
 
-### CI Workflow Validation Checklist
+### CI Workflow Validation
 
 - [ ] All workflows updated with Nx commands
 - [ ] PR validation uses affected commands
@@ -450,7 +178,7 @@ Document CI/CD changes and communicate to team.
 - [ ] Danger.js continues to work
 - [ ] No workflow failures
 
-### Performance Validation Checklist
+### Performance Validation
 
 - [ ] CI execution time reduced >20%
 - [ ] Affected detection accurate
@@ -458,7 +186,7 @@ Document CI/CD changes and communicate to team.
 - [ ] Cache hit rate >80% with Nx Cloud (if enabled)
 - [ ] No performance regression
 
-### Nx Cloud Validation Checklist (If Enabled)
+### Nx Cloud Validation (If Enabled)
 
 - [ ] Remote caching works
 - [ ] Cache invalidation correct
@@ -471,7 +199,7 @@ Document CI/CD changes and communicate to team.
 
 ### Trigger Conditions
 
-Rollback Milestone 4 if:
+Rollback if:
 - CI fails consistently (>20% failure rate)
 - CI execution time increases >10%
 - Affected detection produces incorrect results
@@ -480,30 +208,10 @@ Rollback Milestone 4 if:
 
 ### Rollback Procedure
 
-1. **Revert Workflow Files**
-   ```bash
-   git checkout main -- .github/workflows/*.yml
-   git commit -m "Rollback to npm scripts in CI"
-   git push
-   ```
-
-2. **Disable Nx Cloud** (if enabled)
-   ```bash
-   # Remove from nx.json
-   git diff nx.json
-   git checkout main -- nx.json
-   ```
-
-3. **Keep Milestones 1-3**
-   - Local development still uses Nx
-   - Only CI reverts to npm scripts
-   - Team can continue using Nx locally
-
-4. **Document Issues**
-   - What went wrong
-   - Root cause analysis
-   - Mitigation plan
-   - When to retry
+1. **Revert Workflow Files**: Restore .github/workflows/*.yml from main
+2. **Disable Nx Cloud**: Remove Nx Cloud configuration from nx.json (if enabled)
+3. **Keep Local Nx**: Preserve Milestones 1-3 (local development still uses Nx)
+4. **Document Issues**: Record problems and root cause analysis
 
 ### Partial Rollback Options
 
@@ -527,28 +235,21 @@ Rollback Milestone 4 if:
 
 Nx Cloud pricing tiers:
 - **Free**: Limited cache storage, good for small teams
-- **Team**: $49/month per seat - suitable for Backpack team
-- **Enterprise**: Custom pricing - if scaling beyond team
+- **Team**: ~$49/month per seat - suitable for Backpack team
+- **Enterprise**: Custom pricing for larger scale
 
 ### ROI Calculation
 
-Estimated time savings:
-```
-Developer count: [X]
-Average PRs per day: [Y]
-Time saved per PR: [Z] minutes
-
-Monthly savings = X * Y * Z * 20 working days
-= [___] developer-hours saved
-
-Cost: $49 * X = [___]
-ROI: [___] hours at $[hourly rate] = $[___]
-Net benefit: $[___] per month
-```
+Factors to consider:
+- Developer count and PR frequency
+- Time saved per PR validation
+- CI infrastructure cost reduction
+- Developer productivity improvement
+- Cost vs. benefit analysis
 
 ### Recommendation
 
-[To be filled based on actual metrics and team size]
+*To be determined based on team size, PR volume, and measured time savings*
 
 ## Issues & Resolutions
 
@@ -564,20 +265,9 @@ Net benefit: $[___] per month
 
 Upon Milestone 4 completion:
 
-1. **Tag Release**
-   ```bash
-   git tag -a nx-milestone-4 -m "Milestone 4: CI/CD & Caching Complete"
-   git push origin nx-milestone-4
-   ```
-
-2. **Team Retrospective**
-   - CI/CD improvements review
-   - Nx Cloud effectiveness (if enabled)
-   - Developer feedback
-   - Action items for Milestone 5
-
-3. **Proceed to Milestone 5**
-   - [Milestone 5: Optimization & Documentation](./milestone-5-optimization.md)
+1. **Tag Release**: Create git tag for milestone completion
+2. **Team Retrospective**: Review CI/CD improvements and Nx Cloud effectiveness
+3. **Proceed to Milestone 5**: [Optimization & Documentation](./milestone-5-optimization.md)
 
 ## References
 
@@ -586,4 +276,3 @@ Upon Milestone 4 completion:
 - **GitHub Actions**: https://docs.github.com/actions
 - **Migration Spec**: [../spec.md](../spec.md)
 - **Implementation Plan**: [../plan.md](../plan.md)
-- **Milestone 3**: [./milestone-3-dev-workflow.md](./milestone-3-dev-workflow.md)

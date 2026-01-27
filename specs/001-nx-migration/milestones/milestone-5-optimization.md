@@ -8,870 +8,361 @@
 ## Overview
 
 ### Goal
-Polish the Nx integration, create comprehensive documentation, train the team, and establish long-term maintenance procedures.
+
+Complete the migration with comprehensive documentation, team training, optional Nx generators, and final performance optimization.
 
 ### Success Criteria
-- ✅ All documentation complete and reviewed
-- ✅ Team training conducted (>90% attendance)
-- ✅ Nx generators for new packages available (optional)
-- ✅ Performance optimization complete
-- ✅ No blocking issues for 2 weeks post-migration
-- ✅ Developer satisfaction >80%
-- ✅ Maintenance procedures documented
+
+- ✅ Complete migration documentation published
+- ✅ Team training completed (>95% attendance)
+- ✅ Nx generators created for common tasks (optional)
+- ✅ Performance targets met or exceeded
+- ✅ Migration retrospective conducted
+- ✅ Knowledge base updated
 
 ## Technical Approach
 
-### Phase 5.1: Nx Generators (Week 1, Optional)
+### Phase 5.1: Documentation Completion (Days 1-2)
 
 #### Objective
-Create Nx generators to scaffold new Backpack components following constitution standards.
+Create comprehensive, production-ready documentation for long-term maintenance.
 
-#### Tasks
+#### Strategy
+- **User Documentation**: Guides for developers, contributors, and maintainers
+- **Architecture Documentation**: Technical decisions and system design
+- **Troubleshooting Guides**: Common issues and solutions
+- **Reference Materials**: Quick guides and cheat sheets
 
-1. **Install Nx Generator Plugin**
+#### Key Deliverables
+1. **Complete User Guide** (docs/nx-migration/user-guide.md)
+   - Getting started for new developers
+   - Daily development workflow
+   - Common tasks and commands
+   - Troubleshooting section
 
-   ```bash
-   npm install -D @nx/plugin
-   ```
+2. **Architecture Decision Record** (docs/nx-migration/architecture-decisions.md)
+   - All AD-001 through AD-005 decisions
+   - Rationale for each decision
+   - Alternatives considered
+   - Trade-offs and implications
 
-2. **Create Component Generator**
+3. **Migration Report** (docs/nx-migration/migration-report.md)
+   - Executive summary
+   - Performance improvements achieved
+   - Challenges faced and solutions
+   - Lessons learned
+   - Future recommendations
 
-   Create `tools/generators/component/index.ts`:
-   ```typescript
-   import {
-     formatFiles,
-     generateFiles,
-     Tree,
-     names,
-   } from '@nx/devkit';
-   import * as path from 'path';
+4. **Troubleshooting Guide** (docs/nx-migration/troubleshooting.md)
+   - Common errors and fixes
+   - Cache issues
+   - Build failures
+   - Test problems
+   - Performance issues
 
-   interface ComponentGeneratorSchema {
-     name: string;
-     description: string;
-   }
-
-   export default async function (tree: Tree, options: ComponentGeneratorSchema) {
-     const normalizedOptions = normalizeOptions(options);
-
-     // Generate package structure
-     generateFiles(
-       tree,
-       path.join(__dirname, 'files'),
-       `packages/bpk-component-${normalizedOptions.fileName}`,
-       {
-         ...normalizedOptions,
-         template: '',
-       }
-     );
-
-     // Format files
-     await formatFiles(tree);
-   }
-
-   function normalizeOptions(options: ComponentGeneratorSchema) {
-     const fileName = names(options.name).fileName;
-     const className = names(options.name).className;
-     const propertyName = names(options.name).propertyName;
-
-     return {
-       ...options,
-       fileName,
-       className,
-       propertyName,
-     };
-   }
-   ```
-
-3. **Create Generator Templates**
-
-   `tools/generators/component/files/`:
-   ```
-   ├── README.md.template
-   ├── index.ts.template
-   ├── project.json.template
-   └── src/
-       └── Bpk<%= className %>/
-           ├── Bpk<%= className %>.tsx.template
-           ├── Bpk<%= className %>.module.scss.template
-           ├── Bpk<%= className %>-test.tsx.template
-           └── accessibility-test.tsx.template
-   ```
-
-   Example `Bpk<%= className %>.tsx.template`:
-   ```typescript
-   /*
-    * Backpack - Skyscanner's Design System
-    *
-    * Copyright 2016 Skyscanner Ltd
-    *
-    * Licensed under the Apache License, Version 2.0 (the "License");
-    * ...
-    */
-
-   import type { ReactNode } from 'react';
-   import styles from './Bpk<%= className %>.module.scss';
-
-   export type Bpk<%= className %>Props = {
-     children?: ReactNode;
-     className?: string;
-   };
-
-   const Bpk<%= className %> = ({
-     children,
-     className
-   }: Bpk<%= className %>Props) => {
-     return (
-       <div className={`${styles['bpk-<%= fileName %>']} ${className || ''}`}>
-         {children}
-       </div>
-     );
-   };
-
-   export default Bpk<%= className %>;
-   ```
-
-4. **Register Generator**
-
-   Add to `tools/generators/generators.json`:
-   ```json
-   {
-     "generators": {
-       "component": {
-         "factory": "./component/index",
-         "schema": "./component/schema.json",
-         "description": "Create a new Backpack component"
-       }
-     }
-   }
-   ```
-
-5. **Test Generator**
-
-   ```bash
-   # Generate test component
-   nx generate @nx/workspace:component my-test-component
-
-   # Verify structure
-   ls packages/bpk-component-my-test-component/
-
-   # Clean up
-   rm -rf packages/bpk-component-my-test-component/
-   ```
-
-6. **Document Generator Usage**
-
-   `docs/nx-migration/generators-guide.md`:
-   ```markdown
-   # Nx Generators for Backpack
-
-   ## Create New Component
-
-   ```bash
-   nx generate @nx/workspace:component button-new \
-     --description="A new button component"
-   ```
-
-   This creates:
-   - Package structure in `packages/bpk-component-button-new/`
-   - Component with TypeScript, tests, styles
-   - Storybook examples
-   - README with template
-   - Proper license headers
-   ```
+5. **Quick Reference** (docs/nx-migration/quick-reference.md)
+   - Command cheat sheet
+   - Common workflows
+   - Printable one-page guide
 
 #### Success Gate
-- ✅ Generator creates valid component structure
-- ✅ Generated code follows Backpack constitution
-- ✅ License headers included
-- ✅ Documentation complete
+- ✅ All documentation complete and reviewed
+- ✅ No broken links
+- ✅ Examples tested and working
 
-### Phase 5.2: Performance Optimization (Week 1)
-
-#### Objective
-Fine-tune Nx configuration for optimal performance based on real usage data.
-
-#### Tasks
-
-1. **Analyze Performance Metrics**
-
-   Collect data from Milestones 1-4:
-   ```
-   Build Performance:
-   - Full build: [___] sec (baseline: [___] sec)
-   - Cached build: [___] sec
-   - Affected build (avg): [___] sec
-
-   Test Performance:
-   - Full test: [___] sec (baseline: [___] sec)
-   - Cached test: [___] sec
-   - Affected test (avg): [___] sec
-
-   Cache Metrics:
-   - Local hit rate: [___]%
-   - Cloud hit rate: [___]% (if enabled)
-   - Cache size: [___] GB
-   ```
-
-2. **Optimize Cache Configuration**
-
-   Tune `nx.json` based on analysis:
-   ```json
-   {
-     "targetDefaults": {
-       "build": {
-         "cache": true,
-         "inputs": [
-           // Remove unnecessary inputs
-           "{projectRoot}/src/**/*",
-           "{workspaceRoot}/babel.config.js",
-           "{workspaceRoot}/tsconfig.json"
-           // Removed: "!{projectRoot}/**/*.md" (too broad)
-         ],
-         "outputs": ["{projectRoot}/dist"]
-       }
-     },
-     "tasksRunnerOptions": {
-       "default": {
-         "options": {
-           "parallel": 5,  // Optimized based on CI capacity
-           "cacheDirectory": ".nx/cache"
-         }
-       }
-     }
-   }
-   ```
-
-3. **Optimize Project Dependencies**
-
-   Use Nx graph to identify optimization opportunities:
-   ```bash
-   # View dependency graph
-   nx graph
-
-   # Find circular dependencies
-   nx graph --focus=bpk-component-button
-
-   # Analyze affected scope
-   nx affected:graph --base=main
-   ```
-
-   Document any circular dependencies or optimization opportunities.
-
-4. **Configure Task Pipelines**
-
-   Set up task dependencies in `nx.json`:
-   ```json
-   {
-     "targetDefaults": {
-       "build": {
-         "dependsOn": ["^build"]  // Build dependencies first
-       },
-       "test": {
-         "dependsOn": ["build"]   // Build before test
-       }
-     }
-   }
-   ```
-
-5. **Benchmark Final Performance**
-
-   ```bash
-   # Full clean build
-   nx reset && time nx run-many --target=build --all
-
-   # Cached build
-   time nx run-many --target=build --all
-
-   # Affected build (simulate typical PR)
-   git checkout -b test/performance
-   echo "// test" >> packages/bpk-animate-height/src/index.ts
-   time nx affected:build --base=main
-   ```
-
-   Document final performance numbers.
-
-#### Success Gate
-- ✅ Build time <110% baseline
-- ✅ Cache hit rate >80%
-- ✅ No performance regressions
-- ✅ Optimization recommendations documented
-
-### Phase 5.3: Comprehensive Documentation (Week 1)
+### Phase 5.2: Team Training (Days 2-3)
 
 #### Objective
-Create complete, user-friendly documentation for all Nx migration aspects.
+Ensure all team members are comfortable with Nx workflows.
 
-#### Tasks
+#### Strategy
+- **Comprehensive Training**: Cover all aspects of Nx usage
+- **Hands-on Exercises**: Practice common tasks
+- **Q&A Sessions**: Address team concerns
+- **Office Hours**: Ongoing support after training
 
-1. **Create Migration Documentation Hub**
-
-   `docs/nx-migration/README.md`:
-   ```markdown
-   # Nx Migration Documentation
-
-   Complete guide to Backpack's Nx migration.
-
-   ## Quick Start
-   - [Getting Started](./getting-started.md)
-   - [Command Reference](./nx-commands.md)
-   - [FAQ](./faq.md)
-
-   ## For Developers
-   - [Developer Workflow](./developer-workflow.md)
-   - [Testing Guide](./testing-guide.md)
-   - [Storybook Integration](./storybook-integration.md)
-   - [Troubleshooting](./troubleshooting.md)
-
-   ## For Team Leads
-   - [Migration Timeline](./timeline.md)
-   - [Performance Report](./performance-report.md)
-   - [CI/CD Guide](./cicd-guide.md)
-   - [Maintenance Guide](./maintenance-guide.md)
-
-   ## Advanced
-   - [Nx Generators](./generators-guide.md)
-   - [Nx Cloud Guide](./nx-cloud-guide.md) (if enabled)
-   - [Custom Executors](./custom-executors.md)
-   ```
-
-2. **Complete All Documentation Files**
-
-   Ensure all referenced docs exist and are complete:
-   - ✅ `getting-started.md`
-   - ✅ `nx-commands.md`
-   - ✅ `developer-workflow.md`
-   - ✅ `testing-guide.md`
-   - ✅ `storybook-integration.md`
-   - ✅ `troubleshooting.md`
-   - ✅ `cicd-guide.md`
-   - ✅ `performance-report.md`
-   - ✅ `maintenance-guide.md`
-   - ✅ `faq.md`
-
-3. **Create FAQ Document**
-
-   `docs/nx-migration/faq.md`:
-   ```markdown
-   # Nx Migration FAQ
-
-   ## General
-
-   **Q: Why did we migrate to Nx?**
-   A: To standardize with Skyscanner's monorepo approach, enable caching, and prepare for banana integration.
-
-   **Q: Do I need to learn new commands?**
-   A: Common npm scripts still work. Nx adds new capabilities but doesn't replace familiar workflows.
-
-   **Q: What if I have issues?**
-   A: Check [Troubleshooting Guide](./troubleshooting.md) or ask in #backpack Slack.
-
-   ## Building
-
-   **Q: How do I build a single package?**
-   ```bash
-   nx build bpk-component-button
-   ```
-
-   **Q: How do I build all packages?**
-   ```bash
-   npm run build
-   # or
-   nx run-many --target=build --all
-   ```
-
-   **Q: Why is my build cached?**
-   A: Nx caches builds that haven't changed. Run `nx reset` to clear cache.
-
-   ## Testing
-
-   [Additional FAQ items...]
-   ```
-
-4. **Create Maintenance Guide**
-
-   `docs/nx-migration/maintenance-guide.md`:
-   ```markdown
-   # Nx Maintenance Guide
-
-   ## Upgrading Nx
-
-   ```bash
-   # Check for updates
-   nx migrate latest
-
-   # Review migrations
-   cat migrations.json
-
-   # Run migrations
-   nx migrate --run-migrations
-
-   # Test after upgrade
-   npm run build && npm test
-   ```
-
-   ## Cache Management
-
-   - **Clear local cache**: `nx reset`
-   - **Check cache size**: `du -sh .nx/cache`
-   - **Cache location**: `.nx/cache` (gitignored)
-
-   ## Troubleshooting Common Issues
-
-   ### Build not caching
-   1. Check nx.json inputs/outputs
-   2. Verify no random values in output
-   3. Run with `--verbose` to see cache keys
-
-   ### Affected detection wrong
-   1. Ensure proper base branch: `nx affected --base=origin/main`
-   2. Check project dependencies in nx.json
-   3. Verify project.json configurations
-
-   ## Monthly Maintenance Tasks
-
-   - [ ] Review cache hit rates
-   - [ ] Check for Nx updates
-   - [ ] Review affected detection accuracy
-   - [ ] Update documentation if needed
-   ```
-
-5. **Create Performance Report**
-
-   `docs/nx-migration/performance-report.md`:
-   ```markdown
-   # Nx Migration Performance Report
-
-   ## Executive Summary
-
-   Backpack successfully migrated to Nx, achieving:
-   - [___]% reduction in CI time
-   - [___]% cache hit rate
-   - [___] hours saved per week (estimated)
-   - Zero breaking changes
-
-   ## Baseline vs. Post-Migration
-
-   | Metric | Before | After | Improvement |
-   |--------|--------|-------|-------------|
-   | Full Build | [___]s | [___]s | [___]% |
-   | Cached Build | N/A | [___]s | N/A |
-   | Full Test | [___]s | [___]s | [___]% |
-   | Cached Test | N/A | [___]s | N/A |
-   | CI (PR) | [___]m | [___]m | [___]% |
-   | CI (Full) | [___]m | [___]m | [___]% |
-
-   ## Cache Effectiveness
-
-   - **Local Cache Hit Rate**: [___]%
-   - **Cloud Cache Hit Rate**: [___]% (if enabled)
-   - **Cache Size**: [___] GB
-   - **Time Saved per Day**: [___] hours
-
-   ## Developer Feedback
-
-   Survey results (n=[___]):
-   - Satisfaction: [___]% positive
-   - Ease of use: [___]/5
-   - Performance: [___]/5
-   - Documentation: [___]/5
-
-   ## Recommendations
-
-   [Based on data, recommend future optimizations]
-   ```
-
-6. **Update Root Documentation**
-
-   Update `README.md`, `CONTRIBUTING.md`, `CODE_REVIEW_GUIDELINES.md` with Nx references.
-
-#### Success Gate
-- ✅ All documentation complete
-- ✅ Cross-links verified
-- ✅ Examples tested
-- ✅ Documentation reviewed by team
-
-### Phase 5.4: Team Training (Week 1)
-
-#### Objective
-Ensure all team members can effectively use Nx.
-
-#### Tasks
-
-1. **Prepare Training Materials**
-
-   - Slide deck: "Nx for Backpack Developers"
-   - Hands-on exercises
-   - Cheat sheet (printable/digital)
-   - Video recordings (optional)
-
-2. **Conduct Training Sessions**
-
-   **Session 1: Nx Basics** (1 hour)
-   - What is Nx and why we use it
-   - Basic commands (build, test, lint)
-   - Caching concepts
-   - Viewing dependency graph
-   - Q&A
-
-   **Session 2: Advanced Nx** (30 min)
-   - Affected commands
-   - Generators (if available)
-   - Troubleshooting
+#### Training Components
+1. **Main Training Session** (1.5 hours)
+   - Nx fundamentals and benefits
+   - Daily development workflow
+   - Build, test, lint commands
+   - Caching and affected commands
    - CI/CD changes
-   - Q&A
+   - Troubleshooting basics
 
-   **Session 3: Hands-on Workshop** (1 hour)
-   - Exercise 1: Build and cache
-   - Exercise 2: Run affected tests
-   - Exercise 3: Create component with generator
-   - Exercise 4: Debug cache issues
+2. **Hands-on Workshop** (1 hour)
+   - Build packages with Nx
+   - View dependency graph
+   - Use affected commands
+   - Clear cache and debug issues
+   - Run Storybook
 
-3. **Record Sessions**
+3. **Q&A Session** (30 minutes)
+   - Open discussion
+   - Address concerns
+   - Collect feedback
 
-   Record training for:
-   - New team members
-   - Those who missed live sessions
-   - Future reference
-
-4. **Create Cheat Sheet**
-
-   `docs/nx-migration/cheat-sheet.md`:
-   ```markdown
-   # Nx Cheat Sheet
-
-   ## Common Commands
-
-   | Task | Command |
-   |------|---------|
-   | Build all | `npm run build` or `nx run-many --target=build --all` |
-   | Build one | `nx build bpk-component-button` |
-   | Build affected | `nx affected:build` |
-   | Test all | `npm test` or `nx run-many --target=test --all` |
-   | Test one | `nx test bpk-component-button` |
-   | Test affected | `nx affected:test` |
-   | Lint all | `npm run lint` |
-   | Clear cache | `nx reset` |
-   | Dependency graph | `nx graph` |
-
-   ## Tips
-
-   - Use `--verbose` for detailed output
-   - Use `--skip-nx-cache` to bypass cache
-   - Use `--base=main` for affected commands
-   ```
-
-5. **Collect Feedback**
-
-   Post-training survey:
-   - Content clarity (1-5)
-   - Pace (too fast/just right/too slow)
-   - Documentation helpfulness (1-5)
-   - Confidence using Nx (1-5)
-   - What else needed?
+4. **Office Hours** (Ongoing)
+   - Daily support sessions (first week)
+   - Slack support channel
+   - Documentation as primary resource
 
 #### Success Gate
-- ✅ >90% team trained
-- ✅ Materials available for reference
-- ✅ Average satisfaction >4/5
-- ✅ All questions answered
+- ✅ >95% team attendance
+- ✅ Training materials complete
+- ✅ Positive feedback (>85% satisfaction)
+- ✅ <10 support requests in first week
 
-### Phase 5.5: Final Validation (Week 1)
+### Phase 5.3: Nx Generators (Days 3-4, Optional)
 
 #### Objective
-Comprehensive final validation before declaring migration complete.
+Create Nx generators to automate common tasks (optional improvement).
 
-#### Tasks
+#### Strategy
+- **Code Generation**: Automate repetitive tasks
+- **Consistency**: Ensure new packages follow standards
+- **Productivity**: Reduce manual configuration work
 
-1. **Full System Test**
+#### Potential Generators
+1. **New Package Generator**
+   - Create new component package with standard structure
+   - Generate project.json with correct targets
+   - Create boilerplate files (README, tests, etc.)
+   - Add to dependency graph
 
-   ```bash
-   # Clean environment
-   rm -rf node_modules dist .nx
-   npm install
+2. **Component Generator**
+   - Generate new component within existing package
+   - Create TypeScript/JSX file
+   - Create test file
+   - Create stories file
+   - Create SCSS file
 
-   # Full build
-   nx run-many --target=build --all
+3. **Test Generator**
+   - Generate test files for existing components
+   - Include jest-axe accessibility tests
+   - Follow testing best practices
 
-   # Full test
-   nx run-many --target=test --all
+#### Implementation Notes
+- Only create generators if there's clear demand
+- Prioritize based on team feedback
+- Document generator usage
+- Include in training materials
 
-   # Lint
-   nx run-many --target=lint --all
+#### Success Gate (If Implemented)
+- ✅ Generators work correctly
+- ✅ Documentation complete
+- ✅ Team trained on generator usage
 
-   # Storybook
-   nx storybook:build
+### Phase 5.4: Performance Optimization (Days 4-5)
 
-   # Verify outputs
-   ls dist/
-   ls dist-storybook/
-   ```
+#### Objective
+Fine-tune Nx configuration for optimal performance across all workflows.
 
-2. **Regression Testing**
+#### Strategy
+- **Comprehensive Analysis**: Review all performance metrics
+- **Configuration Tuning**: Optimize nx.json settings
+- **Bottleneck Identification**: Find and fix slow operations
+- **Cache Optimization**: Maximize cache effectiveness
 
-   Compare outputs:
-   - Build artifacts
-   - Test results
-   - Published package
-   - Storybook build
+#### Optimization Areas
+1. **Build Performance**
+   - Analyze build times across all packages
+   - Tune parallelization settings
+   - Optimize cache inputs/outputs
+   - Identify and fix slow packages
 
-3. **Performance Validation**
+2. **Test Performance**
+   - Review test execution times
+   - Optimize Jest configuration
+   - Enable test parallelization where beneficial
+   - Tune coverage collection
 
-   Final benchmarks:
-   - Build time
-   - Test time
+3. **Cache Effectiveness**
+   - Analyze cache hit rates
+   - Refine cache inputs to reduce false misses
+   - Validate cache outputs are complete
+   - Monitor cache storage usage
+
+4. **CI Performance**
+   - Review CI execution times
+   - Optimize affected command usage
+   - Tune parallel execution
+   - Monitor Nx Cloud effectiveness (if enabled)
+
+#### Key Tasks
+1. Collect comprehensive performance metrics
+2. Identify top 10 slowest operations
+3. Tune nx.json configuration
+4. Re-test and validate improvements
+5. Document optimal configuration
+6. Create performance monitoring plan
+
+#### Success Gate
+- ✅ All performance targets met
+- ✅ No significant bottlenecks remain
+- ✅ Configuration documented
+- ✅ Monitoring plan in place
+
+### Phase 5.5: Migration Retrospective (Day 5)
+
+#### Objective
+Reflect on migration process and document learnings for future projects.
+
+#### Strategy
+- **Team Retrospective**: Gather team feedback and insights
+- **Metrics Review**: Analyze final performance data
+- **Lessons Learned**: Document what worked and what didn't
+- **Future Recommendations**: Identify improvements for next time
+
+#### Retrospective Components
+1. **Metrics Summary**
+   - Performance improvements achieved
    - Cache effectiveness
-   - CI performance
+   - CI time reduction
+   - Developer satisfaction
+   - Issues encountered and resolved
 
-4. **Developer Workflow Test**
+2. **What Went Well**
+   - Successful strategies
+   - Effective tools and processes
+   - Good decisions that paid off
 
-   Simulate common workflows:
-   - Clone repo → install → build → test
-   - Make change → build affected → test affected
-   - Create PR → CI validates
-   - Merge PR → release
+3. **What Could Be Improved**
+   - Challenges and difficulties
+   - Unexpected issues
+   - Areas for optimization
 
-5. **Issue Tracking**
+4. **Lessons Learned**
+   - Technical insights
+   - Process improvements
+   - Communication effectiveness
+   - Documentation quality
 
-   Review issues:
-   - Open issues from milestones
-   - Resolve or document
-   - Prioritize future work
-   - Close migration project
-
-#### Success Gate
-- ✅ All tests pass
-- ✅ No regressions found
-- ✅ Performance targets met
-- ✅ No blocking issues
-
-### Phase 5.6: Migration Completion (Week 1)
-
-#### Objective
-Officially complete the migration and transition to normal operations.
-
-#### Tasks
-
-1. **Create Final Migration Report**
-
-   `docs/nx-migration/final-report.md`:
-   ```markdown
-   # Nx Migration Final Report
-
-   ## Project Overview
-
-   - **Start Date**: [___]
-   - **End Date**: [___]
-   - **Duration**: [___] weeks
-   - **Team Size**: [___]
-
-   ## Milestones Completed
-
-   - ✅ M1: Nx Foundation (2-3 weeks)
-   - ✅ M2: Testing & Linting (2 weeks)
-   - ✅ M3: Development Workflow (1-2 weeks)
-   - ✅ M4: CI/CD & Caching (2 weeks)
-   - ✅ M5: Optimization (1 week)
-
-   ## Success Metrics
-
-   | Metric | Target | Achieved | Status |
-   |--------|--------|----------|--------|
-   | Build Time | <110% | [___]% | ✅/❌ |
-   | Cache Hit Rate | >80% | [___]% | ✅/❌ |
-   | CI Time Reduction | >20% | [___]% | ✅/❌ |
-   | Test Pass Rate | 100% | [___]% | ✅/❌ |
-   | Developer Satisfaction | >80% | [___]% | ✅/❌ |
-
-   ## Achievements
-
-   - [List key achievements]
-
-   ## Challenges Overcome
-
-   - [List major challenges and solutions]
-
-   ## Lessons Learned
-
-   - [Key lessons for future migrations]
-
-   ## Future Recommendations
-
-   - [Suggested improvements]
-
-   ## Acknowledgments
-
-   - [Thank contributors]
-   ```
-
-2. **Team Announcement**
-
-   Announce completion:
-   - Slack #backpack channel
-   - Team email
-   - Confluence page
-   - Celebrate success! 🎉
-
-3. **Tag Final Release**
-
-   ```bash
-   git tag -a nx-migration-complete -m "Nx Migration Complete"
-   git push origin nx-migration-complete
-   ```
-
-4. **Update Project Status**
-
-   - Close migration project in project management tool
-   - Archive migration documentation
-   - Transition to maintenance mode
-
-5. **Schedule Follow-up**
-
-   Schedule 1-month and 3-month reviews:
-   - Performance still meeting targets?
-   - Any issues emerged?
-   - Further optimizations needed?
-   - Team feedback?
+5. **Future Recommendations**
+   - For Backpack ongoing maintenance
+   - For other Skyscanner projects migrating to Nx
+   - For potential banana integration
+   - For Nx ecosystem contribution
 
 #### Success Gate
-- ✅ Final report complete
-- ✅ Team notified
-- ✅ Release tagged
-- ✅ Follow-ups scheduled
+- ✅ Retrospective conducted
+- ✅ Findings documented
+- ✅ Recommendations actionable
+- ✅ Knowledge shared with broader team
 
 ## Validation & Testing
 
-### Documentation Quality Checklist
+### Documentation Validation
 
-- [ ] All documents exist and are complete
-- [ ] Cross-links verified and working
-- [ ] Code examples tested
-- [ ] Screenshots/diagrams included where helpful
-- [ ] Reviewed by at least 2 team members
-- [ ] Spell-checked and grammar-checked
+- [ ] All documents complete and proofread
+- [ ] Examples tested and working
+- [ ] Links validated
+- [ ] Search functionality works
+- [ ] Accessible to all team members
 
-### Training Effectiveness Checklist
+### Training Validation
 
-- [ ] >90% team attendance
-- [ ] All training materials prepared
+- [ ] >95% attendance achieved
+- [ ] Training materials effective
 - [ ] Hands-on exercises completed
-- [ ] Q&A sessions conducted
+- [ ] Satisfaction >85%
+- [ ] Support requests <10 in first week
+
+### Performance Validation
+
+- [ ] All targets met or exceeded
+- [ ] No regressions introduced
+- [ ] Cache effectiveness >target
+- [ ] CI improvements sustained
+
+### Knowledge Transfer Validation
+
+- [ ] Team confident with Nx
+- [ ] Documentation referenced regularly
+- [ ] Minimal support needed after first week
+- [ ] Knowledge base updated
+
+## Final Performance Summary
+
+| Metric | Baseline | Target | Achieved | Improvement |
+|--------|----------|--------|----------|-------------|
+| Full Build Time | [Initial] | <110% | [Final] | [%] |
+| Cached Build Time | N/A | <5s | [Final] | [N/A] |
+| Cache Hit Rate | 0% | >80% | [Final] | [N/A] |
+| CI Time (PR) | [Initial] | <50% | [Final] | [%] |
+| CI Time (Full) | [Initial] | <110% | [Final] | [%] |
+| Test Time | [Initial] | <110% | [Final] | [%] |
+| Developer Satisfaction | N/A | >80% | [Final] | [N/A] |
+
+## Migration Completion Checklist
+
+### Technical Completion
+
+- [ ] All 96 packages building with Nx
+- [ ] All tests passing
+- [ ] All linting working
+- [ ] Storybook integrated
+- [ ] CI/CD updated
+- [ ] Nx Cloud configured (if approved)
+- [ ] Performance targets met
+
+### Documentation Completion
+
+- [ ] User guide complete
+- [ ] Architecture decisions documented
+- [ ] Migration report written
+- [ ] Troubleshooting guide published
+- [ ] Quick reference created
+- [ ] README updated
+
+### Team Readiness
+
+- [ ] Training completed
+- [ ] Team confident with Nx
+- [ ] Support channels established
 - [ ] Feedback collected
-- [ ] Average satisfaction >4/5
+- [ ] Issues addressed
 
-### Performance Validation Checklist
+### Process Completion
 
-- [ ] All metrics meet or exceed targets
-- [ ] No performance regressions
-- [ ] Cache effectiveness validated
-- [ ] CI/CD performance improved
-- [ ] Developer workflow faster
-
-## Rollback Plan
-
-At this stage, full rollback unlikely but possible:
-
-### Trigger Conditions
-
-Rollback entire migration if:
-- Critical unfixable bug
-- Performance <90% baseline
-- Team productivity drops >20%
-- Stakeholder decision to abort
-
-### Rollback Procedure
-
-1. **Full Revert**
-   ```bash
-   git checkout main
-   git branch -D 001-nx-migration
-   rm -rf .nx node_modules
-   git checkout -- .
-   npm install
-   npm run build && npm test
-   ```
-
-2. **Communication**
-   - Notify team immediately
-   - Explain reason
-   - Document lessons learned
-   - Plan future attempt
-
-3. **Post-Mortem**
-   - What went wrong?
-   - What could we have done differently?
-   - When can we try again?
-
-## Performance Targets
-
-| Metric | Baseline | Target | Actual | Status |
-|--------|----------|--------|--------|--------|
-| Full Build | [From M1] | <110% | [TBD] | ⏳ |
-| Cached Build | N/A | <5s | [TBD] | ⏳ |
-| Cache Hit Rate | 0% | >80% | [TBD] | ⏳ |
-| Developer Satisfaction | N/A | >80% | [TBD] | ⏳ |
-| CI Time Reduction | [From M4] | >20% | [TBD] | ⏳ |
-
-## Documentation Deliverables
-
-All documentation complete:
-
-- ✅ Getting Started Guide
-- ✅ Command Reference
-- ✅ Developer Workflow Guide
-- ✅ Testing Guide
-- ✅ Storybook Integration Guide
-- ✅ CI/CD Guide
-- ✅ Troubleshooting Guide
-- ✅ FAQ
-- ✅ Maintenance Guide
-- ✅ Performance Report
-- ✅ Final Report
-- ✅ Cheat Sheet
-- ✅ Generators Guide (if applicable)
-- ✅ Nx Cloud Guide (if applicable)
-
-## Issues & Resolutions
-
-### Known Issues
-
-*To be filled during implementation*
-
-### Resolved Issues
-
-*To be filled during implementation*
+- [ ] Retrospective conducted
+- [ ] Lessons learned documented
+- [ ] Knowledge base updated
+- [ ] Success metrics published
+- [ ] Celebration organized 🎉
 
 ## Next Steps
 
-After Milestone 5 completion:
+Upon Milestone 5 completion:
 
-1. **Migration Complete** 🎉
-   - Nx fully integrated
-   - Team trained
-   - Documentation complete
-   - Performance validated
+1. **Final Release Tag**: Create nx-migration-complete tag
+2. **Merge to Main**: Merge 001-nx-migration branch after final review
+3. **Team Celebration**: Recognize team effort and success
+4. **Knowledge Sharing**: Present migration at Skyscanner engineering meetup
+5. **Monitor**: Track performance and team feedback for 2-4 weeks
+6. **Future Planning**: Consider banana monorepo integration timeline
 
-2. **Transition to Maintenance**
-   - Monthly Nx updates
-   - Cache optimization reviews
-   - Documentation updates
-   - Team support
+## Deliverables Checklist
 
-3. **Future Enhancements**
-   - Evaluate Nx Cloud (if not already enabled)
-   - Explore advanced Nx features
-   - Consider banana integration
-   - Investigate build tool upgrades (Vite/esbuild)
+- [ ] docs/nx-migration/user-guide.md
+- [ ] docs/nx-migration/architecture-decisions.md
+- [ ] docs/nx-migration/migration-report.md
+- [ ] docs/nx-migration/troubleshooting.md
+- [ ] docs/nx-migration/quick-reference.md
+- [ ] Updated root README.md
+- [ ] Training slides and materials
+- [ ] Nx generators (if implemented)
+- [ ] Performance monitoring dashboard
+- [ ] Retrospective report
 
 ## References
 
-- **Nx Documentation**: https://nx.dev/
-- **Nx Generators**: https://nx.dev/plugin-features/use-code-generators
+- **Nx Generators**: https://nx.dev/features/generate-code
+- **Nx Workspace Generators**: https://nx.dev/recipes/generators/local-generators
 - **Migration Spec**: [../spec.md](../spec.md)
 - **Implementation Plan**: [../plan.md](../plan.md)
-- **All Milestones**:
-  - [M1: Foundation](./milestone-1-nx-foundation.md)
-  - [M2: Testing](./milestone-2-testing-linting.md)
-  - [M3: Workflow](./milestone-3-dev-workflow.md)
-  - [M4: CI/CD](./milestone-4-cicd-caching.md)
-  - [M5: Optimization](./milestone-5-optimization.md) (this document)
+- **All Milestones**: [./](.)
+
+---
+
+**Congratulations on completing the Backpack Nx Migration!** 🎉
