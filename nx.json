@@ -3,7 +3,7 @@
   "defaultProject": "backpack-web",
   "targetDefaults": {
     "build": {
-      "cache": false,
+      "cache": true,
       "inputs": [
         "{projectRoot}/**/*",
         "!{projectRoot}/**/*.test.{ts,tsx,js,jsx}",
@@ -50,9 +50,10 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["test", "lint", "stylelint"],
+        "cacheableOperations": ["build", "test", "lint", "stylelint"],
         "parallel": 4
       }
     }
-  }
+  },
+  "restoreMutablePackagesOnTaskEnd": true
 }
