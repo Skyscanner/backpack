@@ -425,7 +425,7 @@ npx nx storybook:build
 
 ### Internal Documentation
 
-- [Quick Reference](../references/quick-reference.md) - Command cheat sheet
+- [Quick Reference](quick-reference.md) - Command cheat sheet
 - [CI/CD Guide](./cicd-guide.md) - How Nx works in CI
 - [Affected Commands](./affected-commands.md) - Detailed affected guide
 - [Troubleshooting](../guides/troubleshooting.md) - Common issues and fixes

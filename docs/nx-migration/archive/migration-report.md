@@ -331,7 +331,7 @@ Time: 10-60s for typical changes
 - [User Guide](../guides/user-guide.md)
 - [Architecture Decisions](../decisions/architecture-decisions.md)
 - [Troubleshooting](../guides/troubleshooting.md)
-- [Quick Reference](../references/quick-reference.md)
+- [Quick Reference](../guides/quick-reference.md)
 
 ---
 
@@ -719,7 +719,7 @@ The incremental, milestone-based approach proved effective, providing immediate 
 ### All Documentation
 
 - [User Guide](../guides/user-guide.md)
-- [Quick Reference](../references/quick-reference.md)
+- [Quick Reference](../guides/quick-reference.md)
 - [CI/CD Guide](../guides/cicd-guide.md)
 - [Affected Commands](./affected-commands.md)
 - [Storybook & Percy](./storybook-percy.md)
