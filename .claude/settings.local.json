@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch:*)",
+      "Bash(.specify/scripts/bash/create-new-feature.sh:*)",
+      "Bash(.specify/scripts/bash/setup-plan.sh:*)",
+      "Bash(npx nx:*)",
+      "Bash([ -f /Users/abbyzhan/code/backpack/node_modules/.bin/nx ])",
+      "Bash(git checkout:*)"
+    ]
+  }
+}
