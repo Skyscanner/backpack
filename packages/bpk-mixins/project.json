@@ -3,7 +3,18 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/bpk-mixins",
   "projectType": "library",
-  "targets": {},
+  "targets": {
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "TZ=Etc/UTC jest --coverage --testPathPatterns='packages/bpk-mixins'",
+        "cwd": "{workspaceRoot}"
+      },
+      "outputs": [
+        "{workspaceRoot}/coverage"
+      ]
+    }
+  },
   "tags": [
     "type:package",
     "scope:backpack",

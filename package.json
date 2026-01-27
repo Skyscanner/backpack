@@ -118,6 +118,7 @@
     "@babel/preset-typescript": "^7.28.5",
     "@babel/register": "^7.28.3",
     "@figma/code-connect": "^1.3.4",
+    "@nx/jest": "^22.4.2",
     "@nx/workspace": "^22.4.2",
     "@percy/cli": "^1.31.0",
     "@percy/storybook": "^9.1.0",

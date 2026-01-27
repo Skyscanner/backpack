@@ -13,6 +13,16 @@
       "outputs": [
         "{projectRoot}/dist"
       ]
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "TZ=Etc/UTC jest --coverage --testPathPatterns='packages/bpk-component-overlay'",
+        "cwd": "{workspaceRoot}"
+      },
+      "outputs": [
+        "{workspaceRoot}/coverage"
+      ]
     }
   },
   "tags": [

@@ -11,6 +11,14 @@
         "cwd": "packages/bpk-animate-height"
       },
       "outputs": ["{projectRoot}/dist"]
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "TZ=Etc/UTC jest --coverage --testPathPatterns='packages/bpk-animate-height'",
+        "cwd": "{workspaceRoot}"
+      },
+      "outputs": ["{workspaceRoot}/coverage"]
     }
   },
   "tags": ["type:package", "scope:backpack"]

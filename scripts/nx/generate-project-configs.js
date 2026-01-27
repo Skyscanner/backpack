@@ -65,21 +65,38 @@ function generateProjectJson(packageName) {
               cwd: `packages/${packageName}`
             },
             outputs: [`{projectRoot}/dist`]
+          },
+          test: {
+            executor: 'nx:run-commands',
+            options: {
+              command: `TZ=Etc/UTC jest --coverage --testPathPatterns='packages/${packageName}'`,
+              cwd: '{workspaceRoot}'
+            },
+            outputs: ['{workspaceRoot}/coverage']
           }
         },
         tags: ['type:package', 'scope:backpack', 'special-case']
       };
-    } 
+    }
       // bpk-mixins - Sass only, minimal build target
       return {
         name: packageName,
         $schema: '../../node_modules/nx/schemas/project-schema.json',
         sourceRoot: `packages/${packageName}`,
         projectType: 'library',
-        targets: {},
+        targets: {
+          test: {
+            executor: 'nx:run-commands',
+            options: {
+              command: `TZ=Etc/UTC jest --coverage --testPathPatterns='packages/${packageName}'`,
+              cwd: '{workspaceRoot}'
+            },
+            outputs: ['{workspaceRoot}/coverage']
+          }
+        },
         tags: ['type:package', 'scope:backpack', 'sass-only', 'special-case']
       };
-    
+
   }
 
   // Standard package configuration
@@ -96,6 +113,14 @@ function generateProjectJson(packageName) {
           cwd: `packages/${packageName}`
         },
         outputs: [`{projectRoot}/dist`]
+      },
+      test: {
+        executor: 'nx:run-commands',
+        options: {
+          command: `TZ=Etc/UTC jest --coverage --testPathPatterns='packages/${packageName}'`,
+          cwd: '{workspaceRoot}'
+        },
+        outputs: ['{workspaceRoot}/coverage']
       }
     },
     tags: ['type:package', 'scope:backpack']
