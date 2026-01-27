@@ -61,8 +61,8 @@ Relocate all Storybook story files from the centralized `examples/` directory to
 - **Nx Alignment**: Leverages Nx's implicit project roots by keeping all component assets together
 - **Banana Preparation**: Matches the colocated pattern used in Banana monorepo (`libs/shared/universal/*/src/*.stories.tsx`)
 
-**Current State**: 91 component examples in `examples/bpk-component-*/` directories
-**Target State**: Stories colocated in `packages/bpk-component-*/src/` alongside implementation
+**Current State**: 91 component examples in `examples/bpk-component-*/` directories, plus shared utilities in `examples/bpk-storybook-utils/`
+**Target State**: Stories colocated in `packages/bpk-component-*/src/` alongside implementation, shared utilities moved to `packages/bpk-storybook-utils/`
 
 ## Constitution Check
 
@@ -175,7 +175,7 @@ Relocate all Storybook story files from the centralized `examples/` directory to
   Storybook's glob patterns must be updated from `examples/**/stories.tsx` to `packages/**/src/**/*.stories.tsx` to discover colocated files.
 
 - **What happens if a story file has local dependencies in the examples directory?**
-  Any shared story utilities or fixtures in `examples/` must either be moved to a shared location or copied to each component package.
+  Shared story utilities (`examples/bpk-storybook-utils/`) will be moved to `packages/bpk-storybook-utils/` to align with Backpack's package structure. Import paths in stories must be updated accordingly (e.g., from `../bpk-storybook-utils` to `../../bpk-storybook-utils`).
 
 - **How are custom decorators and story wrappers affected?**
   Storybook preview configuration (`preview.tsx`) remains in `.storybook/` directory and continues to work with colocated stories.
@@ -189,12 +189,14 @@ Relocate all Storybook story files from the centralized `examples/` directory to
 
 - **FR-001**: All story files MUST be relocated from `examples/bpk-component-*/{stories.tsx,examples.tsx}` to `packages/bpk-component-*/src/{stories.tsx,examples.tsx}`
 - **FR-002**: Story style files (`*.module.scss`, `*.module.css`) MUST be colocated with their story files in the component's `src/` directory
-- **FR-003**: Storybook configuration MUST be updated to discover stories using new glob pattern matching colocated locations
-- **FR-004**: All 91 components MUST have their stories successfully migrated and discoverable in Storybook UI
-- **FR-005**: File moves MUST use `git mv` command to preserve Git history
-- **FR-006**: Import paths within story files MUST be updated to reference component code using relative paths (e.g., `./BpkButton` instead of `../../packages/bpk-component-button/src/BpkButton`)
-- **FR-007**: All Percy visual regression tests MUST continue to pass with colocated stories
-- **FR-008**: CI Storybook build and deployment workflows MUST succeed without modifications (or with minimal configuration updates)
+- **FR-003**: Shared story utilities (`examples/bpk-storybook-utils/`) MUST be moved to `packages/bpk-storybook-utils/` to align with Backpack's package-based structure
+- **FR-004**: Storybook configuration MUST be updated to discover stories using new glob pattern matching colocated locations
+- **FR-005**: All 91 components MUST have their stories successfully migrated and discoverable in Storybook UI
+- **FR-006**: File moves MUST use `git mv` command to preserve Git history
+- **FR-007**: Import paths within story files MUST be updated to reference component code using relative paths (e.g., `./BpkButton` instead of `../../packages/bpk-component-button/src/BpkButton`)
+- **FR-008**: Import paths to shared utilities MUST be updated (e.g., from `../bpk-storybook-utils` to `../../bpk-storybook-utils`)
+- **FR-009**: All Percy visual regression tests MUST continue to pass with colocated stories
+- **FR-010**: CI Storybook build and deployment workflows MUST succeed without modifications (or with minimal configuration updates)
 
 ### Non-Functional Requirements
 
@@ -217,13 +219,14 @@ Relocate all Storybook story files from the centralized `examples/` directory to
 ### Measurable Outcomes
 
 - **SC-001**: All 91 component story files are successfully moved from `examples/` to `packages/*/src/`
-- **SC-002**: Storybook builds successfully with `npm run storybook:build` (zero errors)
-- **SC-003**: Storybook deploys successfully to GitHub Pages (PR preview builds work)
-- **SC-004**: All Percy visual regression tests pass (no unexpected visual changes)
-- **SC-005**: Git history is preserved for all moved files (verifiable with `git log --follow`)
-- **SC-006**: No orphaned story files remain in `examples/` directory (directory can be safely deleted or repurposed)
-- **SC-007**: CI build passes all checks (lint, typecheck, storybook build, tests)
-- **SC-008**: Local development workflow (`npm run storybook`) works without additional configuration changes
+- **SC-002**: Shared utilities (`bpk-storybook-utils`) are successfully moved to `packages/bpk-storybook-utils/`
+- **SC-003**: Storybook builds successfully with `npm run storybook:build` (zero errors)
+- **SC-004**: Storybook deploys successfully to GitHub Pages (PR preview builds work)
+- **SC-005**: All Percy visual regression tests pass (no unexpected visual changes)
+- **SC-006**: Git history is preserved for all moved files (verifiable with `git log --follow`)
+- **SC-007**: No orphaned story files remain in `examples/` directory (directory can be safely deleted or repurposed)
+- **SC-008**: CI build passes all checks (lint, typecheck, storybook build, tests)
+- **SC-009**: Local development workflow (`npm run storybook`) works without additional configuration changes
 
 ## Dependencies & Related Components
 
@@ -357,10 +360,10 @@ backpack/
 
 - [ ] Q1: Should story style files (`*.module.scss`) be moved to component `src/` root or nested in a `stories/` subdirectory?
   - **Recommendation**: Move to `src/` root for simplicity (matches Banana pattern)
-- [ ] Q2: Should the empty `examples/` directory be deleted or repurposed for cross-component example applications?
+- [ ] Q2: Should the empty `examples/` directory be deleted or repurposed after migration?
   - **Recommendation**: Delete to avoid confusion - examples are now colocated
-- [ ] Q3: Are there any shared story utilities in `examples/` that need to be moved to a common location?
-  - **Action**: Audit for shared files before migration
+- [x] Q3: How should shared story utilities (`examples/bpk-storybook-utils/`) be handled?
+  - **Decision**: Move to `packages/bpk-storybook-utils/` to align with package structure (Session 2026-01-27)
 
 ## References
 
@@ -382,3 +385,7 @@ backpack/
 - Preserve Git history using `git mv` for all file moves
 - Keep story filenames unchanged (`stories.tsx`, `examples.tsx`)
 - Target PATCH version bump (internal change, no consumer impact)
+
+### Session 2026-01-27 (Shared Utilities Handling)
+
+- Q: How should `examples/bpk-storybook-utils/` shared utilities directory be handled during migration? → A: Move to `packages/bpk-storybook-utils/` to align with Backpack's package-based structure, updating import paths in affected stories from `../bpk-storybook-utils` to `../../bpk-storybook-utils`
