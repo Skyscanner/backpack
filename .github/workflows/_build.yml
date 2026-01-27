@@ -43,14 +43,18 @@ jobs:
 
       - name: Fetch base branch for affected detection
         if: github.event_name == 'pull_request'
-        run: git fetch origin ${{ github.base_ref }}:${{ github.base_ref }} --depth=1
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: git fetch origin "$BASE_REF:$BASE_REF" --depth=1
 
       - name: Setup logs directory
         run: mkdir logs
 
       - name: Build Backpack (affected for PRs)
         if: github.event_name == 'pull_request'
-        run: npx nx affected --target=build --base=origin/${{ github.base_ref }} --parallel=4
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: npx nx affected --target=build --base="origin/$BASE_REF" --parallel=4
 
       - name: Build Backpack (all for main)
         if: github.event_name != 'pull_request'
@@ -64,7 +68,9 @@ jobs:
 
       - name: Run tests (affected for PRs)
         if: github.event_name == 'pull_request'
-        run: bash -c "set -o pipefail;npx nx affected --targets=lint,stylelint,test --base=origin/${{ github.base_ref }} --parallel=4 |& tee 'logs/test.log'"
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: bash -c "set -o pipefail;npx nx affected --targets=lint,stylelint,test --base=origin/$BASE_REF --parallel=4 |& tee 'logs/test.log'"
 
       - name: Run tests (all for main)
         if: github.event_name != 'pull_request'
