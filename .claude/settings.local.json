@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "WebFetch(domain:nx.dev)",
+      "Bash(.specify/scripts/bash/create-new-feature.sh:*)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "mcp-atlassian",
+    "chrome-devtools",
+    "new-relic-mcp-server"
+  ]
+}
