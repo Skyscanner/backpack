@@ -34,10 +34,14 @@ Establish a well-defined project hierarchy as part of the Nx migration for Backp
 ### Session 2026-01-27
 
 - Q: What directory hierarchy structure should be adopted? → A: Flat structure - all packages remain under `packages/` without subdirectory categorization
+
+### Session 2026-01-27 (Banana Merge Planning)
+
+- Q: What is Backpack's target location in Banana repository? → A: `libs/shared/universal/backpack/` - as a sub-library under universal
+- Q: How should Backpack be organized within that location? → A: Single project - `backpack/` as one Nx project, preserving internal `bpk-*` folder structure
 - Q: Should Storybook stories be migrated in this reorganization? → A: Keep as-is - Stories remain in `examples/` directory, migrate as a separate task (milestone 3)
 - Q: How should deprecated/internal packages be handled? → A: Keep and mark - Retain packages like `bpk-component-boilerplate`, mark as internal/deprecated in README
-- Q: Should each component have its own project.json? → A: Defer - Do not add in this phase, rely on Nx auto-inference, handle as milestone 4
-- Q: What are the core deliverables for this reorganization? → A: Documentation + validation - Create structure mapping document, verify nx graph works correctly, update necessary configs
+- Q: What are the core deliverables for this reorganization? → A: Documentation + validation - Create structure mapping document showing future Banana target structure, verify nx graph works correctly, update necessary configs
 
 ## Strategic Context
 
