@@ -34,6 +34,7 @@ import ChevronUpIcon from '../../bpk-component-icon/sm/chevron-up';
 import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 import BpkLink from '../../bpk-component-link';
+import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 import { cssModules } from '../../bpk-react-utils';
 
 import AnimateAndFade from './AnimateAndFade';
@@ -93,7 +94,7 @@ type ToggleButtonProps = {
 const ToggleButton = (props: ToggleButtonProps) => (
   <div className={getClassName('bpk-info-banner__toggle-button')}>
     {props.expanded ? <CollapseIcon /> : <ExpandIcon />}
-    <span className="visually-hidden">{props.label}</span>
+    <BpkVisuallyHidden>{props.label}</BpkVisuallyHidden>
   </div>
 );
 
