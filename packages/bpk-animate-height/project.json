@@ -10,7 +10,9 @@
         "command": "babel src --out-dir dist --extensions \".ts,.tsx,.js,.jsx\" --config-file ../../babel.config.js",
         "cwd": "packages/bpk-animate-height"
       },
-      "outputs": ["{projectRoot}/dist"]
+      "outputs": [
+        "{projectRoot}/dist"
+      ]
     },
     "test": {
       "executor": "nx:run-commands",
@@ -18,8 +20,28 @@
         "command": "TZ=Etc/UTC jest --coverage --testPathPatterns='packages/bpk-animate-height'",
         "cwd": "{workspaceRoot}"
       },
-      "outputs": ["{workspaceRoot}/coverage"]
+      "outputs": [
+        "{workspaceRoot}/coverage"
+      ]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "{projectRoot}/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "stylelint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "stylelint '{projectRoot}/**/*.scss' --allow-empty-input",
+        "cwd": "{workspaceRoot}"
+      }
     }
   },
-  "tags": ["type:package", "scope:backpack"]
+  "tags": [
+    "type:package",
+    "scope:backpack"
+  ]
 }

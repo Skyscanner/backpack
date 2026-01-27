@@ -26,7 +26,13 @@
       "cache": true,
       "inputs": [
         "{projectRoot}/**/*.{ts,tsx,js,jsx}",
-        "{workspaceRoot}/.eslintrc.js",
+        "{workspaceRoot}/.eslintrc.js"
+      ]
+    },
+    "stylelint": {
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/**/*.scss",
         "{workspaceRoot}/.stylelintrc.json"
       ]
     }
@@ -44,7 +50,7 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "test", "lint"],
+        "cacheableOperations": ["build", "test", "lint", "stylelint"],
         "parallel": 3
       }
     }

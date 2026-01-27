@@ -73,6 +73,19 @@ function generateProjectJson(packageName) {
               cwd: '{workspaceRoot}'
             },
             outputs: ['{workspaceRoot}/coverage']
+          },
+          lint: {
+            executor: '@nx/linter:eslint',
+            options: {
+              lintFilePatterns: [`{projectRoot}/**/*.{ts,tsx,js,jsx}`]
+            }
+          },
+          stylelint: {
+            executor: 'nx:run-commands',
+            options: {
+              command: `stylelint '{projectRoot}/**/*.scss' --allow-empty-input`,
+              cwd: '{workspaceRoot}'
+            }
           }
         },
         tags: ['type:package', 'scope:backpack', 'special-case']
@@ -92,6 +105,19 @@ function generateProjectJson(packageName) {
               cwd: '{workspaceRoot}'
             },
             outputs: ['{workspaceRoot}/coverage']
+          },
+          lint: {
+            executor: '@nx/linter:eslint',
+            options: {
+              lintFilePatterns: [`{projectRoot}/**/*.{ts,tsx,js,jsx}`]
+            }
+          },
+          stylelint: {
+            executor: 'nx:run-commands',
+            options: {
+              command: `stylelint '{projectRoot}/**/*.scss' --allow-empty-input`,
+              cwd: '{workspaceRoot}'
+            }
           }
         },
         tags: ['type:package', 'scope:backpack', 'sass-only', 'special-case']
@@ -121,6 +147,19 @@ function generateProjectJson(packageName) {
           cwd: '{workspaceRoot}'
         },
         outputs: ['{workspaceRoot}/coverage']
+      },
+      lint: {
+        executor: '@nx/linter:eslint',
+        options: {
+          lintFilePatterns: [`{projectRoot}/**/*.{ts,tsx,js,jsx}`]
+        }
+      },
+      stylelint: {
+        executor: 'nx:run-commands',
+        options: {
+          command: `stylelint '{projectRoot}/**/*.scss'`,
+          cwd: '{workspaceRoot}'
+        }
       }
     },
     tags: ['type:package', 'scope:backpack']
