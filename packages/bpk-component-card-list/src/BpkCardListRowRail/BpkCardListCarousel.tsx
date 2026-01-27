@@ -242,7 +242,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           className: getClassName(`bpk-card-list-row-rail__${layout}__card`),
           style: {
             ...shownNumberStyle,
-            ...cardDimensionStyle,
           },
           key: `carousel-card-${index.toString()}`,
           role: 'group',
@@ -257,16 +256,13 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
               {...commonProps}
               style={{
                 ...commonProps.style,
+                ...cardDimensionStyle,
                 contain: 'paint',
               }}
               data-testid="bpk-card-list-carousel--placeholder"
               aria-hidden="true"
             >
-              <div
-                className={getClassName('bpk-card-list-row-rail__card-wrapper')}
-              >
-                {card}
-              </div>
+              {card}
             </div>
           );
         }
