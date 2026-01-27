@@ -42,10 +42,10 @@ FOCUS: STEPS (What to do, in what order)
 
 **Purpose**: Ensure prerequisites are in place before starting work
 
-- [ ] T001 Verify Nx initialization (WOODPECKER-4039) is complete by running `npx nx --version`
-- [ ] T002 [P] Verify branch is `WOODPECKER-4040` with `git branch --show-current`
-- [ ] T003 [P] Run `npm ci` to ensure dependencies are up to date
-- [ ] T004 [P] Verify `nx graph` command works: `npx nx graph --file=/tmp/graph.json`
+- [x] T001 Verify Nx initialization (WOODPECKER-4039) is complete by running `npx nx --version`
+- [x] T002 [P] Verify branch is `WOODPECKER-4040` with `git branch --show-current`
+- [x] T003 [P] Run `npm ci` to ensure dependencies are up to date
+- [x] T004 [P] Verify `nx graph` command works: `npx nx graph --file=/tmp/graph.json`
 
 **Checkpoint**: Prerequisites verified - can proceed with documentation tasks
 
@@ -72,9 +72,9 @@ FOCUS: STEPS (What to do, in what order)
 
 ### Verification Tasks
 
-- [ ] T015 [US1] Verify structure-mapping.md covers all 91 packages: `ls packages/ | wc -l`
-- [ ] T016 [US1] Verify package count matches inventory: compare document count vs filesystem
-- [ ] T017 [US1] Review document against Production Standards requirements
+- [x] T015 [US1] Verify structure-mapping.md covers all 91 packages: `ls packages/ | wc -l`
+- [x] T016 [US1] Verify package count matches inventory: compare document count vs filesystem
+- [x] T017 [US1] Review document against Production Standards requirements
 
 **Checkpoint**: Structure mapping document complete and verified
 
@@ -88,17 +88,17 @@ FOCUS: STEPS (What to do, in what order)
 
 ### Verification Tasks
 
-- [ ] T018 [US3] Verify `nx.json` configuration is correct: `cat nx.json | head -50`
-- [ ] T019 [P] [US3] Verify `tsconfig.json` includes all package paths
-- [ ] T020 [P] [US3] Verify Jest config discovers tests: `npm run test -- --listTests | head -20`
-- [ ] T021 [P] [US3] Verify Storybook config discovers stories: `cat .storybook/main.ts`
+- [x] T018 [US3] Verify `nx.json` configuration is correct: `cat nx.json | head -50`
+- [x] T019 [P] [US3] Verify `tsconfig.json` includes all package paths
+- [x] T020 [P] [US3] Verify Jest config discovers tests: `npm run test -- --listTests | head -20`
+- [x] T021 [P] [US3] Verify Storybook config discovers stories: `cat .storybook/main.ts`
 
 ### Build Validation Tasks
 
-- [ ] T022 [US3] Run TypeScript check: `npm run typecheck`
-- [ ] T023 [P] [US3] Run lint check: `npm run lint`
-- [ ] T024 [P] [US3] Run test suite (sample): `npm run test -- --maxWorkers=2 --testPathPattern="bpk-component-button"`
-- [ ] T025 [US3] Verify Storybook builds: `npm run storybook:build` (optional, CI will verify)
+- [x] T022 [US3] Run TypeScript check: `npm run typecheck`
+- [x] T023 [P] [US3] Run lint check: `npm run lint`
+- [x] T024 [P] [US3] Run test suite (sample): `npm run test -- --maxWorkers=2 --testPathPattern="bpk-component-button"`
+- [x] T025 [US3] Verify Storybook builds: `npm run storybook:build` (optional, CI will verify)
 
 **Checkpoint**: Build and test configurations verified working
 
@@ -112,14 +112,14 @@ FOCUS: STEPS (What to do, in what order)
 
 ### Verification Tasks
 
-- [ ] T026 [US4] Document current consumer import pattern in structure-mapping.md
-- [ ] T027 [US4] Verify `@skyscanner/backpack-web/bpk-component-button` import path resolves
-- [ ] T028 [US4] Verify SCSS mixin import paths work: `@use '@skyscanner/backpack-web/bpk-mixins/tokens'`
-- [ ] T029 [US4] Verify no changes to `packages/package.json` exports field
+- [x] T026 [US4] Document current consumer import pattern in structure-mapping.md
+- [x] T027 [US4] Verify `@skyscanner/backpack-web/bpk-component-button` import path resolves
+- [x] T028 [US4] Verify SCSS mixin import paths work: `@use '@skyscanner/backpack-web/bpk-mixins/tokens'`
+- [x] T029 [US4] Verify no changes to `packages/package.json` exports field
 
 ### Documentation Tasks
 
-- [ ] T030 [US4] Add "Consumer Import Paths" section to structure-mapping.md showing unchanged patterns
+- [x] T030 [US4] Add "Consumer Import Paths" section to structure-mapping.md showing unchanged patterns
 
 **Checkpoint**: Consumer import compatibility verified
 
@@ -148,11 +148,11 @@ FOCUS: STEPS (What to do, in what order)
 
 **Purpose**: Finalize documentation and prepare for PR review
 
-- [ ] T035 [P] Update `specs/nx-project-structure/spec.md` with completion status
-- [ ] T036 [P] Update `specs/nx-project-structure/plan.md` with execution notes
-- [ ] T037 [P] Update `specs/nx-project-structure/research.md` with final findings
-- [ ] T038 Review all documentation for consistency and completeness
-- [ ] T039 Run final CI validation: `npm run test && npm run lint && npm run typecheck`
+- [x] T035 [P] Update `specs/nx-project-structure/spec.md` with completion status
+- [x] T036 [P] Update `specs/nx-project-structure/plan.md` with execution notes
+- [x] T037 [P] Update `specs/nx-project-structure/research.md` with final findings
+- [x] T038 Review all documentation for consistency and completeness
+- [x] T039 Run final CI validation: `npm run test && npm run lint && npm run typecheck`
 - [ ] T040 Create PR with summary of deliverables
 
 **Checkpoint**: All documentation complete, ready for review
@@ -202,10 +202,10 @@ Phase 6: Documentation & Polish
 
 1. ✅ Complete Phase 1: Setup
 2. ✅ Complete Phase 2: US1 (Structure Mapping) - **PRIMARY DELIVERABLE**
-3. Complete Phase 3: US3 (Config Verification)
-4. Complete Phase 4: US4 (Import Compatibility)
-5. Skip Phase 5: US2 (Deferred to Banana merge)
-6. Complete Phase 6: Documentation & Polish
+3. ✅ Complete Phase 3: US3 (Config Verification)
+4. ✅ Complete Phase 4: US4 (Import Compatibility)
+5. ⏸️ Skip Phase 5: US2 (Deferred to Banana merge)
+6. ✅ Complete Phase 6: Documentation & Polish
 
 ### What Gets Delivered
 
@@ -214,9 +214,9 @@ Phase 6: Documentation & Polish
 | structure-mapping.md v2.0 | ✅ Created |
 | research.md with Banana analysis | ✅ Created |
 | plan.md with Banana context | ✅ Created |
-| Nx graph verification | Pending |
-| Config compatibility verification | Pending |
-| Import path verification | Pending |
+| Nx graph verification | ✅ Verified |
+| Config compatibility verification | ✅ Verified |
+| Import path verification | ✅ Verified |
 
 ### What Is Deferred
 
@@ -233,13 +233,13 @@ Phase 6: Documentation & Polish
 
 | Phase | Tasks | Completed | Parallel |
 |-------|-------|-----------|----------|
-| Phase 1: Setup | 4 | 0 | 3 |
-| Phase 2: US1 (Mapping) | 10 | 10 | 4 |
-| Phase 3: US3 (Config) | 8 | 0 | 5 |
-| Phase 4: US4 (Imports) | 5 | 0 | 0 |
+| Phase 1: Setup | 4 | 4 | 3 |
+| Phase 2: US1 (Mapping) | 13 | 13 | 4 |
+| Phase 3: US3 (Config) | 8 | 8 | 5 |
+| Phase 4: US4 (Imports) | 5 | 5 | 0 |
 | Phase 5: US2 (DEFERRED) | 4 | - | - |
 | Phase 6: Polish | 6 | 0 | 3 |
-| **Total Active** | **33** | **10** | **15** |
+| **Total Active** | **36** | **30** | **15** |
 
 ---
 
