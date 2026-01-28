@@ -88,7 +88,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   );
 
   useScrollToCard(
-    currentIndex * initiallyShownCards,
+    isMobile ? currentIndex : currentIndex * initiallyShownCards,
     root,
     cardRefs,
     stateScrollingLockRef,
@@ -192,13 +192,13 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
   useEffect(() => {
     const firstVisible = visibilityList.indexOf(1);
-    if (firstVisible >= 0) {
+    if (firstVisible >= 0 && stateScrollingLockRef.current) {
       const newIndex = Math.floor(firstVisible / initiallyShownCards);
       if (newIndex !== currentIndex) {
         setCurrentIndex(newIndex);
       }
     }
-  }, [initiallyShownCards]);
+  }, [currentIndex, initiallyShownCards, setCurrentIndex, visibilityList]);
 
   useEffect(() => {
     const handleResize = throttle(() => {
@@ -233,8 +233,10 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           cardDimensionStyle.height = `${firstCardHeightRef.current}px`;
         }
 
+        const isPageStart = index % initiallyShownCards === 0;
+
         const commonProps = {
-          className: getClassName(`bpk-card-list-row-rail__${layout}__card`),
+          className: `${getClassName(`bpk-card-list-row-rail__${layout}__card`)}${isPageStart ? ` ${getClassName('bpk-card-list-row-rail__card--page-start')}` : ''}`,
           style: {
             ...shownNumberStyle,
             ...cardDimensionStyle,

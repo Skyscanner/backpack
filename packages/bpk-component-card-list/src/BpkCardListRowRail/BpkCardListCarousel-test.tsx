@@ -16,24 +16,29 @@
  * limitations under the License.
  */
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import mockCards from '../../testMocks';
 import { LAYOUTS } from '../common-types';
 
 import BpkCardListCarousel from './BpkCardListCarousel';
-import { useIntersectionObserver } from './utils';
+import { useIntersectionObserver, lockScroll } from './utils';
 
-jest.mock('./utils', () => ({
-  setA11yTabIndex: jest.fn(),
-  useScrollToCard: jest.fn(),
-  useIntersectionObserver: jest.fn(() => jest.fn()),
-}));
+jest.mock('./utils', () => {
+  const actualUtils = jest.requireActual('./utils');
+  return ({
+    setA11yTabIndex: jest.fn(),
+    useScrollToCard: jest.fn(),
+    useIntersectionObserver: jest.fn(() => jest.fn()),
+    lockScroll: jest.fn(actualUtils.lockScroll),
+  })
+});
 
 describe('BpkCardListCarousel', () => {
   const mockSetCurrentIndex = jest.fn();
   const mockUseIntersectionObserver = jest.mocked(useIntersectionObserver)
+  let setVisibilityFn: any;
 
   const defaultProps = {
     children: mockCards(6),
@@ -48,7 +53,6 @@ describe('BpkCardListCarousel', () => {
   });
 
   beforeAll(() => {
-    let setVisibilityFn: any;
     mockUseIntersectionObserver.mockImplementation((__, setVisibilityList) => {
       if (setVisibilityFn !== setVisibilityList) {
         setVisibilityFn = setVisibilityList;
@@ -109,6 +113,57 @@ describe('BpkCardListCarousel', () => {
 
       const placeholders = screen.getAllByTestId(/bpk-card-list-carousel--placeholder/);
       expect(placeholders.every((el => el.style.contain === 'paint'))).toBe(true);
+    });
+  });
+
+  describe('page-based scrolling on desktop', () => {
+    it('should mark cards at page boundaries with the correct class', () => {
+      render(<BpkCardListCarousel {...defaultProps} isMobile={false} />);
+      const cards = screen.getAllByRole('group');
+
+      // With initiallyShownCards=3, cards at index 0, 3 should be page starts
+      expect(cards[0].className).toContain('page-start');
+      expect(cards[1].className).not.toContain('page-start');
+      expect(cards[2].className).not.toContain('page-start');
+      expect(cards[3].className).toContain('page-start');
+    });
+
+    it('should trigger lock when wheel event is fired on desktop and call setCurrentIndex when the visibility of cards change', () => {
+      const lockScrollSpy = lockScroll as jest.Mock;
+      const { rerender } = render(<BpkCardListCarousel {...defaultProps} currentIndex={0} isMobile={false} />);
+
+      const carouselElement = screen.getByTestId('bpk-card-list-row-rail__carousel');
+      fireEvent.wheel(carouselElement, { deltaX: 20000 });
+
+      expect(lockScrollSpy).toHaveBeenCalled();
+
+      // Fake the visibility of the carousel being on the 2nd page
+      setVisibilityFn(() => ([0, 0, 0, 1, 1, 1]));
+
+      rerender(<BpkCardListCarousel {...defaultProps} isMobile={false} />);
+      // Ensure we're trying to set the current index to 1 (the 2nd page)
+      expect(mockSetCurrentIndex).toHaveBeenCalled();
+    });
+
+    it('should trigger lock when touchmove event is fired on desktop', () => {
+      render(<BpkCardListCarousel {...defaultProps} isMobile={false} />);
+
+      const carouselElement = screen.getByTestId('bpk-card-list-row-rail__carousel');
+
+      fireEvent.touchMove(carouselElement);
+
+      expect(lockScroll).toHaveBeenCalled();
+    });
+
+    it('should not trigger lock when wheel event is fired on mobile', () => {
+      (lockScroll as jest.Mock).mockClear();
+      render(<BpkCardListCarousel {...defaultProps} isMobile />);
+
+      const carouselElement = screen.getByTestId('bpk-card-list-row-rail__carousel');
+
+      fireEvent.wheel(carouselElement);
+
+      expect(lockScroll).not.toHaveBeenCalled();
     });
   });
 });
