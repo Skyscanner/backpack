@@ -87,20 +87,25 @@
 **为什么**：Icon/Spinner 组件依赖此包进行代码生成。如果使用 semver 范围（^），包内容可能在版本号不变的情况下更新（例如 npm registry 覆盖），导致 Nx 缓存遗漏变更并生成旧代码。锁定确切版本确保缓存一致性。
 
 **做什么**：
-- 编辑 packages/package.json
-- 将 `"@skyscanner/bpk-svgs": "^17.8.3"` 改为 `"@skyscanner/bpk-svgs": "17.8.3"`
+- 编辑 package.json（当前在 packages/package.json，但将在 Phase 2 合并到根）
+- 将 `"@skyscanner/bpk-svgs": "^20.11.0"` 改为 `"@skyscanner/bpk-svgs": "20.11.0"`（移除 ^ 前缀）
 - 重新安装依赖
+
+**注意**：此步骤可以在 Phase 2（合并 package.json）后执行，或在 Phase 0.4（代码生成配置）中一起处理。
 
 ---
 
 ### 7. 收紧 React peer dependency
 
-**为什么**：当前范围 `17.0.2 - 18.3.1` 跨越主版本，违反 semver 规范，可能导致消费者安装不兼容的 React 版本。Nx 的依赖检查工具期望严格的 peer dependency 定义，宽范围会导致警告或错误。
+**为什么**：当前范围 `^18.0.0` 在 packages/package.json 中定义。需要审查是否需要支持更窄的版本范围，确保与 Nx 的依赖检查工具兼容。
 
 **做什么**：
-- 编辑 packages/package.json
-- 将 `"react": "17.0.2 - 18.3.1"` 改为 `"react": "^18.0.0"`
-- 或使用 `"^17.0.0 || ^18.0.0"` 如果需要支持 React 17
+- 审查 packages/package.json 中的 peerDependencies
+- 当前已设置为 `"react": "^18.0.0"`
+- 确认是否符合项目需求（不支持 React 17）
+- 如需支持 React 17，可改为 `"^17.0.0 || ^18.0.0"`
+
+**注意**：此配置将在 Phase 2 合并到根 package.json。
 
 ---
 
@@ -127,6 +132,7 @@
 
 ## 交付物
 
-- [ ] 更新的 packages/package.json
+- [ ] 更新的 packages/package.json（将在 Phase 2 合并到根）
 - [ ] 依赖审计报告
 - [ ] 迁移日志文件
+- [ ] 移除过时依赖后的测试验证报告
