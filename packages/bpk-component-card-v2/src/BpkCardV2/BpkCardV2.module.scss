@@ -1,0 +1,170 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/radii';
+@use '../../../bpk-mixins/shadows';
+
+// Card container - base styles
+.bpk-card-v2 {
+  display: flex;
+  flex-direction: column;
+  background-color: tokens.$bpk-surface-default-day;
+  @include radii.bpk-border-radius-md;
+  @include shadows.bpk-box-shadow-sm;
+  overflow: hidden;
+
+  // Surface color variants
+  &[data-bg-color='surfaceDefault'] {
+    background-color: tokens.$bpk-surface-default-day;
+  }
+
+  &[data-bg-color='surfaceElevated'] {
+    background-color: tokens.$bpk-surface-elevated-day;
+  }
+
+  &[data-bg-color='surfaceTint'] {
+    background-color: tokens.$bpk-surface-tint-day;
+  }
+
+  &[data-bg-color='surfaceSubtle'] {
+    background-color: tokens.$bpk-surface-subtle-day;
+  }
+
+  &[data-bg-color='surfaceHero'] {
+    background-color: tokens.$bpk-surface-hero-day;
+  }
+
+  &[data-bg-color='surfaceContrast'] {
+    background-color: tokens.$bpk-surface-contrast-day;
+  }
+
+  &[data-bg-color='surfaceLowContrast'] {
+    background-color: tokens.$bpk-surface-low-contrast-day;
+  }
+
+  &[data-bg-color='surfaceHighlight'] {
+    background-color: tokens.$bpk-surface-highlight-day;
+  }
+}
+
+// Outlined variant - replaces shadow with border
+.bpk-card-v2--outlined {
+  box-shadow: none;
+  border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+}
+
+// Header subcomponent
+.bpk-card-v2__header {
+  padding: tokens.bpk-spacing-base();
+}
+
+// Body subcomponent - main content area
+.bpk-card-v2__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: tokens.bpk-spacing-base();
+
+  // Single-column layout (default)
+  &:not(.bpk-card-v2__body--split) {
+    flex-direction: column;
+  }
+
+  // Two-column split layout
+  &.bpk-card-v2__body--split {
+    flex-direction: column;
+    gap: 0;
+
+    // Desktop - horizontal layout with divider
+    @media (min-width: 768px) {
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+}
+
+// Primary content area in split layout
+.bpk-card-v2__primary {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  padding: tokens.bpk-spacing-base();
+  width: 100%;
+
+  // Split layout - on desktop
+  .bpk-card-v2__body--split & {
+    padding: tokens.bpk-spacing-base();
+    width: 100%;
+    border-right: none;
+
+    @media (min-width: 768px) {
+      width: var(--bpk-card-v2-primary-width, 70%);
+      border-right: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+      border-bottom: none;
+
+      // RTL support
+      [dir='rtl'] & {
+        border-right: none;
+        border-left: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+      }
+    }
+  }
+}
+
+// Divider between primary and secondary (only visible in split layout on mobile)
+.bpk-card-v2__divider {
+  display: none;
+  height: tokens.$bpk-border-size-sm;
+  background-color: tokens.$bpk-line-day;
+  margin: 0;
+
+  // Mobile - show as horizontal divider in split layout
+  .bpk-card-v2__body--split & {
+    display: block;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+// Secondary content area in split layout
+.bpk-card-v2__secondary {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: tokens.bpk-spacing-base();
+  width: 100%;
+
+  // Split layout - on desktop
+  .bpk-card-v2__body--split & {
+    padding: tokens.bpk-spacing-base();
+    width: 100%;
+    flex: 1 1 auto;
+
+    @media (min-width: 768px) {
+      width: calc(100% - var(--bpk-card-v2-primary-width, 70%));
+    }
+  }
+}
+
+// Footer subcomponent
+.bpk-card-v2__footer {
+  padding: tokens.bpk-spacing-base();
+}
