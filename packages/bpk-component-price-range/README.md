@@ -9,11 +9,11 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkPriceRange, { MARKER_DISPLAY_TYPES } from '@skyscanner/backpack-web/bpk-component-price-range';
+import BpkPriceRange from '@skyscanner/backpack-web/bpk-component-price-range';
 
 export default () => (
   <BpkPriceRange
-    marker={{ price: '£150', percentage: 50, type: MARKER_DISPLAY_TYPES.BUBBLE }}
+    marker={{ price: '£150', percentage: 50 }}
     segments={{
       low: {
         price: '£100',
@@ -32,11 +32,11 @@ export default () => (
 
 The visibility of boundary prices (low and high segment prices) is automatically determined by the marker type:
 
-| Marker Type | Boundary Prices |
-|-------------|-----------------|
-| `MARKER_DISPLAY_TYPES.BUBBLE` | Shown below the bar |
-| `MARKER_DISPLAY_TYPES.DOT` | Hidden (compact display) |
-| No marker | Shown below the bar |
+| Marker Type                   | Boundary Prices          |
+|-------------------------------|--------------------------|
+| `MARKER_DISPLAY_TYPES.BUBBLE` | Shown below the bar      |
+| `MARKER_DISPLAY_TYPES.DOT`    | Hidden (compact display) |
+| No marker                     | Shown below the bar      |
 
 ### Marker type
 
@@ -74,6 +74,8 @@ export default () => (
 ```
 
 ## Use cases
+
+_You can import `MARKER_DISPLAY_TYPES` from the package to use the constants `DOT` and `BUBBLE`._
 
 ### Use case 1: Dot marker (boundaries hidden)
 
@@ -158,13 +160,13 @@ For a complete migration guide, see [migrating-from-showPriceIndicator.md](./doc
 
 ## Props
 
-| Property | PropType | Required | Default Value | Notes |
-| -------- | -------- | -------- | ------------- | ----- |
-| segments | `{ low: PriceRangePosition, high: PriceRangePosition }` | true | - | |
-| marker | `MarkerPriceRangePosition` | false | - | |
-| min | `number` | false | 0 | |
-| max | `number` | false | 100 | |
-| showPriceIndicator | `boolean` | false | true | ⚠️ **Deprecated** - Use `marker.type` instead. See [migration guide](./docs/migrating-from-showPriceIndicator.md). |
+| Property           | PropType                                                | Required | Default Value | Notes                                                                                                              |
+|--------------------|---------------------------------------------------------|----------|---------------|--------------------------------------------------------------------------------------------------------------------|
+| segments           | `{ low: PriceRangePosition, high: PriceRangePosition }` | true     | -             |                                                                                                                    |
+| marker             | `MarkerPriceRangePosition`                              | false    | -             |                                                                                                                    |
+| min                | `number`                                                | false    | 0             |                                                                                                                    |
+| max                | `number`                                                | false    | 100           |                                                                                                                    |
+| showPriceIndicator | `boolean`                                               | false    | true          | ⚠️ **Deprecated** - Use `marker.type` instead. See [migration guide](./docs/migrating-from-showPriceIndicator.md). |
 
 ### Types
 
