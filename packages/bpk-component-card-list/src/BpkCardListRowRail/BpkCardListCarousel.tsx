@@ -192,13 +192,13 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
   useEffect(() => {
     const firstVisible = visibilityList.indexOf(1);
-    if (firstVisible >= 0) {
+    if (firstVisible >= 0 && stateScrollingLockRef.current) {
       const newIndex = Math.floor(firstVisible / initiallyShownCards);
       if (newIndex !== currentIndex) {
         setCurrentIndex(newIndex);
       }
     }
-  }, [initiallyShownCards]);
+  }, [currentIndex, initiallyShownCards, setCurrentIndex, visibilityList]);
 
   useEffect(() => {
     const handleResize = throttle(() => {
