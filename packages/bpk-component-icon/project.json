@@ -1,0 +1,22 @@
+{
+  "name": "bpk-component-icon",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-component-icon/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "babel src --out-dir dist --extensions \".ts,.tsx,.js,.jsx\" --config-file ../../babel.config.js",
+        "cwd": "packages/bpk-component-icon"
+      },
+      "outputs": [
+        "{projectRoot}/dist"
+      ]
+    }
+  },
+  "tags": [
+    "type:package",
+    "scope:backpack"
+  ]
+}

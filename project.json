@@ -1,0 +1,63 @@
+{
+  "name": "backpack-workspace",
+  "$schema": "./node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": ".",
+  "targets": {
+    "transpile": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npm run transpile:clean",
+          "npm run transpile:js",
+          "npm run transpile:dts",
+          "npm run transpile:imports",
+          "npm run transpile:copy-css",
+          "npm run transpile:copy-utils",
+          "npm run transpile:copy-package-json",
+          "npm run transpile:copy-readme"
+        ],
+        "parallel": false
+      },
+      "outputs": ["{workspaceRoot}/dist"]
+    },
+    "check-dependencies": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/npm/check-bpk-dependencies.js"
+      }
+    },
+    "check-react-versions": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/npm/check-react-versions.js"
+      }
+    },
+    "gulp": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "gulp"
+      },
+      "outputs": []
+    },
+    "build-all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npm run build:copy-normal_css",
+          "nx run backpack-workspace:gulp",
+          "npm run build:sass",
+          "npm run build:stylesheets"
+        ],
+        "parallel": false
+      },
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "dependencies"
+        }
+      ]
+    }
+  },
+  "tags": ["type:workspace", "scope:backpack"]
+}

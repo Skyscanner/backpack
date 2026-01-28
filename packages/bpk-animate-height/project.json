@@ -1,0 +1,17 @@
+{
+  "name": "bpk-animate-height",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-animate-height/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "babel src --out-dir dist --extensions \".ts,.tsx,.js,.jsx\" --config-file ../../babel.config.js",
+        "cwd": "packages/bpk-animate-height"
+      },
+      "outputs": ["{projectRoot}/dist"]
+    }
+  },
+  "tags": ["type:package", "scope:backpack"]
+}
