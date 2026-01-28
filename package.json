@@ -96,6 +96,10 @@
     ],
     "testEnvironment": "jsdom",
     "testRegex": "packages/.*-test\\.[jt]sx?$",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/.nx/cache/"
+    ],
     "transformIgnorePatterns": [
       "node_modules/(?!bpk|@skyscanner|d3-.*|internmap)"
     ],
