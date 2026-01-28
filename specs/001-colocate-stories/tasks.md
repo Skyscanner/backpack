@@ -235,30 +235,30 @@ V2 components are variant implementations that exist as subdirectories within pa
 
 ### Local Testing
 
-- [ ] T077 [US2] Start Storybook locally: `npm run storybook` (test navigation and rendering)
-- [ ] T078 [US2] Verify story count matches baseline: Count stories in Storybook UI
-- [ ] T079 [US2] Check stories using shared utilities: Test action() and BpkDarkExampleWrapper work
-- [ ] T080 [US2] Test Storybook hot-reload: Edit a story file and verify it reloads
+- [ ] T077 [US2] Start Storybook locally: `npm run storybook` (test navigation and rendering) - Manual verification needed
+- [ ] T078 [US2] Verify story count matches baseline: Count stories in Storybook UI - Manual verification needed
+- [ ] T079 [US2] Check stories using shared utilities: Test action() and BpkDarkExampleWrapper work - Manual verification needed
+- [ ] T080 [US2] Test Storybook hot-reload: Edit a story file and verify it reloads - Manual verification needed
 
 ### Git History Validation
 
-- [ ] T081 [US3] Run git log --follow on 5 random files from different components
-- [ ] T082 [US3] Run git blame on 3 story files to verify authorship preserved
-- [ ] T083 [US3] Run git show on migration commit to verify all moves used git mv (should show renames, not delete+add)
+- [x] T081 [US3] Run git log --follow on 5 random files from different components ✓
+- [x] T082 [US3] Run git blame on 3 story files to verify authorship preserved ✓
+- [x] T083 [US3] Run git show on migration commit to verify all moves used git mv (should show renames, not delete+add) ✓
 
 ### Build & Deploy Checks
 
 - [ ] T084 [US2] Full build verification: `npm run build` (if applicable)
 - [ ] T085 [US2] Test suite verification: `npm run test` (should still pass)
-- [ ] T086 [US2] Storybook production build: `npm run storybook:build` (final check)
+- [x] T086 [US2] Storybook production build: `npm run storybook:build` - PASSED (verified in Phase 4/4b) ✓
 
 ### Cleanup Verification
 
-- [ ] T087 [US4] Verify examples/ has no component directories: `find examples/bpk-component-* 2>&1`
-- [ ] T088 [US4] Verify packages/ has all 91 components with stories: Count verification
-- [ ] T089 [US2] Verify packages/bpk-storybook-utils/ structure intact
+- [x] T087 [US4] Verify examples/ has no component directories: `find examples/bpk-component-* 2>&1` ✓
+- [x] T088 [US4] Verify packages/ has all 91 components with stories: Count verification → 91 story files ✓
+- [x] T089 [US2] Verify packages/bpk-storybook-utils/ structure intact ✓
 
-**Checkpoint**: All verifications complete, ready for CI
+**Checkpoint**: Core verifications complete (Git history, cleanup, structure) ✓
 
 ---
 
@@ -268,7 +268,7 @@ V2 components are variant implementations that exist as subdirectories within pa
 
 ### Push & CI Checks
 
-- [ ] T090 [US2] Push to remote: `git push origin WOODPECKER-4041`
+- [x] T090 [US2] Push to remote: `git push origin WOODPECKER-4041` ✓
 - [ ] T091 [US2] Monitor GitHub Actions: Verify pr.yml workflow triggers and starts
 - [ ] T092 [US2] Wait for TypeScript check to pass in CI
 - [ ] T093 [US2] Wait for lint check to pass in CI
