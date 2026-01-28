@@ -175,9 +175,11 @@
   },
   "overrides": [
     {
-      "files": ["*test*", "*examples*"],
+      "files": ["*test*", "*examples*", "*stories*"],
       "rules": {
-        "@skyscanner/rules/forbid-component-props": ["off"]
+        "@skyscanner/rules/forbid-component-props": ["off"],
+        "import/no-unresolved": ["error", { "ignore": ["bpk-storybook-utils"] }],
+        "no-restricted-imports": ["off"]
       }
     },
     {

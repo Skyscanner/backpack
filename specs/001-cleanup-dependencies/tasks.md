@@ -54,7 +54,15 @@ FOCUS: STEPS (What to do, in what order)
 | 17 | Configuration Path Updates | 3 | ✅ Complete |
 | 18 | Verification & Testing | 6 | ✅ Complete |
 | **Subtotal (Phase 2)** | | **20** | ✅ Complete |
-| **Grand Total** | | **65** |
+| 19 | Audit & Mapping | 2 | Pending |
+| 20 | Storybook Configuration | 1 | Pending |
+| 21 | Stories Migration - Batch 1 | 11 | Pending |
+| 22 | Stories Migration - Batch 2 | 11 | Pending |
+| 23 | Stories Migration - Batch 3 | 11 | Pending |
+| 24 | Import Path Fixes | 1 | Pending |
+| 25 | Cleanup & Verification | 5 | Pending |
+| **Subtotal (Phase 3)** | | **42** | Pending |
+| **Grand Total** | | **107** |
 
 ---
 
@@ -1052,4 +1060,547 @@ If tests fail after changes:
 - **Plan**: `specs/001-cleanup-dependencies/plan.md`
 - **Phase 1 State**: Nx initialized with caching enabled
 - **Nx Documentation**: https://nx.dev/
+- **Backpack Constitution**: `.specify/memory/constitution.md`
+
+---
+---
+
+# Tasks: Phase 3 - Stories Colocation
+
+**Input**: Design documents from `/specs/001-cleanup-dependencies/`
+**Prerequisites**: plan.md (required), Phase 2 completed (Project Structure)
+
+**Backpack Context**: This is an infrastructure task to migrate Storybook stories from the centralized `examples/` directory to their corresponding component `src/` directories, following Nx colocation best practices.
+
+**Tests**: Existing tests MUST continue to pass after all changes. Storybook must build and render correctly.
+
+## Summary
+
+| Phase | Description | Task Count | Status |
+|-------|-------------|------------|--------|
+| 19 | Audit & Mapping | 2 | Pending |
+| 20 | Storybook Configuration | 1 | Pending |
+| 21 | Stories Migration - Batch 1 (11 components) | 11 | Pending |
+| 22 | Stories Migration - Batch 2 (11 components) | 11 | Pending |
+| 23 | Stories Migration - Batch 3 (11 components) | 11 | Pending |
+| 24 | Import Path Fixes | 1 | Pending |
+| 25 | Cleanup & Verification | 5 | Pending |
+| **Total Phase 3** | | **42** | Pending |
+
+---
+
+## Phase 19: Audit & Mapping
+
+**Purpose**: Audit existing stories and create migration mapping
+
+- [ ] T067 Audit all stories files in `examples/` directory
+  - List all 33 components with stories.tsx files
+  - For each component, list all related files (examples.tsx, *.module.scss, stories-utils.tsx)
+  - Verify corresponding `packages/*/src/` directory exists
+  - **Verify**: Complete list of files to migrate documented
+
+- [ ] T068 [P] Verify all target packages have src/ directories
+  ```bash
+  for pkg in accordion aria-live autosuggestV2 blockquote breadcrumb bubble button card-button checkbox chip code datatable fieldset floating-notification journey-arrow label link modal modal-v2 navigation-tab-group overlay page-indicator panel price-range segmented-control snippet switch textarea theme-toggle tooltip visually-hidden; do
+    ls -d packages/bpk-component-$pkg/src/ 2>/dev/null || echo "MISSING: packages/bpk-component-$pkg/src/"
+  done
+  # Also check non-component packages
+  ls -d packages/bpk-scrim-utils/src/ 2>/dev/null || echo "MISSING: packages/bpk-scrim-utils/src/"
+  ls -d packages/bpk-stylesheets-fonts/src/ 2>/dev/null || echo "MISSING: packages/bpk-stylesheets-fonts/src/"
+  ```
+  - **Expected**: All packages have src/ directories
+  - **Note**: bpk-stylesheets-fonts may not have src/ - handle specially
+
+**Checkpoint**: Audit complete - proceed to configuration update
+
+---
+
+## Phase 20: Storybook Configuration
+
+**Purpose**: Update Storybook to find stories in new location
+
+- [ ] T069 Update `.storybook/main.ts` stories path
+  - Change stories array from:
+    ```typescript
+    stories: [
+      '../examples/**/stories.@(ts|tsx|js|jsx)',
+    ],
+    ```
+  - To:
+    ```typescript
+    stories: [
+      '../packages/**/src/stories.@(ts|tsx|js|jsx)',
+    ],
+    ```
+  - **Verify**: `grep -A2 "stories:" .storybook/main.ts` shows new path
+
+**Checkpoint**: Configuration updated - proceed to migration
+
+---
+
+## Phase 21: Stories Migration - Batch 1 (11 components)
+
+**Purpose**: Migrate first batch of stories using git mv to preserve history
+
+### bpk-component-accordion
+
+- [ ] T070 [P] Migrate `examples/bpk-component-accordion/` to `packages/bpk-component-accordion/src/`
+  ```bash
+  git mv examples/bpk-component-accordion/stories.tsx packages/bpk-component-accordion/src/
+  git mv examples/bpk-component-accordion/examples.tsx packages/bpk-component-accordion/src/
+  git mv examples/bpk-component-accordion/stories-utils.tsx packages/bpk-component-accordion/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx, stories-utils.tsx
+
+### bpk-component-aria-live
+
+- [ ] T071 [P] Migrate `examples/bpk-component-aria-live/` to `packages/bpk-component-aria-live/src/`
+  ```bash
+  git mv examples/bpk-component-aria-live/stories.tsx packages/bpk-component-aria-live/src/
+  git mv examples/bpk-component-aria-live/examples.tsx packages/bpk-component-aria-live/src/
+  git mv examples/bpk-component-aria-live/examples.module.scss packages/bpk-component-aria-live/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx, examples.module.scss
+
+### bpk-component-autosuggestV2
+
+- [ ] T072 [P] Migrate `examples/bpk-component-autosuggestV2/` to `packages/bpk-component-autosuggest/src/`
+  ```bash
+  git mv examples/bpk-component-autosuggestV2/stories.tsx packages/bpk-component-autosuggest/src/
+  git mv examples/bpk-component-autosuggestV2/examples.tsx packages/bpk-component-autosuggest/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+  - **Note**: Target is bpk-component-autosuggest (no V2 suffix in package name)
+
+### bpk-component-blockquote
+
+- [ ] T073 [P] Migrate `examples/bpk-component-blockquote/` to `packages/bpk-component-blockquote/src/`
+  ```bash
+  git mv examples/bpk-component-blockquote/stories.tsx packages/bpk-component-blockquote/src/
+  git mv examples/bpk-component-blockquote/examples.tsx packages/bpk-component-blockquote/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+### bpk-component-breadcrumb
+
+- [ ] T074 [P] Migrate `examples/bpk-component-breadcrumb/` to `packages/bpk-component-breadcrumb/src/`
+  ```bash
+  git mv examples/bpk-component-breadcrumb/stories.tsx packages/bpk-component-breadcrumb/src/
+  git mv examples/bpk-component-breadcrumb/examples.tsx packages/bpk-component-breadcrumb/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+### bpk-component-bubble
+
+- [ ] T075 [P] Migrate `examples/bpk-component-bubble/` to `packages/bpk-component-bubble/src/`
+  ```bash
+  git mv examples/bpk-component-bubble/stories.tsx packages/bpk-component-bubble/src/
+  git mv examples/bpk-component-bubble/examples.tsx packages/bpk-component-bubble/src/
+  git mv examples/bpk-component-bubble/examples.module.scss packages/bpk-component-bubble/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx, examples.module.scss
+
+### bpk-component-button
+
+- [ ] T076 [P] Migrate `examples/bpk-component-button/` to `packages/bpk-component-button/src/`
+  ```bash
+  git mv examples/bpk-component-button/stories.tsx packages/bpk-component-button/src/
+  git mv examples/bpk-component-button/examples.tsx packages/bpk-component-button/src/
+  git mv examples/bpk-component-button/BpkButtonStory.module.scss packages/bpk-component-button/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx, BpkButtonStory.module.scss
+
+### bpk-component-card-button
+
+- [ ] T077 [P] Migrate `examples/bpk-component-card-button/` to `packages/bpk-component-card-button/src/`
+  ```bash
+  git mv examples/bpk-component-card-button/stories.tsx packages/bpk-component-card-button/src/
+  git mv examples/bpk-component-card-button/examples.tsx packages/bpk-component-card-button/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+### bpk-component-checkbox
+
+- [ ] T078 [P] Migrate `examples/bpk-component-checkbox/` to `packages/bpk-component-checkbox/src/`
+  ```bash
+  git mv examples/bpk-component-checkbox/stories.tsx packages/bpk-component-checkbox/src/
+  git mv examples/bpk-component-checkbox/examples.tsx packages/bpk-component-checkbox/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+### bpk-component-chip
+
+- [ ] T079 [P] Migrate `examples/bpk-component-chip/` to `packages/bpk-component-chip/src/`
+  ```bash
+  git mv examples/bpk-component-chip/stories.tsx packages/bpk-component-chip/src/
+  git mv examples/bpk-component-chip/examples.tsx packages/bpk-component-chip/src/
+  git mv examples/bpk-component-chip/examples.module.scss packages/bpk-component-chip/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx, examples.module.scss
+
+### bpk-component-code
+
+- [ ] T080 [P] Migrate `examples/bpk-component-code/` to `packages/bpk-component-code/src/`
+  ```bash
+  git mv examples/bpk-component-code/stories.tsx packages/bpk-component-code/src/
+  git mv examples/bpk-component-code/examples.tsx packages/bpk-component-code/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+**Checkpoint**: Batch 1 complete (11 components migrated)
+
+---
+
+## Phase 22: Stories Migration - Batch 2 (11 components)
+
+**Purpose**: Migrate second batch of stories
+
+### bpk-component-datatable
+
+- [ ] T081 [P] Migrate `examples/bpk-component-datatable/` to `packages/bpk-component-datatable/src/`
+  ```bash
+  git mv examples/bpk-component-datatable/stories.tsx packages/bpk-component-datatable/src/
+  git mv examples/bpk-component-datatable/examples.tsx packages/bpk-component-datatable/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+### bpk-component-fieldset
+
+- [ ] T082 [P] Migrate `examples/bpk-component-fieldset/` to `packages/bpk-component-fieldset/src/`
+  ```bash
+  git mv examples/bpk-component-fieldset/stories.tsx packages/bpk-component-fieldset/src/
+  git mv examples/bpk-component-fieldset/examples.tsx packages/bpk-component-fieldset/src/
+  git mv examples/bpk-component-fieldset/examples.module.scss packages/bpk-component-fieldset/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx, examples.module.scss
+
+### bpk-component-floating-notification
+
+- [ ] T083 [P] Migrate `examples/bpk-component-floating-notification/` to `packages/bpk-component-floating-notification/src/`
+  ```bash
+  git mv examples/bpk-component-floating-notification/stories.tsx packages/bpk-component-floating-notification/src/
+  git mv examples/bpk-component-floating-notification/examples.tsx packages/bpk-component-floating-notification/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+### bpk-component-journey-arrow
+
+- [ ] T084 [P] Migrate `examples/bpk-component-journey-arrow/` to `packages/bpk-component-journey-arrow/src/`
+  ```bash
+  git mv examples/bpk-component-journey-arrow/stories.tsx packages/bpk-component-journey-arrow/src/
+  git mv examples/bpk-component-journey-arrow/example.tsx packages/bpk-component-journey-arrow/src/
+  ```
+  - **Files**: stories.tsx, example.tsx (note: singular "example" not "examples")
+
+### bpk-component-label
+
+- [ ] T085 [P] Migrate `examples/bpk-component-label/` to `packages/bpk-component-label/src/`
+  ```bash
+  git mv examples/bpk-component-label/stories.tsx packages/bpk-component-label/src/
+  git mv examples/bpk-component-label/examples.tsx packages/bpk-component-label/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+### bpk-component-link
+
+- [ ] T086 [P] Migrate `examples/bpk-component-link/` to `packages/bpk-component-link/src/`
+  ```bash
+  git mv examples/bpk-component-link/stories.tsx packages/bpk-component-link/src/
+  git mv examples/bpk-component-link/examples.tsx packages/bpk-component-link/src/
+  git mv examples/bpk-component-link/examples.module.scss packages/bpk-component-link/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx, examples.module.scss
+
+### bpk-component-modal
+
+- [ ] T087 [P] Migrate `examples/bpk-component-modal/` to `packages/bpk-component-modal/src/`
+  ```bash
+  git mv examples/bpk-component-modal/stories.tsx packages/bpk-component-modal/src/
+  git mv examples/bpk-component-modal/examples.tsx packages/bpk-component-modal/src/
+  git mv examples/bpk-component-modal/examples.module.scss packages/bpk-component-modal/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx, examples.module.scss
+
+### bpk-component-modal-v2
+
+- [ ] T088 [P] Migrate `examples/bpk-component-modal-v2/` to `packages/bpk-component-modal-v2/src/`
+  ```bash
+  git mv examples/bpk-component-modal-v2/stories.tsx packages/bpk-component-modal-v2/src/
+  git mv examples/bpk-component-modal-v2/examples.tsx packages/bpk-component-modal-v2/src/
+  git mv examples/bpk-component-modal-v2/examples.module.scss packages/bpk-component-modal-v2/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx, examples.module.scss
+
+### bpk-component-navigation-tab-group
+
+- [ ] T089 [P] Migrate `examples/bpk-component-navigation-tab-group/` to `packages/bpk-component-navigation-tab-group/src/`
+  ```bash
+  git mv examples/bpk-component-navigation-tab-group/stories.tsx packages/bpk-component-navigation-tab-group/src/
+  git mv examples/bpk-component-navigation-tab-group/examples.tsx packages/bpk-component-navigation-tab-group/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+### bpk-component-overlay
+
+- [ ] T090 [P] Migrate `examples/bpk-component-overlay/` to `packages/bpk-component-overlay/src/`
+  ```bash
+  git mv examples/bpk-component-overlay/stories.tsx packages/bpk-component-overlay/src/
+  git mv examples/bpk-component-overlay/examples.tsx packages/bpk-component-overlay/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+### bpk-component-page-indicator
+
+- [ ] T091 [P] Migrate `examples/bpk-component-page-indicator/` to `packages/bpk-component-page-indicator/src/`
+  ```bash
+  git mv examples/bpk-component-page-indicator/stories.tsx packages/bpk-component-page-indicator/src/
+  git mv examples/bpk-component-page-indicator/examples.tsx packages/bpk-component-page-indicator/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+**Checkpoint**: Batch 2 complete (22 components migrated total)
+
+---
+
+## Phase 23: Stories Migration - Batch 3 (11 components)
+
+**Purpose**: Migrate third batch of stories including non-component packages
+
+### bpk-component-panel
+
+- [ ] T092 [P] Migrate `examples/bpk-component-panel/` to `packages/bpk-component-panel/src/`
+  ```bash
+  git mv examples/bpk-component-panel/stories.tsx packages/bpk-component-panel/src/
+  git mv examples/bpk-component-panel/examples.tsx packages/bpk-component-panel/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+### bpk-component-price-range
+
+- [ ] T093 [P] Migrate `examples/bpk-component-price-range/` to `packages/bpk-component-price-range/src/`
+  ```bash
+  git mv examples/bpk-component-price-range/stories.tsx packages/bpk-component-price-range/src/
+  git mv examples/bpk-component-price-range/examples.tsx packages/bpk-component-price-range/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+### bpk-component-segmented-control
+
+- [ ] T094 [P] Migrate `examples/bpk-component-segmented-control/` to `packages/bpk-component-segmented-control/src/`
+  ```bash
+  git mv examples/bpk-component-segmented-control/stories.tsx packages/bpk-component-segmented-control/src/
+  git mv examples/bpk-component-segmented-control/examples.tsx packages/bpk-component-segmented-control/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+### bpk-component-snippet
+
+- [ ] T095 [P] Migrate `examples/bpk-component-snippet/` to `packages/bpk-component-snippet/src/`
+  ```bash
+  git mv examples/bpk-component-snippet/stories.tsx packages/bpk-component-snippet/src/
+  git mv examples/bpk-component-snippet/examples.tsx packages/bpk-component-snippet/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+### bpk-component-switch
+
+- [ ] T096 [P] Migrate `examples/bpk-component-switch/` to `packages/bpk-component-switch/src/`
+  ```bash
+  git mv examples/bpk-component-switch/stories.tsx packages/bpk-component-switch/src/
+  git mv examples/bpk-component-switch/examples.tsx packages/bpk-component-switch/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+### bpk-component-textarea
+
+- [ ] T097 [P] Migrate `examples/bpk-component-textarea/` to `packages/bpk-component-textarea/src/`
+  ```bash
+  git mv examples/bpk-component-textarea/stories.tsx packages/bpk-component-textarea/src/
+  git mv examples/bpk-component-textarea/examples.tsx packages/bpk-component-textarea/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+### bpk-component-theme-toggle
+
+- [ ] T098 [P] Migrate `examples/bpk-component-theme-toggle/` to `packages/bpk-component-theme-toggle/src/`
+  ```bash
+  git mv examples/bpk-component-theme-toggle/stories.tsx packages/bpk-component-theme-toggle/src/
+  git mv examples/bpk-component-theme-toggle/examples.tsx packages/bpk-component-theme-toggle/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+### bpk-component-tooltip
+
+- [ ] T099 [P] Migrate `examples/bpk-component-tooltip/` to `packages/bpk-component-tooltip/src/`
+  ```bash
+  git mv examples/bpk-component-tooltip/stories.tsx packages/bpk-component-tooltip/src/
+  git mv examples/bpk-component-tooltip/examples.tsx packages/bpk-component-tooltip/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+### bpk-component-visually-hidden
+
+- [ ] T100 [P] Migrate `examples/bpk-component-visually-hidden/` to `packages/bpk-component-visually-hidden/src/`
+  ```bash
+  git mv examples/bpk-component-visually-hidden/stories.tsx packages/bpk-component-visually-hidden/src/
+  git mv examples/bpk-component-visually-hidden/examples.tsx packages/bpk-component-visually-hidden/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+
+### bpk-scrim-utils
+
+- [ ] T101 [P] Migrate `examples/bpk-scrim-utils/` to `packages/bpk-scrim-utils/src/`
+  ```bash
+  git mv examples/bpk-scrim-utils/stories.tsx packages/bpk-scrim-utils/src/
+  git mv examples/bpk-scrim-utils/examples.tsx packages/bpk-scrim-utils/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+  - **Note**: Non-component package (utility)
+
+### bpk-stylesheets-fonts
+
+- [ ] T102 [P] Migrate `examples/bpk-stylesheets-fonts/` to `packages/bpk-stylesheets-fonts/`
+  ```bash
+  # Check if src/ exists, create if not
+  mkdir -p packages/bpk-stylesheets-fonts/src
+  git mv examples/bpk-stylesheets-fonts/stories.tsx packages/bpk-stylesheets-fonts/src/
+  git mv examples/bpk-stylesheets-fonts/examples.tsx packages/bpk-stylesheets-fonts/src/
+  ```
+  - **Files**: stories.tsx, examples.tsx
+  - **Note**: Stylesheet package - may need src/ directory created
+
+**Checkpoint**: Batch 3 complete (33 components migrated total)
+
+---
+
+## Phase 24: Import Path Fixes
+
+**Purpose**: Update import paths in migrated stories files
+
+- [ ] T103 Update import paths in all migrated stories files
+  - Stories files import components from `../../packages/bpk-component-{name}`
+  - After migration, change to:
+    - For stories.tsx: `import BpkComponent from './BpkComponent'` or `import BpkComponent from '..'`
+    - For examples.tsx: Same pattern
+  - Search and replace pattern:
+    ```bash
+    # Find files with old import paths
+    grep -r "../../packages/bpk-component" packages/*/src/stories.tsx packages/*/src/examples.tsx
+    ```
+  - For each file, update the import path to the new relative location
+  - **Verify**: No remaining `../../packages/` imports in migrated files
+
+**Checkpoint**: Import paths updated - proceed to cleanup
+
+---
+
+## Phase 25: Cleanup & Verification
+
+**Purpose**: Clean up old directories and verify migration success
+
+- [ ] T104 Delete empty example directories
+  ```bash
+  # List directories in examples/ that should now be empty
+  # Delete them after verifying they're empty
+  find examples/ -type d -empty -delete
+  # If examples/ is completely empty, remove it
+  rmdir examples 2>/dev/null || echo "examples/ still has content"
+  ```
+  - **Verify**: `ls examples/ 2>&1` shows remaining non-migrated directories only
+
+- [ ] T105 [P] Verify Storybook starts successfully
+  ```bash
+  npm run storybook
+  ```
+  - **Expected**: Storybook starts without errors
+  - **Verify**: All 33 component stories load and render correctly
+
+- [ ] T106 [P] Build Storybook distribution
+  ```bash
+  npm run storybook:dist
+  ```
+  - **Expected**: dist-storybook/ created without errors
+
+- [ ] T107 Run full test suite
+  ```bash
+  npm test
+  ```
+  - **Expected**: All tests pass (330 test suites, 1640 tests)
+
+- [ ] T108 Update migration log with Phase 3 completion
+  - Update `docs/nx-migration-log.md` with:
+    - Phase 3 changes summary
+    - 33 stories files migrated
+    - Import paths updated
+    - Storybook configuration changes
+    - Verification results
+  - **Verify**: Migration log is complete and accurate
+
+**Checkpoint**: Phase 3 complete - stories colocated with components
+
+---
+
+## Phase 3 Dependencies & Execution Order
+
+### Phase Dependencies
+
+- **Phase 19 (Audit)**: No dependencies - start here
+- **Phase 20 (Configuration)**: Can run in parallel with Phase 19
+- **Phase 21-23 (Migration)**: Depends on Phase 19 and 20 completion
+  - All migration tasks T070-T102 can run in parallel (independent components)
+- **Phase 24 (Import Fixes)**: Depends on Phase 21-23 completion
+- **Phase 25 (Cleanup)**: Depends on Phase 24 completion
+
+### Parallel Opportunities
+
+- T067, T068 can run in parallel (audit tasks)
+- ALL migration tasks (T070-T102) can run in parallel (different directories)
+- T105, T106 can run in parallel (independent verification)
+
+### Critical Path
+
+1. T067-T068 (Audit)
+2. T069 (Configuration update)
+3. T070-T102 (Migration - all parallel)
+4. T103 (Import path fixes)
+5. T104-T108 (Cleanup and verification)
+
+---
+
+## Phase 3 Rollback Plan
+
+If issues occur after migration:
+
+```bash
+git checkout HEAD -- examples/ packages/ .storybook/main.ts
+```
+
+This will:
+1. Restore all files in `examples/` directory
+2. Restore any modified files in `packages/`
+3. Restore the original Storybook configuration
+
+---
+
+## Phase 3 Deliverables Checklist
+
+- [ ] All 33 stories files migrated to `packages/*/src/`
+- [ ] All supporting files migrated (examples.tsx, *.module.scss)
+- [ ] Import paths updated in all migrated files
+- [ ] Storybook configuration updated to find stories in new location
+- [ ] Storybook starts and renders all stories correctly
+- [ ] Storybook distribution builds successfully
+- [ ] All tests pass
+- [ ] Empty example directories removed
+- [ ] Migration log updated
+
+---
+
+## Phase 3 References
+
+- **Implementation Plan**: `docs/implementation-plans/phase-3-stories-colocation.md`
+- **Plan**: `specs/001-cleanup-dependencies/plan.md`
+- **Phase 2 State**: Project structure consolidated with single package.json
+- **Storybook Documentation**: https://storybook.js.org/
+- **Nx Colocation Pattern**: https://nx.dev/
 - **Backpack Constitution**: `.specify/memory/constitution.md`

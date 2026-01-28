@@ -29,7 +29,7 @@ const __dirname = path.dirname(__filename);
 
 const config: StorybookConfig = {
   stories: [
-    '../examples/**/stories.@(ts|tsx|js|jsx)',
+    '../packages/**/src/stories.@(ts|tsx|js|jsx)',
   ],
   addons: [
     '@storybook/addon-a11y',
@@ -61,6 +61,7 @@ const config: StorybookConfig = {
       webpackConfig.resolve.alias = {
         ...webpackConfig.resolve.alias,
         '@backpack': path.resolve(__dirname, '../packages'),
+        'bpk-storybook-utils': path.resolve(__dirname, '../examples/bpk-storybook-utils'),
       };
     }
     return webpackConfig;

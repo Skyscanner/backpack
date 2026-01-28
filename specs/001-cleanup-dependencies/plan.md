@@ -1,367 +1,246 @@
-<!--
-==============================================================================
-DOCUMENT PURPOSE: Implementation Plan for Phase 2: Project Structure
-==============================================================================
+# Implementation Plan: Phase 3 - Stories Colocation
 
-This plan describes HOW to implement project structure changes for Nx migration.
-It is an infrastructure task, not a component implementation.
-
-FOCUS: HOW
-- How to merge package.json files
-- What files need to be modified/deleted
-- How to update configuration references
-==============================================================================
--->
-
-# Implementation Plan: Phase 2 - Project Structure
-
-**Branch**: `001-cleanup-dependencies` | **Date**: 2026-01-28 | **Spec**: [phase-2-project-structure.md](../../docs/implementation-plans/phase-2-project-structure.md)
-**Input**: Implementation plan from `docs/implementation-plans/phase-2-project-structure.md`
-**Depends On**: Phase 1 (Nx Initialization) - ✅ Completed
+**Package Branch**: `001-cleanup-dependencies` | **Date**: 2026-01-28 | **Spec**: [Phase 3 Implementation Plan](../../docs/implementation-plans/phase-3-stories-colocation.md)
+**Input**: Stories migration from `examples/` to component `src/` directories
 
 ## Summary
 
-Consolidate the dual package.json structure into a single root package.json for Nx compatibility. This enables `nx release` for unified version management and simplifies the dependency tree.
-
-## Current State Analysis
-
-**Current Structure**:
-- Root `package.json`: private=true, devDependencies, scripts
-- `packages/package.json`: @skyscanner/backpack-web, runtime dependencies, peerDependencies
-- `packages/package-lock.json`: Separate lock file for nested packages
-- `postinstall` hook: `(cd packages && npm install)` runs nested install
-
-**Target Structure**:
-- Single root `package.json`: All dependencies, publish config, release info
-- No `packages/package.json`
-- No `packages/package-lock.json`
-- No `postinstall` hook
+Migrate 33 Storybook stories from the centralized `examples/` directory to their corresponding component `src/` directories. This colocation pattern aligns with Nx best practices, keeping related code together (component + tests + stories) for better maintainability and discoverability.
 
 ## Technical Context
 
-**Framework**: Nx (task orchestration and caching)
+**Framework**: React 18.3.1 with TypeScript 5.9.2
+**Styling**: CSS Modules + Sass (modern API with `@use`)
+**Testing**: Jest 30 + Testing Library + jest-axe
+**Build Tools**: Webpack 5, Babel 7, Storybook 10.1.11
+**Linting**: ESLint (@skyscanner/eslint-config-skyscanner), Stylelint
+**Component Library**: Backpack Design System (Monorepo)
 **Package Manager**: npm >=10.7.0
 **Node Version**: >=18.20.4
-**CI/CD**: GitHub Actions
-**Publish Target**: npm as `@skyscanner/backpack-web`
 
 ## Constitution Check
 
-*GATE: Infrastructure changes must not break existing functionality.*
+*This phase involves infrastructure changes, not component development. Applicable checks:*
 
 ### Core Principles Compliance
 
-- [x] **Component-First Architecture**: N/A - This is infrastructure, not a component
-- [x] **Naming Conventions**: N/A - No new components
-- [x] **License Headers**: N/A - No new source files
-- [x] **Modern Sass**: N/A - No style changes
-- [x] **Accessibility-First**: N/A - No UI changes
-- [x] **TypeScript**: N/A - Configuration files only (JSON)
-- [x] **Test Coverage**: Existing tests must continue to pass
-- [x] **Documentation**: Migration log will document all changes
-- [x] **SemVer**: PATCH - Internal tooling change, no API impact
+- [x] **Component-First Architecture**: Stories will be colocated with components
+- [x] **Naming Conventions**: Files keep existing names (`stories.tsx`)
+- [x] **License Headers**: No new files created, existing headers preserved
+- [x] **Modern Sass**: No Sass changes required
+- [x] **Accessibility-First**: No accessibility changes
+- [x] **TypeScript**: All files remain TypeScript
+- [x] **SemVer**: No version bump required (internal restructuring)
+- [x] **Deprecation Management**: N/A
+- [x] **Test Coverage**: No test changes
+- [x] **Documentation**: Storybook configuration updated
 
-### Technology Compliance
+**No constitution violations. This is an internal restructuring following Nx best practices.**
 
-- [x] **React Version**: N/A - No React code changes
-- [x] **TypeScript Version**: N/A - No TypeScript code changes
-- [x] **Browser Support**: N/A - Build tooling only
+## Phase 3: Stories Colocation
 
-## Project Structure
+### Objective
 
-### Files to Delete
+Migrate stories from centralized `examples/` directory to component-local `src/` directories, following the colocation pattern recommended by Nx.
 
-```text
-packages/package.json              # Runtime dependencies → merged to root
-packages/package-lock.json         # Lock file → regenerated at root
-```
-
-### Files to Modify
+### Current State
 
 ```text
-package.json                       # Merge all dependencies, add publishConfig
-package-lock.json                  # Regenerate single lock file
-.github/workflows/release.yml      # Update publish paths if needed
-scripts/transpilation/*            # Remove copy-package-json script
+examples/
+├── bpk-component-accordion/
+│   ├── stories.tsx
+│   └── examples.tsx
+├── bpk-component-button/
+│   ├── stories.tsx
+│   └── examples.tsx
+└── ... (33 components)
 ```
 
-### Files to Verify (Config Path Updates)
+### Target State
 
 ```text
-jest.config.js                     # Check moduleNameMapper paths
-.storybook/main.ts                 # Check webpack config paths
-babel.config.js                    # Check preset/plugin paths
-gulpfile.js                        # Check task paths
-tsconfig.json                      # Check path aliases
-eslint.config.js                   # Check config paths
-.github/workflows/_build.yml       # Check CI paths
-.github/workflows/pr.yml           # Check CI paths
-.github/workflows/release.yml      # Check publish paths
+packages/bpk-component-accordion/
+└── src/
+    ├── BpkAccordion/
+    │   ├── BpkAccordion.tsx
+    │   ├── BpkAccordion-test.tsx
+    │   └── ... (existing files)
+    ├── stories.tsx          # ← Migrated from examples/
+    └── examples.tsx         # ← Migrated from examples/
+
+examples/
+└── (empty or removed)
 ```
 
-## Phase 2: Project Structure Changes
+### Components with Stories (33 total)
 
-### Step 1: Merge package.json Dependencies
+| Component | Stories Location |
+|-----------|------------------|
+| bpk-component-accordion | examples/bpk-component-accordion/ |
+| bpk-component-aria-live | examples/bpk-component-aria-live/ |
+| bpk-component-autosuggestV2 | examples/bpk-component-autosuggestV2/ |
+| bpk-component-blockquote | examples/bpk-component-blockquote/ |
+| bpk-component-breadcrumb | examples/bpk-component-breadcrumb/ |
+| bpk-component-bubble | examples/bpk-component-bubble/ |
+| bpk-component-button | examples/bpk-component-button/ |
+| bpk-component-card-button | examples/bpk-component-card-button/ |
+| bpk-component-checkbox | examples/bpk-component-checkbox/ |
+| bpk-component-chip | examples/bpk-component-chip/ |
+| bpk-component-code | examples/bpk-component-code/ |
+| bpk-component-datatable | examples/bpk-component-datatable/ |
+| bpk-component-fieldset | examples/bpk-component-fieldset/ |
+| bpk-component-floating-notification | examples/bpk-component-floating-notification/ |
+| bpk-component-journey-arrow | examples/bpk-component-journey-arrow/ |
+| bpk-component-label | examples/bpk-component-label/ |
+| bpk-component-link | examples/bpk-component-link/ |
+| bpk-component-modal | examples/bpk-component-modal/ |
+| bpk-component-modal-v2 | examples/bpk-component-modal-v2/ |
+| bpk-component-navigation-tab-group | examples/bpk-component-navigation-tab-group/ |
+| bpk-component-overlay | examples/bpk-component-overlay/ |
+| bpk-component-page-indicator | examples/bpk-component-page-indicator/ |
+| bpk-component-panel | examples/bpk-component-panel/ |
+| bpk-component-price-range | examples/bpk-component-price-range/ |
+| bpk-component-segmented-control | examples/bpk-component-segmented-control/ |
+| bpk-component-snippet | examples/bpk-component-snippet/ |
+| bpk-component-switch | examples/bpk-component-switch/ |
+| bpk-component-textarea | examples/bpk-component-textarea/ |
+| bpk-component-theme-toggle | examples/bpk-component-theme-toggle/ |
+| bpk-component-tooltip | examples/bpk-component-tooltip/ |
+| bpk-component-visually-hidden | examples/bpk-component-visually-hidden/ |
+| bpk-scrim-utils | examples/bpk-scrim-utils/ |
+| bpk-stylesheets-fonts | examples/bpk-stylesheets-fonts/ |
 
-**Action**: Copy all dependencies from packages/package.json to root package.json
+### Implementation Steps
 
-**Current packages/package.json dependencies to merge**:
-```json
-{
-  "dependencies": {
-    "@floating-ui/react": "^0.26.12",
-    "@popperjs/core": "^2.11.8",
-    "@radix-ui/react-compose-refs": "^1.1.1",
-    "@radix-ui/react-slider": "1.3.5",
-    "@react-google-maps/api": "^2.19.3",
-    "@skyscanner/bpk-foundations-web": "^24.1.0",
-    "@skyscanner/bpk-svgs": "20.11.0",
-    "a11y-focus-scope": "^1.1.3",
-    "a11y-focus-store": "^1.0.0",
-    "d3-path": "^3.1.0",
-    "d3-scale": "^4.0.2",
-    "downshift": "^9.0.10",
-    "lodash": "^4.17.20",
-    "lodash.clamp": "^4.0.3",
-    "lodash.debounce": "^4.0.8",
-    "normalize.css": "^8.0.1",
-    "prop-types": "^15.7.2",
-    "react-autosuggest": "^9.4.3",
-    "react-table": "^7.8.0",
-    "react-virtualized-auto-sizer": "1.0.20",
-    "react-window": "^1.8.7"
-  },
-  "peerDependencies": {
-    "date-fns": "3.3.1 - 4",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-transition-group": "^4.4.5",
-    "sass": "^1",
-    "sass-embedded": "^1"
-  },
-  "peerDependenciesMeta": {
-    "sass": { "optional": true },
-    "sass-embedded": { "optional": true }
-  }
-}
-```
+#### Step 1: Audit Stories Files
 
-**Merge Strategy**:
-1. Add `dependencies` to root package.json under new `dependencies` key
-2. Add `peerDependencies` to root package.json
-3. Add `peerDependenciesMeta` to root package.json
+For each component in `examples/`:
+1. List all files in the directory (stories.tsx, examples.tsx, *.module.scss)
+2. Identify the corresponding package in `packages/`
+3. Verify the target `src/` directory exists
+4. Create migration mapping
 
-### Step 2: Update Root package.json Metadata
+#### Step 2: Migrate Stories Files
 
-**Action**: Add publish configuration for @skyscanner/backpack-web
-
-**Changes to make**:
-```json
-{
-  "name": "@skyscanner/backpack-web",
-  "version": "21.0.1",
-  "description": "Backpack Design System web library",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:Skyscanner/backpack.git"
-  },
-  "keywords": ["design system", "react", "react components"],
-  "author": "Backpack Design System <backpack@skyscanner.net>",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/Skyscanner/backpack/issues"
-  },
-  "homepage": "https://github.com/Skyscanner/backpack#readme",
-  "publishConfig": {
-    "directory": "./dist",
-    "access": "public"
-  },
-  "private": false
-}
-```
-
-**Note**: Keep `private: true` until ready to publish. The `publishConfig.directory: "./dist"` tells npm to publish from the dist folder after transpilation.
-
-### Step 3: Remove postinstall Hook
-
-**Action**: Delete postinstall script from root package.json
-
-**Current**:
-```json
-{
-  "scripts": {
-    "postinstall": "(cd packages && npm install)"
-  }
-}
-```
-
-**Target**: Remove this line entirely.
-
-### Step 4: Remove transpile:copy-package-json Script
-
-**Action**: Delete the script that copies packages/package.json to dist/
-
-**Current**:
-```json
-{
-  "scripts": {
-    "transpile:copy-package-json": "cp ./packages/package.json ./dist/"
-  }
-}
-```
-
-**Target**: Remove this line. The root package.json with `publishConfig.directory` handles this.
-
-### Step 5: Delete packages/package.json and packages/package-lock.json
-
-**Action**: Remove the nested package files
-
+For each component:
 ```bash
-rm packages/package.json
-rm packages/package-lock.json
+# Use git mv to preserve history
+git mv examples/bpk-component-{name}/stories.tsx packages/bpk-component-{name}/src/
+git mv examples/bpk-component-{name}/examples.tsx packages/bpk-component-{name}/src/
+git mv examples/bpk-component-{name}/*.module.scss packages/bpk-component-{name}/src/  # if exists
 ```
 
-### Step 6: Regenerate package-lock.json
+**Import Path Updates**: After moving, update any relative imports in stories files:
+- `../../packages/bpk-component-{name}` → `.` or `./BpkComponentName`
+- Component imports may need adjustment based on new location
 
-**Action**: Delete and regenerate the lock file
+#### Step 3: Update Storybook Configuration
 
+Update `.storybook/main.ts`:
+
+**Before**:
+```typescript
+const config: StorybookConfig = {
+  stories: [
+    '../examples/**/stories.@(ts|tsx|js|jsx)',
+  ],
+  // ...
+};
+```
+
+**After**:
+```typescript
+const config: StorybookConfig = {
+  stories: [
+    '../packages/**/src/stories.@(ts|tsx|js|jsx)',
+  ],
+  // ...
+};
+```
+
+#### Step 4: Update Percy Configuration
+
+Check `.percy.yml` or Percy-related configuration for story path patterns:
+- Update any patterns that reference `examples/`
+- Ensure visual tests can find stories in new location
+
+Percy test command in `package.json`:
+```json
+"percy-test": "percy storybook ./dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'"
+```
+This should continue to work as it operates on the built storybook.
+
+#### Step 5: Cleanup examples/ Directory
+
+After successful migration and verification:
+1. Remove empty directories from `examples/`
+2. If `examples/` is completely empty, remove the directory
+3. Update any documentation referencing `examples/` location
+
+### Configuration Changes Summary
+
+| File | Change |
+|------|--------|
+| `.storybook/main.ts` | Update `stories` array to `../packages/**/src/stories.@(ts|tsx|js|jsx)` |
+| `.percy.yml` | Update if stories path is referenced |
+| `examples/` | Delete after migration |
+
+### Import Path Migration Pattern
+
+Stories typically import components like:
+```typescript
+// Before (from examples/)
+import BpkButton from '../../packages/bpk-component-button';
+
+// After (from packages/bpk-component-button/src/)
+import BpkButton from './BpkButton';
+// or
+import BpkButton from '../index';
+```
+
+Each stories file will need individual review to update imports correctly.
+
+## Verification Checklist
+
+- [ ] All 33 stories files migrated to `packages/*/src/`
+- [ ] All import paths updated correctly
+- [ ] Storybook configuration updated
+- [ ] `npm run storybook` starts successfully
+- [ ] All stories render correctly
+- [ ] Percy visual tests run successfully
+- [ ] `examples/` directory cleaned up
+- [ ] No broken imports or references
+
+## Rollback Plan
+
+If issues occur:
 ```bash
-rm package-lock.json
-npm install
+git checkout HEAD -- examples/ packages/ .storybook/main.ts
 ```
-
-**Verification**:
-- No errors during install
-- All dependencies resolved correctly
-- Single lock file at root
-
-### Step 7: Update Configuration File Paths
-
-**Check and update these files if they reference packages/package.json**:
-
-1. **Jest config** (if exists):
-   - Check `moduleNameMapper` paths
-   - Check `rootDir` configuration
-
-2. **GitHub Actions workflows**:
-   - `.github/workflows/release.yml`: Check publish step
-   - Check any references to `packages/package.json` or `packages/package-lock.json`
-
-3. **Scripts**:
-   - `scripts/npm/check-bpk-dependencies.js`: May reference packages/package.json
-   - `scripts/transpilation/*`: May reference packages/package.json
-
-### Step 8: Verify Import Paths Still Work
-
-**Action**: Ensure @backpack/* path aliases still resolve correctly
-
-The path aliases configured in Phase 0.2 (`@backpack/*` → `packages/*`) should continue working since we're not moving any source files.
-
-**Verification**:
-```bash
-npm run typecheck
-npm run lint
-npm test
-```
-
-## Testing Strategy
-
-### Verification Tests
-
-1. **Dependency Installation**
-   ```bash
-   rm -rf node_modules
-   npm install
-   ```
-   - Should complete without errors
-   - All dependencies should be available
-
-2. **Build Verification**
-   ```bash
-   npm run build
-   ```
-   - Should complete successfully
-   - Output in dist/ should be correct
-
-3. **Test Suite**
-   ```bash
-   npm test
-   ```
-   - All tests should pass
-   - No import errors
-
-4. **Transpilation**
-   ```bash
-   npm run transpile
-   ```
-   - Should generate dist/ correctly
-   - dist/package.json should NOT be needed (publishConfig handles this)
-
-5. **Storybook**
-   ```bash
-   npm run storybook:dist
-   ```
-   - Should build successfully
-
-### Rollback Plan
-
-If tests fail:
-1. Restore packages/package.json from git
-2. Restore packages/package-lock.json from git
-3. Revert root package.json changes
-4. Run `npm install` in both directories
-5. Document failure in migration log
 
 ## Dependencies
 
-### Dependencies Being Merged
+- **Depends on**: Phase 2 (Project Structure Consolidation) - Completed
+- **Can run parallel to**: Phase 4 (to be planned)
 
-| From | Type | Notes |
-|------|------|-------|
-| packages/package.json | dependencies | 20+ runtime dependencies |
-| packages/package.json | peerDependencies | React, date-fns, sass |
-| packages/package.json | peerDependenciesMeta | Optional sass packages |
+## Notes
 
-### No New External Dependencies
+### Key Benefits of Colocation
 
-This phase only reorganizes existing dependencies.
+1. **Discoverability**: Stories are found alongside components
+2. **Maintainability**: Related code is in one place
+3. **Nx Compatibility**: Follows Nx project boundary conventions
+4. **Refactoring**: Easier to move/rename components with all related files
 
-## Deliverables Checklist
+### Edge Cases
 
-- [ ] All dependencies merged to root package.json
-- [ ] packages/package.json deleted
-- [ ] packages/package-lock.json deleted
-- [ ] postinstall hook removed
-- [ ] transpile:copy-package-json script removed
-- [ ] publishConfig added to root package.json
-- [ ] Single package-lock.json at root
-- [ ] All configuration paths updated
-- [ ] All tests pass
-- [ ] Build completes successfully
-- [ ] Storybook builds successfully
+- **bpk-scrim-utils**: Utility package, not a component - may need special handling
+- **bpk-stylesheets-fonts**: Stylesheet package - verify src/ directory exists
+- **bpk-component-autosuggestV2**: Name includes version suffix - map correctly to package
 
-## Migration & Versioning
+### Files to Migrate per Component
 
-**Version Type**: PATCH
-
-**Rationale**: Project structure consolidation is internal tooling that does not change the public API of any Backpack components. This qualifies as PATCH per `decisions/versioning-rules.md`.
-
-**Breaking Changes**: None
-
-**Deprecations**: None
-
-## Risk Assessment
-
-| Risk | Likelihood | Impact | Mitigation |
-|------|------------|--------|------------|
-| Config path not updated | Medium | Build fails | Comprehensive search for package.json references |
-| Dependencies not fully merged | Low | Runtime errors | Diff check before/after |
-| CI workflow breaks | Medium | Blocked releases | Test in PR before merge |
-| Import resolution fails | Low | Build fails | Test all entry points |
-
-## References
-
-- **Implementation Plan**: `docs/implementation-plans/phase-2-project-structure.md`
-- **Nx Documentation**: https://nx.dev/
-- **Phase 1 Completion**: Nx initialization already done
-- **Backpack Constitution**: `.specify/memory/constitution.md`
+Typical contents of `examples/bpk-component-{name}/`:
+- `stories.tsx` - Storybook story definitions
+- `examples.tsx` - Example component implementations
+- `*.module.scss` - Story-specific styles (not all components have this)
