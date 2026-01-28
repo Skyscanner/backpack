@@ -35,10 +35,8 @@ jobs:
         uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
         id: npm-cache
         with:
-          path: |
-            node_modules/
-            packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+          path: node_modules/
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
 
       - name: Install dependencies
         if: ${{ steps.npm-cache.outputs.cache-hit != 'true' }}
@@ -61,10 +59,8 @@ jobs:
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
         id: npm-cache
         with:
-          path: |
-            node_modules/
-            packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+          path: node_modules/
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
 
       - name: Upload dist-storybook to Cache
         uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
@@ -107,10 +103,8 @@ jobs:
       uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
       id: npm-cache
       with:
-        path: |
-          node_modules/
-          packages/node_modules/
-        key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+        path: node_modules/
+        key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
 
     - name: Restore Cache
       uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
