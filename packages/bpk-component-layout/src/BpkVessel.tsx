@@ -16,60 +16,52 @@
  * limitations under the License.
  */
 
-import { Box } from '@chakra-ui/react';
-
-import { processBpkComponentProps } from './tokenUtils';
-
 import type { BpkVesselProps } from './types';
 
 /**
  * A "migration hatch" layout primitive designed to ease component migration.
  *
- * Unlike standard Backpack layout components, `BpkVessel` intentionally
- * allows passing `className` and `style` through to the underlying element,
- * enabling gradual migration from legacy styling approaches.
- *
- * **Key Features:**
- * - Supports all Backpack layout props (spacing, sizing, flex, grid, etc.)
- * - Uses Backpack token system and responsive breakpoint keys
- * - Allows `className` for custom CSS classes
- * - Allows `style` for inline styles
- * - Supports basic interaction props (onClick, onFocus, onBlur)
+ * BpkVessel renders an HTML element (default: div) and only accepts
+ * className and style props for legacy styling during migration.
  *
  * **When to use:**
  * - During component migration when you need to maintain existing className/style usage
- * - As a temporary solution while refactoring to pure Backpack props
+ * - As a temporary solution while refactoring components
  *
- * **Migration path:**
- * Consider migrating to `BpkBox` once you can express all styling via Backpack props.
+ * **Important:**
+ * - This is a temporary migration tool, not a permanent solution
+ * - Only accepts: `as`, `className`, `style`, and `children` props
  *
  * @example
  * ```tsx
  * <BpkVessel
- *   padding={BpkSpacing.MD}
  *   className="legacy-class"
- *   style={{ transition: 'opacity 0.3s' }}
+ *   style={{ padding: '16px', transition: 'opacity 0.3s' }}
  * >
  *   Content
  * </BpkVessel>
+ *
+ * <BpkVessel
+ *   as="section"
+ *   className="legacy-section"
+ * >
+ *   Section Content
+ * </BpkVessel>
  * ```
  *
- * @returns {JSX.Element} A Chakra `Box` element with Backpack layout processing applied.
+ * @returns {JSX.Element} An HTML element with className and style applied.
  */
 export const BpkVessel = ({
+  as: Element = 'div',
   children,
   className,
   style,
-  ...props
-}: BpkVesselProps) => {
-  const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
-  return (
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <Box {...processedProps} className={className} style={style}>
-      {children}
-    </Box>
-  );
-};
+}: BpkVesselProps) => (
+  // Allowed, Element is always a DOM element.
+  // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+  <Element className={className} style={style}>
+    {children}
+  </Element>
+);
 
 export type { BpkVesselProps };
-

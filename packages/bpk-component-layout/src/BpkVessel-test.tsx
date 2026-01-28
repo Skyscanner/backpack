@@ -16,50 +16,40 @@
  * limitations under the License.
  */
 
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 
-import { BpkProvider } from './BpkProvider';
 import { BpkVessel } from './BpkVessel';
-import { BpkSpacing } from './tokens';
 
 describe('BpkVessel', () => {
   it('renders children content', () => {
-    const { getByText } = render(
-      <BpkProvider>
-        <BpkVessel padding={BpkSpacing.MD}>Content</BpkVessel>
-      </BpkProvider>,
-    );
+    const { getByText } = render(<BpkVessel>Content</BpkVessel>);
 
     expect(getByText('Content')).toBeInTheDocument();
   });
 
-  it('forwards className and style (migration hatch)', () => {
+  it('forwards className', () => {
     const { container } = render(
-      <BpkProvider>
-        <BpkVessel
-          className="custom-class"
-          style={{ opacity: 0.5 }}
-          padding={BpkSpacing.MD}
-        >
-          Content
-        </BpkVessel>
-      </BpkProvider>,
+      <BpkVessel className="custom-class">Content</BpkVessel>,
     );
 
     const div = container.querySelector('div');
     expect(div).toHaveClass('custom-class');
+  });
+
+  it('forwards style', () => {
+    const { container } = render(
+      <BpkVessel style={{ opacity: 0.5 }}>Content</BpkVessel>,
+    );
+
+    const div = container.querySelector('div');
     expect(div).toHaveStyle('opacity: 0.5');
   });
 
   it('forwards multiple classNames correctly', () => {
     const { container } = render(
-      <BpkProvider>
-        <BpkVessel className="class-one class-two" padding={BpkSpacing.SM}>
-          Content
-        </BpkVessel>
-      </BpkProvider>,
+      <BpkVessel className="class-one class-two">Content</BpkVessel>,
     );
 
     const div = container.querySelector('div');
@@ -67,93 +57,120 @@ describe('BpkVessel', () => {
     expect(div).toHaveClass('class-two');
   });
 
-  it('applies Backpack layout props correctly', () => {
-    const { container } = render(
-      <BpkProvider>
-        <BpkVessel
-          padding={BpkSpacing.LG}
-          margin={BpkSpacing.MD}
-          display="flex"
-          justifyContent="center"
-        >
-          Content
-        </BpkVessel>
-      </BpkProvider>,
-    );
-
-    const div = container.querySelector('div');
-    expect(div).toBeInTheDocument();
-    // Layout props are processed via Chakra's CSS-in-JS system
-  });
-
-  it('supports interaction props: onClick, onFocus, onBlur', () => {
-    const handleClick = jest.fn();
-    const handleFocus = jest.fn();
-    const handleBlur = jest.fn();
-
-    const { getByText } = render(
-      <BpkProvider>
-        <BpkVessel
-          padding={BpkSpacing.MD}
-          onClick={handleClick}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-        >
-          Interactive Content
-        </BpkVessel>
-      </BpkProvider>,
-    );
-
-    const element = getByText('Interactive Content');
-
-    fireEvent.click(element);
-    expect(handleClick).toHaveBeenCalledTimes(1);
-
-    fireEvent.focus(element);
-    expect(handleFocus).toHaveBeenCalledTimes(1);
-
-    fireEvent.blur(element);
-    expect(handleBlur).toHaveBeenCalledTimes(1);
-  });
-
   it('works without className or style props', () => {
-    const { getByText } = render(
-      <BpkProvider>
-        <BpkVessel padding={BpkSpacing.MD}>Plain Content</BpkVessel>
-      </BpkProvider>,
-    );
+    const { getByText } = render(<BpkVessel>Plain Content</BpkVessel>);
 
     expect(getByText('Plain Content')).toBeInTheDocument();
   });
 
   it('handles empty className gracefully', () => {
-    const { container } = render(
-      <BpkProvider>
-        <BpkVessel className="" padding={BpkSpacing.MD}>
-          Content
-        </BpkVessel>
-      </BpkProvider>,
-    );
+    const { container } = render(<BpkVessel className="">Content</BpkVessel>);
 
     const div = container.querySelector('div');
     expect(div).toBeInTheDocument();
   });
 
-  it('merges inline styles with layout styles correctly', () => {
+  it('merges inline styles correctly', () => {
     const { container } = render(
-      <BpkProvider>
-        <BpkVessel
-          padding={BpkSpacing.MD}
-          style={{ opacity: 0.8, fontSize: '16px' }}
-        >
-          Styled Content
-        </BpkVessel>
-      </BpkProvider>,
+      <BpkVessel style={{ opacity: 0.8, fontSize: '16px', padding: '8px' }}>
+        Styled Content
+      </BpkVessel>,
     );
 
     const div = container.querySelector('div');
     expect(div).toHaveStyle('opacity: 0.8');
     expect(div).toHaveStyle('font-size: 16px');
+    expect(div).toHaveStyle('padding: 8px');
+  });
+
+  it('renders as a div element by default', () => {
+    const { container } = render(<BpkVessel>Content</BpkVessel>);
+
+    const div = container.querySelector('div');
+    expect(div).toBeInTheDocument();
+    expect(div?.tagName).toBe('DIV');
+  });
+
+  it('renders as a custom element when "as" prop is provided', () => {
+    const { container } = render(
+      <BpkVessel as="section" className="custom-section">
+        Section Content
+      </BpkVessel>,
+    );
+
+    const section = container.querySelector('section');
+    expect(section).toBeInTheDocument();
+    expect(section?.tagName).toBe('SECTION');
+    expect(section).toHaveClass('custom-section');
+  });
+
+  it('supports different HTML elements via "as" prop', () => {
+    const { container: spanContainer } = render(
+      <BpkVessel as="span">Span</BpkVessel>,
+    );
+    expect(spanContainer.querySelector('span')).toBeInTheDocument();
+
+    const { container: articleContainer } = render(
+      <BpkVessel as="article">Article</BpkVessel>,
+    );
+    expect(articleContainer.querySelector('article')).toBeInTheDocument();
+
+    const { container: navContainer } = render(
+      <BpkVessel as="nav">Nav</BpkVessel>,
+    );
+    expect(navContainer.querySelector('nav')).toBeInTheDocument();
+
+    const { container: mainContainer } = render(
+      <BpkVessel as="main">Main</BpkVessel>,
+    );
+    expect(mainContainer.querySelector('main')).toBeInTheDocument();
+
+    const { container: asideContainer } = render(
+      <BpkVessel as="aside">Aside</BpkVessel>,
+    );
+    expect(asideContainer.querySelector('aside')).toBeInTheDocument();
+
+    const { container: headerContainer } = render(
+      <BpkVessel as="header">Header</BpkVessel>,
+    );
+    expect(headerContainer.querySelector('header')).toBeInTheDocument();
+
+    const { container: footerContainer } = render(
+      <BpkVessel as="footer">Footer</BpkVessel>,
+    );
+    expect(footerContainer.querySelector('footer')).toBeInTheDocument();
+  });
+
+  it('supports both className and style together', () => {
+    const { container } = render(
+      <BpkVessel
+        className="custom-class"
+        style={{ padding: '10px', margin: '5px' }}
+      >
+        Combined Content
+      </BpkVessel>,
+    );
+
+    const div = container.querySelector('div');
+    expect(div).toHaveClass('custom-class');
+    expect(div).toHaveStyle('padding: 10px');
+    expect(div).toHaveStyle('margin: 5px');
+  });
+
+  it('works with as, className, and style together', () => {
+    const { container } = render(
+      <BpkVessel
+        as="section"
+        className="section-class"
+        style={{ opacity: 0.9 }}
+      >
+        Section with all props
+      </BpkVessel>,
+    );
+
+    const section = container.querySelector('section');
+    expect(section).toBeInTheDocument();
+    expect(section).toHaveClass('section-class');
+    expect(section).toHaveStyle('opacity: 0.9');
   });
 });
-

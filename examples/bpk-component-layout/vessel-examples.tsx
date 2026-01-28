@@ -16,29 +16,20 @@
  * limitations under the License.
  */
 
-import {
-  BpkVessel,
-  BpkSpacing,
-} from '../../packages/bpk-component-layout';
-
-import Wrapper from './layout-wrapper';
+import { BpkVessel } from '../../packages/bpk-component-layout';
 
 import STYLES from './examples.module.scss';
 
 const BpkVesselExample = () => (
-  <Wrapper>
-    <BpkVessel
-      padding={BpkSpacing.MD}
-      className={STYLES['bpk-layout-examples__outline']}
-      style={{
-        transition: 'opacity 0.3s',
-      }}
-    >
-      Using BpkVessel with legacy className and inline styles.
-      <br />
-      Backpack spacing tokens: <code>padding=&#123;BpkSpacing.MD&#125;</code>
-    </BpkVessel>
-  </Wrapper>
+  <BpkVessel
+    className={STYLES['bpk-layout-examples__outline']}
+    style={{
+      padding: '16px',
+      transition: 'opacity 0.3s',
+    }}
+  >
+    Using BpkVessel (default div) with className and inline styles.
+  </BpkVessel>
 );
 
 export default BpkVesselExample;

@@ -60,59 +60,31 @@ export default function Example() {
 
 ### BpkVessel
 
-`BpkVessel` is a **migration hatch** layout primitive designed to ease component migration to Backpack. Unlike `BpkBox`, it intentionally allows `className` and `style` props while still supporting all Backpack layout properties.
+`BpkVessel` is a **migration hatch** layout primitive designed to ease component migration to Backpack. It renders a simple HTML element (default: div) and only accepts `className` and `style` props.
 
-> ⚠️ **Important:** BpkVessel is a **temporary migration tool**, not a permanent solution. Plan to migrate to `BpkBox` once legacy styling dependencies are removed.
+> ⚠️ **Important:** BpkVessel is a **temporary migration tool**, not a permanent solution.
 
 ```tsx
-import {
-  BpkVessel,
-  BpkProvider,
-  BpkSpacing,
-} from '@skyscanner/backpack-web/bpk-component-layout';
+import { BpkVessel } from '@skyscanner/backpack-web/bpk-component-layout';
 
-// Phase 1: Use BpkVessel with legacy className
+// Basic usage with className and style
 export default function Example() {
   return (
-    <BpkProvider>
-      <BpkVessel
-        padding={BpkSpacing.MD}
-        className="legacy-container"
-        style={{ transition: 'opacity 0.3s' }}
-      >
-        Migrating content
-      </BpkVessel>
-    </BpkProvider>
+    <BpkVessel
+      className="legacy-container"
+      style={{ padding: '16px', transition: 'opacity 0.3s' }}
+    >
+      Migrating content
+    </BpkVessel>
   );
 }
 
-// Phase 2: Gradually remove className/style, use Backpack props
-export function MigratingExample() {
+// Using custom element via "as" prop
+export function SemanticExample() {
   return (
-    <BpkProvider>
-      <BpkVessel
-        padding={BpkSpacing.MD}
-        display="flex"
-        justifyContent="center"
-      >
-        Content using Backpack props
-      </BpkVessel>
-    </BpkProvider>
-  );
-}
-
-// Phase 3: Final migration to BpkBox
-export function FinalExample() {
-  return (
-    <BpkProvider>
-      <BpkBox
-        padding={BpkSpacing.MD}
-        display="flex"
-        justifyContent="center"
-      >
-        Fully migrated content
-      </BpkBox>
-    </BpkProvider>
+    <BpkVessel as="section" className="legacy-section">
+      Section Content
+    </BpkVessel>
   );
 }
 ```
@@ -120,13 +92,13 @@ export function FinalExample() {
 **When to use BpkVessel:**
 - During component migration when you need to maintain existing className/style usage
 - When you have legacy CSS classes that cannot be immediately refactored
-- As a temporary solution while incrementally adopting Backpack props
+- As a temporary solution while refactoring components
 
-**Migration timeline:**
-1. Replace existing divs with `BpkVessel`, keeping className/style
-2. Incrementally convert inline styles to Backpack layout props
-3. Remove remaining className dependencies
-4. Replace `BpkVessel` with `BpkBox` for the final migration
+**Props:**
+- `as` - Optional element type (default: 'div'). Accepts: 'div', 'span', 'section', 'article', 'nav', 'main', 'aside', 'header', 'footer'
+- `children` - Child elements
+- `className` - Optional CSS class name(s)
+- `style` - Optional inline styles
 
 ## Layout tokens and props
 

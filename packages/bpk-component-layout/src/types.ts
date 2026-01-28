@@ -204,31 +204,46 @@ export interface BpkBoxProps extends BpkCommonLayoutProps, BpkBoxSpecificProps {
 }
 
 /**
+ * Valid HTML elements that can be used with BpkVessel
+ */
+export type VesselElement =
+  | 'div'
+  | 'span'
+  | 'section'
+  | 'article'
+  | 'nav'
+  | 'main'
+  | 'aside'
+  | 'header'
+  | 'footer';
+
+/**
  * Props for BpkVessel component.
  *
- * BpkVessel is a "migration hatch" that re-allows `className` and `style`
- * while keeping the same layout prop surface as `BpkBox`.
- *
- * This enables gradual migration from legacy styling approaches by allowing:
- * - All BpkBox layout props (spacing, sizing, flex, grid, etc.)
- * - Custom CSS classes via `className`
- * - Inline styles via `style`
+ * BpkVessel is a "migration hatch" that renders an HTML element
+ * and only accepts className and style props.
  *
  * @example
  * ```tsx
  * <BpkVessel
- *   padding={BpkSpacing.MD}
  *   className="legacy-wrapper"
- *   style={{ transition: 'opacity 0.3s' }}
+ *   style={{ padding: '16px', transition: 'opacity 0.3s' }}
  * >
  *   Content
  * </BpkVessel>
+ *
+ * <BpkVessel
+ *   as="section"
+ *   className="legacy-section"
+ * >
+ *   Section Content
+ * </BpkVessel>
  * ```
  */
-export type BpkVesselProps = BpkBoxProps & {
-  /** Custom CSS class name(s) to apply to the element */
+export type BpkVesselProps = {
+  as?: VesselElement;
+  children?: ReactNode;
   className?: string;
-  /** Inline styles to apply to the element */
   style?: CSSProperties;
 };
 
