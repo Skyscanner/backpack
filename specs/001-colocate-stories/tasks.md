@@ -216,78 +216,49 @@ V2 components are variant implementations that exist as subdirectories within pa
 
 ### Migration Tasks
 
-- [ ] T085 [US1] [US3] Move autosuggestV2 stories: `git mv examples/bpk-component-autosuggestV2/* packages/bpk-component-autosuggest/src/BpkAutosuggestV2/`
-- [ ] T086 [US1] [US3] Move modal-v2 stories: `git mv examples/bpk-component-modal-v2/* packages/bpk-component-modal/src/BpkModalV2/`
-- [ ] T087 [US1] [US3] Move inset-banner-v2 stories: `git mv examples/bpk-component-inset-banner-v2/* packages/bpk-component-inset-banner/src/BpkInsetBannerV2/`
-- [ ] T088 Update import paths in V2 story files (adjust relative paths for new location)
-- [ ] T089 [US2] Run TypeScript check: `npm run typecheck`
-- [ ] T090 [US2] Build Storybook: `npm run storybook:dist`
-- [ ] T091 Clean up empty examples/bpk-component-*v2 directories
-- [ ] T092 Commit V2 migration: `git commit -m "[WOODPECKER-4041] Colocate V2 component stories"`
+- [x] T069 [US1] [US3] Move autosuggestV2 stories: `git mv examples/bpk-component-autosuggestV2/* packages/bpk-component-autosuggest/src/BpkAutosuggestV2/` ✓
+- [x] T070 [US1] [US3] Move modal-v2 stories: `git mv examples/bpk-component-modal-v2/* packages/bpk-component-modal/src/BpkModalV2/` ✓
+- [x] T071 [US1] [US3] Move inset-banner-v2 stories: `git mv examples/bpk-component-inset-banner-v2/* packages/bpk-component-inset-banner/src/BpkInsetBannerV2/` ✓
+- [x] T072 Update import paths in V2 story files (adjust relative paths for new location) ✓
+- [x] T073 [US2] Run TypeScript check: `npm run typecheck` - PASSED ✓
+- [x] T074 [US2] Build Storybook: `npm run storybook:dist` - PASSED ✓
+- [x] T075 Clean up empty examples/bpk-component-*v2 directories ✓
+- [x] T076 Commit V2 migration: `git commit -m "[WOODPECKER-4041] Colocate V2 component variant stories"` ✓
 
-**Checkpoint**: All V2 component stories migrated to their variant subdirectories
+**Checkpoint**: All V2 component stories migrated to their variant subdirectories ✓
 
 ---
 
-## Phase 5: Final Verification & Commit [US2, US3, US4]
+## Phase 5: Final Verification [US2, US3, US4]
 
-**Purpose**: Comprehensive validation before committing migration
+**Purpose**: Comprehensive validation (migration already committed in Phase 4/4b)
 
 ### Local Testing
 
-- [ ] T069 [US2] Start Storybook locally: `npm run storybook` (test navigation and rendering)
-- [ ] T070 [US2] Verify story count matches baseline: Count stories in Storybook UI
-- [ ] T071 [US2] Check stories using shared utilities: Test action() and BpkDarkExampleWrapper work
-- [ ] T072 [US2] Test Storybook hot-reload: Edit a story file and verify it reloads
+- [ ] T077 [US2] Start Storybook locally: `npm run storybook` (test navigation and rendering)
+- [ ] T078 [US2] Verify story count matches baseline: Count stories in Storybook UI
+- [ ] T079 [US2] Check stories using shared utilities: Test action() and BpkDarkExampleWrapper work
+- [ ] T080 [US2] Test Storybook hot-reload: Edit a story file and verify it reloads
 
 ### Git History Validation
 
-- [ ] T073 [US3] Run git log --follow on 5 random files from different components
-- [ ] T074 [US3] Run git blame on 3 story files to verify authorship preserved
-- [ ] T075 [US3] Run git show on migration commit to verify all moves used git mv (should show renames, not delete+add)
+- [ ] T081 [US3] Run git log --follow on 5 random files from different components
+- [ ] T082 [US3] Run git blame on 3 story files to verify authorship preserved
+- [ ] T083 [US3] Run git show on migration commit to verify all moves used git mv (should show renames, not delete+add)
 
 ### Build & Deploy Checks
 
-- [ ] T076 [US2] Full build verification: `npm run build` (if applicable)
-- [ ] T077 [US2] Test suite verification: `npm run test` (should still pass)
-- [ ] T078 [US2] Storybook production build: `npm run storybook:build` (final check)
+- [ ] T084 [US2] Full build verification: `npm run build` (if applicable)
+- [ ] T085 [US2] Test suite verification: `npm run test` (should still pass)
+- [ ] T086 [US2] Storybook production build: `npm run storybook:build` (final check)
 
 ### Cleanup Verification
 
-- [ ] T079 [US4] Verify examples/ has no component directories: `find examples/bpk-component-* 2>&1`
-- [ ] T080 [US4] Verify packages/ has all 91 components with stories: Count verification
-- [ ] T081 [US2] Verify packages/bpk-storybook-utils/ structure intact
+- [ ] T087 [US4] Verify examples/ has no component directories: `find examples/bpk-component-* 2>&1`
+- [ ] T088 [US4] Verify packages/ has all 91 components with stories: Count verification
+- [ ] T089 [US2] Verify packages/bpk-storybook-utils/ structure intact
 
-### Commit Migration
-
-- [ ] T082 Stage all changes: `git add -A`
-- [ ] T083 Review staged changes: `git status` and `git diff --staged --stat`
-- [ ] T084 Commit with comprehensive message (see migration-strategy.md for template):
-  ```bash
-  git commit -m "[WOODPECKER-4041] Colocate Storybook stories with components
-
-  Relocate all 91 Storybook story files from examples/ to packages/*/src/.
-  Move bpk-storybook-utils to packages/ for package structure alignment.
-
-  Changes:
-  - Move stories.tsx, examples.tsx, style files using git mv
-  - Move examples/bpk-storybook-utils to packages/
-  - Update component import paths: ../../packages/ → ./
-  - Update shared utility imports: ../bpk-storybook-utils → ../../bpk-storybook-utils
-  - Update .storybook/main.ts glob patterns
-  - Update CI workflow cache keys
-
-  Verification:
-  - All 91 components migrated (SC-001)
-  - Shared utilities moved (SC-002)
-  - Storybook builds successfully (SC-003)
-  - Git history preserved via git mv (SC-006)
-  - TypeScript/lint passing (SC-008)
-
-  Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
-  ```
-
-**Checkpoint**: Migration committed as single atomic change
+**Checkpoint**: All verifications complete, ready for CI
 
 ---
 
@@ -297,25 +268,25 @@ V2 components are variant implementations that exist as subdirectories within pa
 
 ### Push & CI Checks
 
-- [ ] T085 [US2] Push to remote: `git push origin WOODPECKER-4041`
-- [ ] T086 [US2] Monitor GitHub Actions: Verify pr.yml workflow triggers and starts
-- [ ] T087 [US2] Wait for TypeScript check to pass in CI
-- [ ] T088 [US2] Wait for lint check to pass in CI
-- [ ] T089 [US2] Wait for Storybook build to pass in CI
-- [ ] T090 [US2] Wait for test suite to pass in CI (if tests run)
+- [ ] T090 [US2] Push to remote: `git push origin WOODPECKER-4041`
+- [ ] T091 [US2] Monitor GitHub Actions: Verify pr.yml workflow triggers and starts
+- [ ] T092 [US2] Wait for TypeScript check to pass in CI
+- [ ] T093 [US2] Wait for lint check to pass in CI
+- [ ] T094 [US2] Wait for Storybook build to pass in CI
+- [ ] T095 [US2] Wait for test suite to pass in CI (if tests run)
 
 ### Storybook Deployment
 
-- [ ] T091 [US2] Verify Storybook deployment job runs
-- [ ] T092 [US2] Check PR preview URL (should be posted as PR comment)
-- [ ] T093 [US2] Open PR preview Storybook URL and spot-check 5 components
-- [ ] T094 [US2] Verify navigation and story rendering in deployed Storybook
+- [ ] T096 [US2] Verify Storybook deployment job runs
+- [ ] T097 [US2] Check PR preview URL (should be posted as PR comment)
+- [ ] T098 [US2] Open PR preview Storybook URL and spot-check 5 components
+- [ ] T099 [US2] Verify navigation and story rendering in deployed Storybook
 
 ### Percy Visual Tests
 
-- [ ] T095 [US2] Wait for Percy visual tests to complete
-- [ ] T096 [US2] Review Percy results: Should show zero visual differences
-- [ ] T097 [US2] Approve Percy build if changes are expected (there should be none)
+- [ ] T100 [US2] Wait for Percy visual tests to complete
+- [ ] T101 [US2] Review Percy results: Should show zero visual differences
+- [ ] T102 [US2] Approve Percy build if changes are expected (there should be none)
 
 **Checkpoint**: CI passing, Storybook deployed, Percy showing no visual changes
 
@@ -327,17 +298,17 @@ V2 components are variant implementations that exist as subdirectories within pa
 
 ### Cleanup Decision
 
-- [ ] T098 [US4] Verify all verifications passed and PR approved
-- [ ] T099 [US4] Decide: Delete examples/ directory or keep for other purposes?
+- [ ] T103 [US4] Verify all verifications passed and PR approved
+- [ ] T104 [US4] Decide: Delete examples/ directory or keep for other purposes?
   - Option A: Delete entirely (recommended per spec)
   - Option B: Keep for future cross-component examples
 
 ### Execute Cleanup (Option A - Delete)
 
-- [ ] T100 [US4] Remove component example directories: `rm -rf examples/bpk-component-*`
-- [ ] T101 [US4] Check for any remaining files in examples/: `ls examples/`
-- [ ] T102 [US4] If examples/ is empty, remove it: `git rm -r examples/` (or keep .gitignore if desired)
-- [ ] T103 [US4] Commit cleanup:
+- [ ] T105 [US4] Remove component example directories: `rm -rf examples/bpk-component-*`
+- [ ] T106 [US4] Check for any remaining files in examples/: `ls examples/`
+- [ ] T107 [US4] If examples/ is empty, remove it: `git rm -r examples/` (or keep .gitignore if desired)
+- [ ] T108 [US4] Commit cleanup:
   ```bash
   git commit -m "[WOODPECKER-4041] Clean up examples directory after migration
 
@@ -345,12 +316,12 @@ V2 components are variant implementations that exist as subdirectories within pa
 
   Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
   ```
-- [ ] T104 [US4] Push cleanup commit: `git push origin WOODPECKER-4041`
+- [ ] T109 [US4] Push cleanup commit: `git push origin WOODPECKER-4041`
 
 ### Execute Cleanup (Option B - Keep for Reference)
 
-- [ ] T105 [US4] Create examples/README.md explaining examples/ no longer contains stories
-- [ ] T106 [US4] Commit documentation:
+- [ ] T110 [US4] Create examples/README.md explaining examples/ no longer contains stories
+- [ ] T111 [US4] Commit documentation:
   ```bash
   git commit -m "[WOODPECKER-4041] Document examples directory purpose
 
@@ -370,22 +341,22 @@ V2 components are variant implementations that exist as subdirectories within pa
 
 ### Documentation Updates
 
-- [ ] T107 Update CONTRIBUTING.md (if it mentions examples/ directory for stories)
-- [ ] T108 Update any documentation referencing story locations
-- [ ] T109 Add entry to CHANGELOG.md documenting the migration
-- [ ] T110 Update specs/001-colocate-stories/tasks.md with completion notes
+- [ ] T112 Update CONTRIBUTING.md (if it mentions examples/ directory for stories)
+- [ ] T113 Update any documentation referencing story locations
+- [ ] T114 Add entry to CHANGELOG.md documenting the migration
+- [ ] T115 Update specs/001-colocate-stories/tasks.md with completion notes
 
 ### Knowledge Sharing
 
-- [ ] T111 Prepare migration summary for team (bullet points of changes)
-- [ ] T112 Update internal wiki/confluence (if applicable) with new story locations
-- [ ] T113 Post announcement in #backpack Slack channel (if applicable)
+- [ ] T116 Prepare migration summary for team (bullet points of changes)
+- [ ] T117 Update internal wiki/confluence (if applicable) with new story locations
+- [ ] T118 Post announcement in #backpack Slack channel (if applicable)
 
 ### Post-Migration Monitoring
 
-- [ ] T114 Monitor for any reports of broken stories in next 24-48 hours
-- [ ] T115 Monitor CI builds on other branches to ensure no conflicts
-- [ ] T116 Document any issues found and their resolutions
+- [ ] T119 Monitor for any reports of broken stories in next 24-48 hours
+- [ ] T120 Monitor CI builds on other branches to ensure no conflicts
+- [ ] T121 Document any issues found and their resolutions
 
 **Checkpoint**: All documentation updated, team informed
 
@@ -417,11 +388,12 @@ Phase 8 (Documentation)
 
 | Phase | Depends On | Blocking | Status |
 |-------|------------|----------|--------|
-| Phase 1: Setup | None | Phase 2 | Pending |
-| Phase 2: Scripts | Phase 1 | Phase 3 | Pending |
-| Phase 3: Pilot | Phase 2 | Phase 4 | Pending |
-| Phase 4: Batch | Phase 3 success | Phase 5 | Pending |
-| Phase 5: Commit | Phase 4 success | Phase 6 | Pending |
+| Phase 1: Setup | None | Phase 2 | ✅ Complete |
+| Phase 2: Scripts | Phase 1 | Phase 3 | ✅ Complete |
+| Phase 3: Pilot | Phase 2 | Phase 4 | ✅ Complete |
+| Phase 4: Batch | Phase 3 success | Phase 4b | ✅ Complete |
+| Phase 4b: V2 | Phase 4 success | Phase 5 | ✅ Complete |
+| Phase 5: Verify | Phase 4b success | Phase 6 | Pending |
 | Phase 6: CI | Phase 5 | Phase 7 | Pending |
 | Phase 7: Cleanup | Phase 6 | Phase 8 | Pending |
 | Phase 8: Docs | Phase 7 | None | Pending |
@@ -434,9 +406,9 @@ Phase 8 (Documentation)
 
 **Phase 4 (Spot Checks)**: Tasks T065, T066, T067 can run in parallel
 
-**Phase 6 (Monitoring)**: CI checks T087-T090 run in parallel automatically
+**Phase 6 (Monitoring)**: CI checks T092-T095 run in parallel automatically
 
-**Phase 8 (Documentation)**: Tasks T107-T113 can run in parallel
+**Phase 8 (Documentation)**: Tasks T112-T118 can run in parallel
 
 ---
 
@@ -444,19 +416,19 @@ Phase 8 (Documentation)
 
 If migration fails at any point:
 
-### During Development (Before T084 Commit)
+### During Development (Before Commit)
 
 - [ ] Rollback: Run `./scripts/migrate-stories/rollback.sh`
 - [ ] Rollback: Reset changes: `git reset --hard HEAD`
 - [ ] Rollback: Review failure logs and adjust migration scripts
 - [ ] Rollback: Re-run from Phase 3 (Pilot) after fixes
 
-### After Commit (T084+) But Before Push (T085)
+### After Commit But Before Push (T090)
 
 - [ ] Rollback: Undo commit: `git reset --hard HEAD~1`
 - [ ] Rollback: Review issues and determine if re-attempt or major redesign needed
 
-### After Push (T085+) With CI Failures
+### After Push (T090+) With CI Failures
 
 - [ ] Rollback: Revert commit on remote: `git revert <commit-sha>`
 - [ ] Rollback: Push revert: `git push origin WOODPECKER-4041`
@@ -544,15 +516,16 @@ If migration fails at any point:
 
 | Phase | Tasks | Completed | Parallel |
 |-------|-------|-----------|----------|
-| Phase 1: Setup | 7 | 0 | 4 |
-| Phase 2: Scripts | 22 | 0 | 8 |
-| Phase 3: Pilot | 18 | 0 | 0 |
-| Phase 4: Batch | 33 | 0 | 3 |
-| Phase 5: Commit | 11 | 0 | 0 |
-| Phase 6: CI | 13 | 0 | 4 |
-| Phase 7: Cleanup | 9 | 0 | 0 |
-| Phase 8: Documentation | 10 | 0 | 7 |
-| **Total** | **123** | **0** | **26** |
+| Phase 1: Setup | T001-T007 (7) | 6 | 4 |
+| Phase 2: Scripts | T008-T029 (22) | 22 | 8 |
+| Phase 3: Pilot | T030-T048 (19) | 19 | 0 |
+| Phase 4: Batch | T049-T068 (20) | 20 | 3 |
+| Phase 4b: V2 | T069-T076 (8) | 8 | 0 |
+| Phase 5: Verify | T077-T089 (13) | 0 | 0 |
+| Phase 6: CI | T090-T102 (13) | 0 | 4 |
+| Phase 7: Cleanup | T103-T111 (9) | 0 | 0 |
+| Phase 8: Documentation | T112-T121 (10) | 0 | 7 |
+| **Total** | **121** | **75** | **26** |
 
 ---
 
