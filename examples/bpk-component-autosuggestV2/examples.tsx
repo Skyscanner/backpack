@@ -24,8 +24,8 @@ import type { ReactElement, InputHTMLAttributes, LegacyRef } from 'react';
 import { withRtlSupport } from '../../packages/bpk-component-icon';
 import FlightIcon from '../../packages/bpk-component-icon/lg/flight';
 
-import BpkAutosuggestSuggestion from '@backpack/bpk-component-autosuggest';
-import BpkAutosuggestV2 from '@backpack/bpk-component-autosuggest';
+// @ts-ignore - BpkAutosuggestSuggestion is a Flow-based JS file without type declarations
+import { BpkAutosuggestSuggestion, BpkAutosuggestV2 } from '@backpack/bpk-component-autosuggest';
 
 const BpkFlightIcon = withRtlSupport(FlightIcon);
 

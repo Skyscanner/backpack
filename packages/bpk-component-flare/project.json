@@ -1,0 +1,25 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-flare",
+  "sourceRoot": "packages/bpk-component-flare/src",
+  "projectType": "library",
+  "targets": {
+    "generate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "gulp generateFlare",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{projectRoot}/src/svgs/**/*.svg",
+        "{workspaceRoot}/gulpfile.js/bpk-component-flare/**/*"
+      ],
+      "outputs": [
+        "{projectRoot}/src/__generated__"
+      ]
+    },
+    "build": {
+      "dependsOn": ["generate"]
+    }
+  }
+}

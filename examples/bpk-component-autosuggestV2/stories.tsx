@@ -27,8 +27,8 @@ import AutosuggestExample from './examples';
 
 import type { StoryObj } from '@storybook/react';
 
-import BpkAutosuggestSuggestion from '@backpack/bpk-component-autosuggest';
-import BpkAutosuggestV2 from '@backpack/bpk-component-autosuggest';
+// @ts-ignore - BpkAutosuggestSuggestion is a Flow-based JS file without type declarations
+import { BpkAutosuggestSuggestion, BpkAutosuggestV2 } from '@backpack/bpk-component-autosuggest';
 
 
 

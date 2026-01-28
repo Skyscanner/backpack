@@ -1,0 +1,35 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "sharedGlobals": [
+      "{workspaceRoot}/.svgs-checksum",
+      "{workspaceRoot}/babel.config.js",
+      "{workspaceRoot}/tsconfig.json"
+    ],
+    "svgSources": [
+      "{workspaceRoot}/node_modules/@skyscanner/bpk-svgs/dist/**/*",
+      "{workspaceRoot}/.svgs-checksum"
+    ],
+    "production": [
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/eslint.config.js",
+      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/src/**/*-test.[jt]s?(x)"
+    ]
+  },
+  "targetDefaults": {
+    "build": {
+      "cache": true,
+      "dependsOn": ["^build"]
+    },
+    "generate": {
+      "cache": true,
+      "inputs": ["svgSources", "{projectRoot}/**/*"]
+    }
+  },
+  "defaultBase": "main"
+}
