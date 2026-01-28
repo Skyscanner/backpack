@@ -1,42 +1,41 @@
 <!--
 ==============================================================================
-DOCUMENT PURPOSE: Implementation Plan for Phase 1: Nx Initialization
+DOCUMENT PURPOSE: Implementation Plan for Phase 2: Project Structure
 ==============================================================================
 
-This plan describes HOW to implement Nx initialization for the Backpack monorepo.
+This plan describes HOW to implement project structure changes for Nx migration.
 It is an infrastructure task, not a component implementation.
 
 FOCUS: HOW
-- How to install and configure Nx
-- What files need to be created/modified
-- How to integrate with existing CI/CD
+- How to merge package.json files
+- What files need to be modified/deleted
+- How to update configuration references
 ==============================================================================
 -->
 
-# Implementation Plan: Phase 1 - Nx Initialization
+# Implementation Plan: Phase 2 - Project Structure
 
-**Branch**: `001-cleanup-dependencies` | **Date**: 2026-01-28 | **Spec**: [phase-1-nx-initialization.md](../../docs/implementation-plans/phase-1-nx-initialization.md)
-**Input**: Implementation plan from `docs/implementation-plans/phase-1-nx-initialization.md`
-**Depends On**: Phase 0.4 (Codegen Configuration) - ✅ Completed
+**Branch**: `001-cleanup-dependencies` | **Date**: 2026-01-28 | **Spec**: [phase-2-project-structure.md](../../docs/implementation-plans/phase-2-project-structure.md)
+**Input**: Implementation plan from `docs/implementation-plans/phase-2-project-structure.md`
+**Depends On**: Phase 1 (Nx Initialization) - ✅ Completed
 
 ## Summary
 
-Initialize Nx in the Backpack monorepo to enable task caching, affected commands, and dependency graph visualization. This unlocks significant CI speedups through intelligent caching and targeted builds.
+Consolidate the dual package.json structure into a single root package.json for Nx compatibility. This enables `nx release` for unified version management and simplifies the dependency tree.
 
 ## Current State Analysis
 
-**Already Completed (Phase 0.4)**:
-- ✅ `nx.json` exists with basic namedInputs and targetDefaults
-- ✅ `.svgs-checksum` file created for codegen integrity
-- ✅ project.json files created for Icon, Spinner, Flare components
-- ✅ Codegen scripts added (codegen:update-checksum, codegen:verify-checksum, codegen:validate)
+**Current Structure**:
+- Root `package.json`: private=true, devDependencies, scripts
+- `packages/package.json`: @skyscanner/backpack-web, runtime dependencies, peerDependencies
+- `packages/package-lock.json`: Separate lock file for nested packages
+- `postinstall` hook: `(cd packages && npm install)` runs nested install
 
-**Not Yet Installed**:
-- ❌ `nx` package not in devDependencies
-- ❌ `@nx/workspace` package not in devDependencies
-- ❌ Nx CLI commands not available
-- ❌ CI workflow not configured for Nx caching
-- ❌ .gitignore not updated for Nx cache directories
+**Target Structure**:
+- Single root `package.json`: All dependencies, publish config, release info
+- No `packages/package.json`
+- No `packages/package-lock.json`
+- No `postinstall` hook
 
 ## Technical Context
 
@@ -44,7 +43,7 @@ Initialize Nx in the Backpack monorepo to enable task caching, affected commands
 **Package Manager**: npm >=10.7.0
 **Node Version**: >=18.20.4
 **CI/CD**: GitHub Actions
-**Existing Build Tools**: Webpack 5, Babel 7, Gulp 5
+**Publish Target**: npm as `@skyscanner/backpack-web`
 
 ## Constitution Check
 
@@ -54,7 +53,7 @@ Initialize Nx in the Backpack monorepo to enable task caching, affected commands
 
 - [x] **Component-First Architecture**: N/A - This is infrastructure, not a component
 - [x] **Naming Conventions**: N/A - No new components
-- [x] **License Headers**: New scripts will include Apache 2.0 headers
+- [x] **License Headers**: N/A - No new source files
 - [x] **Modern Sass**: N/A - No style changes
 - [x] **Accessibility-First**: N/A - No UI changes
 - [x] **TypeScript**: N/A - Configuration files only (JSON)
@@ -70,340 +69,299 @@ Initialize Nx in the Backpack monorepo to enable task caching, affected commands
 
 ## Project Structure
 
-### Files to Create
+### Files to Delete
 
 ```text
-docs/nx-migration-log.md           # Migration documentation
+packages/package.json              # Runtime dependencies → merged to root
+packages/package-lock.json         # Lock file → regenerated at root
 ```
 
 ### Files to Modify
 
 ```text
-package.json                       # Add nx, @nx/workspace to devDependencies
-                                   # Add nx helper scripts
-nx.json                            # Expand with test, lint, typecheck targets
-.gitignore                         # Add .nx/cache, .nx/workspace-data
-.github/workflows/_build.yml       # Add Nx cache to CI
+package.json                       # Merge all dependencies, add publishConfig
+package-lock.json                  # Regenerate single lock file
+.github/workflows/release.yml      # Update publish paths if needed
+scripts/transpilation/*            # Remove copy-package-json script
 ```
 
-## Phase 1: Nx Installation & Configuration
+### Files to Verify (Config Path Updates)
 
-### Step 1: Install Nx Packages
-
-**Action**: Add Nx packages to root devDependencies
-
-```bash
-npm install --save-dev nx @nx/workspace
+```text
+jest.config.js                     # Check moduleNameMapper paths
+.storybook/main.ts                 # Check webpack config paths
+babel.config.js                    # Check preset/plugin paths
+gulpfile.js                        # Check task paths
+tsconfig.json                      # Check path aliases
+eslint.config.js                   # Check config paths
+.github/workflows/_build.yml       # Check CI paths
+.github/workflows/pr.yml           # Check CI paths
+.github/workflows/release.yml      # Check publish paths
 ```
 
-**Packages**:
-| Package | Version | Purpose |
-|---------|---------|---------|
-| `nx` | `^21.x` | Core Nx CLI and task runner |
-| `@nx/workspace` | `^21.x` | Workspace utilities and generators |
+## Phase 2: Project Structure Changes
 
-**Note**: Version should be latest stable. Currently v21.x.
+### Step 1: Merge package.json Dependencies
 
-### Step 2: Configure nx.json
+**Action**: Copy all dependencies from packages/package.json to root package.json
 
-**Current State** (from Phase 0.4):
+**Current packages/package.json dependencies to merge**:
 ```json
 {
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "sharedGlobals": [
-      "{workspaceRoot}/.svgs-checksum",
-      "{workspaceRoot}/babel.config.js",
-      "{workspaceRoot}/tsconfig.json"
-    ],
-    "svgSources": [
-      "{workspaceRoot}/node_modules/@skyscanner/bpk-svgs/dist/**/*",
-      "{workspaceRoot}/.svgs-checksum"
-    ],
-    "production": [
-      "default",
-      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
-      "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/.eslintrc.json",
-      "!{projectRoot}/eslint.config.js",
-      "!{projectRoot}/jest.config.[jt]s",
-      "!{projectRoot}/src/**/*-test.[jt]s?(x)"
-    ]
+  "dependencies": {
+    "@floating-ui/react": "^0.26.12",
+    "@popperjs/core": "^2.11.8",
+    "@radix-ui/react-compose-refs": "^1.1.1",
+    "@radix-ui/react-slider": "1.3.5",
+    "@react-google-maps/api": "^2.19.3",
+    "@skyscanner/bpk-foundations-web": "^24.1.0",
+    "@skyscanner/bpk-svgs": "20.11.0",
+    "a11y-focus-scope": "^1.1.3",
+    "a11y-focus-store": "^1.0.0",
+    "d3-path": "^3.1.0",
+    "d3-scale": "^4.0.2",
+    "downshift": "^9.0.10",
+    "lodash": "^4.17.20",
+    "lodash.clamp": "^4.0.3",
+    "lodash.debounce": "^4.0.8",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
+    "react-autosuggest": "^9.4.3",
+    "react-table": "^7.8.0",
+    "react-virtualized-auto-sizer": "1.0.20",
+    "react-window": "^1.8.7"
   },
-  "targetDefaults": {
-    "build": {
-      "cache": true,
-      "dependsOn": ["^build"]
-    },
-    "generate": {
-      "cache": true,
-      "inputs": ["svgSources", "{projectRoot}/**/*"]
-    }
+  "peerDependencies": {
+    "date-fns": "3.3.1 - 4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-transition-group": "^4.4.5",
+    "sass": "^1",
+    "sass-embedded": "^1"
   },
-  "defaultBase": "main"
-}
-```
-
-**Target State** (add test, lint, typecheck targets):
-```json
-{
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "sharedGlobals": [
-      "{workspaceRoot}/.svgs-checksum",
-      "{workspaceRoot}/babel.config.js",
-      "{workspaceRoot}/tsconfig.json"
-    ],
-    "svgSources": [
-      "{workspaceRoot}/node_modules/@skyscanner/bpk-svgs/dist/**/*",
-      "{workspaceRoot}/.svgs-checksum"
-    ],
-    "production": [
-      "default",
-      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
-      "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/.eslintrc.json",
-      "!{projectRoot}/eslint.config.js",
-      "!{projectRoot}/jest.config.[jt]s",
-      "!{projectRoot}/src/**/*-test.[jt]s?(x)"
-    ]
-  },
-  "targetDefaults": {
-    "build": {
-      "cache": true,
-      "dependsOn": ["^build"]
-    },
-    "generate": {
-      "cache": true,
-      "inputs": ["svgSources", "{projectRoot}/**/*"]
-    },
-    "test": {
-      "cache": true,
-      "inputs": ["default", "^production"]
-    },
-    "lint": {
-      "cache": true,
-      "inputs": ["default", "{workspaceRoot}/.eslintrc", "{workspaceRoot}/eslint.config.js"]
-    },
-    "typecheck": {
-      "cache": true,
-      "inputs": ["default", "{workspaceRoot}/tsconfig.json"]
-    }
-  },
-  "defaultBase": "main"
-}
-```
-
-**Changes**:
-- Add `test` target with caching enabled
-- Add `lint` target with ESLint config inputs
-- Add `typecheck` target with tsconfig input
-
-### Step 3: Update .gitignore
-
-**Add lines**:
-```gitignore
-# Nx
-.nx/cache
-.nx/workspace-data
-```
-
-**Location**: After existing node_modules entry
-
-### Step 4: Configure TypeScript (Verification)
-
-**Check**: Ensure tsconfig.json exists and references base config properly.
-
-From Phase 0.2, tsconfig.json should already have:
-```json
-{
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@backpack/*": ["packages/*"]
-    }
+  "peerDependenciesMeta": {
+    "sass": { "optional": true },
+    "sass-embedded": { "optional": true }
   }
 }
 ```
 
-**Action**: Verify this configuration is present. No changes needed if Phase 0.2 completed.
+**Merge Strategy**:
+1. Add `dependencies` to root package.json under new `dependencies` key
+2. Add `peerDependencies` to root package.json
+3. Add `peerDependenciesMeta` to root package.json
 
-### Step 5: Update CI Workflow
+### Step 2: Update Root package.json Metadata
 
-**File**: `.github/workflows/_build.yml`
+**Action**: Add publish configuration for @skyscanner/backpack-web
 
-**Add Nx cache** to the Build job:
-
-```yaml
-- name: Restore Nx Cache
-  uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
-  id: nx-cache
-  with:
-    path: .nx/cache
-    key: nx-cache-${{ runner.os }}-${{ hashFiles('nx.json', 'package-lock.json') }}
-    restore-keys: |
-      nx-cache-${{ runner.os }}-
-
-- name: Save Nx Cache
-  uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
-  if: always()
-  with:
-    path: .nx/cache
-    key: nx-cache-${{ runner.os }}-${{ hashFiles('nx.json', 'package-lock.json') }}
+**Changes to make**:
+```json
+{
+  "name": "@skyscanner/backpack-web",
+  "version": "21.0.1",
+  "description": "Backpack Design System web library",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "keywords": ["design system", "react", "react components"],
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Skyscanner/backpack/issues"
+  },
+  "homepage": "https://github.com/Skyscanner/backpack#readme",
+  "publishConfig": {
+    "directory": "./dist",
+    "access": "public"
+  },
+  "private": false
+}
 ```
 
-**Insert after**: Node modules cache restore
-**Insert before**: Setup logs directory
+**Note**: Keep `private: true` until ready to publish. The `publishConfig.directory: "./dist"` tells npm to publish from the dist folder after transpilation.
 
-### Step 6: Add Nx Scripts to package.json
+### Step 3: Remove postinstall Hook
 
-**Add to scripts**:
+**Action**: Delete postinstall script from root package.json
+
+**Current**:
 ```json
 {
   "scripts": {
-    "nx": "nx",
-    "nx:graph": "nx graph",
-    "nx:affected": "nx affected",
-    "nx:reset": "nx reset",
-    "nx:show": "nx show projects"
+    "postinstall": "(cd packages && npm install)"
   }
 }
 ```
 
-**Purpose**:
-- `nx`: Direct access to nx CLI
-- `nx:graph`: Visualize project dependency graph
-- `nx:affected`: Run commands only on affected projects
-- `nx:reset`: Clear Nx cache
-- `nx:show`: List all Nx projects
+**Target**: Remove this line entirely.
 
-### Step 7: Create Migration Log
+### Step 4: Remove transpile:copy-package-json Script
 
-**File**: `docs/nx-migration-log.md`
+**Action**: Delete the script that copies packages/package.json to dist/
 
-**Content**:
-```markdown
-# Nx Migration Log
+**Current**:
+```json
+{
+  "scripts": {
+    "transpile:copy-package-json": "cp ./packages/package.json ./dist/"
+  }
+}
+```
 
-## Phase 1: Nx Initialization
+**Target**: Remove this line. The root package.json with `publishConfig.directory` handles this.
 
-**Date**: [DATE]
-**Branch**: `001-cleanup-dependencies`
-**Commit**: [COMMIT_HASH]
+### Step 5: Delete packages/package.json and packages/package-lock.json
 
-### Changes Made
+**Action**: Remove the nested package files
 
-1. **Installed Nx packages**
-   - Added `nx` and `@nx/workspace` to devDependencies
-   - Version: ^21.x
+```bash
+rm packages/package.json
+rm packages/package-lock.json
+```
 
-2. **Updated nx.json**
-   - Added `test`, `lint`, `typecheck` targetDefaults with caching enabled
+### Step 6: Regenerate package-lock.json
 
-3. **Updated .gitignore**
-   - Added `.nx/cache` and `.nx/workspace-data`
+**Action**: Delete and regenerate the lock file
 
-4. **Updated CI workflow**
-   - Added Nx cache restore/save steps to `.github/workflows/_build.yml`
+```bash
+rm package-lock.json
+npm install
+```
 
-5. **Added Nx scripts**
-   - `nx`, `nx:graph`, `nx:affected`, `nx:reset`, `nx:show`
+**Verification**:
+- No errors during install
+- All dependencies resolved correctly
+- Single lock file at root
 
-### Verification
+### Step 7: Update Configuration File Paths
 
-- [ ] `npm install` completes successfully
-- [ ] `npm run nx:show` lists projects
-- [ ] `npm test` passes
-- [ ] CI pipeline runs successfully with Nx cache
+**Check and update these files if they reference packages/package.json**:
 
-### Rollback Instructions
+1. **Jest config** (if exists):
+   - Check `moduleNameMapper` paths
+   - Check `rootDir` configuration
 
-If issues occur, revert the following files:
-- package.json (remove nx, @nx/workspace from devDependencies, remove nx scripts)
-- nx.json (revert to Phase 0.4 state)
-- .gitignore (remove .nx entries)
-- .github/workflows/_build.yml (remove Nx cache steps)
+2. **GitHub Actions workflows**:
+   - `.github/workflows/release.yml`: Check publish step
+   - Check any references to `packages/package.json` or `packages/package-lock.json`
+
+3. **Scripts**:
+   - `scripts/npm/check-bpk-dependencies.js`: May reference packages/package.json
+   - `scripts/transpilation/*`: May reference packages/package.json
+
+### Step 8: Verify Import Paths Still Work
+
+**Action**: Ensure @backpack/* path aliases still resolve correctly
+
+The path aliases configured in Phase 0.2 (`@backpack/*` → `packages/*`) should continue working since we're not moving any source files.
+
+**Verification**:
+```bash
+npm run typecheck
+npm run lint
+npm test
 ```
 
 ## Testing Strategy
 
 ### Verification Tests
 
-1. **Nx Installation**
+1. **Dependency Installation**
    ```bash
+   rm -rf node_modules
    npm install
-   npx nx --version  # Should show version
-   npm run nx:show   # Should list projects with project.json
    ```
+   - Should complete without errors
+   - All dependencies should be available
 
-2. **Cache Functionality**
+2. **Build Verification**
    ```bash
-   npm run test      # First run - uncached
-   npm run test      # Second run - should hit cache
+   npm run build
    ```
+   - Should complete successfully
+   - Output in dist/ should be correct
 
-3. **CI Pipeline**
-   - Push changes to branch
-   - Verify CI workflow completes successfully
-   - Check Nx cache is saved/restored in subsequent runs
-
-4. **Existing Tests**
+3. **Test Suite**
    ```bash
-   npm test          # All tests should pass
-   npm run lint      # Linting should pass
-   npm run typecheck # TypeScript should compile
+   npm test
    ```
+   - All tests should pass
+   - No import errors
+
+4. **Transpilation**
+   ```bash
+   npm run transpile
+   ```
+   - Should generate dist/ correctly
+   - dist/package.json should NOT be needed (publishConfig handles this)
+
+5. **Storybook**
+   ```bash
+   npm run storybook:dist
+   ```
+   - Should build successfully
 
 ### Rollback Plan
 
 If tests fail:
-1. Revert nx.json changes to Phase 0.4 state
-2. Remove nx, @nx/workspace from devDependencies
-3. Remove Nx scripts from package.json
-4. Revert .gitignore changes
-5. Revert CI workflow changes
-6. Run `npm install` to regenerate lock file
+1. Restore packages/package.json from git
+2. Restore packages/package-lock.json from git
+3. Revert root package.json changes
+4. Run `npm install` in both directories
+5. Document failure in migration log
 
 ## Dependencies
 
-### New Dependencies
+### Dependencies Being Merged
 
-| Package | Type | Version | Purpose |
-|---------|------|---------|---------|
-| `nx` | devDependency | ^21.x | Core task runner |
-| `@nx/workspace` | devDependency | ^21.x | Workspace utilities |
+| From | Type | Notes |
+|------|------|-------|
+| packages/package.json | dependencies | 20+ runtime dependencies |
+| packages/package.json | peerDependencies | React, date-fns, sass |
+| packages/package.json | peerDependenciesMeta | Optional sass packages |
 
-### Existing Dependencies (unchanged)
+### No New External Dependencies
 
-- All existing dependencies remain unchanged
-- No runtime dependencies added
+This phase only reorganizes existing dependencies.
 
 ## Deliverables Checklist
 
-- [ ] `nx` and `@nx/workspace` installed
-- [ ] `nx.json` updated with test, lint, typecheck targets
-- [ ] `.gitignore` updated for Nx cache
-- [ ] CI workflow updated with Nx cache
-- [ ] Nx helper scripts added to package.json
-- [ ] Migration log created
-- [ ] All existing tests pass
-- [ ] CI pipeline completes successfully
+- [ ] All dependencies merged to root package.json
+- [ ] packages/package.json deleted
+- [ ] packages/package-lock.json deleted
+- [ ] postinstall hook removed
+- [ ] transpile:copy-package-json script removed
+- [ ] publishConfig added to root package.json
+- [ ] Single package-lock.json at root
+- [ ] All configuration paths updated
+- [ ] All tests pass
+- [ ] Build completes successfully
+- [ ] Storybook builds successfully
 
 ## Migration & Versioning
 
 **Version Type**: PATCH
 
-**Rationale**: Nx initialization is internal tooling that does not change the public API of any Backpack components. This qualifies as PATCH per `decisions/versioning-rules.md`.
+**Rationale**: Project structure consolidation is internal tooling that does not change the public API of any Backpack components. This qualifies as PATCH per `decisions/versioning-rules.md`.
 
 **Breaking Changes**: None
 
 **Deprecations**: None
 
+## Risk Assessment
+
+| Risk | Likelihood | Impact | Mitigation |
+|------|------------|--------|------------|
+| Config path not updated | Medium | Build fails | Comprehensive search for package.json references |
+| Dependencies not fully merged | Low | Runtime errors | Diff check before/after |
+| CI workflow breaks | Medium | Blocked releases | Test in PR before merge |
+| Import resolution fails | Low | Build fails | Test all entry points |
+
 ## References
 
-- **Implementation Plan**: `docs/implementation-plans/phase-1-nx-initialization.md`
+- **Implementation Plan**: `docs/implementation-plans/phase-2-project-structure.md`
 - **Nx Documentation**: https://nx.dev/
-- **Phase 0.4 Completion**: Codegen configuration already done
+- **Phase 1 Completion**: Nx initialization already done
 - **Backpack Constitution**: `.specify/memory/constitution.md`

@@ -46,7 +46,15 @@ FOCUS: STEPS (What to do, in what order)
 | 10 | Documentation | 1 | ✅ Complete |
 | 11 | Verification & Testing | 7 | ✅ Complete |
 | **Subtotal (Phase 1)** | | **14** | ✅ Complete |
-| **Grand Total** | | **45** |
+| 12 | Dependency Merge | 3 | ✅ Complete |
+| 13 | Publish Configuration | 2 | ✅ Complete |
+| 14 | Script & Hook Cleanup | 2 | ✅ Complete |
+| 15 | File Deletion | 2 | ✅ Complete |
+| 16 | Lock File Regeneration | 2 | ✅ Complete |
+| 17 | Configuration Path Updates | 3 | ✅ Complete |
+| 18 | Verification & Testing | 6 | ✅ Complete |
+| **Subtotal (Phase 2)** | | **20** | ✅ Complete |
+| **Grand Total** | | **65** |
 
 ---
 
@@ -673,5 +681,375 @@ If tests fail after changes:
 - **Implementation Plan**: `docs/implementation-plans/phase-1-nx-initialization.md`
 - **Plan**: `specs/001-cleanup-dependencies/plan.md`
 - **Phase 0.4 State**: `nx.json` has namedInputs and build/generate targetDefaults
+- **Nx Documentation**: https://nx.dev/
+- **Backpack Constitution**: `.specify/memory/constitution.md`
+
+---
+---
+
+# Tasks: Phase 2 - Project Structure
+
+**Input**: Design documents from `/specs/001-cleanup-dependencies/`
+**Prerequisites**: plan.md (required), Phase 1 completed (Nx Initialization)
+
+**Backpack Context**: This is an infrastructure task to consolidate the dual package.json structure into a single root package.json for Nx compatibility.
+
+**Tests**: Existing tests MUST continue to pass after all changes.
+
+## Summary
+
+| Phase | Description | Task Count |
+|-------|-------------|------------|
+| 12 | Dependency Merge | 3 |
+| 13 | Publish Configuration | 2 |
+| 14 | Script & Hook Cleanup | 2 |
+| 15 | File Deletion | 2 |
+| 16 | Lock File Regeneration | 2 |
+| 17 | Configuration Path Updates | 3 |
+| 18 | Verification & Testing | 6 |
+| **Total** | | **20** |
+
+---
+
+## Phase 12: Dependency Merge
+
+**Purpose**: Copy all dependencies from packages/package.json to root package.json
+
+- [X] T047 Merge runtime dependencies from `packages/package.json` to root `package.json`
+  - Add new `dependencies` key to root package.json
+  - Copy all 20 dependencies:
+    - `@floating-ui/react`: `^0.26.12`
+    - `@popperjs/core`: `^2.11.8`
+    - `@radix-ui/react-compose-refs`: `^1.1.1`
+    - `@radix-ui/react-slider`: `1.3.5`
+    - `@react-google-maps/api`: `^2.19.3`
+    - `@skyscanner/bpk-foundations-web`: `^24.1.0`
+    - `@skyscanner/bpk-svgs`: `20.11.0`
+    - `a11y-focus-scope`: `^1.1.3`
+    - `a11y-focus-store`: `^1.0.0`
+    - `d3-path`: `^3.1.0`
+    - `d3-scale`: `^4.0.2`
+    - `downshift`: `^9.0.10`
+    - `lodash`: `^4.17.20`
+    - `lodash.clamp`: `^4.0.3`
+    - `lodash.debounce`: `^4.0.8`
+    - `normalize.css`: `^8.0.1`
+    - `prop-types`: `^15.7.2`
+    - `react-autosuggest`: `^9.4.3`
+    - `react-table`: `^7.8.0`
+    - `react-virtualized-auto-sizer`: `1.0.20`
+    - `react-window`: `^1.8.7`
+  - **Note**: `d3-scale`, `lodash`, and `prop-types` already exist in root devDependencies - move to dependencies
+  - **Verify**: `cat package.json | grep -A25 '"dependencies"'`
+
+- [X] T048 [P] Add peerDependencies from `packages/package.json` to root `package.json`
+  - Add `peerDependencies` key:
+    ```json
+    "peerDependencies": {
+      "date-fns": "3.3.1 - 4",
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0",
+      "react-transition-group": "^4.4.5",
+      "sass": "^1",
+      "sass-embedded": "^1"
+    }
+    ```
+  - **Verify**: `cat package.json | grep -A8 '"peerDependencies"'`
+
+- [X] T049 [P] Add peerDependenciesMeta from `packages/package.json` to root `package.json`
+  - Add `peerDependenciesMeta` key:
+    ```json
+    "peerDependenciesMeta": {
+      "sass": { "optional": true },
+      "sass-embedded": { "optional": true }
+    }
+    ```
+  - **Verify**: `cat package.json | grep -A6 '"peerDependenciesMeta"'`
+
+**Checkpoint**: Dependencies merged - proceed to publish configuration
+
+---
+
+## Phase 13: Publish Configuration
+
+**Purpose**: Update root package.json with publish metadata for @skyscanner/backpack-web
+
+- [X] T050 Update root package.json metadata for npm publishing
+  - Change `name` from `backpack` to `@skyscanner/backpack-web`
+  - Change `version` from `0.0.1` to `21.0.1`
+  - Add `description`: `Backpack Design System web library`
+  - Add `keywords`: `["design system", "react", "react components"]`
+  - Add `bugs`: `{ "url": "https://github.com/Skyscanner/backpack/issues" }`
+  - Add `homepage`: `https://github.com/Skyscanner/backpack#readme`
+  - **Keep** `private: true` for now (will change when ready to publish)
+  - **Verify**: Package metadata matches packages/package.json
+
+- [X] T051 Update publishConfig in root package.json
+  - Change from:
+    ```json
+    "publishConfig": {
+      "registry": "https://registry.npmjs.org/"
+    }
+    ```
+  - To:
+    ```json
+    "publishConfig": {
+      "registry": "https://registry.npmjs.org/",
+      "directory": "./dist",
+      "access": "public"
+    }
+    ```
+  - **Verify**: `cat package.json | grep -A4 '"publishConfig"'`
+
+**Checkpoint**: Publish config updated - proceed to script cleanup
+
+---
+
+## Phase 14: Script & Hook Cleanup
+
+**Purpose**: Remove scripts and hooks that reference packages/package.json
+
+- [X] T052 Remove postinstall hook from root package.json
+  - Delete line: `"postinstall": "(cd packages && npm install)",`
+  - **Verify**: `cat package.json | grep postinstall` returns nothing
+
+- [X] T053 Remove transpile:copy-package-json script from root package.json
+  - Delete line: `"transpile:copy-package-json": "cp ./packages/package.json ./dist/",`
+  - **Verify**: `cat package.json | grep transpile:copy-package-json` returns nothing
+
+**Checkpoint**: Scripts cleaned up - proceed to file deletion
+
+---
+
+## Phase 15: File Deletion
+
+**Purpose**: Remove nested package files that are no longer needed
+
+- [X] T054 Delete packages/package.json
+  ```bash
+  rm packages/package.json
+  ```
+  - **Verify**: `ls packages/package.json 2>&1` shows "No such file"
+
+- [X] T055 Delete packages/package-lock.json
+  ```bash
+  rm packages/package-lock.json
+  ```
+  - **Verify**: `ls packages/package-lock.json 2>&1` shows "No such file"
+
+**Checkpoint**: Nested package files deleted - proceed to lock file regeneration
+
+---
+
+## Phase 16: Lock File Regeneration
+
+**Purpose**: Regenerate single package-lock.json with all dependencies
+
+- [X] T056 Delete root package-lock.json
+  ```bash
+  rm package-lock.json
+  ```
+  - **Verify**: `ls package-lock.json 2>&1` shows "No such file"
+
+- [X] T057 Regenerate package-lock.json with npm install
+  ```bash
+  npm install
+  ```
+  - **Verify**:
+    - `npm install` completes without errors
+    - `ls package-lock.json` shows file exists
+    - `node_modules/` directory created
+    - All dependencies available
+
+**Checkpoint**: Lock file regenerated - proceed to configuration updates
+
+---
+
+## Phase 17: Configuration Path Updates
+
+**Purpose**: Update files that reference packages/package.json or packages/package-lock.json
+
+- [X] T058 Update .github/workflows/_build.yml cache key
+  - Current cache key includes `packages/package-lock.json`:
+    ```yaml
+    key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+    ```
+  - Change to single lock file:
+    ```yaml
+    key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
+    ```
+  - Update all occurrences in the file (Build job, Danger job, PercyTests job)
+  - Also update cache path from:
+    ```yaml
+    path: |
+      node_modules/
+      packages/node_modules/
+    ```
+  - To:
+    ```yaml
+    path: node_modules/
+    ```
+  - **Verify**: `grep -n "packages/package-lock.json" .github/workflows/_build.yml` returns nothing
+  - **Verify**: `grep -n "packages/node_modules" .github/workflows/_build.yml` returns nothing
+
+- [X] T059 [P] Update .github/workflows/release.yml if it references packages/package.json
+  - Check for any references to `packages/package.json`
+  - Update publish configuration to use `publishConfig.directory`
+  - **Verify**: `grep -n "packages/package.json" .github/workflows/release.yml` returns nothing
+
+- [X] T060 [P] Search and update any other files referencing packages/package.json
+  - Search for references:
+    ```bash
+    grep -r "packages/package.json" --include="*.js" --include="*.ts" --include="*.yml" --include="*.yaml" .
+    ```
+  - Update scripts that may reference it:
+    - `scripts/npm/check-bpk-dependencies.js` - may need path update
+    - `scripts/transpilation/*` - may reference packages/
+  - **Verify**: No remaining references to `packages/package.json`
+
+**Checkpoint**: Configuration paths updated - proceed to verification
+
+---
+
+## Phase 18: Verification & Testing
+
+**Purpose**: Verify the consolidated structure works correctly
+
+### Installation Verification
+
+- [X] T061 Verify clean install works
+  ```bash
+  rm -rf node_modules && npm install
+  ```
+  - **Expected**: npm install completes without errors
+  - All dependencies available in node_modules/
+
+### Build Verification
+
+- [X] T062 [P] Run full build
+  ```bash
+  npm run build
+  ```
+  - **Expected**: Build completes without errors
+
+- [X] T063 [P] Run transpilation (skipped - T062 build includes transpile)
+  ```bash
+  npm run transpile
+  ```
+  - **Expected**:
+    - dist/ created correctly
+    - No errors about missing packages/package.json
+
+### Test Suite Verification
+
+- [X] T064 Run full test suite
+  ```bash
+  npm test
+  ```
+  - **Expected**: All tests pass (330 test suites, 1640 tests)
+
+- [X] T065 [P] Run typecheck and lint
+  ```bash
+  npm run typecheck && npm run lint
+  ```
+  - **Expected**: No errors
+
+### Documentation Update
+
+- [X] T066 Update migration log with Phase 2 completion
+  - Update `docs/nx-migration-log.md` with:
+    - Phase 2 changes summary
+    - Files modified/deleted
+    - Verification results
+    - Rollback instructions
+  - **Verify**: Migration log is complete and accurate
+
+**Checkpoint**: Phase 2 complete - project structure consolidated
+
+---
+
+## Phase 2 Dependencies & Execution Order
+
+### Phase Dependencies
+
+- **Phase 12 (Dependency Merge)**: No dependencies - start here
+  - T048 and T049 can run in parallel (different package.json sections)
+- **Phase 13 (Publish Config)**: Depends on Phase 12 completion
+- **Phase 14 (Script Cleanup)**: Depends on Phase 13 completion
+- **Phase 15 (File Deletion)**: Depends on Phase 14 completion
+- **Phase 16 (Lock Regeneration)**: Depends on Phase 15 completion
+- **Phase 17 (Config Updates)**: Can run in parallel with Phase 16
+  - T059 and T060 can run in parallel (different files)
+- **Phase 18 (Verification)**: Depends on Phases 16 and 17 completion
+  - T062, T063, T065 can run in parallel (independent commands)
+
+### Parallel Opportunities
+
+- T048, T049 can run in parallel (different package.json sections)
+- T059, T060 can run in parallel (different files)
+- T062, T063, T065 can run in parallel (independent verification)
+
+### Critical Path
+
+1. T047 → T048/T049 → T050 → T051 (Package.json updates)
+2. T052 → T053 (Script cleanup)
+3. T054 → T055 (File deletion)
+4. T056 → T057 (Lock regeneration)
+5. T058 → T059/T060 (Config updates)
+6. T061 → T064 → T066 (Final verification)
+
+---
+
+## Phase 2 Rollback Plan
+
+If tests fail after changes:
+
+1. Restore `packages/package.json` from git:
+   ```bash
+   git checkout HEAD -- packages/package.json
+   ```
+2. Restore `packages/package-lock.json` from git:
+   ```bash
+   git checkout HEAD -- packages/package-lock.json
+   ```
+3. Revert root `package.json` changes:
+   ```bash
+   git checkout HEAD -- package.json
+   ```
+4. Revert CI workflow changes:
+   ```bash
+   git checkout HEAD -- .github/workflows/_build.yml
+   ```
+5. Run npm install in both directories:
+   ```bash
+   npm install && cd packages && npm install
+   ```
+6. Document failure in migration log
+
+---
+
+## Phase 2 Deliverables Checklist
+
+- [X] All dependencies merged to root package.json
+- [X] peerDependencies and peerDependenciesMeta added to root package.json
+- [X] Root package.json has @skyscanner/backpack-web metadata
+- [X] publishConfig includes `directory: "./dist"`
+- [X] postinstall hook removed
+- [X] transpile:copy-package-json script removed
+- [X] packages/package.json deleted
+- [X] packages/package-lock.json deleted
+- [X] Single package-lock.json at root
+- [X] CI workflow cache keys updated
+- [X] All tests pass
+- [X] Build and transpile work correctly
+- [X] Migration log updated
+
+---
+
+## Phase 2 References
+
+- **Implementation Plan**: `docs/implementation-plans/phase-2-project-structure.md`
+- **Plan**: `specs/001-cleanup-dependencies/plan.md`
+- **Phase 1 State**: Nx initialized with caching enabled
 - **Nx Documentation**: https://nx.dev/
 - **Backpack Constitution**: `.specify/memory/constitution.md`
