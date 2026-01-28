@@ -66,9 +66,10 @@ Each milestone is designed to be **independently verifiable** and **non-breaking
 | M4 | Components as Nx Projects | Very Low | Small | Each component has project.json |
 | M5 | Static Checks via Nx | Low | Small | Lint/test/typecheck run through Nx |
 | M6 | Module Boundaries | Low | Small | Dependency rules enforced |
-| M7 | Dependency Management | Medium | Medium | Production Standard compliance (Optional) |
-| M8 | Vite Adoption (Optional) | Medium | Medium | Vite replaces Webpack/Babel |
-| M9 | Vitest Adoption (Optional) | Low | Small | Vitest replaces Jest |
+| M7 | Publishing with Nx (Optional) | Medium | Medium | `nx release` replaces `npm publish` |
+| M8 | Dependency Management (Optional) | Medium | Medium | Production Standard compliance |
+| M9 | Vite Adoption (Optional) | Medium | Medium | Vite replaces Webpack/Babel |
+| M10 | Vitest Adoption (Optional) | Low | Small | Vitest replaces Jest |
 
 ---
 
@@ -253,7 +254,42 @@ As a Backpack architect, I want to enforce module boundaries so that components 
 
 ---
 
-## Milestone 7: Dependency Management (Priority: P3, Optional)
+## Milestone 7: Publishing with Nx (Priority: P3, Optional)
+
+### User Story
+
+As a Backpack maintainer, I want releases to be managed by `nx release` so that versioning, changelog generation, and publishing align with the Production Standard requirements.
+
+**Why this priority**: The Production Standard mandates Nx-managed releases. This milestone ensures compliance and enables automated, auditable release processes. However, it can be deferred as the existing release process works.
+
+**Independent Test**: Can be verified by running `nx release --dry-run` and confirming correct version bump, changelog, and tag creation without actual publication.
+
+### Acceptance Scenarios
+
+1. **Given** `nx.json` is configured with release settings, **When** `nx release` is run, **Then** version is bumped based on conventional commits
+2. **Given** commits follow conventional format, **When** `nx release` generates changelog, **Then** changes are correctly categorized (feat, fix, breaking)
+3. **Given** a release is triggered, **When** `nx release` completes, **Then** git tags are created and package is published to npm
+4. **Given** shadow release workflow exists, **When** run on non-critical branch, **Then** release process validates without actual publication
+
+### Verification Criteria
+
+- [ ] `nx.json` includes release configuration
+- [ ] Conventional commits enforced (commitizen/husky or CI checks)
+- [ ] `nx release --dry-run` produces expected output
+- [ ] Shadow release workflow validates on test branch
+- [ ] Production workflow updated to use `nx release`
+- [ ] Changelogs generated correctly
+- [ ] Git tags created on release
+- [ ] npm publication successful
+
+### Risks to Monitor
+
+- Misconfiguration causing missed tags or broken changelogs
+- Version drift between git tags and package.json
+
+---
+
+## Milestone 8: Dependency Management (Priority: P3, Optional)
 
 ### User Story
 
@@ -282,7 +318,7 @@ As a Backpack maintainer, I want dependencies to comply with the TypeScript Mono
 
 ---
 
-## Milestone 8: Vite Adoption (Priority: P4, Optional - Future Stage)
+## Milestone 9: Vite Adoption (Priority: P4, Optional - Future Stage)
 
 ### User Story
 
@@ -316,13 +352,13 @@ As a Backpack developer, I want the build toolchain to use Vite so that I get fa
 
 ---
 
-## Milestone 9: Vitest Adoption (Priority: P4, Optional - Future Stage)
+## Milestone 10: Vitest Adoption (Priority: P4, Optional - Future Stage)
 
 ### User Story
 
 As a Backpack developer, I want tests to run with Vitest so that I get faster test execution with zero-config Jest compatibility.
 
-**Why this priority**: Vitest naturally pairs with Vite and provides significantly faster test execution. Should be done after Vite adoption (M8).
+**Why this priority**: Vitest naturally pairs with Vite and provides significantly faster test execution. Should be done after Vite adoption (M9).
 
 **Independent Test**: Can be verified by running `vitest run` and confirming all tests pass with correct coverage calculation.
 

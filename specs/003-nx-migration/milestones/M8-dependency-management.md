@@ -1,4 +1,4 @@
-# M7: Dependency Management
+# M8: Dependency Management
 
 **Priority**: P3
 **Est. Effort**: Medium
