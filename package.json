@@ -98,7 +98,8 @@
     "testRegex": "packages/.*-test\\.[jt]sx?$",
     "testPathIgnorePatterns": [
       "/node_modules/",
-      "/.nx/cache/"
+      "/.nx/cache/",
+      "/bpk-component-map/dist/"
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!bpk|@skyscanner|d3-.*|internmap)"
