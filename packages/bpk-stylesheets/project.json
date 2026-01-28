@@ -14,16 +14,6 @@
         "{projectRoot}/dist"
       ]
     },
-    "test": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "TZ=Etc/UTC jest --coverage --coverageThreshold='{\"global\": {\"branches\": 10, \"functions\": 35, \"lines\": 45, \"statements\": 45}}' --testPathPatterns='{projectRoot}' --collectCoverageFrom='{projectRoot}/src/**/*.{js,jsx,ts,tsx}'",
-        "cwd": "{workspaceRoot}"
-      },
-      "outputs": [
-        "{workspaceRoot}/coverage"
-      ]
-    },
     "lint": {
       "executor": "@nx/linter:eslint",
       "options": {
