@@ -36,6 +36,7 @@ const BpkScrim = ({ onClose = () => {} }: Props) => (
     <div
       role="presentation"
       className={getClassName('bpk-scrim')}
+      data-backpack-ds-component="Scrim"
       onMouseDown={onClose}
       onTouchStart={onClose}
     />

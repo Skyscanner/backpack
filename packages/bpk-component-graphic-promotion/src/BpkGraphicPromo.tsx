@@ -196,7 +196,7 @@ const BpkGraphicPromo = ({
           {sponsor && (
             <>
               <span
-                className={getClassName('bpk-graphic-promo__sponsor-label')}
+                className={getClassName('bpk-graphic-promo__sponsor-label')} data-backpack-ds-component="GraphicPromo"
               >
                 {sponsor.label}
               </span>

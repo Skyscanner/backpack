@@ -76,7 +76,7 @@ const BpkCardList = (props: CardListProps) => {
   );
 
   return (
-    <div className={getClassName('bpk-card-list')} data-testid="bpk-card-list">
+    <div className={getClassName('bpk-card-list')} data-backpack-ds-component="CardList" data-testid="bpk-card-list">
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
         {(isMobile) => (
           <>

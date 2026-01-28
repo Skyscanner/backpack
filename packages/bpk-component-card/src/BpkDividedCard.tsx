@@ -71,7 +71,7 @@ const BpkDividedCard = ({
 
   return (
     <CardContext.Provider value={{ elevated: isElevated }}>
-      <div className={containerClassName}>
+      <div className={containerClassName} data-backpack-ds-component="DividedCard">
         <BpkCard href={href} padded={false} {...rest}>
           <div className={contentClassName}>
             <div

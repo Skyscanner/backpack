@@ -53,7 +53,7 @@ const BpkAriaLive = ({
     className,
   );
 
-  return <div aria-live={politenessSetting} className={classNames} {...rest} />;
+  return <div aria-live={politenessSetting} className={classNames} data-backpack-ds-component="AriaLive" {...rest} />;
 };
 
 export default BpkAriaLive;

@@ -77,7 +77,7 @@ const BpkButtonLink = ({
   return (
     <button
       type="button"
-      className={classNames.join(' ')}
+      className={classNames.join(' ')} data-backpack-ds-component="ButtonLink"
       onClick={onClick}
       {...rest}
     >

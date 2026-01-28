@@ -54,7 +54,7 @@ const BpkAccordion = (props: BpkAccordionProps) => {
 
   return (
     <BpkAccordionContext.Provider value={{ onDark, divider }}>
-      <div className={classNames} {...rest}>
+      <div className={classNames} data-backpack-ds-component="Accordion" {...rest}>
         {children}
       </div>
     </BpkAccordionContext.Provider>

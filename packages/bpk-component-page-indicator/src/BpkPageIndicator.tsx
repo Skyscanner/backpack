@@ -97,7 +97,7 @@ const BpkPageIndicator = ({
         className={getClassName(
           'bpk-page-indicator',
           showNav && 'bpk-page-indicator__showNav',
-        )}
+        )} data-backpack-ds-component="PageIndicator"
       >
         {showNav && (
           <NavButton

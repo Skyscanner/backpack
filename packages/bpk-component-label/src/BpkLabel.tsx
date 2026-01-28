@@ -54,7 +54,7 @@ const BpkLabel = ({
   );
 
   return (
-    <label className={classNames} {...rest}>
+    <label className={classNames} data-backpack-ds-component="Label" {...rest}>
       {children}
       {!disabled && required && (
         <span className={getClassName('bpk-label__asterisk')}>*</span>

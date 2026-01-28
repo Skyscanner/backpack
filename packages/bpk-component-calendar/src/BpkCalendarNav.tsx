@@ -145,7 +145,7 @@ const BpkCalendarNav = ({
         <div className={getClassName('bpk-calendar-nav__month')}>
           <label
             htmlFor={`${id}_select`}
-            className={getClassName('bpk-calendar-nav__text--hidden')}
+            className={getClassName('bpk-calendar-nav__text--hidden')} data-backpack-ds-component="CalendarNav"
           >
             {changeMonthLabel}
           </label>

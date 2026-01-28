@@ -44,7 +44,7 @@ const BpkCode = ({
   );
 
   return (
-    <code className={classNames} {...rest}>
+    <code className={classNames} data-backpack-ds-component="Code" {...rest}>
       {children}
     </code>
   );

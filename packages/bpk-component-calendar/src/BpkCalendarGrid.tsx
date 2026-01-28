@@ -187,6 +187,7 @@ class BpkCalendarGrid extends Component<Props, State> {
     return (
       <div
         className={classNames}
+        data-backpack-ds-component="CalendarGrid"
         aria-hidden={!isKeyboardFocusable}
         role="grid"
         aria-label={formatMonth(month)}

@@ -95,7 +95,7 @@ const BpkDrawer = ({
   };
 
   return(
-      <Portal isOpen={isOpen} onClose={hide} renderTarget={renderTarget}>
+      <Portal isOpen={isOpen} onClose={hide} renderTarget={renderTarget} data-backpack-ds-component="Drawer">
         <BpkScrimDrawerContent
           id={id}
           title={title}

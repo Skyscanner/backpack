@@ -39,7 +39,7 @@ const BpkBannerAlertExpandable = ({
     configuration={CONFIGURATION.EXPANDABLE}
     expanded={expanded}
     onExpandToggle={onExpandToggle}
-    {...rest}
+    data-backpack-ds-component="BannerAlertExpandable" {...rest}
   >
     {children}
   </BpkBannerAlertInner>

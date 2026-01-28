@@ -99,7 +99,7 @@ const BpkStickyChip = ({
                     hideText
                       ? 'bpk-sticky-chip--hide'
                       : 'bpk-sticky-chip--show',
-                  )}
+                  )} data-backpack-ds-component="StickyChip"
                 >
                   {stickyChip.text}
                 </span>

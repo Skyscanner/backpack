@@ -160,7 +160,7 @@ export const BpkDialogWrapper = ({
       className={getClassName(
         'bpk-dialog-wrapper',
         !dialogSupported && 'bpk-dialog-wrapper--polyfill',
-      )}
+      )} data-backpack-ds-component="DialogWrapper"
     >
       {!dialogSupported && (
         <div

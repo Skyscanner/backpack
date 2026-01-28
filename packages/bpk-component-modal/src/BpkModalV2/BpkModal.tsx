@@ -201,7 +201,7 @@ export const BpkModalV2 = (props: Props) => {
       className={getClassName(
         'bpk-modal-wrapper',
         dialogSupported ? '' : 'bpk-modal-polyfill',
-      )}
+      )} data-backpack-ds-component="ModalV2"
     >
       {!dialogSupported && (
         <div

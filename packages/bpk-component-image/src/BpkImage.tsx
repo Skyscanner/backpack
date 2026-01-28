@@ -73,7 +73,7 @@ class Image extends Component<ImageProps> {
 
     return (
       <img
-        className={imgClassNames.join(' ')}
+        className={imgClassNames.join(' ')} data-backpack-ds-component="Image"
         alt={altText}
         onLoad={onImageLoad}
         ref={this.setImgRef}

@@ -49,7 +49,7 @@ const BpkSpinner = ({
   );
 
   return (
-    <span className={classNames}>
+    <span className={classNames} data-backpack-ds-component="Spinner">
       <SmSpinner {...rest} />
     </span>
   );

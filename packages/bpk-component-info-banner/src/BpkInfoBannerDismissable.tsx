@@ -29,7 +29,7 @@ const BpkInfoBannerDismissable = ({ onDismiss = null, ...rest }: Props) => (
   <BpkInfoBannerInner
     configuration={CONFIGURATION.DISMISSABLE}
     onDismiss={onDismiss}
-    {...rest}
+    data-backpack-ds-component="InfoBannerDismissable" {...rest}
   />
 );
 

@@ -43,7 +43,7 @@ const BpkBreadcrumbItem = (props: Props) => {
   const { active = false, children, className, href, linkProps, ...rest } = props;
 
   return (
-    <li className={getClassName('bpk-breadcrumb-item', className)} {...rest}>
+    <li className={getClassName('bpk-breadcrumb-item', className)} data-backpack-ds-component="BreadcrumbItem" {...rest}>
       {active ? (
         <div className={getClassName('bpk-breadcrumb-item__active-item')}>
           <BpkText

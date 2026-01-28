@@ -59,7 +59,7 @@ const BpkDismissibleChip = ({
       selected
       type={type}
       role="button" // Override role="checkbox" because this chip is not selectable.
-      className={classNames}
+      className={classNames} data-backpack-ds-component="DismissibleChip"
     />
   );
 };

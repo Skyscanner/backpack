@@ -62,7 +62,7 @@ const BpkSelectableChip = ({
   return (
     <button
       aria-checked={role === 'button' || role === 'tab' ? undefined : selected}
-      className={classNames}
+      className={classNames} data-backpack-ds-component="SelectableChip"
       disabled={disabled}
       role={role}
       title={accessibilityLabel}

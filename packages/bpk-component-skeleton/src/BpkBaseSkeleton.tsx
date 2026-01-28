@@ -33,7 +33,7 @@ const BpkBaseSkeleton = ({
   skeletonStyle,
   styleObj = undefined,
  }: Props) => (
-    <div className={getClassName('bpk-skeleton', skeletonStyle)} style={styleObj}  />
+    <div className={getClassName('bpk-skeleton', skeletonStyle)} data-backpack-ds-component="BaseSkeleton" style={styleObj}  />
   );
 
 export default BpkBaseSkeleton;

@@ -174,7 +174,7 @@ const BpkTooltip = ({
                 id={id}
                 tabIndex={-1}
                 role="dialog"
-                className={classNames}
+                className={classNames} data-backpack-ds-component="Tooltip"
                 {...rest}
               >
                 <FloatingArrow

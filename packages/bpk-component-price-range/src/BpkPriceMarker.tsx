@@ -42,7 +42,7 @@ const BpkPriceMarker = (
     ref={ref}
   >
     <BpkText textStyle={TEXT_STYLES.label2}>{priceLabel}</BpkText>
-    <div className={getClassName('bpk-price-marker__arrow')} />
+    <div className={getClassName('bpk-price-marker__arrow')} data-backpack-ds-component="forwardRef" />
   </div>
 );
 

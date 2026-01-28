@@ -43,7 +43,7 @@ const BpkBannerAlert = ({
     animateOnLeave={animateOnLeave}
     show={show}
     icon={icon}
-    {...rest}
+    data-backpack-ds-component="BannerAlert" {...rest}
   />
 );
 

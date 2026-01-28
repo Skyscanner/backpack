@@ -33,6 +33,7 @@ const BpkCarouselImage = forwardRef<HTMLDivElement, ImageProps>(({ image, index 
   <div
     className={getClassName('bpk-carousel-image')}
     key={index}
+    data-backpack-ds-component="CarouselImage"
     data-index={index}
     ref={ref}
     role="listitem"

@@ -56,7 +56,7 @@ class BpkInputField extends PureComponent<Props> {
   render() {
     const { focus, id, index, label, name, value, ...rest } = this.props;
     return (
-      <div key={index} className={getClassName('bpk-input-field')}>
+      <div key={index} className={getClassName('bpk-input-field')} data-backpack-ds-component="InputField">
         <BpkInput
           id={id}
           autoComplete="off"

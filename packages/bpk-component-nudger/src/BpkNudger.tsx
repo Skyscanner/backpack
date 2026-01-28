@@ -147,7 +147,7 @@ const BpkNudger = ({
             }
             valueLimitter(inputElement);
           }}
-          className={inputClassNames}
+          className={inputClassNames} data-backpack-ds-component="Nudger"
           {...rest}
         />
         <BpkButton

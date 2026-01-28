@@ -50,7 +50,7 @@ const BpkContentCard = ({ card, layout }: Props) => (
     target="_blank"
     rel="noreferrer"
   >
-    <div className={getClassName('bpk-content-card--image-container')}>
+    <div className={getClassName('bpk-content-card--image-container')} data-backpack-ds-component="ContentCard">
       <img
         className={getClassName('bpk-content-card--image')}
         alt={card.image.alt || ''}

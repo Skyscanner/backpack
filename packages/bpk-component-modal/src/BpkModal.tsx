@@ -112,7 +112,7 @@ const BpkModal = ({
         accessoryView={accessoryView}
         dialogRef={dialogRef}
         modalStyle={modalStyle}
-        {...rest}
+        data-backpack-ds-component="Modal" {...rest}
       />
     </Portal>
   );

@@ -193,6 +193,7 @@ class BpkCalendarDate extends PureComponent<Props> {
         type="button"
         style={style}
         className={classNames.join(' ')}
+        data-backpack-ds-component="CalendarDate"
         aria-label={`${date.getDate()}`}
         disabled={isBlocked}
         tabIndex={isKeyboardFocusable && isFocused ? 0 : -1}

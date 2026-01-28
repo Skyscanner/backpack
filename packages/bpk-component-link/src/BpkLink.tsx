@@ -124,7 +124,7 @@ const BpkLinkInner = <E extends LinkAs = 'a'>(
     // Allowed: className and ref are passed to the underlying DOM element
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
     <Element className={linkClassName} ref={ref} {...elementProps}>
-      <span className={underlinedClassName}>{children}</span>
+      <span className={underlinedClassName} data-backpack-ds-component="Link">{children}</span>
     </Element>
   );
 };

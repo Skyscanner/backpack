@@ -32,7 +32,7 @@ const BpkInfoBanner = ({
     animateOnLeave={animateOnLeave}
     show={show}
     icon={icon}
-    {...rest}
+    data-backpack-ds-component="InfoBanner" {...rest}
   />
 );
 

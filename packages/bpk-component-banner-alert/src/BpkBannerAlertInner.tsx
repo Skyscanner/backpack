@@ -105,7 +105,7 @@ const ToggleButton = (props: ToggleButtonProps) => {
       <ExpandIcon
       // TODO: className to be removed
       // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      className={classNames.join(' ')} />
+      className={classNames.join(' ')} data-backpack-ds-component="BannerAlertInner" />
     </button>
   );
 };

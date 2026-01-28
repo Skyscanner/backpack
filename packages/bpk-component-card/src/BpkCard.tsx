@@ -72,7 +72,7 @@ const BpkCard = ({
     return (
       <a
         href={href}
-        className={classNames}
+        className={classNames} data-backpack-ds-component="Card"
         {...atomicProps}
         {...blankProps}
         {...rest}
@@ -84,14 +84,14 @@ const BpkCard = ({
 
   if (atomic) {
     return (
-      <button type="button" className={classNames} {...rest}>
+      <button type="button" className={classNames} data-backpack-ds-component="Card" {...rest}>
         {children}
       </button>
     );
   }
 
   return (
-    <div className={classNames} {...rest}>
+    <div className={classNames} data-backpack-ds-component="Card" {...rest}>
       {children}
     </div>
   );

@@ -102,7 +102,7 @@ const BpkOverlay = (props: Props) => {
   );
 
   return (
-    <div className={wrapperClassNames} {...rest}>
+    <div className={wrapperClassNames} data-backpack-ds-component="Overlay" {...rest}>
       {children}
       <div className={overlayClassNames}>{foregroundContent}</div>
     </div>

@@ -45,8 +45,8 @@ const BpkScrollableCalendarGrid = ({
   const classNames = getClassName('bpk-scrollable-calendar-grid', className);
 
   return (
-    <div className={classNames}>
-      <span className={getClassName('bpk-scrollable-calendar-grid__title')}>
+    <div className={classNames} data-backpack-ds-component="ScrollableCalendarGrid">
+      <span className={getClassName('bpk-scrollable-calendar-grid__title')} data-backpack-ds-component="ScrollableCalendarGrid">
         <BpkText tagName="h2" textStyle={TEXT_STYLES.heading4}>
           {formatMonth(month)}
         </BpkText>

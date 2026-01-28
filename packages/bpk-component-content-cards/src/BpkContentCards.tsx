@@ -45,8 +45,8 @@ const BpkContentCards = ({ cards, heading }: Props) => {
 
   return (
     <div>
-      <h2 className={getClassName('bpk-content-cards--header-text')}>{heading}</h2>
-      <div role="list" className={getClassName('bpk-content-cards--layout')}>
+      <h2 className={getClassName('bpk-content-cards--header-text')} data-backpack-ds-component="ContentCards">{heading}</h2>
+      <div role="list" className={getClassName('bpk-content-cards--layout')} data-backpack-ds-component="ContentCards">
         {cards.map((card, index) => (
           <div role="listitem" key={index}>
             <BpkContentCard

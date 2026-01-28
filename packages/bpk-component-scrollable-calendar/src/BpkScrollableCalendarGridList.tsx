@@ -162,7 +162,7 @@ const BpkScrollableCalendarGridList = (props: Props) => {
 
   return (
     <div
-      className={getClassName('bpk-scrollable-calendar-grid-list', className)}
+      className={getClassName('bpk-scrollable-calendar-grid-list', className)} data-backpack-ds-component="ScrollableCalendarGridList"
     >
       <AutoSizer
         onResize={onResize}

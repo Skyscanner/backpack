@@ -86,6 +86,7 @@ const BpkSaveButton = ({
         smallSize && 'bpk-save-button__small',
         `bpk-save-button__${style}`,
       )}
+      data-backpack-ds-component="SaveButton"
       onClick={(e: MouseEvent) => {
         onCheckedChange(e);
         if (!checked) {

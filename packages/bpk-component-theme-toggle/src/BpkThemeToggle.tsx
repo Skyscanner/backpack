@@ -92,7 +92,7 @@ class BpkThemeToggle extends Component<Props, State> {
   render() {
     const { ...rest } = this.props;
     return (
-      <div {...rest}>
+      <div data-backpack-ds-component="ThemeToggle" {...rest}>
         <BpkVisuallyHidden>
           <BpkLabel htmlFor={inputId}>Change theme</BpkLabel>
         </BpkVisuallyHidden>

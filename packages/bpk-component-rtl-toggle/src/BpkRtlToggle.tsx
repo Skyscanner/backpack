@@ -87,6 +87,7 @@ class BpkRtlToggle extends Component<Props, State> {
         as="button"
         title="Keyboard Shortcut: ctrl + cmd + r"
         onClick={this.toggleRtl}
+        data-backpack-ds-component="RtlToggle"
       >
         RTL {onOrOff}
       </BpkLink>

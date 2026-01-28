@@ -34,6 +34,7 @@ export default ({ children, className, ...rest }: Props) => (
     className={[getClassName('bpk-description-list__details'), className]
       .filter((x) => x) // inline drops the className if undefined
       .join(' ')}
+    data-backpack-ds-component="DescriptionDetails"
     {...rest}
   >
     {children}

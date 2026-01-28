@@ -125,7 +125,7 @@ const BpkFieldset = ({
   }
 
   return (
-    <fieldset className={classNames.join(' ')} {...rest}>
+    <fieldset className={classNames.join(' ')} data-backpack-ds-component="Fieldset" {...rest}>
       {!isCheckbox && (
         <div className={getClassName('bpk-fieldset__label')}>
           <BpkLabel

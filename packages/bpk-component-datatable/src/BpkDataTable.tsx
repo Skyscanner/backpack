@@ -171,7 +171,7 @@ const BpkDataTable = (props: BpkDataTableProps) => {
                   column.sortDirection = sortDirection; // eslint-disable-line no-param-reassign
                 }
               }
-              return <BpkDataTableHeader key={column.id} column={column} />;
+              return <BpkDataTableHeader key={column.id} column={column}  data-backpack-ds-component="DataTable"/>;
             })}
           </div>
         ))}

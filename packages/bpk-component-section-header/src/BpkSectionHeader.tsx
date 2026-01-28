@@ -45,16 +45,16 @@ const BpkSectionHeader = ({
   title,
   type = SECTION_TYPES.default,
 }: Props) => (
-  <div className={getClassName('bpk-section-header')}>
+  <div className={getClassName('bpk-section-header')} data-backpack-ds-component="SectionHeader">
     <div
       className={getClassName(
         'bpk-section-header__title-description',
         `bpk-section-header__title-description--${type}`,
       )}
     >
-      <h2 className={getClassName('bpk-section-header__title')}>{title}</h2>
+      <h2 className={getClassName('bpk-section-header__title')} data-backpack-ds-component="SectionHeader">{title}</h2>
       {description && (
-        <span className={getClassName('bpk-section-header__description')}>
+        <span className={getClassName('bpk-section-header__description')} data-backpack-ds-component="SectionHeader">
           <BpkText>{description}</BpkText>
         </span>
       )}

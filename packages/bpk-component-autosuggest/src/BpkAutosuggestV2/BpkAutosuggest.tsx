@@ -554,7 +554,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
             className={getClassName(
               theme.suggestion,
               isHighlighted && theme.suggestionHighlighted,
-            )}
+            )} data-backpack-ds-component="Autosuggest"
           >
             {itemId ? (
               <span id={itemId}>{renderSuggestion(suggestion)}</span>

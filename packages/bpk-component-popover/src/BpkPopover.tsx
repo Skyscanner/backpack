@@ -232,7 +232,7 @@ const BpkPopover = ({
                   tabIndex={-1}
                   role="dialog"
                   aria-labelledby={labelId}
-                  className={classNames}
+                  className={classNames} data-backpack-ds-component="Popover"
                   {...rest}
                 >
                   {showArrow && (

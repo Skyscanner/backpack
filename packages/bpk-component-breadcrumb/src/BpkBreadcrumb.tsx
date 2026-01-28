@@ -81,7 +81,7 @@ class BpkBreadcrumb extends Component<Props> {
           />
         )}
         <nav aria-label={label} {...rest}>
-          <ol className={getClassName('bpk-breadcrumb')}>{children}</ol>
+          <ol className={getClassName('bpk-breadcrumb')} data-backpack-ds-component="Breadcrumb">{children}</ol>
         </nav>
       </Fragment>
     );

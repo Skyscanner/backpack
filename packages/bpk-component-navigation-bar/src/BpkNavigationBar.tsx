@@ -70,7 +70,7 @@ const BpkNavigationBar = (props: Props) => {
       aria-labelledby={titleId}
       className={getClassNames(
         'bpk-navigation-bar',
-        `bpk-navigation-bar--${barStyle}`,
+        `bpk-navigation-bar--${barStyle} data-backpack-ds-component="NavigationBar"`,
         sticky && 'bpk-navigation-bar__sticky',
         className,
       )}

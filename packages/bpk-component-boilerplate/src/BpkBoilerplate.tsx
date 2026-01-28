@@ -31,7 +31,7 @@ const BpkBoilerplate = ({ ...rest }: Props) => {
   delete rest.className;
 
   return (
-    <div className={getClassName('bpk-boilerplate')} {...rest}>
+    <div className={getClassName('bpk-boilerplate')} data-backpack-ds-component="Boilerplate" {...rest}>
       I am an example component.
     </div>
   )};

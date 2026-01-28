@@ -129,7 +129,7 @@ const BpkSnippet = ({
           'bpk-snippet',
           desktopLayout === 'imageRight' && 'bpk-snippet--row-reverse',
           desktopLayout === 'vertical' && 'bpk-snippet--vertical',
-        )}
+        )} data-backpack-ds-component="Snippet"
       >
         <div
           className={getClassName(

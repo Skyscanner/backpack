@@ -255,7 +255,7 @@ const WrapChipGroup = ({
 );
 
 const BpkMultiSelectChipGroup = (props: MultiSelectProps) => (
-  <div className={getClassName('bpk-chip-group-container')}>
+  <div className={getClassName('bpk-chip-group-container')} data-backpack-ds-component="MultiSelectChipGroup">
     {props.type === CHIP_GROUP_TYPES.rail ? (
       <RailChipGroup {...props} />
     ) : (

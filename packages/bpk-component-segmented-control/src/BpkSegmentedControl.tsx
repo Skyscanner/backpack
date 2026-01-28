@@ -257,7 +257,7 @@ const BpkSegmentedControl = ({
 
   return (
     <div
-      className={containerStyling}
+      className={containerStyling} data-backpack-ds-component="SegmentedControl"
       {...getContainerAriaProps(providedId, label)}
     >
       {buttonContents.map((content, index) => {

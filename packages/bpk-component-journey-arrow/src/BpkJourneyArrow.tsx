@@ -36,7 +36,7 @@ const BpkJourneyArrow = ({
   // Ensure the number of displayed stops is between 0 and 3
   const dotCount = Math.min(3, Math.max(0, stops));
   return (
-      <div className={getClassName("bpk-journey-arrow")} {...rest} >
+      <div className={getClassName("bpk-journey-arrow")} data-backpack-ds-component="JourneyArrow" {...rest} >
         {Array.from({ length: dotCount }).map((_, i) => (
           <div key={i} className={getClassName("bpk-journey-arrow__stop")} /> // eslint-disable-line react/no-array-index-key
         ))

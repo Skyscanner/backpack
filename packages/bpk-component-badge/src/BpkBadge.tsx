@@ -73,7 +73,7 @@ const BpkBadge = ({
     className,
   );
 
-  return <span className={classNames} {...rest} />;
+  return <span className={classNames} data-backpack-ds-component="Badge" {...rest} />;
 };
 
 export default BpkBadge;

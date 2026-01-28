@@ -78,7 +78,7 @@ export const BpkButtonV2 = ({
     return (
       <a
         href={href}
-        className={classNames}
+        className={classNames} data-backpack-ds-component="Button"
         onClick={onClick}
         target={target}
         rel={rel}
@@ -93,7 +93,7 @@ export const BpkButtonV2 = ({
     <button
       type={submit ? 'submit' : 'button'}
       disabled={disabled}
-      className={classNames}
+      className={classNames} data-backpack-ds-component="Button"
       onClick={onClick}
       {...rest}
     >

@@ -41,7 +41,7 @@ const BpkSkeleton = (props: ComponentProps) => {
   const styleObj = typeof size === 'object' ? size : undefined;
 
   return (
-    <BpkBaseSkeleton skeletonStyle={classNames} styleObj={styleObj} />
+    <BpkBaseSkeleton skeletonStyle={classNames} styleObj={styleObj} data-backpack-ds-component="Skeleton" />
   )
 };
 

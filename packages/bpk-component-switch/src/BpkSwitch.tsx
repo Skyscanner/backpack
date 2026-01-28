@@ -48,7 +48,7 @@ const BpkSwitch = ({
         aria-label={ariaLabel}
         {...rest}
       />
-      <span aria-hidden className={switchClassNames} />
+      <span aria-hidden className={switchClassNames} data-backpack-ds-component="Switch" />
     </label>
   );
 };

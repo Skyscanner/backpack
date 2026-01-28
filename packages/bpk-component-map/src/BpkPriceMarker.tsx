@@ -55,7 +55,7 @@ const BpkPriceMarker = (props: Props) => {
     <BpkBasicMapMarker
       position={position}
       aria-label={accessibilityLabel}
-      {...rest}
+      data-backpack-ds-component="PriceMarker" {...rest}
     >
       <BpkPriceMarkerButton {...allButtonProps} />
     </BpkBasicMapMarker>

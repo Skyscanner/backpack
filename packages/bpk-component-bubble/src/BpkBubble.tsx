@@ -29,7 +29,7 @@ export type Props = {
 };
 
 const BpkBubble = ({ children }: Props) => (
-  <span className={getClassName('bpk-bubble')}>
+  <span className={getClassName('bpk-bubble')} data-backpack-ds-component="Bubble">
     <BpkText textStyle={TEXT_STYLES.label3} tagName="span" color={TEXT_COLORS.textOnDark}>
       {children}
     </BpkText>

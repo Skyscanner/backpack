@@ -143,7 +143,7 @@ const BpkModalInner = ({
               title={
                 <h2
                   id={headingId}
-                  className={getClassName('bpk-modal__heading')}
+                  className={getClassName('bpk-modal__heading')} data-backpack-ds-component="ModalInner"
                 >
                   {title}
                 </h2>

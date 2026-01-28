@@ -83,7 +83,7 @@ const getIconForType = (
   const Icon = CustomIcon || componentMap[type];
   const AlignedIcon = withButtonAlignment(Icon);
 
-  return <div className={className}><AlignedIcon/></div>;
+  return <div className={className} data-backpack-ds-component="InfoBannerInner"><AlignedIcon/></div>;
 };
 
 type ToggleButtonProps = {
@@ -92,7 +92,7 @@ type ToggleButtonProps = {
 };
 
 const ToggleButton = (props: ToggleButtonProps) => (
-  <div className={getClassName('bpk-info-banner__toggle-button')}>
+  <div className={getClassName('bpk-info-banner__toggle-button')} data-backpack-ds-component="InfoBannerInner">
     {props.expanded ? <CollapseIcon /> : <ExpandIcon />}
     <BpkVisuallyHidden>{props.label}</BpkVisuallyHidden>
   </div>
@@ -173,7 +173,7 @@ const BpkInfoBannerInner = ({
       show={show}
       {...rest}
     >
-      <div className={classNames}>
+      <div className={classNames} data-backpack-ds-component="InfoBannerInner">
         <BannerHeader
           aria-expanded={isExpandable ? expanded : undefined}
           type={isExpandable ? 'button' : undefined}
@@ -182,19 +182,19 @@ const BpkInfoBannerInner = ({
           className={headerClassNames}
           onClick={onBannerExpandToggle}
         >
-          <span className={getClassName('bpk-info-banner__icon')}>
+          <span className={getClassName('bpk-info-banner__icon')} data-backpack-ds-component="InfoBannerInner">
             {getIconForType(type, icon)}
           </span>
-          <span className={getClassName('bpk-info-banner__message')}>
+          <span className={getClassName('bpk-info-banner__message')} data-backpack-ds-component="InfoBannerInner">
             {message}
           </span>
           {isExpandable && (
-            <span className={getClassName('bpk-info-banner__toggle')}>
+            <span className={getClassName('bpk-info-banner__toggle')} data-backpack-ds-component="InfoBannerInner">
               <ToggleButton expanded={expanded} label={toggleButtonLabel} />
             </span>
           )}
           {dismissable && (
-            <span className={getClassName('bpk-info-banner__toggle')}>
+            <span className={getClassName('bpk-info-banner__toggle')} data-backpack-ds-component="InfoBannerInner">
               <BpkCloseButton
                 onClick={onBannerDismiss}
                 aria-label={dismissButtonLabel}
@@ -207,7 +207,7 @@ const BpkInfoBannerInner = ({
           duration={parseInt(durationSm, 10)}
           height={showChildren ? 'auto' : 0}
         >
-          <div className={childrenContainerClassName}>
+          <div className={childrenContainerClassName} data-backpack-ds-component="InfoBannerInner">
             {children}
           </div>
           {isExpandable && action && (

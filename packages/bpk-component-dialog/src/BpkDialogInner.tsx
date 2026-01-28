@@ -65,8 +65,8 @@ const BpkDialogInner = (props: Props) => {
         className={classNames}
         ref={dialogRef}
       >
-        {flare && <div className={flareClassNames}><BpkContentBubble/></div>}
-        <div className={contentClassNames}>{children}</div>
+        {flare && <div className={flareClassNames} data-backpack-ds-component="withScrim"><BpkContentBubble/></div>}
+        <div className={contentClassNames} data-backpack-ds-component="withScrim">{children}</div>
       </section>
     </TransitionInitialMount>
   );

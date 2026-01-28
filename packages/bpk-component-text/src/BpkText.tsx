@@ -113,7 +113,7 @@ const BpkText = ({
   return (
     // Allowed, TagName is always a dom element.
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <TagName className={classNames} {...rest}>
+    <TagName className={classNames} data-backpack-ds-component="Text" {...rest}>
       {children}
     </TagName>
   );

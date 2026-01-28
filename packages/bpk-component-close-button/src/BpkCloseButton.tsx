@@ -58,7 +58,7 @@ const BpkCloseButton = ({
       title={label}
       onClick={onClick}
       aria-label={label}
-      className={classNames.join(' ')}
+      className={classNames.join(' ')} data-backpack-ds-component="CloseButton"
       {...rest}
     >
       <span className={getClassName('bpk-close-button-icon')}>

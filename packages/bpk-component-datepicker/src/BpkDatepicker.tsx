@@ -387,7 +387,7 @@ class BpkDatepicker extends Component<Props, State> {
               isOpen={this.state.isOpen}
               label={title}
               closeButtonText={closeButtonText}
-              {...rest}
+              data-backpack-ds-component="Datepicker" {...rest}
             >
               <Calendar {...calendarProps} fixedWidth={fixedWidth} />
             </BpkPopover>

@@ -183,7 +183,7 @@ const BpkBottomSheet = ({
       }}
     >
       <>
-        <header className={getClassName('bpk-bottom-sheet--header-wrapper')}>
+        <header className={getClassName('bpk-bottom-sheet--header-wrapper')} data-backpack-ds-component="BottomSheet">
           <BpkNavigationBar
             id={headingId}
             title={title}
@@ -200,7 +200,7 @@ const BpkBottomSheet = ({
             }
           />
         </header>
-        <div className={contentStyle}>{children}</div>
+        <div className={contentStyle} data-backpack-ds-component="BottomSheet">{children}</div>
       </>
     </BpkDialogWrapper>
   );

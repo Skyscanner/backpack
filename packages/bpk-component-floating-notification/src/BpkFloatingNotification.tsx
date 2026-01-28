@@ -91,7 +91,7 @@ const BpkFloatingNotification = (props: Props) => {
       exit={animateOnExit}
       onExited={onExit}
     >
-      <div className={classNames} {...rest}>
+      <div className={classNames} data-backpack-ds-component="FloatingNotification" {...rest}>
         {Icon && (
           <div className={getClassName('bpk-floating-notification__icon')}>
             <Icon aria-hidden />

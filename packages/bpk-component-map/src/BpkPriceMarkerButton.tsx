@@ -68,7 +68,7 @@ const BpkPriceMarkerButton = ({
       onClick={onClick}
       {...buttonProps}
     >
-      <div className={markerClassNames}>
+      <div className={markerClassNames} data-backpack-ds-component="PriceMarkerButton">
         {icon}
         <BpkText textStyle={TEXT_STYLES.label3}>{label}</BpkText>
       </div>

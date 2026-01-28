@@ -93,7 +93,7 @@ class BpkCalendarGridHeader extends PureComponent<Props> {
     }
 
     return (
-      <header className={classNames.join(' ')} aria-hidden>
+      <header className={classNames.join(' ')} data-backpack-ds-component="CalendarGridHeader" aria-hidden>
         <ol className={getClassName('bpk-calendar-header__week')}>
           {daysOfWeek.map((weekDay) => (
             <WeekDayComponent

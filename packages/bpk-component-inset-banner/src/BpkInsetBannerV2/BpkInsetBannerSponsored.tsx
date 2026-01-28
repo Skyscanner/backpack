@@ -127,7 +127,7 @@ const BpkInsetBannerSponsored = ({
                   key={item.title}
                   className={getClassName(
                     'bpk-inset-banner--bottom-sheet-content',
-                  )}
+                  )} data-backpack-ds-component="InsetBannerSponsored"
                 >
                   <div
                     className={getClassName(

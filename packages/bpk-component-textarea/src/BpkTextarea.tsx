@@ -50,7 +50,7 @@ const BpkTextarea: FC<BpkTextareaProps> = ({
         isInvalid && 'bpk-textarea--invalid',
         large && 'bpk-textarea--large',
         className,
-      )}
+      )} data-backpack-ds-component="Textarea"
       aria-invalid={isInvalid}
       {...rest}
     />

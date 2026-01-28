@@ -158,7 +158,7 @@ const BpkSlider = ({
 
   return (
     <Slider.Root
-      className={getClassName('bpk-slider')}
+      className={getClassName('bpk-slider')} data-backpack-ds-component="Slider"
       defaultValue={currentValue}
       min={min}
       max={max}

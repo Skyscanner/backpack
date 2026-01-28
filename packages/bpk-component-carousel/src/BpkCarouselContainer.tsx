@@ -66,7 +66,7 @@ const BpkScrollContainer = memo(({ images, imagesRef, onImageChanged, onVisible 
 
   if (images.length === 1) {
     return (
-      <div className={getClassName('bpk-carousel-container')} role="list" data-testid="image-gallery-scroll-container">
+      <div className={getClassName('bpk-carousel-container')} data-backpack-ds-component="CarouselContainer" role="list" data-testid="image-gallery-scroll-container">
         <BpkCarouselImage image={images[0]} index={0} />
       </div>
     );
@@ -75,6 +75,7 @@ const BpkScrollContainer = memo(({ images, imagesRef, onImageChanged, onVisible 
   return (
     <div
       className={getClassName('bpk-carousel-container')}
+      data-backpack-ds-component="CarouselContainer"
       ref={setRoot}
       data-testid="image-gallery-scroll-container"
       role="list"

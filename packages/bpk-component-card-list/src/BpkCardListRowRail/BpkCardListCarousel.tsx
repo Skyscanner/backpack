@@ -214,6 +214,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   return (
     <div
       className={getClassName(`bpk-card-list-row-rail__${layout}`)}
+      data-backpack-ds-component="CardListCarousel"
       data-testid="bpk-card-list-row-rail__carousel"
       aria-label={carouselLabel(initiallyShownCards, childrenLength)}
       aria-roledescription="carousel"

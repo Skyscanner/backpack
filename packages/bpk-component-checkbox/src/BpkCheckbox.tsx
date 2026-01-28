@@ -77,7 +77,7 @@ const BpkCheckbox = ({
   );
 
   return (
-    <label className={classNames}>
+    <label className={classNames} data-backpack-ds-component="Checkbox">
       <input
         type="checkbox"
         className={inputClasses}
@@ -98,7 +98,7 @@ const BpkCheckbox = ({
       <span className={labelClassNames} aria-hidden="true">
         {label}
         {!disabled && required && (
-          <span className={getClassName('bpk-checkbox__asterisk')}>*</span>
+          <span className={getClassName('bpk-checkbox__asterisk')} data-backpack-ds-component="Checkbox">*</span>
         )}
       </span>
     </label>

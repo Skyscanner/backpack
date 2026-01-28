@@ -166,7 +166,7 @@ class BpkInput extends Component<Props, State> {
                 this.setState({ persistClearButton: false });
               }
             }}
-            className={clearButtonClassNames.join(' ')}
+            className={clearButtonClassNames.join(' ')} data-backpack-ds-component="Input"
           >
           <ClearButtonIcon
             focusable="false" // prevents focus on IE11

@@ -207,7 +207,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
               onScroll(event);
             }
           }}
-          className={scrollerClassNames}
+          className={scrollerClassNames} data-backpack-ds-component="MobileScrollContainer"
         >
           <InnerContainer
             aria-label={ariaLabel}

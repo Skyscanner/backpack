@@ -51,7 +51,7 @@ const BpkLargeSpinner = ({
   );
 
   return (
-    <span className={classNames}>
+    <span className={classNames} data-backpack-ds-component="LargeSpinner">
       <LgSpinner
         {...rest}
       />

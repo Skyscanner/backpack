@@ -220,7 +220,7 @@ class BpkCalendarGridTransition extends Component<Props, State> {
                       )
                 }
                 aria-hidden={index !== 1}
-                className={getClassName('bpk-calendar-grid-transition__grid')}
+                className={getClassName('bpk-calendar-grid-transition__grid')} data-backpack-ds-component="CalendarGridTransition"
               />
             ) : (
               <div

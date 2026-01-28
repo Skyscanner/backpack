@@ -46,7 +46,7 @@ const BpkCodeBlock = ({
   const codeClassNames = getClassName('bpk-code', 'bpk-code--block');
 
   return (
-    <pre className={preClassNames} {...rest}>
+    <pre className={preClassNames} data-backpack-ds-component="CodeBlock" {...rest}>
       <code className={codeClassNames}>{children}</code>
     </pre>
   );

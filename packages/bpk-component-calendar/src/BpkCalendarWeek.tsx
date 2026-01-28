@@ -385,7 +385,7 @@ class BpkCalendarWeek extends Component<Props> {
     }
 
     return (
-      <div className={getClassName('bpk-calendar-week')} role="row">
+      <div className={getClassName('bpk-calendar-week')} data-backpack-ds-component="CalendarWeek" role="row">
         {this.props.dates.map((date) => {
           const isBlocked =
             minDate && maxDate

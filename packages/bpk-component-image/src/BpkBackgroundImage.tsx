@@ -124,7 +124,7 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
             height: 0,
             paddingBottom: aspectRatioPc,
           }}
-          className={classNames.join(' ')}
+          className={classNames.join(' ')} data-backpack-ds-component="BackgroundImage"
         >
           <div
             style={{

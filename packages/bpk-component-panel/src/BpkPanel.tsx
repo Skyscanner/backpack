@@ -62,7 +62,7 @@ const BpkPanel = ({
   }
 
   return (
-    <section className={classNames.join(' ')} {...rest}>
+    <section className={classNames.join(' ')} data-backpack-ds-component="Panel" {...rest}>
       {children}
     </section>
   );

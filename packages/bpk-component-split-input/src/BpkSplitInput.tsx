@@ -223,7 +223,7 @@ class BpkSplitInput extends Component<Props, State> {
 
   render() {
     return (
-      <div className={getClassName('bpk-split-input')}>
+      <div className={getClassName('bpk-split-input')} data-backpack-ds-component="SplitInput">
         {this.renderInputs()}
       </div>
     );

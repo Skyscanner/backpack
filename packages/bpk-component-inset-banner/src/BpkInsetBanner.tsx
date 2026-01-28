@@ -144,7 +144,7 @@ const BpkInsetBanner = ({
                   type="button"
                 >
                   <div
-                    className={getClassName('bpk-inset-banner--cta-content')}
+                    className={getClassName('bpk-inset-banner--cta-content')} data-backpack-ds-component="InsetBanner"
                   >
                     {callToAction?.text && (
                       <BpkText textStyle={TEXT_STYLES.caption}>

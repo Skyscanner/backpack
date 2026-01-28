@@ -34,7 +34,7 @@ export type Props = {
 };
 
 const BpkNavigationBarIconButton = ({ barStyle = BAR_STYLES.default, className, icon, ...rest }: Props) => (
-  <span className={className}>
+  <span className={className} data-backpack-ds-component="NavigationBarIconButton">
     <BpkCloseButton
       customIcon={icon}
       onDark={barStyle === BAR_STYLES.onDark}

@@ -124,7 +124,7 @@ const BpkNavigationTabGroup = ({
       role="navigation"
       aria-label={ariaLabel}
     >
-      <div role="tablist" className={getClassName('bpk-navigation-tab-list')}>
+      <div role="tablist" className={getClassName('bpk-navigation-tab-list')} data-backpack-ds-component="NavigationTabGroup">
         {tabs.map((tab, index) => {
           const selected = index === selectedTab;
           const {badgeText,icon,text,...tabWrapItem} = tab;
@@ -138,7 +138,7 @@ const BpkNavigationTabGroup = ({
               type={type}
             >
               <>
-                <div className={getClassName('bpk-navigation-tab-content-wrapper')}>
+                <div className={getClassName('bpk-navigation-tab-content-wrapper')} data-backpack-ds-component="NavigationTabGroup">
                   {Icon && (
                     <span
                       className={getClassName(
@@ -156,7 +156,7 @@ const BpkNavigationTabGroup = ({
                 </div>
 
                 {badgeText && (
-                  <span className={getClassName('bpk-navigation-tab-bubble-wrapper')}>
+                  <span className={getClassName('bpk-navigation-tab-bubble-wrapper')} data-backpack-ds-component="NavigationTabGroup">
                     <BpkBubble>
                       {badgeText}
                     </BpkBubble>

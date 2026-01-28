@@ -57,7 +57,7 @@ const BpkCarousel = ({
   useScrollToInitialImage(initialImageIndex!, imagesRef);
 
   return (
-    <div className={getClassName('bpk-carousel')}>
+    <div className={getClassName('bpk-carousel')} data-backpack-ds-component="Carousel">
       <BpkCarouselContainer
         images={images}
         onVisible={updateShownImageIndex}

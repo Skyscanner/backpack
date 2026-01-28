@@ -53,7 +53,7 @@ const BpkVisuallyHidden = ({
   return (
     // Allowed, Element is always a dom element.
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <Element className={classNames}>
+    <Element className={classNames} data-backpack-ds-component="VisuallyHidden">
       {children}
     </Element>
   );

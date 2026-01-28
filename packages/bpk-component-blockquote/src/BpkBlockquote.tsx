@@ -35,7 +35,7 @@ const BpkBlockquote = ({ children, extraSpace = false }: Props) => {
     classNames.push(getClassName('bpk-blockquote--extra-spacing'));
   }
 
-  return <blockquote className={classNames.join(' ')}>{children}</blockquote>;
+  return <blockquote className={classNames.join(' ')} data-backpack-ds-component="Blockquote">{children}</blockquote>;
 };
 
 export default BpkBlockquote;

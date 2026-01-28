@@ -111,7 +111,7 @@ const BpkRating = ({
   }
 
   return (
-    <div className={classNames} aria-label={ariaLabel} role="figure" {...rest}>
+    <div className={classNames} data-backpack-ds-component="Rating" aria-label={ariaLabel} role="figure" {...rest}>
       <div className={valueStyles}>
         <BpkText
           textStyle={valueTextSize}

@@ -144,7 +144,7 @@ const BpkPriceRange = ({
         </div>
       )}
       <div className={linesClassName}>
-        <div className={lowClassName} />
+        <div className={lowClassName} data-backpack-ds-component="PriceRange" />
         <div className={mediumClassName} />
         <div className={highClassName} />
         {!showPriceIndicator && (

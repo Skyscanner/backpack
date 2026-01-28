@@ -51,7 +51,7 @@ const BpkSwapButton = ( props: Props ) => {
   };
 
   return (
-    <div className={getClassName('bpk-swap-button')}>
+    <div className={getClassName('bpk-swap-button')} data-backpack-ds-component="SwapButton">
       <button
         type="button"
         className={getClassName('bpk-swap-button__button',`bpk-swap-button__button--${swapButtonStyle}`)}
