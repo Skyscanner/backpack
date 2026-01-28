@@ -67,7 +67,7 @@
     "codegen:update-checksum": "node scripts/codegen/update-svgs-checksum.js",
     "codegen:verify-checksum": "node scripts/codegen/update-svgs-checksum.js --verify",
     "codegen:validate": "node scripts/codegen/validate-codegen-config.js",
-    "prepare": "husky",
+    "prepare": "node -e \"if (process.env.CI !== 'true') { require('child_process').execSync('husky', {stdio: 'inherit'}) }\"",
     "percy-test": "percy storybook ./dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'",
     "ts-migrate": "ts-migrate",
     "transpile": "npm run build && run-s transpile:*",
