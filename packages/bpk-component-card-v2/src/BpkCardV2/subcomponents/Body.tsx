@@ -16,8 +16,11 @@
  * limitations under the License.
  */
 
-import { Children, isValidElement, ReactNode } from 'react';
+import type { ReactNode } from 'react';
+import { Children, isValidElement } from 'react';
+
 import type { BpkCardV2BodyProps } from '../common-types';
+
 import STYLES from '../BpkCardV2.module.scss';
 
 /**
@@ -44,9 +47,9 @@ import STYLES from '../BpkCardV2.module.scss';
  */
 const Body = ({
   children,
+  className,
   split = false,
   splitRatio = 70,
-  className,
 }: BpkCardV2BodyProps) => {
   const classNameList = [
     STYLES['bpk-card-v2__body'],

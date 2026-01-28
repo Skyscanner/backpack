@@ -17,6 +17,7 @@
  */
 
 import type { BpkCardV2HeaderProps } from '../common-types';
+
 import STYLES from '../BpkCardV2.module.scss';
 
 /**
@@ -33,7 +34,7 @@ import STYLES from '../BpkCardV2.module.scss';
  *   <BpkCardV2.Header>Card title</BpkCardV2.Header>
  * </BpkCardV2>
  */
-const Header = ({\n  children,\n  className,\n}: BpkCardV2HeaderProps) => (
+const Header = ({ children, className }: BpkCardV2HeaderProps) => (
   <header
     className={[STYLES['bpk-card-v2__header'], className]
       .filter(Boolean)

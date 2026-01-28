@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
 import { createRef } from 'react';
+
+import { render } from '@testing-library/react';
+
 import BpkCardV2 from '../BpkCardV2';
 
 describe('BpkCardV2', () => {
@@ -44,6 +46,7 @@ describe('BpkCardV2', () => {
       );
 
       const header = container.querySelector('header');
+
       expect(header).toBeInTheDocument();
       expect(header).toHaveTextContent('Title');
     });
@@ -56,6 +59,7 @@ describe('BpkCardV2', () => {
       );
 
       const footer = container.querySelector('footer');
+
       expect(footer).toBeInTheDocument();
       expect(footer).toHaveTextContent('Footer');
     });
@@ -97,6 +101,7 @@ describe('BpkCardV2', () => {
       );
 
       const body = container.querySelector('[class*="bpk-card-v2__body"]');
+
       expect(body).toHaveClass('bpk-card-v2__body--split');
     });
 
@@ -108,6 +113,7 @@ describe('BpkCardV2', () => {
       );
 
       const body = container.querySelector('[class*="bpk-card-v2__body"]');
+
       expect(body).not.toHaveClass('bpk-card-v2__body--split');
     });
 
@@ -122,6 +128,7 @@ describe('BpkCardV2', () => {
       );
 
       const body = container.querySelector('[class*="bpk-card-v2__body"]') as HTMLElement;
+
       expect(body.style.getPropertyValue('--bpk-card-v2-primary-width')).toBe('60%');
     });
 
@@ -136,6 +143,7 @@ describe('BpkCardV2', () => {
       );
 
       const body = container.querySelector('[class*="bpk-card-v2__body"]') as HTMLElement;
+
       expect(body.style.getPropertyValue('--bpk-card-v2-primary-width')).toBe('70%');
     });
   });
@@ -159,6 +167,7 @@ describe('BpkCardV2', () => {
         );
 
         const card = container.querySelector('[class*="bpk-card-v2"]');
+
         expect(card).toHaveAttribute('data-bg-color', color);
       });
     });
@@ -167,6 +176,7 @@ describe('BpkCardV2', () => {
       const { container } = render(<BpkCardV2>Content</BpkCardV2>);
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
+
       expect(card).toHaveAttribute('data-bg-color', 'surfaceDefault');
     });
   });
@@ -176,6 +186,7 @@ describe('BpkCardV2', () => {
       const { container } = render(<BpkCardV2>Content</BpkCardV2>);
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
+
       expect(card).toHaveClass('bpk-card-v2--default');
     });
 
@@ -183,6 +194,7 @@ describe('BpkCardV2', () => {
       const { container } = render(<BpkCardV2 variant="outlined">Content</BpkCardV2>);
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
+
       expect(card).toHaveClass('bpk-card-v2--outlined');
     });
   });
@@ -194,6 +206,7 @@ describe('BpkCardV2', () => {
       );
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
+
       expect(card).toHaveClass('custom-class');
     });
 
@@ -238,6 +251,7 @@ describe('BpkCardV2', () => {
       );
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
+
       expect(card).toHaveAttribute('aria-label', 'Product card');
     });
 
@@ -247,6 +261,7 @@ describe('BpkCardV2', () => {
       );
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
+
       expect(card).toHaveAttribute('aria-labelledby', 'card-title');
     });
   });

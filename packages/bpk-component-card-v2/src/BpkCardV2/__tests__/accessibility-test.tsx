@@ -18,6 +18,7 @@
 
 import { render } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe';
+
 import BpkCardV2 from '../BpkCardV2';
 
 expect.extend(toHaveNoViolations);
@@ -32,6 +33,7 @@ describe('BpkCardV2 Accessibility', () => {
       );
 
       const header = container.querySelector('header');
+
       expect(header).toBeInTheDocument();
     });
 
@@ -43,6 +45,7 @@ describe('BpkCardV2 Accessibility', () => {
       );
 
       const footer = container.querySelector('footer');
+
       expect(footer).toBeInTheDocument();
     });
   });
@@ -54,6 +57,7 @@ describe('BpkCardV2 Accessibility', () => {
       );
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
+
       expect(card).toHaveAttribute('aria-label', 'Product information');
     });
 
@@ -66,6 +70,7 @@ describe('BpkCardV2 Accessibility', () => {
       );
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
+
       expect(card).toHaveAttribute('aria-labelledby', 'card-heading');
     });
 
@@ -75,6 +80,7 @@ describe('BpkCardV2 Accessibility', () => {
       );
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
+
       expect(card).toHaveAttribute('aria-label');
       expect(card).not.toHaveAttribute('aria-labelledby');
     });
@@ -90,6 +96,7 @@ describe('BpkCardV2 Accessibility', () => {
       );
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
+
       expect(card).toBeInTheDocument();
     });
 
@@ -103,6 +110,7 @@ describe('BpkCardV2 Accessibility', () => {
       );
 
       const button = container.querySelector('button') as HTMLButtonElement;
+
       expect(button).toBeInTheDocument();
     });
   });
@@ -118,6 +126,7 @@ describe('BpkCardV2 Accessibility', () => {
       );
 
       const results = await axe(container);
+
       expect(results).toHaveNoViolations();
     });
 
@@ -132,6 +141,7 @@ describe('BpkCardV2 Accessibility', () => {
       );
 
       const results = await axe(container);
+
       expect(results).toHaveNoViolations();
     });
 
@@ -143,6 +153,7 @@ describe('BpkCardV2 Accessibility', () => {
       );
 
       const results = await axe(container);
+
       expect(results).toHaveNoViolations();
     });
 
@@ -154,6 +165,7 @@ describe('BpkCardV2 Accessibility', () => {
       );
 
       const results = await axe(container);
+
       expect(results).toHaveNoViolations();
     });
 
@@ -178,6 +190,7 @@ describe('BpkCardV2 Accessibility', () => {
       );
 
       const results = await axe(container);
+
       expect(results).toHaveNoViolations();
     });
   });
@@ -191,6 +204,7 @@ describe('BpkCardV2 Accessibility', () => {
       );
 
       const results = await axe(container);
+
       expect(results).toHaveNoViolations();
     });
 
@@ -202,6 +216,7 @@ describe('BpkCardV2 Accessibility', () => {
       );
 
       const results = await axe(container);
+
       expect(results).toHaveNoViolations();
     });
   });
@@ -215,6 +230,7 @@ describe('BpkCardV2 Accessibility', () => {
       );
 
       const header = container.querySelector('header');
+
       expect(header?.tagName).toBe('HEADER');
     });
 
@@ -226,6 +242,7 @@ describe('BpkCardV2 Accessibility', () => {
       );
 
       const footer = container.querySelector('footer');
+
       expect(footer?.tagName).toBe('FOOTER');
     });
 
@@ -237,6 +254,7 @@ describe('BpkCardV2 Accessibility', () => {
       );
 
       const body = container.querySelector('[class*="bpk-card-v2__body"]');
+
       expect(body?.tagName).toBe('DIV');
     });
   });

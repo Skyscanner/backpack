@@ -17,6 +17,7 @@
  */
 
 import type { BpkCardV2FooterProps } from '../common-types';
+
 import STYLES from '../BpkCardV2.module.scss';
 
 /**

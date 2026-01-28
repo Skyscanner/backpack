@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
-import type { Meta, StoryObj } from '@storybook/react';
 import BpkCardV2 from '../../packages/bpk-component-card-v2/src/BpkCardV2/BpkCardV2';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 type BpkCardV2Meta = Meta<typeof BpkCardV2>;
 
@@ -239,7 +240,9 @@ export const ComplexProductCard: Story = {
         </BpkCardV2.Secondary>
       </BpkCardV2.Body>
       <BpkCardV2.Footer>
-        <button style={{ padding: '0.5rem 1rem' }}>Select Package</button>
+        <button type="button" style={{ padding: '0.5rem 1rem' }}>
+          Select Package
+        </button>
       </BpkCardV2.Footer>
     </BpkCardV2>
   ),

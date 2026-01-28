@@ -18,6 +18,7 @@
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
 import BpkCardV2 from '../BpkCardV2';
 
 describe('BpkCardV2 Integration Tests', () => {
@@ -58,7 +59,7 @@ describe('BpkCardV2 Integration Tests', () => {
     it('supports focus management through card content', async () => {
       const user = userEvent.setup();
 
-      const { getByRole, getAllByRole } = render(
+      const { getAllByRole, getByRole } = render(
         <BpkCardV2>
           <BpkCardV2.Body>
             <button>First</button>
@@ -71,19 +72,22 @@ describe('BpkCardV2 Integration Tests', () => {
       const buttons = getAllByRole('button');
 
       await user.tab();
+
       expect(buttons[0]).toHaveFocus();
 
       await user.tab();
+
       expect(buttons[1]).toHaveFocus();
 
       await user.tab();
+
       expect(buttons[2]).toHaveFocus();
     });
   });
 
   describe('Dynamic Content', () => {
     it('handles dynamic content updates', () => {
-      const { rerender, getByText } = render(
+      const { getByText, rerender } = render(
         <BpkCardV2>
           <BpkCardV2.Body>Initial content</BpkCardV2.Body>
         </BpkCardV2>,
@@ -143,6 +147,7 @@ describe('BpkCardV2 Integration Tests', () => {
       );
 
       const body = container.querySelector('[class*="bpk-card-v2__body"]') as HTMLElement;
+
       expect(body.style.getPropertyValue('--bpk-card-v2-primary-width')).toBe('0%');
     });
 
@@ -157,6 +162,7 @@ describe('BpkCardV2 Integration Tests', () => {
       );
 
       const body = container.querySelector('[class*="bpk-card-v2__body"]') as HTMLElement;
+
       expect(body.style.getPropertyValue('--bpk-card-v2-primary-width')).toBe('100%');
     });
 
@@ -171,6 +177,7 @@ describe('BpkCardV2 Integration Tests', () => {
       );
 
       const body = container.querySelector('[class*="bpk-card-v2__body"]') as HTMLElement;
+
       expect(body.style.getPropertyValue('--bpk-card-v2-primary-width')).toBe('50%');
     });
 
@@ -182,6 +189,7 @@ describe('BpkCardV2 Integration Tests', () => {
       );
 
       const body = container.querySelector('[class*="bpk-card-v2__body"]') as HTMLElement;
+
       expect(body.style.getPropertyValue('--bpk-card-v2-primary-width')).toBe('');
     });
   });
@@ -199,6 +207,7 @@ describe('BpkCardV2 Integration Tests', () => {
       );
 
       const cards = container.querySelectorAll('[class*="bpk-card-v2"]');
+
       expect(cards.length).toBe(2);
     });
 
@@ -239,15 +248,18 @@ describe('BpkCardV2 Integration Tests', () => {
       );
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
+
       expect(card).toHaveClass('custom-1');
       expect(card).toHaveClass('custom-2');
       expect(card).toHaveClass('bpk-card-v2');
 
       const header = container.querySelector('header');
+
       expect(header).toHaveClass('header-custom');
       expect(header).toHaveClass('bpk-card-v2__header');
 
       const body = container.querySelector('[class*="bpk-card-v2__body"]');
+
       expect(body).toHaveClass('body-custom');
       expect(body).toHaveClass('bpk-card-v2__body');
     });
@@ -271,6 +283,7 @@ describe('BpkCardV2 Integration Tests', () => {
           );
 
           const card = container.querySelector('[class*="bpk-card-v2"]');
+
           expect(card).toHaveClass(`bpk-card-v2--${variant}`);
           expect(card).toHaveAttribute('data-bg-color', color);
         });
@@ -299,6 +312,7 @@ describe('BpkCardV2 Integration Tests', () => {
       );
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
+
       expect(card).toHaveAttribute('aria-label', 'Form card');
       expect(card).toHaveAttribute('aria-labelledby', 'form-title');
     });
