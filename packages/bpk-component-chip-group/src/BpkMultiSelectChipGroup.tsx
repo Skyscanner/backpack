@@ -34,6 +34,7 @@ import Nudger, { POSITION } from './Nudger';
 import STYLES from './BpkChipGroup.module.scss';
 
 import BpkText, { TEXT_STYLES } from '@backpack/bpk-component-text';
+import BpkVisuallyHidden from '@backpack/bpk-component-visually-hidden';
 
 const getClassName = cssModules(STYLES);
 
@@ -156,7 +157,9 @@ const ChipGroupContent = ({
     className={chipGroupClassNames}
     role={ariaMultiselectable ? 'group' : 'radiogroup'}
   >
-    {ariaLabel && <legend className="visually-hidden">{ariaLabel}</legend>}
+    {ariaLabel && (
+      <BpkVisuallyHidden as="legend">{ariaLabel}</BpkVisuallyHidden>
+    )}
     {label && (
       <BpkText textStyle={TEXT_STYLES.footnote} aria-hidden>
         {label}
