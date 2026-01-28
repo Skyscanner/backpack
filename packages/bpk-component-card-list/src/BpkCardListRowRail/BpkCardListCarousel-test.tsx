@@ -16,19 +16,20 @@
  * limitations under the License.
  */
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import mockCards from '../../testMocks';
 import { LAYOUTS } from '../common-types';
 
 import BpkCardListCarousel from './BpkCardListCarousel';
-import { useIntersectionObserver } from './utils';
+import { useIntersectionObserver, lockScroll } from './utils';
 
 jest.mock('./utils', () => ({
   setA11yTabIndex: jest.fn(),
   useScrollToCard: jest.fn(),
   useIntersectionObserver: jest.fn(() => jest.fn()),
+  lockScroll: jest.fn(),
 }));
 
 describe('BpkCardListCarousel', () => {
@@ -118,20 +119,46 @@ describe('BpkCardListCarousel', () => {
       const cards = screen.getAllByRole('group');
 
       // With initiallyShownCards=3, cards at index 0, 3 should be page starts
-      expect(cards[0].className).toContain('card-is-page-start');
-      expect(cards[1].className).not.toContain('card-is-page-start');
-      expect(cards[2].className).not.toContain('card-is-page-start');
-      expect(cards[3].className).toContain('card-is-page-start');
+      expect(cards[0].className).toContain('page-start');
+      expect(cards[1].className).not.toContain('page-start');
+      expect(cards[2].className).not.toContain('page-start');
+      expect(cards[3].className).toContain('page-start');
     });
 
-    it('should not apply page-start class on mobile', () => {
-      render(<BpkCardListCarousel {...defaultProps} isMobile />);
-      const cards = screen.getAllByRole('group');
+    it('should trigger lock when wheel event is fired on desktop', () => {
+      render(<BpkCardListCarousel {...defaultProps} isMobile={false} />);
 
-      // On mobile, no cards should have the page-start class
-      cards.forEach((card) => {
-        expect(card.className).not.toContain('card-is-page-start');
+      const carouselElement = screen.getByTestId('bpk-card-list-row-rail__carousel');
+
+      fireEvent.wheel(carouselElement, {
+        deltaY: 100,
       });
+
+      expect(lockScroll).toHaveBeenCalled();
     });
+
+    it('should trigger lock when touchmove event is fired on desktop', () => {
+      render(<BpkCardListCarousel {...defaultProps} isMobile={false} />);
+
+      const carouselElement = screen.getByTestId('bpk-card-list-row-rail__carousel');
+
+      fireEvent.touchMove(carouselElement);
+
+      expect(lockScroll).toHaveBeenCalled();
+    });
+
+    it('should not trigger lock when wheel event is fired on mobile', () => {
+      (lockScroll as jest.Mock).mockClear();
+      render(<BpkCardListCarousel {...defaultProps} isMobile />);
+
+      const carouselElement = screen.getByTestId('bpk-card-list-row-rail__carousel');
+
+      fireEvent.wheel(carouselElement, {
+        deltaY: 100,
+      });
+
+      expect(lockScroll).not.toHaveBeenCalled();
+    });
+
   });
 });
