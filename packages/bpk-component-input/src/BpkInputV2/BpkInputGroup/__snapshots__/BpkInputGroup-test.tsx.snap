@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkInputGroup should render correctly with both startElement and endElement 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-input-group bpk-input-group--with-start bpk-input-group--with-end"
+    style="--start-element-width: 0px; --end-element-width: 0px;"
+  >
+    <div
+      aria-hidden="true"
+      class="bpk-input-group__start"
+    >
+      <span>
+        $
+      </span>
+    </div>
+    <input
+      aria-invalid="false"
+      class="bpk-input-v2"
+      id="test"
+      name="test"
+      type="text"
+      value=""
+    />
+    <div
+      aria-hidden="true"
+      class="bpk-input-group__end"
+    >
+      <span>
+        USD
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkInputGroup should render correctly with endElement 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-input-group bpk-input-group--with-end"
+    style="--start-element-width: 0px; --end-element-width: 0px;"
+  >
+    <input
+      aria-invalid="false"
+      class="bpk-input-v2"
+      id="test"
+      name="test"
+      type="text"
+      value=""
+    />
+    <div
+      aria-hidden="true"
+      class="bpk-input-group__end"
+    >
+      <span>
+        USD
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkInputGroup should render correctly with startElement 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-input-group bpk-input-group--with-start"
+    style="--start-element-width: 0px; --end-element-width: 0px;"
+  >
+    <div
+      aria-hidden="true"
+      class="bpk-input-group__start"
+    >
+      <span>
+        $
+      </span>
+    </div>
+    <input
+      aria-invalid="false"
+      class="bpk-input-v2"
+      id="test"
+      name="test"
+      type="text"
+      value=""
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkInputGroup should render correctly without start/end elements 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-input-group"
+    style="--start-element-width: 0px; --end-element-width: 0px;"
+  >
+    <input
+      aria-invalid="false"
+      class="bpk-input-v2"
+      id="test"
+      name="test"
+      type="text"
+      value=""
+    />
+  </div>
+</DocumentFragment>
+`;
