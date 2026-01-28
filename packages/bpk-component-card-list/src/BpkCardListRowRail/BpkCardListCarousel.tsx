@@ -81,22 +81,17 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
   const stateScrollingLockRef = useRef(false);
   const openSetStateLockTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const [lockVersion, setLockVersion] = useState(0);
 
   const observerVisibility = useIntersectionObserver(
     { root, threshold: 0.5 },
     setVisibilityList,
   );
 
-  // Desktop: scroll to page-start card (multiply by initiallyShownCards for page-based scrolling)
-  // Mobile: scroll to individual card (use currentIndex directly)
   useScrollToCard(
     isMobile ? currentIndex : currentIndex * initiallyShownCards,
     root,
     cardRefs,
     stateScrollingLockRef,
-    openSetStateLockTimeoutRef,
-    () => setLockVersion((v) => v + 1), // Trigger page detection when lock releases
   );
 
   // Similar to Virtual Scrolling to improve performance
@@ -104,15 +99,11 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const lastVisibleIndex = firstVisibleIndex + initiallyShownCards - 1;
 
   const dynamicRenderBufferSize = useMemo(() => {
-    if (childrenLength === 0 || initiallyShownCards === 0 || isMobile)
-      return RENDER_BUFFER_SIZE;
+    if (childrenLength === 0 || initiallyShownCards === 0 || isMobile) return RENDER_BUFFER_SIZE;
 
     // Calculate how many cards to render based on the number of initially shown cards and total children
     const totalPages = Math.ceil(childrenLength / initiallyShownCards);
-    const shownIndicatorCount = Math.min(
-      totalPages,
-      PAGINATION_INDICATOR_MAX_SHOWN_COUNT,
-    );
+    const shownIndicatorCount = Math.min(totalPages, PAGINATION_INDICATOR_MAX_SHOWN_COUNT);
     return Math.max(
       RENDER_BUFFER_SIZE,
       (shownIndicatorCount - 1) * initiallyShownCards,
@@ -122,15 +113,14 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const renderList = useMemo(
     () =>
       visibilityList.map((_, index) => {
-        const isIndexVisible =
-          index >= firstVisibleIndex - dynamicRenderBufferSize &&
-          index <= lastVisibleIndex + dynamicRenderBufferSize;
+        const isIndexVisible = index >= firstVisibleIndex - dynamicRenderBufferSize && index <= lastVisibleIndex + dynamicRenderBufferSize;
         if (isIndexVisible) {
           hasBeenVisibleRef.current.add(index);
         }
 
         return isIndexVisible ? 1 : 0;
-      }),
+      }
+      ),
     [
       visibilityList,
       firstVisibleIndex,
@@ -170,42 +160,21 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     const container = root;
     if (isMobile || !container) return undefined;
 
-    const lockTimeoutRef = openSetStateLockTimeoutRef;
-
     const lockScrollDuringInteraction = () => {
-      lockScroll(stateScrollingLockRef, lockTimeoutRef, () =>
-        setLockVersion((v) => v + 1),
-      );
-    };
-
-    // Detect when scrolling ends to update pagination dots immediately
-    let scrollEndTimeout: ReturnType<typeof setTimeout>;
-    const handleScroll = () => {
-      clearTimeout(scrollEndTimeout);
-      scrollEndTimeout = setTimeout(() => {
-        // Don't manually release the lock here - let RELEASE_LOCK_DELAY handle it
-        // to prevent premature page detection during smooth scrollIntoView animations
-        if (!stateScrollingLockRef.current) {
-          setLockVersion((v) => v + 1);
-        }
-      }, 50); // Trigger page detection 50ms after scrolling stops if unlocked
+      lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef);
     };
 
     container.addEventListener('wheel', lockScrollDuringInteraction);
     container.addEventListener('touchmove', lockScrollDuringInteraction);
-    container.addEventListener('scroll', handleScroll);
 
     return () => {
       container.removeEventListener('touchmove', lockScrollDuringInteraction);
       container.removeEventListener('wheel', lockScrollDuringInteraction);
-      container.removeEventListener('scroll', handleScroll);
-      clearTimeout(scrollEndTimeout);
-      const lockTimeout = lockTimeoutRef.current;
-      if (lockTimeout) {
-        clearTimeout(lockTimeout);
+      if (openSetStateLockTimeoutRef.current) {
+        clearTimeout(openSetStateLockTimeoutRef.current);
       }
     };
-  }, [root, isMobile]);
+  }, [root]);
 
   useEffect(() => {
     // update hasBeenVisibleRef to include the range of cards that should be visible
@@ -222,37 +191,14 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   ]);
 
   useEffect(() => {
-    // Mobile: keep original behavior (currentIndex = cardIndex)
-    // Desktop: calculate page index from card index
-    if (isMobile) return;
-
-    // During programmatic scrolling (button clicks), don't fight with the intended page
-    if (stateScrollingLockRef.current) return;
-
-    // Find the first visible page-start card (index % initiallyShownCards === 0)
-    // to ensure we detect the correct page, not intermediate cards
-    let firstVisiblePageStart = -1;
-    for (let i = 0; i < visibilityList.length; i += 1) {
-      if (visibilityList[i] === 1 && i % initiallyShownCards === 0) {
-        firstVisiblePageStart = i;
-        break;
-      }
-    }
-
-    if (firstVisiblePageStart >= 0) {
-      const newIndex = firstVisiblePageStart / initiallyShownCards;
+    const firstVisible = visibilityList.indexOf(1);
+    if (firstVisible >= 0) {
+      const newIndex = Math.floor(firstVisible / initiallyShownCards);
       if (newIndex !== currentIndex) {
         setCurrentIndex(newIndex);
       }
     }
-  }, [
-    visibilityList,
-    initiallyShownCards,
-    currentIndex,
-    setCurrentIndex,
-    isMobile,
-    lockVersion,
-  ]);
+  }, [initiallyShownCards]);
 
   useEffect(() => {
     const handleResize = throttle(() => {
@@ -296,19 +242,18 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
             ...cardDimensionStyle,
           },
           key: `carousel-card-${index.toString()}`,
-          role: 'group',
+          role: "group",
         };
 
         // Only render cards that are within the renderList range or have been visible before
-        const shouldRenderCard =
-          renderList[index] === 1 || hasBeenVisibleRef.current.has(index);
+        const shouldRenderCard = renderList[index] === 1 || hasBeenVisibleRef.current.has(index);
         if (!shouldRenderCard) {
           return (
             <div
               {...commonProps}
               style={{
                 ...commonProps.style,
-                contain: 'paint',
+                contain: 'paint'
               }}
               data-testid="bpk-card-list-carousel--placeholder"
               aria-hidden="true"
