@@ -352,4 +352,145 @@ describe('BpkPriceRange', () => {
       expect(container.querySelector('.bpk-price-marker')).toBeInTheDocument();
     });
   });
+
+  describe('backward compatibility with deprecated showPriceIndicator prop', () => {
+    describe('Scenario 1: showPriceIndicator controls marker type when marker.type is undefined', () => {
+      it('should render bubble marker and show boundaries when showPriceIndicator={true} and marker.type is undefined', () => {
+        const { container } = render(
+          <BpkPriceRange
+            marker={{
+              price: '£150',
+              percentage: 50,
+            }}
+            segments={segments}
+            showPriceIndicator
+          />,
+        );
+
+        // Should render bubble marker
+        expect(
+          container.querySelector('.bpk-price-range__marker'),
+        ).toBeInTheDocument();
+        expect(
+          container.querySelector('.bpk-price-range__marker'),
+        ).toHaveTextContent('£150');
+        expect(container.querySelector('.bpk-price-marker')).toHaveClass(
+          'bpk-price-marker--medium',
+        );
+
+        // Should NOT render dot marker
+        expect(
+          container.querySelector('.bpk-price-range__line--dot'),
+        ).not.toBeInTheDocument();
+
+        // Should show boundaries
+        expect(
+          container.querySelector('.bpk-price-range__ranges'),
+        ).toBeInTheDocument();
+        expect(
+          container.querySelector('.bpk-price-range__ranges'),
+        ).toHaveTextContent('£100£200');
+      });
+
+      it('should render dot marker and hide boundaries when showPriceIndicator={false} and marker.type is undefined', () => {
+        const { container } = render(
+          <BpkPriceRange
+            marker={{
+              price: '£150',
+              percentage: 50,
+            }}
+            segments={segments}
+            showPriceIndicator={false}
+          />,
+        );
+
+        // Should NOT render bubble marker
+        expect(
+          container.querySelector('.bpk-price-range__marker'),
+        ).not.toBeInTheDocument();
+
+        // Should render dot marker
+        expect(
+          container.querySelector('.bpk-price-range__line--dot'),
+        ).toBeInTheDocument();
+        expect(
+          container.querySelector('.bpk-price-range__line--dot'),
+        ).toHaveClass('bpk-price-range__line--medium');
+
+        // Should NOT show boundaries
+        expect(
+          container.querySelector('.bpk-price-range__ranges'),
+        ).not.toBeInTheDocument();
+      });
+    });
+
+    describe('Scenario 2: marker.type takes precedence over showPriceIndicator', () => {
+      it('should render bubble marker when marker.type=BUBBLE even if showPriceIndicator={false}', () => {
+        const { container } = render(
+          <BpkPriceRange
+            marker={{
+              price: '£150',
+              percentage: 50,
+              type: MARKER_DISPLAY_TYPES.BUBBLE,
+            }}
+            segments={segments}
+            showPriceIndicator={false}
+          />,
+        );
+
+        // marker.type should take precedence - BUBBLE marker should be rendered
+        expect(
+          container.querySelector('.bpk-price-range__marker'),
+        ).toBeInTheDocument();
+        expect(
+          container.querySelector('.bpk-price-range__marker'),
+        ).toHaveTextContent('£150');
+
+        // Should NOT render dot marker
+        expect(
+          container.querySelector('.bpk-price-range__line--dot'),
+        ).not.toBeInTheDocument();
+
+        // Boundaries should be shown (BUBBLE type behaviour)
+        expect(
+          container.querySelector('.bpk-price-range__ranges'),
+        ).toBeInTheDocument();
+        expect(
+          container.querySelector('.bpk-price-range__ranges'),
+        ).toHaveTextContent('£100£200');
+      });
+
+      it('should render dot marker when marker.type=DOT even if showPriceIndicator={true}', () => {
+        const { container } = render(
+          <BpkPriceRange
+            marker={{
+              price: '£150',
+              percentage: 50,
+              type: MARKER_DISPLAY_TYPES.DOT,
+            }}
+            segments={segments}
+            showPriceIndicator
+          />,
+        );
+
+        // marker.type should take precedence - DOT marker should be rendered
+        expect(
+          container.querySelector('.bpk-price-range__line--dot'),
+        ).toBeInTheDocument();
+        expect(
+          container.querySelector('.bpk-price-range__line--dot'),
+        ).toHaveClass('bpk-price-range__line--medium');
+
+        // Should NOT render bubble marker
+        expect(
+          container.querySelector('.bpk-price-range__marker'),
+        ).not.toBeInTheDocument();
+
+        // Boundaries should NOT be shown (DOT type behaviour)
+        expect(
+          container.querySelector('.bpk-price-range__ranges'),
+        ).not.toBeInTheDocument();
+      });
+    });
+  });
 });
