@@ -23,6 +23,7 @@ import {
   BpkGridItem,
   BpkProvider,
   BpkStack,
+  BpkVessel,
 } from '../../packages/bpk-component-layout';
 
 import {
@@ -58,6 +59,7 @@ import {
   VStackExample,
   VerticalContentBlocksExample,
 } from './stack-examples';
+import BpkVesselExample from './vessel-examples';
 
 export default {
   title: 'bpk-component-layout',
@@ -68,6 +70,7 @@ export default {
     BpkGrid,
     BpkGridItem,
     BpkStack,
+    BpkVessel,
   },
   parameters: {
     docs: {
@@ -111,6 +114,9 @@ export const VisualTest = () => (
     <HStackExample />
     <VStackExample />
     <ResponsiveDirectionExample />
+
+    {/* Vessel examples */}
+    <BpkVesselExample />
   </>
 );
 

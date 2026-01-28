@@ -8,6 +8,7 @@
 
 - `BpkProvider` – wraps your app or stories to provide the Backpack layout system.
 - `BpkBox` – a low‑level layout container for spacing, sizing and structural composition.
+- `BpkVessel` – a migration hatch layout primitive that allows `className` and `style` for gradual migration.
 - `BpkFlex` – a flexbox layout primitive with an ergonomic, responsive API.
 - `BpkGrid` / `BpkGridItem` – grid layout primitives for container + item placement.
 - `BpkStack` / `BpkHStack` / `BpkVStack` – stack layout primitives with tokenised gaps.
@@ -57,6 +58,48 @@ export default function Example() {
 }
 ```
 
+### BpkVessel
+
+`BpkVessel` is a **migration hatch** layout primitive designed to ease component migration to Backpack. It renders a simple HTML element (default: div) and only accepts `className` and `style` props.
+
+> ⚠️ **Important:** BpkVessel is a **temporary migration tool**, not a permanent solution.
+
+```tsx
+import { BpkVessel } from '@skyscanner/backpack-web/bpk-component-layout';
+
+// Basic usage with className and style
+export default function Example() {
+  return (
+    <BpkVessel
+      className="legacy-container"
+      style={{ padding: '16px', transition: 'opacity 0.3s' }}
+    >
+      Migrating content
+    </BpkVessel>
+  );
+}
+
+// Using custom element via "as" prop
+export function SemanticExample() {
+  return (
+    <BpkVessel as="section" className="legacy-section">
+      Section Content
+    </BpkVessel>
+  );
+}
+```
+
+**When to use BpkVessel:**
+- During component migration when you need to maintain existing className/style usage
+- When you have legacy CSS classes that cannot be immediately refactored
+- As a temporary solution while refactoring components
+
+**Props:**
+- `as` - Optional element type (default: 'div'). Accepts: 'div', 'span', 'section', 'article', 'nav', 'main', 'aside', 'header', 'footer'
+- `children` - Child elements
+- `className` - Optional CSS class name(s)
+- `style` - Optional inline styles
+
 ## Layout tokens and props
 
 The layout API is intentionally limited and strongly typed. The main groups are:
@@ -84,6 +127,7 @@ No other event handlers are exposed on layout components.
 
 - **`BpkProvider`**: Provides the runtime layout system (tokens + breakpoints) for all layout primitives. Wrap your app (or Storybook) with it.
 - **`BpkBox`**: The base structural primitive. Use it for spacing/sizing/positioning and for composing simple flex/grid layouts via `display` + related props.
+- **`BpkVessel`**: A migration hatch primitive. Use it **temporarily** during migration when you need to maintain className/style props. Plan to migrate to `BpkBox` once legacy styling is removed.
 - **`BpkFlex`**: A dedicated flex container primitive. Prefer this when you want a clear, ergonomic flex API (`direction/align/justify/wrap/...`) with Backpack responsive values.
 - **`BpkGrid` / `BpkGridItem`**: Dedicated grid primitives. Prefer these for grid layout composition; use `BpkGridItem` when you want explicit spans/placement.
 - **`BpkStack` / `BpkHStack` / `BpkVStack`**: Dedicated stack primitives. Prefer these when you want consistent tokenised gaps and the simplest stacking API.
@@ -134,8 +178,8 @@ In particular:
 
 To keep layout predictable, performant and consistent with Backpack:
 
-- **No arbitrary class names** – `className` is not supported on layout components; use layout props and tokens instead.
-- **No inline styles** – `style` is not supported on layout components to avoid ad‑hoc overrides of the design system.
+- **No arbitrary class names** – `className` is not supported on layout components; use layout props and tokens instead. **Exception:** `BpkVessel` allows `className` as a migration hatch.
+- **No inline styles** – `style` is not supported on layout components to avoid ad‑hoc overrides of the design system. **Exception:** `BpkVessel` allows `style` as a migration hatch.
 - **No shorthand props** – Chakra shorthands such as `p`, `m`, `w`, `h`, `bg`, `rounded`, `shadow` are not exposed on Backpack layout components.
 - **No colors, borders, radii or shadows** – visual props such as `color`, `backgroundColor`, `borderColor`, `borderWidth`, `borderRadius`, `boxShadow` are not part of the layout surface.
 - **No composite border shorthands** – props like `border`, `borderX`, `borderInline`, `borderBlock` are not supported.
