@@ -144,7 +144,7 @@ describe('BpkVessel', () => {
       <BpkProvider>
         <BpkVessel
           padding={BpkSpacing.MD}
-          style={{ opacity: '0.8', fontSize: '16px' }}
+          style={{ opacity: 0.8, fontSize: '16px' }}
         >
           Styled Content
         </BpkVessel>
