@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
 import type StackOptionKeys from './BpkStack.constant';
 import type { BpkCommonLayoutProps } from './commonProps';
@@ -202,6 +202,35 @@ export interface BpkBoxProps extends BpkCommonLayoutProps, BpkBoxSpecificProps {
   onFocus?: BoxEventProps['onFocus'];
   onBlur?: BoxEventProps['onBlur'];
 }
+
+/**
+ * Props for BpkVessel component.
+ *
+ * BpkVessel is a "migration hatch" that re-allows `className` and `style`
+ * while keeping the same layout prop surface as `BpkBox`.
+ *
+ * This enables gradual migration from legacy styling approaches by allowing:
+ * - All BpkBox layout props (spacing, sizing, flex, grid, etc.)
+ * - Custom CSS classes via `className`
+ * - Inline styles via `style`
+ *
+ * @example
+ * ```tsx
+ * <BpkVessel
+ *   padding={BpkSpacing.MD}
+ *   className="legacy-wrapper"
+ *   style={{ transition: 'opacity 0.3s' }}
+ * >
+ *   Content
+ * </BpkVessel>
+ * ```
+ */
+export type BpkVesselProps = BpkBoxProps & {
+  /** Custom CSS class name(s) to apply to the element */
+  className?: string;
+  /** Inline styles to apply to the element */
+  style?: CSSProperties;
+};
 
 /**
  * Component-specific props for BpkFlex
