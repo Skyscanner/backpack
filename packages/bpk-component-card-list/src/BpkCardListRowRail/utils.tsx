@@ -39,10 +39,6 @@ export const lockScroll = (
   openSetStateLockTimeoutRef.current = setTimeout(() => {
     // eslint-disable-next-line no-param-reassign
     stateScrollingLockRef.current = false;
-    // Notify when lock is released
-    if (onLockRelease) {
-      onLockRelease();
-    }
   }, RELEASE_LOCK_DELAY);
 };
 
