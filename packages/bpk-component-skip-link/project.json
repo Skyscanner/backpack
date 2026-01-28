@@ -17,7 +17,7 @@
     "test": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "TZ=Etc/UTC jest --coverage --testPathPatterns='packages/bpk-component-skip-link'",
+        "command": "TZ=Etc/UTC jest --coverage --testPathPatterns='{projectRoot}' --collectCoverageFrom='{projectRoot}/src/**/*.{js,jsx,ts,tsx}'",
         "cwd": "{workspaceRoot}"
       },
       "outputs": [
