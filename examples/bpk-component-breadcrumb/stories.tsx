@@ -18,8 +18,7 @@
 
 import { DefaultExample, ExtremeExample } from './examples';
 
-import BpkBreadcrumb from '@backpack/bpk-component-breadcrumb';
-import BpkBreadcrumbItem from '@backpack/bpk-component-breadcrumb';
+import BpkBreadcrumb, { BpkBreadcrumbItem } from '@backpack/bpk-component-breadcrumb';
 
 
 export default {

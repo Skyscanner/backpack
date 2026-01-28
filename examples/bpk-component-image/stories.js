@@ -31,8 +31,7 @@ import {
   BackgroundImageWithLazyLoadingAndAnimationExample,
 } from './examples';
 
-import BpkBackgroundImage from '@backpack/bpk-component-image';
-import BpkImage from '@backpack/bpk-component-image';
+import { BpkBackgroundImage, BpkImage } from '@backpack/bpk-component-image';
 
 
 export default {

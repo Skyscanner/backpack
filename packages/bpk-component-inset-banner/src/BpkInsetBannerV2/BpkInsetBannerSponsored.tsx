@@ -22,7 +22,7 @@ import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base
 import BpkBottomSheet, { PADDING_TYPE } from '../../../bpk-component-bottom-sheet';
 import ViewIcon from '../../../bpk-component-icon/lg/view';
 import InfoIcon from '../../../bpk-component-icon/sm/information-circle';
-import BpkImage from '../../../bpk-component-image';
+import { BpkImage } from '../../../bpk-component-image';
 import { cssModules } from '../../../bpk-react-utils';
 
 import { VARIANT, type CommonProps } from './common-types';

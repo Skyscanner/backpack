@@ -21,7 +21,7 @@ import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 
-import BpkBubble from '@backpack/bpk-component-bubble';
+import { BpkBubble } from '@backpack/bpk-component-bubble';
 
 const getClassNames = cssModules(STYLES);
 

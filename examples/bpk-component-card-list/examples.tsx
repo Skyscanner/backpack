@@ -28,7 +28,7 @@ import BpkCardList, {
 import BpkMultiSelectChipGroup, {
   CHIP_GROUP_TYPES,
 } from '../../packages/bpk-component-chip-group';
-import BpkImage from '../../packages/bpk-component-image';
+import { BpkImage } from '../../packages/bpk-component-image';
 import BpkLink from '../../packages/bpk-component-link';
 
 

@@ -19,9 +19,7 @@
 
 import DefaultExample from './examples';
 
-import BpkSectionList from '@backpack/bpk-component-section-list';
-import BpkSectionListItem from '@backpack/bpk-component-section-list';
-import BpkSectionListSection from '@backpack/bpk-component-section-list';
+import BpkSectionList, { BpkSectionListItem, BpkSectionListSection } from '@backpack/bpk-component-section-list';
 
 
 export default {

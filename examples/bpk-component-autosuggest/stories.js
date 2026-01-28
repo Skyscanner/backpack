@@ -23,8 +23,7 @@ import AutosuggestExample from './examples';
 
 import type { StoryObj } from '@storybook/react-webpack5';
 
-import BpkAutosuggest from '@backpack/bpk-component-autosuggest';
-import BpkAutosuggestSuggestion from '@backpack/bpk-component-autosuggest';
+import BpkAutosuggest, { BpkAutosuggestSuggestion } from '@backpack/bpk-component-autosuggest';
 
 
 

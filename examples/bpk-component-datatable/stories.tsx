@@ -26,7 +26,7 @@ import {
   WithColumnArrayExample,
 } from './examples';
 
-import BpkDataTable from '@backpack/bpk-component-datatable';
+import { BpkDataTable } from '@backpack/bpk-component-datatable';
 
 
 export default {

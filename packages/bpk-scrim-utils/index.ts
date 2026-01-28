@@ -16,10 +16,15 @@
  * limitations under the License.
  */
 
+import BpkScrim from './src/BpkScrim';
 import withScrim from './src/withScrim';
 import withScrimmedPortal from './src/withScrimmedPortal';
 
-export { withScrim, withScrimmedPortal };
+import type { Props as withScrimProps } from './src/withScrim';
+import type { Props as withScrimmedPortalProps } from './src/withScrimmedPortal';
+
+export type { withScrimProps, withScrimmedPortalProps };
+export { BpkScrim, withScrim, withScrimmedPortal };
 export default {
   withScrim,
 };

@@ -32,10 +32,11 @@ import {
 } from './examples';
 import WithInteractiveStarRatingStateMock from './stories-utils';
 
-import BpkInteractiveStar from '@backpack/bpk-component-star-rating';
-import BpkInteractiveStarRating from '@backpack/bpk-component-star-rating';
-import { BpkStarNonRtl } from '@backpack/bpk-component-star-rating';
-import BpkStarRating from '@backpack/bpk-component-star-rating';
+import BpkStarRating, {
+  BpkInteractiveStar,
+  BpkInteractiveStarRating,
+  BpkStarNonRtl,
+} from '@backpack/bpk-component-star-rating';
 
 
 export default {

@@ -19,13 +19,13 @@
 
 import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
-import BpkScrim from '../../packages/bpk-scrim-utils/src/BpkScrim';
-
 import {
   WithPortalScrimExample,
   WithCustomElementAndPortalScrimExample
  } from './examples';
 import { withScrimMock, withScrimmedPortalMock } from './stories.utils';
+
+import { BpkScrim } from '@backpack/bpk-scrim-utils';
 
 export default {
   title: 'bpk-scrim-utils',

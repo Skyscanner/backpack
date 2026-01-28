@@ -18,7 +18,7 @@
 /* @flow strict */
 import PropTypes from 'prop-types';
 
-import BpkImage from '../../packages/bpk-component-image';
+import { BpkImage } from '../../packages/bpk-component-image';
 import BpkOverlay, {
   OVERLAY_TYPES,
 } from '../../packages/bpk-component-overlay';

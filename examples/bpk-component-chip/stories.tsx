@@ -25,10 +25,7 @@ import {
   AllIconChipsExample,
 } from './examples';
 
-import BpkDismissibleChip from '@backpack/bpk-component-chip';
-import BpkDropdownChip from '@backpack/bpk-component-chip';
-import BpkIconChip from '@backpack/bpk-component-chip';
-import BpkSelectableChip from '@backpack/bpk-component-chip';
+import BpkSelectableChip, { BpkDismissibleChip, BpkDropdownChip, BpkIconChip } from '@backpack/bpk-component-chip';
 
 
 export default {

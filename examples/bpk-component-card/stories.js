@@ -32,9 +32,7 @@ import {
   MixedExample,
 } from './examples';
 
-import BpkCard from '@backpack/bpk-component-card';
-import BpkCardWrapper from '@backpack/bpk-component-card';
-import BpkDividedCard from '@backpack/bpk-component-card';
+import BpkCard, { BpkCardWrapper, BpkDividedCard } from '@backpack/bpk-component-card';
 
 
 export default {

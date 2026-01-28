@@ -23,8 +23,7 @@
  * @todo remove this file once we upgrade to Storybook v8
  */
 
-import type { Props as withScrimProps } from '../../packages/bpk-scrim-utils/src/withScrim';
-import type { Props as withScrimmedPortalProps } from '../../packages/bpk-scrim-utils/src/withScrimmedPortal';
+import type { withScrimProps, withScrimmedPortalProps } from '@backpack/bpk-scrim-utils';
 
 const withScrimMock = (props: withScrimProps) => <div />;
 const withScrimmedPortalMock = (props: withScrimmedPortalProps) => <div />;

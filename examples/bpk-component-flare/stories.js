@@ -28,8 +28,7 @@ import {
   MixedExample,
 } from './examples';
 
-import BpkContentBubble from '@backpack/bpk-component-flare';
-import BpkFlareBar from '@backpack/bpk-component-flare';
+import { BpkContentBubble, BpkFlareBar } from '@backpack/bpk-component-flare';
 
 
 export default {

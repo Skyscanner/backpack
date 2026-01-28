@@ -35,9 +35,7 @@ import {
 } from './examples';
 import { withBannerAlertStateMock } from './stories-utils';
 
-import BpkBannerAlert from '@backpack/bpk-component-banner-alert';
-import BpkBannerAlertDismissable from '@backpack/bpk-component-banner-alert';
-import BpkBannerAlertExpandable from '@backpack/bpk-component-banner-alert';
+import BpkBannerAlert, { BpkBannerAlertDismissable, BpkBannerAlertExpandable } from '@backpack/bpk-component-banner-alert';
 
 
 export default {

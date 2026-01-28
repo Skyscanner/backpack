@@ -38,9 +38,11 @@ import {
 } from './examples';
 import { BpkScrollableCalendarMock } from './stories-utils';
 
-import BpkScrollableCalendarDateComponent from '@backpack/bpk-component-scrollable-calendar';
-import BpkScrollableCalendarGridComponent from '@backpack/bpk-component-scrollable-calendar';
-import BpkScrollableCalendarGridListComponent from '@backpack/bpk-component-scrollable-calendar';
+import {
+  BpkScrollableCalendarDate as BpkScrollableCalendarDateComponent,
+  BpkScrollableCalendarGrid as BpkScrollableCalendarGridComponent,
+  BpkScrollableCalendarGridList as BpkScrollableCalendarGridListComponent,
+} from '@backpack/bpk-component-scrollable-calendar';
 
 
 export default {

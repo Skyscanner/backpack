@@ -34,11 +34,12 @@ import {
 } from './examples';
 import WithGoogleMapsScriptMock from './stories-utils';
 
-import BpkIconMarker from '@backpack/bpk-component-map';
-import BpkMap from '@backpack/bpk-component-map';
-import BpkOverlayView from '@backpack/bpk-component-map';
-import BpkPriceMarker from '@backpack/bpk-component-map';
-import BpkPriceMarkerButton from '@backpack/bpk-component-map';
+import BpkMap, {
+  BpkIconMarker,
+  BpkOverlayView,
+  BpkPriceMarker,
+  BpkPriceMarkerButton,
+} from '@backpack/bpk-component-map';
 
 
 export default {

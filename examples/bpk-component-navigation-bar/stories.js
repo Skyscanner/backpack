@@ -30,9 +30,7 @@ import {
   VisualTestExample,
 } from './examples';
 
-import BpkNavigationBar from '@backpack/bpk-component-navigation-bar';
-import BpkNavigationBarButtonLink from '@backpack/bpk-component-navigation-bar';
-import BpkNavigationBarIconButton from '@backpack/bpk-component-navigation-bar';
+import BpkNavigationBar, { BpkNavigationBarButtonLink, BpkNavigationBarIconButton } from '@backpack/bpk-component-navigation-bar';
 
 
 export default {

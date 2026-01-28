@@ -23,7 +23,7 @@ import {
   VisualTestExample,
 } from './examples';
 
-import BpkBubble from '@backpack/bpk-component-bubble';
+import { BpkBubble } from '@backpack/bpk-component-bubble';
 
 
 export default {

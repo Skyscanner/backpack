@@ -18,9 +18,13 @@
 
 import path from 'path';
 import { fileURLToPath } from 'url';
+
 import type { StorybookConfig } from '@storybook/react-webpack5';
 
+// ESM compatibility: __filename and __dirname are not available in ES modules
+// eslint-disable-next-line no-underscore-dangle
 const __filename = fileURLToPath(import.meta.url);
+// eslint-disable-next-line no-underscore-dangle
 const __dirname = path.dirname(__filename);
 
 const config: StorybookConfig = {
@@ -53,6 +57,7 @@ const config: StorybookConfig = {
   },
   webpackFinal: async (webpackConfig) => {
     if (webpackConfig.resolve) {
+      // eslint-disable-next-line no-param-reassign
       webpackConfig.resolve.alias = {
         ...webpackConfig.resolve.alias,
         '@backpack': path.resolve(__dirname, '../packages'),

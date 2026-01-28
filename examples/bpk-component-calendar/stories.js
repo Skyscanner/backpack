@@ -39,10 +39,12 @@ import {
 } from './examples';
 import { BpkCalendarContainerMock } from './stories-utils';
 
-import BpkCalendarDateComponent from '@backpack/bpk-component-calendar';
-import BpkCalendarGridComponent from '@backpack/bpk-component-calendar';
-import BpkCalendarGridHeaderComponent from '@backpack/bpk-component-calendar';
-import BpkCalendarNavComponent from '@backpack/bpk-component-calendar';
+import {
+  BpkCalendarDate as BpkCalendarDateComponent,
+  BpkCalendarGrid as BpkCalendarGridComponent,
+  BpkCalendarGridHeader as BpkCalendarGridHeaderComponent,
+  BpkCalendarNav as BpkCalendarNavComponent,
+} from '@backpack/bpk-component-calendar';
 
 
 export default {

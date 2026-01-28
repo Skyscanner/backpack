@@ -17,7 +17,7 @@
  */
 
 
-import BpkPopover from '../../packages/bpk-component-popover';
+import { BpkPopover } from '../../packages/bpk-component-popover';
 
 import {
   DefaultExample,

@@ -20,7 +20,8 @@ import type { MouseEvent } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
-import BpkImage, {
+import {
+  BpkImage,
   BORDER_RADIUS_STYLES,
   withLazyLoading,
 } from '../../bpk-component-image';

@@ -25,7 +25,7 @@
 
 import PropTypes from 'prop-types';
 
-import DataSource from '@backpack/bpk-component-infinite-scroll';
+import { DataSource } from '@backpack/bpk-component-infinite-scroll';
 
 /**
  * Temporarily re-defining the infinite scroll props due to a bug in react docgen which doesn't allow us to import the prop types from another file

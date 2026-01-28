@@ -31,8 +31,7 @@ import {
   MixedExample,
 } from './examples';
 
-import BpkHorizontalNav from '@backpack/bpk-component-horizontal-nav';
-import BpkHorizontalNavItem from '@backpack/bpk-component-horizontal-nav';
+import BpkHorizontalNav, { BpkHorizontalNavItem } from '@backpack/bpk-component-horizontal-nav';
 
 
 export default {
