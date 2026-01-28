@@ -70,7 +70,6 @@ export const useScrollToCard = (
   container: HTMLElement | null,
   cardRefs: React.MutableRefObject<Array<HTMLDivElement | null>>,
   stateScrollingLockRef: React.MutableRefObject<boolean>,
-  openSetStateLockTimeoutRef?: React.MutableRefObject<NodeJS.Timeout | null>,
 ) => {
   useEffect(() => {
     const isVisible =
@@ -84,11 +83,6 @@ export const useScrollToCard = (
 
     const targetCard = cardRefs.current[currentIndex];
     if (targetCard) {
-      // Set lock before scrolling to prevent page detection from fighting
-      if (openSetStateLockTimeoutRef) {
-        lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef);
-      }
-
       targetCard.scrollIntoView({
         behavior: 'smooth',
         block: 'nearest',
