@@ -24,7 +24,6 @@ import { RELEASE_LOCK_DELAY } from './constants';
  * Typically used to prevent useScrollToCard() from being called, to prevent scrollings caused by state changes, so as to avoid cyclic dependencies.
  * @param stateScrollingLockRef - Ref to the state that indicates if scrollIntoView should be locked
  * @param openSetStateLockTimeoutRef - Ref to the timeout that releases the lock after a delay. Should be renewed every time another scroll action is triggered, with a new lock is added.
- * @param onLockRelease - Optional callback to be called when lock is released
  */
 
 export const lockScroll = (
