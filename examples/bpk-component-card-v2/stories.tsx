@@ -275,13 +275,12 @@ export const CustomSplitRatio: Story = {
   },
   render: (args) => (
     <BpkCardV2 {...args}>
-      <BpkCardV2.Header>Custom Split (40/60)</BpkCardV2.Header>
-      <BpkCardV2.Body split splitRatio={40}>
+      <BpkCardV2.Body split splitRatio={60} padding="none">
         <BpkCardV2.Primary>
-          <div style={{ padding: '1rem', background: 'rgba(0,0,0,0.05)' }}>Primary (40%)</div>
+          <div style={{background: 'rgba(0,0,0,0.05)' }}>Primary (60%)</div>
         </BpkCardV2.Primary>
         <BpkCardV2.Secondary>
-          <div style={{ padding: '1rem' }}>Secondary (60%)</div>
+          <div>Secondary (40%)</div>
         </BpkCardV2.Secondary>
       </BpkCardV2.Body>
     </BpkCardV2>
