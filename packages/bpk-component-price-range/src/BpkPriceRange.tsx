@@ -67,7 +67,7 @@ const getShouldShowPriceOnBoundaries = (
       return true;
     case undefined:
     default:
-      // TODO: return `true` when deprecating `showPriceIndicator`
+      // TODO: LUNA-3184 return `true` when deprecating `showPriceIndicator`
       return showPriceIndicator ?? true;
   }
 };
@@ -143,7 +143,7 @@ const BpkPriceRange = ({
   );
   const mediumClassName = getClassName('bpk-price-range__line--medium');
 
-  // TODO: set default to BUBBLE when deprecating `showPriceIndicator`
+  // TODO: LUNA-3184 set default to BUBBLE when deprecating `showPriceIndicator`
   const defaultMarkerType = showPriceIndicator ?? true ? MARKER_DISPLAY_TYPES.BUBBLE : MARKER_DISPLAY_TYPES.DOT;
   const markerType = marker?.type || defaultMarkerType;
   const shouldShowMarker = !!marker;
