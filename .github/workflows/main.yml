@@ -43,7 +43,7 @@ jobs:
         with:
           path: |
             dist-storybook/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**') }}
 
       - name: Create build cache
         if: ${{ steps.storybook-dist-cache.outputs.cache-hit != 'true' }}
@@ -82,7 +82,7 @@ jobs:
         id: storybook-dist-cache
         with:
           path: dist-storybook/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**') }}
 
       - name: Deploy Storybook for main
         uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
