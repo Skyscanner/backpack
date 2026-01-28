@@ -41,6 +41,15 @@ jobs:
             packages/node_modules/
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
+      - name: Restore Nx Cache
+        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+        id: nx-cache
+        with:
+          path: .nx/cache
+          key: nx-cache-${{ runner.os }}-${{ hashFiles('nx.json', 'package-lock.json') }}
+          restore-keys: |
+            nx-cache-${{ runner.os }}-
+
       - name: Setup logs directory
         run: mkdir logs
 
@@ -55,6 +64,13 @@ jobs:
 
       - name: Run tests
         run: bash -c "set -o pipefail;npm run test |& tee 'logs/test.log'"
+
+      - name: Save Nx Cache
+        uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+        if: always()
+        with:
+          path: .nx/cache
+          key: nx-cache-${{ runner.os }}-${{ hashFiles('nx.json', 'package-lock.json') }}
 
       - name: Tar and compress logs
         run: |

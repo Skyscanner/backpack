@@ -1,470 +1,409 @@
 <!--
 ==============================================================================
-DOCUMENT PURPOSE: Design HOW to implement spec.md requirements (Implementation)
+DOCUMENT PURPOSE: Implementation Plan for Phase 1: Nx Initialization
 ==============================================================================
 
-This plan describes the technical approach for cleaning up external dependencies
-in preparation for Nx migration (Phase 0.1).
+This plan describes HOW to implement Nx initialization for the Backpack monorepo.
+It is an infrastructure task, not a component implementation.
 
 FOCUS: HOW
-- How to identify and audit dependencies
-- How to safely remove/upgrade each dependency
-- How to validate changes don't break functionality
+- How to install and configure Nx
+- What files need to be created/modified
+- How to integrate with existing CI/CD
 ==============================================================================
 -->
 
-# Implementation Plan: Clean Up External Dependencies (Phase 0.1)
+# Implementation Plan: Phase 1 - Nx Initialization
 
-**Branch**: `001-cleanup-dependencies` | **Date**: 2026-01-27 | **Spec**: [spec.md](./spec.md)
-**Input**: Implementation plan from `docs/implementation-plans/phase-0.1-cleanup-dependencies.md`
+**Branch**: `001-cleanup-dependencies` | **Date**: 2026-01-28 | **Spec**: [phase-1-nx-initialization.md](../../docs/implementation-plans/phase-1-nx-initialization.md)
+**Input**: Implementation plan from `docs/implementation-plans/phase-1-nx-initialization.md`
+**Depends On**: Phase 0.4 (Codegen Configuration) - ✅ Completed
 
 ## Summary
 
-Clean up outdated and unnecessary external dependencies to prepare for Nx migration. This includes removing obsolete polyfills (object-assign, intersection-observer), upgrading outdated packages (normalize.css), tightening version ranges (@skyscanner/bpk-svgs, React peer dependency), and removing unused dependencies.
+Initialize Nx in the Backpack monorepo to enable task caching, affected commands, and dependency graph visualization. This unlocks significant CI speedups through intelligent caching and targeted builds.
+
+## Current State Analysis
+
+**Already Completed (Phase 0.4)**:
+- ✅ `nx.json` exists with basic namedInputs and targetDefaults
+- ✅ `.svgs-checksum` file created for codegen integrity
+- ✅ project.json files created for Icon, Spinner, Flare components
+- ✅ Codegen scripts added (codegen:update-checksum, codegen:verify-checksum, codegen:validate)
+
+**Not Yet Installed**:
+- ❌ `nx` package not in devDependencies
+- ❌ `@nx/workspace` package not in devDependencies
+- ❌ Nx CLI commands not available
+- ❌ CI workflow not configured for Nx caching
+- ❌ .gitignore not updated for Nx cache directories
 
 ## Technical Context
 
-**Framework**: React 18.3.1 with TypeScript 5.9.2
+**Framework**: Nx (task orchestration and caching)
 **Package Manager**: npm >=10.7.0
 **Node Version**: >=18.20.4
-**Target Browsers**: Chrome 109+, Edge 129+, Firefox 131+, Safari 15+, Samsung 26+
-**Scope**: Dependency cleanup in `packages/package.json` and related code files
-**Risk Level**: Low - internal changes with comprehensive test coverage
+**CI/CD**: GitHub Actions
+**Existing Build Tools**: Webpack 5, Babel 7, Gulp 5
 
 ## Constitution Check
 
-*GATE: All applicable checks pass for dependency cleanup task.*
+*GATE: Infrastructure changes must not break existing functionality.*
 
-### Applicable Principles
+### Core Principles Compliance
 
-- [x] **Test Coverage**: All existing tests must continue to pass
-- [x] **SemVer**: PATCH version bump (internal dependency changes)
+- [x] **Component-First Architecture**: N/A - This is infrastructure, not a component
+- [x] **Naming Conventions**: N/A - No new components
+- [x] **License Headers**: New scripts will include Apache 2.0 headers
+- [x] **Modern Sass**: N/A - No style changes
+- [x] **Accessibility-First**: N/A - No UI changes
+- [x] **TypeScript**: N/A - Configuration files only (JSON)
+- [x] **Test Coverage**: Existing tests must continue to pass
 - [x] **Documentation**: Migration log will document all changes
-- [x] **TypeScript**: Code changes will maintain type safety
+- [x] **SemVer**: PATCH - Internal tooling change, no API impact
 
-### Not Applicable (Dependency Cleanup)
+### Technology Compliance
 
-- N/A: Component-First Architecture (no new components)
-- N/A: Naming Conventions (no new files with naming requirements)
-- N/A: License Headers (no new source files)
-- N/A: Modern Sass (no style changes)
-- N/A: Accessibility-First (no UI changes)
-
-**No constitution violations. Task follows all applicable Backpack standards.**
+- [x] **React Version**: N/A - No React code changes
+- [x] **TypeScript Version**: N/A - No TypeScript code changes
+- [x] **Browser Support**: N/A - Build tooling only
 
 ## Project Structure
+
+### Files to Create
+
+```text
+docs/nx-migration-log.md           # Migration documentation
+```
 
 ### Files to Modify
 
 ```text
-packages/
-├── package.json                          # Main dependency definitions
-├── package-lock.json                     # Lock file (regenerate)
-├── bpk-react-utils/src/
-│   ├── TransitionInitialMount.tsx        # Remove object-assign import
-│   └── Portal.tsx                        # Remove object-assign import
-├── bpk-component-infinite-scroll/src/
-│   ├── intersection-observer.js          # Remove polyfill import
-│   └── withInfiniteScroll.js             # Verify still works
-└── bpk-stylesheets/
-    └── base.css                          # May need rebuild after normalize upgrade
+package.json                       # Add nx, @nx/workspace to devDependencies
+                                   # Add nx helper scripts
+nx.json                            # Expand with test, lint, typecheck targets
+.gitignore                         # Add .nx/cache, .nx/workspace-data
+.github/workflows/_build.yml       # Add Nx cache to CI
 ```
 
-### Deliverables
+## Phase 1: Nx Installation & Configuration
 
-```text
-specs/001-cleanup-dependencies/
-├── spec.md              # Requirements specification ✓
-├── plan.md              # This file ✓
-├── research.md          # Research findings ✓
-└── tasks.md             # Implementation tasks (via /speckit.tasks)
-```
+### Step 1: Install Nx Packages
 
-## Phase 0: Research & Discovery
+**Action**: Add Nx packages to root devDependencies
 
-**Status**: ✅ Complete (see [research.md](./research.md))
-
-### Key Findings
-
-1. **normalize.css**: v4.2.0 bundled in bpk-stylesheets, upgrade to 10.x
-2. **object-assign**: Used in 2 files (Portal.tsx, TransitionInitialMount.tsx), replace with native
-3. **intersection-observer**: Used in bpk-component-infinite-scroll, remove polyfill
-4. **@skyscanner/bpk-svgs**: Version ^20.11.0, lock to exact 20.11.0
-5. **React peer dep**: Range 17.0.2-18.3.1, tighten to ^18.0.0
-
-## Phase 1: Implementation Details
-
-### Step 1: Dependency Audit
-
-**Purpose**: Establish baseline and identify all issues
-
-**Commands**:
 ```bash
-# From packages/ directory
-npm outdated > ../specs/001-cleanup-dependencies/audit-outdated.txt
-npx depcheck > ../specs/001-cleanup-dependencies/audit-unused.txt
-npm audit > ../specs/001-cleanup-dependencies/audit-security.txt
+npm install --save-dev nx @nx/workspace
 ```
 
-**Output**: Dependency audit report files in specs directory
+**Packages**:
+| Package | Version | Purpose |
+|---------|---------|---------|
+| `nx` | `^21.x` | Core Nx CLI and task runner |
+| `@nx/workspace` | `^21.x` | Workspace utilities and generators |
 
----
+**Note**: Version should be latest stable. Currently v21.x.
 
-### Step 2: Upgrade normalize.css
+### Step 2: Configure nx.json
 
-**Current**: `"normalize.css": "4.2.0"`
-**Target**: `"normalize.css": "^10.0.0"` (or `"modern-normalize": "^3.0.0"`)
-
-**package.json Change**:
-```diff
-- "normalize.css": "4.2.0",
-+ "normalize.css": "^10.0.0",
-```
-
-**Rebuild Required**:
-```bash
-# Rebuild stylesheets to incorporate updated normalize
-npm run build:stylesheets
-```
-
-**Validation**:
-```bash
-npm run storybook:dist  # Visual check for style regressions
-npm test                # Ensure all tests pass
-```
-
----
-
-### Step 3: Remove object-assign
-
-**Current Usage** (2 files):
-
-**File 1: `packages/bpk-react-utils/src/TransitionInitialMount.tsx`**
-
-```diff
-- // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-- import assign from 'object-assign';
-- import CSSTransition from 'react-transition-group/CSSTransition';
--
-- // Object.assign() is used unpolyfilled in react-transition-group.
-- // It will use the native implementation if it's present and isn't buggy.
-- Object.assign = assign;
-+ import CSSTransition from 'react-transition-group/CSSTransition';
-```
-
-**File 2: `packages/bpk-react-utils/src/Portal.tsx`**
-
-```diff
-- // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-- import assign from 'object-assign';
-+ // Native Object.assign used (supported in all target browsers)
-```
-
-And line 257:
-```diff
--     if (this.props.style) {
--       assign(portalElement.style, this.props.style);
--     }
-+     if (this.props.style) {
-+       Object.assign(portalElement.style, this.props.style);
-+     }
-```
-
-**package.json Change**:
-```diff
-- "object-assign": "^4.1.1",
-```
-
-**Validation**:
-```bash
-npm run typecheck       # TypeScript compiles
-npm test                # All tests pass
-```
-
----
-
-### Step 4: Remove intersection-observer
-
-**File: `packages/bpk-component-infinite-scroll/src/intersection-observer.js`**
-
-```diff
-  if (typeof window === 'undefined') {
-    global.IntersectionObserver = class {
-      observe() {}
-      unobserve() {}
-    };
-- } else {
--   require('intersection-observer'); /* eslint-disable-line global-require */
-  }
-+ // IntersectionObserver is natively supported in all target browsers:
-+ // Chrome 109+, Edge 129+, Firefox 131+, Safari 15+, Samsung 26+
-```
-
-**Alternative (simpler)**:
-```javascript
-/*
- * Backpack - Skyscanner's Design System
- * ...license header...
- */
-
-// SSR stub - IntersectionObserver doesn't exist on server
-if (typeof window === 'undefined') {
-  global.IntersectionObserver = class {
-    observe() {}
-    unobserve() {}
-  };
-}
-// Browser: IntersectionObserver is natively supported in all target browsers
-```
-
-**package.json Change**:
-```diff
-- "intersection-observer": "^0.12.2",
-```
-
-**Validation**:
-```bash
-npm test -- --testPathPattern=infinite-scroll  # Test infinite scroll
-npm run storybook:dist                          # Visual verification
-```
-
----
-
-### Step 5: Lock @skyscanner/bpk-svgs Version
-
-**Current**: `"@skyscanner/bpk-svgs": "^20.11.0"`
-**Target**: `"@skyscanner/bpk-svgs": "20.11.0"` (exact)
-
-**package.json Change**:
-```diff
-- "@skyscanner/bpk-svgs": "^20.11.0",
-+ "@skyscanner/bpk-svgs": "20.11.0",
-```
-
-**Rationale**: Exact version ensures Nx cache accuracy - SVG content changes won't be missed.
-
----
-
-### Step 6: Tighten React Peer Dependency
-
-**Current**: `"react": "17.0.2 - 18.3.1"`
-**Target**: `"react": "^18.0.0"`
-
-**package.json Change**:
-```diff
-  "peerDependencies": {
-    "date-fns": "3.3.1 - 4",
--   "react": "17.0.2 - 18.3.1",
--   "react-dom": "17.0.2 - 18.3.1",
-+   "react": "^18.0.0",
-+   "react-dom": "^18.0.0",
-    "react-transition-group": "^4.4.5",
-    "sass": "^1",
-    "sass-embedded": "^1"
+**Current State** (from Phase 0.4):
+```json
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "sharedGlobals": [
+      "{workspaceRoot}/.svgs-checksum",
+      "{workspaceRoot}/babel.config.js",
+      "{workspaceRoot}/tsconfig.json"
+    ],
+    "svgSources": [
+      "{workspaceRoot}/node_modules/@skyscanner/bpk-svgs/dist/**/*",
+      "{workspaceRoot}/.svgs-checksum"
+    ],
+    "production": [
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/eslint.config.js",
+      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/src/**/*-test.[jt]s?(x)"
+    ]
   },
+  "targetDefaults": {
+    "build": {
+      "cache": true,
+      "dependsOn": ["^build"]
+    },
+    "generate": {
+      "cache": true,
+      "inputs": ["svgSources", "{projectRoot}/**/*"]
+    }
+  },
+  "defaultBase": "main"
+}
 ```
 
-**Rationale**:
-- Semver-compliant range (single major version)
-- React 18 has been stable for 2+ years
-- Backpack development targets React 18.3.1
-
----
-
-### Step 7: Remove Unused Dependencies
-
-**Method**: Run depcheck and analyze output
-
-```bash
-cd packages
-npx depcheck --ignores="@types/*,prop-types"
+**Target State** (add test, lint, typecheck targets):
+```json
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "sharedGlobals": [
+      "{workspaceRoot}/.svgs-checksum",
+      "{workspaceRoot}/babel.config.js",
+      "{workspaceRoot}/tsconfig.json"
+    ],
+    "svgSources": [
+      "{workspaceRoot}/node_modules/@skyscanner/bpk-svgs/dist/**/*",
+      "{workspaceRoot}/.svgs-checksum"
+    ],
+    "production": [
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/eslint.config.js",
+      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/src/**/*-test.[jt]s?(x)"
+    ]
+  },
+  "targetDefaults": {
+    "build": {
+      "cache": true,
+      "dependsOn": ["^build"]
+    },
+    "generate": {
+      "cache": true,
+      "inputs": ["svgSources", "{projectRoot}/**/*"]
+    },
+    "test": {
+      "cache": true,
+      "inputs": ["default", "^production"]
+    },
+    "lint": {
+      "cache": true,
+      "inputs": ["default", "{workspaceRoot}/.eslintrc", "{workspaceRoot}/eslint.config.js"]
+    },
+    "typecheck": {
+      "cache": true,
+      "inputs": ["default", "{workspaceRoot}/tsconfig.json"]
+    }
+  },
+  "defaultBase": "main"
+}
 ```
 
-**Expected Candidates** (to verify):
-- Dependencies used only transitively
-- Dev dependencies incorrectly in dependencies
-- Packages replaced by native features
+**Changes**:
+- Add `test` target with caching enabled
+- Add `lint` target with ESLint config inputs
+- Add `typecheck` target with tsconfig input
 
-**Process**:
-1. List all reported unused dependencies
-2. Verify each is truly unused (not dynamic imports, not type-only)
-3. Remove confirmed unused packages
-4. Run tests after each removal
+### Step 3: Update .gitignore
 
----
-
-### Step 8: Regenerate Lock File
-
-**Commands**:
-```bash
-cd packages
-rm package-lock.json
-npm install
+**Add lines**:
+```gitignore
+# Nx
+.nx/cache
+.nx/workspace-data
 ```
 
-**Validation**:
-```bash
-npm ci             # Verify clean install works
-npm test           # All tests pass
-npm run build      # Build succeeds
-npm audit          # No new high/critical vulnerabilities
+**Location**: After existing node_modules entry
+
+### Step 4: Configure TypeScript (Verification)
+
+**Check**: Ensure tsconfig.json exists and references base config properly.
+
+From Phase 0.2, tsconfig.json should already have:
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@backpack/*": ["packages/*"]
+    }
+  }
+}
 ```
 
----
+**Action**: Verify this configuration is present. No changes needed if Phase 0.2 completed.
+
+### Step 5: Update CI Workflow
+
+**File**: `.github/workflows/_build.yml`
+
+**Add Nx cache** to the Build job:
+
+```yaml
+- name: Restore Nx Cache
+  uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+  id: nx-cache
+  with:
+    path: .nx/cache
+    key: nx-cache-${{ runner.os }}-${{ hashFiles('nx.json', 'package-lock.json') }}
+    restore-keys: |
+      nx-cache-${{ runner.os }}-
+
+- name: Save Nx Cache
+  uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+  if: always()
+  with:
+    path: .nx/cache
+    key: nx-cache-${{ runner.os }}-${{ hashFiles('nx.json', 'package-lock.json') }}
+```
+
+**Insert after**: Node modules cache restore
+**Insert before**: Setup logs directory
+
+### Step 6: Add Nx Scripts to package.json
+
+**Add to scripts**:
+```json
+{
+  "scripts": {
+    "nx": "nx",
+    "nx:graph": "nx graph",
+    "nx:affected": "nx affected",
+    "nx:reset": "nx reset",
+    "nx:show": "nx show projects"
+  }
+}
+```
+
+**Purpose**:
+- `nx`: Direct access to nx CLI
+- `nx:graph`: Visualize project dependency graph
+- `nx:affected`: Run commands only on affected projects
+- `nx:reset`: Clear Nx cache
+- `nx:show`: List all Nx projects
+
+### Step 7: Create Migration Log
+
+**File**: `docs/nx-migration-log.md`
+
+**Content**:
+```markdown
+# Nx Migration Log
+
+## Phase 1: Nx Initialization
+
+**Date**: [DATE]
+**Branch**: `001-cleanup-dependencies`
+**Commit**: [COMMIT_HASH]
+
+### Changes Made
+
+1. **Installed Nx packages**
+   - Added `nx` and `@nx/workspace` to devDependencies
+   - Version: ^21.x
+
+2. **Updated nx.json**
+   - Added `test`, `lint`, `typecheck` targetDefaults with caching enabled
+
+3. **Updated .gitignore**
+   - Added `.nx/cache` and `.nx/workspace-data`
+
+4. **Updated CI workflow**
+   - Added Nx cache restore/save steps to `.github/workflows/_build.yml`
+
+5. **Added Nx scripts**
+   - `nx`, `nx:graph`, `nx:affected`, `nx:reset`, `nx:show`
+
+### Verification
+
+- [ ] `npm install` completes successfully
+- [ ] `npm run nx:show` lists projects
+- [ ] `npm test` passes
+- [ ] CI pipeline runs successfully with Nx cache
+
+### Rollback Instructions
+
+If issues occur, revert the following files:
+- package.json (remove nx, @nx/workspace from devDependencies, remove nx scripts)
+- nx.json (revert to Phase 0.4 state)
+- .gitignore (remove .nx entries)
+- .github/workflows/_build.yml (remove Nx cache steps)
+```
 
 ## Testing Strategy
 
-### After Each Change
+### Verification Tests
 
-```bash
-npm run typecheck          # TypeScript compilation
-npm run lint               # ESLint + Stylelint
-npm test                   # Full test suite
-```
-
-### Final Validation
-
-```bash
-npm run build              # Full build
-npm run storybook:dist     # Storybook build
-npm audit                  # Security check
-```
-
-### Visual Regression
-
-After normalize.css upgrade:
-- Build Storybook locally
-- Compare appearance of base components (buttons, inputs, text)
-- Check for unexpected spacing/font changes
-
-## Rollback Plan
-
-If any step fails:
-
-1. **Git revert** the specific change:
+1. **Nx Installation**
    ```bash
-   git checkout -- packages/package.json packages/path/to/modified/file
+   npm install
+   npx nx --version  # Should show version
+   npm run nx:show   # Should list projects with project.json
    ```
 
-2. **Regenerate lock file**:
+2. **Cache Functionality**
    ```bash
-   cd packages && rm package-lock.json && npm install
+   npm run test      # First run - uncached
+   npm run test      # Second run - should hit cache
    ```
 
-3. **Document failure** in migration log with:
-   - What was attempted
-   - Error message/test failure
-   - Root cause (if known)
+3. **CI Pipeline**
+   - Push changes to branch
+   - Verify CI workflow completes successfully
+   - Check Nx cache is saved/restored in subsequent runs
 
-## Migration Log Template
+4. **Existing Tests**
+   ```bash
+   npm test          # All tests should pass
+   npm run lint      # Linting should pass
+   npm run typecheck # TypeScript should compile
+   ```
 
-Create `specs/001-cleanup-dependencies/migration-log.md`:
+### Rollback Plan
 
-```markdown
-# Migration Log: Dependency Cleanup (Phase 0.1)
-
-## Execution Summary
-
-| Step | Timestamp | Status | Notes |
-|------|-----------|--------|-------|
-| 1. Audit | | | |
-| 2. normalize.css | | | |
-| 3. object-assign | | | |
-| 4. intersection-observer | | | |
-| 5. bpk-svgs lock | | | |
-| 6. React peer dep | | | |
-| 7. Unused deps | | | |
-| 8. Lock file | | | |
-
-## Detailed Log
-
-### Step 1: Dependency Audit
-- **Timestamp**:
-- **Status**:
-- **Findings**:
-
-[Continue for each step...]
-```
+If tests fail:
+1. Revert nx.json changes to Phase 0.4 state
+2. Remove nx, @nx/workspace from devDependencies
+3. Remove Nx scripts from package.json
+4. Revert .gitignore changes
+5. Revert CI workflow changes
+6. Run `npm install` to regenerate lock file
 
 ## Dependencies
 
-### Packages Being Modified
+### New Dependencies
 
-| Package | Current | Action | Target |
-|---------|---------|--------|--------|
-| normalize.css | 4.2.0 | Upgrade | ^10.0.0 |
-| object-assign | ^4.1.1 | Remove | N/A |
-| intersection-observer | ^0.12.2 | Remove | N/A |
-| @skyscanner/bpk-svgs | ^20.11.0 | Lock | 20.11.0 |
-| react (peer) | 17.0.2 - 18.3.1 | Tighten | ^18.0.0 |
-| react-dom (peer) | 17.0.2 - 18.3.1 | Tighten | ^18.0.0 |
+| Package | Type | Version | Purpose |
+|---------|------|---------|---------|
+| `nx` | devDependency | ^21.x | Core task runner |
+| `@nx/workspace` | devDependency | ^21.x | Workspace utilities |
 
-### Code Files to Modify
+### Existing Dependencies (unchanged)
 
-| File | Change |
-|------|--------|
-| packages/package.json | All dependency changes |
-| packages/bpk-react-utils/src/TransitionInitialMount.tsx | Remove object-assign import |
-| packages/bpk-react-utils/src/Portal.tsx | Replace object-assign with native |
-| packages/bpk-component-infinite-scroll/src/intersection-observer.js | Remove polyfill require |
+- All existing dependencies remain unchanged
+- No runtime dependencies added
+
+## Deliverables Checklist
+
+- [ ] `nx` and `@nx/workspace` installed
+- [ ] `nx.json` updated with test, lint, typecheck targets
+- [ ] `.gitignore` updated for Nx cache
+- [ ] CI workflow updated with Nx cache
+- [ ] Nx helper scripts added to package.json
+- [ ] Migration log created
+- [ ] All existing tests pass
+- [ ] CI pipeline completes successfully
 
 ## Migration & Versioning
 
 **Version Type**: PATCH
 
-**Rationale**:
-- No public API changes
-- Internal dependency management
-- No breaking changes for consumers
-- Per `decisions/versioning-rules.md`: "Bug fixes, dependency updates, code quality improvements"
+**Rationale**: Nx initialization is internal tooling that does not change the public API of any Backpack components. This qualifies as PATCH per `decisions/versioning-rules.md`.
 
-**Changelog Entry**:
-```markdown
-### Changed
-- Upgraded normalize.css from 4.2.0 to 10.x
-- Tightened React peer dependency to ^18.0.0 (from 17.0.2 - 18.3.1)
-- Locked @skyscanner/bpk-svgs to exact version for build reproducibility
+**Breaking Changes**: None
 
-### Removed
-- Removed object-assign polyfill (native Object.assign used)
-- Removed intersection-observer polyfill (native browser support)
-```
-
-## Release Checklist
-
-Before completing this task:
-
-- [ ] Dependency audit report generated
-- [ ] All dependency changes applied
-- [ ] TypeScript compiles without errors
-- [ ] ESLint and Stylelint pass
-- [ ] All unit tests pass
-- [ ] All accessibility tests pass
-- [ ] Storybook builds successfully
-- [ ] No visual regressions detected
-- [ ] npm audit shows no new high/critical issues
-- [ ] Migration log completed
-- [ ] PR ready for review
-
-## Notes
-
-### Key Patterns
-
-1. **Change one dependency at a time** - Run tests after each change to isolate issues
-2. **Preserve SSR compatibility** - Keep server-side stubs even when removing browser polyfills
-3. **Document everything** - Migration log captures decisions and issues for future reference
-
-### Common Pitfalls to Avoid
-
-1. ❌ Removing all polyfill code at once → ✅ Remove incrementally with tests
-2. ❌ Forgetting SSR stubs → ✅ Keep window-undefined checks
-3. ❌ Updating lock file mid-changes → ✅ Regenerate only after all changes
-4. ❌ Skipping visual regression check → ✅ Build and inspect Storybook
+**Deprecations**: None
 
 ## References
 
-- **Implementation Plan**: `docs/implementation-plans/phase-0.1-cleanup-dependencies.md`
-- **Research**: `specs/001-cleanup-dependencies/research.md`
+- **Implementation Plan**: `docs/implementation-plans/phase-1-nx-initialization.md`
+- **Nx Documentation**: https://nx.dev/
+- **Phase 0.4 Completion**: Codegen configuration already done
 - **Backpack Constitution**: `.specify/memory/constitution.md`
-- **Versioning Rules**: `decisions/versioning-rules.md`
-- **Browser Support**: browserslist in package.json

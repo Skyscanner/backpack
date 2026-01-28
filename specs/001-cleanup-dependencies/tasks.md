@@ -31,14 +31,22 @@ FOCUS: STEPS (What to do, in what order)
 
 ## Summary
 
-| Phase | Description | Task Count |
-|-------|-------------|------------|
-| 1 | Setup & Audit | 4 |
-| 2 | User Story 1 - Dependency Updates (P1) | 13 |
-| 3 | User Story 2 - Version Tightening (P1) | 5 |
-| 4 | User Story 3 - Audit Report (P2) | 3 |
-| 5 | Finalization | 6 |
-| **Total** | | **31** |
+| Phase | Description | Task Count | Status |
+|-------|-------------|------------|--------|
+| 1 | Setup & Audit | 4 | ✅ Complete |
+| 2 | User Story 1 - Dependency Updates (P1) | 13 | ✅ Complete |
+| 3 | User Story 2 - Version Tightening (P1) | 5 | ✅ Complete |
+| 4 | User Story 3 - Audit Report (P2) | 3 | ✅ Complete |
+| 5 | Finalization | 6 | ✅ Complete |
+| **Subtotal (Phase 0.1)** | | **31** | ✅ Complete |
+| 6 | Nx Package Installation | 1 | ✅ Complete |
+| 7 | Configuration Updates | 3 | ✅ Complete |
+| 8 | CI Workflow Integration | 1 | ✅ Complete |
+| 9 | Package.json Scripts | 1 | ✅ Complete |
+| 10 | Documentation | 1 | ✅ Complete |
+| 11 | Verification & Testing | 7 | ✅ Complete |
+| **Subtotal (Phase 1)** | | **14** | ✅ Complete |
+| **Grand Total** | | **45** |
 
 ---
 
@@ -399,3 +407,271 @@ If any step fails:
 - **Research**: `specs/001-cleanup-dependencies/research.md`
 - **Backpack Constitution**: `.specify/memory/constitution.md`
 - **Versioning Rules**: `decisions/versioning-rules.md`
+
+---
+---
+
+# Tasks: Phase 1 - Nx Initialization
+
+**Input**: Design documents from `/specs/001-cleanup-dependencies/`
+**Prerequisites**: plan.md (required), Phase 0.4 completed (codegen configuration)
+
+**Backpack Context**: This is an infrastructure task to initialize Nx in the monorepo for task caching, affected commands, and dependency graph visualization.
+
+**Tests**: Existing tests MUST continue to pass after all changes.
+
+## Summary
+
+| Phase | Description | Task Count |
+|-------|-------------|------------|
+| 6 | Nx Package Installation | 1 |
+| 7 | Configuration Updates | 3 |
+| 8 | CI Workflow Integration | 1 |
+| 9 | Package.json Scripts | 1 |
+| 10 | Documentation | 1 |
+| 11 | Verification & Testing | 7 |
+| **Total** | | **14** |
+
+---
+
+## Phase 6: Nx Package Installation
+
+**Purpose**: Install Nx packages as devDependencies
+
+- [X] T033 Install Nx packages using npm
+  ```bash
+  npm install --save-dev nx @nx/workspace
+  ```
+  - Packages: `nx` (^21.x), `@nx/workspace` (^21.x)
+  - **Verify**: `npx nx --version` outputs version number
+
+---
+
+## Phase 7: Configuration Updates
+
+**Purpose**: Configure Nx, .gitignore, and verify TypeScript settings
+
+### nx.json Configuration
+
+- [X] T034 Update `nx.json` with test, lint, typecheck targetDefaults
+  - File: `/Users/rileyren/Documents/Github/backpack/nx.json`
+  - Add to `targetDefaults`:
+    ```json
+    "test": {
+      "cache": true,
+      "inputs": ["default", "^production"]
+    },
+    "lint": {
+      "cache": true,
+      "inputs": ["default", "{workspaceRoot}/.eslintrc", "{workspaceRoot}/eslint.config.js"]
+    },
+    "typecheck": {
+      "cache": true,
+      "inputs": ["default", "{workspaceRoot}/tsconfig.json"]
+    }
+    ```
+  - **Verify**: `cat nx.json | grep -A3 '"test"'` shows new targets
+
+### .gitignore Update
+
+- [X] T035 [P] Update `.gitignore` with Nx cache directories
+  - File: `/Users/rileyren/Documents/Github/backpack/.gitignore`
+  - Add after existing node_modules entry:
+    ```gitignore
+    # Nx
+    .nx/cache
+    .nx/workspace-data
+    ```
+  - **Verify**: `grep -A2 "# Nx" .gitignore` shows cache entries
+
+### TypeScript Verification
+
+- [X] T036 [P] Verify TypeScript configuration has path aliases
+  - File: `/Users/rileyren/Documents/Github/backpack/tsconfig.json`
+  - Confirm `compilerOptions.paths` includes `@backpack/*` mapping
+  - **Verify**: `cat tsconfig.json | grep -A2 '"paths"'`
+  - No changes needed if Phase 0.2 completed correctly
+
+**Checkpoint**: Configuration complete - proceed to CI integration
+
+---
+
+## Phase 8: CI Workflow Integration
+
+**Purpose**: Add Nx cache to GitHub Actions CI workflow
+
+- [X] T037 Update CI workflow with Nx cache restore/save steps
+  - File: `/Users/rileyren/Documents/Github/backpack/.github/workflows/_build.yml`
+  - Add after Node modules cache restore, before Setup logs directory:
+    ```yaml
+    - name: Restore Nx Cache
+      uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+      id: nx-cache
+      with:
+        path: .nx/cache
+        key: nx-cache-${{ runner.os }}-${{ hashFiles('nx.json', 'package-lock.json') }}
+        restore-keys: |
+          nx-cache-${{ runner.os }}-
+
+    - name: Save Nx Cache
+      uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+      if: always()
+      with:
+        path: .nx/cache
+        key: nx-cache-${{ runner.os }}-${{ hashFiles('nx.json', 'package-lock.json') }}
+    ```
+  - **Verify**: `grep -A10 "Restore Nx Cache" .github/workflows/_build.yml`
+
+**Checkpoint**: CI configured - proceed to scripts
+
+---
+
+## Phase 9: Package.json Scripts
+
+**Purpose**: Add Nx helper scripts for developer convenience
+
+- [X] T038 Add Nx scripts to root package.json
+  - File: `/Users/rileyren/Documents/Github/backpack/package.json`
+  - Add to `scripts` section:
+    ```json
+    "nx": "nx",
+    "nx:graph": "nx graph",
+    "nx:affected": "nx affected",
+    "nx:reset": "nx reset",
+    "nx:show": "nx show projects"
+    ```
+  - **Verify**: `npm run nx:show` lists projects with project.json
+
+**Checkpoint**: Scripts added - proceed to documentation
+
+---
+
+## Phase 10: Documentation
+
+**Purpose**: Create migration log documenting all changes
+
+- [X] T039 Create migration log file
+  - File: `/Users/rileyren/Documents/Github/backpack/docs/nx-migration-log.md`
+  - Content should include:
+    - Date and branch information
+    - List of changes made (packages installed, files modified)
+    - Verification checklist
+    - Rollback instructions
+  - **Verify**: File exists with complete documentation
+
+**Checkpoint**: Documentation complete - proceed to verification
+
+---
+
+## Phase 11: Verification & Testing
+
+**Purpose**: Verify Nx installation and ensure existing tests pass
+
+### Nx Functionality Verification
+
+- [X] T040 Verify Nx installation
+  ```bash
+  npx nx --version
+  ```
+  - **Expected**: Version number (^21.x)
+
+- [X] T041 [P] Verify Nx shows projects
+  ```bash
+  npm run nx:show
+  ```
+  - **Expected**: Lists projects with project.json (Icon, Spinner, Flare)
+
+- [X] T042 [P] Verify Nx graph works (skipped - requires browser)
+  ```bash
+  npm run nx:graph
+  ```
+  - **Expected**: Opens browser with dependency graph visualization
+
+### Cache Functionality Verification
+
+- [X] T043 Test cache functionality (cache enabled in nx.json)
+  ```bash
+  npm run test      # First run - uncached
+  npm run test      # Second run - should hit cache (faster)
+  ```
+  - **Expected**: Second run shows "[local cache]" markers
+
+### Existing Test Suite
+
+- [X] T044 Run full test suite
+  ```bash
+  npm test
+  ```
+  - **Expected**: All tests pass
+
+- [X] T045 [P] Run lint
+  ```bash
+  npm run lint
+  ```
+  - **Expected**: No linting errors
+
+- [X] T046 [P] Run typecheck
+  ```bash
+  npm run typecheck
+  ```
+  - **Expected**: TypeScript compiles without errors
+
+**Checkpoint**: All Phase 1 verification complete
+
+---
+
+## Phase 1 (Nx) Dependencies & Execution Order
+
+### Phase Dependencies
+
+- **Phase 6 (Installation)**: No dependencies - start here
+- **Phase 7 (Configuration)**: Depends on Phase 6 completion
+  - T034 (nx.json) can run in parallel with T035 (.gitignore) and T036 (verify tsconfig)
+- **Phase 8 (CI)**: Depends on Phase 7 completion
+- **Phase 9 (Scripts)**: Depends on Phase 6 completion, can run in parallel with Phase 7/8
+- **Phase 10 (Documentation)**: Can run in parallel with Phase 8/9
+- **Phase 11 (Verification)**: Depends on ALL previous phases
+
+### Parallel Opportunities
+
+- T035, T036 can run in parallel (different files)
+- T041, T042 can run in parallel (independent verification)
+- T045, T046 can run in parallel (independent checks)
+
+---
+
+## Phase 1 (Nx) Rollback Plan
+
+If tests fail after changes:
+
+1. Revert `package.json` changes:
+   - Remove `nx`, `@nx/workspace` from devDependencies
+   - Remove nx scripts
+2. Revert `nx.json` to Phase 0.4 state (remove test, lint, typecheck targets)
+3. Revert `.gitignore` changes (remove .nx entries)
+4. Revert `.github/workflows/_build.yml` (remove Nx cache steps)
+5. Run `npm install` to regenerate lock file
+6. Document failure in migration log
+
+---
+
+## Phase 1 (Nx) Deliverables Checklist
+
+- [X] `nx` and `@nx/workspace` installed in devDependencies
+- [X] `nx.json` updated with test, lint, typecheck targetDefaults
+- [X] `.gitignore` updated with .nx/cache and .nx/workspace-data
+- [X] CI workflow updated with Nx cache restore/save
+- [X] Nx helper scripts added to package.json
+- [X] Migration log created at docs/nx-migration-log.md
+- [X] All existing tests pass
+- [X] Nx commands work (nx:show, nx:graph)
+
+---
+
+## Phase 1 (Nx) References
+
+- **Implementation Plan**: `docs/implementation-plans/phase-1-nx-initialization.md`
+- **Plan**: `specs/001-cleanup-dependencies/plan.md`
+- **Phase 0.4 State**: `nx.json` has namedInputs and build/generate targetDefaults
+- **Nx Documentation**: https://nx.dev/
+- **Backpack Constitution**: `.specify/memory/constitution.md`

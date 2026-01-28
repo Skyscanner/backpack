@@ -29,6 +29,18 @@
     "generate": {
       "cache": true,
       "inputs": ["svgSources", "{projectRoot}/**/*"]
+    },
+    "test": {
+      "cache": true,
+      "inputs": ["default", "^production"]
+    },
+    "lint": {
+      "cache": true,
+      "inputs": ["default", "{workspaceRoot}/.eslintrc", "{workspaceRoot}/eslint.config.js"]
+    },
+    "typecheck": {
+      "cache": true,
+      "inputs": ["default", "{workspaceRoot}/tsconfig.json"]
     }
   },
   "defaultBase": "main"
