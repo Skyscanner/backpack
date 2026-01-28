@@ -1,0 +1,295 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkInputV2 should render clear button with always mode 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-input-v2__container"
+  >
+    <input
+      aria-invalid="false"
+      class="bpk-input-v2 bpk-input-v2--clearable bpk-input-v2--persistent-clearable"
+      id="test"
+      name="test"
+      type="text"
+      value="test value"
+    />
+    <button
+      aria-label="Clear"
+      class="bpk-input-v2__clear-button bpk-input-v2__clear-button--persistent"
+      tabindex="-1"
+      title="Clear"
+      type="button"
+    >
+      <span
+        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentcolor"
+          focusable="false"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5M7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkInputV2 should render clear button with whileEditing mode 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-input-v2__container"
+  >
+    <input
+      aria-invalid="false"
+      class="bpk-input-v2 bpk-input-v2--clearable"
+      id="test"
+      name="test"
+      type="text"
+      value="test value"
+    />
+    <button
+      aria-label="Clear"
+      class="bpk-input-v2__clear-button"
+      tabindex="-1"
+      title="Clear"
+      type="button"
+    >
+      <span
+        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentcolor"
+          focusable="false"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5M7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkInputV2 should render correctly when disabled 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input-v2"
+    disabled=""
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInputV2 should render correctly with all supported input types 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input-v2"
+    id="test-text"
+    name="test-text"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInputV2 should render correctly with all supported input types 2`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input-v2"
+    id="test-email"
+    name="test-email"
+    type="email"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInputV2 should render correctly with all supported input types 3`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input-v2"
+    id="test-number"
+    name="test-number"
+    type="number"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInputV2 should render correctly with all supported input types 4`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input-v2"
+    id="test-password"
+    name="test-password"
+    type="password"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInputV2 should render correctly with all supported input types 5`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input-v2"
+    id="test-tel"
+    name="test-tel"
+    type="tel"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInputV2 should render correctly with docked prop 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input-v2 bpk-input-v2--docked"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInputV2 should render correctly with dockedFirst prop 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input-v2 bpk-input-v2--docked-first"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInputV2 should render correctly with dockedLast prop 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input-v2 bpk-input-v2--docked-last"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInputV2 should render correctly with dockedMiddle prop 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input-v2 bpk-input-v2--docked-middle"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInputV2 should render correctly with invalid state 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="true"
+    class="bpk-input-v2 bpk-input-v2--invalid"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInputV2 should render correctly with large prop 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input-v2 bpk-input-v2--large"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInputV2 should render correctly with placeholder 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input-v2"
+    id="test"
+    name="test"
+    placeholder="Enter a country, city or airport"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInputV2 should render correctly with required props 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input-v2"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInputV2 should render correctly with valid state 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input-v2 bpk-input-v2--valid"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
+
+exports[`BpkInputV2 should render correctly with value 1`] = `
+<DocumentFragment>
+  <input
+    aria-invalid="false"
+    class="bpk-input-v2"
+    id="test"
+    name="test"
+    type="text"
+    value="My value"
+  />
+</DocumentFragment>
+`;
