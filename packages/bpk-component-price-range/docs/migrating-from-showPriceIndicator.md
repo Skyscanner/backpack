@@ -12,11 +12,12 @@ The new API provides clearer semantics and better control over how the price mar
 
 If you're using `showPriceIndicator`, here's the quick mapping:
 
-| Old API | New API | Notes |
-|---------|---------|-------|
-| `showPriceIndicator={true}` (or omitted) | Remove the prop entirely | Default behaviour already uses bubble marker |
-| `showPriceIndicator={false}` | `marker={{ type: MARKER_DISPLAY_TYPES.DOT, ... }}` | Explicitly set type to `DOT` |
-| `showPriceIndicator` with no marker | Remove the prop entirely | It has no effect when marker is absent |
+| Old API                                   | New API                                            | Notes                                                            |
+|-------------------------------------------|----------------------------------------------------|------------------------------------------------------------------|
+| `showPriceIndicator={true}` (or omitted)  | Remove the prop entirely                           | Default behaviour already uses bubble marker                     |
+| `showPriceIndicator={false}`              | `marker={{ type: MARKER_DISPLAY_TYPES.DOT, ... }}` | Explicitly set type to `DOT`                                     |
+| `showPriceIndicator` with no marker       | Remove the prop entirely                           | We don't support price ranges with no marker or price indication |
+| Conditional usage of `showPriceIndicator` | Use conditional `marker.type` assignment           | Set to `BUBBLE` or `DOT` based on your condition                 |
 
 ## History and Rationale
 
@@ -31,6 +32,7 @@ The new `marker.type` API provides:
 - **Clearer semantics**: `MARKER_DISPLAY_TYPES.BUBBLE` vs `MARKER_DISPLAY_TYPES.DOT` clearly describes the marker appearance
 - **Better flexibility**: The marker type naturally determines boundary price visibility
 - **Explicit behaviour**: `BUBBLE` shows boundaries, `DOT` hides them
+- **One less edge case**: No support for `showPriceIndicator` without a marker simplifies the API
 
 ## Migrating
 
@@ -133,6 +135,38 @@ without a marker is to show boundary prices.
 />
 ```
 
+### Use case 4: Using `showPriceIndicator` conditionally
+
+If you're using `showPriceIndicator` conditionally (e.g., based on some state), you'll need to adjust your logic to set the `marker.type` accordingly.
+**Before:**
+```tsx
+<BpkPriceRange
+  showPriceIndicator={isExpanded}  // true or false based on state
+  marker={{ price: '£150', percentage: 50 }}
+  segments={{
+    low: { price: '£100', percentage: 20 },
+    high: { price: '£200', percentage: 80 },
+  }}
+/>
+```
+
+**After:**
+```tsx
+import BpkPriceRange, { MARKER_DISPLAY_TYPES } from '@skyscanner/backpack-web/bpk-component-price-range';
+
+<BpkPriceRange
+  marker={{
+    price: '£150',
+    percentage: 50,
+    type: isExpanded ? MARKER_DISPLAY_TYPES.BUBBLE : MARKER_DISPLAY_TYPES.DOT
+  }}
+  segments={{
+    low: { price: '£100', percentage: 20 },
+    high: { price: '£200', percentage: 80 },
+  }}
+/>
+```
+
 ## Migration Checklist
 
 Follow these steps to migrate your codebase:
@@ -142,9 +176,9 @@ Follow these steps to migrate your codebase:
 - [ ] **For each instance found:**
   - [ ] If `showPriceIndicator={true}` (or prop is present with true value): Remove the prop entirely
   - [ ] If `showPriceIndicator={false}`: Add `type: MARKER_DISPLAY_TYPES.DOT` to the marker object
+  - [ ] If using `showPriceIndicator` without a `marker` prop: Remove the prop (it has no effect)
   - [ ] If `showPriceIndicator` is used with either `true` or `false`, conditionally use
     `type: MARKER_DISPLAY_TYPES.BUBBLE` (replacing true) or `MARKER_DISPLAY_TYPES.DOT` (replacing false).
-  - [ ] If using `showPriceIndicator` without a `marker` prop: Remove the prop (it has no effect)
 - [ ] **Import the constant**: Ensure `MARKER_DISPLAY_TYPES` is imported where needed:
   ```tsx
   import BpkPriceRange, { MARKER_DISPLAY_TYPES } from '@skyscanner/backpack-web/bpk-component-price-range';
