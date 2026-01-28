@@ -16,9 +16,8 @@
  * limitations under the License.
  */
 
-import BpkPriceRange, {
-  type Props as BpkPriceRangeProps,
-} from './src/BpkPriceRange';
-
-export type { BpkPriceRangeProps };
-export default BpkPriceRange;
+export { default, type BpkPriceRangeProps } from './src/BpkPriceRange';
+export {
+  MARKER_DISPLAY_TYPES,
+  type MarkerDisplayType,
+} from './src/common-types';
