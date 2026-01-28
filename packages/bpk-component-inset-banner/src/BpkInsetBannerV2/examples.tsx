@@ -19,7 +19,7 @@
 import {
   BpkInsetBannerSponsored,
   VARIANT,
-} from '../../packages/bpk-component-inset-banner';
+} from '../..';
 
 const image =
   'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg';

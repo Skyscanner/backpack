@@ -21,10 +21,11 @@ import type { ReactElement, InputHTMLAttributes, LegacyRef } from 'react';
 // @ts-ignore
 // BpkAutosuggestSuggestion is a Flow-based JS file without type declarations.
 // TODO: This will be removed once the file is migrated to TypeScript.
-import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
-import BpkAutosuggestV2 from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestV2/BpkAutosuggest';
-import { withRtlSupport } from '../../packages/bpk-component-icon';
-import FlightIcon from '../../packages/bpk-component-icon/lg/flight';
+import { withRtlSupport } from '../../../bpk-component-icon';
+import FlightIcon from '../../../bpk-component-icon/lg/flight';
+import BpkAutosuggestSuggestion from '../BpkAutosuggestSuggestion';
+
+import BpkAutosuggestV2 from './BpkAutosuggest';
 
 const BpkFlightIcon = withRtlSupport(FlightIcon);
 

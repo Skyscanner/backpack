@@ -183,6 +183,12 @@ Relocate all Storybook story files from the centralized `examples/` directory to
 - **What happens to screenshot assets referenced in stories?**
   Screenshot assets in `docs/` directories remain in their current locations - only story source files move.
 
+- **How are V2 component stories handled?**
+  V2 component stories (e.g., `bpk-component-autosuggestV2`, `bpk-component-modal-v2`, `bpk-component-inset-banner-v2`) are stories for component variants that exist as subdirectories within existing packages. These stories MUST be moved to their corresponding V2 subdirectory within the main package:
+  - `examples/bpk-component-autosuggestV2/` → `packages/bpk-component-autosuggest/src/BpkAutosuggestV2/`
+  - `examples/bpk-component-modal-v2/` → `packages/bpk-component-modal/src/BpkModalV2/`
+  - `examples/bpk-component-inset-banner-v2/` → `packages/bpk-component-inset-banner/src/BpkInsetBannerV2/`
+
 ## Requirements *(mandatory)*
 
 ### Functional Requirements
@@ -197,6 +203,7 @@ Relocate all Storybook story files from the centralized `examples/` directory to
 - **FR-008**: Import paths to shared utilities MUST be updated (e.g., from `../bpk-storybook-utils` to `../../bpk-storybook-utils`)
 - **FR-009**: All Percy visual regression tests MUST continue to pass with colocated stories
 - **FR-010**: CI Storybook build and deployment workflows MUST succeed without modifications (or with minimal configuration updates)
+- **FR-011**: V2 component variant stories MUST be moved to their corresponding V2 subdirectory within the parent package (e.g., `bpk-component-autosuggestV2` stories → `packages/bpk-component-autosuggest/src/BpkAutosuggestV2/`)
 
 ### Non-Functional Requirements
 

@@ -200,6 +200,35 @@ This is NOT a component development - it's an infrastructure migration task.
 
 ---
 
+## Phase 4b: V2 Component Stories Migration [US1, US2, US3]
+
+**Purpose**: Migrate V2 component variant stories to their corresponding subdirectories
+
+### V2 Component Analysis
+
+V2 components are variant implementations that exist as subdirectories within parent packages. Their stories reference the V2 subdirectory and should be colocated there.
+
+| Source | Target | Notes |
+|--------|--------|-------|
+| `examples/bpk-component-autosuggestV2/` | `packages/bpk-component-autosuggest/src/BpkAutosuggestV2/` | V2 autosuggest with new API |
+| `examples/bpk-component-modal-v2/` | `packages/bpk-component-modal/src/BpkModalV2/` | V2 modal with MODAL_STYLING |
+| `examples/bpk-component-inset-banner-v2/` | `packages/bpk-component-inset-banner/src/BpkInsetBannerV2/` | V2 inset banner sponsored |
+
+### Migration Tasks
+
+- [ ] T085 [US1] [US3] Move autosuggestV2 stories: `git mv examples/bpk-component-autosuggestV2/* packages/bpk-component-autosuggest/src/BpkAutosuggestV2/`
+- [ ] T086 [US1] [US3] Move modal-v2 stories: `git mv examples/bpk-component-modal-v2/* packages/bpk-component-modal/src/BpkModalV2/`
+- [ ] T087 [US1] [US3] Move inset-banner-v2 stories: `git mv examples/bpk-component-inset-banner-v2/* packages/bpk-component-inset-banner/src/BpkInsetBannerV2/`
+- [ ] T088 Update import paths in V2 story files (adjust relative paths for new location)
+- [ ] T089 [US2] Run TypeScript check: `npm run typecheck`
+- [ ] T090 [US2] Build Storybook: `npm run storybook:dist`
+- [ ] T091 Clean up empty examples/bpk-component-*v2 directories
+- [ ] T092 Commit V2 migration: `git commit -m "[WOODPECKER-4041] Colocate V2 component stories"`
+
+**Checkpoint**: All V2 component stories migrated to their variant subdirectories
+
+---
+
 ## Phase 5: Final Verification & Commit [US2, US3, US4]
 
 **Purpose**: Comprehensive validation before committing migration

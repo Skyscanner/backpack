@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkModalV2 } from '../../packages/bpk-component-modal/src/BpkModalV2/BpkModal';
-
+import { BpkModalV2 } from './BpkModal';
 import {
   DefaultExample,
   LongTitleExample,

@@ -18,12 +18,12 @@
 
 import { Children, useState } from 'react';
 
-import BpkButton from '../../packages/bpk-component-button';
-import { BpkModalV2, MODAL_STYLING } from '../../packages/bpk-component-modal';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
+import { BpkModalV2, MODAL_STYLING } from '../..';
+import BpkButton from '../../../bpk-component-button';
+import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
+import { cssModules, withDefaultProps } from '../../../bpk-react-utils';
 
-import type { Props as BpkModalProps } from '../../packages/bpk-component-modal/src/BpkModalV2/BpkModal';
+import type { Props as BpkModalProps } from './BpkModal';
 
 import STYLES from './examples.module.scss';
 
