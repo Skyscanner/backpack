@@ -130,9 +130,9 @@ describe('BpkCardListCarousel', () => {
 
       const carouselElement = screen.getByTestId('bpk-card-list-row-rail__carousel');
 
-      fireEvent.wheel(carouselElement, {
-        deltaY: 100,
-      });
+      fireEvent.wheel(carouselElement);
+
+      
 
       expect(lockScroll).toHaveBeenCalled();
     });
@@ -153,12 +153,9 @@ describe('BpkCardListCarousel', () => {
 
       const carouselElement = screen.getByTestId('bpk-card-list-row-rail__carousel');
 
-      fireEvent.wheel(carouselElement, {
-        deltaY: 100,
-      });
+      fireEvent.wheel(carouselElement);
 
       expect(lockScroll).not.toHaveBeenCalled();
     });
-
   });
 });
