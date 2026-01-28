@@ -130,7 +130,7 @@ jobs:
         id: storybook-dist-cache
         with:
           path: dist-storybook/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**') }}
 
       - name: Percy Test
         run: npm run percy-test
