@@ -240,9 +240,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
         const commonProps = {
           className: getClassName(`bpk-card-list-row-rail__${layout}__card`),
-          style: {
-            ...shownNumberStyle,
-          },
+          style: shownNumberStyle,
           key: `carousel-card-${index.toString()}`,
           role: 'group',
         };
@@ -252,17 +250,19 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           renderList[index] === 1 || hasBeenVisibleRef.current.has(index);
         if (!shouldRenderCard) {
           return (
-            <div
-              {...commonProps}
-              style={{
-                ...commonProps.style,
-                ...cardDimensionStyle,
-                contain: 'paint',
-              }}
-              data-testid="bpk-card-list-carousel--placeholder"
-              aria-hidden="true"
-            >
-              {card}
+            <div className={getClassName('bpk-card-list-row-rail__card-slot')}>
+              <div
+                {...commonProps}
+                style={{
+                  ...commonProps.style,
+                  ...cardDimensionStyle,
+                  contain: 'paint',
+                }}
+                data-testid="bpk-card-list-carousel--placeholder"
+                aria-hidden="true"
+              >
+                {card}
+              </div>
             </div>
           );
         }
@@ -273,9 +273,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
             ref={cardRefFns[index]}
             aria-label={slideLabel(index, childrenLength)}
           >
-            <div
-              className={getClassName('bpk-card-list-row-rail__card-wrapper')}
-            >
+            <div className={getClassName('bpk-card-list-row-rail__card-slot')}>
               {card}
             </div>
           </div>
