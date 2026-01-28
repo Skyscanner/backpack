@@ -30,7 +30,6 @@ import { RELEASE_LOCK_DELAY } from './constants';
 export const lockScroll = (
   stateScrollingLockRef: React.MutableRefObject<boolean>,
   openSetStateLockTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
-  onLockRelease?: () => void,
 ) => {
   // eslint-disable-next-line no-param-reassign
   stateScrollingLockRef.current = true;
@@ -41,10 +40,6 @@ export const lockScroll = (
   openSetStateLockTimeoutRef.current = setTimeout(() => {
     // eslint-disable-next-line no-param-reassign
     stateScrollingLockRef.current = false;
-    // Notify when lock is released
-    if (onLockRelease) {
-      onLockRelease();
-    }
   }, RELEASE_LOCK_DELAY);
 };
 
@@ -77,7 +72,6 @@ export const useScrollToCard = (
   cardRefs: React.MutableRefObject<Array<HTMLDivElement | null>>,
   stateScrollingLockRef: React.MutableRefObject<boolean>,
   openSetStateLockTimeoutRef?: React.MutableRefObject<NodeJS.Timeout | null>,
-  onLockRelease?: () => void,
 ) => {
   useEffect(() => {
     const isVisible =
@@ -93,7 +87,7 @@ export const useScrollToCard = (
     if (targetCard) {
       // Set lock before scrolling to prevent page detection from fighting
       if (openSetStateLockTimeoutRef) {
-        lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef, onLockRelease);
+        lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef);
       }
 
       targetCard.scrollIntoView({
