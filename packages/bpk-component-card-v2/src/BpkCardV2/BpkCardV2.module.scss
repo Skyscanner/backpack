@@ -79,17 +79,18 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: tokens.bpk-spacing-base();
 
-  // Single-column layout (default)
+  // Single-column layout (default) - has padding
   &:not(.bpk-card-v2__body--split) {
     flex-direction: column;
+    padding: tokens.bpk-spacing-base();
   }
 
-  // Two-column split layout
+  // Two-column split layout - no padding (Primary/Secondary handle it)
   &.bpk-card-v2__body--split {
     flex-direction: column;
     gap: 0;
+    padding: 0;
 
     // Desktop - horizontal layout with divider
     @media (min-width: 768px) {
