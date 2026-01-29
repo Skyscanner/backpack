@@ -142,9 +142,10 @@ const BpkInsetBanner = ({
                   data-testid="ctaBtn"
                   aria-hidden="false"
                   type="button"
+                  {...getDataComponentAttribute('InsetBanner')}
                 >
                   <div
-                    className={getClassName('bpk-inset-banner--cta-content')} {...getDataComponentAttribute('InsetBanner')}
+                    className={getClassName('bpk-inset-banner--cta-content')}
                   >
                     {callToAction?.text && (
                       <BpkText textStyle={TEXT_STYLES.caption}>

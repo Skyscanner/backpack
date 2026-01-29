@@ -132,6 +132,7 @@ class BpkInput extends Component<Props, State> {
         aria-invalid={isInvalid}
         value={value}
         name={name}
+        {...getDataComponentAttribute('Input')}
         {...rest}
       />
     );

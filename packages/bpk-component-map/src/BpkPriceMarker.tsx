@@ -16,10 +16,13 @@
  * limitations under the License.
  */
 
+import { getDataComponentAttribute } from '../../bpk-react-utils';
+
 import BpkBasicMapMarker from './BpkBasicMapMarker';
 import BpkPriceMarkerButton, { MARKER_STATUSES } from './BpkPriceMarkerButton';
 
 import type { Props as BpkPriceMarkerButtonProps } from './BpkPriceMarkerButton';
+
 
 type Props = {
   accessibilityLabel: string;
