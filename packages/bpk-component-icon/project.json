@@ -4,20 +4,33 @@
   "sourceRoot": "packages/bpk-component-icon/src",
   "projectType": "library",
   "targets": {
+    "codegen": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "gulp generateIcons",
+        "cwd": "{workspaceRoot}"
+      },
+      "outputs": [
+        "{projectRoot}/sm",
+        "{projectRoot}/lg",
+        "{projectRoot}/xxxl"
+      ]
+    },
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "babel src --out-dir dist --extensions \".ts,.tsx,.js,.jsx\" --config-file ../../babel.config.js",
+        "command": "BABEL_ENV=dev babel src --out-dir dist --extensions \".ts,.tsx,.js,.jsx\" --config-file ../../babel.config.js",
         "cwd": "packages/bpk-component-icon"
       },
       "outputs": [
         "{projectRoot}/dist"
-      ]
+      ],
+      "dependsOn": ["codegen"]
     },
     "test": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "TZ=Etc/UTC jest --coverage --testPathPatterns='packages/bpk-component-icon'",
+        "command": "TZ=Etc/UTC jest --coverage --testPathPatterns='{projectRoot}' --collectCoverageFrom='{projectRoot}/src/**/*.{js,jsx,ts,tsx}'",
         "cwd": "{workspaceRoot}"
       },
       "outputs": [

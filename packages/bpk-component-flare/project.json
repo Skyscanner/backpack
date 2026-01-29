@@ -4,20 +4,31 @@
   "sourceRoot": "packages/bpk-component-flare/src",
   "projectType": "library",
   "targets": {
+    "codegen": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "gulp generateFlare",
+        "cwd": "{workspaceRoot}"
+      },
+      "outputs": [
+        "{projectRoot}/src/__generated__/js"
+      ]
+    },
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "babel src --out-dir dist --extensions \".ts,.tsx,.js,.jsx\" --config-file ../../babel.config.js",
+        "command": "BABEL_ENV=dev babel src --out-dir dist --extensions \".ts,.tsx,.js,.jsx\" --config-file ../../babel.config.js",
         "cwd": "packages/bpk-component-flare"
       },
       "outputs": [
         "{projectRoot}/dist"
-      ]
+      ],
+      "dependsOn": ["codegen"]
     },
     "test": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "TZ=Etc/UTC jest --coverage --testPathPatterns='packages/bpk-component-flare'",
+        "command": "TZ=Etc/UTC jest --coverage --testPathPatterns='{projectRoot}' --collectCoverageFrom='{projectRoot}/src/**/*.{js,jsx,ts,tsx}'",
         "cwd": "{workspaceRoot}"
       },
       "outputs": [

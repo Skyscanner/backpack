@@ -73,6 +73,10 @@
     ]
   },
   "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "\\.figma\\.(js|jsx|ts|tsx)$"
+    ],
     "coverageReporters": [
       "text"
     ],
@@ -96,6 +100,11 @@
     ],
     "testEnvironment": "jsdom",
     "testRegex": "packages/.*-test\\.[jt]sx?$",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/.nx/cache/",
+      "/bpk-component-map/dist/"
+    ],
     "transformIgnorePatterns": [
       "node_modules/(?!bpk|@skyscanner|d3-.*|internmap)"
     ],

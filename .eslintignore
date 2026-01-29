@@ -1,5 +1,6 @@
 node_modules
 dist
+dist-npm
 dist-storybook
 coverage
 /packages/bpk-component-flare/src/__generated__
