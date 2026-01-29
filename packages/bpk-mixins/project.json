@@ -1,8 +1,8 @@
 {
   "name": "bpk-mixins",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/bpk-mixins/src",
+  "sourceRoot": "packages/bpk-mixins",
   "projectType": "library",
-  "tags": ["scope:component", "type:lib"],
+  "tags": ["scope:foundation", "type:lib"],
   "targets": {}
 }

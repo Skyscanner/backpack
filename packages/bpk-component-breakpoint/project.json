@@ -4,5 +4,18 @@
   "sourceRoot": "packages/bpk-component-breakpoint/src",
   "projectType": "library",
   "tags": ["scope:component", "type:lib"],
-  "targets": {}
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["packages/bpk-component-breakpoint/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx jest packages/bpk-component-breakpoint --passWithNoTests"
+      }
+    }
+  }
 }
