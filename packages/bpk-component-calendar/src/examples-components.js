@@ -31,7 +31,14 @@ import {
   colorMonteverde,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+import { action } from '../../../examples/bpk-storybook-utils';
 import BpkButton from '../../bpk-component-button';
+import {
+  withButtonAlignment,
+  withRtlSupport,
+} from '../../bpk-component-icon';
+import SmallLongArrowLeftIcon from '../../bpk-component-icon/sm/long-arrow-left';
+import SmallLongArrowRightIcon from '../../bpk-component-icon/sm/long-arrow-right';
 import BpkCalendar, {
   BpkCalendarGrid,
   BpkCalendarGridHeader,
@@ -40,19 +47,12 @@ import BpkCalendar, {
   CustomPropTypes,
   CALENDAR_SELECTION_TYPE,
 } from '../index';
+
 import {
   dateToBoundaries,
   startOfDay,
   addDays,
 } from './date-utils';
-import {
-  withButtonAlignment,
-  withRtlSupport,
-} from '../../bpk-component-icon';
-import SmallLongArrowLeftIcon from '../../bpk-component-icon/sm/long-arrow-left';
-import SmallLongArrowRightIcon from '../../bpk-component-icon/sm/long-arrow-right';
-import { action } from '../../../examples/bpk-storybook-utils';
-
 import { formatMonth, formatDateFull, weekDays } from './test-utils';
 
 const LeftIcon = withButtonAlignment(withRtlSupport(SmallLongArrowLeftIcon));

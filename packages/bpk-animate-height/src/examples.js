@@ -21,8 +21,7 @@
 import { Component } from 'react';
 import type { Node } from 'react';
 
-import AnimateHeight from '../index';
-import BpkButton from '../index';
+import AnimateHeight, { BpkButton } from '../index';
 
 type Props = {
   fromHeight: string | number,

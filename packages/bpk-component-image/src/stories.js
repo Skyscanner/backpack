@@ -18,8 +18,7 @@
 
 import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
-import BpkBackgroundImage from '../index';
-import BpkImage from '../index';
+import BpkImage, { BpkBackgroundImage } from '../index';
 
 import {
   DefaultExample,

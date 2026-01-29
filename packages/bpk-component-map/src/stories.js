@@ -16,11 +16,12 @@
  * limitations under the License.
  */
 
-import BpkIconMarker from '../index';
-import BpkMap from '../index';
-import BpkOverlayView from '../index';
-import BpkPriceMarker from '../index';
-import BpkPriceMarkerButton from '../index';
+import BpkMap, {
+  BpkIconMarker,
+  BpkOverlayView,
+  BpkPriceMarker,
+  BpkPriceMarkerButton,
+} from '../index';
 
 import {
   SimpleExample,

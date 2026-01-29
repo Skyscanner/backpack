@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
+import { BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
 import BpkLabel from '../index';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
 
 const DefaultExample = () => <BpkLabel htmlFor="origin">Origin</BpkLabel>;
 

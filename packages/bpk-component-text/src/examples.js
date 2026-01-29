@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../index';
-import { withDefaultProps , cssModules } from '../index';
+import BpkText, { TEXT_COLORS, TEXT_STYLES , withDefaultProps , cssModules } from '../index';
 
 
 import STYLES from './examples.module.scss';

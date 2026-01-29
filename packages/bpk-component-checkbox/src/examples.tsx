@@ -19,9 +19,9 @@
 import { Component } from 'react';
 import type { ComponentProps } from 'react';
 
+import { action, BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
 import BpkCheckbox from '../index';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action, BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores doloremque, expedita
 quaerat temporibus ipsam, ut, ipsa, velit sed assumenda suscipit dolore quod similique delectus numquam neque!

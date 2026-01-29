@@ -16,9 +16,10 @@
  * limitations under the License.
  */
 
-import BpkFloatingNotification from '../index';
-import BpkIconHeart from '../index';
-import BpkIconInformationCircle from '../index';
+import BpkFloatingNotification, {
+  BpkIconHeart,
+  BpkIconInformationCircle,
+} from '../index';
 
 const DefaultExample = () => (
   <BpkFloatingNotification text="Saved" hideAfter={8000} />

@@ -19,19 +19,20 @@
 
 import { useState } from 'react';
 
-import { CHIP_TYPES } from '../index';
+import { CHIP_TYPES } from '../../bpk-component-chip';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text/index';
+import { cssModules } from '../../bpk-react-utils/index';
 import BpkMultiSelectChipGroup, {
   BpkSingleSelectChipGroup,
   CHIP_GROUP_TYPES,
-  CHIP_COMPONENT
+  CHIP_COMPONENT,
 } from '../index';
-import BpkText, { TEXT_STYLES } from '../index';
-import { cssModules } from '../index';
 
 import type {
   MultiSelectProps,
   ChipItem,
- SingleSelectProps} from '../index';
+  SingleSelectProps,
+} from '../index';
 
 import STYLES from './examples.module.scss';
 

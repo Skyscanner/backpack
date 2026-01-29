@@ -17,9 +17,10 @@
  */
 
 
-import BpkSectionList from '../index';
-import BpkSectionListItem from '../index';
-import BpkSectionListSection from '../index';
+import BpkSectionList, {
+  BpkSectionListItem,
+  BpkSectionListSection,
+} from '../index';
 
 import DefaultExample from './examples';
 

@@ -19,8 +19,7 @@ import BpkSnippet, {
   BODY_STYLE,
   DESKTOP_LAYOUT,
   IMAGE_ORIENTATION,
-} from '../index';
-import BpkText, {
+  BpkText,
   TEXT_STYLES,
 } from '../index';
 

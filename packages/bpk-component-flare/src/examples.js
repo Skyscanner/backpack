@@ -18,12 +18,12 @@
 
 /* @flow strict */
 
-import {
+import BpkText, {
   BpkFlareBar,
   BpkContentBubble,
+  TEXT_STYLES,
+  cssModules,
 } from '../index';
-import BpkText, { TEXT_STYLES } from '../index';
-import { cssModules } from '../index';
 
 import STYLES from './examples.module.scss';
 

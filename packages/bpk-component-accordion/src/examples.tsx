@@ -29,12 +29,12 @@ import {
   withSingleItemAccordionState,
   BpkAccordionItem,
   withAccordionItemState,
+  BpkCheckbox,
+  withAlignment,
+  StopsIcon,
+  TimeIcon,
+  BpkText,
 } from '../index';
-import BpkCheckbox from '../index';
-import { withAlignment } from '../index';
-import StopsIcon from '../index';
-import TimeIcon from '../index';
-import BpkText from '../index';
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
 const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);

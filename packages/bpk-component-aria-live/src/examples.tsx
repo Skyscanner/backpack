@@ -21,14 +21,14 @@ import type { ChangeEvent, ReactElement } from 'react';
 
 import BpkAriaLive, {
   ARIA_LIVE_POLITENESS_SETTINGS,
+  BpkChip,
+  BpkCode,
+  BpkFieldset,
+  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+  BpkSelect,
+  BpkSwitch,
+  cssModules,
 } from '../index';
-import BpkChip from '../index';
-import { BpkCode } from '../index';
-import BpkFieldset from '../index';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkSelect from '../index';
-import BpkSwitch from '../index';
-import { cssModules } from '../index';
 
 import STYLES from './examples.module.scss';
 

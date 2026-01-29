@@ -16,11 +16,10 @@
  * limitations under the License.
  */
 
-import BpkText, { TEXT_STYLES } from '../index';
-import BpkTooltip, {
-  TOOLTIP_TYPES,
-} from '../index';
-import { withDefaultProps } from '../index';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { withDefaultProps } from '../../bpk-react-utils';
+import BpkTooltip, { TOOLTIP_TYPES } from '../index';
 
 const wrapperStyle = {
   display: 'flex',

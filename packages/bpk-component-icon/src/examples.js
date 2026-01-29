@@ -24,19 +24,23 @@ import {
   lineHeightSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkButton, { SIZE_TYPES } from '../index';
-import {
+import BpkButton, {
+  SIZE_TYPES,
   withAlignment,
   withButtonAlignment,
   withLargeButtonAlignment,
   withRtlSupport,
+  sm,
+  lg,
+  xxxl,
+  LargeLongArrowRightIcon,
+  SearchIcon,
+  SmallLongArrowRightIcon,
+  BpkList,
+  BpkListItem,
+  BpkText,
+  TEXT_STYLES,
 } from '../index';
-import { sm, lg, xxxl } from '../index';
-import LargeLongArrowRightIcon from '../index';
-import SearchIcon from '../index';
-import SmallLongArrowRightIcon from '../index';
-import { BpkList, BpkListItem } from '../index';
-import BpkText, { TEXT_STYLES } from '../index';
 
 const AlignedBaseArrow = withAlignment(
   SmallLongArrowRightIcon,

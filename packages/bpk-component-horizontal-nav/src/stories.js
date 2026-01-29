@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import BpkHorizontalNav from '../index';
-import BpkHorizontalNavItem from '../index';
+import BpkHorizontalNav, { BpkHorizontalNavItem } from '../index';
 
 import {
   DefaultExample,

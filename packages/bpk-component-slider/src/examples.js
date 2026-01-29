@@ -19,8 +19,7 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import { updateOnDirectionChange } from '../index';
-import BpkSlider from '../index';
+import BpkSlider, { updateOnDirectionChange } from '../index';
 
 class SliderContainer extends Component {
   constructor(props) {

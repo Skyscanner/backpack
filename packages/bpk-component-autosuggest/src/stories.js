@@ -19,8 +19,7 @@
 import { Title, Markdown, ArgTypes } from '@storybook/addon-docs/blocks';
 import { userEvent, within } from 'storybook/test';
 
-import BpkAutosuggest from '../index';
-import BpkAutosuggestSuggestion from '../index';
+import BpkAutosuggest, { BpkAutosuggestSuggestion } from '../index';
 
 import AutosuggestExample from './examples';
 

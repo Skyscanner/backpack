@@ -21,9 +21,10 @@ import BpkImage, {
   withLazyLoading,
   withLoadingBehavior,
   BORDER_RADIUS_STYLES,
+  BpkMobileScrollContainer,
+  BpkText,
+  TEXT_STYLES,
 } from '../index';
-import BpkMobileScrollContainer from '../index';
-import BpkText, { TEXT_STYLES } from '../index';
 
 const image =
   'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg';

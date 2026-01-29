@@ -19,18 +19,19 @@
 import type { ReactNode} from 'react';
 import { useState } from 'react';
 
+import { AriaLiveDemo } from '../../bpk-component-aria-live/src/examples';
 import BpkSelectableChip, {
   type BpkSelectableChipProps,
   CHIP_TYPES,
   BpkDismissibleChip,
   BpkDropdownChip,
   BpkIconChip,
+  FaceHappyIconSm,
+  FilterIconSm,
+  BpkText,
+  TEXT_STYLES,
+  cssModules,
 } from '../index';
-import FaceHappyIconSm from '../index';
-import FilterIconSm from '../index';
-import BpkText, { TEXT_STYLES } from '../index';
-import { cssModules } from '../index';
-import { AriaLiveDemo } from '../../bpk-component-aria-live/src/examples';
 
 import STYLES from './examples.module.scss';
 

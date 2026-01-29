@@ -18,8 +18,7 @@
 
 /* @flow strict */
 
-import BpkMobileScrollContainer from '../index';
-import { cssModules } from '../index';
+import BpkMobileScrollContainer, { cssModules } from '../index';
 
 import STYLES from './examples.module.scss';
 

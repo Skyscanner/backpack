@@ -28,9 +28,10 @@ import BpkCard, {
   BpkDividedCard,
   BpkCardWrapper,
   ORIENTATION,
+  BpkText,
+  TEXT_STYLES,
+  cssModules,
 } from '../index';
-import BpkText, { TEXT_STYLES } from '../index';
-import { cssModules } from '../index';
 
 import STYLES from './examples.module.scss';
 

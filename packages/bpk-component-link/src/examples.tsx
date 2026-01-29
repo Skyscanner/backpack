@@ -16,12 +16,15 @@
  * limitations under the License.
  */
 
-import BpkLink from '../index';
-import BpkPanel from '../index';
-import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../index';
-import { cssModules } from '../index';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
+import BpkLink, {
+  BpkPanel,
+  BpkText,
+  TEXT_COLORS,
+  TEXT_STYLES,
+  cssModules,
+} from '../index';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import STYLES from './examples.module.scss';
 

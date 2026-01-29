@@ -16,10 +16,11 @@
  * limitations under the License.
  */
 
-import BpkDismissibleChip from '../index';
-import BpkDropdownChip from '../index';
-import BpkIconChip from '../index';
-import BpkSelectableChip from '../index';
+import BpkSelectableChip, {
+  BpkDismissibleChip,
+  BpkDropdownChip,
+  BpkIconChip,
+} from '../index';
 
 import {
   AllTypesExample,

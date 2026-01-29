@@ -15,15 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { withRtlSupport } from '../index';
-import Car from '../index';
-import Explore from '../index';
-import Flight from '../index';
-import Hotel from '../index';
-import BpkNavigationTabGroup from '../index';
-import { NAVIGATION_TAB_GROUP_TYPES } from '../index';
-import BpkText, { TEXT_STYLES } from '../index';
-import { cssModules } from '../index';
+import BpkNavigationTabGroup, {
+  NAVIGATION_TAB_GROUP_TYPES,
+  withRtlSupport,
+  Car,
+  Explore,
+  Flight,
+  Hotel,
+  BpkText,
+  TEXT_STYLES,
+  cssModules,
+} from '../index';
 
 import type { BpkNavigationTabGroupProps } from '../index';
 

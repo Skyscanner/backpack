@@ -22,15 +22,16 @@ import { Component } from 'react';
 
 import { iconSizeLg, lineHeightBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { withAlignment } from '../index';
-import AccountIcon from '../index';
-import BpkLabel from '../index';
-import BpkNudger from '../index';
-import { cssModules } from '../index';
 import {
   action,
   BpkDarkExampleWrapper,
 } from '../../../examples/bpk-storybook-utils';
+import BpkNudger, {
+  withAlignment,
+  AccountIcon,
+  BpkLabel,
+  cssModules,
+} from '../index';
 
 import STYLES from './BpkNudgerStory.module.scss';
 

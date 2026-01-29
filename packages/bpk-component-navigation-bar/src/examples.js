@@ -18,17 +18,17 @@
 
 /* @flow strict */
 
-import { withRtlSupport } from '../index';
-import CloseIcon from '../index';
-import ArrowIcon from '../index';
+import { action } from '../../../examples/bpk-storybook-utils';
 import BpkNavigationBar, {
   BpkNavigationBarButtonLink,
   BpkNavigationBarIconButton,
   BAR_STYLES,
+  withRtlSupport,
+  CloseIcon,
+  ArrowIcon,
+  BpkText,
+  cssModules,
 } from '../index';
-import BpkText from '../index';
-import { cssModules } from '../index';
-import { action } from '../../../examples/bpk-storybook-utils';
 
 import AirlineLogo from './AirlineLogo';
 

@@ -20,9 +20,9 @@
 import BpkRating, {
   RATING_SIZES,
   RATING_SCALES,
+  BpkStarRating,
+  cssModules,
 } from '../index';
-import BpkStarRating from '../index';
-import { cssModules } from '../index';
 
 import STYLES from './examples.module.scss';
 

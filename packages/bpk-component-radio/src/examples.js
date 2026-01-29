@@ -20,11 +20,11 @@
 
 import { Component } from 'react';
 
-import BpkRadio from '../index';
 import {
   action,
   BpkDarkExampleWrapper,
 } from '../../../examples/bpk-storybook-utils';
+import BpkRadio from '../index';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores doloremque, expedita
 quaerat temporibus ipsam, ut, ipsa, velit sed assumenda suscipit dolore quod similique delectus numquam neque!

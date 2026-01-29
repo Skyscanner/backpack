@@ -21,12 +21,16 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import BpkButton, { BUTTON_TYPES } from '../index';
-import BpkDrawer from '../index';
-import BpkLink from '../index';
-import BpkText, { TEXT_STYLES } from '../index';
-import BpkTooltip from '../index';
-import { cssModules, withDefaultProps } from '../index';
+import BpkButton, {
+  BUTTON_TYPES,
+  BpkDrawer,
+  BpkLink,
+  BpkText,
+  TEXT_STYLES,
+  BpkTooltip,
+  cssModules,
+  withDefaultProps,
+} from '../index';
 
 import STYLES from './examples.module.scss';
 

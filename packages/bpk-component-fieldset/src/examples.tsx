@@ -19,31 +19,28 @@
 import { cloneElement, Component } from 'react';
 import type { ChangeEvent, ReactElement } from 'react';
 
+import { action } from '../../../examples/bpk-storybook-utils';
 import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
   // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-} from '../index';
-import BpkButton from '../index';
-import { format } from '../index';
-import {
+  BpkButton,
+  format,
   weekDays,
   formatMonth,
   formatDateFull,
-} from '../index';
-import BpkCheckbox from '../index';
-import BpkDatepicker from '../index';
-import BpkFieldset, {
+  BpkCheckbox,
+  BpkDatepicker,
+  BpkFieldset,
   type BpkFieldsetProps,
+  BpkInput,
+  INPUT_TYPES,
+  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+  BpkSelect,
+  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+  BpkSplitInput,
+  BpkTextarea,
+  cssModules,
 } from '../index';
-import BpkInput, { INPUT_TYPES } from '../index';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkSelect from '../index';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkSplitInput from '../index';
-import BpkTextarea from '../index';
-import { cssModules } from '../index';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action } from '../../../examples/bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 

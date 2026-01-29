@@ -18,8 +18,7 @@
 
 import BpkGraphicPromo, {
   TEXT_ALIGN,
-} from '../index';
-import { cssModules } from '../index';
+ cssModules } from '../index';
 
 import STYLES from './examples.module.scss';
 

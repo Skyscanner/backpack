@@ -16,12 +16,13 @@
  * limitations under the License.
  */
 
-import BpkTable from '../index';
-import BpkTableBody from '../index';
-import BpkTableCell from '../index';
-import BpkTableHead from '../index';
-import BpkTableHeadCell from '../index';
-import BpkTableRow from '../index';
+import BpkTable, {
+  BpkTableBody,
+  BpkTableCell,
+  BpkTableHead,
+  BpkTableHeadCell,
+  BpkTableRow,
+} from '../index';
 
 import DefaultExample, { WordBreakExample } from './examples';
 

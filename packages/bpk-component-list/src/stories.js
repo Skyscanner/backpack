@@ -17,8 +17,7 @@
  */
 
 
-import BpkList from '../index';
-import BpkListItem from '../index';
+import BpkList, { BpkListItem } from '../index';
 
 import { UnorderedExample, OrderedExample, NestedExample } from './examples';
 

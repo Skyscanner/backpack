@@ -1,0 +1,8 @@
+{
+  "name": "bpk-component-dialog",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-component-dialog/src",
+  "projectType": "library",
+  "tags": ["scope:component", "type:lib"],
+  "targets": {}
+}

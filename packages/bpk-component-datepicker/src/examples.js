@@ -28,6 +28,7 @@ import {
   colorSkyGray,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+import { action } from '../../../examples/bpk-storybook-utils';
 import {
   BpkCalendarNav,
   BpkCalendarGridHeader,
@@ -37,23 +38,19 @@ import {
   CustomPropTypes,
   CALENDAR_SELECTION_TYPE,
   BpkCalendarGrid,
-} from '../index';
-import {
   format,
   dateToBoundaries,
   addMonths,
   addDays,
   startOfDay,
-} from '../index';
-import {
   weekDays,
   formatMonth,
   formatDateFull,
+  BpkDatepicker,
+  BpkInput,
+  withOpenEvents,
+  cssModules,
 } from '../index';
-import BpkDatepicker from '../index';
-import BpkInput, { withOpenEvents } from '../index';
-import { cssModules } from '../index';
-import { action } from '../../../examples/bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 

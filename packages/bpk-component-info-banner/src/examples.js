@@ -24,18 +24,19 @@ import {
   fontWeightBold,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkButton from '../index';
-import CurrencyIcon from '../index';
-import BpkInfoBanner, {
+import { action } from '../../../examples/bpk-storybook-utils';
+import { AriaLiveDemo } from '../../bpk-component-aria-live/src/examples';
+import BpkButton, {
+  CurrencyIcon,
+  BpkInfoBanner,
   ALERT_TYPES,
   BpkInfoBannerExpandable,
   STYLE_TYPES,
-  withBannerAlertState, BpkInfoBannerDismissable
+  withBannerAlertState,
+  BpkInfoBannerDismissable,
+  BpkText,
+  cssModules,
 } from '../index';
-import BpkText from '../index';
-import { cssModules } from '../index';
-import { AriaLiveDemo } from '../../bpk-component-aria-live/src/examples';
-import { action } from '../../../examples/bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 

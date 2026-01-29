@@ -22,8 +22,7 @@ import type { Node } from 'react';
 
 import BpkBreakpoint, {
   BREAKPOINTS,
-} from '../index';
-import { cssModules } from '../index';
+ cssModules } from '../index';
 
 import STYLES from './examples.module.scss';
 

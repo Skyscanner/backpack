@@ -18,11 +18,11 @@
 
 /* @flow strict */
 
+import { action } from '../../../examples/bpk-storybook-utils';
 import BpkSectionList, {
   BpkSectionListSection,
   BpkSectionListItem,
 } from '../index';
-import { action } from '../../../examples/bpk-storybook-utils';
 
 const DefaultExample = () => (
   <BpkSectionList>

@@ -22,15 +22,17 @@ import PropTypes from 'prop-types';
 import { Component } from 'react';
 import type { Node } from 'react';
 
-import BpkButton from '../index';
 import BpkDialog, {
   HEADER_ICON_TYPES,
+  BpkButton,
+  InfoIcon,
+  TickIcon,
+  TrashIcon,
+  BpkText,
+  TEXT_STYLES,
+  cssModules,
+  withDefaultProps,
 } from '../index';
-import InfoIcon from '../index';
-import TickIcon from '../index';
-import TrashIcon from '../index';
-import BpkText, { TEXT_STYLES } from '../index';
-import { cssModules, withDefaultProps } from '../index';
 
 import STYLES from './examples.module.scss';
 

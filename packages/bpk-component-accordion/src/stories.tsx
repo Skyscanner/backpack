@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import BpkAccordion from '../index';
-import BpkAccordionItem from '../index';
+import BpkAccordion, { BpkAccordionItem } from '../index';
 
 import {
   SingleItemExample,

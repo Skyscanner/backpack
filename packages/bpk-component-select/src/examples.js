@@ -19,8 +19,8 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import BpkSelect from '../index';
 import { action } from '../../../examples/bpk-storybook-utils';
+import BpkSelect from '../index';
 
 class StatefulBpkSelect extends Component {
   constructor() {

@@ -22,11 +22,15 @@ import PropTypes from 'prop-types';
 import { Component, createRef } from 'react';
 import type { Node } from 'react';
 
-import BpkButton from '../index';
-import BpkInput, { withOpenEvents } from '../index';
-import BpkPopover from '../index';
-import BpkText, { TEXT_STYLES } from '../index';
-import { cssModules, withDefaultProps } from '../index';
+import BpkPopover, {
+  BpkButton,
+  BpkInput,
+  withOpenEvents,
+  BpkText,
+  TEXT_STYLES,
+  cssModules,
+  withDefaultProps,
+} from '../index';
 
 import STYLES from './examples.module.scss';
 

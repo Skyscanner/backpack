@@ -20,9 +20,7 @@
 
 import { Component } from 'react';
 
-import BpkButton, { BUTTON_TYPES } from '../index';
-import BpkProgress from '../index';
-import { cssModules } from '../index';
+import BpkButton, { BUTTON_TYPES, BpkProgress, cssModules } from '../index';
 
 import STYLES from './examples.module.scss';
 

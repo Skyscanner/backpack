@@ -1,0 +1,8 @@
+{
+  "name": "bpk-component-table",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-component-table/src",
+  "projectType": "library",
+  "tags": ["scope:component", "type:lib"],
+  "targets": {}
+}

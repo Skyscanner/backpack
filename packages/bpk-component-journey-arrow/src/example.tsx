@@ -17,8 +17,8 @@
  */
 
 
-import JourneyArrow from '../index';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import JourneyArrow from '../index';
 
 const JourneyArrowExample = () => {
   const widths = ["25%", "50%", "100%"]

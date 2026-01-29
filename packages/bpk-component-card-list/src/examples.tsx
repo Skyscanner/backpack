@@ -19,26 +19,27 @@
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 
-import BpkCard from '../index';
+import BpkCard from '../../bpk-component-card';
+import BpkMultiSelectChipGroup, {
+  CHIP_GROUP_TYPES,
+} from '../../bpk-component-chip-group';
+import BpkImage from '../../bpk-component-image';
+import BpkLink from '../../bpk-component-link';
+import BpkSnippet, {
+  DESKTOP_LAYOUT as SNIPPET_DESKTOP_LAYOUT,
+} from '../../bpk-component-snippet/src/BpkSnippet';
+import BpkText, {
+  TEXT_STYLES,
+} from '../../bpk-component-text/src/BpkText';
 import BpkCardList from '../index';
+
 import {
   LAYOUTS,
   ACCESSORY_DESKTOP_TYPES,
   ACCESSORY_MOBILE_TYPES,
-} from '../index';
-import BpkMultiSelectChipGroup, {
-  CHIP_GROUP_TYPES,
-} from '../index';
-import BpkImage from '../index';
-import BpkLink from '../index';
-import BpkSnippet, {
-  DESKTOP_LAYOUT as SNIPPET_DESKTOP_LAYOUT,
-} from '../index';
-import BpkText, {
-  TEXT_STYLES,
-} from '../index';
+} from './common-types';
 
-import type { MultiSelectProps } from '../index';
+import type { MultiSelectProps } from '../../bpk-component-chip-group';
 
 import STYLES from './examples.module.scss';
 

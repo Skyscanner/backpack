@@ -18,11 +18,13 @@
 
 /* @flow strict */
 
-import BpkBadge, { BADGE_TYPES } from '../index';
-import BpkSmallExclamationIcon from '../index';
-import BpkSmallHelpCircleIcon from '../index';
-import BpkSmallTickIcon from '../index';
 import { BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
+import BpkBadge, {
+  BADGE_TYPES,
+  BpkSmallExclamationIcon,
+  BpkSmallHelpCircleIcon,
+  BpkSmallTickIcon,
+} from '../index';
 
 import BadgeLayout from './BadgeLayout';
 

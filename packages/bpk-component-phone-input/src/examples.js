@@ -20,9 +20,7 @@
 
 import { Component } from 'react';
 
-import BpkFieldSet from '../index';
-import BpkImage from '../index';
-import BpkPhoneInput from '../index';
+import BpkFieldSet, { BpkImage, BpkPhoneInput } from '../index';
 
 const DIALING_CODE_TO_ID_MAP = {
   '1_us': 'us',

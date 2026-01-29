@@ -16,23 +16,21 @@
  * limitations under the License.
  */
 
-import BpkButton, {
-  BUTTON_TYPES,
-  SIZE_TYPES,
-} from '../index';
-import {
-  withButtonAlignment,
-  withLargeButtonAlignment,
-  withRtlSupport,
-} from '../index';
-import LargeLongArrowRightIcon from '../index';
-import SmallLongArrowRightIcon from '../index';
-import { cssModules } from '../index';
 import {
   action,
   BpkDarkExampleWrapper,
   // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from '../../../examples/bpk-storybook-utils';
+import BpkButton, {
+  BUTTON_TYPES,
+  SIZE_TYPES,
+  withButtonAlignment,
+  withLargeButtonAlignment,
+  withRtlSupport,
+  LargeLongArrowRightIcon,
+  SmallLongArrowRightIcon,
+  cssModules,
+} from '../index';
 
 import STYLES from './BpkButtonStory.module.scss';
 

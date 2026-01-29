@@ -16,9 +16,7 @@
  * limitations under the License.
  */
 
-import BpkCard from '../index';
-import BpkCardWrapper from '../index';
-import BpkDividedCard from '../index';
+import BpkCard, { BpkCardWrapper, BpkDividedCard } from '../index';
 
 import {
   DefaultExample,

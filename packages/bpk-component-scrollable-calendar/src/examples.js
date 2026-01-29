@@ -21,17 +21,15 @@ import { Component } from 'react';
 import { endOfMonth } from 'date-fns/endOfMonth';
 import { startOfMonth } from 'date-fns/startOfMonth';
 
-import {
+import { action } from '../../../examples/bpk-storybook-utils';
+import BpkScrollableCalendar, {
   DateUtils,
   CustomPropTypes,
   CALENDAR_SELECTION_TYPE,
-} from '../index';
-import BpkScrollableCalendar, {
+
   BpkScrollableCalendarDate,
   BpkScrollableCalendarGrid,
-  BpkScrollableCalendarGridList,
-} from '../index';
-import { action } from '../../../examples/bpk-storybook-utils';
+  BpkScrollableCalendarGridList} from '../index';
 
 import {
   formatDateFull,

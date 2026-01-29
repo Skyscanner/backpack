@@ -16,9 +16,11 @@
  * limitations under the License.
  */
 
-import BpkScrollableCalendarDateComponent from '../index';
-import BpkScrollableCalendarGridComponent from '../index';
-import BpkScrollableCalendarGridListComponent from '../index';
+import {
+  BpkScrollableCalendarDate as BpkScrollableCalendarDateComponent,
+  BpkScrollableCalendarGrid as BpkScrollableCalendarGridComponent,
+  BpkScrollableCalendarGridList as BpkScrollableCalendarGridListComponent,
+} from '../index';
 
 import {
   DefaultExample,

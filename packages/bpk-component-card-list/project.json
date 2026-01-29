@@ -1,0 +1,8 @@
+{
+  "name": "bpk-component-card-list",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-component-card-list/src",
+  "projectType": "library",
+  "tags": ["scope:component", "type:lib"],
+  "targets": {}
+}

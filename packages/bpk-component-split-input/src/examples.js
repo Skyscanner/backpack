@@ -17,11 +17,11 @@
  */
 /* @flow strict */
 
-import BpkLabel from '../index';
+import { action } from '../../../examples/bpk-storybook-utils';
 import BpkSplitInput, {
+  BpkLabel,
   INPUT_TYPES,
 } from '../index';
-import { action } from '../../../examples/bpk-storybook-utils';
 
 const SplitInputExample = () => (
   <form>

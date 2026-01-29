@@ -16,6 +16,10 @@
  * limitations under the License.
  */
 
+import {
+  action,
+  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+} from '../../../examples/bpk-storybook-utils';
 import BpkButton, {
   BUTTON_TYPES,
 } from '../../bpk-component-button';
@@ -27,10 +31,6 @@ import ShareIcon from '../../bpk-component-icon/sm/share';
 import TrashIcon from '../../bpk-component-icon/sm/trash';
 import BpkText from '../../bpk-component-text/src/BpkText';
 import BpkVisuallyHidden from '../index';
-import {
-  action,
-  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-} from '../../../examples/bpk-storybook-utils';
 
 const AlignedCloseIcon = withButtonAlignment(CloseIcon);
 const AlignedEditIcon = withButtonAlignment(EditIcon);

@@ -23,14 +23,14 @@ import {
   surfaceContrastDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+import { BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
 import BpkSegmentedControl, {
   useSegmentedControlPanels,
+  SEGMENT_TYPES,
+  BpkText,
+  cssModules,
 } from '../index';
-import { SEGMENT_TYPES } from '../index';
-import BpkText from '../index';
-import { cssModules } from '../index';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 

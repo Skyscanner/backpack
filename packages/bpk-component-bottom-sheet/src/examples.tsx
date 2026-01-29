@@ -19,16 +19,16 @@
 import { Component, Children } from 'react';
 import type { ReactNode } from 'react';
 
+import { action } from '../../../examples/bpk-storybook-utils';
 import BpkBottomSheet, {
   PADDING_TYPE,
+  BpkButton,
+  BpkText,
+  TEXT_STYLES,
+  cssModules,
+  withDefaultProps,
+  type BpkBottomSheetProps,
 } from '../index';
-import BpkButton from '../index';
-import BpkText, { TEXT_STYLES } from '../index';
-import { cssModules, withDefaultProps } from '../index';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action } from '../../../examples/bpk-storybook-utils';
-
-import type { BpkBottomSheetProps } from '../index';
 
 import STYLES from './examples.module.scss';
 

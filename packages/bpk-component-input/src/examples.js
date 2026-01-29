@@ -19,18 +19,17 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import BpkBannerAlert, {
-  ALERT_TYPES,
-} from '../index';
+import { action } from '../../../examples/bpk-storybook-utils';
 import BpkInput, {
   propTypes as inputPropTypes,
   defaultProps as inputDefaultProps,
   INPUT_TYPES,
   CLEAR_BUTTON_MODES,
+  BpkBannerAlert,
+  ALERT_TYPES,
+  BpkLabel,
+  cssModules,
 } from '../index';
-import BpkLabel from '../index';
-import { cssModules } from '../index';
-import { action } from '../../../examples/bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 

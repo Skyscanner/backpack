@@ -21,12 +21,7 @@ import PropTypes from 'prop-types';
 import type { Node } from 'react';
 import { Component, useRef, useState } from 'react';
 
-import { withRtlSupport } from '../index';
-import AirportsIconSm from '../index';
-import FoodIconSm from '../index';
-import HeartIconSm from '../index';
-import HotelIconSm from '../index';
-import LandmarkIconSm from '../index';
+import { action } from '../../../examples/bpk-storybook-utils';
 import BpkMap, {
   BpkOverlayView,
   BpkIconMarker,
@@ -34,10 +29,15 @@ import BpkMap, {
   MARKER_STATUSES,
   withGoogleMapsScript,
   BpkPriceMarkerButton,
+  withRtlSupport,
+  AirportsIconSm,
+  FoodIconSm,
+  HeartIconSm,
+  HotelIconSm,
+  LandmarkIconSm,
+  BpkPopover,
+  BpkText,
 } from '../index';
-import BpkPopover from '../index';
-import BpkText from '../index';
-import { action } from '../../../examples/bpk-storybook-utils';
 
 const BpkMapWithLoading = withGoogleMapsScript(BpkMap);
 

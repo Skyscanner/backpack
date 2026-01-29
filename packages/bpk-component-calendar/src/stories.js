@@ -16,10 +16,12 @@
  * limitations under the License.
  */
 
-import BpkCalendarDateComponent from '../index';
-import BpkCalendarGridComponent from '../index';
-import BpkCalendarGridHeaderComponent from '../index';
-import BpkCalendarNavComponent from '../index';
+import {
+  BpkCalendarDate as BpkCalendarDateComponent,
+  BpkCalendarGrid as BpkCalendarGridComponent,
+  BpkCalendarGridHeader as BpkCalendarGridHeaderComponent,
+  BpkCalendarNav as BpkCalendarNavComponent,
+} from '../index';
 
 import {
   DefaultExample,

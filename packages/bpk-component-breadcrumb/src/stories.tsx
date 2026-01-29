@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import BpkBreadcrumb from '../index';
-import BpkBreadcrumbItem from '../index';
+import BpkBreadcrumb, { BpkBreadcrumbItem } from '../index';
 
 import { DefaultExample, ExtremeExample } from './examples';
 

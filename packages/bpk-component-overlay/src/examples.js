@@ -18,12 +18,13 @@
 /* @flow strict */
 import PropTypes from 'prop-types';
 
-import BpkImage from '../index';
 import BpkOverlay, {
   OVERLAY_TYPES,
+  BpkImage,
+  BpkText,
+  TEXT_STYLES,
+  cssModules,
 } from '../index';
-import BpkText, { TEXT_STYLES } from '../index';
-import { cssModules } from '../index';
 
 import STYLES from './examples.module.scss';
 

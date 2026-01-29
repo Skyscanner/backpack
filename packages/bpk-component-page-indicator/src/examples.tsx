@@ -20,11 +20,11 @@ import { useState } from 'react';
 
 import { backgroundElevation03DarkColor } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { BpkBackgroundImage } from '../index';
+import { cssModules } from '../../bpk-react-utils';
 import BpkPageIndicator, {
+  BpkBackgroundImage,
   VARIANT,
 } from '../index';
-import { cssModules } from '../index';
 
 import type { BpkPageIndicatorProps } from '../index';
 

@@ -23,13 +23,13 @@ import {
   colorSkyGrayTint06,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+import { BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
 import BpkHorizontalNav, {
   BpkHorizontalNavItem,
   HORIZONTAL_NAV_TYPES,
+  BpkText,
+  cssModules,
 } from '../index';
-import BpkText from '../index';
-import { cssModules } from '../index';
-import { BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 

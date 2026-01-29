@@ -18,16 +18,16 @@
 import { addMonths } from 'date-fns/addMonths';
 import { startOfDay } from 'date-fns/startOfDay';
 
+import { action } from '../../../examples/bpk-storybook-utils';
 import {
   BpkCalendarGrid,
   BpkCalendarGridHeader,
   BpkCalendarNav,
   BpkCalendarDate,
+  BpkCalendarWeek,
+  CALENDAR_SELECTION_TYPE,
+  BpkText,
 } from '../index';
-import BpkCalendarWeek from '../index';
-import { CALENDAR_SELECTION_TYPE } from '../index';
-import BpkText from '../index';
-import { action } from '../../../examples/bpk-storybook-utils';
 
 import CalendarContainer, { MonthViewCalendar } from './examples-components';
 import {

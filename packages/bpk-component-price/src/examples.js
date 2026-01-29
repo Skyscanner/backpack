@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import NewWindowIcon from '../index';
-import BpkPrice, { SIZES, ALIGNS } from '../index';
+import BpkPrice, { NewWindowIcon, SIZES, ALIGNS } from '../index';
 
 const XSmallExample = () => <BpkPrice size={SIZES.xsmall} price="£1,830" />;
 

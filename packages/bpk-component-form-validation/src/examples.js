@@ -19,13 +19,14 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import BpkButton from '../index';
-import BpkCheckbox from '../index';
-import BpkFormValidation from '../index';
-import BpkInput from '../index';
-import BpkSelect from '../index';
-import BpkTextarea from '../index';
-import { cssModules } from '../index';
+import BpkButton, {
+  BpkCheckbox,
+  BpkFormValidation,
+  BpkInput,
+  BpkSelect,
+  BpkTextarea,
+  cssModules,
+} from '../index';
 
 import STYLES from './examples.module.scss';
 

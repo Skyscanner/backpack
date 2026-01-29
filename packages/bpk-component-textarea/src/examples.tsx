@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-import BpkLabel from '../index';
-import BpkTextarea from '../index';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action } from '../../../examples/bpk-storybook-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkLabel from '../../bpk-component-label';
+import BpkTextarea from '../index';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate repellat assumenda
 necessitatibus reiciendis, porro temporibus expedita excepturi! Nostrum pariatur odit porro, dolorem dignissimos

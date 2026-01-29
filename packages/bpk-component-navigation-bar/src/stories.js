@@ -16,9 +16,10 @@
  * limitations under the License.
  */
 
-import BpkNavigationBar from '../index';
-import BpkNavigationBarButtonLink from '../index';
-import BpkNavigationBarIconButton from '../index';
+import BpkNavigationBar, {
+  BpkNavigationBarButtonLink,
+  BpkNavigationBarIconButton,
+} from '../index';
 
 import {
   DefaultExample,

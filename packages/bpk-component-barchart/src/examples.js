@@ -28,15 +28,15 @@ import BpkBarchart, {
   BpkChartGridLines,
   BpkChartAxis,
   BpkChartMargin,
-} from '../index';
-import {
   ORIENTATION_X,
   ORIENTATION_Y,
+  remToPx,
+  updateOnDirectionChange,
+  BpkText,
+  TEXT_STYLES,
+  cssModules,
+  withDefaultProps,
 } from '../index';
-import { remToPx } from '../index';
-import { updateOnDirectionChange } from '../index';
-import BpkText, { TEXT_STYLES } from '../index';
-import { cssModules, withDefaultProps } from '../index';
 
 import { withSelectedState } from './hocs';
 

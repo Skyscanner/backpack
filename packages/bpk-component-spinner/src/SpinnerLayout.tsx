@@ -20,8 +20,8 @@ import PropTypes from 'prop-types';
 import type { ReactElement } from 'react';
 import { Children } from 'react';
 
-import { SPINNER_TYPES } from '../index';
 import { cssModules } from '../../bpk-react-utils';
+import { SPINNER_TYPES } from '../index';
 
 import STYLES from './SpinnerLayout.module.scss';
 

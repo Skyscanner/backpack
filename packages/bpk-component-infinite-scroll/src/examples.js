@@ -20,18 +20,17 @@
 
 import PropTypes from 'prop-types';
 
-import BpkButton from '../index';
-import withInfiniteScroll, {
+import { action } from '../../../examples/bpk-storybook-utils';
+import BpkButton, {
+  withInfiniteScroll,
   ArrayDataSource,
   DataSource,
-} from '../index';
-import { BpkList, BpkListItem } from '../index';
-import {
+  BpkList,
+  BpkListItem,
   BpkSpinner,
   SPINNER_TYPES,
+  cssModules,
 } from '../index';
-import { cssModules } from '../index';
-import { action } from '../../../examples/bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 

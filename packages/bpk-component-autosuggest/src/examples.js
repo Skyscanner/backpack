@@ -22,9 +22,9 @@ import { Component } from 'react';
 
 import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
+  withRtlSupport,
+  FlightIcon,
 } from '../index';
-import { withRtlSupport } from '../index';
-import FlightIcon from '../index';
 
 const BpkFlightIcon = withRtlSupport(FlightIcon);
 

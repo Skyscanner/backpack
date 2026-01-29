@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
+import { cssModules } from '../../bpk-react-utils';
 import BpkSkeleton, {
   SKELETON_TYPES,
-  SIZE_TYPES, 
+  SIZE_TYPES,
   IMAGE_SKELETON_STYLE,
-  BACKGROUND_STYLE 
+  BACKGROUND_STYLE,
 } from '../index';
-import { cssModules } from '../index';
 
 import STYLES from './examples.module.scss';
 

@@ -18,8 +18,8 @@
 
 /* @flow strict */
 
-import BpkCloseButton from '../index';
 import { action } from '../../../examples/bpk-storybook-utils';
+import BpkCloseButton from '../index';
 
 const DefaultExample = () => (
   <BpkCloseButton label="Close" onClick={action('Close button clicked')} />

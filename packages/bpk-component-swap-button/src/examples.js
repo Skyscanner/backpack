@@ -17,8 +17,8 @@
  */
 /* @flow strict */
 
-import BpkSwapButton, { SWAPBUTTON_STYLES } from '../index';
 import { action, BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
+import BpkSwapButton, { SWAPBUTTON_STYLES } from '../index';
 
 const wrapperStyles = {
   height: '100px',

@@ -16,9 +16,10 @@
  * limitations under the License.
  */
 
-import BpkInfoBanner from '../index';
-import BpkInfoBannerDismissable from '../index';
-import BpkInfoBannerExpandable from '../index';
+import BpkInfoBanner, {
+  BpkInfoBannerDismissable,
+  BpkInfoBannerExpandable,
+} from '../index';
 
 import {
   DefaultExample,

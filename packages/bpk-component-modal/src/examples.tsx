@@ -22,19 +22,19 @@ import {
   iconSizeSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkButton from '../index';
-import {
-  withAlignment,
-  withRtlSupport,
-} from '../index';
-import ArrowIcon from '../index';
 import BpkModal, {
   MODAL_STYLING,
   type BpkModalProps,
+  BpkButton,
+  withAlignment,
+  withRtlSupport,
+  ArrowIcon,
+  BpkNavigationBarButtonLink,
+  BpkText,
+  TEXT_STYLES,
+  cssModules,
+  withDefaultProps,
 } from '../index';
-import { BpkNavigationBarButtonLink } from '../index';
-import BpkText, { TEXT_STYLES } from '../index';
-import { cssModules, withDefaultProps } from '../index';
 
 import STYLES from './examples.module.scss';
 

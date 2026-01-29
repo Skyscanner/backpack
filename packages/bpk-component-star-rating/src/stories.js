@@ -17,10 +17,11 @@
  */
 
 
-import BpkInteractiveStar from '../index';
-import BpkInteractiveStarRating from '../index';
-import { BpkStarNonRtl } from '../index';
-import BpkStarRating from '../index';
+import BpkStarRating, {
+  BpkInteractiveStar,
+  BpkInteractiveStarRating,
+  BpkStarNonRtl,
+} from '../index';
 
 import {
   FullExample,
