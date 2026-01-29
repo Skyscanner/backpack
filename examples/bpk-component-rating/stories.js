@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkRating from '../../packages/bpk-component-rating/src/BpkRating';
-
 import {
   DefaultExample,
   LargeSizeExample,
@@ -27,6 +25,9 @@ import {
   ZeroToTenScaleExample,
   MixedExample,
 } from './examples';
+
+import BpkRating from '@backpack/bpk-component-rating';
+
 
 export default {
   title: 'bpk-component-rating',

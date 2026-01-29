@@ -35,7 +35,7 @@ import BpkMap, {
   withGoogleMapsScript,
   BpkPriceMarkerButton,
 } from '../../packages/bpk-component-map';
-import BpkPopover from '../../packages/bpk-component-popover';
+import { BpkPopover } from '../../packages/bpk-component-popover';
 import BpkText from '../../packages/bpk-component-text';
 import { action } from '../bpk-storybook-utils';
 

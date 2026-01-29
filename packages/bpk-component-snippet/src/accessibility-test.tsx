@@ -20,9 +20,11 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import { BUTTON_TYPES } from '../../bpk-component-button';
-import { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 
 import BpkSnippet from './BpkSnippet';
+
+import { TEXT_STYLES } from '@backpack/bpk-component-text';
+
 
 describe('BpkJourneyArrow accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {

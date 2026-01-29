@@ -17,11 +17,14 @@
  */
 
 
-import BpkExtraLargeSpinner from '../../packages/bpk-component-spinner/src/BpkExtraLargeSpinner';
-import BpkLargeSpinner from '../../packages/bpk-component-spinner/src/BpkLargeSpinner';
-import BpkSpinner from '../../packages/bpk-component-spinner/src/BpkSpinner';
-
 import { SmallExample, LargeExample, ExtraLargeExample } from './examples';
+
+import {
+  BpkExtraLargeSpinner,
+  BpkLargeSpinner,
+  BpkSpinner,
+} from '@backpack/bpk-component-spinner';
+
 
 export default {
   title: 'bpk-component-spinner',

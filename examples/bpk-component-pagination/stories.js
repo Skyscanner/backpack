@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkPagination from '../../packages/bpk-component-pagination/src/BpkPagination';
-
 import {
   DefaultPaginationExample,
   FivePagesPaginationExample,
@@ -26,6 +24,9 @@ import {
   SinglePaginationExample,
   VisibleRangeExample,
 } from './examples';
+
+import BpkPagination from '@backpack/bpk-component-pagination';
+
 
 export default {
   title: 'bpk-component-pagination',

@@ -29,6 +29,7 @@ export type { BpkBackgroundImageProps };
 export default BpkImage;
 export {
   BpkBackgroundImage,
+  BpkImage,
   withLazyLoading,
   withLoadingBehavior,
   BORDER_RADIUS_STYLES,

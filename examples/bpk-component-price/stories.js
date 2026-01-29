@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkPrice from '../../packages/bpk-component-price/src/BpkPrice';
-
 import {
   XSmallExample,
   XSmallWithTrailingTextExample,
@@ -62,6 +60,9 @@ import {
   LargeLongPriceExample,
   MixedExample,
 } from './examples';
+
+import BpkPrice from '@backpack/bpk-component-price';
+
 
 export default {
   title: 'bpk-component-price',

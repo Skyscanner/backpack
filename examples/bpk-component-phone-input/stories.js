@@ -17,8 +17,6 @@
  */
 
 
-import BpkPhoneInput from '../../packages/bpk-component-phone-input/src/BpkPhoneInput';
-
 import {
   DefaultExample,
   LargeExample,
@@ -29,6 +27,9 @@ import {
   DoubleLengthLabelExamples,
   MixedExample,
 } from './examples';
+
+import BpkPhoneInput from '@backpack/bpk-component-phone-input';
+
 
 export default {
   title: 'bpk-component-phone-input',

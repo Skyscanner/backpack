@@ -22,6 +22,18 @@
     }
   },
   "rules": {
+    // Prevent imports from internal src directories - use public package entry points
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": ["**/bpk-component-*/src/*", "**/bpk-react-utils/src/*", "**/bpk-scrim-utils/src/*"],
+            "message": "Import from the package entry point instead (e.g., '@backpack/bpk-component-xxx' or '@backpack/bpk-react-utils')"
+          }
+        ]
+      }
+    ],
     // Temp adding this whilst migrating to the latest eslint & TS migration
     // Activate this when we run the migration scripts
     // "padding-line-between-statements": [
@@ -163,9 +175,11 @@
   },
   "overrides": [
     {
-      "files": ["*test*", "*examples*"],
+      "files": ["*test*", "*examples*", "*stories*"],
       "rules": {
-        "@skyscanner/rules/forbid-component-props": ["off"]
+        "@skyscanner/rules/forbid-component-props": ["off"],
+        "import/no-unresolved": ["error", { "ignore": ["bpk-storybook-utils"] }],
+        "no-restricted-imports": ["off"]
       }
     },
     {

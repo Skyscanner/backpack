@@ -16,11 +16,20 @@
  * limitations under the License.
  */
 
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 import type { StorybookConfig } from '@storybook/react-webpack5';
+
+// ESM compatibility: __filename and __dirname are not available in ES modules
+// eslint-disable-next-line no-underscore-dangle
+const __filename = fileURLToPath(import.meta.url);
+// eslint-disable-next-line no-underscore-dangle
+const __dirname = path.dirname(__filename);
 
 const config: StorybookConfig = {
   stories: [
-    '../examples/**/stories.@(ts|tsx|js|jsx)',
+    '../packages/**/src/stories.@(ts|tsx|js|jsx)',
   ],
   addons: [
     '@storybook/addon-a11y',
@@ -45,6 +54,17 @@ const config: StorybookConfig = {
         return !isHTMLElementProp
       },
     },
+  },
+  webpackFinal: async (webpackConfig) => {
+    if (webpackConfig.resolve) {
+      // eslint-disable-next-line no-param-reassign
+      webpackConfig.resolve.alias = {
+        ...webpackConfig.resolve.alias,
+        '@backpack': path.resolve(__dirname, '../packages'),
+        'bpk-storybook-utils': path.resolve(__dirname, '../examples/bpk-storybook-utils'),
+      };
+    }
+    return webpackConfig;
   },
 };
 export default config;

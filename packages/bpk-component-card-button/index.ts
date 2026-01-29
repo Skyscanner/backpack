@@ -18,4 +18,7 @@
 
 import BpkSaveButton, { SIZE_TYPES, STYLE_TYPES } from './src/BpkSaveButton';
 
+import type { SizeType, StyleType } from './src/BpkSaveButton';
+
+export type { SizeType, StyleType };
 export { BpkSaveButton, SIZE_TYPES, STYLE_TYPES };

@@ -19,12 +19,13 @@
 import type { ForwardedRef } from 'react';
 import { forwardRef } from 'react';
 
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 
 import type { MarkerType } from './common-types';
 
 import STYLES from './BpkPriceMarker.module.scss';
+
+import BpkText, { TEXT_STYLES } from '@backpack/bpk-component-text';
 
 const getClassName = cssModules(STYLES);
 

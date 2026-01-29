@@ -18,7 +18,19 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "allowJs": false
+    "allowJs": false,
+    "baseUrl": ".",
+    "paths": {
+      "@backpack/bpk-mixins": ["packages/bpk-mixins"],
+      "@backpack/bpk-mixins/*": ["packages/bpk-mixins/*"],
+      "@backpack/bpk-react-utils": ["packages/bpk-react-utils"],
+      "@backpack/bpk-react-utils/*": ["packages/bpk-react-utils/*"],
+      "@backpack/bpk-tokens": ["packages/bpk-tokens"],
+      "@backpack/bpk-tokens/*": ["packages/bpk-tokens/*"],
+      "@backpack/bpk-theming": ["packages/bpk-theming"],
+      "@backpack/bpk-theming/*": ["packages/bpk-theming/*"],
+      "@backpack/*": ["packages/*"]
+    }
   },
   "include": [
     "packages",

@@ -19,11 +19,12 @@
 import type { MouseEvent, FunctionComponent, ReactElement } from 'react';
 import { useState } from 'react';
 
-import BpkBubble from '../../bpk-component-bubble/src/BpkBubble';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkNavigationTabGroup.module.scss';
+
+import { BpkBubble } from '@backpack/bpk-component-bubble';
 
 const getClassName = cssModules(STYLES);
 

@@ -17,13 +17,14 @@
  */
 
 
-import BpkMobileScrollContainer from '../../packages/bpk-component-mobile-scroll-container/src/BpkMobileScrollContainer';
-
 import {
   DefaultExample,
   WithVisibleScrollbarExample,
   SettingLeadingAndTrailingIndicatorClassNameExample,
 } from './examples';
+
+import BpkMobileScrollContainer from '@backpack/bpk-component-mobile-scroll-container';
+
 
 export default {
   title: 'bpk-component-mobile-scroll-container',

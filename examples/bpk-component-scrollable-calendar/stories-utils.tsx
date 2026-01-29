@@ -23,10 +23,9 @@
  * @todo remove this file once we upgrade to Storybook v8
  */
 
-import type { Props as bpkCalendarContainerProps } from '../../packages/bpk-component-calendar/src/BpkCalendarContainer';
-import type { Props as composeProps } from '../../packages/bpk-component-calendar/src/composeCalendar';
+import type { BpkCalendarContainerProps, ComposeCalendarProps } from '@backpack/bpk-component-calendar';
 
-const BpkScrollableCalendarMock = (props: composeProps & bpkCalendarContainerProps) => <div />;
+const BpkScrollableCalendarMock = (props: ComposeCalendarProps & BpkCalendarContainerProps) => <div />;
 
 // eslint-disable-next-line import/prefer-default-export
 export { BpkScrollableCalendarMock };

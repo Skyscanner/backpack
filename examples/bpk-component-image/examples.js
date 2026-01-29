@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-import BpkImage, {
+import {
+  BpkImage,
   BpkBackgroundImage,
   withLazyLoading,
   withLoadingBehavior,

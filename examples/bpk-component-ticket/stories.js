@@ -17,8 +17,6 @@
  */
 
 
-import BpkTicket from '../../packages/bpk-component-ticket/src/BpkTicket';
-
 import {
   DefaultExample,
   VerticalExample,
@@ -29,6 +27,9 @@ import {
   DayViewExample,
   MixedExample,
 } from './examples';
+
+import BpkTicket from '@backpack/bpk-component-ticket';
+
 
 export default {
   title: 'bpk-component-ticket',

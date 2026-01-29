@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkDatepicker from '../../packages/bpk-component-datepicker/src/BpkDatepicker';
-
 import {
   DefaultExample,
   RangeExample,
@@ -32,6 +30,9 @@ import {
   DefaultVisualExample,
   VisualRangeExample,
 } from './examples';
+
+import BpkDatepicker from '@backpack/bpk-component-datepicker';
+
 
 export default {
   title: 'bpk-component-datepicker',

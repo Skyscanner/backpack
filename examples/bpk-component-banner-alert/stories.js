@@ -16,10 +16,6 @@
  * limitations under the License.
  */
 
-import BpkBannerAlert from '../../packages/bpk-component-banner-alert/src/BpkBannerAlert';
-import BpkBannerAlertDismissable from '../../packages/bpk-component-banner-alert/src/BpkBannerAlertDismissable';
-import BpkBannerAlertExpandable from '../../packages/bpk-component-banner-alert/src/BpkBannerAlertExpandable';
-
 import {
   NeutralExample,
   PrimaryExample,
@@ -38,6 +34,9 @@ import {
   DocsDefaultExample,
 } from './examples';
 import { withBannerAlertStateMock } from './stories-utils';
+
+import BpkBannerAlert, { BpkBannerAlertDismissable, BpkBannerAlertExpandable } from '@backpack/bpk-component-banner-alert';
+
 
 export default {
   title: 'bpk-component-banner-alert',

@@ -12,6 +12,11 @@
 /packages/bpk-component-flare/src/__generated__
 !/packages/bpk-component-icon/src
 node_modules
+
+# Nx
+.nx/cache
+.nx/workspace-data
+
 npm-debug.*
 yarn.lock
 /packages/*/changelog.md

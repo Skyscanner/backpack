@@ -24,7 +24,7 @@ import type { Node } from 'react';
 
 import BpkButton from '../../packages/bpk-component-button';
 import BpkInput, { withOpenEvents } from '../../packages/bpk-component-input';
-import BpkPopover from '../../packages/bpk-component-popover';
+import { BpkPopover } from '../../packages/bpk-component-popover';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
 

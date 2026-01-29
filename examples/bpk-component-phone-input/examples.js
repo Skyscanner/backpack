@@ -21,7 +21,7 @@
 import { Component } from 'react';
 
 import BpkFieldSet from '../../packages/bpk-component-fieldset';
-import BpkImage from '../../packages/bpk-component-image';
+import { BpkImage } from '../../packages/bpk-component-image';
 import BpkPhoneInput from '../../packages/bpk-component-phone-input';
 
 const DIALING_CODE_TO_ID_MAP = {

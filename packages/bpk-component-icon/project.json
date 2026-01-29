@@ -1,0 +1,28 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-icon",
+  "sourceRoot": "packages/bpk-component-icon/src",
+  "projectType": "library",
+  "targets": {
+    "generate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "gulp generateIcons",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{workspaceRoot}/node_modules/@skyscanner/bpk-svgs/dist/js/icons/**/*",
+        "{workspaceRoot}/gulpfile.js/bpk-component-icon/**/*",
+        "{workspaceRoot}/.svgs-checksum"
+      ],
+      "outputs": [
+        "{projectRoot}/sm",
+        "{projectRoot}/lg",
+        "{projectRoot}/xxxl"
+      ]
+    },
+    "build": {
+      "dependsOn": ["generate"]
+    }
+  }
+}

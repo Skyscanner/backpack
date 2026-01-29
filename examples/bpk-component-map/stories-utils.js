@@ -25,7 +25,7 @@
 
 import PropTypes from 'prop-types';
 
-import DefaultLoadingElement from '../../packages/bpk-component-map/src/DefaultLoadingElement';
+import DefaultLoadingElement from '@backpack/bpk-component-map';
 
 /**
  * Temporarily re-defining the map props due to a bug in react docgen which doesn't allow us to import the prop types from another file

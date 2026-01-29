@@ -32,7 +32,7 @@ import {
 } from '../../bpk-component-calendar';
 import BpkInput, { withOpenEvents } from '../../bpk-component-input';
 import BpkModal from '../../bpk-component-modal';
-import BpkPopover from '../../bpk-component-popover';
+import { BpkPopover } from '../../bpk-component-popover';
 import { setNativeValue } from '../../bpk-react-utils';
 
 import type {

@@ -39,12 +39,10 @@ import BpkCalendar, {
   composeCalendar,
   CustomPropTypes,
   CALENDAR_SELECTION_TYPE,
-} from '../../packages/bpk-component-calendar';
-import {
+
   dateToBoundaries,
   startOfDay,
-  addDays,
-} from '../../packages/bpk-component-calendar/src/date-utils';
+  addDays} from '../../packages/bpk-component-calendar';
 import {
   withButtonAlignment,
   withRtlSupport,

@@ -17,8 +17,6 @@
  */
 
 
-import BpkRadio from '../../packages/bpk-component-radio/src/BpkRadio';
-
 import {
   DefaultExample,
   MultilineExample,
@@ -28,6 +26,9 @@ import {
   DisabledUncheckedExample,
   MixedExample,
 } from './examples';
+
+import BpkRadio from '@backpack/bpk-component-radio';
+
 
 export default {
   title: 'bpk-component-radio',

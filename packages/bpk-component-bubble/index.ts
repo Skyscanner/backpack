@@ -22,3 +22,4 @@ import BpkBubble, {
 
 export type { BpkBubbleProps };
 export default BpkBubble;
+export { BpkBubble };

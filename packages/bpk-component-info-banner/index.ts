@@ -22,6 +22,9 @@ import BpkInfoBannerExpandable from './src/BpkInfoBannerExpandable';
 import { ALERT_TYPES, STYLE_TYPES } from './src/common-types';
 import withBannerAlertState from './src/withBannerAlertState';
 
+import type { WithBannerAlertStateProps } from './src/withBannerAlertState';
+
+export type { WithBannerAlertStateProps };
 export {
   ALERT_TYPES,
   STYLE_TYPES,

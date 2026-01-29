@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkRtlToggle from '../../packages/bpk-component-rtl-toggle/src/BpkRtlToggle';
+import BpkRtlToggle from '@backpack/bpk-component-rtl-toggle';
 
 export default {
   title: 'bpk-component-rtl-toggle',

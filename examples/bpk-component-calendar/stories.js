@@ -16,11 +16,6 @@
  * limitations under the License.
  */
 
-import BpkCalendarDateComponent from '../../packages/bpk-component-calendar/src/BpkCalendarDate';
-import BpkCalendarGridComponent from '../../packages/bpk-component-calendar/src/BpkCalendarGrid';
-import BpkCalendarGridHeaderComponent from '../../packages/bpk-component-calendar/src/BpkCalendarGridHeader';
-import BpkCalendarNavComponent from '../../packages/bpk-component-calendar/src/BpkCalendarNav';
-
 import {
   DefaultExample,
   CalendarNavExample,
@@ -43,6 +38,14 @@ import {
   RangeDateCalendarExample,
 } from './examples';
 import { BpkCalendarContainerMock } from './stories-utils';
+
+import {
+  BpkCalendarDate as BpkCalendarDateComponent,
+  BpkCalendarGrid as BpkCalendarGridComponent,
+  BpkCalendarGridHeader as BpkCalendarGridHeaderComponent,
+  BpkCalendarNav as BpkCalendarNavComponent,
+} from '@backpack/bpk-component-calendar';
+
 
 export default {
   title: 'bpk-component-calendar',

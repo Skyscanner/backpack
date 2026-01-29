@@ -26,14 +26,15 @@ import BpkSelectableChip, {
   CHIP_TYPES,
 } from '../../bpk-component-chip';
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
-import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkStickyChip from './BpkStickyChip';
 import Nudger, { POSITION } from './Nudger';
 
 import STYLES from './BpkChipGroup.module.scss';
+
+import BpkText, { TEXT_STYLES } from '@backpack/bpk-component-text';
+import BpkVisuallyHidden from '@backpack/bpk-component-visually-hidden';
 
 const getClassName = cssModules(STYLES);
 

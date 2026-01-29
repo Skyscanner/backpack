@@ -16,10 +16,6 @@
  * limitations under the License.
  */
 
-import BpkInfoBanner from '../../packages/bpk-component-info-banner/src/BpkInfoBanner';
-import BpkInfoBannerDismissable from '../../packages/bpk-component-info-banner/src/BpkInfoBannerDismissable';
-import BpkInfoBannerExpandable from '../../packages/bpk-component-info-banner/src/BpkInfoBannerExpandable';
-
 import {
   DefaultExample,
   InfoExample,
@@ -40,6 +36,9 @@ import {
   OnContrastExample,
 } from './examples';
 import { withBannerAlertStateMock } from './stories-utils';
+
+import BpkInfoBanner, { BpkInfoBannerDismissable, BpkInfoBannerExpandable } from '@backpack/bpk-component-info-banner';
+
 
 export default {
   title: 'bpk-component-info-banner',

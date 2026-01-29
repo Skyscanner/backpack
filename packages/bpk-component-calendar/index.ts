@@ -35,10 +35,13 @@ import CustomPropTypes, {
   BpkCalendarDatePropTypes, // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from './src/custom-proptypes-legacy';
 import * as DateUtils from './src/date-utils';
+import { format } from './src/date-utils';
 import themeAttributes from './src/themeAttributes';
 
+import type { Props as BpkCalendarContainerProps } from './src/BpkCalendarContainer';
 import type { Props as BpkCalendarDateProps } from './src/BpkCalendarDate';
 import type { Props as BpkCalendarGridProps } from './src/BpkCalendarGrid';
+import type { Props as ComposeCalendarProps } from './src/composeCalendar';
 import type {
   DaysOfWeek,
   ReactComponent,
@@ -72,4 +75,7 @@ export {
   BpkCalendarDatePropTypes,
   BpkCalendarDateProps,
   BpkCalendarGridProps,
+  BpkCalendarContainerProps,
+  ComposeCalendarProps,
+  format,
 };

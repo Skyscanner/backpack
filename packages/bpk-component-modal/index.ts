@@ -24,8 +24,10 @@ import { propTypes, defaultProps } from './src/legacy-prop-types';
 import themeAttributes from './src/themeAttributes';
 
 import type { Props } from './src/BpkModal';
+import type { Props as BpkModalV2Props } from './src/BpkModalV2/BpkModal';
 
 export type BpkModalProps = Props;
+export type { BpkModalV2Props };
 
 export default BpkModal;
 export { propTypes, defaultProps, themeAttributes, BpkModalV2, MODAL_STYLING };

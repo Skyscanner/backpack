@@ -17,9 +17,10 @@
  */
 
 
-import BpkCloseButton from '../../packages/bpk-component-close-button/src/BpkCloseButton';
-
 import DefaultExample from './examples';
+
+import BpkCloseButton from '@backpack/bpk-component-close-button';
+
 
 export default {
   title: 'bpk-component-close-button',

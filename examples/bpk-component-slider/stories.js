@@ -18,8 +18,6 @@
 
 import { ArgTypes,Title, Markdown } from '@storybook/addon-docs/blocks';
 
-import BpkSlider from '../../packages/bpk-component-slider/src/BpkSlider';
-
 import {
   SimpleSliderExample,
   TimeSliderExample,
@@ -28,6 +26,9 @@ import {
   RangeSliderWithMinimumDistanceExample,
   MixedExample,
 } from './examples';
+
+import BpkSlider from '@backpack/bpk-component-slider';
+
 
 export default {
   title: 'bpk-component-slider',
