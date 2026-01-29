@@ -19,9 +19,9 @@
 import PropTypes from 'prop-types';
 import type { ReactNode } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { getDataComponentAttribute } from '../../bpk-react-utils';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkOverlayView from './BpkOverlayView';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { LatLongPropType, type LatLong } from './common-types';
