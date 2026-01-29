@@ -4,6 +4,16 @@
   "sourceRoot": "packages/bpk-component-spinner/src",
   "projectType": "library",
   "targets": {
+    "codegen": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "gulp generateSpinners",
+        "cwd": "{workspaceRoot}"
+      },
+      "outputs": [
+        "{projectRoot}/src/spinners"
+      ]
+    },
     "build": {
       "executor": "nx:run-commands",
       "options": {
@@ -12,7 +22,8 @@
       },
       "outputs": [
         "{projectRoot}/dist"
-      ]
+      ],
+      "dependsOn": ["codegen"]
     },
     "test": {
       "executor": "nx:run-commands",
