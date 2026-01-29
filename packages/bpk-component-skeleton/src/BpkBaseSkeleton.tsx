@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type { CUSTOM_SIZE_TYPE } from './common-types';
 
@@ -33,7 +33,7 @@ const BpkBaseSkeleton = ({
   skeletonStyle,
   styleObj = undefined,
  }: Props) => (
-    <div className={getClassName('bpk-skeleton', skeletonStyle)} data-backpack-ds-component="BaseSkeleton" style={styleObj}  />
+    <div className={getClassName('bpk-skeleton', skeletonStyle)} {...getDataComponentAttribute('BaseSkeleton')} style={styleObj}  />
   );
 
 export default BpkBaseSkeleton;

@@ -28,7 +28,7 @@ import {
 import ArrowIconLg from '../../bpk-component-icon/lg/long-arrow-right';
 import ArrowIconSm from '../../bpk-component-icon/sm/long-arrow-right';
 import { BpkSpinner, BpkLargeSpinner } from '../../bpk-component-spinner';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules , getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type { Props as ButtonProps } from '../../bpk-component-button';
 
@@ -144,9 +144,9 @@ const BpkLoadingButton = (props: LoadingProps) => {
       type={type}
       {...rest}
     >
-      <div className={getClassName('bpk-loading-button__container')} data-backpack-ds-component="LoadingButton">
-        {loading && <span className={iconClassNames} data-backpack-ds-component="LoadingButton">{loadingIcon}</span>}
-        <div className={getClassName(loading ? "bpk-loading-button--hidden": "bpk-loading-button--visible")} data-backpack-ds-component="LoadingButton">
+      <div className={getClassName('bpk-loading-button__container')} {...getDataComponentAttribute('LoadingButton')}>
+        {loading && <span className={iconClassNames} {...getDataComponentAttribute('LoadingButton')}>{loadingIcon}</span>}
+        <div className={getClassName(loading ? "bpk-loading-button--hidden": "bpk-loading-button--visible")} {...getDataComponentAttribute('LoadingButton')}>
           {child0}
           {child1}
           {child2}

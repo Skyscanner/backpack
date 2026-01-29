@@ -18,7 +18,7 @@
 
 import { useContext, type ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { CardContext } from './CardContext';
 
@@ -72,7 +72,7 @@ const BpkCard = ({
     return (
       <a
         href={href}
-        className={classNames} data-backpack-ds-component="Card"
+        className={classNames} {...getDataComponentAttribute('Card')}
         {...atomicProps}
         {...blankProps}
         {...rest}
@@ -84,14 +84,14 @@ const BpkCard = ({
 
   if (atomic) {
     return (
-      <button type="button" className={classNames} data-backpack-ds-component="Card" {...rest}>
+      <button type="button" className={classNames} {...getDataComponentAttribute('Card')} {...rest}>
         {children}
       </button>
     );
   }
 
   return (
-    <div className={classNames} data-backpack-ds-component="Card" {...rest}>
+    <div className={classNames} {...getDataComponentAttribute('Card')} {...rest}>
       {children}
     </div>
   );

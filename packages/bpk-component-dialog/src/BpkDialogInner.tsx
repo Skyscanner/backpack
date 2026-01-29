@@ -18,7 +18,7 @@
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkContentBubble } from '../../bpk-component-flare';
-import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
+import {  TransitionInitialMount, cssModules , getDataComponentAttribute } from '../../bpk-react-utils';
 import { withScrim } from '../../bpk-scrim-utils';
 
 import { type DialogInnerProps as Props } from './common-types';
@@ -65,8 +65,8 @@ const BpkDialogInner = (props: Props) => {
         className={classNames}
         ref={dialogRef}
       >
-        {flare && <div className={flareClassNames} data-backpack-ds-component="withScrim"><BpkContentBubble/></div>}
-        <div className={contentClassNames} data-backpack-ds-component="withScrim">{children}</div>
+        {flare && <div className={flareClassNames} {...getDataComponentAttribute('withScrim')}><BpkContentBubble/></div>}
+        <div className={contentClassNames} {...getDataComponentAttribute('withScrim')}>{children}</div>
       </section>
     </TransitionInitialMount>
   );

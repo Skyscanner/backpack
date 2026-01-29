@@ -62,7 +62,7 @@ const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
   return (
     <div
       className={getClassName('bpk-card-list-row-rail')}
-      data-backpack-ds-component="CardListRowRailContainer"
+      {...getDataComponentAttribute('CardListRowRailContainer')}
       data-testid="bpk-card-list-row-rail"
     >
       <BpkCardListCarousel

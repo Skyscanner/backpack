@@ -19,7 +19,7 @@
 import type { ComponentType, ElementType } from 'react';
 import { Component } from 'react';
 
-import { cssModules, isRTL } from '../../bpk-react-utils';
+import { cssModules, isRTL, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import {
   addMonths,
@@ -220,7 +220,7 @@ class BpkCalendarGridTransition extends Component<Props, State> {
                       )
                 }
                 aria-hidden={index !== 1}
-                className={getClassName('bpk-calendar-grid-transition__grid')} data-backpack-ds-component="CalendarGridTransition"
+                className={getClassName('bpk-calendar-grid-transition__grid')} {...getDataComponentAttribute('CalendarGridTransition')}
               />
             ) : (
               <div

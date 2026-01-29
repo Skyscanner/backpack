@@ -40,7 +40,7 @@ const BpkDropdownChip = ({
     leadingAccessoryView={leadingAccessoryView}
     selected={selected}
     type={type}
-    data-backpack-ds-component="DropdownChip" {...rest}
+    {...getDataComponentAttribute('DropdownChip')} {...rest}
     trailingAccessoryView={<ChevronDownIconSm />}
   />
 );

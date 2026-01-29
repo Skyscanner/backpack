@@ -18,7 +18,7 @@
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import BpkButton from '../../bpk-component-button';
 import BpkSectionHeader from '../../bpk-component-section-header';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import BpkCardListGridStack from './BpkCardListGridStack';
 import BpkCardListRowRailContainer from './BpkCardListRowRail';
@@ -76,7 +76,7 @@ const BpkCardList = (props: CardListProps) => {
   );
 
   return (
-    <div className={getClassName('bpk-card-list')} data-backpack-ds-component="CardList" data-testid="bpk-card-list">
+    <div className={getClassName('bpk-card-list')} {...getDataComponentAttribute('CardList')} data-testid="bpk-card-list">
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
         {(isMobile) => (
           <>

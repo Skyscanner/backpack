@@ -20,7 +20,7 @@ import type { ForwardedRef } from 'react';
 import { forwardRef } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type { MarkerType } from './common-types';
 
@@ -42,7 +42,7 @@ const BpkPriceMarker = (
     ref={ref}
   >
     <BpkText textStyle={TEXT_STYLES.label2}>{priceLabel}</BpkText>
-    <div className={getClassName('bpk-price-marker__arrow')} data-backpack-ds-component="forwardRef" />
+    <div className={getClassName('bpk-price-marker__arrow')} {...getDataComponentAttribute('forwardRef')} />
   </div>
 );
 

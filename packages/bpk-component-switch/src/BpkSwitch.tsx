@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkSwitch.module.scss';
 
@@ -48,7 +48,7 @@ const BpkSwitch = ({
         aria-label={ariaLabel}
         {...rest}
       />
-      <span aria-hidden className={switchClassNames} data-backpack-ds-component="Switch" />
+      <span aria-hidden className={switchClassNames} {...getDataComponentAttribute('Switch')} />
     </label>
   );
 };

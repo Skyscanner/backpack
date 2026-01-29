@@ -20,7 +20,7 @@ import type { ElementType, ReactNode } from 'react';
 
 import { BpkCalendarGrid } from '../../bpk-component-calendar';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules , getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type { BpkCalendarGridProps } from '../../bpk-component-calendar';
 
@@ -45,8 +45,8 @@ const BpkScrollableCalendarGrid = ({
   const classNames = getClassName('bpk-scrollable-calendar-grid', className);
 
   return (
-    <div className={classNames} data-backpack-ds-component="ScrollableCalendarGrid">
-      <span className={getClassName('bpk-scrollable-calendar-grid__title')} data-backpack-ds-component="ScrollableCalendarGrid">
+    <div className={classNames} {...getDataComponentAttribute('ScrollableCalendarGrid')}>
+      <span className={getClassName('bpk-scrollable-calendar-grid__title')} {...getDataComponentAttribute('ScrollableCalendarGrid')}>
         <BpkText tagName="h2" textStyle={TEXT_STYLES.heading4}>
           {formatMonth(month)}
         </BpkText>

@@ -21,7 +21,7 @@ import type { KeyboardEvent } from 'react';
 import { withRtlSupport } from '../../bpk-component-icon';
 import BpkSmallArrowDownIcon from '../../bpk-component-icon/sm/arrow-down';
 import BpkSmallArrowUpIcon from '../../bpk-component-icon/sm/arrow-up';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { SORT_DIRECTION_TYPES } from './common-types';
 
@@ -139,12 +139,12 @@ const BpkDataTableHeader = ({ column }: { column: any }) => {
           key="sort"
           aria-hidden
         >
-          <div className={upIconClassNames} data-backpack-ds-component="DataTableHeader">
+          <div className={upIconClassNames} {...getDataComponentAttribute('DataTableHeader')}>
             <UpIcon
               onClick={() => column.toggleSortBy(false)}
             />
           </div>
-          <div className={downIconClassNames} data-backpack-ds-component="DataTableHeader">
+          <div className={downIconClassNames} {...getDataComponentAttribute('DataTableHeader')}>
             <DownIcon
               onClick={() => column.toggleSortBy(true)}
             />

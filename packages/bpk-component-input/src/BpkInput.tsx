@@ -20,7 +20,7 @@ import { Component } from 'react';
 
 import { withButtonAlignment } from '../../bpk-component-icon';
 import ClearIcon from '../../bpk-component-icon/sm/close-circle';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { CLEAR_BUTTON_MODES, defaultProps } from './common-types';
 
@@ -166,7 +166,7 @@ class BpkInput extends Component<Props, State> {
                 this.setState({ persistClearButton: false });
               }
             }}
-            className={clearButtonClassNames.join(' ')} data-backpack-ds-component="Input"
+            className={clearButtonClassNames.join(' ')} {...getDataComponentAttribute('Input')}
           >
           <ClearButtonIcon
             focusable="false" // prevents focus on IE11

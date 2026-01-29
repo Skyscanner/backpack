@@ -35,7 +35,7 @@ const BpkSingleSelectChipGroup = ({ chips, onItemClick, selectedIndex, ...rest }
     },
   }));
 
-  return <BpkMultiSelectChipGroup chips={chipsWithSelection} ariaMultiselectable={false} data-backpack-ds-component="SingleSelectChipGroup" {...rest} />;
+  return <BpkMultiSelectChipGroup chips={chipsWithSelection} ariaMultiselectable={false} {...getDataComponentAttribute('SingleSelectChipGroup')} {...rest} />;
 };
 
 export default BpkSingleSelectChipGroup;

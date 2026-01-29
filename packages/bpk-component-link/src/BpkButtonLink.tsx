@@ -18,7 +18,7 @@
 
 import type { ReactNode, MouseEvent, ButtonHTMLAttributes } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import themeAttributes from './themeAttributes';
 
@@ -77,7 +77,7 @@ const BpkButtonLink = ({
   return (
     <button
       type="button"
-      className={classNames.join(' ')} data-backpack-ds-component="ButtonLink"
+      className={classNames.join(' ')} {...getDataComponentAttribute('ButtonLink')}
       onClick={onClick}
       {...rest}
     >

@@ -24,7 +24,7 @@ import BpkCloseButton from '../../bpk-component-close-button';
 import BpkLink from '../../bpk-component-link';
 import BpkNavigationBar from '../../bpk-component-navigation-bar';
 import { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
-import { BpkDialogWrapper, cssModules } from '../../bpk-react-utils';
+import { BpkDialogWrapper, cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkBottomSheet.module.scss';
 
@@ -183,7 +183,7 @@ const BpkBottomSheet = ({
       }}
     >
       <>
-        <header className={getClassName('bpk-bottom-sheet--header-wrapper')} data-backpack-ds-component="BottomSheet">
+        <header className={getClassName('bpk-bottom-sheet--header-wrapper')} {...getDataComponentAttribute('BottomSheet')}>
           <BpkNavigationBar
             id={headingId}
             title={title}
@@ -200,7 +200,7 @@ const BpkBottomSheet = ({
             }
           />
         </header>
-        <div className={contentStyle} data-backpack-ds-component="BottomSheet">{children}</div>
+        <div className={contentStyle} {...getDataComponentAttribute('BottomSheet')}>{children}</div>
       </>
     </BpkDialogWrapper>
   );

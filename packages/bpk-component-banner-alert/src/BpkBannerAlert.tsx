@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { getDataComponentAttribute } from '../../bpk-react-utils';
+
 import BpkBannerAlertInner from './BpkBannerAlertInner';
 
 import type { CommonProps } from './common-types';
@@ -43,7 +45,7 @@ const BpkBannerAlert = ({
     animateOnLeave={animateOnLeave}
     show={show}
     icon={icon}
-    data-backpack-ds-component="BannerAlert" {...rest}
+    {...getDataComponentAttribute('BannerAlert')} {...rest}
   />
 );
 

@@ -17,7 +17,7 @@
  */
 
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules , getDataComponentAttribute } from '../../bpk-react-utils';
 import BpkBubbleArrow from '../icons/BpkBubbleArrow';
 
 import STYLES from './BpkBubble.module.scss';
@@ -29,7 +29,7 @@ export type Props = {
 };
 
 const BpkBubble = ({ children }: Props) => (
-  <span className={getClassName('bpk-bubble')} data-backpack-ds-component="Bubble">
+  <span className={getClassName('bpk-bubble')} {...getDataComponentAttribute('Bubble')}>
     <BpkText textStyle={TEXT_STYLES.label3} tagName="span" color={TEXT_COLORS.textOnDark}>
       {children}
     </BpkText>

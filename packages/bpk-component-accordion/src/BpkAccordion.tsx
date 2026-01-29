@@ -19,7 +19,7 @@
 import { createContext } from 'react';
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkAccordion.module.scss';
 
@@ -54,7 +54,7 @@ const BpkAccordion = (props: BpkAccordionProps) => {
 
   return (
     <BpkAccordionContext.Provider value={{ onDark, divider }}>
-      <div className={classNames} data-backpack-ds-component="Accordion" {...rest}>
+      <div className={classNames} {...getDataComponentAttribute('Accordion')} {...rest}>
         {children}
       </div>
     </BpkAccordionContext.Provider>

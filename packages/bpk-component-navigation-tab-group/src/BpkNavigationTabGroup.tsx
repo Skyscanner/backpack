@@ -21,7 +21,7 @@ import { useState } from 'react';
 
 import BpkBubble from '../../bpk-component-bubble/src/BpkBubble';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkNavigationTabGroup.module.scss';
 
@@ -124,7 +124,7 @@ const BpkNavigationTabGroup = ({
       role="navigation"
       aria-label={ariaLabel}
     >
-      <div role="tablist" className={getClassName('bpk-navigation-tab-list')} data-backpack-ds-component="NavigationTabGroup">
+      <div role="tablist" className={getClassName('bpk-navigation-tab-list')} {...getDataComponentAttribute('NavigationTabGroup')}>
         {tabs.map((tab, index) => {
           const selected = index === selectedTab;
           const {badgeText,icon,text,...tabWrapItem} = tab;
@@ -138,7 +138,7 @@ const BpkNavigationTabGroup = ({
               type={type}
             >
               <>
-                <div className={getClassName('bpk-navigation-tab-content-wrapper')} data-backpack-ds-component="NavigationTabGroup">
+                <div className={getClassName('bpk-navigation-tab-content-wrapper')} {...getDataComponentAttribute('NavigationTabGroup')}>
                   {Icon && (
                     <span
                       className={getClassName(
@@ -156,7 +156,7 @@ const BpkNavigationTabGroup = ({
                 </div>
 
                 {badgeText && (
-                  <span className={getClassName('bpk-navigation-tab-bubble-wrapper')} data-backpack-ds-component="NavigationTabGroup">
+                  <span className={getClassName('bpk-navigation-tab-bubble-wrapper')} {...getDataComponentAttribute('NavigationTabGroup')}>
                     <BpkBubble>
                       {badgeText}
                     </BpkBubble>

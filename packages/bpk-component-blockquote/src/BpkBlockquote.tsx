@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkBlockquote.module.scss';
 
@@ -35,7 +35,7 @@ const BpkBlockquote = ({ children, extraSpace = false }: Props) => {
     classNames.push(getClassName('bpk-blockquote--extra-spacing'));
   }
 
-  return <blockquote className={classNames.join(' ')} data-backpack-ds-component="Blockquote">{children}</blockquote>;
+  return <blockquote className={classNames.join(' ')} {...getDataComponentAttribute('Blockquote')}>{children}</blockquote>;
 };
 
 export default BpkBlockquote;

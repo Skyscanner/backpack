@@ -41,7 +41,7 @@ import {
 
 import { surfaceHighlightDay, onePixelRem } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
+import { TransitionInitialMount, cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { ARROW_ID, TOOLTIP_TYPES } from './constants';
 
@@ -174,7 +174,7 @@ const BpkTooltip = ({
                 id={id}
                 tabIndex={-1}
                 role="dialog"
-                className={classNames} data-backpack-ds-component="Tooltip"
+                className={classNames} {...getDataComponentAttribute('Tooltip')}
                 {...rest}
               >
                 <FloatingArrow

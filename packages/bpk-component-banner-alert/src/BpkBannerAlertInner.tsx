@@ -32,7 +32,7 @@ import { withButtonAlignment } from '../../bpk-component-icon';
 import ChevronDownIcon from '../../bpk-component-icon/lg/chevron-down';
 import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import AnimateAndFade from './AnimateAndFade';
 import { ALERT_TYPES } from './common-types';
@@ -105,7 +105,7 @@ const ToggleButton = (props: ToggleButtonProps) => {
       <ExpandIcon
       // TODO: className to be removed
       // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      className={classNames.join(' ')} data-backpack-ds-component="BannerAlertInner" />
+      className={classNames.join(' ')} {...getDataComponentAttribute('BannerAlertInner')} />
     </button>
   );
 };

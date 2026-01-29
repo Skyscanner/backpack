@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkBoilerplate.module.scss';
 
@@ -31,7 +31,7 @@ const BpkBoilerplate = ({ ...rest }: Props) => {
   delete rest.className;
 
   return (
-    <div className={getClassName('bpk-boilerplate')} data-backpack-ds-component="Boilerplate" {...rest}>
+    <div className={getClassName('bpk-boilerplate')} {...getDataComponentAttribute('Boilerplate')} {...rest}>
       I am an example component.
     </div>
   )};

@@ -19,7 +19,7 @@
 import type { KeyboardEvent, MouseEvent, ReactNode } from 'react';
 
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkGraphicPromo.module.scss';
 
@@ -196,7 +196,7 @@ const BpkGraphicPromo = ({
           {sponsor && (
             <>
               <span
-                className={getClassName('bpk-graphic-promo__sponsor-label')} data-backpack-ds-component="GraphicPromo"
+                className={getClassName('bpk-graphic-promo__sponsor-label')} {...getDataComponentAttribute('GraphicPromo')}
               >
                 {sponsor.label}
               </span>

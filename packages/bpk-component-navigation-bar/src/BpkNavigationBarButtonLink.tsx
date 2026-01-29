@@ -34,7 +34,7 @@ const BpkNavigationBarButtonLink = ({
   className,
   ...rest
 }: Props) => (
-  <span className={className} data-backpack-ds-component="NavigationBarButtonLink">
+  <span className={className} {...getDataComponentAttribute('NavigationBarButtonLink')}>
     <BpkLink
       as="button"
       alternate={barStyle === BAR_STYLES.onDark}

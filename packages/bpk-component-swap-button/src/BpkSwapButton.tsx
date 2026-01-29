@@ -19,7 +19,7 @@
 import { useState } from 'react';
 
 import SwapVertical from '../../bpk-component-icon/sm/swap--vertical';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkSwapButton.module.scss';
 
@@ -51,7 +51,7 @@ const BpkSwapButton = ( props: Props ) => {
   };
 
   return (
-    <div className={getClassName('bpk-swap-button')} data-backpack-ds-component="SwapButton">
+    <div className={getClassName('bpk-swap-button')} {...getDataComponentAttribute('SwapButton')}>
       <button
         type="button"
         className={getClassName('bpk-swap-button__button',`bpk-swap-button__button--${swapButtonStyle}`)}

@@ -22,7 +22,7 @@ import { withRtlSupport } from '../../bpk-component-icon';
 import ArrowRight from '../../bpk-component-icon/sm/arrow-right';
 import BpkLink from '../../bpk-component-link';
 import BpkText from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkBreadcrumbItem.module.scss';
 
@@ -43,7 +43,7 @@ const BpkBreadcrumbItem = (props: Props) => {
   const { active = false, children, className, href, linkProps, ...rest } = props;
 
   return (
-    <li className={getClassName('bpk-breadcrumb-item', className)} data-backpack-ds-component="BreadcrumbItem" {...rest}>
+    <li className={getClassName('bpk-breadcrumb-item', className)} {...getDataComponentAttribute('BreadcrumbItem')} {...rest}>
       {active ? (
         <div className={getClassName('bpk-breadcrumb-item__active-item')}>
           <BpkText

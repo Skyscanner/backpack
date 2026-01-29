@@ -17,7 +17,7 @@
  */
 
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import SPINNER_TYPES from './spinnerTypes';
 import SmSpinner from './spinners/sm';
@@ -49,7 +49,7 @@ const BpkSpinner = ({
   );
 
   return (
-    <span className={classNames} data-backpack-ds-component="Spinner">
+    <span className={classNames} {...getDataComponentAttribute('Spinner')}>
       <SmSpinner {...rest} />
     </span>
   );

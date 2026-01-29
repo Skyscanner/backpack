@@ -22,7 +22,7 @@ import { useEffect, useRef } from 'react';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../../bpk-component-close-button';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
-import { cssModules, withDefaultProps } from '../../../bpk-react-utils';
+import { cssModules, withDefaultProps , getDataComponentAttribute } from '../../../bpk-react-utils';
 import { MODAL_STYLING } from '../BpkModalInner';
 
 import type { ModalStyle } from '../BpkModalInner';
@@ -201,7 +201,7 @@ export const BpkModalV2 = (props: Props) => {
       className={getClassName(
         'bpk-modal-wrapper',
         dialogSupported ? '' : 'bpk-modal-polyfill',
-      )} data-backpack-ds-component="ModalV2"
+      )} {...getDataComponentAttribute('ModalV2')}
     >
       {!dialogSupported && (
         <div

@@ -22,7 +22,7 @@ import type { ReactElement } from 'react';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkFormValidation from '../../bpk-component-form-validation';
 import BpkLabel from '../../bpk-component-label';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkFieldset.module.scss';
 
@@ -125,7 +125,7 @@ const BpkFieldset = ({
   }
 
   return (
-    <fieldset className={classNames.join(' ')} data-backpack-ds-component="Fieldset" {...rest}>
+    <fieldset className={classNames.join(' ')} {...getDataComponentAttribute('Fieldset')} {...rest}>
       {!isCheckbox && (
         <div className={getClassName('bpk-fieldset__label')}>
           <BpkLabel

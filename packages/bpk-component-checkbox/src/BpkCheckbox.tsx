@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkCheckbox.module.scss';
 
@@ -77,7 +77,7 @@ const BpkCheckbox = ({
   );
 
   return (
-    <label className={classNames} data-backpack-ds-component="Checkbox">
+    <label className={classNames} {...getDataComponentAttribute('Checkbox')}>
       <input
         type="checkbox"
         className={inputClasses}
@@ -98,7 +98,7 @@ const BpkCheckbox = ({
       <span className={labelClassNames} aria-hidden="true">
         {label}
         {!disabled && required && (
-          <span className={getClassName('bpk-checkbox__asterisk')} data-backpack-ds-component="Checkbox">*</span>
+          <span className={getClassName('bpk-checkbox__asterisk')} {...getDataComponentAttribute('Checkbox')}>*</span>
         )}
       </span>
     </label>

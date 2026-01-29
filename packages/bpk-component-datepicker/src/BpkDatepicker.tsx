@@ -33,7 +33,7 @@ import {
 import BpkInput, { withOpenEvents } from '../../bpk-component-input';
 import BpkModal from '../../bpk-component-modal';
 import BpkPopover from '../../bpk-component-popover';
-import { setNativeValue } from '../../bpk-react-utils';
+import {  setNativeValue , getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type {
   DaysOfWeek,
@@ -387,7 +387,7 @@ class BpkDatepicker extends Component<Props, State> {
               isOpen={this.state.isOpen}
               label={title}
               closeButtonText={closeButtonText}
-              data-backpack-ds-component="Datepicker" {...rest}
+              {...getDataComponentAttribute('Datepicker')} {...rest}
             >
               <Calendar {...calendarProps} fixedWidth={fixedWidth} />
             </BpkPopover>

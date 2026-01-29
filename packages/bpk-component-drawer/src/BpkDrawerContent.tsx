@@ -25,7 +25,7 @@ import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
 import BpkLink from '../../bpk-component-link';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkDrawerContent.module.scss';
 
@@ -127,20 +127,20 @@ const BpkDrawerContent = ({
           ref={dialogRef}
           {...rest}
         >
-          <header className={getClassName('bpk-drawer__header')} data-backpack-ds-component="DrawerContent">
-            <h2 id={headingId} className={headerClassNames.join(' ')} data-backpack-ds-component="DrawerContent">
+          <header className={getClassName('bpk-drawer__header')} {...getDataComponentAttribute('DrawerContent')}>
+            <h2 id={headingId} className={headerClassNames.join(' ')} {...getDataComponentAttribute('DrawerContent')}>
               {title}
             </h2>
             &nbsp;
             {closeText ? (
               <BpkLink as="button" onClick={onClose}>{closeText}</BpkLink>
             ) : (
-              <div className={getClassName('bpk-drawer__close-button')} data-backpack-ds-component="DrawerContent">
+              <div className={getClassName('bpk-drawer__close-button')} {...getDataComponentAttribute('DrawerContent')}>
                 <BpkCloseButton label={closeLabel} onClick={onClose} />
               </div>
             )}
           </header>
-          <div className={contentClassNames.join(' ')} data-backpack-ds-component="DrawerContent">{children}</div>
+          <div className={contentClassNames.join(' ')} {...getDataComponentAttribute('DrawerContent')}>{children}</div>
         </section>
       )}
     </Transition>

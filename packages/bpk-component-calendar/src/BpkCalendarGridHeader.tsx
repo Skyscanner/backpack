@@ -18,7 +18,7 @@
 
 import { PureComponent } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { orderDaysOfWeek } from './date-utils';
 
@@ -93,7 +93,7 @@ class BpkCalendarGridHeader extends PureComponent<Props> {
     }
 
     return (
-      <header className={classNames.join(' ')} data-backpack-ds-component="CalendarGridHeader" aria-hidden>
+      <header className={classNames.join(' ')} {...getDataComponentAttribute('CalendarGridHeader')} aria-hidden>
         <ol className={getClassName('bpk-calendar-header__week')}>
           {daysOfWeek.map((weekDay) => (
             <WeekDayComponent

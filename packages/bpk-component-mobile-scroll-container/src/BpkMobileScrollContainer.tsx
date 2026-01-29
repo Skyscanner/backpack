@@ -21,7 +21,7 @@ import { Component } from 'react';
 
 import debounce from 'lodash/debounce';
 
-import { cssModules, isRTL } from '../../bpk-react-utils';
+import { cssModules, isRTL , getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type { DebouncedFunc } from 'lodash';
 
@@ -207,7 +207,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
               onScroll(event);
             }
           }}
-          className={scrollerClassNames} data-backpack-ds-component="MobileScrollContainer"
+          className={scrollerClassNames} {...getDataComponentAttribute('MobileScrollContainer')}
         >
           <InnerContainer
             aria-label={ariaLabel}

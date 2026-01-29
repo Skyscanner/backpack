@@ -41,7 +41,7 @@ const BpkBasicMapMarker = (props: Props) => {
     <BpkOverlayView
       position={position}
       getPixelPositionOffset={getPixelPositionOffset}
-      data-backpack-ds-component="BasicMapMarker" {...rest}
+      {...getDataComponentAttribute('BasicMapMarker')} {...rest}
     >
       {children}
     </BpkOverlayView>

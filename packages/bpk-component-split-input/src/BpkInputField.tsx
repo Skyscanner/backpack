@@ -19,7 +19,7 @@
 import { PureComponent } from 'react';
 
 import BpkInput from '../../bpk-component-input';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkInputField.module.scss';
 
@@ -56,7 +56,7 @@ class BpkInputField extends PureComponent<Props> {
   render() {
     const { focus, id, index, label, name, value, ...rest } = this.props;
     return (
-      <div key={index} className={getClassName('bpk-input-field')} data-backpack-ds-component="InputField">
+      <div key={index} className={getClassName('bpk-input-field')} {...getDataComponentAttribute('InputField')}>
         <BpkInput
           id={id}
           autoComplete="off"

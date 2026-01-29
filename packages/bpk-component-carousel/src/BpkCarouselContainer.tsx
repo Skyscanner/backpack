@@ -19,7 +19,7 @@
 import type { MutableRefObject, ReactNode} from 'react';
 import { memo, useState } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import BpkCarouselImage from './BpkCarouselImage';
 import { useIntersectionObserver } from './utils';
@@ -66,7 +66,7 @@ const BpkScrollContainer = memo(({ images, imagesRef, onImageChanged, onVisible 
 
   if (images.length === 1) {
     return (
-      <div className={getClassName('bpk-carousel-container')} data-backpack-ds-component="CarouselContainer" role="list" data-testid="image-gallery-scroll-container">
+      <div className={getClassName('bpk-carousel-container')} {...getDataComponentAttribute('CarouselContainer')} role="list" data-testid="image-gallery-scroll-container">
         <BpkCarouselImage image={images[0]} index={0} />
       </div>
     );
@@ -75,7 +75,7 @@ const BpkScrollContainer = memo(({ images, imagesRef, onImageChanged, onVisible 
   return (
     <div
       className={getClassName('bpk-carousel-container')}
-      data-backpack-ds-component="CarouselContainer"
+      {...getDataComponentAttribute('CarouselContainer')}
       ref={setRoot}
       data-testid="image-gallery-scroll-container"
       role="list"

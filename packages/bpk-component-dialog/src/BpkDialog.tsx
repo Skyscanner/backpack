@@ -18,7 +18,7 @@
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-import { cssModules, Portal } from '../../bpk-react-utils';
+import { cssModules, Portal, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import BpkDialogInner from './BpkDialogInner';
 import { HEADER_ICON_TYPES } from './common-types';
@@ -69,9 +69,9 @@ const BpkDialog = ({
         }
         {...rest}
       >
-        {headerIcon && <div className={headerIconClassNames} data-backpack-ds-component="Dialog">{headerIcon}</div>}
+        {headerIcon && <div className={headerIconClassNames} {...getDataComponentAttribute('Dialog')}>{headerIcon}</div>}
         {dismissible && (
-          <span className={closeButtonClassNames} data-backpack-ds-component="Dialog">
+          <span className={closeButtonClassNames} {...getDataComponentAttribute('Dialog')}>
             <BpkCloseButton label={closeLabel} onClick={onClose} />
           </span>
         )}

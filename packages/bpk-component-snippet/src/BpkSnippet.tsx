@@ -25,7 +25,7 @@ import BpkImage, {
   withLazyLoading,
 } from '../../bpk-component-image';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkSnippet.module.scss';
 
@@ -129,7 +129,7 @@ const BpkSnippet = ({
           'bpk-snippet',
           desktopLayout === 'imageRight' && 'bpk-snippet--row-reverse',
           desktopLayout === 'vertical' && 'bpk-snippet--vertical',
-        )} data-backpack-ds-component="Snippet"
+        )} {...getDataComponentAttribute('Snippet')}
       >
         <div
           className={getClassName(

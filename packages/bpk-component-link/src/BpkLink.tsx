@@ -19,7 +19,7 @@
 import type { Ref } from 'react';
 import { forwardRef } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type {
   BpkLinkProps,
@@ -124,7 +124,7 @@ const BpkLinkInner = <E extends LinkAs = 'a'>(
     // Allowed: className and ref are passed to the underlying DOM element
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
     <Element className={linkClassName} ref={ref} {...elementProps}>
-      <span className={underlinedClassName} data-backpack-ds-component="Link">{children}</span>
+      <span className={underlinedClassName} {...getDataComponentAttribute('Link')}>{children}</span>
     </Element>
   );
 };
