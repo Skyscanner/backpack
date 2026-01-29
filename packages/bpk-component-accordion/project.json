@@ -1,0 +1,10 @@
+{
+  "name": "bpk-component-accordion",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-component-accordion/src",
+  "projectType": "library",
+  "tags": [
+    "scope:component",
+    "type:component"
+  ]
+}

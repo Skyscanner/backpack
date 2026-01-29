@@ -1,0 +1,10 @@
+{
+  "name": "bpk-component-card-button",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-component-card-button/src",
+  "projectType": "library",
+  "tags": [
+    "scope:component",
+    "type:component"
+  ]
+}

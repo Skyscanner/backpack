@@ -1,0 +1,7 @@
+{
+  "name": "bpk-theming",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-theming/src",
+  "projectType": "library",
+  "tags": ["scope:foundation", "type:util"]
+}

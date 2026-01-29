@@ -1,0 +1,86 @@
+name: Nx Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (leave empty to auto-calculate from commits)'
+        required: false
+        type: string
+      dryRun:
+        description: 'Dry run (no actual changes)'
+        required: false
+        type: boolean
+        default: true
+
+defaults:
+  run:
+    shell: bash -l {0}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    environment: Publishing
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Run Nx Release Version
+        run: |
+          if [ "${{ inputs.dryRun }}" = "true" ]; then
+            npx nx release version ${{ inputs.version }} --dry-run
+          else
+            npx nx release version ${{ inputs.version }}
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build packages
+        if: ${{ inputs.dryRun == false }}
+        run: npm run build
+
+      - name: Run Nx Release Changelog
+        run: |
+          if [ "${{ inputs.dryRun }}" = "true" ]; then
+            npx nx release changelog ${{ inputs.version }} --dry-run
+          else
+            npx nx release changelog ${{ inputs.version }}
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to NPM
+        if: ${{ inputs.dryRun == false }}
+        run: npx nx release publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push changes
+        if: ${{ inputs.dryRun == false }}
+        run: |
+          git push --follow-tags
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

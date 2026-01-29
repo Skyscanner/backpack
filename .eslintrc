@@ -2,6 +2,9 @@
   "extends": [
     "@skyscanner/eslint-config-skyscanner"
   ],
+  "plugins": [
+    "@nx"
+  ],
   "env": {
     "browser": true,
     "jest": true
@@ -22,6 +25,23 @@
     }
   },
   "rules": {
+    "@nx/enforce-module-boundaries": [
+      "error",
+      {
+        "enforceBuildableLibDependency": true,
+        "allow": ["^\\./", "^\\.\\./"],
+        "depConstraints": [
+          {
+            "sourceTag": "scope:foundation",
+            "onlyDependOnLibsWithTags": ["scope:foundation"]
+          },
+          {
+            "sourceTag": "scope:component",
+            "onlyDependOnLibsWithTags": ["scope:foundation", "scope:component"]
+          }
+        ]
+      }
+    ],
     // Temp adding this whilst migrating to the latest eslint & TS migration
     // Activate this when we run the migration scripts
     // "padding-line-between-statements": [
