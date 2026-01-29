@@ -61,6 +61,9 @@ jobs:
       - name: Run typecheck
         run: npm run typecheck
 
+      - name: Warm Nx project graph cache
+        run: npx nx show projects
+
       - name: Run tests
         run: bash -c "set -o pipefail;npm run test |& tee 'logs/test.log'"
 
