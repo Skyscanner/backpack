@@ -20,7 +20,9 @@
     "jsx": "react-jsx",
     "allowJs": false,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@backpack/badge": ["packages/bpk-component-badge/index.ts"]
+    }
   },
   "exclude": ["**/**/*.figma.tsx"]
 }

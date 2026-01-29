@@ -16,7 +16,13 @@
       "Bash(npm run check-react-versions:*)",
       "Bash(npm run build:copy-normal_css:*)",
       "Bash(npm:*)",
-      "Bash(node --version:*)"
+      "Bash(node --version:*)",
+      "Bash(nx build:*)",
+      "Bash(nx test:*)",
+      "Bash(npx nx:*)",
+      "WebFetch(domain:production-standards.skyscannerpage.com)",
+      "Bash(node scripts/nx/update-import-paths.js:*)",
+      "Bash(node /Users/abbyzhan/code/backpack/scripts/nx/update-import-paths.js:*)"
     ]
   }
 }

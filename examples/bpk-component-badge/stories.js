@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkBadge from '../../packages/bpk-component-badge/src/BpkBadge';
+import BpkBadge from '@backpack/badge';
 
 import {
   DefaultExample,

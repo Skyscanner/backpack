@@ -18,7 +18,7 @@
 
 /* @flow */
 
-import { themeAttributes as badgeThemeAttributes } from '../packages/bpk-component-badge';
+import { themeAttributes as badgeThemeAttributes } from '@backpack/badge';
 import { themeAttributes as bannerAlertThemeAttributes } from '../packages/bpk-component-banner-alert';
 import { themeAttributes as barchartThemeAttributes } from '../packages/bpk-component-barchart';
 import { themeAttributes as blockquoteThemeAttributes } from '../packages/bpk-component-blockquote';
