@@ -4,6 +4,16 @@
   "sourceRoot": "packages/bpk-component-flare/src",
   "projectType": "library",
   "targets": {
+    "codegen": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "gulp generateFlare",
+        "cwd": "{workspaceRoot}"
+      },
+      "outputs": [
+        "{projectRoot}/src/__generated__/js"
+      ]
+    },
     "build": {
       "executor": "nx:run-commands",
       "options": {
@@ -12,7 +22,8 @@
       },
       "outputs": [
         "{projectRoot}/dist"
-      ]
+      ],
+      "dependsOn": ["codegen"]
     },
     "test": {
       "executor": "nx:run-commands",
