@@ -49,12 +49,14 @@ jobs:
 
       - name: Run Nx Release Version
         run: |
-          if [ "${{ inputs.dryRun }}" = "true" ]; then
-            npx nx release version ${{ inputs.version }} --dry-run
+          if [ "$DRY_RUN" = "true" ]; then
+            npx nx release version "$VERSION" --dry-run
           else
-            npx nx release version ${{ inputs.version }}
+            npx nx release version "$VERSION"
           fi
         env:
+          DRY_RUN: ${{ inputs.dryRun }}
+          VERSION: ${{ inputs.version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build packages
@@ -63,12 +65,14 @@ jobs:
 
       - name: Run Nx Release Changelog
         run: |
-          if [ "${{ inputs.dryRun }}" = "true" ]; then
-            npx nx release changelog ${{ inputs.version }} --dry-run
+          if [ "$DRY_RUN" = "true" ]; then
+            npx nx release changelog "$VERSION" --dry-run
           else
-            npx nx release changelog ${{ inputs.version }}
+            npx nx release changelog "$VERSION"
           fi
         env:
+          DRY_RUN: ${{ inputs.dryRun }}
+          VERSION: ${{ inputs.version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to NPM
