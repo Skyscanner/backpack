@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkSwitch.module.scss';
 
@@ -41,7 +41,7 @@ const BpkSwitch = ({
   );
 
   return (
-    <label className={getClassName('bpk-switch', className)}>
+    <label className={getClassName('bpk-switch', className)} {...getDataComponentAttribute('Switch')}>
       <input
         type="checkbox"
         className={getClassName('bpk-switch__checkbox')}

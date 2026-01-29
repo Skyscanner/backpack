@@ -47,7 +47,7 @@ import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base
 import BpkCloseButton from '../../bpk-component-close-button';
 import BpkLink from '../../bpk-component-link';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
+import { TransitionInitialMount, cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { ARROW_ID } from './constants';
 
@@ -232,7 +232,7 @@ const BpkPopover = ({
                   tabIndex={-1}
                   role="dialog"
                   aria-labelledby={labelId}
-                  className={classNames}
+                  className={classNames} {...getDataComponentAttribute('Popover')}
                   {...rest}
                 >
                   {showArrow && (

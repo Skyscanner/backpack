@@ -17,7 +17,7 @@
  */
 
 import BpkText from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkContentCard.module.scss';
 
@@ -50,7 +50,7 @@ const BpkContentCard = ({ card, layout }: Props) => (
     target="_blank"
     rel="noreferrer"
   >
-    <div className={getClassName('bpk-content-card--image-container')}>
+    <div className={getClassName('bpk-content-card--image-container')} {...getDataComponentAttribute('ContentCard')}>
       <img
         className={getClassName('bpk-content-card--image')}
         alt={card.image.alt || ''}

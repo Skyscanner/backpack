@@ -20,7 +20,7 @@ import { type MouseEvent, useRef, useState } from 'react';
 
 import { BREAKPOINTS, useMediaQuery } from '../../bpk-component-breakpoint';
 import BpkPageIndicator, { DIRECTIONS, VARIANT } from '../../bpk-component-page-indicator';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import BpkCarouselContainer from './BpkCarouselContainer';
 import { scrollToIndex, useScrollToInitialImage } from './utils';
@@ -57,7 +57,7 @@ const BpkCarousel = ({
   useScrollToInitialImage(initialImageIndex!, imagesRef);
 
   return (
-    <div className={getClassName('bpk-carousel')}>
+    <div className={getClassName('bpk-carousel')} {...getDataComponentAttribute('Carousel')}>
       <BpkCarouselContainer
         images={images}
         onVisible={updateShownImageIndex}

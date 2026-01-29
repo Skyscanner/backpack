@@ -18,7 +18,7 @@
 
 import { Component, Fragment, type ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkBreadcrumb.module.scss';
 
@@ -80,7 +80,7 @@ class BpkBreadcrumb extends Component<Props> {
             dangerouslySetInnerHTML={{ __html: this.metaData }}
           />
         )}
-        <nav aria-label={label} {...rest}>
+        <nav aria-label={label} {...getDataComponentAttribute('Breadcrumb')} {...rest}>
           <ol className={getClassName('bpk-breadcrumb')}>{children}</ol>
         </nav>
       </Fragment>

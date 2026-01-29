@@ -18,6 +18,8 @@
 
 import type { ReactNode } from 'react';
 
+import { getDataComponentAttribute } from '../../bpk-react-utils';
+
 import BpkInfoBannerInner, { CONFIGURATION } from './BpkInfoBannerInner';
 
 import type { CommonProps, OnExpandToggleHandler, ExpandableBannerAction } from './common-types';
@@ -42,7 +44,7 @@ const BpkInfoBannerExpandable = ({
     configuration={CONFIGURATION.EXPANDABLE}
     expanded={expanded}
     onExpandToggle={onExpandToggle}
-    {...rest}
+    {...getDataComponentAttribute('InfoBannerExpandable')} {...rest}
   >
     {children}
   </BpkInfoBannerInner>

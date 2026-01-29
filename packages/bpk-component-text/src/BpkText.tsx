@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkText.module.scss';
 
@@ -113,7 +113,7 @@ const BpkText = ({
   return (
     // Allowed, TagName is always a dom element.
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <TagName className={classNames} {...rest}>
+    <TagName className={classNames} {...getDataComponentAttribute('Text')} {...rest}>
       {children}
     </TagName>
   );

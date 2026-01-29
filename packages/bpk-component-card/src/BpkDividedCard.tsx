@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import BpkCard from './BpkCard';
 import { CardContext } from './CardContext';
@@ -71,7 +71,7 @@ const BpkDividedCard = ({
 
   return (
     <CardContext.Provider value={{ elevated: isElevated }}>
-      <div className={containerClassName}>
+      <div className={containerClassName} {...getDataComponentAttribute('DividedCard')}>
         <BpkCard href={href} padded={false} {...rest}>
           <div className={contentClassName}>
             <div

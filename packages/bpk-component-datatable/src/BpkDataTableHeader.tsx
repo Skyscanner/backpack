@@ -21,7 +21,7 @@ import type { KeyboardEvent } from 'react';
 import { withRtlSupport } from '../../bpk-component-icon';
 import BpkSmallArrowDownIcon from '../../bpk-component-icon/sm/arrow-down';
 import BpkSmallArrowUpIcon from '../../bpk-component-icon/sm/arrow-up';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { SORT_DIRECTION_TYPES } from './common-types';
 
@@ -122,6 +122,7 @@ const BpkDataTableHeader = ({ column }: { column: any }) => {
         },
         className: headerClassNames,
       })}
+      {...getDataComponentAttribute('DataTableHeader')}
     >
       <span
         onClick={onHeaderClick}

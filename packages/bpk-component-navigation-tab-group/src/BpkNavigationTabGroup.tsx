@@ -21,7 +21,7 @@ import { useState } from 'react';
 
 import BpkBubble from '../../bpk-component-bubble/src/BpkBubble';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkNavigationTabGroup.module.scss';
 
@@ -124,7 +124,7 @@ const BpkNavigationTabGroup = ({
       role="navigation"
       aria-label={ariaLabel}
     >
-      <div role="tablist" className={getClassName('bpk-navigation-tab-list')}>
+      <div role="tablist" className={getClassName('bpk-navigation-tab-list')} {...getDataComponentAttribute('NavigationTabGroup')}>
         {tabs.map((tab, index) => {
           const selected = index === selectedTab;
           const {badgeText,icon,text,...tabWrapItem} = tab;

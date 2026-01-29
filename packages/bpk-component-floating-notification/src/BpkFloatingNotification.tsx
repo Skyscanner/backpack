@@ -24,7 +24,7 @@ import { CSSTransition } from 'react-transition-group';
 import BpkAriaLive from '../../bpk-component-aria-live';
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkFloatingNotification.module.scss';
 
@@ -91,7 +91,7 @@ const BpkFloatingNotification = (props: Props) => {
       exit={animateOnExit}
       onExited={onExit}
     >
-      <div className={classNames} {...rest}>
+      <div className={classNames} {...getDataComponentAttribute('FloatingNotification')} {...rest}>
         {Icon && (
           <div className={getClassName('bpk-floating-notification__icon')}>
             <Icon aria-hidden />

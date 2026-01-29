@@ -21,7 +21,7 @@ import { useEffect, useRef, useState } from 'react';
 import clamp from 'lodash/clamp';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import BpkPriceMarker from './BpkPriceMarker';
 import { MARKER_TYPES } from './common-types';
@@ -144,7 +144,7 @@ const BpkPriceRange = ({
         </div>
       )}
       <div className={linesClassName}>
-        <div className={lowClassName} />
+        <div className={lowClassName} {...getDataComponentAttribute('PriceRange')} />
         <div className={mediumClassName} />
         <div className={highClassName} />
         {!showPriceIndicator && (

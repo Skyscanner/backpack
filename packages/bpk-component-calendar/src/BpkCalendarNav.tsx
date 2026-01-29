@@ -27,7 +27,7 @@ import ArrowLeftIcon from '../../bpk-component-icon/lg/arrow-left';
 import ArrowRightIcon from '../../bpk-component-icon/lg/arrow-right';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../bpk-component-select';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import {
   addMonths,
@@ -111,7 +111,7 @@ const BpkCalendarNav = ({
   const nextMonth = addMonths(baseMonth, 1);
 
   return (
-    <div className={getClassName('bpk-calendar-nav')}>
+    <div className={getClassName('bpk-calendar-nav')} {...getDataComponentAttribute('CalendarNav')}>
       <div style={{ display: 'table-row' }}>
         <div className={getClassName('bpk-calendar-nav__nudger')}>
           <button
