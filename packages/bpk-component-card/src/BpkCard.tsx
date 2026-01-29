@@ -72,7 +72,8 @@ const BpkCard = ({
     return (
       <a
         href={href}
-        className={classNames} {...getDataComponentAttribute('Card')}
+        className={classNames}
+        {...getDataComponentAttribute('Card')}
         {...atomicProps}
         {...blankProps}
         {...rest}
