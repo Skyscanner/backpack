@@ -122,6 +122,7 @@ const BpkDataTableHeader = ({ column }: { column: any }) => {
         },
         className: headerClassNames,
       })}
+      {...getDataComponentAttribute('DataTableHeader')}
     >
       <span
         onClick={onHeaderClick}

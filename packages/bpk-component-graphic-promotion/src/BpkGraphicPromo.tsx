@@ -186,6 +186,7 @@ const BpkGraphicPromo = ({
       })}
       onClick={onClickWrapper}
       onKeyDown={onKeyWrapper}
+      {...getDataComponentAttribute('GraphicPromo')}
     >
       <div
         id={(contentId && `${contentId}__content`) || ''}
@@ -196,7 +197,7 @@ const BpkGraphicPromo = ({
           {sponsor && (
             <>
               <span
-                className={getClassName('bpk-graphic-promo__sponsor-label')} {...getDataComponentAttribute('GraphicPromo')}
+                className={getClassName('bpk-graphic-promo__sponsor-label')}
               >
                 {sponsor.label}
               </span>

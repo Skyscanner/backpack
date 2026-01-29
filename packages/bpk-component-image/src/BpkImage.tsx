@@ -73,7 +73,8 @@ class Image extends Component<ImageProps> {
 
     return (
       <img
-        className={imgClassNames.join(' ')} {...getDataComponentAttribute('Image')}
+        className={imgClassNames.join(' ')} 
+        {...getDataComponentAttribute('Image')}
         alt={altText}
         onLoad={onImageLoad}
         ref={this.setImgRef}

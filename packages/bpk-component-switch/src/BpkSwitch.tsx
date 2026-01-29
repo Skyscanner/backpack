@@ -41,14 +41,14 @@ const BpkSwitch = ({
   );
 
   return (
-    <label className={getClassName('bpk-switch', className)}>
+    <label className={getClassName('bpk-switch', className)} {...getDataComponentAttribute('Switch')}>
       <input
         type="checkbox"
         className={getClassName('bpk-switch__checkbox')}
         aria-label={ariaLabel}
         {...rest}
       />
-      <span aria-hidden className={switchClassNames} {...getDataComponentAttribute('Switch')} />
+      <span aria-hidden className={switchClassNames} />
     </label>
   );
 };
