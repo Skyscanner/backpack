@@ -21,7 +21,9 @@
     "allowJs": false,
     "baseUrl": ".",
     "paths": {
-      "@backpack/badge": ["packages/bpk-component-badge/index.ts"]
+      "@backpack/badge": ["packages/bpk-component-badge/index.ts"],
+      "@backpack/chip": ["packages/bpk-component-chip/index.ts"],
+      "@backpack/chip-group": ["packages/bpk-component-chip-group/index.ts"]
     }
   },
   "exclude": ["**/**/*.figma.tsx"]

@@ -295,7 +295,32 @@ Add the component to the paths in the root tsconfig.base.json:
 }
 ```
 
-### 11. Test the Migration
+### 11. Update Import Paths Across Codebase
+
+**CRITICAL**: Run the import path update script to replace all relative imports with the new NX path alias across the entire codebase:
+
+```bash
+node scripts/nx/update-import-paths.js {component-name} @backpack/{short-name}
+```
+
+Example:
+```bash
+node scripts/nx/update-import-paths.js bpk-component-badge @backpack/badge
+```
+
+This script will:
+- Search all JS/TS files in the codebase (excluding node_modules, dist, coverage)
+- Replace relative imports like `'../../packages/bpk-component-badge'` with `'@backpack/badge'`
+- Replace both `import` and `require` statements
+- Report the number of files and imports updated
+
+**Why this is important**:
+- Other packages/examples may be importing this component using relative paths
+- These need to be updated to use the new NX path alias
+- This ensures consistency across the monorepo
+- Enables proper NX dependency tracking and caching
+
+### 12. Test the Migration
 
 Run the following commands to verify (use the package name from package.json):
 
@@ -307,7 +332,7 @@ npx nx lint @backpack/{short-name}
 
 **Note**: When NX configuration is in package.json, you must use the package name (e.g., `@backpack/badge`) rather than the directory name (e.g., `bpk-component-badge`). The build command performs type-checking only and does not generate a dist folder.
 
-### 12. Report Results
+### 13. Report Results
 
 Report success or any errors encountered during migration.
 
@@ -321,6 +346,7 @@ Report success or any errors encountered during migration.
 
 Report:
 - Files created/updated
+- Import paths updated (number of files and imports modified)
 - NX commands tested
 - Any warnings or issues
 - Next steps (if any)

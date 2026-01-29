@@ -24,14 +24,14 @@ import BpkMultiSelectChipGroup, {
   BpkSingleSelectChipGroup,
   CHIP_GROUP_TYPES,
   CHIP_COMPONENT
-} from '../../packages/bpk-component-chip-group';
+} from '@backpack/chip-group';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text/index';
 import { cssModules } from '../../packages/bpk-react-utils/index';
 
 import type {
   MultiSelectProps,
   ChipItem,
- SingleSelectProps} from '../../packages/bpk-component-chip-group';
+ SingleSelectProps} from '@backpack/chip-group';
 
 import STYLES from './examples.module.scss';
 
