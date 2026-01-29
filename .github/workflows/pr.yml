@@ -40,7 +40,8 @@ jobs:
 
       - name: Install dependencies
         if: ${{ steps.npm-cache.outputs.cache-hit != 'true' }}
-        run: npm ci
+        run: npm ci --loglevel verbose
+        timeout-minutes: 10
 
   Create-Build-Cache:
     runs-on: ubuntu-latest
