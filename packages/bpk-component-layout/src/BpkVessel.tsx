@@ -56,6 +56,9 @@ import type { BpkVesselProps } from './types';
  * </BpkVessel>
  * ```
  *
+ * @todo Migration component - pending removal after component migration is complete.
+ *       Replace usages with BpkBox once legacy className/style dependencies are refactored.
+ *
  * @returns {JSX.Element} An HTML element with all props applied.
  */
 export const BpkVessel = ({

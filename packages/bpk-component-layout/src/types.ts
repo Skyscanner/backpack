@@ -254,8 +254,6 @@ export type VesselElement =
  */
 export type BpkVesselProps = {
   as?: VesselElement;
-  'data-testid'?: string;
-  'data-cy'?: string;
 } & React.HTMLAttributes<HTMLElement>;
 
 /**
