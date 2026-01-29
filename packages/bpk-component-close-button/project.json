@@ -4,5 +4,18 @@
   "sourceRoot": "packages/bpk-component-close-button/src",
   "projectType": "library",
   "tags": ["scope:component", "type:lib"],
-  "targets": {}
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["packages/bpk-component-close-button/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx jest packages/bpk-component-close-button --passWithNoTests"
+      }
+    }
+  }
 }

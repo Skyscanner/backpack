@@ -25,10 +25,20 @@
     },
     "lint": {
       "cache": true,
-      "inputs": ["default"]
+      "inputs": ["default", "{workspaceRoot}/.eslintrc", "{workspaceRoot}/.eslintignore"]
+    },
+    "typecheck": {
+      "cache": true,
+      "inputs": ["default", "^default", "{workspaceRoot}/tsconfig.json"]
     }
   },
   "plugins": [
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    },
     {
       "plugin": "@nx/storybook/plugin",
       "options": {
