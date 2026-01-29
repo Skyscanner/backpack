@@ -50,6 +50,9 @@ jobs:
       - name: Setup logs directory
         run: mkdir logs
 
+      - name: Generate code (required for linting)
+        run: npx nx run-many --target=codegen --projects=bpk-component-flare,bpk-component-icon,bpk-component-spinner
+
       - name: Build Backpack (affected for PRs)
         if: github.event_name == 'pull_request'
         env:
