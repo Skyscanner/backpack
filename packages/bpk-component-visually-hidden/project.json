@@ -1,14 +1,14 @@
 {
-  "name": "bpk-component-popover",
+  "name": "bpk-component-visually-hidden",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/bpk-component-popover/src",
+  "sourceRoot": "packages/bpk-component-visually-hidden/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "nx:run-commands",
       "options": {
         "command": "BABEL_ENV=dev babel src --out-dir dist --extensions \".ts,.tsx,.js,.jsx\" --config-file ../../babel.config.js",
-        "cwd": "packages/bpk-component-popover"
+        "cwd": "packages/bpk-component-visually-hidden"
       },
       "outputs": [
         "{projectRoot}/dist"

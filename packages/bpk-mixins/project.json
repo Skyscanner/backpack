@@ -4,24 +4,6 @@
   "sourceRoot": "packages/bpk-mixins",
   "projectType": "library",
   "targets": {
-    "test": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "TZ=Etc/UTC jest --coverage --testPathPatterns='packages/bpk-mixins'",
-        "cwd": "{workspaceRoot}"
-      },
-      "outputs": [
-        "{workspaceRoot}/coverage"
-      ]
-    },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "{projectRoot}/**/*.{ts,tsx,js,jsx}"
-        ]
-      }
-    },
     "stylelint": {
       "executor": "nx:run-commands",
       "options": {

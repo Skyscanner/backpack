@@ -50,6 +50,9 @@ jobs:
       - name: Setup logs directory
         run: mkdir logs
 
+      - name: Generate code (required for linting)
+        run: npx nx run-many --target=codegen --projects=bpk-component-flare,bpk-component-icon,bpk-component-spinner
+
       - name: Build Backpack (affected for PRs)
         if: github.event_name == 'pull_request'
         env:
@@ -58,7 +61,7 @@ jobs:
 
       - name: Build Backpack (all for main)
         if: github.event_name != 'pull_request'
-        run: npx nx run-many --target=build --all --parallel=4
+        run: npx nx build-all
 
       - name: Confirm the build hasn't changed any files
         run: ./scripts/check-pristine-state package-lock.json
@@ -167,6 +170,9 @@ jobs:
         with:
           path: dist-storybook/
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
+
+      - name: Generate code (required for storybook build)
+        run: npx nx run-many --target=codegen --projects=bpk-component-flare,bpk-component-icon,bpk-component-spinner
 
       - name: Percy Test
         run: npx nx percy

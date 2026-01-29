@@ -40,6 +40,22 @@
       },
       "outputs": []
     },
+    "styles": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npm run build:copy-normal_css",
+          "npm run build:gulp",
+          "npm run build:sass",
+          "npm run build:stylesheets"
+        ],
+        "parallel": false
+      },
+      "outputs": [
+        "{workspaceRoot}/packages/bpk-stylesheets/dist",
+        "{workspaceRoot}/packages/bpk-stylesheets/normalize.scss"
+      ]
+    },
     "build-all": {
       "executor": "nx:run-commands",
       "options": {
@@ -72,7 +88,8 @@
         "cwd": "{workspaceRoot}"
       },
       "outputs": ["{workspaceRoot}/dist-storybook"],
-      "cache": true
+      "cache": true,
+      "dependsOn": ["styles"]
     },
     "percy": {
       "executor": "nx:run-commands",
