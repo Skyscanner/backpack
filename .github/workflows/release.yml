@@ -11,6 +11,8 @@ defaults:
 env:
   CACHE_NAME: node-modules-cache
   BUILD_CACHE_NAME: build-cache
+  NX_DAEMON: false
+  NX_SKIP_NX_CLOUD: true
 
 permissions: {}
 
