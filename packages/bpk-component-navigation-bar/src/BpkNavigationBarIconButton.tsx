@@ -20,6 +20,7 @@ import type { ComponentType, MouseEvent, ReactNode } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
+import { getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { BAR_STYLES, type BarStyle } from './BpkNavigationBar';
 

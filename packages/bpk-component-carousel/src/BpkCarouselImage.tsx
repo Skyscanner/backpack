@@ -19,7 +19,7 @@
 import type { ReactNode } from "react";
 import { forwardRef } from "react";
 
-import { cssModules } from "../../bpk-react-utils";
+import { cssModules, getDataComponentAttribute } from "../../bpk-react-utils";
 
 import STYLES from "./BpkCarouselImage.module.scss"
 

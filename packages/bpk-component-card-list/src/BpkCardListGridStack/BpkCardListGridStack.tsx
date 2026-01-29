@@ -20,7 +20,7 @@ import type { CSSProperties } from 'react';
 import { Children, useState } from 'react';
 
 import BpkButton from '../../../bpk-component-button';
-import { cssModules } from '../../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 import ExpandAccessoryContent from '../BpkExpand/ExpandAccessoryContent';
 import { ACCESSORY_DESKTOP_TYPES } from '../common-types';
 

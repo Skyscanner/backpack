@@ -18,7 +18,7 @@
 import { useState, Children } from 'react';
 
 import BpkPageIndicator from '../../../bpk-component-page-indicator';
-import { cssModules } from '../../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 import { ACCESSORY_DESKTOP_TYPES, LAYOUTS } from '../common-types';
 
 import BpkCardListCarousel from './BpkCardListCarousel';

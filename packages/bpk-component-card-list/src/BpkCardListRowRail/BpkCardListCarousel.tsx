@@ -27,7 +27,7 @@ import {
 
 import throttle from 'lodash/throttle';
 
-import { cssModules } from '../../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
 import { RENDER_BUFFER_SIZE } from './constants';
 import {

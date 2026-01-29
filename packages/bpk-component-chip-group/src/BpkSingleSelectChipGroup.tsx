@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { getDataComponentAttribute } from '../../bpk-react-utils';
+
 import BpkMultiSelectChipGroup, { type SingleSelectChipItem, type MultiSelectProps } from './BpkMultiSelectChipGroup';
 
 export type SingleSelectProps = {

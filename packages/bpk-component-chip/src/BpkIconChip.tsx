@@ -24,6 +24,8 @@ to match.
 
 import type { ReactNode } from 'react';
 
+import { getDataComponentAttribute } from '../../bpk-react-utils';
+
 import BpkSelectableChip from './BpkSelectableChip';
 
 import type { CommonProps as Props } from './commonTypes';

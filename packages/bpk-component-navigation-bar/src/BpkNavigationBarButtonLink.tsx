@@ -17,6 +17,7 @@
  */
 
 import BpkLink, { type BpkLinkProps } from '../../bpk-component-link';
+import { getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { BAR_STYLES, type BarStyle } from './BpkNavigationBar';
 
