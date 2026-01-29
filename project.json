@@ -40,6 +40,21 @@
       },
       "outputs": []
     },
+    "styles": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npm run build:copy-normal_css",
+          "npm run build:sass",
+          "npm run build:stylesheets"
+        ],
+        "parallel": false
+      },
+      "outputs": [
+        "packages/bpk-stylesheets/dist",
+        "packages/bpk-stylesheets/normalize.scss"
+      ]
+    },
     "build-all": {
       "executor": "nx:run-commands",
       "options": {
