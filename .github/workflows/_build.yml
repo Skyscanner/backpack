@@ -41,6 +41,14 @@ jobs:
             packages/node_modules/
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
+      - name: Restore Nx cache
+        uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+        with:
+          path: .nx/cache
+          key: nx-cache-${{ github.sha }}
+          restore-keys: |
+            nx-cache-
+
       - name: Setup logs directory
         run: mkdir logs
 
@@ -52,6 +60,9 @@ jobs:
 
       - name: Run typecheck
         run: npm run typecheck
+
+      - name: Warm Nx project graph cache
+        run: npx nx show projects
 
       - name: Run tests
         run: bash -c "set -o pipefail;npm run test |& tee 'logs/test.log'"

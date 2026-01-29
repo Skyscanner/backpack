@@ -1,0 +1,25 @@
+{
+  "name": "bpk-component-spinner",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-component-spinner/src",
+  "projectType": "library",
+  "targets": {
+    "generate-spinners": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "gulp generateSpinners",
+        "cwd": "gulpfile.js/bpk-component-spinner"
+      },
+      "inputs": [
+        "{workspaceRoot}/node_modules/@skyscanner/bpk-svgs/dist/js/spinners/**/*"
+      ],
+      "outputs": [
+        "{projectRoot}/src/spinners/**/*"
+      ]
+    }
+  },
+  "tags": [
+    "scope:component",
+    "type:component"
+  ]
+}

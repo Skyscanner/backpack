@@ -1,0 +1,7 @@
+{
+  "name": "bpk-stylesheets",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-stylesheets/src",
+  "projectType": "library",
+  "tags": ["scope:foundation", "type:style"]
+}

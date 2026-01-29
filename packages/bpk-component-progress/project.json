@@ -1,0 +1,10 @@
+{
+  "name": "bpk-component-progress",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-component-progress/src",
+  "projectType": "library",
+  "tags": [
+    "scope:component",
+    "type:component"
+  ]
+}
