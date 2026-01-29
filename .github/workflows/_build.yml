@@ -171,8 +171,7 @@ jobs:
           path: dist-storybook/
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
 
-      - name: Generate code (only if dist-storybook cache missed)
-        if: steps.storybook-dist-cache.outputs.cache-hit != 'true'
+      - name: Generate code (required for storybook build)
         run: npx nx run-many --target=codegen --projects=bpk-component-flare,bpk-component-icon,bpk-component-spinner
 
       - name: Percy Test
