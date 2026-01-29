@@ -27,8 +27,9 @@ const BpkVesselExample = () => (
       padding: '16px',
       transition: 'opacity 0.3s',
     }}
+    data-testid="vessel-basic"
   >
-    Using BpkVessel (default div) with className and inline styles.
+    Content
   </BpkVessel>
 );
 
