@@ -138,6 +138,8 @@ const invalidProps = ["for a non-boolean attribute", "Invalid ARIA attribute"]
 const actTests = ["inside a test was not wrapped in act(...)"]
 // TODO: Convert components that use CSSTransition to functional components and allow for using refs
 const findDOMNode = ["findDOMNode is deprecated and will be removed in the next major release."];
+// React console warnings that may appear in parallel test execution
+const reactWarnings = ["^\\s*Warning:"];
 
 const allIgnoredWarnings = linterWarnings
   .concat(invalidReactChild)
@@ -152,7 +154,8 @@ const allIgnoredWarnings = linterWarnings
   .concat(invalidCSSProperties)
   .concat(invalidProps)
   .concat(actTests)
-  .concat(findDOMNode);
+  .concat(findDOMNode)
+  .concat(reactWarnings);
 
 commonFileWarnings('logs/test.log', {
   logType: 'fail',
