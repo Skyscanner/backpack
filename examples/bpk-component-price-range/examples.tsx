@@ -53,7 +53,6 @@ const Wrapper = ({
   isLarge?: boolean;
 }) => <div style={{ width: isLarge ? '15rem' : '8.75rem' }}>{children}</div>;
 
-// Use case 1: Dot marker (boundaries hidden)
 const DotMarkerLowExample = () => (
   <Wrapper>
     <BpkPriceRange
@@ -81,7 +80,6 @@ const DotMarkerHighExample = () => (
   </Wrapper>
 );
 
-// Use case 2: Bubble marker (boundaries shown)
 const BubbleMarkerDefaultTypeExample = () => (
   <Wrapper isLarge>
     <BpkPriceRange
@@ -146,7 +144,6 @@ const BubbleMarkerVeryLargeExample = () => (
   </Wrapper>
 );
 
-// Use case 3: No marker (boundaries shown)
 const NoMarkerExample = () => (
   <Wrapper isLarge>
     <BpkPriceRange segments={segments} />
@@ -173,18 +170,14 @@ const MixedExample = () => (
 );
 
 export {
-  // Use case 1: Dot marker (boundaries hidden)
   DotMarkerLowExample,
   DotMarkerMediumExample,
   DotMarkerHighExample,
-  // Use case 2: Bubble marker (boundaries shown)
   BubbleMarkerDefaultTypeExample,
   BubbleMarkerLowExample,
   BubbleMarkerMediumExample,
   BubbleMarkerHighExample,
   BubbleMarkerVeryLargeExample,
-  // Use case 3: No marker (boundaries shown)
   NoMarkerExample,
-  // Mixed
   MixedExample,
 };

@@ -19,18 +19,14 @@
 import BpkPriceRange from '../../packages/bpk-component-price-range';
 
 import {
-  // Use case 1: Dot marker (boundaries hidden)
   DotMarkerLowExample,
   DotMarkerMediumExample,
   DotMarkerHighExample,
-  // Use case 2: Bubble marker (boundaries shown)
   BubbleMarkerLowExample,
   BubbleMarkerMediumExample,
   BubbleMarkerHighExample,
   BubbleMarkerVeryLargeExample,
-  // Use case 3: No marker (boundaries shown)
   NoMarkerExample,
-  // Mixed
   MixedExample,
 } from './examples';
 
@@ -39,18 +35,15 @@ export default {
   component: BpkPriceRange,
 };
 
-// Use case 1: Dot marker (boundaries hidden)
 export const DotMarkerLow = DotMarkerLowExample;
 export const DotMarkerMedium = DotMarkerMediumExample;
 export const DotMarkerHigh = DotMarkerHighExample;
 
-// Use case 2: Bubble marker (boundaries shown)
 export const BubbleMarkerLow = BubbleMarkerLowExample;
 export const BubbleMarkerMedium = BubbleMarkerMediumExample;
 export const BubbleMarkerHigh = BubbleMarkerHighExample;
 export const BubbleMarkerVeryLarge = BubbleMarkerVeryLargeExample;
 
-// Use case 3: No marker (boundaries shown)
 export const NoMarker = NoMarkerExample;
 
 export const VisualTest = MixedExample;
