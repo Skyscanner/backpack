@@ -173,4 +173,176 @@ describe('BpkVessel', () => {
     expect(section).toHaveClass('section-class');
     expect(section).toHaveStyle('opacity: 0.9');
   });
+
+  it('forwards data-testid attribute', () => {
+    const { getByTestId } = render(
+      <BpkVessel data-testid="vessel-test">Test Content</BpkVessel>,
+    );
+
+    expect(getByTestId('vessel-test')).toBeInTheDocument();
+  });
+
+  it('forwards aria attributes', () => {
+    const { container } = render(
+      <BpkVessel
+        aria-label="Main section"
+        aria-labelledby="heading-id"
+        role="region"
+      >
+        Accessible Content
+      </BpkVessel>,
+    );
+
+    const div = container.querySelector('div');
+    expect(div).toHaveAttribute('aria-label', 'Main section');
+    expect(div).toHaveAttribute('aria-labelledby', 'heading-id');
+    expect(div).toHaveAttribute('role', 'region');
+  });
+
+  it('forwards event handlers', () => {
+    const handleClick = jest.fn();
+    const handleKeyDown = jest.fn();
+
+    const { getByText } = render(
+      <BpkVessel onClick={handleClick} onKeyDown={handleKeyDown}>
+        Interactive Content
+      </BpkVessel>,
+    );
+
+    const element = getByText('Interactive Content');
+    element.click();
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('forwards id and title attributes', () => {
+    const { container } = render(
+      <BpkVessel id="vessel-id" title="Vessel Title">
+        Content
+      </BpkVessel>,
+    );
+
+    const div = container.querySelector('div');
+    expect(div).toHaveAttribute('id', 'vessel-id');
+    expect(div).toHaveAttribute('title', 'Vessel Title');
+  });
+
+  it('forwards tabIndex attribute', () => {
+    const { container } = render(
+      <BpkVessel tabIndex={0}>Focusable Content</BpkVessel>,
+    );
+
+    const div = container.querySelector('div');
+    expect(div).toHaveAttribute('tabIndex', '0');
+  });
+
+  it('forwards dir and lang attributes', () => {
+    const { container } = render(
+      <BpkVessel dir="rtl" lang="ar">
+        RTL Content
+      </BpkVessel>,
+    );
+
+    const div = container.querySelector('div');
+    expect(div).toHaveAttribute('dir', 'rtl');
+    expect(div).toHaveAttribute('lang', 'ar');
+  });
+
+  it('forwards hidden attribute', () => {
+    const { container } = render(<BpkVessel hidden>Hidden Content</BpkVessel>);
+
+    const div = container.querySelector('div');
+    expect(div).toHaveAttribute('hidden');
+  });
+
+  it('forwards additional aria attributes', () => {
+    const { container } = render(
+      <BpkVessel
+        aria-disabled="true"
+        aria-selected="true"
+        aria-pressed="false"
+        aria-current="page"
+      >
+        Extended ARIA Content
+      </BpkVessel>,
+    );
+
+    const div = container.querySelector('div');
+    expect(div).toHaveAttribute('aria-disabled', 'true');
+    expect(div).toHaveAttribute('aria-selected', 'true');
+    expect(div).toHaveAttribute('aria-pressed', 'false');
+    expect(div).toHaveAttribute('aria-current', 'page');
+  });
+
+  it('forwards additional mouse event handlers', () => {
+    const handleMouseDown = jest.fn();
+    const handleMouseUp = jest.fn();
+    const handleDoubleClick = jest.fn();
+
+    const { getByText } = render(
+      <BpkVessel
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onDoubleClick={handleDoubleClick}
+      >
+        Mouse Events Content
+      </BpkVessel>,
+    );
+
+    const element = getByText('Mouse Events Content');
+
+    element.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
+    expect(handleMouseDown).toHaveBeenCalledTimes(1);
+
+    element.dispatchEvent(new MouseEvent('mouseup', { bubbles: true }));
+    expect(handleMouseUp).toHaveBeenCalledTimes(1);
+
+    element.dispatchEvent(new MouseEvent('dblclick', { bubbles: true }));
+    expect(handleDoubleClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('forwards any data-* attributes', () => {
+    const { container } = render(
+      <BpkVessel data-custom="custom-value" data-id="123">
+        Data Attributes Content
+      </BpkVessel>,
+    );
+
+    const div = container.querySelector('div');
+    expect(div).toHaveAttribute('data-custom', 'custom-value');
+    expect(div).toHaveAttribute('data-id', '123');
+  });
+
+  it('works with all props together', () => {
+    const handleClick = jest.fn();
+
+    const { container } = render(
+      <BpkVessel
+        as="section"
+        className="full-props"
+        style={{ padding: '20px' }}
+        data-testid="full-test"
+        id="full-id"
+        role="region"
+        aria-label="Full example"
+        tabIndex={-1}
+        onClick={handleClick}
+      >
+        All Props Content
+      </BpkVessel>,
+    );
+
+    const section = container.querySelector('section');
+    expect(section).toBeInTheDocument();
+    expect(section?.tagName).toBe('SECTION');
+    expect(section).toHaveClass('full-props');
+    expect(section).toHaveStyle('padding: 20px');
+    expect(section).toHaveAttribute('data-testid', 'full-test');
+    expect(section).toHaveAttribute('id', 'full-id');
+    expect(section).toHaveAttribute('role', 'region');
+    expect(section).toHaveAttribute('aria-label', 'Full example');
+    expect(section).toHaveAttribute('tabIndex', '-1');
+
+    section?.click();
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
 });

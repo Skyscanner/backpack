@@ -60,30 +60,21 @@ export default function Example() {
 
 ### BpkVessel
 
-`BpkVessel` is a **migration hatch** layout primitive designed to ease component migration to Backpack. It renders a simple HTML element (default: div) and only accepts `className` and `style` props.
+`BpkVessel` is a **migration hatch** layout primitive designed to ease component migration to Backpack. It renders a simple HTML element (default: div) and accepts `className`, `style`, and common HTML attributes needed for migration.
 
 > ⚠️ **Important:** BpkVessel is a **temporary migration tool**, not a permanent solution.
 
 ```tsx
 import { BpkVessel } from '@skyscanner/backpack-web/bpk-component-layout';
 
-// Basic usage with className and style
 export default function Example() {
   return (
     <BpkVessel
       className="legacy-container"
       style={{ padding: '16px', transition: 'opacity 0.3s' }}
+      data-testid="migration-wrapper"
     >
       Migrating content
-    </BpkVessel>
-  );
-}
-
-// Using custom element via "as" prop
-export function SemanticExample() {
-  return (
-    <BpkVessel as="section" className="legacy-section">
-      Section Content
     </BpkVessel>
   );
 }
@@ -92,13 +83,17 @@ export function SemanticExample() {
 **When to use BpkVessel:**
 - During component migration when you need to maintain existing className/style usage
 - When you have legacy CSS classes that cannot be immediately refactored
+- When you need to pass testing attributes or accessibility props during migration
 - As a temporary solution while refactoring components
 
 **Props:**
 - `as` - Optional element type (default: 'div'). Accepts: 'div', 'span', 'section', 'article', 'nav', 'main', 'aside', 'header', 'footer'
-- `children` - Child elements
-- `className` - Optional CSS class name(s)
-- `style` - Optional inline styles
+- All standard HTML attributes: `className`, `style`, `id`, `title`, `dir`, `lang`, `hidden`, etc.
+- All ARIA attributes: `aria-label`, `aria-labelledby`, `role`, `tabIndex`, etc.
+- All DOM event handlers: `onClick`, `onChange`, `onFocus`, `onBlur`, etc.
+- Testing attributes: `data-testid`, `data-cy`, and any `data-*` attributes
+
+BpkVessel accepts **all React.HTMLAttributes** to maximize migration flexibility.
 
 ## Layout tokens and props
 
