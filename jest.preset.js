@@ -36,6 +36,4 @@ module.exports = {
   transformIgnorePatterns: [
     'node_modules/(?!bpk|@skyscanner|d3-.*|internmap)',
   ],
-
-  verbose: true,
 };

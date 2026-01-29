@@ -32,7 +32,8 @@
       "Bash(then basename \"$dir\")",
       "Bash(fi:*)",
       "Bash(done)",
-      "Bash(do if [ ! -f \"$dir/index.ts\" ])"
+      "Bash(do if [ ! -f \"$dir/index.ts\" ])",
+      "Bash(npx jest:*)"
     ]
   }
 }

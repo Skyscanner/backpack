@@ -1,0 +1,52 @@
+{
+  "name": "@backpack/barchart",
+  "version": "0.0.1",
+  "description": "Backpack barchart component",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "files": ["index.ts", "src"],
+  "dependencies": {
+    "@backpack/react-utils": "*"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2 || ^18.0.0",
+    "react-dom": "^17.0.2 || ^18.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "license": "Apache-2.0",
+  "nx": {
+    "tags": ["type:component", "scope:ui"],
+    "targets": {
+      "build": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "tsc --noEmit"
+        },
+        "dependsOn": ["^build"],
+        "inputs": ["production", "^production"],
+        "outputs": [],
+        "cache": true
+      },
+      "test": {
+        "executor": "@nx/jest:jest",
+        "options": {
+          "jestConfig": "packages/bpk-component-barchart/jest.config.js"
+        },
+        "inputs": ["default", "^production"],
+        "cache": true
+      },
+      "lint": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "eslint src --ext .ts,.tsx && stylelint \"src/**/*.scss\"",
+          "cwd": "packages/bpk-component-barchart"
+        },
+        "inputs": ["default"],
+        "cache": true
+      }
+    }
+  }
+}

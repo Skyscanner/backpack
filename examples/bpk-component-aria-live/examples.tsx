@@ -21,7 +21,7 @@ import type { ChangeEvent, ReactElement } from 'react';
 
 import BpkAriaLive, {
   ARIA_LIVE_POLITENESS_SETTINGS,
-} from '../../packages/bpk-component-aria-live';
+} from '@backpack/aria-live';
 import BpkChip from '../../packages/bpk-component-chip';
 import { BpkCode } from '../../packages/bpk-component-code';
 import BpkFieldset from '../../packages/bpk-component-fieldset';

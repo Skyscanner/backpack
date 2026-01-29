@@ -21,7 +21,12 @@
     "allowJs": false,
     "baseUrl": ".",
     "paths": {
+      "@backpack/accordion": ["packages/bpk-component-accordion/index.ts"],
+      "@backpack/aria-live": ["packages/bpk-component-aria-live/index.ts"],
       "@backpack/badge": ["packages/bpk-component-badge/index.ts"],
+      "@backpack/banner-alert": ["packages/bpk-component-banner-alert/index.ts"],
+      "@backpack/barchart": ["packages/bpk-component-barchart/index.js"],
+      "@backpack/blockquote": ["packages/bpk-component-blockquote/index.ts"],
       "@backpack/chip": ["packages/bpk-component-chip/index.ts"],
       "@backpack/chip-group": ["packages/bpk-component-chip-group/index.ts"]
     }

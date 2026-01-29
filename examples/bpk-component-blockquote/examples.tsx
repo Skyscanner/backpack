@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkBlockquote from '../../packages/bpk-component-blockquote';
+import BpkBlockquote from '@backpack/blockquote';
 
 const textContent = `
 It's your world and we'll help you explore it.

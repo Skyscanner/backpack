@@ -29,7 +29,7 @@ import {
   withSingleItemAccordionState,
   BpkAccordionItem,
   withAccordionItemState,
-} from '../../packages/bpk-component-accordion';
+} from '@backpack/accordion';
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
 import { withAlignment } from '../../packages/bpk-component-icon';
 import StopsIcon from '../../packages/bpk-component-icon/sm/stops';

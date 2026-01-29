@@ -17,7 +17,7 @@
  */
 
 
-import BpkBarchart from '../../packages/bpk-component-barchart/src/BpkBarchart';
+import BpkBarchart from '@backpack/barchart';
 
 import {
   AxesAndGridlinesExample,
