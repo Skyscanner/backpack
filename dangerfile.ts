@@ -140,6 +140,8 @@ const actTests = ["inside a test was not wrapped in act(...)"]
 const findDOMNode = ["findDOMNode is deprecated and will be removed in the next major release."];
 // React console warnings that may appear in parallel test execution
 const reactWarnings = ["^\\s*Warning:"];
+// Node.js warnings and trace information
+const nodeWarnings = ["Use `node --trace-warnings"];
 
 const allIgnoredWarnings = linterWarnings
   .concat(invalidReactChild)
@@ -155,7 +157,8 @@ const allIgnoredWarnings = linterWarnings
   .concat(invalidProps)
   .concat(actTests)
   .concat(findDOMNode)
-  .concat(reactWarnings);
+  .concat(reactWarnings)
+  .concat(nodeWarnings);
 
 commonFileWarnings('logs/test.log', {
   logType: 'fail',
