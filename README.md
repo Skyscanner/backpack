@@ -18,6 +18,50 @@
 npm install --save @skyscanner/backpack-web
 ```
 
+## Building with Nx
+
+Backpack uses [Nx](https://nx.dev) to orchestrate builds, tests, and other tasks across all 91 packages in this monorepo. Nx provides intelligent caching and dependency management, significantly improving build performance.
+
+### Quick Start
+
+```sh
+# Build all packages
+npm run nx -- run-many --target=build --all
+
+# Build a specific package
+npm run nx -- run bpk-component-button:build
+
+# Build only packages affected by your changes
+npm run nx -- affected --target=build
+
+# View dependency graph
+npm run nx -- graph
+```
+
+### Performance Benefits
+
+- **89% faster warm builds**: 4.2s vs 37.8s (with cache)
+- **100% cache hit rate**: Only rebuild what changed
+- **Intelligent parallelization**: Build independent packages concurrently
+- **Affected detection**: Test/build only what's impacted by changes
+
+### Documentation
+
+- **[Getting Started with Nx](./docs/nx-migration/getting-started.md)** - Introduction and common workflows
+- **[Nx Commands Reference](./docs/nx-migration/nx-commands.md)** - Complete command documentation
+- **[Migration Plan](./specs/001-nx-migration/plan.md)** - Full Nx migration strategy
+- **[Milestone 1 Report](./docs/nx-migration/milestone-1-report.md)** - Implementation results
+
+### Legacy npm Commands
+
+Traditional npm commands still work and will continue to be supported:
+
+```sh
+npm run build      # Build all packages
+npm test           # Run all tests
+npm run lint       # Lint all packages
+```
+
 ## Contributing
 
 To contribute please see [contributing.md](CONTRIBUTING.md).

@@ -77,8 +77,8 @@ jobs:
       - name: Create build cache
         if: ${{ steps.storybook-dist-cache.outputs.cache-hit != 'true' }}
         run: |
-          npm run build
-          npm run storybook:dist
+          npx nx build-all
+          npx nx storybook:build
 
   Build:
     permissions:
