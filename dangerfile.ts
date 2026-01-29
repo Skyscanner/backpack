@@ -141,7 +141,7 @@ const findDOMNode = ["findDOMNode is deprecated and will be removed in the next 
 // React console warnings that may appear in parallel test execution
 const reactWarnings = ["^\\s*Warning:"];
 // Node.js warnings and trace information
-const nodeWarnings = ["Use node --trace-warnings"];
+const nodeWarnings = ["Use `node --trace-warnings"];
 
 const allIgnoredWarnings = linterWarnings
   .concat(invalidReactChild)
