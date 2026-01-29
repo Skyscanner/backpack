@@ -1,0 +1,8 @@
+{
+  "name": "bpk-component-horizontal-nav",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-component-horizontal-nav/src",
+  "projectType": "library",
+  "tags": ["scope:component", "type:lib"],
+  "targets": {}
+}

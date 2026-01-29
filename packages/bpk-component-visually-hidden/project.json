@@ -1,0 +1,8 @@
+{
+  "name": "bpk-component-visually-hidden",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-component-visually-hidden/src",
+  "projectType": "library",
+  "tags": ["scope:component", "type:lib"],
+  "targets": {}
+}

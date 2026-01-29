@@ -1,0 +1,8 @@
+{
+  "name": "{{PACKAGE_NAME}}",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/{{PACKAGE_NAME}}/src",
+  "projectType": "library",
+  "tags": ["scope:component", "type:lib"],
+  "targets": {}
+}
