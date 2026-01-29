@@ -75,7 +75,7 @@ jobs:
             packages/bpk-component-icon/{sm,lg,xxxl}/
             packages/bpk-component-spinner/src/spinners/
             packages/bpk-component-flare/src/__generated__/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**', 'package-lock.json') }}
 
       - name: Create build cache
         if: ${{ steps.storybook-dist-cache.outputs.cache-hit != 'true' }}

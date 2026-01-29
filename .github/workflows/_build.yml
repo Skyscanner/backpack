@@ -165,8 +165,12 @@ jobs:
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
         id: storybook-dist-cache
         with:
-          path: dist-storybook/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
+          path: |
+            dist-storybook/
+            packages/bpk-component-icon/{sm,lg,xxxl}/
+            packages/bpk-component-spinner/src/spinners/
+            packages/bpk-component-flare/src/__generated__/
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**', 'package-lock.json') }}
 
       - name: Percy Test
         run: npx nx percy
