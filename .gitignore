@@ -3,6 +3,7 @@
 .vscode
 .env
 .sass-cache
+.claude/*.local.*
 /dist
 /dist-sassdoc
 /dist-storybook
