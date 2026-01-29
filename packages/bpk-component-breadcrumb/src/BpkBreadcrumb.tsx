@@ -80,8 +80,8 @@ class BpkBreadcrumb extends Component<Props> {
             dangerouslySetInnerHTML={{ __html: this.metaData }}
           />
         )}
-        <nav aria-label={label} {...rest}>
-          <ol className={getClassName('bpk-breadcrumb')} {...getDataComponentAttribute('Breadcrumb')}>{children}</ol>
+        <nav aria-label={label} {...getDataComponentAttribute('Breadcrumb')} {...rest}>
+          <ol className={getClassName('bpk-breadcrumb')}>{children}</ol>
         </nav>
       </Fragment>
     );

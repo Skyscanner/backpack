@@ -111,7 +111,7 @@ const BpkCalendarNav = ({
   const nextMonth = addMonths(baseMonth, 1);
 
   return (
-    <div className={getClassName('bpk-calendar-nav')}>
+    <div className={getClassName('bpk-calendar-nav')} {...getDataComponentAttribute('CalendarNav')}>
       <div style={{ display: 'table-row' }}>
         <div className={getClassName('bpk-calendar-nav__nudger')}>
           <button
@@ -145,7 +145,7 @@ const BpkCalendarNav = ({
         <div className={getClassName('bpk-calendar-nav__month')}>
           <label
             htmlFor={`${id}_select`}
-            className={getClassName('bpk-calendar-nav__text--hidden')} {...getDataComponentAttribute('CalendarNav')}
+            className={getClassName('bpk-calendar-nav__text--hidden')}
           >
             {changeMonthLabel}
           </label>

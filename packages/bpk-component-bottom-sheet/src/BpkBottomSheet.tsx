@@ -181,9 +181,10 @@ const BpkBottomSheet = ({
         appear: animationTimeout,
         exit: isAboveMobile ? 0 : animationTimeout,
       }}
+      {...getDataComponentAttribute('BottomSheet')}
     >
       <>
-        <header className={getClassName('bpk-bottom-sheet--header-wrapper')} {...getDataComponentAttribute('BottomSheet')}>
+        <header className={getClassName('bpk-bottom-sheet--header-wrapper')}>
           <BpkNavigationBar
             id={headingId}
             title={title}
@@ -200,7 +201,7 @@ const BpkBottomSheet = ({
             }
           />
         </header>
-        <div className={contentStyle} {...getDataComponentAttribute('BottomSheet')}>{children}</div>
+        <div className={contentStyle}>{children}</div>
       </>
     </BpkDialogWrapper>
   );

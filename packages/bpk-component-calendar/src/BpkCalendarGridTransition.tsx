@@ -200,6 +200,7 @@ class BpkCalendarGridTransition extends Component<Props, State> {
           className={stripClassNames}
           style={getTransformStyles(transitionValue)}
           onTransitionEnd={this.onMonthTransitionEnd}
+          {...getDataComponentAttribute('CalendarGridTransition')}
         >
           {this.state.months.map((m, index) =>
             min && max && isWithinRange(m, { start: min, end: max }) ? (
@@ -220,7 +221,7 @@ class BpkCalendarGridTransition extends Component<Props, State> {
                       )
                 }
                 aria-hidden={index !== 1}
-                className={getClassName('bpk-calendar-grid-transition__grid')} {...getDataComponentAttribute('CalendarGridTransition')}
+                className={getClassName('bpk-calendar-grid-transition__grid')}
               />
             ) : (
               <div
