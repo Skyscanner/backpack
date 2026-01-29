@@ -68,6 +68,7 @@ const BpkDialog = ({
           headerIcon ? getClassName('bpk-dialog--with-icon') : undefined
         }
         {...rest}
+        {...getDataComponentAttribute('Dialog')}
       >
         {headerIcon && <div className={headerIconClassNames}>{headerIcon}</div>}
         {dismissible && (
