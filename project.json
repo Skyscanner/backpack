@@ -45,6 +45,7 @@
       "options": {
         "commands": [
           "npm run build:copy-normal_css",
+          "npm run build:gulp",
           "npm run build:sass",
           "npm run build:stylesheets"
         ],
