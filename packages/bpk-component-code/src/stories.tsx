@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkCode, { BpkCodeBlock } from '../index';
+import { BpkCode, BpkCodeBlock } from '../index';
 
 import {
   InlineExample,

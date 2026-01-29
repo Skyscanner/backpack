@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-import BpkTable, {
+import {
+  BpkTable,
   BpkTableBody,
   BpkTableCell,
   BpkTableHead,

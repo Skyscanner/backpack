@@ -17,7 +17,7 @@
  */
 
 
-import BpkContentBubble, { BpkFlareBar } from '../index';
+import { BpkContentBubble, BpkFlareBar } from '../index';
 
 import {
   FlareBarExample,
