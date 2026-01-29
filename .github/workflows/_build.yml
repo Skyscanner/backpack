@@ -61,7 +61,7 @@ jobs:
 
       - name: Build Backpack (all for main)
         if: github.event_name != 'pull_request'
-        run: npx nx run-many --target=build --all --parallel=4
+        run: npm run build
 
       - name: Confirm the build hasn't changed any files
         run: ./scripts/check-pristine-state package-lock.json
@@ -170,6 +170,10 @@ jobs:
         with:
           path: dist-storybook/
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/**', 'examples/**') }}
+
+      - name: Generate code (only if dist-storybook cache missed)
+        if: steps.storybook-dist-cache.outputs.cache-hit != 'true'
+        run: npx nx run-many --target=codegen --projects=bpk-component-flare,bpk-component-icon,bpk-component-spinner
 
       - name: Percy Test
         run: npx nx percy
