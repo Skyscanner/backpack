@@ -20,8 +20,10 @@ import type { MouseEvent } from 'react';
 import { Component } from 'react';
 
 import BpkLink from '../../bpk-component-link';
+import { getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { getHtmlElement, DIRECTIONS, DIRECTION_CHANGE_EVENT } from './utils';
+
 
 const getDirection = () => {
   const htmlElement = getHtmlElement();
