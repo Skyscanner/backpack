@@ -21,22 +21,26 @@ import type { BpkVesselProps } from './types';
 /**
  * A "migration hatch" layout primitive designed to ease component migration.
  *
- * BpkVessel renders an HTML element (default: div) and only accepts
- * className and style props for legacy styling during migration.
+ * BpkVessel renders an HTML element (default: div) and accepts all standard
+ * HTML attributes for maximum migration flexibility.
  *
  * **When to use:**
  * - During component migration when you need to maintain existing className/style usage
+ * - When you need to pass testing attributes (data-testid) or accessibility props
  * - As a temporary solution while refactoring components
  *
  * **Important:**
  * - This is a temporary migration tool, not a permanent solution
- * - Only accepts: `as`, `className`, `style`, and `children` props
+ * - Accepts all React.HTMLAttributes (styling, events, aria, data-*, etc.)
+ * - Plan to migrate to BpkBox once legacy styling is removed
  *
  * @example
  * ```tsx
  * <BpkVessel
  *   className="legacy-class"
  *   style={{ padding: '16px', transition: 'opacity 0.3s' }}
+ *   data-testid="migration-wrapper"
+ *   onClick={handleClick}
  * >
  *   Content
  * </BpkVessel>
@@ -44,24 +48,20 @@ import type { BpkVesselProps } from './types';
  * <BpkVessel
  *   as="section"
  *   className="legacy-section"
+ *   aria-label="Main content"
+ *   role="region"
+ *   dir="rtl"
  * >
  *   Section Content
  * </BpkVessel>
  * ```
  *
- * @returns {JSX.Element} An HTML element with className and style applied.
+ * @returns {JSX.Element} An HTML element with all props applied.
  */
 export const BpkVessel = ({
   as: Element = 'div',
   children,
-  className,
-  style,
-}: BpkVesselProps) => (
-  // Allowed, Element is always a DOM element.
-  // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-  <Element className={className} style={style}>
-    {children}
-  </Element>
-);
+  ...restProps
+}: BpkVesselProps) => <Element {...restProps}>{children}</Element>;
 
 export type { BpkVesselProps };

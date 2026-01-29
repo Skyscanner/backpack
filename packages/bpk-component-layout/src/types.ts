@@ -221,13 +221,22 @@ export type VesselElement =
  * Props for BpkVessel component.
  *
  * BpkVessel is a "migration hatch" that renders an HTML element
- * and only accepts className and style props.
+ * and accepts all standard HTML attributes for maximum migration flexibility.
+ *
+ * Accepts all React.HTMLAttributes including:
+ * - Styling: className, style
+ * - Testing: data-testid, data-cy, data-*
+ * - Accessibility: aria-*, role, tabIndex
+ * - Basic HTML: id, title, dir, lang, hidden, etc.
+ * - All standard DOM events: onClick, onChange, onFocus, etc.
  *
  * @example
  * ```tsx
  * <BpkVessel
  *   className="legacy-wrapper"
  *   style={{ padding: '16px', transition: 'opacity 0.3s' }}
+ *   data-testid="migration-wrapper"
+ *   onClick={handleClick}
  * >
  *   Content
  * </BpkVessel>
@@ -235,6 +244,9 @@ export type VesselElement =
  * <BpkVessel
  *   as="section"
  *   className="legacy-section"
+ *   aria-label="Main content"
+ *   role="region"
+ *   dir="rtl"
  * >
  *   Section Content
  * </BpkVessel>
@@ -242,10 +254,9 @@ export type VesselElement =
  */
 export type BpkVesselProps = {
   as?: VesselElement;
-  children?: ReactNode;
-  className?: string;
-  style?: CSSProperties;
-};
+  'data-testid'?: string;
+  'data-cy'?: string;
+} & React.HTMLAttributes<HTMLElement>;
 
 /**
  * Component-specific props for BpkFlex
