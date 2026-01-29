@@ -40,9 +40,10 @@ const BpkPriceMarker = (
   <div
     className={getClassName('bpk-price-marker', `bpk-price-marker--${type}`)}
     ref={ref}
+    {...getDataComponentAttribute('PriceMarker')}
   >
     <BpkText textStyle={TEXT_STYLES.label2}>{priceLabel}</BpkText>
-    <div className={getClassName('bpk-price-marker__arrow')} {...getDataComponentAttribute('forwardRef')} />
+    <div className={getClassName('bpk-price-marker__arrow')} />
   </div>
 );
 

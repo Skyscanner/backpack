@@ -139,12 +139,12 @@ const BpkDataTableHeader = ({ column }: { column: any }) => {
           key="sort"
           aria-hidden
         >
-          <div className={upIconClassNames} {...getDataComponentAttribute('DataTableHeader')}>
+          <div className={upIconClassNames}>
             <UpIcon
               onClick={() => column.toggleSortBy(false)}
             />
           </div>
-          <div className={downIconClassNames} {...getDataComponentAttribute('DataTableHeader')}>
+          <div className={downIconClassNames}>
             <DownIcon
               onClick={() => column.toggleSortBy(true)}
             />

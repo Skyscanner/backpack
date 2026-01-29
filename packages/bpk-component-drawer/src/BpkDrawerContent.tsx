@@ -126,21 +126,22 @@ const BpkDrawerContent = ({
           ].join(' ')}
           ref={dialogRef}
           {...rest}
+          {...getDataComponentAttribute('DrawerContent')}
         >
-          <header className={getClassName('bpk-drawer__header')} {...getDataComponentAttribute('DrawerContent')}>
-            <h2 id={headingId} className={headerClassNames.join(' ')} {...getDataComponentAttribute('DrawerContent')}>
+          <header className={getClassName('bpk-drawer__header')}>
+            <h2 id={headingId} className={headerClassNames.join(' ')}>
               {title}
             </h2>
             &nbsp;
             {closeText ? (
               <BpkLink as="button" onClick={onClose}>{closeText}</BpkLink>
             ) : (
-              <div className={getClassName('bpk-drawer__close-button')} {...getDataComponentAttribute('DrawerContent')}>
+              <div className={getClassName('bpk-drawer__close-button')}>
                 <BpkCloseButton label={closeLabel} onClick={onClose} />
               </div>
             )}
           </header>
-          <div className={contentClassNames.join(' ')} {...getDataComponentAttribute('DrawerContent')}>{children}</div>
+          <div className={contentClassNames.join(' ')}>{children}</div>
         </section>
       )}
     </Transition>

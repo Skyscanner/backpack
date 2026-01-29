@@ -64,9 +64,10 @@ const BpkDialogInner = (props: Props) => {
         aria-modal={ariaModal}
         className={classNames}
         ref={dialogRef}
+        {...getDataComponentAttribute('withScrim')}
       >
-        {flare && <div className={flareClassNames} {...getDataComponentAttribute('withScrim')}><BpkContentBubble/></div>}
-        <div className={contentClassNames} {...getDataComponentAttribute('withScrim')}>{children}</div>
+        {flare && <div className={flareClassNames}><BpkContentBubble/></div>}
+        <div className={contentClassNames}>{children}</div>
       </section>
     </TransitionInitialMount>
   );

@@ -83,7 +83,7 @@ const getIconForType = (
   const Icon = CustomIcon || componentMap[type];
   const AlignedIcon = withButtonAlignment(Icon);
 
-  return <div className={className} {...getDataComponentAttribute('InfoBannerInner')}><AlignedIcon/></div>;
+  return <div className={className}><AlignedIcon/></div>;
 };
 
 type ToggleButtonProps = {
@@ -92,7 +92,7 @@ type ToggleButtonProps = {
 };
 
 const ToggleButton = (props: ToggleButtonProps) => (
-  <div className={getClassName('bpk-info-banner__toggle-button')} {...getDataComponentAttribute('InfoBannerInner')}>
+  <div className={getClassName('bpk-info-banner__toggle-button')}>
     {props.expanded ? <CollapseIcon /> : <ExpandIcon />}
     <BpkVisuallyHidden>{props.label}</BpkVisuallyHidden>
   </div>
@@ -182,19 +182,19 @@ const BpkInfoBannerInner = ({
           className={headerClassNames}
           onClick={onBannerExpandToggle}
         >
-          <span className={getClassName('bpk-info-banner__icon')} {...getDataComponentAttribute('InfoBannerInner')}>
+          <span className={getClassName('bpk-info-banner__icon')}>
             {getIconForType(type, icon)}
           </span>
-          <span className={getClassName('bpk-info-banner__message')} {...getDataComponentAttribute('InfoBannerInner')}>
+          <span className={getClassName('bpk-info-banner__message')}>
             {message}
           </span>
           {isExpandable && (
-            <span className={getClassName('bpk-info-banner__toggle')} {...getDataComponentAttribute('InfoBannerInner')}>
+            <span className={getClassName('bpk-info-banner__toggle')}>
               <ToggleButton expanded={expanded} label={toggleButtonLabel} />
             </span>
           )}
           {dismissable && (
-            <span className={getClassName('bpk-info-banner__toggle')} {...getDataComponentAttribute('InfoBannerInner')}>
+            <span className={getClassName('bpk-info-banner__toggle')}>
               <BpkCloseButton
                 onClick={onBannerDismiss}
                 aria-label={dismissButtonLabel}
@@ -207,7 +207,7 @@ const BpkInfoBannerInner = ({
           duration={parseInt(durationSm, 10)}
           height={showChildren ? 'auto' : 0}
         >
-          <div className={childrenContainerClassName} {...getDataComponentAttribute('InfoBannerInner')}>
+          <div className={childrenContainerClassName}>
             {children}
           </div>
           {isExpandable && action && (

@@ -166,7 +166,7 @@ class BpkInput extends Component<Props, State> {
                 this.setState({ persistClearButton: false });
               }
             }}
-            className={clearButtonClassNames.join(' ')} {...getDataComponentAttribute('Input')}
+            className={clearButtonClassNames.join(' ')}
           >
           <ClearButtonIcon
             focusable="false" // prevents focus on IE11

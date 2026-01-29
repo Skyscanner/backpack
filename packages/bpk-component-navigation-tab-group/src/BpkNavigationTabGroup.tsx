@@ -138,7 +138,7 @@ const BpkNavigationTabGroup = ({
               type={type}
             >
               <>
-                <div className={getClassName('bpk-navigation-tab-content-wrapper')} {...getDataComponentAttribute('NavigationTabGroup')}>
+                <div className={getClassName('bpk-navigation-tab-content-wrapper')}>
                   {Icon && (
                     <span
                       className={getClassName(
@@ -156,7 +156,7 @@ const BpkNavigationTabGroup = ({
                 </div>
 
                 {badgeText && (
-                  <span className={getClassName('bpk-navigation-tab-bubble-wrapper')} {...getDataComponentAttribute('NavigationTabGroup')}>
+                  <span className={getClassName('bpk-navigation-tab-bubble-wrapper')}>
                     <BpkBubble>
                       {badgeText}
                     </BpkBubble>

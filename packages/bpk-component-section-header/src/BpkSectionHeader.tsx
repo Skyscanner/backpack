@@ -52,9 +52,9 @@ const BpkSectionHeader = ({
         `bpk-section-header__title-description--${type}`,
       )}
     >
-      <h2 className={getClassName('bpk-section-header__title')} {...getDataComponentAttribute('SectionHeader')}>{title}</h2>
+      <h2 className={getClassName('bpk-section-header__title')}>{title}</h2>
       {description && (
-        <span className={getClassName('bpk-section-header__description')} {...getDataComponentAttribute('SectionHeader')}>
+        <span className={getClassName('bpk-section-header__description')}>
           <BpkText>{description}</BpkText>
         </span>
       )}

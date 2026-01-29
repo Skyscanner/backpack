@@ -144,9 +144,9 @@ const BpkLoadingButton = (props: LoadingProps) => {
       type={type}
       {...rest}
     >
-      <div className={getClassName('bpk-loading-button__container')} {...getDataComponentAttribute('LoadingButton')}>
-        {loading && <span className={iconClassNames} {...getDataComponentAttribute('LoadingButton')}>{loadingIcon}</span>}
-        <div className={getClassName(loading ? "bpk-loading-button--hidden": "bpk-loading-button--visible")} {...getDataComponentAttribute('LoadingButton')}>
+      <div className={getClassName('bpk-loading-button__container')}>
+        {loading && <span className={iconClassNames}>{loadingIcon}</span>}
+        <div className={getClassName(loading ? "bpk-loading-button--hidden": "bpk-loading-button--visible")}>
           {child0}
           {child1}
           {child2}
