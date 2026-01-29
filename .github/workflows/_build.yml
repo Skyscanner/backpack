@@ -61,7 +61,7 @@ jobs:
 
       - name: Build Backpack (all for main)
         if: github.event_name != 'pull_request'
-        run: npm run build
+        run: npx nx build-all
 
       - name: Confirm the build hasn't changed any files
         run: ./scripts/check-pristine-state package-lock.json

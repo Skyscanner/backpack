@@ -52,8 +52,8 @@
         "parallel": false
       },
       "outputs": [
-        "packages/bpk-stylesheets/dist",
-        "packages/bpk-stylesheets/normalize.scss"
+        "{workspaceRoot}/packages/bpk-stylesheets/dist",
+        "{workspaceRoot}/packages/bpk-stylesheets/normalize.scss"
       ]
     },
     "build-all": {
