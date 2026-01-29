@@ -21,32 +21,16 @@ import { BpkVessel } from '../../packages/bpk-component-layout';
 import STYLES from './examples.module.scss';
 
 const BpkVesselExample = () => (
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-    {/* Basic migration example */}
-    <BpkVessel
-      className={STYLES['bpk-layout-examples__outline']}
-      style={{
-        padding: '16px',
-        transition: 'opacity 0.3s',
-      }}
-      data-testid="vessel-basic"
-    >
-      Basic: className + style + data-testid
-    </BpkVessel>
-
-    {/* Interactive component migration */}
-    <BpkVessel
-      as="section"
-      className={STYLES['bpk-layout-examples__outline']}
-      style={{ padding: '16px' }}
-      role="region"
-      aria-label="Interactive section"
-      tabIndex={0}
-      data-testid="vessel-interactive"
-    >
-      Interactive content
-    </BpkVessel>
-  </div>
+  <BpkVessel
+    className={STYLES['bpk-layout-examples__outline']}
+    style={{
+      padding: '16px',
+      transition: 'opacity 0.3s',
+    }}
+    data-testid="vessel-basic"
+  >
+    Content
+  </BpkVessel>
 );
 
 export default BpkVesselExample;
