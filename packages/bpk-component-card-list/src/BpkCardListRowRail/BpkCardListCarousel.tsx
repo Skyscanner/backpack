@@ -250,16 +250,18 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           renderList[index] === 1 || hasBeenVisibleRef.current.has(index);
         if (!shouldRenderCard) {
           return (
-            <div className={getClassName('bpk-card-list-row-rail__card-slot')}>
+            <div
+              {...commonProps}
+              style={{
+                ...commonProps.style,
+                ...cardDimensionStyle,
+                contain: 'paint',
+              }}
+              data-testid="bpk-card-list-carousel--placeholder"
+              aria-hidden="true"
+            >
               <div
-                {...commonProps}
-                style={{
-                  ...commonProps.style,
-                  ...cardDimensionStyle,
-                  contain: 'paint',
-                }}
-                data-testid="bpk-card-list-carousel--placeholder"
-                aria-hidden="true"
+                className={getClassName('bpk-card-list-row-rail__card-slot')}
               >
                 {card}
               </div>
