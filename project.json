@@ -87,7 +87,8 @@
         "cwd": "{workspaceRoot}"
       },
       "outputs": ["{workspaceRoot}/dist-storybook"],
-      "cache": true
+      "cache": true,
+      "dependsOn": ["styles"]
     },
     "percy": {
       "executor": "nx:run-commands",
