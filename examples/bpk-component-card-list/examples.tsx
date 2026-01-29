@@ -28,7 +28,7 @@ import {
 } from '../../packages/bpk-component-card-list/src/common-types';
 import BpkMultiSelectChipGroup, {
   CHIP_GROUP_TYPES,
-} from '../../packages/bpk-component-chip-group';
+} from '@backpack/chip-group';
 import BpkImage from '../../packages/bpk-component-image';
 import BpkLink from '../../packages/bpk-component-link';
 import BpkSnippet, {
@@ -38,7 +38,7 @@ import BpkText, {
   TEXT_STYLES,
 } from '../../packages/bpk-component-text/src/BpkText';
 
-import type { MultiSelectProps } from '../../packages/bpk-component-chip-group';
+import type { MultiSelectProps } from '@backpack/chip-group';
 
 import STYLES from './examples.module.scss';
 

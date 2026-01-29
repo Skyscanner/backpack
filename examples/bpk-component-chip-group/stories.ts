@@ -18,7 +18,7 @@
 
 import BpkMultiSelectChipGroup, {
   BpkSingleSelectChipGroup,
-} from '../../packages/bpk-component-chip-group';
+} from '@backpack/chip-group';
 
 import {
   BpkChipGroupRail,

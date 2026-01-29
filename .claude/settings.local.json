@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm run lint:js:*)",
+      "Bash(npm run build:gulp:*)",
+      "Bash(command -v:*)",
+      "Bash(npm run jest:*)",
+      "Bash(npx storybook:*)",
+      "Bash(npm run check-bpk-dependencies:*)",
+      "Bash(npm run typecheck:*)",
+      "Bash(ls:*)",
+      "Bash(node -c:*)",
+      "Bash(node -e:*)",
+      "Bash(npx eslint:*)",
+      "Bash(npm run check-react-versions:*)",
+      "Bash(npm run build:copy-normal_css:*)",
+      "Bash(npm:*)",
+      "Bash(node --version:*)",
+      "Bash(nx build:*)",
+      "Bash(nx test:*)",
+      "Bash(npx nx:*)",
+      "WebFetch(domain:production-standards.skyscannerpage.com)",
+      "Bash(node scripts/nx/update-import-paths.js:*)",
+      "Bash(node /Users/abbyzhan/code/backpack/scripts/nx/update-import-paths.js:*)",
+      "Bash(find:*)",
+      "Bash(test:*)",
+      "Bash(for dir in packages/*/)",
+      "Bash(do pkg=\"$dir/package.json\")",
+      "Bash(if [ ! -f \"$pkg\" ])",
+      "Bash(! grep -q '\"\"nx\"\"' \"$pkg\")",
+      "Bash(then basename \"$dir\")",
+      "Bash(fi:*)",
+      "Bash(done)",
+      "Bash(do if [ ! -f \"$dir/index.ts\" ])"
+    ]
+  }
+}

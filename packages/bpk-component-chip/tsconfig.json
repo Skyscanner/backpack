@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": false,
+    "noEmit": true
+  },
+  "include": ["src/**/*", "../../@types/**/*"],
+  "exclude": [
+    "src/**/*-test.tsx",
+    "src/**/*.test.tsx",
+    "src/**/*.figma.tsx",
+    "src/**/__snapshots__",
+    "node_modules"
+  ]
+}

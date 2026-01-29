@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import BpkBadge, { BADGE_TYPES } from '../../packages/bpk-component-badge';
+import BpkBadge, { BADGE_TYPES } from '@backpack/badge';
 import BpkSmallExclamationIcon from '../../packages/bpk-component-icon/sm/exclamation';
 import BpkSmallHelpCircleIcon from '../../packages/bpk-component-icon/sm/help-circle';
 import BpkSmallTickIcon from '../../packages/bpk-component-icon/sm/tick-circle';
