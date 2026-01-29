@@ -156,7 +156,7 @@ describe('BpkCardListCarousel', () => {
       // Rendered cards should NOT have virtualization styles or placeholder test IDs
       const firstFifteenCards = allCards.slice(0, 15);
       firstFifteenCards.forEach((card) => {
-        expect(card.getAttribute('data-testid')).toBeFalsy()
+        expect(card.getAttribute('data-testid')).toBeFalsy();
         expect(card.style.contain).toBeFalsy();
         expect(card.style.width).toBeFalsy();
         expect(card.style.height).toBeFalsy();
@@ -171,10 +171,7 @@ describe('BpkCardListCarousel', () => {
 
       // Render starting on second page (index 1 = cards 3-5)
       render(
-        <BpkCardListCarousel
-          {...defaultProps}
-          currentIndex={1}
-        >
+        <BpkCardListCarousel {...defaultProps} currentIndex={1}>
           {mockCards(numberOfCards)}
         </BpkCardListCarousel>,
       );
@@ -196,7 +193,7 @@ describe('BpkCardListCarousel', () => {
       // Rendered cards should NOT have virtualization styles or placeholder test IDs
       const firstFifteenCards = allCards.slice(0, 17);
       firstFifteenCards.forEach((card) => {
-        expect(card.getAttribute('data-testid')).toBeFalsy()
+        expect(card.getAttribute('data-testid')).toBeFalsy();
         expect(card.style.contain).toBeFalsy();
         expect(card.style.width).toBeFalsy();
         expect(card.style.height).toBeFalsy();
