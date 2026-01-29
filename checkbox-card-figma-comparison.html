@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkbox Card - Figma Comparison</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      padding: 40px;
+      background: #f5f5f5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin-bottom: 32px;
+      color: #05203C;
+    }
+
+    .comparison {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .section {
+      flex: 1;
+      background: white;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 16px;
+      color: #05203C;
+      font-weight: 600;
+    }
+
+    .spec-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .spec-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .spec-list li:last-child {
+      border-bottom: none;
+    }
+
+    .label {
+      font-weight: 600;
+      color: #666;
+    }
+
+    .value {
+      color: #333;
+      font-family: monospace;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .status.correct {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .cards-demo {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      width: 200px;
+      height: 140px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .card.default {
+      background: #ffffff;
+      border: none;
+    }
+
+    .card.hover {
+      background: #ffffff;
+      border: 1px solid #C1C7CF;
+    }
+
+    .card.selected {
+      background: #05203C;
+    }
+
+    .card img {
+      width: 80px;
+      height: auto;
+    }
+
+    .card-text {
+      text-align: center;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 24px;
+      color: #161616;
+    }
+
+    .card.selected .card-title,
+    .card.selected .card-price {
+      color: #ffffff;
+    }
+
+    .card-price {
+      font-size: 18px;
+      font-weight: 700;
+      color: #161616;
+    }
+
+    .note {
+      background: #fff3cd;
+      border: 1px solid #ffeaa7;
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 24px;
+    }
+
+    .note strong {
+      color: #856404;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 Checkbox Card - Figma Design Specifications vs Implementation</h1>
+
+    <div class="comparison">
+      <div class="section">
+        <h2>📐 Figma Specifications</h2>
+        <ul class="spec-list">
+          <li>
+            <span class="label">Card Size:</span>
+            <span class="value">100px × 100px</span>
+          </li>
+          <li>
+            <span class="label">Gap:</span>
+            <span class="value">var(--spacing/md) = 8px</span>
+          </li>
+          <li>
+            <span class="label">Padding:</span>
+            <span class="value">var(--spacing/none) = 0px</span>
+          </li>
+          <li>
+            <span class="label">Border Radius (Rounded):</span>
+            <span class="value">8px</span>
+          </li>
+          <li>
+            <span class="label">Border Radius (Square):</span>
+            <span class="value">0px</span>
+          </li>
+          <li>
+            <span class="label">Selected BG (Canvas):</span>
+            <span class="value">#05203C (surface/contrast)</span>
+          </li>
+          <li>
+            <span class="label">Selected BG (Surface):</span>
+            <span class="value">#0062E3 (core/accent)</span>
+          </li>
+          <li>
+            <span class="label">Text Color (Selected):</span>
+            <span class="value">White (text-on-dark)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>✅ Current Implementation</h2>
+        <ul class="spec-list">
+          <li>
+            <span class="label">Card Size:</span>
+            <span class="value">100px × 100px <span class="status correct">✓</span></span>
+          </li>
+          <li>
+            <span class="label">Gap:</span>
+            <span class="value">bpk-spacing-md() = 8px <span class="status correct">✓</span></span>
+          </li>
+          <li>
+            <span class="label">Padding:</span>
+            <span class="value">0px <span class="status correct">✓</span></span>
+          </li>
+          <li>
+            <span class="label">Border Radius (Rounded):</span>
+            <span class="value">8px <span class="status correct">✓</span></span>
+          </li>
+          <li>
+            <span class="label">Border Radius (Square):</span>
+            <span class="value">0px <span class="status correct">✓</span></span>
+          </li>
+          <li>
+            <span class="label">Selected BG (Canvas):</span>
+            <span class="value">$bpk-surface-contrast-day #05203C <span class="status correct">✓</span></span>
+          </li>
+          <li>
+            <span class="label">Selected BG (Surface):</span>
+            <span class="value">$bpk-core-accent-day #0062E3 <span class="status correct">✓</span></span>
+          </li>
+          <li>
+            <span class="label">Text Color (Selected):</span>
+            <span class="value">$bpk-text-on-dark-day White <span class="status correct">✓</span></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🎭 Visual States Demo</h2>
+      <div class="cards-demo">
+        <div class="card default">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='50' viewBox='0 0 80 50'%3E%3Cpath fill='%23ccc' d='M10,20 h60 v15 h-60 z M5,35 h70 l-5,10 h-60 z'/%3E%3C/svg%3E" alt="car">
+          <div class="card-text">
+            <div class="card-title">Car type</div>
+            <div class="card-price">from £74</div>
+          </div>
+        </div>
+
+        <div class="card hover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='50' viewBox='0 0 80 50'%3E%3Cpath fill='%23ccc' d='M10,20 h60 v15 h-60 z M5,35 h70 l-5,10 h-60 z'/%3E%3C/svg%3E" alt="car">
+          <div class="card-text">
+            <div class="card-title">Car type</div>
+            <div class="card-price">from £74</div>
+          </div>
+        </div>
+
+        <div class="card selected">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='50' viewBox='0 0 80 50'%3E%3Cpath fill='%23fff' d='M10,20 h60 v15 h-60 z M5,35 h70 l-5,10 h-60 z'/%3E%3C/svg%3E" alt="car">
+          <div class="card-text">
+            <div class="card-title">Car type</div>
+            <div class="card-price">from £74</div>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top: 16px; color: #666; font-size: 14px;">
+        <strong>States shown:</strong> Default | Hover | Selected
+      </p>
+    </div>
+
+    <div class="note">
+      <strong>✅ Implementation Status:</strong> All design specifications from Figma are correctly implemented in the BpkCheckboxCard component. The text styles, colors, spacing, and states match the Figma design exactly.
+      <br><br>
+      <strong>Key Design Tokens Used:</strong>
+      <ul style="margin-top: 8px; margin-left: 20px;">
+        <li><code>$bpk-surface-contrast-day</code> for selected state background (Canvas variants)</li>
+        <li><code>$bpk-core-accent-day</code> for selected state background (Surface Contrast variant)</li>
+        <li><code>$bpk-text-on-dark-day</code> for text color in selected state</li>
+        <li><code>bpk-spacing-md()</code> for 8px gap between elements</li>
+        <li><code>bpk-label-1()</code> mixin for label and price typography</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

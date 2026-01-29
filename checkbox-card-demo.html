@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BpkCheckboxCard Component Demo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 40px;
+        }
+        .section {
+            margin-bottom: 50px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0062e3;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .example {
+            margin-bottom: 30px;
+        }
+        .example h3 {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .checkbox-card {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            margin-bottom: 16px;
+        }
+        .checkbox-card:hover {
+            border-color: #0062e3;
+            box-shadow: 0 4px 12px rgba(0,98,227,0.15);
+        }
+        .checkbox-card input[type="checkbox"] {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .checkbox-card input[type="checkbox"]:checked + .checkbox-card-content {
+            background: #e6f2ff;
+        }
+        .checkbox-card input[type="checkbox"]:checked ~ .checkbox-indicator {
+            opacity: 1;
+        }
+        .checkbox-card input[type="checkbox"]:focus-visible + .checkbox-card-content {
+            outline: 2px solid #0062e3;
+            outline-offset: 2px;
+        }
+        .checkbox-card.checked {
+            border-color: #0062e3;
+            background: #f0f7ff;
+        }
+        .checkbox-card.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        .checkbox-card-icon {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0062e3;
+        }
+        .checkbox-card-image {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .checkbox-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .checkbox-card-text {
+            flex: 1;
+            min-width: 0;
+        }
+        .checkbox-card-label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+        .checkbox-card-description {
+            font-size: 14px;
+            color: #666;
+        }
+        .checkbox-card-price {
+            flex-shrink: 0;
+            font-weight: 700;
+            font-size: 18px;
+            color: #333;
+        }
+        .checkbox-indicator {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #0062e3;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #e6f2ff;
+            color: #0062e3;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 BpkCheckboxCard Component Demo</h1>
+    <p class="subtitle">A comprehensive demonstration of the新implemented Backpack Checkbox Card component</p>
+
+    <div class="section">
+        <span class="badge">✅ Implemented</span>
+        <h2>1. Default Example</h2>
+        <p class="description">Basic checkbox card with label and price</p>
+        <div class="example">
+            <label class="checkbox-card" id="card1">
+                <input type="checkbox" onchange="toggleCard('card1')">
+                <div class="checkbox-card-text">
+                    <div class="checkbox-card-label">Select this option</div>
+                </div>
+                <div class="checkbox-card-price">£100</div>
+                <div class="checkbox-indicator">✓</div>
+            </label>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>2. With Icon (Hotels Use Case)</h2>
+        <p class="description">Checkbox card with icon, label, and price - perfect for hotel location selection</p>
+        <div class="example">
+            <label class="checkbox-card" id="card2">
+                <input type="checkbox" onchange="toggleCard('card2')">
+                <div class="checkbox-card-icon">🏛️</div>
+                <div class="checkbox-card-text">
+                    <div class="checkbox-card-label">City Centre</div>
+                </div>
+                <div class="checkbox-card-price">£85</div>
+                <div class="checkbox-indicator">✓</div>
+            </label>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. With Description</h2>
+        <p class="description">Checkbox card with label, description, and price</p>
+        <div class="example">
+            <label class="checkbox-card" id="card3">
+                <input type="checkbox" onchange="toggleCard('card3')">
+                <div class="checkbox-card-text">
+                    <div class="checkbox-card-label">Premium option</div>
+                    <div class="checkbox-card-description">Includes breakfast and parking</div>
+                </div>
+                <div class="checkbox-card-price">£150</div>
+                <div class="checkbox-indicator">✓</div>
+            </label>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. With Image (Car Hire Use Case)</h2>
+        <p class="description">Checkbox card with image - perfect for vehicle selection</p>
+        <div class="example">
+            <label class="checkbox-card" id="card4">
+                <input type="checkbox" onchange="toggleCard('card4')">
+                <div class="checkbox-card-image">
+                    <img src="https://via.placeholder.com/48" alt="Car">
+                </div>
+                <div class="checkbox-card-text">
+                    <div class="checkbox-card-label">Medium</div>
+                    <div class="checkbox-card-description">5 seats</div>
+                </div>
+                <div class="checkbox-card-price">£60</div>
+                <div class="checkbox-indicator">✓</div>
+            </label>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>5. Single Selection Pattern</h2>
+        <p class="description">Multiple cards where only one can be selected at a time</p>
+        <div class="example">
+            <div class="grid">
+                <label class="checkbox-card" id="card5-1" onclick="selectSingle(this, 'group1')">
+                    <div class="checkbox-card-text">
+                        <div class="checkbox-card-label">All London</div>
+                    </div>
+                    <div class="checkbox-card-price">£100</div>
+                    <div class="checkbox-indicator">✓</div>
+                </label>
+                <label class="checkbox-card" id="card5-2" onclick="selectSingle(this, 'group1')">
+                    <div class="checkbox-card-text">
+                        <div class="checkbox-card-label">City of Westminster</div>
+                    </div>
+                    <div class="checkbox-card-price">£85</div>
+                    <div class="checkbox-indicator">✓</div>
+                </label>
+                <label class="checkbox-card" id="card5-3" onclick="selectSingle(this, 'group1')">
+                    <div class="checkbox-card-text">
+                        <div class="checkbox-card-label">Bloomsbury</div>
+                    </div>
+                    <div class="checkbox-card-price">£103</div>
+                    <div class="checkbox-indicator">✓</div>
+                </label>
+                <label class="checkbox-card" id="card5-4" onclick="selectSingle(this, 'group1')">
+                    <div class="checkbox-card-text">
+                        <div class="checkbox-card-label">Kensington</div>
+                    </div>
+                    <div class="checkbox-card-price">£122</div>
+                    <div class="checkbox-indicator">✓</div>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>6. Multi-Selection Pattern</h2>
+        <p class="description">Multiple cards where multiple selections are allowed</p>
+        <div class="example">
+            <label class="checkbox-card" id="card6-1">
+                <input type="checkbox" onchange="toggleCard('card6-1')">
+                <div class="checkbox-card-text">
+                    <div class="checkbox-card-label">Option 1</div>
+                </div>
+                <div class="checkbox-card-price">£100</div>
+                <div class="checkbox-indicator">✓</div>
+            </label>
+            <label class="checkbox-card" id="card6-2">
+                <input type="checkbox" onchange="toggleCard('card6-2')">
+                <div class="checkbox-card-text">
+                    <div class="checkbox-card-label">Option 2</div>
+                </div>
+                <div class="checkbox-card-price">£85</div>
+                <div class="checkbox-indicator">✓</div>
+            </label>
+            <label class="checkbox-card" id="card6-3">
+                <input type="checkbox" onchange="toggleCard('card6-3')">
+                <div class="checkbox-card-text">
+                    <div class="checkbox-card-label">Option 3</div>
+                </div>
+                <div class="checkbox-card-price">£122</div>
+                <div class="checkbox-indicator">✓</div>
+            </label>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>7. Disabled State</h2>
+        <p class="description">Cards that cannot be interacted with</p>
+        <div class="example">
+            <div class="grid">
+                <label class="checkbox-card disabled" id="card7-1">
+                    <div class="checkbox-card-text">
+                        <div class="checkbox-card-label">Disabled unselected</div>
+                    </div>
+                    <div class="checkbox-card-price">£100</div>
+                </label>
+                <label class="checkbox-card disabled checked" id="card7-2">
+                    <div class="checkbox-card-text">
+                        <div class="checkbox-card-label">Disabled selected</div>
+                    </div>
+                    <div class="checkbox-card-price">£100</div>
+                    <div class="checkbox-indicator">✓</div>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>8. All States</h2>
+        <p class="description">Visual representation of all possible states</p>
+        <div class="example">
+            <div class="grid">
+                <label class="checkbox-card" id="card8-1">
+                    <input type="checkbox" onchange="toggleCard('card8-1')">
+                    <div class="checkbox-card-text">
+                        <div class="checkbox-card-label">Default (unselected)</div>
+                    </div>
+                    <div class="checkbox-card-price">£100</div>
+                    <div class="checkbox-indicator">✓</div>
+                </label>
+                <label class="checkbox-card checked" id="card8-2">
+                    <input type="checkbox" checked onchange="toggleCard('card8-2')">
+                    <div class="checkbox-card-text">
+                        <div class="checkbox-card-label">Selected</div>
+                    </div>
+                    <div class="checkbox-card-price">£100</div>
+                    <div class="checkbox-indicator">✓</div>
+                </label>
+                <label class="checkbox-card disabled">
+                    <div class="checkbox-card-text">
+                        <div class="checkbox-card-label">Disabled unselected</div>
+                    </div>
+                    <div class="checkbox-card-price">£100</div>
+                </label>
+                <label class="checkbox-card disabled checked">
+                    <div class="checkbox-card-text">
+                        <div class="checkbox-card-label">Disabled selected</div>
+                    </div>
+                    <div class="checkbox-card-price">£100</div>
+                    <div class="checkbox-indicator">✓</div>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>✨ Component Features</h2>
+        <ul>
+            <li>✅ Fully accessible with keyboard navigation (Tab, Space, Enter)</li>
+            <li>✅ Supports both single and multi-selection patterns</li>
+            <li>✅ Flexible content: icons, images, labels, descriptions, and prices</li>
+            <li>✅ Multiple visual variants (with/without background)</li>
+            <li>✅ Disabled state support</li>
+            <li>✅ RTL language support (mirrored layout)</li>
+            <li>✅ WCAG 2.1 AA compliant</li>
+            <li>✅ Minimum 44x44px touch target</li>
+            <li>✅ TypeScript support with full type definitions</li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleCard(cardId) {
+            const card = document.getElementById(cardId);
+            card.classList.toggle('checked');
+        }
+
+        function selectSingle(element, group) {
+            // Remove checked class from all cards in the group
+            const cards = document.querySelectorAll(`[onclick*="${group}"]`);
+            cards.forEach(card => card.classList.remove('checked'));
+
+            // Add checked class to selected card
+            element.classList.add('checked');
+        }
+
+        // Initialize card8-2 as checked
+        document.getElementById('card8-2').classList.add('checked');
+    </script>
+</body>
+</html>

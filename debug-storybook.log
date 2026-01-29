@@ -1,0 +1,172 @@
+[15:50:13.965] [INFO] storybook v10.1.11
+[15:50:15.072] [DEBUG] Getting package.json info for /Users/tinazhang/backpack/package.json...
+[15:50:19.918] [INFO] Starting...
+[15:50:20.375] [DEBUG] Starting preview..
+[15:50:20.422] [INFO] Addon-docs: using MDX3
+[15:50:20.601] [INFO] Using implicit CSS loaders
+[15:50:22.168] [INFO] Loading custom Webpack config (full-control mode).
+[15:50:27.403] [DEBUG] Using tsconfig paths for react-docgen
+[15:53:13.636] [WARN] export 'LandmarkIconSm' (imported as 'LandmarkIconSm') was not found in '../../packages/bpk-component-icon' (possible exports: withAlignment, withButtonAlignment, withDescription, withLargeButtonAlignment, withRtlSupport)
+[15:53:13.637] [WARN] export 'LandmarkIconSm' (imported as 'LandmarkIconSm') was not found in '../../packages/bpk-component-icon' (possible exports: withAlignment, withButtonAlignment, withDescription, withLargeButtonAlignment, withRtlSupport)
+[15:53:13.637] [WARN] Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 24, column 14 of file:///Users/tinazhang/backpack/packages/bpk-component-breadcrumb/src/BpkBreadcrumbItem.module.scss:24:14:
+Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(tokens.$bpk-line-height-xs, 2) or calc(tokens.$bpk-line-height-xs / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+24 | $icon-height: tokens.$bpk-line-height-xs / 2;
+
+
+../../../../packages/bpk-component-breadcrumb/src/BpkBreadcrumbItem.module.scss 25:15  root stylesheet
+
+[15:53:13.638] [WARN] Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 864, column 2 of file:///Users/tinazhang/backpack/packages/bpk-mixins/_typography.scss:864:2:
+Sass's behavior for declarations that appear after nested
+rules will be changing to match the behavior specified by CSS in an upcoming
+version. To keep the existing behavior, move the declaration above the nested
+rule. To opt into the new behavior, wrap the declaration in `& {}`.
+
+More info: https://sass-lang.com/d/mixed-decls
+
+864 |   position: relative;
+
+
+../../../../packages/bpk-mixins/_typography.scss 865:3                                bpk-link()
+../../../../packages/bpk-component-button/src/BpkButtonV2/BpkButton.module.scss 53:5  root stylesheet
+
+[15:53:13.639] [WARN] Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 865, column 2 of file:///Users/tinazhang/backpack/packages/bpk-mixins/_typography.scss:865:2:
+Sass's behavior for declarations that appear after nested
+rules will be changing to match the behavior specified by CSS in an upcoming
+version. To keep the existing behavior, move the declaration above the nested
+rule. To opt into the new behavior, wrap the declaration in `& {}`.
+
+More info: https://sass-lang.com/d/mixed-decls
+
+865 |   display: inline;
+
+
+../../../../packages/bpk-mixins/_typography.scss 866:3                                bpk-link()
+../../../../packages/bpk-component-button/src/BpkButtonV2/BpkButton.module.scss 53:5  root stylesheet
+
+[15:53:13.640] [WARN] Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 866, column 2 of file:///Users/tinazhang/backpack/packages/bpk-mixins/_typography.scss:866:2:
+Sass's behavior for declarations that appear after nested
+rules will be changing to match the behavior specified by CSS in an upcoming
+version. To keep the existing behavior, move the declaration above the nested
+rule. To opt into the new behavior, wrap the declaration in `& {}`.
+
+More info: https://sass-lang.com/d/mixed-decls
+
+866 |   padding: 0;
+
+
+../../../../packages/bpk-mixins/_typography.scss 867:3                                bpk-link()
+../../../../packages/bpk-component-button/src/BpkButtonV2/BpkButton.module.scss 53:5  root stylesheet
+
+[15:53:13.640] [WARN] Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 867, column 2 of file:///Users/tinazhang/backpack/packages/bpk-mixins/_typography.scss:867:2:
+Sass's behavior for declarations that appear after nested
+rules will be changing to match the behavior specified by CSS in an upcoming
+version. To keep the existing behavior, move the declaration above the nested
+rule. To opt into the new behavior, wrap the declaration in `& {}`.
+
+More info: https://sass-lang.com/d/mixed-decls
+
+867 |   border: 0;
+
+
+../../../../packages/bpk-mixins/_typography.scss 868:3                                bpk-link()
+../../../../packages/bpk-component-button/src/BpkButtonV2/BpkButton.module.scss 53:5  root stylesheet
+
+[15:53:13.641] [WARN] Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 868, column 2 of file:///Users/tinazhang/backpack/packages/bpk-mixins/_typography.scss:868:2:
+Sass's behavior for declarations that appear after nested
+rules will be changing to match the behavior specified by CSS in an upcoming
+version. To keep the existing behavior, move the declaration above the nested
+rule. To opt into the new behavior, wrap the declaration in `& {}`.
+
+More info: https://sass-lang.com/d/mixed-decls
+
+868 |   background-color: transparent;
+
+
+../../../../packages/bpk-mixins/_typography.scss 869:3                                bpk-link()
+../../../../packages/bpk-component-button/src/BpkButtonV2/BpkButton.module.scss 53:5  root stylesheet
+
+[15:53:13.644] [WARN] Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+13 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+[15:53:13.645] [WARN] Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 31, column 2 of file:///Users/tinazhang/backpack/packages/bpk-mixins/_borders.scss:31:2:
+Sass's behavior for declarations that appear after nested
+rules will be changing to match the behavior specified by CSS in an upcoming
+version. To keep the existing behavior, move the declaration above the nested
+rule. To opt into the new behavior, wrap the declaration in `& {}`.
+
+More info: https://sass-lang.com/d/mixed-decls
+
+31 |   box-shadow: 0 0 0 $size $color #{$inset};
+
+
+../../../../packages/bpk-mixins/_borders.scss 32:3                           -bpk-border()
+../../../../packages/bpk-mixins/_borders.scss 150:3                          bpk-border-lg()
+../../../../packages/bpk-component-card/src/BpkCardWrapper.module.scss 26:3  root stylesheet
+
+[15:53:13.645] [WARN] Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 23, column 14 of file:///Users/tinazhang/backpack/packages/bpk-component-datatable/src/BpkDataTableHeader.module.scss:23:14:
+Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(tokens.$bpk-line-height-xs, 2) or calc(tokens.$bpk-line-height-xs / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+23 | $icon-height: tokens.$bpk-line-height-xs / 2;
+
+
+../../../../packages/bpk-component-datatable/src/BpkDataTableHeader.module.scss 24:15  root stylesheet
+
+[15:53:13.645] [WARN] Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 39, column 13 of file:///Users/tinazhang/backpack/packages/bpk-component-price-range/src/BpkPriceMarker.module.scss:39:13:
+Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(tokens.bpk-spacing-sm(), 2) or calc(tokens.bpk-spacing-sm() / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+39 |     padding: tokens.bpk-spacing-sm() / 2 tokens.bpk-spacing-md();
+
+
+../../../../packages/bpk-component-price-range/src/BpkPriceMarker.module.scss 40:14  root stylesheet
+
+[15:53:13.645] [WARN] Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 40, column 9 of file:///Users/tinazhang/backpack/packages/bpk-component-price-range/src/BpkPriceRange.module.scss:40:9:
+Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div(tokens.bpk-spacing-sm(), 2) or calc(tokens.bpk-spacing-sm() / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+40 |     gap: tokens.bpk-spacing-sm() / 2;
+
+
+../../../../packages/bpk-component-price-range/src/BpkPriceRange.module.scss 41:10  root stylesheet
+
+[15:53:13.646] [ERROR] Failed to build the preview
+[15:53:13.652] [WARN] Force closed preview build
+[15:53:13.653] [ERROR] [38;2;241;97;97mSB_BUILDER-WEBPACK5_0003 (WebpackCompilationError): There were problems when compiling your code with Webpack.
+Run Storybook with --debug-webpack for more information.[39m
+    at starter (file://./node_modules/@storybook/react-webpack5/node_modules/@storybook/builder-webpack5/dist/index.js:799:11)
+    at starter.next (<anonymous>)
+    at Module.start (file://./node_modules/@storybook/react-webpack5/node_modules/@storybook/builder-webpack5/dist/index.js:857:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async storybookDevServer (file://./node_modules/storybook/dist/core-server/index.js:6806:82)
+    at async buildOrThrow (file://./node_modules/storybook/dist/core-server/index.js:5555:12)
+    at async buildDevStandalone (file://./node_modules/storybook/dist/core-server/index.js:7208:66)
+    at async withTelemetry (file://./node_modules/storybook/dist/_node-chunks/chunk-2372JZ52.js:209:12)
+    at async dev (file://./node_modules/storybook/dist/bin/core.js:2734:3)
+    at async _Command.<anonymous> (file://./node_modules/storybook/dist/bin/core.js:2801:92)
+[15:53:13.654] [WARN] Broken build, fix the error above.
+You may need to refresh the browser.

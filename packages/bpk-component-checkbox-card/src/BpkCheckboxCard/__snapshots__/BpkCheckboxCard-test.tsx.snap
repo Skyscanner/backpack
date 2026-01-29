@@ -1,0 +1,290 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkCheckboxCard should render correctly when checked 1`] = `
+<DocumentFragment>
+  <label
+    class="bpk-checkbox-card bpk-checkbox-card--with-background bpk-checkbox-card--checked"
+  >
+    <input
+      aria-checked="true"
+      aria-disabled="false"
+      aria-label="Select option"
+      checked=""
+      class="bpk-checkbox-card__input"
+      type="checkbox"
+      value=""
+    />
+    <div
+      class="bpk-checkbox-card__content"
+    >
+      <div
+        class="bpk-checkbox-card__text"
+      >
+        <span
+          class="bpk-checkbox-card__label"
+        >
+          Select option
+        </span>
+      </div>
+      <div
+        class="bpk-checkbox-card__price"
+      >
+        £100
+      </div>
+    </div>
+  </label>
+</DocumentFragment>
+`;
+
+exports[`BpkCheckboxCard should render correctly when disabled 1`] = `
+<DocumentFragment>
+  <label
+    class="bpk-checkbox-card bpk-checkbox-card--with-background bpk-checkbox-card--disabled"
+  >
+    <input
+      aria-checked="false"
+      aria-disabled="true"
+      aria-label="Select option"
+      class="bpk-checkbox-card__input"
+      disabled=""
+      type="checkbox"
+      value=""
+    />
+    <div
+      class="bpk-checkbox-card__content"
+    >
+      <div
+        class="bpk-checkbox-card__text"
+      >
+        <span
+          class="bpk-checkbox-card__label"
+        >
+          Select option
+        </span>
+      </div>
+    </div>
+  </label>
+</DocumentFragment>
+`;
+
+exports[`BpkCheckboxCard should render correctly with all content props 1`] = `
+<DocumentFragment>
+  <label
+    class="bpk-checkbox-card bpk-checkbox-card--with-background"
+  >
+    <input
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="City Centre"
+      class="bpk-checkbox-card__input"
+      type="checkbox"
+      value=""
+    />
+    <div
+      class="bpk-checkbox-card__content"
+    >
+      <div
+        class="bpk-checkbox-card__icon"
+      >
+        <div>
+          Icon
+        </div>
+      </div>
+      <div
+        class="bpk-checkbox-card__image"
+      >
+        <img
+          alt=""
+          src="test.jpg"
+        />
+      </div>
+      <div
+        class="bpk-checkbox-card__text"
+      >
+        <span
+          class="bpk-checkbox-card__label"
+        >
+          City Centre
+        </span>
+        <span
+          class="bpk-checkbox-card__description"
+        >
+          Best location
+        </span>
+      </div>
+      <div
+        class="bpk-checkbox-card__price"
+      >
+        £85
+      </div>
+    </div>
+  </label>
+</DocumentFragment>
+`;
+
+exports[`BpkCheckboxCard should render correctly with extremely long text 1`] = `
+<DocumentFragment>
+  <label
+    class="bpk-checkbox-card bpk-checkbox-card--with-background"
+  >
+    <input
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="This is an extremely long label that will definitely exceed the maximum line count and should be truncated with an ellipsis to prevent layout breaking"
+      class="bpk-checkbox-card__input"
+      type="checkbox"
+      value=""
+    />
+    <div
+      class="bpk-checkbox-card__content"
+    >
+      <div
+        class="bpk-checkbox-card__text"
+      >
+        <span
+          class="bpk-checkbox-card__label"
+        >
+          This is an extremely long label that will definitely exceed the maximum line count and should be truncated with an ellipsis to prevent layout breaking
+        </span>
+        <span
+          class="bpk-checkbox-card__description"
+        >
+          This is also a very long description that goes on and on and on and should also be truncated after a certain number of lines
+        </span>
+      </div>
+      <div
+        class="bpk-checkbox-card__price"
+      >
+        £9,999
+      </div>
+    </div>
+  </label>
+</DocumentFragment>
+`;
+
+exports[`BpkCheckboxCard should render correctly with minimal props 1`] = `
+<DocumentFragment>
+  <label
+    class="bpk-checkbox-card bpk-checkbox-card--with-background"
+  >
+    <input
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="Select option"
+      class="bpk-checkbox-card__input"
+      type="checkbox"
+      value=""
+    />
+    <div
+      class="bpk-checkbox-card__content"
+    >
+      <div
+        class="bpk-checkbox-card__text"
+      >
+        <span
+          class="bpk-checkbox-card__label"
+        >
+          Select option
+        </span>
+      </div>
+    </div>
+  </label>
+</DocumentFragment>
+`;
+
+exports[`BpkCheckboxCard should render disabled and checked state correctly 1`] = `
+<DocumentFragment>
+  <label
+    class="bpk-checkbox-card bpk-checkbox-card--with-background bpk-checkbox-card--checked bpk-checkbox-card--disabled bpk-checkbox-card--checked--disabled"
+  >
+    <input
+      aria-checked="true"
+      aria-disabled="true"
+      aria-label="Disabled but selected"
+      checked=""
+      class="bpk-checkbox-card__input"
+      disabled=""
+      type="checkbox"
+      value=""
+    />
+    <div
+      class="bpk-checkbox-card__content"
+    >
+      <div
+        class="bpk-checkbox-card__text"
+      >
+        <span
+          class="bpk-checkbox-card__label"
+        >
+          Disabled but selected
+        </span>
+      </div>
+      <div
+        class="bpk-checkbox-card__price"
+      >
+        £100
+      </div>
+    </div>
+  </label>
+</DocumentFragment>
+`;
+
+exports[`BpkCheckboxCard should render no-background variant correctly 1`] = `
+<DocumentFragment>
+  <label
+    class="bpk-checkbox-card bpk-checkbox-card--no-background"
+  >
+    <input
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="No background"
+      class="bpk-checkbox-card__input"
+      type="checkbox"
+      value=""
+    />
+    <div
+      class="bpk-checkbox-card__content"
+    >
+      <div
+        class="bpk-checkbox-card__text"
+      >
+        <span
+          class="bpk-checkbox-card__label"
+        >
+          No background
+        </span>
+      </div>
+    </div>
+  </label>
+</DocumentFragment>
+`;
+
+exports[`BpkCheckboxCard should render with-background variant correctly 1`] = `
+<DocumentFragment>
+  <label
+    class="bpk-checkbox-card bpk-checkbox-card--with-background"
+  >
+    <input
+      aria-checked="false"
+      aria-disabled="false"
+      aria-label="With background"
+      class="bpk-checkbox-card__input"
+      type="checkbox"
+      value=""
+    />
+    <div
+      class="bpk-checkbox-card__content"
+    >
+      <div
+        class="bpk-checkbox-card__text"
+      >
+        <span
+          class="bpk-checkbox-card__label"
+        >
+          With background
+        </span>
+      </div>
+    </div>
+  </label>
+</DocumentFragment>
+`;
