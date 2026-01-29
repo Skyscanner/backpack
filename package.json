@@ -16,8 +16,9 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "build": "nx run-many --target=build --all && nx run backpack-workspace:styles",
+    "build": "run-s build:*",
     "build:copy-normal_css": "./scripts/scss/copy-normal_css.sh",
+    "build:gulp": "gulp",
     "build:sass": "node scripts/scss/styles-prod.js && rm packages/bpk-stylesheets/index.css",
     "build:stylesheets": "(cd packages/bpk-stylesheets && node build)",
     "check-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js",
