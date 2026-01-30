@@ -11,6 +11,7 @@ exports[`BpkDropdownChip should render correctly 1`] = `
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -44,6 +45,7 @@ exports[`BpkDropdownChip should render correctly with a "className" attribute 1`
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -77,6 +79,7 @@ exports[`BpkDropdownChip should render correctly with type="default" 1`] = `
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -117,6 +120,7 @@ exports[`BpkDropdownChip should render correctly with type="default" and a leadi
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -151,6 +155,7 @@ exports[`BpkDropdownChip should render correctly with type="default" and disable
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -184,6 +189,7 @@ exports[`BpkDropdownChip should render correctly with type="default" and selecte
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -218,6 +224,7 @@ exports[`BpkDropdownChip should render correctly with type="default", selected a
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -251,6 +258,7 @@ exports[`BpkDropdownChip should render correctly with type="on-dark" 1`] = `
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -291,6 +299,7 @@ exports[`BpkDropdownChip should render correctly with type="on-dark" and a leadi
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -325,6 +334,7 @@ exports[`BpkDropdownChip should render correctly with type="on-dark" and disable
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -358,6 +368,7 @@ exports[`BpkDropdownChip should render correctly with type="on-dark" and selecte
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -392,6 +403,7 @@ exports[`BpkDropdownChip should render correctly with type="on-dark", selected a
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -425,6 +437,7 @@ exports[`BpkDropdownChip should render correctly with type="on-image" 1`] = `
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -465,6 +478,7 @@ exports[`BpkDropdownChip should render correctly with type="on-image" and a lead
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -499,6 +513,7 @@ exports[`BpkDropdownChip should render correctly with type="on-image" and disabl
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -532,6 +547,7 @@ exports[`BpkDropdownChip should render correctly with type="on-image" and select
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -566,6 +582,7 @@ exports[`BpkDropdownChip should render correctly with type="on-image", selected 
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>

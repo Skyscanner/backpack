@@ -10,6 +10,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
     >
       <h2
         class="bpk-text bpk-text--heading-4"
+        data-backpack-ds-component="Text"
       >
         October 2016
       </h2>
@@ -713,6 +714,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
     >
       <h2
         class="bpk-text bpk-text--heading-4"
+        data-backpack-ds-component="Text"
       >
         October 2016
       </h2>
@@ -1150,6 +1152,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
     >
       <h2
         class="bpk-text bpk-text--heading-4"
+        data-backpack-ds-component="Text"
       >
         October 2016
       </h2>
@@ -1813,6 +1816,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
     >
       <h2
         class="bpk-text bpk-text--heading-4"
+        data-backpack-ds-component="Text"
       >
         October 2016
       </h2>
