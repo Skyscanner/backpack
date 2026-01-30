@@ -51,6 +51,7 @@ exports[`BpkFloatingNotification should render correctly with CTA text 1`] = `
     >
       <button
         class="bpk-button bpk-button--link-on-dark bpk-button--link--implicit"
+        data-backpack-ds-component="Button"
         type="button"
       >
         <span

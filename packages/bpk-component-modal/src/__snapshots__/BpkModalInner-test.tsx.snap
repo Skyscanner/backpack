@@ -405,6 +405,7 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
             >
               <button
                 class="bpk-link"
+                data-backpack-ds-component="Link"
                 label="Close"
                 type="button"
               >
@@ -497,6 +498,7 @@ exports[`BpkModalInner should render correctly with closeText prop 1`] = `
         >
           <button
             class="bpk-link"
+            data-backpack-ds-component="Link"
             type="button"
           >
             <span
