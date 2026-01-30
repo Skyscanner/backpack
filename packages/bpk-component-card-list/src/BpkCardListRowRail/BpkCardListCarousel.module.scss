@@ -117,4 +117,9 @@
       padding-inline: var(--spacing-offset);
     }
   }
+
+  &__card-slot {
+    display: grid;
+    height: 100%;
+  }
 }

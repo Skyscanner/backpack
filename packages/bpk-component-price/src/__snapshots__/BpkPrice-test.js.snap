@@ -16,6 +16,7 @@ exports[`large left view should render correctly 1`] = `
       >
         <span
           class="bpk-text bpk-text--xxl"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -41,6 +42,7 @@ exports[`large left view should support custom class names 1`] = `
       >
         <span
           class="bpk-text bpk-text--xxl"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -66,6 +68,7 @@ exports[`large left view should support custom leading class names 1`] = `
       >
         <span
           class="bpk-text bpk-text--xxl"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -85,6 +88,7 @@ exports[`large left view should support leading text attribute 1`] = `
     >
       <span
         class="bpk-text bpk-text--sm"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -97,6 +101,7 @@ exports[`large left view should support leading text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--xxl"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -119,6 +124,7 @@ exports[`large left view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--sm"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -132,6 +138,7 @@ exports[`large left view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--xxl"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -141,6 +148,7 @@ exports[`large left view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--sm"
+          data-backpack-ds-component="Text"
         >
           per day
         </span>
@@ -163,6 +171,7 @@ exports[`large left view should support previous price with leading text and ico
       >
         <span
           class="bpk-text bpk-text--sm"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -172,12 +181,14 @@ exports[`large left view should support previous price with leading text and ico
       >
         <span
           class="bpk-text bpk-text--sm"
+          data-backpack-ds-component="Text"
         >
           𐤟
         </span>
       </span>
       <span
         class="bpk-text bpk-text--sm"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -190,6 +201,7 @@ exports[`large left view should support previous price with leading text and ico
       >
         <span
           class="bpk-text bpk-text--xxl"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -202,6 +214,7 @@ exports[`large left view should support previous price with leading text and ico
       >
         <span
           class="bpk-text bpk-text--sm"
+          data-backpack-ds-component="Text"
         >
           per day
         </span>
@@ -224,6 +237,7 @@ exports[`large left view should support previous price with leading text attribu
       >
         <span
           class="bpk-text bpk-text--sm"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -233,12 +247,14 @@ exports[`large left view should support previous price with leading text attribu
       >
         <span
           class="bpk-text bpk-text--sm"
+          data-backpack-ds-component="Text"
         >
           𐤟
         </span>
       </span>
       <span
         class="bpk-text bpk-text--sm"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -251,6 +267,7 @@ exports[`large left view should support previous price with leading text attribu
       >
         <span
           class="bpk-text bpk-text--xxl"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -260,6 +277,7 @@ exports[`large left view should support previous price with leading text attribu
       >
         <span
           class="bpk-text bpk-text--sm"
+          data-backpack-ds-component="Text"
         >
           per day
         </span>
@@ -285,6 +303,7 @@ exports[`large left view should support trailing text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--xxl"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -294,6 +313,7 @@ exports[`large left view should support trailing text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--sm"
+          data-backpack-ds-component="Text"
         >
           per day
         </span>
@@ -319,6 +339,7 @@ exports[`large right view should render correctly 1`] = `
       >
         <span
           class="bpk-text bpk-text--xxl"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -344,6 +365,7 @@ exports[`large right view should support custom class names 1`] = `
       >
         <span
           class="bpk-text bpk-text--xxl"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -369,6 +391,7 @@ exports[`large right view should support custom leading class names 1`] = `
       >
         <span
           class="bpk-text bpk-text--xxl"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -388,6 +411,7 @@ exports[`large right view should support leading text attribute 1`] = `
     >
       <span
         class="bpk-text bpk-text--sm"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -400,6 +424,7 @@ exports[`large right view should support leading text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--xxl"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -422,6 +447,7 @@ exports[`large right view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--sm"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -435,6 +461,7 @@ exports[`large right view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--xxl"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -445,6 +472,7 @@ exports[`large right view should support previous price attribute 1`] = `
     >
       <span
         class="bpk-text bpk-text--sm"
+        data-backpack-ds-component="Text"
       >
         per day
       </span>
@@ -466,6 +494,7 @@ exports[`large right view should support previous price with leading text and ic
       >
         <span
           class="bpk-text bpk-text--sm"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -475,12 +504,14 @@ exports[`large right view should support previous price with leading text and ic
       >
         <span
           class="bpk-text bpk-text--sm"
+          data-backpack-ds-component="Text"
         >
           𐤟
         </span>
       </span>
       <span
         class="bpk-text bpk-text--sm"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -493,6 +524,7 @@ exports[`large right view should support previous price with leading text and ic
       >
         <span
           class="bpk-text bpk-text--xxl"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -506,6 +538,7 @@ exports[`large right view should support previous price with leading text and ic
     >
       <span
         class="bpk-text bpk-text--sm"
+        data-backpack-ds-component="Text"
       >
         per day
       </span>
@@ -527,6 +560,7 @@ exports[`large right view should support previous price with leading text attrib
       >
         <span
           class="bpk-text bpk-text--sm"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -536,12 +570,14 @@ exports[`large right view should support previous price with leading text attrib
       >
         <span
           class="bpk-text bpk-text--sm"
+          data-backpack-ds-component="Text"
         >
           𐤟
         </span>
       </span>
       <span
         class="bpk-text bpk-text--sm"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -554,6 +590,7 @@ exports[`large right view should support previous price with leading text attrib
       >
         <span
           class="bpk-text bpk-text--xxl"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -564,6 +601,7 @@ exports[`large right view should support previous price with leading text attrib
     >
       <span
         class="bpk-text bpk-text--sm"
+        data-backpack-ds-component="Text"
       >
         per day
       </span>
@@ -588,6 +626,7 @@ exports[`large right view should support trailing text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--xxl"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -598,6 +637,7 @@ exports[`large right view should support trailing text attribute 1`] = `
     >
       <span
         class="bpk-text bpk-text--sm"
+        data-backpack-ds-component="Text"
       >
         per day
       </span>
@@ -622,6 +662,7 @@ exports[`medium left view should render correctly 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-3"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -647,6 +688,7 @@ exports[`medium left view should support custom class names 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-3"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -672,6 +714,7 @@ exports[`medium left view should support custom leading class names 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-3"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -691,6 +734,7 @@ exports[`medium left view should support leading text attribute 1`] = `
     >
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -703,6 +747,7 @@ exports[`medium left view should support leading text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-3"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -725,6 +770,7 @@ exports[`medium left view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -738,6 +784,7 @@ exports[`medium left view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-3"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -747,6 +794,7 @@ exports[`medium left view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           per day
         </span>
@@ -769,6 +817,7 @@ exports[`medium left view should support previous price with leading text and ic
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -778,12 +827,14 @@ exports[`medium left view should support previous price with leading text and ic
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           𐤟
         </span>
       </span>
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -796,6 +847,7 @@ exports[`medium left view should support previous price with leading text and ic
       >
         <span
           class="bpk-text bpk-text--heading-3"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -808,6 +860,7 @@ exports[`medium left view should support previous price with leading text and ic
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           per day
         </span>
@@ -830,6 +883,7 @@ exports[`medium left view should support previous price with leading text attrib
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -839,12 +893,14 @@ exports[`medium left view should support previous price with leading text attrib
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           𐤟
         </span>
       </span>
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -857,6 +913,7 @@ exports[`medium left view should support previous price with leading text attrib
       >
         <span
           class="bpk-text bpk-text--heading-3"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -866,6 +923,7 @@ exports[`medium left view should support previous price with leading text attrib
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           per day
         </span>
@@ -891,6 +949,7 @@ exports[`medium left view should support trailing text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-3"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -900,6 +959,7 @@ exports[`medium left view should support trailing text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           per day
         </span>
@@ -925,6 +985,7 @@ exports[`medium right view should render correctly 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-3"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -950,6 +1011,7 @@ exports[`medium right view should support custom class names 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-3"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -975,6 +1037,7 @@ exports[`medium right view should support custom leading class names 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-3"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -994,6 +1057,7 @@ exports[`medium right view should support leading text attribute 1`] = `
     >
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -1006,6 +1070,7 @@ exports[`medium right view should support leading text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-3"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1028,6 +1093,7 @@ exports[`medium right view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -1041,6 +1107,7 @@ exports[`medium right view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-3"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1051,6 +1118,7 @@ exports[`medium right view should support previous price attribute 1`] = `
     >
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         per day
       </span>
@@ -1072,6 +1140,7 @@ exports[`medium right view should support previous price with leading text and i
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -1081,12 +1150,14 @@ exports[`medium right view should support previous price with leading text and i
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           𐤟
         </span>
       </span>
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -1099,6 +1170,7 @@ exports[`medium right view should support previous price with leading text and i
       >
         <span
           class="bpk-text bpk-text--heading-3"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1112,6 +1184,7 @@ exports[`medium right view should support previous price with leading text and i
     >
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         per day
       </span>
@@ -1133,6 +1206,7 @@ exports[`medium right view should support previous price with leading text attri
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -1142,12 +1216,14 @@ exports[`medium right view should support previous price with leading text attri
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           𐤟
         </span>
       </span>
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -1160,6 +1236,7 @@ exports[`medium right view should support previous price with leading text attri
       >
         <span
           class="bpk-text bpk-text--heading-3"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1170,6 +1247,7 @@ exports[`medium right view should support previous price with leading text attri
     >
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         per day
       </span>
@@ -1194,6 +1272,7 @@ exports[`medium right view should support trailing text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-3"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1204,6 +1283,7 @@ exports[`medium right view should support trailing text attribute 1`] = `
     >
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         per day
       </span>
@@ -1228,6 +1308,7 @@ exports[`small left view should render correctly 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-4"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1253,6 +1334,7 @@ exports[`small left view should support custom class names 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-4"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1278,6 +1360,7 @@ exports[`small left view should support custom leading class names 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-4"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1297,6 +1380,7 @@ exports[`small left view should support leading text attribute 1`] = `
     >
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -1309,6 +1393,7 @@ exports[`small left view should support leading text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-4"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1331,6 +1416,7 @@ exports[`small left view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -1344,6 +1430,7 @@ exports[`small left view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-4"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1353,6 +1440,7 @@ exports[`small left view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           per day
         </span>
@@ -1375,6 +1463,7 @@ exports[`small left view should support previous price with leading text and ico
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -1384,12 +1473,14 @@ exports[`small left view should support previous price with leading text and ico
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           𐤟
         </span>
       </span>
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -1402,6 +1493,7 @@ exports[`small left view should support previous price with leading text and ico
       >
         <span
           class="bpk-text bpk-text--heading-4"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1414,6 +1506,7 @@ exports[`small left view should support previous price with leading text and ico
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           per day
         </span>
@@ -1436,6 +1529,7 @@ exports[`small left view should support previous price with leading text attribu
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -1445,12 +1539,14 @@ exports[`small left view should support previous price with leading text attribu
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           𐤟
         </span>
       </span>
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -1463,6 +1559,7 @@ exports[`small left view should support previous price with leading text attribu
       >
         <span
           class="bpk-text bpk-text--heading-4"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1472,6 +1569,7 @@ exports[`small left view should support previous price with leading text attribu
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           per day
         </span>
@@ -1497,6 +1595,7 @@ exports[`small left view should support trailing text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-4"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1506,6 +1605,7 @@ exports[`small left view should support trailing text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           per day
         </span>
@@ -1531,6 +1631,7 @@ exports[`small right view should render correctly 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-4"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1556,6 +1657,7 @@ exports[`small right view should support custom class names 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-4"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1581,6 +1683,7 @@ exports[`small right view should support custom leading class names 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-4"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1600,6 +1703,7 @@ exports[`small right view should support leading text attribute 1`] = `
     >
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -1612,6 +1716,7 @@ exports[`small right view should support leading text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-4"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1634,6 +1739,7 @@ exports[`small right view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -1647,6 +1753,7 @@ exports[`small right view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-4"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1657,6 +1764,7 @@ exports[`small right view should support previous price attribute 1`] = `
     >
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         per day
       </span>
@@ -1678,6 +1786,7 @@ exports[`small right view should support previous price with leading text and ic
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -1687,12 +1796,14 @@ exports[`small right view should support previous price with leading text and ic
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           𐤟
         </span>
       </span>
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -1705,6 +1816,7 @@ exports[`small right view should support previous price with leading text and ic
       >
         <span
           class="bpk-text bpk-text--heading-4"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1718,6 +1830,7 @@ exports[`small right view should support previous price with leading text and ic
     >
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         per day
       </span>
@@ -1739,6 +1852,7 @@ exports[`small right view should support previous price with leading text attrib
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -1748,12 +1862,14 @@ exports[`small right view should support previous price with leading text attrib
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           𐤟
         </span>
       </span>
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -1766,6 +1882,7 @@ exports[`small right view should support previous price with leading text attrib
       >
         <span
           class="bpk-text bpk-text--heading-4"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1776,6 +1893,7 @@ exports[`small right view should support previous price with leading text attrib
     >
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         per day
       </span>
@@ -1800,6 +1918,7 @@ exports[`small right view should support trailing text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-4"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1810,6 +1929,7 @@ exports[`small right view should support trailing text attribute 1`] = `
     >
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         per day
       </span>
@@ -1834,6 +1954,7 @@ exports[`xsmall left view should render correctly 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-5"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1859,6 +1980,7 @@ exports[`xsmall left view should support custom class names 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-5"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1884,6 +2006,7 @@ exports[`xsmall left view should support custom leading class names 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-5"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1903,6 +2026,7 @@ exports[`xsmall left view should support leading text attribute 1`] = `
     >
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -1915,6 +2039,7 @@ exports[`xsmall left view should support leading text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-5"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1937,6 +2062,7 @@ exports[`xsmall left view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -1950,6 +2076,7 @@ exports[`xsmall left view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-5"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -1959,6 +2086,7 @@ exports[`xsmall left view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           per day
         </span>
@@ -1981,6 +2109,7 @@ exports[`xsmall left view should support previous price with leading text and ic
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -1990,12 +2119,14 @@ exports[`xsmall left view should support previous price with leading text and ic
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           𐤟
         </span>
       </span>
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -2008,6 +2139,7 @@ exports[`xsmall left view should support previous price with leading text and ic
       >
         <span
           class="bpk-text bpk-text--heading-5"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -2020,6 +2152,7 @@ exports[`xsmall left view should support previous price with leading text and ic
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           per day
         </span>
@@ -2042,6 +2175,7 @@ exports[`xsmall left view should support previous price with leading text attrib
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -2051,12 +2185,14 @@ exports[`xsmall left view should support previous price with leading text attrib
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           𐤟
         </span>
       </span>
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -2069,6 +2205,7 @@ exports[`xsmall left view should support previous price with leading text attrib
       >
         <span
           class="bpk-text bpk-text--heading-5"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -2078,6 +2215,7 @@ exports[`xsmall left view should support previous price with leading text attrib
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           per day
         </span>
@@ -2103,6 +2241,7 @@ exports[`xsmall left view should support trailing text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-5"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -2112,6 +2251,7 @@ exports[`xsmall left view should support trailing text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           per day
         </span>
@@ -2137,6 +2277,7 @@ exports[`xsmall right view should render correctly 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-5"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -2162,6 +2303,7 @@ exports[`xsmall right view should support custom class names 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-5"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -2187,6 +2329,7 @@ exports[`xsmall right view should support custom leading class names 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-5"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -2206,6 +2349,7 @@ exports[`xsmall right view should support leading text attribute 1`] = `
     >
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -2218,6 +2362,7 @@ exports[`xsmall right view should support leading text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-5"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -2240,6 +2385,7 @@ exports[`xsmall right view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -2253,6 +2399,7 @@ exports[`xsmall right view should support previous price attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-5"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -2263,6 +2410,7 @@ exports[`xsmall right view should support previous price attribute 1`] = `
     >
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         per day
       </span>
@@ -2284,6 +2432,7 @@ exports[`xsmall right view should support previous price with leading text and i
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -2293,12 +2442,14 @@ exports[`xsmall right view should support previous price with leading text and i
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           𐤟
         </span>
       </span>
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -2311,6 +2462,7 @@ exports[`xsmall right view should support previous price with leading text and i
       >
         <span
           class="bpk-text bpk-text--heading-5"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -2324,6 +2476,7 @@ exports[`xsmall right view should support previous price with leading text and i
     >
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         per day
       </span>
@@ -2345,6 +2498,7 @@ exports[`xsmall right view should support previous price with leading text attri
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           £2,000
         </span>
@@ -2354,12 +2508,14 @@ exports[`xsmall right view should support previous price with leading text attri
       >
         <span
           class="bpk-text bpk-text--xs"
+          data-backpack-ds-component="Text"
         >
           𐤟
         </span>
       </span>
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         from
       </span>
@@ -2372,6 +2528,7 @@ exports[`xsmall right view should support previous price with leading text attri
       >
         <span
           class="bpk-text bpk-text--heading-5"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -2382,6 +2539,7 @@ exports[`xsmall right view should support previous price with leading text attri
     >
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         per day
       </span>
@@ -2406,6 +2564,7 @@ exports[`xsmall right view should support trailing text attribute 1`] = `
       >
         <span
           class="bpk-text bpk-text--heading-5"
+          data-backpack-ds-component="Text"
         >
           £1,830
         </span>
@@ -2416,6 +2575,7 @@ exports[`xsmall right view should support trailing text attribute 1`] = `
     >
       <span
         class="bpk-text bpk-text--xs"
+        data-backpack-ds-component="Text"
       >
         per day
       </span>
