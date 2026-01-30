@@ -16,9 +16,12 @@
  * limitations under the License.
  */
 
+import { getDataComponentAttribute } from '../../bpk-react-utils';
+
 import BpkInfoBannerInner from './BpkInfoBannerInner';
 
 import type { CommonProps } from './common-types';
+
 
 const BpkInfoBanner = ({
   animateOnEnter = false,
@@ -32,7 +35,7 @@ const BpkInfoBanner = ({
     animateOnLeave={animateOnLeave}
     show={show}
     icon={icon}
-    {...rest}
+    {...getDataComponentAttribute('InfoBanner')} {...rest}
   />
 );
 

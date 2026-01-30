@@ -10,6 +10,7 @@ exports[`withBannerAlertState(BpkInfoBannerDismissable) should render correctly 
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <div
               class="bpk-info-banner__header"
@@ -48,6 +49,7 @@ exports[`withBannerAlertState(BpkInfoBannerDismissable) should render correctly 
                 <button
                   aria-label="Dismiss"
                   class="bpk-close-button__default"
+                  data-backpack-ds-component="CloseButton"
                   title="Dismiss"
                   type="button"
                 >
@@ -98,6 +100,7 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly c
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <button
               aria-expanded="false"
@@ -155,6 +158,7 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly c
                   </span>
                   <span
                     class="bpk-visually-hidden"
+                    data-backpack-ds-component="VisuallyHidden"
                   >
                     View more
                   </span>
@@ -197,6 +201,7 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly e
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <button
               aria-expanded="true"
@@ -254,6 +259,7 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly e
                   </span>
                   <span
                     class="bpk-visually-hidden"
+                    data-backpack-ds-component="VisuallyHidden"
                   >
                     View more
                   </span>

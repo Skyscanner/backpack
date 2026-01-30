@@ -49,6 +49,7 @@ exports[`withBannerAlertState(BpkBannerAlertDismissable) should render correctly
                 <button
                   aria-label="Dismiss"
                   class="bpk-close-button__default"
+                  data-backpack-ds-component="CloseButton"
                   title="Dismiss"
                   type="button"
                 >
@@ -149,6 +150,7 @@ exports[`withBannerAlertState(BpkBannerAlertExpandable) should render correctly 
                     <svg
                       aria-hidden="true"
                       class="bpk-banner-alert__expand-icon"
+                      data-backpack-ds-component="BannerAlertInner"
                       height="1.5rem"
                       viewBox="0 0 24 24"
                       width="1.5rem"
@@ -248,6 +250,7 @@ exports[`withBannerAlertState(BpkBannerAlertExpandable) should render correctly 
                     <svg
                       aria-hidden="true"
                       class="bpk-banner-alert__expand-icon bpk-banner-alert__expand-icon--flipped"
+                      data-backpack-ds-component="BannerAlertInner"
                       height="1.5rem"
                       viewBox="0 0 24 24"
                       width="1.5rem"

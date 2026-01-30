@@ -4,12 +4,14 @@ exports[`BpkFloatingNotification should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-floating-notification bpk-floating-notification--appear bpk-floating-notification--appear-active"
+    data-backpack-ds-component="FloatingNotification"
   >
     <span
       class="bpk-floating-notification__text"
     >
       <p
         class="bpk-text bpk-text--body-default"
+        data-backpack-ds-component="Text"
       >
         Saved
       </p>
@@ -18,6 +20,7 @@ exports[`BpkFloatingNotification should render correctly 1`] = `
       aria-hidden="true"
       aria-live="polite"
       class="bpk-aria-live bpk-aria-live--invisible"
+      data-backpack-ds-component="AriaLive"
     >
       Saved
     </div>
@@ -29,12 +32,14 @@ exports[`BpkFloatingNotification should render correctly with CTA text 1`] = `
 <DocumentFragment>
   <div
     class="bpk-floating-notification bpk-floating-notification--appear bpk-floating-notification--appear-active"
+    data-backpack-ds-component="FloatingNotification"
   >
     <span
       class="bpk-floating-notification__text"
     >
       <p
         class="bpk-text bpk-text--body-default"
+        data-backpack-ds-component="Text"
       >
         Saved
       </p>
@@ -43,6 +48,7 @@ exports[`BpkFloatingNotification should render correctly with CTA text 1`] = `
       aria-hidden="true"
       aria-live="polite"
       class="bpk-aria-live bpk-aria-live--invisible"
+      data-backpack-ds-component="AriaLive"
     >
       Saved
     </div>
@@ -51,6 +57,7 @@ exports[`BpkFloatingNotification should render correctly with CTA text 1`] = `
     >
       <button
         class="bpk-button bpk-button--link-on-dark bpk-button--link--implicit"
+        data-backpack-ds-component="Button"
         type="button"
       >
         <span
@@ -68,6 +75,7 @@ exports[`BpkFloatingNotification should render correctly with icon prop 1`] = `
 <DocumentFragment>
   <div
     class="bpk-floating-notification bpk-floating-notification--appear bpk-floating-notification--appear-active"
+    data-backpack-ds-component="FloatingNotification"
   >
     <div
       class="bpk-floating-notification__icon"
@@ -89,6 +97,7 @@ exports[`BpkFloatingNotification should render correctly with icon prop 1`] = `
     >
       <p
         class="bpk-text bpk-text--body-default"
+        data-backpack-ds-component="Text"
       >
         Saved
       </p>
@@ -97,6 +106,7 @@ exports[`BpkFloatingNotification should render correctly with icon prop 1`] = `
       aria-hidden="true"
       aria-live="polite"
       class="bpk-aria-live bpk-aria-live--invisible"
+      data-backpack-ds-component="AriaLive"
     >
       Saved
     </div>
@@ -108,6 +118,7 @@ exports[`BpkFloatingNotification should support arbitrary props 1`] = `
 <DocumentFragment>
   <div
     class="bpk-floating-notification bpk-floating-notification--appear bpk-floating-notification--appear-active"
+    data-backpack-ds-component="FloatingNotification"
     testid="123"
   >
     <span
@@ -115,6 +126,7 @@ exports[`BpkFloatingNotification should support arbitrary props 1`] = `
     >
       <p
         class="bpk-text bpk-text--body-default"
+        data-backpack-ds-component="Text"
       >
         Saved
       </p>
@@ -123,6 +135,7 @@ exports[`BpkFloatingNotification should support arbitrary props 1`] = `
       aria-hidden="true"
       aria-live="polite"
       class="bpk-aria-live bpk-aria-live--invisible"
+      data-backpack-ds-component="AriaLive"
     >
       Saved
     </div>
@@ -134,12 +147,14 @@ exports[`BpkFloatingNotification should support custom class names 1`] = `
 <DocumentFragment>
   <div
     class="bpk-floating-notification custom-classname bpk-floating-notification--appear bpk-floating-notification--appear-active"
+    data-backpack-ds-component="FloatingNotification"
   >
     <span
       class="bpk-floating-notification__text"
     >
       <p
         class="bpk-text bpk-text--body-default"
+        data-backpack-ds-component="Text"
       >
         Saved
       </p>
@@ -148,6 +163,7 @@ exports[`BpkFloatingNotification should support custom class names 1`] = `
       aria-hidden="true"
       aria-live="polite"
       class="bpk-aria-live bpk-aria-live--invisible"
+      data-backpack-ds-component="AriaLive"
     >
       Saved
     </div>

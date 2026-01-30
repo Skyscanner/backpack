@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { getDataComponentAttribute } from '../../bpk-react-utils';
+
 import BpkBannerAlertInner, { CONFIGURATION } from './BpkBannerAlertInner';
 
 import type { CommonProps, OnDismissHandler } from './common-types';
@@ -29,7 +31,7 @@ const BpkBannerAlertDismissable = ({ onDismiss = null, ...rest }: Props) => (
   <BpkBannerAlertInner
     configuration={CONFIGURATION.DISMISSABLE}
     onDismiss={onDismiss}
-    {...rest}
+    {...getDataComponentAttribute('BannerAlertDismissable')} {...rest}
   />
 );
 

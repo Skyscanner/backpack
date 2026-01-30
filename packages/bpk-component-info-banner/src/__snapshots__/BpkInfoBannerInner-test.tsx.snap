@@ -10,6 +10,7 @@ exports[`BpkInfoBannerInner should render correctly with "style" attribute equal
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--info bpk-info-banner--style-onContrast"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <div
               class="bpk-info-banner__header"
@@ -72,6 +73,7 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--error bpk-info-banner--style-default"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <div
               class="bpk-info-banner__header"
@@ -134,6 +136,7 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--error bpk-info-banner--style-default"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <div
               class="bpk-info-banner__header"
@@ -196,6 +199,7 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--info bpk-info-banner--style-default"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <div
               class="bpk-info-banner__header"
@@ -258,6 +262,7 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <div
               class="bpk-info-banner__header"
@@ -320,6 +325,7 @@ exports[`BpkInfoBannerInner should render correctly with "type" attribute equal 
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--warning bpk-info-banner--style-default"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <div
               class="bpk-info-banner__header"
@@ -382,6 +388,7 @@ exports[`BpkInfoBannerInner should render correctly with a custom banner-alert c
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--warning bpk-info-banner--style-default custom-class"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <div
               class="bpk-info-banner__header"
@@ -446,6 +453,7 @@ exports[`BpkInfoBannerInner should render correctly with a custom class name 1`]
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--warning bpk-info-banner--style-default"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <div
               class="bpk-info-banner__header"
@@ -508,6 +516,7 @@ exports[`BpkInfoBannerInner should render correctly with a element based message
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <button
               aria-expanded="false"
@@ -570,6 +579,7 @@ exports[`BpkInfoBannerInner should render correctly with a element based message
                   </span>
                   <span
                     class="bpk-visually-hidden"
+                    data-backpack-ds-component="VisuallyHidden"
                   >
                     View more
                   </span>
@@ -607,6 +617,7 @@ exports[`BpkInfoBannerInner should render correctly with animateOnLeave 1`] = `
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--warning bpk-info-banner--style-default"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <div
               class="bpk-info-banner__header"
@@ -645,6 +656,7 @@ exports[`BpkInfoBannerInner should render correctly with animateOnLeave 1`] = `
                 <button
                   aria-label="Dismiss"
                   class="bpk-close-button__default"
+                  data-backpack-ds-component="CloseButton"
                   title="Dismiss"
                   type="button"
                 >
@@ -695,6 +707,7 @@ exports[`BpkInfoBannerInner should render correctly with arbitrary props 1`] = `
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--warning bpk-info-banner--style-default"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <div
               class="bpk-info-banner__header"
@@ -757,6 +770,7 @@ exports[`BpkInfoBannerInner should render correctly with child nodes 1`] = `
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <button
               aria-expanded="false"
@@ -814,6 +828,7 @@ exports[`BpkInfoBannerInner should render correctly with child nodes 1`] = `
                   </span>
                   <span
                     class="bpk-visually-hidden"
+                    data-backpack-ds-component="VisuallyHidden"
                   >
                     View more
                   </span>
@@ -851,6 +866,7 @@ exports[`BpkInfoBannerInner should render correctly with dismissable option 1`] 
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--warning bpk-info-banner--style-default"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <div
               class="bpk-info-banner__header"
@@ -889,6 +905,7 @@ exports[`BpkInfoBannerInner should render correctly with dismissable option 1`] 
                 <button
                   aria-label="Dismiss"
                   class="bpk-close-button__default"
+                  data-backpack-ds-component="CloseButton"
                   title="Dismiss"
                   type="button"
                 >
