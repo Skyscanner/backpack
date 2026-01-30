@@ -23,3 +23,7 @@ export const iconLabelThemeAttributes = [
 export const iconLabelOnDarkThemeAttributes = [
   'iconLabelOnDarkTextColor',
 ];
+
+export const iconLabelNightThemeAttributes = [
+  'iconLabelNightTextColor',
+];

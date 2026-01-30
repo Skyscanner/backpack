@@ -27,11 +27,19 @@ import type { LABEL_STYLE } from './BpkIconLabel';
 export type BpkIconLabelType = (typeof LABEL_STYLE)[keyof typeof LABEL_STYLE];
 
 /**
+ * Color scheme for the icon label.
+ * - 'default': Dark text on light background ($bpk-text-primary-day)
+ * - 'on-dark': White text on dark background with day tokens ($bpk-text-on-dark-day)
+ * - 'night': White text for night mode with night tokens ($bpk-text-on-dark-night)
+ */
+export type BpkIconLabelColorScheme = 'default' | 'on-dark' | 'night';
+
+/**
  * Context value shared between Root and child components.
  */
 export interface BpkIconLabelContext {
   type: BpkIconLabelType;
-  onDark: boolean;
+  colorScheme: BpkIconLabelColorScheme;
 }
 
 /**
@@ -45,15 +53,17 @@ export interface BpkIconLabelRootProps {
   type?: BpkIconLabelType;
 
   /**
-   * Whether to use on-dark color scheme for dark backgrounds.
-   * @default false
+   * Color scheme for the icon label.
+   * Use 'default' for light backgrounds, 'on-dark' for dark backgrounds with day tokens,
+   * or 'night' for night mode with night-specific tokens.
+   * @default 'default'
    */
-  onDark?: boolean;
+  colorScheme?: BpkIconLabelColorScheme;
 
   /**
    * Additional CSS class names for the container.
    */
-  className?: string;
+  className?: string | null;
 
   /**
    * Child components (Icon and Text subcomponents).
@@ -87,7 +97,7 @@ export interface BpkIconLabelIconProps {
   /**
    * Additional CSS class names for the icon wrapper.
    */
-  className?: string;
+  className?: string | null;
 
   /**
    * Inexact rest props for HTML attributes.
@@ -112,7 +122,7 @@ export interface BpkIconLabelTextProps {
   /**
    * Additional CSS class names for the text wrapper.
    */
-  className?: string;
+  className?: string | null;
 
   /**
    * Inexact rest props for HTML attributes passed to underlying BpkText.

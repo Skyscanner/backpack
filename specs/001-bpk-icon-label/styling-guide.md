@@ -2,21 +2,23 @@
 
 **Package Branch**: `001-bpk-icon-label`
 **Created**: 2026-01-28
+**Updated**: 2026-01-30 (Implementation Complete)
 **Related**: [api-design.md](./api-design.md), [research.md](./research.md)
 
 ## BEM Class Structure
 
-Following Backpack's BEM naming convention with `bpk-` prefix:
+✅ **IMPLEMENTED** - Following Backpack's BEM naming convention with `bpk-` prefix:
 
 ```scss
 .bpk-icon-label {                    // Root container
   &--default { }                      // Default color scheme
   &--on-dark { }                      // On-dark color scheme
+  &--night { }                        // ✅ ADDED: Night mode color scheme
 
-  &__icon { }                         // Icon wrapper
-  &__text {                           // Text wrapper
+  &__icon { }                         // Icon wrapper (color: inherit)
+  &__text {                           // Text wrapper (wraps BpkText)
     &--body { }                       // Body typography (16px regular)
-    &--label-1 { }                    // Label 1 typography (16px bold)
+    &--label1 { }                     // Label 1 typography (16px bold)
     &--footnote { }                   // Footnote typography (14px regular)
   }
 }
@@ -62,12 +64,22 @@ Following Backpack's BEM naming convention with `bpk-` prefix:
 
   // On-dark variant colors
   &--on-dark {
-    .bpk-icon-label__icon,
     .bpk-icon-label__text {
       @include utils.bpk-themeable-property(
         color,
         --bpk-icon-label-on-dark-text-color,
         tokens.$bpk-text-on-dark-day
+      );
+    }
+  }
+
+  // ✅ ADDED: Night mode variant colors
+  &--night {
+    .bpk-icon-label__text {
+      @include utils.bpk-themeable-property(
+        color,
+        --bpk-icon-label-night-text-color,
+        tokens.$bpk-text-on-dark-night
       );
     }
   }
@@ -152,8 +164,15 @@ Following Backpack's BEM naming convention with `bpk-` prefix:
 | Element | Token | Value |
 |---------|-------|-------|
 | Text | `tokens.$bpk-text-on-dark-day` | white |
-| Icon | `tokens.$bpk-text-on-dark-day` | white |
-| Link | `tokens.$bpk-text-link-day` | (link color) |
+| Icon | `color: inherit` (from text) | white |
+| Link | BpkLink with `alternate` prop | (link alternate color) |
+
+#### Night Style (✅ ADDED)
+| Element | Token | Value |
+|---------|-------|-------|
+| Text | `tokens.$bpk-text-on-dark-night` | white (night tokens) |
+| Icon | `color: inherit` (from text) | white |
+| Link | BpkLink with `alternate` prop | (link alternate color) |
 
 ### Typography Tokens
 
@@ -185,18 +204,17 @@ Theme attributes are converted to CSS variables by BpkThemeProvider:
 
 ### Theme Attribute Mappings
 
-**Note**: Icon color is NOT a separate theme attribute. Icons use `color: inherit` to automatically match text color.
+✅ **IMPLEMENTED**: Icon color inherits from text color via `color: inherit` - no separate theme attribute needed.
 
 | Theme Attribute | CSS Variable | Default Token |
 |----------------|--------------|---------------|
-| `iconLabelBackgroundColor` | `--bpk-icon-label-background-color` | `transparent` |
 | `iconLabelTextColor` | `--bpk-icon-label-text-color` | `$bpk-text-primary-day` |
-| `iconLabelBorderColor` | `--bpk-icon-label-border-color` | `transparent` |
-| `iconLabelOnDarkBackgroundColor` | `--bpk-icon-label-on-dark-background-color` | `transparent` |
 | `iconLabelOnDarkTextColor` | `--bpk-icon-label-on-dark-text-color` | `$bpk-text-on-dark-day` |
-| `iconLabelOnDarkBorderColor` | `--bpk-icon-label-on-dark-border-color` | `transparent` |
+| `iconLabelNightTextColor` | `--bpk-icon-label-night-text-color` | `$bpk-text-on-dark-night` |
 
-**Total**: 8 theme attributes (4 for default, 4 for on-dark)
+**Total**: 3 theme attributes (1 for each color scheme)
+
+**Note**: Link colors are controlled by BpkLink's own theme attributes, not BpkIconLabel.
 
 ## RTL Support Strategy
 
@@ -274,17 +292,21 @@ Icons are decorative (aria-hidden="true"), so no focus styling needed.
 
 ## Implementation Checklist
 
-- [ ] Create `BpkIconLabel.module.scss` with license header
-- [ ] Import granular mixins: tokens, typography, utils
-- [ ] Implement BEM class structure with `bpk-` prefix
-- [ ] Apply typography mixins for body, label-1, footnote
-- [ ] Use spacing tokens for gaps (8px, 16px)
-- [ ] Use color tokens with themeable-property mixin
-- [ ] Implement RTL support with bpk-rtl mixin
-- [ ] Ensure all sizing uses rem units
-- [ ] Test long text wrapping behavior
-- [ ] Test RTL layout
-- [ ] Verify theme colors apply correctly
+- [x] Create `BpkIconLabel.module.scss` with license header
+- [x] Import granular mixins: tokens, typography, utils
+- [x] Implement BEM class structure with `bpk-` prefix
+- [x] Apply typography mixins for body, label1, footnote
+- [x] Use spacing tokens for gaps (8px between icon and text)
+- [x] Use color tokens with themeable-property mixin
+- [x] Implement RTL support with bpk-rtl mixin
+- [x] Ensure all sizing uses rem units
+- [x] Test long text wrapping behavior (withAlignment HOC)
+- [x] Test RTL layout (flex-direction: row-reverse)
+- [x] Verify theme colors apply correctly (3 theme attributes)
+- [x] Add night mode support (--night modifier class)
+- [x] Icon color inheritance (color: inherit)
+
+**Status**: ✅ All styling implemented and tested
 
 ## References
 

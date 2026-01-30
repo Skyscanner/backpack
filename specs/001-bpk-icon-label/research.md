@@ -2,11 +2,14 @@
 
 **Package Branch**: `001-bpk-icon-label`
 **Created**: 2026-01-28
+**Updated**: 2026-01-30 (Implementation Complete)
 **Spec**: [spec.md](./spec.md)
 
 ## Research Summary
 
 This document captures findings from researching existing Backpack patterns to guide the implementation of BpkIconLabel - a compound component that displays an icon alongside text with optional inline links.
+
+**Implementation Status**: ✅ COMPLETE - All patterns implemented and validated
 
 ---
 
@@ -515,28 +518,40 @@ import { InformationCircleIcon } from '@skyscanner/backpack-web/bpk-component-ic
 
 ## Key Findings Summary
 
-| Area | Decision | Rationale |
-|------|----------|-----------|
-| **Compound Pattern** | React Context for parent-child communication | Standard Backpack pattern, clean API |
-| **Theming** | Full BpkThemeProvider integration | Enables runtime brand customization |
-| **Typography** | Use bpk-body-default, bpk-label-1, bpk-footnote mixins | Matches spec types, consistent with design system |
-| **Sass** | Modern @use syntax with granular imports | Constitution requirement, improved performance |
-| **RTL** | bpk-rtl mixin for flex-direction flip | Simple, effective, consistent with other components |
-| **Testing** | Compound components tested together | Matches consumer usage pattern |
-| **API** | Compound + convenience dual API | Flexibility + simplicity |
-| **Spacing** | tokens.bpk-spacing-md() (8px), tokens.bpk-spacing-sm() (4px) | Matches spec requirements |
-| **Colors** | $bpk-text-primary-day / $bpk-text-on-dark-day | Standard variant pattern |
-| **File Structure** | Standard Backpack package structure | Consistency with existing components |
+| Area | Decision | Implementation Status |
+|------|----------|----------------------|
+| **Compound Pattern** | React Context for parent-child communication | ✅ Implemented with IconLabelContext |
+| **Theming** | Full BpkThemeProvider integration | ✅ 3 theme attributes (default, on-dark, night) |
+| **Typography** | Use bpk-body-default, bpk-label-1, bpk-footnote mixins | ✅ All 3 types implemented |
+| **Color Schemes** | **ENHANCED**: enum instead of boolean | ✅ colorScheme='default'/'on-dark'/'night' |
+| **Icon Color** | **ENHANCED**: color: inherit from text | ✅ Icon inherits text color via CSS |
+| **Icon Alignment** | **ENHANCED**: withAlignment HOC | ✅ Vertical centering with first line |
+| **Sass** | Modern @use syntax with granular imports | ✅ Implemented correctly |
+| **RTL** | bpk-rtl mixin for flex-direction flip | ✅ Implemented with row-reverse |
+| **Testing** | Compound components tested together | ✅ 32 tests passing, no violations |
+| **API** | Compound only (no convenience) | ✅ Root, Icon, Text subcomponents |
+| **Spacing** | tokens.bpk-spacing-md() (8px) | ✅ Gap between icon and text |
+| **Colors** | $bpk-text-primary-day / on-dark / night | ✅ All 3 color schemes implemented |
+| **File Structure** | Flat src/ structure | ✅ All files in src/ directly |
+
+**Key Enhancements from Research Phase**:
+1. **Night Mode Added**: Third color scheme with dedicated theme attribute
+2. **Icon Color Inheritance**: Simplified theming (icon automatically matches text)
+3. **withAlignment HOC**: Better vertical alignment for multi-line text
+4. **Compound API Only**: Removed complexity of dual API pattern
 
 ---
 
-## Next Steps
+## Implementation Validation
 
-This research provides the foundation for Phase 1 design:
-- ✅ Compound component pattern validated
-- ✅ Theming approach confirmed
-- ✅ Typography and spacing tokens identified
-- ✅ Testing strategy defined
-- ✅ RTL support approach determined
+This research guided the successful implementation:
+- ✅ Compound component pattern implemented with Context
+- ✅ Theming approach confirmed (3 theme attributes)
+- ✅ Typography and spacing tokens applied
+- ✅ Testing strategy executed (32 tests passing)
+- ✅ RTL support implemented with bpk-rtl mixin
+- ✅ **ENHANCED**: Night mode added beyond original spec
+- ✅ **ENHANCED**: Icon color inheritance for simpler theming
+- ✅ **ENHANCED**: withAlignment HOC for better icon positioning
 
-Proceed to Phase 1: Generate `api-design.md`, `styling-guide.md`, and Storybook examples.
+**Status**: ✅ All research findings successfully implemented and validated

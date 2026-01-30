@@ -22,7 +22,7 @@ import {
   textColors,
   spacings,
   colors,
-  surfaceColors,
+  canvasColors,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import CarsIcon from '../../packages/bpk-component-icon/sm/cars';
@@ -35,6 +35,7 @@ import BpkIconLabel, {
 import {
   iconLabelThemeAttributes,
   iconLabelOnDarkThemeAttributes,
+  iconLabelNightThemeAttributes,
 } from '../../packages/bpk-component-icon-label/src/themeAttributes';
 import BpkLink from '../../packages/bpk-component-link';
 import linkThemeAttributes, {
@@ -62,6 +63,16 @@ const combinedOnDarkTheme = {
   linkAlternateHoverColor: colors.colorSystemGreen, // green on hover
   linkAlternateActiveColor: colors.colorSystemGreen, // green when active
   linkAlternateVisitedColor: colors.colorSystemGreen, // green for visited
+};
+
+const combinedNightTheme = {
+  // BpkIconLabel night theme attributes
+  iconLabelNightTextColor: colors.colorErfoud, // erfoud (yellow)
+  // BpkLink alternate (night) theme attributes
+  linkAlternateColor: colors.colorErfoud, // erfoud (yellow)
+  linkAlternateHoverColor: colors.colorErfoud, // erfoud (yellow) on hover
+  linkAlternateActiveColor: colors.colorErfoud, // erfoud (yellow) when active
+  linkAlternateVisitedColor: colors.colorErfoud, // erfoud (yellow) for visited
 };
 
 export const DefaultExample = () => (
@@ -158,7 +169,7 @@ export const OnDarkExample = () => (
         gap: spacings.spacingIconText,
       }}
     >
-      <BpkIconLabel.Root onDark>
+      <BpkIconLabel.Root colorScheme="on-dark">
         <BpkIconLabel.Icon>
           <FlightIcon />
         </BpkIconLabel.Icon>
@@ -167,7 +178,7 @@ export const OnDarkExample = () => (
         </BpkIconLabel.Text>
       </BpkIconLabel.Root>
 
-      <BpkIconLabel.Root onDark>
+      <BpkIconLabel.Root colorScheme="on-dark">
         <BpkIconLabel.Icon>
           <FlightIcon />
         </BpkIconLabel.Icon>
@@ -233,21 +244,21 @@ export const AllVariantsExample = () => (
             gap: spacings.spacingIconText,
           }}
         >
-          <BpkIconLabel.Root type={LABEL_STYLE.body} onDark>
+          <BpkIconLabel.Root type={LABEL_STYLE.body} colorScheme="on-dark">
             <BpkIconLabel.Icon>
               <FlightIcon />
             </BpkIconLabel.Icon>
             <BpkIconLabel.Text>Body typography (on-dark)</BpkIconLabel.Text>
           </BpkIconLabel.Root>
 
-          <BpkIconLabel.Root type={LABEL_STYLE.label1} onDark>
+          <BpkIconLabel.Root type={LABEL_STYLE.label1} colorScheme="on-dark">
             <BpkIconLabel.Icon>
               <HotelsIcon />
             </BpkIconLabel.Icon>
             <BpkIconLabel.Text>Label 1 typography (on-dark)</BpkIconLabel.Text>
           </BpkIconLabel.Root>
 
-          <BpkIconLabel.Root type={LABEL_STYLE.footnote} onDark>
+          <BpkIconLabel.Root type={LABEL_STYLE.footnote} colorScheme="on-dark">
             <BpkIconLabel.Icon>
               <CarsIcon />
             </BpkIconLabel.Icon>
@@ -256,6 +267,43 @@ export const AllVariantsExample = () => (
         </div>
       </div>
     </BpkDarkExampleWrapper>
+
+    <div
+      style={{
+        backgroundColor: canvasColors.canvasNight,
+        borderRadius: '8px',
+      }}
+    >
+      <h3 style={{ color: textColors.textOnDarkNight }}>Night Style</h3>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: spacings.spacingIconText,
+        }}
+      >
+        <BpkIconLabel.Root type={LABEL_STYLE.body} colorScheme="night">
+          <BpkIconLabel.Icon>
+            <FlightIcon />
+          </BpkIconLabel.Icon>
+          <BpkIconLabel.Text>Body typography (night)</BpkIconLabel.Text>
+        </BpkIconLabel.Root>
+
+        <BpkIconLabel.Root type={LABEL_STYLE.label1} colorScheme="night">
+          <BpkIconLabel.Icon>
+            <HotelsIcon />
+          </BpkIconLabel.Icon>
+          <BpkIconLabel.Text>Label 1 typography (night)</BpkIconLabel.Text>
+        </BpkIconLabel.Root>
+
+        <BpkIconLabel.Root type={LABEL_STYLE.footnote} colorScheme="night">
+          <BpkIconLabel.Icon>
+            <CarsIcon />
+          </BpkIconLabel.Icon>
+          <BpkIconLabel.Text>Footnote typography (night)</BpkIconLabel.Text>
+        </BpkIconLabel.Root>
+      </div>
+    </div>
   </div>
 );
 
@@ -317,10 +365,7 @@ export const ThemedExample = () => (
       <h3>Custom Theme</h3>
       <BpkThemeProvider
         theme={combinedTheme}
-        themeAttributes={[
-          ...iconLabelThemeAttributes,
-          ...linkThemeAttributes,
-        ]}
+        themeAttributes={[...iconLabelThemeAttributes, ...linkThemeAttributes]}
       >
         <BpkIconLabel.Root>
           <BpkIconLabel.Icon>
@@ -349,7 +394,7 @@ export const ThemedOnDarkExample = () => (
     >
       <div>
         <h3 style={{ color: textColors.textOnDarkDay }}>Default Theme</h3>
-        <BpkIconLabel.Root onDark>
+        <BpkIconLabel.Root colorScheme="on-dark">
           <BpkIconLabel.Icon>
             <FlightIcon />
           </BpkIconLabel.Icon>
@@ -363,9 +408,7 @@ export const ThemedOnDarkExample = () => (
       </div>
 
       <div>
-        <h3 style={{ color: textColors.textOnDarkDay }}>
-          Custom Theme
-        </h3>
+        <h3 style={{ color: textColors.textOnDarkDay }}>Custom Theme</h3>
         <BpkThemeProvider
           theme={combinedOnDarkTheme}
           themeAttributes={[
@@ -373,7 +416,7 @@ export const ThemedOnDarkExample = () => (
             ...linkAlternateThemeAttributes,
           ]}
         >
-          <BpkIconLabel.Root onDark>
+          <BpkIconLabel.Root colorScheme="on-dark">
             <BpkIconLabel.Icon>
               <FlightIcon />
             </BpkIconLabel.Icon>
@@ -389,4 +432,183 @@ export const ThemedOnDarkExample = () => (
       </div>
     </div>
   </BpkDarkExampleWrapper>
+);
+
+export const ThemedNightExample = () => (
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '24px',
+      padding: '20px',
+      backgroundColor: canvasColors.canvasNight,
+      borderRadius: '8px',
+    }}
+  >
+    <div>
+      <h3 style={{ color: textColors.textOnDarkNight }}>Default Night Theme</h3>
+      <BpkIconLabel.Root colorScheme="night">
+        <BpkIconLabel.Icon>
+          <FlightIcon />
+        </BpkIconLabel.Icon>
+        <BpkIconLabel.Text>
+          Default night colors with{' '}
+          <BpkLink href="https://www.skyscanner.net" alternate>
+            default link
+          </BpkLink>
+        </BpkIconLabel.Text>
+      </BpkIconLabel.Root>
+    </div>
+
+    <div>
+      <h3 style={{ color: textColors.textOnDarkNight }}>Custom Night Theme</h3>
+      <BpkThemeProvider
+        theme={combinedNightTheme}
+        themeAttributes={[
+          ...iconLabelNightThemeAttributes,
+          ...linkAlternateThemeAttributes,
+        ]}
+      >
+        <BpkIconLabel.Root colorScheme="night">
+          <BpkIconLabel.Icon>
+            <FlightIcon />
+          </BpkIconLabel.Icon>
+          <BpkIconLabel.Text>
+            Yellow icon and text with{' '}
+            <BpkLink href="https://www.skyscanner.net" alternate>
+              yellow link
+            </BpkLink>{' '}
+            (hover to see effects)
+          </BpkIconLabel.Text>
+        </BpkIconLabel.Root>
+      </BpkThemeProvider>
+    </div>
+  </div>
+);
+
+export const FlexiblePositioningExample = () => (
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      gap: spacings.spacingIconText,
+    }}
+  >
+    <div>
+      <h3>Icon Before Text (Default)</h3>
+      <BpkIconLabel.Root>
+        <BpkIconLabel.Icon>
+          <FlightIcon />
+        </BpkIconLabel.Icon>
+        <BpkIconLabel.Text>Icon appears before the text</BpkIconLabel.Text>
+      </BpkIconLabel.Root>
+    </div>
+
+    <div>
+      <h3>Icon After Text (Flexible Positioning)</h3>
+      <BpkIconLabel.Root>
+        <BpkIconLabel.Text>Text appears before the icon</BpkIconLabel.Text>
+        <BpkIconLabel.Icon>
+          <FlightIcon />
+        </BpkIconLabel.Icon>
+      </BpkIconLabel.Root>
+    </div>
+
+    <div>
+      <h3>Different Typography with Flexible Positioning</h3>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: spacings.spacingIconText,
+        }}
+      >
+        <BpkIconLabel.Root type={LABEL_STYLE.label1}>
+          <BpkIconLabel.Text>Flights from London</BpkIconLabel.Text>
+          <BpkIconLabel.Icon>
+            <FlightIcon />
+          </BpkIconLabel.Icon>
+        </BpkIconLabel.Root>
+
+        <BpkIconLabel.Root type={LABEL_STYLE.footnote}>
+          <BpkIconLabel.Text>Hotels in Paris</BpkIconLabel.Text>
+          <BpkIconLabel.Icon>
+            <HotelsIcon />
+          </BpkIconLabel.Icon>
+        </BpkIconLabel.Root>
+
+        <BpkIconLabel.Root type={LABEL_STYLE.body}>
+          <BpkIconLabel.Text>Car rentals available</BpkIconLabel.Text>
+          <BpkIconLabel.Icon>
+            <CarsIcon />
+          </BpkIconLabel.Icon>
+        </BpkIconLabel.Root>
+      </div>
+    </div>
+
+    <div>
+      <h3>Flexible Positioning on Dark Background</h3>
+      <BpkDarkExampleWrapper>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: spacings.spacingIconText,
+          }}
+        >
+          <BpkIconLabel.Root colorScheme="on-dark">
+            <BpkIconLabel.Text>
+              Check your booking details
+            </BpkIconLabel.Text>
+            <BpkIconLabel.Icon>
+              <InformationCircleIcon />
+            </BpkIconLabel.Icon>
+          </BpkIconLabel.Root>
+
+          <BpkIconLabel.Root colorScheme="on-dark">
+            <BpkIconLabel.Icon>
+              <InformationCircleIcon />
+            </BpkIconLabel.Icon>
+            <BpkIconLabel.Text>
+              Standard position for comparison
+            </BpkIconLabel.Text>
+          </BpkIconLabel.Root>
+        </div>
+      </BpkDarkExampleWrapper>
+    </div>
+
+    <div>
+      <h3>With Inline Links</h3>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: spacings.spacingIconText,
+        }}
+      >
+        <BpkIconLabel.Root>
+          <BpkIconLabel.Text>
+            Learn more about our{' '}
+            <BpkLink href="https://www.skyscanner.net/privacy">
+              privacy policy
+            </BpkLink>
+          </BpkIconLabel.Text>
+          <BpkIconLabel.Icon>
+            <InformationCircleIcon />
+          </BpkIconLabel.Icon>
+        </BpkIconLabel.Root>
+
+        <BpkIconLabel.Root>
+          <BpkIconLabel.Icon>
+            <InformationCircleIcon />
+          </BpkIconLabel.Icon>
+          <BpkIconLabel.Text>
+            Visit our{' '}
+            <BpkLink href="https://www.skyscanner.net/help">help center</BpkLink>{' '}
+            for support
+          </BpkIconLabel.Text>
+        </BpkIconLabel.Root>
+      </div>
+    </div>
+  </div>
 );

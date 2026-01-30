@@ -20,7 +20,7 @@
 @use '../../bpk-mixins/utils';
 
 .bpk-icon-label {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   align-items: flex-start; // Align icon to first line of text
   gap: tokens.bpk-spacing-md(); // 8px spacing between icon and text
@@ -39,9 +39,9 @@
 
   // Icon wrapper
   &__icon {
-    flex-shrink: 0; // Prevent icon from shrinking
     width: tokens.bpk-spacing-base(); // 16px fixed size (1rem)
     height: tokens.bpk-spacing-base(); // 16px fixed size (1rem)
+    flex-shrink: 0; // Prevent icon from shrinking
     color: inherit; // Icon inherits color from parent container
 
     // Ensure SVG icons inherit the color
@@ -52,17 +52,26 @@
 
   // Text wrapper (uses BpkText internally, minimal custom styling)
   &__text {
-    flex: 1; // Allow text to grow and wrap
     color: inherit; // Inherit color from parent container
   }
 
-  // On-dark variant: white text and icons for dark backgrounds
+  // On-dark variant: white text and icons for dark backgrounds (day tokens)
   &--on-dark {
     // Override container color for on-dark variant
     @include utils.bpk-themeable-property(
       color,
       --bpk-icon-label-on-dark-text-color,
       tokens.$bpk-text-on-dark-day
+    );
+  }
+
+  // Night variant: white text and icons for night mode (night tokens)
+  &--night {
+    // Override container color for night variant
+    @include utils.bpk-themeable-property(
+      color,
+      --bpk-icon-label-night-text-color,
+      tokens.$bpk-text-on-dark-night
     );
   }
 }

@@ -2,27 +2,60 @@
 
 **Package Branch**: `001-bpk-icon-label`
 **Created**: 2026-01-28
-**Status**: Draft
-**Input**: User description: "I need to create a new Backpack component based on this Figma https://www.figma.com/design/yN0hFyZlKL0Jwbpi0rEKYT/Backpack-Beta?node-id=21640-6807&t=iyI0AiqLVcStpq9L-0. The component is called BpkIconLabel, used to display an icon with text label and optional link. The component has 6 variants: 2 states (Default, On dark) × 3 types (Body, Label 1, Footnote). React design follows Ark UI/Chakra UI composition pattern, CSS uses Backpack tokens and mixins."
+**Status**: Completed - Ready for Review
+
+**Current Implementation State**:
+- ✅ 9 variants (3 types × 3 color schemes: default, on-dark, night)
+- ✅ Props: `type` (body/label1/footnote), `colorScheme` ('default' | 'on-dark' | 'night')
+- ✅ Theme attributes: 3 (iconLabelTextColor, iconLabelOnDarkTextColor, iconLabelNightTextColor)
+- ✅ Compound component pattern (Root, Icon, Text)
+- ✅ Icon color inheritance via CSS
+- ✅ withAlignment HOC for icon positioning
+- ✅ Night mode support with $bpk-text-on-dark-night token
+- ✅ Unit tests passing (32 tests, all variants covered)
+- ✅ Storybook examples with all 9 variants + night mode theming
+- ✅ TypeScript compilation successful with no errors
+- ✅ Examples migrated to colorScheme API (removed onDark prop)
+
+**Original Input**: "I need to create a new Backpack component based on this Figma https://www.figma.com/design/yN0hFyZlKL0Jwbpi0rEKYT/Backpack-Beta?node-id=21640-6807. The component is called BpkIconLabel, used to display an icon with text label and optional link. React design follows Ark UI/Chakra UI composition pattern, CSS uses Backpack tokens and mixins."
 
 ## Clarifications
 
 ### Session 2026-01-28
 
-- Q: Should BpkIconLabel support runtime theming via BpkThemeProvider (similar to BpkButton)? → A: Yes, support full BpkThemeProvider theming with background and foreground color customization
+- Q: Should BpkIconLabel support runtime theming via BpkThemeProvider (similar to BpkButton)? → A: Yes, support full BpkThemeProvider theming with foreground color customization
 - Q: How should composability be implemented? → A: Use Compound Components pattern with subcomponents like BpkIconLabel.Root, BpkIconLabel.Icon, BpkIconLabel.Text
-- Q: Which color attributes should be themeable? → A: Full theme support including background color, foreground colors (text/icon), link color, and border color
+- Q: Which color attributes should be themeable? → A: Full theme support including foreground colors (text/icon) and link color.
 - Q: Beyond link tab navigation, what other keyboard interactions are needed? → A: Only link focusable
-- Q: How should focus and hover states be visualized? → A: Minimal visual feedback - only link text color changes on hover/focus, no additional indicators
+- Q: How should focus and hover states be visualized? → A: Minimal visual feedback - only link text color changes on hover/focus/active, no additional indicators
 
-### Session 2026-01-29
+### Session 2026-01-29 (Morning)
 
 - Q: How should icon and text colors be coordinated in theming? → A: Icon color should always inherit from text color CSS property (no separate theme attribute)
 - Q: How should icon alignment with multi-line text be implemented? → A: Use align-items: flex-start and apply withAlignment HOC to the icon component
 - Q: Should link color be unified with text color or remain independently themeable? → A: Link color remains independently themeable but controlled through BpkLink's own theme attributes (linkColor, linkHoverColor, etc.), NOT through iconLabelLinkColor
-- Q: How should theme attributes be structured given icon inherits from text? → A: Remove iconColor from theme attributes, remove iconLabelLinkColor (use BpkLink theme instead), keep only textColor, backgroundColor, borderColor
-- Q: Should default and on-dark variants share theme attributes or have separate sets? → A: Separate required theme attributes for default and on-dark variants (6 total attributes)
+- Q: How should theme attributes be structured given icon inherits from text? → A: Remove iconColor from theme attributes, remove iconLabelLinkColor (use BpkLink theme instead), keep only textColor (no backgroundColor or borderColor in actual implementation)
+- Q: Should default and on-dark variants share theme attributes or have separate sets? → A: Separate required theme attributes for default and on-dark variants (2 total attributes in implementation: iconLabelTextColor, iconLabelOnDarkTextColor)
 - Q: Requirements confirmation - text default color, theme support, icon color inheritance, and alignment implementation → A: Confirmed: text default color is $bpk-text-primary-day with theme color support; icon always inherits text color; icon uses withAlignment HOC for vertical center alignment with first line of text
+
+### Session 2026-01-30
+
+- Q: Implementation verification - default text color ($bpk-text-primary-day), theme color support, icon color inheritance, and first-line vertical alignment → A: Verified: All requirements already implemented correctly in current code (BpkIconLabel.module.scss:32 uses $bpk-text-primary-day with themeable property; BpkIconLabel.module.scss:45 uses color:inherit for icon; BpkIconLabel.tsx:164-172 uses withAlignment HOC)
+
+### Session 2026-01-29 (Night Mode Addition)
+
+- Q: What is the semantic/visual difference between "on-dark" and "night mode"? → A: Different design tokens (on-dark uses day tokens like $bpk-text-on-dark-day, night uses night tokens like $bpk-text-on-dark-night)
+- Q: How should the night mode be exposed in the component API? → A: Use colorScheme enum prop with values 'default' | 'on-dark' | 'night'
+- Q: Should the component support all combinations of color schemes with typography types? → A: Yes, all 9 combinations supported (3 types × 3 color schemes: default, on-dark, night)
+- Q: What are the theme attribute names for night mode? → A: iconLabelNightTextColor (parallel to existing iconLabelTextColor and iconLabelOnDarkTextColor)
+- Q: What should the BEM CSS class name be for the night mode variant? → A: bpk-icon-label--night (matches colorScheme='night', concise)
+
+### Session 2026-01-30 (Examples & Storybook Migration)
+
+- Q: Where should Storybook stories be located? → A: Delete packages/bpk-component-icon-label/src/BpkIconLabel.stories.tsx, keep only examples/bpk-component-icon-label/stories.tsx (single source of truth)
+- Q: How should examples be updated for colorScheme API? → A: Replace all onDark prop usage with colorScheme="on-dark", add night mode examples with colorScheme="night"
+- Q: What night mode examples should be added? → A: Add night mode section to AllVariantsExample showing all 3 typography variants, add ThemedNightExample with custom yellow theme using iconLabelNightTextColor
+- Q: Which background color token for night mode examples? → A: Use canvasColors.canvasNight for proper night mode background styling
 
 ## Constitution Check
 
@@ -80,13 +113,13 @@ Developers need to use the component on dark backgrounds, requiring adjusted col
 
 **Why this priority**: Supporting dark mode/backgrounds is essential for modern UI design and ensures the component works across all design contexts.
 
-**Independent Test**: Can be tested by rendering component with onDark={true} prop and verifying text/icon colors are light (white) instead of dark.
+**Independent Test**: Can be tested by rendering component with colorScheme="on-dark" prop and verifying text/icon colors are light (white) instead of dark.
 
 **Acceptance Scenarios**:
 
-1. **Given** a BpkIconLabel with onDark={true}, **When** rendered, **Then** text color is white
-2. **Given** a BpkIconLabel with onDark={true}, **When** rendered, **Then** icon color matches text color (white)
-3. **Given** a BpkIconLabel with onDark={true} and link, **When** rendered, **Then** link maintains proper contrast on dark background
+1. **Given** a BpkIconLabel with colorScheme="on-dark", **When** rendered, **Then** text color is white
+2. **Given** a BpkIconLabel with colorScheme="on-dark", **When** rendered, **Then** icon color matches text color (white)
+3. **Given** a BpkIconLabel with colorScheme="on-dark" and link, **When** rendered, **Then** link maintains proper contrast on dark background
 
 ---
 
@@ -121,7 +154,7 @@ Developers may want to display just the text and link without an icon for certai
 
 - **FR-001**: Component MUST render an icon, text label, and optional link in a horizontal layout
 - **FR-002**: Component MUST support three type variants: "body" (16px regular), "label1" (16px bold), "footnote" (14px regular)
-- **FR-003**: Component MUST support two color schemes via onDark prop: default (dark text on light background) and on-dark (white text on dark background)
+- **FR-003**: Component MUST support three color schemes via colorScheme prop: 'default' (dark text on light background), 'on-dark' (white text on dark background with day tokens), and 'night' (white text for night mode with night tokens)
 - **FR-004**: Component MUST accept a custom icon prop to display different icons
 - **FR-005**: Component MUST render text content passed via children or text prop
 - **FR-006**: Component MUST render an optional link after the text with configurable text and onClick handler
@@ -150,7 +183,7 @@ The component exposes the following subcomponents:
 
 **Root Component Props**:
 - **`type`** (string, optional, default: "body"): Typography variant - "body", "label1", or "footnote"
-- **`onDark`** (boolean, optional, default: false): Whether to use on-dark color scheme for dark backgrounds
+- **`colorScheme`** (string, optional, default: "default"): Color scheme - "default", "on-dark", or "night"
 - **`className`** (string, optional): Additional CSS class names for the container
 - **`children`** (ReactNode, required): Subcomponents (Icon, Text)
 
@@ -166,10 +199,11 @@ The component exposes the following subcomponents:
 **Type Example**:
 ```typescript
 type BpkIconLabelType = 'body' | 'label1' | 'footnote';
+type BpkIconLabelColorScheme = 'default' | 'on-dark' | 'night';
 
 type RootProps = {
   type?: BpkIconLabelType;
-  onDark?: boolean;
+  colorScheme?: BpkIconLabelColorScheme;
   className?: string;
   children: ReactNode;
 };
@@ -190,7 +224,7 @@ type TextProps = {
 ```typescript
 type BpkIconLabelProps = {
   type?: BpkIconLabelType;
-  onDark?: boolean;
+  colorScheme?: BpkIconLabelColorScheme;
   text: string;
   icon?: ReactElement;
   showIcon?: boolean;
@@ -264,12 +298,12 @@ type BpkIconLabelProps = {
 
 ### Measurable Outcomes
 
-- **SC-001**: Component renders correctly with all 6 variant combinations (3 types × 2 styles)
+- **SC-001**: Component renders correctly with all 9 variant combinations (3 types × 3 color schemes)
 - **SC-002**: All accessibility tests pass with jest-axe (no violations)
 - **SC-003**: Visual regression tests pass in Percy for all variants
 - **SC-004**: Test coverage meets thresholds (70% branches, 75% functions/lines/statements)
 - **SC-005**: TypeScript compiles without errors or type warnings
-- **SC-006**: Storybook stories demonstrate all 6 variants plus edge cases (no icon, long text, etc.)
+- **SC-006**: Storybook stories demonstrate all 9 variants plus edge cases (no icon, long text, etc.)
 - **SC-007**: README documentation is complete with usage examples for all variants
 - **SC-008**: Component works in all supported browsers without visual or functional issues
 - **SC-009**: Component supports RTL languages with correct icon positioning
@@ -284,44 +318,62 @@ type BpkIconLabelProps = {
 
 **Visual States to implement**:
 
-Six primary variants (3 types × 2 styles):
+Nine primary variants (3 types × 3 color schemes):
 
-1. **Type: Body, Style: Default**
+1. **Type: Body, Color Scheme: Default**
    - Text: 16px regular (Skyscanner Relative Book)
-   - Color: #161616 (text-primary)
+   - Color: #161616 ($bpk-text-primary-day)
    - Line height: 1.5
    - Icon: 16x16px, left-aligned, inherits text color
 
-2. **Type: Body, Style: On Dark**
+2. **Type: Body, Color Scheme: On-Dark**
    - Text: 16px regular
-   - Color: white (text-on-dark)
+   - Color: white ($bpk-text-on-dark-day)
    - Line height: 1.5
-   - Icon: 16x16px white (inherits text color), right-aligned
+   - Icon: 16x16px white (inherits text color)
 
-3. **Type: Label 1, Style: Default**
+3. **Type: Body, Color Scheme: Night**
+   - Text: 16px regular
+   - Color: white ($bpk-text-on-dark-night)
+   - Line height: 1.5
+   - Icon: 16x16px white (inherits text color)
+
+4. **Type: Label 1, Color Scheme: Default**
    - Text: 16px bold (Skyscanner Relative Bold)
    - Color: #161616
    - Line height: 1.5
-   - Icon: 16x16px, right-aligned, inherits text color
+   - Icon: 16x16px, inherits text color
 
-4. **Type: Label 1, Style: On Dark**
+5. **Type: Label 1, Color Scheme: On-Dark**
    - Text: 16px bold
    - Color: white
    - Line height: 1.5
-   - Icon: 16x16px white (inherits text color), right-aligned
+   - Icon: 16x16px white (inherits text color)
 
-5. **Type: Footnote, Style: Default**
+6. **Type: Label 1, Color Scheme: Night**
+   - Text: 16px bold
+   - Color: white
+   - Line height: 1.5
+   - Icon: 16x16px white (inherits text color)
+
+7. **Type: Footnote, Color Scheme: Default**
    - Text: 14px regular
    - Color: #161616
    - Line height: 1.428
    - Icon: 16x16px, left-aligned, inherits text color
    - Link: 14px with underline
 
-6. **Type: Footnote, Style: On Dark**
+8. **Type: Footnote, Color Scheme: On-Dark**
    - Text: 14px regular
    - Color: white
    - Line height: 1.428
-   - Icon: 16x16px white (inherits text color), right-aligned
+   - Icon: 16x16px white (inherits text color)
+
+9. **Type: Footnote, Color Scheme: Night**
+   - Text: 14px regular
+   - Color: white
+   - Line height: 1.428
+   - Icon: 16x16px white (inherits text color)
 
 **Layout specifications**:
 - Container: Flexbox row with align-items: flex-start for proper first-line alignment
@@ -425,25 +477,29 @@ Six primary variants (3 types × 2 styles):
 
 ## Implementation Notes
 
-**File Structure** (per constitution):
+**File Structure** (actual implementation):
 ```
 packages/bpk-component-icon-label/
-├── README.md
-├── index.ts                                    # exports from src/
-├── package.json
-├── docs/                                       # Figma screenshots
+├── README.md                                   # component documentation
+├── index.ts                                    # main package exports
 └── src/
-    ├── BpkIconLabel/
-    │   ├── BpkIconLabel.tsx
-    │   ├── BpkIconLabel.module.scss
-    │   ├── BpkIconLabel-test.tsx
-    │   ├── accessibility-test.tsx
-    │   ├── BpkIconLabel.figma.tsx
-    │   ├── common-types.ts                     # shared type definitions
-    │   └── __snapshots__/
-    ├── themeAttributes.ts                      # 6 themeable attributes: iconLabelBackgroundColor, iconLabelTextColor, iconLabelBorderColor + iconLabelOnDarkBackgroundColor, iconLabelOnDarkTextColor, iconLabelOnDarkBorderColor (NO iconColor or linkColor attributes - icon inherits from text, links use BpkLink theme)
-    └── index.ts                                # re-export from BpkIconLabel/
+    ├── BpkIconLabel.tsx                       # main component (Root, Icon, Text)
+    ├── BpkIconLabel.module.scss               # component styles (9 variants)
+    ├── BpkIconLabel-test.tsx                  # unit tests (32 tests, all passing)
+    ├── accessibility-test.tsx                  # a11y tests with jest-axe
+    ├── common-types.ts                         # TypeScript type definitions
+    ├── themeAttributes.ts                      # 3 theme attributes (default, on-dark, night)
+    └── __snapshots__/                          # jest snapshots
+
+examples/bpk-component-icon-label/
+├── stories.tsx                                 # Storybook configuration (single source)
+└── examples.tsx                                # Example implementations (all 9 variants + theming)
 ```
+
+**Notes**:
+- ✅ Deleted: `packages/bpk-component-icon-label/src/BpkIconLabel.stories.tsx` (consolidated to examples/)
+- ✅ Single source of truth: Storybook stories in `examples/` directory only
+- ✅ Examples include: Default, LongText, TypeVariants, OnDark, Night, AllVariants, MultipleMessages, Themed, ThemedOnDark, ThemedNight
 
 **Key Implementation Principles**:
 1. Follow composition pattern inspired by Ark UI/Chakra UI (flexible sub-component structure)

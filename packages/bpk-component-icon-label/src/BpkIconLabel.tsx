@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 import { createContext, useContext } from 'react';
 
 import {
@@ -36,7 +36,7 @@ import type {
   BpkIconLabelTextProps,
   BpkIconLabelType,
 } from './common-types';
-import type { TextStyle } from '../../bpk-component-text';
+import type { TextStyle } from '../../bpk-component-text/src/BpkText';
 
 import STYLES from './BpkIconLabel.module.scss';
 
@@ -71,9 +71,9 @@ const TYPE_TO_TEXT_STYLE_MAP: Record<BpkIconLabelType, TextStyle> = {
  * Icon should align vertically centered with the first line of text.
  */
 const TYPE_TO_LINE_HEIGHT_MAP: Record<BpkIconLabelType, string> = {
-  body: lineHeightBase,      // 1.5rem
-  label1: lineHeightBase,    // 1.5rem
-  footnote: lineHeightSm,    // 1.25rem
+  body: lineHeightBase, // 1.5rem
+  label1: lineHeightBase, // 1.5rem
+  footnote: lineHeightSm, // 1.25rem
 };
 
 /**
@@ -81,14 +81,14 @@ const TYPE_TO_LINE_HEIGHT_MAP: Record<BpkIconLabelType, string> = {
  */
 export const IconLabelContext = createContext<BpkIconLabelContext>({
   type: LABEL_STYLE.body,
-  onDark: false,
+  colorScheme: 'default',
 });
 
 /**
  * BpkIconLabel.Root - Container component that provides context for child components.
  *
  * @example
- * <BpkIconLabel.Root type="body" onDark={false}>
+ * <BpkIconLabel.Root type="body" colorScheme="on-dark">
  *   <BpkIconLabel.Icon><InformationCircleIcon /></BpkIconLabel.Icon>
  *   <BpkIconLabel.Text>Information text</BpkIconLabel.Text>
  * </BpkIconLabel.Root>
@@ -98,24 +98,55 @@ export const IconLabelContext = createContext<BpkIconLabelContext>({
 export const BpkIconLabelRoot = ({
   children,
   className = null,
-  onDark = false,
+  colorScheme = 'default',
   type = LABEL_STYLE.body,
   ...rest
 }: BpkIconLabelRootProps) => {
+  const effectiveColorScheme = colorScheme;
+
   const classNames = getClassName(
     'bpk-icon-label',
-    onDark && 'bpk-icon-label--on-dark',
+    effectiveColorScheme === 'on-dark' && 'bpk-icon-label--on-dark',
+    effectiveColorScheme === 'night' && 'bpk-icon-label--night',
     className,
   );
 
   return (
-    <IconLabelContext.Provider value={{ type, onDark }}>
+    <IconLabelContext.Provider
+      value={{ type, colorScheme: effectiveColorScheme }}
+    >
       <div className={classNames} {...rest}>
         {children}
       </div>
     </IconLabelContext.Provider>
   );
 };
+
+/**
+ * Props for IconWrapper component.
+ */
+interface IconWrapperProps {
+  asChild: boolean;
+  children?: ReactNode;
+  className: string;
+  [key: string]: any;
+}
+
+/**
+ * Inner icon component that will be wrapped with alignment HOC.
+ *
+ * @returns {JSX.Element} The icon wrapper span element.
+ */
+const IconWrapper: FC<IconWrapperProps> = ({
+  asChild,
+  children,
+  className,
+  ...rest
+}) => (
+  <span className={className} aria-hidden="true" {...rest}>
+    {asChild ? children : <span>{children}</span>}
+  </span>
+);
 
 /**
  * BpkIconLabel.Icon - Icon display component using asChild pattern.
@@ -134,11 +165,12 @@ export const BpkIconLabelIcon = ({
   className = null,
   ...rest
 }: BpkIconLabelIconProps) => {
-  const { onDark, type } = useContext(IconLabelContext);
+  const { colorScheme, type } = useContext(IconLabelContext);
 
   const classNames = getClassName(
     'bpk-icon-label__icon',
-    onDark && 'bpk-icon-label__icon--on-dark',
+    colorScheme === 'on-dark' && 'bpk-icon-label__icon--on-dark',
+    colorScheme === 'night' && 'bpk-icon-label__icon--night',
     className,
   );
 
@@ -147,17 +179,10 @@ export const BpkIconLabelIcon = ({
 
   // Apply withAlignment to align icon vertically centered with text's first line
   // objectHeight = text line-height, subjectHeight = icon size (1rem)
-  const AlignedIcon = withAlignment(
-    ({ children: iconChildren }: { children: ReactNode }) => (
-      <span className={classNames} aria-hidden="true" {...rest}>
-        {asChild ? iconChildren : <span>{iconChildren}</span>}
-      </span>
-    ),
-    lineHeight,
-    iconSizeSm,
-  );
+  const AlignedIcon = withAlignment(IconWrapper, lineHeight, iconSizeSm);
 
-  return <AlignedIcon>{children}</AlignedIcon>;
+  const iconProps = { className: classNames, asChild, ...rest };
+  return <AlignedIcon {...iconProps}>{children}</AlignedIcon>;
 };
 
 /**
@@ -176,43 +201,45 @@ export const BpkIconLabelText = ({
   className = null,
   ...rest
 }: BpkIconLabelTextProps) => {
-  const { onDark, type } = useContext(IconLabelContext);
+  const { colorScheme, type } = useContext(IconLabelContext);
 
   const textStyle = TYPE_TO_TEXT_STYLE_MAP[type];
 
   const classNames = getClassName(
     'bpk-icon-label__text',
-    onDark && 'bpk-icon-label__text--on-dark',
+    colorScheme === 'on-dark' && 'bpk-icon-label__text--on-dark',
+    colorScheme === 'night' && 'bpk-icon-label__text--night',
     className,
   );
 
   return (
-    <BpkText
-      textStyle={textStyle}
-      tagName="span"
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      className={classNames}
-      {...rest}
-    >
-      {children}
-    </BpkText>
+    <span className={classNames}>
+      <BpkText textStyle={textStyle} tagName="span" {...rest}>
+        {children}
+      </BpkText>
+    </span>
   );
 };
 
 /**
  * BpkIconLabel - Compound component for displaying an icon alongside text with optional inline links.
  *
- * Supports three typography variants (body, label1, footnote) and two colour schemes (default, on-dark).
+ * Supports three typography variants (body, label1, footnote) and three colour schemes (default, on-dark, night).
  *
  * This component uses BpkText for text rendering and accepts BpkLink as children.
  *
  * @example
- * // Compound component usage
- * <BpkIconLabel.Root type="body" style="default">
+ * <BpkIconLabel.Root type="body" colorScheme="night">
  *   <BpkIconLabel.Icon><InformationCircleIcon /></BpkIconLabel.Icon>
  *   <BpkIconLabel.Text>
  *     Check your details. <BpkLink href="/help">Need help?</BpkLink>
  *   </BpkIconLabel.Text>
+ * </BpkIconLabel.Root>
+ *
+ * @example
+ * <BpkIconLabel.Root type="body" colorScheme="on-dark">
+ *   <BpkIconLabel.Icon><InformationCircleIcon /></BpkIconLabel.Icon>
+ *   <BpkIconLabel.Text>Dark background text</BpkIconLabel.Text>
  * </BpkIconLabel.Root>
  */
 const BpkIconLabel = Object.assign(

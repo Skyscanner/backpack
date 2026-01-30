@@ -30,6 +30,8 @@ import {
   VisualTestExample,
   ThemedExample,
   ThemedOnDarkExample,
+  ThemedNightExample,
+  FlexiblePositioningExample,
 } from './examples';
 
 export default {
@@ -105,6 +107,20 @@ export const ThemedOnDark = {
   render: ThemedOnDarkExample,
   parameters: {
     backgrounds: { default: 'Contrast' },
+  },
+};
+
+export const ThemedNight = {
+  render: ThemedNightExample,
+  parameters: {
+    backgrounds: { default: 'Contrast' },
+  },
+};
+
+export const FlexiblePositioning = {
+  render: FlexiblePositioningExample,
+  parameters: {
+    backgrounds: { default: 'Default' },
   },
 };
 

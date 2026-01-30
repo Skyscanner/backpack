@@ -22,13 +22,17 @@ export {
   BpkIconLabelIcon,
   BpkIconLabelText,
   LABEL_STYLE,
+} from './src/BpkIconLabel';
+export {
   iconLabelThemeAttributes,
   iconLabelOnDarkThemeAttributes,
-} from './src/BpkIconLabel';
+  iconLabelNightThemeAttributes,
+} from './src/themeAttributes';
 export type {
   BpkIconLabelType,
+  BpkIconLabelColorScheme,
   BpkIconLabelContext,
   BpkIconLabelRootProps,
   BpkIconLabelIconProps,
   BpkIconLabelTextProps,
-} from './src/BpkIconLabel';
+} from './src/common-types';
