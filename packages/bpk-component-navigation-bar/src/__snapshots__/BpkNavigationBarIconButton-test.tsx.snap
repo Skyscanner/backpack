@@ -9,7 +9,6 @@ exports[`BpkNavigationIconButton should render correctly 1`] = `
     <button
       aria-label="test"
       class="bpk-close-button__default"
-      data-backpack-ds-component="CloseButton"
       title="test"
       type="button"
     >

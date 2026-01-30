@@ -8,7 +8,6 @@ exports[`BpkNavigationButtonLink should render correctly 1`] = `
   >
     <button
       class="bpk-link"
-      data-backpack-ds-component="Link"
       type="button"
     >
       <span
