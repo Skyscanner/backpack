@@ -39,9 +39,9 @@ We recommend that you install [a plugin to your editor](https://eslint.org/docs/
 
 ### Android, iOS and React Native
 
-Backpack also supports React Native, plus native Android and iOS.
+Backpack also supports native Android and iOS.
 
-They can be found at [backpack-android](https://github.com/skyscanner/backpack-android) and [backpack-ios](https://github.com/skyscanner/backpack-ios) and [backpack-react-native](https://github.com/skyscanner/backpack-react-native)
+They can be found at [backpack-android](https://github.com/skyscanner/backpack-android) and [backpack-ios](https://github.com/skyscanner/backpack-ios)
 
 ## Getting started
 
@@ -129,6 +129,12 @@ If you want to add a new component:
     - Accessibility tests - Accessibility tests live in the same folder with the component's code and rely on `jest-axe` and `React Testing Library`
 5. Add type declaration files within the same folder of the component to ensure proper compatibility and usage of the components
 6. Update `README.md` following the boilerplate format
+7. **Add data component attributes** - All components must include data attributes for design system tracking and automation:
+    - Import the utility function: `import { getDataComponentAttribute } from '../../bpk-react-utils'` (adjust path based on component location)
+    - Apply the attribute to the root element of your component: `{...getDataComponentAttribute('ComponentName')}`
+    - This generates the `data-backpack-ds-component="ComponentName"` attribute automatically
+    - For an example, see [bpk-component-boilerplate](./packages/bpk-component-boilerplate/src/BpkBoilerplate.tsx)
+    - Make sure the attribute is only applied to the outermost component element, not to nested elements or helper functions
 
 #### Contribute breaking changes
 

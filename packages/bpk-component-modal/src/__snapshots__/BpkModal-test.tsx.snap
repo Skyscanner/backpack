@@ -14,6 +14,7 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
       >
         <div
           class="bpk-scrim"
+          data-backpack-ds-component="Scrim"
           role="presentation"
         />
         <section
