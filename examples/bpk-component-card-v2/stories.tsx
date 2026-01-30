@@ -16,9 +16,17 @@
  * limitations under the License.
  */
 
+import { useState } from 'react';
+
+import BpkBadge from '../../packages/bpk-component-badge';
+import BpkButton from '../../packages/bpk-component-button';
 import BpkCardV2 from '../../packages/bpk-component-card-v2/src/BpkCardV2/BpkCardV2';
+import BpkImage from '../../packages/bpk-component-image';
+import BpkRating from '../../packages/bpk-component-rating';
+import BpkText from '../../packages/bpk-component-text';
 
 import type { Meta, StoryObj } from '@storybook/react';
+
 
 type BpkCardV2Meta = Meta<typeof BpkCardV2>;
 
@@ -202,50 +210,100 @@ export const SurfaceColorVariants: Story = {
 };
 
 /**
+ * Hotel product card component for complex product card story
+ * @returns {JSX.Element} Hotel product card with split layout
+ */
+function HotelProductCard() {
+  const [isWishlisted, setIsWishlisted] = useState(false);
+
+  return (
+    <BpkCardV2 variant="default" bgColor="surfaceDefault" ariaLabel="Hotel product card">
+      <BpkCardV2.Body split splitRatio={60}>
+        {/* Primary section - Hotel image and info */}
+        <BpkCardV2.Primary>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            {/* Hotel image */}
+            <BpkImage
+              altText="Luxury mountain resort hotel"
+              aspectRatio={1}
+              src="https://images.unsplash.com/photo-1566683388090-987f520f5a14?w=500&h=500&fit=crop"
+            />
+
+            {/* Hotel name with rating */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '0.5rem' }}>
+              <BpkText textStyle="heading-4">Mountain View Resort</BpkText>
+              <BpkBadge>5★</BpkBadge>
+            </div>
+
+            {/* Rating component */}
+            <BpkRating rating={4.8} ratedCount={324} />
+
+            {/* Description */}
+            <BpkText textStyle="body-default">
+              Luxury mountain resort with panoramic views, spa facilities, and world-class dining.
+            </BpkText>
+
+            {/* Amenities badges */}
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+              <BpkBadge type="light">Free WiFi</BpkBadge>
+              <BpkBadge type="light">Pool</BpkBadge>
+              <BpkBadge type="light">Restaurant</BpkBadge>
+            </div>
+          </div>
+        </BpkCardV2.Primary>
+
+        {/* Secondary section - Booking info and CTA */}
+        <BpkCardV2.Secondary>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            {/* Price section */}
+            <div>
+              <BpkText textStyle="body-default">From</BpkText>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem' }}>
+                <BpkText textStyle="heading-2">$299</BpkText>
+                <BpkText textStyle="body-default">/night</BpkText>
+              </div>
+            </div>
+
+            {/* Location info */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+              <BpkText textStyle="body-default">Location</BpkText>
+              <BpkText textStyle="body-default">Colorado, USA</BpkText>
+              <BpkText textStyle="caption">2.5 km from city center</BpkText>
+            </div>
+
+            {/* Availability info */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+              <BpkText textStyle="body-default">Available</BpkText>
+              <BpkText textStyle="body-default">Check-in: Feb 15, 2024</BpkText>
+              <BpkText textStyle="caption">3 nights available</BpkText>
+            </div>
+
+            {/* Action buttons */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <BpkButton
+                fullWidth
+                onClick={() => setIsWishlisted(!isWishlisted)}
+                type="secondary"
+              >
+                {isWishlisted ? '❤️ Wishlisted' : '🤍 Wishlist'}
+              </BpkButton>
+              <BpkButton fullWidth>Book Now</BpkButton>
+            </div>
+          </div>
+        </BpkCardV2.Secondary>
+      </BpkCardV2.Body>
+    </BpkCardV2>
+  );
+}
+
+/**
  * Complex product card layout combining multiple features
  */
 export const ComplexProductCard: Story = {
   args: {
-    variant: 'default',
-    bgColor: 'surfaceDefault',
-    ariaLabel: 'Product card example',
+    ariaLabel: 'Hotel product card',
   },
-  render: (args) => (
-    <BpkCardV2 {...args}>
-      <BpkCardV2.Header>
-        <h2 style={{ margin: 0 }}>Premium Package</h2>
-      </BpkCardV2.Header>
-      <BpkCardV2.Body split splitRatio={60}>
-        <BpkCardV2.Primary>
-          <div style={{ padding: '1rem' }}>
-            <img
-              src="https://via.placeholder.com/200"
-              alt="Product"
-              style={{ width: '100%', borderRadius: '0.5rem' }}
-            />
-          </div>
-        </BpkCardV2.Primary>
-        <BpkCardV2.Secondary>
-          <div style={{ padding: '1rem' }}>
-            <h3>€299/month</h3>
-            <p>
-              <strong>Features:</strong>
-            </p>
-            <ul>
-              <li>Feature 1</li>
-              <li>Feature 2</li>
-              <li>Feature 3</li>
-            </ul>
-          </div>
-        </BpkCardV2.Secondary>
-      </BpkCardV2.Body>
-      <BpkCardV2.Footer>
-        <button type="button" style={{ padding: '0.5rem 1rem' }}>
-          Select Package
-        </button>
-      </BpkCardV2.Footer>
-    </BpkCardV2>
-  ),
+  render: () => <HotelProductCard />,
 };
 
 /**
