@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-mobile-scroll-container",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-mobile-scroll-container/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

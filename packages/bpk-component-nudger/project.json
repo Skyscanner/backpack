@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-nudger",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-nudger/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

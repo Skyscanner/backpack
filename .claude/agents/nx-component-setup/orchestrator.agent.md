@@ -171,7 +171,7 @@ If any agent fails:
 2. **Migrator fails**: Re-run Scout, check analysis.json
 3. **Migration fails**:
    ```bash
-   cp nx.json.backup nx.json
+   cp nx-setup-output/nx.json.backup nx.json
    find packages -name "project.json" -delete
    ```
 4. **Verifier fails**: Review report, fix issues manually

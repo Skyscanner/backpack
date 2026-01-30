@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-card-button",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-card-button/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

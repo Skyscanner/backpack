@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-select",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-select/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

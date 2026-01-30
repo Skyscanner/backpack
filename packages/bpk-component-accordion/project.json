@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-accordion",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-accordion/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

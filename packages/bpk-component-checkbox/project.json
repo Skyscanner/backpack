@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-checkbox",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-checkbox/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

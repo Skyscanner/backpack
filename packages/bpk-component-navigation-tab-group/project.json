@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-navigation-tab-group",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-navigation-tab-group/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

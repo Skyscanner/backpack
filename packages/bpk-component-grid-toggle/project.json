@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-grid-toggle",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-grid-toggle/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

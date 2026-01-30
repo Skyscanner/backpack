@@ -28,3 +28,4 @@ yarn.lock
 
 # TypeScript build info
 *.tsbuildinfo
+nx-setup-output/

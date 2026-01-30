@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-swap-button",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-swap-button/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

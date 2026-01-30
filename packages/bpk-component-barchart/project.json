@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-barchart",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-barchart/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-icon",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-icon/src",
+  "tags": [
+    "scope:backpack",
+    "type:code-gen"
+  ]
+}

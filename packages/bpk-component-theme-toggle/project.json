@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-theme-toggle",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-theme-toggle/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

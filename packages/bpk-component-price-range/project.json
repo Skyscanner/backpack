@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-price-range",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-price-range/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

@@ -147,7 +147,7 @@ echo ""
 
 # Backup
 echo "[1/4] Creating backup..."
-cp nx.json nx.json.backup
+cp nx.json nx-setup-output/nx.json.backup
 
 # Generate project.json files
 echo "[2/4] Generating project.json files..."

@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-bottom-sheet",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-bottom-sheet/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-spinner",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-spinner/src",
+  "tags": [
+    "scope:backpack",
+    "type:code-gen"
+  ]
+}

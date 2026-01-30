@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-textarea",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-textarea/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

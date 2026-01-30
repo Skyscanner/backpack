@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-radio",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-radio/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

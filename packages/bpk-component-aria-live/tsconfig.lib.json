@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "types": [
+      "node"
+    ]
+  },
+  "exclude": [
+    "**/*-test.ts",
+    "**/*-test.tsx",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.stories.tsx",
+    "**/*.figma.tsx"
+  ]
+}

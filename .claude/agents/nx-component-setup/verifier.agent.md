@@ -156,7 +156,7 @@ If verification fails:
    - Verify import statements are being parsed
 
 4. **Regression test fails**
-   - Restore from backup: `cp nx.json.backup nx.json`
+   - Restore from backup: `cp nx-setup-output/nx.json.backup nx.json`
    - Remove generated files: `find packages -name "project.json" -delete`
 
 ## Exit Criteria

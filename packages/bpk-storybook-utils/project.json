@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-storybook-utils",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-storybook-utils/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

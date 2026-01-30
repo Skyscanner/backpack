@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-breadcrumb",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-breadcrumb/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

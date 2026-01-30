@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-react-utils",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-react-utils/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}
