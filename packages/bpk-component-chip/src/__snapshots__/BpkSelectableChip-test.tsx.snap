@@ -12,7 +12,6 @@ exports[`BpkSelectableChip should render correctly 1`] = `
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -32,7 +31,6 @@ exports[`BpkSelectableChip should render correctly with a "className" attribute 
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -52,7 +50,6 @@ exports[`BpkSelectableChip should render correctly with type="default" 1`] = `
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -79,7 +76,6 @@ exports[`BpkSelectableChip should render correctly with type="default" and a lea
     </span>
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -106,7 +102,6 @@ exports[`BpkSelectableChip should render correctly with type="default" and a lea
     </span>
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -124,7 +119,6 @@ exports[`BpkSelectableChip should render correctly with type="default" and a tra
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -158,7 +152,6 @@ exports[`BpkSelectableChip should render correctly with type="default" and both 
     </span>
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -186,7 +179,6 @@ exports[`BpkSelectableChip should render correctly with type="default" and disab
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -206,7 +198,6 @@ exports[`BpkSelectableChip should render correctly with type="default" and selec
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -227,7 +218,6 @@ exports[`BpkSelectableChip should render correctly with type="default", selected
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -247,7 +237,6 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" 1`] = `
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -274,7 +263,6 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and a lea
     </span>
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -301,7 +289,6 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and a lea
     </span>
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -319,7 +306,6 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and a tra
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -353,7 +339,6 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and both 
     </span>
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -381,7 +366,6 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and disab
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -401,7 +385,6 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and selec
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -422,7 +405,6 @@ exports[`BpkSelectableChip should render correctly with type="on-dark", selected
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -442,7 +424,6 @@ exports[`BpkSelectableChip should render correctly with type="on-image" 1`] = `
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -469,7 +450,6 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and a le
     </span>
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -496,7 +476,6 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and a le
     </span>
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -514,7 +493,6 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and a tr
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -548,7 +526,6 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and both
     </span>
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -576,7 +553,6 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and disa
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -596,7 +572,6 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and sele
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -617,7 +592,6 @@ exports[`BpkSelectableChip should render correctly with type="on-image", selecte
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>

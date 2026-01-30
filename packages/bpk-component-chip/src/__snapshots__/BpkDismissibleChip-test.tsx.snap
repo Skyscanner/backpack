@@ -11,7 +11,6 @@ exports[`BpkDismissibleChip should ignore setting a trailing accessory view, res
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -46,7 +45,6 @@ exports[`BpkDismissibleChip should override setting selected={true}, resulting i
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -81,7 +79,6 @@ exports[`BpkDismissibleChip should render correctly 1`] = `
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -116,7 +113,6 @@ exports[`BpkDismissibleChip should render correctly with a "className" attribute
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -151,7 +147,6 @@ exports[`BpkDismissibleChip should render correctly with type="default" 1`] = `
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -193,7 +188,6 @@ exports[`BpkDismissibleChip should render correctly with type="default" and a le
     </span>
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -228,7 +222,6 @@ exports[`BpkDismissibleChip should render correctly with type="default" and disa
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -263,7 +256,6 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" 1`] = `
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -305,7 +297,6 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" and a le
     </span>
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -340,7 +331,6 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" and disa
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -375,7 +365,6 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" 1`] = `
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -417,7 +406,6 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" and a l
     </span>
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -452,7 +440,6 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" and dis
   >
     <span
       class="bpk-text bpk-text--footnote"
-      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
