@@ -129,6 +129,12 @@ If you want to add a new component:
     - Accessibility tests - Accessibility tests live in the same folder with the component's code and rely on `jest-axe` and `React Testing Library`
 5. Add type declaration files within the same folder of the component to ensure proper compatibility and usage of the components
 6. Update `README.md` following the boilerplate format
+7. **Add data component attributes** - All components must include data attributes for design system tracking and automation:
+    - Import the utility function: `import { getDataComponentAttribute } from '@skyscanner/bpk-react-utils'`
+    - Apply the attribute to the root element of your component: `{...getDataComponentAttribute('ComponentName')}`
+    - This generates the `data-backpack-ds-component="ComponentName"` attribute automatically
+    - For examples, see existing components like [bpk-component-chip](./packages/bpk-component-chip/src/BpkChip/BpkChip.tsx) or [bpk-component-button](./packages/bpk-component-button/src/BpkButton/BpkButton.tsx)
+    - Make sure the attribute is only applied to the outermost component element, not to nested elements or helper functions
 
 #### Contribute breaking changes
 
