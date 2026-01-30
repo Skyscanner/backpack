@@ -210,88 +210,128 @@ export const SurfaceColorVariants: Story = {
 };
 
 /**
- * Hotel product card component for complex product card story
- * @returns {JSX.Element} Hotel product card with split layout
+ * Complex flight + hotel deal card component
+ * @returns {JSX.Element} Product card with split layout and footer
  */
-function HotelProductCard() {
-  const [isWishlisted, setIsWishlisted] = useState(false);
+function ComplexProductCardComponent() {
+  const [isSaved, setIsSaved] = useState(false);
 
   return (
-    <BpkCardV2 variant="default" bgColor="surfaceDefault" ariaLabel="Hotel product card">
-      <BpkCardV2.Body split splitRatio={60}>
-        {/* Primary section - Hotel image and info */}
+    <BpkCardV2 variant="default" bgColor="surfaceDefault" ariaLabel="Travel deal card">
+      <BpkCardV2.Body split splitRatio={65}>
+        {/* Primary section - Product showcase */}
         <BpkCardV2.Primary>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            {/* Hotel image */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            {/* Product image */}
             <BpkImage
-              altText="Luxury mountain resort hotel"
-              aspectRatio={1}
-              src="https://images.unsplash.com/photo-1566683388090-987f520f5a14?w=500&h=500&fit=crop"
+              altText="Luxury beachfront resort"
+              aspectRatio={16 / 9}
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=450&fit=crop"
             />
 
-            {/* Hotel name with rating */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '0.5rem' }}>
-              <BpkText textStyle="heading-4">Mountain View Resort</BpkText>
-              <BpkBadge>5★</BpkBadge>
-            </div>
+            {/* Product info section */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              {/* Title with badge */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem' }}>
+                <BpkText textStyle="heading-3">Sunset Beachfront Resort</BpkText>
+                <BpkBadge>4.9★</BpkBadge>
+              </div>
 
-            {/* Rating component */}
-            <BpkRating rating={4.8} ratedCount={324} />
+              {/* Rating and reviews */}
+              <BpkRating rating={4.9} ratedCount={1203} />
 
-            {/* Description */}
-            <BpkText textStyle="body-default">
-              Luxury mountain resort with panoramic views, spa facilities, and world-class dining.
-            </BpkText>
+              {/* Location details */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <BpkText textStyle="body-default">📍 Cancun, Mexico</BpkText>
+                <BpkText textStyle="caption">Direct beachfront • 5 km from city center</BpkText>
+              </div>
 
-            {/* Amenities badges */}
-            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-              <BpkBadge type="light">Free WiFi</BpkBadge>
-              <BpkBadge type="light">Pool</BpkBadge>
-              <BpkBadge type="light">Restaurant</BpkBadge>
+              {/* Description */}
+              <BpkText textStyle="body-default">
+                Stunning beachfront resort with private beach access, infinity pools, water sports, and fine dining restaurants.
+              </BpkText>
+
+              {/* Amenities section */}
+              <div>
+                <BpkText textStyle="body-default" style={{ marginBottom: '0.75rem', fontWeight: '600' }}>
+                  Top amenities
+                </BpkText>
+                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                  <BpkBadge type="light">🌊 Beach Access</BpkBadge>
+                  <BpkBadge type="light">🏊 Infinity Pool</BpkBadge>
+                  <BpkBadge type="light">🍽️ Restaurant</BpkBadge>
+                  <BpkBadge type="light">💆 Spa</BpkBadge>
+                </div>
+              </div>
             </div>
           </div>
         </BpkCardV2.Primary>
 
-        {/* Secondary section - Booking info and CTA */}
+        {/* Secondary section - Booking details and pricing */}
         <BpkCardV2.Secondary>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            {/* Price section */}
-            <div>
-              <BpkText textStyle="body-default">From</BpkText>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem' }}>
-                <BpkText textStyle="heading-2">$299</BpkText>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', height: '100%' }}>
+            {/* Pricing section */}
+            <div style={{ borderBottom: '1px solid #e8e8e8', paddingBottom: '1rem' }}>
+              <BpkText textStyle="caption">Starting price</BpkText>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', marginTop: '0.5rem' }}>
+                <BpkText textStyle="heading-1">$189</BpkText>
                 <BpkText textStyle="body-default">/night</BpkText>
+              </div>
+              <BpkText textStyle="caption" style={{ marginTop: '0.25rem' }}>
+                for 3 nights • Total: $567
+              </BpkText>
+            </div>
+
+            {/* Booking details */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div>
+                <BpkText textStyle="caption" style={{ display: 'block', marginBottom: '0.25rem' }}>
+                  Check-in
+                </BpkText>
+                <BpkText textStyle="body-default">March 15, 2024</BpkText>
+              </div>
+
+              <div>
+                <BpkText textStyle="caption" style={{ display: 'block', marginBottom: '0.25rem' }}>
+                  Duration
+                </BpkText>
+                <BpkText textStyle="body-default">3 nights • 4 guests</BpkText>
+              </div>
+
+              <div>
+                <BpkBadge>✓ Free Cancellation</BpkBadge>
               </div>
             </div>
 
-            {/* Location info */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-              <BpkText textStyle="body-default">Location</BpkText>
-              <BpkText textStyle="body-default">Colorado, USA</BpkText>
-              <BpkText textStyle="caption">2.5 km from city center</BpkText>
-            </div>
-
-            {/* Availability info */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-              <BpkText textStyle="body-default">Available</BpkText>
-              <BpkText textStyle="body-default">Check-in: Feb 15, 2024</BpkText>
-              <BpkText textStyle="caption">3 nights available</BpkText>
-            </div>
-
-            {/* Action buttons */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            {/* Action buttons - grow to fill space */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: 'auto' }}>
               <BpkButton
                 fullWidth
-                onClick={() => setIsWishlisted(!isWishlisted)}
+                onClick={() => setIsSaved(!isSaved)}
                 type="secondary"
               >
-                {isWishlisted ? '❤️ Wishlisted' : '🤍 Wishlist'}
+                {isSaved ? '❤️ Saved' : '🤍 Save'}
               </BpkButton>
-              <BpkButton fullWidth>Book Now</BpkButton>
+              <BpkButton fullWidth>View Deal</BpkButton>
             </div>
           </div>
         </BpkCardV2.Secondary>
       </BpkCardV2.Body>
+
+      {/* Footer section - offers and deals */}
+      <BpkCardV2.Footer>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}>
+          <div style={{ display: 'flex', gap: '0.75rem', flex: 1 }}>
+            <BpkBadge type="strong" dontSpacePrimary>
+              🎁 Early Bird Deal
+            </BpkBadge>
+            <BpkBadge type="strong" dontSpacePrimary>
+              Save 25%
+            </BpkBadge>
+          </div>
+          <BpkText textStyle="caption">Limited time • 5 rooms left</BpkText>
+        </div>
+      </BpkCardV2.Footer>
     </BpkCardV2>
   );
 }
@@ -301,9 +341,9 @@ function HotelProductCard() {
  */
 export const ComplexProductCard: Story = {
   args: {
-    ariaLabel: 'Hotel product card',
+    ariaLabel: 'Travel deal product card',
   },
-  render: () => <HotelProductCard />,
+  render: () => <ComplexProductCardComponent />,
 };
 
 /**
