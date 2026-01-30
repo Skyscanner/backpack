@@ -14,6 +14,7 @@ env:
   CACHE_NAME: node-modules-cache
   BUILD_CACHE_NAME: build-cache
   BUILD_LOGS: log-artifacts-build
+  NX_CACHE_NAME: nx-cache
 
 jobs:
   Build:
@@ -41,6 +42,17 @@ jobs:
             packages/node_modules/
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
 
+      - name: Restore Nx Cache
+        uses: actions/cache/restore@8b402f58fbc84540c8b491a91e594a4576fec3d7 # v5.0.2
+        id: nx-cache
+        with:
+          path: .nx/cache
+          key: ${{ env.NX_CACHE_NAME }}-${{ github.ref }}-${{ github.sha }}
+          restore-keys: |
+            ${{ env.NX_CACHE_NAME }}-${{ github.ref }}-
+            ${{ env.NX_CACHE_NAME }}-refs/heads/main-
+            ${{ env.NX_CACHE_NAME }}-
+
       - name: Setup logs directory
         run: mkdir logs
 
@@ -55,6 +67,13 @@ jobs:
 
       - name: Run tests
         run: bash -c "set -o pipefail;npm run test |& tee 'logs/test.log'"
+
+      - name: Save Nx Cache
+        uses: actions/cache/save@8b402f58fbc84540c8b491a91e594a4576fec3d7 # v5.0.2
+        if: always()
+        with:
+          path: .nx/cache
+          key: ${{ env.NX_CACHE_NAME }}-${{ github.ref }}-${{ github.sha }}
 
       - name: Tar and compress logs
         run: |

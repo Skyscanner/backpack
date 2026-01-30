@@ -1,36 +1,10 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
     "emitDeclarationOnly": true,
-    "jsx": "react-jsx",
-    "allowJs": false,
     "declaration": true,
-    "outDir": "dist",
-    "baseUrl": ".",
-    "paths": {
-      "@backpack/*": ["packages/*"],
-      "@backpack/bpk-mixins": ["packages/bpk-mixins"],
-      "@backpack/bpk-mixins/*": ["packages/bpk-mixins/*"],
-      "@backpack/bpk-react-utils": ["packages/bpk-react-utils"],
-      "@backpack/bpk-react-utils/*": ["packages/bpk-react-utils/*"],
-      "@backpack/bpk-tokens": ["packages/bpk-tokens"],
-      "@backpack/bpk-tokens/*": ["packages/bpk-tokens/*"]
-    }
+    "outDir": "dist"
   },
   "include": [
     "packages",

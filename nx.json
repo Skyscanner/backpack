@@ -1,0 +1,52 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "defaultBase": "main",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "production": [
+      "default",
+      "!{projectRoot}/**/*-test.*",
+      "!{projectRoot}/**/*.test.*",
+      "!{projectRoot}/**/*-stories.*",
+      "!{projectRoot}/**/*.stories.*",
+      "!{projectRoot}/**/*.figma.*"
+    ],
+    "sharedGlobals": [
+      "{workspaceRoot}/tsconfig.json",
+      "{workspaceRoot}/tsconfig.declaration.json",
+      "{workspaceRoot}/babel.config.js",
+      "{workspaceRoot}/.eslintrc"
+    ]
+  },
+  "targetDefaults": {
+    "build": {
+      "inputs": ["production", "^production"],
+      "dependsOn": ["^build"],
+      "cache": true
+    },
+    "test": {
+      "inputs": ["default", "^production"],
+      "cache": true
+    },
+    "lint": {
+      "inputs": ["default", "{workspaceRoot}/.eslintrc"],
+      "cache": true
+    },
+    "typecheck": {
+      "inputs": ["default", "^default"],
+      "dependsOn": ["^build"],
+      "cache": true
+    }
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "test", "lint", "typecheck"],
+        "cacheDirectory": ".nx/cache"
+      }
+    }
+  },
+  "useInferencePlugins": false,
+  "defaultProject": "backpack"
+}
