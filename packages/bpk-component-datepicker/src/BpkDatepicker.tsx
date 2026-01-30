@@ -33,7 +33,7 @@ import {
 import BpkInput, { withOpenEvents } from '../../bpk-component-input';
 import BpkModal from '../../bpk-component-modal';
 import BpkPopover from '../../bpk-component-popover';
-import {  setNativeValue , getDataComponentAttribute } from '../../bpk-react-utils';
+import { setNativeValue, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type {
   DaysOfWeek,
