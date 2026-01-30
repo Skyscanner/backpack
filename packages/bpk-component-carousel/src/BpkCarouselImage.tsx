@@ -42,4 +42,4 @@ const BpkCarouselImage = forwardRef<HTMLDivElement, ImageProps>(({ image, index 
   </div>
 ));
 
-export default BpkCarouselImage
+export default BpkCarouselImage;
