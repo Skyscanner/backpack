@@ -19,13 +19,14 @@
 import BpkPriceRange from '../../packages/bpk-component-price-range';
 
 import {
-  SmallerLowPriceRangeExample,
-  SmallerHighPriceRangeExample,
-  SmallerMediumPriceRangeExample,
-  LargeLowPriceRangeExample,
-  LargeHighPriceRangeExample,
-  LargeMediumPriceRangeExample,
-  VeryLargeHighPriceRangeExample,
+  DotMarkerLowExample,
+  DotMarkerMediumExample,
+  DotMarkerHighExample,
+  BubbleMarkerLowExample,
+  BubbleMarkerMediumExample,
+  BubbleMarkerHighExample,
+  BubbleMarkerVeryLargeExample,
+  NoMarkerExample,
   MixedExample,
 } from './examples';
 
@@ -34,13 +35,16 @@ export default {
   component: BpkPriceRange,
 };
 
-export const SmallerLowPriceRange = SmallerLowPriceRangeExample;
-export const SmallerMediumPriceRange = SmallerMediumPriceRangeExample;
-export const SmallerHighPriceRange = SmallerHighPriceRangeExample;
-export const LargeLowPriceRange = LargeLowPriceRangeExample;
-export const LargeMediumPriceRange = LargeMediumPriceRangeExample;
-export const LargeHighPriceRange = LargeHighPriceRangeExample;
-export const VeryLargeHighPriceRange = VeryLargeHighPriceRangeExample;
+export const DotMarkerLow = DotMarkerLowExample;
+export const DotMarkerMedium = DotMarkerMediumExample;
+export const DotMarkerHigh = DotMarkerHighExample;
+
+export const BubbleMarkerLow = BubbleMarkerLowExample;
+export const BubbleMarkerMedium = BubbleMarkerMediumExample;
+export const BubbleMarkerHigh = BubbleMarkerHighExample;
+export const BubbleMarkerVeryLarge = BubbleMarkerVeryLargeExample;
+
+export const NoMarker = NoMarkerExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
