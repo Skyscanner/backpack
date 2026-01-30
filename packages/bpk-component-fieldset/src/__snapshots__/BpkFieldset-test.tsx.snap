@@ -42,7 +42,6 @@ exports[`BpkFieldset should render as disabled when input component is disabled 
     >
       <label
         class="bpk-label bpk-label--disabled"
-        data-backpack-ds-component="Label"
         for="name_input"
       >
         Name
@@ -75,7 +74,6 @@ exports[`BpkFieldset should render as disabled when select component is disabled
     >
       <label
         class="bpk-label bpk-label--disabled"
-        data-backpack-ds-component="Label"
         for="fruits_select"
       >
         Fruits
@@ -131,7 +129,6 @@ exports[`BpkFieldset should render correctly when disabled with input component 
     >
       <label
         class="bpk-label bpk-label--disabled"
-        data-backpack-ds-component="Label"
         for="name_input"
       >
         Name
@@ -164,7 +161,6 @@ exports[`BpkFieldset should render correctly when disabled with input component 
     >
       <label
         class="bpk-label bpk-label--invalid bpk-label--disabled"
-        data-backpack-ds-component="Label"
         for="name_input"
       >
         Name
@@ -337,7 +333,6 @@ exports[`BpkFieldset should render correctly with input component 1`] = `
     >
       <label
         class="bpk-label"
-        data-backpack-ds-component="Label"
         for="name_input"
       >
         Name
@@ -406,7 +401,6 @@ exports[`BpkFieldset should render correctly with input component and "descripti
     >
       <label
         class="bpk-label"
-        data-backpack-ds-component="Label"
         for="name_input"
       >
         Name
@@ -482,7 +476,6 @@ exports[`BpkFieldset should render correctly with input component and "disabled"
     >
       <label
         class="bpk-label"
-        data-backpack-ds-component="Label"
         for="name_input"
       >
         Name
@@ -551,7 +544,6 @@ exports[`BpkFieldset should render correctly with input component and "required"
     >
       <label
         class="bpk-label"
-        data-backpack-ds-component="Label"
         for="name_input"
       >
         Name
@@ -625,7 +617,6 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
     >
       <label
         class="bpk-label"
-        data-backpack-ds-component="Label"
         for="name_input"
       >
         Name
@@ -694,7 +685,6 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
     >
       <label
         class="bpk-label bpk-label--invalid"
-        data-backpack-ds-component="Label"
         for="name_input"
       >
         Name
@@ -762,7 +752,6 @@ exports[`BpkFieldset should render correctly with select component 1`] = `
     >
       <label
         class="bpk-label"
-        data-backpack-ds-component="Label"
         for="fruits_select"
       >
         Fruits
@@ -854,7 +843,6 @@ exports[`BpkFieldset should render correctly with select component and "required
     >
       <label
         class="bpk-label"
-        data-backpack-ds-component="Label"
         for="fruits_select"
       >
         Fruits
