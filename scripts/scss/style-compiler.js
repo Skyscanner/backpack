@@ -58,6 +58,14 @@ async function compile(sassPath) {
             return nUrl;
           },
         },
+        {
+          // An importer that redirects @backpack/* to packages/*
+          findFileUrl(url) {
+            if (!url.startsWith('@backpack/')) return null;
+            const resolvedPath = url.replace('@backpack/', 'packages/');
+            return pathToFileURL(resolvedPath);
+          },
+        },
       ],
     });
   } catch (e) {
