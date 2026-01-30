@@ -1,0 +1,77 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/utils';
+
+.bpk-icon-label {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: flex-start; // Align icon to first line of text
+  gap: tokens.bpk-spacing-md(); // 8px spacing between icon and text
+
+  // Default color: set on container so both icon and text inherit
+  @include utils.bpk-themeable-property(
+    color,
+    --bpk-icon-label-text-color,
+    tokens.$bpk-text-primary-day
+  );
+
+  // RTL support: flip icon to right side
+  @include utils.bpk-rtl {
+    flex-direction: row-reverse;
+  }
+
+  // Icon wrapper
+  &__icon {
+    width: tokens.bpk-spacing-base(); // 16px fixed size (1rem)
+    height: tokens.bpk-spacing-base(); // 16px fixed size (1rem)
+    flex-shrink: 0; // Prevent icon from shrinking
+    color: inherit; // Icon inherits color from parent container
+
+    // Ensure SVG icons inherit the color
+    svg {
+      fill: currentcolor;
+    }
+  }
+
+  // Text wrapper (uses BpkText internally, minimal custom styling)
+  &__text {
+    color: inherit; // Inherit color from parent container
+  }
+
+  // On-dark variant: white text and icons for dark backgrounds (day tokens)
+  &--on-dark {
+    // Override container color for on-dark variant
+    @include utils.bpk-themeable-property(
+      color,
+      --bpk-icon-label-on-dark-text-color,
+      tokens.$bpk-text-on-dark-day
+    );
+  }
+
+  // Night variant: white text and icons for night mode (night tokens)
+  &--night {
+    // Override container color for night variant
+    @include utils.bpk-themeable-property(
+      color,
+      --bpk-icon-label-night-text-color,
+      tokens.$bpk-text-on-dark-night
+    );
+  }
+}

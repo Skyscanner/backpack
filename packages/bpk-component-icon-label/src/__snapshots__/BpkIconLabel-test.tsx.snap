@@ -1,0 +1,779 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkIconLabel All variant combinations should render correctly with type="body" and colorScheme="default" 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-icon-label"
+  >
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="bpk-icon-label__text"
+    >
+      <span
+        class="bpk-text bpk-text--body-default"
+      >
+        Test text
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkIconLabel All variant combinations should render correctly with type="body" and colorScheme="night" 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-icon-label bpk-icon-label--night"
+  >
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon bpk-icon-label__icon--night"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="bpk-icon-label__text bpk-icon-label__text--night"
+    >
+      <span
+        class="bpk-text bpk-text--body-default"
+      >
+        Test text
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkIconLabel All variant combinations should render correctly with type="body" and colorScheme="on-dark" 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-icon-label bpk-icon-label--on-dark"
+  >
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon bpk-icon-label__icon--on-dark"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="bpk-icon-label__text bpk-icon-label__text--on-dark"
+    >
+      <span
+        class="bpk-text bpk-text--body-default"
+      >
+        Test text
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkIconLabel All variant combinations should render correctly with type="footnote" and colorScheme="default" 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-icon-label"
+  >
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.125rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="bpk-icon-label__text"
+    >
+      <span
+        class="bpk-text bpk-text--footnote"
+      >
+        Test text
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkIconLabel All variant combinations should render correctly with type="footnote" and colorScheme="night" 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-icon-label bpk-icon-label--night"
+  >
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.125rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon bpk-icon-label__icon--night"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="bpk-icon-label__text bpk-icon-label__text--night"
+    >
+      <span
+        class="bpk-text bpk-text--footnote"
+      >
+        Test text
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkIconLabel All variant combinations should render correctly with type="footnote" and colorScheme="on-dark" 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-icon-label bpk-icon-label--on-dark"
+  >
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.125rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon bpk-icon-label__icon--on-dark"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="bpk-icon-label__text bpk-icon-label__text--on-dark"
+    >
+      <span
+        class="bpk-text bpk-text--footnote"
+      >
+        Test text
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkIconLabel All variant combinations should render correctly with type="label1" and colorScheme="default" 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-icon-label"
+  >
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="bpk-icon-label__text"
+    >
+      <span
+        class="bpk-text bpk-text--label-1"
+      >
+        Test text
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkIconLabel All variant combinations should render correctly with type="label1" and colorScheme="night" 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-icon-label bpk-icon-label--night"
+  >
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon bpk-icon-label__icon--night"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="bpk-icon-label__text bpk-icon-label__text--night"
+    >
+      <span
+        class="bpk-text bpk-text--label-1"
+      >
+        Test text
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkIconLabel All variant combinations should render correctly with type="label1" and colorScheme="on-dark" 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-icon-label bpk-icon-label--on-dark"
+  >
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon bpk-icon-label__icon--on-dark"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="bpk-icon-label__text bpk-icon-label__text--on-dark"
+    >
+      <span
+        class="bpk-text bpk-text--label-1"
+      >
+        Test text
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkIconLabel Flexible icon positioning should support flexible positioning with all color schemes 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-icon-label"
+  >
+    <span
+      class="bpk-icon-label__text"
+    >
+      <span
+        class="bpk-text bpk-text--body-default"
+      >
+        Default text first
+      </span>
+    </span>
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+  </div>
+  <div
+    class="bpk-icon-label bpk-icon-label--on-dark"
+  >
+    <span
+      class="bpk-icon-label__text bpk-icon-label__text--on-dark"
+    >
+      <span
+        class="bpk-text bpk-text--body-default"
+      >
+        On-dark text first
+      </span>
+    </span>
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon bpk-icon-label__icon--on-dark"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+  </div>
+  <div
+    class="bpk-icon-label bpk-icon-label--night"
+  >
+    <span
+      class="bpk-icon-label__text bpk-icon-label__text--night"
+    >
+      <span
+        class="bpk-text bpk-text--body-default"
+      >
+        Night text first
+      </span>
+    </span>
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon bpk-icon-label__icon--night"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkIconLabel Flexible icon positioning should support flexible positioning with all typography variants 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-icon-label"
+  >
+    <span
+      class="bpk-icon-label__text"
+    >
+      <span
+        class="bpk-text bpk-text--body-default"
+      >
+        Body text first
+      </span>
+    </span>
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+  </div>
+  <div
+    class="bpk-icon-label"
+  >
+    <span
+      class="bpk-icon-label__text"
+    >
+      <span
+        class="bpk-text bpk-text--label-1"
+      >
+        Label1 text first
+      </span>
+    </span>
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+  </div>
+  <div
+    class="bpk-icon-label"
+  >
+    <span
+      class="bpk-icon-label__text"
+    >
+      <span
+        class="bpk-text bpk-text--footnote"
+      >
+        Footnote text first
+      </span>
+    </span>
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.125rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkIconLabel Type variants should render with type="body" (default) 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-icon-label"
+  >
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="bpk-icon-label__text"
+    >
+      <span
+        class="bpk-text bpk-text--body-default"
+      >
+        Body text
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkIconLabel Type variants should render with type="footnote" 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-icon-label"
+  >
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.125rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="bpk-icon-label__text"
+    >
+      <span
+        class="bpk-text bpk-text--footnote"
+      >
+        Footnote text
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkIconLabel Type variants should render with type="label1" 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-icon-label"
+  >
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="bpk-icon-label__text"
+    >
+      <span
+        class="bpk-text bpk-text--label-1"
+      >
+        Label 1 text
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkIconLabel colorScheme prop should render with colorScheme="default" (default) 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-icon-label"
+  >
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="bpk-icon-label__text"
+    >
+      <span
+        class="bpk-text bpk-text--body-default"
+      >
+        Default style
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkIconLabel colorScheme prop should render with colorScheme="night" 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-icon-label bpk-icon-label--night"
+  >
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon bpk-icon-label__icon--night"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="bpk-icon-label__text bpk-icon-label__text--night"
+    >
+      <span
+        class="bpk-text bpk-text--body-default"
+      >
+        Night style
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkIconLabel colorScheme prop should render with colorScheme="on-dark" 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-icon-label bpk-icon-label--on-dark"
+  >
+    <span
+      style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+    >
+      <span
+        aria-hidden="true"
+        class="bpk-icon-label__icon bpk-icon-label__icon--on-dark"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 6a1.498 1.498 0 1 1-1.498 1.498A1.5 1.5 0 0 1 12 6m1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="bpk-icon-label__text bpk-icon-label__text--on-dark"
+    >
+      <span
+        class="bpk-text bpk-text--body-default"
+      >
+        On-dark style
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
