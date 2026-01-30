@@ -96,7 +96,7 @@
     gap: 0;
 
     // Desktop - horizontal layout with divider
-    @include breakpoints.bpk-breakpoint-small-tablet {
+    @include breakpoints.bpk-breakpoint-above-mobile {
       flex-direction: row;
       gap: 0;
     }
@@ -117,7 +117,7 @@
     padding: tokens.bpk-spacing-base();
     border-right: none;
 
-    @include breakpoints.bpk-breakpoint-small-tablet {
+    @include breakpoints.bpk-breakpoint-above-mobile {
       width: var(--bpk-card-v2-primary-width, 70%);
       border-right: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
       border-bottom: none;
@@ -134,14 +134,14 @@
 .bpk-card-v2__divider {
   display: none;
   height: tokens.$bpk-border-size-sm;
-  margin: 0;
+  margin: tokens.bpk-spacing-md() 0;
   background-color: tokens.$bpk-line-day;
 
   // Mobile - show as horizontal divider in split layout
   .bpk-card-v2__body--split & {
     display: block;
 
-    @include breakpoints.bpk-breakpoint-small-tablet {
+    @include breakpoints.bpk-breakpoint-above-mobile {
       display: none;
     }
   }
@@ -161,7 +161,7 @@
     padding: tokens.bpk-spacing-base();
     flex: 1 1 auto;
 
-    @include breakpoints.bpk-breakpoint-small-tablet {
+    @include breakpoints.bpk-breakpoint-above-mobile {
       width: calc(100% - var(--bpk-card-v2-primary-width, 70%));
     }
   }
