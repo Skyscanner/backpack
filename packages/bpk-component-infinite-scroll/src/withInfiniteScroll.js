@@ -26,6 +26,7 @@ import extend from 'lodash/extend';
 import omit from 'lodash/omit';
 
 
+import './intersection-observer';
 import DataSource from './DataSource';
 
 import STYLES from './withInfiniteScroll.module.scss';

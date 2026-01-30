@@ -18,7 +18,13 @@
 
 import type { ReactNode } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import assign from 'object-assign';
 import CSSTransition from 'react-transition-group/CSSTransition';
+
+// Object.assign() is used unpolyfilled in react-transition-group.
+// It will use the native implementation if it's present and isn't buggy.
+Object.assign = assign;
 
 type Props = {
   appearClassName: string;

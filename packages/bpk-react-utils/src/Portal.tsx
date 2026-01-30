@@ -20,6 +20,8 @@ import { Component } from 'react';
 import type { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import assign from 'object-assign';
 
 const KEYCODES = {
   ESCAPE: 'Escape',
@@ -252,7 +254,7 @@ class Portal extends Component<Props, State> {
     document.addEventListener('keydown', this.onDocumentKeyDown, false);
 
     if (this.props.style) {
-      Object.assign(portalElement.style, this.props.style);
+      assign(portalElement.style, this.props.style);
     }
 
     if (this.props.className) {
