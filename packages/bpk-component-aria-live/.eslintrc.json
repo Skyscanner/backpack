@@ -1,0 +1,4 @@
+{
+  "extends": ["../../.eslintrc.base.js"],
+  "ignorePatterns": ["!**/*", "node_modules"]
+}

@@ -18,7 +18,7 @@
 
 import {ArgTypes,Title, Markdown } from '@storybook/addon-docs/blocks';
 
-import BpkAriaLive from '../../packages/bpk-component-aria-live/src/BpkAriaLive';
+import BpkAriaLive from '@backpack/aria-live';
 
 import { ChipsExample, SelectExample } from './examples';
 

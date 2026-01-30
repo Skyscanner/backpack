@@ -21,7 +21,7 @@ import { Component } from 'react';
 
 import BpkBannerAlert, {
   ALERT_TYPES,
-} from '../../packages/bpk-component-banner-alert';
+} from '@backpack/banner-alert';
 import BpkInput, {
   propTypes as inputPropTypes,
   defaultProps as inputDefaultProps,

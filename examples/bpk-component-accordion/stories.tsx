@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import BpkAccordion from '../../packages/bpk-component-accordion/src/BpkAccordion';
-import BpkAccordionItem from '../../packages/bpk-component-accordion/src/BpkAccordionItem';
+import { BpkAccordion, BpkAccordionItem } from '@backpack/accordion';
 
 import {
   SingleItemExample,

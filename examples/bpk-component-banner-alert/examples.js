@@ -26,7 +26,7 @@ import BpkBannerAlert, {
   withBannerAlertState,
   BpkBannerAlertDismissable,
   BpkBannerAlertExpandable,
-} from '../../packages/bpk-component-banner-alert';
+} from '@backpack/banner-alert';
 import BpkButton from '../../packages/bpk-component-button';
 import CurrencyIcon from '../../packages/bpk-component-icon/sm/currency';
 import { cssModules } from '../../packages/bpk-react-utils';

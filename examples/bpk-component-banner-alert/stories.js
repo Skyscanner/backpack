@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-import BpkBannerAlert from '../../packages/bpk-component-banner-alert/src/BpkBannerAlert';
-import BpkBannerAlertDismissable from '../../packages/bpk-component-banner-alert/src/BpkBannerAlertDismissable';
-import BpkBannerAlertExpandable from '../../packages/bpk-component-banner-alert/src/BpkBannerAlertExpandable';
+import BpkBannerAlert from '@backpack/banner-alert';
+import BpkBannerAlertDismissable from '@backpack/banner-alert';
+import BpkBannerAlertExpandable from '@backpack/banner-alert';
 
 import {
   NeutralExample,

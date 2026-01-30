@@ -28,12 +28,12 @@ import BpkBarchart, {
   BpkChartGridLines,
   BpkChartAxis,
   BpkChartMargin,
-} from '../../packages/bpk-component-barchart';
+} from '@backpack/barchart';
 import {
   ORIENTATION_X,
   ORIENTATION_Y,
-} from '../../packages/bpk-component-barchart/src/orientation';
-import { remToPx } from '../../packages/bpk-component-barchart/src/utils';
+} from '@backpack/barchart';
+import { remToPx } from '@backpack/barchart';
 import { updateOnDirectionChange } from '../../packages/bpk-component-rtl-toggle';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';

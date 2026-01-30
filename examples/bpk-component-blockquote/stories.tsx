@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkBlockquote from '../../packages/bpk-component-blockquote/src/BpkBlockquote';
+import BpkBlockquote from '@backpack/blockquote';
 
 import { DefaultExample, ExtraSpaceExample } from './examples';
 

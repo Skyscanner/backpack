@@ -6,6 +6,10 @@ on:
 
 permissions: {}
 
+env:
+  # Prevent NX plugin timeouts during migration
+  NX_PLUGIN_NO_TIMEOUTS: true
+
 jobs:
   code-connect:
     name: Code Connect
@@ -14,6 +18,8 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
+          # Fetch all git history for NX affected commands
+          fetch-depth: 0
       - run: npx --package @figma/code-connect figma connect publish
         env:
           FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_TOKEN }}
