@@ -19,15 +19,18 @@
 @use '../../../bpk-mixins/tokens';
 @use '../../../bpk-mixins/radii';
 @use '../../../bpk-mixins/shadows';
+@use '../../../bpk-mixins/breakpoints';
+@use '../../../bpk-mixins/utils';
 
 // Card container - base styles
 .bpk-card-v2 {
   display: flex;
   flex-direction: column;
   background-color: tokens.$bpk-surface-default-day;
+  overflow: hidden;
+
   @include radii.bpk-border-radius-md;
   @include shadows.bpk-box-shadow-sm;
-  overflow: hidden;
 
   // Surface color variants
   &[data-bg-color='surfaceDefault'] {
@@ -65,8 +68,8 @@
 
 // Outlined variant - replaces shadow with border
 .bpk-card-v2--outlined {
-  box-shadow: none;
   border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+  box-shadow: none;
 }
 
 // Header subcomponent
@@ -82,18 +85,18 @@
 
   // Single-column layout (default) - has padding
   &:not(.bpk-card-v2__body--split) {
-    flex-direction: column;
     padding: tokens.bpk-spacing-base();
+    flex-direction: column;
   }
 
   // Two-column split layout - no padding (Primary/Secondary handle it)
   &.bpk-card-v2__body--split {
+    padding: 0;
     flex-direction: column;
     gap: 0;
-    padding: 0;
 
     // Desktop - horizontal layout with divider
-    @media (min-width: 768px) {
+    @include breakpoints.bpk-breakpoint-small-tablet {
       flex-direction: row;
       gap: 0;
     }
@@ -103,24 +106,23 @@
 // Primary content area in split layout
 .bpk-card-v2__primary {
   display: flex;
+  width: 100%;
+  padding: tokens.bpk-spacing-base();
   flex-direction: column;
   flex: 0 0 auto;
-  padding: tokens.bpk-spacing-base();
-  width: 100%;
 
   // Split layout - on desktop
   .bpk-card-v2__body--split & {
-    padding: tokens.bpk-spacing-base();
     width: 100%;
+    padding: tokens.bpk-spacing-base();
     border-right: none;
 
-    @media (min-width: 768px) {
+    @include breakpoints.bpk-breakpoint-small-tablet {
       width: var(--bpk-card-v2-primary-width, 70%);
       border-right: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
       border-bottom: none;
 
-      // RTL support
-      [dir='rtl'] & {
+      @include utils.bpk-rtl {
         border-right: none;
         border-left: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
       }
@@ -132,14 +134,14 @@
 .bpk-card-v2__divider {
   display: none;
   height: tokens.$bpk-border-size-sm;
-  background-color: tokens.$bpk-line-day;
   margin: 0;
+  background-color: tokens.$bpk-line-day;
 
   // Mobile - show as horizontal divider in split layout
   .bpk-card-v2__body--split & {
     display: block;
 
-    @media (min-width: 768px) {
+    @include breakpoints.bpk-breakpoint-small-tablet {
       display: none;
     }
   }
@@ -148,18 +150,18 @@
 // Secondary content area in split layout
 .bpk-card-v2__secondary {
   display: flex;
+  width: 100%;
+  padding: tokens.bpk-spacing-base();
   flex-direction: column;
   flex: 1 1 auto;
-  padding: tokens.bpk-spacing-base();
-  width: 100%;
 
   // Split layout - on desktop
   .bpk-card-v2__body--split & {
-    padding: tokens.bpk-spacing-base();
     width: 100%;
+    padding: tokens.bpk-spacing-base();
     flex: 1 1 auto;
 
-    @media (min-width: 768px) {
+    @include breakpoints.bpk-breakpoint-small-tablet {
       width: calc(100% - var(--bpk-card-v2-primary-width, 70%));
     }
   }

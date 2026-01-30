@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkCardV2 Snapshots matches snapshot - basic card 1`] = `
+<div>
+  <div
+    class="bpk-card-v2 bpk-card-v2--default"
+    data-bg-color="surfaceDefault"
+  >
+    <header
+      class="bpk-card-v2__header"
+    >
+      Card Title
+    </header>
+    <div
+      class="bpk-card-v2__body"
+    >
+      Card content goes here
+    </div>
+    <footer
+      class="bpk-card-v2__footer"
+    >
+      Card footer
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections 1`] = `
+<div>
+  <div
+    class="bpk-card-v2 bpk-card-v2--default"
+    data-bg-color="surfaceDefault"
+  >
+    <header
+      class="bpk-card-v2__header"
+    >
+      Product
+    </header>
+    <div
+      class="bpk-card-v2__body bpk-card-v2__body--split"
+      style="--bpk-card-v2-primary-width: 65%;"
+    >
+      <div
+        class="bpk-card-v2__primary"
+      >
+        <img
+          alt="Product"
+          src="product.jpg"
+        />
+      </div>
+      <div
+        class="bpk-card-v2__divider"
+      />
+      <div
+        class="bpk-card-v2__secondary"
+      >
+        <h3>
+          Description
+        </h3>
+        <p>
+          Product details
+        </p>
+      </div>
+    </div>
+    <footer
+      class="bpk-card-v2__footer"
+    >
+      <button
+        type="button"
+      >
+        Add to cart
+      </button>
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`BpkCardV2 Snapshots matches snapshot - elevated surface color 1`] = `
+<div>
+  <div
+    class="bpk-card-v2 bpk-card-v2--default"
+    data-bg-color="surfaceElevated"
+  >
+    <div
+      class="bpk-card-v2__body"
+    >
+      Elevated background surface
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkCardV2 Snapshots matches snapshot - minimal card (body only) 1`] = `
+<div>
+  <div
+    class="bpk-card-v2 bpk-card-v2--default"
+    data-bg-color="surfaceDefault"
+  >
+    <div
+      class="bpk-card-v2__body"
+    >
+      Minimal card with just body
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkCardV2 Snapshots matches snapshot - outlined variant 1`] = `
+<div>
+  <div
+    class="bpk-card-v2 bpk-card-v2--outlined"
+    data-bg-color="surfaceDefault"
+  >
+    <header
+      class="bpk-card-v2__header"
+    >
+      Outlined Card
+    </header>
+    <div
+      class="bpk-card-v2__body"
+    >
+      Content with border instead of shadow
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkCardV2 Snapshots matches snapshot - split layout 1`] = `
+<div>
+  <div
+    class="bpk-card-v2 bpk-card-v2--default"
+    data-bg-color="surfaceDefault"
+  >
+    <div
+      class="bpk-card-v2__body bpk-card-v2__body--split"
+      style="--bpk-card-v2-primary-width: 70%;"
+    >
+      <div
+        class="bpk-card-v2__primary"
+      >
+        Main content area (70%)
+      </div>
+      <div
+        class="bpk-card-v2__divider"
+      />
+      <div
+        class="bpk-card-v2__secondary"
+      >
+        Sidebar area (30%)
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkCardV2 Snapshots matches snapshot - with custom classes 1`] = `
+<div>
+  <div
+    class="bpk-card-v2 bpk-card-v2--default custom-card"
+    data-bg-color="surfaceDefault"
+  >
+    <header
+      class="bpk-card-v2__header custom-header"
+    >
+      Custom Header
+    </header>
+    <div
+      class="bpk-card-v2__body custom-body"
+    >
+      Custom body
+    </div>
+  </div>
+</div>
+`;

@@ -18,9 +18,13 @@
 
 import { forwardRef } from 'react';
 
+import { cssModules } from '../../../../bpk-react-utils';
+
 import type { BpkCardV2PrimaryProps } from '../common-types';
 
 import STYLES from '../BpkCardV2.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 /**
  * Primary subcomponent for split layout in BpkCardV2.
@@ -44,9 +48,7 @@ const Primary = forwardRef<HTMLDivElement, BpkCardV2PrimaryProps>(
   ({ children, className }, ref) => (
     <div
       ref={ref}
-      className={[STYLES['bpk-card-v2__primary'], className]
-        .filter(Boolean)
-        .join(' ')}
+      className={getClassName('bpk-card-v2__primary', className)}
     >
       {children}
     </div>

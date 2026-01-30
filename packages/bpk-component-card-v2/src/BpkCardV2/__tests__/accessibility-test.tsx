@@ -90,8 +90,8 @@ describe('BpkCardV2 Accessibility', () => {
     it('card container is a valid landmark region', () => {
       const { container } = render(
         <BpkCardV2 ariaLabel="Card region">
-          <button>Button 1</button>
-          <button>Button 2</button>
+          <button type="button">Button 1</button>
+          <button type="button">Button 2</button>
         </BpkCardV2>,
       );
 
@@ -104,7 +104,7 @@ describe('BpkCardV2 Accessibility', () => {
       const { container } = render(
         <BpkCardV2>
           <BpkCardV2.Body>
-            <button>Action</button>
+            <button type="button">Action</button>
           </BpkCardV2.Body>
         </BpkCardV2>,
       );
@@ -184,7 +184,7 @@ describe('BpkCardV2 Accessibility', () => {
             </BpkCardV2.Secondary>
           </BpkCardV2.Body>
           <BpkCardV2.Footer>
-            <button>Action</button>
+            <button type="button">Action</button>
           </BpkCardV2.Footer>
         </BpkCardV2>,
       );

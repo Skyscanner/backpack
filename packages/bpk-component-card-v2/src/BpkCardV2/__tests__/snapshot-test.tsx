@@ -81,7 +81,7 @@ describe('BpkCardV2 Snapshots', () => {
           </BpkCardV2.Secondary>
         </BpkCardV2.Body>
         <BpkCardV2.Footer>
-          <button>Add to cart</button>
+          <button type="button">Add to cart</button>
         </BpkCardV2.Footer>
       </BpkCardV2>,
     );

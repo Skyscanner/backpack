@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import BpkCardV2 from '../BpkCardV2';
@@ -31,7 +31,7 @@ describe('BpkCardV2 Integration Tests', () => {
         <BpkCardV2>
           <BpkCardV2.Header>Card with interaction</BpkCardV2.Header>
           <BpkCardV2.Body>
-            <button onClick={handleClick}>Click me</button>
+            <button type="button" onClick={handleClick}>Click me</button>
           </BpkCardV2.Body>
         </BpkCardV2>,
       );
@@ -47,7 +47,7 @@ describe('BpkCardV2 Integration Tests', () => {
         <BpkCardV2>
           <BpkCardV2.Body>
             <input type="text" placeholder="Enter text" />
-            <button>Submit</button>
+            <button type="button">Submit</button>
           </BpkCardV2.Body>
         </BpkCardV2>,
       );
@@ -59,12 +59,12 @@ describe('BpkCardV2 Integration Tests', () => {
     it('supports focus management through card content', async () => {
       const user = userEvent.setup();
 
-      const { getAllByRole, getByRole } = render(
+      const { getAllByRole } = render(
         <BpkCardV2>
           <BpkCardV2.Body>
-            <button>First</button>
-            <button>Second</button>
-            <button>Third</button>
+            <button type="button">First</button>
+            <button type="button">Second</button>
+            <button type="button">Third</button>
           </BpkCardV2.Body>
         </BpkCardV2>,
       );
@@ -206,7 +206,7 @@ describe('BpkCardV2 Integration Tests', () => {
         </BpkCardV2>,
       );
 
-      const cards = container.querySelectorAll('[class*="bpk-card-v2"]');
+      const cards = container.querySelectorAll('[class*="bpk-card-v2"]:not([class*="bpk-card-v2__"])');
 
       expect(cards.length).toBe(2);
     });
@@ -305,8 +305,8 @@ describe('BpkCardV2 Integration Tests', () => {
             <input id="input-2" type="text" />
           </BpkCardV2.Body>
           <BpkCardV2.Footer>
-            <button>Submit</button>
-            <button>Cancel</button>
+            <button type="button">Submit</button>
+            <button type="button">Cancel</button>
           </BpkCardV2.Footer>
         </BpkCardV2>,
       );

@@ -18,9 +18,13 @@
 
 import { forwardRef } from 'react';
 
+import { cssModules } from '../../../../bpk-react-utils';
+
 import type { BpkCardV2HeaderProps } from '../common-types';
 
 import STYLES from '../BpkCardV2.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 /**
  * Header subcomponent for BpkCardV2.
@@ -40,9 +44,7 @@ const Header = forwardRef<HTMLElement, BpkCardV2HeaderProps>(
   ({ children, className }, ref) => (
     <header
       ref={ref}
-      className={[STYLES['bpk-card-v2__header'], className]
-        .filter(Boolean)
-        .join(' ')}
+      className={getClassName('bpk-card-v2__header', className)}
     >
       {children}
     </header>

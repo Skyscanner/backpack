@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-import { Children, forwardRef, type ReactNode } from 'react';
+import { forwardRef } from 'react';
+
+import { cssModules } from '../../../bpk-react-utils';
 
 import Body from './subcomponents/Body';
 import Footer from './subcomponents/Footer';
@@ -24,9 +26,11 @@ import Header from './subcomponents/Header';
 import Primary from './subcomponents/Primary';
 import Secondary from './subcomponents/Secondary';
 
-import type { BpkCardV2Component, BpkCardV2Props, BpkCardV2SurfaceColor, BpkCardV2Variant } from './common-types';
+import type { BpkCardV2Component, BpkCardV2Props } from './common-types';
 
 import STYLES from './BpkCardV2.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 /**
  * BpkCardV2 is a composable, responsive card component for Backpack.
@@ -64,13 +68,11 @@ const BpkCardV2Base = forwardRef<HTMLDivElement, BpkCardV2Props>(
     },
     ref,
   ) => {
-    const classNameFinal = [
-      STYLES['bpk-card-v2'],
-      STYLES[`bpk-card-v2--${variant}`],
+    const classNameFinal = getClassName(
+      'bpk-card-v2',
+      `bpk-card-v2--${variant}`,
       className,
-    ]
-      .filter(Boolean)
-      .join(' ');
+    );
 
     return (
       <div

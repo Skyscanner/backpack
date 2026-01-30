@@ -16,12 +16,16 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { Children, forwardRef, isValidElement } from 'react';
+
+import { cssModules } from '../../../../bpk-react-utils';
 
 import type { BpkCardV2BodyProps } from '../common-types';
 
 import STYLES from '../BpkCardV2.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 /**
  * Body subcomponent for BpkCardV2.
@@ -52,25 +56,23 @@ const Body = forwardRef<HTMLDivElement, BpkCardV2BodyProps>(
     split = false,
     splitRatio = 70,
   }, ref) => {
-  const classNameList = [
-    STYLES['bpk-card-v2__body'],
-    split && STYLES['bpk-card-v2__body--split'],
-    className,
-  ];
+    const bodyClassName = getClassName(
+      'bpk-card-v2__body',
+      split && 'bpk-card-v2__body--split',
+      className,
+    );
 
-  const bodyClassName = classNameList.filter(Boolean).join(' ');
-
-  // Process children to insert divider between Primary and Secondary in split layout
-  const processedChildren = split ? Children.toArray(children).reduce<ReactNode[]>((acc, child, index) => {
-    acc.push(child);
-    // Insert divider after first child (Primary) if there's a next child (Secondary)
-    if (index === 0 && Children.count(children) > 1 && isValidElement(child)) {
-      acc.push(
-        <div key="bpk-card-v2-divider" className={STYLES['bpk-card-v2__divider']} />
-      );
-    }
-    return acc;
-  }, []) : children;
+    // Process children to insert divider between Primary and Secondary in split layout
+    const processedChildren = split ? Children.toArray(children).reduce<ReactNode[]>((acc, child, index) => {
+      acc.push(child);
+      // Insert divider after first child (Primary) if there's a next child (Secondary)
+      if (index === 0 && Children.count(children) > 1 && isValidElement(child)) {
+        acc.push(
+          <div key="bpk-card-v2-divider" className={getClassName('bpk-card-v2__divider')} />
+        );
+      }
+      return acc;
+    }, []) : children;
 
     return (
       <div
@@ -78,7 +80,7 @@ const Body = forwardRef<HTMLDivElement, BpkCardV2BodyProps>(
         className={bodyClassName}
         style={{
           '--bpk-card-v2-primary-width': split ? `${splitRatio}%` : undefined,
-        } as React.CSSProperties}
+        } as CSSProperties}
       >
         {processedChildren}
       </div>

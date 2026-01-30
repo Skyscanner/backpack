@@ -18,9 +18,13 @@
 
 import { forwardRef } from 'react';
 
+import { cssModules } from '../../../../bpk-react-utils';
+
 import type { BpkCardV2FooterProps } from '../common-types';
 
 import STYLES from '../BpkCardV2.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 /**
  * Footer subcomponent for BpkCardV2.
@@ -42,9 +46,7 @@ const Footer = forwardRef<HTMLElement, BpkCardV2FooterProps>(
   ({ children, className }, ref) => (
     <footer
       ref={ref}
-      className={[STYLES['bpk-card-v2__footer'], className]
-        .filter(Boolean)
-        .join(' ')}
+      className={getClassName('bpk-card-v2__footer', className)}
     >
       {children}
     </footer>
