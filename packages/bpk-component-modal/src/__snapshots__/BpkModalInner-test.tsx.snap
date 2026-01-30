@@ -14,13 +14,14 @@ exports[`BpkModalInner should render correctly 1`] = `
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default {...getDataComponentAttribute('NavigationBar')} bpk-modal__navigation"
       >
         <div
           class="bpk-navigation-bar__title-container"
         >
           <h2
             class="bpk-modal__heading"
+            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -32,6 +33,7 @@ exports[`BpkModalInner should render correctly 1`] = `
           <button
             aria-label="Close"
             class="bpk-close-button__default"
+            data-backpack-ds-component="CloseButton"
             title="Close"
             type="button"
           >
@@ -77,13 +79,14 @@ exports[`BpkModalInner should render correctly when is iPhone 1`] = `
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default {...getDataComponentAttribute('NavigationBar')} bpk-modal__navigation"
       >
         <div
           class="bpk-navigation-bar__title-container"
         >
           <h2
             class="bpk-modal__heading"
+            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -95,6 +98,7 @@ exports[`BpkModalInner should render correctly when is iPhone 1`] = `
           <button
             aria-label="Close"
             class="bpk-close-button__default"
+            data-backpack-ds-component="CloseButton"
             title="Close"
             type="button"
           >
@@ -140,13 +144,14 @@ exports[`BpkModalInner should render correctly when it does not fills the screen
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default {...getDataComponentAttribute('NavigationBar')} bpk-modal__navigation"
       >
         <div
           class="bpk-navigation-bar__title-container"
         >
           <h2
             class="bpk-modal__heading"
+            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -158,6 +163,7 @@ exports[`BpkModalInner should render correctly when it does not fills the screen
           <button
             aria-label="Close"
             class="bpk-close-button__default"
+            data-backpack-ds-component="CloseButton"
             title="Close"
             type="button"
           >
@@ -203,13 +209,14 @@ exports[`BpkModalInner should render correctly when it has a className 1`] = `
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default {...getDataComponentAttribute('NavigationBar')} bpk-modal__navigation"
       >
         <div
           class="bpk-navigation-bar__title-container"
         >
           <h2
             class="bpk-modal__heading"
+            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -221,6 +228,7 @@ exports[`BpkModalInner should render correctly when it has a className 1`] = `
           <button
             aria-label="Close"
             class="bpk-close-button__default"
+            data-backpack-ds-component="CloseButton"
             title="Close"
             type="button"
           >
@@ -266,13 +274,14 @@ exports[`BpkModalInner should render correctly when it is fullscreen 1`] = `
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default {...getDataComponentAttribute('NavigationBar')} bpk-modal__navigation"
       >
         <div
           class="bpk-navigation-bar__title-container"
         >
           <h2
             class="bpk-modal__heading"
+            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -284,6 +293,7 @@ exports[`BpkModalInner should render correctly when it is fullscreen 1`] = `
           <button
             aria-label="Close"
             class="bpk-close-button__default"
+            data-backpack-ds-component="CloseButton"
             title="Close"
             type="button"
           >
@@ -329,13 +339,14 @@ exports[`BpkModalInner should render correctly with a custom content classname 1
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default {...getDataComponentAttribute('NavigationBar')} bpk-modal__navigation"
       >
         <div
           class="bpk-navigation-bar__title-container"
         >
           <h2
             class="bpk-modal__heading"
+            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -347,6 +358,7 @@ exports[`BpkModalInner should render correctly with a custom content classname 1
           <button
             aria-label="Close"
             class="bpk-close-button__default"
+            data-backpack-ds-component="CloseButton"
             title="Close"
             type="button"
           >
@@ -392,7 +404,7 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default {...getDataComponentAttribute('NavigationBar')} bpk-modal__navigation"
       >
         <div
           class="bpk-navigation-bar__leading-item bpk-navigation-bar__leading-item--default"
@@ -402,9 +414,11 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
           >
             <span
               class="bpk-modal__leading-button"
+              data-backpack-ds-component="NavigationBarButtonLink"
             >
               <button
                 class="bpk-link"
+                data-backpack-ds-component="Link"
                 label="Close"
                 type="button"
               >
@@ -424,6 +438,7 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
         >
           <h2
             class="bpk-modal__heading"
+            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -435,6 +450,7 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
           <button
             aria-label="Close"
             class="bpk-close-button__default"
+            data-backpack-ds-component="CloseButton"
             title="Close"
             type="button"
           >
@@ -480,13 +496,14 @@ exports[`BpkModalInner should render correctly with closeText prop 1`] = `
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default {...getDataComponentAttribute('NavigationBar')} bpk-modal__navigation"
       >
         <div
           class="bpk-navigation-bar__title-container"
         >
           <h2
             class="bpk-modal__heading"
+            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -497,6 +514,7 @@ exports[`BpkModalInner should render correctly with closeText prop 1`] = `
         >
           <button
             class="bpk-link"
+            data-backpack-ds-component="Link"
             type="button"
           >
             <span
@@ -531,13 +549,14 @@ exports[`BpkModalInner should render correctly with no padding 1`] = `
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default {...getDataComponentAttribute('NavigationBar')} bpk-modal__navigation"
       >
         <div
           class="bpk-navigation-bar__title-container"
         >
           <h2
             class="bpk-modal__heading"
+            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -549,6 +568,7 @@ exports[`BpkModalInner should render correctly with no padding 1`] = `
           <button
             aria-label="Close"
             class="bpk-close-button__default"
+            data-backpack-ds-component="CloseButton"
             title="Close"
             type="button"
           >
@@ -594,13 +614,14 @@ exports[`BpkModalInner should render correctly with wide prop 1`] = `
     >
       <nav
         aria-labelledby="bpk-modal-heading-my-modal"
-        class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
+        class="bpk-navigation-bar bpk-navigation-bar--default {...getDataComponentAttribute('NavigationBar')} bpk-modal__navigation"
       >
         <div
           class="bpk-navigation-bar__title-container"
         >
           <h2
             class="bpk-modal__heading"
+            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -612,6 +633,7 @@ exports[`BpkModalInner should render correctly with wide prop 1`] = `
           <button
             aria-label="Close"
             class="bpk-close-button__default"
+            data-backpack-ds-component="CloseButton"
             title="Close"
             type="button"
           >

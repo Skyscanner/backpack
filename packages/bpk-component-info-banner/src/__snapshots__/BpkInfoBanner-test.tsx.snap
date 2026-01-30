@@ -10,6 +10,7 @@ exports[`BpkInfoBanner should render correctly 1`] = `
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <div
               class="bpk-info-banner__header"
@@ -74,6 +75,7 @@ exports[`BpkInfoBanner should render correctly with no type specified 1`] = `
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--info bpk-info-banner--style-default"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <div
               class="bpk-info-banner__header"

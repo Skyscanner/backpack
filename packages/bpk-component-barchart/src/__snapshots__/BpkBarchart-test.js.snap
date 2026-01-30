@@ -8,6 +8,7 @@ exports[`BpkBarchart should render correctly 1`] = `
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
+      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"
@@ -395,6 +396,7 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
+      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"
@@ -782,6 +784,7 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
+      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"
@@ -1169,6 +1172,7 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
+      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"
@@ -1580,6 +1584,7 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
+      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"

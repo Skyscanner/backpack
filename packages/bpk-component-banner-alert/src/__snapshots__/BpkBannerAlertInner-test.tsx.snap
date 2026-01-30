@@ -571,6 +571,7 @@ exports[`BpkBannerAlertInner should render correctly with a element based messag
                     <svg
                       aria-hidden="true"
                       class="bpk-banner-alert__expand-icon"
+                      data-backpack-ds-component="BannerAlertInner"
                       height="1.5rem"
                       viewBox="0 0 24 24"
                       width="1.5rem"
@@ -654,6 +655,7 @@ exports[`BpkBannerAlertInner should render correctly with animateOnLeave 1`] = `
                 <button
                   aria-label="Dismiss"
                   class="bpk-close-button__default"
+                  data-backpack-ds-component="CloseButton"
                   title="Dismiss"
                   type="button"
                 >
@@ -817,6 +819,7 @@ exports[`BpkBannerAlertInner should render correctly with child nodes 1`] = `
                     <svg
                       aria-hidden="true"
                       class="bpk-banner-alert__expand-icon"
+                      data-backpack-ds-component="BannerAlertInner"
                       height="1.5rem"
                       viewBox="0 0 24 24"
                       width="1.5rem"
@@ -900,6 +903,7 @@ exports[`BpkBannerAlertInner should render correctly with dismissable option 1`]
                 <button
                   aria-label="Dismiss"
                   class="bpk-close-button__default"
+                  data-backpack-ds-component="CloseButton"
                   title="Dismiss"
                   type="button"
                 >

@@ -8,6 +8,7 @@ exports[`BpkMobileScrollContainer should render correctly 1`] = `
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
+      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"
@@ -27,6 +28,7 @@ exports[`BpkMobileScrollContainer should render correctly when showScrollbar is 
   >
     <div
       class="bpk-mobile-scroll-container__scroller bpk-mobile-scroll-container__showScrollbar"
+      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"
@@ -46,6 +48,7 @@ exports[`BpkMobileScrollContainer should render correctly with a custom "classNa
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
+      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"
@@ -65,6 +68,7 @@ exports[`BpkMobileScrollContainer should render correctly with a custom "style" 
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
+      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"
@@ -84,6 +88,7 @@ exports[`BpkMobileScrollContainer should render correctly with ariaLabel prop 1`
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
+      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         aria-label="my nav content"
@@ -104,6 +109,7 @@ exports[`BpkMobileScrollContainer should render correctly with ariaLabel prop se
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
+      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"

@@ -4,6 +4,7 @@ exports[`BpkBadge should render correctly 1`] = `
 <DocumentFragment>
   <span
     class="bpk-badge bpk-badge--normal"
+    data-backpack-ds-component="Badge"
   >
     Promociando
   </span>
@@ -14,6 +15,7 @@ exports[`BpkBadge should render correctly with a "centered" 1`] = `
 <DocumentFragment>
   <span
     class="bpk-badge bpk-badge--normal bpk-badge--centered"
+    data-backpack-ds-component="Badge"
   >
     Promociando
   </span>
@@ -24,6 +26,7 @@ exports[`BpkBadge should render correctly with a "docked" attribute value equal 
 <DocumentFragment>
   <span
     class="bpk-badge bpk-badge--normal bpk-badge--docked-left"
+    data-backpack-ds-component="Badge"
   >
     Promociando
   </span>
@@ -34,6 +37,7 @@ exports[`BpkBadge should render correctly with a "docked" attribute value equal 
 <DocumentFragment>
   <span
     class="bpk-badge bpk-badge--normal bpk-badge--docked-right"
+    data-backpack-ds-component="Badge"
   >
     Promociando
   </span>
@@ -44,6 +48,7 @@ exports[`BpkBadge should render correctly with an icon 1`] = `
 <DocumentFragment>
   <span
     class="bpk-badge bpk-badge--normal"
+    data-backpack-ds-component="Badge"
   >
     <svg
       aria-hidden="true"
@@ -68,6 +73,7 @@ exports[`BpkBadge should render correctly with type="brand" 1`] = `
 <DocumentFragment>
   <span
     class="bpk-badge bpk-badge--brand"
+    data-backpack-ds-component="Badge"
   >
     Promociando
   </span>
@@ -78,6 +84,7 @@ exports[`BpkBadge should render correctly with type="critical" 1`] = `
 <DocumentFragment>
   <span
     class="bpk-badge bpk-badge--critical"
+    data-backpack-ds-component="Badge"
   >
     Promociando
   </span>
@@ -88,6 +95,7 @@ exports[`BpkBadge should render correctly with type="inverse" 1`] = `
 <DocumentFragment>
   <span
     class="bpk-badge bpk-badge--inverse"
+    data-backpack-ds-component="Badge"
   >
     Promociando
   </span>
@@ -98,6 +106,7 @@ exports[`BpkBadge should render correctly with type="normal" 1`] = `
 <DocumentFragment>
   <span
     class="bpk-badge bpk-badge--normal"
+    data-backpack-ds-component="Badge"
   >
     Promociando
   </span>
@@ -108,6 +117,7 @@ exports[`BpkBadge should render correctly with type="outline" 1`] = `
 <DocumentFragment>
   <span
     class="bpk-badge bpk-badge--outline"
+    data-backpack-ds-component="Badge"
   >
     Promociando
   </span>
@@ -118,6 +128,7 @@ exports[`BpkBadge should render correctly with type="strong" 1`] = `
 <DocumentFragment>
   <span
     class="bpk-badge bpk-badge--strong"
+    data-backpack-ds-component="Badge"
   >
     Promociando
   </span>
@@ -128,6 +139,7 @@ exports[`BpkBadge should render correctly with type="success" 1`] = `
 <DocumentFragment>
   <span
     class="bpk-badge bpk-badge--success"
+    data-backpack-ds-component="Badge"
   >
     Promociando
   </span>
@@ -138,6 +150,7 @@ exports[`BpkBadge should render correctly with type="warning" 1`] = `
 <DocumentFragment>
   <span
     class="bpk-badge bpk-badge--warning"
+    data-backpack-ds-component="Badge"
   >
     Promociando
   </span>

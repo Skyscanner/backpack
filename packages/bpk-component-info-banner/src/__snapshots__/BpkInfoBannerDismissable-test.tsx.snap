@@ -10,6 +10,7 @@ exports[`BpkInfoBannerDismissable should render correctly 1`] = `
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
+            data-backpack-ds-component="InfoBannerInner"
           >
             <div
               class="bpk-info-banner__header"
@@ -48,6 +49,7 @@ exports[`BpkInfoBannerDismissable should render correctly 1`] = `
                 <button
                   aria-label="Dismiss"
                   class="bpk-close-button__default"
+                  data-backpack-ds-component="CloseButton"
                   title="Dismiss"
                   type="button"
                 >

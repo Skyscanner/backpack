@@ -4,6 +4,7 @@ exports[`BpkSwapButton should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-swap-button"
+    data-backpack-ds-component="SwapButton"
   >
     <button
       aria-label="Swap Button"

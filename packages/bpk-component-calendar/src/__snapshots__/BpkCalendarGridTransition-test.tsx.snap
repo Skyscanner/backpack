@@ -7,6 +7,7 @@ exports[`BpkCalendar should render correctly 1`] = `
   >
     <div
       class="bpk-calendar-grid-transition__strip"
+      data-backpack-ds-component="CalendarGridTransition"
       style="transform: translateX(-22.75rem); -webkit-transform: translateX(-22.75rem);"
     >
       <div>

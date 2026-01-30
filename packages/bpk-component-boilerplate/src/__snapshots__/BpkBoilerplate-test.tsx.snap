@@ -4,6 +4,7 @@ exports[`BpkBoilerplate should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-boilerplate"
+    data-backpack-ds-component="Boilerplate"
   >
     I am an example component.
   </div>

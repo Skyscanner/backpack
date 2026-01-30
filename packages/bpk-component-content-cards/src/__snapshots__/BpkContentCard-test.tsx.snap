@@ -10,6 +10,7 @@ exports[`Content Card widget renders horizontal card correctly 1`] = `
   >
     <div
       class="bpk-content-card--image-container"
+      data-backpack-ds-component="ContentCard"
     >
       <img
         alt="People surfing in the ocean"
@@ -21,11 +22,13 @@ exports[`Content Card widget renders horizontal card correctly 1`] = `
     <div>
       <h3
         class="bpk-text bpk-text--body-default bpk-content-card--headline"
+        data-backpack-ds-component="Text"
       >
         Card 1 headline
       </h3>
       <p
         class="bpk-text bpk-text--body-default bpk-content-card--description"
+        data-backpack-ds-component="Text"
       >
         Card 1 description
       </p>
@@ -44,6 +47,7 @@ exports[`Content Card widget renders vertical card correctly 1`] = `
   >
     <div
       class="bpk-content-card--image-container"
+      data-backpack-ds-component="ContentCard"
     >
       <img
         alt="People surfing in the ocean"
@@ -55,11 +59,13 @@ exports[`Content Card widget renders vertical card correctly 1`] = `
     <div>
       <h3
         class="bpk-text bpk-text--body-default bpk-content-card--headline"
+        data-backpack-ds-component="Text"
       >
         Card 1 headline
       </h3>
       <p
         class="bpk-text bpk-text--body-default bpk-content-card--description"
+        data-backpack-ds-component="Text"
       >
         Card 1 description
       </p>
