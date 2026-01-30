@@ -27,9 +27,10 @@ import {
 import { useComposedRefs } from '@radix-ui/react-compose-refs';
 import * as Slider from '@radix-ui/react-slider';
 
-import { cssModules, isRTL, setNativeValue } from '../../bpk-react-utils';
-
 import STYLES from './BpkSlider.module.scss';
+
+import { cssModules, isRTL, setNativeValue } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

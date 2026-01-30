@@ -17,8 +17,6 @@
  */
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkCloseButton from '../../bpk-component-close-button';
-import { cssModules, Portal } from '../../bpk-react-utils';
 
 import BpkDialogInner from './BpkDialogInner';
 import { HEADER_ICON_TYPES } from './common-types';
@@ -26,6 +24,9 @@ import { HEADER_ICON_TYPES } from './common-types';
 import type { Props } from './common-types';
 
 import STYLES from './BpkDialog.module.scss';
+
+import BpkCloseButton from '@backpack/bpk-component-close-button';
+import { cssModules, Portal } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

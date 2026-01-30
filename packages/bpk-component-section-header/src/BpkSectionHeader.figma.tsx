@@ -18,9 +18,10 @@
 
 import figma from '@figma/code-connect';
 
-import BpkButton from '../../bpk-component-button';
-
 import BpkSectionHeader, { SECTION_TYPES } from './BpkSectionHeader';
+
+import BpkButton from '@backpack/bpk-component-button';
+
 
 figma.connect(
   BpkSectionHeader,

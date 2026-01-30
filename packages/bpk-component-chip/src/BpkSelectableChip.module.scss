@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/chips';
+@use '@backpack/bpk-mixins/chips';
 
 .bpk-chip {
   @include chips.bpk-chip;

@@ -19,15 +19,17 @@
 import type { ChangeEvent } from 'react';
 import { Component } from 'react';
 
-import BpkLabel from '../../bpk-component-label';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkSelect from '../../bpk-component-select';
-import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
-
 import bpkCustomThemes from './theming';
 import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
 
 import type { Theme } from './theming';
+
+import BpkLabel from '@backpack/bpk-component-label';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkSelect from '@backpack/bpk-component-select';
+import BpkVisuallyHidden from '@backpack/bpk-component-visually-hidden';
+
+
 
 const inputId = 'theme-select';
 const availableThemes = Object.keys(bpkCustomThemes);

@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
-import BpkButton from '../../bpk-component-button';
-import BpkSectionHeader from '../../bpk-component-section-header';
-import { cssModules } from '../../bpk-react-utils';
 
 import BpkCardListGridStack from './BpkCardListGridStack';
 import BpkCardListRowRailContainer from './BpkCardListRowRail';
@@ -31,6 +27,11 @@ import {
 import type CardListProps from './common-types';
 
 import STYLES from './BpkCardList.module.scss';
+
+import BpkBreakpoint, { BREAKPOINTS } from '@backpack/bpk-component-breakpoint';
+import BpkButton from '@backpack/bpk-component-button';
+import BpkSectionHeader from '@backpack/bpk-component-section-header';
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

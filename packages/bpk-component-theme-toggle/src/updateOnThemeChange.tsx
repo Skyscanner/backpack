@@ -19,11 +19,12 @@
 import type { ComponentType, ReactNode } from 'react';
 import { Component } from 'react';
 
-import { wrapDisplayName } from '../../bpk-react-utils';
 
 import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
 
 import type { Theme } from './theming';
+
+import { wrapDisplayName } from '@backpack/bpk-react-utils';
 
 type ThemeChangeEvent = CustomEvent<{ theme: Theme | null }>;
 

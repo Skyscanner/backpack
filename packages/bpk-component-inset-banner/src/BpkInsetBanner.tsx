@@ -17,14 +17,16 @@
  */
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import InfoIcon from '../../bpk-component-icon/sm/information-circle';
-import BpkPopover from '../../bpk-component-popover/src/BpkPopover';
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
-import { cssModules } from '../../bpk-react-utils';
-
 import type { Placement } from '@floating-ui/react';
 
 import STYLES from './BpkInsetBanner.module.scss';
+
+import InfoIcon from '@backpack/bpk-component-icon/sm/information-circle';
+import BpkPopover from '@backpack/bpk-component-popover/src/BpkPopover';
+import BpkText, { TEXT_STYLES } from '@backpack/bpk-component-text/src/BpkText';
+import { cssModules } from '@backpack/bpk-react-utils';
+
+
 
 const getClassName = cssModules(STYLES);
 

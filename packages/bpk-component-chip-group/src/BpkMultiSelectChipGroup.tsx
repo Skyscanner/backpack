@@ -18,22 +18,24 @@
 import type { ReactNode } from 'react';
 import { useRef } from 'react';
 
-import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
+import BpkStickyChip from './BpkStickyChip';
+import Nudger, { POSITION } from './Nudger';
+
+import STYLES from './BpkChipGroup.module.scss';
+
+import BpkBreakpoint, { BREAKPOINTS } from '@backpack/bpk-component-breakpoint';
 import BpkSelectableChip, {
   BpkDismissibleChip,
   BpkIconChip,
   BpkDropdownChip,
   CHIP_TYPES,
-} from '../../bpk-component-chip';
-import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
-import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
-import { cssModules } from '../../bpk-react-utils';
+} from '@backpack/bpk-component-chip';
+import BpkMobileScrollContainer from '@backpack/bpk-component-mobile-scroll-container';
+import BpkText, { TEXT_STYLES } from '@backpack/bpk-component-text/src/BpkText';
+import BpkVisuallyHidden from '@backpack/bpk-component-visually-hidden';
+import { cssModules } from '@backpack/bpk-react-utils';
 
-import BpkStickyChip from './BpkStickyChip';
-import Nudger, { POSITION } from './Nudger';
 
-import STYLES from './BpkChipGroup.module.scss';
 
 const getClassName = cssModules(STYLES);
 

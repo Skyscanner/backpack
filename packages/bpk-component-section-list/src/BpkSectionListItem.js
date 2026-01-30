@@ -21,11 +21,12 @@
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
 
-import { withRtlSupport } from '../../bpk-component-icon';
-import BpkLargeChevronRightIcon from '../../bpk-component-icon/lg/chevron-right';
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkSectionListItem.module.scss';
+
+import { withRtlSupport } from '@backpack/bpk-component-icon';
+import BpkLargeChevronRightIcon from '@backpack/bpk-component-icon/lg/chevron-right';
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const BpkLargeChevronRightIconWithRtlSupport = withRtlSupport(
   BpkLargeChevronRightIcon,

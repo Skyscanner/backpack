@@ -20,9 +20,10 @@
 
 import { render } from '@testing-library/react';
 
-import FlightIcon from '../../bpk-component-icon/lg/flight';
-
 import BpkAutosuggestSuggestion from './BpkAutosuggestSuggestion';
+
+import FlightIcon from '@backpack/bpk-component-icon/lg/flight';
+
 
 describe('BpkAutosuggestSuggestion', () => {
   it('should render correctly', () => {

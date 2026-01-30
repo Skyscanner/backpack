@@ -83,6 +83,7 @@
       }
     },
     "moduleNameMapper": {
+      "^@backpack/(.*)$": "<rootDir>/packages/$1",
       "^.+\\.scss$": "<rootDir>/scripts/stubs/styleStub.js",
       "^.+\\.(svg|png)$": "<rootDir>/scripts/stubs/fileStub.js",
       "react-transition-group/CSSTransition": "<rootDir>/scripts/stubs/cssTransitionStub.js",
@@ -153,6 +154,7 @@
     "danger-plugin-toolbox": "^3.1.2",
     "date-fns": "^4.1.0",
     "eslint_d": "^14.3.0",
+    "eslint-import-resolver-alias": "^1.1.2",
     "glob": "^13.0.0",
     "gulp": "^5.0.0",
     "gulp-rename": "^2.0.0",

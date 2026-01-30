@@ -17,8 +17,6 @@
  */
 import { useState, Children } from 'react';
 
-import BpkPageIndicator from '../../../bpk-component-page-indicator';
-import { cssModules } from '../../../bpk-react-utils';
 import { ACCESSORY_DESKTOP_TYPES, LAYOUTS } from '../common-types';
 
 import BpkCardListCarousel from './BpkCardListCarousel';
@@ -26,6 +24,9 @@ import BpkCardListCarousel from './BpkCardListCarousel';
 import type { CardListRowRailProps } from '../common-types';
 
 import STYLES from './BpkCardListRowRailContainer.module.scss';
+
+import BpkPageIndicator from '@backpack/bpk-component-page-indicator';
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

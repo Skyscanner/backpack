@@ -27,7 +27,6 @@ import {
 
 import throttle from 'lodash/throttle';
 
-import { cssModules } from '../../../bpk-react-utils';
 
 import { RENDER_BUFFER_SIZE } from './constants';
 import {
@@ -40,6 +39,8 @@ import {
 import type { CardListCarouselProps } from '../common-types';
 
 import STYLES from './BpkCardListCarousel.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

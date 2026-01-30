@@ -17,11 +17,12 @@
  */
 /* eslint react/no-array-index-key: 0 */
 
-import { cssModules } from '../../bpk-react-utils';
 
 import BpkContentCard from './BpkContentCard';
 
 import STYLES from './BpkContentCards.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

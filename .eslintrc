@@ -18,6 +18,12 @@
           ".android.js",
           ".ios.js"
         ]
+      },
+      "alias": {
+        "map": [
+          ["@backpack", "./packages"]
+        ],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     }
   },

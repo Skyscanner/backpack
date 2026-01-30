@@ -16,14 +16,15 @@
  * limitations under the License.
  */
 
+
+import BpkscrollableCalendarDate from './BpkScrollableCalendarDate';
+import BpkScrollableCalendarGridList from './BpkScrollableCalendarGridList';
+
 import {
   BpkCalendarGridHeader,
   withCalendarState,
   composeCalendar,
-} from '../../bpk-component-calendar';
-
-import BpkscrollableCalendarDate from './BpkScrollableCalendarDate';
-import BpkScrollableCalendarGridList from './BpkScrollableCalendarGridList';
+} from '@backpack/bpk-component-calendar';
 
 export default withCalendarState(
   composeCalendar(

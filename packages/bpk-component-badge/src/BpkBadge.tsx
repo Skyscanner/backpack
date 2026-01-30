@@ -18,9 +18,10 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkBadge.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 export const BADGE_TYPES = {
   warning: 'warning',

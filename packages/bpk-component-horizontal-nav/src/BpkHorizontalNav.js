@@ -21,10 +21,11 @@ import PropTypes from 'prop-types';
 import { Component, Children, cloneElement } from 'react';
 import type { Node } from 'react';
 
-import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkHorizontalNav.module.scss';
+
+import BpkMobileScrollContainer from '@backpack/bpk-component-mobile-scroll-container';
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

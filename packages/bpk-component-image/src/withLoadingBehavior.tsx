@@ -19,7 +19,7 @@
 import { Component } from 'react';
 import type { ComponentType } from 'react';
 
-import { wrapDisplayName } from '../../bpk-react-utils';
+import { wrapDisplayName } from '@backpack/bpk-react-utils';
 
 type InjectedProps = {
   onLoad: () => void;

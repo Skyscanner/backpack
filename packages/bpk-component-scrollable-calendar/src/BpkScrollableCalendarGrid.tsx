@@ -18,13 +18,15 @@
 
 import type { ElementType, ReactNode } from 'react';
 
-import { BpkCalendarGrid } from '../../bpk-component-calendar';
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
-
-import type { BpkCalendarGridProps } from '../../bpk-component-calendar';
+import type { BpkCalendarGridProps } from '@backpack/bpk-component-calendar';
 
 import STYLES from './BpkScrollableCalendarGrid.module.scss';
+
+import { BpkCalendarGrid } from '@backpack/bpk-component-calendar';
+import BpkText, { TEXT_STYLES } from '@backpack/bpk-component-text';
+import { cssModules } from '@backpack/bpk-react-utils';
+
+
 
 const getClassName = cssModules(STYLES);
 

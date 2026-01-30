@@ -19,10 +19,11 @@
 import { render } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
-import { DateUtils } from '../../bpk-component-calendar';
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
 import BpkScrollableCalendar from './BpkScrollableCalendar';
+
+import { DateUtils } from '@backpack/bpk-component-calendar';
 
 const testDate = new Date(2010, 1, 15);
 const id = 'scrollableCalendar';

@@ -25,11 +25,12 @@ import type { Element, Config, AbstractComponent } from 'react';
 import extend from 'lodash/extend';
 import omit from 'lodash/omit';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import DataSource from './DataSource';
 
 import STYLES from './withInfiniteScroll.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassNames = cssModules(STYLES);
 

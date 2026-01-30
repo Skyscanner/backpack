@@ -19,13 +19,13 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import { CALENDAR_SELECTION_TYPE } from '../../bpk-component-calendar';
-import { format } from '../../bpk-component-calendar/src/date-utils';
+import { CALENDAR_SELECTION_TYPE } from '@backpack/bpk-component-calendar';
+import { format } from '@backpack/bpk-component-calendar/src/date-utils';
 import {
   weekDays,
   formatMonth,
   formatDateFull,
-} from '../../bpk-component-calendar/test-utils';
+} from '@backpack/bpk-component-calendar/test-utils';
 // mock breakpoint to always match
 jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () => jest.fn(() => true));
 jest.mock('@popperjs/core', () => {

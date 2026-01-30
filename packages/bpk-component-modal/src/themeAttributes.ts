@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import { themeAttributes as linkAttributes } from '../../bpk-component-link';
+import { themeAttributes as linkAttributes } from '@backpack/bpk-component-link';
 
 export default [...linkAttributes];

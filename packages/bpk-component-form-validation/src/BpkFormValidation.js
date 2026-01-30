@@ -23,12 +23,13 @@ import {
   iconSizeSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import AnimateHeight from '../../bpk-animate-height';
-import { withAlignment } from '../../bpk-component-icon';
-import BpkSmallExclamationIcon from '../../bpk-component-icon/sm/exclamation-circle';
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkFormValidation.module.scss';
+
+import AnimateHeight from '@backpack/bpk-animate-height';
+import { withAlignment } from '@backpack/bpk-component-icon';
+import BpkSmallExclamationIcon from '@backpack/bpk-component-icon/sm/exclamation-circle';
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 const AlignedExclamationIcon = withAlignment(

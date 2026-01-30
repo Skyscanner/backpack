@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { secondaryThemeAttributes } from '../../bpk-component-button';
+import { secondaryThemeAttributes } from '@backpack/bpk-component-button';
 
 export default [
   ...secondaryThemeAttributes,

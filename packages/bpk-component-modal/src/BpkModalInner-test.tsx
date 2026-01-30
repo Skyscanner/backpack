@@ -18,9 +18,10 @@
 
 import { render, screen } from '@testing-library/react';
 
-import { BpkNavigationBarButtonLink } from '../../bpk-component-navigation-bar';
-
 import BpkModalInner from './BpkModalInner';
+
+import { BpkNavigationBarButtonLink } from '@backpack/bpk-component-navigation-bar';
+
 
 describe('BpkModalInner', () => {
   it('should render correctly', () => {

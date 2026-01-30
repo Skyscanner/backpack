@@ -18,13 +18,14 @@
 
 import PropTypes from 'prop-types';
 
-import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
-import { withRtlSupport, withButtonAlignment } from '../../bpk-component-icon';
-import ArrowLeftIcon from '../../bpk-component-icon/sm/arrow-left';
-import ArrowRightIcon from '../../bpk-component-icon/sm/arrow-right';
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkPaginationNudger.module.scss';
+
+import BpkButton, { BUTTON_TYPES } from '@backpack/bpk-component-button';
+import { withRtlSupport, withButtonAlignment } from '@backpack/bpk-component-icon';
+import ArrowLeftIcon from '@backpack/bpk-component-icon/sm/arrow-left';
+import ArrowRightIcon from '@backpack/bpk-component-icon/sm/arrow-right';
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 const AlignedArrowLeftIcon = withRtlSupport(withButtonAlignment(ArrowLeftIcon));

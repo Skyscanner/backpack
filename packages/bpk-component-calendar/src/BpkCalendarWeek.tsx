@@ -19,7 +19,6 @@
 import type { ElementType, ReactElement } from 'react';
 import { Component } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import { SELECTION_TYPES } from './BpkCalendarDate';
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
@@ -42,6 +41,8 @@ import type {
 } from './custom-proptypes';
 
 import STYLES from './BpkCalendarWeek.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

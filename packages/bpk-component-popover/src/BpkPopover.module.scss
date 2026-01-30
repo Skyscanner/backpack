@@ -16,12 +16,12 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/borders';
-@use '../../bpk-mixins/breakpoints';
-@use '../../bpk-mixins/radii';
-@use '../../bpk-mixins/shadows';
-@use '../../bpk-mixins/utils';
+@use '@backpack/bpk-mixins/tokens';
+@use '@backpack/bpk-mixins/borders';
+@use '@backpack/bpk-mixins/breakpoints';
+@use '@backpack/bpk-mixins/radii';
+@use '@backpack/bpk-mixins/shadows';
+@use '@backpack/bpk-mixins/utils';
 
 $arrow-size: tokens.bpk-spacing-lg();
 

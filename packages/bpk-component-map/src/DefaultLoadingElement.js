@@ -17,10 +17,11 @@
  */
 /* @flow strict */
 
-import { BpkLargeSpinner, SPINNER_TYPES } from '../../bpk-component-spinner';
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './DefaultLoadingElement.module.scss';
+
+import { BpkLargeSpinner, SPINNER_TYPES } from '@backpack/bpk-component-spinner';
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

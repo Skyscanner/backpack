@@ -18,12 +18,13 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import BpkPaginationBreak from './BpkPaginationBreak';
 import BpkPaginationPage from './BpkPaginationPage';
 
 import STYLES from './BpkPaginationList.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

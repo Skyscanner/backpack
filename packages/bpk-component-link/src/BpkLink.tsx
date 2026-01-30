@@ -19,7 +19,6 @@
 import type { Ref } from 'react';
 import { forwardRef } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import type {
   BpkLinkProps,
@@ -28,6 +27,8 @@ import type {
 } from './common-types';
 
 import STYLES from './BpkLink.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

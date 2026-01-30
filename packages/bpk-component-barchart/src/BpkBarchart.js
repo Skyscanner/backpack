@@ -28,8 +28,6 @@ import {
   lineHeightSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
-import { cssModules } from '../../bpk-react-utils';
 
 import BpkBarchartBar from './BpkBarchartBar';
 import BpkBarchartBars from './BpkBarchartBars';
@@ -47,6 +45,9 @@ import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, remToPx } from './utils';
 
 import STYLES from './BpkBarchart.module.scss';
+
+import BpkMobileScrollContainer from '@backpack/bpk-component-mobile-scroll-container';
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

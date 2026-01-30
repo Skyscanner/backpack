@@ -19,12 +19,14 @@
 import { Component } from 'react';
 import type { ChangeEvent, ClipboardEvent, FocusEvent, KeyboardEvent,  } from 'react';
 
-import { INPUT_TYPES } from '../../bpk-component-input';
-import { cssModules } from '../../bpk-react-utils';
-
 import InputField from './BpkInputField';
 
 import STYLES from './BpkSplitInput.module.scss';
+
+import { INPUT_TYPES } from '@backpack/bpk-component-input';
+import { cssModules } from '@backpack/bpk-react-utils';
+
+
 
 const getClassName = cssModules(STYLES);
 

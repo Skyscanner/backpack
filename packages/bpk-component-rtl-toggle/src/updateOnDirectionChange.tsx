@@ -19,9 +19,10 @@
 import type { ComponentType } from 'react';
 import { Component } from 'react';
 
-import { wrapDisplayName } from '../../bpk-react-utils';
-
 import { getHtmlElement, DIRECTION_CHANGE_EVENT } from './utils';
+
+import { wrapDisplayName } from '@backpack/bpk-react-utils';
+
 
 const updateOnDirectionChange = (
   EnhancedComponent: ComponentType<any> | string,

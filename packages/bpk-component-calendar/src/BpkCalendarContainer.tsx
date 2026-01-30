@@ -19,7 +19,6 @@
 import type { ComponentType } from 'react';
 import { Component } from 'react';
 
-import { isRTL } from '../../bpk-react-utils';
 
 import BpkCalendarDate from './BpkCalendarDate';
 import { BpkCalendarGridWithTransition } from './BpkCalendarGrid';
@@ -41,6 +40,8 @@ import {
 } from './date-utils';
 
 import type { SelectionConfiguration } from './custom-proptypes';
+
+import { isRTL } from '@backpack/bpk-react-utils';
 
 export type Props = {
   /**

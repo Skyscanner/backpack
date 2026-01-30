@@ -17,13 +17,15 @@
  */
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkContentBubble } from '../../bpk-component-flare';
-import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
-import { withScrim } from '../../bpk-scrim-utils';
-
 import { type DialogInnerProps as Props } from './common-types';
 
 import STYLES from './BpkDialogInner.module.scss';
+
+import { BpkContentBubble } from '@backpack/bpk-component-flare';
+import { TransitionInitialMount, cssModules } from '@backpack/bpk-react-utils';
+import { withScrim } from '@backpack/bpk-scrim-utils';
+
+
 
 const getClassName = cssModules(STYLES);
 

@@ -25,18 +25,6 @@ import type { ReactNode, FunctionComponent, SVGProps } from 'react';
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkAnimateHeight from '../../bpk-animate-height';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkCloseButton from '../../bpk-component-close-button';
-import { withButtonAlignment } from '../../bpk-component-icon';
-import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
-import ChevronUpIcon from '../../bpk-component-icon/sm/chevron-up';
-import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
-import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
-import BpkLink from '../../bpk-component-link';
-import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
-import { cssModules } from '../../bpk-react-utils';
-
 import AnimateAndFade from './AnimateAndFade';
 import { ALERT_TYPES, STYLE_TYPES } from './common-types';
 
@@ -49,6 +37,21 @@ import type {
 } from './common-types';
 
 import STYLES from './BpkInfoBanner.module.scss';
+
+import BpkAnimateHeight from '@backpack/bpk-animate-height';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkCloseButton from '@backpack/bpk-component-close-button';
+import { withButtonAlignment } from '@backpack/bpk-component-icon';
+import ChevronDownIcon from '@backpack/bpk-component-icon/sm/chevron-down';
+import ChevronUpIcon from '@backpack/bpk-component-icon/sm/chevron-up';
+import InfoCircleIcon from '@backpack/bpk-component-icon/sm/information-circle';
+import TickCircleIcon from '@backpack/bpk-component-icon/sm/tick-circle';
+import BpkLink from '@backpack/bpk-component-link';
+import BpkVisuallyHidden from '@backpack/bpk-component-visually-hidden';
+import { cssModules } from '@backpack/bpk-react-utils';
+
+
+
 
 const getClassName = cssModules(STYLES);
 

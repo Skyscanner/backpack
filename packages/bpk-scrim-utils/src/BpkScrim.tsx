@@ -18,9 +18,10 @@
 
 import type { SyntheticEvent } from 'react';
 
-import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
-
 import STYLES from './bpk-scrim.module.scss';
+
+import { TransitionInitialMount, cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

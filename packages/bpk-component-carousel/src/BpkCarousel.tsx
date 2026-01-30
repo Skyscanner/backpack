@@ -18,9 +18,6 @@
 
 import { type MouseEvent, useRef, useState } from 'react';
 
-import { BREAKPOINTS, useMediaQuery } from '../../bpk-component-breakpoint';
-import BpkPageIndicator, { DIRECTIONS, VARIANT } from '../../bpk-component-page-indicator';
-import { cssModules } from '../../bpk-react-utils';
 
 import BpkCarouselContainer from './BpkCarouselContainer';
 import { scrollToIndex, useScrollToInitialImage } from './utils';
@@ -28,6 +25,10 @@ import { scrollToIndex, useScrollToInitialImage } from './utils';
 import type { Props } from './types';
 
 import STYLES from './BpkCarousel.module.scss';
+
+import { BREAKPOINTS, useMediaQuery } from '@backpack/bpk-component-breakpoint';
+import BpkPageIndicator, { DIRECTIONS, VARIANT } from '@backpack/bpk-component-page-indicator';
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

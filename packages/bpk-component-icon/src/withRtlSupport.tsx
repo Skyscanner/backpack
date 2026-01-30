@@ -16,11 +16,12 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
 
 import classNameModifierHOCFactory from './classNameModifierHOCFactory';
 
 import STYLES from './BpkIcon.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

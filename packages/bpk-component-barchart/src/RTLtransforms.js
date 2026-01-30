@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import { isRTL } from '../../bpk-react-utils';
+import { isRTL } from '@backpack/bpk-react-utils';
 
 const rtlConditionalValue = (ltrValue: number, rtlValue: number) =>
   isRTL() ? rtlValue : ltrValue;

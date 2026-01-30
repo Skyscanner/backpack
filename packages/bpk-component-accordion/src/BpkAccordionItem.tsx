@@ -20,15 +20,17 @@ import { useContext, cloneElement } from 'react';
 import type { ReactNode, ReactElement } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import AnimateHeight from '../../bpk-animate-height';
-import { withButtonAlignment } from '../../bpk-component-icon';
-import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
-
 import { BpkAccordionContext } from './BpkAccordion';
 
 import STYLES from './BpkAccordionItem.module.scss';
+
+import AnimateHeight from '@backpack/bpk-animate-height';
+import { withButtonAlignment } from '@backpack/bpk-component-icon';
+import ChevronDownIcon from '@backpack/bpk-component-icon/sm/chevron-down';
+import BpkText, { TEXT_STYLES } from '@backpack/bpk-component-text';
+import { cssModules } from '@backpack/bpk-react-utils';
+
+
 
 const getClassName = cssModules(STYLES);
 

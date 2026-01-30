@@ -21,13 +21,14 @@
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import BpkBasicMapMarker from './BpkBasicMapMarker';
 import BpkIconMarkerBackground from './BpkIconMarkerBackground';
 import { LatLongPropType, type LatLong } from './common-types';
 
 import STYLES from './BpkIconMarker.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

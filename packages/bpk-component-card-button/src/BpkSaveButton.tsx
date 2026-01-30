@@ -24,13 +24,14 @@ import {
   colorWhite,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkHeartIcon from '../../bpk-component-icon/lg/heart';
-import BpkHeartOutlineIcon from '../../bpk-component-icon/lg/heart--outline';
-import BpkHeartIconSm from '../../bpk-component-icon/sm/heart';
-import BpkHeartOutlineIconSm from '../../bpk-component-icon/sm/heart--outline';
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkSaveButton.module.scss';
+
+import BpkHeartIcon from '@backpack/bpk-component-icon/lg/heart';
+import BpkHeartOutlineIcon from '@backpack/bpk-component-icon/lg/heart--outline';
+import BpkHeartIconSm from '@backpack/bpk-component-icon/sm/heart';
+import BpkHeartOutlineIconSm from '@backpack/bpk-component-icon/sm/heart--outline';
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 export const SIZE_TYPES = {
   default: 'default',

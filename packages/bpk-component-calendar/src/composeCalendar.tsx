@@ -18,7 +18,6 @@
 
 import type { ComponentType } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
 import { memoize } from './utils';
@@ -30,6 +29,8 @@ import type {
 } from './custom-proptypes';
 
 import STYLES from './BpkCalendar.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

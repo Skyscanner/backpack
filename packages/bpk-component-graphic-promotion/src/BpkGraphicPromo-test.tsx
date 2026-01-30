@@ -18,13 +18,14 @@
 
 import { render, fireEvent, screen } from '@testing-library/react';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import BpkGraphicPromo, { TEXT_ALIGN } from './BpkGraphicPromo';
 
 import type { Props } from './BpkGraphicPromo';
 
 import STYLES from './BpkGraphicPromo.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

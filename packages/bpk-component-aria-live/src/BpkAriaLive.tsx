@@ -18,9 +18,10 @@
 
 import type { ReactElement } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkAriaLive.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

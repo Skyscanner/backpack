@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-import { themeAttributes as calendarAttributes } from '../../bpk-component-calendar';
-import { themeAttributes as modalAttributes } from '../../bpk-component-modal';
-import { themeAttributes as popoverAttributes } from '../../bpk-component-popover';
+import { themeAttributes as calendarAttributes } from '@backpack/bpk-component-calendar';
+import { themeAttributes as modalAttributes } from '@backpack/bpk-component-modal';
+import { themeAttributes as popoverAttributes } from '@backpack/bpk-component-popover';
 
 export default [
   ...calendarAttributes,

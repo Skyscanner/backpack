@@ -19,7 +19,13 @@
 import { createRef, Component } from 'react';
 import type { ReactElement, RefObject } from 'react';
 
-import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
+import type {
+  DaysOfWeek,
+  ReactComponent,
+  SelectionConfiguration,
+} from '@backpack/bpk-component-calendar';
+
+import BpkBreakpoint, { BREAKPOINTS } from '@backpack/bpk-component-breakpoint';
 import {
   composeCalendar,
   BpkCalendarGridHeader,
@@ -29,17 +35,12 @@ import {
   CALENDAR_SELECTION_TYPE,
   DateUtils,
   BpkCalendarNav,
-} from '../../bpk-component-calendar';
-import BpkInput, { withOpenEvents } from '../../bpk-component-input';
-import BpkModal from '../../bpk-component-modal';
-import BpkPopover from '../../bpk-component-popover';
-import { setNativeValue } from '../../bpk-react-utils';
+} from '@backpack/bpk-component-calendar';
+import BpkInput, { withOpenEvents } from '@backpack/bpk-component-input';
+import BpkModal from '@backpack/bpk-component-modal';
+import BpkPopover from '@backpack/bpk-component-popover';
+import { setNativeValue } from '@backpack/bpk-react-utils';
 
-import type {
-  DaysOfWeek,
-  ReactComponent,
-  SelectionConfiguration,
-} from '../../bpk-component-calendar';
 
 
 const Input = withOpenEvents(BpkInput);

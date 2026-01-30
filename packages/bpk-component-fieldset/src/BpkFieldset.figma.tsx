@@ -18,12 +18,13 @@
 
 import figma from "@figma/code-connect"
 
-import BpkCheckbox from "../../bpk-component-checkbox";
-import BpkInput, { INPUT_TYPES } from "../../bpk-component-input";
-import BpkSelect from "../../bpk-component-select";
-import BpkTextarea from "../../bpk-component-textarea";
-
 import BpkFieldset from "./BpkFieldset";
+
+import BpkCheckbox from '@backpack/bpk-component-checkbox';
+import BpkInput, { INPUT_TYPES } from '@backpack/bpk-component-input';
+import BpkSelect from '@backpack/bpk-component-select';
+import BpkTextarea from '@backpack/bpk-component-textarea';
+
 
 const figmaUrl = "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=30459%3A44425";
 // Input variant

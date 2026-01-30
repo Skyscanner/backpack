@@ -21,12 +21,13 @@ The dropdown chip component is just a selectable chip component
 with a trailing accessory view of a chevron down icon.
 */
 
-import ChevronDownIconSm from '../../bpk-component-icon/sm/chevron-down';
 
 import BpkSelectableChip from './BpkSelectableChip';
 import { CHIP_TYPES } from './commonTypes';
 
 import type { CommonProps as Props } from './commonTypes';
+
+import ChevronDownIconSm from '@backpack/bpk-component-icon/sm/chevron-down';
 
 const BpkDropdownChip = ({
   disabled = false,

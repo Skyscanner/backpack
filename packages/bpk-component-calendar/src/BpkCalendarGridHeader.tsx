@@ -18,7 +18,6 @@
 
 import { PureComponent } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import { orderDaysOfWeek } from './date-utils';
 
@@ -30,6 +29,8 @@ import type {
 } from './custom-proptypes';
 
 import STYLES from './BpkCalendarGridHeader.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

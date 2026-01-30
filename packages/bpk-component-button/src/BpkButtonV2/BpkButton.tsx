@@ -15,13 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { cssModules } from '../../../bpk-react-utils';
 
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
 
 import type { Props } from './common-types';
 
 import COMMON_STYLES from './BpkButton.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getCommonClassName = cssModules(COMMON_STYLES);
 

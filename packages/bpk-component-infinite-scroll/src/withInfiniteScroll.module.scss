@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
+@use '@backpack/bpk-mixins/tokens';
 
 .bpk-sentinel {
   // this is necessary for when the user doesn't define a custom loading component

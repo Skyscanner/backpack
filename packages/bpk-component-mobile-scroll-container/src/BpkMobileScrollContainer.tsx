@@ -21,11 +21,12 @@ import { Component } from 'react';
 
 import debounce from 'lodash/debounce';
 
-import { cssModules, isRTL } from '../../bpk-react-utils';
 
 import type { DebouncedFunc } from 'lodash';
 
 import STYLES from './BpkMobileScrollContainer.module.scss';
+
+import { cssModules, isRTL } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

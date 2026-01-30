@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { DateUtils } from '../../bpk-component-calendar';
+import { DateUtils } from '@backpack/bpk-component-calendar';
 
 const getMonthsArray = (startDate: Date, count: number) => {
   const months = [];

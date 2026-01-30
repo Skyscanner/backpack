@@ -15,12 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/utils';
-@use '../../bpk-mixins/typography';
-@use '../../bpk-mixins/radii';
-@use '../../bpk-mixins/borders';
-@use '../../bpk-mixins/shadows';
+@use '@backpack/bpk-mixins/tokens';
+@use '@backpack/bpk-mixins/utils';
+@use '@backpack/bpk-mixins/typography';
+@use '@backpack/bpk-mixins/radii';
+@use '@backpack/bpk-mixins/borders';
+@use '@backpack/bpk-mixins/shadows';
 
 .bpk-segmented-control-group {
   display: grid;

@@ -18,12 +18,13 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import BpkFlareBar from './BpkFlareBar';
 import CornerRadius from './__generated__/js/corner-radius';
 
 import STYLES from './bpk-content-bubble.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

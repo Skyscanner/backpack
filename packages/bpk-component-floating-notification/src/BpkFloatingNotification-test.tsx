@@ -18,9 +18,10 @@
 
 import { fireEvent, render } from '@testing-library/react';
 
-import BpkIconHeart from '../../bpk-component-icon/sm/heart';
-
 import BpkFloatingNotification from './BpkFloatingNotification';
+
+import BpkIconHeart from '@backpack/bpk-component-icon/sm/heart';
+
 
 const props = {
   text: 'Saved',

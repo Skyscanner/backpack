@@ -21,9 +21,10 @@ import type { MutableRefObject } from 'react';
 import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { CHIP_TYPES } from '../../bpk-component-chip';
-
 import Nudger, { POSITION } from './Nudger';
+
+import { CHIP_TYPES } from '@backpack/bpk-component-chip';
+
 
 
 const mockIsRtl = jest.fn(() => false);

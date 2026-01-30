@@ -18,9 +18,10 @@
 
 import { Component, Fragment, type ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkBreadcrumb.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/shadows';
-@use '../../bpk-mixins/utils';
+@use '@backpack/bpk-mixins/tokens';
+@use '@backpack/bpk-mixins/shadows';
+@use '@backpack/bpk-mixins/utils';
 
 $slider-handle-size: tokens.bpk-spacing-base() + tokens.bpk-spacing-sm();
 $slider-handle-touch-size: tokens.bpk-spacing-xxl();

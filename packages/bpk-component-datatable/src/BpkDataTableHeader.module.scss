@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/typography';
-@use '../../bpk-mixins/utils';
+@use '@backpack/bpk-mixins/tokens';
+@use '@backpack/bpk-mixins/typography';
+@use '@backpack/bpk-mixins/utils';
 
 $bpk-margin-size-sort-icons: tokens.bpk-spacing-sm() + tokens.bpk-spacing-md();
 $icon-height: tokens.$bpk-line-height-xs / 2;

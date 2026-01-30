@@ -16,11 +16,13 @@
  * limitations under the License.
  */
 
-import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
 import BpkBubbleArrow from '../icons/BpkBubbleArrow';
 
 import STYLES from './BpkBubble.module.scss';
+
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '@backpack/bpk-component-text';
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

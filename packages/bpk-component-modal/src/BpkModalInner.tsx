@@ -19,14 +19,15 @@
 import type { ReactNode } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkCloseButton from '../../bpk-component-close-button';
-import BpkLink from '../../bpk-component-link';
+import STYLES from './BpkModalInner.module.scss';
+
+import BpkCloseButton from '@backpack/bpk-component-close-button';
+import BpkLink from '@backpack/bpk-component-link';
 import BpkNavigationBar, {
   BAR_STYLES,
-} from '../../bpk-component-navigation-bar';
-import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
+} from '@backpack/bpk-component-navigation-bar';
+import { TransitionInitialMount, cssModules } from '@backpack/bpk-react-utils';
 
-import STYLES from './BpkModalInner.module.scss';
 
 const getClassName = cssModules(STYLES);
 

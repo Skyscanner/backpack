@@ -19,7 +19,6 @@
 import type { ComponentType, ElementType } from 'react';
 import { Component } from 'react';
 
-import { cssModules, isRTL } from '../../bpk-react-utils';
 
 import {
   addMonths,
@@ -39,6 +38,8 @@ import {
 } from './utils';
 
 import STYLES from './BpkCalendarGridTransition.module.scss';
+
+import { cssModules, isRTL } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

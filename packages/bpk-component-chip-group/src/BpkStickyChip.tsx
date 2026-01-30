@@ -23,14 +23,16 @@ and it has a text fading animation effect when sliding on Mweb.
 
 import { type MutableRefObject, useEffect, useState } from 'react';
 
-import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
-import BpkSelectableChip from '../../bpk-component-chip';
-import FilterIconSm from '../../bpk-component-icon/sm/filter';
-import { cssModules } from '../../bpk-react-utils';
-
 import type { ChipItem, ChipStyleType } from './BpkMultiSelectChipGroup';
 
 import STYLES from './BpkStickyChip.module.scss';
+
+import BpkBreakpoint, { BREAKPOINTS } from '@backpack/bpk-component-breakpoint';
+import BpkSelectableChip from '@backpack/bpk-component-chip';
+import FilterIconSm from '@backpack/bpk-component-icon/sm/filter';
+import { cssModules } from '@backpack/bpk-react-utils';
+
+
 
 const getClassName = cssModules(STYLES);
 

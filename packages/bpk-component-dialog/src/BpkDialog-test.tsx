@@ -18,12 +18,13 @@
 
 import { render } from '@testing-library/react';
 
-import InfoIcon from '../../bpk-component-icon/lg/information-circle';
-import TickIcon from '../../bpk-component-icon/lg/tick';
-import TrashIcon from '../../bpk-component-icon/lg/trash';
-
 import BpkDialog from './BpkDialog';
 import { HEADER_ICON_TYPES } from './common-types';
+
+import InfoIcon from '@backpack/bpk-component-icon/lg/information-circle';
+import TickIcon from '@backpack/bpk-component-icon/lg/tick';
+import TrashIcon from '@backpack/bpk-component-icon/lg/trash';
+
 
 describe('BpkDialog', () => {
   it('should render correctly in the given target if renderTarget is supplied', () => {

@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../../bpk-mixins/tokens';
-@use '../../../bpk-mixins/buttons';
-@use '../../../bpk-mixins/typography';
+@use '@backpack/bpk-mixins/tokens';
+@use '@backpack/bpk-mixins/buttons';
+@use '@backpack/bpk-mixins/typography';
 
 .bpk-button {
   @include buttons.bpk-button;

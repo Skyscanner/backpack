@@ -20,11 +20,12 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import dataProp from './customPropTypes';
 
 import STYLES from './BpkChartDataTable.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

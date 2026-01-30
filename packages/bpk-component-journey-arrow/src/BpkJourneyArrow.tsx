@@ -16,9 +16,10 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkJourneyArrow.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

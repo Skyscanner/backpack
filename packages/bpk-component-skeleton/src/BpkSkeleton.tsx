@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
 
 import BpkBaseSkeleton from './BpkBaseSkeleton';
 import { SKELETON_TYPES, IMAGE_SKELETON_STYLE, SIZE_TYPES, BACKGROUND_STYLE } from './common-types';
@@ -24,6 +23,8 @@ import { SKELETON_TYPES, IMAGE_SKELETON_STYLE, SIZE_TYPES, BACKGROUND_STYLE } fr
 import type { ComponentProps} from './common-types';
 
 import STYLES from './BpkSkeleton.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 
 const getClassName = cssModules(STYLES);

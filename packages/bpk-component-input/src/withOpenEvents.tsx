@@ -24,7 +24,7 @@ import type {
   ComponentProps,
 } from 'react';
 
-import { wrapDisplayName } from '../../bpk-react-utils';
+import { wrapDisplayName } from '@backpack/bpk-react-utils';
 
 const KEYCODES = {
   ENTER: 'Enter',

@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-@use '../../../bpk-mixins/tokens';
-@use '../../../bpk-mixins/borders';
-@use '../../../bpk-mixins/layers';
-@use '../../../bpk-mixins/typography';
-@use '../../../bpk-mixins/utils';
+@use '@backpack/bpk-mixins/tokens';
+@use '@backpack/bpk-mixins/borders';
+@use '@backpack/bpk-mixins/layers';
+@use '@backpack/bpk-mixins/typography';
+@use '@backpack/bpk-mixins/utils';
 
 .bpk-autosuggest {
   &__input {

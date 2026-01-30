@@ -24,11 +24,12 @@ import { useCallback, useRef } from 'react';
 
 import { GoogleMap } from '@react-google-maps/api';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import { LatLongPropType, type LatLong } from './common-types';
 
 import STYLES from './BpkMap.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

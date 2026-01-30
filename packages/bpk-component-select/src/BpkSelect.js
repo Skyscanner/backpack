@@ -21,9 +21,10 @@ import PropTypes from 'prop-types';
 import type { Element } from 'react';
 import { cloneElement } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkSelect.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

@@ -49,6 +49,7 @@ module.exports = ({ config }) => {
   /* eslint-disable-next-line no-param-reassign */
   config.resolve.alias = {
     ...config.resolve.alias,
+    '@backpack': path.join(rootDir, 'packages'),
     react: path.join(rootDir, 'node_modules/react'),
     'react-dom': path.join(rootDir, 'node_modules/react-dom'),
   };
@@ -123,6 +124,20 @@ module.exports = ({ config }) => {
               ),
             )
             : '',
+          sassOptions: {
+            includePaths: [rootDir],
+            importers: [
+              {
+                findFileUrl(url) {
+                  if (url.startsWith('@backpack/')) {
+                    const resolvedPath = url.replace('@backpack/', 'packages/');
+                    return new URL(`file://${path.join(rootDir, resolvedPath)}`);
+                  }
+                  return null;
+                },
+              },
+            ],
+          },
         },
       },
     ],

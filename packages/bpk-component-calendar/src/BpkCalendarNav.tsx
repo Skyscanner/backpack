@@ -22,13 +22,6 @@ import {
   textColors,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkAriaLive from '../../bpk-component-aria-live';
-import ArrowLeftIcon from '../../bpk-component-icon/lg/arrow-left';
-import ArrowRightIcon from '../../bpk-component-icon/lg/arrow-right';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkSelect from '../../bpk-component-select';
-import { cssModules } from '../../bpk-react-utils';
-
 import {
   addMonths,
   formatIsoMonth,
@@ -40,6 +33,15 @@ import {
 } from './date-utils';
 
 import STYLES from './BpkCalendarNav.module.scss';
+
+import BpkAriaLive from '@backpack/bpk-component-aria-live';
+import ArrowLeftIcon from '@backpack/bpk-component-icon/lg/arrow-left';
+import ArrowRightIcon from '@backpack/bpk-component-icon/lg/arrow-right';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkSelect from '@backpack/bpk-component-select';
+import { cssModules } from '@backpack/bpk-react-utils';
+
+
 
 const getClassName = cssModules(STYLES);
 

@@ -18,10 +18,11 @@
 
 import { PureComponent } from 'react';
 
-import BpkInput from '../../bpk-component-input';
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkInputField.module.scss';
+
+import BpkInput from '@backpack/bpk-component-input';
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

@@ -19,9 +19,10 @@
 import type { KeyboardEvent, ReactNode } from 'react';
 import { useId, useMemo, useRef, useState } from 'react';
 
-import { cssModules, isRTL } from '../../bpk-react-utils';
-
 import STYLES from './BpkSegmentedControl.module.scss';
+
+import { cssModules, isRTL } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

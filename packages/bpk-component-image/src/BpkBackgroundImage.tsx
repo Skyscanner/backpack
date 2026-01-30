@@ -23,10 +23,11 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { BpkSpinner } from '../../bpk-component-spinner';
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkBackgroundImage.module.scss';
+
+import { BpkSpinner } from '@backpack/bpk-component-spinner';
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

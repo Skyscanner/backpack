@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 import type { ComponentType } from 'react';
 import { Component } from 'react';
 
-import { wrapDisplayName } from '../../bpk-react-utils';
+import { wrapDisplayName } from '@backpack/bpk-react-utils';
 
 const withInteractiveStarRatingState = (
   InteractiveStarRating: ComponentType<any>,

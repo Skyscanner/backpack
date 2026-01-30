@@ -18,12 +18,13 @@
 
 import { render } from '@testing-library/react';
 
-import FilterIconSm from '../../bpk-component-icon/sm/filter';
 
 import BpkIconChip from './BpkIconChip';
 import { CHIP_TYPES } from './commonTypes';
 
 import type { BpkIconChipProps } from './BpkIconChip';
+
+import FilterIconSm from '@backpack/bpk-component-icon/sm/filter';
 
 
 // Just a convenience wrapper that includes the default props so we don't

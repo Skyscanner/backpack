@@ -20,15 +20,16 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 
-import { CALENDAR_SELECTION_TYPE } from '../../bpk-component-calendar';
-import { format } from '../../bpk-component-calendar/src/date-utils';
+import BpkDatepicker from './BpkDatepicker';
+
+import { CALENDAR_SELECTION_TYPE } from '@backpack/bpk-component-calendar';
+import { format } from '@backpack/bpk-component-calendar/src/date-utils';
 import {
   weekDays,
   formatMonth,
   formatDateFull,
-} from '../../bpk-component-calendar/test-utils';
+} from '@backpack/bpk-component-calendar/test-utils';
 
-import BpkDatepicker from './BpkDatepicker';
 
 // mock breakpoint to always match
 jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () => jest.fn(() => true));

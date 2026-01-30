@@ -19,12 +19,13 @@
 import { Component } from 'react';
 import type { ComponentType } from 'react';
 
-import { wrapDisplayName } from '../../bpk-react-utils';
 
 import BpkBannerAlertExpandable from './BpkBannerAlertExpandable';
 
 import type { Props as BpkBannerAlertDismissableProps } from './BpkBannerAlertDismissable';
 import type { Props as BpkBannerAlertExpandableProps } from './BpkBannerAlertExpandable';
+
+import { wrapDisplayName } from '@backpack/bpk-react-utils';
 
 export type WithBannerAlertStateProps = {
   onHide?: () => void;

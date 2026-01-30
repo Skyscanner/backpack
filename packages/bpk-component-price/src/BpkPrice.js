@@ -20,12 +20,14 @@
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
 
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
-
 import { SIZES, ALIGNS } from './common-types';
 
 import STYLES from './BpkPrice.module.scss';
+
+import BpkText, { TEXT_STYLES } from '@backpack/bpk-component-text';
+import { cssModules } from '@backpack/bpk-react-utils';
+
+
 
 type Props = {
   price: string,

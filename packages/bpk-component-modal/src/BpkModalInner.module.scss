@@ -16,14 +16,14 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/borders';
-@use '../../bpk-mixins/breakpoints';
-@use '../../bpk-mixins/margins';
-@use '../../bpk-mixins/radii';
-@use '../../bpk-mixins/shadows';
-@use '../../bpk-mixins/typography';
-@use '../../bpk-mixins/utils';
+@use '@backpack/bpk-mixins/tokens';
+@use '@backpack/bpk-mixins/borders';
+@use '@backpack/bpk-mixins/breakpoints';
+@use '@backpack/bpk-mixins/margins';
+@use '@backpack/bpk-mixins/radii';
+@use '@backpack/bpk-mixins/shadows';
+@use '@backpack/bpk-mixins/typography';
+@use '@backpack/bpk-mixins/utils';
 
 @mixin fullscreen() {
   display: flex;

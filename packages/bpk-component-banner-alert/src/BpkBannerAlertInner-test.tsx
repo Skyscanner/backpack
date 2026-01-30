@@ -18,10 +18,11 @@
 
 import { render } from '@testing-library/react';
 
-import CurrencyIcon from '../../bpk-component-icon/sm/currency';
 
 import BpkBannerAlertInner, { CONFIGURATION } from './BpkBannerAlertInner';
 import { ALERT_TYPES } from './common-types';
+
+import CurrencyIcon from '@backpack/bpk-component-icon/sm/currency';
 
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 

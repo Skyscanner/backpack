@@ -18,11 +18,12 @@
 
 import type { ReactNode, MouseEvent, ButtonHTMLAttributes } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import themeAttributes from './themeAttributes';
 
 import STYLES from './BpkLink.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

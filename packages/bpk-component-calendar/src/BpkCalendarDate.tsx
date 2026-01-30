@@ -19,11 +19,12 @@
 import type { KeyboardEvent } from 'react';
 import { PureComponent } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import type { DateModifiers } from './custom-proptypes';
 
 import STYLES from './BpkCalendarDate.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

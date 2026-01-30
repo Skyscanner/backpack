@@ -18,9 +18,10 @@
 
 import type { FC, TextareaHTMLAttributes } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkTextarea.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

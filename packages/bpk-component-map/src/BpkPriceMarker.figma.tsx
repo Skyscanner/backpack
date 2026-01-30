@@ -17,11 +17,12 @@
  */
 import figma from '@figma/code-connect';
 
-import { withRtlSupport } from '../../bpk-component-icon';
-import AirportsIconSm from '../../bpk-component-icon/sm/airports';
-
 import BpkPriceMarker from './BpkPriceMarker';
 import { MARKER_STATUSES } from './BpkPriceMarkerButton';
+
+import { withRtlSupport } from '@backpack/bpk-component-icon';
+import AirportsIconSm from '@backpack/bpk-component-icon/sm/airports';
+
 
 const Icon = withRtlSupport(AirportsIconSm);
 

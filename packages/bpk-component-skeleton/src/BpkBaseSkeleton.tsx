@@ -16,11 +16,12 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../bpk-react-utils';
 
 import type { CUSTOM_SIZE_TYPE } from './common-types';
 
 import STYLES from './BpkBaseSkeleton.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

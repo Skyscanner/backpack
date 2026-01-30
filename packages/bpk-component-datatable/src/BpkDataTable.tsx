@@ -22,13 +22,14 @@ import { useMemo, useState } from 'react';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { useTable, useSortBy } from 'react-table';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import BpkDataTableHeader from './BpkDataTableHeader';
 import { type BpkDataTableProps, SORT_DIRECTION_TYPES } from './common-types';
 import { createColumnsSchema } from './utils';
 
 import STYLES from './BpkDataTable.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

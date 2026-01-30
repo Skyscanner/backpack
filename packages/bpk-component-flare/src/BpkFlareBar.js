@@ -18,11 +18,12 @@
 
 import PropTypes from 'prop-types';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import Pointer from './__generated__/js/pointer';
 
 import STYLES from './bpk-flare-bar.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

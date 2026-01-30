@@ -17,10 +17,11 @@
  */
 import figma from "@figma/code-connect"
 
-import DealsIconSm from '../../bpk-component-icon/sm/deals';
 
 import BpkSelectableChip from './BpkSelectableChip';
 import { CHIP_TYPES } from './commonTypes';
+
+import DealsIconSm from '@backpack/bpk-component-icon/sm/deals';
 
 figma.connect(
   BpkSelectableChip,

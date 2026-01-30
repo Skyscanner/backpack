@@ -18,8 +18,8 @@
 
 import type { ComponentType } from 'react';
 
-import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
-import { wrapDisplayName } from '../../bpk-react-utils';
+import BpkVisuallyHidden from '@backpack/bpk-component-visually-hidden';
+import { wrapDisplayName } from '@backpack/bpk-react-utils';
 
 export default function withDescription(
   Component: ComponentType<any> | string,

@@ -42,15 +42,17 @@ import { useCombobox } from 'downshift';
 
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkInput from '../../../bpk-component-input';
-import { cssModules } from '../../../bpk-react-utils';
-
 import type {
   UseComboboxState,
   UseComboboxStateChangeOptions,
 } from 'downshift';
 
 import STYLES from './BpkAutosuggest.module.scss';
+
+import BpkInput from '@backpack/bpk-component-input';
+import { cssModules } from '@backpack/bpk-react-utils';
+
+
 
 const getClassName = cssModules(STYLES);
 

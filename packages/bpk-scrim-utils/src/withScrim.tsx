@@ -24,12 +24,6 @@ import focusScope from 'a11y-focus-scope';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import focusStore from 'a11y-focus-store';
 
-import {
-  cssModules,
-  isDeviceIpad,
-  isDeviceIphone,
-  wrapDisplayName,
-} from '../../bpk-react-utils';
 
 import BpkScrim from './BpkScrim';
 import {
@@ -42,6 +36,13 @@ import {
 } from './scroll-utils';
 
 import STYLES from './bpk-scrim-content.module.scss';
+
+import {
+  cssModules,
+  isDeviceIpad,
+  isDeviceIphone,
+  wrapDisplayName,
+} from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

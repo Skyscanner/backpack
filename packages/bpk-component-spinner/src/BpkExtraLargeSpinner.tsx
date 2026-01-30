@@ -17,7 +17,6 @@
  */
 
 
-import { cssModules } from '../../bpk-react-utils';
 
 import SPINNER_TYPES from './spinnerTypes';
 import XlSpinner from './spinners/xl';
@@ -25,6 +24,8 @@ import XlSpinner from './spinners/xl';
 import type { SpinnerTypes } from './spinnerTypes';
 
 import STYLES from './BpkSpinner.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

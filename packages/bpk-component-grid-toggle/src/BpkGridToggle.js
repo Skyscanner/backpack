@@ -19,10 +19,11 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import BpkLink from '../../bpk-component-link';
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkGridToggle.module.scss';
+
+import BpkLink from '@backpack/bpk-component-link';
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

@@ -18,11 +18,12 @@
 
 import { render, screen } from '@testing-library/react';
 
-import { withButtonAlignment } from '../../bpk-component-icon';
-import BaggageIcon from '../../bpk-component-icon/sm/baggage';
-import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
-
 import BpkLoadingButton, { ICON_POSITION } from './BpkLoadingButton';
+
+import { withButtonAlignment } from '@backpack/bpk-component-icon';
+import BaggageIcon from '@backpack/bpk-component-icon/sm/baggage';
+import BpkVisuallyHidden from '@backpack/bpk-component-visually-hidden';
+
 
 const error = jest.spyOn(console, "error").mockImplementation(() => {});
 

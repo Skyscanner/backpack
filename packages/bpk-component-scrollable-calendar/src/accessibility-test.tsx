@@ -19,10 +19,11 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import { DateUtils } from '../../bpk-component-calendar';
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
 import BpkScrollableCalendar from './BpkScrollableCalendar';
+
+import { DateUtils } from '@backpack/bpk-component-calendar';
 
 describe('BpkScrollableCalendar accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {

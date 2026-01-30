@@ -21,7 +21,7 @@ import { Component } from 'react';
 
 import throttle from 'lodash/throttle';
 
-import { wrapDisplayName } from '../../bpk-react-utils';
+import { wrapDisplayName } from '@backpack/bpk-react-utils';
 
 type WithLazyLoadingProps = {
   className?: string;

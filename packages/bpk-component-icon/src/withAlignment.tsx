@@ -18,7 +18,7 @@
 
 import type { ComponentType } from 'react';
 
-import { wrapDisplayName } from '../../bpk-react-utils';
+import { wrapDisplayName } from '@backpack/bpk-react-utils';
 
 export default function withAlignment(
   Component: ComponentType | string,

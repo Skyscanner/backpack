@@ -18,10 +18,11 @@
 
 import type { SyntheticEvent, FunctionComponent } from 'react';
 
-import CloseIcon from '../../bpk-component-icon/sm/close';
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkCloseButton.module.scss';
+
+import CloseIcon from '@backpack/bpk-component-icon/sm/close';
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

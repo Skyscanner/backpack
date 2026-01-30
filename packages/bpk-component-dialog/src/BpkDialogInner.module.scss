@@ -16,9 +16,9 @@
 * limitations under the License.
 */
 
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/radii';
-@use '../../bpk-mixins/shadows';
+@use '@backpack/bpk-mixins/tokens';
+@use '@backpack/bpk-mixins/radii';
+@use '@backpack/bpk-mixins/shadows';
 
 .bpk-dialog-inner {
   z-index: tokens.$bpk-zindex-modal;

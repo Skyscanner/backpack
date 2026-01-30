@@ -18,14 +18,16 @@
 
 import type { KeyboardEvent } from 'react';
 
-import { withRtlSupport } from '../../bpk-component-icon';
-import BpkSmallArrowDownIcon from '../../bpk-component-icon/sm/arrow-down';
-import BpkSmallArrowUpIcon from '../../bpk-component-icon/sm/arrow-up';
-import { cssModules } from '../../bpk-react-utils';
-
 import { SORT_DIRECTION_TYPES } from './common-types';
 
 import STYLES from './BpkDataTableHeader.module.scss';
+
+import { withRtlSupport } from '@backpack/bpk-component-icon';
+import BpkSmallArrowDownIcon from '@backpack/bpk-component-icon/sm/arrow-down';
+import BpkSmallArrowUpIcon from '@backpack/bpk-component-icon/sm/arrow-up';
+import { cssModules } from '@backpack/bpk-react-utils';
+
+
 
 const DownIcon = withRtlSupport(BpkSmallArrowDownIcon);
 const UpIcon = withRtlSupport(BpkSmallArrowUpIcon);

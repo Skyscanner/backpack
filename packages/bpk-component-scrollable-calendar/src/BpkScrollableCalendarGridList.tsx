@@ -23,18 +23,19 @@ import { startOfDay, startOfMonth } from 'date-fns';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { VariableSizeList as List } from 'react-window';
 
-import {
-  CALENDAR_SELECTION_TYPE,
-  DateUtils,
-} from '../../bpk-component-calendar';
-import { cssModules } from '../../bpk-react-utils';
 
 import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
 import { getMonthsArray, getMonthItemHeights } from './utils';
 
-import type { BpkCalendarGridProps, SelectionConfiguration } from '../../bpk-component-calendar';
+import type { BpkCalendarGridProps, SelectionConfiguration } from '@backpack/bpk-component-calendar';
 
 import STYLES from './BpkScrollableCalendarGridList.module.scss';
+
+import {
+  CALENDAR_SELECTION_TYPE,
+  DateUtils,
+} from '@backpack/bpk-component-calendar';
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

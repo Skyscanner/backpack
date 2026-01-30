@@ -20,7 +20,17 @@
     "jsx": "react-jsx",
     "allowJs": false,
     "declaration": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@backpack/*": ["packages/*"],
+      "@backpack/bpk-mixins": ["packages/bpk-mixins"],
+      "@backpack/bpk-mixins/*": ["packages/bpk-mixins/*"],
+      "@backpack/bpk-react-utils": ["packages/bpk-react-utils"],
+      "@backpack/bpk-react-utils/*": ["packages/bpk-react-utils/*"],
+      "@backpack/bpk-tokens": ["packages/bpk-tokens"],
+      "@backpack/bpk-tokens/*": ["packages/bpk-tokens/*"]
+    }
   },
   "include": [
     "packages",

@@ -18,14 +18,15 @@
 
 import type { ReactNode } from 'react';
 
-import { Portal, cssModules, isDeviceIphone } from '../../bpk-react-utils';
-import { withScrim } from '../../bpk-scrim-utils';
 
 import BpkModalInner, { MODAL_STYLING } from './BpkModalInner';
 
 import type { Props as ModalDialogProps, ModalStyle } from './BpkModalInner';
 
 import STYLES from './BpkModal.module.scss';
+
+import { Portal, cssModules, isDeviceIphone } from '@backpack/bpk-react-utils';
+import { withScrim } from '@backpack/bpk-scrim-utils';
 
 const getClassName = cssModules(STYLES);
 const ScrimBpkModalInner = withScrim(BpkModalInner);

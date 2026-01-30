@@ -23,11 +23,12 @@ import { isWeekend } from 'date-fns/isWeekend';
 
 import { colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { DateUtils } from '../../bpk-component-calendar';
 import { formatDateFull, formatMonth } from '../test-utils';
 
 import BpkCalendarScrollDate from './BpkScrollableCalendarDate';
 import BpkScrollableCalendarGridList from './BpkScrollableCalendarGridList';
+
+import { DateUtils } from '@backpack/bpk-component-calendar';
 
 const testDate = new Date(2010, 1, 15);
 

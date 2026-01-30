@@ -18,16 +18,18 @@
 
 import { type MutableRefObject, useEffect, useState } from 'react';
 
-import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
-import { CHIP_TYPES } from '../../bpk-component-chip';
-import { withButtonAlignment } from '../../bpk-component-icon/index';
-import ArrowLeft from '../../bpk-component-icon/sm/long-arrow-left';
-import ArrowRight from '../../bpk-component-icon/sm/long-arrow-right';
-import { cssModules, isRTL } from '../../bpk-react-utils/index';
-
 import type { ChipStyleType } from './BpkMultiSelectChipGroup';
 
 import STYLES from './Nudger.module.scss';
+
+import BpkButton, { BUTTON_TYPES } from '@backpack/bpk-component-button';
+import { CHIP_TYPES } from '@backpack/bpk-component-chip';
+import { withButtonAlignment } from '@backpack/bpk-component-icon/index';
+import ArrowLeft from '@backpack/bpk-component-icon/sm/long-arrow-left';
+import ArrowRight from '@backpack/bpk-component-icon/sm/long-arrow-right';
+import { cssModules, isRTL } from '@backpack/bpk-react-utils/index';
+
+
 
 const getClassName = cssModules(STYLES);
 

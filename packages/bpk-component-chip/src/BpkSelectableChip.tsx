@@ -18,14 +18,15 @@
 
 import type { ReactNode } from 'react';
 
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
 
 import { CHIP_TYPES } from './commonTypes';
 
 import type { CommonProps } from './commonTypes';
 
 import STYLES from './BpkSelectableChip.module.scss';
+
+import BpkText, { TEXT_STYLES } from '@backpack/bpk-component-text';
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

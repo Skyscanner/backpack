@@ -21,9 +21,10 @@
 import PropTypes from 'prop-types';
 import type { Node } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkTable.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

@@ -23,8 +23,6 @@ accessory view of a close icon.
 */
 import { chipColors } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import CloseCircleIconSm from '../../bpk-component-icon/sm/close-circle';
-import { cssModules } from '../../bpk-react-utils';
 
 import BpkSelectableChip from './BpkSelectableChip';
 import { CHIP_TYPES } from './commonTypes';
@@ -32,6 +30,9 @@ import { CHIP_TYPES } from './commonTypes';
 import type { CommonProps as Props } from './commonTypes';
 
 import STYLES from './BpkSelectableChip.module.scss';
+
+import CloseCircleIconSm from '@backpack/bpk-component-icon/sm/close-circle';
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

@@ -18,15 +18,16 @@
 import type { SyntheticEvent, ReactNode } from 'react';
 import { useCallback, useState } from 'react';
 
-import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkCloseButton from '../../bpk-component-close-button';
-import BpkLink from '../../bpk-component-link';
-import BpkNavigationBar from '../../bpk-component-navigation-bar';
-import { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
-import { BpkDialogWrapper, cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkBottomSheet.module.scss';
+
+import BpkBreakpoint, { BREAKPOINTS } from '@backpack/bpk-component-breakpoint';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkCloseButton from '@backpack/bpk-component-close-button';
+import BpkLink from '@backpack/bpk-component-link';
+import BpkNavigationBar from '@backpack/bpk-component-navigation-bar';
+import { TEXT_STYLES } from '@backpack/bpk-component-text/src/BpkText';
+import { BpkDialogWrapper, cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

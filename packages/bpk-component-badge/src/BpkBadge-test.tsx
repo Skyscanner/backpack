@@ -18,11 +18,12 @@
 
 import { render } from '@testing-library/react';
 
-import BpkSmallFlightIcon from '../../bpk-component-icon/sm/flight';
 
 import BpkBadge, { BADGE_TYPES } from './BpkBadge';
 
 import type { BadgeType } from './BpkBadge';
+
+import BpkSmallFlightIcon from '@backpack/bpk-component-icon/sm/flight';
 
 describe('BpkBadge', () => {
   it('should render correctly', () => {

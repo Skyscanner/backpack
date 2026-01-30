@@ -18,12 +18,13 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import BpkCard from './BpkCard';
 import { CardContext } from './CardContext';
 
 import STYLES from './BpkDividedCard.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

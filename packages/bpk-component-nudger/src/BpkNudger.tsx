@@ -18,17 +18,19 @@
 
 import { useRef } from 'react';
 
-import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
-import { withButtonAlignment } from '../../bpk-component-icon';
-import MinusIcon from '../../bpk-component-icon/sm/minus';
-import PlusIcon from '../../bpk-component-icon/sm/plus';
-import BpkLabel from '../../bpk-component-label';
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules, setNativeValue } from '../../bpk-react-utils';
-
 import { type CommonProps } from './common-types';
 
 import STYLES from './BpkNudger.module.scss';
+
+import BpkButton, { BUTTON_TYPES } from '@backpack/bpk-component-button';
+import { withButtonAlignment } from '@backpack/bpk-component-icon';
+import MinusIcon from '@backpack/bpk-component-icon/sm/minus';
+import PlusIcon from '@backpack/bpk-component-icon/sm/plus';
+import BpkLabel from '@backpack/bpk-component-label';
+import BpkText, { TEXT_STYLES } from '@backpack/bpk-component-text';
+import { cssModules, setNativeValue } from '@backpack/bpk-react-utils';
+
+
 
 const getClassName = cssModules(STYLES);
 const compareValues = (a: number, b: number): number => a - b;

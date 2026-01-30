@@ -16,9 +16,10 @@
  * limitations under the License.
  */
 
-import BpkLink, { type BpkLinkProps } from '../../bpk-component-link';
-
 import { BAR_STYLES, type BarStyle } from './BpkNavigationBar';
+
+import BpkLink, { type BpkLinkProps } from '@backpack/bpk-component-link';
+
 
 export interface Props extends Omit<BpkLinkProps<'button'>, 'as'> {
   /** Additional CSS class(es) to apply to the wrapper span. */

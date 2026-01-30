@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import { secondaryThemeAttributes as themeAttributes } from '../../bpk-component-button';
+import { secondaryThemeAttributes as themeAttributes } from '@backpack/bpk-component-button';
 
 export default themeAttributes;

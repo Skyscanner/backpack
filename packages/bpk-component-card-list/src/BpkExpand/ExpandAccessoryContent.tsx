@@ -16,15 +16,16 @@
  * limitations under the License.
  */
 
-import BpkButton, { BUTTON_TYPES } from '../../../bpk-component-button';
+import type { ExpandProps } from '../common-types';
+
+import BpkButton, { BUTTON_TYPES } from '@backpack/bpk-component-button';
 import {
   withButtonAlignment,
   withRtlSupport,
-} from '../../../bpk-component-icon';
-import ChevronDown from '../../../bpk-component-icon/sm/chevron-down';
-import ChevronUp from '../../../bpk-component-icon/sm/chevron-up';
+} from '@backpack/bpk-component-icon';
+import ChevronDown from '@backpack/bpk-component-icon/sm/chevron-down';
+import ChevronUp from '@backpack/bpk-component-icon/sm/chevron-up';
 
-import type { ExpandProps } from '../common-types';
 
 const AlignedChevronDownIcon = withButtonAlignment(withRtlSupport(ChevronDown));
 const AlignedChevronUpIcon = withButtonAlignment(withRtlSupport(ChevronUp));

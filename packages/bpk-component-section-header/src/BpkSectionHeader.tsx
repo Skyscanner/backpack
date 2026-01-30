@@ -18,10 +18,11 @@
 
 import type { ReactNode } from 'react';
 
-import BpkText from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkSectionHeader.module.scss';
+
+import BpkText from '@backpack/bpk-component-text';
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/panels';
+@use '@backpack/bpk-mixins/panels';
 
 .bpk-panel {
   @include panels.bpk-panel;

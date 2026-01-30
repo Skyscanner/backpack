@@ -21,11 +21,12 @@ import PropTypes from 'prop-types';
 import { Component } from 'react';
 import type { Node } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import { HORIZONTAL_NAV_TYPES } from './BpkHorizontalNav';
 
 import STYLES from './BpkHorizontalNavItem.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

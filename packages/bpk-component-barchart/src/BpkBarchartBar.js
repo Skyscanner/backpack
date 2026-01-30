@@ -22,11 +22,12 @@ import PropTypes from 'prop-types';
 
 import { borderRadiusXs } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import { remToPx } from './utils';
 
 import STYLES from './BpkBarchartBar.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

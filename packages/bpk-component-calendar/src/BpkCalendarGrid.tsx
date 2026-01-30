@@ -19,7 +19,6 @@
 import type { ElementType } from 'react';
 import { Component } from 'react';
 
-import { cssModules, isDeviceIos } from '../../bpk-react-utils';
 
 import { addCalendarGridTransition } from './BpkCalendarGridTransition';
 import BpkCalendarWeek from './BpkCalendarWeek';
@@ -35,6 +34,8 @@ import {
 import type { DateModifiers, SelectionConfiguration } from './custom-proptypes';
 
 import STYLES from './BpkCalendarGrid.module.scss';
+
+import { cssModules, isDeviceIos } from '@backpack/bpk-react-utils';
 
 // This should be imported after `./BpkCalendarGrid.module.scss`.
 // Because of how css specificity works the class `bpk-calendar-grid-transition__grid` needs to be defined

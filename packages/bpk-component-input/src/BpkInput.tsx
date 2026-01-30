@@ -18,15 +18,18 @@
 
 import { Component } from 'react';
 
-import { withButtonAlignment } from '../../bpk-component-icon';
-import ClearIcon from '../../bpk-component-icon/sm/close-circle';
-import { cssModules } from '../../bpk-react-utils';
-
 import { CLEAR_BUTTON_MODES, defaultProps } from './common-types';
 
 import type { Props } from './common-types';
 
 import STYLES from './BpkInput.module.scss';
+
+import { withButtonAlignment } from '@backpack/bpk-component-icon';
+import ClearIcon from '@backpack/bpk-component-icon/sm/close-circle';
+import { cssModules } from '@backpack/bpk-react-utils';
+
+
+
 
 type State = {
   persistClearButton: boolean;

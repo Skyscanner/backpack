@@ -21,9 +21,10 @@ import type { MutableRefObject } from 'react';
 import { render, screen , waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { CHIP_TYPES } from '../../bpk-component-chip';
-
 import BpkStickyChip from './BpkStickyChip';
+
+import { CHIP_TYPES } from '@backpack/bpk-component-chip';
+
 
 let isDesktopMock = true;
 const getIsDesktopMock = () => isDesktopMock;

@@ -17,7 +17,7 @@
  */
 import type { ComponentType } from 'react';
 
-import { wrapDisplayName } from '../../bpk-react-utils';
+import { wrapDisplayName } from '@backpack/bpk-react-utils';
 
 export default (displayName: string, classNamesToAdd: string[] = []) =>
   (ComposedComponent: ComponentType<any> | string) => {

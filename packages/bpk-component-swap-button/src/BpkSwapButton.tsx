@@ -18,10 +18,11 @@
 
 import { useState } from 'react';
 
-import SwapVertical from '../../bpk-component-icon/sm/swap--vertical';
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkSwapButton.module.scss';
+
+import SwapVertical from '@backpack/bpk-component-icon/sm/swap--vertical';
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

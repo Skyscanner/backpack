@@ -19,7 +19,6 @@
 import type { MutableRefObject, ReactNode} from 'react';
 import { memo, useState } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
 
 import BpkCarouselImage from './BpkCarouselImage';
 import { useIntersectionObserver } from './utils';
@@ -27,6 +26,8 @@ import { useIntersectionObserver } from './utils';
 import type { OnImageChangedHandler } from './types';
 
 import STYLES from './BpkCarouselContainer.module.scss';
+
+import { cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

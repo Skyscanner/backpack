@@ -20,21 +20,22 @@
 
 import PropTypes from 'prop-types';
 
-import { withRtlSupport } from '../../bpk-component-icon';
-import LargeIcon from '../../bpk-component-icon/lg/star';
-import HalfLargeIcon from '../../bpk-component-icon/lg/star-half';
-import OutlineLargeIcon from '../../bpk-component-icon/lg/star-outline';
-import SmallIcon from '../../bpk-component-icon/sm/star';
-import HalfSmallIcon from '../../bpk-component-icon/sm/star-half';
-import OutlineSmallIcon from '../../bpk-component-icon/sm/star-outline';
+import STYLES from './BpkStar.module.scss';
+
+import { withRtlSupport } from '@backpack/bpk-component-icon';
+import LargeIcon from '@backpack/bpk-component-icon/lg/star';
+import HalfLargeIcon from '@backpack/bpk-component-icon/lg/star-half';
+import OutlineLargeIcon from '@backpack/bpk-component-icon/lg/star-outline';
+import SmallIcon from '@backpack/bpk-component-icon/sm/star';
+import HalfSmallIcon from '@backpack/bpk-component-icon/sm/star-half';
+import OutlineSmallIcon from '@backpack/bpk-component-icon/sm/star-outline';
 // Notice: The naming of the icons and props are extra large, but the
 // actual size is xxxl, 3rem. This is designed on purpose.
-import ExtraLargeIcon from '../../bpk-component-icon/xxxl/star';
-import HalfExtraLargeIcon from '../../bpk-component-icon/xxxl/star-half';
-import OutlineExtraLargeIcon from '../../bpk-component-icon/xxxl/star-outline';
-import { cssModules } from '../../bpk-react-utils';
+import ExtraLargeIcon from '@backpack/bpk-component-icon/xxxl/star';
+import HalfExtraLargeIcon from '@backpack/bpk-component-icon/xxxl/star-half';
+import OutlineExtraLargeIcon from '@backpack/bpk-component-icon/xxxl/star-outline';
+import { cssModules } from '@backpack/bpk-react-utils';
 
-import STYLES from './BpkStar.module.scss';
 
 const getClassName = cssModules(STYLES);
 

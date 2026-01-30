@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/layers';
-@use '../../bpk-mixins/radii';
-@use '../../bpk-mixins/shadows';
+@use '@backpack/bpk-mixins/tokens';
+@use '@backpack/bpk-mixins/layers';
+@use '@backpack/bpk-mixins/radii';
+@use '@backpack/bpk-mixins/shadows';
 
 $arrow-size: tokens.bpk-spacing-md();
 $dark-background-color: tokens.$bpk-surface-contrast-day;

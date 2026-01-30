@@ -41,13 +41,14 @@ import {
 
 import { surfaceHighlightDay, onePixelRem } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
 import { ARROW_ID, TOOLTIP_TYPES } from './constants';
 
 import type { Placement } from '@floating-ui/react';
 
 import STYLES from './BpkTooltip.module.scss';
+
+import { TransitionInitialMount, cssModules } from '@backpack/bpk-react-utils';
 
 const getClassName = cssModules(STYLES);
 

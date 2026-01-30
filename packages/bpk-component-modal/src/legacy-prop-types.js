@@ -18,9 +18,10 @@
 
 import PropTypes from 'prop-types';
 
-import { isDeviceIphone } from '../../bpk-react-utils';
-
 import { titlePropType, onClosePropType } from './customPropTypes';
+
+import { isDeviceIphone } from '@backpack/bpk-react-utils';
+
 
 const modalDialogPropTypes = {
   id: PropTypes.string.isRequired,

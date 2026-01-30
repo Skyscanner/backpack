@@ -19,10 +19,11 @@
 
 import { render, screen } from '@testing-library/react';
 
-import NewWindowIcon from '../../bpk-component-icon/sm/new-window';
 
 import BpkPrice from './BpkPrice';
 import { ALIGNS, SIZES } from './common-types';
+
+import NewWindowIcon from '@backpack/bpk-component-icon/sm/new-window';
 
 const price = '£1,830';
 const previousPrice = '£2,000';

@@ -18,9 +18,10 @@
 
 import { render } from '@testing-library/react';
 
-import CustomCloseIcon from '../../bpk-component-icon/sm/close-circle';
-
 import BpkCloseButton from './BpkCloseButton';
+
+import CustomCloseIcon from '@backpack/bpk-component-icon/sm/close-circle';
+
 
 const error = jest.spyOn(console, "error").mockImplementation(() => {});
 

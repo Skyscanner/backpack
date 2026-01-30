@@ -16,10 +16,11 @@
  * limitations under the License.
  */
 
-import BpkText from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkContentCard.module.scss';
+
+import BpkText from '@backpack/bpk-component-text';
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

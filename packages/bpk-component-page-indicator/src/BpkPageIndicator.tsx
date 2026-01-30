@@ -18,12 +18,14 @@
 
 import type { CSSProperties, MouseEvent } from 'react';
 
-import { BUTTON_TYPES } from '../../bpk-component-button';
-import { cssModules } from '../../bpk-react-utils';
-
 import NavButton, { DIRECTIONS } from './NavButton';
 
 import STYLES from './BpkPageIndicator.module.scss';
+
+import { BUTTON_TYPES } from '@backpack/bpk-component-button';
+import { cssModules } from '@backpack/bpk-react-utils';
+
+
 
 const getClassName = cssModules(STYLES);
 

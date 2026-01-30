@@ -20,12 +20,13 @@
 
 import PropTypes from 'prop-types';
 
-import BpkInput, { INPUT_TYPES } from '../../bpk-component-input';
-import BpkLabel from '../../bpk-component-label';
-import BpkSelect from '../../bpk-component-select';
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkPhoneInput.module.scss';
+
+import BpkInput, { INPUT_TYPES } from '@backpack/bpk-component-input';
+import BpkLabel from '@backpack/bpk-component-label';
+import BpkSelect from '@backpack/bpk-component-select';
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

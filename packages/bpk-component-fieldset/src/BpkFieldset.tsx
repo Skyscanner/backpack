@@ -20,11 +20,12 @@ import { cloneElement } from 'react';
 import type { ReactElement } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkFormValidation from '../../bpk-component-form-validation';
-import BpkLabel from '../../bpk-component-label';
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkFieldset.module.scss';
+
+import BpkFormValidation from '@backpack/bpk-component-form-validation';
+import BpkLabel from '@backpack/bpk-component-label';
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

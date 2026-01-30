@@ -19,9 +19,10 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkInput, { INPUT_TYPES } from '../../bpk-component-input';
-
 import BpkFieldset from './BpkFieldset';
+
+import BpkInput, { INPUT_TYPES } from '@backpack/bpk-component-input';
+
 
 describe('BpkFieldset accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {

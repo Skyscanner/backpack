@@ -18,12 +18,13 @@
 
 import { render } from '@testing-library/react';
 
-import BpkCheckbox from '../../bpk-component-checkbox';
-import BpkInput, { INPUT_TYPES } from '../../bpk-component-input';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkSelect from '../../bpk-component-select';
-
 import BpkFieldset from './BpkFieldset';
+
+import BpkCheckbox from '@backpack/bpk-component-checkbox';
+import BpkInput, { INPUT_TYPES } from '@backpack/bpk-component-input';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkSelect from '@backpack/bpk-component-select';
+
 
 describe('BpkFieldset', () => {
   it('should render correctly with input component', () => {

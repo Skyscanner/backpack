@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/breakpoints';
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/typography';
+@use '@backpack/bpk-mixins/breakpoints';
+@use '@backpack/bpk-mixins/tokens';
+@use '@backpack/bpk-mixins/typography';
 
 .bpk-snippet {
   display: flex;

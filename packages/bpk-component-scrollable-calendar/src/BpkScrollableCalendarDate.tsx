@@ -16,9 +16,10 @@
  * limitations under the License.
  */
 
-import { BpkCalendarDate } from '../../bpk-component-calendar';
+import type { BpkCalendarDateProps } from '@backpack/bpk-component-calendar';
 
-import type { BpkCalendarDateProps } from '../../bpk-component-calendar';
+import { BpkCalendarDate } from '@backpack/bpk-component-calendar';
+
 
 type Props = Partial<BpkCalendarDateProps> & {
   date: Date;

@@ -19,9 +19,10 @@
 import { Component, Children, cloneElement } from 'react';
 import type { ReactNode, ReactElement, ComponentType } from 'react';
 
-import { wrapDisplayName } from '../../bpk-react-utils';
-
 import type { BpkAccordionProps } from './BpkAccordion';
+
+import { wrapDisplayName } from '@backpack/bpk-react-utils';
+
 
 const getInitiallyExpanded = (children: ReactNode) => {
   const accordionItems = Children.toArray(children) as ReactElement[];

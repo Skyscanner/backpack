@@ -21,12 +21,13 @@ import { useEffect, useState } from 'react';
 
 import { CSSTransition } from 'react-transition-group';
 
-import BpkAriaLive from '../../bpk-component-aria-live';
-import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
-
 import STYLES from './BpkFloatingNotification.module.scss';
+
+import BpkAriaLive from '@backpack/bpk-component-aria-live';
+import BpkButton, { BUTTON_TYPES } from '@backpack/bpk-component-button';
+import BpkText, { TEXT_STYLES } from '@backpack/bpk-component-text';
+import { cssModules } from '@backpack/bpk-react-utils';
+
 
 const getClassName = cssModules(STYLES);
 

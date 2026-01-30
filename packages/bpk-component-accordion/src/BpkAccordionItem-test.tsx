@@ -18,10 +18,11 @@
 
 import { render } from '@testing-library/react';
 
-import StopsIcon from '../../bpk-component-icon/sm/stops';
 
 import { BpkAccordionContext } from './BpkAccordion';
 import BpkAccordionItem from './BpkAccordionItem';
+
+import StopsIcon from '@backpack/bpk-component-icon/sm/stops';
 
 describe('BpkAccordionItem', () => {
   it('should render correctly', () => {

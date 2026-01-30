@@ -19,9 +19,10 @@
 import type { MouseEvent } from 'react';
 import { Component } from 'react';
 
-import BpkLink from '../../bpk-component-link';
-
 import { getHtmlElement, DIRECTIONS, DIRECTION_CHANGE_EVENT } from './utils';
+
+import BpkLink from '@backpack/bpk-component-link';
+
 
 const getDirection = () => {
   const htmlElement = getHtmlElement();

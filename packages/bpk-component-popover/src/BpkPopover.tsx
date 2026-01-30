@@ -44,16 +44,19 @@ import {
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkCloseButton from '../../bpk-component-close-button';
-import BpkLink from '../../bpk-component-link';
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
-
 import { ARROW_ID } from './constants';
 
 import type { Placement } from '@floating-ui/react';
 
 import STYLES from './BpkPopover.module.scss';
+
+import BpkCloseButton from '@backpack/bpk-component-close-button';
+import BpkLink from '@backpack/bpk-component-link';
+import BpkText, { TEXT_STYLES } from '@backpack/bpk-component-text';
+import { TransitionInitialMount, cssModules } from '@backpack/bpk-react-utils';
+
+
+
 
 const getClassName = cssModules(STYLES);
 

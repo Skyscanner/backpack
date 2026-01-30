@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
-import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
-import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
-import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
+import BpkButton, { BUTTON_TYPES } from '@backpack/bpk-component-button';
+import { withButtonAlignment, withRtlSupport } from '@backpack/bpk-component-icon';
+import LeftArrowIcon from '@backpack/bpk-component-icon/lg/chevron-left';
+import RightArrowIcon from '@backpack/bpk-component-icon/lg/chevron-right';
 
 export const DIRECTIONS = {
   PREV: 'PREV',

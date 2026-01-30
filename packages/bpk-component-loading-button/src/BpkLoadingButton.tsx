@@ -19,20 +19,22 @@
 import PropTypes from 'prop-types';
 import type { ReactElement, ReactNode } from 'react';
 
-import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../bpk-component-button';
+import type { Props as ButtonProps } from '@backpack/bpk-component-button';
+
+import STYLES from './BpkLoadingButton.module.scss';
+
+import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '@backpack/bpk-component-button';
 import {
   withButtonAlignment,
   withLargeButtonAlignment,
   withRtlSupport,
-} from '../../bpk-component-icon';
-import ArrowIconLg from '../../bpk-component-icon/lg/long-arrow-right';
-import ArrowIconSm from '../../bpk-component-icon/sm/long-arrow-right';
-import { BpkSpinner, BpkLargeSpinner } from '../../bpk-component-spinner';
-import { cssModules } from '../../bpk-react-utils';
+} from '@backpack/bpk-component-icon';
+import ArrowIconLg from '@backpack/bpk-component-icon/lg/long-arrow-right';
+import ArrowIconSm from '@backpack/bpk-component-icon/sm/long-arrow-right';
+import { BpkSpinner, BpkLargeSpinner } from '@backpack/bpk-component-spinner';
+import { cssModules } from '@backpack/bpk-react-utils';
 
-import type { Props as ButtonProps } from '../../bpk-component-button';
 
-import STYLES from './BpkLoadingButton.module.scss';
 
 const getClassName = cssModules(STYLES);
 
