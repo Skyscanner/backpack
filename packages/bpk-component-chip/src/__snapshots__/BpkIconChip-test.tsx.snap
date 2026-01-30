@@ -27,6 +27,7 @@ exports[`BpkIconChip should render correctly 1`] = `
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -59,6 +60,7 @@ exports[`BpkIconChip should render correctly with a "className" attribute 1`] = 
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -91,6 +93,7 @@ exports[`BpkIconChip should render correctly with type="default" 1`] = `
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -124,6 +127,7 @@ exports[`BpkIconChip should render correctly with type="default" and disabled 1`
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -156,6 +160,7 @@ exports[`BpkIconChip should render correctly with type="default" and selected 1`
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -189,6 +194,7 @@ exports[`BpkIconChip should render correctly with type="default", selected and d
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -221,6 +227,7 @@ exports[`BpkIconChip should render correctly with type="on-dark" 1`] = `
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -254,6 +261,7 @@ exports[`BpkIconChip should render correctly with type="on-dark" and disabled 1`
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -286,6 +294,7 @@ exports[`BpkIconChip should render correctly with type="on-dark" and selected 1`
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -319,6 +328,7 @@ exports[`BpkIconChip should render correctly with type="on-dark", selected and d
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -351,6 +361,7 @@ exports[`BpkIconChip should render correctly with type="on-image" 1`] = `
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -384,6 +395,7 @@ exports[`BpkIconChip should render correctly with type="on-image" and disabled 1
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -416,6 +428,7 @@ exports[`BpkIconChip should render correctly with type="on-image" and selected 1
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -449,6 +462,7 @@ exports[`BpkIconChip should render correctly with type="on-image", selected and 
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>

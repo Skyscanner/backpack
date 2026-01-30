@@ -93,6 +93,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                 >
                   <h2
                     class="bpk-text bpk-text--heading-4"
+                    data-backpack-ds-component="Text"
                   >
                     February 2010
                   </h2>
@@ -686,6 +687,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                 >
                   <h2
                     class="bpk-text bpk-text--heading-4"
+                    data-backpack-ds-component="Text"
                   >
                     March 2010
                   </h2>
@@ -1452,6 +1454,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                 >
                   <h2
                     class="bpk-text bpk-text--heading-4"
+                    data-backpack-ds-component="Text"
                   >
                     February 2010
                   </h2>
@@ -2045,6 +2048,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                 >
                   <h2
                     class="bpk-text bpk-text--heading-4"
+                    data-backpack-ds-component="Text"
                   >
                     March 2010
                   </h2>
@@ -2811,6 +2815,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                 >
                   <h2
                     class="bpk-text bpk-text--heading-4"
+                    data-backpack-ds-component="Text"
                   >
                     February 2010
                   </h2>
@@ -3404,6 +3409,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                 >
                   <h2
                     class="bpk-text bpk-text--heading-4"
+                    data-backpack-ds-component="Text"
                   >
                     March 2010
                   </h2>
@@ -4170,6 +4176,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                 >
                   <h2
                     class="bpk-text bpk-text--heading-4"
+                    data-backpack-ds-component="Text"
                   >
                     February 2010
                   </h2>
@@ -4763,6 +4770,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                 >
                   <h2
                     class="bpk-text bpk-text--heading-4"
+                    data-backpack-ds-component="Text"
                   >
                     March 2010
                   </h2>
