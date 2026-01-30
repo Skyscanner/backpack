@@ -242,10 +242,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
         const commonProps = {
           className: `${getClassName(`bpk-card-list-row-rail__${layout}__card`)}${isPageStart ? ` ${getClassName('bpk-card-list-row-rail__card--page-start')}` : ''}`,
-          style: {
-            ...shownNumberStyle,
-            ...cardDimensionStyle,
-          },
+          style: shownNumberStyle,
           key: `carousel-card-${index.toString()}`,
           role: 'group',
         };
