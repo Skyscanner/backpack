@@ -24,7 +24,7 @@ import BpkLink from '../../bpk-component-link';
 import BpkNavigationBar, {
   BAR_STYLES,
 } from '../../bpk-component-navigation-bar';
-import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
+import { TransitionInitialMount, cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkModalInner.module.scss';
 
@@ -143,7 +143,7 @@ const BpkModalInner = ({
               title={
                 <h2
                   id={headingId}
-                  className={getClassName('bpk-modal__heading')}
+                  className={getClassName('bpk-modal__heading')} {...getDataComponentAttribute('ModalInner')}
                 >
                   {title}
                 </h2>
