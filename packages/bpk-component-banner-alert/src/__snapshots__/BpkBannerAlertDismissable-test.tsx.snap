@@ -49,7 +49,6 @@ exports[`BpkBannerAlertDismissable should render correctly 1`] = `
                 <button
                   aria-label="Dismiss"
                   class="bpk-close-button__default"
-                  data-backpack-ds-component="CloseButton"
                   title="Dismiss"
                   type="button"
                 >
