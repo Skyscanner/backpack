@@ -13,6 +13,7 @@ exports[`BpkImage should accept userland className 1`] = `
       <img
         alt="image description"
         class="bpk-image__img"
+        data-backpack-ds-component="Image"
         src="./path/to/image.jpg"
       />
     </div>
@@ -32,6 +33,7 @@ exports[`BpkImage should accept userland styling 1`] = `
       <img
         alt="image description"
         class="bpk-image__img"
+        data-backpack-ds-component="Image"
         src="./path/to/image.jpg"
       />
     </div>
@@ -49,6 +51,7 @@ exports[`BpkImage should apply borderRadius 1`] = `
       <img
         alt="image description"
         class="bpk-image__img"
+        data-backpack-ds-component="Image"
         src="./path/to/image.jpg"
       />
     </div>
@@ -66,6 +69,7 @@ exports[`BpkImage should call onLoadCallback 1`] = `
       <img
         alt="image description"
         class="bpk-image__img"
+        data-backpack-ds-component="Image"
         src="./path/to/image.jpg"
       />
     </div>
@@ -94,6 +98,7 @@ exports[`BpkImage should have loading behavior 1`] = `
       <img
         alt="image description"
         class="bpk-image__img bpk-image__img--hidden"
+        data-backpack-ds-component="Image"
         src="./path/to/image.jpg"
       />
       <div
@@ -101,6 +106,7 @@ exports[`BpkImage should have loading behavior 1`] = `
       >
         <span
           class="bpk-spinner bpk-spinner--dark"
+          data-backpack-ds-component="Spinner"
         >
           <svg
             aria-hidden="true"
@@ -174,6 +180,7 @@ exports[`BpkImage should load even without onLoadCallback 1`] = `
       <img
         alt="image description"
         class="bpk-image__img"
+        data-backpack-ds-component="Image"
         src="./path/to/image.jpg"
       />
     </div>
@@ -191,6 +198,7 @@ exports[`BpkImage should render correctly 1`] = `
       <img
         alt="image description"
         class="bpk-image__img"
+        data-backpack-ds-component="Image"
         src="./path/to/image.jpg"
       />
     </div>
@@ -208,6 +216,7 @@ exports[`BpkImage should support srcSet 1`] = `
       <img
         alt="image description"
         class="bpk-image__img"
+        data-backpack-ds-component="Image"
         sizes="(min-width: 80rem) 48rem, (min-width: 64rem) calc(100vw - 18rem), calc(100vw - 4.5rem)"
         src="./path/to/image_1640.jpg"
         srcset="./path/to/image_320px.jpg 320w, ./path/to/image_640px.jpg 640w, ./path/to/image_1640px.jpg 1640w, ./path/to/image_3200px.jpg 3200w"

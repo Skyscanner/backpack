@@ -19,7 +19,7 @@
 import type { ReactNode } from "react";
 import { forwardRef } from "react";
 
-import { cssModules } from "../../bpk-react-utils";
+import { cssModules, getDataComponentAttribute } from "../../bpk-react-utils";
 
 import STYLES from "./BpkCarouselImage.module.scss"
 
@@ -33,6 +33,7 @@ const BpkCarouselImage = forwardRef<HTMLDivElement, ImageProps>(({ image, index 
   <div
     className={getClassName('bpk-carousel-image')}
     key={index}
+    {...getDataComponentAttribute('CarouselImage')}
     data-index={index}
     ref={ref}
     role="listitem"
@@ -42,4 +43,3 @@ const BpkCarouselImage = forwardRef<HTMLDivElement, ImageProps>(({ image, index 
 ));
 
 export default BpkCarouselImage
-

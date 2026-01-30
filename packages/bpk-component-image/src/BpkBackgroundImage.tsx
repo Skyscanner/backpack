@@ -24,7 +24,7 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { BpkSpinner } from '../../bpk-component-spinner';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkBackgroundImage.module.scss';
 
@@ -124,7 +124,7 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
             height: 0,
             paddingBottom: aspectRatioPc,
           }}
-          className={classNames.join(' ')}
+          className={classNames.join(' ')} {...getDataComponentAttribute('BackgroundImage')}
         >
           <div
             style={{

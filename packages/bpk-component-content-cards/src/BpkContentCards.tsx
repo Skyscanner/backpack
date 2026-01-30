@@ -17,7 +17,7 @@
  */
 /* eslint react/no-array-index-key: 0 */
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import BpkContentCard from './BpkContentCard';
 
@@ -44,7 +44,7 @@ const BpkContentCards = ({ cards, heading }: Props) => {
   }
 
   return (
-    <div>
+    <div {...getDataComponentAttribute('ContentCards')}>
       <h2 className={getClassName('bpk-content-cards--header-text')}>{heading}</h2>
       <div role="list" className={getClassName('bpk-content-cards--layout')}>
         {cards.map((card, index) => (
