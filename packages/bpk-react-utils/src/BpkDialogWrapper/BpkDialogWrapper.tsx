@@ -161,7 +161,8 @@ export const BpkDialogWrapper = ({
       className={getClassName(
         'bpk-dialog-wrapper',
         !dialogSupported && 'bpk-dialog-wrapper--polyfill',
-      )} {...getDataComponentAttribute('DialogWrapper')}
+      )}
+      {...getDataComponentAttribute('DialogWrapper')}
     >
       {!dialogSupported && (
         <div
