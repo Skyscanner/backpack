@@ -27,7 +27,6 @@ import omit from 'lodash/omit';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import './intersection-observer';
 import DataSource from './DataSource';
 
 import STYLES from './withInfiniteScroll.module.scss';
