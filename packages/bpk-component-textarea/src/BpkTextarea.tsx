@@ -18,7 +18,7 @@
 
 import type { FC, TextareaHTMLAttributes } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkTextarea.module.scss';
 
@@ -50,7 +50,7 @@ const BpkTextarea: FC<BpkTextareaProps> = ({
         isInvalid && 'bpk-textarea--invalid',
         large && 'bpk-textarea--large',
         className,
-      )}
+      )} {...getDataComponentAttribute('Textarea')}
       aria-invalid={isInvalid}
       {...rest}
     />
