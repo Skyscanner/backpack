@@ -27,7 +27,7 @@ import {
 
 import throttle from 'lodash/throttle';
 
-import { cssModules } from '../../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
 import { RENDER_BUFFER_SIZE } from './constants';
 import {
@@ -214,6 +214,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   return (
     <div
       className={getClassName(`bpk-card-list-row-rail__${layout}`)}
+      {...getDataComponentAttribute('CardListCarousel')}
       data-testid="bpk-card-list-row-rail__carousel"
       aria-label={carouselLabel(initiallyShownCards, childrenLength)}
       aria-roledescription="carousel"
