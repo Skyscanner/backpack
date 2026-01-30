@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { forwardRef } from 'react';
+
 import type { BpkCardV2HeaderProps } from '../common-types';
 
 import STYLES from '../BpkCardV2.module.scss';
@@ -34,14 +36,17 @@ import STYLES from '../BpkCardV2.module.scss';
  *   <BpkCardV2.Header>Card title</BpkCardV2.Header>
  * </BpkCardV2>
  */
-const Header = ({ children, className }: BpkCardV2HeaderProps) => (
-  <header
-    className={[STYLES['bpk-card-v2__header'], className]
-      .filter(Boolean)
-      .join(' ')}
-  >
-    {children}
-  </header>
+const Header = forwardRef<HTMLElement, BpkCardV2HeaderProps>(
+  ({ children, className }, ref) => (
+    <header
+      ref={ref}
+      className={[STYLES['bpk-card-v2__header'], className]
+        .filter(Boolean)
+        .join(' ')}
+    >
+      {children}
+    </header>
+  ),
 );
 
 Header.displayName = 'BpkCardV2.Header';

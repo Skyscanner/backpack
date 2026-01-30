@@ -27,4 +27,5 @@ export type {
   BpkCardV2FooterProps,
   BpkCardV2SurfaceColor,
   BpkCardV2Variant,
+  BpkCardV2Component,
 } from './common-types';

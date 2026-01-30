@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { forwardRef } from 'react';
+
 import type { BpkCardV2PrimaryProps } from '../common-types';
 
 import STYLES from '../BpkCardV2.module.scss';
@@ -38,14 +40,17 @@ import STYLES from '../BpkCardV2.module.scss';
  *   <BpkCardV2.Secondary>Sidebar</BpkCardV2.Secondary>
  * </BpkCardV2.Body>
  */
-const Primary = ({ children, className }: BpkCardV2PrimaryProps) => (
-  <div
-    className={[STYLES['bpk-card-v2__primary'], className]
-      .filter(Boolean)
-      .join(' ')}
-  >
-    {children}
-  </div>
+const Primary = forwardRef<HTMLDivElement, BpkCardV2PrimaryProps>(
+  ({ children, className }, ref) => (
+    <div
+      ref={ref}
+      className={[STYLES['bpk-card-v2__primary'], className]
+        .filter(Boolean)
+        .join(' ')}
+    >
+      {children}
+    </div>
+  ),
 );
 
 Primary.displayName = 'BpkCardV2.Primary';

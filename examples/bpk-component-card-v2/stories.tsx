@@ -275,7 +275,7 @@ export const CustomSplitRatio: Story = {
   },
   render: (args) => (
     <BpkCardV2 {...args}>
-      <BpkCardV2.Body split splitRatio={60} padding="none">
+      <BpkCardV2.Body split splitRatio={60}>
         <BpkCardV2.Primary>
           <div style={{background: 'rgba(0,0,0,0.05)' }}>Primary (60%)</div>
         </BpkCardV2.Primary>

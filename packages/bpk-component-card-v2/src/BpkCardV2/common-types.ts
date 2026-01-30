@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { ForwardRefExoticComponent, ReactNode, RefAttributes } from 'react';
 
 /** Surface colour token options for BpkCardV2 background */
 export type BpkCardV2SurfaceColor =
@@ -72,7 +72,7 @@ export type BpkCardV2Props = {
  */
 export type BpkCardV2HeaderProps = {
   /** Header content */
-  children: ReactNode;
+  children?: ReactNode;
 
   /** Additional CSS class names */
   className?: string;
@@ -96,7 +96,7 @@ export type BpkCardV2HeaderProps = {
  */
 export type BpkCardV2BodyProps = {
   /** Body content or Primary/Secondary subcomponents */
-  children: ReactNode;
+  children?: ReactNode;
 
   /** Enable two-column split layout (default: false) */
   split?: boolean;
@@ -143,8 +143,23 @@ export type BpkCardV2SecondaryProps = {
  */
 export type BpkCardV2FooterProps = {
   /** Footer content */
-  children: ReactNode;
+  children?: ReactNode;
 
   /** Additional CSS class names */
   className?: string;
+};
+
+/**
+ * BpkCardV2 compound component type.
+ *
+ * Extends the base component with attached subcomponents.
+ */
+export type BpkCardV2Component = ForwardRefExoticComponent<
+  BpkCardV2Props & RefAttributes<HTMLDivElement>
+> & {
+  Header: ForwardRefExoticComponent<BpkCardV2HeaderProps & RefAttributes<HTMLElement>>;
+  Body: ForwardRefExoticComponent<BpkCardV2BodyProps & RefAttributes<HTMLDivElement>>;
+  Primary: ForwardRefExoticComponent<BpkCardV2PrimaryProps & RefAttributes<HTMLDivElement>>;
+  Secondary: ForwardRefExoticComponent<BpkCardV2SecondaryProps & RefAttributes<HTMLDivElement>>;
+  Footer: ForwardRefExoticComponent<BpkCardV2FooterProps & RefAttributes<HTMLElement>>;
 };

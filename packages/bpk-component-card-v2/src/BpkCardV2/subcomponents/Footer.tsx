@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { forwardRef } from 'react';
+
 import type { BpkCardV2FooterProps } from '../common-types';
 
 import STYLES from '../BpkCardV2.module.scss';
@@ -36,14 +38,17 @@ import STYLES from '../BpkCardV2.module.scss';
  *   <BpkCardV2.Footer>Footer content</BpkCardV2.Footer>
  * </BpkCardV2>
  */
-const Footer = ({ children, className }: BpkCardV2FooterProps) => (
-  <footer
-    className={[STYLES['bpk-card-v2__footer'], className]
-      .filter(Boolean)
-      .join(' ')}
-  >
-    {children}
-  </footer>
+const Footer = forwardRef<HTMLElement, BpkCardV2FooterProps>(
+  ({ children, className }, ref) => (
+    <footer
+      ref={ref}
+      className={[STYLES['bpk-card-v2__footer'], className]
+        .filter(Boolean)
+        .join(' ')}
+    >
+      {children}
+    </footer>
+  ),
 );
 
 Footer.displayName = 'BpkCardV2.Footer';

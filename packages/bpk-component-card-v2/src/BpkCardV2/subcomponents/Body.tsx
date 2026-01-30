@@ -17,7 +17,7 @@
  */
 
 import type { ReactNode } from 'react';
-import { Children, isValidElement } from 'react';
+import { Children, forwardRef, isValidElement } from 'react';
 
 import type { BpkCardV2BodyProps } from '../common-types';
 
@@ -45,12 +45,13 @@ import STYLES from '../BpkCardV2.module.scss';
  *   <BpkCardV2.Secondary>Sidebar (30%)</BpkCardV2.Secondary>
  * </BpkCardV2.Body>
  */
-const Body = ({
-  children,
-  className,
-  split = false,
-  splitRatio = 70,
-}: BpkCardV2BodyProps) => {
+const Body = forwardRef<HTMLDivElement, BpkCardV2BodyProps>(
+  ({
+    children,
+    className,
+    split = false,
+    splitRatio = 70,
+  }, ref) => {
   const classNameList = [
     STYLES['bpk-card-v2__body'],
     split && STYLES['bpk-card-v2__body--split'],
@@ -71,17 +72,19 @@ const Body = ({
     return acc;
   }, []) : children;
 
-  return (
-    <div
-      className={bodyClassName}
-      style={{
-        '--bpk-card-v2-primary-width': split ? `${splitRatio}%` : undefined,
-      } as React.CSSProperties}
-    >
-      {processedChildren}
-    </div>
-  );
-};
+    return (
+      <div
+        ref={ref}
+        className={bodyClassName}
+        style={{
+          '--bpk-card-v2-primary-width': split ? `${splitRatio}%` : undefined,
+        } as React.CSSProperties}
+      >
+        {processedChildren}
+      </div>
+    );
+  },
+);
 
 Body.displayName = 'BpkCardV2.Body';
 

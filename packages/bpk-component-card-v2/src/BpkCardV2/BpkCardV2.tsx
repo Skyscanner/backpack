@@ -24,7 +24,7 @@ import Header from './subcomponents/Header';
 import Primary from './subcomponents/Primary';
 import Secondary from './subcomponents/Secondary';
 
-import type { BpkCardV2Props, BpkCardV2SurfaceColor, BpkCardV2Variant } from './common-types';
+import type { BpkCardV2Component, BpkCardV2Props, BpkCardV2SurfaceColor, BpkCardV2Variant } from './common-types';
 
 import STYLES from './BpkCardV2.module.scss';
 
@@ -52,7 +52,7 @@ import STYLES from './BpkCardV2.module.scss';
  *   </BpkCardV2.Body>
  * </BpkCardV2>
  */
-const BpkCardV2 = forwardRef<HTMLDivElement, BpkCardV2Props>(
+const BpkCardV2Base = forwardRef<HTMLDivElement, BpkCardV2Props>(
   (
     {
       ariaLabel,
@@ -86,14 +86,16 @@ const BpkCardV2 = forwardRef<HTMLDivElement, BpkCardV2Props>(
   },
 );
 
-BpkCardV2.displayName = 'BpkCardV2';
+BpkCardV2Base.displayName = 'BpkCardV2';
 
 // Attach subcomponents
-BpkCardV2.Header = Header;
-BpkCardV2.Body = Body;
-BpkCardV2.Primary = Primary;
-BpkCardV2.Secondary = Secondary;
-BpkCardV2.Footer = Footer;
+(BpkCardV2Base as unknown as BpkCardV2Component).Header = Header;
+(BpkCardV2Base as unknown as BpkCardV2Component).Body = Body;
+(BpkCardV2Base as unknown as BpkCardV2Component).Primary = Primary;
+(BpkCardV2Base as unknown as BpkCardV2Component).Secondary = Secondary;
+(BpkCardV2Base as unknown as BpkCardV2Component).Footer = Footer;
+
+const BpkCardV2 = BpkCardV2Base as unknown as BpkCardV2Component;
 
 export default BpkCardV2;
 
