@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-autosuggest",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-autosuggest/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

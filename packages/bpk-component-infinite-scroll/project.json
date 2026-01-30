@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-infinite-scroll",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-infinite-scroll/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-form-validation",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-form-validation/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

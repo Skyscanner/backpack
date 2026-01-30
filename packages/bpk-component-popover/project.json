@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-popover",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-popover/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

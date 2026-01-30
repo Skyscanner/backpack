@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-chip-group",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-chip-group/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-phone-input",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-phone-input/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

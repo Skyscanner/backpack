@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-horizontal-nav",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-horizontal-nav/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-loading-button",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-loading-button/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-switch",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-switch/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

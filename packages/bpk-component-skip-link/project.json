@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-skip-link",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-skip-link/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

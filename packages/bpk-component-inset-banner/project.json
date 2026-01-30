@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-inset-banner",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-inset-banner/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

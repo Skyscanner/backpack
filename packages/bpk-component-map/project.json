@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-map",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-map/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

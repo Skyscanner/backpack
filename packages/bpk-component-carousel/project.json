@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-carousel",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-carousel/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

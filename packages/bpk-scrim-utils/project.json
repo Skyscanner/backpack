@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-scrim-utils",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-scrim-utils/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

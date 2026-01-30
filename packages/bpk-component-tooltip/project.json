@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-tooltip",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-tooltip/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

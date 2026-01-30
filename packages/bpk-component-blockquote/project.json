@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-blockquote",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-blockquote/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

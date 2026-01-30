@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-graphic-promotion",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-graphic-promotion/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

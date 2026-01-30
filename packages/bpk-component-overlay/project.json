@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-overlay",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-overlay/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-page-indicator",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-page-indicator/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

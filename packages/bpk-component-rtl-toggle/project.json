@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-rtl-toggle",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-rtl-toggle/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

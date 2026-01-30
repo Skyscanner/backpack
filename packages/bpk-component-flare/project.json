@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-flare",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-flare/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

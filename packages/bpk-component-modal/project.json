@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-modal",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-modal/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

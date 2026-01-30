@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-bubble",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-bubble/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

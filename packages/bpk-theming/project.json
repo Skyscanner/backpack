@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-theming",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-theming/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-floating-notification",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-floating-notification/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

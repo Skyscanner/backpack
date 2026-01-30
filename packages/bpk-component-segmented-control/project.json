@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-segmented-control",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-segmented-control/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "bpk-component-fieldset",
+  "projectType": "library",
+  "sourceRoot": "packages/bpk-component-fieldset/src",
+  "tags": [
+    "scope:backpack"
+  ]
+}
