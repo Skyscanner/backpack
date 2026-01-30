@@ -36,7 +36,7 @@ const getClassName = cssModules(STYLES);
  * BpkCardV2 is a composable, responsive card component for Backpack.
  *
  * It supports explicit multi-section composition (Header, Body, Footer), flexible
- * split layouts (Primary/Secondary), and customizable surface colours. The component
+ * split layouts (Primary/Secondary), and customizable surface colors. The component
  * is mobile-first and automatically adapts layout across breakpoints.
  *
  * @example

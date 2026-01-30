@@ -1,6 +1,6 @@
 # BpkCardV2
 
-A composable, responsive card component for Backpack that supports multi-area layouts, explicit composition, and flexible surface colour theming. BpkCardV2 enables developers to build complex card designs without custom CSS or wrapper components.
+A composable, responsive card component for Backpack that supports multi-area layouts, explicit composition, and flexible surface color theming. BpkCardV2 enables developers to build complex card designs without custom CSS or wrapper components.
 
 ## Installation
 
@@ -33,11 +33,11 @@ import BpkCardV2 from '@skyscanner/backpack-web/bpk-component-card-v2';
 </BpkCardV2>
 ```
 
-### With custom surface colour
+### With custom surface color
 
 ```tsx
 <BpkCardV2 bgColor="surfaceElevated">
-  Card with elevated surface colour
+  Card with elevated surface color
 </BpkCardV2>
 ```
 
@@ -48,7 +48,7 @@ import BpkCardV2 from '@skyscanner/backpack-web/bpk-component-card-v2';
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `variant` | `'default' \| 'outlined'` | `'default'` | Visual variant styling |
-| `bgColor` | Surface token | `'surfaceDefault'` | Background surface colour |
+| `bgColor` | Surface token | `'surfaceDefault'` | Background surface color |
 | `children` | `ReactNode` | - | Card content (Header, Body, Footer subcomponents) |
 | `className` | `string` | - | Additional CSS class names |
 | `ariaLabel` | `string` | - | Accessible label |

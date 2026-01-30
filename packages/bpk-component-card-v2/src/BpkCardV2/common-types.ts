@@ -18,7 +18,7 @@
 
 import type { ForwardRefExoticComponent, ReactNode, RefAttributes } from 'react';
 
-/** Surface colour token options for BpkCardV2 background */
+/** Surface color token options for BpkCardV2 background */
 export type BpkCardV2SurfaceColor =
   | 'surfaceDefault'
   | 'surfaceElevated'
@@ -36,7 +36,7 @@ export type BpkCardV2Variant = 'default' | 'outlined';
  * BpkCardV2 root component props.
  *
  * Composable card component with explicit Header/Body/Footer subcomponents.
- * Supports multiple surface colours, visual variants, and responsive split layouts.
+ * Supports multiple surface colors, visual variants, and responsive split layouts.
  *
  * @example
  * <BpkCardV2 variant="default" bgColor="surfaceDefault">
@@ -49,7 +49,7 @@ export type BpkCardV2Props = {
   /** Visual variant controlling styling treatment (shadow/border) */
   variant?: BpkCardV2Variant;
 
-  /** Background surface colour token (default: surfaceDefault) */
+  /** Background surface color token (default: surfaceDefault) */
   bgColor?: BpkCardV2SurfaceColor;
 
   /** Card content - use Header, Body, Footer subcomponents */
