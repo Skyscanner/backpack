@@ -23,3 +23,11 @@ export const MARKER_TYPES = {
 } as const;
 
 export type MarkerType = (typeof MARKER_TYPES)[keyof typeof MARKER_TYPES];
+
+export const MARKER_DISPLAY_TYPES = {
+  BUBBLE: 'bubble',
+  DOT: 'dot',
+} as const;
+
+export type MarkerDisplayType =
+  (typeof MARKER_DISPLAY_TYPES)[keyof typeof MARKER_DISPLAY_TYPES];
