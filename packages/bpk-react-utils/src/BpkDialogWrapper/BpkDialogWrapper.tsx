@@ -21,6 +21,7 @@ import { useEffect, useRef, useState } from 'react';
 import CSSTransition from 'react-transition-group/CSSTransition';
 
 import cssModules from '../cssModules';
+import { getDataComponentAttribute } from '../getDataComponentAttribute';
 
 import STYLES from './BpkDialogWrapper.module.scss';
 
@@ -161,6 +162,7 @@ export const BpkDialogWrapper = ({
         'bpk-dialog-wrapper',
         !dialogSupported && 'bpk-dialog-wrapper--polyfill',
       )}
+      {...getDataComponentAttribute('DialogWrapper')}
     >
       {!dialogSupported && (
         <div

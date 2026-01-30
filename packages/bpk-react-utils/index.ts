@@ -27,6 +27,7 @@ import {
   isDeviceIpad,
   isDeviceIos,
 } from './src/deviceDetection';
+import { getDataComponentAttribute } from './src/getDataComponentAttribute';
 import isRTL from './src/isRTL';
 import { setNativeValue } from './src/nativeEventHandler';
 import withDefaultProps from './src/withDefaultProps';
@@ -45,6 +46,7 @@ export {
   isRTL,
   BpkDialogWrapper,
   setNativeValue,
+  getDataComponentAttribute,
 };
 export default {
   Portal,
@@ -59,4 +61,5 @@ export default {
   isRTL,
   BpkDialogWrapper,
   setNativeValue,
+  getDataComponentAttribute,
 };
