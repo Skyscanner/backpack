@@ -89,7 +89,7 @@ class BpkRtlToggle extends Component<Props, State> {
         as="button"
         title="Keyboard Shortcut: ctrl + cmd + r"
         onClick={this.toggleRtl}
-        {...getDataComponentAttribute('RtlToggle')}
+        {...getDataComponentAttribute('Link')}
       >
         RTL {onOrOff}
       </BpkLink>
