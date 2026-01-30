@@ -20,6 +20,7 @@ import type { ComponentType, MouseEvent, ReactNode } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
+import { getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { BAR_STYLES, type BarStyle } from './BpkNavigationBar';
 
@@ -34,7 +35,7 @@ export type Props = {
 };
 
 const BpkNavigationBarIconButton = ({ barStyle = BAR_STYLES.default, className, icon, ...rest }: Props) => (
-  <span className={className}>
+  <span className={className} {...getDataComponentAttribute('NavigationBarIconButton')}>
     <BpkCloseButton
       customIcon={icon}
       onDark={barStyle === BAR_STYLES.onDark}
