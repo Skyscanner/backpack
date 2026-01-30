@@ -105,6 +105,7 @@
 
 // Primary content area in split layout
 .bpk-card-v2__primary {
+  position: relative;
   display: flex;
   width: 100%;
   padding: tokens.bpk-spacing-base();
@@ -119,12 +120,31 @@
 
     @include breakpoints.bpk-breakpoint-above-mobile {
       width: var(--bpk-card-v2-primary-width, 70%);
-      border-right: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+      padding-right: calc(
+        tokens.bpk-spacing-base() - tokens.$bpk-border-size-sm / 2
+      );
       border-bottom: none;
 
       @include utils.bpk-rtl {
-        border-right: none;
-        border-left: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+        padding-right: tokens.bpk-spacing-base();
+        padding-left: calc(
+          tokens.bpk-spacing-base() - tokens.$bpk-border-size-sm / 2
+        );
+
+        &::after {
+          right: auto;
+          left: 0;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        top: tokens.bpk-spacing-md();
+        right: 0;
+        bottom: tokens.bpk-spacing-md();
+        content: '';
+        width: tokens.$bpk-border-size-sm;
+        background-color: tokens.$bpk-line-day;
       }
     }
   }
