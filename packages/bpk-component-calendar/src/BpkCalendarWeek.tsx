@@ -19,7 +19,7 @@
 import type { ElementType, ReactElement } from 'react';
 import { Component } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { SELECTION_TYPES } from './BpkCalendarDate';
 import { CALENDAR_SELECTION_TYPE } from './custom-proptypes';
@@ -385,7 +385,7 @@ class BpkCalendarWeek extends Component<Props> {
     }
 
     return (
-      <div className={getClassName('bpk-calendar-week')} role="row">
+      <div className={getClassName('bpk-calendar-week')} {...getDataComponentAttribute('CalendarWeek')} role="row">
         {this.props.dates.map((date) => {
           const isBlocked =
             minDate && maxDate

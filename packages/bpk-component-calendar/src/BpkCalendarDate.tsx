@@ -19,7 +19,7 @@
 import type { KeyboardEvent } from 'react';
 import { PureComponent } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type { DateModifiers } from './custom-proptypes';
 
@@ -193,6 +193,7 @@ class BpkCalendarDate extends PureComponent<Props> {
         type="button"
         style={style}
         className={classNames.join(' ')}
+        {...getDataComponentAttribute('CalendarDate')}
         aria-label={`${date.getDate()}`}
         disabled={isBlocked}
         tabIndex={isKeyboardFocusable && isFocused ? 0 : -1}
