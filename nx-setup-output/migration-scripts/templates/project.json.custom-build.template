@@ -1,0 +1,19 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "{{PACKAGE_NAME}}",
+  "projectType": "library",
+  "sourceRoot": "{{SOURCE_ROOT}}",
+  "tags": [{{TAGS}}],
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run build",
+        "cwd": "{{PACKAGE_PATH}}"
+      },
+      "cache": true,
+      "inputs": ["production", "^production"],
+      "outputs": ["{projectRoot}/dist"]
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "{{PACKAGE_NAME}}",
+  "projectType": "library",
+  "sourceRoot": "{{SOURCE_ROOT}}",
+  "tags": [{{TAGS}}]{{TARGETS}}
+}

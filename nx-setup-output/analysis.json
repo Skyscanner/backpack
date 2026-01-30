@@ -1,0 +1,970 @@
+{
+  "summary": {
+    "totalPackages": 92,
+    "withTypeScript": 73,
+    "sassOnly": 1,
+    "jsOnly": 18
+  },
+  "packages": [
+    {
+      "name": "bpk-animate-height",
+      "path": "packages/bpk-animate-height",
+      "hasTypeScript": false,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "animation",
+      "specialCase": "js-only"
+    },
+    {
+      "name": "bpk-component-accordion",
+      "path": "packages/bpk-component-accordion",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-aria-live",
+      "path": "packages/bpk-component-aria-live",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-autosuggest",
+      "path": "packages/bpk-component-autosuggest",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-badge",
+      "path": "packages/bpk-component-badge",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-banner-alert",
+      "path": "packages/bpk-component-banner-alert",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-barchart",
+      "path": "packages/bpk-component-barchart",
+      "hasTypeScript": false,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": "js-only"
+    },
+    {
+      "name": "bpk-component-blockquote",
+      "path": "packages/bpk-component-blockquote",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-boilerplate",
+      "path": "packages/bpk-component-boilerplate",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-bottom-sheet",
+      "path": "packages/bpk-component-bottom-sheet",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-breadcrumb",
+      "path": "packages/bpk-component-breadcrumb",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-breakpoint",
+      "path": "packages/bpk-component-breakpoint",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-bubble",
+      "path": "packages/bpk-component-bubble",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-button",
+      "path": "packages/bpk-component-button",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-calendar",
+      "path": "packages/bpk-component-calendar",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-card",
+      "path": "packages/bpk-component-card",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-card-button",
+      "path": "packages/bpk-component-card-button",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-card-list",
+      "path": "packages/bpk-component-card-list",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-carousel",
+      "path": "packages/bpk-component-carousel",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-checkbox",
+      "path": "packages/bpk-component-checkbox",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-chip",
+      "path": "packages/bpk-component-chip",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-chip-group",
+      "path": "packages/bpk-component-chip-group",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-close-button",
+      "path": "packages/bpk-component-close-button",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-code",
+      "path": "packages/bpk-component-code",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-content-cards",
+      "path": "packages/bpk-component-content-cards",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-datatable",
+      "path": "packages/bpk-component-datatable",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-datepicker",
+      "path": "packages/bpk-component-datepicker",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-description-list",
+      "path": "packages/bpk-component-description-list",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-dialog",
+      "path": "packages/bpk-component-dialog",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-drawer",
+      "path": "packages/bpk-component-drawer",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-fieldset",
+      "path": "packages/bpk-component-fieldset",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-flare",
+      "path": "packages/bpk-component-flare",
+      "hasTypeScript": false,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": "js-only"
+    },
+    {
+      "name": "bpk-component-floating-notification",
+      "path": "packages/bpk-component-floating-notification",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-form-validation",
+      "path": "packages/bpk-component-form-validation",
+      "hasTypeScript": false,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": "js-only"
+    },
+    {
+      "name": "bpk-component-graphic-promotion",
+      "path": "packages/bpk-component-graphic-promotion",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-grid-toggle",
+      "path": "packages/bpk-component-grid-toggle",
+      "hasTypeScript": false,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": "js-only"
+    },
+    {
+      "name": "bpk-component-horizontal-nav",
+      "path": "packages/bpk-component-horizontal-nav",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-icon",
+      "path": "packages/bpk-component-icon",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": "code-gen"
+    },
+    {
+      "name": "bpk-component-image",
+      "path": "packages/bpk-component-image",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-infinite-scroll",
+      "path": "packages/bpk-component-infinite-scroll",
+      "hasTypeScript": false,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": "js-only"
+    },
+    {
+      "name": "bpk-component-info-banner",
+      "path": "packages/bpk-component-info-banner",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-input",
+      "path": "packages/bpk-component-input",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-inset-banner",
+      "path": "packages/bpk-component-inset-banner",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-journey-arrow",
+      "path": "packages/bpk-component-journey-arrow",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-label",
+      "path": "packages/bpk-component-label",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-link",
+      "path": "packages/bpk-component-link",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-list",
+      "path": "packages/bpk-component-list",
+      "hasTypeScript": false,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": "js-only"
+    },
+    {
+      "name": "bpk-component-loading-button",
+      "path": "packages/bpk-component-loading-button",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-map",
+      "path": "packages/bpk-component-map",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-mobile-scroll-container",
+      "path": "packages/bpk-component-mobile-scroll-container",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-modal",
+      "path": "packages/bpk-component-modal",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-navigation-bar",
+      "path": "packages/bpk-component-navigation-bar",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-navigation-tab-group",
+      "path": "packages/bpk-component-navigation-tab-group",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-nudger",
+      "path": "packages/bpk-component-nudger",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-overlay",
+      "path": "packages/bpk-component-overlay",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-page-indicator",
+      "path": "packages/bpk-component-page-indicator",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-pagination",
+      "path": "packages/bpk-component-pagination",
+      "hasTypeScript": false,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": "js-only"
+    },
+    {
+      "name": "bpk-component-panel",
+      "path": "packages/bpk-component-panel",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-phone-input",
+      "path": "packages/bpk-component-phone-input",
+      "hasTypeScript": false,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": "js-only"
+    },
+    {
+      "name": "bpk-component-popover",
+      "path": "packages/bpk-component-popover",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-price",
+      "path": "packages/bpk-component-price",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-price-range",
+      "path": "packages/bpk-component-price-range",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-progress",
+      "path": "packages/bpk-component-progress",
+      "hasTypeScript": false,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": "js-only"
+    },
+    {
+      "name": "bpk-component-radio",
+      "path": "packages/bpk-component-radio",
+      "hasTypeScript": false,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": "js-only"
+    },
+    {
+      "name": "bpk-component-rating",
+      "path": "packages/bpk-component-rating",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-rtl-toggle",
+      "path": "packages/bpk-component-rtl-toggle",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-scrollable-calendar",
+      "path": "packages/bpk-component-scrollable-calendar",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-section-header",
+      "path": "packages/bpk-component-section-header",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-section-list",
+      "path": "packages/bpk-component-section-list",
+      "hasTypeScript": false,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": "js-only"
+    },
+    {
+      "name": "bpk-component-segmented-control",
+      "path": "packages/bpk-component-segmented-control",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-select",
+      "path": "packages/bpk-component-select",
+      "hasTypeScript": false,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": "js-only"
+    },
+    {
+      "name": "bpk-component-skeleton",
+      "path": "packages/bpk-component-skeleton",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-skip-link",
+      "path": "packages/bpk-component-skip-link",
+      "hasTypeScript": false,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": "js-only"
+    },
+    {
+      "name": "bpk-component-slider",
+      "path": "packages/bpk-component-slider",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-snippet",
+      "path": "packages/bpk-component-snippet",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-spinner",
+      "path": "packages/bpk-component-spinner",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-split-input",
+      "path": "packages/bpk-component-split-input",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-star-rating",
+      "path": "packages/bpk-component-star-rating",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-swap-button",
+      "path": "packages/bpk-component-swap-button",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-switch",
+      "path": "packages/bpk-component-switch",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-table",
+      "path": "packages/bpk-component-table",
+      "hasTypeScript": false,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": "js-only"
+    },
+    {
+      "name": "bpk-component-text",
+      "path": "packages/bpk-component-text",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-textarea",
+      "path": "packages/bpk-component-textarea",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-theme-toggle",
+      "path": "packages/bpk-component-theme-toggle",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-component-ticket",
+      "path": "packages/bpk-component-ticket",
+      "hasTypeScript": false,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": "js-only"
+    },
+    {
+      "name": "bpk-component-tooltip",
+      "path": "packages/bpk-component-tooltip",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "component",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-mixins",
+      "path": "packages/bpk-mixins",
+      "hasTypeScript": false,
+      "hasSrc": false,
+      "hasTests": false,
+      "category": "foundation",
+      "specialCase": "sass-only"
+    },
+    {
+      "name": "bpk-react-utils",
+      "path": "packages/bpk-react-utils",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "utility",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-scrim-utils",
+      "path": "packages/bpk-scrim-utils",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "utility",
+      "specialCase": null
+    },
+    {
+      "name": "bpk-storybook-utils",
+      "path": "packages/bpk-storybook-utils",
+      "hasTypeScript": false,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "utility",
+      "specialCase": "js-only"
+    },
+    {
+      "name": "bpk-stylesheets",
+      "path": "packages/bpk-stylesheets",
+      "hasTypeScript": true,
+      "hasSrc": true,
+      "hasTests": false,
+      "category": "foundation",
+      "specialCase": "custom-build"
+    },
+    {
+      "name": "bpk-theming",
+      "path": "packages/bpk-theming",
+      "hasTypeScript": false,
+      "hasSrc": true,
+      "hasTests": true,
+      "category": "utility",
+      "specialCase": "js-only"
+    }
+  ],
+  "specialCases": [
+    {
+      "name": "bpk-animate-height",
+      "reason": "Legacy JS package",
+      "handling": "Migrate to TypeScript"
+    },
+    {
+      "name": "bpk-component-barchart",
+      "reason": "Legacy JS package",
+      "handling": "Migrate to TypeScript"
+    },
+    {
+      "name": "bpk-component-flare",
+      "reason": "Legacy JS package",
+      "handling": "Migrate to TypeScript"
+    },
+    {
+      "name": "bpk-component-form-validation",
+      "reason": "Legacy JS package",
+      "handling": "Migrate to TypeScript"
+    },
+    {
+      "name": "bpk-component-grid-toggle",
+      "reason": "Legacy JS package",
+      "handling": "Migrate to TypeScript"
+    },
+    {
+      "name": "bpk-component-icon",
+      "reason": "Generated icon components",
+      "handling": "Preserve generation pipeline"
+    },
+    {
+      "name": "bpk-component-infinite-scroll",
+      "reason": "Legacy JS package",
+      "handling": "Migrate to TypeScript"
+    },
+    {
+      "name": "bpk-component-list",
+      "reason": "Legacy JS package",
+      "handling": "Migrate to TypeScript"
+    },
+    {
+      "name": "bpk-component-pagination",
+      "reason": "Legacy JS package",
+      "handling": "Migrate to TypeScript"
+    },
+    {
+      "name": "bpk-component-phone-input",
+      "reason": "Legacy JS package",
+      "handling": "Migrate to TypeScript"
+    },
+    {
+      "name": "bpk-component-progress",
+      "reason": "Legacy JS package",
+      "handling": "Migrate to TypeScript"
+    },
+    {
+      "name": "bpk-component-radio",
+      "reason": "Legacy JS package",
+      "handling": "Migrate to TypeScript"
+    },
+    {
+      "name": "bpk-component-section-list",
+      "reason": "Legacy JS package",
+      "handling": "Migrate to TypeScript"
+    },
+    {
+      "name": "bpk-component-select",
+      "reason": "Legacy JS package",
+      "handling": "Migrate to TypeScript"
+    },
+    {
+      "name": "bpk-component-skip-link",
+      "reason": "Legacy JS package",
+      "handling": "Migrate to TypeScript"
+    },
+    {
+      "name": "bpk-component-table",
+      "reason": "Legacy JS package",
+      "handling": "Migrate to TypeScript"
+    },
+    {
+      "name": "bpk-component-ticket",
+      "reason": "Legacy JS package",
+      "handling": "Migrate to TypeScript"
+    },
+    {
+      "name": "bpk-mixins",
+      "reason": "SCSS mixins only",
+      "handling": "Keep as SCSS library"
+    },
+    {
+      "name": "bpk-storybook-utils",
+      "reason": "Legacy JS package",
+      "handling": "Migrate to TypeScript"
+    },
+    {
+      "name": "bpk-stylesheets",
+      "reason": "Custom webpack build",
+      "handling": "Maintain custom build config"
+    },
+    {
+      "name": "bpk-theming",
+      "reason": "Legacy JS package",
+      "handling": "Migrate to TypeScript"
+    }
+  ],
+  "dependencies": {
+    "bpk-react-utils": [
+      "Most components"
+    ],
+    "bpk-component-icon": [
+      "bpk-component-button",
+      "bpk-component-accordion",
+      "bpk-component-banner-alert",
+      "bpk-component-chip"
+    ],
+    "bpk-component-text": [
+      "bpk-component-button",
+      "bpk-component-card",
+      "bpk-component-link"
+    ],
+    "bpk-component-calendar": [
+      "bpk-component-datepicker",
+      "bpk-component-scrollable-calendar"
+    ],
+    "bpk-scrim-utils": [
+      "bpk-component-modal",
+      "bpk-component-dialog",
+      "bpk-component-drawer"
+    ]
+  }
+}

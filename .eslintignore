@@ -9,3 +9,4 @@ coverage
 /packages/bpk-component-spinner/src/spinners
 /packages/bpk-stylesheets/base.js
 *.d.ts
+nx-setup-output/

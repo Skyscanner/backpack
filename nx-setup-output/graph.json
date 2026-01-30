@@ -1,0 +1,6201 @@
+{
+  "graph": {
+    "nodes": {
+      "bpk-component-mobile-scroll-container": {
+        "name": "bpk-component-mobile-scroll-container",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-mobile-scroll-container",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-mobile-scroll-container",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-mobile-scroll-container",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-mobile-scroll-container/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-floating-notification": {
+        "name": "bpk-component-floating-notification",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-floating-notification",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-floating-notification",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-floating-notification",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-floating-notification/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-navigation-tab-group": {
+        "name": "bpk-component-navigation-tab-group",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-navigation-tab-group",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-navigation-tab-group",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-navigation-tab-group",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-navigation-tab-group/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-scrollable-calendar": {
+        "name": "bpk-component-scrollable-calendar",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-scrollable-calendar",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-scrollable-calendar",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-scrollable-calendar",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-scrollable-calendar/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-graphic-promotion": {
+        "name": "bpk-component-graphic-promotion",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-graphic-promotion",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-graphic-promotion",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-graphic-promotion",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-graphic-promotion/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-segmented-control": {
+        "name": "bpk-component-segmented-control",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-segmented-control",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-segmented-control",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-segmented-control",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-segmented-control/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-description-list": {
+        "name": "bpk-component-description-list",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-description-list",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-description-list",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-description-list",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-description-list/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-form-validation": {
+        "name": "bpk-component-form-validation",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-form-validation",
+          "name": "bpk-component-form-validation",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-form-validation/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "bpk-component-infinite-scroll": {
+        "name": "bpk-component-infinite-scroll",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-infinite-scroll",
+          "name": "bpk-component-infinite-scroll",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-infinite-scroll/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "bpk-component-horizontal-nav": {
+        "name": "bpk-component-horizontal-nav",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-horizontal-nav",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-horizontal-nav",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-horizontal-nav",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-horizontal-nav/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-loading-button": {
+        "name": "bpk-component-loading-button",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-loading-button",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-loading-button",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-loading-button",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-loading-button/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-navigation-bar": {
+        "name": "bpk-component-navigation-bar",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-navigation-bar",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-navigation-bar",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-navigation-bar",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-navigation-bar/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-page-indicator": {
+        "name": "bpk-component-page-indicator",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-page-indicator",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-page-indicator",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-page-indicator",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-page-indicator/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-section-header": {
+        "name": "bpk-component-section-header",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-section-header",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-section-header",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-section-header",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-section-header/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-content-cards": {
+        "name": "bpk-component-content-cards",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-content-cards",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-content-cards",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-content-cards",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-content-cards/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-journey-arrow": {
+        "name": "bpk-component-journey-arrow",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-journey-arrow",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-journey-arrow",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-journey-arrow",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-journey-arrow/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-banner-alert": {
+        "name": "bpk-component-banner-alert",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-banner-alert",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-banner-alert",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-banner-alert",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-banner-alert/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-bottom-sheet": {
+        "name": "bpk-component-bottom-sheet",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-bottom-sheet",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-bottom-sheet",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-bottom-sheet",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-bottom-sheet/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-close-button": {
+        "name": "bpk-component-close-button",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-close-button",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-close-button",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-close-button",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-close-button/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-inset-banner": {
+        "name": "bpk-component-inset-banner",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-inset-banner",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-inset-banner",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-inset-banner",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-inset-banner/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-section-list": {
+        "name": "bpk-component-section-list",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-section-list",
+          "name": "bpk-component-section-list",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-section-list/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "bpk-component-theme-toggle": {
+        "name": "bpk-component-theme-toggle",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-theme-toggle",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-theme-toggle",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-theme-toggle",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-theme-toggle/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-autosuggest": {
+        "name": "bpk-component-autosuggest",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-autosuggest",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-autosuggest",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-autosuggest",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-autosuggest/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-boilerplate": {
+        "name": "bpk-component-boilerplate",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-boilerplate",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-boilerplate",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-boilerplate",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-boilerplate/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-card-button": {
+        "name": "bpk-component-card-button",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-card-button",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-card-button",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-card-button",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-card-button/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-grid-toggle": {
+        "name": "bpk-component-grid-toggle",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-grid-toggle",
+          "name": "bpk-component-grid-toggle",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-grid-toggle/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "bpk-component-info-banner": {
+        "name": "bpk-component-info-banner",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-info-banner",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-info-banner",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-info-banner",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-info-banner/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-phone-input": {
+        "name": "bpk-component-phone-input",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-phone-input",
+          "name": "bpk-component-phone-input",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-phone-input/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "bpk-component-price-range": {
+        "name": "bpk-component-price-range",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-price-range",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-price-range",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-price-range",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-price-range/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-split-input": {
+        "name": "bpk-component-split-input",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-split-input",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-split-input",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-split-input",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-split-input/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-star-rating": {
+        "name": "bpk-component-star-rating",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-star-rating",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-star-rating",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-star-rating",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-star-rating/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-swap-button": {
+        "name": "bpk-component-swap-button",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-swap-button",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-swap-button",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-swap-button",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-swap-button/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-blockquote": {
+        "name": "bpk-component-blockquote",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-blockquote",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-blockquote",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-blockquote",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-blockquote/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-breadcrumb": {
+        "name": "bpk-component-breadcrumb",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-breadcrumb",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-breadcrumb",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-breadcrumb",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-breadcrumb/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-breakpoint": {
+        "name": "bpk-component-breakpoint",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-breakpoint",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-breakpoint",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-breakpoint",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-breakpoint/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-chip-group": {
+        "name": "bpk-component-chip-group",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-chip-group",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-chip-group",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-chip-group",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-chip-group/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-datepicker": {
+        "name": "bpk-component-datepicker",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-datepicker",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-datepicker",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-datepicker",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-datepicker/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-pagination": {
+        "name": "bpk-component-pagination",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-pagination",
+          "name": "bpk-component-pagination",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-pagination/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "bpk-component-rtl-toggle": {
+        "name": "bpk-component-rtl-toggle",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-rtl-toggle",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-rtl-toggle",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-rtl-toggle",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-rtl-toggle/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-accordion": {
+        "name": "bpk-component-accordion",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-accordion",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-accordion",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-accordion",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-accordion/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-aria-live": {
+        "name": "bpk-component-aria-live",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-aria-live",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-aria-live",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-aria-live",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-aria-live/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-card-list": {
+        "name": "bpk-component-card-list",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-card-list",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-card-list",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-card-list",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-card-list/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-datatable": {
+        "name": "bpk-component-datatable",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-datatable",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-datatable",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-datatable",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-datatable/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-skip-link": {
+        "name": "bpk-component-skip-link",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-skip-link",
+          "name": "bpk-component-skip-link",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-skip-link/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "bpk-component-barchart": {
+        "name": "bpk-component-barchart",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-barchart",
+          "name": "bpk-component-barchart",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-barchart/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "bpk-component-calendar": {
+        "name": "bpk-component-calendar",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-calendar",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-calendar",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-calendar",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-calendar/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-carousel": {
+        "name": "bpk-component-carousel",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-carousel",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-carousel",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-carousel",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-carousel/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-checkbox": {
+        "name": "bpk-component-checkbox",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-checkbox",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-checkbox",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-checkbox",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-checkbox/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-fieldset": {
+        "name": "bpk-component-fieldset",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-fieldset",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-fieldset",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-fieldset",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-fieldset/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-progress": {
+        "name": "bpk-component-progress",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-progress",
+          "name": "bpk-component-progress",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-progress/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "bpk-component-skeleton": {
+        "name": "bpk-component-skeleton",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-skeleton",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-skeleton",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-skeleton",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-skeleton/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-textarea": {
+        "name": "bpk-component-textarea",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-textarea",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-textarea",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-textarea",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-textarea/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-overlay": {
+        "name": "bpk-component-overlay",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-overlay",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-overlay",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-overlay",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-overlay/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-popover": {
+        "name": "bpk-component-popover",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-popover",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-popover",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-popover",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-popover/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-snippet": {
+        "name": "bpk-component-snippet",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-snippet",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-snippet",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-snippet",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-snippet/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-spinner": {
+        "name": "bpk-component-spinner",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-spinner",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-spinner",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-spinner",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-spinner/src",
+          "tags": [
+            "scope:backpack",
+            "type:code-gen"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-tooltip": {
+        "name": "bpk-component-tooltip",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-tooltip",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-tooltip",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-tooltip",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-tooltip/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-bubble": {
+        "name": "bpk-component-bubble",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-bubble",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-bubble",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-bubble",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-bubble/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-button": {
+        "name": "bpk-component-button",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-button",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-button",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-button",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-button/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-dialog": {
+        "name": "bpk-component-dialog",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-dialog",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-dialog",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-dialog",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-dialog/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-drawer": {
+        "name": "bpk-component-drawer",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-drawer",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-drawer",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-drawer",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-drawer/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-nudger": {
+        "name": "bpk-component-nudger",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-nudger",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-nudger",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-nudger",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-nudger/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-rating": {
+        "name": "bpk-component-rating",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-rating",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-rating",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-rating",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-rating/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-select": {
+        "name": "bpk-component-select",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-select",
+          "name": "bpk-component-select",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-select/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "bpk-component-slider": {
+        "name": "bpk-component-slider",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-slider",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-slider",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-slider",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-slider/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-switch": {
+        "name": "bpk-component-switch",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-switch",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-switch",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-switch",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-switch/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-ticket": {
+        "name": "bpk-component-ticket",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-ticket",
+          "name": "bpk-component-ticket",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-ticket/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "bpk-component-badge": {
+        "name": "bpk-component-badge",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-badge",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-badge",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-badge",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-badge/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-flare": {
+        "name": "bpk-component-flare",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-flare",
+          "name": "bpk-component-flare",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-flare/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "bpk-component-image": {
+        "name": "bpk-component-image",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-image",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-image",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-image",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-image/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-input": {
+        "name": "bpk-component-input",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-input",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-input",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-input",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-input/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-label": {
+        "name": "bpk-component-label",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-label",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-label",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-label",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-label/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-modal": {
+        "name": "bpk-component-modal",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-modal",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-modal",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-modal",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-modal/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-panel": {
+        "name": "bpk-component-panel",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-panel",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-panel",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-panel",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-panel/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-price": {
+        "name": "bpk-component-price",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-price",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-price",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-price",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-price/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-radio": {
+        "name": "bpk-component-radio",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-radio",
+          "name": "bpk-component-radio",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-radio/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "bpk-component-table": {
+        "name": "bpk-component-table",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-table",
+          "name": "bpk-component-table",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-table/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "bpk-storybook-utils": {
+        "name": "bpk-storybook-utils",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-storybook-utils",
+          "name": "bpk-storybook-utils",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-storybook-utils/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "bpk-animate-height": {
+        "name": "bpk-animate-height",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-animate-height",
+          "name": "bpk-animate-height",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-animate-height/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "bpk-component-card": {
+        "name": "bpk-component-card",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-card",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-card",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-card",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-card/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-chip": {
+        "name": "bpk-component-chip",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-chip",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-chip",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-chip",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-chip/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-code": {
+        "name": "bpk-component-code",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-code",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-code",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-code",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-code/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-icon": {
+        "name": "bpk-component-icon",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-icon",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-icon",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-icon",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-icon/src",
+          "tags": [
+            "scope:backpack",
+            "type:code-gen"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-link": {
+        "name": "bpk-component-link",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-link",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-link",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-link",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-link/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-list": {
+        "name": "bpk-component-list",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-list",
+          "name": "bpk-component-list",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-list/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "bpk-component-text": {
+        "name": "bpk-component-text",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-text",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-text",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-text",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-text/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-component-map": {
+        "name": "bpk-component-map",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-component-map",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-component-map",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-component-map",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-component-map/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-react-utils": {
+        "name": "bpk-react-utils",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-react-utils",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-react-utils",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-react-utils",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-react-utils/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-scrim-utils": {
+        "name": "bpk-scrim-utils",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-scrim-utils",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-scrim-utils",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "name": "bpk-scrim-utils",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-scrim-utils/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-stylesheets": {
+        "name": "bpk-stylesheets",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-stylesheets",
+          "targets": {
+            "typecheck": {
+              "dependsOn": [
+                "^typecheck"
+              ],
+              "options": {
+                "cwd": "packages/bpk-stylesheets",
+                "command": "tsc --build --emitDeclarationOnly"
+              },
+              "cache": true,
+              "inputs": [
+                "default",
+                "^default"
+              ],
+              "outputs": [
+                "{projectRoot}/dist/**/*.d.ts",
+                "{projectRoot}/*.tsbuildinfo"
+              ],
+              "syncGenerators": [
+                "@nx/js:typescript-sync"
+              ],
+              "metadata": {
+                "technologies": [
+                  "typescript"
+                ],
+                "description": "Runs type-checking for the project.",
+                "help": {
+                  "command": "npx tsc --build --help",
+                  "example": {
+                    "args": [
+                      "--force"
+                    ]
+                  }
+                }
+              },
+              "executor": "nx:run-commands",
+              "configurations": {},
+              "parallelism": true
+            },
+            "build": {
+              "executor": "nx:run-commands",
+              "options": {
+                "command": "npm run build",
+                "cwd": "packages/bpk-stylesheets"
+              },
+              "cache": true,
+              "inputs": [
+                "production",
+                "^production"
+              ],
+              "outputs": [
+                "{projectRoot}/dist"
+              ],
+              "configurations": {},
+              "parallelism": true,
+              "dependsOn": [
+                "^build"
+              ]
+            }
+          },
+          "name": "bpk-stylesheets",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-stylesheets/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": []
+        }
+      },
+      "bpk-theming": {
+        "name": "bpk-theming",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-theming",
+          "name": "bpk-theming",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-theming/src",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "bpk-mixins": {
+        "name": "bpk-mixins",
+        "type": "lib",
+        "data": {
+          "root": "packages/bpk-mixins",
+          "name": "bpk-mixins",
+          "$schema": "../../node_modules/nx/schemas/project-schema.json",
+          "projectType": "library",
+          "sourceRoot": "packages/bpk-mixins",
+          "tags": [
+            "scope:backpack"
+          ],
+          "implicitDependencies": [],
+          "targets": {}
+        }
+      },
+      "@skyscanner/backpack-web": {
+        "name": "@skyscanner/backpack-web",
+        "type": "app",
+        "data": {
+          "root": "packages",
+          "name": "@skyscanner/backpack-web",
+          "tags": [
+            "npm:public",
+            "npm:design system",
+            "npm:react",
+            "npm:react components"
+          ],
+          "metadata": {
+            "targetGroups": {},
+            "description": "Backpack Design System web library",
+            "js": {
+              "packageName": "@skyscanner/backpack-web",
+              "packageVersion": "21.0.1",
+              "isInPackageManagerWorkspaces": true
+            }
+          },
+          "targets": {
+            "nx-release-publish": {
+              "executor": "@nx/js:release-publish",
+              "dependsOn": [
+                "^nx-release-publish"
+              ],
+              "options": {},
+              "configurations": {},
+              "parallelism": true
+            }
+          },
+          "implicitDependencies": []
+        }
+      }
+    },
+    "dependencies": {
+      "bpk-component-mobile-scroll-container": [
+        {
+          "source": "bpk-component-mobile-scroll-container",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-floating-notification": [
+        {
+          "source": "bpk-component-floating-notification",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-floating-notification",
+          "target": "bpk-component-aria-live",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-floating-notification",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-floating-notification",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-floating-notification",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-navigation-tab-group": [
+        {
+          "source": "bpk-component-navigation-tab-group",
+          "target": "bpk-component-bubble",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-navigation-tab-group",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-navigation-tab-group",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-navigation-tab-group",
+          "target": "bpk-component-icon",
+          "type": "static"
+        }
+      ],
+      "bpk-component-scrollable-calendar": [
+        {
+          "source": "bpk-component-scrollable-calendar",
+          "target": "bpk-component-calendar",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-scrollable-calendar",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-scrollable-calendar",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-scrollable-calendar",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-graphic-promotion": [
+        {
+          "source": "bpk-component-graphic-promotion",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-graphic-promotion",
+          "target": "bpk-component-button",
+          "type": "static"
+        }
+      ],
+      "bpk-component-segmented-control": [
+        {
+          "source": "bpk-component-segmented-control",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-segmented-control",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-segmented-control",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-description-list": [
+        {
+          "source": "bpk-component-description-list",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-form-validation": [
+        {
+          "source": "bpk-component-form-validation",
+          "target": "bpk-animate-height",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-form-validation",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-form-validation",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-form-validation",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-form-validation",
+          "target": "bpk-component-checkbox",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-form-validation",
+          "target": "bpk-component-input",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-form-validation",
+          "target": "bpk-component-select",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-form-validation",
+          "target": "bpk-component-textarea",
+          "type": "static"
+        }
+      ],
+      "bpk-component-infinite-scroll": [
+        {
+          "source": "bpk-component-infinite-scroll",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-infinite-scroll",
+          "target": "bpk-component-list",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-infinite-scroll",
+          "target": "bpk-component-spinner",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-infinite-scroll",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-infinite-scroll",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-horizontal-nav": [
+        {
+          "source": "bpk-component-horizontal-nav",
+          "target": "bpk-component-mobile-scroll-container",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-horizontal-nav",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-horizontal-nav",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-horizontal-nav",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-loading-button": [
+        {
+          "source": "bpk-component-loading-button",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-loading-button",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-loading-button",
+          "target": "bpk-component-spinner",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-loading-button",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-loading-button",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-navigation-bar": [
+        {
+          "source": "bpk-component-navigation-bar",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-navigation-bar",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-navigation-bar",
+          "target": "bpk-component-link",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-navigation-bar",
+          "target": "bpk-component-close-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-navigation-bar",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-navigation-bar",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-page-indicator": [
+        {
+          "source": "bpk-component-page-indicator",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-page-indicator",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-page-indicator",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-page-indicator",
+          "target": "bpk-component-image",
+          "type": "static"
+        }
+      ],
+      "bpk-component-section-header": [
+        {
+          "source": "bpk-component-section-header",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-section-header",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-section-header",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-section-header",
+          "target": "bpk-component-icon",
+          "type": "static"
+        }
+      ],
+      "bpk-component-content-cards": [
+        {
+          "source": "bpk-component-content-cards",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-content-cards",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-journey-arrow": [
+        {
+          "source": "bpk-component-journey-arrow",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-journey-arrow",
+          "target": "bpk-component-text",
+          "type": "static"
+        }
+      ],
+      "bpk-component-banner-alert": [
+        {
+          "source": "bpk-component-banner-alert",
+          "target": "bpk-animate-height",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-banner-alert",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-banner-alert",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-banner-alert",
+          "target": "bpk-component-close-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-banner-alert",
+          "target": "bpk-component-aria-live",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-banner-alert",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-banner-alert",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-bottom-sheet": [
+        {
+          "source": "bpk-component-bottom-sheet",
+          "target": "bpk-component-breakpoint",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-bottom-sheet",
+          "target": "bpk-component-close-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-bottom-sheet",
+          "target": "bpk-component-link",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-bottom-sheet",
+          "target": "bpk-component-navigation-bar",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-bottom-sheet",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-bottom-sheet",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-bottom-sheet",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-bottom-sheet",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-close-button": [
+        {
+          "source": "bpk-component-close-button",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-close-button",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-close-button",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-inset-banner": [
+        {
+          "source": "bpk-component-inset-banner",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-inset-banner",
+          "target": "bpk-component-popover",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-inset-banner",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-inset-banner",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-inset-banner",
+          "target": "bpk-component-bottom-sheet",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-inset-banner",
+          "target": "bpk-component-image",
+          "type": "static"
+        }
+      ],
+      "bpk-component-section-list": [
+        {
+          "source": "bpk-component-section-list",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-section-list",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-section-list",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-section-list",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-theme-toggle": [
+        {
+          "source": "bpk-component-theme-toggle",
+          "target": "bpk-component-label",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-theme-toggle",
+          "target": "bpk-component-select",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-theme-toggle",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-autosuggest": [
+        {
+          "source": "bpk-component-autosuggest",
+          "target": "@skyscanner/backpack-web",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-autosuggest",
+          "target": "bpk-component-input",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-autosuggest",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-autosuggest",
+          "target": "bpk-component-icon",
+          "type": "static"
+        }
+      ],
+      "bpk-component-boilerplate": [
+        {
+          "source": "bpk-component-boilerplate",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-card-button": [
+        {
+          "source": "bpk-component-card-button",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-card-button",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-card-button",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-grid-toggle": [
+        {
+          "source": "bpk-component-grid-toggle",
+          "target": "bpk-component-link",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-grid-toggle",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-info-banner": [
+        {
+          "source": "bpk-component-info-banner",
+          "target": "bpk-animate-height",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-info-banner",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-info-banner",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-info-banner",
+          "target": "bpk-component-close-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-info-banner",
+          "target": "bpk-component-link",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-info-banner",
+          "target": "bpk-component-aria-live",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-info-banner",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-info-banner",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-info-banner",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-phone-input": [
+        {
+          "source": "bpk-component-phone-input",
+          "target": "bpk-component-input",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-phone-input",
+          "target": "bpk-component-label",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-phone-input",
+          "target": "bpk-component-select",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-phone-input",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-phone-input",
+          "target": "bpk-component-fieldset",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-phone-input",
+          "target": "bpk-component-image",
+          "type": "static"
+        }
+      ],
+      "bpk-component-price-range": [
+        {
+          "source": "bpk-component-price-range",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-price-range",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-split-input": [
+        {
+          "source": "bpk-component-split-input",
+          "target": "bpk-component-input",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-split-input",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-split-input",
+          "target": "bpk-component-label",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-split-input",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-star-rating": [
+        {
+          "source": "bpk-component-star-rating",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-star-rating",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-star-rating",
+          "target": "bpk-component-table",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-star-rating",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-swap-button": [
+        {
+          "source": "bpk-component-swap-button",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-swap-button",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-swap-button",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-blockquote": [
+        {
+          "source": "bpk-component-blockquote",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-breadcrumb": [
+        {
+          "source": "bpk-component-breadcrumb",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-breadcrumb",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-breadcrumb",
+          "target": "bpk-component-link",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-breadcrumb",
+          "target": "bpk-component-text",
+          "type": "static"
+        }
+      ],
+      "bpk-component-breakpoint": [
+        {
+          "source": "bpk-component-breakpoint",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-chip-group": [
+        {
+          "source": "bpk-component-chip-group",
+          "target": "bpk-component-breakpoint",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-chip-group",
+          "target": "bpk-component-chip",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-chip-group",
+          "target": "bpk-component-mobile-scroll-container",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-chip-group",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-chip-group",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-chip-group",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-chip-group",
+          "target": "bpk-component-button",
+          "type": "static"
+        }
+      ],
+      "bpk-component-datepicker": [
+        {
+          "source": "bpk-component-datepicker",
+          "target": "bpk-component-calendar",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-datepicker",
+          "target": "bpk-component-breakpoint",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-datepicker",
+          "target": "bpk-component-input",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-datepicker",
+          "target": "bpk-component-modal",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-datepicker",
+          "target": "bpk-component-popover",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-datepicker",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-datepicker",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-pagination": [
+        {
+          "source": "bpk-component-pagination",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-pagination",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-pagination",
+          "target": "bpk-component-icon",
+          "type": "static"
+        }
+      ],
+      "bpk-component-rtl-toggle": [
+        {
+          "source": "bpk-component-rtl-toggle",
+          "target": "bpk-component-link",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-rtl-toggle",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-accordion": [
+        {
+          "source": "bpk-component-accordion",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-accordion",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-accordion",
+          "target": "bpk-animate-height",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-accordion",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-accordion",
+          "target": "bpk-component-checkbox",
+          "type": "static"
+        }
+      ],
+      "bpk-component-aria-live": [
+        {
+          "source": "bpk-component-aria-live",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-aria-live",
+          "target": "bpk-component-chip",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-aria-live",
+          "target": "bpk-component-code",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-aria-live",
+          "target": "bpk-component-fieldset",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-aria-live",
+          "target": "bpk-component-select",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-aria-live",
+          "target": "bpk-component-switch",
+          "type": "static"
+        }
+      ],
+      "bpk-component-card-list": [
+        {
+          "source": "bpk-component-card-list",
+          "target": "bpk-component-breakpoint",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-card-list",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-card-list",
+          "target": "bpk-component-section-header",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-card-list",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-card-list",
+          "target": "bpk-component-page-indicator",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-card-list",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-card-list",
+          "target": "bpk-component-card",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-card-list",
+          "target": "bpk-component-chip-group",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-card-list",
+          "target": "bpk-component-image",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-card-list",
+          "target": "bpk-component-link",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-card-list",
+          "target": "bpk-component-snippet",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-card-list",
+          "target": "bpk-component-text",
+          "type": "static"
+        }
+      ],
+      "bpk-component-datatable": [
+        {
+          "source": "bpk-component-datatable",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-datatable",
+          "target": "bpk-component-icon",
+          "type": "static"
+        }
+      ],
+      "bpk-component-skip-link": [
+        {
+          "source": "bpk-component-skip-link",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-barchart": [
+        {
+          "source": "bpk-component-barchart",
+          "target": "bpk-component-mobile-scroll-container",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-barchart",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-barchart",
+          "target": "bpk-component-rtl-toggle",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-barchart",
+          "target": "bpk-component-text",
+          "type": "static"
+        }
+      ],
+      "bpk-component-calendar": [
+        {
+          "source": "bpk-component-calendar",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-calendar",
+          "target": "bpk-component-aria-live",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-calendar",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-calendar",
+          "target": "bpk-component-select",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-calendar",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-calendar",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-calendar",
+          "target": "bpk-component-text",
+          "type": "static"
+        }
+      ],
+      "bpk-component-carousel": [
+        {
+          "source": "bpk-component-carousel",
+          "target": "bpk-component-breakpoint",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-carousel",
+          "target": "bpk-component-page-indicator",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-carousel",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-checkbox": [
+        {
+          "source": "bpk-component-checkbox",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-checkbox",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-fieldset": [
+        {
+          "source": "bpk-component-fieldset",
+          "target": "bpk-component-checkbox",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-fieldset",
+          "target": "bpk-component-input",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-fieldset",
+          "target": "bpk-component-select",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-fieldset",
+          "target": "bpk-component-textarea",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-fieldset",
+          "target": "bpk-component-form-validation",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-fieldset",
+          "target": "bpk-component-label",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-fieldset",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-fieldset",
+          "target": "bpk-component-autosuggest",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-fieldset",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-fieldset",
+          "target": "bpk-component-calendar",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-fieldset",
+          "target": "bpk-component-datepicker",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-fieldset",
+          "target": "bpk-component-split-input",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-fieldset",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-progress": [
+        {
+          "source": "bpk-component-progress",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-progress",
+          "target": "bpk-component-button",
+          "type": "static"
+        }
+      ],
+      "bpk-component-skeleton": [
+        {
+          "source": "bpk-component-skeleton",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-textarea": [
+        {
+          "source": "bpk-component-textarea",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-textarea",
+          "target": "bpk-component-label",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-textarea",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-overlay": [
+        {
+          "source": "bpk-component-overlay",
+          "target": "bpk-component-image",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-overlay",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-overlay",
+          "target": "bpk-component-text",
+          "type": "static"
+        }
+      ],
+      "bpk-component-popover": [
+        {
+          "source": "bpk-component-popover",
+          "target": "bpk-component-close-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-popover",
+          "target": "bpk-component-link",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-popover",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-popover",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-popover",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-popover",
+          "target": "bpk-component-input",
+          "type": "static"
+        }
+      ],
+      "bpk-component-snippet": [
+        {
+          "source": "bpk-component-snippet",
+          "target": "bpk-component-breakpoint",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-snippet",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-snippet",
+          "target": "bpk-component-image",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-snippet",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-snippet",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-spinner": [
+        {
+          "source": "bpk-component-spinner",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-tooltip": [
+        {
+          "source": "bpk-component-tooltip",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-tooltip",
+          "target": "bpk-component-text",
+          "type": "static"
+        }
+      ],
+      "bpk-component-bubble": [
+        {
+          "source": "bpk-component-bubble",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-bubble",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-button": [
+        {
+          "source": "bpk-component-button",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-button",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-button",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-dialog": [
+        {
+          "source": "bpk-component-dialog",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-dialog",
+          "target": "bpk-component-close-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-dialog",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-dialog",
+          "target": "bpk-component-flare",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-dialog",
+          "target": "bpk-scrim-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-dialog",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-dialog",
+          "target": "bpk-component-text",
+          "type": "static"
+        }
+      ],
+      "bpk-component-drawer": [
+        {
+          "source": "bpk-component-drawer",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-drawer",
+          "target": "bpk-scrim-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-drawer",
+          "target": "bpk-component-close-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-drawer",
+          "target": "bpk-component-link",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-drawer",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-drawer",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-drawer",
+          "target": "bpk-component-tooltip",
+          "type": "static"
+        }
+      ],
+      "bpk-component-nudger": [
+        {
+          "source": "bpk-component-nudger",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-nudger",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-nudger",
+          "target": "bpk-component-label",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-nudger",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-nudger",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-nudger",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-rating": [
+        {
+          "source": "bpk-component-rating",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-rating",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-rating",
+          "target": "bpk-component-star-rating",
+          "type": "static"
+        }
+      ],
+      "bpk-component-select": [
+        {
+          "source": "bpk-component-select",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-select",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-slider": [
+        {
+          "source": "bpk-component-slider",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-slider",
+          "target": "bpk-component-rtl-toggle",
+          "type": "static"
+        }
+      ],
+      "bpk-component-switch": [
+        {
+          "source": "bpk-component-switch",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-ticket": [
+        {
+          "source": "bpk-component-ticket",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-ticket",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-ticket",
+          "target": "bpk-component-icon",
+          "type": "static"
+        }
+      ],
+      "bpk-component-badge": [
+        {
+          "source": "bpk-component-badge",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-badge",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-badge",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-flare": [
+        {
+          "source": "bpk-component-flare",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-flare",
+          "target": "bpk-component-text",
+          "type": "static"
+        }
+      ],
+      "bpk-component-image": [
+        {
+          "source": "bpk-component-image",
+          "target": "bpk-component-spinner",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-image",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-image",
+          "target": "bpk-component-mobile-scroll-container",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-image",
+          "target": "bpk-component-text",
+          "type": "static"
+        }
+      ],
+      "bpk-component-input": [
+        {
+          "source": "bpk-component-input",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-input",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-input",
+          "target": "bpk-component-banner-alert",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-input",
+          "target": "bpk-component-label",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-input",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-label": [
+        {
+          "source": "bpk-component-label",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-label",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-modal": [
+        {
+          "source": "bpk-component-modal",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-modal",
+          "target": "bpk-scrim-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-modal",
+          "target": "bpk-component-navigation-bar",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-modal",
+          "target": "bpk-component-close-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-modal",
+          "target": "bpk-component-link",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-modal",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-modal",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-modal",
+          "target": "bpk-component-icon",
+          "type": "static"
+        }
+      ],
+      "bpk-component-panel": [
+        {
+          "source": "bpk-component-panel",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-price": [
+        {
+          "source": "bpk-component-price",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-price",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-price",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-radio": [
+        {
+          "source": "bpk-component-radio",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-radio",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-table": [
+        {
+          "source": "bpk-component-table",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-storybook-utils": [
+        {
+          "source": "bpk-storybook-utils",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-animate-height": [
+        {
+          "source": "bpk-animate-height",
+          "target": "bpk-component-button",
+          "type": "static"
+        }
+      ],
+      "bpk-component-card": [
+        {
+          "source": "bpk-component-card",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-card",
+          "target": "bpk-component-text",
+          "type": "static"
+        }
+      ],
+      "bpk-component-chip": [
+        {
+          "source": "bpk-component-chip",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-chip",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-chip",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-chip",
+          "target": "bpk-component-aria-live",
+          "type": "static"
+        }
+      ],
+      "bpk-component-code": [
+        {
+          "source": "bpk-component-code",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-icon": [
+        {
+          "source": "bpk-component-icon",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-icon",
+          "target": "bpk-component-button",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-icon",
+          "target": "bpk-component-list",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-icon",
+          "target": "bpk-component-text",
+          "type": "static"
+        }
+      ],
+      "bpk-component-link": [
+        {
+          "source": "bpk-component-link",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-link",
+          "target": "bpk-component-panel",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-link",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-link",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-list": [
+        {
+          "source": "bpk-component-list",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-text": [
+        {
+          "source": "bpk-component-text",
+          "target": "bpk-react-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-component-map": [
+        {
+          "source": "bpk-component-map",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-map",
+          "target": "bpk-component-icon",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-map",
+          "target": "bpk-component-text",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-map",
+          "target": "bpk-component-spinner",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-map",
+          "target": "bpk-component-popover",
+          "type": "static"
+        },
+        {
+          "source": "bpk-component-map",
+          "target": "bpk-storybook-utils",
+          "type": "static"
+        }
+      ],
+      "bpk-react-utils": [],
+      "bpk-scrim-utils": [
+        {
+          "source": "bpk-scrim-utils",
+          "target": "bpk-react-utils",
+          "type": "static"
+        },
+        {
+          "source": "bpk-scrim-utils",
+          "target": "bpk-component-button",
+          "type": "static"
+        }
+      ],
+      "bpk-stylesheets": [
+        {
+          "source": "bpk-stylesheets",
+          "target": "bpk-component-text",
+          "type": "static"
+        }
+      ],
+      "bpk-theming": [],
+      "bpk-mixins": [],
+      "@skyscanner/backpack-web": []
+    }
+  }
+}
