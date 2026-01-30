@@ -25,6 +25,7 @@ exports[`BpkDrawerContent should render correctly 1`] = `
         <button
           aria-label="Close"
           class="bpk-close-button__default"
+          data-backpack-ds-component="CloseButton"
           title="Close"
           type="button"
         >
@@ -80,6 +81,7 @@ exports[`BpkDrawerContent should render correctly when it has a className 1`] = 
         <button
           aria-label="Close"
           class="bpk-close-button__default"
+          data-backpack-ds-component="CloseButton"
           title="Close"
           type="button"
         >
@@ -135,6 +137,7 @@ exports[`BpkDrawerContent should render correctly when it has a contentClassName
         <button
           aria-label="Close"
           class="bpk-close-button__default"
+          data-backpack-ds-component="CloseButton"
           title="Close"
           type="button"
         >
@@ -189,6 +192,7 @@ exports[`BpkDrawerContent should render correctly when it has padded=true 1`] = 
       >
         <button
           class="bpk-close-button__default"
+          data-backpack-ds-component="CloseButton"
           type="button"
         >
           <span
@@ -244,6 +248,7 @@ exports[`BpkDrawerContent should render correctly with arbitrary attributes 1`] 
         <button
           aria-label="Close"
           class="bpk-close-button__default"
+          data-backpack-ds-component="CloseButton"
           title="Close"
           type="button"
         >
@@ -299,6 +304,7 @@ exports[`BpkDrawerContent should render correctly with hideTitle 1`] = `
         <button
           aria-label="Close"
           class="bpk-close-button__default"
+          data-backpack-ds-component="CloseButton"
           title="Close"
           type="button"
         >

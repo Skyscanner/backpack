@@ -24,6 +24,7 @@ exports[`BpkAccordionItem should not render an "initiallyExpanded" attribute on 
           >
             <h3
               class="bpk-text bpk-text--body-default"
+              data-backpack-ds-component="Text"
             >
               My accordion item
             </h3>
@@ -96,6 +97,7 @@ exports[`BpkAccordionItem should render correctly 1`] = `
           >
             <h3
               class="bpk-text bpk-text--body-default"
+              data-backpack-ds-component="Text"
             >
               My accordion item
             </h3>
@@ -168,6 +170,7 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
           >
             <h3
               class="bpk-text bpk-text--body-default"
+              data-backpack-ds-component="Text"
             >
               My accordion item
             </h3>
@@ -240,6 +243,7 @@ exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
           >
             <h3
               class="bpk-text bpk-text--body-default"
+              data-backpack-ds-component="Text"
             >
               My accordion item
             </h3>
@@ -310,6 +314,7 @@ exports[`BpkAccordionItem should render correctly with "tagName" prop set 1`] = 
           >
             <h3
               class="bpk-text bpk-text--body-default"
+              data-backpack-ds-component="Text"
             >
               My accordion item
             </h3>
@@ -382,6 +387,7 @@ exports[`BpkAccordionItem should render correctly with "textStyle" prop set 1`] 
           >
             <h3
               class="bpk-text bpk-text--xl"
+              data-backpack-ds-component="Text"
             >
               My accordion item
             </h3>
@@ -454,6 +460,7 @@ exports[`BpkAccordionItem should render correctly with an icon set 1`] = `
           >
             <h3
               class="bpk-text bpk-text--body-default"
+              data-backpack-ds-component="Text"
             >
               <svg
                 aria-hidden="true"
@@ -538,6 +545,7 @@ exports[`BpkAccordionItem should render correctly with no divider 1`] = `
           >
             <h3
               class="bpk-text bpk-text--body-default"
+              data-backpack-ds-component="Text"
             >
               My accordion item
             </h3>
@@ -611,6 +619,7 @@ exports[`BpkAccordionItem should render correctly with onDark set 1`] = `
           >
             <h3
               class="bpk-text bpk-text--body-default"
+              data-backpack-ds-component="Text"
             >
               My accordion item
             </h3>

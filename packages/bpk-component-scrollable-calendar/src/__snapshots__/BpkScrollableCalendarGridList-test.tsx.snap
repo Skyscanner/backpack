@@ -27,6 +27,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
               >
                 <h2
                   class="bpk-text bpk-text--heading-4"
+                  data-backpack-ds-component="Text"
                 >
                   February 2010
                 </h2>
@@ -654,6 +655,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
               >
                 <h2
                   class="bpk-text bpk-text--heading-4"
+                  data-backpack-ds-component="Text"
                 >
                   March 2010
                 </h2>
@@ -1390,6 +1392,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom "custom
               >
                 <h2
                   class="bpk-text bpk-text--heading-4"
+                  data-backpack-ds-component="Text"
                 >
                   February 2010
                 </h2>
@@ -2058,6 +2061,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom "custom
               >
                 <h2
                   class="bpk-text bpk-text--heading-4"
+                  data-backpack-ds-component="Text"
                 >
                   March 2010
                 </h2>
@@ -2794,6 +2798,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom date co
               >
                 <h2
                   class="bpk-text bpk-text--heading-4"
+                  data-backpack-ds-component="Text"
                 >
                   February 2010
                 </h2>
@@ -3100,6 +3105,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom date co
               >
                 <h2
                   class="bpk-text bpk-text--heading-4"
+                  data-backpack-ds-component="Text"
                 >
                   March 2010
                 </h2>
@@ -3511,6 +3517,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
               >
                 <h2
                   class="bpk-text bpk-text--heading-4"
+                  data-backpack-ds-component="Text"
                 >
                   February 2010
                 </h2>
@@ -4179,6 +4186,7 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
               >
                 <h2
                   class="bpk-text bpk-text--heading-4"
+                  data-backpack-ds-component="Text"
                 >
                   March 2010
                 </h2>
@@ -4956,6 +4964,7 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
               >
                 <h2
                   class="bpk-text bpk-text--heading-4"
+                  data-backpack-ds-component="Text"
                 >
                   February 2010
                 </h2>
@@ -5624,6 +5633,7 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
               >
                 <h2
                   class="bpk-text bpk-text--heading-4"
+                  data-backpack-ds-component="Text"
                 >
                   March 2010
                 </h2>

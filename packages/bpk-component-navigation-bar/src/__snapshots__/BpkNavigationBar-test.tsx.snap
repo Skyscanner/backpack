@@ -11,6 +11,7 @@ exports[`BpkNavigationBar should render correctly 1`] = `
     >
       <span
         class="bpk-text bpk-text--heading-5"
+        data-backpack-ds-component="Text"
         id="test-bpk-navigation-bar-title"
       >
         test
@@ -31,6 +32,7 @@ exports[`BpkNavigationBar should render correctly when sticky 1`] = `
     >
       <span
         class="bpk-text bpk-text--heading-5"
+        data-backpack-ds-component="Text"
         id="test-bpk-navigation-bar-title"
       >
         test
@@ -53,6 +55,7 @@ exports[`BpkNavigationBar should render correctly with a "leadingButton" attribu
         <button
           aria-label="test"
           class="bpk-close-button__default"
+          data-backpack-ds-component="CloseButton"
           title="test"
           type="button"
         >
@@ -69,6 +72,7 @@ exports[`BpkNavigationBar should render correctly with a "leadingButton" attribu
     >
       <span
         class="bpk-text bpk-text--heading-5"
+        data-backpack-ds-component="Text"
         id="test-bpk-navigation-bar-title"
       >
         test
@@ -89,6 +93,7 @@ exports[`BpkNavigationBar should render correctly with a "traillingButton" attri
     >
       <span
         class="bpk-text bpk-text--heading-5"
+        data-backpack-ds-component="Text"
         id="test-bpk-navigation-bar-title"
       >
         test
@@ -101,6 +106,7 @@ exports[`BpkNavigationBar should render correctly with a "traillingButton" attri
         <button
           aria-label="test"
           class="bpk-close-button__default"
+          data-backpack-ds-component="CloseButton"
           title="test"
           type="button"
         >
@@ -136,6 +142,7 @@ exports[`BpkNavigationBar should render correctly with an element for the title 
         <button
           aria-label="test"
           class="bpk-close-button__default"
+          data-backpack-ds-component="CloseButton"
           title="test"
           type="button"
         >
@@ -163,6 +170,7 @@ exports[`BpkNavigationBar should render correctly with arbitrary props 1`] = `
     >
       <span
         class="bpk-text bpk-text--heading-5"
+        data-backpack-ds-component="Text"
         id="test-bpk-navigation-bar-title"
       >
         test
@@ -183,6 +191,7 @@ exports[`BpkNavigationBar should render correctly with custom class 1`] = `
     >
       <span
         class="bpk-text bpk-text--heading-5"
+        data-backpack-ds-component="Text"
         id="test-bpk-navigation-bar-title"
       >
         test
@@ -203,6 +212,7 @@ exports[`BpkNavigationBar should render correctly with on-dark style 1`] = `
     >
       <span
         class="bpk-text bpk-text--heading-5"
+        data-backpack-ds-component="Text"
         id="test-bpk-navigation-bar-title"
       >
         test

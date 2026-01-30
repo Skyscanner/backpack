@@ -19,7 +19,7 @@
 import type { SyntheticEvent, FunctionComponent } from 'react';
 
 import CloseIcon from '../../bpk-component-icon/sm/close';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkCloseButton.module.scss';
 
@@ -58,7 +58,7 @@ const BpkCloseButton = ({
       title={label}
       onClick={onClick}
       aria-label={label}
-      className={classNames.join(' ')}
+      className={classNames.join(' ')} {...getDataComponentAttribute('CloseButton')}
       {...rest}
     >
       <span className={getClassName('bpk-close-button-icon')}>
