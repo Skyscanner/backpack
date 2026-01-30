@@ -24,7 +24,6 @@ import type { ReactNode, FunctionComponent, SVGProps } from 'react';
 
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import AnimateAndFade from './AnimateAndFade';
 import { ALERT_TYPES, STYLE_TYPES } from './common-types';
 
@@ -39,7 +38,6 @@ import type {
 import STYLES from './BpkInfoBanner.module.scss';
 
 import BpkAnimateHeight from '@backpack/bpk-animate-height';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '@backpack/bpk-component-close-button';
 import { withButtonAlignment } from '@backpack/bpk-component-icon';
 import ChevronDownIcon from '@backpack/bpk-component-icon/sm/chevron-down';

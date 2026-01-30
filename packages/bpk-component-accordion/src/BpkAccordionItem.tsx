@@ -19,7 +19,6 @@
 import { useContext, cloneElement } from 'react';
 import type { ReactNode, ReactElement } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkAccordionContext } from './BpkAccordion';
 
 import STYLES from './BpkAccordionItem.module.scss';

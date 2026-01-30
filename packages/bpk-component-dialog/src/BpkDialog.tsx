@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import BpkDialogInner from './BpkDialogInner';
 import { HEADER_ICON_TYPES } from './common-types';

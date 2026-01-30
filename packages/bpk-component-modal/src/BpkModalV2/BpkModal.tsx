@@ -19,7 +19,6 @@
 import type { ReactNode } from 'react';
 import { useEffect, useRef } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { MODAL_STYLING } from '../BpkModalInner';
 
 import type { ModalStyle } from '../BpkModalInner';

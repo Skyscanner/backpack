@@ -45,14 +45,9 @@
 - 编辑 package.json
 - 添加 nx、nx:graph、nx:affected、nx:reset、nx:show 脚本
 
-### 7. 创建迁移日志
-- 创建 docs/nx-migration-log.md
-- 记录阶段 1 完成的操作
-
 ## 交付物
 
 - [ ] nx.json 配置文件
 - [ ] 更新的 .gitignore
 - [ ] 更新的 CI 工作流
 - [ ] Nx 辅助脚本
-- [ ] 迁移日志

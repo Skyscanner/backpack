@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { type DialogInnerProps as Props } from './common-types';
 
 import STYLES from './BpkDialogInner.module.scss';

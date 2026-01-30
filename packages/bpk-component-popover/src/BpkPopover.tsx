@@ -43,7 +43,6 @@ import {
 
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { ARROW_ID } from './constants';
 
 import type { Placement } from '@floating-ui/react';

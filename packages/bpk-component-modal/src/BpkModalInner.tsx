@@ -18,7 +18,6 @@
 
 import type { ReactNode } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import STYLES from './BpkModalInner.module.scss';
 
 import BpkCloseButton from '@backpack/bpk-component-close-button';
