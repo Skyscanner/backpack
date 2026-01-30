@@ -20,10 +20,10 @@ import { BpkCheckboxCard } from '../../packages/bpk-component-checkbox-card';
 
 import {
   NewAPIBasicExample,
-  NewAPIWithDescriptionExample,
-  NewAPIComplexLayoutExample,
+  NewAPIWithMultiContentExample,
   NewAPIAllVariantsExample,
   NewAPIWithImageExample,
+  NewAPIWithInlineLayoutExample,
   NewAPIWithCustomThemeExample,
 } from './new-api-examples';
 
@@ -34,8 +34,8 @@ export default {
 
 // Compound Component API (V2) Examples
 export const Basic = NewAPIBasicExample;
-export const WithDescription = NewAPIWithDescriptionExample;
-export const ComplexLayout = NewAPIComplexLayoutExample;
+export const WithMultiContent = NewAPIWithMultiContentExample;
 export const AllVariants = NewAPIAllVariantsExample;
 export const WithImage = NewAPIWithImageExample;
+export const WithInlineLayout = NewAPIWithInlineLayoutExample;
 export const WithCustomTheme = NewAPIWithCustomThemeExample;

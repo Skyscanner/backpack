@@ -37,14 +37,12 @@ export const NewAPIBasicExample = () => {
         checked={selected1}
         onCheckedChange={setSelected1}
         variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+        width={150}
+        height={150}
       >
         <BpkCheckboxCard.Control />
         <BpkCheckboxCard.Content>
-          <BpkCheckboxCard.Stack gap="md" align="center">
-            <BpkCheckboxCard.Icon icon={LandmarkIconLg} size="lg" />
-            <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
-            <BpkCheckboxCard.Price price="£85" />
-          </BpkCheckboxCard.Stack>
+          {/* Empty content - no icon, label, or price */}
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>
 
@@ -53,14 +51,12 @@ export const NewAPIBasicExample = () => {
         onCheckedChange={setSelected2}
         variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
         radius={CHECKBOX_CARD_RADIUS.square}
+        width={150}
+        height={150}
       >
         <BpkCheckboxCard.Control />
         <BpkCheckboxCard.Content>
-          <BpkCheckboxCard.Stack gap="md" align="center">
-            <BpkCheckboxCard.Icon icon={LandmarkIconLg} size="lg" />
-            <BpkCheckboxCard.Label>Waterfront</BpkCheckboxCard.Label>
-            <BpkCheckboxCard.Price price="£95" />
-          </BpkCheckboxCard.Stack>
+          {/* Empty content - no icon, label, or price */}
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>
     </div>
@@ -68,9 +64,9 @@ export const NewAPIBasicExample = () => {
 };
 
 /**
- * New Compound Component API - With Description
+ * New Compound Component API - With Multi Content
  */
-export const NewAPIWithDescriptionExample = () => {
+export const NewAPIWithMultiContentExample = () => {
   const [selected, setSelected] = useState(false);
 
   return (
@@ -100,36 +96,6 @@ export const NewAPIWithDescriptionExample = () => {
 };
 
 /**
- * New Compound Component API - Complex Nested Layout
- */
-export const NewAPIComplexLayoutExample = () => {
-  const [selected, setSelected] = useState(false);
-
-  return (
-    <div style={{ padding: '24px' }}>
-      <BpkCheckboxCard.Root
-        checked={selected}
-        onCheckedChange={setSelected}
-        variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
-        width={200}
-      >
-        <BpkCheckboxCard.Control />
-        <BpkCheckboxCard.Content>
-          <BpkCheckboxCard.Stack gap="md" align="start">
-            <BpkCheckboxCard.Icon icon={LandmarkIconLg} size="lg" />
-            <BpkCheckboxCard.Label lineClamp={1}>City Centre</BpkCheckboxCard.Label>
-            <BpkCheckboxCard.Description lineClamp={2}>
-              Central location near attractions
-            </BpkCheckboxCard.Description>
-            <BpkCheckboxCard.Price price="£85" leadingText="from" />
-          </BpkCheckboxCard.Stack>
-        </BpkCheckboxCard.Content>
-      </BpkCheckboxCard.Root>
-    </div>
-  );
-};
-
-/**
  * New Compound Component API - All Variants
  */
 export const NewAPIAllVariantsExample = () => {
@@ -146,14 +112,12 @@ export const NewAPIAllVariantsExample = () => {
           checked={selected1}
           onCheckedChange={setSelected1}
           variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+          width={150}
+          height={150}
         >
           <BpkCheckboxCard.Control />
           <BpkCheckboxCard.Content>
-            <BpkCheckboxCard.Stack gap="md" align="center">
-              <BpkCheckboxCard.Icon icon={LandmarkIconLg} size="lg" />
-              <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
-              <BpkCheckboxCard.Price price="£85" />
-            </BpkCheckboxCard.Stack>
+            {/* Empty content - no icon, label, or price */}
           </BpkCheckboxCard.Content>
         </BpkCheckboxCard.Root>
       </div>
@@ -165,14 +129,12 @@ export const NewAPIAllVariantsExample = () => {
           checked={selected2}
           onCheckedChange={setSelected2}
           variant={CHECKBOX_CARD_VARIANTS.onCanvasContrast}
+          width={150}
+          height={150}
         >
           <BpkCheckboxCard.Control />
           <BpkCheckboxCard.Content>
-            <BpkCheckboxCard.Stack gap="md" align="center">
-              <BpkCheckboxCard.Icon icon={LandmarkIconLg} size="lg" />
-              <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
-              <BpkCheckboxCard.Price price="£85" />
-            </BpkCheckboxCard.Stack>
+            {/* Empty content - no icon, label, or price */}
           </BpkCheckboxCard.Content>
         </BpkCheckboxCard.Root>
       </div>
@@ -185,14 +147,12 @@ export const NewAPIAllVariantsExample = () => {
             checked={selected3}
             onCheckedChange={setSelected3}
             variant={CHECKBOX_CARD_VARIANTS.onSurfaceContrast}
+            width={150}
+            height={150}
           >
             <BpkCheckboxCard.Control />
             <BpkCheckboxCard.Content>
-              <BpkCheckboxCard.Stack gap="md" align="center">
-                <BpkCheckboxCard.Icon icon={LandmarkIconLg} size="lg" />
-                <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
-                <BpkCheckboxCard.Price price="£85" />
-              </BpkCheckboxCard.Stack>
+              {/* Empty content - no icon, label, or price */}
             </BpkCheckboxCard.Content>
           </BpkCheckboxCard.Root>
         </div>
@@ -226,6 +186,31 @@ export const NewAPIWithImageExample = () => {
             <BpkCheckboxCard.Label>Economy</BpkCheckboxCard.Label>
             <BpkCheckboxCard.Price price="£74" leadingText="from" />
           </BpkCheckboxCard.Stack>
+        </BpkCheckboxCard.Content>
+      </BpkCheckboxCard.Root>
+    </div>
+  );
+};
+
+/**
+ * New Compound Component API - With Inline Layout
+ */
+export const NewAPIWithInlineLayoutExample = () => {
+  const [selected, setSelected] = useState(false);
+
+  return (
+    <div style={{ padding: '24px' }}>
+      <BpkCheckboxCard.Root
+        checked={selected}
+        onCheckedChange={setSelected}
+        variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+      >
+        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.Content>
+          <BpkCheckboxCard.Inline gap="sm" align="center">
+            <BpkCheckboxCard.Icon icon={LandmarkIconLg} size="lg" />
+            <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
+          </BpkCheckboxCard.Inline>
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>
     </div>

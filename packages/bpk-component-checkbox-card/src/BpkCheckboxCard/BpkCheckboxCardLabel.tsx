@@ -16,9 +16,15 @@
  * limitations under the License.
  */
 
-import BpkText, { TEXT_STYLES, type TextStyle } from '../../../bpk-component-text';
+import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
+import type { TextStyle } from '../../../bpk-component-text/src/BpkText';
+import { cssModules } from '../../../bpk-react-utils';
 
 import { useCheckboxCardContext } from './CheckboxCardContext';
+
+import STYLES from './BpkCheckboxCard.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 export type BpkCheckboxCardLabelProps = {
   /**
@@ -63,22 +69,24 @@ export function BpkCheckboxCardLabel({
   lineClamp = 2,
 }: BpkCheckboxCardLabelProps) {
   const { labelId } = useCheckboxCardContext();
+  const className = getClassName('bpk-checkbox-card-label');
 
   return (
-    <BpkText
-      id={labelId}
-      textStyle={textStyle}
-      tagName="span"
-      style={{
-        display: '-webkit-box',
-        WebkitLineClamp: lineClamp,
-        WebkitBoxOrient: 'vertical',
-        overflow: 'hidden',
-        textAlign: 'center',
-        width: '100%',
-      }}
-    >
-      {children}
-    </BpkText>
+    <div className={className}>
+      <BpkText
+        id={labelId}
+        textStyle={textStyle}
+        tagName="span"
+        style={{
+          display: '-webkit-box',
+          WebkitLineClamp: lineClamp,
+          WebkitBoxOrient: 'vertical' as any,
+          overflow: 'hidden',
+          width: '100%',
+        }}
+      >
+        {children}
+      </BpkText>
+    </div>
   );
 }

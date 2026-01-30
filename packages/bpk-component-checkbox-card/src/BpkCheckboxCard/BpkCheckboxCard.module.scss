@@ -128,6 +128,11 @@
   color: inherit;
   flex-shrink: 0;
 
+  // Ensure SVG fills use currentColor in all states
+  svg {
+    fill: currentColor;
+  }
+
   &--size-sm {
     width: calc(tokens.$bpk-one-pixel-rem * 16);
     height: calc(tokens.$bpk-one-pixel-rem * 16);
@@ -142,20 +147,6 @@
     width: calc(tokens.$bpk-one-pixel-rem * 32);
     height: calc(tokens.$bpk-one-pixel-rem * 32);
   }
-
-  // Ensure SVG fills use currentColor in checked state
-  .bpk-checkbox-card-root--checked & {
-    svg {
-      fill: currentColor;
-    }
-  }
-
-  // Ensure SVG fills use currentColor in onSurfaceContrast variant (always)
-  .bpk-checkbox-card-root--on-surface-contrast & {
-    svg {
-      fill: currentColor;
-    }
-  }
 }
 
 // Label slot
@@ -163,12 +154,17 @@
   @include typography.bpk-heading-5;
 
   color: inherit;
-  text-align: center;
+  text-align: center !important;
   width: 100%;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  // Force center alignment for all child elements
+  * {
+    text-align: center !important;
+  }
 }
 
 // Description slot
@@ -176,7 +172,7 @@
   @include typography.bpk-text;
 
   color: var(--bpk-checkbox-card-fg-secondary, #{tokens.$bpk-text-secondary-day});
-  text-align: center;
+  text-align: center !important;
   width: 100%;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -186,6 +182,11 @@
   .bpk-checkbox-card-root--checked & {
     color: inherit; // Use root color when checked
   }
+
+  // Force center alignment for all child elements
+  * {
+    text-align: center !important;
+  }
 }
 
 // Price slot
@@ -193,22 +194,14 @@
   @include typography.bpk-heading-5;
 
   color: inherit;
-  text-align: center;
+  text-align: center !important;
   width: 100%;
   flex-shrink: 0;
 
-  // Force all child elements to inherit color in checked state
-  .bpk-checkbox-card-root--checked & {
-    * {
-      color: inherit !important;
-    }
-  }
-
-  // Force all child elements to inherit color in onSurfaceContrast variant (always)
-  .bpk-checkbox-card-root--on-surface-contrast & {
-    * {
-      color: inherit !important;
-    }
+  // Force all child elements to inherit color and center align
+  * {
+    color: inherit !important;
+    text-align: center !important;
   }
 }
 
@@ -224,6 +217,41 @@
 .bpk-checkbox-card-stack {
   display: flex;
   flex-direction: column;
+  width: 100%;
+
+  &--gap-sm {
+    gap: tokens.bpk-spacing-sm();
+  }
+
+  &--gap-md {
+    gap: tokens.bpk-spacing-md();
+  }
+
+  &--gap-lg {
+    gap: tokens.bpk-spacing-lg();
+  }
+
+  &--gap-xl {
+    gap: tokens.bpk-spacing-xl();
+  }
+
+  &--align-start {
+    align-items: flex-start;
+  }
+
+  &--align-center {
+    align-items: center;
+  }
+
+  &--align-end {
+    align-items: flex-end;
+  }
+}
+
+// Inline primitive
+.bpk-checkbox-card-inline {
+  display: flex;
+  flex-direction: row;
   width: 100%;
 
   &--gap-sm {

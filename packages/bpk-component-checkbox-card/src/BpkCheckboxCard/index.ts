@@ -54,6 +54,7 @@ import { BpkCheckboxCardLabel } from './BpkCheckboxCardLabel';
 import { BpkCheckboxCardDescription } from './BpkCheckboxCardDescription';
 import { BpkCheckboxCardPrice } from './BpkCheckboxCardPrice';
 import { BpkCheckboxCardStack } from './BpkCheckboxCardStack';
+import { BpkCheckboxCardInline } from './BpkCheckboxCardInline';
 
 /**
  * Main BpkCheckboxCard compound component
@@ -104,6 +105,11 @@ export const BpkCheckboxCard = Object.assign(BpkCheckboxCardRoot, {
    * Stack primitive - vertical layout
    */
   Stack: BpkCheckboxCardStack,
+
+  /**
+   * Inline primitive - horizontal layout
+   */
+  Inline: BpkCheckboxCardInline,
 });
 
 export default BpkCheckboxCard;
@@ -117,6 +123,7 @@ export type { BpkCheckboxCardLabelProps } from './BpkCheckboxCardLabel';
 export type { BpkCheckboxCardDescriptionProps } from './BpkCheckboxCardDescription';
 export type { BpkCheckboxCardPriceProps } from './BpkCheckboxCardPrice';
 export type { BpkCheckboxCardStackProps } from './BpkCheckboxCardStack';
+export type { BpkCheckboxCardInlineProps } from './BpkCheckboxCardInline';
 
 // Export context and common types
 export { useCheckboxCardContext } from './CheckboxCardContext';

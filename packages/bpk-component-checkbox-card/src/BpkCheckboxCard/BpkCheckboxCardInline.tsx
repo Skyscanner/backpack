@@ -1,0 +1,75 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import type { ReactNode } from 'react';
+
+import { cssModules } from '../../../bpk-react-utils';
+
+import STYLES from './BpkCheckboxCard.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+export type BpkCheckboxCardInlineProps = {
+  /**
+   * Child components to arrange horizontally
+   */
+  children: ReactNode;
+
+  /**
+   * Gap between inline items
+   * Uses Backpack spacing tokens
+   * @default "md"
+   */
+  gap?: 'sm' | 'md' | 'lg' | 'xl';
+
+  /**
+   * Vertical alignment of items
+   * @default "center"
+   */
+  align?: 'start' | 'center' | 'end';
+};
+
+/**
+ * BpkCheckboxCard.Inline - Horizontal layout primitive
+ *
+ * Arranges child components horizontally with consistent spacing
+ * using Backpack design tokens.
+ *
+ * This primitive is useful for creating horizontal layouts within
+ * checkbox cards, such as placing an icon next to a label or
+ * arranging multiple elements in a row.
+ *
+ * @example
+ * <BpkCheckboxCard.Inline gap="sm" align="center">
+ *   <BpkCheckboxCard.Icon icon={LandmarkIconLg} size="sm" />
+ *   <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
+ * </BpkCheckboxCard.Inline>
+ */
+export function BpkCheckboxCardInline({
+  children,
+  gap = 'md',
+  align = 'center',
+}: BpkCheckboxCardInlineProps) {
+  const className = getClassName(
+    'bpk-checkbox-card-inline',
+    `bpk-checkbox-card-inline--gap-${gap}`,
+    `bpk-checkbox-card-inline--align-${align}`
+  );
+
+  return <div className={className}>{children}</div>;
+}

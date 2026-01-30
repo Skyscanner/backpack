@@ -27,8 +27,9 @@ const getClassName = cssModules(STYLES);
 export type BpkCheckboxCardContentProps = {
   /**
    * Child components (slots, Stack layout primitives, etc.)
+   * Optional - can be empty for minimal card displays
    */
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 /**

@@ -31,9 +31,7 @@ export type {
   BpkCheckboxCardLabelProps,
   BpkCheckboxCardDescriptionProps,
   BpkCheckboxCardPriceProps,
-  BpkCheckboxCardIndicatorProps,
   BpkCheckboxCardStackProps,
-  BpkCheckboxCardInlineProps,
   CheckboxCardContextValue,
 } from './src/BpkCheckboxCard';
 
