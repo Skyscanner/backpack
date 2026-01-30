@@ -12,6 +12,7 @@ exports[`BpkPriceMarker should render correctly with "status" attribute as "prev
     >
       <div
         class="bpk-price-marker-button bpk-price-marker-button-previous_selected"
+        data-backpack-ds-component="PriceMarkerButton"
       >
         <span
           class="bpk-text bpk-text--label-3"
@@ -37,6 +38,7 @@ exports[`BpkPriceMarker should render correctly with "status" attribute as "sele
     >
       <div
         class="bpk-price-marker-button bpk-price-marker-button-selected"
+        data-backpack-ds-component="PriceMarkerButton"
       >
         <span
           class="bpk-text bpk-text--label-3"
@@ -63,6 +65,7 @@ exports[`BpkPriceMarker should render correctly with a "buttonProps" attribute 1
     >
       <div
         class="bpk-price-marker-button bpk-price-marker-button-unselected"
+        data-backpack-ds-component="PriceMarkerButton"
       >
         <span
           class="bpk-text bpk-text--label-3"
@@ -88,6 +91,7 @@ exports[`BpkPriceMarker should render correctly with a "className" attribute 1`]
     >
       <div
         class="bpk-price-marker-button bpk-price-marker-button-unselected custom-class-1 custom-class-2"
+        data-backpack-ds-component="PriceMarkerButton"
       >
         <span
           class="bpk-text bpk-text--label-3"
@@ -113,6 +117,7 @@ exports[`BpkPriceMarker should render correctly with a "onClick" attribute 1`] =
     >
       <div
         class="bpk-price-marker-button bpk-price-marker-button--dynamic bpk-price-marker-button-unselected"
+        data-backpack-ds-component="PriceMarkerButton"
       >
         <span
           class="bpk-text bpk-text--label-3"
@@ -138,6 +143,7 @@ exports[`BpkPriceMarker should render properly 1`] = `
     >
       <div
         class="bpk-price-marker-button bpk-price-marker-button-unselected"
+        data-backpack-ds-component="PriceMarkerButton"
       >
         <span
           class="bpk-text bpk-text--label-3"
@@ -163,6 +169,7 @@ exports[`BpkPriceMarker should render properly with a icon 1`] = `
     >
       <div
         class="bpk-price-marker-button bpk-price-marker-button-unselected bpk-price-marker-button-unselected--icon"
+        data-backpack-ds-component="PriceMarkerButton"
       >
         <span>
           Icon
