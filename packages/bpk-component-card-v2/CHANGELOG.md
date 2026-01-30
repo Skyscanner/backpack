@@ -22,7 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Props and Configuration
 - **variant** - Visual styling (default with shadow, outlined with border)
-- **bgColor** - 8 surface colour tokens for flexible theming
+- **bgColor** - 8 surface color tokens for flexible theming
   - `surfaceDefault`
   - `surfaceElevated`
   - `surfaceTint`
@@ -45,7 +45,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Styling
 - CSS Modules with BEM naming convention
-- 8 surface colour variants using Backpack design tokens
+- 8 surface color variants using Backpack design tokens
 - Shadow and border visual variants
 - Semantic dividers between sections
 - RTL support with logical properties
@@ -100,7 +100,7 @@ This is the initial release of BpkCardV2. If migrating from the previous BpkCard
 
 - BpkCardV2 uses explicit subcomponents (Header, Body, Footer) instead of children
 - Split layout now uses dedicated Primary/Secondary subcomponents
-- Surface colours are configured via `bgColor` prop instead of inline styling
+- Surface colors are configured via `bgColor` prop instead of inline styling
 - Variant support is now built-in (default shadow vs outlined border)
 
 ### Future Enhancements

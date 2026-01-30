@@ -29,7 +29,7 @@ const meta: BpkCardV2Meta = {
     docs: {
       description: {
         component:
-          'BpkCardV2 is a composable, responsive card component that supports multi-section layouts, explicit composition, and flexible surface colour theming.',
+          'BpkCardV2 is a composable, responsive card component that supports multi-section layouts, explicit composition, and flexible surface color theming.',
       },
     },
   },
@@ -40,7 +40,7 @@ const meta: BpkCardV2Meta = {
       control: { type: 'radio' },
     },
     bgColor: {
-      description: 'Background surface colour token',
+      description: 'Background surface color token',
       options: [
         'surfaceDefault',
         'surfaceElevated',
@@ -151,7 +151,7 @@ export const ElevatedSurface: Story = {
   render: (args) => (
     <BpkCardV2 {...args}>
       <BpkCardV2.Header>Elevated Surface</BpkCardV2.Header>
-      <BpkCardV2.Body>This card uses the elevated surface colour for emphasis and visual hierarchy.</BpkCardV2.Body>
+      <BpkCardV2.Body>This card uses the elevated surface color for emphasis and visual hierarchy.</BpkCardV2.Body>
     </BpkCardV2>
   ),
 };
@@ -306,7 +306,7 @@ export const CardGrid: Story = {
       </BpkCardV2>
       <BpkCardV2 variant="default" bgColor="surfaceElevated">
         <BpkCardV2.Header>Elevated Surface</BpkCardV2.Header>
-        <BpkCardV2.Body>Card with elevated surface colour</BpkCardV2.Body>
+        <BpkCardV2.Body>Card with elevated surface color</BpkCardV2.Body>
       </BpkCardV2>
     </div>
   ),
