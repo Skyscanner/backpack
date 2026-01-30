@@ -1,36 +1,27 @@
 ---
 name: nx-setup
-description: Set up all packages as individual Nx projects. Use when migrating a monorepo to use Nx project configuration.
+description: Set up all packages as individual Nx projects using sub-agents. Spawns Scout, Migrator, and Verifier agents.
 ---
 
 # Nx Component Setup
 
-Set up all packages in this monorepo as individual Nx projects to enable `nx affected`, dependency graph, and caching.
+Set up all packages in this monorepo as individual Nx projects.
 
-## Workflow
+## Instructions
 
-Execute the 3-phase workflow defined in `.claude/agents/nx-component-setup/`:
+Read and execute the orchestrator: `.claude/agents/nx-component-setup/orchestrator.agent.md`
 
-### Phase 1: Scout
-Read and follow `.claude/agents/nx-component-setup/scout.agent.md`
-- Analyze the repository structure
-- Identify all packages and special cases
-- Output: `nx-setup-output/analysis.json`
+The orchestrator will guide you to:
 
-### Phase 2: Migrator
-Read and follow `.claude/agents/nx-component-setup/migrator.agent.md`
-- Generate migration scripts based on analysis
-- Output: `nx-setup-output/migration-scripts/`
-- **IMPORTANT**: Show generated scripts to user for review before execution
+1. **Spawn Scout Agent** (via Task tool) → Analyze repo, output `analysis.json`
+2. **Spawn Migrator Agent** (via Task tool) → Generate migration scripts
+3. **User Checkpoint** → Ask user to review/approve scripts
+4. **Execute Migration** → Run the generated scripts
+5. **Spawn Verifier Agent** (via Task tool) → Validate and report
 
-### Phase 3: Verifier
-Read and follow `.claude/agents/nx-component-setup/verifier.agent.md`
-- Run verification commands
-- Output: `nx-setup-output/verification-report.md`
+## Key Points
 
-## Important
-
-1. Always create `nx-setup-output/` directory first
-2. Each phase must complete before the next begins
-3. Ask user confirmation before executing migration scripts
-4. Generate scripts instead of directly modifying files
+- Use `Task` tool with `subagent_type: "general-purpose"` to spawn each agent
+- Each agent reads its instructions from `.claude/agents/nx-component-setup/*.agent.md`
+- Output goes to `nx-setup-output/` directory
+- Always ask user before executing migration scripts

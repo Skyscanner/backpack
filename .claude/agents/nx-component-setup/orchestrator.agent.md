@@ -1,273 +1,211 @@
 ---
 name: nx-setup
-description: Set up components as Nx projects in a monorepo. Orchestrates scout, migrator, and verifier agents.
+description: Set up components as Nx projects in a monorepo. Spawns scout, migrator, and verifier as parallel sub-agents.
 ---
 
 # Orchestrator: Nx Component Setup
 
-Coordinate the full workflow to set up all packages in a monorepo as individual Nx projects.
+This orchestrator uses the **Task tool** to spawn real sub-agents for each phase.
 
-## Usage
+## Execution Instructions
 
-```
-/nx-setup [packages-dir] [--dry-run] [--skip-verify]
-```
+When this agent is invoked, you MUST use the Task tool to spawn sub-agents. Follow these steps exactly:
 
-**Arguments:**
-- `packages-dir`: Directory containing packages (default: `packages/`)
-- `--dry-run`: Generate scripts but don't execute
-- `--skip-verify`: Skip verification phase
-
-## Workflow
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                     Orchestrator                            │
-│                                                             │
-│  ┌─────────┐     ┌─────────┐     ┌──────────┐              │
-│  │  Scout  │ ──▶ │Migrator │ ──▶ │ Verifier │              │
-│  └─────────┘     └─────────┘     └──────────┘              │
-│       │               │               │                     │
-│       ▼               ▼               ▼                     │
-│  analysis.json   scripts/      report.md                   │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
-## Phase 1: Scout
-
-**Goal**: Analyze repository structure
-
-**Invoke**: `scout.agent.md`
-
-**Input**:
-- Repository root path
-- Packages directory
-
-**Output**: `nx-setup-output/analysis.json`
-
-**Gate**: Must complete successfully before proceeding
-
-```
-✓ Found 98 packages
-✓ Identified 1 sass-only package
-✓ Identified 1 custom-build package
-✓ Mapped dependencies
-```
-
-## Phase 2: Migrator
-
-**Goal**: Generate migration scripts
-
-**Invoke**: `migrator.agent.md`
-
-**Input**:
-- `nx-setup-output/analysis.json`
-
-**Output**: `nx-setup-output/migration-scripts/`
-
-**Gate**: Scripts must be generated and valid
-
-```
-✓ Generated 01-generate-project-json.js
-✓ Generated 02-generate-tsconfigs.js
-✓ Generated 03-update-nx-json.js
-✓ Generated 04-run-migration.sh
-```
-
-### User Checkpoint (if not --dry-run)
-
-```
-=== Migration Scripts Ready ===
-
-Generated scripts in: nx-setup-output/migration-scripts/
-
-Please review:
-  - 01-generate-project-json.js (creates 98 project.json files)
-  - 02-generate-tsconfigs.js (creates 291 tsconfig files)
-  - 03-update-nx-json.js (updates nx.json targetDefaults)
-
-Run migration? [y/N]
-```
-
-### Execute Migration
+### Step 0: Setup
 
 ```bash
-cd nx-setup-output/migration-scripts
-bash 04-run-migration.sh
+mkdir -p nx-setup-output
 ```
 
-## Phase 3: Verifier
+### Step 1: Spawn Scout Agent
 
-**Goal**: Validate setup is correct
-
-**Invoke**: `verifier.agent.md`
-
-**Input**:
-- `nx-setup-output/analysis.json` (expected values)
-- Executed migration
-
-**Output**: `nx-setup-output/verification-report.md`
-
-**Gate**: All checks must pass
+Use the Task tool to spawn the Scout agent:
 
 ```
-✓ Project count: 98/98
-✓ Config files: complete
-✓ nx graph: loads
-✓ nx affected: works
-✓ Regression tests: pass
+Tool: Task
+Parameters:
+  subagent_type: "general-purpose"
+  description: "Scout: analyze repo for Nx setup"
+  prompt: |
+    You are the Scout agent for Nx component setup.
+
+    Read and follow the instructions in: .claude/agents/nx-component-setup/scout.agent.md
+
+    Your task:
+    1. Analyze the packages/ directory
+    2. Identify all packages, their types, and special cases
+    3. Map dependencies between packages
+    4. Write output to: nx-setup-output/analysis.json
+
+    Output format for analysis.json:
+    {
+      "summary": { "totalPackages": N, "withTypeScript": N, "sassOnly": N },
+      "packages": [{ "name": "...", "path": "...", "hasTypeScript": true, "category": "component" }],
+      "specialCases": [{ "name": "...", "reason": "...", "handling": "..." }]
+    }
+
+    When complete, confirm the analysis.json file was created.
 ```
 
-## Output Structure
+**WAIT** for Scout to complete before proceeding.
+
+### Step 2: Spawn Migrator Agent
+
+After Scout completes, use the Task tool to spawn the Migrator agent:
 
 ```
-nx-setup-output/
-├── analysis.json              # Scout output
-├── migration-scripts/         # Migrator output
-│   ├── 01-generate-project-json.js
-│   ├── 02-generate-tsconfigs.js
-│   ├── 03-update-nx-json.js
-│   ├── 04-run-migration.sh
-│   └── templates/
-└── verification-report.md     # Verifier output
+Tool: Task
+Parameters:
+  subagent_type: "general-purpose"
+  description: "Migrator: generate Nx setup scripts"
+  prompt: |
+    You are the Migrator agent for Nx component setup.
+
+    Read and follow the instructions in: .claude/agents/nx-component-setup/migrator.agent.md
+
+    Input: nx-setup-output/analysis.json (created by Scout)
+
+    Your task:
+    1. Read the analysis.json file
+    2. Generate migration scripts in nx-setup-output/migration-scripts/
+    3. Scripts should create project.json and tsconfig files for each package
+    4. Include a main runner script: 04-run-migration.sh
+
+    IMPORTANT: Generate scripts, do NOT execute them directly.
+
+    Output files:
+    - nx-setup-output/migration-scripts/01-generate-project-json.js
+    - nx-setup-output/migration-scripts/02-generate-tsconfigs.js
+    - nx-setup-output/migration-scripts/03-update-nx-json.js
+    - nx-setup-output/migration-scripts/04-run-migration.sh
+
+    When complete, list the generated scripts.
+```
+
+**WAIT** for Migrator to complete.
+
+### Step 3: User Review Checkpoint
+
+After Migrator completes, **ASK THE USER** before proceeding:
+
+```
+Migration scripts have been generated in nx-setup-output/migration-scripts/
+
+Files:
+- 01-generate-project-json.js
+- 02-generate-tsconfigs.js
+- 03-update-nx-json.js
+- 04-run-migration.sh
+
+Would you like to:
+1. Review the scripts first
+2. Execute the migration now
+3. Cancel
+```
+
+### Step 4: Execute Migration (if user approves)
+
+```bash
+cd nx-setup-output/migration-scripts && bash 04-run-migration.sh
+```
+
+### Step 5: Spawn Verifier Agent
+
+After migration executes, use the Task tool to spawn the Verifier agent:
+
+```
+Tool: Task
+Parameters:
+  subagent_type: "general-purpose"
+  description: "Verifier: validate Nx setup"
+  prompt: |
+    You are the Verifier agent for Nx component setup.
+
+    Read and follow the instructions in: .claude/agents/nx-component-setup/verifier.agent.md
+
+    Input: nx-setup-output/analysis.json (expected values)
+
+    Your task:
+    1. Run verification commands (nx show projects, nx graph, etc.)
+    2. Compare actual results with expected values from analysis.json
+    3. Run regression tests (npm test, npm run build, npm run lint)
+    4. Generate verification report
+
+    Output: nx-setup-output/verification-report.md
+
+    Report format:
+    # Verification Report
+
+    | Check | Expected | Actual | Status |
+    |-------|----------|--------|--------|
+    | Project count | X | Y | ✅/❌ |
+    ...
+
+    When complete, summarize pass/fail status.
+```
+
+## Parallel Opportunities
+
+While the main flow is sequential, these can run in parallel:
+
+### During Scout Phase
+```
+Tool: Task (run_in_background: true)
+  - Analyze TypeScript configs
+  - Map import dependencies
+```
+
+### During Verification Phase
+```
+Tool: Task (parallel)
+  - Task 1: Run "npm test"
+  - Task 2: Run "npm run lint"
+  - Task 3: Run "nx graph --file=graph.json"
 ```
 
 ## Error Handling
 
-### Scout Fails
+If any agent fails:
+
+1. **Scout fails**: Check packages/ directory exists
+2. **Migrator fails**: Re-run Scout, check analysis.json
+3. **Migration fails**:
+   ```bash
+   cp nx.json.backup nx.json
+   find packages -name "project.json" -delete
+   ```
+4. **Verifier fails**: Review report, fix issues manually
+
+## Complete Flow Diagram
 
 ```
-Problem: Cannot analyze repository
-Action: Check packages directory exists and contains valid packages
-Recovery: Fix directory structure, re-run
-```
-
-### Migrator Fails
-
-```
-Problem: Cannot generate scripts
-Action: Check analysis.json is valid
-Recovery: Re-run Scout, then Migrator
-```
-
-### Migration Fails
-
-```
-Problem: Scripts fail during execution
-Action: Check error output, restore from backup
-Recovery:
-  1. cp nx.json.backup nx.json
-  2. find packages -name "project.json" -delete
-  3. Fix issue, re-run migration
-```
-
-### Verifier Fails
-
-```
-Problem: Verification checks fail
-Action: Review verification-report.md for details
-Recovery:
-  - Minor issues: Fix manually
-  - Major issues: Rollback and re-run from Scout
-```
-
-## Rollback
-
-If anything goes wrong after migration:
-
-```bash
-# Restore nx.json
-cp nx.json.backup nx.json
-
-# Remove generated project.json files
-find packages -name "project.json" -delete
-
-# Remove generated tsconfig files (careful - don't delete root ones)
-find packages/bpk-* -name "tsconfig.json" -delete
-find packages -name "tsconfig.lib.json" -delete
-find packages -name "tsconfig.spec.json" -delete
-```
-
-## Customization
-
-### Adding Special Cases
-
-Edit `analysis.json` before running Migrator:
-
-```json
-{
-  "specialCases": [
-    {
-      "name": "my-custom-package",
-      "reason": "custom-build",
-      "handling": "customBuildTarget",
-      "config": {
-        "buildCommand": "node custom-build.js"
-      }
-    }
-  ]
-}
-```
-
-### Modifying Templates
-
-Edit files in `migration-scripts/templates/` before running migration.
-
-### Skipping Packages
-
-Add to `analysis.json`:
-
-```json
-{
-  "skip": ["package-to-skip"]
-}
-```
-
-## Success Criteria
-
-Migration is complete when:
-
-- [ ] All packages have `project.json`
-- [ ] TypeScript packages have `tsconfig.json`, `tsconfig.lib.json`, `tsconfig.spec.json`
-- [ ] `nx show projects` lists all packages
-- [ ] `nx graph` displays correct dependency edges
-- [ ] `nx affected` correctly identifies changed packages
-- [ ] All existing npm scripts (`build`, `test`, `lint`) pass
-- [ ] verification-report.md shows all checks PASS
-
-## Example Run
-
-```
-$ claude /nx-setup
-
-=== Nx Component Setup ===
-
-[Phase 1/3] Scout
-  Analyzing repository...
-  ✓ Found 98 packages
-  ✓ analysis.json saved
-
-[Phase 2/3] Migrator
-  Generating scripts...
-  ✓ Scripts generated in migration-scripts/
-
-  Review scripts? [Y/n] y
-  (opens scripts for review)
-
-  Execute migration? [y/N] y
-  ✓ Migration complete
-
-[Phase 3/3] Verifier
-  Running verification...
-  ✓ All checks passed
-  ✓ Report saved to verification-report.md
-
-=== Setup Complete ===
-
-Next steps:
-  1. Review verification-report.md
-  2. Test: npx nx graph
-  3. Test: npx nx affected --target=test
-  4. Commit changes
+┌──────────────────────────────────────────────────────────────┐
+│                      Orchestrator                            │
+│                                                              │
+│  Task(Scout)                                                 │
+│      │                                                       │
+│      ▼                                                       │
+│  analysis.json                                               │
+│      │                                                       │
+│      ▼                                                       │
+│  Task(Migrator)                                              │
+│      │                                                       │
+│      ▼                                                       │
+│  migration-scripts/                                          │
+│      │                                                       │
+│      ▼                                                       │
+│  [User Review] ──────────────────────────────────────────┐   │
+│      │                                                   │   │
+│      ▼ (approved)                              (cancel)  │   │
+│  Execute Scripts                                    STOP │   │
+│      │                                                   │   │
+│      ▼                                                   │   │
+│  Task(Verifier) ◄────────────────────────────────────────┘   │
+│      │                                                       │
+│      ▼                                                       │
+│  verification-report.md                                      │
+│      │                                                       │
+│      ▼                                                       │
+│  DONE                                                        │
+└──────────────────────────────────────────────────────────────┘
 ```
