@@ -1,0 +1,8 @@
+node_modules
+dist
+dist-storybook
+dist-sassdoc
+.cache
+coverage
+.nx/cache
+.nx/workspace-data
