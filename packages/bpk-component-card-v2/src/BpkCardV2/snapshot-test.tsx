@@ -89,17 +89,6 @@ describe('BpkCardV2 Snapshots', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('matches snapshot - with custom classes', () => {
-    const { container } = render(
-      <BpkCardV2.Root className="custom-card">
-        <BpkCardV2.Header className="custom-header">Custom Header</BpkCardV2.Header>
-        <BpkCardV2.Body className="custom-body">Custom body</BpkCardV2.Body>
-      </BpkCardV2.Root>,
-    );
-
-    expect(container).toMatchSnapshot();
-  });
-
   it('matches snapshot - minimal card (body only)', () => {
     const { container } = render(
       <BpkCardV2.Root>

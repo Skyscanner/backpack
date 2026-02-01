@@ -53,7 +53,6 @@ const getClassName = cssModules(STYLES);
 const Body = forwardRef<HTMLDivElement, BpkCardV2BodyProps>(
   ({
     children,
-    className,
     padding,
     split = false,
     splitRatio = 70,
@@ -61,7 +60,6 @@ const Body = forwardRef<HTMLDivElement, BpkCardV2BodyProps>(
     const bodyClassName = getClassName(
       'bpk-card-v2__body',
       split && 'bpk-card-v2__body--split',
-      className,
     );
 
     // Process children to insert divider between Primary and Secondary in split layout

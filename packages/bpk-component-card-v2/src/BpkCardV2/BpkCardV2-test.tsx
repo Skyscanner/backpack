@@ -199,32 +199,6 @@ describe('BpkCardV2', () => {
     });
   });
 
-  describe('CSS Classes', () => {
-    it('applies custom className to root element', () => {
-      const { container } = render(
-        <BpkCardV2.Root className="custom-class">Content</BpkCardV2.Root>,
-      );
-
-      const card = container.querySelector('[class*="bpk-card-v2"]');
-
-      expect(card).toHaveClass('custom-class');
-    });
-
-    it('applies custom className to subcomponents', () => {
-      const { container } = render(
-        <BpkCardV2.Root>
-          <BpkCardV2.Header className="custom-header">Title</BpkCardV2.Header>
-          <BpkCardV2.Body className="custom-body">Content</BpkCardV2.Body>
-          <BpkCardV2.Footer className="custom-footer">Footer</BpkCardV2.Footer>
-        </BpkCardV2.Root>,
-      );
-
-      expect(container.querySelector('[class*="bpk-card-v2__header"]')).toHaveClass('custom-header');
-      expect(container.querySelector('[class*="bpk-card-v2__body"]')).toHaveClass('custom-body');
-      expect(container.querySelector('[class*="bpk-card-v2__footer"]')).toHaveClass('custom-footer');
-    });
-  });
-
   describe('Refs', () => {
     it('forwards ref to root div element', () => {
       const ref = createRef<HTMLDivElement>();

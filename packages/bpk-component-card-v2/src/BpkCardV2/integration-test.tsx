@@ -238,33 +238,6 @@ describe('BpkCardV2 Integration Tests', () => {
     });
   });
 
-  describe('Multiple Class Names', () => {
-    it('combines multiple custom classes with BEM classes', () => {
-      const { container } = render(
-        <BpkCardV2.Root className="custom-1 custom-2">
-          <BpkCardV2.Header className="header-custom">Header</BpkCardV2.Header>
-          <BpkCardV2.Body className="body-custom">Body</BpkCardV2.Body>
-        </BpkCardV2.Root>,
-      );
-
-      const card = container.querySelector('[class*="bpk-card-v2"]');
-
-      expect(card).toHaveClass('custom-1');
-      expect(card).toHaveClass('custom-2');
-      expect(card).toHaveClass('bpk-card-v2');
-
-      const header = container.querySelector('[class*="bpk-card-v2__header"]');
-
-      expect(header).toHaveClass('header-custom');
-      expect(header).toHaveClass('bpk-card-v2__header');
-
-      const body = container.querySelector('[class*="bpk-card-v2__body"]');
-
-      expect(body).toHaveClass('body-custom');
-      expect(body).toHaveClass('bpk-card-v2__body');
-    });
-  });
-
   describe('Variant and Color Combinations', () => {
     const variants = ['default', 'outlined'] as const;
     const colors = [

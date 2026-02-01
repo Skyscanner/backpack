@@ -64,7 +64,6 @@ import BpkCardV2 from '@skyscanner/backpack-web/bpk-component-card-v2';
 | `variant` | `'default' \| 'outlined' \| 'noElevation'` | `'default'` | Visual variant styling |
 | `bgColor` | Surface token | `'surfaceDefault'` | Background surface color |
 | `children` | `ReactNode` | - | Card content (Header, Body, Footer subcomponents) |
-| `className` | `string` | - | Additional CSS class names |
 | `ariaLabel` | `string` | - | Accessible label |
 | `ariaLabelledBy` | `string` | - | ID of labelling element |
 
@@ -73,7 +72,6 @@ import BpkCardV2 from '@skyscanner/backpack-web/bpk-component-card-v2';
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `children` | `ReactNode` | - | Header content |
-| `className` | `string` | - | Additional CSS class names |
 | `padding` | `PaddingSize \| PaddingConfig` | - | Padding configuration |
 
 ### BpkCardV2.Body
@@ -83,7 +81,6 @@ import BpkCardV2 from '@skyscanner/backpack-web/bpk-component-card-v2';
 | `split` | `boolean` | `false` | Enable two-column split layout |
 | `splitRatio` | `0-100` | `70` | Primary section percentage width on desktop |
 | `children` | `ReactNode` | - | Body content or Primary/Secondary subcomponents |
-| `className` | `string` | - | Additional CSS class names |
 | `padding` | `PaddingSize \| PaddingConfig` | - | Padding configuration |
 
 ### BpkCardV2.Footer
@@ -91,7 +88,6 @@ import BpkCardV2 from '@skyscanner/backpack-web/bpk-component-card-v2';
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `children` | `ReactNode` | - | Footer content |
-| `className` | `string` | - | Additional CSS class names |
 | `padding` | `PaddingSize \| PaddingConfig` | - | Padding configuration |
 
 ### BpkCardV2.Primary, BpkCardV2.Secondary
@@ -99,7 +95,6 @@ import BpkCardV2 from '@skyscanner/backpack-web/bpk-component-card-v2';
 | Prop | Type | Description |
 |------|------|-------------|
 | `children` | `ReactNode` | Section content |
-| `className` | `string` | Additional CSS class names |
 
 ### Padding types
 

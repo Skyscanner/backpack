@@ -78,9 +78,6 @@ export type BpkCardV2Props = {
   /** Card content - use Header, Body, Footer subcomponents */
   children: ReactNode;
 
-  /** Additional CSS class names */
-  className?: string;
-
   /** Accessible label describing the card's purpose */
   ariaLabel?: string;
 
@@ -96,9 +93,6 @@ export type BpkCardV2Props = {
 export type BpkCardV2HeaderProps = {
   /** Header content */
   children?: ReactNode;
-
-  /** Additional CSS class names */
-  className?: string;
 
   /** Padding configuration (default: 'base') */
   padding?: BpkCardV2Padding;
@@ -130,9 +124,6 @@ export type BpkCardV2BodyProps = {
   /** Primary section width percentage on desktop (0-100, default: 70) */
   splitRatio?: number;
 
-  /** Additional CSS class names */
-  className?: string;
-
   /** Padding configuration (default: 'base') */
   padding?: BpkCardV2Padding;
 };
@@ -146,9 +137,6 @@ export type BpkCardV2BodyProps = {
 export type BpkCardV2PrimaryProps = {
   /** Primary content */
   children: ReactNode;
-
-  /** Additional CSS class names */
-  className?: string;
 };
 
 /**
@@ -160,9 +148,6 @@ export type BpkCardV2PrimaryProps = {
 export type BpkCardV2SecondaryProps = {
   /** Secondary content */
   children: ReactNode;
-
-  /** Additional CSS class names */
-  className?: string;
 };
 
 /**
@@ -173,9 +158,6 @@ export type BpkCardV2SecondaryProps = {
 export type BpkCardV2FooterProps = {
   /** Footer content */
   children?: ReactNode;
-
-  /** Additional CSS class names */
-  className?: string;
 
   /** Padding configuration (default: 'base') */
   padding?: BpkCardV2Padding;

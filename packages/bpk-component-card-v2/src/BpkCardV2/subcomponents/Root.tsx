@@ -56,29 +56,20 @@ const Root = forwardRef<HTMLDivElement, BpkCardV2Props>(
       ariaLabelledBy,
       bgColor = 'surfaceDefault',
       children,
-      className,
       variant = 'default',
     },
     ref,
-  ) => {
-    const classNameFinal = getClassName(
-      'bpk-card-v2',
-      `bpk-card-v2--${variant}`,
-      className,
-    );
-
-    return (
-      <div
-        ref={ref}
-        className={classNameFinal}
-        data-bg-color={bgColor}
-        aria-label={ariaLabel}
-        aria-labelledby={ariaLabelledBy}
-      >
-        {children}
-      </div>
-    );
-  },
+  ) => (
+    <div
+      ref={ref}
+      className={getClassName('bpk-card-v2', `bpk-card-v2--${variant}`)}
+      data-bg-color={bgColor}
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledBy}
+    >
+      {children}
+    </div>
+  ),
 );
 
 Root.displayName = 'BpkCardV2.Root';

@@ -45,10 +45,10 @@ const getClassName = cssModules(STYLES);
  * </BpkCardV2.Body>
  */
 const Secondary = forwardRef<HTMLDivElement, BpkCardV2SecondaryProps>(
-  ({ children, className }, ref) => (
+  ({ children }, ref) => (
     <div
       ref={ref}
-      className={getClassName('bpk-card-v2__secondary', className)}
+      className={getClassName('bpk-card-v2__secondary')}
     >
       {children}
     </div>

@@ -44,10 +44,10 @@ const getClassName = cssModules(STYLES);
  * </BpkCardV2>
  */
 const Footer = forwardRef<HTMLDivElement, BpkCardV2FooterProps>(
-  ({ children, className, padding }, ref) => (
+  ({ children, padding }, ref) => (
     <div
       ref={ref}
-      className={getClassName('bpk-card-v2__footer', className)}
+      className={getClassName('bpk-card-v2__footer')}
       style={getPaddingStyle(padding)}
     >
       {children}
