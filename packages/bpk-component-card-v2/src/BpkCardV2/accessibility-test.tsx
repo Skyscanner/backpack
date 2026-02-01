@@ -19,7 +19,7 @@
 import { render } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe';
 
-import BpkCardV2 from '../BpkCardV2';
+import BpkCardV2 from './BpkCardV2';
 
 expect.extend(toHaveNoViolations);
 

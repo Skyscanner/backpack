@@ -19,7 +19,7 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import BpkCardV2 from '../BpkCardV2';
+import BpkCardV2 from './BpkCardV2';
 
 describe('BpkCardV2 Integration Tests', () => {
   describe('Interactive Content', () => {

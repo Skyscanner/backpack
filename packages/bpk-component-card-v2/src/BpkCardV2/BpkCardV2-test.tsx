@@ -20,7 +20,7 @@ import { createRef } from 'react';
 
 import { render } from '@testing-library/react';
 
-import BpkCardV2 from '../BpkCardV2';
+import BpkCardV2 from './BpkCardV2';
 
 describe('BpkCardV2', () => {
   describe('Basic Composition', () => {

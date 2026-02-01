@@ -18,7 +18,7 @@
 
 import { render } from '@testing-library/react';
 
-import BpkCardV2 from '../BpkCardV2';
+import BpkCardV2 from './BpkCardV2';
 
 describe('BpkCardV2 Snapshots', () => {
   it('matches snapshot - basic card', () => {
