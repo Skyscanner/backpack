@@ -26,7 +26,7 @@ const getClassName = cssModules(STYLES);
 
 export type Props = {
   children: ReactNode;
-  ordered?: boolean;
+  ordered: boolean;
   className?: string | null;
   ariaLabel?: string | null;
   ariaLabelledby?: string | null;
@@ -49,7 +49,7 @@ const BpkList = ({
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledby}
       title={title}
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props -- className is required to apply Bpk list styles and allow optional consumer-supplied classes
       className={classNames}
     >
       {children}
