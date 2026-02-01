@@ -26,20 +26,20 @@ const getClassName = cssModules(STYLES);
 
 export type Props = {
   children: ReactNode;
-  ordered: boolean;
+  ordered?: boolean;
   className?: string | null;
-  ariaLabel?: string | null;
-  ariaLabelledby?: string | null;
-  title?: string | null;
+  ariaLabel?: string;
+  ariaLabelledby?: string;
+  title?: string;
 };
 
 const BpkList = ({
-  ariaLabel = null,
-  ariaLabelledby = null,
+  ariaLabel,
+  ariaLabelledby,
   children,
   className = null,
   ordered = false,
-  title = null,
+  title,
 }: Props) => {
   const ListElement = ordered ? 'ol' : 'ul';
   const classNames = getClassName('bpk-list', className);
