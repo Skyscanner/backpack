@@ -91,7 +91,7 @@ export type BpkCardV2Props = {
 /**
  * BpkCardV2.Header component props.
  *
- * Renders semantic <header> element. Positioned at top of card.
+ * Renders a <div> element. Positioned at top of card.
  */
 export type BpkCardV2HeaderProps = {
   /** Header content */
@@ -168,7 +168,7 @@ export type BpkCardV2SecondaryProps = {
 /**
  * BpkCardV2.Footer component props.
  *
- * Renders semantic <footer> element. Positioned at bottom of card.
+ * Renders a <div> element. Positioned at bottom of card.
  */
 export type BpkCardV2FooterProps = {
   /** Footer content */
@@ -188,9 +188,9 @@ export type BpkCardV2FooterProps = {
  */
 export type BpkCardV2Namespace = {
   Root: ForwardRefExoticComponent<BpkCardV2Props & RefAttributes<HTMLDivElement>>;
-  Header: ForwardRefExoticComponent<BpkCardV2HeaderProps & RefAttributes<HTMLElement>>;
+  Header: ForwardRefExoticComponent<BpkCardV2HeaderProps & RefAttributes<HTMLDivElement>>;
   Body: ForwardRefExoticComponent<BpkCardV2BodyProps & RefAttributes<HTMLDivElement>>;
   Primary: ForwardRefExoticComponent<BpkCardV2PrimaryProps & RefAttributes<HTMLDivElement>>;
   Secondary: ForwardRefExoticComponent<BpkCardV2SecondaryProps & RefAttributes<HTMLDivElement>>;
-  Footer: ForwardRefExoticComponent<BpkCardV2FooterProps & RefAttributes<HTMLElement>>;
+  Footer: ForwardRefExoticComponent<BpkCardV2FooterProps & RefAttributes<HTMLDivElement>>;
 };

@@ -33,32 +33,32 @@ describe('BpkCardV2', () => {
         </BpkCardV2.Root>,
       );
 
-      expect(container.querySelector('header')).toBeInTheDocument();
-      expect(container.querySelector('div[class*="bpk-card-v2__body"]')).toBeInTheDocument();
-      expect(container.querySelector('footer')).toBeInTheDocument();
+      expect(container.querySelector('[class*="bpk-card-v2__header"]')).toBeInTheDocument();
+      expect(container.querySelector('[class*="bpk-card-v2__body"]')).toBeInTheDocument();
+      expect(container.querySelector('[class*="bpk-card-v2__footer"]')).toBeInTheDocument();
     });
 
-    it('renders semantic header element', () => {
+    it('renders header element', () => {
       const { container } = render(
         <BpkCardV2.Root>
           <BpkCardV2.Header>Title</BpkCardV2.Header>
         </BpkCardV2.Root>,
       );
 
-      const header = container.querySelector('header');
+      const header = container.querySelector('[class*="bpk-card-v2__header"]');
 
       expect(header).toBeInTheDocument();
       expect(header).toHaveTextContent('Title');
     });
 
-    it('renders semantic footer element', () => {
+    it('renders footer element', () => {
       const { container } = render(
         <BpkCardV2.Root>
           <BpkCardV2.Footer>Footer</BpkCardV2.Footer>
         </BpkCardV2.Root>,
       );
 
-      const footer = container.querySelector('footer');
+      const footer = container.querySelector('[class*="bpk-card-v2__footer"]');
 
       expect(footer).toBeInTheDocument();
       expect(footer).toHaveTextContent('Footer');
@@ -219,9 +219,9 @@ describe('BpkCardV2', () => {
         </BpkCardV2.Root>,
       );
 
-      expect(container.querySelector('header')).toHaveClass('custom-header');
+      expect(container.querySelector('[class*="bpk-card-v2__header"]')).toHaveClass('custom-header');
       expect(container.querySelector('[class*="bpk-card-v2__body"]')).toHaveClass('custom-body');
-      expect(container.querySelector('footer')).toHaveClass('custom-footer');
+      expect(container.querySelector('[class*="bpk-card-v2__footer"]')).toHaveClass('custom-footer');
     });
   });
 
@@ -286,7 +286,7 @@ describe('BpkCardV2', () => {
           </BpkCardV2.Root>,
         );
 
-        const header = container.querySelector('header') as HTMLElement;
+        const header = container.querySelector('[class*="bpk-card-v2__header"]') as HTMLElement;
 
         expect(header.style.padding).toBe('var(--bpk-spacing-lg)');
       });
@@ -298,7 +298,7 @@ describe('BpkCardV2', () => {
           </BpkCardV2.Root>,
         );
 
-        const header = container.querySelector('header') as HTMLElement;
+        const header = container.querySelector('[class*="bpk-card-v2__header"]') as HTMLElement;
 
         expect(header.style.padding).toBe('0px');
       });
@@ -310,7 +310,7 @@ describe('BpkCardV2', () => {
           </BpkCardV2.Root>,
         );
 
-        const header = container.querySelector('header') as HTMLElement;
+        const header = container.querySelector('[class*="bpk-card-v2__header"]') as HTMLElement;
 
         expect(header.style.paddingTop).toBe('var(--bpk-spacing-sm)');
         expect(header.style.paddingBottom).toBe('var(--bpk-spacing-sm)');
@@ -325,7 +325,7 @@ describe('BpkCardV2', () => {
           </BpkCardV2.Root>,
         );
 
-        const header = container.querySelector('header') as HTMLElement;
+        const header = container.querySelector('[class*="bpk-card-v2__header"]') as HTMLElement;
 
         expect(header.style.paddingTop).toBe('var(--bpk-spacing-lg)');
         expect(header.style.paddingBottom).toBe('var(--bpk-spacing-sm)');
@@ -372,7 +372,7 @@ describe('BpkCardV2', () => {
           </BpkCardV2.Root>,
         );
 
-        const footer = container.querySelector('footer') as HTMLElement;
+        const footer = container.querySelector('[class*="bpk-card-v2__footer"]') as HTMLElement;
 
         expect(footer.style.padding).toBe('var(--bpk-spacing-sm)');
       });
@@ -384,7 +384,7 @@ describe('BpkCardV2', () => {
           </BpkCardV2.Root>,
         );
 
-        const footer = container.querySelector('footer') as HTMLElement;
+        const footer = container.querySelector('[class*="bpk-card-v2__footer"]') as HTMLElement;
 
         // JSDOM normalizes '0' to '0px' for some properties
         expect(['0', '0px']).toContain(footer.style.paddingTop);
@@ -403,7 +403,7 @@ describe('BpkCardV2', () => {
             </BpkCardV2.Root>,
           );
 
-          const header = container.querySelector('header') as HTMLElement;
+          const header = container.querySelector('[class*="bpk-card-v2__header"]') as HTMLElement;
           const expectedValue = size === 'none' ? '0px' : `var(--bpk-spacing-${size})`;
 
           expect(header.style.padding).toBe(expectedValue);

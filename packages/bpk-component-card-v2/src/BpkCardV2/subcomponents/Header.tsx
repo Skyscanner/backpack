@@ -30,7 +30,7 @@ const getClassName = cssModules(STYLES);
 /**
  * Header subcomponent for BpkCardV2.
  *
- * Renders a semantic <header> element positioned at the top of the card.
+ * Renders a <div> element positioned at the top of the card.
  * Inherits surface color and styling from parent BpkCardV2.
  *
  * @param props - Component props of type BpkCardV2HeaderProps
@@ -41,15 +41,15 @@ const getClassName = cssModules(STYLES);
  *   <BpkCardV2.Header>Card title</BpkCardV2.Header>
  * </BpkCardV2>
  */
-const Header = forwardRef<HTMLElement, BpkCardV2HeaderProps>(
+const Header = forwardRef<HTMLDivElement, BpkCardV2HeaderProps>(
   ({ children, className, padding }, ref) => (
-    <header
+    <div
       ref={ref}
       className={getClassName('bpk-card-v2__header', className)}
       style={getPaddingStyle(padding)}
     >
       {children}
-    </header>
+    </div>
   ),
 );
 

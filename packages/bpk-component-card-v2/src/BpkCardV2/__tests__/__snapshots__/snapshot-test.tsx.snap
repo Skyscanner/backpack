@@ -6,21 +6,21 @@ exports[`BpkCardV2 Snapshots matches snapshot - basic card 1`] = `
     class="bpk-card-v2 bpk-card-v2--default"
     data-bg-color="surfaceDefault"
   >
-    <header
+    <div
       class="bpk-card-v2__header"
     >
       Card Title
-    </header>
+    </div>
     <div
       class="bpk-card-v2__body"
     >
       Card content goes here
     </div>
-    <footer
+    <div
       class="bpk-card-v2__footer"
     >
       Card footer
-    </footer>
+    </div>
   </div>
 </div>
 `;
@@ -31,11 +31,11 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
     class="bpk-card-v2 bpk-card-v2--default"
     data-bg-color="surfaceDefault"
   >
-    <header
+    <div
       class="bpk-card-v2__header"
     >
       Product
-    </header>
+    </div>
     <div
       class="bpk-card-v2__body bpk-card-v2__body--split"
       style="--bpk-card-v2-primary-width: 65%;"
@@ -62,7 +62,7 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
         </p>
       </div>
     </div>
-    <footer
+    <div
       class="bpk-card-v2__footer"
     >
       <button
@@ -70,7 +70,7 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
       >
         Add to cart
       </button>
-    </footer>
+    </div>
   </div>
 </div>
 `;
@@ -111,11 +111,11 @@ exports[`BpkCardV2 Snapshots matches snapshot - outlined variant 1`] = `
     class="bpk-card-v2 bpk-card-v2--outlined"
     data-bg-color="surfaceDefault"
   >
-    <header
+    <div
       class="bpk-card-v2__header"
     >
       Outlined Card
-    </header>
+    </div>
     <div
       class="bpk-card-v2__body"
     >
@@ -159,11 +159,11 @@ exports[`BpkCardV2 Snapshots matches snapshot - with custom classes 1`] = `
     class="bpk-card-v2 bpk-card-v2--default custom-card"
     data-bg-color="surfaceDefault"
   >
-    <header
+    <div
       class="bpk-card-v2__header custom-header"
     >
       Custom Header
-    </header>
+    </div>
     <div
       class="bpk-card-v2__body custom-body"
     >

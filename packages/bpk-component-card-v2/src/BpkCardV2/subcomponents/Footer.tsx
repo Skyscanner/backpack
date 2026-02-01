@@ -30,7 +30,7 @@ const getClassName = cssModules(STYLES);
 /**
  * Footer subcomponent for BpkCardV2.
  *
- * Renders a semantic <footer> element positioned at the bottom of the card.
+ * Renders a <div> element positioned at the bottom of the card.
  * Inherits surface color and styling from parent BpkCardV2.
  *
  * @param props - Component props of type BpkCardV2FooterProps
@@ -43,15 +43,15 @@ const getClassName = cssModules(STYLES);
  *   <BpkCardV2.Footer>Footer content</BpkCardV2.Footer>
  * </BpkCardV2>
  */
-const Footer = forwardRef<HTMLElement, BpkCardV2FooterProps>(
+const Footer = forwardRef<HTMLDivElement, BpkCardV2FooterProps>(
   ({ children, className, padding }, ref) => (
-    <footer
+    <div
       ref={ref}
       className={getClassName('bpk-card-v2__footer', className)}
       style={getPaddingStyle(padding)}
     >
       {children}
-    </footer>
+    </div>
   ),
 );
 

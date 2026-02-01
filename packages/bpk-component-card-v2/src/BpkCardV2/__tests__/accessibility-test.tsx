@@ -24,27 +24,27 @@ import BpkCardV2 from '../BpkCardV2';
 expect.extend(toHaveNoViolations);
 
 describe('BpkCardV2 Accessibility', () => {
-  describe('Semantic HTML', () => {
-    it('uses semantic header element', () => {
+  describe('Subcomponent Structure', () => {
+    it('renders header element', () => {
       const { container } = render(
         <BpkCardV2.Root>
           <BpkCardV2.Header>Title</BpkCardV2.Header>
         </BpkCardV2.Root>,
       );
 
-      const header = container.querySelector('header');
+      const header = container.querySelector('[class*="bpk-card-v2__header"]');
 
       expect(header).toBeInTheDocument();
     });
 
-    it('uses semantic footer element', () => {
+    it('renders footer element', () => {
       const { container } = render(
         <BpkCardV2.Root>
           <BpkCardV2.Footer>Footer</BpkCardV2.Footer>
         </BpkCardV2.Root>,
       );
 
-      const footer = container.querySelector('footer');
+      const footer = container.querySelector('[class*="bpk-card-v2__footer"]');
 
       expect(footer).toBeInTheDocument();
     });
@@ -221,32 +221,32 @@ describe('BpkCardV2 Accessibility', () => {
     });
   });
 
-  describe('Structure and Landmarks', () => {
-    it('header is properly marked as semantic header element', () => {
+  describe('Structure and Elements', () => {
+    it('header uses div element', () => {
       const { container } = render(
         <BpkCardV2.Root>
           <BpkCardV2.Header>Title</BpkCardV2.Header>
         </BpkCardV2.Root>,
       );
 
-      const header = container.querySelector('header');
+      const header = container.querySelector('[class*="bpk-card-v2__header"]');
 
-      expect(header?.tagName).toBe('HEADER');
+      expect(header?.tagName).toBe('DIV');
     });
 
-    it('footer is properly marked as semantic footer element', () => {
+    it('footer uses div element', () => {
       const { container } = render(
         <BpkCardV2.Root>
           <BpkCardV2.Footer>Footer</BpkCardV2.Footer>
         </BpkCardV2.Root>,
       );
 
-      const footer = container.querySelector('footer');
+      const footer = container.querySelector('[class*="bpk-card-v2__footer"]');
 
-      expect(footer?.tagName).toBe('FOOTER');
+      expect(footer?.tagName).toBe('DIV');
     });
 
-    it('body maintains proper semantic structure', () => {
+    it('body uses div element', () => {
       const { container } = render(
         <BpkCardV2.Root>
           <BpkCardV2.Body>Content</BpkCardV2.Body>

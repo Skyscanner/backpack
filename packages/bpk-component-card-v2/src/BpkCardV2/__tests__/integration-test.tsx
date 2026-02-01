@@ -129,9 +129,9 @@ describe('BpkCardV2 Integration Tests', () => {
         </BpkCardV2.Root>,
       );
 
-      expect(container.querySelector('header')).toBeInTheDocument();
+      expect(container.querySelector('[class*="bpk-card-v2__header"]')).toBeInTheDocument();
       expect(container.querySelector('[class*="bpk-card-v2__body"]')).toBeInTheDocument();
-      expect(container.querySelector('footer')).toBeInTheDocument();
+      expect(container.querySelector('[class*="bpk-card-v2__footer"]')).toBeInTheDocument();
     });
   });
 
@@ -253,7 +253,7 @@ describe('BpkCardV2 Integration Tests', () => {
       expect(card).toHaveClass('custom-2');
       expect(card).toHaveClass('bpk-card-v2');
 
-      const header = container.querySelector('header');
+      const header = container.querySelector('[class*="bpk-card-v2__header"]');
 
       expect(header).toHaveClass('header-custom');
       expect(header).toHaveClass('bpk-card-v2__header');
