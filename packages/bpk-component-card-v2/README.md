@@ -15,44 +15,66 @@ npm install @skyscanner/backpack-web
 ```tsx
 import BpkCardV2 from '@skyscanner/backpack-web/bpk-component-card-v2';
 
-<BpkCardV2>
+<BpkCardV2.Root>
   <BpkCardV2.Header>Header content</BpkCardV2.Header>
   <BpkCardV2.Body>Body content</BpkCardV2.Body>
   <BpkCardV2.Footer>Footer content</BpkCardV2.Footer>
-</BpkCardV2>
+</BpkCardV2.Root>
 ```
 
 ### Split layout (70/30 two-column on desktop, stacked on mobile)
 
 ```tsx
-<BpkCardV2>
+<BpkCardV2.Root>
   <BpkCardV2.Body split splitRatio={70}>
     <BpkCardV2.Primary>Main content (70%)</BpkCardV2.Primary>
     <BpkCardV2.Secondary>Sidebar (30%)</BpkCardV2.Secondary>
   </BpkCardV2.Body>
-</BpkCardV2>
+</BpkCardV2.Root>
 ```
 
 ### With custom surface color
 
 ```tsx
-<BpkCardV2 bgColor="surfaceElevated">
+<BpkCardV2.Root bgColor="surfaceElevated">
   Card with elevated surface color
-</BpkCardV2>
+</BpkCardV2.Root>
+```
+
+### With custom padding
+
+```tsx
+<BpkCardV2.Root>
+  <BpkCardV2.Header padding="lg">Large padding header</BpkCardV2.Header>
+  <BpkCardV2.Body padding={{ vertical: 'sm', horizontal: 'xl' }}>
+    Custom vertical and horizontal padding
+  </BpkCardV2.Body>
+  <BpkCardV2.Footer padding={{ top: 'none', bottom: 'md' }}>
+    Individual side padding
+  </BpkCardV2.Footer>
+</BpkCardV2.Root>
 ```
 
 ## Props
 
-### BpkCardV2
+### BpkCardV2.Root
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `variant` | `'default' \| 'outlined'` | `'default'` | Visual variant styling |
+| `variant` | `'default' \| 'outlined' \| 'noElevation'` | `'default'` | Visual variant styling |
 | `bgColor` | Surface token | `'surfaceDefault'` | Background surface color |
 | `children` | `ReactNode` | - | Card content (Header, Body, Footer subcomponents) |
 | `className` | `string` | - | Additional CSS class names |
 | `ariaLabel` | `string` | - | Accessible label |
 | `ariaLabelledBy` | `string` | - | ID of labelling element |
+
+### BpkCardV2.Header
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | Header content |
+| `className` | `string` | - | Additional CSS class names |
+| `padding` | `PaddingSize \| PaddingConfig` | - | Padding configuration |
 
 ### BpkCardV2.Body
 
@@ -62,13 +84,44 @@ import BpkCardV2 from '@skyscanner/backpack-web/bpk-component-card-v2';
 | `splitRatio` | `0-100` | `70` | Primary section percentage width on desktop |
 | `children` | `ReactNode` | - | Body content or Primary/Secondary subcomponents |
 | `className` | `string` | - | Additional CSS class names |
+| `padding` | `PaddingSize \| PaddingConfig` | - | Padding configuration |
 
-### BpkCardV2.Header, BpkCardV2.Footer
+### BpkCardV2.Footer
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | Footer content |
+| `className` | `string` | - | Additional CSS class names |
+| `padding` | `PaddingSize \| PaddingConfig` | - | Padding configuration |
+
+### BpkCardV2.Primary, BpkCardV2.Secondary
 
 | Prop | Type | Description |
 |------|------|-------------|
 | `children` | `ReactNode` | Section content |
 | `className` | `string` | Additional CSS class names |
+
+### Padding types
+
+```tsx
+type PaddingSize = 'none' | 'sm' | 'md' | 'base' | 'lg' | 'xl' | 'xxl' | 'xxxl' | 'xxxxl';
+
+type PaddingConfig =
+  | { vertical?: PaddingSize; horizontal?: PaddingSize }
+  | { top?: PaddingSize; bottom?: PaddingSize; start?: PaddingSize; end?: PaddingSize };
+```
+
+### Surface color tokens
+
+Available `bgColor` values:
+- `surfaceDefault`
+- `surfaceElevated`
+- `surfaceTint`
+- `surfaceSubtle`
+- `surfaceHero`
+- `surfaceContrast`
+- `surfaceLowContrast`
+- `surfaceHighlight`
 
 ## Browser support
 
@@ -80,7 +133,7 @@ import BpkCardV2 from '@skyscanner/backpack-web/bpk-component-card-v2';
 
 ## Accessibility
 
-BpkCardV2 uses semantic HTML (`<header>`, `<footer>`) and supports keyboard navigation through all content regions. The component is fully keyboard accessible with proper focus management. All implementations meet WCAG 2.1 Level AA standards.
+BpkCardV2 supports keyboard navigation through all content regions. The component is fully keyboard accessible with proper focus management. Use `ariaLabel` or `ariaLabelledBy` props to provide accessible names for cards. All implementations meet WCAG 2.1 Level AA standards.
 
 ## Related components
 
