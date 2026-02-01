@@ -30,7 +30,7 @@ export type BpkCardV2SurfaceColor =
   | 'surfaceHighlight';
 
 /** Visual variant options for BpkCardV2 */
-export type BpkCardV2Variant = 'default' | 'outlined';
+export type BpkCardV2Variant = 'default' | 'outlined' | 'noElevation';
 
 /**
  * BpkCardV2 root component props.

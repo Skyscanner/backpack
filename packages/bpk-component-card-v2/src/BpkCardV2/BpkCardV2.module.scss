@@ -72,6 +72,11 @@
   box-shadow: none;
 }
 
+// No elevation variant - no shadow, no border
+.bpk-card-v2--noElevation {
+  box-shadow: none;
+}
+
 // Header subcomponent
 .bpk-card-v2__header {
   padding: tokens.bpk-spacing-base();

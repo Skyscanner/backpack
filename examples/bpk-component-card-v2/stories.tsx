@@ -20,6 +20,7 @@ import BpkBadge from '../../packages/bpk-component-badge';
 import BpkButton from '../../packages/bpk-component-button';
 import BpkCardV2 from '../../packages/bpk-component-card-v2/src/BpkCardV2/BpkCardV2';
 import BpkImage from '../../packages/bpk-component-image';
+import { BpkInsetBanner } from '../../packages/bpk-component-inset-banner';
 import BpkRating from '../../packages/bpk-component-rating';
 import BpkText from '../../packages/bpk-component-text';
 
@@ -42,7 +43,7 @@ const meta: BpkCardV2RootMeta = {
   argTypes: {
     variant: {
       description: 'Visual variant controlling styling treatment',
-      options: ['default', 'outlined'],
+      options: ['default', 'outlined', 'noElevation'],
       control: { type: 'radio' },
     },
     bgColor: {
@@ -214,108 +215,22 @@ export const SurfaceColorVariants: Story = {
 function ComplexProductCardComponent() {
   return (
     <BpkCardV2.Root variant="default" bgColor="surfaceDefault" ariaLabel="Hotel Aiguaclara booking card">
-      <BpkCardV2.Body split splitRatio={60}>
-        {/* Primary Slot (60%) - Hotel details and offers */}
+      <BpkCardV2.Body split>
         <BpkCardV2.Primary>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            {/* Hotel image */}
-            <BpkImage
-              altText="Hotel Aiguaclara beachfront resort"
-              aspectRatio={4 / 3}
-              src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=300&fit=crop"
-            />
-
-            {/* Hotel name */}
-            <BpkText textStyle="heading-3">Hotel Aiguaclara</BpkText>
-
-            {/* Hotel classification and location */}
-            <BpkText textStyle="body-default">
-              4 star hotel • Begur, Costa Brava
-            </BpkText>
-
-            {/* Rating section */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              <BpkRating value={4.5} ariaLabel="Hotel rating 4.5 out of 5 based on 13,433 reviews" title="Excellent" subtitle="13,433 reviews" />
-            </div>
-
-            {/* Amenities/Features section with checkmarks */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <div style={{ display: 'flex', gap: '0.75rem' }}>
-                <BpkText textStyle="body-default">✓ ATOL protection</BpkText>
-                <BpkText textStyle="body-default">✓ Checked baggage 23kg</BpkText>
-              </div>
-              <div style={{ display: 'flex', gap: '0.75rem' }}>
-                <BpkText textStyle="body-default">✓ Flexible payments</BpkText>
-                <BpkText textStyle="body-default">✓ Transfers</BpkText>
-              </div>
-            </div>
-
-            {/* Flight times section */}
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <BpkBadge type="strong">Jet2</BpkBadge>
-                <BpkText textStyle="body-default">15:25 - 20:50</BpkText>
-                <BpkText textStyle="caption">STN - BCN, Direct</BpkText>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <BpkBadge type="strong">Jet2</BpkBadge>
-                <BpkText textStyle="body-default">19:50 - 22:45</BpkText>
-                <BpkText textStyle="caption">BCN - LHR, Direct</BpkText>
-              </div>
-            </div>
-
-            {/* Price options section */}
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ fontSize: '1.25rem' }}>🎯</span>
-                <BpkText textStyle="body-default">Cheapest • Breakfast included • £587/pp</BpkText>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ fontSize: '1.25rem' }}>⭐</span>
-                <BpkText textStyle="body-default">Half board • £684/pp</BpkText>
-              </div>
-            </div>
-          </div>
+          Primary slot
         </BpkCardV2.Primary>
 
-        {/* Secondary Slot (40%) - Pricing and CTA */}
         <BpkCardV2.Secondary>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', height: '100%' }}>
-            {/* Package label */}
-            <BpkText textStyle="caption">All inclusive</BpkText>
-
-            {/* Original price with discount */}
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem' }}>
-              <BpkText textStyle="body-default">£819</BpkText>
-              <BpkText textStyle="body-default" style={{ textDecoration: 'line-through' }}>
-                -£90 off
-              </BpkText>
-            </div>
-
-            {/* Main price */}
-            <div>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem' }}>
-                <BpkText textStyle="heading-1">£729</BpkText>
-                <BpkText textStyle="body-default">per person</BpkText>
-              </div>
-              <BpkText textStyle="caption">£1,458 total</BpkText>
-            </div>
-
-            {/* Provider badge */}
-            <BpkBadge>Love Holidays</BpkBadge>
-
-            {/* CTA button */}
-            <BpkButton fullWidth>Go to site</BpkButton>
-
-            {/* More deals link */}
-            <div style={{ marginTop: 'auto' }}>
-              <BpkText textStyle="caption">
-                8 deals from £587 →
-              </BpkText>
-            </div>
-          </div>
+          Secondary slot
         </BpkCardV2.Secondary>
       </BpkCardV2.Body>
+      <BpkCardV2.Footer>
+        <BpkCardV2.Root bgColor="surfaceLowContrast" variant='noElevation'>
+          <BpkCardV2.Body>
+            Cheapest!
+          </BpkCardV2.Body>
+        </BpkCardV2.Root>
+      </BpkCardV2.Footer>
     </BpkCardV2.Root>
   );
 }
