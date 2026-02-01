@@ -22,7 +22,7 @@ import { useEffect, useRef } from 'react';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../../bpk-component-close-button';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
-import { cssModules, withDefaultProps , getDataComponentAttribute } from '../../../bpk-react-utils';
+import { cssModules, withDefaultProps, getDataComponentAttribute } from '../../../bpk-react-utils';
 import { MODAL_STYLING } from '../BpkModalInner';
 
 import type { ModalStyle } from '../BpkModalInner';

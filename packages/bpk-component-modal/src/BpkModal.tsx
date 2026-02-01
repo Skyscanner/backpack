@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import { Portal, cssModules, isDeviceIphone , getDataComponentAttribute } from '../../bpk-react-utils';
+import { Portal, cssModules, isDeviceIphone, getDataComponentAttribute } from '../../bpk-react-utils';
 import { withScrim } from '../../bpk-scrim-utils';
 
 import BpkModalInner, { MODAL_STYLING } from './BpkModalInner';

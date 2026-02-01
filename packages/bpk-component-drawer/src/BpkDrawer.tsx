@@ -21,7 +21,7 @@
 import type { ReactNode } from 'react';
 import { useState, useEffect } from 'react';
 
-import {  Portal, isDeviceIpad, isDeviceIphone , getDataComponentAttribute } from '../../bpk-react-utils';
+import { Portal, isDeviceIpad, isDeviceIphone, getDataComponentAttribute } from '../../bpk-react-utils';
 import { withScrim } from '../../bpk-scrim-utils';
 
 import BpkDrawerContent from './BpkDrawerContent';
