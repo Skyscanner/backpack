@@ -16,10 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -27,13 +24,13 @@ import STYLES from './BpkList.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  children: Node,
-  ordered: boolean,
-  className: ?string,
-  ariaLabel: ?string,
-  ariaLabelledby: ?string,
-  title: ?string,
+export type Props = {
+  children: ReactNode;
+  ordered?: boolean;
+  className?: string | null;
+  ariaLabel?: string | null;
+  ariaLabelledby?: string | null;
+  title?: string | null;
 };
 
 const BpkList = ({
@@ -42,34 +39,22 @@ const BpkList = ({
   children,
   className = null,
   ordered = false,
-  title = null
+  title = null,
 }: Props) => {
-  const ListElements: any = ordered ? 'ol' : 'ul';
-  const classNames: string = getClassName('bpk-list', className);
+  const ListElement = ordered ? 'ol' : 'ul';
+  const classNames = getClassName('bpk-list', className);
 
   return (
-    <ListElements
+    <ListElement
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledby}
       title={title}
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={classNames}
     >
       {children}
-    </ListElements>
+    </ListElement>
   );
 };
-
-BpkList.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
-  ordered: PropTypes.bool,
-  className: PropTypes.string,
-  ariaLabel: PropTypes.string,
-  ariaLabelledby: PropTypes.string,
-  title: PropTypes.string,
-};
-
 
 export default BpkList;
