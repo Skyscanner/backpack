@@ -17,6 +17,8 @@
  */
 
 import BpkCardV2 from '../../packages/bpk-component-card-v2/src/BpkCardV2/BpkCardV2';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkPrice from '../../packages/bpk-component-price/src/BpkPrice';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -53,10 +55,6 @@ const meta: BpkCardV2RootMeta = {
         'surfaceHighlight',
       ],
       control: { type: 'select' },
-    },
-    className: {
-      description: 'Additional CSS class names',
-      control: { type: 'text' },
     },
     ariaLabel: {
       description: 'Accessible label describing the card',
@@ -215,7 +213,12 @@ function ComplexProductCardComponent() {
         </BpkCardV2.Primary>
 
         <BpkCardV2.Secondary>
-          Secondary slot
+          <BpkPrice
+              previousPrice="£819"
+              price="£729"
+              leadingText="£90 off"
+              trailingText="per person"
+            />
         </BpkCardV2.Secondary>
       </BpkCardV2.Body>
       <BpkCardV2.Footer padding='md'>
