@@ -26,11 +26,11 @@ import BpkText from '../../packages/bpk-component-text';
 import type { Meta, StoryObj } from '@storybook/react';
 
 
-type BpkCardV2Meta = Meta<typeof BpkCardV2>;
+type BpkCardV2RootMeta = Meta<typeof BpkCardV2.Root>;
 
-const meta: BpkCardV2Meta = {
+const meta: BpkCardV2RootMeta = {
   title: 'BpkCardV2',
-  component: BpkCardV2,
+  component: BpkCardV2.Root,
   parameters: {
     docs: {
       description: {
@@ -75,7 +75,7 @@ const meta: BpkCardV2Meta = {
 };
 
 export default meta;
-type Story = StoryObj<typeof BpkCardV2>;
+type Story = StoryObj<typeof BpkCardV2.Root>;
 
 /**
  * Basic card with Header, Body, and Footer sections
@@ -87,11 +87,11 @@ export const BasicCard: Story = {
     ariaLabel: 'Basic card example',
   },
   render: (args) => (
-    <BpkCardV2 {...args}>
+    <BpkCardV2.Root {...args}>
       <BpkCardV2.Header>Card Title</BpkCardV2.Header>
       <BpkCardV2.Body>This is the main content area of the card with normal spacing and layout.</BpkCardV2.Body>
       <BpkCardV2.Footer>Card footer with actions or additional information</BpkCardV2.Footer>
-    </BpkCardV2>
+    </BpkCardV2.Root>
   ),
 };
 
@@ -105,7 +105,7 @@ export const SplitLayout: Story = {
     ariaLabel: 'Split layout card',
   },
   render: (args) => (
-    <BpkCardV2 {...args}>
+    <BpkCardV2.Root {...args}>
       <BpkCardV2.Header>Product Listing</BpkCardV2.Header>
       <BpkCardV2.Body split splitRatio={70}>
         <BpkCardV2.Primary>
@@ -123,7 +123,7 @@ export const SplitLayout: Story = {
           </div>
         </BpkCardV2.Secondary>
       </BpkCardV2.Body>
-    </BpkCardV2>
+    </BpkCardV2.Root>
   ),
 };
 
@@ -137,11 +137,11 @@ export const OutlinedVariant: Story = {
     ariaLabel: 'Outlined card example',
   },
   render: (args) => (
-    <BpkCardV2 {...args}>
+    <BpkCardV2.Root {...args}>
       <BpkCardV2.Header>Outlined Card</BpkCardV2.Header>
       <BpkCardV2.Body>This card uses a border instead of a shadow for a lighter, more minimal appearance.</BpkCardV2.Body>
       <BpkCardV2.Footer>Outlined variant footer</BpkCardV2.Footer>
-    </BpkCardV2>
+    </BpkCardV2.Root>
   ),
 };
 
@@ -155,10 +155,10 @@ export const ElevatedSurface: Story = {
     ariaLabel: 'Elevated surface card',
   },
   render: (args) => (
-    <BpkCardV2 {...args}>
+    <BpkCardV2.Root {...args}>
       <BpkCardV2.Header>Elevated Surface</BpkCardV2.Header>
       <BpkCardV2.Body>This card uses the elevated surface color for emphasis and visual hierarchy.</BpkCardV2.Body>
-    </BpkCardV2>
+    </BpkCardV2.Root>
   ),
 };
 
@@ -171,38 +171,38 @@ export const SurfaceColorVariants: Story = {
   },
   render: () => (
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
-      <BpkCardV2 bgColor="surfaceDefault">
+      <BpkCardV2.Root bgColor="surfaceDefault">
         <BpkCardV2.Header>surfaceDefault</BpkCardV2.Header>
         <BpkCardV2.Body>Default surface background</BpkCardV2.Body>
-      </BpkCardV2>
-      <BpkCardV2 bgColor="surfaceElevated">
+      </BpkCardV2.Root>
+      <BpkCardV2.Root bgColor="surfaceElevated">
         <BpkCardV2.Header>surfaceElevated</BpkCardV2.Header>
         <BpkCardV2.Body>Elevated surface background</BpkCardV2.Body>
-      </BpkCardV2>
-      <BpkCardV2 bgColor="surfaceTint">
+      </BpkCardV2.Root>
+      <BpkCardV2.Root bgColor="surfaceTint">
         <BpkCardV2.Header>surfaceTint</BpkCardV2.Header>
         <BpkCardV2.Body>Tinted surface background</BpkCardV2.Body>
-      </BpkCardV2>
-      <BpkCardV2 bgColor="surfaceSubtle">
+      </BpkCardV2.Root>
+      <BpkCardV2.Root bgColor="surfaceSubtle">
         <BpkCardV2.Header>surfaceSubtle</BpkCardV2.Header>
         <BpkCardV2.Body>Subtle surface background</BpkCardV2.Body>
-      </BpkCardV2>
-      <BpkCardV2 bgColor="surfaceHero">
+      </BpkCardV2.Root>
+      <BpkCardV2.Root bgColor="surfaceHero">
         <BpkCardV2.Header>surfaceHero</BpkCardV2.Header>
         <BpkCardV2.Body>Hero surface background</BpkCardV2.Body>
-      </BpkCardV2>
-      <BpkCardV2 bgColor="surfaceContrast">
+      </BpkCardV2.Root>
+      <BpkCardV2.Root bgColor="surfaceContrast">
         <BpkCardV2.Header>surfaceContrast</BpkCardV2.Header>
         <BpkCardV2.Body>High contrast surface background</BpkCardV2.Body>
-      </BpkCardV2>
-      <BpkCardV2 bgColor="surfaceLowContrast">
+      </BpkCardV2.Root>
+      <BpkCardV2.Root bgColor="surfaceLowContrast">
         <BpkCardV2.Header>surfaceLowContrast</BpkCardV2.Header>
         <BpkCardV2.Body>Low contrast surface background</BpkCardV2.Body>
-      </BpkCardV2>
-      <BpkCardV2 bgColor="surfaceHighlight">
+      </BpkCardV2.Root>
+      <BpkCardV2.Root bgColor="surfaceHighlight">
         <BpkCardV2.Header>surfaceHighlight</BpkCardV2.Header>
         <BpkCardV2.Body>Highlighted surface background</BpkCardV2.Body>
-      </BpkCardV2>
+      </BpkCardV2.Root>
     </div>
   ),
 };
@@ -213,7 +213,7 @@ export const SurfaceColorVariants: Story = {
  */
 function ComplexProductCardComponent() {
   return (
-    <BpkCardV2 variant="default" bgColor="surfaceDefault" ariaLabel="Hotel Aiguaclara booking card">
+    <BpkCardV2.Root variant="default" bgColor="surfaceDefault" ariaLabel="Hotel Aiguaclara booking card">
       <BpkCardV2.Body split splitRatio={60}>
         {/* Primary Slot (60%) - Hotel details and offers */}
         <BpkCardV2.Primary>
@@ -316,7 +316,7 @@ function ComplexProductCardComponent() {
           </div>
         </BpkCardV2.Secondary>
       </BpkCardV2.Body>
-    </BpkCardV2>
+    </BpkCardV2.Root>
   );
 }
 
@@ -340,9 +340,9 @@ export const MinimalCard: Story = {
     ariaLabel: 'Minimal card',
   },
   render: (args) => (
-    <BpkCardV2 {...args}>
+    <BpkCardV2.Root {...args}>
       <BpkCardV2.Body>Just content, no header or footer required</BpkCardV2.Body>
-    </BpkCardV2>
+    </BpkCardV2.Root>
   ),
 };
 
@@ -356,7 +356,7 @@ export const CustomSplitRatio: Story = {
     ariaLabel: 'Custom split ratio card',
   },
   render: (args) => (
-    <BpkCardV2 {...args}>
+    <BpkCardV2.Root {...args}>
       <BpkCardV2.Body split splitRatio={60}>
         <BpkCardV2.Primary>
           <div style={{background: 'rgba(0,0,0,0.05)' }}>Primary (60%)</div>
@@ -365,7 +365,7 @@ export const CustomSplitRatio: Story = {
           <div>Secondary (40%)</div>
         </BpkCardV2.Secondary>
       </BpkCardV2.Body>
-    </BpkCardV2>
+    </BpkCardV2.Root>
   ),
 };
 
@@ -378,18 +378,18 @@ export const CardGrid: Story = {
   },
   render: () => (
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
-      <BpkCardV2 variant="default" bgColor="surfaceDefault">
+      <BpkCardV2.Root variant="default" bgColor="surfaceDefault">
         <BpkCardV2.Header>Default Shadow</BpkCardV2.Header>
         <BpkCardV2.Body>Card with default shadow variant</BpkCardV2.Body>
-      </BpkCardV2>
-      <BpkCardV2 variant="outlined" bgColor="surfaceDefault">
+      </BpkCardV2.Root>
+      <BpkCardV2.Root variant="outlined" bgColor="surfaceDefault">
         <BpkCardV2.Header>Outlined Border</BpkCardV2.Header>
         <BpkCardV2.Body>Card with outlined border variant</BpkCardV2.Body>
-      </BpkCardV2>
-      <BpkCardV2 variant="default" bgColor="surfaceElevated">
+      </BpkCardV2.Root>
+      <BpkCardV2.Root variant="default" bgColor="surfaceElevated">
         <BpkCardV2.Header>Elevated Surface</BpkCardV2.Header>
         <BpkCardV2.Body>Card with elevated surface color</BpkCardV2.Body>
-      </BpkCardV2>
+      </BpkCardV2.Root>
     </div>
   ),
 };

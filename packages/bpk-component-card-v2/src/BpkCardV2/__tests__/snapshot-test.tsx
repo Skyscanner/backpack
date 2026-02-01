@@ -23,11 +23,11 @@ import BpkCardV2 from '../BpkCardV2';
 describe('BpkCardV2 Snapshots', () => {
   it('matches snapshot - basic card', () => {
     const { container } = render(
-      <BpkCardV2>
+      <BpkCardV2.Root>
         <BpkCardV2.Header>Card Title</BpkCardV2.Header>
         <BpkCardV2.Body>Card content goes here</BpkCardV2.Body>
         <BpkCardV2.Footer>Card footer</BpkCardV2.Footer>
-      </BpkCardV2>,
+      </BpkCardV2.Root>,
     );
 
     expect(container).toMatchSnapshot();
@@ -35,12 +35,12 @@ describe('BpkCardV2 Snapshots', () => {
 
   it('matches snapshot - split layout', () => {
     const { container } = render(
-      <BpkCardV2>
+      <BpkCardV2.Root>
         <BpkCardV2.Body split splitRatio={70}>
           <BpkCardV2.Primary>Main content area (70%)</BpkCardV2.Primary>
           <BpkCardV2.Secondary>Sidebar area (30%)</BpkCardV2.Secondary>
         </BpkCardV2.Body>
-      </BpkCardV2>,
+      </BpkCardV2.Root>,
     );
 
     expect(container).toMatchSnapshot();
@@ -48,10 +48,10 @@ describe('BpkCardV2 Snapshots', () => {
 
   it('matches snapshot - outlined variant', () => {
     const { container } = render(
-      <BpkCardV2 variant="outlined">
+      <BpkCardV2.Root variant="outlined">
         <BpkCardV2.Header>Outlined Card</BpkCardV2.Header>
         <BpkCardV2.Body>Content with border instead of shadow</BpkCardV2.Body>
-      </BpkCardV2>,
+      </BpkCardV2.Root>,
     );
 
     expect(container).toMatchSnapshot();
@@ -59,9 +59,9 @@ describe('BpkCardV2 Snapshots', () => {
 
   it('matches snapshot - elevated surface color', () => {
     const { container } = render(
-      <BpkCardV2 bgColor="surfaceElevated">
+      <BpkCardV2.Root bgColor="surfaceElevated">
         <BpkCardV2.Body>Elevated background surface</BpkCardV2.Body>
-      </BpkCardV2>,
+      </BpkCardV2.Root>,
     );
 
     expect(container).toMatchSnapshot();
@@ -69,7 +69,7 @@ describe('BpkCardV2 Snapshots', () => {
 
   it('matches snapshot - complex layout with all sections', () => {
     const { container } = render(
-      <BpkCardV2 variant="default" bgColor="surfaceDefault">
+      <BpkCardV2.Root variant="default" bgColor="surfaceDefault">
         <BpkCardV2.Header>Product</BpkCardV2.Header>
         <BpkCardV2.Body split splitRatio={65}>
           <BpkCardV2.Primary>
@@ -83,7 +83,7 @@ describe('BpkCardV2 Snapshots', () => {
         <BpkCardV2.Footer>
           <button type="button">Add to cart</button>
         </BpkCardV2.Footer>
-      </BpkCardV2>,
+      </BpkCardV2.Root>,
     );
 
     expect(container).toMatchSnapshot();
@@ -91,10 +91,10 @@ describe('BpkCardV2 Snapshots', () => {
 
   it('matches snapshot - with custom classes', () => {
     const { container } = render(
-      <BpkCardV2 className="custom-card">
+      <BpkCardV2.Root className="custom-card">
         <BpkCardV2.Header className="custom-header">Custom Header</BpkCardV2.Header>
         <BpkCardV2.Body className="custom-body">Custom body</BpkCardV2.Body>
-      </BpkCardV2>,
+      </BpkCardV2.Root>,
     );
 
     expect(container).toMatchSnapshot();
@@ -102,9 +102,9 @@ describe('BpkCardV2 Snapshots', () => {
 
   it('matches snapshot - minimal card (body only)', () => {
     const { container } = render(
-      <BpkCardV2>
+      <BpkCardV2.Root>
         <BpkCardV2.Body>Minimal card with just body</BpkCardV2.Body>
-      </BpkCardV2>,
+      </BpkCardV2.Root>,
     );
 
     expect(container).toMatchSnapshot();

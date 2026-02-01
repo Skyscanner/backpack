@@ -150,13 +150,12 @@ export type BpkCardV2FooterProps = {
 };
 
 /**
- * BpkCardV2 compound component type.
+ * BpkCardV2 namespace type.
  *
- * Extends the base component with attached subcomponents.
+ * Contains all card subcomponents as properties.
  */
-export type BpkCardV2Component = ForwardRefExoticComponent<
-  BpkCardV2Props & RefAttributes<HTMLDivElement>
-> & {
+export type BpkCardV2Namespace = {
+  Root: ForwardRefExoticComponent<BpkCardV2Props & RefAttributes<HTMLDivElement>>;
   Header: ForwardRefExoticComponent<BpkCardV2HeaderProps & RefAttributes<HTMLElement>>;
   Body: ForwardRefExoticComponent<BpkCardV2BodyProps & RefAttributes<HTMLDivElement>>;
   Primary: ForwardRefExoticComponent<BpkCardV2PrimaryProps & RefAttributes<HTMLDivElement>>;

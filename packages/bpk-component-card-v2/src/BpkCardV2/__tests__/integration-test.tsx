@@ -28,12 +28,12 @@ describe('BpkCardV2 Integration Tests', () => {
       const handleClick = jest.fn();
 
       const { getByRole } = render(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Header>Card with interaction</BpkCardV2.Header>
           <BpkCardV2.Body>
             <button type="button" onClick={handleClick}>Click me</button>
           </BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const button = getByRole('button');
@@ -44,12 +44,12 @@ describe('BpkCardV2 Integration Tests', () => {
 
     it('supports form elements within card', () => {
       const { getByRole } = render(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Body>
             <input type="text" placeholder="Enter text" />
             <button type="button">Submit</button>
           </BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       expect(getByRole('textbox')).toBeInTheDocument();
@@ -60,13 +60,13 @@ describe('BpkCardV2 Integration Tests', () => {
       const user = userEvent.setup();
 
       const { getAllByRole } = render(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Body>
             <button type="button">First</button>
             <button type="button">Second</button>
             <button type="button">Third</button>
           </BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const buttons = getAllByRole('button');
@@ -88,17 +88,17 @@ describe('BpkCardV2 Integration Tests', () => {
   describe('Dynamic Content', () => {
     it('handles dynamic content updates', () => {
       const { getByText, rerender } = render(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Body>Initial content</BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       expect(getByText('Initial content')).toBeInTheDocument();
 
       rerender(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Body>Updated content</BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       expect(getByText('Updated content')).toBeInTheDocument();
@@ -108,11 +108,11 @@ describe('BpkCardV2 Integration Tests', () => {
       const shouldShowFooter = true;
 
       const { queryByText } = render(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Header>Header</BpkCardV2.Header>
           <BpkCardV2.Body>Body</BpkCardV2.Body>
           {shouldShowFooter && <BpkCardV2.Footer>Footer</BpkCardV2.Footer>}
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       expect(queryByText('Header')).toBeInTheDocument();
@@ -122,11 +122,11 @@ describe('BpkCardV2 Integration Tests', () => {
 
     it('handles empty sections gracefully', () => {
       const { container } = render(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Header />
           <BpkCardV2.Body />
           <BpkCardV2.Footer />
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       expect(container.querySelector('header')).toBeInTheDocument();
@@ -138,12 +138,12 @@ describe('BpkCardV2 Integration Tests', () => {
   describe('Edge Cases - Split Layout', () => {
     it('handles splitRatio edge values (0)', () => {
       const { container } = render(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Body split splitRatio={0}>
             <BpkCardV2.Primary>Primary (0%)</BpkCardV2.Primary>
             <BpkCardV2.Secondary>Secondary (100%)</BpkCardV2.Secondary>
           </BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const body = container.querySelector('[class*="bpk-card-v2__body"]') as HTMLElement;
@@ -153,12 +153,12 @@ describe('BpkCardV2 Integration Tests', () => {
 
     it('handles splitRatio edge values (100)', () => {
       const { container } = render(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Body split splitRatio={100}>
             <BpkCardV2.Primary>Primary (100%)</BpkCardV2.Primary>
             <BpkCardV2.Secondary>Secondary (0%)</BpkCardV2.Secondary>
           </BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const body = container.querySelector('[class*="bpk-card-v2__body"]') as HTMLElement;
@@ -168,12 +168,12 @@ describe('BpkCardV2 Integration Tests', () => {
 
     it('handles splitRatio values (50)', () => {
       const { container } = render(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Body split splitRatio={50}>
             <BpkCardV2.Primary>Primary (50%)</BpkCardV2.Primary>
             <BpkCardV2.Secondary>Secondary (50%)</BpkCardV2.Secondary>
           </BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const body = container.querySelector('[class*="bpk-card-v2__body"]') as HTMLElement;
@@ -183,9 +183,9 @@ describe('BpkCardV2 Integration Tests', () => {
 
     it('does not set CSS custom property when split is false', () => {
       const { container } = render(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Body split={false}>Content</BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const body = container.querySelector('[class*="bpk-card-v2__body"]') as HTMLElement;
@@ -197,13 +197,13 @@ describe('BpkCardV2 Integration Tests', () => {
   describe('Nested Content', () => {
     it('supports nested cards', () => {
       const { container } = render(
-        <BpkCardV2 ariaLabel="Outer card">
+        <BpkCardV2.Root ariaLabel="Outer card">
           <BpkCardV2.Body>
-            <BpkCardV2 ariaLabel="Inner card">
+            <BpkCardV2.Root ariaLabel="Inner card">
               <BpkCardV2.Body>Nested card content</BpkCardV2.Body>
-            </BpkCardV2>
+            </BpkCardV2.Root>
           </BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const cards = container.querySelectorAll('[class*="bpk-card-v2"]:not([class*="bpk-card-v2__"])');
@@ -213,22 +213,22 @@ describe('BpkCardV2 Integration Tests', () => {
 
     it('supports complex nested layouts', () => {
       const { getByText } = render(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Header>Outer</BpkCardV2.Header>
           <BpkCardV2.Body split splitRatio={60}>
             <BpkCardV2.Primary>
               <div>
                 <h3>Primary Section</h3>
-                <BpkCardV2 bgColor="surfaceElevated">
+                <BpkCardV2.Root bgColor="surfaceElevated">
                   <BpkCardV2.Body>Nested card</BpkCardV2.Body>
-                </BpkCardV2>
+                </BpkCardV2.Root>
               </div>
             </BpkCardV2.Primary>
             <BpkCardV2.Secondary>
               <div>Secondary Section</div>
             </BpkCardV2.Secondary>
           </BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       expect(getByText('Outer')).toBeInTheDocument();
@@ -241,10 +241,10 @@ describe('BpkCardV2 Integration Tests', () => {
   describe('Multiple Class Names', () => {
     it('combines multiple custom classes with BEM classes', () => {
       const { container } = render(
-        <BpkCardV2 className="custom-1 custom-2">
+        <BpkCardV2.Root className="custom-1 custom-2">
           <BpkCardV2.Header className="header-custom">Header</BpkCardV2.Header>
           <BpkCardV2.Body className="body-custom">Body</BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
@@ -277,9 +277,9 @@ describe('BpkCardV2 Integration Tests', () => {
       colors.forEach((color) => {
         it(`renders ${variant} variant with ${color} color`, () => {
           const { container } = render(
-            <BpkCardV2 variant={variant} bgColor={color}>
+            <BpkCardV2.Root variant={variant} bgColor={color}>
               <BpkCardV2.Body>Content</BpkCardV2.Body>
-            </BpkCardV2>,
+            </BpkCardV2.Root>,
           );
 
           const card = container.querySelector('[class*="bpk-card-v2"]');
@@ -294,7 +294,7 @@ describe('BpkCardV2 Integration Tests', () => {
   describe('ARIA and Accessibility Integration', () => {
     it('maintains accessibility with complex interactive content', () => {
       const { container } = render(
-        <BpkCardV2 ariaLabel="Form card" ariaLabelledBy="form-title">
+        <BpkCardV2.Root ariaLabel="Form card" ariaLabelledBy="form-title">
           <BpkCardV2.Header>
             <h2 id="form-title">Settings Form</h2>
           </BpkCardV2.Header>
@@ -308,7 +308,7 @@ describe('BpkCardV2 Integration Tests', () => {
             <button type="button">Submit</button>
             <button type="button">Cancel</button>
           </BpkCardV2.Footer>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const card = container.querySelector('[class*="bpk-card-v2"]');

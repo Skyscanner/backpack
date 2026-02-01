@@ -27,9 +27,9 @@ describe('BpkCardV2 Accessibility', () => {
   describe('Semantic HTML', () => {
     it('uses semantic header element', () => {
       const { container } = render(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Header>Title</BpkCardV2.Header>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const header = container.querySelector('header');
@@ -39,9 +39,9 @@ describe('BpkCardV2 Accessibility', () => {
 
     it('uses semantic footer element', () => {
       const { container } = render(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Footer>Footer</BpkCardV2.Footer>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const footer = container.querySelector('footer');
@@ -53,7 +53,7 @@ describe('BpkCardV2 Accessibility', () => {
   describe('ARIA Labels', () => {
     it('supports ariaLabel for card labeling', () => {
       const { container } = render(
-        <BpkCardV2 ariaLabel="Product information">Content</BpkCardV2>,
+        <BpkCardV2.Root ariaLabel="Product information">Content</BpkCardV2.Root>,
       );
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
@@ -65,7 +65,7 @@ describe('BpkCardV2 Accessibility', () => {
       const { container } = render(
         <>
           <h2 id="card-heading">Card Heading</h2>
-          <BpkCardV2 ariaLabelledBy="card-heading">Content</BpkCardV2>
+          <BpkCardV2.Root ariaLabelledBy="card-heading">Content</BpkCardV2.Root>
         </>,
       );
 
@@ -76,7 +76,7 @@ describe('BpkCardV2 Accessibility', () => {
 
     it('allows aria label to be provided without ariaLabelledBy', () => {
       const { container } = render(
-        <BpkCardV2 ariaLabel="Standalone label">Content</BpkCardV2>,
+        <BpkCardV2.Root ariaLabel="Standalone label">Content</BpkCardV2.Root>,
       );
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
@@ -89,10 +89,10 @@ describe('BpkCardV2 Accessibility', () => {
   describe('Keyboard Navigation', () => {
     it('card container is a valid landmark region', () => {
       const { container } = render(
-        <BpkCardV2 ariaLabel="Card region">
+        <BpkCardV2.Root ariaLabel="Card region">
           <button type="button">Button 1</button>
           <button type="button">Button 2</button>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
@@ -102,11 +102,11 @@ describe('BpkCardV2 Accessibility', () => {
 
     it('allows focusable children to be keyboard accessible', () => {
       const { container } = render(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Body>
             <button type="button">Action</button>
           </BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const button = container.querySelector('button') as HTMLButtonElement;
@@ -118,11 +118,11 @@ describe('BpkCardV2 Accessibility', () => {
   describe('Axe Automated Tests', () => {
     it('has no accessibility violations - basic card', async () => {
       const { container } = render(
-        <BpkCardV2 ariaLabel="Basic card">
+        <BpkCardV2.Root ariaLabel="Basic card">
           <BpkCardV2.Header>Title</BpkCardV2.Header>
           <BpkCardV2.Body>Content</BpkCardV2.Body>
           <BpkCardV2.Footer>Footer</BpkCardV2.Footer>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const results = await axe(container);
@@ -132,12 +132,12 @@ describe('BpkCardV2 Accessibility', () => {
 
     it('has no accessibility violations - split layout', async () => {
       const { container } = render(
-        <BpkCardV2 ariaLabel="Split layout card">
+        <BpkCardV2.Root ariaLabel="Split layout card">
           <BpkCardV2.Body split splitRatio={70}>
             <BpkCardV2.Primary>Main content</BpkCardV2.Primary>
             <BpkCardV2.Secondary>Sidebar</BpkCardV2.Secondary>
           </BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const results = await axe(container);
@@ -147,9 +147,9 @@ describe('BpkCardV2 Accessibility', () => {
 
     it('has no accessibility violations - outlined variant', async () => {
       const { container } = render(
-        <BpkCardV2 variant="outlined" ariaLabel="Outlined card">
+        <BpkCardV2.Root variant="outlined" ariaLabel="Outlined card">
           <BpkCardV2.Body>Content</BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const results = await axe(container);
@@ -159,9 +159,9 @@ describe('BpkCardV2 Accessibility', () => {
 
     it('has no accessibility violations - with different surface colors', async () => {
       const { container } = render(
-        <BpkCardV2 bgColor="surfaceElevated" ariaLabel="Elevated card">
+        <BpkCardV2.Root bgColor="surfaceElevated" ariaLabel="Elevated card">
           <BpkCardV2.Body>Content</BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const results = await axe(container);
@@ -171,7 +171,7 @@ describe('BpkCardV2 Accessibility', () => {
 
     it('has no accessibility violations - complex layout', async () => {
       const { container } = render(
-        <BpkCardV2 variant="default" bgColor="surfaceDefault" ariaLabel="Complex card">
+        <BpkCardV2.Root variant="default" bgColor="surfaceDefault" ariaLabel="Complex card">
           <BpkCardV2.Header>Product Details</BpkCardV2.Header>
           <BpkCardV2.Body split splitRatio={65}>
             <BpkCardV2.Primary>
@@ -186,7 +186,7 @@ describe('BpkCardV2 Accessibility', () => {
           <BpkCardV2.Footer>
             <button type="button">Action</button>
           </BpkCardV2.Footer>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const results = await axe(container);
@@ -198,9 +198,9 @@ describe('BpkCardV2 Accessibility', () => {
   describe('Color Contrast', () => {
     it('maintains color contrast in default variant', async () => {
       const { container } = render(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Body>Text content with sufficient contrast</BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const results = await axe(container);
@@ -210,9 +210,9 @@ describe('BpkCardV2 Accessibility', () => {
 
     it('maintains color contrast in outlined variant', async () => {
       const { container } = render(
-        <BpkCardV2 variant="outlined">
+        <BpkCardV2.Root variant="outlined">
           <BpkCardV2.Body>Text content</BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const results = await axe(container);
@@ -224,9 +224,9 @@ describe('BpkCardV2 Accessibility', () => {
   describe('Structure and Landmarks', () => {
     it('header is properly marked as semantic header element', () => {
       const { container } = render(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Header>Title</BpkCardV2.Header>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const header = container.querySelector('header');
@@ -236,9 +236,9 @@ describe('BpkCardV2 Accessibility', () => {
 
     it('footer is properly marked as semantic footer element', () => {
       const { container } = render(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Footer>Footer</BpkCardV2.Footer>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const footer = container.querySelector('footer');
@@ -248,9 +248,9 @@ describe('BpkCardV2 Accessibility', () => {
 
     it('body maintains proper semantic structure', () => {
       const { container } = render(
-        <BpkCardV2>
+        <BpkCardV2.Root>
           <BpkCardV2.Body>Content</BpkCardV2.Body>
-        </BpkCardV2>,
+        </BpkCardV2.Root>,
       );
 
       const body = container.querySelector('[class*="bpk-card-v2__body"]');

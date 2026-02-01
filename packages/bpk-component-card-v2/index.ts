@@ -17,4 +17,4 @@
  */
 
 export { default as BpkCardV2 } from './src/BpkCardV2/BpkCardV2';
-export type { BpkCardV2Props } from './src/BpkCardV2/common-types';
+export type { BpkCardV2Props, BpkCardV2Namespace } from './src/BpkCardV2/common-types';
