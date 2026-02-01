@@ -10,6 +10,7 @@ exports[`BpkFloatingNotification should render correctly 1`] = `
     >
       <p
         class="bpk-text bpk-text--body-default"
+        data-backpack-ds-component="Text"
       >
         Saved
       </p>
@@ -35,6 +36,7 @@ exports[`BpkFloatingNotification should render correctly with CTA text 1`] = `
     >
       <p
         class="bpk-text bpk-text--body-default"
+        data-backpack-ds-component="Text"
       >
         Saved
       </p>
@@ -89,6 +91,7 @@ exports[`BpkFloatingNotification should render correctly with icon prop 1`] = `
     >
       <p
         class="bpk-text bpk-text--body-default"
+        data-backpack-ds-component="Text"
       >
         Saved
       </p>
@@ -115,6 +118,7 @@ exports[`BpkFloatingNotification should support arbitrary props 1`] = `
     >
       <p
         class="bpk-text bpk-text--body-default"
+        data-backpack-ds-component="Text"
       >
         Saved
       </p>
@@ -140,6 +144,7 @@ exports[`BpkFloatingNotification should support custom class names 1`] = `
     >
       <p
         class="bpk-text bpk-text--body-default"
+        data-backpack-ds-component="Text"
       >
         Saved
       </p>

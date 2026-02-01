@@ -38,6 +38,7 @@ exports[`BpkSectionHeader should render correctly with "type" prop 1`] = `
       >
         <span
           class="bpk-text bpk-text--body-default"
+          data-backpack-ds-component="Text"
         >
           Section title description
         </span>
@@ -72,6 +73,7 @@ exports[`BpkSectionHeader should render correctly with a "description" prop 1`] 
       >
         <span
           class="bpk-text bpk-text--body-default"
+          data-backpack-ds-component="Text"
         >
           Section title description
         </span>
@@ -100,6 +102,7 @@ exports[`BpkSectionHeader should render correctly with an "button" prop 1`] = `
       >
         <span
           class="bpk-text bpk-text--body-default"
+          data-backpack-ds-component="Text"
         >
           Section title description
         </span>

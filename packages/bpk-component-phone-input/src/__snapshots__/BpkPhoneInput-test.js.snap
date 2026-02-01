@@ -11,6 +11,7 @@ exports[`BpkPhoneInput should render correctly 1`] = `
       >
         <label
           class="bpk-label"
+          data-backpack-ds-component="Label"
           for="dialing-code"
         >
           Dialing code
@@ -45,6 +46,7 @@ exports[`BpkPhoneInput should render correctly 1`] = `
       >
         <label
           class="bpk-label"
+          data-backpack-ds-component="Label"
           for="phone-input-id"
         >
           Telephone number
@@ -74,6 +76,7 @@ exports[`BpkPhoneInput should render correctly with a "disabled" attribute 1`] =
       >
         <label
           class="bpk-label bpk-label--disabled"
+          data-backpack-ds-component="Label"
           for="dialing-code"
         >
           Dialing code
@@ -109,6 +112,7 @@ exports[`BpkPhoneInput should render correctly with a "disabled" attribute 1`] =
       >
         <label
           class="bpk-label bpk-label--disabled"
+          data-backpack-ds-component="Label"
           for="phone-input-id"
         >
           Telephone number
@@ -139,6 +143,7 @@ exports[`BpkPhoneInput should render correctly with a "large" attribute 1`] = `
       >
         <label
           class="bpk-label"
+          data-backpack-ds-component="Label"
           for="dialing-code"
         >
           Dialing code
@@ -173,6 +178,7 @@ exports[`BpkPhoneInput should render correctly with a "large" attribute 1`] = `
       >
         <label
           class="bpk-label"
+          data-backpack-ds-component="Label"
           for="phone-input-id"
         >
           Telephone number
@@ -202,6 +208,7 @@ exports[`BpkPhoneInput should render correctly with a "valid" attribute 1`] = `
       >
         <label
           class="bpk-label"
+          data-backpack-ds-component="Label"
           for="dialing-code"
         >
           Dialing code
@@ -236,6 +243,7 @@ exports[`BpkPhoneInput should render correctly with a "valid" attribute 1`] = `
       >
         <label
           class="bpk-label"
+          data-backpack-ds-component="Label"
           for="phone-input-id"
         >
           Telephone number
@@ -266,6 +274,7 @@ exports[`BpkPhoneInput should render correctly with a "wrapperProps" attribute 1
       >
         <label
           class="bpk-label"
+          data-backpack-ds-component="Label"
           for="dialing-code"
         >
           Dialing code
@@ -300,6 +309,7 @@ exports[`BpkPhoneInput should render correctly with a "wrapperProps" attribute 1
       >
         <label
           class="bpk-label"
+          data-backpack-ds-component="Label"
           for="phone-input-id"
         >
           Telephone number
@@ -329,6 +339,7 @@ exports[`BpkPhoneInput should render correctly with a dialing code image attribu
       >
         <label
           class="bpk-label"
+          data-backpack-ds-component="Label"
           for="dialing-code"
         >
           Dialing code
@@ -371,6 +382,7 @@ exports[`BpkPhoneInput should render correctly with a dialing code image attribu
       >
         <label
           class="bpk-label"
+          data-backpack-ds-component="Label"
           for="phone-input-id"
         >
           Telephone number
@@ -400,6 +412,7 @@ exports[`BpkPhoneInput should render correctly with the "dialingCodeMask" attrib
       >
         <label
           class="bpk-label"
+          data-backpack-ds-component="Label"
           for="dialing-code"
         >
           Dialing code
@@ -434,6 +447,7 @@ exports[`BpkPhoneInput should render correctly with the "dialingCodeMask" attrib
       >
         <label
           class="bpk-label"
+          data-backpack-ds-component="Label"
           for="phone-input-id"
         >
           Telephone number

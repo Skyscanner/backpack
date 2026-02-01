@@ -37,11 +37,13 @@ exports[`Content Card widget renders correctly with 1 card 1`] = `
           <div>
             <h3
               class="bpk-text bpk-text--body-default bpk-content-card--headline"
+              data-backpack-ds-component="Text"
             >
               Card 1 headline
             </h3>
             <p
               class="bpk-text bpk-text--body-default bpk-content-card--description"
+              data-backpack-ds-component="Text"
             >
               Card 1 description
             </p>
@@ -90,11 +92,13 @@ exports[`Content Card widget renders correctly with 2 cards 1`] = `
           <div>
             <h3
               class="bpk-text bpk-text--body-default bpk-content-card--headline"
+              data-backpack-ds-component="Text"
             >
               Card 1 headline
             </h3>
             <p
               class="bpk-text bpk-text--body-default bpk-content-card--description"
+              data-backpack-ds-component="Text"
             >
               Card 1 description
             </p>
@@ -124,11 +128,13 @@ exports[`Content Card widget renders correctly with 2 cards 1`] = `
           <div>
             <h3
               class="bpk-text bpk-text--body-default bpk-content-card--headline"
+              data-backpack-ds-component="Text"
             >
               Card 2 headline
             </h3>
             <p
               class="bpk-text bpk-text--body-default bpk-content-card--description"
+              data-backpack-ds-component="Text"
             >
               Card 2 description
             </p>
@@ -177,11 +183,13 @@ exports[`Content Card widget renders correctly with 3 cards 1`] = `
           <div>
             <h3
               class="bpk-text bpk-text--body-default bpk-content-card--headline"
+              data-backpack-ds-component="Text"
             >
               Card 1 headline
             </h3>
             <p
               class="bpk-text bpk-text--body-default bpk-content-card--description"
+              data-backpack-ds-component="Text"
             >
               Card 1 description
             </p>
@@ -211,11 +219,13 @@ exports[`Content Card widget renders correctly with 3 cards 1`] = `
           <div>
             <h3
               class="bpk-text bpk-text--body-default bpk-content-card--headline"
+              data-backpack-ds-component="Text"
             >
               Card 2 headline
             </h3>
             <p
               class="bpk-text bpk-text--body-default bpk-content-card--description"
+              data-backpack-ds-component="Text"
             >
               Card 2 description
             </p>
@@ -245,11 +255,13 @@ exports[`Content Card widget renders correctly with 3 cards 1`] = `
           <div>
             <h3
               class="bpk-text bpk-text--body-default bpk-content-card--headline"
+              data-backpack-ds-component="Text"
             >
               Card 3 headline
             </h3>
             <p
               class="bpk-text bpk-text--body-default bpk-content-card--description"
+              data-backpack-ds-component="Text"
             >
               Card 3 description
             </p>

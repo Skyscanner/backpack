@@ -47,6 +47,7 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
                 <button
                   aria-label="Close"
                   class="bpk-close-button__default"
+                  data-backpack-ds-component="CloseButton"
                   title="Close"
                   type="button"
                 >
