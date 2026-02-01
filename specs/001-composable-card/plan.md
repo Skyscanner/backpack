@@ -52,7 +52,7 @@ VALIDATION:
 
 ## Summary
 
-**BpkCardV2** is a composable, responsive card component for Backpack that supports multi-area layouts (split layout with 70/30 ratio), optional header/footer sections, multiple surface color variants, and automatic mobile-first responsive behavior. The component uses explicit subcomponents (Header, Body, Primary, Secondary, Footer) to enable clear composition without implicit child ordering. It supports 8 Backpack surface color tokens via `bgColor` prop, 2 visual variants ("default", "outlined"), and responsive split layout controlled by `split` and `splitRatio` props on the Body component.
+**BpkCardV2** is a composable, responsive card component namespace for Backpack that supports multi-area layouts (split layout with 70/30 ratio), optional header/footer sections, multiple surface color variants, and automatic mobile-first responsive behavior. The component uses a **namespace pattern** (Ark-UI style) with explicit subcomponents (`BpkCardV2.Root`, `BpkCardV2.Header`, `BpkCardV2.Body`, `BpkCardV2.Primary`, `BpkCardV2.Secondary`, `BpkCardV2.Footer`) to enable clear composition without implicit child ordering. It supports 8 Backpack surface color tokens via `bgColor` prop, 3 visual variants ("default", "outlined", "noElevation"), flexible padding configuration via `padding` prop on Header/Body/Footer, and responsive split layout controlled by `split` and `splitRatio` props on the Body component.
 
 ## Technical Context
 
@@ -120,31 +120,36 @@ VALIDATION:
 
 ### Component Design Approach
 
-**BpkCardV2** follows a **composable subcomponent pattern** inspired by Ark UI:
+**BpkCardV2** follows a **namespace pattern** inspired by Ark UI:
 
-1. **Root Component** (`BpkCardV2`): Container with `variant` and `bgColor` props
-2. **Subcomponents** (explicit composition):
-   - `BpkCardV2.Header` - Optional semantic `<header>` element
-   - `BpkCardV2.Body` - Content container with split layout support
-   - `BpkCardV2.Primary` - Left/main content area (flex-1, ~70%)
-   - `BpkCardV2.Secondary` - Right/sidebar area (~30%)
-   - `BpkCardV2.Footer` - Optional semantic `<footer>` element
+1. **Namespace Object** (`BpkCardV2`): Plain object containing all subcomponents, no root component logic
+2. **Subcomponents** (explicit composition via namespace):
+   - `BpkCardV2.Root` - Container with `variant` and `bgColor` props
+   - `BpkCardV2.Header` - Optional semantic `<header>` element with `padding` prop
+   - `BpkCardV2.Body` - Content container with split layout support and `padding` prop
+   - `BpkCardV2.Primary` - Left/main content area (configurable width via splitRatio)
+   - `BpkCardV2.Secondary` - Right/sidebar area (remainder width)
+   - `BpkCardV2.Footer` - Optional semantic `<footer>` element with `padding` prop
 
 3. **Key Design Decisions**:
+   - Namespace pattern: all components accessed via `BpkCardV2.ComponentName`
    - Explicit subcomponents prevent implicit child ordering ambiguity
    - Split layout managed via `split` and `splitRatio` props on Body
    - Responsive behavior built-in (mobile stacking, desktop side-by-side)
-   - Visual divider (1px with 4px inset) always renders in split layouts on desktop
+   - Visual divider: pseudo-element on desktop, separate `<div>` on mobile
    - Surface colors orthogonal from variants: `variant` = visual treatment, `bgColor` = background color
+   - Flexible padding system: Header, Body, Footer accept `padding` prop with all Backpack spacing tokens
+   - All subcomponents support ref forwarding via `forwardRef`
 
 ### Styling Strategy
 
 - **CSS Modules**: All styles in `.module.scss` for scoping
-- **BEM Naming**: Root class `bpk-card-v2` with modifiers (`--default`, `--outlined`)
+- **BEM Naming**: Root class `bpk-card-v2` with modifiers (`--default`, `--outlined`, `--noElevation`)
 - **Tokens**: Surface colors from `@skyscanner/bpk-foundations-web` surface tokens
-- **Responsive**: Breakpoint at 768px (mobile < 768px, desktop >= 768px)
-- **RTL**: Flexbox with logical properties (no left/right, use start/end)
-- **Sizing**: All dimensions in `rem` units
+- **Responsive**: Uses `breakpoints.bpk-breakpoint-above-mobile` mixin
+- **RTL**: Flexbox with `bpk-rtl` mixin for directional properties
+- **Sizing**: All dimensions via token functions (e.g., `tokens.bpk-spacing-base()`)
+- **Padding**: CSS custom properties for dynamic padding via inline styles
 
 ## Project Structure
 
@@ -173,20 +178,27 @@ packages/bpk-component-card-v2/
 │   └── design-assets/            # Figma exports, design references
 └── src/
     └── BpkCardV2/               # Component directory
-        ├── BpkCardV2.tsx                # Root component implementation
-        ├── BpkCardV2.module.scss        # CSS Modules styles
-        ├── BpkCardV2-test.tsx           # Unit tests (Jest + Testing Library)
-        ├── accessibility-test.tsx       # Accessibility tests (jest-axe)
-        ├── BpkCardV2.figma.tsx          # Figma Code Connect
+        ├── BpkCardV2.tsx                # Namespace object (exports all subcomponents)
+        ├── BpkCardV2.module.scss        # CSS Modules styles (Sass source)
+        ├── BpkCardV2.module.css         # Compiled CSS output
+        ├── common-types.ts              # Shared TypeScript types
+        ├── index.ts                     # Re-exports BpkCardV2 namespace
+        ├── utils/
+        │   └── getPaddingStyle.ts       # Utility for padding prop conversion
         ├── subcomponents/
-        │   ├── Header.tsx               # Header subcomponent
+        │   ├── Root.tsx                 # Root container component
+        │   ├── Header.tsx               # Header subcomponent (semantic <header>)
         │   ├── Body.tsx                 # Body subcomponent with split logic
         │   ├── Primary.tsx              # Primary area subcomponent
         │   ├── Secondary.tsx            # Secondary area subcomponent
-        │   └── Footer.tsx               # Footer subcomponent
-        ├── common-types.ts              # Shared TypeScript types
-        └── __snapshots__/               # Jest snapshot files
-            └── BpkCardV2-test.tsx.snap
+        │   └── Footer.tsx               # Footer subcomponent (semantic <footer>)
+        └── __tests__/
+            ├── BpkCardV2-test.tsx       # Unit tests (Jest + Testing Library)
+            ├── accessibility-test.tsx   # Accessibility tests (jest-axe)
+            ├── integration-test.tsx     # Integration tests
+            ├── snapshot-test.tsx        # Snapshot tests
+            └── __snapshots__/           # Jest snapshot files
+                └── snapshot-test.tsx.snap
 ```
 
 ### Storybook Examples
@@ -260,10 +272,42 @@ If no violations: **No constitution violations. Component follows all Backpack s
 ### Component API & Type Definitions
 
 ```typescript
+// Surface color token options
+type BpkCardV2SurfaceColor =
+  | 'surfaceDefault'
+  | 'surfaceElevated'
+  | 'surfaceTint'
+  | 'surfaceSubtle'
+  | 'surfaceHero'
+  | 'surfaceContrast'
+  | 'surfaceLowContrast'
+  | 'surfaceHighlight';
+
+// Visual variant options
+type BpkCardV2Variant = 'default' | 'outlined' | 'noElevation';
+
+// Padding size options (all BpkSpacing tokens)
+type BpkCardV2PaddingSize =
+  | 'none'
+  | 'sm'
+  | 'md'
+  | 'base'
+  | 'lg'
+  | 'xl'
+  | 'xxl'
+  | 'xxxl'
+  | 'xxxxl';
+
+// Padding configuration (flexible input)
+type BpkCardV2Padding =
+  | BpkCardV2PaddingSize
+  | { vertical?: BpkCardV2PaddingSize; horizontal?: BpkCardV2PaddingSize }
+  | { top?: BpkCardV2PaddingSize; bottom?: BpkCardV2PaddingSize; start?: BpkCardV2PaddingSize; end?: BpkCardV2PaddingSize };
+
 // Root component
 type BpkCardV2Props = {
-  variant?: 'default' | 'outlined';
-  bgColor?: 'surfaceDefault' | 'surfaceElevated' | 'surfaceTint' | 'surfaceSubtle' | 'surfaceHero' | 'surfaceContrast' | 'surfaceLowContrast' | 'surfaceHighlight';
+  variant?: BpkCardV2Variant;
+  bgColor?: BpkCardV2SurfaceColor;
   children: ReactNode;
   className?: string;
   ariaLabel?: string;
@@ -272,21 +316,24 @@ type BpkCardV2Props = {
 
 // Body component with split layout support
 type BpkCardV2BodyProps = {
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
   split?: boolean;
   splitRatio?: number; // 0-100, default 70
+  padding?: BpkCardV2Padding;
 };
 
 // Header & Footer
 type BpkCardV2HeaderProps = {
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
+  padding?: BpkCardV2Padding;
 };
 
 type BpkCardV2FooterProps = {
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
+  padding?: BpkCardV2Padding;
 };
 
 // Primary & Secondary (used within Body with split=true)
@@ -299,6 +346,16 @@ type BpkCardV2SecondaryProps = {
   children: ReactNode;
   className?: string;
 };
+
+// Namespace type (exports all subcomponents)
+type BpkCardV2Namespace = {
+  Root: ForwardRefExoticComponent<BpkCardV2Props & RefAttributes<HTMLDivElement>>;
+  Header: ForwardRefExoticComponent<BpkCardV2HeaderProps & RefAttributes<HTMLElement>>;
+  Body: ForwardRefExoticComponent<BpkCardV2BodyProps & RefAttributes<HTMLDivElement>>;
+  Primary: ForwardRefExoticComponent<BpkCardV2PrimaryProps & RefAttributes<HTMLDivElement>>;
+  Secondary: ForwardRefExoticComponent<BpkCardV2SecondaryProps & RefAttributes<HTMLDivElement>>;
+  Footer: ForwardRefExoticComponent<BpkCardV2FooterProps & RefAttributes<HTMLElement>>;
+};
 ```
 
 ### CSS Class Structure & Styling
@@ -306,115 +363,121 @@ type BpkCardV2SecondaryProps = {
 **BEM Classes**:
 ```scss
 .bpk-card-v2 { /* Root container */ }
-.bpk-card-v2--default { /* Default variant */ }
-.bpk-card-v2--outlined { /* Outlined variant */ }
+.bpk-card-v2--default { /* Default variant (shadow) */ }
+.bpk-card-v2--outlined { /* Outlined variant (border, no shadow) */ }
+.bpk-card-v2--noElevation { /* Flat variant (no shadow, no border) */ }
 .bpk-card-v2__header { /* Header section */ }
 .bpk-card-v2__body { /* Body section */ }
 .bpk-card-v2__body--split { /* Body with split layout */ }
 .bpk-card-v2__primary { /* Primary area in split */ }
-.bpk-card-v2__divider { /* Vertical divider */ }
+.bpk-card-v2__divider { /* Horizontal divider (mobile only) */ }
 .bpk-card-v2__secondary { /* Secondary area in split */ }
 .bpk-card-v2__footer { /* Footer section */ }
 ```
 
-**Sass Design Token Mapping**:
+**Sass Design Token Mapping** (actual implementation):
 ```scss
-// Colors (from Backpack surface tokens)
+@use '../../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/radii';
+@use '../../../bpk-mixins/shadows';
+@use '../../../bpk-mixins/breakpoints';
+@use '../../../bpk-mixins/utils';
+
+// Card container - base styles
 .bpk-card-v2 {
-  // Default variant styling
-  background-color: var(--bpk-surface-default, #ffffff);
-  border-radius: tokens.bpk-border-radius-md();
+  display: flex;
+  flex-direction: column;
+  background-color: tokens.$bpk-surface-default-day;
+  overflow: hidden;
 
-  // Shadow for default variant (small shadow)
-  box-shadow: var(--bpk-component-shadow-small);
+  @include radii.bpk-border-radius-md;
+  @include shadows.bpk-box-shadow-sm;
 
-  // Outlined variant
-  &--outlined {
-    border: 1px solid tokens.$bpk-color-border;
-    box-shadow: none;
+  // Surface color variants via data attribute
+  &[data-bg-color='surfaceDefault'] {
+    background-color: tokens.$bpk-surface-default-day;
   }
-
-  // Hover/press state (elevated shadow)
-  &:hover {
-    box-shadow: var(--bpk-component-shadow-large);
-  }
-}
-
-// Surface color support (using Backpack design tokens with -day suffix)
-.bpk-card-v2 {
-  background-color: tokens.$bpk-surface-default-day; // default
-
-  &[data-bg-color="surfaceElevated"] {
+  &[data-bg-color='surfaceElevated'] {
     background-color: tokens.$bpk-surface-elevated-day;
   }
-  &[data-bg-color="surfaceTint"] {
-    background-color: tokens.$bpk-surface-tint-day;
-  }
-  &[data-bg-color="surfaceSubtle"] {
-    background-color: tokens.$bpk-surface-subtle-day;
-  }
-  &[data-bg-color="surfaceHero"] {
-    background-color: tokens.$bpk-surface-hero-day;
-  }
-  &[data-bg-color="surfaceContrast"] {
-    background-color: tokens.$bpk-surface-contrast-day;
-  }
-  &[data-bg-color="surfaceLowContrast"] {
-    background-color: tokens.$bpk-surface-low-contrast-day;
-  }
-  &[data-bg-color="surfaceHighlight"] {
-    background-color: tokens.$bpk-surface-highlight-day;
-  }
+  // ... other surface colors
 }
-// Note: -day suffix enables automatic night theme support via Backpack theming system
 
-// Split layout styling
+// Outlined variant - replaces shadow with border
+.bpk-card-v2--outlined {
+  border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+  box-shadow: none;
+}
+
+// No elevation variant - no shadow, no border
+.bpk-card-v2--noElevation {
+  box-shadow: none;
+}
+
+// Body - split layout styling
 .bpk-card-v2__body--split {
-  display: flex;
-  gap: 0;
+  padding: 0;
+  flex-direction: column;
 
-  @media (max-width: 767px) {
-    flex-direction: column;
-  }
-
-  @media (min-width: 768px) {
+  @include breakpoints.bpk-breakpoint-above-mobile {
     flex-direction: row;
   }
 }
 
+// Primary - width controlled by CSS custom property
 .bpk-card-v2__primary {
-  @media (min-width: 768px) {
-    flex: 1 1 calc(70% - 0.5rem); // Adjust for divider
+  .bpk-card-v2__body--split & {
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      width: var(--bpk-card-v2-primary-width, 70%);
+
+      // Vertical divider via pseudo-element
+      &::after {
+        position: absolute;
+        top: tokens.bpk-spacing-md();
+        right: 0;
+        bottom: tokens.bpk-spacing-md();
+        content: '';
+        width: tokens.$bpk-border-size-sm;
+        background-color: tokens.$bpk-line-day;
+      }
+    }
   }
 }
 
+// Divider - horizontal on mobile only
 .bpk-card-v2__divider {
-  @media (min-width: 768px) {
-    width: 1px;
-    background-color: tokens.$bpk-color-border;
-    margin: tokens.bpk-spacing-sm() 0; // 4px inset
-  }
+  display: none;
 
-  @media (max-width: 767px) {
-    display: none;
-  }
-}
+  .bpk-card-v2__body--split & {
+    display: block;
 
-.bpk-card-v2__secondary {
-  @media (min-width: 768px) {
-    flex: 0 0 30%;
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      display: none;
+    }
   }
 }
 ```
 
+**Padding System** (via utility function):
+```typescript
+// getPaddingStyle.ts converts padding prop to CSS custom properties
+const SPACING_MAP = {
+  none: '0',
+  sm: 'var(--bpk-spacing-sm)',
+  md: 'var(--bpk-spacing-md)',
+  base: 'var(--bpk-spacing-base)',
+  // ... other sizes
+};
+```
+
 **Responsive Behavior**:
-- Mobile (<= 767px): Sections stack vertically, divider hidden, 100% width
-- Desktop (>= 768px): Sections side-by-side, divider visible (1px), ratio applied
+- Mobile (below breakpoint): Sections stack vertically, horizontal divider between Primary/Secondary
+- Desktop (above breakpoint): Sections side-by-side, vertical divider (pseudo-element), ratio applied via CSS custom property
 
 **RTL Support**:
-- Use flexbox with `flex-direction` (automatically reverses in RTL)
-- No left/right properties; use `margin-inline`, `padding-inline` etc.
-- Text alignment uses logical properties
+- Uses `@include utils.bpk-rtl` mixin for directional styles
+- Logical properties for padding (`paddingInlineStart`, `paddingInlineEnd`)
+- Divider pseudo-element positioned correctly in RTL
 
 ---
 

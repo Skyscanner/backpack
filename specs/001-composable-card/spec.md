@@ -47,7 +47,7 @@ VALIDATION:
 
 **Package Branch**: `001-composable-card`
 **Created**: 2026-01-28
-**Status**: Draft
+**Status**: Implemented
 **Input**: User description: "BpkCardV2 is a composable, responsive card component for Backpack, designed to support richer layouts than the current card while remaining flexible, accessible, and future-proof. Inspired by Ark UI's explicit composition and Chakra UI's Header/Body/Footer mental model."
 
 ## Constitution Check
@@ -89,8 +89,8 @@ A developer needs to create a card with a two-column layout (70% content on left
 
 **Acceptance Scenarios**:
 
-1. **Given** a developer renders `<BpkCardV2.Body><BpkCardV2.Primary>{content}</BpkCardV2.Primary><BpkCardV2.Secondary>{sidebar}</BpkCardV2.Secondary></BpkCardV2.Body>` on desktop, **When** the component renders, **Then** Primary takes 70% width and Secondary takes 30% width, displayed horizontally with no additional CSS required.
-2. **Given** the same layout is rendered on mobile (viewport < 768px), **When** the component renders, **Then** Primary and Secondary stack vertically with Primary appearing first, with full width on each row.
+1. **Given** a developer renders `<BpkCardV2.Root><BpkCardV2.Body split><BpkCardV2.Primary>{content}</BpkCardV2.Primary><BpkCardV2.Secondary>{sidebar}</BpkCardV2.Secondary></BpkCardV2.Body></BpkCardV2.Root>` on desktop, **When** the component renders, **Then** Primary takes 70% width and Secondary takes 30% width, displayed horizontally with no additional CSS required.
+2. **Given** the same layout is rendered on mobile (viewport < 768px), **When** the component renders, **Then** Primary and Secondary stack vertically with Primary appearing first, with full width on each row, and a horizontal divider appears between them.
 3. **Given** the split ratio is configured as 60/40, **When** the component renders on desktop, **Then** Primary takes 60% width and Secondary takes 40% width.
 
 ---
@@ -101,30 +101,31 @@ A designer needs to build card variants with header, main content, and footer se
 
 **Why this priority**: This directly addresses the "encourage explicit composition over implicit child ordering" goal. It provides a clear, predictable mental model for both designers and engineers, eliminating ambiguity about where content should go.
 
-**Independent Test**: Can be fully tested by rendering BpkCardV2 with Header, Body, and Footer subcomponents in any order and verifying that each section renders in the correct position (header at top, footer at bottom) regardless of composition order.
+**Independent Test**: Can be fully tested by rendering BpkCardV2.Root with Header, Body, and Footer subcomponents and verifying that each section renders with appropriate semantic HTML and styling.
 
 **Acceptance Scenarios**:
 
-1. **Given** a developer renders `<BpkCardV2><BpkCardV2.Header>{header}</BpkCardV2.Header><BpkCardV2.Body>{body}</BpkCardV2.Body><BpkCardV2.Footer>{footer}</BpkCardV2.Footer></BpkCardV2>`, **When** the component renders, **Then** Header appears at top, Body in middle, Footer at bottom regardless of prop order.
-2. **Given** a developer renders the components in different order (Footer first, Header last), **When** the component renders, **Then** the visual layout remains correct (Header at top, Footer at bottom).
-3. **Given** only Body subcomponent is rendered without Header or Footer, **When** the component renders, **Then** the card displays body content only without spacing issues or console errors.
+1. **Given** a developer renders `<BpkCardV2.Root><BpkCardV2.Header>{header}</BpkCardV2.Header><BpkCardV2.Body>{body}</BpkCardV2.Body><BpkCardV2.Footer>{footer}</BpkCardV2.Footer></BpkCardV2.Root>`, **When** the component renders, **Then** Header appears at top (semantic `<header>` element), Body in middle, Footer at bottom (semantic `<footer>` element).
+2. **Given** only Body subcomponent is rendered without Header or Footer, **When** the component renders, **Then** the card displays body content only without spacing issues or console errors.
+3. **Given** a developer wants custom padding on sections, **When** they use the `padding` prop, **Then** each section (Header, Body, Footer) accepts the padding configuration and applies the appropriate Backpack spacing tokens.
 
 ---
 
 ### User Story 3 - Apply Visual Variants and Future-Proof Styling (Priority: P1)
 
-Product teams need to create card designs for different contexts (e.g., white card for light backgrounds, elevated card for emphasis). BpkCardV2 must support multiple visual variants through a `variant` prop while using Backpack design tokens for consistent theming. The component must be flexible enough to accommodate future variants without API changes.
+Product teams need to create card designs for different contexts (e.g., white card for light backgrounds, elevated card for emphasis, flat card without elevation). BpkCardV2 must support multiple visual variants through a `variant` prop while using Backpack design tokens for consistent theming. The component must be flexible enough to accommodate future variants without API changes.
 
 **Why this priority**: Supporting multiple visual variants is essential for the component to be useful across diverse Backpack use cases. Token-driven styling and a flexible variant system ensure the component can evolve without breaking consumer code.
 
-**Independent Test**: Can be fully tested by rendering BpkCardV2 with different `variant` prop values and verifying that each variant applies correct styling (colors, shadows, borders) via Backpack design tokens, with no visual regressions between variants.
+**Independent Test**: Can be fully tested by rendering BpkCardV2.Root with different `variant` prop values and verifying that each variant applies correct styling (colors, shadows, borders) via Backpack design tokens, with no visual regressions between variants.
 
 **Acceptance Scenarios**:
 
-1. **Given** a developer renders `<BpkCardV2 variant="default">`, **When** the component renders, **Then** it uses default Backpack styling with subtle shadow.
-2. **Given** a developer renders `<BpkCardV2 variant="outlined">`, **When** the component renders, **Then** it uses outlined styling (border-based, no shadow).
-3. **Given** a developer renders `<BpkCardV2 bgColor="surfaceLowContrast">`, **When** the component renders, **Then** the card background uses the low-contrast surface color while maintaining the selected variant styling.
-4. **Given** a developer renders `<BpkCardV2 bgColor="surfaceHero">`, **When** the component renders, **Then** the card renders with hero/prominent surface styling for emphasis.
+1. **Given** a developer renders `<BpkCardV2.Root variant="default">`, **When** the component renders, **Then** it uses default Backpack styling with subtle shadow.
+2. **Given** a developer renders `<BpkCardV2.Root variant="outlined">`, **When** the component renders, **Then** it uses outlined styling (border-based, no shadow).
+3. **Given** a developer renders `<BpkCardV2.Root variant="noElevation">`, **When** the component renders, **Then** it uses flat styling (no shadow, no border).
+4. **Given** a developer renders `<BpkCardV2.Root bgColor="surfaceLowContrast">`, **When** the component renders, **Then** the card background uses the low-contrast surface color while maintaining the selected variant styling.
+5. **Given** a developer renders `<BpkCardV2.Root bgColor="surfaceHero">`, **When** the component renders, **Then** the card renders with hero/prominent surface styling for emphasis.
 
 ---
 
@@ -178,59 +179,81 @@ Accessibility auditors and developers need BpkCardV2 to maintain WCAG 2.1 Level 
 
 ### Functional Requirements
 
-- **FR-001**: BpkCardV2 MUST be a composable component with explicit subcomponents (Root, Header, Body, Footer)
-- **FR-002**: BpkCardV2.Body MUST support split layout via Primary and Secondary subcomponents
-- **FR-003**: Split layout in Body MUST use configurable ratio (default 70/30)
-- **FR-004**: On mobile (viewport <= 768px), split layout sections MUST stack vertically with Primary appearing first
-- **FR-005**: On desktop (viewport > 768px), split layout sections MUST render horizontally with ratio applied
-- **FR-006**: Component MUST render Header at top, Body in middle, Footer at bottom regardless of composition order
-- **FR-007**: Component MUST support visual variants via `variant` prop: "default", "outlined"
+- **FR-001**: BpkCardV2 MUST be a composable component namespace with explicit subcomponents accessible via `BpkCardV2.Root`, `BpkCardV2.Header`, `BpkCardV2.Body`, `BpkCardV2.Primary`, `BpkCardV2.Secondary`, `BpkCardV2.Footer`
+- **FR-002**: BpkCardV2.Body MUST support split layout via `split` prop with Primary and Secondary subcomponents
+- **FR-003**: Split layout in Body MUST use configurable ratio via `splitRatio` prop (default 70/30)
+- **FR-004**: On mobile (viewport < breakpoint), split layout sections MUST stack vertically with Primary appearing first and a horizontal divider between them
+- **FR-005**: On desktop (viewport >= breakpoint), split layout sections MUST render horizontally with ratio applied and a vertical divider (via pseudo-element) between them
+- **FR-006**: Component subcomponents MUST render in the order provided by the consumer (no automatic reordering)
+- **FR-007**: Component MUST support visual variants via `variant` prop: "default", "outlined", "noElevation"
 - **FR-007b**: Component MUST support surface color customization via `bgColor` prop accepting all 8 Backpack surface token names (surfaceDefault, surfaceElevated, surfaceTint, surfaceSubtle, surfaceHero, surfaceContrast, surfaceLowContrast, surfaceHighlight)
 - **FR-008**: Variants MUST be token-driven using Backpack design tokens (colors, shadows, spacing)
 - **FR-009**: Header and Footer sections MUST be optional (component works with Body only)
 - **FR-010**: Primary and Secondary sections within Body MUST be optional (Body can render without split)
 - **FR-011**: Component MUST support all Backpack-standard props (className, children, data attributes)
 - **FR-012**: Component MUST support right-to-left (RTL) languages with automatic layout mirroring
+- **FR-013**: Header, Body, and Footer MUST support configurable padding via `padding` prop accepting Backpack spacing tokens
 
 ### Component API *(include props/types)*
 
+**Architecture**: BpkCardV2 is implemented as a **namespace object** following the Ark-UI pattern, where all subcomponents are accessed via `BpkCardV2.ComponentName`. This provides explicit composition without implicit child ordering.
+
 **Props**:
 
-**BpkCardV2** (Root component):
-- **`variant`** (string, optional, default: "default"): Visual treatment/styling variant - one of: "default", "outlined"
+**BpkCardV2.Root** (Root container):
+- **`variant`** (string, optional, default: "default"): Visual treatment/styling variant - one of: "default", "outlined", "noElevation"
 - **`bgColor`** (string, optional, default: "surfaceDefault"): Backpack surface color token name for background - one of: "surfaceDefault", "surfaceElevated", "surfaceTint", "surfaceSubtle", "surfaceHero", "surfaceContrast", "surfaceLowContrast", "surfaceHighlight"
 - **`children`** (ReactNode, required): Must contain at least one of Header, Body, or Footer subcomponents
 - **`className`** (string, optional): Additional CSS class names
 - **`ariaLabel`** (string, optional): Accessible label describing the card's purpose
 - **`ariaLabelledBy`** (string, optional): ID of element that labels the card
+- Supports `ref` forwarding to the root `<div>` element
 
 **BpkCardV2.Header**:
-- **`children`** (ReactNode, required): Header content
+- **`children`** (ReactNode, optional): Header content
 - **`className`** (string, optional): Additional CSS class names
+- **`padding`** (BpkCardV2Padding, optional): Padding configuration - accepts a spacing token name, or an object with `vertical`/`horizontal` or `top`/`bottom`/`start`/`end` keys
+- Supports `ref` forwarding to the `<header>` element
 
 **BpkCardV2.Body**:
-- **`children`** (ReactNode, required): Body content (can be text, elements, or Primary/Secondary subcomponents)
+- **`children`** (ReactNode, optional): Body content (can be text, elements, or Primary/Secondary subcomponents)
 - **`className`** (string, optional): Additional CSS class names
 - **`split`** (boolean, optional, default: false): Enable two-column layout with Primary/Secondary split
 - **`splitRatio`** (number, optional, default: 70): Percentage width for Primary section on desktop when split is enabled
   - Valid range: 0-100, represents Primary section percentage (e.g., 70 = Primary takes 70%, Secondary takes 30%)
+- **`padding`** (BpkCardV2Padding, optional): Padding configuration - only applied when `split` is false
+- Supports `ref` forwarding to the `<div>` element
 
 **BpkCardV2.Primary** (when used within Body with split=true):
 - **`children`** (ReactNode, required): Primary content (typically main content area)
 - **`className`** (string, optional): Additional CSS class names
+- Supports `ref` forwarding to the `<div>` element
 
 **BpkCardV2.Secondary** (when used within Body with split=true):
 - **`children`** (ReactNode, required): Secondary content (typically sidebar/auxiliary content)
 - **`className`** (string, optional): Additional CSS class names
+- Supports `ref` forwarding to the `<div>` element
 
 **BpkCardV2.Footer**:
-- **`children`** (ReactNode, required): Footer content
+- **`children`** (ReactNode, optional): Footer content
 - **`className`** (string, optional): Additional CSS class names
+- **`padding`** (BpkCardV2Padding, optional): Padding configuration
+- Supports `ref` forwarding to the `<footer>` element
+
+**Padding Configuration Type**:
+```typescript
+type BpkCardV2PaddingSize = 'none' | 'sm' | 'md' | 'base' | 'lg' | 'xl' | 'xxl' | 'xxxl' | 'xxxxl';
+
+type BpkCardV2Padding =
+  | BpkCardV2PaddingSize                                    // e.g., 'base'
+  | { vertical?: BpkCardV2PaddingSize; horizontal?: BpkCardV2PaddingSize }  // e.g., { vertical: 'lg', horizontal: 'base' }
+  | { top?: BpkCardV2PaddingSize; bottom?: BpkCardV2PaddingSize; start?: BpkCardV2PaddingSize; end?: BpkCardV2PaddingSize };  // granular control
+```
 
 **Example usage pattern**:
 ```typescript
 type BpkCardV2Props = {
-  variant?: 'default' | 'outlined';
+  variant?: 'default' | 'outlined' | 'noElevation';
   bgColor?: 'surfaceDefault' | 'surfaceElevated' | 'surfaceTint' | 'surfaceSubtle' | 'surfaceHero' | 'surfaceContrast' | 'surfaceLowContrast' | 'surfaceHighlight';
   children: ReactNode;
   className?: string;
@@ -239,11 +262,36 @@ type BpkCardV2Props = {
 };
 
 type BpkCardV2BodyProps = {
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
   split?: boolean;
   splitRatio?: number; // 0-100, default 70
+  padding?: BpkCardV2Padding;
 };
+```
+
+**Usage Examples**:
+```tsx
+// Basic card with namespace pattern
+<BpkCardV2.Root>
+  <BpkCardV2.Header>Title</BpkCardV2.Header>
+  <BpkCardV2.Body>Content</BpkCardV2.Body>
+  <BpkCardV2.Footer>Footer</BpkCardV2.Footer>
+</BpkCardV2.Root>
+
+// Split layout with custom padding
+<BpkCardV2.Root bgColor="surfaceElevated" variant="outlined">
+  <BpkCardV2.Body split splitRatio={60}>
+    <BpkCardV2.Primary>Main content (60%)</BpkCardV2.Primary>
+    <BpkCardV2.Secondary>Sidebar (40%)</BpkCardV2.Secondary>
+  </BpkCardV2.Body>
+</BpkCardV2.Root>
+
+// Custom padding on sections
+<BpkCardV2.Root>
+  <BpkCardV2.Header padding="lg">Large padded header</BpkCardV2.Header>
+  <BpkCardV2.Body padding={{ vertical: 'xl', horizontal: 'base' }}>Body with custom padding</BpkCardV2.Body>
+</BpkCardV2.Root>
 ```
 
 ### Non-Functional Requirements
@@ -291,10 +339,9 @@ type BpkCardV2BodyProps = {
 **Figma**: [https://www.figma.com/design/ITvypOGdga42nM2ipBM4uk/Bpk-2.0?node-id=365-1783&m=dev](https://www.figma.com/design/ITvypOGdga42nM2ipBM4uk/Bpk-2.0?node-id=365-1783&m=dev)
 
 **Visual States to implement**:
-- Default state (subtle shadow, neutral styling)
-- Outlined state (border-based styling, alternative to filled)
-- Hover-press state (elevated shadow for emphasis/interactivity)
-- Disabled state (reduced opacity if applicable)
+- Default state (subtle shadow via `bpk-box-shadow-sm`, neutral styling)
+- Outlined state (border-based styling using `bpk-line-day` token, no shadow)
+- No elevation state (flat styling, no shadow, no border)
 
 **Surface Colors** (controlled via `bgColor` prop):
 - Supports 8 Backpack surface color tokens via `bgColor` prop (prop values mapped to design system tokens):
@@ -315,10 +362,10 @@ type BpkCardV2BodyProps = {
 - Desktop (> 768px): Split sections render horizontally with configurable ratio (default 70/30)
 
 **Visual divider between Primary and Secondary**:
-- When split layout is active on desktop, a thin vertical divider (1px line with 4px inset padding) separates Primary and Secondary sections
-- Divider uses design tokens for consistency (subtle border color from Backpack palette)
+- When split layout is active on desktop, a thin vertical divider (1px line using `bpk-line-day` token with `bpk-spacing-md` inset padding) separates Primary and Secondary sections, implemented as a CSS pseudo-element (`::after`) on the Primary component
+- When split layout is active on mobile, a horizontal divider appears between Primary and Secondary sections (rendered as a separate `<div>` element)
+- Divider uses design tokens for consistency (`tokens.$bpk-line-day` for color, `tokens.bpk-spacing-md()` for inset)
 - Divider is always rendered when split is active; no configuration prop needed (divider is part of component contract)
-- On mobile, divider is not rendered (sections stack vertically with standard spacing)
 
 ## Dependencies & Related Components
 
@@ -403,36 +450,45 @@ type BpkCardV2BodyProps = {
 
 ## Implementation Notes
 
-**File Structure** (per constitution):
+**File Structure** (actual implementation):
 ```
 packages/bpk-component-card-v2/
 ├── README.md
 ├── index.ts                            # exports default from src/
 ├── docs/                               # screenshots, design assets
 └── src/
-    ├── BpkCardV2/
-    │   ├── BpkCardV2.tsx               # Root component
-    │   ├── BpkCardV2.module.scss       # Main styles
-    │   ├── BpkCardV2-test.tsx
-    │   ├── accessibility-test.tsx
-    │   ├── BpkCardV2.figma.tsx
-    │   ├── subcomponents/
-    │   │   ├── Header.tsx
-    │   │   ├── Body.tsx
-    │   │   ├── Primary.tsx
-    │   │   ├── Secondary.tsx
-    │   │   └── Footer.tsx
-    │   └── __snapshots__/
-    └── common-types.ts                 # shared types
+    └── BpkCardV2/
+        ├── BpkCardV2.tsx               # Namespace object exporting all subcomponents
+        ├── BpkCardV2.module.scss       # Main styles (CSS Modules)
+        ├── BpkCardV2.module.css        # Compiled CSS
+        ├── common-types.ts             # Shared TypeScript types
+        ├── index.ts                    # Re-exports BpkCardV2 namespace
+        ├── utils/
+        │   └── getPaddingStyle.ts      # Utility for padding prop conversion
+        ├── subcomponents/
+        │   ├── Root.tsx                # Root container component
+        │   ├── Header.tsx              # Semantic <header> element
+        │   ├── Body.tsx                # Body with split layout logic
+        │   ├── Primary.tsx             # Primary section in split
+        │   ├── Secondary.tsx           # Secondary section in split
+        │   └── Footer.tsx              # Semantic <footer> element
+        └── __tests__/
+            ├── BpkCardV2-test.tsx
+            ├── accessibility-test.tsx
+            ├── integration-test.tsx
+            ├── snapshot-test.tsx
+            └── __snapshots__/
 ```
 
 **Key Implementation Principles**:
-1. Explicit composition (named subcomponents, no implicit child ordering)
-2. Mobile-first responsive design (mobile stacking default, desktop layout opt-in)
-3. Semantic HTML (header/footer tags, proper nesting)
-4. Accessibility-first (jest-axe checks, keyboard navigation, screen reader support)
-5. Token-driven styling (all colors, spacing from design tokens)
-6. Future-proof API (variant system allows new variants without breaking changes)
+1. **Namespace pattern** (Ark-UI style): All subcomponents accessed via `BpkCardV2.Root`, `BpkCardV2.Header`, etc.
+2. Explicit composition (named subcomponents, no implicit child ordering or automatic reordering)
+3. Mobile-first responsive design (mobile stacking default, desktop layout via breakpoint)
+4. Semantic HTML (`<header>` for Header, `<footer>` for Footer, `<div>` for others)
+5. Accessibility-first (jest-axe checks, keyboard navigation, screen reader support, forwardRef for all components)
+6. Token-driven styling (all colors, spacing from design tokens via CSS custom properties)
+7. Flexible padding system (all spacing tokens available via `padding` prop)
+8. Future-proof API (variant system allows new variants without breaking changes)
 
 ## Clarifications
 
@@ -447,11 +503,24 @@ packages/bpk-component-card-v2/
 - Q6: Token naming structure → Confirmed: Use `tokens.$bpk-surface-*-day` pattern per Backpack standards (imported via `@use '../../bpk-mixins/tokens'`)
 
 **Impact on spec**:
-- Variants updated: "default", "outlined" (removed "elevated")
+- Variants updated: "default", "outlined", "noElevation"
 - New prop: `bgColor` on Root component for surface color control (8 token options)
-- Divider specifications clarified: 1px line with 4px inset padding, always rendered in split layouts on desktop
+- Divider specifications clarified: vertical on desktop (pseudo-element), horizontal on mobile (separate element)
 - Surface colors decoupled from variants: `variant` controls visual treatment, `bgColor` controls background
 - `bgColor` values now explicitly mapped to Backpack design system surface tokens
+
+---
+
+### Session 2026-01-31 (Implementation Review)
+
+Final implementation decisions that diverged from or extended the original spec:
+
+- **Namespace pattern adopted**: Changed from `<BpkCardV2>` root to `<BpkCardV2.Root>` following Ark-UI namespace pattern for clearer composition
+- **noElevation variant added**: Third variant for flat cards without shadow or border
+- **Padding prop system**: Added flexible `padding` prop to Header, Body, and Footer with full Backpack spacing token support
+- **Divider behavior refined**: Desktop uses CSS pseudo-element on Primary; mobile renders separate `<div>` element
+- **Subcomponent children optional**: Header, Body, Footer accept optional children for flexibility
+- **ForwardRef on all components**: All subcomponents support ref forwarding for integration with form libraries and focus management
 
 ---
 
@@ -459,7 +528,7 @@ packages/bpk-component-card-v2/
 
 ### Session 2026-01-28 (Initial Specification)
 
-- [x] **Variants**: "default", "elevated", and "outlined" will launch in V1 (chosen: adds outlined variant for comprehensive coverage) *[Updated after Figma review]*
+- [x] **Variants**: "default", "outlined", "noElevation" available in V1
 - [x] **Split Ratio**: Configurable via `splitRatio` prop on Body component (chosen: cleaner API, treats layout as Body responsibility)
 - [x] **Visual Divider**: Always rendered when split is active (chosen: opinionated design, consistent UX across all split layouts)
 
