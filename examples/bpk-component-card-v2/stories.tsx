@@ -235,11 +235,7 @@ function ComplexProductCardComponent() {
 
             {/* Rating section */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              <BpkRating rating={4.5} ratedCount={13433} />
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-                <BpkText textStyle="body-default">Excellent</BpkText>
-                <BpkText textStyle="caption">13,433 reviews</BpkText>
-              </div>
+              <BpkRating value={4.5} ariaLabel="Hotel rating 4.5 out of 5 based on 13,433 reviews" title="Excellent" subtitle="13,433 reviews" />
             </div>
 
             {/* Amenities/Features section with checkmarks */}
