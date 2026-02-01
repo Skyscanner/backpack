@@ -276,4 +276,139 @@ describe('BpkCardV2', () => {
       expect(BpkCardV2.Footer.displayName).toBe('BpkCardV2.Footer');
     });
   });
+
+  describe('Padding Props', () => {
+    describe('Header padding', () => {
+      it('applies string padding to Header', () => {
+        const { container } = render(
+          <BpkCardV2.Root>
+            <BpkCardV2.Header padding="lg">Title</BpkCardV2.Header>
+          </BpkCardV2.Root>,
+        );
+
+        const header = container.querySelector('header') as HTMLElement;
+
+        expect(header.style.padding).toBe('var(--bpk-spacing-lg)');
+      });
+
+      it('applies none padding to Header', () => {
+        const { container } = render(
+          <BpkCardV2.Root>
+            <BpkCardV2.Header padding="none">Title</BpkCardV2.Header>
+          </BpkCardV2.Root>,
+        );
+
+        const header = container.querySelector('header') as HTMLElement;
+
+        expect(header.style.padding).toBe('0px');
+      });
+
+      it('applies vertical/horizontal padding to Header', () => {
+        const { container } = render(
+          <BpkCardV2.Root>
+            <BpkCardV2.Header padding={{ vertical: 'sm', horizontal: 'xl' }}>Title</BpkCardV2.Header>
+          </BpkCardV2.Root>,
+        );
+
+        const header = container.querySelector('header') as HTMLElement;
+
+        expect(header.style.paddingTop).toBe('var(--bpk-spacing-sm)');
+        expect(header.style.paddingBottom).toBe('var(--bpk-spacing-sm)');
+        expect(header.style.paddingInlineStart).toBe('var(--bpk-spacing-xl)');
+        expect(header.style.paddingInlineEnd).toBe('var(--bpk-spacing-xl)');
+      });
+
+      it('applies individual side padding to Header', () => {
+        const { container } = render(
+          <BpkCardV2.Root>
+            <BpkCardV2.Header padding={{ top: 'lg', bottom: 'sm', start: 'md', end: 'none' }}>Title</BpkCardV2.Header>
+          </BpkCardV2.Root>,
+        );
+
+        const header = container.querySelector('header') as HTMLElement;
+
+        expect(header.style.paddingTop).toBe('var(--bpk-spacing-lg)');
+        expect(header.style.paddingBottom).toBe('var(--bpk-spacing-sm)');
+        expect(header.style.paddingInlineStart).toBe('var(--bpk-spacing-md)');
+        // JSDOM normalizes '0' to '0px' for some properties inconsistently
+        expect(['0', '0px']).toContain(header.style.paddingInlineEnd);
+      });
+    });
+
+    describe('Body padding', () => {
+      it('applies string padding to Body', () => {
+        const { container } = render(
+          <BpkCardV2.Root>
+            <BpkCardV2.Body padding="xl">Content</BpkCardV2.Body>
+          </BpkCardV2.Root>,
+        );
+
+        const body = container.querySelector('[class*="bpk-card-v2__body"]') as HTMLElement;
+
+        expect(body.style.padding).toBe('var(--bpk-spacing-xl)');
+      });
+
+      it('applies vertical/horizontal padding to Body', () => {
+        const { container } = render(
+          <BpkCardV2.Root>
+            <BpkCardV2.Body padding={{ vertical: 'xxl', horizontal: 'base' }}>Content</BpkCardV2.Body>
+          </BpkCardV2.Root>,
+        );
+
+        const body = container.querySelector('[class*="bpk-card-v2__body"]') as HTMLElement;
+
+        expect(body.style.paddingTop).toBe('var(--bpk-spacing-xxl)');
+        expect(body.style.paddingBottom).toBe('var(--bpk-spacing-xxl)');
+        expect(body.style.paddingInlineStart).toBe('var(--bpk-spacing-base)');
+        expect(body.style.paddingInlineEnd).toBe('var(--bpk-spacing-base)');
+      });
+    });
+
+    describe('Footer padding', () => {
+      it('applies string padding to Footer', () => {
+        const { container } = render(
+          <BpkCardV2.Root>
+            <BpkCardV2.Footer padding="sm">Footer</BpkCardV2.Footer>
+          </BpkCardV2.Root>,
+        );
+
+        const footer = container.querySelector('footer') as HTMLElement;
+
+        expect(footer.style.padding).toBe('var(--bpk-spacing-sm)');
+      });
+
+      it('applies individual side padding to Footer', () => {
+        const { container } = render(
+          <BpkCardV2.Root>
+            <BpkCardV2.Footer padding={{ top: 'none', bottom: 'md' }}>Footer</BpkCardV2.Footer>
+          </BpkCardV2.Root>,
+        );
+
+        const footer = container.querySelector('footer') as HTMLElement;
+
+        // JSDOM normalizes '0' to '0px' for some properties
+        expect(['0', '0px']).toContain(footer.style.paddingTop);
+        expect(footer.style.paddingBottom).toBe('var(--bpk-spacing-md)');
+      });
+    });
+
+    describe('All padding sizes', () => {
+      const paddingSizes = ['none', 'sm', 'md', 'base', 'lg', 'xl', 'xxl', 'xxxl', 'xxxxl'] as const;
+
+      paddingSizes.forEach((size) => {
+        it(`applies ${size} padding correctly`, () => {
+          const { container } = render(
+            <BpkCardV2.Root>
+              <BpkCardV2.Header padding={size}>Title</BpkCardV2.Header>
+            </BpkCardV2.Root>,
+          );
+
+          const header = container.querySelector('header') as HTMLElement;
+          const expectedValue = size === 'none' ? '0px' : `var(--bpk-spacing-${size})`;
+
+          expect(header.style.padding).toBe(expectedValue);
+        });
+      });
+    });
+  });
 });

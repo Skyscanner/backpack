@@ -22,6 +22,18 @@
 @use '../../../bpk-mixins/breakpoints';
 @use '../../../bpk-mixins/utils';
 
+// Spacing CSS custom properties for dynamic padding
+:root {
+  --bpk-spacing-sm: #{tokens.bpk-spacing-sm()};
+  --bpk-spacing-md: #{tokens.bpk-spacing-md()};
+  --bpk-spacing-base: #{tokens.bpk-spacing-base()};
+  --bpk-spacing-lg: #{tokens.bpk-spacing-lg()};
+  --bpk-spacing-xl: #{tokens.bpk-spacing-xl()};
+  --bpk-spacing-xxl: #{tokens.bpk-spacing-xxl()};
+  --bpk-spacing-xxxl: #{tokens.bpk-spacing-xxxl()};
+  --bpk-spacing-xxxxl: #{tokens.bpk-spacing-xxxxl()};
+}
+
 // Card container - base styles
 .bpk-card-v2 {
   display: flex;

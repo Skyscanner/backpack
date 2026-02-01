@@ -16,13 +16,7 @@
  * limitations under the License.
  */
 
-import BpkBadge from '../../packages/bpk-component-badge';
-import BpkButton from '../../packages/bpk-component-button';
 import BpkCardV2 from '../../packages/bpk-component-card-v2/src/BpkCardV2/BpkCardV2';
-import BpkImage from '../../packages/bpk-component-image';
-import { BpkInsetBanner } from '../../packages/bpk-component-inset-banner';
-import BpkRating from '../../packages/bpk-component-rating';
-import BpkText from '../../packages/bpk-component-text';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -224,7 +218,7 @@ function ComplexProductCardComponent() {
           Secondary slot
         </BpkCardV2.Secondary>
       </BpkCardV2.Body>
-      <BpkCardV2.Footer>
+      <BpkCardV2.Footer padding='md'>
         <BpkCardV2.Root bgColor="surfaceLowContrast" variant='noElevation'>
           <BpkCardV2.Body>
             Cheapest!

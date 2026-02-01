@@ -32,6 +32,29 @@ export type BpkCardV2SurfaceColor =
 /** Visual variant options for BpkCardV2 */
 export type BpkCardV2Variant = 'default' | 'outlined' | 'noElevation';
 
+/** Padding size options - all BpkSpacing tokens */
+export type BpkCardV2PaddingSize =
+  | 'none'
+  | 'sm'
+  | 'md'
+  | 'base'
+  | 'lg'
+  | 'xl'
+  | 'xxl'
+  | 'xxxl'
+  | 'xxxxl';
+
+/** Padding configuration for Header, Body, Footer */
+export type BpkCardV2Padding =
+  | BpkCardV2PaddingSize
+  | { vertical?: BpkCardV2PaddingSize; horizontal?: BpkCardV2PaddingSize }
+  | {
+      top?: BpkCardV2PaddingSize;
+      bottom?: BpkCardV2PaddingSize;
+      start?: BpkCardV2PaddingSize;
+      end?: BpkCardV2PaddingSize;
+    };
+
 /**
  * BpkCardV2 root component props.
  *
@@ -76,6 +99,9 @@ export type BpkCardV2HeaderProps = {
 
   /** Additional CSS class names */
   className?: string;
+
+  /** Padding configuration (default: 'base') */
+  padding?: BpkCardV2Padding;
 };
 
 /**
@@ -106,6 +132,9 @@ export type BpkCardV2BodyProps = {
 
   /** Additional CSS class names */
   className?: string;
+
+  /** Padding configuration (default: 'base') */
+  padding?: BpkCardV2Padding;
 };
 
 /**
@@ -147,6 +176,9 @@ export type BpkCardV2FooterProps = {
 
   /** Additional CSS class names */
   className?: string;
+
+  /** Padding configuration (default: 'base') */
+  padding?: BpkCardV2Padding;
 };
 
 /**

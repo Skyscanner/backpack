@@ -20,6 +20,7 @@ import type { CSSProperties, ReactNode } from 'react';
 import { Children, forwardRef, isValidElement } from 'react';
 
 import { cssModules } from '../../../../bpk-react-utils';
+import getPaddingStyle from '../utils/getPaddingStyle';
 
 import type { BpkCardV2BodyProps } from '../common-types';
 
@@ -53,6 +54,7 @@ const Body = forwardRef<HTMLDivElement, BpkCardV2BodyProps>(
   ({
     children,
     className,
+    padding,
     split = false,
     splitRatio = 70,
   }, ref) => {
@@ -74,12 +76,15 @@ const Body = forwardRef<HTMLDivElement, BpkCardV2BodyProps>(
       return acc;
     }, []) : children;
 
+    const paddingStyles = getPaddingStyle(padding);
+
     return (
       <div
         ref={ref}
         className={bodyClassName}
         style={{
           '--bpk-card-v2-primary-width': split ? `${splitRatio}%` : undefined,
+          ...paddingStyles,
         } as CSSProperties}
       >
         {processedChildren}

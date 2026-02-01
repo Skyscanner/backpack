@@ -19,6 +19,7 @@
 import { forwardRef } from 'react';
 
 import { cssModules } from '../../../../bpk-react-utils';
+import getPaddingStyle from '../utils/getPaddingStyle';
 
 import type { BpkCardV2HeaderProps } from '../common-types';
 
@@ -41,10 +42,11 @@ const getClassName = cssModules(STYLES);
  * </BpkCardV2>
  */
 const Header = forwardRef<HTMLElement, BpkCardV2HeaderProps>(
-  ({ children, className }, ref) => (
+  ({ children, className, padding }, ref) => (
     <header
       ref={ref}
       className={getClassName('bpk-card-v2__header', className)}
+      style={getPaddingStyle(padding)}
     >
       {children}
     </header>

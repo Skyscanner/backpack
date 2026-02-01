@@ -19,6 +19,7 @@
 import { forwardRef } from 'react';
 
 import { cssModules } from '../../../../bpk-react-utils';
+import getPaddingStyle from '../utils/getPaddingStyle';
 
 import type { BpkCardV2FooterProps } from '../common-types';
 
@@ -43,10 +44,11 @@ const getClassName = cssModules(STYLES);
  * </BpkCardV2>
  */
 const Footer = forwardRef<HTMLElement, BpkCardV2FooterProps>(
-  ({ children, className }, ref) => (
+  ({ children, className, padding }, ref) => (
     <footer
       ref={ref}
       className={getClassName('bpk-card-v2__footer', className)}
+      style={getPaddingStyle(padding)}
     >
       {children}
     </footer>
