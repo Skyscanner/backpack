@@ -185,7 +185,7 @@ const BpkBottomSheet = ({
       <>
         <header className={getClassName('bpk-bottom-sheet--header-wrapper')}>
           <BpkNavigationBar
-            id={headingId}
+            id={title ? headingId : undefined}
             title={title}
             titleTextStyle={TEXT_STYLES.label1}
             titleTagName={title ? 'h2' : 'span'}

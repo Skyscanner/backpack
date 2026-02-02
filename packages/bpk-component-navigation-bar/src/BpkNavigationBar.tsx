@@ -34,7 +34,7 @@ export const BAR_STYLES = {
 export type BarStyle = (typeof BAR_STYLES)[keyof typeof BAR_STYLES];
 
 export type Props = {
-  id: string;
+  id?: string;
   title: ReactNode;
   titleTextStyle?: TextStyle;
   titleTagName?: Tag;
@@ -62,8 +62,14 @@ const BpkNavigationBar = (props: Props) => {
 
   // If the title is a component that sets its own id we want the aria-labelledby on the nav to match this so it can find the element
   // Otherwise if its just a string we set the id on the title component.
-  const titleId =
-    typeof title === 'string' ? `${id}-bpk-navigation-bar-title` : id;
+  // When id is undefined, we don't set aria-labelledby to avoid broken references.
+  const getTitleId = () => {
+    if (!id) {
+      return undefined;
+    }
+    return typeof title === 'string' ? `${id}-bpk-navigation-bar-title` : id;
+  };
+  const titleId = getTitleId();
 
   return (
     <nav
