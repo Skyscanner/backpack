@@ -24,6 +24,7 @@ import BpkCloseButton from '../../bpk-component-close-button';
 import BpkLink from '../../bpk-component-link';
 import BpkNavigationBar from '../../bpk-component-navigation-bar';
 import { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
+import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 import { BpkDialogWrapper, cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkBottomSheet.module.scss';
@@ -74,13 +75,13 @@ interface CommonProps {
 export type Props = CommonProps & ({ ariaLabelledby: string } | { ariaLabel: string; });
 
 const getContentStyles = (paddingStyles: PaddingStyles): string => {
-  const { 
+  const {
     bottom = PADDING_TYPE.lg,
-    end, 
-    start = PADDING_TYPE.lg, 
-    top = PADDING_TYPE.none 
+    end,
+    start = PADDING_TYPE.lg,
+    top = PADDING_TYPE.none
   } = paddingStyles;
-  
+
   const classNames = ['bpk-bottom-sheet--content'];
 
   // Add padding classes for each side if not 'none'
@@ -155,6 +156,7 @@ const BpkBottomSheet = ({
   );
 
   const headingId = `bpk-bottom-sheet-heading-${id}`;
+  const headingIsHidden = !title && 'ariaLabel' in ariaProps;
   const dialogClassName = getClassName(
     'bpk-bottom-sheet',
     wide && 'bpk-bottom-sheet--wide',
@@ -185,7 +187,7 @@ const BpkBottomSheet = ({
       <>
         <header className={getClassName('bpk-bottom-sheet--header-wrapper')}>
           <BpkNavigationBar
-            id={headingId}
+            id={headingIsHidden ? `bpk-bottom-sheet-title-hidden-${id}` : headingId}
             title={title}
             titleTextStyle={TEXT_STYLES.label1}
             titleTagName={title ? 'h2' : 'span'}
@@ -199,6 +201,12 @@ const BpkBottomSheet = ({
               ) : null
             }
           />
+          {/* non-visible header element required for Android TalkBack to announce ariaLabel when no title provided on open BottomSheet */}
+          {headingIsHidden && (
+            <BpkVisuallyHidden as="h2">
+              <span id={`bpk-bottom-sheet-title-hidden-${id}`}>{ariaProps.ariaLabel}</span>
+            </BpkVisuallyHidden>
+          )}
         </header>
         <div className={contentStyle}>{children}</div>
       </>
