@@ -29,11 +29,11 @@ type Props = {
   styleObj?: CUSTOM_SIZE_TYPE;
 };
 
-const BpkBaseSkeleton = ({
-  skeletonStyle,
-  styleObj = undefined,
- }: Props) => (
-    <div className={getClassName('bpk-skeleton', skeletonStyle)} style={styleObj}  />
-  );
+const BpkBaseSkeleton = ({ skeletonStyle, styleObj = undefined }: Props) => (
+  <div
+    className={getClassName('bpk-skeleton', skeletonStyle)}
+    style={styleObj}
+  />
+);
 
 export default BpkBaseSkeleton;

@@ -129,7 +129,8 @@ const BpkSnippet = ({
           'bpk-snippet',
           desktopLayout === 'imageRight' && 'bpk-snippet--row-reverse',
           desktopLayout === 'vertical' && 'bpk-snippet--vertical',
-        )} {...getDataComponentAttribute('Snippet')}
+        )}
+        {...getDataComponentAttribute('Snippet')}
       >
         <div
           className={getClassName(

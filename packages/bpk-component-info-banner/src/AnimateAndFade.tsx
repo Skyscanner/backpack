@@ -150,9 +150,13 @@ class AnimateAndFade extends Component<Props, State> {
               <CSSTransition
                 classNames={{
                   exit: getClassName('bpk-animate-and-fade--leave'),
-                  exitActive: getClassName('bpk-animate-and-fade--leave-active'),
+                  exitActive: getClassName(
+                    'bpk-animate-and-fade--leave-active',
+                  ),
                   enter: getClassName('bpk-animate-and-fade--enter'),
-                  enterActive: getClassName('bpk-animate-and-fade--enter-active'),
+                  enterActive: getClassName(
+                    'bpk-animate-and-fade--enter-active',
+                  ),
                   appear: getClassName('bpk-animate-and-fade--appear'),
                   appearActive: getClassName(
                     'bpk-animate-and-fade--appear-active',

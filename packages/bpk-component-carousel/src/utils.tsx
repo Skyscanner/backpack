@@ -33,7 +33,7 @@ import type { OnImageChangedHandler } from './types';
 function scrollImageToView(
   index: number,
   imagesRef: MutableRefObject<Array<HTMLElement | null>>,
-  behavior: 'auto' | 'smooth' = 'smooth'
+  behavior: 'auto' | 'smooth' = 'smooth',
 ) {
   const element = imagesRef.current[index];
   if (!element) return;
@@ -102,7 +102,7 @@ export function useIntersectionObserver(
           const currentIndex = parseInt(index, 10);
           callbackRef.current(currentIndex);
           if (onImageChanged) {
-            onImageChanged(currentIndex)
+            onImageChanged(currentIndex);
           }
         }
       },
@@ -110,7 +110,6 @@ export function useIntersectionObserver(
     );
 
     const observeElement = (element: HTMLElement | null) => {
-
       if (element && observer) {
         observer.observe(element);
       }

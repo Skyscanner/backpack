@@ -32,32 +32,32 @@ import PropTypes from 'prop-types';
  * @todo remove this once we migrate the accordion component to TS
  */
 const withAccordionItemStateMockProps = {
-    initiallyExpanded: PropTypes.bool,
-    expanded: PropTypes.bool,
-    onClick: PropTypes.func,
+  initiallyExpanded: PropTypes.bool,
+  expanded: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 const withAccordionItemStateMockDefaultProps = {
-    initiallyExpanded: false,
-    expanded: false,
-    onClick: null,
+  initiallyExpanded: false,
+  expanded: false,
+  onClick: null,
 };
 
 const WithSingleItemAccordionStateMockProps = {
-    children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 const WithSingleItemAccordionStateMock = () => <div />;
 WithSingleItemAccordionStateMock.propTypes = {
-    ...WithSingleItemAccordionStateMockProps,
+  ...WithSingleItemAccordionStateMockProps,
 };
 
 const WithAccordionItemStateMock = () => <div />;
 WithAccordionItemStateMock.propTypes = {
-    ...withAccordionItemStateMockProps,
+  ...withAccordionItemStateMockProps,
 };
 WithAccordionItemStateMock.defaultProps = {
-    ...withAccordionItemStateMockDefaultProps,
+  ...withAccordionItemStateMockDefaultProps,
 };
 
 export { WithSingleItemAccordionStateMock, WithAccordionItemStateMock };

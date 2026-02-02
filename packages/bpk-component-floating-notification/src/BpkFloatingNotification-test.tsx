@@ -66,7 +66,7 @@ describe('BpkFloatingNotification', () => {
       <BpkFloatingNotification ctaText="View" onClick={onClick} {...props} />,
     );
 
-    const cta = document.getElementsByTagName("button").item(0);
+    const cta = document.getElementsByTagName('button').item(0);
     expect(cta).toBeDefined();
     fireEvent.click(cta as HTMLButtonElement);
 

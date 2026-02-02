@@ -30,7 +30,13 @@ const isDeviceIphone = () =>
   reports as a Macintosh.
 */
 const isDeviceIpad = () =>
-  /iPad/i.test(typeof window !== 'undefined' ? window.navigator.userAgent : '') || /Macintosh/.test(typeof window !== 'undefined' ? window.navigator.userAgent : '') && (window.navigator.maxTouchPoints > 2);
+  /iPad/i.test(
+    typeof window !== 'undefined' ? window.navigator.userAgent : '',
+  ) ||
+  (/Macintosh/.test(
+    typeof window !== 'undefined' ? window.navigator.userAgent : '',
+  ) &&
+    window.navigator.maxTouchPoints > 2);
 
 /*
   Checks if the current device is an iOS device.  

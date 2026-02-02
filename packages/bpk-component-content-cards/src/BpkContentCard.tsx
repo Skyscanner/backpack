@@ -28,14 +28,14 @@ type CardLayout = 'HORIZONTAL' | 'VERTICAL';
 type Props = {
   card: {
     image: {
-      url: string,
-      alt?: string,
-    },
-    headline: string,
-    description: string,
-    href: string,
-  },
-  layout: CardLayout,
+      url: string;
+      alt?: string;
+    };
+    headline: string;
+    description: string;
+    href: string;
+  };
+  layout: CardLayout;
 };
 
 const BpkContentCard = ({ card, layout }: Props) => (

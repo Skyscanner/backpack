@@ -29,30 +29,30 @@ import BpkDrawerContent from './BpkDrawerContent';
 const BpkScrimDrawerContent = withScrim(BpkDrawerContent);
 
 export type Props = {
-  id: string,
+  id: string;
   children: ReactNode;
-  isOpen: boolean,
+  isOpen: boolean;
   onClose?: (
     arg0?: TouchEvent | MouseEvent | KeyboardEvent,
     arg1?: {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
     },
   ) => void;
-  title: string,
-  getApplicationElement: () => HTMLElement | null,
-  width?: string,
-  renderTarget?: null | HTMLElement | (() => null | HTMLElement),
-  dialogRef?: (ref: HTMLElement | null | undefined) => void,
-  className?: string,
-  contentClassName?: string,
-  closeLabel?: string | null,
-  closeText?: string,
-  hideTitle?: boolean,
-  isIpad?: boolean,
-  isIphone?: boolean,
-  padded?: boolean,
-  mobileModalDisplay?: boolean,
-  containerClassName?: string,
+  title: string;
+  getApplicationElement: () => HTMLElement | null;
+  width?: string;
+  renderTarget?: null | HTMLElement | (() => null | HTMLElement);
+  dialogRef?: (ref: HTMLElement | null | undefined) => void;
+  className?: string;
+  contentClassName?: string;
+  closeLabel?: string | null;
+  closeText?: string;
+  hideTitle?: boolean;
+  isIpad?: boolean;
+  isIphone?: boolean;
+  padded?: boolean;
+  mobileModalDisplay?: boolean;
+  containerClassName?: string;
 };
 
 const BpkDrawer = ({
@@ -75,8 +75,7 @@ const BpkDrawer = ({
   renderTarget = null,
   title,
   width = '90%',
-}: Props) =>  {
-
+}: Props) => {
   const [isDrawerShown, setIsDrawerShown] = useState(true);
   useEffect(() => {
     if (isOpen) {
@@ -85,43 +84,43 @@ const BpkDrawer = ({
   }, [isOpen]);
 
   const onCloseAnimationComplete = () => {
-    if (onClose){
+    if (onClose) {
       onClose();
     }
   };
 
   const hide = () => {
-    setIsDrawerShown(false)
+    setIsDrawerShown(false);
   };
 
-  return(
-      <Portal isOpen={isOpen} onClose={hide} renderTarget={renderTarget}>
-        <BpkScrimDrawerContent
-          id={id}
-          title={title}
-          dialogRef={dialogRef}
-          closeLabel={closeLabel || ""}
-          closeText={closeText}
-          width={width}
-          // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-          className={className}
-          contentClassName={contentClassName}
-          getApplicationElement={getApplicationElement}
-          hideTitle={hideTitle}
-          isDrawerShown={isDrawerShown}
-          onClose={hide}
-          onCloseAnimationComplete={onCloseAnimationComplete}
-          closeOnScrimClick
-          isIpad={isIpad}
-          isIphone={isIphone}
-          padded={padded}
-          mobileModalDisplay={mobileModalDisplay}
-          containerClassName={containerClassName}
-        >
-          {children}
-        </BpkScrimDrawerContent>
-      </Portal>
+  return (
+    <Portal isOpen={isOpen} onClose={hide} renderTarget={renderTarget}>
+      <BpkScrimDrawerContent
+        id={id}
+        title={title}
+        dialogRef={dialogRef}
+        closeLabel={closeLabel || ''}
+        closeText={closeText}
+        width={width}
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={className}
+        contentClassName={contentClassName}
+        getApplicationElement={getApplicationElement}
+        hideTitle={hideTitle}
+        isDrawerShown={isDrawerShown}
+        onClose={hide}
+        onCloseAnimationComplete={onCloseAnimationComplete}
+        closeOnScrimClick
+        isIpad={isIpad}
+        isIphone={isIphone}
+        padded={padded}
+        mobileModalDisplay={mobileModalDisplay}
+        containerClassName={containerClassName}
+      >
+        {children}
+      </BpkScrimDrawerContent>
+    </Portal>
   );
-}
+};
 
 export default BpkDrawer;

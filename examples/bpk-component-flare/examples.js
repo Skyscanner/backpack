@@ -99,14 +99,14 @@ const ContentBubbleFullWithContentExample = () => (
 const ContentBubbleRoundedExample = () => (
   <div className={getClassName('bpk-flare-stories__container')}>
     <BpkContentBubble
-    className={getClassName(
-      'bpk-flare-stories__content-bubble',
-    )}
-    rounded
-    flareProps={{svgClassName: getClassName('bpk-flare-stories__flare-bar--svg')}}
-    content={content}
-  />
-</div>
+      className={getClassName('bpk-flare-stories__content-bubble')}
+      rounded
+      flareProps={{
+        svgClassName: getClassName('bpk-flare-stories__flare-bar--svg'),
+      }}
+      content={content}
+    />
+  </div>
 );
 
 const ContentBubbleStandaloneExample = () => (

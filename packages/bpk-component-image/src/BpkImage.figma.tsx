@@ -16,16 +16,15 @@
  * limitations under the License.
  */
 
-import figma from "@figma/code-connect"
+import figma from '@figma/code-connect';
 
 import BpkImage from './BpkImage';
 
 figma.connect(
   BpkImage,
-  "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=4401-28&m=dev",
+  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=4401-28&m=dev',
   {
-    props: {
-    },
-    example: () => <BpkImage altText="" src="" aspectRatio={16/9}/>,
+    props: {},
+    example: () => <BpkImage altText="" src="" aspectRatio={16 / 9} />,
   },
-)
+);

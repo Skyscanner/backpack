@@ -35,12 +35,12 @@ type DefaultProps = {
   index: number;
   name: string;
   [key: string]: any;
-}
+};
 
 class BpkInputField extends PureComponent<Props> {
   static defaultProps = {
     value: '',
-    name: ''
+    name: '',
   };
 
   componentDidUpdate(prevProps: Props) {

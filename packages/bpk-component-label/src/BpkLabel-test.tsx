@@ -25,17 +25,19 @@ describe('BpkLabel', () => {
   it('should render correctly', () => {
     const { container } = render(<BpkLabel>Origin</BpkLabel>);
     const label = container.querySelector('label');
-    
+
     expect(label).toBeInTheDocument();
     expect(label).toHaveClass('bpk-label');
     expect(label).toHaveTextContent('Origin');
-    expect(label?.querySelector('.bpk-label__asterisk')).not.toBeInTheDocument();
+    expect(
+      label?.querySelector('.bpk-label__asterisk'),
+    ).not.toBeInTheDocument();
   });
 
   it('should render correctly with a "white" attribute', () => {
     const { container } = render(<BpkLabel white>Origin</BpkLabel>);
     const label = container.querySelector('label');
-    
+
     expect(label).toBeInTheDocument();
     expect(label).toHaveClass('bpk-label');
     expect(label).toHaveClass('bpk-label--white');
@@ -46,7 +48,7 @@ describe('BpkLabel', () => {
     const { container } = render(<BpkLabel required>Origin</BpkLabel>);
     const label = container.querySelector('label');
     const asterisk = label?.querySelector('.bpk-label__asterisk');
-    
+
     expect(label).toBeInTheDocument();
     expect(label).toHaveClass('bpk-label');
     expect(label).toHaveTextContent('Origin');
@@ -57,7 +59,7 @@ describe('BpkLabel', () => {
   it('should render correctly with "valid" attribute false', () => {
     const { container } = render(<BpkLabel valid={false}>Origin</BpkLabel>);
     const label = container.querySelector('label');
-    
+
     expect(label).toBeInTheDocument();
     expect(label).toHaveClass('bpk-label');
     expect(label).toHaveClass('bpk-label--invalid');
@@ -72,7 +74,7 @@ describe('BpkLabel', () => {
     );
     const label = container.querySelector('label');
     const asterisk = label?.querySelector('.bpk-label__asterisk');
-    
+
     expect(label).toBeInTheDocument();
     expect(label).toHaveClass('bpk-label');
     expect(label).toHaveClass('bpk-label--invalid');
@@ -88,18 +90,20 @@ describe('BpkLabel', () => {
       </BpkLabel>,
     );
     const label = container.querySelector('label');
-    
+
     expect(label).toBeInTheDocument();
     expect(label).toHaveClass('bpk-label');
     expect(label).toHaveClass('bpk-label--disabled');
     expect(label).toHaveTextContent('Origin');
-    expect(label?.querySelector('.bpk-label__asterisk')).not.toBeInTheDocument();
+    expect(
+      label?.querySelector('.bpk-label__asterisk'),
+    ).not.toBeInTheDocument();
   });
 
   it('should render correctly with a "className" attribute', () => {
     const { container } = render(<BpkLabel className="test">Origin</BpkLabel>);
     const label = container.querySelector('label');
-    
+
     expect(label).toBeInTheDocument();
     expect(label).toHaveClass('bpk-label');
     expect(label).toHaveClass('test');

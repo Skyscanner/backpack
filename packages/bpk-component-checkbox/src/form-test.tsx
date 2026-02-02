@@ -85,5 +85,3 @@ describe('BpkCheckbox form test', () => {
     expect(formValidation).toHaveBeenCalledTimes(1);
   });
 });
-
-

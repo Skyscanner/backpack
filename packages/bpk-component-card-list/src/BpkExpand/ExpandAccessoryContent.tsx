@@ -34,16 +34,16 @@ const ExpandAccessoryContent = ({
   collapsed,
   onExpandToggle,
 }: ExpandProps) => (
-    <BpkButton
-      data-testid="bpk-card-list__accessory-expand-button"
-      type={BUTTON_TYPES.link}
-      onClick={onExpandToggle}
-      aria-expanded={!collapsed}
-      implicit
-    >
-      {children}
-      {collapsed ? <AlignedChevronDownIcon /> : <AlignedChevronUpIcon />}
-    </BpkButton>
-  );
+  <BpkButton
+    data-testid="bpk-card-list__accessory-expand-button"
+    type={BUTTON_TYPES.link}
+    onClick={onExpandToggle}
+    aria-expanded={!collapsed}
+    implicit
+  >
+    {children}
+    {collapsed ? <AlignedChevronDownIcon /> : <AlignedChevronUpIcon />}
+  </BpkButton>
+);
 
 export default ExpandAccessoryContent;

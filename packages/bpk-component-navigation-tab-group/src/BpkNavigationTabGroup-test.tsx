@@ -19,7 +19,9 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import BpkNavigationTabGroup, { NAVIGATION_TAB_GROUP_TYPES } from './BpkNavigationTabGroup';
+import BpkNavigationTabGroup, {
+  NAVIGATION_TAB_GROUP_TYPES,
+} from './BpkNavigationTabGroup';
 
 import type { Props } from './BpkNavigationTabGroup';
 
@@ -36,9 +38,27 @@ const tabsWithBlankTarget: Props['tabs'] = [
 ];
 
 const tabsWithAnalytics: Props['tabs'] = [
-  { id: 'air', text: 'Flights', href: '/', 'data-Cy':'flight-feature', 'data-analytics-name':'flight' },
-  { id: 'hotel', text: 'Hotels', href: '/hotel', 'data-Cy':'hotel-feature', 'data-analytics-name':'hotel' },
-  { id: 'car', text: 'Car hire', href: '/carhire', 'data-Cy':'carhire-feature', 'data-analytics-name':'car hire' },
+  {
+    id: 'air',
+    text: 'Flights',
+    href: '/',
+    'data-Cy': 'flight-feature',
+    'data-analytics-name': 'flight',
+  },
+  {
+    id: 'hotel',
+    text: 'Hotels',
+    href: '/hotel',
+    'data-Cy': 'hotel-feature',
+    'data-analytics-name': 'hotel',
+  },
+  {
+    id: 'car',
+    text: 'Car hire',
+    href: '/carhire',
+    'data-Cy': 'carhire-feature',
+    'data-analytics-name': 'car hire',
+  },
 ];
 
 describe('BpkNavigationTabGroup', () => {
@@ -53,7 +73,7 @@ describe('BpkNavigationTabGroup', () => {
   it('should render correctly', () => {
     render(
       <BpkNavigationTabGroup
-        id = "navTest"
+        id="navTest"
         tabs={tabs}
         onItemClick={() => {}}
         selectedIndex={0}
@@ -61,7 +81,10 @@ describe('BpkNavigationTabGroup', () => {
       />,
     );
     expect(screen.getByRole('navigation')).toBeInTheDocument();
-    expect(screen.getByRole('navigation')).toHaveAttribute('aria-label', 'Navigation tabs');
+    expect(screen.getByRole('navigation')).toHaveAttribute(
+      'aria-label',
+      'Navigation tabs',
+    );
     expect(screen.getByText('Flights')).toBeInTheDocument();
     expect(screen.getByText('Hotels')).toBeInTheDocument();
     expect(screen.getByText('Car hire')).toBeInTheDocument();
@@ -70,7 +93,7 @@ describe('BpkNavigationTabGroup', () => {
   it('should render selected link', () => {
     render(
       <BpkNavigationTabGroup
-        id = "navTest"
+        id="navTest"
         tabs={tabs}
         onItemClick={() => {}}
         selectedIndex={0}
@@ -93,7 +116,7 @@ describe('BpkNavigationTabGroup', () => {
 
     render(
       <BpkNavigationTabGroup
-        id = "navTest"
+        id="navTest"
         tabs={tabs}
         onItemClick={onItemClick}
         selectedIndex={0}
@@ -106,7 +129,7 @@ describe('BpkNavigationTabGroup', () => {
     expect(onItemClick).toHaveBeenCalledTimes(1);
     expect(onItemClick).toHaveBeenCalledWith(
       expect.any(Object),
-      { id:'hotel', text: 'Hotels', href: '/hotel' },
+      { id: 'hotel', text: 'Hotels', href: '/hotel' },
       1,
     );
   });
@@ -140,7 +163,7 @@ describe('BpkNavigationTabGroup', () => {
   it('should render correctly when type is CanvasDefault', () => {
     render(
       <BpkNavigationTabGroup
-        id = "navTest"
+        id="navTest"
         tabs={tabs}
         onItemClick={() => {}}
         selectedIndex={0}
@@ -158,7 +181,7 @@ describe('BpkNavigationTabGroup', () => {
   it('should render correctly props when tab props with data analytics', () => {
     render(
       <BpkNavigationTabGroup
-        id = "navTest"
+        id="navTest"
         tabs={tabsWithAnalytics}
         onItemClick={() => {}}
         selectedIndex={0}
@@ -178,7 +201,7 @@ describe('BpkNavigationTabGroup', () => {
   it('should render correctly props when tab props without data analytics', () => {
     render(
       <BpkNavigationTabGroup
-        id = "navTest"
+        id="navTest"
         tabs={tabs}
         onItemClick={() => {}}
         selectedIndex={0}

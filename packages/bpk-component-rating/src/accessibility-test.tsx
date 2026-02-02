@@ -23,14 +23,14 @@ import BpkRating, { RATING_SIZES, RATING_SCALES } from '../index';
 
 describe('BpkRating accessibility tests', () => {
   const defaultProps = {
-      ratingScale: RATING_SCALES.zeroToFive,
-      size: RATING_SIZES.base,
+    ratingScale: RATING_SCALES.zeroToFive,
+    size: RATING_SIZES.base,
   };
 
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
       <BpkRating
-      {...defaultProps}
+        {...defaultProps}
         ariaLabel="3.6 Average might recommend"
         title="Average"
         subtitle="Might recommend"

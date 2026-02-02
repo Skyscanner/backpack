@@ -80,7 +80,11 @@ const getIconForType = (
   const Icon = CustomIcon || componentMap[type];
   const AlignedIcon = withButtonAlignment(Icon);
 
-  return <span className={className}><AlignedIcon/></span>;
+  return (
+    <span className={className}>
+      <AlignedIcon />
+    </span>
+  );
 };
 
 type ToggleButtonProps = {
@@ -103,9 +107,10 @@ const ToggleButton = (props: ToggleButtonProps) => {
       title={props.label}
     >
       <ExpandIcon
-      // TODO: className to be removed
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      className={classNames.join(' ')} />
+        // TODO: className to be removed
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={classNames.join(' ')}
+      />
     </button>
   );
 };

@@ -301,5 +301,3 @@ describe('BpkFieldset', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 });
-
-

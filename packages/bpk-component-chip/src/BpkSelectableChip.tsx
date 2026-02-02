@@ -56,7 +56,7 @@ const BpkSelectableChip = ({
     !children && 'bpk-chip--icon-only',
     !disabled && selected && `bpk-chip--${type}-selected`,
     dismissible && `bpk-chip--${type}-dismissible`,
-    className
+    className,
   );
 
   return (
@@ -73,7 +73,7 @@ const BpkSelectableChip = ({
         <span
           className={getClassName(
             'bpk-chip__leading-accessory-view',
-            !children && 'bpk-chip--icon-only__leading-accessory-view'
+            !children && 'bpk-chip--icon-only__leading-accessory-view',
           )}
         >
           {leadingAccessoryView}

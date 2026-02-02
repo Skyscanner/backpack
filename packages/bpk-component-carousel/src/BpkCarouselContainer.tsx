@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { MutableRefObject, ReactNode} from 'react';
+import type { MutableRefObject, ReactNode } from 'react';
 import { memo, useState } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -34,82 +34,92 @@ type Props = {
   images: ReactNode[];
   onVisible: (visibleIndex: number) => void;
   imagesRef: MutableRefObject<Array<HTMLElement | null>>;
-  onImageChanged: OnImageChangedHandler
+  onImageChanged: OnImageChangedHandler;
 };
 
-const BpkScrollContainer = memo(({ images, imagesRef, onImageChanged, onVisible }: Props) => {
-  const [root, setRoot] = useState<HTMLElement | null>(null);
-  const observeImageChange = useIntersectionObserver(onVisible, {
-    root,
-    threshold: 0.5,
-  }, onImageChanged);
-  const observeCycleScroll = useIntersectionObserver(
-    (index) => {
-      const container = root;
-      const imageElement = imagesRef.current && imagesRef.current[index];
-      if (container && imageElement) {
-        // Some browsers and test environments don't support smooth scrolling,
-        // so we must fall back to simply setting scrollLeft
-        if (container.scroll && typeof container.scroll === 'function') {
-          container.scroll({
-            left: imageElement.offsetLeft,
-            behavior: 'auto',
-          });
-        } else {
-          container.scrollLeft = imageElement.offsetLeft;
-        }
-      }
-    },
-    // when threshold was 1, the loop behaviour (mobile) was not working as expected. This seems to fix it.
-    { root, threshold: 0.98 },
-  );
-
-  if (images.length === 1) {
-    return (
-      <div className={getClassName('bpk-carousel-container')} role="list" data-testid="image-gallery-scroll-container">
-        <BpkCarouselImage image={images[0]} index={0} />
-      </div>
+const BpkScrollContainer = memo(
+  ({ images, imagesRef, onImageChanged, onVisible }: Props) => {
+    const [root, setRoot] = useState<HTMLElement | null>(null);
+    const observeImageChange = useIntersectionObserver(
+      onVisible,
+      {
+        root,
+        threshold: 0.5,
+      },
+      onImageChanged,
     );
-  }
+    const observeCycleScroll = useIntersectionObserver(
+      (index) => {
+        const container = root;
+        const imageElement = imagesRef.current && imagesRef.current[index];
+        if (container && imageElement) {
+          // Some browsers and test environments don't support smooth scrolling,
+          // so we must fall back to simply setting scrollLeft
+          if (container.scroll && typeof container.scroll === 'function') {
+            container.scroll({
+              left: imageElement.offsetLeft,
+              behavior: 'auto',
+            });
+          } else {
+            container.scrollLeft = imageElement.offsetLeft;
+          }
+        }
+      },
+      // when threshold was 1, the loop behaviour (mobile) was not working as expected. This seems to fix it.
+      { root, threshold: 0.98 },
+    );
 
-  return (
-    <div
-      className={getClassName('bpk-carousel-container')}
-      ref={setRoot}
-      data-testid="image-gallery-scroll-container"
-      role="list"
-    >
-      <BpkCarouselImage
-        image={images[images.length - 1]}
-        index={images.length - 1}
-        ref={(el) => {
-          observeCycleScroll(el);
-          observeImageChange(el);
-        }}
-      />
-      {images.map((image, index) => (
+    if (images.length === 1) {
+      return (
+        <div
+          className={getClassName('bpk-carousel-container')}
+          role="list"
+          data-testid="image-gallery-scroll-container"
+        >
+          <BpkCarouselImage image={images[0]} index={0} />
+        </div>
+      );
+    }
+
+    return (
+      <div
+        className={getClassName('bpk-carousel-container')}
+        ref={setRoot}
+        data-testid="image-gallery-scroll-container"
+        role="list"
+      >
         <BpkCarouselImage
-          // eslint-disable-next-line react/no-array-index-key
-          key={index}
-          image={image}
-          index={index}
+          image={images[images.length - 1]}
+          index={images.length - 1}
           ref={(el) => {
-            // eslint-disable-next-line no-param-reassign
-            imagesRef.current[index] = el;
+            observeCycleScroll(el);
             observeImageChange(el);
           }}
         />
-      ))}
-      <BpkCarouselImage
-        image={images[0]}
-        index={0}
-        ref={(el) => {
-          observeCycleScroll(el);
-          observeImageChange(el);
-        }}
-      />
-    </div>
-  );
-});
+        {images.map((image, index) => (
+          <BpkCarouselImage
+            // eslint-disable-next-line react/no-array-index-key
+            key={index}
+            image={image}
+            index={index}
+            ref={(el) => {
+              // eslint-disable-next-line no-param-reassign
+              imagesRef.current[index] = el;
+              observeImageChange(el);
+            }}
+          />
+        ))}
+        <BpkCarouselImage
+          image={images[0]}
+          index={0}
+          ref={(el) => {
+            observeCycleScroll(el);
+            observeImageChange(el);
+          }}
+        />
+      </div>
+    );
+  },
+);
 
 export default BpkScrollContainer;

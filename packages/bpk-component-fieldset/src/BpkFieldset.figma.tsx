@@ -16,23 +16,24 @@
  * limitations under the License.
  */
 
-import figma from "@figma/code-connect"
+import figma from '@figma/code-connect';
 
-import BpkCheckbox from "../../bpk-component-checkbox";
-import BpkInput, { INPUT_TYPES } from "../../bpk-component-input";
-import BpkSelect from "../../bpk-component-select";
-import BpkTextarea from "../../bpk-component-textarea";
+import BpkCheckbox from '../../bpk-component-checkbox';
+import BpkInput, { INPUT_TYPES } from '../../bpk-component-input';
+import BpkSelect from '../../bpk-component-select';
+import BpkTextarea from '../../bpk-component-textarea';
 
-import BpkFieldset from "./BpkFieldset";
+import BpkFieldset from './BpkFieldset';
 
-const figmaUrl = "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=30459%3A44425";
+const figmaUrl =
+  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=30459%3A44425';
 // Input variant
 figma.connect(BpkFieldset, figmaUrl, {
-  variant: { Type: "Input" },
+  variant: { Type: 'Input' },
   props: {
-    error: figma.boolean("Error"),
-    labelInstance: figma.nestedProps("Label", {
-      label: figma.textContent("Label"),
+    error: figma.boolean('Error'),
+    labelInstance: figma.nestedProps('Label', {
+      label: figma.textContent('Label'),
     }),
   },
   example: ({ error, labelInstance }) => (
@@ -54,11 +55,11 @@ figma.connect(BpkFieldset, figmaUrl, {
 
 // Select variant
 figma.connect(BpkFieldset, figmaUrl, {
-  variant: { Type: "Select" },
+  variant: { Type: 'Select' },
   props: {
-    error: figma.boolean("Error"),
-    labelInstance: figma.nestedProps("Label", {
-      label: figma.textContent("Label"),
+    error: figma.boolean('Error'),
+    labelInstance: figma.nestedProps('Label', {
+      label: figma.textContent('Label'),
     }),
   },
   example: ({ error, labelInstance }) => (
@@ -79,11 +80,11 @@ figma.connect(BpkFieldset, figmaUrl, {
 
 // Text area variant
 figma.connect(BpkFieldset, figmaUrl, {
-  variant: { Type: "Text area" },
+  variant: { Type: 'Text area' },
   props: {
-    error: figma.boolean("Error"),
-    labelInstance: figma.nestedProps("Label", {
-      label: figma.textContent("Label"),
+    error: figma.boolean('Error'),
+    labelInstance: figma.nestedProps('Label', {
+      label: figma.textContent('Label'),
     }),
   },
   example: ({ error, labelInstance }) => (
@@ -100,11 +101,11 @@ figma.connect(BpkFieldset, figmaUrl, {
 
 // Radio group variant
 figma.connect(BpkFieldset, figmaUrl, {
-  variant: { Type: "Radio group" },
+  variant: { Type: 'Radio group' },
   props: {
-    error: figma.boolean("Error"),
-    labelInstance: figma.nestedProps("Label", {
-      label: figma.textContent("Label"),
+    error: figma.boolean('Error'),
+    labelInstance: figma.nestedProps('Label', {
+      label: figma.textContent('Label'),
     }),
   },
   example: ({ error, labelInstance }) => (

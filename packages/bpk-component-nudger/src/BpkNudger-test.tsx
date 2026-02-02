@@ -163,7 +163,7 @@ describe('BpkNudger', () => {
   });
 
   it('should return a max on direct user input with a higher number', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup();
     const onChangeSpy = jest.fn();
     render(
       <BpkNudger
@@ -185,9 +185,9 @@ describe('BpkNudger', () => {
     expect(onChangeSpy).toHaveBeenCalledWith(9);
     expect(input.value).toEqual('9');
   });
-  
+
   it('should return number that direct user input with', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup();
     const onChangeSpy = jest.fn();
     render(
       <BpkNudger

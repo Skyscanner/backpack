@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkInteractiveStar from '../../packages/bpk-component-star-rating/src/BpkInteractiveStar';
 import BpkInteractiveStarRating from '../../packages/bpk-component-star-rating/src/BpkInteractiveStarRating';
 import { BpkStarNonRtl } from '../../packages/bpk-component-star-rating/src/BpkStar';
@@ -44,7 +43,7 @@ export default {
     BpkStar: BpkStarNonRtl,
     BpkInteractiveStarRating,
     BpkInteractiveStar,
-    withInteractiveStarRatingState: WithInteractiveStarRatingStateMock
+    withInteractiveStarRatingState: WithInteractiveStarRatingStateMock,
   },
 };
 
@@ -67,5 +66,5 @@ export const Interactive = InteractiveExample;
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

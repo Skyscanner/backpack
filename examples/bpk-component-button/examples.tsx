@@ -156,11 +156,7 @@ const SecondaryOnDarkExample = (props: any) => (
   </BpkDarkExampleWrapper>
 );
 const DestructiveExample = (props: any) => (
-  <ButtonStory
-    type={BUTTON_TYPES.destructive}
-    wrapped={BpkButton}
-    {...props}
-  />
+  <ButtonStory type={BUTTON_TYPES.destructive} wrapped={BpkButton} {...props} />
 );
 const FeaturedExample = (props: any) => (
   <ButtonStory type={BUTTON_TYPES.featured} wrapped={BpkButton} {...props} />
@@ -168,47 +164,93 @@ const FeaturedExample = (props: any) => (
 const LinkExample = (props: any) => (
   <div className={getClassName('bpk-button-story-wrapper')}>
     {/* Default Link */}
-    <BpkButton type={BUTTON_TYPES.link} onClick={action('Link clicked')} {...props}>
+    <BpkButton
+      type={BUTTON_TYPES.link}
+      onClick={action('Link clicked')}
+      {...props}
+    >
       Button
     </BpkButton>
     &nbsp;
     {/* Link with icon */}
-    <BpkButton type={BUTTON_TYPES.link} onClick={action('Link clicked')} {...props}>
+    <BpkButton
+      type={BUTTON_TYPES.link}
+      onClick={action('Link clicked')}
+      {...props}
+    >
       Button <RtlSmallLongArrowRightIcon />
     </BpkButton>
     &nbsp;
     {/* Implicit Link */}
-    <BpkButton type={BUTTON_TYPES.link} implicit onClick={action('Link clicked')} {...props}>
+    <BpkButton
+      type={BUTTON_TYPES.link}
+      implicit
+      onClick={action('Link clicked')}
+      {...props}
+    >
       Button
     </BpkButton>
     &nbsp;
     {/* Implicit Link with icon */}
-    <BpkButton type={BUTTON_TYPES.link} implicit onClick={action('Link clicked')} {...props}>
+    <BpkButton
+      type={BUTTON_TYPES.link}
+      implicit
+      onClick={action('Link clicked')}
+      {...props}
+    >
       Button <RtlSmallLongArrowRightIcon />
     </BpkButton>
     &nbsp;
     {/* Disabled Link */}
-    <BpkButton type={BUTTON_TYPES.link} disabled onClick={action('THIS SHOULD NEVER HAPPEN')} {...props}>
+    <BpkButton
+      type={BUTTON_TYPES.link}
+      disabled
+      onClick={action('THIS SHOULD NEVER HAPPEN')}
+      {...props}
+    >
       Disabled
     </BpkButton>
     &nbsp;
     {/* Large Link */}
-    <BpkButton type={BUTTON_TYPES.link} size={SIZE_TYPES.large} onClick={action('Link clicked')} {...props}>
+    <BpkButton
+      type={BUTTON_TYPES.link}
+      size={SIZE_TYPES.large}
+      onClick={action('Link clicked')}
+      {...props}
+    >
       Button
     </BpkButton>
     &nbsp;
     {/* Large Link with icon */}
-    <BpkButton type={BUTTON_TYPES.link} size={SIZE_TYPES.large} onClick={action('Link clicked')} {...props}>
+    <BpkButton
+      type={BUTTON_TYPES.link}
+      size={SIZE_TYPES.large}
+      onClick={action('Link clicked')}
+      {...props}
+    >
       Button <RtlLargeLongArrowRightIcon />
     </BpkButton>
     &nbsp;
     {/* The iconOnly Link */}
-    <BpkButton type={BUTTON_TYPES.link} iconOnly onClick={action('Link clicked')} aria-label="Icon link" {...props}>
+    <BpkButton
+      type={BUTTON_TYPES.link}
+      iconOnly
+      onClick={action('Link clicked')}
+      aria-label="Icon link"
+      {...props}
+    >
       <RtlSmallLongArrowRightIcon />
     </BpkButton>
     &nbsp;
     {/* Large iconOnly Link */}
-    <BpkButton type={BUTTON_TYPES.link} iconOnly size={SIZE_TYPES.large} onClick={action('Link clicked')} aria-label="Large icon link" {...props}>
+    <BpkButton
+      type={BUTTON_TYPES.link}
+      iconOnly
+      size={SIZE_TYPES.large}
+      onClick={action('Link clicked')}
+      aria-label="Large icon link"
+      {...props}
+    >
       <RtlLargeLongArrowRightIcon />
     </BpkButton>
   </div>
@@ -218,47 +260,93 @@ const LinkOnDarkExample = (props: any) => (
   <BpkDarkExampleWrapper>
     <div className={getClassName('bpk-button-story-wrapper')}>
       {/* Default LinkOnDark */}
-      <BpkButton type={BUTTON_TYPES.linkOnDark} onClick={action('Link clicked')} {...props}>
+      <BpkButton
+        type={BUTTON_TYPES.linkOnDark}
+        onClick={action('Link clicked')}
+        {...props}
+      >
         Button
       </BpkButton>
       &nbsp;
       {/* LinkOnDark with icon */}
-      <BpkButton type={BUTTON_TYPES.linkOnDark} onClick={action('Link clicked')} {...props}>
+      <BpkButton
+        type={BUTTON_TYPES.linkOnDark}
+        onClick={action('Link clicked')}
+        {...props}
+      >
         Button <RtlSmallLongArrowRightIcon />
       </BpkButton>
       &nbsp;
       {/* Implicit LinkOnDark */}
-      <BpkButton type={BUTTON_TYPES.linkOnDark} implicit onClick={action('Link clicked')} {...props}>
+      <BpkButton
+        type={BUTTON_TYPES.linkOnDark}
+        implicit
+        onClick={action('Link clicked')}
+        {...props}
+      >
         Button
       </BpkButton>
       &nbsp;
       {/* Implicit LinkOnDark with icon */}
-      <BpkButton type={BUTTON_TYPES.linkOnDark} implicit onClick={action('Link clicked')} {...props}>
+      <BpkButton
+        type={BUTTON_TYPES.linkOnDark}
+        implicit
+        onClick={action('Link clicked')}
+        {...props}
+      >
         Button <RtlSmallLongArrowRightIcon />
       </BpkButton>
       &nbsp;
       {/* Disabled LinkOnDark */}
-      <BpkButton type={BUTTON_TYPES.linkOnDark} disabled onClick={action('THIS SHOULD NEVER HAPPEN')} {...props}>
+      <BpkButton
+        type={BUTTON_TYPES.linkOnDark}
+        disabled
+        onClick={action('THIS SHOULD NEVER HAPPEN')}
+        {...props}
+      >
         Disabled
       </BpkButton>
       &nbsp;
       {/* Large LinkOnDark */}
-      <BpkButton type={BUTTON_TYPES.linkOnDark} size={SIZE_TYPES.large} onClick={action('Link clicked')} {...props}>
+      <BpkButton
+        type={BUTTON_TYPES.linkOnDark}
+        size={SIZE_TYPES.large}
+        onClick={action('Link clicked')}
+        {...props}
+      >
         Button
       </BpkButton>
       &nbsp;
       {/* Large LinkOnDark with icon */}
-      <BpkButton type={BUTTON_TYPES.linkOnDark} size={SIZE_TYPES.large} onClick={action('Link clicked')} {...props}>
+      <BpkButton
+        type={BUTTON_TYPES.linkOnDark}
+        size={SIZE_TYPES.large}
+        onClick={action('Link clicked')}
+        {...props}
+      >
         Button <RtlLargeLongArrowRightIcon />
       </BpkButton>
       &nbsp;
       {/* The iconOnly LinkOnDark */}
-      <BpkButton type={BUTTON_TYPES.linkOnDark} iconOnly onClick={action('Link clicked')} aria-label="Icon link" {...props}>
+      <BpkButton
+        type={BUTTON_TYPES.linkOnDark}
+        iconOnly
+        onClick={action('Link clicked')}
+        aria-label="Icon link"
+        {...props}
+      >
         <RtlSmallLongArrowRightIcon />
       </BpkButton>
       &nbsp;
       {/* Large iconOnly LinkOnDark */}
-      <BpkButton type={BUTTON_TYPES.linkOnDark} iconOnly size={SIZE_TYPES.large} onClick={action('Link clicked')} aria-label="Large icon link" {...props}>
+      <BpkButton
+        type={BUTTON_TYPES.linkOnDark}
+        iconOnly
+        size={SIZE_TYPES.large}
+        onClick={action('Link clicked')}
+        aria-label="Large icon link"
+        {...props}
+      >
         <RtlLargeLongArrowRightIcon />
       </BpkButton>
     </div>

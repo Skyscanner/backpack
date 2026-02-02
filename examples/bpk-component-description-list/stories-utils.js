@@ -32,38 +32,41 @@ import PropTypes from 'prop-types';
  * @todo remove this once we migrate the accordion component to TS
  */
 const BpkDescriptionListMockPropTypes = {
-    children: PropTypes.node.isRequired,
-    className: PropTypes.string,
-  };
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+};
 
-  const BpkDescriptionListMockPropTypesDefaultProps = {
-    className: null,
-  };
+const BpkDescriptionListMockPropTypesDefaultProps = {
+  className: null,
+};
 
-
-  // Mock
+// Mock
 const BpkDescriptionList = () => <div />;
 BpkDescriptionList.propTypes = {
-    ...BpkDescriptionListMockPropTypes,
+  ...BpkDescriptionListMockPropTypes,
 };
 BpkDescriptionList.defaultProps = {
-    ...BpkDescriptionListMockPropTypesDefaultProps,
+  ...BpkDescriptionListMockPropTypesDefaultProps,
 };
 
 const BpkDescriptionTermMock = () => <div />;
 BpkDescriptionTermMock.propTypes = {
-    ...BpkDescriptionListMockPropTypes,
+  ...BpkDescriptionListMockPropTypes,
 };
 BpkDescriptionTermMock.defaultProps = {
-    ...BpkDescriptionListMockPropTypesDefaultProps,
+  ...BpkDescriptionListMockPropTypesDefaultProps,
 };
 
 const BpkDescriptionDetailsMock = () => <div />;
 BpkDescriptionDetailsMock.propTypes = {
-    ...BpkDescriptionListMockPropTypes,
+  ...BpkDescriptionListMockPropTypes,
 };
 BpkDescriptionDetailsMock.defaultProps = {
-    ...BpkDescriptionListMockPropTypesDefaultProps,
+  ...BpkDescriptionListMockPropTypesDefaultProps,
 };
 
-export { BpkDescriptionList, BpkDescriptionTermMock, BpkDescriptionDetailsMock };
+export {
+  BpkDescriptionList,
+  BpkDescriptionTermMock,
+  BpkDescriptionDetailsMock,
+};

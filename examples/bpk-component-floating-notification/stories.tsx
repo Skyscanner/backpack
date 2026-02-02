@@ -43,6 +43,6 @@ export const VisualTest = VisualTestExample;
 export const VisualTestWithZoom = {
   render: VisualTest,
   args: {
-    zoomEnabled: true
-  }
+    zoomEnabled: true,
+  },
 };

@@ -92,17 +92,15 @@ describe('BpkHorizontalNav', () => {
     const { asFragment } = render(
       <BpkHorizontalNav ariaLabel="nav content">
         My nav content.
-      </BpkHorizontalNav>
-    )
+      </BpkHorizontalNav>,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with "ariaLabel" prop set to null', () => {
     const { asFragment } = render(
-      <BpkHorizontalNav ariaLabel={null}>
-        My nav content.
-      </BpkHorizontalNav>
-    )
+      <BpkHorizontalNav ariaLabel={null}>My nav content.</BpkHorizontalNav>,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 });

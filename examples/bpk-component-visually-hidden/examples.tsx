@@ -16,9 +16,7 @@
  * limitations under the License.
  */
 
-import BpkButton, {
-  BUTTON_TYPES,
-} from '../../packages/bpk-component-button';
+import BpkButton, { BUTTON_TYPES } from '../../packages/bpk-component-button';
 import { withButtonAlignment } from '../../packages/bpk-component-icon';
 import CloseIcon from '../../packages/bpk-component-icon/sm/close';
 import EditIcon from '../../packages/bpk-component-icon/sm/edit';
@@ -91,9 +89,13 @@ export const BasicExample = () => (
   <div>
     <BpkText>
       This text is visible.{' '}
-      <BpkVisuallyHidden>This text is only for screen readers.</BpkVisuallyHidden>
+      <BpkVisuallyHidden>
+        This text is only for screen readers.
+      </BpkVisuallyHidden>
     </BpkText>
-    <BpkVisuallyHidden as="h2">Hidden heading for screen readers</BpkVisuallyHidden>
+    <BpkVisuallyHidden as="h2">
+      Hidden heading for screen readers
+    </BpkVisuallyHidden>
     <BpkText>Content that follows the hidden heading.</BpkText>
   </div>
 );

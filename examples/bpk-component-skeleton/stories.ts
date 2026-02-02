@@ -33,7 +33,6 @@ export default {
   component: BpkSkeleton,
 };
 
-
 export const ImageSkeleton = ImageSkeletonExample;
 export const BodyTextSkeleton = BodyTextSkeletonExample;
 export const CircleSkeleton = CircleSkeletonExample;

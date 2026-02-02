@@ -47,10 +47,38 @@ const tabs: BpkNavigationTabGroupProps['tabs'] = [
 ];
 
 const tabsWithIcon: BpkNavigationTabGroupProps['tabs'] = [
-  { id: 'air', text: 'Flights', href: '/', icon: flightIcons, 'data-cy':'flight-feature', 'data-analytics':'flights' },
-  { id: 'hotel', text: 'Hotels', href: '/hotel', icon: hotelIcons, 'data-cy':'hotel-feature', 'data-analytics':'hotels' },
-  { id: 'car', text: 'Car hire', href: '/carhire', icon: carIcons, 'data-cy':'carhire-feature', 'data-analytics':'car hire' },
-  { id: 'explore', text: 'Explore', href: '/Explore', icon: exploreIcons, 'data-cy':'explore-feature', 'data-analytics':'explore' },
+  {
+    id: 'air',
+    text: 'Flights',
+    href: '/',
+    icon: flightIcons,
+    'data-cy': 'flight-feature',
+    'data-analytics': 'flights',
+  },
+  {
+    id: 'hotel',
+    text: 'Hotels',
+    href: '/hotel',
+    icon: hotelIcons,
+    'data-cy': 'hotel-feature',
+    'data-analytics': 'hotels',
+  },
+  {
+    id: 'car',
+    text: 'Car hire',
+    href: '/carhire',
+    icon: carIcons,
+    'data-cy': 'carhire-feature',
+    'data-analytics': 'car hire',
+  },
+  {
+    id: 'explore',
+    text: 'Explore',
+    href: '/Explore',
+    icon: exploreIcons,
+    'data-cy': 'explore-feature',
+    'data-analytics': 'explore',
+  },
 ];
 
 const tabsNoHref: BpkNavigationTabGroupProps['tabs'] = [
@@ -61,10 +89,10 @@ const tabsNoHref: BpkNavigationTabGroupProps['tabs'] = [
 ];
 
 const tabsOnlyText: BpkNavigationTabGroupProps['tabs'] = [
-  { id: 'air', text: 'Flights'},
+  { id: 'air', text: 'Flights' },
   { id: 'hotel', text: 'Hotels' },
-  { id: 'carhire', text: 'Car hire'},
-  { id: 'explore', text: 'Explore'},
+  { id: 'carhire', text: 'Car hire' },
+  { id: 'explore', text: 'Explore' },
 ];
 
 const tabsWithBlankTarget: BpkNavigationTabGroupProps['tabs'] = [
@@ -78,14 +106,20 @@ const tabsWithBubble: BpkNavigationTabGroupProps['tabs'] = [
   { id: 'air', text: 'Flights', href: '/', target: '_blank' },
   { id: 'hotel', text: 'Hotels', href: '/hotel', target: '_blank' },
   { id: 'car', text: 'Car hire', href: '/carhire', target: '_blank' },
-  { id: 'packages', text: 'Packages', href: '/destinations/packages-holidays', target: '_blank', badgeText: 'New' },
+  {
+    id: 'packages',
+    text: 'Packages',
+    href: '/destinations/packages-holidays',
+    target: '_blank',
+    badgeText: 'New',
+  },
 ];
 
 // Simple Navigation Tab Group
 const SimpleSurfaceContrast = () => (
   <div className={getClassNames('bpk-navigation-tab-group-story')}>
     <BpkNavigationTabGroup
-      id='navExample'
+      id="navExample"
       tabs={tabs}
       onItemClick={() => {}}
       selectedIndex={2}
@@ -101,7 +135,7 @@ const SimpleCanvasDefault = () => (
     className={getClassNames('bpk-navigation-tab-group-story__canvas-default')}
   >
     <BpkNavigationTabGroup
-      id='navExample'
+      id="navExample"
       tabs={tabs}
       onItemClick={() => {}}
       selectedIndex={0}
@@ -114,7 +148,7 @@ const SimpleCanvasDefault = () => (
 const WithIconSurfaceContrastForExample = () => (
   <div className={getClassNames('bpk-navigation-tab-group-story')}>
     <BpkNavigationTabGroup
-      id='navExample'
+      id="navExample"
       tabs={tabsWithIcon}
       onItemClick={() => {}}
       selectedIndex={0}
@@ -128,7 +162,7 @@ const WithIconSurfaceContrastForExample = () => (
 const WithIconCanvasDefaultForExample = () => (
   <div>
     <BpkNavigationTabGroup
-      id='navExample'
+      id="navExample"
       tabs={tabsWithIcon}
       onItemClick={() => {}}
       selectedIndex={0}
@@ -141,22 +175,22 @@ const WithIconCanvasDefaultForExample = () => (
 // Tabs No Href SurfaceContrast Navigation Tab Group
 const TabsNoHrefSurfaceContrastForExample = () => (
   <div className={getClassNames('bpk-navigation-tab-group-story')}>
-  <BpkNavigationTabGroup
-    id='navExample'
-    tabs={tabsNoHref}
-    onItemClick={() => {}}
-    selectedIndex={0}
-    type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
-    ariaLabel="Navigation tabs"
-  />
-</div>
+    <BpkNavigationTabGroup
+      id="navExample"
+      tabs={tabsNoHref}
+      onItemClick={() => {}}
+      selectedIndex={0}
+      type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
+      ariaLabel="Navigation tabs"
+    />
+  </div>
 );
 
 // Tabs No Href CanvasDefault Navigation Tab Group
 const TabsNoHrefCanvasDefaultForExample = () => (
   <div>
     <BpkNavigationTabGroup
-      id='navExample'
+      id="navExample"
       tabs={tabsNoHref}
       onItemClick={() => {}}
       selectedIndex={0}
@@ -169,22 +203,22 @@ const TabsNoHrefCanvasDefaultForExample = () => (
 // Tabs Only Text SurfaceContrast Navigation Tab Group
 const TabsOnlyTextSurfaceContrastForExample = () => (
   <div className={getClassNames('bpk-navigation-tab-group-story')}>
-  <BpkNavigationTabGroup
-    id='navExample'
-    tabs={tabsOnlyText}
-    onItemClick={() => {}}
-    selectedIndex={0}
-    type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
-    ariaLabel="Navigation tabs"
-  />
-</div>
+    <BpkNavigationTabGroup
+      id="navExample"
+      tabs={tabsOnlyText}
+      onItemClick={() => {}}
+      selectedIndex={0}
+      type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
+      ariaLabel="Navigation tabs"
+    />
+  </div>
 );
 
 // Tabs Only Text CanvasDefault Navigation Tab Group
 const TabsOnlyTextCanvasDefaultForExample = () => (
   <div>
     <BpkNavigationTabGroup
-      id='navExample'
+      id="navExample"
       tabs={tabsOnlyText}
       onItemClick={() => {}}
       selectedIndex={0}
@@ -222,9 +256,10 @@ const TabsWithBubble = () => (
   </div>
 );
 
-
 const VisualTestExample = () => (
-  <div className={getClassNames('bpk-navigation-tab-group-story__mixed-container')}>
+  <div
+    className={getClassNames('bpk-navigation-tab-group-story__mixed-container')}
+  >
     <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
       Simple SurfaceContrast
     </BpkText>

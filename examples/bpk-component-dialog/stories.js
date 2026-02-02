@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkDialog from '../../packages/bpk-component-dialog/src/BpkDialog';
 
 import {
@@ -42,5 +41,5 @@ export const VisualTest = DefaultExample;
 
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

@@ -29,20 +29,12 @@ figma.connect(
       }),
       children: figma.string('Text'),
       alternate: figma.enum('Style', {
-        "Default": false,
-        "On Contrast": true
+        Default: false,
+        'On Contrast': true,
       }),
     },
-    example: ({
-      alternate,
-      children,
-      implicit,
-    }) => (
-      <BpkLink
-        href="#"
-        implicit={implicit}
-        alternate={alternate}
-      >
+    example: ({ alternate, children, implicit }) => (
+      <BpkLink href="#" implicit={implicit} alternate={alternate}>
         {children}
       </BpkLink>
     ),

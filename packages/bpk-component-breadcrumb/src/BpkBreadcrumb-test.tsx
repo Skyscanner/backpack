@@ -29,7 +29,9 @@ describe('BpkBreadcrumb', () => {
       </BpkBreadcrumb>,
     );
 
-    expect(screen.getByRole('navigation', { name: 'My breadcrumbs' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('navigation', { name: 'My breadcrumbs' }),
+    ).toBeInTheDocument();
     expect(screen.getByText('Anything can go in here')).toBeInTheDocument();
     expect(screen.getByRole('list')).toBeInTheDocument();
   });
@@ -41,7 +43,9 @@ describe('BpkBreadcrumb', () => {
       </BpkBreadcrumb>,
     );
 
-    expect(screen.getByRole('navigation', { name: 'My breadcrumbs' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('navigation', { name: 'My breadcrumbs' }),
+    ).toBeInTheDocument();
     expect(container.querySelector('.my-custom-class')).toBeInTheDocument();
     expect(screen.getByText('Anything can go in here')).toBeInTheDocument();
   });
@@ -56,8 +60,13 @@ describe('BpkBreadcrumb', () => {
       </BpkBreadcrumb>,
     );
 
-    expect(screen.getByRole('navigation', { name: 'My breadcrumbs' })).toBeInTheDocument();
-    expect(screen.getByRole('navigation')).toHaveAttribute('testid', 'arbitrary value');
+    expect(
+      screen.getByRole('navigation', { name: 'My breadcrumbs' }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole('navigation')).toHaveAttribute(
+      'testid',
+      'arbitrary value',
+    );
     expect(screen.getByText('Anything can go in here')).toBeInTheDocument();
   });
 
@@ -78,9 +87,13 @@ describe('BpkBreadcrumb', () => {
       </BpkBreadcrumb>,
     );
 
-    expect(screen.getByRole('navigation', { name: 'My breadcrumbs' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('navigation', { name: 'My breadcrumbs' }),
+    ).toBeInTheDocument();
     expect(screen.getByText('Anything can go in here')).toBeInTheDocument();
     // Check that the schema script tag is present
-    expect(container.querySelector('script[type="application/ld+json"]')).toBeInTheDocument();
+    expect(
+      container.querySelector('script[type="application/ld+json"]'),
+    ).toBeInTheDocument();
   });
 });

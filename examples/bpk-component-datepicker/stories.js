@@ -61,10 +61,10 @@ export const VisualTestRange = VisualRangeExample;
 
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };
 
 export const VisualTestRangeWithZoom = VisualTestRange.bind({});
 VisualTestRangeWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

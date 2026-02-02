@@ -15,32 +15,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import figma from "@figma/code-connect"
+import figma from '@figma/code-connect';
 
-import BpkPrice from "./BpkPrice"
-import { SIZES, ALIGNS } from './common-types'
-
+import BpkPrice from './BpkPrice';
+import { SIZES, ALIGNS } from './common-types';
 
 figma.connect(
   BpkPrice,
-  "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=16470%3A17021",
+  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=16470%3A17021',
   {
     props: {
-      price: figma.string("Price"),
-      size: figma.enum("Size", {
-        "X-Small": SIZES.xsmall,
+      price: figma.string('Price'),
+      size: figma.enum('Size', {
+        'X-Small': SIZES.xsmall,
         Small: SIZES.small,
         Medium: SIZES.medium,
         Large: SIZES.large,
       }),
-      align: figma.enum("Alignment", {
+      align: figma.enum('Alignment', {
         Left: ALIGNS.left,
         Right: ALIGNS.right,
       }),
       trailingText: figma.string('Trailing text'),
     },
     example: ({ align, price, size, trailingText }) => (
-      <BpkPrice price={price} size={size} align={align} trailingText={trailingText} />
+      <BpkPrice
+        price={price}
+        size={size}
+        align={align}
+        trailingText={trailingText}
+      />
     ),
   },
-)
+);

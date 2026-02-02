@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import { useState } from 'react';
 
 import { render, screen } from '@testing-library/react';
@@ -43,29 +42,29 @@ const inputProps = {
 describe('BpkDatepicker form test', () => {
   it('should work as a form component in a form', async () => {
     const Wrap = () => (
-        <form data-testid="form">
-          <BpkDatepicker
-            id="datepicker"
-            closeButtonText="Close"
-            daysOfWeek={weekDays}
-            changeMonthLabel="Change month"
-            previousMonthLabel="Go to previous month"
-            nextMonthLabel="Go to next month"
-            title="Departure date"
-            weekStartsOn={1}
-            getApplicationElement={() => document.createElement('div')}
-            formatDate={formatDate}
-            formatMonth={formatMonth}
-            formatDateFull={formatDateFull}
-            inputProps={inputProps}
-            selectionConfiguration={{
-              type: CALENDAR_SELECTION_TYPE.single,
-              date: new Date(2020, 2, 19),
-            }}
-            data-testid="myDatepicker"
-          />
-        </form>
-      );
+      <form data-testid="form">
+        <BpkDatepicker
+          id="datepicker"
+          closeButtonText="Close"
+          daysOfWeek={weekDays}
+          changeMonthLabel="Change month"
+          previousMonthLabel="Go to previous month"
+          nextMonthLabel="Go to next month"
+          title="Departure date"
+          weekStartsOn={1}
+          getApplicationElement={() => document.createElement('div')}
+          formatDate={formatDate}
+          formatMonth={formatMonth}
+          formatDateFull={formatDateFull}
+          inputProps={inputProps}
+          selectionConfiguration={{
+            type: CALENDAR_SELECTION_TYPE.single,
+            date: new Date(2020, 2, 19),
+          }}
+          data-testid="myDatepicker"
+        />
+      </form>
+    );
     render(<Wrap />);
 
     const inputField = screen.getByRole('textbox', {
@@ -75,8 +74,10 @@ describe('BpkDatepicker form test', () => {
 
     const formData = new FormData(
       screen.getByTestId('form') as HTMLFormElement,
-  );
-    expect(Object.fromEntries(formData.entries())).toEqual({ datepicker_input: '19/03/2020' });
+    );
+    expect(Object.fromEntries(formData.entries())).toEqual({
+      datepicker_input: '19/03/2020',
+    });
   });
 
   it('should work as a form component in a form for two way trip', async () => {
@@ -115,7 +116,9 @@ describe('BpkDatepicker form test', () => {
     const formData = new FormData(
       screen.getByTestId('form') as HTMLFormElement,
     );
-    expect(Object.fromEntries(formData.entries())).toEqual({ datepicker_input: '19/03/2020 - 19/04/2020' });
+    expect(Object.fromEntries(formData.entries())).toEqual({
+      datepicker_input: '19/03/2020 - 19/04/2020',
+    });
   });
 
   it('should emit a change event when input is changed', async () => {
@@ -178,4 +181,3 @@ describe('BpkDatepicker form test', () => {
     expect(formValidation).toHaveBeenCalledTimes(1);
   });
 });
-

@@ -81,7 +81,8 @@ const getClassNames = (
     'true-false': 'bpk-link-underlined--implicit',
     'false-true': 'bpk-link-underlined--alternate',
   };
-  const underlinedModifier = underlinedModifierMap[`${implicit}-${alternate}`] || null;
+  const underlinedModifier =
+    underlinedModifierMap[`${implicit}-${alternate}`] || null;
 
   const underlinedClassNames = [
     getClassName('bpk-link-underlined'),

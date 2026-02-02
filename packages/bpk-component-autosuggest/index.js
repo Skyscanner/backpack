@@ -20,7 +20,9 @@
 
 import BpkAutosuggest from './src/BpkAutosuggest';
 import BpkAutosuggestSuggestion from './src/BpkAutosuggestSuggestion';
-import BpkAutosuggestV2, { defaultTheme } from './src/BpkAutosuggestV2/BpkAutosuggest';
+import BpkAutosuggestV2, {
+  defaultTheme,
+} from './src/BpkAutosuggestV2/BpkAutosuggest';
 
 export default BpkAutosuggest;
 export { BpkAutosuggestSuggestion, BpkAutosuggestV2, defaultTheme };

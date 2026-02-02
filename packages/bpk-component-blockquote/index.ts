@@ -21,5 +21,3 @@ import themeAttributes from './src/themeAttributes';
 
 export default BpkBlockquote;
 export { themeAttributes };
-
-

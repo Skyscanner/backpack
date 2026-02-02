@@ -34,34 +34,34 @@ import DefaultLoadingElement from '../../packages/bpk-component-map/src/DefaultL
  * @todo remove this once we migrate the map component to TS
  */
 const WithGoogleMapsScriptPropTypes = {
-    loadingElement: PropTypes.node,
-    googleMapsApiKey: PropTypes.string.isRequired,
-    libraries: PropTypes.arrayOf(
-        PropTypes.oneOf([
-          'drawing',
-          'geometry',
-          'localContext',
-          'places',
-          'visualization',
-        ]),
-      ),
-    preventGoogleFontsLoading: PropTypes.bool,
-  };
-  
+  loadingElement: PropTypes.node,
+  googleMapsApiKey: PropTypes.string.isRequired,
+  libraries: PropTypes.arrayOf(
+    PropTypes.oneOf([
+      'drawing',
+      'geometry',
+      'localContext',
+      'places',
+      'visualization',
+    ]),
+  ),
+  preventGoogleFontsLoading: PropTypes.bool,
+};
+
 const WithGoogleMapsScriptDefaultProps = {
-    loadingElement: <DefaultLoadingElement />,
-    preventGoogleFontsLoading: false,
-    libraries: ['geometry', 'drawing', 'places'],
-  };
+  loadingElement: <DefaultLoadingElement />,
+  preventGoogleFontsLoading: false,
+  libraries: ['geometry', 'drawing', 'places'],
+};
 
 const WithGoogleMapsScriptMock = () => <div />;
 
 WithGoogleMapsScriptMock.propTypes = {
-    ...WithGoogleMapsScriptPropTypes,
+  ...WithGoogleMapsScriptPropTypes,
 };
 
 WithGoogleMapsScriptMock.defaultProps = {
-    ...WithGoogleMapsScriptDefaultProps,
+  ...WithGoogleMapsScriptDefaultProps,
 };
 
 export default WithGoogleMapsScriptMock;

@@ -26,19 +26,20 @@ describe('BpkDialogWrapper accessibility tests', () => {
     closeOnEscPressed: true,
     closeOnScrimClick: true,
     dialogClassName: 'test-class',
-    id: "dialog-wrapper",
+    id: 'dialog-wrapper',
     isOpen: true,
     onClose: jest.fn(),
-    transitionClassNames: { appear: "appear-class", appearActive: "active-class", exit: "exit-class" },
-    timeout: { appear: 0, exit: 0 }
-  }
+    transitionClassNames: {
+      appear: 'appear-class',
+      appearActive: 'active-class',
+      exit: 'exit-class',
+    },
+    timeout: { appear: 0, exit: 0 },
+  };
 
   it('should not have programmatically-detectable accessibility issues using ariaLabelledby', async () => {
     const { container } = render(
-      <BpkDialogWrapper
-        {...props}
-        ariaLabelledby='dialog-wrapper'
-      >
+      <BpkDialogWrapper {...props} ariaLabelledby="dialog-wrapper">
         Dialog content
       </BpkDialogWrapper>,
     );
@@ -48,10 +49,7 @@ describe('BpkDialogWrapper accessibility tests', () => {
 
   it('should not have programmatically-detectable accessibility issues using airaLabel', async () => {
     const { container } = render(
-      <BpkDialogWrapper
-        {...props}
-        ariaLabel='dialog wrapper'
-      >
+      <BpkDialogWrapper {...props} ariaLabel="dialog wrapper">
         Dialog content
       </BpkDialogWrapper>,
     );

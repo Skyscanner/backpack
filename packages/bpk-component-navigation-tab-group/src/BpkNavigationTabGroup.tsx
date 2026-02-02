@@ -52,7 +52,11 @@ export type Props = {
   /*
    * Index parameter to track which is clicked
    */
-  onItemClick: (e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>,tab: TabItem, index: number) => void;
+  onItemClick: (
+    e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>,
+    tab: TabItem,
+    index: number,
+  ) => void;
   selectedIndex: number;
   ariaLabel: string;
 };
@@ -108,7 +112,11 @@ const BpkNavigationTabGroup = ({
   type = NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast,
 }: Props) => {
   const [selectedTab, setSelectedTab] = useState(selectedIndex);
-  const handleButtonClick = (e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>, tab: TabItem, index: number) => {
+  const handleButtonClick = (
+    e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>,
+    tab: TabItem,
+    index: number,
+  ) => {
     if (index !== selectedTab && tab.target !== '_blank') {
       setSelectedTab(index);
     }
@@ -127,7 +135,7 @@ const BpkNavigationTabGroup = ({
       <div role="tablist" className={getClassName('bpk-navigation-tab-list')}>
         {tabs.map((tab, index) => {
           const selected = index === selectedTab;
-          const {badgeText,icon,text,...tabWrapItem} = tab;
+          const { badgeText, icon, text, ...tabWrapItem } = tab;
           const Icon = icon;
           return (
             <TabWrap
@@ -138,7 +146,9 @@ const BpkNavigationTabGroup = ({
               type={type}
             >
               <>
-                <div className={getClassName('bpk-navigation-tab-content-wrapper')}>
+                <div
+                  className={getClassName('bpk-navigation-tab-content-wrapper')}
+                >
                   {Icon && (
                     <span
                       className={getClassName(
@@ -148,21 +158,26 @@ const BpkNavigationTabGroup = ({
                       )}
                     >
                       <Icon />
-                    </span>)}
+                    </span>
+                  )}
 
-                    <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
-                      {text}
-                    </BpkText>
+                  <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
+                    {text}
+                  </BpkText>
                 </div>
 
                 {badgeText && (
-                  <span className={getClassName('bpk-navigation-tab-bubble-wrapper')}>
-                    <BpkBubble>
-                      {badgeText}
-                    </BpkBubble>
-                  </span>)}
+                  <span
+                    className={getClassName(
+                      'bpk-navigation-tab-bubble-wrapper',
+                    )}
+                  >
+                    <BpkBubble>{badgeText}</BpkBubble>
+                  </span>
+                )}
               </>
-            </TabWrap>);
+            </TabWrap>
+          );
         })}
       </div>
     </nav>

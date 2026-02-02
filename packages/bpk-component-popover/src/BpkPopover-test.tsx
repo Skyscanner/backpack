@@ -26,10 +26,10 @@ describe('BpkPopover', () => {
 
   beforeEach(() => {
     onCloseSpy = jest.fn();
-  })
+  });
 
   it('should render correctly', () => {
-    const target = (<button type="button">My target</button>);
+    const target = <button type="button">My target</button>;
     render(
       <BpkPopover
         id="my-popover"
@@ -66,12 +66,12 @@ describe('BpkPopover', () => {
           My popover content
         </BpkPopover>,
       );
-    })
+    });
     expect(screen.queryByRole('My popover content')).not.toBeInTheDocument();
   });
 
   it('should render without an arrow', async () => {
-    const target = (<button type="button">My target</button>);
+    const target = <button type="button">My target</button>;
     render(
       <BpkPopover
         id="my-popover"
@@ -87,7 +87,7 @@ describe('BpkPopover', () => {
     );
     await waitFor(async () => {
       expect(screen.getByText('My popover content')).toBeVisible();
-    })
+    });
   });
 
   it('should render correctly with "closeButtonProps" provided', () => {
@@ -107,7 +107,9 @@ describe('BpkPopover', () => {
       </BpkPopover>,
     );
 
-    expect(screen.getByRole('button', { name: /Close/i, })).toHaveAttribute('tabindex');
+    expect(screen.getByRole('button', { name: /Close/i })).toHaveAttribute(
+      'tabindex',
+    );
   });
 
   it('should render correctly with "padded" attribute equal to false', () => {
@@ -164,7 +166,9 @@ describe('BpkPopover', () => {
       </BpkPopover>,
     );
 
-    const actionButton = container.getElementsByClassName('.bpk-popover__action');
+    const actionButton = container.getElementsByClassName(
+      '.bpk-popover__action',
+    );
     expect(actionButton).toBeTruthy();
     expect(screen.getByText('Action')).toBeVisible();
   });
@@ -209,7 +213,11 @@ describe('BpkPopover', () => {
         closeButtonLabel="Close"
         labelAsTitle
         closeButtonIcon
-        target={<button onClick={handleClick} type="button">My target</button>}
+        target={
+          <button onClick={handleClick} type="button">
+            My target
+          </button>
+        }
       >
         My popover content
       </BpkPopover>,
@@ -228,5 +236,4 @@ describe('BpkPopover', () => {
       expect(screen.getByText('My popover content')).toBeVisible();
     });
   });
-
 });

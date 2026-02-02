@@ -150,10 +150,7 @@ const BpkPhoneInput = (props: Props) => {
     >
       <div>
         <div className={getClassName('bpk-phone-input__label')}>
-          <BpkLabel
-            htmlFor={dialingCodeProps.id}
-            disabled={disabled}
-          >
+          <BpkLabel htmlFor={dialingCodeProps.id} disabled={disabled}>
             {dialingCodeProps.label}
           </BpkLabel>
         </div>
@@ -178,10 +175,7 @@ const BpkPhoneInput = (props: Props) => {
       </div>
       <div className={getClassName('bpk-phone-input__phone-number')}>
         <div className={getClassName('bpk-phone-input__label')}>
-          <BpkLabel
-            htmlFor={id}
-            disabled={disabled}
-          >
+          <BpkLabel htmlFor={id} disabled={disabled}>
             {label}
           </BpkLabel>
         </div>

@@ -35,38 +35,37 @@ export type Props = {
   className?: string;
   linkProps?: { [key: string]: any };
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
-}
+};
 
 const RtlSupportedArrowRight = withRtlSupport(ArrowRight);
 
 const BpkBreadcrumbItem = (props: Props) => {
-  const { active = false, children, className, href, linkProps, ...rest } = props;
+  const {
+    active = false,
+    children,
+    className,
+    href,
+    linkProps,
+    ...rest
+  } = props;
 
   return (
     <li className={getClassName('bpk-breadcrumb-item', className)} {...rest}>
       {active ? (
         <div className={getClassName('bpk-breadcrumb-item__active-item')}>
-          <BpkText
-            aria-current="page"
-            {...linkProps}
-          >
+          <BpkText aria-current="page" {...linkProps}>
             {children}
           </BpkText>
         </div>
       ) : (
         <div className={getClassName('bpk-breadcrumb-item__link')}>
-          <BpkLink
-            href={href || '#'}
-            {...linkProps}
-          >
+          <BpkLink href={href || '#'} {...linkProps}>
             {children}
           </BpkLink>
         </div>
       )}
       <div className={getClassName('bpk-breadcrumb-item__arrow')}>
-        {!active && (
-          <RtlSupportedArrowRight/>
-        )}
+        {!active && <RtlSupportedArrowRight />}
       </div>
     </li>
   );

@@ -35,7 +35,7 @@ describe('BpkDrawer', () => {
         getApplicationElement={jest.fn()}
         isOpen
         renderTarget={() => customRenderTarget}
-        containerClassName='test-class'
+        containerClassName="test-class"
       >
         Drawer content
       </BpkDrawer>,
@@ -45,6 +45,5 @@ describe('BpkDrawer', () => {
     // containerClassName is not applied to the drawer itself,
     // but to the container element: withScrim.
     expect(drawer?.classList.contains('test-class')).toBe(false);
-
   });
 });

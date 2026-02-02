@@ -42,7 +42,8 @@ export const BpkButtonV2 = ({
   type = BUTTON_TYPES.primary,
   ...rest
 }: Props) => {
-  const isLinkType = type === BUTTON_TYPES.link || type === BUTTON_TYPES.linkOnDark;
+  const isLinkType =
+    type === BUTTON_TYPES.link || type === BUTTON_TYPES.linkOnDark;
   const alternate = type === BUTTON_TYPES.linkOnDark;
   const shouldUnderline = isLinkType && !iconOnly && !disabled;
 
@@ -63,13 +64,17 @@ export const BpkButtonV2 = ({
         'bpk-button--link-underlined',
         implicit && !alternate && 'bpk-button--link-underlined--implicit',
         alternate && !implicit && 'bpk-button--link-underlined--alternate',
-        implicit && alternate && 'bpk-button--link-underlined--implicit--alternate',
+        implicit &&
+          alternate &&
+          'bpk-button--link-underlined--implicit--alternate',
       )
     : null;
 
-  const content = underlinedClassName
-    ? <span className={underlinedClassName}>{children}</span>
-    : children;
+  const content = underlinedClassName ? (
+    <span className={underlinedClassName}>{children}</span>
+  ) : (
+    children
+  );
 
   const target = blank ? '_blank' : '';
   const rel = blank ? propRel || 'noopener noreferrer' : propRel;

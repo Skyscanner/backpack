@@ -19,7 +19,9 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkMultiSelectChipGroup, { CHIP_GROUP_TYPES } from './BpkMultiSelectChipGroup';
+import BpkMultiSelectChipGroup, {
+  CHIP_GROUP_TYPES,
+} from './BpkMultiSelectChipGroup';
 import BpkSingleSelectChipGroup from './BpkSingleSelectChipGroup';
 
 const chips = [
@@ -36,7 +38,7 @@ const chips = [
   {
     text: 'Stockholm',
     disabled: true,
-  }
+  },
 ];
 
 describe('BpkMultiSelectChipGroup accessibility tests', () => {
@@ -53,13 +55,13 @@ describe('BpkMultiSelectChipGroup accessibility tests', () => {
       <BpkMultiSelectChipGroup
         chips={chips}
         stickyChip={{
-          text: 'Sort & Filter'
+          text: 'Sort & Filter',
         }}
         type={CHIP_GROUP_TYPES.rail}
         ariaLabel="Select cities"
         leadingNudgerLabel="Scroll back"
         trailingNudgerLabel="Scroll forward"
-      />
+      />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -71,7 +73,7 @@ describe('BpkMultiSelectChipGroup accessibility tests', () => {
         chips={chips}
         type={CHIP_GROUP_TYPES.wrap}
         ariaLabel="Select cities"
-      />
+      />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -88,7 +90,7 @@ describe('BpkSingleSelectChipGroup accessibility tests', () => {
         ariaLabel="Select a city"
         leadingNudgerLabel="Scroll back"
         trailingNudgerLabel="Scroll forward"
-      />
+      />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -101,7 +103,7 @@ describe('BpkSingleSelectChipGroup accessibility tests', () => {
         type={CHIP_GROUP_TYPES.wrap}
         selectedIndex={1}
         ariaLabel="Select a city"
-      />
+      />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

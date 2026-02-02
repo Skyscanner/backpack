@@ -58,7 +58,8 @@ const BpkCloseButton = ({
       title={label}
       onClick={onClick}
       aria-label={label}
-      className={classNames.join(' ')} {...getDataComponentAttribute('CloseButton')}
+      className={classNames.join(' ')}
+      {...getDataComponentAttribute('CloseButton')}
       {...rest}
     >
       <span className={getClassName('bpk-close-button-icon')}>

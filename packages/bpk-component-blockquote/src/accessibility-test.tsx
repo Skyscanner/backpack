@@ -34,5 +34,3 @@ describe('BpkBlockquote accessibility tests', () => {
     expect(results).toHaveNoViolations();
   });
 });
-
-

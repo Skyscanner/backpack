@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { ArgTypes,Title, Markdown } from '@storybook/addon-docs/blocks';
+import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
 import BpkSlider from '../../packages/bpk-component-slider/src/BpkSlider';
 
@@ -48,11 +48,9 @@ export default {
     ariaValuetext={[getSliderTime(finalSliderStart), getSliderTime(finalSliderEnd)]}
 
           `}
-
-
           </Markdown>
         </>
-      )
+      ),
     },
   },
 };
@@ -71,5 +69,5 @@ export const RangeSliderWithMinimumDistance =
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

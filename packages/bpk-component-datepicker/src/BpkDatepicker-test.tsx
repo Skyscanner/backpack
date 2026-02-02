@@ -31,7 +31,9 @@ import {
 import BpkDatepicker from './BpkDatepicker';
 
 // mock breakpoint to always match
-jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () => jest.fn(() => true));
+jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () =>
+  jest.fn(() => true),
+);
 jest.mock('@popperjs/core', () => {
   const PopperJS = jest.requireActual('@popperjs/core');
   return {

@@ -25,7 +25,7 @@ export default {
   component: BpkBreadcrumb,
   title: 'bpk-component-breadcrumb',
   subcomponents: {
-    BpkBreadcrumbItem
+    BpkBreadcrumbItem,
   },
 };
 
@@ -37,5 +37,5 @@ export const VisualTestWithZoom = {
   render: VisualTest,
   args: {
     zoomEnabled: true,
-  }
+  },
 };

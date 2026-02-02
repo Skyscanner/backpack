@@ -18,7 +18,10 @@
 
 import BpkLink from '../../packages/bpk-component-link';
 import BpkPanel from '../../packages/bpk-component-panel';
-import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
+import BpkText, {
+  TEXT_COLORS,
+  TEXT_STYLES,
+} from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from '../bpk-storybook-utils';
@@ -93,10 +96,7 @@ const PolymorphicOverviewExample = () => (
       <BpkText tagName="h3" textStyle={TEXT_STYLES.heading3}>
         Polymorphic BpkLink
       </BpkText>
-      <BpkText
-        tagName="p"
-        textStyle={TEXT_STYLES.bodyDefault}
-      >
+      <BpkText tagName="p" textStyle={TEXT_STYLES.bodyDefault}>
         BpkLink supports a polymorphic{' '}
         <BpkText textStyle={TEXT_STYLES.label1}>as</BpkText> prop that allows
         rendering as different HTML elements while maintaining consistent link
@@ -169,7 +169,6 @@ const PolymorphicOverviewExample = () => (
     </div>
   </div>
 );
-
 
 const MixedExample = () => (
   <div>

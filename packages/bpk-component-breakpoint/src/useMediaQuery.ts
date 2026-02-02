@@ -18,10 +18,7 @@
 
 import { useEffect, useState } from 'react';
 
-const useMediaQuery = (
-  query: string,
-  matchSSR = false,
-): boolean => {
+const useMediaQuery = (query: string, matchSSR = false): boolean => {
   const isClient = typeof window !== 'undefined' && !!window.matchMedia;
 
   const [matches, setMatches] = useState(() => {

@@ -19,7 +19,10 @@
 import PropTypes from 'prop-types';
 import type { ReactElement, ReactNode } from 'react';
 
-import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../bpk-component-button';
+import BpkButton, {
+  BUTTON_TYPES,
+  SIZE_TYPES,
+} from '../../bpk-component-button';
 import {
   withButtonAlignment,
   withLargeButtonAlignment,
@@ -71,20 +74,20 @@ type LoadingProps = {
   secondaryOnDark?: boolean;
   primaryOnLight?: boolean;
   primaryOnDark?: boolean;
-  children: ReactNode,
-  className?: string,
-  disabled?: boolean,
-  secondary?: boolean,
-  destructive?: boolean,
-  large?: boolean,
-  link?: boolean,
-  linkOnDark?: boolean,
-  loading?: boolean,
-  iconOnly?: boolean,
-  icon?: ReactElement<any>,
-  iconPosition?: (typeof ICON_POSITION)[keyof typeof ICON_POSITION],
-  iconDisabled?: ReactElement<any>,
-  iconLoading?: ReactElement<any>,
+  children: ReactNode;
+  className?: string;
+  disabled?: boolean;
+  secondary?: boolean;
+  destructive?: boolean;
+  large?: boolean;
+  link?: boolean;
+  linkOnDark?: boolean;
+  loading?: boolean;
+  iconOnly?: boolean;
+  icon?: ReactElement<any>;
+  iconPosition?: (typeof ICON_POSITION)[keyof typeof ICON_POSITION];
+  iconDisabled?: ReactElement<any>;
+  iconLoading?: ReactElement<any>;
 } & ButtonProps;
 
 const BpkLoadingButton = (props: LoadingProps) => {
@@ -121,20 +124,34 @@ const BpkLoadingButton = (props: LoadingProps) => {
 
   const loadingIcon = getLoadingIcon(props);
 
-  const iconClassNames = getClassName(
-    'bpk-loading-button__icon',
-  );
+  const iconClassNames = getClassName('bpk-loading-button__icon');
 
-  type ButtonType = typeof BUTTON_TYPES[keyof typeof BUTTON_TYPES]
+  type ButtonType = (typeof BUTTON_TYPES)[keyof typeof BUTTON_TYPES];
   let type: ButtonType = BUTTON_TYPES.primary;
-  if(link) {type = BUTTON_TYPES.link}
-  if(linkOnDark) {type = BUTTON_TYPES.linkOnDark}
-  if(featured) {type = BUTTON_TYPES.featured}
-  if(destructive) {type = BUTTON_TYPES.destructive}
-  if(secondaryOnDark) {type = BUTTON_TYPES.secondaryOnDark}
-  if(secondary) {type = BUTTON_TYPES.secondary}
-  if(primaryOnLight) {type = BUTTON_TYPES.primaryOnLight}
-  if(primaryOnDark) {type = BUTTON_TYPES.primaryOnDark}
+  if (link) {
+    type = BUTTON_TYPES.link;
+  }
+  if (linkOnDark) {
+    type = BUTTON_TYPES.linkOnDark;
+  }
+  if (featured) {
+    type = BUTTON_TYPES.featured;
+  }
+  if (destructive) {
+    type = BUTTON_TYPES.destructive;
+  }
+  if (secondaryOnDark) {
+    type = BUTTON_TYPES.secondaryOnDark;
+  }
+  if (secondary) {
+    type = BUTTON_TYPES.secondary;
+  }
+  if (primaryOnLight) {
+    type = BUTTON_TYPES.primaryOnLight;
+  }
+  if (primaryOnDark) {
+    type = BUTTON_TYPES.primaryOnDark;
+  }
 
   return (
     <BpkButton
@@ -146,7 +163,13 @@ const BpkLoadingButton = (props: LoadingProps) => {
     >
       <div className={getClassName('bpk-loading-button__container')}>
         {loading && <span className={iconClassNames}>{loadingIcon}</span>}
-        <div className={getClassName(loading ? "bpk-loading-button--hidden": "bpk-loading-button--visible")}>
+        <div
+          className={getClassName(
+            loading
+              ? 'bpk-loading-button--hidden'
+              : 'bpk-loading-button--visible',
+          )}
+        >
           {child0}
           {child1}
           {child2}

@@ -24,15 +24,24 @@ describe('BpkSwitch', () => {
   it('should render correctly', () => {
     const { container } = render(<BpkSwitch ariaLabel="Switch" />);
     expect(screen.getByRole('checkbox')).toBeInTheDocument();
-    expect(screen.getByRole('checkbox')).toHaveAttribute('aria-label', 'Switch');
-    expect(container.querySelectorAll(".bpk-switch__switch")[0].className).toBe("bpk-switch__switch");
+    expect(screen.getByRole('checkbox')).toHaveAttribute(
+      'aria-label',
+      'Switch',
+    );
+    expect(container.querySelectorAll('.bpk-switch__switch')[0].className).toBe(
+      'bpk-switch__switch',
+    );
   });
 
   it('should render small switch', () => {
     const { container } = render(<BpkSwitch ariaLabel="Switch" small />);
     expect(screen.getByRole('checkbox')).toBeInTheDocument();
-    expect(container.querySelectorAll(".bpk-switch__checkbox")[0].className).toBe("bpk-switch__checkbox");
-    expect(container.querySelectorAll(".bpk-switch__switch--small")[0].className).toBe("bpk-switch__switch bpk-switch__switch--small");
+    expect(
+      container.querySelectorAll('.bpk-switch__checkbox')[0].className,
+    ).toBe('bpk-switch__checkbox');
+    expect(
+      container.querySelectorAll('.bpk-switch__switch--small')[0].className,
+    ).toBe('bpk-switch__switch bpk-switch__switch--small');
   });
 
   it('should render correctly when checked', () => {
@@ -40,7 +49,9 @@ describe('BpkSwitch', () => {
       <BpkSwitch checked onChange={() => {}} ariaLabel="Switch" />,
     );
     expect(screen.getByRole('checkbox')).toBeInTheDocument();
-    expect(container.querySelectorAll(".bpk-switch__checkbox")[0]).toHaveAttribute('checked');
+    expect(
+      container.querySelectorAll('.bpk-switch__checkbox')[0],
+    ).toHaveAttribute('checked');
   });
 
   it('should support custom class names', () => {
@@ -48,7 +59,9 @@ describe('BpkSwitch', () => {
       <BpkSwitch ariaLabel="Switch" className="custom-classname" />,
     );
     expect(screen.getByRole('checkbox')).toBeInTheDocument();
-    expect(container.querySelectorAll(".custom-classname")[0]).toBeInTheDocument();
+    expect(
+      container.querySelectorAll('.custom-classname')[0],
+    ).toBeInTheDocument();
   });
 
   it('should support arbitrary props', () => {

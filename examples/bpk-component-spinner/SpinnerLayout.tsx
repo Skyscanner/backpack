@@ -28,7 +28,7 @@ import STYLES from './SpinnerLayout.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  children: Array<ReactElement<any, any>> | ReactElement<any, any> // Expect a single or array of React elements
+  children: Array<ReactElement<any, any>> | ReactElement<any, any>; // Expect a single or array of React elements
 };
 
 const SpinnerLayout = (props: Props) => {

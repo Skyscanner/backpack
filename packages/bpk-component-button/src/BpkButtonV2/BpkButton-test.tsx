@@ -36,16 +36,12 @@ describe('BpkButton', () => {
   });
 
   it('should render correctly with a "href" attribute', () => {
-    const { asFragment } = render(
-      <BpkButton href="#">My button</BpkButton>,
-    );
+    const { asFragment } = render(<BpkButton href="#">My button</BpkButton>);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "disabled" attribute', () => {
-    const { asFragment } = render(
-      <BpkButton disabled>My button</BpkButton>,
-    );
+    const { asFragment } = render(<BpkButton disabled>My button</BpkButton>);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -57,9 +53,7 @@ describe('BpkButton', () => {
   });
 
   it('should render correctly with an "iconOnly" attribute', () => {
-    const { asFragment } = render(
-      <BpkButton iconOnly>My button</BpkButton>,
-    );
+    const { asFragment } = render(<BpkButton iconOnly>My button</BpkButton>);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -125,15 +119,14 @@ describe('BpkButton', () => {
   });
 
   it('should render with a class name if full width is added', () => {
-    const { container } = render(
-      <BpkButton fullWidth>
-        My button
-      </BpkButton>,
-    );
+    const { container } = render(<BpkButton fullWidth>My button</BpkButton>);
 
-    expect(container?.firstElementChild?.classList?.contains('bpk-button--full-width')).toEqual(true);
+    expect(
+      container?.firstElementChild?.classList?.contains(
+        'bpk-button--full-width',
+      ),
+    ).toEqual(true);
   });
-
 
   describe('link type buttons', () => {
     it('should render link type with underline span wrapper', () => {
@@ -141,7 +134,9 @@ describe('BpkButton', () => {
         <BpkButton type={BUTTON_TYPES.link}>Link button</BpkButton>,
       );
 
-      const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
+      const underlinedSpan = container.querySelector(
+        '[class*="bpk-button--link-underlined"]',
+      );
       expect(underlinedSpan).toBeInTheDocument();
       expect(underlinedSpan?.textContent).toBe('Link button');
     });
@@ -152,9 +147,13 @@ describe('BpkButton', () => {
       );
 
       const button = container.firstElementChild;
-      expect(button?.classList?.contains('bpk-button--link-on-dark')).toBe(true);
+      expect(button?.classList?.contains('bpk-button--link-on-dark')).toBe(
+        true,
+      );
 
-      const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
+      const underlinedSpan = container.querySelector(
+        '[class*="bpk-button--link-underlined"]',
+      );
       expect(underlinedSpan).toBeInTheDocument();
     });
 
@@ -166,9 +165,13 @@ describe('BpkButton', () => {
       );
 
       const button = container.firstElementChild;
-      expect(button?.classList?.contains('bpk-button--link--implicit')).toBe(true);
+      expect(button?.classList?.contains('bpk-button--link--implicit')).toBe(
+        true,
+      );
 
-      const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined--implicit"]');
+      const underlinedSpan = container.querySelector(
+        '[class*="bpk-button--link-underlined--implicit"]',
+      );
       expect(underlinedSpan).toBeInTheDocument();
     });
 
@@ -180,9 +183,13 @@ describe('BpkButton', () => {
       );
 
       const button = container.firstElementChild;
-      expect(button?.classList?.contains('bpk-button--link--implicit')).toBe(true);
+      expect(button?.classList?.contains('bpk-button--link--implicit')).toBe(
+        true,
+      );
 
-      const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined--implicit--alternate"]');
+      const underlinedSpan = container.querySelector(
+        '[class*="bpk-button--link-underlined--implicit--alternate"]',
+      );
       expect(underlinedSpan).toBeInTheDocument();
     });
 
@@ -197,7 +204,9 @@ describe('BpkButton', () => {
       expect(button?.classList?.contains('bpk-button--link')).toBe(true);
       expect(button?.classList?.contains('bpk-button--icon-only')).toBe(true);
 
-      const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
+      const underlinedSpan = container.querySelector(
+        '[class*="bpk-button--link-underlined"]',
+      );
       expect(underlinedSpan).not.toBeInTheDocument();
     });
 
@@ -208,18 +217,26 @@ describe('BpkButton', () => {
         </BpkButton>,
       );
 
-      const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
+      const underlinedSpan = container.querySelector(
+        '[class*="bpk-button--link-underlined"]',
+      );
       expect(underlinedSpan).not.toBeInTheDocument();
     });
 
     it('should NOT render underline span for iconOnly linkOnDark', () => {
       const { container } = render(
-        <BpkButton type={BUTTON_TYPES.linkOnDark} iconOnly aria-label="Icon link">
+        <BpkButton
+          type={BUTTON_TYPES.linkOnDark}
+          iconOnly
+          aria-label="Icon link"
+        >
           <span>Icon</span>
         </BpkButton>,
       );
 
-      const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
+      const underlinedSpan = container.querySelector(
+        '[class*="bpk-button--link-underlined"]',
+      );
       expect(underlinedSpan).not.toBeInTheDocument();
     });
 
@@ -234,7 +251,9 @@ describe('BpkButton', () => {
       expect(anchor?.tagName).toBe('A');
       expect(anchor?.getAttribute('href')).toBe('#');
 
-      const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
+      const underlinedSpan = container.querySelector(
+        '[class*="bpk-button--link-underlined"]',
+      );
       expect(underlinedSpan).toBeInTheDocument();
     });
 
@@ -251,7 +270,11 @@ describe('BpkButton', () => {
 
     it('should render correctly with linkOnDark type and iconOnly', () => {
       const { container } = render(
-        <BpkButton type={BUTTON_TYPES.linkOnDark} iconOnly aria-label="Icon link">
+        <BpkButton
+          type={BUTTON_TYPES.linkOnDark}
+          iconOnly
+          aria-label="Icon link"
+        >
           <span>Icon</span>
         </BpkButton>,
       );

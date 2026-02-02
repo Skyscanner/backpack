@@ -73,7 +73,7 @@ export const PriceMarkers = WithPriceMarkersExample;
 
 export const WithIconPriceMarkers = WithIconPriceMarkersExample;
 
-export const WithHeartIconPriceMarker =WithHeartIconPriceMarkerExample;
+export const WithHeartIconPriceMarker = WithHeartIconPriceMarkerExample;
 
 export const PriceMarkersButtonWithPopoverOnMap =
   WithPriceMarkersButtonWithPopoverOnMapExample;

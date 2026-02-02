@@ -32,9 +32,7 @@ const SimpleExample = () => (
       </BpkText>
 
       <span className={getClassNames('bpk-content__container__bubble-wrapper')}>
-        <BpkBubble>
-          New
-        </BpkBubble>
+        <BpkBubble>New</BpkBubble>
       </span>
     </span>
   </div>
@@ -48,14 +46,11 @@ const WithLongLabelExample = () => (
       </BpkText>
 
       <span className={getClassNames('bpk-content__container__bubble-wrapper')}>
-        <BpkBubble>
-          Nouveau
-        </BpkBubble>
+        <BpkBubble>Nouveau</BpkBubble>
       </span>
     </span>
   </div>
 );
-
 
 const VisualTestExample = () => (
   <div>
@@ -64,8 +59,4 @@ const VisualTestExample = () => (
   </div>
 );
 
-export {
-  SimpleExample,
-  WithLongLabelExample,
-  VisualTestExample,
-};
+export { SimpleExample, WithLongLabelExample, VisualTestExample };

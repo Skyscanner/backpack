@@ -87,7 +87,11 @@ const CustomTitleExample = () => (
   <div className={getClassNames('bpk-navigation-bar-story')}>
     <BpkNavigationBar
       id="test"
-      title={<BpkText tagName='h3' textStyle='xl' >Backpack navigation custom title</BpkText>}
+      title={
+        <BpkText tagName="h3" textStyle="xl">
+          Backpack navigation custom title
+        </BpkText>
+      }
       leadingButton={
         <BpkNavigationBarIconButton
           onClick={action('back clicked')}

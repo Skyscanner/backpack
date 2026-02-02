@@ -51,7 +51,7 @@ export default {
     BpkCalendarNav: BpkCalendarNavComponent,
     BpkCalendarGridHeader: BpkCalendarGridHeaderComponent,
     BpkCalendarDate: BpkCalendarDateComponent,
-    BpkCalendarContainer: BpkCalendarContainerMock
+    BpkCalendarContainer: BpkCalendarContainerMock,
   },
 };
 
@@ -93,10 +93,10 @@ export const Week = WeekExample;
 export const VisualTest = FocusedDateInThePastExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };
 export const VisualTestRange = RangeDateCalendarExample;
 export const VisualTestRangeWithZoom = VisualTestRange.bind({});
 VisualTestRangeWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

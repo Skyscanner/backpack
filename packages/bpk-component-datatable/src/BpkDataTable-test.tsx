@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-
-
 import { Fragment } from 'react';
 
 import { render, screen, fireEvent, within } from '@testing-library/react';
@@ -47,44 +45,82 @@ describe('BpkDataTable', () => {
 
   it('should render correctly with multiple columns', () => {
     const { asFragment } = render(
-      <BpkDataTable rows={rows} height="12.5rem" columns={[
-        { label: 'Name', accessor: 'name', width: "6.25rem" },
-        { label: 'Description', accessor: 'description', width: "6.25rem", flexGrow: 1 },
-        { label: 'Bla', accessor: 'bla', width: "6.25rem" },
-      ]} />
+      <BpkDataTable
+        rows={rows}
+        height="12.5rem"
+        columns={[
+          { label: 'Name', accessor: 'name', width: '6.25rem' },
+          {
+            label: 'Description',
+            accessor: 'description',
+            width: '6.25rem',
+            flexGrow: 1,
+          },
+          { label: 'Bla', accessor: 'bla', width: '6.25rem' },
+        ]}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly when "onRowClick" is set', () => {
     const { asFragment } = render(
-      <BpkDataTable rows={rows} height="12.5rem" onRowClick={() => {}} columns={[
-        { label: 'Name', accessor: 'name', width: "6.25rem" },
-        { label: 'Description', accessor: 'description', width: "6.25rem", flexGrow: 1 },
-        { label: 'Bla', accessor: 'bla', width: "6.25rem" },
-      ]} />
+      <BpkDataTable
+        rows={rows}
+        height="12.5rem"
+        onRowClick={() => {}}
+        columns={[
+          { label: 'Name', accessor: 'name', width: '6.25rem' },
+          {
+            label: 'Description',
+            accessor: 'description',
+            width: '6.25rem',
+            flexGrow: 1,
+          },
+          { label: 'Bla', accessor: 'bla', width: '6.25rem' },
+        ]}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with no data; only headers', () => {
     const { asFragment } = render(
-      <BpkDataTable rows={[]} height="12.5rem" columns={[
-        { label: 'Name', accessor: 'name', width: "6.25rem" },
-        { label: 'Description', accessor: 'description', width: "6.25rem", flexGrow: 1 },
-        { label: 'Bla', accessor: 'bla', width: "6.25rem" },
-      ]} />
+      <BpkDataTable
+        rows={[]}
+        height="12.5rem"
+        columns={[
+          { label: 'Name', accessor: 'name', width: '6.25rem' },
+          {
+            label: 'Description',
+            accessor: 'description',
+            width: '6.25rem',
+            flexGrow: 1,
+          },
+          { label: 'Bla', accessor: 'bla', width: '6.25rem' },
+        ]}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a specified width', () => {
     const { asFragment } = render(
-      <BpkDataTable rows={rows} height="12.5rem" width="25rem" columns={[
-        { label: 'Name', accessor: 'name', width: "6.25rem" },
-        { label: 'Description', accessor: 'description', width: "6.25rem", flexGrow: 1 },
-        { label: 'Bla', accessor: 'bla', width: "6.25rem" },
-      ]} />
+      <BpkDataTable
+        rows={rows}
+        height="12.5rem"
+        width="25rem"
+        columns={[
+          { label: 'Name', accessor: 'name', width: '6.25rem' },
+          {
+            label: 'Description',
+            accessor: 'description',
+            width: '6.25rem',
+            flexGrow: 1,
+          },
+          { label: 'Bla', accessor: 'bla', width: '6.25rem' },
+        ]}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -96,11 +132,16 @@ describe('BpkDataTable', () => {
         height="12.5rem"
         rowClassName="custom-data-table__row"
         columns={[
-          { label: 'Name', accessor: 'name', width: "6.25rem" },
-          { label: 'Description', accessor: 'description', width: "6.25rem", flexGrow: 1 },
-          { label: 'Bla', accessor: 'bla', width: "6.25rem" },
+          { label: 'Name', accessor: 'name', width: '6.25rem' },
+          {
+            label: 'Description',
+            accessor: 'description',
+            width: '6.25rem',
+            flexGrow: 1,
+          },
+          { label: 'Bla', accessor: 'bla', width: '6.25rem' },
         ]}
-      />
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -116,10 +157,16 @@ describe('BpkDataTable', () => {
             : 'custom-data-table__row_odd'
         }
         columns={[
-          { label: 'Name', accessor: 'name', width: "6.25rem" },
-          { label: 'Description', accessor: 'description', width: "6.25rem", flexGrow: 1 },
-          { label: 'Bla', accessor: 'bla', width: "6.25rem" },
-        ]} />
+          { label: 'Name', accessor: 'name', width: '6.25rem' },
+          {
+            label: 'Description',
+            accessor: 'description',
+            width: '6.25rem',
+            flexGrow: 1,
+          },
+          { label: 'Bla', accessor: 'bla', width: '6.25rem' },
+        ]}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -131,30 +178,51 @@ describe('BpkDataTable', () => {
         height="12.5rem"
         headerClassName="custom-data-table__header"
         columns={[
-          { label: 'Name', accessor: 'name', width: "6.25rem" },
-          { label: 'Description', accessor: 'description', width: "6.25rem", flexGrow: 1 },
-          { label: 'Bla', accessor: 'bla', width: "6.25rem" },
-        ]} />
+          { label: 'Name', accessor: 'name', width: '6.25rem' },
+          {
+            label: 'Description',
+            accessor: 'description',
+            width: '6.25rem',
+            flexGrow: 1,
+          },
+          { label: 'Bla', accessor: 'bla', width: '6.25rem' },
+        ]}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
   it('should render correctly with a custom className', () => {
     const { asFragment } = render(
-      <BpkDataTable rows={rows} height="12.5rem" className="custom-data-table" columns={[
-        { label: 'Name', accessor: 'name', width: "6.25rem" },
-        { label: 'Description', accessor: 'description', width: "6.25rem", flexGrow: 1 },
-        { label: 'Bla', accessor: 'bla', width: "6.25rem" },
-      ]} />
+      <BpkDataTable
+        rows={rows}
+        height="12.5rem"
+        className="custom-data-table"
+        columns={[
+          { label: 'Name', accessor: 'name', width: '6.25rem' },
+          {
+            label: 'Description',
+            accessor: 'description',
+            width: '6.25rem',
+            flexGrow: 1,
+          },
+          { label: 'Bla', accessor: 'bla', width: '6.25rem' },
+        ]}
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should sort rows if header is clicked', async () => {
     render(
-      <BpkDataTable rows={rows} height="12.5rem" width="25rem" columns={[
-        { label: 'Name', accessor: 'name', width: "6.25rem" },
-        { label: 'Description', accessor: 'description', width: "6.25rem" },
-      ]} />
+      <BpkDataTable
+        rows={rows}
+        height="12.5rem"
+        width="25rem"
+        columns={[
+          { label: 'Name', accessor: 'name', width: '6.25rem' },
+          { label: 'Description', accessor: 'description', width: '6.25rem' },
+        ]}
+      />,
     );
 
     const firstRow = within(screen.getAllByRole('rowgroup')[0]).getAllByRole(
@@ -186,10 +254,10 @@ describe('BpkDataTable', () => {
         width="25rem"
         defaultColumnSortIndex={1}
         columns={[
-          { label: 'Name', accessor: 'name', width: "6.25rem" },
-          { label: 'Letter', accessor: 'letter', width: "6.25rem" },
+          { label: 'Name', accessor: 'name', width: '6.25rem' },
+          { label: 'Letter', accessor: 'letter', width: '6.25rem' },
         ]}
-      />
+      />,
     );
 
     const firstRow = within(screen.getAllByRole('rowgroup')[0]).getAllByRole(
@@ -201,7 +269,7 @@ describe('BpkDataTable', () => {
       'bpk-data-table-column__sort-icon--up',
     )[0];
     const clickArrow = sortIconUp.querySelector('svg') as SVGSVGElement;
-    await fireEvent.click(clickArrow) ;
+    await fireEvent.click(clickArrow);
 
     const firstRowNameSorted = within(
       screen.getAllByRole('rowgroup')[0],
@@ -223,10 +291,10 @@ describe('BpkDataTable', () => {
         width="25rem"
         defaultColumnSortIndex={1}
         columns={[
-          { label: 'Name', accessor: 'name', width: "6.25rem" },
-          { label: 'Letter', accessor: 'letter', width: "6.25rem" },
+          { label: 'Name', accessor: 'name', width: '6.25rem' },
+          { label: 'Letter', accessor: 'letter', width: '6.25rem' },
         ]}
-        />
+      />,
     );
 
     const firstRow = within(screen.getAllByRole('rowgroup')[0]).getAllByRole(
@@ -248,10 +316,20 @@ describe('BpkDataTable', () => {
 
   it('should not sort rows if header with disableSort is clicked', async () => {
     render(
-      <BpkDataTable rows={rows} height="12.5rem" width="25rem" columns={[
-        { label: 'Name', accessor: 'name', width: "6.25rem", disableSortBy: true },
-        { label: 'Description', accessor: 'description', width: "6.25rem" },
-      ]} />
+      <BpkDataTable
+        rows={rows}
+        height="12.5rem"
+        width="25rem"
+        columns={[
+          {
+            label: 'Name',
+            accessor: 'name',
+            width: '6.25rem',
+            disableSortBy: true,
+          },
+          { label: 'Description', accessor: 'description', width: '6.25rem' },
+        ]}
+      />,
     );
 
     const firstRow = within(screen.getAllByRole('row')[1]).getAllByRole(
@@ -288,7 +366,10 @@ describe('BpkDataTable', () => {
     ];
     const sortByValue = 'seat';
     const sortDirectionValue = 'DESC';
-    const sortFunction = (rowA: {[key: string]: any}, rowB: {[key: string]: any}) => {
+    const sortFunction = (
+      rowA: { [key: string]: any },
+      rowB: { [key: string]: any },
+    ) => {
       const deskA = rowA.seat.desk;
       const deskB = rowB.seat.desk;
 
@@ -298,7 +379,11 @@ describe('BpkDataTable', () => {
       return deskA > deskB ? 1 : -1;
     };
 
-    const getBpkDataTable = (rowsData: {[key: string]: any}, sortBy: string, sortDirection: (typeof SORT_DIRECTION_TYPES)[keyof typeof SORT_DIRECTION_TYPES]) => (
+    const getBpkDataTable = (
+      rowsData: { [key: string]: any },
+      sortBy: string,
+      sortDirection: (typeof SORT_DIRECTION_TYPES)[keyof typeof SORT_DIRECTION_TYPES],
+    ) => (
       <BpkDataTable
         rows={rowsData}
         height="12.5rem"
@@ -307,13 +392,24 @@ describe('BpkDataTable', () => {
         sortBy={sortBy}
         sortDirection={sortDirection}
         columns={[
-          { label: 'Name', accessor: 'name', width: "6.25rem", disableSortBy: true },
-          { label: 'Description', accessor: 'description', width: "6.25rem" },
-          { label: 'Seat', accessor: 'seat', width: "6.25rem", flexGrow: 1, Cell: ({ cellData }: {cellData: {[key: string]: any}}) => (
-            <Fragment>
-              {cellData.office} - {cellData.desk}
+          {
+            label: 'Name',
+            accessor: 'name',
+            width: '6.25rem',
+            disableSortBy: true,
+          },
+          { label: 'Description', accessor: 'description', width: '6.25rem' },
+          {
+            label: 'Seat',
+            accessor: 'seat',
+            width: '6.25rem',
+            flexGrow: 1,
+            Cell: ({ cellData }: { cellData: { [key: string]: any } }) => (
+              <Fragment>
+                {cellData.office} - {cellData.desk}
               </Fragment>
-              )},
+            ),
+          },
         ]}
       />
     );
@@ -350,10 +446,10 @@ describe('BpkDataTable', () => {
         width="25rem"
         onRowClick={onRowClick}
         columns={[
-          { label: 'Name', accessor: 'name', width: "6.25rem" },
-          { label: 'Description', accessor: 'description', width: "6.25rem" },
+          { label: 'Name', accessor: 'name', width: '6.25rem' },
+          { label: 'Description', accessor: 'description', width: '6.25rem' },
         ]}
-      />
+      />,
     );
 
     const firstRow = within(screen.getAllByRole('rowgroup')[0]).getAllByRole(
@@ -379,10 +475,10 @@ describe('BpkDataTable', () => {
         width="25rem"
         onRowClick={onRowClick}
         columns={[
-          { label: 'Letter', accessor: 'letter', width: "6.25rem" },
-          { label: 'Number', accessor: 'number', width: "6.25rem" },
+          { label: 'Letter', accessor: 'letter', width: '6.25rem' },
+          { label: 'Number', accessor: 'number', width: '6.25rem' },
         ]}
-      />
+      />,
     );
 
     await fireEvent.click(
@@ -395,30 +491,45 @@ describe('BpkDataTable', () => {
 
   it('should re-render when rows prop is updated', () => {
     const { rerender } = render(
-      <BpkDataTable rows={rows} height="12.5rem" width="25rem" columns={[
-        { label: 'Name', accessor: 'name', width: "6.25rem" },
-        { label: 'Description', accessor: 'description', width: "6.25rem" },
-      ]} />
+      <BpkDataTable
+        rows={rows}
+        height="12.5rem"
+        width="25rem"
+        columns={[
+          { label: 'Name', accessor: 'name', width: '6.25rem' },
+          { label: 'Description', accessor: 'description', width: '6.25rem' },
+        ]}
+      />,
     );
     expect(
       within(screen.getAllByRole('rowgroup')[0]).getAllByRole('row'),
     ).toHaveLength(2);
 
     rerender(
-      <BpkDataTable rows={[]} height="12.5rem" width="25rem" columns={[
-        { label: 'Name', accessor: 'name', width: "6.25rem" },
-        { label: 'Description', accessor: 'description', width: "6.25rem" },
-      ]} />
+      <BpkDataTable
+        rows={[]}
+        height="12.5rem"
+        width="25rem"
+        columns={[
+          { label: 'Name', accessor: 'name', width: '6.25rem' },
+          { label: 'Description', accessor: 'description', width: '6.25rem' },
+        ]}
+      />,
     );
     expect(
       within(screen.getAllByRole('rowgroup')[0]).queryAllByRole('row'),
     ).toHaveLength(0);
 
     rerender(
-      <BpkDataTable rows={[rows[0]]} height="12.5rem" width="25rem" columns={[
-        { label: 'Name', accessor: 'name', width: "6.25rem" },
-        { label: 'Description', accessor: 'description', width: "6.25rem" },
-      ]} />
+      <BpkDataTable
+        rows={[rows[0]]}
+        height="12.5rem"
+        width="25rem"
+        columns={[
+          { label: 'Name', accessor: 'name', width: '6.25rem' },
+          { label: 'Description', accessor: 'description', width: '6.25rem' },
+        ]}
+      />,
     );
     expect(
       within(screen.getAllByRole('rowgroup')[0]).getAllByRole('row'),
@@ -438,10 +549,15 @@ describe('BpkDataTable', () => {
         width="25rem"
         defaultColumnSortIndex={1}
         columns={[
-          { label: 'Letter', accessor: 'letter', width: "6.25rem" },
-          { label: 'Number', accessor: 'number', width: "6.25rem", defaultSortDirection: SORT_DIRECTION_TYPES.DESC },
+          { label: 'Letter', accessor: 'letter', width: '6.25rem' },
+          {
+            label: 'Number',
+            accessor: 'number',
+            width: '6.25rem',
+            defaultSortDirection: SORT_DIRECTION_TYPES.DESC,
+          },
         ]}
-      />
+      />,
     );
 
     expect(

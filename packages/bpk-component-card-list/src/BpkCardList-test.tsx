@@ -99,7 +99,9 @@ describe('BpkCardList', () => {
     );
 
     expect(screen.queryByText('Description')).not.toBeInTheDocument();
-    expect(screen.queryByTestId('bpk-card-list-header-button')).not.toBeInTheDocument();
+    expect(
+      screen.queryByTestId('bpk-card-list-header-button'),
+    ).not.toBeInTheDocument();
   });
 
   it('should render SectionHeader when title is an empty string', () => {
@@ -120,6 +122,8 @@ describe('BpkCardList', () => {
     expect(heading).toBeInTheDocument();
     expect(heading?.textContent).toBe('');
     expect(screen.getByText('Description')).toBeInTheDocument();
-    expect(screen.getByTestId('bpk-card-list-header-button')).toBeInTheDocument();
+    expect(
+      screen.getByTestId('bpk-card-list-header-button'),
+    ).toBeInTheDocument();
   });
 });

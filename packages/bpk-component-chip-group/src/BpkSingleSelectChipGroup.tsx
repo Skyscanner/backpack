@@ -16,26 +16,47 @@
  * limitations under the License.
  */
 
-import BpkMultiSelectChipGroup, { type SingleSelectChipItem, type MultiSelectProps } from './BpkMultiSelectChipGroup';
+import BpkMultiSelectChipGroup, {
+  type SingleSelectChipItem,
+  type MultiSelectProps,
+} from './BpkMultiSelectChipGroup';
 
 export type SingleSelectProps = {
   chips: SingleSelectChipItem[];
-  onItemClick?: (item: SingleSelectChipItem, selected: boolean, index: number) => void,
+  onItemClick?: (
+    item: SingleSelectChipItem,
+    selected: boolean,
+    index: number,
+  ) => void;
   selectedIndex?: number;
 } & MultiSelectProps;
 
-const BpkSingleSelectChipGroup = ({ chips, onItemClick, selectedIndex, ...rest }: SingleSelectProps) => {
-  const chipsWithSelection = chips.map((chip, index) => chip && ({
-    ...chip,
-    selected: index === selectedIndex,
-    onClick: (selected: boolean, clickedIndex: number) => {
-      if (onItemClick) {
-        onItemClick(chip, selected, clickedIndex);
-      }
-    },
-  }));
+const BpkSingleSelectChipGroup = ({
+  chips,
+  onItemClick,
+  selectedIndex,
+  ...rest
+}: SingleSelectProps) => {
+  const chipsWithSelection = chips.map(
+    (chip, index) =>
+      chip && {
+        ...chip,
+        selected: index === selectedIndex,
+        onClick: (selected: boolean, clickedIndex: number) => {
+          if (onItemClick) {
+            onItemClick(chip, selected, clickedIndex);
+          }
+        },
+      },
+  );
 
-  return <BpkMultiSelectChipGroup chips={chipsWithSelection} ariaMultiselectable={false} {...rest} />;
+  return (
+    <BpkMultiSelectChipGroup
+      chips={chipsWithSelection}
+      ariaMultiselectable={false}
+      {...rest}
+    />
+  );
 };
 
 export default BpkSingleSelectChipGroup;

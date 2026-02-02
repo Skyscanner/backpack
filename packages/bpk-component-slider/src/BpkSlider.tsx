@@ -96,11 +96,14 @@ const BpkSlider = ({
   }, [onAfterChange]);
 
   // Cleanup on unmount to prevent memory leaks
-  useEffect(() => () => {
+  useEffect(
+    () => () => {
       if (cleanupRef.current) {
         cleanupRef.current();
       }
-    }, []);
+    },
+    [],
+  );
 
   const thumbRefs = [useRef(null), useRef(null)];
 
@@ -142,7 +145,11 @@ const BpkSlider = ({
       // to fire first and set hasCommittedRef.current = true. This prevents the race
       // condition where both handlers could fire onAfterChange for the same interaction.
       requestAnimationFrame(() => {
-        if (isDraggingRef.current && !hasCommittedRef.current && onAfterChangeRef.current) {
+        if (
+          isDraggingRef.current &&
+          !hasCommittedRef.current &&
+          onAfterChangeRef.current
+        ) {
           // Radix didn't fire onValueCommit, so we fire it manually
           processSliderValues(latestValueRef.current, onAfterChangeRef.current);
         }

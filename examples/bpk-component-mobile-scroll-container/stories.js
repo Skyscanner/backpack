@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkMobileScrollContainer from '../../packages/bpk-component-mobile-scroll-container/src/BpkMobileScrollContainer';
 
 import {

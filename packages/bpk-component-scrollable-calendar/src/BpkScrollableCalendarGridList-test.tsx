@@ -100,7 +100,7 @@ describe('BpkCalendarScrollGridList', () => {
   it('should render correctly with a custom date component', () => {
     const MyCustomDate = (props: any) => {
       const cx = {
-        backgroundColor: (colorPanjin as string),
+        backgroundColor: colorPanjin as string,
         width: '50%',
         height: '50%',
         borderRadius: '5rem',

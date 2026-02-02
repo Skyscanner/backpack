@@ -29,10 +29,16 @@ describe('BpkPanel', () => {
         dis parturient montes, nascetur ridiculus mus.
       </BpkPanel>,
     );
-    expect(container.querySelector('.bpk-panel')).toHaveTextContent(`Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.`)
+    expect(container.querySelector('.bpk-panel')).toHaveTextContent(
+      `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.`,
+    );
     expect(container.querySelector('.bpk-panel')).toBeInTheDocument();
-    expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--keyline');
-    expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--padded');
+    expect(container.querySelector('.bpk-panel')).toHaveClass(
+      'bpk-panel--keyline',
+    );
+    expect(container.querySelector('.bpk-panel')).toHaveClass(
+      'bpk-panel--padded',
+    );
   });
 
   it('should render with padded attribute', () => {
@@ -43,8 +49,12 @@ describe('BpkPanel', () => {
         dis parturient montes, nascetur ridiculus mus.
       </BpkPanel>,
     );
-    expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--keyline');
-    expect(container.querySelector('.bpk-panel')).not.toHaveClass('bpk-panel--padded');
+    expect(container.querySelector('.bpk-panel')).toHaveClass(
+      'bpk-panel--keyline',
+    );
+    expect(container.querySelector('.bpk-panel')).not.toHaveClass(
+      'bpk-panel--padded',
+    );
   });
 
   it('should render with fullWidth attribute', () => {
@@ -55,9 +65,15 @@ describe('BpkPanel', () => {
         dis parturient montes, nascetur ridiculus mus.
       </BpkPanel>,
     );
-    expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--padded');
-    expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--full-width');
-    expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--full-width-keyline');
+    expect(container.querySelector('.bpk-panel')).toHaveClass(
+      'bpk-panel--padded',
+    );
+    expect(container.querySelector('.bpk-panel')).toHaveClass(
+      'bpk-panel--full-width',
+    );
+    expect(container.querySelector('.bpk-panel')).toHaveClass(
+      'bpk-panel--full-width-keyline',
+    );
   });
 
   it('should render BpkPanel without keyline when keyline attribute is false', () => {
@@ -68,8 +84,12 @@ describe('BpkPanel', () => {
         dis parturient montes, nascetur ridiculus mus.
       </BpkPanel>,
     );
-    expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--padded');
-    expect(container.querySelector('.bpk-panel')).not.toHaveClass('bpk-panel--keyline');
+    expect(container.querySelector('.bpk-panel')).toHaveClass(
+      'bpk-panel--padded',
+    );
+    expect(container.querySelector('.bpk-panel')).not.toHaveClass(
+      'bpk-panel--keyline',
+    );
   });
 
   it('should render BpkPanel without keyline when keyline attribute is false and fullwidth', () => {
@@ -80,8 +100,14 @@ describe('BpkPanel', () => {
         dis parturient montes, nascetur ridiculus mus.
       </BpkPanel>,
     );
-    expect(container.querySelector('.bpk-panel')).not.toHaveClass('bpk-panel--keyline');
-    expect(container.querySelector('.bpk-panel')).not.toHaveClass('bpk-panel--full-width-keyline');
-    expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--full-width');
+    expect(container.querySelector('.bpk-panel')).not.toHaveClass(
+      'bpk-panel--keyline',
+    );
+    expect(container.querySelector('.bpk-panel')).not.toHaveClass(
+      'bpk-panel--full-width-keyline',
+    );
+    expect(container.querySelector('.bpk-panel')).toHaveClass(
+      'bpk-panel--full-width',
+    );
   });
 });

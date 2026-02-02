@@ -41,7 +41,6 @@ import type {
   SelectionConfiguration,
 } from '../../bpk-component-calendar';
 
-
 const Input = withOpenEvents(BpkInput);
 
 const DefaultCalendar = withCalendarState(
@@ -109,7 +108,7 @@ type State = {
 };
 
 class BpkDatepicker extends Component<Props, State> {
-  inputRef: (ref:HTMLInputElement) => void;
+  inputRef: (ref: HTMLInputElement) => void;
 
   elementRef?: HTMLInputElement;
 
@@ -148,8 +147,8 @@ class BpkDatepicker extends Component<Props, State> {
     };
     this.focusRef = createRef();
     this.inputRef = (ref) => {
-      this.elementRef = ref
-    }
+      this.elementRef = ref;
+    };
   }
 
   componentDidUpdate(prevProps: Props, prevState: State) {
@@ -278,9 +277,11 @@ class BpkDatepicker extends Component<Props, State> {
           DateUtils.isSameDay(newEndDate, selectionConfiguration.startDate))
       ) {
         onDateSelect(selectionConfiguration.startDate, newEndDate);
-        this.elementRef && setNativeValue(this.elementRef, this.props.formatDate(newEndDate));
+        this.elementRef &&
+          setNativeValue(this.elementRef, this.props.formatDate(newEndDate));
       } else {
-        this.elementRef && setNativeValue(this.elementRef, this.props.formatDate(newStartDate));
+        this.elementRef &&
+          setNativeValue(this.elementRef, this.props.formatDate(newStartDate));
         onDateSelect(newStartDate);
       }
     }
@@ -323,7 +324,7 @@ class BpkDatepicker extends Component<Props, State> {
     delete rest.isOpen;
 
     const input = inputComponent || (
-      <div ref={this.focusRef} >
+      <div ref={this.focusRef}>
         <Input
           inputRef={this.inputRef}
           id={id}

@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkContentBubble from '../../packages/bpk-component-flare/src/BpkContentBubble';
 import BpkFlareBar from '../../packages/bpk-component-flare/src/BpkFlareBar';
 
@@ -53,10 +52,11 @@ export const BpkContentBubbleStandalone = ContentBubbleStandaloneExample;
 
 export const BpkContentBubbleFixedHeight = ContentBubbleFixedHeightExample;
 
-export const BpkContentBubblePointerHiddenRounded = ContentBubblePointerHiddenRoundedExample;
+export const BpkContentBubblePointerHiddenRounded =
+  ContentBubblePointerHiddenRoundedExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

@@ -19,13 +19,13 @@
 const fs = require('fs');
 const path = require('path');
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const postCssPlugins = require('../scripts/webpack/postCssPlugins');
 
 const { BPK_TOKENS } = process.env;
 const rootDir = path.resolve(__dirname, '../');
-const devMode = process.env.NODE_ENV !== "production";
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = ({ config }) => {
   config.plugins.push(new MiniCssExtractPlugin());
@@ -64,7 +64,7 @@ module.exports = ({ config }) => {
     test: /\.css/,
     use: [
       {
-        loader: devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+        loader: devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
       },
       {
         loader: 'css-loader',
@@ -91,7 +91,7 @@ module.exports = ({ config }) => {
     test: /\.scss$/,
     use: [
       {
-        loader: devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+        loader: devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
       },
       {
         loader: 'css-loader',
@@ -117,11 +117,11 @@ module.exports = ({ config }) => {
         options: {
           additionalData: BPK_TOKENS
             ? fs.readFileSync(
-              path.join(
-                rootDir,
-                `node_modules/@skyscanner/bpk-foundations-web/tokens/${BPK_TOKENS}.scss`,
-              ),
-            )
+                path.join(
+                  rootDir,
+                  `node_modules/@skyscanner/bpk-foundations-web/tokens/${BPK_TOKENS}.scss`,
+                ),
+              )
             : '',
         },
       },

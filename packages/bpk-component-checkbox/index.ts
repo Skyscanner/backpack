@@ -22,5 +22,3 @@ import themeAttributes from './src/themeAttributes';
 export type { BpkCheckboxProps };
 export default BpkCheckbox;
 export { themeAttributes };
-
-

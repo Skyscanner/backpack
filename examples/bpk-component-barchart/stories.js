@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkBarchart from '../../packages/bpk-component-barchart/src/BpkBarchart';
 
 import {
@@ -57,5 +56,5 @@ export const CustomYAxisDomain = CustomYAxisDomainExample;
 export const VisualTest = DefaultExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

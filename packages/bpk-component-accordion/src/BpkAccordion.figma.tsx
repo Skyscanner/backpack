@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import figma from "@figma/code-connect";
+import figma from '@figma/code-connect';
 
 import BpkAccordion from './BpkAccordion';
 import BpkAccordionItem from './BpkAccordionItem';

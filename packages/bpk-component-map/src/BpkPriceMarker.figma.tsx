@@ -33,7 +33,7 @@ figma.connect(
       status: figma.enum('State', {
         Unselected: MARKER_STATUSES.unselected,
         Selected: MARKER_STATUSES.selected,
-        "Pervious selected": MARKER_STATUSES.previous_selected,
+        'Pervious selected': MARKER_STATUSES.previous_selected,
       }),
       icon: figma.boolean('Icon?', {
         true: <Icon />,

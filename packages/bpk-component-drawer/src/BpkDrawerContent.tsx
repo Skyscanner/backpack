@@ -32,24 +32,24 @@ import STYLES from './BpkDrawerContent.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  children: ReactNode,
-  dialogRef: () => RefObject<HTMLElement>,
-  onCloseAnimationComplete: () => void,
-  onClose: () => void
-  id: string,
-  title: string,
-  width?: string,
-  className?: string | null,
-  contentClassName?: string,
-  closeLabel?: string,
-  closeText?: string,
-  isDrawerShown?: boolean,
-  hideTitle?: boolean,
-  closeOnScrimClick?: boolean,
-  isIphone?: boolean,
-  isIpad?: boolean,
-  padded?: boolean,
-  mobileModalDisplay?: boolean,
+  children: ReactNode;
+  dialogRef: () => RefObject<HTMLElement>;
+  onCloseAnimationComplete: () => void;
+  onClose: () => void;
+  id: string;
+  title: string;
+  width?: string;
+  className?: string | null;
+  contentClassName?: string;
+  closeLabel?: string;
+  closeText?: string;
+  isDrawerShown?: boolean;
+  hideTitle?: boolean;
+  closeOnScrimClick?: boolean;
+  isIphone?: boolean;
+  isIpad?: boolean;
+  padded?: boolean;
+  mobileModalDisplay?: boolean;
 };
 
 const BpkDrawerContent = ({
@@ -73,7 +73,6 @@ const BpkDrawerContent = ({
   width,
   ...rest
 }: Props) => {
-
   const drawerClassNames = [getClassName('bpk-drawer')];
   const headerClassNames = [getClassName('bpk-drawer__heading')];
   const contentClassNames = [getClassName('bpk-drawer__content')];
@@ -122,7 +121,12 @@ const BpkDrawerContent = ({
           }
           className={[
             drawerClassNames.join(' '),
-            getClassName(`bpk-drawer--${status}`, mobileModalDisplay ? `bpk-drawer__modal-mobile-view--${status}` : undefined),
+            getClassName(
+              `bpk-drawer--${status}`,
+              mobileModalDisplay
+                ? `bpk-drawer__modal-mobile-view--${status}`
+                : undefined,
+            ),
           ].join(' ')}
           ref={dialogRef}
           {...rest}
@@ -133,7 +137,9 @@ const BpkDrawerContent = ({
             </h2>
             &nbsp;
             {closeText ? (
-              <BpkLink as="button" onClick={onClose}>{closeText}</BpkLink>
+              <BpkLink as="button" onClick={onClose}>
+                {closeText}
+              </BpkLink>
             ) : (
               <div className={getClassName('bpk-drawer__close-button')}>
                 <BpkCloseButton label={closeLabel} onClick={onClose} />

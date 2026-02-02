@@ -48,7 +48,7 @@ export default {
             {`**Note:** All [standard img attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#Attributes) including \`srcSet\` are also supported.`}
           </Markdown>
         </>
-      )
+      ),
     },
   },
 };

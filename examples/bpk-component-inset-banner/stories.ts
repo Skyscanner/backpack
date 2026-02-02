@@ -41,4 +41,5 @@ export const WithBodyTextAndLinkDark = WithBodyTextAndLinkExampleDark;
 export const VisualTestDark = WithBodyTextAndLinkExampleDark;
 export const VisualTestLight = WithLogoAndCtaTextExampleLight;
 export const WithCtaTextAndPopoverLight = WithCtaTextAndPopoverExampleLight;
-export const WithCustomPopoverWidthAndMargins = WithCustomPopoverWidthAndMarginsExample;
+export const WithCustomPopoverWidthAndMargins =
+  WithCustomPopoverWidthAndMarginsExample;

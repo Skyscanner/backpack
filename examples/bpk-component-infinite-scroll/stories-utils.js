@@ -34,45 +34,45 @@ import DataSource from '../../packages/bpk-component-infinite-scroll/src/DataSou
  * @todo remove this once we migrate the infinite scroll component to TS
  */
 const WithInfiniteScrollPropTypes = {
-    /**
-     * How many more elements to load every time the user reaches the bottom of the list.
-     */
-    initiallyLoadedElements: PropTypes.number,
-    /**
-    * How many more elements to load every time the user reaches the bottom of the list.
-    */
-    elementsPerScroll: PropTypes.number,
-    dataSource: PropTypes.instanceOf(DataSource).isRequired,
-    loaderIntersectionTrigger: PropTypes.oneOf(['small', 'half', 'full']),
-    onScroll: PropTypes.func,
-    onScrollFinished: PropTypes.func,
-    renderLoadingComponent: PropTypes.func,
-    renderSeeMoreComponent: PropTypes.func,
-    /**
-     * `seeMoreAfter` is how many scrolls should happen before a 'See more' button is displayed. This only happens once.
-     */
-    seeMoreAfter: PropTypes.number,
-  };
-  
-  const WithInfiniteScrollDefaultProps = {
-    initiallyLoadedElements: 5,
-    elementsPerScroll: 5,
-    loaderIntersectionTrigger: 'full',
-    onScroll: null,
-    onScrollFinished: null,
-    renderLoadingComponent: null,
-    renderSeeMoreComponent: null,
-    seeMoreAfter: null,
-  };
+  /**
+   * How many more elements to load every time the user reaches the bottom of the list.
+   */
+  initiallyLoadedElements: PropTypes.number,
+  /**
+   * How many more elements to load every time the user reaches the bottom of the list.
+   */
+  elementsPerScroll: PropTypes.number,
+  dataSource: PropTypes.instanceOf(DataSource).isRequired,
+  loaderIntersectionTrigger: PropTypes.oneOf(['small', 'half', 'full']),
+  onScroll: PropTypes.func,
+  onScrollFinished: PropTypes.func,
+  renderLoadingComponent: PropTypes.func,
+  renderSeeMoreComponent: PropTypes.func,
+  /**
+   * `seeMoreAfter` is how many scrolls should happen before a 'See more' button is displayed. This only happens once.
+   */
+  seeMoreAfter: PropTypes.number,
+};
+
+const WithInfiniteScrollDefaultProps = {
+  initiallyLoadedElements: 5,
+  elementsPerScroll: 5,
+  loaderIntersectionTrigger: 'full',
+  onScroll: null,
+  onScrollFinished: null,
+  renderLoadingComponent: null,
+  renderSeeMoreComponent: null,
+  seeMoreAfter: null,
+};
 
 const WithInfiniteScrollMock = () => <div />;
 
 WithInfiniteScrollMock.propTypes = {
-    ...WithInfiniteScrollPropTypes,
+  ...WithInfiniteScrollPropTypes,
 };
 
 WithInfiniteScrollMock.defaultProps = {
-    ...WithInfiniteScrollDefaultProps,
+  ...WithInfiniteScrollDefaultProps,
 };
 
 // eslint-disable-next-line import/prefer-default-export

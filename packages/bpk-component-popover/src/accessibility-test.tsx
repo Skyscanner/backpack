@@ -23,7 +23,7 @@ import BpkPopover from './BpkPopover';
 
 describe('BpkPopover accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const target = (<button type="button">My target</button>);
+    const target = <button type="button">My target</button>;
     const { container } = render(
       <BpkPopover
         id="my-popover"
@@ -41,6 +41,6 @@ describe('BpkPopover accessibility tests', () => {
     await waitFor(async () => {
       const results = await axe(container);
       expect(results).toHaveNoViolations();
-    })
+    });
   });
 });

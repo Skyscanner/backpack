@@ -54,7 +54,11 @@ const BpkLabel = ({
   );
 
   return (
-    <label className={classNames} {...getDataComponentAttribute('Label')} {...rest}>
+    <label
+      className={classNames}
+      {...getDataComponentAttribute('Label')}
+      {...rest}
+    >
       {children}
       {!disabled && required && (
         <span className={getClassName('bpk-label__asterisk')}>*</span>

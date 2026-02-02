@@ -15,7 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { Props as BpkSliderProps } from './BpkSlider'
-export type Props = BpkSliderProps
-declare const BpkSlider: ({ ariaLabel, ariaValuetext, max, min, minDistance, onAfterChange, onChange, step, value }: Props) => JSX.Element
-export default BpkSlider
+import type { Props as BpkSliderProps } from './BpkSlider';
+export type Props = BpkSliderProps;
+declare const BpkSlider: ({
+  ariaLabel,
+  ariaValuetext,
+  max,
+  min,
+  minDistance,
+  onAfterChange,
+  onChange,
+  step,
+  value,
+}: Props) => JSX.Element;
+export default BpkSlider;

@@ -27,7 +27,6 @@ import AirportsIconSm from '../../bpk-component-icon/sm/airports';
 import BpkPriceMarker from './BpkPriceMarker';
 import BpkPriceMarkerButton from './BpkPriceMarkerButton';
 
-
 const AlignedAirportsIconSm = withRtlSupport(AirportsIconSm);
 
 type Props = {

@@ -19,14 +19,16 @@
 export type CUSTOM_SIZE_TYPE = {
   width: string;
   height: string;
-}
+};
 
 export declare const SIZE_TYPES: {
   small: 'small';
   default: 'default';
   large: 'large';
 };
-export type SizeType = (typeof SIZE_TYPES)[keyof typeof SIZE_TYPES] | CUSTOM_SIZE_TYPE;
+export type SizeType =
+  | (typeof SIZE_TYPES)[keyof typeof SIZE_TYPES]
+  | CUSTOM_SIZE_TYPE;
 
 export declare const SKELETON_TYPES: {
   image: 'image';
@@ -40,12 +42,16 @@ export declare const IMAGE_SKELETON_STYLE: {
   rounded: 'rounded';
   default: 'default';
 };
-export type ImageSkeletonStyle = (typeof IMAGE_SKELETON_STYLE)[keyof typeof IMAGE_SKELETON_STYLE];
+export type ImageSkeletonStyle =
+  (typeof IMAGE_SKELETON_STYLE)[keyof typeof IMAGE_SKELETON_STYLE];
 
 type SizeMap = {
   [SKELETON_TYPES.image]: (typeof SIZE_TYPES)['default'];
   [SKELETON_TYPES.bodyText]: (typeof SIZE_TYPES)[keyof typeof SIZE_TYPES];
-  [SKELETON_TYPES.circle]: Exclude<(typeof SIZE_TYPES)[keyof typeof SIZE_TYPES], 'large'>;
+  [SKELETON_TYPES.circle]: Exclude<
+    (typeof SIZE_TYPES)[keyof typeof SIZE_TYPES],
+    'large'
+  >;
   [SKELETON_TYPES.headline]: (typeof SIZE_TYPES)[keyof typeof SIZE_TYPES];
 };
 

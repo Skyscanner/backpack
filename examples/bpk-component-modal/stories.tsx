@@ -110,6 +110,6 @@ export const VisualTestDefaultWithZoom = {
     },
   },
   args: {
-    zoomEnabled: true
+    zoomEnabled: true,
   },
 };

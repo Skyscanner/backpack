@@ -32,11 +32,11 @@ const defaultClasses = ['bpk-table__cell'];
 const renderCell = (props = {}, content = 'Tabular data') => {
   const { getByRole, ...testingLibraryUtils } = render(
     <table>
-        <tbody>
-          <tr>
-            <BpkTableCell {...props}>{content}</BpkTableCell>
-          </tr>
-        </tbody>
+      <tbody>
+        <tr>
+          <BpkTableCell {...props}>{content}</BpkTableCell>
+        </tr>
+      </tbody>
     </table>,
   );
   const cell = getByRole('cell', { name: content });
@@ -55,8 +55,8 @@ describe('BpkTableCell', () => {
     const className = 'custom-class';
     const expectedClasses = [...defaultClasses, className];
 
-    const { cell } = renderCell({ 
-      className 
+    const { cell } = renderCell({
+      className,
     });
 
     expect(cell?.tagName).toBe('TD');
@@ -79,7 +79,7 @@ describe('BpkTableCell', () => {
 
   describe('wordBreak prop', () => {
     it('should not apply wordBreak class by default', () => {
-      const expectedClasses = [ ...defaultClasses ];
+      const expectedClasses = [...defaultClasses];
 
       // wordBreak prop omitted
       const { cell } = renderCell();
@@ -102,10 +102,7 @@ describe('BpkTableCell', () => {
     });
 
     it('should apply wordBreak class when wordBreak is true', () => {
-      const expectedClasses = [
-        ...defaultClasses,
-        'bpk-table__cell--wordBreak'
-      ];
+      const expectedClasses = [...defaultClasses, 'bpk-table__cell--wordBreak'];
 
       const { cell } = renderCell({
         wordBreak: true,

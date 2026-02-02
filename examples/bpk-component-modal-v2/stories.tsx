@@ -62,7 +62,13 @@ export const Contrast = ContrastExample;
 // Due to how iframes work we can pass a local url to load the stories above.
 // Attempted to use a Custom Iframe component with a react portal and ref to
 // render components but it didn't have the desired effect.
-const VisualWrapper = ({id, zoomEnabled = false}: {id: string, zoomEnabled?: boolean}) => (
+const VisualWrapper = ({
+  id,
+  zoomEnabled = false,
+}: {
+  id: string;
+  zoomEnabled?: boolean;
+}) => (
   <div style={{ height: '640px', width: '100%' }}>
     <iframe
       title={`Embedded Storybook ${id}`}

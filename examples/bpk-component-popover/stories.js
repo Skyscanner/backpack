@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkPopover from '../../packages/bpk-component-popover';
 
 import {
@@ -29,7 +28,7 @@ import {
   InputTriggerExample,
   WithActionButtonExample,
   WithNoCloseButtonIconExample,
-  VisualExample
+  VisualExample,
 } from './examples';
 
 export default {
@@ -42,13 +41,12 @@ export const WithCustomRenderTarget = WithCustomRenderTargetExample;
 export const Hover = HoverExample;
 export const WithoutArrow = WithoutArrowExample;
 export const WithLabelAsTitle = WithLabelAsTitleExample;
-export const WithNoCloseButtonIcon =
-WithNoCloseButtonIconExample;
+export const WithNoCloseButtonIcon = WithNoCloseButtonIconExample;
 export const OnTheSide = OnTheSideExample;
 export const TriggeredByInput = InputTriggerExample;
 export const WithActionButton = WithActionButtonExample;
 export const VisualTest = VisualExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

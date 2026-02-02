@@ -17,34 +17,45 @@
  */
 /* @flow strict */
 
-import BpkSwapButton, { SWAPBUTTON_STYLES } from '../../packages/bpk-component-swap-button';
+import BpkSwapButton, {
+  SWAPBUTTON_STYLES,
+} from '../../packages/bpk-component-swap-button';
 import { action, BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
 const wrapperStyles = {
   height: '100px',
   width: '100px',
-  padding: '2rem'
-}
+  padding: '2rem',
+};
 
 const DefaultExample = () => (
   <div style={wrapperStyles}>
-  <BpkSwapButton ariaLabel='Swap origin and destination' onClick={action('Button clicked')}/>
+    <BpkSwapButton
+      ariaLabel="Swap origin and destination"
+      onClick={action('Button clicked')}
+    />
   </div>
 );
 
 const CanvasDefaultExample = () => (
-
-  <BpkDarkExampleWrapper padded style={wrapperStyles} >
-  <BpkSwapButton ariaLabel='Swap origin and destination' swapButtonStyle={SWAPBUTTON_STYLES.canvasDefault} onClick={action('Button clicked')}/>
+  <BpkDarkExampleWrapper padded style={wrapperStyles}>
+    <BpkSwapButton
+      ariaLabel="Swap origin and destination"
+      swapButtonStyle={SWAPBUTTON_STYLES.canvasDefault}
+      onClick={action('Button clicked')}
+    />
   </BpkDarkExampleWrapper>
 );
 const CanvasContrastExample = () => (
   <div>
-  <BpkDarkExampleWrapper padded style={wrapperStyles}>
-    <BpkSwapButton ariaLabel='Swap origin and destination' swapButtonStyle={SWAPBUTTON_STYLES.canvasContrast} onClick={action('Button clicked')}/>
-  </BpkDarkExampleWrapper>
+    <BpkDarkExampleWrapper padded style={wrapperStyles}>
+      <BpkSwapButton
+        ariaLabel="Swap origin and destination"
+        swapButtonStyle={SWAPBUTTON_STYLES.canvasContrast}
+        onClick={action('Button clicked')}
+      />
+    </BpkDarkExampleWrapper>
   </div>
-
 );
 
-export {DefaultExample, CanvasDefaultExample, CanvasContrastExample} ;
+export { DefaultExample, CanvasDefaultExample, CanvasContrastExample };

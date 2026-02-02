@@ -23,7 +23,6 @@ import { render } from '@testing-library/react';
 import BpkPriceMarker from './BpkPriceMarker';
 import { MARKER_STATUSES } from './BpkPriceMarkerButton';
 
-
 type Props = {
   children: ReactNode;
 };

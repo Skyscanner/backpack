@@ -30,5 +30,3 @@ describe('BpkCheckbox accessibility tests', () => {
     expect(results).toHaveNoViolations();
   });
 });
-
-

@@ -46,15 +46,15 @@ const getMaxValue = (ratingScale: ValueOf<typeof RATING_SCALES>) => {
 };
 
 type Props = {
-  ariaLabel: string,
-  className?: string,
-  ratingScale?: ValueOf<typeof RATING_SCALES>,
-  showScale?: boolean,
-  size?: ValueOf<typeof RATING_SIZES>,
-  subtitle?: string,
-  title?: string | ReactNode,
-  value: string | number,
-  [rest: string]: any
+  ariaLabel: string;
+  className?: string;
+  ratingScale?: ValueOf<typeof RATING_SCALES>;
+  showScale?: boolean;
+  size?: ValueOf<typeof RATING_SIZES>;
+  subtitle?: string;
+  title?: string | ReactNode;
+  value: string | number;
+  [rest: string]: any;
 };
 
 const BpkRating = ({
@@ -68,7 +68,6 @@ const BpkRating = ({
   value,
   ...rest
 }: Props) => {
-
   const classNames = getClassName(
     'bpk-rating',
     className,
@@ -83,9 +82,7 @@ const BpkRating = ({
   const titleStyles = getClassName(
     subtitle && 'bpk-rating__title--with-subtitle',
   );
-  const subtitleStyles = getClassName(
-    'bpk-rating__subtitle',
-  );
+  const subtitleStyles = getClassName('bpk-rating__subtitle');
 
   let valueTextSize: ValueOf<typeof TEXT_STYLES> = TEXT_STYLES.label1;
   let scaleTextSize: ValueOf<typeof TEXT_STYLES> = TEXT_STYLES.caption;
@@ -104,7 +101,7 @@ const BpkRating = ({
 
   let adjustedValue = value;
 
-  if(typeof adjustedValue === "number") {
+  if (typeof adjustedValue === 'number') {
     if (adjustedValue >= maxValue || adjustedValue <= minValue) {
       adjustedValue = clamp(adjustedValue, minValue, maxValue);
     }
@@ -113,19 +110,11 @@ const BpkRating = ({
   return (
     <div className={classNames} aria-label={ariaLabel} role="figure" {...rest}>
       <div className={valueStyles}>
-        <BpkText
-          textStyle={valueTextSize}
-          tagName="span"
-          aria-hidden="true"
-        >
+        <BpkText textStyle={valueTextSize} tagName="span" aria-hidden="true">
           {adjustedValue}
         </BpkText>
         {showScale && (
-          <BpkText
-            textStyle={scaleTextSize}
-            tagName="span"
-            aria-hidden="true"
-          >
+          <BpkText textStyle={scaleTextSize} tagName="span" aria-hidden="true">
             <span className={scaleStyles}>/{maxValue}</span>
           </BpkText>
         )}
@@ -144,14 +133,15 @@ const BpkRating = ({
           </span>
         )}
 
-        {subtitle && (<span className={subtitleStyles}>
-          <BpkText
-            textStyle={subtitleTextSize}
-            tagName="span"
-            aria-hidden="true"
-          >
-            {subtitle}
-          </BpkText>
+        {subtitle && (
+          <span className={subtitleStyles}>
+            <BpkText
+              textStyle={subtitleTextSize}
+              tagName="span"
+              aria-hidden="true"
+            >
+              {subtitle}
+            </BpkText>
           </span>
         )}
       </div>

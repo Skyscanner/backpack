@@ -29,11 +29,20 @@ const rows = [
 describe('BpkDataTable accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkDataTable rows={rows} height="12.5rem" columns={[
-        { label: 'Name', accessor: 'name', width: '6.25rem' },
-        { label: 'Description', accessor: 'description', width: '6.25rem', flexGrow: 1 },
-        { label: 'Bla', accessor: 'bla', width: '6.25rem' },
-      ]} />
+      <BpkDataTable
+        rows={rows}
+        height="12.5rem"
+        columns={[
+          { label: 'Name', accessor: 'name', width: '6.25rem' },
+          {
+            label: 'Description',
+            accessor: 'description',
+            width: '6.25rem',
+            flexGrow: 1,
+          },
+          { label: 'Bla', accessor: 'bla', width: '6.25rem' },
+        ]}
+      />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

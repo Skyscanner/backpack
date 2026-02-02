@@ -25,7 +25,7 @@ import BpkSingleSelectChipGroup from './BpkSingleSelectChipGroup';
 const defaultProps = {
   type: CHIP_GROUP_TYPES.wrap,
   ariaLabel: 'a11y label',
-}
+};
 
 describe('BpkSingleSelectChipGroup', () => {
   beforeEach(() => {
@@ -48,7 +48,7 @@ describe('BpkSingleSelectChipGroup', () => {
     },
     {
       text: 'Stockholm',
-    }
+    },
   ];
 
   it('should call onItemClick when a chip is clicked', async () => {
@@ -94,8 +94,14 @@ describe('BpkSingleSelectChipGroup', () => {
       />,
     );
 
-    expect(screen.getByRole('radio', { name: 'Berlin' })).toHaveClass('bpk-chip--default-selected')
-    expect(screen.getByRole('radio', { name: 'London' })).not.toHaveClass('bpk-chip--default-selected')
-    expect(screen.getByRole('radio', { name: 'Florence' })).not.toHaveClass('bpk-chip--default-selected')
+    expect(screen.getByRole('radio', { name: 'Berlin' })).toHaveClass(
+      'bpk-chip--default-selected',
+    );
+    expect(screen.getByRole('radio', { name: 'London' })).not.toHaveClass(
+      'bpk-chip--default-selected',
+    );
+    expect(screen.getByRole('radio', { name: 'Florence' })).not.toHaveClass(
+      'bpk-chip--default-selected',
+    );
   });
 });

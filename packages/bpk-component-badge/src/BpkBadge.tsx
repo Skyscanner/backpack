@@ -73,7 +73,13 @@ const BpkBadge = ({
     className,
   );
 
-  return <span className={classNames} {...getDataComponentAttribute('Badge')} {...rest} />;
+  return (
+    <span
+      className={classNames}
+      {...getDataComponentAttribute('Badge')}
+      {...rest}
+    />
+  );
 };
 
 export default BpkBadge;

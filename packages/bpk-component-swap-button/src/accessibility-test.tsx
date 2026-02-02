@@ -1,4 +1,4 @@
- /*
+/*
  * Backpack - Skyscanner's Design System
  *
  * Copyright 2016 Skyscanner Ltd
@@ -23,7 +23,9 @@ import BpkSwapButton from './BpkSwapButton';
 
 describe('BpkSwapButton accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(<BpkSwapButton onClick={jest.fn()} ariaLabel='swap button'/>);
+    const { container } = render(
+      <BpkSwapButton onClick={jest.fn()} ariaLabel="swap button" />,
+    );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

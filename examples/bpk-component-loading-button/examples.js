@@ -32,10 +32,7 @@ import BpkLoadingButton, {
 } from '../../packages/bpk-component-loading-button';
 import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden';
 import { cssModules } from '../../packages/bpk-react-utils';
-import {
-  action,
-  BpkDarkExampleWrapper,
-} from '../bpk-storybook-utils';
+import { action, BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 

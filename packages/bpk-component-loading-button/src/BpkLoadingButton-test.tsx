@@ -24,12 +24,12 @@ import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 
 import BpkLoadingButton, { ICON_POSITION } from './BpkLoadingButton';
 
-const error = jest.spyOn(console, "error").mockImplementation(() => {});
+const error = jest.spyOn(console, 'error').mockImplementation(() => {});
 
 describe('BpkLoadingButton', () => {
   beforeEach(() => {
     error.mockReset();
-  })
+  });
   it('should render correctly', () => {
     const { container } = render(
       <BpkLoadingButton>My button</BpkLoadingButton>,
@@ -51,7 +51,9 @@ describe('BpkLoadingButton', () => {
     const { container } = render(
       <BpkLoadingButton primaryOnDark>My button</BpkLoadingButton>,
     );
-    expect(container.querySelectorAll('.bpk-button--primary-on-dark').length).toBe(1);
+    expect(
+      container.querySelectorAll('.bpk-button--primary-on-dark').length,
+    ).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 
@@ -59,7 +61,9 @@ describe('BpkLoadingButton', () => {
     const { container } = render(
       <BpkLoadingButton primaryOnLight>My button</BpkLoadingButton>,
     );
-    expect(container.querySelectorAll('.bpk-button--primary-on-light').length).toBe(1);
+    expect(
+      container.querySelectorAll('.bpk-button--primary-on-light').length,
+    ).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 
@@ -75,7 +79,9 @@ describe('BpkLoadingButton', () => {
     const { container } = render(
       <BpkLoadingButton secondaryOnDark>My button</BpkLoadingButton>,
     );
-    expect(container.querySelectorAll('.bpk-button--secondary-on-dark').length).toBe(1);
+    expect(
+      container.querySelectorAll('.bpk-button--secondary-on-dark').length,
+    ).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 
@@ -83,7 +89,9 @@ describe('BpkLoadingButton', () => {
     const { container } = render(
       <BpkLoadingButton destructive>My button</BpkLoadingButton>,
     );
-    expect(container.querySelectorAll('.bpk-button--destructive').length).toBe(1);
+    expect(container.querySelectorAll('.bpk-button--destructive').length).toBe(
+      1,
+    );
     expect(error).not.toHaveBeenCalled();
   });
 
@@ -99,7 +107,9 @@ describe('BpkLoadingButton', () => {
     const { container } = render(
       <BpkLoadingButton linkOnDark>My button</BpkLoadingButton>,
     );
-    expect(container.querySelectorAll('.bpk-button--link-on-dark').length).toBe(1);
+    expect(container.querySelectorAll('.bpk-button--link-on-dark').length).toBe(
+      1,
+    );
     expect(error).not.toHaveBeenCalled();
   });
 
@@ -144,7 +154,9 @@ describe('BpkLoadingButton', () => {
     const { container } = render(
       <BpkLoadingButton loading>My button</BpkLoadingButton>,
     );
-    expect(container.querySelectorAll('.bpk-loading-button__icon').length).toBe(1);
+    expect(container.querySelectorAll('.bpk-loading-button__icon').length).toBe(
+      1,
+    );
     expect(error).not.toHaveBeenCalled();
   });
 
@@ -174,7 +186,9 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(container.querySelectorAll('.bpk-button--large').length).toBe(1);
-    expect(container.querySelectorAll('.bpk-button--secondary-on-dark').length).toBe(1);
+    expect(
+      container.querySelectorAll('.bpk-button--secondary-on-dark').length,
+    ).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 
@@ -185,7 +199,9 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(container.querySelectorAll('.bpk-button--large').length).toBe(1);
-    expect(container.querySelectorAll('.bpk-button--primary-on-dark').length).toBe(1);
+    expect(
+      container.querySelectorAll('.bpk-button--primary-on-dark').length,
+    ).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 
@@ -196,7 +212,9 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(container.querySelectorAll('.bpk-button--large').length).toBe(1);
-    expect(container.querySelectorAll('.bpk-button--primary-on-light').length).toBe(1);
+    expect(
+      container.querySelectorAll('.bpk-button--primary-on-light').length,
+    ).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
 
@@ -207,7 +225,9 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(container.querySelectorAll('.bpk-button--large').length).toBe(1);
-    expect(container.querySelectorAll('.bpk-button--destructive').length).toBe(1);
+    expect(container.querySelectorAll('.bpk-button--destructive').length).toBe(
+      1,
+    );
     expect(error).not.toHaveBeenCalled();
   });
 
@@ -229,7 +249,9 @@ describe('BpkLoadingButton', () => {
       </BpkLoadingButton>,
     );
     expect(container.querySelectorAll('.bpk-button--large').length).toBe(1);
-    expect(container.querySelectorAll('.bpk-button--link-on-dark').length).toBe(1);
+    expect(container.querySelectorAll('.bpk-button--link-on-dark').length).toBe(
+      1,
+    );
     expect(error).not.toHaveBeenCalled();
   });
 
@@ -271,7 +293,9 @@ describe('BpkLoadingButton', () => {
         My button
       </BpkLoadingButton>,
     );
-    expect(container.querySelectorAll('.bpk-loading-button__icon').length).toBe(1);
+    expect(container.querySelectorAll('.bpk-loading-button__icon').length).toBe(
+      1,
+    );
     expect(container.querySelectorAll('.bpk-button--large').length).toBe(1);
     expect(error).not.toHaveBeenCalled();
   });
@@ -306,7 +330,9 @@ describe('BpkLoadingButton', () => {
         My button
       </BpkLoadingButton>,
     );
-    expect(container.querySelectorAll('.bpk-loading-button__icon').length).toBe(1);
+    expect(container.querySelectorAll('.bpk-loading-button__icon').length).toBe(
+      1,
+    );
     expect(error).not.toHaveBeenCalled();
   });
 
@@ -333,5 +359,4 @@ describe('BpkLoadingButton', () => {
     expect(asFragment()).toMatchSnapshot();
     expect(error).not.toHaveBeenCalled();
   });
-
 });

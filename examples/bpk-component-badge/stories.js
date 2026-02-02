@@ -35,7 +35,7 @@ import {
 
 export default {
   title: 'bpk-component-badge',
-  component: BpkBadge
+  component: BpkBadge,
 };
 
 export const Default = DefaultExample;
@@ -52,5 +52,5 @@ export const DockedLeft = DockedTrailingExample;
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

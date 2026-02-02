@@ -84,8 +84,8 @@
     "backpack/use-components": "off",
     "react/jsx-filename-extension": "off",
     "import/no-extraneous-dependencies": "off",
-    // TODO: Re-enable the following 7 rules
-    "prettier/prettier": "off",
+    "prettier/prettier": "error",
+    // TODO: Re-enable the following 6 rules
     "no-restricted-exports": "off",
     "class-methods-use-this": "off",
     "react/jsx-no-constructed-context-values": "off",

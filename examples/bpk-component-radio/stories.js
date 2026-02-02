@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkRadio from '../../packages/bpk-component-radio/src/BpkRadio';
 
 import {
@@ -46,5 +45,5 @@ export const DisabledUnchecked = DisabledUncheckedExample;
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

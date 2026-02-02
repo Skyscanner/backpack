@@ -637,28 +637,28 @@ const DefaultVisualExample = () => (
 );
 
 const VisualRangeExample = () => (
-    <div id="application-element">
-      <CalendarContainer
-        id="myDatepicker"
-        closeButtonText="Close"
-        daysOfWeek={weekDays}
-        weekStartsOn={1}
-        changeMonthLabel="Change month"
-        previousMonthLabel="Go to previous month"
-        nextMonthLabel="Go to next month"
-        title="Departure date"
-        formatDate={formatDate}
-        formatMonth={formatMonth}
-        formatDateFull={formatDateFull}
-        selectionConfiguration={{
-          type: 'range',
-          startDate: new Date(2020, 3, 8),
-          endDate: new Date(2020, 3, 15),
-        }}
-        minDate={new Date(2020, 3, 1)}
-        isOpen
-      />
-    </div>
+  <div id="application-element">
+    <CalendarContainer
+      id="myDatepicker"
+      closeButtonText="Close"
+      daysOfWeek={weekDays}
+      weekStartsOn={1}
+      changeMonthLabel="Change month"
+      previousMonthLabel="Go to previous month"
+      nextMonthLabel="Go to next month"
+      title="Departure date"
+      formatDate={formatDate}
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      selectionConfiguration={{
+        type: 'range',
+        startDate: new Date(2020, 3, 8),
+        endDate: new Date(2020, 3, 15),
+      }}
+      minDate={new Date(2020, 3, 1)}
+      isOpen
+    />
+  </div>
 );
 
 export {

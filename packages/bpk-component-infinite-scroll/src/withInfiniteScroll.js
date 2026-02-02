@@ -105,7 +105,6 @@ const withInfiniteScroll = <T: ExtendedProps>(
   ComponentToExtend: AbstractComponent<T>,
 ): AbstractComponent<PropsWithDefault & $Diff<T, ExtendedProps>> =>
   class WithInfiniteScroll extends Component<Props, State> {
-
     handleKeyPress: (e: SyntheticKeyboardEvent<HTMLButtonElement>) => void;
 
     observer: IntersectionObserver;

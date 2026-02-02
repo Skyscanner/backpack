@@ -42,5 +42,3 @@ describe('BpkBlockquote', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 });
-
-

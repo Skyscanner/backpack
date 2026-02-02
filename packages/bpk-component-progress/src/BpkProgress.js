@@ -80,7 +80,7 @@ const defaultProps = {
   onComplete: () => null,
   onCompleteTransitionEnd: () => null,
   getValueText: null,
-}
+};
 
 class BpkProgress extends Component<Props> {
   componentDidUpdate(previousProps: Props) {
@@ -160,10 +160,10 @@ class BpkProgress extends Component<Props> {
 
 BpkProgress.propTypes = {
   ...propTypes,
-}
+};
 
 BpkProgress.defaultProps = {
   ...defaultProps,
-}
+};
 
 export default BpkProgress;

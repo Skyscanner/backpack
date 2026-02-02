@@ -22,13 +22,20 @@ import { axe } from 'jest-axe';
 import BpkCarousel from './BpkCarousel';
 
 const DemoImages = () => (
-  <img src="http://content.skyscnr.com/available/949043373/949043373_343x132.jpg" alt='hotel bedroom' />
-)
-const images = [<DemoImages />, <DemoImages />, <DemoImages />, <DemoImages />, <DemoImages />]
-
+  <img
+    src="http://content.skyscnr.com/available/949043373/949043373_343x132.jpg"
+    alt="hotel bedroom"
+  />
+);
+const images = [
+  <DemoImages />,
+  <DemoImages />,
+  <DemoImages />,
+  <DemoImages />,
+  <DemoImages />,
+];
 
 describe('BpkCarousel accessibility tests', () => {
-
   beforeAll(() => {
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
 
@@ -39,7 +46,7 @@ describe('BpkCarousel accessibility tests', () => {
 
       unobserve = jest.fn();
     };
-  })
+  });
 
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(<BpkCarousel images={images} />);

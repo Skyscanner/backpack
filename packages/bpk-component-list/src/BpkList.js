@@ -42,7 +42,7 @@ const BpkList = ({
   children,
   className = null,
   ordered = false,
-  title = null
+  title = null,
 }: Props) => {
   const ListElements: any = ordered ? 'ol' : 'ul';
   const classNames: string = getClassName('bpk-list', className);
@@ -70,6 +70,5 @@ BpkList.propTypes = {
   ariaLabelledby: PropTypes.string,
   title: PropTypes.string,
 };
-
 
 export default BpkList;

@@ -51,7 +51,7 @@ export type Props = {
    * The accessory view allows for icons and actions to be placed in front of the main title inside the modal header. To be used with `BpkNavigationBarButtonLink`
    */
   accessoryView?: ReactNode;
-  ariaLabel?: string // optional aria label for scenario when header is disabled
+  ariaLabel?: string; // optional aria label for scenario when header is disabled
 };
 
 export const MODAL_STYLING = {

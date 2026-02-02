@@ -22,7 +22,9 @@ import BpkVisuallyHidden from './BpkVisuallyHidden';
 
 describe('BpkVisuallyHidden', () => {
   it('should render as a span by default', () => {
-    const { container } = render(<BpkVisuallyHidden>Content</BpkVisuallyHidden>);
+    const { container } = render(
+      <BpkVisuallyHidden>Content</BpkVisuallyHidden>,
+    );
     const element = container.firstChild as HTMLElement;
 
     expect(element.tagName.toLowerCase()).toBe('span');
@@ -30,7 +32,22 @@ describe('BpkVisuallyHidden', () => {
     expect(element).toHaveClass('bpk-visually-hidden');
   });
 
-  (['div', 'span', 'p', 'strong', 'em', 'small', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const).forEach((as) => {
+  (
+    [
+      'div',
+      'span',
+      'p',
+      'strong',
+      'em',
+      'small',
+      'h1',
+      'h2',
+      'h3',
+      'h4',
+      'h5',
+      'h6',
+    ] as const
+  ).forEach((as) => {
     it(`should render as a ${as} element when as="${as}"`, () => {
       const { container } = render(
         <BpkVisuallyHidden as={as}>Content</BpkVisuallyHidden>,

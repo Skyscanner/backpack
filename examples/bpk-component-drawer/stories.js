@@ -47,6 +47,8 @@ export const WithNonPaddedContent = WithNonPaddedContentExample;
 
 export const WithMobileModalBehaviour = WithMobileModalBehaviourExample;
 
-export const DrawerWithTooltipNotAbleToBeShown = DrawerWithTooltipExampleNotAbleToBeShown;
+export const DrawerWithTooltipNotAbleToBeShown =
+  DrawerWithTooltipExampleNotAbleToBeShown;
 
-export const DrawerWithTooltipAbleToBeShown = DrawerWithTooltipExampleAbleToBeShown;
+export const DrawerWithTooltipAbleToBeShown =
+  DrawerWithTooltipExampleAbleToBeShown;

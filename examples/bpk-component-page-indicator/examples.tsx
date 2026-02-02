@@ -86,14 +86,18 @@ const backgroundColor = '#003580';
 
 const WithNavOverImageSpacedExample = () => (
   <div
-    style={{ width: imageWidth, height: imageHeight, backgroundColor: backgroundElevation03DarkColor }}
+    style={{
+      width: imageWidth,
+      height: imageHeight,
+      backgroundColor: backgroundElevation03DarkColor,
+    }}
   >
     <div className={getClassName('bpk-page-indicator-examples__container')}>
       <PageIndicatorContainer
         totalIndicators={3}
         variant={VARIANT.overImageSpaced}
         showNav
-        onClick={ () => {}}
+        onClick={() => {}}
       />
     </div>
   </div>

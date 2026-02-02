@@ -62,45 +62,47 @@ class BpkBannerAlertDismissableState extends Component<Props, State> {
   }
 
   render() {
-    return <>
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <BpkBannerAlertDismissable
-        show={!this.state.dismissed}
-        dismissButtonLabel="Dismiss"
-        onDismiss={() => {
-          this.setState((prevState) => ({
-            dismissed: true,
-            updates: [...prevState.updates, 'Success alert dismissed'],
-          }));
-        }}
-        message="Neutral alert with dismiss option"
-        {...this.props}
-      />
-      {this.state.dismissed && (
-        <BpkButton
-          className={getClassName('bpk-banner-alert-examples__component')}
-          onClick={() => {
+    return (
+      <>
+        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
+        <BpkBannerAlertDismissable
+          show={!this.state.dismissed}
+          dismissButtonLabel="Dismiss"
+          onDismiss={() => {
             this.setState((prevState) => ({
-              dismissed: false,
-              updates: [...prevState.updates, 'Success alert added'],
+              dismissed: true,
+              updates: [...prevState.updates, 'Success alert dismissed'],
             }));
           }}
+          message="Neutral alert with dismiss option"
+          {...this.props}
+        />
+        {this.state.dismissed && (
+          <BpkButton
+            className={getClassName('bpk-banner-alert-examples__component')}
+            onClick={() => {
+              this.setState((prevState) => ({
+                dismissed: false,
+                updates: [...prevState.updates, 'Success alert added'],
+              }));
+            }}
+          >
+            Reset
+          </BpkButton>
+        )}
+        <AriaLiveDemo
+          visible
+          className={getClassName('bpk-banner-alert-examples__component')}
         >
-          Reset
-        </BpkButton>
-      )}
-      <AriaLiveDemo
-        visible
-        className={getClassName('bpk-banner-alert-examples__component')}
-      >
-        {this.state.updates.map((u) => (
-          <>
-            {u}
-            <br />
-          </>
-        ))}
-      </AriaLiveDemo>
-    </>;
+          {this.state.updates.map((u) => (
+            <>
+              {u}
+              <br />
+            </>
+          ))}
+        </AriaLiveDemo>
+      </>
+    );
   }
 }
 

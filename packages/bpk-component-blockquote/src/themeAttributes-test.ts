@@ -23,5 +23,3 @@ describe('themeAttributes', () => {
     expect(themeAttributes).toEqual(['blockquoteBarColor']);
   });
 });
-
-

@@ -63,23 +63,25 @@ describe('BpkSelect form test', () => {
 
   it('should emit change event on option selection that calls formValidation', async () => {
     const formValidation = jest.fn();
-  
-    render(<form data-testid="form">
-      <BpkSelect
-        id="fruits"
-        name="fruits"
-        defaultValue="apples"
-        data-testid="myselect"
-      >
-        <option value="apples">Apples</option>
-        <option data-testid="select-option" value="oranges">
-          Oranges
-        </option>
-        <option value="pears">Pears</option>
-        <option value="tomatoes">Tomatoes</option>
-      </BpkSelect>
-      <button type="submit">Submit</button>
-    </form>);
+
+    render(
+      <form data-testid="form">
+        <BpkSelect
+          id="fruits"
+          name="fruits"
+          defaultValue="apples"
+          data-testid="myselect"
+        >
+          <option value="apples">Apples</option>
+          <option data-testid="select-option" value="oranges">
+            Oranges
+          </option>
+          <option value="pears">Pears</option>
+          <option value="tomatoes">Tomatoes</option>
+        </BpkSelect>
+        <button type="submit">Submit</button>
+      </form>,
+    );
     document.addEventListener('change', formValidation);
 
     const select = screen.getByTestId('myselect');

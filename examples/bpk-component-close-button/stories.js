@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkCloseButton from '../../packages/bpk-component-close-button/src/BpkCloseButton';
 
 import DefaultExample from './examples';
@@ -30,5 +29,5 @@ export const Default = DefaultExample;
 export const VisualTest = DefaultExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

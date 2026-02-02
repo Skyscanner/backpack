@@ -82,7 +82,9 @@ const withEventHandler =
     }
   };
 
-const withOpenEvents = <P extends object>(WithOpenEventsInputComponent: ComponentType<P>) => {
+const withOpenEvents = <P extends object>(
+  WithOpenEventsInputComponent: ComponentType<P>,
+) => {
   class WithOpenEvents extends Component<P & InputProps & WithOpenEventsProps> {
     public static displayName: string;
 
@@ -179,12 +181,12 @@ const withOpenEvents = <P extends object>(WithOpenEventsInputComponent: Componen
       eventHandlers.onBlur = withEventHandler(this.handleBlur, onBlur);
 
       return (
-          <WithOpenEventsInputComponent
-            className={className}
-            {...eventHandlers}
-            {...(rest as P)}
-            data-openable // This allows for conditional styling within BpkInput
-          />
+        <WithOpenEventsInputComponent
+          className={className}
+          {...eventHandlers}
+          {...(rest as P)}
+          data-openable // This allows for conditional styling within BpkInput
+        />
       );
     }
   }

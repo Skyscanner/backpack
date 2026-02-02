@@ -22,5 +22,3 @@ import themeAttributes from './src/themeAttributes';
 export type { BpkFieldsetProps };
 export { themeAttributes };
 export default BpkFieldset;
-
-

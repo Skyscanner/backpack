@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkTicket from '../../packages/bpk-component-ticket/src/BpkTicket';
 
 import {
@@ -50,5 +49,5 @@ export const DayView = DayViewExample;
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

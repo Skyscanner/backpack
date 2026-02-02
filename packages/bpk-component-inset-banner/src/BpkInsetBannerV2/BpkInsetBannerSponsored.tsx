@@ -119,7 +119,7 @@ const BpkInsetBannerSponsored = ({
               paddingStyles={{
                 top: PADDING_TYPE.base,
                 start: PADDING_TYPE.lg,
-                bottom: PADDING_TYPE.base
+                bottom: PADDING_TYPE.base,
               }}
             >
               {callToAction.bottomSheetContent.map((item, index) => (
@@ -136,9 +136,19 @@ const BpkInsetBannerSponsored = ({
                     data-testid="bottom-sheet-icon-container"
                   >
                     {index === 0 ? (
-                      <ViewIcon height={24} width={24} data-testid="view-icon" />
+                      <ViewIcon
+                        height={24}
+                        width={24}
+                        data-testid="view-icon"
+                      />
                     ) : (
-                      callToAction.bottomSheetContent.length > 1 && <InfoIcon height={24} width={24} data-testid="info-icon" />
+                      callToAction.bottomSheetContent.length > 1 && (
+                        <InfoIcon
+                          height={24}
+                          width={24}
+                          data-testid="info-icon"
+                        />
+                      )
                     )}
                   </div>
                   <div

@@ -32,7 +32,7 @@ type Props = {
   className: ?string,
 };
 
-const BpkListItem = ({children, className = null}: Props) => {
+const BpkListItem = ({ children, className = null }: Props) => {
   const classNames = getClassName('bpk-list__item', className);
 
   return <li className={classNames}>{children}</li>;

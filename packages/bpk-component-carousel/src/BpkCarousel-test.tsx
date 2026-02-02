@@ -23,16 +23,18 @@ import { render, screen } from '@testing-library/react';
 
 import BpkCarousel from './BpkCarousel';
 
-
 describe('BpkCarousel', () => {
-  let images: ReactNode[]
+  let images: ReactNode[];
 
   const DemoImages = () => (
-    <img src="http://content.skyscnr.com/available/949043373/949043373_343x132.jpg" alt='hotel bedroom' />
-  )
+    <img
+      src="http://content.skyscnr.com/available/949043373/949043373_343x132.jpg"
+      alt="hotel bedroom"
+    />
+  );
 
   function generateDemoImages(count: number) {
-    return Array.from({ length: count }, (_, i) => (<DemoImages />));
+    return Array.from({ length: count }, (_, i) => <DemoImages />);
   }
 
   type TestCase = [
@@ -42,7 +44,6 @@ describe('BpkCarousel', () => {
   ];
 
   beforeAll(() => {
-
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
 
     (window as any).IntersectionObserver = class IntersectionObserver {
@@ -52,17 +53,25 @@ describe('BpkCarousel', () => {
 
       unobserve = jest.fn();
     };
-    images = [<DemoImages />, <DemoImages />, <DemoImages />, <DemoImages />, <DemoImages />];
+    images = [
+      <DemoImages />,
+      <DemoImages />,
+      <DemoImages />,
+      <DemoImages />,
+      <DemoImages />,
+    ];
   });
 
   it('should render correctly', () => {
     render(<BpkCarousel images={images} />);
 
     expect(screen.getAllByRole('listitem').length).toBe(7);
-    expect(document.querySelectorAll('.bpk-page-indicator__indicator').length).toBe(
-      5,
-    );
-    expect(document.querySelector('.bpk-carousel__page-indicator-over-image')).toBeTruthy();
+    expect(
+      document.querySelectorAll('.bpk-page-indicator__indicator').length,
+    ).toBe(5);
+    expect(
+      document.querySelector('.bpk-carousel__page-indicator-over-image'),
+    ).toBeTruthy();
   });
 
   it.each<TestCase>([
@@ -75,19 +84,25 @@ describe('BpkCarousel', () => {
     (expectedCount, actualCount, props) => {
       render(<BpkCarousel {...props} />);
 
-      expect(screen.getByTestId('image-gallery-scroll-container').childElementCount).toBe(expectedCount);
+      expect(
+        screen.getByTestId('image-gallery-scroll-container').childElementCount,
+      ).toBe(expectedCount);
     },
   );
 
   it('renders only one image when only one available (no fake images for the infinite scroll)', async () => {
     render(<BpkCarousel images={[images[0]]} />);
 
-    expect(screen.getByTestId('image-gallery-scroll-container').childElementCount).toBe(1);
+    expect(
+      screen.getByTestId('image-gallery-scroll-container').childElementCount,
+    ).toBe(1);
   });
 
   it('should render costom bottom', async () => {
     render(<BpkCarousel images={images} bottom={48} />);
 
-    expect(screen.getByTestId('carousel-page-indicator-container')).toHaveStyle({bottom: '48px'});
+    expect(screen.getByTestId('carousel-page-indicator-container')).toHaveStyle(
+      { bottom: '48px' },
+    );
   });
 });

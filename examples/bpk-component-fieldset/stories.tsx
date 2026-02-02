@@ -65,8 +65,6 @@ export const SplitInput = SplitInputExample;
 export const VisualTestWithZoom = {
   render: VisualTest,
   args: {
-    zoomEnabled: true
+    zoomEnabled: true,
   },
 };
-
-

@@ -26,7 +26,7 @@ describe('BpkCode', () => {
       <BpkCode>npm install react --save-dev</BpkCode>,
     );
     const codeElement = container.querySelector('code');
-    
+
     expect(codeElement).toBeTruthy();
     expect(codeElement?.textContent).toBe('npm install react --save-dev');
     expect(codeElement?.className).toContain('bpk-code');
@@ -37,7 +37,7 @@ describe('BpkCode', () => {
       <BpkCode alternate>npm install react --save-dev</BpkCode>,
     );
     const codeElement = container.querySelector('code');
-    
+
     expect(codeElement?.className).toContain('bpk-code');
     expect(codeElement?.className).toContain('bpk-code--alternate');
   });
@@ -47,7 +47,7 @@ describe('BpkCode', () => {
       <BpkCode className="my-class">npm install react --save-dev</BpkCode>,
     );
     const codeElement = container.querySelector('code');
-    
+
     expect(codeElement?.className).toContain('bpk-code');
     expect(codeElement?.className).toContain('my-class');
   });

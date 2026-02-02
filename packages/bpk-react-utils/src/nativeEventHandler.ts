@@ -20,14 +20,18 @@
 // This causes the elements to not emit events that would have been if they had been modified by the user directly.
 // In order to maintain the expected native behaviour of the input element, It's possible to call this function during an
 // "onEvent" handler and update the element value, together with updating react it's own state which isn't mapped to the elements value prop.
-function setNativeValue(element: HTMLInputElement, value: string | number, shouldDispatchChange = true) {
+function setNativeValue(
+  element: HTMLInputElement,
+  value: string | number,
+  shouldDispatchChange = true,
+) {
   const inputProto = window.HTMLInputElement.prototype;
   const descriptor = Object.getOwnPropertyDescriptor(
     inputProto,
     'value',
   ) as PropertyDescriptor;
   const setValue = descriptor.set;
-  
+
   if (setValue) {
     setValue.call(element, value);
     if (shouldDispatchChange) {

@@ -58,5 +58,5 @@ export const LinkWrapper = LinkWrapperExample;
 export const VisualTest = VisualTestExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

@@ -31,7 +31,7 @@ export default {
   title: 'bpk-component-code',
   component: BpkCode,
   subcomponents: {
-    BpkCodeBlock
+    BpkCodeBlock,
   },
 };
 
@@ -45,6 +45,6 @@ export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
   render: VisualTest,
   args: {
-    zoomEnabled: true
+    zoomEnabled: true,
   },
 };

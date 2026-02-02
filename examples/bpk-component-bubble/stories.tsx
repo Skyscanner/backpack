@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkBubble from '../../packages/bpk-component-bubble/src/BpkBubble';
 
 import {
@@ -37,6 +36,6 @@ export const VisualTest = VisualTestExample;
 export const VisualTestWithZoom = {
   render: VisualTest,
   args: {
-    zoomEnabled: true
+    zoomEnabled: true,
   },
 };

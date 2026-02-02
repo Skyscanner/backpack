@@ -47,5 +47,5 @@ export const PaginationVisibleExample = VisibleRangeExample;
 export const VisualTest = DefaultPaginationExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

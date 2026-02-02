@@ -18,7 +18,7 @@
 
 import BpkComponentJourneyArrow from '../../packages/bpk-component-journey-arrow';
 
-import JourneyArrowExample from './example'
+import JourneyArrowExample from './example';
 
 export default {
   title: 'bpk-component-journey-arrow',
@@ -27,10 +27,9 @@ export default {
 
 export const VisualTest = JourneyArrowExample;
 
-
 export const VisualTestWithZoom = {
   render: VisualTest,
   args: {
     zoomEnabled: true,
-  }
+  },
 };

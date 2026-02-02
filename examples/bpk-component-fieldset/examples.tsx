@@ -240,9 +240,7 @@ class FieldsetContainer extends Component<
   }
 
   onChange = (
-    e: ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >,
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
     const { value } = e.target;
 
@@ -411,12 +409,7 @@ const TextareaExample = () => (
     validStates={[true, false]}
     description="Please ensure if you have additional requirements they are entered here"
   >
-    <BpkTextarea
-      id="textarea"
-      name="textarea"
-      value=""
-      onChange={() => null}
-    />
+    <BpkTextarea id="textarea" name="textarea" value="" onChange={() => null} />
   </FieldsetContainer>
 );
 
@@ -560,5 +553,3 @@ export {
   MixedExample,
   SplitInputExample,
 };
-
-

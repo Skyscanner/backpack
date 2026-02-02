@@ -41,7 +41,7 @@ export const SurfaceContrast = SimpleSurfaceContrast;
 
 export const TabsNoHrefSurfaceContrast = TabsNoHrefSurfaceContrastForExample;
 
-export const TabsNoHrefCanvasDefault =TabsNoHrefCanvasDefaultForExample
+export const TabsNoHrefCanvasDefault = TabsNoHrefCanvasDefaultForExample;
 
 export const CanvasDefault = SimpleCanvasDefault;
 
@@ -62,6 +62,6 @@ export const VisualTest = VisualTestExample;
 export const VisualTestWithZoom = {
   render: VisualTest,
   args: {
-    zoomEnabled: true
-  }
-}
+    zoomEnabled: true,
+  },
+};

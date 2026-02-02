@@ -19,11 +19,21 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkSkeleton ,{ SIZE_TYPES, SKELETON_TYPES, IMAGE_SKELETON_STYLE } from '../index';
+import BpkSkeleton, {
+  SIZE_TYPES,
+  SKELETON_TYPES,
+  IMAGE_SKELETON_STYLE,
+} from '../index';
 
 describe('BpkImageSkeleton accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(<BpkSkeleton type={SKELETON_TYPES.image} size={SIZE_TYPES.default} style={IMAGE_SKELETON_STYLE.rounded} />);
+    const { container } = render(
+      <BpkSkeleton
+        type={SKELETON_TYPES.image}
+        size={SIZE_TYPES.default}
+        style={IMAGE_SKELETON_STYLE.rounded}
+      />,
+    );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

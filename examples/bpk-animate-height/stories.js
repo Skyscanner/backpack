@@ -22,7 +22,7 @@ import AnimateHeightExample from './examples';
 
 export default {
   title: 'bpk-animate-height',
-  component: AnimateHeight
+  component: AnimateHeight,
 };
 
 export const Example = () => (

@@ -24,9 +24,7 @@ import { Component } from 'react';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import debounce from 'lodash.debounce';
 
-import {
-  lineHeightSm,
-} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { lineHeightSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
 import { cssModules } from '../../bpk-react-utils';

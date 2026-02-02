@@ -50,15 +50,16 @@ type InputProps = {
   type?: (typeof INPUT_TYPES)[keyof typeof INPUT_TYPES];
 };
 
-type BaseProps = InputProps & ComponentProps<'input'> & {
-  valid?: boolean | null;
-  large?: boolean;
-  docked?: boolean;
-  dockedFirst?: boolean;
-  dockedMiddle?: boolean;
-  dockedLast?: boolean;
-  inputRef?: ((ref: HTMLInputElement) => void) | null;
-};
+type BaseProps = InputProps &
+  ComponentProps<'input'> & {
+    valid?: boolean | null;
+    large?: boolean;
+    docked?: boolean;
+    dockedFirst?: boolean;
+    dockedMiddle?: boolean;
+    dockedLast?: boolean;
+    inputRef?: ((ref: HTMLInputElement) => void) | null;
+  };
 
 export type PropsWithoutClearButonMode = BaseProps & {
   clearButtonMode?: 'never';

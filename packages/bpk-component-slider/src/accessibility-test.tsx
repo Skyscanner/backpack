@@ -30,14 +30,14 @@ window.ResizeObserver =
   }));
 
 describe('BpkSlider accessibility tests', () => {
-    const defaultProps = {
+  const defaultProps = {
     min: 0,
     max: 100,
     value: 25,
     step: 10,
     onChange: jest.fn(),
     onAfterChange: jest.fn(),
-  }
+  };
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
       <div>

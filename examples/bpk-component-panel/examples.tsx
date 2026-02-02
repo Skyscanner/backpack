@@ -25,10 +25,10 @@ export const DefaultExample = () => (
     <BpkPanel>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
       imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
-      consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non dictum
-      mi ante eu arcu.
+      consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non
+      dictum mi ante eu arcu.
     </BpkPanel>
-  </div >
+  </div>
 );
 
 export const WithoutPaddingExample = () => (
@@ -36,10 +36,10 @@ export const WithoutPaddingExample = () => (
     <BpkPanel padded={false}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
       imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
-      consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non dictum
-      mi ante eu arcu.
+      consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non
+      dictum mi ante eu arcu.
     </BpkPanel>
-  </div >
+  </div>
 );
 
 export const FullWidthExample = () => (
@@ -47,8 +47,8 @@ export const FullWidthExample = () => (
     <BpkPanel fullWidth>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
       imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
-      consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non dictum
-      mi ante eu arcu.
+      consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non
+      dictum mi ante eu arcu.
     </BpkPanel>
   </div>
 );
@@ -58,8 +58,8 @@ export const NoKeylineExample = () => (
     <BpkPanel keyline={false}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
       imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
-      consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non dictum
-      mi ante eu arcu.
+      consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non
+      dictum mi ante eu arcu.
     </BpkPanel>
   </div>
 );

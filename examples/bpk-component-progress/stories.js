@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkProgress from '../../packages/bpk-component-progress/src/BpkProgress';
 
 import {
@@ -37,5 +36,5 @@ export const Stepped = SteppedExample;
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

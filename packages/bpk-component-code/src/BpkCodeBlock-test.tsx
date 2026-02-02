@@ -27,7 +27,7 @@ describe('BpkCodeBlock', () => {
     );
     const preElement = container.querySelector('pre');
     const codeElement = container.querySelector('code');
-    
+
     expect(preElement).toBeTruthy();
     expect(codeElement).toBeTruthy();
     expect(codeElement?.textContent).toBe('npm install react --save-dev');
@@ -41,7 +41,7 @@ describe('BpkCodeBlock', () => {
       <BpkCodeBlock alternate>npm install react --save-dev</BpkCodeBlock>,
     );
     const preElement = container.querySelector('pre');
-    
+
     expect(preElement?.className).toContain('bpk-code__pre');
     expect(preElement?.className).toContain('bpk-code__pre--alternate');
   });
@@ -53,7 +53,7 @@ describe('BpkCodeBlock', () => {
       </BpkCodeBlock>,
     );
     const preElement = container.querySelector('pre');
-    
+
     expect(preElement?.className).toContain('bpk-code__pre');
     expect(preElement?.className).toContain('my-custom-class');
   });

@@ -27,15 +27,15 @@ import STYLES from './bpk-content-bubble.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-  const BpkContentBubble = ({
-    className = null,
-    content = null,
-    contentClassName = null,
-    flareProps = null,
-    rounded = true,
-    showPointer = true,
-    ...rest
-  }) => {
+const BpkContentBubble = ({
+  className = null,
+  content = null,
+  contentClassName = null,
+  flareProps = null,
+  rounded = true,
+  showPointer = true,
+  ...rest
+}) => {
   const wrapperClassNames = [getClassName('bpk-content-bubble__wrapper')];
   const contentClassNames = [
     getClassName('bpk-content-bubble__content-wrapper'),
@@ -84,17 +84,15 @@ const getClassName = cssModules(STYLES);
           {content}
           {/* These rounded svgs are required as the container background extends into the flare meaning that when we "round" the container the rounded bottom corners are hidden by the flare. */}
           {rounded && showPointer && (
-          <>
-            <CornerRadius className={leftCornerRadiusClassNames.join(' ')} />
-            <CornerRadius className={rightCornerRadiusClassNames.join(' ')} />
-          </>
+            <>
+              <CornerRadius className={leftCornerRadiusClassNames.join(' ')} />
+              <CornerRadius className={rightCornerRadiusClassNames.join(' ')} />
+            </>
           )}
         </div>
         {showPointer && (
           <div className={getClassName('bpk-content-bubble__pointer')}>
-            <BpkFlareBar
-              {...flareProps}
-            />
+            <BpkFlareBar {...flareProps} />
           </div>
         )}
       </div>

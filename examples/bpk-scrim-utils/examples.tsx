@@ -25,50 +25,53 @@ import STYLES from './examples.scss';
 const getClassName = cssModules(STYLES);
 
 const DialogContent = () => (
-    <section
-        tabIndex={-1}
-        role="dialog"
-        className={getClassName('bpk-scrim-utils-example__dialog')}>
-        <div className={getClassName('bpk-scrim-utils-example__dialog-content')}>
-            <div>Dialog content here.</div>
-            <BpkButton>Some button</BpkButton>
-        </div>
-    </section>
-)
+  <section
+    tabIndex={-1}
+    role="dialog"
+    className={getClassName('bpk-scrim-utils-example__dialog')}
+  >
+    <div className={getClassName('bpk-scrim-utils-example__dialog-content')}>
+      <div>Dialog content here.</div>
+      <BpkButton>Some button</BpkButton>
+    </div>
+  </section>
+);
 const DialogContentWithScrim = withScrimmedPortal(DialogContent);
 
 const WithPortalScrimExample = () => (
-    <div id="pagewrap">
-        <div>
-            This element should be hidden from AT by the scrim.
-            It should also not be possible to tab to it.
-        </div>
-        <DialogContentWithScrim
-            getApplicationElement={() => document.getElementById('pagewrap')}
-            closeOnScrimClick={false}
-            containerClassName={getClassName('bpk-scrim-utils-example__dialog-container')}
-        />
+  <div id="pagewrap">
+    <div>
+      This element should be hidden from AT by the scrim. It should also not be
+      possible to tab to it.
     </div>
+    <DialogContentWithScrim
+      getApplicationElement={() => document.getElementById('pagewrap')}
+      closeOnScrimClick={false}
+      containerClassName={getClassName(
+        'bpk-scrim-utils-example__dialog-container',
+      )}
+    />
+  </div>
 );
 
 const WithCustomElementAndPortalScrimExample = () => (
-    <div>
-        <div id="portalElement">
-            Dialog attached here.
-        </div>
-        <div id="pagewrap">
-            <div>
-            This element should be hidden from AT by the scrim.
-            It should also not be possible to tab to it.
-            </div>
-            <DialogContentWithScrim
-                getApplicationElement={() => document.getElementById('pagewrap')}
-                closeOnScrimClick={false}
-                containerClassName={getClassName('bpk-scrim-utils-example__dialog-container')}
-                renderTarget={() => document.getElementById('portalElement')}
-            />
-        </div>
+  <div>
+    <div id="portalElement">Dialog attached here.</div>
+    <div id="pagewrap">
+      <div>
+        This element should be hidden from AT by the scrim. It should also not
+        be possible to tab to it.
+      </div>
+      <DialogContentWithScrim
+        getApplicationElement={() => document.getElementById('pagewrap')}
+        closeOnScrimClick={false}
+        containerClassName={getClassName(
+          'bpk-scrim-utils-example__dialog-container',
+        )}
+        renderTarget={() => document.getElementById('portalElement')}
+      />
     </div>
-)
+  </div>
+);
 
 export { WithPortalScrimExample, WithCustomElementAndPortalScrimExample };

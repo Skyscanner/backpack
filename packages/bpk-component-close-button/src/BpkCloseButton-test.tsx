@@ -22,12 +22,12 @@ import CustomCloseIcon from '../../bpk-component-icon/sm/close-circle';
 
 import BpkCloseButton from './BpkCloseButton';
 
-const error = jest.spyOn(console, "error").mockImplementation(() => {});
+const error = jest.spyOn(console, 'error').mockImplementation(() => {});
 
 describe('BpkCloseButton', () => {
   beforeEach(() => {
     error.mockReset();
-  })
+  });
   it('should render correctly', () => {
     const { asFragment } = render(
       <BpkCloseButton label="Close" onClick={() => null} />,

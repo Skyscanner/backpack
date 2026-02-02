@@ -67,7 +67,7 @@ class BpkHorizontalNav extends Component<Props> {
   componentDidMount() {
     requestAnimationFrame(() => {
       this.scrollSelectedIntoView(false);
-    })
+    });
   }
 
   componentDidUpdate() {
@@ -207,7 +207,7 @@ BpkHorizontalNav.propTypes = {
   showUnderline: PropTypes.bool,
   trailingScrollIndicatorClassName: PropTypes.string,
   type: PropTypes.oneOf(Object.keys(HORIZONTAL_NAV_TYPES)),
-}
+};
 
 BpkHorizontalNav.defaultProps = {
   ariaLabel: null,

@@ -18,7 +18,11 @@
 
 import type { SyntheticEvent } from 'react';
 
-import { TransitionInitialMount, cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+import {
+  TransitionInitialMount,
+  cssModules,
+  getDataComponentAttribute,
+} from '../../bpk-react-utils';
 
 import STYLES from './bpk-scrim.module.scss';
 

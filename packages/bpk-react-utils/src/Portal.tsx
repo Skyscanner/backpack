@@ -290,7 +290,7 @@ class Portal extends Component<Props, State> {
 
   // This function is taken from modernizr
   // See https://github.com/modernizr/modernizr
-   
+
   supportsPassiveEvents() {
     let supportsPassiveOption = false;
     try {

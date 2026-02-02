@@ -30,4 +30,3 @@ export const SkyscannerRelativeFont = SkyscannerRelativeExample;
 export const LarkenFont = LarkenExample;
 
 export const VisualTest = MixedExample;
-

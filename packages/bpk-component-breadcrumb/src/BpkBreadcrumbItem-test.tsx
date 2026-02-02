@@ -31,18 +31,22 @@ describe('BpkBreadcrumbItem', () => {
 
     expect(screen.getByRole('listitem')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Backpack' })).toBeInTheDocument();
-    expect(screen.getByRole('link')).toHaveAttribute('href', 'https://skyscanner.design/');
+    expect(screen.getByRole('link')).toHaveAttribute(
+      'href',
+      'https://skyscanner.design/',
+    );
     expect(screen.getByText('Backpack')).toBeInTheDocument();
   });
 
   it('should render correctly with a "active" prop', () => {
-    render(
-      <BpkBreadcrumbItem active>Backpack</BpkBreadcrumbItem>,
-    );
+    render(<BpkBreadcrumbItem active>Backpack</BpkBreadcrumbItem>);
 
     expect(screen.getByRole('listitem')).toBeInTheDocument();
     expect(screen.getByText('Backpack')).toBeInTheDocument();
-    expect(screen.getByText('Backpack')).toHaveAttribute('aria-current', 'page');
+    expect(screen.getByText('Backpack')).toHaveAttribute(
+      'aria-current',
+      'page',
+    );
     // Should not render a link when active
     expect(screen.queryByRole('link')).not.toBeInTheDocument();
   });
@@ -56,7 +60,7 @@ describe('BpkBreadcrumbItem', () => {
         Backpack
       </BpkBreadcrumbItem>,
     );
-    
+
     expect(screen.getByRole('listitem')).toBeInTheDocument();
     expect(container.querySelector('.my-custom-class')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Backpack' })).toBeInTheDocument();
@@ -73,7 +77,10 @@ describe('BpkBreadcrumbItem', () => {
     );
 
     expect(screen.getByRole('listitem')).toBeInTheDocument();
-    expect(screen.getByRole('listitem')).toHaveAttribute('testid', 'arbitrary value');
+    expect(screen.getByRole('listitem')).toHaveAttribute(
+      'testid',
+      'arbitrary value',
+    );
     expect(screen.getByRole('link', { name: 'Backpack' })).toBeInTheDocument();
   });
 
@@ -89,6 +96,9 @@ describe('BpkBreadcrumbItem', () => {
 
     expect(screen.getByRole('listitem')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Backpack' })).toBeInTheDocument();
-    expect(screen.getByRole('link')).toHaveAttribute('testid', 'arbitrary value');
+    expect(screen.getByRole('link')).toHaveAttribute(
+      'testid',
+      'arbitrary value',
+    );
   });
 });

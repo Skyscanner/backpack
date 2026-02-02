@@ -26,16 +26,16 @@ import STYLES from './BpkContentCards.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  heading: string,
+  heading: string;
   cards: Array<{
     image: {
-      url: string,
-      alt?: string,
-    },
-    headline: string,
-    description: string,
-    href: string,
-  }>,
+      url: string;
+      alt?: string;
+    };
+    headline: string;
+    description: string;
+    href: string;
+  }>;
 };
 
 const BpkContentCards = ({ cards, heading }: Props) => {
@@ -45,7 +45,9 @@ const BpkContentCards = ({ cards, heading }: Props) => {
 
   return (
     <div>
-      <h2 className={getClassName('bpk-content-cards--header-text')}>{heading}</h2>
+      <h2 className={getClassName('bpk-content-cards--header-text')}>
+        {heading}
+      </h2>
       <div role="list" className={getClassName('bpk-content-cards--layout')}>
         {cards.map((card, index) => (
           <div role="listitem" key={index}>

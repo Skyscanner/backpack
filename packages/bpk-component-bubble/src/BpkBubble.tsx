@@ -30,7 +30,11 @@ export type Props = {
 
 const BpkBubble = ({ children }: Props) => (
   <span className={getClassName('bpk-bubble')}>
-    <BpkText textStyle={TEXT_STYLES.label3} tagName="span" color={TEXT_COLORS.textOnDark}>
+    <BpkText
+      textStyle={TEXT_STYLES.label3}
+      tagName="span"
+      color={TEXT_COLORS.textOnDark}
+    >
       {children}
     </BpkText>
     <BpkBubbleArrow styles={getClassName('bpk-bubble__arrow')} />

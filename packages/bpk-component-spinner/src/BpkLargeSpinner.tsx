@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import { cssModules } from '../../bpk-react-utils';
 
 import SPINNER_TYPES from './spinnerTypes';
@@ -29,10 +28,10 @@ import STYLES from './BpkSpinner.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  type?: SpinnerTypes,
-  className?: string | null,
-  alignToButton?: boolean,
-  [rest: string]: any,
+  type?: SpinnerTypes;
+  className?: string | null;
+  alignToButton?: boolean;
+  [rest: string]: any;
 };
 
 const BpkLargeSpinner = ({
@@ -41,7 +40,6 @@ const BpkLargeSpinner = ({
   type = SPINNER_TYPES.dark,
   ...rest
 }: Props) => {
-
   const classNames = getClassName(
     'bpk-spinner',
     'bpk-spinner--large',
@@ -52,11 +50,8 @@ const BpkLargeSpinner = ({
 
   return (
     <span className={classNames}>
-      <LgSpinner
-        {...rest}
-      />
+      <LgSpinner {...rest} />
     </span>
-
   );
 };
 

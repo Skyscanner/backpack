@@ -21,18 +21,16 @@ import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkPanel.module.scss';
 
-
 const getClassName = cssModules(STYLES);
 
 export type Props = {
   children: ReactNode;
-  padded?: boolean,
-  fullWidth?: boolean,
-  className?: string | null,
-  keyline?: boolean,
+  padded?: boolean;
+  fullWidth?: boolean;
+  className?: string | null;
+  keyline?: boolean;
   [rest: string]: any;
 };
-
 
 const BpkPanel = ({
   children,

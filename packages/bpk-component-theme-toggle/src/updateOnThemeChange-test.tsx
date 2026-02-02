@@ -38,7 +38,7 @@ describe('EnhancedComponent', () => {
         <p>Children</p>
       </EnhancedComponent>,
     );
-    
+
     expect(container.querySelector('div')).toBeInTheDocument();
     expect(container.querySelector('p')).toBeInTheDocument();
     expect(container.textContent).toBe('Children');

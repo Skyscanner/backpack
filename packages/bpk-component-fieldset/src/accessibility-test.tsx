@@ -40,5 +40,3 @@ describe('BpkFieldset accessibility tests', () => {
     expect(results).toHaveNoViolations();
   });
 });
-
-

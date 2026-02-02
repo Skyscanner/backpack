@@ -172,11 +172,21 @@ const MediumWithTrailingTextExample = () => (
 );
 
 const MediumWithLeadingAndTrailingTextExample = () => (
-  <BpkPrice size={SIZES.medium} leadingText="from" price="£1,830" trailingText="per day" />
+  <BpkPrice
+    size={SIZES.medium}
+    leadingText="from"
+    price="£1,830"
+    trailingText="per day"
+  />
 );
 
 const MediumWithPreviousPriceExample = () => (
-  <BpkPrice size={SIZES.medium} previousPrice="£2,033" price="£1,830" trailingText="per day" />
+  <BpkPrice
+    size={SIZES.medium}
+    previousPrice="£2,033"
+    price="£1,830"
+    trailingText="per day"
+  />
 );
 
 const MediumWithPreviousPriceLeadingTextExample = () => (
@@ -225,7 +235,12 @@ const MediumRightExample = () => (
 );
 
 const MediumRightWithTrailingTextExample = () => (
-  <BpkPrice size={SIZES.medium} price="£1,830" trailingText="per day" align={ALIGNS.right} />
+  <BpkPrice
+    size={SIZES.medium}
+    price="£1,830"
+    trailingText="per day"
+    align={ALIGNS.right}
+  />
 );
 
 const MediumRightWithLeadingandTrailingTextExample = () => (

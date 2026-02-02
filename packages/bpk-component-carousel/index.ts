@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import BpkCarousel from "./src/BpkCarousel";
+import BpkCarousel from './src/BpkCarousel';
 
-export default BpkCarousel
+export default BpkCarousel;

@@ -17,7 +17,11 @@
  */
 
 import DefaultExample from './examples';
-import { BpkDescriptionList, BpkDescriptionDetailsMock, BpkDescriptionTermMock } from './stories-utils'; 
+import {
+  BpkDescriptionList,
+  BpkDescriptionDetailsMock,
+  BpkDescriptionTermMock,
+} from './stories-utils';
 
 export default {
   title: 'bpk-component-description-list',
@@ -32,5 +36,5 @@ export const DescriptionList = DefaultExample;
 export const VisualTest = DefaultExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

@@ -32,7 +32,7 @@ describe('BpkSwitch form test', () => {
         <form data-testid="form">
           <BpkSwitch
             name="switch"
-            ariaLabel='Switch'
+            ariaLabel="Switch"
             checked={isChecked}
             onChange={() => setIsChecked(!isChecked)}
             data-testid="myswitch"
@@ -63,7 +63,7 @@ describe('BpkSwitch form test', () => {
         <form data-testid="form">
           <BpkSwitch
             name="switch"
-            ariaLabel='Switch'
+            ariaLabel="Switch"
             checked={isChecked}
             onChange={() => setIsChecked(!isChecked)}
             data-testid="myswitch"
@@ -74,7 +74,7 @@ describe('BpkSwitch form test', () => {
     };
     render(<Wrap />);
     document.addEventListener('change', formValidation);
-    
+
     const mySwitch = screen.getByTestId('myswitch');
     expect(mySwitch).not.toBeChecked();
     expect(formValidation).not.toHaveBeenCalled();

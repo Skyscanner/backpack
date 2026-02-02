@@ -21,8 +21,7 @@ import { renderHook } from '@testing-library/react';
 import { useScrollToInitialImage, scrollToIndex } from './utils';
 
 describe('useScrollToInitialImage', () => {
-    it('should scroll to initial image on mount', () => {
-
+  it('should scroll to initial image on mount', () => {
     // Mock parent and scroll function
     const parent = document.createElement('div');
     const scrollMock = jest.fn();
@@ -37,7 +36,6 @@ describe('useScrollToInitialImage', () => {
     const child = document.createElement('div');
     parent.appendChild(child);
 
-
     const imagesRef = { current: [child, document.createElement('div')] };
     const initialImageIndex = 0;
 
@@ -46,7 +44,7 @@ describe('useScrollToInitialImage', () => {
     expect(scrollMock).toHaveBeenCalledTimes(1);
 
     expect(scrollMock).toHaveBeenCalledWith(
-      expect.objectContaining({ left: child.offsetLeft, behavior: 'auto' })
+      expect.objectContaining({ left: child.offsetLeft, behavior: 'auto' }),
     );
   });
 });
@@ -63,29 +61,29 @@ describe('scrollToIndex', () => {
 
     const child1 = document.createElement('div');
     const child2 = document.createElement('div');
-    
+
     // Mock offsetLeft for the elements
     Object.defineProperty(child1, 'offsetLeft', {
       value: 0,
-      configurable: true
+      configurable: true,
     });
-    
+
     Object.defineProperty(child2, 'offsetLeft', {
       value: 200,
-      configurable: true
+      configurable: true,
     });
-    
+
     parent.appendChild(child1);
     parent.appendChild(child2);
 
     const imagesRef = { current: [child1, child2] };
     const targetIndex = 1;
-    
+
     scrollToIndex(targetIndex, imagesRef);
 
     expect(scrollMock).toHaveBeenCalledTimes(1);
     expect(scrollMock).toHaveBeenCalledWith(
-      expect.objectContaining({ left: 200, behavior: 'smooth' })
+      expect.objectContaining({ left: 200, behavior: 'smooth' }),
     );
   });
 });

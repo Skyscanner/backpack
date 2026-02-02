@@ -51,12 +51,10 @@ export default {
           <Title />
           <ArgTypes exclude={['zoomEnabled']} />
           <Markdown>
-            {
-            `**Note:** Additionally, all native \`input\` attributes such as \`placeholder\` and \`onChange\` are supported.`
-            }
+            {`**Note:** Additionally, all native \`input\` attributes such as \`placeholder\` and \`onChange\` are supported.`}
           </Markdown>
         </>
-      )
+      ),
     },
   },
 };
@@ -79,5 +77,5 @@ export const ManuallyDocked = ManuallyDockedExample;
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

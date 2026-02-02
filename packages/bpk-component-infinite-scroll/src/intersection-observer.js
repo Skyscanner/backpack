@@ -18,9 +18,9 @@
 
 if (typeof window === 'undefined') {
   global.IntersectionObserver = class {
-    observe() {}  
+    observe() {}
 
-    unobserve() {}  
+    unobserve() {}
   };
 } else {
   require('intersection-observer'); /* eslint-disable-line global-require */

@@ -19,8 +19,8 @@
 import BpkSwitch from '../../packages/bpk-component-switch';
 
 type Props = {
-  checked?: boolean,
-  [rest: string]: any
+  checked?: boolean;
+  [rest: string]: any;
 };
 
 const DefaultExample = ({ ...rest }: Props) => (
@@ -32,8 +32,8 @@ const SmallExample = ({ ...rest }: Props) => (
 );
 
 // Putting the switch in a container which we know is too small to contain the label and the switch
-const ReducedSpaceExample =  ({ ...rest }: Props) => (
-  <div style={{ width: "4rem" }}>
+const ReducedSpaceExample = ({ ...rest }: Props) => (
+  <div style={{ width: '4rem' }}>
     <BpkSwitch {...rest} ariaLabel="Activate Backpack" />
     <BpkSwitch {...rest} ariaLabel="Activate Backpack" small />
   </div>
@@ -49,6 +49,5 @@ const MixedExample = () => (
     <ReducedSpaceExample checked />
   </div>
 );
-
 
 export { DefaultExample, SmallExample, MixedExample, ReducedSpaceExample };

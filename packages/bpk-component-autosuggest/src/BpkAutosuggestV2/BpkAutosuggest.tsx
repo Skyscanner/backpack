@@ -272,7 +272,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           return {
             ...changes,
             isOpen: forceOpen ? true : changes.isOpen,
-            highlightedIndex: targetHighlightedIndex ?? changes.highlightedIndex,
+            highlightedIndex:
+              targetHighlightedIndex ?? changes.highlightedIndex,
           };
         }
       }
@@ -544,7 +545,9 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         return (
           <li
             key={suggestionKey}
-            aria-labelledby={sectionId && itemId ? `${sectionId} ${itemId}` : undefined}
+            aria-labelledby={
+              sectionId && itemId ? `${sectionId} ${itemId}` : undefined
+            }
             {...getItemProps({
               item: suggestion,
               index: globalIndex,

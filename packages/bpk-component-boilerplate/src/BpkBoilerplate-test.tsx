@@ -34,9 +34,7 @@ describe('BpkBoilerplate', () => {
   });
 
   it('should support arbitrary props', () => {
-    const { getAllByTestId } = render(
-      <BpkBoilerplate data-testid="123" />,
-    );
+    const { getAllByTestId } = render(<BpkBoilerplate data-testid="123" />);
     expect(getAllByTestId('123').length).toBe(1);
   });
 });

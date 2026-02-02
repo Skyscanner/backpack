@@ -44,16 +44,16 @@ export type Props = {
   children: ReactNode;
 };
 
-const BpkVisuallyHidden = ({
-  as: Element = 'span',
-  children,
-}: Props) => {
+const BpkVisuallyHidden = ({ as: Element = 'span', children }: Props) => {
   const classNames = getClassName('bpk-visually-hidden');
 
   return (
     // Allowed, Element is always a dom element.
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <Element className={classNames} {...getDataComponentAttribute('VisuallyHidden')}>
+    <Element
+      className={classNames}
+      {...getDataComponentAttribute('VisuallyHidden')}
+    >
       {children}
     </Element>
   );

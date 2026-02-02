@@ -21,7 +21,7 @@ import { render } from '@testing-library/react';
 import BpkNavigationBar, { BAR_STYLES } from './BpkNavigationBar';
 import BpkNavigationIconButton from './BpkNavigationBarIconButton';
 
-const Icon = (props: {[key: string]: any}) => <span {...props} />;
+const Icon = (props: { [key: string]: any }) => <span {...props} />;
 
 describe('BpkNavigationBar', () => {
   it('should render correctly', () => {
@@ -52,11 +52,7 @@ describe('BpkNavigationBar', () => {
         id="test"
         title="test"
         leadingButton={
-          <BpkNavigationIconButton
-            icon={Icon}
-            label="test"
-            onClick={() => {}}
-          >
+          <BpkNavigationIconButton icon={Icon} label="test" onClick={() => {}}>
             Click Here
           </BpkNavigationIconButton>
         }
@@ -72,11 +68,7 @@ describe('BpkNavigationBar', () => {
         id="test"
         title="test"
         trailingButton={
-          <BpkNavigationIconButton
-            icon={Icon}
-            label="test"
-            onClick={() => {}}
-          >
+          <BpkNavigationIconButton icon={Icon} label="test" onClick={() => {}}>
             Click Here
           </BpkNavigationIconButton>
         }
@@ -92,11 +84,7 @@ describe('BpkNavigationBar', () => {
         id="test"
         title={<span>test</span>}
         trailingButton={
-          <BpkNavigationIconButton
-            icon={Icon}
-            label="test"
-            onClick={() => {}}
-          >
+          <BpkNavigationIconButton icon={Icon} label="test" onClick={() => {}}>
             Click Here
           </BpkNavigationIconButton>
         }

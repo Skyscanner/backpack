@@ -116,5 +116,3 @@ describe('BpkCheckbox', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 });
-
-

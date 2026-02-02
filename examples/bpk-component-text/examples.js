@@ -16,9 +16,11 @@
  * limitations under the License.
  */
 
-import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
-import { withDefaultProps , cssModules } from '../../packages/bpk-react-utils';
-
+import BpkText, {
+  TEXT_COLORS,
+  TEXT_STYLES,
+} from '../../packages/bpk-component-text';
+import { withDefaultProps, cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 
@@ -174,20 +176,23 @@ const ColorPropExample = () => (
 
     <div className={getClassName('bpk-stories-text_success')}>
       <BpkText tagName="p" color={TEXT_COLORS.textSecondary}>
-          Text with color prop textSecondary with parent className override
+        Text with color prop textSecondary with parent className override
       </BpkText>
     </div>
 
     <div className={getClassName('bpk-stories-text_success')}>
-       <BpkText tagName="p">
+      <BpkText tagName="p">
         Text without color prop with parent color override
       </BpkText>
     </div>
 
-    <BpkText tagName="p" className={getClassName('bpk-stories-text_success')} color={TEXT_COLORS.textSecondary} >
+    <BpkText
+      tagName="p"
+      className={getClassName('bpk-stories-text_success')}
+      color={TEXT_COLORS.textSecondary}
+    >
       Text with color prop textSecondary with self className override
     </BpkText>
-
   </div>
 );
 

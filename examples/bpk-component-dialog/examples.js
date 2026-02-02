@@ -123,7 +123,11 @@ const WithIconExample = () => (
   <div>
     <div>
       <span>Default Icon Dialog</span>
-      <DialogContainer initiallyOpen headerIcon={<TickIcon />} dismissible={false}>
+      <DialogContainer
+        initiallyOpen
+        headerIcon={<TickIcon />}
+        dismissible={false}
+      >
         <Paragraph>
           This is a default dialog with an icon. You can put anything you want
           in here.

@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkLoadingButton from '../../packages/bpk-component-loading-button/src/BpkLoadingButton';
 
 import {
@@ -66,5 +65,5 @@ export const Submit = SubmitExample;
 export const VisualTest = VisualExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

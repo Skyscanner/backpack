@@ -69,7 +69,7 @@ class SliderContainer extends Component {
           value={this.state.value}
           ariaLabel={['minimum', 'maximum']}
           ariaValuetext={[this.state.value[0], this.state.value[1]]}
-          inputProps={[{name: 'min'}, {name: 'max'}]}
+          inputProps={[{ name: 'min' }, { name: 'max' }]}
         />
         <br />
       </div>

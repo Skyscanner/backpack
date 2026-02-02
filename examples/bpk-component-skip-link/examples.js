@@ -46,31 +46,25 @@ const RealisticExample = () => {
   return (
     <div>
       <p>
-        Press <kbd>Tab</kbd> to reveal the skip link, then press <kbd>Enter</kbd>.
+        Press <kbd>Tab</kbd> to reveal the skip link, then press{' '}
+        <kbd>Enter</kbd>.
       </p>
 
       <BpkSkipLink
         href="#main"
         label="Skip to main content"
-        onClick={
-          (e) => {
-            e.preventDefault();
-            onSkipToMain();
-          }
-        }
+        onClick={(e) => {
+          e.preventDefault();
+          onSkipToMain();
+        }}
       />
 
-      <main
-        id="main"
-        tabIndex={-1}
-      >
+      <main id="main" tabIndex={-1}>
         <h1>Main content</h1>
-        <p>
-          Focus should land here after activating the skip link.
-        </p>
+        <p>Focus should land here after activating the skip link.</p>
       </main>
     </div>
-  )
+  );
 };
 
 export { DefaultExample, DocsSiteExample, RealisticExample };

@@ -24,7 +24,8 @@ import { type PropType } from 'prop-types';
 // We disable eslint on the below line because it breaks the flow type definitions and the FlowIssue comment below
 // We can remove this when we migrate this file to TypeScript.
 // $FlowIssue[value-as-type] - PropType is imported as a type so is incorrectly reporting the PropType is not a valid type
-const deprecated = (propType: PropType, alternativeSuggestion: string) =>  
+const deprecated =
+  (propType: PropType, alternativeSuggestion: string) =>
   (
     props: { [string]: any },
     propName: string,

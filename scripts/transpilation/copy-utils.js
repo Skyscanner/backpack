@@ -17,7 +17,7 @@
  */
 
 const { execSync } = require('child_process');
-const fs = require("fs");
+const fs = require('fs');
 
 // eslint-disable-next-line no-console
 console.log('Copying bpk-mixins...');
@@ -35,15 +35,17 @@ if (!fs.existsSync('dist/bpk-stylesheets')) {
   execSync(`mkdir dist/bpk-stylesheets`);
 }
 
-const styleFiles = execSync('find packages/bpk-stylesheets -name "*.scss" -o -name "*.js" -o -name "*.css" | grep -v  "webpack.config.babel.js" | grep -v "build.js"').toString()
+const styleFiles = execSync(
+  'find packages/bpk-stylesheets -name "*.scss" -o -name "*.js" -o -name "*.css" | grep -v  "webpack.config.babel.js" | grep -v "build.js"',
+)
+  .toString()
   .split('\n')
   .filter((s) => s !== '');
 
 styleFiles.forEach((styleFile) => {
   const component = styleFile.split('packages/bpk-stylesheets/')[1];
   execSync(`cp ${styleFile} dist/bpk-stylesheets/${component}`);
-})
+});
 
 // eslint-disable-next-line no-console
 console.log('bpk-stylesheets copied.  👍');
-

@@ -28,10 +28,12 @@ import STYLES from './BpkPaginationNudger.module.scss';
 
 const getClassName = cssModules(STYLES);
 const AlignedArrowLeftIcon = withRtlSupport(withButtonAlignment(ArrowLeftIcon));
-const AlignedArrowRightIcon = withRtlSupport(withButtonAlignment(ArrowRightIcon));
+const AlignedArrowRightIcon = withRtlSupport(
+  withButtonAlignment(ArrowRightIcon),
+);
 
 const nudgerIcon = (forward) =>
-  forward ? (<AlignedArrowRightIcon/>) : (<AlignedArrowLeftIcon/>);
+  forward ? <AlignedArrowRightIcon /> : <AlignedArrowLeftIcon />;
 
 const BpkPaginationNudger = (props) => {
   const { disabled, forward, label, onNudge } = props;

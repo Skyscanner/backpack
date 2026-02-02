@@ -106,19 +106,19 @@ const BpkStar = ({
   }
 
   return type === STAR_TYPES.FULL ? (
-    <span className={iconClassNames} >
+    <span className={iconClassNames}>
       <Icon
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-      {...rest} />
+        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
+        {...rest}
+      />
     </span>
-
   ) : (
-    <span className={iconClassNames} >
+    <span className={iconClassNames}>
       <OutlineIcon
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-      {...rest} />
+        // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
+        {...rest}
+      />
     </span>
-
   );
 };
 

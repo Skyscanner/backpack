@@ -300,17 +300,27 @@ describe('BpkCalendarContainer', () => {
 
     await fireEvent.keyDown(getDate(originStr), { key: 'ArrowRight' });
     expect(
-      getDate(/Tuesday, 2nd March/).classList.contains('bpk-calendar-date--focused'),
+      getDate(/Tuesday, 2nd March/).classList.contains(
+        'bpk-calendar-date--focused',
+      ),
     ).toBe(true);
 
-    await fireEvent.keyDown(getDate(/Tuesday, 2nd March/i), { key: 'ArrowDown' });
+    await fireEvent.keyDown(getDate(/Tuesday, 2nd March/i), {
+      key: 'ArrowDown',
+    });
     expect(
-      getDate(/Tuesday, 9th March/i).classList.contains('bpk-calendar-date--focused'),
+      getDate(/Tuesday, 9th March/i).classList.contains(
+        'bpk-calendar-date--focused',
+      ),
     ).toBe(true);
 
-    await fireEvent.keyDown(getDate(/Tuesday, 9th March/i), { key: 'ArrowLeft' });
+    await fireEvent.keyDown(getDate(/Tuesday, 9th March/i), {
+      key: 'ArrowLeft',
+    });
     expect(
-      getDate(/Monday, 8th March/i).classList.contains('bpk-calendar-date--focused'),
+      getDate(/Monday, 8th March/i).classList.contains(
+        'bpk-calendar-date--focused',
+      ),
     ).toBe(true);
 
     await fireEvent.keyDown(getDate(/Monday, 8th March/i), { key: 'ArrowUp' });
@@ -378,7 +388,9 @@ describe('BpkCalendarContainer', () => {
 
     await fireEvent.keyDown(getDate(/28th February/i), { key: 'ArrowRight' });
     expect(
-      getDate(/Monday, 1st March/i).classList.contains('bpk-calendar-date--focused'),
+      getDate(/Monday, 1st March/i).classList.contains(
+        'bpk-calendar-date--focused',
+      ),
     ).toBe(true);
     expect(onMonthChange.mock.calls.length).toEqual(1);
     expect(onMonthChange.mock.calls[0][1]).toEqual({

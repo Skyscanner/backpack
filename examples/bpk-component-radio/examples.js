@@ -21,10 +21,7 @@
 import { Component } from 'react';
 
 import BpkRadio from '../../packages/bpk-component-radio';
-import {
-  action,
-  BpkDarkExampleWrapper,
-} from '../bpk-storybook-utils';
+import { action, BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores doloremque, expedita
 quaerat temporibus ipsam, ut, ipsa, velit sed assumenda suscipit dolore quod similique delectus numquam neque!
@@ -51,7 +48,7 @@ class GroupExample extends Component<{}, { value: string }> {
             <BpkRadio
               {...rest}
               id={city}
-              name='group_example'
+              name="group_example"
               label={city}
               onChange={(event) => {
                 this.updateValue(event.target.value);

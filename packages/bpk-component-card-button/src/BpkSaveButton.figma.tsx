@@ -16,27 +16,27 @@
  * limitations under the License.
  */
 
-import figma from "@figma/code-connect"
+import figma from '@figma/code-connect';
 
-import BpkSaveButton, { SIZE_TYPES, STYLE_TYPES } from "./BpkSaveButton"
+import BpkSaveButton, { SIZE_TYPES, STYLE_TYPES } from './BpkSaveButton';
 
 figma.connect(
   BpkSaveButton,
-  "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=22719%3A26190",
+  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=22719%3A26190',
   {
     props: {
-      size: figma.enum("Size", {
+      size: figma.enum('Size', {
         Default: SIZE_TYPES.default,
         Small: SIZE_TYPES.small,
       }),
-      style: figma.enum("Style", {
+      style: figma.enum('Style', {
         Default: STYLE_TYPES.default,
         Contained: STYLE_TYPES.contained,
-        "On Dark": STYLE_TYPES.onDark,
+        'On Dark': STYLE_TYPES.onDark,
       }),
       checked: figma.enum('State', {
-        "Saved": true,
-      })
+        Saved: true,
+      }),
     },
     example: ({ checked, size, style }) => (
       <BpkSaveButton
@@ -48,4 +48,4 @@ figma.connect(
       />
     ),
   },
-)
+);

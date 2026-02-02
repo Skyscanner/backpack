@@ -34,7 +34,7 @@ const mockColumnData = {
   label: columnLabel,
   minWidth: 0,
   sortDirection,
-  width: '6.25rem',  
+  width: '6.25rem',
   getHeaderProps: jest.fn(() => ({})),
   render: jest.fn(() => columnLabel),
 };

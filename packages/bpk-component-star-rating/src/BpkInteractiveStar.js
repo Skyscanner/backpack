@@ -70,7 +70,7 @@ const BpkInteractiveStar = ({
       aria-pressed={selected}
       type="button"
     >
-      <div className={iconClassNames} >
+      <div className={iconClassNames}>
         <BpkStarNonRtl
           type={type}
           /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */

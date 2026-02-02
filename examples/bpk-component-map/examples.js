@@ -120,7 +120,11 @@ type PriceMarkerState = {
 };
 
 class StatefulBpkPriceMarker extends Component<
-  { action: () => mixed, airportsIconWithPrice: boolean, heartIconWithPrice: boolean },
+  {
+    action: () => mixed,
+    airportsIconWithPrice: boolean,
+    heartIconWithPrice: boolean,
+  },
   PriceMarkerState,
 > {
   static defaultProps = {
@@ -164,7 +168,7 @@ class StatefulBpkPriceMarker extends Component<
             icon = venue.airportsIcon;
           }
           if (this.props.heartIconWithPrice) {
-            icon = venue.heartIcon
+            icon = venue.heartIcon;
           }
 
           return (
@@ -181,7 +185,7 @@ class StatefulBpkPriceMarker extends Component<
                 this.selectVenue(venue.id);
               }}
               status={this.getStatus(venue.id)}
-              accessibilityLabel='Click the price marker'
+              accessibilityLabel="Click the price marker"
             />
           );
         })}

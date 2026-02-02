@@ -35,11 +35,7 @@ const BpkNavigationBarButtonLink = ({
   ...rest
 }: Props) => (
   <span className={className}>
-    <BpkLink
-      as="button"
-      alternate={barStyle === BAR_STYLES.onDark}
-      {...rest}
-    >
+    <BpkLink as="button" alternate={barStyle === BAR_STYLES.onDark} {...rest}>
       {children}
     </BpkLink>
   </span>

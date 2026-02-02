@@ -44,7 +44,7 @@ describe('BpkCardListRowRailContainer', () => {
       }
     };
   });
-  
+
   it('should have no accessibility issues for row and no accessory', async () => {
     const { container } = render(
       <BpkCardListRowRailContainer layout={LAYOUTS.row} initiallyShownCards={3}>

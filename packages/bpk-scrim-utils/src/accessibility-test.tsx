@@ -52,11 +52,9 @@ describe('withScrimmedPortal accessibility tests', () => {
     const WrappedComponent = (props: any) => <div {...props} />;
     const Component = withScrimmedPortal(WrappedComponent);
     const { container } = render(
-      <Component
-        getApplicationElement={jest.fn()}
-      />,
+      <Component getApplicationElement={jest.fn()} />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
-  })
+  });
 });

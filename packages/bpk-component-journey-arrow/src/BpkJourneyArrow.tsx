@@ -24,25 +24,23 @@ const getClassName = cssModules(STYLES);
 
 export type Props = {
   /** the number of dot stops to display */
-  stops?: number,
+  stops?: number;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
-
 };
-const BpkJourneyArrow = ({
-   stops = 0,
-    ...rest
-}: Props) => {
-
+const BpkJourneyArrow = ({ stops = 0, ...rest }: Props) => {
   // Ensure the number of displayed stops is between 0 and 3
   const dotCount = Math.min(3, Math.max(0, stops));
   return (
-      <div className={getClassName("bpk-journey-arrow")} {...getDataComponentAttribute('JourneyArrow')} {...rest} >
-        {Array.from({ length: dotCount }).map((_, i) => (
-          <div key={i} className={getClassName("bpk-journey-arrow__stop")} /> // eslint-disable-line react/no-array-index-key
-        ))
-        }
+    <div
+      className={getClassName('bpk-journey-arrow')}
+      {...getDataComponentAttribute('JourneyArrow')}
+      {...rest}
+    >
+      {Array.from({ length: dotCount }).map((_, i) => (
+        <div key={i} className={getClassName('bpk-journey-arrow__stop')} /> // eslint-disable-line react/no-array-index-key
+      ))}
     </div>
-  )
+  );
 };
 
 export default BpkJourneyArrow;

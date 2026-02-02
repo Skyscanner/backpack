@@ -727,7 +727,7 @@ describe('Portal', () => {
       it('should open the portal again when isOpen is added', () => {
         expect(openSpy).toHaveBeenCalledTimes(0);
         expect(closeSpy).toHaveBeenCalledTimes(0);
-        
+
         ({ rerender } = render(
           <Portal
             isOpen
@@ -738,7 +738,7 @@ describe('Portal', () => {
             <div>My portal content</div>
           </Portal>,
         ));
-        
+
         rerender(
           <Portal
             isOpen

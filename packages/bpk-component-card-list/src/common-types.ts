@@ -49,7 +49,10 @@ type AccessibilityLabels = {
   indicatorLabel?: string;
   prevNavLabel?: string;
   nextNavLabel?: string;
-  carouselLabel?: (initiallyShownCards: number, childrenLength: number) => string;
+  carouselLabel?: (
+    initiallyShownCards: number,
+    childrenLength: number,
+  ) => string;
   slideLabel?: (index: number, childrenLength: number) => string;
 };
 
@@ -70,13 +73,15 @@ type CardListBaseProps = {
   accessibilityLabels?: AccessibilityLabels;
 } & TitleProps;
 
-type TitleProps = {
-  title: string;
-  description?: string;
-} | {
-  title?: never;
-  description?: never;
-}
+type TitleProps =
+  | {
+      title: string;
+      description?: string;
+    }
+  | {
+      title?: never;
+      description?: never;
+    };
 
 type CardListGridStackProps = {
   children: ReactElement[];
@@ -110,7 +115,10 @@ type CardListCarouselProps = {
   currentIndex: number;
   setCurrentIndex: Dispatch<SetStateAction<number>>;
   isMobile?: boolean;
-  carouselLabel?: (initiallyShownCards: number, childrenLength: number) => string;
+  carouselLabel?: (
+    initiallyShownCards: number,
+    childrenLength: number,
+  ) => string;
   slideLabel?: (index: number, childrenLength: number) => string;
 };
 

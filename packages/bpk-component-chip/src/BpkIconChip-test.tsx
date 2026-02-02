@@ -25,13 +25,20 @@ import { CHIP_TYPES } from './commonTypes';
 
 import type { BpkIconChipProps } from './BpkIconChip';
 
-
 // Just a convenience wrapper that includes the default props so we don't
 // have to keep writing them for each test.
 const TestChip = ({
-                    ...rest
-                  }: Omit<BpkIconChipProps, 'leadingAccessoryView' | 'onClick' | 'accessibilityLabel' | 'children'>) => (
-  <BpkIconChip leadingAccessoryView={<FilterIconSm />} onClick={() => null} accessibilityLabel="Filter" {...rest} />
+  ...rest
+}: Omit<
+  BpkIconChipProps,
+  'leadingAccessoryView' | 'onClick' | 'accessibilityLabel' | 'children'
+>) => (
+  <BpkIconChip
+    leadingAccessoryView={<FilterIconSm />}
+    onClick={() => null}
+    accessibilityLabel="Filter"
+    {...rest}
+  />
 );
 
 describe('BpkIconChip', () => {

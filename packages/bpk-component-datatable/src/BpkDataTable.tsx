@@ -57,7 +57,9 @@ const BpkDataTable = (props: BpkDataTableProps) => {
     ...restOfProps
   } = props;
 
-  const [rowSelected, updateRowSelected] = useState<number | undefined>(undefined);
+  const [rowSelected, updateRowSelected] = useState<number | undefined>(
+    undefined,
+  );
 
   const classNames = getClassName('bpk-data-table', className);
 
@@ -87,7 +89,10 @@ const BpkDataTable = (props: BpkDataTableProps) => {
   /**
    * Call createColumnsSchema to modify the columns data to match the API expected by the hooks of the react-table library.
    */
-  const columns = useMemo(() => createColumnsSchema(columnsData), [columnsData]);
+  const columns = useMemo(
+    () => createColumnsSchema(columnsData),
+    [columnsData],
+  );
 
   const data = useMemo(() => rowsData, [rowsData]);
 
@@ -157,14 +162,19 @@ const BpkDataTable = (props: BpkDataTableProps) => {
               className: headerClassNames,
             })}
           >
-            {headerGroup.headers.map((column: any) => { 
+            {headerGroup.headers.map((column: any) => {
               // if consumer passes a custom sort function for a specific column (using sortBy to specify the column id),
-              // we need to pass them to react-table by setting the sortType and sortDirection properties on the column              
+              // we need to pass them to react-table by setting the sortType and sortDirection properties on the column
               if (sort && sortBy) {
                 if (column.id === sortBy) {
                   if (typeof sort === 'function') {
                     // abstract the sort function to be used by react-table as consumers don't need to be aware of more data than the row values.
-                    column.sortType = (rowA: {[key: string]: any}, rowB: {[key: string]: any}, columnID: string, desc: boolean) => sort(rowA?.values, rowB?.values, columnID, desc); // eslint-disable-line no-param-reassign
+                    column.sortType = (
+                      rowA: { [key: string]: any },
+                      rowB: { [key: string]: any },
+                      columnID: string,
+                      desc: boolean,
+                    ) => sort(rowA?.values, rowB?.values, columnID, desc); // eslint-disable-line no-param-reassign
                   } else {
                     column.sortType = sort; // eslint-disable-line no-param-reassign
                   }
@@ -177,7 +187,7 @@ const BpkDataTable = (props: BpkDataTableProps) => {
         ))}
       </div>
       <div {...getTableBodyProps()}>
-        {rows.map((row: {[key: string]: any}, i: number) => {
+        {rows.map((row: { [key: string]: any }, i: number) => {
           prepareRow(row);
           const cellClassNames = [getClassName('bpk-data-table__cell')];
           return (
@@ -194,7 +204,7 @@ const BpkDataTable = (props: BpkDataTableProps) => {
                 className: getRowClassNames(i, rowClassName),
               })}
             >
-              {row.cells.map((cell: {[key: string]: any}) => {                
+              {row.cells.map((cell: { [key: string]: any }) => {
                 if (cell.column.className) {
                   cellClassNames.push(cell.column.className);
                 }

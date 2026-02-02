@@ -31,7 +31,7 @@ import {
 export default {
   title: 'bpk-component-datatable',
   component: BpkDataTable,
-}
+};
 
 export const Autowidth = AutowidthExample;
 export const RowsNotHoverableOrClickable = NonClickNonHoverRowsExample;
@@ -50,5 +50,5 @@ export const VisualTest = AutowidthExample;
 
 export const VisualTestWithZoom = {
   render: VisualTest,
-  args: {zoomEnabled: true}
-}
+  args: { zoomEnabled: true },
+};

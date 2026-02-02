@@ -168,11 +168,11 @@ class BpkInput extends Component<Props, State> {
             }}
             className={clearButtonClassNames.join(' ')}
           >
-          <ClearButtonIcon
-            focusable="false" // prevents focus on IE11
-            fill="currentcolor"
-          />
-        </button>
+            <ClearButtonIcon
+              focusable="false" // prevents focus on IE11
+              fill="currentcolor"
+            />
+          </button>
         )}
       </div>
     ) : (

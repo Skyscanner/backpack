@@ -43,9 +43,9 @@ export const VisualTest = {
   render: VisualExample,
   parameters: {
     percy: {
-      waitForTimeout: 10000
-    }
-  }
+      waitForTimeout: 10000,
+    },
+  },
 };
 export const VisualTestWithZoom = {
   render: VisualExample,
@@ -54,7 +54,7 @@ export const VisualTestWithZoom = {
   },
   parameters: {
     percy: {
-      waitForTimeout: 10000
-    }
-  }
+      waitForTimeout: 10000,
+    },
+  },
 };

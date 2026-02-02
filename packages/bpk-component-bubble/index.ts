@@ -16,9 +16,7 @@
  * limitations under the License.
  */
 
-import BpkBubble, {
-  type Props as BpkBubbleProps
-} from './src/BpkBubble';
+import BpkBubble, { type Props as BpkBubbleProps } from './src/BpkBubble';
 
 export type { BpkBubbleProps };
 export default BpkBubble;

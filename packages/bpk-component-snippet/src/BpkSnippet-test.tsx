@@ -57,8 +57,6 @@ describe('BpkSnippet', () => {
       <BpkSnippet {...props} desktopLayout={DESKTOP_LAYOUT.vertical} />,
     );
     expect(container.querySelectorAll('.bpk-snippet--image').length).toBe(1);
-    expect(container.querySelectorAll('.bpk-snippet--vertical').length).toBe(
-      1,
-    );
+    expect(container.querySelectorAll('.bpk-snippet--vertical').length).toBe(1);
   });
 });

@@ -38,7 +38,7 @@ const renderHeadCell = (props = {}, content = 'Heading') => {
   return { cell, ...testingLibraryUtils };
 };
 
-describe('BpkTableHeadCell', () => { 
+describe('BpkTableHeadCell', () => {
   it('should render heading cell with base classes', () => {
     const { cell } = renderHeadCell();
 
@@ -74,38 +74,35 @@ describe('BpkTableHeadCell', () => {
 
   describe('wordBreak prop', () => {
     it('should not apply wordBreak class by default', () => {
-      const expectedClasses = [ ...defaultClasses ];
-  
+      const expectedClasses = [...defaultClasses];
+
       // wordBreak prop omitted
       const { cell } = renderHeadCell();
-  
+
       expect(cell?.tagName).toBe('TH');
       expect(cell).toHaveClass(...expectedClasses);
       expect(cell).not.toHaveClass('bpk-table__cell--wordBreak');
     });
 
     it('should not apply wordBreak class when wordBreak is false', () => {
-      const expectedClasses = [ ...defaultClasses ];
-  
+      const expectedClasses = [...defaultClasses];
+
       const { cell } = renderHeadCell({
         wordBreak: false,
       });
-  
+
       expect(cell?.tagName).toBe('TH');
       expect(cell).toHaveClass(...expectedClasses);
       expect(cell).not.toHaveClass('bpk-table__cell--wordBreak');
     });
 
     it('should apply wordBreak class when wordBreak is true', () => {
-      const expectedClasses = [
-        ...defaultClasses,
-        'bpk-table__cell--wordBreak'
-      ];
-  
+      const expectedClasses = [...defaultClasses, 'bpk-table__cell--wordBreak'];
+
       const { cell } = renderHeadCell({
         wordBreak: true,
       });
-  
+
       expect(cell?.tagName).toBe('TH');
       expect(cell).toHaveClass(...expectedClasses);
     });

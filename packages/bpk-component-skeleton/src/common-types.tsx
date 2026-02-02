@@ -19,14 +19,16 @@
 export type CUSTOM_SIZE_TYPE = {
   width: string;
   height: string;
-}
+};
 
 export const SIZE_TYPES = {
   small: 'small',
   default: 'default',
   large: 'large',
 } as const;
-export type SizeType = (typeof SIZE_TYPES)[keyof typeof SIZE_TYPES] | CUSTOM_SIZE_TYPE;
+export type SizeType =
+  | (typeof SIZE_TYPES)[keyof typeof SIZE_TYPES]
+  | CUSTOM_SIZE_TYPE;
 
 export const SKELETON_TYPES = {
   image: 'image',
@@ -40,28 +42,35 @@ export const IMAGE_SKELETON_STYLE = {
   rounded: 'rounded',
   default: 'default',
 } as const;
-export type ImageSkeletonStyle = (typeof IMAGE_SKELETON_STYLE)[keyof typeof IMAGE_SKELETON_STYLE];
+export type ImageSkeletonStyle =
+  (typeof IMAGE_SKELETON_STYLE)[keyof typeof IMAGE_SKELETON_STYLE];
 
 export const BACKGROUND_STYLE = {
   default: 'default',
   onContrast: 'onContrast',
 } as const;
-export type BackgroundStyle = (typeof BACKGROUND_STYLE)[keyof typeof BACKGROUND_STYLE];
+export type BackgroundStyle =
+  (typeof BACKGROUND_STYLE)[keyof typeof BACKGROUND_STYLE];
 
 type SizeMap = {
   [SKELETON_TYPES.image]: (typeof SIZE_TYPES)['default'];
   [SKELETON_TYPES.bodyText]: (typeof SIZE_TYPES)[keyof typeof SIZE_TYPES];
-  [SKELETON_TYPES.circle]: Exclude<(typeof SIZE_TYPES)[keyof typeof SIZE_TYPES], 'large'>
+  [SKELETON_TYPES.circle]: Exclude<
+    (typeof SIZE_TYPES)[keyof typeof SIZE_TYPES],
+    'large'
+  >;
   [SKELETON_TYPES.headline]: (typeof SIZE_TYPES)[keyof typeof SIZE_TYPES];
 };
 
-export type ComponentProps = {
-  type: Extract<SkeletonType, 'image'>
-  size?: SizeMap['image'] | CUSTOM_SIZE_TYPE;
-  style?: ImageSkeletonStyle;
-  backgroundStyle?: BackgroundStyle;
-} | {
-  type: Exclude<keyof SizeMap, 'image'>;
-  size?: SizeMap[keyof SizeMap] | CUSTOM_SIZE_TYPE;
-  backgroundStyle?: BackgroundStyle;
-};
+export type ComponentProps =
+  | {
+      type: Extract<SkeletonType, 'image'>;
+      size?: SizeMap['image'] | CUSTOM_SIZE_TYPE;
+      style?: ImageSkeletonStyle;
+      backgroundStyle?: BackgroundStyle;
+    }
+  | {
+      type: Exclude<keyof SizeMap, 'image'>;
+      size?: SizeMap[keyof SizeMap] | CUSTOM_SIZE_TYPE;
+      backgroundStyle?: BackgroundStyle;
+    };

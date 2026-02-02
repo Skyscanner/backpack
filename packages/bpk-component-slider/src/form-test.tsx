@@ -81,7 +81,10 @@ describe('BpkSlider form-test for single-thumb slider', () => {
             ariaLabel={['min', 'max']}
             ariaValuetext={['0', '100']}
             value={sliderValue}
-            inputProps={[{ 'data-testid': 'sliderInputMin' }, { 'data-testid': 'sliderInputMax' }]}
+            inputProps={[
+              { 'data-testid': 'sliderInputMin' },
+              { 'data-testid': 'sliderInputMax' },
+            ]}
             onChange={(value) => {
               setSliderValue(value as number[]);
             }}
@@ -100,7 +103,9 @@ describe('BpkSlider form-test for single-thumb slider', () => {
     // Moving the slider over multiple steps should result in one change event
     await userEvent.keyboard('{ArrowRight>5}{/ArrowRight}');
 
-    expect(screen.getByTestId('sliderInputMin').getAttribute('value')).toBe('5');
+    expect(screen.getByTestId('sliderInputMin').getAttribute('value')).toBe(
+      '5',
+    );
     expect(formValidation).toHaveBeenCalledTimes(1);
 
     const sliderThumbMax = screen.getByLabelText('max');
@@ -109,7 +114,9 @@ describe('BpkSlider form-test for single-thumb slider', () => {
     await sliderThumbMax.focus();
     await userEvent.keyboard('{ArrowLeft>25}{/ArrowLeft}');
 
-    expect(screen.getByTestId('sliderInputMax').getAttribute('value')).toBe('75');
+    expect(screen.getByTestId('sliderInputMax').getAttribute('value')).toBe(
+      '75',
+    );
     expect(formValidation).toHaveBeenCalledTimes(2);
   });
 });

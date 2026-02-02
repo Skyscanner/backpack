@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-import BpkButtonLink, { type Props as BpkButtonLinkProps } from './src/BpkButtonLink';
+import BpkButtonLink, {
+  type Props as BpkButtonLinkProps,
+} from './src/BpkButtonLink';
 import BpkLink from './src/BpkLink';
 import themeAttributes, {
   linkAlternateThemeAttributes,

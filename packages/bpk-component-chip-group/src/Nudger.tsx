@@ -31,12 +31,11 @@ import STYLES from './Nudger.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-
 const CHIP_STYLE_TO_BUTTON_STYLE = {
   [CHIP_TYPES.default]: BUTTON_TYPES.secondary,
   [CHIP_TYPES.onDark]: BUTTON_TYPES.secondaryOnDark,
   [CHIP_TYPES.onImage]: BUTTON_TYPES.primaryOnDark,
-}
+};
 
 export const POSITION = {
   leading: 'leading',
@@ -48,7 +47,7 @@ type Props = {
   chipStyle?: ChipStyleType;
   scrollContainerRef: MutableRefObject<HTMLElement | null>;
   position: (typeof POSITION)[keyof typeof POSITION];
-}
+};
 
 const AlignedLeftArrowIcon = withButtonAlignment(ArrowLeft);
 const AlignedRightArrowIcon = withButtonAlignment(ArrowRight);
@@ -63,7 +62,7 @@ const Nudger = ({
   ariaLabel,
   chipStyle = CHIP_TYPES.default,
   position,
-  scrollContainerRef
+  scrollContainerRef,
 }: Props) => {
   const [show, setShow] = useState(false);
   const [enabled, setEnabled] = useState(false);
@@ -78,22 +77,23 @@ const Nudger = ({
         return;
       }
 
-      const { offsetWidth, scrollLeft, scrollWidth } = scrollContainerRef.current;
+      const { offsetWidth, scrollLeft, scrollWidth } =
+        scrollContainerRef.current;
       const scrollValue = rtl ? -Math.floor(scrollLeft) : Math.ceil(scrollLeft);
       const maxScrollValue = scrollWidth - offsetWidth;
       const showLeading = scrollValue > SCROLL_MARGIN;
       const showTrailing = scrollValue < maxScrollValue - SCROLL_MARGIN;
 
       setShow(showLeading || showTrailing);
-      setEnabled((leading && showLeading) || (!leading && showTrailing))
+      setEnabled((leading && showLeading) || (!leading && showTrailing));
     }, 100);
     return () => clearInterval(interval);
   }, [leading, rtl, scrollContainerRef]);
 
   const classNames = getClassName(
     'bpk-chip-group-nudger',
-    `bpk-chip-group-nudger--${leading ? "leading" : "trailing"}`,
-  )
+    `bpk-chip-group-nudger--${leading ? 'leading' : 'trailing'}`,
+  );
 
   return show ? (
     <div className={classNames}>
@@ -115,6 +115,6 @@ const Nudger = ({
       </BpkButton>
     </div>
   ) : null;
-}
+};
 
 export default Nudger;

@@ -44,7 +44,11 @@ const BpkCode = ({
   );
 
   return (
-    <code className={classNames} {...getDataComponentAttribute('Code')} {...rest}>
+    <code
+      className={classNames}
+      {...getDataComponentAttribute('Code')}
+      {...rest}
+    >
       {children}
     </code>
   );

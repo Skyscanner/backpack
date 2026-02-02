@@ -151,9 +151,9 @@ const BpkPopover = ({
   const onFloatingChange = (isFloatingOpen: boolean) => {
     setIsOpenState(isFloatingOpen);
     if (!isFloatingOpen && onClose) {
-      onClose(null, { source: EVENT_SOURCES.CLOSE_OUTSIDE});
+      onClose(null, { source: EVENT_SOURCES.CLOSE_OUTSIDE });
     }
-  }
+  };
 
   const { context, floatingStyles, refs } = useFloating({
     open: isOpenState,
@@ -178,17 +178,23 @@ const BpkPopover = ({
   });
 
   // Merge all the interactions into prop getters
-  const { getFloatingProps, getReferenceProps } = useInteractions([click, dismiss, hover]);
+  const { getFloatingProps, getReferenceProps } = useInteractions([
+    click,
+    dismiss,
+    hover,
+  ]);
 
   const targetClick = target?.props?.onClick;
-  const referenceProps = targetClick ? getReferenceProps({
-    onClick: event => {
-      if (targetClick) {
-        event.stopPropagation();
-        targetClick(event);
-      }
-    }
-}) : getReferenceProps();
+  const referenceProps = targetClick
+    ? getReferenceProps({
+        onClick: (event) => {
+          if (targetClick) {
+            event.stopPropagation();
+            targetClick(event);
+          }
+        },
+      })
+    : getReferenceProps();
 
   const targetElement = isValidElement(target) ? (
     cloneElement(target, {
@@ -206,7 +212,8 @@ const BpkPopover = ({
   const bodyClassNames = getClassName(padded && 'bpk-popover__body--padded');
 
   const labelId = `bpk-popover-label-${id}`;
-  const renderElement = typeof renderTarget === 'function' ? renderTarget() : renderTarget;
+  const renderElement =
+    typeof renderTarget === 'function' ? renderTarget() : renderTarget;
 
   return (
     <>

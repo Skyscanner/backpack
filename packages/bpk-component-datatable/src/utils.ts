@@ -23,54 +23,55 @@ import type { ColumnType } from './common-types';
  * The columns API defined in Backpack will therefore be independent of the react-table columns API which consumers don't need to be aware of.
  * @param {Array} columns Array of column objects compatible with the API defined in Backpack
  * @returns {Array} An array of column objects that can be directly passed to the hooks of the react-table library
- * 
+ *
  */
 export const createColumnsSchema = (columns: ColumnType[]) => {
-  let columnsArray: Array<{[key: string]: any}> = [];
+  let columnsArray: Array<{ [key: string]: any }> = [];
 
   if (!columns) return columnsArray;
 
-  columnsArray = columns.map((column: ColumnType) => {    
-    const Cell = (
-      {
-        column: { id: accessor},
-        columns: columnsData,
-        row: { id: rowID, values: rowData },
-        sortedRows,
-        value: cellData,
-      }: any
-      ) =>
-        // @ts-ignore Cell is called only when column has a Cell which we check below in the return statement
-        column.Cell({
+  columnsArray = columns.map((column: ColumnType) => {
+    const Cell = ({
+      column: { id: accessor },
+      columns: columnsData,
+      row: { id: rowID, values: rowData },
+      sortedRows,
+      value: cellData,
+    }: any) =>
+      // @ts-ignore Cell is called only when column has a Cell which we check below in the return statement
+      column.Cell({
         rowData,
-        rowIndex: sortedRows.map((row: {[key: string]: any}) => row.id).indexOf(rowID),
+        rowIndex: sortedRows
+          .map((row: { [key: string]: any }) => row.id)
+          .indexOf(rowID),
         accessor,
-        columnIndex: columnsData.map((col: {[key: string]: any}) => col.id).indexOf(accessor),
-        cellData
-      })
-    
-    const Header = (
-      {
-        column: { disableSortBy, id: accessor, label },
-      }: any
-      ) =>
-        // @ts-ignore Header is called only when column has a Header which we check below in the return statement
-        column.Header({
+        columnIndex: columnsData
+          .map((col: { [key: string]: any }) => col.id)
+          .indexOf(accessor),
+        cellData,
+      });
+
+    const Header = ({ column: { disableSortBy, id: accessor, label } }: any) =>
+      // @ts-ignore Header is called only when column has a Header which we check below in the return statement
+      column.Header({
         label,
         disableSortBy,
-        accessor
-      })
+        accessor,
+      });
 
-    return ({
+    return {
       ...column,
       ...(column.Cell && {
-        Cell
+        Cell,
       }),
-      Header: column.Header && typeof column.Header === 'function' ? Header : column.label
-    })
+      Header:
+        column.Header && typeof column.Header === 'function'
+          ? Header
+          : column.label,
+    };
   });
 
   return columnsArray;
-}
+};
 
 export default createColumnsSchema;

@@ -39,7 +39,7 @@ describe('BpkDrawerContent', () => {
         onCloseAnimationComplete={jest.fn()}
         closeLabel="Close"
         dialogRef={jest.fn()}
-        >
+      >
         Drawer content
       </BpkDrawerContent>,
     );

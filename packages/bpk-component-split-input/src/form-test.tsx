@@ -36,7 +36,7 @@ describe('BpkSplitInput', () => {
             name="test"
             inputLength={4}
             label="Enter code"
-            placeholder='Enter code'
+            placeholder="Enter code"
             onInputChange={(value) => setInputTest(inputTest)}
             onSubmit={(value) => setInputTest(inputTest)}
           />
@@ -52,7 +52,8 @@ describe('BpkSplitInput', () => {
     /* eslint-disable no-await-in-loop */
     for (const input of splitInputs) {
       await userEvent.click(input);
-      await userEvent.keyboard('1'); }
+      await userEvent.keyboard('1');
+    }
     /* eslint-enable no-await-in-loop */
 
     const form = screen.getByTestId('form') as HTMLFormElement;
@@ -66,8 +67,7 @@ describe('BpkSplitInput', () => {
     });
   });
 
-
-it('should emit change event when text has been entered and blurred', async () => {
+  it('should emit change event when text has been entered and blurred', async () => {
     const formValidation = jest.fn();
     const Wrap = () => {
       const [inputTest, setInputTest] = useState('');
@@ -79,7 +79,7 @@ it('should emit change event when text has been entered and blurred', async () =
             name="test"
             inputLength={4}
             label="Enter code"
-            placeholder='Enter code'
+            placeholder="Enter code"
             onInputChange={(value) => setInputTest(inputTest)}
             onSubmit={(value) => setInputTest(inputTest)}
           />
@@ -96,12 +96,12 @@ it('should emit change event when text has been entered and blurred', async () =
 
     expect(formValidation).not.toHaveBeenCalled();
 
-  /* eslint-disable no-await-in-loop */
+    /* eslint-disable no-await-in-loop */
     for (const input of splitInputs) {
       await userEvent.click(input);
       await userEvent.keyboard('1');
     }
-  /* eslint-enable no-await-in-loop */
+    /* eslint-enable no-await-in-loop */
 
     await userEvent.click(form); // change event emitted on blur
 

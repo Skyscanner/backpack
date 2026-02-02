@@ -19,7 +19,10 @@
 import { type MouseEvent, useRef, useState } from 'react';
 
 import { BREAKPOINTS, useMediaQuery } from '../../bpk-component-breakpoint';
-import BpkPageIndicator, { DIRECTIONS, VARIANT } from '../../bpk-component-page-indicator';
+import BpkPageIndicator, {
+  DIRECTIONS,
+  VARIANT,
+} from '../../bpk-component-page-indicator';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkCarouselContainer from './BpkCarouselContainer';
@@ -37,7 +40,7 @@ const BpkCarousel = ({
   images,
   initialImageIndex = 0,
   onImageChanged = null,
-  }: Props) => {
+}: Props) => {
   const [shownImageIndex, updateShownImageIndex] = useState(initialImageIndex);
   const imagesRef = useRef<Array<HTMLElement | null>>([]);
   const isDesktop = useMediaQuery(BREAKPOINTS.ABOVE_TABLET);
@@ -45,7 +48,7 @@ const BpkCarousel = ({
   const handleIndicatorClick = (
     e: MouseEvent<HTMLButtonElement>,
     newIndex: number,
-  )  => {
+  ) => {
     e.stopPropagation();
     let target = newIndex;
     if (newIndex === -1) target = images.length - 1;
@@ -66,18 +69,22 @@ const BpkCarousel = ({
       />
       <div
         className={getClassName('bpk-carousel__page-indicator-over-image')}
-        style={bottom ? {
+        style={
           bottom
-        } : undefined}
+            ? {
+                bottom,
+              }
+            : undefined
+        }
         data-testid="carousel-page-indicator-container"
       >
         <BpkPageIndicator
           currentIndex={shownImageIndex}
           totalIndicators={images.length}
           variant={VARIANT.overImageSpaced}
-          indicatorLabel={accessibilityLabels.indicatorLabel ?? "Go to slide"}
-          prevNavLabel={accessibilityLabels.prevNavLabel ?? "Previous slide"}
-          nextNavLabel={accessibilityLabels.nextNavLabel ?? "Next slide"}
+          indicatorLabel={accessibilityLabels.indicatorLabel ?? 'Go to slide'}
+          prevNavLabel={accessibilityLabels.prevNavLabel ?? 'Previous slide'}
+          nextNavLabel={accessibilityLabels.nextNavLabel ?? 'Next slide'}
           showNav={isDesktop}
           onClick={isDesktop ? handleIndicatorClick : () => {}}
         />

@@ -43,7 +43,10 @@ type State = {
 
 type Props = {};
 
-type InteractionEvents = KeyboardEvent | MouseEvent<HTMLButtonElement> | TouchEvent;
+type InteractionEvents =
+  | KeyboardEvent
+  | MouseEvent<HTMLButtonElement>
+  | TouchEvent;
 
 class BpkRtlToggle extends Component<Props, State> {
   constructor(props: Props) {

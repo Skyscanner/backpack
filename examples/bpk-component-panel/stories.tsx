@@ -41,6 +41,6 @@ export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
   render: VisualTest,
   args: {
-    zoomEnabled: true
-  }
-}
+    zoomEnabled: true,
+  },
+};

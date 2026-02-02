@@ -20,7 +20,6 @@ import figma from '@figma/code-connect';
 
 import BpkStarRating from './BpkStarRating';
 
-
 /**
  * Star rating
  */
@@ -50,15 +49,10 @@ figma.connect(
       }),
     },
     example: ({ large, rating, ratingLabel }) => (
-      <BpkStarRating
-        ratingLabel={ratingLabel}
-        large={large}
-        rating={rating}
-      />
+      <BpkStarRating ratingLabel={ratingLabel} large={large} rating={rating} />
     ),
   },
 );
-
 
 /**
  * Hotel star rating

@@ -90,7 +90,7 @@ describe('BpkNudger form test', () => {
 
     render(<Wrap />);
     document.addEventListener('change', formValidation);
-  
+
     const minusButton = screen.getByRole('button', { name: 'Decrease' });
 
     const numInput = screen.getByTestId('myNudger');
@@ -138,7 +138,7 @@ describe('BpkNudger form test', () => {
     await userEvent.clear(numInput);
     await userEvent.type(numInput, '4');
     await button.focus();
-    
+
     expect(numInput).toHaveValue(4);
 
     expect(formValidation).toHaveBeenCalledTimes(1);

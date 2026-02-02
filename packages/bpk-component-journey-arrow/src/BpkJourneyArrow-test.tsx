@@ -23,17 +23,23 @@ import BpkJourneyArrow from './BpkJourneyArrow';
 describe('BpkJourneyArrow', () => {
   it('should have no children if stops is zero', () => {
     const { container } = render(<BpkJourneyArrow />);
-    expect(container.querySelectorAll(".bpk-journey-arrow__stop").length).toBe(0);
+    expect(container.querySelectorAll('.bpk-journey-arrow__stop').length).toBe(
+      0,
+    );
   });
 
   it('should render with the correct number of stop spots', () => {
     const { container } = render(<BpkJourneyArrow stops={2} />);
-    expect(container.querySelectorAll(".bpk-journey-arrow__stop").length).toBe(2);
+    expect(container.querySelectorAll('.bpk-journey-arrow__stop').length).toBe(
+      2,
+    );
   });
 
   it('should render with capped spot count', () => {
     const { container } = render(<BpkJourneyArrow stops={37} />);
-    expect(container.querySelectorAll(".bpk-journey-arrow__stop").length).toBe(3);
+    expect(container.querySelectorAll('.bpk-journey-arrow__stop').length).toBe(
+      3,
+    );
   });
 
   it('should not support custom class names', () => {
@@ -44,9 +50,7 @@ describe('BpkJourneyArrow', () => {
   });
 
   it('should support arbitrary props', () => {
-    const { getAllByTestId } = render(
-      <BpkJourneyArrow data-testid="123" />,
-    );
+    const { getAllByTestId } = render(<BpkJourneyArrow data-testid="123" />);
     expect(getAllByTestId('123').length).toBe(1);
   });
 });

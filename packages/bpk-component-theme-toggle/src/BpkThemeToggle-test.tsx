@@ -23,7 +23,7 @@ import BpkThemeToggle from './BpkThemeToggle';
 describe('BpkThemeToggle', () => {
   it('should render correctly', () => {
     render(<BpkThemeToggle />);
-    
+
     expect(screen.getByLabelText('Change theme')).toBeInTheDocument();
     expect(screen.getByRole('combobox')).toBeInTheDocument();
     expect(screen.getByText('None')).toBeInTheDocument();

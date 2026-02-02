@@ -32,20 +32,20 @@ import PropTypes from 'prop-types';
  * @todo remove this once we migrate the star rating component to TS
  */
 const withInteractiveStarRatingStateMockPropTypes = {
-    onRatingSelect: PropTypes.func,
-  };
+  onRatingSelect: PropTypes.func,
+};
 
 const withInteractiveStarRatingStateMockDefaultProps = {
-    onRatingSelect: () => null,
-  };
+  onRatingSelect: () => null,
+};
 
 const WithInteractiveStarRatingStateMock = () => <div />;
 WithInteractiveStarRatingStateMock.propTypes = {
-    ...withInteractiveStarRatingStateMockPropTypes,
-  };
+  ...withInteractiveStarRatingStateMockPropTypes,
+};
 
 WithInteractiveStarRatingStateMock.defaultProps = {
-    ...withInteractiveStarRatingStateMockDefaultProps,
-  };
+  ...withInteractiveStarRatingStateMockDefaultProps,
+};
 
 export default WithInteractiveStarRatingStateMock;

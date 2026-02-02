@@ -37,7 +37,13 @@ describe('BpkProgress', () => {
 
   it('should render correctly with a "tabIndex" attribute', () => {
     render(
-      <BpkProgress min={0} max={100} value={25} tabIndex={-1} className="my-progress-bar" />,
+      <BpkProgress
+        min={0}
+        max={100}
+        value={25}
+        tabIndex={-1}
+        className="my-progress-bar"
+      />,
     );
 
     const progressBar = screen.getByRole('progressbar');

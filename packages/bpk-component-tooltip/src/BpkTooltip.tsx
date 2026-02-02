@@ -39,7 +39,10 @@ import {
   useRole,
 } from '@floating-ui/react';
 
-import { surfaceHighlightDay, onePixelRem } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import {
+  surfaceHighlightDay,
+  onePixelRem,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 
@@ -123,14 +126,14 @@ const BpkTooltip = ({
 
   const hover = useHover(context, {
     mouseOnly: !hasTouchSupport() || !hideOnTouchDevices,
-    handleClose: safePolygon()
+    handleClose: safePolygon(),
   });
   const role = useRole(context, { role: 'tooltip' });
 
   const { getFloatingProps, getReferenceProps } = useInteractions([
     hover,
     role,
-    useFocus(context)
+    useFocus(context),
   ]);
 
   const targetWithAccessibilityProps = cloneElement(target, {

@@ -18,9 +18,9 @@
 
 import BpkSkeleton, {
   SKELETON_TYPES,
-  SIZE_TYPES, 
+  SIZE_TYPES,
   IMAGE_SKELETON_STYLE,
-  BACKGROUND_STYLE 
+  BACKGROUND_STYLE,
 } from '../../packages/bpk-component-skeleton';
 import { cssModules } from '../../packages/bpk-react-utils';
 
@@ -28,47 +28,74 @@ import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const ImageDefaultSizeWithDefaultStyleExample = () => <BpkSkeleton type={SKELETON_TYPES.image} />
-const ImageDefaultSizeWithRoundedStyleExample = () => <BpkSkeleton type={SKELETON_TYPES.image} style={IMAGE_SKELETON_STYLE.rounded} />
+const ImageDefaultSizeWithDefaultStyleExample = () => (
+  <BpkSkeleton type={SKELETON_TYPES.image} />
+);
+const ImageDefaultSizeWithRoundedStyleExample = () => (
+  <BpkSkeleton
+    type={SKELETON_TYPES.image}
+    style={IMAGE_SKELETON_STYLE.rounded}
+  />
+);
 
-const BodyTextSmallSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.small} />
-const BodyTextDefaultSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.default} />
-const BodyTextLargeSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.large} />
+const BodyTextSmallSizeExample = () => (
+  <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.small} />
+);
+const BodyTextDefaultSizeExample = () => (
+  <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.default} />
+);
+const BodyTextLargeSizeExample = () => (
+  <BpkSkeleton type={SKELETON_TYPES.bodyText} size={SIZE_TYPES.large} />
+);
 
-const CircleSmallSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.circle} size={SIZE_TYPES.small} />;
-const CircleDefaultSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.circle} />;
+const CircleSmallSizeExample = () => (
+  <BpkSkeleton type={SKELETON_TYPES.circle} size={SIZE_TYPES.small} />
+);
+const CircleDefaultSizeExample = () => (
+  <BpkSkeleton type={SKELETON_TYPES.circle} />
+);
 
-const HeadlineSmallSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.headline} size={SIZE_TYPES.small} />
-const HeadlineDefaultSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.headline} size={SIZE_TYPES.default} />
-const HeadlineLargeSizeExample = () => <BpkSkeleton type={SKELETON_TYPES.headline} size={SIZE_TYPES.large} />
+const HeadlineSmallSizeExample = () => (
+  <BpkSkeleton type={SKELETON_TYPES.headline} size={SIZE_TYPES.small} />
+);
+const HeadlineDefaultSizeExample = () => (
+  <BpkSkeleton type={SKELETON_TYPES.headline} size={SIZE_TYPES.default} />
+);
+const HeadlineLargeSizeExample = () => (
+  <BpkSkeleton type={SKELETON_TYPES.headline} size={SIZE_TYPES.large} />
+);
 
-const ImageSkeletonExample = () => 
+const ImageSkeletonExample = () => (
   <div className={getClassName('bpk-image-skeleton-layout')}>
     <ImageDefaultSizeWithRoundedStyleExample />
     <ImageDefaultSizeWithDefaultStyleExample />
   </div>
+);
 
-const BodyTextSkeletonExample = () => 
+const BodyTextSkeletonExample = () => (
   <div className={getClassName('bpk-body-text-skeleton-layout')}>
     <BodyTextDefaultSizeExample />
     <BodyTextLargeSizeExample />
     <BodyTextSmallSizeExample />
   </div>
+);
 
-const CircleSkeletonExample = () => 
+const CircleSkeletonExample = () => (
   <div className={getClassName('bpk-circle-skeleton-layout')}>
     <CircleSmallSizeExample />
     <CircleDefaultSizeExample />
   </div>
+);
 
-const HeadlineSkeletonExample = () => 
+const HeadlineSkeletonExample = () => (
   <div className={getClassName('bpk-headline-skeleton-layout')}>
     <HeadlineSmallSizeExample />
     <HeadlineDefaultSizeExample />
     <HeadlineLargeSizeExample />
   </div>
+);
 
-const CombinedComponentExample = () => 
+const CombinedComponentExample = () => (
   <div>
     <div>
       <h2>ImageSkeleton</h2>
@@ -90,16 +117,25 @@ const CombinedComponentExample = () =>
       <BodyTextSkeletonExample />
     </div>
   </div>
+);
 
-const BackgroundStyleDefaultExample = () => 
+const BackgroundStyleDefaultExample = () => (
   <div className={getClassName('bpk-background-style-default')}>
-    <BpkSkeleton type={SKELETON_TYPES.image} backgroundStyle={BACKGROUND_STYLE.default} />
+    <BpkSkeleton
+      type={SKELETON_TYPES.image}
+      backgroundStyle={BACKGROUND_STYLE.default}
+    />
   </div>
+);
 
-const BackgroundStyleOnContrastExample = () => 
+const BackgroundStyleOnContrastExample = () => (
   <div className={getClassName('bpk-background-style-on-contrast')}>
-    <BpkSkeleton type={SKELETON_TYPES.image} backgroundStyle={BACKGROUND_STYLE.onContrast} />
+    <BpkSkeleton
+      type={SKELETON_TYPES.image}
+      backgroundStyle={BACKGROUND_STYLE.onContrast}
+    />
   </div>
+);
 
 export {
   ImageSkeletonExample,

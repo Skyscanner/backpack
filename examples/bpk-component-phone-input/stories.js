@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkPhoneInput from '../../packages/bpk-component-phone-input/src/BpkPhoneInput';
 
 import {
@@ -47,5 +46,5 @@ export const DoubleLengthLabels = DoubleLengthLabelExamples;
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

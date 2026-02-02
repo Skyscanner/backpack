@@ -18,7 +18,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const {pathToFileURL} = require("url");
+const { pathToFileURL } = require('url');
 
 const sass = require('sass-embedded');
 
@@ -61,7 +61,7 @@ async function compile(sassPath) {
       ],
     });
   } catch (e) {
-    console.error(e)
+    console.error(e);
   }
   const data = new Uint8Array(Buffer.from(`${licenseHeader}\n${result.css}`));
   const { dir, name } = path.parse(sassPath);

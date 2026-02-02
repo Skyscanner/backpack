@@ -16,9 +16,12 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from "react";
+import type { ReactNode } from 'react';
 
-export type OnImageChangedHandler = ((shownImageIndex: number) => void) | null | undefined;
+export type OnImageChangedHandler =
+  | ((shownImageIndex: number) => void)
+  | null
+  | undefined;
 
 export type AccessibilityLabels = {
   indicatorLabel?: string;
@@ -27,12 +30,12 @@ export type AccessibilityLabels = {
 };
 
 export type Props = {
-  images: ReactNode[]
+  images: ReactNode[];
   initialImageIndex?: number;
   onImageChanged?: OnImageChangedHandler;
   /**
    * This prop is used to let the consumer adjust the spacing between the page indicator and the bottom of the image when variant is VARIANT.overImage
-  */
+   */
   bottom?: number;
   accessibilityLabels?: AccessibilityLabels;
 };

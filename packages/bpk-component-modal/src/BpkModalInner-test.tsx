@@ -213,7 +213,10 @@ describe('BpkModalInner', () => {
     );
 
     expect(screen.queryAllByRole('heading')).toHaveLength(0);
-    expect(screen.getByRole('dialog')).toHaveAttribute('aria-label', 'Modal title');
+    expect(screen.getByRole('dialog')).toHaveAttribute(
+      'aria-label',
+      'Modal title',
+    );
   });
 
   it('should render with a11y labelled-by when showHeader true', () => {

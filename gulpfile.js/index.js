@@ -22,4 +22,7 @@ require('./bpk-component-flare/gulpfile');
 require('./bpk-component-icon/gulpfile');
 require('./bpk-component-spinner/gulpfile');
 
-gulp.task('default', gulp.series('generateFlare', 'generateIcons', 'generateSpinners'));
+gulp.task(
+  'default',
+  gulp.series('generateFlare', 'generateIcons', 'generateSpinners'),
+);

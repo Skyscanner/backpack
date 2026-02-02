@@ -46,15 +46,14 @@ describe('BpkCardListRowRailContainer', () => {
 
   it('should render correctly with row layout and no accessory', () => {
     render(
-      <BpkCardListRowRailContainer
-        layout={LAYOUTS.row}
-        initiallyShownCards={3}
-      >
+      <BpkCardListRowRailContainer layout={LAYOUTS.row} initiallyShownCards={3}>
         {mockCards(3)}
       </BpkCardListRowRailContainer>,
     );
 
-    const pagination = screen.queryByTestId('bpk-card-list-row-rail__accessory');
+    const pagination = screen.queryByTestId(
+      'bpk-card-list-row-rail__accessory',
+    );
     const container = screen.getByTestId('bpk-card-list-row-rail');
     const carousel = screen.getByTestId('bpk-card-list-row-rail__carousel');
 
@@ -74,7 +73,9 @@ describe('BpkCardListRowRailContainer', () => {
       </BpkCardListRowRailContainer>,
     );
 
-    const pagination = screen.queryByTestId('bpk-card-list-row-rail__accessory');
+    const pagination = screen.queryByTestId(
+      'bpk-card-list-row-rail__accessory',
+    );
     const container = screen.getByTestId('bpk-card-list-row-rail');
     const carousel = screen.getByTestId('bpk-card-list-row-rail__carousel');
 

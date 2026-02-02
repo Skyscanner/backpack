@@ -57,8 +57,8 @@ const data = require('./data.json');
 
 const margin = {
   top: 0,
-  left: 40,  
-  bottom: 40,  
+  left: 40,
+  bottom: 40,
   right: 0,
 };
 

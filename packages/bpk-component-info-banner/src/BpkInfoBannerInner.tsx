@@ -83,7 +83,11 @@ const getIconForType = (
   const Icon = CustomIcon || componentMap[type];
   const AlignedIcon = withButtonAlignment(Icon);
 
-  return <div className={className}><AlignedIcon/></div>;
+  return (
+    <div className={className}>
+      <AlignedIcon />
+    </div>
+  );
 };
 
 type ToggleButtonProps = {
@@ -150,19 +154,20 @@ const BpkInfoBannerInner = ({
 
   const classNames = getClassName(
     'bpk-info-banner',
-   `bpk-info-banner--${type}`,
-   `bpk-info-banner--style-${style}`,
-   bannerClassName && bannerClassName
-   );
+    `bpk-info-banner--${type}`,
+    `bpk-info-banner--style-${style}`,
+    bannerClassName && bannerClassName,
+  );
 
   const headerClassNames = getClassName(
     'bpk-info-banner__header',
-    isExpandable && 'bpk-info-banner__header--expandable'
+    isExpandable && 'bpk-info-banner__header--expandable',
   );
 
-  const childrenContainerClassName = action && isExpandable
-    ? getClassName('bpk-info-banner__children-container--with-action')
-    : getClassName('bpk-info-banner__children-container--no-action')
+  const childrenContainerClassName =
+    action && isExpandable
+      ? getClassName('bpk-info-banner__children-container--with-action')
+      : getClassName('bpk-info-banner__children-container--no-action');
 
   const BannerHeader = isExpandable ? 'button' : 'div';
 
@@ -207,14 +212,9 @@ const BpkInfoBannerInner = ({
           duration={parseInt(durationSm, 10)}
           height={showChildren ? 'auto' : 0}
         >
-          <div className={childrenContainerClassName}>
-            {children}
-          </div>
+          <div className={childrenContainerClassName}>{children}</div>
           {isExpandable && action && (
-            <BpkLink
-              onClick={action.callback}
-              href="#"
-            >
+            <BpkLink onClick={action.callback} href="#">
               {action.title}
             </BpkLink>
           )}

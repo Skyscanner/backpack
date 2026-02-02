@@ -29,7 +29,11 @@ const getClassName = cssModules(STYLES);
 /**
  * @deprecated Use `BpkLinkProps<'button'>` instead.
  */
-export interface Props extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className' | 'onClick'> {
+export interface Props
+  extends Omit<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    'className' | 'onClick'
+  > {
   /** The content of the link. */
   children: ReactNode;
   onClick: (event: MouseEvent<HTMLButtonElement>) => void;

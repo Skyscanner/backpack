@@ -28,13 +28,17 @@ import STYLES from './BpkTable.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  children: Node, 
-  className: ?string, 
-  wordBreak?: boolean
+  children: Node,
+  className: ?string,
+  wordBreak?: boolean,
 };
 
-const BpkTableHeadCell = ({ children, className = null, wordBreak = false, ...rest }: Props) => {
-
+const BpkTableHeadCell = ({
+  children,
+  className = null,
+  wordBreak = false,
+  ...rest
+}: Props) => {
   const classes = [
     'bpk-table__cell',
     'bpk-table__cell--head',

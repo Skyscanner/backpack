@@ -53,17 +53,15 @@ describe('BpkSlider', () => {
     onChange: jest.fn(),
     onAfterChange: jest.fn(),
     ariaLabel: ['min', 'max'],
-    ariaValuetext: ['0','80']
-  }
+    ariaValuetext: ['0', '80'],
+  };
   it('should render correctly', () => {
     const { asFragment } = render(<BpkSlider {...defaultProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with a "step" attribute', () => {
-    const { asFragment } = render(
-      <BpkSlider {...defaultProps} step={10} />,
-    );
+    const { asFragment } = render(<BpkSlider {...defaultProps} step={10} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -106,7 +104,10 @@ describe('BpkSlider', () => {
     });
 
     it('should remove document pointer event listeners after pointerup', () => {
-      const removeEventListenerSpy = jest.spyOn(document, 'removeEventListener');
+      const removeEventListenerSpy = jest.spyOn(
+        document,
+        'removeEventListener',
+      );
 
       render(<BpkSlider {...defaultProps} />);
       const thumb = screen.getByRole('slider');
@@ -127,7 +128,10 @@ describe('BpkSlider', () => {
     });
 
     it('should clean up document listeners on unmount during drag', () => {
-      const removeEventListenerSpy = jest.spyOn(document, 'removeEventListener');
+      const removeEventListenerSpy = jest.spyOn(
+        document,
+        'removeEventListener',
+      );
 
       const { unmount } = render(<BpkSlider {...defaultProps} />);
       const thumb = screen.getByRole('slider');
@@ -155,9 +159,7 @@ describe('BpkSlider', () => {
     it('should fire onAfterChange on document pointerup after thumb pointerdown', () => {
       const onAfterChange = jest.fn();
 
-      render(
-        <BpkSlider {...defaultProps} onAfterChange={onAfterChange} />,
-      );
+      render(<BpkSlider {...defaultProps} onAfterChange={onAfterChange} />);
 
       const thumb = screen.getByRole('slider');
 
@@ -173,9 +175,7 @@ describe('BpkSlider', () => {
     it('should not fire onAfterChange on document pointerup without prior pointerdown', () => {
       const onAfterChange = jest.fn();
 
-      render(
-        <BpkSlider {...defaultProps} onAfterChange={onAfterChange} />,
-      );
+      render(<BpkSlider {...defaultProps} onAfterChange={onAfterChange} />);
 
       // pointerup without prior pointerdown should not trigger callback
       fireEvent.pointerUp(document, { pointerId: 1 });
@@ -186,9 +186,7 @@ describe('BpkSlider', () => {
     it('should fire onAfterChange on document pointercancel after thumb pointerdown', () => {
       const onAfterChange = jest.fn();
 
-      render(
-        <BpkSlider {...defaultProps} onAfterChange={onAfterChange} />,
-      );
+      render(<BpkSlider {...defaultProps} onAfterChange={onAfterChange} />);
 
       const thumb = screen.getByRole('slider');
 

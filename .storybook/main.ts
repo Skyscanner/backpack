@@ -19,20 +19,18 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
-  stories: [
-    '../examples/**/stories.@(ts|tsx|js|jsx)',
-  ],
+  stories: ['../examples/**/stories.@(ts|tsx|js|jsx)'],
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-docs',
-    '@storybook/addon-webpack5-compiler-babel'
+    '@storybook/addon-webpack5-compiler-babel',
   ],
   framework: {
     name: '@storybook/react-webpack5',
     options: {},
   },
   docs: {
-    defaultName: 'Documentation'
+    defaultName: 'Documentation',
   },
   typescript: {
     reactDocgen: 'react-docgen-typescript',
@@ -40,9 +38,9 @@ const config: StorybookConfig = {
       shouldIncludePropTagMap: true,
       propFilter: (prop) => {
         const isHTMLElementProp =
-            prop.parent?.fileName.includes("node_modules") ?? false
+          prop.parent?.fileName.includes('node_modules') ?? false;
 
-        return !isHTMLElementProp
+        return !isHTMLElementProp;
       },
     },
   },

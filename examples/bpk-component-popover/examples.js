@@ -84,8 +84,7 @@ class PopoverContainer extends Component<Props, State> {
   };
 
   render() {
-    const { displayArrow, id, inputTrigger, ...rest } =
-      this.props;
+    const { displayArrow, id, inputTrigger, ...rest } = this.props;
     let target = null;
 
     const openButton = (
@@ -147,7 +146,10 @@ const DefaultExample = () => (
 const WithCustomRenderTargetExample = () => (
   <Spacer>
     <div id="my-target" />
-    <PopoverContainer id="my-popover-1" renderTarget={() => document.getElementById('my-target')} />
+    <PopoverContainer
+      id="my-popover-1"
+      renderTarget={() => document.getElementById('my-target')}
+    />
   </Spacer>
 );
 
@@ -189,7 +191,7 @@ const InputTriggerExample = () => (
 
 const WithActionButtonExample = () => (
   <Spacer>
-    <PopoverContainer id="my-popover" actionText="Action" onAction={() => { }} />
+    <PopoverContainer id="my-popover" actionText="Action" onAction={() => {}} />
   </Spacer>
 );
 
@@ -209,5 +211,5 @@ export {
   OnTheSideExample,
   InputTriggerExample,
   WithActionButtonExample,
-  VisualExample
+  VisualExample,
 };

@@ -71,7 +71,7 @@ const BpkThemeProvider = ({
       {children}
     </WrapperComponent>
   );
-}
+};
 
 const themeAttributesPropType = (props, propName, componentName) => {
   const { theme } = props;

@@ -20,23 +20,27 @@
 
 import { Component } from 'react';
 
-import { iconSizeLg, lineHeightBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import {
+  iconSizeLg,
+  lineHeightBase,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { withAlignment } from '../../packages/bpk-component-icon';
 import AccountIcon from '../../packages/bpk-component-icon/lg/account';
 import BpkLabel from '../../packages/bpk-component-label';
 import BpkNudger from '../../packages/bpk-component-nudger';
 import { cssModules } from '../../packages/bpk-react-utils';
-import {
-  action,
-  BpkDarkExampleWrapper,
-} from '../bpk-storybook-utils';
+import { action, BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
 import STYLES from './BpkNudgerStory.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const AlignedAccountIcon = withAlignment(AccountIcon, lineHeightBase, iconSizeLg);
+const AlignedAccountIcon = withAlignment(
+  AccountIcon,
+  lineHeightBase,
+  iconSizeLg,
+);
 
 class NudgerContainer extends Component<
   { id: string, buttonType: string },
@@ -136,7 +140,6 @@ const UpperBoundsExample = () => (
 const StatefulExample = () => (
   <NudgerContainer id="default-nudger" buttonType="secondary" />
 );
-
 
 const OnDarkExample = () => (
   <BpkDarkExampleWrapper>

@@ -21,13 +21,15 @@ import { axe } from 'jest-axe';
 
 import BpkBottomSheet from './BpkBottomSheet';
 // mock breakpoint to always match
-jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () => jest.fn(() => true));
+jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () =>
+  jest.fn(() => true),
+);
 describe('BpkBottomSheet accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
       <BpkBottomSheet
-        actionText='Action'
-        ariaLabelledby='bottom-sheet-accessibility'
+        actionText="Action"
+        ariaLabelledby="bottom-sheet-accessibility"
         closeLabel="Close"
         closeOnEscPressed
         closeOnScrimClick

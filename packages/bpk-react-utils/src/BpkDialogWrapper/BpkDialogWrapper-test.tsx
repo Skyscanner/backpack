@@ -25,11 +25,11 @@ import { type BpkDialogWrapper as WrapperType } from './BpkDialogWrapper';
 
 describe('BpkDialogWrapper', () => {
   const props = {
-    id: "bpk-dialog-wrapper",
-    ariaLabelledby: "bpk-dialog-wrapper",
+    id: 'bpk-dialog-wrapper',
+    ariaLabelledby: 'bpk-dialog-wrapper',
     isOpen: true,
-    onClose: jest.fn()
-  }
+    onClose: jest.fn(),
+  };
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -41,108 +41,99 @@ describe('BpkDialogWrapper', () => {
     beforeEach(() => {
       jest.isolateModules(() => {
         ({ BpkDialogWrapper } = jest.requireActual('./BpkDialogWrapper'));
-      })
-    })
+      });
+    });
 
     it('renders without crashing with all props', () => {
-      expect(() => renderToString(
-        <BpkDialogWrapper
-          closeOnEscPressed
-          closeOnScrimClick
-          dialogClassName='test-class'
-          exiting={false}
-          transitionClassNames={{
-            appear: "appear-class",
-            appearActive: "active-class",
-            exit: "exit-class"
-          }}
-          timeout={{ appear: 0, exit: 0 }}
-          {...props}
-        >
-          Dialog content
-        </BpkDialogWrapper>
-      )).not.toThrow();
-    })
+      expect(() =>
+        renderToString(
+          <BpkDialogWrapper
+            closeOnEscPressed
+            closeOnScrimClick
+            dialogClassName="test-class"
+            exiting={false}
+            transitionClassNames={{
+              appear: 'appear-class',
+              appearActive: 'active-class',
+              exit: 'exit-class',
+            }}
+            timeout={{ appear: 0, exit: 0 }}
+            {...props}
+          >
+            Dialog content
+          </BpkDialogWrapper>,
+        ),
+      ).not.toThrow();
+    });
     it('renders without crashing with minimum props', () => {
-      expect(() => renderToString(
-        <BpkDialogWrapper {...props}>
-          Dialog content
-        </BpkDialogWrapper>
-      )).not.toThrow();
-    })
+      expect(() =>
+        renderToString(
+          <BpkDialogWrapper {...props}>Dialog content</BpkDialogWrapper>,
+        ),
+      ).not.toThrow();
+    });
     it('renders correctly with minimum prop', () => {
       const { asFragment } = render(
-        <BpkDialogWrapper {...props}>
-          Dialog content
-        </BpkDialogWrapper>
+        <BpkDialogWrapper {...props}>Dialog content</BpkDialogWrapper>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
     it('renders correctly with closeOnX props', () => {
       const { asFragment } = render(
-        <BpkDialogWrapper
-          closeOnEscPressed
-          closeOnScrimClick
-          {...props}
-        >
+        <BpkDialogWrapper closeOnEscPressed closeOnScrimClick {...props}>
           Dialog content
-        </BpkDialogWrapper>
+        </BpkDialogWrapper>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
     it('renders correctly with class prop', () => {
       const { asFragment } = render(
-        <BpkDialogWrapper
-          dialogClassName="test-class"
-          {...props}
-        >
+        <BpkDialogWrapper dialogClassName="test-class" {...props}>
           Dialog content
-        </BpkDialogWrapper>
+        </BpkDialogWrapper>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
     it('renders correctly with ariaLabelledBy prop', () => {
       const { container } = render(
-        <BpkDialogWrapper
-          {...props}
-          ariaLabelledby='my-title-id'
-        >
+        <BpkDialogWrapper {...props} ariaLabelledby="my-title-id">
           Dialog content
-        </BpkDialogWrapper>
+        </BpkDialogWrapper>,
       );
 
-      expect(container.querySelector('dialog[aria-labelledby="my-title-id"]')).toBeInTheDocument();
+      expect(
+        container.querySelector('dialog[aria-labelledby="my-title-id"]'),
+      ).toBeInTheDocument();
     });
     it('renders correctly with ariaLabel prop', () => {
       const { container } = render(
-        <BpkDialogWrapper
-          {...props}
-          ariaLabel='my a11y title'
-        >
+        <BpkDialogWrapper {...props} ariaLabel="my a11y title">
           Dialog content
-        </BpkDialogWrapper>
+        </BpkDialogWrapper>,
       );
 
-      expect(container.querySelector('dialog[aria-label="my a11y title"]')).toBeInTheDocument();
+      expect(
+        container.querySelector('dialog[aria-label="my a11y title"]'),
+      ).toBeInTheDocument();
     });
     it('renders correctly with animation props', () => {
       const { asFragment } = render(
         <BpkDialogWrapper
           exiting={false}
           transitionClassNames={{
-            appear: "appear-class",
-            appearActive: "active-class",
-            exit: "exit-class"
+            appear: 'appear-class',
+            appearActive: 'active-class',
+            exit: 'exit-class',
           }}
           timeout={{ appear: 0, exit: 0 }}
           {...props}
         >
           Dialog content
-        </BpkDialogWrapper>
+        </BpkDialogWrapper>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
-  })
+  });
 
   describe('dialog is not supported', () => {
     let htmlDialogElement: typeof window.HTMLDialogElement;
@@ -161,45 +152,41 @@ describe('BpkDialogWrapper', () => {
     });
 
     it('renders without crashing with all props', () => {
-      expect(() => renderToString(
-        <BpkDialogWrapper
-          closeOnEscPressed
-          closeOnScrimClick
-          dialogClassName='test-class'
-          exiting={false}
-          transitionClassNames={{
-            appear: "appear-class",
-            appearActive: "active-class",
-            exit: "exit-class"
-          }}
-          timeout={{ appear: 0, exit: 0 }}
-          {...props}
-        >
-          Dialog content
-        </BpkDialogWrapper>
-      )).not.toThrow();
-    })
+      expect(() =>
+        renderToString(
+          <BpkDialogWrapper
+            closeOnEscPressed
+            closeOnScrimClick
+            dialogClassName="test-class"
+            exiting={false}
+            transitionClassNames={{
+              appear: 'appear-class',
+              appearActive: 'active-class',
+              exit: 'exit-class',
+            }}
+            timeout={{ appear: 0, exit: 0 }}
+            {...props}
+          >
+            Dialog content
+          </BpkDialogWrapper>,
+        ),
+      ).not.toThrow();
+    });
     it('renders without crashing with minimum props', () => {
-      expect(() => renderToString(
-        <BpkDialogWrapper {...props}>
-          Dialog content
-        </BpkDialogWrapper>
-      )).not.toThrow();
-    })
+      expect(() =>
+        renderToString(
+          <BpkDialogWrapper {...props}>Dialog content</BpkDialogWrapper>,
+        ),
+      ).not.toThrow();
+    });
     it('renders correctly with minimum prop', () => {
       const { asFragment } = render(
-        <BpkDialogWrapper {...props}>
-          Dialog content
-        </BpkDialogWrapper>
+        <BpkDialogWrapper {...props}>Dialog content</BpkDialogWrapper>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
     it('should call use the polyfill to open the dialog', () => {
-      render(
-        <BpkDialogWrapper {...props}>
-          Dialog content
-        </BpkDialogWrapper>
-      );
+      render(<BpkDialogWrapper {...props}>Dialog content</BpkDialogWrapper>);
 
       expect(
         document
@@ -211,24 +198,17 @@ describe('BpkDialogWrapper', () => {
     });
     it('renders correctly with closeOnX props', () => {
       const { asFragment } = render(
-        <BpkDialogWrapper
-          closeOnEscPressed
-          closeOnScrimClick
-          {...props}
-        >
+        <BpkDialogWrapper closeOnEscPressed closeOnScrimClick {...props}>
           Dialog content
-        </BpkDialogWrapper>
+        </BpkDialogWrapper>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
     it('renders correctly with class prop', () => {
       const { asFragment } = render(
-        <BpkDialogWrapper
-          dialogClassName="test-class"
-          {...props}
-        >
+        <BpkDialogWrapper dialogClassName="test-class" {...props}>
           Dialog content
-        </BpkDialogWrapper>
+        </BpkDialogWrapper>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
@@ -237,15 +217,15 @@ describe('BpkDialogWrapper', () => {
         <BpkDialogWrapper
           exiting={false}
           transitionClassNames={{
-            appear: "appear-class",
-            appearActive: "active-class",
-            exit: "exit-class"
+            appear: 'appear-class',
+            appearActive: 'active-class',
+            exit: 'exit-class',
           }}
           timeout={{ appear: 0, exit: 0 }}
           {...props}
         >
           Dialog content
-        </BpkDialogWrapper>
+        </BpkDialogWrapper>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
@@ -259,5 +239,5 @@ describe('BpkDialogWrapper', () => {
       expect(document.body.style.position).toEqual('relative');
       expect(document.body.style.width).toEqual('auto');
     });
-  })
-})
+  });
+});

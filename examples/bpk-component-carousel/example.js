@@ -16,33 +16,34 @@
  * limitations under the License.
  */
 
-import BpkCarousel from '../../packages/bpk-component-carousel'
+import BpkCarousel from '../../packages/bpk-component-carousel';
 
 const imageUrls = [
-  "https://content.skyscnr.com/m/7470cf6a4ee49c26/original/Carousel-placeholder-4.jpg",
-  "https://content.skyscnr.com/m/183e7ddaaca13b16/original/Carousel-placeholder-2.jpg",
-  "https://content.skyscnr.com/m/f8b42e98e2b79a6/original/Carousel-placeholder-3.jpg",
-  "https://content.skyscnr.com/m/51c4c9dd04c8dc95/original/Carousel-placeholder-1.jpg",
-]
+  'https://content.skyscnr.com/m/7470cf6a4ee49c26/original/Carousel-placeholder-4.jpg',
+  'https://content.skyscnr.com/m/183e7ddaaca13b16/original/Carousel-placeholder-2.jpg',
+  'https://content.skyscnr.com/m/f8b42e98e2b79a6/original/Carousel-placeholder-3.jpg',
+  'https://content.skyscnr.com/m/51c4c9dd04c8dc95/original/Carousel-placeholder-1.jpg',
+];
 
-const imagesList = imageUrls.map(url => <div><img src={url} alt='hotel bedroom' /></div>)
+const imagesList = imageUrls.map((url) => (
+  <div>
+    <img src={url} alt="hotel bedroom" />
+  </div>
+));
 
-const DefaultExample = () => (
-  <BpkCarousel images={imagesList} bottom={16} />
-);
+const DefaultExample = () => <BpkCarousel images={imagesList} bottom={16} />;
 
 const WithNavDesktopExample = () => (
-    <div style={{
-      maxWidth: "800px",
-      width: "100%",
-      margin: "auto",
-    }}>
-      <BpkCarousel
-        images={imagesList}
-        bottom={16}
-      />
-    </div>
-  );
+  <div
+    style={{
+      maxWidth: '800px',
+      width: '100%',
+      margin: 'auto',
+    }}
+  >
+    <BpkCarousel images={imagesList} bottom={16} />
+  </div>
+);
 
 const MixedExample = () => (
   <div>
@@ -52,8 +53,4 @@ const MixedExample = () => (
   </div>
 );
 
-export{
-  DefaultExample,
-  WithNavDesktopExample,
-  MixedExample
-}
+export { DefaultExample, WithNavDesktopExample, MixedExample };

@@ -25,9 +25,8 @@ type Props = Partial<BpkCalendarDateProps> & {
   isOutside?: boolean;
   [rest: string]: any;
 };
-const BpkScrollableCalendarDate = ({isOutside = false, ...rest}: Props) => 
-    // Returning null when isOutside is true ensures only focused month displays in grid
-     !isOutside ? <BpkCalendarDate {...rest} /> : null
-
+const BpkScrollableCalendarDate = ({ isOutside = false, ...rest }: Props) =>
+  // Returning null when isOutside is true ensures only focused month displays in grid
+  !isOutside ? <BpkCalendarDate {...rest} /> : null;
 
 export default BpkScrollableCalendarDate;

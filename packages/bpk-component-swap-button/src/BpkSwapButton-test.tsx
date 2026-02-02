@@ -28,16 +28,16 @@ const props = {
 
 describe('BpkSwapButton', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<BpkSwapButton {...props }/>);
+    const { asFragment } = render(<BpkSwapButton {...props} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('calls onClick prop when clicked', async () => {
     const mockOnClick = jest.fn();
-    render(<BpkSwapButton {...props} onClick={mockOnClick}/>);
+    render(<BpkSwapButton {...props} onClick={mockOnClick} />);
 
     await userEvent.click(screen.getByRole('button'));
 
     expect(mockOnClick).toHaveBeenCalled();
-    });
   });
+});

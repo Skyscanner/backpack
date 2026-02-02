@@ -122,7 +122,7 @@ describe('BpkInsetBanner', () => {
             {
               title: 'Single item title',
               description: 'Single item description',
-            }
+            },
           ],
           bottomSheetTitle: 'About this advert',
           closeBtnIcon: true,
@@ -139,7 +139,9 @@ describe('BpkInsetBanner', () => {
     const ctaButton = screen.getByTestId('ctaBtn');
     fireEvent.click(ctaButton);
 
-    const infoIconContainers = screen.getAllByTestId('bottom-sheet-icon-container');
+    const infoIconContainers = screen.getAllByTestId(
+      'bottom-sheet-icon-container',
+    );
     expect(infoIconContainers.length).toBe(1);
     expect(screen.getByTestId('view-icon')).toBeInTheDocument();
     expect(screen.queryByTestId('info-icon')).not.toBeInTheDocument();

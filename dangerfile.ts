@@ -89,9 +89,11 @@ if (unlicensedFiles.length > 0) {
 }
 
 const newComponentContainsClass = createdFiles.filter((filePath: string) => {
-  if (filePath.match(/\.(js|ts|tsx|css|scss|sh)$/) &&
+  if (
+    filePath.match(/\.(js|ts|tsx|css|scss|sh)$/) &&
     !filePath.includes('dist/') &&
-    !filePath.includes('base.js')) {
+    !filePath.includes('base.js')
+  ) {
     const fileContent = fs.readFileSync(filePath);
     return fileContent.includes('className?: string | null');
   }
@@ -122,22 +124,47 @@ if (nonModuleCssFiles.length) {
   );
 }
 
-const linterWarnings = ["no-console", "no-undef", "@typescript-eslint/no-unused-vars", "jest/no-disabled-tests", "no-alert", "func-names", "react-hooks/exhaustive-deps"]
-const invalidReactChild = ["Functions are not valid as a React child"];
-const invalidFormField = ["You provided .* to a form field without"];
-const components = ["<TestComponent />", "<TestComponent>", "<Nav />", "<Header />", "<Grid />", "<Grid>", "<Portal />", "<Portal>"];
-const reactRecogniseProp = ["React does not recognize"]
-const invalidTags = ["The tag <rect>", "The tag <g>", "The tag <text>"]
-const passingTests = ["✓"]
-const unknownEventHandler = ["Unknown event handler"]
-const propType = ["Failed prop type", "Support for defaultProps will be removed from function components in a future major release. Use JavaScript default parameters instead.", 'A props object containing a "key" prop is being spread into JSX:']
-const componentWillReceiveProps = ["componentWillReceiveProps"]
-const invalidCSSProperties = ["is an invalid value for the .* css style property."]
-const invalidProps = ["for a non-boolean attribute", "Invalid ARIA attribute"]
+const linterWarnings = [
+  'no-console',
+  'no-undef',
+  '@typescript-eslint/no-unused-vars',
+  'jest/no-disabled-tests',
+  'no-alert',
+  'func-names',
+  'react-hooks/exhaustive-deps',
+];
+const invalidReactChild = ['Functions are not valid as a React child'];
+const invalidFormField = ['You provided .* to a form field without'];
+const components = [
+  '<TestComponent />',
+  '<TestComponent>',
+  '<Nav />',
+  '<Header />',
+  '<Grid />',
+  '<Grid>',
+  '<Portal />',
+  '<Portal>',
+];
+const reactRecogniseProp = ['React does not recognize'];
+const invalidTags = ['The tag <rect>', 'The tag <g>', 'The tag <text>'];
+const passingTests = ['✓'];
+const unknownEventHandler = ['Unknown event handler'];
+const propType = [
+  'Failed prop type',
+  'Support for defaultProps will be removed from function components in a future major release. Use JavaScript default parameters instead.',
+  'A props object containing a "key" prop is being spread into JSX:',
+];
+const componentWillReceiveProps = ['componentWillReceiveProps'];
+const invalidCSSProperties = [
+  'is an invalid value for the .* css style property.',
+];
+const invalidProps = ['for a non-boolean attribute', 'Invalid ARIA attribute'];
 // TODO: Address tests being wrapped in act
-const actTests = ["inside a test was not wrapped in act(...)"]
+const actTests = ['inside a test was not wrapped in act(...)'];
 // TODO: Convert components that use CSSTransition to functional components and allow for using refs
-const findDOMNode = ["findDOMNode is deprecated and will be removed in the next major release."];
+const findDOMNode = [
+  'findDOMNode is deprecated and will be removed in the next major release.',
+];
 
 const allIgnoredWarnings = linterWarnings
   .concat(invalidReactChild)
@@ -156,5 +183,5 @@ const allIgnoredWarnings = linterWarnings
 
 commonFileWarnings('logs/test.log', {
   logType: 'fail',
-  ignoreRegex: new RegExp(allIgnoredWarnings.join("|"))
+  ignoreRegex: new RegExp(allIgnoredWarnings.join('|')),
 });

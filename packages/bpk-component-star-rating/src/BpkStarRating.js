@@ -70,7 +70,6 @@ const BpkStarRating = ({
   rounding = ROUNDING_TYPES.down,
   ...rest
 }: Props) => {
-
   const stars = [];
   const classNames = [getClassName('bpk-star-rating')];
 
@@ -84,7 +83,12 @@ const BpkStarRating = ({
     const type = getTypeByRating(starNumber, rounding(currentRating));
 
     stars.push(
-      <BpkStar key={`star-${starNumber}`} type={type} large={large} extraLarge={extraLarge} />,
+      <BpkStar
+        key={`star-${starNumber}`}
+        type={type}
+        large={large}
+        extraLarge={extraLarge}
+      />,
     );
   }
 

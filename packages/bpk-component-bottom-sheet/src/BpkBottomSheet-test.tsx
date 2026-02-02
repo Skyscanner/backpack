@@ -50,7 +50,7 @@ describe('BpkBottomSheet', () => {
           top: PADDING_TYPE.none,
           start: PADDING_TYPE.lg,
           end: PADDING_TYPE.lg,
-          bottom: PADDING_TYPE.lg
+          bottom: PADDING_TYPE.lg,
         }}
       >
         Bottom Sheet content
@@ -58,18 +58,19 @@ describe('BpkBottomSheet', () => {
     );
     expect(screen.getByText('Bottom Sheet content')).toBeInTheDocument();
     expect(screen.getByText('Bottom sheet title')).toBeInTheDocument();
-
   });
 
   it('renders without crashing with minimum props', () => {
-    render( <BpkBottomSheet
-      ariaLabelledby="bottom-sheet"
-      id="my-bottom-sheet"
-      isOpen
-      onClose={jest.fn()}
-    >
-      Bottom Sheet content
-    </BpkBottomSheet>,);
+    render(
+      <BpkBottomSheet
+        ariaLabelledby="bottom-sheet"
+        id="my-bottom-sheet"
+        isOpen
+        onClose={jest.fn()}
+      >
+        Bottom Sheet content
+      </BpkBottomSheet>,
+    );
     expect(screen.getByText('Bottom Sheet content')).toBeInTheDocument();
     expect(screen.queryByText('Bottom sheet title')).not.toBeInTheDocument();
   });
@@ -80,7 +81,9 @@ describe('BpkBottomSheet', () => {
         Bottom Sheet content
       </BpkBottomSheet>,
     );
-    expect(container.querySelector('.bpk-bottom-sheet--wide')).toBeInTheDocument();
+    expect(
+      container.querySelector('.bpk-bottom-sheet--wide'),
+    ).toBeInTheDocument();
   });
 
   it('renders correctly with action props', () => {

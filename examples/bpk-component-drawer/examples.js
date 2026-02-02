@@ -258,7 +258,10 @@ const WithFullHeightContentExample = () => (
     contentClassName={getClassName('bpk-drawer-content-container')}
   >
     This is a flex drawer. You can put anything you want in here.
-    <BpkButton type={BUTTON_TYPES.secondary} className={getClassName('bpk-drawer-button')}>
+    <BpkButton
+      type={BUTTON_TYPES.secondary}
+      className={getClassName('bpk-drawer-button')}
+    >
       I don&apos;t do anything.
     </BpkButton>
   </DrawerContainer>
@@ -300,21 +303,21 @@ const DrawerWithTooltipExampleNotAbleToBeShown = () => (
     buttonText="Open drawer with tooltip"
     getApplicationElement={() => document.getElementById('pagewrap')}
   >
-
-    <div style={{display: "flex", justifyContent: "space-between"}}>
+    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
       <BpkTooltip
         ariaLabel="Example Tooltip on the background"
         id="my-tooltip"
         target={
           <div>
-            <BpkLink as="button" onClick={() => null}>Hover me</BpkLink>
+            <BpkLink as="button" onClick={() => null}>
+              Hover me
+            </BpkLink>
           </div>
         }
       >
         Example Tooltip on the background
       </BpkTooltip>
     </div>
-
   </DrawerContainer>
 );
 
@@ -324,23 +327,25 @@ const DrawerWithTooltipExampleAbleToBeShown = () => (
     closeLabel="Close drawer"
     buttonText="Open drawer with tooltip"
     getApplicationElement={() => document.getElementById('pagewrap')}
-    containerClassName={getClassName('bpk-drawer-with-tooltip-not-able-to-show')}
+    containerClassName={getClassName(
+      'bpk-drawer-with-tooltip-not-able-to-show',
+    )}
   >
-
-    <div style={{display: "flex"}}>
+    <div style={{ display: 'flex' }}>
       <BpkTooltip
         ariaLabel="Example Tooltip on the background"
         id="my-tooltip"
         target={
           <div>
-            <BpkLink as="button" onClick={() => null}>Hover me</BpkLink>
+            <BpkLink as="button" onClick={() => null}>
+              Hover me
+            </BpkLink>
           </div>
         }
       >
         Example Tooltip on the front
       </BpkTooltip>
     </div>
-
   </DrawerContainer>
 );
 
@@ -353,5 +358,5 @@ export {
   WithNonPaddedContentExample,
   WithMobileModalBehaviourExample,
   DrawerWithTooltipExampleNotAbleToBeShown,
-  DrawerWithTooltipExampleAbleToBeShown
+  DrawerWithTooltipExampleAbleToBeShown,
 };

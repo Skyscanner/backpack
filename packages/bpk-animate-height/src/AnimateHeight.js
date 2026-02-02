@@ -52,7 +52,8 @@ class AnimateHeight extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { height: prevHeight, transitionOverflow: prevTransitionOverflow } = prevProps;
+    const { height: prevHeight, transitionOverflow: prevTransitionOverflow } =
+      prevProps;
     const { duration, height, transitionOverflow } = this.props;
 
     // Check if 'height' prop has changed
@@ -108,7 +109,7 @@ class AnimateHeight extends Component {
         }, timeoutDuration);
       }
     }
-}
+  }
 
   componentWillUnmount() {
     clearTimeout(this.timeoutID);

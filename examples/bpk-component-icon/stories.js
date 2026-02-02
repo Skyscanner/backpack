@@ -38,7 +38,7 @@ export const SmallIcons = SmallIconsExample;
 
 export const LargeIcons = LargeIconsExample;
 
-export const TripleExtraLargeIcons = TripleExtraLargeIconsExample
+export const TripleExtraLargeIcons = TripleExtraLargeIconsExample;
 
 export const AlignToTextBase = AlignToBaseTextExample;
 
@@ -57,5 +57,5 @@ export const AlignToLargeButtonRtlSupport = AlignToLargeButtonRTLExample;
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

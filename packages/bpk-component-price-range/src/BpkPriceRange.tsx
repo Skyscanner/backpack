@@ -144,11 +144,16 @@ const BpkPriceRange = ({
   const mediumClassName = getClassName('bpk-price-range__line--medium');
 
   // TODO: LUNA-3184 set default to BUBBLE when deprecating `showPriceIndicator`
-  const defaultMarkerType = showPriceIndicator ?? true ? MARKER_DISPLAY_TYPES.BUBBLE : MARKER_DISPLAY_TYPES.DOT;
+  const defaultMarkerType =
+    (showPriceIndicator ?? true)
+      ? MARKER_DISPLAY_TYPES.BUBBLE
+      : MARKER_DISPLAY_TYPES.DOT;
   const markerType = marker?.type || defaultMarkerType;
   const shouldShowMarker = !!marker;
-  const shouldShowBubble = shouldShowMarker && markerType === MARKER_DISPLAY_TYPES.BUBBLE;
-  const shouldShowDot = shouldShowMarker && markerType === MARKER_DISPLAY_TYPES.DOT;
+  const shouldShowBubble =
+    shouldShowMarker && markerType === MARKER_DISPLAY_TYPES.BUBBLE;
+  const shouldShowDot =
+    shouldShowMarker && markerType === MARKER_DISPLAY_TYPES.DOT;
   const dotClassName = getClassName(
     `bpk-price-range__line--${type}`,
     'bpk-price-range__line--dot',

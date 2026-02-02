@@ -97,18 +97,20 @@ const content = [
 ];
 
 type BottomSheetContainerProps = {
-  children: ReactNode,
-  isComponentOpen?: boolean,
-  id?: string,
-} & Omit<BpkBottomSheetProps, "ariaLabelledby" | "ariaLabel" | "id" | "isOpen" | "onClose">
+  children: ReactNode;
+  isComponentOpen?: boolean;
+  id?: string;
+} & Omit<
+  BpkBottomSheetProps,
+  'ariaLabelledby' | 'ariaLabel' | 'id' | 'isOpen' | 'onClose'
+>;
 
 class BottomSheetContainer extends Component<
   BottomSheetContainerProps,
   {
-    isOpen: boolean,
+    isOpen: boolean;
   }
 > {
-
   constructor(props: BottomSheetContainerProps) {
     super(props);
 
@@ -120,8 +122,8 @@ class BottomSheetContainer extends Component<
   componentDidMount(): void {
     if (this.props?.isComponentOpen) {
       this.setState({
-        isOpen: true
-      })
+        isOpen: true,
+      });
     }
   }
 
@@ -138,18 +140,15 @@ class BottomSheetContainer extends Component<
   };
 
   render() {
-    const { children, id, ...rest } =
-      this.props;
+    const { children, id, ...rest } = this.props;
 
     return (
       <div id="bottom-sheet-container">
         <div id="pagewrap">
-          <BpkButton onClick={this.onOpen}>
-            Open bottom sheet
-          </BpkButton>
+          <BpkButton onClick={this.onOpen}>Open bottom sheet</BpkButton>
           <BpkBottomSheet
-            ariaLabel='test accessible title'
-            id={id || "my-bottom-sheet"}
+            ariaLabel="test accessible title"
+            id={id || 'my-bottom-sheet'}
             {...rest}
             onClose={this.onClose}
             isOpen={this.state.isOpen}
@@ -163,25 +162,39 @@ class BottomSheetContainer extends Component<
 }
 
 const DefaultExample = () => (
-  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet">
+  <BottomSheetContainer
+    title="Bottom Sheet title"
+    closeLabel="Close Bottom Sheet"
+  >
     This is a default bottom sheet. You can put anything you want in here.
   </BottomSheetContainer>
 );
 
 const BackdropClickCloseExample = () => (
-  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" closeOnScrimClick>
+  <BottomSheetContainer
+    title="Bottom Sheet title"
+    closeLabel="Close Bottom Sheet"
+    closeOnScrimClick
+  >
     This is a default bottom sheet. You can put anything you want in here.
   </BottomSheetContainer>
 );
 
 const EscapeCloseExample = () => (
-  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" closeOnEscPressed>
+  <BottomSheetContainer
+    title="Bottom Sheet title"
+    closeLabel="Close Bottom Sheet"
+    closeOnEscPressed
+  >
     This is a default bottom sheet. You can put anything you want in here.
   </BottomSheetContainer>
 );
 
 const OverflowingExample = () => (
-  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet">
+  <BottomSheetContainer
+    title="Bottom Sheet title"
+    closeLabel="Close Bottom Sheet"
+  >
     <>{Children.toArray(content)}</>
   </BottomSheetContainer>
 );
@@ -207,29 +220,38 @@ const LongHeaderTextWithActionButtonExample = () => (
 );
 
 const NoHeaderExample = () => (
-  <BottomSheetContainer
-    closeLabel="Close Bottom Sheet"
-  >
+  <BottomSheetContainer closeLabel="Close Bottom Sheet">
     This is a default bottom sheet. You can put anything you want in here.
   </BottomSheetContainer>
 );
 
 const NoHeaderWithActionButtonExample = () => (
   <BottomSheetContainer
-    closeLabel="Close Bottom Sheet" actionText="Action" onAction={action('Action clicked')}
+    closeLabel="Close Bottom Sheet"
+    actionText="Action"
+    onAction={action('Action clicked')}
   >
     This is a default bottom sheet. You can put anything you want in here.
   </BottomSheetContainer>
 );
 
 const ActionButtonExample = () => (
-  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" actionText="Action" onAction={action('Action clicked')}>
+  <BottomSheetContainer
+    title="Bottom Sheet title"
+    closeLabel="Close Bottom Sheet"
+    actionText="Action"
+    onAction={action('Action clicked')}
+  >
     This is a default bottom sheet. You can put anything you want in here.
   </BottomSheetContainer>
 );
 
 const WideExample = () => (
-  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" wide>
+  <BottomSheetContainer
+    title="Bottom Sheet title"
+    closeLabel="Close Bottom Sheet"
+    wide
+  >
     This is a wide bottom sheet.
   </BottomSheetContainer>
 );
@@ -289,37 +311,87 @@ const MultipleBottomSheetsExample = () => (
       This is a bottom sheet 3.
     </BottomSheetContainer>
   </>
-)
+);
 
 const NoPaddingExample = () => (
-  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" paddingStyles={{top: PADDING_TYPE.none, start: PADDING_TYPE.none, end: PADDING_TYPE.none, bottom: PADDING_TYPE.none}} isComponentOpen>
+  <BottomSheetContainer
+    title="Bottom Sheet title"
+    closeLabel="Close Bottom Sheet"
+    paddingStyles={{
+      top: PADDING_TYPE.none,
+      start: PADDING_TYPE.none,
+      end: PADDING_TYPE.none,
+      bottom: PADDING_TYPE.none,
+    }}
+    isComponentOpen
+  >
     <>{Children.toArray(content)}</>
   </BottomSheetContainer>
-)
+);
 
 const BasePaddingExample = () => (
-  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" paddingStyles={{top: PADDING_TYPE.base, start: PADDING_TYPE.base, end: PADDING_TYPE.base, bottom: PADDING_TYPE.base}} isComponentOpen>
+  <BottomSheetContainer
+    title="Bottom Sheet title"
+    closeLabel="Close Bottom Sheet"
+    paddingStyles={{
+      top: PADDING_TYPE.base,
+      start: PADDING_TYPE.base,
+      end: PADDING_TYPE.base,
+      bottom: PADDING_TYPE.base,
+    }}
+    isComponentOpen
+  >
     <>{Children.toArray(content)}</>
   </BottomSheetContainer>
-)
+);
 
 const LgPaddingExample = () => (
-  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" paddingStyles={{top: PADDING_TYPE.lg, start: PADDING_TYPE.lg, end: PADDING_TYPE.lg, bottom: PADDING_TYPE.lg}} isComponentOpen>
+  <BottomSheetContainer
+    title="Bottom Sheet title"
+    closeLabel="Close Bottom Sheet"
+    paddingStyles={{
+      top: PADDING_TYPE.lg,
+      start: PADDING_TYPE.lg,
+      end: PADDING_TYPE.lg,
+      bottom: PADDING_TYPE.lg,
+    }}
+    isComponentOpen
+  >
     <>{Children.toArray(content)}</>
   </BottomSheetContainer>
-)
+);
 
 const XXLPaddingExample = () => (
-  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" paddingStyles={{top: PADDING_TYPE.xxl, start: PADDING_TYPE.xxl, end: PADDING_TYPE.xxl, bottom: PADDING_TYPE.xxl}} isComponentOpen>
+  <BottomSheetContainer
+    title="Bottom Sheet title"
+    closeLabel="Close Bottom Sheet"
+    paddingStyles={{
+      top: PADDING_TYPE.xxl,
+      start: PADDING_TYPE.xxl,
+      end: PADDING_TYPE.xxl,
+      bottom: PADDING_TYPE.xxl,
+    }}
+    isComponentOpen
+  >
     <>{Children.toArray(content)}</>
   </BottomSheetContainer>
-)
+);
 
 const XXXLPaddingExample = () => (
-  <BottomSheetContainer title="Bottom Sheet title" closeLabel="Close Bottom Sheet" paddingStyles={{top: PADDING_TYPE.xxxl, start: PADDING_TYPE.xxxl, end: PADDING_TYPE.xxxl, bottom: PADDING_TYPE.xxxl}} isComponentOpen>
+  <BottomSheetContainer
+    title="Bottom Sheet title"
+    closeLabel="Close Bottom Sheet"
+    paddingStyles={{
+      top: PADDING_TYPE.xxxl,
+      start: PADDING_TYPE.xxxl,
+      end: PADDING_TYPE.xxxl,
+      bottom: PADDING_TYPE.xxxl,
+    }}
+    isComponentOpen
+  >
     <>{Children.toArray(content)}</>
   </BottomSheetContainer>
-)
+);
 
 export {
   DefaultExample,
@@ -338,5 +410,5 @@ export {
   BasePaddingExample,
   LgPaddingExample,
   XXLPaddingExample,
-  XXXLPaddingExample
+  XXXLPaddingExample,
 };

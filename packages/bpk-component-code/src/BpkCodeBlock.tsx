@@ -46,7 +46,11 @@ const BpkCodeBlock = ({
   const codeClassNames = getClassName('bpk-code', 'bpk-code--block');
 
   return (
-    <pre className={preClassNames} {...getDataComponentAttribute('CodeBlock')} {...rest}>
+    <pre
+      className={preClassNames}
+      {...getDataComponentAttribute('CodeBlock')}
+      {...rest}
+    >
       <code className={codeClassNames}>{children}</code>
     </pre>
   );

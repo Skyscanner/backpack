@@ -25,8 +25,8 @@ import BpkOverlayView from './BpkOverlayView';
 import { LatLongPropType, type LatLong } from './common-types';
 
 type Props = {
-  children: ReactNode,
-  position: LatLong,
+  children: ReactNode;
+  position: LatLong;
 };
 
 const getPixelPositionOffset = (width: number, height: number) => ({

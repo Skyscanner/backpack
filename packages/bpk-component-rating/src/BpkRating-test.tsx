@@ -21,23 +21,25 @@ import { render, screen } from '@testing-library/react';
 import BpkRating, { RATING_SIZES, RATING_SCALES } from '../index';
 
 describe('BpkRating', () => {
-
   it('should render correctly', () => {
     render(
       <BpkRating
         ariaLabel="4.6 Excellent 672 reviews"
         value={4.6}
         title="Excellent"
-        subtitle="672 reviews" />,
+        subtitle="672 reviews"
+      />,
     );
 
-    expect(screen.getByText('Excellent')).toBeVisible()
-    expect(screen.getByText('672 reviews')).toBeVisible()
-    expect(screen.getByLabelText('4.6 Excellent 672 reviews')).toBeInTheDocument();
+    expect(screen.getByText('Excellent')).toBeVisible();
+    expect(screen.getByText('672 reviews')).toBeVisible();
+    expect(
+      screen.getByLabelText('4.6 Excellent 672 reviews'),
+    ).toBeInTheDocument();
   });
 
   it('should render large size correctly', () => {
-     render(
+    render(
       <BpkRating
         ariaLabel="4.6 Excellent 2,420 reviews"
         value={4.6}
@@ -47,8 +49,12 @@ describe('BpkRating', () => {
       />,
     );
 
-    expect(screen.getByLabelText('4.6 Excellent 2,420 reviews')).toHaveClass('bpk-rating bpk-rating--large');
-    expect(screen.getByText('Excellent')).toHaveClass('bpk-text bpk-text--heading-5');
+    expect(screen.getByLabelText('4.6 Excellent 2,420 reviews')).toHaveClass(
+      'bpk-rating bpk-rating--large',
+    );
+    expect(screen.getByText('Excellent')).toHaveClass(
+      'bpk-text bpk-text--heading-5',
+    );
   });
 
   it('should render showScale rating correctly', () => {
@@ -61,9 +67,10 @@ describe('BpkRating', () => {
       />,
     );
 
-    expect(screen.getByLabelText('6.7 Average might recommend')).toHaveClass('bpk-rating');
+    expect(screen.getByLabelText('6.7 Average might recommend')).toHaveClass(
+      'bpk-rating',
+    );
     expect(screen.getByText('/5')).toHaveClass('bpk-rating__scale');
-
   });
 
   it('should not show scale with showScale=false correctly', () => {
@@ -77,7 +84,7 @@ describe('BpkRating', () => {
       />,
     );
 
-     expect(screen.queryByText('4.9')).not.toHaveClass('bpk-rating__scale');
+    expect(screen.queryByText('4.9')).not.toHaveClass('bpk-rating__scale');
   });
 
   it('should render title only correctly', () => {
@@ -90,8 +97,9 @@ describe('BpkRating', () => {
     );
 
     expect(screen.getByText('Average')).toBeVisible();
-    expect(document.querySelector('.bpk-rating__title--with-subtitle')).not.toBeInTheDocument();
-
+    expect(
+      document.querySelector('.bpk-rating__title--with-subtitle'),
+    ).not.toBeInTheDocument();
   });
 
   it('should render large title only correctly', () => {
@@ -105,7 +113,9 @@ describe('BpkRating', () => {
     );
 
     expect(screen.getByText('Average')).toHaveClass('bpk-text--heading-5');
-    expect(screen.getByLabelText('6.7 Average might recommend')).toHaveClass('bpk-rating');
+    expect(screen.getByLabelText('6.7 Average might recommend')).toHaveClass(
+      'bpk-rating',
+    );
   });
 
   it('should render zero to ten scale rating correctly', () => {
@@ -121,7 +131,9 @@ describe('BpkRating', () => {
 
     expect(screen.getByText('Excellent')).toBeVisible();
     expect(screen.getByText('2,420 reviews')).toBeVisible();
-    expect(screen.getByLabelText('8.2 Excellent 2,420 reviews')).toBeInTheDocument();
+    expect(
+      screen.getByLabelText('8.2 Excellent 2,420 reviews'),
+    ).toBeInTheDocument();
     expect(screen.getByText('8.2')).toHaveClass('bpk-text--label-1');
   });
 
@@ -155,7 +167,9 @@ describe('BpkRating', () => {
 
     expect(screen.getByText('Smashing')).toBeVisible();
     expect(screen.getByText('Doubleplusgood')).toBeVisible();
-    expect(screen.getByLabelText('10 Super, smashing, great')).toBeInTheDocument();
+    expect(
+      screen.getByLabelText('10 Super, smashing, great'),
+    ).toBeInTheDocument();
     expect(screen.getByText('/5')).toHaveClass('bpk-rating__scale');
   });
 
@@ -189,7 +203,9 @@ describe('BpkRating', () => {
 
     expect(screen.getByText('Wonderful')).toBeVisible();
     expect(screen.getByText('Wise choice')).toBeVisible();
-    expect(screen.getByLabelText('4,6 Wonderful Wise choice')).toBeInTheDocument();
+    expect(
+      screen.getByLabelText('4,6 Wonderful Wise choice'),
+    ).toBeInTheDocument();
     expect(screen.getByText('4,6')).toHaveClass('bpk-text--label-1');
   });
 });

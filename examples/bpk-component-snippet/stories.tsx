@@ -24,7 +24,7 @@ import {
   DesktopExample,
   MobileLandscapeExample,
   MobileSquareExample,
-  MobilePortraitExample
+  MobilePortraitExample,
 } from './examples';
 
 import type { StoryObj } from '@storybook/react';
@@ -72,6 +72,6 @@ export const VisualTest = DesktopExample;
 export const VisualTestWithZoom = {
   render: VisualTest,
   args: {
-    zoomEnabled: true
-  }
-}
+    zoomEnabled: true,
+  },
+};

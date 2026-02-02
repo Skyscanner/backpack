@@ -26,7 +26,7 @@ type Props = {
 
 declare const BpkBaseSkeleton: ({
   skeletonStyle,
-  styleObj
- }: Props) => JSX.Element;
+  styleObj,
+}: Props) => JSX.Element;
 
 export default BpkBaseSkeleton;

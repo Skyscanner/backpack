@@ -16,7 +16,12 @@
  * limitations under the License.
  */
 
-import type { ComponentPropsWithoutRef, ElementType, ReactNode, Ref } from 'react';
+import type {
+  ComponentPropsWithoutRef,
+  ElementType,
+  ReactNode,
+  Ref,
+} from 'react';
 
 /**
  * Polymorphic component types following Chakra UI pattern.
@@ -56,8 +61,7 @@ type AsProps<E extends ElementType> = {
 };
 
 /** Polymorphic props type that merges base props with element-specific props */
-type PolymorphicProps<E extends ElementType> =
-  BpkLinkBaseProps &
+type PolymorphicProps<E extends ElementType> = BpkLinkBaseProps &
   AsProps<E> &
   Omit<ComponentPropsWithoutRef<E>, keyof BpkLinkBaseProps | 'as'>;
 
@@ -67,14 +71,17 @@ export type BpkLinkProps<E extends ElementType = 'a'> = E extends 'a'
   : PolymorphicProps<E>;
 
 /** Polymorphic ref type mapping element types to their ref types */
-export type PolymorphicRef<E extends LinkAs> =
-  E extends 'a' ? Ref<HTMLAnchorElement> :
-  E extends 'button' ? Ref<HTMLButtonElement> :
-  E extends 'span' ? Ref<HTMLSpanElement> :
-  E extends 'div' ? Ref<HTMLDivElement> :
-  never;
+export type PolymorphicRef<E extends LinkAs> = E extends 'a'
+  ? Ref<HTMLAnchorElement>
+  : E extends 'button'
+    ? Ref<HTMLButtonElement>
+    : E extends 'span'
+      ? Ref<HTMLSpanElement>
+      : E extends 'div'
+        ? Ref<HTMLDivElement>
+        : never;
 
 /** Polymorphic component type for BpkLink */
 export type PolymorphicComponent = <E extends LinkAs = 'a'>(
-  props: BpkLinkProps<E> & { ref?: PolymorphicRef<E> }
+  props: BpkLinkProps<E> & { ref?: PolymorphicRef<E> },
 ) => JSX.Element | null;

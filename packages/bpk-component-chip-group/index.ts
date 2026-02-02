@@ -33,9 +33,5 @@ export type {
   SingleSelectProps,
   SingleSelectChipItem,
 };
-export {
-  BpkSingleSelectChipGroup,
-  CHIP_GROUP_TYPES,
-  CHIP_COMPONENT,
-};
+export { BpkSingleSelectChipGroup, CHIP_GROUP_TYPES, CHIP_COMPONENT };
 export default BpkMultiSelectChipGroup;

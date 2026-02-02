@@ -33,8 +33,12 @@ type Props = {
   wordBreak?: boolean,
 };
 
-const BpkTableCell = ({children, className = null, wordBreak = false, ...rest}: Props) => {
-
+const BpkTableCell = ({
+  children,
+  className = null,
+  wordBreak = false,
+  ...rest
+}: Props) => {
   const classes = [
     'bpk-table__cell',
     wordBreak && 'bpk-table__cell--wordBreak',

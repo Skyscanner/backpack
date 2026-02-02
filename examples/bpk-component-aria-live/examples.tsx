@@ -129,7 +129,9 @@ class SelectExample<SProps extends {}> extends Component<
               </BpkSelect>
             </BpkFieldset>
             <div
-              className={getClassName('bpk-storybook-aria-live-demo__switch-wrapper')}
+              className={getClassName(
+                'bpk-storybook-aria-live-demo__switch-wrapper',
+              )}
             >
               <span>Direct flights only</span>
               <BpkSwitch

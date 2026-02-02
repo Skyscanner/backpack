@@ -154,7 +154,6 @@ const DefaultExampleWithCustomHeight = () => (
   />
 );
 
-
 const RangeExample = () => (
   <ScrollableCal
     weekStartsOn={1}

@@ -35,17 +35,17 @@ export const PADDING_TYPE = {
   base: 'base',
   lg: 'lg',
   xxl: 'xxl',
-  xxxl: 'xxxl'
-}
+  xxxl: 'xxxl',
+};
 
 export type PaddingType = (typeof PADDING_TYPE)[keyof typeof PADDING_TYPE];
 
 export type PaddingStyles = {
-  top?: PaddingType,
-  start?: PaddingType,
-  end?: PaddingType,
-  bottom?: PaddingType,
-}
+  top?: PaddingType;
+  start?: PaddingType;
+  end?: PaddingType;
+  bottom?: PaddingType;
+};
 
 interface CommonProps {
   actionText?: string;
@@ -71,16 +71,17 @@ interface CommonProps {
   paddingStyles?: PaddingStyles;
 }
 
-export type Props = CommonProps & ({ ariaLabelledby: string } | { ariaLabel: string; });
+export type Props = CommonProps &
+  ({ ariaLabelledby: string } | { ariaLabel: string });
 
 const getContentStyles = (paddingStyles: PaddingStyles): string => {
-  const { 
+  const {
     bottom = PADDING_TYPE.lg,
-    end, 
-    start = PADDING_TYPE.lg, 
-    top = PADDING_TYPE.none 
+    end,
+    start = PADDING_TYPE.lg,
+    top = PADDING_TYPE.none,
   } = paddingStyles;
-  
+
   const classNames = ['bpk-bottom-sheet--content'];
 
   // Add padding classes for each side if not 'none'
@@ -120,7 +121,7 @@ const BpkBottomSheet = ({
     top: PADDING_TYPE.none,
     start: PADDING_TYPE.lg,
     end: PADDING_TYPE.lg,
-    bottom: PADDING_TYPE.lg
+    bottom: PADDING_TYPE.lg,
   },
   title = '',
   wide = false,
@@ -195,7 +196,9 @@ const BpkBottomSheet = ({
             }
             trailingButton={
               actionText && onAction ? (
-                <BpkLink as="button" onClick={onAction}>{actionText}</BpkLink>
+                <BpkLink as="button" onClick={onAction}>
+                  {actionText}
+                </BpkLink>
               ) : null
             }
           />

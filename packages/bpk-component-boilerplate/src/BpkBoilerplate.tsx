@@ -26,14 +26,18 @@ export type Props = {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 const BpkBoilerplate = ({ ...rest }: Props) => {
-
   // eslint-disable-next-line no-param-reassign
   delete rest.className;
 
   return (
-    <div className={getClassName('bpk-boilerplate')} {...getDataComponentAttribute('Boilerplate')} {...rest}>
+    <div
+      className={getClassName('bpk-boilerplate')}
+      {...getDataComponentAttribute('Boilerplate')}
+      {...rest}
+    >
       I am an example component.
     </div>
-  )};
+  );
+};
 
 export default BpkBoilerplate;

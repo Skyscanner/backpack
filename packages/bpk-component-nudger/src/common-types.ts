@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from "react";
+import type { ReactNode } from 'react';
 
 export const BUTTON_TYPES = {
   secondary: 'secondary',
@@ -25,9 +25,9 @@ export const BUTTON_TYPES = {
 
 export type CommonProps = {
   id: string;
-  min:  number;
-  max:  number;
-  value:  number;
+  min: number;
+  max: number;
+  value: number;
   onValueChange: (arg0: number) => void;
   name?: string | undefined;
   step?: number;
@@ -51,5 +51,5 @@ export type CommonProps = {
    */
   title?: string;
   subtitle?: string;
-  icon? : ReactNode;
+  icon?: ReactNode;
 };

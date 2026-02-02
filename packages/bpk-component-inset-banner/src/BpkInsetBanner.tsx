@@ -124,12 +124,14 @@ const BpkInsetBanner = ({
               id={callToAction?.popoverId || ''}
               label={callToAction?.popverLabel || ''}
               placement={callToAction?.popoverPlacement || 'bottom'}
-              onClose={(e: {
-                stopPropagation: () => void;
-                preventDefault: () => void;
-              } | null) => {         
-                  e?.stopPropagation();
-                  e?.preventDefault();
+              onClose={(
+                e: {
+                  stopPropagation: () => void;
+                  preventDefault: () => void;
+                } | null,
+              ) => {
+                e?.stopPropagation();
+                e?.preventDefault();
               }}
               closeButtonText={callToAction?.buttonCloseLabel}
               closeButtonIcon={callToAction?.closeBtnIcon}

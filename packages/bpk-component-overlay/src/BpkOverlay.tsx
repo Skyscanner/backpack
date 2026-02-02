@@ -78,10 +78,11 @@ type BpkOverlayProps = {
   className?: string;
 };
 
-export type Props = BpkOverlayProps & ComponentProps<'div'> & {
-  overlayType?: OverlayType;
-  foregroundContent?: ReactNode;
-};
+export type Props = BpkOverlayProps &
+  ComponentProps<'div'> & {
+    overlayType?: OverlayType;
+    foregroundContent?: ReactNode;
+  };
 
 const BpkOverlay = (props: Props) => {
   const {

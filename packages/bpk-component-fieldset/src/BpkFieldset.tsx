@@ -83,7 +83,10 @@ const BpkFieldset = ({
   };
 
   let childId: string = childProps.id || '';
-  if (childProps.inputProps?.id && typeof childProps.inputProps.id === 'string') {
+  if (
+    childProps.inputProps?.id &&
+    typeof childProps.inputProps.id === 'string'
+  ) {
     childId = childProps.inputProps.id;
   }
 
@@ -162,5 +165,3 @@ const BpkFieldset = ({
 };
 
 export default BpkFieldset;
-
-

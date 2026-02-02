@@ -27,7 +27,9 @@ import {
   formatDateFull,
 } from '../../bpk-component-calendar/test-utils';
 // mock breakpoint to always match
-jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () => jest.fn(() => true));
+jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () =>
+  jest.fn(() => true),
+);
 jest.mock('@popperjs/core', () => {
   const originalModule = jest.requireActual('@popperjs/core');
   return {

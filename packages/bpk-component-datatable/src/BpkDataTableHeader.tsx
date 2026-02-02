@@ -37,7 +37,6 @@ const KEYCODES = {
   SPACEBAR: 32,
 };
 
-
 /**
  * Internal component to render the header of a column.
  * @returns {JSX.Element} data table header component
@@ -140,14 +139,10 @@ const BpkDataTableHeader = ({ column }: { column: any }) => {
           aria-hidden
         >
           <div className={upIconClassNames}>
-            <UpIcon
-              onClick={() => column.toggleSortBy(false)}
-            />
+            <UpIcon onClick={() => column.toggleSortBy(false)} />
           </div>
           <div className={downIconClassNames}>
-            <DownIcon
-              onClick={() => column.toggleSortBy(true)}
-            />
+            <DownIcon onClick={() => column.toggleSortBy(true)} />
           </div>
         </div>
       )}

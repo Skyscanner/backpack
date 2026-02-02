@@ -18,9 +18,7 @@
 
 import type { ChangeEvent, MouseEvent } from 'react';
 
-import {
-  textColors,
-} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { textColors } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkAriaLive from '../../bpk-component-aria-live';
 import ArrowLeftIcon from '../../bpk-component-icon/lg/arrow-left';
@@ -190,9 +188,13 @@ const BpkCalendarNav = ({
             <ArrowRightIcon
               className={getClassName('bpk-calendar-nav__icon')}
               fill={
-                disabled || !isWithinRange(addMonths(baseMonth, 1), { start: min, end: max })
-                ? textColors.textDisabledDay
-                : 'currentcolor'
+                disabled ||
+                !isWithinRange(addMonths(baseMonth, 1), {
+                  start: min,
+                  end: max,
+                })
+                  ? textColors.textDisabledDay
+                  : 'currentcolor'
               }
             />
             <span className={getClassName('bpk-calendar-nav__text--hidden')}>

@@ -16,15 +16,14 @@
  * limitations under the License.
  */
 
-import BpkCarousel from '../../packages/bpk-component-carousel'
+import BpkCarousel from '../../packages/bpk-component-carousel';
 
-import { DefaultExample, WithNavDesktopExample, MixedExample} from './example'
+import { DefaultExample, WithNavDesktopExample, MixedExample } from './example';
 
 export default {
   title: 'bpk-component-carousel',
   component: BpkCarousel,
 };
-
 
 export const Default = DefaultExample;
 export const WithNavDesktop = WithNavDesktopExample;
@@ -32,5 +31,5 @@ export const WithNavDesktop = WithNavDesktopExample;
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };

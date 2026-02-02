@@ -1,4 +1,3 @@
-
 /*
  * Backpack - Skyscanner's Design System
  *
@@ -22,4 +21,10 @@ import BpkLargeSpinner from './src/BpkLargeSpinner';
 import BpkSpinner from './src/BpkSpinner';
 import SPINNER_TYPES from './src/spinnerTypes';
 import themeAttributes from './src/themeAttributes';
-export { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner, SPINNER_TYPES, themeAttributes, };
+export {
+  BpkSpinner,
+  BpkLargeSpinner,
+  BpkExtraLargeSpinner,
+  SPINNER_TYPES,
+  themeAttributes,
+};

@@ -17,7 +17,12 @@
  */
 
 import { Component } from 'react';
-import type { ChangeEvent, ClipboardEvent, FocusEvent, KeyboardEvent,  } from 'react';
+import type {
+  ChangeEvent,
+  ClipboardEvent,
+  FocusEvent,
+  KeyboardEvent,
+} from 'react';
 
 import { INPUT_TYPES } from '../../bpk-component-input';
 import { cssModules } from '../../bpk-react-utils';
@@ -67,7 +72,7 @@ class BpkSplitInput extends Component<Props, State> {
     this.props.onInputChange(value);
   };
 
-  updateInputValue = (value: string | number ) => {
+  updateInputValue = (value: string | number) => {
     const { focusedInput, inputValue } = this.state;
     inputValue[focusedInput] = value;
     this.onInputChange(inputValue);
@@ -97,7 +102,9 @@ class BpkSplitInput extends Component<Props, State> {
   isNumeric = () => this.props.type === INPUT_TYPES.number;
 
   isInputValid = (value: string | number) => {
-    const isTypeValid = this.isNumeric() ? /^\d$/.test(`${value}`) : typeof value === 'string';
+    const isTypeValid = this.isNumeric()
+      ? /^\d$/.test(`${value}`)
+      : typeof value === 'string';
     return isTypeValid && `${value}`.trim().length === 1;
   };
 
@@ -125,7 +132,7 @@ class BpkSplitInput extends Component<Props, State> {
     const pastedData = e.clipboardData
       .getData('text/plain')
       .slice(0, inputLength! - focusedInput)
-  .split('');
+      .split('');
     const charsReceived = pastedData.length;
 
     let firstInvalidInputPosition;
@@ -154,26 +161,16 @@ class BpkSplitInput extends Component<Props, State> {
     } else if (e.key === 'Delete') {
       e.preventDefault();
       this.updateInputValue('');
-    } else if (
-      e.key === 'Left' ||
-      e.key === 'ArrowLeft'
-    ) {
+    } else if (e.key === 'Left' || e.key === 'ArrowLeft') {
       e.preventDefault();
       this.focusPreviousInput();
-    } else if (
-      e.key === 'Right' ||
-      e.key === 'ArrowRight'
-    ) {
+    } else if (e.key === 'Right' || e.key === 'ArrowRight') {
       e.preventDefault();
       this.focusNextInput();
     } else if (e.key === 'Enter') {
       e.preventDefault();
       this.handleSubmit();
-    } else if (
-      e.key === ' ' ||
-      e.key === 'Spacebar' ||
-      e.key === 'Space'
-    ) {
+    } else if (e.key === ' ' || e.key === 'Spacebar' || e.key === 'Space') {
       e.preventDefault();
     }
   };
@@ -193,7 +190,8 @@ class BpkSplitInput extends Component<Props, State> {
 
   renderInputs = () => {
     const { focusedInput, inputValue } = this.state;
-    const { id, inputLength, label, large, name, placeholder, type, ...rest } = this.props;
+    const { id, inputLength, label, large, name, placeholder, type, ...rest } =
+      this.props;
     const inputs = [];
     for (let index = 0; index < inputLength!; index += 1) {
       inputs.push(
@@ -212,9 +210,11 @@ class BpkSplitInput extends Component<Props, State> {
           onInput={this.handleOnChange}
           onKeyDown={this.handleOnKeyDown}
           onPaste={this.handleOnPaste}
-          onFocus={(e: FocusEvent<HTMLInputElement>) => this.handleOnFocus(e, index)}
+          onFocus={(e: FocusEvent<HTMLInputElement>) =>
+            this.handleOnFocus(e, index)
+          }
           {...rest}
-         />,
+        />,
       );
     }
 

@@ -65,9 +65,9 @@ describe('withInfiniteScroll', () => {
         currentOptions = options;
       }
 
-      observe() {}  
+      observe() {}
 
-      unobserve() {}  
+      unobserve() {}
     };
   });
 

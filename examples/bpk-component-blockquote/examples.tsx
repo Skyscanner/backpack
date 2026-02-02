@@ -29,5 +29,3 @@ const ExtraSpaceExample = () => (
 );
 
 export { DefaultExample, ExtraSpaceExample };
-
-

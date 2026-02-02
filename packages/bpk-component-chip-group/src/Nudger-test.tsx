@@ -25,7 +25,6 @@ import { CHIP_TYPES } from '../../bpk-component-chip';
 
 import Nudger, { POSITION } from './Nudger';
 
-
 const mockIsRtl = jest.fn(() => false);
 
 jest.mock('../../bpk-react-utils/index', () => ({
@@ -33,14 +32,17 @@ jest.mock('../../bpk-react-utils/index', () => ({
   isRTL: () => mockIsRtl(),
 }));
 
-const createMockScrollContainerRef = (isRtl: boolean): MutableRefObject<HTMLElement> => ({
-  current: {
-    scrollBy: jest.fn() as (options?: any) => void,
-    offsetWidth: 100,
-    scrollLeft: isRtl ? -150 : 150,
-    scrollWidth: 500,
-  },
-} as MutableRefObject<HTMLElement>);
+const createMockScrollContainerRef = (
+  isRtl: boolean,
+): MutableRefObject<HTMLElement> =>
+  ({
+    current: {
+      scrollBy: jest.fn() as (options?: any) => void,
+      offsetWidth: 100,
+      scrollLeft: isRtl ? -150 : 150,
+      scrollWidth: 500,
+    },
+  }) as MutableRefObject<HTMLElement>;
 
 describe('Nudger', () => {
   beforeEach(() => {
@@ -53,32 +55,50 @@ describe('Nudger', () => {
     [POSITION.leading, false],
     [POSITION.trailing, true],
     [POSITION.leading, true],
-  ])('should call scrollBy when leading=%s and isRtl=%s', async (position, isRtl) => {
-    const user = userEvent.setup({advanceTimers: jest.advanceTimersByTime});
-    const mockScrollContainerRef = createMockScrollContainerRef(isRtl);
-    mockIsRtl.mockReturnValue(isRtl);
-    render(<Nudger ariaLabel="nudge" scrollContainerRef={mockScrollContainerRef} position={position} />);
-    await waitFor(() => {
-      expect(screen.queryByRole('button')).not.toHaveAttribute('disabled');
-    });
+  ])(
+    'should call scrollBy when leading=%s and isRtl=%s',
+    async (position, isRtl) => {
+      const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+      const mockScrollContainerRef = createMockScrollContainerRef(isRtl);
+      mockIsRtl.mockReturnValue(isRtl);
+      render(
+        <Nudger
+          ariaLabel="nudge"
+          scrollContainerRef={mockScrollContainerRef}
+          position={position}
+        />,
+      );
+      await waitFor(() => {
+        expect(screen.queryByRole('button')).not.toHaveAttribute('disabled');
+      });
 
-    await user.click(screen.getByRole('button'));
+      await user.click(screen.getByRole('button'));
 
-    const leading = position === POSITION.leading;
-    const isLeft = (leading && !isRtl) || (!leading && isRtl);
-    expect(mockScrollContainerRef.current.scrollBy).toHaveBeenCalledTimes(1);
-    expect(mockScrollContainerRef.current.scrollBy).toHaveBeenCalledWith({
-      left: isLeft ? -150 : 150,
-      behavior: 'smooth',
-    });
-  });
+      const leading = position === POSITION.leading;
+      const isLeft = (leading && !isRtl) || (!leading && isRtl);
+      expect(mockScrollContainerRef.current.scrollBy).toHaveBeenCalledTimes(1);
+      expect(mockScrollContainerRef.current.scrollBy).toHaveBeenCalledWith({
+        left: isLeft ? -150 : 150,
+        behavior: 'smooth',
+      });
+    },
+  );
 
-  it('should render button style matching chips',  async () => {
-    render(<Nudger position={POSITION.leading} ariaLabel="scroll" scrollContainerRef={createMockScrollContainerRef(false)} chipStyle={CHIP_TYPES.onDark} />);
+  it('should render button style matching chips', async () => {
+    render(
+      <Nudger
+        position={POSITION.leading}
+        ariaLabel="scroll"
+        scrollContainerRef={createMockScrollContainerRef(false)}
+        chipStyle={CHIP_TYPES.onDark}
+      />,
+    );
     await waitFor(() => {
       expect(screen.queryByRole('button')).toBeVisible();
     });
 
-    expect(screen.getByRole('button')).toHaveClass('bpk-button--secondary-on-dark');
+    expect(screen.getByRole('button')).toHaveClass(
+      'bpk-button--secondary-on-dark',
+    );
   });
 });

@@ -19,5 +19,3 @@
 const themeAttributes = ['blockquoteBarColor'] as const;
 
 export default themeAttributes;
-
-

@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import figma from "@figma/code-connect"
+import figma from '@figma/code-connect';
 
 import DealsIconSm from '../../bpk-component-icon/sm/deals';
 
@@ -24,25 +24,34 @@ import { CHIP_TYPES } from './commonTypes';
 
 figma.connect(
   BpkSelectableChip,
-  "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=6730%3A6807",
+  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=6730%3A6807',
   {
-    variant: { Type: "Selectable" },
+    variant: { Type: 'Selectable' },
     props: {
-      label: figma.string("Label"),
-      type: figma.enum("Style", {
+      label: figma.string('Label'),
+      type: figma.enum('Style', {
         Default: CHIP_TYPES.default,
-        "On Dark": CHIP_TYPES.onDark,
-        "On Image": CHIP_TYPES.onImage,
+        'On Dark': CHIP_TYPES.onDark,
+        'On Image': CHIP_TYPES.onImage,
       }),
-      disabled: figma.enum("State", {
+      disabled: figma.enum('State', {
         Disabled: true,
       }),
-      icon: figma.boolean("Icon", {
+      icon: figma.boolean('Icon', {
         true: <DealsIconSm />,
         false: undefined,
-      })
+      }),
     },
-    example: ({ disabled, icon, label, type }) =>
-      <BpkSelectableChip onClick={() => null} leadingAccessoryView={icon} accessibilityLabel={label} type={type} disabled={disabled} >{label}</BpkSelectableChip>
+    example: ({ disabled, icon, label, type }) => (
+      <BpkSelectableChip
+        onClick={() => null}
+        leadingAccessoryView={icon}
+        accessibilityLabel={label}
+        type={type}
+        disabled={disabled}
+      >
+        {label}
+      </BpkSelectableChip>
+    ),
   },
-)
+);

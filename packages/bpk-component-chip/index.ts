@@ -32,4 +32,10 @@ export type BpkDismissibleChipProps = CommonProps;
 export type BpkDropdownChipProps = CommonProps;
 
 export default BpkSelectableChip;
-export { BpkDismissibleChip, BpkDropdownChip, BpkIconChip, CHIP_TYPES, themeAttributes };
+export {
+  BpkDismissibleChip,
+  BpkDropdownChip,
+  BpkIconChip,
+  CHIP_TYPES,
+  themeAttributes,
+};

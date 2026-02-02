@@ -137,7 +137,11 @@ describe('BpkLink', () => {
       );
 
       const link = screen.getByRole('link');
-      expect(link).toHaveClass('bpk-link', 'bpk-link--implicit', 'bpk-link--alternate');
+      expect(link).toHaveClass(
+        'bpk-link',
+        'bpk-link--implicit',
+        'bpk-link--alternate',
+      );
     });
   });
 
@@ -225,7 +229,12 @@ describe('BpkLink', () => {
 
     it('should pass through arbitrary attributes', () => {
       render(
-        <BpkLink as="button" onClick={() => {}} id="test-id" data-testid="custom">
+        <BpkLink
+          as="button"
+          onClick={() => {}}
+          id="test-id"
+          data-testid="custom"
+        >
           Button Link
         </BpkLink>,
       );

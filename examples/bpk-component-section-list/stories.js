@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import BpkSectionList from '../../packages/bpk-component-section-list/src/BpkSectionList';
 import BpkSectionListItem from '../../packages/bpk-component-section-list/src/BpkSectionListItem';
 import BpkSectionListSection from '../../packages/bpk-component-section-list/src/BpkSectionListSection';
@@ -36,5 +35,5 @@ export const Default = DefaultExample;
 export const VisualTest = DefaultExample;
 export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
-  zoomEnabled: true
+  zoomEnabled: true,
 };
