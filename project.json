@@ -1,0 +1,104 @@
+{
+  "name": "backpack-workspace",
+  "$schema": "./node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": ".",
+  "targets": {
+    "transpile": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npm run transpile:clean",
+          "npm run transpile:js",
+          "npm run transpile:dts",
+          "npm run transpile:imports",
+          "npm run transpile:copy-css",
+          "npm run transpile:copy-utils",
+          "npm run transpile:copy-package-json",
+          "npm run transpile:copy-readme"
+        ],
+        "parallel": false
+      },
+      "outputs": ["{workspaceRoot}/dist"]
+    },
+    "check-dependencies": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/npm/check-bpk-dependencies.js"
+      }
+    },
+    "check-react-versions": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/npm/check-react-versions.js"
+      }
+    },
+    "gulp": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "gulp"
+      },
+      "outputs": []
+    },
+    "styles": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npm run build:copy-normal_css",
+          "npm run build:gulp",
+          "npm run build:sass",
+          "npm run build:stylesheets"
+        ],
+        "parallel": false
+      },
+      "outputs": [
+        "{workspaceRoot}/packages/bpk-stylesheets/dist",
+        "{workspaceRoot}/packages/bpk-stylesheets/normalize.scss"
+      ]
+    },
+    "build-all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npm run build:copy-normal_css",
+          "nx run backpack-workspace:gulp",
+          "npm run build:sass",
+          "npm run build:stylesheets"
+        ],
+        "parallel": false
+      },
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "dependencies"
+        }
+      ]
+    },
+    "storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "storybook dev -p 9001",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "storybook:build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "storybook build -c .storybook -o dist-storybook",
+        "cwd": "{workspaceRoot}"
+      },
+      "outputs": ["{workspaceRoot}/dist-storybook"],
+      "cache": true,
+      "dependsOn": ["styles"]
+    },
+    "percy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "percy storybook ./dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'",
+        "cwd": "{workspaceRoot}"
+      },
+      "dependsOn": ["storybook:build"]
+    }
+  },
+  "tags": ["type:workspace", "scope:backpack"]
+}

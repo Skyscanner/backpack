@@ -1,0 +1,60 @@
+{
+  "name": "bpk-component-icon",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-component-icon/src",
+  "projectType": "library",
+  "targets": {
+    "codegen": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "gulp generateIcons",
+        "cwd": "{workspaceRoot}"
+      },
+      "outputs": [
+        "{projectRoot}/sm",
+        "{projectRoot}/lg",
+        "{projectRoot}/xxxl"
+      ]
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "BABEL_ENV=dev babel src --out-dir dist --extensions \".ts,.tsx,.js,.jsx\" --config-file ../../babel.config.js",
+        "cwd": "packages/bpk-component-icon"
+      },
+      "outputs": [
+        "{projectRoot}/dist"
+      ],
+      "dependsOn": ["codegen"]
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "TZ=Etc/UTC jest --coverage --testPathPatterns='{projectRoot}' --collectCoverageFrom='{projectRoot}/src/**/*.{js,jsx,ts,tsx}'",
+        "cwd": "{workspaceRoot}"
+      },
+      "outputs": [
+        "{workspaceRoot}/coverage"
+      ]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "{projectRoot}/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "stylelint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "stylelint '{projectRoot}/**/*.scss' --allow-empty-input",
+        "cwd": "{workspaceRoot}"
+      }
+    }
+  },
+  "tags": [
+    "type:package",
+    "scope:backpack"
+  ]
+}

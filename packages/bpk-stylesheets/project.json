@@ -1,0 +1,38 @@
+{
+  "name": "bpk-stylesheets",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/bpk-stylesheets/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node build",
+        "cwd": "packages/bpk-stylesheets"
+      },
+      "outputs": [
+        "{projectRoot}/dist"
+      ]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "{projectRoot}/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "stylelint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "stylelint '{projectRoot}/**/*.scss' --allow-empty-input",
+        "cwd": "{workspaceRoot}"
+      }
+    }
+  },
+  "tags": [
+    "type:package",
+    "scope:backpack",
+    "special-case"
+  ]
+}

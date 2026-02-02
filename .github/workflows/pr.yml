@@ -2,7 +2,10 @@ name: PR
 
 on:
   pull_request:
-    branches: [main]
+    branches:
+      - main
+      - 'impl/**'
+      - 'feat/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
@@ -77,8 +80,8 @@ jobs:
       - name: Create build cache
         if: ${{ steps.storybook-dist-cache.outputs.cache-hit != 'true' }}
         run: |
-          npm run build
-          npm run storybook:dist
+          npx nx build-all
+          npx nx storybook:build
 
   Build:
     permissions:
