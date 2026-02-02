@@ -62,7 +62,11 @@ const BpkPanel = ({
   }
 
   return (
-    <section className={classNames.join(' ')} {...getDataComponentAttribute('Panel')} {...rest}>
+    <section
+      className={classNames.join(' ')}
+      {...getDataComponentAttribute('Panel')}
+      {...rest}
+    >
       {children}
     </section>
   );

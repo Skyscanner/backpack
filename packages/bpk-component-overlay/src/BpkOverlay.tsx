@@ -102,7 +102,11 @@ const BpkOverlay = (props: Props) => {
   );
 
   return (
-    <div className={wrapperClassNames} {...getDataComponentAttribute('Overlay')} {...rest}>
+    <div
+      className={wrapperClassNames}
+      {...getDataComponentAttribute('Overlay')}
+      {...rest}
+    >
       {children}
       <div className={overlayClassNames}>{foregroundContent}</div>
     </div>

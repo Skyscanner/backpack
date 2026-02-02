@@ -77,7 +77,7 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
 
   const buttonAccessoryContent = (
     <div
-      className={getClassName('bpk-card-list-grid-stack__accessory__button')} {...getDataComponentAttribute('CardListGridStack')}
+      className={getClassName('bpk-card-list-grid-stack__accessory__button')}
     >
       <BpkButton
         data-testid="bpk-card-list__accessory-button"
@@ -92,6 +92,7 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
   return (
     <div
       className={getClassName('bpk-card-list-grid-stack')}
+      {...getDataComponentAttribute('CardListGridStack')}
       data-testid="bpk-card-list-grid-stack"
     >
       <div

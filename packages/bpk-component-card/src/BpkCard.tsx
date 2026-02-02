@@ -85,14 +85,23 @@ const BpkCard = ({
 
   if (atomic) {
     return (
-      <button type="button" className={classNames} {...getDataComponentAttribute('Card')} {...rest}>
+      <button
+        type="button"
+        className={classNames}
+        {...getDataComponentAttribute('Card')}
+        {...rest}
+      >
         {children}
       </button>
     );
   }
 
   return (
-    <div className={classNames} {...getDataComponentAttribute('Card')} {...rest}>
+    <div
+      className={classNames}
+      {...getDataComponentAttribute('Card')}
+      {...rest}
+    >
       {children}
     </div>
   );

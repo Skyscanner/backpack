@@ -4,11 +4,11 @@ exports[`BpkBarchart should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-mobile-scroll-container"
+    data-backpack-ds-component="MobileScrollContainer"
     style="height: auto;"
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
-      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"
@@ -392,11 +392,11 @@ exports[`BpkBarchart should render correctly with "leadingScrollIndicatorClassNa
 <DocumentFragment>
   <div
     class="bpk-mobile-scroll-container"
+    data-backpack-ds-component="MobileScrollContainer"
     style="height: auto;"
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
-      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"
@@ -780,11 +780,11 @@ exports[`BpkBarchart should render correctly with "trailingScrollIndicatorClassN
 <DocumentFragment>
   <div
     class="bpk-mobile-scroll-container"
+    data-backpack-ds-component="MobileScrollContainer"
     style="height: auto;"
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
-      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"
@@ -1168,11 +1168,11 @@ exports[`BpkBarchart should render correctly with "yAxisDomain" prop 1`] = `
 <DocumentFragment>
   <div
     class="bpk-mobile-scroll-container"
+    data-backpack-ds-component="MobileScrollContainer"
     style="height: auto;"
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
-      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"
@@ -1580,11 +1580,11 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
 <DocumentFragment>
   <div
     class="bpk-mobile-scroll-container"
+    data-backpack-ds-component="MobileScrollContainer"
     style="height: auto;"
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
-      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"

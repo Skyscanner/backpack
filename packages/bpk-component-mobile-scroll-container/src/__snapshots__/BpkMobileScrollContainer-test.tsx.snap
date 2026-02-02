@@ -4,11 +4,11 @@ exports[`BpkMobileScrollContainer should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-mobile-scroll-container"
+    data-backpack-ds-component="MobileScrollContainer"
     style="height: auto;"
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
-      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"
@@ -24,11 +24,11 @@ exports[`BpkMobileScrollContainer should render correctly when showScrollbar is 
 <DocumentFragment>
   <div
     class="bpk-mobile-scroll-container"
+    data-backpack-ds-component="MobileScrollContainer"
     style="height: auto;"
   >
     <div
       class="bpk-mobile-scroll-container__scroller bpk-mobile-scroll-container__showScrollbar"
-      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"
@@ -44,11 +44,11 @@ exports[`BpkMobileScrollContainer should render correctly with a custom "classNa
 <DocumentFragment>
   <div
     class="bpk-mobile-scroll-container my-custom-class"
+    data-backpack-ds-component="MobileScrollContainer"
     style="height: auto;"
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
-      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"
@@ -64,11 +64,11 @@ exports[`BpkMobileScrollContainer should render correctly with a custom "style" 
 <DocumentFragment>
   <div
     class="bpk-mobile-scroll-container"
+    data-backpack-ds-component="MobileScrollContainer"
     style="background-color: rgb(209, 67, 91); height: auto;"
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
-      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"
@@ -84,11 +84,11 @@ exports[`BpkMobileScrollContainer should render correctly with ariaLabel prop 1`
 <DocumentFragment>
   <div
     class="bpk-mobile-scroll-container"
+    data-backpack-ds-component="MobileScrollContainer"
     style="height: auto;"
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
-      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         aria-label="my nav content"
@@ -105,11 +105,11 @@ exports[`BpkMobileScrollContainer should render correctly with ariaLabel prop se
 <DocumentFragment>
   <div
     class="bpk-mobile-scroll-container"
+    data-backpack-ds-component="MobileScrollContainer"
     style="height: auto;"
   >
     <div
       class="bpk-mobile-scroll-container__scroller"
-      data-backpack-ds-component="MobileScrollContainer"
     >
       <div
         class="bpk-mobile-scroll-container__inner"

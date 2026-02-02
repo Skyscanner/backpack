@@ -71,7 +71,10 @@ const BpkDividedCard = ({
 
   return (
     <CardContext.Provider value={{ elevated: isElevated }}>
-      <div className={containerClassName} {...getDataComponentAttribute('DividedCard')}>
+      <div
+        className={containerClassName}
+        {...getDataComponentAttribute('DividedCard')}
+      >
         <BpkCard href={href} padded={false} {...rest}>
           <div className={contentClassName}>
             <div
