@@ -24,6 +24,7 @@ import BpkCloseButton from '../../bpk-component-close-button';
 import BpkLink from '../../bpk-component-link';
 import BpkNavigationBar from '../../bpk-component-navigation-bar';
 import { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
+import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 import { BpkDialogWrapper, cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkBottomSheet.module.scss';
@@ -155,6 +156,8 @@ const BpkBottomSheet = ({
   );
 
   const headingId = `bpk-bottom-sheet-heading-${id}`;
+  const hiddenTitleId = `bpk-bottom-sheet-title-hidden-${id}`;
+  const showHiddenTitle = !title && 'ariaLabel' in ariaProps;
   const dialogClassName = getClassName(
     'bpk-bottom-sheet',
     wide && 'bpk-bottom-sheet--wide',
@@ -184,9 +187,14 @@ const BpkBottomSheet = ({
     >
       <>
         <header className={getClassName('bpk-bottom-sheet--header-wrapper')}>
+          {showHiddenTitle && (
+            <BpkVisuallyHidden as="h2">
+              <span id={hiddenTitleId}>{ariaProps.ariaLabel}</span>
+            </BpkVisuallyHidden>
+          )}
           <BpkNavigationBar
-            id={headingId}
-            title={title}
+            id={showHiddenTitle ? hiddenTitleId : headingId}
+            title={title || null}
             titleTextStyle={TEXT_STYLES.label1}
             titleTagName={title ? 'h2' : 'span'}
             className={getClassName('bpk-bottom-sheet--header')}
