@@ -78,7 +78,8 @@ export const BpkButtonV2 = ({
     return (
       <a
         href={href}
-        className={classNames} {...getDataComponentAttribute('Button')}
+        className={classNames}
+        {...getDataComponentAttribute('Button')}
         onClick={onClick}
         target={target}
         rel={rel}
@@ -93,7 +94,8 @@ export const BpkButtonV2 = ({
     <button
       type={submit ? 'submit' : 'button'}
       disabled={disabled}
-      className={classNames} {...getDataComponentAttribute('Button')}
+      className={classNames}
+      {...getDataComponentAttribute('Button')}
       onClick={onClick}
       {...rest}
     >

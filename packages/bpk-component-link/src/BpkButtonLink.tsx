@@ -77,7 +77,8 @@ const BpkButtonLink = ({
   return (
     <button
       type="button"
-      className={classNames.join(' ')} {...getDataComponentAttribute('ButtonLink')}
+      className={classNames.join(' ')}
+      {...getDataComponentAttribute('ButtonLink')}
       onClick={onClick}
       {...rest}
     >
