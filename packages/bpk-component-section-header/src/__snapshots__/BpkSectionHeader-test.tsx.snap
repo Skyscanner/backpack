@@ -44,6 +44,7 @@ exports[`BpkSectionHeader should render correctly with "type" prop 1`] = `
     </div>
     <button
       class="bpk-button bpk-button--primary"
+      data-backpack-ds-component="Button"
       type="button"
     >
       Action
@@ -106,6 +107,7 @@ exports[`BpkSectionHeader should render correctly with an "button" prop 1`] = `
     </div>
     <button
       class="bpk-button bpk-button--primary"
+      data-backpack-ds-component="Button"
       type="button"
     >
       Action

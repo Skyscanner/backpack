@@ -28,7 +28,7 @@ import {
 import ArrowIconLg from '../../bpk-component-icon/lg/long-arrow-right';
 import ArrowIconSm from '../../bpk-component-icon/sm/long-arrow-right';
 import { BpkSpinner, BpkLargeSpinner } from '../../bpk-component-spinner';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type { Props as ButtonProps } from '../../bpk-component-button';
 
@@ -142,6 +142,7 @@ const BpkLoadingButton = (props: LoadingProps) => {
       disabled={showBtnDisabled}
       size={large ? SIZE_TYPES.large : SIZE_TYPES.small}
       type={type}
+      {...getDataComponentAttribute('LoadingButton')}
       {...rest}
     >
       <div className={getClassName('bpk-loading-button__container')}>
