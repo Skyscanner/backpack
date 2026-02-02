@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-import { useEffect, useRef } from 'react';
+import type { MutableRefObject, Dispatch, SetStateAction } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 
 import { RELEASE_LOCK_DELAY } from './constants';
 
@@ -27,8 +28,8 @@ import { RELEASE_LOCK_DELAY } from './constants';
  */
 
 export const lockScroll = (
-  stateScrollingLockRef: React.MutableRefObject<boolean>,
-  openSetStateLockTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
+  stateScrollingLockRef: MutableRefObject<boolean>,
+  openSetStateLockTimeoutRef: MutableRefObject<ReturnType<typeof setTimeout> | null>,
 ) => {
   // eslint-disable-next-line no-param-reassign
   stateScrollingLockRef.current = true;
@@ -40,6 +41,78 @@ export const lockScroll = (
     // eslint-disable-next-line no-param-reassign
     stateScrollingLockRef.current = false;
   }, RELEASE_LOCK_DELAY);
+};
+
+/**
+ * Hook to track user scroll state using scrollend event (with debounce fallback).
+ * Returns isUserScrolling ref that is true during user-initiated scroll.
+ * @param {HTMLElement | null} container - The scrollable container element
+ * @param {boolean} enabled - Whether scroll tracking is enabled (typically !isMobile)
+ * @returns {MutableRefObject<boolean>} Ref that is true during user-initiated scroll
+ */
+export const useUserScrollState = (
+  container: HTMLElement | null,
+  enabled: boolean,
+): MutableRefObject<boolean> => {
+  const isUserScrollingRef = useRef(false);
+  const scrollEndTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
+
+  const clearScrollEndTimeout = useCallback(() => {
+    if (scrollEndTimeoutRef.current) {
+      clearTimeout(scrollEndTimeoutRef.current);
+      scrollEndTimeoutRef.current = null;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!enabled || !container) return undefined;
+
+    const handleUserScrollStart = () => {
+      isUserScrollingRef.current = true;
+      clearScrollEndTimeout();
+    };
+
+    const handleScrollEnd = () => {
+      isUserScrollingRef.current = false;
+    };
+
+    // Detect user scroll initiation
+    container.addEventListener('wheel', handleUserScrollStart);
+    container.addEventListener('touchstart', handleUserScrollStart);
+
+    // Use scrollend if available, otherwise debounce on scroll
+    const supportsScrollEnd = 'onscrollend' in window;
+    if (supportsScrollEnd) {
+      container.addEventListener('scrollend', handleScrollEnd);
+    } else {
+      // Fallback: debounce scroll events
+      let debounceTimeout: ReturnType<typeof setTimeout>;
+      const handleScroll = () => {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(handleScrollEnd, RELEASE_LOCK_DELAY);
+      };
+      container.addEventListener('scroll', handleScroll);
+
+      return () => {
+        container.removeEventListener('wheel', handleUserScrollStart);
+        container.removeEventListener('touchstart', handleUserScrollStart);
+        container.removeEventListener('scroll', handleScroll);
+        clearTimeout(debounceTimeout);
+        clearScrollEndTimeout();
+      };
+    }
+
+    return () => {
+      container.removeEventListener('wheel', handleUserScrollStart);
+      container.removeEventListener('touchstart', handleUserScrollStart);
+      container.removeEventListener('scrollend', handleScrollEnd);
+      clearScrollEndTimeout();
+    };
+  }, [container, enabled, clearScrollEndTimeout]);
+
+  return isUserScrollingRef;
 };
 
 /**
@@ -68,8 +141,8 @@ export const setA11yTabIndex = (
 export const useScrollToCard = (
   currentIndex: number,
   container: HTMLElement | null,
-  cardRefs: React.MutableRefObject<Array<HTMLDivElement | null>>,
-  stateScrollingLockRef: React.MutableRefObject<boolean>,
+  cardRefs: MutableRefObject<Array<HTMLDivElement | null>>,
+  stateScrollingLockRef: MutableRefObject<boolean>,
 ) => {
   useEffect(() => {
     const isVisible =
@@ -94,7 +167,7 @@ export const useScrollToCard = (
 
 export const useIntersectionObserver = (
   { root, threshold }: IntersectionObserverInit,
-  setVisibilityList: React.Dispatch<React.SetStateAction<number[]>>,
+  setVisibilityList: Dispatch<SetStateAction<number[]>>,
 ) => {
   const observerRef = useRef<IntersectionObserver | null>(null);
 

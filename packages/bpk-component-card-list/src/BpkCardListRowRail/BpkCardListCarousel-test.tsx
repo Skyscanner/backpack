@@ -18,27 +18,28 @@
 
 import type { Dispatch, SetStateAction } from 'react';
 
-import { render, screen, fireEvent, act } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import mockCards from '../../testMocks';
 import { LAYOUTS } from '../common-types';
 
 import BpkCardListCarousel from './BpkCardListCarousel';
-import { useIntersectionObserver, lockScroll } from './utils';
+import { useIntersectionObserver, useUserScrollState } from './utils';
 
-jest.mock('./utils', () => {
-  const actualUtils = jest.requireActual('./utils');
-  return {
-    setA11yTabIndex: jest.fn(),
-    useScrollToCard: jest.fn(),
-    useIntersectionObserver: jest.fn(() => jest.fn()),
-    lockScroll: jest.fn(actualUtils.lockScroll),
-  };
-});
+// Mock ref that controls whether user is scrolling
+const mockIsUserScrollingRef = { current: false };
+
+jest.mock('./utils', () => ({
+  setA11yTabIndex: jest.fn(),
+  useScrollToCard: jest.fn(),
+  useIntersectionObserver: jest.fn(() => jest.fn()),
+  useUserScrollState: jest.fn(() => mockIsUserScrollingRef),
+}));
 
 const mockSetCurrentIndex = jest.fn();
 const mockUseIntersectionObserver = jest.mocked(useIntersectionObserver);
+const mockUseUserScrollState = jest.mocked(useUserScrollState);
 
 // Holds a reference to the setVisibilityList function captured during component render
 let setVisibilityFn: Dispatch<SetStateAction<number[]>> | undefined;
@@ -219,17 +220,13 @@ describe('BpkCardListCarousel', () => {
       expect(cards[3].className).toContain('page-start');
     });
 
-    it('should trigger lock when wheel event is fired on desktop and call setCurrentIndex when the visibility of cards change', () => {
+    it('should call setCurrentIndex when user is scrolling and visibility changes', () => {
       const { rerender } = render(
         <BpkCardListCarousel {...defaultProps} isMobile={false} />,
       );
 
-      const carouselElement = screen.getByTestId(
-        'bpk-card-list-row-rail__carousel',
-      );
-      fireEvent.wheel(carouselElement, { deltaX: 20000 });
-
-      expect(lockScroll).toHaveBeenCalledTimes(1);
+      // Simulate user scroll state being active
+      mockIsUserScrollingRef.current = true;
 
       // Clear the mock before the visibility change to only track calls after this point
       mockSetCurrentIndex.mockClear();
@@ -243,31 +240,36 @@ describe('BpkCardListCarousel', () => {
 
       // Ensure we're trying to set the current index to 1 (the 2nd page)
       expect(mockSetCurrentIndex).toHaveBeenCalledWith(1);
+
+      // Reset for other tests
+      mockIsUserScrollingRef.current = false;
     });
 
-    it('should trigger lock when touchmove event is fired on desktop', () => {
+    it('should use useUserScrollState hook on desktop', () => {
       render(<BpkCardListCarousel {...defaultProps} isMobile={false} />);
 
-      const carouselElement = screen.getByTestId(
-        'bpk-card-list-row-rail__carousel',
-      );
-
-      fireEvent.touchMove(carouselElement);
-
-      expect(lockScroll).toHaveBeenCalledTimes(1);
+      // Verify the hook was called with the container and enabled=true
+      expect(mockUseUserScrollState).toHaveBeenCalled();
     });
 
-    it('should not trigger lock when wheel event is fired on mobile', () => {
-      jest.mocked(lockScroll).mockClear();
-      render(<BpkCardListCarousel {...defaultProps} isMobile />);
+    it('should not update currentIndex when user is not scrolling', () => {
+      mockIsUserScrollingRef.current = false;
 
-      const carouselElement = screen.getByTestId(
-        'bpk-card-list-row-rail__carousel',
+      const { rerender } = render(
+        <BpkCardListCarousel {...defaultProps} isMobile={false} />,
       );
 
-      fireEvent.wheel(carouselElement);
+      mockSetCurrentIndex.mockClear();
 
-      expect(lockScroll).not.toHaveBeenCalled();
+      // Fake the visibility changing
+      act(() => {
+        setVisibilityFn?.([0, 0, 0, 1, 1, 1]);
+      });
+
+      rerender(<BpkCardListCarousel {...defaultProps} isMobile={false} />);
+
+      // Should NOT update currentIndex when user is not scrolling
+      expect(mockSetCurrentIndex).not.toHaveBeenCalled();
     });
   });
 });

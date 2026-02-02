@@ -31,10 +31,10 @@ import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils'
 
 import { RENDER_BUFFER_SIZE } from './constants';
 import {
-  lockScroll,
   setA11yTabIndex,
   useScrollToCard,
   useIntersectionObserver,
+  useUserScrollState,
 } from './utils';
 
 import type { CardListCarouselProps } from '../common-types';
@@ -79,8 +79,8 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     Array(childrenLength).fill(0),
   );
 
-  const stateScrollingLockRef = useRef(false);
-  const openSetStateLockTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  // Track user scroll state using scrollend event
+  const isUserScrollingRef = useUserScrollState(root, !isMobile);
 
   const observerVisibility = useIntersectionObserver(
     { root, threshold: 0.5 },
@@ -91,7 +91,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     isMobile ? currentIndex : currentIndex * initiallyShownCards,
     root,
     cardRefs,
-    stateScrollingLockRef,
+    isUserScrollingRef,
   );
 
   // Similar to Virtual Scrolling to improve performance
@@ -162,26 +162,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   );
 
   useEffect(() => {
-    const container = root;
-    if (isMobile || !container) return undefined;
-
-    const lockScrollDuringInteraction = () => {
-      lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef);
-    };
-
-    container.addEventListener('wheel', lockScrollDuringInteraction);
-    container.addEventListener('touchmove', lockScrollDuringInteraction);
-
-    return () => {
-      container.removeEventListener('touchmove', lockScrollDuringInteraction);
-      container.removeEventListener('wheel', lockScrollDuringInteraction);
-      if (openSetStateLockTimeoutRef.current) {
-        clearTimeout(openSetStateLockTimeoutRef.current);
-      }
-    };
-  }, [root]);
-
-  useEffect(() => {
     // update hasBeenVisibleRef to include the range of cards that should be visible
     const start = currentIndex * initiallyShownCards;
     const end = start + initiallyShownCards + dynamicRenderBufferSize;
@@ -195,15 +175,19 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     dynamicRenderBufferSize,
   ]);
 
+  // Sync pagination index with visible cards during user scroll
   useEffect(() => {
+    if (isMobile) return;
+    if (!isUserScrollingRef.current) return;
+
     const firstVisible = visibilityList.indexOf(1);
-    if (firstVisible >= 0 && stateScrollingLockRef.current) {
+    if (firstVisible >= 0) {
       const newIndex = Math.floor(firstVisible / initiallyShownCards);
       if (newIndex !== currentIndex) {
         setCurrentIndex(newIndex);
       }
     }
-  }, [currentIndex, initiallyShownCards, setCurrentIndex, visibilityList]);
+  }, [currentIndex, initiallyShownCards, setCurrentIndex, visibilityList, isMobile, isUserScrollingRef]);
 
   useEffect(() => {
     const handleResize = throttle(() => {
