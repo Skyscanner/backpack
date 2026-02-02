@@ -4,9 +4,11 @@ exports[`BpkFieldset should render as disabled when checkbox component is disabl
 <DocumentFragment>
   <fieldset
     class="bpk-fieldset"
+    data-backpack-ds-component="Fieldset"
   >
     <label
       class="bpk-checkbox bpk-checkbox--disabled"
+      data-backpack-ds-component="Checkbox"
     >
       <input
         aria-invalid="false"
@@ -33,6 +35,7 @@ exports[`BpkFieldset should render as disabled when input component is disabled 
 <DocumentFragment>
   <fieldset
     class="bpk-fieldset"
+    data-backpack-ds-component="Fieldset"
   >
     <div
       class="bpk-fieldset__label"
@@ -49,6 +52,7 @@ exports[`BpkFieldset should render as disabled when input component is disabled 
       aria-invalid="false"
       aria-required="true"
       class="bpk-input"
+      data-backpack-ds-component="Input"
       disabled=""
       id="name_input"
       name="name"
@@ -64,6 +68,7 @@ exports[`BpkFieldset should render as disabled when select component is disabled
 <DocumentFragment>
   <fieldset
     class="bpk-fieldset"
+    data-backpack-ds-component="Fieldset"
   >
     <div
       class="bpk-fieldset__label"
@@ -119,6 +124,7 @@ exports[`BpkFieldset should render correctly when disabled with input component 
 <DocumentFragment>
   <fieldset
     class="bpk-fieldset"
+    data-backpack-ds-component="Fieldset"
   >
     <div
       class="bpk-fieldset__label"
@@ -135,6 +141,7 @@ exports[`BpkFieldset should render correctly when disabled with input component 
       aria-invalid="false"
       aria-required="false"
       class="bpk-input bpk-input--valid"
+      data-backpack-ds-component="Input"
       disabled=""
       id="name_input"
       name="name"
@@ -150,6 +157,7 @@ exports[`BpkFieldset should render correctly when disabled with input component 
 <DocumentFragment>
   <fieldset
     class="bpk-fieldset"
+    data-backpack-ds-component="Fieldset"
   >
     <div
       class="bpk-fieldset__label"
@@ -167,6 +175,7 @@ exports[`BpkFieldset should render correctly when disabled with input component 
       aria-invalid="true"
       aria-required="false"
       class="bpk-input bpk-input--invalid"
+      data-backpack-ds-component="Input"
       disabled=""
       id="name_input"
       name="name"
@@ -182,9 +191,11 @@ exports[`BpkFieldset should render correctly with checkbox component 1`] = `
 <DocumentFragment>
   <fieldset
     class="bpk-fieldset"
+    data-backpack-ds-component="Fieldset"
   >
     <label
       class="bpk-checkbox"
+      data-backpack-ds-component="Checkbox"
     >
       <input
         aria-invalid="false"
@@ -247,9 +258,11 @@ exports[`BpkFieldset should render correctly with checkbox component and "requir
 <DocumentFragment>
   <fieldset
     class="bpk-fieldset"
+    data-backpack-ds-component="Fieldset"
   >
     <label
       class="bpk-checkbox"
+      data-backpack-ds-component="Checkbox"
     >
       <input
         aria-invalid="false"
@@ -317,6 +330,7 @@ exports[`BpkFieldset should render correctly with input component 1`] = `
 <DocumentFragment>
   <fieldset
     class="bpk-fieldset"
+    data-backpack-ds-component="Fieldset"
   >
     <div
       class="bpk-fieldset__label"
@@ -333,6 +347,7 @@ exports[`BpkFieldset should render correctly with input component 1`] = `
       aria-invalid="false"
       aria-required="false"
       class="bpk-input"
+      data-backpack-ds-component="Input"
       id="name_input"
       name="name"
       placeholder="e.g. Joe Bloggs"
@@ -384,6 +399,7 @@ exports[`BpkFieldset should render correctly with input component and "descripti
 <DocumentFragment>
   <fieldset
     class="bpk-fieldset"
+    data-backpack-ds-component="Fieldset"
   >
     <div
       class="bpk-fieldset__label"
@@ -401,6 +417,7 @@ exports[`BpkFieldset should render correctly with input component and "descripti
       aria-invalid="false"
       aria-required="false"
       class="bpk-input"
+      data-backpack-ds-component="Input"
       id="name_input"
       name="name"
       placeholder="e.g. Joe Bloggs"
@@ -458,6 +475,7 @@ exports[`BpkFieldset should render correctly with input component and "disabled"
 <DocumentFragment>
   <fieldset
     class="bpk-fieldset"
+    data-backpack-ds-component="Fieldset"
   >
     <div
       class="bpk-fieldset__label"
@@ -474,6 +492,7 @@ exports[`BpkFieldset should render correctly with input component and "disabled"
       aria-invalid="false"
       aria-required="false"
       class="bpk-input"
+      data-backpack-ds-component="Input"
       id="name_input"
       name="name"
       placeholder="e.g. Joe Bloggs"
@@ -525,6 +544,7 @@ exports[`BpkFieldset should render correctly with input component and "required"
 <DocumentFragment>
   <fieldset
     class="bpk-fieldset"
+    data-backpack-ds-component="Fieldset"
   >
     <div
       class="bpk-fieldset__label"
@@ -546,6 +566,7 @@ exports[`BpkFieldset should render correctly with input component and "required"
       aria-invalid="false"
       aria-required="true"
       class="bpk-input bpk-input--valid"
+      data-backpack-ds-component="Input"
       id="name_input"
       name="name"
       placeholder="e.g. Joe Bloggs"
@@ -597,6 +618,7 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
 <DocumentFragment>
   <fieldset
     class="bpk-fieldset"
+    data-backpack-ds-component="Fieldset"
   >
     <div
       class="bpk-fieldset__label"
@@ -613,6 +635,7 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
       aria-invalid="false"
       aria-required="false"
       class="bpk-input bpk-input--valid"
+      data-backpack-ds-component="Input"
       id="name_input"
       name="name"
       placeholder="e.g. Joe Bloggs"
@@ -664,6 +687,7 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
 <DocumentFragment>
   <fieldset
     class="bpk-fieldset"
+    data-backpack-ds-component="Fieldset"
   >
     <div
       class="bpk-fieldset__label"
@@ -681,6 +705,7 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
       aria-invalid="true"
       aria-required="false"
       class="bpk-input bpk-input--invalid"
+      data-backpack-ds-component="Input"
       id="name_input"
       name="name"
       placeholder="e.g. Joe Bloggs"
@@ -730,6 +755,7 @@ exports[`BpkFieldset should render correctly with select component 1`] = `
 <DocumentFragment>
   <fieldset
     class="bpk-fieldset"
+    data-backpack-ds-component="Fieldset"
   >
     <div
       class="bpk-fieldset__label"
@@ -821,6 +847,7 @@ exports[`BpkFieldset should render correctly with select component and "required
 <DocumentFragment>
   <fieldset
     class="bpk-fieldset"
+    data-backpack-ds-component="Fieldset"
   >
     <div
       class="bpk-fieldset__label"

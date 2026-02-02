@@ -4,6 +4,7 @@ exports[`BpkSectionHeader should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-section-header"
+    data-backpack-ds-component="SectionHeader"
   >
     <div
       class="bpk-section-header__title-description bpk-section-header__title-description--default"
@@ -22,6 +23,7 @@ exports[`BpkSectionHeader should render correctly with "type" prop 1`] = `
 <DocumentFragment>
   <div
     class="bpk-section-header"
+    data-backpack-ds-component="SectionHeader"
   >
     <div
       class="bpk-section-header__title-description bpk-section-header__title-description--on-dark"
@@ -44,6 +46,7 @@ exports[`BpkSectionHeader should render correctly with "type" prop 1`] = `
     </div>
     <button
       class="bpk-button bpk-button--primary"
+      data-backpack-ds-component="Button"
       type="button"
     >
       Action
@@ -56,6 +59,7 @@ exports[`BpkSectionHeader should render correctly with a "description" prop 1`] 
 <DocumentFragment>
   <div
     class="bpk-section-header"
+    data-backpack-ds-component="SectionHeader"
   >
     <div
       class="bpk-section-header__title-description bpk-section-header__title-description--default"
@@ -84,6 +88,7 @@ exports[`BpkSectionHeader should render correctly with an "button" prop 1`] = `
 <DocumentFragment>
   <div
     class="bpk-section-header"
+    data-backpack-ds-component="SectionHeader"
   >
     <div
       class="bpk-section-header__title-description bpk-section-header__title-description--default"
@@ -106,6 +111,7 @@ exports[`BpkSectionHeader should render correctly with an "button" prop 1`] = `
     </div>
     <button
       class="bpk-button bpk-button--primary"
+      data-backpack-ds-component="Button"
       type="button"
     >
       Action

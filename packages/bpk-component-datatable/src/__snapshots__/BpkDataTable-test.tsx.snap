@@ -4,6 +4,7 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
 <DocumentFragment>
   <div
     class="bpk-data-table"
+    data-backpack-ds-component="DataTable"
     role="table"
     style="height: 12.5rem;"
   >
@@ -16,6 +17,7 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0;"
         >
@@ -68,6 +70,7 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0; flex-grow: 1;"
         >
@@ -120,6 +123,7 @@ exports[`BpkDataTable should render correctly when "onRowClick" is set 1`] = `
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0;"
         >
@@ -239,6 +243,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
 <DocumentFragment>
   <div
     class="bpk-data-table custom-data-table"
+    data-backpack-ds-component="DataTable"
     role="table"
     style="height: 12.5rem;"
   >
@@ -251,6 +256,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0;"
         >
@@ -303,6 +309,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0; flex-grow: 1;"
         >
@@ -355,6 +362,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0;"
         >
@@ -474,6 +482,7 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
 <DocumentFragment>
   <div
     class="bpk-data-table"
+    data-backpack-ds-component="DataTable"
     role="table"
     style="height: 12.5rem;"
   >
@@ -486,6 +495,7 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0;"
         >
@@ -538,6 +548,7 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0; flex-grow: 1;"
         >
@@ -590,6 +601,7 @@ exports[`BpkDataTable should render correctly with a custom headerClassName 1`] 
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0;"
         >
@@ -709,6 +721,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
 <DocumentFragment>
   <div
     class="bpk-data-table"
+    data-backpack-ds-component="DataTable"
     role="table"
     style="height: 12.5rem;"
   >
@@ -721,6 +734,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0;"
         >
@@ -773,6 +787,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0; flex-grow: 1;"
         >
@@ -825,6 +840,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName functio
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0;"
         >
@@ -944,6 +960,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
 <DocumentFragment>
   <div
     class="bpk-data-table"
+    data-backpack-ds-component="DataTable"
     role="table"
     style="height: 12.5rem;"
   >
@@ -956,6 +973,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0;"
         >
@@ -1008,6 +1026,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0; flex-grow: 1;"
         >
@@ -1060,6 +1079,7 @@ exports[`BpkDataTable should render correctly with a custom rowClassName string 
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0;"
         >
@@ -1179,6 +1199,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
 <DocumentFragment>
   <div
     class="bpk-data-table"
+    data-backpack-ds-component="DataTable"
     role="table"
     style="width: 25rem; height: 12.5rem;"
   >
@@ -1191,6 +1212,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0;"
         >
@@ -1243,6 +1265,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0; flex-grow: 1;"
         >
@@ -1295,6 +1318,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0;"
         >
@@ -1414,6 +1438,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
 <DocumentFragment>
   <div
     class="bpk-data-table"
+    data-backpack-ds-component="DataTable"
     role="table"
     style="height: 12.5rem;"
   >
@@ -1426,6 +1451,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0;"
         >
@@ -1478,6 +1504,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0; flex-grow: 1;"
         >
@@ -1530,6 +1557,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0;"
         >
@@ -1649,6 +1677,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
 <DocumentFragment>
   <div
     class="bpk-data-table"
+    data-backpack-ds-component="DataTable"
     role="table"
     style="height: 12.5rem;"
   >
@@ -1661,6 +1690,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0;"
         >
@@ -1713,6 +1743,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0; flex-grow: 1;"
         >
@@ -1765,6 +1796,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
         <div
           class="bpk-data-table-column__header"
           colspan="1"
+          data-backpack-ds-component="DataTableHeader"
           role="columnheader"
           style="width: 6.25rem; min-width: 0;"
         >
