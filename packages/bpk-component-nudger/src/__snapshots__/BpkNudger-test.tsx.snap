@@ -34,6 +34,7 @@ exports[`BpkNudger should render as an on dark nudger correctly 1`] = `
       <input
         aria-live="polite"
         class="bpk-nudger__input bpk-nudger__input--numeric bpk-nudger__input--secondary-on-dark"
+        data-backpack-ds-component="Nudger"
         id="nudger"
         name="nudger"
         step="1"
@@ -102,6 +103,7 @@ exports[`BpkNudger should render correctly 1`] = `
       <input
         aria-live="polite"
         class="bpk-nudger__input bpk-nudger__input--numeric"
+        data-backpack-ds-component="Nudger"
         id="nudger"
         name="nudger"
         step="1"
@@ -171,6 +173,7 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
       <input
         aria-live="polite"
         class="bpk-nudger__input bpk-nudger__input--numeric"
+        data-backpack-ds-component="Nudger"
         id="nudger"
         name="nudger"
         step="1"
@@ -239,6 +242,7 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
       <input
         aria-live="polite"
         class="bpk-nudger__input bpk-nudger__input--numeric"
+        data-backpack-ds-component="Nudger"
         id="nudger"
         name="nudger"
         step="1"
@@ -309,6 +313,7 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
       <input
         aria-live="polite"
         class="bpk-nudger__input bpk-nudger__input--numeric"
+        data-backpack-ds-component="Nudger"
         id="nudger"
         name="nudger"
         step="1"
@@ -377,6 +382,7 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
       <input
         aria-live="polite"
         class="bpk-nudger__input bpk-nudger__input--numeric"
+        data-backpack-ds-component="Nudger"
         id="nudger"
         name="nudger"
         step="1"
