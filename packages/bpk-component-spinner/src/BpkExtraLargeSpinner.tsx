@@ -47,7 +47,10 @@ const BpkExtraLargeSpinner = ({
   );
 
   return (
-    <span className={classNames} {...getDataComponentAttribute('ExtraLargeSpinner')}>
+    <span
+      className={classNames}
+      {...getDataComponentAttribute('ExtraLargeSpinner')}
+    >
       <XlSpinner {...rest} />
     </span>
   );

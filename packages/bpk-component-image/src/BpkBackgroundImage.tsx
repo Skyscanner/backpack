@@ -124,7 +124,8 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
             height: 0,
             paddingBottom: aspectRatioPc,
           }}
-          className={classNames.join(' ')} {...getDataComponentAttribute('BackgroundImage')}
+          className={classNames.join(' ')}
+          {...getDataComponentAttribute('BackgroundImage')}
         >
           <div
             style={{

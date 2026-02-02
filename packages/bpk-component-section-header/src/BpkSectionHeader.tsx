@@ -45,7 +45,10 @@ const BpkSectionHeader = ({
   title,
   type = SECTION_TYPES.default,
 }: Props) => (
-  <div className={getClassName('bpk-section-header')} {...getDataComponentAttribute('SectionHeader')}>
+  <div
+    className={getClassName('bpk-section-header')}
+    {...getDataComponentAttribute('SectionHeader')}
+  >
     <div
       className={getClassName(
         'bpk-section-header__title-description',

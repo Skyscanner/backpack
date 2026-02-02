@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 
 import BpkBaseSkeleton from './BpkBaseSkeleton';
 import { SKELETON_TYPES, IMAGE_SKELETON_STYLE, SIZE_TYPES, BACKGROUND_STYLE } from './common-types';
@@ -41,7 +41,7 @@ const BpkSkeleton = (props: ComponentProps) => {
   const styleObj = typeof size === 'object' ? size : undefined;
 
   return (
-    <BpkBaseSkeleton skeletonStyle={classNames} styleObj={styleObj} {...getDataComponentAttribute('Skeleton')} />
+    <BpkBaseSkeleton skeletonStyle={classNames} styleObj={styleObj} />
   )
 };
 

@@ -51,10 +51,11 @@ const BpkLargeSpinner = ({
   );
 
   return (
-    <span className={classNames} {...getDataComponentAttribute('LargeSpinner')}>
-      <LgSpinner
-        {...rest}
-      />
+    <span
+      className={classNames}
+      {...getDataComponentAttribute('LargeSpinner')}
+    >
+      <LgSpinner {...rest} />
     </span>
 
   );

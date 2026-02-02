@@ -19,13 +19,13 @@ exports[`Content Card widget renders correctly with 1 card 1`] = `
       >
         <a
           class="bpk-content-card--link bpk-content-card--horizontal"
+          data-backpack-ds-component="ContentCard"
           href="http://skyscanner.net/card-1-cta-link.html"
           rel="noreferrer"
           target="_blank"
         >
           <div
             class="bpk-content-card--image-container"
-            data-backpack-ds-component="ContentCard"
           >
             <img
               alt="People surfing in the ocean"
@@ -74,13 +74,13 @@ exports[`Content Card widget renders correctly with 2 cards 1`] = `
       >
         <a
           class="bpk-content-card--link bpk-content-card--vertical"
+          data-backpack-ds-component="ContentCard"
           href="http://skyscanner.net/card-1-cta-link.html"
           rel="noreferrer"
           target="_blank"
         >
           <div
             class="bpk-content-card--image-container"
-            data-backpack-ds-component="ContentCard"
           >
             <img
               alt="People surfing in the ocean"
@@ -110,13 +110,13 @@ exports[`Content Card widget renders correctly with 2 cards 1`] = `
       >
         <a
           class="bpk-content-card--link bpk-content-card--vertical"
+          data-backpack-ds-component="ContentCard"
           href="http://skyscanner.net/card-2-cta-link.html"
           rel="noreferrer"
           target="_blank"
         >
           <div
             class="bpk-content-card--image-container"
-            data-backpack-ds-component="ContentCard"
           >
             <img
               alt="Man on boat in a fjord"
@@ -165,13 +165,13 @@ exports[`Content Card widget renders correctly with 3 cards 1`] = `
       >
         <a
           class="bpk-content-card--link bpk-content-card--vertical"
+          data-backpack-ds-component="ContentCard"
           href="http://skyscanner.net/card-1-cta-link.html"
           rel="noreferrer"
           target="_blank"
         >
           <div
             class="bpk-content-card--image-container"
-            data-backpack-ds-component="ContentCard"
           >
             <img
               alt="People surfing in the ocean"
@@ -201,13 +201,13 @@ exports[`Content Card widget renders correctly with 3 cards 1`] = `
       >
         <a
           class="bpk-content-card--link bpk-content-card--vertical"
+          data-backpack-ds-component="ContentCard"
           href="http://skyscanner.net/card-2-cta-link.html"
           rel="noreferrer"
           target="_blank"
         >
           <div
             class="bpk-content-card--image-container"
-            data-backpack-ds-component="ContentCard"
           >
             <img
               alt="Man on boat in a fjord"
@@ -237,13 +237,13 @@ exports[`Content Card widget renders correctly with 3 cards 1`] = `
       >
         <a
           class="bpk-content-card--link bpk-content-card--vertical"
+          data-backpack-ds-component="ContentCard"
           href="http://skyscanner.net/card-3-cta-link.html"
           rel="noreferrer"
           target="_blank"
         >
           <div
             class="bpk-content-card--image-container"
-            data-backpack-ds-component="ContentCard"
           >
             <img
               alt="Airplane flying over mountains"

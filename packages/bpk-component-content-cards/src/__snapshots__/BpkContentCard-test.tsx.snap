@@ -4,13 +4,13 @@ exports[`Content Card widget renders horizontal card correctly 1`] = `
 <DocumentFragment>
   <a
     class="bpk-content-card--link bpk-content-card--horizontal"
+    data-backpack-ds-component="ContentCard"
     href="http://skyscanner.net/card-1-cta-link.html"
     rel="noreferrer"
     target="_blank"
   >
     <div
       class="bpk-content-card--image-container"
-      data-backpack-ds-component="ContentCard"
     >
       <img
         alt="People surfing in the ocean"
@@ -41,13 +41,13 @@ exports[`Content Card widget renders vertical card correctly 1`] = `
 <DocumentFragment>
   <a
     class="bpk-content-card--link bpk-content-card--vertical"
+    data-backpack-ds-component="ContentCard"
     href="http://skyscanner.net/card-1-cta-link.html"
     rel="noreferrer"
     target="_blank"
   >
     <div
       class="bpk-content-card--image-container"
-      data-backpack-ds-component="ContentCard"
     >
       <img
         alt="People surfing in the ocean"

@@ -66,7 +66,12 @@ const BpkScrollContainer = memo(({ images, imagesRef, onImageChanged, onVisible 
 
   if (images.length === 1) {
     return (
-      <div className={getClassName('bpk-carousel-container')} {...getDataComponentAttribute('CarouselContainer')} role="list" data-testid="image-gallery-scroll-container">
+      <div
+        className={getClassName('bpk-carousel-container')}
+        {...getDataComponentAttribute('CarouselContainer')}
+        role="list"
+        data-testid="image-gallery-scroll-container"
+      >
         <BpkCarouselImage image={images[0]} index={0} />
       </div>
     );

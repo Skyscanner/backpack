@@ -57,7 +57,10 @@ const BpkCarousel = ({
   useScrollToInitialImage(initialImageIndex!, imagesRef);
 
   return (
-    <div className={getClassName('bpk-carousel')} {...getDataComponentAttribute('Carousel')}>
+    <div
+      className={getClassName('bpk-carousel')}
+      {...getDataComponentAttribute('Carousel')}
+    >
       <BpkCarouselContainer
         images={images}
         onVisible={updateShownImageIndex}

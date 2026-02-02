@@ -148,6 +148,7 @@ const BpkDataTable = (props: BpkDataTableProps) => {
         className: classNames,
       })}
       {...restOfProps}
+      {...getDataComponentAttribute('DataTable')}
     >
       <div>
         {headerGroups.map((headerGroup: any) => (
@@ -171,7 +172,7 @@ const BpkDataTable = (props: BpkDataTableProps) => {
                   column.sortDirection = sortDirection; // eslint-disable-line no-param-reassign
                 }
               }
-              return <BpkDataTableHeader key={column.id} column={column}  {...getDataComponentAttribute('DataTable')}/>;
+              return <BpkDataTableHeader key={column.id} column={column} />;
             })}
           </div>
         ))}

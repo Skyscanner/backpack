@@ -73,8 +73,7 @@ class Image extends Component<ImageProps> {
 
     return (
       <img
-        className={imgClassNames.join(' ')} 
-        {...getDataComponentAttribute('Image')}
+        className={imgClassNames.join(' ')}
         alt={altText}
         onLoad={onImageLoad}
         ref={this.setImgRef}
@@ -161,7 +160,11 @@ class BpkImage extends Component<BpkImageProps> {
     // This ensures that the css / html do not reserve too much spacing
     // when width 100% is not being used
     return (
-      <div style={style} className={className}>
+      <div
+        style={style}
+        className={className}
+        {...getDataComponentAttribute('Image')}
+      >
         <div
           ref={(div) => {
             this.placeholder = div;

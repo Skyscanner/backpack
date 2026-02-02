@@ -49,7 +49,10 @@ const BpkSpinner = ({
   );
 
   return (
-    <span className={classNames} {...getDataComponentAttribute('Spinner')}>
+    <span
+      className={classNames}
+      {...getDataComponentAttribute('Spinner')}
+    >
       <SmSpinner {...rest} />
     </span>
   );
