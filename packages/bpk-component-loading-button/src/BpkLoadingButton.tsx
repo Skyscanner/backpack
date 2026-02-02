@@ -142,7 +142,7 @@ const BpkLoadingButton = (props: LoadingProps) => {
       disabled={showBtnDisabled}
       size={large ? SIZE_TYPES.large : SIZE_TYPES.small}
       type={type}
-       {...getDataComponentAttribute('LoadingButton')}
+      {...getDataComponentAttribute('LoadingButton')}
       {...rest}
     >
       <div className={getClassName('bpk-loading-button__container')}>
