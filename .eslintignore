@@ -8,4 +8,5 @@ coverage
 /packages/bpk-component-icon/xxxl
 /packages/bpk-component-spinner/src/spinners
 /packages/bpk-stylesheets/base.js
+/packages/bpk-component-autosuggest/src/BpkAutosuggest.js
 *.d.ts

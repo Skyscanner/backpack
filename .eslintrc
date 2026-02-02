@@ -154,7 +154,9 @@
               "Slider.Root", // allowed for styling to be passed to radix-ui component
               "Slider.Track", // allowed for styling to be passed to radix-ui component
               "Slider.Range", // allowed for styling to be passed to radix-ui component
-              "Slider.Thumb" // allowed for styling to be passed to radix-ui component
+              "Slider.Thumb", // allowed for styling to be passed to radix-ui component
+              "TagName", // allowed for dynamic element in BpkText
+              "Element" // allowed for dynamic element in BpkVisuallyHidden
             ]
           }
         ]
@@ -172,6 +174,13 @@
       "files": ["**/packages/bpk-component-modal/src/BpkModalV2/BpKModal-test.tsx", "**/packages/bpk-react-utils/src/BpkDialogWrapper/BpkDialogWrapper-test.tsx"],
       "rules": {
         "compat/compat": "off"
+      }
+    },
+    {
+      "files": ["**/examples/bpk-component-autosuggest/**"],
+      "rules": {
+        "import/no-named-as-default": "off",
+        "import/no-named-as-default-member": "off"
       }
     }
   ]

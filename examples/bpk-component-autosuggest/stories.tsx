@@ -39,16 +39,14 @@ export default {
           <Title />
           <ArgTypes exclude={['zoomEnabled']} />
           <Markdown>
-            {
-            `**BpkAutosuggest:**
+            {`**BpkAutosuggest:**
             Please refer to react-autosuggest's
             documentation for a full list of [props](https://github.com/moroshko/react-autosuggest#props).
             **Note:** The \`inputProps\` object is passed directly to a
-            [BpkInput](../bpk-component-input/README.md#props) component, so its prop types apply also.`
-            }
+            [BpkInput](../bpk-component-input/README.md#props) component, so its prop types apply also.`}
           </Markdown>
         </>
-      )
+      ),
     },
   },
 };
@@ -71,7 +69,12 @@ export const Hanzi = () => (
 );
 
 export const All = () => (
-  <AutosuggestExample includeSubheading includeTertiaryLabel includeIcon alwaysRenderSuggestions />
+  <AutosuggestExample
+    includeSubheading
+    includeTertiaryLabel
+    includeIcon
+    alwaysRenderSuggestions
+  />
 );
 
 export const SmallInput = () => (
@@ -99,6 +102,6 @@ export const VisualTest: Story = {
   parameters: {
     percy: {
       waitForSelector: '.percy-selector-placeholder', // Wait for the input to have this class before taking the snapshot
-    }
-  }
+    },
+  },
 };

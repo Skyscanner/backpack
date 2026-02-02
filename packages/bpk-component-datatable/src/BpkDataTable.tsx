@@ -165,6 +165,7 @@ const BpkDataTable = (props: BpkDataTableProps) => {
             {headerGroup.headers.map((column: any) => {
               // if consumer passes a custom sort function for a specific column (using sortBy to specify the column id),
               // we need to pass them to react-table by setting the sortType and sortDirection properties on the column
+              /* eslint-disable no-param-reassign */
               if (sort && sortBy) {
                 if (column.id === sortBy) {
                   if (typeof sort === 'function') {
@@ -174,13 +175,14 @@ const BpkDataTable = (props: BpkDataTableProps) => {
                       rowB: { [key: string]: any },
                       columnID: string,
                       desc: boolean,
-                    ) => sort(rowA?.values, rowB?.values, columnID, desc); // eslint-disable-line no-param-reassign
+                    ) => sort(rowA?.values, rowB?.values, columnID, desc);
                   } else {
-                    column.sortType = sort; // eslint-disable-line no-param-reassign
+                    column.sortType = sort;
                   }
-                  column.sortDirection = sortDirection; // eslint-disable-line no-param-reassign
+                  column.sortDirection = sortDirection;
                 }
               }
+              /* eslint-enable no-param-reassign */
               return <BpkDataTableHeader key={column.id} column={column} />;
             })}
           </div>

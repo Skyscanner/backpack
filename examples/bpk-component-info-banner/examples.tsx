@@ -30,7 +30,8 @@ import BpkInfoBanner, {
   ALERT_TYPES,
   BpkInfoBannerExpandable,
   STYLE_TYPES,
-  withBannerAlertState, BpkInfoBannerDismissable
+  withBannerAlertState,
+  BpkInfoBannerDismissable,
 } from '../../packages/bpk-component-info-banner';
 import BpkText from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
@@ -49,10 +50,10 @@ porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan
 sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
 ante in, vestibulum nulla.`;
 
-type Props = {};
+type Props = Record<string, never>;
 type State = {
-  dismissed: boolean,
-  updates: Array<string>,
+  dismissed: boolean;
+  updates: string[];
 };
 
 class BpkInfoBannerDismissableState extends Component<Props, State> {
@@ -66,44 +67,46 @@ class BpkInfoBannerDismissableState extends Component<Props, State> {
   }
 
   render() {
-    return <>
-      <BpkInfoBannerDismissable
-        show={!this.state.dismissed}
-        dismissButtonLabel="Dismiss"
-        onDismiss={() => {
-          this.setState((prevState) => ({
-            dismissed: true,
-            updates: [...prevState.updates, 'Success alert dismissed'],
-          }));
-        }}
-        message="Neutral alert with dismiss option"
-        {...this.props}
-      />
-      {this.state.dismissed && (
-        <BpkButton
-          className={getClassName('bpk-info-banner-examples__component')}
-          onClick={() => {
+    return (
+      <>
+        <BpkInfoBannerDismissable
+          show={!this.state.dismissed}
+          dismissButtonLabel="Dismiss"
+          onDismiss={() => {
             this.setState((prevState) => ({
-              dismissed: false,
-              updates: [...prevState.updates, 'Success alert added'],
+              dismissed: true,
+              updates: [...prevState.updates, 'Success alert dismissed'],
             }));
           }}
+          message="Neutral alert with dismiss option"
+          {...this.props}
+        />
+        {this.state.dismissed && (
+          <BpkButton
+            className={getClassName('bpk-info-banner-examples__component')}
+            onClick={() => {
+              this.setState((prevState) => ({
+                dismissed: false,
+                updates: [...prevState.updates, 'Success alert added'],
+              }));
+            }}
+          >
+            Reset
+          </BpkButton>
+        )}
+        <AriaLiveDemo
+          visible
+          className={getClassName('bpk-info-banner-examples__component')}
         >
-          Reset
-        </BpkButton>
-      )}
-      <AriaLiveDemo
-        visible
-        className={getClassName('bpk-info-banner-examples__component')}
-      >
-        {this.state.updates.map((u) => (
-          <>
-            {u}
-            <br />
-          </>
-        ))}
-      </AriaLiveDemo>
-    </>;
+          {this.state.updates.map((u) => (
+            <>
+              {u}
+              <br />
+            </>
+          ))}
+        </AriaLiveDemo>
+      </>
+    );
   }
 }
 
@@ -195,7 +198,10 @@ const SuccessExpandableWithActionExample = () => (
   <BpkInfoBannerExpandableState
     message="Success alert"
     type={ALERT_TYPES.SUCCESS}
-    action={{title: "Sample Action", callback: () => alert('Hello from action')}}
+    action={{
+      title: 'Sample Action',
+      callback: () => alert('Hello from action'),
+    }}
     toggleButtonLabel="View more"
   >
     {longMessage}
