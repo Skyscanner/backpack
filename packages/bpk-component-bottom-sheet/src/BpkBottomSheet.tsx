@@ -187,6 +187,7 @@ const BpkBottomSheet = ({
     >
       <>
         <header className={getClassName('bpk-bottom-sheet--header-wrapper')}>
+          {/* Visually hidden title required for Android TalkBack to announce ariaLabel on BottomSheet open when no visible title provided */}
           {showHiddenTitle && (
             <BpkVisuallyHidden as="h2">
               <span id={hiddenTitleId}>{ariaProps.ariaLabel}</span>
@@ -194,7 +195,7 @@ const BpkBottomSheet = ({
           )}
           <BpkNavigationBar
             id={showHiddenTitle ? hiddenTitleId : headingId}
-            title={title || null}
+            title={title}
             titleTextStyle={TEXT_STYLES.label1}
             titleTagName={title ? 'h2' : 'span'}
             className={getClassName('bpk-bottom-sheet--header')}
