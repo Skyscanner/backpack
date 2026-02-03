@@ -27,4 +27,5 @@ import type { WithOpenEventsProps } from '../../packages/bpk-component-input/src
 
 const WithOpenEventsMock = (props: WithOpenEventsProps) => <div />;
 
+// eslint-disable-next-line import/prefer-default-export
 export { WithOpenEventsMock };

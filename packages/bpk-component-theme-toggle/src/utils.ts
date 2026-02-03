@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 const THEME_CHANGE_EVENT = 'bpkchangetheme';
 
 const getHtmlElement = (): HTMLElement | null =>

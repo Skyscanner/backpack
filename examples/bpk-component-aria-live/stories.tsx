@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { ArgTypes, Markdown, Title } from '@storybook/addon-docs/blocks';
+import {ArgTypes,Title, Markdown } from '@storybook/addon-docs/blocks';
 
 import BpkAriaLive from '../../packages/bpk-component-aria-live/src/BpkAriaLive';
 
@@ -38,9 +38,9 @@ export default {
             `}
           </Markdown>
         </>
-      ),
-    },
-  },
+      )
+    }
+  }
 };
 
 export const Default = () => <ChipsExample />;

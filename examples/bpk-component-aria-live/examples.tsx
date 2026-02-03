@@ -17,7 +17,7 @@
  */
 
 import { Component } from 'react';
-import type { ChangeEvent, CSSProperties, ReactNode } from 'react';
+import type { ChangeEvent, ReactElement } from 'react';
 
 import BpkAriaLive, {
   ARIA_LIVE_POLITENESS_SETTINGS,
@@ -35,11 +35,11 @@ import STYLES from './examples.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  preamble?: ReactNode;
-  children: ReactNode;
+  preamble?: ReactElement | null;
+  children: ReactElement;
   className?: string | null;
-  style?: CSSProperties;
-  visible?: boolean;
+  style?: {};
+  visible?: Boolean;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
@@ -74,13 +74,11 @@ const AriaLiveDemo = ({
   </div>
 );
 
-type SelectExampleState = {
-  destination: string;
-  direct: boolean;
-};
-
-class SelectExample extends Component<Record<string, never>, SelectExampleState> {
-  constructor(props: Record<string, never>) {
+class SelectExample<SProps extends {}> extends Component<
+  SProps,
+  { destination: string; direct: boolean }
+> {
+  constructor(props: SProps) {
     super(props);
     this.state = {
       destination: 'Panjin',
@@ -168,25 +166,14 @@ class SelectExample extends Component<Record<string, never>, SelectExampleState>
   }
 }
 
-type ChipCategories = {
-  Flights: boolean;
-  Hotels: boolean;
-  'Car hire': boolean;
-};
-
-type UpdateItem = {
-  id: number;
-  message: string;
-};
-
-type ChipsExampleState = {
-  categories: ChipCategories;
-  updates: UpdateItem[];
-  nextUpdateId: number;
-};
-
-class ChipsExample extends Component<Record<string, never>, ChipsExampleState> {
-  constructor(props: Record<string, never>) {
+class ChipsExample<CProps extends {}> extends Component<
+  CProps,
+  {
+    categories: { Flights: boolean; Hotels: boolean; 'Car hire': boolean };
+    updates: string[];
+  }
+> {
+  constructor(props: CProps) {
     super(props);
     this.state = {
       categories: {
@@ -195,7 +182,6 @@ class ChipsExample extends Component<Record<string, never>, ChipsExampleState> {
         'Car hire': false,
       },
       updates: [],
-      nextUpdateId: 0,
     };
   }
 
@@ -203,21 +189,14 @@ class ChipsExample extends Component<Record<string, never>, ChipsExampleState> {
 
   toggleCategory = (category: 'Flights' | 'Hotels' | 'Car hire') => {
     this.setState((prevState) => {
-      const nextSelected = !prevState.categories[category];
-      const message = `${category} became ${
-        nextSelected ? 'enabled' : 'disabled'
-      }.`;
-      return {
-        categories: {
-          ...prevState.categories,
-          [category]: nextSelected,
-        },
-        updates: [
-          ...prevState.updates,
-          { id: prevState.nextUpdateId, message },
-        ],
-        nextUpdateId: prevState.nextUpdateId + 1,
-      };
+      const nextState = prevState;
+      nextState.categories[category] = !prevState.categories[category];
+      nextState.updates.push(
+        `${category} became ${
+          nextState.categories[category] ? 'enabled' : 'disabled'
+        }.`,
+      );
+      return nextState;
     });
   };
 
@@ -264,8 +243,8 @@ class ChipsExample extends Component<Record<string, never>, ChipsExampleState> {
         >
           <>
             {updates.map((update) => (
-              <p key={update.id}>
-                <strong>{update.message}</strong>
+              <p>
+                <strong>{update}</strong>
               </p>
             ))}
           </>

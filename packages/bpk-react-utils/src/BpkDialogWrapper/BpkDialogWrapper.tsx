@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import type { SyntheticEvent, ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 

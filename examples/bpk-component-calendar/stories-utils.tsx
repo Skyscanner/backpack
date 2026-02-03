@@ -28,4 +28,5 @@ import type { Props as composeProps } from '../../packages/bpk-component-calenda
 
 const BpkCalendarContainerMock = (props: composeProps & bpkCalendarContainerProps) => <div />;
 
+// eslint-disable-next-line import/prefer-default-export
 export { BpkCalendarContainerMock };

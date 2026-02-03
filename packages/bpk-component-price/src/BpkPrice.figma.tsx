@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import figma from "@figma/code-connect"
 
 import BpkPrice from "./BpkPrice"

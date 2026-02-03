@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import BpkButton from '../../bpk-component-button';
 import BpkSectionHeader from '../../bpk-component-section-header';

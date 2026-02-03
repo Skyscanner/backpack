@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow strict */
 
 import BpkRating from './src/BpkRating';
 import { RATING_SIZES, RATING_SCALES } from './src/common-types';

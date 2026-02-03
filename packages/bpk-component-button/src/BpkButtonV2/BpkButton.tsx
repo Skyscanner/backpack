@@ -25,6 +25,7 @@ import COMMON_STYLES from './BpkButton.module.scss';
 
 const getCommonClassName = cssModules(COMMON_STYLES);
 
+// eslint-disable-next-line import/prefer-default-export
 export const BpkButtonV2 = ({
   blank = false,
   children,

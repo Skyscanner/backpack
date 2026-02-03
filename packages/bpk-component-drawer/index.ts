@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+/* @flow strict */
 
 import BpkDrawer from './src/BpkDrawer';
 import themeAttributes from './src/themeAttributes';
