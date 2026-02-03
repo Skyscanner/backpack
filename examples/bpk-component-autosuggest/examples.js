@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import { Component, type SyntheticEvent } from 'react';
+import { Component } from 'react';
 
 import BpkAutosuggest, {
   BpkAutosuggestSuggestion,

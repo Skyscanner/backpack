@@ -18,7 +18,7 @@
 
 /* @flow strict */
 
-import { Component, type SyntheticInputEvent } from 'react';
+import { Component } from 'react';
 
 import BpkFieldSet from '../../packages/bpk-component-fieldset';
 import BpkImage from '../../packages/bpk-component-image';
