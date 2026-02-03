@@ -22,7 +22,7 @@ import { Component } from 'react';
 
 import debounce from 'lodash/debounce';
 
-import { cssModules, isRTL } from '../../bpk-react-utils';
+import { cssModules, isRTL, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type { DebouncedFunc } from 'lodash';
 
@@ -194,6 +194,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
         {...rest}
         className={classNames.join(' ')}
         style={{ ...style, height: this.state.computedHeight }}
+        {...getDataComponentAttribute('MobileScrollContainer')}
       >
         <div
           ref={(el) => {

@@ -6,12 +6,14 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
 <DocumentFragment>
   <div
     class="bpk-scrollable-calendar-grid"
+    data-backpack-ds-component="ScrollableCalendarGrid"
   >
     <span
       class="bpk-scrollable-calendar-grid__title"
     >
       <h2
         class="bpk-text bpk-text--heading-4"
+        data-backpack-ds-component="Text"
       >
         October 2016
       </h2>
@@ -20,6 +22,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
       aria-hidden="false"
       aria-label="October 2016"
       class="bpk-calendar-grid"
+      data-backpack-ds-component="CalendarGrid"
       role="grid"
     >
       <div
@@ -27,6 +30,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
       >
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -63,6 +67,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Saturday, 1st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -82,6 +87,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Sunday, 2nd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -95,6 +101,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -106,6 +113,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Monday, 3rd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -125,6 +133,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Tuesday, 4th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -144,6 +153,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Wednesday, 5th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -163,6 +173,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Thursday, 6th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -182,6 +193,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Friday, 7th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -201,6 +213,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Saturday, 8th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -220,6 +233,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Sunday, 9th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -233,6 +247,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -244,6 +259,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Monday, 10th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -263,6 +279,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Tuesday, 11th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -282,6 +299,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Wednesday, 12th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -301,6 +319,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Thursday, 13th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -320,6 +339,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Friday, 14th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -339,6 +359,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Saturday, 15th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -358,6 +379,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Sunday, 16th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -371,6 +393,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -382,6 +405,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Monday, 17th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -401,6 +425,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Tuesday, 18th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -420,6 +445,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Wednesday, 19th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -439,6 +465,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Thursday, 20th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -458,6 +485,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Friday, 21st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -477,6 +505,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Saturday, 22nd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -496,6 +525,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Sunday, 23rd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -509,6 +539,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -520,6 +551,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Monday, 24th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -539,6 +571,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Tuesday, 25th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -558,6 +591,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Wednesday, 26th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -577,6 +611,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Thursday, 27th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -596,6 +631,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Friday, 28th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -615,6 +651,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Saturday, 29th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -634,6 +671,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Sunday, 30th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -647,6 +685,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -658,6 +697,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a "dateModifiers" at
               aria-label="Monday, 31st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -709,12 +749,14 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
 <DocumentFragment>
   <div
     class="bpk-scrollable-calendar-grid"
+    data-backpack-ds-component="ScrollableCalendarGrid"
   >
     <span
       class="bpk-scrollable-calendar-grid__title"
     >
       <h2
         class="bpk-text bpk-text--heading-4"
+        data-backpack-ds-component="Text"
       >
         October 2016
       </h2>
@@ -723,6 +765,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
       aria-hidden="false"
       aria-label="October 2016"
       class="bpk-calendar-grid"
+      data-backpack-ds-component="CalendarGrid"
       role="grid"
     >
       <div
@@ -730,6 +773,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
       >
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -798,6 +842,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -866,6 +911,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -934,6 +980,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -1002,6 +1049,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -1070,6 +1118,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a custom date compon
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -1146,12 +1195,14 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
 <DocumentFragment>
   <div
     class="bpk-scrollable-calendar-grid"
+    data-backpack-ds-component="ScrollableCalendarGrid"
   >
     <span
       class="bpk-scrollable-calendar-grid__title"
     >
       <h2
         class="bpk-text bpk-text--heading-4"
+        data-backpack-ds-component="Text"
       >
         October 2016
       </h2>
@@ -1160,6 +1211,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
       aria-hidden="false"
       aria-label="October 2016"
       class="bpk-calendar-grid"
+      data-backpack-ds-component="CalendarGrid"
       role="grid"
     >
       <div
@@ -1167,6 +1219,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
       >
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -1183,6 +1236,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Saturday, 1st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1202,6 +1256,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Sunday, 2nd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1221,6 +1276,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Monday, 3rd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1240,6 +1296,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Tuesday, 4th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1259,6 +1316,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Wednesday, 5th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1278,6 +1336,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Thursday, 6th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1291,6 +1350,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -1302,6 +1362,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Friday, 7th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1321,6 +1382,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Saturday, 8th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1340,6 +1402,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Sunday, 9th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1359,6 +1422,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Monday, 10th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1378,6 +1442,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Tuesday, 11th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1397,6 +1462,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Wednesday, 12th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1416,6 +1482,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Thursday, 13th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1429,6 +1496,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -1440,6 +1508,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Friday, 14th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1459,6 +1528,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Saturday, 15th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1478,6 +1548,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Sunday, 16th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1497,6 +1568,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Monday, 17th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1516,6 +1588,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Tuesday, 18th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1535,6 +1608,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Wednesday, 19th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1554,6 +1628,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Thursday, 20th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1567,6 +1642,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -1578,6 +1654,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Friday, 21st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1597,6 +1674,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Saturday, 22nd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1616,6 +1694,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Sunday, 23rd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1635,6 +1714,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Monday, 24th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1654,6 +1734,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Tuesday, 25th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1673,6 +1754,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Wednesday, 26th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1692,6 +1774,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Thursday, 27th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1705,6 +1788,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -1716,6 +1800,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Friday, 28th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1735,6 +1820,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Saturday, 29th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1754,6 +1840,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Sunday, 30th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1773,6 +1860,7 @@ exports[`BpkCalendarScrollGrid should render correctly with a different "weekSta
               aria-label="Monday, 31st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1809,12 +1897,14 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
 <DocumentFragment>
   <div
     class="bpk-scrollable-calendar-grid"
+    data-backpack-ds-component="ScrollableCalendarGrid"
   >
     <span
       class="bpk-scrollable-calendar-grid__title"
     >
       <h2
         class="bpk-text bpk-text--heading-4"
+        data-backpack-ds-component="Text"
       >
         October 2016
       </h2>
@@ -1823,6 +1913,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
       aria-hidden="false"
       aria-label="October 2016"
       class="bpk-calendar-grid"
+      data-backpack-ds-component="CalendarGrid"
       role="grid"
     >
       <div
@@ -1830,6 +1921,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
       >
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -1866,6 +1958,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Saturday, 1st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1885,6 +1978,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Sunday, 2nd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1898,6 +1992,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -1909,6 +2004,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Monday, 3rd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1928,6 +2024,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Tuesday, 4th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1947,6 +2044,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Wednesday, 5th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1966,6 +2064,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Thursday, 6th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -1985,6 +2084,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Friday, 7th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2004,6 +2104,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Saturday, 8th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2023,6 +2124,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Sunday, 9th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2036,6 +2138,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -2047,6 +2150,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Monday, 10th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2066,6 +2170,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Tuesday, 11th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2085,6 +2190,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Wednesday, 12th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2104,6 +2210,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Thursday, 13th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2123,6 +2230,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Friday, 14th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2142,6 +2250,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Saturday, 15th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2161,6 +2270,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Sunday, 16th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2174,6 +2284,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -2185,6 +2296,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Monday, 17th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2204,6 +2316,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Tuesday, 18th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2223,6 +2336,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Wednesday, 19th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2242,6 +2356,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Thursday, 20th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2261,6 +2376,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Friday, 21st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2280,6 +2396,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Saturday, 22nd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2299,6 +2416,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Sunday, 23rd October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2312,6 +2430,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -2323,6 +2442,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Monday, 24th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2342,6 +2462,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Tuesday, 25th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2361,6 +2482,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Wednesday, 26th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2380,6 +2502,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Thursday, 27th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2399,6 +2522,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Friday, 28th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2418,6 +2542,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Saturday, 29th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2437,6 +2562,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Sunday, 30th October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >
@@ -2450,6 +2576,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
         </div>
         <div
           class="bpk-calendar-week"
+          data-backpack-ds-component="CalendarWeek"
           role="row"
         >
           <div
@@ -2461,6 +2588,7 @@ exports[`BpkCalendarScrollGrid should render correctly with no optional props se
               aria-label="Monday, 31st October 2016"
               aria-pressed="false"
               class="bpk-calendar-date"
+              data-backpack-ds-component="CalendarDate"
               tabindex="-1"
               type="button"
             >

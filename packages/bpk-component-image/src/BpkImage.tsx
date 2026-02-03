@@ -24,7 +24,7 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { BpkSpinner } from '../../bpk-component-spinner';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import BORDER_RADIUS_STYLES from './BpkImageBorderRadiusStyles';
 
@@ -161,7 +161,11 @@ class BpkImage extends Component<BpkImageProps> {
     // This ensures that the css / html do not reserve too much spacing
     // when width 100% is not being used
     return (
-      <div style={style} className={className}>
+      <div
+        style={style}
+        className={className}
+        {...getDataComponentAttribute('Image')}
+      >
         <div
           ref={(div) => {
             this.placeholder = div;

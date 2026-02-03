@@ -8,6 +8,7 @@ exports[`BpkCalendarDate should pass props through to button 1`] = `
     aria-label="Nothing happened on this day in 2010"
     aria-pressed="false"
     class="bpk-calendar-date"
+    data-backpack-ds-component="CalendarDate"
     tabindex="-1"
     type="button"
   >
@@ -26,6 +27,7 @@ exports[`BpkCalendarDate should render a blocked button as disabled with aria-hi
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date bpk-calendar-date--blocked"
+    data-backpack-ds-component="CalendarDate"
     disabled=""
     tabindex="-1"
     type="button"
@@ -45,6 +47,7 @@ exports[`BpkCalendarDate should render a disabled button 1`] = `
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date bpk-calendar-date--blocked"
+    data-backpack-ds-component="CalendarDate"
     disabled=""
     tabindex="-1"
     type="button"
@@ -64,6 +67,7 @@ exports[`BpkCalendarDate should render a focused button with tabIndex 1`] = `
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date bpk-calendar-date--focused"
+    data-backpack-ds-component="CalendarDate"
     tabindex="0"
     type="button"
   >
@@ -82,6 +86,7 @@ exports[`BpkCalendarDate should render correctly 1`] = `
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date"
+    data-backpack-ds-component="CalendarDate"
     tabindex="-1"
     type="button"
   >
@@ -100,6 +105,7 @@ exports[`BpkCalendarDate should render with a click and keyDown handler 1`] = `
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date"
+    data-backpack-ds-component="CalendarDate"
     tabindex="-1"
     type="button"
   >
@@ -118,6 +124,7 @@ exports[`BpkCalendarDate should set a custom class 1`] = `
     aria-label="15"
     aria-pressed="false"
     class="bpk-calendar-date userlandClassName"
+    data-backpack-ds-component="CalendarDate"
     tabindex="-1"
     type="button"
   >

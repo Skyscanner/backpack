@@ -6,6 +6,7 @@ exports[`BpkCard should render correctly 1`] = `
 <DocumentFragment>
   <button
     class="bpk-card bpk-card--atomic-button bpk-card--padded"
+    data-backpack-ds-component="Card"
     type="button"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -17,6 +18,7 @@ exports[`BpkCard should render correctly when non-atomic 1`] = `
 <DocumentFragment>
   <div
     class="bpk-card bpk-card--padded"
+    data-backpack-ds-component="Card"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </div>
@@ -27,6 +29,7 @@ exports[`BpkCard should render correctly with "href" and "blank" attributes 1`] 
 <DocumentFragment>
   <a
     class="bpk-card bpk-card--padded"
+    data-backpack-ds-component="Card"
     href="//www.skyscanner.net"
     rel="noopener noreferrer"
     target="_blank"
@@ -40,6 +43,7 @@ exports[`BpkCard should render correctly with "padded" attribute equal to "false
 <DocumentFragment>
   <button
     class="bpk-card bpk-card--atomic-button"
+    data-backpack-ds-component="Card"
     type="button"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -51,6 +55,7 @@ exports[`BpkCard should render correctly with a "className" attribute 1`] = `
 <DocumentFragment>
   <button
     class="bpk-card bpk-card--atomic-button bpk-card--padded custom-class"
+    data-backpack-ds-component="Card"
     type="button"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -62,6 +67,7 @@ exports[`BpkCard should render correctly with an "href" attribute 1`] = `
 <DocumentFragment>
   <a
     class="bpk-card bpk-card--padded"
+    data-backpack-ds-component="Card"
     href="//www.skyscanner.net"
   >
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -73,6 +79,7 @@ exports[`BpkCard should render correctly with an "href" attribute when non-atomi
 <DocumentFragment>
   <a
     class="bpk-card bpk-card--padded"
+    data-backpack-ds-component="Card"
     href="//www.skyscanner.net"
     role="group"
     tabindex="-1"

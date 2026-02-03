@@ -20,7 +20,7 @@
 import type { CSSProperties, MouseEvent } from 'react';
 
 import { BUTTON_TYPES } from '../../bpk-component-button';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import NavButton, { DIRECTIONS } from './NavButton';
 
@@ -98,7 +98,7 @@ const BpkPageIndicator = ({
         className={getClassName(
           'bpk-page-indicator',
           showNav && 'bpk-page-indicator__showNav',
-        )}
+        )} {...getDataComponentAttribute('PageIndicator')}
       >
         {showNav && (
           <NavButton

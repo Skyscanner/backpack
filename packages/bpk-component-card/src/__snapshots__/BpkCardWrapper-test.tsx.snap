@@ -6,6 +6,7 @@ exports[`BpkCardWrapper should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-card-wrapper"
+    data-backpack-ds-component="CardWrapper"
     style="--background-color: rgb(0, 98, 227);"
   >
     <div
@@ -30,6 +31,7 @@ exports[`BpkCardWrapper should support custom class names 1`] = `
 <DocumentFragment>
   <div
     class="bpk-card-wrapper custom-classname"
+    data-backpack-ds-component="CardWrapper"
     style="--background-color: rgb(0, 98, 227);"
   >
     <div

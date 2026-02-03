@@ -21,7 +21,7 @@ import { Component } from 'react';
 import type { ChangeEvent, ClipboardEvent, FocusEvent, KeyboardEvent,  } from 'react';
 
 import { INPUT_TYPES } from '../../bpk-component-input';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import InputField from './BpkInputField';
 
@@ -224,7 +224,7 @@ class BpkSplitInput extends Component<Props, State> {
 
   render() {
     return (
-      <div className={getClassName('bpk-split-input')}>
+      <div className={getClassName('bpk-split-input')} {...getDataComponentAttribute('SplitInput')}>
         {this.renderInputs()}
       </div>
     );

@@ -25,7 +25,7 @@ import MinusIcon from '../../bpk-component-icon/sm/minus';
 import PlusIcon from '../../bpk-component-icon/sm/plus';
 import BpkLabel from '../../bpk-component-label';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules, setNativeValue } from '../../bpk-react-utils';
+import { cssModules, setNativeValue, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { type CommonProps } from './common-types';
 
@@ -148,7 +148,7 @@ const BpkNudger = ({
             }
             valueLimitter(inputElement);
           }}
-          className={inputClassNames}
+          className={inputClassNames} {...getDataComponentAttribute('Nudger')}
           {...rest}
         />
         <BpkButton

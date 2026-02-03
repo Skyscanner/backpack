@@ -27,7 +27,7 @@ import ViewIcon from '../../../bpk-component-icon/lg/view';
 import InfoIcon from '../../../bpk-component-icon/sm/information-circle';
 import BpkImage from '../../../bpk-component-image';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text/src/BpkText';
-import { cssModules } from '../../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
 import { VARIANT, type CommonProps } from './common-types';
 
@@ -56,7 +56,7 @@ const BpkInsetBannerSponsored = ({
   const [sheetOpen, setSheetOpen] = useState(false);
 
   return (
-    <div>
+    <div {...getDataComponentAttribute('InsetBannerSponsored')}>
       <div
         aria-label={accessibilityLabel}
         className={classNames}

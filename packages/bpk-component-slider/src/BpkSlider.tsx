@@ -29,7 +29,7 @@ import {
 import { useComposedRefs } from '@radix-ui/react-compose-refs';
 import * as Slider from '@radix-ui/react-slider';
 
-import { cssModules, isRTL, setNativeValue } from '../../bpk-react-utils';
+import { cssModules, isRTL, setNativeValue, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkSlider.module.scss';
 
@@ -160,7 +160,7 @@ const BpkSlider = ({
 
   return (
     <Slider.Root
-      className={getClassName('bpk-slider')}
+      className={getClassName('bpk-slider')} {...getDataComponentAttribute('Slider')}
       defaultValue={currentValue}
       min={min}
       max={max}

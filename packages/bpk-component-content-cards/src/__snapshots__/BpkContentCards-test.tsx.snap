@@ -4,7 +4,9 @@
 
 exports[`Content Card widget renders correctly with 1 card 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-backpack-ds-component="ContentCards"
+  >
     <h2
       class="bpk-content-cards--header-text"
     >
@@ -19,6 +21,7 @@ exports[`Content Card widget renders correctly with 1 card 1`] = `
       >
         <a
           class="bpk-content-card--link bpk-content-card--horizontal"
+          data-backpack-ds-component="ContentCard"
           href="http://skyscanner.net/card-1-cta-link.html"
           rel="noreferrer"
           target="_blank"
@@ -36,11 +39,13 @@ exports[`Content Card widget renders correctly with 1 card 1`] = `
           <div>
             <h3
               class="bpk-text bpk-text--body-default bpk-content-card--headline"
+              data-backpack-ds-component="Text"
             >
               Card 1 headline
             </h3>
             <p
               class="bpk-text bpk-text--body-default bpk-content-card--description"
+              data-backpack-ds-component="Text"
             >
               Card 1 description
             </p>
@@ -54,7 +59,9 @@ exports[`Content Card widget renders correctly with 1 card 1`] = `
 
 exports[`Content Card widget renders correctly with 2 cards 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-backpack-ds-component="ContentCards"
+  >
     <h2
       class="bpk-content-cards--header-text"
     >
@@ -69,6 +76,7 @@ exports[`Content Card widget renders correctly with 2 cards 1`] = `
       >
         <a
           class="bpk-content-card--link bpk-content-card--vertical"
+          data-backpack-ds-component="ContentCard"
           href="http://skyscanner.net/card-1-cta-link.html"
           rel="noreferrer"
           target="_blank"
@@ -86,11 +94,13 @@ exports[`Content Card widget renders correctly with 2 cards 1`] = `
           <div>
             <h3
               class="bpk-text bpk-text--body-default bpk-content-card--headline"
+              data-backpack-ds-component="Text"
             >
               Card 1 headline
             </h3>
             <p
               class="bpk-text bpk-text--body-default bpk-content-card--description"
+              data-backpack-ds-component="Text"
             >
               Card 1 description
             </p>
@@ -102,6 +112,7 @@ exports[`Content Card widget renders correctly with 2 cards 1`] = `
       >
         <a
           class="bpk-content-card--link bpk-content-card--vertical"
+          data-backpack-ds-component="ContentCard"
           href="http://skyscanner.net/card-2-cta-link.html"
           rel="noreferrer"
           target="_blank"
@@ -119,11 +130,13 @@ exports[`Content Card widget renders correctly with 2 cards 1`] = `
           <div>
             <h3
               class="bpk-text bpk-text--body-default bpk-content-card--headline"
+              data-backpack-ds-component="Text"
             >
               Card 2 headline
             </h3>
             <p
               class="bpk-text bpk-text--body-default bpk-content-card--description"
+              data-backpack-ds-component="Text"
             >
               Card 2 description
             </p>
@@ -137,7 +150,9 @@ exports[`Content Card widget renders correctly with 2 cards 1`] = `
 
 exports[`Content Card widget renders correctly with 3 cards 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-backpack-ds-component="ContentCards"
+  >
     <h2
       class="bpk-content-cards--header-text"
     >
@@ -152,6 +167,7 @@ exports[`Content Card widget renders correctly with 3 cards 1`] = `
       >
         <a
           class="bpk-content-card--link bpk-content-card--vertical"
+          data-backpack-ds-component="ContentCard"
           href="http://skyscanner.net/card-1-cta-link.html"
           rel="noreferrer"
           target="_blank"
@@ -169,11 +185,13 @@ exports[`Content Card widget renders correctly with 3 cards 1`] = `
           <div>
             <h3
               class="bpk-text bpk-text--body-default bpk-content-card--headline"
+              data-backpack-ds-component="Text"
             >
               Card 1 headline
             </h3>
             <p
               class="bpk-text bpk-text--body-default bpk-content-card--description"
+              data-backpack-ds-component="Text"
             >
               Card 1 description
             </p>
@@ -185,6 +203,7 @@ exports[`Content Card widget renders correctly with 3 cards 1`] = `
       >
         <a
           class="bpk-content-card--link bpk-content-card--vertical"
+          data-backpack-ds-component="ContentCard"
           href="http://skyscanner.net/card-2-cta-link.html"
           rel="noreferrer"
           target="_blank"
@@ -202,11 +221,13 @@ exports[`Content Card widget renders correctly with 3 cards 1`] = `
           <div>
             <h3
               class="bpk-text bpk-text--body-default bpk-content-card--headline"
+              data-backpack-ds-component="Text"
             >
               Card 2 headline
             </h3>
             <p
               class="bpk-text bpk-text--body-default bpk-content-card--description"
+              data-backpack-ds-component="Text"
             >
               Card 2 description
             </p>
@@ -218,6 +239,7 @@ exports[`Content Card widget renders correctly with 3 cards 1`] = `
       >
         <a
           class="bpk-content-card--link bpk-content-card--vertical"
+          data-backpack-ds-component="ContentCard"
           href="http://skyscanner.net/card-3-cta-link.html"
           rel="noreferrer"
           target="_blank"
@@ -235,11 +257,13 @@ exports[`Content Card widget renders correctly with 3 cards 1`] = `
           <div>
             <h3
               class="bpk-text bpk-text--body-default bpk-content-card--headline"
+              data-backpack-ds-component="Text"
             >
               Card 3 headline
             </h3>
             <p
               class="bpk-text bpk-text--body-default bpk-content-card--description"
+              data-backpack-ds-component="Text"
             >
               Card 3 description
             </p>

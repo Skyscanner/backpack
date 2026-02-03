@@ -6,6 +6,7 @@ exports[`BpkCheckbox should render as disabled when required and disabled 1`] = 
 <DocumentFragment>
   <label
     class="bpk-checkbox bpk-checkbox--disabled"
+    data-backpack-ds-component="Checkbox"
   >
     <input
       aria-invalid="false"
@@ -30,6 +31,7 @@ exports[`BpkCheckbox should render correctly 1`] = `
 <DocumentFragment>
   <label
     class="bpk-checkbox"
+    data-backpack-ds-component="Checkbox"
   >
     <input
       aria-invalid="false"
@@ -53,6 +55,7 @@ exports[`BpkCheckbox should render correctly with a small label 1`] = `
 <DocumentFragment>
   <label
     class="bpk-checkbox"
+    data-backpack-ds-component="Checkbox"
   >
     <input
       aria-invalid="false"
@@ -76,6 +79,7 @@ exports[`BpkCheckbox should render correctly with checked attribute 1`] = `
 <DocumentFragment>
   <label
     class="bpk-checkbox"
+    data-backpack-ds-component="Checkbox"
   >
     <input
       aria-invalid="false"
@@ -100,6 +104,7 @@ exports[`BpkCheckbox should render correctly with disabled attribute 1`] = `
 <DocumentFragment>
   <label
     class="bpk-checkbox bpk-checkbox--disabled"
+    data-backpack-ds-component="Checkbox"
   >
     <input
       aria-invalid="false"
@@ -124,6 +129,7 @@ exports[`BpkCheckbox should render correctly with id attribute 1`] = `
 <DocumentFragment>
   <label
     class="bpk-checkbox"
+    data-backpack-ds-component="Checkbox"
   >
     <input
       aria-invalid="false"
@@ -148,6 +154,7 @@ exports[`BpkCheckbox should render correctly with indeterminate attribute 1`] = 
 <DocumentFragment>
   <label
     class="bpk-checkbox"
+    data-backpack-ds-component="Checkbox"
   >
     <input
       aria-invalid="false"
@@ -171,6 +178,7 @@ exports[`BpkCheckbox should render correctly with indeterminate state when both 
 <DocumentFragment>
   <label
     class="bpk-checkbox"
+    data-backpack-ds-component="Checkbox"
   >
     <input
       aria-invalid="false"
@@ -195,6 +203,7 @@ exports[`BpkCheckbox should render correctly with required attribute 1`] = `
 <DocumentFragment>
   <label
     class="bpk-checkbox"
+    data-backpack-ds-component="Checkbox"
   >
     <input
       aria-invalid="false"
@@ -223,6 +232,7 @@ exports[`BpkCheckbox should render correctly with valid=false attribute 1`] = `
 <DocumentFragment>
   <label
     class="bpk-checkbox bpk-checkbox--invalid"
+    data-backpack-ds-component="Checkbox"
   >
     <input
       aria-invalid="true"
@@ -246,6 +256,7 @@ exports[`BpkCheckbox should render correctly with value attribute 1`] = `
 <DocumentFragment>
   <label
     class="bpk-checkbox"
+    data-backpack-ds-component="Checkbox"
   >
     <input
       aria-invalid="false"
@@ -270,6 +281,7 @@ exports[`BpkCheckbox should render correctly with white attribute 1`] = `
 <DocumentFragment>
   <label
     class="bpk-checkbox bpk-checkbox--white"
+    data-backpack-ds-component="Checkbox"
   >
     <input
       aria-invalid="false"

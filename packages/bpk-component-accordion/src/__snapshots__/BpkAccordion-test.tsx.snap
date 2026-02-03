@@ -6,6 +6,7 @@ exports[`BpkAccordion should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-accordion"
+    data-backpack-ds-component="Accordion"
   >
     Accordion child
   </div>
@@ -16,6 +17,7 @@ exports[`BpkAccordion should render correctly with custom "className" prop 1`] =
 <DocumentFragment>
   <div
     class="bpk-accordion my-custom-class"
+    data-backpack-ds-component="Accordion"
   >
     Accordion child
   </div>

@@ -19,7 +19,7 @@
 
 import { type ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkDescriptionList.module.scss';
 
@@ -36,6 +36,7 @@ export default ({ children, className, ...rest }: Props) => (
     className={[getClassName('bpk-description-list__details'), className]
       .filter((x) => x) // inline drops the className if undefined
       .join(' ')}
+    {...getDataComponentAttribute('DescriptionDetails')}
     {...rest}
   >
     {children}

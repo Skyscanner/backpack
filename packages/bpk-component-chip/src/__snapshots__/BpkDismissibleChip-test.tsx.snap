@@ -6,12 +6,14 @@ exports[`BpkDismissibleChip should ignore setting a trailing accessory view, res
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible"
+    data-backpack-ds-component="DismissibleChip"
     role="button"
     title="Dismiss"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -39,12 +41,14 @@ exports[`BpkDismissibleChip should override setting selected={true}, resulting i
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible"
+    data-backpack-ds-component="DismissibleChip"
     role="button"
     title="Dismiss"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -72,12 +76,14 @@ exports[`BpkDismissibleChip should render correctly 1`] = `
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible"
+    data-backpack-ds-component="DismissibleChip"
     role="button"
     title="Dismiss"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -105,12 +111,14 @@ exports[`BpkDismissibleChip should render correctly with a "className" attribute
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible custom-class"
+    data-backpack-ds-component="DismissibleChip"
     role="button"
     title="Dismiss"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -138,12 +146,14 @@ exports[`BpkDismissibleChip should render correctly with type="default" 1`] = `
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible"
+    data-backpack-ds-component="DismissibleChip"
     role="button"
     title="Dismiss"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -171,6 +181,7 @@ exports[`BpkDismissibleChip should render correctly with type="default" and a le
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible"
+    data-backpack-ds-component="DismissibleChip"
     role="button"
     title="Dismiss"
     type="button"
@@ -184,6 +195,7 @@ exports[`BpkDismissibleChip should render correctly with type="default" and a le
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -211,12 +223,14 @@ exports[`BpkDismissibleChip should render correctly with type="default" and disa
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--default bpk-chip--default-selected bpk-chip--default-dismissible bpk-chip--default-dismissible"
+    data-backpack-ds-component="DismissibleChip"
     role="button"
     title="Dismiss"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -244,12 +258,14 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" 1`] = `
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible bpk-chip--on-dark-dismissible"
+    data-backpack-ds-component="DismissibleChip"
     role="button"
     title="Dismiss"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -277,6 +293,7 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" and a le
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible bpk-chip--on-dark-dismissible"
+    data-backpack-ds-component="DismissibleChip"
     role="button"
     title="Dismiss"
     type="button"
@@ -290,6 +307,7 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" and a le
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -317,12 +335,14 @@ exports[`BpkDismissibleChip should render correctly with type="on-dark" and disa
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected bpk-chip--on-dark-dismissible bpk-chip--on-dark-dismissible"
+    data-backpack-ds-component="DismissibleChip"
     role="button"
     title="Dismiss"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -350,12 +370,14 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" 1`] = `
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible bpk-chip--on-image-dismissible"
+    data-backpack-ds-component="DismissibleChip"
     role="button"
     title="Dismiss"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -383,6 +405,7 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" and a l
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible bpk-chip--on-image-dismissible"
+    data-backpack-ds-component="DismissibleChip"
     role="button"
     title="Dismiss"
     type="button"
@@ -396,6 +419,7 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" and a l
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>
@@ -423,12 +447,14 @@ exports[`BpkDismissibleChip should render correctly with type="on-image" and dis
 <DocumentFragment>
   <button
     class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected bpk-chip--on-image-dismissible bpk-chip--on-image-dismissible"
+    data-backpack-ds-component="DismissibleChip"
     role="button"
     title="Dismiss"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Dismiss me
     </span>

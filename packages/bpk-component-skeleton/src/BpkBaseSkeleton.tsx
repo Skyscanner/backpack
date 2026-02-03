@@ -17,7 +17,7 @@
  */
 // @ts-nocheck
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type { CUSTOM_SIZE_TYPE } from './common-types';
 
@@ -34,7 +34,11 @@ const BpkBaseSkeleton = ({
   skeletonStyle,
   styleObj = undefined,
  }: Props) => (
-    <div className={getClassName('bpk-skeleton', skeletonStyle)} style={styleObj}  />
+    <div
+      className={getClassName('bpk-skeleton', skeletonStyle)}
+      {...getDataComponentAttribute('BaseSkeleton')}
+      style={styleObj}
+    />
   );
 
 export default BpkBaseSkeleton;

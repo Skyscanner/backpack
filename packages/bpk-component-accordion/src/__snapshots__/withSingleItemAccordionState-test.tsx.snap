@@ -6,6 +6,7 @@ exports[`withSingleItemAccordionState(BpkAccordion) should render correctly 1`] 
 <DocumentFragment>
   <div
     class="bpk-accordion"
+    data-backpack-ds-component="Accordion"
   >
     <div>
       Accordion Item 1
@@ -24,6 +25,7 @@ exports[`withSingleItemAccordionState(BpkAccordion) should render correctly even
 <DocumentFragment>
   <div
     class="bpk-accordion"
+    data-backpack-ds-component="Accordion"
   >
     <div>
       Accordion Item 1
@@ -42,6 +44,7 @@ exports[`withSingleItemAccordionState(BpkAccordion) should render correctly with
 <DocumentFragment>
   <div
     class="bpk-accordion someClass"
+    data-backpack-ds-component="Accordion"
     foo="bar"
   >
     <div>
@@ -61,6 +64,7 @@ exports[`withSingleItemAccordionState(BpkAccordion) should render correctly with
 <DocumentFragment>
   <div
     class="bpk-accordion"
+    data-backpack-ds-component="Accordion"
   >
     <div>
       Accordion Item 1

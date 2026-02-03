@@ -20,7 +20,7 @@
 import type { ReactNode } from 'react';
 
 import BpkText from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkSectionHeader.module.scss';
 
@@ -46,7 +46,10 @@ const BpkSectionHeader = ({
   title,
   type = SECTION_TYPES.default,
 }: Props) => (
-  <div className={getClassName('bpk-section-header')}>
+  <div
+    className={getClassName('bpk-section-header')}
+    {...getDataComponentAttribute('SectionHeader')}
+  >
     <div
       className={getClassName(
         'bpk-section-header__title-description',

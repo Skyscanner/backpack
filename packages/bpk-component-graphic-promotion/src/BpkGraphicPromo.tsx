@@ -20,7 +20,7 @@
 import type { KeyboardEvent, MouseEvent, ReactNode } from 'react';
 
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkGraphicPromo.module.scss';
 
@@ -187,6 +187,7 @@ const BpkGraphicPromo = ({
       })}
       onClick={onClickWrapper}
       onKeyDown={onKeyWrapper}
+      {...getDataComponentAttribute('GraphicPromo')}
     >
       <div
         id={(contentId && `${contentId}__content`) || ''}

@@ -17,6 +17,8 @@
  */
 // @ts-nocheck
 
+import { getDataComponentAttribute } from '../../bpk-react-utils';
+
 import BpkInfoBannerInner, { CONFIGURATION } from './BpkInfoBannerInner';
 
 import type { CommonProps, OnDismissHandler } from './common-types';
@@ -30,6 +32,7 @@ const BpkInfoBannerDismissable = ({ onDismiss = null, ...rest }: Props) => (
   <BpkInfoBannerInner
     configuration={CONFIGURATION.DISMISSABLE}
     onDismiss={onDismiss}
+    {...getDataComponentAttribute('InfoBannerDismissable')}
     {...rest}
   />
 );

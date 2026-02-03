@@ -6,6 +6,7 @@ exports[`BpkRtlToggle should render correctly 1`] = `
 <DocumentFragment>
   <button
     class="bpk-link"
+    data-backpack-ds-component="Link"
     title="Keyboard Shortcut: ctrl + cmd + r"
     type="button"
   >

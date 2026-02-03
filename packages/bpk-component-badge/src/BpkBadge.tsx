@@ -19,7 +19,7 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkBadge.module.scss';
 
@@ -74,7 +74,7 @@ const BpkBadge = ({
     className,
   );
 
-  return <span className={classNames} {...rest} />;
+  return <span className={classNames} {...getDataComponentAttribute('Badge')} {...rest} />;
 };
 
 export default BpkBadge;

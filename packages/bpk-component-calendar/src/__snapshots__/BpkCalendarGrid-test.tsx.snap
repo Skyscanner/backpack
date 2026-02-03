@@ -8,6 +8,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
     aria-hidden="false"
     aria-label="October 2016"
     class="bpk-calendar-grid"
+    data-backpack-ds-component="CalendarGrid"
     role="grid"
   >
     <div
@@ -15,6 +16,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
     >
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -26,6 +28,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Sunday, 25th September 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -45,6 +48,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Monday, 26th September 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -64,6 +68,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Tuesday, 27th September 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -83,6 +88,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Wednesday, 28th September 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -102,6 +108,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Thursday, 29th September 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -121,6 +128,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Friday, 30th September 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -140,6 +148,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Saturday, 1st October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -153,6 +162,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -164,6 +174,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Sunday, 2nd October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -183,6 +194,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Monday, 3rd October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -202,6 +214,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Tuesday, 4th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -221,6 +234,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Wednesday, 5th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -240,6 +254,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Thursday, 6th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -259,6 +274,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Friday, 7th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -278,6 +294,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Saturday, 8th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -291,6 +308,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -302,6 +320,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Sunday, 9th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -321,6 +340,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Monday, 10th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -340,6 +360,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Tuesday, 11th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -359,6 +380,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Wednesday, 12th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -378,6 +400,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Thursday, 13th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -397,6 +420,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Friday, 14th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -416,6 +440,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Saturday, 15th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -429,6 +454,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -440,6 +466,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Sunday, 16th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -459,6 +486,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Monday, 17th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -478,6 +506,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Tuesday, 18th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -497,6 +526,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Wednesday, 19th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -516,6 +546,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Thursday, 20th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -535,6 +566,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Friday, 21st October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -554,6 +586,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Saturday, 22nd October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -567,6 +600,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -578,6 +612,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Sunday, 23rd October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -597,6 +632,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Monday, 24th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -616,6 +652,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Tuesday, 25th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -635,6 +672,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Wednesday, 26th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -654,6 +692,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Thursday, 27th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -673,6 +712,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Friday, 28th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -692,6 +732,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Saturday, 29th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -705,6 +746,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -716,6 +758,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Sunday, 30th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -735,6 +778,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Monday, 31st October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -754,6 +798,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Tuesday, 1st November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -773,6 +818,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Wednesday, 2nd November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -792,6 +838,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Thursday, 3rd November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -811,6 +858,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Friday, 4th November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -830,6 +878,7 @@ exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set
             aria-label="Saturday, 5th November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -852,6 +901,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
     aria-hidden="false"
     aria-label="October 2016"
     class="bpk-calendar-grid"
+    data-backpack-ds-component="CalendarGrid"
     role="grid"
   >
     <div
@@ -859,6 +909,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
     >
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -870,6 +921,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Monday, 26th September 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -889,6 +941,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Tuesday, 27th September 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -908,6 +961,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Wednesday, 28th September 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -927,6 +981,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Thursday, 29th September 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -946,6 +1001,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Friday, 30th September 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -965,6 +1021,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Saturday, 1st October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -984,6 +1041,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Sunday, 2nd October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -997,6 +1055,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -1008,6 +1067,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Monday, 3rd October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1027,6 +1087,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Tuesday, 4th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1046,6 +1107,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Wednesday, 5th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1065,6 +1127,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Thursday, 6th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1084,6 +1147,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Friday, 7th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1103,6 +1167,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Saturday, 8th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1122,6 +1187,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Sunday, 9th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1135,6 +1201,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -1146,6 +1213,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Monday, 10th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1165,6 +1233,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Tuesday, 11th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1184,6 +1253,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Wednesday, 12th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1203,6 +1273,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Thursday, 13th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1222,6 +1293,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Friday, 14th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1241,6 +1313,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Saturday, 15th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1260,6 +1333,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Sunday, 16th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1273,6 +1347,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -1284,6 +1359,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Monday, 17th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1303,6 +1379,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Tuesday, 18th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1322,6 +1399,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Wednesday, 19th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1341,6 +1419,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Thursday, 20th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1360,6 +1439,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Friday, 21st October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1379,6 +1459,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Saturday, 22nd October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1398,6 +1479,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Sunday, 23rd October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1411,6 +1493,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -1422,6 +1505,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Monday, 24th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1441,6 +1525,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Tuesday, 25th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1460,6 +1545,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Wednesday, 26th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1479,6 +1565,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Thursday, 27th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1498,6 +1585,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Friday, 28th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1517,6 +1605,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Saturday, 29th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1536,6 +1625,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Sunday, 30th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1549,6 +1639,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -1560,6 +1651,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Monday, 31st October 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1579,6 +1671,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Tuesday, 1st November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1598,6 +1691,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Wednesday, 2nd November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1617,6 +1711,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Thursday, 3rd November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1636,6 +1731,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Friday, 4th November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1655,6 +1751,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Saturday, 5th November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1674,6 +1771,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
             aria-label="Sunday, 6th November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--modifier-someClass bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -1696,6 +1794,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
     aria-hidden="false"
     aria-label="October 2016"
     class="bpk-calendar-grid"
+    data-backpack-ds-component="CalendarGrid"
     role="grid"
   >
     <div
@@ -1703,6 +1802,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
     >
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -1771,6 +1871,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -1839,6 +1940,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -1907,6 +2009,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -1975,6 +2078,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -2043,6 +2147,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -2120,6 +2225,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
     aria-hidden="false"
     aria-label="October 2016"
     class="bpk-calendar-grid"
+    data-backpack-ds-component="CalendarGrid"
     role="grid"
   >
     <div
@@ -2127,6 +2233,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
     >
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -2138,6 +2245,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Wednesday, 28th September 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2157,6 +2265,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Thursday, 29th September 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2176,6 +2285,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Friday, 30th September 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2195,6 +2305,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Saturday, 1st October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2214,6 +2325,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Sunday, 2nd October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2233,6 +2345,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Monday, 3rd October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2252,6 +2365,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Tuesday, 4th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2265,6 +2379,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -2276,6 +2391,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Wednesday, 5th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2295,6 +2411,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Thursday, 6th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2314,6 +2431,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Friday, 7th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2333,6 +2451,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Saturday, 8th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2352,6 +2471,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Sunday, 9th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2371,6 +2491,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Monday, 10th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2390,6 +2511,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Tuesday, 11th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2403,6 +2525,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -2414,6 +2537,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Wednesday, 12th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2433,6 +2557,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Thursday, 13th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2452,6 +2577,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Friday, 14th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2471,6 +2597,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Saturday, 15th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2490,6 +2617,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Sunday, 16th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2509,6 +2637,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Monday, 17th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2528,6 +2657,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Tuesday, 18th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2541,6 +2671,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -2552,6 +2683,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Wednesday, 19th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2571,6 +2703,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Thursday, 20th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2590,6 +2723,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Friday, 21st October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2609,6 +2743,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Saturday, 22nd October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2628,6 +2763,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Sunday, 23rd October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2647,6 +2783,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Monday, 24th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2666,6 +2803,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Tuesday, 25th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2679,6 +2817,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -2690,6 +2829,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Wednesday, 26th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2709,6 +2849,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Thursday, 27th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2728,6 +2869,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Friday, 28th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2747,6 +2889,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Saturday, 29th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2766,6 +2909,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Sunday, 30th October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2785,6 +2929,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Monday, 31st October 2016"
             aria-pressed="false"
             class="bpk-calendar-date"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2804,6 +2949,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Tuesday, 1st November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2817,6 +2963,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
       </div>
       <div
         class="bpk-calendar-week"
+        data-backpack-ds-component="CalendarWeek"
         role="row"
       >
         <div
@@ -2828,6 +2975,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Wednesday, 2nd November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2847,6 +2995,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Thursday, 3rd November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2866,6 +3015,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Friday, 4th November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2885,6 +3035,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Saturday, 5th November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2904,6 +3055,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Sunday, 6th November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2923,6 +3075,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Monday, 7th November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >
@@ -2942,6 +3095,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
             aria-label="Tuesday, 8th November 2016"
             aria-pressed="false"
             class="bpk-calendar-date bpk-calendar-date--outside"
+            data-backpack-ds-component="CalendarDate"
             tabindex="-1"
             type="button"
           >

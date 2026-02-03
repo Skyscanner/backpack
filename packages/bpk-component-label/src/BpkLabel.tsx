@@ -19,7 +19,7 @@
 
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkLabel.module.scss';
 
@@ -55,7 +55,7 @@ const BpkLabel = ({
   );
 
   return (
-    <label className={classNames} {...rest}>
+    <label className={classNames} {...getDataComponentAttribute('Label')} {...rest}>
       {children}
       {!disabled && required && (
         <span className={getClassName('bpk-label__asterisk')}>*</span>

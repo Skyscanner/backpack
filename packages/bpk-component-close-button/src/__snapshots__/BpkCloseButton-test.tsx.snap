@@ -7,6 +7,7 @@ exports[`BpkCloseButton should render correctly 1`] = `
   <button
     aria-label="Close"
     class="bpk-close-button__default"
+    data-backpack-ds-component="CloseButton"
     title="Close"
     type="button"
   >
@@ -34,6 +35,7 @@ exports[`BpkCloseButton should render correctly with a custom className 1`] = `
   <button
     aria-label="Close"
     class="bpk-close-button__default my-custom-classname"
+    data-backpack-ds-component="CloseButton"
     title="Close"
     type="button"
   >
@@ -61,6 +63,7 @@ exports[`BpkCloseButton should render correctly with a custom icon 1`] = `
   <button
     aria-label="Close"
     class="bpk-close-button__default"
+    data-backpack-ds-component="CloseButton"
     title="Close"
     type="button"
   >

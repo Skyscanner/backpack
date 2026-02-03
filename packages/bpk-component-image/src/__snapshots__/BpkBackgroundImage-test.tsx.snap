@@ -10,6 +10,7 @@ exports[`BpkBackgroundImage should accept userland className 1`] = `
   >
     <div
       class="bpk-background-image bpk-background-image--no-background"
+      data-backpack-ds-component="BackgroundImage"
       style="height: 0px; padding-bottom: 66.66666666666667%;"
     >
       <div
@@ -32,6 +33,7 @@ exports[`BpkBackgroundImage should have inView behavior 1`] = `
   >
     <div
       class="bpk-background-image bpk-background-image--no-background"
+      data-backpack-ds-component="BackgroundImage"
       style="height: 0px; padding-bottom: 66.66666666666667%;"
     >
       <div
@@ -54,6 +56,7 @@ exports[`BpkBackgroundImage should have loading behavior 1`] = `
   >
     <div
       class="bpk-background-image"
+      data-backpack-ds-component="BackgroundImage"
       style="height: 0px; padding-bottom: 66.66666666666667%;"
     >
       <div
@@ -65,6 +68,7 @@ exports[`BpkBackgroundImage should have loading behavior 1`] = `
       >
         <span
           class="bpk-spinner bpk-spinner--dark"
+          data-backpack-ds-component="Spinner"
         >
           <svg
             aria-hidden="true"
@@ -136,6 +140,7 @@ exports[`BpkBackgroundImage should render correctly 1`] = `
   >
     <div
       class="bpk-background-image bpk-background-image--no-background"
+      data-backpack-ds-component="BackgroundImage"
       style="height: 0px; padding-bottom: 66.66666666666667%;"
     >
       <div
@@ -162,6 +167,7 @@ exports[`BpkBackgroundImage should render correctly when overriding src 1`] = `
   >
     <div
       class="bpk-background-image bpk-background-image--no-background"
+      data-backpack-ds-component="BackgroundImage"
       style="height: 0px; padding-bottom: 66.66666666666667%;"
     >
       <div

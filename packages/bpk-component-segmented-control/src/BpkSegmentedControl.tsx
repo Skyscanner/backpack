@@ -20,7 +20,7 @@
 import type { KeyboardEvent, ReactNode } from 'react';
 import { useId, useMemo, useRef, useState } from 'react';
 
-import { cssModules, isRTL } from '../../bpk-react-utils';
+import { cssModules, isRTL, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkSegmentedControl.module.scss';
 
@@ -258,7 +258,7 @@ const BpkSegmentedControl = ({
 
   return (
     <div
-      className={containerStyling}
+      className={containerStyling} {...getDataComponentAttribute('SegmentedControl')}
       {...getContainerAriaProps(providedId, label)}
     >
       {buttonContents.map((content, index) => {

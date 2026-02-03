@@ -23,6 +23,7 @@ with a trailing accessory view of a chevron down icon.
 */
 
 import ChevronDownIconSm from '../../bpk-component-icon/sm/chevron-down';
+import { getDataComponentAttribute } from '../../bpk-react-utils';
 
 import BpkSelectableChip from './BpkSelectableChip';
 import { CHIP_TYPES } from './commonTypes';
@@ -41,6 +42,7 @@ const BpkDropdownChip = ({
     leadingAccessoryView={leadingAccessoryView}
     selected={selected}
     type={type}
+    {...getDataComponentAttribute('DropdownChip')}
     {...rest}
     trailingAccessoryView={<ChevronDownIconSm />}
   />

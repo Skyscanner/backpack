@@ -9,6 +9,7 @@ exports[`BpkPaginationNudger should display backward nudger 1`] = `
   >
     <button
       class="bpk-button bpk-button--icon-only bpk-button--link bpk-button--link--icon-only"
+      data-backpack-ds-component="Button"
       type="button"
     >
       <span
@@ -44,6 +45,7 @@ exports[`BpkPaginationNudger should display forward nudger 1`] = `
   >
     <button
       class="bpk-button bpk-button--icon-only bpk-button--link bpk-button--link--icon-only"
+      data-backpack-ds-component="Button"
       type="button"
     >
       <span

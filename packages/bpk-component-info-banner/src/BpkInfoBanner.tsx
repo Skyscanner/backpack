@@ -17,6 +17,8 @@
  */
 // @ts-nocheck
 
+import { getDataComponentAttribute } from '../../bpk-react-utils';
+
 import BpkInfoBannerInner from './BpkInfoBannerInner';
 
 import type { CommonProps } from './common-types';
@@ -33,6 +35,7 @@ const BpkInfoBanner = ({
     animateOnLeave={animateOnLeave}
     show={show}
     icon={icon}
+    {...getDataComponentAttribute('InfoBanner')}
     {...rest}
   />
 );

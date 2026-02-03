@@ -17,28 +17,20 @@
  */
 // @ts-nocheck
 
-import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+import { render } from '@testing-library/react';
 
-import STYLES from './BpkBoilerplate.module.scss';
+import BpkListItem from './BpkListItem';
 
-const getClassName = cssModules(STYLES);
+describe('BpkListItem', () => {
+  it('should render correctly', () => {
+    const { asFragment } = render(<BpkListItem>List item</BpkListItem>);
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-export type Props = {
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
-};
-const BpkBoilerplate = ({ ...rest }: Props) => {
-
-  // eslint-disable-next-line no-param-reassign
-  delete rest.className;
-
-  return (
-    <div
-      className={getClassName('bpk-boilerplate')}
-      {...getDataComponentAttribute('Boilerplate')}
-      {...rest}
-    >
-      I am an example component.
-    </div>
-  );};
-
-export default BpkBoilerplate;
+  it('should render correctly with a "className" attribute', () => {
+    const { asFragment } = render(
+      <BpkListItem className="test-list-item">List item</BpkListItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+});

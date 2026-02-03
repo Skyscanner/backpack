@@ -17,22 +17,9 @@
  */
 // @ts-nocheck
 
-/* @flow strict */
+import BpkList from './src/BpkList';
+import BpkListItem from './src/BpkListItem';
 
-import { render } from '@testing-library/react';
-
-import BpkListItem from './BpkListItem';
-
-describe('BpkListItem', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(<BpkListItem>List item</BpkListItem>);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly with a "className" attribute', () => {
-    const { asFragment } = render(
-      <BpkListItem className="test-list-item">List item</BpkListItem>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-});
+export type { Props as BpkListProps } from './src/BpkList';
+export type { Props as BpkListItemProps } from './src/BpkListItem';
+export { BpkList, BpkListItem };

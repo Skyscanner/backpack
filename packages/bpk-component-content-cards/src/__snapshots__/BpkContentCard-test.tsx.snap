@@ -6,6 +6,7 @@ exports[`Content Card widget renders horizontal card correctly 1`] = `
 <DocumentFragment>
   <a
     class="bpk-content-card--link bpk-content-card--horizontal"
+    data-backpack-ds-component="ContentCard"
     href="http://skyscanner.net/card-1-cta-link.html"
     rel="noreferrer"
     target="_blank"
@@ -23,11 +24,13 @@ exports[`Content Card widget renders horizontal card correctly 1`] = `
     <div>
       <h3
         class="bpk-text bpk-text--body-default bpk-content-card--headline"
+        data-backpack-ds-component="Text"
       >
         Card 1 headline
       </h3>
       <p
         class="bpk-text bpk-text--body-default bpk-content-card--description"
+        data-backpack-ds-component="Text"
       >
         Card 1 description
       </p>
@@ -40,6 +43,7 @@ exports[`Content Card widget renders vertical card correctly 1`] = `
 <DocumentFragment>
   <a
     class="bpk-content-card--link bpk-content-card--vertical"
+    data-backpack-ds-component="ContentCard"
     href="http://skyscanner.net/card-1-cta-link.html"
     rel="noreferrer"
     target="_blank"
@@ -57,11 +61,13 @@ exports[`Content Card widget renders vertical card correctly 1`] = `
     <div>
       <h3
         class="bpk-text bpk-text--body-default bpk-content-card--headline"
+        data-backpack-ds-component="Text"
       >
         Card 1 headline
       </h3>
       <p
         class="bpk-text bpk-text--body-default bpk-content-card--description"
+        data-backpack-ds-component="Text"
       >
         Card 1 description
       </p>

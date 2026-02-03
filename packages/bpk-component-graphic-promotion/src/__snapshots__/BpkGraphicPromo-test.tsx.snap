@@ -39,6 +39,7 @@ exports[`BpkGraphicPromo should display the tagline and no sponsor for non-spons
         </p>
         <button
           class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
+          data-backpack-ds-component="Button"
           tabindex="-1"
           type="button"
         >
@@ -88,6 +89,7 @@ exports[`BpkGraphicPromo should not display tagline or subheading when not provi
         </h2>
         <button
           class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
+          data-backpack-ds-component="Button"
           tabindex="-1"
           type="button"
         >
@@ -142,6 +144,7 @@ exports[`BpkGraphicPromo should render as expected without a content ID 1`] = `
         </p>
         <button
           class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
+          data-backpack-ds-component="Button"
           tabindex="-1"
           type="button"
         >
@@ -196,6 +199,7 @@ exports[`BpkGraphicPromo should render correctly when centre aligned 1`] = `
         </p>
         <button
           class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
+          data-backpack-ds-component="Button"
           tabindex="-1"
           type="button"
         >
@@ -250,6 +254,7 @@ exports[`BpkGraphicPromo should render correctly when inverted portrait 1`] = `
         </p>
         <button
           class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
+          data-backpack-ds-component="Button"
           tabindex="-1"
           type="button"
         >
@@ -304,6 +309,7 @@ exports[`BpkGraphicPromo should render correctly when right aligned 1`] = `
         </p>
         <button
           class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
+          data-backpack-ds-component="Button"
           tabindex="-1"
           type="button"
         >
@@ -358,6 +364,7 @@ exports[`BpkGraphicPromo should render correctly with all properties set 1`] = `
         </p>
         <button
           class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
+          data-backpack-ds-component="Button"
           tabindex="-1"
           type="button"
         >
@@ -412,6 +419,7 @@ exports[`BpkGraphicPromo should support custom class names 1`] = `
         </p>
         <button
           class="bpk-button bpk-button--primary-on-dark bpk-graphic-promo__cta"
+          data-backpack-ds-component="Button"
           tabindex="-1"
           type="button"
         >

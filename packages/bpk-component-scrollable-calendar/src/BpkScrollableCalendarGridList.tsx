@@ -28,7 +28,7 @@ import {
   CALENDAR_SELECTION_TYPE,
   DateUtils,
 } from '../../bpk-component-calendar';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import BpkScrollableCalendarGrid from './BpkScrollableCalendarGrid';
 import { getMonthsArray, getMonthItemHeights } from './utils';
@@ -163,7 +163,7 @@ const BpkScrollableCalendarGridList = (props: Props) => {
 
   return (
     <div
-      className={getClassName('bpk-scrollable-calendar-grid-list', className)}
+      className={getClassName('bpk-scrollable-calendar-grid-list', className)} {...getDataComponentAttribute('ScrollableCalendarGridList')}
     >
       <AutoSizer
         onResize={onResize}

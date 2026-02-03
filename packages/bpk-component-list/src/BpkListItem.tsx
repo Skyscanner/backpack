@@ -17,9 +17,26 @@
  */
 // @ts-nocheck
 
-/* @flow strict */
+import type { ReactNode } from 'react';
 
-import BpkList from './src/BpkList';
-import BpkListItem from './src/BpkListItem';
+import { cssModules } from '../../bpk-react-utils';
 
-export { BpkList, BpkListItem };
+import STYLES from './BpkList.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+export type Props = {
+  children: ReactNode;
+  className?: string | null;
+};
+
+const BpkListItem = ({ children, className = null }: Props) => {
+  const classNames = getClassName('bpk-list__item', className);
+
+  return (
+     
+    <li className={classNames}>{children}</li>
+  );
+};
+
+export default BpkListItem;

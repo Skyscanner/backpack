@@ -19,7 +19,7 @@
 
 import type { ComponentProps, ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkOverlay.module.scss';
 
@@ -103,7 +103,11 @@ const BpkOverlay = (props: Props) => {
   );
 
   return (
-    <div className={wrapperClassNames} {...rest}>
+    <div
+      className={wrapperClassNames}
+      {...getDataComponentAttribute('Overlay')}
+      {...rest}
+    >
       {children}
       <div className={overlayClassNames}>{foregroundContent}</div>
     </div>

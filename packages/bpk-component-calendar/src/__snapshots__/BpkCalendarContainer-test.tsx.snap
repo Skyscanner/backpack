@@ -9,6 +9,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
   >
     <div
       class="bpk-calendar-nav"
+      data-backpack-ds-component="CalendarNav"
     >
       <div
         style="display: table-row;"
@@ -100,6 +101,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
         <div
           aria-live="polite"
           class="bpk-aria-live bpk-aria-live--invisible"
+          data-backpack-ds-component="AriaLive"
         >
           February 2010
         </div>
@@ -108,6 +110,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
     <header
       aria-hidden="true"
       class="bpk-calendar-header bpk-calendar__header"
+      data-backpack-ds-component="CalendarGridHeader"
     >
       <ol
         class="bpk-calendar-header__week"
@@ -175,6 +178,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
     >
       <div
         class="bpk-calendar-grid-transition__strip"
+        data-backpack-ds-component="CalendarGridTransition"
         style="transform: translateX(-22.75rem); -webkit-transform: translateX(-22.75rem);"
       >
         <div
@@ -184,6 +188,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
           aria-hidden="false"
           aria-label="February 2010"
           class="bpk-calendar-grid bpk-calendar-grid-transition__grid"
+          data-backpack-ds-component="CalendarGrid"
           role="grid"
         >
           <div
@@ -191,6 +196,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
           >
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -202,6 +208,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Monday, 1st February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -222,6 +229,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Tuesday, 2nd February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -242,6 +250,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Wednesday, 3rd February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -262,6 +271,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Thursday, 4th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -282,6 +292,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Friday, 5th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -302,6 +313,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Saturday, 6th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -322,6 +334,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Sunday, 7th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -336,6 +349,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -347,6 +361,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Monday, 8th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -367,6 +382,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Tuesday, 9th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -387,6 +403,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Wednesday, 10th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -407,6 +424,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Thursday, 11th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -427,6 +445,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Friday, 12th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -447,6 +466,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Saturday, 13th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -467,6 +487,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Sunday, 14th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -481,6 +502,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -492,6 +514,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Monday, 15th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -511,6 +534,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Tuesday, 16th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -530,6 +554,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Wednesday, 17th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -549,6 +574,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Thursday, 18th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -568,6 +594,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Friday, 19th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -587,6 +614,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Saturday, 20th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -606,6 +634,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Sunday, 21st February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -619,6 +648,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -630,6 +660,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Monday, 22nd February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -649,6 +680,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Tuesday, 23rd February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -668,6 +700,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Wednesday, 24th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -687,6 +720,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Thursday, 25th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -706,6 +740,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Friday, 26th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -725,6 +760,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Saturday, 27th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -744,6 +780,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Sunday, 28th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--focused"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="0"
                   type="button"
                 >
@@ -757,6 +794,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -768,6 +806,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Monday, 1st March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -787,6 +826,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Tuesday, 2nd March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -806,6 +846,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Wednesday, 3rd March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -825,6 +866,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Thursday, 4th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -844,6 +886,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Friday, 5th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -863,6 +906,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Saturday, 6th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -882,6 +926,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Sunday, 7th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -895,6 +940,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -906,6 +952,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Monday, 8th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -925,6 +972,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Tuesday, 9th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -944,6 +992,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Wednesday, 10th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -963,6 +1012,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Thursday, 11th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -982,6 +1032,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Friday, 12th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -1001,6 +1052,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Saturday, 13th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -1020,6 +1072,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Sunday, 14th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -1037,6 +1090,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
           aria-hidden="true"
           aria-label="March 2010"
           class="bpk-calendar-grid bpk-calendar-grid-transition__grid"
+          data-backpack-ds-component="CalendarGrid"
           role="grid"
         >
           <div
@@ -1044,6 +1098,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
           >
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -1055,6 +1110,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Monday, 1st March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -1074,6 +1130,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Tuesday, 2nd March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -1093,6 +1150,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Wednesday, 3rd March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -1112,6 +1170,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Thursday, 4th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -1131,6 +1190,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Friday, 5th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -1150,6 +1210,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Saturday, 6th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -1169,6 +1230,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Sunday, 7th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -1182,6 +1244,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -1193,6 +1256,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Monday, 8th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -1212,6 +1276,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Tuesday, 9th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -1231,6 +1296,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Wednesday, 10th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -1250,6 +1316,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Thursday, 11th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -1269,6 +1336,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Friday, 12th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -1288,6 +1356,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Saturday, 13th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -1307,6 +1376,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Sunday, 14th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -1320,6 +1390,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -1331,6 +1402,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Monday, 15th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--focused"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -1350,6 +1422,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Tuesday, 16th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1370,6 +1443,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Wednesday, 17th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1390,6 +1464,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Thursday, 18th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1410,6 +1485,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Friday, 19th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1430,6 +1506,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Saturday, 20th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1450,6 +1527,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Sunday, 21st March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1464,6 +1542,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -1475,6 +1554,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Monday, 22nd March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1495,6 +1575,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Tuesday, 23rd March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1515,6 +1596,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Wednesday, 24th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1535,6 +1617,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Thursday, 25th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1555,6 +1638,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Friday, 26th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1575,6 +1659,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Saturday, 27th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1595,6 +1680,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Sunday, 28th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1609,6 +1695,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -1620,6 +1707,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Monday, 29th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1640,6 +1728,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Tuesday, 30th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1660,6 +1749,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Wednesday, 31st March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1680,6 +1770,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Thursday, 1st April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1700,6 +1791,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Friday, 2nd April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1720,6 +1812,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Saturday, 3rd April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1740,6 +1833,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Sunday, 4th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1754,6 +1848,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -1765,6 +1860,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Monday, 5th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1785,6 +1881,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Tuesday, 6th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1805,6 +1902,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Wednesday, 7th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1825,6 +1923,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Thursday, 8th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1845,6 +1944,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Friday, 9th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1865,6 +1965,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Saturday, 10th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1885,6 +1986,7 @@ exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocu
                   aria-label="Sunday, 11th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -1912,6 +2014,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
   >
     <div
       class="bpk-calendar-nav"
+      data-backpack-ds-component="CalendarNav"
     >
       <div
         style="display: table-row;"
@@ -2003,6 +2106,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
         <div
           aria-live="polite"
           class="bpk-aria-live bpk-aria-live--invisible"
+          data-backpack-ds-component="AriaLive"
         >
           February 2010
         </div>
@@ -2011,6 +2115,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
     <header
       aria-hidden="true"
       class="bpk-calendar-header bpk-calendar__header"
+      data-backpack-ds-component="CalendarGridHeader"
     >
       <ol
         class="bpk-calendar-header__week"
@@ -2078,6 +2183,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
     >
       <div
         class="bpk-calendar-grid-transition__strip"
+        data-backpack-ds-component="CalendarGridTransition"
         style="transform: translateX(-22.75rem); -webkit-transform: translateX(-22.75rem);"
       >
         <div
@@ -2087,6 +2193,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
           aria-hidden="false"
           aria-label="February 2010"
           class="bpk-calendar-grid bpk-calendar-grid-transition__grid"
+          data-backpack-ds-component="CalendarGrid"
           role="grid"
         >
           <div
@@ -2094,6 +2201,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
           >
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -2105,6 +2213,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Monday, 1st February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -2125,6 +2234,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Tuesday, 2nd February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -2145,6 +2255,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Wednesday, 3rd February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -2165,6 +2276,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Thursday, 4th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -2185,6 +2297,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Friday, 5th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -2205,6 +2318,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Saturday, 6th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -2225,6 +2339,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Sunday, 7th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -2239,6 +2354,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -2250,6 +2366,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Monday, 8th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -2270,6 +2387,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Tuesday, 9th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -2290,6 +2408,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Wednesday, 10th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -2310,6 +2429,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Thursday, 11th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -2330,6 +2450,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Friday, 12th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -2350,6 +2471,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Saturday, 13th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -2370,6 +2492,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Sunday, 14th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -2384,6 +2507,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -2395,6 +2519,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Monday, 15th February 2010"
                   aria-pressed="true"
                   class="bpk-calendar-date bpk-calendar-date--focused bpk-calendar-date--selected bpk-calendar-date--single"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="0"
                   type="button"
                 >
@@ -2414,6 +2539,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Tuesday, 16th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2433,6 +2559,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Wednesday, 17th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2452,6 +2579,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Thursday, 18th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2471,6 +2599,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Friday, 19th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2490,6 +2619,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Saturday, 20th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2509,6 +2639,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Sunday, 21st February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2522,6 +2653,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -2533,6 +2665,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Monday, 22nd February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2552,6 +2685,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Tuesday, 23rd February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2571,6 +2705,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Wednesday, 24th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2590,6 +2725,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Thursday, 25th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2609,6 +2745,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Friday, 26th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2628,6 +2765,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Saturday, 27th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2647,6 +2785,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Sunday, 28th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2660,6 +2799,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -2671,6 +2811,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Monday, 1st March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2690,6 +2831,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Tuesday, 2nd March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2709,6 +2851,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Wednesday, 3rd March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2728,6 +2871,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Thursday, 4th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2747,6 +2891,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Friday, 5th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2766,6 +2911,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Saturday, 6th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2785,6 +2931,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Sunday, 7th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2798,6 +2945,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -2809,6 +2957,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Monday, 8th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2828,6 +2977,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Tuesday, 9th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2847,6 +2997,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Wednesday, 10th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2866,6 +3017,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Thursday, 11th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2885,6 +3037,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Friday, 12th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2904,6 +3057,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Saturday, 13th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2923,6 +3077,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Sunday, 14th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2940,6 +3095,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
           aria-hidden="true"
           aria-label="March 2010"
           class="bpk-calendar-grid bpk-calendar-grid-transition__grid"
+          data-backpack-ds-component="CalendarGrid"
           role="grid"
         >
           <div
@@ -2947,6 +3103,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
           >
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -2958,6 +3115,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Monday, 1st March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2977,6 +3135,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Tuesday, 2nd March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -2996,6 +3155,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Wednesday, 3rd March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -3015,6 +3175,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Thursday, 4th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -3034,6 +3195,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Friday, 5th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -3053,6 +3215,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Saturday, 6th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -3072,6 +3235,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Sunday, 7th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -3085,6 +3249,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -3096,6 +3261,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Monday, 8th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -3115,6 +3281,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Tuesday, 9th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -3134,6 +3301,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Wednesday, 10th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -3153,6 +3321,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Thursday, 11th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -3172,6 +3341,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Friday, 12th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -3191,6 +3361,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Saturday, 13th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -3210,6 +3381,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Sunday, 14th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -3223,6 +3395,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -3234,6 +3407,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Monday, 15th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--focused"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -3253,6 +3427,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Tuesday, 16th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3273,6 +3448,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Wednesday, 17th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3293,6 +3469,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Thursday, 18th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3313,6 +3490,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Friday, 19th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3333,6 +3511,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Saturday, 20th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3353,6 +3532,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Sunday, 21st March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3367,6 +3547,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -3378,6 +3559,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Monday, 22nd March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3398,6 +3580,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Tuesday, 23rd March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3418,6 +3601,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Wednesday, 24th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3438,6 +3622,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Thursday, 25th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3458,6 +3643,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Friday, 26th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3478,6 +3664,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Saturday, 27th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3498,6 +3685,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Sunday, 28th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3512,6 +3700,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -3523,6 +3712,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Monday, 29th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3543,6 +3733,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Tuesday, 30th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3563,6 +3754,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Wednesday, 31st March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3583,6 +3775,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Thursday, 1st April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3603,6 +3796,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Friday, 2nd April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3623,6 +3817,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Saturday, 3rd April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3643,6 +3838,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Sunday, 4th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3657,6 +3853,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -3668,6 +3865,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Monday, 5th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3688,6 +3886,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Tuesday, 6th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3708,6 +3907,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Wednesday, 7th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3728,6 +3928,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Thursday, 8th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3748,6 +3949,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Friday, 9th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3768,6 +3970,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Saturday, 10th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3788,6 +3991,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                   aria-label="Sunday, 11th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -3815,6 +4019,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
   >
     <div
       class="bpk-calendar-nav"
+      data-backpack-ds-component="CalendarNav"
     >
       <div
         style="display: table-row;"
@@ -3906,6 +4111,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
         <div
           aria-live="polite"
           class="bpk-aria-live bpk-aria-live--invisible"
+          data-backpack-ds-component="AriaLive"
         >
           February 2010
         </div>
@@ -3914,6 +4120,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
     <header
       aria-hidden="true"
       class="bpk-calendar-header bpk-calendar__header"
+      data-backpack-ds-component="CalendarGridHeader"
     >
       <ol
         class="bpk-calendar-header__week"
@@ -3981,6 +4188,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
     >
       <div
         class="bpk-calendar-grid-transition__strip"
+        data-backpack-ds-component="CalendarGridTransition"
         style="transform: translateX(-22.75rem); -webkit-transform: translateX(-22.75rem);"
       >
         <div
@@ -3990,6 +4198,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
           aria-hidden="false"
           aria-label="February 2010"
           class="bpk-calendar-grid bpk-calendar-grid-transition__grid"
+          data-backpack-ds-component="CalendarGrid"
           role="grid"
         >
           <div
@@ -3997,6 +4206,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
           >
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -4008,6 +4218,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Monday, 1st February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -4028,6 +4239,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Tuesday, 2nd February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -4048,6 +4260,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Wednesday, 3rd February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -4068,6 +4281,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Thursday, 4th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -4088,6 +4302,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Friday, 5th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -4108,6 +4323,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Saturday, 6th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -4128,6 +4344,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Sunday, 7th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -4142,6 +4359,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -4153,6 +4371,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Monday, 8th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -4173,6 +4392,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Tuesday, 9th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -4193,6 +4413,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Wednesday, 10th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -4213,6 +4434,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Thursday, 11th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -4233,6 +4455,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Friday, 12th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -4253,6 +4476,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Saturday, 13th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -4273,6 +4497,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Sunday, 14th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -4287,6 +4512,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -4298,6 +4524,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Monday, 15th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4317,6 +4544,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Tuesday, 16th February 2010"
                   aria-pressed="true"
                   class="bpk-calendar-date bpk-calendar-date--focused bpk-calendar-date--selected bpk-calendar-date--start"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="0"
                   type="button"
                 >
@@ -4336,6 +4564,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Wednesday, 17th February 2010"
                   aria-pressed="true"
                   class="bpk-calendar-date bpk-calendar-date--selected bpk-calendar-date--middle"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4355,6 +4584,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Thursday, 18th February 2010"
                   aria-pressed="true"
                   class="bpk-calendar-date bpk-calendar-date--selected bpk-calendar-date--middle"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4374,6 +4604,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Friday, 19th February 2010"
                   aria-pressed="true"
                   class="bpk-calendar-date bpk-calendar-date--selected bpk-calendar-date--middle"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4393,6 +4624,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Saturday, 20th February 2010"
                   aria-pressed="true"
                   class="bpk-calendar-date bpk-calendar-date--selected bpk-calendar-date--end"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4412,6 +4644,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Sunday, 21st February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4425,6 +4658,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -4436,6 +4670,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Monday, 22nd February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4455,6 +4690,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Tuesday, 23rd February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4474,6 +4710,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Wednesday, 24th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4493,6 +4730,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Thursday, 25th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4512,6 +4750,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Friday, 26th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4531,6 +4770,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Saturday, 27th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4550,6 +4790,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Sunday, 28th February 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4563,6 +4804,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -4574,6 +4816,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Monday, 1st March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4593,6 +4836,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Tuesday, 2nd March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4612,6 +4856,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Wednesday, 3rd March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4631,6 +4876,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Thursday, 4th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4650,6 +4896,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Friday, 5th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4669,6 +4916,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Saturday, 6th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4688,6 +4936,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Sunday, 7th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4701,6 +4950,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -4712,6 +4962,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Monday, 8th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4731,6 +4982,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Tuesday, 9th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4750,6 +5002,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Wednesday, 10th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4769,6 +5022,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Thursday, 11th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4788,6 +5042,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Friday, 12th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4807,6 +5062,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Saturday, 13th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4826,6 +5082,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Sunday, 14th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4843,6 +5100,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
           aria-hidden="true"
           aria-label="March 2010"
           class="bpk-calendar-grid bpk-calendar-grid-transition__grid"
+          data-backpack-ds-component="CalendarGrid"
           role="grid"
         >
           <div
@@ -4850,6 +5108,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
           >
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -4861,6 +5120,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Monday, 1st March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4880,6 +5140,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Tuesday, 2nd March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4899,6 +5160,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Wednesday, 3rd March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4918,6 +5180,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Thursday, 4th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4937,6 +5200,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Friday, 5th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4956,6 +5220,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Saturday, 6th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4975,6 +5240,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Sunday, 7th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -4988,6 +5254,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -4999,6 +5266,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Monday, 8th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -5018,6 +5286,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Tuesday, 9th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -5037,6 +5306,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Wednesday, 10th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -5056,6 +5326,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Thursday, 11th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -5075,6 +5346,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Friday, 12th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -5094,6 +5366,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Saturday, 13th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -5113,6 +5386,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Sunday, 14th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -5126,6 +5400,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -5137,6 +5412,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Monday, 15th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--focused"
+                  data-backpack-ds-component="CalendarDate"
                   tabindex="-1"
                   type="button"
                 >
@@ -5156,6 +5432,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Tuesday, 16th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5176,6 +5453,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Wednesday, 17th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5196,6 +5474,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Thursday, 18th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5216,6 +5495,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Friday, 19th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5236,6 +5516,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Saturday, 20th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5256,6 +5537,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Sunday, 21st March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5270,6 +5552,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -5281,6 +5564,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Monday, 22nd March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5301,6 +5585,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Tuesday, 23rd March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5321,6 +5606,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Wednesday, 24th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5341,6 +5627,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Thursday, 25th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5361,6 +5648,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Friday, 26th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5381,6 +5669,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Saturday, 27th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5401,6 +5690,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Sunday, 28th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5415,6 +5705,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -5426,6 +5717,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Monday, 29th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5446,6 +5738,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Tuesday, 30th March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5466,6 +5759,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Wednesday, 31st March 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5486,6 +5780,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Thursday, 1st April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5506,6 +5801,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Friday, 2nd April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5526,6 +5822,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Saturday, 3rd April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5546,6 +5843,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Sunday, 4th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5560,6 +5858,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
             </div>
             <div
               class="bpk-calendar-week"
+              data-backpack-ds-component="CalendarWeek"
               role="row"
             >
               <div
@@ -5571,6 +5870,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Monday, 5th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5591,6 +5891,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Tuesday, 6th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5611,6 +5912,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Wednesday, 7th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5631,6 +5933,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Thursday, 8th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5651,6 +5954,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Friday, 9th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5671,6 +5975,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Saturday, 10th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -5691,6 +5996,7 @@ exports[`BpkCalendarContainer should render correctly in range mode 1`] = `
                   aria-label="Sunday, 11th April 2010"
                   aria-pressed="false"
                   class="bpk-calendar-date bpk-calendar-date--blocked bpk-calendar-date--outside"
+                  data-backpack-ds-component="CalendarDate"
                   disabled=""
                   tabindex="-1"
                   type="button"

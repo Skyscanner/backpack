@@ -7,6 +7,7 @@ exports[`BpkSlider should render correctly 1`] = `
   <span
     aria-disabled="false"
     class="bpk-slider"
+    data-backpack-ds-component="Slider"
     data-orientation="horizontal"
     dir="ltr"
     style="--radix-slider-thumb-transform: translateX(-50%);"
@@ -54,6 +55,7 @@ exports[`BpkSlider should render correctly with a "step" attribute 1`] = `
   <span
     aria-disabled="false"
     class="bpk-slider"
+    data-backpack-ds-component="Slider"
     data-orientation="horizontal"
     dir="ltr"
     style="--radix-slider-thumb-transform: translateX(-50%);"
@@ -101,6 +103,7 @@ exports[`BpkSlider should render correctly with a minimum distance between contr
   <span
     aria-disabled="false"
     class="bpk-slider"
+    data-backpack-ds-component="Slider"
     data-orientation="horizontal"
     dir="ltr"
     style="--radix-slider-thumb-transform: translateX(-50%);"
@@ -172,6 +175,7 @@ exports[`BpkSlider should render correctly with a range of values 1`] = `
   <span
     aria-disabled="false"
     class="bpk-slider"
+    data-backpack-ds-component="Slider"
     data-orientation="horizontal"
     dir="ltr"
     style="--radix-slider-thumb-transform: translateX(-50%);"

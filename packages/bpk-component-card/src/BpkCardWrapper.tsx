@@ -19,7 +19,7 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { CardContext } from './CardContext';
 
@@ -50,6 +50,7 @@ const BpkCardWrapper = ({
           // @ts-expect-error TS is reporting this incorrectly as --background-color is valid
           '--background-color': backgroundColor,
         }}
+        {...getDataComponentAttribute('CardWrapper')}
       >
         <div className={getClassName('bpk-card-wrapper--header')}>{header}</div>
         <div className={getClassName('bpk-card-wrapper--content')}>{card}</div>

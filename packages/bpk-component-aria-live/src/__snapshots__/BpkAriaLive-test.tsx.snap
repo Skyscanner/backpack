@@ -7,6 +7,7 @@ exports[`BpkAriaLive should render correctly 1`] = `
   <div
     aria-live="polite"
     class="bpk-aria-live bpk-aria-live--invisible"
+    data-backpack-ds-component="AriaLive"
   >
     Backpack
   </div>
@@ -18,6 +19,7 @@ exports[`BpkAriaLive should render correctly with politenessSetting="assertive" 
   <div
     aria-live="assertive"
     class="bpk-aria-live bpk-aria-live--invisible"
+    data-backpack-ds-component="AriaLive"
   >
     Backpack
   </div>
@@ -29,6 +31,7 @@ exports[`BpkAriaLive should render correctly with politenessSetting="off" 1`] = 
   <div
     aria-live="off"
     class="bpk-aria-live bpk-aria-live--invisible"
+    data-backpack-ds-component="AriaLive"
   >
     Backpack
   </div>
@@ -40,6 +43,7 @@ exports[`BpkAriaLive should render correctly with politenessSetting="polite" 1`]
   <div
     aria-live="polite"
     class="bpk-aria-live bpk-aria-live--invisible"
+    data-backpack-ds-component="AriaLive"
   >
     Backpack
   </div>
@@ -51,6 +55,7 @@ exports[`BpkAriaLive should render correctly with the "visible" prop 1`] = `
   <div
     aria-live="polite"
     class="bpk-aria-live"
+    data-backpack-ds-component="AriaLive"
   >
     Backpack
   </div>
@@ -62,6 +67,7 @@ exports[`BpkAriaLive should support arbitrary props 1`] = `
   <div
     aria-live="polite"
     class="bpk-aria-live bpk-aria-live--invisible"
+    data-backpack-ds-component="AriaLive"
     testid="123"
   >
     Backpack
@@ -74,6 +80,7 @@ exports[`BpkAriaLive should support custom class names 1`] = `
   <div
     aria-live="polite"
     class="bpk-aria-live bpk-aria-live--invisible custom-classname"
+    data-backpack-ds-component="AriaLive"
   >
     Backpack
   </div>

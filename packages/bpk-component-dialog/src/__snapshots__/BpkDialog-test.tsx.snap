@@ -36,6 +36,7 @@ exports[`BpkDialog should render correctly in the given target if renderTarget i
               <button
                 aria-label="Close"
                 class="bpk-close-button__default"
+                data-backpack-ds-component="CloseButton"
                 title="Close"
                 type="button"
               >
@@ -340,6 +341,7 @@ exports[`BpkDialog should render with flare dialog 2`] = `
               <button
                 aria-label=""
                 class="bpk-close-button__default"
+                data-backpack-ds-component="CloseButton"
                 title=""
                 type="button"
               >
@@ -451,6 +453,7 @@ exports[`BpkDialog should render with flare dialog with flareClassName 2`] = `
               <button
                 aria-label=""
                 class="bpk-close-button__default"
+                data-backpack-ds-component="CloseButton"
                 title=""
                 type="button"
               >

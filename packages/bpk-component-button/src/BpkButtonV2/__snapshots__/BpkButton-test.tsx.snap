@@ -6,6 +6,7 @@ exports[`BpkButton should add only bpk specific classes if className prop is set
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--primary"
+    data-backpack-ds-component="Button"
     type="button"
   >
     My button
@@ -17,6 +18,7 @@ exports[`BpkButton should render correctly a "large", "secondary" button 1`] = `
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--large bpk-button--secondary"
+    data-backpack-ds-component="Button"
     type="button"
   >
     My button
@@ -28,6 +30,7 @@ exports[`BpkButton should render correctly with "blank" and "rel" attributes 1`]
 <DocumentFragment>
   <a
     class="bpk-button bpk-button--primary"
+    data-backpack-ds-component="Button"
     href="#"
     rel="rel-overwrite"
     target="_blank"
@@ -41,6 +44,7 @@ exports[`BpkButton should render correctly with "blank" attribute 1`] = `
 <DocumentFragment>
   <a
     class="bpk-button bpk-button--primary"
+    data-backpack-ds-component="Button"
     href="#"
     rel="noopener noreferrer"
     target="_blank"
@@ -54,6 +58,7 @@ exports[`BpkButton should render correctly with "disabled" and "href" attributes
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--primary"
+    data-backpack-ds-component="Button"
     disabled=""
     type="button"
   >
@@ -66,6 +71,7 @@ exports[`BpkButton should render correctly with "rel" attribute 1`] = `
 <DocumentFragment>
   <a
     class="bpk-button bpk-button--primary"
+    data-backpack-ds-component="Button"
     href="#"
     rel="rel-attr"
     target=""
@@ -79,6 +85,7 @@ exports[`BpkButton should render correctly with a "disabled" attribute 1`] = `
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--primary"
+    data-backpack-ds-component="Button"
     disabled=""
     type="button"
   >
@@ -91,6 +98,7 @@ exports[`BpkButton should render correctly with a "href" attribute 1`] = `
 <DocumentFragment>
   <a
     class="bpk-button bpk-button--primary"
+    data-backpack-ds-component="Button"
     href="#"
     target=""
   >
@@ -103,6 +111,7 @@ exports[`BpkButton should render correctly with an "iconOnly" attribute 1`] = `
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--icon-only bpk-button--primary"
+    data-backpack-ds-component="Button"
     type="button"
   >
     My button
@@ -114,6 +123,7 @@ exports[`BpkButton should render correctly with large size 1`] = `
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--large bpk-button--primary"
+    data-backpack-ds-component="Button"
     type="button"
   >
     My button
@@ -125,6 +135,7 @@ exports[`BpkButton should render correctly with type="destructive" 1`] = `
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--destructive"
+    data-backpack-ds-component="Button"
     type="button"
   >
     destructive button
@@ -136,6 +147,7 @@ exports[`BpkButton should render correctly with type="featured" 1`] = `
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--featured"
+    data-backpack-ds-component="Button"
     type="button"
   >
     featured button
@@ -147,6 +159,7 @@ exports[`BpkButton should render correctly with type="link" 1`] = `
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--link"
+    data-backpack-ds-component="Button"
     type="button"
   >
     <span
@@ -162,6 +175,7 @@ exports[`BpkButton should render correctly with type="linkOnDark" 1`] = `
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--linkOnDark"
+    data-backpack-ds-component="Button"
     type="button"
   >
     linkOnDark button
@@ -173,6 +187,7 @@ exports[`BpkButton should render correctly with type="primary" 1`] = `
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--primary"
+    data-backpack-ds-component="Button"
     type="button"
   >
     primary button
@@ -184,6 +199,7 @@ exports[`BpkButton should render correctly with type="primaryOnDark" 1`] = `
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--primaryOnDark"
+    data-backpack-ds-component="Button"
     type="button"
   >
     primaryOnDark button
@@ -195,6 +211,7 @@ exports[`BpkButton should render correctly with type="primaryOnLight" 1`] = `
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--primaryOnLight"
+    data-backpack-ds-component="Button"
     type="button"
   >
     primaryOnLight button
@@ -206,6 +223,7 @@ exports[`BpkButton should render correctly with type="secondary" 1`] = `
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--secondary"
+    data-backpack-ds-component="Button"
     type="button"
   >
     secondary button
@@ -217,6 +235,7 @@ exports[`BpkButton should render correctly with type="secondaryOnDark" 1`] = `
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--secondaryOnDark"
+    data-backpack-ds-component="Button"
     type="button"
   >
     secondaryOnDark button
@@ -228,6 +247,7 @@ exports[`BpkButton should respect the class names entered as a string 1`] = `
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--primary custom-class-1 custom-class-2"
+    data-backpack-ds-component="Button"
     type="button"
   >
     My button

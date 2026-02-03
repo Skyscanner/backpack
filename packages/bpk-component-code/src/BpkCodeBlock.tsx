@@ -19,7 +19,7 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkCodeBlock.module.scss';
 
@@ -47,7 +47,7 @@ const BpkCodeBlock = ({
   const codeClassNames = getClassName('bpk-code', 'bpk-code--block');
 
   return (
-    <pre className={preClassNames} {...rest}>
+    <pre className={preClassNames} {...getDataComponentAttribute('CodeBlock')} {...rest}>
       <code className={codeClassNames}>{children}</code>
     </pre>
   );

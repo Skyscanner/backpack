@@ -25,7 +25,7 @@ accessory view of a close icon.
 import { chipColors } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import CloseCircleIconSm from '../../bpk-component-icon/sm/close-circle';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import BpkSelectableChip from './BpkSelectableChip';
 import { CHIP_TYPES } from './commonTypes';
@@ -61,6 +61,7 @@ const BpkDismissibleChip = ({
       type={type}
       role="button" // Override role="checkbox" because this chip is not selectable.
       className={classNames}
+      {...getDataComponentAttribute('DismissibleChip')}
     />
   );
 };

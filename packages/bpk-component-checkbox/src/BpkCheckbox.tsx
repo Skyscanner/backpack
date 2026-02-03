@@ -19,7 +19,7 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkCheckbox.module.scss';
 
@@ -78,7 +78,7 @@ const BpkCheckbox = ({
   );
 
   return (
-    <label className={classNames}>
+    <label className={classNames} {...getDataComponentAttribute('Checkbox')}>
       <input
         type="checkbox"
         className={inputClasses}
@@ -107,5 +107,3 @@ const BpkCheckbox = ({
 };
 
 export default BpkCheckbox;
-
-

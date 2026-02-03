@@ -6,6 +6,7 @@ exports[`BpkModalV2 is not supported should render correctly with polyfill and c
 <DocumentFragment>
   <div
     class="bpk-modal-wrapper bpk-modal-polyfill"
+    data-backpack-ds-component="ModalV2"
   >
     <div
       class="bpk-modal-backdrop"
@@ -24,6 +25,7 @@ exports[`BpkModalV2 is not supported should render correctly with polyfill and c
         <button
           aria-label="bpk-modal-button-close"
           class="bpk-close-button__default"
+          data-backpack-ds-component="CloseButton"
           title="bpk-modal-button-close"
           type="button"
         >
@@ -60,6 +62,7 @@ exports[`BpkModalV2 is supported should render correctly with content 1`] = `
 <DocumentFragment>
   <div
     class="bpk-modal-wrapper"
+    data-backpack-ds-component="ModalV2"
   >
     <dialog
       aria-labelledby="bpk-modal-element"
@@ -76,6 +79,7 @@ exports[`BpkModalV2 is supported should render correctly with content 1`] = `
         >
           <h2
             class="bpk-text bpk-text--label-1"
+            data-backpack-ds-component="Text"
           >
             Modal with dialog element
           </h2>
@@ -83,6 +87,7 @@ exports[`BpkModalV2 is supported should render correctly with content 1`] = `
         <button
           aria-label="bpk-modal-button-close"
           class="bpk-close-button__default"
+          data-backpack-ds-component="CloseButton"
           title="bpk-modal-button-close"
           type="button"
         >

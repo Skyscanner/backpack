@@ -18,7 +18,7 @@
 // @ts-nocheck
 
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import SPINNER_TYPES from './spinnerTypes';
 import XlSpinner from './spinners/xl';
@@ -48,7 +48,10 @@ const BpkExtraLargeSpinner = ({
   );
 
   return (
-    <span className={classNames}>
+    <span
+      className={classNames}
+      {...getDataComponentAttribute('ExtraLargeSpinner')}
+    >
       <XlSpinner {...rest} />
     </span>
   );

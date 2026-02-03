@@ -22,7 +22,7 @@ import type { ReactNode } from 'react';
 import clamp from 'lodash.clamp';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { RATING_SIZES, RATING_SCALES } from './common-types';
 
@@ -112,7 +112,7 @@ const BpkRating = ({
   }
 
   return (
-    <div className={classNames} aria-label={ariaLabel} role="figure" {...rest}>
+    <div className={classNames} {...getDataComponentAttribute('Rating')} aria-label={ariaLabel} role="figure" {...rest}>
       <div className={valueStyles}>
         <BpkText
           textStyle={valueTextSize}

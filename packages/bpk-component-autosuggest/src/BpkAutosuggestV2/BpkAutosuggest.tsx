@@ -44,7 +44,7 @@ import { useCombobox } from 'downshift';
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkInput from '../../../bpk-component-input';
-import { cssModules } from '../../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
 import type {
   UseComboboxState,
@@ -778,6 +778,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           theme.container,
           suggestionsCount && theme.containerOpen,
         )}
+        {...getDataComponentAttribute('Autosuggest')}
       >
         {renderInput()}
 

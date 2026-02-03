@@ -18,6 +18,7 @@
 // @ts-nocheck
 
 import BpkLink, { type BpkLinkProps } from '../../bpk-component-link';
+import { getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { BAR_STYLES, type BarStyle } from './BpkNavigationBar';
 
@@ -35,7 +36,10 @@ const BpkNavigationBarButtonLink = ({
   className,
   ...rest
 }: Props) => (
-  <span className={className}>
+  <span
+    className={className}
+    {...getDataComponentAttribute('NavigationBarButtonLink')}
+  >
     <BpkLink
       as="button"
       alternate={barStyle === BAR_STYLES.onDark}

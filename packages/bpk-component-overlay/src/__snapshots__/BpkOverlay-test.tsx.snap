@@ -6,6 +6,7 @@ exports[`BpkOverlay should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -21,6 +22,7 @@ exports[`BpkOverlay should render correctly with foregroundContent 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -40,6 +42,7 @@ exports[`BpkOverlay should render correctly with overlayType={bottomHigh} 1`] = 
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -55,6 +58,7 @@ exports[`BpkOverlay should render correctly with overlayType={bottomLow} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -70,6 +74,7 @@ exports[`BpkOverlay should render correctly with overlayType={bottomMedium} 1`] 
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -85,6 +90,7 @@ exports[`BpkOverlay should render correctly with overlayType={heavyBottom} 1`] =
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -100,6 +106,7 @@ exports[`BpkOverlay should render correctly with overlayType={heavyTop} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -115,6 +122,7 @@ exports[`BpkOverlay should render correctly with overlayType={leftHigh} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -130,6 +138,7 @@ exports[`BpkOverlay should render correctly with overlayType={leftLow} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -145,6 +154,7 @@ exports[`BpkOverlay should render correctly with overlayType={leftMedium} 1`] = 
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -160,6 +170,7 @@ exports[`BpkOverlay should render correctly with overlayType={off} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -175,6 +186,7 @@ exports[`BpkOverlay should render correctly with overlayType={rightHigh} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -190,6 +202,7 @@ exports[`BpkOverlay should render correctly with overlayType={rightLow} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -205,6 +218,7 @@ exports[`BpkOverlay should render correctly with overlayType={rightMedium} 1`] =
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -220,6 +234,7 @@ exports[`BpkOverlay should render correctly with overlayType={solidHigh} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -235,6 +250,7 @@ exports[`BpkOverlay should render correctly with overlayType={solidLow} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -250,6 +266,7 @@ exports[`BpkOverlay should render correctly with overlayType={solidMedium} 1`] =
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -265,6 +282,7 @@ exports[`BpkOverlay should render correctly with overlayType={topHigh} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -280,6 +298,7 @@ exports[`BpkOverlay should render correctly with overlayType={topLow} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -295,6 +314,7 @@ exports[`BpkOverlay should render correctly with overlayType={topMedium} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -310,6 +330,7 @@ exports[`BpkOverlay should render correctly with overlayType={vignette} 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -325,6 +346,7 @@ exports[`BpkOverlay should support custom class names 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper custom-classname"
+    data-backpack-ds-component="Overlay"
   >
     <span>
       Backpack
@@ -340,6 +362,7 @@ exports[`BpkOverlay should support standard div attributes 1`] = `
 <DocumentFragment>
   <div
     class="bpk-overlay__wrapper"
+    data-backpack-ds-component="Overlay"
     data-testid="123"
   >
     <span>

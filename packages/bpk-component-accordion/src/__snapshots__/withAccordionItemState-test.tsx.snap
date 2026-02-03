@@ -6,6 +6,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
 <DocumentFragment>
   <div
     class="bpk-accordion__item bpk-accordion__item--with-divider"
+    data-backpack-ds-component="AccordionItem"
     id="my-accordion"
   >
     <div
@@ -25,6 +26,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
           >
             <h3
               class="bpk-text bpk-text--body-default"
+              data-backpack-ds-component="Text"
             >
               My accordion item
             </h3>
@@ -77,6 +79,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
 <DocumentFragment>
   <div
     class="bpk-accordion__item bpk-accordion__item--with-divider"
+    data-backpack-ds-component="AccordionItem"
     id="my-accordion"
   >
     <div
@@ -96,6 +99,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
           >
             <h3
               class="bpk-text bpk-text--body-default"
+              data-backpack-ds-component="Text"
             >
               My accordion item
             </h3>
@@ -148,6 +152,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
 <DocumentFragment>
   <div
     class="bpk-accordion__item bpk-accordion__item--with-divider"
+    data-backpack-ds-component="AccordionItem"
     id="my-accordion"
   >
     <div
@@ -167,6 +172,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
           >
             <h3
               class="bpk-text bpk-text--body-default"
+              data-backpack-ds-component="Text"
             >
               My accordion item
             </h3>

@@ -24,6 +24,7 @@ import BpkLabel from '../../bpk-component-label';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../bpk-component-select';
 import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
+import { getDataComponentAttribute } from '../../bpk-react-utils';
 
 import bpkCustomThemes from './theming';
 import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
@@ -93,7 +94,7 @@ class BpkThemeToggle extends Component<Props, State> {
   render() {
     const { ...rest } = this.props;
     return (
-      <div {...rest}>
+      <div {...getDataComponentAttribute('ThemeToggle')} {...rest}>
         <BpkVisuallyHidden>
           <BpkLabel htmlFor={inputId}>Change theme</BpkLabel>
         </BpkVisuallyHidden>

@@ -6,6 +6,7 @@ exports[`BpkImage should accept userland className 1`] = `
 <DocumentFragment>
   <div
     class="userland-classname"
+    data-backpack-ds-component="Image"
     style="width: 0.0625rem;"
   >
     <div
@@ -25,6 +26,7 @@ exports[`BpkImage should accept userland className 1`] = `
 exports[`BpkImage should accept userland styling 1`] = `
 <DocumentFragment>
   <div
+    data-backpack-ds-component="Image"
     style="width: 0.0625rem;"
   >
     <div
@@ -43,7 +45,9 @@ exports[`BpkImage should accept userland styling 1`] = `
 
 exports[`BpkImage should apply borderRadius 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-backpack-ds-component="Image"
+  >
     <div
       class="bpk-image bpk-image--no-background bpk-image--border-radius-sm"
       style="height: 0px; padding-bottom: 66.66666666666667%;"
@@ -60,7 +64,9 @@ exports[`BpkImage should apply borderRadius 1`] = `
 
 exports[`BpkImage should call onLoadCallback 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-backpack-ds-component="Image"
+  >
     <div
       class="bpk-image bpk-image--no-background"
       style="height: 0px; padding-bottom: 66.66666666666667%;"
@@ -77,7 +83,9 @@ exports[`BpkImage should call onLoadCallback 1`] = `
 
 exports[`BpkImage should have !inView behavior 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-backpack-ds-component="Image"
+  >
     <div
       class="bpk-image bpk-image--no-background"
       style="height: 0px; padding-bottom: 66.66666666666667%;"
@@ -88,7 +96,9 @@ exports[`BpkImage should have !inView behavior 1`] = `
 
 exports[`BpkImage should have loading behavior 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-backpack-ds-component="Image"
+  >
     <div
       class="bpk-image"
       style="height: 0px; padding-bottom: 66.66666666666667%;"
@@ -103,6 +113,7 @@ exports[`BpkImage should have loading behavior 1`] = `
       >
         <span
           class="bpk-spinner bpk-spinner--dark"
+          data-backpack-ds-component="Spinner"
         >
           <svg
             aria-hidden="true"
@@ -168,7 +179,9 @@ exports[`BpkImage should have loading behavior 1`] = `
 
 exports[`BpkImage should load even without onLoadCallback 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-backpack-ds-component="Image"
+  >
     <div
       class="bpk-image bpk-image--no-background"
       style="height: 0px; padding-bottom: 66.66666666666667%;"
@@ -185,7 +198,9 @@ exports[`BpkImage should load even without onLoadCallback 1`] = `
 
 exports[`BpkImage should render correctly 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-backpack-ds-component="Image"
+  >
     <div
       class="bpk-image bpk-image--no-background"
       style="height: 0px; padding-bottom: 66.66666666666667%;"
@@ -202,7 +217,9 @@ exports[`BpkImage should render correctly 1`] = `
 
 exports[`BpkImage should support srcSet 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-backpack-ds-component="Image"
+  >
     <div
       class="bpk-image bpk-image--no-background"
       style="height: 0px; padding-bottom: 66.66666666666667%;"

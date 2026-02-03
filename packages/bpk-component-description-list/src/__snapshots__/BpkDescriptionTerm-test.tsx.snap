@@ -6,6 +6,7 @@ exports[`BpkDescriptionTerm should render correctly 1`] = `
 <DocumentFragment>
   <dt
     class="bpk-description-list__term"
+    data-backpack-ds-component="DescriptionTerm"
   >
     Term
   </dt>
@@ -16,6 +17,7 @@ exports[`BpkDescriptionTerm should render correctly with a "className" attribute
 <DocumentFragment>
   <dt
     class="bpk-description-list__term test-term"
+    data-backpack-ds-component="DescriptionTerm"
   >
     Term
   </dt>
@@ -26,6 +28,7 @@ exports[`BpkDescriptionTerm should render correctly with a other attributes 1`] 
 <DocumentFragment>
   <dt
     class="bpk-description-list__term"
+    data-backpack-ds-component="DescriptionTerm"
     title="this is a term"
   >
     Term

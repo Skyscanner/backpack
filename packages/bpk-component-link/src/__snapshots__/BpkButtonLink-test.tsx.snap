@@ -6,6 +6,7 @@ exports[`BpkButtonLink should render correctly 1`] = `
 <DocumentFragment>
   <button
     class="bpk-link"
+    data-backpack-ds-component="ButtonLink"
     type="button"
   >
     <span
@@ -21,6 +22,7 @@ exports[`BpkButtonLink should render correctly with "alternate" attribute 1`] = 
 <DocumentFragment>
   <button
     class="bpk-link bpk-link--alternate"
+    data-backpack-ds-component="ButtonLink"
     type="button"
   >
     <span
@@ -36,6 +38,7 @@ exports[`BpkButtonLink should render correctly with a "className" atribute 1`] =
 <DocumentFragment>
   <button
     class="bpk-link test-class"
+    data-backpack-ds-component="ButtonLink"
     type="button"
   >
     <span
@@ -51,6 +54,7 @@ exports[`BpkButtonLink should render correctly with arbitrary attributes 1`] = `
 <DocumentFragment>
   <button
     class="bpk-link"
+    data-backpack-ds-component="ButtonLink"
     id="test-id"
     type="button"
   >

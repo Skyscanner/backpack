@@ -17,6 +17,7 @@ exports[`BpkPriceMarker should render correctly with "status" attribute as "prev
       >
         <span
           class="bpk-text bpk-text--label-3"
+          data-backpack-ds-component="Text"
         >
           £120
         </span>
@@ -41,6 +42,7 @@ exports[`BpkPriceMarker should render correctly with "status" attribute as "sele
       >
         <span
           class="bpk-text bpk-text--label-3"
+          data-backpack-ds-component="Text"
         >
           £120
         </span>
@@ -66,6 +68,7 @@ exports[`BpkPriceMarker should render correctly with a "buttonProps" attribute 1
       >
         <span
           class="bpk-text bpk-text--label-3"
+          data-backpack-ds-component="Text"
         >
           £120
         </span>
@@ -90,6 +93,7 @@ exports[`BpkPriceMarker should render correctly with a "className" attribute 1`]
       >
         <span
           class="bpk-text bpk-text--label-3"
+          data-backpack-ds-component="Text"
         >
           £120
         </span>
@@ -114,6 +118,7 @@ exports[`BpkPriceMarker should render correctly with a "onClick" attribute 1`] =
       >
         <span
           class="bpk-text bpk-text--label-3"
+          data-backpack-ds-component="Text"
         >
           £120
         </span>
@@ -138,6 +143,7 @@ exports[`BpkPriceMarker should render properly 1`] = `
       >
         <span
           class="bpk-text bpk-text--label-3"
+          data-backpack-ds-component="Text"
         >
           £120
         </span>
@@ -165,6 +171,7 @@ exports[`BpkPriceMarker should render properly with a icon 1`] = `
         </span>
         <span
           class="bpk-text bpk-text--label-3"
+          data-backpack-ds-component="Text"
         >
           £120
         </span>

@@ -29,7 +29,7 @@ import BpkHeartIcon from '../../bpk-component-icon/lg/heart';
 import BpkHeartOutlineIcon from '../../bpk-component-icon/lg/heart--outline';
 import BpkHeartIconSm from '../../bpk-component-icon/sm/heart';
 import BpkHeartOutlineIconSm from '../../bpk-component-icon/sm/heart--outline';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkSaveButton.module.scss';
 
@@ -87,6 +87,7 @@ const BpkSaveButton = ({
         smallSize && 'bpk-save-button__small',
         `bpk-save-button__${style}`,
       )}
+      {...getDataComponentAttribute('SaveButton')}
       onClick={(e: MouseEvent) => {
         onCheckedChange(e);
         if (!checked) {

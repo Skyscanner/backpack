@@ -4,7 +4,9 @@
 
 exports[`BpkDataTableHeader does not render sort icons if sorting disabled 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-backpack-ds-component="DataTableHeader"
+  >
     <span
       aria-label="Name"
       aria-pressed="false"
@@ -19,7 +21,9 @@ exports[`BpkDataTableHeader does not render sort icons if sorting disabled 1`] =
 
 exports[`BpkDataTableHeader renders sort icon with down icon selected 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-backpack-ds-component="DataTableHeader"
+  >
     <span
       aria-label="Name"
       aria-pressed="true"
@@ -71,7 +75,9 @@ exports[`BpkDataTableHeader renders sort icon with down icon selected 1`] = `
 
 exports[`BpkDataTableHeader renders sort icon with up icon selected 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-backpack-ds-component="DataTableHeader"
+  >
     <span
       aria-label="Name"
       aria-pressed="true"
@@ -123,7 +129,9 @@ exports[`BpkDataTableHeader renders sort icon with up icon selected 1`] = `
 
 exports[`BpkDataTableHeader renders sort icons 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-backpack-ds-component="DataTableHeader"
+  >
     <span
       aria-label="Name"
       aria-pressed="false"

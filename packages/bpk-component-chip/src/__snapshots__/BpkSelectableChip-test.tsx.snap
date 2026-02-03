@@ -7,12 +7,14 @@ exports[`BpkSelectableChip should render correctly 1`] = `
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--default"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -25,12 +27,14 @@ exports[`BpkSelectableChip should render correctly with a "className" attribute 
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--default custom-class"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -43,12 +47,14 @@ exports[`BpkSelectableChip should render correctly with type="default" 1`] = `
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--default"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -61,6 +67,7 @@ exports[`BpkSelectableChip should render correctly with type="default" and a lea
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--default"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -74,6 +81,7 @@ exports[`BpkSelectableChip should render correctly with type="default" and a lea
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -86,6 +94,7 @@ exports[`BpkSelectableChip should render correctly with type="default" and a lea
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--default bpk-chip--icon-only"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -99,6 +108,7 @@ exports[`BpkSelectableChip should render correctly with type="default" and a lea
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -109,12 +119,14 @@ exports[`BpkSelectableChip should render correctly with type="default" and a tra
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--default"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -134,6 +146,7 @@ exports[`BpkSelectableChip should render correctly with type="default" and both 
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--default"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -147,6 +160,7 @@ exports[`BpkSelectableChip should render correctly with type="default" and both 
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -166,6 +180,7 @@ exports[`BpkSelectableChip should render correctly with type="default" and disab
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--default bpk-chip--disabled bpk-chip--default-disabled"
+    data-backpack-ds-component="SelectableChip"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -173,6 +188,7 @@ exports[`BpkSelectableChip should render correctly with type="default" and disab
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -185,12 +201,14 @@ exports[`BpkSelectableChip should render correctly with type="default" and selec
   <button
     aria-checked="true"
     class="bpk-chip bpk-chip--default bpk-chip--default-selected"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -203,6 +221,7 @@ exports[`BpkSelectableChip should render correctly with type="default", selected
   <button
     aria-checked="true"
     class="bpk-chip bpk-chip--default bpk-chip--disabled bpk-chip--default-disabled"
+    data-backpack-ds-component="SelectableChip"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -210,6 +229,7 @@ exports[`BpkSelectableChip should render correctly with type="default", selected
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -222,12 +242,14 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" 1`] = `
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-dark"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -240,6 +262,7 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and a lea
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-dark"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -253,6 +276,7 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and a lea
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -265,6 +289,7 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and a lea
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-dark bpk-chip--icon-only"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -278,6 +303,7 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and a lea
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -288,12 +314,14 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and a tra
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-dark"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -313,6 +341,7 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and both 
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-dark"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -326,6 +355,7 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and both 
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -345,6 +375,7 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and disab
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-dark bpk-chip--disabled bpk-chip--on-dark-disabled"
+    data-backpack-ds-component="SelectableChip"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -352,6 +383,7 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and disab
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -364,12 +396,14 @@ exports[`BpkSelectableChip should render correctly with type="on-dark" and selec
   <button
     aria-checked="true"
     class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -382,6 +416,7 @@ exports[`BpkSelectableChip should render correctly with type="on-dark", selected
   <button
     aria-checked="true"
     class="bpk-chip bpk-chip--on-dark bpk-chip--disabled bpk-chip--on-dark-disabled"
+    data-backpack-ds-component="SelectableChip"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -389,6 +424,7 @@ exports[`BpkSelectableChip should render correctly with type="on-dark", selected
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -401,12 +437,14 @@ exports[`BpkSelectableChip should render correctly with type="on-image" 1`] = `
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-image"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -419,6 +457,7 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and a le
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-image"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -432,6 +471,7 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and a le
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -444,6 +484,7 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and a le
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-image bpk-chip--icon-only"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -457,6 +498,7 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and a le
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -467,12 +509,14 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and a tr
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-image"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -492,6 +536,7 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and both
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-image"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -505,6 +550,7 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and both
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -524,6 +570,7 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and disa
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-image bpk-chip--disabled bpk-chip--on-image-disabled"
+    data-backpack-ds-component="SelectableChip"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -531,6 +578,7 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and disa
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -543,12 +591,14 @@ exports[`BpkSelectableChip should render correctly with type="on-image" and sele
   <button
     aria-checked="true"
     class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected"
+    data-backpack-ds-component="SelectableChip"
     role="checkbox"
     title="Toggle"
     type="button"
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
@@ -561,6 +611,7 @@ exports[`BpkSelectableChip should render correctly with type="on-image", selecte
   <button
     aria-checked="true"
     class="bpk-chip bpk-chip--on-image bpk-chip--disabled bpk-chip--on-image-disabled"
+    data-backpack-ds-component="SelectableChip"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -568,6 +619,7 @@ exports[`BpkSelectableChip should render correctly with type="on-image", selecte
   >
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     >
       Toggle me
     </span>
