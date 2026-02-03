@@ -4,6 +4,7 @@ exports[`BpkModalV2 is not supported should render correctly with polyfill and c
 <DocumentFragment>
   <div
     class="bpk-modal-wrapper bpk-modal-polyfill"
+    data-backpack-ds-component="ModalV2"
   >
     <div
       class="bpk-modal-backdrop"
@@ -59,6 +60,7 @@ exports[`BpkModalV2 is supported should render correctly with content 1`] = `
 <DocumentFragment>
   <div
     class="bpk-modal-wrapper"
+    data-backpack-ds-component="ModalV2"
   >
     <dialog
       aria-labelledby="bpk-modal-element"

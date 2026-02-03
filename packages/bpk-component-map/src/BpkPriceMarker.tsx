@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { getDataComponentAttribute } from '../../bpk-react-utils';
+
 import BpkBasicMapMarker from './BpkBasicMapMarker';
 import BpkPriceMarkerButton, { MARKER_STATUSES } from './BpkPriceMarkerButton';
 
@@ -55,6 +57,7 @@ const BpkPriceMarker = (props: Props) => {
     <BpkBasicMapMarker
       position={position}
       aria-label={accessibilityLabel}
+      {...getDataComponentAttribute('PriceMarker')}
       {...rest}
     >
       <BpkPriceMarkerButton {...allButtonProps} />

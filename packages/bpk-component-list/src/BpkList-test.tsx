@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 

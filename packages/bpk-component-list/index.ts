@@ -16,22 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkList from './src/BpkList';
+import BpkListItem from './src/BpkListItem';
 
-import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
-
-import BpkList from './BpkList';
-import BpkListItem from './BpkListItem';
-
-describe('BpkList accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(
-      <BpkList>
-        <BpkListItem>List item</BpkListItem>
-      </BpkList>,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-});
+export type { Props as BpkListProps } from './src/BpkList';
+export type { Props as BpkListItemProps } from './src/BpkListItem';
+export { BpkList, BpkListItem };

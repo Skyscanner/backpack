@@ -5,6 +5,7 @@ exports[`BpkDropdownChip should render correctly 1`] = `
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--default"
+    data-backpack-ds-component="DropdownChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -39,6 +40,7 @@ exports[`BpkDropdownChip should render correctly with a "className" attribute 1`
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--default custom-class"
+    data-backpack-ds-component="DropdownChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -73,6 +75,7 @@ exports[`BpkDropdownChip should render correctly with type="default" 1`] = `
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--default"
+    data-backpack-ds-component="DropdownChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -107,6 +110,7 @@ exports[`BpkDropdownChip should render correctly with type="default" and a leadi
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--default"
+    data-backpack-ds-component="DropdownChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -148,6 +152,7 @@ exports[`BpkDropdownChip should render correctly with type="default" and disable
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--default bpk-chip--disabled bpk-chip--default-disabled"
+    data-backpack-ds-component="DropdownChip"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -183,6 +188,7 @@ exports[`BpkDropdownChip should render correctly with type="default" and selecte
   <button
     aria-checked="true"
     class="bpk-chip bpk-chip--default bpk-chip--default-selected"
+    data-backpack-ds-component="DropdownChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -217,6 +223,7 @@ exports[`BpkDropdownChip should render correctly with type="default", selected a
   <button
     aria-checked="true"
     class="bpk-chip bpk-chip--default bpk-chip--disabled bpk-chip--default-disabled"
+    data-backpack-ds-component="DropdownChip"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -252,6 +259,7 @@ exports[`BpkDropdownChip should render correctly with type="on-dark" 1`] = `
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-dark"
+    data-backpack-ds-component="DropdownChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -286,6 +294,7 @@ exports[`BpkDropdownChip should render correctly with type="on-dark" and a leadi
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-dark"
+    data-backpack-ds-component="DropdownChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -327,6 +336,7 @@ exports[`BpkDropdownChip should render correctly with type="on-dark" and disable
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-dark bpk-chip--disabled bpk-chip--on-dark-disabled"
+    data-backpack-ds-component="DropdownChip"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -362,6 +372,7 @@ exports[`BpkDropdownChip should render correctly with type="on-dark" and selecte
   <button
     aria-checked="true"
     class="bpk-chip bpk-chip--on-dark bpk-chip--on-dark-selected"
+    data-backpack-ds-component="DropdownChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -396,6 +407,7 @@ exports[`BpkDropdownChip should render correctly with type="on-dark", selected a
   <button
     aria-checked="true"
     class="bpk-chip bpk-chip--on-dark bpk-chip--disabled bpk-chip--on-dark-disabled"
+    data-backpack-ds-component="DropdownChip"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -431,6 +443,7 @@ exports[`BpkDropdownChip should render correctly with type="on-image" 1`] = `
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-image"
+    data-backpack-ds-component="DropdownChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -465,6 +478,7 @@ exports[`BpkDropdownChip should render correctly with type="on-image" and a lead
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-image"
+    data-backpack-ds-component="DropdownChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -506,6 +520,7 @@ exports[`BpkDropdownChip should render correctly with type="on-image" and disabl
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-image bpk-chip--disabled bpk-chip--on-image-disabled"
+    data-backpack-ds-component="DropdownChip"
     disabled=""
     role="checkbox"
     title="Toggle"
@@ -541,6 +556,7 @@ exports[`BpkDropdownChip should render correctly with type="on-image" and select
   <button
     aria-checked="true"
     class="bpk-chip bpk-chip--on-image bpk-chip--on-image-selected"
+    data-backpack-ds-component="DropdownChip"
     role="checkbox"
     title="Toggle"
     type="button"
@@ -575,6 +591,7 @@ exports[`BpkDropdownChip should render correctly with type="on-image", selected 
   <button
     aria-checked="true"
     class="bpk-chip bpk-chip--on-image bpk-chip--disabled bpk-chip--on-image-disabled"
+    data-backpack-ds-component="DropdownChip"
     disabled=""
     role="checkbox"
     title="Toggle"

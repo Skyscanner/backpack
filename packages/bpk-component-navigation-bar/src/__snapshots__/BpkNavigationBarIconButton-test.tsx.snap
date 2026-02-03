@@ -4,6 +4,7 @@ exports[`BpkNavigationIconButton should render correctly 1`] = `
 <DocumentFragment>
   <span
     class="some-class"
+    data-backpack-ds-component="NavigationBarIconButton"
   >
     <button
       aria-label="test"

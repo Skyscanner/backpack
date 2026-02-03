@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 
 import BpkListItem from './BpkListItem';
