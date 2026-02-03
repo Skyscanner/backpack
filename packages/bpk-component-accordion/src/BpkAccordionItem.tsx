@@ -24,7 +24,7 @@ import AnimateHeight from '../../bpk-animate-height';
 import { withButtonAlignment } from '../../bpk-component-icon';
 import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { BpkAccordionContext } from './BpkAccordion';
 
@@ -130,7 +130,12 @@ const BpkAccordionItem = (props: BpkAccordionItemProps) => {
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-    <div id={id} className={itemClassNames.join(' ')} {...rest}>
+    <div
+      id={id}
+      className={itemClassNames.join(' ')}
+      {...getDataComponentAttribute('AccordionItem')}
+      {...rest}
+    >
       <div className={titleClassNames.join(' ')}>
         <button
           type="button"

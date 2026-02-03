@@ -20,6 +20,7 @@ exports[`BpkFloatingNotification should render correctly 1`] = `
       aria-hidden="true"
       aria-live="polite"
       class="bpk-aria-live bpk-aria-live--invisible"
+      data-backpack-ds-component="AriaLive"
     >
       Saved
     </div>
@@ -47,6 +48,7 @@ exports[`BpkFloatingNotification should render correctly with CTA text 1`] = `
       aria-hidden="true"
       aria-live="polite"
       class="bpk-aria-live bpk-aria-live--invisible"
+      data-backpack-ds-component="AriaLive"
     >
       Saved
     </div>
@@ -104,6 +106,7 @@ exports[`BpkFloatingNotification should render correctly with icon prop 1`] = `
       aria-hidden="true"
       aria-live="polite"
       class="bpk-aria-live bpk-aria-live--invisible"
+      data-backpack-ds-component="AriaLive"
     >
       Saved
     </div>
@@ -132,6 +135,7 @@ exports[`BpkFloatingNotification should support arbitrary props 1`] = `
       aria-hidden="true"
       aria-live="polite"
       class="bpk-aria-live bpk-aria-live--invisible"
+      data-backpack-ds-component="AriaLive"
     >
       Saved
     </div>
@@ -159,6 +163,7 @@ exports[`BpkFloatingNotification should support custom class names 1`] = `
       aria-hidden="true"
       aria-live="polite"
       class="bpk-aria-live bpk-aria-live--invisible"
+      data-backpack-ds-component="AriaLive"
     >
       Saved
     </div>
