@@ -18,7 +18,7 @@
 import type { ComponentType, ElementType } from 'react';
 import { Component } from 'react';
 
-import { cssModules, isRTL } from '../../bpk-react-utils';
+import { cssModules, isRTL, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import {
   addMonths,
@@ -199,6 +199,7 @@ class BpkCalendarGridTransition extends Component<Props, State> {
           className={stripClassNames}
           style={getTransformStyles(transitionValue)}
           onTransitionEnd={this.onMonthTransitionEnd}
+          {...getDataComponentAttribute('CalendarGridTransition')}
         >
           {this.state.months.map((m, index) =>
             min && max && isWithinRange(m, { start: min, end: max }) ? (

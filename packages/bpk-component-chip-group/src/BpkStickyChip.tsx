@@ -25,7 +25,7 @@ import { type MutableRefObject, useEffect, useState } from 'react';
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import BpkSelectableChip from '../../bpk-component-chip';
 import FilterIconSm from '../../bpk-component-icon/sm/filter';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type { ChipItem, ChipStyleType } from './BpkMultiSelectChipGroup';
 
@@ -69,7 +69,7 @@ const BpkStickyChip = ({
   );
 
   return (
-    <div className={containerClassNames}>
+    <div className={containerClassNames} {...getDataComponentAttribute('StickyChip')}>
       <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
         {(isDesktop) => {
           const hideText = !isDesktop && !isAtStart;

@@ -18,7 +18,7 @@
 import type { ElementType } from 'react';
 import { Component } from 'react';
 
-import { cssModules, isDeviceIos } from '../../bpk-react-utils';
+import { cssModules, isDeviceIos, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { addCalendarGridTransition } from './BpkCalendarGridTransition';
 import BpkCalendarWeek from './BpkCalendarWeek';
@@ -186,6 +186,7 @@ class BpkCalendarGrid extends Component<Props, State> {
     return (
       <div
         className={classNames}
+        {...getDataComponentAttribute('CalendarGrid')}
         aria-hidden={!isKeyboardFocusable}
         role="grid"
         aria-label={formatMonth(month)}

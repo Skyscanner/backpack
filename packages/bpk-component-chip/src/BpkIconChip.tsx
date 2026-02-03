@@ -23,6 +23,8 @@ to match.
 
 import type { ReactNode } from 'react';
 
+import { getDataComponentAttribute } from '../../bpk-react-utils';
+
 import BpkSelectableChip from './BpkSelectableChip';
 
 import type { CommonProps as Props } from './commonTypes';
@@ -32,9 +34,12 @@ export type BpkIconChipProps = {
 } & Omit<Props, 'trailingAccessoryView' | 'leadingAccessoryView' | 'children'>;
 
 const BpkIconChip = (props: BpkIconChipProps) => (
-    <BpkSelectableChip {...props}>
-      {null}
-    </BpkSelectableChip>
-  );
+  <BpkSelectableChip
+    {...getDataComponentAttribute('IconChip')}
+    {...props}
+  >
+    {null}
+  </BpkSelectableChip>
+);
 
 export default BpkIconChip;

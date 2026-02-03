@@ -18,7 +18,7 @@
 import type { ReactNode } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { CHIP_TYPES } from './commonTypes';
 
@@ -62,6 +62,7 @@ const BpkSelectableChip = ({
     <button
       aria-checked={role === 'button' || role === 'tab' ? undefined : selected}
       className={classNames}
+      {...getDataComponentAttribute('SelectableChip')}
       disabled={disabled}
       role={role}
       title={accessibilityLabel}

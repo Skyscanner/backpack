@@ -20,7 +20,7 @@ import { useEffect, useRef, useState } from 'react';
 import clamp from 'lodash/clamp';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import BpkPriceMarker from './BpkPriceMarker';
 import { MARKER_DISPLAY_TYPES, MARKER_TYPES } from './common-types';
@@ -167,6 +167,7 @@ const BpkPriceRange = ({
         shouldShowPriceOnBoundaries && 'bpk-price-range--large',
       )}
       ref={linesRef}
+      {...getDataComponentAttribute('PriceRange')}
     >
       {shouldShowBubble && (
         <div className={getClassName('bpk-price-range__marker')}>
