@@ -24,7 +24,7 @@ import BpkCloseButton from '../../bpk-component-close-button';
 import BpkLink from '../../bpk-component-link';
 import BpkNavigationBar from '../../bpk-component-navigation-bar';
 import { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
-import { BpkDialogWrapper, cssModules } from '../../bpk-react-utils';
+import { BpkDialogWrapper, cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkBottomSheet.module.scss';
 
@@ -181,6 +181,7 @@ const BpkBottomSheet = ({
         appear: animationTimeout,
         exit: isAboveMobile ? 0 : animationTimeout,
       }}
+      {...getDataComponentAttribute('BottomSheet')}
     >
       <>
         <header className={getClassName('bpk-bottom-sheet--header-wrapper')}>
