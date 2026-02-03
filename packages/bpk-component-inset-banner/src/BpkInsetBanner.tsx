@@ -20,7 +20,7 @@ import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base
 import InfoIcon from '../../bpk-component-icon/sm/information-circle';
 import BpkPopover from '../../bpk-component-popover/src/BpkPopover';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
-import { cssModules , getDataComponentAttribute } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type { Placement } from '@floating-ui/react';
 

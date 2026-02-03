@@ -25,7 +25,7 @@ import ViewIcon from '../../../bpk-component-icon/lg/view';
 import InfoIcon from '../../../bpk-component-icon/sm/information-circle';
 import BpkImage from '../../../bpk-component-image';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text/src/BpkText';
-import { cssModules , getDataComponentAttribute } from '../../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
 import { VARIANT, type CommonProps } from './common-types';
 
