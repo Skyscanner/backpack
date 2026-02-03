@@ -53,7 +53,14 @@ const BpkAriaLive = ({
     className,
   );
 
-  return <div aria-live={politenessSetting} className={classNames} {...getDataComponentAttribute('AriaLive')} {...rest} />;
+  return (
+    <div
+      aria-live={politenessSetting}
+      className={classNames}
+      {...getDataComponentAttribute('AriaLive')}
+      {...rest}
+    />
+  );
 };
 
 export default BpkAriaLive;

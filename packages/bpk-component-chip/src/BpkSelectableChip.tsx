@@ -62,7 +62,8 @@ const BpkSelectableChip = ({
   return (
     <button
       aria-checked={role === 'button' || role === 'tab' ? undefined : selected}
-      className={classNames} {...getDataComponentAttribute('SelectableChip')}
+      className={classNames}
+      {...getDataComponentAttribute('SelectableChip')}
       disabled={disabled}
       role={role}
       title={accessibilityLabel}

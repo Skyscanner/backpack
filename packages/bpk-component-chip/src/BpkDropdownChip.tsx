@@ -41,7 +41,8 @@ const BpkDropdownChip = ({
     leadingAccessoryView={leadingAccessoryView}
     selected={selected}
     type={type}
-    {...getDataComponentAttribute('DropdownChip')} {...rest}
+    {...getDataComponentAttribute('DropdownChip')}
+    {...rest}
     trailingAccessoryView={<ChevronDownIconSm />}
   />
 );

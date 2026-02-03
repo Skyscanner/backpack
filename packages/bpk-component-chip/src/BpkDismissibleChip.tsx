@@ -59,7 +59,8 @@ const BpkDismissibleChip = ({
       selected
       type={type}
       role="button" // Override role="checkbox" because this chip is not selectable.
-      className={classNames} {...getDataComponentAttribute('DismissibleChip')}
+      className={classNames}
+      {...getDataComponentAttribute('DismissibleChip')}
     />
   );
 };

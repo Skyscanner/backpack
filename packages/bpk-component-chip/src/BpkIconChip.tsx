@@ -35,9 +35,12 @@ export type BpkIconChipProps = {
 } & Omit<Props, 'trailingAccessoryView' | 'leadingAccessoryView' | 'children'>;
 
 const BpkIconChip = (props: BpkIconChipProps) => (
-    <BpkSelectableChip {...getDataComponentAttribute('IconChip')} {...props}>
-      {null}
-    </BpkSelectableChip>
-  );
+  <BpkSelectableChip
+    {...getDataComponentAttribute('IconChip')}
+    {...props}
+  >
+    {null}
+  </BpkSelectableChip>
+);
 
 export default BpkIconChip;

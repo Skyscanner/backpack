@@ -111,7 +111,10 @@ const BpkCalendarNav = ({
   const nextMonth = addMonths(baseMonth, 1);
 
   return (
-    <div className={getClassName('bpk-calendar-nav')} {...getDataComponentAttribute('CalendarNav')}>
+    <div
+      className={getClassName('bpk-calendar-nav')}
+      {...getDataComponentAttribute('CalendarNav')}
+    >
       <div style={{ display: 'table-row' }}>
         <div className={getClassName('bpk-calendar-nav__nudger')}>
           <button

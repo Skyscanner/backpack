@@ -31,9 +31,13 @@ const BpkBoilerplate = ({ ...rest }: Props) => {
   delete rest.className;
 
   return (
-    <div className={getClassName('bpk-boilerplate')} {...getDataComponentAttribute('Boilerplate')} {...rest}>
+    <div
+      className={getClassName('bpk-boilerplate')}
+      {...getDataComponentAttribute('Boilerplate')}
+      {...rest}
+    >
       I am an example component.
     </div>
-  )};
+  );};
 
 export default BpkBoilerplate;
