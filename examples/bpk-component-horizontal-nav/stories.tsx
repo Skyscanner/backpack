@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 
 import BpkHorizontalNav from '../../packages/bpk-component-horizontal-nav/src/BpkHorizontalNav';
 import BpkHorizontalNavItem from '../../packages/bpk-component-horizontal-nav/src/BpkHorizontalNavItem';

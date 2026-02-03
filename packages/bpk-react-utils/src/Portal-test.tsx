@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import { useState, useEffect, createRef } from 'react';
 
 import { render, waitFor, fireEvent } from '@testing-library/react';

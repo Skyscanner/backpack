@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import BpkBottomSheet, { PADDING_TYPE } from './src/BpkBottomSheet';
 
 import type { Props } from './src/BpkBottomSheet';

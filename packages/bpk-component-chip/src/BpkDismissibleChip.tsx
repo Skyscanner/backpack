@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 /*
 The dismissible chip component is just a selectable chip that's
 been hard coded to have disabled={false}, selected and a trailing

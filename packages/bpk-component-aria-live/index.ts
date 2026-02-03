@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import BpkAriaLive, {
   POLITENESS_SETTINGS as ARIA_LIVE_POLITENESS_SETTINGS,
   type Props as BpkAriaLiveProps,

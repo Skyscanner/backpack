@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type { CUSTOM_SIZE_TYPE } from './common-types';

@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkDismissibleChip should ignore setting a trailing accessory view, resulting in a close icon 1`] = `

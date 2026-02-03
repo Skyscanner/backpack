@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import BpkExtraLargeSpinner from './src/BpkExtraLargeSpinner';
 import BpkLargeSpinner from './src/BpkLargeSpinner';
 import BpkSpinner from './src/BpkSpinner';

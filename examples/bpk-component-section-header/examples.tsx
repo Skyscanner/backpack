@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import BpkButton from '../../packages/bpk-component-button';
 import { withButtonAlignment } from '../../packages/bpk-component-icon/index';
 import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';

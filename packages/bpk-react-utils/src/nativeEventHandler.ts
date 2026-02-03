@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 // There are cases where input element's values are modifed indirectly.
 // This causes the elements to not emit events that would have been if they had been modified by the user directly.
 // In order to maintain the expected native behaviour of the input element, It's possible to call this function during an

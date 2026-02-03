@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import type { CSSProperties, MouseEvent } from 'react';
 
 import { BUTTON_TYPES } from '../../bpk-component-button';

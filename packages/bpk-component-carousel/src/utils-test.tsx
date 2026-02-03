@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import { renderHook } from '@testing-library/react';
 
 import { useScrollToInitialImage, scrollToIndex } from './utils';

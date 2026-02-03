@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import { DateUtils } from '../../bpk-component-calendar';
 
 const getMonthsArray = (startDate: Date, count: number) => {

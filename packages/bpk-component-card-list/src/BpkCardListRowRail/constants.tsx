@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 
 export const RELEASE_LOCK_DELAY = 20;
 export const RENDER_BUFFER_SIZE = 3;

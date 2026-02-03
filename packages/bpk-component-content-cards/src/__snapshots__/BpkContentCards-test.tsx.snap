@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Content Card widget renders correctly with 1 card 1`] = `

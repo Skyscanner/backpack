@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 
 
 // TODO: Remove this file once all BPK components have been migrated to TS

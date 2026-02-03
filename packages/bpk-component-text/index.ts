@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import component, { TEXT_COLORS, TEXT_STYLES } from './src/BpkText';
 
 export default component;

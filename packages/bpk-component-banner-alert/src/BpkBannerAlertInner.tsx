@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 /* This is an internal component to Backpack that powers `BpkBannerAlert`,
  * `BpkBannerAlertDismissable` and `BpkBannerAlertExpandable`.
  */

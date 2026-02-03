@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 let scrollOffset = 0;
 
 const getWindow = () => (typeof window !== 'undefined' ? window : null);

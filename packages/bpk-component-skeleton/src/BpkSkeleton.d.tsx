@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import type { ComponentProps } from './common-types';
 
 declare const BpkSkeleton: (props: ComponentProps) => JSX.Element;

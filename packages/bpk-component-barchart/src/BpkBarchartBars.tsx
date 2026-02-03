@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import PropTypes from 'prop-types';
 
 import { borderRadiusXs } from '@skyscanner/bpk-foundations-web/tokens/base.es6';

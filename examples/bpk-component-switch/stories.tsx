@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import { ArgTypes,Title, Markdown } from '@storybook/addon-docs/blocks';
 
 import BpkSwitch from '../../packages/bpk-component-switch/src/BpkSwitch';

@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 
 import { BpkLargeSpinner, SPINNER_TYPES } from '../../bpk-component-spinner';
 import { cssModules } from '../../bpk-react-utils';

@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 
 const FONT_TYPES = { LARKEN: 'larken', SKYSCANNER: 'skyscanner' } as const;

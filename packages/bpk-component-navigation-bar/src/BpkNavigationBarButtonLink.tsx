@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import BpkLink, { type BpkLinkProps } from '../../bpk-component-link';
 import { getDataComponentAttribute } from '../../bpk-react-utils';
 

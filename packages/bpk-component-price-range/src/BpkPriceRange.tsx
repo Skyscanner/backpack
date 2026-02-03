@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import { useEffect, useRef, useState } from 'react';
 
 import clamp from 'lodash/clamp';

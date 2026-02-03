@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import { type MutableRefObject, useEffect, useState } from 'react';
 
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';

@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkBreakpoint children as a callback function should call function with matches=false if the breakpoint is not matched 1`] = `

@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 
 import NewWindowIcon from '../../packages/bpk-component-icon/sm/new-window';
 import BpkPrice, { SIZES, ALIGNS } from '../../packages/bpk-component-price';

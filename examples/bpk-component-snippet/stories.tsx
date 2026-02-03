@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 
 import BpkSnippet from '../../packages/bpk-component-snippet';

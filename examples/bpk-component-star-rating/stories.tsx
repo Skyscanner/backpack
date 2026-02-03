@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 
 
 import BpkInteractiveStar from '../../packages/bpk-component-star-rating/src/BpkInteractiveStar';

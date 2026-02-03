@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`AnimateAndFade should render correctly 1`] = `<DocumentFragment />`;

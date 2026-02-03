@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkDataTableHeader does not render sort icons if sorting disabled 1`] = `

@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 export const RATING_SIZES = { base: 'base', large: 'large' } as const;
 
 export const RATING_SCALES = {

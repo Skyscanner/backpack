@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import { BpkModalV2 } from '../../packages/bpk-component-modal/src/BpkModalV2/BpkModal';
 
 import {

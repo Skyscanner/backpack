@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import BpkSkeleton from "./src/BpkSkeleton";
 
 export { SIZE_TYPES, SKELETON_TYPES, IMAGE_SKELETON_STYLE, BACKGROUND_STYLE } from './src/common-types';

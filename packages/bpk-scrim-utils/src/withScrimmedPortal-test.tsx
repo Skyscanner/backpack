@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import '@testing-library/jest-dom';
 import { useEffect, useState } from 'react';
 import { renderToString } from 'react-dom/server';

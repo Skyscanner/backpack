@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkLoadingButton should add only bpk specific classes if className prop is set to empty string 1`] = `

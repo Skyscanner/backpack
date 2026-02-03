@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 
 import BpkInfoBanner from '../../packages/bpk-component-info-banner/src/BpkInfoBanner';
 import BpkInfoBannerDismissable from '../../packages/bpk-component-info-banner/src/BpkInfoBannerDismissable';

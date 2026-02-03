@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import BpkModal from './src/BpkModal';
 import { MODAL_STYLING } from './src/BpkModalInner';
 import { BpkModalV2 } from './src/BpkModalV2/BpkModal';

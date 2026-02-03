@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import { render } from '@testing-library/react';
 
 import { BpkButtonV2 as BpkButton } from './BpkButton';

@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
-
 import BpkSaveButton, { SIZE_TYPES, STYLE_TYPES } from './src/BpkSaveButton';
 
 export { BpkSaveButton, SIZE_TYPES, STYLE_TYPES };
