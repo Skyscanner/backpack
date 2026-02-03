@@ -34,8 +34,16 @@ export type Props = {
   [rest: string]: any, // Inexact rest. See decisions/inexact-rest.md
 };
 
-const BpkNavigationBarIconButton = ({ barStyle = BAR_STYLES.default, className, icon, ...rest }: Props) => (
-  <span className={className} {...getDataComponentAttribute('NavigationBarIconButton')}>
+const BpkNavigationBarIconButton = ({
+  barStyle = BAR_STYLES.default,
+  className,
+  icon,
+  ...rest
+}: Props) => (
+  <span
+    className={className}
+    {...getDataComponentAttribute('NavigationBarIconButton')}
+  >
     <BpkCloseButton
       customIcon={icon}
       onDark={barStyle === BAR_STYLES.onDark}

@@ -123,8 +123,9 @@ const BpkNavigationTabGroup = ({
       className={containerStyling}
       role="navigation"
       aria-label={ariaLabel}
+      {...getDataComponentAttribute('NavigationTabGroup')}
     >
-      <div role="tablist" className={getClassName('bpk-navigation-tab-list')} {...getDataComponentAttribute('NavigationTabGroup')}>
+      <div role="tablist" className={getClassName('bpk-navigation-tab-list')}>
         {tabs.map((tab, index) => {
           const selected = index === selectedTab;
           const {badgeText,icon,text,...tabWrapItem} = tab;
