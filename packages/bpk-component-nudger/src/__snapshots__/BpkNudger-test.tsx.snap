@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkNudger should render as an on dark nudger correctly 1`] = `

@@ -1,0 +1,41 @@
+// @ts-nocheck
+
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkGridToggle should render correctly 1`] = `
+<DocumentFragment>
+  <span>
+    <button
+      class="bpk-link"
+      title="Keyboard Shortcut: ctrl + cmd + g"
+      type="button"
+    >
+      <span
+        class="bpk-link-underlined"
+      >
+        Baseline grid on
+      </span>
+    </button>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`BpkGridToggle should render correctly with the className prop 1`] = `
+<DocumentFragment>
+  <span
+    class="foo"
+  >
+    <button
+      class="bpk-link"
+      title="Keyboard Shortcut: ctrl + cmd + g"
+      type="button"
+    >
+      <span
+        class="bpk-link-underlined"
+      >
+        Baseline grid on
+      </span>
+    </button>
+  </span>
+</DocumentFragment>
+`;

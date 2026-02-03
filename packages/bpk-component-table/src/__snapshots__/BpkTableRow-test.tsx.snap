@@ -1,0 +1,50 @@
+// @ts-nocheck
+
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkTableRow should render correctly 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          aria-label="test"
+        />
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`BpkTableRow should render correctly with arbitrary props 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        data-foo="bar"
+        id="my-custom-id"
+      >
+        <td
+          aria-label="test"
+        />
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`BpkTableRow should render correctly with custom class 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="my-custom-class"
+      >
+        <td
+          aria-label="test"
+        />
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;

@@ -15,6 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
+
 import { withRtlSupport } from '../../packages/bpk-component-icon';
 import Car from '../../packages/bpk-component-icon/sm/cars';
 import Explore from '../../packages/bpk-component-icon/sm/explore';

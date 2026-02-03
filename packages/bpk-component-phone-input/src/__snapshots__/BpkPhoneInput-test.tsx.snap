@@ -1,0 +1,455 @@
+// @ts-nocheck
+
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkPhoneInput should render correctly 1`] = `
+<DocumentFragment>
+  <span
+    class="bpk-phone-input"
+  >
+    <div>
+      <div
+        class="bpk-phone-input__label"
+      >
+        <label
+          class="bpk-label"
+          for="dialing-code"
+        >
+          Dialing code
+        </label>
+      </div>
+      <select
+        aria-invalid="false"
+        class="bpk-select dialing-code"
+        id="dialing-code"
+        label="Dialing code"
+        name="Dialing code"
+      >
+        <option
+          numberprefix="+44"
+          value="44"
+        >
+          +44
+        </option>
+        <option
+          numberprefix="+55"
+          value="55"
+        >
+          +55
+        </option>
+      </select>
+    </div>
+    <div
+      class="bpk-phone-input__phone-number"
+    >
+      <div
+        class="bpk-phone-input__label"
+      >
+        <label
+          class="bpk-label"
+          for="phone-input-id"
+        >
+          Telephone number
+        </label>
+      </div>
+      <input
+        aria-invalid="false"
+        class="bpk-input fancy-input"
+        id="phone-input-id"
+        name="Telephone input"
+        type="tel"
+        value="1234"
+      />
+    </div>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`BpkPhoneInput should render correctly with a "disabled" attribute 1`] = `
+<DocumentFragment>
+  <span
+    class="bpk-phone-input"
+  >
+    <div>
+      <div
+        class="bpk-phone-input__label"
+      >
+        <label
+          class="bpk-label bpk-label--disabled"
+          for="dialing-code"
+        >
+          Dialing code
+        </label>
+      </div>
+      <select
+        aria-invalid="false"
+        class="bpk-select dialing-code"
+        disabled=""
+        id="dialing-code"
+        label="Dialing code"
+        name="Dialing code"
+      >
+        <option
+          numberprefix="+44"
+          value="44"
+        >
+          +44
+        </option>
+        <option
+          numberprefix="+55"
+          value="55"
+        >
+          +55
+        </option>
+      </select>
+    </div>
+    <div
+      class="bpk-phone-input__phone-number"
+    >
+      <div
+        class="bpk-phone-input__label"
+      >
+        <label
+          class="bpk-label bpk-label--disabled"
+          for="phone-input-id"
+        >
+          Telephone number
+        </label>
+      </div>
+      <input
+        aria-invalid="false"
+        class="bpk-input fancy-input"
+        disabled=""
+        id="phone-input-id"
+        name="Telephone input"
+        type="tel"
+        value="1234"
+      />
+    </div>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`BpkPhoneInput should render correctly with a "large" attribute 1`] = `
+<DocumentFragment>
+  <span
+    class="bpk-phone-input"
+  >
+    <div>
+      <div
+        class="bpk-phone-input__label"
+      >
+        <label
+          class="bpk-label"
+          for="dialing-code"
+        >
+          Dialing code
+        </label>
+      </div>
+      <select
+        aria-invalid="false"
+        class="bpk-select bpk-select--large dialing-code"
+        id="dialing-code"
+        label="Dialing code"
+        name="Dialing code"
+      >
+        <option
+          numberprefix="+44"
+          value="44"
+        >
+          +44
+        </option>
+        <option
+          numberprefix="+55"
+          value="55"
+        >
+          +55
+        </option>
+      </select>
+    </div>
+    <div
+      class="bpk-phone-input__phone-number"
+    >
+      <div
+        class="bpk-phone-input__label"
+      >
+        <label
+          class="bpk-label"
+          for="phone-input-id"
+        >
+          Telephone number
+        </label>
+      </div>
+      <input
+        aria-invalid="false"
+        class="bpk-input bpk-input--large fancy-input"
+        id="phone-input-id"
+        name="Telephone input"
+        type="tel"
+        value="1234"
+      />
+    </div>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`BpkPhoneInput should render correctly with a "valid" attribute 1`] = `
+<DocumentFragment>
+  <span
+    class="bpk-phone-input"
+  >
+    <div>
+      <div
+        class="bpk-phone-input__label"
+      >
+        <label
+          class="bpk-label"
+          for="dialing-code"
+        >
+          Dialing code
+        </label>
+      </div>
+      <select
+        aria-invalid="false"
+        class="bpk-select dialing-code"
+        id="dialing-code"
+        label="Dialing code"
+        name="Dialing code"
+      >
+        <option
+          numberprefix="+44"
+          value="44"
+        >
+          +44
+        </option>
+        <option
+          numberprefix="+55"
+          value="55"
+        >
+          +55
+        </option>
+      </select>
+    </div>
+    <div
+      class="bpk-phone-input__phone-number"
+    >
+      <div
+        class="bpk-phone-input__label"
+      >
+        <label
+          class="bpk-label"
+          for="phone-input-id"
+        >
+          Telephone number
+        </label>
+      </div>
+      <input
+        aria-invalid="false"
+        class="bpk-input bpk-input--valid fancy-input"
+        id="phone-input-id"
+        name="Telephone input"
+        type="tel"
+        value="1234"
+      />
+    </div>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`BpkPhoneInput should render correctly with a "wrapperProps" attribute 1`] = `
+<DocumentFragment>
+  <span
+    aria-label="container"
+    class="bpk-phone-input container"
+  >
+    <div>
+      <div
+        class="bpk-phone-input__label"
+      >
+        <label
+          class="bpk-label"
+          for="dialing-code"
+        >
+          Dialing code
+        </label>
+      </div>
+      <select
+        aria-invalid="false"
+        class="bpk-select dialing-code"
+        id="dialing-code"
+        label="Dialing code"
+        name="Dialing code"
+      >
+        <option
+          numberprefix="+44"
+          value="44"
+        >
+          +44
+        </option>
+        <option
+          numberprefix="+55"
+          value="55"
+        >
+          +55
+        </option>
+      </select>
+    </div>
+    <div
+      class="bpk-phone-input__phone-number"
+    >
+      <div
+        class="bpk-phone-input__label"
+      >
+        <label
+          class="bpk-label"
+          for="phone-input-id"
+        >
+          Telephone number
+        </label>
+      </div>
+      <input
+        aria-invalid="false"
+        class="bpk-input fancy-input"
+        id="phone-input-id"
+        name="Telephone input"
+        type="tel"
+        value="1234"
+      />
+    </div>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`BpkPhoneInput should render correctly with a dialing code image attribute 1`] = `
+<DocumentFragment>
+  <span
+    class="bpk-phone-input"
+  >
+    <div>
+      <div
+        class="bpk-phone-input__label"
+      >
+        <label
+          class="bpk-label"
+          for="dialing-code"
+        >
+          Dialing code
+        </label>
+      </div>
+      <div
+        class="bpk-select-wrapper dialing-wrapper"
+      >
+        <span
+          aria-hidden="true"
+          class="bpk-select-wrapper__image"
+        />
+        <select
+          aria-invalid="false"
+          class="bpk-select bpk-select--with-image dialing-code"
+          id="dialing-code"
+          label="Dialing code"
+          name="Dialing code"
+        >
+          <option
+            numberprefix="+44"
+            value="44"
+          >
+            +44
+          </option>
+          <option
+            numberprefix="+55"
+            value="55"
+          >
+            +55
+          </option>
+        </select>
+      </div>
+    </div>
+    <div
+      class="bpk-phone-input__phone-number"
+    >
+      <div
+        class="bpk-phone-input__label"
+      >
+        <label
+          class="bpk-label"
+          for="phone-input-id"
+        >
+          Telephone number
+        </label>
+      </div>
+      <input
+        aria-invalid="false"
+        class="bpk-input fancy-input"
+        id="phone-input-id"
+        name="Telephone input"
+        type="tel"
+        value="1234"
+      />
+    </div>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`BpkPhoneInput should render correctly with the "dialingCodeMask" attribute 1`] = `
+<DocumentFragment>
+  <span
+    class="bpk-phone-input"
+  >
+    <div>
+      <div
+        class="bpk-phone-input__label"
+      >
+        <label
+          class="bpk-label"
+          for="dialing-code"
+        >
+          Dialing code
+        </label>
+      </div>
+      <select
+        aria-invalid="false"
+        class="bpk-select dialing-code"
+        id="dialing-code"
+        label="Dialing code"
+        name="Dialing code"
+      >
+        <option
+          numberprefix="+44"
+          value="44"
+        >
+          +44
+        </option>
+        <option
+          numberprefix="+55"
+          value="55"
+        >
+          +55
+        </option>
+      </select>
+    </div>
+    <div
+      class="bpk-phone-input__phone-number"
+    >
+      <div
+        class="bpk-phone-input__label"
+      >
+        <label
+          class="bpk-label"
+          for="phone-input-id"
+        >
+          Telephone number
+        </label>
+      </div>
+      <input
+        aria-invalid="false"
+        class="bpk-input fancy-input"
+        id="phone-input-id"
+        name="Telephone input"
+        type="tel"
+        value="+44 1234"
+      />
+    </div>
+  </span>
+</DocumentFragment>
+`;

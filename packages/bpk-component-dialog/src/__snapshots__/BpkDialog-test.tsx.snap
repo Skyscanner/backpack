@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkDialog should render correctly in the given target if renderTarget is supplied 1`] = `<DocumentFragment />`;

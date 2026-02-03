@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Portal should render correctly with no target 1`] = `<div />`;

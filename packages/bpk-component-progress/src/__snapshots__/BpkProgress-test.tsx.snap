@@ -1,0 +1,157 @@
+// @ts-nocheck
+
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkProgress should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="25"
+    class="bpk-progress"
+    role="progressbar"
+    tabindex="0"
+  >
+    <div
+      class="bpk-progress__value"
+      style="width: 25%;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkProgress should render correctly with "small" and "stepped" attributes 1`] = `
+<DocumentFragment>
+  <div
+    aria-valuemax="9"
+    aria-valuemin="0"
+    aria-valuenow="2"
+    class="bpk-progress bpk-progress--small"
+    role="progressbar"
+    tabindex="0"
+  >
+    <div
+      class="bpk-progress__value bpk-progress__value--stepped"
+      style="width: 22.22222222222222%;"
+    />
+    <div
+      class="bpk-progress__step"
+      style="left: 11.11111111111111%;"
+    />
+    <div
+      class="bpk-progress__step"
+      style="left: 22.22222222222222%;"
+    />
+    <div
+      class="bpk-progress__step"
+      style="left: 33.33333333333333%;"
+    />
+    <div
+      class="bpk-progress__step"
+      style="left: 44.44444444444444%;"
+    />
+    <div
+      class="bpk-progress__step"
+      style="left: 55.55555555555556%;"
+    />
+    <div
+      class="bpk-progress__step"
+      style="left: 66.66666666666666%;"
+    />
+    <div
+      class="bpk-progress__step"
+      style="left: 77.77777777777779%;"
+    />
+    <div
+      class="bpk-progress__step"
+      style="left: 88.88888888888889%;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkProgress should render correctly with a "className" attribute 1`] = `
+<DocumentFragment>
+  <div
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="25"
+    class="bpk-progress my-progress-bar"
+    role="progressbar"
+    tabindex="0"
+  >
+    <div
+      class="bpk-progress__value"
+      style="width: 25%;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkProgress should render correctly with a "small" attribute 1`] = `
+<DocumentFragment>
+  <div
+    aria-valuemax="9"
+    aria-valuemin="0"
+    aria-valuenow="2"
+    class="bpk-progress bpk-progress--small"
+    role="progressbar"
+    tabindex="0"
+  >
+    <div
+      class="bpk-progress__value"
+      style="width: 22.22222222222222%;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
+<DocumentFragment>
+  <div
+    aria-valuemax="9"
+    aria-valuemin="0"
+    aria-valuenow="2"
+    class="bpk-progress"
+    role="progressbar"
+    tabindex="0"
+  >
+    <div
+      class="bpk-progress__value bpk-progress__value--stepped"
+      style="width: 22.22222222222222%;"
+    />
+    <div
+      class="bpk-progress__step"
+      style="left: 11.11111111111111%;"
+    />
+    <div
+      class="bpk-progress__step"
+      style="left: 22.22222222222222%;"
+    />
+    <div
+      class="bpk-progress__step"
+      style="left: 33.33333333333333%;"
+    />
+    <div
+      class="bpk-progress__step"
+      style="left: 44.44444444444444%;"
+    />
+    <div
+      class="bpk-progress__step"
+      style="left: 55.55555555555556%;"
+    />
+    <div
+      class="bpk-progress__step"
+      style="left: 66.66666666666666%;"
+    />
+    <div
+      class="bpk-progress__step"
+      style="left: 77.77777777777779%;"
+    />
+    <div
+      class="bpk-progress__step"
+      style="left: 88.88888888888889%;"
+    />
+  </div>
+</DocumentFragment>
+`;

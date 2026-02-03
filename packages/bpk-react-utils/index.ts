@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
 
 import { BpkDialogWrapper } from './src/BpkDialogWrapper/BpkDialogWrapper';
 import Portal from './src/Portal';

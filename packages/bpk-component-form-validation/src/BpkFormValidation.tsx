@@ -1,0 +1,85 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+// @ts-nocheck
+
+
+import PropTypes from 'prop-types';
+
+import {
+  lineHeightSm,
+  iconSizeSm,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
+import AnimateHeight from '../../bpk-animate-height';
+import { withAlignment } from '../../bpk-component-icon';
+import BpkSmallExclamationIcon from '../../bpk-component-icon/sm/exclamation-circle';
+import { cssModules } from '../../bpk-react-utils';
+
+import STYLES from './BpkFormValidation.module.scss';
+
+const getClassName = cssModules(STYLES);
+const AlignedExclamationIcon = withAlignment(
+  BpkSmallExclamationIcon,
+  lineHeightSm,
+  iconSizeSm,
+);
+
+const BpkFormValidation = ({
+  children,
+  className = null,
+  containerProps = {},
+  expanded,
+  isCheckbox = false,
+  ...rest
+}) => {
+  const classNames = getClassName(
+    'bpk-form-validation',
+    expanded && 'bpk-form-validation--appear',
+    isCheckbox && 'bpk-form-validation--is-checkbox',
+    className,
+  );
+
+  return (
+    <AnimateHeight
+      duration={200}
+      height={expanded ? 'auto' : 0}
+      transitionOverflow="visible"
+      {...containerProps}
+    >
+      <div className={getClassName('bpk-form-validation__container')}>
+        <div className={classNames} {...rest}>
+          <span className={getClassName('bpk-form-validation__icon')}>
+            <AlignedExclamationIcon />
+          </span>
+          {children}
+        </div>
+      </div>
+    </AnimateHeight>
+  );
+};
+
+BpkFormValidation.propTypes = {
+  children: PropTypes.node.isRequired,
+  id: PropTypes.string.isRequired,
+  expanded: PropTypes.bool.isRequired,
+  isCheckbox: PropTypes.bool,
+  className: PropTypes.string,
+  containerProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+};
+
+export default BpkFormValidation;

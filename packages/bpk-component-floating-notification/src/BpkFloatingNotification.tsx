@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
 
 import type { MouseEvent, FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';

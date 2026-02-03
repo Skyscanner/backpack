@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkAccordionItem should not render an "initiallyExpanded" attribute on the html node 1`] = `

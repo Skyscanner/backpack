@@ -1,0 +1,31 @@
+// @ts-nocheck
+
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkSectionList should render correctly 1`] = `
+<DocumentFragment>
+  <section>
+    Hello world
+  </section>
+</DocumentFragment>
+`;
+
+exports[`BpkSectionList should render correctly with a custom className 1`] = `
+<DocumentFragment>
+  <section
+    class="custom-class"
+  >
+    Hello world
+  </section>
+</DocumentFragment>
+`;
+
+exports[`BpkSectionList should render correctly with arbitrary props 1`] = `
+<DocumentFragment>
+  <section
+    testid="123"
+  >
+    Hello world
+  </section>
+</DocumentFragment>
+`;

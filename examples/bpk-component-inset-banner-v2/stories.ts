@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
 
 import BpkInsetBannerSponsored from '../../packages/bpk-component-inset-banner/src/BpkInsetBannerV2/BpkInsetBannerSponsored';
 

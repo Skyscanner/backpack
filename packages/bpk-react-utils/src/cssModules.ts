@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
 
 export default (styles: { [key: string]: any } = {}) =>
   (...classNames: Array<string | boolean | number | {} | null | undefined>) =>

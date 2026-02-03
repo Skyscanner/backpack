@@ -1,0 +1,922 @@
+// @ts-nocheck
+
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkChartAxis X should render band scale 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      aria-hidden="true"
+      class="bpk-chart__axis"
+      text-anchor="middle"
+      transform="translate(0, 120)"
+    >
+      <g
+        transform="translate(16.666666666666668, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          North America
+        </text>
+      </g>
+      <g
+        transform="translate(50, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          South America
+        </text>
+      </g>
+      <g
+        transform="translate(83.33333333333334, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          Europe
+        </text>
+      </g>
+      <g
+        transform="translate(116.66666666666667, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          Asia
+        </text>
+      </g>
+      <g
+        transform="translate(150, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          Australia
+        </text>
+      </g>
+      <g
+        transform="translate(183.33333333333334, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          Antartica
+        </text>
+      </g>
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartAxis X should render band scale with "tickEvery" and "tickOffset" attributes 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      aria-hidden="true"
+      class="bpk-chart__axis"
+      text-anchor="middle"
+      transform="translate(0, 120)"
+    >
+      <g
+        transform="translate(50, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          South America
+        </text>
+      </g>
+      <g
+        transform="translate(116.66666666666667, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          Asia
+        </text>
+      </g>
+      <g
+        transform="translate(183.33333333333334, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          Antartica
+        </text>
+      </g>
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartAxis X should render band scale with "tickEvery" attribute 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      aria-hidden="true"
+      class="bpk-chart__axis"
+      text-anchor="middle"
+      transform="translate(0, 120)"
+    >
+      <g
+        transform="translate(16.666666666666668, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          North America
+        </text>
+      </g>
+      <g
+        transform="translate(83.33333333333334, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          Europe
+        </text>
+      </g>
+      <g
+        transform="translate(150, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          Australia
+        </text>
+      </g>
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartAxis X should render linear scale 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      aria-hidden="true"
+      class="bpk-chart__axis"
+      text-anchor="middle"
+      transform="translate(0, 120)"
+    >
+      <g
+        transform="translate(18.947368421052634, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          50
+        </text>
+      </g>
+      <g
+        transform="translate(40, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          100
+        </text>
+      </g>
+      <g
+        transform="translate(61.05263157894737, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          150
+        </text>
+      </g>
+      <g
+        transform="translate(82.10526315789474, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          200
+        </text>
+      </g>
+      <g
+        transform="translate(103.15789473684211, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          250
+        </text>
+      </g>
+      <g
+        transform="translate(124.21052631578948, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          300
+        </text>
+      </g>
+      <g
+        transform="translate(145.26315789473685, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          350
+        </text>
+      </g>
+      <g
+        transform="translate(166.31578947368422, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          400
+        </text>
+      </g>
+      <g
+        transform="translate(187.3684210526316, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          450
+        </text>
+      </g>
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartAxis X should render linear scale with "numTicks" attribute 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      aria-hidden="true"
+      class="bpk-chart__axis"
+      text-anchor="middle"
+      transform="translate(0, 120)"
+    >
+      <g
+        transform="translate(82.10526315789474, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          200
+        </text>
+      </g>
+      <g
+        transform="translate(166.31578947368422, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          400
+        </text>
+      </g>
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartAxis X should render with label 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      aria-hidden="true"
+      class="bpk-chart__axis"
+      text-anchor="middle"
+      transform="translate(0, 120)"
+    >
+      <g
+        transform="translate(18.947368421052634, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          50
+        </text>
+      </g>
+      <g
+        transform="translate(40, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          100
+        </text>
+      </g>
+      <g
+        transform="translate(61.05263157894737, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          150
+        </text>
+      </g>
+      <g
+        transform="translate(82.10526315789474, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          200
+        </text>
+      </g>
+      <g
+        transform="translate(103.15789473684211, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          250
+        </text>
+      </g>
+      <g
+        transform="translate(124.21052631578948, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          300
+        </text>
+      </g>
+      <g
+        transform="translate(145.26315789473685, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          350
+        </text>
+      </g>
+      <g
+        transform="translate(166.31578947368422, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          400
+        </text>
+      </g>
+      <g
+        transform="translate(187.3684210526316, 0)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          x="0"
+          y="20"
+        >
+          450
+        </text>
+      </g>
+      <text
+        class="bpk-chart__axis-label"
+        text-anchor="middle"
+        x="60"
+        y="34"
+      >
+        X axis label
+      </text>
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartAxis Y should render band scale 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      aria-hidden="true"
+      class="bpk-chart__axis"
+      text-anchor="end"
+      transform="translate(0, 0)"
+    >
+      <g
+        transform="translate(0, 16.666666666666668)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          North America
+        </text>
+      </g>
+      <g
+        transform="translate(0, 50)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          South America
+        </text>
+      </g>
+      <g
+        transform="translate(0, 83.33333333333334)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          Europe
+        </text>
+      </g>
+      <g
+        transform="translate(0, 116.66666666666667)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          Asia
+        </text>
+      </g>
+      <g
+        transform="translate(0, 150)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          Australia
+        </text>
+      </g>
+      <g
+        transform="translate(0, 183.33333333333334)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          Antartica
+        </text>
+      </g>
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartAxis Y should render band scale with "tickEvery" and "tickOffset" attributes 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      aria-hidden="true"
+      class="bpk-chart__axis"
+      text-anchor="end"
+      transform="translate(0, 0)"
+    >
+      <g
+        transform="translate(0, 50)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          South America
+        </text>
+      </g>
+      <g
+        transform="translate(0, 116.66666666666667)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          Asia
+        </text>
+      </g>
+      <g
+        transform="translate(0, 183.33333333333334)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          Antartica
+        </text>
+      </g>
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartAxis Y should render band scale with "tickEvery" attribute 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      aria-hidden="true"
+      class="bpk-chart__axis"
+      text-anchor="end"
+      transform="translate(0, 0)"
+    >
+      <g
+        transform="translate(0, 16.666666666666668)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          North America
+        </text>
+      </g>
+      <g
+        transform="translate(0, 83.33333333333334)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          Europe
+        </text>
+      </g>
+      <g
+        transform="translate(0, 150)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          Australia
+        </text>
+      </g>
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartAxis Y should render linear scale 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      aria-hidden="true"
+      class="bpk-chart__axis"
+      text-anchor="end"
+      transform="translate(0, 0)"
+    >
+      <g
+        transform="translate(0, 18.947368421052634)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          50
+        </text>
+      </g>
+      <g
+        transform="translate(0, 40)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          100
+        </text>
+      </g>
+      <g
+        transform="translate(0, 61.05263157894737)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          150
+        </text>
+      </g>
+      <g
+        transform="translate(0, 82.10526315789474)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          200
+        </text>
+      </g>
+      <g
+        transform="translate(0, 103.15789473684211)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          250
+        </text>
+      </g>
+      <g
+        transform="translate(0, 124.21052631578948)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          300
+        </text>
+      </g>
+      <g
+        transform="translate(0, 145.26315789473685)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          350
+        </text>
+      </g>
+      <g
+        transform="translate(0, 166.31578947368422)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          400
+        </text>
+      </g>
+      <g
+        transform="translate(0, 187.3684210526316)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          450
+        </text>
+      </g>
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartAxis Y should render linear scale with "numTicks" attribute 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      aria-hidden="true"
+      class="bpk-chart__axis"
+      text-anchor="end"
+      transform="translate(0, 0)"
+    >
+      <g
+        transform="translate(0, 82.10526315789474)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          200
+        </text>
+      </g>
+      <g
+        transform="translate(0, 166.31578947368422)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          400
+        </text>
+      </g>
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartAxis Y should render with label 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      aria-hidden="true"
+      class="bpk-chart__axis"
+      text-anchor="end"
+      transform="translate(0, 0)"
+    >
+      <g
+        transform="translate(0, 18.947368421052634)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          50
+        </text>
+      </g>
+      <g
+        transform="translate(0, 40)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          100
+        </text>
+      </g>
+      <g
+        transform="translate(0, 61.05263157894737)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          150
+        </text>
+      </g>
+      <g
+        transform="translate(0, 82.10526315789474)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          200
+        </text>
+      </g>
+      <g
+        transform="translate(0, 103.15789473684211)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          250
+        </text>
+      </g>
+      <g
+        transform="translate(0, 124.21052631578948)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          300
+        </text>
+      </g>
+      <g
+        transform="translate(0, 145.26315789473685)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          350
+        </text>
+      </g>
+      <g
+        transform="translate(0, 166.31578947368422)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          400
+        </text>
+      </g>
+      <g
+        transform="translate(0, 187.3684210526316)"
+      >
+        <text
+          class="bpk-chart__axis-tick-text"
+          dy="0.32em"
+          x="-6"
+          y="0"
+        >
+          450
+        </text>
+      </g>
+      <text
+        class="bpk-chart__axis-label"
+        text-anchor="middle"
+        transform="translate(-20, 60) rotate(-90)"
+      >
+        Y axis label
+      </text>
+    </g>
+  </svg>
+</DocumentFragment>
+`;

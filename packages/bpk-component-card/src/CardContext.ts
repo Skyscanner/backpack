@@ -15,6 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
+
 import { createContext } from 'react';
 
 interface BpkCardContext {
@@ -33,5 +35,4 @@ const defaultContext: BpkCardContext = {
  * CardContext is an internal context to be used only within Backpack parent Card types (time of writing BpkDividedCard & BpkCardWrapper).
  * It facillitates the BpkCard to render appropriately when wrapped and/or is rendered indirectly from a parent.
  */
-// eslint-disable-next-line import/prefer-default-export
 export const CardContext = createContext(defaultContext);

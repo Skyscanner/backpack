@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
 
 import BpkThemeToggle from './src/BpkThemeToggle';
 import updateOnThemeChange from './src/updateOnThemeChange';

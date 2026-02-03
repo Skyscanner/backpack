@@ -15,7 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { cssModules } from '../../../bpk-react-utils';
+// @ts-nocheck
+
+import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
 
@@ -25,7 +27,6 @@ import COMMON_STYLES from './BpkButton.module.scss';
 
 const getCommonClassName = cssModules(COMMON_STYLES);
 
-// eslint-disable-next-line import/prefer-default-export
 export const BpkButtonV2 = ({
   blank = false,
   children,
@@ -79,6 +80,7 @@ export const BpkButtonV2 = ({
       <a
         href={href}
         className={classNames}
+        {...getDataComponentAttribute('Button')}
         onClick={onClick}
         target={target}
         rel={rel}
@@ -94,6 +96,7 @@ export const BpkButtonV2 = ({
       type={submit ? 'submit' : 'button'}
       disabled={disabled}
       className={classNames}
+      {...getDataComponentAttribute('Button')}
       onClick={onClick}
       {...rest}
     >

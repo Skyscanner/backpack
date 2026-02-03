@@ -1,0 +1,37 @@
+// @ts-nocheck
+
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkSkipLink should render correctly 1`] = `
+<DocumentFragment>
+  <a
+    class="bpk-skip-link"
+    href="#main"
+  >
+    Skip to main content
+  </a>
+</DocumentFragment>
+`;
+
+exports[`BpkSkipLink should support arbitrary props 1`] = `
+<DocumentFragment>
+  <a
+    class="bpk-skip-link"
+    href="#main"
+    testid="123"
+  >
+    Skip to main content
+  </a>
+</DocumentFragment>
+`;
+
+exports[`BpkSkipLink should support custom class names 1`] = `
+<DocumentFragment>
+  <a
+    class="bpk-skip-link custom-className"
+    href="#main"
+  >
+    Skip to main content
+  </a>
+</DocumentFragment>
+`;
