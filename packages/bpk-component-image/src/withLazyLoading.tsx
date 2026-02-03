@@ -114,7 +114,7 @@ export default function withLazyLoading<P extends object>(
             return supportsPassiveOption;
           },
         });
-        const noop = function () {};
+        const noop = () => {};
         window.addEventListener('test', noop, opts);
         window.removeEventListener('test', noop, opts);
       } catch (e) {

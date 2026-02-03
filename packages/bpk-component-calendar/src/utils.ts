@@ -29,7 +29,7 @@ const splitToken = (value: string) => {
       `Invalid token value. Expecting a valid css unit, got ${value}`,
     );
   }
-  const [_, val, unit] = match;
+  const [, val, unit] = match;
   return [parseFloat(val), unit];
 };
 

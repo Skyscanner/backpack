@@ -49,6 +49,7 @@ const useLegacyWarning = (query: string, legacy: boolean, isClient: boolean) =>
     if (isClient) {
       // @ts-expect-error invariant check. query: string matching limited BREAKPOINTS string values
       if (!legacy && !Object.values(BREAKPOINTS).includes(query)) {
+        // eslint-disable-next-line no-console
         console.warn(
           `Invalid query ${query}. Use one of the supported queries or pass the legacy prop.`,
         );

@@ -38,16 +38,18 @@ const preview: Preview = {
       try {
         root = document?.querySelector(':root');
         (root as HTMLElement).style.setProperty('font-size', fontSize);
-      } catch(e) {
+      } catch (e) {
+        // eslint-disable-next-line no-console
         console.error(e);
       }
       return (
         <div>
-            {story()}
+          {story()}
           <br />
           <BpkRtlToggle />
         </div>
-    )},
+      );
+    },
   ],
 
   parameters: {
@@ -58,9 +60,9 @@ const preview: Preview = {
       page: () => (
         <>
           <Title />
-          <ArgTypes exclude={['zoomEnabled']}/>
+          <ArgTypes exclude={['zoomEnabled']} />
         </>
-      )
+      ),
     },
   },
 
@@ -68,7 +70,7 @@ const preview: Preview = {
     zoomEnabled: false,
   },
 
-  tags: ['autodocs']
+  tags: ['autodocs'],
 };
 
 export default preview;

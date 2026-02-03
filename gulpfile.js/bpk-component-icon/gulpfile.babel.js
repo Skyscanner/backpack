@@ -19,6 +19,7 @@
 const fs = require('fs');
 
 const gulp = require('gulp');
+const rename = require('gulp-rename');
 
 const ICONS_FOLDER_PATH = './node_modules/@skyscanner/bpk-svgs/dist/js/icons';
 
@@ -29,6 +30,14 @@ const rm = (path, options) =>
 gulp.task('copy', () =>
   gulp
     .src(`${ICONS_FOLDER_PATH}/**/*`)
+    .pipe(
+      rename((path) => {
+        if (path.extname === '.jsx') {
+          // eslint-disable-next-line no-param-reassign
+          path.extname = '.tsx';
+        }
+      }),
+    )
     .pipe(gulp.dest('./packages/bpk-component-icon')),
 );
 

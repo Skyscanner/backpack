@@ -163,6 +163,16 @@
   },
   "overrides": [
     {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "rules": {
+        "no-undef": "off",
+        "react/prop-types": "off",
+        "react/default-props-match-prop-types": "off",
+        "react/sort-comp": "off",
+        "import/prefer-default-export": "off"
+      }
+    },
+    {
       "files": ["*test*", "*examples*"],
       "rules": {
         "@skyscanner/rules/forbid-component-props": ["off"]

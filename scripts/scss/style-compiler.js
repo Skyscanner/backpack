@@ -61,6 +61,7 @@ async function compile(sassPath) {
       ],
     });
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.error(e)
   }
   const data = new Uint8Array(Buffer.from(`${licenseHeader}\n${result.css}`));
