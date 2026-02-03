@@ -45,7 +45,8 @@ const BpkBannerAlert = ({
     animateOnLeave={animateOnLeave}
     show={show}
     icon={icon}
-    {...getDataComponentAttribute('BannerAlert')} {...rest}
+    {...getDataComponentAttribute('BannerAlert')}
+    {...rest}
   />
 );
 

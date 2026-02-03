@@ -31,7 +31,8 @@ const BpkBannerAlertDismissable = ({ onDismiss = null, ...rest }: Props) => (
   <BpkBannerAlertInner
     configuration={CONFIGURATION.DISMISSABLE}
     onDismiss={onDismiss}
-    {...getDataComponentAttribute('BannerAlertDismissable')} {...rest}
+    {...getDataComponentAttribute('BannerAlertDismissable')}
+    {...rest}
   />
 );
 

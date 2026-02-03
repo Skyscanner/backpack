@@ -571,7 +571,6 @@ exports[`BpkBannerAlertInner should render correctly with a element based messag
                     <svg
                       aria-hidden="true"
                       class="bpk-banner-alert__expand-icon"
-                      data-backpack-ds-component="BannerAlertInner"
                       height="1.5rem"
                       viewBox="0 0 24 24"
                       width="1.5rem"
@@ -818,7 +817,6 @@ exports[`BpkBannerAlertInner should render correctly with child nodes 1`] = `
                     <svg
                       aria-hidden="true"
                       class="bpk-banner-alert__expand-icon"
-                      data-backpack-ds-component="BannerAlertInner"
                       height="1.5rem"
                       viewBox="0 0 24 24"
                       width="1.5rem"

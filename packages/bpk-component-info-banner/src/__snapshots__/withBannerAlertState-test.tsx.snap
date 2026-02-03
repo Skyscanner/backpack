@@ -10,7 +10,6 @@ exports[`withBannerAlertState(BpkInfoBannerDismissable) should render correctly 
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
-            data-backpack-ds-component="InfoBannerInner"
           >
             <div
               class="bpk-info-banner__header"
@@ -99,7 +98,6 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly c
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
-            data-backpack-ds-component="InfoBannerInner"
           >
             <button
               aria-expanded="false"
@@ -199,7 +197,6 @@ exports[`withBannerAlertState(BpkInfoBannerExpandable) should render correctly e
         <div>
           <div
             class="bpk-info-banner bpk-info-banner--success bpk-info-banner--style-default"
-            data-backpack-ds-component="InfoBannerInner"
           >
             <button
               aria-expanded="true"

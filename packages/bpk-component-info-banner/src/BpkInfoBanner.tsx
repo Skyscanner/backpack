@@ -22,7 +22,6 @@ import BpkInfoBannerInner from './BpkInfoBannerInner';
 
 import type { CommonProps } from './common-types';
 
-
 const BpkInfoBanner = ({
   animateOnEnter = false,
   animateOnLeave = false,
@@ -35,7 +34,8 @@ const BpkInfoBanner = ({
     animateOnLeave={animateOnLeave}
     show={show}
     icon={icon}
-    {...getDataComponentAttribute('InfoBanner')} {...rest}
+    {...getDataComponentAttribute('InfoBanner')}
+    {...rest}
   />
 );
 

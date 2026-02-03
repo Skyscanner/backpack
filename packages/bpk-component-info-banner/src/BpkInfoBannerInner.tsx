@@ -35,7 +35,7 @@ import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 import BpkLink from '../../bpk-component-link';
 import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
-import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 
 import AnimateAndFade from './AnimateAndFade';
 import { ALERT_TYPES, STYLE_TYPES } from './common-types';
@@ -173,7 +173,7 @@ const BpkInfoBannerInner = ({
       show={show}
       {...rest}
     >
-      <div className={classNames} {...getDataComponentAttribute('InfoBannerInner')}>
+      <div className={classNames}>
         <BannerHeader
           aria-expanded={isExpandable ? expanded : undefined}
           type={isExpandable ? 'button' : undefined}

@@ -44,7 +44,8 @@ const BpkInfoBannerExpandable = ({
     configuration={CONFIGURATION.EXPANDABLE}
     expanded={expanded}
     onExpandToggle={onExpandToggle}
-    {...getDataComponentAttribute('InfoBannerExpandable')} {...rest}
+    {...getDataComponentAttribute('InfoBannerExpandable')}
+    {...rest}
   >
     {children}
   </BpkInfoBannerInner>

@@ -83,7 +83,7 @@ const BpkInsetBanner = ({
   const popoverMarginEnd = callToAction?.popoverMarginEnd || 'auto';
 
   return (
-    <div>
+    <div {...getDataComponentAttribute('InsetBanner')}>
       <div
         aria-label={accessibilityLabel}
         className={classNames}
@@ -142,7 +142,6 @@ const BpkInsetBanner = ({
                   data-testid="ctaBtn"
                   aria-hidden="false"
                   type="button"
-                  {...getDataComponentAttribute('InsetBanner')}
                 >
                   <div
                     className={getClassName('bpk-inset-banner--cta-content')}

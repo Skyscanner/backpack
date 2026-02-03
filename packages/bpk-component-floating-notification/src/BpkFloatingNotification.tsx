@@ -91,7 +91,11 @@ const BpkFloatingNotification = (props: Props) => {
       exit={animateOnExit}
       onExited={onExit}
     >
-      <div className={classNames} {...getDataComponentAttribute('FloatingNotification')} {...rest}>
+      <div
+        className={classNames}
+        {...getDataComponentAttribute('FloatingNotification')}
+        {...rest}
+      >
         {Icon && (
           <div className={getClassName('bpk-floating-notification__icon')}>
             <Icon aria-hidden />

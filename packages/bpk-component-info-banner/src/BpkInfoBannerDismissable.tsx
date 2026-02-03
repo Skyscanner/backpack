@@ -22,7 +22,6 @@ import BpkInfoBannerInner, { CONFIGURATION } from './BpkInfoBannerInner';
 
 import type { CommonProps, OnDismissHandler } from './common-types';
 
-
 export type Props = CommonProps & {
   dismissButtonLabel: string;
   onDismiss?: OnDismissHandler;
@@ -32,7 +31,8 @@ const BpkInfoBannerDismissable = ({ onDismiss = null, ...rest }: Props) => (
   <BpkInfoBannerInner
     configuration={CONFIGURATION.DISMISSABLE}
     onDismiss={onDismiss}
-    {...getDataComponentAttribute('InfoBannerDismissable')} {...rest}
+    {...getDataComponentAttribute('InfoBannerDismissable')}
+    {...rest}
   />
 );
 

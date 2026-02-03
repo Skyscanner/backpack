@@ -54,7 +54,7 @@ const BpkInsetBannerSponsored = ({
   const [sheetOpen, setSheetOpen] = useState(false);
 
   return (
-    <div>
+    <div {...getDataComponentAttribute('InsetBannerSponsored')}>
       <div
         aria-label={accessibilityLabel}
         className={classNames}
@@ -127,7 +127,7 @@ const BpkInsetBannerSponsored = ({
                   key={item.title}
                   className={getClassName(
                     'bpk-inset-banner--bottom-sheet-content',
-                  )} {...getDataComponentAttribute('InsetBannerSponsored')}
+                  )}
                 >
                   <div
                     className={getClassName(

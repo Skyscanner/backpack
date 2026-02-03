@@ -41,7 +41,8 @@ const BpkBannerAlertExpandable = ({
     configuration={CONFIGURATION.EXPANDABLE}
     expanded={expanded}
     onExpandToggle={onExpandToggle}
-    {...getDataComponentAttribute('BannerAlertExpandable')} {...rest}
+    {...getDataComponentAttribute('BannerAlertExpandable')}
+    {...rest}
   >
     {children}
   </BpkBannerAlertInner>
