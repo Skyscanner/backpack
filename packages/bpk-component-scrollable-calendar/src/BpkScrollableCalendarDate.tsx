@@ -17,7 +17,6 @@
  */
 
 import { BpkCalendarDate } from '../../bpk-component-calendar';
-import { getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type { BpkCalendarDateProps } from '../../bpk-component-calendar';
 
@@ -28,7 +27,7 @@ type Props = Partial<BpkCalendarDateProps> & {
 };
 const BpkScrollableCalendarDate = ({isOutside = false, ...rest}: Props) => 
     // Returning null when isOutside is true ensures only focused month displays in grid
-     !isOutside ? <BpkCalendarDate {...getDataComponentAttribute('ScrollableCalendarDate')} {...rest} /> : null
+     !isOutside ? <BpkCalendarDate {...rest} /> : null
 
 
 export default BpkScrollableCalendarDate;

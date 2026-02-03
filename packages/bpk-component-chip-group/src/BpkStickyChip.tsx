@@ -70,7 +70,7 @@ const BpkStickyChip = ({
   );
 
   return (
-    <div className={containerClassNames}>
+    <div className={containerClassNames} {...getDataComponentAttribute('StickyChip')}>
       <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
         {(isDesktop) => {
           const hideText = !isDesktop && !isAtStart;
@@ -99,7 +99,7 @@ const BpkStickyChip = ({
                     hideText
                       ? 'bpk-sticky-chip--hide'
                       : 'bpk-sticky-chip--show',
-                  )} {...getDataComponentAttribute('StickyChip')}
+                  )}
                 >
                   {stickyChip.text}
                 </span>

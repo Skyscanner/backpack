@@ -168,6 +168,7 @@ const BpkPriceRange = ({
         shouldShowPriceOnBoundaries && 'bpk-price-range--large',
       )}
       ref={linesRef}
+      {...getDataComponentAttribute('PriceRange')}
     >
       {shouldShowBubble && (
         <div className={getClassName('bpk-price-range__marker')}>
@@ -179,7 +180,7 @@ const BpkPriceRange = ({
         </div>
       )}
       <div className={linesClassName}>
-        <div className={lowClassName} {...getDataComponentAttribute('PriceRange')} />
+        <div className={lowClassName} />
         <div className={mediumClassName} />
         <div className={highClassName} />
         {shouldShowDot && <div className={dotClassName} ref={indicatorRef} />}

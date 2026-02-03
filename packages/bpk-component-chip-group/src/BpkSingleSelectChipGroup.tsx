@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { getDataComponentAttribute } from '../../bpk-react-utils';
-
 import BpkMultiSelectChipGroup, { type SingleSelectChipItem, type MultiSelectProps } from './BpkMultiSelectChipGroup';
 
 export type SingleSelectProps = {
@@ -37,7 +35,7 @@ const BpkSingleSelectChipGroup = ({ chips, onItemClick, selectedIndex, ...rest }
     },
   }));
 
-  return <BpkMultiSelectChipGroup chips={chipsWithSelection} ariaMultiselectable={false} {...getDataComponentAttribute('SingleSelectChipGroup')} {...rest} />;
+  return <BpkMultiSelectChipGroup chips={chipsWithSelection} ariaMultiselectable={false} {...rest} />;
 };
 
 export default BpkSingleSelectChipGroup;
