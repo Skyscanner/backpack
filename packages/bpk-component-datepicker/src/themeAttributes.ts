@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
 
 import { themeAttributes as calendarAttributes } from '../../bpk-component-calendar';
 import { themeAttributes as modalAttributes } from '../../bpk-component-modal';

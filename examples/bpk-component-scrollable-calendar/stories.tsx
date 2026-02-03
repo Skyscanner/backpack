@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
 
 
 import BpkScrollableCalendarDateComponent from '../../packages/bpk-component-scrollable-calendar/src/BpkScrollableCalendarDate';

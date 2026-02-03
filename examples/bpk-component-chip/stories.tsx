@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
 
 import BpkDismissibleChip from '../../packages/bpk-component-chip/src/BpkDismissibleChip';
 import BpkDropdownChip from '../../packages/bpk-component-chip/src/BpkDropdownChip';

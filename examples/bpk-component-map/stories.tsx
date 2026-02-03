@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
 
 
 import BpkIconMarker from '../../packages/bpk-component-map/src/BpkIconMarker';

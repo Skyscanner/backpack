@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
 
 /*
   Checks if the current device is an iPhone as reported by the user agent.

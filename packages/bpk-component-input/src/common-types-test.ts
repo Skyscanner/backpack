@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
 
 // TODO - this file should be removed once all input examples have been migrated to TS
 

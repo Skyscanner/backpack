@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
 
 import BpkAccordion from '../../packages/bpk-component-accordion/src/BpkAccordion';
 import BpkAccordionItem from '../../packages/bpk-component-accordion/src/BpkAccordionItem';

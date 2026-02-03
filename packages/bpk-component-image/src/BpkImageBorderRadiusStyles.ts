@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// @ts-nocheck
 
 const BORDER_RADIUS_STYLES = { none: 'none', sm: 'sm' } as const;
 
