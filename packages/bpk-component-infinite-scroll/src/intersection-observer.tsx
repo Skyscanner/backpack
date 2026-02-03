@@ -17,6 +17,7 @@
  */
 
 
+// eslint-disable-next-line no-undef
 const globalAny = globalThis as typeof globalThis & {
   IntersectionObserver?: unknown;
 };

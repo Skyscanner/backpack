@@ -17,7 +17,7 @@
  */
 
 import type { CSSProperties } from 'react';
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import clamp from 'lodash/clamp';
 

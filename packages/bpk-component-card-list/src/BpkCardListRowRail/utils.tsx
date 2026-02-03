@@ -94,6 +94,7 @@ export const useScrollToCard = (
 };
 
 export const useIntersectionObserver = (
+  // eslint-disable-next-line no-undef
   { root, threshold }: Pick<IntersectionObserverInit, 'root' | 'threshold'>,
   setVisibilityList: Dispatch<SetStateAction<number[]>>,
 ) => {
