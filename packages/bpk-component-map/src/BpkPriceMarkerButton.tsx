@@ -19,7 +19,7 @@
 import type { ReactNode } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkPriceMarkerButton.module.scss';
 
@@ -68,7 +68,7 @@ const BpkPriceMarkerButton = ({
       onClick={onClick}
       {...buttonProps}
     >
-      <div className={markerClassNames} {...getDataComponentAttribute('PriceMarkerButton')}>
+      <div className={markerClassNames}>
         {icon}
         <BpkText textStyle={TEXT_STYLES.label3}>{label}</BpkText>
       </div>

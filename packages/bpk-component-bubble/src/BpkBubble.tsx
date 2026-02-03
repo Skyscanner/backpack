@@ -17,7 +17,7 @@
  */
 
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules , getDataComponentAttribute } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 import BpkBubbleArrow from '../icons/BpkBubbleArrow';
 
 import STYLES from './BpkBubble.module.scss';

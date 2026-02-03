@@ -23,7 +23,6 @@ import BpkPriceMarkerButton, { MARKER_STATUSES } from './BpkPriceMarkerButton';
 
 import type { Props as BpkPriceMarkerButtonProps } from './BpkPriceMarkerButton';
 
-
 type Props = {
   accessibilityLabel: string;
   position: {

@@ -26,7 +26,6 @@ import BpkOverlayView from './BpkOverlayView';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { LatLongPropType, type LatLong } from './common-types';
 
-
 type Props = {
   children: ReactNode,
   position: LatLong,
