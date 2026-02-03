@@ -57,7 +57,8 @@ const BpkPriceMarker = (props: Props) => {
     <BpkBasicMapMarker
       position={position}
       aria-label={accessibilityLabel}
-      {...getDataComponentAttribute('PriceMarker')} {...rest}
+      {...getDataComponentAttribute('PriceMarker')}
+      {...rest}
     >
       <BpkPriceMarkerButton {...allButtonProps} />
     </BpkBasicMapMarker>
