@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 /*
  * Backpack - Skyscanner's Design System

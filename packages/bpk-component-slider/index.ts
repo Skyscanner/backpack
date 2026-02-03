@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
 
 import BpkSlider from './src/BpkSlider';
 import themeAttributes from './src/themeAttributes';

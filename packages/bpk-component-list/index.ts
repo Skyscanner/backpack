@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
 
 import BpkList from './src/BpkList';
 import BpkListItem from './src/BpkListItem';

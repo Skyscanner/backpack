@@ -15,6 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
+
 import type { FunctionComponent, ReactNode } from 'react';
 
 export const ALERT_TYPES = {

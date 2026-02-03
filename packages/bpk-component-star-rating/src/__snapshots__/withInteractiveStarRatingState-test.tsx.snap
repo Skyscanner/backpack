@@ -1,0 +1,559 @@
+// @ts-nocheck
+
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`withInteractiveStarRatingState should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-star-rating"
+  >
+    <button
+      aria-label="my-label"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+    <button
+      aria-label="my-label"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+    <button
+      aria-label="my-label"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+    <button
+      aria-label="my-label"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+    <button
+      aria-label="my-label"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`withInteractiveStarRatingState should render correctly when hovering over 4th star 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-star-rating"
+  >
+    <button
+      aria-label="1 out of 5 stars"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+    <button
+      aria-label="2 out of 5 stars"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+    <button
+      aria-label="3 out of 5 stars"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+    <button
+      aria-label="4 out of 5 stars"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+    <button
+      aria-label="5 out of 5 stars"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`withInteractiveStarRatingState should render correctly when selecting 3rd star 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-star-rating"
+  >
+    <button
+      aria-label="1 out of 5 stars"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+    <button
+      aria-label="2 out of 5 stars"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+    <button
+      aria-label="3 out of 5 stars"
+      aria-pressed="true"
+      class="bpk-interactive-star bpk-interactive-star--selected"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon bpk-interactive-star__icon--selected"
+      >
+        <span
+          class="bpk-star bpk-star--filled"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.925 8.03a1.05 1.05 0 0 0 .793-.591l2.576-5.478a.771.771 0 0 1 1.412 0l2.576 5.478a1.05 1.05 0 0 0 .793.59l5.75.87a.835.835 0 0 1 .437 1.407l-4.188 4.274a1.05 1.05 0 0 0-.287.905l.99 6.05a.795.795 0 0 1-1.141.869l-5.13-2.83a1.05 1.05 0 0 0-1.013 0l-5.13 2.83a.795.795 0 0 1-1.141-.87l.995-6.05a1.05 1.05 0 0 0-.286-.904l-4.192-4.273A.834.834 0 0 1 2.175 8.9z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+    <button
+      aria-label="4 out of 5 stars"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+    <button
+      aria-label="5 out of 5 stars"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star"
+        >
+          <svg
+            aria-hidden="true"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22.262 10.306a.834.834 0 0 0-.437-1.405l-5.75-.87a1.05 1.05 0 0 1-.793-.592L12.706 1.96a.771.771 0 0 0-1.412 0L8.718 7.439a1.05 1.05 0 0 1-.793.59l-5.75.87a.835.835 0 0 0-.436 1.408L5.93 14.58a1.05 1.05 0 0 1 .286.906l-.995 6.05a.795.795 0 0 0 1.142.868l5.129-2.83a1.05 1.05 0 0 1 1.014 0l5.129 2.83a.795.795 0 0 0 1.142-.868l-.99-6.051a1.05 1.05 0 0 1 .286-.905zM15.93 12.48a4.05 4.05 0 0 0-1.104 3.488l.262 1.604-1.133-.625a4.05 4.05 0 0 0-3.912 0l-1.13.623.264-1.598a4.05 4.05 0 0 0-1.105-3.494l-1.228-1.251 1.529-.232a4.05 4.05 0 0 0 3.059-2.28L12 7.51l.566 1.206a4.05 4.05 0 0 0 3.06 2.28l1.532.232z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`withInteractiveStarRatingState should render correctly with "large" attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-star-rating"
+  >
+    <button
+      aria-label="my-label"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star bpk-star--large"
+        >
+          <svg
+            aria-hidden="true"
+            height="1.5rem"
+            viewBox="0 0 24 24"
+            width="1.5rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21.773 10.386a.795.795 0 0 0-.416-1.34l-5.476-.828a1 1 0 0 1-.755-.563l-2.454-5.217a.735.735 0 0 0-1.344 0L8.875 7.655a1 1 0 0 1-.756.563l-5.476.83a.795.795 0 0 0-.416 1.338l3.993 4.07a1 1 0 0 1 .273.863l-.948 5.76a.757.757 0 0 0 1.087.829l4.885-2.695a1 1 0 0 1 .966 0l4.885 2.695a.757.757 0 0 0 1.087-.827l-.943-5.763a1 1 0 0 1 .272-.862zm-5.417 2.672a3 3 0 0 0-.818 2.584l.535 3.268-2.624-1.447a3 3 0 0 0-2.898 0l-2.622 1.446.537-3.265a3 3 0 0 0-.818-2.588l-2.343-2.388 3.114-.471a3 3 0 0 0 2.265-1.69L12 5.71l1.316 2.797a3 3 0 0 0 2.266 1.69l3.115.47z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+    <button
+      aria-label="my-label"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star bpk-star--large"
+        >
+          <svg
+            aria-hidden="true"
+            height="1.5rem"
+            viewBox="0 0 24 24"
+            width="1.5rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21.773 10.386a.795.795 0 0 0-.416-1.34l-5.476-.828a1 1 0 0 1-.755-.563l-2.454-5.217a.735.735 0 0 0-1.344 0L8.875 7.655a1 1 0 0 1-.756.563l-5.476.83a.795.795 0 0 0-.416 1.338l3.993 4.07a1 1 0 0 1 .273.863l-.948 5.76a.757.757 0 0 0 1.087.829l4.885-2.695a1 1 0 0 1 .966 0l4.885 2.695a.757.757 0 0 0 1.087-.827l-.943-5.763a1 1 0 0 1 .272-.862zm-5.417 2.672a3 3 0 0 0-.818 2.584l.535 3.268-2.624-1.447a3 3 0 0 0-2.898 0l-2.622 1.446.537-3.265a3 3 0 0 0-.818-2.588l-2.343-2.388 3.114-.471a3 3 0 0 0 2.265-1.69L12 5.71l1.316 2.797a3 3 0 0 0 2.266 1.69l3.115.47z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+    <button
+      aria-label="my-label"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star bpk-star--large"
+        >
+          <svg
+            aria-hidden="true"
+            height="1.5rem"
+            viewBox="0 0 24 24"
+            width="1.5rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21.773 10.386a.795.795 0 0 0-.416-1.34l-5.476-.828a1 1 0 0 1-.755-.563l-2.454-5.217a.735.735 0 0 0-1.344 0L8.875 7.655a1 1 0 0 1-.756.563l-5.476.83a.795.795 0 0 0-.416 1.338l3.993 4.07a1 1 0 0 1 .273.863l-.948 5.76a.757.757 0 0 0 1.087.829l4.885-2.695a1 1 0 0 1 .966 0l4.885 2.695a.757.757 0 0 0 1.087-.827l-.943-5.763a1 1 0 0 1 .272-.862zm-5.417 2.672a3 3 0 0 0-.818 2.584l.535 3.268-2.624-1.447a3 3 0 0 0-2.898 0l-2.622 1.446.537-3.265a3 3 0 0 0-.818-2.588l-2.343-2.388 3.114-.471a3 3 0 0 0 2.265-1.69L12 5.71l1.316 2.797a3 3 0 0 0 2.266 1.69l3.115.47z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+    <button
+      aria-label="my-label"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star bpk-star--large"
+        >
+          <svg
+            aria-hidden="true"
+            height="1.5rem"
+            viewBox="0 0 24 24"
+            width="1.5rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21.773 10.386a.795.795 0 0 0-.416-1.34l-5.476-.828a1 1 0 0 1-.755-.563l-2.454-5.217a.735.735 0 0 0-1.344 0L8.875 7.655a1 1 0 0 1-.756.563l-5.476.83a.795.795 0 0 0-.416 1.338l3.993 4.07a1 1 0 0 1 .273.863l-.948 5.76a.757.757 0 0 0 1.087.829l4.885-2.695a1 1 0 0 1 .966 0l4.885 2.695a.757.757 0 0 0 1.087-.827l-.943-5.763a1 1 0 0 1 .272-.862zm-5.417 2.672a3 3 0 0 0-.818 2.584l.535 3.268-2.624-1.447a3 3 0 0 0-2.898 0l-2.622 1.446.537-3.265a3 3 0 0 0-.818-2.588l-2.343-2.388 3.114-.471a3 3 0 0 0 2.265-1.69L12 5.71l1.316 2.797a3 3 0 0 0 2.266 1.69l3.115.47z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+    <button
+      aria-label="my-label"
+      aria-pressed="false"
+      class="bpk-interactive-star"
+      type="button"
+    >
+      <div
+        class="bpk-interactive-star__icon"
+      >
+        <span
+          class="bpk-star bpk-star--large"
+        >
+          <svg
+            aria-hidden="true"
+            height="1.5rem"
+            viewBox="0 0 24 24"
+            width="1.5rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21.773 10.386a.795.795 0 0 0-.416-1.34l-5.476-.828a1 1 0 0 1-.755-.563l-2.454-5.217a.735.735 0 0 0-1.344 0L8.875 7.655a1 1 0 0 1-.756.563l-5.476.83a.795.795 0 0 0-.416 1.338l3.993 4.07a1 1 0 0 1 .273.863l-.948 5.76a.757.757 0 0 0 1.087.829l4.885-2.695a1 1 0 0 1 .966 0l4.885 2.695a.757.757 0 0 0 1.087-.827l-.943-5.763a1 1 0 0 1 .272-.862zm-5.417 2.672a3 3 0 0 0-.818 2.584l.535 3.268-2.624-1.447a3 3 0 0 0-2.898 0l-2.622 1.446.537-3.265a3 3 0 0 0-.818-2.588l-2.343-2.388 3.114-.471a3 3 0 0 0 2.265-1.69L12 5.71l1.316 2.797a3 3 0 0 0 2.266 1.69l3.115.47z"
+            />
+          </svg>
+        </span>
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;

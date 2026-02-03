@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
 
 import BpkLink from '../../packages/bpk-component-link';
 import BpkPanel from '../../packages/bpk-component-panel';

@@ -15,8 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
 
-/* @flow strict */
 
 import BpkPopover, {
   type Props

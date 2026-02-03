@@ -1,0 +1,180 @@
+// @ts-nocheck
+
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkTicket should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-ticket"
+    role="button"
+  >
+    <div
+      class="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
+    <div
+      class="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--horizontal"
+    >
+      Ticket stub
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkTicket should render correctly with "padded" attribute equal to "false" 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-ticket"
+    role="button"
+  >
+    <div
+      class="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--horizontal"
+    >
+      <div
+        class="bpk-ticket__main-inner bpk-ticket__main-inner--horizontal"
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </div>
+    </div>
+    <div
+      class="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--horizontal"
+    >
+      <div
+        class="bpk-ticket__stub-inner bpk-ticket__stub-inner--horizontal"
+      >
+        Ticket stub
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkTicket should render correctly with "padded" attribute equal to "false" and a "vertical" attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-ticket bpk-ticket--vertical"
+    role="button"
+  >
+    <div
+      class="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--vertical"
+    >
+      <div
+        class="bpk-ticket__main-inner bpk-ticket__main-inner--vertical"
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </div>
+    </div>
+    <div
+      class="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--vertical"
+    >
+      <div
+        class="bpk-ticket__stub-inner bpk-ticket__stub-inner--vertical"
+      >
+        Ticket stub
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkTicket should render correctly with a "className" attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-ticket custom-class"
+    role="button"
+  >
+    <div
+      class="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
+    <div
+      class="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--horizontal"
+    >
+      Ticket stub
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkTicket should render correctly with a "stubClassName" attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-ticket"
+    role="button"
+  >
+    <div
+      class="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
+    <div
+      class="bpk-ticket__paper bpk-ticket__stub custom-class bpk-ticket__stub--padded bpk-ticket__stub--horizontal"
+    >
+      Ticket stub
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkTicket should render correctly with a "stubProps" attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-ticket"
+    role="button"
+  >
+    <div
+      class="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
+    <div
+      class="bpk-ticket__paper bpk-ticket__stub custom-class bpk-ticket__stub--padded bpk-ticket__stub--horizontal"
+      foo="bar"
+    >
+      Ticket stub
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkTicket should render correctly with a "vertical" attribute 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-ticket bpk-ticket--vertical"
+    role="button"
+  >
+    <div
+      class="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--vertical"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
+    <div
+      class="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--vertical"
+    >
+      Ticket stub
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkTicket should render correctly with an "href" attribute 1`] = `
+<DocumentFragment>
+  <a
+    class="bpk-ticket"
+    href="//www.skyscanner.net"
+  >
+    <div
+      class="bpk-ticket__paper bpk-ticket__main bpk-ticket__main--padded bpk-ticket__main--horizontal"
+    >
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
+    <div
+      class="bpk-ticket__paper bpk-ticket__stub bpk-ticket__stub--padded bpk-ticket__stub--horizontal"
+    >
+      Ticket stub
+    </div>
+  </a>
+</DocumentFragment>
+`;

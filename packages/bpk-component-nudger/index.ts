@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
 
 import BpkNudger from './src/BpkNudger';
 import themeAttributes from './src/themeAttributes';

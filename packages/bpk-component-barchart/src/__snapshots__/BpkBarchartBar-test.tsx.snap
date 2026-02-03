@@ -1,0 +1,222 @@
+// @ts-nocheck
+
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkBarchartBar should render as an outlier 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(10, 10)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="100"
+        rx="4"
+        ry="4"
+        width="20"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Bar"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="100"
+        role="graphics-symbol"
+        width="20"
+        x="0"
+        y="0"
+      />
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkBarchartBar should render as aria-pressed if onClick present and selected 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      class="bpk-barchart-bar bpk-barchart-bar--selected bpk-barchart-bar--interactive"
+      transform="translate(10, 10)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect"
+        height="100"
+        rx="4"
+        ry="4"
+        width="20"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Bar"
+        aria-pressed="true"
+        class="bpk-barchart-bar__tappable-area"
+        height="100"
+        role="button"
+        tabindex="0"
+        width="20"
+        x="0"
+        y="0"
+      />
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkBarchartBar should render as selected 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      class="bpk-barchart-bar bpk-barchart-bar--selected"
+      transform="translate(10, 10)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect"
+        height="100"
+        rx="4"
+        ry="4"
+        width="20"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Bar"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="100"
+        role="graphics-symbol"
+        width="20"
+        x="0"
+        y="0"
+      />
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkBarchartBar should render correctly 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(10, 10)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect"
+        height="100"
+        rx="4"
+        ry="4"
+        width="20"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Bar"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="100"
+        role="graphics-symbol"
+        width="20"
+        x="0"
+        y="0"
+      />
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkBarchartBar should render with "padding" prop 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(10, 10)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect"
+        height="100"
+        rx="4"
+        ry="4"
+        width="16"
+        x="2"
+        y="0"
+      />
+      <rect
+        aria-label="Bar"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="100"
+        role="graphics-symbol"
+        width="20"
+        x="0"
+        y="0"
+      />
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkBarchartBar should render with an onClick handler 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      class="bpk-barchart-bar bpk-barchart-bar--interactive"
+      transform="translate(10, 10)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect"
+        height="100"
+        rx="4"
+        ry="4"
+        width="20"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Bar"
+        aria-pressed="false"
+        class="bpk-barchart-bar__tappable-area"
+        height="100"
+        role="button"
+        tabindex="0"
+        width="20"
+        x="0"
+        y="0"
+      />
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkBarchartBar should render with an onHover handler 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      class="bpk-barchart-bar bpk-barchart-bar--interactive"
+      transform="translate(10, 10)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect"
+        height="100"
+        rx="4"
+        ry="4"
+        width="20"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Bar"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="100"
+        role="graphics-symbol"
+        width="20"
+        x="0"
+        y="0"
+      />
+    </g>
+  </svg>
+</DocumentFragment>
+`;

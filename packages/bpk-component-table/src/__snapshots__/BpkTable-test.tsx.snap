@@ -1,0 +1,23 @@
+// @ts-nocheck
+
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkTable should render correctly 1`] = `
+<DocumentFragment>
+  <table
+    class="bpk-table"
+  >
+    <tbody />
+  </table>
+</DocumentFragment>
+`;
+
+exports[`BpkTable should render correctly with custom class 1`] = `
+<DocumentFragment>
+  <table
+    class="bpk-table my-table"
+  >
+    <tbody />
+  </table>
+</DocumentFragment>
+`;

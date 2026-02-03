@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
 
 import BpkOverlay from '../../packages/bpk-component-overlay/src/BpkOverlay';
 

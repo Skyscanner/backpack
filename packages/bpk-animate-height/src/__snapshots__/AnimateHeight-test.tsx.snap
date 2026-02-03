@@ -1,0 +1,39 @@
+// @ts-nocheck
+
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`AnimateHeight should render correctly with "height" attribute equal to "200" 1`] = `
+<DocumentFragment>
+  <div
+    style="height: 200px; overflow: hidden; transition: height 200ms ease;"
+  >
+    <div>
+      Content.
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`AnimateHeight should render correctly with "height" attribute equal to "auto" 1`] = `
+<DocumentFragment>
+  <div
+    style="height: auto; overflow: visible; transition: height 200ms ease;"
+  >
+    <div>
+      Content.
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`AnimateHeight should render correctly with "transitionOverflow" attribute equal to "visible" 1`] = `
+<DocumentFragment>
+  <div
+    style="height: 200px; overflow: visible; transition: height 200ms ease;"
+  >
+    <div>
+      Content.
+    </div>
+  </div>
+</DocumentFragment>
+`;

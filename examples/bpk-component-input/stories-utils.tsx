@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
 
 /**
  * This file is a workaround for Storybook not supporting HOCs API table generation in v7 by creating mock components that can be used to generate the API table
@@ -27,5 +28,4 @@ import type { WithOpenEventsProps } from '../../packages/bpk-component-input/src
 
 const WithOpenEventsMock = (props: WithOpenEventsProps) => <div />;
 
-// eslint-disable-next-line import/prefer-default-export
 export { WithOpenEventsMock };

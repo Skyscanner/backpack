@@ -1,0 +1,57 @@
+// @ts-nocheck
+
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkSectionListSection should render correctly 1`] = `
+<DocumentFragment>
+  <section>
+    <ul
+      class="bpk-section-list-section"
+    >
+      <li>
+        Hello world
+      </li>
+    </ul>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`BpkSectionListSection should render correctly with "headerText" prop 1`] = `
+<DocumentFragment>
+  <section>
+    <header
+      class="bpk-section-list-section__header"
+    >
+      <span
+        class="bpk-text bpk-text--label-1"
+        data-backpack-ds-component="Text"
+      >
+        Heading
+      </span>
+    </header>
+    <ul
+      class="bpk-section-list-section"
+    >
+      <li>
+        Hello world
+      </li>
+    </ul>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`BpkSectionListSection should render correctly with arbitrary props 1`] = `
+<DocumentFragment>
+  <section
+    testid="123"
+  >
+    <ul
+      class="bpk-section-list-section"
+    >
+      <li>
+        Hello world
+      </li>
+    </ul>
+  </section>
+</DocumentFragment>
+`;

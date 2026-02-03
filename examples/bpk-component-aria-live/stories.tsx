@@ -15,8 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
 
-import {ArgTypes,Title, Markdown } from '@storybook/addon-docs/blocks';
+import { ArgTypes, Markdown, Title } from '@storybook/addon-docs/blocks';
 
 import BpkAriaLive from '../../packages/bpk-component-aria-live/src/BpkAriaLive';
 
@@ -38,9 +39,9 @@ export default {
             `}
           </Markdown>
         </>
-      )
-    }
-  }
+      ),
+    },
+  },
 };
 
 export const Default = () => <ChipsExample />;

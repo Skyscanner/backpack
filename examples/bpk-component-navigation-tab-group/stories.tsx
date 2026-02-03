@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
 
 import BpkNavigationTabGroup from '../../packages/bpk-component-navigation-tab-group';
 

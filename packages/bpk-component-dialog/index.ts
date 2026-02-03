@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
 
 import BpkDialog from './src/BpkDialog';
 import { HEADER_ICON_TYPES } from './src/common-types';

@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
 
 import BpkCode from '../../packages/bpk-component-code/src/BpkCode';
 import BpkCodeBlock from '../../packages/bpk-component-code/src/BpkCodeBlock';

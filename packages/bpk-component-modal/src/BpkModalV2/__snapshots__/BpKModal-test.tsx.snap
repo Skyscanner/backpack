@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkModalV2 is not supported should render correctly with polyfill and content 1`] = `

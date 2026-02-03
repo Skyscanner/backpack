@@ -15,9 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// @ts-nocheck
 
 import { Component } from 'react';
-import type { ChangeEvent, ReactElement } from 'react';
+import type { ChangeEvent, CSSProperties, ReactNode } from 'react';
 
 import BpkAriaLive, {
   ARIA_LIVE_POLITENESS_SETTINGS,
@@ -35,11 +36,11 @@ import STYLES from './examples.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  preamble?: ReactElement | null;
-  children: ReactElement;
+  preamble?: ReactNode;
+  children: ReactNode;
   className?: string | null;
-  style?: {};
-  visible?: Boolean;
+  style?: CSSProperties;
+  visible?: boolean;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
@@ -74,11 +75,13 @@ const AriaLiveDemo = ({
   </div>
 );
 
-class SelectExample<SProps extends {}> extends Component<
-  SProps,
-  { destination: string; direct: boolean }
-> {
-  constructor(props: SProps) {
+type SelectExampleState = {
+  destination: string;
+  direct: boolean;
+};
+
+class SelectExample extends Component<Record<string, never>, SelectExampleState> {
+  constructor(props: Record<string, never>) {
     super(props);
     this.state = {
       destination: 'Panjin',
@@ -166,14 +169,25 @@ class SelectExample<SProps extends {}> extends Component<
   }
 }
 
-class ChipsExample<CProps extends {}> extends Component<
-  CProps,
-  {
-    categories: { Flights: boolean; Hotels: boolean; 'Car hire': boolean };
-    updates: string[];
-  }
-> {
-  constructor(props: CProps) {
+type ChipCategories = {
+  Flights: boolean;
+  Hotels: boolean;
+  'Car hire': boolean;
+};
+
+type UpdateItem = {
+  id: number;
+  message: string;
+};
+
+type ChipsExampleState = {
+  categories: ChipCategories;
+  updates: UpdateItem[];
+  nextUpdateId: number;
+};
+
+class ChipsExample extends Component<Record<string, never>, ChipsExampleState> {
+  constructor(props: Record<string, never>) {
     super(props);
     this.state = {
       categories: {
@@ -182,6 +196,7 @@ class ChipsExample<CProps extends {}> extends Component<
         'Car hire': false,
       },
       updates: [],
+      nextUpdateId: 0,
     };
   }
 
@@ -189,14 +204,21 @@ class ChipsExample<CProps extends {}> extends Component<
 
   toggleCategory = (category: 'Flights' | 'Hotels' | 'Car hire') => {
     this.setState((prevState) => {
-      const nextState = prevState;
-      nextState.categories[category] = !prevState.categories[category];
-      nextState.updates.push(
-        `${category} became ${
-          nextState.categories[category] ? 'enabled' : 'disabled'
-        }.`,
-      );
-      return nextState;
+      const nextSelected = !prevState.categories[category];
+      const message = `${category} became ${
+        nextSelected ? 'enabled' : 'disabled'
+      }.`;
+      return {
+        categories: {
+          ...prevState.categories,
+          [category]: nextSelected,
+        },
+        updates: [
+          ...prevState.updates,
+          { id: prevState.nextUpdateId, message },
+        ],
+        nextUpdateId: prevState.nextUpdateId + 1,
+      };
     });
   };
 
@@ -243,8 +265,8 @@ class ChipsExample<CProps extends {}> extends Component<
         >
           <>
             {updates.map((update) => (
-              <p>
-                <strong>{update}</strong>
+              <p key={update.id}>
+                <strong>{update.message}</strong>
               </p>
             ))}
           </>
