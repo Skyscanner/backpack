@@ -18,12 +18,14 @@
 
 
 
+import type { ReactNode } from 'react';
+
 import { render } from '@testing-library/react';
 
 import BpkIconMarker from './BpkIconMarker';
 
 jest.mock('@react-google-maps/api', () => ({
-  OverlayView: (props) => (
+  OverlayView: (props: { children: ReactNode }) => (
     <div>
       <div className="mock-overlay-view" />
       {props.children}

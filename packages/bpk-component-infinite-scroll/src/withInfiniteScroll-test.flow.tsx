@@ -33,7 +33,13 @@ for (let i = 0; i < 5; i += 1) {
 // We have to turn this into a function as the HOC ignores the props of a function
 // another approach could be to put these props in the HOC as they aren't passed through.
 /* eslint-disable react/prefer-stateless-function */
-class List extends Component {
+
+interface ListProps {
+  elements: string[];
+  onClick?: (() => void) | null;
+}
+
+class List extends Component<ListProps> {
   static defaultProps;
 
   render() {

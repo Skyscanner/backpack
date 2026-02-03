@@ -17,7 +17,7 @@
  */
 
 import { Component } from 'react';
-import type { ReactNode } from 'react';
+import type { ReactNode, ReactElement, RefObject, KeyboardEvent as ReactKeyboardEvent, MouseEvent as ReactMouseEvent, TouchEvent as ReactTouchEvent } from 'react';
 import { createPortal } from 'react-dom';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -29,8 +29,8 @@ const KEYCODES = {
 
 type InteractionEvents = TouchEvent | MouseEvent | KeyboardEvent;
 
-type JSXElementWithRefProps = JSX.Element & {
-  ref: React.RefObject<HTMLElement>;
+type JSXElementWithRefProps = ReactElement & {
+  ref: RefObject<HTMLElement>;
 };
 
 type Props = {
@@ -51,7 +51,7 @@ type Props = {
   ) => void;
   style: {} | null | undefined;
   renderTarget: null | HTMLElement | (() => null | HTMLElement);
-  target: null | HTMLElement | JSX.Element | (() => HTMLElement);
+  target: null | HTMLElement | ReactElement | (() => HTMLElement);
   targetRef: ((arg0: null | Element | undefined) => void) | null | undefined;
   closeOnEscPressed: boolean;
 };
@@ -320,7 +320,7 @@ class Portal extends Component<Props, State> {
     }
 
     const stopPropagationHandler = (
-      e: React.KeyboardEvent | React.MouseEvent | React.TouchEvent,
+      e: ReactKeyboardEvent | ReactMouseEvent | ReactTouchEvent,
     ) => e.stopPropagation();
 
     return createPortal(

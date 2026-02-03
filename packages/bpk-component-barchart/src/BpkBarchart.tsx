@@ -68,14 +68,6 @@ const getMaxYValue = (
 
 
 class BpkBarchart extends Component {
-  xScale;
-
-  yScale;
-
-  onWindowResize;
-
-  svgEl;
-
   static defaultProps = {
     leadingScrollIndicatorClassName: null,
     trailingScrollIndicatorClassName: null,

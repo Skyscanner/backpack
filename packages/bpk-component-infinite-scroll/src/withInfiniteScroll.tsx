@@ -66,13 +66,6 @@ const withInfiniteScroll =(
   ComponentToExtend,
 ) =>
   class WithInfiniteScroll extends Component {
-
-    handleKeyPress;
-
-    observer;
-
-    sentinel;
-
     static propTypes = propTypes;
 
     static defaultProps = defaultProps;

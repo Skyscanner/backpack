@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { ReactNode, InputHTMLAttributes } from 'react';
 
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
@@ -24,7 +24,7 @@ import STYLES from './BpkCheckbox.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type NativeInputProps = React.InputHTMLAttributes<HTMLInputElement>;
+type NativeInputProps = InputHTMLAttributes<HTMLInputElement>;
 
 export type Props = Omit<NativeInputProps, 'type' | 'className'> & {
   name: string;

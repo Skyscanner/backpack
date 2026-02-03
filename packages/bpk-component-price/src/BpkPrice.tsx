@@ -169,6 +169,7 @@ BpkPrice.propTypes = {
   previousPrice: PropTypes.string,
   leadingClassName: PropTypes.string,
   dataAttributes: PropTypes.objectOf(PropTypes.string),
+  icon: PropTypes.node,
 };
 
 export default BpkPrice;

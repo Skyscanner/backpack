@@ -42,10 +42,6 @@ const getPos = (ref) => {
 };
 
 class BpkHorizontalNav extends Component {
-  selectedItemRef;
-
-  scrollRef;
-
   constructor(props) {
     super(props);
 

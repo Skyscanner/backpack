@@ -18,8 +18,7 @@
 
 /* @flow strict */
 
-import { Component } from 'react';
-import type { ComponentType } from 'react';
+import { Component, type SyntheticEvent, type ComponentType } from 'react';
 
 import isEqual from 'lodash/isEqual';
 

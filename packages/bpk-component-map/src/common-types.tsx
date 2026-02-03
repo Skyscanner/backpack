@@ -20,6 +20,10 @@
 
 import PropTypes from 'prop-types';
 
+export type LatLong = {
+  latitude: number;
+  longitude: number;
+};
 
 export const LatLongPropType = PropTypes.shape({
   latitude: PropTypes.number.isRequired,

@@ -80,7 +80,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   );
 
   const stateScrollingLockRef = useRef(false);
-  const openSetStateLockTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const openSetStateLockTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const observerVisibility = useIntersectionObserver(
     { root, threshold: 0.5 },

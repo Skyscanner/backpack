@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import type { MutableRefObject, Dispatch, SetStateAction } from 'react';
 import { useEffect, useRef } from 'react';
 
 import { RELEASE_LOCK_DELAY } from './constants';
@@ -27,8 +28,8 @@ import { RELEASE_LOCK_DELAY } from './constants';
  */
 
 export const lockScroll = (
-  stateScrollingLockRef: React.MutableRefObject<boolean>,
-  openSetStateLockTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
+  stateScrollingLockRef: MutableRefObject<boolean>,
+  openSetStateLockTimeoutRef: MutableRefObject<ReturnType<typeof setTimeout> | null>,
 ) => {
   // eslint-disable-next-line no-param-reassign
   stateScrollingLockRef.current = true;
@@ -68,8 +69,8 @@ export const setA11yTabIndex = (
 export const useScrollToCard = (
   currentIndex: number,
   container: HTMLElement | null,
-  cardRefs: React.MutableRefObject<Array<HTMLDivElement | null>>,
-  stateScrollingLockRef: React.MutableRefObject<boolean>,
+  cardRefs: MutableRefObject<Array<HTMLDivElement | null>>,
+  stateScrollingLockRef: MutableRefObject<boolean>,
 ) => {
   useEffect(() => {
     const isVisible =
@@ -93,8 +94,8 @@ export const useScrollToCard = (
 };
 
 export const useIntersectionObserver = (
-  { root, threshold }: IntersectionObserverInit,
-  setVisibilityList: React.Dispatch<React.SetStateAction<number[]>>,
+  { root, threshold }: Pick<IntersectionObserverInit, 'root' | 'threshold'>,
+  setVisibilityList: Dispatch<SetStateAction<number[]>>,
 ) => {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
