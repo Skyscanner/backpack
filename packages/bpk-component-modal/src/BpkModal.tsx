@@ -112,7 +112,8 @@ const BpkModal = ({
         accessoryView={accessoryView}
         dialogRef={dialogRef}
         modalStyle={modalStyle}
-        {...getDataComponentAttribute('Modal')} {...rest}
+        {...getDataComponentAttribute('Modal')}
+        {...rest}
       />
     </Portal>
   );

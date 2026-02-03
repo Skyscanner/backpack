@@ -201,7 +201,8 @@ export const BpkModalV2 = (props: Props) => {
       className={getClassName(
         'bpk-modal-wrapper',
         dialogSupported ? '' : 'bpk-modal-polyfill',
-      )} {...getDataComponentAttribute('ModalV2')}
+      )}
+      {...getDataComponentAttribute('ModalV2')}
     >
       {!dialogSupported && (
         <div

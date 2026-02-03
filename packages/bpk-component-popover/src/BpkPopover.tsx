@@ -232,7 +232,8 @@ const BpkPopover = ({
                   tabIndex={-1}
                   role="dialog"
                   aria-labelledby={labelId}
-                  className={classNames} {...getDataComponentAttribute('Popover')}
+                  className={classNames}
+                  {...getDataComponentAttribute('Popover')}
                   {...rest}
                 >
                   {showArrow && (

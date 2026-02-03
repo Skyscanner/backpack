@@ -21,7 +21,6 @@ exports[`BpkModalInner should render correctly 1`] = `
         >
           <h2
             class="bpk-modal__heading"
-            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -85,7 +84,6 @@ exports[`BpkModalInner should render correctly when is iPhone 1`] = `
         >
           <h2
             class="bpk-modal__heading"
-            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -149,7 +147,6 @@ exports[`BpkModalInner should render correctly when it does not fills the screen
         >
           <h2
             class="bpk-modal__heading"
-            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -213,7 +210,6 @@ exports[`BpkModalInner should render correctly when it has a className 1`] = `
         >
           <h2
             class="bpk-modal__heading"
-            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -277,7 +273,6 @@ exports[`BpkModalInner should render correctly when it is fullscreen 1`] = `
         >
           <h2
             class="bpk-modal__heading"
-            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -341,7 +336,6 @@ exports[`BpkModalInner should render correctly with a custom content classname 1
         >
           <h2
             class="bpk-modal__heading"
-            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -430,7 +424,6 @@ exports[`BpkModalInner should render correctly with an accessory view 1`] = `
         >
           <h2
             class="bpk-modal__heading"
-            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -494,7 +487,6 @@ exports[`BpkModalInner should render correctly with closeText prop 1`] = `
         >
           <h2
             class="bpk-modal__heading"
-            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -546,7 +538,6 @@ exports[`BpkModalInner should render correctly with no padding 1`] = `
         >
           <h2
             class="bpk-modal__heading"
-            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title
@@ -610,7 +601,6 @@ exports[`BpkModalInner should render correctly with wide prop 1`] = `
         >
           <h2
             class="bpk-modal__heading"
-            data-backpack-ds-component="ModalInner"
             id="bpk-modal-heading-my-modal"
           >
             Modal title

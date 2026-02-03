@@ -25,7 +25,7 @@ import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
 import BpkLink from '../../bpk-component-link';
-import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkDrawerContent.module.scss';
 
@@ -126,7 +126,6 @@ const BpkDrawerContent = ({
           ].join(' ')}
           ref={dialogRef}
           {...rest}
-          {...getDataComponentAttribute('DrawerContent')}
         >
           <header className={getClassName('bpk-drawer__header')}>
             <h2 id={headingId} className={headerClassNames.join(' ')}>

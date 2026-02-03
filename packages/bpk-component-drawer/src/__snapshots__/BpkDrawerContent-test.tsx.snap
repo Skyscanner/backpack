@@ -5,7 +5,6 @@ exports[`BpkDrawerContent should render correctly 1`] = `
   <section
     aria-labelledby="bpk-drawer-heading-my-drawer"
     class="bpk-drawer bpk-drawer--entered"
-    data-backpack-ds-component="DrawerContent"
     id="my-drawer"
     role="dialog"
     tabindex="-1"
@@ -61,7 +60,6 @@ exports[`BpkDrawerContent should render correctly when it has a className 1`] = 
   <section
     aria-labelledby="bpk-drawer-heading-my-drawer"
     class="bpk-drawer my-classname bpk-drawer--entered"
-    data-backpack-ds-component="DrawerContent"
     id="my-drawer"
     role="dialog"
     tabindex="-1"
@@ -117,7 +115,6 @@ exports[`BpkDrawerContent should render correctly when it has a contentClassName
   <section
     aria-labelledby="bpk-drawer-heading-my-drawer"
     class="bpk-drawer bpk-drawer--entered"
-    data-backpack-ds-component="DrawerContent"
     id="my-drawer"
     role="dialog"
     tabindex="-1"
@@ -173,7 +170,6 @@ exports[`BpkDrawerContent should render correctly when it has padded=true 1`] = 
   <section
     aria-labelledby="bpk-drawer-heading-my-drawer"
     class="bpk-drawer bpk-drawer--entered"
-    data-backpack-ds-component="DrawerContent"
     id="my-drawer"
     role="dialog"
     tabindex="-1"
@@ -228,7 +224,6 @@ exports[`BpkDrawerContent should render correctly with arbitrary attributes 1`] 
     aria-labelledby="bpk-drawer-heading-my-drawer"
     class="bpk-drawer bpk-drawer--entered"
     data-arbitrary="prop"
-    data-backpack-ds-component="DrawerContent"
     id="my-drawer"
     role="dialog"
     tabindex="-1"
@@ -284,7 +279,6 @@ exports[`BpkDrawerContent should render correctly with hideTitle 1`] = `
   <section
     aria-labelledby="bpk-drawer-heading-my-drawer"
     class="bpk-drawer bpk-drawer--entered"
-    data-backpack-ds-component="DrawerContent"
     id="my-drawer"
     role="dialog"
     tabindex="-1"

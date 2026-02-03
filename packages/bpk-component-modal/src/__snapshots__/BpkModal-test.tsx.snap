@@ -36,7 +36,6 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
               >
                 <h2
                   class="bpk-modal__heading"
-                  data-backpack-ds-component="ModalInner"
                   id="bpk-modal-heading-my-modal"
                 >
                   Modal title

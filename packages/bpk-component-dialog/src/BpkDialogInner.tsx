@@ -18,7 +18,7 @@
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkContentBubble } from '../../bpk-component-flare';
-import { TransitionInitialMount, cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 import { withScrim } from '../../bpk-scrim-utils';
 
 import { type DialogInnerProps as Props } from './common-types';
@@ -64,7 +64,6 @@ const BpkDialogInner = (props: Props) => {
         aria-modal={ariaModal}
         className={classNames}
         ref={dialogRef}
-        {...getDataComponentAttribute('BpkDialogInner')}
       >
         {flare && <div className={flareClassNames}><BpkContentBubble/></div>}
         <div className={contentClassNames}>{children}</div>
