@@ -174,7 +174,8 @@ const BpkTooltip = ({
                 id={id}
                 tabIndex={-1}
                 role="dialog"
-                className={classNames} {...getDataComponentAttribute('Tooltip')}
+                className={classNames}
+                {...getDataComponentAttribute('Tooltip')}
                 {...rest}
               >
                 <FloatingArrow

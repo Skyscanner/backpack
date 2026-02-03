@@ -20,7 +20,7 @@ import type { ElementType, ReactNode } from 'react';
 
 import { BpkCalendarGrid } from '../../bpk-component-calendar';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules , getDataComponentAttribute } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type { BpkCalendarGridProps } from '../../bpk-component-calendar';
 
