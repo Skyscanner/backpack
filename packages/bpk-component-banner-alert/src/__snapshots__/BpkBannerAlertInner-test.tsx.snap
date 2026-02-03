@@ -654,6 +654,7 @@ exports[`BpkBannerAlertInner should render correctly with animateOnLeave 1`] = `
                 <button
                   aria-label="Dismiss"
                   class="bpk-close-button__default"
+                  data-backpack-ds-component="CloseButton"
                   title="Dismiss"
                   type="button"
                 >
@@ -900,6 +901,7 @@ exports[`BpkBannerAlertInner should render correctly with dismissable option 1`]
                 <button
                   aria-label="Dismiss"
                   class="bpk-close-button__default"
+                  data-backpack-ds-component="CloseButton"
                   title="Dismiss"
                   type="button"
                 >

@@ -16,22 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkVisuallyHidden, {
+  type Props as BpkVisuallyHiddenProps,
+} from './src/BpkVisuallyHidden';
 
-import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
-
-import BpkList from './BpkList';
-import BpkListItem from './BpkListItem';
-
-describe('BpkList accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(
-      <BpkList>
-        <BpkListItem>List item</BpkListItem>
-      </BpkList>,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-});
+export type { BpkVisuallyHiddenProps };
+export default BpkVisuallyHidden;

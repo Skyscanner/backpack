@@ -16,9 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+@use '../../bpk-mixins/utils';
 
-import BpkList from './src/BpkList';
-import BpkListItem from './src/BpkListItem';
-
-export { BpkList, BpkListItem };
+.bpk-visually-hidden {
+  @include utils.bpk-visually-hidden;
+}

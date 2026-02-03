@@ -22,17 +22,15 @@ import { Component } from 'react';
 import BpkLabel from '../../bpk-component-label';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../bpk-component-select';
-import { cssModules } from '../../bpk-react-utils';
+import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
+import { getDataComponentAttribute } from '../../bpk-react-utils';
 
 import bpkCustomThemes from './theming';
 import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
 
 import type { Theme } from './theming';
 
-import STYLES from './BpkThemeToggle.module.scss';
-
 const inputId = 'theme-select';
-const getClassName = cssModules(STYLES);
 const availableThemes = Object.keys(bpkCustomThemes);
 
 const setTheme = (theme: Theme | undefined) => {
@@ -95,10 +93,10 @@ class BpkThemeToggle extends Component<Props, State> {
   render() {
     const { ...rest } = this.props;
     return (
-      <div {...rest}>
-        <span className={getClassName('bpk-theme-toggle__label')}>
+      <div {...getDataComponentAttribute('ThemeToggle')} {...rest}>
+        <BpkVisuallyHidden>
           <BpkLabel htmlFor={inputId}>Change theme</BpkLabel>
-        </span>
+        </BpkVisuallyHidden>
         <BpkSelect
           id={inputId}
           name={inputId}

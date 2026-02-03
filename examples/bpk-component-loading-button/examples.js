@@ -30,6 +30,7 @@ import BaggageIconSm from '../../packages/bpk-component-icon/sm/baggage';
 import BpkLoadingButton, {
   ICON_POSITION,
 } from '../../packages/bpk-component-loading-button';
+import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden';
 import { cssModules } from '../../packages/bpk-react-utils';
 import {
   action,
@@ -110,7 +111,7 @@ const LoadingButtonStory = ({
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped iconOnly onClick={action('Button iconOnly clicked')} {...rest}>
-        <span className="visually-hidden">Search</span>
+        <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
@@ -120,7 +121,7 @@ const LoadingButtonStory = ({
         onClick={action('THIS SHOULD NEVER HAPPEN')}
         {...rest}
       >
-        <span className="visually-hidden">Search</span>
+        <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
@@ -155,7 +156,7 @@ const LoadingButtonStory = ({
         onClick={action('THIS SHOULD NEVER HAPPEN')}
         {...rest}
       >
-        <span className="visually-hidden">Search</span>
+        <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </Wrapped>
       &nbsp;
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
@@ -166,7 +167,7 @@ const LoadingButtonStory = ({
         onClick={action('THIS SHOULD NEVER HAPPEN')}
         {...rest}
       >
-        <span className="visually-hidden">Search</span>
+        <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </Wrapped>
     </div>
   );
@@ -268,7 +269,7 @@ const CustomIconExample = () => {
         icon={iconSm}
         onClick={action('iconOnly clicked')}
       >
-        <span className="visually-hidden">Search</span>
+        <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </BpkLoadingButton>
       &nbsp;
       <BpkLoadingButton
@@ -301,7 +302,7 @@ const CustomIconExample = () => {
         icon={iconLg}
         onClick={action('large iconOnly clicked')}
       >
-        <span className="visually-hidden">Search</span>
+        <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </BpkLoadingButton>
     </div>
   );
@@ -314,7 +315,7 @@ const VisualExample = () => (
       </BpkLoadingButton>
       &nbsp;
       <BpkLoadingButton iconOnly loading onClick={action('iconOnly clicked')}>
-        <span className="visually-hidden">Search</span>
+        <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </BpkLoadingButton>
       &nbsp;
       <BpkLoadingButton large loading onClick={action('button clicked')}>
@@ -327,7 +328,7 @@ const VisualExample = () => (
         loading
         onClick={action('iconOnly clicked')}
       >
-        <span className="visually-hidden">Search</span>
+        <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </BpkLoadingButton>
     </div>
     <div>
@@ -341,7 +342,7 @@ const VisualExample = () => (
         loading
         onClick={action('iconOnly clicked')}
       >
-        <span className="visually-hidden">Search</span>
+        <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </BpkLoadingButton>
       &nbsp;
       <BpkLoadingButton link large loading onClick={action('button clicked')}>
@@ -355,7 +356,7 @@ const VisualExample = () => (
         loading
         onClick={action('iconOnly clicked')}
       >
-        <span className="visually-hidden">Search</span>
+        <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </BpkLoadingButton>
     </div>
     <div>
@@ -370,7 +371,7 @@ const VisualExample = () => (
           loading
           onClick={action('iconOnly clicked')}
         >
-          <span className="visually-hidden">Search</span>
+          <BpkVisuallyHidden>Search</BpkVisuallyHidden>
         </BpkLoadingButton>
         &nbsp;
         <BpkLoadingButton
@@ -389,7 +390,7 @@ const VisualExample = () => (
           loading
           onClick={action('iconOnly clicked')}
         >
-          <span className="visually-hidden">Search</span>
+          <BpkVisuallyHidden>Search</BpkVisuallyHidden>
         </BpkLoadingButton>
       </BpkDarkExampleWrapper>
     </div>

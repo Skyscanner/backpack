@@ -23,6 +23,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
           >
             <h3
               class="bpk-text bpk-text--body-default"
+              data-backpack-ds-component="Text"
             >
               My accordion item
             </h3>
@@ -94,6 +95,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
           >
             <h3
               class="bpk-text bpk-text--body-default"
+              data-backpack-ds-component="Text"
             >
               My accordion item
             </h3>
@@ -165,6 +167,7 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
           >
             <h3
               class="bpk-text bpk-text--body-default"
+              data-backpack-ds-component="Text"
             >
               My accordion item
             </h3>

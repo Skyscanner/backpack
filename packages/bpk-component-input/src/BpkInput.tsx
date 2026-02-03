@@ -20,7 +20,7 @@ import { Component } from 'react';
 
 import { withButtonAlignment } from '../../bpk-component-icon';
 import ClearIcon from '../../bpk-component-icon/sm/close-circle';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { CLEAR_BUTTON_MODES, defaultProps } from './common-types';
 
@@ -132,6 +132,7 @@ class BpkInput extends Component<Props, State> {
         aria-invalid={isInvalid}
         value={value}
         name={name}
+        {...getDataComponentAttribute('Input')}
         {...rest}
       />
     );

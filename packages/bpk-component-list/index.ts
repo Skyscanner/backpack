@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/utils';
+import BpkList from './src/BpkList';
+import BpkListItem from './src/BpkListItem';
 
-.bpk-icon-description {
-  @include utils.bpk-visually-hidden;
-}
+export type { Props as BpkListProps } from './src/BpkList';
+export type { Props as BpkListItemProps } from './src/BpkListItem';
+export { BpkList, BpkListItem };

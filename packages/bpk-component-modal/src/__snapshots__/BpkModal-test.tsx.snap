@@ -14,6 +14,7 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
       >
         <div
           class="bpk-scrim"
+          data-backpack-ds-component="Scrim"
           role="presentation"
         />
         <section
@@ -29,6 +30,7 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
             <nav
               aria-labelledby="bpk-modal-heading-my-modal"
               class="bpk-navigation-bar bpk-navigation-bar--default bpk-modal__navigation"
+              data-backpack-ds-component="NavigationBar"
             >
               <div
                 class="bpk-navigation-bar__title-container"
@@ -46,6 +48,7 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
                 <button
                   aria-label="Close"
                   class="bpk-close-button__default"
+                  data-backpack-ds-component="CloseButton"
                   title="Close"
                   type="button"
                 >
