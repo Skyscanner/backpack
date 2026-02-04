@@ -16,28 +16,54 @@
  * limitations under the License.
  */
 
-
 import PropTypes from 'prop-types';
+import type { ReactNode, CSSProperties } from 'react';
 import { Component } from 'react';
+
+export type Props = {
+  children: ReactNode;
+  duration: number;
+  height: string | number;
+  easing?: string;
+  transitionOverflow?: string;
+  onAnimationComplete?: (() => void) | null;
+  style?: CSSProperties;
+};
+
+type State = {
+  height: string | number;
+  overflow: string;
+};
 
 // IE11 doesn't support `Number.isNaN` so we must use the global.
 // When IE11 support drops we can migrate.
 // eslint-disable-next-line no-restricted-globals
-const isNumber = (n) => !isNaN(parseFloat(n)) && isFinite(n);
+const isNumber = (n: unknown): n is number => !isNaN(parseFloat(n as string)) && isFinite(n as number);
 
 const isTransitionEndSupported = () =>
   !!(typeof window !== 'undefined' && 'TransitionEvent' in window);
 
-class AnimateHeight extends Component {
-  constructor(props) {
+class AnimateHeight extends Component<Props, State> {
+  static defaultProps = {
+    easing: 'ease',
+    transitionOverflow: 'hidden',
+    onAnimationComplete: null,
+    style: {},
+  };
+
+  contentElement: HTMLDivElement | null = null;
+
+  timeoutID: ReturnType<typeof setTimeout> | null = null;
+
+  constructor(props: Props) {
     super(props);
 
-    let height = 'auto';
-    let overflow = 'visible';
+    let height: string | number = 'auto';
+    let overflow: string = 'visible';
 
     if (isNumber(this.props.height)) {
       height = this.props.height < 0 ? 0 : this.props.height;
-      overflow = this.props.transitionOverflow;
+      overflow = this.props.transitionOverflow ?? 'hidden';
     }
 
     this.state = {
@@ -52,7 +78,7 @@ class AnimateHeight extends Component {
     }
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps: Props, prevState: State) {
     const { height: prevHeight, transitionOverflow: prevTransitionOverflow } = prevProps;
     const { duration, height, transitionOverflow } = this.props;
 
@@ -63,13 +89,15 @@ class AnimateHeight extends Component {
       const contentHeight = this.contentElement.offsetHeight;
       this.contentElement.style.overflow = '';
 
-      let newHeight = null;
+      let newHeight: string | number | null = null;
       let shouldSetTimeout = false;
-      let timeoutHeight = null;
-      let timeoutOverflow = prevTransitionOverflow;
+      let timeoutHeight: string | number | null = null;
+      let timeoutOverflow: string = prevTransitionOverflow ?? 'hidden';
       let timeoutDuration = duration;
 
-      clearTimeout(this.timeoutID);
+      if (this.timeoutID) {
+        clearTimeout(this.timeoutID);
+      }
 
       if (isNumber(height)) {
         // If new height is a number
@@ -92,15 +120,15 @@ class AnimateHeight extends Component {
       }
 
       this.setState({
-        height: newHeight,
-        overflow: transitionOverflow,
+        height: newHeight!,
+        overflow: transitionOverflow ?? 'hidden',
       });
 
       if (shouldSetTimeout) {
         this.timeoutID = setTimeout(() => {
           this.setState({
-            height: timeoutHeight,
-            overflow: timeoutOverflow,
+            height: timeoutHeight!,
+            overflow: timeoutOverflow!,
           });
 
           if (!isTransitionEndSupported()) {
@@ -112,7 +140,9 @@ class AnimateHeight extends Component {
 }
 
   componentWillUnmount() {
-    clearTimeout(this.timeoutID);
+    if (this.timeoutID) {
+      clearTimeout(this.timeoutID);
+    }
     this.timeoutID = null;
   }
 
@@ -142,14 +172,16 @@ class AnimateHeight extends Component {
       transition: `height ${duration}ms ${easing} `,
     };
 
-    delete rest.height;
-    delete rest.transitionOverflow;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const restProps = rest as any;
+    delete restProps.height;
+    delete restProps.transitionOverflow;
 
     return (
       <div
         style={componentStyle}
         onTransitionEnd={this.onTransitionEnd}
-        {...rest}
+        {...restProps}
       >
         <div
           ref={(el) => {
@@ -163,6 +195,7 @@ class AnimateHeight extends Component {
   }
 }
 
+// @ts-expect-error - propTypes are kept for backwards compatibility
 AnimateHeight.propTypes = {
   children: PropTypes.node.isRequired,
   duration: PropTypes.number.isRequired,
@@ -171,13 +204,6 @@ AnimateHeight.propTypes = {
   transitionOverflow: PropTypes.string,
   onAnimationComplete: PropTypes.func,
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-};
-
-AnimateHeight.defaultProps = {
-  easing: 'ease',
-  transitionOverflow: 'hidden',
-  onAnimationComplete: null,
-  style: {},
 };
 
 export default AnimateHeight;

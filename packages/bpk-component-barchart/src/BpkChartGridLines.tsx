@@ -68,10 +68,10 @@ const BpkChartGridLines = (props: Props) => {
 
   const ticks = scale.ticks
     ? scale.ticks(numTicks)
-    : scale.domain().filter((tick, i) => (i - tickOffset) % tickEvery === 0);
+    : scale.domain().filter((tick, i) => (i - (tickOffset ?? 0)) % (tickEvery ?? 1) === 0);
   const position = (scale.bandwidth ? center : identity)(scale.copy());
 
-  const lineProps = (tick) => {
+  const lineProps = (tick: unknown) => {
     const value = position(tick);
     return orientation === ORIENTATION_X
       ? {
@@ -86,7 +86,7 @@ const BpkChartGridLines = (props: Props) => {
         };
   };
 
-  const toLine = (tick, i) => (
+  const toLine = (tick: unknown, i: number) => (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <line
       className={getClassName('bpk-chart__grid-line')}

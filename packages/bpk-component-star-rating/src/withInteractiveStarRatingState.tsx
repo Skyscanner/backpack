@@ -16,19 +16,26 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
+import type { ComponentType, SyntheticEvent } from 'react';
 import { Component } from 'react';
 
 import { wrapDisplayName } from '../../bpk-react-utils';
 
-const withInteractiveStarRatingState = (
-  InteractiveStarRating,
+type Props = {
+  onRatingSelect?: ((rating: number, event?: SyntheticEvent) => void) | null;
+  [key: string]: unknown;
+};
+
+type State = {
+  rating: number;
+  hoverRating: number;
+};
+
+const withInteractiveStarRatingState = <P extends object>(
+  InteractiveStarRating: ComponentType<P>,
 ) => {
-
-
-  class EnhancedComponent extends Component {
+  class EnhancedComponent extends Component<Props, State> {
     static propTypes = {
       onRatingSelect: PropTypes.func,
     };
@@ -37,8 +44,8 @@ const withInteractiveStarRatingState = (
       onRatingSelect: () => null,
     };
 
-    constructor() {
-      super();
+    constructor(props: Props) {
+      super(props);
 
       this.state = {
         rating: 0,
@@ -46,7 +53,7 @@ const withInteractiveStarRatingState = (
       };
     }
 
-    onRatingSelect = (rating, event) => {
+    onRatingSelect = (rating: number, event?: SyntheticEvent) => {
       if (event) {
         event.persist();
       }
@@ -64,7 +71,7 @@ const withInteractiveStarRatingState = (
       this.setState(() => ({ hoverRating: 0 }));
     };
 
-    onRatingHover = (hoverRating) => {
+    onRatingHover = (hoverRating: number) => {
       this.setState(() => ({ hoverRating }));
     };
 

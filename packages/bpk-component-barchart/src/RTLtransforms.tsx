@@ -16,19 +16,23 @@
  * limitations under the License.
  */
 
-
-
 import { isRTL } from '../../bpk-react-utils';
 
-const rtlConditionalValue = (ltrValue, rtlValue) =>
+const rtlConditionalValue = <T,>(ltrValue: T, rtlValue: T): T =>
   isRTL() ? rtlValue : ltrValue;
 
 // Setting type as any as data which is passed to this function can be of any type
-const applyArrayRTLTransform = (arr) =>
+const applyArrayRTLTransform = <T,>(arr: T[]): T[] =>
   isRTL() ? arr.slice(0).reverse() : arr;
 
+type MarginObject = {
+  left: number;
+  right: number;
+  top: number;
+  bottom: number;
+};
 
-const applyMarginRTLTransform = (obj) => {
+const applyMarginRTLTransform = (obj: MarginObject): MarginObject => {
   if (!isRTL()) {
     return obj;
   }

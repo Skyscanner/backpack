@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-
 import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -28,7 +28,22 @@ import STYLES from './bpk-content-bubble.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-  const BpkContentBubble = ({
+type FlareProps = {
+  svgClassName?: string;
+  [key: string]: unknown;
+};
+
+type Props = {
+  flareProps?: FlareProps | null;
+  content?: ReactNode;
+  rounded?: boolean;
+  showPointer?: boolean;
+  className?: string | null;
+  contentClassName?: string | null;
+  [key: string]: unknown;
+};
+
+const BpkContentBubble = ({
     className = null,
     content = null,
     contentClassName = null,
@@ -36,7 +51,7 @@ const getClassName = cssModules(STYLES);
     rounded = true,
     showPointer = true,
     ...rest
-  }) => {
+  }: Props) => {
   const wrapperClassNames = [getClassName('bpk-content-bubble__wrapper')];
   const contentClassNames = [
     getClassName('bpk-content-bubble__content-wrapper'),

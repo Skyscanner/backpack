@@ -73,7 +73,7 @@ class BpkHorizontalNav extends Component<Props> {
     this.scrollSelectedIntoView(true);
   }
 
-  scrollSelectedIntoView = (useSmoothScroll) => {
+  scrollSelectedIntoView = (useSmoothScroll: boolean) => {
     if (
       !this.props.autoScrollToSelected ||
       !this.scrollRef ||
@@ -145,11 +145,12 @@ class BpkHorizontalNav extends Component<Props> {
 
     if (autoScrollToSelected || type === HORIZONTAL_NAV_TYPES.light) {
       children = Children.map(rawChildren, (child) => {
-        const childProps = {};
-        let childRef;
+        const childProps: { type?: string } = {};
+        let childRef: ((ref: HTMLDivElement | null) => void) | undefined;
         if (autoScrollToSelected) {
-          if (child && child.props && child.props.selected) {
-            childRef = (ref) => {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          if (child && (child as any).props && (child as any).props.selected) {
+            childRef = (ref: HTMLDivElement | null) => {
               this.selectedItemRef = ref;
             };
           }
@@ -160,7 +161,8 @@ class BpkHorizontalNav extends Component<Props> {
         }
 
         return child ? (
-          <div ref={childRef}>{cloneElement(child, childProps)}</div>
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          <div ref={childRef}>{cloneElement(child as any, childProps)}</div>
         ) : null;
       });
     }

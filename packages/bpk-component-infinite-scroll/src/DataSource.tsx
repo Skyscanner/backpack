@@ -16,20 +16,21 @@
  * limitations under the License.
  */
 
+type DataCallback = (...args: unknown[]) => void;
 
-
-class DataSource {
-  listeners;
+class DataSource<T = unknown> {
+  listeners: DataCallback[];
 
   constructor() {
     this.listeners = [];
   }
 
-  fetchItems(index: number, nElements: number) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  fetchItems(index: number, nElements: number): Promise<T[]> {
     throw new Error('Not implemented');
   }
 
-  onDataChange(callback) {
+  onDataChange(callback: DataCallback) {
     if (this.listeners.indexOf(callback) === -1) {
       this.listeners.push(callback);
       return true;
@@ -37,7 +38,7 @@ class DataSource {
     return false;
   }
 
-  removeListener(callback) {
+  removeListener(callback: DataCallback) {
     const index = this.listeners.indexOf(callback);
     if (index !== -1) {
       this.listeners.splice(index, 1);
@@ -51,15 +52,15 @@ class DataSource {
   };
 }
 
-export class ArrayDataSource extends DataSource {
-  elements;
+export class ArrayDataSource<T = unknown> extends DataSource<T> {
+  elements: T[];
 
-  constructor(elementsArray) {
+  constructor(elementsArray: T[]) {
     super();
     this.elements = elementsArray;
   }
 
-  fetchItems(index, nElements) {
+  fetchItems(index: number, nElements: number): Promise<T[]> {
     const { elements } = this;
     return new Promise((resolve) => {
       const totalElements = elements.length;
@@ -73,7 +74,7 @@ export class ArrayDataSource extends DataSource {
     });
   }
 
-  updateData(newElementsArray) {
+  updateData(newElementsArray: T[]) {
     this.elements = newElementsArray;
     this.triggerListeners();
   }

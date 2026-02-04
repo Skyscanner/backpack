@@ -76,7 +76,7 @@ const getAxisConfig = ({ height, margin, orientation, scale, width }: AxisConfig
         x: (width - margin.left - margin.right) / 2,
         y: margin.bottom - spacing,
       },
-      tickPosition: (tick) => [position(tick), 0],
+      tickPosition: (tick: unknown) => [position(tick), 0],
     };
   }
 
@@ -100,7 +100,7 @@ const getAxisConfig = ({ height, margin, orientation, scale, width }: AxisConfig
     labelProps: {
       transform: `translate(${labelTranslateX}, ${labelTranslateY}) rotate(-90)`,
     },
-    tickPosition: (tick) => [0, position(tick)],
+    tickPosition: (tick: unknown) => [0, position(tick)],
   };
 };
 

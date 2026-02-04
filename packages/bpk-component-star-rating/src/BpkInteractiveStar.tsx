@@ -16,9 +16,8 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
+import type { MouseEvent } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -28,6 +27,16 @@ import STYLES from './BpkInteractiveStar.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type Props = {
+  label: string;
+  name: string;
+  onClick: (event: MouseEvent) => void;
+  onMouseEnter: (event: MouseEvent) => void;
+  type: (typeof STAR_TYPES)[keyof typeof STAR_TYPES];
+  value: number;
+  selected?: boolean;
+  [key: string]: unknown;
+};
 
 const BpkInteractiveStar = ({
   label,
@@ -38,7 +47,7 @@ const BpkInteractiveStar = ({
   type,
   value,
   ...rest
-}) => {
+}: Props) => {
   const buttonClassNames = getClassName(
     'bpk-interactive-star',
     selected && 'bpk-interactive-star--selected',

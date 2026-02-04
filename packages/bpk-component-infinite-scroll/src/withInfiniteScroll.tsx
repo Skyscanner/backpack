@@ -16,9 +16,8 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
+import type { ComponentType, ReactElement, SyntheticEvent } from 'react';
 import { Component } from 'react';
 
 import extend from 'lodash/extend';
@@ -33,8 +32,39 @@ import STYLES from './withInfiniteScroll.module.scss';
 
 const getClassNames = cssModules(STYLES);
 
+type ScrollEvent = {
+  currentIndex: number;
+};
 
+type ScrollFinishedEvent = {
+  totalNumberElements: number;
+};
 
+export type Props = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  dataSource: DataSource<any>;
+  elementsPerScroll?: number;
+  initiallyLoadedElements?: number;
+  loaderIntersectionTrigger?: 'small' | 'half' | 'full' | null;
+  onScroll?: ((o: ScrollEvent) => void) | null;
+  onScrollFinished?: ((o: ScrollFinishedEvent) => void) | null;
+  renderLoadingComponent?: (() => ReactElement) | null;
+  renderSeeMoreComponent?: ((props: { onSeeMoreClick: (event: SyntheticEvent) => void }) => ReactElement) | null;
+  seeMoreAfter?: number | null;
+};
+
+export type State = {
+  index: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  elementsToRender: any[];
+  isListFinished: boolean;
+  showSeeMore: boolean;
+};
+
+type ExtendedProps = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  elements: any[];
+};
 
 
 
@@ -62,15 +92,19 @@ const defaultProps = {
 };
 
 
-const withInfiniteScroll =(
-  ComponentToExtend,
+const withInfiniteScroll = <P extends object>(
+  ComponentToExtend: ComponentType<P & ExtendedProps>,
 ) =>
-  class WithInfiniteScroll extends Component {
+  class WithInfiniteScroll extends Component<Props & Omit<P, keyof ExtendedProps>, State> {
     static propTypes = propTypes;
 
     static defaultProps = defaultProps;
 
-    constructor(props) {
+    observer!: IntersectionObserver;
+
+    sentinel: HTMLDivElement | null = null;
+
+    constructor(props: Props & Omit<P, keyof ExtendedProps>) {
       super(props);
 
       this.state = {
@@ -100,7 +134,7 @@ const withInfiniteScroll =(
       });
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps: Props & Omit<P, keyof ExtendedProps>) {
       if (this.sentinel && this.state.index > 0) {
         this.observer.observe(this.sentinel);
       }
@@ -123,7 +157,7 @@ const withInfiniteScroll =(
       }
     }
 
-    setStateAfterDsUpdate(newState) {
+    setStateAfterDsUpdate(newState: Partial<State>) {
       // After a data source update (calling updateData in the data source or changing the dataSource prop)
       // all visible data is fetched again (from 0 to current index) to update the list with the new data.
       // If after this call there is no elementsToRender or index present in state
@@ -143,7 +177,7 @@ const withInfiniteScroll =(
       // An ArrayDataSource initialized empty and then changed latter on via `updateData`
       // In this case we want to load new data and not just replace the old one.
       // "See More After" should also be computed again in this case.
-      const isFirstLoad = index < this.props.elementsPerScroll;
+      const isFirstLoad = index < (this.props.elementsPerScroll || 5);
       this.fetchItems({
         index: 0,
         elementsPerScroll: isFirstLoad ? this.props.elementsPerScroll : index,
@@ -152,13 +186,13 @@ const withInfiniteScroll =(
       }).then((newState) => this.setStateAfterDsUpdate(newState));
     };
 
-    fetchItems(config) {
+    fetchItems(config?: Partial<{ index: number; elementsPerScroll: number; elementsToRender: unknown[]; computeShowSeeMore: boolean }>): Promise<Partial<State>> {
       const { onScrollFinished, seeMoreAfter } = this.props;
       const { computeShowSeeMore, elementsPerScroll, elementsToRender, index } =
         extend(
           {
             index: this.state.index,
-            elementsPerScroll: this.props.elementsPerScroll,
+            elementsPerScroll: this.props.elementsPerScroll ?? 5,
             elementsToRender: this.state.elementsToRender,
             computeShowSeeMore: true,
           },
@@ -166,32 +200,32 @@ const withInfiniteScroll =(
         );
 
       return this.props.dataSource
-        .fetchItems(index, elementsPerScroll)
+        .fetchItems(index ?? 0, elementsPerScroll ?? 5)
         .then((nextElements) => {
-          let result = {
+          let result: Partial<State> = {
             isListFinished: true,
           };
           if (nextElements && nextElements.length > 0) {
-            const nextIndex = index + elementsPerScroll;
+            const nextIndex = (index ?? 0) + (elementsPerScroll ?? 5);
             result = {
               index: nextIndex,
-              elementsToRender: (elementsToRender || []).concat(nextElements),
+              elementsToRender: ((elementsToRender || []) as unknown[]).concat(nextElements),
               showSeeMore: computeShowSeeMore
-                ? seeMoreAfter === index / elementsPerScroll
+                ? seeMoreAfter === (index ?? 0) / (elementsPerScroll ?? 5)
                 : this.state.showSeeMore,
-              isListFinished: nextElements.length < elementsPerScroll,
+              isListFinished: nextElements.length < (elementsPerScroll ?? 5),
             };
           }
           if (onScrollFinished && result.isListFinished) {
             onScrollFinished({
-              totalNumberElements: elementsToRender.length,
+              totalNumberElements: (elementsToRender as unknown[])?.length ?? 0,
             });
           }
           return result;
         });
     }
 
-    handleIntersection = (entries) => {
+    handleIntersection = (entries: IntersectionObserverEntry[]) => {
       const { onScroll } = this.props;
       const entry = entries[0];
       if (entry.isIntersecting) {
@@ -202,7 +236,7 @@ const withInfiniteScroll =(
           onScroll({ currentIndex: this.state.index });
         }
         return this.fetchItems().then((newState) => {
-          this.setState(newState);
+          this.setState(newState as State);
         });
       }
       return Promise.resolve();
@@ -210,7 +244,7 @@ const withInfiniteScroll =(
 
     handleSeeMoreClick = () => {
       this.fetchItems().then((newState) => {
-        this.setState(newState);
+        this.setState(newState as State);
       });
     };
 
@@ -234,7 +268,7 @@ const withInfiniteScroll =(
                 this.sentinel = spinner;
               }}
               className={
-                renderLoadingComponent ? null : getClassNames('bpk-sentinel')
+                renderLoadingComponent ? undefined : getClassNames('bpk-sentinel')
               }
             >
               {renderLoadingComponent && renderLoadingComponent()}
@@ -245,7 +279,8 @@ const withInfiniteScroll =(
 
       return (
         <div>
-          <ComponentToExtend {...rest} elements={elementsToRender} />
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+          <ComponentToExtend {...(rest as any)} elements={elementsToRender} />
           {loadingOrButton}
         </div>
       );

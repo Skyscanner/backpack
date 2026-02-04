@@ -16,13 +16,18 @@
  * limitations under the License.
  */
 
-
+type ModalProps = {
+  showHeader?: boolean;
+  title?: string;
+  onClose?: () => void;
+  [key: string]: unknown;
+};
 
 export const titlePropType = (
-  props,
-  propName,
-  componentName,
-) => {
+  props: ModalProps,
+  propName: string,
+  componentName: string,
+): Error | null => {
   const titleValue = props[propName];
 
   if (props.showHeader && (!titleValue || typeof titleValue !== 'string')) {
@@ -35,10 +40,10 @@ export const titlePropType = (
 };
 
 export const onClosePropType = (
-  props,
-  propName,
-  componentName,
-) => {
+  props: ModalProps,
+  propName: string,
+  componentName: string,
+): Error | null => {
   const onCloseValue = props[propName];
 
   if (

@@ -16,13 +16,24 @@
  * limitations under the License.
  */
 
-
 import PropTypes from 'prop-types';
+import type { CSSProperties, ElementType, ReactNode } from 'react';
 
-const uniq = (arr = []) => {
-  const seen = {};
+type Theme = Record<string, string>;
+
+type Props = {
+  children: ReactNode;
+  theme?: Theme | null;
+  themeAttributes?: string[] | string[][];
+  component?: ElementType;
+  style?: CSSProperties | null;
+  [key: string]: unknown;
+};
+
+const uniq = (arr: string[] = []): string[] => {
+  const seen: Record<string, boolean> = {};
   return arr.filter((item) => {
-    if (seen.hasOwnProperty[item]) {
+    if (Object.prototype.hasOwnProperty.call(seen, item)) {
       return false;
     }
     seen[item] = true;
@@ -30,14 +41,14 @@ const uniq = (arr = []) => {
   });
 };
 
-const createStyle = (theme, themeAttributes) => {
+const createStyle = (theme: Theme | null | undefined, themeAttributes: string[] | string[][]): CSSProperties => {
   if (!theme) {
     return {};
   }
-  const flattenedThemeAttributes = [].concat(...themeAttributes);
-  let style = {};
-  const missingThemeAttributes = [];
-  flattenedThemeAttributes.forEach((attribute) => {
+  const flattenedThemeAttributes: string[] = ([] as string[]).concat(...themeAttributes);
+  let style: Record<string, string> = {};
+  const missingThemeAttributes: string[] = [];
+  flattenedThemeAttributes.forEach((attribute: string) => {
     if (theme[attribute]) {
       const cssName = attribute
         .replace(/([A-Z])/g, (variable) => `-${variable.toLowerCase()}`)
@@ -61,11 +72,12 @@ const BpkThemeProvider = ({
   component: WrapperComponent = 'div',
   style: userStyle = null,
   theme = null,
-  themeAttributes,
+  themeAttributes = [],
   ...rest
-}) => {
-  const dedupedThemeAttributes = uniq(themeAttributes);
-  const style = createStyle(theme, dedupedThemeAttributes);
+}: Props) => {
+  const flattenedAttrs: string[] = ([] as string[]).concat(...themeAttributes);
+  const dedupedThemeAttributes = uniq(flattenedAttrs);
+  const style = createStyle(theme, [dedupedThemeAttributes]);
 
   return (
     <WrapperComponent style={{ ...userStyle, ...style }} {...rest}>
@@ -74,7 +86,7 @@ const BpkThemeProvider = ({
   );
 }
 
-const themeAttributesPropType = (props, propName, componentName) => {
+const themeAttributesPropType = (props: Props, propName: string, componentName: string): Error | null | false => {
   const { theme } = props;
   let { themeAttributes } = props;
   if (!theme) {
@@ -88,20 +100,20 @@ const themeAttributesPropType = (props, propName, componentName) => {
     return new Error(`${componentName}: \`themeAttributes\` must be an array.`);
   }
 
-  themeAttributes = [].concat(...themeAttributes);
+  const flattenedAttributes: string[] = ([] as string[]).concat(...themeAttributes);
   const extraneousThemeAttributes = { ...theme };
-  const missingThemeAttributes = [];
-  themeAttributes.forEach((attribute) => {
+  const missingThemeAttributes: string[] = [];
+  flattenedAttributes.forEach((attribute: string) => {
     if (theme[attribute]) {
       delete extraneousThemeAttributes[attribute];
     } else {
       missingThemeAttributes.push(attribute);
     }
   });
-  const errors = [];
+  const errors: string[] = [];
   if (missingThemeAttributes.length > 0) {
     errors.push(
-      `${componentName}: To apply theming, the theme prop must include \`${themeAttributes.join(
+      `${componentName}: To apply theming, the theme prop must include \`${flattenedAttributes.join(
         ', ',
       )}\` (missing \`${missingThemeAttributes.join(', ')}\`)`,
     );

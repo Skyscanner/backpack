@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
@@ -32,7 +30,20 @@ const getClassName = cssModules(STYLES);
 const isTransitionEndSupported = () =>
   !!(typeof window !== 'undefined' && 'TransitionEvent' in window);
 
-const renderSteps = (numberOfSteps) => {
+type Props = {
+  max: number;
+  min: number;
+  value: number;
+  stepped?: boolean;
+  small?: boolean;
+  className?: string | null;
+  onComplete?: (() => void) | null;
+  onCompleteTransitionEnd?: (() => void) | null;
+  getValueText?: ((value: number, min: number, max: number) => string) | null;
+  tabIndex?: number;
+};
+
+const renderSteps = (numberOfSteps: number) => {
   const steps = [];
   for (let i = 1; i <= numberOfSteps; i += 1) {
     const left = `${100 * (i / (numberOfSteps + 1))}%`;
@@ -70,8 +81,10 @@ const defaultProps = {
   getValueText: null,
 }
 
-class BpkProgress extends Component {
-  componentDidUpdate(previousProps) {
+class BpkProgress extends Component<Props> {
+  static defaultProps = defaultProps;
+
+  componentDidUpdate(previousProps: Props) {
     const { max, value } = this.props;
     if (
       value >= max &&
@@ -147,7 +160,5 @@ class BpkProgress extends Component {
 }
 
 BpkProgress.propTypes = propTypes;
-
-BpkProgress.defaultProps = defaultProps;
 
 export default BpkProgress;

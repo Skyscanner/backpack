@@ -16,9 +16,8 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
+import type { ComponentType, MouseEvent, FocusEvent } from 'react';
 import { Component } from 'react';
 
 import { scaleLinear, scaleBand } from 'd3-scale';
@@ -53,11 +52,48 @@ const getClassName = cssModules(STYLES);
 const spacing = remToPx('.375rem');
 const lineHeight = remToPx(lineHeightSm);
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type DataPoint = Record<string, any>;
+
+type Props = {
+  data: DataPoint[];
+  xScaleDataKey: string;
+  yScaleDataKey: string;
+  xAxisLabel: string;
+  yAxisLabel: string;
+  initialWidth: number;
+  initialHeight: number;
+  leadingScrollIndicatorClassName?: string | null;
+  trailingScrollIndicatorClassName?: string | null;
+  outlierPercentage?: number | null;
+  showGridlines?: boolean;
+  xAxisMargin?: number;
+  xAxisTickValue?: (value: unknown) => unknown;
+  xAxisTickOffset?: number;
+  xAxisTickEvery?: number;
+  yAxisMargin?: number;
+  yAxisTickValue?: (value: unknown) => unknown;
+  yAxisNumTicks?: number | null;
+  yAxisDomain?: (number | null)[];
+  onBarClick?: ((event: MouseEvent, dataPoint: DataPoint) => void) | null;
+  onBarHover?: ((event: MouseEvent, dataPoint: DataPoint) => void) | null;
+  onBarFocus?: ((event: FocusEvent, dataPoint: DataPoint) => void) | null;
+  getBarLabel?: (point: DataPoint, xScaleDataKey: string, yScaleDataKey: string) => string;
+  getBarSelection?: (point: DataPoint) => boolean;
+  BarComponent?: ComponentType<Record<string, unknown>>;
+  disableDataTable?: boolean;
+};
+
+type State = {
+  width: number;
+  height: number;
+};
+
 const getMaxYValue = (
-  dataPoints,
-  outlierPercentage,
-) => {
-  const meanValue = dataPoints.reduce((d, t) => d + t, 0) / dataPoints.length;
+  dataPoints: number[],
+  outlierPercentage: number | null | undefined,
+): number => {
+  const meanValue = dataPoints.reduce((d: number, t: number) => d + t, 0) / dataPoints.length;
   const maxYValue = Math.max(...dataPoints);
 
   return outlierPercentage
@@ -65,9 +101,7 @@ const getMaxYValue = (
     : maxYValue;
 };
 
-
-
-class BpkBarchart extends Component {
+class BpkBarchart extends Component<Props, State> {
   static defaultProps = {
     leadingScrollIndicatorClassName: null,
     trailingScrollIndicatorClassName: null,
@@ -85,14 +119,24 @@ class BpkBarchart extends Component {
     onBarHover: null,
     onBarFocus: null,
     // Using type any here as xScaleDataKey or yScaleDataKey are strings and there is an issue that strings are not valid keys
-    getBarLabel: (point, xScaleDataKey, yScaleDataKey) =>
+    getBarLabel: (point: DataPoint, xScaleDataKey: string, yScaleDataKey: string) =>
       `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`,
     getBarSelection: () => false,
     BarComponent: BpkBarchartBar,
     disableDataTable: false,
   };
 
-  constructor(props) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  xScale: any;
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  yScale: any;
+
+  onWindowResize: ReturnType<typeof debounce>;
+
+  svgEl: SVGSVGElement | null = null;
+
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -159,27 +203,28 @@ class BpkBarchart extends Component {
     const transformedData = applyArrayRTLTransform(data);
     const margin = applyMarginRTLTransform({
       top: spacing,
-      left: yAxisMargin,
+      left: yAxisMargin ?? 0,
       right: 0,
-      bottom: xAxisMargin,
+      bottom: xAxisMargin ?? 0,
     });
 
     const width = this.state.width - margin.left - margin.right;
     const height = this.state.height - margin.bottom - margin.top;
     const maxYValue = getMaxYValue(
-      data.map((d) => d[yScaleDataKey]),
+      data.map((d: DataPoint) => d[yScaleDataKey]),
       outlierPercentage,
     );
 
     this.xScale.rangeRound([0, width]);
-    this.xScale.domain(transformedData.map((d) => d[xScaleDataKey]));
+    this.xScale.domain(transformedData.map((d: DataPoint) => d[xScaleDataKey]));
     this.yScale.rangeRound([height, 0]);
-    this.yScale.domain([yAxisDomain[0] || 0, yAxisDomain[1] || maxYValue]);
+    const domain = yAxisDomain ?? [null, null];
+    this.yScale.domain([domain[0] || 0, domain[1] || maxYValue]);
 
     return (
       <BpkMobileScrollContainer
-        leadingIndicatorClassName={leadingScrollIndicatorClassName}
-        trailingIndicatorClassName={trailingScrollIndicatorClassName}
+        leadingIndicatorClassName={leadingScrollIndicatorClassName ?? undefined}
+        trailingIndicatorClassName={trailingScrollIndicatorClassName ?? undefined}
       >
         {!disableDataTable && (
           <BpkChartDataTable
@@ -209,7 +254,8 @@ class BpkBarchart extends Component {
               height={this.state.height}
               margin={margin}
               scale={this.yScale}
-              tickValue={yAxisTickValue}
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              tickValue={yAxisTickValue as any}
               numTicks={yAxisNumTicks}
               label={yAxisLabel}
             />
@@ -219,7 +265,8 @@ class BpkBarchart extends Component {
               height={this.state.height}
               margin={margin}
               scale={this.xScale}
-              tickValue={xAxisTickValue}
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              tickValue={xAxisTickValue as any}
               tickEvery={xAxisTickEvery}
               tickOffset={xAxisTickOffset}
               label={xAxisLabel}
@@ -237,7 +284,8 @@ class BpkBarchart extends Component {
               height={this.state.height}
               margin={margin}
               data={transformedData}
-              xScale={this.xScale}
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              xScale={this.xScale as any}
               yScale={this.yScale}
               xScaleDataKey={xScaleDataKey}
               yScaleDataKey={yScaleDataKey}
@@ -246,9 +294,9 @@ class BpkBarchart extends Component {
               onBarClick={onBarClick}
               onBarHover={onBarHover}
               onBarFocus={onBarFocus}
-              getBarLabel={getBarLabel}
+              getBarLabel={getBarLabel!}
               getBarSelection={getBarSelection}
-              BarComponent={BarComponent}
+              BarComponent={BarComponent!}
             />
           </BpkChartMargin>
         </svg>
@@ -257,6 +305,7 @@ class BpkBarchart extends Component {
   }
 }
 
+// @ts-expect-error - propTypes are kept for backwards compatibility
 BpkBarchart.propTypes = {
   /**
    * **Required**

@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-
 import PropTypes from 'prop-types';
+import type { MouseEvent } from 'react';
 import { Component } from 'react';
 
 import BpkLink from '../../bpk-component-link';
@@ -29,8 +29,22 @@ const getClassName = cssModules(STYLES);
 
 const GRID_CLASS_NAME = getClassName('bpk-vertical-grid--on');
 
-class BpkGridToggle extends Component {
-  constructor(props) {
+type Props = {
+  targetContainer?: string;
+  className?: string | null;
+};
+
+type State = {
+  gridEnabled: boolean;
+};
+
+class BpkGridToggle extends Component<Props, State> {
+  static defaultProps = {
+    targetContainer: 'body',
+    className: null,
+  };
+
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -43,24 +57,26 @@ class BpkGridToggle extends Component {
   }
 
   componentWillUnmount() {
-    document
-      .querySelector(this.props.targetContainer)
-      .classList.remove(GRID_CLASS_NAME);
+    const target = document.querySelector(this.props.targetContainer ?? 'body');
+    if (target) {
+      target.classList.remove(GRID_CLASS_NAME);
+    }
     document.removeEventListener('keydown', this.handleKeyDown);
   }
 
-  handleKeyDown = (e) => {
+  handleKeyDown = (e: KeyboardEvent) => {
     if (e.ctrlKey && e.metaKey && e.key.toLowerCase() === 'g') {
       this.toggleGrid(e);
     }
   };
 
-  toggleGrid = (e) => {
+  toggleGrid = (e: KeyboardEvent | MouseEvent) => {
     e.preventDefault();
 
-    document
-      .querySelector(this.props.targetContainer)
-      .classList.toggle(GRID_CLASS_NAME);
+    const target = document.querySelector(this.props.targetContainer ?? 'body');
+    if (target) {
+      target.classList.toggle(GRID_CLASS_NAME);
+    }
 
     this.setState((state) => ({
       gridEnabled: !state.gridEnabled,
@@ -73,7 +89,7 @@ class BpkGridToggle extends Component {
     const onOrOff = gridEnabled ? 'off' : 'on';
 
     return (
-      <span className={className}>
+      <span className={className ?? undefined}>
         <BpkLink
           as="button"
           title="Keyboard Shortcut: ctrl + cmd + g"
@@ -86,14 +102,10 @@ class BpkGridToggle extends Component {
   }
 }
 
+// @ts-expect-error - propTypes are kept for backwards compatibility
 BpkGridToggle.propTypes = {
   targetContainer: PropTypes.string,
   className: PropTypes.string,
-};
-
-BpkGridToggle.defaultProps = {
-  targetContainer: 'body',
-  className: null,
 };
 
 export default BpkGridToggle;

@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-
 import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
@@ -26,10 +26,25 @@ import { SIZES, ALIGNS } from './common-types';
 
 import STYLES from './BpkPrice.module.scss';
 
-
 const getClassName = cssModules(STYLES);
 
-const getPriceTextStyle = (size) => {
+type Size = keyof typeof SIZES;
+
+type Props = {
+  price: string;
+  size?: Size;
+  align?: keyof typeof ALIGNS;
+  className?: string | null;
+  leadingText?: string | null;
+  trailingText?: string | null;
+  previousPrice?: string | null;
+  leadingClassName?: string | null;
+  dataAttributes?: Record<string, string>;
+  icon?: ReactNode;
+  [key: string]: unknown;
+};
+
+const getPriceTextStyle = (size: Size) => {
   if (size === SIZES.small) {
     return TEXT_STYLES.heading4;
   }
@@ -45,7 +60,7 @@ const getPriceTextStyle = (size) => {
   return TEXT_STYLES.heading5;
 };
 
-const getDefaultTextStyle = (size) => {
+const getDefaultTextStyle = (size: Size) => {
   if (size === SIZES.large) {
     return TEXT_STYLES.sm;
   }
@@ -62,10 +77,10 @@ const BpkPrice = ({
   leadingText = null,
   previousPrice = null,
   price,
-  size = SIZES.small,
+  size = SIZES.small as Size,
   trailingText = null,
   ...rest
-}) => {
+}: Props) => {
   const defaultTextStyle = getDefaultTextStyle(size);
   const priceTextStyle = getPriceTextStyle(size);
   const isAlignRight = align === ALIGNS.right;

@@ -16,19 +16,21 @@
  * limitations under the License.
  */
 
-
-
 // TODO: Remove this file once all BPK components have been migrated to TS
 
-// We disable eslint on the below line because it breaks the flow type definitions and the FlowIssue comment below
-// We can remove this when we migrate this file to TypeScript.
-// $FlowIssue[value-as-type] - PropType is imported as a type so is incorrectly reporting the PropType is not a valid type
-const deprecated = (propType, alternativeSuggestion) =>  
+type PropTypeValidator = (
+  props: Record<string, unknown>,
+  propName: string,
+  componentName: string,
+  ...rest: unknown[]
+) => Error | null;
+
+const deprecated = (propType: PropTypeValidator, alternativeSuggestion: string): PropTypeValidator =>
   (
-    props,
-    propName,
-    componentName,
-    ...rest
+    props: Record<string, unknown>,
+    propName: string,
+    componentName: string,
+    ...rest: unknown[]
   ) => {
     if (props[propName] != null) {
       const message = `Warning: "${propName}" property of "${componentName}" has been deprecated. ${alternativeSuggestion}`;

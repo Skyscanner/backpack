@@ -17,6 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -38,13 +39,13 @@ type Props = {
 
 const BpkChartDataTable = (props: Props) => {
   const { data, xAxisLabel, xScaleDataKey, yAxisLabel, yScaleDataKey } = props;
-  const rows = data.map((point, i) => {
+  const rows = data?.map((point, i) => {
     const key = `chart-data-table-row-${i}`;
 
     return (
       <tr key={key}>
-        <td>{point[xScaleDataKey]}</td>
-        <td>{point[yScaleDataKey]}</td>
+        <td>{point[xScaleDataKey] as ReactNode}</td>
+        <td>{point[yScaleDataKey] as ReactNode}</td>
       </tr>
     );
   });

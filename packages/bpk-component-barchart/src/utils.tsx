@@ -16,21 +16,25 @@
  * limitations under the License.
  */
 
-
+type BandScale = {
+  bandwidth: () => number;
+  round: () => boolean;
+  (value: unknown): number;
+};
 
 // Using Function here as scale refers to the d3-scale 3rd party library
-const center = (scale) => {
+const center = (scale: BandScale) => {
   let offset = scale.bandwidth() / 2;
   if (scale.round()) {
     offset = Math.round(offset);
   }
-  return (d) => scale(d) + offset;
+  return (d: unknown) => scale(d) + offset;
 };
 
 // Using any here as x can be any form see utils-test.js
-const identity = (x) => x;
+const identity = <T,>(x: T): T => x;
 
-const remToPx = (value) => {
+const remToPx = (value: string): number => {
   let parsed = 0;
 
   if (/rem$/.test(value)) {

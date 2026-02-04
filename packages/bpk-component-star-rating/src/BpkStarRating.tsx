@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -28,7 +26,7 @@ import STYLES from './BpkStarRating.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const getTypeByRating = (starNumber, rating) => {
+export const getTypeByRating = (starNumber: number, rating: number) => {
   if (starNumber <= rating) {
     return STAR_TYPES.FULL;
   }
@@ -42,11 +40,23 @@ export const getTypeByRating = (starNumber, rating) => {
 };
 
 export const ROUNDING_TYPES = {
-  down: (n) => Math.floor(n * 2) / 2,
-  up: (n) => Math.ceil(n * 2) / 2,
-  nearest: (n) => Math.round(n * 2) / 2,
+  down: (n: number) => Math.floor(n * 2) / 2,
+  up: (n: number) => Math.ceil(n * 2) / 2,
+  nearest: (n: number) => Math.round(n * 2) / 2,
 };
 
+type RoundingFunction = (n: number) => number;
+
+type Props = {
+  ratingLabel: string | ((rating: number, maxRating: number) => string);
+  className?: string | null;
+  large?: boolean;
+  extraLarge?: boolean;
+  maxRating?: number;
+  rating?: number;
+  rounding?: RoundingFunction;
+  [key: string]: unknown;
+};
 
 const BpkStarRating = ({
   className = null,
@@ -57,7 +67,7 @@ const BpkStarRating = ({
   ratingLabel,
   rounding = ROUNDING_TYPES.down,
   ...rest
-}) => {
+}: Props) => {
 
   const stars = [];
   const classNames = [getClassName('bpk-star-rating')];

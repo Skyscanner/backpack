@@ -16,10 +16,13 @@
  * limitations under the License.
  */
 
+type BarchartProps = {
+  xScaleDataKey: string;
+  yScaleDataKey: string;
+  [key: string]: unknown;
+};
 
-
-
-export default (props, propName, componentName) => {
+export default (props: BarchartProps, propName: string, componentName: string): Error | null => {
   const { xScaleDataKey, yScaleDataKey } = props;
   const data = props[propName];
   if (!Array.isArray(data)) {

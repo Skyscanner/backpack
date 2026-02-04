@@ -16,9 +16,8 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
+import type { MouseEvent } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -31,7 +30,22 @@ const getClassName = cssModules(STYLES);
 
 const noop = () => null;
 
-export const getTypeByRating = (starNumber, rating) => {
+type Props = {
+  getStarLabel: (starNumber: number, maxRating: number) => string;
+  id: string;
+  className?: string | null;
+  hoverRating?: number;
+  large?: boolean;
+  extraLarge?: boolean;
+  maxRating?: number;
+  onMouseLeave?: () => void;
+  onRatingHover?: (rating: number, event?: MouseEvent) => void;
+  onRatingSelect?: (rating: number, event?: MouseEvent) => void;
+  rating?: number;
+  [key: string]: unknown;
+};
+
+export const getTypeByRating = (starNumber: number, rating: number) => {
   if (starNumber > rating) {
     return STAR_TYPES.EMPTY;
   }
@@ -53,7 +67,7 @@ const BpkInteractiveStarRating = ({
   onRatingSelect = noop,
   rating = 0,
   ...rest
-}) => {
+}: Props) => {
   const stars = [];
   const classNames = [getClassName('bpk-star-rating')];
   const displayRating = hoverRating || rating;
