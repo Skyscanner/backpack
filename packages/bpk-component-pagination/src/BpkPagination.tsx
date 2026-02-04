@@ -28,13 +28,26 @@ import STYLES from './BpkPagination.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const handlePageChange = (onPageChange, pageCount) => (nextPageIndex) => {
+const handlePageChange = (onPageChange: ((index: number) => void) | null | undefined, pageCount: number) => (nextPageIndex: number) => {
   if (onPageChange && nextPageIndex < pageCount && nextPageIndex >= 0) {
     onPageChange(nextPageIndex);
   }
 };
 
-const BpkPagination = (props) => {
+type Props = {
+  selectedPageIndex: number;
+  pageCount: number;
+  previousLabel: string;
+  nextLabel: string;
+  paginationLabel: string;
+  pageLabel: (page: number, isSelected: boolean) => string;
+  onPageChange?: ((index: number) => void) | null;
+  visibleRange?: number;
+  className?: string | null;
+  [key: string]: unknown;
+};
+
+const BpkPagination = (props: Props) => {
   const classNames = [getClassName('bpk-pagination')];
   const {
     className,
@@ -69,7 +82,7 @@ const BpkPagination = (props) => {
         selectedPageIndex={selectedPageIndex}
         pageCount={pageCount}
         onPageChange={pageChanged}
-        visibleRange={visibleRange}
+        visibleRange={visibleRange ?? 3}
         pageLabel={pageLabel}
       />
       <BpkPaginationNudger

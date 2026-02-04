@@ -45,13 +45,21 @@ export const STAR_TYPES = {
 };
 
 
+type Props = {
+  type: typeof STAR_TYPES.EMPTY | typeof STAR_TYPES.HALF | typeof STAR_TYPES.FULL;
+  className?: string | null;
+  large?: boolean;
+  extraLarge?: boolean;
+  [key: string]: unknown;
+};
+
 const BpkStar = ({
   className = null,
   extraLarge = false,
   large = false,
   type,
   ...rest
-}) => {
+}: Props) => {
   const iconClassNames = getClassName(
     'bpk-star',
     large && 'bpk-star--large',
@@ -93,7 +101,7 @@ const BpkStar = ({
   if (type === STAR_TYPES.HALF) {
     return (
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-      <span className={[containerClassNames, halfIconClassNames]} {...rest}>
+      <span className={`${containerClassNames} ${halfIconClassNames}`} {...rest}>
         <HalfIcon />
       </span>
     );

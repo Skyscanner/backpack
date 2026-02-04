@@ -41,6 +41,7 @@ type Props = {
   onCompleteTransitionEnd?: (() => void) | null;
   getValueText?: ((value: number, min: number, max: number) => string) | null;
   tabIndex?: number;
+  [key: string]: unknown;
 };
 
 const renderSteps = (numberOfSteps: number) => {
@@ -82,6 +83,7 @@ const defaultProps = {
 }
 
 class BpkProgress extends Component<Props> {
+  static propTypes = propTypes;
   static defaultProps = defaultProps;
 
   componentDidUpdate(previousProps: Props) {
@@ -145,7 +147,7 @@ class BpkProgress extends Component<Props> {
         aria-valuenow={value}
         aria-valuemin={min}
         aria-valuemax={max}
-        tabIndex="0"
+        tabIndex={0}
         {...rest}
       >
         <div
@@ -159,6 +161,5 @@ class BpkProgress extends Component<Props> {
   }
 }
 
-BpkProgress.propTypes = propTypes;
 
 export default BpkProgress;

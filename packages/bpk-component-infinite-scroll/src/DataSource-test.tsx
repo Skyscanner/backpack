@@ -19,8 +19,8 @@
 
 import DataSource, { ArrayDataSource } from './DataSource';
 
-const withCommonTests = (createNewInstance, extraTests) => {
-  let dataSource;
+const withCommonTests = (createNewInstance: () => DataSource, extraTests?: (getDs: () => DataSource) => void) => {
+  let dataSource: DataSource;
 
   beforeEach(() => {
     dataSource = createNewInstance();
@@ -65,9 +65,9 @@ const withCommonTests = (createNewInstance, extraTests) => {
 describe('DataSource', () => {
   withCommonTests(
     () => new DataSource(),
-    (getDs) => {
+    (getDs: () => DataSource) => {
       it('throws an error when fetchItems is called directly', () => {
-        expect(() => getDs().fetchItems()).toThrow(/Not implemented/);
+        expect(() => getDs().fetchItems(0, 0)).toThrow(/Not implemented/);
       });
     },
   );
@@ -77,7 +77,7 @@ describe('ArrayDataSource', () => {
   const elements = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   withCommonTests(
     () => new ArrayDataSource(elements),
-    (getDs) => {
+    (getDs: () => DataSource) => {
       describe('fetchItems', () => {
         it('fetches items correctly', async () => {
           expect(await getDs().fetchItems(0, 5)).toEqual([1, 2, 3, 4, 5]);

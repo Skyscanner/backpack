@@ -35,7 +35,42 @@ const getClassName = cssModules(STYLES);
 
 
 
-const BpkMap = (props) => {
+type LatLong = {
+  latitude: number;
+  longitude: number;
+};
+
+type Bounds = {
+  south: number;
+  west: number;
+  north: number;
+  east: number;
+};
+
+type MapOptionStyle = {
+  featureType?: string;
+  elementType?: string;
+  stylers: Record<string, unknown>[];
+};
+
+type Props = {
+  bounds?: Bounds | null;
+  center?: LatLong;
+  children?: React.ReactNode;
+  greedyGestureHandling?: boolean;
+  mapRef?: ((map: google.maps.Map | null) => void) | null;
+  className?: string | null;
+  onRegionChange?: ((bounds: google.maps.LatLngBounds | undefined, center: google.maps.LatLng | undefined) => void) | null;
+  onZoom?: ((zoom: number | undefined) => void) | null;
+  onTilesLoaded?: (() => void) | null;
+  panEnabled?: boolean;
+  showControls?: boolean;
+  zoom?: number;
+  mapOptionStyles?: MapOptionStyle[] | null;
+  mapId?: string | null;
+};
+
+const BpkMap = (props: Props) => {
   const {
     bounds,
     center,
@@ -65,11 +100,11 @@ const BpkMap = (props) => {
     gestureHandling = 'greedy';
   }
 
-  const ref = useRef(null);
+  const ref = useRef<google.maps.Map | null>(null);
   const mapContainerClassName = getClassName('bpk-map', className);
 
   const onLoad = useCallback(
-    (map) => {
+    (map: google.maps.Map) => {
       ref.current = map;
       if (map && bounds) {
         map.fitBounds({

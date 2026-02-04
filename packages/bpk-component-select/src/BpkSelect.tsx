@@ -26,6 +26,22 @@ import STYLES from './BpkSelect.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type Props = {
+  id: string;
+  name: string;
+  value?: string;
+  className?: string | null;
+  disabled?: boolean;
+  docked?: boolean;
+  dockedFirst?: boolean;
+  dockedLast?: boolean;
+  dockedMiddle?: boolean;
+  image?: React.ReactElement | null;
+  large?: boolean;
+  valid?: boolean | null;
+  wrapperClassName?: string | null;
+  [key: string]: unknown;
+};
 
 const BpkSelect = ({
   className = null,
@@ -39,7 +55,7 @@ const BpkSelect = ({
   valid = null,
   wrapperClassName = null,
   ...rest
-}) => {
+}: Props) => {
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid
   const isInvalid = valid === false;

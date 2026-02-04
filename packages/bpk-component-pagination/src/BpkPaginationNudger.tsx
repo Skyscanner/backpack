@@ -31,10 +31,17 @@ const getClassName = cssModules(STYLES);
 const AlignedArrowLeftIcon = withRtlSupport(withButtonAlignment(ArrowLeftIcon));
 const AlignedArrowRightIcon = withRtlSupport(withButtonAlignment(ArrowRightIcon));
 
-const nudgerIcon = (forward) =>
+const nudgerIcon = (forward: boolean) =>
   forward ? (<AlignedArrowRightIcon/>) : (<AlignedArrowLeftIcon/>);
 
-const BpkPaginationNudger = (props) => {
+type Props = {
+  label: string;
+  onNudge: () => void;
+  forward?: boolean;
+  disabled?: boolean;
+};
+
+const BpkPaginationNudger = (props: Props) => {
   const { disabled, forward, label, onNudge } = props;
 
   return (
@@ -45,7 +52,7 @@ const BpkPaginationNudger = (props) => {
         disabled={disabled}
         iconOnly
       >
-        {nudgerIcon(forward)}
+        {nudgerIcon(forward ?? false)}
         <span className={getClassName('bpk-pagination-nudger__text--hidden')}>
           {label}
         </span>

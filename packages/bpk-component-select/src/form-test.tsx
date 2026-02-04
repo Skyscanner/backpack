@@ -46,16 +46,16 @@ describe('BpkSelect form test', () => {
     const select = screen.getByTestId('myselect');
     const option = screen.getByTestId('select-option');
 
-    expect(select.options.selectedIndex).toEqual(0);
+    expect((select as HTMLSelectElement).options.selectedIndex).toEqual(0);
 
-    expect(screen.getByText('Apples').selected).toBeTruthy();
+    expect((screen.getByText('Apples') as HTMLOptionElement).selected).toBeTruthy();
 
     await userEvent.selectOptions(select, option);
 
-    expect(option.selected).toBeTruthy();
-    expect(screen.getByText('Apples').selected).toBeFalsy();
+    expect((option as HTMLOptionElement).selected).toBeTruthy();
+    expect((screen.getByText('Apples') as HTMLOptionElement).selected).toBeFalsy();
 
-    const formData = new FormData(screen.getByTestId('form'));
+    const formData = new FormData(screen.getByTestId('form') as HTMLFormElement);
 
     expect(Object.fromEntries(formData.entries())).toEqual({
       fruits: 'oranges',
@@ -85,20 +85,20 @@ describe('BpkSelect form test', () => {
 
     const select = screen.getByTestId('myselect');
 
-    expect(select.options.selectedIndex).toEqual(0);
-    expect(screen.getByText('Apples').selected).toBeTruthy();
+    expect((select as HTMLSelectElement).options.selectedIndex).toEqual(0);
+    expect((screen.getByText('Apples') as HTMLOptionElement).selected).toBeTruthy();
 
     await userEvent.selectOptions(select, 'oranges');
 
-    expect(screen.getByText('Apples').selected).toBeFalsy();
-    expect(screen.getByText('Oranges').selected).toBeTruthy();
+    expect((screen.getByText('Apples') as HTMLOptionElement).selected).toBeFalsy();
+    expect((screen.getByText('Oranges') as HTMLOptionElement).selected).toBeTruthy();
 
     expect(formValidation).toHaveBeenCalledTimes(1);
 
     await userEvent.selectOptions(select, 'pears');
 
-    expect(screen.getByText('Oranges').selected).toBeFalsy();
-    expect(screen.getByText('Pears').selected).toBeTruthy();
+    expect((screen.getByText('Oranges') as HTMLOptionElement).selected).toBeFalsy();
+    expect((screen.getByText('Pears') as HTMLOptionElement).selected).toBeTruthy();
     expect(formValidation).toHaveBeenCalledTimes(2);
   });
 });

@@ -68,7 +68,7 @@ export {
   BpkCalendarGridWithTransition,
   CustomPropTypes,
   BpkCalendarGridPropTypes,
-  BpkCalendarDatePropTypes,
+  // BpkCalendarDatePropTypes is deprecated - use BpkCalendarDateProps instead
   BpkCalendarDateProps,
   BpkCalendarGridProps,
 };

@@ -29,9 +29,41 @@ import STYLES from './BpkPhoneInput.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type DialingCodeDefinition = {
+  code: string;
+  description: string;
+  numberPrefix?: string;
+  [key: string]: unknown;
+};
 
+type DialingCodeProps = {
+  id: string;
+  name: string;
+  label: string;
+  className?: string;
+  wrapperClassName?: string;
+};
 
-const BpkPhoneInput = (props) => {
+type Props = {
+  dialingCode: string;
+  dialingCodeProps: DialingCodeProps;
+  dialingCodes: DialingCodeDefinition[];
+  id: string;
+  name: string;
+  label: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onDialingCodeChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  value: string;
+  className?: string | null;
+  dialingCodeMask?: boolean;
+  disabled?: boolean;
+  large?: boolean;
+  valid?: boolean | null;
+  wrapperProps?: Record<string, unknown>;
+  [key: string]: unknown;
+};
+
+const BpkPhoneInput = (props: Props) => {
   const {
     className,
     dialingCode,
@@ -74,7 +106,7 @@ const BpkPhoneInput = (props) => {
     displayValue = `${numberPrefix} ${value}`;
   }
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!onChange) {
       return;
     }
@@ -104,7 +136,7 @@ const BpkPhoneInput = (props) => {
   return (
     <span
       {...wrapperProps}
-      className={getClassName('bpk-phone-input', wrapperProps.className)}
+      className={getClassName('bpk-phone-input', wrapperProps?.className as string | undefined)}
     >
       <div>
         <div className={getClassName('bpk-phone-input__label')}>

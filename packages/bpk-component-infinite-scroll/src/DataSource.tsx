@@ -47,7 +47,7 @@ class DataSource<T = unknown> {
     return false;
   }
 
-  triggerListeners = (...args) => {
+  triggerListeners = (...args: unknown[]) => {
     this.listeners.forEach((cb) => cb(...args));
   };
 }

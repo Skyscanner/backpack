@@ -33,14 +33,24 @@ export const LibraryShapeType = PropTypes.arrayOf(
   ]),
 );
 
-function withGoogleMapsScript(Component) {
+type LibraryType = 'drawing' | 'geometry' | 'localContext' | 'places' | 'visualization';
+
+type WithGoogleMapsScriptProps = {
+  googleMapsApiKey: string;
+  libraries?: LibraryType[];
+  loadingElement?: React.ReactNode;
+  preventGoogleFontsLoading?: boolean;
+  [key: string]: unknown;
+};
+
+function withGoogleMapsScript(Component: React.ComponentType<Record<string, unknown>>) {
   const WithGoogleMapsScript = ({
     googleMapsApiKey,
     libraries,
     loadingElement,
     preventGoogleFontsLoading,
     ...rest
-  }) => {
+  }: WithGoogleMapsScriptProps) => {
     const { isLoaded, loadError } = useJsApiLoader({
       googleMapsApiKey,
       libraries,

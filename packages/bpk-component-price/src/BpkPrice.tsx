@@ -69,7 +69,7 @@ const getDefaultTextStyle = (size: Size) => {
 };
 
 const BpkPrice = ({
-  align = ALIGNS.left,
+  align = ALIGNS.left as keyof typeof ALIGNS,
   className = null,
   dataAttributes = {},
   icon,

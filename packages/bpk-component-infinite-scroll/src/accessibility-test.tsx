@@ -27,15 +27,15 @@ import withInfiniteScroll from './withInfiniteScroll';
 
 describe('withInfiniteScroll accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const elementsArray = [];
+    const elementsArray: string[] = [];
 
     for (let i = 0; i < 5; i += 1) {
       elementsArray.push(`Element ${i}`);
     }
 
-    const List = (props) => (
+    const List = (props: { elements: string[] }) => (
       <div id="list">
-        {props.elements.map((element) => (
+        {props.elements.map((element: string) => (
           <div key={element}>{element}</div>
         ))}
       </div>

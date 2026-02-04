@@ -19,6 +19,7 @@
 
 
 import PropTypes from 'prop-types';
+import type { ComponentType, ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -26,12 +27,20 @@ import STYLES from './BpkAutosuggest.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type Props = {
+  value: ReactNode;
+  subHeading?: ReactNode | null;
+  tertiaryLabel?: string | null;
+  icon?: ComponentType | null;
+  indent?: boolean;
+  className?: string | null;
+  [key: string]: unknown;
+};
 
-const BpkAutosuggestSuggestion = (props) => {
-  const classNames = [getClassName('bpk-autosuggest__suggestion')];
-  const { className, icon, indent, subHeading, tertiaryLabel, value, ...rest } =
+const BpkAutosuggestSuggestion = (props: Props) => {
+  const classNames: string[] = [getClassName('bpk-autosuggest__suggestion')];
+  const { className, icon: Icon, indent, subHeading, tertiaryLabel, value, ...rest } =
     props;
-  const Icon = icon;
 
   if (indent) {
     classNames.push(getClassName('bpk-autosuggest__suggestion--indent'));
@@ -43,7 +52,7 @@ const BpkAutosuggestSuggestion = (props) => {
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <section className={classNames.join(' ')} {...rest}>
-      {icon ? (
+      {Icon ? (
         <div className={getClassName('bpk-autosuggest__suggestion-icon')}>
           <Icon />
         </div>

@@ -25,7 +25,14 @@ import STYLES from './BpkPaginationPage.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkPaginationPage = (props) => {
+type Props = {
+  page: number;
+  onSelect: () => void;
+  pageLabel: (page: number, isSelected: boolean) => string;
+  isSelected?: boolean;
+};
+
+const BpkPaginationPage = (props: Props) => {
   const classNames = [getClassName('bpk-pagination-page')];
   const { isSelected, onSelect, page, pageLabel } = props;
 
@@ -39,7 +46,7 @@ const BpkPaginationPage = (props) => {
       onClick={onSelect}
       type="button"
       className={classNames.join(' ')}
-      aria-label={pageLabel(page, isSelected)}
+      aria-label={pageLabel(page, isSelected ?? false)}
       aria-current={isSelected}
     >
       <span>{page}</span>

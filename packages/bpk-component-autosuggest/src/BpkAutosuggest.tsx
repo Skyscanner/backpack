@@ -51,20 +51,22 @@ Autosuggest.defaultProps.theme = {
   sectionTitle: getClassName('bpk-autosuggest__section-title'),
 };
 
-Autosuggest.defaultProps.renderInputComponent = (inputProps) => {
+Autosuggest.defaultProps.renderInputComponent = (inputProps: Record<string, unknown>) => {
   const { autoComplete = 'off', inputRef, ref, ...rest } = inputProps;
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <BpkInput
-      inputRef={(element) => {
-        ref(element);
+      inputRef={(element: HTMLInputElement | null) => {
+        if (typeof ref === 'function') {
+          ref(element);
+        }
 
         if (typeof inputRef === 'function') {
           inputRef(element);
         }
       }}
-      autoComplete={autoComplete}
+      autoComplete={autoComplete as string}
       {...rest}
     />
   );

@@ -26,7 +26,7 @@ import { colorWhite } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkThemeProvider from './BpkThemeProvider';
 
-const CustomComponentFunction = ({ children, ...rest }) => (
+const CustomComponentFunction = ({ children, ...rest }: { children: React.ReactNode; [key: string]: unknown }) => (
   <span {...rest}>{children}</span>
 );
 
@@ -34,17 +34,22 @@ CustomComponentFunction.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
+interface CustomComponentClassProps {
+  children: React.ReactNode;
+  [key: string]: unknown;
+}
+
 // eslint-disable-next-line react/prefer-stateless-function
-class CustomComponentClass extends Component {
+class CustomComponentClass extends Component<CustomComponentClassProps> {
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+  };
+
   render() {
     const { children, ...rest } = this.props;
     return <span {...rest}>{children}</span>;
   }
 }
-
-CustomComponentClass.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 describe('BpkThemeProvider', () => {
   it('should render correctly', () => {
@@ -160,37 +165,33 @@ describe('BpkThemeProvider', () => {
   });
 
   it('should warn about missing theme attributes', () => {
-    expect(
-      // eslint-disable-next-line react/forbid-foreign-prop-types
-      BpkThemeProvider.propTypes
-        .themeAttributes(
-          {
-            theme: {},
-            themeAttributes: ['one'],
-          },
-          'themeAttributes',
-          'BpkThemeProvider',
-        )
-        .toString(),
-    ).toEqual(
+    // eslint-disable-next-line react/forbid-foreign-prop-types
+    const themeAttributesPropType = (BpkThemeProvider.propTypes as Record<string, (...args: unknown[]) => Error | null | false>).themeAttributes;
+    const result = themeAttributesPropType(
+      {
+        theme: {},
+        themeAttributes: ['one'],
+      },
+      'themeAttributes',
+      'BpkThemeProvider',
+    );
+    expect(result!.toString()).toEqual(
       'Error: BpkThemeProvider: To apply theming, the theme prop must include `one` (missing `one`)',
     );
   });
 
   it('should warn about extraneous theme attributes', () => {
-    expect(
-      // eslint-disable-next-line react/forbid-foreign-prop-types
-      BpkThemeProvider.propTypes
-        .themeAttributes(
-          {
-            theme: { one: 'a', two: 'a' },
-            themeAttributes: ['one'],
-          },
-          'themeAttributes',
-          'BpkThemeProvider',
-        )
-        .toString(),
-    ).toEqual(
+    // eslint-disable-next-line react/forbid-foreign-prop-types
+    const themeAttributesPropType = (BpkThemeProvider.propTypes as Record<string, (...args: unknown[]) => Error | null | false>).themeAttributes;
+    const result = themeAttributesPropType(
+      {
+        theme: { one: 'a', two: 'a' },
+        themeAttributes: ['one'],
+      },
+      'themeAttributes',
+      'BpkThemeProvider',
+    );
+    expect(result!.toString()).toEqual(
       'Error: BpkThemeProvider: Extraneous theme attributes supplied: `two`.',
     );
   });

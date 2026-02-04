@@ -20,15 +20,15 @@
 
 import { render } from '@testing-library/react';
 
-import { spacingSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { spacingIconText } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkChartMargin from './BpkChartMargin';
 
 const margin = {
-  top: spacingSm,
-  right: spacingSm,
-  bottom: spacingSm,
-  left: spacingSm,
+  top: spacingIconText,
+  right: spacingIconText,
+  bottom: spacingIconText,
+  left: spacingIconText,
 };
 
 describe('BpkChartMargin', () => {

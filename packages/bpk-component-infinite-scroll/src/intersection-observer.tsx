@@ -23,6 +23,7 @@ const globalAny = globalThis as typeof globalThis & {
 };
 
 if (typeof window === 'undefined') {
+  // @ts-expect-error - Minimal IntersectionObserver polyfill for server-side rendering
   globalAny.IntersectionObserver = class {
     observe() {}
 

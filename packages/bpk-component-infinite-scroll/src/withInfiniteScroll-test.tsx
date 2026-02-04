@@ -26,7 +26,7 @@ import { ArrayDataSource } from './DataSource';
 import withInfiniteScroll from './withInfiniteScroll';
 
 const nextTick = () => new Promise((res) => setTimeout(res, 0));
-const mockDataSource = (data) => {
+const mockDataSource = (data: (string | number)[]) => {
   const myDs = new ArrayDataSource(data);
   const mockFetch = myDs.fetchItems.bind(myDs);
   myDs.fetchItems = jest.fn((...args) => mockFetch(...args));
@@ -34,13 +34,13 @@ const mockDataSource = (data) => {
 };
 
 describe('withInfiniteScroll', () => {
-  const elementsArray = [];
+  const elementsArray: string[] = [];
 
   for (let i = 0; i < 5; i += 1) {
     elementsArray.push(`Element ${i}`);
   }
 
-  const List = (props) => (
+  const List = (props: { elements: string[] }) => (
     <div id="list">
       {props.elements.map((element) => (
         <div key={element}>{element}</div>
@@ -56,20 +56,20 @@ describe('withInfiniteScroll', () => {
   };
 
   const InfiniteList = withInfiniteScroll(List);
-  let intersect;
-  let currentOptions = {};
+  let intersect: () => Promise<void>;
+  let currentOptions: IntersectionObserverInit = {};
 
   beforeEach(() => {
     global.IntersectionObserver = class {
-      constructor(callback, options) {
-        intersect = async () => callback([{ isIntersecting: true }]);
+      constructor(callback: IntersectionObserverCallback, options: IntersectionObserverInit) {
+        intersect = async () => callback([{ isIntersecting: true } as IntersectionObserverEntry], {} as IntersectionObserver);
         currentOptions = options;
       }
 
-      observe() {}  
+      observe() {}
 
-      unobserve() {}  
-    };
+      unobserve() {}
+    } as unknown as typeof IntersectionObserver;
   });
 
   it('renders an empty list for the first render', () => {

@@ -38,6 +38,16 @@ const AlignedExclamationIcon = withAlignment(
   iconSizeSm,
 );
 
+type Props = {
+  children: React.ReactNode;
+  id: string;
+  expanded: boolean;
+  isCheckbox?: boolean;
+  className?: string | null;
+  containerProps?: Record<string, unknown>;
+  [key: string]: unknown;
+};
+
 const BpkFormValidation = ({
   children,
   className = null,
@@ -45,7 +55,7 @@ const BpkFormValidation = ({
   expanded,
   isCheckbox = false,
   ...rest
-}) => {
+}: Props) => {
   const classNames = getClassName(
     'bpk-form-validation',
     expanded && 'bpk-form-validation--appear',

@@ -29,7 +29,11 @@ const previousPrice = '£2,000';
 const leadingText = 'from';
 const trailingText = 'per day';
 const icon = NewWindowIcon;
-let props;
+let props: {
+  price: string;
+  size: keyof typeof SIZES;
+  align: keyof typeof ALIGNS;
+};
 
 describe.each([
   [SIZES.xsmall, ALIGNS.left],
@@ -114,7 +118,7 @@ describe.each([
         previousPrice={previousPrice}
         leadingText={leadingText}
         trailingText={trailingText}
-        icon={icon}
+        icon={<NewWindowIcon />}
       />,
     );
     expect(asFragment()).toMatchSnapshot();

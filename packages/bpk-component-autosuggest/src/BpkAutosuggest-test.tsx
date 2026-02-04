@@ -25,8 +25,8 @@ import BpkAutosuggest from './BpkAutosuggest';
 const suggestions = ['Edinburgh', 'Glasgow', 'London'];
 const onSuggestionsFetchRequested = () => null;
 const onSuggestionsClearRequested = () => null;
-const getSuggestionValue = (suggestion) => suggestion;
-const renderSuggestion = (suggestion) => <span>{suggestion}</span>;
+const getSuggestionValue = (suggestion: string) => suggestion;
+const renderSuggestion = (suggestion: string) => <span>{suggestion}</span>;
 const inputProps = {
   id: 'origin',
   name: 'Origin',
@@ -67,7 +67,7 @@ describe('BpkAutosuggest', () => {
   it('should set the input reference', () => {
     let inputRef;
 
-    const storeAutosuggestReference = (ref) => {
+    const storeAutosuggestReference = (ref: HTMLInputElement | null) => {
       inputRef = ref;
     };
 
@@ -99,7 +99,7 @@ describe('BpkAutosuggest', () => {
     );
 
     const input = container.querySelector('input');
-    expect(input.autocomplete).toEqual('off');
+    expect(input!.autocomplete).toEqual('off');
   });
 
   it('should allow a consumer to override autocomplete', () => {
@@ -115,6 +115,6 @@ describe('BpkAutosuggest', () => {
     );
 
     const input = container.querySelector('input');
-    expect(input.autocomplete).toEqual('on');
+    expect(input!.autocomplete).toEqual('on');
   });
 });

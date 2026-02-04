@@ -28,7 +28,15 @@ import STYLES from './BpkPaginationList.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkPaginationList = (props) => {
+type Props = {
+  selectedPageIndex: number;
+  pageCount: number;
+  visibleRange: number;
+  onPageChange: (page: number) => void;
+  pageLabel: (page: number, isSelected: boolean) => string;
+};
+
+const BpkPaginationList = (props: Props) => {
   const {
     onPageChange,
     pageCount,

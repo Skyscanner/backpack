@@ -28,7 +28,7 @@ describe('utils', () => {
   describe('identity', () => {
     it('should return the input', () => {
       const obj = {};
-      const arr = [];
+      const arr: unknown[] = [];
       expect(identity(null)).toBe(null);
       expect(identity(0)).toBe(0);
       expect(identity(obj)).toBe(obj);

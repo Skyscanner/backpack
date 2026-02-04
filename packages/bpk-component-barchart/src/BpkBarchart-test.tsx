@@ -86,7 +86,7 @@ describe('BpkBarchart', () => {
         initialWidth={size}
         initialHeight={size}
         data={prices}
-        getBarLabel={() => null}
+        getBarLabel={() => ''}
       />,
     );
     expect(asFragment()).toMatchSnapshot();

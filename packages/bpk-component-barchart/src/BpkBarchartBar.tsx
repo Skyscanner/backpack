@@ -92,8 +92,8 @@ const BpkBarchartBar = (props: Props) => {
   );
 
   const isAriaPressed = !!(onClick && selected);
-  const rectPadding = width * (padding / 2);
-  const rectWidth = width * (1 - padding);
+  const rectPadding = width * ((padding ?? 0) / 2);
+  const rectWidth = width * (1 - (padding ?? 0));
 
   return (
     <g className={classNames} transform={`translate(${x}, ${y})`}>

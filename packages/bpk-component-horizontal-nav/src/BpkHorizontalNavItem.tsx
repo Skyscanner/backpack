@@ -43,6 +43,25 @@ type Props = {
 // React Component class.
 // eslint-disable-next-line react/prefer-stateless-function
 class BpkHorizontalNavItem extends Component<Props> {
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string,
+    disabled: PropTypes.bool,
+    href: PropTypes.string,
+    selected: PropTypes.bool,
+    spaceAround: PropTypes.bool,
+    type: PropTypes.oneOf(Object.keys(HORIZONTAL_NAV_TYPES)),
+  };
+
+  static defaultProps = {
+    className: null,
+    disabled: false,
+    href: null,
+    selected: false,
+    spaceAround: false,
+    type: HORIZONTAL_NAV_TYPES.default,
+  };
+
   render() {
     const {
       children,
@@ -97,32 +116,6 @@ class BpkHorizontalNavItem extends Component<Props> {
   }
 }
 
-BpkHorizontalNavItem.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  /**
-   * **Note:**
-   * "disabled" and "selected" are mutually exclusive for true values, i.e. only one of them can be true for a given nav item.
-   */
-  disabled: PropTypes.bool,
-  href: PropTypes.string,
-  /**
-   * **Note:**
-   * "disabled" and "selected" are mutually exclusive for true values, i.e. only one of them can be true for a given nav item.
-   */
-  selected: PropTypes.bool,
-  spaceAround: PropTypes.bool,
-  type: PropTypes.oneOf(Object.keys(HORIZONTAL_NAV_TYPES)),
-};
-
-BpkHorizontalNavItem.defaultProps = {
-  className: null,
-  disabled: false,
-  href: null,
-  selected: false,
-  spaceAround: false,
-  type: HORIZONTAL_NAV_TYPES.default,
-};
 
 const themeAttributes = [
   'horizontalNavLinkColor',

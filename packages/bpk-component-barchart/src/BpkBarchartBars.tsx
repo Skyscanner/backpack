@@ -74,7 +74,8 @@ type Props = {
   maxYValue: number;
   margin: Margin;
   getBarLabel: (point: DataPoint, xKey: string, yKey: string) => string;
-  BarComponent: ComponentType<Record<string, unknown>>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  BarComponent: ComponentType<any>;
   getBarSelection?: (point: DataPoint) => boolean;
   outerPadding?: number;
   innerPadding?: number;
@@ -129,9 +130,9 @@ const BpkBarchartBars = (props: Props) => {
             height={outlier ? barHeight + borderRadius : barHeight}
             label={getBarLabel(point, xScaleDataKey, yScaleDataKey)}
             outlier={isOutlier(point, props)}
-            onClick={onBarClick ? (e) => onBarClick(e, { point }) : null}
-            onHover={onBarHover ? (e) => onBarHover(e, { point }) : null}
-            onFocus={onBarFocus ? (e) => onBarFocus(e, { point }) : null}
+            onClick={onBarClick ? (e: MouseEvent) => onBarClick(e, { point }) : null}
+            onHover={onBarHover ? (e: MouseEvent) => onBarHover(e, { point }) : null}
+            onFocus={onBarFocus ? (e: FocusEvent) => onBarFocus(e, { point }) : null}
             selected={getBarSelection ? getBarSelection(point) : false}
             padding={innerPadding}
             {...rest}
