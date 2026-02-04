@@ -1,4 +1,3 @@
-
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkBarchart should render correctly 1`] = `
@@ -1874,6 +1873,7 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
                   y="0"
                 />
                 <rect
+                  aria-label=""
                   aria-roledescription="bar"
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
@@ -1897,6 +1897,7 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
                   y="0"
                 />
                 <rect
+                  aria-label=""
                   aria-roledescription="bar"
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
@@ -1920,6 +1921,7 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
                   y="0"
                 />
                 <rect
+                  aria-label=""
                   aria-roledescription="bar"
                   class="bpk-barchart-bar__tappable-area"
                   height="0"
@@ -1943,6 +1945,7 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
                   y="0"
                 />
                 <rect
+                  aria-label=""
                   aria-roledescription="bar"
                   class="bpk-barchart-bar__tappable-area"
                   height="0"

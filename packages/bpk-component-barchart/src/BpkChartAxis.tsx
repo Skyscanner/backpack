@@ -19,7 +19,6 @@
 import PropTypes from 'prop-types';
 import type { ReactNode } from 'react';
 
-
 import {
   lineHeightSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
@@ -29,6 +28,8 @@ import { cssModules } from '../../bpk-react-utils';
 import { rtlConditionalValue } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, center, remToPx } from './utils';
+
+import type { ScaleBand, ScaleLinear } from 'd3-scale';
 
 import STYLES from './BpkChartAxis.module.scss';
 
@@ -44,13 +45,11 @@ type Margin = {
   right: number;
 };
 
-type Scale = ((value: unknown) => number) & {
-  bandwidth?: () => number;
-  round?: () => boolean;
-  copy: () => Scale;
-  ticks?: (count?: number | null) => unknown[];
-  domain: () => unknown[];
-};
+type Scale = ScaleBand<string> | ScaleLinear<number, number>;
+
+// Type guard for band scale
+const isBandScale = (scale: Scale): scale is ScaleBand<string> =>
+  'bandwidth' in scale;
 
 type AxisConfigParams = {
   height: number;
@@ -62,8 +61,10 @@ type AxisConfigParams = {
 
 const getAxisConfig = ({ height, margin, orientation, scale, width }: AxisConfigParams) => {
   // When scale.bandwidth exists, it's a band scale suitable for center()
-   
-  const position = (scale.bandwidth ? center : identity)(scale.copy() as any);
+  // Position function maps tick values to pixel positions
+  const position = isBandScale(scale)
+    ? (tick: unknown) => center(scale.copy())(tick as string)
+    : (tick: unknown) => scale.copy()(tick as number) as number;
 
   if (orientation === ORIENTATION_X) {
     return {
@@ -135,9 +136,9 @@ const BpkChartAxis = (props: Props) => {
   const { containerProps, labelProps, textProps, tickPosition } =
     getAxisConfig(props);
 
-  const ticks = scale.ticks
-    ? scale.ticks(numTicks)
-    : scale.domain().filter((tick, i) => (i - tickOffset) % tickEvery === 0);
+  const ticks = isBandScale(scale)
+    ? scale.domain().filter((tick, i) => (i - tickOffset) % tickEvery === 0)
+    : scale.ticks(numTicks ?? undefined);
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.

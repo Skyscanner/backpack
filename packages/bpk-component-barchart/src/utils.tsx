@@ -16,11 +16,9 @@
  * limitations under the License.
  */
 
-type BandScale = {
-  bandwidth: () => number;
-  round?: () => boolean;
-  (value: unknown): number;
-};
+import type { ScaleBand } from 'd3-scale';
+
+type BandScale = ScaleBand<string>;
 
 // Using Function here as scale refers to the d3-scale 3rd party library
 const center = (scale: BandScale) => {
@@ -28,7 +26,7 @@ const center = (scale: BandScale) => {
   if (scale.round?.()) {
     offset = Math.round(offset);
   }
-  return (d: unknown) => scale(d) + offset;
+  return (d: string) => (scale(d) ?? 0) + offset;
 };
 
 // Using any here as x can be any form see utils-test.js

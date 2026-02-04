@@ -19,10 +19,11 @@
 import PropTypes from 'prop-types';
 import type { ComponentType, MouseEvent, FocusEvent } from 'react';
 
-
 import { borderRadiusXs } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { remToPx } from './utils';
+
+import type { ScaleBand } from 'd3-scale';
 
 const borderRadius = remToPx(borderRadiusXs);
 
@@ -69,7 +70,7 @@ type Props = {
   xScaleDataKey: string;
   yScaleDataKey: string;
   height: number;
-  xScale: ((value: string) => number) & { bandwidth: () => number; paddingOuter: (val: number) => void; paddingInner: (val: number) => void };
+  xScale: ScaleBand<string>;
   yScale: (value: number) => number;
   maxYValue: number;
   margin: Margin;

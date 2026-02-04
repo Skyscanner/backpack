@@ -23,6 +23,8 @@ import { cssModules } from '../../bpk-react-utils';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, center } from './utils';
 
+import type { ScaleBand, ScaleLinear } from 'd3-scale';
+
 import STYLES from './BpkChartGridLines.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -34,13 +36,11 @@ type Margin = {
   right: number;
 };
 
-type Scale = ((value: unknown) => number) & {
-  bandwidth?: () => number;
-  round?: () => boolean;
-  copy: () => Scale;
-  ticks?: (count?: number | null) => unknown[];
-  domain: () => unknown[];
-};
+type Scale = ScaleBand<string> | ScaleLinear<number, number>;
+
+// Type guard for band scale
+const isBandScale = (scale: Scale): scale is ScaleBand<string> =>
+  'bandwidth' in scale;
 
 type Props = {
   width: number;
@@ -67,12 +67,14 @@ const BpkChartGridLines = (props: Props) => {
     ...rest
   } = props;
 
-  const ticks = scale.ticks
-    ? scale.ticks(numTicks)
-    : scale.domain().filter((tick, i) => (i - (tickOffset ?? 0)) % (tickEvery ?? 1) === 0);
+  const ticks = isBandScale(scale)
+    ? scale.domain().filter((tick, i) => (i - (tickOffset ?? 0)) % (tickEvery ?? 1) === 0)
+    : scale.ticks(numTicks ?? undefined);
   // When scale.bandwidth exists, it's a band scale suitable for center()
-   
-  const position = (scale.bandwidth ? center : identity)(scale.copy() as any);
+  // Position function maps tick values to pixel positions
+  const position = isBandScale(scale)
+    ? (tick: unknown) => center(scale.copy())(tick as string)
+    : (tick: unknown) => scale.copy()(tick as number) as number;
 
   const lineProps = (tick: unknown) => {
     const value = position(tick);
