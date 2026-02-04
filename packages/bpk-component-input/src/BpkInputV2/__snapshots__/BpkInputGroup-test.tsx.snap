@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkInputGroup (Docked Inputs) Snapshots should match snapshot with docked 2 inputs 1`] = `
+<div>
+  <div
+    class="bpk-input-v2__root"
+    style="--bpk-input-gap: 0;"
+  >
+    <div
+      class="bpk-input-v2__input-container bpk-input-v2__input-container--docked-first"
+    >
+      <input
+        class="bpk-input-v2__input"
+        data-child-position="0"
+        id="from"
+        name="from"
+        type="text"
+        value="Edinburgh"
+      />
+    </div>
+    <div
+      class="bpk-input-v2__input-container bpk-input-v2__input-container--docked-last"
+    >
+      <input
+        class="bpk-input-v2__input"
+        data-child-position="1"
+        id="to"
+        name="to"
+        type="text"
+        value="London"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkInputGroup (Docked Inputs) Snapshots should match snapshot with docked 3 inputs 1`] = `
+<div>
+  <div
+    class="bpk-input-v2__root"
+    style="--bpk-input-gap: 0;"
+  >
+    <div
+      class="bpk-input-v2__input-container bpk-input-v2__input-container--docked-first"
+    >
+      <input
+        class="bpk-input-v2__input"
+        data-child-position="0"
+        id="first"
+        name="first"
+        type="text"
+        value="First"
+      />
+    </div>
+    <div
+      class="bpk-input-v2__input-container bpk-input-v2__input-container--docked-middle"
+    >
+      <input
+        class="bpk-input-v2__input"
+        data-child-position="1"
+        id="middle"
+        name="middle"
+        type="text"
+        value="Middle"
+      />
+    </div>
+    <div
+      class="bpk-input-v2__input-container bpk-input-v2__input-container--docked-last"
+    >
+      <input
+        class="bpk-input-v2__input"
+        data-child-position="2"
+        id="last"
+        name="last"
+        type="text"
+        value="Last"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkInputGroup (Docked Inputs) Snapshots should match snapshot with docked inputs and adornments 1`] = `
+<div>
+  <div
+    class="bpk-input-v2__root"
+    style="--bpk-input-gap: 0;"
+  >
+    <div
+      class="bpk-input-v2__input-container bpk-input-v2__input-container--docked-first"
+    >
+      <div
+        class="bpk-input-v2__adornment bpk-input-v2__adornment--start"
+        data-input-adornment-id=":r4:"
+      >
+        🛫
+      </div>
+      <input
+        class="bpk-input-v2__input"
+        data-child-position="1"
+        id="from"
+        name="from"
+        type="text"
+        value="Edinburgh"
+      />
+      <div
+        class="bpk-input-v2__adornment bpk-input-v2__adornment--end"
+        data-input-adornment-id=":r5:"
+      >
+        🛬
+      </div>
+    </div>
+    <div
+      class="bpk-input-v2__input-container bpk-input-v2__input-container--docked-last"
+    >
+      <input
+        class="bpk-input-v2__input"
+        data-child-position="3"
+        id="to"
+        name="to"
+        type="text"
+        value="London"
+      />
+    </div>
+  </div>
+</div>
+`;
