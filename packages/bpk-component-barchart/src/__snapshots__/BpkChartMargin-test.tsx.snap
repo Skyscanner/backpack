@@ -1,0 +1,14 @@
+
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkChartMargin should render correctly 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      transform="translate(undefined, undefined)"
+    >
+      Children
+    </g>
+  </svg>
+</DocumentFragment>
+`;
