@@ -16,15 +16,8 @@
  * limitations under the License.
  */
 
-import BpkModal from './src/BpkModal';
-import { MODAL_STYLING } from './src/BpkModalInner';
-import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
-import { propTypes, defaultProps } from './src/legacy-prop-types';
-import themeAttributes from './src/themeAttributes';
-
-import type { Props } from './src/BpkModal';
-
-export type BpkModalProps = Props;
-
-export default BpkModal;
-export { propTypes, defaultProps, themeAttributes, BpkModalV2, MODAL_STYLING };
+declare module 'lodash.debounce' {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  function debounce<T extends (...args: any[]) => any>(func: T, wait?: number): T & { cancel(): void; flush(): void };
+  export = debounce;
+}

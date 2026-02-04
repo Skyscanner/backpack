@@ -16,15 +16,9 @@
  * limitations under the License.
  */
 
-import BpkModal from './src/BpkModal';
-import { MODAL_STYLING } from './src/BpkModalInner';
-import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
-import { propTypes, defaultProps } from './src/legacy-prop-types';
-import themeAttributes from './src/themeAttributes';
-
-import type { Props } from './src/BpkModal';
-
-export type BpkModalProps = Props;
-
-export default BpkModal;
-export { propTypes, defaultProps, themeAttributes, BpkModalV2, MODAL_STYLING };
+declare module 'd3-scale' {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  export function scaleBand(): any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  export function scaleLinear(): any;
+}

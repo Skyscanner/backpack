@@ -25,7 +25,6 @@ import BpkAriaLive, {
 import BpkChip from '../../packages/bpk-component-chip';
 import { BpkCode } from '../../packages/bpk-component-code';
 import BpkFieldset from '../../packages/bpk-component-fieldset';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../packages/bpk-component-select';
 import BpkSwitch from '../../packages/bpk-component-switch';
 import { cssModules } from '../../packages/bpk-react-utils';

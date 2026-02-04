@@ -20,7 +20,6 @@ import { BpkDialogWrapper } from './src/BpkDialogWrapper/BpkDialogWrapper';
 import Portal from './src/Portal';
 import TransitionInitialMount from './src/TransitionInitialMount';
 import cssModules from './src/cssModules';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import deprecated from './src/deprecated';
 import {
   isDeviceIphone,

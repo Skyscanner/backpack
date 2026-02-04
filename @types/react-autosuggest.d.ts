@@ -16,15 +16,15 @@
  * limitations under the License.
  */
 
-import BpkModal from './src/BpkModal';
-import { MODAL_STYLING } from './src/BpkModalInner';
-import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
-import { propTypes, defaultProps } from './src/legacy-prop-types';
-import themeAttributes from './src/themeAttributes';
+declare module 'react-autosuggest' {
+  import { Component } from 'react';
 
-import type { Props } from './src/BpkModal';
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  class Autosuggest extends Component<any> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    static defaultProps: any;
+    input: HTMLInputElement | null;
+  }
 
-export type BpkModalProps = Props;
-
-export default BpkModal;
-export { propTypes, defaultProps, themeAttributes, BpkModalV2, MODAL_STYLING };
+  export default Autosuggest;
+}

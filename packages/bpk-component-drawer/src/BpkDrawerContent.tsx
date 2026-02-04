@@ -22,7 +22,6 @@ import { Transition } from 'react-transition-group';
 
 import { animations } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
 import BpkLink from '../../bpk-component-link';
 import { cssModules } from '../../bpk-react-utils';
