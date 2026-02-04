@@ -23,7 +23,7 @@ import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import BpkCloseButton from '../../bpk-component-close-button';
 import BpkLink from '../../bpk-component-link';
 import BpkNavigationBar from '../../bpk-component-navigation-bar';
-import { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';        
+import { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 import { BpkDialogWrapper, cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
@@ -75,13 +75,13 @@ interface CommonProps {
 export type Props = CommonProps & ({ ariaLabelledby: string } | { ariaLabel: string; });
 
 const getContentStyles = (paddingStyles: PaddingStyles): string => {
-  const { 
+  const {
     bottom = PADDING_TYPE.lg,
-    end, 
-    start = PADDING_TYPE.lg, 
-    top = PADDING_TYPE.none 
+    end,
+    start = PADDING_TYPE.lg,
+    top = PADDING_TYPE.none
   } = paddingStyles;
-  
+
   const classNames = ['bpk-bottom-sheet--content'];
 
   // Add padding classes for each side if not 'none'
@@ -157,7 +157,7 @@ const BpkBottomSheet = ({
 
   const headingId = `bpk-bottom-sheet-heading-${id}`;
   const hiddenTitleId = `bpk-bottom-sheet-title-hidden-${id}`;
-  const showHiddenTitle = !title && 'ariaLabel' in ariaProps;
+  const showHiddenTitle = !title && 'ariaLabel' in ariaProps && ariaProps.ariaLabel;
   const dialogClassName = getClassName(
     'bpk-bottom-sheet',
     wide && 'bpk-bottom-sheet--wide',
