@@ -16,17 +16,18 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
+
+import type { ReactNode } from 'react';
 
 import { render } from '@testing-library/react';
 
 import BpkIconMarker from './BpkIconMarker';
 
 jest.mock('@react-google-maps/api', () => ({
-  OverlayView: (props) => (
+  OverlayView: (props: { children: ReactNode }) => (
     <div>
       <div className="mock-overlay-view" />
-      {/* eslint-disable-next-line react/prop-types */}
       {props.children}
     </div>
   ),
@@ -69,7 +70,7 @@ describe('BpkIconMarker', () => {
       <BpkIconMarker
         position={position}
         icon={icon}
-        buttonProps={{ testId: 'arbitrary value' }}
+        buttonProps={{ 'data-testid': 'arbitrary value' }}
       />,
     );
     expect(asFragment()).toMatchSnapshot();

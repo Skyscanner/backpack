@@ -1,3 +1,4 @@
+
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkPriceMarker should render correctly with "status" attribute as "previous_selected" 1`] = `

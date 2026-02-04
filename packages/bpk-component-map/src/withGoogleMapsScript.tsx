@@ -15,10 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
-import type { ComponentType } from 'react';
 
 import { useJsApiLoader } from '@react-google-maps/api';
 
@@ -34,18 +33,27 @@ export const LibraryShapeType = PropTypes.arrayOf(
   ]),
 );
 
-function withGoogleMapsScript(Component: ComponentType<any>) {
+type LibraryType = 'drawing' | 'geometry' | 'localContext' | 'places' | 'visualization';
+
+type WithGoogleMapsScriptProps = {
+  googleMapsApiKey: string;
+  libraries?: LibraryType[];
+  loadingElement?: React.ReactNode;
+  preventGoogleFontsLoading?: boolean;
+  [key: string]: unknown;
+};
+
+function withGoogleMapsScript(Component: React.ComponentType<Record<string, unknown>>) {
   const WithGoogleMapsScript = ({
     googleMapsApiKey,
     libraries,
     loadingElement,
     preventGoogleFontsLoading,
     ...rest
-  }: {
-    [string]: any,
-  }) => {
+  }: WithGoogleMapsScriptProps) => {
     const { isLoaded, loadError } = useJsApiLoader({
       googleMapsApiKey,
+      // @ts-expect-error - 'localContext' may not be in Library type but is valid for Google Maps API
       libraries,
       preventGoogleFontsLoading,
       version: '3.46',

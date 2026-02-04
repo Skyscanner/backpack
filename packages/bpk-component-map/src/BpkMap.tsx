@@ -16,64 +16,58 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
-import type { Node } from 'react';
 import { useCallback, useRef } from 'react';
 
 import { GoogleMap } from '@react-google-maps/api';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import { LatLongPropType, type LatLong } from './common-types';
+import { LatLongPropType, } from './common-types';
 
 import STYLES from './BpkMap.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Bounds = {
-  south: number,
-  west: number,
-  north: number,
-  east: number,
+
+
+
+
+type LatLong = {
+  latitude: number;
+  longitude: number;
 };
 
-export type MapRef = ?{
-  getBounds: () => Bounds,
-  getCenter: () => LatLong,
-  getZoom: () => number,
-  fitBounds: (Bounds) => void,
+type Bounds = {
+  south: number;
+  west: number;
+  north: number;
+  east: number;
 };
 
 type MapOptionStyle = {
-  featureType: ?string,
-  elementType: ?string,
-  stylers: Array<{
-    [string]: string,
-  }>,
+  featureType?: string;
+  elementType?: string;
+  stylers: Array<Record<string, unknown>>;
 };
 
 type Props = {
-  greedyGestureHandling: boolean,
-  panEnabled: boolean,
-  showControls: boolean,
-  zoom: number,
-  /**
-   * Note: One of `bounds` and `center` must be provided.
-   */
-  bounds: ?Bounds,
-  /**
-   * Note: One of `bounds` and `center` must be provided.
-   */
-  center: ?LatLong,
-  children: ?Node,
-  mapRef: ?(MapRef) => mixed,
-  onRegionChange: ?(Bounds, LatLong) => mixed,
-  onZoom: ?(number) => mixed,
-  onTilesLoaded: ?() => void,
-  className: ?string,
-  mapOptionStyles: ?Array<MapOptionStyle>,
+  bounds?: Bounds | null;
+  center?: LatLong;
+  children?: React.ReactNode;
+  greedyGestureHandling?: boolean;
+  mapRef?: ((map: google.maps.Map | null) => void) | null;
+  className?: string | null;
+  onRegionChange?: ((bounds: google.maps.LatLngBounds | undefined, center: google.maps.LatLng | undefined) => void) | null;
+  onZoom?: ((zoom: number | undefined) => void) | null;
+  onTilesLoaded?: (() => void) | null;
+  panEnabled?: boolean;
+  showControls?: boolean;
+  zoom?: number;
+  mapOptionStyles?: MapOptionStyle[] | null;
+  mapId?: string | null;
 };
 
 const BpkMap = (props: Props) => {
@@ -106,11 +100,11 @@ const BpkMap = (props: Props) => {
     gestureHandling = 'greedy';
   }
 
-  const ref = useRef(null);
+  const ref = useRef<google.maps.Map | null>(null);
   const mapContainerClassName = getClassName('bpk-map', className);
 
   const onLoad = useCallback(
-    (map) => {
+    (map: google.maps.Map) => {
       ref.current = map;
       if (map && bounds) {
         map.fitBounds({

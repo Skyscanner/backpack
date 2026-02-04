@@ -16,16 +16,18 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
-import PropTypes from 'prop-types';
+import { BpkLargeSpinner, SPINNER_TYPES } from '../../bpk-component-spinner';
+import { cssModules } from '../../bpk-react-utils';
 
-export type LatLong = {
-  latitude: number,
-  longitude: number,
-};
+import STYLES from './DefaultLoadingElement.module.scss';
 
-export const LatLongPropType = PropTypes.shape({
-  latitude: PropTypes.number.isRequired,
-  longitude: PropTypes.number.isRequired,
-});
+const getClassName = cssModules(STYLES);
+
+const DefaultLoadingElement = () => (
+  <div className={getClassName('bpk-map-default-loading-element')}>
+    <BpkLargeSpinner type={SPINNER_TYPES.primary} />
+  </div>
+);
+
+export default DefaultLoadingElement;

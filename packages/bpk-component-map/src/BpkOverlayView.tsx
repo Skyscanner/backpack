@@ -16,18 +16,23 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
 
 import PropTypes from 'prop-types';
-import type { Node } from 'react';
 
 import { OverlayView } from '@react-google-maps/api';
 
-import { LatLongPropType, type LatLong } from './common-types';
+import { LatLongPropType, } from './common-types';
+
+type LatLong = {
+  latitude: number;
+  longitude: number;
+};
 
 type Props = {
-  children: Node,
-  position: LatLong,
+  children: React.ReactNode;
+  position: LatLong;
+  [key: string]: unknown;
 };
 
 const BpkOverlayView = (props: Props) => {

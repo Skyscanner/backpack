@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+
+
+import type { SVGProps } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -24,13 +26,13 @@ import STYLES from './BpkIconMarkerBackground.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  disabled: boolean,
-  interactive: boolean,
-  selected: boolean,
-};
+interface BpkIconMarkerBackgroundProps extends SVGProps<SVGSVGElement> {
+  disabled?: boolean;
+  interactive?: boolean;
+  selected?: boolean;
+}
 
-const BpkIconMarkerBackground = (props: Props) => {
+const BpkIconMarkerBackground = (props: BpkIconMarkerBackgroundProps) => {
   const { disabled, interactive, selected, ...rest } = props;
 
   const classNames = getClassName(
