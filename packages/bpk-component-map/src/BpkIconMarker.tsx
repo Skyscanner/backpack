@@ -16,28 +16,30 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode, MouseEvent, ButtonHTMLAttributes } from 'react';
+
 
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkBasicMapMarker from './BpkBasicMapMarker';
 import BpkIconMarkerBackground from './BpkIconMarkerBackground';
-import { LatLongPropType, type LatLong } from './common-types';
+import { LatLongPropType } from './common-types';
+
+import type { LatLong } from './common-types';
 
 import STYLES from './BpkIconMarker.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
-  icon: Node,
-  position: LatLong,
-  selected: boolean,
-  className: ?string,
-  onClick: ?(event: SyntheticEvent<>) => mixed,
-  buttonProps: ?{ [string]: any },
+type Props = {
+  icon: ReactNode;
+  position: LatLong;
+  className?: string | null;
+  onClick?: ((event: MouseEvent<HTMLButtonElement>) => void) | null;
+  selected?: boolean;
+  buttonProps?: (ButtonHTMLAttributes<HTMLButtonElement> & { [key: `data-${string}`]: string }) | null;
+  [key: string]: unknown;
 };
 
 const BpkIconMarker = (props: Props) => {
@@ -63,7 +65,7 @@ const BpkIconMarker = (props: Props) => {
       <button
         type="button"
         className={wrapperClassNames}
-        onClick={onClick}
+        onClick={onClick ?? undefined}
         {...buttonProps}
       >
         <BpkIconMarkerBackground

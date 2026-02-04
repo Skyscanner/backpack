@@ -16,23 +16,16 @@
  * limitations under the License.
  */
 
-export const defaultIconMarkerThemeAttributes = [
-  'iconMarkerDefaultBackgroundColor',
-  'iconMarkerDefaultSelectedColor',
-  'iconMarkerDefaultDisabledColor',
-  'iconMarkerDefaultDisabledBackgroundColor',
-];
 
-export const priceMarkerThemeAttributes = [
-  'priceMarkerBackgroundColor',
-  'priceMarkerSelectedBorderColor',
-  'priceMarkerSelectedColor',
-  'priceMarkerViewedBackgroundColor',
-  'priceMarkerViewedBorderColor',
-  'priceMarkerViewedColor',
-];
 
-export default {
-  defaultIconMarkerThemeAttributes,
-  priceMarkerThemeAttributes,
+import PropTypes from 'prop-types';
+
+export type LatLong = {
+  latitude: number;
+  longitude: number;
 };
+
+export const LatLongPropType = PropTypes.shape({
+  latitude: PropTypes.number.isRequired,
+  longitude: PropTypes.number.isRequired,
+});

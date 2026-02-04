@@ -1,3 +1,4 @@
+
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkCalendarContainer should focus the correct date when \`initiallyFocusedDate\` is set and selected date is not 1`] = `
