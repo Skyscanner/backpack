@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-
 import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 import { Component } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -28,11 +28,21 @@ import STYLES from './BpkHorizontalNavItem.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type Props = {
+  children: ReactNode;
+  className?: string | null;
+  disabled?: boolean;
+  href?: string | null;
+  selected?: boolean;
+  spaceAround?: boolean;
+  type?: keyof typeof HORIZONTAL_NAV_TYPES;
+  [key: string]: unknown;
+};
 
 // In order to be able to access refs on the HorizontalNavItems, they need to be a fully defined
 // React Component class.
 // eslint-disable-next-line react/prefer-stateless-function
-class BpkHorizontalNavItem extends Component {
+class BpkHorizontalNavItem extends Component<Props> {
   render() {
     const {
       children,

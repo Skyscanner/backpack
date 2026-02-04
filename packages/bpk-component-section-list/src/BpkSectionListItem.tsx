@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
+import type { MouseEvent, ReactNode } from 'react';
+
 
 import { withRtlSupport } from '../../bpk-component-icon';
 import BpkLargeChevronRightIcon from '../../bpk-component-icon/lg/chevron-right';
@@ -32,8 +32,16 @@ const BpkLargeChevronRightIconWithRtlSupport = withRtlSupport(
 
 const getClassName = cssModules(STYLES);
 
+type Props = {
+  children: ReactNode;
+  blank?: boolean;
+  className?: string | null;
+  href?: string | null;
+  onClick?: ((event: MouseEvent) => void) | null;
+  [key: string]: unknown;
+};
 
-const BpkSectionListItem = (props) => {
+const BpkSectionListItem = (props: Props) => {
   const { blank, children, className, href, onClick, ...rest } = props;
   const classNames = [
     getClassName(

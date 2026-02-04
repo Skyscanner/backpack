@@ -16,22 +16,33 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
+import type { ReactNode, MouseEvent, ButtonHTMLAttributes } from 'react';
+
 
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkBasicMapMarker from './BpkBasicMapMarker';
 import BpkIconMarkerBackground from './BpkIconMarkerBackground';
-import { LatLongPropType, } from './common-types';
+import { LatLongPropType } from './common-types';
+
+import type { LatLong } from './common-types';
 
 import STYLES from './BpkIconMarker.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type Props = {
+  icon: ReactNode;
+  position: LatLong;
+  className?: string | null;
+  onClick?: ((event: MouseEvent<HTMLButtonElement>) => void) | null;
+  selected?: boolean;
+  buttonProps?: ButtonHTMLAttributes<HTMLButtonElement> | null;
+  [key: string]: unknown;
+};
 
-const BpkIconMarker = (props) => {
+const BpkIconMarker = (props: Props) => {
   const { buttonProps, className, icon, onClick, position, selected, ...rest } =
     props;
 

@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
+
 
 import {
   lineHeightSm,
@@ -37,7 +37,29 @@ const getClassName = cssModules(STYLES);
 const spacing = remToPx('.375rem');
 const lineHeight = remToPx(lineHeightSm);
 
-const getAxisConfig = ({ height, margin, orientation, scale, width }) => {
+type Margin = {
+  top: number;
+  bottom: number;
+  left: number;
+  right: number;
+};
+
+type Scale = ((value: unknown) => number) & {
+  bandwidth?: () => number;
+  copy: () => Scale;
+  ticks?: (count?: number | null) => unknown[];
+  domain: () => unknown[];
+};
+
+type AxisConfigParams = {
+  height: number;
+  margin: Margin;
+  orientation: typeof ORIENTATION_X | typeof ORIENTATION_Y;
+  scale: Scale;
+  width: number;
+};
+
+const getAxisConfig = ({ height, margin, orientation, scale, width }: AxisConfigParams) => {
   const position = (scale.bandwidth ? center : identity)(scale.copy());
 
   if (orientation === ORIENTATION_X) {
@@ -83,7 +105,16 @@ const getAxisConfig = ({ height, margin, orientation, scale, width }) => {
 };
 
 
-const BpkChartAxis = (props) => {
+type Props = AxisConfigParams & {
+  label?: ReactNode;
+  tickValue?: (tick: unknown, index: number) => ReactNode;
+  numTicks?: number | null;
+  tickOffset?: number;
+  tickEvery?: number;
+  [key: string]: unknown;
+};
+
+const BpkChartAxis = (props: Props) => {
   const {
     height,
     label,
@@ -91,9 +122,9 @@ const BpkChartAxis = (props) => {
     numTicks,
     orientation,
     scale,
-    tickEvery,
-    tickOffset,
-    tickValue,
+    tickEvery = 1,
+    tickOffset = 0,
+    tickValue = identity,
     width,
     ...rest
   } = props;

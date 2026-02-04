@@ -17,6 +17,8 @@
  */
 
 import PropTypes from 'prop-types';
+import type { ComponentType, MouseEvent, FocusEvent } from 'react';
+
 
 import { borderRadiusXs } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -24,12 +26,32 @@ import { remToPx } from './utils';
 
 const borderRadius = remToPx(borderRadiusXs);
 
-const getYPos = (point, { maxYValue, yScale, yScaleDataKey }) =>
-  yScale(Math.min(point[yScaleDataKey], maxYValue));
+type DataPoint = Record<string, unknown>;
+
+type Margin = {
+  top: number;
+  bottom: number;
+  left: number;
+  right: number;
+};
+
+type ScaleConfig = {
+  maxYValue: number;
+  yScale: (value: number) => number;
+  yScaleDataKey: string;
+};
+
+type HeightConfig = ScaleConfig & {
+  height: number;
+  margin: Margin;
+};
+
+const getYPos = (point: DataPoint, { maxYValue, yScale, yScaleDataKey }: ScaleConfig) =>
+  yScale(Math.min(point[yScaleDataKey] as number, maxYValue));
 
 const getBarHeight = (
-  point,
-  { height, margin, maxYValue, yScale, yScaleDataKey },
+  point: DataPoint,
+  { height, margin, maxYValue, yScale, yScaleDataKey }: HeightConfig,
 ) => {
   const barHeight =
     height -
@@ -39,11 +61,30 @@ const getBarHeight = (
   return Math.max(barHeight, 0);
 };
 
-const isOutlier = (point, { maxYValue, yScaleDataKey }) =>
-  point[yScaleDataKey] > maxYValue;
+const isOutlier = (point: DataPoint, { maxYValue, yScaleDataKey }: { maxYValue: number; yScaleDataKey: string }) =>
+  (point[yScaleDataKey] as number) > maxYValue;
 
+type Props = {
+  data: DataPoint[];
+  xScaleDataKey: string;
+  yScaleDataKey: string;
+  height: number;
+  xScale: ((value: string) => number) & { bandwidth: () => number; paddingOuter: (val: number) => void; paddingInner: (val: number) => void };
+  yScale: (value: number) => number;
+  maxYValue: number;
+  margin: Margin;
+  getBarLabel: (point: DataPoint, xKey: string, yKey: string) => string;
+  BarComponent: ComponentType<Record<string, unknown>>;
+  getBarSelection?: (point: DataPoint) => boolean;
+  outerPadding?: number;
+  innerPadding?: number;
+  onBarClick?: ((event: MouseEvent, data: { point: DataPoint }) => void) | null;
+  onBarHover?: ((event: MouseEvent, data: { point: DataPoint }) => void) | null;
+  onBarFocus?: ((event: FocusEvent, data: { point: DataPoint }) => void) | null;
+  [key: string]: unknown;
+};
 
-const BpkBarchartBars = (props) => {
+const BpkBarchartBars = (props: Props) => {
   const {
     BarComponent,
     data,

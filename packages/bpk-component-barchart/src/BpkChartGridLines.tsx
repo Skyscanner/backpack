@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -29,8 +27,33 @@ import STYLES from './BpkChartGridLines.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type Margin = {
+  top: number;
+  bottom: number;
+  left: number;
+  right: number;
+};
 
-const BpkChartGridLines = (props) => {
+type Scale = ((value: unknown) => number) & {
+  bandwidth?: () => number;
+  copy: () => Scale;
+  ticks?: (count?: number | null) => unknown[];
+  domain: () => unknown[];
+};
+
+type Props = {
+  width: number;
+  height: number;
+  margin: Margin;
+  scale: Scale;
+  orientation: typeof ORIENTATION_X | typeof ORIENTATION_Y;
+  numTicks?: number | null;
+  tickOffset?: number;
+  tickEvery?: number;
+  [key: string]: unknown;
+};
+
+const BpkChartGridLines = (props: Props) => {
   const {
     height,
     margin,

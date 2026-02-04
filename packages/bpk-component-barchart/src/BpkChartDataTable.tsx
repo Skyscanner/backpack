@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -28,8 +26,17 @@ import STYLES from './BpkChartDataTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type DataPoint = Record<string, unknown>;
 
-const BpkChartDataTable = (props) => {
+type Props = {
+  data: DataPoint[] | null;
+  xScaleDataKey: string;
+  yScaleDataKey: string;
+  xAxisLabel: string;
+  yAxisLabel: string;
+};
+
+const BpkChartDataTable = (props: Props) => {
   const { data, xAxisLabel, xScaleDataKey, yAxisLabel, yScaleDataKey } = props;
   const rows = data.map((point, i) => {
     const key = `chart-data-table-row-${i}`;

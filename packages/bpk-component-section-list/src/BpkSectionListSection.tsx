@@ -16,9 +16,8 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
+import type { HTMLAttributes, ReactNode } from 'react';
 import { Children } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
@@ -28,8 +27,12 @@ import STYLES from './BpkSectionListSection.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type Props = HTMLAttributes<HTMLElement> & {
+  children: ReactNode;
+  headerText?: string | null;
+};
 
-const BpkSectionListSection = (props) => {
+const BpkSectionListSection = (props: Props) => {
   const { children, headerText, ...rest } = props;
 
   return (

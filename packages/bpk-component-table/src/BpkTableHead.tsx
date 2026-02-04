@@ -16,12 +16,15 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 
-const BpkTableHead = (props) => <thead {...props} />;
+type Props = HTMLAttributes<HTMLTableSectionElement> & {
+  children: ReactNode;
+};
+
+const BpkTableHead = (props: Props) => <thead {...props} />;
 
 BpkTableHead.propTypes = {
   children: PropTypes.node.isRequired,

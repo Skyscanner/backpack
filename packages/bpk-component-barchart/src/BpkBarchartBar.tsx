@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
+import type { KeyboardEvent, MouseEvent, FocusEvent } from 'react';
+
 
 import { borderRadiusXs } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -35,7 +35,7 @@ const KEYCODES = {
   SPACEBAR: 32,
 };
 
-const handleKeyboardEvent = (callback) => (event) => {
+const handleKeyboardEvent = (callback: (event: KeyboardEvent) => void) => (event: KeyboardEvent) => {
   if (event.keyCode === KEYCODES.ENTER || event.keyCode === KEYCODES.SPACEBAR) {
     event.preventDefault();
     callback(event);
@@ -44,8 +44,23 @@ const handleKeyboardEvent = (callback) => (event) => {
 
 const borderRadius = remToPx(borderRadiusXs);
 
+type Props = {
+  height: number;
+  label: string;
+  width: number;
+  x: number;
+  y: number;
+  className?: string | null;
+  onClick?: ((event: MouseEvent | KeyboardEvent) => void) | null;
+  onHover?: ((event: MouseEvent) => void) | null;
+  onFocus?: ((event: FocusEvent) => void) | null;
+  outlier?: boolean;
+  padding?: number;
+  selected?: boolean;
+  [key: string]: unknown;
+};
 
-const BpkBarchartBar = (props) => {
+const BpkBarchartBar = (props: Props) => {
   const {
     className,
     height,

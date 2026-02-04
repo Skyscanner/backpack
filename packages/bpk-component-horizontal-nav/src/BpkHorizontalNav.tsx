@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-
 import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 import { Component, Children, cloneElement } from 'react';
 
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
@@ -32,8 +32,19 @@ const HORIZONTAL_NAV_TYPES = {
   light: 'light',
 };
 
+type Props = {
+  children: ReactNode;
+  ariaLabel?: string | null;
+  autoScrollToSelected?: boolean;
+  className?: string | null;
+  leadingScrollIndicatorClassName?: string | null;
+  showUnderline?: boolean;
+  trailingScrollIndicatorClassName?: string | null;
+  type?: keyof typeof HORIZONTAL_NAV_TYPES;
+  [key: string]: unknown;
+};
 
-const getPos = (ref) => {
+const getPos = (ref: HTMLElement | null) => {
   if (!ref) {
     return null;
   }
@@ -41,10 +52,13 @@ const getPos = (ref) => {
   return pos;
 };
 
-class BpkHorizontalNav extends Component {
-  constructor(props) {
-    super(props);
+class BpkHorizontalNav extends Component<Props> {
+  scrollRef: HTMLElement | null;
 
+  selectedItemRef: HTMLElement | null;
+
+  constructor(props: Props) {
+    super(props);
     this.scrollRef = null;
     this.selectedItemRef = null;
   }

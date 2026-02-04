@@ -16,12 +16,24 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 
 
-const BpkChartMargin = (props) => {
+type Margin = {
+  top: number | string;
+  bottom: number | string;
+  left: number | string;
+  right: number | string;
+};
+
+type Props = {
+  children: ReactNode;
+  margin: Margin;
+  [key: string]: unknown;
+};
+
+const BpkChartMargin = (props: Props) => {
   const { children, margin, ...rest } = props;
 
   return (

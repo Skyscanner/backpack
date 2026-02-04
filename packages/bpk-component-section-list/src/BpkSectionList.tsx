@@ -16,12 +16,15 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 
-const BpkSectionList = (props) => {
+type Props = HTMLAttributes<HTMLElement> & {
+  children: ReactNode;
+};
+
+const BpkSectionList = (props: Props) => {
   const { children, ...rest } = props;
 
   return <section {...rest}>{children}</section>;

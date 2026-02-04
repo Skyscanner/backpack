@@ -16,12 +16,15 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 
-const BpkTableRow = (props) => <tr {...props} />;
+type Props = HTMLAttributes<HTMLTableRowElement> & {
+  children: ReactNode;
+};
+
+const BpkTableRow = (props: Props) => <tr {...props} />;
 
 BpkTableRow.propTypes = {
   children: PropTypes.node.isRequired,

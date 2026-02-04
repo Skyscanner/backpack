@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
+import type { HTMLAttributes, ReactNode } from 'react';
+
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -26,8 +26,12 @@ import STYLES from './BpkTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type Props = HTMLAttributes<HTMLTableElement> & {
+  children: ReactNode;
+  className?: string | null;
+};
 
-const BpkTable = ({children, className = null, ...rest}) => {
+const BpkTable = ({ children, className = null, ...rest }: Props) => {
 
   const classNames = getClassName('bpk-table', className);
 

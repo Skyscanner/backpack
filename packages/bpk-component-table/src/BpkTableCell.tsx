@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
+import type { TdHTMLAttributes, ReactNode } from 'react';
+
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -26,8 +26,13 @@ import STYLES from './BpkTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type Props = TdHTMLAttributes<HTMLTableCellElement> & {
+  children: ReactNode;
+  className?: string | null;
+  wordBreak?: boolean;
+};
 
-const BpkTableCell = ({children, className = null, wordBreak = false, ...rest}) => {
+const BpkTableCell = ({ children, className = null, wordBreak = false, ...rest }: Props) => {
 
   const classes = [
     'bpk-table__cell',
