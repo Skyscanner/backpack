@@ -18,14 +18,14 @@
 
 type BandScale = {
   bandwidth: () => number;
-  round: () => boolean;
+  round?: () => boolean;
   (value: unknown): number;
 };
 
 // Using Function here as scale refers to the d3-scale 3rd party library
 const center = (scale: BandScale) => {
   let offset = scale.bandwidth() / 2;
-  if (scale.round()) {
+  if (scale.round?.()) {
     offset = Math.round(offset);
   }
   return (d: unknown) => scale(d) + offset;

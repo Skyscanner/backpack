@@ -258,7 +258,7 @@ const BpkPopover = ({
                       &nbsp;
                       {closeButtonIcon ? (
                         <BpkCloseButton
-                          label={closeButtonText || closeButtonLabel}
+                          label={closeButtonText || closeButtonLabel || ''}
                           onClick={(
                             event: SyntheticEvent<HTMLButtonElement>,
                           ) => {

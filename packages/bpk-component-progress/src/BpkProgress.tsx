@@ -84,6 +84,7 @@ const defaultProps = {
 
 class BpkProgress extends Component<Props> {
   static propTypes = propTypes;
+
   static defaultProps = defaultProps;
 
   componentDidUpdate(previousProps: Props) {
@@ -135,20 +136,19 @@ class BpkProgress extends Component<Props> {
     const percentage = 100 * (adjustedValue / (max - min));
     const numberOfSteps = stepped ? max - min - 1 : 0;
 
-    delete rest.onComplete;
-    delete rest.onCompleteTransitionEnd;
+    const { onComplete: _onComplete, onCompleteTransitionEnd: _onCompleteTransitionEnd, ...htmlProps } = rest;
 
     return (
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <div
         className={classNames}
         role="progressbar"
-        aria-valuetext={getValueText ? getValueText(value, min, max) : null}
+        aria-valuetext={getValueText ? getValueText(value, min, max) : undefined}
         aria-valuenow={value}
         aria-valuemin={min}
         aria-valuemax={max}
         tabIndex={0}
-        {...rest}
+        {...(htmlProps as React.HTMLAttributes<HTMLDivElement>)}
       >
         <div
           className={valueClassName}

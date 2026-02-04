@@ -51,6 +51,7 @@ class AnimateHeight extends Component<Props, State> {
     style: {},
   };
 
+  // eslint-disable-next-line react/sort-comp
   contentElement: HTMLDivElement | null = null;
 
   timeoutID: ReturnType<typeof setTimeout> | null = null;
@@ -172,7 +173,7 @@ class AnimateHeight extends Component<Props, State> {
       transition: `height ${duration}ms ${easing} `,
     };
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+     
     const restProps = rest as any;
     delete restProps.height;
     delete restProps.transitionOverflow;

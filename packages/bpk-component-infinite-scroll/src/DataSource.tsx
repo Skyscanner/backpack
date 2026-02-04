@@ -25,7 +25,7 @@ class DataSource<T = unknown> {
     this.listeners = [];
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+   
   fetchItems(index: number, nElements: number): Promise<T[]> {
     throw new Error('Not implemented');
   }

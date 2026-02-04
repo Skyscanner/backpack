@@ -79,7 +79,7 @@ describe('BpkPhoneInput form test', () => {
 
     expect(textInput).toHaveValue('555 5555');
 
-    const formData = new FormData(screen.getByTestId('form'));
+    const formData = new FormData(screen.getByTestId('form') as HTMLFormElement);
     expect(Object.fromEntries(formData.entries())).toEqual({
       telephone_input: '555 5555',
       dialing_code: '44',

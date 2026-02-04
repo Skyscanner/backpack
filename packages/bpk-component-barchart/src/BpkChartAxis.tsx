@@ -46,6 +46,7 @@ type Margin = {
 
 type Scale = ((value: unknown) => number) & {
   bandwidth?: () => number;
+  round?: () => boolean;
   copy: () => Scale;
   ticks?: (count?: number | null) => unknown[];
   domain: () => unknown[];
@@ -60,7 +61,9 @@ type AxisConfigParams = {
 };
 
 const getAxisConfig = ({ height, margin, orientation, scale, width }: AxisConfigParams) => {
-  const position = (scale.bandwidth ? center : identity)(scale.copy());
+  // When scale.bandwidth exists, it's a band scale suitable for center()
+   
+  const position = (scale.bandwidth ? center : identity)(scale.copy() as any);
 
   if (orientation === ORIENTATION_X) {
     return {
@@ -153,7 +156,7 @@ const BpkChartAxis = (props: Props) => {
             className={getClassName('bpk-chart__axis-tick-text')}
             {...textProps}
           >
-            {tickValue(tick, i)}
+            {tickValue(tick, i) as ReactNode}
           </text>
         </g>
       ))}

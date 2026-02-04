@@ -77,6 +77,7 @@ const withInteractiveStarRatingState = <P extends object>(
 
     render() {
       return (
+        // @ts-expect-error - HOC props spread to generic type
         <InteractiveStarRating
           {...this.props}
           rating={this.state.rating}
@@ -89,7 +90,7 @@ const withInteractiveStarRatingState = <P extends object>(
     }
   }
 
-  EnhancedComponent.displayName = wrapDisplayName(
+  (EnhancedComponent as unknown as { displayName: string }).displayName = wrapDisplayName(
     EnhancedComponent,
     'withInteractiveStarRatingState',
   );

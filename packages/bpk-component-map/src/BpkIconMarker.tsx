@@ -38,7 +38,7 @@ type Props = {
   className?: string | null;
   onClick?: ((event: MouseEvent<HTMLButtonElement>) => void) | null;
   selected?: boolean;
-  buttonProps?: ButtonHTMLAttributes<HTMLButtonElement> | null;
+  buttonProps?: (ButtonHTMLAttributes<HTMLButtonElement> & { [key: `data-${string}`]: string }) | null;
   [key: string]: unknown;
 };
 
@@ -65,7 +65,7 @@ const BpkIconMarker = (props: Props) => {
       <button
         type="button"
         className={wrapperClassNames}
-        onClick={onClick}
+        onClick={onClick ?? undefined}
         {...buttonProps}
       >
         <BpkIconMarkerBackground

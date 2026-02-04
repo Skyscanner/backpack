@@ -16,16 +16,19 @@
  * limitations under the License.
  */
 
+import type { ReactNode, ComponentType, CSSProperties } from 'react';
 
+export function action(name: string): (...args: unknown[]) => void;
 
-export const SIZES = {
-  xsmall: 'xsmall',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-} as const;
+export const BpkDarkExampleWrapper: ComponentType<{
+  children: ReactNode;
+  padded?: boolean;
+  style?: CSSProperties;
+}>;
 
-export const ALIGNS = {
-  left: 'left',
-  right: 'right',
-} as const;
+declare const _default: {
+  action: typeof action;
+  BpkDarkExampleWrapper: typeof BpkDarkExampleWrapper;
+};
+
+export default _default;

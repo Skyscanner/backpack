@@ -30,6 +30,7 @@ type Props = {
   id: string;
   name: string;
   value?: string;
+  children?: React.ReactNode;
   className?: string | null;
   disabled?: boolean;
   docked?: boolean;

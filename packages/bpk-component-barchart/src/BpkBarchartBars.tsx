@@ -74,7 +74,7 @@ type Props = {
   maxYValue: number;
   margin: Margin;
   getBarLabel: (point: DataPoint, xKey: string, yKey: string) => string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+   
   BarComponent: ComponentType<any>;
   getBarSelection?: (point: DataPoint) => boolean;
   outerPadding?: number;

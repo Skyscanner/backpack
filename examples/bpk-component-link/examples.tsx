@@ -20,7 +20,6 @@ import BpkLink from '../../packages/bpk-component-link';
 import BpkPanel from '../../packages/bpk-component-panel';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';

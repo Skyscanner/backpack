@@ -70,7 +70,7 @@ describe('BpkIconMarker', () => {
       <BpkIconMarker
         position={position}
         icon={icon}
-        buttonProps={{ testId: 'arbitrary value' }}
+        buttonProps={{ 'data-testid': 'arbitrary value' }}
       />,
     );
     expect(asFragment()).toMatchSnapshot();

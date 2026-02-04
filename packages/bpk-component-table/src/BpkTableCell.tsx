@@ -32,12 +32,12 @@ type Props = TdHTMLAttributes<HTMLTableCellElement> & {
   wordBreak?: boolean;
 };
 
-const BpkTableCell = ({ children, className = null, wordBreak = false, ...rest }: Props) => {
+const BpkTableCell = ({ children, className, wordBreak = false, ...rest }: Props) => {
 
   const classes = [
     'bpk-table__cell',
     wordBreak && 'bpk-table__cell--wordBreak',
-    className,
+    className ?? undefined,
   ];
 
   const classNames = getClassName(...classes);

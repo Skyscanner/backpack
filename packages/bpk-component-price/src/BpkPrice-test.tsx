@@ -31,8 +31,8 @@ const trailingText = 'per day';
 const icon = NewWindowIcon;
 let props: {
   price: string;
-  size: keyof typeof SIZES;
-  align: keyof typeof ALIGNS;
+  size: (typeof SIZES)[keyof typeof SIZES];
+  align: (typeof ALIGNS)[keyof typeof ALIGNS];
 };
 
 describe.each([

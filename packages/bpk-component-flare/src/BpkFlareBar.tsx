@@ -27,11 +27,17 @@ import STYLES from './bpk-flare-bar.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type Props = {
+  className?: string | null;
+  svgClassName?: string | null;
+  [key: string]: unknown;
+};
+
 const BpkFlareBar = ({
   className = null,
   svgClassName = null,
   ...rest
-}) => {
+}: Props) => {
   const classNames = [getClassName('bpk-flare-bar__container')];
   if (className) {
     classNames.push(className);

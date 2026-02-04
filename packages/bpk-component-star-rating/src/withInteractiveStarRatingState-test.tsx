@@ -54,7 +54,7 @@ describe('withInteractiveStarRatingState', () => {
     const { asFragment } = render(
       <InteractiveStarRating
         id="my-star-rating"
-        getStarLabel={(rating, maxRating) =>
+        getStarLabel={(rating: number, maxRating: number) =>
           `${rating} out of ${maxRating} stars`
         }
       />,
@@ -70,7 +70,7 @@ describe('withInteractiveStarRatingState', () => {
     const { asFragment } = render(
       <InteractiveStarRating
         id="my-star-rating"
-        getStarLabel={(rating, maxRating) =>
+        getStarLabel={(rating: number, maxRating: number) =>
           `${rating} out of ${maxRating} stars`
         }
       />,

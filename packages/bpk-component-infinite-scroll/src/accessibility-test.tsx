@@ -41,11 +41,7 @@ describe('withInfiniteScroll accessibility tests', () => {
       </div>
     );
 
-    List.propTypes = {
-      elements: PropTypes.arrayOf(PropTypes.string).isRequired,
-    };
-
-    const InfiniteList = withInfiniteScroll(List);
+    const InfiniteList = withInfiniteScroll(List as React.ComponentType<{ elements: string[] }>);
     const { container } = render(
       <InfiniteList dataSource={new ArrayDataSource(elementsArray)} />,
     );

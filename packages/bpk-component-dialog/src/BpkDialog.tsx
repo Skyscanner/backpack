@@ -70,9 +70,9 @@ const BpkDialog = ({
         {...getDataComponentAttribute('Dialog')}
       >
         {headerIcon && <div className={headerIconClassNames}>{headerIcon}</div>}
-        {dismissible && (
+        {dismissible && onClose && (
           <span className={closeButtonClassNames}>
-            <BpkCloseButton label={closeLabel} onClick={onClose} />
+            <BpkCloseButton label={closeLabel} onClick={() => onClose()} />
           </span>
         )}
         {children}

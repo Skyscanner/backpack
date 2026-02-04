@@ -25,13 +25,19 @@ import STYLES from './BpkSkipLink.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type Props = {
+  label: string;
+  href: string;
+  className?: string | null;
+  [key: string]: unknown;
+};
 
 const BpkSkipLink = ({
   className = null,
   href,
   label,
   ...rest
-}) => (
+}: Props) => (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <a
       href={href}

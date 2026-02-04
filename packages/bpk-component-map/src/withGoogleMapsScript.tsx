@@ -53,6 +53,7 @@ function withGoogleMapsScript(Component: React.ComponentType<Record<string, unkn
   }: WithGoogleMapsScriptProps) => {
     const { isLoaded, loadError } = useJsApiLoader({
       googleMapsApiKey,
+      // @ts-expect-error - 'localContext' may not be in Library type but is valid for Google Maps API
       libraries,
       preventGoogleFontsLoading,
       version: '3.46',

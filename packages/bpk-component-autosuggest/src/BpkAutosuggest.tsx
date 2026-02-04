@@ -55,7 +55,7 @@ Autosuggest.defaultProps.renderInputComponent = (inputProps: Record<string, unkn
   const { autoComplete = 'off', inputRef, ref, ...rest } = inputProps;
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
+    // @ts-expect-error - react-autosuggest provides required props (id, value, name) at runtime
     <BpkInput
       inputRef={(element: HTMLInputElement | null) => {
         if (typeof ref === 'function') {

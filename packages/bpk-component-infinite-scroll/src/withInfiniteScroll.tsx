@@ -41,7 +41,7 @@ type ScrollFinishedEvent = {
 };
 
 export type Props = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+   
   dataSource: DataSource<any>;
   elementsPerScroll?: number;
   initiallyLoadedElements?: number;
@@ -55,14 +55,14 @@ export type Props = {
 
 export type State = {
   index: number;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+   
   elementsToRender: any[];
   isListFinished: boolean;
   showSeeMore: boolean;
 };
 
 type ExtendedProps = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+   
   elements: any[];
 };
 
@@ -100,8 +100,10 @@ const withInfiniteScroll = <P extends object>(
 
     static defaultProps = defaultProps;
 
+    // eslint-disable-next-line react/sort-comp
     observer!: IntersectionObserver;
 
+    // eslint-disable-next-line react/sort-comp
     sentinel: HTMLDivElement | null = null;
 
     constructor(props: Props & Omit<P, keyof ExtendedProps>) {
@@ -130,7 +132,7 @@ const withInfiniteScroll = <P extends object>(
       this.fetchItems({
         elementsPerScroll: this.props.initiallyLoadedElements,
       }).then((newState) => {
-        this.setState(newState);
+        this.setState(newState as State);
       });
     }
 
@@ -163,12 +165,13 @@ const withInfiniteScroll = <P extends object>(
       // If after this call there is no elementsToRender or index present in state
       // it means the new data source has no items and we need to
       // reset the list, which we do by setting `elementsToRender` to `[]` and `index` to `0`
-      const { elementsToRender, index } = newState;
-      this.setState({
-        ...newState,
+      const { elementsToRender, index, isListFinished, showSeeMore } = newState;
+      this.setState((prevState) => ({
         elementsToRender: elementsToRender || [],
         index: index || 0,
-      });
+        isListFinished: isListFinished ?? prevState.isListFinished,
+        showSeeMore: showSeeMore ?? prevState.showSeeMore,
+      }));
     }
 
     updateData = () => {
@@ -279,7 +282,7 @@ const withInfiniteScroll = <P extends object>(
 
       return (
         <div>
-          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+          { }
           <ComponentToExtend {...(rest as any)} elements={elementsToRender} />
           {loadingOrButton}
         </div>

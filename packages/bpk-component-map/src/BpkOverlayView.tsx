@@ -24,8 +24,18 @@ import { OverlayView } from '@react-google-maps/api';
 
 import { LatLongPropType, } from './common-types';
 
+type LatLong = {
+  latitude: number;
+  longitude: number;
+};
 
-const BpkOverlayView = (props) => {
+type Props = {
+  children: React.ReactNode;
+  position: LatLong;
+  [key: string]: unknown;
+};
+
+const BpkOverlayView = (props: Props) => {
   const { children, position, ...rest } = props;
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.

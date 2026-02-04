@@ -27,12 +27,23 @@ import STYLES from './BpkTicket.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type Props = {
+  children: React.ReactNode;
+  stub: React.ReactNode;
+  className?: string | null;
+  href?: string | null;
+  padded?: boolean;
+  vertical?: boolean;
+  stubClassName?: string | null;
+  stubProps?: Record<string, unknown>;
+  [key: string]: unknown;
+};
 
 /**
  * @deprecated use bpk-component-card instead
  * @returns {Component} a ticket component
  */
-const BpkTicket = (props) => {
+const BpkTicket = (props: Props) => {
   const {
     children,
     className,

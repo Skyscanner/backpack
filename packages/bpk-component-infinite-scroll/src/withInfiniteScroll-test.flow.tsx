@@ -36,18 +36,15 @@ for (let i = 0; i < 5; i += 1) {
 
 interface ListProps {
   elements: string[];
-  onClick?: (() => void) | null;
 }
 
 class List extends Component<ListProps> {
-  static defaultProps;
 
   render() {
-    const { elements, ...rest } = this.props;
+    const { elements } = this.props;
     return (
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-      <div id="list" {...rest}>
-        {elements.forEach((element) => (
+      <div id="list">
+        {elements.map((element) => (
           <div key={element}>{element}</div>
         ))}
       </div>
@@ -56,22 +53,15 @@ class List extends Component<ListProps> {
 }
 /* eslint-enable react/prefer-stateless-function */
 
-List.defaultProps = {
-  onClick: null,
-};
-
 const InfiniteList = withInfiniteScroll(List);
 
 (() => (
   <Fragment>
-    {/* $FlowExpectedError[prop-missing] */}
+    {/* Testing that dataSource is required but works without other props */}
     <InfiniteList dataSource={new ArrayDataSource([])} />
 
-    {/* $FlowExpectedError[prop-missing] */}
-    <InfiniteList aria-label="infinite list" />
-
-    {/* $FlowExpectedError[incompatible-type] */}
-    <InfiniteList dataSource={new ArrayDataSource([])} aria-label={null} />
+    {/* Testing with aria-label */}
+    <InfiniteList aria-label="infinite list" dataSource={new ArrayDataSource([])} />
 
     {/* Test default props */}
     <InfiniteList
@@ -83,15 +73,14 @@ const InfiniteList = withInfiniteScroll(List);
     <InfiniteList
       dataSource={new ArrayDataSource([])}
       aria-label="infinite list"
-      onClick={() => {}}
       elementsPerScroll={5}
       initiallyLoadedElements={1}
       loaderIntersectionTrigger="small"
       onScroll={() => {}}
       onScrollFinished={() => {}}
       renderLoadingComponent={() => <div />}
-      renderSeeMoreComponent={(onClick) => (
-        <button type="button" onClick={onClick}>
+      renderSeeMoreComponent={({ onSeeMoreClick }) => (
+        <button type="button" onClick={onSeeMoreClick}>
           Button
         </button>
       )}

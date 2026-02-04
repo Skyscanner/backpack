@@ -31,9 +31,9 @@ type Props = HTMLAttributes<HTMLTableElement> & {
   className?: string | null;
 };
 
-const BpkTable = ({ children, className = null, ...rest }: Props) => {
+const BpkTable = ({ children, className, ...rest }: Props) => {
 
-  const classNames = getClassName('bpk-table', className);
+  const classNames = getClassName('bpk-table', className ?? undefined);
 
   return (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md

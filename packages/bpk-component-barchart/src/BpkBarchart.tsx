@@ -52,7 +52,7 @@ const getClassName = cssModules(STYLES);
 const spacing = remToPx('.375rem');
 const lineHeight = remToPx(lineHeightSm);
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+ 
 type DataPoint = Record<string, any>;
 
 type Props = {
@@ -74,7 +74,7 @@ type Props = {
   yAxisMargin?: number;
   yAxisTickValue?: (value: unknown) => unknown;
   yAxisNumTicks?: number | null;
-  yAxisDomain?: (number | null)[];
+  yAxisDomain?: Array<number | null>;
   onBarClick?: ((event: MouseEvent, dataPoint: DataPoint) => void) | null;
   onBarHover?: ((event: MouseEvent, dataPoint: DataPoint) => void) | null;
   onBarFocus?: ((event: FocusEvent, dataPoint: DataPoint) => void) | null;
@@ -102,6 +102,7 @@ const getMaxYValue = (
 };
 
 class BpkBarchart extends Component<Props, State> {
+  // eslint-disable-next-line react/sort-comp
   static defaultProps = {
     leadingScrollIndicatorClassName: null,
     trailingScrollIndicatorClassName: null,
@@ -126,14 +127,15 @@ class BpkBarchart extends Component<Props, State> {
     disableDataTable: false,
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   xScale: any;
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   yScale: any;
 
   onWindowResize: ReturnType<typeof debounce>;
 
+  // eslint-disable-next-line react/sort-comp
   svgEl: SVGSVGElement | null = null;
 
   constructor(props: Props) {
@@ -254,7 +256,7 @@ class BpkBarchart extends Component<Props, State> {
               height={this.state.height}
               margin={margin}
               scale={this.yScale}
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+               
               tickValue={yAxisTickValue as any}
               numTicks={yAxisNumTicks}
               label={yAxisLabel}
@@ -265,7 +267,7 @@ class BpkBarchart extends Component<Props, State> {
               height={this.state.height}
               margin={margin}
               scale={this.xScale}
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+               
               tickValue={xAxisTickValue as any}
               tickEvery={xAxisTickEvery}
               tickOffset={xAxisTickOffset}
@@ -284,7 +286,7 @@ class BpkBarchart extends Component<Props, State> {
               height={this.state.height}
               margin={margin}
               data={transformedData}
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+               
               xScale={this.xScale as any}
               yScale={this.yScale}
               xScaleDataKey={xScaleDataKey}

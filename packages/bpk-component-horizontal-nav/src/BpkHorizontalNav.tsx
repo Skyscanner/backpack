@@ -74,6 +74,7 @@ class BpkHorizontalNav extends Component<Props> {
     type: HORIZONTAL_NAV_TYPES.default,
   };
 
+  // eslint-disable-next-line react/sort-comp
   scrollRef: HTMLElement | null;
 
   selectedItemRef: HTMLElement | null;
@@ -169,7 +170,7 @@ class BpkHorizontalNav extends Component<Props> {
         const childProps: { type?: string } = {};
         let childRef: ((ref: HTMLDivElement | null) => void) | undefined;
         if (autoScrollToSelected) {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+           
           if (child && (child as any).props && (child as any).props.selected) {
             childRef = (ref: HTMLDivElement | null) => {
               this.selectedItemRef = ref;
@@ -182,7 +183,7 @@ class BpkHorizontalNav extends Component<Props> {
         }
 
         return child ? (
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+           
           <div ref={childRef}>{cloneElement(child as any, childProps)}</div>
         ) : null;
       });

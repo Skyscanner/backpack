@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ComponentType, MouseEvent, ReactNode } from 'react';
+import type { FunctionComponent, SyntheticEvent, ReactNode } from 'react';
 
 import BpkCloseButton from '../../bpk-component-close-button';
 import { getDataComponentAttribute } from '../../bpk-react-utils';
@@ -24,9 +24,9 @@ import { getDataComponentAttribute } from '../../bpk-react-utils';
 import { BAR_STYLES, type BarStyle } from './BpkNavigationBar';
 
 export type Props = {
-  icon: ComponentType<any>,
+  icon: FunctionComponent<any>,
   label: string,
-  onClick: (event: MouseEvent<HTMLElement>) => void,
+  onClick: (event: SyntheticEvent<HTMLElement>) => void,
   className?: string,
   barStyle?: BarStyle,
   children?: ReactNode,

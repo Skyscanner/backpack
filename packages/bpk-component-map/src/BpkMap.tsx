@@ -50,7 +50,7 @@ type Bounds = {
 type MapOptionStyle = {
   featureType?: string;
   elementType?: string;
-  stylers: Record<string, unknown>[];
+  stylers: Array<Record<string, unknown>>;
 };
 
 type Props = {

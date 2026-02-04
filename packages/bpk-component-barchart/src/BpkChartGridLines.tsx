@@ -36,6 +36,7 @@ type Margin = {
 
 type Scale = ((value: unknown) => number) & {
   bandwidth?: () => number;
+  round?: () => boolean;
   copy: () => Scale;
   ticks?: (count?: number | null) => unknown[];
   domain: () => unknown[];
@@ -69,7 +70,9 @@ const BpkChartGridLines = (props: Props) => {
   const ticks = scale.ticks
     ? scale.ticks(numTicks)
     : scale.domain().filter((tick, i) => (i - (tickOffset ?? 0)) % (tickEvery ?? 1) === 0);
-  const position = (scale.bandwidth ? center : identity)(scale.copy());
+  // When scale.bandwidth exists, it's a band scale suitable for center()
+   
+  const position = (scale.bandwidth ? center : identity)(scale.copy() as any);
 
   const lineProps = (tick: unknown) => {
     const value = position(tick);

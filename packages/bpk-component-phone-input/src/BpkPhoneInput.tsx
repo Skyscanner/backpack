@@ -42,6 +42,7 @@ type DialingCodeProps = {
   label: string;
   className?: string;
   wrapperClassName?: string;
+  image?: React.ReactElement | null;
 };
 
 type Props = {

@@ -88,7 +88,7 @@ const BpkThemeProvider = ({
 
 const themeAttributesPropType = (props: Props, propName: string, componentName: string): Error | null | false => {
   const { theme } = props;
-  let { themeAttributes } = props;
+  const { themeAttributes } = props;
   if (!theme) {
     return null;
   }

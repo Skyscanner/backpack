@@ -26,6 +26,16 @@ import STYLES from './BpkRadio.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type Props = {
+  name: string;
+  label: React.ReactNode;
+  ariaLabel?: string | null;
+  disabled?: boolean;
+  white?: boolean;
+  className?: string | null;
+  valid?: boolean | null;
+  [key: string]: unknown;
+};
 
 const BpkRadio = ({
   ariaLabel = null,
@@ -36,7 +46,7 @@ const BpkRadio = ({
   valid = null,
   white = false,
   ...rest
-}) => {
+}: Props) => {
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid
   const isInvalid = valid === false;
@@ -61,7 +71,7 @@ const BpkRadio = ({
         className={getClassName('bpk-radio__input')}
         name={name}
         disabled={disabled}
-        aria-label={ariaLabel || label}
+        aria-label={ariaLabel || (typeof label === 'string' ? label : undefined)}
         aria-invalid={isInvalid}
         {...rest}
       />

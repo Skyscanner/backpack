@@ -135,7 +135,7 @@ const BpkDrawerContent = ({
               <BpkLink as="button" onClick={onClose}>{closeText}</BpkLink>
             ) : (
               <div className={getClassName('bpk-drawer__close-button')}>
-                <BpkCloseButton label={closeLabel} onClick={onClose} />
+                <BpkCloseButton label={closeLabel ?? ''} onClick={onClose} />
               </div>
             )}
           </header>

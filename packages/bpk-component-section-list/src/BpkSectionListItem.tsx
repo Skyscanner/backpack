@@ -52,13 +52,13 @@ const BpkSectionListItem = (props: Props) => {
   ];
 
   if (href) {
-    const target = blank ? '_blank' : null;
+    const target = blank ? '_blank' : undefined;
     return (
       // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <a
         href={href}
         target={target}
-        onClick={onClick}
+        onClick={onClick ?? undefined}
         className={classNames.join(' ')}
         {...rest}
       >

@@ -37,7 +37,7 @@ describe('BpkSectionList', () => {
 
   it('should render correctly with arbitrary props', () => {
     const { asFragment } = render(
-      <BpkSectionList testid="123">Hello world</BpkSectionList>,
+      <BpkSectionList data-testid="123">Hello world</BpkSectionList>,
     );
     expect(asFragment()).toMatchSnapshot();
   });

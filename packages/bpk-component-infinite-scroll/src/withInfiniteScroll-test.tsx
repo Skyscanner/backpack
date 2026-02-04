@@ -26,7 +26,7 @@ import { ArrayDataSource } from './DataSource';
 import withInfiniteScroll from './withInfiniteScroll';
 
 const nextTick = () => new Promise((res) => setTimeout(res, 0));
-const mockDataSource = (data: (string | number)[]) => {
+const mockDataSource = (data: Array<string | number>) => {
   const myDs = new ArrayDataSource(data);
   const mockFetch = myDs.fetchItems.bind(myDs);
   myDs.fetchItems = jest.fn((...args) => mockFetch(...args));
@@ -48,14 +48,7 @@ describe('withInfiniteScroll', () => {
     </div>
   );
 
-  List.propTypes = {
-    elements: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.string),
-      PropTypes.arrayOf(PropTypes.number),
-    ]).isRequired,
-  };
-
-  const InfiniteList = withInfiniteScroll(List);
+  const InfiniteList = withInfiniteScroll(List as React.ComponentType<{ elements: string[] }>);
   let intersect: () => Promise<void>;
   let currentOptions: IntersectionObserverInit = {};
 
