@@ -1,0 +1,418 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkInputV2 Snapshots should match snapshot with both InputAdornments 1`] = `
+<div>
+  <div
+    class="bpk-input-v2__root"
+    style="--bpk-input-gap: 0;"
+  >
+    <div
+      class="bpk-input-v2__input-container"
+    >
+      <div
+        class="bpk-input-v2__adornment bpk-input-v2__adornment--start"
+        data-input-adornment-id=":rg:"
+      >
+        $
+      </div>
+      <input
+        class="bpk-input-v2__input"
+        data-child-position="1"
+        id="amount"
+        name="amount"
+        type="text"
+        value="100"
+      />
+      <div
+        class="bpk-input-v2__adornment bpk-input-v2__adornment--end"
+        data-input-adornment-id=":rh:"
+      >
+        USD
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkInputV2 Snapshots should match snapshot with clearButtonMode "always" 1`] = `
+<div>
+  <div
+    class="bpk-input-v2__root"
+    style="--bpk-input-gap: 0;"
+  >
+    <div
+      class="bpk-input-v2__input-container"
+    >
+      <input
+        class="bpk-input-v2__input"
+        data-child-position="0"
+        id="search"
+        name="search"
+        type="text"
+        value="test"
+      />
+      <div
+        class="bpk-input-v2__adornment bpk-input-v2__adornment--end bpk-input-v2__clear-button"
+        data-system="clear"
+      >
+        <button
+          aria-label="Clear"
+          class="bpk-input-v2__clear-button-inner"
+          tabindex="-1"
+          title="Clear"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentcolor"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5M7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkInputV2 Snapshots should match snapshot with clearButtonMode and InputAdornments 1`] = `
+<div>
+  <div
+    class="bpk-input-v2__root"
+    style="--bpk-input-gap: 0;"
+  >
+    <div
+      class="bpk-input-v2__input-container"
+    >
+      <div
+        class="bpk-input-v2__adornment bpk-input-v2__adornment--start"
+        data-input-adornment-id=":rk:"
+      >
+        $
+      </div>
+      <input
+        class="bpk-input-v2__input"
+        data-child-position="1"
+        id="price"
+        name="price"
+        type="text"
+        value="100"
+      />
+      <div
+        class="bpk-input-v2__adornment bpk-input-v2__adornment--end"
+        data-input-adornment-id=":rl:"
+      >
+        USD
+      </div>
+      <div
+        class="bpk-input-v2__adornment bpk-input-v2__adornment--end bpk-input-v2__clear-button"
+        data-system="clear"
+      >
+        <button
+          aria-label="Clear"
+          class="bpk-input-v2__clear-button-inner"
+          tabindex="-1"
+          title="Clear"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentcolor"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5M7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkInputV2 Snapshots should match snapshot with clearButtonMode and validation icon 1`] = `
+<div>
+  <div
+    class="bpk-input-v2__root"
+    style="--bpk-input-gap: 0;"
+  >
+    <div
+      class="bpk-input-v2__input-container bpk-input-v2__input-container--valid"
+    >
+      <input
+        class="bpk-input-v2__input"
+        data-child-position="0"
+        id="email"
+        name="email"
+        type="text"
+        value="test@example.com"
+      />
+      <div
+        class="bpk-input-v2__adornment bpk-input-v2__adornment--end bpk-input-v2__clear-button"
+        data-system="clear"
+      >
+        <button
+          aria-label="Clear"
+          class="bpk-input-v2__clear-button-inner"
+          tabindex="-1"
+          title="Clear"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentcolor"
+            height="1rem"
+            viewBox="0 0 24 24"
+            width="1rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 22.5A10.5 10.5 0 1 0 1.5 12 10.5 10.5 0 0 0 12 22.5M7.938 7.94h.002a1.5 1.5 0 0 1 2.12 0L12 9.878l1.94-1.94a1.5 1.5 0 0 1 2.12 2.122L14.122 12l1.94 1.94a1.5 1.5 0 0 1-2.122 2.12L12 14.122l-1.94 1.94a1.5 1.5 0 0 1-2.12-2.122L9.878 12l-1.94-1.94a1.5 1.5 0 0 1 0-2.12"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkInputV2 Snapshots should match snapshot with custom gap 1`] = `
+<div>
+  <div
+    class="bpk-input-v2__root"
+    style="--bpk-input-gap: 1rem;"
+  >
+    <div
+      class="bpk-input-v2__input-container"
+    >
+      <div
+        class="bpk-input-v2__adornment bpk-input-v2__adornment--start"
+        data-input-adornment-id=":ri:"
+      >
+        📧
+      </div>
+      <input
+        class="bpk-input-v2__input"
+        data-child-position="1"
+        id="email"
+        name="email"
+        type="text"
+        value="user@example.com"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkInputV2 Snapshots should match snapshot with default props 1`] = `
+<div>
+  <div
+    class="bpk-input-v2__root"
+    style="--bpk-input-gap: 0;"
+  >
+    <div
+      class="bpk-input-v2__input-container"
+    >
+      <input
+        class="bpk-input-v2__input"
+        data-child-position="0"
+        id="test"
+        name="test"
+        type="text"
+        value="test"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkInputV2 Snapshots should match snapshot with endInputAdornment 1`] = `
+<div>
+  <div
+    class="bpk-input-v2__root"
+    style="--bpk-input-gap: 0;"
+  >
+    <div
+      class="bpk-input-v2__input-container"
+    >
+      <input
+        class="bpk-input-v2__input"
+        data-child-position="0"
+        id="weight"
+        name="weight"
+        type="text"
+        value="75"
+      />
+      <div
+        class="bpk-input-v2__adornment bpk-input-v2__adornment--end"
+        data-input-adornment-id=":rf:"
+      >
+        kg
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkInputV2 Snapshots should match snapshot with invalid state 1`] = `
+<div>
+  <div
+    class="bpk-input-v2__root"
+    style="--bpk-input-gap: 0;"
+  >
+    <div
+      class="bpk-input-v2__input-container bpk-input-v2__input-container--invalid"
+    >
+      <input
+        aria-invalid="true"
+        class="bpk-input-v2__input"
+        data-child-position="0"
+        id="email"
+        name="email"
+        type="text"
+        value="invalid"
+      />
+      <div
+        class="bpk-input-v2__adornment bpk-input-v2__adornment--end bpk-input-v2__adornment--invalid"
+        data-system="invalid"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentcolor"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5M12 18a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 18m1.5-6a1.5 1.5 0 0 1-3 0V7.5a1.5 1.5 0 0 1 3 0z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkInputV2 Snapshots should match snapshot with startInputAdornment 1`] = `
+<div>
+  <div
+    class="bpk-input-v2__root"
+    style="--bpk-input-gap: 0;"
+  >
+    <div
+      class="bpk-input-v2__input-container"
+    >
+      <div
+        class="bpk-input-v2__adornment bpk-input-v2__adornment--start"
+        data-input-adornment-id=":re:"
+      >
+        $
+      </div>
+      <input
+        class="bpk-input-v2__input"
+        data-child-position="1"
+        id="price"
+        name="price"
+        type="text"
+        value="100"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkInputV2 Snapshots should match snapshot with valid state 1`] = `
+<div>
+  <div
+    class="bpk-input-v2__root"
+    style="--bpk-input-gap: 0;"
+  >
+    <div
+      class="bpk-input-v2__input-container bpk-input-v2__input-container--valid"
+    >
+      <input
+        class="bpk-input-v2__input"
+        data-child-position="0"
+        id="email"
+        name="email"
+        type="text"
+        value="test@example.com"
+      />
+      <div
+        class="bpk-input-v2__adornment bpk-input-v2__adornment--end bpk-input-v2__adornment--valid"
+        data-system="valid"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentcolor"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 22.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5m5.56-12.44a1.5 1.5 0 0 0-2.12-2.12l-4.94 4.939-1.94-1.94a1.5 1.5 0 0 0-2.12 2.122l3 3a1.5 1.5 0 0 0 2.12 0z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkInputV2 Snapshots should match snapshot with valid state and endInputAdornment 1`] = `
+<div>
+  <div
+    class="bpk-input-v2__root"
+    style="--bpk-input-gap: 0;"
+  >
+    <div
+      class="bpk-input-v2__input-container bpk-input-v2__input-container--valid"
+    >
+      <input
+        class="bpk-input-v2__input"
+        data-child-position="0"
+        id="email"
+        name="email"
+        type="text"
+        value="test@example.com"
+      />
+      <div
+        class="bpk-input-v2__adornment bpk-input-v2__adornment--end"
+        data-input-adornment-id=":rj:"
+      >
+        @
+      </div>
+      <div
+        class="bpk-input-v2__adornment bpk-input-v2__adornment--end bpk-input-v2__adornment--valid"
+        data-system="valid"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentcolor"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 22.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5m5.56-12.44a1.5 1.5 0 0 0-2.12-2.12l-4.94 4.939-1.94-1.94a1.5 1.5 0 0 0-2.12 2.122l3 3a1.5 1.5 0 0 0 2.12 0z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;

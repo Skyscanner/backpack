@@ -1,0 +1,239 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/forms';
+@use '../../../bpk-mixins/utils';
+@use '../../../bpk-mixins/typography';
+@use '../../../bpk-mixins/shadows';
+
+// ========== Root Component ==========
+.bpk-input-v2__root {
+  display: flex;
+  align-items: stretch;
+
+  // No gap here - each input-container is independent
+}
+
+// ========== Input Container (unified border for all elements) ==========
+.bpk-input-v2__input-container {
+  // Override mixin styles to use flexbox layout
+  display: flex;
+
+  // Remove default padding from bpk-input mixin (we'll manage spacing via gap)
+  padding: 0;
+  align-items: center;
+  flex: 1;
+  gap: var(--bpk-input-gap, tokens.bpk-spacing-md());
+
+  // Unified border styles (moved from input element)
+  @include forms.bpk-input;
+}
+
+// Large variant for container
+.bpk-input-v2__input-container--large {
+  display: flex; // Override mixin's inline-block
+  padding: 0; // Override padding from mixin
+
+  @include forms.bpk-input--large;
+}
+
+// Validation states for container (not input)
+.bpk-input-v2__input-container--valid {
+  // Valid state keeps normal border, only shows green icon
+  // No border-color change needed
+}
+
+.bpk-input-v2__input-container--invalid {
+  border-color: tokens.$bpk-form-validation-color;
+}
+
+// Focus state for container (when input inside is focused)
+.bpk-input-v2__input-container:focus-within {
+  position: relative; // brings border to the front (for docked inputs)
+  outline: 0;
+}
+
+// Disabled state for container (when input inside is disabled)
+.bpk-input-v2__input-container:has(input:disabled) {
+  border-color: tokens.$bpk-input-disabled-border-color;
+  cursor: not-allowed;
+}
+
+// ========== Input Component ==========
+.bpk-input-v2__input {
+  min-width: 0; // Allow input to shrink below content size
+  padding: tokens.bpk-spacing-md();
+  flex: 1;
+
+  // Remove all default styles (border, padding, etc.)
+  border: 0;
+  outline: 0;
+  background: transparent;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  appearance: none;
+
+  // Text styles from bpk-input mixin
+  @include typography.bpk-body-default;
+
+  &::placeholder {
+    color: tokens.$bpk-text-secondary-day;
+  }
+
+  &:disabled {
+    color: tokens.$bpk-input-disabled-color;
+    cursor: not-allowed;
+  }
+}
+
+// Large variant
+.bpk-input-v2__input--large {
+  padding: tokens.bpk-spacing-lg();
+
+  @include typography.bpk-body-longform;
+}
+
+// Docked borders (applied to container, not input)
+.bpk-input-v2__input-container--docked-first {
+  display: flex; // Override mixin's inline-block
+  padding: 0; // Override padding from mixin
+
+  @include forms.bpk-input--docked-first-child;
+}
+
+.bpk-input-v2__input-container--docked-middle {
+  display: flex; // Override mixin's inline-block
+  padding: 0; // Override padding from mixin
+
+  @include forms.bpk-input--docked-middle-child;
+}
+
+.bpk-input-v2__input-container--docked-last {
+  display: flex; // Override mixin's inline-block
+  padding: 0; // Override padding from mixin
+
+  @include forms.bpk-input--docked-last-child;
+}
+
+// ========== InputAdornment Component ==========
+.bpk-input-v2__adornment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; // Allow clicks to pass through
+
+  // Prevent text selection
+  user-select: none;
+
+  // Disabled state for adornments (when input is disabled)
+  .bpk-input-v2__input-container:has(input:disabled) & {
+    color: tokens.$bpk-input-disabled-color;
+  }
+}
+
+// Start adornment padding (left in LTR, right in RTL)
+.bpk-input-v2__adornment--start {
+  padding-left: tokens.bpk-spacing-md();
+
+  @include utils.bpk-rtl {
+    padding-right: tokens.bpk-spacing-md();
+    padding-left: 0;
+  }
+}
+
+// End adornment padding (right in LTR, left in RTL)
+.bpk-input-v2__adornment--end {
+  padding-right: tokens.bpk-spacing-md();
+
+  @include utils.bpk-rtl {
+    padding-right: 0;
+    padding-left: tokens.bpk-spacing-md();
+  }
+}
+
+// Large variant for start adornment
+.bpk-input-v2__adornment--large.bpk-input-v2__adornment--start {
+  padding-left: tokens.bpk-spacing-lg();
+
+  @include utils.bpk-rtl {
+    padding-right: tokens.bpk-spacing-lg();
+    padding-left: 0;
+  }
+}
+
+// Large variant for end adornment
+.bpk-input-v2__adornment--large.bpk-input-v2__adornment--end {
+  padding-right: tokens.bpk-spacing-lg();
+
+  @include utils.bpk-rtl {
+    padding-right: 0;
+    padding-left: tokens.bpk-spacing-lg();
+  }
+}
+
+// System adornments (valid/invalid icons)
+.bpk-input-v2__adornment--valid {
+  color: tokens.$bpk-status-success-spot-day;
+}
+
+.bpk-input-v2__adornment--invalid {
+  color: tokens.$bpk-text-error-day;
+}
+
+// Clear button adornment (wrapper)
+.bpk-input-v2__clear-button {
+  pointer-events: auto; // Enable click interactions
+
+  // For whileEditing mode - hide by default, show on focus
+  &--while-editing {
+    visibility: hidden;
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease;
+    opacity: 0;
+
+    .bpk-input-v2__input-container:focus-within & {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  // Always mode - always visible
+  // No additional styles needed, button is always visible
+}
+
+// Clear button inner element (the actual button)
+.bpk-input-v2__clear-button-inner {
+  // Override absolute positioning from mixin - we use flexbox instead
+  position: static;
+  right: auto;
+  left: auto;
+  display: flex;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+
+  @include forms.bpk-input__clear-button;
+
+  @include utils.bpk-rtl {
+    right: auto;
+    left: auto;
+  }
+}
