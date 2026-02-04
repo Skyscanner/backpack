@@ -27,9 +27,10 @@ import { cssModules } from '../../bpk-react-utils';
 
 import { rtlConditionalValue } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
+import { isBandScale } from './types';
 import { identity, center, remToPx } from './utils';
 
-import type { ScaleBand, ScaleLinear } from 'd3-scale';
+import type { NumericMargin, Scale, TickValueFn } from './types';
 
 import STYLES from './BpkChartAxis.module.scss';
 
@@ -38,22 +39,9 @@ const getClassName = cssModules(STYLES);
 const spacing = remToPx('.375rem');
 const lineHeight = remToPx(lineHeightSm);
 
-type Margin = {
-  top: number;
-  bottom: number;
-  left: number;
-  right: number;
-};
-
-type Scale = ScaleBand<string> | ScaleLinear<number, number>;
-
-// Type guard for band scale
-const isBandScale = (scale: Scale): scale is ScaleBand<string> =>
-  'bandwidth' in scale;
-
 type AxisConfigParams = {
   height: number;
-  margin: Margin;
+  margin: NumericMargin;
   orientation: typeof ORIENTATION_X | typeof ORIENTATION_Y;
   scale: Scale;
   width: number;
@@ -111,11 +99,10 @@ const getAxisConfig = ({ height, margin, orientation, scale, width }: AxisConfig
 
 type Props = AxisConfigParams & {
   label?: ReactNode;
-  tickValue?: (tick: unknown, index: number) => ReactNode;
+  tickValue?: TickValueFn;
   numTicks?: number | null;
   tickOffset?: number;
   tickEvery?: number;
-  [key: string]: unknown;
 };
 
 const BpkChartAxis = (props: Props) => {

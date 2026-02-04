@@ -21,37 +21,24 @@ import PropTypes from 'prop-types';
 import { cssModules } from '../../bpk-react-utils';
 
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
-import { identity, center } from './utils';
+import { isBandScale } from './types';
+import { center } from './utils';
 
-import type { ScaleBand, ScaleLinear } from 'd3-scale';
+import type { NumericMargin, Scale } from './types';
 
 import STYLES from './BpkChartGridLines.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Margin = {
-  top: number;
-  bottom: number;
-  left: number;
-  right: number;
-};
-
-type Scale = ScaleBand<string> | ScaleLinear<number, number>;
-
-// Type guard for band scale
-const isBandScale = (scale: Scale): scale is ScaleBand<string> =>
-  'bandwidth' in scale;
-
 type Props = {
   width: number;
   height: number;
-  margin: Margin;
+  margin: NumericMargin;
   scale: Scale;
   orientation: typeof ORIENTATION_X | typeof ORIENTATION_Y;
   numTicks?: number | null;
   tickOffset?: number;
   tickEvery?: number;
-  [key: string]: unknown;
 };
 
 const BpkChartGridLines = (props: Props) => {

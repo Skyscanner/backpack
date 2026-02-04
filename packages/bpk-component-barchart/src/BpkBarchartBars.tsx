@@ -17,38 +17,33 @@
  */
 
 import PropTypes from 'prop-types';
-import type { ComponentType, MouseEvent, FocusEvent } from 'react';
+import type { ComponentType, MouseEvent, KeyboardEvent, FocusEvent } from 'react';
+
 
 import { borderRadiusXs } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { remToPx } from './utils';
 
-import type { ScaleBand } from 'd3-scale';
+import type { DataPoint, NumericMargin, BarComponentProps } from './types';
+import type { ScaleBand, ScaleLinear } from 'd3-scale';
 
 const borderRadius = remToPx(borderRadiusXs);
 
-type DataPoint = Record<string, unknown>;
-
-type Margin = {
-  top: number;
-  bottom: number;
-  left: number;
-  right: number;
-};
-
 type ScaleConfig = {
   maxYValue: number;
-  yScale: (value: number) => number;
+  yScale: ScaleLinear<number, number>;
   yScaleDataKey: string;
 };
 
 type HeightConfig = ScaleConfig & {
   height: number;
-  margin: Margin;
+  margin: NumericMargin;
 };
 
-const getYPos = (point: DataPoint, { maxYValue, yScale, yScaleDataKey }: ScaleConfig) =>
-  yScale(Math.min(point[yScaleDataKey] as number, maxYValue));
+const getYPos = (
+  point: DataPoint,
+  { maxYValue, yScale, yScaleDataKey }: ScaleConfig,
+) => yScale(Math.min(point[yScaleDataKey] as number, maxYValue)) ?? 0;
 
 const getBarHeight = (
   point: DataPoint,
@@ -62,8 +57,10 @@ const getBarHeight = (
   return Math.max(barHeight, 0);
 };
 
-const isOutlier = (point: DataPoint, { maxYValue, yScaleDataKey }: { maxYValue: number; yScaleDataKey: string }) =>
-  (point[yScaleDataKey] as number) > maxYValue;
+const isOutlier = (
+  point: DataPoint,
+  { maxYValue, yScaleDataKey }: { maxYValue: number; yScaleDataKey: string },
+) => (point[yScaleDataKey] as number) > maxYValue;
 
 type Props = {
   data: DataPoint[];
@@ -71,12 +68,11 @@ type Props = {
   yScaleDataKey: string;
   height: number;
   xScale: ScaleBand<string>;
-  yScale: (value: number) => number;
+  yScale: ScaleLinear<number, number>;
   maxYValue: number;
-  margin: Margin;
+  margin: NumericMargin;
   getBarLabel: (point: DataPoint, xKey: string, yKey: string) => string;
-   
-  BarComponent: ComponentType<any>;
+  BarComponent: ComponentType<BarComponentProps>;
   getBarSelection?: (point: DataPoint) => boolean;
   outerPadding?: number;
   innerPadding?: number;
@@ -131,7 +127,7 @@ const BpkBarchartBars = (props: Props) => {
             height={outlier ? barHeight + borderRadius : barHeight}
             label={getBarLabel(point, xScaleDataKey, yScaleDataKey)}
             outlier={isOutlier(point, props)}
-            onClick={onBarClick ? (e: MouseEvent) => onBarClick(e, { point }) : null}
+            onClick={onBarClick ? (e: MouseEvent | KeyboardEvent) => onBarClick(e as MouseEvent, { point }) : null}
             onHover={onBarHover ? (e: MouseEvent) => onBarHover(e, { point }) : null}
             onFocus={onBarFocus ? (e: FocusEvent) => onBarFocus(e, { point }) : null}
             selected={getBarSelection ? getBarSelection(point) : false}

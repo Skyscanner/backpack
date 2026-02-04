@@ -19,18 +19,11 @@
 import PropTypes from 'prop-types';
 import type { ReactNode } from 'react';
 
-
-type Margin = {
-  top: number | string;
-  bottom: number | string;
-  left: number | string;
-  right: number | string;
-};
+import type { Margin } from './types';
 
 type Props = {
   children: ReactNode;
   margin: Margin;
-  [key: string]: unknown;
 };
 
 const BpkChartMargin = (props: Props) => {

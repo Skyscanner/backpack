@@ -45,6 +45,9 @@ import dataProp from './customPropTypes';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, remToPx } from './utils';
 
+import type { DataPoint, BarComponentProps, TickValueFn } from './types';
+import type { ScaleBand, ScaleLinear } from 'd3-scale';
+
 import STYLES from './BpkBarchart.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -52,8 +55,11 @@ const getClassName = cssModules(STYLES);
 const spacing = remToPx('.375rem');
 const lineHeight = remToPx(lineHeightSm);
 
- 
-type DataPoint = Record<string, any>;
+const defaultGetBarLabel = (
+  point: DataPoint,
+  xScaleDataKey: string,
+  yScaleDataKey: string,
+) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`;
 
 type Props = {
   data: DataPoint[];
@@ -68,11 +74,11 @@ type Props = {
   outlierPercentage?: number | null;
   showGridlines?: boolean;
   xAxisMargin?: number;
-  xAxisTickValue?: (value: unknown) => unknown;
+  xAxisTickValue?: TickValueFn;
   xAxisTickOffset?: number;
   xAxisTickEvery?: number;
   yAxisMargin?: number;
-  yAxisTickValue?: (value: unknown) => unknown;
+  yAxisTickValue?: TickValueFn;
   yAxisNumTicks?: number | null;
   yAxisDomain?: Array<number | null>;
   onBarClick?: ((event: MouseEvent, dataPoint: DataPoint) => void) | null;
@@ -80,7 +86,7 @@ type Props = {
   onBarFocus?: ((event: FocusEvent, dataPoint: DataPoint) => void) | null;
   getBarLabel?: (point: DataPoint, xScaleDataKey: string, yScaleDataKey: string) => string;
   getBarSelection?: (point: DataPoint) => boolean;
-  BarComponent?: ComponentType<Record<string, unknown>>;
+  BarComponent?: ComponentType<BarComponentProps>;
   disableDataTable?: boolean;
 };
 
@@ -119,19 +125,15 @@ class BpkBarchart extends Component<Props, State> {
     onBarClick: null,
     onBarHover: null,
     onBarFocus: null,
-    // Using type any here as xScaleDataKey or yScaleDataKey are strings and there is an issue that strings are not valid keys
-    getBarLabel: (point: DataPoint, xScaleDataKey: string, yScaleDataKey: string) =>
-      `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`,
+    getBarLabel: defaultGetBarLabel,
     getBarSelection: () => false,
     BarComponent: BpkBarchartBar,
     disableDataTable: false,
   };
 
+  xScale: ScaleBand<string>;
 
-  xScale: any;
-
-
-  yScale: any;
+  yScale: ScaleLinear<number, number>;
 
   onWindowResize: ReturnType<typeof debounce>;
 
@@ -213,12 +215,12 @@ class BpkBarchart extends Component<Props, State> {
     const width = this.state.width - margin.left - margin.right;
     const height = this.state.height - margin.bottom - margin.top;
     const maxYValue = getMaxYValue(
-      data.map((d: DataPoint) => d[yScaleDataKey]),
+      data.map((d) => d[yScaleDataKey] as number),
       outlierPercentage,
     );
 
     this.xScale.rangeRound([0, width]);
-    this.xScale.domain(transformedData.map((d: DataPoint) => d[xScaleDataKey]));
+    this.xScale.domain(transformedData.map((d) => d[xScaleDataKey] as string));
     this.yScale.rangeRound([height, 0]);
     const domain = yAxisDomain ?? [null, null];
     this.yScale.domain([domain[0] || 0, domain[1] || maxYValue]);
@@ -256,8 +258,7 @@ class BpkBarchart extends Component<Props, State> {
               height={this.state.height}
               margin={margin}
               scale={this.yScale}
-               
-              tickValue={yAxisTickValue as any}
+              tickValue={yAxisTickValue}
               numTicks={yAxisNumTicks}
               label={yAxisLabel}
             />
@@ -267,8 +268,7 @@ class BpkBarchart extends Component<Props, State> {
               height={this.state.height}
               margin={margin}
               scale={this.xScale}
-               
-              tickValue={xAxisTickValue as any}
+              tickValue={xAxisTickValue}
               tickEvery={xAxisTickEvery}
               tickOffset={xAxisTickOffset}
               label={xAxisLabel}
@@ -286,8 +286,7 @@ class BpkBarchart extends Component<Props, State> {
               height={this.state.height}
               margin={margin}
               data={transformedData}
-               
-              xScale={this.xScale as any}
+              xScale={this.xScale}
               yScale={this.yScale}
               xScaleDataKey={xScaleDataKey}
               yScaleDataKey={yScaleDataKey}
@@ -296,9 +295,9 @@ class BpkBarchart extends Component<Props, State> {
               onBarClick={onBarClick}
               onBarHover={onBarHover}
               onBarFocus={onBarFocus}
-              getBarLabel={getBarLabel!}
+              getBarLabel={getBarLabel ?? defaultGetBarLabel}
               getBarSelection={getBarSelection}
-              BarComponent={BarComponent!}
+              BarComponent={BarComponent ?? BpkBarchartBar}
             />
           </BpkChartMargin>
         </svg>

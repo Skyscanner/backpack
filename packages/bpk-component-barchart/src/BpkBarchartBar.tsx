@@ -17,14 +17,15 @@
  */
 
 import PropTypes from 'prop-types';
-import type { KeyboardEvent, MouseEvent, FocusEvent } from 'react';
-
+import type { KeyboardEvent } from 'react';
 
 import { borderRadiusXs } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { cssModules } from '../../bpk-react-utils';
 
 import { remToPx } from './utils';
+
+import type { BarComponentProps } from './types';
 
 import STYLES from './BpkBarchartBar.module.scss';
 
@@ -44,21 +45,9 @@ const handleKeyboardEvent = (callback: (event: KeyboardEvent) => void) => (event
 
 const borderRadius = remToPx(borderRadiusXs);
 
-type Props = {
-  height: number;
-  label: string;
-  width: number;
-  x: number;
-  y: number;
+interface Props extends BarComponentProps {
   className?: string | null;
-  onClick?: ((event: MouseEvent | KeyboardEvent) => void) | null;
-  onHover?: ((event: MouseEvent) => void) | null;
-  onFocus?: ((event: FocusEvent) => void) | null;
-  outlier?: boolean;
-  padding?: number;
-  selected?: boolean;
-  [key: string]: unknown;
-};
+}
 
 const BpkBarchartBar = (props: Props) => {
   const {
@@ -96,7 +85,7 @@ const BpkBarchartBar = (props: Props) => {
   const rectWidth = width * (1 - (padding ?? 0));
 
   return (
-    <g className={classNames} transform={`translate(${x}, ${y})`}>
+    <g className={classNames} transform={`translate(${x ?? 0}, ${y})`}>
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <rect
         className={rectClassNames}
