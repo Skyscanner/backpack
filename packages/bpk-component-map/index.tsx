@@ -16,18 +16,16 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
-import BpkIconMarker, {
-  type Props as IconMarkerProps,
-} from './src/BpkIconMarker';
+
+import BpkIconMarker
+ from './src/BpkIconMarker';
 import BpkMap from './src/BpkMap';
 import BpkOverlayView from './src/BpkOverlayView';
 import BpkPriceMarker from './src/BpkPriceMarker';
 import BpkPriceMarkerButton, {
   MARKER_STATUSES,
 } from './src/BpkPriceMarkerButton';
-import { type LatLong } from './src/common-types';
 import {
   defaultIconMarkerThemeAttributes,
   priceMarkerThemeAttributes,
@@ -35,8 +33,6 @@ import {
 import withGoogleMapsScript from './src/withGoogleMapsScript';
 
 export default BpkMap;
-export type BpkMapLatLong = LatLong;
-export type BpkIconMarkerProps = IconMarkerProps;
 export {
   BpkIconMarker,
   BpkPriceMarker,

@@ -16,11 +16,12 @@
  * limitations under the License.
  */
 
+
 import PropTypes from 'prop-types';
 
 import { isBefore, isSameDay } from './date-utils';
 
-const DateType = () => (props) => {
+const DateType = () => (props: Record<string, Date | null | undefined>) => {
   const { endDate, startDate } = props;
 
   // No range selected
@@ -39,7 +40,7 @@ const DateType = () => (props) => {
   }
 
   // Start date cannot be after end date
-  if (isBefore(endDate, startDate) && !isSameDay(endDate, startDate)) {
+  if (endDate && startDate && isBefore(endDate, startDate) && !isSameDay(endDate, startDate)) {
     return new Error(
       `Start date \`${startDate}\` cannot be after end date \`${endDate}\`.`,
     );
