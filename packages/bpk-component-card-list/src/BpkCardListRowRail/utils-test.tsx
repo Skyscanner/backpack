@@ -373,7 +373,9 @@ describe('useCarouselScrollSync', () => {
         { initialProps: { visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0] } },
       );
 
+      // User initiates scroll via wheel
       act(() => {
+        mockContainer.dispatchEvent(new Event('wheel'));
         mockContainer.dispatchEvent(new Event('scroll'));
       });
 
@@ -386,6 +388,7 @@ describe('useCarouselScrollSync', () => {
         jest.advanceTimersByTime(RELEASE_LOCK_DELAY);
       });
 
+      // After lock release, user scroll flag is cleared so no update
       rerender({ visibilityList: [0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0] });
       expect(mockSetCurrentIndex).not.toHaveBeenCalled();
     });
@@ -405,6 +408,17 @@ describe('useCarouselScrollSync', () => {
         { initialProps: { visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0] } },
       );
 
+      // User initiates scroll via wheel
+      act(() => {
+        mockContainer.dispatchEvent(new Event('wheel'));
+        mockContainer.dispatchEvent(new Event('scroll'));
+      });
+
+      act(() => {
+        jest.advanceTimersByTime(RELEASE_LOCK_DELAY - 50);
+      });
+
+      // Another scroll event resets the timer
       act(() => {
         mockContainer.dispatchEvent(new Event('scroll'));
       });
@@ -413,14 +427,7 @@ describe('useCarouselScrollSync', () => {
         jest.advanceTimersByTime(RELEASE_LOCK_DELAY - 50);
       });
 
-      act(() => {
-        mockContainer.dispatchEvent(new Event('scroll'));
-      });
-
-      act(() => {
-        jest.advanceTimersByTime(RELEASE_LOCK_DELAY - 50);
-      });
-
+      // User scroll flag still active because timer was reset
       rerender({ visibilityList: [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0] });
       expect(mockSetCurrentIndex).toHaveBeenCalledWith(1);
     });
@@ -442,8 +449,9 @@ describe('useCarouselScrollSync', () => {
         { initialProps: { visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0] } },
       );
 
+      // User initiates scroll via wheel
       act(() => {
-        mockContainer.dispatchEvent(new Event('scroll'));
+        mockContainer.dispatchEvent(new Event('wheel'));
       });
 
       rerender({ visibilityList: [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0] });
@@ -470,8 +478,9 @@ describe('useCarouselScrollSync', () => {
         },
       );
 
+      // User initiates scroll via touch
       act(() => {
-        mockContainer.dispatchEvent(new Event('scroll'));
+        mockContainer.dispatchEvent(new Event('touchstart'));
       });
 
       rerender({ visibilityList: [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1] });
@@ -570,8 +579,9 @@ describe('useCarouselScrollSync', () => {
         { initialProps: { visibilityList: [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0] } },
       );
 
+      // User initiates scroll via wheel
       act(() => {
-        mockContainer.dispatchEvent(new Event('scroll'));
+        mockContainer.dispatchEvent(new Event('wheel'));
       });
 
       // Scroll back so card at index 2 (last of page 0) is visible along with cards 3,4
@@ -603,8 +613,9 @@ describe('useCarouselScrollSync', () => {
         },
       );
 
+      // User initiates scroll via wheel
       act(() => {
-        mockContainer.dispatchEvent(new Event('scroll'));
+        mockContainer.dispatchEvent(new Event('wheel'));
       });
 
       rerender({
@@ -686,6 +697,145 @@ describe('useCarouselScrollSync', () => {
       });
 
       expect(mockSetCurrentIndex).not.toHaveBeenCalled();
+    });
+
+    it('should allow user to take over during programmatic scroll via wheel event', () => {
+      const { rerender } = renderHook(
+        ({ currentIndex, visibilityList }) =>
+          useCarouselScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList,
+          }),
+        {
+          initialProps: {
+            currentIndex: 0,
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+        },
+      );
+
+      // Trigger programmatic scroll
+      rerender({
+        currentIndex: 1,
+        visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      });
+
+      // User takes over with wheel event during programmatic scroll
+      act(() => {
+        mockContainer.dispatchEvent(new Event('wheel'));
+      });
+
+      // Visibility changes due to user scroll
+      rerender({
+        currentIndex: 1,
+        visibilityList: [0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
+      });
+
+      // Should update currentIndex because user took over
+      expect(mockSetCurrentIndex).toHaveBeenCalledWith(2);
+    });
+
+    it('should allow user to take over during programmatic scroll via touchstart event', () => {
+      const { rerender } = renderHook(
+        ({ currentIndex, visibilityList }) =>
+          useCarouselScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList,
+          }),
+        {
+          initialProps: {
+            currentIndex: 0,
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+        },
+      );
+
+      // Trigger programmatic scroll
+      rerender({
+        currentIndex: 1,
+        visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      });
+
+      // User takes over with touch event during programmatic scroll
+      act(() => {
+        mockContainer.dispatchEvent(new Event('touchstart'));
+      });
+
+      // Visibility changes due to user scroll
+      rerender({
+        currentIndex: 1,
+        visibilityList: [0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
+      });
+
+      // Should update currentIndex because user took over
+      expect(mockSetCurrentIndex).toHaveBeenCalledWith(2);
+    });
+
+    it('should add wheel and touchstart event listeners', () => {
+      const addEventListenerSpy = jest.spyOn(mockContainer, 'addEventListener');
+
+      renderHook(() =>
+        useCarouselScrollSync({
+          cardRefs: mockCardRefs,
+          container: mockContainer,
+          currentIndex: 0,
+          enabled: true,
+          initiallyShownCards: 3,
+          setCurrentIndex: mockSetCurrentIndex,
+          visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        }),
+      );
+
+      expect(addEventListenerSpy).toHaveBeenCalledWith(
+        'wheel',
+        expect.any(Function),
+        { passive: true },
+      );
+      expect(addEventListenerSpy).toHaveBeenCalledWith(
+        'touchstart',
+        expect.any(Function),
+        { passive: true },
+      );
+    });
+
+    it('should remove wheel and touchstart event listeners on cleanup', () => {
+      const removeEventListenerSpy = jest.spyOn(
+        mockContainer,
+        'removeEventListener',
+      );
+
+      const { unmount } = renderHook(() =>
+        useCarouselScrollSync({
+          cardRefs: mockCardRefs,
+          container: mockContainer,
+          currentIndex: 0,
+          enabled: true,
+          initiallyShownCards: 3,
+          setCurrentIndex: mockSetCurrentIndex,
+          visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        }),
+      );
+
+      unmount();
+
+      expect(removeEventListenerSpy).toHaveBeenCalledWith(
+        'wheel',
+        expect.any(Function),
+      );
+      expect(removeEventListenerSpy).toHaveBeenCalledWith(
+        'touchstart',
+        expect.any(Function),
+      );
     });
   });
 });

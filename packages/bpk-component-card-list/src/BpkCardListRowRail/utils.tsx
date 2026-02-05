@@ -162,12 +162,13 @@ export const useCarouselScrollSync = ({
       isProgrammaticScrollRef.current = false;
     };
 
-    const handleScroll = () => {
-      // Mark as user scrolling only if not programmatic
-      if (!isProgrammaticScrollRef.current) {
-        isUserScrollingRef.current = true;
-      }
+    // Detect when user takes over from programmatic scroll via direct input
+    const handleUserInputStart = () => {
+      isProgrammaticScrollRef.current = false;
+      isUserScrollingRef.current = true;
+    };
 
+    const handleScroll = () => {
       // Reset silence timer on every scroll event
       if (scrollEndTimeoutRef.current) {
         clearTimeout(scrollEndTimeoutRef.current);
@@ -178,9 +179,15 @@ export const useCarouselScrollSync = ({
     };
 
     container.addEventListener('scroll', handleScroll, { passive: true });
+    container.addEventListener('wheel', handleUserInputStart, { passive: true });
+    container.addEventListener('touchstart', handleUserInputStart, {
+      passive: true,
+    });
 
     return () => {
       container.removeEventListener('scroll', handleScroll);
+      container.removeEventListener('wheel', handleUserInputStart);
+      container.removeEventListener('touchstart', handleUserInputStart);
       if (scrollEndTimeoutRef.current) {
         clearTimeout(scrollEndTimeoutRef.current);
       }
