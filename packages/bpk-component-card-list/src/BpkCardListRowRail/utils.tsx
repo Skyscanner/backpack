@@ -157,6 +157,11 @@ export const useCarouselScrollSync = ({
   useEffect(() => {
     if (!enabled || !container) return undefined;
 
+    const releaseLocks = () => {
+      isUserScrollingRef.current = false;
+      isProgrammaticScrollRef.current = false;
+    };
+
     const handleScroll = () => {
       // Mark as user scrolling only if not programmatic
       if (!isProgrammaticScrollRef.current) {
@@ -169,10 +174,7 @@ export const useCarouselScrollSync = ({
       }
 
       // Release both locks after scroll silence
-      scrollEndTimeoutRef.current = setTimeout(() => {
-        isUserScrollingRef.current = false;
-        isProgrammaticScrollRef.current = false;
-      }, RELEASE_LOCK_DELAY);
+      scrollEndTimeoutRef.current = setTimeout(releaseLocks, RELEASE_LOCK_DELAY);
     };
 
     container.addEventListener('scroll', handleScroll, { passive: true });
