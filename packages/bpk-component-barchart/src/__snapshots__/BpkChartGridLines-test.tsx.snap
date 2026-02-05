@@ -1,0 +1,388 @@
+
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkChartGridLines X should render band scale 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      class="bpk-chart__grid-lines"
+    >
+      <line
+        class="bpk-chart__grid-line"
+        x1="16.666666666666668"
+        x2="16.666666666666668"
+        y2="120"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x1="50"
+        x2="50"
+        y2="120"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x1="83.33333333333334"
+        x2="83.33333333333334"
+        y2="120"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x1="116.66666666666667"
+        x2="116.66666666666667"
+        y2="120"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x1="150"
+        x2="150"
+        y2="120"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x1="183.33333333333334"
+        x2="183.33333333333334"
+        y2="120"
+      />
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartGridLines X should render band scale with "tickEvery" and "tickOffset" attributes 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      class="bpk-chart__grid-lines"
+    >
+      <line
+        class="bpk-chart__grid-line"
+        x1="50"
+        x2="50"
+        y2="120"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x1="116.66666666666667"
+        x2="116.66666666666667"
+        y2="120"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x1="183.33333333333334"
+        x2="183.33333333333334"
+        y2="120"
+      />
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartGridLines X should render band scale with "tickEvery" attribute 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      class="bpk-chart__grid-lines"
+    >
+      <line
+        class="bpk-chart__grid-line"
+        x1="16.666666666666668"
+        x2="16.666666666666668"
+        y2="120"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x1="83.33333333333334"
+        x2="83.33333333333334"
+        y2="120"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x1="150"
+        x2="150"
+        y2="120"
+      />
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartGridLines X should render linear scale 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      class="bpk-chart__grid-lines"
+    >
+      <line
+        class="bpk-chart__grid-line"
+        x1="18.947368421052634"
+        x2="18.947368421052634"
+        y2="120"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x1="40"
+        x2="40"
+        y2="120"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x1="61.05263157894737"
+        x2="61.05263157894737"
+        y2="120"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x1="82.10526315789474"
+        x2="82.10526315789474"
+        y2="120"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x1="103.15789473684211"
+        x2="103.15789473684211"
+        y2="120"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x1="124.21052631578948"
+        x2="124.21052631578948"
+        y2="120"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x1="145.26315789473685"
+        x2="145.26315789473685"
+        y2="120"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x1="166.31578947368422"
+        x2="166.31578947368422"
+        y2="120"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x1="187.3684210526316"
+        x2="187.3684210526316"
+        y2="120"
+      />
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartGridLines X should render linear scale with "numTicks" attribute 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      class="bpk-chart__grid-lines"
+    >
+      <line
+        class="bpk-chart__grid-line"
+        x1="82.10526315789474"
+        x2="82.10526315789474"
+        y2="120"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x1="166.31578947368422"
+        x2="166.31578947368422"
+        y2="120"
+      />
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartGridLines Y should render band scale 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      class="bpk-chart__grid-lines"
+    >
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="16.666666666666668"
+        y2="16.666666666666668"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="50"
+        y2="50"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="83.33333333333334"
+        y2="83.33333333333334"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="116.66666666666667"
+        y2="116.66666666666667"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="150"
+        y2="150"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="183.33333333333334"
+        y2="183.33333333333334"
+      />
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartGridLines Y should render band scale with "tickEvery" and "tickOffset" attributes 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      class="bpk-chart__grid-lines"
+    >
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="50"
+        y2="50"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="116.66666666666667"
+        y2="116.66666666666667"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="183.33333333333334"
+        y2="183.33333333333334"
+      />
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartGridLines Y should render band scale with "tickEvery" attribute 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      class="bpk-chart__grid-lines"
+    >
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="16.666666666666668"
+        y2="16.666666666666668"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="83.33333333333334"
+        y2="83.33333333333334"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="150"
+        y2="150"
+      />
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartGridLines Y should render linear scale 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      class="bpk-chart__grid-lines"
+    >
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="18.947368421052634"
+        y2="18.947368421052634"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="40"
+        y2="40"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="61.05263157894737"
+        y2="61.05263157894737"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="82.10526315789474"
+        y2="82.10526315789474"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="103.15789473684211"
+        y2="103.15789473684211"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="124.21052631578948"
+        y2="124.21052631578948"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="145.26315789473685"
+        y2="145.26315789473685"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="166.31578947368422"
+        y2="166.31578947368422"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="187.3684210526316"
+        y2="187.3684210526316"
+      />
+    </g>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`BpkChartGridLines Y should render linear scale with "numTicks" attribute 1`] = `
+<DocumentFragment>
+  <svg>
+    <g
+      class="bpk-chart__grid-lines"
+    >
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="82.10526315789474"
+        y2="82.10526315789474"
+      />
+      <line
+        class="bpk-chart__grid-line"
+        x2="120"
+        y1="166.31578947368422"
+        y2="166.31578947368422"
+      />
+    </g>
+  </svg>
+</DocumentFragment>
+`;

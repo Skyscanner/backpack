@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ComponentPropsWithoutRef, ElementType, ReactNode, Ref } from 'react';
+import type { ComponentPropsWithoutRef, ElementType, ReactNode, ReactElement, Ref } from 'react';
 
 /**
  * Polymorphic component types following Chakra UI pattern.
@@ -77,4 +77,4 @@ export type PolymorphicRef<E extends LinkAs> =
 /** Polymorphic component type for BpkLink */
 export type PolymorphicComponent = <E extends LinkAs = 'a'>(
   props: BpkLinkProps<E> & { ref?: PolymorphicRef<E> }
-) => JSX.Element | null;
+) => ReactElement | null;

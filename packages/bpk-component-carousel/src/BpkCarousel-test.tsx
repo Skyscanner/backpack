@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { ReactNode, ComponentProps } from 'react';
 
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
@@ -38,7 +38,7 @@ describe('BpkCarousel', () => {
   type TestCase = [
     expectedCount: 7 | 5 | 4 | 12,
     actualCount: number,
-    props: React.ComponentProps<typeof BpkCarousel>,
+    props: ComponentProps<typeof BpkCarousel>,
   ];
 
   beforeAll(() => {

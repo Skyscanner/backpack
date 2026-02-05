@@ -80,7 +80,8 @@ export function scrollToIndex(
 }
 export function useIntersectionObserver(
   onIntersecting: (index: number) => void,
-  { root, threshold }: IntersectionObserverInit,
+  // eslint-disable-next-line no-undef
+  { root, threshold }: Pick<IntersectionObserverInit, 'root' | 'threshold'>,
   onImageChanged?: OnImageChangedHandler,
 ) {
   const callbackRef = useRef(onIntersecting);

@@ -16,9 +16,11 @@
  * limitations under the License.
  */
 
+import type { ReactElement } from 'react';
+
 import BpkCard from '../bpk-component-card';
 
-const mockCards = (numberOfCards: number): JSX.Element[] =>
+const mockCards = (numberOfCards: number): ReactElement[] =>
   Array.from({ length: numberOfCards }, (_, i) => (
     <BpkCard data-testid={`card-testId-${i}`} key={i}>
       {`Card ${i}`}

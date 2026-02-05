@@ -25,7 +25,6 @@ import {
 import BpkAriaLive from '../../bpk-component-aria-live';
 import ArrowLeftIcon from '../../bpk-component-icon/lg/arrow-left';
 import ArrowRightIcon from '../../bpk-component-icon/lg/arrow-right';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../bpk-component-select';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 

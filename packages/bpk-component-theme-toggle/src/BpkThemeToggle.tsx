@@ -20,7 +20,6 @@ import type { ChangeEvent } from 'react';
 import { Component } from 'react';
 
 import BpkLabel from '../../bpk-component-label';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../bpk-component-select';
 import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 import { getDataComponentAttribute } from '../../bpk-react-utils';

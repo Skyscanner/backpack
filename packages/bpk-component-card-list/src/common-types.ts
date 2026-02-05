@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactElement, Dispatch, SetStateAction } from 'react';
+import type { ReactElement, ReactNode, Dispatch, SetStateAction } from 'react';
 
 const LAYOUTS = {
   grid: 'grid',
@@ -62,7 +62,7 @@ type CardListBaseProps = {
   initiallyShownCardsDesktop?: number;
   initiallyShownCardsMobile?: number;
   chipGroup?: ReactElement;
-  buttonContent?: React.ReactNode;
+  buttonContent?: ReactNode;
   onButtonClick?: () => void;
   onExpandClick?: () => void;
   buttonHref?: string;
@@ -88,7 +88,7 @@ type CardListGridStackProps = {
     | typeof ACCESSORY_MOBILE_TYPES.expand
     | typeof ACCESSORY_MOBILE_TYPES.button;
   expandText?: string;
-  buttonContent?: React.ReactNode;
+  buttonContent?: ReactNode;
   onButtonClick?: () => void;
   onExpandClick?: () => void;
   buttonHref?: string;

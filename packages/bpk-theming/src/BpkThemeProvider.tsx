@@ -1,0 +1,143 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import PropTypes from 'prop-types';
+import type { CSSProperties, ElementType, ReactNode } from 'react';
+
+type Theme = Record<string, string>;
+
+type Props = {
+  children: ReactNode;
+  theme?: Theme | null;
+  themeAttributes?: string[] | string[][];
+  component?: ElementType;
+  style?: CSSProperties | null;
+  [key: string]: unknown;
+};
+
+const uniq = (arr: string[] = []): string[] => {
+  const seen: Record<string, boolean> = {};
+  return arr.filter((item) => {
+    if (Object.prototype.hasOwnProperty.call(seen, item)) {
+      return false;
+    }
+    seen[item] = true;
+    return true;
+  });
+};
+
+const createStyle = (theme: Theme | null | undefined, themeAttributes: string[] | string[][]): CSSProperties => {
+  if (!theme) {
+    return {};
+  }
+  const flattenedThemeAttributes: string[] = ([] as string[]).concat(...themeAttributes);
+  let style: Record<string, string> = {};
+  const missingThemeAttributes: string[] = [];
+  flattenedThemeAttributes.forEach((attribute: string) => {
+    if (theme[attribute]) {
+      const cssName = attribute
+        .replace(/([A-Z])/g, (variable) => `-${variable.toLowerCase()}`)
+        .replace(/([0-9])/, (variable) => `-${variable.toLowerCase()}`);
+      const value = theme[attribute];
+      style[`--bpk-${cssName}`] = value;
+    } else {
+      missingThemeAttributes.push(attribute);
+    }
+  });
+
+  if (missingThemeAttributes.length > 0) {
+    style = {};
+  }
+
+  return style;
+};
+
+const BpkThemeProvider = ({
+  children,
+  component: WrapperComponent = 'div',
+  style: userStyle = null,
+  theme = null,
+  themeAttributes = [],
+  ...rest
+}: Props) => {
+  const flattenedAttrs: string[] = ([] as string[]).concat(...themeAttributes);
+  const dedupedThemeAttributes = uniq(flattenedAttrs);
+  const style = createStyle(theme, [dedupedThemeAttributes]);
+
+  return (
+    <WrapperComponent style={{ ...userStyle, ...style }} {...rest}>
+      {children}
+    </WrapperComponent>
+  );
+}
+
+const themeAttributesPropType = (props: Props, propName: string, componentName: string): Error | null | false => {
+  const { theme } = props;
+  const { themeAttributes } = props;
+  if (!theme) {
+    return null;
+  }
+  // Validate types.
+  if (!themeAttributes) {
+    return new Error(`${componentName}: \`themeAttributes\` is required.`);
+  }
+  if (!Array.isArray(themeAttributes)) {
+    return new Error(`${componentName}: \`themeAttributes\` must be an array.`);
+  }
+
+  const flattenedAttributes: string[] = ([] as string[]).concat(...themeAttributes);
+  const extraneousThemeAttributes = { ...theme };
+  const missingThemeAttributes: string[] = [];
+  flattenedAttributes.forEach((attribute: string) => {
+    if (theme[attribute]) {
+      delete extraneousThemeAttributes[attribute];
+    } else {
+      missingThemeAttributes.push(attribute);
+    }
+  });
+  const errors: string[] = [];
+  if (missingThemeAttributes.length > 0) {
+    errors.push(
+      `${componentName}: To apply theming, the theme prop must include \`${flattenedAttributes.join(
+        ', ',
+      )}\` (missing \`${missingThemeAttributes.join(', ')}\`)`,
+    );
+  }
+  if (Object.keys(extraneousThemeAttributes).length > 0) {
+    errors.push(
+      `${componentName}: Extraneous theme attributes supplied: \`${Object.keys(
+        extraneousThemeAttributes,
+      ).join(', ')}\`.`,
+    );
+  }
+  if (errors.length > 0) {
+    return new Error(errors.join('\n'));
+  }
+  return false;
+};
+
+BpkThemeProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+  theme: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  themeAttributes: themeAttributesPropType,
+  // (disabled because isRequired is inside the custom validator)
+  component: PropTypes.elementType,
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+};
+
+export default BpkThemeProvider;

@@ -29,8 +29,11 @@ function requireAll(requireContext: any) {
   return hash;
 }
 
+// @ts-expect-error - require.context is a webpack-specific feature
 const sm = requireAll(require.context('./sm', false, /\.jsx$/));
+// @ts-expect-error - require.context is a webpack-specific feature
 const lg = requireAll(require.context('./lg', false, /\.jsx$/));
+// @ts-expect-error - require.context is a webpack-specific feature
 const xxxl = requireAll(require.context('./xxxl', false, /\.jsx$/));
 
 export default sm;

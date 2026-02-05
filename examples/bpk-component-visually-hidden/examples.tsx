@@ -27,10 +27,7 @@ import ShareIcon from '../../packages/bpk-component-icon/sm/share';
 import TrashIcon from '../../packages/bpk-component-icon/sm/trash';
 import BpkText from '../../packages/bpk-component-text/src/BpkText';
 import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden';
-import {
-  action,
-  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-} from '../bpk-storybook-utils';
+import { action } from '../bpk-storybook-utils';
 
 const AlignedCloseIcon = withButtonAlignment(CloseIcon);
 const AlignedEditIcon = withButtonAlignment(EditIcon);

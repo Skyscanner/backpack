@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import type { ReactElement } from 'react';
+
 type Props = {
   skeletonStyle: string;
   styleObj?: {
@@ -27,6 +29,6 @@ type Props = {
 declare const BpkBaseSkeleton: ({
   skeletonStyle,
   styleObj
- }: Props) => JSX.Element;
+ }: Props) => ReactElement;
 
 export default BpkBaseSkeleton;

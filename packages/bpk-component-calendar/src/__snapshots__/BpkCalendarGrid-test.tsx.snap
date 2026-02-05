@@ -1,3 +1,4 @@
+
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkCalendarGrid should render correctly with "weekDayKey" attribute set to nameNarrow 1`] = `

@@ -19,7 +19,6 @@
 import BpkModal from './src/BpkModal';
 import { MODAL_STYLING } from './src/BpkModalInner';
 import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { propTypes, defaultProps } from './src/legacy-prop-types';
 import themeAttributes from './src/themeAttributes';
 

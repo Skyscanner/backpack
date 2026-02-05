@@ -29,7 +29,6 @@ import BpkSegmentedControl, {
 import { SEGMENT_TYPES } from '../../packages/bpk-component-segmented-control/src/BpkSegmentedControl';
 import BpkText from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';

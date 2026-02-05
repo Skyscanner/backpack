@@ -1,0 +1,414 @@
+
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkBarchartBars should render correctly 1`] = `
+<DocumentFragment>
+  <g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(14.893617021276597, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="130"
+        x="35"
+        y="0"
+      />
+      <rect
+        aria-label="Jan - 305"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(57.4468085106383, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="130"
+        x="35"
+        y="0"
+      />
+      <rect
+        aria-label="Feb - 348"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(100, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="130"
+        x="35"
+        y="0"
+      />
+      <rect
+        aria-label="Mar - 418"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(142.55319148936172, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="130"
+        x="35"
+        y="0"
+      />
+      <rect
+        aria-label="Apr - 448"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+  </g>
+</DocumentFragment>
+`;
+
+exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`] = `
+<DocumentFragment>
+  <g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(14.893617021276597, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="200"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Jan - 305"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(57.4468085106383, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="200"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Feb - 348"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar bpk-barchart-bar--selected"
+      transform="translate(100, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="200"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Mar - 418"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(142.55319148936172, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="200"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Apr - 448"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+  </g>
+</DocumentFragment>
+`;
+
+exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
+<DocumentFragment>
+  <g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(14.893617021276597, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="200"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Jan - 305"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(57.4468085106383, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="200"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Feb - 348"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(100, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="200"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Mar - 418"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(142.55319148936172, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="200"
+        x="0"
+        y="0"
+      />
+      <rect
+        aria-label="Apr - 448"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+  </g>
+</DocumentFragment>
+`;
+
+exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = `
+<DocumentFragment>
+  <g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(14.893617021276597, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="130"
+        x="35"
+        y="0"
+      />
+      <rect
+        aria-label="Jan - 305"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(57.4468085106383, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="130"
+        x="35"
+        y="0"
+      />
+      <rect
+        aria-label="Feb - 348"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(100, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="130"
+        x="35"
+        y="0"
+      />
+      <rect
+        aria-label="Mar - 418"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+    <g
+      class="bpk-barchart-bar"
+      transform="translate(142.55319148936172, 16)"
+    >
+      <rect
+        class="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+        height="144"
+        rx="4"
+        ry="4"
+        width="130"
+        x="35"
+        y="0"
+      />
+      <rect
+        aria-label="Apr - 448"
+        aria-roledescription="bar"
+        class="bpk-barchart-bar__tappable-area"
+        height="144"
+        role="graphics-symbol"
+        width="200"
+        x="0"
+        y="0"
+      />
+    </g>
+  </g>
+</DocumentFragment>
+`;

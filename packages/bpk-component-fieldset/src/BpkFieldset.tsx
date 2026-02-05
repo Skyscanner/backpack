@@ -19,7 +19,6 @@
 import { cloneElement } from 'react';
 import type { ReactElement } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkFormValidation from '../../bpk-component-form-validation';
 import BpkLabel from '../../bpk-component-label';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';

@@ -1,3 +1,4 @@
+
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkDatepicker "readOnly" can be overriden in "inputProps" 1`] = `

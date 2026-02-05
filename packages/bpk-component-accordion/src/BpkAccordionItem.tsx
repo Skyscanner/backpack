@@ -19,7 +19,6 @@
 import { useContext, cloneElement } from 'react';
 import type { ReactNode, ReactElement } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import AnimateHeight from '../../bpk-animate-height';
 import { withButtonAlignment } from '../../bpk-component-icon';
 import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';

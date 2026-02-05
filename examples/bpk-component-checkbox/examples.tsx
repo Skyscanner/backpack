@@ -20,7 +20,6 @@ import { Component } from 'react';
 import type { ComponentProps } from 'react';
 
 import BpkCheckbox from '../../packages/bpk-component-checkbox';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores doloremque, expedita
