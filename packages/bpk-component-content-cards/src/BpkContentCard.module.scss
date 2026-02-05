@@ -23,11 +23,11 @@
 
 .bpk-content-card {
   &--link {
+    border-radius: tokens.$bpk-border-radius-md;
     color: inherit;
     /* stylelint-disable backpack/use-typography-styles */
     font: inherit;
     text-decoration: inherit;
-    border-radius: tokens.$bpk-border-radius-md;
 
     &:focus-visible {
       @include utils.bpk-focus-indicator;
