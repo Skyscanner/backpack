@@ -20,9 +20,7 @@ import PropTypes from 'prop-types';
 
 import { OverlayView } from '@react-google-maps/api';
 
-import { LatLongPropType } from './common-types';
-
-import type { LatLong } from './common-types';
+import { LatLongPropType, type LatLong } from './common-types';
 
 type Props = {
   children: React.ReactNode;
