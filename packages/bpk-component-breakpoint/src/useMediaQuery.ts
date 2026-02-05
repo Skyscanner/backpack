@@ -50,7 +50,7 @@ const useMediaQuery = (
   useEffect(() => {
     // Wait for hydration to complete
     if (!isClient || !isHydrated) {
-      return () => { };
+      return;
     }
 
     const media = window.matchMedia(query);
