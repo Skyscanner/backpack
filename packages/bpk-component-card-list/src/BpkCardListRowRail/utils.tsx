@@ -155,35 +155,33 @@ export const useCarouselScrollSync = ({
   useEffect(() => {
     if (!enabled || !container) return undefined;
 
-    const releaseLock = () => {
-      isUserScrollingRef.current = false;
-    };
+    const handleScrollActivity = (e: Event) => {
+      // Set flag only for user input events, not scroll events
+      if (e.type === 'wheel' || e.type === 'touchstart') {
+        isUserScrollingRef.current = true;
+      }
 
-    // Detect user-initiated scroll via direct input
-    const handleUserInputStart = () => {
-      isUserScrollingRef.current = true;
-    };
-
-    const handleScroll = () => {
-      // Reset silence timer on every scroll event
+      // Reset silence timer on every scroll-related event
       if (scrollEndTimeoutRef.current) {
         clearTimeout(scrollEndTimeoutRef.current);
       }
 
       // Release lock after scroll silence
-      scrollEndTimeoutRef.current = setTimeout(releaseLock, RELEASE_LOCK_DELAY);
+      scrollEndTimeoutRef.current = setTimeout(() => {
+        isUserScrollingRef.current = false;
+      }, RELEASE_LOCK_DELAY);
     };
 
-    container.addEventListener('scroll', handleScroll, { passive: true });
-    container.addEventListener('wheel', handleUserInputStart, { passive: true });
-    container.addEventListener('touchstart', handleUserInputStart, {
+    container.addEventListener('scroll', handleScrollActivity, { passive: true });
+    container.addEventListener('wheel', handleScrollActivity, { passive: true });
+    container.addEventListener('touchstart', handleScrollActivity, {
       passive: true,
     });
 
     return () => {
-      container.removeEventListener('scroll', handleScroll);
-      container.removeEventListener('wheel', handleUserInputStart);
-      container.removeEventListener('touchstart', handleUserInputStart);
+      container.removeEventListener('scroll', handleScrollActivity);
+      container.removeEventListener('wheel', handleScrollActivity);
+      container.removeEventListener('touchstart', handleScrollActivity);
       if (scrollEndTimeoutRef.current) {
         clearTimeout(scrollEndTimeoutRef.current);
       }
