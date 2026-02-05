@@ -19,6 +19,7 @@
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/breakpoints';
 @use '../../bpk-mixins/typography';
+@use '../../bpk-mixins/utils';
 
 .bpk-content-card {
   &--link {
@@ -26,6 +27,11 @@
     /* stylelint-disable backpack/use-typography-styles */
     font: inherit;
     text-decoration: inherit;
+    border-radius: tokens.$bpk-border-radius-md;
+
+    &:focus-visible {
+      @include utils.bpk-focus-indicator;
+    }
   }
 
   &--horizontal {
