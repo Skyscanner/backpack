@@ -21,14 +21,13 @@ import type { ReactNode } from 'react';
 
 import { getDataComponentAttribute } from '../../bpk-react-utils';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkOverlayView from './BpkOverlayView';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { LatLongPropType, type LatLong } from './common-types';
 
 type Props = {
-  children: ReactNode,
-  position: LatLong,
+  children: ReactNode;
+  position: LatLong;
+  [key: string]: unknown;
 };
 
 const getPixelPositionOffset = (width: number, height: number) => ({

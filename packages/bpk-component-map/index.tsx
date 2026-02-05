@@ -16,23 +16,29 @@
  * limitations under the License.
  */
 
-export const defaultIconMarkerThemeAttributes = [
-  'iconMarkerDefaultBackgroundColor',
-  'iconMarkerDefaultSelectedColor',
-  'iconMarkerDefaultDisabledColor',
-  'iconMarkerDefaultDisabledBackgroundColor',
-];
-
-export const priceMarkerThemeAttributes = [
-  'priceMarkerBackgroundColor',
-  'priceMarkerSelectedBorderColor',
-  'priceMarkerSelectedColor',
-  'priceMarkerViewedBackgroundColor',
-  'priceMarkerViewedBorderColor',
-  'priceMarkerViewedColor',
-];
-
-export default {
+import BpkIconMarker from './src/BpkIconMarker';
+import BpkMap from './src/BpkMap';
+import BpkOverlayView from './src/BpkOverlayView';
+import BpkPriceMarker from './src/BpkPriceMarker';
+import BpkPriceMarkerButton, {
+  MARKER_STATUSES,
+} from './src/BpkPriceMarkerButton';
+import { type LatLong } from './src/common-types';
+import {
   defaultIconMarkerThemeAttributes,
   priceMarkerThemeAttributes,
+} from './src/themeAttributes';
+import withGoogleMapsScript from './src/withGoogleMapsScript';
+
+export type BpkMapLatLong = LatLong;
+export default BpkMap;
+export {
+  BpkIconMarker,
+  BpkPriceMarker,
+  BpkOverlayView,
+  withGoogleMapsScript,
+  defaultIconMarkerThemeAttributes,
+  priceMarkerThemeAttributes,
+  MARKER_STATUSES,
+  BpkPriceMarkerButton,
 };

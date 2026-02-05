@@ -16,10 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode, MouseEvent, ButtonHTMLAttributes } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -31,13 +29,18 @@ import STYLES from './BpkIconMarker.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
-  icon: Node,
-  position: LatLong,
-  selected: boolean,
-  className: ?string,
-  onClick: ?(event: SyntheticEvent<>) => mixed,
-  buttonProps: ?{ [string]: any },
+type Props = {
+  icon: ReactNode;
+  position: LatLong;
+  className?: string | null;
+  onClick?: ((event: MouseEvent<HTMLButtonElement>) => void) | null;
+  selected?: boolean;
+  buttonProps?:
+    | (ButtonHTMLAttributes<HTMLButtonElement> & {
+        [key: `data-${string}`]: string;
+      })
+    | null;
+  [key: string]: unknown;
 };
 
 const BpkIconMarker = (props: Props) => {
@@ -57,17 +60,15 @@ const BpkIconMarker = (props: Props) => {
   );
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <BpkBasicMapMarker position={position} {...rest}>
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <button
         type="button"
         className={wrapperClassNames}
-        onClick={onClick}
+        onClick={onClick ?? undefined}
         {...buttonProps}
       >
         <BpkIconMarkerBackground
-          interactive={onClick !== null}
+          interactive={onClick != null}
           selected={selected}
         />
         <div className={iconClassNames}>{icon}</div>
