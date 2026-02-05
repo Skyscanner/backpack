@@ -155,7 +155,7 @@ describe('useMediaQuery', () => {
     });
 
     it('should handle media query changes after hydration', async () => {
-      let changeListener: (() => void) | null = null;
+      let changeListener: ((e?: MediaQueryListEvent) => void) | null = null;
       const mockMedia = {
         matches: false,
         addEventListener: jest.fn((event, listener) => {

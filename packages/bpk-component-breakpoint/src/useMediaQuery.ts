@@ -20,7 +20,7 @@ import { useEffect, useState } from 'react';
 
 const useMediaQuery = (
   query: string,
-  matchSSR = false,
+  matchSSR?: boolean,
 ): boolean => {
   const isClient = typeof window !== 'undefined' && !!window.matchMedia;
 
