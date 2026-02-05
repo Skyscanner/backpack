@@ -92,7 +92,7 @@ export const useIntersectionObserver = (
   return observeElement;
 };
 
-type UseCarouselScrollSyncOptions = {
+type UsePageScrollSyncOptions = {
   currentIndex: number;
   setCurrentIndex: Dispatch<SetStateAction<number>>;
   initiallyShownCards: number;
@@ -102,7 +102,19 @@ type UseCarouselScrollSyncOptions = {
   enabled: boolean;
 };
 
-export const useCarouselScrollSync = ({
+/**
+ * Provides bidirectional synchronisation between page index state and scroll position.
+ *
+ * - **State → Scroll**: When `currentIndex` changes (e.g. via pagination buttons),
+ *   the container scrolls to bring the corresponding page into view.
+ * - **Scroll → State**: When the user scrolls (via wheel or touch), `currentIndex`
+ *   is updated to reflect the first visible page.
+ *
+ * The hook uses a lock mechanism to prevent conflicts between programmatic and
+ * user-initiated scrolling.
+ */
+
+export const usePageScrollSync = ({
   cardRefs,
   container,
   currentIndex,
@@ -110,7 +122,7 @@ export const useCarouselScrollSync = ({
   initiallyShownCards,
   setCurrentIndex,
   visibilityList,
-}: UseCarouselScrollSyncOptions): void => {
+}: UsePageScrollSyncOptions): void => {
   const isUserScrollingRef = useRef<boolean>(false);
   const scrollEndTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
     null,

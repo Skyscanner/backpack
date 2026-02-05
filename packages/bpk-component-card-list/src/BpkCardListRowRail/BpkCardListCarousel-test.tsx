@@ -25,17 +25,17 @@ import mockCards from '../../testMocks';
 import { LAYOUTS } from '../common-types';
 
 import BpkCardListCarousel from './BpkCardListCarousel';
-import { useIntersectionObserver, useCarouselScrollSync } from './utils';
+import { useIntersectionObserver, usePageScrollSync } from './utils';
 
 jest.mock('./utils', () => ({
   setA11yTabIndex: jest.fn(),
   useIntersectionObserver: jest.fn(() => jest.fn()),
-  useCarouselScrollSync: jest.fn(),
+  usePageScrollSync: jest.fn(),
 }));
 
 const mockSetCurrentIndex = jest.fn();
 const mockUseIntersectionObserver = jest.mocked(useIntersectionObserver);
-const mockUseCarouselScrollSync = jest.mocked(useCarouselScrollSync);
+const mockUseCarouselScrollSync = jest.mocked(usePageScrollSync);
 
 // Holds a reference to the setVisibilityList function captured during component render
 let setVisibilityFn: Dispatch<SetStateAction<number[]>> | undefined;
@@ -216,7 +216,7 @@ describe('BpkCardListCarousel', () => {
       expect(cards[3].className).toContain('page-start');
     });
 
-    it('should call useCarouselScrollSync with correct options on desktop', () => {
+    it('should call usePageScrollSync with correct options on desktop', () => {
       render(<BpkCardListCarousel {...defaultProps} isMobile={false} />);
 
       // Verify the hook was called with the correct options
@@ -231,7 +231,7 @@ describe('BpkCardListCarousel', () => {
       );
     });
 
-    it('should disable useCarouselScrollSync on mobile', () => {
+    it('should disable usePageScrollSync on mobile', () => {
       render(<BpkCardListCarousel {...defaultProps} isMobile />);
 
       // On mobile, enabled should be false

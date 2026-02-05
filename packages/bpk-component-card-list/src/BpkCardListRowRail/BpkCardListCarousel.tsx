@@ -33,7 +33,7 @@ import { RENDER_BUFFER_SIZE } from './constants';
 import {
   setA11yTabIndex,
   useIntersectionObserver,
-  useCarouselScrollSync,
+  usePageScrollSync,
 } from './utils';
 
 import type { CardListCarouselProps } from '../common-types';
@@ -83,7 +83,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     setVisibilityList,
   );
 
-  useCarouselScrollSync({
+  usePageScrollSync({
     currentIndex,
     setCurrentIndex,
     initiallyShownCards,

@@ -19,7 +19,7 @@
 import { act, renderHook } from '@testing-library/react';
 
 import { RELEASE_LOCK_DELAY } from './constants';
-import { setA11yTabIndex, useCarouselScrollSync } from './utils';
+import { setA11yTabIndex, usePageScrollSync } from './utils';
 
 const createMockButton = (index: number): HTMLElement => {
   const mockButton = document.createElement('mock-button');
@@ -56,7 +56,7 @@ describe('setA11yTabIndex', () => {
   });
 });
 
-describe('useCarouselScrollSync', () => {
+describe('usePageScrollSync', () => {
   let mockContainer: HTMLDivElement;
   let mockCardRefs: { current: Array<HTMLDivElement | null> };
   let mockSetCurrentIndex: jest.Mock;
@@ -91,7 +91,7 @@ describe('useCarouselScrollSync', () => {
     it('should scroll to the target card when currentIndex changes and container is visible', () => {
       const { rerender } = renderHook(
         ({ currentIndex }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex,
@@ -115,7 +115,7 @@ describe('useCarouselScrollSync', () => {
     it('should not scroll when disabled', () => {
       const { rerender } = renderHook(
         ({ currentIndex }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex,
@@ -142,7 +142,7 @@ describe('useCarouselScrollSync', () => {
 
       const { rerender } = renderHook(
         ({ currentIndex }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex,
@@ -169,7 +169,7 @@ describe('useCarouselScrollSync', () => {
 
       const { rerender } = renderHook(
         ({ currentIndex }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex,
@@ -189,7 +189,7 @@ describe('useCarouselScrollSync', () => {
     it('should not scroll when container is null', () => {
       const { rerender } = renderHook(
         ({ currentIndex }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: null,
             currentIndex,
@@ -211,7 +211,7 @@ describe('useCarouselScrollSync', () => {
 
       const { rerender } = renderHook(
         ({ currentIndex }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex,
@@ -231,7 +231,7 @@ describe('useCarouselScrollSync', () => {
     it('should scroll to correct card based on initiallyShownCards multiplier', () => {
       const { rerender } = renderHook(
         ({ currentIndex }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex,
@@ -251,7 +251,7 @@ describe('useCarouselScrollSync', () => {
     it('should not scroll when currentIndex has not changed', () => {
       const { rerender } = renderHook(
         ({ currentIndex }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex,
@@ -274,7 +274,7 @@ describe('useCarouselScrollSync', () => {
       const addEventListenerSpy = jest.spyOn(mockContainer, 'addEventListener');
 
       renderHook(() =>
-        useCarouselScrollSync({
+        usePageScrollSync({
           cardRefs: mockCardRefs,
           container: mockContainer,
           currentIndex: 0,
@@ -296,7 +296,7 @@ describe('useCarouselScrollSync', () => {
       const addEventListenerSpy = jest.spyOn(mockContainer, 'addEventListener');
 
       renderHook(() =>
-        useCarouselScrollSync({
+        usePageScrollSync({
           cardRefs: mockCardRefs,
           container: mockContainer,
           currentIndex: 0,
@@ -318,7 +318,7 @@ describe('useCarouselScrollSync', () => {
       const addEventListenerSpy = jest.spyOn(mockContainer, 'addEventListener');
 
       renderHook(() =>
-        useCarouselScrollSync({
+        usePageScrollSync({
           cardRefs: mockCardRefs,
           container: null,
           currentIndex: 0,
@@ -339,7 +339,7 @@ describe('useCarouselScrollSync', () => {
       );
 
       const { unmount } = renderHook(() =>
-        useCarouselScrollSync({
+        usePageScrollSync({
           cardRefs: mockCardRefs,
           container: mockContainer,
           currentIndex: 0,
@@ -361,7 +361,7 @@ describe('useCarouselScrollSync', () => {
     it('should release locks after RELEASE_LOCK_DELAY of scroll silence', () => {
       const { rerender } = renderHook(
         ({ visibilityList }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex: 0,
@@ -396,7 +396,7 @@ describe('useCarouselScrollSync', () => {
     it('should reset timer on subsequent scroll events', () => {
       const { rerender } = renderHook(
         ({ visibilityList }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex: 0,
@@ -437,7 +437,7 @@ describe('useCarouselScrollSync', () => {
     it('should update currentIndex when user scrolls and visibility changes', () => {
       const { rerender } = renderHook(
         ({ visibilityList }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex: 0,
@@ -462,7 +462,7 @@ describe('useCarouselScrollSync', () => {
     it('should calculate page index correctly for different initiallyShownCards values', () => {
       const { rerender } = renderHook(
         ({ visibilityList }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex: 0,
@@ -491,7 +491,7 @@ describe('useCarouselScrollSync', () => {
     it('should not update currentIndex when disabled', () => {
       const { rerender } = renderHook(
         ({ visibilityList }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex: 0,
@@ -515,7 +515,7 @@ describe('useCarouselScrollSync', () => {
     it('should not update currentIndex when no visible cards', () => {
       const { rerender } = renderHook(
         ({ visibilityList }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex: 0,
@@ -539,7 +539,7 @@ describe('useCarouselScrollSync', () => {
     it('should not update currentIndex when calculated page index equals current', () => {
       const { rerender } = renderHook(
         ({ visibilityList }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex: 1,
@@ -567,7 +567,7 @@ describe('useCarouselScrollSync', () => {
       // Let's test the case where we're at page 1 and scroll partially back to page 0.
       const { rerender } = renderHook(
         ({ visibilityList }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex: 1,
@@ -596,7 +596,7 @@ describe('useCarouselScrollSync', () => {
     it('should not trigger programmatic scroll during user scroll', () => {
       const { rerender } = renderHook(
         ({ currentIndex, visibilityList }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex,
@@ -629,7 +629,7 @@ describe('useCarouselScrollSync', () => {
     it('should allow programmatic scroll after lock release', () => {
       const { rerender } = renderHook(
         ({ currentIndex, visibilityList }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex,
@@ -669,7 +669,7 @@ describe('useCarouselScrollSync', () => {
     it('should not update currentIndex from visibility during programmatic scroll', () => {
       const { rerender } = renderHook(
         ({ currentIndex, visibilityList }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex,
@@ -702,7 +702,7 @@ describe('useCarouselScrollSync', () => {
     it('should allow user to take over during programmatic scroll via wheel event', () => {
       const { rerender } = renderHook(
         ({ currentIndex, visibilityList }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex,
@@ -743,7 +743,7 @@ describe('useCarouselScrollSync', () => {
     it('should allow user to take over during programmatic scroll via touchstart event', () => {
       const { rerender } = renderHook(
         ({ currentIndex, visibilityList }) =>
-          useCarouselScrollSync({
+          usePageScrollSync({
             cardRefs: mockCardRefs,
             container: mockContainer,
             currentIndex,
@@ -785,7 +785,7 @@ describe('useCarouselScrollSync', () => {
       const addEventListenerSpy = jest.spyOn(mockContainer, 'addEventListener');
 
       renderHook(() =>
-        useCarouselScrollSync({
+        usePageScrollSync({
           cardRefs: mockCardRefs,
           container: mockContainer,
           currentIndex: 0,
@@ -815,7 +815,7 @@ describe('useCarouselScrollSync', () => {
       );
 
       const { unmount } = renderHook(() =>
-        useCarouselScrollSync({
+        usePageScrollSync({
           cardRefs: mockCardRefs,
           container: mockContainer,
           currentIndex: 0,
