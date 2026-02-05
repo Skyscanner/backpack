@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
 
 import { OverlayView } from '@react-google-maps/api';
 
-import { LatLongPropType, LatLong } from './common-types';
+import { LatLongPropType } from './common-types';
+
+import type { LatLong } from './common-types';
 
 type Props = {
   children: React.ReactNode;
@@ -33,7 +33,6 @@ type Props = {
 const BpkOverlayView = (props: Props) => {
   const { children, position, ...rest } = props;
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <OverlayView
       mapPaneName="overlayMouseTarget"
       position={{ lat: position.latitude, lng: position.longitude }}

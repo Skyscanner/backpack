@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-
-
 import PropTypes from 'prop-types';
 import { useCallback, useRef } from 'react';
 
@@ -25,7 +23,9 @@ import { GoogleMap } from '@react-google-maps/api';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import { LatLongPropType, LatLong } from './common-types';
+import { LatLongPropType } from './common-types';
+
+import type { LatLong } from './common-types';
 
 import STYLES from './BpkMap.module.scss';
 

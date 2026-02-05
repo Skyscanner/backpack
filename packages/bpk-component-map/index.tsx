@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-
-
 import BpkIconMarker from './src/BpkIconMarker';
 import BpkMap from './src/BpkMap';
 import BpkOverlayView from './src/BpkOverlayView';
@@ -25,12 +23,14 @@ import BpkPriceMarker from './src/BpkPriceMarker';
 import BpkPriceMarkerButton, {
   MARKER_STATUSES,
 } from './src/BpkPriceMarkerButton';
+import { type LatLong } from './src/common-types';
 import {
   defaultIconMarkerThemeAttributes,
   priceMarkerThemeAttributes,
 } from './src/themeAttributes';
 import withGoogleMapsScript from './src/withGoogleMapsScript';
 
+export type BpkMapLatLong = LatLong;
 export default BpkMap;
 export {
   BpkIconMarker,

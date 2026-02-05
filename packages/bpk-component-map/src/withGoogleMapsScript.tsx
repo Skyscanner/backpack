@@ -50,7 +50,7 @@ function withGoogleMapsScript(Component: React.ComponentType<Record<string, unkn
     loadingElement,
     preventGoogleFontsLoading,
     ...rest
-  }: WithGoogleMapsScriptProps) => {
+  }: WithGoogleMapsScriptProps): React.ReactNode => {
     const { isLoaded, loadError } = useJsApiLoader({
       googleMapsApiKey,
       // @ts-expect-error - 'localContext' may not be in Library type but is valid for Google Maps API

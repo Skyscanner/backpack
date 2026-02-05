@@ -59,9 +59,7 @@ const BpkIconMarker = (props: Props) => {
   );
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <BpkBasicMapMarker position={position} {...rest}>
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <button
         type="button"
         className={wrapperClassNames}
@@ -69,7 +67,7 @@ const BpkIconMarker = (props: Props) => {
         {...buttonProps}
       >
         <BpkIconMarkerBackground
-          interactive={onClick !== null}
+          interactive={onClick != null}
           selected={selected}
         />
         <div className={iconClassNames}>{icon}</div>

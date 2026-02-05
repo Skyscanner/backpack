@@ -1,4 +1,3 @@
-
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`BpkIconMarker should render correctly with a "buttonProps" attribute 1`] = `
@@ -9,7 +8,7 @@ exports[`BpkIconMarker should render correctly with a "buttonProps" attribute 1`
     />
     <button
       class="bpk-icon-marker__wrapper"
-      testid="arbitrary value"
+      data-testid="arbitrary value"
       type="button"
     >
       <svg
