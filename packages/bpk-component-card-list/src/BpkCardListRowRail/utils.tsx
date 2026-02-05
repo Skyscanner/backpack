@@ -112,7 +112,6 @@ export const useCarouselScrollSync = ({
   visibilityList,
 }: UseCarouselScrollSyncOptions): void => {
   const isUserScrollingRef = useRef<boolean>(false);
-  const isProgrammaticScrollRef = useRef<boolean>(false);
   const scrollEndTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
     null,
   );
@@ -145,7 +144,6 @@ export const useCarouselScrollSync = ({
       return;
     }
 
-    isProgrammaticScrollRef.current = true;
     targetCard.scrollIntoView({
       behavior: 'smooth',
       block: 'nearest',
@@ -153,18 +151,16 @@ export const useCarouselScrollSync = ({
     });
   }, [currentIndex, enabled, container, initiallyShownCards, cardRefs]);
 
-  // Effect 2: Scroll detection and silence-based lock release for both scroll types
+  // Effect 2: Scroll detection and silence-based lock release
   useEffect(() => {
     if (!enabled || !container) return undefined;
 
-    const releaseLocks = () => {
+    const releaseLock = () => {
       isUserScrollingRef.current = false;
-      isProgrammaticScrollRef.current = false;
     };
 
-    // Detect when user takes over from programmatic scroll via direct input
+    // Detect user-initiated scroll via direct input
     const handleUserInputStart = () => {
-      isProgrammaticScrollRef.current = false;
       isUserScrollingRef.current = true;
     };
 
@@ -174,8 +170,8 @@ export const useCarouselScrollSync = ({
         clearTimeout(scrollEndTimeoutRef.current);
       }
 
-      // Release both locks after scroll silence
-      scrollEndTimeoutRef.current = setTimeout(releaseLocks, RELEASE_LOCK_DELAY);
+      // Release lock after scroll silence
+      scrollEndTimeoutRef.current = setTimeout(releaseLock, RELEASE_LOCK_DELAY);
     };
 
     container.addEventListener('scroll', handleScroll, { passive: true });
@@ -196,12 +192,7 @@ export const useCarouselScrollSync = ({
 
   // Effect 3: Update currentIndex from visibility during user scroll
   useEffect(() => {
-    if (
-      !enabled ||
-      !isUserScrollingRef.current ||
-      isProgrammaticScrollRef.current
-    )
-      return;
+    if (!enabled || !isUserScrollingRef.current) return;
 
     const firstVisibleIndex = visibilityList.indexOf(1);
     if (firstVisibleIndex === -1) return;
