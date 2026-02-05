@@ -18,7 +18,7 @@
 
 import type { Dispatch, SetStateAction } from 'react';
 
-import { render, screen, act } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import mockCards from '../../testMocks';
@@ -27,24 +27,10 @@ import { LAYOUTS } from '../common-types';
 import BpkCardListCarousel from './BpkCardListCarousel';
 import { useIntersectionObserver, useCarouselScrollSync } from './utils';
 
-// Store the captured options from useCarouselScrollSync
-let capturedScrollSyncOptions: {
-  currentIndex: number;
-  setCurrentIndex: Dispatch<SetStateAction<number>>;
-  initiallyShownCards: number;
-  visibilityList: number[];
-  enabled: boolean;
-} | null = null;
-
-// Mock ref that controls whether user is scrolling (simulated)
-const mockIsUserScrolling = { value: false };
-
 jest.mock('./utils', () => ({
   setA11yTabIndex: jest.fn(),
   useIntersectionObserver: jest.fn(() => jest.fn()),
-  useCarouselScrollSync: jest.fn((options) => {
-    capturedScrollSyncOptions = options;
-  }),
+  useCarouselScrollSync: jest.fn(),
 }));
 
 const mockSetCurrentIndex = jest.fn();
@@ -240,16 +226,9 @@ describe('BpkCardListCarousel', () => {
           setCurrentIndex: mockSetCurrentIndex,
           initiallyShownCards: 3,
           enabled: true,
+          visibilityList: [1, 1, 1, 0, 0, 0],
         }),
       );
-    });
-
-    it('should pass visibility list to useCarouselScrollSync', () => {
-      render(<BpkCardListCarousel {...defaultProps} isMobile={false} />);
-
-      // The hook should receive the visibility list
-      expect(capturedScrollSyncOptions?.visibilityList).toBeDefined();
-      expect(Array.isArray(capturedScrollSyncOptions?.visibilityList)).toBe(true);
     });
 
     it('should disable useCarouselScrollSync on mobile', () => {
