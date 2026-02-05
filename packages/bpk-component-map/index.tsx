@@ -18,8 +18,7 @@
 
 
 
-import BpkIconMarker
- from './src/BpkIconMarker';
+import BpkIconMarker from './src/BpkIconMarker';
 import BpkMap from './src/BpkMap';
 import BpkOverlayView from './src/BpkOverlayView';
 import BpkPriceMarker from './src/BpkPriceMarker';
