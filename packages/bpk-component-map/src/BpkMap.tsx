@@ -51,7 +51,12 @@ type Props = {
   greedyGestureHandling?: boolean;
   mapRef?: ((map: google.maps.Map | null) => void) | null;
   className?: string | null;
-  onRegionChange?: ((bounds: google.maps.LatLngBounds | undefined, center: google.maps.LatLng | undefined) => void) | null;
+  onRegionChange?:
+    | ((
+        bounds: google.maps.LatLngBounds | undefined,
+        center: google.maps.LatLng | undefined,
+      ) => void)
+    | null;
   onZoom?: ((zoom: number | undefined) => void) | null;
   onTilesLoaded?: (() => void) | null;
   panEnabled?: boolean;

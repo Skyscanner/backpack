@@ -19,7 +19,6 @@
 import PropTypes from 'prop-types';
 import type { ReactNode, MouseEvent, ButtonHTMLAttributes } from 'react';
 
-
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkBasicMapMarker from './BpkBasicMapMarker';
@@ -38,7 +37,11 @@ type Props = {
   className?: string | null;
   onClick?: ((event: MouseEvent<HTMLButtonElement>) => void) | null;
   selected?: boolean;
-  buttonProps?: (ButtonHTMLAttributes<HTMLButtonElement> & { [key: `data-${string}`]: string }) | null;
+  buttonProps?:
+    | (ButtonHTMLAttributes<HTMLButtonElement> & {
+        [key: `data-${string}`]: string;
+      })
+    | null;
   [key: string]: unknown;
 };
 

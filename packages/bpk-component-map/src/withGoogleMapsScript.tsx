@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import PropTypes from 'prop-types';
 
 import { useJsApiLoader } from '@react-google-maps/api';
@@ -33,7 +32,12 @@ export const LibraryShapeType = PropTypes.arrayOf(
   ]),
 );
 
-type LibraryType = 'drawing' | 'geometry' | 'localContext' | 'places' | 'visualization';
+type LibraryType =
+  | 'drawing'
+  | 'geometry'
+  | 'localContext'
+  | 'places'
+  | 'visualization';
 
 type WithGoogleMapsScriptProps = {
   googleMapsApiKey: string;
@@ -43,7 +47,9 @@ type WithGoogleMapsScriptProps = {
   [key: string]: unknown;
 };
 
-function withGoogleMapsScript(Component: React.ComponentType<Record<string, unknown>>) {
+function withGoogleMapsScript(
+  Component: React.ComponentType<Record<string, unknown>>,
+) {
   const WithGoogleMapsScript = ({
     googleMapsApiKey,
     libraries,
