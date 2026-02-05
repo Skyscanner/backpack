@@ -25,20 +25,11 @@ import { GoogleMap } from '@react-google-maps/api';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import { LatLongPropType } from './common-types';
+import { LatLongPropType, LatLong } from './common-types';
 
 import STYLES from './BpkMap.module.scss';
 
 const getClassName = cssModules(STYLES);
-
-
-
-
-
-type LatLong = {
-  latitude: number;
-  longitude: number;
-};
 
 type Bounds = {
   south: number;
