@@ -32,9 +32,8 @@ import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils'
 import { RENDER_BUFFER_SIZE } from './constants';
 import {
   setA11yTabIndex,
-  useScrollToCard,
   useIntersectionObserver,
-  useUserScrollState,
+  useCarouselScrollSync,
 } from './utils';
 
 import type { CardListCarouselProps } from '../common-types';
@@ -79,20 +78,20 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     Array(childrenLength).fill(0),
   );
 
-  // Track user scroll state using scrollend event
-  const isUserScrollingRef = useUserScrollState(root, !isMobile);
-
   const observerVisibility = useIntersectionObserver(
     { root, threshold: 0.5 },
     setVisibilityList,
   );
 
-  useScrollToCard(
-    isMobile ? currentIndex : currentIndex * initiallyShownCards,
-    root,
+  useCarouselScrollSync({
+    currentIndex,
+    setCurrentIndex,
+    initiallyShownCards,
     cardRefs,
-    isUserScrollingRef,
-  );
+    visibilityList,
+    container: root,
+    enabled: !isMobile,
+  });
 
   // Similar to Virtual Scrolling to improve performance
   const firstVisibleIndex = Math.max(0, visibilityList.indexOf(1));
@@ -175,20 +174,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     dynamicRenderBufferSize,
   ]);
 
-  // Sync pagination index with visible cards during user scroll
-  useEffect(() => {
-    if (isMobile) return;
-    if (!isUserScrollingRef.current) return;
-
-    const firstVisible = visibilityList.indexOf(1);
-    if (firstVisible >= 0) {
-      const newIndex = Math.floor(firstVisible / initiallyShownCards);
-      if (newIndex !== currentIndex) {
-        setCurrentIndex(newIndex);
-      }
-    }
-  }, [currentIndex, initiallyShownCards, setCurrentIndex, visibilityList, isMobile, isUserScrollingRef]);
-
   useEffect(() => {
     const handleResize = throttle(() => {
       firstCardWidthRef.current = null;
@@ -200,7 +185,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  return (
+   return (
     <div
       className={getClassName(`bpk-card-list-row-rail__${layout}`)}
       {...getDataComponentAttribute('CardListCarousel')}
@@ -272,7 +257,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         );
       })}
     </div>
-  );
+  )
 };
 
 export default BpkCardListCarousel;

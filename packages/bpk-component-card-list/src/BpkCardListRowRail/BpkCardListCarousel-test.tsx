@@ -25,21 +25,31 @@ import mockCards from '../../testMocks';
 import { LAYOUTS } from '../common-types';
 
 import BpkCardListCarousel from './BpkCardListCarousel';
-import { useIntersectionObserver, useUserScrollState } from './utils';
+import { useIntersectionObserver, useCarouselScrollSync } from './utils';
 
-// Mock ref that controls whether user is scrolling
-const mockIsUserScrollingRef = { current: false };
+// Store the captured options from useCarouselScrollSync
+let capturedScrollSyncOptions: {
+  currentIndex: number;
+  setCurrentIndex: Dispatch<SetStateAction<number>>;
+  initiallyShownCards: number;
+  visibilityList: number[];
+  enabled: boolean;
+} | null = null;
+
+// Mock ref that controls whether user is scrolling (simulated)
+const mockIsUserScrolling = { value: false };
 
 jest.mock('./utils', () => ({
   setA11yTabIndex: jest.fn(),
-  useScrollToCard: jest.fn(),
   useIntersectionObserver: jest.fn(() => jest.fn()),
-  useUserScrollState: jest.fn(() => mockIsUserScrollingRef),
+  useCarouselScrollSync: jest.fn((options) => {
+    capturedScrollSyncOptions = options;
+  }),
 }));
 
 const mockSetCurrentIndex = jest.fn();
 const mockUseIntersectionObserver = jest.mocked(useIntersectionObserver);
-const mockUseUserScrollState = jest.mocked(useUserScrollState);
+const mockUseCarouselScrollSync = jest.mocked(useCarouselScrollSync);
 
 // Holds a reference to the setVisibilityList function captured during component render
 let setVisibilityFn: Dispatch<SetStateAction<number[]>> | undefined;
@@ -220,56 +230,37 @@ describe('BpkCardListCarousel', () => {
       expect(cards[3].className).toContain('page-start');
     });
 
-    it('should call setCurrentIndex when user is scrolling and visibility changes', () => {
-      const { rerender } = render(
-        <BpkCardListCarousel {...defaultProps} isMobile={false} />,
-      );
-
-      // Simulate user scroll state being active
-      mockIsUserScrollingRef.current = true;
-
-      // Clear the mock before the visibility change to only track calls after this point
-      mockSetCurrentIndex.mockClear();
-
-      // Fake the visibility of the carousel being on the 2nd page
-      act(() => {
-        setVisibilityFn?.([0, 0, 0, 1, 1, 1]);
-      });
-
-      rerender(<BpkCardListCarousel {...defaultProps} isMobile={false} />);
-
-      // Ensure we're trying to set the current index to 1 (the 2nd page)
-      expect(mockSetCurrentIndex).toHaveBeenCalledWith(1);
-
-      // Reset for other tests
-      mockIsUserScrollingRef.current = false;
-    });
-
-    it('should use useUserScrollState hook on desktop', () => {
+    it('should call useCarouselScrollSync with correct options on desktop', () => {
       render(<BpkCardListCarousel {...defaultProps} isMobile={false} />);
 
-      // Verify the hook was called with the container and enabled=true
-      expect(mockUseUserScrollState).toHaveBeenCalled();
+      // Verify the hook was called with the correct options
+      expect(mockUseCarouselScrollSync).toHaveBeenCalledWith(
+        expect.objectContaining({
+          currentIndex: 0,
+          setCurrentIndex: mockSetCurrentIndex,
+          initiallyShownCards: 3,
+          enabled: true,
+        }),
+      );
     });
 
-    it('should not update currentIndex when user is not scrolling', () => {
-      mockIsUserScrollingRef.current = false;
+    it('should pass visibility list to useCarouselScrollSync', () => {
+      render(<BpkCardListCarousel {...defaultProps} isMobile={false} />);
 
-      const { rerender } = render(
-        <BpkCardListCarousel {...defaultProps} isMobile={false} />,
+      // The hook should receive the visibility list
+      expect(capturedScrollSyncOptions?.visibilityList).toBeDefined();
+      expect(Array.isArray(capturedScrollSyncOptions?.visibilityList)).toBe(true);
+    });
+
+    it('should disable useCarouselScrollSync on mobile', () => {
+      render(<BpkCardListCarousel {...defaultProps} isMobile />);
+
+      // On mobile, enabled should be false
+      expect(mockUseCarouselScrollSync).toHaveBeenCalledWith(
+        expect.objectContaining({
+          enabled: false,
+        }),
       );
-
-      mockSetCurrentIndex.mockClear();
-
-      // Fake the visibility changing
-      act(() => {
-        setVisibilityFn?.([0, 0, 0, 1, 1, 1]);
-      });
-
-      rerender(<BpkCardListCarousel {...defaultProps} isMobile={false} />);
-
-      // Should NOT update currentIndex when user is not scrolling
-      expect(mockSetCurrentIndex).not.toHaveBeenCalled();
     });
   });
 });
