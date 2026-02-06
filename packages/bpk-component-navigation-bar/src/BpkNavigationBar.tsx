@@ -19,7 +19,7 @@
 import type { ReactElement, ReactNode } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type { Tag, TextStyle } from '../../bpk-component-text/src/BpkText';
 
@@ -74,6 +74,7 @@ const BpkNavigationBar = (props: Props) => {
         sticky && 'bpk-navigation-bar__sticky',
         className,
       )}
+      {...getDataComponentAttribute('NavigationBar')}
       {...rest}
     >
       {leadingButton && (

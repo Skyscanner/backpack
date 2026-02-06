@@ -16,10 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -27,23 +24,18 @@ import STYLES from './BpkList.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  children: Node,
-  className: ?string,
+export type Props = {
+  children: ReactNode;
+  className?: string | null;
 };
 
-const BpkListItem = ({children, className = null}: Props) => {
+const BpkListItem = ({ children, className = null }: Props) => {
   const classNames = getClassName('bpk-list__item', className);
 
-  return <li className={classNames}>{children}</li>;
-};
-
-BpkListItem.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
-  className: PropTypes.string,
+  return (
+     
+    <li className={classNames}>{children}</li>
+  );
 };
 
 export default BpkListItem;

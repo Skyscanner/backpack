@@ -28,7 +28,7 @@ import BpkSelectableChip, {
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import BpkStickyChip from './BpkStickyChip';
 import Nudger, { POSITION } from './Nudger';
@@ -255,7 +255,7 @@ const WrapChipGroup = ({
 );
 
 const BpkMultiSelectChipGroup = (props: MultiSelectProps) => (
-  <div className={getClassName('bpk-chip-group-container')}>
+  <div className={getClassName('bpk-chip-group-container')} {...getDataComponentAttribute('MultiSelectChipGroup')}>
     {props.type === CHIP_GROUP_TYPES.rail ? (
       <RailChipGroup {...props} />
     ) : (
