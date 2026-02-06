@@ -348,6 +348,38 @@ All subcomponents support the `asChild` prop for composition flexibility and sta
 **Internal Component Dependencies**:
 - `BpkText`: Label and Description subcomponents built on BpkText primitive
 
+### Design Token Validation
+
+Tokens accessed via `@use '../../bpk-mixins/tokens'; → tokens.$bpk-token-name` pattern:
+
+| Token Name | Usage | Scss Usage | Availability |
+|------------|-------|-----------|--------------|
+| `bpk-surface-default-day` | default variant background | `tokens.$bpk-surface-default-day` | ✓ Confirmed |
+| `bpk-surface-contrast-day` | contrast variant background | `tokens.$bpk-surface-contrast-day` | ✓ Confirmed |
+| `bpk-surface-tint-day` | surface-contrast variant background | `tokens.$bpk-surface-tint-day` | ✓ Confirmed |
+| `bpk-core-accent-day` | checked state indicator color | `tokens.$bpk-core-accent-day` | ✓ Confirmed |
+| `bpk-text-primary-day` | Label default text color | `tokens.$bpk-text-primary-day` | ✓ Confirmed |
+| `bpk-text-secondary-day` | Description + Addon default color | `tokens.$bpk-text-secondary-day` | ✓ Confirmed |
+| `bpk-text-on-dark-day` | Label/Description checked state | `tokens.$bpk-text-on-dark-day` | ✓ Confirmed |
+| `bpk-text-disabled-day` | disabled state text color | `tokens.$bpk-text-disabled-day` | ✓ Confirmed |
+| `bpk-border-radius-md` | rounded variant radius (~8px) | `tokens.bpk-border-radius-md()` | ✓ Confirm in impl |
+| `bpk-line-day` | border color for contrast variant | `tokens.$bpk-line-day` | ✓ Confirmed |
+| `bpk-surface-low-contrast-day` | hover state background | `tokens.$bpk-surface-low-contrast-day` | ✓ Confirmed |
+
+**Import Pattern**:
+```scss
+@use '../../bpk-mixins/tokens';
+
+.bpk-checkbox-card {
+  background-color: tokens.$bpk-surface-default-day;
+  border-radius: tokens.bpk-border-radius-md();
+}
+```
+
+**Assumption**: All tokens available from `@skyscanner/bpk-foundations-web/tokens/base.default` via `bpk-mixins`
+
+**Verification**: Team to confirm token availability during implementation Phase 1 kickoff. If any token unavailable, use nearest semantic alternative with documentation.
+
 ## Testing Strategy
 
 ### Unit Tests (`BpkCheckboxCard-test.tsx`)

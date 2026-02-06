@@ -29,6 +29,11 @@
 - [ ] T013 [US1] Implement onCheckedChange callback forwarding in Root component
 - [ ] T014 [US1] Create basic unit tests in BpkCheckboxCard-test.tsx: rendering with label, toggle on click, onChange callback
 - [ ] T015 [US1] Create basic Storybook story demonstrating label rendering and toggle
+  * Story: "Basic Label"
+    - Default state (unchecked)
+    - Checked state (after click)
+    - onChange callback demonstration
+    - Interactive controls to toggle checked prop
 
 **Verification**: Component renders label, toggles state on click, fires onChange
 
@@ -43,12 +48,34 @@
 - [ ] T020 [US2] Create Addon subcomponent (renders outside control area for badge/supporting content)
 - [ ] T021 [US2] Unit tests: compose Label+Description+Addon, verify text colors on state change, asChild flexibility
 - [ ] T022 [US2] Storybook stories: with description, with addon, combined composition, asChild usage examples
+  * Story: "With Description"
+    - Label + Description composition
+    - Verify text colors change on checked state
+  * Story: "With Addon"
+    - Label + Addon composition
+    - Verify Addon text color stays secondary (no change on checked)
+  * Story: "Full Composition"
+    - Label + Description + Addon together
+    - All text color changes demonstrated
+  * Story: "Custom Content (asChild)"
+    - Example using asChild pattern
+    - Custom component composition
 
 **Verification**: Subcomponents compose without conflicts, text colors change appropriately on checked state
 
 ## Phase 5: User Story 3 - Visual Variants (P2)
 
 **Goal**: Support three visual variants with design token colors
+
+- [ ] T022b [P] Add themeable properties to BpkCheckboxCard.module.scss
+  * Import `utils` from `bpk-mixins`: `@use '../../bpk-mixins/utils';`
+  * Apply `@include utils.bpk-themeable-property()` for 5 tokens:
+    - `--bpk-checkbox-card-default-bg` → `$bpk-surface-default-day`
+    - `--bpk-checkbox-card-contrast-bg` → `$bpk-surface-contrast-day`
+    - `--bpk-checkbox-card-checked-color` → `$bpk-core-accent-day`
+    - `--bpk-checkbox-card-label-color` → `$bpk-text-primary-day`
+    - `--bpk-checkbox-card-label-on-dark-color` → `$bpk-text-on-dark-day`
+  * Enables runtime theme customization via CSS variables
 
 - [ ] T023 [US3] [P] Create BpkCheckboxCard.module.scss with base styles
 - [ ] T024 [US3] [P] Implement .bpk-checkbox-card--variant-default styling (surface/default background)
@@ -59,6 +86,18 @@
 - [ ] T029 [US3] [P] Implement hover states per variant with design tokens (surface/low-contrast + border)
 - [ ] T030 [US3] Unit tests: verify each variant renders correct colors, checked states apply correct backgrounds
 - [ ] T031 [US3] Storybook stories: each variant in default/hover/checked states
+  * Story: "Variant - Default"
+    - Default state (unchecked, rest)
+    - Hover state (unchecked, hovered)
+    - Checked state
+  * Story: "Variant - Contrast"
+    - Default state (unchecked, rest)
+    - Hover state (unchecked, hovered)
+    - Checked state
+  * Story: "Variant - Surface Contrast"
+    - Default state (unchecked, rest)
+    - Hover state (unchecked, hovered)
+    - Checked state
 
 **Verification**: All three variants render with correct colors, hover and checked states apply proper styling
 
@@ -99,16 +138,58 @@
 - [ ] T048 [US6] Add maxW and maxH props to Root for size constraints via inline styles
 - [ ] T049 [US6] Unit tests: disabled prevents toggle, readonly prevents toggle, invalid sets ARIA, maxW/maxH respected
 - [ ] T050 [US6] Storybook stories: disabled, invalid, readonly, with maxW/maxH constraints
+  * Story: "State - Disabled"
+    - Disabled checkbox (visually disabled, interaction blocked)
+    - Label + Description with disabled colors
+  * Story: "State - Readonly"
+    - Readonly checkbox (visually enabled, interaction blocked)
+    - Verify Space/Click do not toggle
+  * Story: "State - Invalid"
+    - Invalid checkbox (aria-invalid but no visual styling)
+    - Verify no CSS changes
+  * Story: "Sizing Constraints"
+    - maxW constraint demonstration
+    - maxH constraint demonstration
+    - Content overflow handling
 
 **Verification**: All states render correctly, disabled and readonly prevent interaction
 
 ## Phase 9: Accessibility & Focus
 
 - [ ] T051 [P] Create accessibility-test.tsx with jest-axe tests
+  * No jest-axe violations in default state
+  * No jest-axe violations in checked state
+  * No jest-axe violations in disabled state
+  * No jest-axe violations in readonly state
+  * No jest-axe violations in invalid state (aria-invalid="true")
+  * No jest-axe violations with multiple cards in form
+  * No jest-axe violations with maxW/maxH constraints
+  * Label association via htmlFor (if applicable)
+
 - [ ] T052 [P] Test no axe violations, keyboard navigation (Tab, Space), ARIA attributes
+  * Tab key focus enters component
+  * Space key toggles checked state
+  * Enter key toggles checked state
+  * Tab focus moves to next element (tab order correct)
+  * Disabled card skipped in tab order
+  * Readonly card Tab-able but Space/Enter don't change state
+  * RTL variant: Tab order remains logical
+  * Indicator placement doesn't affect tab order
+
 - [ ] T053 [P] Implement Backpack focus ring utility on Root (distinct focus state)
+
 - [ ] T054 [P] Test focus ring visibility and keyboard focus management
+  * Focus ring visible via Backpack focus ring utility
+  * Focus ring distinct from other elements
+  * Focus management works with disabled state
+  * Focus ring visible in all variants
+
 - [ ] T055 [P] Test screen reader announcements for state changes
+  * "Checkbox, label text, checked" when checked
+  * "Checkbox, label text, not checked" when unchecked
+  * "Disabled" announcement in disabled state
+  * State changes announced on toggle
+  * Description text read as annotation (if present)
 
 **Verification**: All jest-axe tests pass, keyboard navigation works, screen readers properly announce states
 
@@ -126,6 +207,17 @@
 - [ ] T060 [P] Create README.md (<100 words, British English, usage examples, props table)
 - [ ] T061 [P] Add comprehensive JSDoc comments to all exports in BpkCheckboxCard.tsx
 - [ ] T062 [P] Create BpkCheckboxCard.figma.tsx with Code Connect mappings to Figma design
+  * Map Figma CheckboxCard.Root → BpkCheckboxCard.Root
+    - Props: variant (default/contrast/surface-contrast), radius (square/rounded), checked, disabled
+  * Map Figma CheckboxCard.Label → BpkCheckboxCard.Label
+    - Props: children (text content)
+  * Map Figma CheckboxCard.Description → BpkCheckboxCard.Description
+    - Props: children (text content)
+  * Map Figma CheckboxCard.Indicator → BpkCheckboxCard.Indicator
+    - Props: none (purely visual)
+  * Use figma.enum() for variant and radius dropdowns
+  * Use figma.boolean() for checked, disabled state toggles
+  * Document property mappings for design team review
 - [ ] T063 [P] Add Storybook a11y addon to story configuration
 
 **Verification**: README complete, JSDoc comments present, Figma Connect configured, stories display a11y checks
