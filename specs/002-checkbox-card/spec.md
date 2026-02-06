@@ -338,7 +338,7 @@ All subcomponents support the `asChild` prop for composition flexibility and sta
 - May compose with other Backpack components (BpkText, BpkIcon, etc.) via children
 
 **External Dependencies**:
-- `@ark-ui/react`: Checkbox primitive for accessibility and logic
+- `@ark-ui/react`: Checkbox primitive for accessibility and logic (added to root `package.json` as shared peer dependency)
 - No other external dependencies required
 
 **Design Token Dependencies**:
@@ -440,6 +440,7 @@ All subcomponents support the `asChild` prop for composition flexibility and sta
 - Q4: Label default text style → A: `bpk-heading-5` with `text-primary-day` color
 - Q5: Description default text style → A: `bpk-footnote` with `text-secondary-day` color
 - Q6 (user-provided): Label/Description text color on checked state → A: Use `text-on-dark-day` color when checkbox is checked for contrast on colored background
+- Q7: Ark UI dependency management → A: Add `@ark-ui/react` to root `package.json` as shared peer dependency (centralized version management)
 
 ## Assumptions
 
