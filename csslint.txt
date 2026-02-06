@@ -1,4 +1,0 @@
-
-> backpack@0.0.1 lint:scss
-> stylelint 'packages/**/*.scss'
-
