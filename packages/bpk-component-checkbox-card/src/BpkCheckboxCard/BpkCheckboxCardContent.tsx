@@ -38,6 +38,8 @@ export type BpkCheckboxCardContentProps = {
  * This component provides a simple wrapper container for organizing
  * checkbox card content. Use Stack for vertical layout control.
  *
+ * @returns {JSX.Element} Rendered checkbox card content wrapper.
+ *
  * @example Basic usage
  * <BpkCheckboxCard.Content>
  *   <BpkCheckboxCard.Stack gap="md" align="center">

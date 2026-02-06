@@ -180,7 +180,7 @@ type BpkCheckboxCardProps = {
 };
 
 // Sub-components for composable API
-const CheckboxCardImage = ({ src, alt = '' }: CheckboxCardImageProps) => {
+const CheckboxCardImage = ({ alt = '', src }: CheckboxCardImageProps) => {
   const imageClassNames = getClassName('bpk-checkbox-card__image');
   return (
     <div className={imageClassNames}>
@@ -215,7 +215,7 @@ const CheckboxCardIcon = ({ children }: CheckboxCardIconProps) => {
 };
 
 // Layout primitive components
-const CheckboxCardStack = ({ children, space = 'md', alignItems = 'center' }: CheckboxCardStackProps) => {
+const CheckboxCardStack = ({ alignItems = 'center', children, space = 'md' }: CheckboxCardStackProps) => {
   const stackClassNames = getClassName(
     'bpk-checkbox-card__stack',
     `bpk-checkbox-card__stack--space-${space}`,
@@ -224,7 +224,7 @@ const CheckboxCardStack = ({ children, space = 'md', alignItems = 'center' }: Ch
   return <div className={stackClassNames}>{children}</div>;
 };
 
-const CheckboxCardInline = ({ children, space = 'md', alignItems = 'center' }: CheckboxCardInlineProps) => {
+const CheckboxCardInline = ({ alignItems = 'center', children, space = 'md' }: CheckboxCardInlineProps) => {
   const inlineClassNames = getClassName(
     'bpk-checkbox-card__inline',
     `bpk-checkbox-card__inline--space-${space}`,
@@ -268,22 +268,22 @@ const CheckboxCardInline = ({ children, space = 'md', alignItems = 'center' }: C
 const BpkCheckboxCard = ({
   ariaLabel,
   checked,
+  children,
   description,
   disabled = false,
+  height,
   icon,
   image,
   indicator,
   label,
+  layout = 'vertical',
   name,
   onChange,
   price,
+  radius = CHECKBOX_CARD_RADIUS.rounded,
   value,
   variant = CHECKBOX_CARD_VARIANTS.onCanvasDefault,
-  radius = CHECKBOX_CARD_RADIUS.rounded,
-  children,
   width,
-  height,
-  layout = 'vertical',
   ...rest
 }: BpkCheckboxCardProps) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

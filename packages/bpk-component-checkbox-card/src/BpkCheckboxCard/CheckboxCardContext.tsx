@@ -67,7 +67,7 @@ export const CheckboxCardContext = createContext<CheckboxCardContextValue | null
  * Must be used within a BpkCheckboxCard.Root component
  *
  * @throws Error if used outside of BpkCheckboxCard.Root
- * @returns The checkbox card context value
+ * @returns {CheckboxCardContextValue} The checkbox card context value.
  *
  * @example
  * function MyComponent() {

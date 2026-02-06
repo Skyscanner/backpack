@@ -45,16 +45,16 @@
  * </BpkCheckboxCard.Root>
  */
 
-import { BpkCheckboxCardRoot } from './BpkCheckboxCardRoot';
-import { BpkCheckboxCardControl } from './BpkCheckboxCardControl';
 import { BpkCheckboxCardContent } from './BpkCheckboxCardContent';
+import BpkCheckboxCardControl from './BpkCheckboxCardControl';
+import { BpkCheckboxCardDescription } from './BpkCheckboxCardDescription';
 import { BpkCheckboxCardIcon } from './BpkCheckboxCardIcon';
 import { BpkCheckboxCardImage } from './BpkCheckboxCardImage';
-import { BpkCheckboxCardLabel } from './BpkCheckboxCardLabel';
-import { BpkCheckboxCardDescription } from './BpkCheckboxCardDescription';
-import { BpkCheckboxCardPrice } from './BpkCheckboxCardPrice';
-import { BpkCheckboxCardStack } from './BpkCheckboxCardStack';
 import { BpkCheckboxCardInline } from './BpkCheckboxCardInline';
+import { BpkCheckboxCardLabel } from './BpkCheckboxCardLabel';
+import { BpkCheckboxCardPrice } from './BpkCheckboxCardPrice';
+import { BpkCheckboxCardRoot } from './BpkCheckboxCardRoot';
+import { BpkCheckboxCardStack } from './BpkCheckboxCardStack';
 
 /**
  * Main BpkCheckboxCard compound component

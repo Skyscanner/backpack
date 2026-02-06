@@ -42,17 +42,19 @@ const getClassName = cssModules(STYLES);
  *     <BpkCheckboxCard.Label>Option</BpkCheckboxCard.Label>
  *   </BpkCheckboxCard.Content>
  * </BpkCheckboxCard.Root>
+ *
+ * @returns {JSX.Element} Rendered hidden checkbox input control.
  */
-export function BpkCheckboxCardControl() {
+export default function BpkCheckboxCardControl() {
   const {
     checked,
-    disabled,
-    name,
-    value,
-    onCheckedChange,
     controlId,
-    labelId,
     descriptionId,
+    disabled,
+    labelId,
+    name,
+    onCheckedChange,
+    value,
   } = useCheckboxCardContext();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

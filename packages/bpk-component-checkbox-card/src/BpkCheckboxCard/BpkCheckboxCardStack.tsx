@@ -59,11 +59,13 @@ export type BpkCheckboxCardStackProps = {
  *   <BpkCheckboxCard.Description>Central location</BpkCheckboxCard.Description>
  *   <BpkCheckboxCard.Price>£85</BpkCheckboxCard.Price>
  * </BpkCheckboxCard.Stack>
+ *
+ * @returns {JSX.Element} Rendered stack layout container.
  */
 export function BpkCheckboxCardStack({
+  align = 'center',
   children,
   gap = 'md',
-  align = 'center',
 }: BpkCheckboxCardStackProps) {
   const className = getClassName(
     'bpk-checkbox-card-stack',

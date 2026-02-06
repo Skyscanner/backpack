@@ -59,11 +59,13 @@ export type BpkCheckboxCardInlineProps = {
  *   <BpkCheckboxCard.Icon icon={LandmarkIconLg} size="sm" />
  *   <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
  * </BpkCheckboxCard.Inline>
+ *
+ * @returns {JSX.Element} Rendered inline layout container.
  */
 export function BpkCheckboxCardInline({
+  align = 'center',
   children,
   gap = 'md',
-  align = 'center',
 }: BpkCheckboxCardInlineProps) {
   const className = getClassName(
     'bpk-checkbox-card-inline',

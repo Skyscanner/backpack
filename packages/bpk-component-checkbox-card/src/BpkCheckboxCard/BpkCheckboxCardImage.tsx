@@ -67,12 +67,14 @@ export type BpkCheckboxCardImageProps = {
  *   height={80}
  *   aspectRatio={16/9}
  * />
+ *
+ * @returns {JSX.Element} Rendered checkbox card image content.
  */
 export function BpkCheckboxCardImage({
-  src,
   alt = '',
   aspectRatio = 1,
   height,
+  src,
 }: BpkCheckboxCardImageProps) {
   const className = getClassName('bpk-checkbox-card-image');
 

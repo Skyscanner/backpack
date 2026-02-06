@@ -17,10 +17,11 @@
  */
 
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
-import type { TextStyle } from '../../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../../bpk-react-utils';
 
 import { useCheckboxCardContext } from './CheckboxCardContext';
+
+import type { TextStyle } from '../../../bpk-component-text/src/BpkText';
 
 import STYLES from './BpkCheckboxCard.module.scss';
 
@@ -62,11 +63,13 @@ export type BpkCheckboxCardLabelProps = {
  * <BpkCheckboxCard.Label textStyle="heading-4">
  *   Premium Package
  * </BpkCheckboxCard.Label>
+ *
+ * @returns {JSX.Element} Rendered checkbox card label content.
  */
 export function BpkCheckboxCardLabel({
   children,
-  textStyle = TEXT_STYLES.heading5,
   lineClamp = 2,
+  textStyle = TEXT_STYLES.heading5,
 }: BpkCheckboxCardLabelProps) {
   const { labelId } = useCheckboxCardContext();
   const className = getClassName('bpk-checkbox-card-label');

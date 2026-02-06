@@ -22,8 +22,9 @@ import { useState, useId, useCallback, useMemo } from 'react';
 import { cssModules } from '../../../bpk-react-utils';
 
 import { CheckboxCardContext } from './CheckboxCardContext';
-import type { CheckboxCardVariant, CheckboxCardRadius } from './common-types';
 import { CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS } from './common-types';
+
+import type { CheckboxCardVariant, CheckboxCardRadius } from './common-types';
 
 import STYLES from './BpkCheckboxCard.module.scss';
 
@@ -137,23 +138,25 @@ export type BpkCheckboxCardRootProps = {
  *     <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
  *   </BpkCheckboxCard.Content>
  * </BpkCheckboxCard.Root>
+ *
+ * @returns {JSX.Element} Rendered checkbox card root container with context.
  */
 export function BpkCheckboxCardRoot({
-  children,
-  checked: controlledChecked,
-  defaultChecked = false,
-  onCheckedChange,
-  disabled = false,
-  required = false,
-  name,
-  value,
-  variant = CHECKBOX_CARD_VARIANTS.onCanvasDefault,
-  radius = CHECKBOX_CARD_RADIUS.rounded,
-  width,
-  height,
+  'aria-describedby': ariaDescribedby,
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledby,
-  'aria-describedby': ariaDescribedby,
+  checked: controlledChecked,
+  children,
+  defaultChecked = false,
+  disabled = false,
+  height,
+  name,
+  onCheckedChange,
+  radius = CHECKBOX_CARD_RADIUS.rounded,
+  required = false,
+  value,
+  variant = CHECKBOX_CARD_VARIANTS.onCanvasDefault,
+  width,
 }: BpkCheckboxCardRootProps) {
   // Controlled/uncontrolled state management
   const isControlled = controlledChecked !== undefined;

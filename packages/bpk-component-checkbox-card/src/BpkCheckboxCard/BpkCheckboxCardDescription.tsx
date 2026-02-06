@@ -17,10 +17,11 @@
  */
 
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
-import type { TextStyle } from '../../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../../bpk-react-utils';
 
 import { useCheckboxCardContext } from './CheckboxCardContext';
+
+import type { TextStyle } from '../../../bpk-component-text/src/BpkText';
 
 import STYLES from './BpkCheckboxCard.module.scss';
 
@@ -62,11 +63,13 @@ export type BpkCheckboxCardDescriptionProps = {
  * <BpkCheckboxCard.Description lineClamp={2}>
  *   Short description
  * </BpkCheckboxCard.Description>
+ *
+ * @returns {JSX.Element} Rendered checkbox card description content.
  */
 export function BpkCheckboxCardDescription({
   children,
-  textStyle = TEXT_STYLES.bodyDefault,
   lineClamp = 3,
+  textStyle = TEXT_STYLES.bodyDefault,
 }: BpkCheckboxCardDescriptionProps) {
   const { descriptionId } = useCheckboxCardContext();
   const className = getClassName('bpk-checkbox-card-description');

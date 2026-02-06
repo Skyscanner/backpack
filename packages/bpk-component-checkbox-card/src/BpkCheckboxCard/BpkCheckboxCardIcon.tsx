@@ -48,6 +48,8 @@ export type BpkCheckboxCardIconProps = {
  * import LandmarkIcon from '@skyscanner/backpack-web/bpk-component-icon/lg/landmark';
  *
  * <BpkCheckboxCard.Icon icon={LandmarkIcon} size="lg" />
+ *
+ * @returns {JSX.Element} Rendered checkbox card icon content.
  */
 export function BpkCheckboxCardIcon({ icon: Icon, size = 'md' }: BpkCheckboxCardIconProps) {
   const className = getClassName(
