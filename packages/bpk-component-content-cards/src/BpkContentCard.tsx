@@ -49,6 +49,7 @@ const BpkContentCard = ({ card, layout }: Props) => (
     href={card.href}
     target="_blank"
     rel="noreferrer"
+    tabIndex={0}
     {...getDataComponentAttribute('ContentCard')}
   >
     <div className={getClassName('bpk-content-card--image-container')}>

@@ -23,14 +23,34 @@
 
 .bpk-content-card {
   &--link {
+    position: relative;
+    display: block;
     border-radius: tokens.$bpk-border-radius-md;
     color: inherit;
     /* stylelint-disable backpack/use-typography-styles */
     font: inherit;
     text-decoration: inherit;
 
-    &:focus-visible {
-      @include utils.bpk-focus-indicator;
+    // Use pseudo-element for focus indicator to ensure cross-browser compatibility
+    // Safari has issues with outline on anchor elements
+    &::before {
+      position: absolute;
+      top: -(tokens.$bpk-one-pixel-rem * 4);
+      right: -(tokens.$bpk-one-pixel-rem * 4);
+      bottom: -(tokens.$bpk-one-pixel-rem * 4);
+      left: -(tokens.$bpk-one-pixel-rem * 4);
+      content: '';
+      border: (tokens.$bpk-one-pixel-rem * 2) solid transparent;
+      border-radius: tokens.$bpk-border-radius-md;
+      pointer-events: none;
+    }
+
+    &:focus {
+      outline: none;
+
+      &::before {
+        border-color: tokens.$bpk-text-link-day;
+      }
     }
   }
 
