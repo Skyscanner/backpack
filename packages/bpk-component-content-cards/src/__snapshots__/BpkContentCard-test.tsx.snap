@@ -7,7 +7,6 @@ exports[`Content Card widget renders horizontal card correctly 1`] = `
     data-backpack-ds-component="ContentCard"
     href="http://skyscanner.net/card-1-cta-link.html"
     rel="noreferrer"
-    tabindex="0"
     target="_blank"
   >
     <div
@@ -45,7 +44,6 @@ exports[`Content Card widget renders vertical card correctly 1`] = `
     data-backpack-ds-component="ContentCard"
     href="http://skyscanner.net/card-1-cta-link.html"
     rel="noreferrer"
-    tabindex="0"
     target="_blank"
   >
     <div

@@ -22,7 +22,6 @@ exports[`Content Card widget renders correctly with 1 card 1`] = `
           data-backpack-ds-component="ContentCard"
           href="http://skyscanner.net/card-1-cta-link.html"
           rel="noreferrer"
-          tabindex="0"
           target="_blank"
         >
           <div
@@ -78,7 +77,6 @@ exports[`Content Card widget renders correctly with 2 cards 1`] = `
           data-backpack-ds-component="ContentCard"
           href="http://skyscanner.net/card-1-cta-link.html"
           rel="noreferrer"
-          tabindex="0"
           target="_blank"
         >
           <div
@@ -115,7 +113,6 @@ exports[`Content Card widget renders correctly with 2 cards 1`] = `
           data-backpack-ds-component="ContentCard"
           href="http://skyscanner.net/card-2-cta-link.html"
           rel="noreferrer"
-          tabindex="0"
           target="_blank"
         >
           <div
@@ -171,7 +168,6 @@ exports[`Content Card widget renders correctly with 3 cards 1`] = `
           data-backpack-ds-component="ContentCard"
           href="http://skyscanner.net/card-1-cta-link.html"
           rel="noreferrer"
-          tabindex="0"
           target="_blank"
         >
           <div
@@ -208,7 +204,6 @@ exports[`Content Card widget renders correctly with 3 cards 1`] = `
           data-backpack-ds-component="ContentCard"
           href="http://skyscanner.net/card-2-cta-link.html"
           rel="noreferrer"
-          tabindex="0"
           target="_blank"
         >
           <div
@@ -245,7 +240,6 @@ exports[`Content Card widget renders correctly with 3 cards 1`] = `
           data-backpack-ds-component="ContentCard"
           href="http://skyscanner.net/card-3-cta-link.html"
           rel="noreferrer"
-          tabindex="0"
           target="_blank"
         >
           <div
