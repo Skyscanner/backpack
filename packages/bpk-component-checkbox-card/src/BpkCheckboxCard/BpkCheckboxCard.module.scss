@@ -32,39 +32,57 @@
 .bpk-checkbox-card-root {
   position: relative;
   display: block;
-  cursor: pointer;
-  box-sizing: border-box;
-  transition: all tokens.$bpk-duration-sm ease-in-out;
   min-width: calc(tokens.$bpk-one-pixel-rem * 44); // Minimum touch target
   min-height: calc(tokens.$bpk-one-pixel-rem * 44);
-
-  // CSS Variables for theming (with Backpack token fallbacks)
-  background-color: var(--bpk-checkbox-card-bg-default, #{tokens.$bpk-canvas-day});
-  color: var(--bpk-checkbox-card-fg-default, #{tokens.$bpk-text-primary-day});
+  transition: all tokens.$bpk-duration-sm ease-in-out;
   border: calc(tokens.$bpk-one-pixel-rem * 1) solid
     var(--bpk-checkbox-card-border-default, #{tokens.$bpk-line-day});
+
+  // CSS Variables for theming (with Backpack token fallbacks)
+  background-color: var(
+    --bpk-checkbox-card-bg-default,
+    #{tokens.$bpk-canvas-day}
+  );
+  color: var(--bpk-checkbox-card-fg-default, #{tokens.$bpk-text-primary-day});
+  cursor: pointer;
+  box-sizing: border-box;
 
   // Hover state
   &:not(&--disabled):not(&--checked) {
     @include utils.bpk-hover {
-      background-color: var(--bpk-checkbox-card-bg-hover, #{tokens.$bpk-surface-low-contrast-day});
-      border-color: var(--bpk-checkbox-card-border-hover, #{tokens.$bpk-line-day});
+      border-color: var(
+        --bpk-checkbox-card-border-hover,
+        #{tokens.$bpk-line-day}
+      );
+      background-color: var(
+        --bpk-checkbox-card-bg-hover,
+        #{tokens.$bpk-surface-low-contrast-day}
+      );
     }
   }
 
   // Checked state
   &--checked {
-    background-color: var(--bpk-checkbox-card-bg-checked, #{tokens.$bpk-surface-contrast-day});
-    color: var(--bpk-checkbox-card-fg-checked, #{tokens.$bpk-text-on-dark-day});
     border-color: var(--bpk-checkbox-card-border-checked, transparent);
+    background-color: var(
+      --bpk-checkbox-card-bg-checked,
+      #{tokens.$bpk-surface-contrast-day}
+    );
+    color: var(--bpk-checkbox-card-fg-checked, #{tokens.$bpk-text-on-dark-day});
   }
 
   // Disabled state
   &--disabled {
+    background-color: var(
+      --bpk-checkbox-card-bg-disabled,
+      #{tokens.$bpk-canvas-day}
+    );
+    color: var(
+      --bpk-checkbox-card-fg-disabled,
+      #{tokens.$bpk-text-disabled-day}
+    );
     cursor: not-allowed;
     opacity: 0.5;
-    background-color: var(--bpk-checkbox-card-bg-disabled, #{tokens.$bpk-canvas-day});
-    color: var(--bpk-checkbox-card-fg-disabled, #{tokens.$bpk-text-disabled-day});
   }
 
   // Radius variants
@@ -103,34 +121,34 @@
 // Control - hidden checkbox input
 .bpk-checkbox-card-control {
   position: absolute;
-  opacity: 0;
   width: tokens.$bpk-one-pixel-rem;
   height: tokens.$bpk-one-pixel-rem;
   margin: calc(tokens.$bpk-one-pixel-rem * -1);
   padding: 0;
   border: 0;
   white-space: nowrap;
+  opacity: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
 }
 
 // Content container
 .bpk-checkbox-card-content {
-  padding: tokens.bpk-spacing-md();
   width: 100%;
+  padding: tokens.bpk-spacing-md();
 }
 
 // Icon slot
 .bpk-checkbox-card-icon {
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: inherit;
+  align-items: center;
   flex-shrink: 0;
+  color: inherit;
 
   // Ensure SVG fills use currentColor in all states
   svg {
-    fill: currentColor;
+    fill: currentcolor;
   }
 
   &--size-sm {
@@ -151,73 +169,77 @@
 
 // Label slot
 .bpk-checkbox-card-label {
+  display: -webkit-box;
+  width: 100%;
+  color: inherit;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+
   @include typography.bpk-heading-5;
 
-  color: inherit;
-  text-align: center !important;
-  width: 100%;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  // Force center alignment for all child elements
-  * {
-    text-align: center !important;
+  // Keep nested content centered without using !important.
+  > * {
+    text-align: inherit;
   }
 }
 
 // Description slot
 .bpk-checkbox-card-description {
-  @include typography.bpk-text;
-
-  color: var(--bpk-checkbox-card-fg-secondary, #{tokens.$bpk-text-secondary-day});
-  text-align: center !important;
-  width: 100%;
   display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  width: 100%;
+  color: var(
+    --bpk-checkbox-card-fg-secondary,
+    #{tokens.$bpk-text-secondary-day}
+  );
+  text-align: center;
   text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+
+  @include typography.bpk-text;
 
   .bpk-checkbox-card-root--checked & {
     color: inherit; // Use root color when checked
   }
 
-  // Force center alignment for all child elements
-  * {
-    text-align: center !important;
+  // Keep nested content centered without using !important.
+  > * {
+    text-align: inherit;
   }
 }
 
 // Price slot
 .bpk-checkbox-card-price {
-  @include typography.bpk-heading-5;
-
-  color: inherit;
-  text-align: center !important;
   width: 100%;
   flex-shrink: 0;
+  color: inherit;
+  text-align: center;
 
-  // Force all child elements to inherit color and center align
-  * {
-    color: inherit !important;
-    text-align: center !important;
+  @include typography.bpk-heading-5;
+
+  // BpkPrice has explicit text colours; scope overrides here.
+  .bpk-price,
+  .bpk-price__price,
+  .bpk-price__trailing {
+    color: inherit;
   }
 }
 
 // Image slot
 .bpk-checkbox-card-image {
   width: 100%;
-  border-radius: tokens.$bpk-border-radius-sm;
   flex-shrink: 0;
+  border-radius: tokens.$bpk-border-radius-sm;
   overflow: hidden;
 }
 
 // Stack primitive
 .bpk-checkbox-card-stack {
   display: flex;
-  flex-direction: column;
   width: 100%;
+  flex-direction: column;
 
   &--gap-sm {
     gap: tokens.bpk-spacing-sm();
@@ -251,8 +273,8 @@
 // Inline primitive
 .bpk-checkbox-card-inline {
   display: flex;
-  flex-direction: row;
   width: 100%;
+  flex-direction: row;
 
   &--gap-sm {
     gap: tokens.bpk-spacing-sm();
@@ -513,15 +535,13 @@
     display: -webkit-box;
     width: 100%; // Full width to allow text centering
     color: tokens.$bpk-text-primary-day;
-    font-size: tokens.$bpk-font-size-base; // 1rem
-    font-weight: tokens.$bpk-font-weight-bold; // 700
-    letter-spacing: 0;
-    line-height: 1.25; // 125% per Figma (Heading 5)
     text-align: center; // Center text within the element
     text-overflow: ellipsis;
     overflow: hidden;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+
+    @include typography.bpk-heading-5;
 
     .bpk-checkbox-card--disabled & {
       color: tokens.$bpk-text-disabled-day;
@@ -551,11 +571,9 @@
     width: 100%; // Full width to allow text alignment
     flex-shrink: 0;
     color: tokens.$bpk-text-secondary-day; // Text-Secondary per Figma
-    font-size: tokens.$bpk-font-size-sm; // 0.875rem (14px) per Figma Body/Footnote
-    font-weight: tokens.$bpk-font-weight-book; // 400 per Figma
-    letter-spacing: 0;
-    line-height: 1.428; // 142.8% per Figma Body/Footnote
     text-align: center; // Center align per Figma
+
+    @include typography.bpk-footnote;
 
     @include utils.bpk-rtl {
       order: 1;
