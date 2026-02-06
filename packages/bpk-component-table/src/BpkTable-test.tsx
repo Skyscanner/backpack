@@ -16,17 +16,27 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import { render } from '@testing-library/react';
 
-type Props = { children: Node };
+import BpkTable from './BpkTable';
 
-const BpkTableHead = (props: Props) => <thead {...props} />;
+describe('BpkTable', () => {
+  it('should render correctly', () => {
+    const { asFragment } = render(
+      <BpkTable>
+        <tbody />
+      </BpkTable>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-BpkTableHead.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-export default BpkTableHead;
+  it('should render correctly with custom class', () => {
+    const { asFragment } = render(
+      <BpkTable className="my-table">
+        <tbody />
+      </BpkTable>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+});
