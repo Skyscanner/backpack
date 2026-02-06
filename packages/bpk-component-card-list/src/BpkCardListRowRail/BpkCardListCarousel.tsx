@@ -27,7 +27,10 @@ import {
 
 import throttle from 'lodash/throttle';
 
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
+import {
+  cssModules,
+  getDataComponentAttribute,
+} from '../../../bpk-react-utils';
 
 import { RENDER_BUFFER_SIZE } from './constants';
 import {
@@ -185,7 +188,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-   return (
+  return (
     <div
       className={getClassName(`bpk-card-list-row-rail__${layout}`)}
       {...getDataComponentAttribute('CardListCarousel')}
@@ -257,7 +260,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         );
       })}
     </div>
-  )
+  );
 };
 
 export default BpkCardListCarousel;
