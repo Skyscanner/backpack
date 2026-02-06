@@ -16,21 +16,21 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { CSSProperties, KeyboardEvent, ReactNode } from 'react';
 import { useState, useId, useCallback, useMemo } from 'react';
 
-import { cssModules } from '../../../bpk-react-utils';
+import { cssModules } from '../../../../bpk-react-utils';
+import { CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS } from '../common-types';
 
 import { CheckboxCardContext } from './CheckboxCardContext';
-import { CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS } from './common-types';
 
-import type { CheckboxCardVariant, CheckboxCardRadius } from './common-types';
+import type { CheckboxCardVariant, CheckboxCardRadius } from '../common-types';
 
-import STYLES from './BpkCheckboxCard.module.scss';
+import STYLES from '../BpkCheckboxCard.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkCheckboxCardRootProps = {
+export type RootProps = {
   /**
    * Children components (Control, Content, slots, etc.)
    */
@@ -141,7 +141,7 @@ export type BpkCheckboxCardRootProps = {
  *
  * @returns {JSX.Element} Rendered checkbox card root container with context.
  */
-export function BpkCheckboxCardRoot({
+export function Root({
   'aria-describedby': ariaDescribedby,
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledby,
@@ -157,7 +157,7 @@ export function BpkCheckboxCardRoot({
   value,
   variant = CHECKBOX_CARD_VARIANTS.onCanvasDefault,
   width,
-}: BpkCheckboxCardRootProps) {
+}: RootProps) {
   // Controlled/uncontrolled state management
   const isControlled = controlledChecked !== undefined;
   const [internalChecked, setInternalChecked] = useState(defaultChecked);
@@ -191,8 +191,8 @@ export function BpkCheckboxCardRoot({
   );
 
   // Custom sizing styles
-  const customStyles: React.CSSProperties = useMemo(() => {
-    const styles: React.CSSProperties = {};
+  const customStyles: CSSProperties = useMemo(() => {
+    const styles: CSSProperties = {};
     if (width !== undefined) {
       styles.width = typeof width === 'number' ? `${width}px` : width;
     }
@@ -239,7 +239,7 @@ export function BpkCheckboxCardRoot({
 
   // Handle keyboard events
   const handleKeyDown = useCallback(
-    (event: React.KeyboardEvent) => {
+    (event: KeyboardEvent) => {
       if (!disabled && (event.key === ' ' || event.key === 'Enter')) {
         event.preventDefault();
         handleCheckedChange(!checked);

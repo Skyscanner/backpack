@@ -18,59 +18,59 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../../bpk-react-utils';
+import { cssModules } from '../../../../bpk-react-utils';
 
-import STYLES from './BpkCheckboxCard.module.scss';
+import STYLES from '../BpkCheckboxCard.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkCheckboxCardInlineProps = {
+export type StackProps = {
   /**
-   * Child components to arrange horizontally
+   * Child components to stack vertically
    */
   children: ReactNode;
 
   /**
-   * Gap between inline items
+   * Gap between stacked items
    * Uses Backpack spacing tokens
    * @default "md"
    */
   gap?: 'sm' | 'md' | 'lg' | 'xl';
 
   /**
-   * Vertical alignment of items
+   * Horizontal alignment of items
    * @default "center"
    */
   align?: 'start' | 'center' | 'end';
 };
 
 /**
- * BpkCheckboxCard.Inline - Horizontal layout primitive
+ * BpkCheckboxCard.Stack - Vertical layout primitive
  *
- * Arranges child components horizontally with consistent spacing
+ * Arranges child components vertically with consistent spacing
  * using Backpack design tokens.
  *
- * This primitive is useful for creating horizontal layouts within
- * checkbox cards, such as placing an icon next to a label or
- * arranging multiple elements in a row.
+ * This primitive is useful for creating vertical layouts within
+ * checkbox cards, such as stacking labels and descriptions.
  *
  * @example
- * <BpkCheckboxCard.Inline gap="sm" align="center">
- *   <BpkCheckboxCard.Icon icon={LandmarkIconLg} size="sm" />
+ * <BpkCheckboxCard.Stack gap="sm" align="center">
  *   <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
- * </BpkCheckboxCard.Inline>
+ *   <BpkCheckboxCard.Description>Central location</BpkCheckboxCard.Description>
+ *   <BpkCheckboxCard.Price>£85</BpkCheckboxCard.Price>
+ * </BpkCheckboxCard.Stack>
  *
- * @returns {JSX.Element} Rendered inline layout container.
+ * @returns {JSX.Element} Rendered stack layout container.
  */
-export function BpkCheckboxCardInline({
+export function Stack({
   align = 'center',
   children,
   gap = 'md',
-}: BpkCheckboxCardInlineProps) {
+}: StackProps) {
   const className = getClassName(
-    'bpk-checkbox-card-inline',
-    `bpk-checkbox-card-inline--gap-${gap}`,
-    `bpk-checkbox-card-inline--align-${align}`
+    'bpk-checkbox-card-stack',
+    `bpk-checkbox-card-stack--gap-${gap}`,
+    `bpk-checkbox-card-stack--align-${align}`
   );
 
   return <div className={className}>{children}</div>;

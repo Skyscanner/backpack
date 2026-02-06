@@ -45,87 +45,98 @@
  * </BpkCheckboxCard.Root>
  */
 
-import { BpkCheckboxCardContent } from './BpkCheckboxCardContent';
-import BpkCheckboxCardControl from './BpkCheckboxCardControl';
-import { BpkCheckboxCardDescription } from './BpkCheckboxCardDescription';
-import { BpkCheckboxCardIcon } from './BpkCheckboxCardIcon';
-import { BpkCheckboxCardImage } from './BpkCheckboxCardImage';
-import { BpkCheckboxCardInline } from './BpkCheckboxCardInline';
-import { BpkCheckboxCardLabel } from './BpkCheckboxCardLabel';
-import { BpkCheckboxCardPrice } from './BpkCheckboxCardPrice';
-import { BpkCheckboxCardRoot } from './BpkCheckboxCardRoot';
-import { BpkCheckboxCardStack } from './BpkCheckboxCardStack';
+import { Content } from './subcomponents/Content';
+import Control from './subcomponents/Control';
+import { Description } from './subcomponents/Description';
+import { Icon } from './subcomponents/Icon';
+import { Image } from './subcomponents/Image';
+import { Inline } from './subcomponents/Inline';
+import { Label } from './subcomponents/Label';
+import { Price } from './subcomponents/Price';
+import { Root } from './subcomponents/Root';
+import { Stack } from './subcomponents/Stack';
 
 /**
  * Main BpkCheckboxCard compound component
  * Combines all sub-components into a single exportable object
  */
-export const BpkCheckboxCard = Object.assign(BpkCheckboxCardRoot, {
+export const BpkCheckboxCard = Object.assign(Root, {
   /**
    * Root container - manages state and provides context
    */
-  Root: BpkCheckboxCardRoot,
+  Root,
 
   /**
    * Hidden checkbox input - handles form state
    */
-  Control: BpkCheckboxCardControl,
+  Control,
 
   /**
    * Content container - flexible layout
    */
-  Content: BpkCheckboxCardContent,
+  Content,
 
   /**
    * Icon slot - displays Backpack icons
    */
-  Icon: BpkCheckboxCardIcon,
+  Icon,
 
   /**
    * Image slot - displays images
    */
-  Image: BpkCheckboxCardImage,
+  Image,
 
   /**
    * Label slot - primary text with line clamping
    */
-  Label: BpkCheckboxCardLabel,
+  Label,
 
   /**
    * Description slot - secondary text with line clamping
    */
-  Description: BpkCheckboxCardDescription,
+  Description,
 
   /**
    * Price slot - displays price information
    */
-  Price: BpkCheckboxCardPrice,
+  Price,
 
   /**
    * Stack primitive - vertical layout
    */
-  Stack: BpkCheckboxCardStack,
+  Stack,
 
   /**
    * Inline primitive - horizontal layout
    */
-  Inline: BpkCheckboxCardInline,
+  Inline,
 });
 
 export default BpkCheckboxCard;
 
-// Export all prop types
-export type { BpkCheckboxCardRootProps } from './BpkCheckboxCardRoot';
-export type { BpkCheckboxCardContentProps } from './BpkCheckboxCardContent';
-export type { BpkCheckboxCardIconProps } from './BpkCheckboxCardIcon';
-export type { BpkCheckboxCardImageProps } from './BpkCheckboxCardImage';
-export type { BpkCheckboxCardLabelProps } from './BpkCheckboxCardLabel';
-export type { BpkCheckboxCardDescriptionProps } from './BpkCheckboxCardDescription';
-export type { BpkCheckboxCardPriceProps } from './BpkCheckboxCardPrice';
-export type { BpkCheckboxCardStackProps } from './BpkCheckboxCardStack';
-export type { BpkCheckboxCardInlineProps } from './BpkCheckboxCardInline';
+// Export subcomponent prop types
+export type { RootProps } from './subcomponents/Root';
+export type { ContentProps } from './subcomponents/Content';
+export type { IconProps } from './subcomponents/Icon';
+export type { ImageProps } from './subcomponents/Image';
+export type { LabelProps } from './subcomponents/Label';
+export type { DescriptionProps } from './subcomponents/Description';
+export type { PriceProps } from './subcomponents/Price';
+export type { StackProps } from './subcomponents/Stack';
+export type { InlineProps } from './subcomponents/Inline';
+
+// Backward-compatible type aliases
+export type { RootProps as BpkCheckboxCardRootProps } from './subcomponents/Root';
+export type { ContentProps as BpkCheckboxCardContentProps } from './subcomponents/Content';
+export type { IconProps as BpkCheckboxCardIconProps } from './subcomponents/Icon';
+export type { ImageProps as BpkCheckboxCardImageProps } from './subcomponents/Image';
+export type { LabelProps as BpkCheckboxCardLabelProps } from './subcomponents/Label';
+export type { DescriptionProps as BpkCheckboxCardDescriptionProps } from './subcomponents/Description';
+export type { PriceProps as BpkCheckboxCardPriceProps } from './subcomponents/Price';
+export type { StackProps as BpkCheckboxCardStackProps } from './subcomponents/Stack';
+export type { InlineProps as BpkCheckboxCardInlineProps } from './subcomponents/Inline';
 
 // Export context and common types
-export { useCheckboxCardContext } from './CheckboxCardContext';
-export type { CheckboxCardContextValue } from './CheckboxCardContext';
+export { useCheckboxCardContext } from './subcomponents/CheckboxCardContext';
+export type { CheckboxCardContextValue } from './subcomponents/CheckboxCardContext';
 export * from './common-types';

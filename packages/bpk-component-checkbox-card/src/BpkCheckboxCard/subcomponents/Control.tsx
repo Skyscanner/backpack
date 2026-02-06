@@ -18,11 +18,11 @@
 
 import type { ChangeEvent } from 'react';
 
-import { cssModules } from '../../../bpk-react-utils';
+import { cssModules } from '../../../../bpk-react-utils';
 
 import { useCheckboxCardContext } from './CheckboxCardContext';
 
-import STYLES from './BpkCheckboxCard.module.scss';
+import STYLES from '../BpkCheckboxCard.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -45,7 +45,7 @@ const getClassName = cssModules(STYLES);
  *
  * @returns {JSX.Element} Rendered hidden checkbox input control.
  */
-export default function BpkCheckboxCardControl() {
+export default function Control() {
   const {
     checked,
     controlId,

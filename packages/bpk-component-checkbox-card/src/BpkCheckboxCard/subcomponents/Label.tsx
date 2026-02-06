@@ -16,68 +16,68 @@
  * limitations under the License.
  */
 
-import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
-import { cssModules } from '../../../bpk-react-utils';
+import BpkText, { TEXT_STYLES } from '../../../../bpk-component-text';
+import { cssModules } from '../../../../bpk-react-utils';
 
 import { useCheckboxCardContext } from './CheckboxCardContext';
 
-import type { TextStyle } from '../../../bpk-component-text/src/BpkText';
+import type { TextStyle } from '../../../../bpk-component-text/src/BpkText';
 
-import STYLES from './BpkCheckboxCard.module.scss';
+import STYLES from '../BpkCheckboxCard.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkCheckboxCardDescriptionProps = {
+export type LabelProps = {
   /**
-   * Description text content (plain string only)
+   * Label text content (plain string only)
    */
   children: string;
 
   /**
    * Text style from Backpack typography system
-   * @default "body-default"
+   * @default "heading-5"
    */
   textStyle?: TextStyle;
 
   /**
    * Maximum number of lines before truncation
-   * @default 3
+   * @default 2
    */
   lineClamp?: number;
 };
 
 /**
- * BpkCheckboxCard.Description - Secondary description slot component
+ * BpkCheckboxCard.Label - Primary label slot component
  *
- * Displays secondary descriptive text using BpkText component.
+ * Displays the primary text label using BpkText component.
  * Automatically truncates with ellipsis after the specified number of lines.
  *
- * Connects to the Control component via ARIA describedby for accessibility.
+ * Connects to the Control component via ARIA labelledby for accessibility.
  *
  * @example
- * <BpkCheckboxCard.Description>
- *   Central location with easy access to main attractions
- * </BpkCheckboxCard.Description>
+ * <BpkCheckboxCard.Label>
+ *   City Centre Location
+ * </BpkCheckboxCard.Label>
  *
- * @example With custom line clamp
- * <BpkCheckboxCard.Description lineClamp={2}>
- *   Short description
- * </BpkCheckboxCard.Description>
+ * @example With custom text style
+ * <BpkCheckboxCard.Label textStyle="heading-4">
+ *   Premium Package
+ * </BpkCheckboxCard.Label>
  *
- * @returns {JSX.Element} Rendered checkbox card description content.
+ * @returns {JSX.Element} Rendered checkbox card label content.
  */
-export function BpkCheckboxCardDescription({
+export function Label({
   children,
-  lineClamp = 3,
-  textStyle = TEXT_STYLES.bodyDefault,
-}: BpkCheckboxCardDescriptionProps) {
-  const { descriptionId } = useCheckboxCardContext();
-  const className = getClassName('bpk-checkbox-card-description');
+  lineClamp = 2,
+  textStyle = TEXT_STYLES.heading5,
+}: LabelProps) {
+  const { labelId } = useCheckboxCardContext();
+  const className = getClassName('bpk-checkbox-card-label');
 
   return (
     <div className={className}>
       <BpkText
-        id={descriptionId}
+        id={labelId}
         textStyle={textStyle}
         tagName="span"
         style={{

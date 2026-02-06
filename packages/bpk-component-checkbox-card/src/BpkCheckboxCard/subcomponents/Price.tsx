@@ -17,14 +17,14 @@
  */
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkPrice from '../../../bpk-component-price';
-import { cssModules } from '../../../bpk-react-utils';
+import BpkPrice from '../../../../bpk-component-price';
+import { cssModules } from '../../../../bpk-react-utils';
 
-import STYLES from './BpkCheckboxCard.module.scss';
+import STYLES from '../BpkCheckboxCard.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkCheckboxCardPriceProps = {
+export type PriceProps = {
   /**
    * Price value to display (e.g., "85", "£85")
    */
@@ -61,12 +61,12 @@ export type BpkCheckboxCardPriceProps = {
  * @example With leading text
  * <BpkCheckboxCard.Price price="£85" leadingText="from" />
  */
-export function BpkCheckboxCardPrice({
+export function Price({
   align = 'left',
   leadingText,
   price,
   size = 'small',
-}: BpkCheckboxCardPriceProps) {
+}: PriceProps) {
   const className = getClassName('bpk-checkbox-card-price');
 
   return (

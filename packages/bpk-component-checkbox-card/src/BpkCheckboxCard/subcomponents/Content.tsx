@@ -18,13 +18,13 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../../bpk-react-utils';
+import { cssModules } from '../../../../bpk-react-utils';
 
-import STYLES from './BpkCheckboxCard.module.scss';
+import STYLES from '../BpkCheckboxCard.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkCheckboxCardContentProps = {
+export type ContentProps = {
   /**
    * Child components (slots, Stack layout primitives, etc.)
    * Optional - can be empty for minimal card displays
@@ -49,9 +49,9 @@ export type BpkCheckboxCardContentProps = {
  *   </BpkCheckboxCard.Stack>
  * </BpkCheckboxCard.Content>
  */
-export function BpkCheckboxCardContent({
+export function Content({
   children,
-}: BpkCheckboxCardContentProps) {
+}: ContentProps) {
   const className = getClassName('bpk-checkbox-card-content');
 
   return <div className={className}>{children}</div>;

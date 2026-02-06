@@ -18,13 +18,13 @@
 
 import type { ComponentType } from 'react';
 
-import { cssModules } from '../../../bpk-react-utils';
+import { cssModules } from '../../../../bpk-react-utils';
 
-import STYLES from './BpkCheckboxCard.module.scss';
+import STYLES from '../BpkCheckboxCard.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkCheckboxCardIconProps = {
+export type IconProps = {
   /**
    * Backpack icon component (import from bpk-component-icon)
    * Pass the component itself, not an instance
@@ -51,7 +51,7 @@ export type BpkCheckboxCardIconProps = {
  *
  * @returns {JSX.Element} Rendered checkbox card icon content.
  */
-export function BpkCheckboxCardIcon({ icon: Icon, size = 'md' }: BpkCheckboxCardIconProps) {
+export function Icon({ icon: IconComponent, size = 'md' }: IconProps) {
   const className = getClassName(
     'bpk-checkbox-card-icon',
     `bpk-checkbox-card-icon--size-${size}`
@@ -59,7 +59,7 @@ export function BpkCheckboxCardIcon({ icon: Icon, size = 'md' }: BpkCheckboxCard
 
   return (
     <div className={className}>
-      <Icon />
+      <IconComponent />
     </div>
   );
 }

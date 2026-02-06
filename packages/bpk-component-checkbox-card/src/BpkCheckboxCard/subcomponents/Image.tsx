@@ -16,14 +16,16 @@
  * limitations under the License.
  */
 
-import BpkImage from '../../../bpk-component-image';
-import { cssModules } from '../../../bpk-react-utils';
+import type { CSSProperties } from 'react';
 
-import STYLES from './BpkCheckboxCard.module.scss';
+import BpkImage from '../../../../bpk-component-image';
+import { cssModules } from '../../../../bpk-react-utils';
+
+import STYLES from '../BpkCheckboxCard.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkCheckboxCardImageProps = {
+export type ImageProps = {
   /**
    * Image URL
    */
@@ -70,15 +72,15 @@ export type BpkCheckboxCardImageProps = {
  *
  * @returns {JSX.Element} Rendered checkbox card image content.
  */
-export function BpkCheckboxCardImage({
+export function Image({
   alt = '',
   aspectRatio = 1,
   height,
   src,
-}: BpkCheckboxCardImageProps) {
+}: ImageProps) {
   const className = getClassName('bpk-checkbox-card-image');
 
-  const containerStyle: React.CSSProperties = {};
+  const containerStyle: CSSProperties = {};
   if (height !== undefined) {
     containerStyle.height = typeof height === 'number' ? `${height}px` : height;
   }
