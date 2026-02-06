@@ -25,21 +25,24 @@ import mockCards from '../../testMocks';
 import { LAYOUTS } from '../common-types';
 
 import BpkCardListCarousel from './BpkCardListCarousel';
-import { useIntersectionObserver } from './utils';
+import { useIntersectionObserver, usePageScrollSync } from './utils';
 
 jest.mock('./utils', () => ({
   setA11yTabIndex: jest.fn(),
-  useScrollToCard: jest.fn(),
   useIntersectionObserver: jest.fn(() => jest.fn()),
+  usePageScrollSync: jest.fn(),
 }));
 
 const mockSetCurrentIndex = jest.fn();
 const mockUseIntersectionObserver = jest.mocked(useIntersectionObserver);
+const mockUseCarouselScrollSync = jest.mocked(usePageScrollSync);
+
+// Holds a reference to the setVisibilityList function captured during component render
+let setVisibilityFn: Dispatch<SetStateAction<number[]>> | undefined;
 
 // Creates a mock implementation for useIntersectionObserver that sets
 // specific cards as visible based on the fill range (fillStart inclusive, fillEnd exclusive)
 const createIntersectionObserverMock = (fillStart: number, fillEnd: number) => {
-  let setVisibilityFn: Dispatch<SetStateAction<number[]>>;
   mockUseIntersectionObserver.mockImplementation((__, setVisibilityList) => {
     if (setVisibilityFn !== setVisibilityList) {
       setVisibilityFn = setVisibilityList;
@@ -67,7 +70,7 @@ describe('BpkCardListCarousel', () => {
     jest.clearAllMocks();
   });
 
-  beforeAll(() => {
+  beforeEach(() => {
     createIntersectionObserverMock(0, 3); // Cards 0,1,2 visible (first page)
   });
 
@@ -198,6 +201,45 @@ describe('BpkCardListCarousel', () => {
         expect(card.style.width).toBeFalsy();
         expect(card.style.height).toBeFalsy();
       });
+    });
+  });
+
+  describe('page-based scrolling on desktop', () => {
+    it('should mark cards at page boundaries with the correct class', () => {
+      render(<BpkCardListCarousel {...defaultProps} isMobile={false} />);
+      const cards = screen.getAllByRole('group');
+
+      // With initiallyShownCards=3, cards at index 0, 3 should be page starts
+      expect(cards[0].className).toContain('page-start');
+      expect(cards[1].className).not.toContain('page-start');
+      expect(cards[2].className).not.toContain('page-start');
+      expect(cards[3].className).toContain('page-start');
+    });
+
+    it('should call usePageScrollSync with correct options on desktop', () => {
+      render(<BpkCardListCarousel {...defaultProps} isMobile={false} />);
+
+      // Verify the hook was called with the correct options
+      expect(mockUseCarouselScrollSync).toHaveBeenCalledWith(
+        expect.objectContaining({
+          currentIndex: 0,
+          setCurrentIndex: mockSetCurrentIndex,
+          initiallyShownCards: 3,
+          enabled: true,
+          visibilityList: [1, 1, 1, 0, 0, 0],
+        }),
+      );
+    });
+
+    it('should disable usePageScrollSync on mobile', () => {
+      render(<BpkCardListCarousel {...defaultProps} isMobile />);
+
+      // On mobile, enabled should be false
+      expect(mockUseCarouselScrollSync).toHaveBeenCalledWith(
+        expect.objectContaining({
+          enabled: false,
+        }),
+      );
     });
   });
 });

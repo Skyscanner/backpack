@@ -16,31 +16,10 @@
  * limitations under the License.
  */
 
+import type { Dispatch, SetStateAction, RefObject } from 'react';
 import { useEffect, useRef } from 'react';
 
 import { RELEASE_LOCK_DELAY } from './constants';
-
-/**
- * Typically used to prevent useScrollToCard() from being called, to prevent scrollings caused by state changes, so as to avoid cyclic dependencies.
- * @param stateScrollingLockRef - Ref to the state that indicates if scrollIntoView should be locked
- * @param openSetStateLockTimeoutRef - Ref to the timeout that releases the lock after a delay. Should be renewed every time another scroll action is triggered, with a new lock is added.
- */
-
-export const lockScroll = (
-  stateScrollingLockRef: React.MutableRefObject<boolean>,
-  openSetStateLockTimeoutRef: React.MutableRefObject<NodeJS.Timeout | null>,
-) => {
-  // eslint-disable-next-line no-param-reassign
-  stateScrollingLockRef.current = true;
-  if (openSetStateLockTimeoutRef.current) {
-    clearTimeout(openSetStateLockTimeoutRef.current);
-  }
-  // eslint-disable-next-line no-param-reassign
-  openSetStateLockTimeoutRef.current = setTimeout(() => {
-    // eslint-disable-next-line no-param-reassign
-    stateScrollingLockRef.current = false;
-  }, RELEASE_LOCK_DELAY);
-};
 
 /**
  * Only sets the tabIndex of focusable elements as 0 if the card is visible, otherwise sets it to -1, including all its children.
@@ -65,36 +44,9 @@ export const setA11yTabIndex = (
   });
 };
 
-export const useScrollToCard = (
-  currentIndex: number,
-  container: HTMLElement | null,
-  cardRefs: React.MutableRefObject<Array<HTMLDivElement | null>>,
-  stateScrollingLockRef: React.MutableRefObject<boolean>,
-) => {
-  useEffect(() => {
-    const isVisible =
-      container &&
-      container.getBoundingClientRect().bottom > 0 &&
-      container.getBoundingClientRect().bottom <= window.innerHeight;
-    if (!isVisible) return; // Escape from scrollIntoView if the container is not visible, otherwise the webpage will scroll down to the last rendered & non-visible container
-
-    if (stateScrollingLockRef.current && stateScrollingLockRef.current === true)
-      return;
-
-    const targetCard = cardRefs.current[currentIndex];
-    if (targetCard) {
-      targetCard.scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-        inline: 'start',
-      });
-    }
-  }, [currentIndex]);
-};
-
 export const useIntersectionObserver = (
   { root, threshold }: IntersectionObserverInit,
-  setVisibilityList: React.Dispatch<React.SetStateAction<number[]>>,
+  setVisibilityList: Dispatch<SetStateAction<number[]>>,
 ) => {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
@@ -138,4 +90,133 @@ export const useIntersectionObserver = (
     }
   };
   return observeElement;
+};
+
+type UsePageScrollSyncOptions = {
+  currentIndex: number;
+  setCurrentIndex: Dispatch<SetStateAction<number>>;
+  initiallyShownCards: number;
+  cardRefs: RefObject<Array<HTMLDivElement | null>>;
+  visibilityList: number[];
+  container: HTMLElement | null;
+  enabled: boolean;
+};
+
+/**
+ * Provides bidirectional synchronisation between page index state and scroll position.
+ *
+ * - **State → Scroll**: When `currentIndex` changes (e.g. via pagination buttons),
+ *   the container scrolls to bring the corresponding page into view.
+ * - **Scroll → State**: When the user scrolls (via wheel or touch), `currentIndex`
+ *   is updated to reflect the first visible page.
+ *
+ * The hook uses a lock mechanism to prevent conflicts between programmatic and
+ * user-initiated scrolling.
+ */
+
+export const usePageScrollSync = ({
+  cardRefs,
+  container,
+  currentIndex,
+  enabled,
+  initiallyShownCards,
+  setCurrentIndex,
+  visibilityList,
+}: UsePageScrollSyncOptions): void => {
+  const isUserScrollingRef = useRef<boolean>(false);
+  const scrollEndTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
+  const lastCurrentIndexRef = useRef<number>(currentIndex);
+
+  // Effect 1: Programmatic scroll when currentIndex changes
+  useEffect(() => {
+    if (
+      !enabled ||
+      // Avoid triggering programmatic scroll when currentIndex changes due to user scroll
+      isUserScrollingRef.current ||
+      lastCurrentIndexRef.current === currentIndex
+    ) {
+      return;
+    }
+
+    lastCurrentIndexRef.current = currentIndex;
+
+    const isVisible =
+      container &&
+      container.getBoundingClientRect().bottom > 0 &&
+      container.getBoundingClientRect().bottom <= window.innerHeight;
+
+    if (!isVisible) {
+      return;
+    }
+
+    const targetCard = cardRefs.current?.[currentIndex * initiallyShownCards];
+    if (!targetCard) {
+      return;
+    }
+
+    targetCard.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'start',
+    });
+  }, [currentIndex, enabled, container, initiallyShownCards, cardRefs]);
+
+  // Effect 2: Scroll detection and silence-based lock release
+  useEffect(() => {
+    if (!enabled || !container) return undefined;
+
+    const handleScrollActivity = (e: Event) => {
+      // Set flag only for user input events, not scroll events
+      if (e.type === 'wheel' || e.type === 'touchstart') {
+        isUserScrollingRef.current = true;
+      }
+
+      // Reset silence timer on every scroll-related event
+      if (scrollEndTimeoutRef.current) {
+        clearTimeout(scrollEndTimeoutRef.current);
+      }
+
+      // Release lock after scroll silence
+      scrollEndTimeoutRef.current = setTimeout(() => {
+        isUserScrollingRef.current = false;
+      }, RELEASE_LOCK_DELAY);
+    };
+
+    container.addEventListener('scroll', handleScrollActivity, { passive: true });
+    container.addEventListener('wheel', handleScrollActivity, { passive: true });
+    container.addEventListener('touchstart', handleScrollActivity, {
+      passive: true,
+    });
+
+    return () => {
+      container.removeEventListener('scroll', handleScrollActivity);
+      container.removeEventListener('wheel', handleScrollActivity);
+      container.removeEventListener('touchstart', handleScrollActivity);
+      if (scrollEndTimeoutRef.current) {
+        clearTimeout(scrollEndTimeoutRef.current);
+      }
+    };
+  }, [enabled, container]);
+
+  // Effect 3: Update currentIndex from visibility during user scroll
+  useEffect(() => {
+    if (!enabled || !isUserScrollingRef.current) return;
+
+    const firstVisibleIndex = visibilityList.indexOf(1);
+    if (firstVisibleIndex === -1) return;
+
+    const newPageIndex = Math.floor(firstVisibleIndex / initiallyShownCards);
+    if (newPageIndex !== currentIndex) {
+      setCurrentIndex(newPageIndex);
+      lastCurrentIndexRef.current = newPageIndex;
+    }
+  }, [
+    visibilityList,
+    enabled,
+    initiallyShownCards,
+    currentIndex,
+    setCurrentIndex,
+  ]);
 };
