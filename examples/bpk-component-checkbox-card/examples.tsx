@@ -18,14 +18,17 @@
 
 import { useState } from 'react';
 
-import LandmarkIconLg from '../../packages/bpk-component-icon/lg/landmark';
-import BpkThemeProvider from '../../packages/bpk-theming';
-
 import { BpkCheckboxCard, CHECKBOX_CARD_THEME_ATTRIBUTES } from '../../packages/bpk-component-checkbox-card';
 import { CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS } from '../../packages/bpk-component-checkbox-card/src/BpkCheckboxCard/common-types';
+import LandmarkIconLg from '../../packages/bpk-component-icon/lg/landmark';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkThemeProvider from '../../packages/bpk-theming';
+
 
 /**
  * New Compound Component API - Basic Example
+ *
+ * @returns {JSX.Element} Rendered basic compound API example.
  */
 export const NewAPIBasicExample = () => {
   const [selected1, setSelected1] = useState(false);
@@ -65,6 +68,8 @@ export const NewAPIBasicExample = () => {
 
 /**
  * New Compound Component API - With Multi Content
+ *
+ * @returns {JSX.Element} Rendered compound API example with multiple content slots.
  */
 export const NewAPIWithMultiContentExample = () => {
   const [selected, setSelected] = useState(false);
@@ -97,6 +102,8 @@ export const NewAPIWithMultiContentExample = () => {
 
 /**
  * New Compound Component API - All Variants
+ *
+ * @returns {JSX.Element} Rendered compound API examples for all variants.
  */
 export const NewAPIAllVariantsExample = () => {
   const [selected1, setSelected1] = useState(false);
@@ -163,6 +170,8 @@ export const NewAPIAllVariantsExample = () => {
 
 /**
  * New Compound Component API - With Image
+ *
+ * @returns {JSX.Element} Rendered compound API example with image content.
  */
 export const NewAPIWithImageExample = () => {
   const [selected, setSelected] = useState(false);
@@ -194,6 +203,8 @@ export const NewAPIWithImageExample = () => {
 
 /**
  * New Compound Component API - With Inline Layout
+ *
+ * @returns {JSX.Element} Rendered compound API example with inline layout.
  */
 export const NewAPIWithInlineLayoutExample = () => {
   const [selected, setSelected] = useState(false);
@@ -219,6 +230,8 @@ export const NewAPIWithInlineLayoutExample = () => {
 
 /**
  * New Compound Component API - With Custom Theme
+ *
+ * @returns {JSX.Element} Rendered compound API example with custom theme overrides.
  */
 export const NewAPIWithCustomThemeExample = () => {
   const [selected1, setSelected1] = useState(false);

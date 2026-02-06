@@ -1,0 +1,14 @@
+
+> backpack@0.0.1 typecheck
+> tsc
+
+examples/bpk-component-checkbox-card/examples.tsx(22,30): error TS7016: Could not find a declaration file for module '../../packages/bpk-theming'. '/Users/gert-janvercauteren/conductor/workspaces/backpack/copenhagen/packages/bpk-theming/index.js' implicitly has an 'any' type.
+examples/bpk-component-checkbox-card/stories.tsx(28,8): error TS2307: Cannot find module './new-api-examples' or its corresponding type declarations.
+packages/bpk-component-checkbox-card/src/BpkCheckboxCard/BpkCheckboxCard-test.tsx(82,41): error TS2339: Property 'withBackground' does not exist on type '{ readonly onCanvasDefault: "on-canvas-default"; readonly onCanvasContrast: "on-canvas-contrast"; readonly onSurfaceContrast: "on-surface-contrast"; }'.
+packages/bpk-component-checkbox-card/src/BpkCheckboxCard/BpkCheckboxCard-test.tsx(94,41): error TS2339: Property 'noBackground' does not exist on type '{ readonly onCanvasDefault: "on-canvas-default"; readonly onCanvasContrast: "on-canvas-contrast"; readonly onSurfaceContrast: "on-surface-contrast"; }'.
+packages/bpk-component-checkbox-card/src/BpkCheckboxCard/BpkCheckboxCardPrice.tsx(19,22): error TS7016: Could not find a declaration file for module '../../../bpk-component-price'. '/Users/gert-janvercauteren/conductor/workspaces/backpack/copenhagen/packages/bpk-component-price/index.js' implicitly has an 'any' type.
+packages/bpk-component-checkbox-card/src/BpkCheckboxCardSimple/BpkCheckboxCardSimple.tsx(156,32): error TS2322: Type '{ children: (false | "" | 0 | Element | null | undefined)[]; orientation: string; align: string; gap: string; }' is not assignable to type 'IntrinsicAttributes & BpkCheckboxCardContentProps'.
+  Property 'orientation' does not exist on type 'IntrinsicAttributes & BpkCheckboxCardContentProps'.
+packages/bpk-component-checkbox-card/src/BpkCheckboxCardSimple/BpkCheckboxCardSimple.tsx(157,19): error TS2741: Property 'icon' is missing in type '{ children: ReactElement<any, string | JSXElementConstructor<any>>; }' but required in type 'BpkCheckboxCardIconProps'.
+packages/bpk-component-checkbox-card/src/BpkCheckboxCardSimple/BpkCheckboxCardSimple.tsx(167,20): error TS2741: Property 'price' is missing in type '{ children: string | number | true | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal; }' but required in type 'BpkCheckboxCardPriceProps'.
+packages/bpk-component-checkbox-card/src/BpkCheckboxCardSimple/BpkCheckboxCardSimple.tsx(169,24): error TS2339: Property 'Indicator' does not exist on type '(({ children, checked: controlledChecked, defaultChecked, onCheckedChange, disabled, required, name, value, variant, radius, width, height, "aria-label": ariaLabel, "aria-labelledby": ariaLabelledby, "aria-describedby": ariaDescribedby, }: BpkCheckboxCardRootProps) => Element) & { Root: ({ children, checked: control...'.

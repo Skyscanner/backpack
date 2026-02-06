@@ -19,6 +19,7 @@
 import type { ReactElement, ReactNode } from 'react';
 
 import { BpkCheckboxCard } from '../BpkCheckboxCard';
+
 import type { CheckboxCardVariant, CheckboxCardRadius } from '../BpkCheckboxCard/common-types';
 
 export type BpkCheckboxCardSimpleProps = {
@@ -121,24 +122,31 @@ export type BpkCheckboxCardSimpleProps = {
  *   price="£85"
  *   variant="onCanvasDefault"
  * />
+ *
+ * @returns {JSX.Element} Rendered checkbox card using the simple props API.
  */
 export function BpkCheckboxCardSimple({
+  ariaLabel,
   checked,
-  onChange,
-  label,
   description,
+  disabled,
+  height,
   icon,
   image,
-  price,
-  disabled,
-  variant,
-  radius,
-  ariaLabel,
+  label,
   name,
+  onChange,
+  price,
+  radius,
   value,
+  variant,
   width,
-  height,
 }: BpkCheckboxCardSimpleProps) {
+  const normalizedPrice =
+    typeof price === 'string' || typeof price === 'number'
+      ? String(price)
+      : null;
+
   return (
     <BpkCheckboxCard.Root
       checked={checked}
@@ -153,20 +161,22 @@ export function BpkCheckboxCardSimple({
       aria-label={ariaLabel}
     >
       <BpkCheckboxCard.Control />
-      <BpkCheckboxCard.Content orientation="vertical" align="center" gap="md">
-        {icon && <BpkCheckboxCard.Icon>{icon}</BpkCheckboxCard.Icon>}
-        {image && <BpkCheckboxCard.Image src={image} alt="" />}
-        {(label || description) && (
-          <BpkCheckboxCard.Stack gap="sm" align="center">
-            {label && <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>}
-            {description && (
-              <BpkCheckboxCard.Description>{description}</BpkCheckboxCard.Description>
-            )}
-          </BpkCheckboxCard.Stack>
-        )}
-        {price && <BpkCheckboxCard.Price>{price}</BpkCheckboxCard.Price>}
+      <BpkCheckboxCard.Content>
+        <BpkCheckboxCard.Stack gap="md" align="center">
+          {icon}
+          {image && <BpkCheckboxCard.Image src={image} alt="" />}
+          {(label || description) && (
+            <BpkCheckboxCard.Stack gap="sm" align="center">
+              {label && <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>}
+              {description && (
+                <BpkCheckboxCard.Description>{description}</BpkCheckboxCard.Description>
+              )}
+            </BpkCheckboxCard.Stack>
+          )}
+          {normalizedPrice && <BpkCheckboxCard.Price price={normalizedPrice} />}
+          {!normalizedPrice && price}
+        </BpkCheckboxCard.Stack>
       </BpkCheckboxCard.Content>
-      <BpkCheckboxCard.Indicator />
     </BpkCheckboxCard.Root>
   );
 }

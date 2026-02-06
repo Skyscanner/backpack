@@ -25,7 +25,7 @@ import {
   NewAPIWithImageExample,
   NewAPIWithInlineLayoutExample,
   NewAPIWithCustomThemeExample,
-} from './new-api-examples';
+} from './examples';
 
 export default {
   title: 'bpk-component-checkbox-card',

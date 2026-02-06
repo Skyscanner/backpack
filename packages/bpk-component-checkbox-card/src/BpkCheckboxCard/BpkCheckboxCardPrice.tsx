@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPrice from '../../../bpk-component-price';
 import { cssModules } from '../../../bpk-react-utils';
 
@@ -52,6 +53,8 @@ export type BpkCheckboxCardPriceProps = {
  *
  * Displays price information using BpkPrice component internally.
  *
+ * @returns {JSX.Element} Rendered price slot content.
+ *
  * @example Basic usage
  * <BpkCheckboxCard.Price price="£85" />
  *
@@ -59,10 +62,10 @@ export type BpkCheckboxCardPriceProps = {
  * <BpkCheckboxCard.Price price="£85" leadingText="from" />
  */
 export function BpkCheckboxCardPrice({
-  price,
-  leadingText,
-  size = 'small',
   align = 'left',
+  leadingText,
+  price,
+  size = 'small',
 }: BpkCheckboxCardPriceProps) {
   const className = getClassName('bpk-checkbox-card-price');
 

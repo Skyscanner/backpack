@@ -73,25 +73,25 @@ describe('BpkCheckboxCard', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render with-background variant correctly', () => {
+  it('should render on-canvas-default variant correctly', () => {
     const { asFragment } = render(
       <BpkCheckboxCard
         checked={false}
         onChange={() => {}}
         label="With background"
-        variant={CHECKBOX_CARD_VARIANTS.withBackground}
+        variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render no-background variant correctly', () => {
+  it('should render on-canvas-contrast variant correctly', () => {
     const { asFragment } = render(
       <BpkCheckboxCard
         checked={false}
         onChange={() => {}}
         label="No background"
-        variant={CHECKBOX_CARD_VARIANTS.noBackground}
+        variant={CHECKBOX_CARD_VARIANTS.onCanvasContrast}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
