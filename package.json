@@ -180,7 +180,7 @@
     "style-loader": "^4.0.0",
     "ts-migrate": "^0.1.35",
     "typescript": "^5.9.2",
-    "webpack": "^5.103.0",
+    "webpack": "^5.105.0",
     "wrapper-webpack-plugin": "^2.2.2"
   },
   "overrides": {
