@@ -22,6 +22,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@ark-ui/react": "^4.5.0",
     "@chakra-ui/react": "^3.30.0",
     "@floating-ui/react": "^0.26.12",
     "@popperjs/core": "^2.11.8",

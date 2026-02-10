@@ -1,0 +1,684 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkCheckbox.Root should render correctly 1`] = `
+<DocumentFragment>
+  <label
+    class="bpk-checkbox"
+    data-backpack-ds-component="Checkbox"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::r0::input"
+    id="checkbox::r0:"
+  >
+    <div
+      class="bpk-checkbox__control-wrapper"
+    >
+      <div
+        aria-hidden="true"
+        class="bpk-checkbox__control"
+        data-part="control"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox::r0::control"
+      >
+        <div
+          class="bpk-checkbox__indicator"
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="unchecked"
+          dir="ltr"
+          hidden=""
+        >
+          <svg
+            fill="none"
+            height="9"
+            viewBox="0 0 13 9"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.35352 3.64648L5.5 7.5L11.5 1.5"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+            />
+          </svg>
+        </div>
+        <div
+          class="bpk-checkbox__indicator"
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="unchecked"
+          dir="ltr"
+          hidden=""
+        >
+          <svg
+            fill="none"
+            height="3"
+            viewBox="0 0 10 3"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="currentColor"
+              height="3"
+              rx="1.5"
+              width="10"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <span
+      class="bpk-checkbox__label"
+      data-part="label"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::r0::label"
+    >
+      Prefer directs
+    </span>
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::r0::label"
+      id="checkbox::r0::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
+  </label>
+</DocumentFragment>
+`;
+
+exports[`BpkCheckbox.Root should render correctly with checked state 1`] = `
+<DocumentFragment>
+  <label
+    class="bpk-checkbox"
+    data-backpack-ds-component="Checkbox"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="checked"
+    dir="ltr"
+    for="checkbox::r1::input"
+    id="checkbox::r1:"
+  >
+    <div
+      class="bpk-checkbox__control-wrapper"
+    >
+      <div
+        aria-hidden="true"
+        class="bpk-checkbox__control"
+        data-part="control"
+        data-scope="checkbox"
+        data-state="checked"
+        dir="ltr"
+        id="checkbox::r1::control"
+      >
+        <div
+          class="bpk-checkbox__indicator"
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="checked"
+          dir="ltr"
+        >
+          <svg
+            fill="none"
+            height="9"
+            viewBox="0 0 13 9"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.35352 3.64648L5.5 7.5L11.5 1.5"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+            />
+          </svg>
+        </div>
+        <div
+          class="bpk-checkbox__indicator"
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="checked"
+          dir="ltr"
+          hidden=""
+        >
+          <svg
+            fill="none"
+            height="3"
+            viewBox="0 0 10 3"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="currentColor"
+              height="3"
+              rx="1.5"
+              width="10"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <span
+      class="bpk-checkbox__label"
+      data-part="label"
+      data-scope="checkbox"
+      data-state="checked"
+      dir="ltr"
+      id="checkbox::r1::label"
+    >
+      Prefer directs
+    </span>
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::r1::label"
+      checked=""
+      id="checkbox::r1::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
+  </label>
+</DocumentFragment>
+`;
+
+exports[`BpkCheckbox.Root should render correctly with disabled attribute 1`] = `
+<DocumentFragment>
+  <label
+    class="bpk-checkbox bpk-checkbox--disabled"
+    data-backpack-ds-component="Checkbox"
+    data-disabled=""
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::r2::input"
+    id="checkbox::r2:"
+  >
+    <div
+      class="bpk-checkbox__control-wrapper"
+    >
+      <div
+        aria-hidden="true"
+        class="bpk-checkbox__control"
+        data-disabled=""
+        data-part="control"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox::r2::control"
+      >
+        <div
+          class="bpk-checkbox__indicator"
+          data-disabled=""
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="unchecked"
+          dir="ltr"
+          hidden=""
+        >
+          <svg
+            fill="none"
+            height="9"
+            viewBox="0 0 13 9"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.35352 3.64648L5.5 7.5L11.5 1.5"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+            />
+          </svg>
+        </div>
+        <div
+          class="bpk-checkbox__indicator"
+          data-disabled=""
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="unchecked"
+          dir="ltr"
+          hidden=""
+        >
+          <svg
+            fill="none"
+            height="3"
+            viewBox="0 0 10 3"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="currentColor"
+              height="3"
+              rx="1.5"
+              width="10"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <span
+      class="bpk-checkbox__label"
+      data-disabled=""
+      data-part="label"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::r2::label"
+    >
+      Prefer directs
+    </span>
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::r2::label"
+      disabled=""
+      id="checkbox::r2::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
+  </label>
+</DocumentFragment>
+`;
+
+exports[`BpkCheckbox.Root should render correctly with indeterminate state 1`] = `
+<DocumentFragment>
+  <label
+    class="bpk-checkbox"
+    data-backpack-ds-component="Checkbox"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="indeterminate"
+    dir="ltr"
+    for="checkbox::r6::input"
+    id="checkbox::r6:"
+  >
+    <div
+      class="bpk-checkbox__control-wrapper"
+    >
+      <div
+        aria-hidden="true"
+        class="bpk-checkbox__control"
+        data-part="control"
+        data-scope="checkbox"
+        data-state="indeterminate"
+        dir="ltr"
+        id="checkbox::r6::control"
+      >
+        <div
+          class="bpk-checkbox__indicator"
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="indeterminate"
+          dir="ltr"
+          hidden=""
+        >
+          <svg
+            fill="none"
+            height="9"
+            viewBox="0 0 13 9"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.35352 3.64648L5.5 7.5L11.5 1.5"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+            />
+          </svg>
+        </div>
+        <div
+          class="bpk-checkbox__indicator"
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="indeterminate"
+          dir="ltr"
+        >
+          <svg
+            fill="none"
+            height="3"
+            viewBox="0 0 10 3"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="currentColor"
+              height="3"
+              rx="1.5"
+              width="10"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <span
+      class="bpk-checkbox__label"
+      data-part="label"
+      data-scope="checkbox"
+      data-state="indeterminate"
+      dir="ltr"
+      id="checkbox::r6::label"
+    >
+      Prefer directs
+    </span>
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::r6::label"
+      id="checkbox::r6::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
+  </label>
+</DocumentFragment>
+`;
+
+exports[`BpkCheckbox.Root should render correctly with invalid attribute 1`] = `
+<DocumentFragment>
+  <label
+    class="bpk-checkbox"
+    data-backpack-ds-component="Checkbox"
+    data-invalid=""
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::r4::input"
+    id="checkbox::r4:"
+  >
+    <div
+      class="bpk-checkbox__control-wrapper"
+    >
+      <div
+        aria-hidden="true"
+        class="bpk-checkbox__control"
+        data-invalid=""
+        data-part="control"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox::r4::control"
+      >
+        <div
+          class="bpk-checkbox__indicator"
+          data-invalid=""
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="unchecked"
+          dir="ltr"
+          hidden=""
+        >
+          <svg
+            fill="none"
+            height="9"
+            viewBox="0 0 13 9"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.35352 3.64648L5.5 7.5L11.5 1.5"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+            />
+          </svg>
+        </div>
+        <div
+          class="bpk-checkbox__indicator"
+          data-invalid=""
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="unchecked"
+          dir="ltr"
+          hidden=""
+        >
+          <svg
+            fill="none"
+            height="3"
+            viewBox="0 0 10 3"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="currentColor"
+              height="3"
+              rx="1.5"
+              width="10"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <span
+      class="bpk-checkbox__label"
+      data-invalid=""
+      data-part="label"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::r4::label"
+    >
+      Prefer directs
+    </span>
+    <input
+      aria-invalid="true"
+      aria-labelledby="checkbox::r4::label"
+      id="checkbox::r4::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
+  </label>
+</DocumentFragment>
+`;
+
+exports[`BpkCheckbox.Root should render correctly with required attribute 1`] = `
+<DocumentFragment>
+  <label
+    class="bpk-checkbox"
+    data-backpack-ds-component="Checkbox"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::r5::input"
+    id="checkbox::r5:"
+  >
+    <div
+      class="bpk-checkbox__control-wrapper"
+    >
+      <div
+        aria-hidden="true"
+        class="bpk-checkbox__control"
+        data-part="control"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox::r5::control"
+      >
+        <div
+          class="bpk-checkbox__indicator"
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="unchecked"
+          dir="ltr"
+          hidden=""
+        >
+          <svg
+            fill="none"
+            height="9"
+            viewBox="0 0 13 9"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.35352 3.64648L5.5 7.5L11.5 1.5"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+            />
+          </svg>
+        </div>
+        <div
+          class="bpk-checkbox__indicator"
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="unchecked"
+          dir="ltr"
+          hidden=""
+        >
+          <svg
+            fill="none"
+            height="3"
+            viewBox="0 0 10 3"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="currentColor"
+              height="3"
+              rx="1.5"
+              width="10"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <span
+      class="bpk-checkbox__label"
+      data-part="label"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::r5::label"
+    >
+      Prefer directs
+    </span>
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::r5::label"
+      id="checkbox::r5::input"
+      name="test"
+      required=""
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
+  </label>
+</DocumentFragment>
+`;
+
+exports[`BpkCheckbox.Root should render correctly with white attribute 1`] = `
+<DocumentFragment>
+  <label
+    class="bpk-checkbox bpk-checkbox--white"
+    data-backpack-ds-component="Checkbox"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::r3::input"
+    id="checkbox::r3:"
+  >
+    <div
+      class="bpk-checkbox__control-wrapper"
+    >
+      <div
+        aria-hidden="true"
+        class="bpk-checkbox__control"
+        data-part="control"
+        data-scope="checkbox"
+        data-state="unchecked"
+        dir="ltr"
+        id="checkbox::r3::control"
+      >
+        <div
+          class="bpk-checkbox__indicator"
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="unchecked"
+          dir="ltr"
+          hidden=""
+        >
+          <svg
+            fill="none"
+            height="9"
+            viewBox="0 0 13 9"
+            width="13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.35352 3.64648L5.5 7.5L11.5 1.5"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+            />
+          </svg>
+        </div>
+        <div
+          class="bpk-checkbox__indicator"
+          data-part="indicator"
+          data-scope="checkbox"
+          data-state="unchecked"
+          dir="ltr"
+          hidden=""
+        >
+          <svg
+            fill="none"
+            height="3"
+            viewBox="0 0 10 3"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="currentColor"
+              height="3"
+              rx="1.5"
+              width="10"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <span
+      class="bpk-checkbox__label"
+      data-part="label"
+      data-scope="checkbox"
+      data-state="unchecked"
+      dir="ltr"
+      id="checkbox::r3::label"
+    >
+      Prefer directs
+    </span>
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::r3::label"
+      id="checkbox::r3::input"
+      name="test"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
+  </label>
+</DocumentFragment>
+`;
