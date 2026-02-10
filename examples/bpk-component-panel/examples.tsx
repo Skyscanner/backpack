@@ -19,6 +19,8 @@
 import BpkPanel, { PANEL_BG_COLORS } from '../../packages/bpk-component-panel';
 import BpkText, { TEXT_COLORS } from '../../packages/bpk-component-text';
 
+import type { PanelBgColor } from '../../packages/bpk-component-panel';
+
 import STYLES from './examples.module.scss';
 
 const textColorForBg = {
@@ -32,7 +34,7 @@ const textColorForBg = {
   [PANEL_BG_COLORS.surfaceTint]: TEXT_COLORS.textPrimary,
 };
 
-const rowStyleForBg: Record<string, string> = {
+const rowStyleForBg: Partial<Record<PanelBgColor, string>> = {
   [PANEL_BG_COLORS.surfaceLowContrast]: 'bpk-panel-examples--row-dark',
   [PANEL_BG_COLORS.surfaceTint]: 'bpk-panel-examples--row-gradient',
 };
