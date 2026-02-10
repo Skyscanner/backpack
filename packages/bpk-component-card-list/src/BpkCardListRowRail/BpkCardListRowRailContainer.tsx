@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { useState, Children, useMemo } from 'react';
+import { useState, Children } from 'react';
 
 import BpkPageIndicator from '../../../bpk-component-page-indicator';
 import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
@@ -45,7 +45,7 @@ const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
   const showAccessory = childrenCount > initiallyShownCards;
 
   // Calculate initial page from card index
-  const initialPageIndex = useMemo(() => {
+  const [initialPageIndex] = useState(() => {
     if (initiallyInViewCardIndex < 0) {
       return 0;
     }
@@ -53,8 +53,7 @@ const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
       return Math.max(0, totalIndicators - 1);
     }
     return Math.floor(initiallyInViewCardIndex / initiallyShownCards);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Empty deps - calculate once on mount
+  });
 
   const [currentIndex, setCurrentIndex] = useState(initialPageIndex);
 
