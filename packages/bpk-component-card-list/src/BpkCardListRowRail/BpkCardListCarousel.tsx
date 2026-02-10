@@ -232,6 +232,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           return (
             <div
               {...commonProps}
+              ref={cardRefFns[index]}
               style={{
                 ...commonProps.style,
                 ...cardDimensionStyle,
