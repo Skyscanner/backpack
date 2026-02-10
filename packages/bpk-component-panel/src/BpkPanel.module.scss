@@ -16,7 +16,19 @@
  * limitations under the License.
  */
 
+@use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/panels';
+
+$panel-bg-colors: (
+  'surface-default': tokens.$bpk-surface-default-day,
+  'surface-elevated': tokens.$bpk-surface-elevated-day,
+  'surface-hero': tokens.$bpk-surface-hero-day,
+  'surface-contrast': tokens.$bpk-surface-contrast-day,
+  'surface-highlight': tokens.$bpk-surface-highlight-day,
+  'surface-subtle': tokens.$bpk-surface-subtle-day,
+  'surface-low-contrast': tokens.$bpk-surface-low-contrast-day,
+  'surface-tint': tokens.$bpk-surface-tint-day,
+);
 
 .bpk-panel {
   @include panels.bpk-panel;
@@ -35,5 +47,11 @@
 
   &--full-width-keyline {
     @include panels.bpk-panel--full-width-keyline;
+  }
+
+  @each $color-name, $color-value in $panel-bg-colors {
+    &--#{$color-name} {
+      background-color: $color-value;
+    }
   }
 }

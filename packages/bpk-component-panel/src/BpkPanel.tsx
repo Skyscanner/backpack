@@ -24,8 +24,22 @@ import STYLES from './BpkPanel.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+export const PANEL_BG_COLORS = {
+  surfaceDefault: 'surface-default',
+  surfaceElevated: 'surface-elevated',
+  surfaceHero: 'surface-hero',
+  surfaceContrast: 'surface-contrast',
+  surfaceHighlight: 'surface-highlight',
+  surfaceSubtle: 'surface-subtle',
+  surfaceLowContrast: 'surface-low-contrast',
+  surfaceTint: 'surface-tint',
+} as const;
+
+export type PanelBgColor = (typeof PANEL_BG_COLORS)[keyof typeof PANEL_BG_COLORS];
+
 export type Props = {
   children: ReactNode;
+  bgColor?: PanelBgColor,
   padded?: boolean,
   fullWidth?: boolean,
   className?: string | null,
@@ -35,6 +49,7 @@ export type Props = {
 
 
 const BpkPanel = ({
+  bgColor = PANEL_BG_COLORS.surfaceDefault,
   children,
   className = null,
   fullWidth = false,
@@ -57,6 +72,7 @@ const BpkPanel = ({
       classNames.push(getClassName('bpk-panel--keyline'));
     }
   }
+  classNames.push(getClassName(`bpk-panel--${bgColor}`));
   if (className) {
     classNames.push(className);
   }

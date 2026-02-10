@@ -16,20 +16,21 @@
  * limitations under the License.
  */
 
-import BpkPanel from '../../packages/bpk-component-panel';
+import BpkPanel, { PANEL_BG_COLORS } from '../../packages/bpk-component-panel';
+import BpkText, { TEXT_COLORS } from '../../packages/bpk-component-text';
 
 import STYLES from './examples.module.scss';
 
-export const DefaultExample = () => (
-  <div className={STYLES['bpk-panel-examples--wrapper']}>
-    <BpkPanel>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-      imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
-      consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non dictum
-      mi ante eu arcu.
-    </BpkPanel>
-  </div >
-);
+const textColorForBg = {
+  [PANEL_BG_COLORS.surfaceDefault]: TEXT_COLORS.textPrimary,
+  [PANEL_BG_COLORS.surfaceElevated]: TEXT_COLORS.textPrimary,
+  [PANEL_BG_COLORS.surfaceHero]: TEXT_COLORS.textOnDark,
+  [PANEL_BG_COLORS.surfaceContrast]: TEXT_COLORS.textOnDark,
+  [PANEL_BG_COLORS.surfaceHighlight]: TEXT_COLORS.textPrimary,
+  [PANEL_BG_COLORS.surfaceSubtle]: TEXT_COLORS.textPrimary,
+  [PANEL_BG_COLORS.surfaceLowContrast]: TEXT_COLORS.textPrimary,
+  [PANEL_BG_COLORS.surfaceTint]: TEXT_COLORS.textPrimary,
+};
 
 export const WithoutPaddingExample = () => (
   <div className={STYLES['bpk-panel-examples--wrapper']}>
@@ -64,9 +65,25 @@ export const NoKeylineExample = () => (
   </div>
 );
 
+export const BackgroundColorExample = () => (
+  <div className={STYLES['bpk-panel-examples--wrapper']}>
+    {Object.entries(PANEL_BG_COLORS).map(([key, value]) => (
+      <BpkPanel key={key} bgColor={value} style={{ marginBottom: '1rem' }}>
+        <BpkText tagName="p" textStyle="heading-4" color={textColorForBg[value]}>
+          {key}
+        </BpkText>
+        <BpkText tagName="p" color={textColorForBg[value]}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          imperdiet lobortis tellus, non rhoncus erat tincidunt id.
+        </BpkText>
+      </BpkPanel>
+    ))}
+  </div>
+);
+
 export const MixedExample = () => (
   <div>
-    <DefaultExample />
+    <BackgroundColorExample />
     <WithoutPaddingExample />
     <FullWidthExample />
     <NoKeylineExample />
