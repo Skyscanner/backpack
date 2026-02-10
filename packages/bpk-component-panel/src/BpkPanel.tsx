@@ -17,15 +17,22 @@
  */
 import type { ReactNode } from 'react';
 
-import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute, SURFACE_COLORS } from '../../bpk-react-utils';
+
+import type { SurfaceBgColor } from '../../bpk-react-utils';
 
 import STYLES from './BpkPanel.module.scss';
 
 
 const getClassName = cssModules(STYLES);
 
+export const PANEL_BG_COLORS = SURFACE_COLORS;
+
+export type PanelBgColor = SurfaceBgColor;
+
 export type Props = {
   children: ReactNode;
+  bgColor?: PanelBgColor,
   padded?: boolean,
   fullWidth?: boolean,
   className?: string | null,
@@ -35,6 +42,7 @@ export type Props = {
 
 
 const BpkPanel = ({
+  bgColor = PANEL_BG_COLORS.surfaceDefault,
   children,
   className = null,
   fullWidth = false,
@@ -57,6 +65,7 @@ const BpkPanel = ({
       classNames.push(getClassName('bpk-panel--keyline'));
     }
   }
+  classNames.push(getClassName(`bpk-panel--${bgColor}`));
   if (className) {
     classNames.push(className);
   }
