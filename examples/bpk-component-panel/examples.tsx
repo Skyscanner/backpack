@@ -16,9 +16,28 @@
  * limitations under the License.
  */
 
-import BpkPanel from '../../packages/bpk-component-panel';
+import BpkPanel, { PANEL_BG_COLORS } from '../../packages/bpk-component-panel';
+import BpkText, { TEXT_COLORS } from '../../packages/bpk-component-text';
+
+import type { PanelBgColor } from '../../packages/bpk-component-panel';
 
 import STYLES from './examples.module.scss';
+
+const textColorForBg = {
+  [PANEL_BG_COLORS.surfaceDefault]: TEXT_COLORS.textPrimary,
+  [PANEL_BG_COLORS.surfaceElevated]: TEXT_COLORS.textPrimary,
+  [PANEL_BG_COLORS.surfaceHero]: TEXT_COLORS.textOnDark,
+  [PANEL_BG_COLORS.surfaceContrast]: TEXT_COLORS.textOnDark,
+  [PANEL_BG_COLORS.surfaceHighlight]: TEXT_COLORS.textPrimary,
+  [PANEL_BG_COLORS.surfaceSubtle]: TEXT_COLORS.textPrimary,
+  [PANEL_BG_COLORS.surfaceLowContrast]: TEXT_COLORS.textPrimary,
+  [PANEL_BG_COLORS.surfaceTint]: TEXT_COLORS.textPrimary,
+};
+
+const rowStyleForBg: Partial<Record<PanelBgColor, string>> = {
+  [PANEL_BG_COLORS.surfaceLowContrast]: 'bpk-panel-examples--row-dark',
+  [PANEL_BG_COLORS.surfaceTint]: 'bpk-panel-examples--row-gradient',
+};
 
 export const DefaultExample = () => (
   <div className={STYLES['bpk-panel-examples--wrapper']}>
@@ -28,7 +47,7 @@ export const DefaultExample = () => (
       consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non dictum
       mi ante eu arcu.
     </BpkPanel>
-  </div >
+  </div>
 );
 
 export const WithoutPaddingExample = () => (
@@ -64,9 +83,37 @@ export const NoKeylineExample = () => (
   </div>
 );
 
+export const BackgroundColorExample = () => (
+  <div className={STYLES['bpk-panel-examples--wrapper']}>
+    {Object.entries(PANEL_BG_COLORS).map(([key, value]) => (
+      <div key={key} className={STYLES[rowStyleForBg[value] || 'bpk-panel-examples--row']}>
+        <BpkPanel bgColor={value}>
+          <BpkText tagName="p" textStyle="heading-4" color={textColorForBg[value]}>
+            {key}
+          </BpkText>
+          <BpkText tagName="p" color={textColorForBg[value]}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+            imperdiet lobortis tellus, non rhoncus erat tincidunt id.
+          </BpkText>
+        </BpkPanel>
+        <BpkPanel bgColor={value} keyline={false}>
+          <BpkText tagName="p" textStyle="heading-4" color={textColorForBg[value]}>
+            {key} (no keyline)
+          </BpkText>
+          <BpkText tagName="p" color={textColorForBg[value]}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+            imperdiet lobortis tellus, non rhoncus erat tincidunt id.
+          </BpkText>
+        </BpkPanel>
+      </div>
+    ))}
+  </div>
+);
+
 export const MixedExample = () => (
   <div>
     <DefaultExample />
+    <BackgroundColorExample />
     <WithoutPaddingExample />
     <FullWidthExample />
     <NoKeylineExample />
