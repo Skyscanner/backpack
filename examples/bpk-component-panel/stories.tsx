@@ -19,6 +19,7 @@
 import BpkPanel from '../../packages/bpk-component-panel/src/BpkPanel';
 
 import {
+  DefaultExample,
   BackgroundColorExample,
   WithoutPaddingExample,
   FullWidthExample,
@@ -31,7 +32,8 @@ export default {
   component: BpkPanel,
 };
 
-export const Default = BackgroundColorExample;
+export const Default = DefaultExample;
+export const BackgroundColors = BackgroundColorExample;
 export const WithoutPadding = WithoutPaddingExample;
 
 export const FullWidth = FullWidthExample;

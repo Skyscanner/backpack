@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+// Values must stay in sync with bpk-mixins/_surfaces.scss
 export const SURFACE_COLORS = {
   surfaceDefault: 'surface-default',
   surfaceElevated: 'surface-elevated',

@@ -24,6 +24,7 @@
 /// @group surfaces
 ////
 
+// Keys must stay in sync with bpk-react-utils/src/surfaceColors.ts
 $bpk-surface-bg-colors: (
   'surface-default': tokens.$bpk-surface-default-day,
   'surface-elevated': tokens.$bpk-surface-elevated-day,

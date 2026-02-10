@@ -31,24 +31,18 @@
 }
 
 .bpk-panel-examples--row-dark {
-  display: grid;
-  margin-bottom: tokens.bpk-spacing-base();
   padding: tokens.bpk-spacing-base();
-  grid-template-columns: 1fr 1fr;
   background-color: tokens.$bpk-surface-contrast-day;
-  gap: tokens.bpk-spacing-base();
+  composes: bpk-panel-examples--row;
 }
 
 .bpk-panel-examples--row-gradient {
-  display: grid;
-  margin-bottom: tokens.bpk-spacing-base();
   padding: tokens.bpk-spacing-base();
-  grid-template-columns: 1fr 1fr;
   background: linear-gradient(
     135deg,
     tokens.$bpk-core-accent-day,
     tokens.$bpk-status-danger-spot-day,
     tokens.$bpk-status-warning-spot-day
   );
-  gap: tokens.bpk-spacing-base();
+  composes: bpk-panel-examples--row;
 }

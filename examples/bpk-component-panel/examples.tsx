@@ -37,6 +37,17 @@ const rowStyleForBg: Record<string, string> = {
   [PANEL_BG_COLORS.surfaceTint]: 'bpk-panel-examples--row-gradient',
 };
 
+export const DefaultExample = () => (
+  <div className={STYLES['bpk-panel-examples--wrapper']}>
+    <BpkPanel>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+      imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
+      consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non dictum
+      mi ante eu arcu.
+    </BpkPanel>
+  </div>
+);
+
 export const WithoutPaddingExample = () => (
   <div className={STYLES['bpk-panel-examples--wrapper']}>
     <BpkPanel padded={false}>
@@ -99,6 +110,7 @@ export const BackgroundColorExample = () => (
 
 export const MixedExample = () => (
   <div>
+    <DefaultExample />
     <BackgroundColorExample />
     <WithoutPaddingExample />
     <FullWidthExample />
