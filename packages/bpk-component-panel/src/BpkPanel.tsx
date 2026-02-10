@@ -17,25 +17,18 @@
  */
 import type { ReactNode } from 'react';
 
-import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute, SURFACE_COLORS } from '../../bpk-react-utils';
+
+import type { SurfaceBgColor } from '../../bpk-react-utils';
 
 import STYLES from './BpkPanel.module.scss';
 
 
 const getClassName = cssModules(STYLES);
 
-export const PANEL_BG_COLORS = {
-  surfaceDefault: 'surface-default',
-  surfaceElevated: 'surface-elevated',
-  surfaceHero: 'surface-hero',
-  surfaceContrast: 'surface-contrast',
-  surfaceHighlight: 'surface-highlight',
-  surfaceSubtle: 'surface-subtle',
-  surfaceLowContrast: 'surface-low-contrast',
-  surfaceTint: 'surface-tint',
-} as const;
+export const PANEL_BG_COLORS = SURFACE_COLORS;
 
-export type PanelBgColor = (typeof PANEL_BG_COLORS)[keyof typeof PANEL_BG_COLORS];
+export type PanelBgColor = SurfaceBgColor;
 
 export type Props = {
   children: ReactNode;

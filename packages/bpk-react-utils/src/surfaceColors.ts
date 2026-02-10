@@ -16,26 +16,15 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/panels';
-@use '../../bpk-mixins/surfaces';
+export const SURFACE_COLORS = {
+  surfaceDefault: 'surface-default',
+  surfaceElevated: 'surface-elevated',
+  surfaceHero: 'surface-hero',
+  surfaceContrast: 'surface-contrast',
+  surfaceHighlight: 'surface-highlight',
+  surfaceSubtle: 'surface-subtle',
+  surfaceLowContrast: 'surface-low-contrast',
+  surfaceTint: 'surface-tint',
+} as const;
 
-.bpk-panel {
-  @include panels.bpk-panel;
-  @include surfaces.bpk-surface-bg-colors;
-
-  &--padded {
-    @include panels.bpk-panel--padded;
-  }
-
-  &--full-width {
-    @include panels.bpk-panel--full-width;
-  }
-
-  &--keyline {
-    @include panels.bpk-panel--keyline;
-  }
-
-  &--full-width-keyline {
-    @include panels.bpk-panel--full-width-keyline;
-  }
-}
+export type SurfaceBgColor = (typeof SURFACE_COLORS)[keyof typeof SURFACE_COLORS];
