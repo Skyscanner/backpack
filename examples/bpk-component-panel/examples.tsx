@@ -32,6 +32,11 @@ const textColorForBg = {
   [PANEL_BG_COLORS.surfaceTint]: TEXT_COLORS.textPrimary,
 };
 
+const rowStyleForBg = {
+  [PANEL_BG_COLORS.surfaceLowContrast]: 'bpk-panel-examples--row-dark',
+  [PANEL_BG_COLORS.surfaceTint]: 'bpk-panel-examples--row-gradient',
+};
+
 export const WithoutPaddingExample = () => (
   <div className={STYLES['bpk-panel-examples--wrapper']}>
     <BpkPanel padded={false}>
@@ -68,15 +73,26 @@ export const NoKeylineExample = () => (
 export const BackgroundColorExample = () => (
   <div className={STYLES['bpk-panel-examples--wrapper']}>
     {Object.entries(PANEL_BG_COLORS).map(([key, value]) => (
-      <BpkPanel key={key} bgColor={value} style={{ marginBottom: '1rem' }}>
-        <BpkText tagName="p" textStyle="heading-4" color={textColorForBg[value]}>
-          {key}
-        </BpkText>
-        <BpkText tagName="p" color={textColorForBg[value]}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-          imperdiet lobortis tellus, non rhoncus erat tincidunt id.
-        </BpkText>
-      </BpkPanel>
+      <div key={key} className={STYLES[rowStyleForBg[value] || 'bpk-panel-examples--row']}>
+        <BpkPanel bgColor={value}>
+          <BpkText tagName="p" textStyle="heading-4" color={textColorForBg[value]}>
+            {key}
+          </BpkText>
+          <BpkText tagName="p" color={textColorForBg[value]}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+            imperdiet lobortis tellus, non rhoncus erat tincidunt id.
+          </BpkText>
+        </BpkPanel>
+        <BpkPanel bgColor={value} keyline={false}>
+          <BpkText tagName="p" textStyle="heading-4" color={textColorForBg[value]}>
+            {key} (no keyline)
+          </BpkText>
+          <BpkText tagName="p" color={textColorForBg[value]}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+            imperdiet lobortis tellus, non rhoncus erat tincidunt id.
+          </BpkText>
+        </BpkPanel>
+      </div>
     ))}
   </div>
 );

@@ -20,5 +20,35 @@
 
 .bpk-panel-examples--wrapper {
   padding: tokens.bpk-spacing-base();
-  background-color: tokens.$bpk-surface-highlight-day;
+  background-color: tokens.$bpk-canvas-contrast-day;
+}
+
+.bpk-panel-examples--row {
+  display: grid;
+  margin-bottom: tokens.bpk-spacing-base();
+  grid-template-columns: 1fr 1fr;
+  gap: tokens.bpk-spacing-base();
+}
+
+.bpk-panel-examples--row-dark {
+  display: grid;
+  margin-bottom: tokens.bpk-spacing-base();
+  padding: tokens.bpk-spacing-base();
+  grid-template-columns: 1fr 1fr;
+  background-color: tokens.$bpk-surface-contrast-day;
+  gap: tokens.bpk-spacing-base();
+}
+
+.bpk-panel-examples--row-gradient {
+  display: grid;
+  margin-bottom: tokens.bpk-spacing-base();
+  padding: tokens.bpk-spacing-base();
+  grid-template-columns: 1fr 1fr;
+  background: linear-gradient(
+    135deg,
+    tokens.$bpk-core-accent-day,
+    tokens.$bpk-status-danger-spot-day,
+    tokens.$bpk-status-warning-spot-day
+  );
+  gap: tokens.bpk-spacing-base();
 }
