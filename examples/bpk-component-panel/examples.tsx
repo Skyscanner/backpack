@@ -32,7 +32,7 @@ const textColorForBg = {
   [PANEL_BG_COLORS.surfaceTint]: TEXT_COLORS.textPrimary,
 };
 
-const rowStyleForBg = {
+const rowStyleForBg: Record<string, string> = {
   [PANEL_BG_COLORS.surfaceLowContrast]: 'bpk-panel-examples--row-dark',
   [PANEL_BG_COLORS.surfaceTint]: 'bpk-panel-examples--row-gradient',
 };
