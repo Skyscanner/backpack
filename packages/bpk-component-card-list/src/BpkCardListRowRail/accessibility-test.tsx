@@ -44,10 +44,10 @@ describe('BpkCardListRowRailContainer', () => {
       }
     };
   });
-  
+
   it('should have no accessibility issues for row and no accessory', async () => {
     const { container } = render(
-      <BpkCardListRowRailContainer layout={LAYOUTS.row} initiallyShownCards={3}>
+      <BpkCardListRowRailContainer layout={LAYOUTS.row} initiallyShownCards={3} initiallyInViewCardIndex={0}>
         {mockCards(3)}
       </BpkCardListRowRailContainer>,
     );
@@ -62,6 +62,7 @@ describe('BpkCardListRowRailContainer', () => {
         layout={LAYOUTS.row}
         initiallyShownCards={3}
         accessory="pagination"
+        initiallyInViewCardIndex={0}
       >
         {mockCards(5)}
       </BpkCardListRowRailContainer>,
