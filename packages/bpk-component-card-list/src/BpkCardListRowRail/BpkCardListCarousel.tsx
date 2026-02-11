@@ -27,14 +27,16 @@ import {
 
 import throttle from 'lodash/throttle';
 
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
+import {
+  cssModules,
+  getDataComponentAttribute,
+} from '../../../bpk-react-utils';
 
 import { RENDER_BUFFER_SIZE } from './constants';
 import {
-  lockScroll,
   setA11yTabIndex,
-  useScrollToCard,
   useIntersectionObserver,
+  usePageScrollSync,
 } from './utils';
 
 import type { CardListCarouselProps } from '../common-types';
@@ -79,20 +81,20 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     Array(childrenLength).fill(0),
   );
 
-  const stateScrollingLockRef = useRef(false);
-  const openSetStateLockTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
   const observerVisibility = useIntersectionObserver(
     { root, threshold: 0.5 },
     setVisibilityList,
   );
 
-  useScrollToCard(
-    currentIndex * initiallyShownCards,
-    root,
+  usePageScrollSync({
+    currentIndex,
+    setCurrentIndex,
+    initiallyShownCards,
     cardRefs,
-    stateScrollingLockRef,
-  );
+    visibilityList,
+    container: root,
+    enabled: !isMobile,
+  });
 
   // Similar to Virtual Scrolling to improve performance
   const firstVisibleIndex = Math.max(0, visibilityList.indexOf(1));
@@ -162,26 +164,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
   );
 
   useEffect(() => {
-    const container = root;
-    if (isMobile || !container) return undefined;
-
-    const lockScrollDuringInteraction = () => {
-      lockScroll(stateScrollingLockRef, openSetStateLockTimeoutRef);
-    };
-
-    container.addEventListener('wheel', lockScrollDuringInteraction);
-    container.addEventListener('touchmove', lockScrollDuringInteraction);
-
-    return () => {
-      container.removeEventListener('touchmove', lockScrollDuringInteraction);
-      container.removeEventListener('wheel', lockScrollDuringInteraction);
-      if (openSetStateLockTimeoutRef.current) {
-        clearTimeout(openSetStateLockTimeoutRef.current);
-      }
-    };
-  }, [root]);
-
-  useEffect(() => {
     // update hasBeenVisibleRef to include the range of cards that should be visible
     const start = currentIndex * initiallyShownCards;
     const end = start + initiallyShownCards + dynamicRenderBufferSize;
@@ -194,16 +176,6 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     childrenLength,
     dynamicRenderBufferSize,
   ]);
-
-  useEffect(() => {
-    const firstVisible = visibilityList.indexOf(1);
-    if (firstVisible >= 0) {
-      const newIndex = Math.floor(firstVisible / initiallyShownCards);
-      if (newIndex !== currentIndex) {
-        setCurrentIndex(newIndex);
-      }
-    }
-  }, [initiallyShownCards]);
 
   useEffect(() => {
     const handleResize = throttle(() => {
@@ -239,8 +211,13 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           cardDimensionStyle.height = `${firstCardHeightRef.current}px`;
         }
 
+        const isPageStart = index % initiallyShownCards === 0;
+
         const commonProps = {
-          className: getClassName(`bpk-card-list-row-rail__${layout}__card`),
+          className: getClassName(
+            `bpk-card-list-row-rail__${layout}__card`,
+            isPageStart && 'bpk-card-list-row-rail__card--page-start',
+          ),
           style: shownNumberStyle,
           key: `carousel-card-${index.toString()}`,
           role: 'group',

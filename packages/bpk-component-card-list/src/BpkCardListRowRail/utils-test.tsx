@@ -16,9 +16,10 @@
  * limitations under the License.
  */
 
-import { renderHook } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
 
-import { setA11yTabIndex, useScrollToCard } from './utils';
+import { RELEASE_LOCK_DELAY } from './constants';
+import { setA11yTabIndex, usePageScrollSync } from './utils';
 
 const createMockButton = (index: number): HTMLElement => {
   const mockButton = document.createElement('mock-button');
@@ -55,68 +56,786 @@ describe('setA11yTabIndex', () => {
   });
 });
 
-describe('useScrollToCard', () => {
-  let mockCardRefs: { current: HTMLDivElement[] };
-  let mockCardList: HTMLElement[];
+describe('usePageScrollSync', () => {
+  let mockContainer: HTMLDivElement;
+  let mockCardRefs: { current: Array<HTMLDivElement | null> };
+  let mockSetCurrentIndex: jest.Mock;
 
   beforeEach(() => {
-    mockCardRefs = { current: [] as HTMLDivElement[] };
-    mockCardList = Array.from({ length: 10 }, (_, index) => {
+    jest.clearAllMocks();
+    jest.useFakeTimers();
+
+    mockContainer = document.createElement('div');
+    mockContainer.getBoundingClientRect = jest.fn(
+      () =>
+        ({
+          bottom: window.innerHeight - 10,
+        }) as DOMRect,
+    );
+
+    mockCardRefs = { current: [] };
+    Array.from({ length: 12 }).forEach((_, index) => {
       const { mockDiv } = makeMockDiv(index);
       mockDiv.scrollIntoView = jest.fn();
       mockCardRefs.current.push(mockDiv);
-      return mockDiv;
+    });
+
+    mockSetCurrentIndex = jest.fn();
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+  });
+
+  describe('Effect 1: Programmatic scroll when currentIndex changes', () => {
+    it('should scroll to the target card when currentIndex changes and container is visible', () => {
+      const { rerender } = renderHook(
+        ({ currentIndex }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          }),
+        { initialProps: { currentIndex: 0 } },
+      );
+
+      rerender({ currentIndex: 1 });
+
+      expect(mockCardRefs.current[3]?.scrollIntoView).toHaveBeenCalledWith({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'start',
+      });
+    });
+
+    it('should not scroll when disabled', () => {
+      const { rerender } = renderHook(
+        ({ currentIndex }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex,
+            enabled: false,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          }),
+        { initialProps: { currentIndex: 0 } },
+      );
+
+      rerender({ currentIndex: 1 });
+
+      expect(mockCardRefs.current[3]?.scrollIntoView).not.toHaveBeenCalled();
+    });
+
+    it('should not scroll when container is not visible (bottom < 0)', () => {
+      mockContainer.getBoundingClientRect = jest.fn(
+        () =>
+          ({
+            bottom: -10,
+          }) as DOMRect,
+      );
+
+      const { rerender } = renderHook(
+        ({ currentIndex }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          }),
+        { initialProps: { currentIndex: 0 } },
+      );
+
+      rerender({ currentIndex: 1 });
+
+      expect(mockCardRefs.current[3]?.scrollIntoView).not.toHaveBeenCalled();
+    });
+
+    it('should not scroll when container bottom is below viewport', () => {
+      mockContainer.getBoundingClientRect = jest.fn(
+        () =>
+          ({
+            bottom: window.innerHeight + 100,
+          }) as DOMRect,
+      );
+
+      const { rerender } = renderHook(
+        ({ currentIndex }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          }),
+        { initialProps: { currentIndex: 0 } },
+      );
+
+      rerender({ currentIndex: 1 });
+
+      expect(mockCardRefs.current[3]?.scrollIntoView).not.toHaveBeenCalled();
+    });
+
+    it('should not scroll when container is null', () => {
+      const { rerender } = renderHook(
+        ({ currentIndex }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: null,
+            currentIndex,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          }),
+        { initialProps: { currentIndex: 0 } },
+      );
+
+      rerender({ currentIndex: 1 });
+
+      expect(mockCardRefs.current[3]?.scrollIntoView).not.toHaveBeenCalled();
+    });
+
+    it('should not scroll when target card ref is null', () => {
+      mockCardRefs.current[3] = null;
+
+      const { rerender } = renderHook(
+        ({ currentIndex }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          }),
+        { initialProps: { currentIndex: 0 } },
+      );
+
+      rerender({ currentIndex: 1 });
+
+      expect(mockCardRefs.current[0]?.scrollIntoView).not.toHaveBeenCalled();
+    });
+
+    it('should scroll to correct card based on initiallyShownCards multiplier', () => {
+      const { rerender } = renderHook(
+        ({ currentIndex }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex,
+            enabled: true,
+            initiallyShownCards: 4,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList: [1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+          }),
+        { initialProps: { currentIndex: 0 } },
+      );
+
+      rerender({ currentIndex: 2 });
+
+      expect(mockCardRefs.current[8]?.scrollIntoView).toHaveBeenCalledTimes(1);
+    });
+
+    it('should not scroll when currentIndex has not changed', () => {
+      const { rerender } = renderHook(
+        ({ currentIndex }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          }),
+        { initialProps: { currentIndex: 1 } },
+      );
+
+      rerender({ currentIndex: 1 });
+
+      expect(mockCardRefs.current[3]?.scrollIntoView).not.toHaveBeenCalled();
     });
   });
 
-  it('should scroll to the target card when container is visible and the lock is inactive', () => {
-    const mockContainer = document.createElement('div');
-    mockContainer.getBoundingClientRect = jest.fn(
-      () =>
-        ({
-          bottom: window.innerHeight - 10,
-        }) as DOMRect,
-    );
-    const stateScrollingLockRef = { current: false };
+  describe('Effect 2: Scroll detection and lock release', () => {
+    it('should add scroll event listener when enabled and container exists', () => {
+      const addEventListenerSpy = jest.spyOn(mockContainer, 'addEventListener');
 
-    renderHook(() =>
-      useScrollToCard(3, mockContainer, mockCardRefs, stateScrollingLockRef),
-    );
+      renderHook(() =>
+        usePageScrollSync({
+          cardRefs: mockCardRefs,
+          container: mockContainer,
+          currentIndex: 0,
+          enabled: true,
+          initiallyShownCards: 3,
+          setCurrentIndex: mockSetCurrentIndex,
+          visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        }),
+      );
 
-    expect(mockCardList[3].scrollIntoView).toHaveBeenCalledTimes(1);
+      expect(addEventListenerSpy).toHaveBeenCalledWith(
+        'scroll',
+        expect.any(Function),
+        { passive: true },
+      );
+    });
+
+    it('should not add scroll event listener when disabled', () => {
+      const addEventListenerSpy = jest.spyOn(mockContainer, 'addEventListener');
+
+      renderHook(() =>
+        usePageScrollSync({
+          cardRefs: mockCardRefs,
+          container: mockContainer,
+          currentIndex: 0,
+          enabled: false,
+          initiallyShownCards: 3,
+          setCurrentIndex: mockSetCurrentIndex,
+          visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        }),
+      );
+
+      expect(addEventListenerSpy).not.toHaveBeenCalledWith(
+        'scroll',
+        expect.any(Function),
+        { passive: true },
+      );
+    });
+
+    it('should not add scroll event listener when container is null', () => {
+      const addEventListenerSpy = jest.spyOn(mockContainer, 'addEventListener');
+
+      renderHook(() =>
+        usePageScrollSync({
+          cardRefs: mockCardRefs,
+          container: null,
+          currentIndex: 0,
+          enabled: true,
+          initiallyShownCards: 3,
+          setCurrentIndex: mockSetCurrentIndex,
+          visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        }),
+      );
+
+      expect(addEventListenerSpy).not.toHaveBeenCalled();
+    });
+
+    it('should remove scroll event listener on cleanup', () => {
+      const removeEventListenerSpy = jest.spyOn(
+        mockContainer,
+        'removeEventListener',
+      );
+
+      const { unmount } = renderHook(() =>
+        usePageScrollSync({
+          cardRefs: mockCardRefs,
+          container: mockContainer,
+          currentIndex: 0,
+          enabled: true,
+          initiallyShownCards: 3,
+          setCurrentIndex: mockSetCurrentIndex,
+          visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        }),
+      );
+
+      unmount();
+
+      expect(removeEventListenerSpy).toHaveBeenCalledWith(
+        'scroll',
+        expect.any(Function),
+      );
+    });
+
+    it('should release locks after RELEASE_LOCK_DELAY of scroll silence', () => {
+      const { rerender } = renderHook(
+        ({ visibilityList }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex: 0,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList,
+          }),
+        { initialProps: { visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0] } },
+      );
+
+      // User initiates scroll via wheel
+      act(() => {
+        mockContainer.dispatchEvent(new Event('wheel'));
+        mockContainer.dispatchEvent(new Event('scroll'));
+      });
+
+      rerender({ visibilityList: [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0] });
+      expect(mockSetCurrentIndex).toHaveBeenCalledWith(1);
+
+      mockSetCurrentIndex.mockClear();
+
+      act(() => {
+        jest.advanceTimersByTime(RELEASE_LOCK_DELAY);
+      });
+
+      // After lock release, user scroll flag is cleared so no update
+      rerender({ visibilityList: [0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0] });
+      expect(mockSetCurrentIndex).not.toHaveBeenCalled();
+    });
+
+    it('should reset timer on subsequent scroll events', () => {
+      const { rerender } = renderHook(
+        ({ visibilityList }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex: 0,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList,
+          }),
+        { initialProps: { visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0] } },
+      );
+
+      // User initiates scroll via wheel
+      act(() => {
+        mockContainer.dispatchEvent(new Event('wheel'));
+        mockContainer.dispatchEvent(new Event('scroll'));
+      });
+
+      act(() => {
+        jest.advanceTimersByTime(RELEASE_LOCK_DELAY - 50);
+      });
+
+      // Another scroll event resets the timer
+      act(() => {
+        mockContainer.dispatchEvent(new Event('scroll'));
+      });
+
+      act(() => {
+        jest.advanceTimersByTime(RELEASE_LOCK_DELAY - 50);
+      });
+
+      // User scroll flag still active because timer was reset
+      rerender({ visibilityList: [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0] });
+      expect(mockSetCurrentIndex).toHaveBeenCalledWith(1);
+    });
   });
 
-  it('should not scroll if the container is not visible', () => {
-    const mockContainer = document.createElement('div');
-    mockContainer.getBoundingClientRect = jest.fn(
-      () =>
-        ({
-          bottom: -10,
-        }) as DOMRect,
-    );
-    const stateScrollingLockRef = { current: false };
+  describe('Effect 3: Update currentIndex from visibility during user scroll', () => {
+    it('should update currentIndex when user scrolls and visibility changes', () => {
+      const { rerender } = renderHook(
+        ({ visibilityList }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex: 0,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList,
+          }),
+        { initialProps: { visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0] } },
+      );
 
-    renderHook(() =>
-      useScrollToCard(3, mockContainer, mockCardRefs, stateScrollingLockRef),
-    );
+      // User initiates scroll via wheel
+      act(() => {
+        mockContainer.dispatchEvent(new Event('wheel'));
+      });
 
-    expect(mockCardList[3].scrollIntoView).not.toHaveBeenCalled();
+      rerender({ visibilityList: [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0] });
+
+      expect(mockSetCurrentIndex).toHaveBeenCalledWith(1);
+    });
+
+    it('should calculate page index correctly for different initiallyShownCards values', () => {
+      const { rerender } = renderHook(
+        ({ visibilityList }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex: 0,
+            enabled: true,
+            initiallyShownCards: 4,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList,
+          }),
+        {
+          initialProps: {
+            visibilityList: [1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+        },
+      );
+
+      // User initiates scroll via touch
+      act(() => {
+        mockContainer.dispatchEvent(new Event('touchstart'));
+      });
+
+      rerender({ visibilityList: [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1] });
+
+      expect(mockSetCurrentIndex).toHaveBeenCalledWith(2);
+    });
+
+    it('should not update currentIndex when disabled', () => {
+      const { rerender } = renderHook(
+        ({ visibilityList }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex: 0,
+            enabled: false,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList,
+          }),
+        { initialProps: { visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0] } },
+      );
+
+      act(() => {
+        mockContainer.dispatchEvent(new Event('scroll'));
+      });
+
+      rerender({ visibilityList: [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0] });
+
+      expect(mockSetCurrentIndex).not.toHaveBeenCalled();
+    });
+
+    it('should not update currentIndex when no visible cards', () => {
+      const { rerender } = renderHook(
+        ({ visibilityList }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex: 0,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList,
+          }),
+        { initialProps: { visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0] } },
+      );
+
+      act(() => {
+        mockContainer.dispatchEvent(new Event('scroll'));
+      });
+
+      rerender({ visibilityList: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] });
+
+      expect(mockSetCurrentIndex).not.toHaveBeenCalled();
+    });
+
+    it('should not update currentIndex when calculated page index equals current', () => {
+      const { rerender } = renderHook(
+        ({ visibilityList }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex: 1,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList,
+          }),
+        { initialProps: { visibilityList: [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0] } },
+      );
+
+      act(() => {
+        mockContainer.dispatchEvent(new Event('scroll'));
+      });
+
+      rerender({ visibilityList: [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0] });
+
+      expect(mockSetCurrentIndex).not.toHaveBeenCalled();
+    });
+
+    it('should handle partial visibility at page boundaries by using first visible card', () => {
+      // When scrolling between pages, the first visible index determines the page.
+      // With firstVisibleIndex=2 and initiallyShownCards=3: Math.floor(2/3) = 0
+      // So if currentIndex is already 0, no update should happen.
+      // Let's test the case where we're at page 1 and scroll partially back to page 0.
+      const { rerender } = renderHook(
+        ({ visibilityList }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex: 1,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList,
+          }),
+        { initialProps: { visibilityList: [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0] } },
+      );
+
+      // User initiates scroll via wheel
+      act(() => {
+        mockContainer.dispatchEvent(new Event('wheel'));
+      });
+
+      // Scroll back so card at index 2 (last of page 0) is visible along with cards 3,4
+      // firstVisibleIndex = 2, Math.floor(2/3) = 0, which differs from currentIndex=1
+      rerender({ visibilityList: [0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0] });
+
+      expect(mockSetCurrentIndex).toHaveBeenCalledWith(0);
+    });
   });
 
-  it('should not scroll if scrolling lock is active', () => {
-    const mockContainer = document.createElement('div');
-    mockContainer.getBoundingClientRect = jest.fn(
-      () =>
-        ({
-          bottom: window.innerHeight - 10,
-        }) as DOMRect,
-    );
-    const stateScrollingLockRef = { current: true };
+  describe('Interaction between programmatic scroll and user scroll', () => {
+    it('should not trigger programmatic scroll during user scroll', () => {
+      const { rerender } = renderHook(
+        ({ currentIndex, visibilityList }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList,
+          }),
+        {
+          initialProps: {
+            currentIndex: 0,
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+        },
+      );
 
-    renderHook(() =>
-      useScrollToCard(3, mockContainer, mockCardRefs, stateScrollingLockRef),
-    );
+      // User initiates scroll via wheel
+      act(() => {
+        mockContainer.dispatchEvent(new Event('wheel'));
+      });
 
-    expect(mockCardList[3].scrollIntoView).not.toHaveBeenCalled();
+      rerender({
+        currentIndex: 1,
+        visibilityList: [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      });
+
+      expect(mockCardRefs.current[3]?.scrollIntoView).not.toHaveBeenCalled();
+    });
+
+    it('should allow programmatic scroll after lock release', () => {
+      const { rerender } = renderHook(
+        ({ currentIndex, visibilityList }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList,
+          }),
+        {
+          initialProps: {
+            currentIndex: 0,
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+        },
+      );
+
+      act(() => {
+        mockContainer.dispatchEvent(new Event('scroll'));
+      });
+
+      act(() => {
+        jest.advanceTimersByTime(RELEASE_LOCK_DELAY);
+      });
+
+      rerender({
+        currentIndex: 2,
+        visibilityList: [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      });
+
+      expect(mockCardRefs.current[6]?.scrollIntoView).toHaveBeenCalledWith({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'start',
+      });
+    });
+
+    it('should not update currentIndex from visibility during programmatic scroll', () => {
+      const { rerender } = renderHook(
+        ({ currentIndex, visibilityList }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList,
+          }),
+        {
+          initialProps: {
+            currentIndex: 0,
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+        },
+      );
+
+      rerender({
+        currentIndex: 1,
+        visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      });
+
+      rerender({
+        currentIndex: 1,
+        visibilityList: [0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+      });
+
+      expect(mockSetCurrentIndex).not.toHaveBeenCalled();
+    });
+
+    it('should allow user to take over during programmatic scroll via wheel event', () => {
+      const { rerender } = renderHook(
+        ({ currentIndex, visibilityList }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList,
+          }),
+        {
+          initialProps: {
+            currentIndex: 0,
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+        },
+      );
+
+      // Trigger programmatic scroll
+      rerender({
+        currentIndex: 1,
+        visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      });
+
+      // User takes over with wheel event during programmatic scroll
+      act(() => {
+        mockContainer.dispatchEvent(new Event('wheel'));
+      });
+
+      // Visibility changes due to user scroll
+      rerender({
+        currentIndex: 1,
+        visibilityList: [0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
+      });
+
+      // Should update currentIndex because user took over
+      expect(mockSetCurrentIndex).toHaveBeenCalledWith(2);
+    });
+
+    it('should allow user to take over during programmatic scroll via touchstart event', () => {
+      const { rerender } = renderHook(
+        ({ currentIndex, visibilityList }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex,
+            enabled: true,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList,
+          }),
+        {
+          initialProps: {
+            currentIndex: 0,
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+        },
+      );
+
+      // Trigger programmatic scroll
+      rerender({
+        currentIndex: 1,
+        visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      });
+
+      // User takes over with touch event during programmatic scroll
+      act(() => {
+        mockContainer.dispatchEvent(new Event('touchstart'));
+      });
+
+      // Visibility changes due to user scroll
+      rerender({
+        currentIndex: 1,
+        visibilityList: [0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
+      });
+
+      // Should update currentIndex because user took over
+      expect(mockSetCurrentIndex).toHaveBeenCalledWith(2);
+    });
+
+    it('should add wheel and touchstart event listeners', () => {
+      const addEventListenerSpy = jest.spyOn(mockContainer, 'addEventListener');
+
+      renderHook(() =>
+        usePageScrollSync({
+          cardRefs: mockCardRefs,
+          container: mockContainer,
+          currentIndex: 0,
+          enabled: true,
+          initiallyShownCards: 3,
+          setCurrentIndex: mockSetCurrentIndex,
+          visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        }),
+      );
+
+      expect(addEventListenerSpy).toHaveBeenCalledWith(
+        'wheel',
+        expect.any(Function),
+        { passive: true },
+      );
+      expect(addEventListenerSpy).toHaveBeenCalledWith(
+        'touchstart',
+        expect.any(Function),
+        { passive: true },
+      );
+    });
+
+    it('should remove wheel and touchstart event listeners on cleanup', () => {
+      const removeEventListenerSpy = jest.spyOn(
+        mockContainer,
+        'removeEventListener',
+      );
+
+      const { unmount } = renderHook(() =>
+        usePageScrollSync({
+          cardRefs: mockCardRefs,
+          container: mockContainer,
+          currentIndex: 0,
+          enabled: true,
+          initiallyShownCards: 3,
+          setCurrentIndex: mockSetCurrentIndex,
+          visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        }),
+      );
+
+      unmount();
+
+      expect(removeEventListenerSpy).toHaveBeenCalledWith(
+        'wheel',
+        expect.any(Function),
+      );
+      expect(removeEventListenerSpy).toHaveBeenCalledWith(
+        'touchstart',
+        expect.any(Function),
+      );
+    });
   });
 });
