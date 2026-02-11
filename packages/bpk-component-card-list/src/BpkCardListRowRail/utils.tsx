@@ -100,6 +100,7 @@ type UsePageScrollSyncOptions = {
   visibilityList: number[];
   container: HTMLElement | null;
   enabled: boolean;
+  initialPageIndex: number;
 };
 
 /**
@@ -119,6 +120,7 @@ export const usePageScrollSync = ({
   container,
   currentIndex,
   enabled,
+  initialPageIndex,
   initiallyShownCards,
   setCurrentIndex,
   visibilityList,
@@ -128,6 +130,28 @@ export const usePageScrollSync = ({
     null,
   );
   const lastCurrentIndexRef = useRef<number>(currentIndex);
+  const hasInitialScrolled = useRef(false);
+
+  // Effect 0: Initial scroll (instant, runs once on mount)
+  useEffect(() => {
+    if (hasInitialScrolled.current) {
+      return;
+    }
+    hasInitialScrolled.current = true;
+
+    if (!enabled || initialPageIndex === 0) {
+      return;
+    }
+
+    const targetCard = cardRefs.current?.[initialPageIndex * initiallyShownCards];
+    if (targetCard) {
+      targetCard.scrollIntoView({
+        behavior: 'instant',
+        block: 'nearest',
+        inline: 'start',
+      });
+    }
+  }, [cardRefs, enabled, initialPageIndex, initiallyShownCards]); // Run once on mount only
 
   // Effect 1: Programmatic scroll when currentIndex changes
   useEffect(() => {
@@ -152,15 +176,13 @@ export const usePageScrollSync = ({
     }
 
     const targetCard = cardRefs.current?.[currentIndex * initiallyShownCards];
-    if (!targetCard) {
-      return;
+    if (targetCard) {
+      targetCard.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'start',
+      });
     }
-
-    targetCard.scrollIntoView({
-      behavior: 'smooth',
-      block: 'nearest',
-      inline: 'start',
-    });
   }, [currentIndex, enabled, container, initiallyShownCards, cardRefs]);
 
   // Effect 2: Scroll detection and silence-based lock release
@@ -184,8 +206,12 @@ export const usePageScrollSync = ({
       }, RELEASE_LOCK_DELAY);
     };
 
-    container.addEventListener('scroll', handleScrollActivity, { passive: true });
-    container.addEventListener('wheel', handleScrollActivity, { passive: true });
+    container.addEventListener('scroll', handleScrollActivity, {
+      passive: true,
+    });
+    container.addEventListener('wheel', handleScrollActivity, {
+      passive: true,
+    });
     container.addEventListener('touchstart', handleScrollActivity, {
       passive: true,
     });

@@ -61,6 +61,7 @@ type CardListBaseProps = {
   accessoryMobile?: (typeof ACCESSORY_MOBILE_TYPES)[keyof typeof ACCESSORY_MOBILE_TYPES];
   initiallyShownCardsDesktop?: number;
   initiallyShownCardsMobile?: number;
+  initiallyInViewCardIndex?: number;
   chipGroup?: ReactElement;
   buttonContent?: React.ReactNode;
   onButtonClick?: () => void;
@@ -101,6 +102,7 @@ type CardListRowRailProps = {
   accessory?: typeof ACCESSORY_DESKTOP_TYPES.pagination;
   isMobile?: boolean;
   accessibilityLabels?: AccessibilityLabels;
+  initiallyInViewCardIndex: number;
 };
 
 type CardListCarouselProps = {
@@ -112,6 +114,7 @@ type CardListCarouselProps = {
   isMobile?: boolean;
   carouselLabel?: (initiallyShownCards: number, childrenLength: number) => string;
   slideLabel?: (index: number, childrenLength: number) => string;
+  initialPageIndex: number;
 };
 
 type CardListProps = CardListBaseProps;

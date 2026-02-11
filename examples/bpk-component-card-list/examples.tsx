@@ -352,6 +352,19 @@ const RowToRailWithoutTitleExample = () => (
   </PageContainer>
 );
 
+const RowToRailWithInitiallyInViewCardIndexExample = () => (
+  <PageContainer>
+    <BpkCardList
+      {...commonProps}
+      cardList={makeList(DestinationCard)}
+      layoutDesktop={LAYOUTS.row}
+      layoutMobile={LAYOUTS.rail}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+      initiallyInViewCardIndex={7}
+    />
+  </PageContainer>
+);
+
 const MultiComponentsScrollingTestExample = () => (
   <PageContainer>
     <RowToRailExample />
@@ -386,5 +399,6 @@ export {
   GridToStackWithExpandExample,
   RowToRailForSnippetsExample,
   RowToRailWithoutTitleExample,
+  RowToRailWithInitiallyInViewCardIndexExample,
   MultiComponentsScrollingTestExample,
 };

@@ -53,6 +53,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
       `Entering Carousel with ${initiallyShownCards} slides shown at a time, ${childrenLength} slides in total. Please use Pagination below with the Previous and Next buttons to navigate, or the slide dot buttons at the end to jump to slides.`,
     children,
     currentIndex,
+    initialPageIndex,
     initiallyShownCards,
     isMobile = false,
     layout,
@@ -94,6 +95,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
     visibilityList,
     container: root,
     enabled: !isMobile,
+    initialPageIndex,
   });
 
   // Similar to Virtual Scrolling to improve performance
@@ -230,6 +232,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
           return (
             <div
               {...commonProps}
+              ref={cardRefFns[index]}
               style={{
                 ...commonProps.style,
                 ...cardDimensionStyle,
