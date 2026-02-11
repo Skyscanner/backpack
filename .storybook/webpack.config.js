@@ -28,6 +28,28 @@ const rootDir = path.resolve(__dirname, '../');
 const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = ({ config }) => {
+  // Exclude styled-system/ from Storybook's implicit CSS loaders to avoid conflicts
+  // with our custom Panda CSS rule below.
+  const styledSystemDir = path.resolve(rootDir, 'styled-system');
+  config.module.rules = config.module.rules.map((rule) => {
+    if (rule && rule.test && rule.test.toString().includes('css')) {
+      return { ...rule, exclude: [].concat(rule.exclude || []).concat(styledSystemDir) };
+    }
+    // Handle Storybook's nested oneOf rules
+    if (rule && rule.oneOf) {
+      return {
+        ...rule,
+        oneOf: rule.oneOf.map((oneOfRule) => {
+          if (oneOfRule && oneOfRule.test && oneOfRule.test.toString().includes('css')) {
+            return { ...oneOfRule, exclude: [].concat(oneOfRule.exclude || []).concat(styledSystemDir) };
+          }
+          return oneOfRule;
+        }),
+      };
+    }
+    return rule;
+  });
+
   config.plugins.push(new MiniCssExtractPlugin());
   config.module.rules.push({
     test: /\.[jt]sx?$/,
@@ -51,6 +73,7 @@ module.exports = ({ config }) => {
     ...config.resolve.alias,
     react: path.join(rootDir, 'node_modules/react'),
     'react-dom': path.join(rootDir, 'node_modules/react-dom'),
+    'styled-system': path.join(rootDir, 'styled-system'),
   };
   config.module.rules.push({
     test: /\.[jt]sx?$/,
@@ -60,8 +83,18 @@ module.exports = ({ config }) => {
       presets: [['@babel/preset-env']],
     },
   });
+  // Panda CSS generated styles (non-CSS-modules, global)
+  config.module.rules.push({
+    test: /\.css$/,
+    include: path.resolve(rootDir, 'styled-system'),
+    use: [
+      { loader: devMode ? "style-loader" : MiniCssExtractPlugin.loader },
+      { loader: 'css-loader' },
+    ],
+  });
   config.module.rules.push({
     test: /\.css/,
+    exclude: path.resolve(rootDir, 'styled-system'),
     use: [
       {
         loader: devMode ? "style-loader" : MiniCssExtractPlugin.loader,

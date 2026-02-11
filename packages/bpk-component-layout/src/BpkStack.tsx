@@ -16,26 +16,85 @@
  * limitations under the License.
  */
 
-import { Stack, VStack, HStack } from '@chakra-ui/react';
+import type { CSSProperties } from 'react';
 
 import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkStackProps } from './types';
 
-export const BpkStack = ({ children, ...props }: BpkStackProps) => {
-  const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
-  return <Stack {...processedProps}>{children}</Stack>;
+export const BpkStack = ({ align, children, direction, justify, wrap, ...props }: BpkStackProps) => {
+  const { htmlProps, styles } = processBpkComponentProps(props, {
+    component: 'BpkStack',
+    responsiveProps: {
+      align,
+      justify,
+      wrap,
+      direction,
+    },
+  });
+
+  const { align: al, direction: dir, justify: jus, wrap: wr, ...restStyles } = styles;
+
+  const style = {
+    display: 'flex',
+    flexDirection: dir || 'column',
+    alignItems: al,
+    justifyContent: jus,
+    flexWrap: wr,
+    ...restStyles,
+  } as CSSProperties;
+
+  return <div style={style} {...htmlProps}>{children}</div>;
 };
 
-export const BpkHStack = ({ children, ...props }: BpkStackProps) => {
-  const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
-  return <HStack {...processedProps}>{children}</HStack>;
+export const BpkHStack = ({ align, children, direction, justify, wrap, ...props }: BpkStackProps) => {
+  const { htmlProps, styles } = processBpkComponentProps(props, {
+    component: 'BpkStack',
+    responsiveProps: {
+      align,
+      justify,
+      wrap,
+      direction,
+    },
+  });
+
+  const { align: al, direction: dir, justify: jus, wrap: wr, ...restStyles } = styles;
+
+  const style = {
+    display: 'flex',
+    flexDirection: dir || 'row',
+    alignItems: al || 'center',
+    justifyContent: jus,
+    flexWrap: wr,
+    ...restStyles,
+  } as CSSProperties;
+
+  return <div style={style} {...htmlProps}>{children}</div>;
 };
 
-export const BpkVStack = ({ children, ...props }: BpkStackProps) => {
-  const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
-  return <VStack {...processedProps}>{children}</VStack>;
+export const BpkVStack = ({ align, children, direction, justify, wrap, ...props }: BpkStackProps) => {
+  const { htmlProps, styles } = processBpkComponentProps(props, {
+    component: 'BpkStack',
+    responsiveProps: {
+      align,
+      justify,
+      wrap,
+      direction,
+    },
+  });
+
+  const { align: al, direction: dir, justify: jus, wrap: wr, ...restStyles } = styles;
+
+  const style = {
+    display: 'flex',
+    flexDirection: dir || 'column',
+    alignItems: al || 'center',
+    justifyContent: jus,
+    flexWrap: wr,
+    ...restStyles,
+  } as CSSProperties;
+
+  return <div style={style} {...htmlProps}>{children}</div>;
 };
 
 export type { BpkStackProps };
-

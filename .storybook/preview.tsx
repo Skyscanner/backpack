@@ -21,6 +21,7 @@ import { ArgTypes, Title } from '@storybook/addon-docs/blocks';
 import '../packages/bpk-stylesheets';
 import '../packages/bpk-stylesheets/font';
 import '../packages/bpk-stylesheets/larken';
+import '../styled-system/styles.css';
 
 import BpkRtlToggle from '../packages/bpk-component-rtl-toggle';
 

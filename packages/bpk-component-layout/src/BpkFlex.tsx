@@ -16,11 +16,9 @@
  * limitations under the License.
  */
 
-import { Flex } from '@chakra-ui/react';
+import type { CSSProperties } from 'react';
 
-import {
-  processBpkComponentProps,
-} from './tokenUtils';
+import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkFlexProps } from './types';
 
@@ -36,7 +34,7 @@ export const BpkFlex = ({
   wrap,
   ...props
 }: BpkFlexProps) => {
-  const processedProps = processBpkComponentProps(props, {
+  const { htmlProps, styles } = processBpkComponentProps(props, {
     component: 'BpkFlex',
     responsiveProps: {
       flexDirection: direction,
@@ -49,14 +47,12 @@ export const BpkFlex = ({
     },
   });
 
-  return (
-    <Flex
-      {...processedProps}
-      display={inline ? 'inline-flex' : undefined}
-    >
-      {children}
-    </Flex>
-  );
+  const style = {
+    display: inline ? 'inline-flex' : 'flex',
+    ...styles,
+  } as CSSProperties;
+
+  return <div style={style} {...htmlProps}>{children}</div>;
 };
 
 export type { BpkFlexProps };

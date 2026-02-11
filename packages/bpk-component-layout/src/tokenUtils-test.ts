@@ -17,7 +17,7 @@
  */
 
 import {
-  convertBpkSpacingToChakra,
+  convertBpkSpacingToValue,
   processBpkComponentProps,
   processBpkProps,
   processResponsiveProps,
@@ -90,7 +90,6 @@ describe('processBpkProps', () => {
     expect('className' in result).toBe(false);
     expect(result.padding).toBe('1rem');
 
-    // In Jest, NODE_ENV is "test" so the warning should be emitted.
     expect(warnSpy).toHaveBeenCalled();
     warnSpy.mockRestore();
   });
@@ -99,8 +98,6 @@ describe('processBpkProps', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
 
     const result = processBpkProps({
-      // style is not part of the public API but should still be stripped
-      // and warned about at runtime if passed through accidentally.
       style: { dummy: 'value' },
       padding: BpkSpacing.Base,
     });
@@ -108,12 +105,11 @@ describe('processBpkProps', () => {
     expect('style' in result).toBe(false);
     expect(result.padding).toBe('1rem');
 
-    // In Jest, NODE_ENV is "test" so the warning should be emitted.
     expect(warnSpy).toHaveBeenCalled();
     warnSpy.mockRestore();
   });
 
-  it('converts Backpack breakpoint keys to Chakra keys for responsive objects', () => {
+  it('extracts first breakpoint value from responsive objects for inline styles', () => {
     const result = processBpkProps({
       padding: {
         mobile: BpkSpacing.SM,
@@ -121,13 +117,11 @@ describe('processBpkProps', () => {
       },
     });
 
-    expect(result.padding).toEqual({
-      md: '.25rem',
-      xl: '.5rem',
-    });
+    // With inline styles, responsive objects are flattened to the first value
+    expect(result.padding).toBe('.25rem');
   });
 
-  it('maps Backpack breakpoint keys for non-spacing layout props via processResponsiveProps', () => {
+  it('extracts first value from responsive layout props via processResponsiveProps', () => {
     const result = processResponsiveProps({
       display: { mobile: 'flex', desktop: 'grid' },
       flexDirection: { mobile: 'column', tablet: 'row' },
@@ -135,9 +129,9 @@ describe('processBpkProps', () => {
     });
 
     expect(result).toEqual({
-      display: { md: 'flex', '2xl': 'grid' },
-      flexDirection: { md: 'column', xl: 'row' },
-      gridTemplateColumns: { xl: 'repeat(2, 1fr)', '2xl': 'repeat(4, 1fr)' },
+      display: 'flex',
+      flexDirection: 'column',
+      gridTemplateColumns: 'repeat(2, 1fr)',
     });
   });
 
@@ -146,13 +140,12 @@ describe('processBpkProps', () => {
 
     const result = processBpkComponentProps(
       {
-        // Chakra array syntax is intentionally not supported in the public API.
         display: ['flex', 'grid'],
       } as any,
       { component: 'BpkBox' },
     );
 
-    expect(result.display).toBeUndefined();
+    expect(result.styles.display).toBeUndefined();
     expect(warnSpy).toHaveBeenCalled();
     warnSpy.mockRestore();
   });
@@ -161,7 +154,6 @@ describe('processBpkProps', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
 
     const result = processBpkProps({
-      // array-based responsive values are intentionally not supported
       padding: [BpkSpacing.SM, BpkSpacing.MD] as any,
     });
 
@@ -170,28 +162,22 @@ describe('processBpkProps', () => {
     warnSpy.mockRestore();
   });
 
-  it('warns and drops unknown breakpoint keys from responsive objects', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
-
+  it('uses first value from responsive objects regardless of breakpoint key validity', () => {
     const result = processBpkProps({
       padding: {
-        // unknown key should be ignored
         phablet: BpkSpacing.SM,
         mobile: BpkSpacing.MD,
       } as any,
     });
 
-    expect(result.padding).toEqual({
-      md: '.5rem',
-    });
-    expect(warnSpy).toHaveBeenCalled();
-    warnSpy.mockRestore();
+    // With inline styles, responsive objects are flattened to the first value
+    expect(result.padding).toBe('.25rem');
   });
 
   it('warns and returns unknown spacing tokens as-is (dev fallback)', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
 
-    const result = convertBpkSpacingToChakra('bpk-spacing-unknown');
+    const result = convertBpkSpacingToValue('bpk-spacing-unknown');
 
     expect(result).toBe('bpk-spacing-unknown');
     expect(warnSpy).toHaveBeenCalled();

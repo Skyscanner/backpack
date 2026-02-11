@@ -25,7 +25,7 @@ import { BpkProvider } from './BpkProvider';
 import { BpkSpacing } from './tokens';
 
 describe('BpkProvider', () => {
-  it('renders children inside Chakra system without crashing', () => {
+  it('renders children without crashing', () => {
     const { getByText } = render(
       <BpkProvider>
         <BpkBox padding={BpkSpacing.MD}>

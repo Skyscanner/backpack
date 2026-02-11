@@ -16,15 +16,13 @@
  * limitations under the License.
  */
 
-import { Box } from '@chakra-ui/react';
-
 import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkBoxProps } from './types';
 
 export const BpkBox = ({ children, ...props }: BpkBoxProps) => {
-  const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
-  return <Box {...processedProps}>{children}</Box>;
+  const { htmlProps, styles } = processBpkComponentProps(props, { component: 'BpkBox' });
+  return <div style={styles} {...htmlProps}>{children}</div>;
 };
 
 export type { BpkBoxProps };

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { GridItem } from '@chakra-ui/react';
+import type { CSSProperties } from 'react';
 
 import { processBpkProps } from './tokenUtils';
 
@@ -33,23 +33,39 @@ export const BpkGridItem = ({
   rowStart,
   ...props
 }: BpkGridItemProps) => {
-  const processedProps = processBpkProps(props);
+  const processed = processBpkProps(props);
 
-  return (
-    <GridItem
-      {...processedProps}
-      area={area}
-      colEnd={colEnd}
-      colStart={colStart}
-      colSpan={colSpan}
-      rowEnd={rowEnd}
-      rowStart={rowStart}
-      rowSpan={rowSpan}
-    >
-      {children}
-    </GridItem>
-  );
+  // Separate style props from HTML props
+  const styles: Record<string, any> = {};
+  const htmlProps: Record<string, any> = {};
+
+  const styleKeys = new Set([
+    'padding', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft',
+    'paddingStart', 'paddingEnd', 'paddingInline',
+    'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
+    'marginStart', 'marginEnd', 'marginInline',
+    'gap', 'spacing', 'rowGap', 'columnGap',
+    'width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight',
+    'top', 'right', 'bottom', 'left',
+  ]);
+
+  Object.keys(processed).forEach((key) => {
+    if (styleKeys.has(key)) {
+      styles[key] = processed[key];
+    } else {
+      htmlProps[key] = processed[key];
+    }
+  });
+
+  if (area) styles.gridArea = area;
+  if (colSpan) styles.gridColumn = `span ${colSpan}`;
+  if (colStart) styles.gridColumnStart = colStart;
+  if (colEnd) styles.gridColumnEnd = colEnd;
+  if (rowSpan) styles.gridRow = `span ${rowSpan}`;
+  if (rowStart) styles.gridRowStart = rowStart;
+  if (rowEnd) styles.gridRowEnd = rowEnd;
+
+  return <div style={styles as CSSProperties} {...htmlProps}>{children}</div>;
 };
 
 export type { BpkGridItemProps };
-

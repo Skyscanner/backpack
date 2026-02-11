@@ -18,12 +18,16 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "allowJs": false
+    "allowJs": false,
+    "paths": {
+      "styled-system/*": ["./styled-system/*"]
+    }
   },
   "include": [
     "packages",
     "@types",
-    "examples"
+    "examples",
+    "styled-system"
   ],
   "exclude": ["**/**/*.figma.tsx"]
 }

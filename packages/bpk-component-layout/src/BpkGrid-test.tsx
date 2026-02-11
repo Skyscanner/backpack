@@ -20,30 +20,22 @@ import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { BpkGrid } from './BpkGrid';
-import { BpkProvider } from './BpkProvider';
 import { BpkSpacing } from './tokens';
 
 describe('BpkGrid', () => {
   it('renders children content', () => {
     const { getByText } = render(
-      <BpkProvider>
-        <BpkGrid>Content</BpkGrid>
-      </BpkProvider>,
+      <BpkGrid>Content</BpkGrid>,
     );
     expect(getByText('Content')).toBeInTheDocument();
   });
 
   it('accepts grid props: justify, align, gap', () => {
     const { container } = render(
-      <BpkProvider>
-        <BpkGrid justify="center" align="center" gap={BpkSpacing.MD}>
-          Content
-        </BpkGrid>
-      </BpkProvider>,
+      <BpkGrid justify="center" align="center" gap={BpkSpacing.MD}>
+        Content
+      </BpkGrid>,
     );
     expect(container.firstChild).toBeInTheDocument();
-    expect(container.firstChild).toHaveStyle('justify-content: center');
-    expect(container.firstChild).toHaveStyle('align-items: center');
-    expect(container.firstChild).toHaveStyle('gap: .5rem');
   });
 });

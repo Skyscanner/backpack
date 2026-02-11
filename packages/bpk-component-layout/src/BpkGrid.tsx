@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { Grid } from '@chakra-ui/react';
+import type { CSSProperties } from 'react';
 
 import { processBpkComponentProps } from './tokenUtils';
 
@@ -37,7 +37,7 @@ export const BpkGrid = ({
   templateRows,
   ...props
 }: BpkGridProps) => {
-  const processedProps = processBpkComponentProps(props, {
+  const { htmlProps, styles } = processBpkComponentProps(props, {
     component: 'BpkGrid',
     responsiveProps: {
       justifyContent: justify,
@@ -53,14 +53,12 @@ export const BpkGrid = ({
     },
   });
 
-  return (
-    <Grid
-      {...processedProps}
-      display={inline ? 'inline-grid' : undefined}
-    >
-      {children}
-    </Grid>
-  );
+  const style = {
+    display: inline ? 'inline-grid' : 'grid',
+    ...styles,
+  } as CSSProperties;
+
+  return <div style={style} {...htmlProps}>{children}</div>;
 };
 
 export type { BpkGridProps };

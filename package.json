@@ -48,7 +48,7 @@
     "sassdoc": "sassdoc {packages/bpk-mixins/**/*,node_modules/@skyscanner/bpk-svgs/dist/*,node_modules/@skyscanner/bpk-foundations-web/tokens/base.default}.scss -d dist-sassdoc -v --strict",
     "test": "npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest",
     "typecheck": "tsc",
-    "prepare": "husky",
+    "prepare": "panda codegen && husky",
     "percy-test": "percy storybook ./dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'",
     "ts-migrate": "ts-migrate",
     "transpile": "npm run build && run-s transpile:*",
@@ -87,13 +87,18 @@
       "^.+\\.(svg|png)$": "<rootDir>/scripts/stubs/fileStub.js",
       "react-transition-group/CSSTransition": "<rootDir>/scripts/stubs/cssTransitionStub.js",
       "@skyscanner/bpk-svgs/dist/svgs/^.+\\.svg$": "<rootDir>/scripts/stubs/fileStub.js",
-      "^react($|/.+)": "<rootDir>/node_modules/react$1"
+      "^react($|/.+)": "<rootDir>/node_modules/react$1",
+      "^styled-system/(.*)$": "<rootDir>/styled-system/$1"
     },
     "setupFilesAfterEnv": [
       "<rootDir>/scripts/jest/setup.js"
     ],
     "testEnvironment": "jsdom",
     "testRegex": "packages/.*-test\\.[jt]sx?$",
+    "transform": {
+      "\\.[jt]sx?$": "babel-jest",
+      "\\.mjs$": "babel-jest"
+    },
     "transformIgnorePatterns": [
       "node_modules/(?!bpk|@skyscanner|d3-.*|internmap)"
     ],
@@ -118,6 +123,8 @@
     "@babel/preset-typescript": "^7.28.5",
     "@babel/register": "^7.28.3",
     "@figma/code-connect": "^1.3.4",
+    "@pandacss/dev": "^0.52.0",
+    "@pandacss/postcss": "^0.52.0",
     "@percy/cli": "^1.31.0",
     "@percy/storybook": "^9.1.0",
     "@skyscanner/bpk-foundations-web": "^24.1.0",

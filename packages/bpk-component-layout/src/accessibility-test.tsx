@@ -24,22 +24,19 @@ import '@testing-library/jest-dom';
 import { BpkBox } from './BpkBox';
 import { BpkFlex } from './BpkFlex';
 import { BpkGrid } from './BpkGrid';
-import { BpkProvider } from './BpkProvider';
 import { BpkStack } from './BpkStack';
 import { BpkSpacing } from './tokens';
 
 describe('bpk-component-layout accessibility tests', () => {
   it('BpkBox basic usage should not have detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkProvider>
-        <BpkBox
-          role="region"
-          aria-label="Layout region"
-          padding={BpkSpacing.MD}
-        >
-          Accessible layout content
-        </BpkBox>
-      </BpkProvider>,
+      <BpkBox
+        role="region"
+        aria-label="Layout region"
+        padding={BpkSpacing.MD}
+      >
+        Accessible layout content
+      </BpkBox>,
     );
 
     const results = await axe(container);
@@ -48,16 +45,14 @@ describe('bpk-component-layout accessibility tests', () => {
 
   it('BpkStack basic usage should not have detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkProvider>
-        <BpkStack
-          role="group"
-          aria-label="Stack region"
-          gap={BpkSpacing.MD}
-        >
-          <div>Item one</div>
-          <div>Item two</div>
-        </BpkStack>
-      </BpkProvider>,
+      <BpkStack
+        role="group"
+        aria-label="Stack region"
+        gap={BpkSpacing.MD}
+      >
+        <div>Item one</div>
+        <div>Item two</div>
+      </BpkStack>,
     );
 
     const results = await axe(container);
@@ -66,17 +61,15 @@ describe('bpk-component-layout accessibility tests', () => {
 
   it('BpkFlex basic usage should not have detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkProvider>
-        <BpkFlex
-          role="group"
-          aria-label="Flex container"
-          direction="row"
-          gap={BpkSpacing.MD}
-        >
-          <BpkBox>Item 1</BpkBox>
-          <BpkBox>Item 2</BpkBox>
-        </BpkFlex>
-      </BpkProvider>,
+      <BpkFlex
+        role="group"
+        aria-label="Flex container"
+        direction="row"
+        gap={BpkSpacing.MD}
+      >
+        <BpkBox>Item 1</BpkBox>
+        <BpkBox>Item 2</BpkBox>
+      </BpkFlex>,
     );
 
     const results = await axe(container);
@@ -85,19 +78,17 @@ describe('bpk-component-layout accessibility tests', () => {
 
   it('BpkGrid basic usage should not have detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkProvider>
-        <BpkGrid
-          role="region"
-          aria-label="Layout Grid"
-          templateColumns="repeat(2, 1fr)"
-          gap={BpkSpacing.MD}
-        >
-          <BpkBox>Cell 1</BpkBox>
-          <BpkBox>Cell 2</BpkBox>
-          <BpkBox>Cell 3</BpkBox>
-          <BpkBox>Cell 4</BpkBox>
-        </BpkGrid>
-      </BpkProvider>,
+      <BpkGrid
+        role="region"
+        aria-label="Layout Grid"
+        templateColumns="repeat(2, 1fr)"
+        gap={BpkSpacing.MD}
+      >
+        <BpkBox>Cell 1</BpkBox>
+        <BpkBox>Cell 2</BpkBox>
+        <BpkBox>Cell 3</BpkBox>
+        <BpkBox>Cell 4</BpkBox>
+      </BpkGrid>,
     );
 
     const results = await axe(container);

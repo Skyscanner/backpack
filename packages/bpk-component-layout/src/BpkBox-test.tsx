@@ -21,15 +21,12 @@ import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { BpkBox } from './BpkBox';
-import { BpkProvider } from './BpkProvider';
 import { BpkSpacing } from './tokens';
 
 describe('BpkBox', () => {
   it('renders children content', () => {
     const { getByText } = render(
-      <BpkProvider>
-        <BpkBox padding={BpkSpacing.MD}>Content</BpkBox>
-      </BpkProvider>,
+      <BpkBox padding={BpkSpacing.MD}>Content</BpkBox>,
     );
 
     expect(getByText('Content')).toBeInTheDocument();
@@ -37,32 +34,25 @@ describe('BpkBox', () => {
 
   it('ignores className prop to prevent style overrides', () => {
     const { container } = render(
-      <BpkProvider>
-        {/* @ts-expect-error className is intentionally not part of the public API */}
-        <BpkBox className="custom-class" padding={BpkSpacing.MD}>
-          Content
-        </BpkBox>
-      </BpkProvider>,
+      // @ts-expect-error className is intentionally not part of the public API
+      <BpkBox className="custom-class" padding={BpkSpacing.MD}>
+        Content
+      </BpkBox>,
     );
 
-    // Chakra renders a div as the Box root element
     const div = container.querySelector('div');
     expect(div).not.toHaveClass('custom-class');
   });
 
   it('applies layout props via Backpack tokens', () => {
     const { container } = render(
-      <BpkProvider>
-        <BpkBox padding={BpkSpacing.MD}>
-          Token box
-        </BpkBox>
-      </BpkProvider>,
+      <BpkBox padding={BpkSpacing.MD}>
+        Token box
+      </BpkBox>,
     );
 
     const div = container.querySelector('div');
     expect(div).toBeInTheDocument();
-    // We don't assert exact styles because Chakra generates classes & vars,
-    // but we at least assert that the element rendered successfully.
   });
 
   it('supports basic interaction props: onClick, onFocus, onBlur', () => {
@@ -71,16 +61,14 @@ describe('BpkBox', () => {
     const handleBlur = jest.fn();
 
     const { getByText } = render(
-      <BpkProvider>
-        <BpkBox
-          padding={BpkSpacing.MD}
-          onClick={handleClick}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-        >
-          Clickable
-        </BpkBox>
-      </BpkProvider>,
+      <BpkBox
+        padding={BpkSpacing.MD}
+        onClick={handleClick}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+      >
+        Clickable
+      </BpkBox>,
     );
 
     const element = getByText('Clickable');
