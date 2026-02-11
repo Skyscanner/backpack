@@ -122,7 +122,7 @@ const BpkNudger = ({
             inputRef.current && setNativeValue(inputRef.current, newValue);
           }}
           disabled={minButtonDisabled}
-          title={decreaseButtonLabel}
+          aria-label={decreaseButtonLabel}
           aria-controls={id}
         >
           <AlignedMinusIcon />
@@ -166,7 +166,7 @@ const BpkNudger = ({
             inputRef.current && setNativeValue(inputRef.current, newValue);
           }}
           disabled={maxButtonDisabled}
-          title={increaseButtonLabel}
+          aria-label={increaseButtonLabel}
           aria-controls={id}
         >
           <AlignedPlusIcon />
