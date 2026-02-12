@@ -15,9 +15,11 @@
 >
 > As an experimental component, we want to hear about your experience.
 >
-> Contact: Clover team (@backpack on Slack)
-
-> Backpack layout components and tokens.
+> Contact: @
+>   For queries @design-system-web-gf in #backpack
+>   For designers to queries @backpack-design in#backpack-design-chat
+> 
+>`Backpack layout components and tokens.
 
 ## Overview
 
@@ -213,3 +215,118 @@ This package includes Storybook examples under `examples/bpk-component-layout` s
 - Responsive layout using Backpack breakpoints
 
 Use these examples as a reference for how to compose layout props and tokens. As new layout components (e.g. `BpkFlex`, `BpkGrid`, `BpkStack`) are added, they should follow the same prop and constraints model.
+
+## Props
+
+> **Note:** As an experimental component, these props are subject to change.
+
+### Common Props
+
+All layout components share these common props (except `BpkVessel`):
+
+| Name | Type | Required |
+|------|------|----------|
+| children | `ReactNode` | No |
+| padding | `BpkResponsiveValue<BpkSpacingValue>` | No |
+| margin | `BpkResponsiveValue<BpkSpacingValue>` | No |
+| gap | `BpkResponsiveValue<BpkSpacingValue>` | No |
+| width | `BpkResponsiveValue<BpkSizeValue>` | No |
+| height | `BpkResponsiveValue<BpkSizeValue>` | No |
+| data-testid | `string` | No |
+
+**Spacing tokens:** `BpkSpacing.SM`, `BpkSpacing.MD`, `BpkSpacing.LG`, etc.
+**Responsive values:** `{ mobile: value, tablet: value, desktop: value }`
+**Full prop list:** Includes `paddingTop`, `marginLeft`, `minWidth`, `maxHeight`, etc. See `src/commonProps.ts`.
+
+### BpkBox
+
+In addition to common props:
+
+| Name | Type | Required |
+|------|------|----------|
+| display | `BpkResponsiveValue<string>` | No |
+| flexDirection | `BpkResponsiveValue<string>` | No |
+| justifyContent | `BpkResponsiveValue<string>` | No |
+| alignItems | `BpkResponsiveValue<string>` | No |
+| gridTemplateColumns | `BpkResponsiveValue<string>` | No |
+| gridTemplateRows | `BpkResponsiveValue<string>` | No |
+| onClick | `(event: React.MouseEvent) => void` | No |
+| onFocus | `(event: React.FocusEvent) => void` | No |
+| onBlur | `(event: React.FocusEvent) => void` | No |
+
+Supports all flexbox and grid layout props. See `src/types.ts` for full list.
+
+### BpkFlex
+
+In addition to common props:
+
+| Name | Type | Required |
+|------|------|----------|
+| direction | `BpkResponsiveValue<'row' \| 'column'>` | No |
+| justify | `BpkResponsiveValue<string>` | No |
+| align | `BpkResponsiveValue<string>` | No |
+| wrap | `BpkResponsiveValue<string>` | No |
+| inline | `boolean` | No |
+
+### BpkGrid
+
+In addition to common props:
+
+| Name | Type | Required |
+|------|------|----------|
+| templateColumns | `BpkResponsiveValue<string>` | No |
+| templateRows | `BpkResponsiveValue<string>` | No |
+| templateAreas | `BpkResponsiveValue<string>` | No |
+| autoFlow | `BpkResponsiveValue<string>` | No |
+| justify | `BpkResponsiveValue<string>` | No |
+| align | `BpkResponsiveValue<string>` | No |
+| rowGap | `BpkResponsiveValue<BpkSpacingValue>` | No |
+| columnGap | `BpkResponsiveValue<BpkSpacingValue>` | No |
+| column | `BpkResponsiveValue<string>` | No |
+| row | `BpkResponsiveValue<string>` | No |
+| inline | `boolean` | No |
+
+### BpkGridItem
+
+In addition to common props:
+
+| Name | Type | Required |
+|------|------|----------|
+| area | `string` | No |
+| colSpan | `number` | No |
+| rowSpan | `number` | No |
+| colStart | `number \| string` | No |
+| colEnd | `number \| string` | No |
+| rowStart | `number \| string` | No |
+| rowEnd | `number \| string` | No |
+
+### BpkStack / BpkHStack / BpkVStack
+
+In addition to common props, inherits flex/grid layout props.
+
+- `BpkStack`: Vertical stack (configurable)
+- `BpkHStack`: Horizontal stack
+- `BpkVStack`: Vertical stack
+
+### BpkVessel
+
+Migration-focused component with different props:
+
+| Name | Type | Required |
+|------|------|----------|
+| as | `'div' \| 'span' \| 'section' \| ...` | No |
+| children | `ReactNode` | No |
+| className | `string` | No |
+| style | `CSSProperties` | No |
+
+Accepts all `React.HTMLAttributes` including `aria-*`, `data-*`, event handlers, etc.
+
+### Responsive Values
+
+Props support responsive values using Backpack breakpoint keys:
+
+```tsx
+<BpkBox padding={{ mobile: BpkSpacing.SM, desktop: BpkSpacing.LG }} />
+```
+
+**Breakpoints:** `small-mobile`, `mobile`, `small-tablet`, `tablet`, `desktop`
