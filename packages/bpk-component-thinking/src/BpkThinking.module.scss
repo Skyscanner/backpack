@@ -89,6 +89,18 @@
       animation: none;
     }
   }
+
+  // OnDark variant: uses Night Sky blue (#054184) on dark backgrounds
+  &--on-dark {
+    .bpk-thinking__dots--dot {
+      background-color: tokens.$bpk-private-chip-on-dark-on-background-night;
+    }
+
+    .bpk-thinking__bubble {
+      background: tokens.$bpk-private-chip-on-dark-on-background-night;
+      color: tokens.$bpk-text-on-dark-day;
+    }
+  }
 }
 
 @keyframes bpk-thinking-dot-bounce {

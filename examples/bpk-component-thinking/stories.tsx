@@ -24,6 +24,8 @@ import {
   LongContentExample,
   MultipleExample,
   MixedExample,
+  OnDarkExample,
+  OnDarkWithContentExample,
 } from './examples';
 
 export default {
@@ -36,6 +38,8 @@ export const CustomContent = CustomContentExample;
 export const LongContent = LongContentExample;
 export const Multiple = MultipleExample;
 export const Mixed = MixedExample;
+export const OnDark = OnDarkExample;
+export const OnDarkWithContent = OnDarkWithContentExample;
 
 export const VisualTest = DefaultExample;
 export const VisualTestWithZoom = {

@@ -25,6 +25,13 @@ import STYLES from './BpkThinking.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+export const THINKING_TYPES = {
+  default: 'default',
+  onDark: 'on-dark',
+} as const;
+
+export type ThinkingType = (typeof THINKING_TYPES)[keyof typeof THINKING_TYPES];
+
 export type BpkThinkingProps = {
   /**
    * The content to display in the thinking bubble.
@@ -36,15 +43,26 @@ export type BpkThinkingProps = {
    * This is required for screen reader support.
    */
   accessibilityLabel: string;
+  /**
+   * The visual style of the thinking component.
+   * - default: Dark bubble with light text (for use on light backgrounds)
+   * - onDark: Light bubble with dark text (for use on dark backgrounds)
+   */
+  type?: ThinkingType;
 } & Omit<ComponentPropsWithoutRef<'div'>, 'children'>;
 
 const BpkThinking = ({
   accessibilityLabel,
   className,
   content = 'Thinking...',
+  type = THINKING_TYPES.default,
   ...rest
 }: BpkThinkingProps) => {
-  const classNames = getClassName('bpk-thinking', className);
+  const classNames = getClassName(
+    'bpk-thinking',
+    `bpk-thinking--${type}`,
+    className,
+  );
 
   return (
     <div

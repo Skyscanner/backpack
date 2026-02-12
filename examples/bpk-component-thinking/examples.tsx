@@ -16,8 +16,14 @@
  * limitations under the License.
  */
 
-import BpkThinking from '../../packages/bpk-component-thinking/src/BpkThinking';
+import BpkThinking, {
+  THINKING_TYPES,
+} from '../../packages/bpk-component-thinking/src/BpkThinking';
 import { cssModules } from '../../packages/bpk-react-utils';
+import {
+  BpkDarkExampleWrapper,
+  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+} from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 
@@ -73,4 +79,27 @@ export const MixedExample = () => (
       content="We're checking availability across multiple airlines and travel providers to ensure you get the most comprehensive results"
     />
   </div>
+);
+
+export const OnDarkExample = () => (
+  <BpkDarkExampleWrapper>
+    <div className={getClassName('bpk-thinking-examples')}>
+      <BpkThinking
+        accessibilityLabel="AI is thinking"
+        type={THINKING_TYPES.onDark}
+      />
+    </div>
+  </BpkDarkExampleWrapper>
+);
+
+export const OnDarkWithContentExample = () => (
+  <BpkDarkExampleWrapper>
+    <div className={getClassName('bpk-thinking-examples')}>
+      <BpkThinking
+        accessibilityLabel="Processing"
+        type={THINKING_TYPES.onDark}
+        content="Finding the best flights for you..."
+      />
+    </div>
+  </BpkDarkExampleWrapper>
 );
