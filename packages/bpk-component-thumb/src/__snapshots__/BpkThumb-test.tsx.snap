@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkThumb should render correctly with default props 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="Thumbs up"
+    class="bpk-thumb"
+    data-testid="bpk-thumb-up"
+    title="Thumbs up"
+    type="button"
+  >
+    <span
+      class="bpk-thumb__icon"
+    >
+      <span
+        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+      >
+        <svg
+          aria-hidden="true"
+          height="1.5rem"
+          viewBox="0 0 24 24"
+          width="1.5rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.443 11.896V20a1 1 0 0 0 1 1h6.035a5 5 0 0 0 4.682-3.244l2.27-6.054A2 2 0 0 0 19.557 9h-4.833a1 1 0 0 1-.97-1.243l.297-1.188A2.873 2.873 0 0 0 11.263 3a.48.48 0 0 0-.443.296l-3.227 7.838a2 2 0 0 0-.151.762zm-2 .604a1.5 1.5 0 0 0-3 0v7a1.5 1.5 0 0 0 3 0z"
+          />
+        </svg>
+      </span>
+    </span>
+  </button>
+</DocumentFragment>
+`;
