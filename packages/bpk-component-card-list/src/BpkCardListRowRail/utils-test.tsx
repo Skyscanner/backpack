@@ -87,6 +87,111 @@ describe('usePageScrollSync', () => {
     jest.useRealTimers();
   });
 
+  describe('Effect 0: Initial scroll on mount', () => {
+    it('should scroll to the correct card on mount with behaviour = instant when initialPageIndex is provided', () => {
+      renderHook(() =>
+        usePageScrollSync({
+          cardRefs: mockCardRefs,
+          container: mockContainer,
+          currentIndex: 2,
+          enabled: true,
+          initialPageIndex: 2,
+          initiallyShownCards: 3,
+          setCurrentIndex: mockSetCurrentIndex,
+          visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        }),
+      );
+
+      expect(mockCardRefs.current[6]?.scrollIntoView).toHaveBeenCalledWith({
+        behavior: 'instant',
+        block: 'nearest',
+        inline: 'start',
+      });
+    });
+
+    it('should not scroll when initialPageIndex is 0', () => {
+      renderHook(() =>
+        usePageScrollSync({
+          cardRefs: mockCardRefs,
+          container: mockContainer,
+          currentIndex: 0,
+          enabled: true,
+          initialPageIndex: 0,
+          initiallyShownCards: 3,
+          setCurrentIndex: mockSetCurrentIndex,
+          visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        }),
+      );
+
+      mockCardRefs.current.forEach((card) => {
+        expect(card!.scrollIntoView).not.toHaveBeenCalled();
+      });
+    });
+
+    it('should not scroll when disabled', () => {
+      renderHook(() =>
+        usePageScrollSync({
+          cardRefs: mockCardRefs,
+          container: mockContainer,
+          currentIndex: 2,
+          enabled: false,
+          initialPageIndex: 2,
+          initiallyShownCards: 3,
+          setCurrentIndex: mockSetCurrentIndex,
+          visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        }),
+      );
+
+      mockCardRefs.current.forEach((card) => {
+        expect(card?.scrollIntoView).not.toHaveBeenCalled();
+      });
+    });
+
+    it('should only scroll once and not on re-render', () => {
+      const { rerender } = renderHook(
+        ({ currentIndex }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex,
+            enabled: true,
+            initialPageIndex: 1,
+            initiallyShownCards: 3,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          }),
+        { initialProps: { currentIndex: 1 } },
+      );
+
+      expect(mockCardRefs.current[3]?.scrollIntoView).toHaveBeenCalledTimes(1);
+
+      rerender({ currentIndex: 1 });
+
+      expect(mockCardRefs.current[3]?.scrollIntoView).toHaveBeenCalledTimes(1);
+    });
+
+    it('should scroll to correct card based on initiallyShownCards multiplier', () => {
+      renderHook(() =>
+        usePageScrollSync({
+          cardRefs: mockCardRefs,
+          container: mockContainer,
+          currentIndex: 1,
+          enabled: true,
+          initialPageIndex: 1,
+          initiallyShownCards: 4,
+          setCurrentIndex: mockSetCurrentIndex,
+          visibilityList: [1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+        }),
+      );
+
+      expect(mockCardRefs.current[4]?.scrollIntoView).toHaveBeenCalledWith({
+        behavior: 'instant',
+        block: 'nearest',
+        inline: 'start',
+      });
+    });
+  });
+
   describe('Effect 1: Programmatic scroll when currentIndex changes', () => {
     it('should scroll to the target card when currentIndex changes and container is visible', () => {
       const { rerender } = renderHook(
@@ -96,6 +201,7 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -120,6 +226,7 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex,
             enabled: false,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -147,6 +254,7 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -174,6 +282,7 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -194,6 +303,7 @@ describe('usePageScrollSync', () => {
             container: null,
             currentIndex,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -216,6 +326,7 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -236,6 +347,7 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 4,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList: [1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -256,6 +368,7 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -279,6 +392,7 @@ describe('usePageScrollSync', () => {
           container: mockContainer,
           currentIndex: 0,
           enabled: true,
+          initialPageIndex: 0,
           initiallyShownCards: 3,
           setCurrentIndex: mockSetCurrentIndex,
           visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -301,6 +415,7 @@ describe('usePageScrollSync', () => {
           container: mockContainer,
           currentIndex: 0,
           enabled: false,
+          initialPageIndex: 0,
           initiallyShownCards: 3,
           setCurrentIndex: mockSetCurrentIndex,
           visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -323,6 +438,7 @@ describe('usePageScrollSync', () => {
           container: null,
           currentIndex: 0,
           enabled: true,
+          initialPageIndex: 0,
           initiallyShownCards: 3,
           setCurrentIndex: mockSetCurrentIndex,
           visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -344,6 +460,7 @@ describe('usePageScrollSync', () => {
           container: mockContainer,
           currentIndex: 0,
           enabled: true,
+          initialPageIndex: 0,
           initiallyShownCards: 3,
           setCurrentIndex: mockSetCurrentIndex,
           visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -366,11 +483,16 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex: 0,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList,
           }),
-        { initialProps: { visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0] } },
+        {
+          initialProps: {
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+        },
       );
 
       // User initiates scroll via wheel
@@ -401,11 +523,16 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex: 0,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList,
           }),
-        { initialProps: { visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0] } },
+        {
+          initialProps: {
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+        },
       );
 
       // User initiates scroll via wheel
@@ -442,11 +569,16 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex: 0,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList,
           }),
-        { initialProps: { visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0] } },
+        {
+          initialProps: {
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+        },
       );
 
       // User initiates scroll via wheel
@@ -467,6 +599,7 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex: 0,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 4,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList,
@@ -496,11 +629,16 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex: 0,
             enabled: false,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList,
           }),
-        { initialProps: { visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0] } },
+        {
+          initialProps: {
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+        },
       );
 
       act(() => {
@@ -520,11 +658,16 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex: 0,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList,
           }),
-        { initialProps: { visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0] } },
+        {
+          initialProps: {
+            visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          },
+        },
       );
 
       act(() => {
@@ -544,11 +687,16 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex: 1,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList,
           }),
-        { initialProps: { visibilityList: [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0] } },
+        {
+          initialProps: {
+            visibilityList: [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+          },
+        },
       );
 
       act(() => {
@@ -572,11 +720,16 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex: 1,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList,
           }),
-        { initialProps: { visibilityList: [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0] } },
+        {
+          initialProps: {
+            visibilityList: [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+          },
+        },
       );
 
       // User initiates scroll via wheel
@@ -601,6 +754,7 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList,
@@ -634,6 +788,7 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList,
@@ -674,6 +829,7 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList,
@@ -707,6 +863,7 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList,
@@ -748,6 +905,7 @@ describe('usePageScrollSync', () => {
             container: mockContainer,
             currentIndex,
             enabled: true,
+            initialPageIndex: 0,
             initiallyShownCards: 3,
             setCurrentIndex: mockSetCurrentIndex,
             visibilityList,
@@ -790,6 +948,7 @@ describe('usePageScrollSync', () => {
           container: mockContainer,
           currentIndex: 0,
           enabled: true,
+          initialPageIndex: 0,
           initiallyShownCards: 3,
           setCurrentIndex: mockSetCurrentIndex,
           visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -820,6 +979,7 @@ describe('usePageScrollSync', () => {
           container: mockContainer,
           currentIndex: 0,
           enabled: true,
+          initialPageIndex: 0,
           initiallyShownCards: 3,
           setCurrentIndex: mockSetCurrentIndex,
           visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
