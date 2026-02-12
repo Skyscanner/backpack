@@ -196,4 +196,3 @@ jobs:
           pr_number: ${{ inputs.pr_number }}
           marker: ${{ env.PR_COMMENT_MARKER }}
           body: ${{ steps.build-body.outputs.body }}
-          github_token: ${{ steps.app-token.outputs.token }}
