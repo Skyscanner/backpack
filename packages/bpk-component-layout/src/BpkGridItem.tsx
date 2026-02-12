@@ -18,6 +18,8 @@
 
 import { GridItem } from '@chakra-ui/react';
 
+import { getDataComponentAttribute } from '../../bpk-react-utils';
+
 import { processBpkProps } from './tokenUtils';
 
 import type { BpkGridItemProps } from './types';
@@ -37,6 +39,7 @@ export const BpkGridItem = ({
 
   return (
     <GridItem
+      {...getDataComponentAttribute('GridItem')}
       {...processedProps}
       area={area}
       colEnd={colEnd}

@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { getDataComponentAttribute } from '../../bpk-react-utils';
+
 import type { BpkVesselProps } from './types';
 
 /**
@@ -65,6 +67,10 @@ export const BpkVessel = ({
   as: Element = 'div',
   children,
   ...restProps
-}: BpkVesselProps) => <Element {...restProps}>{children}</Element>;
+}: BpkVesselProps) => (
+  <Element {...getDataComponentAttribute('Vessel')} {...restProps}>
+    {children}
+  </Element>
+);
 
 export type { BpkVesselProps };

@@ -18,6 +18,8 @@
 
 import { Grid } from '@chakra-ui/react';
 
+import { getDataComponentAttribute } from '../../bpk-react-utils';
+
 import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkGridProps } from './types';
@@ -55,6 +57,7 @@ export const BpkGrid = ({
 
   return (
     <Grid
+      {...getDataComponentAttribute('Grid')}
       {...processedProps}
       display={inline ? 'inline-grid' : undefined}
     >

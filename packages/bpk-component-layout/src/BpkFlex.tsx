@@ -18,6 +18,8 @@
 
 import { Flex } from '@chakra-ui/react';
 
+import { getDataComponentAttribute } from '../../bpk-react-utils';
+
 import {
   processBpkComponentProps,
 } from './tokenUtils';
@@ -51,6 +53,7 @@ export const BpkFlex = ({
 
   return (
     <Flex
+      {...getDataComponentAttribute('Flex')}
       {...processedProps}
       display={inline ? 'inline-flex' : undefined}
     >

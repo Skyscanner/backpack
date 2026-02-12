@@ -18,23 +18,37 @@
 
 import { Stack, VStack, HStack } from '@chakra-ui/react';
 
+import { getDataComponentAttribute } from '../../bpk-react-utils';
+
 import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkStackProps } from './types';
 
 export const BpkStack = ({ children, ...props }: BpkStackProps) => {
   const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
-  return <Stack {...processedProps}>{children}</Stack>;
+  return (
+    <Stack {...getDataComponentAttribute('Stack')} {...processedProps}>
+      {children}
+    </Stack>
+  );
 };
 
 export const BpkHStack = ({ children, ...props }: BpkStackProps) => {
   const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
-  return <HStack {...processedProps}>{children}</HStack>;
+  return (
+    <HStack {...getDataComponentAttribute('HStack')} {...processedProps}>
+      {children}
+    </HStack>
+  );
 };
 
 export const BpkVStack = ({ children, ...props }: BpkStackProps) => {
   const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
-  return <VStack {...processedProps}>{children}</VStack>;
+  return (
+    <VStack {...getDataComponentAttribute('VStack')} {...processedProps}>
+      {children}
+    </VStack>
+  );
 };
 
 export type { BpkStackProps };

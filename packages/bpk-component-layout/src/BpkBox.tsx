@@ -18,13 +18,19 @@
 
 import { Box } from '@chakra-ui/react';
 
+import { getDataComponentAttribute } from '../../bpk-react-utils';
+
 import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkBoxProps } from './types';
 
 export const BpkBox = ({ children, ...props }: BpkBoxProps) => {
   const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
-  return <Box {...processedProps}>{children}</Box>;
+  return (
+    <Box {...getDataComponentAttribute('Box')} {...processedProps}>
+      {children}
+    </Box>
+  );
 };
 
 export type { BpkBoxProps };
