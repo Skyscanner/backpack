@@ -15,9 +15,9 @@
 >
 > As an experimental component, we want to hear about your experience.
 >
-> Contact: @
->   For queries @design-system-web-gf in #backpack
->   For designers to queries @backpack-design in#backpack-design-chat
+> For queries: @design-system-web-gf in #backpack
+> 
+> For design queries: @backpack-design in #backpack-design-chat
 > 
 >`Backpack layout components and tokens.
 
@@ -220,85 +220,147 @@ Use these examples as a reference for how to compose layout props and tokens. As
 
 > **Note:** As an experimental component, these props are subject to change.
 
-### Common Props
+### Common Props (Core)
 
 All layout components share these common props (except `BpkVessel`):
 
-| Name | Type | Required |
-|------|------|----------|
-| children | `ReactNode` | No |
-| padding | `BpkResponsiveValue<BpkSpacingValue>` | No |
-| margin | `BpkResponsiveValue<BpkSpacingValue>` | No |
-| gap | `BpkResponsiveValue<BpkSpacingValue>` | No |
-| width | `BpkResponsiveValue<BpkSizeValue>` | No |
-| height | `BpkResponsiveValue<BpkSizeValue>` | No |
-| data-testid | `string` | No |
+| Name | Type |
+|------|------|
+| children | `ReactNode` |
+| padding | `BpkResponsiveValue<BpkSpacingValue>` |
+| paddingTop | `BpkResponsiveValue<BpkSpacingValue>` |
+| paddingRight | `BpkResponsiveValue<BpkSpacingValue>` |
+| paddingBottom | `BpkResponsiveValue<BpkSpacingValue>` |
+| paddingLeft | `BpkResponsiveValue<BpkSpacingValue>` |
+| paddingStart | `BpkResponsiveValue<BpkSpacingValue>` |
+| paddingEnd | `BpkResponsiveValue<BpkSpacingValue>` |
+| paddingInline | `BpkResponsiveValue<BpkSpacingValue>` |
+| margin | `BpkResponsiveValue<BpkSpacingValue>` |
+| marginTop | `BpkResponsiveValue<BpkSpacingValue>` |
+| marginRight | `BpkResponsiveValue<BpkSpacingValue>` |
+| marginBottom | `BpkResponsiveValue<BpkSpacingValue>` |
+| marginLeft | `BpkResponsiveValue<BpkSpacingValue>` |
+| marginStart | `BpkResponsiveValue<BpkSpacingValue>` |
+| marginEnd | `BpkResponsiveValue<BpkSpacingValue>` |
+| marginInline | `BpkResponsiveValue<BpkSpacingValue>` |
+| gap | `BpkResponsiveValue<BpkSpacingValue>` |
+| width | `BpkResponsiveValue<BpkSizeValue>` |
+| height | `BpkResponsiveValue<BpkSizeValue>` |
+| minWidth | `BpkResponsiveValue<BpkSizeValue>` |
+| minHeight | `BpkResponsiveValue<BpkSizeValue>` |
+| maxWidth | `BpkResponsiveValue<BpkSizeValue>` |
+| maxHeight | `BpkResponsiveValue<BpkSizeValue>` |
+| top | `BpkResponsiveValue<BpkPositionValue>` |
+| right | `BpkResponsiveValue<BpkPositionValue>` |
+| bottom | `BpkResponsiveValue<BpkPositionValue>` |
+| left | `BpkResponsiveValue<BpkPositionValue>` |
+| data-testid | `string` |
+| data-cy | `string` |
 
 **Spacing tokens:** `BpkSpacing.SM`, `BpkSpacing.MD`, `BpkSpacing.LG`, etc.
 **Responsive values:** `{ mobile: value, tablet: value, desktop: value }`
-**Full prop list:** Includes `paddingTop`, `marginLeft`, `minWidth`, `maxHeight`, etc. See `src/commonProps.ts`.
+**Complete type:** See `src/commonProps.ts` for BpkCommonLayoutProps.
 
 ### BpkBox
 
 In addition to common props:
 
-| Name | Type | Required |
-|------|------|----------|
-| display | `BpkResponsiveValue<string>` | No |
-| flexDirection | `BpkResponsiveValue<string>` | No |
-| justifyContent | `BpkResponsiveValue<string>` | No |
-| alignItems | `BpkResponsiveValue<string>` | No |
-| gridTemplateColumns | `BpkResponsiveValue<string>` | No |
-| gridTemplateRows | `BpkResponsiveValue<string>` | No |
-| onClick | `(event: React.MouseEvent) => void` | No |
-| onFocus | `(event: React.FocusEvent) => void` | No |
-| onBlur | `(event: React.FocusEvent) => void` | No |
+#### Display & Layout
+| Name | Type |
+|------|------|
+| display | `BpkResponsiveValue<string>` |
 
-Supports all flexbox and grid layout props. See `src/types.ts` for full list.
+#### Flexbox Props
+| Name | Type |
+|------|------|
+| flexDirection | `BpkResponsiveValue<string>` |
+| flexWrap | `BpkResponsiveValue<string>` |
+| justifyContent | `BpkResponsiveValue<string>` |
+| alignItems | `BpkResponsiveValue<string>` |
+| alignContent | `BpkResponsiveValue<string>` |
+| flex | `BpkResponsiveValue<string \| number>` |
+| flexGrow | `BpkResponsiveValue<number>` |
+| flexShrink | `BpkResponsiveValue<number>` |
+| flexBasis | `BpkResponsiveValue<string>` |
+| order | `BpkResponsiveValue<number>` |
+| alignSelf | `BpkResponsiveValue<string>` |
+| justifySelf | `BpkResponsiveValue<string>` |
+
+#### Grid Props
+| Name | Type |
+|------|------|
+| gridTemplateColumns | `BpkResponsiveValue<string>` |
+| gridTemplateRows | `BpkResponsiveValue<string>` |
+| gridTemplateAreas | `BpkResponsiveValue<string>` |
+| gridAutoFlow | `BpkResponsiveValue<string>` |
+| gridAutoRows | `BpkResponsiveValue<string>` |
+| gridAutoColumns | `BpkResponsiveValue<string>` |
+| gridColumn | `BpkResponsiveValue<string>` |
+| gridRow | `BpkResponsiveValue<string>` |
+| rowGap | `BpkResponsiveValue<BpkSpacingValue>` |
+| columnGap | `BpkResponsiveValue<BpkSpacingValue>` |
+
+#### Event Handlers
+| Name | Type |
+|------|------|
+| onClick | `(event: React.MouseEvent) => void` |
+| onFocus | `(event: React.FocusEvent) => void` |
+| onBlur | `(event: React.FocusEvent) => void` |
+
+See `src/types.ts` (BpkBoxProps, BpkFlexGridProps) for complete types.
 
 ### BpkFlex
 
 In addition to common props:
 
-| Name | Type | Required |
-|------|------|----------|
-| direction | `BpkResponsiveValue<'row' \| 'column'>` | No |
-| justify | `BpkResponsiveValue<string>` | No |
-| align | `BpkResponsiveValue<string>` | No |
-| wrap | `BpkResponsiveValue<string>` | No |
-| inline | `boolean` | No |
+| Name | Type |
+|------|------|
+| direction | `BpkResponsiveValue<'row' \| 'column' \| ...>` |
+| justify | `BpkResponsiveValue<string>` |
+| align | `BpkResponsiveValue<string>` |
+| wrap | `BpkResponsiveValue<string>` |
+| grow | `BpkResponsiveValue<number>` |
+| shrink | `BpkResponsiveValue<number>` |
+| basis | `BpkResponsiveValue<BpkBasisValue>` |
+| inline | `boolean` |
+
+See `src/types.ts` (BpkFlexProps) for complete types.
 
 ### BpkGrid
 
 In addition to common props:
 
-| Name | Type | Required |
-|------|------|----------|
-| templateColumns | `BpkResponsiveValue<string>` | No |
-| templateRows | `BpkResponsiveValue<string>` | No |
-| templateAreas | `BpkResponsiveValue<string>` | No |
-| autoFlow | `BpkResponsiveValue<string>` | No |
-| justify | `BpkResponsiveValue<string>` | No |
-| align | `BpkResponsiveValue<string>` | No |
-| rowGap | `BpkResponsiveValue<BpkSpacingValue>` | No |
-| columnGap | `BpkResponsiveValue<BpkSpacingValue>` | No |
-| column | `BpkResponsiveValue<string>` | No |
-| row | `BpkResponsiveValue<string>` | No |
-| inline | `boolean` | No |
+| Name | Type |
+|------|------|
+| templateColumns | `BpkResponsiveValue<string>` |
+| templateRows | `BpkResponsiveValue<string>` |
+| templateAreas | `BpkResponsiveValue<string>` |
+| autoFlow | `BpkResponsiveValue<string>` |
+| autoRows | `BpkResponsiveValue<string>` |
+| autoColumns | `BpkResponsiveValue<string>` |
+| justify | `BpkResponsiveValue<string>` |
+| align | `BpkResponsiveValue<string>` |
+| rowGap | `BpkResponsiveValue<BpkSpacingValue>` |
+| columnGap | `BpkResponsiveValue<BpkSpacingValue>` |
+| column | `BpkResponsiveValue<string>` |
+| row | `BpkResponsiveValue<string>` |
+| inline | `boolean` |
+
+See `src/types.ts` (BpkGridProps) for complete types.
 
 ### BpkGridItem
 
 In addition to common props:
 
-| Name | Type | Required |
-|------|------|----------|
-| area | `string` | No |
-| colSpan | `number` | No |
-| rowSpan | `number` | No |
-| colStart | `number \| string` | No |
-| colEnd | `number \| string` | No |
-| rowStart | `number \| string` | No |
-| rowEnd | `number \| string` | No |
+| Name | Type |
+|------|------|
+| area | `string` |
+| colSpan | `number` |
+| rowSpan | `number` |
+| colStart | `number \| string` |
+| colEnd | `number \| string` |
+| rowStart | `number \| string` |
+| rowEnd | `number \| string` |
 
 ### BpkStack / BpkHStack / BpkVStack
 
@@ -312,12 +374,12 @@ In addition to common props, inherits flex/grid layout props.
 
 Migration-focused component with different props:
 
-| Name | Type | Required |
-|------|------|----------|
-| as | `'div' \| 'span' \| 'section' \| ...` | No |
-| children | `ReactNode` | No |
-| className | `string` | No |
-| style | `CSSProperties` | No |
+| Name | Type |
+|------|------|
+| as | `'div' \| 'span' \| 'section' \| ...` |
+| children | `ReactNode` |
+| className | `string` |
+| style | `CSSProperties` |
 
 Accepts all `React.HTMLAttributes` including `aria-*`, `data-*`, event handlers, etc.
 
