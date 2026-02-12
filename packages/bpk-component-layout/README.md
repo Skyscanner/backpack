@@ -1,5 +1,22 @@
 # bpk-component-layout
 
+> ## 🧪 Experimental Component
+>
+> ### Why experimental?
+>
+> The `bpk-component-layout` package introduces a new layout system for Backpack,
+> providing layout-only primitives (BpkBox, BpkFlex, BpkGrid, BpkStack, BpkVessel, BpkProvider)
+> built on modern layout APIs with Backpack design tokens.
+>
+> This component is in active development and the API may change based on feedback
+> and real-world usage. Use with caution in production.
+>
+> ### Help and feedback
+>
+> As an experimental component, we want to hear about your experience.
+>
+> Contact: Clover team (@backpack on Slack)
+
 > Backpack layout components and tokens.
 
 ## Overview
