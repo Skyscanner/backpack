@@ -365,12 +365,11 @@ export function processSpacingProps<T extends Record<string, any>>(
   ];
 
   const processed: Record<string, any> = { ...props };
+  const sizeKeys = ['width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight'];
+  const positionKeys = ['top', 'right', 'bottom', 'left'];
 
   spacingKeys.forEach((key) => {
     if (key in processed && processed[key] !== undefined) {
-      const sizeKeys = ['width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight'];
-      const positionKeys = ['top', 'right', 'bottom', 'left'];
-
       const isSizeProp = sizeKeys.includes(key);
       const isPositionProp = positionKeys.includes(key);
 
