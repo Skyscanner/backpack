@@ -17,7 +17,6 @@
  */
 
 import type { ComponentPropsWithoutRef, MouseEvent } from 'react';
-import { useState } from 'react';
 
 import { withButtonAlignment } from '../../bpk-component-icon';
 import ThumbsDownIcon from '../../bpk-component-icon/lg/thumbs-down';
@@ -59,14 +58,11 @@ const BpkThumb = ({
   type,
   ...rest
 }: BpkThumbProps) => {
-  const [hovered, setHovered] = useState(false);
-
   const Icon = type === 'up' ? AlignedThumbsUpIcon : AlignedThumbsDownIcon;
 
   const classNames = getClassName(
     'bpk-thumb',
     selected && 'bpk-thumb--selected',
-    hovered && 'bpk-thumb--hovered',
   );
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
@@ -82,8 +78,6 @@ const BpkThumb = ({
       type="button"
       className={classNames}
       onClick={handleClick}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
       aria-label={accessibilityLabel}
       title={accessibilityLabel}
       data-testid={`bpk-thumb-${type}`}

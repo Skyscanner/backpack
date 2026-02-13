@@ -112,17 +112,6 @@ describe('BpkThumb', () => {
     expect(screen.getByLabelText(label)).toBeInTheDocument();
   });
 
-  it('should handle hover state', () => {
-    render(<BpkThumb accessibilityLabel="Thumbs up" type="up" />);
-    const button = screen.getByTestId('bpk-thumb-up');
-
-    fireEvent.mouseEnter(button);
-    expect(button).toHaveClass('bpk-thumb--hovered');
-
-    fireEvent.mouseLeave(button);
-    expect(button).not.toHaveClass('bpk-thumb--hovered');
-  });
-
   it('should support disabled state', () => {
     render(
       <BpkThumb accessibilityLabel="Thumbs up" type="up" disabled />,
