@@ -44,7 +44,7 @@
     fill: currentcolor;
   }
 
-  &--hovered &__icon {
+  &:hover:not(:disabled):not(&--selected) &__icon {
     color: tokens.$bpk-text-secondary-day;
   }
 
