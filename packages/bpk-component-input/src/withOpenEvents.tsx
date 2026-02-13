@@ -47,6 +47,12 @@ export type WithOpenEventsProps = {
    */
   onOpen?: () => void;
   hasTouchSupport?: boolean;
+  /**
+   * @deprecated Use inputMode="none" instead. readOnly will be removed in a future version.
+   * Previously used to prevent the mobile keyboard from opening, but this caused a WCAG 1.3.1
+   * violation due to conflicting readonly + aria-readonly attributes.
+   */
+  readOnly?: boolean | string;
 };
 
 type EventHandlers = {
@@ -57,10 +63,12 @@ type EventHandlers = {
   onKeyDown?: (event: UIEvent) => void;
   onKeyUp?: (event: UIEvent) => void;
   inputMode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
+  readOnly?: string;
+  'aria-readonly'?: boolean;
 };
 
 type InputProps = ComponentProps<'input'> &
-  Omit<EventHandlers, 'inputMode'>;
+  Omit<EventHandlers, 'inputMode' | 'readOnly' | 'aria-readonly'>;
 
 const handleKeyEvent = (callback?: () => void) => (e: KeyboardEvent) => {
   if (e.code === KEYCODES.ENTER || e.code === KEYCODES.SPACEBAR) {
@@ -151,8 +159,17 @@ const withOpenEvents = <P extends object>(WithOpenEventsInputComponent: Componen
         onKeyUp,
         onOpen,
         onTouchEnd,
+        readOnly,
         ...rest
       } = this.props;
+
+      if (readOnly !== undefined) {
+        console.warn(
+          'withOpenEvents: The readOnly prop is deprecated and will be removed in a future version. ' +
+          'The component now uses inputMode="none" to prevent mobile keyboards from opening, ' +
+          'which avoids WCAG 1.3.1 violations from conflicting readonly + aria-readonly attributes.'
+        );
+      }
 
       const eventHandlers: EventHandlers = {
         onClick: withEventHandler(onOpen, onClick),
@@ -162,9 +179,15 @@ const withOpenEvents = <P extends object>(WithOpenEventsInputComponent: Componen
       };
 
       if (hasTouchSupport) {
-        // Prevents the mobile keyboard from opening (iOS / Android) using inputMode="none"
-        // This avoids WCAG 1.3.1 violation from conflicting readonly + aria-readonly attributes
-        eventHandlers.inputMode = 'none';
+        if (readOnly !== undefined) {
+          // Deprecated: prevents the mobile keyboard from opening (iOS / Android), while not announcing it as 'read only' to a screen reader
+          eventHandlers.readOnly = 'readOnly';
+          eventHandlers['aria-readonly'] = false;
+        } else {
+          // Prevents the mobile keyboard from opening (iOS / Android) using inputMode="none"
+          // This avoids WCAG 1.3.1 violation from conflicting readonly + aria-readonly attributes
+          eventHandlers.inputMode = 'none';
+        }
 
         eventHandlers.onTouchEnd = withEventHandler(
           this.handleTouchEnd,
