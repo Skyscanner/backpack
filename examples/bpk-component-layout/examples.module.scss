@@ -26,7 +26,7 @@
     border-radius: tokens.$bpk-border-radius-md;
 
     // Subtle grid to make layout boundaries easier to see.
-   background-size: 8px 8px;
+    background-size: 8px 8px;
 
     // Outline the root element of each example (not the inner content).
     // This avoids needing border props on layout primitives.
