@@ -120,6 +120,26 @@ describe('BpkSegmentedControl', () => {
       expect(mainContainer).not.toHaveAttribute('role', 'tablist');
     });
 
+    it('should have role="group" when label is provided without id', () => {
+      render(
+        <BpkSegmentedControl
+          {...defaultProps}
+          label="Segmented control label"
+        />,
+      );
+      const group = screen.getByRole('group');
+      expect(group).toBeInTheDocument();
+      expect(group).toHaveAttribute('aria-label', 'Segmented control label');
+    });
+
+    it('should not have role="group" when no label is provided', () => {
+      const { container } = render(
+        <BpkSegmentedControl {...defaultProps} label={undefined} />,
+      );
+      const mainContainer = container.firstChild as HTMLElement;
+      expect(mainContainer).not.toHaveAttribute('role');
+    });
+
     it('should not have tab-related ARIA attributes when no id prop is provided', () => {
       render(<BpkSegmentedControl {...defaultProps} />);
       const buttons = screen.getAllByRole('button');

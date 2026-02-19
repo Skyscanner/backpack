@@ -77,6 +77,8 @@ const getContainerAriaProps = (providedId?: string, label?: string) => {
   if (providedId) {
     props.role = 'tablist';
     props['aria-orientation'] = 'horizontal';
+  } else if (label) {
+    props.role = 'group';
   }
 
   if (label) {
