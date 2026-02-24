@@ -65,7 +65,7 @@
 
   &__bubble {
     position: relative;
-    min-width: tokens.bpk-spacing-xxl();
+    min-width: 2.5rem;
     max-width: 17.5rem; // 280px
     padding: tokens.bpk-spacing-base();
     align-self: flex-start;
@@ -93,11 +93,11 @@
   // OnDark variant: uses Night Sky blue (#054184) on dark backgrounds
   &--on-dark {
     .bpk-thinking__dots--dot {
-      background-color: tokens.$bpk-private-chip-on-dark-on-background-night;
+      background-color: tokens.$bpk-core-primary-night;
     }
 
     .bpk-thinking__bubble {
-      background: tokens.$bpk-private-chip-on-dark-on-background-night;
+      background: tokens.$bpk-core-primary-night;
       color: tokens.$bpk-text-on-dark-day;
     }
   }
