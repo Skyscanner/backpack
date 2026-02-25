@@ -66,7 +66,7 @@ interface CommonProps {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
     },
   ) => void;
-  title?: string;
+  title?: string | ReactNode;
   wide?: boolean;
   isOpen: boolean;
   paddingStyles?: PaddingStyles;
@@ -157,7 +157,8 @@ const BpkBottomSheet = ({
 
   const headingId = `bpk-bottom-sheet-heading-${id}`;
   const hiddenTitleId = `bpk-bottom-sheet-title-hidden-${id}`;
-  const showHiddenTitle = !title && 'ariaLabel' in ariaProps && ariaProps.ariaLabel;
+  const hasTitle = title !== undefined && title !== null && title !== '';
+  const showHiddenTitle = !hasTitle && 'ariaLabel' in ariaProps && ariaProps.ariaLabel;
   const dialogClassName = getClassName(
     'bpk-bottom-sheet',
     wide && 'bpk-bottom-sheet--wide',
@@ -192,7 +193,7 @@ const BpkBottomSheet = ({
             id={showHiddenTitle ? hiddenTitleId : headingId}
             title={title}
             titleTextStyle={TEXT_STYLES.label1}
-            titleTagName={title ? 'h2' : 'span'}
+            titleTagName={hasTitle ? 'h2' : 'span'}
             className={getClassName('bpk-bottom-sheet--header')}
             leadingButton={
               <BpkCloseButton label={closeLabel} onClick={handleClose} />

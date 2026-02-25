@@ -19,6 +19,8 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+
 import BpkBottomSheet, { PADDING_TYPE } from './BpkBottomSheet';
 // mock breakpoint to always match
 jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () =>
@@ -197,5 +199,61 @@ describe('BpkBottomSheet', () => {
       'dialog[aria-labelledby="custom-heading-id"]',
     );
     expect(dialog).toBeInTheDocument();
+  });
+
+  it('renders correctly with custom title component (ReactNode)', () => {
+    render(
+      <BpkBottomSheet
+        {...props}
+        title={<BpkText textStyle={TEXT_STYLES.label1}>Custom title component</BpkText>}
+      >
+        Bottom Sheet content
+      </BpkBottomSheet>,
+    );
+    expect(screen.getByText('Custom title component')).toBeInTheDocument();
+  });
+
+  it('does not render hidden heading when custom title component is provided', () => {
+    const { container } = render(
+      <BpkBottomSheet
+        ariaLabel="my accessible title"
+        id="my-bottom-sheet"
+        isOpen
+        onClose={jest.fn()}
+        title={<BpkText textStyle={TEXT_STYLES.label1}>Custom title</BpkText>}
+      >
+        Bottom Sheet content
+      </BpkBottomSheet>,
+    );
+
+    const hiddenHeading = container.querySelector(
+      'h2.bpk-visually-hidden',
+    );
+    expect(hiddenHeading).not.toBeInTheDocument();
+    expect(screen.getByText('Custom title')).toBeInTheDocument();
+  });
+
+  it('treats empty string title as no title', () => {
+    const { container } = render(
+      <BpkBottomSheet
+        ariaLabel="my accessible title"
+        id="my-bottom-sheet"
+        isOpen
+        onClose={jest.fn()}
+        title=""
+      >
+        Bottom Sheet content
+      </BpkBottomSheet>,
+    );
+
+    const hiddenHeading = container.querySelector(
+      'h2.bpk-visually-hidden',
+    );
+    const hiddenSpan = container.querySelector(
+      'span#bpk-bottom-sheet-title-hidden-my-bottom-sheet',
+    );
+    expect(hiddenHeading).toBeInTheDocument();
+    expect(hiddenSpan).toBeInTheDocument();
+    expect(hiddenSpan?.textContent).toBe('my accessible title');
   });
 });
