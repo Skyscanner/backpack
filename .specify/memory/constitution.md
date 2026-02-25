@@ -404,10 +404,10 @@ Components MUST be built with performance in mind:
 - **TypeScript**: 5.9.2
 - **Browsers** (from [browserslist-config-skyscanner](https://github.skyscannertools.net/web-engineering/browserslist-config-skyscanner)):
   - Chrome >= 109
-  - Edge >= 129
-  - Firefox >= 131
-  - Safari >= 15
-  - Samsung >= 26
+  - Edge >= 142
+  - Firefox >= 145
+  - Safari >= 16
+  - Samsung >= 29
 
 ### Build Tools & Testing
 

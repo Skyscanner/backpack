@@ -312,10 +312,10 @@ VALIDATION:
 
 - [ ] TXXX Test component in all supported browsers
   - Chrome >= 109
-  - Edge >= 129
-  - Firefox >= 131
-  - Safari >= 15
-  - Samsung >= 26
+  - Edge >= 142
+  - Firefox >= 145
+  - Safari >= 16
+  - Samsung >= 29
   - **Constitution Check**: Browser support REQUIRED
 
 - [ ] TXXX Perform manual accessibility testing

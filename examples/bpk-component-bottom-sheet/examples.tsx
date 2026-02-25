@@ -206,6 +206,26 @@ const LongHeaderTextWithActionButtonExample = () => (
   </BottomSheetContainer>
 );
 
+const LongHeaderWithCustomTitleExample = () => (
+  <BottomSheetContainer
+    title={<BpkText tagName='h3' textStyle={TEXT_STYLES.label1}>Bottom Sheet custom title which is long</BpkText>}
+    closeLabel="Close Bottom Sheet"
+  >
+    This bottom sheet has a custom title component with long text.
+  </BottomSheetContainer>
+)
+
+const LongHeaderWithCustomTitleAndActionExample = () => (
+  <BottomSheetContainer
+    title={<BpkText tagName='h3' textStyle={TEXT_STYLES.label1}>Bottom Sheet custom title which is long</BpkText>}
+    closeLabel="Close Bottom Sheet"
+    actionText="Action"
+    onAction={action('Action clicked')}
+  >
+    This bottom sheet has a custom title component with long text.
+  </BottomSheetContainer>
+)
+
 const NoHeaderExample = () => (
   <BottomSheetContainer
     closeLabel="Close Bottom Sheet"
@@ -328,6 +348,8 @@ export {
   OverflowingExample,
   LongHeaderTextExample,
   LongHeaderTextWithActionButtonExample,
+  LongHeaderWithCustomTitleExample,
+  LongHeaderWithCustomTitleAndActionExample,
   NoHeaderExample,
   NoHeaderWithActionButtonExample,
   ActionButtonExample,
@@ -338,5 +360,5 @@ export {
   BasePaddingExample,
   LgPaddingExample,
   XXLPaddingExample,
-  XXXLPaddingExample
+  XXXLPaddingExample,
 };

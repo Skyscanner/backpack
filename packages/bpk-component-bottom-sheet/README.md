@@ -59,6 +59,26 @@ class App extends Component {
 
 Ensure your body/children is accessible via Voice Over. You may need to specify the tabIndex of the elements.
 
+## Custom Title
+
+The `title` prop accepts either a string or a custom React component:
+
+```js
+import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
+
+<BpkBottomSheet
+  id="my-bottom-sheet"
+  isOpen={this.state.isOpen}
+  onClose={this.onClose}
+  title={<BpkText textStyle={TEXT_STYLES.label1}>Custom Title Component</BpkText>}
+  closeLabel="Close bottom sheet"
+>
+  Content with custom title
+</BpkBottomSheet>
+```
+
+**Note:** When providing a custom title component, BpkBottomSheet automatically adds the required `id` prop for accessibility. You don't need to manually set the id.
+
 ## Padding
 
 This component allows various levels of padding:
