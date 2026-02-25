@@ -19,6 +19,8 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+
 import BpkBottomSheet, { PADDING_TYPE } from './BpkBottomSheet';
 // mock breakpoint to always match
 jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () =>
@@ -197,5 +199,50 @@ describe('BpkBottomSheet', () => {
       'dialog[aria-labelledby="custom-heading-id"]',
     );
     expect(dialog).toBeInTheDocument();
+  });
+
+  it('treats falsy title values as no title and shows hidden heading', () => {
+    const { container } = render(
+      <BpkBottomSheet
+        ariaLabel="my accessible title"
+        id="my-bottom-sheet"
+        isOpen
+        onClose={jest.fn()}
+        title={false as unknown as string}
+      >
+        Bottom Sheet content
+      </BpkBottomSheet>,
+    );
+
+    const hiddenHeading = container.querySelector(
+      'h2.bpk-visually-hidden',
+    );
+    const hiddenSpan = container.querySelector(
+      'span#bpk-bottom-sheet-title-hidden-my-bottom-sheet',
+    );
+    expect(hiddenHeading).toBeInTheDocument();
+    expect(hiddenSpan).toBeInTheDocument();
+    expect(hiddenSpan?.textContent).toBe('my accessible title');
+  });
+
+  it('adds correct id to custom title element for aria-labelledby reference', () => {
+    const { container } = render(
+      <BpkBottomSheet
+        ariaLabelledby="bottom-sheet"
+        id="my-bottom-sheet"
+        isOpen
+        onClose={jest.fn()}
+        title={<BpkText textStyle={TEXT_STYLES.label1}>Custom title</BpkText>}
+      >
+        Bottom Sheet content
+      </BpkBottomSheet>,
+    );
+
+    const nav = container.querySelector('nav');
+    const titleElement = container.querySelector('#bpk-bottom-sheet-heading-my-bottom-sheet');
+
+    expect(nav).toHaveAttribute('aria-labelledby', 'bpk-bottom-sheet-heading-my-bottom-sheet');
+    expect(titleElement).toBeInTheDocument();
+    expect(titleElement?.textContent).toBe('Custom title');
   });
 });
