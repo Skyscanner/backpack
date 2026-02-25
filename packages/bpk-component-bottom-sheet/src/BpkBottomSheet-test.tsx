@@ -201,46 +201,14 @@ describe('BpkBottomSheet', () => {
     expect(dialog).toBeInTheDocument();
   });
 
-  it('renders correctly with custom title component (ReactNode)', () => {
-    render(
-      <BpkBottomSheet
-        {...props}
-        title={<BpkText textStyle={TEXT_STYLES.label1}>Custom title component</BpkText>}
-      >
-        Bottom Sheet content
-      </BpkBottomSheet>,
-    );
-    expect(screen.getByText('Custom title component')).toBeInTheDocument();
-  });
-
-  it('does not render hidden heading when custom title component is provided', () => {
+  it('treats falsy title values as no title and shows hidden heading', () => {
     const { container } = render(
       <BpkBottomSheet
         ariaLabel="my accessible title"
         id="my-bottom-sheet"
         isOpen
         onClose={jest.fn()}
-        title={<BpkText textStyle={TEXT_STYLES.label1}>Custom title</BpkText>}
-      >
-        Bottom Sheet content
-      </BpkBottomSheet>,
-    );
-
-    const hiddenHeading = container.querySelector(
-      'h2.bpk-visually-hidden',
-    );
-    expect(hiddenHeading).not.toBeInTheDocument();
-    expect(screen.getByText('Custom title')).toBeInTheDocument();
-  });
-
-  it('treats empty string title as no title', () => {
-    const { container } = render(
-      <BpkBottomSheet
-        ariaLabel="my accessible title"
-        id="my-bottom-sheet"
-        isOpen
-        onClose={jest.fn()}
-        title=""
+        title={false as unknown as string}
       >
         Bottom Sheet content
       </BpkBottomSheet>,
@@ -255,5 +223,26 @@ describe('BpkBottomSheet', () => {
     expect(hiddenHeading).toBeInTheDocument();
     expect(hiddenSpan).toBeInTheDocument();
     expect(hiddenSpan?.textContent).toBe('my accessible title');
+  });
+
+  it('adds correct id to custom title element for aria-labelledby reference', () => {
+    const { container } = render(
+      <BpkBottomSheet
+        ariaLabelledby="bottom-sheet"
+        id="my-bottom-sheet"
+        isOpen
+        onClose={jest.fn()}
+        title={<BpkText textStyle={TEXT_STYLES.label1}>Custom title</BpkText>}
+      >
+        Bottom Sheet content
+      </BpkBottomSheet>,
+    );
+
+    const nav = container.querySelector('nav');
+    const titleElement = container.querySelector('#bpk-bottom-sheet-heading-my-bottom-sheet');
+
+    expect(nav).toHaveAttribute('aria-labelledby', 'bpk-bottom-sheet-heading-my-bottom-sheet');
+    expect(titleElement).toBeInTheDocument();
+    expect(titleElement?.textContent).toBe('Custom title');
   });
 });
