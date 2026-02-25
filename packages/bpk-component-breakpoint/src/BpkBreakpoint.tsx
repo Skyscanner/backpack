@@ -60,7 +60,7 @@ const useLegacyWarning = (query: string, legacy: boolean, isClient: boolean) =>
 const BpkBreakpoint = ({
   children,
   legacy = false,
-  matchSSR = false,
+  matchSSR,
   query,
 }: Props) => {
   /**
@@ -83,7 +83,7 @@ const BpkBreakpoint = ({
   }
 
   if (typeof children === 'function') {
-    return children(matchSSR) as ReactElement;
+    return children(!!matchSSR) as ReactElement;
   }
   return matchSSR ? (children as ReactElement) : null;
 };
