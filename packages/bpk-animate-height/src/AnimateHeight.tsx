@@ -39,12 +39,6 @@ type State = {
 };
 
 class AnimateHeight extends Component<Props, State> {
-  static defaultProps = {
-    easing: 'ease',
-    transitionOverflow: 'hidden',
-    onAnimationComplete: null,
-  };
-
   constructor(props: Props) {
     super(props);
 
@@ -53,7 +47,7 @@ class AnimateHeight extends Component<Props, State> {
 
     if (isNumber(this.props.height)) {
       height = this.props.height < 0 ? 0 : this.props.height;
-      overflow = this.props.transitionOverflow!;
+      overflow = this.props.transitionOverflow ?? 'hidden';
     }
 
     this.state = {
@@ -85,10 +79,10 @@ class AnimateHeight extends Component<Props, State> {
       let newHeight: number | 'auto' | null = null;
       let shouldSetTimeout = false;
       let timeoutHeight: number | 'auto' | null = null;
-      let timeoutOverflow = prevTransitionOverflow;
+      let timeoutOverflow = prevTransitionOverflow ?? 'hidden';
       let timeoutDuration = duration;
 
-      clearTimeout(this.timeoutID!);
+      clearTimeout(this.timeoutID ?? undefined);
 
       if (isNumber(height)) {
         // If new height is a number
@@ -112,14 +106,14 @@ class AnimateHeight extends Component<Props, State> {
 
       this.setState({
         height: newHeight,
-        overflow: transitionOverflow!,
+        overflow: transitionOverflow ?? 'hidden',
       });
 
       if (shouldSetTimeout) {
         this.timeoutID = setTimeout(() => {
           this.setState({
-            height: timeoutHeight!,
-            overflow: timeoutOverflow!,
+            height: timeoutHeight ?? 0,
+            overflow: timeoutOverflow,
           });
 
           if (!isTransitionEndSupported()) {
@@ -131,7 +125,7 @@ class AnimateHeight extends Component<Props, State> {
   }
 
   componentWillUnmount() {
-    clearTimeout(this.timeoutID!);
+    clearTimeout(this.timeoutID ?? undefined);
     this.timeoutID = null;
   }
 
@@ -152,7 +146,7 @@ class AnimateHeight extends Component<Props, State> {
     const {
       children,
       duration,
-      easing,
+      easing = 'ease',
       height: _height,
       onAnimationComplete: _onAnimationComplete,
       style,
