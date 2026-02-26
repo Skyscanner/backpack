@@ -19,19 +19,19 @@
 import type { ReactNode } from 'react';
 import { Component } from 'react';
 
-import AnimateHeight from '../../packages/bpk-animate-height';
+import AnimateHeight, { type Props as AnimateHeightProps } from '../../packages/bpk-animate-height';
 import BpkButton from '../../packages/bpk-component-button';
 
 type Props = {
-  fromHeight: number | string;
-  toHeight: number | string;
+  fromHeight: AnimateHeightProps['height'];
+  toHeight: AnimateHeightProps['height'];
   buttonText: ReactNode;
   children: ReactNode;
   duration: number;
 };
 
 type State = {
-  height: number | string;
+  height: AnimateHeightProps['height'];
 };
 
 class AnimateHeightExample extends Component<Props, State> {
