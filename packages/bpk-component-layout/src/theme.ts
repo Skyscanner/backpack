@@ -203,6 +203,9 @@ export function createBpkConfig() {
   });
 
   return defineConfig({
+    // Disable Chakra's preflight (CSS reset) so it does not override Backpack's
+    // global font styles, in particular the `-webkit-font-smoothing: antialiased`
+    // setting applied by Backpack.
     preflight: false,
     cssVarsPrefix: 'bpk',
     theme: {
