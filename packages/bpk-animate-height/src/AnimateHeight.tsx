@@ -16,27 +16,44 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
 import { Component } from 'react';
 
-// IE11 doesn't support `Number.isNaN` so we must use the global.
-// When IE11 support drops we can migrate.
-// eslint-disable-next-line no-restricted-globals
-const isNumber = (n) => !isNaN(parseFloat(n)) && isFinite(n);
+const isNumber = (n: number | 'auto'): n is number => typeof n === 'number';
 
 const isTransitionEndSupported = () =>
   !!(typeof window !== 'undefined' && 'TransitionEvent' in window);
 
-class AnimateHeight extends Component {
-  constructor(props) {
+export type Props = HTMLAttributes<HTMLDivElement> & {
+  children: ReactNode;
+  duration: number;
+  height: number | 'auto';
+  easing?: string;
+  transitionOverflow?: string;
+  onAnimationComplete?: (() => void) | null;
+};
+
+type State = {
+  height: number | 'auto';
+  overflow: string;
+};
+
+class AnimateHeight extends Component<Props, State> {
+  static defaultProps = {
+    easing: 'ease',
+    transitionOverflow: 'hidden',
+    onAnimationComplete: null,
+  };
+
+  constructor(props: Props) {
     super(props);
 
-    let height = 'auto';
+    let height: number | 'auto' = 'auto';
     let overflow = 'visible';
 
     if (isNumber(this.props.height)) {
       height = this.props.height < 0 ? 0 : this.props.height;
-      overflow = this.props.transitionOverflow;
+      overflow = this.props.transitionOverflow!;
     }
 
     this.state = {
@@ -51,8 +68,11 @@ class AnimateHeight extends Component {
     }
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    const { height: prevHeight, transitionOverflow: prevTransitionOverflow } = prevProps;
+  componentDidUpdate(prevProps: Props, prevState: State) {
+    const {
+      height: prevHeight,
+      transitionOverflow: prevTransitionOverflow,
+    } = prevProps;
     const { duration, height, transitionOverflow } = this.props;
 
     // Check if 'height' prop has changed
@@ -62,13 +82,13 @@ class AnimateHeight extends Component {
       const contentHeight = this.contentElement.offsetHeight;
       this.contentElement.style.overflow = '';
 
-      let newHeight = null;
+      let newHeight: number | 'auto' | null = null;
       let shouldSetTimeout = false;
-      let timeoutHeight = null;
+      let timeoutHeight: number | 'auto' | null = null;
       let timeoutOverflow = prevTransitionOverflow;
       let timeoutDuration = duration;
 
-      clearTimeout(this.timeoutID);
+      clearTimeout(this.timeoutID!);
 
       if (isNumber(height)) {
         // If new height is a number
@@ -92,14 +112,14 @@ class AnimateHeight extends Component {
 
       this.setState({
         height: newHeight,
-        overflow: transitionOverflow,
+        overflow: transitionOverflow!,
       });
 
       if (shouldSetTimeout) {
         this.timeoutID = setTimeout(() => {
           this.setState({
-            height: timeoutHeight,
-            overflow: timeoutOverflow,
+            height: timeoutHeight!,
+            overflow: timeoutOverflow!,
           });
 
           if (!isTransitionEndSupported()) {
@@ -108,10 +128,10 @@ class AnimateHeight extends Component {
         }, timeoutDuration);
       }
     }
-}
+  }
 
   componentWillUnmount() {
-    clearTimeout(this.timeoutID);
+    clearTimeout(this.timeoutID!);
     this.timeoutID = null;
   }
 
@@ -124,13 +144,25 @@ class AnimateHeight extends Component {
     }
   };
 
+  timeoutID: ReturnType<typeof setTimeout> | null = null;
+
+  contentElement: HTMLDivElement | null = null;
+
   render() {
-    const { children, duration, easing, onAnimationComplete, style, ...rest } =
-      this.props;
+    const {
+      children,
+      duration,
+      easing,
+      height: _height,
+      onAnimationComplete: _onAnimationComplete,
+      style,
+      transitionOverflow: _transitionOverflow,
+      ...rest
+    } = this.props;
 
     const { height, overflow } = this.state;
 
-    const componentStyle = {
+    const componentStyle: CSSProperties & Record<string, string | number> = {
       ...style,
       height,
       overflow,
@@ -140,9 +172,6 @@ class AnimateHeight extends Component {
       msTransition: `height ${duration}ms ${easing} `,
       transition: `height ${duration}ms ${easing} `,
     };
-
-    delete rest.height;
-    delete rest.transitionOverflow;
 
     return (
       <div
@@ -161,22 +190,5 @@ class AnimateHeight extends Component {
     );
   }
 }
-
-AnimateHeight.propTypes = {
-  children: PropTypes.node.isRequired,
-  duration: PropTypes.number.isRequired,
-  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  easing: PropTypes.string,
-  transitionOverflow: PropTypes.string,
-  onAnimationComplete: PropTypes.func,
-  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-};
-
-AnimateHeight.defaultProps = {
-  easing: 'ease',
-  transitionOverflow: 'hidden',
-  onAnimationComplete: null,
-  style: {},
-};
 
 export default AnimateHeight;
