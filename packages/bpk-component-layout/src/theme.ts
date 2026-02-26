@@ -203,6 +203,7 @@ export function createBpkConfig() {
   });
 
   return defineConfig({
+    preflight: false,
     cssVarsPrefix: 'bpk',
     theme: {
       tokens: {
