@@ -15,9 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
-
 import PropTypes from 'prop-types';
+import type { ComponentPropsWithoutRef } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -25,10 +24,15 @@ import STYLES from './BpkSkipLink.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
-  label: string,
-  href: string,
-  className: ?string,
+type NativeAnchorProps = Omit<
+  ComponentPropsWithoutRef<'a'>,
+  'href' | 'className' | 'children'
+>;
+
+export type Props = NativeAnchorProps & {
+  label: string;
+  href: string;
+  className?: string | null;
 };
 
 const BpkSkipLink = ({
@@ -37,15 +41,14 @@ const BpkSkipLink = ({
   label,
   ...rest
 }: Props) => (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <a
-      href={href}
-      className={getClassName('bpk-skip-link', className)}
-      {...rest}
-    >
-      {label}
-    </a>
-  );
+  <a
+    href={href}
+    className={getClassName('bpk-skip-link', className)}
+    {...rest}
+  >
+    {label}
+  </a>
+);
 
 BpkSkipLink.propTypes = {
   label: PropTypes.string.isRequired,
