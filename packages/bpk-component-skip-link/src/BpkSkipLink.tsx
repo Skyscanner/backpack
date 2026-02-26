@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import PropTypes from 'prop-types';
 import type { ComponentPropsWithoutRef } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
@@ -33,6 +32,7 @@ export type Props = NativeAnchorProps & {
   label: string;
   href: string;
   className?: string | null;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const BpkSkipLink = ({
@@ -49,11 +49,5 @@ const BpkSkipLink = ({
     {label}
   </a>
 );
-
-BpkSkipLink.propTypes = {
-  label: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-  className: PropTypes.string,
-};
 
 export default BpkSkipLink;
