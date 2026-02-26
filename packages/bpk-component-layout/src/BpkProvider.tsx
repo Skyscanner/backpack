@@ -30,6 +30,7 @@ export interface BpkProviderProps {
  * Creates a Chakra UI system with Backpack token mappings
  * Chakra UI 3.0 uses `createSystem` with `defaultConfig` and custom config
  */
+// Remove Chakra's global CSS to prevent style conflicts with Backpack components
 const { globalCss: _chakraGlobalCss, ...defaultConfigWithoutGlobalCss } =
   defaultConfig;
 
