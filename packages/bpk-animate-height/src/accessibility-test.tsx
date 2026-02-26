@@ -15,11 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkSkipLink, { type Props as BpkSkipLinkProps } from './src/BpkSkipLink';
-import themeAttributes from './src/themeAttributes';
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-export type { BpkSkipLinkProps };
-export { themeAttributes };
-export default BpkSkipLink;
+import AnimateHeight from './AnimateHeight';
+
+describe('AnimateHeight accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <AnimateHeight duration={200} height="auto">
+        Content
+      </AnimateHeight>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
