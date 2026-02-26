@@ -19,7 +19,7 @@
 import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
 import { Component } from 'react';
 
-const isNumber = (n: number | 'auto'): n is number => typeof n === 'number';
+const isNumber = (n: number | string): n is number => typeof n === 'number';
 
 const isTransitionEndSupported = () =>
   !!(typeof window !== 'undefined' && 'TransitionEvent' in window);
@@ -27,14 +27,14 @@ const isTransitionEndSupported = () =>
 export type Props = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode;
   duration: number;
-  height: number | 'auto';
+  height: number | string;
   easing?: string;
   transitionOverflow?: string;
   onAnimationComplete?: (() => void) | null;
 };
 
 type State = {
-  height: number | 'auto';
+  height: number | string;
   overflow: string;
 };
 
@@ -42,7 +42,7 @@ class AnimateHeight extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    let height: number | 'auto' = 'auto';
+    let height: number | string = 'auto';
     let overflow = 'visible';
 
     if (isNumber(this.props.height)) {
@@ -76,9 +76,9 @@ class AnimateHeight extends Component<Props, State> {
       const contentHeight = this.contentElement.offsetHeight;
       this.contentElement.style.overflow = '';
 
-      let newHeight: number | 'auto' | null = null;
+      let newHeight: number | string | null = null;
       let shouldSetTimeout = false;
-      let timeoutHeight: number | 'auto' | null = null;
+      let timeoutHeight: number | string | null = null;
       let timeoutOverflow = prevTransitionOverflow ?? 'hidden';
       let timeoutDuration = duration;
 

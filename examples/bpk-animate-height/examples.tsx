@@ -23,15 +23,15 @@ import AnimateHeight from '../../packages/bpk-animate-height';
 import BpkButton from '../../packages/bpk-component-button';
 
 type Props = {
-  fromHeight: number | 'auto';
-  toHeight: number | 'auto';
+  fromHeight: number | string;
+  toHeight: number | string;
   buttonText: ReactNode;
   children: ReactNode;
   duration: number;
 };
 
 type State = {
-  height: number | 'auto';
+  height: number | string;
 };
 
 class AnimateHeightExample extends Component<Props, State> {
