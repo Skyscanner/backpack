@@ -248,7 +248,7 @@ const BpkText = ({text, color, sparkles}: Props) => {
 <details>
 <summary>Create a pull request to Backpack</summary>
 
-For anything non-trivial, we strongly recommend speaking to somebody from Backpack squad before starting work on a PR. This lets us pass on any advice or knowledge we already have about the work you're proposing. It might even be something we're already working on. After this, follow the steps below.
+For anything non-trivial, we strongly recommend speaking to somebody from Clover team before starting work on a PR. This lets us pass on any advice or knowledge we already have about the work you're proposing. It might even be something we're already working on. After this, follow the steps below.
 
 1. If you are not a Skyscanner employee, [fork the repository](https://github.com/Skyscanner/backpack/fork). If you are a Skyscanner employee, please follow the "Engineering Contribution" guide in the Backpack space in Confluence to get push rights to this repository. This contains information about setting up your Github account such as how to get added to the Skyscanner organisation, or set an SSH key to swap between your GH Enterprise and public GH accounts.
 2. Create a new branch.
@@ -259,7 +259,7 @@ For anything non-trivial, we strongly recommend speaking to somebody from Backpa
     * minor, A non-breaking change or a new component
     * patch, A fixed bug or updates to documentation
     * skip-changelog, The change you made should not end up in the release changelog
-6. Notify someone in Backpack squad or drop a note in #backpack.
+6. Notify someone in Clover team or drop a note in #backpack.
 
 Bear in mind that small, incremental pull requests are likely to be reviewed faster.
 
