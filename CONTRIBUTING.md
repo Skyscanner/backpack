@@ -262,6 +262,7 @@ For anything non-trivial, we strongly recommend speaking to somebody from Clover
 6. Notify someone in Clover team or drop a note in #backpack.
 
 Bear in mind that small, incremental pull requests are likely to be reviewed faster.
+Once your PR is merged, a release will be coordinated by the Clover team.
 
 </details>
 
