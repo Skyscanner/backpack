@@ -291,11 +291,15 @@ Visual regression tests run on all Storybook stories titled _'Visual test'_.
 </details>
 
 <details>
-<summary>Publish packages (Backpack squad members only)</summary>
+<summary>Publish packages (Clover team only)</summary>
 
-- Publish the latest draft on the [releases pages](https://github.com/Skyscanner/backpack/releases)
-- Ensure CI runs the release workflow successfully
-- Once released verify the artifacts are available
+Releases are managed by the Clover team. If you have contributed a change and would like it included in a release, please drop a note in [#backpack](https://skyscanner.slack.com/channels/backpack) and the team will take it from there.
+
+**Steps for Clover team members:**
+
+1. Publish the latest draft on the [releases pages](https://github.com/Skyscanner/backpack/releases)
+2. Ensure CI runs the release workflow successfully
+3. Once released, verify the artifacts are available on npm
 
 </details>
 
