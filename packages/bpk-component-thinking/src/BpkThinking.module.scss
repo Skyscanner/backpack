@@ -65,7 +65,7 @@
 
   &__bubble {
     position: relative;
-    min-width: 2.5rem;
+    min-width: tokens.bpk-spacing-xxl();
     max-width: 17.5rem; // 280px
     padding: tokens.bpk-spacing-base();
     align-self: flex-start;

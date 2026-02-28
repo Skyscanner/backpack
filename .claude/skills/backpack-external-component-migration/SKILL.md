@@ -11,9 +11,15 @@ description: |
   test suite (npm run lint && npm run check-react-versions && npm run check-bpk-dependencies
   && npm run jest) with 0 errors before acceptance.
 author: Claude Code
-version: 1.2.0
+version: 1.3.0
 date: 2026-02-28
 changelog: |
+  v1.3.0 (2026-02-28):
+  - Added mandatory data-backpack-ds-component attribute requirement
+  - Updated TypeScript template to include getDataComponentAttribute usage
+  - Added README Tracking section template
+  - Added to verification checklist
+
   v1.2.0 (2026-02-28):
   - Closed props interface by default: no className, no HTML element spread
   - Added "Why no HTML element spread?" rationale
@@ -161,7 +167,7 @@ examples/bpk-component-[name]/
  */
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './Bpk[ComponentName].module.scss';
 
@@ -179,6 +185,7 @@ const Bpk[ComponentName] = ({
 }: Bpk[ComponentName]Props) => (
   <div
     className={getClassName('bpk-[component-name]')}
+    {...getDataComponentAttribute('[ComponentName]')}
     data-testid="bpk-[component-name]"
   >
     {/* Component content */}
@@ -194,6 +201,7 @@ export default Bpk[ComponentName];
 - ✅ Remove product-specific dependencies (i18n, app utilities)
 - ✅ Use `cssModules(STYLES)` pattern, not custom CSS utility
 - ✅ Add `data-testid` for testing
+- ✅ Add `{...getDataComponentAttribute('[ComponentName]')}` to root element (component name WITHOUT "Bpk" prefix)
 - ✅ Keep props interface minimal — only declare props the component genuinely needs
 - ❌ NO `className` or `style` props for new components (API encapsulation, constitution XI)
 - ❌ NO `& Omit<ComponentPropsWithoutRef<'div'>, 'children'>` — do NOT spread HTML element props. Default to a closed, explicit props interface. Only use element spread when the component is explicitly a thin wrapper that must forward all native attributes (rare).
@@ -257,6 +265,7 @@ Only use it when the component is explicitly a thin wrapper around a native elem
 - ✅ Use token functions: `tokens.bpk-spacing-md()`
 - ✅ Use token variables: `tokens.$bpk-surface-contrast-day`
 - ✅ All sizing in `rem`, never `px` (accessibility requirement)
+- ✅ For any `rem` value, first search `@skyscanner/bpk-foundations-web` tokens for a matching spacing/size token (e.g. `tokens.bpk-spacing-xxl()` = 2.5rem, `tokens.bpk-spacing-xl()` = 2rem). Only use raw `rem` if no token matches, in which case use `tokens.$bpk-one-pixel-rem * <px-value>` (e.g. `tokens.$bpk-one-pixel-rem * 280` for 280px)
 - ✅ BEM naming: `.bpk-[name]`, `.bpk-[name]__[element]`, `.bpk-[name]--[modifier]`
 - ✅ Support RTL with `@include utils.bpk-rtl`
 - ✅ Support reduced motion preference
@@ -438,6 +447,10 @@ export default () => (
 | ---------------- | -------- | -------- | ------------- |
 | someRequiredProp | string   | true     | -             |
 | type             | string   | false    | 'default'     |
+
+## Tracking
+
+The component adds a `data-backpack-ds-component` attribute set to `"[ComponentName]"` on the root element. This attribute is used to track design system component usage across Skyscanner products.
 
 ## Accessibility
 
@@ -630,6 +643,8 @@ npm test -- packages/bpk-component-[name] -u
 
 **Code Quality:**
 - [ ] All files have Apache 2.0 license headers (NON-NEGOTIABLE)
+- [ ] Root element has `{...getDataComponentAttribute('[ComponentName]')}` (name WITHOUT "Bpk" prefix)
+- [ ] README includes a "Tracking" section documenting the `data-backpack-ds-component` attribute
 - [ ] Component follows naming convention: `Bpk[ComponentName]`
 - [ ] File names match component name exactly
 - [ ] Modern Sass API used (`@use`, not `@import`)

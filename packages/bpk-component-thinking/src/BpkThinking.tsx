@@ -17,7 +17,7 @@
  */
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkThinking.module.scss';
 
@@ -49,6 +49,7 @@ const BpkThinking = ({
 }: BpkThinkingProps) => (
     <div
       className={getClassName('bpk-thinking', `bpk-thinking--${type}`)}
+      {...getDataComponentAttribute('Thinking')}
       data-testid="bpk-thinking"
     >
       <div className={getClassName('bpk-thinking__dots')} aria-hidden="true">

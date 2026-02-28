@@ -62,13 +62,17 @@ The `BpkThinking` component includes built-in accessibility features:
 - **Responsive**: Works well across different screen sizes with max-width constraints
 - **Accessible**: Built with WCAG 2.1 AA compliance in mind
 
+## Tracking
+
+The component adds a `data-backpack-ds-component` attribute set to `"Thinking"` on the root element. This attribute is used to track design system component usage across Skyscanner products.
+
 ## Design tokens
 
 The component uses the following Backpack design tokens:
 
 - Spacing: `bpk-spacing-base()`, `bpk-spacing-md()`, `bpk-spacing-xxl()`
 - Colors: `$bpk-surface-contrast-day`, `$bpk-text-on-dark-day`
-- Border radius: `$bpk-border-radius-lg`, `$bpk-border-radius-xs`, `$bpk-border-radius-pill`
+- Border radius: `$bpk-border-radius-lg`, `$bpk-border-radius-xs`
 - Typography: Uses `BpkText` with `bodyDefault` style
 
 ## Animation
