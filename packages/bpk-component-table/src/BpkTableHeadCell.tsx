@@ -16,10 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode, HTMLAttributes } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -27,16 +24,18 @@ import STYLES from './BpkTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  children: Node,
-  className: ?string,
-  wordBreak?: boolean,
-};
+export interface BpkTableHeadCellProps extends Omit<HTMLAttributes<HTMLTableCellElement>, 'className'> {
+  /** The content of the table */
+  children: ReactNode;
+  className?: string | null;
+  wordBreak?: boolean;
+}
 
-const BpkTableCell = ({children, className = null, wordBreak = false, ...rest}: Props) => {
+const BpkTableHeadCell = ({ children, className = null, wordBreak = false, ...rest }: BpkTableHeadCellProps) => {
 
   const classes = [
     'bpk-table__cell',
+    'bpk-table__cell--head',
     wordBreak && 'bpk-table__cell--wordBreak',
     className,
   ];
@@ -44,17 +43,10 @@ const BpkTableCell = ({children, className = null, wordBreak = false, ...rest}: 
   const classNames = getClassName(...classes);
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-    <td className={classNames} {...rest}>
+    <th className={classNames} {...rest}>
       {children}
-    </td>
+    </th>
   );
 };
 
-BpkTableCell.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  wordBreak: PropTypes.bool,
-};
-
-export default BpkTableCell;
+export default BpkTableHeadCell;

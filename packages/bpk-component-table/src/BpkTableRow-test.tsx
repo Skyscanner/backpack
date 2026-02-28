@@ -16,27 +16,47 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import { render } from '@testing-library/react';
 
-import BpkTable from './BpkTable';
+import BpkTableRow from './BpkTableRow';
 
-describe('BpkTable', () => {
+describe('BpkTableRow', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
-      <BpkTable>
-        <tbody />
-      </BpkTable>,
+      <table>
+        <tbody>
+          <BpkTableRow>
+            <td aria-label="test" />
+          </BpkTableRow>
+        </tbody>
+      </table>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom class', () => {
     const { asFragment } = render(
-      <BpkTable className="my-table">
-        <tbody />
-      </BpkTable>,
+      <table>
+        <tbody>
+          <BpkTableRow className="my-custom-class">
+            <td aria-label="test" />
+          </BpkTableRow>
+        </tbody>
+      </table>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with arbitrary props', () => {
+    const { asFragment } = render(
+      <table>
+        <tbody>
+          <BpkTableRow id="my-custom-id" data-foo="bar">
+            <td aria-label="test" />
+          </BpkTableRow>
+        </tbody>
+      </table>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
