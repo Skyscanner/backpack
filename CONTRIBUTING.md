@@ -248,7 +248,7 @@ const BpkText = ({text, color, sparkles}: Props) => {
 <details>
 <summary>Create a pull request to Backpack</summary>
 
-For anything non-trivial, we strongly recommend speaking to somebody from Clover team before starting work on a PR. This lets us pass on any advice or knowledge we already have about the work you're proposing. It might even be something we're already working on. After this, follow the steps below.
+For anything non-trivial, we strongly recommend speaking to somebody from Backpack squad before starting work on a PR. This lets us pass on any advice or knowledge we already have about the work you're proposing. It might even be something we're already working on. After this, follow the steps below.
 
 1. If you are not a Skyscanner employee, [fork the repository](https://github.com/Skyscanner/backpack/fork). If you are a Skyscanner employee, please follow the "Engineering Contribution" guide in the Backpack space in Confluence to get push rights to this repository. This contains information about setting up your Github account such as how to get added to the Skyscanner organisation, or set an SSH key to swap between your GH Enterprise and public GH accounts.
 2. Create a new branch.
@@ -259,10 +259,9 @@ For anything non-trivial, we strongly recommend speaking to somebody from Clover
     * minor, A non-breaking change or a new component
     * patch, A fixed bug or updates to documentation
     * skip-changelog, The change you made should not end up in the release changelog
-6. Notify someone in Clover team or drop a note in #backpack.
+6. Notify someone in Backpack squad or drop a note in #backpack.
 
 Bear in mind that small, incremental pull requests are likely to be reviewed faster.
-Once your PR is merged, a release will be coordinated by the Clover team.
 
 </details>
 
@@ -292,15 +291,9 @@ Visual regression tests run on all Storybook stories titled _'Visual test'_.
 </details>
 
 <details>
-<summary>Publish packages (Clover team only)</summary>
+<summary>Publish packages (Backpack squad members only)</summary>
 
-Releases are managed by the Clover team. If you have contributed a change and would like it included in a release, please drop a note in [#backpack](https://skyscanner.slack.com/channels/backpack) and the team will take it from there.
-
-**Steps for Clover team members:**
-
-1. Publish the latest draft on the [releases pages](https://github.com/Skyscanner/backpack/releases)
-2. Ensure CI runs the release workflow successfully
-3. Once released, verify the artifacts are available on npm
+Releases are managed by the Backpack design system team. If you have contributed a change and would like it included in a release, please drop a note in #backpack and notify @design-system-web-gf.
 
 </details>
 
