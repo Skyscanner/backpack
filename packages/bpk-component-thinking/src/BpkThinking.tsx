@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import type { ComponentPropsWithoutRef } from 'react';
-
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -35,41 +33,23 @@ export type ThinkingType = (typeof THINKING_TYPES)[keyof typeof THINKING_TYPES];
 export type BpkThinkingProps = {
   /**
    * The content to display in the thinking bubble.
-   * If not provided, a default "Thinking..." message will be shown.
    */
-  content?: string;
-  /**
-   * The accessibility label for the thinking component.
-   * This is required for screen reader support.
-   */
-  accessibilityLabel: string;
+  content: string;
   /**
    * The visual style of the thinking component.
    * - default: Dark bubble with light text (for use on light backgrounds)
    * - onDark: Light bubble with dark text (for use on dark backgrounds)
    */
   type?: ThinkingType;
-} & Omit<ComponentPropsWithoutRef<'div'>, 'children'>;
+};
 
 const BpkThinking = ({
-  accessibilityLabel,
-  className,
-  content = 'Thinking...',
+  content,
   type = THINKING_TYPES.default,
-  ...rest
-}: BpkThinkingProps) => {
-  const classNames = getClassName(
-    'bpk-thinking',
-    `bpk-thinking--${type}`,
-    className,
-  );
-
-  return (
+}: BpkThinkingProps) => (
     <div
-      className={classNames}
-      aria-label={accessibilityLabel}
+      className={getClassName('bpk-thinking', `bpk-thinking--${type}`)}
       data-testid="bpk-thinking"
-      {...rest}
     >
       <div className={getClassName('bpk-thinking__dots')} aria-hidden="true">
         <div
@@ -89,7 +69,6 @@ const BpkThinking = ({
         <BpkText textStyle={TEXT_STYLES.bodyDefault}>{content}</BpkText>
       </div>
     </div>
-  );
-};
+);
 
 export default BpkThinking;

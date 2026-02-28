@@ -22,47 +22,25 @@ import BpkThinking from './BpkThinking';
 
 describe('BpkThinking', () => {
   it('should render correctly with default props', () => {
-    const { asFragment } = render(
-      <BpkThinking accessibilityLabel="Thinking" />,
-    );
+    const { asFragment } = render(<BpkThinking content="Thinking..." />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render default content when content prop is not provided', () => {
-    render(<BpkThinking accessibilityLabel="Thinking" />);
+  it('should render provided content', () => {
+    render(<BpkThinking content="Thinking..." />);
 
     expect(screen.getByText('Thinking...')).toBeInTheDocument();
   });
 
   it('should render custom content when provided', () => {
     const customContent = 'Processing your request...';
-    render(
-      <BpkThinking accessibilityLabel="Processing" content={customContent} />,
-    );
+    render(<BpkThinking content={customContent} />);
 
     expect(screen.getByText(customContent)).toBeInTheDocument();
   });
 
-  it('should apply custom className', () => {
-    const customClass = 'custom-thinking-class';
-    render(
-      <BpkThinking accessibilityLabel="Thinking" className={customClass} />,
-    );
-
-    const element = screen.getByTestId('bpk-thinking');
-    expect(element).toHaveClass(customClass);
-  });
-
-  it('should have correct accessibility label', () => {
-    const accessibilityLabel = 'AI is thinking';
-    render(<BpkThinking accessibilityLabel={accessibilityLabel} />);
-
-    const element = screen.getByLabelText(accessibilityLabel);
-    expect(element).toBeInTheDocument();
-  });
-
   it('should render dots with aria-hidden', () => {
-    const { container } = render(<BpkThinking accessibilityLabel="Thinking" />);
+    const { container } = render(<BpkThinking content="Thinking..." />);
 
     const dotsContainer = container.querySelector(
       '.bpk-thinking__dots[aria-hidden="true"]',
@@ -71,14 +49,14 @@ describe('BpkThinking', () => {
   });
 
   it('should render two animated dots', () => {
-    const { container } = render(<BpkThinking accessibilityLabel="Thinking" />);
+    const { container } = render(<BpkThinking content="Thinking..." />);
 
     const dots = container.querySelectorAll('.bpk-thinking__dots--dot');
     expect(dots).toHaveLength(2);
   });
 
   it('should render the bubble with content', () => {
-    const { container } = render(<BpkThinking accessibilityLabel="Thinking" />);
+    const { container } = render(<BpkThinking content="Thinking..." />);
 
     const bubble = container.querySelector('.bpk-thinking__bubble');
     expect(bubble).toBeInTheDocument();
@@ -88,22 +66,8 @@ describe('BpkThinking', () => {
   it('should handle long content correctly', () => {
     const longContent =
       'This is a very long thinking content to test how the component handles longer text scenarios and ensures proper wrapping';
-    render(
-      <BpkThinking accessibilityLabel="Thinking" content={longContent} />,
-    );
+    render(<BpkThinking content={longContent} />);
 
     expect(screen.getByText(longContent)).toBeInTheDocument();
-  });
-
-  it('should accept and forward additional props', () => {
-    render(
-      <BpkThinking
-        accessibilityLabel="Thinking"
-        data-custom-prop="custom-value"
-      />,
-    );
-
-    const element = screen.getByTestId('bpk-thinking');
-    expect(element).toHaveAttribute('data-custom-prop', 'custom-value');
   });
 });

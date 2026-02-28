@@ -23,19 +23,14 @@ import BpkThinking from './BpkThinking';
 
 describe('BpkThinking accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(
-      <BpkThinking accessibilityLabel="AI is thinking" />,
-    );
+    const { container } = render(<BpkThinking content="AI is thinking" />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
   it('should not have accessibility issues with custom content', async () => {
     const { container } = render(
-      <BpkThinking
-        accessibilityLabel="Processing your request"
-        content="Processing your request..."
-      />,
+      <BpkThinking content="Processing your request..." />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -43,10 +38,7 @@ describe('BpkThinking accessibility tests', () => {
 
   it('should not have accessibility issues with long content', async () => {
     const { container } = render(
-      <BpkThinking
-        accessibilityLabel="Thinking about your travel options"
-        content="We're searching through thousands of options to find the best deals for your trip"
-      />,
+      <BpkThinking content="We're searching through thousands of options to find the best deals for your trip" />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

@@ -11,9 +11,16 @@ description: |
   test suite (npm run lint && npm run check-react-versions && npm run check-bpk-dependencies
   && npm run jest) with 0 errors before acceptance.
 author: Claude Code
-version: 1.1.0
-date: 2026-02-12
+version: 1.2.0
+date: 2026-02-28
 changelog: |
+  v1.2.0 (2026-02-28):
+  - Closed props interface by default: no className, no HTML element spread
+  - Added "Why no HTML element spread?" rationale
+  - Updated TypeScript template to reflect lean props API
+  - Updated test/example templates to match
+  - Updated API Encapsulation notes section
+
   v1.1.0 (2026-02-12):
   - Added mandatory full test suite acceptance criteria
   - Enhanced verification phase with comprehensive debugging steps
@@ -153,8 +160,6 @@ examples/bpk-component-[name]/
  * limitations under the License.
  */
 
-import type { ComponentPropsWithoutRef } from 'react';
-
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -163,31 +168,22 @@ import STYLES from './Bpk[ComponentName].module.scss';
 const getClassName = cssModules(STYLES);
 
 export type Bpk[ComponentName]Props = {
-  /**
-   * Accessibility label (REQUIRED for screen readers)
-   */
-  accessibilityLabel: string;
-  // ... other props with JSDoc comments
-} & Omit<ComponentPropsWithoutRef<'div'>, 'children'>;
+  // Only the props this component actually needs — no HTML element spread
+  someRequiredProp: string;
+  someOptionalProp?: ThingType;
+};
 
 const Bpk[ComponentName] = ({
-  accessibilityLabel,
-  className,
-  ...rest
-}: Bpk[ComponentName]Props) => {
-  const classNames = getClassName('bpk-[component-name]', className);
-
-  return (
-    <div
-      className={classNames}
-      aria-label={accessibilityLabel}
-      data-testid="bpk-[component-name]"
-      {...rest}
-    >
-      {/* Component content */}
-    </div>
-  );
-};
+  someOptionalProp = DEFAULT_VALUE,
+  someRequiredProp,
+}: Bpk[ComponentName]Props) => (
+  <div
+    className={getClassName('bpk-[component-name]')}
+    data-testid="bpk-[component-name]"
+  >
+    {/* Component content */}
+  </div>
+);
 
 export default Bpk[ComponentName];
 ```
@@ -196,12 +192,20 @@ export default Bpk[ComponentName];
 - ✅ Add Apache 2.0 license header (NON-NEGOTIABLE)
 - ✅ Use relative imports (`../../bpk-component-*`)
 - ✅ Remove product-specific dependencies (i18n, app utilities)
-- ✅ Make `accessibilityLabel` required (not optional)
-- ✅ Use `ComponentPropsWithoutRef` for proper HTML element props
 - ✅ Use `cssModules(STYLES)` pattern, not custom CSS utility
 - ✅ Add `data-testid` for testing
-- ❌ NO `className` or `style` props for new components (API encapsulation)
+- ✅ Keep props interface minimal — only declare props the component genuinely needs
+- ❌ NO `className` or `style` props for new components (API encapsulation, constitution XI)
+- ❌ NO `& Omit<ComponentPropsWithoutRef<'div'>, 'children'>` — do NOT spread HTML element props. Default to a closed, explicit props interface. Only use element spread when the component is explicitly a thin wrapper that must forward all native attributes (rare).
 - ❌ NO product-specific i18n hooks
+
+**Why no HTML element spread?**
+Extending `ComponentPropsWithoutRef<'div'>` seems convenient but in practice:
+- It exposes dozens of irrelevant props (`onPointerEnterCapture`, `aria-*`, `data-*`, etc.)
+- It lets consumers bypass intentional API constraints
+- It makes the component contract unclear and harder to evolve
+- It couples the component to a specific HTML element
+Only use it when the component is explicitly a thin wrapper around a native element (e.g. a styled `<button>` that must accept all button attributes).
 
 #### 2.3 Convert Styles (Modern Sass API)
 
@@ -274,37 +278,24 @@ import Bpk[ComponentName] from './Bpk[ComponentName]';
 describe('Bpk[ComponentName]', () => {
   it('should render correctly with default props', () => {
     const { asFragment } = render(
-      <Bpk[ComponentName] accessibilityLabel="Label" />,
+      <Bpk[ComponentName] someRequiredProp="value" />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render with custom props', () => {
-    render(
-      <Bpk[ComponentName]
-        accessibilityLabel="Label"
-        customProp="value"
-      />,
-    );
+  it('should render provided content', () => {
+    render(<Bpk[ComponentName] someRequiredProp="value" />);
     expect(screen.getByTestId('bpk-[component-name]')).toBeInTheDocument();
   });
 
-  it('should apply custom className', () => {
-    const customClass = 'custom-class';
+  it('should render with optional prop', () => {
     render(
       <Bpk[ComponentName]
-        accessibilityLabel="Label"
-        className={customClass}
+        someRequiredProp="value"
+        someOptionalProp={SOME_VALUE}
       />,
     );
-    const element = screen.getByTestId('bpk-[component-name]');
-    expect(element).toHaveClass(customClass);
-  });
-
-  it('should have correct accessibility label', () => {
-    const label = 'Accessible label';
-    render(<Bpk[ComponentName] accessibilityLabel={label} />);
-    expect(screen.getByLabelText(label)).toBeInTheDocument();
+    expect(screen.getByTestId('bpk-[component-name]')).toBeInTheDocument();
   });
 });
 ```
@@ -325,17 +316,17 @@ import Bpk[ComponentName] from './Bpk[ComponentName]';
 describe('Bpk[ComponentName] accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <Bpk[ComponentName] accessibilityLabel="Label" />,
+      <Bpk[ComponentName] someRequiredProp="value" />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
-  it('should not have accessibility issues with custom content', async () => {
+  it('should not have accessibility issues with optional prop', async () => {
     const { container } = render(
       <Bpk[ComponentName]
-        accessibilityLabel="Label"
-        customProp="value"
+        someRequiredProp="value"
+        someOptionalProp={SOME_VALUE}
       />,
     );
     const results = await axe(container);
@@ -362,15 +353,15 @@ const getClassName = cssModules(STYLES);
 
 export const DefaultExample = () => (
   <div className={getClassName('examples')}>
-    <Bpk[ComponentName] accessibilityLabel="Default" />
+    <Bpk[ComponentName] someRequiredProp="value" />
   </div>
 );
 
 export const CustomExample = () => (
   <div className={getClassName('examples')}>
     <Bpk[ComponentName]
-      accessibilityLabel="Custom"
-      customProp="value"
+      someRequiredProp="value"
+      someOptionalProp={SOME_VALUE}
     />
   </div>
 );
@@ -437,16 +428,16 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 import Bpk[ComponentName] from '@skyscanner/backpack-web/bpk-component-[name]';
 
 export default () => (
-  <Bpk[ComponentName] accessibilityLabel="Label" />
+  <Bpk[ComponentName] someRequiredProp="value" />
 );
 \`\`\`
 
 ## Props
 
-| Property           | PropType | Required | Default Value |
-| ------------------ | -------- | -------- | ------------- |
-| accessibilityLabel | string   | true     | -             |
-| className          | string   | false    | null          |
+| Property         | PropType | Required | Default Value |
+| ---------------- | -------- | -------- | ------------- |
+| someRequiredProp | string   | true     | -             |
+| type             | string   | false    | 'default'     |
 
 ## Accessibility
 
@@ -612,10 +603,10 @@ npm run build  # Rebuild bpk-mixins package
 **Symptom:** `jest-axe` reports violations
 
 **Common fixes:**
-- Ensure `accessibilityLabel` is used: `aria-label={accessibilityLabel}`
 - Decorative elements have `aria-hidden="true"`
-- Interactive elements have proper `role` attributes
+- Interactive elements have proper `role` attributes and labels
 - Color contrast meets WCAG AA standards
+- If visible text is the only identifier, no extra `aria-label` is needed — screen readers will read the rendered text
 
 ### Issue 5: Snapshot Mismatches
 
@@ -648,7 +639,6 @@ npm test -- packages/bpk-component-[name] -u
 - [ ] No product-specific dependencies remain
 
 **Accessibility (WCAG 2.1 AA):**
-- [ ] `accessibilityLabel` prop is required (not optional)
 - [ ] Accessibility tests pass (jest-axe with 0 violations)
 - [ ] Decorative elements have `aria-hidden="true"`
 - [ ] Interactive elements have proper roles and labels
@@ -697,13 +687,12 @@ Consider creating as experimental V2 component instead if uncertain.
 ### API Encapsulation for New Components
 
 Per constitution principle XI:
-- NEW components should NOT expose `className` or `style` props
-- Prevents consumers from breaking visual consistency
-- Forces proper composition through Backpack patterns
-- Existing components may grandfather these props
-
-If migrating component has `className`, keep it for backward compatibility,
-but document as discouraged and don't add to new components.
+- NEW components must NOT expose `className` or `style` props
+- NEW components must NOT spread HTML element props via `& Omit<ComponentPropsWithoutRef<'div'>, 'children'>` or similar — default to a closed, explicit props interface
+- Only declare props the component actually uses
+- Prevents consumers from bypassing the design system's visual constraints
+- Makes the component contract clear and easy to evolve
+- Existing components may grandfather `className` for backward compatibility, but do NOT replicate this in new components
 
 ### Dependency Removal
 

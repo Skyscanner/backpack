@@ -3,7 +3,6 @@
 exports[`BpkThinking should render correctly with default props 1`] = `
 <DocumentFragment>
   <div
-    aria-label="Thinking"
     class="bpk-thinking bpk-thinking--default"
     data-testid="bpk-thinking"
   >

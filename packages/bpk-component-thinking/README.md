@@ -12,49 +12,46 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 import BpkThinking from '@skyscanner/backpack-web/bpk-component-thinking';
 
 export default () => (
-  <BpkThinking accessibilityLabel="AI is thinking" />
+  <BpkThinking content="AI is thinking" />
 );
 ```
 
-### With custom content
+### On dark backgrounds
 
 ```tsx
-import BpkThinking from '@skyscanner/backpack-web/bpk-component-thinking';
+import BpkThinking, { THINKING_TYPES } from '@skyscanner/backpack-web/bpk-component-thinking';
 
 export default () => (
   <BpkThinking
-    accessibilityLabel="Processing your request"
-    content="Processing your request..."
+    type={THINKING_TYPES.onDark}
+    content="Finding the best flights for you..."
   />
 );
 ```
 
 ## Props
 
-| Property              | PropType | Required | Default Value    |
-| --------------------- | -------- | -------- | ---------------- |
-| accessibilityLabel    | string   | true     | -                |
-| content               | string   | false    | 'Thinking...'    |
-| className             | string   | false    | null             |
+| Property | PropType                         | Required | Default Value |
+| -------- | -------------------------------- | -------- | ------------- |
+| content  | string                           | true     | -             |
+| type     | 'default' \| 'on-dark'           | false    | 'default'     |
 
 ## Accessibility
 
 The `BpkThinking` component includes built-in accessibility features:
 
-- **Required `accessibilityLabel`**: Provides screen reader users with context about what's happening
+- **Visible content**: The `content` prop is rendered as visible text, which screen readers pick up naturally
 - **Animated dots are decorative**: Marked with `aria-hidden="true"` so they don't interfere with screen readers
 - **Respects reduced motion preferences**: Uses simpler animations when users have `prefers-reduced-motion` enabled
 - **Semantic content**: Uses proper text elements that work well with assistive technologies
 
 ### Best Practices
 
-1. Always provide a descriptive `accessibilityLabel` that explains what the component is doing:
-   - ✅ Good: `"Searching for flights"`, `"AI is analyzing options"`
+1. Use meaningful `content` text that gives users context about the operation being performed:
+   - ✅ Good: `"Searching for flights"`, `"Analyzing your options"`
    - ❌ Bad: `"Loading"`, `"Please wait"`
 
-2. Use meaningful content text that gives users context about the operation being performed
-
-3. Consider the duration - if the thinking state might last a while, provide more detailed content to keep users informed
+2. Consider the duration — if the thinking state might last a while, provide more detailed content to keep users informed
 
 ## Features
 

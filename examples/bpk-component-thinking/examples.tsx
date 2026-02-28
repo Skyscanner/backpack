@@ -31,14 +31,13 @@ const getClassName = cssModules(STYLES);
 
 export const DefaultExample = () => (
   <div className={getClassName('bpk-thinking-examples')}>
-    <BpkThinking accessibilityLabel="AI is thinking" />
+    <BpkThinking content="AI is thinking" />
   </div>
 );
 
 export const CustomContentExample = () => (
   <div className={getClassName('bpk-thinking-examples')}>
     <BpkThinking
-      accessibilityLabel="Processing"
       content="Processing your request..."
     />
   </div>
@@ -47,7 +46,6 @@ export const CustomContentExample = () => (
 export const LongContentExample = () => (
   <div className={getClassName('bpk-thinking-examples')}>
     <BpkThinking
-      accessibilityLabel="Searching"
       content="We're searching through thousands of flight options to find the best deals for your trip"
     />
   </div>
@@ -55,29 +53,17 @@ export const LongContentExample = () => (
 
 export const MultipleExample = () => (
   <div className={getClassName('bpk-thinking-examples__multiple')}>
-    <BpkThinking
-      accessibilityLabel="Analyzing"
-      content="Analyzing options..."
-    />
-    <BpkThinking
-      accessibilityLabel="Comparing"
-      content="Comparing prices..."
-    />
-    <BpkThinking accessibilityLabel="Finalizing" content="Almost done..." />
+    <BpkThinking content="Analyzing options..." />
+    <BpkThinking content="Comparing prices..." />
+    <BpkThinking content="Almost done..." />
   </div>
 );
 
 export const MixedExample = () => (
   <div className={getClassName('bpk-thinking-examples__mixed')}>
-    <BpkThinking accessibilityLabel="Short message" content="Loading..." />
-    <BpkThinking
-      accessibilityLabel="Medium message"
-      content="Finding the best options for you"
-    />
-    <BpkThinking
-      accessibilityLabel="Long message"
-      content="We're checking availability across multiple airlines and travel providers to ensure you get the most comprehensive results"
-    />
+    <BpkThinking content="Loading..." />
+    <BpkThinking content="Finding the best options for you" />
+    <BpkThinking content="We're checking availability across multiple airlines and travel providers to ensure you get the most comprehensive results" />
   </div>
 );
 
@@ -85,7 +71,7 @@ export const OnDarkExample = () => (
   <BpkDarkExampleWrapper>
     <div className={getClassName('bpk-thinking-examples')}>
       <BpkThinking
-        accessibilityLabel="AI is thinking"
+        content="AI is thinking"
         type={THINKING_TYPES.onDark}
       />
     </div>
@@ -96,7 +82,6 @@ export const OnDarkWithContentExample = () => (
   <BpkDarkExampleWrapper>
     <div className={getClassName('bpk-thinking-examples')}>
       <BpkThinking
-        accessibilityLabel="Processing"
         type={THINKING_TYPES.onDark}
         content="Finding the best flights for you..."
       />
