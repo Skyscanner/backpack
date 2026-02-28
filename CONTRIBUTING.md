@@ -293,7 +293,7 @@ Visual regression tests run on all Storybook stories titled _'Visual test'_.
 <details>
 <summary>Publish packages (Backpack design system team only)</summary>
 
-Releases are managed by the Backpack design system team. If you have contributed a change and would like it included in a release, please drop a note in [#backpack](https://skyscanner.slack.com/channels/backpack) and notify @design-system-web-gf.
+Releases are managed by the Backpack design system team. If you have contributed a change and would like it included in a release, please drop a note in #backpack and notify @design-system-web-gf.
 
 - Publish the latest draft on the [releases pages](https://github.com/Skyscanner/backpack/releases)
 - Ensure CI runs the release workflow successfully
