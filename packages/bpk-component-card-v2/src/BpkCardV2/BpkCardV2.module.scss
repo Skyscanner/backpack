@@ -1,0 +1,210 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/radii';
+@use '../../../bpk-mixins/shadows';
+@use '../../../bpk-mixins/breakpoints';
+@use '../../../bpk-mixins/utils';
+
+// Spacing CSS custom properties for dynamic padding
+:root {
+  --bpk-spacing-sm: #{tokens.bpk-spacing-sm()};
+  --bpk-spacing-md: #{tokens.bpk-spacing-md()};
+  --bpk-spacing-base: #{tokens.bpk-spacing-base()};
+  --bpk-spacing-lg: #{tokens.bpk-spacing-lg()};
+  --bpk-spacing-xl: #{tokens.bpk-spacing-xl()};
+  --bpk-spacing-xxl: #{tokens.bpk-spacing-xxl()};
+  --bpk-spacing-xxxl: #{tokens.bpk-spacing-xxxl()};
+  --bpk-spacing-xxxxl: #{tokens.bpk-spacing-xxxxl()};
+}
+
+// Card container - base styles
+.bpk-card-v2 {
+  display: flex;
+  flex-direction: column;
+  background-color: tokens.$bpk-surface-default-day;
+  overflow: hidden;
+
+  @include radii.bpk-border-radius-md;
+  @include shadows.bpk-box-shadow-sm;
+
+  // Surface color variants
+  &[data-bg-color='surfaceDefault'] {
+    background-color: tokens.$bpk-surface-default-day;
+  }
+
+  &[data-bg-color='surfaceElevated'] {
+    background-color: tokens.$bpk-surface-elevated-day;
+  }
+
+  &[data-bg-color='surfaceTint'] {
+    background-color: tokens.$bpk-surface-tint-day;
+  }
+
+  &[data-bg-color='surfaceSubtle'] {
+    background-color: tokens.$bpk-surface-subtle-day;
+  }
+
+  &[data-bg-color='surfaceHero'] {
+    background-color: tokens.$bpk-surface-hero-day;
+  }
+
+  &[data-bg-color='surfaceContrast'] {
+    background-color: tokens.$bpk-surface-contrast-day;
+  }
+
+  &[data-bg-color='surfaceLowContrast'] {
+    background-color: tokens.$bpk-surface-low-contrast-day;
+  }
+
+  &[data-bg-color='surfaceHighlight'] {
+    background-color: tokens.$bpk-surface-highlight-day;
+  }
+}
+
+// Outlined variant - replaces shadow with border
+.bpk-card-v2--outlined {
+  border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+  box-shadow: none;
+}
+
+// No elevation variant - no shadow, no border
+.bpk-card-v2--noElevation {
+  box-shadow: none;
+}
+
+// Header subcomponent
+.bpk-card-v2__header {
+  padding: tokens.bpk-spacing-base();
+}
+
+// Body subcomponent - main content area
+.bpk-card-v2__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  // Single-column layout (default) - has padding
+  &:not(.bpk-card-v2__body--split) {
+    padding: tokens.bpk-spacing-base();
+    flex-direction: column;
+  }
+
+  // Two-column split layout - no padding (Primary/Secondary handle it)
+  &.bpk-card-v2__body--split {
+    padding: 0;
+    flex-direction: column;
+    gap: 0;
+
+    // Desktop - horizontal layout with divider
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+}
+
+// Primary content area in split layout
+.bpk-card-v2__primary {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: tokens.bpk-spacing-base();
+  flex-direction: column;
+  flex: 0 0 auto;
+
+  // Split layout - on desktop
+  .bpk-card-v2__body--split & {
+    width: 100%;
+    padding: tokens.bpk-spacing-base();
+    border-right: none;
+
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      width: var(--bpk-card-v2-primary-width, 70%);
+      padding-right: calc(
+        tokens.bpk-spacing-base() - tokens.$bpk-border-size-sm / 2
+      );
+      border-bottom: none;
+
+      @include utils.bpk-rtl {
+        padding-right: tokens.bpk-spacing-base();
+        padding-left: calc(
+          tokens.bpk-spacing-base() - tokens.$bpk-border-size-sm / 2
+        );
+
+        &::after {
+          right: auto;
+          left: 0;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        top: tokens.bpk-spacing-md();
+        right: 0;
+        bottom: tokens.bpk-spacing-md();
+        content: '';
+        width: tokens.$bpk-border-size-sm;
+        background-color: tokens.$bpk-line-day;
+      }
+    }
+  }
+}
+
+// Divider between primary and secondary (only visible in split layout on mobile)
+.bpk-card-v2__divider {
+  display: none;
+  height: tokens.$bpk-border-size-sm;
+  margin: tokens.bpk-spacing-md() 0;
+  background-color: tokens.$bpk-line-day;
+
+  // Mobile - show as horizontal divider in split layout
+  .bpk-card-v2__body--split & {
+    display: block;
+
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      display: none;
+    }
+  }
+}
+
+// Secondary content area in split layout
+.bpk-card-v2__secondary {
+  display: flex;
+  width: 100%;
+  padding: tokens.bpk-spacing-base();
+  flex-direction: column;
+  flex: 1 1 auto;
+
+  // Split layout - on desktop
+  .bpk-card-v2__body--split & {
+    width: 100%;
+    padding: tokens.bpk-spacing-base();
+    flex: 1 1 auto;
+
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      width: calc(100% - var(--bpk-card-v2-primary-width, 70%));
+    }
+  }
+}
+
+// Footer subcomponent
+.bpk-card-v2__footer {
+  padding: tokens.bpk-spacing-base();
+}
