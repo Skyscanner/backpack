@@ -4,7 +4,9 @@ exports[`BpkThumb should render correctly with default props 1`] = `
 <DocumentFragment>
   <button
     aria-label="Thumbs up"
+    aria-pressed="false"
     class="bpk-thumb"
+    data-backpack-ds-component="Thumb"
     data-testid="bpk-thumb-up"
     title="Thumbs up"
     type="button"

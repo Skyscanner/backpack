@@ -78,6 +78,7 @@ const BpkThumb = ({
       className={classNames}
       onClick={handleClick}
       aria-label={accessibilityLabel}
+      aria-pressed={selected}
       title={accessibilityLabel}
       data-testid={`bpk-thumb-${type}`}
       {...getDataComponentAttribute('Thumb')}
