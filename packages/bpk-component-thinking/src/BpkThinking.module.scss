@@ -17,7 +17,6 @@
  */
 
 @use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/utils';
 
 .bpk-thinking {
   display: flex;
@@ -69,21 +68,18 @@
     max-width: 17.5rem; // 280px
     padding: tokens.bpk-spacing-base();
     align-self: flex-start;
-    border-radius: tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-lg
-      tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-xs;
     background: tokens.$bpk-core-primary-day;
     color: tokens.$bpk-text-on-dark-day;
     opacity: 1;
     animation: bpk-thinking-bubble-bounce 1.2s ease-in-out infinite;
     animation-delay: 0.4s;
+    border-end-end-radius: tokens.$bpk-border-radius-lg;
+    border-end-start-radius: tokens.$bpk-border-radius-xs;
+    border-start-end-radius: tokens.$bpk-border-radius-lg;
+    border-start-start-radius: tokens.$bpk-border-radius-lg;
     overflow-wrap: break-word;
     will-change: transform;
     word-wrap: break-word;
-
-    @include utils.bpk-rtl {
-      border-radius: tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-lg
-        tokens.$bpk-border-radius-xs tokens.$bpk-border-radius-lg;
-    }
 
     @media (prefers-reduced-motion: reduce) {
       animation: none;
