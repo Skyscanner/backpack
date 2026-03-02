@@ -16,21 +16,21 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/breakpoints';
+import { BpkVessel } from '../../packages/bpk-component-layout';
 
-.bpk-card-list {
-  display: flex;
-  flex-direction: column;
-  overflow: clip;
-  gap: tokens.bpk-spacing-lg();
+import STYLES from './examples.module.scss';
 
-  @include breakpoints.bpk-breakpoint-mobile {
-    gap: tokens.bpk-spacing-base();
-  }
+const BpkVesselExample = () => (
+  <BpkVessel
+    className={STYLES['bpk-layout-examples__outline']}
+    style={{
+      padding: '16px',
+      transition: 'opacity 0.3s',
+    }}
+    data-testid="vessel-basic"
+  >
+    Content
+  </BpkVessel>
+);
 
-  &--card-list {
-    display: flex;
-    flex-direction: column;
-  }
-}
+export default BpkVesselExample;

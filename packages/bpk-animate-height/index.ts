@@ -16,21 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/breakpoints';
+import AnimateHeight from './src/AnimateHeight';
 
-.bpk-card-list {
-  display: flex;
-  flex-direction: column;
-  overflow: clip;
-  gap: tokens.bpk-spacing-lg();
-
-  @include breakpoints.bpk-breakpoint-mobile {
-    gap: tokens.bpk-spacing-base();
-  }
-
-  &--card-list {
-    display: flex;
-    flex-direction: column;
-  }
-}
+export type { Props } from './src/AnimateHeight';
+export default AnimateHeight;

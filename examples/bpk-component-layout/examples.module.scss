@@ -1,0 +1,66 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../packages/bpk-mixins/tokens';
+@use '../../packages/bpk-mixins/typography';
+
+.bpk-layout-examples {
+  &__frame {
+    padding: tokens.bpk-spacing-base();
+    background-color: tokens.$bpk-canvas-contrast-day;
+    border-radius: tokens.$bpk-border-radius-md;
+
+    // Subtle grid to make layout boundaries easier to see.
+    background-size: 8px 8px;
+
+    // Outline the root element of each example (not the inner content).
+    // This avoids needing border props on layout primitives.
+    > :where(*) {
+      outline: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+      outline-offset: tokens.bpk-spacing-sm();
+      background-color: tokens.$bpk-canvas-day;
+    }
+  }
+
+  // Generic “item boundary” styling for Storybook examples.
+  // Use this on regular DOM elements (not layout primitives) to avoid exposing
+  // border props on the layout surface.
+  &__item {
+    outline: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+    outline-offset: 0;
+    border-radius: tokens.$bpk-border-radius-sm;
+    background-color: tokens.$bpk-canvas-day;
+    box-sizing: border-box;
+  }
+
+  &__outline {
+    @include typography.bpk-body-default;
+
+    display: block;
+    width: 100%;
+    padding: tokens.bpk-spacing-sm();
+
+    color: tokens.$bpk-text-primary-day;
+    background-color: tokens.$bpk-surface-highlight-day;
+
+    outline: tokens.$bpk-border-size-sm dashed tokens.$bpk-line-day;
+    outline-offset: 0;
+    border-radius: tokens.$bpk-border-radius-sm;
+    box-sizing: border-box;
+  }
+}

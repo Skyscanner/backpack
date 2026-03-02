@@ -50,6 +50,7 @@ export const RowToRailWithInitiallyInViewCardIndex = RowToRailWithInitiallyInVie
 
 export const MultiComponentsScrollingTest = MultiComponentsScrollingTestExample;
 export const VisualTest = Basic;
+export const VisualTestWithoutTitle = RowToRailWithoutTitleExample;
 export const VisualTestWithZoom = {
   render: VisualTest,
   args: {
