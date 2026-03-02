@@ -25,6 +25,8 @@ import {
   OverflowingExample,
   LongHeaderTextExample,
   LongHeaderTextWithActionButtonExample,
+  LongHeaderWithCustomTitleExample,
+  LongHeaderWithCustomTitleAndActionExample,
   NoHeaderExample,
   NoHeaderWithActionButtonExample,
   ActionButtonExample,
@@ -51,6 +53,8 @@ export const Overflowing = OverflowingExample;
 export const LongHeaderText = LongHeaderTextExample;
 export const LongHeaderTextWithActionButton =
   LongHeaderTextWithActionButtonExample;
+export const LongHeaderWithCustomTitle = LongHeaderWithCustomTitleExample;
+export const LongHeaderWithCustomTitleAndAction = LongHeaderWithCustomTitleAndActionExample;
 
 export const NoHeader = NoHeaderExample;
 export const NoHeaderWithActionButton = NoHeaderWithActionButtonExample;

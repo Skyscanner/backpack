@@ -16,21 +16,21 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/breakpoints';
+import { Box } from '@chakra-ui/react';
 
-.bpk-card-list {
-  display: flex;
-  flex-direction: column;
-  overflow: clip;
-  gap: tokens.bpk-spacing-lg();
+import { getDataComponentAttribute } from '../../bpk-react-utils';
 
-  @include breakpoints.bpk-breakpoint-mobile {
-    gap: tokens.bpk-spacing-base();
-  }
+import { processBpkComponentProps } from './tokenUtils';
 
-  &--card-list {
-    display: flex;
-    flex-direction: column;
-  }
-}
+import type { BpkBoxProps } from './types';
+
+export const BpkBox = ({ children, ...props }: BpkBoxProps) => {
+  const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
+  return (
+    <Box {...getDataComponentAttribute('Box')} {...processedProps}>
+      {children}
+    </Box>
+  );
+};
+
+export type { BpkBoxProps };

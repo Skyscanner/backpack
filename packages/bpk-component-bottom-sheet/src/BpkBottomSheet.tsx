@@ -15,8 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { SyntheticEvent, ReactNode } from 'react';
-import { useCallback, useState } from 'react';
+import type { SyntheticEvent, ReactNode, ReactElement } from 'react';
+import { useCallback, useState, isValidElement, cloneElement } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -66,7 +66,7 @@ interface CommonProps {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
     },
   ) => void;
-  title?: string;
+  title?: string | ReactNode;
   wide?: boolean;
   isOpen: boolean;
   paddingStyles?: PaddingStyles;
@@ -157,13 +157,20 @@ const BpkBottomSheet = ({
 
   const headingId = `bpk-bottom-sheet-heading-${id}`;
   const hiddenTitleId = `bpk-bottom-sheet-title-hidden-${id}`;
-  const showHiddenTitle = !title && 'ariaLabel' in ariaProps && ariaProps.ariaLabel;
+  const hasTitle = !!title;
+  const showHiddenTitle = !hasTitle && 'ariaLabel' in ariaProps && ariaProps.ariaLabel;
   const dialogClassName = getClassName(
     'bpk-bottom-sheet',
     wide && 'bpk-bottom-sheet--wide',
   );
 
   const contentStyle = getContentStyles(paddingStyles);
+
+  // For custom title (ReactNode), wrap it with an element that has the correct id
+  // so BpkNavigationBar's aria-labelledby reference is valid
+  const titleWithId = hasTitle && typeof title !== 'string' && isValidElement(title)
+    ? cloneElement(title as ReactElement, { id: showHiddenTitle ? hiddenTitleId : headingId })
+    : title;
 
   return (
     <BpkDialogWrapper
@@ -190,9 +197,9 @@ const BpkBottomSheet = ({
         <header className={getClassName('bpk-bottom-sheet--header-wrapper')}>
           <BpkNavigationBar
             id={showHiddenTitle ? hiddenTitleId : headingId}
-            title={title}
+            title={titleWithId}
             titleTextStyle={TEXT_STYLES.label1}
-            titleTagName={title ? 'h2' : 'span'}
+            titleTagName={hasTitle ? 'h2' : 'span'}
             className={getClassName('bpk-bottom-sheet--header')}
             leadingButton={
               <BpkCloseButton label={closeLabel} onClick={handleClose} />

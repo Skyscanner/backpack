@@ -16,21 +16,13 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+// these options align with Chakra's StackOption excluding separator
+// TODO: add separator to Stack
+const StackOptionKeys = [
+  'align',
+  'justify',
+  'wrap',
+  'direction',
+] as const;
 
-import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
-
-import AnimateHeight from './AnimateHeight';
-
-describe('AnimateHeight accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(
-      <AnimateHeight duration={200} height="auto">
-        Content
-      </AnimateHeight>,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-});
+export default StackOptionKeys;

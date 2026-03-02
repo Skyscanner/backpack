@@ -16,21 +16,22 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
+import type { ReactNode } from 'react';
 import { Component } from 'react';
-import type { Node } from 'react';
 
 import AnimateHeight from '../../packages/bpk-animate-height';
 import BpkButton from '../../packages/bpk-component-button';
 
 type Props = {
-  fromHeight: string | number,
-  toHeight: string | number,
-  buttonText: Node,
+  fromHeight: number | string;
+  toHeight: number | string;
+  buttonText: ReactNode;
+  children: ReactNode;
+  duration: number;
 };
+
 type State = {
-  height: string | number,
+  height: number | string;
 };
 
 class AnimateHeightExample extends Component<Props, State> {

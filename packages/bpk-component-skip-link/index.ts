@@ -15,22 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import BpkSkipLink, { type Props as BpkSkipLinkProps } from './src/BpkSkipLink';
+import themeAttributes from './src/themeAttributes';
 
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/breakpoints';
-
-.bpk-card-list {
-  display: flex;
-  flex-direction: column;
-  overflow: clip;
-  gap: tokens.bpk-spacing-lg();
-
-  @include breakpoints.bpk-breakpoint-mobile {
-    gap: tokens.bpk-spacing-base();
-  }
-
-  &--card-list {
-    display: flex;
-    flex-direction: column;
-  }
-}
+export type { BpkSkipLinkProps };
+export { themeAttributes };
+export default BpkSkipLink;

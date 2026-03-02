@@ -16,6 +16,17 @@
  * limitations under the License.
  */
 
-import AnimateHeight from './src/AnimateHeight';
+import type { ReactNode } from 'react';
 
-export default AnimateHeight;
+import { BpkProvider } from '../../packages/bpk-component-layout';
+
+import STYLES from './examples.module.scss';
+
+const Wrapper = ({ children }: { children: ReactNode }) => (
+  <BpkProvider>
+    <div className={STYLES['bpk-layout-examples__frame']}>{children}</div>
+  </BpkProvider>
+);
+
+export default Wrapper;
+
