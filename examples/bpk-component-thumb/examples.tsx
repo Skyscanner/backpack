@@ -62,20 +62,6 @@ export const InteractiveExample = () => {
   );
 };
 
-export const DisabledExample = () => (
-  <div className={getClassName('bpkdocs-thumb-examples')}>
-    <BpkThumb accessibilityLabel="Thumbs up" type="up" disabled />
-    <BpkThumb accessibilityLabel="Thumbs down" type="down" disabled />
-  </div>
-);
-
-export const DisabledSelectedExample = () => (
-  <div className={getClassName('bpkdocs-thumb-examples')}>
-    <BpkThumb accessibilityLabel="Thumbs up" type="up" disabled selected />
-    <BpkThumb accessibilityLabel="Thumbs down" type="down" disabled selected />
-  </div>
-);
-
 export const MixedExample = () => (
   <div className={getClassName('bpkdocs-thumb-examples-column')}>
     <div className={getClassName('bpkdocs-thumb-examples-row')}>
@@ -87,11 +73,6 @@ export const MixedExample = () => (
       <span>Selected:</span>
       <BpkThumb accessibilityLabel="Thumbs up" type="up" selected />
       <BpkThumb accessibilityLabel="Thumbs down" type="down" selected />
-    </div>
-    <div className={getClassName('bpkdocs-thumb-examples-row')}>
-      <span>Disabled:</span>
-      <BpkThumb accessibilityLabel="Thumbs up" type="up" disabled />
-      <BpkThumb accessibilityLabel="Thumbs down" type="down" disabled />
     </div>
   </div>
 );

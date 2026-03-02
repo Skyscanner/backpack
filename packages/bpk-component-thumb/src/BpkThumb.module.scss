@@ -44,24 +44,11 @@
     fill: currentcolor;
   }
 
-  &:hover:not(:disabled):not(&--selected) &__icon {
+  &:hover:not(&--selected) &__icon {
     color: tokens.$bpk-text-secondary-day;
   }
 
   &--selected &__icon {
     color: tokens.$bpk-core-accent-day;
-  }
-
-  &--selected:disabled {
-    opacity: 1;
-
-    .bpk-thumb__icon {
-      color: tokens.$bpk-core-accent-day;
-    }
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
   }
 }

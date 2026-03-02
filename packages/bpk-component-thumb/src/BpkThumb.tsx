@@ -16,12 +16,12 @@
  * limitations under the License.
  */
 
-import type { ComponentPropsWithoutRef, MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
 
 import { withButtonAlignment } from '../../bpk-component-icon';
 import ThumbsDownIcon from '../../bpk-component-icon/lg/thumbs-down';
 import ThumbsUpIcon from '../../bpk-component-icon/lg/thumbs-up';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkThumb.module.scss';
 
@@ -49,14 +49,13 @@ export type BpkThumbProps = {
    * Type of thumb icon to display.
    */
   type: ThumbsType;
-} & Omit<ComponentPropsWithoutRef<'button'>, 'children' | 'className' | 'onClick' | 'style' | 'type'>;
+};
 
 const BpkThumb = ({
   accessibilityLabel,
   onClick,
   selected = false,
   type,
-  ...rest
 }: BpkThumbProps) => {
   const Icon = type === 'up' ? AlignedThumbsUpIcon : AlignedThumbsDownIcon;
 
@@ -81,7 +80,7 @@ const BpkThumb = ({
       aria-label={accessibilityLabel}
       title={accessibilityLabel}
       data-testid={`bpk-thumb-${type}`}
-      {...rest}
+      {...getDataComponentAttribute('Thumb')}
     >
       <span className={iconClassNames}>
         <Icon />

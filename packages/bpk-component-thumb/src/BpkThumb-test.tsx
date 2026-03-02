@@ -112,11 +112,4 @@ describe('BpkThumb', () => {
     expect(screen.getByLabelText(label)).toBeInTheDocument();
   });
 
-  it('should support disabled state', () => {
-    render(
-      <BpkThumb accessibilityLabel="Thumbs up" type="up" disabled />,
-    );
-    const button = screen.getByTestId('bpk-thumb-up');
-    expect(button).toBeDisabled();
-  });
 });

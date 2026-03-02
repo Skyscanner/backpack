@@ -45,12 +45,4 @@ describe('BpkThumb accessibility tests', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
-
-  it('should not have accessibility issues when disabled', async () => {
-    const { container } = render(
-      <BpkThumb accessibilityLabel="Thumbs up" type="up" disabled />,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
 });

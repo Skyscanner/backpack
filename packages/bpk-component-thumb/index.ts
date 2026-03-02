@@ -16,5 +16,7 @@
  * limitations under the License.
  */
 
-export { default } from './src/BpkThumb';
+import BpkThumb from './src/BpkThumb';
+
 export type { BpkThumbProps, ThumbsType } from './src/BpkThumb';
+export default BpkThumb;

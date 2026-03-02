@@ -22,8 +22,6 @@ import {
   DefaultExample,
   SelectedExample,
   InteractiveExample,
-  DisabledExample,
-  DisabledSelectedExample,
   MixedExample,
 } from './examples';
 
@@ -35,8 +33,6 @@ export default {
 export const Default = DefaultExample;
 export const Selected = SelectedExample;
 export const Interactive = InteractiveExample;
-export const Disabled = DisabledExample;
-export const DisabledSelected = DisabledSelectedExample;
 export const Mixed = MixedExample;
 
 export const VisualTest = MixedExample;
