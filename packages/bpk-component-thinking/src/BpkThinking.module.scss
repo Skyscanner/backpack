@@ -21,7 +21,7 @@
 .bpk-thinking {
   display: flex;
   align-items: flex-end;
-  transform: translateY(tokens.bpk-spacing-md()) scale(0.98);
+  transform: translateY(12 * tokens.$bpk-one-pixel-rem) scale(0.98);
   opacity: 0;
   animation: bpk-thinking-entrance 0.24s cubic-bezier(0.2, 0, 0, 1) forwards;
   gap: tokens.bpk-spacing-md();
@@ -65,7 +65,7 @@
   &__bubble {
     position: relative;
     min-width: tokens.bpk-spacing-xxl();
-    max-width: 17.5rem; // 280px
+    max-width: 280 * tokens.$bpk-one-pixel-rem;
     padding: tokens.bpk-spacing-base();
     align-self: flex-start;
     background: tokens.$bpk-core-primary-day;
@@ -95,7 +95,7 @@
   }
 
   30% {
-    transform: translateY(-0.625rem); // -10px
+    transform: translateY(-(10 * tokens.$bpk-one-pixel-rem)); // -10px
   }
 }
 
@@ -120,13 +120,13 @@
   }
 
   30% {
-    transform: translateY(-0.375rem) scale(1.02); // -6px
+    transform: translateY(-(6 * tokens.$bpk-one-pixel-rem)) scale(1.02); // -6px
   }
 }
 
 @keyframes bpk-thinking-entrance {
   from {
-    transform: translateY(tokens.bpk-spacing-md()) scale(0.98);
+    transform: translateY(12 * tokens.$bpk-one-pixel-rem) scale(0.98);
     opacity: 0;
   }
 
