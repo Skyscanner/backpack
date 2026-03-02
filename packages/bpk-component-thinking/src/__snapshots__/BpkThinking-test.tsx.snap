@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkThinking should render correctly with default props 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-thinking"
+    data-backpack-ds-component="Thinking"
+    data-testid="bpk-thinking"
+  >
+    <div
+      aria-hidden="true"
+      class="bpk-thinking__dots"
+    >
+      <div
+        class="bpk-thinking__dots--dot bpk-thinking__dots--dot-first"
+      />
+      <div
+        class="bpk-thinking__dots--dot bpk-thinking__dots--dot-second"
+      />
+    </div>
+    <div
+      class="bpk-thinking__bubble"
+    >
+      <span
+        class="bpk-text bpk-text--body-default"
+        data-backpack-ds-component="Text"
+      >
+        Thinking...
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
