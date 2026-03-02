@@ -32,8 +32,11 @@
   cursor: pointer;
   appearance: none;
 
+  // Expands the tappable area to 48px via ::before pseudo-element,
+  // meeting WCAG 2.1 minimum 44×44px touch target requirement.
   @include utils.bpk-touch-tappable;
 
+  // Removes transition for users who prefer reduced motion (vestibular disorders).
   @media (prefers-reduced-motion: reduce) {
     transition: none;
   }
