@@ -16,5 +16,7 @@
  * limitations under the License.
  */
 
-export { default, THINKING_TYPES } from './src/BpkThinking';
-export type { BpkThinkingProps, ThinkingType } from './src/BpkThinking';
+import BpkThinking from './src/BpkThinking';
+
+export type { BpkThinkingProps } from './src/BpkThinking';
+export default BpkThinking;

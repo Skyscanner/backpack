@@ -40,7 +40,7 @@
 
     &--dot {
       border-radius: 50%;
-      background-color: tokens.$bpk-surface-contrast-day;
+      background-color: tokens.$bpk-core-primary-day;
       animation: bpk-thinking-dot-bounce 1.2s ease-in-out infinite;
       will-change: transform;
 
@@ -71,7 +71,7 @@
     align-self: flex-start;
     border-radius: tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-lg
       tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-xs;
-    background: tokens.$bpk-surface-contrast-day;
+    background: tokens.$bpk-core-primary-day;
     color: tokens.$bpk-text-on-dark-day;
     opacity: 1;
     animation: bpk-thinking-bubble-bounce 1.2s ease-in-out infinite;
@@ -87,18 +87,6 @@
 
     @media (prefers-reduced-motion: reduce) {
       animation: none;
-    }
-  }
-
-  // OnDark variant: uses Night Sky blue (#054184) on dark backgrounds
-  &--on-dark {
-    .bpk-thinking__dots--dot {
-      background-color: tokens.$bpk-core-primary-night;
-    }
-
-    .bpk-thinking__bubble {
-      background: tokens.$bpk-core-primary-night;
-      color: tokens.$bpk-text-on-dark-day;
     }
   }
 }

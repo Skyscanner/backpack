@@ -11,9 +11,16 @@ description: |
   test suite (npm run lint && npm run check-react-versions && npm run check-bpk-dependencies
   && npm run jest) with 0 errors before acceptance.
 author: Claude Code
-version: 1.3.0
-date: 2026-02-28
+version: 1.4.0
+date: 2026-03-02
 changelog: |
+  v1.4.0 (2026-03-02):
+  - Fixed index.ts template: use explicit `import ... + export default` instead of `export { default }` shorthand
+  - Simplified README template to match standard Backpack format (button/chip pattern)
+  - README now only includes: Installation + Usage + Props (removed Tracking, Accessibility, Design tokens, Features sections)
+  - Added "What NOT to include in README" guidance
+  - Removed README Tracking section from verification checklist
+
   v1.3.0 (2026-02-28):
   - Added mandatory data-backpack-ds-component attribute requirement
   - Updated TypeScript template to include getDataComponentAttribute usage
@@ -416,11 +423,17 @@ export const VisualTestWithZoom = {
  * [... license header ...]
  */
 
-export { default } from './src/Bpk[ComponentName]';
+import Bpk[ComponentName] from './src/Bpk[ComponentName]';
+
 export type { Bpk[ComponentName]Props } from './src/Bpk[ComponentName]';
+export default Bpk[ComponentName];
 ```
 
+**Pattern rationale:** Matches the majority of Backpack components (button, card, chip, text). Always explicitly `import` the component, then `export default` — do not use the `export { default } from` shorthand.
+
 #### 2.8 Create README
+
+Standard README format (follow button/chip pattern — keep it minimal):
 
 ```markdown
 # bpk-component-[name]
@@ -446,20 +459,15 @@ export default () => (
 | Property         | PropType | Required | Default Value |
 | ---------------- | -------- | -------- | ------------- |
 | someRequiredProp | string   | true     | -             |
-| type             | string   | false    | 'default'     |
-
-## Tracking
-
-The component adds a `data-backpack-ds-component` attribute set to `"[ComponentName]"` on the root element. This attribute is used to track design system component usage across Skyscanner products.
-
-## Accessibility
-
-[Describe accessibility features and best practices]
-
-## Design tokens
-
-[List tokens used by the component]
+| someOptionalProp | string   | false    | 'default'     |
 ```
+
+**What NOT to include in README** (not in standard Backpack format):
+- ❌ Tracking section (internal implementation detail)
+- ❌ Accessibility section (covered by WCAG standards, not per-component docs)
+- ❌ Design tokens section (implementation detail)
+- ❌ Animation section (implementation detail)
+- ❌ Features list (redundant with Usage examples)
 
 ### Phase 3: Verification & Acceptance (15-20 mins)
 
@@ -644,7 +652,6 @@ npm test -- packages/bpk-component-[name] -u
 **Code Quality:**
 - [ ] All files have Apache 2.0 license headers (NON-NEGOTIABLE)
 - [ ] Root element has `{...getDataComponentAttribute('[ComponentName]')}` (name WITHOUT "Bpk" prefix)
-- [ ] README includes a "Tracking" section documenting the `data-backpack-ds-component` attribute
 - [ ] Component follows naming convention: `Bpk[ComponentName]`
 - [ ] File names match component name exactly
 - [ ] Modern Sass API used (`@use`, not `@import`)

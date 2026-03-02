@@ -3,7 +3,7 @@
 exports[`BpkThinking should render correctly with default props 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-thinking bpk-thinking--default"
+    class="bpk-thinking"
     data-backpack-ds-component="Thinking"
     data-testid="bpk-thinking"
   >

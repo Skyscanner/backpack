@@ -16,14 +16,8 @@
  * limitations under the License.
  */
 
-import BpkThinking, {
-  THINKING_TYPES,
-} from '../../packages/bpk-component-thinking/src/BpkThinking';
+import BpkThinking from '../../packages/bpk-component-thinking/src/BpkThinking';
 import { cssModules } from '../../packages/bpk-react-utils';
-import {
-  BpkDarkExampleWrapper,
-  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-} from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';
 
@@ -67,24 +61,3 @@ export const MixedExample = () => (
   </div>
 );
 
-export const OnDarkExample = () => (
-  <BpkDarkExampleWrapper>
-    <div className={getClassName('bpk-thinking-examples')}>
-      <BpkThinking
-        content="AI is thinking"
-        type={THINKING_TYPES.onDark}
-      />
-    </div>
-  </BpkDarkExampleWrapper>
-);
-
-export const OnDarkWithContentExample = () => (
-  <BpkDarkExampleWrapper>
-    <div className={getClassName('bpk-thinking-examples')}>
-      <BpkThinking
-        type={THINKING_TYPES.onDark}
-        content="Finding the best flights for you..."
-      />
-    </div>
-  </BpkDarkExampleWrapper>
-);
