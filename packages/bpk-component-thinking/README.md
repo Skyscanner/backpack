@@ -1,6 +1,6 @@
 # bpk-component-thinking
 
-> Backpack thinking component.
+> Backpack thinking component. Part of Chatbot UI on Carhire Chatbot.
 
 ## Installation
 
