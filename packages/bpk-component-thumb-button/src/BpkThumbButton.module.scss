@@ -26,9 +26,10 @@
   padding: 0;
   justify-content: center;
   align-items: center;
-  transition: all 0.2s ease-in-out;
+  transition: all tokens.$bpk-duration-sm ease-in-out;
   border: none;
   background: transparent;
+  color: tokens.$bpk-text-disabled-day;
   cursor: pointer;
   appearance: none;
 
@@ -36,22 +37,25 @@
   // meeting WCAG 2.1 minimum 44×44px touch target requirement.
   @include utils.bpk-touch-tappable;
 
+  @include utils.bpk-hover {
+    color: tokens.$bpk-text-secondary-day;
+  }
+
   // Removes transition for users who prefer reduced motion (vestibular disorders).
   @media (prefers-reduced-motion: reduce) {
     transition: none;
   }
 
+  &--selected {
+    color: tokens.$bpk-core-accent-day;
+
+    @include utils.bpk-hover {
+      color: tokens.$bpk-core-accent-day;
+    }
+  }
+
   &__icon {
     display: flex;
-    color: tokens.$bpk-text-disabled-day;
     fill: currentcolor;
-  }
-
-  &:hover:not(&--selected) &__icon {
-    color: tokens.$bpk-text-secondary-day;
-  }
-
-  &--selected &__icon {
-    color: tokens.$bpk-core-accent-day;
   }
 }

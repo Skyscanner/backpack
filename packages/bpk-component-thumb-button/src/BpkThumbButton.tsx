@@ -18,7 +18,7 @@
 
 import type { MouseEvent } from 'react';
 
-import { withButtonAlignment } from '../../bpk-component-icon';
+import { withLargeButtonAlignment } from '../../bpk-component-icon';
 import ThumbsDownIcon from '../../bpk-component-icon/lg/thumbs-down';
 import ThumbsUpIcon from '../../bpk-component-icon/lg/thumbs-up';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
@@ -27,8 +27,8 @@ import STYLES from './BpkThumbButton.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const AlignedThumbsUpIcon = withButtonAlignment(ThumbsUpIcon);
-const AlignedThumbsDownIcon = withButtonAlignment(ThumbsDownIcon);
+const AlignedThumbsUpIcon = withLargeButtonAlignment(ThumbsUpIcon);
+const AlignedThumbsDownIcon = withLargeButtonAlignment(ThumbsDownIcon);
 
 export type ThumbsType = 'up' | 'down';
 
@@ -66,7 +66,7 @@ const BpkThumbButton = ({
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
-    onClick?.(type);
+    onClick(type);
   };
 
   const iconClassNames = getClassName('bpk-thumb-button__icon');
