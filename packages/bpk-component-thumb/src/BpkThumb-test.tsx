@@ -29,7 +29,7 @@ describe('BpkThumb', () => {
 
   it('should render correctly with default props', () => {
     const { asFragment } = render(
-      <BpkThumb accessibilityLabel="Thumbs up" type="up" />,
+      <BpkThumb accessibilityLabel="Thumbs up" type="up" onClick={mockOnClick} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -108,7 +108,7 @@ describe('BpkThumb', () => {
 
   it('should have correct accessibility label', () => {
     const label = 'Rate this helpful';
-    render(<BpkThumb accessibilityLabel={label} type="up" />);
+    render(<BpkThumb accessibilityLabel={label} type="up" onClick={mockOnClick} />);
     expect(screen.getByLabelText(label)).toBeInTheDocument();
   });
 
