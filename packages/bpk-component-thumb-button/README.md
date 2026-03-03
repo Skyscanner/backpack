@@ -1,6 +1,6 @@
-# bpk-component-thumb
+# bpk-component-thumb-button
 
-> Backpack thumb component. Part of Chatbot UI on Carhire Chatbot.
+> Backpack thumb button component. Part of Chatbot UI on Carhire Chatbot.
 
 ## Installation
 
@@ -10,20 +10,20 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```tsx
 import { useState } from 'react';
-import BpkThumb from '@skyscanner/backpack-web/bpk-component-thumb';
+import BpkThumbButton from '@skyscanner/backpack-web/bpk-component-thumb-button';
 
 export default () => {
   const [selectedThumb, setSelectedThumb] = useState<'up' | 'down' | null>(null);
 
   return (
     <div>
-      <BpkThumb
+      <BpkThumbButton
         type="up"
         accessibilityLabel="Rate as helpful"
         selected={selectedThumb === 'up'}
         onClick={(type) => setSelectedThumb(type === selectedThumb ? null : type)}
       />
-      <BpkThumb
+      <BpkThumbButton
         type="down"
         accessibilityLabel="Rate as not helpful"
         selected={selectedThumb === 'down'}
@@ -43,4 +43,4 @@ export default () => {
 | onClick            | (type: ThumbsType) => void | true     | -             |
 | selected           | boolean                    | false    | false         |
 
-**Note:** Click events do not bubble — `BpkThumb` calls `stopPropagation()` internally to prevent accidental triggering of parent click handlers when used inside interactive containers (e.g. cards).
+**Note:** Click events do not bubble — `BpkThumbButton` calls `stopPropagation()` internally to prevent accidental triggering of parent click handlers when used inside interactive containers (e.g. cards).

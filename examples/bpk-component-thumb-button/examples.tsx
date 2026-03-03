@@ -19,32 +19,14 @@
 import { useState } from 'react';
 
 import {
+  BpkBox,
   BpkHStack,
   BpkProvider,
   BpkSpacing,
-  BpkVStack,
 } from '../../packages/bpk-component-layout';
-import BpkThumb from '../../packages/bpk-component-thumb/src/BpkThumb';
+import BpkThumbButton from '../../packages/bpk-component-thumb-button/src/BpkThumbButton';
 
 const noop = () => {};
-
-export const DefaultExample = () => (
-  <BpkProvider>
-    <BpkHStack gap={BpkSpacing.Base} alignItems="center">
-      <BpkThumb accessibilityLabel="Thumbs up" type="up" onClick={noop} />
-      <BpkThumb accessibilityLabel="Thumbs down" type="down" onClick={noop} />
-    </BpkHStack>
-  </BpkProvider>
-);
-
-export const SelectedExample = () => (
-  <BpkProvider>
-    <BpkHStack gap={BpkSpacing.Base} alignItems="center">
-      <BpkThumb accessibilityLabel="Thumbs up" type="up" selected onClick={noop} />
-      <BpkThumb accessibilityLabel="Thumbs down" type="down" selected onClick={noop} />
-    </BpkHStack>
-  </BpkProvider>
-);
 
 export const InteractiveExample = () => {
   const [selectedThumb, setSelectedThumb] = useState<'up' | 'down' | null>(
@@ -54,13 +36,13 @@ export const InteractiveExample = () => {
   return (
     <BpkProvider>
       <BpkHStack gap={BpkSpacing.Base} alignItems="center">
-        <BpkThumb
+        <BpkThumbButton
           accessibilityLabel="Rate as helpful"
           type="up"
           onClick={(type) => setSelectedThumb(type === selectedThumb ? null : type)}
           selected={selectedThumb === 'up'}
         />
-        <BpkThumb
+        <BpkThumbButton
           accessibilityLabel="Rate as not helpful"
           type="down"
           onClick={(type) => setSelectedThumb(type === selectedThumb ? null : type)}
@@ -73,17 +55,17 @@ export const InteractiveExample = () => {
 
 export const MixedExample = () => (
   <BpkProvider>
-    <BpkVStack gap={BpkSpacing.MD}>
-      <BpkHStack gap={BpkSpacing.Base} alignItems="center">
+    <BpkBox>
+      <BpkHStack gap={BpkSpacing.Base}>
         <span>Default:</span>
-        <BpkThumb accessibilityLabel="Thumbs up" type="up" onClick={noop} />
-        <BpkThumb accessibilityLabel="Thumbs down" type="down" onClick={noop} />
+        <BpkThumbButton accessibilityLabel="Thumbs up" type="up" onClick={noop} />
+        <BpkThumbButton accessibilityLabel="Thumbs down" type="down" onClick={noop} />
       </BpkHStack>
-      <BpkHStack gap={BpkSpacing.Base} alignItems="center">
+      <BpkHStack gap={BpkSpacing.Base}>
         <span>Selected:</span>
-        <BpkThumb accessibilityLabel="Thumbs up" type="up" selected onClick={noop} />
-        <BpkThumb accessibilityLabel="Thumbs down" type="down" selected onClick={noop} />
+        <BpkThumbButton accessibilityLabel="Thumbs up" type="up" selected onClick={noop} />
+        <BpkThumbButton accessibilityLabel="Thumbs down" type="down" selected onClick={noop} />
       </BpkHStack>
-    </BpkVStack>
+    </BpkBox>
   </BpkProvider>
 );

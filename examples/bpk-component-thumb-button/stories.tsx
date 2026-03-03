@@ -16,24 +16,16 @@
  * limitations under the License.
  */
 
-import BpkThumb from '../../packages/bpk-component-thumb/src/BpkThumb';
+import BpkThumbButton from '../../packages/bpk-component-thumb-button/src/BpkThumbButton';
 
-import {
-  DefaultExample,
-  SelectedExample,
-  InteractiveExample,
-  MixedExample,
-} from './examples';
+import { InteractiveExample, MixedExample } from './examples';
 
 export default {
-  title: 'bpk-component-thumb',
-  component: BpkThumb,
+  title: 'bpk-component-thumb-button',
+  component: BpkThumbButton,
 };
 
-export const Default = DefaultExample;
-export const Selected = SelectedExample;
-export const Interactive = InteractiveExample;
-export const Mixed = MixedExample;
+export const Default = InteractiveExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {

@@ -19,7 +19,7 @@
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/utils';
 
-.bpk-thumb {
+.bpk-thumb-button {
   display: flex;
   width: tokens.bpk-spacing-lg();
   height: tokens.bpk-spacing-lg();

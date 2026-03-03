@@ -23,7 +23,7 @@ import ThumbsDownIcon from '../../bpk-component-icon/lg/thumbs-down';
 import ThumbsUpIcon from '../../bpk-component-icon/lg/thumbs-up';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
-import STYLES from './BpkThumb.module.scss';
+import STYLES from './BpkThumbButton.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -32,7 +32,7 @@ const AlignedThumbsDownIcon = withButtonAlignment(ThumbsDownIcon);
 
 export type ThumbsType = 'up' | 'down';
 
-export type BpkThumbProps = {
+export type BpkThumbButtonProps = {
   /**
    * Accessibility label for screen readers (REQUIRED).
    */
@@ -51,17 +51,17 @@ export type BpkThumbProps = {
   type: ThumbsType;
 };
 
-const BpkThumb = ({
+const BpkThumbButton = ({
   accessibilityLabel,
   onClick,
   selected = false,
   type,
-}: BpkThumbProps) => {
+}: BpkThumbButtonProps) => {
   const Icon = type === 'up' ? AlignedThumbsUpIcon : AlignedThumbsDownIcon;
 
   const classNames = getClassName(
-    'bpk-thumb',
-    selected && 'bpk-thumb--selected',
+    'bpk-thumb-button',
+    selected && 'bpk-thumb-button--selected',
   );
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
@@ -69,7 +69,7 @@ const BpkThumb = ({
     onClick?.(type);
   };
 
-  const iconClassNames = getClassName('bpk-thumb__icon');
+  const iconClassNames = getClassName('bpk-thumb-button__icon');
 
   return (
     <button
@@ -78,9 +78,8 @@ const BpkThumb = ({
       onClick={handleClick}
       aria-label={accessibilityLabel}
       aria-pressed={selected}
-      title={accessibilityLabel}
-      data-testid={`bpk-thumb-${type}`}
-      {...getDataComponentAttribute('Thumb')}
+      data-testid={`bpk-thumb-button-${type}`}
+      {...getDataComponentAttribute('ThumbButton')}
     >
       <span className={iconClassNames}>
         <Icon />
@@ -89,4 +88,4 @@ const BpkThumb = ({
   );
 };
 
-export default BpkThumb;
+export default BpkThumbButton;
