@@ -21,3 +21,4 @@ yarn.lock
 *.css
 !packages/bpk-stylesheets/base.css
 /packages/bpk-stylesheets/normalize.scss
+.copilot-progress

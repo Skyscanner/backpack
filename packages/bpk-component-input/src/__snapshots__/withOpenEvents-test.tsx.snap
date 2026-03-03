@@ -4,12 +4,12 @@ exports[`withOpenEvents should attach different event handlers when touch is sup
 <DocumentFragment>
   <input
     aria-invalid="false"
-    aria-readonly="false"
     class="bpk-input"
+    data-backpack-ds-component="Input"
     data-openable="true"
     id="my-input"
+    inputmode="none"
     name="my-input"
-    readonly=""
     type="text"
     value="value"
   />
@@ -21,6 +21,7 @@ exports[`withOpenEvents should render correctly 1`] = `
   <input
     aria-invalid="false"
     class="bpk-input"
+    data-backpack-ds-component="Input"
     data-openable="true"
     id="my-input"
     name="my-input"
@@ -34,12 +35,12 @@ exports[`withOpenEvents should render correctly with "className" prop 1`] = `
 <DocumentFragment>
   <input
     aria-invalid="false"
-    aria-readonly="false"
     class="bpk-input my-custom-class"
+    data-backpack-ds-component="Input"
     data-openable="true"
     id="my-input"
+    inputmode="none"
     name="my-input"
-    readonly=""
     type="text"
     value="value"
   />

@@ -18,7 +18,7 @@
 
 import type { ReactElement } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkAriaLive.module.scss';
 
@@ -53,7 +53,14 @@ const BpkAriaLive = ({
     className,
   );
 
-  return <div aria-live={politenessSetting} className={classNames} {...rest} />;
+  return (
+    <div
+      aria-live={politenessSetting}
+      className={classNames}
+      {...getDataComponentAttribute('AriaLive')}
+      {...rest}
+    />
+  );
 };
 
 export default BpkAriaLive;

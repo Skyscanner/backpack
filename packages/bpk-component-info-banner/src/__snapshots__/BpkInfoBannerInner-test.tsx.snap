@@ -570,6 +570,7 @@ exports[`BpkInfoBannerInner should render correctly with a element based message
                   </span>
                   <span
                     class="bpk-visually-hidden"
+                    data-backpack-ds-component="VisuallyHidden"
                   >
                     View more
                   </span>
@@ -645,6 +646,7 @@ exports[`BpkInfoBannerInner should render correctly with animateOnLeave 1`] = `
                 <button
                   aria-label="Dismiss"
                   class="bpk-close-button__default"
+                  data-backpack-ds-component="CloseButton"
                   title="Dismiss"
                   type="button"
                 >
@@ -814,6 +816,7 @@ exports[`BpkInfoBannerInner should render correctly with child nodes 1`] = `
                   </span>
                   <span
                     class="bpk-visually-hidden"
+                    data-backpack-ds-component="VisuallyHidden"
                   >
                     View more
                   </span>
@@ -889,6 +892,7 @@ exports[`BpkInfoBannerInner should render correctly with dismissable option 1`] 
                 <button
                   aria-label="Dismiss"
                   class="bpk-close-button__default"
+                  data-backpack-ds-component="CloseButton"
                   title="Dismiss"
                   type="button"
                 >

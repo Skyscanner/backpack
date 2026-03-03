@@ -4,6 +4,7 @@ exports[`BpkDialogWrapper dialog is not supported renders correctly with animati
 <DocumentFragment>
   <div
     class="bpk-dialog-wrapper bpk-dialog-wrapper--polyfill"
+    data-backpack-ds-component="DialogWrapper"
   >
     <div
       class="bpk-dialog-wrapper--backdrop"
@@ -31,6 +32,7 @@ exports[`BpkDialogWrapper dialog is not supported renders correctly with class p
 <DocumentFragment>
   <div
     class="bpk-dialog-wrapper bpk-dialog-wrapper--polyfill"
+    data-backpack-ds-component="DialogWrapper"
   >
     <div
       class="bpk-dialog-wrapper--backdrop"
@@ -58,6 +60,7 @@ exports[`BpkDialogWrapper dialog is not supported renders correctly with closeOn
 <DocumentFragment>
   <div
     class="bpk-dialog-wrapper bpk-dialog-wrapper--polyfill"
+    data-backpack-ds-component="DialogWrapper"
   >
     <div
       class="bpk-dialog-wrapper--backdrop"
@@ -85,6 +88,7 @@ exports[`BpkDialogWrapper dialog is not supported renders correctly with minimum
 <DocumentFragment>
   <div
     class="bpk-dialog-wrapper bpk-dialog-wrapper--polyfill"
+    data-backpack-ds-component="DialogWrapper"
   >
     <div
       class="bpk-dialog-wrapper--backdrop"
@@ -112,6 +116,7 @@ exports[`BpkDialogWrapper dialog is supported renders correctly with animation p
 <DocumentFragment>
   <div
     class="bpk-dialog-wrapper"
+    data-backpack-ds-component="DialogWrapper"
   >
     <dialog
       aria-labelledby="bpk-dialog-wrapper"
@@ -134,6 +139,7 @@ exports[`BpkDialogWrapper dialog is supported renders correctly with class prop 
 <DocumentFragment>
   <div
     class="bpk-dialog-wrapper"
+    data-backpack-ds-component="DialogWrapper"
   >
     <dialog
       aria-labelledby="bpk-dialog-wrapper"
@@ -156,6 +162,7 @@ exports[`BpkDialogWrapper dialog is supported renders correctly with closeOnX pr
 <DocumentFragment>
   <div
     class="bpk-dialog-wrapper"
+    data-backpack-ds-component="DialogWrapper"
   >
     <dialog
       aria-labelledby="bpk-dialog-wrapper"
@@ -178,6 +185,7 @@ exports[`BpkDialogWrapper dialog is supported renders correctly with minimum pro
 <DocumentFragment>
   <div
     class="bpk-dialog-wrapper"
+    data-backpack-ds-component="DialogWrapper"
   >
     <dialog
       aria-labelledby="bpk-dialog-wrapper"

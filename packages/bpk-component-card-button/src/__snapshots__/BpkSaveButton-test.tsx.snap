@@ -6,6 +6,7 @@ exports[`BpkSaveButton should render correctly 1`] = `
     aria-label="Click to save"
     aria-pressed="false"
     class="bpk-save-button bpk-save-button__default"
+    data-backpack-ds-component="SaveButton"
     type="button"
   >
     <div
@@ -51,6 +52,7 @@ exports[`BpkSaveButton should render correctly with "checked" is true 1`] = `
     aria-label="Click to remove save"
     aria-pressed="true"
     class="bpk-save-button bpk-save-button__default"
+    data-backpack-ds-component="SaveButton"
     type="button"
   >
     <div
@@ -96,6 +98,7 @@ exports[`BpkSaveButton should render correctly with a "size" prop 1`] = `
     aria-label="Click to save"
     aria-pressed="false"
     class="bpk-save-button bpk-save-button__small bpk-save-button__default"
+    data-backpack-ds-component="SaveButton"
     type="button"
   >
     <div
@@ -141,6 +144,7 @@ exports[`BpkSaveButton should render correctly with a "style" prop 1`] = `
     aria-label="Click to save"
     aria-pressed="false"
     class="bpk-save-button bpk-save-button__contained"
+    data-backpack-ds-component="SaveButton"
     type="button"
   >
     <div

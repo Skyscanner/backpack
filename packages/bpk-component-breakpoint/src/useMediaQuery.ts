@@ -20,32 +20,49 @@ import { useEffect, useState } from 'react';
 
 const useMediaQuery = (
   query: string,
-  matchSSR = false,
+  matchSSR?: boolean,
 ): boolean => {
   const isClient = typeof window !== 'undefined' && !!window.matchMedia;
 
+  // When matchSSR is provided, we need hydration protection
+  const needsHydrationProtection = matchSSR !== undefined;
+  const [isHydrated, setIsHydrated] = useState(!needsHydrationProtection);
+
   const [matches, setMatches] = useState(() => {
-    // When matchSSR=true: use matchSSR value to match server-rendered HTML
-    // This prevents hydration errors when User-Agent (server) != viewport size (client)
-    if (!isClient || matchSSR) {
+    if (!isClient) {
+      return matchSSR ?? false;
+    }
+
+    if (needsHydrationProtection) {
       return matchSSR;
     }
 
     return window.matchMedia(query).matches;
   });
 
+  // Mark hydration as complete
   useEffect(() => {
-    if (isClient) {
-      const media = window.matchMedia(query);
-      setMatches(media.matches);
-      const listener = () => {
-        setMatches(media.matches);
-      };
-      media.addEventListener('change', listener);
-      return () => media.removeEventListener('change', listener);
+    if (needsHydrationProtection && !isHydrated) {
+      setIsHydrated(true);
     }
-    return () => {};
-  }, [query, isClient]);
+  }, [needsHydrationProtection, isHydrated]);
+
+  useEffect(() => {
+    // Wait for hydration to complete
+    if (!isClient || !isHydrated) {
+      return () => { };
+    }
+
+    const media = window.matchMedia(query);
+    setMatches(media.matches);
+
+    const listener = () => {
+      setMatches(media.matches);
+    };
+
+    media.addEventListener('change', listener);
+    return () => media.removeEventListener('change', listener);
+  }, [query, isClient, isHydrated]);
 
   return matches;
 };

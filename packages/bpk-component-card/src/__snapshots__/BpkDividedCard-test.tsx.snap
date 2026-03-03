@@ -4,9 +4,11 @@ exports[`BpkDividedCard should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-divided-card--horizontal-container"
+    data-backpack-ds-component="DividedCard"
   >
     <button
       class="bpk-card bpk-card--atomic-button"
+      data-backpack-ds-component="Card"
       type="button"
     >
       <div
@@ -37,9 +39,11 @@ exports[`BpkDividedCard should render correctly with href prop 1`] = `
 <DocumentFragment>
   <div
     class="bpk-divided-card--horizontal-container"
+    data-backpack-ds-component="DividedCard"
   >
     <a
       class="bpk-card"
+      data-backpack-ds-component="Card"
       href="http://www.skyscanner.net/"
     >
       <div
@@ -70,9 +74,11 @@ exports[`BpkDividedCard should render correctly with isElevated prop 1`] = `
 <DocumentFragment>
   <div
     class="bpk-divided-card--horizontal-container"
+    data-backpack-ds-component="DividedCard"
   >
     <button
       class="bpk-card bpk-card--atomic-button bpk-card--no-elevation"
+      data-backpack-ds-component="Card"
       type="button"
     >
       <div
@@ -103,9 +109,11 @@ exports[`BpkDividedCard should render correctly with vertical orientation 1`] = 
 <DocumentFragment>
   <div
     class="bpk-divided-card--vertical-container"
+    data-backpack-ds-component="DividedCard"
   >
     <button
       class="bpk-card bpk-card--atomic-button"
+      data-backpack-ds-component="Card"
       type="button"
     >
       <div
@@ -136,9 +144,11 @@ exports[`BpkDividedCard should support arbitrary props 1`] = `
 <DocumentFragment>
   <div
     class="bpk-divided-card--horizontal-container"
+    data-backpack-ds-component="DividedCard"
   >
     <button
       class="bpk-card bpk-card--atomic-button"
+      data-backpack-ds-component="Card"
       testid="123"
       type="button"
     >
@@ -170,9 +180,11 @@ exports[`BpkDividedCard should support custom class names 1`] = `
 <DocumentFragment>
   <div
     class="bpk-divided-card--horizontal-container"
+    data-backpack-ds-component="DividedCard"
   >
     <button
       class="bpk-card bpk-card--atomic-button custom-classname"
+      data-backpack-ds-component="Card"
       type="button"
     >
       <div
