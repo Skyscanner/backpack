@@ -20,18 +20,18 @@ import { render, screen, fireEvent } from '@testing-library/react';
 
 import { BpkBox, BpkProvider } from '../../bpk-component-layout';
 
-import BpkThumb from './BpkThumb';
+import BpkThumbButton from './BpkThumbButton';
 
 const mockOnClick = jest.fn();
 
-describe('BpkThumb', () => {
+describe('BpkThumbButton', () => {
   beforeEach(() => {
     mockOnClick.mockClear();
   });
 
   it('should render correctly with default props', () => {
     const { asFragment } = render(
-      <BpkThumb accessibilityLabel="Thumbs up" type="up" onClick={mockOnClick} />,
+      <BpkThumbButton accessibilityLabel="Thumbs up" type="up" onClick={mockOnClick} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -40,17 +40,17 @@ describe('BpkThumb', () => {
     'should render %s icon correctly',
     (type) => {
       render(
-        <BpkThumb
+        <BpkThumbButton
           accessibilityLabel={`Thumbs ${type}`}
           type={type}
           onClick={mockOnClick}
         />,
       );
 
-      const button = screen.getByTestId(`bpk-thumb-${type}`);
+      const button = screen.getByTestId(`bpk-thumb-button-${type}`);
 
       expect(button).toBeInTheDocument();
-      expect(button).toHaveClass('bpk-thumb');
+      expect(button).toHaveClass('bpk-thumb-button');
     },
   );
 
@@ -58,14 +58,14 @@ describe('BpkThumb', () => {
     'should call onClick with %s type',
     (type) => {
       render(
-        <BpkThumb
+        <BpkThumbButton
           accessibilityLabel={`Thumbs ${type}`}
           type={type}
           onClick={mockOnClick}
         />,
       );
 
-      fireEvent.click(screen.getByTestId(`bpk-thumb-${type}`));
+      fireEvent.click(screen.getByTestId(`bpk-thumb-button-${type}`));
 
       expect(mockOnClick).toHaveBeenCalledWith(type);
     },
@@ -73,7 +73,7 @@ describe('BpkThumb', () => {
 
   it('should render with selected state', () => {
     render(
-      <BpkThumb
+      <BpkThumbButton
         accessibilityLabel="Thumbs up"
         type="up"
         onClick={mockOnClick}
@@ -81,8 +81,8 @@ describe('BpkThumb', () => {
       />,
     );
 
-    expect(screen.getByTestId('bpk-thumb-up')).toHaveClass(
-      'bpk-thumb--selected',
+    expect(screen.getByTestId('bpk-thumb-button-up')).toHaveClass(
+      'bpk-thumb-button--selected',
     );
   });
 
@@ -91,7 +91,7 @@ describe('BpkThumb', () => {
     const { container } = render(
       <BpkProvider>
         <BpkBox onClick={parentClick}>
-          <BpkThumb
+          <BpkThumbButton
             accessibilityLabel="Thumbs up"
             type="up"
             onClick={mockOnClick}
@@ -100,7 +100,7 @@ describe('BpkThumb', () => {
       </BpkProvider>,
     );
 
-    const button = container.querySelector('[data-testid="bpk-thumb-up"]');
+    const button = container.querySelector('[data-testid="bpk-thumb-button-up"]');
     if (button) {
       fireEvent.click(button);
     }
@@ -111,7 +111,7 @@ describe('BpkThumb', () => {
 
   it('should have correct accessibility label', () => {
     const label = 'Rate this helpful';
-    render(<BpkThumb accessibilityLabel={label} type="up" onClick={mockOnClick} />);
+    render(<BpkThumbButton accessibilityLabel={label} type="up" onClick={mockOnClick} />);
     expect(screen.getByLabelText(label)).toBeInTheDocument();
   });
 

@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`BpkThumb should render correctly with default props 1`] = `
+exports[`BpkThumbButton should render correctly with default props 1`] = `
 <DocumentFragment>
   <button
     aria-label="Thumbs up"
     aria-pressed="false"
-    class="bpk-thumb"
-    data-backpack-ds-component="Thumb"
-    data-testid="bpk-thumb-up"
+    class="bpk-thumb-button"
+    data-backpack-ds-component="ThumbButton"
+    data-testid="bpk-thumb-button-up"
     title="Thumbs up"
     type="button"
   >
     <span
-      class="bpk-thumb__icon"
+      class="bpk-thumb-button__icon"
     >
       <span
         style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"

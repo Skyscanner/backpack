@@ -19,12 +19,12 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkThumb from './BpkThumb';
+import BpkThumbButton from './BpkThumbButton';
 
-describe('BpkThumb accessibility tests', () => {
+describe('BpkThumbButton accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkThumb accessibilityLabel="Thumbs up" type="up" onClick={jest.fn()} />,
+      <BpkThumbButton accessibilityLabel="Thumbs up" type="up" onClick={jest.fn()} />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -32,7 +32,7 @@ describe('BpkThumb accessibility tests', () => {
 
   it('should not have accessibility issues with selected state', async () => {
     const { container } = render(
-      <BpkThumb accessibilityLabel="Thumbs up" type="up" selected onClick={jest.fn()} />,
+      <BpkThumbButton accessibilityLabel="Thumbs up" type="up" selected onClick={jest.fn()} />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -40,7 +40,7 @@ describe('BpkThumb accessibility tests', () => {
 
   it('should not have accessibility issues with thumbs down', async () => {
     const { container } = render(
-      <BpkThumb accessibilityLabel="Thumbs down" type="down" onClick={jest.fn()} />,
+      <BpkThumbButton accessibilityLabel="Thumbs down" type="down" onClick={jest.fn()} />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
