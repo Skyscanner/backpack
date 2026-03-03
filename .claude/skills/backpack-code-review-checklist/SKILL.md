@@ -7,12 +7,13 @@ description: |
   Backpack conventions before merge, (4) Identifying violations in API design, token usage,
   accessibility, or documentation. Covers Constitution principles (I-XIII), decisions/
   guidelines, API encapsulation rules, private token restrictions, design approval workflow,
-  and priority classification (blocking vs optional). Essential for maintaining Backpack
-  quality standards and catching non-obvious violations like className props in new
-  components or cross-component private token usage.
+  icon alignment helpers, hover mixin usage, token semantic correctness, and snapshot
+  currency. Essential for maintaining Backpack quality standards and catching non-obvious
+  violations like className props in new components, wrong icon alignment wrapper,
+  raw :hover instead of bpk-hover mixin, or cross-component private token usage.
 author: Claude Code
-version: 1.0.0
-date: 2026-02-23
+version: 1.2.0
+date: 2026-03-03
 ---
 
 # Backpack Code Review Checklist
@@ -40,6 +41,30 @@ Use this skill when:
 - Accessibility improvements
 
 ## Solution
+
+### Phase 0: Detect Review Mode
+
+**Before doing anything else**, check whether the user provided a GitHub PR URL.
+
+- **PR mode**: user message contains a `github.com/.../pull/NNN` URL
+  - Extract the PR number
+  - Run `gh pr view NNN --json headRefOid,files` to get the head commit SHA and changed files
+  - Proceed with review; at the end **post the review body as a PR comment** using:
+    ```bash
+    gh pr review NNN --comment --body "$(cat <<'EOF'
+    [review body here]
+    EOF
+    )"
+    ```
+  - Each issue in the output must link to the offending lines using the **GitHub permalink format**:
+    `https://github.com/Skyscanner/backpack/blob/[HEAD_COMMIT_SHA]/[FILE_PATH]#L[START]-L[END]`
+
+- **Local mode**: no PR URL in the user message
+  - Review the current branch's uncommitted / committed changes locally (`git diff main...HEAD`)
+  - Output the review to the conversation only — **do not post to GitHub**
+  - Each issue in the output must cite the file using a **local VSCode-clickable link**:
+    `[FILE_PATH:LINE](FILE_PATH#LLINE)` (relative to repo root, e.g.
+    `[packages/bpk-component-thumb-button/src/BpkThumbButton.module.scss:29](packages/bpk-component-thumb-button/src/BpkThumbButton.module.scss#L29)`)
 
 ### Phase 1: Document Review Setup
 
@@ -172,12 +197,88 @@ rg ":\s*\d+px" packages/bpk-component-*/src/*.scss
 rg ":\s*\d+\.?\d*rem;" packages/bpk-component-*/src/*.scss | grep -v "tokens\."
 ```
 
+#### ✅ 4a. Investigation method: for any CSS property written directly, search bpk-mixins for an existing abstraction
+
+**Principle:** Backpack provides mixins in `bpk-mixins/` for common interactive and layout
+patterns. Writing raw CSS that looks correct may silently break cross-platform behaviour
+(e.g. hover on touch devices, inconsistent animation timing). When you see a CSS property
+written directly in a new component, treat it as a question mark, not a given.
+
+**How to investigate:**
+1. For each CSS property/selector written directly (`:hover`, `transition:`, `border-radius:`,
+   `z-index:`, `::before` pseudo-elements, etc.), grep `bpk-mixins/` to find if a mixin exists:
+   ```bash
+   rg "mixin bpk-" packages/bpk-mixins/ --include="*.scss" -l
+   cat packages/bpk-mixins/_utils.scss
+   ```
+2. Grep 2–3 similar existing components to see how they handle the same pattern:
+   ```bash
+   rg ":hover\|transition:\|border-radius:" packages/bpk-component-chip/src/
+   rg ":hover\|transition:\|border-radius:" packages/bpk-component-card-button/src/
+   ```
+3. If a mixin exists and the new component bypasses it, that is a violation — regardless
+   of whether the raw CSS value happens to produce the same visual result.
+
+**Known examples of this pattern (not exhaustive):**
+- `:hover` → should use `@include utils.bpk-hover { }` (gates behind `.bpk-no-touch-support`)
+- `transition: ... 0.2s` → `tokens.$bpk-duration-sm` token exists
+- `::before` touch-target expansion → `@include utils.bpk-touch-tappable` exists
+
+#### ✅ 4b. Investigation method: for any imported package helper, read its index to find the full API
+
+**Principle:** Backpack packages often export multiple variants of a helper (size-specific,
+context-specific, etc.). Code compiles fine with the wrong variant but produces incorrect
+visual or functional results. Never assume a package only exports what is currently imported.
+
+**How to investigate:**
+1. For each `import X from '../../bpk-component-Y'`, open the full export list:
+   ```bash
+   cat packages/bpk-component-Y/index.tsx
+   # or
+   cat packages/bpk-component-Y/index.ts
+   ```
+2. Look for other exports with similar names — especially size/variant suffixes
+   (`Large`, `Small`, `OnDark`, `V2`, etc.)
+3. Verify the imported variant matches the context: icon size, button size, theme, etc.
+
+**Known examples of this pattern (not exhaustive):**
+- `bpk-component-icon` exports both `withButtonAlignment` (for `sm/` icons) and
+  `withLargeButtonAlignment` (for `lg/` icons) — wrong choice compiles but misaligns
+- Icon path `sm/` vs `lg/` must match the alignment wrapper used
+
 #### ✅ 5. Token Usage (Constitution III)
 
 **Rules:**
 - [ ] All visual parameters use design tokens (no magic numbers)
 - [ ] Do NOT use `$bpk-private-*` tokens from other components
 - [ ] Token changes require separate PR to backpack-foundations
+- [ ] Token names match their **semantic meaning** — the token name must describe the UI state, not just produce the right colour value
+
+**Investigation method: for every token used, verify semantic intent matches usage context**
+
+A token value match is not enough. Ask: "Does the *name* of this token describe what this
+element *is* in this state?" Token categories encode semantic meaning:
+
+| Token prefix | Intended for |
+|---|---|
+| `$bpk-text-disabled-*` | Disabled / non-interactive elements |
+| `$bpk-text-secondary-*` | Active but de-emphasised interactive elements |
+| `$bpk-surface-hero-*` | Hero/prominent background areas |
+| `$bpk-status-danger-*` | Error / destructive states |
+| `$bpk-core-accent-*` | Selected / primary action states |
+
+How to check: for each token used in the new component, look up its definition in
+[backpack-foundations/base.common.js](https://github.com/Skyscanner/backpack-foundations/blob/main/packages/bpk-foundations-web/tokens/base.common.js)
+and read its comments/category. If the category doesn't match the UI state, it is wrong
+even if the hex value happens to match the design.
+
+```scss
+// ❌ WRONG: disabled token on an active, interactive element (name mismatch)
+color: tokens.$bpk-text-disabled-day;
+
+// ✅ CORRECT: secondary text for unselected-but-interactive state
+color: tokens.$bpk-text-secondary-day;
+```
 
 **Common violations:**
 
@@ -203,6 +304,9 @@ rg "\$bpk-private-" packages/bpk-component-*/src/*.scss
 # Find hardcoded values
 rg ":\s*#[0-9a-fA-F]{3,6}" packages/bpk-component-*/src/*.scss
 rg ":\s*\d+\.?\d*rem" packages/bpk-component-*/src/*.scss | grep -v "tokens\."
+
+# Flag disabled token in non-disabled context (read surrounding code to judge)
+rg "text-disabled" packages/bpk-component-*/src/*.scss
 ```
 
 #### ✅ 6. Accessibility (Constitution IV - NON-NEGOTIABLE)
@@ -294,6 +398,20 @@ All component changes MUST be design-approved before implementation.
 - [ ] Visual regression tests (Percy via Storybook)
 - [ ] Snapshot tests
 
+**Snapshot currency (NON-OBVIOUS — commonly missed):**
+
+After ANY change to rendered output (prop added/removed, attribute removed, HTML structure changed),
+snapshots MUST be regenerated. Stale snapshots silently pass even if they contain attributes
+or markup that the component no longer produces. Always read the `.snap` file and verify it
+matches the current component output.
+
+```bash
+# Common signs of a stale snapshot:
+# - snap contains attributes no longer set (e.g. title="..." after aria-label was added)
+# - snap references class names that were renamed
+# - snap structure doesn't match current JSX
+```
+
 **Check:**
 ```bash
 # Run with coverage
@@ -301,79 +419,72 @@ npm run jest -- --coverage packages/bpk-component-[name]
 
 # Check coverage thresholds
 npm run jest -- --coverage --collectCoverageFrom='packages/bpk-component-[name]/src/**'
+
+# Update stale snapshots
+npm run jest -- --updateSnapshot packages/bpk-component-[name]
 ```
 
-### Phase 3: Priority Classification
+### Phase 3: Review Output Format
 
-Classify all issues by priority:
+The output format is a **flat numbered list**. No section headers, no priority emoji blocks,
+no compliance score. Each entry: one sentence for the issue title, then the explanation
+(what is wrong, why it matters, what to use instead, with a reference to a correct example
+in the codebase). Finish with a link to the offending lines — format depends on mode.
 
-#### 🚨 **BLOCKING (Must fix before merge)**
-
-1. **Missing design approval** (Constitution X)
-2. **API violations** (className/style in new components - Constitution XI)
-3. **License header missing** (Constitution II)
-4. **Accessibility failures** (jest-axe errors - Constitution IV)
-5. **Private token misuse** (using other component's private tokens)
-6. **Test failures** (any test failing)
-
-#### ⚠️ **HIGH PRIORITY (Should fix before merge)**
-
-1. **Magic numbers** (hardcoded values without tokens)
-2. **Missing accessibility tests**
-3. **Deprecated Sass API** (@import usage)
-4. **px units instead of rem**
-5. **Low test coverage** (below thresholds)
-
-#### ℹ️ **NICE TO HAVE (Can be follow-up)**
-
-1. **Missing Figma Code Connect**
-2. **Documentation improvements**
-3. **Minor naming inconsistencies**
-4. **Additional test cases**
-
-### Phase 4: Review Output Template
+**Template (shared structure for both modes):**
 
 ```markdown
-# [Component Name] Code Review
+### Code review
 
-## 📋 Overview
-[Brief description of what the component does]
+Found N issues:
 
-## ✅ Strengths
-- [List things done well]
+1. [Concise issue title] — [explanation: what is wrong, why, what the correct approach is,
+   reference to where in the codebase the correct pattern is used]
 
-## ⚠️ Issues Found
+   [link to offending lines — see format rules below]
 
-### 🚨 Blocking Issues
-1. **[Issue name]** - [Description]
-   - **Violates**: Constitution [section]
-   - **Fix**: [Specific fix needed]
+2. [Next issue] — [explanation]
 
-### ⚠️ High Priority
-[Similar format]
+   [link]
 
-### ℹ️ Nice to Have
-[Similar format]
+[repeat for all issues]
 
-## 📊 Compliance Score
-
-| Category | Score | Notes |
-|----------|-------|-------|
-| Naming | ✅ 100% | ... |
-| Sass API | ⚠️ 70% | ... |
-| ... | ... | ... |
-
-**Overall: [score]/100** [status emoji]
-
-## 🔧 Required Actions
-
-1. [ ] [Specific action]
-2. [ ] [Specific action]
-
-## 📝 Recommendations
-
-[Optional improvements]
+🤖 Generated with [Claude Code](https://claude.ai/code)
 ```
+
+**Link format rules:**
+
+- **PR mode** — GitHub permalink anchored to the PR's head commit SHA:
+  ```
+  https://github.com/Skyscanner/backpack/blob/[HEAD_COMMIT_SHA]/[FILE_PATH]#L[START]-L[END]
+  ```
+  Get the SHA from `gh pr view NNN --json headRefOid -q .headRefOid`.
+
+  After generating the review body, post it to the PR:
+  ```bash
+  gh pr review NNN --comment --body "$(cat <<'EOF'
+  [full review body]
+  EOF
+  )"
+  ```
+  Then confirm to the user that the comment was posted.
+
+- **Local mode** — VSCode-clickable markdown link using the repo-relative path:
+  ```markdown
+  [packages/bpk-component-foo/src/BpkFoo.module.scss:29](packages/bpk-component-foo/src/BpkFoo.module.scss#L29)
+  ```
+  For a range:
+  ```markdown
+  [packages/bpk-component-foo/src/BpkFoo.module.scss:29-31](packages/bpk-component-foo/src/BpkFoo.module.scss#L29-L31)
+  ```
+  Output the review to the conversation only — do **not** post to GitHub.
+
+**General output rules:**
+- Count real issues only — do not pad with style nits
+- Each title is at most ~10 words; the dash separates it from the explanation
+- The explanation must include: (a) what is wrong, (b) why it matters, (c) what to use instead
+- Always link to a correct precedent file in the repo when one exists
+- Do NOT include a "strengths" section, compliance score table, or required-actions checklist
 
 ## Verification
 
@@ -390,39 +501,11 @@ After completing review:
 - Did I verify design approval exists?
 - Did I look for private token usage across components?
 - Did I check for license headers in ALL files?
+- Did I read the snapshot `.snap` file and verify it matches current component output?
 - Did I run the actual tests, not just look at code?
-
-## Example
-
-### Component: BpkThinking (new component)
-
-**Issue found:** Component accepts `className` prop
-
-```typescript
-// Current code (WRONG)
-export type BpkThinkingProps = {
-  content?: string;
-  accessibilityLabel: string;
-} & ComponentPropsWithoutRef<'div'>; // Includes className!
-
-// Constitution XI violation: New components MUST restrict className
-```
-
-**Fix:**
-```typescript
-// Correct code
-export type BpkThinkingProps = {
-  content?: string;
-  accessibilityLabel: string;
-} & Omit<ComponentPropsWithoutRef<'div'>, 'children' | 'className' | 'style'>;
-```
-
-**Priority:** 🚨 BLOCKING - Constitution XI is non-negotiable for new components
-
-**Additional issues:**
-- Uses private token: `$bpk-private-chip-on-dark-on-background-night` (⚠️ HIGH)
-- Magic number: `max-width: 17.5rem` without token (⚠️ HIGH)
-- Missing design approval (🚨 BLOCKING)
+- For every CSS property written directly in the new SCSS — did I grep `bpk-mixins/` to confirm no mixin exists for it?
+- For every package import — did I open that package's `index.tsx` to see the full API and confirm the right variant is used?
+- For every token used — did I verify the token *name* semantically matches the UI state (not just the colour value)?
 
 ## Notes
 
@@ -537,6 +620,10 @@ function hexToRgb(hex) {
 - ❌ Implementing first, seeking design approval later
 - ❌ Using px because "it's just one value"
 - ❌ Making `accessibilityLabel` optional "to be flexible"
+- ❌ Leaving snapshot files stale after removing/changing rendered attributes
+- ❌ Accepting that a CSS value looks right without checking if `bpk-mixins/` already abstracts it
+- ❌ Accepting that an import compiles without checking the full package API for a better-fitting variant
+- ❌ Accepting that a token produces the right colour without checking if the token name fits the UI state
 
 ### SemVer Impact
 
