@@ -19,41 +19,41 @@
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
-import STYLES from './BpkThinking.module.scss';
+import STYLES from './BpkChatThoughtBubble.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkThinkingProps = {
+export type BpkChatThoughtBubbleProps = {
   /**
    * The content to display in the thinking bubble.
    */
   content: string;
 };
 
-const BpkThinking = ({ content }: BpkThinkingProps) => (
+const BpkChatThoughtBubble = ({ content }: BpkChatThoughtBubbleProps) => (
     <div
-      className={getClassName('bpk-thinking')}
-      {...getDataComponentAttribute('Thinking')}
-      data-testid="bpk-thinking"
+      className={getClassName('bpk-chat-thought-bubble')}
+      {...getDataComponentAttribute('ChatThoughtBubble')}
+      data-testid="bpk-chat-thought-bubble"
     >
-      <div className={getClassName('bpk-thinking__dots')} aria-hidden="true">
+      <div className={getClassName('bpk-chat-thought-bubble__dots')} aria-hidden="true">
         <div
           className={getClassName(
-            'bpk-thinking__dots--dot',
-            'bpk-thinking__dots--dot-first',
+            'bpk-chat-thought-bubble__dots--dot',
+            'bpk-chat-thought-bubble__dots--dot-first',
           )}
         />
         <div
           className={getClassName(
-            'bpk-thinking__dots--dot',
-            'bpk-thinking__dots--dot-second',
+            'bpk-chat-thought-bubble__dots--dot',
+            'bpk-chat-thought-bubble__dots--dot-second',
           )}
         />
       </div>
-      <div className={getClassName('bpk-thinking__bubble')}>
+      <div className={getClassName('bpk-chat-thought-bubble__bubble')}>
         <BpkText textStyle={TEXT_STYLES.bodyDefault}>{content}</BpkText>
       </div>
     </div>
 );
 
-export default BpkThinking;
+export default BpkChatThoughtBubble;

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkThinking from '../../packages/bpk-component-thinking/src/BpkThinking';
+import BpkChatThoughtBubble from '../../packages/bpk-component-chat-thought-bubble/src/BpkChatThoughtBubble';
 
 import {
   DefaultExample,
@@ -27,8 +27,8 @@ import {
 } from './examples';
 
 export default {
-  title: 'bpk-component-thinking',
-  component: BpkThinking,
+  title: 'bpk-component-chat-thought-bubble',
+  component: BpkChatThoughtBubble,
 };
 
 export const Default = DefaultExample;

@@ -19,18 +19,18 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkThinking from './BpkThinking';
+import BpkChatThoughtBubble from './BpkChatThoughtBubble';
 
-describe('BpkThinking accessibility tests', () => {
+describe('BpkChatThoughtBubble accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(<BpkThinking content="AI is thinking" />);
+    const { container } = render(<BpkChatThoughtBubble content="AI is thinking" />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
   it('should not have accessibility issues with custom content', async () => {
     const { container } = render(
-      <BpkThinking content="Processing your request..." />,
+      <BpkChatThoughtBubble content="Processing your request..." />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -38,7 +38,7 @@ describe('BpkThinking accessibility tests', () => {
 
   it('should not have accessibility issues with long content', async () => {
     const { container } = render(
-      <BpkThinking content="We're searching through thousands of options to find the best deals for your trip" />,
+      <BpkChatThoughtBubble content="We're searching through thousands of options to find the best deals for your trip" />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

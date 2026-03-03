@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkThinking from '../../packages/bpk-component-thinking/src/BpkThinking';
+import BpkChatThoughtBubble from '../../packages/bpk-component-chat-thought-bubble/src/BpkChatThoughtBubble';
 import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
@@ -24,40 +24,39 @@ import STYLES from './examples.module.scss';
 const getClassName = cssModules(STYLES);
 
 export const DefaultExample = () => (
-  <div className={getClassName('bpk-thinking-examples')}>
-    <BpkThinking content="AI is thinking" />
+  <div className={getClassName('bpk-chat-thought-bubble-examples')}>
+    <BpkChatThoughtBubble content="AI is thinking" />
   </div>
 );
 
 export const CustomContentExample = () => (
-  <div className={getClassName('bpk-thinking-examples')}>
-    <BpkThinking
+  <div className={getClassName('bpk-chat-thought-bubble-examples')}>
+    <BpkChatThoughtBubble
       content="Processing your request..."
     />
   </div>
 );
 
 export const LongContentExample = () => (
-  <div className={getClassName('bpk-thinking-examples')}>
-    <BpkThinking
+  <div className={getClassName('bpk-chat-thought-bubble-examples')}>
+    <BpkChatThoughtBubble
       content="We're searching through thousands of flight options to find the best deals for your trip"
     />
   </div>
 );
 
 export const MultipleExample = () => (
-  <div className={getClassName('bpk-thinking-examples__multiple')}>
-    <BpkThinking content="Analyzing options..." />
-    <BpkThinking content="Comparing prices..." />
-    <BpkThinking content="Almost done..." />
+  <div className={getClassName('bpk-chat-thought-bubble-examples__multiple')}>
+    <BpkChatThoughtBubble content="Analyzing options..." />
+    <BpkChatThoughtBubble content="Comparing prices..." />
+    <BpkChatThoughtBubble content="Almost done..." />
   </div>
 );
 
 export const MixedExample = () => (
-  <div className={getClassName('bpk-thinking-examples__mixed')}>
-    <BpkThinking content="Loading..." />
-    <BpkThinking content="Finding the best options for you" />
-    <BpkThinking content="We're checking availability across multiple airlines and travel providers to ensure you get the most comprehensive results" />
+  <div className={getClassName('bpk-chat-thought-bubble-examples__mixed')}>
+    <BpkChatThoughtBubble content="Loading..." />
+    <BpkChatThoughtBubble content="Finding the best options for you" />
+    <BpkChatThoughtBubble content="We're checking availability across multiple airlines and travel providers to ensure you get the most comprehensive results" />
   </div>
 );
-

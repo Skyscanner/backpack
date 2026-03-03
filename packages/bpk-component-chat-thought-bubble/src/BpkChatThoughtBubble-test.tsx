@@ -18,47 +18,47 @@
 
 import { render, screen } from '@testing-library/react';
 
-import BpkThinking from './BpkThinking';
+import BpkChatThoughtBubble from './BpkChatThoughtBubble';
 
-describe('BpkThinking', () => {
+describe('BpkChatThoughtBubble', () => {
   it('should render correctly with default props', () => {
-    const { asFragment } = render(<BpkThinking content="Thinking..." />);
+    const { asFragment } = render(<BpkChatThoughtBubble content="Thinking..." />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render provided content', () => {
-    render(<BpkThinking content="Thinking..." />);
+    render(<BpkChatThoughtBubble content="Thinking..." />);
 
     expect(screen.getByText('Thinking...')).toBeInTheDocument();
   });
 
   it('should render custom content when provided', () => {
     const customContent = 'Processing your request...';
-    render(<BpkThinking content={customContent} />);
+    render(<BpkChatThoughtBubble content={customContent} />);
 
     expect(screen.getByText(customContent)).toBeInTheDocument();
   });
 
   it('should render dots with aria-hidden', () => {
-    const { container } = render(<BpkThinking content="Thinking..." />);
+    const { container } = render(<BpkChatThoughtBubble content="Thinking..." />);
 
     const dotsContainer = container.querySelector(
-      '.bpk-thinking__dots[aria-hidden="true"]',
+      '.bpk-chat-thought-bubble__dots[aria-hidden="true"]',
     );
     expect(dotsContainer).toBeInTheDocument();
   });
 
   it('should render two animated dots', () => {
-    const { container } = render(<BpkThinking content="Thinking..." />);
+    const { container } = render(<BpkChatThoughtBubble content="Thinking..." />);
 
-    const dots = container.querySelectorAll('.bpk-thinking__dots--dot');
+    const dots = container.querySelectorAll('.bpk-chat-thought-bubble__dots--dot');
     expect(dots).toHaveLength(2);
   });
 
   it('should render the bubble with content', () => {
-    const { container } = render(<BpkThinking content="Thinking..." />);
+    const { container } = render(<BpkChatThoughtBubble content="Thinking..." />);
 
-    const bubble = container.querySelector('.bpk-thinking__bubble');
+    const bubble = container.querySelector('.bpk-chat-thought-bubble__bubble');
     expect(bubble).toBeInTheDocument();
     expect(bubble).toHaveTextContent('Thinking...');
   });
@@ -66,7 +66,7 @@ describe('BpkThinking', () => {
   it('should handle long content correctly', () => {
     const longContent =
       'This is a very long thinking content to test how the component handles longer text scenarios and ensures proper wrapping';
-    render(<BpkThinking content={longContent} />);
+    render(<BpkChatThoughtBubble content={longContent} />);
 
     expect(screen.getByText(longContent)).toBeInTheDocument();
   });

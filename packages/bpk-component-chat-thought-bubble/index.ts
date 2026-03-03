@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkThinking from './src/BpkThinking';
+import BpkChatThoughtBubble from './src/BpkChatThoughtBubble';
 
-export type { BpkThinkingProps } from './src/BpkThinking';
-export default BpkThinking;
+export type { BpkChatThoughtBubbleProps } from './src/BpkChatThoughtBubble';
+export default BpkChatThoughtBubble;
