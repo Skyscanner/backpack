@@ -24,7 +24,7 @@ import BpkThumb from './BpkThumb';
 describe('BpkThumb accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkThumb accessibilityLabel="Thumbs up" type="up" />,
+      <BpkThumb accessibilityLabel="Thumbs up" type="up" onClick={jest.fn()} />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -32,7 +32,7 @@ describe('BpkThumb accessibility tests', () => {
 
   it('should not have accessibility issues with selected state', async () => {
     const { container } = render(
-      <BpkThumb accessibilityLabel="Thumbs up" type="up" selected />,
+      <BpkThumb accessibilityLabel="Thumbs up" type="up" selected onClick={jest.fn()} />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -40,7 +40,7 @@ describe('BpkThumb accessibility tests', () => {
 
   it('should not have accessibility issues with thumbs down', async () => {
     const { container } = render(
-      <BpkThumb accessibilityLabel="Thumbs down" type="down" />,
+      <BpkThumb accessibilityLabel="Thumbs down" type="down" onClick={jest.fn()} />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

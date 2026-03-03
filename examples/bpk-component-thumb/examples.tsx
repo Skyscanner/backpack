@@ -25,17 +25,19 @@ import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+const noop = () => {};
+
 export const DefaultExample = () => (
   <div className={getClassName('bpkdocs-thumb-examples')}>
-    <BpkThumb accessibilityLabel="Thumbs up" type="up" />
-    <BpkThumb accessibilityLabel="Thumbs down" type="down" />
+    <BpkThumb accessibilityLabel="Thumbs up" type="up" onClick={noop} />
+    <BpkThumb accessibilityLabel="Thumbs down" type="down" onClick={noop} />
   </div>
 );
 
 export const SelectedExample = () => (
   <div className={getClassName('bpkdocs-thumb-examples')}>
-    <BpkThumb accessibilityLabel="Thumbs up" type="up" selected />
-    <BpkThumb accessibilityLabel="Thumbs down" type="down" selected />
+    <BpkThumb accessibilityLabel="Thumbs up" type="up" selected onClick={noop} />
+    <BpkThumb accessibilityLabel="Thumbs down" type="down" selected onClick={noop} />
   </div>
 );
 
@@ -66,13 +68,13 @@ export const MixedExample = () => (
   <div className={getClassName('bpkdocs-thumb-examples-column')}>
     <div className={getClassName('bpkdocs-thumb-examples-row')}>
       <span>Default:</span>
-      <BpkThumb accessibilityLabel="Thumbs up" type="up" />
-      <BpkThumb accessibilityLabel="Thumbs down" type="down" />
+      <BpkThumb accessibilityLabel="Thumbs up" type="up" onClick={noop} />
+      <BpkThumb accessibilityLabel="Thumbs down" type="down" onClick={noop} />
     </div>
     <div className={getClassName('bpkdocs-thumb-examples-row')}>
       <span>Selected:</span>
-      <BpkThumb accessibilityLabel="Thumbs up" type="up" selected />
-      <BpkThumb accessibilityLabel="Thumbs down" type="down" selected />
+      <BpkThumb accessibilityLabel="Thumbs up" type="up" selected onClick={noop} />
+      <BpkThumb accessibilityLabel="Thumbs down" type="down" selected onClick={noop} />
     </div>
   </div>
 );

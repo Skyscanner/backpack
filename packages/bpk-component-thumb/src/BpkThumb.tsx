@@ -40,7 +40,7 @@ export type BpkThumbProps = {
   /**
    * Click handler callback.
    */
-  onClick?: (type: ThumbsType) => void;
+  onClick: (type: ThumbsType) => void;
   /**
    * Whether the thumb is in selected state.
    */
@@ -65,7 +65,6 @@ const BpkThumb = ({
   );
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
     event.stopPropagation();
     onClick?.(type);
   };
