@@ -18,27 +18,32 @@
 
 import { useState } from 'react';
 
+import {
+  BpkHStack,
+  BpkProvider,
+  BpkSpacing,
+  BpkVStack,
+} from '../../packages/bpk-component-layout';
 import BpkThumb from '../../packages/bpk-component-thumb/src/BpkThumb';
-import { cssModules } from '../../packages/bpk-react-utils';
-
-import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const noop = () => {};
 
 export const DefaultExample = () => (
-  <div className={getClassName('bpkdocs-thumb-examples')}>
-    <BpkThumb accessibilityLabel="Thumbs up" type="up" onClick={noop} />
-    <BpkThumb accessibilityLabel="Thumbs down" type="down" onClick={noop} />
-  </div>
+  <BpkProvider>
+    <BpkHStack gap={BpkSpacing.Base} alignItems="center">
+      <BpkThumb accessibilityLabel="Thumbs up" type="up" onClick={noop} />
+      <BpkThumb accessibilityLabel="Thumbs down" type="down" onClick={noop} />
+    </BpkHStack>
+  </BpkProvider>
 );
 
 export const SelectedExample = () => (
-  <div className={getClassName('bpkdocs-thumb-examples')}>
-    <BpkThumb accessibilityLabel="Thumbs up" type="up" selected onClick={noop} />
-    <BpkThumb accessibilityLabel="Thumbs down" type="down" selected onClick={noop} />
-  </div>
+  <BpkProvider>
+    <BpkHStack gap={BpkSpacing.Base} alignItems="center">
+      <BpkThumb accessibilityLabel="Thumbs up" type="up" selected onClick={noop} />
+      <BpkThumb accessibilityLabel="Thumbs down" type="down" selected onClick={noop} />
+    </BpkHStack>
+  </BpkProvider>
 );
 
 export const InteractiveExample = () => {
@@ -47,34 +52,38 @@ export const InteractiveExample = () => {
   );
 
   return (
-    <div className={getClassName('bpkdocs-thumb-examples')}>
-      <BpkThumb
-        accessibilityLabel="Rate as helpful"
-        type="up"
-        onClick={(type) => setSelectedThumb(type === selectedThumb ? null : type)}
-        selected={selectedThumb === 'up'}
-      />
-      <BpkThumb
-        accessibilityLabel="Rate as not helpful"
-        type="down"
-        onClick={(type) => setSelectedThumb(type === selectedThumb ? null : type)}
-        selected={selectedThumb === 'down'}
-      />
-    </div>
+    <BpkProvider>
+      <BpkHStack gap={BpkSpacing.Base} alignItems="center">
+        <BpkThumb
+          accessibilityLabel="Rate as helpful"
+          type="up"
+          onClick={(type) => setSelectedThumb(type === selectedThumb ? null : type)}
+          selected={selectedThumb === 'up'}
+        />
+        <BpkThumb
+          accessibilityLabel="Rate as not helpful"
+          type="down"
+          onClick={(type) => setSelectedThumb(type === selectedThumb ? null : type)}
+          selected={selectedThumb === 'down'}
+        />
+      </BpkHStack>
+    </BpkProvider>
   );
 };
 
 export const MixedExample = () => (
-  <div className={getClassName('bpkdocs-thumb-examples-column')}>
-    <div className={getClassName('bpkdocs-thumb-examples-row')}>
-      <span>Default:</span>
-      <BpkThumb accessibilityLabel="Thumbs up" type="up" onClick={noop} />
-      <BpkThumb accessibilityLabel="Thumbs down" type="down" onClick={noop} />
-    </div>
-    <div className={getClassName('bpkdocs-thumb-examples-row')}>
-      <span>Selected:</span>
-      <BpkThumb accessibilityLabel="Thumbs up" type="up" selected onClick={noop} />
-      <BpkThumb accessibilityLabel="Thumbs down" type="down" selected onClick={noop} />
-    </div>
-  </div>
+  <BpkProvider>
+    <BpkVStack gap={BpkSpacing.MD}>
+      <BpkHStack gap={BpkSpacing.Base} alignItems="center">
+        <span>Default:</span>
+        <BpkThumb accessibilityLabel="Thumbs up" type="up" onClick={noop} />
+        <BpkThumb accessibilityLabel="Thumbs down" type="down" onClick={noop} />
+      </BpkHStack>
+      <BpkHStack gap={BpkSpacing.Base} alignItems="center">
+        <span>Selected:</span>
+        <BpkThumb accessibilityLabel="Thumbs up" type="up" selected onClick={noop} />
+        <BpkThumb accessibilityLabel="Thumbs down" type="down" selected onClick={noop} />
+      </BpkHStack>
+    </BpkVStack>
+  </BpkProvider>
 );
