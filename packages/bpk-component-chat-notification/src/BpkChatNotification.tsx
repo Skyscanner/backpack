@@ -1,0 +1,65 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { iconSizeSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
+import { withAlignment } from '../../bpk-component-icon';
+import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
+
+import STYLES from './BpkChatNotification.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+const AlignedTickCircle = withAlignment(TickCircleIcon, iconSizeSm, iconSizeSm);
+
+export type BpkChatNotificationProps = {
+  /** Text displayed in the default (success) state. */
+  label: string;
+  /** Text displayed when hasIssue is true. */
+  errorLabel: string;
+  /** When true, shows the error state without the tick icon. Defaults to false. */
+  hasIssue?: boolean;
+};
+
+const BpkChatNotification = ({
+  errorLabel,
+  hasIssue = false,
+  label,
+}: BpkChatNotificationProps) => (
+  <output
+    className={getClassName('bpk-chat-notification')}
+    aria-atomic="true"
+    data-testid="bpk-chat-notification"
+  >
+    {!hasIssue && (
+      <span className={getClassName('bpk-chat-notification__icon')}>
+        <AlignedTickCircle aria-hidden="true" />
+      </span>
+    )}
+    <BpkText
+      tagName="span"
+      textStyle={TEXT_STYLES.footnote}
+    >
+      {hasIssue ? errorLabel : label}
+    </BpkText>
+  </output>
+);
+
+export default BpkChatNotification;
