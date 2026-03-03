@@ -18,7 +18,7 @@
 
 import { createContext, useContext } from 'react';
 
-import type { CheckboxCardVariant, CheckboxCardRadius } from '../common-types';
+import type { CheckboxCardVariant, CheckboxCardRadius, CheckboxCardSize } from '../common-types';
 
 /**
  * Context value for checkbox card components
@@ -36,6 +36,9 @@ export type CheckboxCardContextValue = {
 
   /** Border radius style */
   radius: CheckboxCardRadius;
+
+  /** Size variant for card density */
+  size: CheckboxCardSize;
 
   /** Form name attribute */
   name?: string;

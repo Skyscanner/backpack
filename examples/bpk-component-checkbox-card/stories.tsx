@@ -23,7 +23,9 @@ import {
   NewAPIWithMultiContentExample,
   NewAPIAllVariantsExample,
   NewAPIWithImageExample,
+  NewAPIWithIndicatorExample,
   NewAPIWithInlineLayoutExample,
+  NewAPIWithSizesExample,
   NewAPIWithCustomThemeExample,
 } from './examples';
 
@@ -37,5 +39,7 @@ export const Basic = NewAPIBasicExample;
 export const WithMultiContent = NewAPIWithMultiContentExample;
 export const AllVariants = NewAPIAllVariantsExample;
 export const WithImage = NewAPIWithImageExample;
+export const WithIndicator = NewAPIWithIndicatorExample;
 export const WithInlineLayout = NewAPIWithInlineLayoutExample;
+export const WithSizes = NewAPIWithSizesExample;
 export const WithCustomTheme = NewAPIWithCustomThemeExample;

@@ -39,8 +39,10 @@ export type {
 export {
   CHECKBOX_CARD_VARIANTS,
   CHECKBOX_CARD_RADIUS,
+  CHECKBOX_CARD_SIZES,
   type CheckboxCardVariant,
   type CheckboxCardRadius,
+  type CheckboxCardSize,
   useCheckboxCardContext,
 } from './src/BpkCheckboxCard';
 

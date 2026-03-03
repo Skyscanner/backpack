@@ -18,7 +18,9 @@
 
 import { useState } from 'react';
 
-import { BpkCheckboxCard, CHECKBOX_CARD_THEME_ATTRIBUTES, CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS } from '../../packages/bpk-component-checkbox-card';
+import { BpkCheckboxCard, CHECKBOX_CARD_THEME_ATTRIBUTES, CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS, CHECKBOX_CARD_SIZES } from '../../packages/bpk-component-checkbox-card';
+import AirportsIconLg from '../../packages/bpk-component-icon/lg/airports';
+import CityIconLg from '../../packages/bpk-component-icon/lg/city';
 import LandmarkIconLg from '../../packages/bpk-component-icon/lg/landmark';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../packages/bpk-theming';
@@ -223,6 +225,105 @@ export const NewAPIWithInlineLayoutExample = () => {
           </BpkCheckboxCard.Inline>
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>
+    </div>
+  );
+};
+
+/**
+ * New Compound Component API - With Corner Indicator
+ *
+ * Demonstrates the corner indicator variant: a visual checkbox in the
+ * top-right corner, ideal for image/icon-heavy cards where inline
+ * checkbox placement would compete with the content.
+ *
+ * @returns {JSX.Element} Rendered compound API example with corner indicator.
+ */
+export const NewAPIWithIndicatorExample = () => {
+  const options = [
+    { id: 'city', label: 'City Centre', description: 'Best for sightseeing', icon: CityIconLg, price: '£85' },
+    { id: 'landmark', label: 'Old Town', description: 'Best for culture', icon: LandmarkIconLg, price: '£78' },
+    { id: 'airport', label: 'Airport Area', description: 'Best for transit', icon: AirportsIconLg, price: '£60', disabled: true },
+  ];
+
+  const [selected, setSelected] = useState<string[]>(['city']);
+
+  const toggle = (id: string) => {
+    setSelected((prev) =>
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
+    );
+  };
+
+  return (
+    <div style={{ padding: '24px' }}>
+      <p style={{ marginBottom: '16px', fontWeight: 600 }}>Select neighbourhoods</p>
+      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+        {options.map(({ description, disabled, icon, id, label, price }) => (
+          <BpkCheckboxCard.Root
+            key={id}
+            checked={selected.includes(id)}
+            onCheckedChange={() => toggle(id)}
+            variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+            disabled={disabled}
+            width={140}
+          >
+            <BpkCheckboxCard.Control />
+            <BpkCheckboxCard.Indicator />
+            <BpkCheckboxCard.Content>
+              <BpkCheckboxCard.Stack gap="sm" align="center">
+                <BpkCheckboxCard.Icon icon={icon} size="lg" />
+                <BpkCheckboxCard.Stack gap="sm" align="center">
+                  <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
+                  <BpkCheckboxCard.Description>{description}</BpkCheckboxCard.Description>
+                </BpkCheckboxCard.Stack>
+                <BpkCheckboxCard.Price price={price} leadingText="from" />
+              </BpkCheckboxCard.Stack>
+            </BpkCheckboxCard.Content>
+          </BpkCheckboxCard.Root>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+/**
+ * New Compound Component API - Size Variants
+ *
+ * @returns {JSX.Element} Rendered compound API example demonstrating sm/md/lg sizes.
+ */
+export const NewAPIWithSizesExample = () => {
+  const [selected, setSelected] = useState<string>('md');
+
+  const sizes = [
+    { id: CHECKBOX_CARD_SIZES.sm, label: 'Small', description: 'Compact', price: '£60' },
+    { id: CHECKBOX_CARD_SIZES.md, label: 'Medium', description: 'Standard', price: '£85' },
+    { id: CHECKBOX_CARD_SIZES.lg, label: 'Large', description: 'Spacious', price: '£120' },
+  ];
+
+  return (
+    <div style={{ padding: '24px' }}>
+      <p style={{ marginBottom: '16px', fontWeight: 600 }}>Select size</p>
+      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'flex-start' }}>
+        {sizes.map(({ description, id, label, price }) => (
+          <BpkCheckboxCard.Root
+            key={id}
+            checked={selected === id}
+            onCheckedChange={() => setSelected(id)}
+            variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+            size={id}
+            width={140}
+          >
+            <BpkCheckboxCard.Control />
+            <BpkCheckboxCard.Content>
+              <BpkCheckboxCard.Stack gap="sm" align="center">
+                <BpkCheckboxCard.Icon icon={LandmarkIconLg} size="lg" />
+                <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
+                <BpkCheckboxCard.Description>{description}</BpkCheckboxCard.Description>
+                <BpkCheckboxCard.Price price={price} />
+              </BpkCheckboxCard.Stack>
+            </BpkCheckboxCard.Content>
+          </BpkCheckboxCard.Root>
+        ))}
+      </div>
     </div>
   );
 };

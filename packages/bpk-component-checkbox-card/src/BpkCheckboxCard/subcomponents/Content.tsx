@@ -20,6 +20,8 @@ import type { ReactNode } from 'react';
 
 import { cssModules } from '../../../../bpk-react-utils';
 
+import { useCheckboxCardContext } from './CheckboxCardContext';
+
 import STYLES from '../BpkCheckboxCard.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -52,7 +54,11 @@ export type ContentProps = {
 export function Content({
   children,
 }: ContentProps) {
-  const className = getClassName('bpk-checkbox-card-content');
+  const { size } = useCheckboxCardContext();
+  const className = getClassName(
+    'bpk-checkbox-card-content',
+    `bpk-checkbox-card-content--size-${size}`,
+  );
 
   return <div className={className}>{children}</div>;
 }

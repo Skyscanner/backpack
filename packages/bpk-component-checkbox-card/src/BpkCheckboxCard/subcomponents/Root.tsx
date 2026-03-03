@@ -20,11 +20,11 @@ import type { CSSProperties, KeyboardEvent, ReactNode } from 'react';
 import { useState, useId, useCallback, useMemo } from 'react';
 
 import { cssModules } from '../../../../bpk-react-utils';
-import { CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS } from '../common-types';
+import { CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS, CHECKBOX_CARD_SIZES } from '../common-types';
 
 import { CheckboxCardContext } from './CheckboxCardContext';
 
-import type { CheckboxCardVariant, CheckboxCardRadius } from '../common-types';
+import type { CheckboxCardVariant, CheckboxCardRadius, CheckboxCardSize } from '../common-types';
 
 import STYLES from '../BpkCheckboxCard.module.scss';
 
@@ -87,6 +87,12 @@ export type RootProps = {
    * @default "rounded"
    */
   radius?: CheckboxCardRadius;
+
+  /**
+   * Size variant controlling card padding density
+   * @default "md"
+   */
+  size?: CheckboxCardSize;
 
   /**
    * Custom width for the card
@@ -154,6 +160,7 @@ export function Root({
   onCheckedChange,
   radius = CHECKBOX_CARD_RADIUS.rounded,
   required = false,
+  size = CHECKBOX_CARD_SIZES.md,
   value,
   variant = CHECKBOX_CARD_VARIANTS.onCanvasDefault,
   width,
@@ -186,6 +193,7 @@ export function Root({
     'bpk-checkbox-card-root',
     `bpk-checkbox-card-root--${variant}`,
     `bpk-checkbox-card-root--radius-${radius}`,
+    `bpk-checkbox-card-root--size-${size}`,
     checked && 'bpk-checkbox-card-root--checked',
     disabled && 'bpk-checkbox-card-root--disabled'
   );
@@ -209,6 +217,7 @@ export function Root({
       disabled,
       variant,
       radius,
+      size,
       name,
       value,
       onCheckedChange: handleCheckedChange,
@@ -221,6 +230,7 @@ export function Root({
       disabled,
       variant,
       radius,
+      size,
       name,
       value,
       handleCheckedChange,
