@@ -8,7 +8,6 @@ exports[`BpkThumbButton should render correctly with default props 1`] = `
     class="bpk-thumb-button"
     data-backpack-ds-component="ThumbButton"
     data-testid="bpk-thumb-button-up"
-    title="Thumbs up"
     type="button"
   >
     <span
