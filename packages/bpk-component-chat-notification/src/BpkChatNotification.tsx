@@ -16,18 +16,13 @@
  * limitations under the License.
  */
 
-import { iconSizeSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-
-import { withAlignment } from '../../bpk-component-icon';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkChatNotification.module.scss';
 
 const getClassName = cssModules(STYLES);
-
-const AlignedTickCircle = withAlignment(TickCircleIcon, iconSizeSm, iconSizeSm);
 
 export type BpkChatNotificationProps = {
   /** Text displayed in the default (success) state. */
@@ -47,10 +42,11 @@ const BpkChatNotification = ({
     className={getClassName('bpk-chat-notification')}
     aria-atomic="true"
     data-testid="bpk-chat-notification"
+    {...getDataComponentAttribute('ChatNotification')}
   >
     {!hasIssue && (
       <span className={getClassName('bpk-chat-notification__icon')}>
-        <AlignedTickCircle aria-hidden="true" />
+        <TickCircleIcon aria-hidden="true" />
       </span>
     )}
     <BpkText
