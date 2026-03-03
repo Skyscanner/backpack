@@ -18,6 +18,8 @@
 
 import { render, screen, fireEvent } from '@testing-library/react';
 
+import { BpkBox, BpkProvider } from '../../bpk-component-layout';
+
 import BpkThumb from './BpkThumb';
 
 const mockOnClick = jest.fn();
@@ -87,14 +89,15 @@ describe('BpkThumb', () => {
   it('should prevent event bubbling', () => {
     const parentClick = jest.fn();
     const { container } = render(
-      // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-      <div onClick={parentClick}>
-        <BpkThumb
-          accessibilityLabel="Thumbs up"
-          type="up"
-          onClick={mockOnClick}
-        />
-      </div>,
+      <BpkProvider>
+        <BpkBox onClick={parentClick}>
+          <BpkThumb
+            accessibilityLabel="Thumbs up"
+            type="up"
+            onClick={mockOnClick}
+          />
+        </BpkBox>
+      </BpkProvider>,
     );
 
     const button = container.querySelector('[data-testid="bpk-thumb-up"]');
