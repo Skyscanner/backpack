@@ -18,7 +18,6 @@
 
 import type { MouseEvent } from 'react';
 
-import { withLargeButtonAlignment } from '../../bpk-component-icon';
 import ThumbsDownIcon from '../../bpk-component-icon/lg/thumbs-down';
 import ThumbsUpIcon from '../../bpk-component-icon/lg/thumbs-up';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
@@ -27,10 +26,8 @@ import STYLES from './BpkThumbButton.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const AlignedThumbsUpIcon = withLargeButtonAlignment(ThumbsUpIcon);
-const AlignedThumbsDownIcon = withLargeButtonAlignment(ThumbsDownIcon);
 
-export type ThumbsType = 'up' | 'down';
+export type ThumbsButtonType = 'up' | 'down';
 
 export type BpkThumbButtonProps = {
   /**
@@ -40,7 +37,7 @@ export type BpkThumbButtonProps = {
   /**
    * Click handler callback.
    */
-  onClick: (type: ThumbsType) => void;
+  onClick: (type: ThumbsButtonType) => void;
   /**
    * Whether the thumb is in selected state.
    */
@@ -48,7 +45,7 @@ export type BpkThumbButtonProps = {
   /**
    * Type of thumb icon to display.
    */
-  type: ThumbsType;
+  type: ThumbsButtonType;
 };
 
 const BpkThumbButton = ({
@@ -57,7 +54,7 @@ const BpkThumbButton = ({
   selected = false,
   type,
 }: BpkThumbButtonProps) => {
-  const Icon = type === 'up' ? AlignedThumbsUpIcon : AlignedThumbsDownIcon;
+  const Icon = type === 'up' ? ThumbsUpIcon : ThumbsDownIcon;
 
   const classNames = getClassName(
     'bpk-thumb-button',

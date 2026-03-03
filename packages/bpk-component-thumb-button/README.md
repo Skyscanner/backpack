@@ -40,7 +40,7 @@ export default () => {
 | ------------------ | -------------------------- | -------- | ------------- |
 | accessibilityLabel | string                     | true     | -             |
 | type               | 'up' \| 'down'             | true     | -             |
-| onClick            | (type: ThumbsType) => void | true     | -             |
+| onClick            | (type: ThumbsButtonType) => void | true     | -             |
 | selected           | boolean                    | false    | false         |
 
 **Note:** Click events do not bubble — `BpkThumbButton` calls `stopPropagation()` internally to prevent accidental triggering of parent click handlers when used inside interactive containers (e.g. cards).
