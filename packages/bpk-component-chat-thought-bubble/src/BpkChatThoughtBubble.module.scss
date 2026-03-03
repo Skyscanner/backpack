@@ -1,0 +1,148 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../bpk-mixins/tokens';
+
+.bpk-chat-thought-bubble {
+  display: flex;
+  align-items: flex-end;
+  transform: translateY(12 * tokens.$bpk-one-pixel-rem) scale(0.98);
+  opacity: 0;
+  animation: bpk-chat-thought-bubble-entrance 0.24s cubic-bezier(0.2, 0, 0, 1)
+    forwards;
+  gap: tokens.bpk-spacing-md();
+  will-change: transform, opacity;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: bpk-chat-thought-bubble-entrance-reduced 0.2s ease-out forwards;
+  }
+
+  &__dots {
+    display: flex;
+    align-items: flex-end;
+    flex-shrink: 0;
+    gap: tokens.bpk-spacing-md();
+
+    &--dot {
+      border-radius: 50%;
+      background-color: tokens.$bpk-core-primary-day;
+      animation: bpk-chat-thought-bubble-dot-bounce 1.2s ease-in-out infinite;
+      will-change: transform;
+
+      @media (prefers-reduced-motion: reduce) {
+        transform: none;
+        animation: bpk-chat-thought-bubble-dot-pulse 2s ease-in-out infinite;
+      }
+    }
+
+    &--dot-first {
+      width: tokens.bpk-spacing-md();
+      height: tokens.bpk-spacing-md();
+      animation-delay: 0ms;
+    }
+
+    &--dot-second {
+      width: tokens.bpk-spacing-base();
+      height: tokens.bpk-spacing-base();
+      animation-delay: 0.2s;
+    }
+  }
+
+  &__bubble {
+    position: relative;
+    min-width: tokens.bpk-spacing-xxl();
+    max-width: 280 * tokens.$bpk-one-pixel-rem;
+    padding: tokens.bpk-spacing-base();
+    align-self: flex-start;
+    background: tokens.$bpk-core-primary-day;
+    color: tokens.$bpk-text-on-dark-day;
+    opacity: 1;
+    animation: bpk-chat-thought-bubble-bubble-bounce 1.2s ease-in-out infinite;
+    animation-delay: 0.4s;
+    border-end-end-radius: tokens.$bpk-border-radius-lg;
+    border-end-start-radius: tokens.$bpk-border-radius-xs;
+    border-start-end-radius: tokens.$bpk-border-radius-lg;
+    border-start-start-radius: tokens.$bpk-border-radius-lg;
+    overflow-wrap: break-word;
+    will-change: transform;
+    word-wrap: break-word;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+}
+
+@keyframes bpk-chat-thought-bubble-dot-bounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(-(10 * tokens.$bpk-one-pixel-rem)); // -10px
+  }
+}
+
+@keyframes bpk-chat-thought-bubble-dot-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes bpk-chat-thought-bubble-bubble-bounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  30% {
+    transform: translateY(-(6 * tokens.$bpk-one-pixel-rem)) scale(1.02); // -6px
+  }
+}
+
+@keyframes bpk-chat-thought-bubble-entrance {
+  from {
+    transform: translateY(12 * tokens.$bpk-one-pixel-rem) scale(0.98);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bpk-chat-thought-bubble-entrance-reduced {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
