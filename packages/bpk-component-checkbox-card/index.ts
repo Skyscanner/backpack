@@ -47,6 +47,3 @@ export {
 // Export theme attributes for BpkThemeProvider
 export { default as CHECKBOX_CARD_THEME_ATTRIBUTES } from './src/themeAttributes';
 
-// V1 API - Legacy (Deprecated, use BpkCheckboxCardSimple instead)
-export { default as BpkCheckboxCardLegacy } from './src/BpkCheckboxCard/BpkCheckboxCard';
-export type { BpkCheckboxCardProps } from './src/BpkCheckboxCard/BpkCheckboxCard';

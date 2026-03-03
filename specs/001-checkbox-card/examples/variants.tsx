@@ -18,79 +18,93 @@
 
 // Variant examples for BpkCheckboxCard
 import { useState } from 'react';
-import BpkCheckboxCard, { CHECKBOX_CARD_VARIANTS } from '../BpkCheckboxCard';
 
-export const WithBackgroundVariant = () => {
+import { BpkCheckboxCard, CHECKBOX_CARD_VARIANTS } from '../../../packages/bpk-component-checkbox-card';
+
+export const OnCanvasDefaultVariant = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <BpkCheckboxCard
+    <BpkCheckboxCard.Root
       checked={selected}
-      onChange={(checked) => setSelected(checked)}
-      label="With background"
-      description="This variant has a visible background"
-      price="£100"
-      variant={CHECKBOX_CARD_VARIANTS.withBackground}
-    />
+      onCheckedChange={setSelected}
+      variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+    >
+      <BpkCheckboxCard.Control />
+      <BpkCheckboxCard.Content>
+        <BpkCheckboxCard.Stack gap="md" align="center">
+          <BpkCheckboxCard.Label>On canvas default</BpkCheckboxCard.Label>
+          <BpkCheckboxCard.Description>Standard background</BpkCheckboxCard.Description>
+          <BpkCheckboxCard.Price price="£100" />
+        </BpkCheckboxCard.Stack>
+      </BpkCheckboxCard.Content>
+    </BpkCheckboxCard.Root>
   );
 };
 
-export const NoBackgroundVariant = () => {
+export const OnCanvasContrastVariant = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <BpkCheckboxCard
+    <BpkCheckboxCard.Root
       checked={selected}
-      onChange={(checked) => setSelected(checked)}
-      label="No background"
-      description="This variant has a transparent background with border"
-      price="£85"
-      variant={CHECKBOX_CARD_VARIANTS.noBackground}
-    />
+      onCheckedChange={setSelected}
+      variant={CHECKBOX_CARD_VARIANTS.onCanvasContrast}
+    >
+      <BpkCheckboxCard.Control />
+      <BpkCheckboxCard.Content>
+        <BpkCheckboxCard.Stack gap="md" align="center">
+          <BpkCheckboxCard.Label>On canvas contrast</BpkCheckboxCard.Label>
+          <BpkCheckboxCard.Description>Contrast background, border on hover</BpkCheckboxCard.Description>
+          <BpkCheckboxCard.Price price="£85" />
+        </BpkCheckboxCard.Stack>
+      </BpkCheckboxCard.Content>
+    </BpkCheckboxCard.Root>
   );
 };
 
-export const AllVariantsComparison = () => {
-  const [selectedWith, setSelectedWith] = useState(false);
-  const [selectedNo, setSelectedNo] = useState(false);
+export const OnSurfaceContrastVariant = () => {
+  const [selected, setSelected] = useState(false);
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-      <BpkCheckboxCard
-        checked={selectedWith}
-        onChange={(checked) => setSelected With(checked)}
-        label="With background"
-        price="£100"
-        variant="with-background"
-      />
-      <BpkCheckboxCard
-        checked={selectedNo}
-        onChange={(checked) => setSelectedNo(checked)}
-        label="No background"
-        price="£100"
-        variant="no-background"
-      />
+    <div style={{ background: '#05203C', padding: '24px' }}>
+      <BpkCheckboxCard.Root
+        checked={selected}
+        onCheckedChange={setSelected}
+        variant={CHECKBOX_CARD_VARIANTS.onSurfaceContrast}
+      >
+        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.Content>
+          <BpkCheckboxCard.Stack gap="md" align="center">
+            <BpkCheckboxCard.Label>On surface contrast</BpkCheckboxCard.Label>
+            <BpkCheckboxCard.Description>For use on dark backgrounds</BpkCheckboxCard.Description>
+            <BpkCheckboxCard.Price price="£122" />
+          </BpkCheckboxCard.Stack>
+        </BpkCheckboxCard.Content>
+      </BpkCheckboxCard.Root>
     </div>
   );
 };
 
-export const BothVariantsSelected = () => {
-  return (
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-      <BpkCheckboxCard
-        checked={true}
-        onChange={() => {}}
-        label="Selected with background"
-        price="£100"
-        variant="with-background"
-      />
-      <BpkCheckboxCard
-        checked={true}
-        onChange={() => {}}
-        label="Selected no background"
-        price="£100"
-        variant="no-background"
-      />
-    </div>
-  );
-};
+export const AllVariantsSelected = () => (
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+    <BpkCheckboxCard.Root checked onCheckedChange={() => {}} variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}>
+      <BpkCheckboxCard.Control />
+      <BpkCheckboxCard.Content>
+        <BpkCheckboxCard.Stack gap="md" align="center">
+          <BpkCheckboxCard.Label>Selected — on canvas default</BpkCheckboxCard.Label>
+          <BpkCheckboxCard.Price price="£100" />
+        </BpkCheckboxCard.Stack>
+      </BpkCheckboxCard.Content>
+    </BpkCheckboxCard.Root>
+    <BpkCheckboxCard.Root checked onCheckedChange={() => {}} variant={CHECKBOX_CARD_VARIANTS.onCanvasContrast}>
+      <BpkCheckboxCard.Control />
+      <BpkCheckboxCard.Content>
+        <BpkCheckboxCard.Stack gap="md" align="center">
+          <BpkCheckboxCard.Label>Selected — on canvas contrast</BpkCheckboxCard.Label>
+          <BpkCheckboxCard.Price price="£85" />
+        </BpkCheckboxCard.Stack>
+      </BpkCheckboxCard.Content>
+    </BpkCheckboxCard.Root>
+  </div>
+);

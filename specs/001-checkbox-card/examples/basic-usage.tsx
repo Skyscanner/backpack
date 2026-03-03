@@ -16,20 +16,27 @@
  * limitations under the License.
  */
 
-// Basic usage example for BpkCheckboxCard
+// Basic usage examples for BpkCheckboxCard
 import { useState } from 'react';
-import BpkCheckboxCard from '../BpkCheckboxCard';
+
+import { BpkCheckboxCard, BpkCheckboxCardSimple } from '../../../packages/bpk-component-checkbox-card';
 
 export const BasicUsage = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <BpkCheckboxCard
+    <BpkCheckboxCard.Root
       checked={selected}
-      onChange={(checked) => setSelected(checked)}
-      label="Select this option"
-      price="£100"
-    />
+      onCheckedChange={setSelected}
+    >
+      <BpkCheckboxCard.Control />
+      <BpkCheckboxCard.Content>
+        <BpkCheckboxCard.Stack gap="md" align="center">
+          <BpkCheckboxCard.Label>Select this option</BpkCheckboxCard.Label>
+          <BpkCheckboxCard.Price price="£100" />
+        </BpkCheckboxCard.Stack>
+      </BpkCheckboxCard.Content>
+    </BpkCheckboxCard.Root>
   );
 };
 
@@ -37,46 +44,50 @@ export const WithDescription = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <BpkCheckboxCard
+    <BpkCheckboxCard.Root
       checked={selected}
-      onChange={(checked) => setSelected(checked)}
-      label="Premium option"
-      description="Includes breakfast and parking"
-      price="£150"
-    />
+      onCheckedChange={setSelected}
+    >
+      <BpkCheckboxCard.Control />
+      <BpkCheckboxCard.Content>
+        <BpkCheckboxCard.Stack gap="md" align="center">
+          <BpkCheckboxCard.Label>Premium option</BpkCheckboxCard.Label>
+          <BpkCheckboxCard.Description>Includes breakfast and parking</BpkCheckboxCard.Description>
+          <BpkCheckboxCard.Price price="£150" />
+        </BpkCheckboxCard.Stack>
+      </BpkCheckboxCard.Content>
+    </BpkCheckboxCard.Root>
   );
 };
 
-export const MinimalContent = () => {
+export const UsingSimpleAPI = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <BpkCheckboxCard
+    <BpkCheckboxCardSimple
       checked={selected}
-      onChange={(checked) => setSelected(checked)}
-      ariaLabel="Minimal card with price only"
+      onChange={setSelected}
+      label="Select this option"
       price="£100"
     />
   );
 };
 
-export const DisabledStates = () => {
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-      <BpkCheckboxCard
-        checked={false}
-        onChange={() => {}}
-        label="Disabled unselected"
-        price="£100"
-        disabled={true}
-      />
-      <BpkCheckboxCard
-        checked={true}
-        onChange={() => {}}
-        label="Disabled selected"
-        price="£100"
-        disabled={true}
-      />
-    </div>
-  );
-};
+export const DisabledStates = () => (
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+    <BpkCheckboxCardSimple
+      checked={false}
+      onChange={() => {}}
+      label="Disabled unselected"
+      price="£100"
+      disabled
+    />
+    <BpkCheckboxCardSimple
+      checked
+      onChange={() => {}}
+      label="Disabled selected"
+      price="£100"
+      disabled
+    />
+  </div>
+);

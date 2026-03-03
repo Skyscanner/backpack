@@ -18,19 +18,27 @@
 
 // Edge case examples for BpkCheckboxCard
 import { useState } from 'react';
-import BpkCheckboxCard from '../BpkCheckboxCard';
+
+import { BpkCheckboxCard, BpkCheckboxCardSimple } from '../../../packages/bpk-component-checkbox-card';
 
 export const ExtremelyLongText = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <BpkCheckboxCard
-      checked={selected}
-      onChange={(checked) => setSelected(checked)}
-      label="This is an extremely long label that will definitely exceed the maximum line count and should be truncated with an ellipsis to prevent layout breaking"
-      description="This is also a very long description that goes on and on and on and should also be truncated after a certain number of lines to maintain a consistent card height and prevent the layout from breaking when displaying multiple cards in a grid"
-      price="£9,999"
-    />
+    <BpkCheckboxCard.Root checked={selected} onCheckedChange={setSelected}>
+      <BpkCheckboxCard.Control />
+      <BpkCheckboxCard.Content>
+        <BpkCheckboxCard.Stack gap="md" align="center">
+          <BpkCheckboxCard.Label>
+            This is an extremely long label that will definitely exceed the maximum line count and should be truncated with an ellipsis to prevent layout breaking
+          </BpkCheckboxCard.Label>
+          <BpkCheckboxCard.Description>
+            This is also a very long description that goes on and on and on and should also be truncated after a certain number of lines to maintain a consistent card height
+          </BpkCheckboxCard.Description>
+          <BpkCheckboxCard.Price price="£9,999" />
+        </BpkCheckboxCard.Stack>
+      </BpkCheckboxCard.Content>
+    </BpkCheckboxCard.Root>
   );
 };
 
@@ -38,12 +46,16 @@ export const MissingLabel = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <BpkCheckboxCard
+    <BpkCheckboxCard.Root
       checked={selected}
-      onChange={(checked) => setSelected(checked)}
-      ariaLabel="Card with no visible label"
-      price="£100"
-    />
+      onCheckedChange={setSelected}
+      aria-label="Card with no visible label"
+    >
+      <BpkCheckboxCard.Control />
+      <BpkCheckboxCard.Content>
+        <BpkCheckboxCard.Price price="£100" />
+      </BpkCheckboxCard.Content>
+    </BpkCheckboxCard.Root>
   );
 };
 
@@ -51,12 +63,15 @@ export const MissingPrice = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <BpkCheckboxCard
-      checked={selected}
-      onChange={(checked) => setSelected(checked)}
-      label="No price provided"
-      description="This card has no price information"
-    />
+    <BpkCheckboxCard.Root checked={selected} onCheckedChange={setSelected}>
+      <BpkCheckboxCard.Control />
+      <BpkCheckboxCard.Content>
+        <BpkCheckboxCard.Stack gap="sm" align="center">
+          <BpkCheckboxCard.Label>No price provided</BpkCheckboxCard.Label>
+          <BpkCheckboxCard.Description>This card has no price information</BpkCheckboxCard.Description>
+        </BpkCheckboxCard.Stack>
+      </BpkCheckboxCard.Content>
+    </BpkCheckboxCard.Root>
   );
 };
 
@@ -64,35 +79,34 @@ export const OnlyLabel = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <BpkCheckboxCard
-      checked={selected}
-      onChange={(checked) => setSelected(checked)}
-      label="Minimal content"
-    />
+    <BpkCheckboxCard.Root checked={selected} onCheckedChange={setSelected}>
+      <BpkCheckboxCard.Control />
+      <BpkCheckboxCard.Content>
+        <BpkCheckboxCard.Label>Minimal content</BpkCheckboxCard.Label>
+      </BpkCheckboxCard.Content>
+    </BpkCheckboxCard.Root>
   );
 };
 
-export const DisabledAndSelected = () => {
-  return (
-    <BpkCheckboxCard
-      checked={true}
-      onChange={() => {}}
-      label="Disabled but selected"
-      description="This card is selected but cannot be interacted with"
-      price="£100"
-      disabled={true}
-    />
-  );
-};
+export const DisabledAndSelected = () => (
+  <BpkCheckboxCardSimple
+    checked
+    onChange={() => {}}
+    label="Disabled but selected"
+    description="This card is selected but cannot be interacted with"
+    price="£100"
+    disabled
+  />
+);
 
 export const SmallContainer = () => {
   const [selected, setSelected] = useState(false);
 
   return (
     <div style={{ width: '200px' }}>
-      <BpkCheckboxCard
+      <BpkCheckboxCardSimple
         checked={selected}
-        onChange={(checked) => setSelected(checked)}
+        onChange={setSelected}
         label="Narrow container"
         description="This card is in a small container"
         price="£100"
@@ -105,9 +119,9 @@ export const VeryLargePrice = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <BpkCheckboxCard
+    <BpkCheckboxCardSimple
       checked={selected}
-      onChange={(checked) => setSelected(checked)}
+      onChange={setSelected}
       label="Expensive option"
       description="This has a very large price"
       price="£99,999,999"

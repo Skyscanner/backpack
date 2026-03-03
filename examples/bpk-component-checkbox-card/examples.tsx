@@ -18,8 +18,7 @@
 
 import { useState } from 'react';
 
-import { BpkCheckboxCard, CHECKBOX_CARD_THEME_ATTRIBUTES } from '../../packages/bpk-component-checkbox-card';
-import { CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS } from '../../packages/bpk-component-checkbox-card/src/BpkCheckboxCard/common-types';
+import { BpkCheckboxCard, CHECKBOX_CARD_THEME_ATTRIBUTES, CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS } from '../../packages/bpk-component-checkbox-card';
 import LandmarkIconLg from '../../packages/bpk-component-icon/lg/landmark';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../packages/bpk-theming';

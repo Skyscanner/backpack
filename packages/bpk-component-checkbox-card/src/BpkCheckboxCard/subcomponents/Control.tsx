@@ -78,6 +78,7 @@ export default function Control() {
       aria-labelledby={labelId}
       aria-describedby={descriptionId}
       tabIndex={-1} // Focus is handled by the root container
+      aria-hidden // Hidden from AT; the Root div provides the accessible checkbox role
     />
   );
 }

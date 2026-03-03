@@ -18,7 +18,8 @@
 
 // Interactive state examples for BpkCheckboxCard
 import { useState } from 'react';
-import BpkCheckboxCard from '../BpkCheckboxCard';
+
+import { BpkCheckboxCardSimple } from '../../../packages/bpk-component-checkbox-card';
 
 export const AllInteractiveStates = () => {
   const [selected1, setSelected1] = useState(false);
@@ -26,35 +27,35 @@ export const AllInteractiveStates = () => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-      <BpkCheckboxCard
+      <BpkCheckboxCardSimple
         checked={selected1}
-        onChange={(checked) => setSelected1(checked)}
+        onChange={setSelected1}
         label="Default (unselected)"
         description="Click to select"
         price="£100"
       />
-      <BpkCheckboxCard
+      <BpkCheckboxCardSimple
         checked={selected2}
-        onChange={(checked) => setSelected2(checked)}
+        onChange={setSelected2}
         label="Selected"
         description="Click to unselect"
         price="£100"
       />
-      <BpkCheckboxCard
+      <BpkCheckboxCardSimple
         checked={false}
         onChange={() => {}}
         label="Disabled (unselected)"
         description="Cannot interact"
         price="£100"
-        disabled={true}
+        disabled
       />
-      <BpkCheckboxCard
-        checked={true}
+      <BpkCheckboxCardSimple
+        checked
         onChange={() => {}}
         label="Disabled (selected)"
         description="Cannot interact"
         price="£100"
-        disabled={true}
+        disabled
       />
     </div>
   );
@@ -72,7 +73,7 @@ export const SingleSelection = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
       {options.map((opt) => (
-        <BpkCheckboxCard
+        <BpkCheckboxCardSimple
           key={opt.id}
           name="hotel-option"
           value={opt.id}
@@ -92,9 +93,7 @@ export const MultiSelection = () => {
 
   const handleChange = (id: string) => {
     setSelected((prev) =>
-      prev.includes(id)
-        ? prev.filter((x) => x !== id)
-        : [...prev, id]
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
     );
   };
 
@@ -107,7 +106,7 @@ export const MultiSelection = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
       {options.map((opt) => (
-        <BpkCheckboxCard
+        <BpkCheckboxCardSimple
           key={opt.id}
           name={`option-${opt.id}`}
           value={opt.id}
@@ -131,9 +130,9 @@ export const HoverAndFocus = () => {
       <p style={{ marginBottom: '16px' }}>
         Hover over the card or use Tab key to focus it
       </p>
-      <BpkCheckboxCard
+      <BpkCheckboxCardSimple
         checked={selected}
-        onChange={(checked) => setSelected(checked)}
+        onChange={setSelected}
         label="Interactive states"
         description="Hover to see elevation change, Tab to see focus indicator"
         price="£100"

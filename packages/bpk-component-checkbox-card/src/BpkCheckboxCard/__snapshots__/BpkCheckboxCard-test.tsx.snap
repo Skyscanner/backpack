@@ -1,290 +1,440 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`BpkCheckboxCard should render correctly when checked 1`] = `
+exports[`BpkCheckboxCard (compound component) should render correctly when checked 1`] = `
 <DocumentFragment>
-  <label
-    class="bpk-checkbox-card bpk-checkbox-card--on-canvas-default bpk-checkbox-card--rounded bpk-checkbox-card--checked bpk-checkbox-card--layout-vertical"
+  <div
+    aria-checked="true"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded bpk-checkbox-card-root--checked"
+    data-checked="true"
+    role="checkbox"
+    tabindex="0"
   >
     <input
       aria-checked="true"
+      aria-describedby=":r4:"
       aria-disabled="false"
-      aria-label="Select option"
+      aria-hidden="true"
+      aria-labelledby=":r3:"
       checked=""
-      class="bpk-checkbox-card__input"
+      class="bpk-checkbox-card-control"
+      id=":r5:"
+      tabindex="-1"
       type="checkbox"
       value=""
     />
     <div
-      class="bpk-checkbox-card__content"
+      class="bpk-checkbox-card-content"
     >
       <div
-        class="bpk-checkbox-card__text"
+        class="bpk-checkbox-card-label"
       >
         <span
-          class="bpk-checkbox-card__label"
+          class="bpk-text bpk-text--heading-5"
+          id=":r3:"
+          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
         >
           Select option
         </span>
       </div>
-      <div
-        class="bpk-checkbox-card__price"
-      >
-        £100
-      </div>
     </div>
-  </label>
+  </div>
 </DocumentFragment>
 `;
 
-exports[`BpkCheckboxCard should render correctly when disabled 1`] = `
+exports[`BpkCheckboxCard (compound component) should render correctly when disabled 1`] = `
 <DocumentFragment>
-  <label
-    class="bpk-checkbox-card bpk-checkbox-card--on-canvas-default bpk-checkbox-card--rounded bpk-checkbox-card--disabled bpk-checkbox-card--layout-vertical"
+  <div
+    aria-checked="false"
+    aria-disabled="true"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded bpk-checkbox-card-root--disabled"
+    data-disabled="true"
+    role="checkbox"
+    tabindex="-1"
   >
     <input
       aria-checked="false"
+      aria-describedby=":r7:"
       aria-disabled="true"
-      aria-label="Select option"
-      class="bpk-checkbox-card__input"
+      aria-hidden="true"
+      aria-labelledby=":r6:"
+      class="bpk-checkbox-card-control"
       disabled=""
+      id=":r8:"
+      tabindex="-1"
       type="checkbox"
       value=""
     />
     <div
-      class="bpk-checkbox-card__content"
+      class="bpk-checkbox-card-content"
     >
       <div
-        class="bpk-checkbox-card__text"
+        class="bpk-checkbox-card-label"
       >
         <span
-          class="bpk-checkbox-card__label"
+          class="bpk-text bpk-text--heading-5"
+          id=":r6:"
+          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
         >
           Select option
         </span>
       </div>
     </div>
-  </label>
+  </div>
 </DocumentFragment>
 `;
 
-exports[`BpkCheckboxCard should render correctly with all content props 1`] = `
+exports[`BpkCheckboxCard (compound component) should render correctly with all content slots 1`] = `
 <DocumentFragment>
-  <label
-    class="bpk-checkbox-card bpk-checkbox-card--on-canvas-default bpk-checkbox-card--rounded bpk-checkbox-card--layout-vertical"
+  <div
+    aria-checked="false"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded"
+    role="checkbox"
+    tabindex="0"
   >
     <input
       aria-checked="false"
+      aria-describedby=":ra:"
       aria-disabled="false"
-      aria-label="City Centre"
-      class="bpk-checkbox-card__input"
+      aria-hidden="true"
+      aria-labelledby=":r9:"
+      class="bpk-checkbox-card-control"
+      id=":rb:"
+      tabindex="-1"
       type="checkbox"
       value=""
     />
     <div
-      class="bpk-checkbox-card__content"
+      class="bpk-checkbox-card-content"
     >
       <div
-        class="bpk-checkbox-card__icon"
+        class="bpk-checkbox-card-stack bpk-checkbox-card-stack--gap-md bpk-checkbox-card-stack--align-center"
       >
-        <div>
-          Icon
+        <div
+          class="bpk-checkbox-card-label"
+        >
+          <span
+            class="bpk-text bpk-text--heading-5"
+            id=":r9:"
+            style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
+          >
+            City Centre
+          </span>
+        </div>
+        <div
+          class="bpk-checkbox-card-description"
+        >
+          <span
+            class="bpk-text bpk-text--body-default"
+            id=":ra:"
+            style="display: -webkit-box; -webkit-line-clamp: 3; overflow: hidden; width: 100%;"
+          >
+            Central location
+          </span>
+        </div>
+        <div
+          class="bpk-checkbox-card-price"
+        >
+          <div
+            class="bpk-price"
+          >
+            <div
+              class=""
+            />
+            <div
+              class=""
+            >
+              <span
+                class="bpk-price__price bpk-price__spacing"
+              >
+                <span
+                  class="bpk-text bpk-text--heading-4"
+                >
+                  £85
+                </span>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
-      <div
-        class="bpk-checkbox-card__image"
-      >
-        <img
-          alt=""
-          src="test.jpg"
-        />
-      </div>
-      <div
-        class="bpk-checkbox-card__text"
-      >
-        <span
-          class="bpk-checkbox-card__label"
-        >
-          City Centre
-        </span>
-        <span
-          class="bpk-checkbox-card__description"
-        >
-          Best location
-        </span>
-      </div>
-      <div
-        class="bpk-checkbox-card__price"
-      >
-        £85
-      </div>
     </div>
-  </label>
+  </div>
 </DocumentFragment>
 `;
 
-exports[`BpkCheckboxCard should render correctly with extremely long text 1`] = `
+exports[`BpkCheckboxCard (compound component) should render correctly with minimal props 1`] = `
 <DocumentFragment>
-  <label
-    class="bpk-checkbox-card bpk-checkbox-card--on-canvas-default bpk-checkbox-card--rounded bpk-checkbox-card--layout-vertical"
+  <div
+    aria-checked="false"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded"
+    role="checkbox"
+    tabindex="0"
   >
     <input
       aria-checked="false"
+      aria-describedby=":r1:"
       aria-disabled="false"
-      aria-label="This is an extremely long label that will definitely exceed the maximum line count and should be truncated with an ellipsis to prevent layout breaking"
-      class="bpk-checkbox-card__input"
+      aria-hidden="true"
+      aria-labelledby=":r0:"
+      class="bpk-checkbox-card-control"
+      id=":r2:"
+      tabindex="-1"
       type="checkbox"
       value=""
     />
     <div
-      class="bpk-checkbox-card__content"
+      class="bpk-checkbox-card-content"
     >
       <div
-        class="bpk-checkbox-card__text"
+        class="bpk-checkbox-card-label"
       >
         <span
-          class="bpk-checkbox-card__label"
-        >
-          This is an extremely long label that will definitely exceed the maximum line count and should be truncated with an ellipsis to prevent layout breaking
-        </span>
-        <span
-          class="bpk-checkbox-card__description"
-        >
-          This is also a very long description that goes on and on and on and should also be truncated after a certain number of lines
-        </span>
-      </div>
-      <div
-        class="bpk-checkbox-card__price"
-      >
-        £9,999
-      </div>
-    </div>
-  </label>
-</DocumentFragment>
-`;
-
-exports[`BpkCheckboxCard should render correctly with minimal props 1`] = `
-<DocumentFragment>
-  <label
-    class="bpk-checkbox-card bpk-checkbox-card--on-canvas-default bpk-checkbox-card--rounded bpk-checkbox-card--layout-vertical"
-  >
-    <input
-      aria-checked="false"
-      aria-disabled="false"
-      aria-label="Select option"
-      class="bpk-checkbox-card__input"
-      type="checkbox"
-      value=""
-    />
-    <div
-      class="bpk-checkbox-card__content"
-    >
-      <div
-        class="bpk-checkbox-card__text"
-      >
-        <span
-          class="bpk-checkbox-card__label"
+          class="bpk-text bpk-text--heading-5"
+          id=":r0:"
+          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
         >
           Select option
         </span>
       </div>
     </div>
-  </label>
+  </div>
 </DocumentFragment>
 `;
 
-exports[`BpkCheckboxCard should render disabled and checked state correctly 1`] = `
+exports[`BpkCheckboxCard (compound component) should render disabled and checked state correctly 1`] = `
 <DocumentFragment>
-  <label
-    class="bpk-checkbox-card bpk-checkbox-card--on-canvas-default bpk-checkbox-card--rounded bpk-checkbox-card--checked bpk-checkbox-card--disabled bpk-checkbox-card--checked--disabled bpk-checkbox-card--layout-vertical"
+  <div
+    aria-checked="true"
+    aria-disabled="true"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded bpk-checkbox-card-root--checked bpk-checkbox-card-root--disabled"
+    data-checked="true"
+    data-disabled="true"
+    role="checkbox"
+    tabindex="-1"
   >
     <input
       aria-checked="true"
+      aria-describedby=":rp:"
       aria-disabled="true"
-      aria-label="Disabled but selected"
+      aria-hidden="true"
+      aria-labelledby=":ro:"
       checked=""
-      class="bpk-checkbox-card__input"
+      class="bpk-checkbox-card-control"
       disabled=""
+      id=":rq:"
+      tabindex="-1"
       type="checkbox"
       value=""
     />
     <div
-      class="bpk-checkbox-card__content"
+      class="bpk-checkbox-card-content"
     >
       <div
-        class="bpk-checkbox-card__text"
+        class="bpk-checkbox-card-label"
       >
         <span
-          class="bpk-checkbox-card__label"
+          class="bpk-text bpk-text--heading-5"
+          id=":ro:"
+          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
         >
-          Disabled but selected
+          Disabled selected
         </span>
       </div>
-      <div
-        class="bpk-checkbox-card__price"
-      >
-        £100
-      </div>
     </div>
-  </label>
+  </div>
 </DocumentFragment>
 `;
 
-exports[`BpkCheckboxCard should render on-canvas-contrast variant correctly 1`] = `
+exports[`BpkCheckboxCard (compound component) should render onCanvasContrast variant correctly 1`] = `
 <DocumentFragment>
-  <label
-    class="bpk-checkbox-card bpk-checkbox-card--on-canvas-contrast bpk-checkbox-card--rounded bpk-checkbox-card--layout-vertical"
+  <div
+    aria-checked="false"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-contrast bpk-checkbox-card-root--radius-rounded"
+    role="checkbox"
+    tabindex="0"
   >
     <input
       aria-checked="false"
+      aria-describedby=":rg:"
       aria-disabled="false"
-      aria-label="No background"
-      class="bpk-checkbox-card__input"
+      aria-hidden="true"
+      aria-labelledby=":rf:"
+      class="bpk-checkbox-card-control"
+      id=":rh:"
+      tabindex="-1"
       type="checkbox"
       value=""
     />
     <div
-      class="bpk-checkbox-card__content"
+      class="bpk-checkbox-card-content"
     >
       <div
-        class="bpk-checkbox-card__text"
+        class="bpk-checkbox-card-label"
       >
         <span
-          class="bpk-checkbox-card__label"
+          class="bpk-text bpk-text--heading-5"
+          id=":rf:"
+          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
         >
-          No background
+          Select option
         </span>
       </div>
     </div>
-  </label>
+  </div>
 </DocumentFragment>
 `;
 
-exports[`BpkCheckboxCard should render on-canvas-default variant correctly 1`] = `
+exports[`BpkCheckboxCard (compound component) should render onCanvasDefault variant correctly 1`] = `
 <DocumentFragment>
-  <label
-    class="bpk-checkbox-card bpk-checkbox-card--on-canvas-default bpk-checkbox-card--rounded bpk-checkbox-card--layout-vertical"
+  <div
+    aria-checked="false"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded"
+    role="checkbox"
+    tabindex="0"
   >
     <input
       aria-checked="false"
+      aria-describedby=":rd:"
       aria-disabled="false"
-      aria-label="With background"
-      class="bpk-checkbox-card__input"
+      aria-hidden="true"
+      aria-labelledby=":rc:"
+      class="bpk-checkbox-card-control"
+      id=":re:"
+      tabindex="-1"
       type="checkbox"
       value=""
     />
     <div
-      class="bpk-checkbox-card__content"
+      class="bpk-checkbox-card-content"
     >
       <div
-        class="bpk-checkbox-card__text"
+        class="bpk-checkbox-card-label"
       >
         <span
-          class="bpk-checkbox-card__label"
+          class="bpk-text bpk-text--heading-5"
+          id=":rc:"
+          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
         >
-          With background
+          Select option
         </span>
       </div>
     </div>
-  </label>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCheckboxCard (compound component) should render onSurfaceContrast variant correctly 1`] = `
+<DocumentFragment>
+  <div
+    aria-checked="false"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-surface-contrast bpk-checkbox-card-root--radius-rounded"
+    role="checkbox"
+    tabindex="0"
+  >
+    <input
+      aria-checked="false"
+      aria-describedby=":rj:"
+      aria-disabled="false"
+      aria-hidden="true"
+      aria-labelledby=":ri:"
+      class="bpk-checkbox-card-control"
+      id=":rk:"
+      tabindex="-1"
+      type="checkbox"
+      value=""
+    />
+    <div
+      class="bpk-checkbox-card-content"
+    >
+      <div
+        class="bpk-checkbox-card-label"
+      >
+        <span
+          class="bpk-text bpk-text--heading-5"
+          id=":ri:"
+          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
+        >
+          Select option
+        </span>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCheckboxCard (compound component) should render square radius correctly 1`] = `
+<DocumentFragment>
+  <div
+    aria-checked="false"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-square"
+    role="checkbox"
+    tabindex="0"
+  >
+    <input
+      aria-checked="false"
+      aria-describedby=":rm:"
+      aria-disabled="false"
+      aria-hidden="true"
+      aria-labelledby=":rl:"
+      class="bpk-checkbox-card-control"
+      id=":rn:"
+      tabindex="-1"
+      type="checkbox"
+      value=""
+    />
+    <div
+      class="bpk-checkbox-card-content"
+    >
+      <div
+        class="bpk-checkbox-card-label"
+      >
+        <span
+          class="bpk-text bpk-text--heading-5"
+          id=":rl:"
+          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
+        >
+          Select option
+        </span>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkCheckboxCard (compound component) should render with extremely long label text 1`] = `
+<DocumentFragment>
+  <div
+    aria-checked="false"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded"
+    role="checkbox"
+    tabindex="0"
+  >
+    <input
+      aria-checked="false"
+      aria-describedby=":r1n:"
+      aria-disabled="false"
+      aria-hidden="true"
+      aria-labelledby=":r1m:"
+      class="bpk-checkbox-card-control"
+      id=":r1o:"
+      tabindex="-1"
+      type="checkbox"
+      value=""
+    />
+    <div
+      class="bpk-checkbox-card-content"
+    >
+      <div
+        class="bpk-checkbox-card-label"
+      >
+        <span
+          class="bpk-text bpk-text--heading-5"
+          id=":r1m:"
+          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
+        >
+          This is an extremely long label that will definitely exceed the maximum line count and should be truncated
+        </span>
+      </div>
+    </div>
+  </div>
 </DocumentFragment>
 `;

@@ -21,7 +21,7 @@ import { useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import BpkCheckboxCard from './BpkCheckboxCard';
+import { BpkCheckboxCardSimple } from '../../index';
 
 describe('BpkCheckboxCard form tests', () => {
   it('should work as a form component in a form', async () => {
@@ -29,14 +29,13 @@ describe('BpkCheckboxCard form tests', () => {
       const [isChecked, setIsChecked] = useState(false);
       return (
         <form data-testid="form">
-          <BpkCheckboxCard
+          <BpkCheckboxCardSimple
             name="hotel-option"
             value="city-centre"
             checked={isChecked}
             onChange={(checked) => setIsChecked(checked)}
             label="City Centre"
             price="£85"
-            data-testid="checkbox-card"
           />
           <button type="submit">Submit</button>
         </form>
@@ -44,11 +43,11 @@ describe('BpkCheckboxCard form tests', () => {
     };
     render(<Wrap />);
 
-    const checkbox = screen.getByRole('checkbox') as HTMLInputElement;
-    expect(checkbox).not.toBeChecked();
+    const card = screen.getByRole('checkbox');
+    expect(card).toHaveAttribute('aria-checked', 'false');
 
-    await userEvent.click(checkbox);
-    expect(checkbox).toBeChecked();
+    await userEvent.click(card);
+    expect(card).toHaveAttribute('aria-checked', 'true');
 
     const form = screen.getByTestId('form') as HTMLFormElement;
     const formData = new FormData(form);
@@ -63,58 +62,39 @@ describe('BpkCheckboxCard form tests', () => {
 
       return (
         <div>
-          <BpkCheckboxCard
+          <BpkCheckboxCardSimple
             name="option"
             value="opt1"
             checked={selectedId === 'opt1'}
             onChange={() => setSelectedId('opt1')}
             label="Option 1"
             price="£100"
-            data-testid="opt1"
           />
-          <BpkCheckboxCard
+          <BpkCheckboxCardSimple
             name="option"
             value="opt2"
             checked={selectedId === 'opt2'}
             onChange={() => setSelectedId('opt2')}
             label="Option 2"
             price="£85"
-            data-testid="opt2"
-          />
-          <BpkCheckboxCard
-            name="option"
-            value="opt3"
-            checked={selectedId === 'opt3'}
-            onChange={() => setSelectedId('opt3')}
-            label="Option 3"
-            price="£122"
-            data-testid="opt3"
           />
         </div>
       );
     };
     render(<Wrap />);
 
-    const opt1 = screen.getByTestId('opt1') as HTMLInputElement;
-    const opt2 = screen.getByTestId('opt2') as HTMLInputElement;
-    const opt3 = screen.getByTestId('opt3') as HTMLInputElement;
+    const [opt1, opt2] = screen.getAllByRole('checkbox');
 
-    // Initially none selected
-    expect(opt1).not.toBeChecked();
-    expect(opt2).not.toBeChecked();
-    expect(opt3).not.toBeChecked();
+    expect(opt1).toHaveAttribute('aria-checked', 'false');
+    expect(opt2).toHaveAttribute('aria-checked', 'false');
 
-    // Select option 1
     await userEvent.click(opt1);
-    expect(opt1).toBeChecked();
-    expect(opt2).not.toBeChecked();
-    expect(opt3).not.toBeChecked();
+    expect(opt1).toHaveAttribute('aria-checked', 'true');
+    expect(opt2).toHaveAttribute('aria-checked', 'false');
 
-    // Select option 2 (only opt2 should be checked)
     await userEvent.click(opt2);
-    expect(opt1).not.toBeChecked();
-    expect(opt2).toBeChecked();
-    expect(opt3).not.toBeChecked();
+    expect(opt1).toHaveAttribute('aria-checked', 'false');
+    expect(opt2).toHaveAttribute('aria-checked', 'true');
   });
 
   it('should support multi-selection pattern', async () => {
@@ -129,53 +109,46 @@ describe('BpkCheckboxCard form tests', () => {
 
       return (
         <div>
-          <BpkCheckboxCard
+          <BpkCheckboxCardSimple
             name="option1"
             value="opt1"
             checked={selected.includes('opt1')}
             onChange={() => handleChange('opt1')}
             label="Option 1"
             price="£100"
-            data-testid="opt1"
           />
-          <BpkCheckboxCard
+          <BpkCheckboxCardSimple
             name="option2"
             value="opt2"
             checked={selected.includes('opt2')}
             onChange={() => handleChange('opt2')}
             label="Option 2"
             price="£85"
-            data-testid="opt2"
           />
-          <BpkCheckboxCard
+          <BpkCheckboxCardSimple
             name="option3"
             value="opt3"
             checked={selected.includes('opt3')}
             onChange={() => handleChange('opt3')}
             label="Option 3"
             price="£122"
-            data-testid="opt3"
           />
         </div>
       );
     };
     render(<Wrap />);
 
-    const opt1 = screen.getByTestId('opt1') as HTMLInputElement;
-    const opt2 = screen.getByTestId('opt2') as HTMLInputElement;
-    const opt3 = screen.getByTestId('opt3') as HTMLInputElement;
+    const [opt1, opt2, opt3] = screen.getAllByRole('checkbox');
 
-    // Select multiple options
     await userEvent.click(opt1);
     await userEvent.click(opt3);
 
-    expect(opt1).toBeChecked();
-    expect(opt2).not.toBeChecked();
-    expect(opt3).toBeChecked();
+    expect(opt1).toHaveAttribute('aria-checked', 'true');
+    expect(opt2).toHaveAttribute('aria-checked', 'false');
+    expect(opt3).toHaveAttribute('aria-checked', 'true');
 
-    // Deselect one
     await userEvent.click(opt1);
-    expect(opt1).not.toBeChecked();
-    expect(opt3).toBeChecked();
+    expect(opt1).toHaveAttribute('aria-checked', 'false');
+    expect(opt3).toHaveAttribute('aria-checked', 'true');
   });
 });
