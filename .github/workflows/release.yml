@@ -108,8 +108,8 @@ jobs:
       with:
         path: |
           node_modules/
-          packages/node_modules/
-        key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+          .nx/cache
+        key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
 
     - run: npm run transpile
 

@@ -15,7 +15,8 @@
       "!{projectRoot}/**/*-test.tsx",
       "!{projectRoot}/**/*-test.ts",
       "!{projectRoot}/**/*-test.js",
-      "!{projectRoot}/**/*.stories.tsx"
+      "!{projectRoot}/**/*.stories.tsx",
+      "!{projectRoot}/**/accessibility-test.tsx"
     ]
   },
   "targetDefaults": {
