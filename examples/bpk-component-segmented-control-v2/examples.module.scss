@@ -16,20 +16,9 @@
  * limitations under the License.
  */
 
-import BpkSegmentedControl, {
-  useSegmentedControlPanels,
-  type Props as BpkSegmentControlProps,
-  type TabPanelProps,
-} from './src/BpkSegmentedControl';
-
-export type { BpkSegmentControlProps, TabPanelProps };
-export { useSegmentedControlPanels };
-export default BpkSegmentedControl;
-
-// V2 — new experimental exports
-export { default as BpkSegmentedControlV2, SEGMENT_TYPES_V2 } from './src/BpkSegmentedControlV2/BpkSegmentedControlV2';
-export type {
-  BpkSegmentedControlV2RootProps,
-  BpkSegmentedControlV2ItemProps,
-  SegmentTypesV2,
-} from './src/BpkSegmentedControlV2/common-types';
+.bpk-component-segmented-control-stories__custom-button {
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
