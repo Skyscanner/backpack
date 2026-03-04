@@ -43,7 +43,7 @@
 
 @keyframes bpk-chat-notification-slide-in {
   from {
-    transform: translateY(calc(-1 * tokens.bpk-spacing-md()));
+    transform: translateY(calc(-10 * tokens.$bpk-one-pixel-rem));
     opacity: 0;
   }
 
