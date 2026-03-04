@@ -210,6 +210,8 @@ export default Bpk[ComponentName];
 - ✅ Add `data-testid` for testing
 - ✅ Add `{...getDataComponentAttribute('[ComponentName]')}` to root element (component name WITHOUT "Bpk" prefix)
 - ✅ Keep props interface minimal — only declare props the component genuinely needs
+- ✅ Replace `div` layout wrappers with BpkLayout components — use `BpkHStack` for rows, `BpkVStack` for columns, `BpkBox` for generic containers. Preserve gap/align/justify by mapping to `gap={BpkSpacing.X}`, `alignItems`, `justifyContent` props. Wrap any usage in `<BpkProvider>` (Chakra UI context requirement).
+- ❌ NO raw `<div>` for layout — always prefer BpkLayout components
 - ❌ NO `className` or `style` props for new components (API encapsulation, constitution XI)
 - ❌ NO `& Omit<ComponentPropsWithoutRef<'div'>, 'children'>` — do NOT spread HTML element props. Default to a closed, explicit props interface. Only use element spread when the component is explicitly a thin wrapper that must forward all native attributes (rare).
 - ❌ NO product-specific i18n hooks
