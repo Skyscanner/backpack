@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-// @ts-expect-error — @figma/code-connect is an optional dev dependency used only for Figma Code Connect publishing.
 import figma from '@figma/code-connect';
 
 import BpkSegmentedControlV2 from './BpkSegmentedControlV2';

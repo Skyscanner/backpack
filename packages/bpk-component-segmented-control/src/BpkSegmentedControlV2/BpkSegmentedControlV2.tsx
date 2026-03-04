@@ -105,7 +105,10 @@ const BpkSegmentedControlV2Root = ({
     event.preventDefault();
     inputs[newIndex].focus();
     if (activationMode !== 'manual') {
-      onChange?.(inputs[newIndex].value);
+      // Trigger click so Ark-UI updates its internal state for both controlled
+      // and uncontrolled usage. Ark-UI's onValueChange fires onChange via its
+      // own listener — do not call onChange manually here to avoid double-firing.
+      inputs[newIndex].click();
     }
   };
 
@@ -122,8 +125,8 @@ const BpkSegmentedControlV2Root = ({
       {...getDataComponentAttribute('SegmentedControlV2')}
     >
       {Children.map(children, (child) => {
+        if (!isValidElement(child)) return null;
         const c = child as ReactElement<BpkSegmentedControlV2ItemProps>;
-        if (!c) return null;
         const accessibleName = c.props.accessibilityLabel ?? extractTextContent(c.props.children);
         return (
           <SegmentGroup.Item
