@@ -29,6 +29,8 @@
   transition: all tokens.$bpk-duration-sm ease-in-out;
   border: none;
   background: transparent;
+
+  // No semantic "inactive" token exists yet; using disabled as the closest visual equivalent.
   color: tokens.$bpk-text-disabled-day;
   cursor: pointer;
   appearance: none;
