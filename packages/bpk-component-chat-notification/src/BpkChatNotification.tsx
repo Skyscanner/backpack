@@ -26,18 +26,22 @@ import STYLES from './BpkChatNotification.module.scss';
 const getClassName = cssModules(STYLES);
 const AlignedTickCircleIcon = withButtonAlignment(TickCircleIcon);
 
-export type BpkChatNotificationProps = {
-  /** Text displayed in the default (success) state. */
+type SuccessProps = {
+  /** Text displayed in the success state. */
   label: string;
-  /** Text displayed when hasIssue is true. */
-  errorLabel: string;
-  /** When true, shows the error state without the tick icon. Defaults to false. */
-  hasIssue?: boolean;
+  errorLabel?: never;
 };
+
+type ErrorProps = {
+  /** Text displayed in the error state. */
+  errorLabel: string;
+  label?: never;
+};
+
+export type BpkChatNotificationProps = SuccessProps | ErrorProps;
 
 const BpkChatNotification = ({
   errorLabel,
-  hasIssue = false,
   label,
 }: BpkChatNotificationProps) => (
   <output
@@ -46,7 +50,7 @@ const BpkChatNotification = ({
     data-testid="bpk-chat-notification"
     {...getDataComponentAttribute('ChatNotification')}
   >
-    {!hasIssue && (
+    {!errorLabel && (
       <span className={getClassName('bpk-chat-notification__icon')}>
         <AlignedTickCircleIcon aria-hidden="true" />
       </span>
@@ -55,7 +59,7 @@ const BpkChatNotification = ({
       tagName="span"
       textStyle={TEXT_STYLES.footnote}
     >
-      {hasIssue ? errorLabel : label}
+      {errorLabel ?? label}
     </BpkText>
   </output>
 );

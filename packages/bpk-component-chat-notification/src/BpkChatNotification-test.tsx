@@ -20,40 +20,38 @@ import { render, screen } from '@testing-library/react';
 
 import BpkChatNotification from './BpkChatNotification';
 
-const defaultProps = {
-  label: 'Thanks for your feedback!',
-  errorLabel: 'Something went wrong. Please try again.',
-};
+const DEFAULT_LABEL = 'Thanks for your feedback!';
+const ERROR_LABEL = 'Something went wrong. Please try again.';
 
 describe('BpkChatNotification', () => {
   it('should render correctly in the default state', () => {
-    const { asFragment } = render(<BpkChatNotification {...defaultProps} />);
+    const { asFragment } = render(
+      <BpkChatNotification label={DEFAULT_LABEL} />,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly in the error state', () => {
     const { asFragment } = render(
-      <BpkChatNotification {...defaultProps} hasIssue />,
+      <BpkChatNotification errorLabel={ERROR_LABEL} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should show the label in the default state', () => {
-    render(<BpkChatNotification {...defaultProps} />);
-    expect(
-      screen.getByText('Thanks for your feedback!'),
-    ).toBeInTheDocument();
+  it('should show the label in the success state', () => {
+    render(<BpkChatNotification label={DEFAULT_LABEL} />);
+    expect(screen.getByText(DEFAULT_LABEL)).toBeInTheDocument();
   });
 
-  it('should show the errorLabel when hasIssue is true', () => {
-    render(<BpkChatNotification {...defaultProps} hasIssue />);
-    expect(
-      screen.getByText('Something went wrong. Please try again.'),
-    ).toBeInTheDocument();
+  it('should show the errorLabel in the error state', () => {
+    render(<BpkChatNotification errorLabel={ERROR_LABEL} />);
+    expect(screen.getByText(ERROR_LABEL)).toBeInTheDocument();
   });
 
-  it('should show the tick icon in the default state', () => {
-    const { container } = render(<BpkChatNotification {...defaultProps} />);
+  it('should show the tick icon in the success state', () => {
+    const { container } = render(
+      <BpkChatNotification label={DEFAULT_LABEL} />,
+    );
     expect(
       container.querySelector('.bpk-chat-notification__icon'),
     ).toBeInTheDocument();
@@ -61,7 +59,7 @@ describe('BpkChatNotification', () => {
 
   it('should not show the tick icon in the error state', () => {
     const { container } = render(
-      <BpkChatNotification {...defaultProps} hasIssue />,
+      <BpkChatNotification errorLabel={ERROR_LABEL} />,
     );
     expect(
       container.querySelector('.bpk-chat-notification__icon'),
@@ -69,7 +67,7 @@ describe('BpkChatNotification', () => {
   });
 
   it('should have the correct data-testid', () => {
-    render(<BpkChatNotification {...defaultProps} />);
+    render(<BpkChatNotification label={DEFAULT_LABEL} />);
     expect(screen.getByTestId('bpk-chat-notification')).toBeInTheDocument();
   });
 });

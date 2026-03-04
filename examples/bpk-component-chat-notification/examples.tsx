@@ -22,17 +22,13 @@ const DEFAULT_LABEL = 'Thanks for your feedback!';
 const ERROR_LABEL = 'Something went wrong. Please try again.';
 
 export const DefaultExample = () => (
-  <BpkChatNotification label={DEFAULT_LABEL} errorLabel={ERROR_LABEL} />
+  <BpkChatNotification label={DEFAULT_LABEL} />
 );
 
 export const ErrorExample = () => (
-  <BpkChatNotification
-    label={DEFAULT_LABEL}
-    errorLabel={ERROR_LABEL}
-    hasIssue
-  />
+  <BpkChatNotification errorLabel={ERROR_LABEL} />
 );
 
 export const VisualTestExample = () => (
-  <BpkChatNotification label={DEFAULT_LABEL} errorLabel={ERROR_LABEL} />
+  <BpkChatNotification label={DEFAULT_LABEL} />
 );

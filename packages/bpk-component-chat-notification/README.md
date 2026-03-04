@@ -11,24 +11,30 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ```tsx
 import BpkChatNotification from '@skyscanner/backpack-web/bpk-component-chat-notification';
 
+// Default (success) state
 export default () => (
-  <BpkChatNotification
-    label="Thanks for your feedback!"
-    errorLabel="Something went wrong. Please try again."
-  />
+  <BpkChatNotification label="Thanks for your feedback!" />
+);
+
+// Error state
+export const ErrorExample = () => (
+  <BpkChatNotification errorLabel="Something went wrong. Please try again." />
 );
 ```
 
 ## Props
 
-| Property   | PropType | Required | Default Value |
-| ---------- | -------- | -------- | ------------- |
-| label      | string   | true     | -             |
-| errorLabel | string   | true     | -             |
-| hasIssue   | boolean  | false    | false         |
+The component accepts one of two mutually exclusive shapes:
 
-## Accessibility
+**Success state**:
 
-The component uses the semantic `<output>` element with `aria-atomic="true"`, which creates a live region that announces content changes to screen readers. This ensures users with assistive technologies are notified when the notification appears.
+| Property | PropType | Required |
+| -------- | -------- | -------- |
+| label    | string   | true     |
 
-The tick icon in the success state is decorative and hidden from screen readers via `aria-hidden="true"`.
+**Error state**:
+
+| Property   | PropType | Required |
+| ---------- | -------- | -------- |
+| errorLabel | string   | true     |
+

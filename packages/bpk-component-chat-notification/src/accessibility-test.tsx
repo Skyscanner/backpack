@@ -21,21 +21,18 @@ import { axe } from 'jest-axe';
 
 import BpkChatNotification from './BpkChatNotification';
 
-const defaultProps = {
-  label: 'Thanks for your feedback!',
-  errorLabel: 'Something went wrong. Please try again.',
-};
-
 describe('BpkChatNotification accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues in the default state', async () => {
-    const { container } = render(<BpkChatNotification {...defaultProps} />);
+    const { container } = render(
+      <BpkChatNotification label="Thanks for your feedback!" />,
+    );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
   it('should not have programmatically-detectable accessibility issues in the error state', async () => {
     const { container } = render(
-      <BpkChatNotification {...defaultProps} hasIssue />,
+      <BpkChatNotification errorLabel="Something went wrong. Please try again." />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -43,10 +40,7 @@ describe('BpkChatNotification accessibility tests', () => {
 
   it('should not have programmatically-detectable accessibility issues with long label text', async () => {
     const { container } = render(
-      <BpkChatNotification
-        label="Thank you so much for taking the time to share your feedback with us today!"
-        errorLabel="Something went wrong. Please try again."
-      />,
+      <BpkChatNotification label="Thank you so much for taking the time to share your feedback with us today!" />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
