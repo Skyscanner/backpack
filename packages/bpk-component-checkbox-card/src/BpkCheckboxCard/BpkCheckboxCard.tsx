@@ -19,14 +19,9 @@
 import { Content } from './subcomponents/Content';
 import Control from './subcomponents/Control';
 import { Description } from './subcomponents/Description';
-import { Icon } from './subcomponents/Icon';
-import { Image } from './subcomponents/Image';
 import { Indicator } from './subcomponents/Indicator';
-import { Inline } from './subcomponents/Inline';
 import { Label } from './subcomponents/Label';
-import { Price } from './subcomponents/Price';
 import { Root } from './subcomponents/Root';
-import { Stack } from './subcomponents/Stack';
 
 /**
  * BpkCheckboxCard - Compound component for selectable cards.
@@ -58,14 +53,9 @@ const BpkCheckboxCard = Object.assign(Root, {
   Root,
   Control,
   Content,
-  Icon,
-  Image,
   Indicator,
   Label,
   Description,
-  Price,
-  Stack,
-  Inline,
 });
 
 export { BpkCheckboxCard };
@@ -74,14 +64,9 @@ export default BpkCheckboxCard;
 // Subcomponent prop types
 export type { RootProps, RootProps as BpkCheckboxCardRootProps } from './subcomponents/Root';
 export type { ContentProps, ContentProps as BpkCheckboxCardContentProps } from './subcomponents/Content';
-export type { IconProps, IconProps as BpkCheckboxCardIconProps } from './subcomponents/Icon';
-export type { ImageProps, ImageProps as BpkCheckboxCardImageProps } from './subcomponents/Image';
 export type { LabelProps, LabelProps as BpkCheckboxCardLabelProps } from './subcomponents/Label';
 export type { DescriptionProps, DescriptionProps as BpkCheckboxCardDescriptionProps } from './subcomponents/Description';
-export type { PriceProps, PriceProps as BpkCheckboxCardPriceProps } from './subcomponents/Price';
-export type { StackProps, StackProps as BpkCheckboxCardStackProps } from './subcomponents/Stack';
 export type { IndicatorProps } from './subcomponents/Indicator';
-export type { InlineProps } from './subcomponents/Inline';
 
 // Context and common types
 export { useCheckboxCardContext } from './subcomponents/CheckboxCardContext';

@@ -142,35 +142,6 @@
   }
 }
 
-// Icon slot
-.bpk-checkbox-card-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  color: inherit;
-
-  // Ensure SVG fills use currentColor in all states
-  svg {
-    fill: currentcolor;
-  }
-
-  &--size-sm {
-    width: calc(tokens.$bpk-one-pixel-rem * 16);
-    height: calc(tokens.$bpk-one-pixel-rem * 16);
-  }
-
-  &--size-md {
-    width: calc(tokens.$bpk-one-pixel-rem * 24);
-    height: calc(tokens.$bpk-one-pixel-rem * 24);
-  }
-
-  &--size-lg {
-    width: calc(tokens.$bpk-one-pixel-rem * 32);
-    height: calc(tokens.$bpk-one-pixel-rem * 32);
-  }
-}
-
 // Label slot
 .bpk-checkbox-card-label {
   display: -webkit-box;
@@ -211,66 +182,6 @@
   // Keep nested content centered without using !important.
   > * {
     text-align: inherit;
-  }
-}
-
-// Price slot
-.bpk-checkbox-card-price {
-  width: 100%;
-  flex-shrink: 0;
-  color: inherit;
-  text-align: center;
-
-  @include typography.bpk-heading-5;
-
-  // BpkPrice has explicit text colours; scope overrides here.
-  .bpk-price,
-  .bpk-price__price,
-  .bpk-price__trailing {
-    color: inherit;
-  }
-}
-
-// Image slot
-.bpk-checkbox-card-image {
-  width: 100%;
-  flex-shrink: 0;
-  border-radius: tokens.$bpk-border-radius-sm;
-  overflow: hidden;
-}
-
-// Stack primitive
-.bpk-checkbox-card-stack {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-
-  &--gap-sm {
-    gap: tokens.bpk-spacing-sm();
-  }
-
-  &--gap-md {
-    gap: tokens.bpk-spacing-md();
-  }
-
-  &--gap-lg {
-    gap: tokens.bpk-spacing-lg();
-  }
-
-  &--gap-xl {
-    gap: tokens.bpk-spacing-xl();
-  }
-
-  &--align-start {
-    align-items: flex-start;
-  }
-
-  &--align-center {
-    align-items: center;
-  }
-
-  &--align-end {
-    align-items: flex-end;
   }
 }
 
@@ -320,40 +231,5 @@
   // Disabled state
   .bpk-checkbox-card-root--disabled & {
     opacity: 0.5;
-  }
-}
-
-// Inline primitive
-.bpk-checkbox-card-inline {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-
-  &--gap-sm {
-    gap: tokens.bpk-spacing-sm();
-  }
-
-  &--gap-md {
-    gap: tokens.bpk-spacing-md();
-  }
-
-  &--gap-lg {
-    gap: tokens.bpk-spacing-lg();
-  }
-
-  &--gap-xl {
-    gap: tokens.bpk-spacing-xl();
-  }
-
-  &--align-start {
-    align-items: flex-start;
-  }
-
-  &--align-center {
-    align-items: center;
-  }
-
-  &--align-end {
-    align-items: flex-end;
   }
 }

@@ -17,6 +17,7 @@
  */
 
 import { BpkCheckboxCard } from '../../packages/bpk-component-checkbox-card';
+import { BpkProvider } from '../../packages/bpk-component-layout';
 
 import {
   NewAPIBasicExample,
@@ -32,6 +33,7 @@ import {
 export default {
   title: 'bpk-component-checkbox-card',
   component: BpkCheckboxCard,
+  decorators: [(Story: () => JSX.Element) => <BpkProvider><Story /></BpkProvider>],
 };
 
 // Compound Component API (V2) Examples

@@ -60,11 +60,8 @@ describe('BpkCheckboxCard (compound component)', () => {
       <BpkCheckboxCard.Root checked={false} onCheckedChange={() => {}}>
         <BpkCheckboxCard.Control />
         <BpkCheckboxCard.Content>
-          <BpkCheckboxCard.Stack gap="md" align="center">
-            <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
-            <BpkCheckboxCard.Description>Central location</BpkCheckboxCard.Description>
-            <BpkCheckboxCard.Price price="£85" />
-          </BpkCheckboxCard.Stack>
+          <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
+          <BpkCheckboxCard.Description>Central location</BpkCheckboxCard.Description>
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>,
     );

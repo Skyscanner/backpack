@@ -26,12 +26,8 @@ export { BpkCheckboxCardSimple } from './src/BpkCheckboxCardSimple/BpkCheckboxCa
 export type {
   BpkCheckboxCardRootProps,
   BpkCheckboxCardContentProps,
-  BpkCheckboxCardIconProps,
-  BpkCheckboxCardImageProps,
   BpkCheckboxCardLabelProps,
   BpkCheckboxCardDescriptionProps,
-  BpkCheckboxCardPriceProps,
-  BpkCheckboxCardStackProps,
   CheckboxCardContextValue,
 } from './src/BpkCheckboxCard';
 

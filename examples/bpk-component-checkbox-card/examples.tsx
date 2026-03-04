@@ -22,6 +22,10 @@ import { BpkCheckboxCard, CHECKBOX_CARD_THEME_ATTRIBUTES, CHECKBOX_CARD_VARIANTS
 import AirportsIconLg from '../../packages/bpk-component-icon/lg/airports';
 import CityIconLg from '../../packages/bpk-component-icon/lg/city';
 import LandmarkIconLg from '../../packages/bpk-component-icon/lg/landmark';
+import BpkImage from '../../packages/bpk-component-image';
+import { BpkVStack, BpkHStack } from '../../packages/bpk-component-layout';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkPrice from '../../packages/bpk-component-price';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../packages/bpk-theming';
 
@@ -84,16 +88,16 @@ export const NewAPIWithMultiContentExample = () => {
       >
         <BpkCheckboxCard.Control />
         <BpkCheckboxCard.Content>
-          <BpkCheckboxCard.Stack gap="md" align="center">
-            <BpkCheckboxCard.Icon icon={LandmarkIconLg} size="lg" />
-            <BpkCheckboxCard.Stack gap="sm" align="center">
+          <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
+            <LandmarkIconLg />
+            <BpkVStack gap="bpk-spacing-sm" align="center" width="100%">
               <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
               <BpkCheckboxCard.Description>
                 Central location with easy access to attractions
               </BpkCheckboxCard.Description>
-            </BpkCheckboxCard.Stack>
-            <BpkCheckboxCard.Price price="£85" />
-          </BpkCheckboxCard.Stack>
+            </BpkVStack>
+            <BpkPrice price="£85" />
+          </BpkVStack>
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>
     </div>
@@ -185,16 +189,15 @@ export const NewAPIWithImageExample = () => {
       >
         <BpkCheckboxCard.Control />
         <BpkCheckboxCard.Content>
-          <BpkCheckboxCard.Stack gap="md" align="center">
-            <BpkCheckboxCard.Image
+          <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
+            <BpkImage
               src="https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg"
-              alt="Car"
-              height={80}
+              altText="Car"
               aspectRatio={16/9}
             />
             <BpkCheckboxCard.Label>Economy</BpkCheckboxCard.Label>
-            <BpkCheckboxCard.Price price="£74" leadingText="from" />
-          </BpkCheckboxCard.Stack>
+            <BpkPrice price="£74" leadingText="from" />
+          </BpkVStack>
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>
     </div>
@@ -218,10 +221,10 @@ export const NewAPIWithInlineLayoutExample = () => {
       >
         <BpkCheckboxCard.Control />
         <BpkCheckboxCard.Content>
-          <BpkCheckboxCard.Inline gap="sm" align="center">
-            <BpkCheckboxCard.Icon icon={LandmarkIconLg} size="lg" />
+          <BpkHStack gap="bpk-spacing-sm" align="center" width="100%">
+            <LandmarkIconLg />
             <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
-          </BpkCheckboxCard.Inline>
+          </BpkHStack>
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>
     </div>
@@ -264,7 +267,7 @@ export const NewAPIWithIndicatorExample = () => {
       <p style={{ marginBottom: '16px', fontWeight: 600 }}>Select neighbourhoods</p>
       <BpkThemeProvider theme={indicatorTheme} themeAttributes={CHECKBOX_CARD_THEME_ATTRIBUTES}>
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-          {options.map(({ description, disabled, icon, id, label, price }) => (
+          {options.map(({ description, disabled, icon: CardIcon, id, label, price }) => (
             <BpkCheckboxCard.Root
               key={id}
               checked={selected.includes(id)}
@@ -276,14 +279,14 @@ export const NewAPIWithIndicatorExample = () => {
               <BpkCheckboxCard.Control />
               <BpkCheckboxCard.Indicator />
               <BpkCheckboxCard.Content>
-                <BpkCheckboxCard.Stack gap="sm" align="center">
-                  <BpkCheckboxCard.Icon icon={icon} size="lg" />
-                  <BpkCheckboxCard.Stack gap="sm" align="center">
+                <BpkVStack gap="bpk-spacing-sm" align="center" width="100%">
+                  <CardIcon />
+                  <BpkVStack gap="bpk-spacing-sm" align="center" width="100%">
                     <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
                     <BpkCheckboxCard.Description>{description}</BpkCheckboxCard.Description>
-                  </BpkCheckboxCard.Stack>
-                  <BpkCheckboxCard.Price price={price} leadingText="from" />
-                </BpkCheckboxCard.Stack>
+                  </BpkVStack>
+                  <BpkPrice price={price} leadingText="from" />
+                </BpkVStack>
               </BpkCheckboxCard.Content>
             </BpkCheckboxCard.Root>
           ))}
@@ -322,12 +325,12 @@ export const NewAPIWithSizesExample = () => {
           >
             <BpkCheckboxCard.Control />
             <BpkCheckboxCard.Content>
-              <BpkCheckboxCard.Stack gap="sm" align="center">
-                <BpkCheckboxCard.Icon icon={LandmarkIconLg} size="lg" />
+              <BpkVStack gap="bpk-spacing-sm" align="center" width="100%">
+                <LandmarkIconLg />
                 <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
                 <BpkCheckboxCard.Description>{description}</BpkCheckboxCard.Description>
-                <BpkCheckboxCard.Price price={price} />
-              </BpkCheckboxCard.Stack>
+                <BpkPrice price={price} />
+              </BpkVStack>
             </BpkCheckboxCard.Content>
           </BpkCheckboxCard.Root>
         ))}
@@ -367,11 +370,11 @@ export const NewAPIWithCustomThemeExample = () => {
           >
             <BpkCheckboxCard.Control />
             <BpkCheckboxCard.Content>
-              <BpkCheckboxCard.Stack gap="md" align="center">
-                <BpkCheckboxCard.Icon icon={LandmarkIconLg} size="lg" />
+              <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
+                <LandmarkIconLg />
                 <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
-                <BpkCheckboxCard.Price price="£85" />
-              </BpkCheckboxCard.Stack>
+                <BpkPrice price="£85" />
+              </BpkVStack>
             </BpkCheckboxCard.Content>
           </BpkCheckboxCard.Root>
 
@@ -382,11 +385,11 @@ export const NewAPIWithCustomThemeExample = () => {
           >
             <BpkCheckboxCard.Control />
             <BpkCheckboxCard.Content>
-              <BpkCheckboxCard.Stack gap="md" align="center">
-                <BpkCheckboxCard.Icon icon={LandmarkIconLg} size="lg" />
+              <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
+                <LandmarkIconLg />
                 <BpkCheckboxCard.Label>Waterfront</BpkCheckboxCard.Label>
-                <BpkCheckboxCard.Price price="£95" />
-              </BpkCheckboxCard.Stack>
+                <BpkPrice price="£95" />
+              </BpkVStack>
             </BpkCheckboxCard.Content>
           </BpkCheckboxCard.Root>
         </div>
