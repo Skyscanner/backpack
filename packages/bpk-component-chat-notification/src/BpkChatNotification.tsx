@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import { withButtonAlignment } from '../../bpk-component-icon';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
@@ -24,7 +23,6 @@ import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 import STYLES from './BpkChatNotification.module.scss';
 
 const getClassName = cssModules(STYLES);
-const AlignedTickCircleIcon = withButtonAlignment(TickCircleIcon);
 
 type SuccessProps = {
   /** Text displayed in the success state. */
@@ -52,7 +50,7 @@ const BpkChatNotification = ({
   >
     {!errorLabel && (
       <span className={getClassName('bpk-chat-notification__icon')}>
-        <AlignedTickCircleIcon aria-hidden="true" />
+        <TickCircleIcon aria-hidden="true" />
       </span>
     )}
     <BpkText

@@ -36,6 +36,7 @@
   }
 
   &__icon {
+    display: flex;
     flex-shrink: 0;
     fill: tokens.$bpk-text-on-dark-day;
   }
