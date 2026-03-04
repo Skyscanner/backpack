@@ -20,14 +20,16 @@ import { BpkCheckboxCard } from '../../packages/bpk-component-checkbox-card';
 import { BpkProvider } from '../../packages/bpk-component-layout';
 
 import {
-  NewAPIBasicExample,
-  NewAPIWithMultiContentExample,
-  NewAPIAllVariantsExample,
-  NewAPIWithImageExample,
-  NewAPIWithIndicatorExample,
-  NewAPIWithInlineLayoutExample,
-  NewAPIWithSizesExample,
-  NewAPIWithCustomThemeExample,
+  BasicExample,
+  WithMultiContentExample,
+  AllVariantsExample,
+  WithImageExample,
+  WithIndicatorExample,
+  WithInlineLayoutExample,
+  WithSizesExample,
+  WithCustomThemeExample,
+  SimpleAPIExample,
+  NeighbourhoodCardExample,
 } from './examples';
 
 export default {
@@ -36,12 +38,13 @@ export default {
   decorators: [(Story: () => JSX.Element) => <BpkProvider><Story /></BpkProvider>],
 };
 
-// Compound Component API (V2) Examples
-export const Basic = NewAPIBasicExample;
-export const WithMultiContent = NewAPIWithMultiContentExample;
-export const AllVariants = NewAPIAllVariantsExample;
-export const WithImage = NewAPIWithImageExample;
-export const WithIndicator = NewAPIWithIndicatorExample;
-export const WithInlineLayout = NewAPIWithInlineLayoutExample;
-export const WithSizes = NewAPIWithSizesExample;
-export const WithCustomTheme = NewAPIWithCustomThemeExample;
+export const Basic = BasicExample;
+export const WithMultiContent = WithMultiContentExample;
+export const AllVariants = AllVariantsExample;
+export const WithImage = WithImageExample;
+export const WithIndicator = WithIndicatorExample;
+export const WithInlineLayout = WithInlineLayoutExample;
+export const WithSizes = WithSizesExample;
+export const WithCustomTheme = WithCustomThemeExample;
+export const SimpleAPI = SimpleAPIExample;
+export const NeighbourhoodCard = NeighbourhoodCardExample;

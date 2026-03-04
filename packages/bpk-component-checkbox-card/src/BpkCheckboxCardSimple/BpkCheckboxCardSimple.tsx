@@ -55,7 +55,11 @@ export type BpkCheckboxCardSimpleProps = {
   image?: string;
 
   /**
-   * Price information (BpkPrice component or formatted string)
+   * Price content — pass a <BpkPrice /> component for correct styling.
+   * A plain string renders as unstyled text.
+   *
+   * @example
+   * price={<BpkPrice price="£85" />}
    */
   price?: ReactNode;
 
@@ -157,11 +161,11 @@ export function BpkCheckboxCardSimple({
     >
       <BpkCheckboxCard.Control />
       <BpkCheckboxCard.Content>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', width: '100%' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--bpk-spacing-sm)', width: '100%' }}>
           {icon}
           {image && <img src={image} alt="" style={{ width: '100%' }} />}
           {(label || description) && (
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', width: '100%' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--bpk-spacing-xs)', width: '100%' }}>
               {label && <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>}
               {description && (
                 <BpkCheckboxCard.Description>{description}</BpkCheckboxCard.Description>

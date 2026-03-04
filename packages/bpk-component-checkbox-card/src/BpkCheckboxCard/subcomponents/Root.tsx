@@ -268,6 +268,7 @@ export function Root({
         role="checkbox"
         aria-checked={checked}
         aria-disabled={disabled || undefined}
+        aria-required={required || undefined}
         tabIndex={disabled ? -1 : 0}
         aria-label={ariaLabel}
         aria-labelledby={ariaLabel ? undefined : computedAriaLabelledby}

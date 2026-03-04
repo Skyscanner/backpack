@@ -18,10 +18,13 @@
 
 import { useState } from 'react';
 
-import { BpkCheckboxCard, CHECKBOX_CARD_THEME_ATTRIBUTES, CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS, CHECKBOX_CARD_SIZES, createCheckboxCardTheme } from '../../packages/bpk-component-checkbox-card';
+import { statusSuccessSpotDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
+import { BpkCheckboxCard, BpkCheckboxCardSimple, CHECKBOX_CARD_THEME_ATTRIBUTES, CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS, CHECKBOX_CARD_SIZES, createCheckboxCardTheme } from '../../packages/bpk-component-checkbox-card';
 import AirportsIconLg from '../../packages/bpk-component-icon/lg/airports';
 import CityIconLg from '../../packages/bpk-component-icon/lg/city';
 import LandmarkIconLg from '../../packages/bpk-component-icon/lg/landmark';
+import TrendDownIconLg from '../../packages/bpk-component-icon/lg/trend--down';
 import BpkImage from '../../packages/bpk-component-image';
 import { BpkVStack, BpkHStack } from '../../packages/bpk-component-layout';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -34,7 +37,7 @@ import BpkThemeProvider from '../../packages/bpk-theming';
  *
  * @returns {JSX.Element} Rendered basic compound API example.
  */
-export const NewAPIBasicExample = () => {
+export const BasicExample = () => {
   const [selected1, setSelected1] = useState(false);
   const [selected2, setSelected2] = useState(true);
 
@@ -75,7 +78,7 @@ export const NewAPIBasicExample = () => {
  *
  * @returns {JSX.Element} Rendered compound API example with multiple content slots.
  */
-export const NewAPIWithMultiContentExample = () => {
+export const WithMultiContentExample = () => {
   const [selected, setSelected] = useState(false);
 
   return (
@@ -109,7 +112,7 @@ export const NewAPIWithMultiContentExample = () => {
  *
  * @returns {JSX.Element} Rendered compound API examples for all variants.
  */
-export const NewAPIAllVariantsExample = () => {
+export const AllVariantsExample = () => {
   const [selected1, setSelected1] = useState(false);
   const [selected2, setSelected2] = useState(false);
   const [selected3, setSelected3] = useState(false);
@@ -177,7 +180,7 @@ export const NewAPIAllVariantsExample = () => {
  *
  * @returns {JSX.Element} Rendered compound API example with image content.
  */
-export const NewAPIWithImageExample = () => {
+export const WithImageExample = () => {
   const [selected, setSelected] = useState(false);
 
   return (
@@ -186,6 +189,7 @@ export const NewAPIWithImageExample = () => {
         checked={selected}
         onCheckedChange={setSelected}
         variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+        width={200}
       >
         <BpkCheckboxCard.Control />
         <BpkCheckboxCard.Content>
@@ -194,6 +198,7 @@ export const NewAPIWithImageExample = () => {
               src="https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg"
               altText="Car"
               aspectRatio={16/9}
+              style={{ width: '100%' }}
             />
             <BpkCheckboxCard.Label>Economy</BpkCheckboxCard.Label>
             <BpkPrice price="£74" leadingText="from" />
@@ -209,7 +214,7 @@ export const NewAPIWithImageExample = () => {
  *
  * @returns {JSX.Element} Rendered compound API example with inline layout.
  */
-export const NewAPIWithInlineLayoutExample = () => {
+export const WithInlineLayoutExample = () => {
   const [selected, setSelected] = useState(false);
 
   return (
@@ -240,7 +245,7 @@ export const NewAPIWithInlineLayoutExample = () => {
  *
  * @returns {JSX.Element} Rendered compound API example with corner indicator.
  */
-export const NewAPIWithIndicatorExample = () => {
+export const WithIndicatorExample = () => {
   const options = [
     { id: 'city', label: 'City Centre', description: 'Best for sightseeing', icon: CityIconLg, price: '£85' },
     { id: 'landmark', label: 'Old Town', description: 'Best for culture', icon: LandmarkIconLg, price: '£78' },
@@ -301,7 +306,7 @@ export const NewAPIWithIndicatorExample = () => {
  *
  * @returns {JSX.Element} Rendered compound API example demonstrating sm/md/lg sizes.
  */
-export const NewAPIWithSizesExample = () => {
+export const WithSizesExample = () => {
   const [selected, setSelected] = useState<string>('md');
 
   const sizes = [
@@ -344,7 +349,7 @@ export const NewAPIWithSizesExample = () => {
  *
  * @returns {JSX.Element} Rendered compound API example with custom theme overrides.
  */
-export const NewAPIWithCustomThemeExample = () => {
+export const WithCustomThemeExample = () => {
   const [selected1, setSelected1] = useState(false);
   const [selected2, setSelected2] = useState(true);
 
@@ -394,6 +399,90 @@ export const NewAPIWithCustomThemeExample = () => {
           </BpkCheckboxCard.Root>
         </div>
       </BpkThemeProvider>
+    </div>
+  );
+};
+
+/**
+ * BpkCheckboxCardSimple - Simple Props API
+ *
+ * @returns {JSX.Element} Rendered simple API examples.
+ */
+export const SimpleAPIExample = () => {
+  const [selected1, setSelected1] = useState(false);
+  const [selected2, setSelected2] = useState(true);
+  const [selected3, setSelected3] = useState(false);
+
+  return (
+    <div style={{ padding: '24px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+      <BpkCheckboxCardSimple
+        checked={selected1}
+        onChange={setSelected1}
+        label="City Centre"
+        description="Best for sightseeing"
+        price={<BpkPrice price="£85" leadingText="from" />}
+      />
+      <BpkCheckboxCardSimple
+        checked={selected2}
+        onChange={setSelected2}
+        label="Airport Area"
+        description="Best for transit"
+        price={<BpkPrice price="£60" leadingText="from" />}
+      />
+      <BpkCheckboxCardSimple
+        checked={selected3}
+        onChange={setSelected3}
+        label="Old Town"
+        description="Cannot be booked"
+        price={<BpkPrice price="£78" leadingText="from" />}
+        disabled
+      />
+    </div>
+  );
+};
+
+/**
+ * Neighbourhood card example — compact location card with price trend,
+ * similar to a map overlay chip.
+ *
+ * @returns {JSX.Element} Rendered neighbourhood card examples.
+ */
+export const NeighbourhoodCardExample = () => {
+  const neighbourhoods = [
+    { id: 'westminster', name: 'City Of Westminster', count: 158, avgPrice: '£85', trend: 'down' as const },
+    { id: 'shoreditch', name: 'Shoreditch', count: 94, avgPrice: '£72', trend: 'down' as const },
+    { id: 'mayfair', name: 'Mayfair', count: 42, avgPrice: '£120', trend: 'down' as const },
+  ];
+
+  const [selected, setSelected] = useState<string[]>(['westminster']);
+
+  const toggle = (id: string) => {
+    setSelected((prev) =>
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
+    );
+  };
+
+  return (
+    <div style={{ padding: '24px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+      {neighbourhoods.map(({ avgPrice, count, id, name }) => (
+        <BpkCheckboxCard.Root
+          key={id}
+          checked={selected.includes(id)}
+          onCheckedChange={() => toggle(id)}
+          variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+        >
+          <BpkCheckboxCard.Control />
+          <BpkCheckboxCard.Content>
+            <BpkVStack gap="bpk-spacing-sm" align="start" width="100%">
+              <BpkCheckboxCard.Label>{`${name} (${count})`}</BpkCheckboxCard.Label>
+              <BpkHStack gap="bpk-spacing-sm" align="center">
+                <TrendDownIconLg style={{ color: statusSuccessSpotDay, width: '16px', height: '16px' }} />
+                <span style={{ color: statusSuccessSpotDay, fontSize: '12px', fontWeight: 600 }}>{avgPrice} avg.</span>
+              </BpkHStack>
+            </BpkVStack>
+          </BpkCheckboxCard.Content>
+        </BpkCheckboxCard.Root>
+      ))}
     </div>
   );
 };
