@@ -33,10 +33,10 @@ import { Root } from './subcomponents/Root';
  * <BpkCheckboxCard.Root checked={selected} onCheckedChange={setSelected}>
  *   <BpkCheckboxCard.Control />
  *   <BpkCheckboxCard.Content>
- *     <BpkCheckboxCard.Stack gap="md" align="center">
+ *     <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
  *       <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
- *       <BpkCheckboxCard.Price price="£85" />
- *     </BpkCheckboxCard.Stack>
+ *       <BpkPrice price="£85" />
+ *     </BpkVStack>
  *   </BpkCheckboxCard.Content>
  * </BpkCheckboxCard.Root>
  *

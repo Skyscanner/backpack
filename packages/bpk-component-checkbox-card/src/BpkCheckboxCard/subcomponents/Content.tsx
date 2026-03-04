@@ -44,11 +44,11 @@ export type ContentProps = {
  *
  * @example Basic usage
  * <BpkCheckboxCard.Content>
- *   <BpkCheckboxCard.Stack gap="md" align="center">
- *     <BpkCheckboxCard.Icon><LandmarkIcon /></BpkCheckboxCard.Icon>
+ *   <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
+ *     <LandmarkIcon />
  *     <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
- *     <BpkCheckboxCard.Price>£85</BpkCheckboxCard.Price>
- *   </BpkCheckboxCard.Stack>
+ *     <BpkPrice price="£85" />
+ *   </BpkVStack>
  * </BpkCheckboxCard.Content>
  */
 export function Content({

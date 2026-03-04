@@ -20,6 +20,7 @@
 import { useState } from 'react';
 
 import { BpkCheckboxCard, CHECKBOX_CARD_VARIANTS } from '../../../packages/bpk-component-checkbox-card';
+import { BpkVStack } from '../../../packages/bpk-component-layout';
 
 export const OnCanvasDefaultVariant = () => {
   const [selected, setSelected] = useState(false);
@@ -32,11 +33,11 @@ export const OnCanvasDefaultVariant = () => {
     >
       <BpkCheckboxCard.Control />
       <BpkCheckboxCard.Content>
-        <BpkCheckboxCard.Stack gap="md" align="center">
+        <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
           <BpkCheckboxCard.Label>On canvas default</BpkCheckboxCard.Label>
           <BpkCheckboxCard.Description>Standard background</BpkCheckboxCard.Description>
-          <BpkCheckboxCard.Price price="£100" />
-        </BpkCheckboxCard.Stack>
+          <span>£100</span>
+        </BpkVStack>
       </BpkCheckboxCard.Content>
     </BpkCheckboxCard.Root>
   );
@@ -53,11 +54,11 @@ export const OnCanvasContrastVariant = () => {
     >
       <BpkCheckboxCard.Control />
       <BpkCheckboxCard.Content>
-        <BpkCheckboxCard.Stack gap="md" align="center">
+        <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
           <BpkCheckboxCard.Label>On canvas contrast</BpkCheckboxCard.Label>
           <BpkCheckboxCard.Description>Contrast background, border on hover</BpkCheckboxCard.Description>
-          <BpkCheckboxCard.Price price="£85" />
-        </BpkCheckboxCard.Stack>
+          <span>£85</span>
+        </BpkVStack>
       </BpkCheckboxCard.Content>
     </BpkCheckboxCard.Root>
   );
@@ -75,11 +76,11 @@ export const OnSurfaceContrastVariant = () => {
       >
         <BpkCheckboxCard.Control />
         <BpkCheckboxCard.Content>
-          <BpkCheckboxCard.Stack gap="md" align="center">
+          <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
             <BpkCheckboxCard.Label>On surface contrast</BpkCheckboxCard.Label>
             <BpkCheckboxCard.Description>For use on dark backgrounds</BpkCheckboxCard.Description>
-            <BpkCheckboxCard.Price price="£122" />
-          </BpkCheckboxCard.Stack>
+            <span>£122</span>
+          </BpkVStack>
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>
     </div>
@@ -91,19 +92,19 @@ export const AllVariantsSelected = () => (
     <BpkCheckboxCard.Root checked onCheckedChange={() => {}} variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}>
       <BpkCheckboxCard.Control />
       <BpkCheckboxCard.Content>
-        <BpkCheckboxCard.Stack gap="md" align="center">
+        <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
           <BpkCheckboxCard.Label>Selected — on canvas default</BpkCheckboxCard.Label>
-          <BpkCheckboxCard.Price price="£100" />
-        </BpkCheckboxCard.Stack>
+          <span>£100</span>
+        </BpkVStack>
       </BpkCheckboxCard.Content>
     </BpkCheckboxCard.Root>
     <BpkCheckboxCard.Root checked onCheckedChange={() => {}} variant={CHECKBOX_CARD_VARIANTS.onCanvasContrast}>
       <BpkCheckboxCard.Control />
       <BpkCheckboxCard.Content>
-        <BpkCheckboxCard.Stack gap="md" align="center">
+        <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
           <BpkCheckboxCard.Label>Selected — on canvas contrast</BpkCheckboxCard.Label>
-          <BpkCheckboxCard.Price price="£85" />
-        </BpkCheckboxCard.Stack>
+          <span>£85</span>
+        </BpkVStack>
       </BpkCheckboxCard.Content>
     </BpkCheckboxCard.Root>
   </div>

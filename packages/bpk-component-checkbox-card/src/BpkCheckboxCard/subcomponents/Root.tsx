@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { CSSProperties, ReactNode } from 'react';
+import type { CSSProperties, KeyboardEvent, ReactNode } from 'react';
 import { useState, useId, useCallback, useMemo } from 'react';
 
 import { cssModules } from '../../../../bpk-react-utils';
@@ -248,14 +248,37 @@ export function Root({
     ]
   );
 
+  const handleClick = useCallback(() => {
+    handleCheckedChange(!checked);
+  }, [checked, handleCheckedChange]);
+
+  const handleKeyDown = useCallback((event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === ' ' || event.key === 'Enter') {
+      event.preventDefault();
+      handleCheckedChange(!checked);
+    }
+  }, [checked, handleCheckedChange]);
+
+  const computedAriaLabelledby = ariaLabelledby ?? labelId;
+  const computedAriaDescribedby = ariaDescribedby ?? descriptionId;
+
   return (
     <CheckboxCardContext.Provider value={contextValue}>
-      <label
+      <div
+        role="checkbox"
+        aria-checked={checked}
+        aria-disabled={disabled || undefined}
+        tabIndex={disabled ? -1 : 0}
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabel ? undefined : computedAriaLabelledby}
+        aria-describedby={computedAriaDescribedby}
         className={rootClassName}
         style={Object.keys(customStyles).length > 0 ? customStyles : undefined}
+        onClick={handleClick}
+        onKeyDown={handleKeyDown}
       >
         {children}
-      </label>
+      </div>
     </CheckboxCardContext.Provider>
   );
 }

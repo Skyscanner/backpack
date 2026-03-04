@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import type { ChangeEvent } from 'react';
-
 import { cssModules } from '../../../../bpk-react-utils';
 
 import { useCheckboxCardContext } from './CheckboxCardContext';
@@ -27,49 +25,27 @@ import STYLES from '../BpkCheckboxCard.module.scss';
 const getClassName = cssModules(STYLES);
 
 /**
- * BpkCheckboxCard.Control - Hidden checkbox input element
+ * BpkCheckboxCard.Control - Hidden checkbox input for form submission
  *
- * This component renders the actual checkbox input that maintains the form state.
- * It is visually hidden but remains accessible to screen readers and keyboard navigation.
- *
- * The control automatically connects to the parent Root component via Context,
- * inheriting checked state, disabled state, and other properties.
- *
- * @example
- * <BpkCheckboxCard.Root checked={selected} onCheckedChange={setSelected}>
- *   <BpkCheckboxCard.Control />
- *   <BpkCheckboxCard.Content>
- *     <BpkCheckboxCard.Label>Option</BpkCheckboxCard.Label>
- *   </BpkCheckboxCard.Content>
- * </BpkCheckboxCard.Root>
+ * This component renders a hidden checkbox input that maintains form state.
+ * Accessibility (role, aria-checked, keyboard) is handled by the Root div.
+ * The input is aria-hidden so screen readers interact with the Root instead.
  *
  * @returns {JSX.Element} Rendered hidden checkbox input control.
  */
 export default function Control() {
   const {
-    ariaDescribedby,
-    ariaLabel,
-    ariaLabelledby,
     checked,
-    controlId,
-    descriptionId,
     disabled,
-    labelId,
     name,
-    onCheckedChange,
     required,
     value,
   } = useCheckboxCardContext();
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    onCheckedChange(event.target.checked);
-  };
 
   const className = getClassName('bpk-checkbox-card-control');
 
   return (
     <input
-      id={controlId}
       type="checkbox"
       className={className}
       checked={checked}
@@ -77,10 +53,9 @@ export default function Control() {
       required={required}
       name={name}
       value={value}
-      onChange={handleChange}
-      aria-label={ariaLabel}
-      aria-labelledby={ariaLabelledby ?? labelId}
-      aria-describedby={ariaDescribedby ?? descriptionId}
+      aria-hidden
+      tabIndex={-1}
+      onChange={() => {}}
     />
   );
 }

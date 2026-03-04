@@ -18,7 +18,7 @@
 
 import figma from '@figma/code-connect';
 
-import BpkCheckboxCard, { CHECKBOX_CARD_VARIANTS } from './BpkCheckboxCard';
+import { BpkCheckboxCard, CHECKBOX_CARD_VARIANTS } from './BpkCheckboxCard';
 
 figma.connect(
   BpkCheckboxCard,
@@ -34,12 +34,18 @@ figma.connect(
       disabled: figma.boolean('Disabled'),
       label: figma.textContent('Label'),
     },
-    example: (props) => (
-      <BpkCheckboxCard
-        {...props}
-        onChange={() => {}}
-        price="£100"
-      />
+    example: ({ checked, disabled, label, variant }) => (
+      <BpkCheckboxCard.Root
+        checked={checked}
+        onCheckedChange={() => {}}
+        variant={variant}
+        disabled={disabled}
+      >
+        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.Content>
+          <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
+        </BpkCheckboxCard.Content>
+      </BpkCheckboxCard.Root>
     ),
   },
 );

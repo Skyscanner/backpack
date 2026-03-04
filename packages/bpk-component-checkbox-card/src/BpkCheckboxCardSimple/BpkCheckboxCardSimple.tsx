@@ -142,11 +142,6 @@ export function BpkCheckboxCardSimple({
   variant,
   width,
 }: BpkCheckboxCardSimpleProps) {
-  const normalizedPrice =
-    typeof price === 'string' || typeof price === 'number'
-      ? String(price)
-      : null;
-
   return (
     <BpkCheckboxCard.Root
       checked={checked}
@@ -162,20 +157,19 @@ export function BpkCheckboxCardSimple({
     >
       <BpkCheckboxCard.Control />
       <BpkCheckboxCard.Content>
-        <BpkCheckboxCard.Stack gap="md" align="center">
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', width: '100%' }}>
           {icon}
-          {image && <BpkCheckboxCard.Image src={image} alt="" />}
+          {image && <img src={image} alt="" style={{ width: '100%' }} />}
           {(label || description) && (
-            <BpkCheckboxCard.Stack gap="sm" align="center">
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', width: '100%' }}>
               {label && <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>}
               {description && (
                 <BpkCheckboxCard.Description>{description}</BpkCheckboxCard.Description>
               )}
-            </BpkCheckboxCard.Stack>
+            </div>
           )}
-          {normalizedPrice && <BpkCheckboxCard.Price price={normalizedPrice} />}
-          {!normalizedPrice && price}
-        </BpkCheckboxCard.Stack>
+          {price}
+        </div>
       </BpkCheckboxCard.Content>
     </BpkCheckboxCard.Root>
   );

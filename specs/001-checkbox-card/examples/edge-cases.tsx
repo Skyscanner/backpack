@@ -20,6 +20,7 @@
 import { useState } from 'react';
 
 import { BpkCheckboxCard, BpkCheckboxCardSimple } from '../../../packages/bpk-component-checkbox-card';
+import { BpkVStack } from '../../../packages/bpk-component-layout';
 
 export const ExtremelyLongText = () => {
   const [selected, setSelected] = useState(false);
@@ -28,15 +29,15 @@ export const ExtremelyLongText = () => {
     <BpkCheckboxCard.Root checked={selected} onCheckedChange={setSelected}>
       <BpkCheckboxCard.Control />
       <BpkCheckboxCard.Content>
-        <BpkCheckboxCard.Stack gap="md" align="center">
+        <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
           <BpkCheckboxCard.Label>
             This is an extremely long label that will definitely exceed the maximum line count and should be truncated with an ellipsis to prevent layout breaking
           </BpkCheckboxCard.Label>
           <BpkCheckboxCard.Description>
             This is also a very long description that goes on and on and on and should also be truncated after a certain number of lines to maintain a consistent card height
           </BpkCheckboxCard.Description>
-          <BpkCheckboxCard.Price price="£9,999" />
-        </BpkCheckboxCard.Stack>
+          <span>£9,999</span>
+        </BpkVStack>
       </BpkCheckboxCard.Content>
     </BpkCheckboxCard.Root>
   );
@@ -53,7 +54,7 @@ export const MissingLabel = () => {
     >
       <BpkCheckboxCard.Control />
       <BpkCheckboxCard.Content>
-        <BpkCheckboxCard.Price price="£100" />
+        <span>£100</span>
       </BpkCheckboxCard.Content>
     </BpkCheckboxCard.Root>
   );
@@ -66,10 +67,10 @@ export const MissingPrice = () => {
     <BpkCheckboxCard.Root checked={selected} onCheckedChange={setSelected}>
       <BpkCheckboxCard.Control />
       <BpkCheckboxCard.Content>
-        <BpkCheckboxCard.Stack gap="sm" align="center">
+        <BpkVStack gap="bpk-spacing-sm" align="center" width="100%">
           <BpkCheckboxCard.Label>No price provided</BpkCheckboxCard.Label>
           <BpkCheckboxCard.Description>This card has no price information</BpkCheckboxCard.Description>
-        </BpkCheckboxCard.Stack>
+        </BpkVStack>
       </BpkCheckboxCard.Content>
     </BpkCheckboxCard.Root>
   );

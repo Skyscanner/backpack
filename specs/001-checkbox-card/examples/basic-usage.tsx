@@ -20,6 +20,7 @@
 import { useState } from 'react';
 
 import { BpkCheckboxCard, BpkCheckboxCardSimple } from '../../../packages/bpk-component-checkbox-card';
+import { BpkVStack } from '../../../packages/bpk-component-layout';
 
 export const BasicUsage = () => {
   const [selected, setSelected] = useState(false);
@@ -31,10 +32,10 @@ export const BasicUsage = () => {
     >
       <BpkCheckboxCard.Control />
       <BpkCheckboxCard.Content>
-        <BpkCheckboxCard.Stack gap="md" align="center">
+        <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
           <BpkCheckboxCard.Label>Select this option</BpkCheckboxCard.Label>
-          <BpkCheckboxCard.Price price="£100" />
-        </BpkCheckboxCard.Stack>
+          <span>£100</span>
+        </BpkVStack>
       </BpkCheckboxCard.Content>
     </BpkCheckboxCard.Root>
   );
@@ -50,11 +51,11 @@ export const WithDescription = () => {
     >
       <BpkCheckboxCard.Control />
       <BpkCheckboxCard.Content>
-        <BpkCheckboxCard.Stack gap="md" align="center">
+        <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
           <BpkCheckboxCard.Label>Premium option</BpkCheckboxCard.Label>
           <BpkCheckboxCard.Description>Includes breakfast and parking</BpkCheckboxCard.Description>
-          <BpkCheckboxCard.Price price="£150" />
-        </BpkCheckboxCard.Stack>
+          <span>£150</span>
+        </BpkVStack>
       </BpkCheckboxCard.Content>
     </BpkCheckboxCard.Root>
   );

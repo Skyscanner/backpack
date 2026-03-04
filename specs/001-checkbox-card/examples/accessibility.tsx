@@ -73,7 +73,7 @@ export const WithAriaLabel = () => {
       >
         <BpkCheckboxCard.Control />
         <BpkCheckboxCard.Content>
-          <BpkCheckboxCard.Price price="£100" />
+          <span>£100</span>
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>
     </div>
