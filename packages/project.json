@@ -1,0 +1,102 @@
+{
+  "name": "backpack",
+  "root": "packages",
+  "sourceRoot": "packages",
+  "projectType": "library",
+  "tags": ["scope:backpack-web", "type:library"],
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npm run build:copy-normal_css",
+          "npm run build:gulp",
+          "npm run build:sass",
+          "npm run build:stylesheets"
+        ],
+        "cwd": ".",
+        "parallel": false
+      },
+      "inputs": ["production", "sharedGlobals"],
+      "outputs": [
+        "{workspaceRoot}/packages/bpk-component-icon/lg",
+        "{workspaceRoot}/packages/bpk-component-icon/sm",
+        "{workspaceRoot}/packages/bpk-component-spinner/src/spinners",
+        "{workspaceRoot}/packages/bpk-component-flare/src/__generated__",
+        "{workspaceRoot}/packages/bpk-stylesheets"
+      ],
+      "cache": true
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run jest",
+        "cwd": "."
+      },
+      "inputs": ["default", "sharedGlobals"],
+      "cache": true
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npm run lint:js",
+          "npm run lint:scss"
+        ],
+        "cwd": ".",
+        "parallel": false
+      },
+      "inputs": ["default", "sharedGlobals"],
+      "cache": true
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run typecheck",
+        "cwd": "."
+      },
+      "inputs": ["default", "sharedGlobals"],
+      "cache": true
+    },
+    "transpile": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "commands": [
+          "npm run transpile:clean",
+          "npm run transpile:js",
+          "npm run transpile:dts",
+          "npm run transpile:imports",
+          "npm run transpile:copy-css",
+          "npm run transpile:copy-utils",
+          "npm run transpile:copy-package-json",
+          "npm run transpile:copy-readme"
+        ],
+        "cwd": ".",
+        "parallel": false
+      },
+      "inputs": ["production", "sharedGlobals"],
+      "outputs": ["{workspaceRoot}/dist"],
+      "cache": true
+    },
+    "storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run storybook",
+        "cwd": "."
+      },
+      "cache": false
+    },
+    "storybook-build": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "npm run storybook:dist",
+        "cwd": "."
+      },
+      "inputs": ["default", "sharedGlobals"],
+      "outputs": ["{workspaceRoot}/dist-storybook"],
+      "cache": true
+    }
+  }
+}

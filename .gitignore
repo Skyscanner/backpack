@@ -22,3 +22,7 @@ yarn.lock
 !packages/bpk-stylesheets/base.css
 /packages/bpk-stylesheets/normalize.scss
 .copilot-progress
+
+# NX
+.nx/cache
+.nx/workspace-data

@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "license": "Apache-2.0",
   "private": true,
+  "workspaces": [
+    "packages"
+  ],
   "engines": {
     "node": ">=18.20.4",
     "npm": ">=10.7.0"
@@ -26,7 +29,7 @@
     "check-pristine": "node scripts/check-pristine-state",
     "clean": "npm run clean:dist && npm run clean:node_modules",
     "clean:dist": "rm -rf dist",
-    "clean:node_modules": "rm -rf packages/node_modules && rm -rf node_modules",
+    "clean:node_modules": "rm -rf node_modules",
     "danger": "danger ci",
     "fix-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js --fix",
     "upgrade-foundations": "node scripts/npm/check-bpk-dependencies.js --fix --upgrade-foundations",
@@ -40,7 +43,6 @@
     "lint:scss": "stylelint 'packages/**/*.scss'",
     "lint:scss:fix": "stylelint 'packages/**/*.scss' --fix",
     "lint-staged": "lint-staged",
-    "postinstall": "(cd packages && npm install)",
     "prettier": "prettier --config .prettierrc --write \"**/*.(js|ts|tsx)\"",
     "start": "npm run build && npm run storybook",
     "storybook": "storybook dev -p 9001",
@@ -59,7 +61,16 @@
     "transpile:copy-css": "node scripts/transpilation/copy-css.js",
     "transpile:copy-utils": "node scripts/transpilation/copy-utils.js",
     "transpile:copy-package-json": "cp ./packages/package.json ./dist/",
-    "transpile:copy-readme": "cp packages/README.md ./dist/"
+    "transpile:copy-readme": "cp packages/README.md ./dist/",
+    "nx:build": "nx build backpack",
+    "nx:test": "nx test backpack",
+    "nx:lint": "nx lint backpack",
+    "nx:typecheck": "nx typecheck backpack",
+    "nx:transpile": "nx transpile backpack",
+    "nx:storybook": "nx storybook backpack",
+    "nx:affected:test": "nx affected -t test",
+    "nx:affected:lint": "nx affected -t lint",
+    "nx:affected:build": "nx affected -t build"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -165,6 +176,7 @@
     "lodash": "^4.17.20",
     "mini-css-extract-plugin": "^2.9.0",
     "npm-run-all": "^4.1.5",
+    "nx": "^22.5.3",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^8.2.0",
     "prop-types": "^15.7.2",

@@ -38,8 +38,8 @@ jobs:
         with:
           path: |
             node_modules/
-            packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+            .nx/cache
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
 
       - name: Setup logs directory
         run: mkdir logs
@@ -89,8 +89,8 @@ jobs:
         with:
           path: |
             node_modules/
-            packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+            .nx/cache
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
 
       - name: Download artifacts
         uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
@@ -138,8 +138,8 @@ jobs:
         with:
           path: |
             node_modules/
-            packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+            .nx/cache
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
 
       - name: Restore Cache
         uses: actions/cache/restore@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
