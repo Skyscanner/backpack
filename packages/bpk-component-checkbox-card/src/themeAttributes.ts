@@ -16,28 +16,42 @@
  * limitations under the License.
  */
 
+import {
+  canvasDay,
+  coreAccentDay,
+  colorWhite,
+  lineDay,
+  surfaceContrastDay,
+  surfaceLowContrastDay,
+  textDisabledDay,
+  textOnDarkDay,
+  textPrimaryDay,
+  textSecondaryDay,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
 /**
  * Theme attributes for BpkCheckboxCard component.
  *
  * These attributes can be customized using BpkThemeProvider to override
  * the default colors and styles of the checkbox card.
  *
+ * Use `createCheckboxCardTheme` to build a partial theme — only specify
+ * the attributes you want to change; the rest fall back to design tokens.
+ *
  * @example
  * import BpkThemeProvider from '@skyscanner/backpack-web/bpk-theming';
- * import { BpkCheckboxCard, CHECKBOX_CARD_THEME_ATTRIBUTES } from '@skyscanner/backpack-web/bpk-component-checkbox-card';
+ * import {
+ *   BpkCheckboxCard,
+ *   CHECKBOX_CARD_THEME_ATTRIBUTES,
+ *   createCheckboxCardTheme,
+ * } from '@skyscanner/backpack-web/bpk-component-checkbox-card';
  *
- * const theme = {
- *   checkboxCardBgDefault: '#FFFFFF',
- *   checkboxCardFgDefault: '#111236',
- *   checkboxCardBgHover: '#F1F2F8',
- *   checkboxCardBgChecked: '#0062E3',
- *   checkboxCardFgChecked: '#FFFFFF',
- *   checkboxCardBorderDefault: '#B2B2BF',
- *   checkboxCardBorderHover: '#B2B2BF',
- *   checkboxCardBorderChecked: 'transparent',
- *   checkboxCardBgDisabled: '#F1F2F8',
- *   checkboxCardFgDisabled: '#B2B2BF',
- * };
+ * const theme = createCheckboxCardTheme({
+ *   checkboxCardBgChecked: '#FFFFFF',
+ *   checkboxCardFgChecked: '#111236',
+ *   checkboxCardBorderChecked: '#111236',
+ *   checkboxCardIndicatorColor: '#111236',
+ * });
  *
  * <BpkThemeProvider theme={theme} themeAttributes={CHECKBOX_CARD_THEME_ATTRIBUTES}>
  *   <BpkCheckboxCard.Root>
@@ -57,6 +71,46 @@ const CHECKBOX_CARD_THEME_ATTRIBUTES = [
   'checkboxCardBorderChecked',
   'checkboxCardBgDisabled',
   'checkboxCardFgDisabled',
-];
+  'checkboxCardIndicatorColor',
+  'checkboxCardIndicatorFg',
+] as const;
+
+type CheckboxCardThemeKey = (typeof CHECKBOX_CARD_THEME_ATTRIBUTES)[number];
+type CheckboxCardTheme = Record<CheckboxCardThemeKey, string>;
+
+/** Default theme values matching the SCSS token fallbacks */
+const CHECKBOX_CARD_DEFAULT_THEME: CheckboxCardTheme = {
+  checkboxCardBgDefault: canvasDay,
+  checkboxCardFgDefault: textPrimaryDay,
+  checkboxCardFgSecondary: textSecondaryDay,
+  checkboxCardBgHover: surfaceLowContrastDay,
+  checkboxCardBorderDefault: lineDay,
+  checkboxCardBorderHover: lineDay,
+  checkboxCardBgChecked: surfaceContrastDay,
+  checkboxCardFgChecked: textOnDarkDay,
+  checkboxCardBorderChecked: 'transparent',
+  checkboxCardBgDisabled: canvasDay,
+  checkboxCardFgDisabled: textDisabledDay,
+  checkboxCardIndicatorColor: coreAccentDay,
+  checkboxCardIndicatorFg: colorWhite,
+};
+
+/**
+ * Creates a complete BpkCheckboxCard theme by merging your overrides with the
+ * default design-token values. Pass only the attributes you want to change.
+ *
+ * @example
+ * const theme = createCheckboxCardTheme({
+ *   checkboxCardBgChecked: '#FFFFFF',
+ *   checkboxCardBorderChecked: '#111236',
+ *   checkboxCardIndicatorColor: '#111236',
+ * });
+ */
+
+export function createCheckboxCardTheme(
+  overrides: Partial<CheckboxCardTheme> = {},
+): CheckboxCardTheme {
+  return { ...CHECKBOX_CARD_DEFAULT_THEME, ...overrides };
+}
 
 export default CHECKBOX_CARD_THEME_ATTRIBUTES;

@@ -49,6 +49,18 @@ export type CheckboxCardContextValue = {
   /** Callback when checked state changes */
   onCheckedChange: (checked: boolean) => void;
 
+  /** Whether the checkbox is required */
+  required: boolean;
+
+  /** aria-label forwarded to the hidden input */
+  ariaLabel?: string;
+
+  /** aria-labelledby forwarded to the hidden input */
+  ariaLabelledby?: string;
+
+  /** aria-describedby forwarded to the hidden input */
+  ariaDescribedby?: string;
+
   /** Unique ID for the label element */
   labelId: string;
 

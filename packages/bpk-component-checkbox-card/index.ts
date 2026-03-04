@@ -46,6 +46,6 @@ export {
   useCheckboxCardContext,
 } from './src/BpkCheckboxCard';
 
-// Export theme attributes for BpkThemeProvider
-export { default as CHECKBOX_CARD_THEME_ATTRIBUTES } from './src/themeAttributes';
+// Export theme attributes and helper for BpkThemeProvider
+export { default as CHECKBOX_CARD_THEME_ATTRIBUTES, createCheckboxCardTheme } from './src/themeAttributes';
 

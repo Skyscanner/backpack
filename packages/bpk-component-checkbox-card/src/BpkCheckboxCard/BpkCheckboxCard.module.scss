@@ -275,28 +275,30 @@
 }
 
 // Indicator - visual corner indicator (top-right)
+// Hidden when unchecked; appears with checkmark when checked.
 .bpk-checkbox-card-indicator {
   position: absolute;
   top: tokens.bpk-spacing-md();
   right: tokens.bpk-spacing-md();
-  display: flex;
+  display: none; // Hidden by default
   width: calc(tokens.$bpk-one-pixel-rem * 20);
   height: calc(tokens.$bpk-one-pixel-rem * 20);
   justify-content: center;
   align-items: center;
-  transition:
-    background-color tokens.$bpk-duration-sm ease-in-out,
-    border-color tokens.$bpk-duration-sm ease-in-out;
-  border: calc(tokens.$bpk-one-pixel-rem * 2) solid tokens.$bpk-line-day;
-  border-radius: tokens.$bpk-border-radius-sm;
-  background-color: transparent;
+  border: calc(tokens.$bpk-one-pixel-rem * 2) solid
+    var(--bpk-checkbox-card-indicator-color, #{tokens.$bpk-core-accent-day});
+  border-radius: 50%;
+  background-color: var(
+    --bpk-checkbox-card-indicator-color,
+    #{tokens.$bpk-core-accent-day}
+  );
   box-sizing: border-box;
   pointer-events: none;
 
-  // Checkmark (CSS border trick)
+  // Check mark (CSS border trick)
   &::after {
     content: '';
-    display: none;
+    display: block;
     width: calc(tokens.$bpk-one-pixel-rem * 5);
     height: calc(tokens.$bpk-one-pixel-rem * 9);
     transform: rotate(45deg)
@@ -304,19 +306,15 @@
         calc(tokens.$bpk-one-pixel-rem * -1),
         calc(tokens.$bpk-one-pixel-rem * -2)
       );
-    border: solid tokens.$bpk-color-white;
+    border: solid
+      var(--bpk-checkbox-card-indicator-fg, #{tokens.$bpk-color-white});
     border-width: 0 calc(tokens.$bpk-one-pixel-rem * 2)
       calc(tokens.$bpk-one-pixel-rem * 2) 0;
   }
 
-  // Checked state - driven by Root's modifier class
+  // Checked state — show the indicator
   .bpk-checkbox-card-root--checked & {
-    border-color: tokens.$bpk-core-accent-day;
-    background-color: tokens.$bpk-core-accent-day;
-
-    &::after {
-      display: block;
-    }
+    display: flex;
   }
 
   // Disabled state

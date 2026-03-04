@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { CSSProperties, KeyboardEvent, ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { useState, useId, useCallback, useMemo } from 'react';
 
 import { cssModules } from '../../../../bpk-react-utils';
@@ -210,7 +210,7 @@ export function Root({
     return styles;
   }, [width, height]);
 
-  // Context value
+  // Context value — aria props forwarded to the hidden input in Control
   const contextValue = useMemo(
     () => ({
       checked,
@@ -220,6 +220,10 @@ export function Root({
       size,
       name,
       value,
+      required,
+      ariaLabel,
+      ariaLabelledby,
+      ariaDescribedby,
       onCheckedChange: handleCheckedChange,
       labelId,
       descriptionId,
@@ -233,6 +237,10 @@ export function Root({
       size,
       name,
       value,
+      required,
+      ariaLabel,
+      ariaLabelledby,
+      ariaDescribedby,
       handleCheckedChange,
       labelId,
       descriptionId,
@@ -240,44 +248,14 @@ export function Root({
     ]
   );
 
-  // Handle click on root container
-  const handleClick = useCallback(() => {
-    if (!disabled) {
-      handleCheckedChange(!checked);
-    }
-  }, [checked, disabled, handleCheckedChange]);
-
-  // Handle keyboard events
-  const handleKeyDown = useCallback(
-    (event: KeyboardEvent) => {
-      if (!disabled && (event.key === ' ' || event.key === 'Enter')) {
-        event.preventDefault();
-        handleCheckedChange(!checked);
-      }
-    },
-    [checked, disabled, handleCheckedChange]
-  );
-
   return (
     <CheckboxCardContext.Provider value={contextValue}>
-      <div
+      <label
         className={rootClassName}
         style={Object.keys(customStyles).length > 0 ? customStyles : undefined}
-        onClick={handleClick}
-        onKeyDown={handleKeyDown}
-        role="checkbox"
-        aria-checked={checked}
-        aria-required={required || undefined}
-        aria-disabled={disabled || undefined}
-        aria-label={ariaLabel}
-        aria-labelledby={ariaLabelledby}
-        aria-describedby={ariaDescribedby}
-        tabIndex={disabled ? -1 : 0}
-        data-checked={checked || undefined}
-        data-disabled={disabled || undefined}
       >
         {children}
-      </div>
+      </label>
     </CheckboxCardContext.Provider>
   );
 }

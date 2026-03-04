@@ -18,13 +18,12 @@
 
 import { useState } from 'react';
 
-import { BpkCheckboxCard, CHECKBOX_CARD_THEME_ATTRIBUTES, CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS, CHECKBOX_CARD_SIZES } from '../../packages/bpk-component-checkbox-card';
+import { BpkCheckboxCard, CHECKBOX_CARD_THEME_ATTRIBUTES, CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS, CHECKBOX_CARD_SIZES, createCheckboxCardTheme } from '../../packages/bpk-component-checkbox-card';
 import AirportsIconLg from '../../packages/bpk-component-icon/lg/airports';
 import CityIconLg from '../../packages/bpk-component-icon/lg/city';
 import LandmarkIconLg from '../../packages/bpk-component-icon/lg/landmark';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../packages/bpk-theming';
-
 
 /**
  * New Compound Component API - Basic Example
@@ -253,34 +252,43 @@ export const NewAPIWithIndicatorExample = () => {
     );
   };
 
+  const indicatorTheme = createCheckboxCardTheme({
+    checkboxCardBgChecked: '#FFFFFF',
+    checkboxCardFgChecked: '#111236',
+    checkboxCardBorderChecked: '#111236',
+    checkboxCardIndicatorColor: '#111236',
+  });
+
   return (
     <div style={{ padding: '24px' }}>
       <p style={{ marginBottom: '16px', fontWeight: 600 }}>Select neighbourhoods</p>
-      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-        {options.map(({ description, disabled, icon, id, label, price }) => (
-          <BpkCheckboxCard.Root
-            key={id}
-            checked={selected.includes(id)}
-            onCheckedChange={() => toggle(id)}
-            variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
-            disabled={disabled}
-            width={140}
-          >
-            <BpkCheckboxCard.Control />
-            <BpkCheckboxCard.Indicator />
-            <BpkCheckboxCard.Content>
-              <BpkCheckboxCard.Stack gap="sm" align="center">
-                <BpkCheckboxCard.Icon icon={icon} size="lg" />
+      <BpkThemeProvider theme={indicatorTheme} themeAttributes={CHECKBOX_CARD_THEME_ATTRIBUTES}>
+        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+          {options.map(({ description, disabled, icon, id, label, price }) => (
+            <BpkCheckboxCard.Root
+              key={id}
+              checked={selected.includes(id)}
+              onCheckedChange={() => toggle(id)}
+              variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+              disabled={disabled}
+              width={140}
+            >
+              <BpkCheckboxCard.Control />
+              <BpkCheckboxCard.Indicator />
+              <BpkCheckboxCard.Content>
                 <BpkCheckboxCard.Stack gap="sm" align="center">
-                  <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
-                  <BpkCheckboxCard.Description>{description}</BpkCheckboxCard.Description>
+                  <BpkCheckboxCard.Icon icon={icon} size="lg" />
+                  <BpkCheckboxCard.Stack gap="sm" align="center">
+                    <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
+                    <BpkCheckboxCard.Description>{description}</BpkCheckboxCard.Description>
+                  </BpkCheckboxCard.Stack>
+                  <BpkCheckboxCard.Price price={price} leadingText="from" />
                 </BpkCheckboxCard.Stack>
-                <BpkCheckboxCard.Price price={price} leadingText="from" />
-              </BpkCheckboxCard.Stack>
-            </BpkCheckboxCard.Content>
-          </BpkCheckboxCard.Root>
-        ))}
-      </div>
+              </BpkCheckboxCard.Content>
+            </BpkCheckboxCard.Root>
+          ))}
+        </div>
+      </BpkThemeProvider>
     </div>
   );
 };
@@ -337,20 +345,16 @@ export const NewAPIWithCustomThemeExample = () => {
   const [selected1, setSelected1] = useState(false);
   const [selected2, setSelected2] = useState(true);
 
-  // Custom theme with brand colors
-  const customTheme = {
-    checkboxCardBgDefault: '#FFFFFF',
+  const customTheme = createCheckboxCardTheme({
     checkboxCardFgDefault: '#111236',
     checkboxCardFgSecondary: '#68697F',
     checkboxCardBgHover: '#F1F2F8',
     checkboxCardBorderDefault: '#B2B2BF',
     checkboxCardBorderHover: '#68697F',
     checkboxCardBgChecked: '#FF6B35',
-    checkboxCardFgChecked: '#FFFFFF',
-    checkboxCardBorderChecked: 'transparent',
     checkboxCardBgDisabled: '#F1F2F8',
     checkboxCardFgDisabled: '#B2B2BF',
-  };
+  });
 
   return (
     <div style={{ padding: '24px' }}>
