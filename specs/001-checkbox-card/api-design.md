@@ -1,578 +1,424 @@
 # API Design: Checkbox Card Component
 
 **Phase**: 1
-**Date**: 2026-01-27
+**Date**: 2026-01-27 (updated 2026-03-04)
 **Component**: BpkCheckboxCard
 **Objective**: Define component API, TypeScript types, and usage patterns
 
 ---
 
-## 1. Component Props Interface
+## 1. Architecture: Compound Component Pattern
+
+`BpkCheckboxCard` uses the **compound component** pattern. The root component is a `<div role="checkbox">` that manages state via React Context. All child components read shared state through `useCheckboxCardContext`.
+
+```
+BpkCheckboxCard
+├── .Root          — State provider, handles click/keyboard, renders <div role="checkbox">
+├── .Control       — Hidden <input type="checkbox"> for form submission (aria-hidden)
+├── .Content       — Content wrapper with padding
+├── .Label         — Primary text (id wired to aria-labelledby on Root)
+├── .Description   — Secondary text (id wired to aria-describedby on Root)
+└── .Indicator     — Visual check indicator (shown when checked)
+```
+
+A **Simple API** wrapper, `BpkCheckboxCardSimple`, is also provided for common use cases.
+
+---
+
+## 2. TypeScript Interfaces
 
 ```typescript
-import type { ChangeEvent, ReactElement, ReactNode } from 'react';
-
 /**
- * Variant types for visual presentation
+ * Visual variant — matches the page background context
  */
 export const CHECKBOX_CARD_VARIANTS = {
-  withBackground: 'with-background',
-  noBackground: 'no-background',
+  onCanvasDefault:  'onCanvasDefault',   // Standard canvas (default)
+  onCanvasContrast: 'onCanvasContrast',  // Contrast canvas
+  onSurfaceContrast: 'onSurfaceContrast', // Dark surface
 } as const;
 
 export type CheckboxCardVariant = (typeof CHECKBOX_CARD_VARIANTS)[keyof typeof CHECKBOX_CARD_VARIANTS];
 
 /**
- * Props for BpkCheckboxCard component
+ * Border radius style
  */
-export type BpkCheckboxCardProps = {
-  /**
-   * Whether the checkbox card is selected
-   */
-  checked: boolean;
+export const CHECKBOX_CARD_RADIUS = {
+  rounded: 'rounded',
+  square:  'square',
+} as const;
 
-  /**
-   * Callback invoked when selection state changes
-   * @param checked - New checked state
-   * @param event - Change event from input element
-   */
-  onChange: (checked: boolean, event: ChangeEvent<HTMLInputElement>) => void;
+export type CheckboxCardRadius = (typeof CHECKBOX_CARD_RADIUS)[keyof typeof CHECKBOX_CARD_RADIUS];
 
-  /**
-   * Primary text label displayed on the card
-   */
-  label?: string;
+/**
+ * Size variant — controls padding density
+ */
+export const CHECKBOX_CARD_SIZES = {
+  sm: 'sm',
+  md: 'md',
+} as const;
 
-  /**
-   * Secondary descriptive text displayed below the label
-   */
-  description?: string;
+export type CheckboxCardSize = (typeof CHECKBOX_CARD_SIZES)[keyof typeof CHECKBOX_CARD_SIZES];
 
-  /**
-   * Backpack icon component to display
-   */
-  icon?: ReactElement;
+/**
+ * Props for BpkCheckboxCard.Root
+ */
+export type RootProps = {
+  /** Child subcomponents */
+  children: ReactNode;
 
-  /**
-   * Image URL or React image element to display
-   */
-  image?: string | ReactElement;
+  /** Controlled checked state */
+  checked?: boolean;
 
-  /**
-   * Price information - accepts BpkPrice component or formatted string
-   */
-  price?: ReactElement | string;
+  /** Default checked state for uncontrolled mode */
+  defaultChecked?: boolean;
 
-  /**
-   * Optional indicator badge or marker to display when selected
-   */
-  indicator?: ReactElement;
+  /** Callback when checked state changes */
+  onCheckedChange?: (checked: boolean) => void;
 
-  /**
-   * Whether the card is disabled and non-interactive
-   * @default false
-   */
+  /** @default false */
   disabled?: boolean;
 
-  /**
-   * Visual variant for background treatment
-   * @default 'with-background'
-   */
-  variant?: CheckboxCardVariant;
+  /** @default false */
+  required?: boolean;
 
-  /**
-   * Accessible label for screen readers
-   * Required if no label prop provided
-   */
-  ariaLabel?: string;
-
-  /**
-   * Name attribute for grouping checkbox cards in forms
-   */
+  /** Form name attribute */
   name?: string;
 
-  /**
-   * Value attribute for form submission
-   */
+  /** Form value attribute */
   value?: string;
 
+  /** @default 'onCanvasDefault' */
+  variant?: CheckboxCardVariant;
+
+  /** @default 'rounded' */
+  radius?: CheckboxCardRadius;
+
+  /** @default 'md' */
+  size?: CheckboxCardSize;
+
+  /** Custom width (CSS value or px number) */
+  width?: string | number;
+
+  /** Custom height (CSS value or px number) */
+  height?: string | number;
+
+  'aria-label'?: string;
+  'aria-labelledby'?: string;
+  'aria-describedby'?: string;
+};
+
+/**
+ * Props for BpkCheckboxCardSimple (convenience wrapper)
+ */
+export type BpkCheckboxCardSimpleProps = {
+  /** Controlled checked state — required */
+  checked: boolean;
+
+  /** Callback when checked state changes — required */
+  onChange: (checked: boolean) => void;
+
+  label?: string;
+  description?: string;
+  icon?: ReactElement;
+  image?: string;
+
   /**
-   * Additional HTML attributes to spread on the input element
+   * Pass <BpkPrice /> for correct styling.
+   * A plain string renders as unstyled text.
    */
-  [key: string]: any;
+  price?: ReactNode;
+
+  disabled?: boolean;
+  variant?: CheckboxCardVariant;
+  radius?: CheckboxCardRadius;
+  ariaLabel?: string;
+  name?: string;
+  value?: string;
+  width?: string | number;
+  height?: string | number;
 };
 ```
 
 ---
 
-## 2. Usage Examples
+## 3. Usage Examples
 
-### Basic Usage
-```typescript
-import BpkCheckboxCard from '@skyscanner/backpack-web/bpk-component-checkbox-card';
+### Compound API — basic
+
+```tsx
+import { BpkCheckboxCard } from '@skyscanner/backpack-web/bpk-component-checkbox-card';
+import { BpkVStack } from '@skyscanner/backpack-web/bpk-component-layout';
 import { useState } from 'react';
 
 const MyComponent = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <BpkCheckboxCard
+    <BpkCheckboxCard.Root
       checked={selected}
-      onChange={(checked) => setSelected(checked)}
-      label="Select this option"
-      price="£100"
-    />
+      onCheckedChange={setSelected}
+    >
+      <BpkCheckboxCard.Control />
+      <BpkCheckboxCard.Content>
+        <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
+          <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
+          <BpkCheckboxCard.Description>0.5 km from centre</BpkCheckboxCard.Description>
+        </BpkVStack>
+      </BpkCheckboxCard.Content>
+    </BpkCheckboxCard.Root>
   );
 };
 ```
 
-### With Icon and Price (Hotels use case)
-```typescript
-import BpkCheckboxCard from '@skyscanner/backpack-web/bpk-component-checkbox-card';
+### Compound API — with icon and price (Hotels)
+
+```tsx
+import { LandmarkIconLg } from '@skyscanner/backpack-web/bpk-component-icon';
 import { BpkPrice } from '@skyscanner/backpack-web/bpk-component-price';
-import { LandmarkIconSm } from '@skyscanner/backpack-web/bpk-component-icon';
 
 const HotelsExample = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <BpkCheckboxCard
+    <BpkCheckboxCard.Root checked={selected} onCheckedChange={setSelected} width={140}>
+      <BpkCheckboxCard.Control />
+      <BpkCheckboxCard.Content>
+        <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
+          <LandmarkIconLg />
+          <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
+          <BpkPrice price="£85" leadingText="avg." />
+        </BpkVStack>
+      </BpkCheckboxCard.Content>
+    </BpkCheckboxCard.Root>
+  );
+};
+```
+
+### Compound API — inline layout (Car Hire / Flights)
+
+```tsx
+const InlineExample = () => {
+  const [selected, setSelected] = useState(false);
+
+  return (
+    <BpkCheckboxCard.Root checked={selected} onCheckedChange={setSelected}>
+      <BpkCheckboxCard.Control />
+      <BpkCheckboxCard.Content>
+        <BpkHStack gap="bpk-spacing-md" align="center" width="100%">
+          <BpkCheckboxCard.Indicator />
+          <BpkVStack gap="bpk-spacing-xs" width="100%">
+            <BpkCheckboxCard.Label>Economy</BpkCheckboxCard.Label>
+            <BpkCheckboxCard.Description>5 seats, 2 bags</BpkCheckboxCard.Description>
+          </BpkVStack>
+          <BpkPrice price="£60" />
+        </BpkHStack>
+      </BpkCheckboxCard.Content>
+    </BpkCheckboxCard.Root>
+  );
+};
+```
+
+### Simple API
+
+```tsx
+import { BpkCheckboxCardSimple } from '@skyscanner/backpack-web/bpk-component-checkbox-card';
+
+const SimpleExample = () => {
+  const [selected, setSelected] = useState(false);
+
+  return (
+    <BpkCheckboxCardSimple
       checked={selected}
-      onChange={(checked) => setSelected(checked)}
+      onChange={setSelected}
       label="City Centre"
-      icon={<LandmarkIconSm />}
+      description="0.5 km from centre"
+      icon={<LandmarkIconLg />}
       price={<BpkPrice price="£85" leadingText="avg." />}
     />
   );
 };
 ```
 
-### With Image (Car Hire use case)
-```typescript
-import BpkCheckboxCard from '@skyscanner/backpack-web/bpk-component-checkbox-card';
+### Variants
 
-const CarHireExample = () => {
-  const [selected, setSelected] = useState(false);
+```tsx
+// On canvas default (default)
+<BpkCheckboxCard.Root variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault} ...>
 
-  return (
-    <BpkCheckboxCard
-      checked={selected}
-      onChange={(checked) => setSelected(checked)}
-      label="Medium"
-      description="5 seats"
-      image="/images/medium-car.png"
-      price="£60"
-    />
-  );
-};
+// On canvas contrast
+<BpkCheckboxCard.Root variant={CHECKBOX_CARD_VARIANTS.onCanvasContrast} ...>
+
+// On dark surface
+<BpkCheckboxCard.Root variant={CHECKBOX_CARD_VARIANTS.onSurfaceContrast} ...>
 ```
 
-### Multiple Cards (Single Selection Pattern)
-```typescript
-const SingleSelectionExample = () => {
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+### Multi-selection pattern
 
-  const options = [
-    { id: 'opt1', label: 'Option 1', price: '£100' },
-    { id: 'opt2', label: 'Option 2', price: '£85' },
-    { id: 'opt3', label: 'Option 3', price: '£122' },
-  ];
-
-  return (
-    <div>
-      {options.map((opt) => (
-        <BpkCheckboxCard
-          key={opt.id}
-          name="hotel-option"
-          value={opt.id}
-          checked={selectedId === opt.id}
-          onChange={() => setSelectedId(opt.id)}
-          label={opt.label}
-          price={opt.price}
-        />
-      ))}
-    </div>
-  );
-};
-```
-
-### Multiple Cards (Multi-Selection Pattern)
-```typescript
+```tsx
 const MultiSelectionExample = () => {
   const [selected, setSelected] = useState<string[]>([]);
 
-  const handleChange = (id: string) => {
+  const toggle = (id: string) =>
     setSelected((prev) =>
-      prev.includes(id)
-        ? prev.filter((x) => x !== id)
-        : [...prev, id]
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
     );
-  };
-
-  const options = [
-    { id: 'opt1', label: 'Option 1', price: '£100' },
-    { id: 'opt2', label: 'Option 2', price: '£85' },
-    { id: 'opt3', label: 'Option 3', price: '£122' },
-  ];
 
   return (
-    <div>
+    <>
       {options.map((opt) => (
-        <BpkCheckboxCard
+        <BpkCheckboxCardSimple
           key={opt.id}
-          name={`option-${opt.id}`}
+          name="neighbourhood"
           value={opt.id}
           checked={selected.includes(opt.id)}
-          onChange={() => handleChange(opt.id)}
+          onChange={() => toggle(opt.id)}
           label={opt.label}
-          price={opt.price}
+          price={<BpkPrice price={opt.price} />}
         />
       ))}
-    </div>
+    </>
   );
 };
 ```
 
-### With Variants
-```typescript
-// With background (default)
-<BpkCheckboxCard
-  checked={checked}
-  onChange={handleChange}
-  label="With background"
-  variant="with-background"
-/>
+### Uncontrolled mode
 
-// No background
-<BpkCheckboxCard
-  checked={checked}
-  onChange={handleChange}
-  label="No background"
-  variant="no-background"
-/>
-```
-
-### Disabled State
-```typescript
-<BpkCheckboxCard
-  checked={true}
-  onChange={() => {}}
-  label="Disabled and selected"
-  price="£100"
-  disabled={true}
-/>
-```
-
-### With Accessibility Label
-```typescript
-<BpkCheckboxCard
-  checked={checked}
-  onChange={handleChange}
-  icon={<HeartIconSm />}
-  price="£100"
-  ariaLabel="Select this romantic option"
-/>
+```tsx
+// Use defaultChecked when parent doesn't need to track state
+<BpkCheckboxCard.Root defaultChecked={false}>
+  <BpkCheckboxCard.Control />
+  <BpkCheckboxCard.Content>
+    <BpkCheckboxCard.Label>Option</BpkCheckboxCard.Label>
+  </BpkCheckboxCard.Content>
+</BpkCheckboxCard.Root>
 ```
 
 ---
 
-## 3. Component Structure
+## 4. Component Structure
 
-### JSX Structure
-```typescript
-const BpkCheckboxCard = ({
-  checked,
-  onChange,
-  label,
-  description,
-  icon,
-  image,
-  price,
-  indicator,
-  disabled = false,
-  variant = CHECKBOX_CARD_VARIANTS.withBackground,
-  ariaLabel,
-  name,
-  value,
-  ...rest
-}: BpkCheckboxCardProps) => {
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    onChange(event.target.checked, event);
-  };
+### DOM output
 
-  return (
-    <label className={classNames}>
-      <input
-        type="checkbox"
-        className={inputClassNames}
-        checked={checked}
-        onChange={handleChange}
-        disabled={disabled}
-        name={name}
-        value={value}
-        aria-label={ariaLabel || (typeof label === 'string' ? label : undefined)}
-        aria-checked={checked}
-        aria-disabled={disabled}
-        {...rest}
-      />
-      <div className={contentClassNames}>
-        {icon && <div className={iconClassNames}>{icon}</div>}
-        {image && (
-          <div className={imageClassNames}>
-            {typeof image === 'string' ? (
-              <img src={image} alt="" />
-            ) : (
-              image
-            )}
-          </div>
-        )}
-        <div className={textClassNames}>
-          {label && <span className={labelClassNames}>{label}</span>}
-          {description && <span className={descriptionClassNames}>{description}</span>}
-        </div>
-        {price && <div className={priceClassNames}>{price}</div>}
-        {checked && indicator && (
-          <div className={indicatorClassNames}>{indicator}</div>
-        )}
-      </div>
-    </label>
-  );
-};
-```
-
----
-
-## 4. TypeScript Type Definitions
-
-### Export Types
-```typescript
-// index.ts
-export type { BpkCheckboxCardProps, CheckboxCardVariant };
-export { CHECKBOX_CARD_VARIANTS };
-export default BpkCheckboxCard;
-```
-
-### Common Types (common-types.ts)
-```typescript
-import type { ChangeEvent } from 'react';
-
-/**
- * Change handler signature for checkbox card
- */
-export type CheckboxCardChangeHandler = (
-  checked: boolean,
-  event: ChangeEvent<HTMLInputElement>
-) => void;
-
-/**
- * Internal state for checkbox card rendering
- */
-export type CheckboxCardState = {
-  checked: boolean;
-  disabled: boolean;
-  variant: CheckboxCardVariant;
-};
-```
-
----
-
-## 5. Accessibility Implementation
-
-### ARIA Attributes
-```typescript
-// Input element ARIA attributes
-<input
-  type="checkbox"
+```html
+<!-- BpkCheckboxCard.Root — <div role="checkbox"> manages all interactions -->
+<div
   role="checkbox"
-  aria-checked={checked}
-  aria-disabled={disabled}
-  aria-label={ariaLabel || (typeof label === 'string' ? label : undefined)}
-  aria-invalid={false}  // Could be extended for validation
-/>
+  aria-checked="false"
+  aria-labelledby=":r0:"
+  aria-describedby=":r1:"
+  tabindex="0"
+  class="bpk-checkbox-card-root bpk-checkbox-card-root--onCanvasDefault ..."
+>
+  <!-- BpkCheckboxCard.Control — form input, invisible to AT -->
+  <input type="checkbox" aria-hidden tabindex="-1" class="bpk-checkbox-card-control" />
+
+  <!-- BpkCheckboxCard.Content -->
+  <div class="bpk-checkbox-card-content">
+    <!-- BpkCheckboxCard.Label — id wired to Root's aria-labelledby -->
+    <span id=":r0:" class="bpk-checkbox-card-label">City Centre</span>
+    <!-- BpkCheckboxCard.Description — id wired to Root's aria-describedby -->
+    <span id=":r1:" class="bpk-checkbox-card-description">0.5 km from centre</span>
+  </div>
+
+  <!-- BpkCheckboxCard.Indicator — decorative, aria-hidden -->
+  <div aria-hidden class="bpk-checkbox-card-indicator" />
+</div>
 ```
+
+---
+
+## 5. Accessibility
+
+### WAI-ARIA Pattern
+
+Root renders as `<div role="checkbox">` following the [WAI-ARIA checkbox pattern](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/):
+- `aria-checked` — reflects current state
+- `aria-disabled` — set when disabled (card is still in DOM, skipped by AT)
+- `aria-required` — set when required
+- `aria-labelledby` — points to `BpkCheckboxCard.Label` id
+- `aria-describedby` — points to `BpkCheckboxCard.Description` id
+- `tabIndex={0}` when enabled, `tabIndex={-1}` when disabled
+
+`BpkCheckboxCard.Control` (the hidden `<input>`) has `aria-hidden` and `tabIndex={-1}` — it exists purely for native form submission.
 
 ### Keyboard Navigation
-- **Tab**: Focus on checkbox card
-- **Space/Enter**: Toggle selection
-- **Shift+Tab**: Focus previous element
 
-### Focus Management
-```scss
-.bpk-checkbox-card__input:focus-visible {
-  // Focus indicator on card wrapper
-  outline: 2px solid tokens.$bpk-core-accent-day;
-  outline-offset: 2px;
-}
+| Key | Action |
+|-----|--------|
+| `Tab` | Move focus to card |
+| `Space` | Toggle selection |
+| `Enter` | Toggle selection |
+| `Shift+Tab` | Move focus to previous element |
+
+### Without visible label
+
+```tsx
+// Pass aria-label on Root — labelledby is suppressed automatically
+<BpkCheckboxCard.Root aria-label="City Centre, £85 per night" ...>
 ```
-
-### Screen Reader Announcements
-- Announced as "checkbox" with current state (checked/unchecked)
-- Label text announced when provided
-- Disabled state announced when disabled=true
-- Price information announced as part of card content
 
 ---
 
 ## 6. Form Integration
 
-### Native Form Support
-```typescript
-// Component integrates with HTML forms via native checkbox input
+`BpkCheckboxCard.Control` (the hidden input) handles form submission:
+
+```tsx
 <form onSubmit={handleSubmit}>
-  <BpkCheckboxCard
-    name="hotel-option"
-    value="city-centre"
+  <BpkCheckboxCard.Root
     checked={checked}
-    onChange={handleChange}
-    label="City Centre"
-  />
-  <button type="submit">Submit</button>
+    onCheckedChange={setChecked}
+    name="neighbourhood"
+    value="city-centre"
+    required
+  >
+    <BpkCheckboxCard.Control />
+    <BpkCheckboxCard.Content>
+      <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
+    </BpkCheckboxCard.Content>
+  </BpkCheckboxCard.Root>
+  <button type="submit">Search</button>
 </form>
 
-// Form data will include:
-// { "hotel-option": "city-centre" } when checked
-```
-
-### Controlled vs Uncontrolled
-**Controlled (Recommended)**:
-```typescript
-const [checked, setChecked] = useState(false);
-
-<BpkCheckboxCard
-  checked={checked}
-  onChange={(newChecked) => setChecked(newChecked)}
-  label="Option"
-/>
-```
-
-**Uncontrolled** (Not recommended for this component):
-- Component requires `checked` prop (controlled by parent)
-- Follows Backpack pattern for form components
-
----
-
-## 7. Performance Considerations
-
-### Response Time Target
-- Selection state changes must complete in **<100ms**
-- Use React's standard state updates (no debouncing needed)
-- Avoid expensive computations in onChange handler
-
-### Memoization (if needed)
-```typescript
-import { memo } from 'react';
-
-const BpkCheckboxCard = memo(({ /* props */ }) => {
-  // Component implementation
-}, (prevProps, nextProps) => {
-  // Custom comparison for optimization
-  return (
-    prevProps.checked === nextProps.checked &&
-    prevProps.disabled === nextProps.disabled &&
-    prevProps.label === nextProps.label
-  );
-});
+// When checked and submitted: FormData includes { neighbourhood: 'city-centre' }
 ```
 
 ---
 
-## 8. Error Handling
+## 7. Context API
 
-### Required Props Validation
-```typescript
-// TypeScript enforces required props at compile time
-// Runtime validation in development (optional)
-if (process.env.NODE_ENV === 'development') {
-  if (!ariaLabel && !label) {
-    console.warn(
-      'BpkCheckboxCard: Either "label" or "ariaLabel" prop must be provided for accessibility'
-    );
-  }
+Internal context allows advanced consumers to build custom subcomponents:
+
+```tsx
+import { useCheckboxCardContext } from '@skyscanner/backpack-web/bpk-component-checkbox-card';
+
+function MyCustomIndicator() {
+  const { checked, disabled } = useCheckboxCardContext();
+  return checked ? <MyIcon color={disabled ? 'grey' : 'blue'} /> : null;
 }
 ```
 
-### Edge Cases
-```typescript
-// No content provided - render with selection indicator only
-if (!label && !description && !icon && !image && !price) {
-  return (
-    <label className={classNames}>
-      <input {...inputProps} />
-      <div className="bpk-checkbox-card__empty">
-        {/* Selection indicator only */}
-      </div>
-    </label>
-  );
-}
-
-// Both disabled and checked - show selected but prevent interaction
-if (disabled && checked) {
-  // Visual state: selected appearance
-  // Interaction: disabled (no click, no keyboard)
-  // Implementation: Add both modifiers to className
-}
-```
+Must be used within `BpkCheckboxCard.Root`.
 
 ---
 
-## 9. Component Variants
+## 8. Testing Guidance
 
-### Variant Implementations
-
-**With Background (Default)**:
-- Uses `tokens.$bpk-surface-default-day` for background
-- Border and shadow for elevation
-- Clear distinction from page canvas
-
-**No Background**:
-- Transparent or minimal background
-- Border-only for card boundary
-- Blends with page canvas
-
-### Visual States
-
-All variants support these states:
-- **Default**: Unselected, no interaction
-- **Hover**: Mouse over unselected card
-- **Focus**: Keyboard focus indicator
-- **Selected**: Checked state with accent color
-- **Selected + Hover**: Combined state
-- **Active**: During click interaction
-- **Disabled**: Non-interactive, reduced opacity
-- **Disabled + Selected**: Selected but non-interactive
-
----
-
-## 10. Testing Guidance
-
-### Unit Test Coverage
 ```typescript
-// Rendering tests
-it('renders with minimal props', () => {});
-it('renders with all content types', () => {});
-it('renders checked state correctly', () => {});
-it('renders disabled state correctly', () => {});
-it('renders all variants', () => {});
+// V2: Root is <div role="checkbox"> — use aria-checked, not .toBeChecked()
+const card = screen.getByRole('checkbox');
+expect(card).toHaveAttribute('aria-checked', 'false');
 
-// Interaction tests
-it('calls onChange when clicked', () => {});
-it('does not call onChange when disabled', () => {});
-it('works with keyboard (Space/Enter)', () => {});
+// Toggle by clicking Root (not the hidden input)
+await userEvent.click(card);
+expect(card).toHaveAttribute('aria-checked', 'true');
 
-// Edge cases
-it('handles missing label with ariaLabel', () => {});
-it('handles extremely long text', () => {});
-it('handles disabled + checked state', () => {});
-```
+// Keyboard toggle
+await userEvent.keyboard(' ');
+expect(card).toHaveAttribute('aria-checked', 'false');
 
-### Accessibility Test Coverage
-```typescript
-// jest-axe tests
-it('has no accessibility violations in default state', () => {});
-it('has no accessibility violations when checked', () => {});
-it('has no accessibility violations when disabled', () => {});
-it('announces correctly with screen reader', () => {});
-it('maintains focus indicator visibility', () => {});
+// Disabled — aria-disabled attribute, not disabled property
+expect(card).toHaveAttribute('aria-disabled', 'true');
 ```
 
 ---
@@ -581,6 +427,6 @@ it('maintains focus indicator visibility', () => {});
 
 - **Specification**: `specs/001-checkbox-card/spec.md`
 - **Research**: `specs/001-checkbox-card/research.md`
-- **Similar Components**: `packages/bpk-component-checkbox/`, `packages/bpk-component-card/`
-- **React Utilities**: `packages/bpk-react-utils/`
-- **TypeScript Patterns**: Existing Backpack TypeScript components
+- **Implementation**: `packages/bpk-component-checkbox-card/`
+- **WAI-ARIA Checkbox Pattern**: https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/
+- **Figma**: https://www.figma.com/design/ITvypOGdga42nM2ipBM4uk/Bpk-2.0?node-id=90-7627&m=dev

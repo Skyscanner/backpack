@@ -13,13 +13,22 @@ The BpkCheckboxCard component fills a critical capability gap in Backpack by pro
 ## Phase 1: Design & Planning ✅ COMPLETE
 
 **Deliverables**:
-- [api-design.md](./api-design.md) - Complete TypeScript interfaces and usage patterns
+- [api-design.md](./api-design.md) - Complete TypeScript interfaces and usage patterns (updated to reflect V2 compound API)
 - [styling-guide.md](./styling-guide.md) - BEM classes, Sass patterns, design tokens
 - [examples/](./examples/) - 5 example files demonstrating all use cases
 
-## Phase 2: Task Breakdown
+## Phase 2: Task Breakdown ✅ COMPLETE
 
-Run `/speckit.tasks` to generate implementation tasks.
+**Deliverable**: [tasks.md](./tasks.md) — 54 implementation tasks across 8 phases.
+
+## Phase 3: Implementation ✅ COMPLETE
+
+**Deliverables**:
+- Compound component: `BpkCheckboxCard.Root`, `.Control`, `.Content`, `.Label`, `.Description`, `.Indicator`
+- Simple API wrapper: `BpkCheckboxCardSimple`
+- SCSS with design tokens, CSS custom property theming, three variants, two sizes, two radius values
+- Unit tests, accessibility tests, form integration tests
+- Storybook examples: Basic, WithMultiContent, AllVariants, WithImage, WithIndicator, WithInlineLayout, WithSizes, WithCustomTheme, SimpleAPI, NeighbourhoodCard
 
 ## References
 
