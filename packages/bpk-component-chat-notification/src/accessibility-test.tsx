@@ -19,16 +19,16 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkChatNotification from './BpkChatNotification';
+import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 
-const MockIcon = () => <svg />;
+import BpkChatNotification from './BpkChatNotification';
 
 describe('BpkChatNotification accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues with an icon', async () => {
     const { container } = render(
       <BpkChatNotification
         text="Thanks for your feedback!"
-        icon={MockIcon}
+        icon={TickCircleIcon}
       />,
     );
     const results = await axe(container);

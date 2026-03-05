@@ -18,15 +18,16 @@
 
 import { render, screen } from '@testing-library/react';
 
+import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
+
 import BpkChatNotification from './BpkChatNotification';
 
 const TEXT = 'Thanks for your feedback!';
-const MockIcon = () => <svg data-testid="mock-icon" />;
 
 describe('BpkChatNotification', () => {
   it('should render correctly with an icon', () => {
     const { asFragment } = render(
-      <BpkChatNotification text={TEXT} icon={MockIcon} />,
+      <BpkChatNotification text={TEXT} icon={TickCircleIcon} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -45,7 +46,7 @@ describe('BpkChatNotification', () => {
 
   it('should show the icon when provided', () => {
     const { container } = render(
-      <BpkChatNotification text={TEXT} icon={MockIcon} />,
+      <BpkChatNotification text={TEXT} icon={TickCircleIcon} />,
     );
     expect(
       container.querySelector('.bpk-chat-notification__icon'),

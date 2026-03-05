@@ -29,7 +29,7 @@ export type BpkChatNotificationProps = {
   /** Text displayed in the notification. */
   text: string;
   /** Optional icon to display before the text. */
-  icon?: FunctionComponent<any>;
+  icon?: FunctionComponent;
 };
 
 const BpkChatNotification = ({
