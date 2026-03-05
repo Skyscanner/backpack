@@ -22,6 +22,8 @@ import { BpkCheckboxCard } from '../BpkCheckboxCard';
 
 import type { CheckboxCardVariant, CheckboxCardRadius } from '../BpkCheckboxCard/common-types';
 
+export type CheckboxCardIndicatorPlacement = 'start' | 'end';
+
 export type BpkCheckboxCardSimpleProps = {
   /**
    * Whether the checkbox card is selected
@@ -105,6 +107,27 @@ export type BpkCheckboxCardSimpleProps = {
    * Custom height
    */
   height?: string | number;
+
+  /**
+   * Visual indicator element to render.
+   * Pass null to explicitly hide it, or omit to show nothing.
+   * Pass <BpkCheckboxCard.Indicator /> to use the default visual indicator.
+   */
+  indicator?: ReactNode | null;
+
+  /**
+   * Where to render the indicator relative to the card content.
+   * - 'start': indicator before the content (top-left area)
+   * - 'end': indicator after the content (default, top-right corner via CSS)
+   * @default "end"
+   */
+  indicatorPlacement?: CheckboxCardIndicatorPlacement;
+
+  /**
+   * Additional content rendered below the card's main content area.
+   * Useful for supplementary information like badges or metadata.
+   */
+  addon?: ReactNode;
 };
 
 /**
@@ -130,6 +153,7 @@ export type BpkCheckboxCardSimpleProps = {
  * @returns {JSX.Element} Rendered checkbox card using the simple props API.
  */
 export function BpkCheckboxCardSimple({
+  addon,
   ariaLabel,
   checked,
   description,
@@ -137,6 +161,8 @@ export function BpkCheckboxCardSimple({
   height,
   icon,
   image,
+  indicator,
+  indicatorPlacement = 'end',
   label,
   name,
   onChange,
@@ -160,6 +186,7 @@ export function BpkCheckboxCardSimple({
       aria-label={ariaLabel}
     >
       <BpkCheckboxCard.Control />
+      {indicatorPlacement === 'start' && indicator}
       <BpkCheckboxCard.Content>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--bpk-spacing-sm)', width: '100%' }}>
           {icon}
@@ -175,6 +202,8 @@ export function BpkCheckboxCardSimple({
           {price}
         </div>
       </BpkCheckboxCard.Content>
+      {indicatorPlacement === 'end' && indicator}
+      {addon}
     </BpkCheckboxCard.Root>
   );
 }

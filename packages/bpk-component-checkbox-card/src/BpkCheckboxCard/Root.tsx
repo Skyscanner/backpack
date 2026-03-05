@@ -19,14 +19,14 @@
 import type { CSSProperties, KeyboardEvent, ReactNode } from 'react';
 import { useState, useId, useCallback, useMemo } from 'react';
 
-import { cssModules } from '../../../../bpk-react-utils';
-import { CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS, CHECKBOX_CARD_SIZES } from '../common-types';
+import { cssModules } from '../../../bpk-react-utils';
 
 import { CheckboxCardContext } from './CheckboxCardContext';
+import { CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS, CHECKBOX_CARD_SIZES } from './common-types';
 
-import type { CheckboxCardVariant, CheckboxCardRadius, CheckboxCardSize } from '../common-types';
+import type { CheckboxCardVariant, CheckboxCardRadius, CheckboxCardSize } from './common-types';
 
-import STYLES from '../BpkCheckboxCard.module.scss';
+import STYLES from './BpkCheckboxCard.module.scss';
 
 const getClassName = cssModules(STYLES);
 
