@@ -17,13 +17,13 @@
  */
 
 import { BpkCardV2 } from '../../packages/bpk-component-card-v2';
+import { BpkSpacing } from '../../packages/bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 
 import type {
   BpkCardV2SurfaceColor,
   BpkCardV2Variant,
-  BpkCardV2PaddingSize,
 } from '../../packages/bpk-component-card-v2/src/BpkCardV2/common-types';
 
 import STYLES from './examples.module.scss';
@@ -116,6 +116,9 @@ const SurfaceColorsExample = () => (
 const SplitLayoutExample = () => (
   <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
     <BpkCardV2.Root>
+      <BpkCardV2.Header>
+        <Placeholder label="Primary (70%)" />
+      </BpkCardV2.Header>
       <BpkCardV2.Body split splitRatio={70}>
         <BpkCardV2.Primary>
           <Placeholder label="Primary (70%)" />
@@ -124,6 +127,7 @@ const SplitLayoutExample = () => (
           <Placeholder label="Secondary (30%)" />
         </BpkCardV2.Secondary>
       </BpkCardV2.Body>
+      <div>Hello world!</div>
     </BpkCardV2.Root>
   </div>
 );
@@ -132,15 +136,15 @@ const CustomPaddingExample = () => (
   <div className={getClassName('bpk-card-v2-examples__grid')}>
     <div className={getClassName('bpk-card-v2-examples__card-wrapper')}>
       <BpkCardV2.Root variant="outlined">
-        <BpkCardV2.Header padding="lg">
+        <BpkCardV2.Header padding={BpkSpacing.LG}>
           <BpkText textStyle={TEXT_STYLES.heading5} tagName="h3">
             Large padding
           </BpkText>
         </BpkCardV2.Header>
-        <BpkCardV2.Body padding="sm">
+        <BpkCardV2.Body padding={BpkSpacing.SM}>
           <BpkText>Small body padding.</BpkText>
         </BpkCardV2.Body>
-        <BpkCardV2.Footer padding="none">
+        <BpkCardV2.Footer padding={BpkSpacing.None}>
           <BpkText textStyle={TEXT_STYLES.caption}>No footer padding.</BpkText>
         </BpkCardV2.Footer>
       </BpkCardV2.Root>
@@ -148,14 +152,20 @@ const CustomPaddingExample = () => (
     <div className={getClassName('bpk-card-v2-examples__card-wrapper')}>
       <BpkCardV2.Root variant="outlined">
         <BpkCardV2.Header
-          padding={{ vertical: 'sm', horizontal: 'xl' }}
+          paddingTop={BpkSpacing.SM}
+          paddingBottom={BpkSpacing.SM}
+          paddingStart={BpkSpacing.XL}
+          paddingEnd={BpkSpacing.XL}
         >
           <BpkText textStyle={TEXT_STYLES.heading5} tagName="h3">
             Mixed padding
           </BpkText>
         </BpkCardV2.Header>
         <BpkCardV2.Body
-          padding={{ top: 'base', bottom: 'lg', start: 'xl', end: 'xl' }}
+          paddingTop={BpkSpacing.Base}
+          paddingBottom={BpkSpacing.LG}
+          paddingStart={BpkSpacing.XL}
+          paddingEnd={BpkSpacing.XL}
         >
           <BpkText>Individual side padding.</BpkText>
         </BpkCardV2.Body>
@@ -167,7 +177,6 @@ const CustomPaddingExample = () => (
 type InteractiveExampleProps = {
   variant?: BpkCardV2Variant;
   bgColor?: BpkCardV2SurfaceColor;
-  padding?: BpkCardV2PaddingSize;
   split?: boolean;
   splitRatio?: number;
   showHeader?: boolean;
@@ -176,7 +185,6 @@ type InteractiveExampleProps = {
 
 const InteractiveExample = ({
   bgColor = 'surfaceDefault',
-  padding = 'base',
   showFooter = true,
   showHeader = true,
   split = false,
@@ -186,13 +194,13 @@ const InteractiveExample = ({
   <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
     <BpkCardV2.Root variant={variant} bgColor={bgColor}>
       {showHeader && (
-        <BpkCardV2.Header padding={padding}>
+        <BpkCardV2.Header>
           <BpkText textStyle={TEXT_STYLES.heading4} tagName="h3">
             Card Header
           </BpkText>
         </BpkCardV2.Header>
       )}
-      <BpkCardV2.Body split={split} splitRatio={splitRatio} padding={padding}>
+      <BpkCardV2.Body split={split} splitRatio={splitRatio}>
         {split ? (
           <>
             <BpkCardV2.Primary>
@@ -210,7 +218,7 @@ const InteractiveExample = ({
         )}
       </BpkCardV2.Body>
       {showFooter && (
-        <BpkCardV2.Footer padding={padding}>
+        <BpkCardV2.Footer>
           <BpkText textStyle={TEXT_STYLES.caption}>Card Footer</BpkText>
         </BpkCardV2.Footer>
       )}

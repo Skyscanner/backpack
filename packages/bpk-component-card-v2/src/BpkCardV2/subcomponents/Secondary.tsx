@@ -16,43 +16,37 @@
  * limitations under the License.
  */
 
-import { forwardRef } from 'react';
-
-import { cssModules } from '../../../../bpk-react-utils';
+import { BpkBox, BpkSpacing } from '../../../../bpk-component-layout';
 
 import type { BpkCardV2SecondaryProps } from '../common-types';
-
-import STYLES from '../BpkCardV2.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 /**
  * Secondary subcomponent for split layout in BpkCardV2.
  *
- * Renders the secondary (sidebar) content area in a split layout. Takes
- * (100 - splitRatio)% width on desktop (>= 768px) and full width on mobile
- * (< 768px). Positioned second in vertical stack on mobile.
+ * Renders a BpkBox for the secondary (sidebar) content area in a split layout.
+ * Width is injected by BpkCardV2.Body via cloneElement based on splitRatio.
+ * All BpkBox props can be used to customise the layout.
  *
  * Must be used as a child of BpkCardV2.Body with split={true}.
- *
- * @param props - Component props of type BpkCardV2SecondaryProps
- * @returns {JSX.Element} Rendered secondary content div
  *
  * @example
  * <BpkCardV2.Body split splitRatio={70}>
  *   <BpkCardV2.Primary>Main content area</BpkCardV2.Primary>
  *   <BpkCardV2.Secondary>Sidebar</BpkCardV2.Secondary>
  * </BpkCardV2.Body>
+ *
+ * @returns {JSX.Element} Secondary component
  */
-const Secondary = forwardRef<HTMLDivElement, BpkCardV2SecondaryProps>(
-  ({ children }, ref) => (
-    <div
-      ref={ref}
-      className={getClassName('bpk-card-v2__secondary')}
-    >
-      {children}
-    </div>
-  ),
+const Secondary = ({
+  children,
+  flex = '1 1 auto',
+  flexDirection = 'column',
+  padding = BpkSpacing.Base,
+  ...rest
+}: BpkCardV2SecondaryProps) => (
+  <BpkBox flex={flex} flexDirection={flexDirection} padding={padding} {...rest}>
+    {children}
+  </BpkBox>
 );
 
 Secondary.displayName = 'BpkCardV2.Secondary';

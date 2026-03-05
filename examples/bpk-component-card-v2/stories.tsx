@@ -16,7 +16,10 @@
  * limitations under the License.
  */
 
+import type { ReactNode } from 'react';
+
 import { BpkCardV2 } from '../../packages/bpk-component-card-v2';
+import { BpkProvider } from '../../packages/bpk-component-layout';
 
 import {
   DefaultExample,
@@ -31,6 +34,7 @@ import {
 export default {
   title: 'bpk-component-card-v2',
   component: BpkCardV2.Root,
+  decorators: [(story: () => ReactNode) => <BpkProvider>{story()}</BpkProvider>],
 };
 
 export const Default = DefaultExample;
@@ -59,10 +63,6 @@ export const Interactive = {
         'surfaceHighlight',
       ],
     },
-    padding: {
-      control: { type: 'select' },
-      options: ['none', 'sm', 'md', 'base', 'lg', 'xl', 'xxl', 'xxxl', 'xxxxl'],
-    },
     split: {
       control: { type: 'boolean' },
     },
@@ -79,7 +79,6 @@ export const Interactive = {
   args: {
     variant: 'default',
     bgColor: 'surfaceDefault',
-    padding: 'base',
     split: false,
     splitRatio: 70,
     showHeader: true,

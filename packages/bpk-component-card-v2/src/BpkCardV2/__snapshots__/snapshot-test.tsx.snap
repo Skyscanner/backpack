@@ -7,17 +7,20 @@ exports[`BpkCardV2 Snapshots matches snapshot - basic card 1`] = `
     data-bg-color="surfaceDefault"
   >
     <div
-      class="bpk-card-v2__header"
+      class="css-88771x"
+      data-backpack-ds-component="Flex"
     >
       Card Title
     </div>
     <div
-      class="bpk-card-v2__body"
+      class="css-rh38e6"
+      data-backpack-ds-component="Flex"
     >
       Card content goes here
     </div>
     <div
-      class="bpk-card-v2__footer"
+      class="css-88771x"
+      data-backpack-ds-component="Flex"
     >
       Card footer
     </div>
@@ -32,16 +35,18 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
     data-bg-color="surfaceDefault"
   >
     <div
-      class="bpk-card-v2__header"
+      class="css-88771x"
+      data-backpack-ds-component="Flex"
     >
       Product
     </div>
     <div
-      class="bpk-card-v2__body bpk-card-v2__body--split"
-      style="--bpk-card-v2-primary-width: 65%;"
+      class="css-wdatzd"
+      data-backpack-ds-component="Flex"
     >
       <div
-        class="bpk-card-v2__primary"
+        class="css-1b1j0dq"
+        data-backpack-ds-component="Box"
       >
         <img
           alt="Product"
@@ -52,7 +57,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
         class="bpk-card-v2__divider"
       />
       <div
-        class="bpk-card-v2__secondary"
+        class="css-1osy8ym"
+        data-backpack-ds-component="Box"
       >
         <h3>
           Description
@@ -63,7 +69,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
       </div>
     </div>
     <div
-      class="bpk-card-v2__footer"
+      class="css-88771x"
+      data-backpack-ds-component="Flex"
     >
       <button
         type="button"
@@ -82,7 +89,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - elevated surface color 1`] = `
     data-bg-color="surfaceElevated"
   >
     <div
-      class="bpk-card-v2__body"
+      class="css-rh38e6"
+      data-backpack-ds-component="Flex"
     >
       Elevated background surface
     </div>
@@ -97,7 +105,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - minimal card (body only) 1`] = `
     data-bg-color="surfaceDefault"
   >
     <div
-      class="bpk-card-v2__body"
+      class="css-rh38e6"
+      data-backpack-ds-component="Flex"
     >
       Minimal card with just body
     </div>
@@ -112,12 +121,14 @@ exports[`BpkCardV2 Snapshots matches snapshot - outlined variant 1`] = `
     data-bg-color="surfaceDefault"
   >
     <div
-      class="bpk-card-v2__header"
+      class="css-88771x"
+      data-backpack-ds-component="Flex"
     >
       Outlined Card
     </div>
     <div
-      class="bpk-card-v2__body"
+      class="css-rh38e6"
+      data-backpack-ds-component="Flex"
     >
       Content with border instead of shadow
     </div>
@@ -132,11 +143,12 @@ exports[`BpkCardV2 Snapshots matches snapshot - split layout 1`] = `
     data-bg-color="surfaceDefault"
   >
     <div
-      class="bpk-card-v2__body bpk-card-v2__body--split"
-      style="--bpk-card-v2-primary-width: 70%;"
+      class="css-wdatzd"
+      data-backpack-ds-component="Flex"
     >
       <div
-        class="bpk-card-v2__primary"
+        class="css-1tc7bba"
+        data-backpack-ds-component="Box"
       >
         Main content area (70%)
       </div>
@@ -144,7 +156,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - split layout 1`] = `
         class="bpk-card-v2__divider"
       />
       <div
-        class="bpk-card-v2__secondary"
+        class="css-cgkxe4"
+        data-backpack-ds-component="Box"
       >
         Sidebar area (30%)
       </div>

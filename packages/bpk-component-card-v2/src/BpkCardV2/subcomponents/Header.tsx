@@ -16,41 +16,37 @@
  * limitations under the License.
  */
 
-import { forwardRef } from 'react';
-
-import { cssModules } from '../../../../bpk-react-utils';
-import getPaddingStyle from '../utils/getPaddingStyle';
+import { BpkFlex, BpkSpacing } from '../../../../bpk-component-layout';
 
 import type { BpkCardV2HeaderProps } from '../common-types';
-
-import STYLES from '../BpkCardV2.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 /**
  * Header subcomponent for BpkCardV2.
  *
- * Renders a <div> element positioned at the top of the card.
- * Inherits surface color and styling from parent BpkCardV2.
- *
- * @param props - Component props of type BpkCardV2HeaderProps
- * @returns {JSX.Element} Rendered header element
+ * Renders a BpkFlex container positioned at the top of the card.
+ * Defaults to horizontal (row) direction with base padding.
+ * All BpkFlex props can be used to customise the layout.
  *
  * @example
- * <BpkCardV2>
- *   <BpkCardV2.Header>Card title</BpkCardV2.Header>
- * </BpkCardV2>
+ * <BpkCardV2.Header>Card title</BpkCardV2.Header>
+ *
+ * @example
+ * <BpkCardV2.Header justify="space-between" align="center">
+ *   <span>Title</span>
+ *   <span>Action</span>
+ * </BpkCardV2.Header>
+ *
+ * @returns {JSX.Element} Header component
  */
-const Header = forwardRef<HTMLDivElement, BpkCardV2HeaderProps>(
-  ({ children, padding }, ref) => (
-    <div
-      ref={ref}
-      className={getClassName('bpk-card-v2__header')}
-      style={getPaddingStyle(padding)}
-    >
-      {children}
-    </div>
-  ),
+const Header = ({
+  children,
+  direction = 'row',
+  padding = BpkSpacing.Base,
+  ...rest
+}: BpkCardV2HeaderProps) => (
+  <BpkFlex direction={direction} padding={padding} {...rest}>
+    {children}
+  </BpkFlex>
 );
 
 Header.displayName = 'BpkCardV2.Header';

@@ -16,43 +16,36 @@
  * limitations under the License.
  */
 
-import { forwardRef } from 'react';
-
-import { cssModules } from '../../../../bpk-react-utils';
+import { BpkBox, BpkSpacing } from '../../../../bpk-component-layout';
 
 import type { BpkCardV2PrimaryProps } from '../common-types';
-
-import STYLES from '../BpkCardV2.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 /**
  * Primary subcomponent for split layout in BpkCardV2.
  *
- * Renders the primary (main) content area in a split layout. Takes splitRatio%
- * width on desktop (>= 768px) and full width on mobile (< 768px). Positioned
- * first in vertical stack on mobile.
+ * Renders a BpkBox for the primary (main) content area in a split layout.
+ * Width is injected by BpkCardV2.Body via cloneElement based on splitRatio.
+ * All BpkBox props can be used to customise the layout.
  *
  * Must be used as a child of BpkCardV2.Body with split={true}.
- *
- * @param props - Component props of type BpkCardV2PrimaryProps
- * @returns {JSX.Element} Rendered primary content div
  *
  * @example
  * <BpkCardV2.Body split splitRatio={70}>
  *   <BpkCardV2.Primary>Main content area</BpkCardV2.Primary>
  *   <BpkCardV2.Secondary>Sidebar</BpkCardV2.Secondary>
  * </BpkCardV2.Body>
+ *
+ * @returns {JSX.Element} Primary component
  */
-const Primary = forwardRef<HTMLDivElement, BpkCardV2PrimaryProps>(
-  ({ children }, ref) => (
-    <div
-      ref={ref}
-      className={getClassName('bpk-card-v2__primary')}
-    >
-      {children}
-    </div>
-  ),
+const Primary = ({
+  children,
+  flexDirection = 'column',
+  padding = BpkSpacing.Base,
+  ...rest
+}: BpkCardV2PrimaryProps) => (
+  <BpkBox flexDirection={flexDirection} padding={padding} {...rest}>
+    {children}
+  </BpkBox>
 );
 
 Primary.displayName = 'BpkCardV2.Primary';

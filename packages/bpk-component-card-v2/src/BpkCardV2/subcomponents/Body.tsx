@@ -16,28 +16,23 @@
  * limitations under the License.
  */
 
-import type { CSSProperties, ReactNode } from 'react';
-import { Children, forwardRef, isValidElement } from 'react';
+import type { ReactElement, ReactNode } from 'react';
+import { Children, cloneElement, isValidElement } from 'react';
 
-import { cssModules } from '../../../../bpk-react-utils';
-import getPaddingStyle from '../utils/getPaddingStyle';
+import { BpkFlex, BpkSpacing } from '../../../../bpk-component-layout';
+
+import Divider from './Divider';
 
 import type { BpkCardV2BodyProps } from '../common-types';
 
-import STYLES from '../BpkCardV2.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 /**
  * Body subcomponent for BpkCardV2.
  *
- * Renders the main content area of the card. Supports optional two-column split
- * layout using Primary and Secondary subcomponents. On mobile (< 768px), the
- * layout stacks vertically. On desktop (>= 768px), splits horizontally with
- * Primary taking splitRatio% width and Secondary taking the remainder.
- *
- * @param props - Component props of type BpkCardV2BodyProps
- * @returns {ReactNode} Rendered body element with optional divider
+ * Renders the main content area of the card as a BpkFlex container.
+ * Defaults to vertical (column) direction with base padding.
+ * Supports optional two-column split layout using Primary and Secondary subcomponents.
+ * All BpkFlex props can be used to customise the layout.
  *
  * @example
  * // Simple body
@@ -49,47 +44,71 @@ const getClassName = cssModules(STYLES);
  *   <BpkCardV2.Primary>Main content (70%)</BpkCardV2.Primary>
  *   <BpkCardV2.Secondary>Sidebar (30%)</BpkCardV2.Secondary>
  * </BpkCardV2.Body>
+ *
+ * @returns {JSX.Element} Body component
  */
-const Body = forwardRef<HTMLDivElement, BpkCardV2BodyProps>(
-  ({
-    children,
-    padding,
-    split = false,
-    splitRatio = 70,
-  }, ref) => {
-    const bodyClassName = getClassName(
-      'bpk-card-v2__body',
-      split && 'bpk-card-v2__body--split',
-    );
+const Body = ({
+  children,
+  direction,
+  padding,
+  split = false,
+  splitRatio = 70,
+  ...rest
+}: BpkCardV2BodyProps) => {
+  const resolvedDirection = direction ?? (split
+    ? { mobile: 'column' as const, tablet: 'row' as const }
+    : 'column' as const);
 
-    // Process children to insert divider between Primary and Secondary in split layout
-    const processedChildren = split ? Children.toArray(children).reduce<ReactNode[]>((acc, child, index) => {
-      acc.push(child);
-      // Insert divider after first child (Primary) if there's a next child (Secondary)
-      if (index === 0 && Children.count(children) > 1 && isValidElement(child)) {
-        acc.push(
-          <div key="bpk-card-v2-divider" className={getClassName('bpk-card-v2__divider')} />
-        );
-      }
-      return acc;
-    }, []) : children;
+  const resolvedPadding = padding ?? (split ? BpkSpacing.None : BpkSpacing.Base);
 
-    const paddingStyles = getPaddingStyle(padding);
+  // In split layout, inject responsive width into Primary/Secondary children
+  // and insert a divider between them
+  const processedChildren = split
+    ? Children.toArray(children).reduce<ReactNode[]>((acc, child, index) => {
+        if (isValidElement(child)) {
+          const isPrimary = child.type && (child.type as { displayName?: string }).displayName === 'BpkCardV2.Primary';
+          const isSecondary = child.type && (child.type as { displayName?: string }).displayName === 'BpkCardV2.Secondary';
 
-    return (
-      <div
-        ref={ref}
-        className={bodyClassName}
-        style={{
-          '--bpk-card-v2-primary-width': split ? `${splitRatio}%` : undefined,
-          ...paddingStyles,
-        } as CSSProperties}
-      >
-        {processedChildren}
-      </div>
-    );
-  },
-);
+          if (isPrimary) {
+            acc.push(
+              cloneElement(child as ReactElement, {
+                key: child.key ?? 'primary',
+                width: child.props.width ?? { mobile: '100%', tablet: `${splitRatio}%` },
+              }),
+            );
+          } else if (isSecondary) {
+            acc.push(
+              cloneElement(child as ReactElement, {
+                key: child.key ?? 'secondary',
+                width: child.props.width ?? { mobile: '100%', tablet: `${100 - splitRatio}%` },
+              }),
+            );
+          } else {
+            acc.push(child);
+          }
+
+          // Insert divider after first child if there's a next child
+          if (index === 0 && Children.count(children) > 1) {
+            acc.push(<Divider key="bpk-card-v2-divider" />);
+          }
+        } else {
+          acc.push(child);
+        }
+        return acc;
+      }, [])
+    : children;
+
+  return (
+    <BpkFlex
+      direction={resolvedDirection}
+      padding={resolvedPadding}
+      flex="1"
+      {...rest}
+    >
+      {processedChildren}
+    </BpkFlex>
+  );
+};
 
 Body.displayName = 'BpkCardV2.Body';
 

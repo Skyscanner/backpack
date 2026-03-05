@@ -18,6 +18,8 @@
 
 import type { ForwardRefExoticComponent, ReactNode, RefAttributes } from 'react';
 
+import type { BpkBoxProps , BpkFlexProps } from '../../../../bpk-component-layout';
+
 /** Surface color token options for BpkCardV2 background */
 export type BpkCardV2SurfaceColor =
   | 'surfaceDefault'
@@ -31,29 +33,6 @@ export type BpkCardV2SurfaceColor =
 
 /** Visual variant options for BpkCardV2 */
 export type BpkCardV2Variant = 'default' | 'outlined' | 'noElevation';
-
-/** Padding size options - all BpkSpacing tokens */
-export type BpkCardV2PaddingSize =
-  | 'none'
-  | 'sm'
-  | 'md'
-  | 'base'
-  | 'lg'
-  | 'xl'
-  | 'xxl'
-  | 'xxxl'
-  | 'xxxxl';
-
-/** Padding configuration for Header, Body, Footer */
-export type BpkCardV2Padding =
-  | BpkCardV2PaddingSize
-  | { vertical?: BpkCardV2PaddingSize; horizontal?: BpkCardV2PaddingSize }
-  | {
-      top?: BpkCardV2PaddingSize;
-      bottom?: BpkCardV2PaddingSize;
-      start?: BpkCardV2PaddingSize;
-      end?: BpkCardV2PaddingSize;
-    };
 
 /**
  * BpkCardV2 root component props.
@@ -88,21 +67,19 @@ export type BpkCardV2Props = {
 /**
  * BpkCardV2.Header component props.
  *
- * Renders a <div> element. Positioned at top of card.
+ * Renders a BpkFlex container positioned at top of card.
+ * Defaults to horizontal (row) direction with base padding.
+ * All BpkFlex props are supported for layout customisation.
  */
-export type BpkCardV2HeaderProps = {
-  /** Header content */
-  children?: ReactNode;
-
-  /** Padding configuration (default: 'base') */
-  padding?: BpkCardV2Padding;
-};
+export type BpkCardV2HeaderProps = BpkFlexProps;
 
 /**
  * BpkCardV2.Body component props.
  *
- * Renders card main content area. Supports optional split layout
- * with Primary and Secondary subcomponents for multi-area designs.
+ * Renders card main content area as a BpkFlex container.
+ * Defaults to vertical (column) direction with base padding.
+ * Supports optional split layout with Primary and Secondary subcomponents.
+ * All BpkFlex props are supported for layout customisation.
  *
  * @example
  * // Simple body
@@ -114,54 +91,40 @@ export type BpkCardV2HeaderProps = {
  *   <BpkCardV2.Secondary>Sidebar (30%)</BpkCardV2.Secondary>
  * </BpkCardV2.Body>
  */
-export type BpkCardV2BodyProps = {
-  /** Body content or Primary/Secondary subcomponents */
-  children?: ReactNode;
-
+export type BpkCardV2BodyProps = BpkFlexProps & {
   /** Enable two-column split layout (default: false) */
   split?: boolean;
 
   /** Primary section width percentage on desktop (0-100, default: 70) */
   splitRatio?: number;
-
-  /** Padding configuration (default: 'base') */
-  padding?: BpkCardV2Padding;
 };
 
 /**
  * BpkCardV2.Primary component props.
  *
- * Primary content area in split layout. Takes splitRatio width on desktop,
- * full width on mobile. Positioned first in vertical stack on mobile.
+ * Primary content area in split layout. Renders a BpkBox.
+ * Takes splitRatio width on desktop, full width on mobile.
+ * All BpkBox props are supported for layout customisation.
  */
-export type BpkCardV2PrimaryProps = {
-  /** Primary content */
-  children: ReactNode;
-};
+export type BpkCardV2PrimaryProps = BpkBoxProps;
 
 /**
  * BpkCardV2.Secondary component props.
  *
- * Secondary content area in split layout. Takes (100 - splitRatio) width on desktop,
- * full width on mobile. Positioned second in vertical stack on mobile.
+ * Secondary content area in split layout. Renders a BpkBox.
+ * Takes (100 - splitRatio) width on desktop, full width on mobile.
+ * All BpkBox props are supported for layout customisation.
  */
-export type BpkCardV2SecondaryProps = {
-  /** Secondary content */
-  children: ReactNode;
-};
+export type BpkCardV2SecondaryProps = BpkBoxProps;
 
 /**
  * BpkCardV2.Footer component props.
  *
- * Renders a <div> element. Positioned at bottom of card.
+ * Renders a BpkFlex container positioned at bottom of card.
+ * Defaults to horizontal (row) direction with base padding.
+ * All BpkFlex props are supported for layout customisation.
  */
-export type BpkCardV2FooterProps = {
-  /** Footer content */
-  children?: ReactNode;
-
-  /** Padding configuration (default: 'base') */
-  padding?: BpkCardV2Padding;
-};
+export type BpkCardV2FooterProps = BpkFlexProps;
 
 /**
  * BpkCardV2 namespace type.
@@ -170,9 +133,9 @@ export type BpkCardV2FooterProps = {
  */
 export type BpkCardV2Namespace = {
   Root: ForwardRefExoticComponent<BpkCardV2Props & RefAttributes<HTMLDivElement>>;
-  Header: ForwardRefExoticComponent<BpkCardV2HeaderProps & RefAttributes<HTMLDivElement>>;
-  Body: ForwardRefExoticComponent<BpkCardV2BodyProps & RefAttributes<HTMLDivElement>>;
-  Primary: ForwardRefExoticComponent<BpkCardV2PrimaryProps & RefAttributes<HTMLDivElement>>;
-  Secondary: ForwardRefExoticComponent<BpkCardV2SecondaryProps & RefAttributes<HTMLDivElement>>;
-  Footer: ForwardRefExoticComponent<BpkCardV2FooterProps & RefAttributes<HTMLDivElement>>;
+  Header: (props: BpkCardV2HeaderProps) => ReactNode;
+  Body: (props: BpkCardV2BodyProps) => ReactNode;
+  Primary: (props: BpkCardV2PrimaryProps) => ReactNode;
+  Secondary: (props: BpkCardV2SecondaryProps) => ReactNode;
+  Footer: (props: BpkCardV2FooterProps) => ReactNode;
 };

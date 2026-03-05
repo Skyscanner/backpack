@@ -20,19 +20,6 @@
 @use '../../../bpk-mixins/radii';
 @use '../../../bpk-mixins/shadows';
 @use '../../../bpk-mixins/breakpoints';
-@use '../../../bpk-mixins/utils';
-
-// Spacing CSS custom properties for dynamic padding
-:root {
-  --bpk-spacing-sm: #{tokens.bpk-spacing-sm()};
-  --bpk-spacing-md: #{tokens.bpk-spacing-md()};
-  --bpk-spacing-base: #{tokens.bpk-spacing-base()};
-  --bpk-spacing-lg: #{tokens.bpk-spacing-lg()};
-  --bpk-spacing-xl: #{tokens.bpk-spacing-xl()};
-  --bpk-spacing-xxl: #{tokens.bpk-spacing-xxl()};
-  --bpk-spacing-xxxl: #{tokens.bpk-spacing-xxxl()};
-  --bpk-spacing-xxxxl: #{tokens.bpk-spacing-xxxxl()};
-}
 
 // Card container - base styles
 .bpk-card-v2 {
@@ -89,122 +76,19 @@
   box-shadow: none;
 }
 
-// Header subcomponent
-.bpk-card-v2__header {
-  padding: tokens.bpk-spacing-base();
-}
-
-// Body subcomponent - main content area
-.bpk-card-v2__body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-
-  // Single-column layout (default) - has padding
-  &:not(.bpk-card-v2__body--split) {
-    padding: tokens.bpk-spacing-base();
-    flex-direction: column;
-  }
-
-  // Two-column split layout - no padding (Primary/Secondary handle it)
-  &.bpk-card-v2__body--split {
-    padding: 0;
-    flex-direction: column;
-    gap: 0;
-
-    // Desktop - horizontal layout with divider
-    @include breakpoints.bpk-breakpoint-above-mobile {
-      flex-direction: row;
-      gap: 0;
-    }
-  }
-}
-
-// Primary content area in split layout
-.bpk-card-v2__primary {
-  position: relative;
-  display: flex;
-  width: 100%;
-  padding: tokens.bpk-spacing-base();
-  flex-direction: column;
-  flex: 0 0 auto;
-
-  // Split layout - on desktop
-  .bpk-card-v2__body--split & {
-    width: 100%;
-    padding: tokens.bpk-spacing-base();
-    border-right: none;
-
-    @include breakpoints.bpk-breakpoint-above-mobile {
-      width: var(--bpk-card-v2-primary-width, 70%);
-      padding-right: calc(
-        tokens.bpk-spacing-base() - tokens.$bpk-border-size-sm / 2
-      );
-      border-bottom: none;
-
-      @include utils.bpk-rtl {
-        padding-right: tokens.bpk-spacing-base();
-        padding-left: calc(
-          tokens.bpk-spacing-base() - tokens.$bpk-border-size-sm / 2
-        );
-
-        &::after {
-          right: auto;
-          left: 0;
-        }
-      }
-
-      &::after {
-        position: absolute;
-        top: tokens.bpk-spacing-md();
-        right: 0;
-        bottom: tokens.bpk-spacing-md();
-        content: '';
-        width: tokens.$bpk-border-size-sm;
-        background-color: tokens.$bpk-line-day;
-      }
-    }
-  }
-}
-
-// Divider between primary and secondary (only visible in split layout on mobile)
+// Divider between primary and secondary in split layout
+// Horizontal on mobile, vertical on desktop
 .bpk-card-v2__divider {
-  display: none;
+  // Mobile: horizontal divider
   height: tokens.$bpk-border-size-sm;
   margin: tokens.bpk-spacing-md() 0;
   background-color: tokens.$bpk-line-day;
 
-  // Mobile - show as horizontal divider in split layout
-  .bpk-card-v2__body--split & {
-    display: block;
-
-    @include breakpoints.bpk-breakpoint-above-mobile {
-      display: none;
-    }
+  // Desktop: vertical divider
+  @include breakpoints.bpk-breakpoint-above-mobile {
+    width: tokens.$bpk-border-size-sm;
+    height: auto;
+    margin: tokens.bpk-spacing-md() 0;
+    align-self: stretch;
   }
-}
-
-// Secondary content area in split layout
-.bpk-card-v2__secondary {
-  display: flex;
-  width: 100%;
-  padding: tokens.bpk-spacing-base();
-  flex-direction: column;
-  flex: 1 1 auto;
-
-  // Split layout - on desktop
-  .bpk-card-v2__body--split & {
-    width: 100%;
-    padding: tokens.bpk-spacing-base();
-    flex: 1 1 auto;
-
-    @include breakpoints.bpk-breakpoint-above-mobile {
-      width: calc(100% - var(--bpk-card-v2-primary-width, 70%));
-    }
-  }
-}
-
-// Footer subcomponent
-.bpk-card-v2__footer {
-  padding: tokens.bpk-spacing-base();
 }

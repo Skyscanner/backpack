@@ -16,13 +16,20 @@
  * limitations under the License.
  */
 
+import type { ReactElement } from 'react';
+
 import { render } from '@testing-library/react';
+
+import { BpkProvider } from '../../../bpk-component-layout';
 
 import BpkCardV2 from './BpkCardV2';
 
+const renderWithProvider = (ui: ReactElement) =>
+  render(<BpkProvider>{ui}</BpkProvider>);
+
 describe('BpkCardV2 Snapshots', () => {
   it('matches snapshot - basic card', () => {
-    const { container } = render(
+    const { container } = renderWithProvider(
       <BpkCardV2.Root>
         <BpkCardV2.Header>Card Title</BpkCardV2.Header>
         <BpkCardV2.Body>Card content goes here</BpkCardV2.Body>
@@ -34,7 +41,7 @@ describe('BpkCardV2 Snapshots', () => {
   });
 
   it('matches snapshot - split layout', () => {
-    const { container } = render(
+    const { container } = renderWithProvider(
       <BpkCardV2.Root>
         <BpkCardV2.Body split splitRatio={70}>
           <BpkCardV2.Primary>Main content area (70%)</BpkCardV2.Primary>
@@ -47,7 +54,7 @@ describe('BpkCardV2 Snapshots', () => {
   });
 
   it('matches snapshot - outlined variant', () => {
-    const { container } = render(
+    const { container } = renderWithProvider(
       <BpkCardV2.Root variant="outlined">
         <BpkCardV2.Header>Outlined Card</BpkCardV2.Header>
         <BpkCardV2.Body>Content with border instead of shadow</BpkCardV2.Body>
@@ -58,7 +65,7 @@ describe('BpkCardV2 Snapshots', () => {
   });
 
   it('matches snapshot - elevated surface color', () => {
-    const { container } = render(
+    const { container } = renderWithProvider(
       <BpkCardV2.Root bgColor="surfaceElevated">
         <BpkCardV2.Body>Elevated background surface</BpkCardV2.Body>
       </BpkCardV2.Root>,
@@ -68,7 +75,7 @@ describe('BpkCardV2 Snapshots', () => {
   });
 
   it('matches snapshot - complex layout with all sections', () => {
-    const { container } = render(
+    const { container } = renderWithProvider(
       <BpkCardV2.Root variant="default" bgColor="surfaceDefault">
         <BpkCardV2.Header>Product</BpkCardV2.Header>
         <BpkCardV2.Body split splitRatio={65}>
@@ -90,7 +97,7 @@ describe('BpkCardV2 Snapshots', () => {
   });
 
   it('matches snapshot - minimal card (body only)', () => {
-    const { container } = render(
+    const { container } = renderWithProvider(
       <BpkCardV2.Root>
         <BpkCardV2.Body>Minimal card with just body</BpkCardV2.Body>
       </BpkCardV2.Root>,

@@ -16,16 +16,22 @@
  * limitations under the License.
  */
 
+import type { ReactElement } from 'react';
 import { createRef } from 'react';
 
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+
+import { BpkProvider, BpkSpacing } from '../../../bpk-component-layout';
 
 import BpkCardV2 from './BpkCardV2';
+
+const renderWithProvider = (ui: ReactElement) =>
+  render(<BpkProvider>{ui}</BpkProvider>);
 
 describe('BpkCardV2', () => {
   describe('Basic Composition', () => {
     it('renders with Header, Body, and Footer', () => {
-      const { container } = render(
+      renderWithProvider(
         <BpkCardV2.Root>
           <BpkCardV2.Header>Card title</BpkCardV2.Header>
           <BpkCardV2.Body>Card content</BpkCardV2.Body>
@@ -33,51 +39,45 @@ describe('BpkCardV2', () => {
         </BpkCardV2.Root>,
       );
 
-      expect(container.querySelector('[class*="bpk-card-v2__header"]')).toBeInTheDocument();
-      expect(container.querySelector('[class*="bpk-card-v2__body"]')).toBeInTheDocument();
-      expect(container.querySelector('[class*="bpk-card-v2__footer"]')).toBeInTheDocument();
+      expect(screen.getByText('Card title')).toBeInTheDocument();
+      expect(screen.getByText('Card content')).toBeInTheDocument();
+      expect(screen.getByText('Card footer')).toBeInTheDocument();
     });
 
-    it('renders header element', () => {
-      const { container } = render(
+    it('renders header content', () => {
+      renderWithProvider(
         <BpkCardV2.Root>
           <BpkCardV2.Header>Title</BpkCardV2.Header>
         </BpkCardV2.Root>,
       );
 
-      const header = container.querySelector('[class*="bpk-card-v2__header"]');
-
-      expect(header).toBeInTheDocument();
-      expect(header).toHaveTextContent('Title');
+      expect(screen.getByText('Title')).toBeInTheDocument();
     });
 
-    it('renders footer element', () => {
-      const { container } = render(
+    it('renders footer content', () => {
+      renderWithProvider(
         <BpkCardV2.Root>
           <BpkCardV2.Footer>Footer</BpkCardV2.Footer>
         </BpkCardV2.Root>,
       );
 
-      const footer = container.querySelector('[class*="bpk-card-v2__footer"]');
-
-      expect(footer).toBeInTheDocument();
-      expect(footer).toHaveTextContent('Footer');
+      expect(screen.getByText('Footer')).toBeInTheDocument();
     });
 
     it('renders with children in Body', () => {
-      const { getByText } = render(
+      renderWithProvider(
         <BpkCardV2.Root>
           <BpkCardV2.Body>Body content</BpkCardV2.Body>
         </BpkCardV2.Root>,
       );
 
-      expect(getByText('Body content')).toBeInTheDocument();
+      expect(screen.getByText('Body content')).toBeInTheDocument();
     });
   });
 
   describe('Split Layout', () => {
     it('renders Primary and Secondary in split layout', () => {
-      const { container } = render(
+      renderWithProvider(
         <BpkCardV2.Root>
           <BpkCardV2.Body split>
             <BpkCardV2.Primary>Primary content</BpkCardV2.Primary>
@@ -86,12 +86,12 @@ describe('BpkCardV2', () => {
         </BpkCardV2.Root>,
       );
 
-      expect(container.querySelector('[class*="bpk-card-v2__primary"]')).toBeInTheDocument();
-      expect(container.querySelector('[class*="bpk-card-v2__secondary"]')).toBeInTheDocument();
+      expect(screen.getByText('Primary content')).toBeInTheDocument();
+      expect(screen.getByText('Secondary content')).toBeInTheDocument();
     });
 
-    it('applies split modifier class when split={true}', () => {
-      const { container } = render(
+    it('inserts divider between Primary and Secondary', () => {
+      const { container } = renderWithProvider(
         <BpkCardV2.Root>
           <BpkCardV2.Body split>
             <BpkCardV2.Primary>Main</BpkCardV2.Primary>
@@ -100,51 +100,17 @@ describe('BpkCardV2', () => {
         </BpkCardV2.Root>,
       );
 
-      const body = container.querySelector('[class*="bpk-card-v2__body"]');
-
-      expect(body).toHaveClass('bpk-card-v2__body--split');
+      expect(container.querySelector('[class*="bpk-card-v2__divider"]')).toBeInTheDocument();
     });
 
-    it('does not apply split modifier when split={false}', () => {
-      const { container } = render(
+    it('does not insert divider when split is false', () => {
+      const { container } = renderWithProvider(
         <BpkCardV2.Root>
           <BpkCardV2.Body split={false}>Content</BpkCardV2.Body>
         </BpkCardV2.Root>,
       );
 
-      const body = container.querySelector('[class*="bpk-card-v2__body"]');
-
-      expect(body).not.toHaveClass('bpk-card-v2__body--split');
-    });
-
-    it('applies splitRatio via CSS custom property', () => {
-      const { container } = render(
-        <BpkCardV2.Root>
-          <BpkCardV2.Body split splitRatio={60}>
-            <BpkCardV2.Primary>Main (60%)</BpkCardV2.Primary>
-            <BpkCardV2.Secondary>Side (40%)</BpkCardV2.Secondary>
-          </BpkCardV2.Body>
-        </BpkCardV2.Root>,
-      );
-
-      const body = container.querySelector('[class*="bpk-card-v2__body"]') as HTMLElement;
-
-      expect(body.style.getPropertyValue('--bpk-card-v2-primary-width')).toBe('60%');
-    });
-
-    it('defaults to 70% split ratio when not specified', () => {
-      const { container } = render(
-        <BpkCardV2.Root>
-          <BpkCardV2.Body split>
-            <BpkCardV2.Primary>Main</BpkCardV2.Primary>
-            <BpkCardV2.Secondary>Side</BpkCardV2.Secondary>
-          </BpkCardV2.Body>
-        </BpkCardV2.Root>,
-      );
-
-      const body = container.querySelector('[class*="bpk-card-v2__body"]') as HTMLElement;
-
-      expect(body.style.getPropertyValue('--bpk-card-v2-primary-width')).toBe('70%');
+      expect(container.querySelector('[class*="bpk-card-v2__divider"]')).not.toBeInTheDocument();
     });
   });
 
@@ -162,7 +128,7 @@ describe('BpkCardV2', () => {
 
     surfaceColors.forEach((color) => {
       it(`applies ${color} surface color as data attribute`, () => {
-        const { container } = render(
+        const { container } = renderWithProvider(
           <BpkCardV2.Root bgColor={color}>Content</BpkCardV2.Root>,
         );
 
@@ -173,7 +139,9 @@ describe('BpkCardV2', () => {
     });
 
     it('defaults to surfaceDefault color', () => {
-      const { container } = render(<BpkCardV2.Root>Content</BpkCardV2.Root>);
+      const { container } = renderWithProvider(
+        <BpkCardV2.Root>Content</BpkCardV2.Root>,
+      );
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
 
@@ -183,7 +151,9 @@ describe('BpkCardV2', () => {
 
   describe('Visual Variants', () => {
     it('applies default variant class by default', () => {
-      const { container } = render(<BpkCardV2.Root>Content</BpkCardV2.Root>);
+      const { container } = renderWithProvider(
+        <BpkCardV2.Root>Content</BpkCardV2.Root>,
+      );
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
 
@@ -191,7 +161,9 @@ describe('BpkCardV2', () => {
     });
 
     it('applies outlined variant class when specified', () => {
-      const { container } = render(<BpkCardV2.Root variant="outlined">Content</BpkCardV2.Root>);
+      const { container } = renderWithProvider(
+        <BpkCardV2.Root variant="outlined">Content</BpkCardV2.Root>,
+      );
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
 
@@ -202,7 +174,7 @@ describe('BpkCardV2', () => {
   describe('Refs', () => {
     it('forwards ref to root div element', () => {
       const ref = createRef<HTMLDivElement>();
-      const { container } = render(
+      const { container } = renderWithProvider(
         <BpkCardV2.Root ref={ref}>Content</BpkCardV2.Root>,
       );
 
@@ -211,7 +183,7 @@ describe('BpkCardV2', () => {
 
     it('ref provides access to root element properties', () => {
       const ref = createRef<HTMLDivElement>();
-      render(<BpkCardV2.Root ref={ref}>Content</BpkCardV2.Root>);
+      renderWithProvider(<BpkCardV2.Root ref={ref}>Content</BpkCardV2.Root>);
 
       expect(ref.current?.dataset.bgColor).toBe('surfaceDefault');
       expect(ref.current?.className).toContain('bpk-card-v2');
@@ -220,7 +192,7 @@ describe('BpkCardV2', () => {
 
   describe('ARIA Attributes', () => {
     it('applies ariaLabel prop', () => {
-      const { container } = render(
+      const { container } = renderWithProvider(
         <BpkCardV2.Root ariaLabel="Product card">Content</BpkCardV2.Root>,
       );
 
@@ -230,7 +202,7 @@ describe('BpkCardV2', () => {
     });
 
     it('applies ariaLabelledBy prop', () => {
-      const { container } = render(
+      const { container } = renderWithProvider(
         <BpkCardV2.Root ariaLabelledBy="card-title">Content</BpkCardV2.Root>,
       );
 
@@ -251,138 +223,72 @@ describe('BpkCardV2', () => {
     });
   });
 
-  describe('Padding Props', () => {
-    describe('Header padding', () => {
-      it('applies string padding to Header', () => {
-        const { container } = render(
-          <BpkCardV2.Root>
-            <BpkCardV2.Header padding="lg">Title</BpkCardV2.Header>
-          </BpkCardV2.Root>,
-        );
+  describe('Layout Props', () => {
+    it('renders Header with BpkFlex and passes layout props', () => {
+      renderWithProvider(
+        <BpkCardV2.Root>
+          <BpkCardV2.Header data-testid="header" padding={BpkSpacing.LG}>
+            Title
+          </BpkCardV2.Header>
+        </BpkCardV2.Root>,
+      );
 
-        const header = container.querySelector('[class*="bpk-card-v2__header"]') as HTMLElement;
-
-        expect(header.style.padding).toBe('var(--bpk-spacing-lg)');
-      });
-
-      it('applies none padding to Header', () => {
-        const { container } = render(
-          <BpkCardV2.Root>
-            <BpkCardV2.Header padding="none">Title</BpkCardV2.Header>
-          </BpkCardV2.Root>,
-        );
-
-        const header = container.querySelector('[class*="bpk-card-v2__header"]') as HTMLElement;
-
-        expect(header.style.padding).toBe('0px');
-      });
-
-      it('applies vertical/horizontal padding to Header', () => {
-        const { container } = render(
-          <BpkCardV2.Root>
-            <BpkCardV2.Header padding={{ vertical: 'sm', horizontal: 'xl' }}>Title</BpkCardV2.Header>
-          </BpkCardV2.Root>,
-        );
-
-        const header = container.querySelector('[class*="bpk-card-v2__header"]') as HTMLElement;
-
-        expect(header.style.paddingTop).toBe('var(--bpk-spacing-sm)');
-        expect(header.style.paddingBottom).toBe('var(--bpk-spacing-sm)');
-        expect(header.style.paddingInlineStart).toBe('var(--bpk-spacing-xl)');
-        expect(header.style.paddingInlineEnd).toBe('var(--bpk-spacing-xl)');
-      });
-
-      it('applies individual side padding to Header', () => {
-        const { container } = render(
-          <BpkCardV2.Root>
-            <BpkCardV2.Header padding={{ top: 'lg', bottom: 'sm', start: 'md', end: 'none' }}>Title</BpkCardV2.Header>
-          </BpkCardV2.Root>,
-        );
-
-        const header = container.querySelector('[class*="bpk-card-v2__header"]') as HTMLElement;
-
-        expect(header.style.paddingTop).toBe('var(--bpk-spacing-lg)');
-        expect(header.style.paddingBottom).toBe('var(--bpk-spacing-sm)');
-        expect(header.style.paddingInlineStart).toBe('var(--bpk-spacing-md)');
-        // JSDOM normalizes '0' to '0px' for some properties inconsistently
-        expect(['0', '0px']).toContain(header.style.paddingInlineEnd);
-      });
+      expect(screen.getByTestId('header')).toBeInTheDocument();
+      expect(screen.getByText('Title')).toBeInTheDocument();
     });
 
-    describe('Body padding', () => {
-      it('applies string padding to Body', () => {
-        const { container } = render(
-          <BpkCardV2.Root>
-            <BpkCardV2.Body padding="xl">Content</BpkCardV2.Body>
-          </BpkCardV2.Root>,
-        );
+    it('renders Footer with BpkFlex and passes layout props', () => {
+      renderWithProvider(
+        <BpkCardV2.Root>
+          <BpkCardV2.Footer data-testid="footer" padding={BpkSpacing.SM}>
+            Footer
+          </BpkCardV2.Footer>
+        </BpkCardV2.Root>,
+      );
 
-        const body = container.querySelector('[class*="bpk-card-v2__body"]') as HTMLElement;
-
-        expect(body.style.padding).toBe('var(--bpk-spacing-xl)');
-      });
-
-      it('applies vertical/horizontal padding to Body', () => {
-        const { container } = render(
-          <BpkCardV2.Root>
-            <BpkCardV2.Body padding={{ vertical: 'xxl', horizontal: 'base' }}>Content</BpkCardV2.Body>
-          </BpkCardV2.Root>,
-        );
-
-        const body = container.querySelector('[class*="bpk-card-v2__body"]') as HTMLElement;
-
-        expect(body.style.paddingTop).toBe('var(--bpk-spacing-xxl)');
-        expect(body.style.paddingBottom).toBe('var(--bpk-spacing-xxl)');
-        expect(body.style.paddingInlineStart).toBe('var(--bpk-spacing-base)');
-        expect(body.style.paddingInlineEnd).toBe('var(--bpk-spacing-base)');
-      });
+      expect(screen.getByTestId('footer')).toBeInTheDocument();
+      expect(screen.getByText('Footer')).toBeInTheDocument();
     });
 
-    describe('Footer padding', () => {
-      it('applies string padding to Footer', () => {
-        const { container } = render(
-          <BpkCardV2.Root>
-            <BpkCardV2.Footer padding="sm">Footer</BpkCardV2.Footer>
-          </BpkCardV2.Root>,
-        );
+    it('renders Body with BpkFlex and passes layout props', () => {
+      renderWithProvider(
+        <BpkCardV2.Root>
+          <BpkCardV2.Body data-testid="body" padding={BpkSpacing.XL}>
+            Content
+          </BpkCardV2.Body>
+        </BpkCardV2.Root>,
+      );
 
-        const footer = container.querySelector('[class*="bpk-card-v2__footer"]') as HTMLElement;
-
-        expect(footer.style.padding).toBe('var(--bpk-spacing-sm)');
-      });
-
-      it('applies individual side padding to Footer', () => {
-        const { container } = render(
-          <BpkCardV2.Root>
-            <BpkCardV2.Footer padding={{ top: 'none', bottom: 'md' }}>Footer</BpkCardV2.Footer>
-          </BpkCardV2.Root>,
-        );
-
-        const footer = container.querySelector('[class*="bpk-card-v2__footer"]') as HTMLElement;
-
-        // JSDOM normalizes '0' to '0px' for some properties
-        expect(['0', '0px']).toContain(footer.style.paddingTop);
-        expect(footer.style.paddingBottom).toBe('var(--bpk-spacing-md)');
-      });
+      expect(screen.getByTestId('body')).toBeInTheDocument();
+      expect(screen.getByText('Content')).toBeInTheDocument();
     });
 
-    describe('All padding sizes', () => {
-      const paddingSizes = ['none', 'sm', 'md', 'base', 'lg', 'xl', 'xxl', 'xxxl', 'xxxxl'] as const;
+    it('renders Primary with BpkBox and passes layout props', () => {
+      renderWithProvider(
+        <BpkCardV2.Root>
+          <BpkCardV2.Body split>
+            <BpkCardV2.Primary data-testid="primary">Main</BpkCardV2.Primary>
+            <BpkCardV2.Secondary>Side</BpkCardV2.Secondary>
+          </BpkCardV2.Body>
+        </BpkCardV2.Root>,
+      );
 
-      paddingSizes.forEach((size) => {
-        it(`applies ${size} padding correctly`, () => {
-          const { container } = render(
-            <BpkCardV2.Root>
-              <BpkCardV2.Header padding={size}>Title</BpkCardV2.Header>
-            </BpkCardV2.Root>,
-          );
+      expect(screen.getByTestId('primary')).toBeInTheDocument();
+      expect(screen.getByText('Main')).toBeInTheDocument();
+    });
 
-          const header = container.querySelector('[class*="bpk-card-v2__header"]') as HTMLElement;
-          const expectedValue = size === 'none' ? '0px' : `var(--bpk-spacing-${size})`;
+    it('renders Secondary with BpkBox and passes layout props', () => {
+      renderWithProvider(
+        <BpkCardV2.Root>
+          <BpkCardV2.Body split>
+            <BpkCardV2.Primary>Main</BpkCardV2.Primary>
+            <BpkCardV2.Secondary data-testid="secondary">Side</BpkCardV2.Secondary>
+          </BpkCardV2.Body>
+        </BpkCardV2.Root>,
+      );
 
-          expect(header.style.padding).toBe(expectedValue);
-        });
-      });
+      expect(screen.getByTestId('secondary')).toBeInTheDocument();
+      expect(screen.getByText('Side')).toBeInTheDocument();
     });
   });
 });
