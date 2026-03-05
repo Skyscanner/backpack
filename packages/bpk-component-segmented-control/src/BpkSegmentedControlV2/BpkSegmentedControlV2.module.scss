@@ -27,14 +27,13 @@
 .bpk-segmented-control-v2 {
   // Default theme: canvas-default — all CSS variables set from tokens.
   // Consumers (or type variant modifiers) override these to change the theme.
-  --bpk-segmented-control-bg: #{tokens.$bpk-surface-default-day};
+  --bpk-segmented-control-bg: #{tokens.$bpk-private-segmented-control-canvas-default-day};
   --bpk-segmented-control-item-color: #{tokens.$bpk-text-primary-day};
   --bpk-segmented-control-item-disabled-color: #{tokens.$bpk-text-disabled-day};
   --bpk-segmented-control-indicator-bg: #{tokens.$bpk-core-primary-day};
   --bpk-segmented-control-indicator-color: #{tokens.$bpk-text-on-dark-day};
   --bpk-segmented-control-border-radius: #{tokens.$bpk-border-radius-sm};
   --bpk-segmented-control-padding-x: #{tokens.bpk-spacing-base()};
-  --bpk-segmented-control-padding-y: #{tokens.bpk-spacing-md()};
   --bpk-segmented-control-divider-color: #{tokens.$bpk-line-day};
   --bpk-segmented-control-shadow: inset 0 0 #{tokens.$bpk-one-pixel-rem * 20} 0
     rgb(0, 0, 0, 0.1);
@@ -49,8 +48,7 @@
   // ── Type variants: override only the CSS variables that differ ──────────────
 
   &--canvas-default {
-    // Canvas Default uses white background per Figma design.
-    --bpk-segmented-control-bg: #{tokens.$bpk-surface-default-day};
+    --bpk-segmented-control-bg: #{tokens.$bpk-private-segmented-control-canvas-default-day};
   }
 
   &--canvas-contrast {
@@ -96,8 +94,7 @@
 .bpk-segmented-control-v2__item-control {
   display: flex;
   min-height: tokens.bpk-spacing-xl();
-  padding: var(--bpk-segmented-control-padding-y)
-    var(--bpk-segmented-control-padding-x);
+  padding: 0 var(--bpk-segmented-control-padding-x);
   justify-content: center;
   align-items: center;
 
@@ -182,4 +179,10 @@
   overflow: hidden;
   gap: tokens.bpk-spacing-sm();
   pointer-events: none; // Prevent text from capturing mouse events
+
+  // Ensure SVG icons inherit the item's text color (transitions correctly
+  // from dark on unselected to white on selected).
+  svg {
+    fill: currentcolor;
+  }
 }

@@ -21,14 +21,13 @@ import figma from '@figma/code-connect';
 import BpkSegmentedControlV2 from './BpkSegmentedControlV2';
 import { SEGMENT_TYPES_V2 } from './common-types';
 
-// TODO: Replace 'FIGMA_URL' with the actual Figma component URL once provided by the design team.
-figma.connect(BpkSegmentedControlV2.Root, 'FIGMA_URL', {
+figma.connect(BpkSegmentedControlV2.Root, 'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10911-36313', {
   props: {
-    type: figma.enum('Type', {
-      'Canvas default': SEGMENT_TYPES_V2.CanvasDefault,
-      'Canvas contrast': SEGMENT_TYPES_V2.CanvasContrast,
-      'Surface default': SEGMENT_TYPES_V2.SurfaceDefault,
-      'Surface contrast': SEGMENT_TYPES_V2.SurfaceContrast,
+    type: figma.enum('Style', {
+      'Canvas Default': SEGMENT_TYPES_V2.CanvasDefault,
+      'Canvas Contrast': SEGMENT_TYPES_V2.CanvasContrast,
+      'Surface Default': SEGMENT_TYPES_V2.SurfaceDefault,
+      'Surface Contrast': SEGMENT_TYPES_V2.SurfaceContrast,
     }),
     shadow: figma.boolean('Shadow'),
     disabled: figma.boolean('Disabled'),
