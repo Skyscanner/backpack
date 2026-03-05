@@ -55,7 +55,6 @@ const extractTextContent = (node: ReactNode): string => {
   return '';
 };
 
-// Wraps an index forward or backward within [0, last], cycling at the ends.
 const wrapAround = (index: number, last: number, forward: boolean) =>
   // eslint-disable-next-line no-nested-ternary
   forward ? (index >= last ? 0 : index + 1) : index <= 0 ? last : index - 1;
