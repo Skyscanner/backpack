@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import { cssModules } from '../../../bpk-react-utils';
@@ -109,19 +109,11 @@ function Label({ children, lineClamp = 2, textStyle = TEXT_STYLES.heading5 }: La
   const { labelId } = useCheckboxCardContext();
 
   return (
-    <div className={getClassName('bpk-checkbox-card-label')}>
-      <BpkText
-        id={labelId}
-        textStyle={textStyle}
-        tagName="span"
-        style={{
-          display: '-webkit-box',
-          WebkitLineClamp: lineClamp,
-          WebkitBoxOrient: 'vertical' as any,
-          overflow: 'hidden',
-          width: '100%',
-        }}
-      >
+    <div
+      className={getClassName('bpk-checkbox-card-label')}
+      style={{ '--bpk-label-line-clamp': lineClamp } as CSSProperties}
+    >
+      <BpkText id={labelId} textStyle={textStyle} tagName="span">
         {children}
       </BpkText>
     </div>
@@ -151,19 +143,11 @@ function Description({ children, lineClamp = 3, textStyle = TEXT_STYLES.bodyDefa
   const { descriptionId } = useCheckboxCardContext();
 
   return (
-    <div className={getClassName('bpk-checkbox-card-description')}>
-      <BpkText
-        id={descriptionId}
-        textStyle={textStyle}
-        tagName="span"
-        style={{
-          display: '-webkit-box',
-          WebkitLineClamp: lineClamp,
-          WebkitBoxOrient: 'vertical' as any,
-          overflow: 'hidden',
-          width: '100%',
-        }}
-      >
+    <div
+      className={getClassName('bpk-checkbox-card-description')}
+      style={{ '--bpk-description-line-clamp': lineClamp } as CSSProperties}
+    >
+      <BpkText id={descriptionId} textStyle={textStyle} tagName="span">
         {children}
       </BpkText>
     </div>

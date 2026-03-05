@@ -148,9 +148,12 @@
   width: 100%;
   color: inherit;
   text-align: center;
-  text-overflow: ellipsis;
   overflow: hidden;
+  // stylelint-disable-next-line property-no-vendor-prefix
   -webkit-box-orient: vertical;
+  // stylelint-disable-next-line property-no-vendor-prefix
+  -webkit-line-clamp: var(--bpk-label-line-clamp, 2);
+  line-clamp: var(--bpk-label-line-clamp, 2);
 
   @include typography.bpk-heading-5;
 
@@ -169,9 +172,12 @@
     #{tokens.$bpk-text-secondary-day}
   );
   text-align: center;
-  text-overflow: ellipsis;
   overflow: hidden;
+  // stylelint-disable-next-line property-no-vendor-prefix
   -webkit-box-orient: vertical;
+  // stylelint-disable-next-line property-no-vendor-prefix
+  -webkit-line-clamp: var(--bpk-description-line-clamp, 3);
+  line-clamp: var(--bpk-description-line-clamp, 3);
 
   @include typography.bpk-text;
 

@@ -23,12 +23,12 @@ exports[`BpkCheckboxCard (compound component) should render correctly when check
     >
       <div
         class="bpk-checkbox-card-label"
+        style="--bpk-label-line-clamp: 2;"
       >
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
           id=":r3:"
-          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
         >
           Select option
         </span>
@@ -62,12 +62,12 @@ exports[`BpkCheckboxCard (compound component) should render correctly when disab
     >
       <div
         class="bpk-checkbox-card-label"
+        style="--bpk-label-line-clamp: 2;"
       >
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
           id=":r6:"
-          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
         >
           Select option
         </span>
@@ -99,24 +99,24 @@ exports[`BpkCheckboxCard (compound component) should render correctly with all c
     >
       <div
         class="bpk-checkbox-card-label"
+        style="--bpk-label-line-clamp: 2;"
       >
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
           id=":r9:"
-          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
         >
           City Centre
         </span>
       </div>
       <div
         class="bpk-checkbox-card-description"
+        style="--bpk-description-line-clamp: 3;"
       >
         <span
           class="bpk-text bpk-text--body-default"
           data-backpack-ds-component="Text"
           id=":ra:"
-          style="display: -webkit-box; -webkit-line-clamp: 3; overflow: hidden; width: 100%;"
         >
           Central location
         </span>
@@ -148,12 +148,12 @@ exports[`BpkCheckboxCard (compound component) should render correctly with minim
     >
       <div
         class="bpk-checkbox-card-label"
+        style="--bpk-label-line-clamp: 2;"
       >
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
           id=":r0:"
-          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
         >
           Select option
         </span>
@@ -188,12 +188,12 @@ exports[`BpkCheckboxCard (compound component) should render disabled and checked
     >
       <div
         class="bpk-checkbox-card-label"
+        style="--bpk-label-line-clamp: 2;"
       >
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
           id=":ro:"
-          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
         >
           Disabled selected
         </span>
@@ -225,12 +225,12 @@ exports[`BpkCheckboxCard (compound component) should render onCanvasContrast var
     >
       <div
         class="bpk-checkbox-card-label"
+        style="--bpk-label-line-clamp: 2;"
       >
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
           id=":rf:"
-          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
         >
           Select option
         </span>
@@ -262,12 +262,12 @@ exports[`BpkCheckboxCard (compound component) should render onCanvasDefault vari
     >
       <div
         class="bpk-checkbox-card-label"
+        style="--bpk-label-line-clamp: 2;"
       >
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
           id=":rc:"
-          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
         >
           Select option
         </span>
@@ -299,12 +299,12 @@ exports[`BpkCheckboxCard (compound component) should render onSurfaceContrast va
     >
       <div
         class="bpk-checkbox-card-label"
+        style="--bpk-label-line-clamp: 2;"
       >
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
           id=":ri:"
-          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
         >
           Select option
         </span>
@@ -336,12 +336,12 @@ exports[`BpkCheckboxCard (compound component) should render square radius correc
     >
       <div
         class="bpk-checkbox-card-label"
+        style="--bpk-label-line-clamp: 2;"
       >
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
           id=":rl:"
-          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
         >
           Select option
         </span>
@@ -373,12 +373,12 @@ exports[`BpkCheckboxCard (compound component) should render with extremely long 
     >
       <div
         class="bpk-checkbox-card-label"
+        style="--bpk-label-line-clamp: 2;"
       >
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
           id=":r1m:"
-          style="display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; width: 100%;"
         >
           This is an extremely long label that will definitely exceed the maximum line count and should be truncated
         </span>

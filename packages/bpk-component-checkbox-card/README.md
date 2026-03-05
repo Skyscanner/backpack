@@ -83,6 +83,9 @@ export default () => (
 | icon | element | false | - |
 | image | string | false | - |
 | price | node | false | - |
+| indicator | node or null | false | - |
+| indicatorPlacement | `'start'` or `'end'` | false | `end` |
+| addon | node | false | - |
 | disabled | boolean | false | false |
 | variant | string | false | `onCanvasDefault` |
 | radius | string | false | `rounded` |
