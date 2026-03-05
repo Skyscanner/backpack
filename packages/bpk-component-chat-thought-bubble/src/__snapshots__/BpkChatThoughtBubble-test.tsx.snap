@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkChatThoughtBubble should render correctly with default props 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-chat-thought-bubble"
+    data-backpack-ds-component="ChatThoughtBubble"
+    data-testid="bpk-chat-thought-bubble"
+  >
+    <div
+      aria-hidden="true"
+      class="bpk-chat-thought-bubble__dots"
+    >
+      <div
+        class="bpk-chat-thought-bubble__dots--dot bpk-chat-thought-bubble__dots--dot-first"
+      />
+      <div
+        class="bpk-chat-thought-bubble__dots--dot bpk-chat-thought-bubble__dots--dot-second"
+      />
+    </div>
+    <div
+      class="bpk-chat-thought-bubble__bubble"
+    >
+      <span
+        class="bpk-text bpk-text--body-default"
+        data-backpack-ds-component="Text"
+      >
+        Thinking...
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;

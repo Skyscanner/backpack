@@ -18,7 +18,7 @@
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import BpkButton from '../../bpk-component-button';
 import BpkSectionHeader from '../../bpk-component-section-header';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import BpkCardListGridStack from './BpkCardListGridStack';
 import BpkCardListRowRailContainer from './BpkCardListRowRail';
@@ -48,6 +48,7 @@ const BpkCardList = (props: CardListProps) => {
     chipGroup,
     description,
     expandText,
+    initiallyInViewCardIndex = 0,
     initiallyShownCardsDesktop = DEFAULT_ITEMS_DESKTOP,
     initiallyShownCardsMobile = DEFAULT_ITEMS_MOBILE,
     layoutDesktop,
@@ -76,7 +77,11 @@ const BpkCardList = (props: CardListProps) => {
   );
 
   return (
-    <div className={getClassName('bpk-card-list')} data-testid="bpk-card-list">
+    <div
+      className={getClassName('bpk-card-list')}
+      {...getDataComponentAttribute('CardList')}
+      data-testid="bpk-card-list"
+    >
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
         {(isMobile) => (
           <>
@@ -101,6 +106,7 @@ const BpkCardList = (props: CardListProps) => {
                       initiallyShownCards={initiallyShownCardsMobile}
                       layout={layoutMobile}
                       accessibilityLabels={accessibilityLabels}
+                      initiallyInViewCardIndex={initiallyInViewCardIndex}
                       isMobile
                     >
                       {cardList}
@@ -131,6 +137,7 @@ const BpkCardList = (props: CardListProps) => {
                         initiallyShownCards={initiallyShownCardsDesktop}
                         layout={layoutDesktop}
                         accessibilityLabels={accessibilityLabels}
+                        initiallyInViewCardIndex={initiallyInViewCardIndex}
                       >
                         {cardList}
                       </BpkCardListRowRailContainer>

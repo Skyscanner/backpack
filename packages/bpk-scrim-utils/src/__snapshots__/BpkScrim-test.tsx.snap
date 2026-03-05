@@ -4,6 +4,7 @@ exports[`BpkScrim should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-scrim"
+    data-backpack-ds-component="Scrim"
     role="presentation"
   />
 </DocumentFragment>

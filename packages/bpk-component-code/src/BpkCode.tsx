@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkCode.module.scss';
 
@@ -44,7 +44,7 @@ const BpkCode = ({
   );
 
   return (
-    <code className={classNames} {...rest}>
+    <code className={classNames} {...getDataComponentAttribute('Code')} {...rest}>
       {children}
     </code>
   );

@@ -4,6 +4,7 @@ exports[`BpkLoadingButton should add only bpk specific classes if className prop
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--large bpk-button--secondary"
+    data-backpack-ds-component="LoadingButton"
     type="button"
   >
     <div
@@ -39,6 +40,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "disabled" at
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--large bpk-button--primary"
+    data-backpack-ds-component="LoadingButton"
     disabled=""
     type="button"
   >
@@ -75,6 +77,7 @@ exports[`BpkLoadingButton should render correctly with a "disabled" attribute 1`
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--primary"
+    data-backpack-ds-component="LoadingButton"
     disabled=""
     type="button"
   >
@@ -112,6 +115,7 @@ exports[`BpkLoadingButton should render correctly with a "icon" attribute 1`] = 
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--primary"
+    data-backpack-ds-component="LoadingButton"
     type="button"
   >
     <div
@@ -146,6 +150,7 @@ exports[`BpkLoadingButton should render correctly with a "iconDisabled" attribut
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--primary"
+    data-backpack-ds-component="LoadingButton"
     disabled=""
     type="button"
   >
@@ -181,6 +186,7 @@ exports[`BpkLoadingButton should render correctly with a "iconPosition=leading" 
 <DocumentFragment>
   <button
     class="bpk-button bpk-button--featured"
+    data-backpack-ds-component="LoadingButton"
     type="button"
   >
     <div
