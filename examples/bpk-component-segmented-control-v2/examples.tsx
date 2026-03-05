@@ -20,11 +20,6 @@ import { useState } from 'react';
 import type { CSSProperties } from 'react';
 
 import {
-  canvasContrastDay,
-  surfaceContrastDay,
-} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-
-import {
   BpkSegmentedControlV2,
   SEGMENT_TYPES_V2,
 } from '../../packages/bpk-component-segmented-control';
@@ -70,7 +65,7 @@ const UncontrolledDefaultValue = () => (
 const CanvasContrast = () => {
   const [selected, setSelected] = useState('flights');
   return (
-    <div style={{ backgroundColor: canvasContrastDay, padding: '1rem' }}>
+    <div className={getClassName('bpk-component-segmented-control-stories__canvas-contrast-demo')}>
       <BpkSegmentedControlV2.Root
         label="Travel type"
         value={selected}
@@ -116,7 +111,7 @@ const SurfaceDefault = () => {
 const SurfaceContrast = () => {
   const [selected, setSelected] = useState('economy');
   return (
-    <div style={{ backgroundColor: surfaceContrastDay, padding: '1rem' }}>
+    <div className={getClassName('bpk-component-segmented-control-stories__surface-contrast-demo')}>
       <BpkSegmentedControlV2.Root
         label="Cabin class"
         value={selected}
@@ -391,39 +386,63 @@ const ComplexItemContent = ({
 );
 
 const ComplexCanvasDefault = () => (
-  <BpkSegmentedControlV2.Root
-    label="Sort flight itineraries"
-    defaultValue="cheapest"
-    type={SEGMENT_TYPES_V2.CanvasDefault}
-    shadow
-  >
-    <BpkSegmentedControlV2.Item value="best" accessibilityLabel="Best, £84, 2h average">
-      <ComplexItemContent label="Best" price="£84" duration="2h average" />
-    </BpkSegmentedControlV2.Item>
-    <BpkSegmentedControlV2.Item value="cheapest" accessibilityLabel="Cheapest, £34, 9h average">
-      <ComplexItemContent label="Cheapest" price="£34" duration="9h average" />
-    </BpkSegmentedControlV2.Item>
-    <BpkSegmentedControlV2.Item value="fastest" accessibilityLabel="Fastest, £90, 1h average">
-      <ComplexItemContent label="Fastest" price="£90" duration="1h average" />
-    </BpkSegmentedControlV2.Item>
-  </BpkSegmentedControlV2.Root>
+  <div className={getClassName('bpk-component-segmented-control-stories__canvas-default-wrapper')}>
+    <BpkSegmentedControlV2.Root
+      label="Sort flight itineraries"
+      defaultValue="cheapest"
+      type={SEGMENT_TYPES_V2.CanvasDefault}
+      shadow
+    >
+      <BpkSegmentedControlV2.Item
+        value="best"
+        accessibilityLabel="Best, £84, 2h average"
+      >
+        <ComplexItemContent label="Best" price="£84" duration="2h average" />
+      </BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item
+        value="cheapest"
+        accessibilityLabel="Cheapest, £34, 9h average"
+      >
+        <ComplexItemContent label="Cheapest" price="£34" duration="9h average" />
+      </BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item
+        value="fastest"
+        accessibilityLabel="Fastest, £90, 1h average"
+      >
+        <ComplexItemContent label="Fastest" price="£90" duration="1h average" />
+      </BpkSegmentedControlV2.Item>
+    </BpkSegmentedControlV2.Root>
+  </div>
 );
 
 const ComplexCanvasContrast = () => (
-  <div style={{ backgroundColor: canvasContrastDay, padding: '2rem' }}>
+  <div className={getClassName('bpk-component-segmented-control-stories__canvas-contrast-wrapper')}>
     <BpkSegmentedControlV2.Root
       label="Sort flight itineraries"
       defaultValue="cheapest"
       type={SEGMENT_TYPES_V2.CanvasContrast}
       shadow
     >
-      <BpkSegmentedControlV2.Item value="best" accessibilityLabel="Best, £84, 2h average">
+      <BpkSegmentedControlV2.Item
+        value="best"
+        accessibilityLabel="Best, £84, 2h average"
+      >
         <ComplexItemContent label="Best" price="£84" duration="2h average" />
       </BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item value="cheapest" accessibilityLabel="Cheapest, £34, 9h average">
-        <ComplexItemContent label="Cheapest" price="£34" duration="9h average" />
+      <BpkSegmentedControlV2.Item
+        value="cheapest"
+        accessibilityLabel="Cheapest, £34, 9h average"
+      >
+        <ComplexItemContent
+          label="Cheapest"
+          price="£34"
+          duration="9h average"
+        />
       </BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item value="fastest" accessibilityLabel="Fastest, £90, 1h average">
+      <BpkSegmentedControlV2.Item
+        value="fastest"
+        accessibilityLabel="Fastest, £90, 1h average"
+      >
         <ComplexItemContent label="Fastest" price="£90" duration="1h average" />
       </BpkSegmentedControlV2.Item>
     </BpkSegmentedControlV2.Root>
@@ -431,39 +450,63 @@ const ComplexCanvasContrast = () => (
 );
 
 const ComplexSurfaceDefault = () => (
-  <BpkSegmentedControlV2.Root
-    label="Sort flight itineraries"
-    defaultValue="cheapest"
-    type={SEGMENT_TYPES_V2.SurfaceDefault}
-    shadow
-  >
-    <BpkSegmentedControlV2.Item value="best" accessibilityLabel="Best, £84, 2h average">
-      <ComplexItemContent label="Best" price="£84" duration="2h average" />
-    </BpkSegmentedControlV2.Item>
-    <BpkSegmentedControlV2.Item value="cheapest" accessibilityLabel="Cheapest, £34, 9h average">
-      <ComplexItemContent label="Cheapest" price="£34" duration="9h average" />
-    </BpkSegmentedControlV2.Item>
-    <BpkSegmentedControlV2.Item value="fastest" accessibilityLabel="Fastest, £90, 1h average">
-      <ComplexItemContent label="Fastest" price="£90" duration="1h average" />
-    </BpkSegmentedControlV2.Item>
-  </BpkSegmentedControlV2.Root>
+  <div className={getClassName('bpk-component-segmented-control-stories__canvas-default-wrapper')}>
+    <BpkSegmentedControlV2.Root
+      label="Sort flight itineraries"
+      defaultValue="cheapest"
+      type={SEGMENT_TYPES_V2.SurfaceDefault}
+      shadow
+    >
+      <BpkSegmentedControlV2.Item
+        value="best"
+        accessibilityLabel="Best, £84, 2h average"
+      >
+        <ComplexItemContent label="Best" price="£84" duration="2h average" />
+      </BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item
+        value="cheapest"
+        accessibilityLabel="Cheapest, £34, 9h average"
+      >
+        <ComplexItemContent label="Cheapest" price="£34" duration="9h average" />
+      </BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item
+        value="fastest"
+        accessibilityLabel="Fastest, £90, 1h average"
+      >
+        <ComplexItemContent label="Fastest" price="£90" duration="1h average" />
+      </BpkSegmentedControlV2.Item>
+    </BpkSegmentedControlV2.Root>
+  </div>
 );
 
 const ComplexSurfaceContrast = () => (
-  <div style={{ backgroundColor: surfaceContrastDay, padding: '2rem' }}>
+  <div className={getClassName('bpk-component-segmented-control-stories__surface-contrast-wrapper')}>
     <BpkSegmentedControlV2.Root
       label="Sort flight itineraries"
       defaultValue="cheapest"
       type={SEGMENT_TYPES_V2.SurfaceContrast}
       shadow
     >
-      <BpkSegmentedControlV2.Item value="best" accessibilityLabel="Best, £84, 2h average">
+      <BpkSegmentedControlV2.Item
+        value="best"
+        accessibilityLabel="Best, £84, 2h average"
+      >
         <ComplexItemContent label="Best" price="£84" duration="2h average" />
       </BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item value="cheapest" accessibilityLabel="Cheapest, £34, 9h average">
-        <ComplexItemContent label="Cheapest" price="£34" duration="9h average" />
+      <BpkSegmentedControlV2.Item
+        value="cheapest"
+        accessibilityLabel="Cheapest, £34, 9h average"
+      >
+        <ComplexItemContent
+          label="Cheapest"
+          price="£34"
+          duration="9h average"
+        />
       </BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item value="fastest" accessibilityLabel="Fastest, £90, 1h average">
+      <BpkSegmentedControlV2.Item
+        value="fastest"
+        accessibilityLabel="Fastest, £90, 1h average"
+      >
         <ComplexItemContent label="Fastest" price="£90" duration="1h average" />
       </BpkSegmentedControlV2.Item>
     </BpkSegmentedControlV2.Root>

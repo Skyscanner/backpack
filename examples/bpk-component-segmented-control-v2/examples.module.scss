@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+@use '../../packages/bpk-mixins/tokens';
+
 .bpk-component-segmented-control-stories__custom-button {
   display: block;
   text-overflow: ellipsis;
@@ -27,4 +29,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.bpk-component-segmented-control-stories__canvas-default-wrapper {
+  padding: tokens.bpk-spacing-xl();
+  background-color: tokens.$bpk-canvas-day;
+}
+
+.bpk-component-segmented-control-stories__canvas-contrast-wrapper {
+  padding: tokens.bpk-spacing-xl();
+  background-color: tokens.$bpk-canvas-contrast-day;
+}
+
+.bpk-component-segmented-control-stories__surface-contrast-wrapper {
+  padding: tokens.bpk-spacing-xl();
+  background-color: tokens.$bpk-surface-contrast-day;
+}
+
+.bpk-component-segmented-control-stories__canvas-contrast-demo {
+  padding: tokens.bpk-spacing-base();
+  background-color: tokens.$bpk-canvas-contrast-day;
+}
+
+.bpk-component-segmented-control-stories__surface-contrast-demo {
+  padding: tokens.bpk-spacing-base();
+  background-color: tokens.$bpk-surface-contrast-day;
 }
