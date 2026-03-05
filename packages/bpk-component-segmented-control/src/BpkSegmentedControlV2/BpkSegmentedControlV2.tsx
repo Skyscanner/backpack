@@ -21,7 +21,11 @@ import { Children, isValidElement } from 'react';
 
 import { SegmentGroup } from '@ark-ui/react/segment-group';
 
-import { cssModules, getDataComponentAttribute, isRTL } from '../../../bpk-react-utils';
+import {
+  cssModules,
+  getDataComponentAttribute,
+  isRTL,
+} from '../../../bpk-react-utils';
 
 import { SEGMENT_TYPES_V2 } from './common-types';
 
@@ -35,7 +39,11 @@ import STYLES from './BpkSegmentedControlV2.module.scss';
 const getClassName = cssModules(STYLES);
 
 const getEnabledInputs = (group: HTMLElement): HTMLInputElement[] =>
-  Array.from(group.querySelectorAll<HTMLInputElement>('input[type="radio"]:not(:disabled)'));
+  Array.from(
+    group.querySelectorAll<HTMLInputElement>(
+      'input[type="radio"]:not(:disabled)',
+    ),
+  );
 
 const extractTextContent = (node: ReactNode): string => {
   if (typeof node === 'string' || typeof node === 'number') return String(node);
@@ -50,7 +58,7 @@ const extractTextContent = (node: ReactNode): string => {
 // Wraps an index forward or backward within [0, last], cycling at the ends.
 const wrapAround = (index: number, last: number, forward: boolean) =>
   // eslint-disable-next-line no-nested-ternary
-  forward ? (index >= last ? 0 : index + 1) : (index <= 0 ? last : index - 1);
+  forward ? (index >= last ? 0 : index + 1) : index <= 0 ? last : index - 1;
 
 const BpkSegmentedControlV2Root = ({
   activationMode = 'automatic',
@@ -71,7 +79,9 @@ const BpkSegmentedControlV2Root = ({
 
   const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     const inputs = getEnabledInputs(event.currentTarget);
-    const currentIndex = inputs.findIndex((inp) => inp === document.activeElement);
+    const currentIndex = inputs.findIndex(
+      (inp) => inp === document.activeElement,
+    );
     if (inputs.length === 0 || currentIndex === -1) return;
 
     const lastIndex = inputs.length - 1;
@@ -95,7 +105,7 @@ const BpkSegmentedControlV2Root = ({
       case 'Enter':
         if (activationMode === 'manual') {
           event.preventDefault();
-          onChange?.(inputs[currentIndex].value);
+          inputs[currentIndex].click();
         }
         return;
       default:
@@ -117,7 +127,13 @@ const BpkSegmentedControlV2Root = ({
       className={containerClass}
       value={value}
       defaultValue={defaultValue}
-      onValueChange={onChange ? ({ value: v }) => { if (v !== null) onChange(v); } : undefined}
+      onValueChange={
+        onChange
+          ? ({ value: v }) => {
+              if (v !== null) onChange(v);
+            }
+          : undefined
+      }
       disabled={disabled}
       aria-label={label}
       orientation="horizontal"
@@ -127,7 +143,8 @@ const BpkSegmentedControlV2Root = ({
       {Children.map(children, (child) => {
         if (!isValidElement(child)) return null;
         const c = child as ReactElement<BpkSegmentedControlV2ItemProps>;
-        const accessibleName = c.props.accessibilityLabel ?? extractTextContent(c.props.children);
+        const accessibleName =
+          c.props.accessibilityLabel ?? extractTextContent(c.props.children);
         return (
           <SegmentGroup.Item
             key={c.props.value}
@@ -139,11 +156,15 @@ const BpkSegmentedControlV2Root = ({
               className={getClassName('bpk-segmented-control-v2__item-control')}
               aria-label={c.props.accessibilityLabel}
             >
-              <SegmentGroup.ItemText className={getClassName('bpk-segmented-control-v2__item-text')}>
+              <SegmentGroup.ItemText
+                className={getClassName('bpk-segmented-control-v2__item-text')}
+              >
                 {c.props.children}
               </SegmentGroup.ItemText>
             </SegmentGroup.ItemControl>
-            <SegmentGroup.ItemHiddenInput aria-label={accessibleName || undefined} />
+            <SegmentGroup.ItemHiddenInput
+              aria-label={accessibleName || undefined}
+            />
           </SegmentGroup.Item>
         );
       })}
@@ -153,7 +174,8 @@ const BpkSegmentedControlV2Root = ({
 
 // Props-only placeholder — rendered by Root via Children.map.
 // Enables dot-notation API with TypeScript inference: <BpkSegmentedControlV2.Item />.
-const BpkSegmentedControlV2Item = (_props: BpkSegmentedControlV2ItemProps) => null;
+const BpkSegmentedControlV2Item = (_props: BpkSegmentedControlV2ItemProps) =>
+  null;
 
 const BpkSegmentedControlV2 = {
   Root: BpkSegmentedControlV2Root,
@@ -161,5 +183,9 @@ const BpkSegmentedControlV2 = {
 };
 
 export default BpkSegmentedControlV2;
-export { BpkSegmentedControlV2Root, BpkSegmentedControlV2Item, SEGMENT_TYPES_V2 };
+export {
+  BpkSegmentedControlV2Root,
+  BpkSegmentedControlV2Item,
+  SEGMENT_TYPES_V2,
+};
 export type { BpkSegmentedControlV2RootProps, BpkSegmentedControlV2ItemProps };

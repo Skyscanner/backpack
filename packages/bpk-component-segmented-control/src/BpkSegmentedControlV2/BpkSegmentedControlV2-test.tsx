@@ -377,8 +377,10 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
       </BpkSegmentedControlV2.Root>,
     );
     const root = container.firstChild as HTMLElement;
-    // CSS modules transform class names; check for a class that includes the modifier
-    expect(root.className).toMatch(/canvas-default|canvas-contrast|surface-default|surface-contrast/);
+    // CSS modules transform class names; match the specific modifier from expectedClass
+    // so each variant is verified independently (not just "any valid modifier appeared").
+    const modifier = expectedClass.replace('bpk-segmented-control-v2--', '');
+    expect(root.className).toMatch(new RegExp(modifier));
   });
 
   it('defaults to canvas-default type when no type provided', () => {

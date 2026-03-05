@@ -67,10 +67,10 @@ export type BpkSegmentedControlV2RootProps = {
    */
   activationMode?: 'automatic' | 'manual';
   /**
-   * Accessible label for the group. Required when no visible label is present
-   * in the surrounding layout.
+   * Accessible label for the radiogroup. Always required to satisfy WCAG 4.1.2
+   * (the role="radiogroup" element must have an accessible name).
    */
-  label?: string;
+  label: string;
 };
 
 export type BpkSegmentedControlV2ItemProps = {
