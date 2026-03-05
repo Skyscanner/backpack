@@ -442,6 +442,90 @@ export const SimpleAPIExample = () => {
 };
 
 /**
+ * Car type selection with border-only checked style.
+ * Checked: background unchanged, black border, indicator shown.
+ * Hover: background unchanged, black border, no indicator.
+ *
+ * @returns {JSX.Element} Rendered car type selection with border checked style.
+ */
+export const CarTypeCheckCardExample = () => {
+  const carTypes = [
+    {
+      id: 'small',
+      label: 'Small',
+      price: 'from £35',
+      src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg',
+    },
+    {
+      id: 'medium',
+      label: 'Medium',
+      price: 'from £52',
+      src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg',
+    },
+    {
+      id: 'large',
+      label: 'Large',
+      price: 'from £78',
+      src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg',
+    },
+  ];
+
+  const [selected, setSelected] = useState<string[]>(['medium']);
+
+  const toggle = (id: string) => {
+    setSelected((prev) =>
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
+    );
+  };
+
+  // Checked: keep white bg, black border, dark text
+  // Hover:   keep white bg, black border (no indicator — indicator only appears when checked)
+  const theme = createCheckboxCardTheme({
+    checkboxCardBgChecked: '#FFFFFF',
+    checkboxCardFgChecked: '#111236',
+    checkboxCardBorderChecked: '#111236',
+    checkboxCardBgHover: '#FFFFFF',
+    checkboxCardBorderHover: '#111236',
+    checkboxCardIndicatorColor: '#111236',
+    checkboxCardIndicatorFg: '#FFFFFF',
+  });
+
+  return (
+    <div style={{ padding: '24px' }}>
+      <p style={{ marginBottom: '16px', fontWeight: 600 }}>Select car type</p>
+      <BpkThemeProvider theme={theme} themeAttributes={CHECKBOX_CARD_THEME_ATTRIBUTES}>
+        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+          {carTypes.map(({ id, label, price, src }) => (
+            <BpkCheckboxCard.Root
+              key={id}
+              checked={selected.includes(id)}
+              onCheckedChange={() => toggle(id)}
+              variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+              width={160}
+            >
+              <BpkCheckboxCard.Control />
+              <BpkCheckboxCard.Indicator />
+              <BpkCheckboxCard.Content>
+                <BpkVStack gap="bpk-spacing-sm" align="center" width="100%">
+                  <BpkImage
+                    src={src}
+                    altText={`${label} car`}
+                    aspectRatio={16 / 9}
+                    style={{ width: '100%' }}
+                  />
+                  <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
+                  <BpkCheckboxCard.Description>{price}</BpkCheckboxCard.Description>
+                </BpkVStack>
+              </BpkCheckboxCard.Content>
+            </BpkCheckboxCard.Root>
+          ))}
+        </div>
+      </BpkThemeProvider>
+    </div>
+  );
+};
+
+/**
  * Neighbourhood card example — compact location card with price trend,
  * similar to a map overlay chip.
  *

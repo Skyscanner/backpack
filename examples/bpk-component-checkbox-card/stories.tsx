@@ -30,6 +30,7 @@ import {
   WithCustomThemeExample,
   SimpleAPIExample,
   NeighbourhoodCardExample,
+  CarTypeCheckCardExample,
 } from './examples';
 
 export default {
@@ -48,3 +49,4 @@ export const WithSizes = WithSizesExample;
 export const WithCustomTheme = WithCustomThemeExample;
 export const SimpleAPI = SimpleAPIExample;
 export const NeighbourhoodCard = NeighbourhoodCardExample;
+export const CarTypeCheckCard = CarTypeCheckCardExample;

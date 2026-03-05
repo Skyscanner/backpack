@@ -198,6 +198,7 @@
   top: tokens.bpk-spacing-md();
   right: tokens.bpk-spacing-md();
   display: none; // Hidden by default
+  z-index: 1; // Ensure indicator renders above positioned children (e.g. BpkImage)
   width: calc(tokens.$bpk-one-pixel-rem * 20);
   height: calc(tokens.$bpk-one-pixel-rem * 20);
   justify-content: center;
