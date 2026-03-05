@@ -1,0 +1,247 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/typography';
+@use '../../../bpk-mixins/utils';
+
+// Root container
+.bpk-checkbox-card-root {
+  position: relative;
+  display: block;
+  min-width: calc(tokens.$bpk-one-pixel-rem * 44); // Minimum touch target
+  min-height: calc(tokens.$bpk-one-pixel-rem * 44);
+  transition:
+    background-color,
+    border-color,
+    color tokens.$bpk-duration-sm ease-in-out;
+  border: calc(tokens.$bpk-one-pixel-rem * 1) solid
+    var(--bpk-checkbox-card-border-default, #{tokens.$bpk-line-day});
+
+  // CSS Variables for theming (with Backpack token fallbacks)
+  background-color: var(
+    --bpk-checkbox-card-bg-default,
+    #{tokens.$bpk-canvas-day}
+  );
+  color: var(--bpk-checkbox-card-fg-default, #{tokens.$bpk-text-primary-day});
+  cursor: pointer;
+  box-sizing: border-box;
+
+  // Hover state
+  &:not(&--disabled):not(&--checked) {
+    @include utils.bpk-hover {
+      border-color: var(
+        --bpk-checkbox-card-border-hover,
+        #{tokens.$bpk-line-day}
+      );
+      background-color: var(
+        --bpk-checkbox-card-bg-hover,
+        #{tokens.$bpk-surface-low-contrast-day}
+      );
+    }
+  }
+
+  // Checked state
+  &--checked {
+    border-color: var(--bpk-checkbox-card-border-checked, transparent);
+    background-color: var(
+      --bpk-checkbox-card-bg-checked,
+      #{tokens.$bpk-surface-contrast-day}
+    );
+    color: var(--bpk-checkbox-card-fg-checked, #{tokens.$bpk-text-on-dark-day});
+  }
+
+  // Disabled state
+  &--disabled {
+    background-color: var(
+      --bpk-checkbox-card-bg-disabled,
+      #{tokens.$bpk-canvas-day}
+    );
+    color: var(
+      --bpk-checkbox-card-fg-disabled,
+      #{tokens.$bpk-text-disabled-day}
+    );
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  // Radius variants
+  &--radius-square {
+    border-radius: 0;
+  }
+
+  &--radius-rounded {
+    border-radius: tokens.$bpk-border-radius-md;
+  }
+
+  // Visual variants - override CSS variables
+  &--on-canvas-default {
+    --bpk-checkbox-card-bg-default: #{tokens.$bpk-canvas-day};
+    --bpk-checkbox-card-border-default: #{tokens.$bpk-line-day};
+  }
+
+  &--on-canvas-contrast {
+    --bpk-checkbox-card-bg-default: #{tokens.$bpk-canvas-contrast-day};
+    --bpk-checkbox-card-bg-hover: #{tokens.$bpk-canvas-contrast-day};
+    --bpk-checkbox-card-border-default: transparent;
+    --bpk-checkbox-card-border-hover: #{tokens.$bpk-line-day};
+  }
+
+  &--on-surface-contrast {
+    --bpk-checkbox-card-bg-default: #{tokens.$bpk-surface-tint-day};
+    --bpk-checkbox-card-fg-default: #{tokens.$bpk-text-on-dark-day};
+    --bpk-checkbox-card-fg-secondary: #{tokens.$bpk-text-on-dark-day};
+
+    // TODO: Replace with a dedicated public token from backpack-foundations (current value: rgb(4, 24, 45))
+    --bpk-checkbox-card-bg-hover: #{tokens.$bpk-surface-contrast-day};
+    --bpk-checkbox-card-bg-checked: #{tokens.$bpk-core-accent-day};
+    --bpk-checkbox-card-border-default: transparent;
+    --bpk-checkbox-card-border-hover: transparent;
+  }
+}
+
+// Control - hidden checkbox input
+.bpk-checkbox-card-control {
+  position: absolute;
+  width: tokens.$bpk-one-pixel-rem;
+  height: tokens.$bpk-one-pixel-rem;
+  margin: calc(tokens.$bpk-one-pixel-rem * -1);
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+  opacity: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+// Content container
+.bpk-checkbox-card-content {
+  width: 100%;
+  padding: tokens.bpk-spacing-md(); // default (md)
+
+  &--size-sm {
+    padding: tokens.bpk-spacing-sm();
+  }
+
+  &--size-md {
+    padding: tokens.bpk-spacing-md();
+  }
+
+  &--size-lg {
+    padding: tokens.bpk-spacing-lg();
+  }
+}
+
+// Label slot
+.bpk-checkbox-card-label {
+  display: -webkit-box;
+  width: 100%;
+  color: inherit;
+  text-align: center;
+  overflow: hidden;
+  // stylelint-disable-next-line property-no-vendor-prefix
+  -webkit-box-orient: vertical;
+  // stylelint-disable-next-line property-no-vendor-prefix
+  -webkit-line-clamp: var(--bpk-label-line-clamp, 2);
+  line-clamp: var(--bpk-label-line-clamp, 2);
+
+  @include typography.bpk-heading-5;
+
+  // Keep nested content centered without using !important.
+  > * {
+    text-align: inherit;
+  }
+}
+
+// Description slot
+.bpk-checkbox-card-description {
+  display: -webkit-box;
+  width: 100%;
+  color: var(
+    --bpk-checkbox-card-fg-secondary,
+    #{tokens.$bpk-text-secondary-day}
+  );
+  text-align: center;
+  overflow: hidden;
+  // stylelint-disable-next-line property-no-vendor-prefix
+  -webkit-box-orient: vertical;
+  // stylelint-disable-next-line property-no-vendor-prefix
+  -webkit-line-clamp: var(--bpk-description-line-clamp, 3);
+  line-clamp: var(--bpk-description-line-clamp, 3);
+
+  @include typography.bpk-text;
+
+  .bpk-checkbox-card-root--checked & {
+    color: inherit; // Use root color when checked
+  }
+
+  // Keep nested content centered without using !important.
+  > * {
+    text-align: inherit;
+  }
+}
+
+// Indicator - visual corner indicator (top-right)
+// Hidden when unchecked; appears with checkmark when checked.
+.bpk-checkbox-card-indicator {
+  position: absolute;
+  top: tokens.bpk-spacing-md();
+  right: tokens.bpk-spacing-md();
+  display: none; // Hidden by default
+  z-index: 1; // Ensure indicator renders above positioned children (e.g. BpkImage)
+  width: calc(tokens.$bpk-one-pixel-rem * 20);
+  height: calc(tokens.$bpk-one-pixel-rem * 20);
+  justify-content: center;
+  align-items: center;
+  border: calc(tokens.$bpk-one-pixel-rem * 2) solid
+    var(--bpk-checkbox-card-indicator-color, #{tokens.$bpk-core-accent-day});
+  border-radius: 50%;
+  background-color: var(
+    --bpk-checkbox-card-indicator-color,
+    #{tokens.$bpk-core-accent-day}
+  );
+  box-sizing: border-box;
+  pointer-events: none;
+
+  // Check mark (CSS border trick)
+  &::after {
+    content: '';
+    display: block;
+    width: calc(tokens.$bpk-one-pixel-rem * 5);
+    height: calc(tokens.$bpk-one-pixel-rem * 9);
+    transform: rotate(45deg)
+      translate(
+        calc(tokens.$bpk-one-pixel-rem * -1),
+        calc(tokens.$bpk-one-pixel-rem * -2)
+      );
+    border: solid
+      var(--bpk-checkbox-card-indicator-fg, #{tokens.$bpk-color-white});
+    border-width: 0 calc(tokens.$bpk-one-pixel-rem * 2)
+      calc(tokens.$bpk-one-pixel-rem * 2) 0;
+  }
+
+  // Checked state — show the indicator
+  .bpk-checkbox-card-root--checked & {
+    display: flex;
+  }
+
+  // Disabled state
+  .bpk-checkbox-card-root--disabled & {
+    opacity: 0.5;
+  }
+}

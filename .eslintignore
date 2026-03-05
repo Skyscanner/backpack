@@ -2,6 +2,7 @@ node_modules
 dist
 dist-storybook
 coverage
+specs
 /packages/bpk-component-flare/src/__generated__
 /packages/bpk-component-icon/sm
 /packages/bpk-component-icon/lg
