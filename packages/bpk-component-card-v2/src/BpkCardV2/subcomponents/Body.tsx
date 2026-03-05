@@ -103,7 +103,7 @@ const Body = ({
     <BpkFlex
       direction={resolvedDirection}
       padding={resolvedPadding}
-      flex="1"
+      grow="1"
       {...getDataComponentAttribute('CardV2.Body')}
       {...rest}
     >

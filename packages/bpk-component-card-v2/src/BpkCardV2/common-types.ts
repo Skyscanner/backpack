@@ -18,7 +18,7 @@
 
 import type { ForwardRefExoticComponent, ReactNode, RefAttributes } from 'react';
 
-import type { BpkBoxProps , BpkFlexProps } from '../../../../bpk-component-layout';
+import type { BpkBoxProps , BpkFlexProps } from '../../../bpk-component-layout';
 
 /** Surface color token options for BpkCardV2 background */
 export type BpkCardV2SurfaceColor =
@@ -133,9 +133,9 @@ export type BpkCardV2FooterProps = BpkFlexProps;
  */
 export type BpkCardV2Namespace = {
   Root: ForwardRefExoticComponent<BpkCardV2Props & RefAttributes<HTMLDivElement>>;
-  Header: (props: BpkCardV2HeaderProps) => ReactNode;
-  Body: (props: BpkCardV2BodyProps) => ReactNode;
-  Primary: (props: BpkCardV2PrimaryProps) => ReactNode;
-  Secondary: (props: BpkCardV2SecondaryProps) => ReactNode;
-  Footer: (props: BpkCardV2FooterProps) => ReactNode;
+  Header: { (props: BpkCardV2HeaderProps): ReactNode; displayName?: string };
+  Body: { (props: BpkCardV2BodyProps): ReactNode; displayName?: string };
+  Primary: { (props: BpkCardV2PrimaryProps): ReactNode; displayName?: string };
+  Secondary: { (props: BpkCardV2SecondaryProps): ReactNode; displayName?: string };
+  Footer: { (props: BpkCardV2FooterProps): ReactNode; displayName?: string };
 };
