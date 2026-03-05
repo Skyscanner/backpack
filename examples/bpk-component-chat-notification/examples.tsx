@@ -19,23 +19,22 @@
 import BpkChatNotification from '../../packages/bpk-component-chat-notification/src/BpkChatNotification';
 import TickCircleIcon from '../../packages/bpk-component-icon/sm/tick-circle';
 
-const SUCCESS_TEXT = 'Thanks for your feedback!';
-const ERROR_TEXT = 'Something went wrong. Please try again.';
+const TEXT = 'Thanks for your feedback!';
 
 export const DefaultExample = () => (
+  <BpkChatNotification text={TEXT} />
+);
+
+export const WithIconExample = () => (
   <BpkChatNotification
-    text={SUCCESS_TEXT}
+    text={TEXT}
     icon={TickCircleIcon}
   />
 );
 
-export const WithoutIconExample = () => (
-  <BpkChatNotification text={ERROR_TEXT} />
-);
-
 export const VisualTestExample = () => (
   <BpkChatNotification
-    text={SUCCESS_TEXT}
+    text={TEXT}
     icon={TickCircleIcon}
   />
 );
