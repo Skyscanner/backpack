@@ -17,6 +17,7 @@
  */
 
 import { BpkFlex, BpkSpacing } from '../../../../bpk-component-layout';
+import { getDataComponentAttribute } from '../../../../bpk-react-utils';
 
 import type { BpkCardV2FooterProps } from '../common-types';
 
@@ -24,8 +25,8 @@ import type { BpkCardV2FooterProps } from '../common-types';
  * Footer subcomponent for BpkCardV2.
  *
  * Renders a BpkFlex container positioned at the bottom of the card.
- * Defaults to horizontal (row) direction with base padding.
- * All BpkFlex props can be used to customise the layout.
+ * Defaults to horizontal (row) direction with base padding on bottom, start
+ * and end, and no top padding. All BpkFlex props can be used to customise the layout.
  *
  * @example
  * <BpkCardV2.Footer>Footer content</BpkCardV2.Footer>
@@ -41,10 +42,23 @@ import type { BpkCardV2FooterProps } from '../common-types';
 const Footer = ({
   children,
   direction = 'row',
-  padding = BpkSpacing.Base,
+  padding,
+  paddingBottom,
+  paddingEnd,
+  paddingStart,
+  paddingTop,
   ...rest
 }: BpkCardV2FooterProps) => (
-  <BpkFlex direction={direction} padding={padding} {...rest}>
+  <BpkFlex
+    direction={direction}
+    padding={padding}
+    paddingTop={padding ? paddingTop : (paddingTop ?? BpkSpacing.None)}
+    paddingStart={padding ? paddingStart : (paddingStart ?? BpkSpacing.Base)}
+    paddingEnd={padding ? paddingEnd : (paddingEnd ?? BpkSpacing.Base)}
+    paddingBottom={padding ? paddingBottom : (paddingBottom ?? BpkSpacing.Base)}
+    {...getDataComponentAttribute('CardV2.Footer')}
+    {...rest}
+  >
     {children}
   </BpkFlex>
 );

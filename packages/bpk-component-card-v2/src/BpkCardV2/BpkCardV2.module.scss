@@ -25,6 +25,7 @@
 .bpk-card-v2 {
   display: flex;
   flex-direction: column;
+  flex: 1;
   background-color: tokens.$bpk-surface-default-day;
   overflow: hidden;
 

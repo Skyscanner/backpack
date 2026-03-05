@@ -18,7 +18,7 @@
 
 import { forwardRef } from 'react';
 
-import { cssModules } from '../../../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
 
 import type { BpkCardV2Props } from '../common-types';
 
@@ -66,6 +66,7 @@ const Root = forwardRef<HTMLDivElement, BpkCardV2Props>(
       data-bg-color={bgColor}
       aria-label={ariaLabel}
       aria-labelledby={ariaLabelledBy}
+      {...getDataComponentAttribute('CardV2')}
     >
       {children}
     </div>

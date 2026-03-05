@@ -117,17 +117,31 @@ const SplitLayoutExample = () => (
   <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
     <BpkCardV2.Root>
       <BpkCardV2.Header>
-        <Placeholder label="Primary (70%)" />
+        <BpkCardV2.Root bgColor='surfaceSubtle' variant='noElevation'>
+          <BpkCardV2.Body>
+            <BpkText textStyle={TEXT_STYLES.heading4}>
+              Header
+            </BpkText>
+          </BpkCardV2.Body>
+        </BpkCardV2.Root>
       </BpkCardV2.Header>
-      <BpkCardV2.Body split splitRatio={70}>
+      <BpkCardV2.Body split splitRatio={50}>
         <BpkCardV2.Primary>
-          <Placeholder label="Primary (70%)" />
+          <Placeholder label="Primary (50%)" />
         </BpkCardV2.Primary>
         <BpkCardV2.Secondary>
-          <Placeholder label="Secondary (30%)" />
+          <Placeholder label="Secondary (50%)" />
         </BpkCardV2.Secondary>
       </BpkCardV2.Body>
-      <div>Hello world!</div>
+      <BpkCardV2.Footer>
+        <BpkCardV2.Root bgColor='surfaceSubtle' variant='noElevation'>
+          <BpkCardV2.Body>
+            <BpkText textStyle={TEXT_STYLES.heading4}>
+             Footer
+            </BpkText>
+          </BpkCardV2.Body>
+        </BpkCardV2.Root>
+      </BpkCardV2.Footer>
     </BpkCardV2.Root>
   </div>
 );

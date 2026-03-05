@@ -17,6 +17,7 @@
  */
 
 import { BpkFlex, BpkSpacing } from '../../../../bpk-component-layout';
+import { getDataComponentAttribute } from '../../../../bpk-react-utils';
 
 import type { BpkCardV2HeaderProps } from '../common-types';
 
@@ -24,8 +25,8 @@ import type { BpkCardV2HeaderProps } from '../common-types';
  * Header subcomponent for BpkCardV2.
  *
  * Renders a BpkFlex container positioned at the top of the card.
- * Defaults to horizontal (row) direction with base padding.
- * All BpkFlex props can be used to customise the layout.
+ * Defaults to horizontal (row) direction with base padding on top, start
+ * and end, and no bottom padding. All BpkFlex props can be used to customise the layout.
  *
  * @example
  * <BpkCardV2.Header>Card title</BpkCardV2.Header>
@@ -41,10 +42,23 @@ import type { BpkCardV2HeaderProps } from '../common-types';
 const Header = ({
   children,
   direction = 'row',
-  padding = BpkSpacing.Base,
+  padding,
+  paddingBottom,
+  paddingEnd,
+  paddingStart,
+  paddingTop,
   ...rest
 }: BpkCardV2HeaderProps) => (
-  <BpkFlex direction={direction} padding={padding} {...rest}>
+  <BpkFlex
+    direction={direction}
+    padding={padding}
+    paddingTop={padding ? paddingTop : (paddingTop ?? BpkSpacing.Base)}
+    paddingStart={padding ? paddingStart : (paddingStart ?? BpkSpacing.Base)}
+    paddingEnd={padding ? paddingEnd : (paddingEnd ?? BpkSpacing.Base)}
+    paddingBottom={padding ? paddingBottom : (paddingBottom ?? BpkSpacing.None)}
+    {...getDataComponentAttribute('CardV2.Header')}
+    {...rest}
+  >
     {children}
   </BpkFlex>
 );

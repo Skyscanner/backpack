@@ -20,6 +20,7 @@ import type { ReactElement, ReactNode } from 'react';
 import { Children, cloneElement, isValidElement } from 'react';
 
 import { BpkFlex, BpkSpacing } from '../../../../bpk-component-layout';
+import { getDataComponentAttribute } from '../../../../bpk-react-utils';
 
 import Divider from './Divider';
 
@@ -56,7 +57,7 @@ const Body = ({
   ...rest
 }: BpkCardV2BodyProps) => {
   const resolvedDirection = direction ?? (split
-    ? { mobile: 'column' as const, tablet: 'row' as const }
+    ? { base: 'column' as const, tablet: 'row' as const }
     : 'column' as const);
 
   const resolvedPadding = padding ?? (split ? BpkSpacing.None : BpkSpacing.Base);
@@ -73,14 +74,14 @@ const Body = ({
             acc.push(
               cloneElement(child as ReactElement, {
                 key: child.key ?? 'primary',
-                width: child.props.width ?? { mobile: '100%', tablet: `${splitRatio}%` },
+                width: child.props.width ?? { base: '100%', tablet: `${splitRatio}%` },
               }),
             );
           } else if (isSecondary) {
             acc.push(
               cloneElement(child as ReactElement, {
                 key: child.key ?? 'secondary',
-                width: child.props.width ?? { mobile: '100%', tablet: `${100 - splitRatio}%` },
+                width: child.props.width ?? { base: '100%', tablet: `${100 - splitRatio}%` },
               }),
             );
           } else {
@@ -103,6 +104,7 @@ const Body = ({
       direction={resolvedDirection}
       padding={resolvedPadding}
       flex="1"
+      {...getDataComponentAttribute('CardV2.Body')}
       {...rest}
     >
       {processedChildren}

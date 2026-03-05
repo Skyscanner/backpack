@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
 
 import STYLES from '../BpkCardV2.module.scss';
 
@@ -31,7 +31,7 @@ const getClassName = cssModules(STYLES);
  * @returns {JSX.Element} Divider component
  */
 const Divider = () => (
-  <div className={getClassName('bpk-card-v2__divider')} />
+  <div className={getClassName('bpk-card-v2__divider')} {...getDataComponentAttribute('CardV2.Divider')} />
 );
 
 Divider.displayName = 'BpkCardV2.Divider';

@@ -17,6 +17,7 @@
  */
 
 import { BpkBox, BpkSpacing } from '../../../../bpk-component-layout';
+import { getDataComponentAttribute } from '../../../../bpk-react-utils';
 
 import type { BpkCardV2PrimaryProps } from '../common-types';
 
@@ -43,7 +44,7 @@ const Primary = ({
   padding = BpkSpacing.Base,
   ...rest
 }: BpkCardV2PrimaryProps) => (
-  <BpkBox flexDirection={flexDirection} padding={padding} {...rest}>
+  <BpkBox flexDirection={flexDirection} padding={padding} {...getDataComponentAttribute('CardV2.Primary')} {...rest}>
     {children}
   </BpkBox>
 );

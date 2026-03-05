@@ -4,23 +4,24 @@ exports[`BpkCardV2 Snapshots matches snapshot - basic card 1`] = `
 <div>
   <div
     class="bpk-card-v2 bpk-card-v2--default"
+    data-backpack-ds-component="CardV2"
     data-bg-color="surfaceDefault"
   >
     <div
-      class="css-88771x"
-      data-backpack-ds-component="Flex"
+      class="css-m6xlmc"
+      data-backpack-ds-component="CardV2.Header"
     >
       Card Title
     </div>
     <div
       class="css-rh38e6"
-      data-backpack-ds-component="Flex"
+      data-backpack-ds-component="CardV2.Body"
     >
       Card content goes here
     </div>
     <div
-      class="css-88771x"
-      data-backpack-ds-component="Flex"
+      class="css-11j4h56"
+      data-backpack-ds-component="CardV2.Footer"
     >
       Card footer
     </div>
@@ -32,21 +33,22 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
 <div>
   <div
     class="bpk-card-v2 bpk-card-v2--default"
+    data-backpack-ds-component="CardV2"
     data-bg-color="surfaceDefault"
   >
     <div
-      class="css-88771x"
-      data-backpack-ds-component="Flex"
+      class="css-m6xlmc"
+      data-backpack-ds-component="CardV2.Header"
     >
       Product
     </div>
     <div
-      class="css-wdatzd"
-      data-backpack-ds-component="Flex"
+      class="css-1poe0o9"
+      data-backpack-ds-component="CardV2.Body"
     >
       <div
-        class="css-1b1j0dq"
-        data-backpack-ds-component="Box"
+        class="css-ndknme"
+        data-backpack-ds-component="CardV2.Primary"
       >
         <img
           alt="Product"
@@ -55,10 +57,11 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
       </div>
       <div
         class="bpk-card-v2__divider"
+        data-backpack-ds-component="CardV2.Divider"
       />
       <div
-        class="css-1osy8ym"
-        data-backpack-ds-component="Box"
+        class="css-vtgn3q"
+        data-backpack-ds-component="CardV2.Secondary"
       >
         <h3>
           Description
@@ -69,8 +72,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
       </div>
     </div>
     <div
-      class="css-88771x"
-      data-backpack-ds-component="Flex"
+      class="css-11j4h56"
+      data-backpack-ds-component="CardV2.Footer"
     >
       <button
         type="button"
@@ -86,11 +89,12 @@ exports[`BpkCardV2 Snapshots matches snapshot - elevated surface color 1`] = `
 <div>
   <div
     class="bpk-card-v2 bpk-card-v2--default"
+    data-backpack-ds-component="CardV2"
     data-bg-color="surfaceElevated"
   >
     <div
       class="css-rh38e6"
-      data-backpack-ds-component="Flex"
+      data-backpack-ds-component="CardV2.Body"
     >
       Elevated background surface
     </div>
@@ -102,11 +106,12 @@ exports[`BpkCardV2 Snapshots matches snapshot - minimal card (body only) 1`] = `
 <div>
   <div
     class="bpk-card-v2 bpk-card-v2--default"
+    data-backpack-ds-component="CardV2"
     data-bg-color="surfaceDefault"
   >
     <div
       class="css-rh38e6"
-      data-backpack-ds-component="Flex"
+      data-backpack-ds-component="CardV2.Body"
     >
       Minimal card with just body
     </div>
@@ -118,17 +123,18 @@ exports[`BpkCardV2 Snapshots matches snapshot - outlined variant 1`] = `
 <div>
   <div
     class="bpk-card-v2 bpk-card-v2--outlined"
+    data-backpack-ds-component="CardV2"
     data-bg-color="surfaceDefault"
   >
     <div
-      class="css-88771x"
-      data-backpack-ds-component="Flex"
+      class="css-m6xlmc"
+      data-backpack-ds-component="CardV2.Header"
     >
       Outlined Card
     </div>
     <div
       class="css-rh38e6"
-      data-backpack-ds-component="Flex"
+      data-backpack-ds-component="CardV2.Body"
     >
       Content with border instead of shadow
     </div>
@@ -140,24 +146,26 @@ exports[`BpkCardV2 Snapshots matches snapshot - split layout 1`] = `
 <div>
   <div
     class="bpk-card-v2 bpk-card-v2--default"
+    data-backpack-ds-component="CardV2"
     data-bg-color="surfaceDefault"
   >
     <div
-      class="css-wdatzd"
-      data-backpack-ds-component="Flex"
+      class="css-1poe0o9"
+      data-backpack-ds-component="CardV2.Body"
     >
       <div
-        class="css-1tc7bba"
-        data-backpack-ds-component="Box"
+        class="css-u75zry"
+        data-backpack-ds-component="CardV2.Primary"
       >
         Main content area (70%)
       </div>
       <div
         class="bpk-card-v2__divider"
+        data-backpack-ds-component="CardV2.Divider"
       />
       <div
-        class="css-cgkxe4"
-        data-backpack-ds-component="Box"
+        class="css-izpqr4"
+        data-backpack-ds-component="CardV2.Secondary"
       >
         Sidebar area (30%)
       </div>
