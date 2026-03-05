@@ -17,7 +17,8 @@
  */
 
 import { BpkCardV2 } from '../../packages/bpk-component-card-v2';
-import { BpkSpacing } from '../../packages/bpk-component-layout';
+import { BpkFlex, BpkSpacing } from '../../packages/bpk-component-layout';
+import BpkLink from '../../packages/bpk-component-link';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 
@@ -113,32 +114,35 @@ const SurfaceColorsExample = () => (
   </div>
 );
 
+const DealOption = () => (
+  <BpkFlex gap={BpkSpacing.SM} align="center">
+    <div className={getClassName('bpk-card-v2-examples__deal-icon')} />
+    <BpkText textStyle={TEXT_STYLES.footnote}>Meals not included  •  £1,740</BpkText>
+  </BpkFlex>
+)
+
 const SplitLayoutExample = () => (
   <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
     <BpkCardV2.Root>
-      <BpkCardV2.Header>
-        <BpkCardV2.Root bgColor='surfaceSubtle' variant='noElevation'>
-          <BpkCardV2.Body>
-            <BpkText textStyle={TEXT_STYLES.heading4}>
-              Header
-            </BpkText>
-          </BpkCardV2.Body>
-        </BpkCardV2.Root>
-      </BpkCardV2.Header>
-      <BpkCardV2.Body split splitRatio={50}>
-        <BpkCardV2.Primary>
-          <Placeholder label="Primary (50%)" />
+      <BpkCardV2.Body split splitRatio={70}>
+        <BpkCardV2.Primary padding={BpkSpacing.MD}>
+          <Placeholder label="Primary (70%)" />
         </BpkCardV2.Primary>
-        <BpkCardV2.Secondary>
-          <Placeholder label="Secondary (50%)" />
+        <BpkCardV2.Secondary padding={BpkSpacing.MD}>
+          <Placeholder label="Secondary (30%)" />
         </BpkCardV2.Secondary>
       </BpkCardV2.Body>
-      <BpkCardV2.Footer>
-        <BpkCardV2.Root bgColor='surfaceSubtle' variant='noElevation'>
-          <BpkCardV2.Body>
-            <BpkText textStyle={TEXT_STYLES.heading4}>
-             Footer
-            </BpkText>
+      <BpkCardV2.Footer padding={BpkSpacing.MD} paddingTop={BpkSpacing.None}>
+        <BpkCardV2.Root bgColor='surfaceLowContrast' variant='noElevation'>
+          <BpkCardV2.Body justify="space-between" direction='row'>
+            <BpkFlex gap={BpkSpacing.LG}>
+              <DealOption />
+              <DealOption />
+              <DealOption />
+            </BpkFlex>
+            <div>
+              <BpkLink as='button' onClick={() => alert('Show deals')}>8 deals from £1,740</BpkLink>
+            </div>
           </BpkCardV2.Body>
         </BpkCardV2.Root>
       </BpkCardV2.Footer>

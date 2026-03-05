@@ -39,7 +39,14 @@
   }
 
   &__wide-card-wrapper {
-    max-width: 40rem;
+    max-width: 65rem;
+  }
+
+  &__deal-icon {
+    width: tokens.bpk-spacing-lg();
+    height: tokens.bpk-spacing-lg();
+    border-radius: tokens.$bpk-border-radius-xs;
+    background-color: tokens.$bpk-core-accent-day;
   }
 
   &__placeholder {
