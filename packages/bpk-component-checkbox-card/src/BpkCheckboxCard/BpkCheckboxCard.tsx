@@ -21,8 +21,8 @@ import type { ReactNode } from 'react';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import { cssModules } from '../../../bpk-react-utils';
 
+import { Root } from './BpkCheckboxCardRoot';
 import { useCheckboxCardContext } from './CheckboxCardContext';
-import { Root } from './Root';
 
 import type { TextStyle } from '../../../bpk-component-text/src/BpkText';
 
@@ -223,7 +223,7 @@ const BpkCheckboxCard = Object.assign(Root, {
 export { BpkCheckboxCard };
 export default BpkCheckboxCard;
 
-export type { RootProps, RootProps as BpkCheckboxCardRootProps } from './Root';
+export type { RootProps, RootProps as BpkCheckboxCardRootProps } from './BpkCheckboxCardRoot';
 export type { ContentProps as BpkCheckboxCardContentProps };
 export type { LabelProps as BpkCheckboxCardLabelProps };
 export type { DescriptionProps as BpkCheckboxCardDescriptionProps };
