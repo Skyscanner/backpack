@@ -28,6 +28,11 @@ import {
   BpkSegmentedControlV2,
   SEGMENT_TYPES_V2,
 } from '../../packages/bpk-component-segmented-control';
+import { cssModules } from '../../packages/bpk-react-utils';
+
+import STYLES from './examples.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 // ─── Default ──────────────────────────────────────────────────────────────────
 
@@ -40,9 +45,15 @@ const DefaultCanvasDefault = () => {
       onChange={setSelected}
       type={SEGMENT_TYPES_V2.CanvasDefault}
     >
-      <BpkSegmentedControlV2.Item value="price">Price</BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item value="rating">Rating</BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item value="duration">Duration</BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="price">
+        Price
+      </BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="rating">
+        Rating
+      </BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="duration">
+        Duration
+      </BpkSegmentedControlV2.Item>
     </BpkSegmentedControlV2.Root>
   );
 };
@@ -66,9 +77,15 @@ const CanvasContrast = () => {
         onChange={setSelected}
         type={SEGMENT_TYPES_V2.CanvasContrast}
       >
-        <BpkSegmentedControlV2.Item value="flights">Flights</BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="hotels">Hotels</BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="cars">Cars</BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="flights">
+          Flights
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="hotels">
+          Hotels
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="cars">
+          Cars
+        </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>
     </div>
   );
@@ -83,9 +100,15 @@ const SurfaceDefault = () => {
       onChange={setSelected}
       type={SEGMENT_TYPES_V2.SurfaceDefault}
     >
-      <BpkSegmentedControlV2.Item value="one-way">One way</BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item value="return">Return</BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item value="multi-city">Multi-city</BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="one-way">
+        One way
+      </BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="return">
+        Return
+      </BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="multi-city">
+        Multi-city
+      </BpkSegmentedControlV2.Item>
     </BpkSegmentedControlV2.Root>
   );
 };
@@ -100,9 +123,15 @@ const SurfaceContrast = () => {
         onChange={setSelected}
         type={SEGMENT_TYPES_V2.SurfaceContrast}
       >
-        <BpkSegmentedControlV2.Item value="economy">Economy</BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="business">Business</BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="first">First</BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="economy">
+          Economy
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="business">
+          Business
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="first">
+          First
+        </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>
     </div>
   );
@@ -120,8 +149,12 @@ const WithShadow = () => {
       shadow
     >
       <BpkSegmentedControlV2.Item value="all">All</BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item value="direct">Direct</BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item value="one-stop">1 stop</BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="direct">
+        Direct
+      </BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="one-stop">
+        1 stop
+      </BpkSegmentedControlV2.Item>
     </BpkSegmentedControlV2.Root>
   );
 };
@@ -129,10 +162,18 @@ const WithShadow = () => {
 // ─── Disabled ─────────────────────────────────────────────────────────────────
 
 const RootDisabled = () => (
-  <BpkSegmentedControlV2.Root label="Unavailable filter" defaultValue="all" disabled>
+  <BpkSegmentedControlV2.Root
+    label="Unavailable filter"
+    defaultValue="all"
+    disabled
+  >
     <BpkSegmentedControlV2.Item value="all">All</BpkSegmentedControlV2.Item>
-    <BpkSegmentedControlV2.Item value="direct">Direct</BpkSegmentedControlV2.Item>
-    <BpkSegmentedControlV2.Item value="one-stop">1 stop</BpkSegmentedControlV2.Item>
+    <BpkSegmentedControlV2.Item value="direct">
+      Direct
+    </BpkSegmentedControlV2.Item>
+    <BpkSegmentedControlV2.Item value="one-stop">
+      1 stop
+    </BpkSegmentedControlV2.Item>
   </BpkSegmentedControlV2.Root>
 );
 
@@ -144,11 +185,15 @@ const IndividualItemDisabled = () => {
       value={selected}
       onChange={setSelected}
     >
-      <BpkSegmentedControlV2.Item value="economy">Economy</BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="economy">
+        Economy
+      </BpkSegmentedControlV2.Item>
       <BpkSegmentedControlV2.Item value="premium" disabled>
         Premium (sold out)
       </BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item value="business">Business</BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="business">
+        Business
+      </BpkSegmentedControlV2.Item>
     </BpkSegmentedControlV2.Root>
   );
 };
@@ -187,7 +232,11 @@ const WithIconAndText = () => {
 const IconOnlyWithAccessibilityLabel = () => {
   const [selected, setSelected] = useState('grid');
   return (
-    <BpkSegmentedControlV2.Root label="View layout" value={selected} onChange={setSelected}>
+    <BpkSegmentedControlV2.Root
+      label="View layout"
+      value={selected}
+      onChange={setSelected}
+    >
       <BpkSegmentedControlV2.Item value="grid" accessibilityLabel="Grid view">
         <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16">
           <rect x="1" y="1" width="6" height="6" />
@@ -213,19 +262,31 @@ const Vdl2ThemeOverride = () => {
   const [selected, setSelected] = useState('price');
   return (
     <div
-      style={{
-        '--bpk-segmented-control-bg': '#e8f0fe',
-        '--bpk-segmented-control-indicator-bg': '#0066cc',
-        '--bpk-segmented-control-indicator-color': '#ffffff',
-        '--bpk-segmented-control-item-color': '#1a1a2e',
-        '--bpk-segmented-control-border-radius': '0.5rem',
-        '--bpk-segmented-control-divider-color': '#c0cbdb',
-      } as CSSProperties}
+      style={
+        {
+          '--bpk-segmented-control-bg': '#e8f0fe',
+          '--bpk-segmented-control-indicator-bg': '#0066cc',
+          '--bpk-segmented-control-indicator-color': '#ffffff',
+          '--bpk-segmented-control-item-color': '#1a1a2e',
+          '--bpk-segmented-control-border-radius': '0.5rem',
+          '--bpk-segmented-control-divider-color': '#c0cbdb',
+        } as CSSProperties
+      }
     >
-      <BpkSegmentedControlV2.Root label="Sort by" value={selected} onChange={setSelected}>
-        <BpkSegmentedControlV2.Item value="price">Price</BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="rating">Rating</BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="duration">Duration</BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Root
+        label="Sort by"
+        value={selected}
+        onChange={setSelected}
+      >
+        <BpkSegmentedControlV2.Item value="price">
+          Price
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="rating">
+          Rating
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="duration">
+          Duration
+        </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>
     </div>
   );
@@ -237,10 +298,20 @@ const RtlLayout = () => {
   const [selected, setSelected] = useState('price');
   return (
     <div dir="rtl">
-      <BpkSegmentedControlV2.Root label="ترتيب حسب" value={selected} onChange={setSelected}>
-        <BpkSegmentedControlV2.Item value="price">السعر</BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="rating">التقييم</BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="duration">المدة</BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Root
+        label="ترتيب حسب"
+        value={selected}
+        onChange={setSelected}
+      >
+        <BpkSegmentedControlV2.Item value="price">
+          السعر
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="rating">
+          التقييم
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="duration">
+          المدة
+        </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>
     </div>
   );
@@ -251,9 +322,17 @@ const RtlLayout = () => {
 const TwoItems = () => {
   const [selected, setSelected] = useState('one-way');
   return (
-    <BpkSegmentedControlV2.Root label="Trip type" value={selected} onChange={setSelected}>
-      <BpkSegmentedControlV2.Item value="one-way">One way</BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item value="return">Return</BpkSegmentedControlV2.Item>
+    <BpkSegmentedControlV2.Root
+      label="Trip type"
+      value={selected}
+      onChange={setSelected}
+    >
+      <BpkSegmentedControlV2.Item value="one-way">
+        One way
+      </BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="return">
+        Return
+      </BpkSegmentedControlV2.Item>
     </BpkSegmentedControlV2.Root>
   );
 };
@@ -290,15 +369,116 @@ const NoInitialSelection = () => (
 
 // ─── Visual regression ────────────────────────────────────────────────────────
 
+// Stacks multi-line item content vertically, matching v1's block-layout buttons.
+const ComplexItemContent = ({
+  duration,
+  label,
+  price,
+}: {
+  duration: string;
+  label: string;
+  price: string;
+}) => (
+  <div
+    className={getClassName(
+      'bpk-component-segmented-control-stories__complex-content',
+    )}
+  >
+    <div>{label}</div>
+    <div>{price}</div>
+    <div>{duration}</div>
+  </div>
+);
+
+const ComplexCanvasDefault = () => (
+  <BpkSegmentedControlV2.Root
+    label="Sort flight itineraries"
+    defaultValue="cheapest"
+    type={SEGMENT_TYPES_V2.CanvasDefault}
+    shadow
+  >
+    <BpkSegmentedControlV2.Item value="best" accessibilityLabel="Best, £84, 2h average">
+      <ComplexItemContent label="Best" price="£84" duration="2h average" />
+    </BpkSegmentedControlV2.Item>
+    <BpkSegmentedControlV2.Item value="cheapest" accessibilityLabel="Cheapest, £34, 9h average">
+      <ComplexItemContent label="Cheapest" price="£34" duration="9h average" />
+    </BpkSegmentedControlV2.Item>
+    <BpkSegmentedControlV2.Item value="fastest" accessibilityLabel="Fastest, £90, 1h average">
+      <ComplexItemContent label="Fastest" price="£90" duration="1h average" />
+    </BpkSegmentedControlV2.Item>
+  </BpkSegmentedControlV2.Root>
+);
+
+const ComplexCanvasContrast = () => (
+  <div style={{ backgroundColor: canvasContrastDay, padding: '2rem' }}>
+    <BpkSegmentedControlV2.Root
+      label="Sort flight itineraries"
+      defaultValue="cheapest"
+      type={SEGMENT_TYPES_V2.CanvasContrast}
+      shadow
+    >
+      <BpkSegmentedControlV2.Item value="best" accessibilityLabel="Best, £84, 2h average">
+        <ComplexItemContent label="Best" price="£84" duration="2h average" />
+      </BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="cheapest" accessibilityLabel="Cheapest, £34, 9h average">
+        <ComplexItemContent label="Cheapest" price="£34" duration="9h average" />
+      </BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="fastest" accessibilityLabel="Fastest, £90, 1h average">
+        <ComplexItemContent label="Fastest" price="£90" duration="1h average" />
+      </BpkSegmentedControlV2.Item>
+    </BpkSegmentedControlV2.Root>
+  </div>
+);
+
+const ComplexSurfaceDefault = () => (
+  <BpkSegmentedControlV2.Root
+    label="Sort flight itineraries"
+    defaultValue="cheapest"
+    type={SEGMENT_TYPES_V2.SurfaceDefault}
+    shadow
+  >
+    <BpkSegmentedControlV2.Item value="best" accessibilityLabel="Best, £84, 2h average">
+      <ComplexItemContent label="Best" price="£84" duration="2h average" />
+    </BpkSegmentedControlV2.Item>
+    <BpkSegmentedControlV2.Item value="cheapest" accessibilityLabel="Cheapest, £34, 9h average">
+      <ComplexItemContent label="Cheapest" price="£34" duration="9h average" />
+    </BpkSegmentedControlV2.Item>
+    <BpkSegmentedControlV2.Item value="fastest" accessibilityLabel="Fastest, £90, 1h average">
+      <ComplexItemContent label="Fastest" price="£90" duration="1h average" />
+    </BpkSegmentedControlV2.Item>
+  </BpkSegmentedControlV2.Root>
+);
+
+const ComplexSurfaceContrast = () => (
+  <div style={{ backgroundColor: surfaceContrastDay, padding: '2rem' }}>
+    <BpkSegmentedControlV2.Root
+      label="Sort flight itineraries"
+      defaultValue="cheapest"
+      type={SEGMENT_TYPES_V2.SurfaceContrast}
+      shadow
+    >
+      <BpkSegmentedControlV2.Item value="best" accessibilityLabel="Best, £84, 2h average">
+        <ComplexItemContent label="Best" price="£84" duration="2h average" />
+      </BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="cheapest" accessibilityLabel="Cheapest, £34, 9h average">
+        <ComplexItemContent label="Cheapest" price="£34" duration="9h average" />
+      </BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="fastest" accessibilityLabel="Fastest, £90, 1h average">
+        <ComplexItemContent label="Fastest" price="£90" duration="1h average" />
+      </BpkSegmentedControlV2.Item>
+    </BpkSegmentedControlV2.Root>
+  </div>
+);
+
 const VisualExample = () => (
   <>
-    <DefaultCanvasDefault />
+    <ComplexCanvasDefault />
     <br />
-    <CanvasContrast />
+    <ComplexCanvasContrast />
     <br />
-    <SurfaceDefault />
+    <ComplexSurfaceDefault />
     <br />
-    <SurfaceContrast />
+    <ComplexSurfaceContrast />
   </>
 );
 

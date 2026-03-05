@@ -138,7 +138,4 @@ export const NoneSelected = {
 
 // ─── Visual regression ────────────────────────────────────────────────────────
 
-export const VisualTest = {
-  render: VisualExample,
-  name: 'Visual test — all type variants',
-};
+export const VisualTest = VisualExample;

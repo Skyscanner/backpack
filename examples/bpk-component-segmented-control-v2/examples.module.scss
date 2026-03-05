@@ -22,3 +22,9 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+.bpk-component-segmented-control-stories__complex-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
