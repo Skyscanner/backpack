@@ -88,7 +88,7 @@ describe('BpkSegmentedControlV2 accessibility — US2', () => {
     );
     // Navigate to second item
     const priceInput = screen.getAllByRole('radio').find(
-      (r) => (r as HTMLInputElement).value === 'price',
+      (radio) => (radio as HTMLInputElement).value === 'price',
     )!;
     priceInput.focus();
     await user.keyboard('{ArrowRight}');
@@ -108,13 +108,13 @@ describe('BpkSegmentedControlV2 accessibility — US2', () => {
       </BpkSegmentedControlV2.Root>,
     );
     const priceInput = screen.getAllByRole('radio').find(
-      (r) => (r as HTMLInputElement).value === 'price',
+      (radio) => (radio as HTMLInputElement).value === 'price',
     )!;
     priceInput.focus();
     await user.keyboard('{ArrowRight}');
 
     const ratingInput = screen.getAllByRole('radio').find(
-      (r) => (r as HTMLInputElement).value === 'rating',
+      (radio) => (radio as HTMLInputElement).value === 'rating',
     )!;
     // After ArrowRight, focus moves to the next radio input.
     expect(document.activeElement).toBe(ratingInput);

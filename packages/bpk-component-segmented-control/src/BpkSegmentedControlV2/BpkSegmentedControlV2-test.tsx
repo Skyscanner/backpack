@@ -42,7 +42,7 @@ const ThreeItemControl = ({
 }: {
   defaultValue?: string;
   disabled?: boolean;
-  onChange?: (v: string) => void;
+  onChange?: (newValue: string) => void;
   value?: string;
 }) => (
   <BpkSegmentedControlV2.Root
@@ -107,7 +107,7 @@ describe('BpkSegmentedControlV2 — US1: Basic composable segment group', () => 
     render(<ThreeItemControl defaultValue="rating" />);
     const radioInputs = screen.getAllByRole('radio');
     const ratingInput = radioInputs.find(
-      (r) => (r as HTMLInputElement).value === 'rating',
+      (radio) => (radio as HTMLInputElement).value === 'rating',
     );
     expect(ratingInput).toBeChecked();
   });
@@ -115,8 +115,8 @@ describe('BpkSegmentedControlV2 — US1: Basic composable segment group', () => 
   it('uncontrolled: no defaultValue results in no item selected and no crash', () => {
     render(<ThreeItemControl />);
     const radioInputs = screen.getAllByRole('radio');
-    radioInputs.forEach((r) => {
-      expect(r).not.toBeChecked();
+    radioInputs.forEach((radio) => {
+      expect(radio).not.toBeChecked();
     });
   });
 
@@ -143,7 +143,7 @@ describe('BpkSegmentedControlV2 — US1: Basic composable segment group', () => 
     );
     const radioInputs = screen.getAllByRole('radio');
     const premiumInput = radioInputs.find(
-      (r) => (r as HTMLInputElement).value === 'premium',
+      (radio) => (radio as HTMLInputElement).value === 'premium',
     );
     expect(premiumInput).toBeDisabled();
   });
@@ -165,7 +165,7 @@ describe('BpkSegmentedControlV2 — US2: Keyboard navigation (automatic mode)', 
     const group = screen.getByRole('radiogroup');
     group.focus();
     const priceInput = screen.getAllByRole('radio').find(
-      (r) => (r as HTMLInputElement).value === 'price',
+      (radio) => (radio as HTMLInputElement).value === 'price',
     )!;
     priceInput.focus();
     await user.keyboard('{ArrowRight}');
@@ -179,7 +179,7 @@ describe('BpkSegmentedControlV2 — US2: Keyboard navigation (automatic mode)', 
     const user = userEvent.setup();
     render(<ThreeItemControl value="rating" onChange={onChange} />);
     const ratingInput = screen.getAllByRole('radio').find(
-      (r) => (r as HTMLInputElement).value === 'rating',
+      (radio) => (radio as HTMLInputElement).value === 'rating',
     )!;
     ratingInput.focus();
     await user.keyboard('{ArrowLeft}');
@@ -193,7 +193,7 @@ describe('BpkSegmentedControlV2 — US2: Keyboard navigation (automatic mode)', 
     const user = userEvent.setup();
     render(<ThreeItemControl value="duration" onChange={onChange} />);
     const durationInput = screen.getAllByRole('radio').find(
-      (r) => (r as HTMLInputElement).value === 'duration',
+      (radio) => (radio as HTMLInputElement).value === 'duration',
     )!;
     durationInput.focus();
     await user.keyboard('{ArrowRight}');
@@ -207,7 +207,7 @@ describe('BpkSegmentedControlV2 — US2: Keyboard navigation (automatic mode)', 
     const user = userEvent.setup();
     render(<ThreeItemControl value="price" onChange={onChange} />);
     const priceInput = screen.getAllByRole('radio').find(
-      (r) => (r as HTMLInputElement).value === 'price',
+      (radio) => (radio as HTMLInputElement).value === 'price',
     )!;
     priceInput.focus();
     await user.keyboard('{ArrowLeft}');
@@ -221,7 +221,7 @@ describe('BpkSegmentedControlV2 — US2: Keyboard navigation (automatic mode)', 
     const user = userEvent.setup();
     render(<ThreeItemControl value="duration" onChange={onChange} />);
     const durationInput = screen.getAllByRole('radio').find(
-      (r) => (r as HTMLInputElement).value === 'duration',
+      (radio) => (radio as HTMLInputElement).value === 'duration',
     )!;
     durationInput.focus();
     await user.keyboard('{Home}');
@@ -235,7 +235,7 @@ describe('BpkSegmentedControlV2 — US2: Keyboard navigation (automatic mode)', 
     const user = userEvent.setup();
     render(<ThreeItemControl value="price" onChange={onChange} />);
     const priceInput = screen.getAllByRole('radio').find(
-      (r) => (r as HTMLInputElement).value === 'price',
+      (radio) => (radio as HTMLInputElement).value === 'price',
     )!;
     priceInput.focus();
     await user.keyboard('{End}');
@@ -250,7 +250,7 @@ describe('BpkSegmentedControlV2 — US2: Keyboard navigation (automatic mode)', 
     const user = userEvent.setup();
     render(<ThreeItemControl value="rating" onChange={onChange} />);
     const ratingInput = screen.getAllByRole('radio').find(
-      (r) => (r as HTMLInputElement).value === 'rating',
+      (radio) => (radio as HTMLInputElement).value === 'rating',
     )!;
     ratingInput.focus();
     await user.keyboard('{ArrowRight}');
@@ -265,7 +265,7 @@ describe('BpkSegmentedControlV2 — US2: Keyboard navigation (automatic mode)', 
     const user = userEvent.setup();
     render(<ThreeItemControl value="price" onChange={onChange} />);
     const priceInput = screen.getAllByRole('radio').find(
-      (r) => (r as HTMLInputElement).value === 'price',
+      (radio) => (radio as HTMLInputElement).value === 'price',
     )!;
     priceInput.focus();
     await user.keyboard('{ArrowLeft}');
@@ -292,7 +292,7 @@ describe('BpkSegmentedControlV2 — US2: Manual activation mode', () => {
       </BpkSegmentedControlV2.Root>,
     );
     const priceInput = screen.getAllByRole('radio').find(
-      (r) => (r as HTMLInputElement).value === 'price',
+      (radio) => (radio as HTMLInputElement).value === 'price',
     )!;
     priceInput.focus();
     await user.keyboard('{ArrowRight}');
@@ -310,7 +310,7 @@ describe('BpkSegmentedControlV2 — US2: Manual activation mode', () => {
       </BpkSegmentedControlV2.Root>,
     );
     const priceInput = screen.getAllByRole('radio').find(
-      (r) => (r as HTMLInputElement).value === 'price',
+      (radio) => (radio as HTMLInputElement).value === 'price',
     )!;
     priceInput.focus();
     await user.keyboard('{ArrowRight}');
@@ -331,7 +331,7 @@ describe('BpkSegmentedControlV2 — US2: Manual activation mode', () => {
       </BpkSegmentedControlV2.Root>,
     );
     const priceInput = screen.getAllByRole('radio').find(
-      (r) => (r as HTMLInputElement).value === 'price',
+      (radio) => (radio as HTMLInputElement).value === 'price',
     )!;
     priceInput.focus();
     await user.keyboard('{ArrowRight}');
@@ -425,9 +425,9 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
     expect(root.className).toMatch(/canvas-default/);
     const radioInputs = screen.getAllByRole('radio');
     expect(radioInputs).toHaveLength(3);
-    expect(radioInputs.find((r) => (r as HTMLInputElement).value === 'price')).toBeChecked();
-    expect(radioInputs.find((r) => (r as HTMLInputElement).value === 'rating')).not.toBeChecked();
-    expect(radioInputs.find((r) => (r as HTMLInputElement).value === 'duration')).not.toBeChecked();
+    expect(radioInputs.find((radio) => (radio as HTMLInputElement).value === 'price')).toBeChecked();
+    expect(radioInputs.find((radio) => (radio as HTMLInputElement).value === 'rating')).not.toBeChecked();
+    expect(radioInputs.find((radio) => (radio as HTMLInputElement).value === 'duration')).not.toBeChecked();
   });
 
   it('snapshot: canvas-contrast', () => {
@@ -439,7 +439,7 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
     );
     const root = container.firstChild as HTMLElement;
     expect(root.className).toMatch(/canvas-contrast/);
-    expect(screen.getAllByRole('radio').find((r) => (r as HTMLInputElement).value === 'price')).toBeChecked();
+    expect(screen.getAllByRole('radio').find((radio) => (radio as HTMLInputElement).value === 'price')).toBeChecked();
   });
 
   it('snapshot: surface-default', () => {
@@ -451,7 +451,7 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
     );
     const root = container.firstChild as HTMLElement;
     expect(root.className).toMatch(/surface-default/);
-    expect(screen.getAllByRole('radio').find((r) => (r as HTMLInputElement).value === 'price')).toBeChecked();
+    expect(screen.getAllByRole('radio').find((radio) => (radio as HTMLInputElement).value === 'price')).toBeChecked();
   });
 
   it('snapshot: surface-contrast', () => {
@@ -463,7 +463,7 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
     );
     const root = container.firstChild as HTMLElement;
     expect(root.className).toMatch(/surface-contrast/);
-    expect(screen.getAllByRole('radio').find((r) => (r as HTMLInputElement).value === 'price')).toBeChecked();
+    expect(screen.getAllByRole('radio').find((radio) => (radio as HTMLInputElement).value === 'price')).toBeChecked();
   });
 
   it('snapshot: shadow enabled', () => {
@@ -475,7 +475,7 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
     );
     const root = container.firstChild as HTMLElement;
     expect(root.className).toMatch(/shadow/);
-    expect(screen.getAllByRole('radio').find((r) => (r as HTMLInputElement).value === 'price')).toBeChecked();
+    expect(screen.getAllByRole('radio').find((radio) => (radio as HTMLInputElement).value === 'price')).toBeChecked();
   });
 
   it('snapshot: root disabled', () => {
@@ -487,8 +487,8 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
     );
     expect(screen.getByRole('radiogroup')).toHaveAttribute('aria-disabled', 'true');
     const radioInputs = screen.getAllByRole('radio');
-    radioInputs.forEach((r) => expect(r).toBeDisabled());
-    expect(radioInputs.find((r) => (r as HTMLInputElement).value === 'price')).toBeChecked();
+    radioInputs.forEach((radio) => expect(radio).toBeDisabled());
+    expect(radioInputs.find((radio) => (radio as HTMLInputElement).value === 'price')).toBeChecked();
   });
 });
 

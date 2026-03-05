@@ -49,8 +49,8 @@ const extractTextContent = (node: ReactNode): string => {
   if (typeof node === 'string' || typeof node === 'number') return String(node);
   if (Array.isArray(node)) return node.map(extractTextContent).join(' ').trim();
   if (isValidElement(node)) {
-    const el = node as ReactElement<{ children?: ReactNode }>;
-    if (el.props.children) return extractTextContent(el.props.children);
+    const element = node as ReactElement<{ children?: ReactNode }>;
+    if (element.props.children) return extractTextContent(element.props.children);
   }
   return '';
 };
@@ -128,8 +128,8 @@ const BpkSegmentedControlV2Root = ({
       defaultValue={defaultValue}
       onValueChange={
         onChange
-          ? ({ value: v }) => {
-              if (v !== null) onChange(v);
+          ? ({ value: selectedValue }) => {
+              if (selectedValue !== null) onChange(selectedValue);
             }
           : undefined
       }
@@ -141,24 +141,24 @@ const BpkSegmentedControlV2Root = ({
     >
       {Children.map(children, (child) => {
         if (!isValidElement(child)) return null;
-        const c = child as ReactElement<BpkSegmentedControlV2ItemProps>;
+        const item = child as ReactElement<BpkSegmentedControlV2ItemProps>;
         const accessibleName =
-          c.props.accessibilityLabel ?? extractTextContent(c.props.children);
+          item.props.accessibilityLabel ?? extractTextContent(item.props.children);
         return (
           <SegmentGroup.Item
-            key={c.props.value}
-            value={c.props.value}
-            disabled={c.props.disabled ?? false}
+            key={item.props.value}
+            value={item.props.value}
+            disabled={item.props.disabled ?? false}
             className={getClassName('bpk-segmented-control-v2__item')}
           >
             <SegmentGroup.ItemControl
               className={getClassName('bpk-segmented-control-v2__item-control')}
-              aria-label={c.props.accessibilityLabel}
+              aria-label={item.props.accessibilityLabel}
             >
               <SegmentGroup.ItemText
                 className={getClassName('bpk-segmented-control-v2__item-text')}
               >
-                {c.props.children}
+                {item.props.children}
               </SegmentGroup.ItemText>
             </SegmentGroup.ItemControl>
             <SegmentGroup.ItemHiddenInput
