@@ -19,6 +19,8 @@
 import { useState } from 'react';
 import type { CSSProperties } from 'react';
 
+import GridLayoutIcon from '../../packages/bpk-component-icon/sm/grid-layout';
+import ListIcon from '../../packages/bpk-component-icon/sm/list';
 import {
   BpkSegmentedControlV2,
   SEGMENT_TYPES_V2,
@@ -202,20 +204,11 @@ const WithIconAndText = () => {
       onChange={setSelected}
     >
       <BpkSegmentedControlV2.Item value="grid">
-        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16">
-          <rect x="1" y="1" width="6" height="6" />
-          <rect x="9" y="1" width="6" height="6" />
-          <rect x="1" y="9" width="6" height="6" />
-          <rect x="9" y="9" width="6" height="6" />
-        </svg>
+        <GridLayoutIcon />
         Grid
       </BpkSegmentedControlV2.Item>
       <BpkSegmentedControlV2.Item value="list">
-        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16">
-          <rect x="1" y="3" width="14" height="2" />
-          <rect x="1" y="7" width="14" height="2" />
-          <rect x="1" y="11" width="14" height="2" />
-        </svg>
+        <ListIcon />
         List
       </BpkSegmentedControlV2.Item>
     </BpkSegmentedControlV2.Root>
@@ -231,19 +224,10 @@ const IconOnlyWithAccessibilityLabel = () => {
       onChange={setSelected}
     >
       <BpkSegmentedControlV2.Item value="grid" accessibilityLabel="Grid view">
-        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16">
-          <rect x="1" y="1" width="6" height="6" />
-          <rect x="9" y="1" width="6" height="6" />
-          <rect x="1" y="9" width="6" height="6" />
-          <rect x="9" y="9" width="6" height="6" />
-        </svg>
+        <GridLayoutIcon />
       </BpkSegmentedControlV2.Item>
       <BpkSegmentedControlV2.Item value="list" accessibilityLabel="List view">
-        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16">
-          <rect x="1" y="3" width="14" height="2" />
-          <rect x="1" y="7" width="14" height="2" />
-          <rect x="1" y="11" width="14" height="2" />
-        </svg>
+        <ListIcon />
       </BpkSegmentedControlV2.Item>
     </BpkSegmentedControlV2.Root>
   );

@@ -50,7 +50,8 @@ const extractTextContent = (node: ReactNode): string => {
   if (Array.isArray(node)) return node.map(extractTextContent).join(' ').trim();
   if (isValidElement(node)) {
     const element = node as ReactElement<{ children?: ReactNode }>;
-    if (element.props.children) return extractTextContent(element.props.children);
+    if (element.props.children)
+      return extractTextContent(element.props.children);
   }
   return '';
 };
@@ -114,9 +115,6 @@ const BpkSegmentedControlV2Root = ({
     event.preventDefault();
     inputs[newIndex].focus();
     if (activationMode !== 'manual') {
-      // Trigger click so Ark-UI updates its internal state for both controlled
-      // and uncontrolled usage. Ark-UI's onValueChange fires onChange via its
-      // own listener — do not call onChange manually here to avoid double-firing.
       inputs[newIndex].click();
     }
   };
@@ -143,7 +141,8 @@ const BpkSegmentedControlV2Root = ({
         if (!isValidElement(child)) return null;
         const item = child as ReactElement<BpkSegmentedControlV2ItemProps>;
         const accessibleName =
-          item.props.accessibilityLabel ?? extractTextContent(item.props.children);
+          item.props.accessibilityLabel ??
+          extractTextContent(item.props.children);
         return (
           <SegmentGroup.Item
             key={item.props.value}
@@ -171,8 +170,6 @@ const BpkSegmentedControlV2Root = ({
   );
 };
 
-// Props-only placeholder — rendered by Root via Children.map.
-// Enables dot-notation API with TypeScript inference: <BpkSegmentedControlV2.Item />.
 const BpkSegmentedControlV2Item = (_props: BpkSegmentedControlV2ItemProps) =>
   null;
 

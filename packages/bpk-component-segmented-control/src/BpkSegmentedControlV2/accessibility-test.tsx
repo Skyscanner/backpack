@@ -20,17 +20,24 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 
-import BpkSegmentedControlV2 from './BpkSegmentedControlV2';
+import GridLayoutIcon from '../../../bpk-component-icon/sm/grid-layout';
+import ListIcon from '../../../bpk-component-icon/sm/list';
 
-// ─── US1: Accessibility — base states ────────────────────────────────────────
+import BpkSegmentedControlV2 from './BpkSegmentedControlV2';
 
 describe('BpkSegmentedControlV2 accessibility — US1', () => {
   it('no axe violations: canvas-default type, 3 items, first selected, with label', async () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Sort results by" defaultValue="price">
-        <BpkSegmentedControlV2.Item value="price">Price</BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="rating">Rating</BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="duration">Duration</BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="price">
+          Price
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="rating">
+          Rating
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="duration">
+          Duration
+        </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
     const results = await axe(container);
@@ -39,9 +46,17 @@ describe('BpkSegmentedControlV2 accessibility — US1', () => {
 
   it('no axe violations: root disabled', async () => {
     const { container } = render(
-      <BpkSegmentedControlV2.Root label="Disabled group" defaultValue="price" disabled>
-        <BpkSegmentedControlV2.Item value="price">Price</BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="rating">Rating</BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Root
+        label="Disabled group"
+        defaultValue="price"
+        disabled
+      >
+        <BpkSegmentedControlV2.Item value="price">
+          Price
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="rating">
+          Rating
+        </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
     const results = await axe(container);
@@ -51,11 +66,15 @@ describe('BpkSegmentedControlV2 accessibility — US1', () => {
   it('no axe violations: individual item disabled', async () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Cabin class" defaultValue="economy">
-        <BpkSegmentedControlV2.Item value="economy">Economy</BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="economy">
+          Economy
+        </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="premium" disabled>
           Premium
         </BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="business">Business</BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="business">
+          Business
+        </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
     const results = await axe(container);
@@ -65,8 +84,12 @@ describe('BpkSegmentedControlV2 accessibility — US1', () => {
   it('no axe violations: no initial selection', async () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Choose option">
-        <BpkSegmentedControlV2.Item value="a">Option A</BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="b">Option B</BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="a">
+          Option A
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="b">
+          Option B
+        </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
     const results = await axe(container);
@@ -74,22 +97,26 @@ describe('BpkSegmentedControlV2 accessibility — US1', () => {
   });
 });
 
-// ─── US2: Accessibility — keyboard navigation ────────────────────────────────
-
 describe('BpkSegmentedControlV2 accessibility — US2', () => {
   it('no axe violations: 3 items, second item focused via keyboard', async () => {
     const user = userEvent.setup();
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Sort by" defaultValue="price">
-        <BpkSegmentedControlV2.Item value="price">Price</BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="rating">Rating</BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="duration">Duration</BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="price">
+          Price
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="rating">
+          Rating
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="duration">
+          Duration
+        </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
-    // Navigate to second item
-    const priceInput = screen.getAllByRole('radio').find(
-      (radio) => (radio as HTMLInputElement).value === 'price',
-    )!;
+
+    const priceInput = screen
+      .getAllByRole('radio')
+      .find((radio) => (radio as HTMLInputElement).value === 'price')!;
     priceInput.focus();
     await user.keyboard('{ArrowRight}');
 
@@ -101,41 +128,45 @@ describe('BpkSegmentedControlV2 accessibility — US2', () => {
     const onChange = jest.fn();
     const user = userEvent.setup();
     render(
-      <BpkSegmentedControlV2.Root label="Sort by" value="price" onChange={onChange}>
-        <BpkSegmentedControlV2.Item value="price">Price</BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="rating">Rating</BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="duration">Duration</BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Root
+        label="Sort by"
+        value="price"
+        onChange={onChange}
+      >
+        <BpkSegmentedControlV2.Item value="price">
+          Price
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="rating">
+          Rating
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="duration">
+          Duration
+        </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
-    const priceInput = screen.getAllByRole('radio').find(
-      (radio) => (radio as HTMLInputElement).value === 'price',
-    )!;
+    const priceInput = screen
+      .getAllByRole('radio')
+      .find((radio) => (radio as HTMLInputElement).value === 'price')!;
     priceInput.focus();
     await user.keyboard('{ArrowRight}');
 
-    const ratingInput = screen.getAllByRole('radio').find(
-      (radio) => (radio as HTMLInputElement).value === 'rating',
-    )!;
-    // After ArrowRight, focus moves to the next radio input.
+    const ratingInput = screen
+      .getAllByRole('radio')
+      .find((radio) => (radio as HTMLInputElement).value === 'rating')!;
+
     expect(document.activeElement).toBe(ratingInput);
   });
 });
-
-// ─── US5: Accessibility — custom content ────────────────────────────────────
 
 describe('BpkSegmentedControlV2 accessibility — US5', () => {
   it('no axe violations: icon-only item with valid accessibilityLabel', async () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="View layout" defaultValue="grid">
         <BpkSegmentedControlV2.Item value="grid" accessibilityLabel="Grid view">
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16">
-            <rect x="1" y="1" width="6" height="6" />
-          </svg>
+          <GridLayoutIcon />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="list" accessibilityLabel="List view">
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16">
-            <rect x="1" y="3" width="14" height="2" />
-          </svg>
+          <ListIcon />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
@@ -148,14 +179,10 @@ describe('BpkSegmentedControlV2 accessibility — US5', () => {
       <BpkSegmentedControlV2.Root label="View layout" defaultValue="grid">
         <BpkSegmentedControlV2.Item value="grid">
           {/* No accessibilityLabel, no visible text — should fail axe */}
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16">
-            <rect x="1" y="1" width="6" height="6" />
-          </svg>
+          <GridLayoutIcon />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="list">
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16">
-            <rect x="1" y="3" width="14" height="2" />
-          </svg>
+          <ListIcon />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );

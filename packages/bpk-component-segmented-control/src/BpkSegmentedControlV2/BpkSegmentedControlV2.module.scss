@@ -23,8 +23,6 @@
 @use '../../../bpk-mixins/shadows';
 
 .bpk-segmented-control-v2 {
-  // Default theme: canvas-default — all CSS variables set from tokens.
-  // Consumers (or type variant modifiers) override these to change the theme.
   --bpk-segmented-control-bg: #{tokens.$bpk-private-segmented-control-canvas-default-day};
   --bpk-segmented-control-item-color: #{tokens.$bpk-text-primary-day};
   --bpk-segmented-control-item-disabled-color: #{tokens.$bpk-text-disabled-day};
@@ -131,8 +129,7 @@
   border-start-start-radius: var(--bpk-segmented-control-border-radius);
 }
 
-// Remove divider on the item immediately after a selected item,
-// matching V1's `rightOfOption` behaviour.
+// Remove divider on the item immediately after a selected item
 // stylelint-disable-next-line selector-pseudo-class-no-unknown
 .bpk-segmented-control-v2__item:has([data-state='checked'])
   + .bpk-segmented-control-v2__item {
