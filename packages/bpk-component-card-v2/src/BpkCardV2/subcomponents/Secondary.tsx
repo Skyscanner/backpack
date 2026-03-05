@@ -40,12 +40,13 @@ import type { BpkCardV2SecondaryProps } from '../common-types';
  */
 const Secondary = ({
   children,
+  display = 'flex',
   flex = '1 1 auto',
   flexDirection = 'column',
   padding = BpkSpacing.Base,
   ...rest
 }: BpkCardV2SecondaryProps) => (
-  <BpkBox flex={flex} flexDirection={flexDirection} padding={padding} {...getDataComponentAttribute('CardV2.Secondary')} {...rest}>
+  <BpkBox display={display} flex={flex} flexDirection={flexDirection} padding={padding} {...getDataComponentAttribute('CardV2.Secondary')} {...rest}>
     {children}
   </BpkBox>
 );

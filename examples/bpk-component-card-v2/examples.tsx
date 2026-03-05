@@ -16,10 +16,13 @@
  * limitations under the License.
  */
 
+import BpkButton from '../../packages/bpk-component-button';
 import { BpkCardV2 } from '../../packages/bpk-component-card-v2';
 import { BpkFlex, BpkSpacing } from '../../packages/bpk-component-layout';
 import BpkLink from '../../packages/bpk-component-link';
+import BpkPrice, { SIZES, ALIGNS } from '../../packages/bpk-component-price';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { cssModules } from '../../packages/bpk-react-utils';
 
 import type {
@@ -114,10 +117,10 @@ const SurfaceColorsExample = () => (
   </div>
 );
 
-const DealOption = () => (
+const DealOption = ({ text }: { text: string }) => (
   <BpkFlex gap={BpkSpacing.SM} align="center">
     <div className={getClassName('bpk-card-v2-examples__deal-icon')} />
-    <BpkText textStyle={TEXT_STYLES.footnote}>Meals not included  •  £1,740</BpkText>
+    <BpkText textStyle={TEXT_STYLES.footnote}>{text}</BpkText>
   </BpkFlex>
 )
 
@@ -128,17 +131,26 @@ const SplitLayoutExample = () => (
         <BpkCardV2.Primary padding={BpkSpacing.MD}>
           <Placeholder label="Primary (70%)" />
         </BpkCardV2.Primary>
-        <BpkCardV2.Secondary padding={BpkSpacing.MD}>
-          <Placeholder label="Secondary (30%)" />
+        <BpkCardV2.Secondary padding={BpkSpacing.MD} gap={BpkSpacing.LG} justifyContent='end'>
+            <BpkFlex direction='column' gap={BpkSpacing.MD}>
+              <BpkPrice
+                size={SIZES.Large}
+                leadingText="Half board"
+                price="£2,185"
+                trailingText="total"
+              />
+              <DealOption text='Skyland' />
+            </BpkFlex>
+            <BpkButton onClick={() => alert('Book now')} fullWidth>Go to site</BpkButton>
         </BpkCardV2.Secondary>
       </BpkCardV2.Body>
       <BpkCardV2.Footer padding={BpkSpacing.MD} paddingTop={BpkSpacing.None}>
         <BpkCardV2.Root bgColor='surfaceLowContrast' variant='noElevation'>
           <BpkCardV2.Body justify="space-between" direction='row'>
             <BpkFlex gap={BpkSpacing.LG}>
-              <DealOption />
-              <DealOption />
-              <DealOption />
+              <DealOption text="Meals not included  •  £1,740" />
+              <DealOption text="Meals not included  •  £1,740" />
+              <DealOption text="Meals not included  •  £1,740" />
             </BpkFlex>
             <div>
               <BpkLink as='button' onClick={() => alert('Show deals')}>8 deals from £1,740</BpkLink>
