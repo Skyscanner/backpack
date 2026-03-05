@@ -49,6 +49,13 @@
     background-color: tokens.$bpk-core-accent-day;
   }
 
+  &__carousel-wrapper {
+    height: 13rem;
+    flex: 0 0 38%;
+    border-radius: tokens.$bpk-border-radius-sm;
+    overflow: hidden;
+  }
+
   &__placeholder {
     display: flex;
     height: 13rem;

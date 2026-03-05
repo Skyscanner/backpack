@@ -18,7 +18,8 @@
 
 import BpkButton from '../../packages/bpk-component-button';
 import { BpkCardV2 } from '../../packages/bpk-component-card-v2';
-import { BpkFlex, BpkSpacing } from '../../packages/bpk-component-layout';
+import BpkCarousel from '../../packages/bpk-component-carousel';
+import { BpkFlex, BpkGrid, BpkSpacing } from '../../packages/bpk-component-layout';
 import BpkLink from '../../packages/bpk-component-link';
 import BpkPrice, { SIZES, ALIGNS } from '../../packages/bpk-component-price';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
@@ -117,6 +118,24 @@ const SurfaceColorsExample = () => (
   </div>
 );
 
+const carouselImageUrls = [
+  'https://content.skyscnr.com/m/7470cf6a4ee49c26/original/Carousel-placeholder-4.jpg',
+  'https://content.skyscnr.com/m/183e7ddaaca13b16/original/Carousel-placeholder-2.jpg',
+  'https://content.skyscnr.com/m/f8b42e98e2b79a6/original/Carousel-placeholder-3.jpg',
+  'https://content.skyscnr.com/m/51c4c9dd04c8dc95/original/Carousel-placeholder-1.jpg',
+];
+const imagesList = carouselImageUrls.map(url => <div><img src={url} alt='hotel bedroom' /></div>)
+
+const carouselImages = carouselImageUrls.map((url) => (
+  <div key={url} style={{ width: '100%', height: '100%' }}>
+    <img
+      src={url}
+      alt="hotel bedroom"
+      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+    />
+  </div>
+));
+
 const DealOption = ({ text }: { text: string }) => (
   <BpkFlex gap={BpkSpacing.SM} align="center">
     <div className={getClassName('bpk-card-v2-examples__deal-icon')} />
@@ -128,8 +147,18 @@ const SplitLayoutExample = () => (
   <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
     <BpkCardV2.Root>
       <BpkCardV2.Body split splitRatio={70}>
-        <BpkCardV2.Primary padding={BpkSpacing.MD}>
-          <Placeholder label="Primary (70%)" />
+        <BpkCardV2.Primary padding={BpkSpacing.MD} flexDirection='row' gap={BpkSpacing.MD}>
+          <div className={getClassName('bpk-card-v2-examples__carousel-wrapper')}>
+            <BpkCarousel images={carouselImages} bottom={16}/>
+          </div>
+          <BpkFlex direction="column" gap={BpkSpacing.SM} justify='top'>
+            <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
+              The Level at Melia Barcelona Sky
+            </BpkText>
+            <BpkText textStyle={TEXT_STYLES.footnote}>
+              5 star hotel · Free cancellation
+            </BpkText>
+          </BpkFlex>
         </BpkCardV2.Primary>
         <BpkCardV2.Secondary padding={BpkSpacing.MD} gap={BpkSpacing.LG} justifyContent='end'>
             <BpkFlex direction='column' gap={BpkSpacing.MD}>
@@ -146,11 +175,11 @@ const SplitLayoutExample = () => (
       </BpkCardV2.Body>
       <BpkCardV2.Footer padding={BpkSpacing.MD} paddingTop={BpkSpacing.None}>
         <BpkCardV2.Root bgColor='surfaceLowContrast' variant='noElevation'>
-          <BpkCardV2.Body justify="space-between" direction='row'>
-            <BpkFlex gap={BpkSpacing.LG}>
-              <DealOption text="Meals not included  •  £1,740" />
-              <DealOption text="Meals not included  •  £1,740" />
-              <DealOption text="Meals not included  •  £1,740" />
+          <BpkCardV2.Body justify="space-between" direction={{ base: 'column', mobile: 'row' }} gap={BpkSpacing.MD}>
+            <BpkFlex gap={BpkSpacing.LG} direction={{ base: 'column', mobile: 'row' }}>
+              <DealOption text="Cheapest • Meals not included  •  £1,740" />
+              <DealOption text="Meals not included  •  £1,757" />
+              <DealOption text="Meals not included  •  £1,858" />
             </BpkFlex>
             <div>
               <BpkLink as='button' onClick={() => alert('Show deals')}>8 deals from £1,740</BpkLink>
