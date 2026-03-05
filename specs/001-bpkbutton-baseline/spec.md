@@ -2,8 +2,25 @@
 
 **Package Branch**: `001-bpkbutton-baseline`
 **Created**: 2026-03-05
-**Status**: Baseline — Documents current as-built behaviour only
-**Purpose**: Authoritative current-state reference. No changes, refactors, improvements, or new APIs are proposed.
+**Status**: Living specification
+**Purpose**: Authoritative current-state reference, updated as changes land.
+
+---
+
+## Change Log
+
+| Version | Date | Summary |
+|---|---|---|
+| v1.0 | 2026-03-05 | Baseline — documents as-built behaviour |
+| v1.1 | 2026-03-06 | Corner radius exposed via CSS-variable theming mechanism |
+
+### v1.1 — Corner Radius Theming
+
+**What changed**: `border-radius` is now set via `@include utils.bpk-themeable-property`, generating both a token-based fallback and a `var(--bpk-button-border-radius, fallback)` CSS custom property. Previously it was a direct static token assignment.
+
+**Why**: Aligns `border-radius` with the existing colour theming model — all themeable properties in BpkButton use the same `bpk-themeable-property` mechanism. Enables runtime corner-radius overrides via `bpk-theming` without recompiling styles or introducing new tokens.
+
+**Behavioural regression**: None. The token `$bpk-button-border-radius` remains the fallback; default appearance is unchanged when no CSS variable override is applied.
 
 ---
 
@@ -144,6 +161,7 @@ The table below lists properties and states that currently use the CSS-variable 
 | `color` | Active | `--bpk-button-link-on-dark-active-text-color` | `linkOnDark` only |
 | `color` | Disabled | `--bpk-button-link-on-dark-disabled-color` | `linkOnDark` only |
 | `font-size` | All | via `buttonFontSize` theme attribute | All types |
+| `border-radius` | All | `--bpk-button-border-radius` | All types and sizes |
 
 Where `{type}` is one of: `primary`, `primary-on-dark`, `primary-on-light`, `secondary`, `secondary-on-dark`, `destructive`, `featured`.
 
@@ -158,24 +176,24 @@ Where `{type}` is one of: `primary`, `primary-on-dark`, `primary-on-light`, `sec
 
 ---
 
-## 4. Corner Radius (Current Behaviour)
+## 4. Corner Radius
 
 ### Source
 
-Corner radius comes from the design token `$bpk-button-border-radius`, imported via `packages/bpk-mixins/tokens` (which forwards from `@skyscanner/bpk-foundations-web`).
+Corner radius originates from the design token `$bpk-button-border-radius`, imported via `packages/bpk-mixins/tokens` (which forwards from `@skyscanner/bpk-foundations-web`).
 
 ### Application
 
-The token is applied directly via `border-radius: tokens.$bpk-button-border-radius` in the base `bpk-button` Sass mixin (`packages/bpk-mixins/_buttons.scss`). The same token is also re-applied explicitly inside the `bpk-button--icon-only` and `bpk-button--large-icon-only` mixins.
+`border-radius` is set in the base `bpk-button` Sass mixin via `@include utils.bpk-themeable-property`, producing both a compiled token fallback and a `var(--bpk-button-border-radius, fallback)` CSS custom property override. The `bpk-button--icon-only` and `bpk-button--large-icon-only` mixins do not introduce a separate independent `border-radius` declaration; they inherit the value through the cascade from the base mixin.
 
 ### Behaviour Summary
 
 | Dimension | Behaviour |
 |---|---|
-| Varies by `type` variant | No — the same token value is used for all nine types |
-| Varies by `size` | No — both `small` and `large` use the same token |
-| Themeable at runtime | No — the property uses a direct token with no CSS variable wrapping |
-| Static or dynamic | Static — fixed at compile time from the token value |
+| Varies by `type` variant | No — the same CSS variable and token fallback apply across all nine types |
+| Varies by `size` | No — both `small` and `large` sizes use the same CSS variable |
+| Themeable at runtime | **Yes** — overridable via `--bpk-button-border-radius` CSS custom property |
+| Default appearance | Unchanged — token value is the fallback when no CSS variable override is set |
 
 ---
 
@@ -235,25 +253,23 @@ Colour values for the disabled state are set with **static design tokens** (not 
 
 1. **Disabled state colours are not themeable for most types.** Disabled background and text colours are set with static design tokens for all types except `linkOnDark`. They cannot be overridden via the CSS variable theming model.
 
-2. **Corner radius is not themeable.** `border-radius` is applied from a static design token with no CSS variable wrapper. It cannot be overridden at runtime via a theme.
+2. **`link` type colours are entirely static.** The `link` type uses static private tokens for all states (normal, hover, active, disabled). No CSS variables are exposed for this type. Only `linkOnDark` supports theming.
 
-3. **`link` type colours are entirely static.** The `link` type uses static private tokens for all states (normal, hover, active, disabled). No CSS variables are exposed for this type. Only `linkOnDark` supports theming.
+3. **Link underline styling can apply beneath non-text content.** For `type="link"` and `type="linkOnDark"`, underline styling is applied via an inner wrapper span and may extend under non-text elements (e.g. icons) when present.
 
-4. **Link underline styling can apply beneath non-text content.** For `type="link"` and `type="linkOnDark"`, underline styling is applied via an inner wrapper span and may extend under non-text elements (e.g. icons) when present.
+4. **Focus styling is not defined by the component.** No `:focus` or `:focus-visible` rules exist in the button Sass. Focus ring appearance depends on global stylesheets or browser defaults and may vary across rendering contexts.
 
-5. **Focus styling is not defined by the component.** No `:focus` or `:focus-visible` rules exist in the button Sass. Focus ring appearance depends on global stylesheets or browser defaults and may vary across rendering contexts.
+5. **The `implicit` prop has no effect on non-link types.** The prop is accepted on all button variants but only produces a CSS class change for `link` and `linkOnDark`. This is not enforced at the TypeScript level.
 
-6. **The `implicit` prop has no effect on non-link types.** The prop is accepted on all button variants but only produces a CSS class change for `link` and `linkOnDark`. This is not enforced at the TypeScript level.
+6. **The `blank` prop has no effect when `href` is absent.** When the component renders as a `<button>` (no `href`), the `blank` prop is silently ignored. This is not enforced at the TypeScript level.
 
-7. **The `blank` prop has no effect when `href` is absent.** When the component renders as a `<button>` (no `href`), the `blank` prop is silently ignored. This is not enforced at the TypeScript level.
+7. **Loading behaviour is provided via a separate component.** `BpkLoadingButton` implements loading-state behaviour separately from `BpkButton`, resulting in duplicated button behaviour and a split API surface.
 
-8. **Loading behaviour is provided via a separate component.** `BpkLoadingButton` implements loading-state behaviour separately from `BpkButton`, resulting in duplicated button behaviour and a split API surface.
+8. **Gradient theme attributes are declared but unused.** `buttonPrimaryGradientStartColor` and `buttonPrimaryGradientEndColor` exist as entries in `themeAttributes.ts` but no gradient styling is applied in the current CSS. Setting these theme attributes has no visual effect.
 
-9. **Gradient theme attributes are declared but unused.** `buttonPrimaryGradientStartColor` and `buttonPrimaryGradientEndColor` exist as entries in `themeAttributes.ts` but no gradient styling is applied in the current CSS. Setting these theme attributes has no visual effect.
+9. **Dark mode is not natively supported.** All design tokens use `-day` suffix variants. There is no automatic colour switching for dark-mode rendering contexts.
 
-10. **Dark mode is not natively supported.** All design tokens use `-day` suffix variants. There is no automatic colour switching for dark-mode rendering contexts.
-
-11. **SVG display is controlled by internal CSS variables.** SVG elements inside link-type buttons are governed by `--bpk-button-svg-display` and `--bpk-button-svg-vertical-align` CSS variables set within the SCSS module. This is an internal implementation detail and not part of the public prop API.
+10. **SVG display is controlled by internal CSS variables.** SVG elements inside link-type buttons are governed by `--bpk-button-svg-display` and `--bpk-button-svg-vertical-align` CSS variables set within the SCSS module. This is an internal implementation detail and not part of the public prop API.
 
 ---
 
@@ -403,12 +419,12 @@ See **Section 1 (Public API)** for the complete props list with types and defaul
 | Background colour | Normal, Hover, Active | All solid-background types |
 | Text colour | Normal, Hover, Active, Disabled | `linkOnDark` only |
 | Font size | All | All types (via `buttonFontSize` theme attribute) |
+| Corner radius | All | All types and sizes (via `--bpk-button-border-radius`) |
 
 ### Currently Not Themeable (Static Values)
 
 | CSS Property | Current Implementation | Note |
 |---|---|---|
-| `border-radius` | `tokens.$bpk-button-border-radius` | Same token value for all types and sizes; no CSS variable wrapping |
 | Disabled background colour | Static tokens per type | Varies by type; hardcoded at compile time |
 | Disabled text colour | Static tokens per type | Varies by type; hardcoded at compile time (except `linkOnDark`) |
 | `link` type text colour (all states) | `$bpk-private-button-link-*-foreground-day` (static) | No CSS variable exposed for the `link` type |
@@ -417,13 +433,13 @@ See **Section 1 (Public API)** for the complete props list with types and defaul
 | Focus ring / outline | Not defined in component styles | Inherited from global or browser defaults |
 | Typography (`font-weight`, `line-height`) | Set via `bpk-label-1` mixin | Not individually exposed as CSS variables |
 
-### Properties That Share the Same Static Pattern as Corner Radius
+### Properties Using the Same Static Pattern
 
-The following properties use the same implementation approach as `border-radius` — they are set directly from a design token with no `bpk-themeable-property` wrapper:
+The following properties are set directly from a design token with no `bpk-themeable-property` wrapper:
 
 - `padding` (all size and type variants)
 - `min-height` (small and large sizes)
 - Disabled state colours for all types except `linkOnDark`
 - All colour values for the `link` type
 
-These properties are identifiable in `packages/bpk-mixins/_buttons.scss` by the absence of `@include utils.bpk-themeable-property(...)` wrapping.
+These properties are identifiable in [packages/bpk-mixins/_buttons.scss](packages/bpk-mixins/_buttons.scss) by the absence of `@include utils.bpk-themeable-property(...)` wrapping.

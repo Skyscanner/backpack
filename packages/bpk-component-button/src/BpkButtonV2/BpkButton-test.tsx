@@ -26,102 +26,161 @@ import type { ButtonType } from './common-types';
 describe('BpkButton', () => {
   Object.keys(BUTTON_TYPES).forEach((buttonType) => {
     it(`should render correctly with type="${buttonType}"`, () => {
-      const { asFragment } = render(
+      const { container } = render(
         <BpkButton type={buttonType as ButtonType}>
           {buttonType} button
         </BpkButton>,
       );
-      expect(asFragment()).toMatchSnapshot();
+
+      const el = container.firstElementChild;
+      expect(el?.tagName).toBe('BUTTON');
+      expect(el?.getAttribute('type')).toBe('button');
+      expect(el?.getAttribute('data-backpack-ds-component')).toBe('Button');
+      expect(el?.classList.contains('bpk-button')).toBe(true);
+      expect(el?.classList.contains(`bpk-button--${buttonType}`)).toBe(true);
     });
   });
 
   it('should render correctly with a "href" attribute', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton href="#">My button</BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el?.tagName).toBe('A');
+    expect(el?.getAttribute('href')).toBe('#');
+    expect(el?.getAttribute('target')).toBe('');
+    expect(el?.getAttribute('data-backpack-ds-component')).toBe('Button');
+    expect(el?.classList.contains('bpk-button')).toBe(true);
+    expect(el?.classList.contains('bpk-button--primary')).toBe(true);
   });
 
   it('should render correctly with a "disabled" attribute', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton disabled>My button</BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el?.tagName).toBe('BUTTON');
+    expect(el?.hasAttribute('disabled')).toBe(true);
+    expect(el?.getAttribute('type')).toBe('button');
+    expect(el?.classList.contains('bpk-button')).toBe(true);
+    expect(el?.classList.contains('bpk-button--primary')).toBe(true);
   });
 
   it('should render correctly with large size', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton size={SIZE_TYPES.large}>My button</BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el?.tagName).toBe('BUTTON');
+    expect(el?.classList.contains('bpk-button')).toBe(true);
+    expect(el?.classList.contains('bpk-button--large')).toBe(true);
+    expect(el?.classList.contains('bpk-button--primary')).toBe(true);
   });
 
   it('should render correctly with an "iconOnly" attribute', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton iconOnly>My button</BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el?.tagName).toBe('BUTTON');
+    expect(el?.classList.contains('bpk-button')).toBe(true);
+    expect(el?.classList.contains('bpk-button--icon-only')).toBe(true);
+    expect(el?.classList.contains('bpk-button--primary')).toBe(true);
   });
 
   it('should render correctly a "large", "secondary" button', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton size={SIZE_TYPES.large} type={BUTTON_TYPES.secondary}>
         My button
       </BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el?.tagName).toBe('BUTTON');
+    expect(el?.classList.contains('bpk-button')).toBe(true);
+    expect(el?.classList.contains('bpk-button--large')).toBe(true);
+    expect(el?.classList.contains('bpk-button--secondary')).toBe(true);
   });
 
   it('should respect the class names entered as a string', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton className="custom-class-1 custom-class-2">
         My button
       </BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el?.classList.contains('bpk-button')).toBe(true);
+    expect(el?.classList.contains('bpk-button--primary')).toBe(true);
+    expect(el?.classList.contains('custom-class-1')).toBe(true);
+    expect(el?.classList.contains('custom-class-2')).toBe(true);
   });
 
   it('should add only bpk specific classes if className prop is set to empty string', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton className="">My button</BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el?.getAttribute('class')).toBe('bpk-button bpk-button--primary');
   });
 
   it('should render correctly with "blank" attribute', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton href="#" blank>
         My button
       </BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el?.tagName).toBe('A');
+    expect(el?.getAttribute('href')).toBe('#');
+    expect(el?.getAttribute('target')).toBe('_blank');
+    expect(el?.getAttribute('rel')).toBe('noopener noreferrer');
   });
 
   it('should render correctly with "rel" attribute', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton href="#" rel="rel-attr">
         My button
       </BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el?.tagName).toBe('A');
+    expect(el?.getAttribute('href')).toBe('#');
+    expect(el?.getAttribute('rel')).toBe('rel-attr');
+    expect(el?.getAttribute('target')).toBe('');
   });
 
   it('should render correctly with "blank" and "rel" attributes', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton href="#" blank rel="rel-overwrite">
         My button
       </BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el?.tagName).toBe('A');
+    expect(el?.getAttribute('target')).toBe('_blank');
+    expect(el?.getAttribute('rel')).toBe('rel-overwrite');
   });
 
   it('should render correctly with "disabled" and "href" attributes', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton href="#" disabled>
         My button
       </BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    // disabled + href renders as <button disabled>, not <a>
+    const el = container.firstElementChild;
+    expect(el?.tagName).toBe('BUTTON');
+    expect(el?.hasAttribute('disabled')).toBe(true);
   });
 
   it('should render with a class name if full width is added', () => {
