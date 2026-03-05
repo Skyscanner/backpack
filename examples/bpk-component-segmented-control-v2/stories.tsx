@@ -45,8 +45,6 @@ export default {
   },
 };
 
-// ─── Default ──────────────────────────────────────────────────────────────────
-
 export const Default = {
   render: DefaultCanvasDefault,
   name: 'Default (canvas-default, 3 items)',
@@ -56,8 +54,6 @@ export const UncontrolledUsage = {
   render: UncontrolledDefaultValue,
   name: 'Uncontrolled (defaultValue)',
 };
-
-// ─── Type variants ────────────────────────────────────────────────────────────
 
 export const TypeCanvasContrast = {
   render: CanvasContrast,
@@ -74,14 +70,10 @@ export const TypeSurfaceContrast = {
   name: 'Type — surface-contrast',
 };
 
-// ─── Shadow ───────────────────────────────────────────────────────────────────
-
 export const Shadow = {
   render: WithShadow,
   name: 'With shadow',
 };
-
-// ─── Disabled ─────────────────────────────────────────────────────────────────
 
 export const DisabledRoot = {
   render: RootDisabled,
@@ -93,8 +85,6 @@ export const DisabledItem = {
   name: 'Individual item disabled',
 };
 
-// ─── Custom content ───────────────────────────────────────────────────────────
-
 export const IconAndText = {
   render: WithIconAndText,
   name: 'Icon + text content',
@@ -105,21 +95,15 @@ export const IconOnly = {
   name: 'Icon-only with accessibilityLabel',
 };
 
-// ─── Theming ──────────────────────────────────────────────────────────────────
-
 export const Vdl2Theme = {
   render: Vdl2ThemeOverride,
   name: 'CSS variable override (VDL 2.0 preview)',
 };
 
-// ─── RTL ──────────────────────────────────────────────────────────────────────
-
 export const Rtl = {
   render: RtlLayout,
   name: 'RTL layout',
 };
-
-// ─── Edge cases ───────────────────────────────────────────────────────────────
 
 export const TwoSegments = {
   render: TwoItems,
@@ -135,7 +119,5 @@ export const NoneSelected = {
   render: NoInitialSelection,
   name: 'Edge case — no initial selection',
 };
-
-// ─── Visual regression ────────────────────────────────────────────────────────
 
 export const VisualTest = VisualExample;

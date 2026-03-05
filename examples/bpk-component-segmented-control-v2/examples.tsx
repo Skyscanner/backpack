@@ -29,8 +29,6 @@ import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-// ─── Default ──────────────────────────────────────────────────────────────────
-
 const DefaultCanvasDefault = () => {
   const [selected, setSelected] = useState('price');
   return (
@@ -60,12 +58,14 @@ const UncontrolledDefaultValue = () => (
   </BpkSegmentedControlV2.Root>
 );
 
-// ─── Type variants ────────────────────────────────────────────────────────────
-
 const CanvasContrast = () => {
   const [selected, setSelected] = useState('flights');
   return (
-    <div className={getClassName('bpk-component-segmented-control-stories__canvas-contrast-demo')}>
+    <div
+      className={getClassName(
+        'bpk-component-segmented-control-stories__canvas-contrast-demo',
+      )}
+    >
       <BpkSegmentedControlV2.Root
         label="Travel type"
         value={selected}
@@ -111,7 +111,11 @@ const SurfaceDefault = () => {
 const SurfaceContrast = () => {
   const [selected, setSelected] = useState('economy');
   return (
-    <div className={getClassName('bpk-component-segmented-control-stories__surface-contrast-demo')}>
+    <div
+      className={getClassName(
+        'bpk-component-segmented-control-stories__surface-contrast-demo',
+      )}
+    >
       <BpkSegmentedControlV2.Root
         label="Cabin class"
         value={selected}
@@ -132,8 +136,6 @@ const SurfaceContrast = () => {
   );
 };
 
-// ─── Shadow ───────────────────────────────────────────────────────────────────
-
 const WithShadow = () => {
   const [selected, setSelected] = useState('all');
   return (
@@ -153,8 +155,6 @@ const WithShadow = () => {
     </BpkSegmentedControlV2.Root>
   );
 };
-
-// ─── Disabled ─────────────────────────────────────────────────────────────────
 
 const RootDisabled = () => (
   <BpkSegmentedControlV2.Root
@@ -192,8 +192,6 @@ const IndividualItemDisabled = () => {
     </BpkSegmentedControlV2.Root>
   );
 };
-
-// ─── Custom content ───────────────────────────────────────────────────────────
 
 const WithIconAndText = () => {
   const [selected, setSelected] = useState('grid');
@@ -251,8 +249,6 @@ const IconOnlyWithAccessibilityLabel = () => {
   );
 };
 
-// ─── Theming ──────────────────────────────────────────────────────────────────
-
 const Vdl2ThemeOverride = () => {
   const [selected, setSelected] = useState('price');
   return (
@@ -287,8 +283,6 @@ const Vdl2ThemeOverride = () => {
   );
 };
 
-// ─── RTL ──────────────────────────────────────────────────────────────────────
-
 const RtlLayout = () => {
   const [selected, setSelected] = useState('price');
   return (
@@ -311,8 +305,6 @@ const RtlLayout = () => {
     </div>
   );
 };
-
-// ─── Edge cases ───────────────────────────────────────────────────────────────
 
 const TwoItems = () => {
   const [selected, setSelected] = useState('one-way');
@@ -362,8 +354,6 @@ const NoInitialSelection = () => (
   </BpkSegmentedControlV2.Root>
 );
 
-// ─── Visual regression ────────────────────────────────────────────────────────
-
 // Stacks multi-line item content vertically, matching v1's block-layout buttons.
 const ComplexItemContent = ({
   duration,
@@ -386,7 +376,11 @@ const ComplexItemContent = ({
 );
 
 const ComplexCanvasDefault = () => (
-  <div className={getClassName('bpk-component-segmented-control-stories__canvas-default-wrapper')}>
+  <div
+    className={getClassName(
+      'bpk-component-segmented-control-stories__canvas-default-wrapper',
+    )}
+  >
     <BpkSegmentedControlV2.Root
       label="Sort flight itineraries"
       defaultValue="cheapest"
@@ -403,7 +397,11 @@ const ComplexCanvasDefault = () => (
         value="cheapest"
         accessibilityLabel="Cheapest, £34, 9h average"
       >
-        <ComplexItemContent label="Cheapest" price="£34" duration="9h average" />
+        <ComplexItemContent
+          label="Cheapest"
+          price="£34"
+          duration="9h average"
+        />
       </BpkSegmentedControlV2.Item>
       <BpkSegmentedControlV2.Item
         value="fastest"
@@ -416,7 +414,11 @@ const ComplexCanvasDefault = () => (
 );
 
 const ComplexCanvasContrast = () => (
-  <div className={getClassName('bpk-component-segmented-control-stories__canvas-contrast-wrapper')}>
+  <div
+    className={getClassName(
+      'bpk-component-segmented-control-stories__canvas-contrast-wrapper',
+    )}
+  >
     <BpkSegmentedControlV2.Root
       label="Sort flight itineraries"
       defaultValue="cheapest"
@@ -450,7 +452,11 @@ const ComplexCanvasContrast = () => (
 );
 
 const ComplexSurfaceDefault = () => (
-  <div className={getClassName('bpk-component-segmented-control-stories__canvas-default-wrapper')}>
+  <div
+    className={getClassName(
+      'bpk-component-segmented-control-stories__canvas-default-wrapper',
+    )}
+  >
     <BpkSegmentedControlV2.Root
       label="Sort flight itineraries"
       defaultValue="cheapest"
@@ -467,7 +473,11 @@ const ComplexSurfaceDefault = () => (
         value="cheapest"
         accessibilityLabel="Cheapest, £34, 9h average"
       >
-        <ComplexItemContent label="Cheapest" price="£34" duration="9h average" />
+        <ComplexItemContent
+          label="Cheapest"
+          price="£34"
+          duration="9h average"
+        />
       </BpkSegmentedControlV2.Item>
       <BpkSegmentedControlV2.Item
         value="fastest"
@@ -480,7 +490,11 @@ const ComplexSurfaceDefault = () => (
 );
 
 const ComplexSurfaceContrast = () => (
-  <div className={getClassName('bpk-component-segmented-control-stories__surface-contrast-wrapper')}>
+  <div
+    className={getClassName(
+      'bpk-component-segmented-control-stories__surface-contrast-wrapper',
+    )}
+  >
     <BpkSegmentedControlV2.Root
       label="Sort flight itineraries"
       defaultValue="cheapest"

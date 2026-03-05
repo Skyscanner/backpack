@@ -81,11 +81,7 @@ All ten public CSS custom properties are declared on `.bpk-segmented-control-v2`
 @use '../../../bpk-mixins/typography';
 @use '../../../bpk-mixins/radii';
 
-// ─── Root container ───────────────────────────────────────────────────────────
-
 .bpk-segmented-control-v2 {
-  // Default theme: canvas-default — all CSS variables set from tokens.
-  // Consumers (or type variant modifiers) override these to change the theme.
   --bpk-segmented-control-bg: #{tokens.$bpk-surface-default-day};
   --bpk-segmented-control-item-color: #{tokens.$bpk-text-primary-day};
   --bpk-segmented-control-item-disabled-color: #{tokens.$bpk-text-disabled-day};
@@ -104,10 +100,7 @@ All ten public CSS custom properties are declared on `.bpk-segmented-control-v2`
   background-color: var(--bpk-segmented-control-bg);
   overflow: hidden;
 
-  // ── Type variants: override only the CSS variables that differ ──────────────
-
   &--canvas-default {
-    // Canvas Default uses white background per Figma design.
     --bpk-segmented-control-bg: #{tokens.$bpk-surface-default-day};
   }
 
@@ -116,7 +109,6 @@ All ten public CSS custom properties are declared on `.bpk-segmented-control-v2`
   }
 
   &--surface-default {
-    // Surface Default uses light gray background per Figma design.
     --bpk-segmented-control-bg: #{tokens.$bpk-canvas-contrast-day};
   }
 
@@ -128,20 +120,14 @@ All ten public CSS custom properties are declared on `.bpk-segmented-control-v2`
     --bpk-segmented-control-divider-color: #{tokens.$bpk-line-on-dark-day};
   }
 
-  // ── Shadow modifier ──────────────────────────────────────────────────────────
-
   &--shadow {
-    // Inner shadow per Figma spec: 20px blur, 10% black, no offset.
-    // Using a CSS variable makes the shadow consumer-overridable.
     box-shadow: var(--bpk-segmented-control-shadow);
   }
 }
 
-// ─── Item wrapper (Ark-UI renders as <label>) ────────────────────────────────
-
 .bpk-segmented-control-v2__item {
   // Ark-UI renders Item as a <label>. Reset label defaults.
-  display: contents; // Let ItemControl fill the grid cell
+  display: contents;
   cursor: pointer;
 
   &[data-disabled] {
@@ -149,8 +135,6 @@ All ten public CSS custom properties are declared on `.bpk-segmented-control-v2`
     pointer-events: none;
   }
 }
-
-// ─── ItemControl — the visible interactive surface ───────────────────────────
 
 .bpk-segmented-control-v2__item-control {
   display: flex;
@@ -160,7 +144,6 @@ All ten public CSS custom properties are declared on `.bpk-segmented-control-v2`
   justify-content: center;
   align-items: center;
 
-  // Smooth transitions for state changes (50ms per Figma animation specs)
   transition:
     background-color tokens.$bpk-duration-xs ease-in-out,
     color tokens.$bpk-duration-xs ease-in-out,
@@ -172,8 +155,6 @@ All ten public CSS custom properties are declared on `.bpk-segmented-control-v2`
 
   // Divider between adjacent items.
   // Use logical property for RTL support without the bpk-rtl mixin.
-  // --bpk-segmented-control-item-divider-color lets the parent item element
-  // suppress the divider via CSS variable inheritance (works through display:contents).
   border-inline-start: tokens.$bpk-one-pixel-rem solid
     var(
       --bpk-segmented-control-item-divider-color,
@@ -182,29 +163,24 @@ All ten public CSS custom properties are declared on `.bpk-segmented-control-v2`
 
   @include typography.bpk-label-2;
 
-  // Selected state
   &[data-state='checked'] {
     background-color: var(--bpk-segmented-control-indicator-bg);
     color: var(--bpk-segmented-control-indicator-color);
     border-inline-start-color: transparent;
   }
 
-  // Disabled state
   &[data-disabled] {
     color: var(--bpk-segmented-control-item-disabled-color);
     cursor: not-allowed;
     opacity: 0.5;
   }
 
-  // Focus indicator (keyboard navigation)
   &:focus-visible {
-    z-index: 1; // Ensure focus ring renders above adjacent items
+    z-index: 1;
 
     @include utils.bpk-focus-indicator;
   }
 }
-
-// Border-radius on first and last items using logical properties for RTL.
 
 .bpk-segmented-control-v2__item:first-child
   .bpk-segmented-control-v2__item-control {
@@ -215,10 +191,6 @@ All ten public CSS custom properties are declared on `.bpk-segmented-control-v2`
 
 // Remove divider on the item immediately after a selected item,
 // matching V1's `rightOfOption` behaviour.
-// :has() is supported in all Backpack target browsers (Chrome 109+, Edge 142+,
-// Firefox 145+, Safari 16+, Samsung 29+).
-// CSS custom properties inherit through display:contents, so setting
-// --bpk-segmented-control-item-divider-color on the item propagates into item-control.
 // stylelint-disable-next-line selector-pseudo-class-no-unknown
 .bpk-segmented-control-v2__item:has([data-state='checked'])
   + .bpk-segmented-control-v2__item {
@@ -230,8 +202,6 @@ All ten public CSS custom properties are declared on `.bpk-segmented-control-v2`
   border-end-end-radius: var(--bpk-segmented-control-border-radius);
   border-start-end-radius: var(--bpk-segmented-control-border-radius);
 }
-
-// ─── ItemText — content container ────────────────────────────────────────────
 
 .bpk-segmented-control-v2__item-text {
   display: flex;
