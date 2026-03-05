@@ -18,9 +18,14 @@
 
 import type { ReactElement, ReactNode } from 'react';
 
+import { cssModules } from '../../../bpk-react-utils';
 import { BpkCheckboxCard } from '../BpkCheckboxCard';
 
 import type { CheckboxCardVariant, CheckboxCardRadius } from '../BpkCheckboxCard/common-types';
+
+import STYLES from './BpkCheckboxCardSimple.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 export type CheckboxCardIndicatorPlacement = 'start' | 'end';
 
@@ -188,11 +193,11 @@ export function BpkCheckboxCardSimple({
       <BpkCheckboxCard.Control />
       {indicatorPlacement === 'start' && indicator}
       <BpkCheckboxCard.Content>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--bpk-spacing-sm)', width: '100%' }}>
+        <div className={getClassName('bpk-checkbox-card-simple__layout')}>
           {icon}
-          {image && <img src={image} alt="" style={{ width: '100%' }} />}
+          {image && <img src={image} alt="" className={getClassName('bpk-checkbox-card-simple__image')} />}
           {(label || description) && (
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--bpk-spacing-xs)', width: '100%' }}>
+            <div className={getClassName('bpk-checkbox-card-simple__text-group')}>
               {label && <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>}
               {description && (
                 <BpkCheckboxCard.Description>{description}</BpkCheckboxCard.Description>

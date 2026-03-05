@@ -65,7 +65,7 @@ describe('BpkCheckboxCard accessibility tests', () => {
         disabled
       />,
     );
-    const results = await axe(container);
+    const results = await axe(container, AXE_OPTIONS);
     expect(results).toHaveNoViolations();
   });
 

@@ -26,7 +26,10 @@
   display: block;
   min-width: calc(tokens.$bpk-one-pixel-rem * 44); // Minimum touch target
   min-height: calc(tokens.$bpk-one-pixel-rem * 44);
-  transition: all tokens.$bpk-duration-sm ease-in-out;
+  transition:
+    background-color,
+    border-color,
+    color tokens.$bpk-duration-sm ease-in-out;
   border: calc(tokens.$bpk-one-pixel-rem * 1) solid
     var(--bpk-checkbox-card-border-default, #{tokens.$bpk-line-day});
 
@@ -103,7 +106,9 @@
     --bpk-checkbox-card-bg-default: #{tokens.$bpk-surface-tint-day};
     --bpk-checkbox-card-fg-default: #{tokens.$bpk-text-on-dark-day};
     --bpk-checkbox-card-fg-secondary: #{tokens.$bpk-text-on-dark-day};
-    --bpk-checkbox-card-bg-hover: #{tokens.$bpk-private-button-secondary-on-dark-pressed-background-day};
+
+    // TODO: Replace with a dedicated public token from backpack-foundations (current value: rgb(4, 24, 45))
+    --bpk-checkbox-card-bg-hover: #{tokens.$bpk-surface-contrast-day};
     --bpk-checkbox-card-bg-checked: #{tokens.$bpk-core-accent-day};
     --bpk-checkbox-card-border-default: transparent;
     --bpk-checkbox-card-border-hover: transparent;
