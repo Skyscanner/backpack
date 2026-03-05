@@ -21,26 +21,31 @@ import { axe } from 'jest-axe';
 
 import BpkChatNotification from './BpkChatNotification';
 
+const MockIcon = () => <svg />;
+
 describe('BpkChatNotification accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues in the default state', async () => {
+  it('should not have programmatically-detectable accessibility issues with an icon', async () => {
     const { container } = render(
-      <BpkChatNotification label="Thanks for your feedback!" />,
+      <BpkChatNotification
+        text="Thanks for your feedback!"
+        icon={MockIcon}
+      />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
-  it('should not have programmatically-detectable accessibility issues in the error state', async () => {
+  it('should not have programmatically-detectable accessibility issues without an icon', async () => {
     const { container } = render(
-      <BpkChatNotification errorLabel="Something went wrong. Please try again." />,
+      <BpkChatNotification text="Something went wrong. Please try again." />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
-  it('should not have programmatically-detectable accessibility issues with long label text', async () => {
+  it('should not have programmatically-detectable accessibility issues with long text', async () => {
     const { container } = render(
-      <BpkChatNotification label="Thank you so much for taking the time to share your feedback with us today!" />,
+      <BpkChatNotification text="Thank you so much for taking the time to share your feedback with us today!" />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

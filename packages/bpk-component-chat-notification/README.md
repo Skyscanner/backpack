@@ -10,31 +10,26 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```tsx
 import BpkChatNotification from '@skyscanner/backpack-web/bpk-component-chat-notification';
+import TickCircleIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/tick-circle';
 
-// Default (success) state
+// With icon
 export default () => (
-  <BpkChatNotification label="Thanks for your feedback!" />
+  <BpkChatNotification
+    text="Thanks for your feedback!"
+    icon={TickCircleIcon}
+  />
 );
 
-// Error state
+// Without icon
 export const ErrorExample = () => (
-  <BpkChatNotification errorLabel="Something went wrong. Please try again." />
+  <BpkChatNotification text="Something went wrong. Please try again." />
 );
 ```
 
 ## Props
 
-The component accepts one of two mutually exclusive shapes:
-
-**Success state**:
-
-| Property | PropType | Required |
-| -------- | -------- | -------- |
-| label    | string   | true     |
-
-**Error state**:
-
-| Property   | PropType | Required |
-| ---------- | -------- | -------- |
-| errorLabel | string   | true     |
+| Property | PropType    | Required | Default Value |
+| -------- | ----------- | -------- | ------------- |
+| text     | string      | true     | -             |
+| icon     | FunctionComponent | false    | null          |
 

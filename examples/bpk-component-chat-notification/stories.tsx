@@ -18,7 +18,7 @@
 
 import BpkChatNotification from '../../packages/bpk-component-chat-notification/src/BpkChatNotification';
 
-import { DefaultExample, ErrorExample, VisualTestExample } from './examples';
+import { DefaultExample, WithoutIconExample, VisualTestExample } from './examples';
 
 export default {
   title: 'bpk-component-chat-notification',
@@ -26,7 +26,7 @@ export default {
 };
 
 export const Default = DefaultExample;
-export const WithError = ErrorExample;
+export const WithoutIcon = WithoutIconExample;
 
 export const VisualTest = VisualTestExample;
 export const VisualTestWithZoom = {

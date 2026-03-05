@@ -20,46 +20,41 @@ import { render, screen } from '@testing-library/react';
 
 import BpkChatNotification from './BpkChatNotification';
 
-const DEFAULT_LABEL = 'Thanks for your feedback!';
-const ERROR_LABEL = 'Something went wrong. Please try again.';
+const TEXT = 'Thanks for your feedback!';
+const MockIcon = () => <svg data-testid="mock-icon" />;
 
 describe('BpkChatNotification', () => {
-  it('should render correctly in the default state', () => {
+  it('should render correctly with an icon', () => {
     const { asFragment } = render(
-      <BpkChatNotification label={DEFAULT_LABEL} />,
+      <BpkChatNotification text={TEXT} icon={MockIcon} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly in the error state', () => {
+  it('should render correctly without an icon', () => {
     const { asFragment } = render(
-      <BpkChatNotification errorLabel={ERROR_LABEL} />,
+      <BpkChatNotification text={TEXT} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should show the label in the success state', () => {
-    render(<BpkChatNotification label={DEFAULT_LABEL} />);
-    expect(screen.getByText(DEFAULT_LABEL)).toBeInTheDocument();
+  it('should show the text', () => {
+    render(<BpkChatNotification text={TEXT} />);
+    expect(screen.getByText(TEXT)).toBeInTheDocument();
   });
 
-  it('should show the errorLabel in the error state', () => {
-    render(<BpkChatNotification errorLabel={ERROR_LABEL} />);
-    expect(screen.getByText(ERROR_LABEL)).toBeInTheDocument();
-  });
-
-  it('should show the tick icon in the success state', () => {
+  it('should show the icon when provided', () => {
     const { container } = render(
-      <BpkChatNotification label={DEFAULT_LABEL} />,
+      <BpkChatNotification text={TEXT} icon={MockIcon} />,
     );
     expect(
       container.querySelector('.bpk-chat-notification__icon'),
     ).toBeInTheDocument();
   });
 
-  it('should not show the tick icon in the error state', () => {
+  it('should not show the icon container when icon is not provided', () => {
     const { container } = render(
-      <BpkChatNotification errorLabel={ERROR_LABEL} />,
+      <BpkChatNotification text={TEXT} />,
     );
     expect(
       container.querySelector('.bpk-chat-notification__icon'),
@@ -67,7 +62,7 @@ describe('BpkChatNotification', () => {
   });
 
   it('should have the correct data-testid', () => {
-    render(<BpkChatNotification label={DEFAULT_LABEL} />);
+    render(<BpkChatNotification text={TEXT} />);
     expect(screen.getByTestId('bpk-chat-notification')).toBeInTheDocument();
   });
 });

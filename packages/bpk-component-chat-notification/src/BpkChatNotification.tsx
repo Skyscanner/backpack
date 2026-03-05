@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
+import type { FunctionComponent } from 'react';
+
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
@@ -24,23 +25,16 @@ import STYLES from './BpkChatNotification.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type SuccessProps = {
-  /** Text displayed in the success state. */
-  label: string;
-  errorLabel?: never;
+export type BpkChatNotificationProps = {
+  /** Text displayed in the notification. */
+  text: string;
+  /** Optional icon to display before the text. */
+  icon?: FunctionComponent<any>;
 };
-
-type ErrorProps = {
-  /** Text displayed in the error state. */
-  errorLabel: string;
-  label?: never;
-};
-
-export type BpkChatNotificationProps = SuccessProps | ErrorProps;
 
 const BpkChatNotification = ({
-  errorLabel,
-  label,
+  icon: Icon,
+  text,
 }: BpkChatNotificationProps) => (
   <output
     className={getClassName('bpk-chat-notification')}
@@ -48,16 +42,16 @@ const BpkChatNotification = ({
     data-testid="bpk-chat-notification"
     {...getDataComponentAttribute('ChatNotification')}
   >
-    {!errorLabel && (
+    {Icon && (
       <span className={getClassName('bpk-chat-notification__icon')}>
-        <TickCircleIcon aria-hidden="true" />
+        <Icon aria-hidden="true" />
       </span>
     )}
     <BpkText
       tagName="span"
       textStyle={TEXT_STYLES.footnote}
     >
-      {errorLabel ?? label}
+      {text}
     </BpkText>
   </output>
 );
