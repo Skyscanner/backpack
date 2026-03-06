@@ -16,14 +16,16 @@
  * limitations under the License.
  */
 
+import BpkBadge, { BADGE_TYPES } from '../../packages/bpk-component-badge';
 import BpkButton from '../../packages/bpk-component-button';
 import { BpkCardV2 } from '../../packages/bpk-component-card-v2';
 import BpkCarousel from '../../packages/bpk-component-carousel';
-import { BpkFlex, BpkGrid, BpkSpacing } from '../../packages/bpk-component-layout';
+import BpkJourneyArrow from '../../packages/bpk-component-journey-arrow';
+import { BpkFlex, BpkGrid, BpkSpacing, BpkBox, BpkHStack, BpkVStack } from '../../packages/bpk-component-layout';
 import BpkLink from '../../packages/bpk-component-link';
-import BpkPrice, { SIZES, ALIGNS } from '../../packages/bpk-component-price';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkPrice, { SIZES, ALIGNS } from '../../packages/bpk-component-price';
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 
 import type {
@@ -143,7 +145,7 @@ const DealOption = ({ text }: { text: string }) => (
   </BpkFlex>
 )
 
-const SplitLayoutExample = () => (
+const PackagesCardExample = () => (
   <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
     <BpkCardV2.Root>
       <BpkCardV2.Body split splitRatio={70}>
@@ -187,6 +189,89 @@ const SplitLayoutExample = () => (
           </BpkCardV2.Body>
         </BpkCardV2.Root>
       </BpkCardV2.Footer>
+    </BpkCardV2.Root>
+  </div>
+);
+
+const AirlineLogo = () => (
+  <div className={getClassName('bpk-card-v2-examples__airline-logo')}>
+    <BpkText textStyle={TEXT_STYLES.caption} tagName="span">Skyland</BpkText>
+  </div>
+);
+
+const FlightLeg = ({
+  airlineName,
+  arrivalCode,
+  arrivalTime,
+  departureCode,
+  departureTime,
+  duration,
+  stops,
+}: {
+  airlineName: string;
+  departureTime: string;
+  departureCode: string;
+  arrivalTime: string;
+  arrivalCode: string;
+  duration: string;
+  stops: string;
+}) => (
+  <BpkGrid columns={4} templateColumns="1fr 1fr 1fr 1fr" gap={BpkSpacing.Base} align="center">
+    <AirlineLogo />
+    <BpkVStack alignItems="end" gap={BpkSpacing.None}>
+      <BpkText textStyle={TEXT_STYLES.heading3} tagName="span">{departureTime}</BpkText>
+      <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="span" color={TEXT_COLORS.textSecondary}>{departureCode}</BpkText>
+    </BpkVStack>
+    <BpkVStack gap={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.footnote} tagName="span" color={TEXT_COLORS.textSecondary}>{duration}</BpkText>
+      <BpkJourneyArrow />
+      <BpkText textStyle={TEXT_STYLES.footnote} tagName="span" color={TEXT_COLORS.textSuccess}>{stops}</BpkText>
+    </BpkVStack>
+    <BpkVStack alignItems="start" gap={BpkSpacing.None}>
+      <BpkText textStyle={TEXT_STYLES.heading3} tagName="span">{arrivalTime}</BpkText>
+      <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="span" color={TEXT_COLORS.textSecondary}>{arrivalCode}</BpkText>
+    </BpkVStack>
+  </BpkGrid>
+);
+
+const FlightsCardExample = () => (
+  <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
+    <BpkCardV2.Root>
+      <BpkCardV2.Body split splitRatio={70}>
+        <BpkCardV2.Primary gap={BpkSpacing.Base}>
+          <FlightLeg
+            airlineName="Skyscanner Air"
+            departureTime="06:20"
+            departureCode="LHR"
+            arrivalTime="09:50"
+            arrivalCode="BCN"
+            duration="2h 30m"
+            stops="Direct"
+          />
+          <FlightLeg
+            airlineName="Skyscanner Air"
+            departureTime="18:30"
+            departureCode="BCN"
+            arrivalTime="20:05"
+            arrivalCode="LHR"
+            duration="2h 35m"
+            stops="Direct"
+          />
+        </BpkCardV2.Primary>
+        <BpkCardV2.Secondary gap={BpkSpacing.Base} justifyContent="end">
+          <BpkFlex direction="column" gap={BpkSpacing.SM}>
+            <BpkPrice
+              size={SIZES.Large}
+              price="£752"
+              trailingText="£1,523 total"
+              align={ALIGNS.right}
+            />
+          </BpkFlex>
+          <BpkButton onClick={() => alert('Select flight')} fullWidth>
+            Select
+          </BpkButton>
+        </BpkCardV2.Secondary>
+      </BpkCardV2.Body>
     </BpkCardV2.Root>
   </div>
 );
@@ -307,9 +392,15 @@ const AllExamples = () => (
     </div>
     <div className={getClassName('bpk-card-v2-examples__section')}>
       <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
-        Split Layout
+        Packages Card
       </BpkText>
-      <SplitLayoutExample />
+      <PackagesCardExample />
+    </div>
+    <div className={getClassName('bpk-card-v2-examples__section')}>
+      <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
+        Flights Card
+      </BpkText>
+      <FlightsCardExample />
     </div>
     <div className={getClassName('bpk-card-v2-examples__section')}>
       <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
@@ -324,7 +415,8 @@ export {
   DefaultExample,
   VariantsExample,
   SurfaceColorsExample,
-  SplitLayoutExample,
+  PackagesCardExample,
+  FlightsCardExample,
   CustomPaddingExample,
   InteractiveExample,
   AllExamples,

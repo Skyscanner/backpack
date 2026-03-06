@@ -25,7 +25,8 @@ import {
   DefaultExample,
   VariantsExample,
   SurfaceColorsExample,
-  SplitLayoutExample,
+  PackagesCardExample,
+  FlightsCardExample,
   CustomPaddingExample,
   InteractiveExample,
   AllExamples,
@@ -40,7 +41,8 @@ export default {
 export const Default = DefaultExample;
 export const Variants = VariantsExample;
 export const SurfaceColors = SurfaceColorsExample;
-export const SplitLayout = SplitLayoutExample;
+export const PackagesCard = PackagesCardExample;
+export const FlightsCard = FlightsCardExample;
 export const CustomPadding = CustomPaddingExample;
 
 export const Interactive = {

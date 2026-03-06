@@ -56,6 +56,23 @@
     overflow: hidden;
   }
 
+  &__airline-logo {
+    display: flex;
+    height: tokens.bpk-spacing-xl();
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: tokens.$bpk-border-radius-xs;
+    background-color: tokens.$bpk-surface-highlight-day;
+    color: tokens.$bpk-text-secondary-day;
+  }
+
+  &__flight-line {
+    height: tokens.$bpk-border-size-sm;
+    flex: 1 1 auto;
+    background-color: tokens.$bpk-line-day;
+  }
+
   &__placeholder {
     display: flex;
     height: 13rem;
