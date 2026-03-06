@@ -55,6 +55,7 @@ const Root = forwardRef<HTMLDivElement, BpkCardV2Props>(
       bgColor = 'surfaceDefault',
       children,
       variant = 'default',
+      ...rest
     },
     ref,
   ) => (
@@ -63,6 +64,7 @@ const Root = forwardRef<HTMLDivElement, BpkCardV2Props>(
       className={getClassName('bpk-card-v2', `bpk-card-v2--${variant}`)}
       data-bg-color={bgColor}
       {...getDataComponentAttribute('CardV2')}
+      {...rest}
     >
       {children}
     </div>

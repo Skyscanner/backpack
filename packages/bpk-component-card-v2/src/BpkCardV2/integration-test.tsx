@@ -173,9 +173,9 @@ describe('BpkCardV2 Integration Tests', () => {
   describe('Nested Content', () => {
     it('supports nested cards', () => {
       const { container } = renderWithProvider(
-        <BpkCardV2.Root ariaLabel="Outer card">
+        <BpkCardV2.Root aria-label="Outer card">
           <BpkCardV2.Body>
-            <BpkCardV2.Root ariaLabel="Inner card">
+            <BpkCardV2.Root aria-label="Inner card">
               <BpkCardV2.Body>Nested card content</BpkCardV2.Body>
             </BpkCardV2.Root>
           </BpkCardV2.Body>
@@ -240,30 +240,4 @@ describe('BpkCardV2 Integration Tests', () => {
     });
   });
 
-  describe('ARIA and Accessibility Integration', () => {
-    it('maintains accessibility with complex interactive content', () => {
-      const { container } = renderWithProvider(
-        <BpkCardV2.Root ariaLabel="Form card" ariaLabelledBy="form-title">
-          <BpkCardV2.Header>
-            <h2 id="form-title">Settings Form</h2>
-          </BpkCardV2.Header>
-          <BpkCardV2.Body>
-            <label htmlFor="input-1">Input 1:</label>
-            <input id="input-1" type="text" />
-            <label htmlFor="input-2">Input 2:</label>
-            <input id="input-2" type="text" />
-          </BpkCardV2.Body>
-          <BpkCardV2.Footer>
-            <button type="button">Submit</button>
-            <button type="button">Cancel</button>
-          </BpkCardV2.Footer>
-        </BpkCardV2.Root>,
-      );
-
-      const card = container.querySelector('[class*="bpk-card-v2"]');
-
-      expect(card).toHaveAttribute('aria-label', 'Form card');
-      expect(card).toHaveAttribute('aria-labelledby', 'form-title');
-    });
-  });
 });

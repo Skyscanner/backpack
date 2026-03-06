@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ForwardRefExoticComponent, ReactNode, RefAttributes } from 'react';
+import type { ForwardRefExoticComponent, HTMLAttributes, ReactNode, RefAttributes } from 'react';
 
 import type { BpkBoxProps , BpkFlexProps } from '../../../bpk-component-layout';
 
@@ -47,7 +47,7 @@ export type BpkCardV2Variant = 'default' | 'outlined' | 'noElevation';
  *   <BpkCardV2.Footer>Footer</BpkCardV2.Footer>
  * </BpkCardV2>
  */
-export type BpkCardV2Props = {
+export type BpkCardV2Props = Omit<HTMLAttributes<HTMLDivElement>, 'className' | 'style'> & {
   /** Visual variant controlling styling treatment (shadow/border) */
   variant?: BpkCardV2Variant;
 

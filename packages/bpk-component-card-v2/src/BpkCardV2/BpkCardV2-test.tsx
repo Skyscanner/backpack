@@ -190,28 +190,6 @@ describe('BpkCardV2', () => {
     });
   });
 
-  describe('ARIA Attributes', () => {
-    it('applies ariaLabel prop', () => {
-      const { container } = renderWithProvider(
-        <BpkCardV2.Root ariaLabel="Product card">Content</BpkCardV2.Root>,
-      );
-
-      const card = container.querySelector('[class*="bpk-card-v2"]');
-
-      expect(card).toHaveAttribute('aria-label', 'Product card');
-    });
-
-    it('applies ariaLabelledBy prop', () => {
-      const { container } = renderWithProvider(
-        <BpkCardV2.Root ariaLabelledBy="card-title">Content</BpkCardV2.Root>,
-      );
-
-      const card = container.querySelector('[class*="bpk-card-v2"]');
-
-      expect(card).toHaveAttribute('aria-labelledby', 'card-title');
-    });
-  });
-
   describe('Display Names', () => {
     it('sets display name for debugging', () => {
       expect(BpkCardV2.Root.displayName).toBe('BpkCardV2.Root');

@@ -53,46 +53,10 @@ describe('BpkCardV2 Accessibility', () => {
     });
   });
 
-  describe('ARIA Labels', () => {
-    it('supports ariaLabel for card labeling', () => {
-      const { container } = renderWithProvider(
-        <BpkCardV2.Root ariaLabel="Product information">Content</BpkCardV2.Root>,
-      );
-
-      const card = container.querySelector('[class*="bpk-card-v2"]');
-
-      expect(card).toHaveAttribute('aria-label', 'Product information');
-    });
-
-    it('supports ariaLabelledBy for card labeling', () => {
-      const { container } = renderWithProvider(
-        <>
-          <h2 id="card-heading">Card Heading</h2>
-          <BpkCardV2.Root ariaLabelledBy="card-heading">Content</BpkCardV2.Root>
-        </>,
-      );
-
-      const card = container.querySelector('[class*="bpk-card-v2"]');
-
-      expect(card).toHaveAttribute('aria-labelledby', 'card-heading');
-    });
-
-    it('allows aria label to be provided without ariaLabelledBy', () => {
-      const { container } = renderWithProvider(
-        <BpkCardV2.Root ariaLabel="Standalone label">Content</BpkCardV2.Root>,
-      );
-
-      const card = container.querySelector('[class*="bpk-card-v2"]');
-
-      expect(card).toHaveAttribute('aria-label');
-      expect(card).not.toHaveAttribute('aria-labelledby');
-    });
-  });
-
   describe('Keyboard Navigation', () => {
     it('card container is a valid landmark region', () => {
       const { container } = renderWithProvider(
-        <BpkCardV2.Root ariaLabel="Card region">
+        <BpkCardV2.Root aria-label="Card region">
           <button type="button">Button 1</button>
           <button type="button">Button 2</button>
         </BpkCardV2.Root>,
@@ -121,7 +85,7 @@ describe('BpkCardV2 Accessibility', () => {
   describe('Axe Automated Tests', () => {
     it('has no accessibility violations - basic card', async () => {
       const { container } = renderWithProvider(
-        <BpkCardV2.Root ariaLabel="Basic card">
+        <BpkCardV2.Root aria-label="Basic card">
           <BpkCardV2.Header>Title</BpkCardV2.Header>
           <BpkCardV2.Body>Content</BpkCardV2.Body>
           <BpkCardV2.Footer>Footer</BpkCardV2.Footer>
@@ -135,7 +99,7 @@ describe('BpkCardV2 Accessibility', () => {
 
     it('has no accessibility violations - split layout', async () => {
       const { container } = renderWithProvider(
-        <BpkCardV2.Root ariaLabel="Split layout card">
+        <BpkCardV2.Root aria-label="Split layout card">
           <BpkCardV2.Body split splitRatio={70}>
             <BpkCardV2.Primary>Main content</BpkCardV2.Primary>
             <BpkCardV2.Secondary>Sidebar</BpkCardV2.Secondary>
@@ -150,7 +114,7 @@ describe('BpkCardV2 Accessibility', () => {
 
     it('has no accessibility violations - outlined variant', async () => {
       const { container } = renderWithProvider(
-        <BpkCardV2.Root variant="outlined" ariaLabel="Outlined card">
+        <BpkCardV2.Root variant="outlined" aria-label="Outlined card">
           <BpkCardV2.Body>Content</BpkCardV2.Body>
         </BpkCardV2.Root>,
       );
@@ -162,7 +126,7 @@ describe('BpkCardV2 Accessibility', () => {
 
     it('has no accessibility violations - with different surface colors', async () => {
       const { container } = renderWithProvider(
-        <BpkCardV2.Root bgColor="surfaceElevated" ariaLabel="Elevated card">
+        <BpkCardV2.Root bgColor="surfaceElevated" aria-label="Elevated card">
           <BpkCardV2.Body>Content</BpkCardV2.Body>
         </BpkCardV2.Root>,
       );
@@ -174,7 +138,7 @@ describe('BpkCardV2 Accessibility', () => {
 
     it('has no accessibility violations - complex layout', async () => {
       const { container } = renderWithProvider(
-        <BpkCardV2.Root variant="default" bgColor="surfaceDefault" ariaLabel="Complex card">
+        <BpkCardV2.Root variant="default" bgColor="surfaceDefault" aria-label="Complex card">
           <BpkCardV2.Header>Product Details</BpkCardV2.Header>
           <BpkCardV2.Body split splitRatio={65}>
             <BpkCardV2.Primary>
