@@ -25,3 +25,10 @@ import BpkSegmentedControl, {
 export type { BpkSegmentControlProps, TabPanelProps };
 export { useSegmentedControlPanels };
 export default BpkSegmentedControl;
+
+export { default as BpkSegmentedControlV2, SEGMENT_TYPES_V2 } from './src/BpkSegmentedControlV2/BpkSegmentedControlV2';
+export type {
+  BpkSegmentedControlV2RootProps,
+  BpkSegmentedControlV2ItemProps,
+  SegmentTypesV2,
+} from './src/BpkSegmentedControlV2/common-types';
