@@ -21,13 +21,11 @@ import { render } from '@testing-library/react';
 import { BpkButtonV2 as BpkButton } from './BpkButton';
 import { SIZE_TYPES, BUTTON_TYPES } from './common-types';
 
-import type { ButtonType } from './common-types';
-
 describe('BpkButton', () => {
-  Object.keys(BUTTON_TYPES).forEach((buttonType) => {
+  Object.values(BUTTON_TYPES).forEach((buttonType) => {
     it(`should render correctly with type="${buttonType}"`, () => {
       const { container } = render(
-        <BpkButton type={buttonType as ButtonType}>
+        <BpkButton type={buttonType}>
           {buttonType} button
         </BpkButton>,
       );

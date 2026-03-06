@@ -7,12 +7,16 @@
 
 ## Summary
 
-Expose `border-radius` as a runtime-configurable CSS custom property using the existing `utils.bpk-themeable-property` mechanism already in use for button colours. The change requires **4 line-level edits** across 3 files, plus snapshot regeneration. No new props, no new components, no new stories.
+Expose `border-radius` as a runtime-configurable CSS custom property using the existing `utils.bpk-themeable-property` mechanism already in use for button colours. The change requires **4 line-level edits** across 3 source files, plus explicit test assertion updates. No new props, no new components, no new stories.
 
 **Files changed**:
 1. `packages/bpk-mixins/_buttons.scss` — 3 edits (1 replace, 2 removals)
 2. `packages/bpk-component-button/src/BpkButtonV2/BpkButton.module.scss` — 1 removal
 3. `packages/bpk-component-button/src/themeAttributes.ts` — 1 string added
+4. `packages/bpk-component-button/src/themeAttributes-test.ts` — updated expectation
+5. `packages/bpk-component-button/src/BpkButtonV2/BpkButton-test.tsx` — replaced snapshots with explicit assertions
+6. `packages/bpk-component-button/src/BpkButtonV2/__snapshots__/BpkButton-test.tsx.snap` — deleted (obsolete)
+7. `specs/001-bpkbutton-baseline/` — new spec documentation artefacts (research, api-design, styling-guide, plan, checklist)
 
 ---
 
@@ -71,8 +75,9 @@ packages/bpk-component-button/src/BpkButtonV2/
 └── BpkButton.module.scss        ← 1 removal
 
 packages/bpk-component-button/src/BpkButtonV2/
+└── BpkButton-test.tsx           ← snapshots replaced with explicit assertions
 └── __snapshots__/
-    └── BpkButton-test.tsx.snap  ← regenerate (jest --updateSnapshot)
+    └── BpkButton-test.tsx.snap  ← deleted (obsolete)
 ```
 
 ### Documentation (this feature)
@@ -181,12 +186,7 @@ None. No new external dependencies.
 
 ### What changes in tests
 
-**Snapshot tests** — The compiled CSS output of all button variants will change: `border-radius` will appear twice per selector instead of once. Snapshots must be regenerated.
-
-```bash
-# From repo root
-npx jest packages/bpk-component-button --updateSnapshot
-```
+**Unit tests** — `BpkButton-test.tsx` has been converted from `toMatchSnapshot()` to explicit DOM assertions. The obsolete snapshot file (`__snapshots__/BpkButton-test.tsx.snap`) has been deleted. No `jest --updateSnapshot` step is required.
 
 ### What does NOT change
 
@@ -219,7 +219,7 @@ npx jest packages/bpk-component-button --updateSnapshot
 - [ ] `_buttons.scss` Edit 3: remove `border-radius` from `bpk-button--large-icon-only`
 - [ ] BpkButton.module.scss: remove duplicate static border-radius declaration(s) in icon-only module classes
 - [ ] `themeAttributes.ts`: add `'buttonBorderRadius'` to `buttonThemeAttributes`
-- [ ] Snapshots regenerated (`jest --updateSnapshot`)
+- [ ] `BpkButton-test.tsx`: converted to explicit assertions; obsolete snapshot file deleted
 - [ ] All tests pass (`npm run jest -- packages/bpk-component-button`)
 - [ ] Lint passes (`npm run lint`)
 - [ ] TypeScript compiles without errors (`npm run typecheck`)
