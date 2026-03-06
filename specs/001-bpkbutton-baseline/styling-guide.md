@@ -4,7 +4,7 @@ DOCUMENT PURPOSE: Phase 1 — Styling Guide
 Feature: BpkButton v1.1 — Corner Radius CSS-Variable Theming
 Branch: CLOV-1327
 Date: 2026-03-06
-Scope: Strictly limited to _buttons.scss changes for border-radius theming.
+Scope: Strictly limited to border-radius theming changes.
 ==============================================================================
 -->
 
@@ -12,7 +12,10 @@ Scope: Strictly limited to _buttons.scss changes for border-radius theming.
 
 ## Overview
 
-This guide covers the three targeted line-level changes to `packages/bpk-mixins/_buttons.scss`. No other files require styling changes.
+This guide covers all styling changes for the corner radius theming feature, spanning two files:
+
+- `packages/bpk-mixins/_buttons.scss` — 3 edits (base mixin + 2 icon-only mixin removals)
+- `packages/bpk-component-button/src/BpkButtonV2/BpkButton.module.scss` — 2 removals (icon-only selector overrides)
 
 ---
 
