@@ -1,0 +1,131 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/typography';
+@use '../../bpk-mixins/forms';
+
+// Root — flex row container (renders as <label> via Ark)
+.bpk-checkbox-v2 {
+  display: inline-flex;
+  align-items: flex-start;
+  cursor: pointer;
+  gap: tokens.bpk-spacing-md(); // 8px between control column and label slot
+
+  &[data-disabled] {
+    cursor: not-allowed;
+  }
+}
+
+// Control — the visual 20×20 checkbox box
+.bpk-checkbox-v2__control {
+  position: relative;
+  display: flex;
+  width: tokens.$bpk-one-pixel-rem * 20; // 1.25rem = 20px
+  height: tokens.$bpk-one-pixel-rem * 20; // 1.25rem = 20px
+
+  // 2px top margin aligns centre of 20px control with first-line baseline of 24px label
+  margin-top: tokens.$bpk-one-pixel-rem * 2;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border: tokens.$bpk-border-size-xl solid tokens.$bpk-line-day;
+  border-radius: tokens.$bpk-border-radius-xs; // .25rem = 4px
+  background-color: tokens.$bpk-canvas-day;
+
+  // Focus — keyboard only
+  &[data-focus-visible] {
+    outline: tokens.$bpk-border-size-xl solid tokens.$bpk-core-accent-day;
+    outline-offset: tokens.$bpk-one-pixel-rem * 2;
+  }
+
+  // Checked state — fill + white checkmark via mixin (same as v1)
+  &[data-state='checked'] {
+    border-width: tokens.$bpk-border-size-xl;
+    border-color: tokens.$bpk-core-accent-day;
+    background-color: tokens.$bpk-core-accent-day;
+
+    @include forms.bpk-checkbox__checkmark;
+  }
+
+  // Indeterminate state — fill + white horizontal dash (same as v1 ::before)
+  &[data-state='indeterminate'] {
+    border-width: tokens.$bpk-border-size-xl;
+    border-color: tokens.$bpk-core-accent-day;
+    background-color: tokens.$bpk-core-accent-day;
+
+    &::before {
+      position: absolute;
+      top: tokens.bpk-spacing-sm() + tokens.$bpk-one-pixel-rem;
+      left: tokens.bpk-spacing-sm() * 0.5;
+      content: '';
+      width: tokens.bpk-spacing-xxl() * 0.25;
+      height: tokens.bpk-spacing-sm() - tokens.$bpk-one-pixel-rem;
+      border-radius: tokens.$bpk-border-size-lg;
+      background-color: tokens.$bpk-surface-default-day;
+    }
+  }
+
+  // Invalid / error state — border turns red
+  &[data-invalid] {
+    border-color: tokens.$bpk-status-danger-spot-day;
+  }
+
+  // Disabled — muted background, no interactivity
+  &[data-disabled] {
+    border-color: tokens.$bpk-line-day;
+    background-color: tokens.$bpk-canvas-contrast-day;
+
+    &[data-state='checked'],
+    &[data-state='indeterminate'] {
+      border-color: tokens.$bpk-text-disabled-day;
+      background-color: tokens.$bpk-text-disabled-day;
+    }
+  }
+}
+
+// Label — primary label text (clicking it toggles the checkbox via Ark)
+.bpk-checkbox-v2__label {
+  color: tokens.$bpk-text-primary-day;
+  user-select: none;
+
+  @include typography.bpk-body-default;
+
+  // Allow inline interactive elements (e.g. <a>) without extra styles
+  a {
+    color: inherit;
+  }
+
+  [data-disabled] & {
+    color: tokens.$bpk-text-disabled-day;
+  }
+}
+
+// Description — secondary text / subtitle
+.bpk-checkbox-v2__description {
+  // 4px gap below label, matches Figma slot gap
+  display: block;
+  margin-top: tokens.bpk-spacing-sm();
+  color: tokens.$bpk-text-secondary-day;
+
+  @include typography.bpk-footnote;
+
+  [data-disabled] & {
+    color: tokens.$bpk-text-disabled-day;
+  }
+}
