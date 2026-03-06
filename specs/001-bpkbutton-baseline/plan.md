@@ -1,4 +1,4 @@
-<file name=0 path=/Users/fayexiao/Documents/workspace4/backpack/specs/001-bpkbutton-baseline/plan.md># Implementation Plan: BpkButton v1.1 — Corner Radius Theming
+# Implementation Plan: BpkButton v1.1 — Corner Radius Theming
 
 **Package Branch**: `CLOV-1327` | **Date**: 2026-03-06 | **Spec**: [spec.md](spec.md)
 **Input**: [specs/001-bpkbutton-baseline/spec.md](spec.md) — Change Log v1.1

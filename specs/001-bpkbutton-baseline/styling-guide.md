@@ -166,17 +166,7 @@ This change does not introduce any new CSS classes. The existing BEM class struc
 
 ---
 
-## Snapshot Delta (Expected)
+## Test Impact
 
-After the change, snapshot tests will show `border-radius` declared **twice** for all button variants:
-
-```
-// before
-border-radius: <token-value>;
-
-// after
-border-radius: <token-value>;
-border-radius: var(--bpk-button-border-radius, <token-value>);
-```
-
-This is expected and correct. Update snapshots with `jest --updateSnapshot`.
+Automated tests for this change now use explicit assertions rather than CSS snapshots.
+No snapshot update step (for example, `jest --updateSnapshot`) is required for this work.
