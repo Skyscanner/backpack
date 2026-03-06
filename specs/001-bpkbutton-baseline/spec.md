@@ -52,14 +52,14 @@ Internally the component is `BpkButtonV2`, defined in `packages/bpk-component-bu
 | Value | CSS Modifier Applied | Description |
 |---|---|---|
 | `primary` | `bpk-button--primary` | Default. Primary action on standard backgrounds. |
-| `primaryOnDark` | `bpk-button--primaryOnDark` | Primary action on dark backgrounds. |
-| `primaryOnLight` | `bpk-button--primaryOnLight` | Primary action on light/white backgrounds. |
+| `primaryOnDark` | `bpk-button--primary-on-dark` | Primary action on dark backgrounds. |
+| `primaryOnLight` | `bpk-button--primary-on-light` | Primary action on light/white backgrounds. |
 | `secondary` | `bpk-button--secondary` | Secondary or supporting action. |
-| `secondaryOnDark` | `bpk-button--secondaryOnDark` | Secondary action on dark backgrounds. |
+| `secondaryOnDark` | `bpk-button--secondary-on-dark` | Secondary action on dark backgrounds. |
 | `destructive` | `bpk-button--destructive` | Warning or irreversible actions (e.g. delete, remove). |
 | `featured` | `bpk-button--featured` | Highest-prominence call-to-action. |
 | `link` | `bpk-button--link` | Inline link-style, no background. |
-| `linkOnDark` | `bpk-button--linkOnDark` | Inline link-style for dark backgrounds. |
+| `linkOnDark` | `bpk-button--link-on-dark` | Inline link-style for dark backgrounds. |
 
 ### Size Types (`SIZE_TYPES`)
 
