@@ -20,17 +20,23 @@
 @use '../../../bpk-mixins/radii';
 @use '../../../bpk-mixins/shadows';
 @use '../../../bpk-mixins/breakpoints';
+@use '../../../bpk-mixins/utils';
 
 // Card container - base styles
 .bpk-card-v2 {
   display: flex;
   flex-direction: column;
   flex: 1;
+  transition: box-shadow tokens.$bpk-duration-sm ease-in-out;
   background-color: tokens.$bpk-surface-default-day;
   overflow: hidden;
 
   @include radii.bpk-border-radius-md;
   @include shadows.bpk-box-shadow-sm;
+
+  @include utils.bpk-hover {
+    @include shadows.bpk-box-shadow-lg;
+  }
 
   // Surface color variants
   &[data-bg-color='surfaceDefault'] {
@@ -70,11 +76,19 @@
 .bpk-card-v2--outlined {
   border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
   box-shadow: none;
+
+  @include utils.bpk-hover {
+    box-shadow: none;
+  }
 }
 
 // No elevation variant - no shadow, no border
 .bpk-card-v2--noElevation {
   box-shadow: none;
+
+  @include utils.bpk-hover {
+    box-shadow: none;
+  }
 }
 
 // Divider between primary and secondary in split layout
