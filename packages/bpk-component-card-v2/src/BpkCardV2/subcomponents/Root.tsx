@@ -52,8 +52,6 @@ const getClassName = cssModules(STYLES);
 const Root = forwardRef<HTMLDivElement, BpkCardV2Props>(
   (
     {
-      ariaLabel,
-      ariaLabelledBy,
       bgColor = 'surfaceDefault',
       children,
       variant = 'default',
@@ -64,8 +62,6 @@ const Root = forwardRef<HTMLDivElement, BpkCardV2Props>(
       ref={ref}
       className={getClassName('bpk-card-v2', `bpk-card-v2--${variant}`)}
       data-bg-color={bgColor}
-      aria-label={ariaLabel}
-      aria-labelledby={ariaLabelledBy}
       {...getDataComponentAttribute('CardV2')}
     >
       {children}

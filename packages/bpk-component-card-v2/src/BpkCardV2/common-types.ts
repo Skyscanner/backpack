@@ -56,12 +56,6 @@ export type BpkCardV2Props = {
 
   /** Card content - use Header, Body, Footer subcomponents */
   children: ReactNode;
-
-  /** Accessible label describing the card's purpose */
-  ariaLabel?: string;
-
-  /** ID of element that labels the card */
-  ariaLabelledBy?: string;
 };
 
 /**
