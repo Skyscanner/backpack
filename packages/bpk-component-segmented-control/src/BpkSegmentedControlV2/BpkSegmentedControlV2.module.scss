@@ -51,13 +51,13 @@
 .bpk-segmented-control-v2__item {
   @include segmented-control.bpk-segmented-control-v2__item;
 
-  &:first-child .bpk-segmented-control-v2__item-control {
+  &:first-of-type .bpk-segmented-control-v2__item-control {
     border-end-start-radius: var(--bpk-segmented-control-border-radius);
     border-inline-start: none;
     border-start-start-radius: var(--bpk-segmented-control-border-radius);
   }
 
-  &:last-child .bpk-segmented-control-v2__item-control {
+  &:last-of-type .bpk-segmented-control-v2__item-control {
     border-end-end-radius: var(--bpk-segmented-control-border-radius);
     border-start-end-radius: var(--bpk-segmented-control-border-radius);
   }
