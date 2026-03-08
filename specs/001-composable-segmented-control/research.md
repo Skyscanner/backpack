@@ -209,9 +209,9 @@ After the deprecation window, V2 becomes the default and V1 is removed.
 **V2-specific test additions**:
 - Test radiogroup/radio roles (not tablist/tab)
 - Test `aria-checked` on items (not `aria-selected`)
-- Test duplicate `value` console warning (spy on `console.warn`)
 - Test CSS custom property override (via JSDOM `style` assertion on wrapper)
-- Test `accessibilityLabel` prop sets `aria-label` on item
+- Test that icon-only items with `BpkVisuallyHidden` pass axe (extractTextContent finds the hidden text)
+- Test that icon-only items with no text fail axe (confirms BpkVisuallyHidden is required)
 
 **Accessibility test pattern** (`accessibility-test.tsx`):
 ```tsx

@@ -6,19 +6,33 @@
 
 ---
 
-## 1. File: `BpkSegmentedControlV2.module.scss`
+## 1. Files
 
-### Sass Imports
+### `packages/bpk-mixins/_segmented-control.scss` (NEW — mixin library)
+
+Follows the `_buttons.scss` / `_chips.scss` pattern: one `@mixin` per BEM element and modifier. Contains all style logic but no class selectors.
 
 ```scss
-@use '../../../bpk-mixins/tokens';
-@use '../../../bpk-mixins/utils';
-@use '../../../bpk-mixins/typography';
-@use '../../../bpk-mixins/radii';
+@use 'tokens';
+@use 'typography';
+@use 'utils';
+@use 'shadows';
 ```
 
-> `shadows` is no longer imported — the shadow is now a CSS custom property (`--bpk-segmented-control-shadow`) rather than a mixin include, making it consumer-overridable.
->
+Forwarded via `packages/bpk-mixins/_index.scss`:
+```scss
+@forward 'segmented-control';
+```
+
+### `BpkSegmentedControlV2.module.scss` (assembles BEM structure)
+
+Imports the mixin module and calls each mixin in the correct BEM selector. Also contains cross-element selectors (first/last child border-radius, `:has` divider, `:has` focus) that cannot live inside a self-contained mixin.
+
+```scss
+@use '../../../bpk-mixins/segmented-control';
+@use '../../../bpk-mixins/utils';
+```
+
 > Import paths are relative from `src/BpkSegmentedControlV2/` to `packages/bpk-mixins/`.
 
 ---
@@ -36,62 +50,46 @@ bpk-segmented-control-v2__item-text       Ark-UI ItemText — label/icon content
 
 ---
 
-## 3. CSS Custom Properties (Public Theming API)
+## 3. CSS Custom Properties (Internal Cascade — Not Public API)
 
-All ten public CSS custom properties are declared on `.bpk-segmented-control-v2` with Backpack token defaults. Consumers override them at any ancestor element.
+CSS custom properties are declared on `.bpk-segmented-control-v2` and cascade to child elements (`__item-control`). They are the internal mechanism for type variant theming; they are NOT documented as a public override API for consumers.
 
 | Property | Default (canvas-default) | Controls |
 |---|---|---|
-| `--bpk-segmented-control-bg` | `$bpk-surface-default-day` | Group background |
+| `--bpk-segmented-control-bg` | `$bpk-private-segmented-control-canvas-default-day` | Group background |
 | `--bpk-segmented-control-item-color` | `$bpk-text-primary-day` | Unselected item text/icon |
 | `--bpk-segmented-control-item-disabled-color` | `$bpk-text-disabled-day` | Disabled item text/icon |
 | `--bpk-segmented-control-indicator-bg` | `$bpk-core-primary-day` | Selected item background |
 | `--bpk-segmented-control-indicator-color` | `$bpk-text-on-dark-day` | Selected item text/icon |
 | `--bpk-segmented-control-border-radius` | `$bpk-border-radius-sm` | Group + item corner radius |
 | `--bpk-segmented-control-padding-x` | `tokens.bpk-spacing-base()` | Horizontal item padding |
-| `--bpk-segmented-control-padding-y` | `tokens.bpk-spacing-md()` | Vertical item padding |
 | `--bpk-segmented-control-divider-color` | `$bpk-line-day` | Divider between items |
-| `--bpk-segmented-control-shadow` | `inset 0 0 20px 0 rgb(0,0,0,0.1)` | `box-shadow` value applied when `shadow` prop is true |
+
+> Note: `--bpk-segmented-control-padding-y` and `--bpk-segmented-control-shadow` were removed. Vertical padding defaults to `0` (set via `var(--bpk-segmented-control-padding-y, 0)`). Shadow is applied via `@include shadows.bpk-box-shadow-sm` in the `--shadow` modifier mixin, not as a CSS variable.
 
 ---
 
-## 4. Full SCSS Implementation
+## 4. SCSS Implementation
+
+### `packages/bpk-mixins/_segmented-control.scss`
+
+One mixin per BEM element/modifier. No class selectors — consumed by `BpkSegmentedControlV2.module.scss`.
 
 ```scss
-/*
- * Backpack - Skyscanner's Design System
- *
- * Copyright 2016 Skyscanner Ltd
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+@use 'tokens';
+@use 'typography';
+@use 'utils';
+@use 'shadows';
 
-@use '../../../bpk-mixins/tokens';
-@use '../../../bpk-mixins/utils';
-@use '../../../bpk-mixins/typography';
-@use '../../../bpk-mixins/radii';
-
-.bpk-segmented-control-v2 {
-  --bpk-segmented-control-bg: #{tokens.$bpk-surface-default-day};
+@mixin bpk-segmented-control-v2 {
+  --bpk-segmented-control-bg: #{tokens.$bpk-private-segmented-control-canvas-default-day};
   --bpk-segmented-control-item-color: #{tokens.$bpk-text-primary-day};
   --bpk-segmented-control-item-disabled-color: #{tokens.$bpk-text-disabled-day};
   --bpk-segmented-control-indicator-bg: #{tokens.$bpk-core-primary-day};
   --bpk-segmented-control-indicator-color: #{tokens.$bpk-text-on-dark-day};
   --bpk-segmented-control-border-radius: #{tokens.$bpk-border-radius-sm};
   --bpk-segmented-control-padding-x: #{tokens.bpk-spacing-base()};
-  --bpk-segmented-control-padding-y: #{tokens.bpk-spacing-md()};
   --bpk-segmented-control-divider-color: #{tokens.$bpk-line-day};
-  --bpk-segmented-control-shadow: inset 0 0 20px 0 rgb(0, 0, 0, 0.1);
 
   display: grid;
   grid-auto-columns: 1fr;
@@ -99,33 +97,33 @@ All ten public CSS custom properties are declared on `.bpk-segmented-control-v2`
   border-radius: var(--bpk-segmented-control-border-radius);
   background-color: var(--bpk-segmented-control-bg);
   overflow: hidden;
-
-  &--canvas-default {
-    --bpk-segmented-control-bg: #{tokens.$bpk-surface-default-day};
-  }
-
-  &--canvas-contrast {
-    --bpk-segmented-control-bg: #{tokens.$bpk-surface-default-day};
-  }
-
-  &--surface-default {
-    --bpk-segmented-control-bg: #{tokens.$bpk-canvas-contrast-day};
-  }
-
-  &--surface-contrast {
-    --bpk-segmented-control-bg: #{tokens.$bpk-private-segmented-control-surface-contrast-day};
-    --bpk-segmented-control-item-color: #{tokens.$bpk-text-on-dark-day};
-    --bpk-segmented-control-indicator-bg: #{tokens.$bpk-private-segmented-control-surface-contrast-on-day};
-    --bpk-segmented-control-indicator-color: #{tokens.$bpk-text-on-dark-day};
-    --bpk-segmented-control-divider-color: #{tokens.$bpk-line-on-dark-day};
-  }
-
-  &--shadow {
-    box-shadow: var(--bpk-segmented-control-shadow);
-  }
 }
 
-.bpk-segmented-control-v2__item {
+@mixin bpk-segmented-control-v2--canvas-default {
+  --bpk-segmented-control-bg: #{tokens.$bpk-private-segmented-control-canvas-default-day};
+}
+
+@mixin bpk-segmented-control-v2--canvas-contrast {
+  --bpk-segmented-control-bg: #{tokens.$bpk-surface-default-day};
+}
+
+@mixin bpk-segmented-control-v2--surface-default {
+  --bpk-segmented-control-bg: #{tokens.$bpk-canvas-contrast-day};
+}
+
+@mixin bpk-segmented-control-v2--surface-contrast {
+  --bpk-segmented-control-bg: #{tokens.$bpk-private-segmented-control-surface-contrast-day};
+  --bpk-segmented-control-item-color: #{tokens.$bpk-text-on-dark-day};
+  --bpk-segmented-control-indicator-bg: #{tokens.$bpk-private-segmented-control-surface-contrast-on-day};
+  --bpk-segmented-control-indicator-color: #{tokens.$bpk-text-on-dark-day};
+  --bpk-segmented-control-divider-color: #{tokens.$bpk-line-on-dark-day};
+}
+
+@mixin bpk-segmented-control-v2--shadow {
+  @include shadows.bpk-box-shadow-sm;
+}
+
+@mixin bpk-segmented-control-v2__item {
   // Ark-UI renders Item as a <label>. Reset label defaults.
   display: contents;
   cursor: pointer;
@@ -136,14 +134,12 @@ All ten public CSS custom properties are declared on `.bpk-segmented-control-v2`
   }
 }
 
-.bpk-segmented-control-v2__item-control {
+@mixin bpk-segmented-control-v2__item-control {
   display: flex;
   min-height: tokens.bpk-spacing-xl();
-  padding: var(--bpk-segmented-control-padding-y)
-    var(--bpk-segmented-control-padding-x);
+  padding: var(--bpk-segmented-control-padding-y, 0) var(--bpk-segmented-control-padding-x);
   justify-content: center;
   align-items: center;
-
   transition:
     background-color tokens.$bpk-duration-xs ease-in-out,
     color tokens.$bpk-duration-xs ease-in-out,
@@ -152,14 +148,8 @@ All ten public CSS custom properties are declared on `.bpk-segmented-control-v2`
   background-color: var(--bpk-segmented-control-bg);
   color: var(--bpk-segmented-control-item-color);
   overflow: hidden;
-
-  // Divider between adjacent items.
-  // Use logical property for RTL support without the bpk-rtl mixin.
-  border-inline-start: tokens.$bpk-one-pixel-rem solid
-    var(
-      --bpk-segmented-control-item-divider-color,
-      var(--bpk-segmented-control-divider-color)
-    );
+  border-inline-start: tokens.$bpk-border-size-sm solid
+    var(--bpk-segmented-control-item-divider-color, var(--bpk-segmented-control-divider-color));
 
   @include typography.bpk-label-2;
 
@@ -175,42 +165,82 @@ All ten public CSS custom properties are declared on `.bpk-segmented-control-v2`
     opacity: 0.5;
   }
 
-  &:focus-visible {
+  &[data-state='checked'][data-disabled] {
+    color: var(--bpk-segmented-control-indicator-color);
+    // Opacity restored so the indicator background and text remain readable.
+    // Non-interactivity is communicated via cursor/pointer-events on __item.
+    opacity: 0.8;
+  }
+}
+
+@mixin bpk-segmented-control-v2__item-text {
+  display: flex;
+  min-width: 0; // Allows flex children (e.g. truncation spans) to shrink below content width
+  align-items: center;
+  gap: tokens.bpk-spacing-sm();
+  pointer-events: none;
+
+  svg {
+    flex-shrink: 0;
+    fill: currentcolor;
+  }
+}
+```
+
+### `BpkSegmentedControlV2.module.scss`
+
+Assembles the BEM structure. Cross-element selectors (first/last child border-radius, `:has` divider, `:has` focus indicator) are kept here because they cannot live inside a self-contained mixin.
+
+```scss
+@use '../../../bpk-mixins/segmented-control';
+@use '../../../bpk-mixins/utils';
+
+.bpk-segmented-control-v2 {
+  @include segmented-control.bpk-segmented-control-v2;
+
+  &--canvas-default { @include segmented-control.bpk-segmented-control-v2--canvas-default; }
+  &--canvas-contrast { @include segmented-control.bpk-segmented-control-v2--canvas-contrast; }
+  &--surface-default { @include segmented-control.bpk-segmented-control-v2--surface-default; }
+  &--surface-contrast { @include segmented-control.bpk-segmented-control-v2--surface-contrast; }
+  &--shadow { @include segmented-control.bpk-segmented-control-v2--shadow; }
+}
+
+.bpk-segmented-control-v2__item {
+  @include segmented-control.bpk-segmented-control-v2__item;
+
+  &:first-child .bpk-segmented-control-v2__item-control {
+    border-end-start-radius: var(--bpk-segmented-control-border-radius);
+    border-start-start-radius: var(--bpk-segmented-control-border-radius);
+    border-inline-start: none;
+  }
+
+  &:last-child .bpk-segmented-control-v2__item-control {
+    border-end-end-radius: var(--bpk-segmented-control-border-radius);
+    border-start-end-radius: var(--bpk-segmented-control-border-radius);
+  }
+
+  // Remove divider on the item immediately after a selected item.
+  // stylelint-disable-next-line selector-pseudo-class-no-unknown
+  &:has([data-state='checked']) + .bpk-segmented-control-v2__item {
+    --bpk-segmented-control-item-divider-color: transparent;
+  }
+
+  // The hidden <input type="radio"> receives keyboard focus, not __item-control.
+  // Use :has to apply the focus indicator to the visible control element.
+  // stylelint-disable-next-line selector-pseudo-class-no-unknown
+  &:has(:focus-visible) .bpk-segmented-control-v2__item-control {
     z-index: 1;
 
     @include utils.bpk-focus-indicator;
   }
 }
 
-.bpk-segmented-control-v2__item:first-child
-  .bpk-segmented-control-v2__item-control {
-  border-end-start-radius: var(--bpk-segmented-control-border-radius);
-  border-inline-start: none;
-  border-start-start-radius: var(--bpk-segmented-control-border-radius);
-}
-
-// Remove divider on the item immediately after a selected item,
-// matching V1's `rightOfOption` behaviour.
-// stylelint-disable-next-line selector-pseudo-class-no-unknown
-.bpk-segmented-control-v2__item:has([data-state='checked'])
-  + .bpk-segmented-control-v2__item {
-  --bpk-segmented-control-item-divider-color: transparent;
-}
-
-.bpk-segmented-control-v2__item:last-child
-  .bpk-segmented-control-v2__item-control {
-  border-end-end-radius: var(--bpk-segmented-control-border-radius);
-  border-start-end-radius: var(--bpk-segmented-control-border-radius);
+.bpk-segmented-control-v2__item-control {
+  @include segmented-control.bpk-segmented-control-v2__item-control;
 }
 
 .bpk-segmented-control-v2__item-text {
-  display: flex;
-  align-items: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  gap: tokens.bpk-spacing-sm();
-  pointer-events: none; // Prevent text from capturing mouse events
+  @include segmented-control.bpk-segmented-control-v2__item-text;
 }
 ```
 

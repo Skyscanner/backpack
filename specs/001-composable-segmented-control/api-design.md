@@ -110,10 +110,10 @@ export type BpkSegmentedControlV2RootProps = {
    */
   activationMode?: 'automatic' | 'manual';
   /**
-   * Accessible label for the group. Required when no visible label is present
-   * in the surrounding layout.
+   * Accessible label for the radiogroup. Always required to satisfy WCAG 4.1.2
+   * (the role="radiogroup" element must have an accessible name).
    */
-  label?: string;
+  label: string;
 };
 
 export type BpkSegmentedControlV2ItemProps = {
@@ -123,6 +123,9 @@ export type BpkSegmentedControlV2ItemProps = {
   value: string;
   /**
    * Visible content of the segment — text, icons, or a combination.
+   * For icon-only items, include a BpkVisuallyHidden text node to provide an
+   * accessible label; the component derives the accessible name from text content
+   * in children automatically.
    */
   children: React.ReactNode;
   /**
@@ -130,11 +133,6 @@ export type BpkSegmentedControlV2ItemProps = {
    * @default false
    */
   disabled?: boolean;
-  /**
-   * Overrides the accessible name for screen readers.
-   * Required when children do not provide sufficient text (e.g., icon-only items).
-   */
-  accessibilityLabel?: string;
 };
 ```
 
@@ -143,6 +141,8 @@ export type BpkSegmentedControlV2ItemProps = {
 ## 3. Component Implementation Shape — `BpkSegmentedControlV2.tsx`
 
 **Architecture note**: `BpkSegmentedControlV2Item` is a props-only placeholder (`() => null`). The `Root` component receives all `Item` elements as children and maps over them via `Children.map` to render the Ark-UI primitives. This enables the dot-notation API (`<BpkSegmentedControlV2.Item />`) with full TypeScript prop inference while keeping all rendering logic in Root.
+
+**Content rendering strategy**: `SegmentGroup.ItemText` is only rendered when children are not a single React element. This lets consumers pass layout components (e.g., `BpkVStack`) directly — the consumer owns layout. For strings, arrays (e.g., icon + text), and `BpkVisuallyHidden` combinations the `ItemText` wrapper applies flex/gap styling. The accessible name (`aria-label` on `ItemHiddenInput`) is derived by `extractTextContent` which recursively traverses `children` looking for text nodes.
 
 ```typescript
 /*
@@ -227,23 +227,27 @@ const BpkSegmentedControlV2Root = ({
       {...getDataComponentAttribute('SegmentedControlV2')}
     >
       {Children.map(children, (child) => {
-        const c = child as ReactElement<BpkSegmentedControlV2ItemProps>;
-        if (!c) return null;
-        const accessibleName = c.props.accessibilityLabel ?? extractTextContent(c.props.children);
+        if (!isValidElement(child)) return null;
+        const item = child as ReactElement<BpkSegmentedControlV2ItemProps>;
+        const { children: itemChildren } = item.props;
+        const accessibleName = extractTextContent(itemChildren);
         return (
           <SegmentGroup.Item
-            key={c.props.value}
-            value={c.props.value}
-            disabled={c.props.disabled ?? false}
+            key={item.props.value}
+            value={item.props.value}
+            disabled={item.props.disabled ?? false}
             className={getClassName('bpk-segmented-control-v2__item')}
           >
             <SegmentGroup.ItemControl
               className={getClassName('bpk-segmented-control-v2__item-control')}
-              aria-label={c.props.accessibilityLabel}
             >
-              <SegmentGroup.ItemText className={getClassName('bpk-segmented-control-v2__item-text')}>
-                {c.props.children}
-              </SegmentGroup.ItemText>
+              {isValidElement(itemChildren) ? (
+                itemChildren
+              ) : (
+                <SegmentGroup.ItemText className={getClassName('bpk-segmented-control-v2__item-text')}>
+                  {itemChildren}
+                </SegmentGroup.ItemText>
+              )}
             </SegmentGroup.ItemControl>
             <SegmentGroup.ItemHiddenInput aria-label={accessibleName || undefined} />
           </SegmentGroup.Item>

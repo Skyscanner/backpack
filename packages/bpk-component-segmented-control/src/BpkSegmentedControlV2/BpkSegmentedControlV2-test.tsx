@@ -81,12 +81,11 @@ describe('BpkSegmentedControlV2 — US1: Basic composable segment group', () => 
     expect(screen.getByRole('radiogroup')).toBeInTheDocument();
   });
 
-  it('applies aria-label from label prop', () => {
+  it('applies accessible name from label prop', () => {
     render(<ThreeItemControl />);
-    expect(screen.getByRole('radiogroup')).toHaveAttribute(
-      'aria-label',
-      'Sort by',
-    );
+    expect(
+      screen.getByRole('radiogroup', { name: 'Sort by' }),
+    ).toBeInTheDocument();
   });
 
   it('controlled: clicking an item calls onChange with that item value', async () => {
@@ -635,31 +634,5 @@ describe('BpkSegmentedControlV2 — US5: Composable custom content', () => {
     expect(container.querySelector('svg')).toBeInTheDocument();
   });
 
-  it('item with accessibilityLabel has aria-label on ItemControl', () => {
-    render(
-      <BpkSegmentedControlV2.Root label="Layout" defaultValue="grid">
-        <BpkSegmentedControlV2.Item value="grid" accessibilityLabel="Grid view">
-          <GridLayoutIcon />
-        </BpkSegmentedControlV2.Item>
-      </BpkSegmentedControlV2.Root>,
-    );
-    const control = document.querySelector(
-      '[class*="item-control"]',
-    ) as HTMLElement;
-    expect(control).toHaveAttribute('aria-label', 'Grid view');
-  });
 
-  it('item without accessibilityLabel does not have aria-label on ItemControl', () => {
-    render(
-      <BpkSegmentedControlV2.Root label="Layout" defaultValue="text">
-        <BpkSegmentedControlV2.Item value="text">
-          Text Only
-        </BpkSegmentedControlV2.Item>
-      </BpkSegmentedControlV2.Root>,
-    );
-    const control = document.querySelector(
-      '[class*="item-control"]',
-    ) as HTMLElement;
-    expect(control).not.toHaveAttribute('aria-label');
-  });
 });

@@ -132,17 +132,16 @@ const BpkSegmentedControlV2Root = ({
           : undefined
       }
       disabled={disabled}
-      aria-label={label}
       orientation="horizontal"
       onKeyDown={handleKeyDown}
       {...getDataComponentAttribute('SegmentedControlV2')}
     >
+      <SegmentGroup.Label>{label}</SegmentGroup.Label>
       {Children.map(children, (child) => {
         if (!isValidElement(child)) return null;
         const item = child as ReactElement<BpkSegmentedControlV2ItemProps>;
-        const accessibleName =
-          item.props.accessibilityLabel ??
-          extractTextContent(item.props.children);
+        const { children: itemChildren } = item.props;
+        const accessibleName = extractTextContent(itemChildren);
         return (
           <SegmentGroup.Item
             key={item.props.value}
@@ -152,13 +151,18 @@ const BpkSegmentedControlV2Root = ({
           >
             <SegmentGroup.ItemControl
               className={getClassName('bpk-segmented-control-v2__item-control')}
-              aria-label={item.props.accessibilityLabel}
             >
-              <SegmentGroup.ItemText
-                className={getClassName('bpk-segmented-control-v2__item-text')}
-              >
-                {item.props.children}
-              </SegmentGroup.ItemText>
+              {isValidElement(itemChildren) ? (
+                itemChildren
+              ) : (
+                <SegmentGroup.ItemText
+                  className={getClassName(
+                    'bpk-segmented-control-v2__item-text',
+                  )}
+                >
+                  {itemChildren}
+                </SegmentGroup.ItemText>
+              )}
             </SegmentGroup.ItemControl>
             <SegmentGroup.ItemHiddenInput
               aria-label={accessibleName || undefined}

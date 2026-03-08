@@ -87,9 +87,4 @@ export type BpkSegmentedControlV2ItemProps = {
    * @default false
    */
   disabled?: boolean;
-  /**
-   * Overrides the accessible name for screen readers.
-   * Required when children do not provide sufficient text (e.g., icon-only items).
-   */
-  accessibilityLabel?: string;
 };

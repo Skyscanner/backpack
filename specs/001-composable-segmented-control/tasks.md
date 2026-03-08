@@ -58,7 +58,6 @@
   - Uncontrolled: no `defaultValue` → no item selected, no crash
   - Root `disabled`: clicking any item does not fire `onChange`
   - Individual item `disabled`: only that item is non-interactive, others remain clickable
-  - Duplicate `value`: `console.warn` fires in `NODE_ENV=development`; no warn in production
   - **Constitution Check**: Jest + Testing Library; targets 70% branches, 75% functions/lines
 
 - [X] T007 [P] [US1] Create `packages/bpk-component-segmented-control/src/BpkSegmentedControlV2/accessibility-test.tsx` with jest-axe assertions:
@@ -209,21 +208,20 @@
 ### Tests for User Story 5 (MANDATORY — write first, confirm they FAIL) ⚠️
 
 - [X] T024 [P] [US5] Add custom content tests to `packages/bpk-component-segmented-control/src/BpkSegmentedControlV2/BpkSegmentedControlV2-test.tsx`:
-  - An item with an SVG child (`aria-hidden="true"`) and text string renders both inside the item (query by text + presence of `svg` element)
-  - An item with `accessibilityLabel` prop has `aria-label` matching the prop value on the `ItemControl` element
-  - An item without `accessibilityLabel` and without text children: assert `aria-label` is NOT set (avoid false positives)
+  - An item with an SVG child and a text string renders both inside the item (query by text + presence of `svg` element)
+  - An item with only icon children and no text: assert `aria-label` is NOT set on the hidden input (avoid false positives)
 
-- [X] T025 [P] [US5] Add `accessibilityLabel` accessibility tests to `packages/bpk-component-segmented-control/src/BpkSegmentedControlV2/accessibility-test.tsx`:
-  - Zero axe violations: icon-only item with valid `accessibilityLabel`
-  - Axe violation IS reported: icon-only item with no visible text AND no `accessibilityLabel` (confirms the prop is genuinely needed — assert `results.violations.length > 0`)
+- [X] T025 [P] [US5] Add icon-only accessibility tests to `packages/bpk-component-segmented-control/src/BpkSegmentedControlV2/accessibility-test.tsx`:
+  - Zero axe violations: icon-only item with `BpkVisuallyHidden` text alongside the icon
+  - Axe violation IS reported: icon-only item with no visible text AND no `BpkVisuallyHidden` (confirms the pattern is genuinely needed — assert `results.violations.length > 0`)
 
 ### Implementation for User Story 5
 
 - [X] T026 [US5] Verify `SegmentGroup.ItemText` in `BpkSegmentedControlV2Item` (created in T008) renders arbitrary `children` including SVG elements and mixed text+SVG combinations — confirm no additional implementation is required since `children` is passed as-is; if `ItemText` strips SVG children, restructure to pass children directly to `ItemControl` instead
 
-- [X] T027 [US5] Confirm `accessibilityLabel` is wired as `aria-label` on `SegmentGroup.ItemControl` in `BpkSegmentedControlV2.tsx` (should already be in T008); verify the prop flows from `BpkSegmentedControlV2ItemProps` through to the rendered `aria-label` attribute; update if any wiring is missing
+- [X] T027 [US5] Verify accessible name derivation: `extractTextContent` traverses `children` recursively and produces an `aria-label` on `ItemHiddenInput`. For icon+text arrays and `BpkVisuallyHidden` combinations, the text is found automatically. For single React-element children (layout components), the label association via the Ark-UI `<label>` wrapper provides the accessible name from rendered text nodes.
 
-- [X] T028 [US5] Add icon+text and icon-only Storybook example implementations to `examples/bpk-component-segmented-control/examples.tsx`: `WithIconAndText`, `IconOnlyWithAccessibilityLabel` — use templates from `specs/001-composable-segmented-control/examples/examples.tsx`
+- [X] T028 [US5] Add icon+text and icon-only Storybook example implementations to `examples/bpk-component-segmented-control/examples.tsx`: `WithIconAndText`, `IconOnly` (using `BpkVisuallyHidden` alongside the icon) — use templates from `specs/001-composable-segmented-control/examples/examples.tsx`
 
 - [X] T029 [US5] Run `npm test -- --testPathPattern="BpkSegmentedControlV2"` and verify all US5 tests pass; fix any failures
 
@@ -326,7 +324,7 @@
   - Keyboard navigation: Tab to enter control, ArrowRight/Left to move selection, Home/End, wrap-around
   - Screen reader: VoiceOver (macOS) — verify item values announced as `radio`, `1 of 3`, `checked/unchecked`
   - WCAG 2.2 Focus Appearance: confirm focus indicator meets 3:1 contrast ratio and minimum area
-  - Icon-only item: confirm `accessibilityLabel` is announced instead of empty
+  - Icon-only item: confirm `BpkVisuallyHidden` text is announced instead of empty
   - **Constitution Check**: Accessibility-First NON-NEGOTIABLE
 
 - [ ] T044 Test RTL layout manually:
@@ -425,7 +423,7 @@ Throughout implementation, verify:
 - [X] WAI-ARIA radiogroup/radio model (via Ark-UI)
 - [X] Keyboard navigation: ArrowRight/Left/Home/End + wrap
 - [X] RTL arrow-key mirroring
-- [ ] Focus visible: `@include utils.bpk-focus-indicator`
+- [X] Focus visible: `:has(:focus-visible)` on `__item` targeting `__item-control` with `@include utils.bpk-focus-indicator` — the hidden `<input>` receives keyboard focus, not `__item-control`, so `__item-control:focus-visible` never fires
 
 ### TypeScript & Type Safety
 - [X] All files in TypeScript — no `.js` files
@@ -435,8 +433,8 @@ Throughout implementation, verify:
 
 ### Test Coverage
 - [X] ≥ 70% branches, 75% functions/lines/statements
-- [X] Unit tests: rendering, controlled, uncontrolled, keyboard, disabled, duplicate warning, accessibilityLabel
-- [X] Accessibility: jest-axe, all type variants, disabled states, icon-only with label
+- [X] Unit tests: rendering, controlled, uncontrolled, keyboard, disabled
+- [X] Accessibility: jest-axe, all type variants, disabled states, icon-only with `BpkVisuallyHidden`
 - [ ] Visual: Percy via Storybook (all story variants)
 - [X] Migration: jscodeshift fixture transforms
 

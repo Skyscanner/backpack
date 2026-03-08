@@ -148,22 +148,6 @@ const SortControl = () => {
 };
 ```
 
-### CSS custom properties
-
-Override any of these on a wrapper element to theme the component:
-
-| Property | Default | Controls |
-|---|---|---|
-| `--bpk-segmented-control-bg` | `$bpk-private-segmented-control-canvas-default-day` | Group background |
-| `--bpk-segmented-control-item-color` | `$bpk-text-primary-day` | Unselected item text/icon |
-| `--bpk-segmented-control-item-disabled-color` | `$bpk-text-disabled-day` | Disabled item text/icon |
-| `--bpk-segmented-control-indicator-bg` | `$bpk-core-primary-day` | Selected item background |
-| `--bpk-segmented-control-indicator-color` | `$bpk-text-on-dark-day` | Selected item text/icon |
-| `--bpk-segmented-control-border-radius` | `$bpk-border-radius-sm` | Group + item corner radius |
-| `--bpk-segmented-control-padding-x` | `1rem` | Horizontal item padding |
-| `--bpk-segmented-control-padding-y` | `1.25rem` | Vertical item padding |
-| `--bpk-segmented-control-divider-color` | `$bpk-line-day` | Divider between items |
-
 ### Migrating from V1
 
 | V1 | V2 equivalent |
@@ -194,4 +178,3 @@ Override any of these on a wrapper element to theme the component:
 | `value` | `string` | — | Unique identifier for this segment |
 | `children` | `ReactNode` | — | Segment content (text, icons, or both) |
 | `disabled` | `boolean` | `false` | Disables only this item |
-| `accessibilityLabel` | `string` | — | Screen reader label for icon-only items |

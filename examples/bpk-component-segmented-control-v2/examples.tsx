@@ -17,14 +17,20 @@
  */
 
 import { useState } from 'react';
-import type { CSSProperties } from 'react';
 
 import GridLayoutIcon from '../../packages/bpk-component-icon/sm/grid-layout';
 import ListIcon from '../../packages/bpk-component-icon/sm/list';
 import {
+  BpkBox,
+  BpkProvider,
+  BpkSpacing,
+  BpkVStack,
+} from '../../packages/bpk-component-layout';
+import {
   BpkSegmentedControlV2,
   SEGMENT_TYPES_V2,
 } from '../../packages/bpk-component-segmented-control';
+import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden';
 import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
@@ -215,7 +221,7 @@ const WithIconAndText = () => {
   );
 };
 
-const IconOnlyWithAccessibilityLabel = () => {
+const IconOnly = () => {
   const [selected, setSelected] = useState('grid');
   return (
     <BpkSegmentedControlV2.Root
@@ -223,47 +229,15 @@ const IconOnlyWithAccessibilityLabel = () => {
       value={selected}
       onChange={setSelected}
     >
-      <BpkSegmentedControlV2.Item value="grid" accessibilityLabel="Grid view">
+      <BpkSegmentedControlV2.Item value="grid">
         <GridLayoutIcon />
+        <BpkVisuallyHidden>Grid view</BpkVisuallyHidden>
       </BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item value="list" accessibilityLabel="List view">
+      <BpkSegmentedControlV2.Item value="list">
         <ListIcon />
+        <BpkVisuallyHidden>List view</BpkVisuallyHidden>
       </BpkSegmentedControlV2.Item>
     </BpkSegmentedControlV2.Root>
-  );
-};
-
-const Vdl2ThemeOverride = () => {
-  const [selected, setSelected] = useState('price');
-  return (
-    <div
-      style={
-        {
-          '--bpk-segmented-control-bg': '#e8f0fe',
-          '--bpk-segmented-control-indicator-bg': '#0066cc',
-          '--bpk-segmented-control-indicator-color': '#ffffff',
-          '--bpk-segmented-control-item-color': '#1a1a2e',
-          '--bpk-segmented-control-border-radius': '0.5rem',
-          '--bpk-segmented-control-divider-color': '#c0cbdb',
-        } as CSSProperties
-      }
-    >
-      <BpkSegmentedControlV2.Root
-        label="Sort by"
-        value={selected}
-        onChange={setSelected}
-      >
-        <BpkSegmentedControlV2.Item value="price">
-          Price
-        </BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="rating">
-          Rating
-        </BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="duration">
-          Duration
-        </BpkSegmentedControlV2.Item>
-      </BpkSegmentedControlV2.Root>
-    </div>
   );
 };
 
@@ -318,13 +292,19 @@ const LongLabels = () => {
         onChange={setSelected}
       >
         <BpkSegmentedControlV2.Item value="departure">
-          Earliest departure time
+          <span className={getClassName('bpk-component-segmented-control-stories__custom-button')}>
+            Earliest departure time
+          </span>
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="arrival">
-          Earliest arrival time
+          <span className={getClassName('bpk-component-segmented-control-stories__custom-button')}>
+            Earliest arrival time
+          </span>
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="price">
-          Cheapest price available
+          <span className={getClassName('bpk-component-segmented-control-stories__custom-button')}>
+            Cheapest price available
+          </span>
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>
     </div>
@@ -348,184 +328,82 @@ const ComplexItemContent = ({
   label: string;
   price: string;
 }) => (
-  <div
-    className={getClassName(
-      'bpk-component-segmented-control-stories__complex-content',
-    )}
-  >
-    <div>{label}</div>
-    <div>{price}</div>
-    <div>{duration}</div>
-  </div>
+  <BpkVStack gap={BpkSpacing.XS}>
+    <BpkBox>{label}</BpkBox>
+    <BpkBox>{price}</BpkBox>
+    <BpkBox>{duration}</BpkBox>
+  </BpkVStack>
 );
 
-const ComplexCanvasDefault = () => (
-  <div
-    className={getClassName(
-      'bpk-component-segmented-control-stories__canvas-default-wrapper',
-    )}
-  >
-    <BpkSegmentedControlV2.Root
-      label="Sort flight itineraries"
-      defaultValue="cheapest"
-      type={SEGMENT_TYPES_V2.CanvasDefault}
-      shadow
-    >
-      <BpkSegmentedControlV2.Item
-        value="best"
-        accessibilityLabel="Best, £84, 2h average"
-      >
-        <ComplexItemContent label="Best" price="£84" duration="2h average" />
-      </BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item
-        value="cheapest"
-        accessibilityLabel="Cheapest, £34, 9h average"
-      >
-        <ComplexItemContent
-          label="Cheapest"
-          price="£34"
-          duration="9h average"
-        />
-      </BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item
-        value="fastest"
-        accessibilityLabel="Fastest, £90, 1h average"
-      >
-        <ComplexItemContent label="Fastest" price="£90" duration="1h average" />
-      </BpkSegmentedControlV2.Item>
-    </BpkSegmentedControlV2.Root>
-  </div>
-);
+const wrapperClassByType: Record<
+  (typeof SEGMENT_TYPES_V2)[keyof typeof SEGMENT_TYPES_V2],
+  string
+> = {
+  [SEGMENT_TYPES_V2.CanvasDefault]:
+    'bpk-component-segmented-control-stories__canvas-default-wrapper',
+  [SEGMENT_TYPES_V2.CanvasContrast]:
+    'bpk-component-segmented-control-stories__canvas-contrast-wrapper',
+  [SEGMENT_TYPES_V2.SurfaceDefault]:
+    'bpk-component-segmented-control-stories__canvas-default-wrapper',
+  [SEGMENT_TYPES_V2.SurfaceContrast]:
+    'bpk-component-segmented-control-stories__surface-contrast-wrapper',
+};
 
-const ComplexCanvasContrast = () => (
-  <div
-    className={getClassName(
-      'bpk-component-segmented-control-stories__canvas-contrast-wrapper',
-    )}
-  >
-    <BpkSegmentedControlV2.Root
-      label="Sort flight itineraries"
-      defaultValue="cheapest"
-      type={SEGMENT_TYPES_V2.CanvasContrast}
-      shadow
-    >
-      <BpkSegmentedControlV2.Item
-        value="best"
-        accessibilityLabel="Best, £84, 2h average"
+const ComplexTypeExample = ({
+  type = SEGMENT_TYPES_V2.CanvasDefault,
+}: {
+  type?: (typeof SEGMENT_TYPES_V2)[keyof typeof SEGMENT_TYPES_V2];
+}) => (
+  <BpkProvider>
+    <div className={getClassName(wrapperClassByType[type])}>
+      <BpkSegmentedControlV2.Root
+        label="Sort flight itineraries"
+        defaultValue="cheapest"
+        type={type}
+        shadow
       >
-        <ComplexItemContent label="Best" price="£84" duration="2h average" />
-      </BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item
-        value="cheapest"
-        accessibilityLabel="Cheapest, £34, 9h average"
-      >
-        <ComplexItemContent
-          label="Cheapest"
-          price="£34"
-          duration="9h average"
-        />
-      </BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item
-        value="fastest"
-        accessibilityLabel="Fastest, £90, 1h average"
-      >
-        <ComplexItemContent label="Fastest" price="£90" duration="1h average" />
-      </BpkSegmentedControlV2.Item>
-    </BpkSegmentedControlV2.Root>
-  </div>
-);
-
-const ComplexSurfaceDefault = () => (
-  <div
-    className={getClassName(
-      'bpk-component-segmented-control-stories__canvas-default-wrapper',
-    )}
-  >
-    <BpkSegmentedControlV2.Root
-      label="Sort flight itineraries"
-      defaultValue="cheapest"
-      type={SEGMENT_TYPES_V2.SurfaceDefault}
-      shadow
-    >
-      <BpkSegmentedControlV2.Item
-        value="best"
-        accessibilityLabel="Best, £84, 2h average"
-      >
-        <ComplexItemContent label="Best" price="£84" duration="2h average" />
-      </BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item
-        value="cheapest"
-        accessibilityLabel="Cheapest, £34, 9h average"
-      >
-        <ComplexItemContent
-          label="Cheapest"
-          price="£34"
-          duration="9h average"
-        />
-      </BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item
-        value="fastest"
-        accessibilityLabel="Fastest, £90, 1h average"
-      >
-        <ComplexItemContent label="Fastest" price="£90" duration="1h average" />
-      </BpkSegmentedControlV2.Item>
-    </BpkSegmentedControlV2.Root>
-  </div>
-);
-
-const ComplexSurfaceContrast = () => (
-  <div
-    className={getClassName(
-      'bpk-component-segmented-control-stories__surface-contrast-wrapper',
-    )}
-  >
-    <BpkSegmentedControlV2.Root
-      label="Sort flight itineraries"
-      defaultValue="cheapest"
-      type={SEGMENT_TYPES_V2.SurfaceContrast}
-      shadow
-    >
-      <BpkSegmentedControlV2.Item
-        value="best"
-        accessibilityLabel="Best, £84, 2h average"
-      >
-        <ComplexItemContent label="Best" price="£84" duration="2h average" />
-      </BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item
-        value="cheapest"
-        accessibilityLabel="Cheapest, £34, 9h average"
-      >
-        <ComplexItemContent
-          label="Cheapest"
-          price="£34"
-          duration="9h average"
-        />
-      </BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item
-        value="fastest"
-        accessibilityLabel="Fastest, £90, 1h average"
-      >
-        <ComplexItemContent label="Fastest" price="£90" duration="1h average" />
-      </BpkSegmentedControlV2.Item>
-    </BpkSegmentedControlV2.Root>
-  </div>
+        <BpkSegmentedControlV2.Item value="best">
+          <ComplexItemContent label="Best" price="£84" duration="2h average" />
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="cheapest">
+          <ComplexItemContent
+            label="Cheapest"
+            price="£34"
+            duration="9h average"
+          />
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="fastest">
+          <ComplexItemContent
+            label="Fastest"
+            price="£90"
+            duration="1h average"
+          />
+        </BpkSegmentedControlV2.Item>
+      </BpkSegmentedControlV2.Root>
+    </div>
+  </BpkProvider>
 );
 
 const VisualExample = () => (
-  <>
-    <ComplexCanvasDefault />
-    <br />
-    <ComplexCanvasContrast />
-    <br />
-    <ComplexSurfaceDefault />
-    <br />
-    <ComplexSurfaceContrast />
-  </>
+  <BpkProvider>
+    <BpkVStack
+      gap={BpkSpacing.None}
+      align="stretch"
+      paddingTop={BpkSpacing.SM}
+      paddingBottom={BpkSpacing.SM}
+    >
+      <ComplexTypeExample type={SEGMENT_TYPES_V2.CanvasDefault} />
+      <ComplexTypeExample type={SEGMENT_TYPES_V2.CanvasContrast} />
+      <ComplexTypeExample type={SEGMENT_TYPES_V2.SurfaceDefault} />
+      <ComplexTypeExample type={SEGMENT_TYPES_V2.SurfaceContrast} />
+    </BpkVStack>
+  </BpkProvider>
 );
 
 export {
   DefaultCanvasDefault,
   UncontrolledDefaultValue,
+  ComplexTypeExample,
   CanvasContrast,
   SurfaceDefault,
   SurfaceContrast,
@@ -533,8 +411,7 @@ export {
   RootDisabled,
   IndividualItemDisabled,
   WithIconAndText,
-  IconOnlyWithAccessibilityLabel,
-  Vdl2ThemeOverride,
+  IconOnly,
   RtlLayout,
   TwoItems,
   LongLabels,

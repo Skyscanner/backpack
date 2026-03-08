@@ -121,7 +121,7 @@ A developer wants to place an icon alongside a label inside a segment item, with
 **Acceptance Scenarios**:
 
 1. **Given** a segment item contains an icon component and a text string as children, **When** the component renders, **Then** both the icon and label are visible within the segment button.
-2. **Given** a segment item contains only an icon with no visible text, **When** a screen reader announces the item, **Then** a meaningful label is announced (either via `aria-label` on the item or an `accessibilityLabel` prop).
+2. **Given** a segment item contains only an icon with no visible text, **When** a screen reader announces the item, **Then** a meaningful label is announced — achieved by including a `BpkVisuallyHidden` text node alongside the icon inside the item's children.
 
 ---
 
@@ -168,7 +168,7 @@ A developer using the existing `BpkSegmentedControl` component runs the provided
 - **FR-010**: `BpkSegmentedControlV2.Root` MUST accept a `label` prop for an accessible group label when no visible label is present in the surrounding layout.
 - **FR-011**: The component MUST expose a named set of CSS custom properties (see Theming section) that consumers can override to customise colours, corner radius, spacing, and indicator appearance.
 - **FR-012**: The component MUST ship a default theme that maps the published CSS custom properties to existing Backpack design tokens, producing a visual appearance identical to V1 for the same `type` setting.
-- **FR-013**: `BpkSegmentedControlV2.Item` MUST accept an `accessibilityLabel` prop for cases where the item's visible content does not provide a sufficient text label (e.g., icon-only items).
+- **FR-013**: Icon-only segment items MUST have an accessible label provided by the consumer via a `BpkVisuallyHidden` text node placed alongside the icon within the item's children. The component derives the accessible name automatically from text content in children; no dedicated prop is required or provided.
 - **FR-014**: The component MUST support right-to-left (RTL) text direction, mirroring arrow-key navigation and visual layout accordingly.
 - **FR-015**: The V1 component (`BpkSegmentedControl`) MUST remain functional and undeprecated at the time of V2 release, with deprecation beginning no earlier than 3 months after V2 reaches stable status.
 - **FR-016**: A codemod migration script MUST be provided that transforms V1 usage patterns to V2 composable patterns, emitting warnings for patterns it cannot safely transform.
@@ -185,7 +185,7 @@ The component exposes a set of composable sub-components accessed via dot notati
 - **`type`** (string, optional, default: `'canvas-default'`): Pre-defined surface theme. One of: `'canvas-default'`, `'canvas-contrast'`, `'surface-default'`, `'surface-contrast'`.
 - **`shadow`** (boolean, optional, default: `false`): Applies a box shadow to the group container.
 - **`activationMode`** (string, optional, default: `'automatic'`): Keyboard selection mode. One of: `'automatic'`, `'manual'`.
-- **`label`** (string, optional): Accessible label for the group, used when no visible label exists in the surrounding layout.
+- **`label`** (string, required): Accessible label for the group, satisfying WCAG 4.1.2 (the `role="radiogroup"` element must have an accessible name).
 - **`disabled`** (boolean, optional, default: `false`): Disables all items in the group.
 - **`children`** (ReactNode, required): Must contain one or more `BpkSegmentedControlV2.Item` elements.
 
@@ -193,8 +193,7 @@ The component exposes a set of composable sub-components accessed via dot notati
 
 - **`value`** (string, required): Unique identifier for this segment within the group.
 - **`disabled`** (boolean, optional, default: `false`): Disables this individual item.
-- **`accessibilityLabel`** (string, optional): Overrides the accessible name for screen readers, required when the item's children do not provide sufficient text.
-- **`children`** (ReactNode, required): Visible content of the segment — text, icons, or a combination.
+- **`children`** (ReactNode, required): Visible content of the segment — text, icons, or a combination. For icon-only items, include a `BpkVisuallyHidden` text node to provide an accessible label.
 
 ### CSS Custom Properties (Theming)
 
@@ -320,7 +319,7 @@ The following CSS custom properties are part of the component's public theming A
 - Assert that selected items have the correct accessible state.
 - Assert that disabled items are announced as disabled.
 - Assert that the group has an accessible name when `label` is provided.
-- Assert that icon-only items with `accessibilityLabel` are correctly announced.
+- Assert that icon-only items with a `BpkVisuallyHidden` text node are correctly announced.
 - Assert keyboard navigation compliance (roving tabindex pattern).
 - Test focus management: only one item in the tab sequence at a time.
 
@@ -356,7 +355,7 @@ The following CSS custom properties are part of the component's public theming A
 - Default story: three items, controlled, `canvas-default`.
 - Story for each `type` variant.
 - Story demonstrating icon + text content inside items.
-- Story for icon-only items with `accessibilityLabel`.
+- Story for icon-only items using `BpkVisuallyHidden` for the accessible label.
 - Story for disabled root.
 - Story for individually disabled items.
 - Story demonstrating CSS variable override (VDL 2.0 preview theme).

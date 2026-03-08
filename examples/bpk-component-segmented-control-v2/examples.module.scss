@@ -19,16 +19,10 @@
 @use '../../packages/bpk-mixins/tokens';
 
 .bpk-component-segmented-control-stories__custom-button {
-  display: block;
+  min-width: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-}
-
-.bpk-component-segmented-control-stories__complex-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .bpk-component-segmented-control-stories__canvas-default-wrapper {

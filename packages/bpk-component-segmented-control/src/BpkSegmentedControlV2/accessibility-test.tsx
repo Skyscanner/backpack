@@ -22,6 +22,7 @@ import { axe } from 'jest-axe';
 
 import GridLayoutIcon from '../../../bpk-component-icon/sm/grid-layout';
 import ListIcon from '../../../bpk-component-icon/sm/list';
+import BpkVisuallyHidden from '../../../bpk-component-visually-hidden';
 
 import BpkSegmentedControlV2 from './BpkSegmentedControlV2';
 
@@ -159,14 +160,16 @@ describe('BpkSegmentedControlV2 accessibility — US2', () => {
 });
 
 describe('BpkSegmentedControlV2 accessibility — US5', () => {
-  it('no axe violations: icon-only item with valid accessibilityLabel', async () => {
+  it('no axe violations: icon-only item with BpkVisuallyHidden label', async () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="View layout" defaultValue="grid">
-        <BpkSegmentedControlV2.Item value="grid" accessibilityLabel="Grid view">
+        <BpkSegmentedControlV2.Item value="grid">
           <GridLayoutIcon />
+          <BpkVisuallyHidden>Grid view</BpkVisuallyHidden>
         </BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="list" accessibilityLabel="List view">
+        <BpkSegmentedControlV2.Item value="list">
           <ListIcon />
+          <BpkVisuallyHidden>List view</BpkVisuallyHidden>
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );

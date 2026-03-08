@@ -16,7 +16,10 @@
  * limitations under the License.
  */
 
-import { BpkSegmentedControlV2 } from '../../packages/bpk-component-segmented-control';
+import {
+  BpkSegmentedControlV2,
+  SEGMENT_TYPES_V2,
+} from '../../packages/bpk-component-segmented-control';
 
 import {
   DefaultCanvasDefault,
@@ -28,12 +31,12 @@ import {
   RootDisabled,
   IndividualItemDisabled,
   WithIconAndText,
-  IconOnlyWithAccessibilityLabel,
-  Vdl2ThemeOverride,
+  IconOnly,
   RtlLayout,
   TwoItems,
   LongLabels,
   NoInitialSelection,
+  ComplexTypeExample,
   VisualExample,
 } from './examples';
 
@@ -90,14 +93,9 @@ export const IconAndText = {
   name: 'Icon + text content',
 };
 
-export const IconOnly = {
-  render: IconOnlyWithAccessibilityLabel,
-  name: 'Icon-only with accessibilityLabel',
-};
-
-export const Vdl2Theme = {
-  render: Vdl2ThemeOverride,
-  name: 'CSS variable override (VDL 2.0 preview)',
+export const IconOnlyText = {
+  render: IconOnly,
+  name: 'Icon-only',
 };
 
 export const Rtl = {
@@ -118,6 +116,20 @@ export const LongLabelText = {
 export const NoneSelected = {
   render: NoInitialSelection,
   name: 'Edge case — no initial selection',
+};
+
+export const ComplexContent = {
+  render: ComplexTypeExample,
+  name: 'Complex content',
+  args: {
+    type: SEGMENT_TYPES_V2.CanvasDefault,
+  },
+  argTypes: {
+    type: {
+      control: 'select',
+      options: Object.values(SEGMENT_TYPES_V2),
+    },
+  },
 };
 
 export const VisualTest = VisualExample;
