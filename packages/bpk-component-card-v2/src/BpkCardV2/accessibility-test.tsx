@@ -100,7 +100,7 @@ describe('BpkCardV2 Accessibility', () => {
     it('has no accessibility violations - multi-column layout', async () => {
       const { container } = renderWithProvider(
         <BpkCardV2.Root aria-label="Multi-column card">
-          <BpkCardV2.Body columns="7fr 3fr">
+          <BpkCardV2.Body templateColumns="7fr auto 3fr">
             <BpkCardV2.Section>Main content</BpkCardV2.Section>
             <BpkCardV2.Divider />
             <BpkCardV2.Section>Sidebar</BpkCardV2.Section>
@@ -141,7 +141,7 @@ describe('BpkCardV2 Accessibility', () => {
       const { container } = renderWithProvider(
         <BpkCardV2.Root variant="default" bgColor="surfaceDefault" aria-label="Complex card">
           <BpkCardV2.Header>Product Details</BpkCardV2.Header>
-          <BpkCardV2.Body columns="65fr 35fr">
+          <BpkCardV2.Body templateColumns="65fr auto 35fr">
             <BpkCardV2.Section>
               <h3>Main Section</h3>
               <p>Product information goes here</p>

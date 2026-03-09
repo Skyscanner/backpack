@@ -148,7 +148,7 @@ describe('BpkCardV2 Integration Tests', () => {
     it('renders Section content in columns layout', () => {
       renderWithProvider(
         <BpkCardV2.Root>
-          <BpkCardV2.Body columns="1fr 1fr">
+          <BpkCardV2.Body templateColumns="1fr 1fr">
             <BpkCardV2.Section>Left (50%)</BpkCardV2.Section>
             <BpkCardV2.Section>Right (50%)</BpkCardV2.Section>
           </BpkCardV2.Body>
@@ -191,7 +191,7 @@ describe('BpkCardV2 Integration Tests', () => {
       renderWithProvider(
         <BpkCardV2.Root>
           <BpkCardV2.Header>Outer</BpkCardV2.Header>
-          <BpkCardV2.Body columns="6fr 4fr">
+          <BpkCardV2.Body templateColumns="6fr auto 4fr">
             <BpkCardV2.Section>
               <div>
                 <h3>Main Section</h3>

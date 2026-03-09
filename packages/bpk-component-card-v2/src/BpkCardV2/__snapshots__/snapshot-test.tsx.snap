@@ -14,7 +14,7 @@ exports[`BpkCardV2 Snapshots matches snapshot - basic card 1`] = `
       Card Title
     </div>
     <div
-      class="css-xo6xhn"
+      class="css-1gldux5"
       data-backpack-ds-component="CardV2.Body"
     >
       Card content goes here
@@ -43,11 +43,11 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
       Product
     </div>
     <div
-      class="css-kq6lf"
+      class="css-1un1jtv"
       data-backpack-ds-component="CardV2.Body"
     >
       <div
-        class="css-yg9qae"
+        class="css-592ccz"
         data-backpack-ds-component="CardV2.Section"
       >
         <img
@@ -60,7 +60,7 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
         data-backpack-ds-component="CardV2.Divider"
       />
       <div
-        class="css-yhiwe7"
+        class="css-592ccz"
         data-backpack-ds-component="CardV2.Section"
       >
         <h3>
@@ -93,7 +93,7 @@ exports[`BpkCardV2 Snapshots matches snapshot - elevated surface color 1`] = `
     data-bg-color="surfaceElevated"
   >
     <div
-      class="css-xo6xhn"
+      class="css-1gldux5"
       data-backpack-ds-component="CardV2.Body"
     >
       Elevated background surface
@@ -110,7 +110,7 @@ exports[`BpkCardV2 Snapshots matches snapshot - minimal card (body only) 1`] = `
     data-bg-color="surfaceDefault"
   >
     <div
-      class="css-xo6xhn"
+      class="css-1gldux5"
       data-backpack-ds-component="CardV2.Body"
     >
       Minimal card with just body
@@ -127,11 +127,11 @@ exports[`BpkCardV2 Snapshots matches snapshot - multi-column layout with divider
     data-bg-color="surfaceDefault"
   >
     <div
-      class="css-kq6lf"
+      class="css-fgs40z"
       data-backpack-ds-component="CardV2.Body"
     >
       <div
-        class="css-1syrnvy"
+        class="css-592ccz"
         data-backpack-ds-component="CardV2.Section"
       >
         Main content area (70%)
@@ -141,7 +141,7 @@ exports[`BpkCardV2 Snapshots matches snapshot - multi-column layout with divider
         data-backpack-ds-component="CardV2.Divider"
       />
       <div
-        class="css-1n1x0pj"
+        class="css-592ccz"
         data-backpack-ds-component="CardV2.Section"
       >
         Sidebar area (30%)
@@ -165,7 +165,7 @@ exports[`BpkCardV2 Snapshots matches snapshot - outlined variant 1`] = `
       Outlined Card
     </div>
     <div
-      class="css-xo6xhn"
+      class="css-1gldux5"
       data-backpack-ds-component="CardV2.Body"
     >
       Content with border instead of shadow
@@ -182,11 +182,11 @@ exports[`BpkCardV2 Snapshots matches snapshot - three-column layout 1`] = `
     data-bg-color="surfaceDefault"
   >
     <div
-      class="css-kq6lf"
+      class="css-1he6qm"
       data-backpack-ds-component="CardV2.Body"
     >
       <div
-        class="css-18l3558"
+        class="css-592ccz"
         data-backpack-ds-component="CardV2.Section"
       >
         Left
@@ -196,7 +196,7 @@ exports[`BpkCardV2 Snapshots matches snapshot - three-column layout 1`] = `
         data-backpack-ds-component="CardV2.Divider"
       />
       <div
-        class="css-10d789w"
+        class="css-592ccz"
         data-backpack-ds-component="CardV2.Section"
       >
         Center
@@ -206,7 +206,7 @@ exports[`BpkCardV2 Snapshots matches snapshot - three-column layout 1`] = `
         data-backpack-ds-component="CardV2.Divider"
       />
       <div
-        class="css-18l3558"
+        class="css-592ccz"
         data-backpack-ds-component="CardV2.Section"
       >
         Right

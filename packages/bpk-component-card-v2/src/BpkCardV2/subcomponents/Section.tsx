@@ -31,7 +31,7 @@ import type { BpkCardV2SectionProps } from '../common-types';
  * @returns {JSX.Element} Section component
  *
  * @example
- * <BpkCardV2.Body columns="1fr 2fr 1fr">
+ * <BpkCardV2.Body templateColumns="1fr 2fr 1fr">
  *   <BpkCardV2.Section>Left</BpkCardV2.Section>
  *   <BpkCardV2.Section>Center</BpkCardV2.Section>
  *   <BpkCardV2.Section>Right</BpkCardV2.Section>

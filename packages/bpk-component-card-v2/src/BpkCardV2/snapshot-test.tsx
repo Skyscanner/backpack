@@ -43,7 +43,7 @@ describe('BpkCardV2 Snapshots', () => {
   it('matches snapshot - multi-column layout with divider', () => {
     const { container } = renderWithProvider(
       <BpkCardV2.Root>
-        <BpkCardV2.Body columns="7fr 3fr">
+        <BpkCardV2.Body templateColumns="7fr auto 3fr">
           <BpkCardV2.Section>Main content area (70%)</BpkCardV2.Section>
           <BpkCardV2.Divider />
           <BpkCardV2.Section>Sidebar area (30%)</BpkCardV2.Section>
@@ -57,7 +57,7 @@ describe('BpkCardV2 Snapshots', () => {
   it('matches snapshot - three-column layout', () => {
     const { container } = renderWithProvider(
       <BpkCardV2.Root>
-        <BpkCardV2.Body columns="1fr 2fr 1fr">
+        <BpkCardV2.Body templateColumns="1fr auto 2fr auto 1fr">
           <BpkCardV2.Section>Left</BpkCardV2.Section>
           <BpkCardV2.Divider />
           <BpkCardV2.Section>Center</BpkCardV2.Section>
@@ -95,7 +95,7 @@ describe('BpkCardV2 Snapshots', () => {
     const { container } = renderWithProvider(
       <BpkCardV2.Root variant="default" bgColor="surfaceDefault">
         <BpkCardV2.Header>Product</BpkCardV2.Header>
-        <BpkCardV2.Body columns="65fr 35fr">
+        <BpkCardV2.Body templateColumns="65fr auto 35fr">
           <BpkCardV2.Section>
             <img src="product.jpg" alt="Product" />
           </BpkCardV2.Section>

@@ -25,8 +25,8 @@ import { BpkFlex, BpkGrid, BpkHStack, BpkSpacing, BpkVStack } from '../../packag
 import BpkLink from '../../packages/bpk-component-link';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPrice, { SIZES, ALIGNS } from '../../packages/bpk-component-price';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkRating from '../../packages/bpk-component-rating';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkStarRating from '../../packages/bpk-component-star-rating';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
@@ -52,12 +52,6 @@ const SURFACE_COLORS: BpkCardV2SurfaceColor[] = [
 ];
 
 const VARIANTS: BpkCardV2Variant[] = ['default', 'outlined', 'noElevation'];
-
-const Placeholder = ({ label }: { label: string }) => (
-  <div className={getClassName('bpk-card-v2-examples__placeholder')}>
-    {label}
-  </div>
-);
 
 const DefaultExample = () => (
   <div className={getClassName('bpk-card-v2-examples__card-wrapper')}>
@@ -154,7 +148,7 @@ const DealOption = ({ text }: { text: string }) => (
 const PackagesCardExample = () => (
   <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
     <BpkCardV2.Root>
-      <BpkCardV2.Body columns="7fr 3fr">
+      <BpkCardV2.Body templateColumns={{ base: '1fr', tablet: '7fr auto 3fr' }} padding={BpkSpacing.None}>
         <BpkCardV2.Section padding={BpkSpacing.MD} flexDirection='row' gap={BpkSpacing.MD}>
           <div className={getClassName('bpk-card-v2-examples__carousel-wrapper')}>
             <BpkCarousel images={carouselImages} bottom={16}/>
@@ -185,7 +179,7 @@ const PackagesCardExample = () => (
 
       <BpkCardV2.Footer padding={BpkSpacing.MD} paddingTop={BpkSpacing.None}>
         <BpkCardV2.Root bgColor='surfaceLowContrast' variant='noElevation'>
-          <BpkCardV2.Body justify="space-between" direction={{ base: 'column', mobile: 'row' }} gap={BpkSpacing.MD}>
+          <BpkCardV2.Body templateColumns={{ base: '1fr', mobile: '1fr auto' }} justify="space-between" gap={BpkSpacing.MD}>
             <BpkFlex gap={BpkSpacing.LG} direction={{ base: 'column', mobile: 'row' }}>
               <DealOption text="Cheapest • Meals not included  •  £1,740" />
               <DealOption text="Meals not included  •  £1,757" />
@@ -245,7 +239,7 @@ const FlightLeg = ({
 const FlightsCardExample = () => (
   <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
     <BpkCardV2.Root>
-      <BpkCardV2.Body columns="7fr 3fr">
+      <BpkCardV2.Body templateColumns={{ base: '1fr', tablet: '7fr auto 3fr' }} padding={BpkSpacing.None}>
         <BpkCardV2.Section gap={BpkSpacing.Base}>
           <FlightLeg
             airlineName="Skyscanner Air"
@@ -288,7 +282,7 @@ const FlightsCardExample = () => (
 const HotelCardExample = () => (
   <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
     <BpkCardV2.Root>
-      <BpkCardV2.Body columns="3fr 4fr 3fr">
+      <BpkCardV2.Body templateColumns={{ base: '1fr', tablet: '3fr 4fr auto 3fr' }} padding={BpkSpacing.None}>
         <BpkCardV2.Section padding={BpkSpacing.None}>
           <BpkCarousel images={carouselImages} bottom={16}/>
         </BpkCardV2.Section>
@@ -378,57 +372,6 @@ const CustomPaddingExample = () => (
     </div>
   </div>
 );
-  
-type InteractiveExampleProps = {
-  variant?: BpkCardV2Variant;
-  bgColor?: BpkCardV2SurfaceColor;
-  columns?: string;
-  showHeader?: boolean;
-  showFooter?: boolean;
-};
-
-const InteractiveExample = ({
-  bgColor = 'surfaceDefault',
-  columns,
-  showFooter = true,
-  showHeader = true,
-  variant = 'default',
-}: InteractiveExampleProps) => (
-  <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
-    <BpkCardV2.Root variant={variant} bgColor={bgColor}>
-      {showHeader && (
-        <BpkCardV2.Header>
-          <BpkText textStyle={TEXT_STYLES.heading4} tagName="h3">
-            Card Header
-          </BpkText>
-        </BpkCardV2.Header>
-      )}
-      <BpkCardV2.Body columns={columns}>
-        {columns ? (
-          <>
-            <BpkCardV2.Section>
-              <Placeholder label="Section 1" />
-            </BpkCardV2.Section>
-            <BpkCardV2.Divider />
-            <BpkCardV2.Section>
-              <Placeholder label="Section 2" />
-            </BpkCardV2.Section>
-          </>
-        ) : (
-          <BpkText>
-            This is the card body content. Adjust the controls to see how the
-            card responds to different prop combinations.
-          </BpkText>
-        )}
-      </BpkCardV2.Body>
-      {showFooter && (
-        <BpkCardV2.Footer>
-          <BpkText textStyle={TEXT_STYLES.caption}>Card Footer</BpkText>
-        </BpkCardV2.Footer>
-      )}
-    </BpkCardV2.Root>
-  </div>
-);
 
 const AllExamples = () => (
   <div>
@@ -479,6 +422,5 @@ export {
   FlightsCardExample,
   HotelCardExample,
   CustomPaddingExample,
-  InteractiveExample,
   AllExamples,
 };

@@ -79,7 +79,7 @@ describe('BpkCardV2', () => {
     it('renders Section children in columns layout', () => {
       renderWithProvider(
         <BpkCardV2.Root>
-          <BpkCardV2.Body columns="7fr 3fr">
+          <BpkCardV2.Body templateColumns="7fr 3fr">
             <BpkCardV2.Section>Main content</BpkCardV2.Section>
             <BpkCardV2.Section>Sidebar</BpkCardV2.Section>
           </BpkCardV2.Body>
@@ -93,7 +93,7 @@ describe('BpkCardV2', () => {
     it('renders three Section children', () => {
       renderWithProvider(
         <BpkCardV2.Root>
-          <BpkCardV2.Body columns="1fr 2fr 1fr">
+          <BpkCardV2.Body templateColumns="1fr 2fr 1fr">
             <BpkCardV2.Section>Left</BpkCardV2.Section>
             <BpkCardV2.Section>Center</BpkCardV2.Section>
             <BpkCardV2.Section>Right</BpkCardV2.Section>
@@ -109,7 +109,7 @@ describe('BpkCardV2', () => {
     it('renders explicit Divider between sections', () => {
       const { container } = renderWithProvider(
         <BpkCardV2.Root>
-          <BpkCardV2.Body columns="7fr 3fr">
+          <BpkCardV2.Body templateColumns="7fr auto 3fr">
             <BpkCardV2.Section>Main</BpkCardV2.Section>
             <BpkCardV2.Divider />
             <BpkCardV2.Section>Side</BpkCardV2.Section>
@@ -123,7 +123,7 @@ describe('BpkCardV2', () => {
     it('does not render divider when none is placed', () => {
       const { container } = renderWithProvider(
         <BpkCardV2.Root>
-          <BpkCardV2.Body columns="1fr 1fr">
+          <BpkCardV2.Body templateColumns="1fr 1fr">
             <BpkCardV2.Section>Left</BpkCardV2.Section>
             <BpkCardV2.Section>Right</BpkCardV2.Section>
           </BpkCardV2.Body>
@@ -133,7 +133,7 @@ describe('BpkCardV2', () => {
       expect(container.querySelector('[class*="bpk-card-v2__divider"]')).not.toBeInTheDocument();
     });
 
-    it('does not insert divider when columns is not set', () => {
+    it('does not insert divider when templateColumns is not set', () => {
       const { container } = renderWithProvider(
         <BpkCardV2.Root>
           <BpkCardV2.Body>Content</BpkCardV2.Body>
@@ -274,7 +274,7 @@ describe('BpkCardV2', () => {
     it('renders Section with BpkBox and passes layout props', () => {
       renderWithProvider(
         <BpkCardV2.Root>
-          <BpkCardV2.Body columns="1fr 1fr">
+          <BpkCardV2.Body templateColumns="1fr 1fr">
             <BpkCardV2.Section data-testid="section-1">Left</BpkCardV2.Section>
             <BpkCardV2.Section data-testid="section-2">Right</BpkCardV2.Section>
           </BpkCardV2.Body>

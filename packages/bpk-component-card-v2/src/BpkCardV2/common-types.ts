@@ -18,7 +18,7 @@
 
 import type { ForwardRefExoticComponent, HTMLAttributes, ReactNode, RefAttributes } from 'react';
 
-import type { BpkBoxProps , BpkFlexProps } from '../../../bpk-component-layout';
+import type { BpkBoxProps, BpkFlexProps, BpkGridProps } from '../../../bpk-component-layout';
 
 /** Surface color token options for BpkCardV2 background */
 export type BpkCardV2SurfaceColor =
@@ -70,37 +70,28 @@ export type BpkCardV2HeaderProps = BpkFlexProps;
 /**
  * BpkCardV2.Body component props.
  *
- * Renders card main content area as a BpkFlex container.
- * Defaults to vertical (column) direction with base padding.
- * Supports multi-column layouts using Section subcomponents with the columns prop.
- * All BpkFlex props are supported for layout customisation.
+ * Renders card main content area as a BpkGrid container.
+ * Defaults to a single-column vertical layout with base padding.
+ * Use templateColumns for multi-column layouts. Include `auto` for each Divider child.
+ * All BpkGrid props are supported for layout customisation.
  *
  * @example
  * // Simple body
  * <BpkCardV2.Body>Content</BpkCardV2.Body>
  *
- * // Multi-column layout (70/30 on desktop, stacked on mobile)
- * <BpkCardV2.Body columns="7fr 3fr">
+ * // Multi-column layout with divider (70/30 on desktop, stacked on mobile)
+ * <BpkCardV2.Body templateColumns={{ base: '1fr', tablet: '7fr auto 3fr' }}>
  *   <BpkCardV2.Section>Main content</BpkCardV2.Section>
  *   <BpkCardV2.Divider />
  *   <BpkCardV2.Section>Sidebar</BpkCardV2.Section>
  * </BpkCardV2.Body>
  */
-export type BpkCardV2BodyProps = BpkFlexProps & {
-  /**
-   * Multi-column layout using fraction syntax (e.g. "1fr 2fr 1fr").
-   * Each fraction maps to a Section child's flex ratio.
-   * Place `<BpkCardV2.Divider />` between Section children where you want dividers.
-   * On mobile, sections stack vertically; on tablet+, they use the specified ratios.
-   */
-  columns?: string;
-};
+export type BpkCardV2BodyProps = BpkGridProps;
 
 /**
  * BpkCardV2.Section component props.
  *
  * Generic content area for multi-column layouts. Renders a BpkBox.
- * Flex ratio is injected by BpkCardV2.Body based on the columns spec.
  * All BpkBox props are supported for layout customisation.
  */
 export type BpkCardV2SectionProps = BpkBoxProps;

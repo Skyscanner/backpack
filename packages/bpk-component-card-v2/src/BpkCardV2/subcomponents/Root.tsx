@@ -43,7 +43,7 @@ const getClassName = cssModules(STYLES);
  * @example
  * // Multi-column layout (70/30 on desktop, stacked on mobile)
  * <BpkCardV2.Root bgColor="surfaceElevated">
- *   <BpkCardV2.Body columns="7fr 3fr">
+ *   <BpkCardV2.Body templateColumns={{ base: '1fr', tablet: '7fr auto 3fr' }}>
  *     <BpkCardV2.Section>Main content</BpkCardV2.Section>
  *     <BpkCardV2.Divider />
  *     <BpkCardV2.Section>Sidebar</BpkCardV2.Section>
