@@ -23,7 +23,6 @@ import BpkAriaLive, {
   ARIA_LIVE_POLITENESS_SETTINGS,
 } from '../../packages/bpk-component-aria-live';
 import BpkChip from '../../packages/bpk-component-chip';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkCode } from '../../packages/bpk-component-code';
 import BpkFieldset from '../../packages/bpk-component-fieldset';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.

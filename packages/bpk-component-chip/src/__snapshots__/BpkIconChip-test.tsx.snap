@@ -5,6 +5,7 @@ exports[`BpkIconChip should render correctly 1`] = `
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--default bpk-chip--icon-only"
+    data-backpack-ds-component="IconChip"
     role="checkbox"
     title="Filter"
     type="button"
@@ -27,6 +28,7 @@ exports[`BpkIconChip should render correctly 1`] = `
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -37,6 +39,7 @@ exports[`BpkIconChip should render correctly with a "className" attribute 1`] = 
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--default bpk-chip--icon-only custom-class"
+    data-backpack-ds-component="IconChip"
     role="checkbox"
     title="Filter"
     type="button"
@@ -59,6 +62,7 @@ exports[`BpkIconChip should render correctly with a "className" attribute 1`] = 
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -69,6 +73,7 @@ exports[`BpkIconChip should render correctly with type="default" 1`] = `
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--default bpk-chip--icon-only"
+    data-backpack-ds-component="IconChip"
     role="checkbox"
     title="Filter"
     type="button"
@@ -91,6 +96,7 @@ exports[`BpkIconChip should render correctly with type="default" 1`] = `
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -101,6 +107,7 @@ exports[`BpkIconChip should render correctly with type="default" and disabled 1`
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--default bpk-chip--disabled bpk-chip--default-disabled bpk-chip--icon-only"
+    data-backpack-ds-component="IconChip"
     disabled=""
     role="checkbox"
     title="Filter"
@@ -124,6 +131,7 @@ exports[`BpkIconChip should render correctly with type="default" and disabled 1`
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -134,6 +142,7 @@ exports[`BpkIconChip should render correctly with type="default" and selected 1`
   <button
     aria-checked="true"
     class="bpk-chip bpk-chip--default bpk-chip--icon-only bpk-chip--default-selected"
+    data-backpack-ds-component="IconChip"
     role="checkbox"
     title="Filter"
     type="button"
@@ -156,6 +165,7 @@ exports[`BpkIconChip should render correctly with type="default" and selected 1`
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -166,6 +176,7 @@ exports[`BpkIconChip should render correctly with type="default", selected and d
   <button
     aria-checked="true"
     class="bpk-chip bpk-chip--default bpk-chip--disabled bpk-chip--default-disabled bpk-chip--icon-only"
+    data-backpack-ds-component="IconChip"
     disabled=""
     role="checkbox"
     title="Filter"
@@ -189,6 +200,7 @@ exports[`BpkIconChip should render correctly with type="default", selected and d
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -199,6 +211,7 @@ exports[`BpkIconChip should render correctly with type="on-dark" 1`] = `
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-dark bpk-chip--icon-only"
+    data-backpack-ds-component="IconChip"
     role="checkbox"
     title="Filter"
     type="button"
@@ -221,6 +234,7 @@ exports[`BpkIconChip should render correctly with type="on-dark" 1`] = `
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -231,6 +245,7 @@ exports[`BpkIconChip should render correctly with type="on-dark" and disabled 1`
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-dark bpk-chip--disabled bpk-chip--on-dark-disabled bpk-chip--icon-only"
+    data-backpack-ds-component="IconChip"
     disabled=""
     role="checkbox"
     title="Filter"
@@ -254,6 +269,7 @@ exports[`BpkIconChip should render correctly with type="on-dark" and disabled 1`
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -264,6 +280,7 @@ exports[`BpkIconChip should render correctly with type="on-dark" and selected 1`
   <button
     aria-checked="true"
     class="bpk-chip bpk-chip--on-dark bpk-chip--icon-only bpk-chip--on-dark-selected"
+    data-backpack-ds-component="IconChip"
     role="checkbox"
     title="Filter"
     type="button"
@@ -286,6 +303,7 @@ exports[`BpkIconChip should render correctly with type="on-dark" and selected 1`
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -296,6 +314,7 @@ exports[`BpkIconChip should render correctly with type="on-dark", selected and d
   <button
     aria-checked="true"
     class="bpk-chip bpk-chip--on-dark bpk-chip--disabled bpk-chip--on-dark-disabled bpk-chip--icon-only"
+    data-backpack-ds-component="IconChip"
     disabled=""
     role="checkbox"
     title="Filter"
@@ -319,6 +338,7 @@ exports[`BpkIconChip should render correctly with type="on-dark", selected and d
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -329,6 +349,7 @@ exports[`BpkIconChip should render correctly with type="on-image" 1`] = `
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-image bpk-chip--icon-only"
+    data-backpack-ds-component="IconChip"
     role="checkbox"
     title="Filter"
     type="button"
@@ -351,6 +372,7 @@ exports[`BpkIconChip should render correctly with type="on-image" 1`] = `
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -361,6 +383,7 @@ exports[`BpkIconChip should render correctly with type="on-image" and disabled 1
   <button
     aria-checked="false"
     class="bpk-chip bpk-chip--on-image bpk-chip--disabled bpk-chip--on-image-disabled bpk-chip--icon-only"
+    data-backpack-ds-component="IconChip"
     disabled=""
     role="checkbox"
     title="Filter"
@@ -384,6 +407,7 @@ exports[`BpkIconChip should render correctly with type="on-image" and disabled 1
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -394,6 +418,7 @@ exports[`BpkIconChip should render correctly with type="on-image" and selected 1
   <button
     aria-checked="true"
     class="bpk-chip bpk-chip--on-image bpk-chip--icon-only bpk-chip--on-image-selected"
+    data-backpack-ds-component="IconChip"
     role="checkbox"
     title="Filter"
     type="button"
@@ -416,6 +441,7 @@ exports[`BpkIconChip should render correctly with type="on-image" and selected 1
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>
@@ -426,6 +452,7 @@ exports[`BpkIconChip should render correctly with type="on-image", selected and 
   <button
     aria-checked="true"
     class="bpk-chip bpk-chip--on-image bpk-chip--disabled bpk-chip--on-image-disabled bpk-chip--icon-only"
+    data-backpack-ds-component="IconChip"
     disabled=""
     role="checkbox"
     title="Filter"
@@ -449,6 +476,7 @@ exports[`BpkIconChip should render correctly with type="on-image", selected and 
     </span>
     <span
       class="bpk-text bpk-text--footnote"
+      data-backpack-ds-component="Text"
     />
   </button>
 </DocumentFragment>

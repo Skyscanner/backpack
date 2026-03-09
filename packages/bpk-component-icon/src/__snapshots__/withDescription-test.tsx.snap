@@ -7,7 +7,8 @@ exports[`withDescription should render correctly 1`] = `
       ❤️
     </span>
     <span
-      class="bpk-icon-description"
+      class="bpk-visually-hidden"
+      data-backpack-ds-component="VisuallyHidden"
     >
       love
     </span>

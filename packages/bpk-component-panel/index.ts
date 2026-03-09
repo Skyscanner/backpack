@@ -18,4 +18,6 @@
 
 import BpkPanel from './src/BpkPanel';
 
+export type { PanelBgColor } from './src/BpkPanel';
+export { PANEL_BG_COLORS } from './src/BpkPanel';
 export default BpkPanel;

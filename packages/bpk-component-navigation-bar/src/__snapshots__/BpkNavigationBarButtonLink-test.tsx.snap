@@ -4,9 +4,11 @@ exports[`BpkNavigationButtonLink should render correctly 1`] = `
 <DocumentFragment>
   <span
     class="some-class"
+    data-backpack-ds-component="NavigationBarButtonLink"
   >
     <button
       class="bpk-link"
+      data-backpack-ds-component="Link"
       type="button"
     >
       <span

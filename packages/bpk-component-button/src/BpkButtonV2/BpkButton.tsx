@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { cssModules } from '../../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
 
@@ -79,6 +79,7 @@ export const BpkButtonV2 = ({
       <a
         href={href}
         className={classNames}
+        {...getDataComponentAttribute('Button')}
         onClick={onClick}
         target={target}
         rel={rel}
@@ -94,6 +95,7 @@ export const BpkButtonV2 = ({
       type={submit ? 'submit' : 'button'}
       disabled={disabled}
       className={classNames}
+      {...getDataComponentAttribute('Button')}
       onClick={onClick}
       {...rest}
     >

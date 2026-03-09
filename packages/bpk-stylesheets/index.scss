@@ -38,7 +38,7 @@ html {
 /* stylelint-disable selector-class-pattern */
 body {
   color: tokens.$bpk-font-color-base;
-  font-family: tokens.$bpk-font-family-base;
+  font-family: var(--bpk-base-font-stack, tokens.$bpk-font-family-base);
   font-size: tokens.$bpk-font-size-base;
   line-height: 1.3rem; /* stylelint-disable-line scale-unlimited/declaration-strict-value */
 }

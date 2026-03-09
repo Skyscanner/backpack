@@ -8,8 +8,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ## Usage
 
-```js
-import { Component } from 'react';
+```tsx
 import BpkSlider from '@skyscanner/backpack-web/bpk-component-slider';
 
 const Slider = () => (
@@ -23,6 +22,27 @@ const Slider = () => (
   />
 );
 
+const RangeSlider = () => {
+  const [value, setValue] = useState([20, 80]);
+
+  const handleAfterChange = (newValue) => {
+    // Called when user finishes dragging
+    console.log('Final value:', newValue);
+  };
+
+  return (
+    <BpkSlider
+      min={0}
+      max={100}
+      value={value}
+      step={10}
+      onChange={setValue}
+      onAfterChange={handleAfterChange}
+      ariaLabel={['min', 'max']}
+      ariaValuetext={[`${value[0]}%`, `${value[1]}%`]}
+    />
+  );
+};
 ```
 
 ## Props

@@ -17,111 +17,284 @@
  */
 
 $base-url: 'https://js.skyscnr.com/sttc/bpk-fonts';
+$font-formats: (woff2, woff, ttf);
 
-@font-face {
-  font-family: Larken;
-  font-style: normal;
-  font-weight: 300;
-  src:
-    url('#{$base-url}/Larken-Light-8371ea16.woff2') format('woff2'),
-    url('#{$base-url}/Larken-Light-39e53c9a.woff') format('woff');
+// Table-driven font registry for Larken + Noto fallbacks (editorial bundle).
+// Filenames are hashed names without extensions; only provided formats emit.
+$bpk-fonts: (
+  larken: (
+    (
+      style: normal,
+      weight: 300,
+      files: (
+        woff2: 'Larken-Light-8371ea16',
+        woff: 'Larken-Light-39e53c9a',
+        ttf: null,
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'Larken-Regular-3d9dfe29',
+        woff: 'Larken-Regular-626ee28c',
+        ttf: null,
+      ),
+    ),
+  ),
+  'Noto Sans Arabic': (
+    (
+      style: normal,
+      weight: 300,
+      files: (
+        woff2: 'NotoSansArabic-Light-e77dc47a',
+        woff: 'NotoSansArabic-Light-ea83f673',
+        ttf: 'NotoSansArabic-Light-b2ff05f9',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'NotoSansArabic-Regular-15a84e58',
+        woff: 'NotoSansArabic-Regular-a2985c7a',
+        ttf: 'NotoSansArabic-Regular-471fde3d',
+      ),
+    ),
+  ),
+  'Noto Serif Hebrew': (
+    (
+      style: normal,
+      weight: 300,
+      files: (
+        woff2: 'NotoSerifHebrew-Light-24198867',
+        woff: 'NotoSerifHebrew-Light-7d94eb62',
+        ttf: 'NotoSerifHebrew-Light-320a7a43',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'NotoSerifHebrew-Regular-a9e2c102',
+        woff: 'NotoSerifHebrew-Regular-41b2944d',
+        ttf: 'NotoSerifHebrew-Regular-e8471015',
+      ),
+    ),
+  ),
+  'Noto Serif': (
+    (
+      style: normal,
+      weight: 300,
+      files: (
+        woff2: 'NotoSerif-Light-46d7aaea',
+        woff: 'NotoSerif-Light-412a21b9',
+        ttf: 'NotoSerif-Light-9dbdd5d2',
+      ),
+    ),
+    (
+      style: italic,
+      weight: 300,
+      files: (
+        woff2: 'NotoSerif-LightItalic-3df46bf3',
+        woff: 'NotoSerif-LightItalic-b235c828',
+        ttf: 'NotoSerif-LightItalic-1a288873',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'NotoSerif-Regular-f9cc92ed',
+        woff: 'NotoSerif-Regular-ea07f3b6',
+        ttf: 'NotoSerif-Regular-c8fe04e5',
+      ),
+    ),
+    (
+      style: italic,
+      weight: 400,
+      files: (
+        woff2: 'NotoSerif-Italic-132f7557',
+        woff: 'NotoSerif-Italic-ceeb7a6f',
+        ttf: 'NotoSerif-Italic-25dbfc26',
+      ),
+    ),
+  ),
+  'Noto Serif Devanagari': (
+    (
+      style: normal,
+      weight: 300,
+      files: (
+        woff2: 'NotoSerifDevanagari-Light-6f8c3ec2',
+        woff: 'NotoSerifDevanagari-Light-9e5b16f1',
+        ttf: 'NotoSerifDevanagari-Light-d396b2f0',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'NotoSerifDevanagari-Regular-05c8f8c5',
+        woff: 'NotoSerifDevanagari-Regular-7b432355',
+        ttf: 'NotoSerifDevanagari-Regular-49b7fded',
+      ),
+    ),
+  ),
+  'Noto Serif Thai': (
+    (
+      style: normal,
+      weight: 300,
+      files: (
+        woff2: 'NotoSerifThai-Light-c19b05eb',
+        woff: 'NotoSerifThai-Light-c8dd8e9a',
+        ttf: 'NotoSerifThai-Light-7503fb65',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'NotoSerifThai-Regular-807f25ca',
+        woff: 'NotoSerifThai-Regular-4930d4b0',
+        ttf: 'NotoSerifThai-Regular-619e0cdd',
+      ),
+    ),
+  ),
+  'Noto Serif SC': (
+    (
+      style: normal,
+      weight: 300,
+      files: (
+        woff2: 'NotoSerifSC-Light-340f3714',
+        woff: 'NotoSerifSC-Light-0cad7edb',
+        ttf: 'NotoSerifSC-Light-4a0300b1',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'NotoSerifSC-Regular-81b3cace',
+        woff: 'NotoSerifSC-Regular-861a6d77',
+        ttf: 'NotoSerifSC-Regular-e6f67c70',
+      ),
+    ),
+  ),
+  'Noto Serif TC': (
+    (
+      style: normal,
+      weight: 300,
+      files: (
+        woff2: 'NotoSerifTC-Light-d06d870d',
+        woff: 'NotoSerifTC-Light-e7d41ebf',
+        ttf: 'NotoSerifTC-Light-a575e20b',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'NotoSerifTC-Regular-ba80e9e3',
+        woff: 'NotoSerifTC-Regular-24d6fd67',
+        ttf: 'NotoSerifTC-Regular-81f7cfa9',
+      ),
+    ),
+  ),
+  'Noto Serif JP': (
+    (
+      style: normal,
+      weight: 300,
+      files: (
+        woff2: 'NotoSerifJP-Light-300342ba',
+        woff: 'NotoSerifJP-Light-908de8db',
+        ttf: 'NotoSerifJP-Light-4fdde149',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'NotoSerifJP-Regular-04cd06e8',
+        woff: 'NotoSerifJP-Regular-5ec4849d',
+        ttf: 'NotoSerifJP-Regular-5926d365',
+      ),
+    ),
+  ),
+  'Noto Serif KR': (
+    (
+      style: normal,
+      weight: 300,
+      files: (
+        woff2: 'NotoSerifKR-Light-cafbe1fe',
+        woff: 'NotoSerifKR-Light-60488ca3',
+        ttf: 'NotoSerifKR-Light-4149d2b6',
+      ),
+    ),
+    (
+      style: normal,
+      weight: 400,
+      files: (
+        woff2: 'NotoSerifKR-Regular-f6377da5',
+        woff: 'NotoSerifKR-Regular-a5cc7c23',
+        ttf: 'NotoSerifKR-Regular-2fa19520',
+      ),
+    ),
+  ),
+);
+
+@use 'sass:list';
+@use 'sass:map';
+
+@mixin bpk-font-face($family, $style, $weight, $files) {
+  $srcs: ();
+
+  @each $ext in $font-formats {
+    $file: map.get($files, $ext);
+
+    @if $file != null and $file != '' {
+      $srcs: list.append(
+        $srcs,
+        "url('#{$base-url}/#{$file}.#{$ext}') format('#{$ext}')",
+        comma
+      );
+    }
+  }
+
+  /* stylelint-disable backpack/use-typography-styles */
+  @font-face {
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+    src: #{$srcs};
+  }
+  /* stylelint-enable backpack/use-typography-styles */
 }
 
-@font-face {
-  font-family: Larken;
-  font-style: normal;
-  font-weight: 400;
-  src:
-    url('#{$base-url}/Larken-Regular-3d9dfe29.woff2') format('woff2'),
-    url('#{$base-url}/Larken-Regular-626ee28c.woff') format('woff');
+@each $family, $variants in $bpk-fonts {
+  @each $variant in $variants {
+    @include bpk-font-face(
+      $family,
+      map.get($variant, style),
+      map.get($variant, weight),
+      map.get($variant, files)
+    );
+  }
 }
 
-@font-face {
-  font-family: 'Noto Sans Arabic';
-  font-style: normal;
-  font-weight: 300;
-  src:
-    url('#{$base-url}/NotoSansArabic-Light-e77dc47a.woff2') format('woff2'),
-    url('#{$base-url}/NotoSansArabic-Light-ea83f673.woff') format('woff'),
-    url('#{$base-url}/NotoSansArabic-Light-b2ff05f9.ttf') format('ttf');
+// Language-specific font stacks to prefer the right script-specific faces.
+// We use a CSS Variable to make this scalable across all components using Larken.
+[lang='ja-JP'],
+:lang(ja-JP) {
+  --bpk-larken-font-stack:
+    larken, 'Noto Serif JP', 'Noto Serif SC', 'Noto Serif TC', 'Noto Serif KR',
+    'Noto Sans Arabic', 'Noto Serif Hebrew', 'Noto Serif',
+    'Noto Serif Devanagari', 'Noto Serif Thai', sans-serif;
 }
 
-@font-face {
-  font-family: 'Noto Sans Hebrew';
-  font-style: normal;
-  font-weight: 300;
-  src:
-    url('#{$base-url}/NotoSansHebrew-Light-7e3d70ae.woff2') format('woff2'),
-    url('#{$base-url}/NotoSansHebrew-Light-87087c3d.woff') format('woff'),
-    url('#{$base-url}/NotoSansHebrew-Light-7b34032c.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 300;
-  src:
-    url('#{$base-url}/NotoSerif-Light-46d7aaea.woff2') format('woff2'),
-    url('#{$base-url}/NotoSerif-Light-412a21b9.woff') format('woff'),
-    url('#{$base-url}/NotoSerif-Light-9dbdd5d2.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: 'Noto Serif Devanagari';
-  font-style: normal;
-  font-weight: 300;
-  src:
-    url('#{$base-url}/NotoSerifDevanagari-Light-6f8c3ec2.woff2') format('woff2'),
-    url('#{$base-url}/NotoSerifDevanagari-Light-9e5b16f1.woff') format('woff'),
-    url('#{$base-url}/NotoSerifDevanagari-Light-d396b2f0.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: 'Noto Serif Thai';
-  font-style: normal;
-  font-weight: 300;
-  src:
-    url('#{$base-url}/NotoSerifThai-Light-c19b05eb.woff2') format('woff2'),
-    url('#{$base-url}/NotoSerifThai-Light-c8dd8e9a.woff') format('woff'),
-    url('#{$base-url}/NotoSerifThai-Light-7503fb65.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: 'Noto Sans SC';
-  font-style: normal;
-  font-weight: 300;
-  src:
-    url('#{$base-url}/NotoSansSC-Light-650e8f78.woff2') format('woff2'),
-    url('#{$base-url}/NotoSansSC-Light-562944a8.woff') format('woff'),
-    url('#{$base-url}/NotoSansSC-Light-a73eb63e.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: 'Noto Sans TC';
-  font-style: normal;
-  font-weight: 300;
-  src:
-    url('#{$base-url}/NotoSansTC-Light-44be0b13.woff2') format('woff2'),
-    url('#{$base-url}/NotoSansTC-Light-a8473157.woff') format('woff'),
-    url('#{$base-url}/NotoSansTC-Light-d77339b0.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: 'Noto Sans JP';
-  font-style: normal;
-  font-weight: 300;
-  src:
-    url('#{$base-url}/NotoSansJP-Light-1fed199d.woff2') format('woff2'),
-    url('#{$base-url}/NotoSansJP-Light-828afdbb.woff') format('woff'),
-    url('#{$base-url}/NotoSansJP-Light-477cc6a5.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 300;
-  src:
-    url('#{$base-url}/NotoSansKR-Light-8bef1aea.woff2') format('woff2'),
-    url('#{$base-url}/NotoSansKR-Light-c07b4050.woff') format('woff'),
-    url('#{$base-url}/NotoSansKR-Light-137d0733.ttf') format('ttf');
+[lang='zh-TW'],
+:lang(zh-TW) {
+  --bpk-larken-font-stack:
+    larken, 'Noto Serif TC', 'Noto Serif SC', 'Noto Serif JP', 'Noto Serif KR',
+    'Noto Sans Arabic', 'Noto Serif Hebrew', 'Noto Serif',
+    'Noto Serif Devanagari', 'Noto Serif Thai', sans-serif;
 }

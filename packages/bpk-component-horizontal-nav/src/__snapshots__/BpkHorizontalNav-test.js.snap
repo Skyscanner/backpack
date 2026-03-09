@@ -7,6 +7,7 @@ exports[`BpkHorizontalNav should render correctly 1`] = `
   >
     <div
       class="bpk-mobile-scroll-container"
+      data-backpack-ds-component="MobileScrollContainer"
       style="height: auto;"
     >
       <div
@@ -35,6 +36,7 @@ exports[`BpkHorizontalNav should render correctly with "ariaLabel" prop 1`] = `
   >
     <div
       class="bpk-mobile-scroll-container"
+      data-backpack-ds-component="MobileScrollContainer"
       style="height: auto;"
     >
       <div
@@ -64,6 +66,7 @@ exports[`BpkHorizontalNav should render correctly with "ariaLabel" prop set to n
   >
     <div
       class="bpk-mobile-scroll-container"
+      data-backpack-ds-component="MobileScrollContainer"
       style="height: auto;"
     >
       <div
@@ -92,6 +95,7 @@ exports[`BpkHorizontalNav should render correctly with "showUnderline" set to fa
   >
     <div
       class="bpk-mobile-scroll-container"
+      data-backpack-ds-component="MobileScrollContainer"
       style="height: auto;"
     >
       <div
@@ -120,6 +124,7 @@ exports[`BpkHorizontalNav should render correctly with "type" prop 1`] = `
   >
     <div
       class="bpk-mobile-scroll-container"
+      data-backpack-ds-component="MobileScrollContainer"
       style="height: auto;"
     >
       <div
@@ -170,6 +175,7 @@ exports[`BpkHorizontalNav should render correctly with arbitrary props 1`] = `
       class="bpk-mobile-scroll-container"
       data-arbitrary-1="arbirary-value-1"
       data-arbitrary-2="arbirary-value-2"
+      data-backpack-ds-component="MobileScrollContainer"
       style="height: auto;"
     >
       <div
@@ -199,6 +205,7 @@ exports[`BpkHorizontalNav should render correctly with custom "className" prop 1
   >
     <div
       class="bpk-mobile-scroll-container"
+      data-backpack-ds-component="MobileScrollContainer"
       style="height: auto;"
     >
       <div
@@ -227,6 +234,7 @@ exports[`BpkHorizontalNav should render correctly with custom "leadingScrollIndi
   >
     <div
       class="bpk-mobile-scroll-container"
+      data-backpack-ds-component="MobileScrollContainer"
       style="height: auto;"
     >
       <div
@@ -255,6 +263,7 @@ exports[`BpkHorizontalNav should render correctly with custom "trailingScrollInd
   >
     <div
       class="bpk-mobile-scroll-container"
+      data-backpack-ds-component="MobileScrollContainer"
       style="height: auto;"
     >
       <div

@@ -18,9 +18,12 @@
 
 import type { ReactNode } from 'react';
 
-import BpkPriceRange from '../../packages/bpk-component-price-range';
+import BpkPriceRange, {
+  type BpkPriceRangeProps,
+  MARKER_DISPLAY_TYPES,
+} from '../../packages/bpk-component-price-range';
 
-const segments = {
+const segments: BpkPriceRangeProps['segments'] = {
   low: {
     price: '£100',
     percentage: 20,
@@ -31,7 +34,7 @@ const segments = {
   },
 };
 
-const veryLargeSegments = {
+const veryLargeSegments: BpkPriceRangeProps['segments'] = {
   low: {
     price: '35M ₫',
     percentage: 20,
@@ -50,90 +53,131 @@ const Wrapper = ({
   isLarge?: boolean;
 }) => <div style={{ width: isLarge ? '15rem' : '8.75rem' }}>{children}</div>;
 
-const SmallerLowPriceRangeExample = () => (
+const DotMarkerLowExample = () => (
   <Wrapper>
     <BpkPriceRange
-      showPriceIndicator={false}
-      marker={{ price: '£50', percentage: 10 }}
+      marker={{ price: '£50', percentage: 10, type: MARKER_DISPLAY_TYPES.DOT }}
       segments={segments}
     />
   </Wrapper>
 );
-const SmallerMediumPriceRangeExample = () => (
+
+const DotMarkerMediumExample = () => (
   <Wrapper>
     <BpkPriceRange
-      showPriceIndicator={false}
-      marker={{ price: '£150', percentage: 50 }}
+      marker={{ price: '£150', percentage: 50, type: MARKER_DISPLAY_TYPES.DOT }}
       segments={segments}
     />
   </Wrapper>
 );
 
-const SmallerHighPriceRangeExample = () => (
+const DotMarkerHighExample = () => (
   <Wrapper>
     <BpkPriceRange
-      showPriceIndicator={false}
-      marker={{ price: '£300', percentage: 90 }}
+      marker={{ price: '£300', percentage: 90, type: MARKER_DISPLAY_TYPES.DOT }}
       segments={segments}
     />
   </Wrapper>
 );
 
-const LargeLowPriceRangeExample = () => (
+const BubbleMarkerDefaultTypeExample = () => (
   <Wrapper isLarge>
     <BpkPriceRange
-      marker={{ price: '£50', percentage: 10 }}
+      marker={{
+        price: '£150',
+        percentage: 50,
+      }}
       segments={segments}
     />
   </Wrapper>
 );
 
-const LargeMediumPriceRangeExample = () => (
+const BubbleMarkerLowExample = () => (
   <Wrapper isLarge>
     <BpkPriceRange
-      marker={{ price: '£150', percentage: 50 }}
+      marker={{
+        price: '£50',
+        percentage: 10,
+        type: MARKER_DISPLAY_TYPES.BUBBLE,
+      }}
       segments={segments}
     />
   </Wrapper>
 );
 
-const LargeHighPriceRangeExample = () => (
+const BubbleMarkerMediumExample = () => (
   <Wrapper isLarge>
     <BpkPriceRange
-      marker={{ price: '£300', percentage: 90 }}
+      marker={{
+        price: '£150',
+        percentage: 50,
+        type: MARKER_DISPLAY_TYPES.BUBBLE,
+      }}
       segments={segments}
     />
   </Wrapper>
 );
 
-const VeryLargeHighPriceRangeExample = () => (
+const BubbleMarkerHighExample = () => (
   <Wrapper isLarge>
     <BpkPriceRange
-      marker={{ price: '70M ₫', percentage: 90 }}
+      marker={{
+        price: '£300',
+        percentage: 90,
+        type: MARKER_DISPLAY_TYPES.BUBBLE,
+      }}
+      segments={segments}
+    />
+  </Wrapper>
+);
+
+const BubbleMarkerVeryLargeExample = () => (
+  <Wrapper isLarge>
+    <BpkPriceRange
+      marker={{
+        price: '70M ₫',
+        percentage: 90,
+        type: MARKER_DISPLAY_TYPES.BUBBLE,
+      }}
       segments={veryLargeSegments}
     />
   </Wrapper>
 );
 
+const NoMarkerExample = () => (
+  <Wrapper isLarge>
+    <BpkPriceRange segments={segments} />
+  </Wrapper>
+);
+
 const MixedExample = () => (
   <div>
-    <SmallerLowPriceRangeExample />
-    <SmallerMediumPriceRangeExample />
-    <SmallerHighPriceRangeExample />
-    <LargeLowPriceRangeExample />
-    <LargeMediumPriceRangeExample />
-    <LargeHighPriceRangeExample />
-    <VeryLargeHighPriceRangeExample />
+    <h4>Use case 1: Dot marker (boundaries hidden)</h4>
+    <DotMarkerLowExample />
+    <DotMarkerMediumExample />
+    <DotMarkerHighExample />
+
+    <h4>Use case 2: Bubble marker (boundaries shown)</h4>
+    <BubbleMarkerDefaultTypeExample />
+    <BubbleMarkerLowExample />
+    <BubbleMarkerMediumExample />
+    <BubbleMarkerHighExample />
+    <BubbleMarkerVeryLargeExample />
+
+    <h4>Use case 3: No marker (boundaries shown)</h4>
+    <NoMarkerExample />
   </div>
 );
 
 export {
-  SmallerLowPriceRangeExample,
-  SmallerHighPriceRangeExample,
-  SmallerMediumPriceRangeExample,
-  LargeLowPriceRangeExample,
-  LargeHighPriceRangeExample,
-  LargeMediumPriceRangeExample,
-  VeryLargeHighPriceRangeExample,
+  DotMarkerLowExample,
+  DotMarkerMediumExample,
+  DotMarkerHighExample,
+  BubbleMarkerDefaultTypeExample,
+  BubbleMarkerLowExample,
+  BubbleMarkerMediumExample,
+  BubbleMarkerHighExample,
+  BubbleMarkerVeryLargeExample,
+  NoMarkerExample,
   MixedExample,
 };

@@ -17,9 +17,11 @@
  */
 
 @use '../../bpk-mixins/panels';
+@use '../../bpk-mixins/surfaces';
 
 .bpk-panel {
   @include panels.bpk-panel;
+  @include surfaces.bpk-surface-bg-colors;
 
   &--padded {
     @include panels.bpk-panel--padded;

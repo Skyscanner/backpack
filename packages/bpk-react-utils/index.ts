@@ -27,11 +27,14 @@ import {
   isDeviceIpad,
   isDeviceIos,
 } from './src/deviceDetection';
+import { getDataComponentAttribute } from './src/getDataComponentAttribute';
 import isRTL from './src/isRTL';
 import { setNativeValue } from './src/nativeEventHandler';
+import { SURFACE_COLORS } from './src/surfaceColors';
 import withDefaultProps from './src/withDefaultProps';
 import wrapDisplayName from './src/wrapDisplayName';
 
+export type { SurfaceBgColor } from './src/surfaceColors';
 export {
   Portal,
   TransitionInitialMount,
@@ -45,6 +48,8 @@ export {
   isRTL,
   BpkDialogWrapper,
   setNativeValue,
+  getDataComponentAttribute,
+  SURFACE_COLORS,
 };
 export default {
   Portal,
@@ -59,4 +64,6 @@ export default {
   isRTL,
   BpkDialogWrapper,
   setNativeValue,
+  getDataComponentAttribute,
+  SURFACE_COLORS,
 };

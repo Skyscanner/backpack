@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLabel from '../../packages/bpk-component-label';
 import BpkTextarea from '../../packages/bpk-component-textarea';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
