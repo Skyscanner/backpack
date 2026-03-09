@@ -68,6 +68,30 @@ Output a structured gap report and ask for missing mandatory items before procee
 | M2 | **Ark UI primitive name** | Determines available parts, props, and accessibility semantics | Not stated (e.g. "checkbox", "tabs", "select") |
 | M3 | **Component name** | `BpkX.Root` naming — must be confirmed | Not stated or ambiguous |
 | M4 | **Required slot components** | Drives TypeScript structure | Not listed, or only partially listed |
+| M5 | **Component placement** | Determines file structure and import paths | Not stated — always ask explicitly |
+
+#### M5 — Component Placement (always ask the user)
+
+A V2 component can live in two places. Ask the user to choose before starting:
+
+**Option A — Standalone new package** (`packages/bpk-component-[name]-v2/`)
+- Use when there is no V1 to co-locate with
+- Consumers import from `@skyscanner/backpack-web/bpk-component-[name]-v2`
+
+**Option B — Subfolder inside the existing V1 package** (`packages/bpk-component-[name]/src/Bpk[Name]V2/`)
+- Use when a V1 already exists and the goal is a smooth future V1 deprecation
+- V2 is exported as a named export (`BpkCheckboxV2`) from `bpk-component-[name]/index.ts`
+- The old `bpk-component-[name]-v2` package (if it exists) re-exports from the new canonical location for backwards compatibility
+- Consumers import from `@skyscanner/backpack-web/bpk-component-[name]` — no path change needed when V1 is deprecated
+- When using Option B, relative imports in the V2 source files need one extra `../` level (e.g. `../../bpk-react-utils` → `../../../bpk-react-utils`)
+
+Ask the user:
+```
+Where should this V2 component live?
+A) New standalone package: packages/bpk-component-[name]-v2/
+B) Inside the existing V1 package: packages/bpk-component-[name]/src/Bpk[Name]V2/
+   (recommended if a V1 exists and you want consumers to keep the same import path after V1 deprecation)
+```
 
 ### 0.2 Important Information (proceed with stated assumption if absent)
 

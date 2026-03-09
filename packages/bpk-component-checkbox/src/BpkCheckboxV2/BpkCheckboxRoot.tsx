@@ -20,7 +20,7 @@ import type { ReactNode } from 'react';
 
 import { Checkbox, type CheckedState } from '@ark-ui/react/checkbox';
 
-import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
 import STYLES from './BpkCheckbox.module.scss';
 

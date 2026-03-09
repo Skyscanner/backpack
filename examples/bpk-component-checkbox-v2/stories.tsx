@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkCheckbox from '../../packages/bpk-component-checkbox-v2/src/BpkCheckbox';
+import { BpkCheckboxV2 as BpkCheckbox } from '../../packages/bpk-component-checkbox';
 
 import {
   DefaultCheckedExample,

@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/typography';
-@use '../../bpk-mixins/forms';
+@use '../../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/typography';
+@use '../../../bpk-mixins/forms';
 
 // Root — flex row container (renders as <label> via Ark)
 .bpk-checkbox-v2 {

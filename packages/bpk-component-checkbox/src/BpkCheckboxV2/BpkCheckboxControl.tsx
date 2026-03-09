@@ -16,10 +16,24 @@
  * limitations under the License.
  */
 
-import BpkCheckbox from './src/BpkCheckbox';
+import type { ReactNode } from 'react';
 
-export type { BpkCheckboxRootProps } from './src/BpkCheckboxRoot';
-export type { BpkCheckboxControlProps } from './src/BpkCheckboxControl';
-export type { BpkCheckboxLabelProps } from './src/BpkCheckboxLabel';
-export type { BpkCheckboxDescriptionProps } from './src/BpkCheckboxDescription';
-export default BpkCheckbox;
+import { Checkbox } from '@ark-ui/react/checkbox';
+
+import { cssModules } from '../../../bpk-react-utils';
+
+import STYLES from './BpkCheckbox.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+export type BpkCheckboxControlProps = {
+  children: ReactNode;
+};
+
+const BpkCheckboxControl = ({ children }: BpkCheckboxControlProps) => (
+  <Checkbox.Control className={getClassName('bpk-checkbox-v2__control')}>
+    {children}
+  </Checkbox.Control>
+);
+
+export default BpkCheckboxControl;

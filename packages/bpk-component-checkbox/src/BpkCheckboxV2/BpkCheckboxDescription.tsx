@@ -18,22 +18,21 @@
 
 import type { ReactNode } from 'react';
 
-import { Checkbox } from '@ark-ui/react/checkbox';
-
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules } from '../../../bpk-react-utils';
 
 import STYLES from './BpkCheckbox.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkCheckboxLabelProps = {
+export type BpkCheckboxDescriptionProps = {
   children: ReactNode;
 };
 
-const BpkCheckboxLabel = ({ children }: BpkCheckboxLabelProps) => (
-  <Checkbox.Label className={getClassName('bpk-checkbox-v2__label')}>
-    {children}
-  </Checkbox.Label>
+// Description renders as a <span> inside the Checkbox.Root <label>.
+// Being inside the <label> element means screen readers announce its text
+// as part of the checkbox's accessible name.
+const BpkCheckboxDescription = ({ children }: BpkCheckboxDescriptionProps) => (
+  <span className={getClassName('bpk-checkbox-v2__description')}>{children}</span>
 );
 
-export default BpkCheckboxLabel;
+export default BpkCheckboxDescription;
