@@ -22,5 +22,8 @@ import BpkAutosuggestLegacy from './src/BpkAutosuggest';
 import BpkAutosuggestSuggestion from './src/BpkAutosuggestSuggestion';
 import BpkAutosuggestV2, { defaultTheme } from './src/BpkAutosuggestV2/BpkAutosuggest';
 
-export default BpkAutosuggestV2;
+const BpkAutosuggest = BpkAutosuggestV2;
+
+export default BpkAutosuggest;
+
 export { BpkAutosuggestLegacy, BpkAutosuggestSuggestion, defaultTheme };
