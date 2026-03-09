@@ -271,20 +271,31 @@ type Bpk[ComponentName]Props = {
 
 2. **Sass Imports** (granular from `bpk-mixins`):
 ```scss
-@use '../bpk-mixins/tokens';
-@use '../bpk-mixins/typography';
-@use '../bpk-mixins/shadows';
-@use '../bpk-mixins/borders';
-@use '../bpk-mixins/utils';
+@use '../bpk-mixins/tokens';     // Variables: colors, spacing, border-radius, shadow values
+@use '../bpk-mixins/typography'; // Typography mixins
+@use '../bpk-mixins/shadows';    // Shadow mixins (@include shadows.bpk-box-shadow-sm)
+@use '../bpk-mixins/radii';      // Border-radius mixins (@include radii.bpk-border-radius-md)
+@use '../bpk-mixins/utils';      // RTL helpers (@include utils.bpk-rtl { ... })
+// Other available: borders, breakpoints, icons, etc.
 ```
 
-3. **Design Token Mapping**:
-   - Map design specs to Backpack tokens
-   - Spacing: `tokens.bpk-spacing-*()` (returns rem values)
-   - Colors: `tokens.$bpk-color-*`
-   - Typography: `typography.bpk-text()`, `typography.bpk-label-1()`, etc.
-   - Shadows: `shadows.bpk-box-shadow-*()` mixins
-   - Border radius: `tokens.bpk-border-radius-*()` or `borders.bpk-border-radius-*()` mixins
+3. **Design Token Mapping** (full reference at `docs/bpk-tokens-reference.md`):
+   - **Spacing** (call as functions): `tokens.bpk-spacing-sm()`, `tokens.bpk-spacing-md()`, `tokens.bpk-spacing-base()`, `tokens.bpk-spacing-lg()`, etc.
+   - **Colors** (use as `$` variables — prefer semantic names over raw colors):
+     - Text: `tokens.$bpk-text-primary-day`, `tokens.$bpk-text-secondary-day`, `tokens.$bpk-text-on-dark-day`
+     - Background: `tokens.$bpk-canvas-day`, `tokens.$bpk-surface-default-day`, `tokens.$bpk-core-primary-day`
+     - Brand/CTA: `tokens.$bpk-core-accent-day` (blue), `tokens.$bpk-core-primary-day` (navy)
+     - Border/Line: `tokens.$bpk-line-day`
+     - Raw white: `tokens.$bpk-color-white` (exists, but prefer semantic `$bpk-text-on-dark-day` for text)
+   - **Typography** (use as `@include` mixins — no parens needed):
+     `@include typography.bpk-body-default`, `@include typography.bpk-heading-3`, `@include typography.bpk-caption`, `@include typography.bpk-label-1`
+     Note: `bpk-text` exists but is ONLY a margin reset — use `bpk-body-default` for actual typography
+   - **Shadows** (two equivalent options):
+     - Mixin: `@include shadows.bpk-box-shadow-sm` (requires `@use '../../bpk-mixins/shadows'`)
+     - Variable: `box-shadow: tokens.$bpk-box-shadow-sm` (no extra import needed)
+   - **Border radius** (two equivalent options):
+     - Mixin: `@include radii.bpk-border-radius-md` (requires `@use '../../bpk-mixins/radii'`)
+     - Variable: `border-radius: tokens.$bpk-border-radius-md` (no extra import needed)
 
 4. **Responsive Behavior**:
    - Define breakpoint behavior (mobile, tablet, desktop)

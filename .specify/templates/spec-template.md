@@ -202,17 +202,18 @@ type Bpk[ComponentName]Props = {
 - **STY-006**: Class names MUST follow BEM with `bpk-` prefix (e.g., `bpk-component-name--variant`)
 - **STY-007**: Component MUST support theming via `bpk-theming` if applicable
 
-**Example SCSS structure**:
+**Example SCSS structure** (see `docs/bpk-tokens-reference.md` for all valid token names):
 ```scss
 @use '../bpk-mixins/tokens';
 @use '../bpk-mixins/typography';
 
 .bpk-component-name {
   padding: tokens.bpk-spacing-md();
-  @include typography.bpk-text();
+  @include typography.bpk-body-default;  // NOT bpk-text() — use semantic mixin names
 
   &--primary {
-    background-color: tokens.$bpk-color-white;
+    background-color: tokens.$bpk-core-primary-day;  // NOT $bpk-color-* — use semantic tokens
+    color: tokens.$bpk-text-on-dark-day;
   }
 
   &--disabled {

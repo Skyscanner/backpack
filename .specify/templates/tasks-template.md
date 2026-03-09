@@ -159,7 +159,7 @@ VALIDATION:
   - Import granularly (tokens, typography, shadows, etc.)
   - Use BEM naming with `bpk-` prefix (e.g., `.bpk-button`, `.bpk-button--primary`)
   - Use `rem` units for all sizing (NOT `px` or `em`)
-  - Use design tokens for all values (e.g., `tokens.bpk-spacing-md()`, `tokens.$bpk-color-white`)
+  - Use design tokens for all values (e.g., `tokens.bpk-spacing-md()`, `tokens.$bpk-text-primary-day`) — see `docs/bpk-tokens-reference.md` for the complete list of valid token names
   - **Constitution Check**: Modern Sass NON-NEGOTIABLE, rem units REQUIRED
 
 - [ ] T015 [US1] Add prop validation and default props in component

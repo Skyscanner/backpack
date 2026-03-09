@@ -360,3 +360,35 @@ import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
 ```
 
 This guide should help AI agents understand the structure, patterns, and conventions used in the Backpack Design System codebase.
+
+## Mandatory Token & Mixin Usage Rules
+
+These rules are **non-negotiable** and apply to all code generation and edits.
+
+### SCSS / CSS files
+
+**ALWAYS** check `packages/bpk-mixins/` before writing any style value. If a relevant token or mixin exists there, you **MUST** use it — never hardcode the equivalent value.
+
+- **Spacing**: use `tokens.bpk-spacing-*()` functions — never hardcode `px`/`rem` spacing values
+- **Colors**: use `tokens.$bpk-*` semantic variables (e.g. `tokens.$bpk-text-primary-day`, `tokens.$bpk-core-accent-day`) — never hardcode hex/rgba colors
+- **Typography**: use `@include typography.bpk-*` mixins — never set `font-size`, `line-height`, or `font-weight` manually
+- **Border radius**: use `tokens.$bpk-border-radius-*` — never hardcode radius values
+- **Border size / box shadow**: use `tokens.$bpk-border-size-*` and `tokens.$bpk-box-shadow-*`
+- **Component-specific mixins**: component-level patterns also live in `packages/bpk-mixins/` (e.g. `_chips.scss`, `_badges-v2.scss`). Check there for existing patterns before writing custom styles.
+
+Required imports at the top of every SCSS file:
+
+```scss
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/typography';
+```
+
+### TSX / TS files (inline styles or style objects)
+
+When defining styles in TypeScript, **always** use tokens from `@skyscanner/bpk-foundations-web/tokens/base.es6`.
+
+```typescript
+import { colorSkyBlue, spacingBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+```
+
+Only fall back to hardcoded values if no matching token exists in that package.

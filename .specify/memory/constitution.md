@@ -1,21 +1,20 @@
 <!--
 Sync Impact Report:
-Version: 1.0.1 → 1.0.2 (PATCH - Template improvements and example corrections)
-Modified principles: None (content clarifications only)
+Version: 1.0.2 → 1.0.3 (PATCH - Fix stale BPK token names and mixin calls in examples)
+Modified principles: III. Modern Sass with Granular Imports (SCSS example corrected)
 Added sections: None
 Removed sections: None
 Changes made:
-- Updated component name placeholders from BpkComponentName to Bpk[ComponentName] format across all templates for consistency
-- Changed color token examples from $bpk-color-primary to $bpk-color-white for better visual contrast demonstration
-- Added "e.g." prefix to all examples for clarity
-- Removed package.json references from templates (components don't have individual package.json in Monorepo)
-- Corrected Storybook examples structure (stories.tsx, examples.tsx in examples/ directory)
-- Adjusted task numbering in tasks-template.md after package.json removal
+- Fixed SCSS example: replaced $bpk-color-white (deprecated) with semantic tokens ($bpk-core-primary-day, $bpk-text-on-dark-day)
+- Fixed SCSS example: removed non-existent @use 'bpk-mixins/shadows' import (shadows are variables in tokens module)
+- Fixed SCSS example: replaced @include shadows.bpk-box-shadow-sm() with box-shadow: tokens.$bpk-box-shadow-sm (variable, not mixin)
+- Fixed SCSS example: replaced @include typography.bpk-text() with @include typography.bpk-body-default (correct mixin name)
+- Added reference to docs/bpk-tokens-reference.md in Principle III example header
 Templates status:
-- ✅ .specify/templates/spec-template.md - Updated with Bpk[ComponentName] format and corrected examples
-- ✅ .specify/templates/plan-template.md - Updated structure and removed package.json reference
-- ✅ .specify/templates/tasks-template.md - Updated with correct task sequence and examples
-Follow-up TODOs: None - all templates aligned and corrected
+- ✅ .specify/templates/spec-template.md - Updated SCSS example with correct token names
+- ✅ .specify/templates/plan-template.md - Updated Design Token Mapping with correct API (variables vs functions)
+- ✅ .specify/templates/tasks-template.md - Updated token example from $bpk-color-white to semantic token
+Follow-up TODOs: None
 -->
 
 # Backpack Design System Constitution
@@ -115,15 +114,18 @@ All visual CSS parameters (colors, margins, paddings, typography, shadows) MUST 
 - Token changes require separate PR to [`backpack-foundations`](https://github.com/Skyscanner/backpack-foundations)
 - All tokens, Sass mixins, and icons live in the foundations repository
 
-**Example**:
+**Example** (see `docs/bpk-tokens-reference.md` for the complete token reference):
 ```scss
 @use '../bpk-mixins/tokens';
-@use '../bpk-mixins/shadows';
+@use '../bpk-mixins/typography';
 
 .bpk-button {
-  padding: tokens.bpk-spacing-md();  // ✅ Token, not magic number
-  color: tokens.$bpk-color-white;   // ✅ Token, not #FFFFFF
-  @include shadows.bpk-box-shadow-sm();
+  padding: tokens.bpk-spacing-md();              // ✅ Spacing function token
+  background-color: tokens.$bpk-core-primary-day; // ✅ Semantic color variable (NOT $bpk-color-*)
+  color: tokens.$bpk-text-on-dark-day;            // ✅ Semantic text color variable
+  border-radius: tokens.$bpk-border-radius-sm;    // ✅ Border radius variable (NOT a function)
+  box-shadow: tokens.$bpk-box-shadow-sm;          // ✅ Shadow variable (NOT a mixin/function)
+  @include typography.bpk-body-default;           // ✅ Typography mixin (NOT bpk-text())
 }
 ```
 
@@ -500,11 +502,17 @@ Constitution amendments require:
 
 ### Version History
 
-- **Version**: 1.0.2
+- **Version**: 1.0.3
 - **Ratified**: 2025-12-22
-- **Last Amended**: 2026-01-19
+- **Last Amended**: 2026-03-06
 
 **Changelog**:
+- v1.0.3 (2026-03-06): Fix stale token examples in Principle III SCSS example
+  - Replaced `$bpk-color-white` with semantic `$bpk-text-on-dark-day` / `$bpk-core-primary-day`
+  - Removed non-existent `@use 'bpk-mixins/shadows'` import (shadows are variables in `tokens`)
+  - Replaced `@include shadows.bpk-box-shadow-sm()` with `box-shadow: tokens.$bpk-box-shadow-sm`
+  - Replaced `@include typography.bpk-text()` with `@include typography.bpk-body-default`
+  - Added note pointing to `docs/bpk-tokens-reference.md` for full token reference
 - v1.0.2 (2026-01-19): Template improvements and example corrections
   - Standardized component name placeholders to `Bpk[ComponentName]` format
   - Updated color token examples to use `$bpk-color-white` for better contrast demonstration
