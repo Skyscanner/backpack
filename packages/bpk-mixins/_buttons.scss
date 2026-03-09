@@ -39,13 +39,17 @@
   margin: 0;
   padding: (6 * tokens.$bpk-one-pixel-rem) tokens.bpk-spacing-base();
   border: 0;
-  border-radius: tokens.$bpk-button-border-radius;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   vertical-align: middle;
   user-select: none;
 
+  @include utils.bpk-themeable-property(
+    border-radius,
+    --bpk-button-border-radius,
+    tokens.$bpk-button-border-radius
+  );
   @include typography.bpk-label-1;
   @include utils.bpk-themeable-property(
     color,
@@ -532,7 +536,6 @@
 
   padding-right: $horizontal-padding;
   padding-left: $horizontal-padding;
-  border-radius: tokens.$bpk-button-border-radius;
 }
 
 /// Large icon-only button. Modifies the bpk-button & bpk-button--large lib.
@@ -555,7 +558,6 @@
 
   padding-right: $horizontal-padding;
   padding-left: $horizontal-padding;
-  border-radius: tokens.$bpk-button-border-radius;
 }
 
 /// Featured button. Modifies the bpk-button
