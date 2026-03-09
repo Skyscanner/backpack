@@ -1,0 +1,115 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { forwardRef } from 'react';
+import type { RefObject } from 'react';
+
+import { cssModules } from '../../../bpk-react-utils';
+import { useInputHandlers, useTextAreaAutoResize } from '../hooks';
+
+import type { BaseInputFieldProps } from '../types';
+
+import STYLES from './TextAreaField.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+const TextAreaField = forwardRef<HTMLTextAreaElement, BaseInputFieldProps>(
+  (
+    {
+      dataTestId,
+      disabled = false,
+      isOverLimit = false,
+      onInputBlur,
+      onInputChange,
+      onInputClick,
+      onInputFocus,
+      onKeyDown,
+      placeholder,
+      value,
+    },
+    ref,
+  ) => {
+    const {
+      handleInputChange,
+      handleInputClick,
+      handleTouchEnd,
+      handleTouchStart,
+    } = useInputHandlers(ref, onInputChange, onInputClick);
+
+    const {
+      containerHeight,
+      isExpanding,
+      shouldReduceParentPadding,
+      textareaHeight,
+    } = useTextAreaAutoResize({
+      ref: ref as RefObject<HTMLTextAreaElement>,
+      value,
+    });
+
+    return (
+      <div
+        className={getClassName('bpk-chatbot-textarea-field__container', {
+          'bpk-chatbot-textarea-field__container--expanding': isExpanding,
+          'bpk-chatbot-textarea-field__container--overLimit': isOverLimit,
+        })}
+        style={{ height: `${containerHeight}px` }}
+      >
+        <div
+          className={getClassName(
+            'bpk-chatbot-textarea-field__field',
+            shouldReduceParentPadding &&
+              STYLES['bpk-chatbot-textarea-field__field--fifthLine'],
+          )}
+        >
+          <label
+            htmlFor="bpk-chatbot-textarea"
+            className={getClassName('bpk-chatbot-textarea-field__label')}
+          >
+            {placeholder}
+          </label>
+          <textarea
+            ref={ref}
+            id="bpk-chatbot-textarea"
+            className={getClassName('bpk-chatbot-textarea-field__textarea')}
+            placeholder={placeholder}
+            value={value}
+            onChange={handleInputChange}
+            onKeyDown={onKeyDown}
+            onFocus={onInputFocus}
+            onBlur={onInputBlur}
+            onClick={handleInputClick}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            disabled={disabled}
+            aria-label={placeholder}
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="sentences"
+            spellCheck="true"
+            tabIndex={0}
+            data-testid={dataTestId}
+            rows={1}
+            style={{ height: `${textareaHeight}px`, resize: 'none' }}
+          />
+        </div>
+      </div>
+    );
+  },
+);
+
+export default TextAreaField;
