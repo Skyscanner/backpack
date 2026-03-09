@@ -167,9 +167,7 @@ One mixin per BEM element/modifier. No class selectors — consumed by `BpkSegme
 
   &[data-state='checked'][data-disabled] {
     color: var(--bpk-segmented-control-indicator-color);
-    // Opacity restored so the indicator background and text remain readable.
-    // Non-interactivity is communicated via cursor/pointer-events on __item.
-    opacity: 0.8;
+    opacity: 1;
   }
 }
 

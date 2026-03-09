@@ -49,3 +49,28 @@
   padding: tokens.bpk-spacing-base();
   background-color: tokens.$bpk-surface-contrast-day;
 }
+
+.bpk-component-segmented-control-stories__price {
+  color: tokens.$bpk-core-accent-day;
+
+  [data-state='checked'] & {
+    color: inherit;
+  }
+}
+
+.bpk-component-segmented-control-stories__info-btn {
+  display: inline-flex;
+  padding: 0;
+  border: none;
+  background: none;
+  color: tokens.$bpk-core-accent-day;
+  cursor: pointer;
+
+  [data-state='checked'] & {
+    color: inherit;
+  }
+
+  svg {
+    fill: currentcolor;
+  }
+}

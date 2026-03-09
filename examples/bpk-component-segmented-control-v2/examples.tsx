@@ -16,12 +16,14 @@
  * limitations under the License.
  */
 
-import { useState } from 'react';
+import { type MouseEvent, useState } from 'react';
 
 import GridLayoutIcon from '../../packages/bpk-component-icon/sm/grid-layout';
+import InformationCircleIcon from '../../packages/bpk-component-icon/sm/information-circle';
 import ListIcon from '../../packages/bpk-component-icon/sm/list';
 import {
   BpkBox,
+  BpkHStack,
   BpkProvider,
   BpkSpacing,
   BpkVStack,
@@ -30,6 +32,7 @@ import {
   BpkSegmentedControlV2,
   SEGMENT_TYPES_V2,
 } from '../../packages/bpk-component-segmented-control';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden';
 import { cssModules } from '../../packages/bpk-react-utils';
 
@@ -292,17 +295,29 @@ const LongLabels = () => {
         onChange={setSelected}
       >
         <BpkSegmentedControlV2.Item value="departure">
-          <span className={getClassName('bpk-component-segmented-control-stories__custom-button')}>
+          <span
+            className={getClassName(
+              'bpk-component-segmented-control-stories__custom-button',
+            )}
+          >
             Earliest departure time
           </span>
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="arrival">
-          <span className={getClassName('bpk-component-segmented-control-stories__custom-button')}>
+          <span
+            className={getClassName(
+              'bpk-component-segmented-control-stories__custom-button',
+            )}
+          >
             Earliest arrival time
           </span>
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="price">
-          <span className={getClassName('bpk-component-segmented-control-stories__custom-button')}>
+          <span
+            className={getClassName(
+              'bpk-component-segmented-control-stories__custom-button',
+            )}
+          >
             Cheapest price available
           </span>
         </BpkSegmentedControlV2.Item>
@@ -384,6 +399,83 @@ const ComplexTypeExample = ({
   </BpkProvider>
 );
 
+const flightSortItems = [
+  {
+    value: 'best',
+    label: 'Best',
+    price: '£84',
+    duration: '2h 18 average',
+    showInfoIcon: true,
+  },
+  {
+    value: 'cheapest',
+    label: 'Cheapest',
+    price: '£72',
+    duration: '2h 18 average',
+    showInfoIcon: false,
+  },
+  {
+    value: 'fastest',
+    label: 'Fastest',
+    price: '£110',
+    duration: '2h 18 average',
+    showInfoIcon: false,
+  },
+];
+
+const ComplexContentWithIcon = () => {
+  const [selected, setSelected] = useState('best');
+
+  const handleInfoClick =
+    (label: string) => (e: MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
+    };
+
+  return (
+    <BpkProvider>
+      <BpkSegmentedControlV2.Root
+        label="Sort flight itineraries"
+        value={selected}
+        onChange={setSelected}
+        shadow
+      >
+        {flightSortItems.map(
+          ({ duration, label, price, showInfoIcon, value }) => (
+            <BpkSegmentedControlV2.Item key={value} value={value}>
+              <BpkVStack gap={BpkSpacing.XS} align="start">
+                <BpkText textStyle={TEXT_STYLES.caption}>{label}</BpkText>
+                <BpkHStack gap={BpkSpacing.SM} align="center">
+                  <BpkText
+                    textStyle={TEXT_STYLES.heading5}
+                    className={getClassName(
+                      'bpk-component-segmented-control-stories__price',
+                    )}
+                  >
+                    {price}
+                  </BpkText>
+                  {showInfoIcon && (
+                    <button
+                      type="button"
+                      className={getClassName(
+                        'bpk-component-segmented-control-stories__info-btn',
+                      )}
+                      onClick={handleInfoClick(label)}
+                      aria-label={`More info about ${label}`}
+                    >
+                      <InformationCircleIcon />
+                    </button>
+                  )}
+                </BpkHStack>
+                <BpkText textStyle={TEXT_STYLES.caption}>{duration}</BpkText>
+              </BpkVStack>
+            </BpkSegmentedControlV2.Item>
+          ),
+        )}
+      </BpkSegmentedControlV2.Root>
+    </BpkProvider>
+  );
+};
+
 const VisualExample = () => (
   <BpkProvider>
     <BpkVStack
@@ -401,6 +493,7 @@ const VisualExample = () => (
 );
 
 export {
+  ComplexContentWithIcon,
   DefaultCanvasDefault,
   UncontrolledDefaultValue,
   ComplexTypeExample,

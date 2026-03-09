@@ -22,6 +22,7 @@ import {
 } from '../../packages/bpk-component-segmented-control';
 
 import {
+  ComplexContentWithIcon,
   DefaultCanvasDefault,
   UncontrolledDefaultValue,
   CanvasContrast,
@@ -116,6 +117,11 @@ export const LongLabelText = {
 export const NoneSelected = {
   render: NoInitialSelection,
   name: 'Edge case — no initial selection',
+};
+
+export const ComplexContentIcon = {
+  render: ComplexContentWithIcon,
+  name: 'Complex content with icon',
 };
 
 export const ComplexContent = {

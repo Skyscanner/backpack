@@ -199,7 +199,7 @@
 
   &[data-state='checked'][data-disabled] {
     color: var(--bpk-segmented-control-indicator-color);
-    opacity: 0.8;
+    opacity: 1;
   }
 }
 
