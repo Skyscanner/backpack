@@ -41,7 +41,7 @@
 
   @include radii.bpk-border-radius-xs;
   @include typography.bpk-text;
-  @include typography.bpk-footnote;
+  @include typography.bpk-caption;
 }
 
 /// Centered badge. Modifies the bpk-badge mixin.
