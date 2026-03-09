@@ -29,14 +29,14 @@ import {
   WithSizesExample,
   WithCustomThemeExample,
   SimpleAPIExample,
-  NeighbourhoodCardExample,
-  CarTypeCheckCardExample,
+  WithMetadataExample,
+  WithImageGridExample,
 } from './examples';
 
 export default {
   title: 'bpk-component-checkbox-card',
   component: BpkCheckboxCard,
-  decorators: [(Story: () => JSX.Element) => <BpkProvider><Story /></BpkProvider>],
+  decorators: [(Story: any) => <BpkProvider><Story /></BpkProvider>],
 };
 
 export const Basic = BasicExample;
@@ -48,5 +48,5 @@ export const WithInlineLayout = WithInlineLayoutExample;
 export const WithSizes = WithSizesExample;
 export const WithCustomTheme = WithCustomThemeExample;
 export const SimpleAPI = SimpleAPIExample;
-export const NeighbourhoodCard = NeighbourhoodCardExample;
-export const CarTypeCheckCard = CarTypeCheckCardExample;
+export const WithMetadata = WithMetadataExample;
+export const WithImageGrid = WithImageGridExample;

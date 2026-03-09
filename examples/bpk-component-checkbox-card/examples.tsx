@@ -448,7 +448,7 @@ export const SimpleAPIExample = () => {
  *
  * @returns {JSX.Element} Rendered car type selection with border checked style.
  */
-export const CarTypeCheckCardExample = () => {
+export const WithImageGridExample = () => {
   const carTypes = [
     {
       id: 'small',
@@ -531,7 +531,7 @@ export const CarTypeCheckCardExample = () => {
  *
  * @returns {JSX.Element} Rendered neighbourhood card examples.
  */
-export const NeighbourhoodCardExample = () => {
+export const WithMetadataExample = () => {
   const neighbourhoods = [
     { id: 'westminster', name: 'City Of Westminster', count: 158, avgPrice: '£85', trend: 'down' as const },
     { id: 'shoreditch', name: 'Shoreditch', count: 94, avgPrice: '£72', trend: 'down' as const },
