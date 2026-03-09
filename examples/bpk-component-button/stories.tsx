@@ -33,6 +33,7 @@ import {
   AnchorTagsExample,
   FullWidthExample,
   SubmitButtonExample,
+  ThemedBorderRadiusExample,
 } from './examples';
 
 export default {
@@ -73,3 +74,5 @@ export const VisualTestWithZoom = {
 
 export const SubmitButton = () => <SubmitButtonExample />;
 export const FullWidth = () => <FullWidthExample />;
+
+export const ThemedCornerRadius = () => <ThemedBorderRadiusExample />;
